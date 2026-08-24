@@ -11,9 +11,7 @@ type TransitGatewayPeeringAttachment_Status struct {
 }
 
 type TransitGatewayPeeringAttachment_Tags struct {
-	// The key of a tag to attach to the transit gateway peering attachment. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the transit gateway peering attachment, used to identify or organize the resource. (AI-inferred)
 	Value any
 }
 
@@ -46,7 +44,6 @@ type TransitGatewayPeeringAttachmentAttrs struct {
 	PeerTransitGatewayId any
 	// The state of the transit gateway peering attachment. Note that the initiating state has been deprecated.
 	State any
-	// The current status of the transit gateway peering attachment, reported as an object containing a code (e.g., available or deleted) and a message describing the state in more detail. (AI-inferred)
 	Status any
 	// The tags for the transit gateway peering attachment.
 	Tags any

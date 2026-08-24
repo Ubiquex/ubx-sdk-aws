@@ -37,7 +37,6 @@ type LiveCloudWatchAlarmTemplateAttrs struct {
 	Arn any
 	// The comparison operator used to compare the specified statistic and the threshold.
 	ComparisonOperator any
-	// The date and time when the CloudWatch alarm template was created, returned as a string. (AI-inferred)
 	CreatedAt any
 	// The number of datapoints within the evaluation period that must be breaching to trigger the alarm.
 	DatapointsToAlarm any
@@ -51,11 +50,9 @@ type LiveCloudWatchAlarmTemplateAttrs struct {
 	GroupIdentifier any
 	// A cloudwatch alarm template's id. AWS provided templates have ids that start with `aws-`
 	Id any
-	// The unique identifier (ID) automatically assigned by MediaLive to this CloudWatch alarm template, used to reference the template in AWS APIs and other resources. (AI-inferred)
 	Identifier any
 	// The name of the metric associated with the alarm. Must be compatible with targetResourceType.
 	MetricName any
-	// The timestamp indicating when the CloudWatch alarm template was last modified. (AI-inferred)
 	ModifiedAt any
 	// A resource's name. Names must be unique within the scope of a resource type in a specific region.
 	Name any

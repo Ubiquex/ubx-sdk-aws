@@ -4,20 +4,14 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskSet_CapacityProviderStrategy struct {
-	// The minimum number of tasks to run on this capacity provider before the task set's weight-based scaling applies. (AI-inferred)
 	Base any
-	// The name of the capacity provider, as registered in the ECS cluster, that this task set should use for running tasks. (AI-inferred)
 	CapacityProvider any
-	// The relative weight assigned to a capacity provider in the strategy, determining what proportion of tasks from the task set are placed on that provider. (AI-inferred)
 	Weight any
 }
 
 type TaskSet_LoadBalancers struct {
-	// The name of the container, as defined in the task definition, to which the load balancer routes traffic for this task set. (AI-inferred)
 	ContainerName any
-	// The container port on which the task set's containers receive traffic from the associated load balancer or target group, used to route incoming requests to the correct container port. (AI-inferred)
 	ContainerPort any
-	// The Amazon Resource Name (ARN) of the target group to which the ECS task set's tasks are registered for load balancing. (AI-inferred)
 	TargetGroupArn any
 }
 
@@ -43,20 +37,14 @@ type TaskSet_Scale struct {
 }
 
 type TaskSet_ServiceRegistries struct {
-	// Specifies the container name from the task definition to use for the service discovery (Cloud Map) registry, and if not provided, the default container in the task definition is used. (AI-inferred)
 	ContainerName any
-	// Specifies the container port that the Amazon ECS task set's service registry uses for service discovery with AWS Cloud Map. (AI-inferred)
 	ContainerPort any
-	// The port number that the service discovery service uses for the task's registry entry, which overrides the container's port mapping if specified. (AI-inferred)
 	Port any
-	// The ARN of the AWS Cloud Map service registry in which the task set's tasks are registered for service discovery. (AI-inferred)
 	RegistryArn any
 }
 
 type TaskSet_Tags struct {
-	// The key of a tag that can be assigned to the ECS task set for organizational or identification purposes. (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag attached to the ECS task set, which can be used for resource categorization, cost allocation, and operational management. (AI-inferred)
 	Value any
 }
 
@@ -104,7 +92,6 @@ var TaskSet_TagsFields = ubx.FieldMap{
 	}
 
 type TaskSetConfig struct {
-	// Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
 	CapacityProviderStrategy any
 	// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
 	Cluster any
@@ -112,13 +99,11 @@ type TaskSetConfig struct {
 	ExternalId any
 	// The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
 	LaunchType any
-	// Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
 	LoadBalancers any
 	// An object representing the network configuration for a task or service.
 	NetworkConfiguration any
 	// The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
 	PlatformVersion any
-	// Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
 	Scale any
 	// The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
 	Service any
@@ -130,7 +115,6 @@ type TaskSetConfig struct {
 }
 
 type TaskSetAttrs struct {
-	// Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
 	CapacityProviderStrategy any
 	// The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
 	Cluster any
@@ -140,13 +124,11 @@ type TaskSetAttrs struct {
 	Id any
 	// The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
 	LaunchType any
-	// Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
 	LoadBalancers any
 	// An object representing the network configuration for a task or service.
 	NetworkConfiguration any
 	// The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
 	PlatformVersion any
-	// Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
 	Scale any
 	// The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
 	Service any

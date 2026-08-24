@@ -4,24 +4,16 @@ package direct
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectTransitVirtualInterface_BgpPeers struct {
-	// The address family (IPv4 or IPv6) used for the BGP session on the transit virtual interface. (AI-inferred)
 	AddressFamily any
-	// The IPv4 address on the Amazon side of the BGP peering session for a Direct Connect transit virtual interface, used to establish BGP connectivity with the customer's router. (AI-inferred)
 	AmazonAddress any
-	// The autonomous system number (ASN) of the BGP peer used to establish the BGP session for the transit virtual interface. (AI-inferred)
 	Asn any
-	// The MD5 authentication key used for BGP peering on this transit virtual interface, enabling authenticated BGP sessions with the on-premises router. (AI-inferred)
 	AuthKey any
-	// The AWS-assigned unique identifier for the BGP peer configured on the transit virtual interface, used to reference the peer in Direct Connect API operations. (AI-inferred)
 	BgpPeerId any
-	// The IP address assigned to the customer's side of the BGP session for this transit virtual interface. (AI-inferred)
 	CustomerAddress any
 }
 
 type ConnectTransitVirtualInterface_Tags struct {
-	// The key of a tag (e.g., 'Name') applied to the Direct Connect Transit Virtual Interface, used to filter, organize, and control access to the resource. (AI-inferred)
 	Key any
-	// The value component of a tag applied to this AWS Direct Connect transit virtual interface, used for arbitrary metadata such as cost allocation or ownership. (AI-inferred)
 	Value any
 }
 

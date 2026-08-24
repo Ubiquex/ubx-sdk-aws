@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SpendingLimit_Tags:
     key: Any = None
-    # The value part of a tag key-value pair attached to the AWS::Braket::SpendingLimit resource, used to categorize and manage the spending limit with arbitrary metadata. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

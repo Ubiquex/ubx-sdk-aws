@@ -4,7 +4,6 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcpeeringConnection_Tags struct {
-	// The user-defined key of a tag attached to the AWS EC2 VPC Peering Connection, used to label and organize the peering resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -25,7 +24,6 @@ type VpcpeeringConnectionConfig struct {
 	PeerRoleArn any
 	// The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.
 	PeerVpcId any
-	// A list of tag objects (each with a key and value) to attach to the VPC peering connection, used to organize and identify the resource. (AI-inferred)
 	Tags any
 	// The ID of the VPC.
 	VpcId any
@@ -34,7 +32,6 @@ type VpcpeeringConnectionConfig struct {
 type VpcpeeringConnectionAttrs struct {
 	// The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided.
 	AssumeRoleRegion any
-	// The unique ID of the VPC peering connection, such as pcx-1234567890abcdef0. (AI-inferred)
 	Id any
 	// The AWS account ID of the owner of the accepter VPC.
 	PeerOwnerId any
@@ -44,7 +41,6 @@ type VpcpeeringConnectionAttrs struct {
 	PeerRoleArn any
 	// The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request.
 	PeerVpcId any
-	// A list of tag objects (each with a key and value) to attach to the VPC peering connection, used to organize and identify the resource. (AI-inferred)
 	Tags any
 	// The ID of the VPC.
 	VpcId any

@@ -9,18 +9,13 @@ export interface LiveMultiplexprogram_MultiplexProgramSettings_ServiceDescriptor
 }
 
 export interface LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettings {
-  /** Specifies the maximum bitrate in bits per second that the video may use for this program when statistical multiplexing (statmux) is enabled, capping the bandwidth allocated to this program within the multiplex. (AI-inferred) */
   maximumBitrate?: number | Computed<number>;
-  /** The minimum bitrate in bits per second that the video encoder will target for this multiplex program when statistical multiplexing is enabled, ensuring the program does not fall below this rate during allocation of multiplex bandwidth. (AI-inferred) */
   minimumBitrate?: number | Computed<number>;
-  /** Sets the relative priority of this program's video within the statistical multiplex (statmux) group, where higher numbers cause the multiplexer to allocate bandwidth to this program before lower-priority programs when the total multiplex bandwidth is constrained. (AI-inferred) */
   priority?: number | Computed<number>;
 }
 
 export interface LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings {
-  /** The constant bitrate in bits per second for the video output of the MediaLive multiplex program, defining the fixed bitrate when the program's video settings use constant-bitrate encoding. (AI-inferred) */
   constantBitrate?: number | Computed<number>;
-  /** Specifies statistical multiplexing (statmux) settings for the program's video, including priority and minimum/maximum bitrate limits that control how bandwidth is dynamically allocated among programs within the MediaLive multiplex. (AI-inferred) */
   statmuxSettings?: LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettings | Computed<LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettings>;
 }
 
@@ -36,38 +31,23 @@ export interface LiveMultiplexprogram_MultiplexProgramSettings {
 }
 
 export interface LiveMultiplexprogram_PacketIdentifiersMap {
-  /** Specifies the packet identifiers (PIDs) for the audio elementary streams in the MediaLive multiplex program. (AI-inferred) */
   audioPids?: number[] | Computed<number[]>;
-  /** Specifies the DVB Subtitle packet identifiers (PIDs) to associate with the multiplex program, used for delivering DVB subtitle streams through the multiplex. (AI-inferred) */
   dvbSubPids?: number[] | Computed<number[]>;
-  /** Sets the DVB Teletext packet identifier (PID) used by the multiplex program's packet identifiers map. (AI-inferred) */
   dvbTeletextPid?: number | Computed<number>;
-  /** Specifies the packet identifier (PID) for the Enhanced TV (ETV) platform service within the MPEG-2 transport stream of the MediaLive multiplex program. (AI-inferred) */
   etvPlatformPid?: number | Computed<number>;
-  /** Specifies the packet identifier (PID) for the Enhanced TV (ETV) signal within the multiplex program's packet identifiers map, used to carry ETV metadata in the MPEG-2 transport stream. (AI-inferred) */
   etvSignalPid?: number | Computed<number>;
-  /** Configures the KLV (Key-Length-Value) data packet identifiers (PIDs) in the multiplex program's packet identifier map, specifying which PIDs carry KLV metadata in the output transport stream. (AI-inferred) */
   klvDataPids?: number[] | Computed<number[]>;
-  /** The Packet Identifier (PID) for the Program Clock Reference (PCR) stream, which carries timing information for the program in the MediaLive multiplex. (AI-inferred) */
   pcrPid?: number | Computed<number>;
-  /** Specifies the packet identifier (PID) for the Program Map Table (PMT) in the multiplex program's MPEG-TS packet identifiers map. (AI-inferred) */
   pmtPid?: number | Computed<number>;
-  /** Sets the packet identifier (PID) for the private metadata stream within the MPEG-2 transport stream of this MediaLive multiplex program. (AI-inferred) */
   privateMetadataPid?: number | Computed<number>;
-  /** Specifies the packet identifiers (PIDs) used for SCTE-27 cue messages in the multiplex output. (AI-inferred) */
   scte27Pids?: number[] | Computed<number[]>;
-  /** The packet identifier (PID) for SCTE-35 messages in the multiplex program, used to carry ad insertion signaling. (AI-inferred) */
   scte35Pid?: number | Computed<number>;
-  /** The packet identifier (PID) assigned for timed metadata (e.g., ID3 timed metadata) in the MPEG-TS output of the MediaLive multiplex program. (AI-inferred) */
   timedMetadataPid?: number | Computed<number>;
-  /** The PID (packet identifier) assigned to the video elementary stream in the MPEG-2 transport stream output of the MediaLive multiplex program. (AI-inferred) */
   videoPid?: number | Computed<number>;
 }
 
 export interface LiveMultiplexprogram_PipelineDetails {
-  /** Identifies which MediaLive channel pipeline (PIPELINE_0 or PIPELINE_1) is currently active for the multiplex program pipeline. (AI-inferred) */
   activeChannelPipeline?: string | Computed<string>;
-  /** Identifies the MediaLive pipeline (0 or 1) for which the settings in this pipeline detail object apply. (AI-inferred) */
   pipelineId?: string | Computed<string>;
 }
 

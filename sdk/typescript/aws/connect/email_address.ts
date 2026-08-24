@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailAddress_AliasConfigurations {
-  /** The Amazon Resource Name (ARN) of an email address that is configured as an alias for the primary Connect email address. (AI-inferred) */
   emailAddressArn?: string | Computed<string>;
 }
 
 export interface EmailAddress_Tags {
-  /** The user-defined key for a tag attached to the AWS Connect email address, used to organize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Amazon Connect email address resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

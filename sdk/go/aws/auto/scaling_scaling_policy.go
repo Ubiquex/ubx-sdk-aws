@@ -4,144 +4,93 @@ package auto
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	// The name of a dimension for the metric used in the customized capacity metric specification of a predictive scaling policy. (AI-inferred)
 	Name any
-	// The value of a CloudWatch metric dimension that, together with the dimension name, identifies a specific resource (such as an Auto Scaling group or instance) for the customized capacity metric used in predictive scaling. (AI-inferred)
 	Value any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric struct {
-	// Specifies the CloudWatch metric dimensions (name/value pairs) that identify the custom capacity metric used in the predictive scaling policy's metric data query, scoping the metric data to the specified dimension values. (AI-inferred)
 	Dimensions any
-	// The name of the CloudWatch metric used in the metric data query for the customized capacity metric specification of the predictive scaling policy. (AI-inferred)
 	MetricName any
-	// The namespace of the CloudWatch metric that defines the customized capacity metric for the predictive scaling policy. (AI-inferred)
 	Namespace any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat struct {
-	// Specifies the CloudWatch metric (namespace, metric name, and dimensions) used in the metric statistic for the customized capacity metric data query of the predictive scaling policy. (AI-inferred)
 	Metric any
-	// The statistic to apply to the specified metric (such as Sum, Average, Minimum, Maximum, or SampleCount) within a metric data query for the customized capacity metric specification of a predictive scaling policy. (AI-inferred)
 	Stat any
-	// Specifies the unit of measure for the metric used in the customized capacity metric specification (e.g., 'Percent', 'Count', 'Bytes'), which CloudWatch uses for the predictive scaling model. (AI-inferred)
 	Unit any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries struct {
-	// A math expression that derives the capacity metric value from one or more metric data queries in the same customized capacity metric specification, using CloudWatch metrics math syntax (e.g., a sum, average, or arithmetic combination of returned metrics). (AI-inferred)
 	Expression any
-	// A short name that uniquely identifies this metric data query within the customized capacity metric specification, and can be referenced by other queries' 'Expression' fields to combine data from multiple metrics. (AI-inferred)
 	Id any
-	// The label provides a human-readable name for the metric data query, used to identify and reference the query's results within the predictive scaling customized capacity metric specification. (AI-inferred)
 	Label any
-	// This object specifies the metric statistics (such as the CloudWatch metric, statistic, period, and unit) for a single metric data query used to define a custom capacity metric for the predictive scaling policy. (AI-inferred)
 	MetricStat any
-	// Indicates whether this metric data query returns the actual capacity value for the customized capacity metric in predictive scaling; only the query that provides the capacity should set this to true, while supporting queries (e.g., used in math expressions) set it to false. (AI-inferred)
 	ReturnData any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification struct {
-	// Specifies the metric data queries (CloudWatch metrics and expressions) that define the customized capacity metric for the predictive scaling policy. (AI-inferred)
 	MetricDataQueries any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications_PredefinedLoadMetricSpecification struct {
-	// Specifies the predefined load metric type (for example, ASGTotalCPUUtilization, ASGTotalNetworkIn, or ASGTotalNetworkOut) that the predictive scaling policy uses to measure the load on the Auto Scaling group. (AI-inferred)
 	PredefinedMetricType any
-	// The resource label uniquely identifies the specific resource, such as an Application Load Balancer target group, that the predefined load metric is associated with, required for metrics like 'ALBRequestCountPerTarget'. (AI-inferred)
 	ResourceLabel any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration_MetricSpecifications struct {
-	// This object defines a customized capacity metric for predictive scaling by specifying metric data queries that Amazon EC2 Auto Scaling uses to measure the group's actual capacity, which is one of the metrics used to calculate the predictive scaling model. (AI-inferred)
 	CustomizedCapacityMetricSpecification any
-	// Defines the customized load metric specification for a predictive scaling policy, including the metric data queries that supply the load metric used to forecast future capacity requirements. (AI-inferred)
 	CustomizedLoadMetricSpecification any
-	// Defines the customized scaling metric specification for a predictive scaling policy, using metric data queries to specify the load metric. (AI-inferred)
 	CustomizedScalingMetricSpecification any
-	// Specifies the predefined load metric for predictive scaling, including the metric type and an optional resource label to identify the specific load balancer or resource being used. (AI-inferred)
 	PredefinedLoadMetricSpecification any
-	// Defines a predefined metric pair specification, which uses the ASGCPUUtilization metric type to pair CPU utilization and memory utilization metrics for the predictive scaling policy's metric specification. (AI-inferred)
 	PredefinedMetricPairSpecification any
-	// This object defines a predefined scaling metric specification for predictive scaling, selecting the metric type (e.g., ASGAverageCPUUtilization) and optionally a resource label for the target resource. (AI-inferred)
 	PredefinedScalingMetricSpecification any
-	// The target value for the predictive scaling metric, which the model uses to determine the capacity to add for predicted load. (AI-inferred)
 	TargetValue any
 }
 
 type ScalingScalingPolicy_PredictiveScalingConfiguration struct {
-	// Determines how the predictive scaling policy handles forecasted capacity that exceeds the maximum, either honoring the maximum capacity (HonorMaxCapacity) or increasing it (IncreaseMaxCapacity). (AI-inferred)
 	MaxCapacityBreachBehavior any
-	// The percentage of capacity that the predictive scaling policy can use to scale out beyond the maximum capacity of the Auto Scaling group. (AI-inferred)
 	MaxCapacityBuffer any
-	// Specifies the list of metric specifications, including load/scaling metrics and target utilization values, that Amazon EC2 Auto Scaling uses for predictive scaling forecasts and scheduled scaling actions. (AI-inferred)
 	MetricSpecifications any
-	// Specifies whether predictive scaling will actually scale capacity based on forecasts ('ForecastAndScale') or only generate forecasts without taking action ('ForecastOnly'). (AI-inferred)
 	Mode any
-	// The amount of time, in seconds, that the predictive scaling policy can use to execute scaling actions in advance of the forecasted load, with a default of 300 seconds. (AI-inferred)
 	SchedulingBufferTime any
 }
 
 type ScalingScalingPolicy_StepAdjustments struct {
-	// Defines the lower bound for the difference between the alarm threshold and the CloudWatch metric, determining the metric interval that triggers this step's scaling adjustment. (AI-inferred)
 	MetricIntervalLowerBound any
-	// Specifies the upper boundary of the CloudWatch metric value range for a step adjustment, determining the maximum metric threshold at which the corresponding scaling adjustment is triggered. (AI-inferred)
 	MetricIntervalUpperBound any
-	// The number of instances to add (positive value) or remove (negative value) when the alarm breach falls within the bounds of this step adjustment. (AI-inferred)
 	ScalingAdjustment any
 }
 
 type ScalingScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics_MetricStat struct {
-	// Specifies the CloudWatch metric (including metric name, namespace, and dimensions) whose value is used in the metric stat for this customized target tracking scaling policy. (AI-inferred)
 	Metric any
-	// The period (in seconds) over which the specified statistic is applied to the customized metric in the target tracking scaling policy, defining the metric's data granularity for CloudWatch. (AI-inferred)
 	Period any
-	// The statistic (e.g., Average, Sum, Minimum, Maximum, SampleCount, or a percentile such as p99) to apply to the custom metric for the target tracking scaling policy. (AI-inferred)
 	Stat any
-	// Specifies the unit of measure for the metric's value (such as Percent, Count, or Bytes) that Amazon EC2 Auto Scaling uses when evaluating the target tracking policy. (AI-inferred)
 	Unit any
 }
 
 type ScalingScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification_Metrics struct {
-	// The CloudWatch metrics math expression that AWS Auto Scaling evaluates to derive the target metric value for the target tracking policy; it can combine multiple metric data queries referenced by their Id. (AI-inferred)
 	Expression any
-	// A short name that uniquely identifies this metric data query within the list, allowing other queries to reference its returned data in their expressions. (AI-inferred)
 	Id any
-	// The label is a human-readable name for a metric data query in the customized metric specification, used for display in CloudWatch when the target tracking policy is active. (AI-inferred)
 	Label any
-	// Specifies the CloudWatch metric and its statistic (such as Average or Sum) used by this metric data query in the customized target tracking scaling policy. (AI-inferred)
 	MetricStat any
-	// Specifies the period (in seconds) over which CloudWatch aggregates the metric data for the corresponding metric query in the custom metric specification used by this Auto Scaling target tracking policy. (AI-inferred)
 	Period any
-	// Indicates whether this metric data query's result should be included in the target tracking metric evaluation; set to false for intermediate query results used only in expressions. (AI-inferred)
 	ReturnData any
 }
 
 type ScalingScalingPolicy_TargetTrackingConfiguration_CustomizedMetricSpecification struct {
-	// Specifies the CloudWatch metric dimensions (key-value pairs) used to identify the customized metric for the target tracking scaling policy. (AI-inferred)
 	Dimensions any
-	// The name of the CloudWatch metric to be used for target tracking scaling. (AI-inferred)
 	MetricName any
-	// Specifies a list of metric data queries that define the custom metric (including metric math expressions) used for target tracking scaling. (AI-inferred)
 	Metrics any
-	// Specifies the CloudWatch namespace of the customized metric used by the target tracking scaling policy, identifying the source or service that published the metric. (AI-inferred)
 	Namespace any
 	Period any
-	// The statistic to apply to the custom CloudWatch metric in the target tracking policy (e.g., Average, Sum, Minimum, Maximum, SampleCount). (AI-inferred)
 	Statistic any
-	// The unit of measure for the custom CloudWatch metric specified in the target tracking configuration, such as 'Count' or 'Percent', which is used by the scaling policy to interpret the metric's value. (AI-inferred)
 	Unit any
 }
 
 type ScalingScalingPolicy_TargetTrackingConfiguration struct {
-	// Defines the customized CloudWatch metric specification (namespace, metric name, dimensions, and statistic) that the target tracking policy uses to compute the scaling metric rather than using a predefined metric. (AI-inferred)
 	CustomizedMetricSpecification any
-	// When set to true, the target tracking scaling policy does not scale in (terminate) instances in response to the target metric, restricting actions to scale-out only. (AI-inferred)
 	DisableScaleIn any
-	// Specifies the predefined Auto Scaling metric type (such as ASGAverageCPUUtilization or ALBRequestCountPerTarget) that the target tracking policy will track, and optionally a resource label for metrics that apply to a specific resource. (AI-inferred)
 	PredefinedMetricSpecification any
-	// The target value for the CloudWatch metric that the scaling policy tracks; Auto Scaling adjusts capacity to keep the metric at or near this value. (AI-inferred)
 	TargetValue any
 }
 
@@ -319,13 +268,11 @@ type ScalingScalingPolicyConfig struct {
 	MinAdjustmentMagnitude any
 	// One of the following policy types: TargetTrackingScaling, StepScaling, SimpleScaling (default), PredictiveScaling
 	PolicyType any
-	// Defines the predictive scaling policy configuration for the Auto Scaling group, which uses machine learning to forecast future load and provision capacity in advance to minimize scaling latency. (AI-inferred)
 	PredictiveScalingConfiguration any
 	// The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value. Required if the policy type is SimpleScaling. (Not used with any other policy type.)
 	ScalingAdjustment any
 	// A set of adjustments that enable you to scale based on the size of the alarm breach. Required if the policy type is StepScaling. (Not used with any other policy type.)
 	StepAdjustments any
-	// Specifies the target tracking configuration for the scaling policy, defining the metric to track and the target value that the Auto Scaling group maintains. (AI-inferred)
 	TargetTrackingConfiguration any
 }
 
@@ -344,17 +291,14 @@ type ScalingScalingPolicyAttrs struct {
 	MetricAggregationType any
 	// The minimum value to scale by when the adjustment type is PercentChangeInCapacity. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
 	MinAdjustmentMagnitude any
-	// The name of the scaling policy, automatically assigned by Auto Scaling and returned as a read-only attribute. (AI-inferred)
 	PolicyName any
 	// One of the following policy types: TargetTrackingScaling, StepScaling, SimpleScaling (default), PredictiveScaling
 	PolicyType any
-	// Defines the predictive scaling policy configuration for the Auto Scaling group, which uses machine learning to forecast future load and provision capacity in advance to minimize scaling latency. (AI-inferred)
 	PredictiveScalingConfiguration any
 	// The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value. Required if the policy type is SimpleScaling. (Not used with any other policy type.)
 	ScalingAdjustment any
 	// A set of adjustments that enable you to scale based on the size of the alarm breach. Required if the policy type is StepScaling. (Not used with any other policy type.)
 	StepAdjustments any
-	// Specifies the target tracking configuration for the scaling policy, defining the metric to track and the target value that the Auto Scaling group maintains. (AI-inferred)
 	TargetTrackingConfiguration any
 }
 

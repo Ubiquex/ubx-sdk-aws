@@ -15,7 +15,6 @@ type ResolverResolverRuleAssociationConfig struct {
 type ResolverResolverRuleAssociationAttrs struct {
 	// The name of an association between a Resolver rule and a VPC. The name can be up to 64 characters long and can contain letters (a-z, A-Z), numbers (0-9), hyphens (-), underscores (_), and spaces. The name cannot consist of only numbers.
 	Name any
-	// The unique ID assigned by AWS to this Resolver rule association, returned by the service to identify the association between a VPC and a Resolver rule. (AI-inferred)
 	ResolverRuleAssociationId any
 	// The ID of the Resolver rule that you associated with the VPC that is specified by ``VPCId``.
 	ResolverRuleId any

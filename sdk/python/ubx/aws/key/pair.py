@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pair_Tags:
-    # The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -32,13 +31,11 @@ class PairConfig:
 
 @dataclasses.dataclass
 class PairAttrs:
-    # The SHA-1 digest of the DER-encoded public key for the EC2 key pair, used to verify the key's identity. (AI-inferred)
     key_fingerprint: Any = None
     # The format of the key pair. Default: ``pem``
     key_format: Any = None
     # A unique name for the key pair. Constraints: Up to 255 ASCII characters
     key_name: Any = None
-    # The unique identifier that AWS assigns to the key pair upon creation, for example 'key-1234567890abcdef0'. (AI-inferred)
     key_pair_id: Any = None
     # The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
     key_type: Any = None

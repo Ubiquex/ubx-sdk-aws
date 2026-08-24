@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface View_Tags {
-  /** The key of a single tag assigned to the Amazon Connect view resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Connect view, used to categorize or identify the view for cost allocation and access management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

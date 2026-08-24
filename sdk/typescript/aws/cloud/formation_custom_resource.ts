@@ -2,17 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FormationCustomResourceConfig {
-  /** The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred) */
   serviceTimeout?: number | Computed<number>;
-  /** The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred) */
   serviceToken: string | Computed<string>;
 }
 
 export interface FormationCustomResourceAttrs {
   id: string;
-  /** The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred) */
   serviceTimeout: number;
-  /** The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred) */
   serviceToken: string;
 }
 

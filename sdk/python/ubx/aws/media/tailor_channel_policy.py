@@ -8,14 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TailorChannelPolicyConfig:
-    # The name of the MediaTailor channel to which this channel policy is attached. (AI-inferred)
     channel_name: Any = None
     # <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     policy: Any = None
 
 @dataclasses.dataclass
 class TailorChannelPolicyAttrs:
-    # The name of the MediaTailor channel to which this channel policy is attached. (AI-inferred)
     channel_name: Any = None
     # <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     policy: Any = None

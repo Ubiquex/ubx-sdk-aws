@@ -14,7 +14,6 @@ export interface DataAutomationLibrary_EntityTypes {
 }
 
 export interface DataAutomationLibrary_Tags {
-  /** The key of a tag to attach to the Bedrock Data Automation Library, used for identifying and categorizing the library. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

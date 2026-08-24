@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnomalyMonitor_ResourceTags:
-    # The tag key for a resource tag applied to the Cost Explorer anomaly monitor, used for identifying and organizing the monitor among AWS resources. (AI-inferred)
     key: Any = None
-    # The value of a resource tag attached to the AWS Cost Explorer anomaly monitor, used for tagging and cost allocation. (AI-inferred)
     value: Any = None
 
 _AnomalyMonitor_ResourceTagsFields = {
@@ -24,9 +22,7 @@ class AnomalyMonitorConfig:
     monitor_dimension: Any = None
     # The name of the monitor.
     monitor_name: Any = None
-    # A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
     monitor_specification: Any = None
-    # Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
     monitor_type: Any = None
     # Tags to assign to monitor.
     resource_tags: Any = None
@@ -47,9 +43,7 @@ class AnomalyMonitorAttrs:
     monitor_dimension: Any = None
     # The name of the monitor.
     monitor_name: Any = None
-    # A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
     monitor_specification: Any = None
-    # Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
     monitor_type: Any = None
     # Tags to assign to monitor.
     resource_tags: Any = None

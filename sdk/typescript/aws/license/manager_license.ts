@@ -2,52 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerLicense_ConsumptionConfiguration_BorrowConfiguration {
-  /** Determines whether licensees can return a borrowed license before the maximum borrow time expires. (AI-inferred) */
   allowEarlyCheckIn: boolean | Computed<boolean>;
-  /** The maximum time, in minutes, that a license can be borrowed when the license's consumption configuration uses a borrow configuration. (AI-inferred) */
   maxTimeToLiveInMinutes: number | Computed<number>;
 }
 
 export interface ManagerLicense_ConsumptionConfiguration_ProvisionalConfiguration {
-  /** Specifies the maximum time in minutes that a license can be provisionally consumed before it expires, requiring renewal or a different consumption configuration. (AI-inferred) */
   maxTimeToLiveInMinutes: number | Computed<number>;
 }
 
 export interface ManagerLicense_ConsumptionConfiguration {
-  /** Configures the borrowing parameters for the license, including whether early check-in is allowed and the maximum duration in minutes that the license can be borrowed for offline use. (AI-inferred) */
   borrowConfiguration?: ManagerLicense_ConsumptionConfiguration_BorrowConfiguration | Computed<ManagerLicense_ConsumptionConfiguration_BorrowConfiguration>;
-  /** Specifies the provisional configuration for the license, which defines the maximum time in minutes that the license remains valid in its provisional state before expiring. (AI-inferred) */
   provisionalConfiguration?: ManagerLicense_ConsumptionConfiguration_ProvisionalConfiguration | Computed<ManagerLicense_ConsumptionConfiguration_ProvisionalConfiguration>;
-  /** Specifies how often the license renews automatically, with valid values being 'None', 'Weekly', or 'Monthly'. (AI-inferred) */
   renewType?: string | Computed<string>;
 }
 
 export interface ManagerLicense_Entitlements {
-  /** Indicates whether the entitlement can be checked in (returned) after use, releasing the license capacity back to the available pool. (AI-inferred) */
   allowCheckIn?: boolean | Computed<boolean>;
-  /** The maximum number of units (such as vCPUs, instances, or other license-allowable resources) that can be consumed under this entitlement. (AI-inferred) */
   maxCount?: number | Computed<number>;
-  /** The name of the entitlement, which defines the specific resource or capability (e.g., vCPU, instance type) that the license grants usage rights for. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Indicates whether this license entitlement allows overage, meaning usage beyond the allowed maximum count is permitted. (AI-inferred) */
   overage?: boolean | Computed<boolean>;
-  /** The unit of measurement for the entitlement (for example, 'Count' or 'None'), indicating how the entitlement value is quantified. (AI-inferred) */
   unit?: string | Computed<string>;
-  /** For each entitlement in the license, this is the entitlement's value (for example, a quantity or usage amount) expressed as a string. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ManagerLicense_Issuer {
-  /** The name of the issuer that grants the license, identifying the entity (such as 'AWS' or a custom vendor) that created the license record. (AI-inferred) */
   name: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS KMS symmetric customer managed key used by the issuer to sign the license. (AI-inferred) */
   signKey?: string | Computed<string>;
 }
 
 export interface ManagerLicense_LicenseMetadata {
-  /** Specifies the name (key) of a metadata entry in a license's custom metadata list, used to store key-value information for the license. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the value portion of a key-value metadata pair attached to an AWS License Manager license, used to store custom information such as cost center or department alongside the corresponding `key` field. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -118,15 +102,11 @@ const ManagerLicense_ValidityFields: FieldMap = {
 export interface ManagerLicenseConfig {
   /** Beneficiary of the license. */
   beneficiary: string | Computed<string>;
-  /** Defines the license consumption model, specifying the renewal type (e.g., none, weekly, monthly) and any optional borrow or provisional configurations that govern how the license is used. (AI-inferred) */
   consumptionConfiguration: ManagerLicense_ConsumptionConfiguration | Computed<ManagerLicense_ConsumptionConfiguration>;
-  /** Defines the list of entitlements granted by the license, each specifying a name, unit, and value (such as a maximum count of a resource like vCPUs or instances). (AI-inferred) */
   entitlements: ManagerLicense_Entitlements[] | Computed<ManagerLicense_Entitlements[]>;
   /** Home region for the created license. */
   homeRegion: string | Computed<string>;
-  /** Defines the entity that issues the license, including the issuer's name (and optionally a signing key) used to identify and verify the license source. (AI-inferred) */
   issuer: ManagerLicense_Issuer | Computed<ManagerLicense_Issuer>;
-  /** Specifies a list of key-value pairs (metadata) that AWS License Manager attaches to the license and exposes for tracking and management. (AI-inferred) */
   licenseMetadata?: ManagerLicense_LicenseMetadata[] | Computed<ManagerLicense_LicenseMetadata[]>;
   /** Name for the created license. */
   licenseName: string | Computed<string>;
@@ -134,28 +114,21 @@ export interface ManagerLicenseConfig {
   productName: string | Computed<string>;
   /** ProductSKU of the license. */
   productSku: string | Computed<string>;
-  /** Specifies the desired status of the license, such as AVAILABLE to activate it immediately or PENDING_AVAILABLE to keep it inactive until a later time. (AI-inferred) */
   status?: string | Computed<string>;
   /** A list of tags to attach. */
   tags?: ManagerLicense_Tags[] | Computed<ManagerLicense_Tags[]>;
-  /** Defines the start and end dates of the license's validity period, during which the license can be used. (AI-inferred) */
   validity: ManagerLicense_Validity | Computed<ManagerLicense_Validity>;
 }
 
 export interface ManagerLicenseAttrs {
   /** Beneficiary of the license. */
   beneficiary: string;
-  /** Defines the license consumption model, specifying the renewal type (e.g., none, weekly, monthly) and any optional borrow or provisional configurations that govern how the license is used. (AI-inferred) */
   consumptionConfiguration: ManagerLicense_ConsumptionConfiguration;
-  /** Defines the list of entitlements granted by the license, each specifying a name, unit, and value (such as a maximum count of a resource like vCPUs or instances). (AI-inferred) */
   entitlements: ManagerLicense_Entitlements[];
   /** Home region for the created license. */
   homeRegion: string;
-  /** Defines the entity that issues the license, including the issuer's name (and optionally a signing key) used to identify and verify the license source. (AI-inferred) */
   issuer: ManagerLicense_Issuer;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the license. (AI-inferred) */
   licenseArn: string;
-  /** Specifies a list of key-value pairs (metadata) that AWS License Manager attaches to the license and exposes for tracking and management. (AI-inferred) */
   licenseMetadata: ManagerLicense_LicenseMetadata[];
   /** Name for the created license. */
   licenseName: string;
@@ -163,11 +136,9 @@ export interface ManagerLicenseAttrs {
   productName: string;
   /** ProductSKU of the license. */
   productSku: string;
-  /** Specifies the desired status of the license, such as AVAILABLE to activate it immediately or PENDING_AVAILABLE to keep it inactive until a later time. (AI-inferred) */
   status: string;
   /** A list of tags to attach. */
   tags: ManagerLicense_Tags[];
-  /** Defines the start and end dates of the license's validity period, during which the license can be used. (AI-inferred) */
   validity: ManagerLicense_Validity;
   /** The version of the license. */
   version: string;

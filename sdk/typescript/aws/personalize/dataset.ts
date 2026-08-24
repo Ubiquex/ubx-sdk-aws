@@ -20,7 +20,6 @@ export interface Dataset_DatasetImportJob {
 }
 
 export interface Dataset_Tags {
-  /** The key of a tag assigned to an Amazon Personalize dataset, used to organize and identify the dataset in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

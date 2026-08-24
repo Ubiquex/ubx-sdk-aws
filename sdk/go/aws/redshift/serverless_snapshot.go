@@ -4,32 +4,20 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerlessSnapshot_Snapshot struct {
-	// The administrator username for the Redshift Serverless namespace at the time the snapshot was created. (AI-inferred)
 	AdminUsername any
-	// The AWS KMS key ID used to encrypt the snapshot; if not specified, the default AWS-managed key for Redshift Serverless is used. (AI-inferred)
 	KmsKeyId any
-	// The Amazon Resource Name (ARN) of the Redshift Serverless namespace that this snapshot is associated with. (AI-inferred)
 	NamespaceArn any
-	// The name of the Redshift Serverless namespace from which the snapshot is created, identifying the source namespace whose data is captured in the snapshot. (AI-inferred)
 	NamespaceName any
-	// The AWS account ID of the account that owns the snapshot. (AI-inferred)
 	OwnerAccount any
-	// Specifies the number of days that the Redshift Serverless snapshot is retained before being automatically deleted. (AI-inferred)
 	RetentionPeriod any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Redshift Serverless snapshot. (AI-inferred)
 	SnapshotArn any
-	// The creation time of the Redshift Serverless snapshot, typically a computed ISO 8601 timestamp returned by AWS. (AI-inferred)
 	SnapshotCreateTime any
-	// The user-defined name of the Redshift Serverless snapshot, used to uniquely identify the snapshot within its namespace. (AI-inferred)
 	SnapshotName any
-	// The current lifecycle status of the serverless snapshot, indicating whether it is AVAILABLE, CREATING, DELETING, or in another state. (AI-inferred)
 	Status any
 }
 
 type ServerlessSnapshot_Tags struct {
-	// The key of a user-defined tag attached to an Amazon Redshift Serverless snapshot, used to organize and identify the snapshot for cost allocation and management. (AI-inferred)
 	Key any
-	// The value for a tag key assigned to the Redshift Serverless snapshot, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -56,7 +44,6 @@ type ServerlessSnapshotAttrs struct {
 	OwnerAccount any
 	// The retention period of the snapshot.
 	RetentionPeriod any
-	// The `snapshot` computed attribute contains the full read-only snapshot object returned by the Redshift Serverless API, including details such as the snapshot ARN, namespace name, status, and creation time. (AI-inferred)
 	Snapshot any
 	// The name of the snapshot.
 	SnapshotName any

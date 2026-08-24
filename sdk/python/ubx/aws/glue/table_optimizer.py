@@ -17,7 +17,6 @@ class TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_Iceberg
 
 @dataclasses.dataclass
 class TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration:
-    # Specifies the Iceberg-specific settings for the compaction configuration of the AWS Glue table optimizer, controlling how compaction is performed on Apache Iceberg table data. (AI-inferred)
     iceberg_configuration: Any = None
 
 @dataclasses.dataclass
@@ -29,21 +28,16 @@ class TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration
 
 @dataclasses.dataclass
 class TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration:
-    # Specifies the Iceberg-specific settings for the orphan file deletion optimizer, including the retention period in days that determines when orphan files are eligible for deletion. (AI-inferred)
     iceberg_configuration: Any = None
 
 @dataclasses.dataclass
 class TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfiguration:
-    # When enabled, this flag instructs the Glue table optimizer to physically delete expired Iceberg data files that are no longer referenced by any retained snapshot as part of the table's retention policy. (AI-inferred)
     clean_expired_files: Any = None
-    # The maximum number of Iceberg snapshots to retain when expiring old snapshots for the table, as part of the table optimizer's retention configuration. (AI-inferred)
     number_of_snapshots_to_retain: Any = None
-    # The number of days to retain Iceberg snapshots before they are automatically expired by the Glue table optimizer. (AI-inferred)
     snapshot_retention_period_in_days: Any = None
 
 @dataclasses.dataclass
 class TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration:
-    # Specifies Iceberg-specific snapshot retention settings, such as the number of snapshots to retain and the retention period in days, for the Glue table optimizer's retention configuration. (AI-inferred)
     iceberg_configuration: Any = None
 
 @dataclasses.dataclass
@@ -53,17 +47,13 @@ class TableOptimizer_TableOptimizerConfiguration_VpcConfiguration:
 
 @dataclasses.dataclass
 class TableOptimizer_TableOptimizerConfiguration:
-    # Defines the settings for the compaction operation in the Glue table optimizer, including whether compaction is enabled (Enabled flag) for the table. (AI-inferred)
     compaction_configuration: Any = None
     # Whether the table optimization is enabled.
     enabled: Any = None
-    # Configuration for the orphan file deletion optimizer, specifying the retention period (in days) for orphan files before they are deleted from the S3 table. (AI-inferred)
     orphan_file_deletion_configuration: Any = None
-    # Configures the retention settings for the Glue table optimizer, specifying the snapshot retention period and the number of snapshots to retain for Apache Iceberg tables. (AI-inferred)
     retention_configuration: Any = None
     # A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.
     role_arn: Any = None
-    # Configures the VPC settings, including subnet and security group IDs, that the AWS Glue job running the table optimization uses to access resources within a virtual private cloud. (AI-inferred)
     vpc_configuration: Any = None
 
 _TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfigurationFields = {
@@ -144,7 +134,6 @@ class TableOptimizerConfig:
     database_name: Any = None
     # The table name. For Hive compatibility, this must be entirely lowercase.
     table_name: Any = None
-    # Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred)
     table_optimizer_configuration: Any = None
     # The type of table optimizer.
     type: Any = None
@@ -157,7 +146,6 @@ class TableOptimizerAttrs:
     database_name: Any = None
     # The table name. For Hive compatibility, this must be entirely lowercase.
     table_name: Any = None
-    # Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred)
     table_optimizer_configuration: Any = None
     # The type of table optimizer.
     type: Any = None

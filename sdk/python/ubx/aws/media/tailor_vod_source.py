@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TailorVodSource_HttpPackageConfigurations:
-    # The relative path to the manifest file (e.g., /path/to/index.m3u8) for the HTTP package configuration of the VOD source. (AI-inferred)
     path: Any = None
-    # The source group name that groups this HTTP package configuration with others in the same VOD source, used by MediaTailor to select the appropriate manifest during playback. (AI-inferred)
     source_group: Any = None
-    # Specifies the type of media packaging for this HTTP package configuration, which must be either HLS or DASH. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TailorVodSource_Tags:
-    # A key in the user-defined tag map applied to the MediaTailor VOD source resource, used for metadata and resource organization. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag assigned to the MediaTailor VOD source, serving as the value portion of a key-value metadata pair. (AI-inferred)
     value: Any = None
 
 _TailorVodSource_HttpPackageConfigurationsFields = {
@@ -37,11 +32,9 @@ _TailorVodSource_TagsFields = {
 class TailorVodSourceConfig:
     # <p>A list of HTTP package configuration parameters for this VOD source.</p>
     http_package_configurations: Any = None
-    # The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the VOD source.
     tags: Any = None
-    # A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred)
     vod_source_name: Any = None
 
 @dataclasses.dataclass
@@ -50,11 +43,9 @@ class TailorVodSourceAttrs:
     arn: Any = None
     # <p>A list of HTTP package configuration parameters for this VOD source.</p>
     http_package_configurations: Any = None
-    # The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the VOD source.
     tags: Any = None
-    # A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred)
     vod_source_name: Any = None
 
 TailorVodSource = ubx.ResourceBinding(

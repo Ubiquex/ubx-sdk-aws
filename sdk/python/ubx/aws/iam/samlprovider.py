@@ -13,9 +13,7 @@ class Samlprovider_PrivateKeyList:
 
 @dataclasses.dataclass
 class Samlprovider_Tags:
-    # The key of a tag attached to the IAM SAML provider, which can be used in IAM policies via the aws:ResourceTag condition key to enforce tag-based access control on the provider. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the AWS IAM SAML provider, allowing you to label or categorize the provider for organizational and management purposes. (AI-inferred)
     value: Any = None
 
 _Samlprovider_PrivateKeyListFields = {
@@ -34,14 +32,11 @@ class SamlproviderConfig:
     add_private_key: Any = None
     # The encryption setting for the SAML provider
     assertion_encryption_mode: Any = None
-    # The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
     name: Any = None
     private_key_list: Any = None
     # The Key ID of the private key to remove
     remove_private_key: Any = None
-    # The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred)
     saml_metadata_document: Any = None
-    # A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -52,16 +47,13 @@ class SamlproviderAttrs:
     arn: Any = None
     # The encryption setting for the SAML provider
     assertion_encryption_mode: Any = None
-    # The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
     name: Any = None
     private_key_list: Any = None
     # The Key ID of the private key to remove
     remove_private_key: Any = None
-    # The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred)
     saml_metadata_document: Any = None
     # The unique identifier assigned to the SAML provider
     saml_provider_uuid: Any = None
-    # A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred)
     tags: Any = None
 
 Samlprovider = ubx.ResourceBinding(

@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class AgentCoreRuntimeEndpointConfig:
     # The ID of the parent Agent Runtime
     agent_runtime_id: Any = None
-    # The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
     agent_runtime_version: Any = None
     description: Any = None
     name: Any = None
@@ -19,12 +18,10 @@ class AgentCoreRuntimeEndpointConfig:
 
 @dataclasses.dataclass
 class AgentCoreRuntimeEndpointAttrs:
-    # The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred)
     agent_runtime_arn: Any = None
     agent_runtime_endpoint_arn: Any = None
     # The ID of the parent Agent Runtime
     agent_runtime_id: Any = None
-    # The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
     agent_runtime_version: Any = None
     created_at: Any = None
     description: Any = None

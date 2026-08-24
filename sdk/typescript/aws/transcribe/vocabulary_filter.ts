@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VocabularyFilter_Tags {
-  /** The key name for a tag assigned to this Amazon Transcribe vocabulary filter, allowing you to categorize and manage the resource by purpose, owner, or environment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the Amazon Transcribe vocabulary filter for organizing and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnomalySubscription_ResourceTags {
-  /** The key of a resource tag attached to the AWS Cost Explorer anomaly subscription, used to identify or categorize the subscription within a key-value pair. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a key-value tag applied to the AWS Cost Explorer anomaly subscription, used for organizing, filtering, and controlling access to the subscription resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface AnomalySubscription_Subscribers {
-  /** The email address or Amazon SNS topic ARN that receives notifications for this anomaly subscription. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The subscription status of the subscriber, indicating whether the subscriber has confirmed or declined the anomaly alert subscription. (AI-inferred) */
   status?: string | Computed<string>;
-  /** Specifies the type of AWS Cost Explorer anomaly subscription subscriber, either EMAIL or SNS_TOPIC. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveCluster_NetworkSettings_InterfaceMappings:
-    # Specifies the logical name you assign to a physical network interface in a MediaLive cluster's interface mapping, which is used to reference that interface within the cluster's network configuration. (AI-inferred)
     logical_interface_name: Any = None
-    # In an AWS::MediaLive::Cluster's network settings, the network_id field of each interface mapping specifies the network identifier (such as a VPC or subnet ID) that the associated IP addresses belong to. (AI-inferred)
     network_id: Any = None
 
 @dataclasses.dataclass
@@ -22,7 +20,6 @@ class LiveCluster_NetworkSettings:
 
 @dataclasses.dataclass
 class LiveCluster_Tags:
-    # The key of a user-defined tag attached to the AWS MediaLive cluster, used to add custom metadata for identifying, organizing, or managing the cluster in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

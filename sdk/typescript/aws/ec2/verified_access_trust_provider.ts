@@ -53,7 +53,6 @@ export interface VerifiedAccessTrustProvider_SseSpecification {
 
 export interface VerifiedAccessTrustProvider_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Verified Access trust provider, used to organize, identify, and manage the resource through AWS tagging. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

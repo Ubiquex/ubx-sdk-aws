@@ -16,13 +16,10 @@ type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2
 }
 
 type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_AtlassianOauth2ProviderConfig struct {
-	// This is the client identifier assigned by Atlassian to the OAuth2 application, used by the Bedrock agent to initiate the OAuth2 authorization flow. (AI-inferred)
 	ClientId any
-	// The client secret for the Atlassian OAuth2 application, used to authenticate the Bedrock agent's credential provider with Atlassian services such as Jira or Confluence. (AI-inferred)
 	ClientSecret any
 	// A reference to a customer-provided secret stored in AWS Secrets Manager
 	ClientSecretConfig any
-	// Specifies the source of the Atlassian OAuth2 client secret, typically an AWS Secrets Manager secret ARN, which the Bedrock agent uses to retrieve the client secret for the OAuth2 provider configuration. (AI-inferred)
 	ClientSecretSource any
 }
 
@@ -86,7 +83,6 @@ type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2Pro
 }
 
 type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2ProviderConfig_PrivateEndpointOverrides struct {
-	// The domain name that overrides the default endpoint for the custom OAuth2 provider when using a private endpoint, typically pointing to an internal VPC hostname. (AI-inferred)
 	Domain any
 	PrivateEndpoint any
 }
@@ -138,9 +134,7 @@ type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_CustomOauth2Pro
 type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_IncludedOauth2ProviderConfig struct {
 	// OAuth2 authorization endpoint for your isolated OAuth2 application tenant
 	AuthorizationEndpoint any
-	// The client identifier (client_id) issued by the OAuth2 authorization server to identify the Bedrock agent application when it requests access tokens. (AI-inferred)
 	ClientId any
-	// The OAuth2 client secret that the agent uses to authenticate with the external application's authorization server. (AI-inferred)
 	ClientSecret any
 	// A reference to a customer-provided secret stored in AWS Secrets Manager
 	ClientSecretConfig any
@@ -152,13 +146,10 @@ type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_IncludedOauth2P
 }
 
 type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput_MicrosoftOauth2ProviderConfig struct {
-	// The client_id specifies the application (client) ID of the Microsoft Entra ID (Azure AD) app registration used by this OAuth2 credential provider to request tokens. (AI-inferred)
 	ClientId any
-	// The client secret for the Microsoft OAuth 2.0 application used to authenticate the Bedrock agent when requesting access tokens for Microsoft services. (AI-inferred)
 	ClientSecret any
 	// A reference to a customer-provided secret stored in AWS Secrets Manager
 	ClientSecretConfig any
-	// Specifies the source of the Microsoft OAuth2 client secret, such as indicating that the secret is referenced from AWS Secrets Manager rather than provided directly in the configuration. (AI-inferred)
 	ClientSecretSource any
 	// The Microsoft Entra ID tenant ID
 	TenantId any
@@ -188,7 +179,6 @@ type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigInput struct {
 type AgentCoreOauth2CredentialProvider_Oauth2ProviderConfigOutput struct {
 	// The client authentication method used when authenticating with the token endpoint
 	ClientAuthenticationMethod any
-	// The client identifier (client ID) that the Bedrock agent core uses when authenticating to the OAuth2 authorization server, returned as part of the provider's output configuration. (AI-inferred)
 	ClientId any
 	// Discovery information for an OAuth2 provider
 	OauthDiscovery any

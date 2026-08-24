@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterfacePermissionConfig {
-  /** The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred) */
   awsAccountId: string | Computed<string>;
-  /** The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred) */
   networkInterfaceId: string | Computed<string>;
-  /** The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred) */
   permission: string | Computed<string>;
 }
 
 export interface InterfacePermissionAttrs {
-  /** The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred) */
   awsAccountId: string;
-  /** The unique identifier assigned by AWS to this network interface permission, used to reference the permission in other API calls. (AI-inferred) */
   id: string;
-  /** The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred) */
   networkInterfaceId: string;
-  /** The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred) */
   permission: string;
 }
 

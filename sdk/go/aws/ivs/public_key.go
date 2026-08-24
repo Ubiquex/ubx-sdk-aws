@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PublicKey_Tags struct {
 	Key any
-	// The value associated with a tag key attached to the AWS IVS public key, used for organizing or identifying the resource. (AI-inferred)
 	Value any
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegexPatternSet_Tags {
-  /** The tag key, a string that identifies the tag assigned to this WAFv2 regex pattern set, used for resource organization, categorization, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag key-value pair attached to the AWS WAFv2 Regex Pattern Set, used to store arbitrary metadata for resource identification and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -18,11 +16,9 @@ export interface RegexPatternSetConfig {
   description?: string | Computed<string>;
   /** Name of the RegexPatternSet. */
   name?: string | Computed<string>;
-  /** The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred) */
   regularExpressionList: string[] | Computed<string[]>;
   /** Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string | Computed<string>;
-  /** A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred) */
   tags?: RegexPatternSet_Tags[] | Computed<RegexPatternSet_Tags[]>;
 }
 
@@ -35,11 +31,9 @@ export interface RegexPatternSetAttrs {
   id: string;
   /** Name of the RegexPatternSet. */
   name: string;
-  /** The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred) */
   regularExpressionList: string[];
   /** Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string;
-  /** A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred) */
   tags: RegexPatternSet_Tags[];
 }
 

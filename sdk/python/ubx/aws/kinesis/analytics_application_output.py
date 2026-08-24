@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsApplicationOutput_Output_DestinationSchema:
-    # Specifies whether the output records are formatted as 'JSON' or 'CSV' when written to the configured destination stream or delivery stream. (AI-inferred)
     record_format_type: Any = None
 
 @dataclasses.dataclass
 class AnalyticsApplicationOutput_Output_KinesisFirehoseOutput:
-    # The ARN of the Kinesis Data Firehose delivery stream to which the application output is written. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the IAM role that the Kinesis Analytics application assumes to write records to the Kinesis Firehose delivery stream. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class AnalyticsApplicationOutput_Output:
-    # Specifies the record format (CSV or JSON) used by the Kinesis Analytics application to write output to the destination stream or Firehose. (AI-inferred)
     destination_schema: Any = None
-    # Configures the Kinesis Firehose delivery stream to which the application output is sent, specifying the delivery stream's ARN and an IAM role ARN that grants Amazon Kinesis Analytics permission to write to it. (AI-inferred)
     kinesis_firehose_output: Any = None
-    # Configuration for delivering the application's output to an Amazon Kinesis stream, specifying the destination stream's ARN and the IAM role ARN that grants the application write access to it. (AI-inferred)
     kinesis_streams_output: Any = None
-    # Configures the AWS Lambda function as a destination for the application's output, specifying the function's resource ARN and the IAM role ARN that the application assumes to invoke it. (AI-inferred)
     lambda_output: Any = None
-    # The name of the application output, which serves as a unique identifier for the output within the Kinesis Analytics application. (AI-inferred)
     name: Any = None
 
 _AnalyticsApplicationOutput_Output_DestinationSchemaFields = {
@@ -66,18 +58,13 @@ _AnalyticsApplicationOutput_OutputFields = {
 
 @dataclasses.dataclass
 class AnalyticsApplicationOutputConfig:
-    # The name of the Kinesis Analytics application to which this output is attached. (AI-inferred)
     application_name: Any = None
-    # Defines the output destination and schema for a Kinesis Analytics application, specifying the output name, target (Kinesis stream, Firehose, or Lambda), and the data format. (AI-inferred)
     output: Any = None
 
 @dataclasses.dataclass
 class AnalyticsApplicationOutputAttrs:
-    # The name of the Kinesis Analytics application to which this output is attached. (AI-inferred)
     application_name: Any = None
-    # The unique read-only identifier assigned by AWS to this Kinesis Analytics application output, used by Terraform to track the resource. (AI-inferred)
     id: Any = None
-    # Defines the output destination and schema for a Kinesis Analytics application, specifying the output name, target (Kinesis stream, Firehose, or Lambda), and the data format. (AI-inferred)
     output: Any = None
 
 AnalyticsApplicationOutput = ubx.ResourceBinding(

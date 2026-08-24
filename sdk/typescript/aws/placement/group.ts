@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Group_Tags {
-  /** The key (name) of a user-defined tag applied to the placement group, used to categorize and identify the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

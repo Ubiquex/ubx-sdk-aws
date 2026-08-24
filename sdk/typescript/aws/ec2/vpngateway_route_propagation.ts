@@ -9,7 +9,6 @@ export interface VpngatewayRoutePropagationConfig {
 }
 
 export interface VpngatewayRoutePropagationAttrs {
-  /** The unique identifier for this VPN gateway route propagation resource, formed by joining the route table ID and the VPN gateway ID with a colon (e.g., rtb-12345678:vgw-12345678). (AI-inferred) */
   id: string;
   /** The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to */
   routeTableIds: string[];

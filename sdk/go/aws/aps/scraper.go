@@ -48,14 +48,12 @@ type Scraper_ScraperLoggingConfiguration_ScraperComponents_Config struct {
 
 type Scraper_ScraperLoggingConfiguration_ScraperComponents struct {
 	Config any
-	// The type of scraper component (APISERVER, SCRAPER, or TARGET) for which logging is enabled in the scraper logging configuration. (AI-inferred)
 	Type any
 }
 
 type Scraper_ScraperLoggingConfiguration struct {
 	// Destination for scraper logging
 	LoggingDestination any
-	// Specifies the list of scraper components (such as target allocation or scrape loop) for which logs are enabled and forwarded to the configured log destination for the Amazon Managed Prometheus scraper. (AI-inferred)
 	ScraperComponents any
 }
 
@@ -84,7 +82,6 @@ type Scraper_Source struct {
 
 type Scraper_Tags struct {
 	Key any
-	// The value portion of a key-value tag that can be assigned to an Amazon Managed Service for Prometheus scraper for organizational and identification purposes. (AI-inferred)
 	Value any
 }
 

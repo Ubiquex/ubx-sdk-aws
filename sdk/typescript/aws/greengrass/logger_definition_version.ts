@@ -2,15 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LoggerDefinitionVersion_Loggers {
-  /** Specifies the component that writes the logs captured by this logger, typically the literal value `GreengrassSystem` for system components or the ARN of a Lambda function for lambda components. (AI-inferred) */
   component?: string | Computed<string>;
-  /** The unique identifier used to reference this logger component within the logger definition version. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The log level for this Greengrass logger, determining the minimum severity (e.g., DEBUG, INFO, WARN, ERROR, FATAL) of log messages that will be recorded. (AI-inferred) */
   level?: string | Computed<string>;
-  /** The maximum amount of file space (in kilobytes) that the logger can use for storing log files, applicable to file-system based loggers in a Greengrass logger definition. (AI-inferred) */
   space?: number | Computed<number>;
-  /** The logger destination type: AWSCloudWatch for logs published to Amazon CloudWatch Logs, or FileSystem for logs written to the local file system. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -23,18 +18,13 @@ const LoggerDefinitionVersion_LoggersFields: FieldMap = {
 };
 
 export interface LoggerDefinitionVersionConfig {
-  /** The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred) */
   loggerDefinitionId: string | Computed<string>;
-  /** Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred) */
   loggers: LoggerDefinitionVersion_Loggers[] | Computed<LoggerDefinitionVersion_Loggers[]>;
 }
 
 export interface LoggerDefinitionVersionAttrs {
-  /** The id is the unique ARN assigned by AWS to this Greengrass logger definition version, used to reference the version in other resources and API calls. (AI-inferred) */
   id: string;
-  /** The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred) */
   loggerDefinitionId: string;
-  /** Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred) */
   loggers: LoggerDefinitionVersion_Loggers[];
 }
 

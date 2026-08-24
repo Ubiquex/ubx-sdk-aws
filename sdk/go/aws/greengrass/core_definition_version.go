@@ -4,13 +4,9 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreDefinitionVersion_Cores struct {
-	// The Amazon Resource Name (ARN) of the AWS IoT certificate that identifies the Greengrass core device when it connects to AWS IoT. (AI-inferred)
 	CertificateArn any
-	// The logical ID assigned to this core within the Greengrass core definition version, used to uniquely identify the core among the list of cores. (AI-inferred)
 	Id any
-	// Indicates whether the Greengrass core device's shadow is synchronized with the cloud. (AI-inferred)
 	SyncShadow any
-	// The ARN of the AWS IoT Thing that acts as the Greengrass core device in this core definition version. (AI-inferred)
 	ThingArn any
 }
 
@@ -22,18 +18,13 @@ var CoreDefinitionVersion_CoresFields = ubx.FieldMap{
 	}
 
 type CoreDefinitionVersionConfig struct {
-	// The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred)
 	CoreDefinitionId any
-	// The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred)
 	Cores any
 }
 
 type CoreDefinitionVersionAttrs struct {
-	// The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred)
 	CoreDefinitionId any
-	// The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred)
 	Cores any
-	// The unique AWS-assigned version ID (typically a UUID) for the Greengrass core definition version, returned after creation. (AI-inferred)
 	Id any
 }
 

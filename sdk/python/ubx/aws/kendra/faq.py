@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Faq_S3Path:
-    # The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred)
     bucket: Any = None
-    # The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class Faq_Tags:
-    # The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _Faq_S3PathFields = {
@@ -40,18 +36,14 @@ class FaqConfig:
     index_id: Any = None
     # The code for a language.
     language_code: Any = None
-    # The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
     role_arn: Any = None
-    # The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
     s3_path: Any = None
     # List of tags
     tags: Any = None
 
 @dataclasses.dataclass
 class FaqAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred)
     arn: Any = None
     # Description of the FAQ
     description: Any = None
@@ -63,11 +55,8 @@ class FaqAttrs:
     index_id: Any = None
     # The code for a language.
     language_code: Any = None
-    # The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
     role_arn: Any = None
-    # The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
     s3_path: Any = None
     # List of tags
     tags: Any = None

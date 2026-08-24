@@ -8,46 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BrewRuleset_Rules_ColumnSelectors:
-    # The name of the specific column that this column selector targets for the DataBrew rule. (AI-inferred)
     name: Any = None
-    # A regular expression pattern used to match column names for the selector, so the rule applies to all columns whose names match this pattern. (AI-inferred)
     regex: Any = None
 
 @dataclasses.dataclass
 class BrewRuleset_Rules_SubstitutionMap:
-    # The value to substitute for the associated variable key when evaluating the rule's check expression, replacing references to that variable with this string. (AI-inferred)
     value: Any = None
-    # In an AWS DataBrew Ruleset, this is the substitution variable reference (e.g., `${column_name}`) that appears in a rule's check expression and is replaced with the actual value from the `Value` property of this substitution map entry. (AI-inferred)
     value_reference: Any = None
 
 @dataclasses.dataclass
 class BrewRuleset_Rules_Threshold:
-    # The comparison operator (e.g., GREATER_THAN, LESS_THAN, EQUAL) used to evaluate the threshold value against the metric calculated for a rule in an AWS Glue DataBrew ruleset. (AI-inferred)
     type: Any = None
-    # Defines the unit of measurement (COUNT or PERCENTAGE) for the threshold value used in evaluating a rule's condition within the DataBrew ruleset. (AI-inferred)
     unit: Any = None
-    # The numeric value used as the threshold to compare against the rule's check expression result. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BrewRuleset_Rules:
-    # Defines the data quality check expression, a condition that DataBrew evaluates per row to flag records that violate the rule. (AI-inferred)
     check_expression: Any = None
-    # Specifies the column selectors for a rule, defining which columns (by exact name or regex pattern) the rule evaluates in an AWS Glue DataBrew ruleset. (AI-inferred)
     column_selectors: Any = None
-    # A boolean flag that indicates whether this rule is disabled and thus not evaluated when the DataBrew ruleset is applied. (AI-inferred)
     disabled: Any = None
-    # The name of an individual rule within the DataBrew ruleset, used to uniquely identify and reference that rule in the ruleset definition. (AI-inferred)
     name: Any = None
-    # Maps placeholder variable names to column references or dataset parameters that are substituted into the rule's check expression when the ruleset is evaluated. (AI-inferred)
     substitution_map: Any = None
-    # Defines the threshold condition for the rule's check result, specifying a comparison type (such as GREATER_THAN or LESS_THAN) and a numeric value that determines whether the rule passes. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass
 class BrewRuleset_Tags:
     key: Any = None
-    # The value for a tag key on the AWS Glue DataBrew ruleset, used to assign metadata such as environment or cost center to the resource for management and cost tracking. (AI-inferred)
     value: Any = None
 
 _BrewRuleset_Rules_ColumnSelectorsFields = {

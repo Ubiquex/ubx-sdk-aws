@@ -52,70 +52,48 @@ class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_M
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_Csv:
-    # Indicates whether the CSV file used as the batch transform input for the monitoring job contains a header row, which affects how the monitoring job interprets the dataset columns. (AI-inferred)
     header: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat_Json:
-    # Indicates whether the JSON dataset is formatted as JSON Lines (one JSON object per line) rather than a single monolithic JSON object. (AI-inferred)
     line: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput_DatasetFormat:
-    # This object configures the CSV format for the batch transform input, including whether the first line of the dataset is treated as a header. (AI-inferred)
     csv: Any = None
-    # Specifies the JSON format configuration for the batch transform input dataset, including a boolean 'Line' property that indicates whether each line in the file contains a single JSON object (JSON Lines format). (AI-inferred)
     json: Any = None
-    # If set to true, this flag specifies that the monitoring job's batch transform input data is formatted as Apache Parquet. (AI-inferred)
     parquet: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_BatchTransformInput:
-    # The S3 URI of the destination bucket where data captured from the batch transform job is stored, used as the input source for the monitoring job. (AI-inferred)
     data_captured_destination_s3_uri: Any = None
-    # Specifies the format of the input dataset (e.g., CSV, JSON) for the batch transform input to be monitored, enabling the monitoring job to correctly parse the data. (AI-inferred)
     dataset_format: Any = None
-    # Specifies the name of an attribute in the batch transform input dataset that contains a comma-separated list of feature names to be excluded from SageMaker monitoring analysis. (AI-inferred)
     exclude_features_attribute: Any = None
-    # Specifies the local path in the processing container where the batch transform output files are mounted or written, which the monitoring job reads as its input. (AI-inferred)
     local_path: Any = None
-    # Specifies how the monitoring batch transform job distributes input data from S3 across instances, either 'FullyReplicated' (each instance receives a full copy) or 'ShardedByS3Key' (data is sharded across instances). (AI-inferred)
     s3_data_distribution_type: Any = None
-    # Determines how the SageMaker monitoring job reads the S3 input data for batch transform, accepting either 'File' mode (data downloaded to the instance) or 'Pipe' mode (data streamed as a FIFO pipe). (AI-inferred)
     s3_input_mode: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs_EndpointInput:
-    # The name of the SageMaker endpoint whose data is to be monitored by this monitoring job. (AI-inferred)
     endpoint_name: Any = None
-    # Specifies a JSONPath expression that identifies the features (attributes) in the endpoint input to exclude from monitoring. (AI-inferred)
     exclude_features_attribute: Any = None
-    # The local path in the monitoring container where the endpoint input data is stored or mounted for the monitoring job to access. (AI-inferred)
     local_path: Any = None
-    # Controls how the captured endpoint data is distributed across the monitoring compute instances, either as 'FullyReplicated' (each instance receives a full copy of all data) or 'ShardedByS3Key' (data is partitioned by S3 key across instances). (AI-inferred)
     s3_data_distribution_type: Any = None
-    # Specifies whether the data from the endpoint input is delivered to the monitoring job in File mode (downloaded to local disk) or Pipe mode (streamed directly), controlling how the monitoring job accesses the input data. (AI-inferred)
     s3_input_mode: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringInputs:
-    # Specifies the batch transform input for a SageMaker monitoring job, including the S3 data source and configuration such as the data capture destination and the time after inference when data becomes available. (AI-inferred)
     batch_transform_input: Any = None
-    # Configures the SageMaker endpoint that the monitoring job watches, including the endpoint's name and the local path in the container where the captured data is stored. (AI-inferred)
     endpoint_input: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputs_S3Output:
-    # Sets the local path inside the monitoring job's container where the output is written before being uploaded to the Amazon S3 location defined in the S3Output. (AI-inferred)
     local_path: Any = None
-    # Determines whether the monitoring output is uploaded to the specified S3 location continuously as the job runs or only once at the end of the monitoring job. (AI-inferred)
     s3_upload_mode: Any = None
-    # The S3 URI (bucket and optional prefix) where SageMaker stores the output artifacts of the monitoring job, such as statistics and constraints JSON files. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerMonitoringSchedule_MonitoringScheduleConfig_MonitoringJobDefinition_MonitoringOutputConfig_MonitoringOutputs:
-    # Defines the S3 location and upload mode used to store the results of the monitoring job's output, including the S3 URI, local path, and whether outputs are uploaded continuously or at the end of the job. (AI-inferred)
     s3_output: Any = None
 
 @dataclasses.dataclass
@@ -206,7 +184,6 @@ class MakerMonitoringSchedule_MonitoringScheduleConfig:
 @dataclasses.dataclass
 class MakerMonitoringSchedule_Tags:
     key: Any = None
-    # The value part of a user-defined tag attached to the SageMaker monitoring schedule, used to organize and manage the resource for cost tracking and IAM policies. (AI-inferred)
     value: Any = None
 
 _MakerMonitoringSchedule_LastMonitoringExecutionSummaryFields = {

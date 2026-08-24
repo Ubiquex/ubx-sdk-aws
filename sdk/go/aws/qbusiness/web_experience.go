@@ -4,42 +4,31 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebExperience_BrowserExtensionConfiguration struct {
-	// Specifies the browsers (such as Chrome, Firefox, and Edge) for which the AWS Q Business browser extension is enabled in the web experience. (AI-inferred)
 	EnabledBrowserExtensions any
 }
 
 type WebExperience_CustomizationConfiguration struct {
-	// The URL of a custom CSS file that overrides the default styling of the QBusiness web experience to match your organization's branding. (AI-inferred)
 	CustomCssurl any
-	// Specifies the URL of a custom favicon that replaces the default QBusiness icon for the web experience. (AI-inferred)
 	FaviconUrl any
-	// Defines the URL of a custom font that replaces the default font for the Amazon Q Business web experience. (AI-inferred)
 	FontUrl any
-	// The URL of a custom logo image that Amazon Q Business displays on the web experience's chat interface. (AI-inferred)
 	LogoUrl any
 }
 
 type WebExperience_IdentityProviderConfiguration_OpenIdconnectConfiguration struct {
-	// The ARN of an AWS Secrets Manager secret that stores the client secret for the OpenID Connect configuration, which the web experience uses to authenticate with the OIDC identity provider. (AI-inferred)
 	SecretsArn any
-	// The ARN of an IAM role that Amazon Q Business assumes to retrieve the OIDC client secret from AWS Secrets Manager for authenticating users to the web experience. (AI-inferred)
 	SecretsRole any
 }
 
 type WebExperience_IdentityProviderConfiguration_SamlConfiguration struct {
-	// The URL of the identity provider's authentication endpoint to which users are redirected for SAML single sign-on. (AI-inferred)
 	AuthenticationUrl any
 }
 
 type WebExperience_IdentityProviderConfiguration struct {
-	// Specifies the OpenID Connect (OIDC) configuration for users to authenticate to the web experience, referencing the AWS Secrets Manager secret that stores OIDC client credentials and the IAM role used to retrieve them. (AI-inferred)
 	OpenIdconnectConfiguration any
-	// Configures SAML-based single sign-on for the web experience by specifying the IdP metadata document, the IAM role ARN, and optional user/group attribute mappings for authentication. (AI-inferred)
 	SamlConfiguration any
 }
 
 type WebExperience_Tags struct {
-	// Defines the tag key for a key-value pair assigned to an AWS Q Business web experience, enabling resource categorization, cost management, and access control through AWS tagging. (AI-inferred)
 	Key any
 	Value any
 }
@@ -83,64 +72,36 @@ var WebExperience_TagsFields = ubx.FieldMap{
 	}
 
 type WebExperienceConfig struct {
-	// The unique identifier of the AWS QBusiness application to which this web experience is attached. (AI-inferred)
 	ApplicationId any
-	// Configures the browser extension for the web experience, including whether the extension is enabled and the extension name used to access the QBusiness assistant from a supported browser. (AI-inferred)
 	BrowserExtensionConfiguration any
-	// Specifies the custom CSS and JavaScript URLs used to customize the appearance and behavior of the AWS Q Business web experience. (AI-inferred)
 	CustomizationConfiguration any
-	// Defines the identity provider configuration for the web experience, allowing you to specify either SAML or OIDC settings for user authentication. (AI-inferred)
 	IdentityProviderConfiguration any
-	// A list of allowed origin URLs (e.g., 'https://example.com') that can embed or access this Amazon Q Business web experience, enabling secure integration with your own web applications while controlling cross-origin access. (AI-inferred)
 	Origins any
-	// The Amazon Resource Name (ARN) of the IAM role that the web experience assumes to access AWS services and resources. (AI-inferred)
 	RoleArn any
-	// Determines whether sample prompts are shown to users in the AWS Q Business web experience, with allowed values ENABLED or DISABLED. (AI-inferred)
 	SamplePromptsControlMode any
-	// The subtitle for the AWS QBusiness web experience, typically displayed under the title in the chat interface. (AI-inferred)
 	Subtitle any
-	// A list of tag objects (each with a key and value) that are attached to the Amazon Q Business web experience for resource identification, cost allocation, and access management. (AI-inferred)
 	Tags any
-	// The title of the web experience, which is displayed to users in the browser tab and as the heading of the web experience interface. (AI-inferred)
 	Title any
-	// The custom message that Amazon Q Business displays to users when they first open the web experience chat interface. (AI-inferred)
 	WelcomeMessage any
 }
 
 type WebExperienceAttrs struct {
-	// The unique identifier of the AWS QBusiness application to which this web experience is attached. (AI-inferred)
 	ApplicationId any
-	// Configures the browser extension for the web experience, including whether the extension is enabled and the extension name used to access the QBusiness assistant from a supported browser. (AI-inferred)
 	BrowserExtensionConfiguration any
-	// The timestamp (in ISO 8601 format) indicating when the Amazon Q Business web experience was created. (AI-inferred)
 	CreatedAt any
-	// Specifies the custom CSS and JavaScript URLs used to customize the appearance and behavior of the AWS Q Business web experience. (AI-inferred)
 	CustomizationConfiguration any
-	// The default endpoint URL of the web experience, automatically assigned by AWS QBusiness when the web experience is created. (AI-inferred)
 	DefaultEndpoint any
-	// Defines the identity provider configuration for the web experience, allowing you to specify either SAML or OIDC settings for user authentication. (AI-inferred)
 	IdentityProviderConfiguration any
-	// A list of allowed origin URLs (e.g., 'https://example.com') that can embed or access this Amazon Q Business web experience, enabling secure integration with your own web applications while controlling cross-origin access. (AI-inferred)
 	Origins any
-	// The Amazon Resource Name (ARN) of the IAM role that the web experience assumes to access AWS services and resources. (AI-inferred)
 	RoleArn any
-	// Determines whether sample prompts are shown to users in the AWS Q Business web experience, with allowed values ENABLED or DISABLED. (AI-inferred)
 	SamplePromptsControlMode any
-	// The current lifecycle status of the web experience, such as CREATING, ACTIVE, or DELETING, as assigned by the QBusiness service. (AI-inferred)
 	Status any
-	// The subtitle for the AWS QBusiness web experience, typically displayed under the title in the chat interface. (AI-inferred)
 	Subtitle any
-	// A list of tag objects (each with a key and value) that are attached to the Amazon Q Business web experience for resource identification, cost allocation, and access management. (AI-inferred)
 	Tags any
-	// The title of the web experience, which is displayed to users in the browser tab and as the heading of the web experience interface. (AI-inferred)
 	Title any
-	// The read-only timestamp indicating when the web experience was last updated. (AI-inferred)
 	UpdatedAt any
-	// The Amazon Resource Name (ARN) that uniquely identifies this QBusiness web experience. (AI-inferred)
 	WebExperienceArn any
-	// The unique identifier assigned by AWS to this Amazon Q Business web experience, used to reference it in API calls and other resources. (AI-inferred)
 	WebExperienceId any
-	// The custom message that Amazon Q Business displays to users when they first open the web experience chat interface. (AI-inferred)
 	WelcomeMessage any
 }
 

@@ -28,7 +28,6 @@ type SyncLocationSmb_MountOptions struct {
 }
 
 type SyncLocationSmb_Tags struct {
-	// The key of a tag to assign to the DataSync SMB location, used to categorize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

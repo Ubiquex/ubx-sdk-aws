@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociations:
-    # The ARN of the CloudFront key value store to associate with the function, granting the function read access to that store's data during invocation at the edge. (AI-inferred)
     key_value_store_arn: Any = None
 
 @dataclasses.dataclass
@@ -66,12 +65,9 @@ class FrontConnectionFunctionAttrs:
     connection_function_code: Any = None
     # Contains configuration information about a CloudFront function.
     connection_function_config: Any = None
-    # The date and time when the CloudFront function was created, as reported by AWS. (AI-inferred)
     created_time: Any = None
-    # Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred)
     etag: Any = None
     id: Any = None
-    # The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred)
     last_modified_time: Any = None
     # The connection function name.
     name: Any = None

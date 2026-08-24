@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Session_Tags:
-    # The key of a tag attached to the AWS Bedrock session, used to assign metadata for organizing, filtering, and managing the session. (AI-inferred)
     key: Any = None
     value: Any = None
 

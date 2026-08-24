@@ -27,12 +27,10 @@ class TMitigationAction_ActionParams_PublishFindingToSnsParams:
 
 @dataclasses.dataclass
 class TMitigationAction_ActionParams_ReplaceDefaultPolicyVersionParams:
-    # The template_name specifies the name of the AWS IoT policy template that is used to generate the new policy version, which then replaces the existing default policy version for the target principal. (AI-inferred)
     template_name: Any = None
 
 @dataclasses.dataclass
 class TMitigationAction_ActionParams_UpdateCacertificateParams:
-    # Specifies whether to activate or deactivate the CA certificate, with allowed values 'ACTIVATE' and 'DEACTIVATE'. (AI-inferred)
     action: Any = None
 
 @dataclasses.dataclass
@@ -52,9 +50,7 @@ class TMitigationAction_ActionParams:
 
 @dataclasses.dataclass
 class TMitigationAction_Tags:
-    # The key of a tag that you can attach to an AWS IoT mitigation action, used to categorize and identify the action by metadata such as environment or purpose. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AWS IoT mitigation action, used for metadata such as owner, purpose, or environment. (AI-inferred)
     value: Any = None
 
 _TMitigationAction_ActionParams_AddThingsToThingGroupParamsFields = {
@@ -123,7 +119,6 @@ class TMitigationActionConfig:
     action_name: Any = None
     # The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
     action_params: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred)
     role_arn: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -134,11 +129,8 @@ class TMitigationActionAttrs:
     action_name: Any = None
     # The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
     action_params: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the AWS IoT mitigation action, assigned by AWS upon creation. (AI-inferred)
     mitigation_action_arn: Any = None
-    # The unique identifier assigned by AWS IoT to the mitigation action. (AI-inferred)
     mitigation_action_id: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred)
     role_arn: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

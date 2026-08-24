@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags {
-  /** A user-defined key for a tag on this AWS Local Gateway Route Table Virtual Interface Group Association, used to categorize, organize, or filter the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key attached to the Local Gateway Route Table Virtual Interface Group Association, used for identifying and organizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

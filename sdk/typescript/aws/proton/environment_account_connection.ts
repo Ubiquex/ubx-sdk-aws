@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EnvironmentAccountConnection_Tags {
-  /** Identifies a tag key assigned to the AWS Proton environment account connection resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the Proton environment account connection, used for categorizing and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -47,7 +45,6 @@ export interface EnvironmentAccountConnectionAttrs {
   managementAccountId: string;
   /** The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. AWS Proton uses this role to provision infrastructure resources in the associated environment account. */
   roleArn: string;
-  /** The current lifecycle status of the environment account connection, which can be PENDING, CONNECTED, or REJECTED. (AI-inferred) */
   status: string;
   /** <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p> */
   tags: EnvironmentAccountConnection_Tags[];

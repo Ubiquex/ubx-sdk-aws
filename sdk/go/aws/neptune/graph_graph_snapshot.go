@@ -4,9 +4,7 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GraphGraphSnapshot_Tags struct {
-	// The key of a tag (a key-value pair) attached to the Neptune Graph snapshot, used for identifying, organizing, or managing the resource. (AI-inferred)
 	Key any
-	// The value string paired with a tag key in the tags list for the Neptune graph snapshot, used for resource organization and cost tracking. (AI-inferred)
 	Value any
 }
 

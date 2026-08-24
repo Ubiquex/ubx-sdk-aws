@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogPortfolio_Tags:
-    # The key of a tag attached to the AWS Service Catalog portfolio, used to organize and identify the portfolio for cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value (a string) of a key-value tag that can be assigned to the AWS Service Catalog portfolio for organizational purposes. (AI-inferred)
     value: Any = None
 
 _CatalogPortfolio_TagsFields = {
@@ -20,29 +18,19 @@ _CatalogPortfolio_TagsFields = {
 
 @dataclasses.dataclass
 class CatalogPortfolioConfig:
-    # Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred)
     accept_language: Any = None
-    # A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred)
     description: Any = None
-    # The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred)
     display_name: Any = None
-    # The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
     provider_name: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class CatalogPortfolioAttrs:
-    # Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred)
     accept_language: Any = None
-    # A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred)
     description: Any = None
-    # The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred)
     display_name: Any = None
-    # The unique Service Catalog portfolio identifier (e.g., 'port-xxxxxx') assigned by AWS when the portfolio is created, used to reference the portfolio in other resources and API calls. (AI-inferred)
     id: Any = None
-    # The name of the AWS Service Catalog portfolio, automatically populated from the portfolio's DisplayName attribute when read from AWS. (AI-inferred)
     portfolio_name: Any = None
-    # The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
     provider_name: Any = None
     tags: Any = None
 

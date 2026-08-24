@@ -4,9 +4,7 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityProviderConfig_Oidc_RequiredClaims struct {
-	// Specifies the name of an OIDC claim that must be present in the token issued by the identity provider for authentication to be considered valid. (AI-inferred)
 	Key any
-	// The expected value for a required claim in the OIDC identity provider's token, where the map key is the claim name and this value must match the claim's value in the token for authentication to succeed. (AI-inferred)
 	Value any
 }
 
@@ -19,7 +17,6 @@ type IdentityProviderConfig_Oidc struct {
 	GroupsPrefix any
 	// The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens.
 	IssuerUrl any
-	// Specifies the list of required claims (each a key-value pair) that must be present in the OIDC identity token with matching values for authentication to succeed. (AI-inferred)
 	RequiredClaims any
 	// The JSON Web Token (JWT) claim to use as the username. The default is sub, which is expected to be a unique identifier of the end user. You can choose other claims, such as email or name, depending on the OpenID identity provider. Claims other than email are prefixed with the issuer URL to prevent naming clashes with other plug-ins.
 	UsernameClaim any

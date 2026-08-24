@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Keyspace_ReplicationSpecification {
-  /** A list of AWS regions where the keyspace is replicated for Multi-Region Replication, enabling data availability across those regions. (AI-inferred) */
   regionList?: string[] | Computed<string[]>;
-  /** Specifies the replication strategy for the keyspace, either SINGLE_REGION for single-region replication or MULTI_REGION for replicating data across multiple AWS regions. (AI-inferred) */
   replicationStrategy?: string | Computed<string>;
 }
 
@@ -28,9 +26,7 @@ export interface KeyspaceConfig {
   clientSideTimestampsEnabled?: boolean | Computed<boolean>;
   /** Name for Cassandra keyspace */
   keyspaceName?: string | Computed<string>;
-  /** Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred) */
   replicationSpecification?: Keyspace_ReplicationSpecification | Computed<Keyspace_ReplicationSpecification>;
-  /** Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred) */
   tags?: Keyspace_Tags[] | Computed<Keyspace_Tags[]>;
 }
 
@@ -39,9 +35,7 @@ export interface KeyspaceAttrs {
   clientSideTimestampsEnabled: boolean;
   /** Name for Cassandra keyspace */
   keyspaceName: string;
-  /** Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred) */
   replicationSpecification: Keyspace_ReplicationSpecification;
-  /** Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred) */
   tags: Keyspace_Tags[];
 }
 

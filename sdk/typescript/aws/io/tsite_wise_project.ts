@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TsiteWiseProject_Tags {
-  /** Specifies the key of a tag, a user-defined label used to identify, organize, and manage AWS IoT SiteWise projects in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag key-value pair applied to the AWS IoT SiteWise project, used for resource organization, cost allocation, and IAM access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

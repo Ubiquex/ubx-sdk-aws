@@ -4,44 +4,29 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Selection_BackupSelection_Conditions_StringEquals struct {
-	// Specifies the tag key that must match for resources to be included in the backup selection when using a StringEquals condition. (AI-inferred)
 	ConditionKey any
-	// The value that must exactly match the specified condition key (for example, a resource tag's value) for a resource to satisfy this string-equals condition and be included in the backup selection. (AI-inferred)
 	ConditionValue any
 }
 
 type Selection_BackupSelection_Conditions struct {
-	// Specifies tag key-value pairs that resources must match exactly to be included in the backup selection, where each object contains a key and a value that must equal the resource's tag value. (AI-inferred)
 	StringEquals any
-	// A list of tag-based conditions that select resources for the backup plan when the value of a specified tag key matches the given pattern, supporting wildcard characters such as * and ?. (AI-inferred)
 	StringLike any
-	// Defines a list of key-value pairs that must not equal the resource's tag values for the resource to be included in the backup selection. (AI-inferred)
 	StringNotEquals any
-	// Defines a list of key-value conditions that match backup resources whose value for the specified key is not similar to the given pattern, used to exclude resources from the backup selection. (AI-inferred)
 	StringNotLike any
 }
 
 type Selection_BackupSelection_ListOfTags struct {
-	// The tag key to match when selecting resources based on tag conditions. (AI-inferred)
 	ConditionKey any
-	// Specifies how the tag condition is evaluated for a resource, and in AWS Backup this must be STRINGEQUALS, meaning the resource must have a tag whose key and value exactly match the specified condition key and value. (AI-inferred)
 	ConditionType any
-	// The tag value (or wildcard pattern) that the backup selection uses to match AWS resources by tag, paired with a tag key in the same tag condition. (AI-inferred)
 	ConditionValue any
 }
 
 type Selection_BackupSelection struct {
-	// Defines condition expressions (such as StringEquals or StringLike) evaluated against resource attributes like tags to determine which resources match this backup selection. (AI-inferred)
 	Conditions any
-	// The ARN of the IAM role that AWS Backup assumes to perform backup and restore operations, giving it permissions to access the resources being backed up. (AI-inferred)
 	IamRoleArn any
-	// Specifies a list of tag conditions that determine which resources are included in the backup plan, each condition requiring a tag key, a tag value, and a match type such as STRINGEQUALS. (AI-inferred)
 	ListOfTags any
-	// Specifies a list of resource ARNs to exclude from the backup selection, refining which resources are included in the backup plan. (AI-inferred)
 	NotResources any
-	// Specifies the list of resources (by ARN or resource ID) that this backup selection selects for backup, such as EC2 instances or DynamoDB tables. (AI-inferred)
 	Resources any
-	// A user-defined name for the backup selection that identifies the set of resources assigned to an AWS Backup plan. (AI-inferred)
 	SelectionName any
 }
 
@@ -97,20 +82,14 @@ var Selection_BackupSelectionFields = ubx.FieldMap{
 	}
 
 type SelectionConfig struct {
-	// The unique identifier of the AWS Backup plan to which this backup selection belongs. (AI-inferred)
 	BackupPlanId any
-	// Specifies the resources to be backed up, including the selection name, the IAM role AWS Backup uses to authenticate, and the resource lists or tags that define which resources are included or excluded from the backup plan. (AI-inferred)
 	BackupSelection any
 }
 
 type SelectionAttrs struct {
-	// The unique identifier of the AWS Backup plan to which this backup selection belongs. (AI-inferred)
 	BackupPlanId any
-	// Specifies the resources to be backed up, including the selection name, the IAM role AWS Backup uses to authenticate, and the resource lists or tags that define which resources are included or excluded from the backup plan. (AI-inferred)
 	BackupSelection any
-	// The unique AWS-generated identifier assigned to the backup selection when it is created, used to reference the selection in AWS Backup and IAM policies. (AI-inferred)
 	Id any
-	// The unique identifier assigned by AWS Backup to the backup selection, used internally to reference the selection within a backup plan. (AI-inferred)
 	SelectionId any
 }
 

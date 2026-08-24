@@ -38,7 +38,6 @@ type ConnectFlowSource_GatewayBridgeSource struct {
 
 type ConnectFlowSource_Tags struct {
 	Key any
-	// Specifies the value portion of a user-defined tag attached to the MediaConnect flow source for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 

@@ -16,7 +16,6 @@ class DbUser_AuthenticationMode:
 @dataclasses.dataclass
 class DbUser_Tags:
     key: Any = None
-    # The value of the tag key-value pair applied to the MemoryDB user. (AI-inferred)
     value: Any = None
 
 _DbUser_AuthenticationModeFields = {
@@ -33,7 +32,6 @@ _DbUser_TagsFields = {
 class DbUserConfig:
     # Access permissions string used for this user account.
     access_string: Any = None
-    # Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred)
     authentication_mode: Any = None
     # An array of key-value pairs to apply to this user.
     tags: Any = None
@@ -46,7 +44,6 @@ class DbUserAttrs:
     access_string: Any = None
     # The Amazon Resource Name (ARN) of the user account.
     arn: Any = None
-    # Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred)
     authentication_mode: Any = None
     # Indicates the user status. Can be "active", "modifying" or "deleting".
     status: Any = None

@@ -4,21 +4,15 @@ package work
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesWorkspace_Tags struct {
-	// The key of a tag assigned to the WorkSpace, used to categorize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }
 
 type SpacesWorkspace_WorkspaceProperties struct {
-	// The name of the compute type for the WorkSpace (e.g., VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS), which determines the hardware specifications such as CPU, memory, and storage resources allocated to the virtual desktop. (AI-inferred)
 	ComputeTypeName any
-	// Specifies the size of the root volume (C: drive on Windows, / on Linux) for the WorkSpace, in GiB. (AI-inferred)
 	RootVolumeSizeGib any
-	// Controls whether the WorkSpace runs continuously (ALWAYS_ON) or automatically stops when idle (AUTO_STOP), affecting billing and availability. (AI-inferred)
 	RunningMode any
-	// The number of minutes a WorkSpace in AUTO_STOP running mode remains running after the user disconnects before it is automatically stopped, with valid values from 60 to 720 minutes. (AI-inferred)
 	RunningModeAutoStopTimeoutInMinutes any
-	// The size, in GiB, of the user volume (persistent storage for user data) for the WorkSpace. (AI-inferred)
 	UserVolumeSizeGib any
 }
 
@@ -36,44 +30,26 @@ var SpacesWorkspace_WorkspacePropertiesFields = ubx.FieldMap{
 	}
 
 type SpacesWorkspaceConfig struct {
-	// The ID of the WorkSpace bundle that defines the operating system, software, and compute resources for the WorkSpace. (AI-inferred)
 	BundleId any
-	// The identifier of the AWS Directory Service directory in which the WorkSpace is registered. (AI-inferred)
 	DirectoryId any
-	// Specifies whether the root volume (C: drive) of the WorkSpace is encrypted for this WorkSpace. (AI-inferred)
 	RootVolumeEncryptionEnabled any
-	// Specifies key-value tags to associate with the WorkSpace, enabling you to organize, identify, and track the resource for cost allocation and management. (AI-inferred)
 	Tags any
-	// The login name of the user in the directory, for whom the WorkSpace is provisioned and associated. (AI-inferred)
 	UserName any
-	// Indicates whether the user volume (the D: drive on Windows or /home on Linux) of the WorkSpace is encrypted. (AI-inferred)
 	UserVolumeEncryptionEnabled any
-	// The AWS KMS key ARN or ID used to encrypt the user and root storage volumes of the WorkSpace, which is required when volume encryption is enabled. (AI-inferred)
 	VolumeEncryptionKey any
-	// Specifies the runtime and storage configuration for the WorkSpace, including compute type, running mode, auto-stop timeout, and root/user volume sizes in GiB. (AI-inferred)
 	WorkspaceProperties any
 }
 
 type SpacesWorkspaceAttrs struct {
-	// The ID of the WorkSpace bundle that defines the operating system, software, and compute resources for the WorkSpace. (AI-inferred)
 	BundleId any
-	// The identifier of the AWS Directory Service directory in which the WorkSpace is registered. (AI-inferred)
 	DirectoryId any
-	// The unique AWS-assigned identifier for the WorkSpace, typically in the form ws- followed by a string, used to reference the workspace within the account. (AI-inferred)
 	Id any
-	// Specifies whether the root volume (C: drive) of the WorkSpace is encrypted for this WorkSpace. (AI-inferred)
 	RootVolumeEncryptionEnabled any
-	// Specifies key-value tags to associate with the WorkSpace, enabling you to organize, identify, and track the resource for cost allocation and management. (AI-inferred)
 	Tags any
-	// The login name of the user in the directory, for whom the WorkSpace is provisioned and associated. (AI-inferred)
 	UserName any
-	// Indicates whether the user volume (the D: drive on Windows or /home on Linux) of the WorkSpace is encrypted. (AI-inferred)
 	UserVolumeEncryptionEnabled any
-	// The AWS KMS key ARN or ID used to encrypt the user and root storage volumes of the WorkSpace, which is required when volume encryption is enabled. (AI-inferred)
 	VolumeEncryptionKey any
-	// The unique identifier assigned by AWS to the WorkSpace, such as 'ws-12345678'. (AI-inferred)
 	WorkspaceId any
-	// Specifies the runtime and storage configuration for the WorkSpace, including compute type, running mode, auto-stop timeout, and root/user volume sizes in GiB. (AI-inferred)
 	WorkspaceProperties any
 }
 

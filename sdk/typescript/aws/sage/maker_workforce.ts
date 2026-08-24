@@ -37,9 +37,7 @@ export interface MakerWorkforce_SourceIpConfig {
 }
 
 export interface MakerWorkforce_Tags {
-  /** The key (name) of a tag attached to the SageMaker workforce, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Defines a value for a tag attached to the SageMaker Workforce resource, allowing you to categorize and manage the workforce with custom metadata for cost tracking, access control, and operational governance. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

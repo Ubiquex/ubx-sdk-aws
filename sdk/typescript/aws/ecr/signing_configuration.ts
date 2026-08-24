@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SigningConfiguration_Rules_RepositoryFilters {
-  /** The repository name pattern (e.g., a prefix like 'prod/') that selects which ECR repositories this signing rule applies to, with the matching behavior defined by the associated filter type. (AI-inferred) */
   filter?: string | Computed<string>;
-  /** Specifies the matching strategy for a repository filter in an ECR signing configuration rule, where 'PREFIX_MATCH' ensures the rule applies to repositories whose names start with the given filter value. (AI-inferred) */
   filterType?: string | Computed<string>;
 }
 
 export interface SigningConfiguration_Rules {
-  /** Specifies the repository filters that determine which Amazon ECR repositories this signing configuration rule applies to, matching by prefix or exact repository name. (AI-inferred) */
   repositoryFilters?: SigningConfiguration_Rules_RepositoryFilters[] | Computed<SigningConfiguration_Rules_RepositoryFilters[]>;
-  /** Specifies the ARN of the AWS Signer signing profile that this rule uses to require signatures on matching container images. (AI-inferred) */
   signingProfileArn?: string | Computed<string>;
 }
 

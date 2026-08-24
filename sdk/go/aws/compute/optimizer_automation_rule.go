@@ -4,9 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OptimizerAutomationRule_Criteria_EbsVolumeSizeInGib struct {
-	// Defines the comparison operator (e.g., GREATER_THAN, LESS_THAN) used to evaluate the EBS volume size in GiB against the target value in this automation rule's criteria. (AI-inferred)
 	Comparison any
-	// The list of EBS volume size values (in GiB) that the automation rule's criteria matches against when selecting eligible EBS volumes for the rule. (AI-inferred)
 	Values any
 }
 
@@ -16,29 +14,19 @@ type OptimizerAutomationRule_Criteria_EbsVolumeType struct {
 }
 
 type OptimizerAutomationRule_Criteria_ResourceTag struct {
-	// Specifies the comparison operator applied to the resource tag's key/value pair in the automation rule's criteria (e.g., equal, starts with, contains) to determine whether the rule matches a given resource. (AI-inferred)
 	Comparison any
-	// The key of a resource tag that the automation rule's criteria uses to match target resources for automated actions. (AI-inferred)
 	Key any
-	// The list of tag values that the resource_tag criterion uses to match resources, where a resource is considered a match if the value of the specified tag key equals any of these values. (AI-inferred)
 	Values any
 }
 
 type OptimizerAutomationRule_Criteria struct {
-	// Defines a list of EBS volume size (in GiB) conditions used to filter which EBS volume recommendations are targeted by the Compute Optimizer automation rule. (AI-inferred)
 	EbsVolumeSizeInGib any
-	// A list of objects that specify the EBS volume types used to match against EBS volume recommendations in the automation rule's criteria. (AI-inferred)
 	EbsVolumeType any
-	// The estimated_monthly_savings criterion defines a lower and upper bound, in US dollars, for the estimated monthly cost savings of a recommendation, so only recommendations whose projected savings fall within this range match the automation rule. (AI-inferred)
 	EstimatedMonthlySavings any
-	// Specifies the look-back period in days that AWS Compute Optimizer uses to evaluate historical resource utilization when determining whether a recommendation matches the automation rule's criteria. (AI-inferred)
 	LookBackPeriodInDays any
 	Region any
-	// Within the criteria block, resource_arn is a list of objects that specify the Amazon Resource Names (ARNs) of the AWS resources the Compute Optimizer automation rule matches to determine which resources the rule applies to. (AI-inferred)
 	ResourceArn any
-	// A list of tag key-value pairs used as selection criteria, so that the Compute Optimizer automation rule only matches resources carrying the specified tag(s). (AI-inferred)
 	ResourceTag any
-	// Specifies the list of filter values (e.g., 'true' or 'false') for the restart-needed condition, matching Compute Optimizer recommendations that require or do not require an instance restart. (AI-inferred)
 	RestartNeeded any
 }
 
@@ -139,7 +127,6 @@ var OptimizerAutomationRule_TagsFields = ubx.FieldMap{
 	}
 
 type OptimizerAutomationRuleConfig struct {
-	// Defines the filter conditions that match recommendations for the automation rule, including criteria such as resource type, finding status, and savings opportunity threshold. (AI-inferred)
 	Criteria any
 	// The description of the automation rule.
 	Description any
@@ -152,7 +139,6 @@ type OptimizerAutomationRuleConfig struct {
 	RecommendedActionTypes any
 	// The type of automation rule.
 	RuleType any
-	// Defines the schedule for when the Compute Optimizer automation rule runs, including the frequency and timing at which the rule's recommended actions are applied to the targeted resources. (AI-inferred)
 	Schedule any
 	// The status of the automation rule.
 	Status any
@@ -165,7 +151,6 @@ type OptimizerAutomationRuleAttrs struct {
 	AccountId any
 	// The timestamp when the automation rule was created.
 	CreatedTimestamp any
-	// Defines the filter conditions that match recommendations for the automation rule, including criteria such as resource type, finding status, and savings opportunity threshold. (AI-inferred)
 	Criteria any
 	// The description of the automation rule.
 	Description any
@@ -186,7 +171,6 @@ type OptimizerAutomationRuleAttrs struct {
 	RuleRevision any
 	// The type of automation rule.
 	RuleType any
-	// Defines the schedule for when the Compute Optimizer automation rule runs, including the frequency and timing at which the rule's recommended actions are applied to the targeted resources. (AI-inferred)
 	Schedule any
 	// The status of the automation rule.
 	Status any

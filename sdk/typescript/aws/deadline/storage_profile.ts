@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StorageProfile_FileSystemLocations {
-  /** The user-defined name for a file system location in the AWS Deadline Cloud storage profile, used to identify the shared or local storage path. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The absolute filesystem path (e.g., a mount point or drive letter) on the worker where the file system location referenced by this storage profile entry is accessible. (AI-inferred) */
   path?: string | Computed<string>;
-  /** In an AWS Deadline Cloud storage profile, each file system location's `type` indicates whether the location represents a shared file system (accessible to all workers) or a local file system (strictly for a single worker). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -17,26 +14,17 @@ const StorageProfile_FileSystemLocationsFields: FieldMap = {
 };
 
 export interface StorageProfileConfig {
-  /** The human-readable name of the storage profile, used to identify it in the Deadline Cloud console and API. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** The unique identifier of the AWS Deadline Cloud farm to which this storage profile belongs. (AI-inferred) */
   farmId: string | Computed<string>;
-  /** Defines the list of file system locations (each consisting of a name and a mount path) that this storage profile makes available to worker instances for accessing job data. (AI-inferred) */
   fileSystemLocations?: StorageProfile_FileSystemLocations[] | Computed<StorageProfile_FileSystemLocations[]>;
-  /** Specifies the operating system family (such as WINDOWS or LINUX) that this AWS Deadline Cloud storage profile is configured for. (AI-inferred) */
   osFamily: string | Computed<string>;
 }
 
 export interface StorageProfileAttrs {
-  /** The human-readable name of the storage profile, used to identify it in the Deadline Cloud console and API. (AI-inferred) */
   displayName: string;
-  /** The unique identifier of the AWS Deadline Cloud farm to which this storage profile belongs. (AI-inferred) */
   farmId: string;
-  /** Defines the list of file system locations (each consisting of a name and a mount path) that this storage profile makes available to worker instances for accessing job data. (AI-inferred) */
   fileSystemLocations: StorageProfile_FileSystemLocations[];
-  /** Specifies the operating system family (such as WINDOWS or LINUX) that this AWS Deadline Cloud storage profile is configured for. (AI-inferred) */
   osFamily: string;
-  /** The unique identifier assigned by AWS Deadline Cloud to this storage profile. (AI-inferred) */
   storageProfileId: string;
 }
 

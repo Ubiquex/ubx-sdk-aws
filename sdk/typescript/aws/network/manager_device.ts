@@ -19,7 +19,6 @@ export interface ManagerDevice_Location {
 
 export interface ManagerDevice_Tags {
   key?: string | Computed<string>;
-  /** For each tag attached to an AWS Network Manager device, this field specifies the tag's value, enabling you to associate arbitrary metadata (such as device location or environment) with the device for identification, resource organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

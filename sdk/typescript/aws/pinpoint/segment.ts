@@ -2,97 +2,66 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Segment_Dimensions_Behavior_Recency {
-  /** The number of days that defines the recency window (e.g., '30' for the last 30 days) used to include or exclude users in the segment based on their activity recency. (AI-inferred) */
   duration: string | Computed<string>;
-  /** Specifies whether the segment is based on users who are active (ACTIVE) or inactive (INACTIVE) within the specified recency duration. (AI-inferred) */
   recencyType: string | Computed<string>;
 }
 
 export interface Segment_Dimensions_Behavior {
-  /** Configures the recency dimension for a behavior-based segment, filtering users by how recently they were active (e.g., active or inactive within a specified number of days). (AI-inferred) */
   recency?: Segment_Dimensions_Behavior_Recency | Computed<Segment_Dimensions_Behavior_Recency>;
 }
 
 export interface Segment_Dimensions_Demographic_AppVersion {
-  /** Determines whether the specified app version values are included in (INCLUSIVE) or excluded from (EXCLUSIVE) the segment's demographic filter. (AI-inferred) */
   dimensionType?: string | Computed<string>;
-  /** Defines the set of app version strings (for example, '1.0.0') used by the app_version demographic dimension to match devices for the segment. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Segment_Dimensions_Demographic {
-  /** Specifies the set of app version(s) used to include or exclude devices in the segment based on the installed version of your mobile app, with a comparison operator and an array of version strings. (AI-inferred) */
   appVersion?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Defines the demographic dimension for the segment by specifying which contact channels (such as SMS, email, or push) to include or exclude, using a set dimension with a dimension type (inclusive or exclusive) and a list of channel values. (AI-inferred) */
   channel?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Defines the device-type demographic criteria used to include or exclude endpoints from a segment, specifying an attribute type (INCLUSIVE or EXCLUSIVE) and a list of device type values to match. (AI-inferred) */
   deviceType?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Configures the device make (manufacturer, e.g., Apple, Samsung) dimension for the segment, with a set of allowed values and a dimension type to include or exclude matching devices. (AI-inferred) */
   make?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Defines the demographic device-model filter for the segment, using a set dimension (with values and include/exclude type) to match or exclude devices by model name. (AI-inferred) */
   model?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Configures the demographic platform filter for a Pinpoint segment, specifying the device platforms (such as iOS, Android, etc.) that endpoints must match to be included in the segment. (AI-inferred) */
   platform?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
 }
 
 export interface Segment_Dimensions_Location_Gpspoint_Coordinates {
-  /** The latitude of the GPS coordinate that defines the center of a circular location-based segment. (AI-inferred) */
   latitude: number | Computed<number>;
-  /** The east-west geographic coordinate (in decimal degrees) of the GPS point used to define the location-based segment's dimension criteria. (AI-inferred) */
   longitude: number | Computed<number>;
 }
 
 export interface Segment_Dimensions_Location_Gpspoint {
-  /** The coordinates object within the GPS point specifies the latitude and longitude values used to define the location-based segment dimension for AWS Pinpoint. (AI-inferred) */
   coordinates: Segment_Dimensions_Location_Gpspoint_Coordinates | Computed<Segment_Dimensions_Location_Gpspoint_Coordinates>;
-  /** The radius in kilometers around the GPS point's latitude and longitude that defines the circular geographic area used to match devices for the segment. (AI-inferred) */
   rangeInKilometers: number | Computed<number>;
 }
 
 export interface Segment_Dimensions_Location {
-  /** Defines the country criteria for the location segment dimension, using a set of country codes with an include/exclude filter type to target or exclude devices in those countries. (AI-inferred) */
   country?: Segment_Dimensions_Demographic_AppVersion | Computed<Segment_Dimensions_Demographic_AppVersion>;
-  /** Defines a circular geographic area for matching endpoints, using a latitude and longitude coordinate as the center and a radius measured in kilometers. (AI-inferred) */
   gpspoint?: Segment_Dimensions_Location_Gpspoint | Computed<Segment_Dimensions_Location_Gpspoint>;
 }
 
 export interface Segment_Dimensions {
-  /** Specifies attribute-based criteria for the segment, where each key is a custom endpoint attribute name and the value defines the dimension filter (such as inclusion or exclusion type and matching values) used to include or exclude endpoints. (AI-inferred) */
   attributes?: unknown | Computed<unknown>;
-  /** Defines the behavior-based criteria for the segment, such as how recently or how often users have used your app, including metrics like session count and session duration, to target endpoints based on their engagement patterns. (AI-inferred) */
   behavior?: Segment_Dimensions_Behavior | Computed<Segment_Dimensions_Behavior>;
-  /** Defines the demographic criteria for the segment, where each key is a demographic attribute (e.g., age, gender, platform) and each value contains inclusion/exclusion rules (AttributeDimension) to filter endpoint membership. (AI-inferred) */
   demographic?: Segment_Dimensions_Demographic | Computed<Segment_Dimensions_Demographic>;
-  /** Specifies location-based criteria for the segment, such as the country code or GPS coordinates that endpoints must match to be included in the segment. (AI-inferred) */
   location?: Segment_Dimensions_Location | Computed<Segment_Dimensions_Location>;
-  /** Specifies a map of metric names to metric dimension criteria, where each criterion defines a comparison operator and threshold value that endpoint metric values must satisfy to be included in the segment. (AI-inferred) */
   metrics?: unknown | Computed<unknown>;
-  /** Specifies filters for including or excluding endpoints based on custom user attribute values, where each key is a user attribute name and its value defines the matching criteria. (AI-inferred) */
   userAttributes?: unknown | Computed<unknown>;
 }
 
 export interface Segment_SegmentGroups_Groups_SourceSegments {
-  /** The ID of an existing Amazon Pinpoint segment used as a source to build this dynamic segment group. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies the version number of the source segment that this segment imports for building the segment group. (AI-inferred) */
   version?: number | Computed<number>;
 }
 
 export interface Segment_SegmentGroups_Groups {
-  /** Defines the endpoint criteria (attributes, metrics, and user attributes) used to determine which endpoints belong to this segment group. (AI-inferred) */
   dimensions?: Segment_Dimensions[] | Computed<Segment_Dimensions[]>;
-  /** Specifies the source segments used by this segment group to define its audience, where each entry references an existing segment by its ID and version. (AI-inferred) */
   sourceSegments?: Segment_SegmentGroups_Groups_SourceSegments[] | Computed<Segment_SegmentGroups_Groups_SourceSegments[]>;
-  /** Determines whether endpoints must match all (ALL_TARGETING) or any (ANY_TARGETING) of the criteria defined in the segment group's dimensions or source segments. (AI-inferred) */
   sourceType?: string | Computed<string>;
-  /** Specifies whether a segment group must match all of its dimensions (ALL) or any one of its dimensions (ANY) to be included in the segment. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Segment_SegmentGroups {
-  /** A list of group definitions that make up the segment group, where each group specifies the dimensions or source segments used to define the segment's targeting criteria. (AI-inferred) */
   groups?: Segment_SegmentGroups_Groups[] | Computed<Segment_SegmentGroups_Groups[]>;
-  /** Controls how the segment groups are evaluated to include or exclude endpoints, with typical values like ALL, ANY, or NONE for combining multiple groups. (AI-inferred) */
   include?: string | Computed<string>;
 }
 
@@ -225,32 +194,20 @@ const Segment_SegmentGroupsFields: FieldMap = {
 };
 
 export interface SegmentConfig {
-  /** The unique identifier of the Amazon Pinpoint application (project) that the segment belongs to. (AI-inferred) */
   applicationId: string | Computed<string>;
-  /** Defines the criteria (such as demographic, behavioral, location, and metrics filters) that determine which endpoints are included in the segment. (AI-inferred) */
   dimensions?: Segment_Dimensions | Computed<Segment_Dimensions>;
-  /** The name of the segment, which is used as a friendly identifier in the Amazon Pinpoint console and API operations. (AI-inferred) */
   name: string | Computed<string>;
-  /** Defines the segment groups, including their dimensions and source segments, that specify the criteria for which endpoints are included in the Amazon Pinpoint segment. (AI-inferred) */
   segmentGroups?: Segment_SegmentGroups | Computed<Segment_SegmentGroups>;
-  /** Assigns key-value tags to the Amazon Pinpoint segment, which can be used to categorize, organize, and manage the segment. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface SegmentAttrs {
-  /** The unique identifier of the Amazon Pinpoint application (project) that the segment belongs to. (AI-inferred) */
   applicationId: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Amazon Pinpoint segment. (AI-inferred) */
   arn: string;
-  /** Defines the criteria (such as demographic, behavioral, location, and metrics filters) that determine which endpoints are included in the segment. (AI-inferred) */
   dimensions: Segment_Dimensions;
-  /** The name of the segment, which is used as a friendly identifier in the Amazon Pinpoint console and API operations. (AI-inferred) */
   name: string;
-  /** Defines the segment groups, including their dimensions and source segments, that specify the criteria for which endpoints are included in the Amazon Pinpoint segment. (AI-inferred) */
   segmentGroups: Segment_SegmentGroups;
-  /** The unique identifier assigned to the segment in Amazon Pinpoint. (AI-inferred) */
   segmentId: string;
-  /** Assigns key-value tags to the Amazon Pinpoint segment, which can be used to categorize, organize, and manage the segment. (AI-inferred) */
   tags: unknown;
 }
 

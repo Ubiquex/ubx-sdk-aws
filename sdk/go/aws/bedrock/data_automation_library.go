@@ -16,7 +16,6 @@ type DataAutomationLibrary_EntityTypes struct {
 }
 
 type DataAutomationLibrary_Tags struct {
-	// The key of a tag to attach to the Bedrock Data Automation Library, used for identifying and categorizing the library. (AI-inferred)
 	Key any
 	Value any
 }

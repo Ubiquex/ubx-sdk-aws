@@ -27,7 +27,6 @@ type ParameterConfig struct {
 type ParameterAttrs struct {
 	// A regular expression used to validate the parameter value. For example, for ``String`` types with values restricted to numbers, you can specify the following: ``AllowedPattern=^\d+$``
 	AllowedPattern any
-	// The Amazon Resource Name (ARN) assigned to the parameter, which uniquely identifies it within AWS. (AI-inferred)
 	Arn any
 	// The data type of the parameter, such as ``text`` or ``aws:ec2:image``. The default is ``text``.
 	DataType any

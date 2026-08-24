@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClusterSubnetGroup_Tags {
-  /** The key of a tag applied to the Redshift cluster subnet group, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

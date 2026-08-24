@@ -4,23 +4,18 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionSet_CustomerManagedPolicyReferences struct {
-	// The name of the customer managed policy to reference in the permission set. (AI-inferred)
 	Name any
-	// The IAM path of the customer managed policy, which together with the policy name uniquely identifies the policy to attach to the permission set. (AI-inferred)
 	Path any
 }
 
 type PermissionSet_PermissionsBoundary struct {
-	// Provides the customer managed policy's name and optional path used to set a permissions boundary on the permission set. (AI-inferred)
 	CustomerManagedPolicyReference any
 	// The managed policy to attach.
 	ManagedPolicyArn any
 }
 
 type PermissionSet_Tags struct {
-	// The key of a user-defined tag attached to an AWS SSO Permission Set, which is used to categorize, identify, and manage the permission set within AWS SSO. (AI-inferred)
 	Key any
-	// The tag value (the non-key component of a key-value pair) attached to the AWS SSO PermissionSet, used to label or categorize the resource. (AI-inferred)
 	Value any
 }
 
@@ -44,7 +39,6 @@ var PermissionSet_TagsFields = ubx.FieldMap{
 	}
 
 type PermissionSetConfig struct {
-	// Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred)
 	CustomerManagedPolicyReferences any
 	// The permission set description.
 	Description any
@@ -52,22 +46,18 @@ type PermissionSetConfig struct {
 	InlinePolicy any
 	// The sso instance arn that the permission set is owned.
 	InstanceArn any
-	// The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred)
 	ManagedPolicies any
 	// The name you want to assign to this permission set.
 	Name any
-	// Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred)
 	PermissionsBoundary any
 	// The relay state URL that redirect links to any service in the AWS Management Console.
 	RelayStateType any
 	// The length of time that a user can be signed in to an AWS account.
 	SessionDuration any
-	// A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 
 type PermissionSetAttrs struct {
-	// Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred)
 	CustomerManagedPolicyReferences any
 	// The permission set description.
 	Description any
@@ -75,19 +65,16 @@ type PermissionSetAttrs struct {
 	InlinePolicy any
 	// The sso instance arn that the permission set is owned.
 	InstanceArn any
-	// The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred)
 	ManagedPolicies any
 	// The name you want to assign to this permission set.
 	Name any
 	// The permission set that the policy will be attached to
 	PermissionSetArn any
-	// Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred)
 	PermissionsBoundary any
 	// The relay state URL that redirect links to any service in the AWS Management Console.
 	RelayStateType any
 	// The length of time that a user can be signed in to an AWS account.
 	SessionDuration any
-	// A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 

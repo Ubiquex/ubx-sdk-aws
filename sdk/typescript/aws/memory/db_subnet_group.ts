@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbSubnetGroup_Tags {
-  /** The key portion of a tag applied to this MemoryDB subnet group, used to organize, identify, and apply IAM-based access controls to the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

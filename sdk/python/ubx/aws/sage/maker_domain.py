@@ -8,32 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig:
-    # The ID of the Amazon EFS file system that SageMaker mounts in the domain's default space when using this custom file system configuration. (AI-inferred)
     file_system_id: Any = None
-    # Specifies the directory path within the referenced Amazon EFS file system that SageMaker mounts for the domain's default space, where leaving it unset uses the file system root ('/'). (AI-inferred)
     file_system_path: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfig:
-    # Specifies the absolute path in the Amazon SageMaker Domain default space where the S3 file system is mounted. (AI-inferred)
     mount_path: Any = None
-    # The Amazon S3 URI (e.g., s3://bucket/prefix) that specifies the S3 directory mounted as a custom file system in the default space settings for the SageMaker Domain. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs:
-    # Configures an Amazon EFS file system for the SageMaker domain's default space, specifying the file system ID and mount path. (AI-inferred)
     efsfile_system_config: Any = None
-    # Configures an FSx for Lustre file system, including its ID and optional mount path, for attachment to the default user's SageMaker Studio environment within the domain's default space settings. (AI-inferred)
     fsx_lustre_file_system_config: Any = None
-    # Specifies the Amazon S3 file system configuration for a custom file system attached to the SageMaker Domain's default space, defining how an S3 bucket is mounted at a particular path. (AI-inferred)
     s3_file_system_config: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig:
-    # Sets the POSIX group ID (GID) for the custom user in the default space settings of the SageMaker Domain, used to control file system permissions. (AI-inferred)
     gid: Any = None
-    # The numeric POSIX user ID (UID) for the custom POSIX user configuration used by the SageMaker Domain's default space, controlling file ownership on the custom file system. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -49,21 +40,16 @@ class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagem
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement:
-    # Configures idle timeout (in minutes) and lifecycle management mode (e.g., enabled/disabled) to automatically shut down or keep alive JupyterLab apps in the SageMaker Studio default space. (AI-inferred)
     idle_settings: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositories:
-    # The HTTPS URL of the Git repository that SageMaker clones into the JupyterLab environment for the default space in the SageMaker Domain. (AI-inferred)
     repository_url: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages:
-    # The name of the AppImageConfig associated with this custom JupyterLab image, which defines the kernel and file system settings for the image in the SageMaker domain. (AI-inferred)
     app_image_config_name: Any = None
-    # The name of the SageMaker image to use for the JupyterLab application in the domain's default space settings. (AI-inferred)
     image_name: Any = None
-    # The version number of the SageMaker image to use for the JupyterLab app in the domain's default space, allowing selection among multiple registered versions of the same image. (AI-inferred)
     image_version_number: Any = None
 
 @dataclasses.dataclass
@@ -81,7 +67,6 @@ class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings:
-    # Configures lifecycle management for JupyterLab applications in the default space, such as idle timeout settings that automatically shut down idle apps. (AI-inferred)
     app_lifecycle_management: Any = None
     # The lifecycle configuration that runs before the default lifecycle configuration.
     built_in_lifecycle_config_arn: Any = None
@@ -89,14 +74,12 @@ class MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings:
     code_repositories: Any = None
     # A list of custom images for use for JupyterLab apps.
     custom_images: Any = None
-    # Specifies the default SageMaker image, image version, instance type, and lifecycle configuration used when launching JupyterLab apps for this default space. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with JupyterLab apps.
     lifecycle_config_arns: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_JupyterServerAppSettings:
-    # Specifies the default compute instance type and SageMaker image (including the image ARN and container configuration) used when launching Jupyter Server apps in the default space of the SageMaker Domain. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with JupyterServer apps.
     lifecycle_config_arns: Any = None
@@ -105,16 +88,13 @@ class MakerDomain_DefaultSpaceSettings_JupyterServerAppSettings:
 class MakerDomain_DefaultSpaceSettings_KernelGatewayAppSettings:
     # A list of custom SageMaker images that are configured to run as a KernelGateway app.
     custom_images: Any = None
-    # Specifies the default compute instance type, SageMaker image, and optional image version or lifecycle configuration used for kernel gateway apps in the domain's default space settings. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with KernelGateway apps.
     lifecycle_config_arns: Any = None
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings_SpaceStorageSettings_DefaultEbsStorageSettings:
-    # Defines the default EBS storage volume size in gigabytes allocated for each SageMaker Domain space. (AI-inferred)
     default_ebs_volume_size_in_gb: Any = None
-    # Specifies the maximum size in gigabytes that a SageMaker Studio space can provision for its attached Amazon EBS storage volume, as part of the default space's EBS storage settings. (AI-inferred)
     maximum_ebs_volume_size_in_gb: Any = None
 
 @dataclasses.dataclass
@@ -124,9 +104,7 @@ class MakerDomain_DefaultSpaceSettings_SpaceStorageSettings:
 
 @dataclasses.dataclass
 class MakerDomain_DefaultSpaceSettings:
-    # Defines the custom file systems (such as Amazon EFS or Amazon FSx for Lustre) that SageMaker automatically mounts in the default space for users within the domain. (AI-inferred)
     custom_file_system_configs: Any = None
-    # Specifies the custom POSIX user ID (UID) and group ID (GID) applied to apps running in the default space of the SageMaker Domain. (AI-inferred)
     custom_posix_user_config: Any = None
     # The execution role for the space.
     execution_role: Any = None
@@ -143,13 +121,11 @@ class MakerDomain_DefaultSpaceSettings:
 
 @dataclasses.dataclass
 class MakerDomain_DefaultUserSettings_CodeEditorAppSettings:
-    # Specifies the lifecycle management settings, including idle timeout behavior, for the Code Editor application in the SageMaker Domain's default user settings. (AI-inferred)
     app_lifecycle_management: Any = None
     # The lifecycle configuration that runs before the default lifecycle configuration.
     built_in_lifecycle_config_arn: Any = None
     # A list of custom images for use for CodeEditor apps.
     custom_images: Any = None
-    # Specifies the instance type (and optionally the SageMaker image ARN) that SageMaker uses to preconfigure the Code Editor app for the default user profile. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with CodeEditor apps.
     lifecycle_config_arns: Any = None
@@ -158,7 +134,6 @@ class MakerDomain_DefaultUserSettings_CodeEditorAppSettings:
 class MakerDomain_DefaultUserSettings_RsessionAppSettings:
     # A list of custom SageMaker images that are configured to run as a KernelGateway app.
     custom_images: Any = None
-    # Specifies the default SageMaker image (via its ARN) and instance type used when launching RSession gateway apps for users in the domain. (AI-inferred)
     default_resource_spec: Any = None
 
 @dataclasses.dataclass
@@ -179,9 +154,7 @@ class MakerDomain_DefaultUserSettings_SharingSettings:
 
 @dataclasses.dataclass
 class MakerDomain_DefaultUserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliases:
-    # The name of the SageMaker image for which the specified version aliases are hidden from the Studio web portal in the SageMaker Domain's default user settings. (AI-inferred)
     sage_maker_image_name: Any = None
-    # A list of SageMaker image version aliases (e.g., '1.0', 'latest') that are hidden in the Studio Web Portal for the SageMaker image defined by the parent 'HiddenSageMakerImageVersionAliases' object. (AI-inferred)
     version_aliases: Any = None
 
 @dataclasses.dataclass
@@ -201,9 +174,7 @@ class MakerDomain_DefaultUserSettings:
     auto_mount_home_efs: Any = None
     # The CodeEditor app settings.
     code_editor_app_settings: Any = None
-    # Specifies configurations for custom file systems (such as Amazon EFS) that user profiles in the SageMaker Domain can mount in their Studio apps. (AI-inferred)
     custom_file_system_configs: Any = None
-    # Specifies the custom POSIX UID and GID for the default user in the SageMaker Domain, overriding default user identity for JupyterLab and kernel gateway processes. (AI-inferred)
     custom_posix_user_config: Any = None
     # Defines which Amazon SageMaker application users are directed to by default.
     default_landing_uri: Any = None
@@ -239,7 +210,6 @@ class MakerDomain_DomainSettings_DockerSettings:
 
 @dataclasses.dataclass
 class MakerDomain_DomainSettings_RstudioServerProDomainSettings:
-    # Specifies the default resource specification, including the instance type, SageMaker image ARN, and optional lifecycle configuration, used when creating RStudio Server Pro sessions in the SageMaker Domain. (AI-inferred)
     default_resource_spec: Any = None
     # The ARN of the execution role for the RStudioServerPro Domain-level app.
     domain_execution_role_arn: Any = None
@@ -283,7 +253,6 @@ class MakerDomain_DomainSettings:
 @dataclasses.dataclass
 class MakerDomain_Tags:
     key: Any = None
-    # The value of a tag attached to the SageMaker Domain, which you can set to any string to associate custom metadata with the domain for purposes like resource organization, access control, and cost allocation. (AI-inferred)
     value: Any = None
 
 _MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfigFields = {

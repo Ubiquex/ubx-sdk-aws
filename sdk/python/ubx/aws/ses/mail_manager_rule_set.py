@@ -8,267 +8,176 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_AddHeader:
-    # The name of the email header that this action adds to the message, used in the add_header action of an SES Mail Manager rule set. (AI-inferred)
     header_name: Any = None
-    # The value of the email header that will be added to the message when this AddHeader action is invoked by the rule set. (AI-inferred)
     header_value: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_Archive:
-    # Specifies the policy for handling a message when the archive action fails, with valid values CONTINUE (process subsequent actions) or DROP (stop processing and drop the message). (AI-inferred)
     action_failure_policy: Any = None
-    # Specifies the ARN of the SES Mail Manager archive to which the email message is archived when this action is triggered. (AI-inferred)
     target_archive: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_Bounce:
-    # Determines how the rule set handles an email when the bounce action fails, accepting CONTINUE to proceed with subsequent actions or DROP to stop processing. (AI-inferred)
     action_failure_policy: Any = None
-    # Specifies the custom diagnostic message that is included in the bounce notification sent to the original sender when the bounce action is invoked. (AI-inferred)
     diagnostic_message: Any = None
-    # The custom message text to include in the bounce email that is sent back to the original sender when this rule's bounce action is triggered. (AI-inferred)
     message: Any = None
-    # The ARN of the IAM role that Amazon SES Mail Manager assumes when executing this bounce action to send a bounce email to the original sender. (AI-inferred)
     role_arn: Any = None
-    # The email address used as the envelope sender (Return-Path) when the bounce message is sent by this bounce action in a rule set. (AI-inferred)
     sender: Any = None
-    # Specifies the three-digit SMTP reply code (e.g., 550, 551) used in the bounce response sent to the sender when an email matches this rule. (AI-inferred)
     smtp_reply_code: Any = None
-    # The SMTP status code to return in the bounce response, used to specify the rejection reason when a message is bounced. (AI-inferred)
     status_code: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_DeliverToMailbox:
-    # Determines whether the rule set continues processing the next rule or drops the email when the deliver-to-mailbox action fails, with valid values CONTINUE or DROP. (AI-inferred)
     action_failure_policy: Any = None
-    # The Amazon Resource Name (ARN) of the mailbox to which the email will be delivered by this action. (AI-inferred)
     mailbox_arn: Any = None
-    # The role_arn specifies the IAM role ARN that AWS SES Mail Manager assumes to deliver messages to the target mailbox identified by the corresponding mailbox_arn in the deliver_to_mailbox action. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_DeliverToQbusiness:
-    # Specifies whether the rule set continues processing subsequent rules (CONTINUE) or stops and drops the email (DROP) if delivering the email to Amazon Q Business fails. (AI-inferred)
     action_failure_policy: Any = None
-    # The ARN of the Amazon Q Business application to which SES Mail Manager delivers the email message when the DeliverToQBusiness action is invoked. (AI-inferred)
     application_id: Any = None
-    # The ID of the Amazon Q Business index to which the email content is delivered when the rule set's action is triggered. (AI-inferred)
     index_id: Any = None
-    # Specifies the ARN of an IAM role that the SES Mail Manager rule action assumes to deliver the email message to the configured Amazon Q Business application. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_InvokeLambda:
-    # Specifies the policy for handling a failed Lambda invocation in the rule action, determining whether email processing continues with the next action or the email is dropped. (AI-inferred)
     action_failure_policy: Any = None
-    # The ARN of the Lambda function that Mail Manager invokes when a rule with this action matches an inbound email. (AI-inferred)
     function_arn: Any = None
-    # Specifies whether the Lambda function is invoked synchronously ('SYNC') or asynchronously ('ASYNC'), controlling whether the rule set execution waits for the Lambda response. (AI-inferred)
     invocation_type: Any = None
-    # Specifies the number of minutes to retry invoking the Lambda function if the initial invocation fails, after which the action is considered failed. (AI-inferred)
     retry_time_minutes: Any = None
-    # The ARN of the IAM role that AWS SES Mail Manager assumes to invoke the specified Lambda function when this action is triggered. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_PublishToSns:
-    # Determines the behavior when the SNS publish action fails, with 'CONTINUE' allowing subsequent actions to run and 'DROP' causing the email to be rejected. (AI-inferred)
     action_failure_policy: Any = None
-    # Specifies the encoding (BASE64 or TEXT) applied to the email content when it is published to the SNS topic. (AI-inferred)
     encoding: Any = None
-    # Specifies whether the email delivered to the SNS topic contains the raw MIME content or a JSON object representation of the message metadata. (AI-inferred)
     payload_type: Any = None
-    # The ARN of the IAM role that SES Mail Manager assumes to publish email event data to the configured Amazon SNS topic when this action is triggered. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the Amazon SNS topic to which the email is published when the rule's conditions are met. (AI-inferred)
     topic_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_Relay:
-    # Determines the behavior when the relay action fails, either continuing with subsequent rule set actions (CONTINUE) or discarding the message (DROP). (AI-inferred)
     action_failure_policy: Any = None
-    # Specifies the email address to use as the MAIL FROM (envelope sender) when the message is relayed to the destination SMTP server. (AI-inferred)
     mail_from: Any = None
-    # The Amazon Resource Name (ARN) of the SES Mail Manager relay to which the email is forwarded when this relay action is invoked. (AI-inferred)
     relay: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_ReplaceRecipient:
-    # The list of email addresses that replace the original recipient when the replace recipient action is applied. (AI-inferred)
     replace_with: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_Send:
-    # Sets the action failure policy for the send action, indicating whether rule processing should continue with subsequent actions or stop if sending the email fails. (AI-inferred)
     action_failure_policy: Any = None
-    # The ARN of the IAM role that Mail Manager assumes to allow the Send action to deliver the message through Amazon SES. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions_WriteToS3:
-    # Determines whether processing continues or stops when the write-to-S3 action fails, with allowed values 'CONTINUE' or 'DROP'. (AI-inferred)
     action_failure_policy: Any = None
-    # The ARN of the IAM role that AWS SES Mail Manager assumes to write messages to the specified S3 bucket for this rule action. (AI-inferred)
     role_arn: Any = None
-    # The name of the S3 bucket where the incoming email message content is stored when this WriteToS3 action runs. (AI-inferred)
     s3_bucket: Any = None
-    # Specifies the prefix to prepend to the S3 object key when this write-to-S3 action stores the email message in the specified bucket. (AI-inferred)
     s3_prefix: Any = None
-    # The AWS KMS key ID used for server-side encryption (SSE-KMS) of the email message when it is written to the S3 bucket by this action. (AI-inferred)
     s3_sse_kms_key_id: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Actions:
-    # Adds a custom header with a specified name and value to the email message when the rule's conditions are met. (AI-inferred)
     add_header: Any = None
-    # Configures the rule action to archive the incoming email to the specified SES Mail Manager archive. (AI-inferred)
     archive: Any = None
-    # Defines a bounce action that rejects the incoming email and sends a bounce response back to the sender, with optional bounce code and message parameters. (AI-inferred)
     bounce: Any = None
-    # Specifies the deliver-to-mailbox action for a rule, which forwards the incoming email to a chosen mailbox managed by SES Mail Manager, using the mailbox ARN to determine the destination. (AI-inferred)
     deliver_to_mailbox: Any = None
-    # Specifies that the rule action should deliver the email message to an Amazon Q Business application, using an IAM role to grant access to the application. (AI-inferred)
     deliver_to_qbusiness: Any = None
-    # Terminates rule evaluation and silently discards the message, preventing delivery without generating a bounce or complaint. (AI-inferred)
     drop: Any = None
-    # Invokes a Lambda function with the email message and its metadata as the event payload, enabling serverless custom processing of matched emails within the rule set. (AI-inferred)
     invoke_lambda: Any = None
-    # Configuration for the PublishToSNS action, which sends the email content to the designated SNS topic for further processing. (AI-inferred)
     publish_to_sns: Any = None
-    # Configures the relay action for a rule, which forwards an incoming email to a specified SMTP relay destination via AWS SES Mail Manager. (AI-inferred)
     relay: Any = None
-    # Configuration for the SES Mail Manager ReplaceRecipient action, which overrides the email's original destination with a specified replacement recipient address. (AI-inferred)
     replace_recipient: Any = None
-    # Specifies a Send action within a mail manager rule, which directs the incoming email to a designated destination using the configured IAM role and determines behavior on delivery failure. (AI-inferred)
     send: Any = None
-    # The write_to_s3 property of a rule action specifies the S3 bucket (and optional key prefix) where the email message should be stored as part of the rule set's processing. (AI-inferred)
     write_to_s3: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_Analysis:
-    # The Amazon Resource Name (ARN) of the AWS SES Mail Manager analyzer resource to use for evaluating the boolean expression in the rule condition. (AI-inferred)
     analyzer: Any = None
-    # Specifies the key in the analysis result payload (from the referenced analyzer) whose value is compared in this boolean condition. (AI-inferred)
     result_field: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_IsInAddressList:
-    # The address_lists field provides the list of address list IDs to check the incoming email address against; if the address matches any entry in one of these lists, the containing rule condition evaluates to true. (AI-inferred)
     address_lists: Any = None
-    # Specifies which email header or envelope attribute (e.g., From, To, or Recipient) is inspected to determine membership in the referenced address list. (AI-inferred)
     attribute: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate:
-    # An object that specifies the analysis to perform using a trained analyzer, including the analyzer ARN and the result field to evaluate against. (AI-inferred)
     analysis: Any = None
-    # Specifies the email metadata attribute (such as sender, recipient, subject, or authentication result) that the boolean expression evaluates against a configured value in the rule condition. (AI-inferred)
     attribute: Any = None
-    # This object specifies the 'is in address list' evaluation, defining which email attribute (such as sender or recipient) must be present in the referenced address list for the condition to evaluate to true. (AI-inferred)
     is_in_address_list: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_BooleanExpression:
-    # Defines the email attribute (e.g., IsDeliveryReceipt or IsSpam) that the boolean expression condition inspects to determine whether the condition is satisfied. (AI-inferred)
     evaluate: Any = None
-    # Defines the comparison operation applied when matching a boolean attribute against a boolean value in the rule condition; the only supported operators are EQUALS and NOT_EQUALS. (AI-inferred)
     operator: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_DmarcExpression:
-    # Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the DMARC authentication result against the values listed in the same DMARC expression. (AI-inferred)
     operator: Any = None
-    # Specifies the DMARC verdict values (such as PASS, FAIL, NONE, TEMPERROR, or PERMERROR) that the rule condition compares against the incoming email's DMARC authentication result using the condition's operator. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_IpExpression_Evaluate:
-    # Specifies the email attribute (such as the message's source IP address) that the IP expression condition evaluates against the rule's configured IP address ranges. (AI-inferred)
     attribute: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_IpExpression:
     evaluate: Any = None
-    # The operator (CIDR or IP) that defines how the IP expression condition matches the source IP address against the provided values. (AI-inferred)
     operator: Any = None
-    # The list of IP addresses or CIDR blocks that the rule's IP condition matches against the message source. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_NumberExpression:
-    # In an SES Mail Manager rule set, this object identifies the message attribute from which the numeric value used in the number expression condition is extracted before the operator and value comparison are applied. (AI-inferred)
     evaluate: Any = None
-    # Specifies the comparison operator (for example, EQ, NE, GT, LT, GE, LE) used to evaluate the numeric value in a number expression condition within a Mail Manager rule set. (AI-inferred)
     operator: Any = None
-    # The numeric value that the NumberExpression condition compares against the email attribute to determine whether the rule condition is met. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_StringExpression_Evaluate:
-    # Defines how to use an external analysis result as the evaluation source for the string expression condition, enabling the rule to match on analyzed email data rather than a direct attribute. (AI-inferred)
     analysis: Any = None
-    # Specifies the email attribute (such as FROM, TO, or SUBJECT) that the string expression condition evaluates against. (AI-inferred)
     attribute: Any = None
-    # Specifies which attribute of the TLS client certificate (for example, subject or issuer) the string condition evaluates against the incoming connection's certificate data. (AI-inferred)
     client_certificate_attribute: Any = None
-    # The name of the MIME header (such as 'Subject' or 'From') whose value the string expression condition evaluates. (AI-inferred)
     mime_header_attribute: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_StringExpression:
-    # Specifies the email attribute to evaluate for the string expression condition, such as the sender address, recipient address, a message header, or a MIME part, which is then compared against a value using the condition's operator. (AI-inferred)
     evaluate: Any = None
-    # Specifies the string comparison operator (e.g., EQUALS, STARTS_WITH, CONTAINS) used by the string expression condition to compare the selected email attribute against the configured value. (AI-inferred)
     operator: Any = None
-    # The list of string values to match against the email attribute (e.g., From, To, Subject) when evaluating a string expression condition in an SES Mail Manager rule set. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_VerdictExpression_Evaluate:
     analysis: Any = None
-    # In an AWS SES Mail Manager rule set verdict expression condition, this attribute specifies which email authentication or verdict attribute (such as SPF, DKIM, or DMARC) is being evaluated against the defined value. (AI-inferred)
     attribute: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions_VerdictExpression:
-    # The `evaluate` object in a verdict expression condition specifies which email verdict attribute (e.g., SPF, DKIM, DMARC) the rule condition will inspect, typically by providing an attribute name in a nested structure. (AI-inferred)
     evaluate: Any = None
-    # Specifies the comparison operator (e.g., EQUALS or NOT_EQUALS) used by this verdict expression condition to match the message's verdict attribute against the configured value. (AI-inferred)
     operator: Any = None
-    # The list of email verdict values (such as SUSPECT, BULK, or OK) that this condition matches against; the condition is satisfied when the incoming message's verdict equals any one of these values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules_Conditions:
-    # The boolean_expression object specifies a rule condition that evaluates a boolean email attribute (e.g., whether the message was sent over TLS) to determine if the rule's actions should be applied. (AI-inferred)
     boolean_expression: Any = None
-    # Evaluates the DMARC policy of the inbound email, matching when the email's DMARC authentication result (such as PASS, FAIL, NONE, or QUARANTINE) satisfies the specified operator and value in this condition. (AI-inferred)
     dmarc_expression: Any = None
-    # Specifies an IP-based condition for a rule, matching the source IP address of the email against a list of CIDR ranges or exact IP addresses to determine whether the rule's actions are applied. (AI-inferred)
     ip_expression: Any = None
-    # Defines a number-based matching condition that compares a numeric email attribute (e.g., message size or recipient count) to a specified value using an operator such as EQUALS, LESS_THAN, or GREATER_THAN. (AI-inferred)
     number_expression: Any = None
-    # Specifies a condition for a rule that compares a designated email string attribute (e.g., SENDER, RECIPIENT, MAIL_FROM) to a string value, allowing the rule to trigger when they match. (AI-inferred)
     string_expression: Any = None
-    # Defines a condition that evaluates an email verdict (such as SPF, DKIM, or DMARC) against a specified value using an operator. (AI-inferred)
     verdict_expression: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Rules:
-    # Specifies the list of actions to execute when a rule's conditions are matched, such as delivering the email to a mailbox or forwarding it. (AI-inferred)
     actions: Any = None
-    # Specifies the list of conditions that an incoming email must satisfy (for example, matching the recipient, sender, or attachment presence) for the rule's actions to be executed. (AI-inferred)
     conditions: Any = None
-    # A user-defined name that identifies an individual rule within the SES Mail Manager rule set. (AI-inferred)
     name: Any = None
-    # List of conditions that, if any are met, cause the rule to be skipped (i.e., the rule does not apply to the email). (AI-inferred)
     unless: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSet_Tags:
-    # The key of a tag attached to the SES Mail Manager Rule Set, used for identifying and categorizing the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag (key-value pair) applied to the SES Mail Manager rule set, used to organize and identify the resource. (AI-inferred)
     value: Any = None
 
 _MailManagerRuleSet_Rules_Actions_AddHeaderFields = {
@@ -563,24 +472,16 @@ _MailManagerRuleSet_TagsFields = {
 
 @dataclasses.dataclass
 class MailManagerRuleSetConfig:
-    # A unique, user-defined name that identifies the Mail Manager rule set within your AWS account. (AI-inferred)
     rule_set_name: Any = None
-    # The rules list defines the ordered set of processing rules for the rule set, where each rule specifies conditions and the actions to execute when those conditions are met within the Mail Manager pipeline. (AI-inferred)
     rules: Any = None
-    # Specifies the list of key-value tags to attach to this AWS SES Mail Manager rule set, which are used for cost allocation, access control, and operational metadata management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MailManagerRuleSetAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying this SES Mail Manager rule set. (AI-inferred)
     rule_set_arn: Any = None
-    # The unique identifier assigned by AWS SES Mail Manager to the rule set, which is automatically generated and used to reference the rule set in other configurations. (AI-inferred)
     rule_set_id: Any = None
-    # A unique, user-defined name that identifies the Mail Manager rule set within your AWS account. (AI-inferred)
     rule_set_name: Any = None
-    # The rules list defines the ordered set of processing rules for the rule set, where each rule specifies conditions and the actions to execute when those conditions are met within the Mail Manager pipeline. (AI-inferred)
     rules: Any = None
-    # Specifies the list of key-value tags to attach to this AWS SES Mail Manager rule set, which are used for cost allocation, access control, and operational metadata management. (AI-inferred)
     tags: Any = None
 
 MailManagerRuleSet = ubx.ResourceBinding(

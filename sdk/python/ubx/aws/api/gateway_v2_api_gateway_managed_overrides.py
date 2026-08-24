@@ -48,11 +48,9 @@ class GatewayV2ApiGatewayManagedOverrides_Stage_DefaultRouteSettings:
 
 @dataclasses.dataclass
 class GatewayV2ApiGatewayManagedOverrides_Stage:
-    # Overrides the access log settings (destination ARN and log format) for the API Gateway v2 stage, determining how access logs are delivered and formatted. (AI-inferred)
     access_log_settings: Any = None
     # Specifies whether updates to an API automatically trigger a new deployment. The default value is true.
     auto_deploy: Any = None
-    # Overrides the default route settings for the API Gateway v2 stage, which specify throttling, logging, and other behaviors applied to all routes that do not have their own settings. (AI-inferred)
     default_route_settings: Any = None
     # The description for the API stage.
     description: Any = None
@@ -108,11 +106,8 @@ _GatewayV2ApiGatewayManagedOverrides_StageFields = {
 class GatewayV2ApiGatewayManagedOverridesConfig:
     # The ID of the API for which to override the configuration of API Gateway-managed resources.
     api_id: Any = None
-    # The integration property is an object that overrides integration settings, such as integration type, HTTP method, payload format version, and timeout, for all integrations defined in the API's OpenAPI definition. (AI-inferred)
     integration: Any = None
-    # Overrides the configuration of a specific Route in an API Gateway v2 (WebSocket or HTTP) API by specifying properties such as authorization settings, request models, and route response selection expression, replacing the managed defaults. (AI-inferred)
     route: Any = None
-    # The stage property defines overrides for the API Gateway v2 stage, configuring settings such as access log settings, default route throttling, and stage variables that replace the managed stage defaults. (AI-inferred)
     stage: Any = None
 
 @dataclasses.dataclass
@@ -121,11 +116,8 @@ class GatewayV2ApiGatewayManagedOverridesAttrs:
     api_id: Any = None
     # A TPS Code is automatically generated on creation and assigned as the unique identifier.
     id: Any = None
-    # The integration property is an object that overrides integration settings, such as integration type, HTTP method, payload format version, and timeout, for all integrations defined in the API's OpenAPI definition. (AI-inferred)
     integration: Any = None
-    # Overrides the configuration of a specific Route in an API Gateway v2 (WebSocket or HTTP) API by specifying properties such as authorization settings, request models, and route response selection expression, replacing the managed defaults. (AI-inferred)
     route: Any = None
-    # The stage property defines overrides for the API Gateway v2 stage, configuring settings such as access log settings, default route throttling, and stage variables that replace the managed stage defaults. (AI-inferred)
     stage: Any = None
 
 GatewayV2ApiGatewayManagedOverrides = ubx.ResourceBinding(

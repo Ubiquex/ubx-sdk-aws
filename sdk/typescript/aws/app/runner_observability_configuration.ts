@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RunnerObservabilityConfiguration_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the App Runner observability configuration, used to categorize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

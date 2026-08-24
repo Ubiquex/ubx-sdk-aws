@@ -15,7 +15,6 @@ class SubnetRouteTableAssociationConfig:
 
 @dataclasses.dataclass
 class SubnetRouteTableAssociationAttrs:
-    # The unique identifier assigned by AWS to the subnet route table association, typically a value like 'rtbassoc-1234567890abcdef0'. (AI-inferred)
     id: Any = None
     # The ID of the route table. The physical ID changes when the route table ID is changed.
     route_table_id: Any = None

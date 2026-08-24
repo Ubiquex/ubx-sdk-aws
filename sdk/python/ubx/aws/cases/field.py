@@ -18,7 +18,6 @@ class Field_Attributes:
 
 @dataclasses.dataclass
 class Field_Tags:
-    # The key of a user-defined tag attached to the AWS Cases field, used for metadata and resource management. (AI-inferred)
     key: Any = None
     value: Any = None
 

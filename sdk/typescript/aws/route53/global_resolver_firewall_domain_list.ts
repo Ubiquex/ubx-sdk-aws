@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlobalResolverFirewallDomainList_Tags {
-  /** The key component of a tag assigned to the Route 53 Resolver firewall domain list, enabling you to categorize and filter the resource by metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag assigned to this Route 53 Resolver firewall domain list, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,46 +12,33 @@ const GlobalResolverFirewallDomainList_TagsFields: FieldMap = {
 };
 
 export interface GlobalResolverFirewallDomainListConfig {
-  /** A caller-supplied token used to ensure idempotent creation of the Route 53 Resolver firewall domain list, preventing duplicates if the create request is retried. (AI-inferred) */
   clientToken?: string | Computed<string>;
-  /** A brief description of the Route53 Resolver firewall domain list, used to record its purpose or what domains it contains. (AI-inferred) */
   description?: string | Computed<string>;
   /** S3 URL to import domains from. */
   domainFileUrl?: string | Computed<string>;
   /** An inline list of domains to use for this domain list. */
   domains?: string[] | Computed<string[]>;
   globalResolverId: string | Computed<string>;
-  /** The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred) */
   name: string | Computed<string>;
   tags?: GlobalResolverFirewallDomainList_Tags[] | Computed<GlobalResolverFirewallDomainList_Tags[]>;
 }
 
 export interface GlobalResolverFirewallDomainListAttrs {
-  /** The Amazon Resource Name (ARN) of the Route 53 Resolver firewall domain list, which uniquely identifies the domain list across AWS. (AI-inferred) */
   arn: string;
-  /** A caller-supplied token used to ensure idempotent creation of the Route 53 Resolver firewall domain list, preventing duplicates if the create request is retried. (AI-inferred) */
   clientToken: string;
-  /** The timestamp of when the Route 53 Resolver firewall domain list was created. (AI-inferred) */
   createdAt: string;
-  /** A brief description of the Route53 Resolver firewall domain list, used to record its purpose or what domains it contains. (AI-inferred) */
   description: string;
-  /** The number of domains currently in the firewall domain list, as reported by Route 53 Resolver. (AI-inferred) */
   domainCount: number;
   /** S3 URL to import domains from. */
   domainFileUrl: string;
   /** An inline list of domains to use for this domain list. */
   domains: string[];
-  /** The unique identifier assigned by AWS to the Route 53 Resolver firewall domain list. (AI-inferred) */
   firewallDomainListId: string;
   globalResolverId: string;
-  /** The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred) */
   name: string;
-  /** The current status of the Route 53 Resolver firewall domain list, such as COMPLETE, UPDATING, or DELETING, indicating the lifecycle state of the list. (AI-inferred) */
   status: string;
-  /** A message from Route 53 Resolver DNS Firewall that provides additional detail about the current status of the domain list, such as an error explanation or confirmation of successful processing. (AI-inferred) */
   statusMessage: string;
   tags: GlobalResolverFirewallDomainList_Tags[];
-  /** Indicates the timestamp (as a string) at which the Route 53 Resolver DNS Firewall domain list was last modified by AWS, matching the ModificationTime attribute returned by the service. (AI-inferred) */
   updatedAt: string;
 }
 

@@ -2,28 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WatchMetricStream_ExcludeFilters {
-  /** The list of metric names within the specified namespace to exclude from the metric stream. (AI-inferred) */
   metricNames?: string[] | Computed<string[]>;
-  /** Defines the CloudWatch namespace (e.g., AWS/EC2) whose metrics are excluded from the metric stream when matched by this exclusion filter. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface WatchMetricStream_StatisticsConfigurations_IncludeMetrics {
-  /** The name of the CloudWatch metric for which the specified additional statistics are included in the metric stream. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** The name of the AWS service or custom application namespace (e.g., AWS/EC2, AWS/Lambda) whose metrics are included in this statistics configuration, filtering which metric namespaces are sent to the stream. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface WatchMetricStream_StatisticsConfigurations {
-  /** Specifies additional statistics (such as percentiles like p99) to include in the metric stream for metrics that match the namespace and metric name of this statistics configuration. (AI-inferred) */
   additionalStatistics?: string[] | Computed<string[]>;
-  /** Specifies the list of metrics (namespace and metric name) to which the corresponding statistics configuration's allowed statistics apply, controlling which metric streams include the configured statistics. (AI-inferred) */
   includeMetrics?: WatchMetricStream_StatisticsConfigurations_IncludeMetrics[] | Computed<WatchMetricStream_StatisticsConfigurations_IncludeMetrics[]>;
 }
 
 export interface WatchMetricStream_Tags {
-  /** The key of a tag attached to the CloudWatch metric stream, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -4,68 +4,44 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSource_ModelAccessConfig struct {
-	// Indicates whether you accept the End User License Agreement (EULA) required to access the model data from the S3 source, such as for gated or licensed models. (AI-inferred)
 	AcceptEula any
 }
 
 type MakerModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource_S3DataSource struct {
-	// Specifies the compression type (e.g., None or Gzip) for the model artifacts stored in the S3 location referenced by the model data source container. (AI-inferred)
 	CompressionType any
-	// Configures access to the model data in Amazon S3, including whether to accept the end-user license agreement (EULA) required for the model. (AI-inferred)
 	ModelAccessConfig any
-	// Specifies whether the S3 data source is a prefix (S3Prefix) that points to all objects under a location or a manifest file (ManifestFile) that explicitly lists the S3 objects to use as model data. (AI-inferred)
 	S3DataType any
-	// The S3 URI of the model artifacts for the container in the additional inference specification. (AI-inferred)
 	S3Uri any
 }
 
 type MakerModelPackage_AdditionalInferenceSpecifications_Containers_ModelDataSource struct {
-	// Defines the S3 location (S3Uri) and data type (S3DataType) for the model data source used by the container in this additional inference specification. (AI-inferred)
 	S3DataSource any
 }
 
 type MakerModelPackage_AdditionalInferenceSpecifications_Containers_ModelInput struct {
-	// Specifies the data input configuration for the model container, as a JSON string that defines the input data format and shape (e.g., '{"input": [1, 3, 224, 224]}'), which the model uses to accept inference requests. (AI-inferred)
 	DataInputConfig any
 }
 
 type MakerModelPackage_AdditionalInferenceSpecifications_Containers struct {
-	// Defines the DNS hostname for this container within the SageMaker model package's inference specification, allowing other containers in a multi-container endpoint or pipeline to address it uniquely. (AI-inferred)
 	ContainerHostname any
-	// Environment variables, as key-value string pairs, to configure the container for this additional inference specification. (AI-inferred)
 	Environment any
-	// Specifies the machine learning framework used by the model container, such as TensorFlow, PyTorch, or MXNet, within an additional inference specification of the SageMaker model package. (AI-inferred)
 	Framework any
-	// The version of the machine learning framework (e.g., TensorFlow, PyTorch) used to run the model in this additional inference container. (AI-inferred)
 	FrameworkVersion any
-	// The URI of the Docker container image to use for inference when this additional inference specification is selected. (AI-inferred)
 	Image any
-	// Specifies the SHA256 digest of the container image, which uniquely identifies the exact image version for the additional inference specification container. (AI-inferred)
 	ImageDigest any
-	// Specifies the S3 source for the model artifacts used by this additional inference container, with an S3DataSource object defining the S3 URI and data type (e.g., S3Prefix or S3Object) as an alternative to ModelDataUrl. (AI-inferred)
 	ModelDataSource any
-	// The S3 URI that specifies the location of the model artifacts for the container in this additional inference specification of the SageMaker model package. (AI-inferred)
 	ModelDataUrl any
-	// Specifies the input configuration for the container within an additional inference specification, including the data input configuration string that describes the format and shape of input data for model inference. (AI-inferred)
 	ModelInput any
-	// Sets the model name used by SageMaker Edge Manager to identify and package the model in this additional inference specification container for deployment to edge devices. (AI-inferred)
 	NearestModelName any
 }
 
 type MakerModelPackage_AdditionalInferenceSpecifications struct {
-	// Defines the Docker container images and their configurations (e.g., image URI, environment variables, and model data sources) that SageMaker uses for inference when this additional inference specification is selected. (AI-inferred)
 	Containers any
-	// The description of this additional inference specification, providing details about the variant, such as its intended use or contents. (AI-inferred)
 	Description any
-	// The name of this additional inference specification, which must be unique within the model package and is used to identify the specification when selecting it for a target environment. (AI-inferred)
 	Name any
-	// Specifies the list of supported MIME content types (e.g., 'text/csv', 'application/json') for the corresponding additional inference specification of the SageMaker model package, defining which input formats the model can accept for inference. (AI-inferred)
 	SupportedContentTypes any
-	// Specifies the list of SageMaker instance types (e.g., ml.m5.large) that this additional inference specification supports for real-time inference endpoints. (AI-inferred)
 	SupportedRealtimeInferenceInstanceTypes any
-	// Specifies the list of MIME types that the model can return for inference responses in this additional inference specification, such as 'text/plain' or 'application/json'. (AI-inferred)
 	SupportedResponseMimetypes any
-	// Specifies the types of ML compute instances supported for running batch transform jobs with this additional inference specification. (AI-inferred)
 	SupportedTransformInstanceTypes any
 }
 
@@ -169,16 +145,12 @@ type MakerModelPackage_ModelMetrics struct {
 }
 
 type MakerModelPackage_ModelPackageStatusDetails_ValidationStatuses struct {
-	// The reason why the model package validation failed, if applicable. (AI-inferred)
 	FailureReason any
-	// The name of a validation status item in the model package status details, identifying the specific validation job or stage (e.g., a processing job or evaluation) whose status is reported for the SageMaker model package. (AI-inferred)
 	Name any
-	// The status of a model package validation job, with possible values InProgress, Completed, or Failed. (AI-inferred)
 	Status any
 }
 
 type MakerModelPackage_ModelPackageStatusDetails struct {
-	// Provides the list of validation status items, each describing the name, status (e.g., InProgress, Completed, Failed), and failure reason (if any) for a validation profile or test job associated with the model package. (AI-inferred)
 	ValidationStatuses any
 }
 
@@ -188,9 +160,7 @@ type MakerModelPackage_SecurityConfig struct {
 }
 
 type MakerModelPackage_SourceAlgorithmSpecification_SourceAlgorithms struct {
-	// The name or Amazon Resource Name (ARN) of the SageMaker algorithm used to create the model data for this source algorithm entry in the model package. (AI-inferred)
 	AlgorithmName any
-	// Specifies the S3 URL (e.g., s3://bucket/prefix/model.tar.gz) where the trained model artifacts for this source algorithm are stored in SageMaker Model Package registration. (AI-inferred)
 	ModelDataUrl any
 }
 
@@ -200,81 +170,55 @@ type MakerModelPackage_SourceAlgorithmSpecification struct {
 }
 
 type MakerModelPackage_Tags struct {
-	// The key of a tag assigned to the SageMaker model package, used for resource identification, access control, and cost allocation. (AI-inferred)
 	Key any
-	// The value part of a tag attached to the SageMaker model package, providing user-defined metadata corresponding to the tag key. (AI-inferred)
 	Value any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSource_S3DataSource struct {
-	// Specifies whether the S3 input data is interpreted as a manifest file, an S3 prefix, or an augmented manifest file, determining how SageMaker resolves the data source path for the transform job's input. (AI-inferred)
 	S3DataType any
-	// This field specifies the S3 URI of the input dataset used for the model validation transform job of the SageMaker model package. (AI-inferred)
 	S3Uri any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput_DataSource struct {
-	// Defines the S3 data source, including the S3 URI and data type, for the input data used in the transform job that validates the model package. (AI-inferred)
 	S3DataSource any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformInput struct {
-	// Compression type for the input data of the batch transform job used in the model package validation profile, indicating whether the data is gzip-compressed or uncompressed (None). (AI-inferred)
 	CompressionType any
-	// The MIME type (e.g., text/csv or application/x-image) of the input data for the batch transform job that validates this model package. (AI-inferred)
 	ContentType any
-	// Defines the location and format of the input data (e.g., S3 data source) for the batch transform job used to validate the model package within a validation profile. (AI-inferred)
 	DataSource any
-	// Specifies how the input data is split for the transform job, such as Line, RecordIO, TFRecord, or None. (AI-inferred)
 	SplitType any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformOutput struct {
-	// Specifies the MIME type (e.g., 'text/csv') that declares the format of the transformed output data produced by the validation transform job. (AI-inferred)
 	Accept any
-	// Determines how the transform job's output is assembled in Amazon S3: 'None' for separate objects per record, or 'Line' to concatenate all records into a single newline-delimited file. (AI-inferred)
 	AssembleWith any
-	// Specifies the AWS KMS key ID used to encrypt the output data of the transform job that validates the model package. (AI-inferred)
 	KmsKeyId any
-	// Specifies the S3 URI (bucket and prefix) where the output of the validation batch transform job is stored, used by the model package's validation profile. (AI-inferred)
 	S3OutputPath any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition_TransformResources struct {
-	// Specifies the number of ML compute instances to launch for the batch transform job during model package validation. (AI-inferred)
 	InstanceCount any
-	// Specifies the ML compute instance type (e.g., ml.m5.xlarge) used by the batch transform job that validates the model package. (AI-inferred)
 	InstanceType any
-	// The AWS KMS key ID used to encrypt data on the storage volume attached to the ML compute instances running the batch transform job for validating the model package. (AI-inferred)
 	VolumeKmsKeyId any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles_TransformJobDefinition struct {
-	// Specifies the batch strategy for the batch transform job used in model package validation, indicating whether the transform job sends each record as a single inference request (SingleRecord) or batches multiple records into one request (MultiRecord). (AI-inferred)
 	BatchStrategy any
-	// Specifies environment variables passed to the model container when the batch transform job defined in this validation profile runs to validate the model package. (AI-inferred)
 	Environment any
-	// Specifies the maximum number of parallel transform jobs that SageMaker can run concurrently for this transform job definition, controlling resource usage during model validation. (AI-inferred)
 	MaxConcurrentTransforms any
-	// Specifies the maximum size of the payload, in megabytes, that a batch transform job can send to the model associated with this validation profile. (AI-inferred)
 	MaxPayloadInMb any
-	// Specifies the input data source (e.g., S3 location, content type, compression type, and split type) for the batch transform job used to validate the model package. (AI-inferred)
 	TransformInput any
-	// Specifies the Amazon S3 output location and settings for the results of a transform job used to validate a model package. (AI-inferred)
 	TransformOutput any
-	// Specifies the ML compute instances (instance type and count) used for the batch transform job that validates the model package. (AI-inferred)
 	TransformResources any
 }
 
 type MakerModelPackage_ValidationSpecification_ValidationProfiles struct {
-	// The name of a validation profile, used to identify a specific validation job within the validation specification of an AWS SageMaker model package. (AI-inferred)
 	ProfileName any
-	// Defines the batch transform job configuration (such as input/output data sources, compute resources, and transformation settings) used to validate the SageMaker model package within a validation profile. (AI-inferred)
 	TransformJobDefinition any
 }
 
 type MakerModelPackage_ValidationSpecification struct {
-	// Specifies a list of validation profiles, each containing a profile name and a transform job definition, that define how the model package is validated. (AI-inferred)
 	ValidationProfiles any
 	// The IAM roles to be used for the validation of the model package.
 	ValidationRole any

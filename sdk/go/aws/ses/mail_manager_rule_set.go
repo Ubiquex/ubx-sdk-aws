@@ -4,267 +4,176 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerRuleSet_Rules_Actions_AddHeader struct {
-	// The name of the email header that this action adds to the message, used in the add_header action of an SES Mail Manager rule set. (AI-inferred)
 	HeaderName any
-	// The value of the email header that will be added to the message when this AddHeader action is invoked by the rule set. (AI-inferred)
 	HeaderValue any
 }
 
 type MailManagerRuleSet_Rules_Actions_Archive struct {
-	// Specifies the policy for handling a message when the archive action fails, with valid values CONTINUE (process subsequent actions) or DROP (stop processing and drop the message). (AI-inferred)
 	ActionFailurePolicy any
-	// Specifies the ARN of the SES Mail Manager archive to which the email message is archived when this action is triggered. (AI-inferred)
 	TargetArchive any
 }
 
 type MailManagerRuleSet_Rules_Actions_Bounce struct {
-	// Determines how the rule set handles an email when the bounce action fails, accepting CONTINUE to proceed with subsequent actions or DROP to stop processing. (AI-inferred)
 	ActionFailurePolicy any
-	// Specifies the custom diagnostic message that is included in the bounce notification sent to the original sender when the bounce action is invoked. (AI-inferred)
 	DiagnosticMessage any
-	// The custom message text to include in the bounce email that is sent back to the original sender when this rule's bounce action is triggered. (AI-inferred)
 	Message any
-	// The ARN of the IAM role that Amazon SES Mail Manager assumes when executing this bounce action to send a bounce email to the original sender. (AI-inferred)
 	RoleArn any
-	// The email address used as the envelope sender (Return-Path) when the bounce message is sent by this bounce action in a rule set. (AI-inferred)
 	Sender any
-	// Specifies the three-digit SMTP reply code (e.g., 550, 551) used in the bounce response sent to the sender when an email matches this rule. (AI-inferred)
 	SmtpReplyCode any
-	// The SMTP status code to return in the bounce response, used to specify the rejection reason when a message is bounced. (AI-inferred)
 	StatusCode any
 }
 
 type MailManagerRuleSet_Rules_Actions_DeliverToMailbox struct {
-	// Determines whether the rule set continues processing the next rule or drops the email when the deliver-to-mailbox action fails, with valid values CONTINUE or DROP. (AI-inferred)
 	ActionFailurePolicy any
-	// The Amazon Resource Name (ARN) of the mailbox to which the email will be delivered by this action. (AI-inferred)
 	MailboxArn any
-	// The role_arn specifies the IAM role ARN that AWS SES Mail Manager assumes to deliver messages to the target mailbox identified by the corresponding mailbox_arn in the deliver_to_mailbox action. (AI-inferred)
 	RoleArn any
 }
 
 type MailManagerRuleSet_Rules_Actions_DeliverToQbusiness struct {
-	// Specifies whether the rule set continues processing subsequent rules (CONTINUE) or stops and drops the email (DROP) if delivering the email to Amazon Q Business fails. (AI-inferred)
 	ActionFailurePolicy any
-	// The ARN of the Amazon Q Business application to which SES Mail Manager delivers the email message when the DeliverToQBusiness action is invoked. (AI-inferred)
 	ApplicationId any
-	// The ID of the Amazon Q Business index to which the email content is delivered when the rule set's action is triggered. (AI-inferred)
 	IndexId any
-	// Specifies the ARN of an IAM role that the SES Mail Manager rule action assumes to deliver the email message to the configured Amazon Q Business application. (AI-inferred)
 	RoleArn any
 }
 
 type MailManagerRuleSet_Rules_Actions_InvokeLambda struct {
-	// Specifies the policy for handling a failed Lambda invocation in the rule action, determining whether email processing continues with the next action or the email is dropped. (AI-inferred)
 	ActionFailurePolicy any
-	// The ARN of the Lambda function that Mail Manager invokes when a rule with this action matches an inbound email. (AI-inferred)
 	FunctionArn any
-	// Specifies whether the Lambda function is invoked synchronously ('SYNC') or asynchronously ('ASYNC'), controlling whether the rule set execution waits for the Lambda response. (AI-inferred)
 	InvocationType any
-	// Specifies the number of minutes to retry invoking the Lambda function if the initial invocation fails, after which the action is considered failed. (AI-inferred)
 	RetryTimeMinutes any
-	// The ARN of the IAM role that AWS SES Mail Manager assumes to invoke the specified Lambda function when this action is triggered. (AI-inferred)
 	RoleArn any
 }
 
 type MailManagerRuleSet_Rules_Actions_PublishToSns struct {
-	// Determines the behavior when the SNS publish action fails, with 'CONTINUE' allowing subsequent actions to run and 'DROP' causing the email to be rejected. (AI-inferred)
 	ActionFailurePolicy any
-	// Specifies the encoding (BASE64 or TEXT) applied to the email content when it is published to the SNS topic. (AI-inferred)
 	Encoding any
-	// Specifies whether the email delivered to the SNS topic contains the raw MIME content or a JSON object representation of the message metadata. (AI-inferred)
 	PayloadType any
-	// The ARN of the IAM role that SES Mail Manager assumes to publish email event data to the configured Amazon SNS topic when this action is triggered. (AI-inferred)
 	RoleArn any
-	// The ARN of the Amazon SNS topic to which the email is published when the rule's conditions are met. (AI-inferred)
 	TopicArn any
 }
 
 type MailManagerRuleSet_Rules_Actions_Relay struct {
-	// Determines the behavior when the relay action fails, either continuing with subsequent rule set actions (CONTINUE) or discarding the message (DROP). (AI-inferred)
 	ActionFailurePolicy any
-	// Specifies the email address to use as the MAIL FROM (envelope sender) when the message is relayed to the destination SMTP server. (AI-inferred)
 	MailFrom any
-	// The Amazon Resource Name (ARN) of the SES Mail Manager relay to which the email is forwarded when this relay action is invoked. (AI-inferred)
 	Relay any
 }
 
 type MailManagerRuleSet_Rules_Actions_ReplaceRecipient struct {
-	// The list of email addresses that replace the original recipient when the replace recipient action is applied. (AI-inferred)
 	ReplaceWith any
 }
 
 type MailManagerRuleSet_Rules_Actions_Send struct {
-	// Sets the action failure policy for the send action, indicating whether rule processing should continue with subsequent actions or stop if sending the email fails. (AI-inferred)
 	ActionFailurePolicy any
-	// The ARN of the IAM role that Mail Manager assumes to allow the Send action to deliver the message through Amazon SES. (AI-inferred)
 	RoleArn any
 }
 
 type MailManagerRuleSet_Rules_Actions_WriteToS3 struct {
-	// Determines whether processing continues or stops when the write-to-S3 action fails, with allowed values 'CONTINUE' or 'DROP'. (AI-inferred)
 	ActionFailurePolicy any
-	// The ARN of the IAM role that AWS SES Mail Manager assumes to write messages to the specified S3 bucket for this rule action. (AI-inferred)
 	RoleArn any
-	// The name of the S3 bucket where the incoming email message content is stored when this WriteToS3 action runs. (AI-inferred)
 	S3Bucket any
-	// Specifies the prefix to prepend to the S3 object key when this write-to-S3 action stores the email message in the specified bucket. (AI-inferred)
 	S3Prefix any
-	// The AWS KMS key ID used for server-side encryption (SSE-KMS) of the email message when it is written to the S3 bucket by this action. (AI-inferred)
 	S3SseKmsKeyId any
 }
 
 type MailManagerRuleSet_Rules_Actions struct {
-	// Adds a custom header with a specified name and value to the email message when the rule's conditions are met. (AI-inferred)
 	AddHeader any
-	// Configures the rule action to archive the incoming email to the specified SES Mail Manager archive. (AI-inferred)
 	Archive any
-	// Defines a bounce action that rejects the incoming email and sends a bounce response back to the sender, with optional bounce code and message parameters. (AI-inferred)
 	Bounce any
-	// Specifies the deliver-to-mailbox action for a rule, which forwards the incoming email to a chosen mailbox managed by SES Mail Manager, using the mailbox ARN to determine the destination. (AI-inferred)
 	DeliverToMailbox any
-	// Specifies that the rule action should deliver the email message to an Amazon Q Business application, using an IAM role to grant access to the application. (AI-inferred)
 	DeliverToQbusiness any
-	// Terminates rule evaluation and silently discards the message, preventing delivery without generating a bounce or complaint. (AI-inferred)
 	Drop any
-	// Invokes a Lambda function with the email message and its metadata as the event payload, enabling serverless custom processing of matched emails within the rule set. (AI-inferred)
 	InvokeLambda any
-	// Configuration for the PublishToSNS action, which sends the email content to the designated SNS topic for further processing. (AI-inferred)
 	PublishToSns any
-	// Configures the relay action for a rule, which forwards an incoming email to a specified SMTP relay destination via AWS SES Mail Manager. (AI-inferred)
 	Relay any
-	// Configuration for the SES Mail Manager ReplaceRecipient action, which overrides the email's original destination with a specified replacement recipient address. (AI-inferred)
 	ReplaceRecipient any
-	// Specifies a Send action within a mail manager rule, which directs the incoming email to a designated destination using the configured IAM role and determines behavior on delivery failure. (AI-inferred)
 	Send any
-	// The write_to_s3 property of a rule action specifies the S3 bucket (and optional key prefix) where the email message should be stored as part of the rule set's processing. (AI-inferred)
 	WriteToS3 any
 }
 
 type MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_Analysis struct {
-	// The Amazon Resource Name (ARN) of the AWS SES Mail Manager analyzer resource to use for evaluating the boolean expression in the rule condition. (AI-inferred)
 	Analyzer any
-	// Specifies the key in the analysis result payload (from the referenced analyzer) whose value is compared in this boolean condition. (AI-inferred)
 	ResultField any
 }
 
 type MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate_IsInAddressList struct {
-	// The address_lists field provides the list of address list IDs to check the incoming email address against; if the address matches any entry in one of these lists, the containing rule condition evaluates to true. (AI-inferred)
 	AddressLists any
-	// Specifies which email header or envelope attribute (e.g., From, To, or Recipient) is inspected to determine membership in the referenced address list. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerRuleSet_Rules_Conditions_BooleanExpression_Evaluate struct {
-	// An object that specifies the analysis to perform using a trained analyzer, including the analyzer ARN and the result field to evaluate against. (AI-inferred)
 	Analysis any
-	// Specifies the email metadata attribute (such as sender, recipient, subject, or authentication result) that the boolean expression evaluates against a configured value in the rule condition. (AI-inferred)
 	Attribute any
-	// This object specifies the 'is in address list' evaluation, defining which email attribute (such as sender or recipient) must be present in the referenced address list for the condition to evaluate to true. (AI-inferred)
 	IsInAddressList any
 }
 
 type MailManagerRuleSet_Rules_Conditions_BooleanExpression struct {
-	// Defines the email attribute (e.g., IsDeliveryReceipt or IsSpam) that the boolean expression condition inspects to determine whether the condition is satisfied. (AI-inferred)
 	Evaluate any
-	// Defines the comparison operation applied when matching a boolean attribute against a boolean value in the rule condition; the only supported operators are EQUALS and NOT_EQUALS. (AI-inferred)
 	Operator any
 }
 
 type MailManagerRuleSet_Rules_Conditions_DmarcExpression struct {
-	// Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the DMARC authentication result against the values listed in the same DMARC expression. (AI-inferred)
 	Operator any
-	// Specifies the DMARC verdict values (such as PASS, FAIL, NONE, TEMPERROR, or PERMERROR) that the rule condition compares against the incoming email's DMARC authentication result using the condition's operator. (AI-inferred)
 	Values any
 }
 
 type MailManagerRuleSet_Rules_Conditions_IpExpression_Evaluate struct {
-	// Specifies the email attribute (such as the message's source IP address) that the IP expression condition evaluates against the rule's configured IP address ranges. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerRuleSet_Rules_Conditions_IpExpression struct {
 	Evaluate any
-	// The operator (CIDR or IP) that defines how the IP expression condition matches the source IP address against the provided values. (AI-inferred)
 	Operator any
-	// The list of IP addresses or CIDR blocks that the rule's IP condition matches against the message source. (AI-inferred)
 	Values any
 }
 
 type MailManagerRuleSet_Rules_Conditions_NumberExpression struct {
-	// In an SES Mail Manager rule set, this object identifies the message attribute from which the numeric value used in the number expression condition is extracted before the operator and value comparison are applied. (AI-inferred)
 	Evaluate any
-	// Specifies the comparison operator (for example, EQ, NE, GT, LT, GE, LE) used to evaluate the numeric value in a number expression condition within a Mail Manager rule set. (AI-inferred)
 	Operator any
-	// The numeric value that the NumberExpression condition compares against the email attribute to determine whether the rule condition is met. (AI-inferred)
 	Value any
 }
 
 type MailManagerRuleSet_Rules_Conditions_StringExpression_Evaluate struct {
-	// Defines how to use an external analysis result as the evaluation source for the string expression condition, enabling the rule to match on analyzed email data rather than a direct attribute. (AI-inferred)
 	Analysis any
-	// Specifies the email attribute (such as FROM, TO, or SUBJECT) that the string expression condition evaluates against. (AI-inferred)
 	Attribute any
-	// Specifies which attribute of the TLS client certificate (for example, subject or issuer) the string condition evaluates against the incoming connection's certificate data. (AI-inferred)
 	ClientCertificateAttribute any
-	// The name of the MIME header (such as 'Subject' or 'From') whose value the string expression condition evaluates. (AI-inferred)
 	MimeHeaderAttribute any
 }
 
 type MailManagerRuleSet_Rules_Conditions_StringExpression struct {
-	// Specifies the email attribute to evaluate for the string expression condition, such as the sender address, recipient address, a message header, or a MIME part, which is then compared against a value using the condition's operator. (AI-inferred)
 	Evaluate any
-	// Specifies the string comparison operator (e.g., EQUALS, STARTS_WITH, CONTAINS) used by the string expression condition to compare the selected email attribute against the configured value. (AI-inferred)
 	Operator any
-	// The list of string values to match against the email attribute (e.g., From, To, Subject) when evaluating a string expression condition in an SES Mail Manager rule set. (AI-inferred)
 	Values any
 }
 
 type MailManagerRuleSet_Rules_Conditions_VerdictExpression_Evaluate struct {
 	Analysis any
-	// In an AWS SES Mail Manager rule set verdict expression condition, this attribute specifies which email authentication or verdict attribute (such as SPF, DKIM, or DMARC) is being evaluated against the defined value. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerRuleSet_Rules_Conditions_VerdictExpression struct {
-	// The `evaluate` object in a verdict expression condition specifies which email verdict attribute (e.g., SPF, DKIM, DMARC) the rule condition will inspect, typically by providing an attribute name in a nested structure. (AI-inferred)
 	Evaluate any
-	// Specifies the comparison operator (e.g., EQUALS or NOT_EQUALS) used by this verdict expression condition to match the message's verdict attribute against the configured value. (AI-inferred)
 	Operator any
-	// The list of email verdict values (such as SUSPECT, BULK, or OK) that this condition matches against; the condition is satisfied when the incoming message's verdict equals any one of these values. (AI-inferred)
 	Values any
 }
 
 type MailManagerRuleSet_Rules_Conditions struct {
-	// The boolean_expression object specifies a rule condition that evaluates a boolean email attribute (e.g., whether the message was sent over TLS) to determine if the rule's actions should be applied. (AI-inferred)
 	BooleanExpression any
-	// Evaluates the DMARC policy of the inbound email, matching when the email's DMARC authentication result (such as PASS, FAIL, NONE, or QUARANTINE) satisfies the specified operator and value in this condition. (AI-inferred)
 	DmarcExpression any
-	// Specifies an IP-based condition for a rule, matching the source IP address of the email against a list of CIDR ranges or exact IP addresses to determine whether the rule's actions are applied. (AI-inferred)
 	IpExpression any
-	// Defines a number-based matching condition that compares a numeric email attribute (e.g., message size or recipient count) to a specified value using an operator such as EQUALS, LESS_THAN, or GREATER_THAN. (AI-inferred)
 	NumberExpression any
-	// Specifies a condition for a rule that compares a designated email string attribute (e.g., SENDER, RECIPIENT, MAIL_FROM) to a string value, allowing the rule to trigger when they match. (AI-inferred)
 	StringExpression any
-	// Defines a condition that evaluates an email verdict (such as SPF, DKIM, or DMARC) against a specified value using an operator. (AI-inferred)
 	VerdictExpression any
 }
 
 type MailManagerRuleSet_Rules struct {
-	// Specifies the list of actions to execute when a rule's conditions are matched, such as delivering the email to a mailbox or forwarding it. (AI-inferred)
 	Actions any
-	// Specifies the list of conditions that an incoming email must satisfy (for example, matching the recipient, sender, or attachment presence) for the rule's actions to be executed. (AI-inferred)
 	Conditions any
-	// A user-defined name that identifies an individual rule within the SES Mail Manager rule set. (AI-inferred)
 	Name any
-	// List of conditions that, if any are met, cause the rule to be skipped (i.e., the rule does not apply to the email). (AI-inferred)
 	Unless any
 }
 
 type MailManagerRuleSet_Tags struct {
-	// The key of a tag attached to the SES Mail Manager Rule Set, used for identifying and categorizing the resource. (AI-inferred)
 	Key any
-	// The value of a tag (key-value pair) applied to the SES Mail Manager rule set, used to organize and identify the resource. (AI-inferred)
 	Value any
 }
 
@@ -559,24 +468,16 @@ var MailManagerRuleSet_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerRuleSetConfig struct {
-	// A unique, user-defined name that identifies the Mail Manager rule set within your AWS account. (AI-inferred)
 	RuleSetName any
-	// The rules list defines the ordered set of processing rules for the rule set, where each rule specifies conditions and the actions to execute when those conditions are met within the Mail Manager pipeline. (AI-inferred)
 	Rules any
-	// Specifies the list of key-value tags to attach to this AWS SES Mail Manager rule set, which are used for cost allocation, access control, and operational metadata management. (AI-inferred)
 	Tags any
 }
 
 type MailManagerRuleSetAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this SES Mail Manager rule set. (AI-inferred)
 	RuleSetArn any
-	// The unique identifier assigned by AWS SES Mail Manager to the rule set, which is automatically generated and used to reference the rule set in other configurations. (AI-inferred)
 	RuleSetId any
-	// A unique, user-defined name that identifies the Mail Manager rule set within your AWS account. (AI-inferred)
 	RuleSetName any
-	// The rules list defines the ordered set of processing rules for the rule set, where each rule specifies conditions and the actions to execute when those conditions are met within the Mail Manager pipeline. (AI-inferred)
 	Rules any
-	// Specifies the list of key-value tags to attach to this AWS SES Mail Manager rule set, which are used for cost allocation, access control, and operational metadata management. (AI-inferred)
 	Tags any
 }
 

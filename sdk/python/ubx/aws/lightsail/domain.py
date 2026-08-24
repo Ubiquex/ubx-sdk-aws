@@ -9,13 +9,9 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Domain_DomainEntries:
     id: Any = None
-    # Indicates whether the domain entry is an alias record that routes traffic to an AWS resource such as a load balancer or distribution, rather than a standard DNS record with a literal target. (AI-inferred)
     is_alias: Any = None
-    # The subdomain or hostname for the DNS record, such as 'www' or '@' for the root domain, that this domain entry defines. (AI-inferred)
     name: Any = None
-    # The destination value that this Lightsail domain DNS record resolves to, such as an IPv4 address for an A record or a hostname for a CNAME record. (AI-inferred)
     target: Any = None
-    # The DNS record type for this domain entry, such as A, CNAME, MX, or TXT. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +23,6 @@ class Domain_Location:
 
 @dataclasses.dataclass
 class Domain_Tags:
-    # The key of a tag that can be assigned to a Lightsail domain, enabling you to categorize, manage, and control access to the domain. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcblockPublicAccessExclusion_Tags struct {
-	// The key of a tag to assign to the AWS EC2 VPC Block Public Access exclusion. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key assigned to the VPC Block Public Access exclusion, used for identifying and organizing the AWS resource. (AI-inferred)
 	Value any
 }
 

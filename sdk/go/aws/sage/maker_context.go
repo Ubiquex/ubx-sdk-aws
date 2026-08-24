@@ -14,7 +14,6 @@ type MakerContext_Source struct {
 
 type MakerContext_Tags struct {
 	Key any
-	// The value component of a key-value tag attached to the SageMaker Context, which stores the user-defined string that, combined with the tag key, enables categorization, access control, and cost tracking for this ML resource. (AI-inferred)
 	Value any
 }
 

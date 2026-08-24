@@ -8,43 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerCoreNetwork_Edges:
-    # The Autonomous System Number (ASN) assigned to the edge location for BGP peering within the core network. (AI-inferred)
     asn: Any = None
-    # The AWS Region code (e.g., us-east-1) of the core network edge, returned as part of the edges list for the core network. (AI-inferred)
     edge_location: Any = None
-    # The list of CIDR blocks assigned to a core network edge, indicating the IP address ranges that are routed within that edge's network segment. (AI-inferred)
     inside_cidr_blocks: Any = None
 
 @dataclasses.dataclass
 class ManagerCoreNetwork_NetworkFunctionGroups_Segments:
-    # Specifies the list of segment names to which this segment can forward traffic, defining inter-segment reachability in the core network. (AI-inferred)
     send_to: Any = None
-    # Specifies the list of network function groups through which traffic from the segment is routed, enabling service insertion in the core network. (AI-inferred)
     send_via: Any = None
 
 @dataclasses.dataclass
 class ManagerCoreNetwork_NetworkFunctionGroups:
-    # Specifies the AWS Regions (edge locations) where the network functions in this network function group are deployed and operate within the core network. (AI-inferred)
     edge_locations: Any = None
-    # The name of the network function group, which uniquely identifies this group within the core network's policy and is referenced when attaching network functions to segments. (AI-inferred)
     name: Any = None
-    # Defines the list of core network segment names to which this network function group is associated, controlling the segments where the group's network functions can be deployed. (AI-inferred)
     segments: Any = None
 
 @dataclasses.dataclass
 class ManagerCoreNetwork_Segments:
-    # Specifies the list of AWS Regions (edge locations) where resources in this segment can be attached, controlling segment availability across the core network's global network. (AI-inferred)
     edge_locations: Any = None
-    # The name of the network segment, which uniquely identifies it within the core network and is referenced by other configuration elements such as segment actions and route policies. (AI-inferred)
     name: Any = None
-    # Specifies the list of other segment names within the same core network that this segment is allowed to share attachments with. (AI-inferred)
     shared_segments: Any = None
 
 @dataclasses.dataclass
 class ManagerCoreNetwork_Tags:
-    # The key (name) of a user-defined tag assigned to the AWS Network Manager core network. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair applied to the core network, used to store arbitrary metadata for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _ManagerCoreNetwork_TagsFields = {

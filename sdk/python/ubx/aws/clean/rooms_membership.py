@@ -8,74 +8,53 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultJobResultConfiguration_OutputConfiguration_S3:
-    # The name of the S3 bucket where the default job results are delivered, as part of the membership's default job result output configuration. (AI-inferred)
     bucket: Any = None
-    # The S3 key prefix under which the default analysis job result objects are stored in the specified output S3 bucket. (AI-inferred)
     key_prefix: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultJobResultConfiguration_OutputConfiguration:
-    # The S3 output configuration for the default job result configuration, specifying the Amazon S3 bucket (and optional key prefix) where analysis job results are delivered. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultJobResultConfiguration:
-    # Specifies the S3 bucket (and optional key prefix) that serves as the default destination for query results when running jobs in this membership. (AI-inferred)
     output_configuration: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms assumes to write query results to the S3 location configured in the default job result configuration. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultResultConfiguration_OutputConfiguration_S3:
-    # The name of the S3 bucket to which the default result configuration delivers query results for this AWS Clean Rooms membership. (AI-inferred)
     bucket: Any = None
-    # The S3 object key prefix that is applied to the output files when the Clean Rooms membership's default result configuration writes query results to the specified S3 bucket. (AI-inferred)
     key_prefix: Any = None
-    # Specifies the file format (CSV or PARQUET) for query results written to the S3 bucket and key prefix in the membership's default result configuration. (AI-inferred)
     result_format: Any = None
-    # Determines whether the default result configuration writes query output to a single S3 file (true) or multiple files (false). (AI-inferred)
     single_file_output: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultResultConfiguration_OutputConfiguration:
-    # Specifies the S3 bucket and optional key prefix where query results for this Clean Rooms membership are stored. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_DefaultResultConfiguration:
-    # Specifies the Amazon S3 destination (bucket and optional key prefix) used to store the default query results for this Clean Rooms membership. (AI-inferred)
     output_configuration: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms assumes to write query results to the default output location configured for the membership. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_PaymentConfiguration_JobCompute:
-    # Indicates whether this Clean Rooms membership is responsible for paying the compute costs for analysis jobs run in the collaboration. (AI-inferred)
     is_responsible: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_PaymentConfiguration_MachineLearning:
-    # Specifies the payment configuration for machine learning model inference jobs in the Clean Rooms membership, including which member is responsible for associated costs. (AI-inferred)
     model_inference: Any = None
-    # Defines the payment responsibility for machine learning model training in the membership's payment configuration, indicating whether the membership is responsible for the associated costs. (AI-inferred)
     model_training: Any = None
-    # Configures synthetic data generation for Clean Rooms ML by providing an IsEnabled flag that determines whether the feature is active and thus billing for it is incurred. (AI-inferred)
     synthetic_data_generation: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_PaymentConfiguration:
-    # Specifies the payment configuration for job compute in the membership, indicating which party (the 'MemberWhoPays' value) is responsible for paying for compute jobs run under the collaboration. (AI-inferred)
     job_compute: Any = None
-    # Configures which party (the member or the collaborator) is responsible for paying for machine learning operations within the AWS Clean Rooms membership, as part of the overarching payment configuration. (AI-inferred)
     machine_learning: Any = None
-    # This configuration block indicates whether this Clean Rooms membership is responsible for the compute costs associated with running queries in the collaboration. (AI-inferred)
     query_compute: Any = None
 
 @dataclasses.dataclass
 class RoomsMembership_Tags:
-    # The key portion of a user-defined tag attached to the AWS Clean Rooms membership, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
-    # A user-defined tag value attached to the AWS Clean Rooms membership, providing metadata that can be used for categorization, cost allocation, or access control. (AI-inferred)
     value: Any = None
 
 _RoomsMembership_DefaultJobResultConfiguration_OutputConfiguration_S3Fields = {
@@ -171,44 +150,28 @@ _RoomsMembership_TagsFields = {
 
 @dataclasses.dataclass
 class RoomsMembershipConfig:
-    # The unique identifier of the AWS Clean Rooms collaboration that this membership is associated with. (AI-inferred)
     collaboration_identifier: Any = None
-    # Specifies the default configuration for storing query results, including the S3 output location and the IAM role used to write results for jobs run by this membership. (AI-inferred)
     default_job_result_configuration: Any = None
-    # Specifies the default output configuration (such as the S3 bucket and IAM role) used to write query results for the membership. (AI-inferred)
     default_result_configuration: Any = None
-    # Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
     is_metrics_enabled: Any = None
     job_log_status: Any = None
-    # Configures the payment details for the membership, including the mode that determines which member is billed for query compute in the clean room. (AI-inferred)
     payment_configuration: Any = None
-    # Specifies whether query logging is enabled for the Clean Rooms membership, with valid values ENABLED or DISABLED to control retention of query activity records. (AI-inferred)
     query_log_status: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms membership.
     tags: Any = None
 
 @dataclasses.dataclass
 class RoomsMembershipAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Clean Rooms membership. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Clean Rooms collaboration that this membership is associated with. (AI-inferred)
     collaboration_arn: Any = None
-    # The `collaboration_creator_account_id` attribute returns the AWS account ID of the account that created the collaboration to which this Clean Rooms membership belongs. (AI-inferred)
     collaboration_creator_account_id: Any = None
-    # The unique identifier of the AWS Clean Rooms collaboration that this membership is associated with. (AI-inferred)
     collaboration_identifier: Any = None
-    # Specifies the default configuration for storing query results, including the S3 output location and the IAM role used to write results for jobs run by this membership. (AI-inferred)
     default_job_result_configuration: Any = None
-    # Specifies the default output configuration (such as the S3 bucket and IAM role) used to write query results for the membership. (AI-inferred)
     default_result_configuration: Any = None
-    # Whether query metrics are enabled for the Clean Rooms membership, which if true enables Amazon CloudWatch metrics for queries run within the membership. (AI-inferred)
     is_metrics_enabled: Any = None
     job_log_status: Any = None
-    # The unique AWS-assigned identifier for this AWS Clean Rooms membership. (AI-inferred)
     membership_identifier: Any = None
-    # Configures the payment details for the membership, including the mode that determines which member is billed for query compute in the clean room. (AI-inferred)
     payment_configuration: Any = None
-    # Specifies whether query logging is enabled for the Clean Rooms membership, with valid values ENABLED or DISABLED to control retention of query activity records. (AI-inferred)
     query_log_status: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms membership.
     tags: Any = None

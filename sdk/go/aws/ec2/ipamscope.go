@@ -26,7 +26,6 @@ var Ipamscope_TagsFields = ubx.FieldMap{
 	}
 
 type IpamscopeConfig struct {
-	// A user-defined description for the IPAM scope. (AI-inferred)
 	Description any
 	// External service configuration to connect your AWS IPAM scope.
 	ExternalAuthorityConfiguration any
@@ -39,7 +38,6 @@ type IpamscopeConfig struct {
 type IpamscopeAttrs struct {
 	// The Amazon Resource Name (ARN) of the IPAM scope.
 	Arn any
-	// A user-defined description for the IPAM scope. (AI-inferred)
 	Description any
 	// External service configuration to connect your AWS IPAM scope.
 	ExternalAuthorityConfiguration any

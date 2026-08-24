@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AcceleratorListener_PortRanges:
-    # The first port in the inclusive range of ports (from_port to to_port) that the AWS Global Accelerator listener accepts and forwards traffic on. (AI-inferred)
     from_port: Any = None
-    # The inclusive ending port number of the range for the listener. (AI-inferred)
     to_port: Any = None
 
 _AcceleratorListener_PortRangesFields = {
@@ -24,7 +22,6 @@ class AcceleratorListenerConfig:
     accelerator_arn: Any = None
     # Client affinity lets you direct all requests from a user to the same endpoint.
     client_affinity: Any = None
-    # Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred)
     port_ranges: Any = None
     # The protocol for the listener.
     protocol: Any = None
@@ -37,7 +34,6 @@ class AcceleratorListenerAttrs:
     client_affinity: Any = None
     # The Amazon Resource Name (ARN) of the listener.
     listener_arn: Any = None
-    # Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred)
     port_ranges: Any = None
     # The protocol for the listener.
     protocol: Any = None

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerSpace_OwnershipSettings:
-    # The name of the SageMaker user profile that owns this space, which is required to establish the space's owner in the ownership settings. (AI-inferred)
     owner_user_profile_name: Any = None
 
 @dataclasses.dataclass
@@ -18,7 +17,6 @@ class MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_Idle
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement:
-    # Specifies idle timeout and automatic shutdown behavior for the Code Editor application within the SageMaker space. (AI-inferred)
     idle_settings: Any = None
 
 @dataclasses.dataclass
@@ -34,71 +32,56 @@ class MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec:
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_CodeEditorAppSettings:
-    # Configures the idle timeout for the Code Editor app in the SageMaker Space, automatically shutting down the app after the specified number of idle minutes. (AI-inferred)
     app_lifecycle_management: Any = None
-    # Configures the default instance type and SageMaker image (via a ResourceSpec) used when launching the Code Editor application within the SageMaker Space. (AI-inferred)
     default_resource_spec: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem:
-    # The unique identifier of the Amazon EFS file system that SageMaker attaches to this Studio space as a custom file system. (AI-inferred)
     file_system_id: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_CustomFileSystems_S3FileSystem:
-    # Specifies the S3 URI (e.g., s3://bucket-name/prefix) of the S3 file system that is mounted as a custom file system in the SageMaker Space. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_CustomFileSystems:
-    # Configures an Amazon EFS file system to be attached to the SageMaker Space, specifying the file system ID used for mounting. (AI-inferred)
     efsfile_system: Any = None
-    # Specifies the FSx for Lustre file system configuration to attach to the SageMaker Space's custom file systems, identifying the file system by its unique ID. (AI-inferred)
     fsx_lustre_file_system: Any = None
     s3_file_system: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_JupyterLabAppSettings_CodeRepositories:
-    # The URL of the Git repository that SageMaker clones and mounts in the JupyterLab app of the SageMaker Space. (AI-inferred)
     repository_url: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_JupyterLabAppSettings:
-    # Configures the lifecycle management settings for JupyterLab apps in the SageMaker Space, including idle timeout settings that automatically stop idle apps. (AI-inferred)
     app_lifecycle_management: Any = None
     # A list of CodeRepositories available for use with JupyterLab apps.
     code_repositories: Any = None
-    # Defines the default instance type and SageMaker image (via `instance_type` and `sagemaker_image_arn`) used when launching the JupyterLab app for the SageMaker Space. (AI-inferred)
     default_resource_spec: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_JupyterServerAppSettings:
-    # Specifies the instance type and SageMaker image used for the default Jupyter Server app in the SageMaker space. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with JupyterServer apps.
     lifecycle_config_arns: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_KernelGatewayAppSettings_CustomImages:
-    # The name of the AppImageConfig resource that defines the configuration (such as file system and kernel specification) for the custom image used by the kernel gateway app. (AI-inferred)
     app_image_config_name: Any = None
-    # The name of the SageMaker image to be used by the kernel gateway app in the space. (AI-inferred)
     image_name: Any = None
-    # Specifies the version number of the SageMaker image to use for the custom image in the kernel gateway app of the space. (AI-inferred)
     image_version_number: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_KernelGatewayAppSettings:
     # A list of custom SageMaker images that are configured to run as a KernelGateway app.
     custom_images: Any = None
-    # The default resource specification (e.g., SageMaker image ARN and instance type) used to launch the kernel gateway app for the SageMaker space. (AI-inferred)
     default_resource_spec: Any = None
     # A list of LifecycleConfigArns available for use with KernelGateway apps.
     lifecycle_config_arns: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings_SpaceStorageSettings_EbsStorageSettings:
-    # Specifies the size of the Amazon EBS volume, in gigabytes, allocated to the SageMaker Space's storage settings. (AI-inferred)
     ebs_volume_size_in_gb: Any = None
 
 @dataclasses.dataclass
@@ -108,11 +91,9 @@ class MakerSpace_SpaceSettings_SpaceStorageSettings:
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSettings:
-    # Specifies the type of SageMaker Studio app that runs in the space, such as JupyterServer or KernelGateway, determining which application interface the space launches. (AI-inferred)
     app_type: Any = None
     # The CodeEditor app settings.
     code_editor_app_settings: Any = None
-    # The list of custom file systems (Amazon EFS or FSx for Lustre) that are mounted to the SageMaker space. (AI-inferred)
     custom_file_systems: Any = None
     # The JupyterServer app settings.
     jupyter_lab_app_settings: Any = None
@@ -124,19 +105,15 @@ class MakerSpace_SpaceSettings:
     remote_access: Any = None
     # The flag to enable/disable creation of space managed resources.
     space_managed_resources: Any = None
-    # This object configures the Amazon EBS storage settings for the SageMaker Studio space, including the EBS volume size in gigabytes via the nested EBS storage settings. (AI-inferred)
     space_storage_settings: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_SpaceSharingSettings:
-    # Defines whether the SageMaker Studio space is private (only the owner) or shared with other users, with allowed values Private and Shared. (AI-inferred)
     sharing_type: Any = None
 
 @dataclasses.dataclass
 class MakerSpace_Tags:
-    # The key of a user-defined tag to assign to the SageMaker Space, used for categorizing, cost tracking, and access control on this AWS resource. (AI-inferred)
     key: Any = None
-    # The tag value (the variable part of a key-value pair) for a tag attached to the SageMaker Space, used for metadata management and cost allocation. (AI-inferred)
     value: Any = None
 
 _MakerSpace_OwnershipSettingsFields = {
@@ -313,15 +290,12 @@ _MakerSpace_TagsFields = {
 class MakerSpaceConfig:
     # The ID of the associated Domain.
     domain_id: Any = None
-    # Defines the ownership settings for the SageMaker Space, specifying the user profile that owns the space. (AI-inferred)
     ownership_settings: Any = None
-    # Specifies the display name for the SageMaker Space, used to identify the space in the SageMaker Studio user interface. (AI-inferred)
     space_display_name: Any = None
     # A name for the Space.
     space_name: Any = None
     # A collection of settings that apply to spaces of Amazon SageMaker Studio. These settings are specified when the CreateSpace API is called.
     space_settings: Any = None
-    # Specifies the sharing settings for the SageMaker Space by providing the ARN of a SageMaker resource (e.g., a project) with which the space is shared. (AI-inferred)
     space_sharing_settings: Any = None
     # A list of tags to apply to the space.
     tags: Any = None
@@ -330,21 +304,17 @@ class MakerSpaceConfig:
 class MakerSpaceAttrs:
     # The ID of the associated Domain.
     domain_id: Any = None
-    # Defines the ownership settings for the SageMaker Space, specifying the user profile that owns the space. (AI-inferred)
     ownership_settings: Any = None
     # The space Amazon Resource Name (ARN).
     space_arn: Any = None
-    # Specifies the display name for the SageMaker Space, used to identify the space in the SageMaker Studio user interface. (AI-inferred)
     space_display_name: Any = None
     # A name for the Space.
     space_name: Any = None
     # A collection of settings that apply to spaces of Amazon SageMaker Studio. These settings are specified when the CreateSpace API is called.
     space_settings: Any = None
-    # Specifies the sharing settings for the SageMaker Space by providing the ARN of a SageMaker resource (e.g., a project) with which the space is shared. (AI-inferred)
     space_sharing_settings: Any = None
     # A list of tags to apply to the space.
     tags: Any = None
-    # The URL used to access the SageMaker Studio space in the web interface. (AI-inferred)
     url: Any = None
 
 MakerSpace = ubx.ResourceBinding(

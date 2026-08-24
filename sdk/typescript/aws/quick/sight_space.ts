@@ -2,22 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightSpace_Permissions {
-  /** The list of QuickSight actions, such as quicksight:DescribeSpace, that the principal in the containing permission entry is allowed to perform on this QuickSight space. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** Specifies the ARN of the IAM user, group, or role that is granted the permissions defined in this entry for the QuickSight space. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
 export interface SightSpace_Resources {
-  /** The ARN of a QuickSight asset (such as a dashboard, analysis, or dataset) that is associated with and managed within this QuickSight space. (AI-inferred) */
   resourceArn?: string | Computed<string>;
-  /** The type of QuickSight asset (e.g., DATASET or DASHBOARD) that is included in this space, indicating which resource the entry refers to. (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 
 export interface SightSpace_Tags {
   key?: string | Computed<string>;
-  /** The value of a key-value tag attached to the QuickSight space, used for cost allocation, access control, and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

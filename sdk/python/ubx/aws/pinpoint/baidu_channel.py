@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BaiduChannelConfig:
-    # The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred)
     api_key: Any = None
-    # The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred)
     application_id: Any = None
-    # Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred)
     enabled: Any = None
-    # The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred)
     secret_key: Any = None
 
 @dataclasses.dataclass
 class BaiduChannelAttrs:
-    # The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred)
     api_key: Any = None
-    # The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred)
     application_id: Any = None
-    # Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred)
     enabled: Any = None
-    # The ID of the AWS Pinpoint application this Baidu channel is associated with (the ApplicationId returned by Ref). (AI-inferred)
     id: Any = None
-    # The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred)
     secret_key: Any = None
 
 BaiduChannel = ubx.ResourceBinding(

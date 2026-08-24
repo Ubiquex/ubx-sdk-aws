@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpngateway_Tags struct {
-	// The key of a tag assigned to the VPN Gateway, used to label and categorize the resource for identification and management. (AI-inferred)
 	Key any
-	// The value portion of a tag applied to the AWS VPN gateway, allowing you to store arbitrary metadata such as a name, environment, or cost-center alongside the tag key. (AI-inferred)
 	Value any
 }
 
@@ -31,7 +29,6 @@ type VpngatewayAttrs struct {
 	Tags any
 	// The type of VPN connection the virtual private gateway supports.
 	Type any
-	// The unique identifier assigned by AWS to the VPN gateway upon creation. (AI-inferred)
 	VpngatewayId any
 }
 

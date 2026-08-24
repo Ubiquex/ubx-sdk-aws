@@ -22,9 +22,7 @@ type MakerTrialComponent_Status struct {
 }
 
 type MakerTrialComponent_Tags struct {
-	// The key of a tag applied to the SageMaker trial component, used to categorize resources for cost allocation and management. (AI-inferred)
 	Key any
-	// The value of a tag applied to the SageMaker trial component, forming a key-value pair used to organize, identify, and manage the resource. (AI-inferred)
 	Value any
 }
 

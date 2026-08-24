@@ -4,181 +4,117 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector_ErrorHandlingConfig struct {
-	// The name of the Amazon S3 bucket used to store error records when AppFlow fails to write data to the custom connector destination, as part of the error handling configuration. (AI-inferred)
 	BucketName any
-	// The object key prefix to apply to error records that AppFlow writes to the configured S3 bucket when processing fails for this custom connector destination. (AI-inferred)
 	BucketPrefix any
-	// Specifies whether the flow stops processing at the first error, rather than continuing and writing error details to the configured error handling bucket. (AI-inferred)
 	FailOnFirstError any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_CustomConnector struct {
-	// A map of custom key-value properties required by the custom connector to configure the destination when writing data to the target system. (AI-inferred)
 	CustomProperties any
-	// The name of the entity (such as a table or object) in the custom connector destination that the AppFlow flow writes data to. (AI-inferred)
 	EntityName any
-	// Specifies how errors are handled when AppFlow writes data to the custom connector destination, including the S3 bucket and optional prefix for storing failed records and whether the flow fails on the first error. (AI-inferred)
 	ErrorHandlingConfig any
-	// Specifies the list of field names that uniquely identify records in the custom connector destination, used to determine record identity for deduplication or upsert operations. (AI-inferred)
 	IdFieldNames any
-	// Specifies the write operation type (INSERT, UPDATE, UPSERT, or DELETE) that AppFlow performs on the custom connector destination when transferring data. (AI-inferred)
 	WriteOperationType any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_EventBridge struct {
-	// Configures how AppFlow handles errors when writing to the EventBridge destination, including the Amazon S3 bucket and prefix for storing error records and whether the flow fails on the first destination error. (AI-inferred)
 	ErrorHandlingConfig any
-	// Specifies the name of the Amazon EventBridge event bus that this AppFlow flow targets as the destination. (AI-inferred)
 	Object any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_LookoutMetrics struct {
-	// The name of the Amazon Lookout for Metrics dataset (object) that receives the data from the flow. (AI-inferred)
 	Object any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Redshift struct {
-	// The object key prefix under which AppFlow writes staged data files in the intermediate S3 bucket before loading them into the Amazon Redshift destination. (AI-inferred)
 	BucketPrefix any
-	// Defines how errors encountered while writing data to Amazon Redshift are handled, including options to fail the flow on the first error or write error logs to a specified S3 bucket. (AI-inferred)
 	ErrorHandlingConfig any
-	// The name of the Amazon S3 bucket that AppFlow uses as a staging location to write data before copying it into Amazon Redshift. (AI-inferred)
 	IntermediateBucketName any
-	// The Amazon S3 object key in the intermediate bucket where the flow stages data before copying it into Redshift. (AI-inferred)
 	Object any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_AggregationConfig struct {
-	// Specifies whether the flow's S3 destination output is aggregated into a single file (SingleFile) or kept as separate files (None, the default), directly controlling file grouping in the S3 bucket. (AI-inferred)
 	AggregationType any
-	// Specifies the target file size in megabytes for aggregated files written to Amazon S3 when aggregation is enabled in the flow destination configuration. (AI-inferred)
 	TargetFileSize any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig_PrefixConfig struct {
-	// Specifies a list of source data fields whose values are used to construct a hierarchical path prefix in the S3 destination bucket, enabling partition-based organization of flow output files. (AI-inferred)
 	PathPrefixHierarchy any
-	// Sets the timestamp resolution (YEAR, MONTH, DAY, HOUR, or MINUTE) used to generate the dynamic prefix for Amazon S3 output objects, controlling how files are grouped by time in the destination bucket. (AI-inferred)
 	PrefixFormat any
-	// Determines whether the prefix is applied to the individual file name (FILENAME) or to the entire object key path (PATH) for Amazon S3 destinations in AppFlow. (AI-inferred)
 	PrefixType any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_S3_S3OutputFormatConfig struct {
-	// Specifies the aggregation settings (e.g., None or SingleFile) that control whether AppFlow combines all flow-run data into a single S3 file or writes multiple files. (AI-inferred)
 	AggregationConfig any
-	// Specifies the file format (such as CSV, JSON, or Parquet) for the output files that AppFlow writes to the destination S3 bucket. (AI-inferred)
 	FileType any
-	// Defines the prefix type and format applied to S3 object keys (e.g., EXECUTION_ID, PATH, or a custom prefix) to organize output files in the configured S3 destination. (AI-inferred)
 	PrefixConfig any
-	// When enabled, this boolean preserves the original data types (such as string, integer, or boolean) of source fields when AppFlow writes to the S3 destination, instead of converting them, ensuring type fidelity during the flow. (AI-inferred)
 	PreserveSourceDataTyping any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_S3 struct {
-	// The name of the Amazon S3 bucket where AppFlow writes the data for this destination flow configuration. (AI-inferred)
 	BucketName any
-	// Specifies the object key prefix prepended to the names of files that AppFlow writes to the destination S3 bucket. (AI-inferred)
 	BucketPrefix any
-	// Configures the output file format and related settings, such as file type, prefix, and aggregation, for data written by the flow to the S3 destination. (AI-inferred)
 	S3OutputFormatConfig any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Salesforce struct {
-	// Specifies the Salesforce Data Transfer API (e.g., REST, BULK, BULKV2) that AppFlow uses to write data to the destination Salesforce object. (AI-inferred)
 	DataTransferApi any
-	// Specifies error handling for the Salesforce destination, including the Amazon S3 bucket and prefix for error records and whether the flow fails on the first error. (AI-inferred)
 	ErrorHandlingConfig any
-	// Specifies the list of field names in the Salesforce object that are used as external identifiers for upsert operations when writing records to the destination. (AI-inferred)
 	IdFieldNames any
-	// The Salesforce object name (e.g., Account, Contact) into which the flow writes the destination records. (AI-inferred)
 	Object any
-	// Specifies the write operation type (INSERT, UPDATE, or UPSERT) that AppFlow performs when writing data to the Salesforce destination. (AI-inferred)
 	WriteOperationType any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Sapodata_SuccessResponseHandlingConfig struct {
-	// The name of the S3 bucket where AppFlow stores the success response payload for SAPOData destination operations when response handling is enabled. (AI-inferred)
 	BucketName any
-	// The S3 object key prefix under which successful response files are saved when the SAPOData destination writes response data to the configured Amazon S3 bucket. (AI-inferred)
 	BucketPrefix any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Sapodata struct {
-	// Configures error handling for the SAPOData destination connector, allowing you to specify the S3 bucket where failed records are written and whether the flow stops on the first error. (AI-inferred)
 	ErrorHandlingConfig any
-	// The list of field names that serve as the unique identifier (primary key) for records written to the SAPOData destination, enabling upsert and deduplication operations in the AppFlow flow. (AI-inferred)
 	IdFieldNames any
-	// The object path for the SAP OData entity to which data is written, such as the entity set name in the SAP OData service. (AI-inferred)
 	ObjectPath any
-	// Configuration specifying the Amazon S3 bucket and optional prefix where AWS AppFlow stores the response payload for successfully processed records when using SAPOData as a destination. (AI-inferred)
 	SuccessResponseHandlingConfig any
-	// Specifies the write operation type (such as INSERT, UPDATE, or UPSERT) that AppFlow uses when writing data to the SAP OData destination. (AI-inferred)
 	WriteOperationType any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Upsolver_S3OutputFormatConfig struct {
-	// Determines how Upsolver aggregates the data files written to Amazon S3, allowing you to specify an aggregation type such as 'None' or 'SingleFile' to control whether records are written as individual objects or combined into a single file. (AI-inferred)
 	AggregationConfig any
-	// Specifies the format (such as JSON or CSV) of the data files that AppFlow writes to Amazon S3 when using Upsolver as the destination connector. (AI-inferred)
 	FileType any
-	// Defines the prefix (folder structure and naming) for S3 object keys when Upsolver writes output data to Amazon S3, including the prefix type and format used to organize files. (AI-inferred)
 	PrefixConfig any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Upsolver struct {
-	// The name of the Amazon S3 bucket to which Upsolver writes the data flowing from AppFlow. (AI-inferred)
 	BucketName any
-	// The Amazon S3 object key prefix under which Upsolver writes the flow's output files, used to organize and locate exported data within the destination bucket. (AI-inferred)
 	BucketPrefix any
-	// Specifies the S3 output format for Upsolver destination, including the file type, aggregation configuration, and S3 key prefix settings. (AI-inferred)
 	S3OutputFormatConfig any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties_Zendesk struct {
-	// Specifies the error handling configuration (such as the Amazon S3 bucket for storing error records and whether to fail on the first error) for records that fail during transfer to the Zendesk destination. (AI-inferred)
 	ErrorHandlingConfig any
-	// A list of field names that serve as the unique identifier (primary key) for records written to the Zendesk destination, enabling AppFlow to upsert records correctly. (AI-inferred)
 	IdFieldNames any
-	// Specifies the Zendesk object (such as Ticket or User) that Amazon AppFlow writes the flow's records into as the destination. (AI-inferred)
 	Object any
-	// Specifies the write operation type (INSERT, UPDATE, or UPSERT) used when writing data to the Zendesk destination in the AppFlow flow. (AI-inferred)
 	WriteOperationType any
 }
 
 type FlowFlow_DestinationFlowConfigList_DestinationConnectorProperties struct {
-	// Defines the destination properties for a custom connector in AppFlow, specifying the target entity name and any custom properties required to write data to the third-party application. (AI-inferred)
 	CustomConnector any
-	// Specifies the destination connector properties for Amazon EventBridge, including the name of the EventBridge event bus (the Object property) that receives the flow's data. (AI-inferred)
 	EventBridge any
-	// Defines the destination configuration for Amazon Lookout for Metrics, including the required `object` field that identifies the target dataset (measure set) in Lookout for Metrics. (AI-inferred)
 	LookoutMetrics any
-	// Contains the destination-specific settings for Amazon AppFlow to write data to Marketo, including the required Marketo object name and optional error handling configuration. (AI-inferred)
 	Marketo any
-	// Specifies the configuration for writing data to an Amazon Redshift destination, including the S3 staging bucket (intermediateBucketName), the target Redshift table/object name, and optional error handling settings. (AI-inferred)
 	Redshift any
-	// Configures Amazon S3 as the destination connector by specifying properties such as the target bucket name, object key prefix, and output format settings for the flow's destination. (AI-inferred)
 	S3 any
-	// Defines the Salesforce-specific destination properties for a flow, such as the target Salesforce object and the write operation type (e.g., INSERT, UPDATE, UPSERT), used when AppFlow writes data to Salesforce. (AI-inferred)
 	Salesforce any
-	// This object specifies the SAPOData destination-specific settings for the AppFlow flow, such as the target SAP object path and the configuration for error and success response handling. (AI-inferred)
 	Sapodata any
-	// Configuration for Snowflake as the destination connector, including target object, intermediate bucket, and error handling settings, within an AppFlow flow's destination properties. (AI-inferred)
 	Snowflake any
-	// Configuration for the Upsolver destination connector, defining the target S3 bucket, optional prefix, and output format for data delivery via AppFlow. (AI-inferred)
 	Upsolver any
-	// Defines the Zendesk-specific destination connector settings, such as the target Zendesk object, that AppFlow uses when writing flow records to Zendesk. (AI-inferred)
 	Zendesk any
 }
 
 type FlowFlow_DestinationFlowConfigList struct {
-	// Specifies the API version that the destination connector uses to interact with the target service when this flow writes data to the destination. (AI-inferred)
 	ApiVersion any
-	// The name of the connector profile that specifies the destination connector's authentication and access settings, used by AppFlow to write data to the target system. (AI-inferred)
 	ConnectorProfileName any
-	// Specifies the connector type for the destination, such as Salesforce, Amazon S3, or Snowflake, which determines how AppFlow writes data to that destination. (AI-inferred)
 	ConnectorType any
-	// Specifies the connector-specific properties required to configure the destination, such as the Amazon S3 bucket name, prefix, and output format when the destination is S3. (AI-inferred)
 	DestinationConnectorProperties any
 }
 
@@ -202,58 +138,43 @@ type FlowFlow_SourceFlowConfig_IncrementalPullConfig struct {
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_CustomConnector_DataTransferApi struct {
-	// Specifies the name of the custom connector API operation (as defined in the connector's API definitions) that AppFlow calls to retrieve data from the source. (AI-inferred)
 	Name any
-	// Specifies whether the custom connector's data transfer API is synchronous (SYNC) or asynchronous (ASYNC). (AI-inferred)
 	Type any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_CustomConnector struct {
 	// A map for properties for custom connector.
 	CustomProperties any
-	// Specifies the data transfer API configuration for the custom connector source, including the API name, path, and transfer type (SYNC or ASYNC) that AWS AppFlow uses to retrieve data. (AI-inferred)
 	DataTransferApi any
-	// The name of the entity (e.g., object, table, or API endpoint) in the custom connector from which the AppFlow flow retrieves data. (AI-inferred)
 	EntityName any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_S3_S3InputFormatConfig struct {
-	// Specifies the file format of the source data in S3 (e.g., CSV, JSON, or Parquet) for the AppFlow flow's S3 source. (AI-inferred)
 	S3InputFileType any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_S3 struct {
-	// The name of the S3 bucket from which the AppFlow flow reads source data for ingestion. (AI-inferred)
 	BucketName any
-	// The object key prefix used to filter S3 objects for the source connector in the AppFlow flow. (AI-inferred)
 	BucketPrefix any
-	// Determines the file format (for example, CSV or JSON) that the S3 source connector expects when reading source files for the AppFlow flow. (AI-inferred)
 	S3InputFormatConfig any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Salesforce struct {
-	// Specifies whether AppFlow uses the Salesforce REST or Bulk API to transfer data from Salesforce for this source connection. (AI-inferred)
 	DataTransferApi any
-	// When enabled, Amazon AppFlow updates the Salesforce source records with the new field values written to the destination during the flow run, allowing dynamic field updates on matching source records. (AI-inferred)
 	EnableDynamicFieldUpdate any
-	// When true, includes records that have been soft-deleted in Salesforce (i.e., moved to the Recycle Bin) in the source data pulled by this AppFlow flow. (AI-inferred)
 	IncludeDeletedRecords any
-	// The name of the Salesforce object (e.g., Account, Contact) from which the AppFlow flow source reads data. (AI-inferred)
 	Object any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Sapodata_PaginationConfig struct {
-	// Specifies the maximum number of records to retrieve in a single page when reading data from the SAPOData source in the flow. (AI-inferred)
 	MaxPageSize any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Sapodata_ParallelismConfig struct {
-	// Specifies the maximum number of parallel requests that AppFlow can make to the SAP OData source during a flow run. (AI-inferred)
 	MaxParallelism any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Sapodata struct {
-	// The object path within the SAP system (such as an OData entity or report path) that the AppFlow flow reads data from when using SAPOData as the source. (AI-inferred)
 	ObjectPath any
 	// SAP Source connector page size
 	PaginationConfig any
@@ -262,52 +183,30 @@ type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Sapodata struct {
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties_Veeva struct {
-	// The document type used to filter which Veeva documents are pulled by the flow, such as 'All' or a specific Veeva document type. (AI-inferred)
 	DocumentType any
-	// When set to true, includes all historical versions of Veeva document objects in the source flow; when false, only the latest version is included. (AI-inferred)
 	IncludeAllVersions any
-	// Specifies whether to include renditions (alternate versions of documents) from Veeva in the flow. (AI-inferred)
 	IncludeRenditions any
-	// Specifies whether AppFlow includes source files (attachment files) from the Veeva object in the data that is transferred by the flow. (AI-inferred)
 	IncludeSourceFiles any
-	// The name of the Veeva CRM object (e.g., Account, Contact) that the AppFlow flow reads data from as a source. (AI-inferred)
 	Object any
 }
 
 type FlowFlow_SourceFlowConfig_SourceConnectorProperties struct {
-	// This object specifies the Amplitude source connector properties, particularly the name of the Amplitude object (for example, 'event') that the flow retrieves data from. (AI-inferred)
 	Amplitude any
-	// Specifies the source connector properties for a custom connector in an AppFlow flow, including the entity (or object) name to read from and any custom key-value configuration parameters required by the connector. (AI-inferred)
 	CustomConnector any
-	// Defines the Datadog source configuration for the flow, where the ApiKey and ApplicationKey fields provide the credentials needed to connect to and pull data from Datadog. (AI-inferred)
 	Datadog any
-	// Holds the source connector properties specific to a Dynatrace source, including the Dynatrace object (entity) from which data flow retrieves data. (AI-inferred)
 	Dynatrace any
-	// Specifies the Google Analytics source properties, including the object (report) name from which AppFlow reads data. (AI-inferred)
 	GoogleAnalytics any
-	// Configures the Infor Nexus source connector properties, specifically defining the object (data entity) from which the AppFlow flow retrieves data. (AI-inferred)
 	InforNexus any
-	// Configures Marketo as a source in the flow, defining the Marketo object (e.g., Lead or Activity) from which AppFlow retrieves data. (AI-inferred)
 	Marketo any
-	// Configures the source connector details for a Pardot (Salesforce Pardot) source, including the Pardot object name that identifies which object's records to ingest. (AI-inferred)
 	Pardot any
-	// Specifies the S3 source connector settings in AppFlow, such as the bucket name, optional object prefix, and the format of the input files (e.g., CSV or JSON) to read from Amazon S3. (AI-inferred)
 	S3 any
-	// Defines the Salesforce-specific source configuration for the flow, including the Salesforce object to read from and optionally the fields to retrieve. (AI-inferred)
 	Salesforce any
-	// This object defines the source-specific properties for the SAPOData connector in AWS AppFlow, such as the OData path representing the entity collection from which the flow retrieves data. (AI-inferred)
 	Sapodata any
-	// Specifies the ServiceNow-specific source connector properties, including the ServiceNow object (e.g., Incident or Problem) that the flow retrieves data from. (AI-inferred)
 	ServiceNow any
-	// Contains the source configuration specific to the Singular connector, such as the Singular object from which the flow reads data, when Singular is selected as the source connector. (AI-inferred)
 	Singular any
-	// Configures the Slack source connector properties, defining the Slack object (e.g., 'Channel' or 'Message') that the flow reads data from. (AI-inferred)
 	Slack any
-	// An object that specifies the request parameters for a Trend Micro source connector in AppFlow, including the Trend Micro object name to be used as the data source. (AI-inferred)
 	Trendmicro any
-	// This object defines the Veeva-specific source connector settings, including the Veeva object to retrieve data from and optionally the document type, when Veeva is the flow's source. (AI-inferred)
 	Veeva any
-	// Specifies the Zendesk source connector properties for the AppFlow flow, including the Zendesk object (such as 'tickets' or 'users') from which data is retrieved. (AI-inferred)
 	Zendesk any
 }
 
@@ -316,7 +215,6 @@ type FlowFlow_SourceFlowConfig struct {
 	ApiVersion any
 	// Name of connector profile
 	ConnectorProfileName any
-	// Specifies the source connector type for the AppFlow flow, such as 'Salesforce' or 'S3', which determines the service from which the flow reads data. (AI-inferred)
 	ConnectorType any
 	// Configuration for scheduled incremental data pull
 	IncrementalPullConfig any
@@ -326,83 +224,51 @@ type FlowFlow_SourceFlowConfig struct {
 
 type FlowFlow_Tags struct {
 	Key any
-	// The value string of a tag attached to the AppFlow flow, used to store custom metadata that helps identify and manage the flow. (AI-inferred)
 	Value any
 }
 
 type FlowFlow_Tasks_ConnectorOperator struct {
-	// For the Amplitude connector, specifies the operation (e.g., EQUAL_TO, GREATER_THAN, LESS_THAN, or BETWEEN) that AppFlow applies to the source data in the task. (AI-inferred)
 	Amplitude any
-	// The operator to be applied for a custom connector in an AppFlow flow task, which is a string value defined by the custom connector's schema and controls the data transformation operation (e.g., projection, comparison) performed on the field. (AI-inferred)
 	CustomConnector any
-	// Selects the Datadog-specific connector operator (a string value from the set supported by AppFlow's Datadog connector) that defines the operation performed on the data for this flow task. (AI-inferred)
 	Datadog any
-	// Specifies the Dynatrace connector operator (e.g., PROJECTION or EQUAL_TO) that this task applies to data when processing via AppFlow, as one of the enumerations supported by the Dynatrace connector. (AI-inferred)
 	Dynatrace any
-	// Defines the operator applied to Google Analytics records in a flow task, such as EQUAL_TO or BETWEEN, used when the flow's source or destination is Google Analytics. (AI-inferred)
 	GoogleAnalytics any
-	// Specifies the Infor Nexus-specific operator (e.g., PROJECTION, EQUAL_TO) applied to the source field in this AppFlow flow task's connector operator configuration. (AI-inferred)
 	InforNexus any
-	// Determines the Marketo connector-specific operation applied to the task's source field, such as EQUAL_TO, BETWEEN, or MASK_FIRST_N. (AI-inferred)
 	Marketo any
-	// The connector-specific operator for the Pardot connector, which determines how the task processes source fields (e.g., PROJECTION for selection or EQUAL_TO for filtering). (AI-inferred)
 	Pardot any
-	// Determines the S3 connector operator to apply to source fields in this AppFlow task, controlling operations such as field projection, filtering, or masking when the flow interacts with Amazon S3. (AI-inferred)
 	S3 any
-	// The Salesforce-specific operator to apply to the source data for this task within an AppFlow flow, such as PROJECTION, EQUAL_TO, or BETWEEN. (AI-inferred)
 	Salesforce any
-	// Specifies the SAPOData operation to apply to source data, such as PROJECTION, LESS_THAN, GREATER_THAN, or BETWEEN, when the flow uses an SAPOData connector. (AI-inferred)
 	Sapodata any
-	// The ServiceNow-specific operator for the flow task, determining the type of operation (such as PROJECTION or EQUALITY) that AppFlow performs when processing data through the ServiceNow connector. (AI-inferred)
 	ServiceNow any
-	// Specifies the Singular connector operation (e.g., PROJECTION or EQUALITY) to apply to the data in this AppFlow flow task. (AI-inferred)
 	Singular any
-	// Specifies the operator (such as PROJECTION) applied to Slack data for this task when Slack is the connector type. (AI-inferred)
 	Slack any
-	// Specifies the Trend Micro connector operator (e.g., PROJECTION) that determines how source data is projected or filtered in the flow task. (AI-inferred)
 	Trendmicro any
-	// Configures the Veeva-specific operator for the flow task, determining the operation applied to the data (e.g., PROJECTION, EQUAL_TO) when the connector is Veeva. (AI-inferred)
 	Veeva any
-	// Specifies the Zendesk-specific operator (such as PROJECTION or EQUAL_TO) that this task uses to filter or transform Zendesk data during the AppFlow flow. (AI-inferred)
 	Zendesk any
 }
 
 type FlowFlow_Tasks struct {
-	// Specifies the connector-specific operation (e.g., PROJECTION, EQUALITY, GREATER_THAN) that Amazon AppFlow applies to the source fields when executing this task. (AI-inferred)
 	ConnectorOperator any
-	// The destination field in the target connector (e.g., Salesforce, S3, or other AppFlow-supported service) where the mapped source data is written during task execution. (AI-inferred)
 	DestinationField any
-	// Defines the list of source fields from the source connector that the task applies to, such as fields used for mapping, filtering, or transformation operations. (AI-inferred)
 	SourceFields any
-	// The list of task property objects that provide task-specific configuration, such as source and destination data type mappings for map tasks or the write operation type for connector writes. (AI-inferred)
 	TaskProperties any
-	// Specifies the type of transformation operation (e.g., Map, Filter, Aggregate) that this task performs on the data flowing through the AppFlow flow. (AI-inferred)
 	TaskType any
 }
 
 type FlowFlow_TriggerConfig_TriggerProperties struct {
-	// Specifies whether the scheduled flow pulls only incremental data (Incremental) or all data (Complete) on each scheduled run. (AI-inferred)
 	DataPullMode any
-	// The Unix timestamp (in seconds) that defines the earliest time at which the scheduled AppFlow flow's first execution can start, after which the schedule takes effect. (AI-inferred)
 	FirstExecutionFrom any
-	// The number of consecutive flow execution errors that must occur before AppFlow automatically deactivates the flow when using a scheduled trigger. (AI-inferred)
 	FlowErrorDeactivationThreshold any
-	// The end time (as epoch seconds or timestamp) that defines the upper bound of the scheduling window for the AppFlow scheduled trigger, after which the flow no longer runs on the defined schedule. (AI-inferred)
 	ScheduleEndTime any
-	// The cron expression that defines the schedule for the scheduled trigger, such as 'cron(0 12 * * ? *)', determining when the flow runs. (AI-inferred)
 	ScheduleExpression any
-	// The schedule offset, in minutes, that shifts the flow's scheduled trigger execution time relative to the schedule expression, useful for accommodating data source delays. (AI-inferred)
 	ScheduleOffset any
-	// The timestamp (in seconds since epoch) that defines the earliest time the scheduled flow can begin running, used as the start boundary for the schedule. (AI-inferred)
 	ScheduleStartTime any
-	// Specifies the IANA time zone (e.g., 'America/New_York') in which the scheduled trigger's cron or rate expression is evaluated; if omitted, the default is UTC. (AI-inferred)
 	TimeZone any
 }
 
 type FlowFlow_TriggerConfig struct {
 	// Details required for scheduled trigger type
 	TriggerProperties any
-	// Specifies whether the AppFlow flow is started on a schedule, in response to an event, or on demand by a manual invocation, and is required in the trigger configuration. (AI-inferred)
 	TriggerType any
 }
 

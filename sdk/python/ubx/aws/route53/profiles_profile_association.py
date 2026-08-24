@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ProfilesProfileAssociation_Tags:
     key: Any = None
-    # The value of a tag (key-value pair) attached to the Route 53 Profile association, used for metadata, identification, and cost allocation of the resource. (AI-inferred)
     value: Any = None
 
 _ProfilesProfileAssociation_TagsFields = {

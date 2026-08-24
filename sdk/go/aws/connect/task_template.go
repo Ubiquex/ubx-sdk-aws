@@ -4,12 +4,10 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskTemplate_Constraints_InvisibleFields_Id struct {
-	// The name of the task template field that is specified as an invisible field in the constraints of the AWS Connect task template, hiding it from the agent's view. (AI-inferred)
 	Name any
 }
 
 type TaskTemplate_Constraints_InvisibleFields struct {
-	// In a task template's constraints, the id object for an invisible field specifies which task template field to hide by referencing the field's name (e.g., a system field name or custom field name) and its type (SYSTEM or CUSTOM). (AI-inferred)
 	Id any
 }
 
@@ -23,27 +21,19 @@ type TaskTemplate_Constraints struct {
 }
 
 type TaskTemplate_Defaults struct {
-	// The default value that is pre-populated for a specific task field when an agent creates a task using this AWS Connect task template. (AI-inferred)
 	DefaultValue any
-	// The unique identifier of the Amazon Connect task template field to which this default value applies. (AI-inferred)
 	Id any
 }
 
 type TaskTemplate_Fields struct {
-	// The description of each field in the task template, which is displayed to agents as a hint or instruction for completing that field. (AI-inferred)
 	Description any
-	// The unique string identifier of a field within the Connect task template (e.g., 'email' or 'subject'), used to reference the field in task definitions and constraints. (AI-inferred)
 	Id any
-	// The list of allowed choices for a task template field whose type is SINGLE_SELECT, defining the selectable options in the AWS Connect interface. (AI-inferred)
 	SingleSelectOptions any
-	// The data type of a task template field in an AWS Connect task template, which must be one of the supported AWS Connect field types such as TEXT, NUMBER, or DATE_TIME, determining how the field's value is stored and displayed. (AI-inferred)
 	Type any
 }
 
 type TaskTemplate_Tags struct {
-	// The key of a tag that can be assigned to an Amazon Connect task template for resource organization, access control, and cost allocation. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the Connect task template, used for metadata and resource management. (AI-inferred)
 	Value any
 }
 
@@ -109,7 +99,6 @@ type TaskTemplateConfig struct {
 	Constraints any
 	// The identifier of the contact flow.
 	ContactFlowArn any
-	// Specifies a list of default field values (each containing a field identifier and a default value) that are automatically applied to tasks created using this task template. (AI-inferred)
 	Defaults any
 	// The description of the task template.
 	Description any
@@ -136,7 +125,6 @@ type TaskTemplateAttrs struct {
 	Constraints any
 	// The identifier of the contact flow.
 	ContactFlowArn any
-	// Specifies a list of default field values (each containing a field identifier and a default value) that are automatically applied to tasks created using this task template. (AI-inferred)
 	Defaults any
 	// The description of the task template.
 	Description any

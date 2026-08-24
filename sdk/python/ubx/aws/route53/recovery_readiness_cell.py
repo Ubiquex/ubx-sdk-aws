@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryReadinessCell_Tags:
-    # The key of a tag to attach to the Route 53 Recovery Readiness Cell, used to organize and identify the cell for cost allocation and access control. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag applied to the Route 53 Recovery Readiness cell, used for organizing, identifying, and managing the cell with custom metadata. (AI-inferred)
     value: Any = None
 
 _RecoveryReadinessCell_TagsFields = {

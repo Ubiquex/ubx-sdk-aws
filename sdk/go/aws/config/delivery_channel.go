@@ -4,7 +4,6 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliveryChannel_ConfigSnapshotDeliveryProperties struct {
-	// Specifies the frequency with which AWS Config delivers configuration snapshots to the S3 bucket, accepting values like One_Hour, Three_Hours, Six_Hours, Twelve_Hours, and TwentyFour_Hours. (AI-inferred)
 	DeliveryFrequency any
 }
 
@@ -13,34 +12,21 @@ var DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields = ubx.FieldMap{
 	}
 
 type DeliveryChannelConfig struct {
-	// Specifies how often AWS Config delivers configuration snapshot updates (e.g., every hour, six hours, or twenty-four hours) to the delivery channel's destination. (AI-inferred)
 	ConfigSnapshotDeliveryProperties any
-	// The name of the AWS Config delivery channel, which must be unique in the account and defaults to 'default' if not specified. (AI-inferred)
 	Name any
-	// Specifies the name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files for the account. (AI-inferred)
 	S3BucketName any
-	// The prefix for the Amazon S3 keys that AWS Config uses to store configuration snapshots and delivery logs in the bucket. (AI-inferred)
 	S3KeyPrefix any
-	// The ARN of the AWS KMS key that AWS Config uses to encrypt the configuration snapshots and configuration history delivered to the Amazon S3 bucket. (AI-inferred)
 	S3KmsKeyArn any
-	// The ARN of the Amazon SNS topic to which AWS Config delivers configuration snapshots and configuration change notifications. (AI-inferred)
 	SnsTopicArn any
 }
 
 type DeliveryChannelAttrs struct {
-	// Specifies how often AWS Config delivers configuration snapshot updates (e.g., every hour, six hours, or twenty-four hours) to the delivery channel's destination. (AI-inferred)
 	ConfigSnapshotDeliveryProperties any
-	// This field is the name of the AWS Config delivery channel, which serves as its unique identifier and is typically set to 'default' unless otherwise specified. (AI-inferred)
 	Id any
-	// The name of the AWS Config delivery channel, which must be unique in the account and defaults to 'default' if not specified. (AI-inferred)
 	Name any
-	// Specifies the name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files for the account. (AI-inferred)
 	S3BucketName any
-	// The prefix for the Amazon S3 keys that AWS Config uses to store configuration snapshots and delivery logs in the bucket. (AI-inferred)
 	S3KeyPrefix any
-	// The ARN of the AWS KMS key that AWS Config uses to encrypt the configuration snapshots and configuration history delivered to the Amazon S3 bucket. (AI-inferred)
 	S3KmsKeyArn any
-	// The ARN of the Amazon SNS topic to which AWS Config delivers configuration snapshots and configuration change notifications. (AI-inferred)
 	SnsTopicArn any
 }
 

@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MetricAttribution_Metrics {
-  /** The type of user event (such as Purchase or Click) that this metric attribution uses to measure how recommendation results influence that activity. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** Defines a SQL-like expression that computes the metric from event attributes and event types, for example `SUM(IF(event_type = 'click', 1, 0))`. (AI-inferred) */
   expression?: string | Computed<string>;
-  /** The user-defined name for this metric within the Amazon Personalize metric attribution, used to identify it in the configuration and in the output reports. (AI-inferred) */
   metricName?: string | Computed<string>;
 }
 

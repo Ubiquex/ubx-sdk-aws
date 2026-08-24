@@ -2,136 +2,101 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCoreMemory_IndexedKeys {
-  /** Specifies the name of a memory key that the agent indexes in its core memory, enabling structured retrieval of stored information for the Bedrock agent. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Defines the data type of each key in the core memory's indexed_keys list (e.g., string, number), determining how that key's value is validated and interpreted when indexing and querying core memory entries. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation {
-  /** Specifies the text to append to the prompt used during the consolidation phase of episodic memory in the custom memory strategy, enabling customization of how the agent summarizes past interactions. (AI-inferred) */
   appendToPrompt?: string | Computed<string>;
-  /** The unique identifier (such as a model ID or ARN) of the Amazon Bedrock foundation model used to consolidate episodic memory entries in the custom memory strategy's episodic override. (AI-inferred) */
   modelId?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_NumberValidation {
-  /** Specifies the maximum numeric value allowed for a metadata field that is validated as a number during LLM-based extraction, enforcing an upper bound on the extracted value. (AI-inferred) */
   maxValue?: number | Computed<number>;
-  /** Defines the lower bound (minimum value) that a validated numeric metadata field extracted by the LLM must satisfy, used in the number validation rules for the memory record schema's metadata extraction configuration. (AI-inferred) */
   minValue?: number | Computed<number>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringListValidation {
-  /** Specifies the list of allowed string values that the extracted metadata must match for the LLM extraction string list validation to be considered valid. (AI-inferred) */
   allowedValues?: string[] | Computed<string[]>;
-  /** The maximum number of items allowed in a string list that is extracted as metadata for an episodic memory record, used to validate the length of list-valued metadata fields during LLM extraction. (AI-inferred) */
   maxItems?: number | Computed<number>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringValidation {
-  /** Specifies the list of exact string values that the LLM is allowed to extract for this metadata field, so that during memory record extraction any value not appearing in this list is treated as invalid and fails validation. (AI-inferred) */
   allowedValues?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation {
   numberValidation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_NumberValidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_NumberValidation>;
-  /** Defines validation rules for string-list values extracted by the large language model during metadata extraction for memory records. (AI-inferred) */
   stringListValidation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringListValidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringListValidation>;
-  /** Defines validation parameters for string metadata values during LLM extraction, specifying required status, minimum and maximum length, and a regex pattern. (AI-inferred) */
   stringValidation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringValidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation_StringValidation>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig {
-  /** The definition field contains the prompt or instruction text that guides the LLM to extract the relevant metadata fields from the memory record according to the specified metadata schema. (AI-inferred) */
   definition?: string | Computed<string>;
-  /** The instruction provided to the LLM that guides how metadata fields are extracted from conversation turns into the metadata schema for the episodic memory reflection. (AI-inferred) */
   llmExtractionInstruction?: string | Computed<string>;
-  /** Defines the validation configuration for metadata extracted by the LLM, ensuring that extracted values conform to expected formats or rules before being saved to the memory record. (AI-inferred) */
   validation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig_Validation>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig {
-  /** Configures how the LLM extracts metadata fields for the reflection memory record schema, specifying the model and prompt template to use for extraction. (AI-inferred) */
   llmExtractionConfig?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig_LlmExtractionConfig>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema {
-  /** Determines how metadata for the memory record is extracted from the input data, specifying either a foundation model prompt or a regex pattern to populate the metadata schema fields. (AI-inferred) */
   extractionConfig?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema_ExtractionConfig>;
   extractionType?: string | Computed<string>;
-  /** Defines the name (key) of a metadata attribute in the schema for episodic memory records, used to structure the metadata stored with each memory. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the JSON Schema type (e.g., 'object') for the metadata schema associated with a memory record schema in the reflection configuration of an episodic override for a custom memory strategy. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema {
-  /** Defines the metadata schema for memory records by specifying a list of metadata fields (such as name and type) used by the reflective episodic memory in the custom memory strategy. (AI-inferred) */
   metadataSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema[] | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema_MetadataSchema[]>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection {
-  /** In the aws_bedrock_agent_core_memory resource, this string is appended to the prompt used when generating reflections for episodic memories, allowing you to inject custom guidance into the reflection process. (AI-inferred) */
   appendToPrompt?: string | Computed<string>;
-  /** Specifies the JSON schema object that defines the structure and validation constraints for memory records produced by the reflection step of the episodic override in a custom memory strategy for an AWS Bedrock Agent Core Memory resource. (AI-inferred) */
   memoryRecordSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema>;
-  /** The Amazon Bedrock foundation model ID used to generate reflective insights or summaries from episodic memory in the custom memory strategy. (AI-inferred) */
   modelId?: string | Computed<string>;
   namespaceTemplates?: string[] | Computed<string[]>;
-  /** Specifies the list of namespaces that the reflection process uses to group and consolidate episodic memories within the custom memory strategy's episodic override configuration, enabling the agent to synthesize and retrieve across those namespaces. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride {
   consolidation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation>;
-  /** Specifies the extraction configuration for the episodic memory override, which determines how the agent extracts and processes episodic memories from conversation history via a custom prompt template. (AI-inferred) */
   extraction?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation>;
   reflection?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_InvocationConfiguration {
-  /** The name of the Amazon S3 bucket to which the payload from the custom memory strategy's Lambda invocation is delivered for processing. (AI-inferred) */
   payloadDeliveryBucketName?: string | Computed<string>;
-  /** The ARN of the SNS topic to which the Bedrock agent publishes memory events for a self-managed custom memory strategy. (AI-inferred) */
   topicArn?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_MessageBasedTrigger {
-  /** Specifies the number of messages that must be exchanged in the session before the message-based trigger fires and the custom memory strategy captures or updates memory. (AI-inferred) */
   messageCount?: number | Computed<number>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TimeBasedTrigger {
-  /** The number of seconds of session inactivity after which the time-based trigger condition fires, causing the self-managed custom memory strategy to run its memory consolidation action. (AI-inferred) */
   idleSessionTimeout?: number | Computed<number>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TokenBasedTrigger {
-  /** The token count threshold that, when reached in the conversation, triggers the self-managed custom memory strategy operation. (AI-inferred) */
   tokenCount?: number | Computed<number>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions {
-  /** Specifies the message-based trigger condition for a self-managed custom memory strategy, defining when an incoming agent conversation message triggers memory extraction or storage. (AI-inferred) */
   messageBasedTrigger?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_MessageBasedTrigger | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_MessageBasedTrigger>;
-  /** The time_based_trigger specifies a recurring schedule (using rate or cron expressions) that determines when the self-managed memory extraction is automatically run, controlling how often session data is captured into the core memory. (AI-inferred) */
   timeBasedTrigger?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TimeBasedTrigger | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TimeBasedTrigger>;
-  /** Configures the token-based trigger condition for the self-managed memory strategy, determining the token count threshold at which the agent's core memory is updated. (AI-inferred) */
   tokenBasedTrigger?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TokenBasedTrigger | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions_TokenBasedTrigger>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration {
-  /** Specifies the number of recent conversation turns retained as historical context for the self-managed memory strategy in the Bedrock agent core memory. (AI-inferred) */
   historicalContextWindowSize?: number | Computed<number>;
-  /** Specifies the invocation configuration for the self-managed memory strategy, including the AWS Lambda function ARN and method used to execute memory fetch and update operations. (AI-inferred) */
   invocationConfiguration?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_InvocationConfiguration | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_InvocationConfiguration>;
   triggerConditions?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions[] | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration_TriggerConditions[]>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride {
   consolidation?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation>;
-  /** Specifies the extraction configuration (such as prompt templates or extraction rules) used by the custom semantic memory strategy to identify and extract memory-relevant facts and relationships from conversation transcripts when semantic override is enabled. (AI-inferred) */
   extraction?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Consolidation>;
 }
 
@@ -140,101 +105,65 @@ export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configura
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration {
-  /** The `episodic_override` object configures custom settings for episodic memory in the Bedrock agent's custom memory strategy, including the time-to-live for retaining recent conversation sessions and flags for enabling episodic memory processing. (AI-inferred) */
   episodicOverride?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride>;
-  /** Configures the self-managed vector store (typically Amazon OpenSearch Serverless) used by the agent's custom memory, including connection details like the collection ARN, vector index name, and field mappings for storing and retrieving conversation memory. (AI-inferred) */
   selfManagedConfiguration?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SelfManagedConfiguration>;
   semanticOverride?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride>;
-  /** Specifies a custom prompt and token limits that override the default summary generation for the core memory custom strategy, enabling you to control how conversation sessions are summarized into memory. (AI-inferred) */
   summaryOverride?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SummaryOverride | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SummaryOverride>;
   userPreferenceOverride?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_SemanticOverride>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy {
   configuration?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration>;
-  /** The creation timestamp of the custom memory strategy, indicating when it was first configured. (AI-inferred) */
   createdAt?: string | Computed<string>;
-  /** The description of the custom memory strategy, which provides a human-readable explanation of the strategy's purpose and configuration within the Bedrock agent's memory settings. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the JSON Schema that specifies the structure and fields of each memory record stored by the custom memory strategy. (AI-inferred) */
   memoryRecordSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema>;
-  /** Specifies a unique name for the custom memory strategy so the agent can store and recall custom memory records within its core memory. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the namespace templates for the custom memory strategy, where each string can include dynamic placeholders like $[sessionId] to generate scoped namespaces for storing memories. (AI-inferred) */
   namespaceTemplates?: string[] | Computed<string[]>;
-  /** Defines the list of namespace strings used to isolate and organize memory entries within the custom memory strategy, so each namespace acts as a separate memory domain for the agent. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
-  /** Indicates whether the custom memory strategy is enabled or disabled for the Bedrock Agent's core memory, with values typically 'ENABLED' or 'DISABLED'. (AI-inferred) */
   status?: string | Computed<string>;
-  /** The unique identifier for a custom memory strategy within an agent's core memory configuration, used to reference the strategy when managing memory operations. (AI-inferred) */
   strategyId?: string | Computed<string>;
-  /** The type field of a custom memory strategy specifies the concrete backend implementation (for example, an Amazon S3 table store) that the Bedrock agent will use to store and retrieve memory data. (AI-inferred) */
   type?: string | Computed<string>;
-  /** This read-only attribute provides the timestamp of the most recent update to the custom memory strategy within the AWS Bedrock agent core memory configuration. (AI-inferred) */
   updatedAt?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy_ReflectionConfiguration {
-  /** Specifies the schema, as a set of named fields with associated data types, that defines the structure of memory records stored by the agent's episodic memory reflection configuration. (AI-inferred) */
   memoryRecordSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema>;
   namespaceTemplates?: string[] | Computed<string[]>;
-  /** Lists the namespaces that the episodic memory reflection configuration is scoped to, restricting which memory entries the agent considers when generating reflections. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy {
   createdAt?: string | Computed<string>;
-  /** The description field provides an optional, user-defined explanation for the episodic memory strategy, which stores and recalls past conversation context to help the agent maintain continuity and relevance in its responses. (AI-inferred) */
   description?: string | Computed<string>;
-  /** For the Bedrock agent's episodic memory strategy, this object specifies the record schema that defines the fields (name and type) for each stored memory entry, enabling the agent to store and recall structured interaction data. (AI-inferred) */
   memoryRecordSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema>;
   name?: string | Computed<string>;
   namespaceTemplates?: string[] | Computed<string[]>;
-  /** For the Bedrock Agent Core Memory resource, this field defines the list of namespaces used by the episodic memory strategy to partition memories into distinct logical scopes for targeted storage and retrieval. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
-  /** Configures how often the agent reflects on past episodes and the maximum number of reflection summaries to retain, enabling episodic memory to distill insights from prior interactions. (AI-inferred) */
   reflectionConfiguration?: AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy_ReflectionConfiguration | Computed<AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy_ReflectionConfiguration>;
-  /** Indicates whether the episodic memory strategy is enabled or disabled for the agent's core memory. (AI-inferred) */
   status?: string | Computed<string>;
   strategyId?: string | Computed<string>;
-  /** The type of the episodic memory strategy, which must be set to the value 'EPISODIC_MEMORY' for the agent to use episodic memory. (AI-inferred) */
   type?: string | Computed<string>;
   updatedAt?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy {
-  /** The timestamp indicating when the semantic memory strategy was created. (AI-inferred) */
   createdAt?: string | Computed<string>;
-  /** A user-supplied description for the semantic memory strategy that explains how the agent's core memory captures and uses semantic knowledge. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the JSON schema that specifies the structure of memory records stored by the semantic memory strategy, including field names and data types. (AI-inferred) */
   memoryRecordSchema?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy_Configuration_EpisodicOverride_Reflection_MemoryRecordSchema>;
-  /** The name of the semantic memory strategy configuration, used to identify this strategy within the agent's memory setup. (AI-inferred) */
   name?: string | Computed<string>;
-  /** In the semantic memory strategy for an Amazon Bedrock agent, this list defines the namespace templates used to partition and organize memory entries into distinct semantic namespaces, so that memories can be scoped and retrieved by the generated namespace. (AI-inferred) */
   namespaceTemplates?: string[] | Computed<string[]>;
-  /** Specifies the list of vector store namespaces used to scope the storage and retrieval of semantic memory entries for this strategy in the Bedrock agent's core memory configuration. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
-  /** Specifies whether the semantic memory strategy is enabled, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   status?: string | Computed<string>;
-  /** The user-defined unique identifier for the semantic memory strategy, used to reference and manage this strategy within the agent's core memory configuration, such as when updating or deleting its associated memory data. (AI-inferred) */
   strategyId?: string | Computed<string>;
-  /** Specifies the vector store provider (such as AMAZON_BEDROCK, OPENAI, PINECONE, or REDIS) used for semantic memory in the agent's memory strategy. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The timestamp (in ISO 8601 format) indicating when the agent's core memory semantic memory strategy was last modified, useful for auditing changes to the memory settings. (AI-inferred) */
   updatedAt?: string | Computed<string>;
 }
 
 export interface AgentCoreMemory_MemoryStrategies {
-  /** Defines the configuration for a custom memory strategy, allowing the Bedrock agent to use a tailored memory implementation instead of a predefined strategy. (AI-inferred) */
   customMemoryStrategy?: AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy | Computed<AgentCoreMemory_MemoryStrategies_CustomMemoryStrategy>;
-  /** Configures the episodic memory strategy for the Bedrock agent, determining how past conversation histories are stored and used for recall during future interactions. (AI-inferred) */
   episodicMemoryStrategy?: AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy | Computed<AgentCoreMemory_MemoryStrategies_EpisodicMemoryStrategy>;
-  /** Configures the semantic memory strategy for the agent's core memory, specifying how the agent stores and retrieves semantic memories using a vector index. (AI-inferred) */
   semanticMemoryStrategy?: AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy | Computed<AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy>;
-  /** Configure the summary memory strategy for a Bedrock agent, specifying the summary length (short, medium, or long) and the number of recent conversation tokens to use when generating session summaries. (AI-inferred) */
   summaryMemoryStrategy?: AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy | Computed<AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy>;
-  /** Configures the user preference memory strategy, which enables the Bedrock agent to store and utilize user preferences across sessions for personalized responses. (AI-inferred) */
   userPreferenceMemoryStrategy?: AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy | Computed<AgentCoreMemory_MemoryStrategies_SemanticMemoryStrategy>;
 }
 
@@ -245,7 +174,6 @@ export interface AgentCoreMemory_StreamDeliveryResources_Resources_Kinesis_Conte
 
 export interface AgentCoreMemory_StreamDeliveryResources_Resources_Kinesis {
   contentConfigurations?: AgentCoreMemory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurations[] | Computed<AgentCoreMemory_StreamDeliveryResources_Resources_Kinesis_ContentConfigurations[]>;
-  /** The Amazon Resource Name (ARN) of the Kinesis Data Stream that serves as the destination for streaming core memory events from the Bedrock agent. (AI-inferred) */
   dataStreamArn?: string | Computed<string>;
 }
 
@@ -311,7 +239,6 @@ export interface AgentCoreMemoryConfig {
 }
 
 export interface AgentCoreMemoryAttrs {
-  /** The time, as an ISO 8601 string, at which this agent core memory object was created in AWS Bedrock. (AI-inferred) */
   createdAt: string;
   /** Description of the Memory resource */
   description: string;
@@ -319,7 +246,6 @@ export interface AgentCoreMemoryAttrs {
   encryptionKeyArn: string;
   /** Duration in days until memory events expire */
   eventExpiryDuration: number;
-  /** The failure reason reported by AWS Bedrock when a core memory operation (such as creating or updating the core memory) fails, providing details about why the operation was unsuccessful. (AI-inferred) */
   failureReason: string;
   /** List of indexed keys for the memory */
   indexedKeys: AgentCoreMemory_IndexedKeys[];
@@ -338,7 +264,6 @@ export interface AgentCoreMemoryAttrs {
   streamDeliveryResources: AgentCoreMemory_StreamDeliveryResources;
   /** A map of tag keys and values */
   tags: unknown;
-  /** The read-only timestamp, in ISO 8601 format, indicating when the agent core memory was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

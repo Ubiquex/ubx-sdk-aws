@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CacheUserGroup_Tags:
-    # The tag key that, paired with its value, labels this ElastiCache user group for cost allocation, access control, and operational management. (AI-inferred)
     key: Any = None
-    # The value of a metadata tag attached to the ElastiCache User Group, used to assign arbitrary identifiers like environment or owner for resource organization and cost tracking. (AI-inferred)
     value: Any = None
 
 _CacheUserGroup_TagsFields = {

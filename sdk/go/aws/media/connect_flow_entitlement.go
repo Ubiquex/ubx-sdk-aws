@@ -25,9 +25,7 @@ type ConnectFlowEntitlement_Encryption struct {
 }
 
 type ConnectFlowEntitlement_Tags struct {
-	// The key of a tag attached to the AWS Elemental MediaConnect flow entitlement, used to organize, identify, and optionally drive cost allocation for this entitlement resource. (AI-inferred)
 	Key any
-	// The value part of a tag key-value pair associated with this AWS Elemental MediaConnect flow entitlement, used for metadata, cost allocation, and resource management. (AI-inferred)
 	Value any
 }
 

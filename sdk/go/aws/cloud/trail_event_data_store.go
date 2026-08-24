@@ -4,26 +4,17 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrailEventDataStore_AdvancedEventSelectors_FieldSelectors struct {
-	// Matches events where the selected field's value ends with any of the specified string suffixes, defining a condition in the CloudTrail event data store's advanced event selector. (AI-inferred)
 	EndsWith any
-	// For each field selector in a CloudTrail event data store's advanced event selector, `equals` specifies the list of exact values that the named event field must match for an event to be delivered to the data store. (AI-inferred)
 	Equals any
-	// The name of the event attribute (e.g., eventCategory, readOnly, resources.type) that the field selector evaluates to filter which events are ingested into the event data store. (AI-inferred)
 	Field any
-	// For each advanced event selector field, this list of suffixes defines a `not endsWith` condition: an event matches only if the field's value does not end with any of the specified suffix strings. (AI-inferred)
 	NotEndsWith any
-	// Defines a list of values that, if any matches the event field specified by the adjacent field selector, will cause the event to be excluded from the CloudTrail event data store. (AI-inferred)
 	NotEquals any
-	// For an advanced event selector on an event data store, this list contains string prefixes; events whose corresponding field value begins with any listed prefix are excluded from matching the selector. (AI-inferred)
 	NotStartsWith any
-	// Specifies a list of string prefixes that the value of the selected event field must start with for an event to match this advanced event selector and be included in the event data store. (AI-inferred)
 	StartsWith any
 }
 
 type TrailEventDataStore_AdvancedEventSelectors struct {
-	// Defines the list of field selectors within an advanced event selector that specify conditions on event fields, such as eventCategory or eventName, to determine which events are delivered to the event data store. (AI-inferred)
 	FieldSelectors any
-	// Provides a friendly name for the advanced event selector, used to identify it when managing multiple selectors in the CloudTrail event data store. (AI-inferred)
 	Name any
 }
 
@@ -37,9 +28,7 @@ type TrailEventDataStore_InsightSelectors struct {
 }
 
 type TrailEventDataStore_Tags struct {
-	// Specifies the key of a tag to assign to the CloudTrail event data store, which is a custom label used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the CloudTrail event data store, used to organize and identify the resource for governance and cost allocation purposes. (AI-inferred)
 	Value any
 }
 
@@ -105,7 +94,6 @@ type TrailEventDataStoreConfig struct {
 	OrganizationEnabled any
 	// The retention period, in days.
 	RetentionPeriod any
-	// Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
 	// Indicates whether the event data store is protected from termination.
 	TerminationProtectionEnabled any
@@ -118,7 +106,6 @@ type TrailEventDataStoreAttrs struct {
 	BillingMode any
 	// An array that enriches event records in an existing event data store by including additional information specified in individual ContexKeySelector entries. If you add ContextKeySelectors, you must set MaxEventSize to Large.
 	ContextKeySelectors any
-	// The creation time of the CloudTrail event data store, reported by CloudFormation as a read-only timestamp string. (AI-inferred)
 	CreatedTimestamp any
 	// The ARN of the event data store.
 	EventDataStoreArn any
@@ -146,11 +133,9 @@ type TrailEventDataStoreAttrs struct {
 	RetentionPeriod any
 	// The status of an event data store. Values are STARTING_INGESTION, ENABLED, STOPPING_INGESTION, STOPPED_INGESTION and PENDING_DELETION.
 	Status any
-	// Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
 	// Indicates whether the event data store is protected from termination.
 	TerminationProtectionEnabled any
-	// The timestamp of the last update to the event data store, indicating when its configuration was most recently modified. (AI-inferred)
 	UpdatedTimestamp any
 }
 

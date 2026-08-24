@@ -21,12 +21,10 @@ export interface TMitigationAction_ActionParams_PublishFindingToSnsParams {
 }
 
 export interface TMitigationAction_ActionParams_ReplaceDefaultPolicyVersionParams {
-  /** The template_name specifies the name of the AWS IoT policy template that is used to generate the new policy version, which then replaces the existing default policy version for the target principal. (AI-inferred) */
   templateName: string | Computed<string>;
 }
 
 export interface TMitigationAction_ActionParams_UpdateCacertificateParams {
-  /** Specifies whether to activate or deactivate the CA certificate, with allowed values 'ACTIVATE' and 'DEACTIVATE'. (AI-inferred) */
   action: string | Computed<string>;
 }
 
@@ -46,9 +44,7 @@ export interface TMitigationAction_ActionParams {
 }
 
 export interface TMitigationAction_Tags {
-  /** The key of a tag that you can attach to an AWS IoT mitigation action, used to categorize and identify the action by metadata such as environment or purpose. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS IoT mitigation action, used for metadata such as owner, purpose, or environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -117,7 +113,6 @@ export interface TMitigationActionConfig {
   actionName?: string | Computed<string>;
   /** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
   actionParams: TMitigationAction_ActionParams | Computed<TMitigationAction_ActionParams>;
-  /** The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred) */
   roleArn: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: TMitigationAction_Tags[] | Computed<TMitigationAction_Tags[]>;
@@ -128,11 +123,8 @@ export interface TMitigationActionAttrs {
   actionName: string;
   /** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
   actionParams: TMitigationAction_ActionParams;
-  /** The Amazon Resource Name (ARN) uniquely identifying the AWS IoT mitigation action, assigned by AWS upon creation. (AI-inferred) */
   mitigationActionArn: string;
-  /** The unique identifier assigned by AWS IoT to the mitigation action. (AI-inferred) */
   mitigationActionId: string;
-  /** The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred) */
   roleArn: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: TMitigationAction_Tags[];

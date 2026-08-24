@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MessageTemplate_Content_EmailMessageTemplateContent_Body_Html {
-  /** The HTML body content of the email message template, used when the email body is formatted as HTML. (AI-inferred) */
   content?: string | Computed<string>;
 }
 
@@ -14,9 +13,7 @@ export interface MessageTemplate_Content_EmailMessageTemplateContent_Body {
 }
 
 export interface MessageTemplate_Content_EmailMessageTemplateContent_Headers {
-  /** The name of the email header (e.g., a custom header key) in the headers list of the email message template content. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of an email header in the AWS Wisdom message template's content, paired with a key to define a custom or standard email header sent with the message. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -205,16 +202,12 @@ export interface MessageTemplate_GroupingConfiguration {
 }
 
 export interface MessageTemplate_MessageTemplateAttachments {
-  /** The unique identifier of the attachment to include in the message template, referencing the attachment's ID in Amazon Connect Wisdom. (AI-inferred) */
   attachmentId?: string | Computed<string>;
-  /** The name of an attachment in the Wisdom message template, used to identify and reference the attachment when the template is rendered for customers. (AI-inferred) */
   attachmentName?: string | Computed<string>;
-  /** For each attachment in an Amazon Wisdom message template, this field is the Amazon S3 presigned URL that grants temporary, secure access to the attachment's underlying object stored in S3. (AI-inferred) */
   s3PresignedUrl?: string | Computed<string>;
 }
 
 export interface MessageTemplate_Tags {
-  /** The key of a metadata tag attached to the Wisdom message template, allowing users to organize and identify the template within AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

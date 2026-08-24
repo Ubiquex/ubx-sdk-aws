@@ -9,7 +9,6 @@ export interface VerifiedAccessGroup_SseSpecification {
 }
 
 export interface VerifiedAccessGroup_Tags {
-  /** The key of a user-defined tag attached to the EC2 Verified Access Group, used to organize and identify the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MultiRegionEndpoint_Details_RouteDetails:
-    # The AWS Region targeted by this route in the multi-region endpoint's route configuration. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass

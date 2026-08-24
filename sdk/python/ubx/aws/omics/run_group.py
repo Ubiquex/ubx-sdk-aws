@@ -8,36 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RunGroupConfig:
-    # The maximum number of CPUs that can be used by all runs within this run group. (AI-inferred)
     max_cpus: Any = None
-    # Specifies the maximum duration in seconds that a run can run in this group, after which the run is automatically terminated. (AI-inferred)
     max_duration: Any = None
-    # Sets the maximum number of GPUs that a single workflow run within this run group can use. (AI-inferred)
     max_gpus: Any = None
-    # The maximum number of concurrently running workflows that this run group is allowed to have. (AI-inferred)
     max_runs: Any = None
-    # The user-specified name for the run group, used to identify the run group within the AWS account. (AI-inferred)
     name: Any = None
     # A map of resource tags
     tags: Any = None
 
 @dataclasses.dataclass
 class RunGroupAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this Omics run group. (AI-inferred)
     arn: Any = None
-    # The time (in ISO 8601 format) when the run group was created. (AI-inferred)
     creation_time: Any = None
-    # The unique identifier automatically assigned by AWS Omics to the run group. (AI-inferred)
     id: Any = None
-    # The maximum number of CPUs that can be used by all runs within this run group. (AI-inferred)
     max_cpus: Any = None
-    # Specifies the maximum duration in seconds that a run can run in this group, after which the run is automatically terminated. (AI-inferred)
     max_duration: Any = None
-    # Sets the maximum number of GPUs that a single workflow run within this run group can use. (AI-inferred)
     max_gpus: Any = None
-    # The maximum number of concurrently running workflows that this run group is allowed to have. (AI-inferred)
     max_runs: Any = None
-    # The user-specified name for the run group, used to identify the run group within the AWS account. (AI-inferred)
     name: Any = None
     # A map of resource tags
     tags: Any = None

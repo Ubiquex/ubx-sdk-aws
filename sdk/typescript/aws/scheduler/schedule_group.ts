@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ScheduleGroup_Tags {
-  /** The key portion of a tag attached to an AWS EventBridge Scheduler schedule group, used to identify and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the AWS EventBridge Scheduler schedule group, used to define metadata for the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,7 +12,6 @@ const ScheduleGroup_TagsFields: FieldMap = {
 };
 
 export interface ScheduleGroupConfig {
-  /** The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred) */
   name?: string | Computed<string>;
   /** The list of tags to associate with the schedule group. */
   tags?: ScheduleGroup_Tags[] | Computed<ScheduleGroup_Tags[]>;
@@ -27,7 +24,6 @@ export interface ScheduleGroupAttrs {
   creationDate: string;
   /** The time at which the schedule group was last modified. */
   lastModificationDate: string;
-  /** The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred) */
   name: string;
   /** Specifies the state of the schedule group. */
   state: string;

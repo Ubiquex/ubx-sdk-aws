@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerExperiment_Tags {
-  /** The key of a tag applied to the SageMaker experiment, used to assign custom metadata for organizing, searching, and managing the experiment resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a user-defined key-value tag attached to an Amazon SageMaker experiment, used for labeling, categorization, and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

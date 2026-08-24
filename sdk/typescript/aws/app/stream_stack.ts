@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamStack_AccessEndpoints {
-  /** Determines the type of access endpoint for the AppStream stack, either APPSTREAM for the AppStream 2.0 streaming interface or INTERNET for a public internet interface. (AI-inferred) */
   endpointType?: string | Computed<string>;
-  /** The VPC endpoint ID that AppStream 2.0 uses for this access endpoint, enabling controlled streaming access through a private VPC endpoint. (AI-inferred) */
   vpceId?: string | Computed<string>;
 }
 
 export interface StreamStack_AgentAccessConfig_Settings {
-  /** Specifies whether to allow or deny access to the AppStream 2.0 agent version indicated by the corresponding version setting, where the action can be 'ALLOW' or 'DENY'. (AI-inferred) */
   agentAction?: string | Computed<string>;
-  /** Specifies whether the AppStream 2.0 stack permits agent access during streaming sessions, with the permission value controlling the enabled/disabled state of the agent access configuration. (AI-inferred) */
   permission?: string | Computed<string>;
 }
 
@@ -52,11 +48,8 @@ export interface StreamStack_ContentRedirection {
 }
 
 export interface StreamStack_StorageConnectors {
-  /** The type of storage connector to enable for this AppStream stack, such as HOMEFOLDERS, GOOGLE_DRIVE, or ONE_DRIVE. (AI-inferred) */
   connectorType?: string | Computed<string>;
-  /** Specifies the list of domains (e.g., Google Drive or OneDrive) that this storage connector is allowed to use, restricting the connector to those domains for file access and synchronization. (AI-inferred) */
   domains?: string[] | Computed<string[]>;
-  /** The ResourceIdentifier for a storage connector specifies the backing resource: for HOME_FOLDERS it is the ARN of the Amazon S3 bucket that stores home folders, while for GOOGLE_DRIVE or ONE_DRIVE it is the domain name of the user's cloud storage account. (AI-inferred) */
   resourceIdentifier?: string | Computed<string>;
 }
 
@@ -66,18 +59,13 @@ export interface StreamStack_StreamingExperienceSettings {
 }
 
 export interface StreamStack_Tags {
-  /** The key of a tag attached to the AWS AppStream stack, used to organize and identify the stack for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of an AWS tag applied to the AppStream 2.0 stack, used for organizing and identifying the stack in cost allocation and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface StreamStack_UserSettings {
-  /** The AppStream 2.0 user action (such as CLIPBOARD_COPY_FROM_LOCAL_DEVICE or FILE_UPLOAD) to which the permission setting applies. (AI-inferred) */
   action?: string | Computed<string>;
-  /** For each entry in the stack's user settings, this field defines the maximum clipboard data size (in bytes) allowed for actions that copy clipboard content to or from the local device. (AI-inferred) */
   maximumLength?: number | Computed<number>;
-  /** Specifies whether the user action (identified by the sibling 'action' field) is enabled or disabled for the AppStream 2.0 stack, with valid values being 'ENABLED' or 'DISABLED'. (AI-inferred) */
   permission?: string | Computed<string>;
 }
 

@@ -24,7 +24,6 @@ class SyncLocationFsxOpenZfs_Protocol:
 @dataclasses.dataclass
 class SyncLocationFsxOpenZfs_Tags:
     key: Any = None
-    # The value of a user-defined tag (key-value pair) applied to the FSx for OpenZFS DataSync location, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 _SyncLocationFsxOpenZfs_Protocol_Nfs_MountOptionsFields = {

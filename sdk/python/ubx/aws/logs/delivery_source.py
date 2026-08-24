@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DeliverySource_Tags:
     key: Any = None
-    # Specifies the value of a tag attached to the CloudWatch Logs delivery source, used for organizing, identifying, and managing the resource via metadata such as cost allocation and access control. (AI-inferred)
     value: Any = None
 
 _DeliverySource_TagsFields = {

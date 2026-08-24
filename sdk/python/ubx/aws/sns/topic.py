@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Topic_DeliveryStatusLogging:
-    # The IAM role ARN that Amazon SNS assumes to write delivery status logs for failed message deliveries to CloudWatch Logs. (AI-inferred)
     failure_feedback_role_arn: Any = None
-    # Specifies the protocol (e.g., http, https, sqs, lambda) for which this delivery status logging configuration applies in the SNS topic subscription delivery status logging settings. (AI-inferred)
     protocol: Any = None
-    # Specifies the ARN of an IAM role that Amazon SNS uses to write CloudWatch Logs for messages that were successfully delivered to subscribed endpoints for this topic. (AI-inferred)
     success_feedback_role_arn: Any = None
-    # The percentage of successfully delivered messages (0-100, as a string) that Amazon SNS samples for delivery status logging to CloudWatch Logs. (AI-inferred)
     success_feedback_sample_rate: Any = None
 
 @dataclasses.dataclass
 class Topic_Subscription:
-    # The endpoint that receives notifications from the SNS topic, such as an email address, phone number, or URL, depending on the subscription protocol. (AI-inferred)
     endpoint: Any = None
-    # The protocol specifies the type of endpoint that will receive messages from the topic, such as http, https, email, sqs, lambda, etc. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
 class Topic_Tags:
-    # The tag key that, together with the corresponding tag value, assigns a user-defined metadata label to the SNS topic for purposes such as cost allocation and access control. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the SNS topic, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 _Topic_DeliveryStatusLoggingFields = {
@@ -101,7 +93,6 @@ class TopicAttrs:
     subscription: Any = None
     # The list of tags to add to a new topic. To be able to tag a topic on creation, you must have the ``sns:CreateTopic`` and ``sns:TagResource`` permissions.
     tags: Any = None
-    # The Amazon Resource Name (ARN) of the SNS topic, automatically assigned by AWS when the topic is created and used to reference the topic in other services. (AI-inferred)
     topic_arn: Any = None
     # The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. FIFO topic names must end with ``.fifo``. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the topic name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
     topic_name: Any = None

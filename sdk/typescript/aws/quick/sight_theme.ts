@@ -35,12 +35,10 @@ export interface SightTheme_Configuration_Sheet {
 }
 
 export interface SightTheme_Configuration_Typography_FontFamilies {
-  /** Specifies the name of a font family (such as 'Arial' or 'Roboto') to apply to text in the Amazon QuickSight theme's typography settings. (AI-inferred) */
   fontFamily?: string | Computed<string>;
 }
 
 export interface SightTheme_Configuration_Typography {
-  /** Specifies the list of font families used in the theme's typography, where each item is an object that identifies a font by name for use in QuickSight visuals. (AI-inferred) */
   fontFamilies?: SightTheme_Configuration_Typography_FontFamilies[] | Computed<SightTheme_Configuration_Typography_FontFamilies[]>;
 }
 
@@ -84,30 +82,23 @@ export interface SightTheme_Configuration {
   dataColorPalette?: SightTheme_Configuration_DataColorPalette | Computed<SightTheme_Configuration_DataColorPalette>;
   /** <p>The theme display options for sheets. </p> */
   sheet?: SightTheme_Configuration_Sheet | Computed<SightTheme_Configuration_Sheet>;
-  /** Specifies the typography configuration for the theme, including the font families that can be used in visualizations. (AI-inferred) */
   typography?: SightTheme_Configuration_Typography | Computed<SightTheme_Configuration_Typography>;
   /** <p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p> */
   uicolorPalette?: SightTheme_Configuration_UicolorPalette | Computed<SightTheme_Configuration_UicolorPalette>;
 }
 
 export interface SightTheme_Permissions {
-  /** Specifies the list of QuickSight actions (e.g., 'quicksight:DescribeTheme', 'quicksight:UpdateTheme') that the principal is allowed to perform on the theme. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The IAM identity (ARN or name) that is granted the specified actions on the Amazon QuickSight theme. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
 export interface SightTheme_Tags {
-  /** The key of a tag attached to the QuickSight theme, used to categorize and manage the theme resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag assigned to the Amazon QuickSight theme, used to store arbitrary metadata such as environment or owner. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SightTheme_Version_Errors {
-  /** The error message describing why a specific theme version could not be created or updated in Amazon QuickSight. (AI-inferred) */
   message?: string | Computed<string>;
-  /** The type of error that occurred during the creation or update of a QuickSight theme version, indicating the nature of the failure. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -124,7 +115,6 @@ export interface SightTheme_Version {
   description?: string | Computed<string>;
   /** <p>Errors associated with the theme.</p> */
   errors?: SightTheme_Version_Errors[] | Computed<SightTheme_Version_Errors[]>;
-  /** Status of the theme version, representing the current state of creation or update (e.g., CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED). (AI-inferred) */
   status?: string | Computed<string>;
   /** <p>The version number of the theme.</p> */
   versionNumber?: number | Computed<number>;
@@ -239,30 +229,21 @@ const SightTheme_TagsFields: FieldMap = {
 };
 
 export interface SightThemeConfig {
-  /** The AWS account ID where the QuickSight theme is created, scoping the theme resource to that specific account. (AI-inferred) */
   awsAccountId: string | Computed<string>;
-  /** The ID of the base theme that this theme inherits its default styles from, such as MIDNIGHT or CLASSIC. (AI-inferred) */
   baseThemeId: string | Computed<string>;
   /** <p>The theme configuration. This configuration contains all of the display properties for a theme.</p> */
   configuration: SightTheme_Configuration | Computed<SightTheme_Configuration>;
-  /** The display name of the QuickSight theme, used to identify it in the QuickSight console and API. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the list of access permissions for the theme, where each item grants a principal (user, group, or role ARN) a set of allowed actions such as quicksight:DescribeTheme and quicksight:UpdateTheme. (AI-inferred) */
   permissions?: SightTheme_Permissions[] | Computed<SightTheme_Permissions[]>;
-  /** A list of key-value tag pairs to attach to the QuickSight theme for resource management and categorization. (AI-inferred) */
   tags?: SightTheme_Tags[] | Computed<SightTheme_Tags[]>;
-  /** The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred) */
   themeId: string | Computed<string>;
-  /** Specifies the description of the theme version, providing context about the changes or purpose of this iteration of the QuickSight theme. (AI-inferred) */
   versionDescription?: string | Computed<string>;
 }
 
 export interface SightThemeAttrs {
   /** <p>The Amazon Resource Name (ARN) of the theme.</p> */
   arn: string;
-  /** The AWS account ID where the QuickSight theme is created, scoping the theme resource to that specific account. (AI-inferred) */
   awsAccountId: string;
-  /** The ID of the base theme that this theme inherits its default styles from, such as MIDNIGHT or CLASSIC. (AI-inferred) */
   baseThemeId: string;
   /** <p>The theme configuration. This configuration contains all of the display properties for a theme.</p> */
   configuration: SightTheme_Configuration;
@@ -270,18 +251,13 @@ export interface SightThemeAttrs {
   createdTime: string;
   /** <p>The date and time that the theme was last updated.</p> */
   lastUpdatedTime: string;
-  /** The display name of the QuickSight theme, used to identify it in the QuickSight console and API. (AI-inferred) */
   name: string;
-  /** Specifies the list of access permissions for the theme, where each item grants a principal (user, group, or role ARN) a set of allowed actions such as quicksight:DescribeTheme and quicksight:UpdateTheme. (AI-inferred) */
   permissions: SightTheme_Permissions[];
-  /** A list of key-value tag pairs to attach to the QuickSight theme for resource management and categorization. (AI-inferred) */
   tags: SightTheme_Tags[];
-  /** The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred) */
   themeId: string;
   type: string;
   /** <p>A version of a theme.</p> */
   version: SightTheme_Version;
-  /** Specifies the description of the theme version, providing context about the changes or purpose of this iteration of the QuickSight theme. (AI-inferred) */
   versionDescription: string;
 }
 

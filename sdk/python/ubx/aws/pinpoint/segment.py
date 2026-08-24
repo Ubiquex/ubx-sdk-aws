@@ -8,97 +8,66 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Segment_Dimensions_Behavior_Recency:
-    # The number of days that defines the recency window (e.g., '30' for the last 30 days) used to include or exclude users in the segment based on their activity recency. (AI-inferred)
     duration: Any = None
-    # Specifies whether the segment is based on users who are active (ACTIVE) or inactive (INACTIVE) within the specified recency duration. (AI-inferred)
     recency_type: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Behavior:
-    # Configures the recency dimension for a behavior-based segment, filtering users by how recently they were active (e.g., active or inactive within a specified number of days). (AI-inferred)
     recency: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Demographic_AppVersion:
-    # Determines whether the specified app version values are included in (INCLUSIVE) or excluded from (EXCLUSIVE) the segment's demographic filter. (AI-inferred)
     dimension_type: Any = None
-    # Defines the set of app version strings (for example, '1.0.0') used by the app_version demographic dimension to match devices for the segment. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Demographic:
-    # Specifies the set of app version(s) used to include or exclude devices in the segment based on the installed version of your mobile app, with a comparison operator and an array of version strings. (AI-inferred)
     app_version: Any = None
-    # Defines the demographic dimension for the segment by specifying which contact channels (such as SMS, email, or push) to include or exclude, using a set dimension with a dimension type (inclusive or exclusive) and a list of channel values. (AI-inferred)
     channel: Any = None
-    # Defines the device-type demographic criteria used to include or exclude endpoints from a segment, specifying an attribute type (INCLUSIVE or EXCLUSIVE) and a list of device type values to match. (AI-inferred)
     device_type: Any = None
-    # Configures the device make (manufacturer, e.g., Apple, Samsung) dimension for the segment, with a set of allowed values and a dimension type to include or exclude matching devices. (AI-inferred)
     make: Any = None
-    # Defines the demographic device-model filter for the segment, using a set dimension (with values and include/exclude type) to match or exclude devices by model name. (AI-inferred)
     model: Any = None
-    # Configures the demographic platform filter for a Pinpoint segment, specifying the device platforms (such as iOS, Android, etc.) that endpoints must match to be included in the segment. (AI-inferred)
     platform: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Location_Gpspoint_Coordinates:
-    # The latitude of the GPS coordinate that defines the center of a circular location-based segment. (AI-inferred)
     latitude: Any = None
-    # The east-west geographic coordinate (in decimal degrees) of the GPS point used to define the location-based segment's dimension criteria. (AI-inferred)
     longitude: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Location_Gpspoint:
-    # The coordinates object within the GPS point specifies the latitude and longitude values used to define the location-based segment dimension for AWS Pinpoint. (AI-inferred)
     coordinates: Any = None
-    # The radius in kilometers around the GPS point's latitude and longitude that defines the circular geographic area used to match devices for the segment. (AI-inferred)
     range_in_kilometers: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions_Location:
-    # Defines the country criteria for the location segment dimension, using a set of country codes with an include/exclude filter type to target or exclude devices in those countries. (AI-inferred)
     country: Any = None
-    # Defines a circular geographic area for matching endpoints, using a latitude and longitude coordinate as the center and a radius measured in kilometers. (AI-inferred)
     gpspoint: Any = None
 
 @dataclasses.dataclass
 class Segment_Dimensions:
-    # Specifies attribute-based criteria for the segment, where each key is a custom endpoint attribute name and the value defines the dimension filter (such as inclusion or exclusion type and matching values) used to include or exclude endpoints. (AI-inferred)
     attributes: Any = None
-    # Defines the behavior-based criteria for the segment, such as how recently or how often users have used your app, including metrics like session count and session duration, to target endpoints based on their engagement patterns. (AI-inferred)
     behavior: Any = None
-    # Defines the demographic criteria for the segment, where each key is a demographic attribute (e.g., age, gender, platform) and each value contains inclusion/exclusion rules (AttributeDimension) to filter endpoint membership. (AI-inferred)
     demographic: Any = None
-    # Specifies location-based criteria for the segment, such as the country code or GPS coordinates that endpoints must match to be included in the segment. (AI-inferred)
     location: Any = None
-    # Specifies a map of metric names to metric dimension criteria, where each criterion defines a comparison operator and threshold value that endpoint metric values must satisfy to be included in the segment. (AI-inferred)
     metrics: Any = None
-    # Specifies filters for including or excluding endpoints based on custom user attribute values, where each key is a user attribute name and its value defines the matching criteria. (AI-inferred)
     user_attributes: Any = None
 
 @dataclasses.dataclass
 class Segment_SegmentGroups_Groups_SourceSegments:
-    # The ID of an existing Amazon Pinpoint segment used as a source to build this dynamic segment group. (AI-inferred)
     id: Any = None
-    # Specifies the version number of the source segment that this segment imports for building the segment group. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Segment_SegmentGroups_Groups:
-    # Defines the endpoint criteria (attributes, metrics, and user attributes) used to determine which endpoints belong to this segment group. (AI-inferred)
     dimensions: Any = None
-    # Specifies the source segments used by this segment group to define its audience, where each entry references an existing segment by its ID and version. (AI-inferred)
     source_segments: Any = None
-    # Determines whether endpoints must match all (ALL_TARGETING) or any (ANY_TARGETING) of the criteria defined in the segment group's dimensions or source segments. (AI-inferred)
     source_type: Any = None
-    # Specifies whether a segment group must match all of its dimensions (ALL) or any one of its dimensions (ANY) to be included in the segment. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Segment_SegmentGroups:
-    # A list of group definitions that make up the segment group, where each group specifies the dimensions or source segments used to define the segment's targeting criteria. (AI-inferred)
     groups: Any = None
-    # Controls how the segment groups are evaluated to include or exclude endpoints, with typical values like ALL, ANY, or NONE for combining multiple groups. (AI-inferred)
     include: Any = None
 
 _Segment_Dimensions_Behavior_RecencyFields = {
@@ -231,32 +200,20 @@ _Segment_SegmentGroupsFields = {
 
 @dataclasses.dataclass
 class SegmentConfig:
-    # The unique identifier of the Amazon Pinpoint application (project) that the segment belongs to. (AI-inferred)
     application_id: Any = None
-    # Defines the criteria (such as demographic, behavioral, location, and metrics filters) that determine which endpoints are included in the segment. (AI-inferred)
     dimensions: Any = None
-    # The name of the segment, which is used as a friendly identifier in the Amazon Pinpoint console and API operations. (AI-inferred)
     name: Any = None
-    # Defines the segment groups, including their dimensions and source segments, that specify the criteria for which endpoints are included in the Amazon Pinpoint segment. (AI-inferred)
     segment_groups: Any = None
-    # Assigns key-value tags to the Amazon Pinpoint segment, which can be used to categorize, organize, and manage the segment. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SegmentAttrs:
-    # The unique identifier of the Amazon Pinpoint application (project) that the segment belongs to. (AI-inferred)
     application_id: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Amazon Pinpoint segment. (AI-inferred)
     arn: Any = None
-    # Defines the criteria (such as demographic, behavioral, location, and metrics filters) that determine which endpoints are included in the segment. (AI-inferred)
     dimensions: Any = None
-    # The name of the segment, which is used as a friendly identifier in the Amazon Pinpoint console and API operations. (AI-inferred)
     name: Any = None
-    # Defines the segment groups, including their dimensions and source segments, that specify the criteria for which endpoints are included in the Amazon Pinpoint segment. (AI-inferred)
     segment_groups: Any = None
-    # The unique identifier assigned to the segment in Amazon Pinpoint. (AI-inferred)
     segment_id: Any = None
-    # Assigns key-value tags to the Amazon Pinpoint segment, which can be used to categorize, organize, and manage the segment. (AI-inferred)
     tags: Any = None
 
 Segment = ubx.ResourceBinding(

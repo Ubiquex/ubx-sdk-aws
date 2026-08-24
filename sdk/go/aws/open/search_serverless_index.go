@@ -25,7 +25,6 @@ type SearchServerlessIndex_Settings_Index struct {
 type SearchServerlessIndex_Settings struct {
 	// Custom analysis configuration including analyzers, tokenizers, and filters
 	Analysis any
-	// The 'settings.index' object specifies index-level configuration for the OpenSearch Serverless index, including settings like the number of primary shards and replica shards. (AI-inferred)
 	Index any
 }
 
@@ -63,7 +62,6 @@ type SearchServerlessIndexConfig struct {
 	IndexName any
 	// Index Mappings
 	Mappings any
-	// The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred)
 	Settings any
 }
 
@@ -74,7 +72,6 @@ type SearchServerlessIndexAttrs struct {
 	IndexName any
 	// Index Mappings
 	Mappings any
-	// The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred)
 	Settings any
 	// The unique identifier for the index.
 	Uuid any

@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamApplicationEntitlementAssociationConfig:
-    # The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred)
     application_identifier: Any = None
-    # The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred)
     entitlement_name: Any = None
-    # The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred)
     stack_name: Any = None
 
 @dataclasses.dataclass
 class StreamApplicationEntitlementAssociationAttrs:
-    # The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred)
     application_identifier: Any = None
-    # The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred)
     entitlement_name: Any = None
-    # The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred)
     stack_name: Any = None
 
 StreamApplicationEntitlementAssociation = ubx.ResourceBinding(

@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IdentityPoolPrincipalTagConfig {
-  /** The unique identifier of the Cognito identity pool to which these principal tags are associated. (AI-inferred) */
   identityPoolId: string | Computed<string>;
-  /** The name of the identity provider (such as 'Facebook', 'Google', or a custom provider) that this principal tag configuration applies to. (AI-inferred) */
   identityProviderName: string | Computed<string>;
-  /** A map of key-value pairs that define the principal tags to attach to the identity pool's principal for the specified identity provider. (AI-inferred) */
   principalTags?: unknown | Computed<unknown>;
-  /** Indicates whether to use the default principal tag mappings for the identity provider, causing Cognito to automatically apply its standard tags (such as 'role') instead of the custom principal tags you specify. (AI-inferred) */
   useDefaults?: boolean | Computed<boolean>;
 }
 
 export interface IdentityPoolPrincipalTagAttrs {
-  /** The unique identifier of the Cognito identity pool to which these principal tags are associated. (AI-inferred) */
   identityPoolId: string;
-  /** The name of the identity provider (such as 'Facebook', 'Google', or a custom provider) that this principal tag configuration applies to. (AI-inferred) */
   identityProviderName: string;
-  /** A map of key-value pairs that define the principal tags to attach to the identity pool's principal for the specified identity provider. (AI-inferred) */
   principalTags: unknown;
-  /** Indicates whether to use the default principal tag mappings for the identity provider, causing Cognito to automatically apply its standard tags (such as 'role') instead of the custom principal tags you specify. (AI-inferred) */
   useDefaults: boolean;
 }
 

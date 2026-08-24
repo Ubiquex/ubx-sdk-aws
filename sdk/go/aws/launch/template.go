@@ -4,36 +4,22 @@ package launch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Template_LaunchTemplateData_BlockDeviceMappings_Ebs struct {
-	// Indicates whether the EBS volume is deleted when the associated EC2 instance is terminated, controlling the lifecycle persistence of the volume. (AI-inferred)
 	DeleteOnTermination any
-	// The index of the EBS card on the Nitro System instance to which this EBS volume is attached, used to specify the EBS card for instances with multiple EBS cards. (AI-inferred)
 	EbsCardIndex any
-	// Indicates whether the EBS volume is encrypted. (AI-inferred)
 	Encrypted any
-	// The number of I/O operations per second (IOPS) to provision for the EBS volume, used for Provisioned IOPS volumes (io1/io2) or configurable for gp3 volumes in the launch template's block device mapping. (AI-inferred)
 	Iops any
-	// The ARN of the AWS KMS key used to encrypt the EBS volume in this block device mapping; if omitted, the default EBS encryption key is used. (AI-inferred)
 	KmsKeyId any
-	// The ID of the Amazon EBS snapshot to use as the source for the EBS volume created by this block device mapping in the launch template. (AI-inferred)
 	SnapshotId any
-	// Specifies the throughput (in MiB/s) to provision for a gp3 EBS volume in the launch template's block device mapping. (AI-inferred)
 	Throughput any
-	// Specifies the initialization rate for an EBS volume created from a snapshot, controlling the speed at which the volume is populated and made ready for use. (AI-inferred)
 	VolumeInitializationRate any
-	// The size of the EBS volume in GiB to attach to the instance when the block device mapping is applied. (AI-inferred)
 	VolumeSize any
-	// Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, io2, sc1, st1, standard) for the block device mapping defined in the EC2 launch template's LaunchTemplateData. (AI-inferred)
 	VolumeType any
 }
 
 type Template_LaunchTemplateData_BlockDeviceMappings struct {
-	// Specifies the device name (for example, /dev/xvda) for the block device as exposed to the EC2 instance, used to identify the volume within the launch template's block device mapping. (AI-inferred)
 	DeviceName any
-	// Specifies the Amazon EBS volume configuration for the block device mapping, including volume size, type, IOPS, throughput, encryption, delete-on-termination, and snapshot-based settings for the attached EBS volume. (AI-inferred)
 	Ebs any
-	// Indicates whether to suppress the device mapping for the device specified by the corresponding `device_name`, effectively preventing that device from being attached to the instance. (AI-inferred)
 	NoDevice any
-	// The virtual device name (e.g., ephemeral0) for an instance store volume in the block device mapping, used when the mapping is for an ephemeral device rather than an EBS volume. (AI-inferred)
 	VirtualName any
 }
 
@@ -112,7 +98,6 @@ type Template_LaunchTemplateData_InstanceRequirements_AcceleratorCount struct {
 }
 
 type Template_LaunchTemplateData_InstanceRequirements_BaselinePerformanceFactors_Cpu_References struct {
-	// The instance family (e.g., 'c5', 'm5') that serves as a CPU baseline reference when defining baseline performance factors for the launch template's instance requirements. (AI-inferred)
 	InstanceFamily any
 }
 
@@ -180,7 +165,6 @@ type Template_LaunchTemplateData_InstanceRequirements struct {
 }
 
 type Template_LaunchTemplateData_LicenseSpecifications struct {
-	// The Amazon Resource Name (ARN) of the AWS License Manager license configuration to associate with instances launched from this launch template. (AI-inferred)
 	LicenseConfigurationArn any
 }
 
@@ -203,94 +187,60 @@ type Template_LaunchTemplateData_MetadataOptions struct {
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_ConnectionTrackingSpecification struct {
-	// The timeout in seconds for established TCP connections tracked on the network interface, as part of the connection tracking specification in the AWS EC2 launch template. (AI-inferred)
 	TcpEstablishedTimeout any
-	// Specifies the timeout in seconds for an established UDP stream (a bidirectional flow) tracked on the network interface, after which the flow is considered inactive and removed from the connection tracking table. (AI-inferred)
 	UdpStreamTimeout any
-	// Specifies the timeout (in seconds) for UDP flows tracked by connection tracking on the network interface. (AI-inferred)
 	UdpTimeout any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification struct {
-	// Indicates whether ENA SRD (Scalable Reliable Datagram) is enabled for UDP traffic on this network interface. (AI-inferred)
 	EnaSrdUdpEnabled any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_EnaSrdSpecification struct {
-	// Indicates whether Elastic Network Adapter (ENA) Scale Reliable Datagrams (SRD) is enabled for this network interface in the launch template. (AI-inferred)
 	EnaSrdEnabled any
-	// Specifies whether UDP traffic over the network interface can use ENA SRD, containing a boolean EnaSrdUdpEnabled setting. (AI-inferred)
 	EnaSrdUdpSpecification any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_Ipv4Prefixes struct {
-	// The specific IPv4 CIDR prefix (e.g., 10.0.0.0/28) assigned to the network interface, enabling it to use a block of IPv4 addresses from that prefix. (AI-inferred)
 	Ipv4Prefix any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_Ipv6Addresses struct {
-	// Specifies an IPv6 address to assign to the network interface when the instance launches. (AI-inferred)
 	Ipv6Address any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_Ipv6Prefixes struct {
-	// Specifies an IPv6 prefix (CIDR) to be assigned to the network interface when the instance is launched using this launch template. (AI-inferred)
 	Ipv6Prefix any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces_PrivateIpAddresses struct {
-	// Indicates whether the specified private IP address is the primary private IP address for the network interface. (AI-inferred)
 	Primary any
-	// Defines the specific private IPv4 address to assign to the network interface, used in the list of private IP address specifications for the EC2 launch template's network interface configuration. (AI-inferred)
 	PrivateIpAddress any
 }
 
 type Template_LaunchTemplateData_NetworkInterfaces struct {
-	// Indicates whether to associate a Carrier IP address with the network interface (eth0) for instances launched in AWS Wavelength zones using this launch template. (AI-inferred)
 	AssociateCarrierIpAddress any
-	// Indicates whether to associate a public IPv4 address with the network interface for instances launched from this launch template. (AI-inferred)
 	AssociatePublicIpAddress any
-	// Specifies the connection tracking idle timeout values (in seconds) for TCP established connections and UDP flows on the network interface, allowing you to tune how long connection states are retained after no activity. (AI-inferred)
 	ConnectionTrackingSpecification any
-	// Indicates whether the network interface is deleted when the associated EC2 instance terminates. (AI-inferred)
 	DeleteOnTermination any
-	// The human-readable description assigned to the network interface, used to identify the purpose or context of the interface within the launch template. (AI-inferred)
 	Description any
-	// The index of the network interface within the launch template, starting at 0, which determines the order in which interfaces are attached to the instance. (AI-inferred)
 	DeviceIndex any
-	// The number of Elastic Network Adapter (ENA) queues to enable for the network interface, which influences the network throughput and packet processing performance of the attached EC2 instance. (AI-inferred)
 	EnaQueueCount any
-	// Configures Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) settings for the network interface, including whether SRD is enabled and optional UDP-specific SRD configuration. (AI-inferred)
 	EnaSrdSpecification any
-	// The IDs of the security groups to attach to this network interface when instances are launched using the launch template. (AI-inferred)
 	Groups any
-	// Determines the type of network interface to create, where "interface" denotes a standard Elastic Network Interface (ENI) and "efa" enables an Elastic Fabric Adapter for high-throughput HPC workloads. (AI-inferred)
 	InterfaceType any
-	// Specifies the number of IPv4 prefixes to automatically assign to the network interface, enabling the allocation of multiple private IPv4 addresses via CIDR prefixes. (AI-inferred)
 	Ipv4PrefixCount any
-	// Specifies the IPv4 prefixes to assign to the network interface, where each entry provides a CIDR prefix (and optional description) for an IPv4 prefix to be associated with the interface. (AI-inferred)
 	Ipv4Prefixes any
-	// The number of IPv6 addresses to assign to the network interface in the launch template. (AI-inferred)
 	Ipv6AddressCount any
-	// Specifies one or more specific IPv6 addresses to assign to the network interface of the EC2 instance when launched using this launch template. (AI-inferred)
 	Ipv6Addresses any
-	// The number of IPv6 prefixes to assign to the network interface, enabling automatic allocation of /56 IPv6 address blocks for the instance's network configuration. (AI-inferred)
 	Ipv6PrefixCount any
-	// Specifies one or more IPv6 prefix CIDR blocks to assign to the network interface, where each entry is an object that defines an IPv6 prefix for the interface. (AI-inferred)
 	Ipv6Prefixes any
-	// Specifies the index of the network card for this network interface, used on instance types that support multiple network cards (default is 0, and the primary interface must use card index 0). (AI-inferred)
 	NetworkCardIndex any
-	// The ID of an existing elastic network interface (ENI) to attach to the instance when launched using this launch template. (AI-inferred)
 	NetworkInterfaceId any
-	// When set to true, EC2 automatically assigns a primary IPv6 address to the network interface; you cannot specify an explicit IPv6 address in the same network interface when this flag is enabled. (AI-inferred)
 	PrimaryIpv6 any
-	// The primary private IPv4 address to assign to the network interface; if omitted, AWS automatically selects an available address from the subnet. (AI-inferred)
 	PrivateIpAddress any
-	// Defines the private IP addresses to assign to the network interface, where each item can specify the IP address and whether it is the primary private IP address. (AI-inferred)
 	PrivateIpAddresses any
-	// Specifies the number of secondary private IP addresses to assign to the network interface for an EC2 instance launched from this launch template. (AI-inferred)
 	SecondaryPrivateIpAddressCount any
-	// Specifies the ID of the subnet in which the network interface is launched, allowing the instance to be placed into a specific VPC subnet. (AI-inferred)
 	SubnetId any
 }
 
@@ -330,16 +280,12 @@ type Template_LaunchTemplateData_PrivateDnsNameOptions struct {
 }
 
 type Template_LaunchTemplateData_TagSpecifications_Tags struct {
-	// The key of the tag to apply to the resource type specified in the tag specification, used to identify and categorize AWS resources launched from the template. (AI-inferred)
 	Key any
-	// The tag value string to associate with the corresponding tag key for the specified resource type in the launch template's tag specifications. (AI-inferred)
 	Value any
 }
 
 type Template_LaunchTemplateData_TagSpecifications struct {
-	// The type of resource to apply the tags to, such as 'instance' or 'volume'. (AI-inferred)
 	ResourceType any
-	// A list of key-value pairs that define the tags to apply to the resource type specified by the containing tag specification, such as EC2 instances or volumes launched from this launch template. (AI-inferred)
 	Tags any
 }
 
@@ -833,13 +779,10 @@ type TemplateConfig struct {
 }
 
 type TemplateAttrs struct {
-	// The version number of the launch template that is currently designated as the default, used when no specific version is requested. (AI-inferred)
 	DefaultVersionNumber any
-	// The current latest version number of the launch template, automatically assigned and incremented by AWS when the template is created or modified. (AI-inferred)
 	LatestVersionNumber any
 	// The information to include in the launch template. You must specify at least one parameter for the launch template data.
 	LaunchTemplateData any
-	// The unique identifier assigned by AWS to the EC2 launch template. (AI-inferred)
 	LaunchTemplateId any
 	// A name for the launch template.
 	LaunchTemplateName any

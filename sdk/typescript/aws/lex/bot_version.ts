@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetails {
-  /** The version number of the source bot to use as the basis for the locale version in this bot version. (AI-inferred) */
   sourceBotVersion?: string | Computed<string>;
 }
 
 export interface BotVersion_BotVersionLocaleSpecification {
-  /** Specifies the details of a locale in the bot version, including the source bot version from which the locale's version is derived. (AI-inferred) */
   botVersionLocaleDetails?: BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetails | Computed<BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetails>;
-  /** Identifies the locale (such as 'en_US' or 'en_GB') that this bot version locale specification entry applies to, and must match a locale configured on the bot. (AI-inferred) */
   localeId?: string | Computed<string>;
 }
 

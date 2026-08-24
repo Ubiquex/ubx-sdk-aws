@@ -8,30 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Rotation_Recurrence_MonthlySettings:
-    # Specifies the day of the month on which the monthly rotation shift begins, used in monthly recurrence settings for an AWS Systems Manager Incident Manager contacts rotation. (AI-inferred)
     day_of_month: Any = None
-    # Specifies the time of day (in HH:MM format) when the shift handoff occurs for the monthly rotation schedule, within the monthly recurrence settings. (AI-inferred)
     hand_off_time: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_ShiftCoverages_CoverageTimes:
-    # The time (in HH:MM format) when the shift coverage window ends for the associated day in the rotation recurrence. (AI-inferred)
     end_time: Any = None
-    # The start time of the daily coverage window, in 24-hour HH:MM format, that defines when this shift's on-call coverage begins. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_ShiftCoverages:
-    # Specifies the list of time ranges (each with start and end time) during which on-call coverage is active for a particular day of the week in the rotation's shift coverage schedule. (AI-inferred)
     coverage_times: Any = None
-    # The day of the week (e.g., Monday, Tuesday) that this shift coverage applies to within the rotation's recurrence schedule. (AI-inferred)
     day_of_week: Any = None
 
 @dataclasses.dataclass
 class Rotation_Recurrence_WeeklySettings:
-    # Specifies the day of the week (using a three-letter abbreviation such as MON, TUE, WED, THU, FRI, SAT, or SUN) on which the rotation's weekly on-call shift occurs. (AI-inferred)
     day_of_week: Any = None
-    # The time of day, in 24-hour HH:MM format, when the on-call shift hands off to the next shift on the scheduled day of the week for the rotation recurrence. (AI-inferred)
     hand_off_time: Any = None
 
 @dataclasses.dataclass
@@ -52,7 +44,6 @@ class Rotation_Recurrence:
 @dataclasses.dataclass
 class Rotation_Tags:
     key: Any = None
-    # The value of a tag assigned to the SSM Contacts rotation, used to store metadata such as ownership, environment, or cost center for organizing and managing the rotation resource. (AI-inferred)
     value: Any = None
 
 _Rotation_Recurrence_MonthlySettingsFields = {
@@ -115,7 +106,6 @@ class RotationConfig:
     recurrence: Any = None
     # Start time of the first shift of Oncall Schedule
     start_time: Any = None
-    # Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
     tags: Any = None
     # TimeZone Identifier for the Oncall Schedule
     time_zone_id: Any = None
@@ -132,7 +122,6 @@ class RotationAttrs:
     recurrence: Any = None
     # Start time of the first shift of Oncall Schedule
     start_time: Any = None
-    # Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred)
     tags: Any = None
     # TimeZone Identifier for the Oncall Schedule
     time_zone_id: Any = None

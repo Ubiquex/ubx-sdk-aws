@@ -8,24 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionsPolicyTemplateConfig:
-    # Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
     description: Any = None
     name: Any = None
-    # The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
     policy_store_id: Any = None
-    # The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred)
     statement: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyTemplateAttrs:
-    # Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
     description: Any = None
     name: Any = None
-    # The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
     policy_store_id: Any = None
-    # The unique identifier (UUID) assigned by Amazon Verified Permissions to the policy template, used to reference the template in policies and API operations. (AI-inferred)
     policy_template_id: Any = None
-    # The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred)
     statement: Any = None
 
 PermissionsPolicyTemplate = ubx.ResourceBinding(

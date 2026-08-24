@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WatchAlarm_Dimensions {
-  /** The name (key) of a CloudWatch metric dimension that, along with its value, is used to identify a particular metric or metric context for the alarm. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value for a CloudWatch alarm metric dimension, which combines with the dimension name to uniquely identify a specific metric for the alarm to monitor. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -35,46 +33,30 @@ export interface WatchAlarm_EvaluationWindow {
 }
 
 export interface WatchAlarm_Metrics_MetricStat_Metric {
-  /** Specifies the dimensions for the metric, each containing a name and value pair that uniquely identifies the metric within CloudWatch. (AI-inferred) */
   dimensions?: WatchAlarm_Dimensions[] | Computed<WatchAlarm_Dimensions[]>;
-  /** The name of the CloudWatch metric to monitor, such as CPUUtilization or StatusCheckFailed, which must match a published metric in the specified namespace. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** The namespace of the CloudWatch metric, such as AWS/EC2, that identifies the service or application emitting the metric in the metric stat of a composite alarm. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface WatchAlarm_Metrics_MetricStat {
-  /** The metric that this statistic is based on, identified by its namespace, metric name, and optional dimensions. (AI-inferred) */
   metric?: WatchAlarm_Metrics_MetricStat_Metric | Computed<WatchAlarm_Metrics_MetricStat_Metric>;
-  /** The length of time in seconds to aggregate the metric data for this alarm's metric statistic, defining the granularity of data points evaluated for the alarm. (AI-inferred) */
   period?: number | Computed<number>;
-  /** The statistic to apply to the metric (for example, SampleCount, Average, Sum, Minimum, Maximum, or a percentile such as p99). (AI-inferred) */
   stat?: string | Computed<string>;
-  /** Specifies the unit of measure for the metric statistic (e.g., Count, Percent, Seconds, Bytes) that the alarm evaluates. (AI-inferred) */
   unit?: string | Computed<string>;
 }
 
 export interface WatchAlarm_Metrics {
-  /** The AWS account ID associated with a metric data query, used to retrieve metrics from another account in a cross-account CloudWatch alarm. (AI-inferred) */
   accountId?: string | Computed<string>;
-  /** A math expression string (e.g., 'm1 + m2') that defines a computed metric used in the alarm, referencing other metric queries in the same metrics list. (AI-inferred) */
   expression?: string | Computed<string>;
-  /** A unique identifier for the metric within the alarm's metric configuration, used to reference it in metric math expressions. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The label is a human-friendly name assigned to a metric or expression in a CloudWatch alarm's metric data query, which is displayed in the CloudWatch console and can be used to identify the metric in alarm graphs. (AI-inferred) */
   label?: string | Computed<string>;
-  /** Defines the specific CloudWatch metric and statistic to evaluate in this metric data query, including the metric's namespace, name, dimensions, period, and statistical aggregation (e.g., Average). (AI-inferred) */
   metricStat?: WatchAlarm_Metrics_MetricStat | Computed<WatchAlarm_Metrics_MetricStat>;
-  /** The length of time, in seconds, used each time the specified metric is evaluated for the alarm (e.g., 60 for one-minute evaluation periods). (AI-inferred) */
   period?: number | Computed<number>;
-  /** Determines whether the time series data for this metric data query is returned in the CloudWatch alarm's metric math expression, and when the alarm uses multiple metric queries, exactly one query must have return_data set to true (typically the metric that drives the alarm). (AI-inferred) */
   returnData?: boolean | Computed<boolean>;
 }
 
 export interface WatchAlarm_Tags {
-  /** Specifies the key of a tag applied to the CloudWatch alarm, used to categorize and manage the alarm resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the CloudWatch alarm, used to categorize or identify the alarm for management and billing purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -225,7 +207,6 @@ export interface WatchAlarmAttrs {
   alarmDescription: string;
   /** The name of the alarm. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the alarm name. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name. */
   alarmName: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the CloudWatch alarm. (AI-inferred) */
   arn: string;
   /** The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand. */
   comparisonOperator: string;

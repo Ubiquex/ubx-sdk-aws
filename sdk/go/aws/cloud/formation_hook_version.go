@@ -18,7 +18,6 @@ var FormationHookVersion_LoggingConfigFields = ubx.FieldMap{
 type FormationHookVersionConfig struct {
 	// The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
 	ExecutionRoleArn any
-	// Configures the logging destination for the hook version, specifying the CloudWatch Logs log group and IAM role where the hook's execution logs are sent. (AI-inferred)
 	LoggingConfig any
 	// A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and associated files for the type you want to register. For information on generating a schema handler package for the type you want to register, see submit in the CloudFormation CLI User Guide.
 	SchemaHandlerPackage any
@@ -33,7 +32,6 @@ type FormationHookVersionAttrs struct {
 	ExecutionRoleArn any
 	// Indicates if this type version is the current default version
 	IsDefaultVersion any
-	// Configures the logging destination for the hook version, specifying the CloudWatch Logs log group and IAM role where the hook's execution logs are sent. (AI-inferred)
 	LoggingConfig any
 	// A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and associated files for the type you want to register. For information on generating a schema handler package for the type you want to register, see submit in the CloudFormation CLI User Guide.
 	SchemaHandlerPackage any

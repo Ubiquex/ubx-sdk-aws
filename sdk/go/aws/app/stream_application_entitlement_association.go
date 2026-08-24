@@ -4,20 +4,14 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamApplicationEntitlementAssociationConfig struct {
-	// The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred)
 	ApplicationIdentifier any
-	// The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred)
 	EntitlementName any
-	// The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred)
 	StackName any
 }
 
 type StreamApplicationEntitlementAssociationAttrs struct {
-	// The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred)
 	ApplicationIdentifier any
-	// The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred)
 	EntitlementName any
-	// The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred)
 	StackName any
 }
 

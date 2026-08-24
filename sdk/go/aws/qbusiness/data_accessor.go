@@ -4,80 +4,55 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAll_Value struct {
-	// The date value (in ISO 8601 format) that the contains_all document attribute filter uses to match the value of a date-type document attribute. (AI-inferred)
 	DateValue any
-	// This numeric value specifies a long-typed attribute value used in the 'containsAll' document attribute filter condition, requiring the document's attribute to include this value. (AI-inferred)
 	LongValue any
-	// The string list value defines the set of document attribute values that must all be present on a document for the containsAll filter to match, thereby controlling which documents the action can access. (AI-inferred)
 	StringListValue any
-	// In the 'containsAll' condition of a document attribute filter within a data accessor action configuration, this string provides the value that a document attribute must contain for the filter to match. (AI-inferred)
 	StringValue any
 }
 
 type DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter_ContainsAll struct {
-	// The name of the document attribute that the containsAll filter condition applies to, requiring the attribute to contain all specified values for a document to match in the action configuration's document attribute filter. (AI-inferred)
 	Name any
-	// Specifies the list of attribute values that a document's attribute must contain all of for a containsAll filter condition to match, within an action configuration's filter for an AWS Q Business data accessor. (AI-inferred)
 	Value any
 }
 
 type DataAccessor_ActionConfigurations_FilterConfiguration_DocumentAttributeFilter struct {
-	// Defines a list of document attribute filters that must all match (logical AND) for the data accessor's filter configuration to apply. (AI-inferred)
 	AndAllFilters any
-	// Specifies a filter condition that matches documents when the document attribute specified by the key contains all of the values listed in the value field of this object. (AI-inferred)
 	ContainsAll any
-	// In an AWS::QBusiness::DataAccessor action configuration filter, this field defines a list of document attribute values; a document matches the filter if its attribute contains any of these values, thereby controlling which documents are accessible for the action. (AI-inferred)
 	ContainsAny any
-	// Defines a document attribute filter condition that matches when the specified attribute's value exactly equals the provided value, controlling which documents the data accessor can access. (AI-inferred)
 	EqualsTo any
-	// The greater_than property specifies a greater-than comparison against a document attribute's numeric or date value, so that only documents whose attribute exceeds the given value are included in the data accessor's allowed scope. (AI-inferred)
 	GreaterThan any
-	// Sets a comparison condition that matches documents where the specified document attribute value is greater than or equal to a given value, used within the filter configuration to scope the data accessor's access to relevant documents. (AI-inferred)
 	GreaterThanOrEquals any
-	// Defines a less-than comparison on a document attribute value (provided as a key-value pair) to filter documents within an action configuration's data accessor rules. (AI-inferred)
 	LessThan any
-	// Specifies a condition in the document attribute filter where the attribute's value must be less than or equal to the provided value, restricting the documents visible to the data accessor based on that attribute. (AI-inferred)
 	LessThanOrEquals any
-	// This field defines a logical NOT filter, matching documents that do not satisfy the nested document attribute filter it contains. (AI-inferred)
 	NotFilter any
-	// Provides a list of document attribute filter conditions that are combined using a logical OR, so that the overall filter matches if any of the nested filter conditions is satisfied. (AI-inferred)
 	OrAllFilters any
 }
 
 type DataAccessor_ActionConfigurations_FilterConfiguration struct {
-	// Defines the attribute-based filter that determines which documents the data accessor action can access, using expressions like equals, contains, range, and logical AND/OR/NOT combinations on document attributes. (AI-inferred)
 	DocumentAttributeFilter any
 }
 
 type DataAccessor_ActionConfigurations struct {
-	// Specifies the name of a QBusiness action that this data accessor is allowed to perform, as part of a configured list of actions within the data accessor. (AI-inferred)
 	Action any
-	// Defines the document-level filtering for an individual action, using attribute filters (e.g., equals, contains, or range conditions) to restrict the data the action can access within the data accessor. (AI-inferred)
 	FilterConfiguration any
 }
 
 type DataAccessor_AuthenticationDetail_AuthenticationConfiguration_IdcTrustedTokenIssuerConfiguration struct {
-	// The Amazon Resource Name (ARN) of the IAM Identity Center trusted token issuer used to authenticate the data accessor. (AI-inferred)
 	IdcTrustedTokenIssuerArn any
 }
 
 type DataAccessor_AuthenticationDetail_AuthenticationConfiguration struct {
-	// Configures the AWS IAM Identity Center trusted token issuer used for authenticating the Q Business data accessor, including the IAM role ARN and the token issuer endpoint URL. (AI-inferred)
 	IdcTrustedTokenIssuerConfiguration any
 }
 
 type DataAccessor_AuthenticationDetail struct {
 	AuthenticationConfiguration any
-	// The type of authentication method used by the data accessor to authenticate with the external data source, such as basic authentication, API key, or OAuth 2.0. (AI-inferred)
 	AuthenticationType any
-	// Defines the external ID values that AWS Q Business must use when assuming the IAM role specified in the authentication detail, preventing confused deputy attacks. (AI-inferred)
 	ExternalIds any
 }
 
 type DataAccessor_Tags struct {
-	// The key of a user-defined tag attached to the AWS QBusiness data accessor resource, used for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag applied to the AWS Q Business data accessor, used for resource categorization and metadata. (AI-inferred)
 	Value any
 }
 
@@ -183,42 +158,25 @@ var DataAccessor_TagsFields = ubx.FieldMap{
 	}
 
 type DataAccessorConfig struct {
-	// Specifies the list of allowed actions for this Q Business data accessor, each with an action type and optional filter configuration that constrains which data the accessor can access. (AI-inferred)
 	ActionConfigurations any
-	// The unique identifier of the Amazon Q Business application to which this data accessor is associated. (AI-inferred)
 	ApplicationId any
-	// Specifies the authentication configuration for the data accessor, which can be either basic authentication using an IAM role and an AWS Secrets Manager secret (via `BasicAuthenticationConfiguration`) or no authentication (via `NoAuthenticationConfiguration`). (AI-inferred)
 	AuthenticationDetail any
-	// The display name of the data accessor, which is a user-friendly name used to identify the data accessor in Amazon Q Business. (AI-inferred)
 	DisplayName any
-	// The ARN of the IAM principal (user or role) that is granted access to the underlying data source through this Q Business data accessor. (AI-inferred)
 	Principal any
-	// A list of key-value pairs that define custom tags to associate with the QBusiness data accessor for identity and organization. (AI-inferred)
 	Tags any
 }
 
 type DataAccessorAttrs struct {
-	// Specifies the list of allowed actions for this Q Business data accessor, each with an action type and optional filter configuration that constrains which data the accessor can access. (AI-inferred)
 	ActionConfigurations any
-	// The unique identifier of the Amazon Q Business application to which this data accessor is associated. (AI-inferred)
 	ApplicationId any
-	// Specifies the authentication configuration for the data accessor, which can be either basic authentication using an IAM role and an AWS Secrets Manager secret (via `BasicAuthenticationConfiguration`) or no authentication (via `NoAuthenticationConfiguration`). (AI-inferred)
 	AuthenticationDetail any
-	// The creation timestamp of the AWS Q Business data accessor, represented as an ISO 8601 string. (AI-inferred)
 	CreatedAt any
-	// The Amazon Resource Name (ARN) that uniquely identifies the data accessor in AWS. (AI-inferred)
 	DataAccessorArn any
-	// The unique identifier assigned by AWS to the data accessor. (AI-inferred)
 	DataAccessorId any
-	// The display name of the data accessor, which is a user-friendly name used to identify the data accessor in Amazon Q Business. (AI-inferred)
 	DisplayName any
-	// The ARN of the IAM Identity Center (IDC) application associated with this QBusiness data accessor, used for managing permissions via IAM Identity Center. (AI-inferred)
 	IdcApplicationArn any
-	// The ARN of the IAM principal (user or role) that is granted access to the underlying data source through this Q Business data accessor. (AI-inferred)
 	Principal any
-	// A list of key-value pairs that define custom tags to associate with the QBusiness data accessor for identity and organization. (AI-inferred)
 	Tags any
-	// The date and time at which the QBusiness data accessor was last modified, as determined by AWS. (AI-inferred)
 	UpdatedAt any
 }
 

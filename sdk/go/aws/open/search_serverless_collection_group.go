@@ -32,7 +32,6 @@ var SearchServerlessCollectionGroup_TagsFields = ubx.FieldMap{
 	}
 
 type SearchServerlessCollectionGroupConfig struct {
-	// Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred)
 	CapacityLimits any
 	// The description of the collection group.
 	Description any
@@ -49,7 +48,6 @@ type SearchServerlessCollectionGroupConfig struct {
 type SearchServerlessCollectionGroupAttrs struct {
 	// The Amazon Resource Name (ARN) of the collection group.
 	Arn any
-	// Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred)
 	CapacityLimits any
 	// The description of the collection group.
 	Description any

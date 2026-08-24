@@ -4,16 +4,12 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault struct {
-	// The AWS KMS customer master key (CMK) ID or ARN used for default server-side encryption with KMS (SSE-KMS) for the S3 Express directory bucket, effective when the SSE algorithm is set to 'aws:kms'. (AI-inferred)
 	KmsmasterKeyId any
-	// Specifies the default server-side encryption algorithm (such as AES256 or aws:kms) for objects stored in the S3 Express directory bucket, used when encryption is not specified at upload time. (AI-inferred)
 	Ssealgorithm any
 }
 
 type ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration struct {
-	// Enables or disables an S3 Bucket Key for the directory bucket's default SSE-KMS encryption, reducing per-request AWS KMS costs. (AI-inferred)
 	BucketKeyEnabled any
-	// Defines the default server-side encryption configuration for the S3 Express Directory Bucket, choosing either SSE-S3 or SSE-KMS with an optional KMS key ID that is applied to objects written without an explicit encryption header. (AI-inferred)
 	ServerSideEncryptionByDefault any
 }
 
@@ -23,52 +19,33 @@ type ExpressDirectoryBucket_BucketEncryption struct {
 }
 
 type ExpressDirectoryBucket_InventoryConfigurations_Destination struct {
-	// The AWS account ID that owns the destination bucket where S3 Express directory bucket inventory reports are delivered, used to verify the bucket owner during configuration. (AI-inferred)
 	BucketAccountId any
-	// The Amazon Resource Name (ARN) of the destination bucket where the inventory reports for this directory bucket are delivered. (AI-inferred)
 	BucketArn any
-	// The output format (e.g., 'CSV') of the inventory report delivered to the destination bucket. (AI-inferred)
 	Format any
-	// The prefix that is prepended to the keys of the inventory report objects when they are delivered to the destination bucket. (AI-inferred)
 	Prefix any
 }
 
 type ExpressDirectoryBucket_InventoryConfigurations struct {
-	// Defines the destination Amazon S3 bucket and optional prefix where the inventory report files resulting from this inventory configuration are delivered. (AI-inferred)
 	Destination any
-	// Indicates whether this inventory configuration is enabled, so that the S3 Express directory bucket periodically generates and exports inventory lists to the specified destination. (AI-inferred)
 	Enabled any
-	// A unique identifier for the inventory configuration, used to distinguish it from other inventory configurations attached to the same directory bucket. (AI-inferred)
 	Id any
-	// Specifies whether the inventory report includes all object versions or only current versions, with valid values `All` or `Current`. (AI-inferred)
 	IncludedObjectVersions any
-	// Specifies the optional metadata fields (such as Size, LastModifiedDate, StorageClass, or ETag) to include in the inventory output for the S3 Express directory bucket. (AI-inferred)
 	OptionalFields any
-	// Specifies the object key prefix that restricts the inventory report to include only objects whose keys start with this prefix, used to filter the set of objects listed in the directory bucket's inventory configuration. (AI-inferred)
 	Prefix any
-	// Specifies how often the inventory report is generated for the directory bucket, with valid values of Daily or Weekly. (AI-inferred)
 	ScheduleFrequency any
 }
 
 type ExpressDirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload struct {
-	// Specifies the number of days after a multipart upload is initiated before the lifecycle rule aborts that incomplete multipart upload in the S3 Express directory bucket. (AI-inferred)
 	DaysAfterInitiation any
 }
 
 type ExpressDirectoryBucket_LifecycleConfiguration_Rules struct {
-	// Configures a lifecycle rule action that automatically aborts incomplete multipart uploads after the specified number of days since the upload was initiated. (AI-inferred)
 	AbortIncompleteMultipartUpload any
-	// Specifies the number of days after object creation when the object expires and is automatically deleted by the lifecycle rule for the S3 Express directory bucket. (AI-inferred)
 	ExpirationInDays any
-	// A unique identifier for the lifecycle rule, used to reference and distinguish it from other rules in the S3 Express directory bucket's lifecycle configuration. (AI-inferred)
 	Id any
-	// Specifies the minimum object size in bytes for objects to be eligible for this lifecycle rule, so only objects larger than this threshold are affected. (AI-inferred)
 	ObjectSizeGreaterThan any
-	// Specifies the maximum object size in bytes; only objects smaller than this threshold will match the lifecycle rule filter. (AI-inferred)
 	ObjectSizeLessThan any
-	// The key prefix that filters objects in the S3 Express directory bucket so the lifecycle rule applies only to objects with keys starting with that prefix. (AI-inferred)
 	Prefix any
-	// Determines whether the lifecycle rule is active, with allowed values 'Enabled' or 'Disabled'. (AI-inferred)
 	Status any
 }
 
@@ -78,17 +55,13 @@ type ExpressDirectoryBucket_LifecycleConfiguration struct {
 }
 
 type ExpressDirectoryBucket_MetricsConfigurations struct {
-	// For an S3 Express directory bucket, this access point ARN filters the metrics configuration so that metrics are reported only for requests directed to the specified S3 access point. (AI-inferred)
 	AccessPointArn any
-	// The unique identifier for this metrics configuration, which must be distinct within the directory bucket and is used to refer to the configuration when setting up CloudWatch bucket metrics. (AI-inferred)
 	Id any
-	// Specifies the object key prefix that the metrics configuration applies to, so that only requests for objects with this prefix are included in the emitted metrics. (AI-inferred)
 	Prefix any
 }
 
 type ExpressDirectoryBucket_Tags struct {
 	Key any
-	// The value component of a tag attached to the S3 Express directory bucket, used for cost allocation and metadata organization. (AI-inferred)
 	Value any
 }
 
@@ -181,13 +154,11 @@ type ExpressDirectoryBucketConfig struct {
 	DataRedundancy any
 	// The inventory configuration for an Amazon S3 Express bucket.
 	InventoryConfigurations any
-	// Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred)
 	LifecycleConfiguration any
 	// Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.
 	LocationName any
 	// Specifies the metrics configurations for the Amazon S3 Express bucket.
 	MetricsConfigurations any
-	// Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred)
 	Tags any
 }
 
@@ -204,13 +175,11 @@ type ExpressDirectoryBucketAttrs struct {
 	DataRedundancy any
 	// The inventory configuration for an Amazon S3 Express bucket.
 	InventoryConfigurations any
-	// Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred)
 	LifecycleConfiguration any
 	// Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.
 	LocationName any
 	// Specifies the metrics configurations for the Amazon S3 Express bucket.
 	MetricsConfigurations any
-	// Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred)
 	Tags any
 }
 

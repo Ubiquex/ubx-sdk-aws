@@ -4,7 +4,6 @@ package control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TowerLandingZone_Tags struct {
-	// Key of a user-defined tag to apply to the AWS Control Tower landing zone resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,32 +14,21 @@ var TowerLandingZone_TagsFields = ubx.FieldMap{
 	}
 
 type TowerLandingZoneConfig struct {
-	// The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
 	Manifest any
 	RemediationTypes any
-	// The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
-	// The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred)
 	Version any
 }
 
 type TowerLandingZoneAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this landing zone. (AI-inferred)
 	Arn any
-	// Indicates the current drift detection status of the landing zone (e.g., DRIFTED, IN_SYNC, NOT_CHECKING), showing whether the landing zone's configuration has deviated from the expected baseline. (AI-inferred)
 	DriftStatus any
-	// The unique identifier (ARN) of the AWS Control Tower landing zone, assigned by AWS when the landing zone is created. (AI-inferred)
 	LandingZoneIdentifier any
-	// The latest available version of the AWS Control Tower landing zone that you can update to. (AI-inferred)
 	LatestAvailableVersion any
-	// The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
 	Manifest any
 	RemediationTypes any
-	// The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred)
 	Status any
-	// The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
-	// The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred)
 	Version any
 }
 

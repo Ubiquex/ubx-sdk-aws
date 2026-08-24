@@ -19,9 +19,7 @@ type CloudVmCluster_DbNodes_Tags struct {
 
 type CloudVmCluster_DbNodes struct {
 	BackupIpId any
-	// The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred)
 	BackupVnic2Id any
-	// Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred)
 	CpuCoreCount any
 	DbNodeArn any
 	DbNodeId any
@@ -30,13 +28,10 @@ type CloudVmCluster_DbNodes struct {
 	DbSystemId any
 	HostIpId any
 	Hostname any
-	// Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred)
 	MemorySizeInGbs any
-	// For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred)
 	Ocid any
 	Status any
 	Tags any
-	// The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred)
 	Vnic2Id any
 	VnicId any
 }

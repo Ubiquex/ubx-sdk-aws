@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rule_Predicates {
-  /** The unique identifier of the AWS WAF entity (such as an IP set, byte match set, SQL injection match set, or XSS match set) that this predicate references, matching the predicate's Type. (AI-inferred) */
   dataId?: string | Computed<string>;
-  /** Whether to invert the match result for this predicate, making the rule match when the specified WAF condition does NOT match. (AI-inferred) */
   negated?: boolean | Computed<boolean>;
-  /** The type of the predicate in an AWS WAF rule, indicating which kind of match condition (such as IPMatch, ByteMatch, or SqlInjectionMatch) the rule uses to block or allow requests. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -17,22 +14,15 @@ const Rule_PredicatesFields: FieldMap = {
 };
 
 export interface RuleConfig {
-  /** The name of the CloudWatch metric that AWS WAF publishes for this rule, used for monitoring and setting CloudWatch alarms. (AI-inferred) */
   metricName: string | Computed<string>;
-  /** A friendly name for the WAF rule, which must be unique within the account and is used to identify the rule when it is created and referenced by WebACLs. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the set of conditions (e.g., IP matches, string matches, SQL injection match) and whether each condition is negated, which together determine the requests that this AWS WAF Classic rule will match. (AI-inferred) */
   predicates?: Rule_Predicates[] | Computed<Rule_Predicates[]>;
 }
 
 export interface RuleAttrs {
-  /** The unique identifier (RuleId) assigned by AWS WAF when the rule is created, used to reference the rule in other resources. (AI-inferred) */
   id: string;
-  /** The name of the CloudWatch metric that AWS WAF publishes for this rule, used for monitoring and setting CloudWatch alarms. (AI-inferred) */
   metricName: string;
-  /** A friendly name for the WAF rule, which must be unique within the account and is used to identify the rule when it is created and referenced by WebACLs. (AI-inferred) */
   name: string;
-  /** Specifies the set of conditions (e.g., IP matches, string matches, SQL injection match) and whether each condition is negated, which together determine the requests that this AWS WAF Classic rule will match. (AI-inferred) */
   predicates: Rule_Predicates[];
 }
 

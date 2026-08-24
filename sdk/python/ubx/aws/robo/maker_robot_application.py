@@ -15,11 +15,8 @@ class MakerRobotApplication_RobotSoftwareSuite:
 
 @dataclasses.dataclass
 class MakerRobotApplication_Sources:
-    # Specifies the processor architecture (X86_64, ARM64, or ARMHF) that the robot application source bundle is built for, as part of the source's S3 location configuration. (AI-inferred)
     architecture: Any = None
-    # The name of the S3 bucket that stores the robot application source archive, which AWS RoboMaker uses to deploy the application to robot devices. (AI-inferred)
     s3_bucket: Any = None
-    # The S3 object key (path) of the robot application source bundle, which combined with the S3 bucket identifies the uploaded application archive for the RoboMaker robot application. (AI-inferred)
     s3_key: Any = None
 
 _MakerRobotApplication_RobotSoftwareSuiteFields = {
@@ -50,7 +47,6 @@ class MakerRobotApplicationConfig:
 
 @dataclasses.dataclass
 class MakerRobotApplicationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS RoboMaker robot application. (AI-inferred)
     arn: Any = None
     # The revision ID of robot application.
     current_revision_id: Any = None

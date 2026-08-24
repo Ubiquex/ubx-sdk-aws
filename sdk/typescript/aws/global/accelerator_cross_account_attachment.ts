@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AcceleratorCrossAccountAttachment_Resources {
-  /** Specifies the IP address range in CIDR notation (e.g., '10.0.0.0/8') for a resource being attached, used when the resource is an IP range rather than an endpoint ID in this cross-account attachment. (AI-inferred) */
   cidr?: string | Computed<string>;
-  /** The ARN or resource identifier of the AWS resource (such as a Network Load Balancer, Application Load Balancer, or Elastic IP) that is attached to the accelerator from a different AWS account. (AI-inferred) */
   endpointId?: string | Computed<string>;
-  /** The AWS Region where the resource being added to the cross-account attachment is located, such as when the resource is a regional endpoint group. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface AcceleratorCrossAccountAttachment_Tags {
-  /** The key of a user-defined tag applied to the AWS Global Accelerator cross-account attachment, allowing you to attach custom metadata such as cost center or environment for identification and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag key-value pair that you attach to an AWS Global Accelerator cross-account attachment for metadata and resource categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -35,7 +30,6 @@ export interface AcceleratorCrossAccountAttachmentConfig {
   principals?: string[] | Computed<string[]>;
   /** Resources shared using the attachment. */
   resources?: AcceleratorCrossAccountAttachment_Resources[] | Computed<AcceleratorCrossAccountAttachment_Resources[]>;
-  /** Specifies a list of key-value tags to attach to the cross-account attachment, which can be used for resource identification, cost allocation, and tag-based access control in AWS Global Accelerator. (AI-inferred) */
   tags?: AcceleratorCrossAccountAttachment_Tags[] | Computed<AcceleratorCrossAccountAttachment_Tags[]>;
 }
 
@@ -48,7 +42,6 @@ export interface AcceleratorCrossAccountAttachmentAttrs {
   principals: string[];
   /** Resources shared using the attachment. */
   resources: AcceleratorCrossAccountAttachment_Resources[];
-  /** Specifies a list of key-value tags to attach to the cross-account attachment, which can be used for resource identification, cost allocation, and tag-based access control in AWS Global Accelerator. (AI-inferred) */
   tags: AcceleratorCrossAccountAttachment_Tags[];
 }
 

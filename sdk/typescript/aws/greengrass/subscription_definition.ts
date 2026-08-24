@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SubscriptionDefinition_InitialVersion_Subscriptions {
-  /** A user-defined alphanumeric identifier for the subscription, used to uniquely reference it within the Greengrass subscription definition version. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The ARN of the device, Lambda function, or connector that publishes messages to the MQTT topic in this Greengrass subscription. (AI-inferred) */
   source?: string | Computed<string>;
-  /** Specifies the MQTT topic filter (subject) for a Greengrass subscription, which defines the topic, normally with wildcards, that messages are routed on from the source to the target. (AI-inferred) */
   subject?: string | Computed<string>;
-  /** The ARN of the target destination (a Greengrass core, device, or Lambda function) that receives messages published to the subscription's subject topic. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface SubscriptionDefinition_InitialVersion {
-  /** Defines the list of subscriptions to include in the initial version of the Greengrass subscription definition, where each subscription specifies a source, target, and topic. (AI-inferred) */
   subscriptions: SubscriptionDefinition_InitialVersion_Subscriptions[] | Computed<SubscriptionDefinition_InitialVersion_Subscriptions[]>;
 }
 
@@ -33,26 +28,17 @@ const SubscriptionDefinition_InitialVersionFields: FieldMap = {
 };
 
 export interface SubscriptionDefinitionConfig {
-  /** The initial subscription definition version, which contains a list of subscription objects (each specifying a source, target, and subject) that define how MQTT messages are routed between devices, functions, and connectors in the Greengrass group. (AI-inferred) */
   initialVersion?: SubscriptionDefinition_InitialVersion | Computed<SubscriptionDefinition_InitialVersion>;
-  /** The required name for this AWS IoT Greengrass subscription definition, serving as a human-readable identifier used in the console and API. (AI-inferred) */
   name: string | Computed<string>;
-  /** A map of key-value pairs that tag the Greengrass subscription definition, used for identifying and organizing the resource. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface SubscriptionDefinitionAttrs {
-  /** The Amazon Resource Name (ARN) uniquely assigned to this Greengrass subscription definition, which is used to reference the definition in IAM policies and other AWS services. (AI-inferred) */
   arn: string;
-  /** The unique identifier assigned by AWS IoT Greengrass to this subscription definition. (AI-inferred) */
   id: string;
-  /** The initial subscription definition version, which contains a list of subscription objects (each specifying a source, target, and subject) that define how MQTT messages are routed between devices, functions, and connectors in the Greengrass group. (AI-inferred) */
   initialVersion: SubscriptionDefinition_InitialVersion;
-  /** The Amazon Resource Name (ARN) of the latest version of the AWS Greengrass subscription definition, which is computed and returned after the resource is created. (AI-inferred) */
   latestVersionArn: string;
-  /** The required name for this AWS IoT Greengrass subscription definition, serving as a human-readable identifier used in the console and API. (AI-inferred) */
   name: string;
-  /** A map of key-value pairs that tag the Greengrass subscription definition, used for identifying and organizing the resource. (AI-inferred) */
   tags: unknown;
 }
 

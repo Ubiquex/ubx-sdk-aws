@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbclusterParameterGroup_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value portion of a tag applied to this Neptune DB cluster parameter group, where each tag is a user-defined key-value pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

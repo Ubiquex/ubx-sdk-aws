@@ -2,73 +2,56 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataAutomationProject_CustomOutputConfiguration_Blueprints {
-  /** The Amazon Resource Name (ARN) of the blueprint that defines the custom extraction schema applied to the data automation project's output configuration. (AI-inferred) */
   blueprintArn?: string | Computed<string>;
-  /** Specifies the stage of the blueprint (e.g., DEVELOPMENT or LIVE) to use for data extraction within the project's custom output configuration. (AI-inferred) */
   blueprintStage?: string | Computed<string>;
-  /** Sets the version identifier of the blueprint that defines the data extraction schema for this output configuration. (AI-inferred) */
   blueprintVersion?: string | Computed<string>;
 }
 
 export interface DataAutomationProject_CustomOutputConfiguration {
-  /** Specifies the list of blueprint configurations that the custom output uses to define how Bedrock Data Automation extracts and structures data from the input documents. (AI-inferred) */
   blueprints?: DataAutomationProject_CustomOutputConfiguration_Blueprints[] | Computed<DataAutomationProject_CustomOutputConfiguration_Blueprints[]>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Audio_LanguageConfiguration {
-  /** Specifies the language code used for generative AI output when processing audio content in the project's override configuration, such as the language for summaries or insights generated from the audio. (AI-inferred) */
   generativeOutputLanguage?: string | Computed<string>;
   identifyMultipleLanguages?: boolean | Computed<boolean>;
-  /** Specifies the list of languages expected in the audio input, which the data automation project uses to process and extract information from the audio. (AI-inferred) */
   inputLanguages?: string[] | Computed<string[]>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing {
-  /** Specifies whether audio modality processing is enabled or disabled for this Bedrock data automation project, overriding the default audio processing configuration. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfiguration {
-  /** Specifies the list of personally identifiable information (PII) entity types to detect and redact in audio content, overriding the project's default sensitive data configuration for audio. (AI-inferred) */
   piiEntityTypes?: string[] | Computed<string[]>;
   redactionMaskMode?: string | Computed<string>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration {
   detectionMode?: string | Computed<string>;
-  /** The types of sensitive data (e.g., PII categories) that Bedrock Data Automation will detect in the audio content. (AI-inferred) */
   detectionScope?: string[] | Computed<string[]>;
-  /** Specifies the configuration for detecting and redacting specific PII entity types (such as names, credit card numbers, or addresses) in audio data processed by the AWS Bedrock data automation project, enabling selective redaction of sensitive information. (AI-inferred) */
   piiEntitiesConfiguration?: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfiguration | Computed<DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfiguration>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Audio {
-  /** Specifies the language (such as ENGLISH or MULTI_LANGUAGE) to apply when processing audio files in the data automation project, determining how speech is transcribed and analyzed. (AI-inferred) */
   languageConfiguration?: DataAutomationProject_OverrideConfiguration_Audio_LanguageConfiguration | Computed<DataAutomationProject_OverrideConfiguration_Audio_LanguageConfiguration>;
-  /** Specifies the audio modality processing configuration, letting you choose between automatic processing of audio data or overriding it with a custom blueprint ARN. (AI-inferred) */
   modalityProcessing?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
   sensitiveDataConfiguration?: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration | Computed<DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Document {
-  /** Configures the document modality processing type (e.g., extraction or summarization) applied when overriding the project's default document processing settings. (AI-inferred) */
   modalityProcessing?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** Controls how sensitive data (such as personally identifiable information) is handled when processing documents in this Bedrock Data Automation project, typically to enable or configure automatic redaction of such content in the extraction output. (AI-inferred) */
   sensitiveDataConfiguration?: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration | Computed<DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration>;
-  /** Configures the document splitter for the Bedrock data automation project, determining how uploaded documents are segmented (e.g., by page or semantic sections) before extraction. (AI-inferred) */
   splitter?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_Image {
   modalityProcessing?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** Configures how sensitive data (such as PII) is handled during image extraction in this Bedrock Data Automation project, overriding the project-level default sensitive data settings for image modality. (AI-inferred) */
   sensitiveDataConfiguration?: DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration | Computed<DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration>;
 }
 
 export interface DataAutomationProject_OverrideConfiguration_ModalityRouting {
   jpeg?: string | Computed<string>;
   mov?: string | Computed<string>;
-  /** When set, this field maps the MP4 media type to a specific Amazon Bedrock Data Automation blueprint ARN for the project's override configuration, so MP4 video inputs are processed using that blueprint instead of the project's default routing. (AI-inferred) */
   mp4?: string | Computed<string>;
   png?: string | Computed<string>;
 }
@@ -76,18 +59,14 @@ export interface DataAutomationProject_OverrideConfiguration_ModalityRouting {
 export interface DataAutomationProject_OverrideConfiguration {
   audio?: DataAutomationProject_OverrideConfiguration_Audio | Computed<DataAutomationProject_OverrideConfiguration_Audio>;
   document?: DataAutomationProject_OverrideConfiguration_Document | Computed<DataAutomationProject_OverrideConfiguration_Document>;
-  /** Specifies the override settings for how image data is processed in the data automation project, including the extraction type used when extracting content from images. (AI-inferred) */
   image?: DataAutomationProject_OverrideConfiguration_Image | Computed<DataAutomationProject_OverrideConfiguration_Image>;
   /** Modality routing configuration */
   modalityRouting?: DataAutomationProject_OverrideConfiguration_ModalityRouting | Computed<DataAutomationProject_OverrideConfiguration_ModalityRouting>;
-  /** Overrides the default data automation configuration for video content in the project, specifying settings for the video extraction stage and splitter stage. (AI-inferred) */
   video?: DataAutomationProject_OverrideConfiguration_Image | Computed<DataAutomationProject_OverrideConfiguration_Image>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration_Transcript {
-  /** Configures the labeling of audio channels in the transcript data, so that extracted transcripts can identify which audio channel each speech segment belongs to. (AI-inferred) */
   channelLabeling?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** This object configures speaker labeling (speaker diarization) for the audio transcript, controlling whether distinct speakers are identified and labeled in the output. (AI-inferred) */
   speakerLabeling?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
 }
 
@@ -96,9 +75,7 @@ export interface DataAutomationProject_StandardOutputConfiguration_Audio_Extract
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category {
-  /** Specifies whether the audio extraction category is enabled (ENABLED) or disabled (DISABLED) in the standard output configuration for the AWS::Bedrock::DataAutomationProject resource. (AI-inferred) */
   state: string | Computed<string>;
-  /** Provides category-specific configuration for the selected audio extraction type (such as transcript or sentiment), with its nested fields varying based on the category's 'type' value, to tailor how that category is extracted from the audio input. (AI-inferred) */
   typeConfiguration?: DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration | Computed<DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration>;
   types?: string[] | Computed<string[]>;
 }
@@ -108,73 +85,54 @@ export interface DataAutomationProject_StandardOutputConfiguration_Audio_Extract
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField {
-  /** Specifies whether generative field extraction is enabled (e.g., ENABLED) or disabled (e.g., DISABLED) for audio in the standard output configuration of the Bedrock Data Automation project. (AI-inferred) */
   state: string | Computed<string>;
-  /** Specifies the list of generative field types to be produced for audio data in the standard output configuration of the AWS Bedrock data automation project. (AI-inferred) */
   types?: string[] | Computed<string[]>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Audio {
-  /** Specifies the audio extraction settings, such as the types of transcripts or analysis to include, for the project's standard output configuration in AWS Bedrock Data Automation. (AI-inferred) */
   extraction?: DataAutomationProject_StandardOutputConfiguration_Audio_Extraction | Computed<DataAutomationProject_StandardOutputConfiguration_Audio_Extraction>;
-  /** In the audio standard output configuration, this object defines a custom generative field—specified by a name and description—that AWS Bedrock Data Automation will attempt to generate from the processed audio. (AI-inferred) */
   generativeField?: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField | Computed<DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity {
-  /** Specifies the granularity levels (such as document or page) at which document extraction results are produced in the standard output configuration of the Bedrock Data Automation project. (AI-inferred) */
   types?: string[] | Computed<string[]>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Document_Extraction {
-  /** Determines whether bounding box coordinates are extracted from documents, and which granularity of bounding boxes (such as word or line) are included in the standard output configuration. (AI-inferred) */
   boundingBox: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** Configures the granularity level for document extraction in the standard output configuration, controlling whether extracted document data is returned at the document, page, or element level for the Amazon Bedrock Data Automation project. (AI-inferred) */
   granularity: DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity | Computed<DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Document_OutputFormat {
-  /** This object configures whether Amazon Bedrock Data Automation generates an additional output file format for documents (such as CSV) alongside the primary format, with a state property that enables or disables this extra file. (AI-inferred) */
   additionalFileFormat: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** This object configures the text format types (such as plain text, markdown, or HTML) that the Bedrock data automation project will output for document extraction. (AI-inferred) */
   textFormat: DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity | Computed<DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Document {
-  /** This object defines the document extraction settings for the project's standard output configuration, controlling whether extraction is enabled and which structured data types (e.g., KEY_VALUE_PAIRS, TABLES) are extracted from documents. (AI-inferred) */
   extraction?: DataAutomationProject_StandardOutputConfiguration_Document_Extraction | Computed<DataAutomationProject_StandardOutputConfiguration_Document_Extraction>;
-  /** Defines a generative field for document output in AWS Bedrock Data Automation, specifying the field name, data type, and the prompt or instructions that guide the model to generate the field's value from the document's content. (AI-inferred) */
   generativeField?: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
-  /** Specifies the output format for documents in the standard output configuration, determining the text format preset and any additional file formats (such as CSV or JSON) for generated extraction output. (AI-inferred) */
   outputFormat?: DataAutomationProject_StandardOutputConfiguration_Document_OutputFormat | Computed<DataAutomationProject_StandardOutputConfiguration_Document_OutputFormat>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Image_Extraction {
-  /** Specifies the configuration for bounding box extraction from images in the standard output of a Bedrock Data Automation project, typically including an enable/disable setting that controls whether bounding box coordinates are generated. (AI-inferred) */
   boundingBox: DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing | Computed<DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing>;
   category: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField | Computed<DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration_Image {
-  /** Defines the extraction configuration for image files in the standard output configuration, specifying which extraction types (e.g., text extraction) are enabled for the data automation project. (AI-inferred) */
   extraction?: DataAutomationProject_StandardOutputConfiguration_Image_Extraction | Computed<DataAutomationProject_StandardOutputConfiguration_Image_Extraction>;
   generativeField?: DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField | Computed<DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField>;
 }
 
 export interface DataAutomationProject_StandardOutputConfiguration {
-  /** Defines the output settings for audio generated by the data automation project, including the audio file format and sample rate. (AI-inferred) */
   audio?: DataAutomationProject_StandardOutputConfiguration_Audio | Computed<DataAutomationProject_StandardOutputConfiguration_Audio>;
-  /** Defines the standard output format for document processing, including the output type (such as plain text or structured data) and optionally a data automation blueprint to use. (AI-inferred) */
   document?: DataAutomationProject_StandardOutputConfiguration_Document | Computed<DataAutomationProject_StandardOutputConfiguration_Document>;
-  /** Defines the output configuration for images processed by the data automation project, controlling how image-derived data is extracted and formatted in the standard output. (AI-inferred) */
   image?: DataAutomationProject_StandardOutputConfiguration_Image | Computed<DataAutomationProject_StandardOutputConfiguration_Image>;
-  /** Specifies the standard output configuration for video files in the AWS Bedrock data automation project, controlling which extraction types (e.g., transcript, caption) are produced from videos. (AI-inferred) */
   video?: DataAutomationProject_StandardOutputConfiguration_Image | Computed<DataAutomationProject_StandardOutputConfiguration_Image>;
 }
 
 export interface DataAutomationProject_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the Bedrock Data Automation project, enabling arbitrary metadata such as cost centers or ownership labels. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -506,7 +464,6 @@ export interface DataAutomationProjectAttrs {
   projectType: string;
   /** Standard output configuration */
   standardOutputConfiguration: DataAutomationProject_StandardOutputConfiguration;
-  /** The current lifecycle state of the data automation project, such as Creating, Active, Updating, Deleting, or Failed. (AI-inferred) */
   status: string;
   /** List of Tags */
   tags: DataAutomationProject_Tags[];

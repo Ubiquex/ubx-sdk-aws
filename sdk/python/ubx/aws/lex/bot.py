@@ -8,899 +8,606 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Bot_BotFileS3Location:
-    # The name of the Amazon S3 bucket that contains the bot definition file referenced by this location. (AI-inferred)
     s3_bucket: Any = None
-    # The S3 object key (path) of the JSON file that defines the bot, used when the bot's definition is stored in an S3 bucket. (AI-inferred)
     s3_object_key: Any = None
-    # Specifies the version ID of the S3 object that contains the bot definition file, allowing retrieval of a specific version when S3 versioning is enabled on the bucket. (AI-inferred)
     s3_object_version: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_AudioFillerSettings:
-    # Specifies the type of audio filler (SILENCE or NOISE) that Amazon Lex uses to manage gaps in speech within a bot locale. (AI-inferred)
     audio_type: Any = None
-    # Whether the bot locale uses audio filler, which plays brief audio during pauses to make conversations feel more natural. (AI-inferred)
     enabled: Any = None
-    # Specifies the minimum length of time, in milliseconds, that audio filler (e.g., a beep or spoken filler like 'um') is played during a conversation pause, so that the filler is not interrupted too abruptly when the user resumes speaking. (AI-inferred)
     minimum_play_duration_in_milliseconds: Any = None
-    # The delay in milliseconds that Amazon Lex waits before delivering the audio filler response to the user in the specified bot locale, used to prevent premature audio interruption during silence or barge-in. (AI-inferred)
     response_delivery_delay_in_milliseconds: Any = None
-    # The number of milliseconds that Amazon Lex waits before playing audio filler in a bot locale when a user pauses during a conversation. (AI-inferred)
     start_delay_in_milliseconds: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_CustomVocabulary_CustomVocabularyItems:
-    # Specifies the alternate display text used in conversation transcripts for this custom vocabulary item, replacing the raw phrase for readability. (AI-inferred)
     display_as: Any = None
-    # The word or phrase to add to the custom vocabulary for a Lex V2 bot locale, enabling the service to recognize and handle this expression in speech recognition. (AI-inferred)
     phrase: Any = None
-    # Sets the relative preference (1-3) that Amazon Lex gives to this custom vocabulary item when matching speech input against the phrase. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_CustomVocabulary:
-    # Defines the list of custom vocabulary entries (each with a phrase and optional weight/display-as) for the bot locale's custom vocabulary, controlling how Amazon Lex V2 recognizes and renders specific words. (AI-inferred)
     custom_vocabulary_items: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification_BedrockGuardrailConfiguration:
-    # Specifies the Amazon Bedrock guardrail identifier (such as its ARN) that is applied to the model's responses during Lex bot build time. (AI-inferred)
     bedrock_guardrail_identifier: Any = None
-    # Specifies the version (e.g., '1' or 'DRAFT') of the Amazon Bedrock guardrail that the descriptive bot builder should use to filter the model's responses. (AI-inferred)
     bedrock_guardrail_version: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification_BedrockModelSpecification:
-    # This object configures the Amazon Bedrock guardrail (e.g., its ID and version) that is applied to the Bedrock model used by the descriptive bot builder within the bot locale's generative AI buildtime settings. (AI-inferred)
     bedrock_guardrail_configuration: Any = None
-    # Specifies a custom prompt to use with the Bedrock model for the descriptive bot builder during build time, overriding the default prompt. (AI-inferred)
     bedrock_model_custom_prompt: Any = None
-    # Determines whether trace reporting (enabled or disabled) is activated for the Amazon Bedrock model used by the descriptive bot builder within the Lex bot's generative AI settings. (AI-inferred)
     bedrock_trace_status: Any = None
-    # The ARN of the Amazon Bedrock foundation model used to generate descriptive bot builder responses during build-time settings in the Lex bot's generative AI configuration. (AI-inferred)
     model_arn: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_BuildtimeSettings_DescriptiveBotBuilderSpecification:
-    # Specifies the Amazon Bedrock foundation model and its inference parameters that the descriptive bot builder uses to generate or improve bot descriptions. (AI-inferred)
     bedrock_model_specification: Any = None
-    # Enables or disables the descriptive bot builder, which uses generative AI to automatically generate or refine the bot's description and conversation flow during build time for this locale. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_BuildtimeSettings:
-    # Configures the descriptive bot builder feature for the locale's build-time settings, enabling you to control whether the feature is active and specify the Amazon Bedrock model ARN used to generate human-readable descriptions for the bot and its components. (AI-inferred)
     descriptive_bot_builder_specification: Any = None
-    # Configures automatic generation of sample utterances during bot build time, including toggling generation on/off and setting the maximum number of sample utterances to generate per intent or slot type. (AI-inferred)
     sample_utterance_generation_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification_IntentDisambiguationSettings:
-    # Specifies a custom message that Amazon Lex displays to the user to clarify which intent they want to fulfill when the bot cannot confidently determine the user's intent. (AI-inferred)
     custom_disambiguation_message: Any = None
-    # Enables or disables intent disambiguation for the bot locale, which lets the bot ask clarifying questions when user input could match multiple intents. (AI-inferred)
     enabled: Any = None
-    # Sets the maximum number of intents Amazon Lex can consider as candidates when performing intent disambiguation for the bot locale's NLU improvement configuration. (AI-inferred)
     max_disambiguation_intents: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_RuntimeSettings_NluImprovementSpecification:
-    # Determines whether the bot locale uses generative AI assistance through Amazon Bedrock to improve intent classification, with values typically 'ENABLED' or 'DISABLED'. (AI-inferred)
     assisted_nlu_mode: Any = None
-    # Whether to enable the NLU improvement specification, which uses generative AI to improve natural language understanding for the bot locale. (AI-inferred)
     enabled: Any = None
-    # Configures intent disambiguation for the bot locale, enabling or disabling Amazon Lex's ability to select the most likely intent when user input could match multiple intents as part of its NLU improvement settings. (AI-inferred)
     intent_disambiguation_settings: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings_RuntimeSettings:
-    # Defines the configuration for the locale's natural language understanding improvement feature, which uses generative AI to enhance the bot's comprehension and classification of user input. (AI-inferred)
     nlu_improvement_specification: Any = None
-    # Configures whether Amazon Lex uses generative AI to improve slot resolution in the bot locale, and optionally defines the elicitation prompt (via ElicitationSpecification) used when the improved resolution cannot determine a slot value. (AI-inferred)
     slot_resolution_improvement_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_GenerativeAisettings:
-    # Configures the generative AI assistant's behavior during the bot building process, including whether it can retrieve knowledge base answers and the prompt specification used. (AI-inferred)
     buildtime_settings: Any = None
-    # Specifies the runtime configuration for the Lex bot locale's generative AI feature, including the Amazon Bedrock model and inference settings used at runtime. (AI-inferred)
     runtime_settings: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentConfiguration:
-    # The identifier of the Amazon Bedrock agent alias that this intent uses to invoke the agent for handling conversation. (AI-inferred)
     bedrock_agent_alias_id: Any = None
-    # The unique identifier of the Amazon Bedrock agent that the Lex bot intent is configured to use for agent-based conversation handling. (AI-inferred)
     bedrock_agent_id: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_BedrockAgentIntentConfiguration_BedrockAgentIntentKnowledgeBaseConfiguration:
-    # The ARN of the Amazon Bedrock knowledge base that the Bedrock agent for this intent uses to retrieve information for generating responses. (AI-inferred)
     bedrock_knowledge_base_arn: Any = None
-    # This object configures the Amazon Bedrock model used by the Bedrock agent intent's knowledge base, including the model ARN and related model parameters. (AI-inferred)
     bedrock_model_configuration: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_BedrockAgentIntentConfiguration:
-    # Defines the configuration for the Amazon Bedrock agent that Lex should invoke for this intent, such as the Bedrock agent alias ARN. (AI-inferred)
     bedrock_agent_configuration: Any = None
-    # Configures the Amazon Bedrock knowledge base (identified by its ARN) that this Lex Bedrock agent intent will use to retrieve and ground its responses. (AI-inferred)
     bedrock_agent_intent_knowledge_base_configuration: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_DialogCodeHook:
-    # When enabled, the dialog code hook (a Lambda function) is invoked for each user input in the intent's conversation to handle fulfillment and validation. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_CustomPayload:
-    # Specifies the JSON-formatted custom payload string that is sent to the messaging platform for this start response message in the fulfillment code hook. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard_Buttons:
-    # Defines the label text displayed on a button in the image response card for the start response message group of the fulfillment code hook, which users can click to trigger an action in the Lex bot. (AI-inferred)
     text: Any = None
-    # The value sent to the Amazon Lex bot when the user clicks this button on the image response card. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message_ImageResponseCard:
-    # Defines the list of buttons displayed on the image response card, where each button has a text label and a value sent back to the bot when selected. (AI-inferred)
     buttons: Any = None
-    # The URL of the image displayed in the image response card included in the start response message for the fulfillment updates specification of a code hook. (AI-inferred)
     image_url: Any = None
-    # The subtitle text displayed beneath the title in the image response card shown during the Lex bot's fulfillment update message. (AI-inferred)
     subtitle: Any = None
-    # The title of the image response card shown to the user in the start response message group for the intent's fulfillment code hook update in Amazon Lex. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups_Message:
-    # Specifies the custom payload, a free-form string, for the message that is sent to the user when the fulfillment code hook starts providing an update. (AI-inferred)
     custom_payload: Any = None
-    # Defines the image response card message for the start response of the fulfillment update, specifying the card's title, subtitle, image URL, and optional buttons to present to the user. (AI-inferred)
     image_response_card: Any = None
-    # This object provides the literal text for a plain-text message sent to the user at the beginning of intent fulfillment, as part of a message group within the start response of the fulfillment code hook. (AI-inferred)
     plain_text_message: Any = None
-    # The SSML message object that provides the SSML-formatted text to be spoken to the user in the start response message group when the fulfillment code hook begins. (AI-inferred)
     ssmlmessage: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse_MessageGroups:
-    # Defines a message variant (with contentType and content) that appears as part of a message group in the start response sent to the user when the fulfillment code hook begins executing its updates. (AI-inferred)
     message: Any = None
-    # Defines a list of alternative message variations for a message group within the bot's fulfillment start response, where each variation is a Message object specifying content and formatting for potentially different user experiences. (AI-inferred)
     variations: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_StartResponse:
-    # Whether the user can interrupt the start response message while it is being played. (AI-inferred)
     allow_interrupt: Any = None
-    # Number of seconds to wait after the fulfillment code hook starts before sending the start response message to the user. (AI-inferred)
     delay_in_seconds: Any = None
-    # Defines the message groups for the start response, which determine the initial message(s) sent to the user when the Lambda fulfillment code hook begins, where each message group can contain a message and its variations. (AI-inferred)
     message_groups: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification_UpdateResponse:
-    # This boolean controls whether the user can interrupt the bot's spoken fulfillment update response (for example, to provide additional input) while it is being delivered. (AI-inferred)
     allow_interrupt: Any = None
-    # The frequency, in seconds, at which Amazon Lex sends the configured interim update message to the user while the fulfillment code hook is still executing. (AI-inferred)
     frequency_in_seconds: Any = None
-    # Provides the list of message groups, each containing a message (plain text, SSML, or custom payload), that Amazon Lex sends as interim updates to the user while the fulfillment code hook is processing the intent. (AI-inferred)
     message_groups: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_FulfillmentUpdatesSpecification:
-    # Indicates whether fulfillment updates are enabled for the intent, controlling whether Lambda can send progress updates to the user during the fulfillment process. (AI-inferred)
     active: Any = None
-    # Defines the initial message and its configuration that Lex sends to the user when the fulfillment update starts, including the message groups and whether the response can be interrupted. (AI-inferred)
     start_response: Any = None
-    # Defines the maximum amount of time, in seconds, that the fulfillment code hook Lambda function is allowed to continue streaming update responses to the user before Amazon Lex halts them. (AI-inferred)
     timeout_in_seconds: Any = None
-    # The update_response object defines the periodic progress update messages that Amazon Lex sends to the user while the fulfillment code hook is still processing, including the message groups and the update frequency. (AI-inferred)
     update_response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_Condition:
-    # The expression, written in Amazon Lex condition syntax, that is evaluated to determine whether this conditional branch's response should be taken, and which can reference intent slots and session attributes. (AI-inferred)
     expression_string: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_DialogAction:
-    # The name of the slot that Amazon Lex should elicit from the user when the dialog action type is ElicitSlot, specifying which slot to prompt for in the next step of the conversation. (AI-inferred)
     slot_to_elicit: Any = None
-    # The suppress_next_message field, when true, tells Amazon Lex to suppress the bot's next message for this dialog action, so the bot does not send the next message in the conversation flow. (AI-inferred)
     suppress_next_message: Any = None
-    # Specifies the type of dialog action (e.g., Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot) that the bot should perform in the next step of the conditional branch. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride_Value:
-    # Specifies the interpreted (resolved) value to assign to the slot during the next step when the failure condition is met, overriding the slot's value in the bot's intent processing. (AI-inferred)
     interpreted_value: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots_SlotValueOverride:
-    # Defines the shape of the slot value override in an Amazon Lex bot, either 'Scalar' (a single value) or 'List' (a list of values) when setting the next step's slot values in a conditional branch. (AI-inferred)
     shape: Any = None
-    # This field specifies the override value for the target slot in the next step's intent when the conditional branch is taken after a failure, as a structured object whose shape must match the slot's data type (scalar, list, or composite). (AI-inferred)
     value: Any = None
-    # Specifies the list of values to assign to a slot when overriding its value in the next step of a conditional branch taken after a post-fulfillment status failure, used within the bot locale intent's slot value override. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent_Slots:
-    # The name of the slot within the intent that is assigned a value when this failure conditional branch's next step is executed in the post-fulfillment status specification of a Lex bot. (AI-inferred)
     slot_name: Any = None
-    # Specifies the replacement value for a slot in the target intent of the next step, including whether it is a single scalar or a list of values, and the actual interpreted value(s) to assign when transitioning after a failed conditional branch. (AI-inferred)
     slot_value_override: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_Intent:
-    # Specifies the name of the Amazon Lex intent to transition to next when the current intent's fulfillment code hook fails and this failure conditional branch is selected. (AI-inferred)
     name: Any = None
-    # Specifies the slot name/value pairs to set on the target intent when the conditional branch's next step invokes that intent, enabling prefilling or overriding of slot values before the intent is processed. (AI-inferred)
     slots: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep_SessionAttributes:
-    # The key (name) of the session attribute to be set or updated when this conditional branch's next step is executed. (AI-inferred)
     key: Any = None
-    # The value to assign to the session attribute key in the next step of the conditional branch when the failure condition is met in the post-fulfillment status specification of a Lex bot intent. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_NextStep:
-    # Defines the specific dialog action (e.g., StartIntent, ElicitSlot, or Close) to execute as the next step of a conditional branch under the failure conditional of a fulfillment code hook's post-fulfillment status specification. (AI-inferred)
     dialog_action: Any = None
-    # Specifies the target intent to transition to in the next step of a conditional branch when the post-fulfillment failure condition is met, including the intent name and any slot values to set. (AI-inferred)
     intent: Any = None
-    # Defines the list of session attributes (key-value pairs) to set in the next step when a failure condition is matched in the post-fulfillment status specification of a Lex bot intent's fulfillment code hook. (AI-inferred)
     session_attributes: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches_Response:
-    # Determines whether the user can interrupt the response message delivered in the failure conditional branch's response, allowing Amazon Lex to stop playback and handle new user input. (AI-inferred)
     allow_interrupt: Any = None
-    # Specifies a list of message groups, each containing a primary message and optional message variations, that Amazon Lex uses to respond when a conditional branch's condition is evaluated (here, the failure conditional's branch response). (AI-inferred)
     message_groups_list: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_ConditionalBranches:
-    # Specifies the expression evaluated against the session state that determines whether this branch of the post-fulfillment failure conditional is executed. (AI-inferred)
     condition: Any = None
-    # The name of this conditional branch, which Lex evaluates when the post-fulfillment status is a failure, to determine which actions to execute. (AI-inferred)
     name: Any = None
-    # Defines the dialog action or next step that the bot takes when the failure condition of this conditional branch is met in the post-fulfillment status specification. (AI-inferred)
     next_step: Any = None
-    # Defines the response specification (message groups and interrupt behavior) that Amazon Lex V2 uses to reply to the user when this conditional branch's condition is met within the failure conditional of the post-fulfillment status specification. (AI-inferred)
     response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional_DefaultBranch:
-    # Specifies the dialog state (next action in the conversation) that the bot transitions to when the default branch of the failure conditional is executed after the fulfillment code hook fails. (AI-inferred)
     next_step: Any = None
-    # Specifies the response messages (message groups) that Amazon Lex returns to the user when the post-fulfillment status hook fails and the default branch of the failure conditional is selected. (AI-inferred)
     response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification_FailureConditional:
-    # Defines the list of conditional branches evaluated when the post-fulfillment status is failure, each with a condition and response to determine the appropriate follow-up action. (AI-inferred)
     conditional_branches: Any = None
-    # Defines the default branch of the conditional block that executes when the fulfillment code hook fails and no other condition in the failure conditional matches, specifying the next action or response to take. (AI-inferred)
     default_branch: Any = None
-    # Indicates whether the failure conditional logic for the post-fulfillment status specification is active, determining if the defined conditional branches are evaluated. (AI-inferred)
     is_active: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook_PostFulfillmentStatusSpecification:
-    # Defines the conditional branches that Lex evaluates after the fulfillment code hook fails, determining the next dialog step for the intent. (AI-inferred)
     failure_conditional: Any = None
-    # Defines the dialog state (e.g., another intent, slot setting, or closing action) that Lex transitions to after the fulfillment code hook reports a failure. (AI-inferred)
     failure_next_step: Any = None
-    # Specifies the response that Amazon Lex sends to the user when the fulfillment code hook indicates that the intent's fulfillment failed. (AI-inferred)
     failure_response: Any = None
-    # Specifies the conditional branch and its conditions/branches that the bot evaluates after the fulfillment code hook completes successfully for the intent. (AI-inferred)
     success_conditional: Any = None
-    # Specifies the next dialog step, such as closing the dialog or invoking another intent, that the bot takes after the fulfillment code hook completes successfully. (AI-inferred)
     success_next_step: Any = None
-    # Specifies the response (message group) sent to the user after the fulfillment code hook executes successfully, indicating the intent was fulfilled. (AI-inferred)
     success_response: Any = None
-    # Specifies the conditional branching configuration that the bot evaluates after the fulfillment code hook times out, determining which branch and associated responses to take based on the defined conditions. (AI-inferred)
     timeout_conditional: Any = None
-    # Defines the dialog state that Amazon Lex transitions to when the fulfillment code hook times out, specifying the next action, intent, and session attributes to use. (AI-inferred)
     timeout_next_step: Any = None
-    # Configures the response that Amazon Lex sends to the user when the fulfillment code hook times out, including the message groups and interruptibility settings for that timeout message. (AI-inferred)
     timeout_response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_FulfillmentCodeHook:
-    # Indicates whether the fulfillment code hook is enabled for the intent, allowing an AWS Lambda function to be invoked to generate a response and fulfill the user's request. (AI-inferred)
     enabled: Any = None
-    # Configures the timeout and provides responses to the user while the fulfillment code hook is running, including start, update, and final messages, to keep the session active during async fulfillment. (AI-inferred)
     fulfillment_updates_specification: Any = None
-    # Indicates whether the fulfillment code hook is active (enabled) for the intent, determining if Amazon Lex invokes the Lambda function when the intent is fulfilled. (AI-inferred)
     is_active: Any = None
-    # Defines how the bot proceeds after the fulfillment code hook runs, including the success, failure, and timeout responses and next steps for the intent. (AI-inferred)
     post_fulfillment_status_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_InitialResponseSetting_CodeHook:
-    # Indicates whether the Lambda function configured as the code hook is invoked when the intent's initial response is triggered. (AI-inferred)
     enable_code_hook_invocation: Any = None
-    # Specifies a custom label that Amazon Lex includes in the Lambda event when the initial response code hook is invoked, allowing the Lambda function to identify the context or stage of this particular code hook invocation. (AI-inferred)
     invocation_label: Any = None
-    # Indicates whether the Lambda code hook associated with the intent's initial response setting is active, controlling whether Amazon Lex invokes the function during the initial response phase. (AI-inferred)
     is_active: Any = None
-    # Specifies the next dialog state and response handling (such as success/failure branches) that Amazon Lex invokes after the intent's initial-response code hook completes. (AI-inferred)
     post_code_hook_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_InitialResponseSetting:
-    # Configures the AWS Lambda function invoked to initialize and validate the intent when it is first entered, specifying the Lambda ARN and message version for the code hook. (AI-inferred)
     code_hook: Any = None
-    # Defines the conditional specification (branches and default branch) used to determine the bot's initial response in the intent, based on conditions evaluated against slot values or session attributes. (AI-inferred)
     conditional: Any = None
-    # Specifies the initial response message that Amazon Lex sends to the user when this intent is invoked, defined as a set of message groups and an optional allow-interrupt flag. (AI-inferred)
     initial_response: Any = None
-    # Defines the dialog state to transition to after the initial response message is delivered, such as eliciting a slot, closing the intent, or switching to another intent. (AI-inferred)
     next_step: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_InputContexts:
-    # The name of an input context that must be active for the intent to be considered by Amazon Lex. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_IntentClosingSetting:
-    # Defines the message or message variations sent to the user when the intent is fulfilled and the conversation is closed. (AI-inferred)
     closing_response: Any = None
-    # Specifies the conditional specification (set of conditional branches and a default branch) evaluated after the intent closing message to choose the next response or dialog action based on session state. (AI-inferred)
     conditional: Any = None
-    # Indicates whether the closing response message is active and will be shown to the user when the intent is fulfilled. (AI-inferred)
     is_active: Any = None
-    # Specifies the next step in the conversation after the intent's closing message is delivered, using a DialogState object that defines the subsequent dialog action, intent, or session attributes. (AI-inferred)
     next_step: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_IntentConfirmationSetting_ElicitationCodeHook:
-    # If true, the bot invokes the configured code hook (Lambda function) when eliciting confirmation from the user for the intent; if false, no code hook is invoked during the confirmation elicitation step. (AI-inferred)
     enable_code_hook_invocation: Any = None
-    # Specifies an optional label that is passed to the Lambda function of the elicitation code hook, allowing the Lambda to identify which specific code hook invocation triggered it during intent confirmation. (AI-inferred)
     invocation_label: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_IntentConfirmationSetting_PromptSpecification:
-    # Determines whether the user can interrupt the prompt (for example, by speaking) while the bot is delivering it, with a default of false when not specified. (AI-inferred)
     allow_interrupt: Any = None
-    # The maximum number of times the bot will repeat the confirmation prompt to elicit a valid response from the user before giving up or taking fallback action. (AI-inferred)
     max_retries: Any = None
-    # Defines the list of message groups that provide the prompt's message content for the intent confirmation prompt, where each group contains a primary message and an optional list of variation messages. (AI-inferred)
     message_groups_list: Any = None
-    # Specifies whether the confirmation prompt selects messages from the message group in sequential order or at random; choose Random to rotate messages randomly or Sequential to use them in order. (AI-inferred)
     message_selection_strategy: Any = None
-    # Specifies per-attempt configuration (e.g., for initial, retry1, retry2) for the confirmation prompt, including allowed input types and audio/DTMF/text input settings. (AI-inferred)
     prompt_attempts_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_IntentConfirmationSetting:
-    # Specifies the Lambda function (code hook) that Amazon Lex invokes when the user confirms an intent during the confirmation step. (AI-inferred)
     code_hook: Any = None
-    # Specifies the conditional branches and default branch that determine the Lex bot's response when the user confirms the intent, based on evaluating conditions such as slot values and session attributes. (AI-inferred)
     confirmation_conditional: Any = None
-    # The confirmation_next_step specifies the dialog step Amazon Lex executes after the user confirms the intent, defining the action (such as eliciting a slot or invoking a Lambda function) and the target slot to elicit if applicable. (AI-inferred)
     confirmation_next_step: Any = None
-    # Configuration for the message the bot sends to the user to ask for confirmation before proceeding with the intent, specified as a response specification with message groups and interruption settings. (AI-inferred)
     confirmation_response: Any = None
-    # Specifies the conditional branching logic to execute when the user declines the confirmation prompt for the intent. (AI-inferred)
     declination_conditional: Any = None
-    # The next step in the dialog that is executed after the user declines the intent confirmation prompt, defining the subsequent action (such as eliciting an intent or slot) through its dialogAction and properties. (AI-inferred)
     declination_next_step: Any = None
-    # The response message that Amazon Lex sends to the user when the user declines the confirmation prompt for the intent. (AI-inferred)
     declination_response: Any = None
-    # The Lambda function configuration that is invoked when the bot is eliciting confirmation from the user for this intent, allowing the confirmation prompt or acceptance logic to be customized. (AI-inferred)
     elicitation_code_hook: Any = None
-    # Defines the conditional branches (including a default branch) that the Lex bot evaluates when the user's response to the intent confirmation prompt fails (i.e., the confirmation is declined or invalid), determining the next dialog action. (AI-inferred)
     failure_conditional: Any = None
-    # Defines the next dialog step (such as eliciting a slot or closing the intent) that the bot takes when an intent confirmation fails. (AI-inferred)
     failure_next_step: Any = None
-    # This object defines the response the bot sends to the user when the user does not confirm the intent (i.e., after the user fails to accept the confirmation prompt), including the message groups and any allow-interrupt behavior. (AI-inferred)
     failure_response: Any = None
-    # When set to true, enables the intent confirmation prompt so that Amazon Lex asks the user to confirm the intent before proceeding; when false, the confirmation step is skipped. (AI-inferred)
     is_active: Any = None
-    # Configures the prompt shown to the user to confirm the intent, including the message groups, maximum retries, and interruption behavior. (AI-inferred)
     prompt_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_KendraConfiguration:
-    # The ARN of the Amazon Kendra index that the intent queries to provide search-based answers when the intent is triggered. (AI-inferred)
     kendra_index: Any = None
-    # A filter string, expressed in Amazon Kendra query syntax, that is applied to the Kendra search request for this intent to narrow the search results returned from the configured Kendra index. (AI-inferred)
     query_filter_string: Any = None
-    # Indicates whether the Amazon Kendra query filter string, specified in queryFilterString, is applied to filter the results returned from the Amazon Kendra index for the intent. (AI-inferred)
     query_filter_string_enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_OutputContexts:
-    # Sets the name of an output context that becomes active after the intent is fulfilled, used to manage conversation flow and pass state to subsequent intents. (AI-inferred)
     name: Any = None
-    # The number of seconds that the output context remains active after the associated intent is fulfilled, after which it expires and can no longer be used by subsequent intents. (AI-inferred)
     time_to_live_in_seconds: Any = None
-    # The number of conversation turns that the output context remains active after being set, after which it expires. (AI-inferred)
     turns_to_live: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QinConnectIntentConfiguration_QinConnectAssistantConfiguration:
-    # The ARN of the Amazon Q in Connect assistant used by the Lex intent to provide AI-generated answers and recommendations. (AI-inferred)
     assistant_arn: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QinConnectIntentConfiguration:
-    # Configures the Amazon Q in Connect assistant linked to this intent, allowing the bot to leverage Q in Connect's real-time AI and generative assistance during the intent's execution. (AI-inferred)
     qin_connect_assistant_configuration: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration_BkbexactResponseFields:
-    # The name of the field in the Amazon Bedrock knowledge store that contains the exact answer to be returned for the QnA intent. (AI-inferred)
     answer_field: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_BedrockKnowledgeStoreConfiguration:
-    # The ARN of the Amazon Bedrock knowledge base that the Lex QnA intent uses as its knowledge store for retrieving answers. (AI-inferred)
     bedrock_knowledge_base_arn: Any = None
-    # Specifies the list of field names from the Amazon Bedrock knowledge store response that should be returned exactly as-is (exact response) for the QnA intent, rather than being paraphrased by the model. (AI-inferred)
     bkbexact_response_fields: Any = None
-    # Determines whether the bot returns the exact response text from the Bedrock knowledge store or a paraphrased version when answering QnA intents. (AI-inferred)
     exact_response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_KendraConfiguration:
-    # When true, the QnA intent returns only the exact answer supplied by the connected Amazon Kendra index instead of a synthesized or fallback response. (AI-inferred)
     exact_response: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Kendra index that the QnA intent uses to search for answers for user queries. (AI-inferred)
     kendra_index: Any = None
-    # Specifies the query filter string that Amazon Lex uses to filter the Amazon Kendra index results when the QnA intent retrieves answers from the configured data source. (AI-inferred)
     query_filter_string: Any = None
-    # Indicates whether the configured query filter string is enabled to filter Amazon Kendra search results for this QnA intent. (AI-inferred)
     query_filter_string_enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration_ExactResponseFields:
-    # Specifies the OpenSearch index field name that contains the exact answer text returned to the user when the QnA intent matches a query using exact response matching. (AI-inferred)
     answer_field: Any = None
-    # The name of the field in the Amazon OpenSearch Service index that stores the question text, used by the QnA intent's exact-response matching logic. (AI-inferred)
     question_field: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration_OpensearchConfiguration:
-    # The endpoint URL of the Amazon OpenSearch Service domain that the QnA intent's data source configuration uses to query for answers. (AI-inferred)
     domain_endpoint: Any = None
-    # When true, Amazon Lex returns the exact text of the top OpenSearch result as the bot's answer, rather than generating a natural language response from that result. (AI-inferred)
     exact_response: Any = None
-    # Specifies the Amazon OpenSearch Service index fields (answerField and sourceField) that store the exact answer text and its source for high-confidence matches returned by the QnA intent. (AI-inferred)
     exact_response_fields: Any = None
-    # Specifies which fields from the Amazon OpenSearch Service index are returned to the user as part of the QnA intent's response when an answer is retrieved. (AI-inferred)
     include_fields: Any = None
-    # The name of the OpenSearch index that the QnA intent's data source configuration will query to retrieve answers. (AI-inferred)
     index_name: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration_DataSourceConfiguration:
-    # This object configures the Amazon Bedrock knowledge store that Lex uses as the data source for answering user queries in this QnA intent, including the knowledge store's ARN and an optional flag for exact response matching. (AI-inferred)
     bedrock_knowledge_store_configuration: Any = None
-    # Specifies the Amazon Kendra index (and optional query filter string) that the QnA intent uses to retrieve answers from a Kendra data source. (AI-inferred)
     kendra_configuration: Any = None
-    # Specifies the Amazon OpenSearch Serverless collection and index used by the QnA intent's data source to retrieve answers, including the collection ARN and index name. (AI-inferred)
     opensearch_configuration: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_QnAintentConfiguration:
-    # Specifies the Amazon Bedrock model configuration used by the QnA intent to generate responses to user queries. (AI-inferred)
     bedrock_model_configuration: Any = None
-    # Configures the data source (such as an Amazon S3 bucket or an Amazon Bedrock knowledge base) that supplies the question-and-answer pairs used by the QnA intent. (AI-inferred)
     data_source_configuration: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_SampleUtterances:
-    # The user's natural language phrase that triggers this intent, used as training data for the bot's language model. (AI-inferred)
     utterance: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_SlotPriorities:
-    # Sets the order in which Amazon Lex elicits slot values for the intent, with lower numbers indicating higher priority (e.g., priority 1 is elicited before priority 2). (AI-inferred)
     priority: Any = None
-    # The name of the slot whose elicitation order is being set in the intent's slot priority list, matching a slot defined in the intent's slots collection. (AI-inferred)
     slot_name: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_MultipleValuesSetting:
-    # When true, this setting allows the slot to capture multiple values in a single user utterance; when false, the slot captures only a single value. (AI-inferred)
     allow_multiple_values: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ObfuscationSetting:
-    # Determines whether the slot value is obfuscated in conversation logs, accepting `NONE` (no obfuscation) or `DEFAULT_OBFUSCATION` (masks the value). (AI-inferred)
     obfuscation_setting_type: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_SubSlotSetting:
-    # Defines a template expression that composes a composite slot's value from sub-slot values, using curly-brace placeholders that reference the sub-slot names. (AI-inferred)
     expression: Any = None
-    # Specifies the configuration for each sub-slot within a composite slot, defining the slot type and value elicitation settings for each named sub-slot. (AI-inferred)
     slot_specifications: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification_DefaultValueList:
-    # Defines a specific default value that Amazon Lex uses for the slot when the user does not supply a value during the conversation. (AI-inferred)
     default_value: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting_DefaultValueSpecification:
-    # Defines the list of default values Amazon Lex uses for a slot when the user does not provide a response during elicitation. (AI-inferred)
     default_value_list: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting_SlotCaptureSetting:
-    # Defines the condition that must be satisfied for the slot value to be captured, and if the condition is not met, the bot skips the capture and proceeds to the appropriate failure handling defined in the slot capture setting. (AI-inferred)
     capture_conditional: Any = None
-    # Defines the dialog state (including the next dialog action, intent, and session attributes) that the conversation transitions to after the slot value is successfully captured. (AI-inferred)
     capture_next_step: Any = None
-    # Specifies the response, including message groups and variations, that Amazon Lex sends to the user after successfully capturing the slot value during elicitation. (AI-inferred)
     capture_response: Any = None
-    # The code hook (Lambda function) that Lex invokes when a slot value is captured during value elicitation, allowing you to validate or process the captured value. (AI-inferred)
     code_hook: Any = None
-    # The Lambda function configuration used by Amazon Lex to handle slot capture (elicitation and validation) for this slot in the intent. (AI-inferred)
     elicitation_code_hook: Any = None
-    # Defines the conditional specification that controls the next step in the dialog when the slot value cannot be captured successfully, enabling branching logic for failure handling in the slot's value elicitation. (AI-inferred)
     failure_conditional: Any = None
-    # Specifies the next step in the conversation that the bot takes when it fails to capture a slot value (e.g., the user's input cannot be interpreted or the slot is not validated). (AI-inferred)
     failure_next_step: Any = None
-    # The `failure_response` object defines the response specification (including message groups and allow-interrupt behavior) that Amazon Lex uses to prompt the user again when it fails to capture a valid slot value during value elicitation. (AI-inferred)
     failure_response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification_StillWaitingResponse:
-    # Indicates whether the user can interrupt the still-waiting response while the bot is waiting for the slot value. (AI-inferred)
     allow_interrupt: Any = None
-    # Specifies how often (in seconds) the bot sends the still-waiting response message to the user while waiting for a slot value during elicitation. (AI-inferred)
     frequency_in_seconds: Any = None
-    # Defines the ordered list of message groups, each containing a primary message and optional variations, that Amazon Lex sends to the user while they are still waiting during a slot's value elicitation wait-and-continue response. (AI-inferred)
     message_groups_list: Any = None
-    # Specifies the number of seconds to wait before sending a 'still waiting' message to the user during a slot's wait-and-continue prompt in the still waiting response configuration. (AI-inferred)
     timeout_in_seconds: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting_WaitAndContinueSpecification:
-    # Defines the message (via message groups and an allow-interrupt flag) that Amazon Lex sends to the user when they choose to continue after the waiting prompt during slot value elicitation. (AI-inferred)
     continue_response: Any = None
-    # Indicates whether the wait-and-continue prompt behavior for the slot's value elicitation is enabled in the Amazon Lex bot. (AI-inferred)
     is_active: Any = None
-    # Defines the response that Amazon Lex sends to the user repeatedly while the user is still waiting to provide a slot value, including the message groups, the frequency (in seconds) at which the message repeats, and whether the user can interrupt the still-waiting prompt. (AI-inferred)
     still_waiting_response: Any = None
-    # For an Amazon Lex V2 bot, defines the response specification (messages and interruption settings) that the bot uses to prompt the user while waiting for them to provide the value for the slot, as part of the wait-and-continue configuration in value elicitation. (AI-inferred)
     waiting_response: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots_ValueElicitationSetting:
-    # Defines the default value specification for a slot, listing default values that are used when the user does not supply a value during elicitation. (AI-inferred)
     default_value_specification: Any = None
-    # Defines the prompt messages, maximum retries, and other settings used to elicit the slot value from the user when the slot is empty or invalid. (AI-inferred)
     prompt_specification: Any = None
-    # List of sample utterances that Amazon Lex uses to recognize when a user is providing a value for the slot during elicitation. (AI-inferred)
     sample_utterances: Any = None
-    # Defines the response, next step, and code hook behavior that is invoked after the slot's value is successfully captured in Amazon Lex V2. (AI-inferred)
     slot_capture_setting: Any = None
-    # Specifies whether the slot must be filled (Required) or may be left empty (Optional) when eliciting values for the intent. (AI-inferred)
     slot_constraint: Any = None
-    # Defines the prompts and behavior for a slot's value elicitation when the bot is waiting for user input (still-waiting response) and after the user provides input (continue response), including whether those prompts are active and their response specifications. (AI-inferred)
     wait_and_continue_specification: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents_Slots:
-    # Provides a short text description of the slot's purpose within the intent, used for clarity and documentation. (AI-inferred)
     description: Any = None
-    # Configures whether a slot in an intent can capture and store multiple values for its assigned slot type, typically controlled by an allowMultipleValues boolean flag. (AI-inferred)
     multiple_values_setting: Any = None
-    # The unique name of the slot within the intent, used as a reference in slot resolution and Lambda function events. (AI-inferred)
     name: Any = None
-    # Specifies the obfuscation setting for the slot value to protect sensitive data in transcripts, with the type either 'None' or 'DefaultObfuscation'. (AI-inferred)
     obfuscation_setting: Any = None
-    # Specifies the name of the slot type that defines the allowed values and data format for this slot, which is used to interpret and validate user input during a conversation. (AI-inferred)
     slot_type_name: Any = None
-    # Defines the settings for a composite slot, where the slot is made up of multiple sub-slots, including an expression and the sub-slot specifications that determine how the slot value is assembled. (AI-inferred)
     sub_slot_setting: Any = None
-    # Configures how Amazon Lex prompts the user for the slot value, including prompt messages and wait-and-continue behavior during the conversation. (AI-inferred)
     value_elicitation_setting: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_Intents:
-    # Defines the Bedrock agent intent configuration for the intent, specifying the Bedrock agent and agent intent IDs that this Lex intent uses to delegate handling to a Bedrock agent. (AI-inferred)
     bedrock_agent_intent_configuration: Any = None
-    # A human-readable description of the intent that clarifies its purpose within the bot locale. (AI-inferred)
     description: Any = None
-    # Configures the dialog code hook for this intent, including whether it is enabled and the ARN of the Lambda function to invoke for dialog initialization and validation. (AI-inferred)
     dialog_code_hook: Any = None
     display_name: Any = None
-    # Configures the fulfillment code hook, including the Lambda function and optional post-fulfillment updates, that is invoked to complete the user's request once the intent is fully elicited. (AI-inferred)
     fulfillment_code_hook: Any = None
-    # Specifies the initial response configuration for an intent, including the first message sent to the user, optional code hooks, conditional branches, and the next step in the conversation flow. (AI-inferred)
     initial_response_setting: Any = None
-    # Specifies the input contexts that must be active for the intent to be invoked, enabling the bot to control dialog flow by restricting when the intent is considered. (AI-inferred)
     input_contexts: Any = None
-    # Configures the closing response Amazon Lex sends to the user after the intent is fulfilled, including the message to display and whether the dialog session should be closed. (AI-inferred)
     intent_closing_setting: Any = None
-    # Defines the prompt the bot uses to ask the user to confirm the intent before fulfillment, along with the response and handling when the user declines confirmation. (AI-inferred)
     intent_confirmation_setting: Any = None
-    # Configuration that connects the intent to an Amazon Kendra index, enabling the bot to query the index and use its results as responses when the intent is invoked. (AI-inferred)
     kendra_configuration: Any = None
-    # The unique name of the intent within a bot locale, which must be composed of letters, numbers, and underscores (starting with a letter) and is used to identify the intent in the Lex bot definition. (AI-inferred)
     name: Any = None
-    # Defines the output contexts that are activated when the intent is fulfilled, controlling which other intents can be invoked in the subsequent conversation turns. (AI-inferred)
     output_contexts: Any = None
-    # Specifies the signature of an Amazon Lex built-in intent that this custom intent is based on, allowing the intent to inherit the built-in intent's behavior and configuration. (AI-inferred)
     parent_intent_signature: Any = None
     qin_connect_intent_configuration: Any = None
-    # Configuration for the built-in AMAZON.QnAIntent, defining data sources (e.g., Amazon Kendra indexes) and fallback intent behavior for answering user questions in a Lex bot locale. (AI-inferred)
     qn_aintent_configuration: Any = None
-    # Defines the list of sample utterances (phrases) that are used to train the bot's language model and determine when the intent should be triggered. (AI-inferred)
     sample_utterances: Any = None
-    # Defines the order in which slots are filled for the intent, where each item specifies a slot name and its priority level. (AI-inferred)
     slot_priorities: Any = None
-    # Defines the list of slots for the intent, each specifying a unique name, a slot type, whether the slot is required, and the prompts used to elicit and confirm the slot value from the user. (AI-inferred)
     slots: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting_SubSlots:
-    # Specifies the name of an individual sub-slot within a composite slot type, which is used to identify and reference that sub-slot when the composite slot is captured in a conversation. (AI-inferred)
     name: Any = None
-    # The unique identifier of the slot type assigned to this sub-slot within the composite slot type, which determines the data format and validation for values captured in that sub-slot. (AI-inferred)
     slot_type_id: Any = None
-    # The name of an existing slot type (custom or built-in) that this sub-slot references within a composite slot type, enabling the definition of structured multi-slot values in Amazon Lex V2. (AI-inferred)
     slot_type_name: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_CompositeSlotTypeSetting:
-    # Specifies the list of sub-slots that compose this composite slot type, where each sub-slot defines its name and the slot type it references. (AI-inferred)
     sub_slots: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting_Source:
-    # The ARN of the AWS KMS key used to decrypt the S3 object containing the grammar definition file for this external grammar slot type source. (AI-inferred)
     kms_key_arn: Any = None
-    # The name of the S3 bucket that contains the grammar definition file for the grammar slot type. (AI-inferred)
     s3_bucket_name: Any = None
-    # The S3 object key (file path) of the grammar file inside the specified S3 bucket, used as the source for defining this grammar slot type in Amazon Lex. (AI-inferred)
     s3_object_key: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ExternalSourceSetting_GrammarSlotTypeSetting:
-    # Specifies the Amazon S3 location of the grammar file used as the source for the grammar slot type. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ExternalSourceSetting:
-    # Specifies the grammar slot type settings for a slot type that uses an external source, including the S3 bucket and object key of the grammar definition file. (AI-inferred)
     grammar_slot_type_setting: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_SlotTypeValues:
-    # Defines the sample utterance (a string stored under the nested 'value' property) that represents a slot type value for a Lex bot locale. (AI-inferred)
     sample_value: Any = None
-    # Provides a list of alternative words or phrases (synonyms) that map to this slot type value, enabling the bot to recognize multiple expressions for the same value. (AI-inferred)
     synonyms: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ValueSelectionSetting_AdvancedRecognitionSetting:
-    # Specifies the audio recognition strategy for the slot type, where the only supported value is 'UseSlotTypeAsCustomVocabulary', which uses the slot type's values as a custom vocabulary for audio recognition. (AI-inferred)
     audio_recognition_strategy: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ValueSelectionSetting_RegexFilter:
-    # The regular expression pattern used by Lex to validate or filter slot values, defining which user inputs match for the slot type when the value selection setting includes a regex filter. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes_ValueSelectionSetting:
-    # Specifies advanced recognition options for the slot type's value selection, including whether fuzzy matching is enabled to recognize user input that approximates defined slot values. (AI-inferred)
     advanced_recognition_setting: Any = None
-    # The regex_filter object specifies a regular expression pattern that constrains which user utterances are valid values for slots using this slot type in the Lex bot. (AI-inferred)
     regex_filter: Any = None
-    # Specifies how Amazon Lex resolves a slot value when multiple slot type entries match the user's utterance, with options such as returning the original value or the top resolution. (AI-inferred)
     resolution_strategy: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SlotTypes:
-    # Specifies the component slot types and their names that together form a composite slot type in an Amazon Lex bot locale. (AI-inferred)
     composite_slot_type_setting: Any = None
-    # A free-form description of the slot type, used to document its intended purpose and assist in maintenance and identification within the Amazon Lex bot. (AI-inferred)
     description: Any = None
-    # Configures an external grammar source (such as a file in Amazon S3) that defines the valid values for a slot type in a Lex bot locale. (AI-inferred)
     external_source_setting: Any = None
-    # The name of the custom slot type within the bot locale, used as a unique identifier for the slot type in that locale. (AI-inferred)
     name: Any = None
-    # The signature (name) of the parent slot type that this slot type inherits from, allowing the slot type to reuse and extend the parent's configuration within the Lex bot's locale. (AI-inferred)
     parent_slot_type_signature: Any = None
-    # Specifies the acceptable values for a custom slot type, where each entry can include a primary `value` and optional `synonyms` that map alternative phrases to that value. (AI-inferred)
     slot_type_values: Any = None
-    # This object configures how slot values for the slot type are selected, specifying the resolution strategy (OriginalValue or TopResolution) and optionally a regex pattern for matching values when the strategy is Regex. (AI-inferred)
     value_selection_setting: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig_DeepgramConfig:
-    # For the Deepgram speech model configuration in the bot locale's speech recognition settings, this field specifies the ARN of the AWS Secrets Manager secret that contains the Deepgram API token used to authenticate requests. (AI-inferred)
     api_token_secret_arn: Any = None
-    # The identifier of the Deepgram speech recognition model to use in this bot locale, such as a specific model version name. (AI-inferred)
     model_id: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SpeechRecognitionSettings_SpeechModelConfig:
-    # Configuration for Deepgram as the third-party speech recognition provider, including API key and model settings, used when the speech model type is set to Deepgram. (AI-inferred)
     deepgram_config: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_SpeechRecognitionSettings:
-    # Configures the custom language model used by Amazon Lex for speech recognition in this bot locale, via a SpeechModelConfig object that specifies the model name. (AI-inferred)
     speech_model_config: Any = None
-    # Specifies the preferred speech recognition model type (e.g., 'Standard' or 'Generative') used by Amazon Lex when converting audio input to text for this bot locale. (AI-inferred)
     speech_model_preference: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_UnifiedSpeechSettings_SpeechFoundationModel:
-    # Specifies the Amazon Resource Name (ARN) of the speech foundation model used to perform speech recognition and natural language understanding for the bot's locale. (AI-inferred)
     model_arn: Any = None
     voice_id: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_UnifiedSpeechSettings:
-    # Specifies the foundation model (e.g., Amazon Nova) and its version used for automatic speech recognition in the bot locale, enabling enhanced ASR under unified speech settings. (AI-inferred)
     speech_foundation_model: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales_VoiceSettings:
-    # The text-to-speech voice engine used for the bot locale, which can be either 'standard' or 'neural'. (AI-inferred)
     engine: Any = None
-    # Specifies the Amazon Polly voice ID that Amazon Lex uses for text-to-speech in this bot locale. (AI-inferred)
     voice_id: Any = None
 
 @dataclasses.dataclass
 class Bot_BotLocales:
-    # Configures the bot locale's audio filler settings, including the maximum duration a filler audio can play while the bot waits for user input. (AI-inferred)
     audio_filler_settings: Any = None
-    # Configures the custom vocabulary for the bot locale, containing a list of domain-specific phrases with optional weights that Amazon Lex uses to improve speech recognition accuracy. (AI-inferred)
     custom_vocabulary: Any = None
-    # Provides a descriptive note for a bot locale, identifying the language or regional variant (e.g., English (US)) for the bot's conversational experience. (AI-inferred)
     description: Any = None
-    # Defines the generative AI settings for the bot locale, including configuration for integrating an Amazon Bedrock agent and enabling runtime features such as slot resolution improvement. (AI-inferred)
     generative_aisettings: Any = None
-    # Specifies the list of intents defined for a user locale in the Lex bot, where each intent includes its name, sample utterances, and slot configuration. (AI-inferred)
     intents: Any = None
-    # Specifies the unique language and regional variant identifier (e.g., 'en_US' or 'de_DE') for this bot locale, enabling the bot to support multiple locales within the same bot. (AI-inferred)
     locale_id: Any = None
-    # Sets the minimum confidence score (0.0 to 1.0) that Amazon Lex requires for a user's utterance to be considered a match for an intent in this bot locale. (AI-inferred)
     nlu_confidence_threshold: Any = None
-    # Defines the custom slot types available within this locale, specifying how slot values are captured and validated in the bot's interactions. (AI-inferred)
     slot_types: Any = None
-    # Determines the sensitivity of speech detection in the bot locale, with valid values of AUTO, HIGH, or LOW, which controls how aggressively Amazon Lex recognizes spoken input in the audio stream. (AI-inferred)
     speech_detection_sensitivity: Any = None
-    # For each locale of the bot, the speech recognition settings configure how speech is recognized, including whether speech recognition is enabled and the engine type used (standard or cross-talk). (AI-inferred)
     speech_recognition_settings: Any = None
-    # Specifies speech recognition settings for the locale, including phrase lists and custom vocabulary that improve transcription accuracy. (AI-inferred)
     unified_speech_settings: Any = None
-    # Configures the voice used by the bot for this locale, including the Amazon Polly voice ID and engine type. (AI-inferred)
     voice_settings: Any = None
 
 @dataclasses.dataclass
 class Bot_BotMembers:
-    # The unique identifier of the alias of the member Lex V2 bot that is associated with this bot via its bot_members list. (AI-inferred)
     bot_member_alias_id: Any = None
-    # The alias name of the child bot that is included as a member of this composite (parent) Lex bot. (AI-inferred)
     bot_member_alias_name: Any = None
-    # The Amazon Lex bot ID (unique identifier) of a member bot that is associated with this bot in its network of related bots. (AI-inferred)
     bot_member_id: Any = None
-    # The unique name given to a member bot within the parent bot's multi-bot configuration, used to identify and reference that bot in the overall bot routing and orchestration logic. (AI-inferred)
     bot_member_name: Any = None
-    # The version of the bot member (e.g., '1' or '$LATEST') that is being associated with the parent bot in an Amazon Lex multi-region bot network. (AI-inferred)
     bot_member_version: Any = None
 
 @dataclasses.dataclass
 class Bot_DataPrivacy:
-    # Indicates whether the Amazon Lex bot collects information from children under age 13, requiring compliance with the Children's Online Privacy Protection Act (COPPA). (AI-inferred)
     child_directed: Any = None
 
 @dataclasses.dataclass
 class Bot_Replication:
-    # Specifies the list of AWS Regions to replicate the Lex bot to, enabling the bot to operate in multiple regions for high availability and reduced latency. (AI-inferred)
     replica_regions: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook:
-    # Specifies the version of the Lambda code hook interface used by the bot, with the only valid value being 1.0. (AI-inferred)
     code_hook_interface_version: Any = None
-    # ARN of the Lambda function invoked as the code hook for this bot alias locale, used to handle conversation flow or fulfillment logic. (AI-inferred)
     lambda_arn: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification:
-    # The lambda_code_hook object defines the AWS Lambda function used as the code hook for the bot alias locale, specifying the Lambda function ARN and the code hook interface version. (AI-inferred)
     lambda_code_hook: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_BotAliasLocaleSettings_BotAliasLocaleSetting:
-    # Specifies the AWS Lambda function and optional interface version that Amazon Lex V2 invokes to handle the bot's dialog for each locale configured on this bot alias. (AI-inferred)
     code_hook_specification: Any = None
-    # Determines whether the locale is enabled for the bot alias in the test bot alias settings; when false, the locale is not available for use. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_BotAliasLocaleSettings:
-    # Specifies the per-locale configuration for the test bot alias, including whether the alias is enabled for that locale and the Lambda code hook specification used to handle slot and intent requests. (AI-inferred)
     bot_alias_locale_setting: Any = None
-    # Specifies the locale identifier (such as 'en_US' or 'es_ES') for which the corresponding bot alias locale settings apply, enabling language-specific alias configuration. (AI-inferred)
     locale_id: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket:
-    # The ARN of the AWS KMS key used to encrypt audio conversation logs delivered to the S3 bucket. (AI-inferred)
     kms_key_arn: Any = None
-    # For Amazon Lex conversation logs, this sets the S3 object prefix under which the audio logs are stored in the destination S3 bucket. (AI-inferred)
     log_prefix: Any = None
-    # The ARN of the S3 bucket where audio conversation logs are delivered for this bot alias. (AI-inferred)
     s3_bucket_arn: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings_Destination:
-    # The S3 bucket destination for audio conversation logs, specifying the bucket name, ARN, and optional KMS key ARN used for encrypting the log files. (AI-inferred)
     s3_bucket: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_AudioLogSettings:
-    # Specifies the Amazon S3 bucket that receives audio conversation logs for the bot alias. (AI-inferred)
     destination: Any = None
-    # Whether audio conversation logs are enabled for the bot alias, allowing capture of audio streams to the configured S3 destination. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination_CloudWatch:
-    # The ARN of the CloudWatch log group where Amazon Lex delivers text conversation logs for this bot alias. (AI-inferred)
     cloud_watch_log_group_arn: Any = None
-    # The prefix that is prepended to the log stream names in CloudWatch Logs where Amazon Lex writes text conversation logs for the bot alias. (AI-inferred)
     log_prefix: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings_Destination:
-    # This object defines the destination for text conversation logs as a CloudWatch Logs log group, specifying the log group ARN to which Amazon Lex delivers the logs. (AI-inferred)
     cloud_watch: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings_TextLogSettings:
-    # Defines the Amazon S3 bucket (including optional KMS encryption key) where text conversation logs are delivered when text logging is enabled for the test bot alias's conversation log settings. (AI-inferred)
     destination: Any = None
-    # Whether text conversation logs are enabled for the bot alias. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_ConversationLogSettings:
-    # Specifies the list of audio log settings for the test bot alias's conversation logs, defining the S3 bucket destination and whether each audio log is enabled. (AI-inferred)
     audio_log_settings: Any = None
-    # Specifies a list of settings for text conversation logs on the bot alias, each containing an enabled flag and the ARN of the CloudWatch Logs log group where Lex delivers text transcripts. (AI-inferred)
     text_log_settings: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings_SentimentAnalysisSettings:
-    # Indicates whether Amazon Lex detects the sentiment of user utterances for the test bot alias, enabling sentiment-based responses when set to true. (AI-inferred)
     detect_sentiment: Any = None
 
 @dataclasses.dataclass
 class Bot_TestBotAliasSettings:
-    # Defines the per-locale settings (including Lambda code hook and enabled status) for the test bot alias associated with this Lex bot. (AI-inferred)
     bot_alias_locale_settings: Any = None
-    # Configures the conversation log settings, including text and audio log destinations, for the test bot alias of the Lex bot. (AI-inferred)
     conversation_log_settings: Any = None
     # A description of the resource
     description: Any = None
-    # Specifies sentiment analysis settings for the test bot alias, including the detectSentiment flag that enables or disables Amazon Lex sentiment detection on user utterances. (AI-inferred)
     sentiment_analysis_settings: Any = None
 
 _Bot_BotFileS3LocationFields = {
@@ -2101,69 +1808,45 @@ _Bot_TestBotAliasSettingsFields = {
 @dataclasses.dataclass
 class BotConfig:
     auto_build_bot_locales: Any = None
-    # Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
     bot_file_s3_location: Any = None
-    # Defines the list of locale-specific configurations for the bot, each with its own language and country, intents, slot types, and localized prompt/voice settings. (AI-inferred)
     bot_locales: Any = None
     # The list of bot members in a network to be created.
     bot_members: Any = None
-    # A list of key-value tag pairs (each containing 'key' and 'value') that are attached to the Amazon Lex bot for metadata, cost allocation, and access control. (AI-inferred)
     bot_tags: Any = None
     # The type of a bot to create.
     bot_type: Any = None
-    # Specifies data privacy settings for the bot, including the ChildDirected flag that indicates whether the bot is intended for children under 13, affecting how Amazon Lex stores and processes speech and user data. (AI-inferred)
     data_privacy: Any = None
     # A description of the resource
     description: Any = None
-    # Configures the CloudWatch log group and IAM role used to store error logs generated by the Amazon Lex bot. (AI-inferred)
     error_log_settings: Any = None
-    # Sets the number of seconds an Amazon Lex bot session remains active after the user's last interaction before the session is closed. (AI-inferred)
     idle_session_ttlin_seconds: Any = None
-    # The unique name assigned to the Amazon Lex bot, which is required and must be unique within the AWS account. (AI-inferred)
     name: Any = None
-    # The 'replication' property defines the cross-region replication configuration for the Lex bot, specifying the IAM replication role and the list of destination AWS regions to which the bot is replicated. (AI-inferred)
     replication: Any = None
-    # The ARN of an IAM role that Amazon Lex assumes to access other AWS services (such as Lambda functions) on behalf of the bot. (AI-inferred)
     role_arn: Any = None
-    # Configures the test bot alias used for validating the bot, including locale-specific alias settings, conversation log settings, and a description. (AI-inferred)
     test_bot_alias_settings: Any = None
-    # Defines the list of key-value tags applied to the test bot alias that AWS Lex creates for testing the bot. (AI-inferred)
     test_bot_alias_tags: Any = None
 
 @dataclasses.dataclass
 class BotAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this Amazon Lex bot in AWS. (AI-inferred)
     arn: Any = None
     auto_build_bot_locales: Any = None
-    # Configuration for the Amazon S3 location of the bot definition file, specifying the S3 bucket and object key used to import the bot. (AI-inferred)
     bot_file_s3_location: Any = None
-    # Defines the list of locale-specific configurations for the bot, each with its own language and country, intents, slot types, and localized prompt/voice settings. (AI-inferred)
     bot_locales: Any = None
     # The list of bot members in a network to be created.
     bot_members: Any = None
-    # A list of key-value tag pairs (each containing 'key' and 'value') that are attached to the Amazon Lex bot for metadata, cost allocation, and access control. (AI-inferred)
     bot_tags: Any = None
     # The type of a bot to create.
     bot_type: Any = None
-    # Specifies data privacy settings for the bot, including the ChildDirected flag that indicates whether the bot is intended for children under 13, affecting how Amazon Lex stores and processes speech and user data. (AI-inferred)
     data_privacy: Any = None
     # A description of the resource
     description: Any = None
-    # Configures the CloudWatch log group and IAM role used to store error logs generated by the Amazon Lex bot. (AI-inferred)
     error_log_settings: Any = None
-    # The unique identifier of the Lex bot, which is the bot's name. (AI-inferred)
     id: Any = None
-    # Sets the number of seconds an Amazon Lex bot session remains active after the user's last interaction before the session is closed. (AI-inferred)
     idle_session_ttlin_seconds: Any = None
-    # The unique name assigned to the Amazon Lex bot, which is required and must be unique within the AWS account. (AI-inferred)
     name: Any = None
-    # The 'replication' property defines the cross-region replication configuration for the Lex bot, specifying the IAM replication role and the list of destination AWS regions to which the bot is replicated. (AI-inferred)
     replication: Any = None
-    # The ARN of an IAM role that Amazon Lex assumes to access other AWS services (such as Lambda functions) on behalf of the bot. (AI-inferred)
     role_arn: Any = None
-    # Configures the test bot alias used for validating the bot, including locale-specific alias settings, conversation log settings, and a description. (AI-inferred)
     test_bot_alias_settings: Any = None
-    # Defines the list of key-value tags applied to the test bot alias that AWS Lex creates for testing the bot. (AI-inferred)
     test_bot_alias_tags: Any = None
 
 Bot = ubx.ResourceBinding(

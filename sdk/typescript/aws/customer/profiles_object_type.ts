@@ -2,39 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesObjectType_Fields_ObjectTypeField {
-  /** Configures the content type of the object type field, such as STRING, NUMBER, PHONE_NUMBER, or EMAIL_ADDRESS, which determines how the source data is interpreted and validated in Amazon Customer Profiles. (AI-inferred) */
   contentType?: string | Computed<string>;
-  /** Specifies the name of the source data field (e.g., a customer record attribute) that maps to and populates this profile object type field. (AI-inferred) */
   source?: string | Computed<string>;
-  /** The name of the field in the target Customer Profiles standard schema to which the source data field is mapped. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface ProfilesObjectType_Fields {
-  /** The name of the field in the Customer Profiles object type, which uniquely identifies the field and must be unique among all fields in the object type. (AI-inferred) */
   name?: string | Computed<string>;
-  /** This object defines how a field in the Customer Profiles object type maps to a specific attribute from the source profile data, specifying the source location, target field name, and data content type. (AI-inferred) */
   objectTypeField?: ProfilesObjectType_Fields_ObjectTypeField | Computed<ProfilesObjectType_Fields_ObjectTypeField>;
 }
 
 export interface ProfilesObjectType_Keys_ObjectTypeKeyList {
-  /** Specifies the list of field names that together form the unique key for this Customer Profiles object type. (AI-inferred) */
   fieldNames?: string[] | Computed<string[]>;
-  /** This field specifies the standard identifiers (such as PROFILE, ACCOUNT_NUMBER, EMAIL_ADDRESS, or PHONE_NUMBER) that classify how the key's field names are used for profile matching and deduplication in AWS Customer Profiles. (AI-inferred) */
   standardIdentifiers?: string[] | Computed<string[]>;
 }
 
 export interface ProfilesObjectType_Keys {
-  /** Specifies the unique name of the key definition, used to map a set of field names that uniquely identify a profile in the object type for search and matching. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines a list of object type key definitions for a key name in the object type's keys map, where each definition specifies the field names and standard identifiers used to uniquely identify and link customer profile objects. (AI-inferred) */
   objectTypeKeyList?: ProfilesObjectType_Keys_ObjectTypeKeyList[] | Computed<ProfilesObjectType_Keys_ObjectTypeKeyList[]>;
 }
 
 export interface ProfilesObjectType_Tags {
-  /** The key of a tag assigned to an Amazon Connect Customer Profiles object type, used to categorize and manage the resource for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Customer Profiles object type, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

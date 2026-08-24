@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerDirectConnectGatewayAttachment_ProposedNetworkFunctionGroupChange_Tags {
-  /** The key of a tag applied to the proposed network function group change for an AWS Network Manager Direct Connect Gateway attachment, used to add custom metadata to the change proposal. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag associated with the proposed network function group change for this Direct Connect gateway attachment, used to label or categorize the change. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

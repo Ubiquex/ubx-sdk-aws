@@ -8,32 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SmsTemplateConfig:
-    # The actual text content of the SMS message that Amazon Pinpoint sends to recipients when this template is used in a campaign or journey. (AI-inferred)
     body: Any = None
-    # Specifies the default substitution variables for the SMS template, provided as a JSON object (string) of key-value pairs that Pinpoint uses to replace message variables when no custom values are supplied. (AI-inferred)
     default_substitutions: Any = None
-    # A map of key-value pairs to assign as metadata tags to the SMS template, which can be used to categorize the template for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # A description of the SMS template, used to provide additional context or details about the template's purpose or content. (AI-inferred)
     template_description: Any = None
-    # The name of the SMS message template, which must be unique within your AWS account and is used to identify the template in the Pinpoint API. (AI-inferred)
     template_name: Any = None
 
 @dataclasses.dataclass
 class SmsTemplateAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying the SMS template in Amazon Pinpoint. (AI-inferred)
     arn: Any = None
-    # The actual text content of the SMS message that Amazon Pinpoint sends to recipients when this template is used in a campaign or journey. (AI-inferred)
     body: Any = None
-    # Specifies the default substitution variables for the SMS template, provided as a JSON object (string) of key-value pairs that Pinpoint uses to replace message variables when no custom values are supplied. (AI-inferred)
     default_substitutions: Any = None
-    # The template name, which serves as the unique identifier for the AWS Pinpoint SMS template. (AI-inferred)
     id: Any = None
-    # A map of key-value pairs to assign as metadata tags to the SMS template, which can be used to categorize the template for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # A description of the SMS template, used to provide additional context or details about the template's purpose or content. (AI-inferred)
     template_description: Any = None
-    # The name of the SMS message template, which must be unique within your AWS account and is used to identify the template in the Pinpoint API. (AI-inferred)
     template_name: Any = None
 
 SmsTemplate = ubx.ResourceBinding(

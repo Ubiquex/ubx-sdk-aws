@@ -4,48 +4,37 @@ package workspaces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancesWorkspaceInstance_Ec2ManagedInstance struct {
-	// The EC2 instance identifier for the underlying compute resource that AWS fully manages for this WorkSpace instance. (AI-inferred)
 	InstanceId any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_BlockDeviceMappings_Ebs struct {
-	// Specifies whether the EBS volume for the managed instance's block device mapping is encrypted at rest, enabling AWS EBS encryption for that volume. (AI-inferred)
 	Encrypted any
 	Iops any
-	// The KMS key ID used to encrypt the EBS volume defined in the block device mapping of the managed instance for this WorkSpace instance. (AI-inferred)
 	KmsKeyId any
 	Throughput any
-	// The size of the EBS volume (in GiB) for the block device mapping on the managed instance, determining the storage capacity of the device. (AI-inferred)
 	VolumeSize any
 	VolumeType any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_BlockDeviceMappings struct {
 	DeviceName any
-	// Specifies the Amazon EBS volume configuration (such as volume size, type, IOPS, encryption, snapshot ID, and delete-on-termination behavior) for the block device mapping attached to the managed instance. (AI-inferred)
 	Ebs any
-	// When set, this field suppresses the block device mapping, preventing the specified device from being exposed to the managed instance. (AI-inferred)
 	NoDevice any
 	VirtualName any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_CapacityReservationSpecification_CapacityReservationTarget struct {
-	// Specifies the ID of the EC2 Capacity Reservation that the WorkSpace's managed instance should be launched into, ensuring the instance uses reserved capacity. (AI-inferred)
 	CapacityReservationId any
-	// The ARN of the resource group whose Capacity Reservation the managed instance will target, enabling the instance to use reserved EC2 capacity from that group. (AI-inferred)
 	CapacityReservationResourceGroupArn any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_CapacityReservationSpecification struct {
-	// Specifies whether the managed EC2 instance should launch into an open Capacity Reservation (value 'open') or ignore open reservations (value 'none'), controlling how existing reserved capacity is used. (AI-inferred)
 	CapacityReservationPreference any
-	// Defines the target capacity reservation (by its ID or resource group ARN) that the WorkSpace's managed instance will use to reserve compute capacity. (AI-inferred)
 	CapacityReservationTarget any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_CpuOptions struct {
 	CoreCount any
-	// Specifies the number of threads per core for the managed instance's CPU options, with a value of 1 disabling Intel Hyper-Threading for the WorkSpace's underlying EC2 instance. (AI-inferred)
 	ThreadsPerCore any
 }
 
@@ -54,63 +43,47 @@ type InstancesWorkspaceInstance_ManagedInstance_CreditSpecification struct {
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_EnclaveOptions struct {
-	// When enabled, this boolean enables AWS Nitro Enclaves for the underlying managed EC2 instance that backs this WorkSpace, allowing the instance to run isolated enclave environments. (AI-inferred)
 	Enabled any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_HibernationOptions struct {
-	// Specifies whether hibernation is enabled for the WorkSpace instance, allowing it to be stopped and later resumed with its memory contents preserved. (AI-inferred)
 	Configured any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_IamInstanceProfile struct {
-	// The Amazon Resource Name (ARN) of the IAM instance profile attached to the managed instance, granting it the permissions defined by the profile's IAM role. (AI-inferred)
 	Arn any
-	// The name of the IAM instance profile to attach to the managed instance, which determines the IAM role and permissions granted to that instance. (AI-inferred)
 	Name any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_LicenseSpecifications struct {
-	// Specifies the ARN of an AWS License Manager license configuration to attach to the WorkSpace's managed instance, enabling license tracking and management for the software running on that instance. (AI-inferred)
 	LicenseConfigurationArn any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_MaintenanceOptions struct {
-	// Specifies the auto-recovery behavior for the WorkSpace's maintenance options, accepting 'ENABLED' to allow AWS to automatically restart the instance after a failure or 'DISABLED' to turn off this automatic restart. (AI-inferred)
 	AutoRecovery any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_MetadataOptions struct {
-	// Specifies whether the HTTP endpoint for the instance metadata service is enabled or disabled on the managed instance's metadata options. (AI-inferred)
 	HttpEndpoint any
-	// Controls whether the IPv6 endpoint of the instance metadata service (IMDS) is enabled or disabled for the managed instance, permitting or blocking access to instance metadata over IPv6. (AI-inferred)
 	HttpProtocolIpv6 any
-	// Specifies the maximum number of network hops allowed for the instance metadata service (IMDS) HTTP PUT responses, controlling the token's reachability to prevent unauthorized access to instance metadata. (AI-inferred)
 	HttpPutResponseHopLimit any
 	HttpTokens any
-	// Specifies whether the managed instance can retrieve the instance's tags through the instance metadata service (allowed values are typically 'enabled' or 'disabled'). (AI-inferred)
 	InstanceMetadataTags any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_NetworkInterfaces struct {
 	Description any
-	// The zero-based device index of the elastic network interface attached to the WorkSpace's managed instance, where 0 represents the primary network interface. (AI-inferred)
 	DeviceIndex any
-	// The list of security group IDs attached to the network interface of the managed WorkSpace instance, controlling inbound and outbound traffic. (AI-inferred)
 	Groups any
-	// The ID of the subnet in your VPC where the Workspace's managed network interface is deployed. (AI-inferred)
 	SubnetId any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_NetworkPerformanceOptions struct {
-	// Determines the bandwidth weighting for the managed instance's network performance options, where 'default' uses the instance's baseline network bandwidth and 'vpc-only' restricts network traffic to the VPC and may reduce the available bandwidth. (AI-inferred)
 	BandwidthWeighting any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_Placement struct {
-	// Sets the Availability Zone in which the underlying managed instance of this WorkSpace is launched, allowing the workload to be placed in a specific AWS data center. (AI-inferred)
 	AvailabilityZone any
-	// Specifies the ID of the EC2 placement group into which the WorkSpace's managed instance is launched, enabling low-latency, high-bandwidth network communication with other instances in the same placement group. (AI-inferred)
 	GroupId any
 	GroupName any
 	PartitionNumber any
@@ -118,66 +91,46 @@ type InstancesWorkspaceInstance_ManagedInstance_Placement struct {
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_PrivateDnsNameOptions struct {
-	// Controls whether the WorkSpaces managed EC2 instance's private DNS name gets a resource name DNS AAAA record (IPv6), enabling IPv6 DNS resolution for that resource name. (AI-inferred)
 	EnableResourceNameDnsAaaarecord any
-	// When enabled, this creates a DNS A record in the VPC's private hosted zone for the resource name of the managed instance, allowing its private DNS name to resolve to the instance's IPv4 address via the resource name. (AI-inferred)
 	EnableResourceNameDnsArecord any
-	// Specifies the hostname type (either 'ip-name' or 'resource-name') used for the private DNS name of the managed WorkSpaces instance, determining whether the private DNS record is based on the instance's IP address or its resource name. (AI-inferred)
 	HostnameType any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_TagSpecifications_Tags struct {
-	// The key of a tag to apply to the managed WorkSpace instance within its tag specification. (AI-inferred)
 	Key any
 	Value any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance_TagSpecifications struct {
-	// Identifies the AWS resource type that the tag specification applies to, such as 'instance' for tagging the managed EC2 instance backing a WorkSpace. (AI-inferred)
 	ResourceType any
 	Tags any
 }
 
 type InstancesWorkspaceInstance_ManagedInstance struct {
 	BlockDeviceMappings any
-	// Specifies the EC2 Capacity Reservation targeting options for the underlying managed instance of the WorkSpace, such as launching into a specific Capacity Reservation or using the default on-demand preference. (AI-inferred)
 	CapacityReservationSpecification any
-	// Specifies the CPU options, such as core count and threads per core, for the underlying managed EC2 instance that runs the WorkSpace. (AI-inferred)
 	CpuOptions any
 	CreditSpecification any
-	// When set to true, this prevents the underlying managed EC2 instance for the WorkSpace from being stopped through the EC2 StopInstances API operation, allowing it to be stopped only by a user shutdown from within the operating system. (AI-inferred)
 	DisableApiStop any
 	EbsOptimized any
-	// When enabled, assigns an IPv6 address to the primary network interface of the managed WorkSpace instance. (AI-inferred)
 	EnablePrimaryIpv6 any
-	// Specifies the Nitro Enclaves options for the underlying managed EC2 instance of this WorkSpace, controlling whether enclaves are enabled on that instance. (AI-inferred)
 	EnclaveOptions any
-	// Configures the hibernation option for the WorkSpace instance, specifically enabling or disabling hibernation of the instance. (AI-inferred)
 	HibernationOptions any
 	IamInstanceProfile any
-	// The unique identifier of the Amazon WorkSpaces image used to create the WorkSpace instance, determining its operating system and preinstalled software. (AI-inferred)
 	ImageId any
-	// The compute type for the managed WorkSpace instance (e.g., STANDARD, PERFORMANCE, POWER, GRAPHICS) that determines the CPU, memory, and GPU capacity allocated to the virtual desktop. (AI-inferred)
 	InstanceType any
 	Ipv6AddressCount any
-	// The name of the EC2 key pair that encrypts the WorkSpace user's password when the WorkSpace is created. (AI-inferred)
 	KeyName any
-	// A list of license configuration ARNs that are associated with the managed instance for license tracking and compliance. (AI-inferred)
 	LicenseSpecifications any
 	MaintenanceOptions any
-	// Controls the Instance Metadata Service (IMDS) on the managed instance, including whether HTTP requests are allowed, whether IMDSv2 tokens are required, and the maximum hop limit. (AI-inferred)
 	MetadataOptions any
 	Monitoring any
-	// Provides a list of network interfaces attached to the managed EC2 instance, including their IP addresses and network configuration. (AI-inferred)
 	NetworkInterfaces any
-	// Specifies the network performance options for the managed instance, mirroring EC2's NetworkPerformanceOptions object which typically includes a bandwidth-weighted ENA flag to optimize network throughput. (AI-inferred)
 	NetworkPerformanceOptions any
 	Placement any
 	PrivateDnsNameOptions any
-	// The ID of the subnet in which the WorkSpace's underlying managed EC2 instance is launched. (AI-inferred)
 	SubnetId any
 	TagSpecifications any
-	// Defines the user data script executed on the WorkSpace's managed instance during provisioning, enabling automated setup like software installation or registry changes. (AI-inferred)
 	UserData any
 }
 
@@ -386,17 +339,14 @@ var InstancesWorkspaceInstance_ManagedInstanceFields = ubx.FieldMap{
 
 type InstancesWorkspaceInstanceConfig struct {
 	ManagedInstance any
-	// Assigns a list of key-value tags to the WorkSpace instance for resource identification, cost tracking, and access management. (AI-inferred)
 	Tags any
 }
 
 type InstancesWorkspaceInstanceAttrs struct {
-	// Provides the read-only details of the EC2 instance that AWS WorkSpaces automatically manages for this workspace instance. (AI-inferred)
 	Ec2ManagedInstance any
 	ManagedInstance any
 	// The current state of the workspace instance
 	ProvisionState any
-	// Assigns a list of key-value tags to the WorkSpace instance for resource identification, cost tracking, and access management. (AI-inferred)
 	Tags any
 	// Unique identifier for the workspace instance
 	WorkspaceInstanceId any

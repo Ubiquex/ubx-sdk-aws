@@ -2,34 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributes {
-  /** The comparison operator that determines how the referenced object attribute's value is evaluated against the configured values (for example, EQUAL, GREATER_THAN, LESS_THAN, or BETWEEN) in an event trigger condition. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
-  /** Specifies the name of the profile object attribute (e.g., 'Email' or 'LastName') that the event trigger condition evaluates to determine whether to activate the associated workflow. (AI-inferred) */
   fieldName?: string | Computed<string>;
-  /** The name of the source object type (e.g., Profile or Order) whose field is used as the grouping dimension in the event trigger condition. (AI-inferred) */
   source?: string | Computed<string>;
-  /** The list of attribute values that the object attribute (specified by the parent object_attributes.source field) must equal for the event trigger condition to be satisfied. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions {
-  /** Defines the list of customer profile object attributes, along with their comparison operators and values, used as dimensions to evaluate whether the event trigger conditions are met. (AI-inferred) */
   objectAttributes?: ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributes[] | Computed<ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributes[]>;
 }
 
 export interface ProfilesEventTrigger_EventTriggerConditions {
-  /** Specifies a list of event trigger dimensions, each defining the object type and matching attribute dimensions (type and values) that together form a condition under which the event trigger fires. (AI-inferred) */
   eventTriggerDimensions?: ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions[] | Computed<ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions[]>;
-  /** Specifies the logical operator (AND or OR) used to combine the event triggers within this condition group in the AWS Customer Profiles event trigger, determining whether all or any of the triggers must match. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
 }
 
 export interface ProfilesEventTrigger_EventTriggerLimits_Periods {
-  /** Defines the maximum number of times the event trigger can be invoked for a single customer profile within the specified time period. (AI-inferred) */
   maxInvocationsPerProfile?: number | Computed<number>;
   unit?: string | Computed<string>;
   unlimited?: boolean | Computed<boolean>;
-  /** In an Amazon Customer Profiles event trigger limit period, this value specifies the number of time units (such as days or hours) that define the duration during which the trigger's maximum invocations are constrained. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
@@ -41,7 +32,6 @@ export interface ProfilesEventTrigger_EventTriggerLimits {
 }
 
 export interface ProfilesEventTrigger_Tags {
-  /** The tag key component of a key-value pair assigned to the event trigger, identifying the tag's name within the resource's tag set. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

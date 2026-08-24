@@ -20,7 +20,6 @@ export interface ExpressAccessPoint_Scope {
 }
 
 export interface ExpressAccessPoint_Tags {
-  /** The tag key is the user-defined name (e.g., 'Environment') for a metadata tag attached to the S3 Express access point, used for categorization and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -60,9 +59,7 @@ export interface ExpressAccessPointConfig {
   name?: string | Computed<string>;
   /** The Access Point Policy you want to apply to this access point. */
   policy?: unknown | Computed<unknown>;
-  /** Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred) */
   publicAccessBlockConfiguration?: ExpressAccessPoint_PublicAccessBlockConfiguration | Computed<ExpressAccessPoint_PublicAccessBlockConfiguration>;
-  /** Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred) */
   scope?: ExpressAccessPoint_Scope | Computed<ExpressAccessPoint_Scope>;
   tags?: ExpressAccessPoint_Tags[] | Computed<ExpressAccessPoint_Tags[]>;
   /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */
@@ -82,9 +79,7 @@ export interface ExpressAccessPointAttrs {
   networkOrigin: string;
   /** The Access Point Policy you want to apply to this access point. */
   policy: unknown;
-  /** Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred) */
   publicAccessBlockConfiguration: ExpressAccessPoint_PublicAccessBlockConfiguration;
-  /** Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred) */
   scope: ExpressAccessPoint_Scope;
   tags: ExpressAccessPoint_Tags[];
   /** The Virtual Private Cloud (VPC) configuration for a bucket access point. */

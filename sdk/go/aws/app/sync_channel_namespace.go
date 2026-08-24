@@ -11,7 +11,6 @@ type SyncChannelNamespace_HandlerConfigs_OnPublish_Integration_LambdaConfig stru
 type SyncChannelNamespace_HandlerConfigs_OnPublish_Integration struct {
 	// Data source to invoke for this integration.
 	DataSourceName any
-	// This object configures the AWS Lambda integration for the on-publish handler, specifying the Lambda function ARN (and optional payload format) to invoke when a message is published to the channel namespace. (AI-inferred)
 	LambdaConfig any
 }
 
@@ -22,21 +21,16 @@ type SyncChannelNamespace_HandlerConfigs_OnPublish struct {
 }
 
 type SyncChannelNamespace_HandlerConfigs struct {
-	// Configures the runtime and entry point for the publish handler in the AppSync channel namespace, controlling how publish events are processed. (AI-inferred)
 	OnPublish any
-	// Defines the Lambda function settings (such as function ARN and invocation configuration) that AppSync invokes for the onSubscribe event in the channel namespace, enabling custom authorization and channel routing for client subscription requests. (AI-inferred)
 	OnSubscribe any
 }
 
 type SyncChannelNamespace_PublishAuthModes struct {
-	// Specifies the identity/authorization mode (such as API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, or AWS_LAMBDA) that clients must present when publishing events to the AppSync channel namespace. (AI-inferred)
 	AuthType any
 }
 
 type SyncChannelNamespace_Tags struct {
-	// The key part of a key-value tag attached to the AWS AppSync channel namespace, providing metadata used to categorize the resource. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair attached to the AppSync channel namespace resource. (AI-inferred)
 	Value any
 }
 
@@ -91,13 +85,10 @@ type SyncChannelNamespaceConfig struct {
 	CodeHandlers any
 	// The Amazon S3 endpoint where the code is located.
 	CodeS3Location any
-	// A map of named event handler configurations for this AppSync channel namespace, where each value defines the code executed by AppSync to process events on that handler. (AI-inferred)
 	HandlerConfigs any
 	// Namespace indentifier.
 	Name any
-	// Configures the set of authorization modes (such as API key, IAM, or Cognito user pools) that are allowed for publishing messages to channels within this AWS AppSync channel namespace. (AI-inferred)
 	PublishAuthModes any
-	// Specifies the list of authorization modes permitted for clients when subscribing to events in this AppSync channel namespace. (AI-inferred)
 	SubscribeAuthModes any
 	// An arbitrary set of tags (key-value pairs) for this AppSync API.
 	Tags any
@@ -112,13 +103,10 @@ type SyncChannelNamespaceAttrs struct {
 	CodeHandlers any
 	// The Amazon S3 endpoint where the code is located.
 	CodeS3Location any
-	// A map of named event handler configurations for this AppSync channel namespace, where each value defines the code executed by AppSync to process events on that handler. (AI-inferred)
 	HandlerConfigs any
 	// Namespace indentifier.
 	Name any
-	// Configures the set of authorization modes (such as API key, IAM, or Cognito user pools) that are allowed for publishing messages to channels within this AWS AppSync channel namespace. (AI-inferred)
 	PublishAuthModes any
-	// Specifies the list of authorization modes permitted for clients when subscribing to events in this AppSync channel namespace. (AI-inferred)
 	SubscribeAuthModes any
 	// An arbitrary set of tags (key-value pairs) for this AppSync API.
 	Tags any

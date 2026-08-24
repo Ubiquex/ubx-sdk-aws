@@ -4,9 +4,7 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaybackRestrictionPolicy_Tags struct {
-	// Specifies a tag key for the IVS playback restriction policy, used to assign metadata that helps manage, categorize, and filter the policy resource. (AI-inferred)
 	Key any
-	// Specifies the value for a tag key attached to the AWS IVS playback restriction policy, used to categorize and manage the policy resource. (AI-inferred)
 	Value any
 }
 

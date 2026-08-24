@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ContactFlow_Tags {
-  /** The key portion of a tag applied to an Amazon Connect contact flow, used to categorize the resource and enforce tag-based access control in IAM policies. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of an individual tag assigned to the Amazon Connect contact flow. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,69 +2,48 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerModel_Containers_ImageConfig_RepositoryAuthConfig {
-  /** Specifies the ARN of an AWS Secrets Manager secret that holds the credentials for accessing a private container repository, used by the SageMaker model container's image configuration. (AI-inferred) */
   repositoryCredentialsProviderArn?: string | Computed<string>;
 }
 
 export interface MakerModel_Containers_ImageConfig {
-  /** Sets the repository access mode for the container image, with Platform using the default public registry access and Vpc enabling access through your Amazon VPC for private ECR repositories. (AI-inferred) */
   repositoryAccessMode?: string | Computed<string>;
-  /** Configures authentication for pulling container images from a private repository by specifying the ARN of an AWS Secrets Manager secret that holds the repository credentials. (AI-inferred) */
   repositoryAuthConfig?: MakerModel_Containers_ImageConfig_RepositoryAuthConfig | Computed<MakerModel_Containers_ImageConfig_RepositoryAuthConfig>;
 }
 
 export interface MakerModel_Containers_ModelDataSource_S3DataSource_HubAccessConfig {
-  /** The ARN of the SageMaker Hub content that serves as the model data source when the model is referenced from a hub. (AI-inferred) */
   hubContentArn?: string | Computed<string>;
 }
 
 export interface MakerModel_Containers_ModelDataSource_S3DataSource_ModelAccessConfig {
-  /** Indicates whether to accept the End User License Agreement (EULA) required to access the model artifact from the specified S3 data source. (AI-inferred) */
   acceptEula?: boolean | Computed<boolean>;
 }
 
 export interface MakerModel_Containers_ModelDataSource_S3DataSource {
-  /** Specifies the compression type of the model data in Amazon S3, either 'None' or 'Gzip'. (AI-inferred) */
   compressionType?: string | Computed<string>;
   hubAccessConfig?: MakerModel_Containers_ModelDataSource_S3DataSource_HubAccessConfig | Computed<MakerModel_Containers_ModelDataSource_S3DataSource_HubAccessConfig>;
-  /** Controls access to the S3 model data by specifying whether to accept the end-user license agreement (EULA) for the model. (AI-inferred) */
   modelAccessConfig?: MakerModel_Containers_ModelDataSource_S3DataSource_ModelAccessConfig | Computed<MakerModel_Containers_ModelDataSource_S3DataSource_ModelAccessConfig>;
-  /** Specifies whether the S3 data source is an S3 prefix pointing to model artifacts (S3Prefix) or a manifest file that lists the model artifacts (ManifestFile). (AI-inferred) */
   s3DataType?: string | Computed<string>;
-  /** The S3 URI that specifies the location of the model artifacts in Amazon S3 for this container, which SageMaker uses to download the model when the data source is an S3DataSource. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerModel_Containers_ModelDataSource {
-  /** Defines the S3 data source used to point SageMaker at the model artifacts for a container, by specifying the S3 bucket URI and the data type (S3Prefix or S3Object) of the model data. (AI-inferred) */
   s3DataSource?: MakerModel_Containers_ModelDataSource_S3DataSource | Computed<MakerModel_Containers_ModelDataSource_S3DataSource>;
 }
 
 export interface MakerModel_Containers_MultiModelConfig {
-  /** Specifies whether SageMaker caches the model artifacts at the endpoint for a multi-model endpoint, with values 'Enabled' or 'Disabled'. (AI-inferred) */
   modelCacheSetting?: string | Computed<string>;
 }
 
 export interface MakerModel_Containers {
-  /** Specifies the custom hostname assigned to the container within a multi-container SageMaker model, allowing other containers to address it by that hostname. (AI-inferred) */
   containerHostname?: string | Computed<string>;
-  /** A map of environment variable keys and values that are passed to the container when the SageMaker model is deployed. (AI-inferred) */
   environment?: unknown | Computed<unknown>;
-  /** Specifies the Amazon ECR registry path (image URI) of the Docker image that SageMaker uses to run inference for this container in the model. (AI-inferred) */
   image?: string | Computed<string>;
-  /** Configures how the container image is accessed, including the repository access mode (Platform or Vpc) and optional credentials provider ARN for pulling the image from a private registry. (AI-inferred) */
   imageConfig?: MakerModel_Containers_ImageConfig | Computed<MakerModel_Containers_ImageConfig>;
-  /** Specifies the name of an inference specification from a model package to use for this container when creating the SageMaker model, enabling selection among multiple inference configurations defined in the model package. (AI-inferred) */
   inferenceSpecificationName?: string | Computed<string>;
-  /** Determines whether this container serves a single model ('SingleModel', the default) or is configured to host multiple models in a multi-model endpoint ('MultiModel'). (AI-inferred) */
   mode?: string | Computed<string>;
-  /** Provides the model data source configuration for a SageMaker model container, specifying the S3 location (URI and data type) of the model artifact instead of using the direct ModelDataUrl field. (AI-inferred) */
   modelDataSource?: MakerModel_Containers_ModelDataSource | Computed<MakerModel_Containers_ModelDataSource>;
-  /** Specifies the S3 URL (e.g., s3://bucket/model.tar.gz) of the model artifacts used by this container definition in the SageMaker model. (AI-inferred) */
   modelDataUrl?: string | Computed<string>;
-  /** The name of the model package to use for this container, which references an existing model package registered in Amazon SageMaker Model Registry. (AI-inferred) */
   modelPackageName?: string | Computed<string>;
-  /** Configures this container for multi-model endpoints by setting the model cache behavior (e.g., enabling or disabling the cache of models in the container's memory). (AI-inferred) */
   multiModelConfig?: MakerModel_Containers_MultiModelConfig | Computed<MakerModel_Containers_MultiModelConfig>;
 }
 
@@ -74,9 +53,7 @@ export interface MakerModel_InferenceExecutionConfig {
 }
 
 export interface MakerModel_Tags {
-  /** A tag key that, together with a tag value, attaches metadata to the SageMaker model for resource organization, cost allocation, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the SageMaker model, used to store arbitrary metadata such as cost center or environment for the model. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

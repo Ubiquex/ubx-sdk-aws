@@ -23,7 +23,6 @@ class Schema_Registry:
 @dataclasses.dataclass
 class Schema_Tags:
     key: Any = None
-    # The value of a tag attached to an AWS Glue schema, which allows you to assign custom metadata to the schema for cost tracking, access control, and operational organization. (AI-inferred)
     value: Any = None
 
 _Schema_CheckpointVersionFields = {

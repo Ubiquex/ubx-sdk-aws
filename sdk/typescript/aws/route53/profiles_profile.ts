@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesProfile_Tags {
-  /** The key of a tag attached to the Route 53 Profiles profile, used to identify and categorize the profile in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag assigned to the Route 53 Profile, used to organize, identify, and manage access to the profile. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -14,9 +14,7 @@ type LakeDataLake_LifecycleConfiguration_Expiration struct {
 }
 
 type LakeDataLake_LifecycleConfiguration_Transitions struct {
-	// The number of days after object creation that the lifecycle transition moves the data to the storage class defined in the parent transition rule. (AI-inferred)
 	Days any
-	// The S3 storage class (e.g., STANDARD_IA, GLACIER) that this lifecycle transition moves the data lake's objects to after the specified transition_days. (AI-inferred)
 	StorageClass any
 }
 
@@ -35,9 +33,7 @@ type LakeDataLake_ReplicationConfiguration struct {
 }
 
 type LakeDataLake_Tags struct {
-	// The key (name) of a tag in the Tags map that attaches user-defined metadata to the AWS Security Lake data lake, commonly used for cost allocation and resource organization. (AI-inferred)
 	Key any
-	// The value component of a tag assigned to the AWS Security Lake data lake, used to attach arbitrary metadata for resource management and identification. (AI-inferred)
 	Value any
 }
 
@@ -86,7 +82,6 @@ type LakeDataLakeConfig struct {
 	MetaStoreManagerRoleArn any
 	// Provides replication details of Amazon Security Lake object.
 	ReplicationConfiguration any
-	// A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred)
 	Tags any
 }
 
@@ -103,7 +98,6 @@ type LakeDataLakeAttrs struct {
 	ReplicationConfiguration any
 	// The ARN for the Amazon Security Lake Amazon S3 bucket.
 	S3BucketArn any
-	// A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred)
 	Tags any
 }
 

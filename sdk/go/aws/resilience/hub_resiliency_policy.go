@@ -52,7 +52,6 @@ var HubResiliencyPolicy_PolicyFields = ubx.FieldMap{
 type HubResiliencyPolicyConfig struct {
 	// Data Location Constraint of the Policy.
 	DataLocationConstraint any
-	// Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred)
 	Policy any
 	// Description of Resiliency Policy.
 	PolicyDescription any
@@ -66,7 +65,6 @@ type HubResiliencyPolicyConfig struct {
 type HubResiliencyPolicyAttrs struct {
 	// Data Location Constraint of the Policy.
 	DataLocationConstraint any
-	// Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred)
 	Policy any
 	// Amazon Resource Name (ARN) of the Resiliency Policy.
 	PolicyArn any

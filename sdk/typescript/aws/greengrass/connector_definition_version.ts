@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectorDefinitionVersion_Connectors {
-  /** The ARN of the AWS IoT Greengrass connector that this connector definition version includes. (AI-inferred) */
   connectorArn?: string | Computed<string>;
-  /** The user-defined unique identifier for each connector within the Greengrass connector definition version, used to reference the connector in the group configuration. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies the configuration parameters for the Greengrass connector, passed as key-value pairs to the connector's Lambda function. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
 }
 
@@ -17,18 +14,13 @@ const ConnectorDefinitionVersion_ConnectorsFields: FieldMap = {
 };
 
 export interface ConnectorDefinitionVersionConfig {
-  /** Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred) */
   connectorDefinitionId: string | Computed<string>;
-  /** Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred) */
   connectors: ConnectorDefinitionVersion_Connectors[] | Computed<ConnectorDefinitionVersion_Connectors[]>;
 }
 
 export interface ConnectorDefinitionVersionAttrs {
-  /** Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred) */
   connectorDefinitionId: string;
-  /** Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred) */
   connectors: ConnectorDefinitionVersion_Connectors[];
-  /** The unique version UUID that AWS IoT Greengrass assigns to this connector definition version, returned by the CreateConnectorDefinitionVersion API. (AI-inferred) */
   id: string;
 }
 

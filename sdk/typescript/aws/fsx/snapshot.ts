@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Snapshot_Tags {
-  /** The key of a tag attached to the Amazon FSx snapshot, used to organize and identify the snapshot within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the FSx snapshot, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,22 +12,16 @@ const Snapshot_TagsFields: FieldMap = {
 };
 
 export interface SnapshotConfig {
-  /** The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred) */
   name: string | Computed<string>;
   tags?: Snapshot_Tags[] | Computed<Snapshot_Tags[]>;
-  /** The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred) */
   volumeId: string | Computed<string>;
 }
 
 export interface SnapshotAttrs {
-  /** The unique identifier assigned by AWS to this FSx snapshot. (AI-inferred) */
   id: string;
-  /** The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred) */
   name: string;
-  /** The Amazon Resource Name (ARN) assigned by AWS to the FSx snapshot, uniquely identifying it across regions and accounts. (AI-inferred) */
   resourceArn: string;
   tags: Snapshot_Tags[];
-  /** The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred) */
   volumeId: string;
 }
 

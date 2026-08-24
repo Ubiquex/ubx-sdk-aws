@@ -20,9 +20,7 @@ class LiftGameServerGroup_AutoScalingPolicy:
 
 @dataclasses.dataclass
 class LiftGameServerGroup_InstanceDefinitions:
-    # The EC2 instance type (e.g., c5.large, m5.large) that GameLift uses to launch instances in this game server group's underlying fleet. (AI-inferred)
     instance_type: Any = None
-    # Sets the relative weighting that this instance type contributes to the game server group's total capacity, used by Amazon GameLift to determine how many instances of each type are needed to meet the group's target capacity. (AI-inferred)
     weighted_capacity: Any = None
 
 @dataclasses.dataclass
@@ -36,9 +34,7 @@ class LiftGameServerGroup_LaunchTemplate:
 
 @dataclasses.dataclass
 class LiftGameServerGroup_Tags:
-    # The key of a tag assigned to this GameLift game server group. (AI-inferred)
     key: Any = None
-    # The value of an arbitrary tag key assigned to the GameLift GameServerGroup, used for resource organization, cost allocation, and access control. (AI-inferred)
     value: Any = None
 
 _LiftGameServerGroup_AutoScalingPolicy_TargetTrackingConfigurationFields = {

@@ -4,33 +4,24 @@ package roles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnywhereTrustAnchor_NotificationSettings struct {
-	// Specifies the channel through which notifications are sent for this trust anchor; valid values are ALL (send to all configured channels) or SNS (send only to an Amazon SNS topic). (AI-inferred)
 	Channel any
-	// A boolean that indicates whether notifications for the associated event (e.g., CA certificate expiration) are enabled for this trust anchor. (AI-inferred)
 	Enabled any
 	Event any
-	// The number of days before a certificate expires that triggers the notification event defined in this notification setting. (AI-inferred)
 	Threshold any
 }
 
 type AnywhereTrustAnchor_Source_SourceData struct {
-	// The ARN of the AWS Certificate Manager Private Certificate Authority (ACM PCA) that serves as the source of trust for this AWS Roles Anywhere trust anchor. (AI-inferred)
 	AcmPcaArn any
-	// The PEM-encoded X.509 certificate data used as the trust anchor for AWS Roles Anywhere to validate temporary credentials. (AI-inferred)
 	X509CertificateData any
 }
 
 type AnywhereTrustAnchor_Source struct {
-	// Specifies the certificate authority data for the trust anchor, containing either the X.509 certificate contents in x509CertificateData or the ACM Private CA ARN in acmPcaArn, depending on the sourceType. (AI-inferred)
 	SourceData any
-	// Specifies the type of trust anchor source, either AWS_ACM_PCA or CERTIFICATE_BUNDLE, which determines how the source data (ACM Private CA ARN or PEM-encoded certificate bundle) is interpreted. (AI-inferred)
 	SourceType any
 }
 
 type AnywhereTrustAnchor_Tags struct {
-	// Specifies the key of a tag assigned to the AWS IAM Roles Anywhere trust anchor, used to organize, identify, and manage the resource within AWS. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to the AWS Roles Anywhere trust anchor, used for metadata and resource identification. (AI-inferred)
 	Value any
 }
 
@@ -61,32 +52,20 @@ var AnywhereTrustAnchor_TagsFields = ubx.FieldMap{
 	}
 
 type AnywhereTrustAnchorConfig struct {
-	// Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred)
 	Enabled any
-	// Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred)
 	Name any
-	// List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred)
 	NotificationSettings any
-	// Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred)
 	Source any
-	// A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred)
 	Tags any
 }
 
 type AnywhereTrustAnchorAttrs struct {
-	// Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred)
 	Enabled any
-	// Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred)
 	Name any
-	// List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred)
 	NotificationSettings any
-	// Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred)
 	Source any
-	// A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred)
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies the trust anchor. (AI-inferred)
 	TrustAnchorArn any
-	// The unique identifier assigned by AWS to the trust anchor when it is created, used to reference the trust anchor in other IAM Roles Anywhere operations. (AI-inferred)
 	TrustAnchorId any
 }
 

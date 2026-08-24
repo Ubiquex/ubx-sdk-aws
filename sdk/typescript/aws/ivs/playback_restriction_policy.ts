@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PlaybackRestrictionPolicy_Tags {
-  /** Specifies a tag key for the IVS playback restriction policy, used to assign metadata that helps manage, categorize, and filter the policy resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a tag key attached to the AWS IVS playback restriction policy, used to categorize and manage the policy resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

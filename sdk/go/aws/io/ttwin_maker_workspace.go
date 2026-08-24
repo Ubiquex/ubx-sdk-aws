@@ -19,7 +19,6 @@ type TtwinMakerWorkspaceConfig struct {
 type TtwinMakerWorkspaceAttrs struct {
 	// The ARN of the workspace.
 	Arn any
-	// The date and time when the workspace was created, in ISO 8601 format. (AI-inferred)
 	CreationDateTime any
 	// The description of the workspace.
 	Description any
@@ -29,7 +28,6 @@ type TtwinMakerWorkspaceAttrs struct {
 	S3Location any
 	// A map of key-value pairs to associate with a resource.
 	Tags any
-	// The date and time when the workspace was last updated, in ISO 8601 format. (AI-inferred)
 	UpdateDateTime any
 	// The ID of the workspace.
 	WorkspaceId any

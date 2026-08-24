@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbclusterParameterGroup_Tags:
-    # The key of a tag applied to the DB cluster parameter group, used to organize and identify the resource within AWS cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the DB cluster parameter group, used to categorize the resource for cost tracking, access control, and operational management. (AI-inferred)
     value: Any = None
 
 _DbclusterParameterGroup_TagsFields = {

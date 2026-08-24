@@ -2,53 +2,40 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DutyDetector_DataSources_Kubernetes_AuditLogs {
-  /** Whether to enable Kubernetes audit logs as a data source for the GuardDuty detector. (AI-inferred) */
   enable: boolean | Computed<boolean>;
 }
 
 export interface DutyDetector_DataSources_Kubernetes {
-  /** Configures whether AWS GuardDuty uses Kubernetes audit logs as a data source, typically containing an 'Enable' boolean to turn this feature on or off. (AI-inferred) */
   auditLogs: DutyDetector_DataSources_Kubernetes_AuditLogs | Computed<DutyDetector_DataSources_Kubernetes_AuditLogs>;
 }
 
 export interface DutyDetector_DataSources_MalwareProtection_ScanEc2InstanceWithFindings {
-  /** When enabled, GuardDuty malware protection scans the EBS volumes attached to EC2 instances associated with GuardDuty findings, under the scan_ec2_instance_with_findings malware protection configuration. (AI-inferred) */
   ebsVolumes?: boolean | Computed<boolean>;
 }
 
 export interface DutyDetector_DataSources_MalwareProtection {
-  /** This object configures Malware Protection for EC2 instances with active GuardDuty findings, with the nested `ebs_volumes` property controlling whether attached EBS volumes are scanned for malware. (AI-inferred) */
   scanEc2InstanceWithFindings?: DutyDetector_DataSources_MalwareProtection_ScanEc2InstanceWithFindings | Computed<DutyDetector_DataSources_MalwareProtection_ScanEc2InstanceWithFindings>;
 }
 
 export interface DutyDetector_DataSources {
-  /** Configures Kubernetes audit logs as a GuardDuty data source for this detector. (AI-inferred) */
   kubernetes?: DutyDetector_DataSources_Kubernetes | Computed<DutyDetector_DataSources_Kubernetes>;
-  /** Configuration for GuardDuty Malware Protection, which controls whether EC2 instances with active Amazon GuardDuty findings are scanned for malware. (AI-inferred) */
   malwareProtection?: DutyDetector_DataSources_MalwareProtection | Computed<DutyDetector_DataSources_MalwareProtection>;
-  /** Configures whether GuardDuty monitors S3 data events by enabling the S3 logs data source for the detector. (AI-inferred) */
   s3Logs?: DutyDetector_DataSources_Kubernetes_AuditLogs | Computed<DutyDetector_DataSources_Kubernetes_AuditLogs>;
 }
 
 export interface DutyDetector_Features_AdditionalConfiguration {
-  /** The name of a specific additional configuration setting for a GuardDuty detector feature, such as 'EBS_SNAPSHOT' for the malware protection feature, identifying which optional sub-setting is being configured. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Indicates whether a specific additional configuration (sub-feature) of a GuardDuty detector feature is enabled or disabled, with values such as 'ENABLED' or 'DISABLED'. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface DutyDetector_Features {
-  /** Specifies the list of additional configuration settings for a GuardDuty feature, where each object defines a Name (e.g., EKS_ADDON_MANAGEMENT) and a Status (ENABLED or DISABLED) to enable or disable that supplementary setting. (AI-inferred) */
   additionalConfiguration?: DutyDetector_Features_AdditionalConfiguration[] | Computed<DutyDetector_Features_AdditionalConfiguration[]>;
-  /** Specifies the name of an additional GuardDuty feature to enable or configure, such as S3_DATA_EVENTS or EKS_AUDIT_LOGS. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether the corresponding GuardDuty feature (e.g., S3_DATA_EVENTS) is currently enabled or disabled, accepting values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface DutyDetector_Tags {
   key?: string | Computed<string>;
-  /** The value of a single tag assigned to the GuardDuty detector, a user-defined string used for metadata, access control, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -115,30 +102,19 @@ const DutyDetector_TagsFields: FieldMap = {
 };
 
 export interface DutyDetectorConfig {
-  /** Specifies which GuardDuty data sources (e.g., S3 logs, Kubernetes audit logs, Malware Protection) are enabled for the detector. (AI-inferred) */
   dataSources?: DutyDetector_DataSources | Computed<DutyDetector_DataSources>;
-  /** Enables or disables the GuardDuty detector, determining whether GuardDuty is active and can generate findings for the account in the specified region. (AI-inferred) */
   enable: boolean | Computed<boolean>;
-  /** Specifies which optional GuardDuty features (such as S3 Protection, EBS Protection, or EKS Audit Logs) are enabled for the detector, with each entry containing a feature name and an enabled/disabled status. (AI-inferred) */
   features?: DutyDetector_Features[] | Computed<DutyDetector_Features[]>;
-  /** Specifies how often GuardDuty publishes new findings to CloudWatch Events and S3, with valid values of FIFTEEN_MINUTES, ONE_HOUR, or SIX_HOURS. (AI-inferred) */
   findingPublishingFrequency?: string | Computed<string>;
-  /** Specifies a list of key-value tags to attach to the GuardDuty detector, which can be used for identifying and organizing the detector resource. (AI-inferred) */
   tags?: DutyDetector_Tags[] | Computed<DutyDetector_Tags[]>;
 }
 
 export interface DutyDetectorAttrs {
-  /** Specifies which GuardDuty data sources (e.g., S3 logs, Kubernetes audit logs, Malware Protection) are enabled for the detector. (AI-inferred) */
   dataSources: DutyDetector_DataSources;
-  /** Enables or disables the GuardDuty detector, determining whether GuardDuty is active and can generate findings for the account in the specified region. (AI-inferred) */
   enable: boolean;
-  /** Specifies which optional GuardDuty features (such as S3 Protection, EBS Protection, or EKS Audit Logs) are enabled for the detector, with each entry containing a feature name and an enabled/disabled status. (AI-inferred) */
   features: DutyDetector_Features[];
-  /** Specifies how often GuardDuty publishes new findings to CloudWatch Events and S3, with valid values of FIFTEEN_MINUTES, ONE_HOUR, or SIX_HOURS. (AI-inferred) */
   findingPublishingFrequency: string;
-  /** The unique identifier for the GuardDuty detector, generated by the service when the detector is created. (AI-inferred) */
   id: string;
-  /** Specifies a list of key-value tags to attach to the GuardDuty detector, which can be used for identifying and organizing the detector resource. (AI-inferred) */
   tags: DutyDetector_Tags[];
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TsiteWiseGateway_GatewayCapabilitySummaries {
-  /** The configuration JSON string for the gateway capability, which defines how the capability is configured (e.g., OPC-UA server endpoint settings) and is validated by the capability's schema. (AI-inferred) */
   capabilityConfiguration?: string | Computed<string>;
-  /** The namespace that uniquely identifies this IoT SiteWise gateway capability, for example 'iotsitewise:gateway:opcua'. (AI-inferred) */
   capabilityNamespace?: string | Computed<string>;
 }
 
@@ -28,9 +26,7 @@ export interface TsiteWiseGateway_GatewayPlatform {
 }
 
 export interface TsiteWiseGateway_Tags {
-  /** The user-defined key portion of a key-value tag applied to an AWS IoT SiteWise gateway, allowing categorization and filtering of gateway resources. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair assigned to the AWS IoT SiteWise Gateway, used for metadata such as cost allocation, access control, and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

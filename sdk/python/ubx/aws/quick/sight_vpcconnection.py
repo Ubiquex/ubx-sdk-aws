@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightVpcconnection_NetworkInterfaces:
-    # The Availability Zone where the network interface used by the QuickSight VPC connection is deployed. (AI-inferred)
     availability_zone: Any = None
-    # The error message returned by AWS when a network interface associated with the QuickSight VPC connection is in an error state, providing details about why that interface is unhealthy. (AI-inferred)
     error_message: Any = None
-    # The AWS-generated ID of the network interface that QuickSight creates and attaches to the VPC connection to route traffic to resources in your VPC. (AI-inferred)
     network_interface_id: Any = None
-    # The current provisioning state of the network interface created in the customer's VPC for the QuickSight VPC connection, such as whether it is available, creating, or deleting. (AI-inferred)
     status: Any = None
-    # The ID of the subnet where the QuickSight VPC connection's network interface is created, enabling QuickSight to reach resources within that subnet. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class SightVpcconnection_Tags:
-    # The key of a tag assigned to the QuickSight VPC connection, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to this AWS QuickSight VPC connection, used to assign metadata or categorize the resource. (AI-inferred)
     value: Any = None
 
 _SightVpcconnection_TagsFields = {
@@ -33,54 +26,35 @@ _SightVpcconnection_TagsFields = {
 
 @dataclasses.dataclass
 class SightVpcconnectionConfig:
-    # Indicates the current availability status of the QuickSight VPC connection, using values such as AVAILABLE, UNAVAILABLE, or PARTIALLY_AVAILABLE, which reflects whether the connection is ready for use in SPICE data ingestion. (AI-inferred)
     availability_status: Any = None
-    # The AWS account ID where the VPC connection is being created, allowing you to specify a different account than the one the credentials belong to. (AI-inferred)
     aws_account_id: Any = None
-    # Specifies the IP addresses of the private DNS resolvers used to resolve domain names for resources in the VPC connection. (AI-inferred)
     dns_resolvers: Any = None
-    # The display name for the QuickSight VPC connection, used to identify it in the QuickSight console and APIs. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that grants Amazon QuickSight the permissions required to access the VPC and its resources. (AI-inferred)
     role_arn: Any = None
-    # Specifies the list of security group IDs associated with the VPC connection that control network access to the Amazon QuickSight VPC resources. (AI-inferred)
     security_group_ids: Any = None
-    # The list of subnet IDs within the VPC where the QuickSight VPC connection is deployed, used to route network traffic for the connection. (AI-inferred)
     subnet_ids: Any = None
-    # The tags to assign to the QuickSight VPC connection, consisting of key-value pairs that help identify, organize, and manage the connection within AWS. (AI-inferred)
     tags: Any = None
-    # Specifies a custom, user-defined identifier for the QuickSight VPC connection, unique per AWS account and Region, which AWS uses to refer to the connection instead of generating one automatically. (AI-inferred)
     vpcconnection_id: Any = None
 
 @dataclasses.dataclass
 class SightVpcconnectionAttrs:
     # <p>The Amazon Resource Name (ARN) of the VPC connection.</p>
     arn: Any = None
-    # Indicates the current availability status of the QuickSight VPC connection, using values such as AVAILABLE, UNAVAILABLE, or PARTIALLY_AVAILABLE, which reflects whether the connection is ready for use in SPICE data ingestion. (AI-inferred)
     availability_status: Any = None
-    # The AWS account ID where the VPC connection is being created, allowing you to specify a different account than the one the credentials belong to. (AI-inferred)
     aws_account_id: Any = None
     # <p>The time that the VPC connection was created.</p>
     created_time: Any = None
-    # Specifies the IP addresses of the private DNS resolvers used to resolve domain names for resources in the VPC connection. (AI-inferred)
     dns_resolvers: Any = None
     # <p>The time that the VPC connection was last updated.</p>
     last_updated_time: Any = None
-    # The display name for the QuickSight VPC connection, used to identify it in the QuickSight console and APIs. (AI-inferred)
     name: Any = None
     # <p>A list of network interfaces.</p>
     network_interfaces: Any = None
-    # The ARN of the IAM role that grants Amazon QuickSight the permissions required to access the VPC and its resources. (AI-inferred)
     role_arn: Any = None
-    # Specifies the list of security group IDs associated with the VPC connection that control network access to the Amazon QuickSight VPC resources. (AI-inferred)
     security_group_ids: Any = None
-    # The current lifecycle status of the QuickSight VPC connection, such as CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, or UPDATE_FAILED (read-only). (AI-inferred)
     status: Any = None
-    # The list of subnet IDs within the VPC where the QuickSight VPC connection is deployed, used to route network traffic for the connection. (AI-inferred)
     subnet_ids: Any = None
-    # The tags to assign to the QuickSight VPC connection, consisting of key-value pairs that help identify, organize, and manage the connection within AWS. (AI-inferred)
     tags: Any = None
-    # Specifies a custom, user-defined identifier for the QuickSight VPC connection, unique per AWS account and Region, which AWS uses to refer to the connection instead of generating one automatically. (AI-inferred)
     vpcconnection_id: Any = None
     # <p>The Amazon EC2 VPC ID associated with the VPC connection.</p>
     vpcid: Any = None

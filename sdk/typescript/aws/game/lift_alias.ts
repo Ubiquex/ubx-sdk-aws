@@ -31,7 +31,6 @@ export interface LiftAliasConfig {
   description?: string | Computed<string>;
   /** A descriptive label that is associated with an alias. Alias names do not need to be unique. */
   name: string | Computed<string>;
-  /** The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred) */
   routingStrategy: LiftAlias_RoutingStrategy | Computed<LiftAlias_RoutingStrategy>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: LiftAlias_Tags[] | Computed<LiftAlias_Tags[]>;
@@ -46,7 +45,6 @@ export interface LiftAliasAttrs {
   description: string;
   /** A descriptive label that is associated with an alias. Alias names do not need to be unique. */
   name: string;
-  /** The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred) */
   routingStrategy: LiftAlias_RoutingStrategy;
   /** An array of key-value pairs to apply to this resource. */
   tags: LiftAlias_Tags[];

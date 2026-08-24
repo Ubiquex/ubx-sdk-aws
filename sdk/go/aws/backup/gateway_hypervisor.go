@@ -4,7 +4,6 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayHypervisor_Tags struct {
-	// The key component of a tag assigned to an AWS Backup Gateway hypervisor, used to label and categorize the resource for management and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,38 +14,23 @@ var GatewayHypervisor_TagsFields = ubx.FieldMap{
 	}
 
 type GatewayHypervisorConfig struct {
-	// Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred)
 	Host any
-	// The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred)
 	KmsKeyArn any
-	// The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred)
 	LogGroupArn any
-	// An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred)
 	Name any
-	// The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred)
 	Password any
-	// A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred)
 	Tags any
-	// The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred)
 	Username any
 }
 
 type GatewayHypervisorAttrs struct {
-	// Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred)
 	Host any
-	// The Amazon Resource Name (ARN) that uniquely identifies the hypervisor created by AWS Backup Gateway. (AI-inferred)
 	HypervisorArn any
-	// The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred)
 	KmsKeyArn any
-	// The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred)
 	LogGroupArn any
-	// An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred)
 	Name any
-	// The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred)
 	Password any
-	// A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred)
 	Tags any
-	// The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred)
 	Username any
 }
 

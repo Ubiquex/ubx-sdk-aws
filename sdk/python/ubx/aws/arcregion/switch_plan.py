@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SwitchPlan_ReportConfiguration_ReportOutput_S3Configuration:
-    # The AWS account ID of the owner of the destination S3 bucket, used by the service to verify bucket ownership before writing the report output to prevent accidental writes to unintended buckets. (AI-inferred)
     bucket_owner: Any = None
     bucket_path: Any = None
 
@@ -22,16 +21,13 @@ class SwitchPlan_ReportConfiguration:
 
 @dataclasses.dataclass
 class SwitchPlan_Route53HealthChecks:
-    # The list of Amazon Route 53 health check IDs that the switch plan monitors to assess the health of the active region, helping determine whether a region failover should be initiated. (AI-inferred)
     health_check_ids: Any = None
-    # This field specifies the Route 53 hosted zone IDs associated with the health checks, which the ARC region switch plan uses to update the corresponding DNS records when a failover occurs. (AI-inferred)
     hosted_zone_ids: Any = None
     record_names: Any = None
     regions: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Triggers_Conditions:
-    # The name of the Amazon CloudWatch alarm that must be in ALARM state to satisfy this trigger condition and initiate the switch plan. (AI-inferred)
     associated_alarm_name: Any = None
     condition: Any = None
 
@@ -47,43 +43,31 @@ class SwitchPlan_Triggers:
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfig:
     cross_account_role: Any = None
     external_id: Any = None
-    # Defines the AWS regions and the associated ARC routing control identifiers (such as ARNs or names) that the execution block configures to implement the region switch. (AI-inferred)
     region_and_routing_controls: Any = None
     timeout_minutes: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfig:
-    # The Amazon Resource Name (ARN) of an IAM role that allows the execution block to perform Aurora provisioned scaling actions in a different AWS account, enabling cross-account failover or scaling operations. (AI-inferred)
     cross_account_role: Any = None
-    # The external identifier that must be supplied when assuming an IAM role to perform Aurora provisioning and scaling actions, used as a safety measure to prevent the confused deputy problem. (AI-inferred)
     external_id: Any = None
-    # Specifies the identifier of the Aurora global cluster to which this provisioned scaling configuration applies. (AI-inferred)
     global_cluster_identifier: Any = None
-    # Defines the set of Amazon Aurora instance ARNs that the provisioned scaling configuration applies to during an execution block, limiting scaling actions to those instances. (AI-inferred)
     instance_arns: Any = None
-    # Specifies the Amazon Aurora database cluster ARNs within the region that this provisioned scaling configuration targets during a workflow execution block. (AI-inferred)
     region_database_cluster_arns: Any = None
     timeout_minutes: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfig:
-    # The ARN of an IAM role in the target AWS account that is assumed to perform Aurora Serverless scaling operations during a region switch. (AI-inferred)
     cross_account_role: Any = None
     external_id: Any = None
-    # Specifies the Aurora global cluster identifier (the global database) that this serverless scaling configuration is associated with during the execution step of an ARC region switch workflow. (AI-inferred)
     global_cluster_identifier: Any = None
-    # Specifies a list of Amazon Aurora Serverless database cluster ARNs in the target region whose compute capacity will be scaled according to the Aurora Serverless scaling configuration during this execution step of the switch plan. (AI-inferred)
     region_database_cluster_arns: Any = None
     target_percent: Any = None
-    # Specifies the maximum time in minutes to allow for an Aurora Serverless database to complete a scaling adjustment during an execution step's blocking configuration. (AI-inferred)
     timeout_minutes: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas:
     arn: Any = None
-    # The ARN of the IAM role that the custom action Lambda function assumes to access or modify resources in another AWS account during the workflow step. (AI-inferred)
     cross_account_role: Any = None
-    # The external identifier (ExternalId) that the Lambda function uses when assuming an IAM role for the custom action, helping prevent the confused deputy problem by ensuring the role trust policy requires it. (AI-inferred)
     external_id: Any = None
 
 @dataclasses.dataclass
@@ -97,9 +81,7 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaC
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig:
     lambdas: Any = None
-    # The AWS Region in which the Lambda function for the custom action is invoked during this step of the region switch plan. (AI-inferred)
     region_to_run: Any = None
-    # The number of minutes to wait before retrying the custom action Lambda function after a failed execution step in the workflow. (AI-inferred)
     retry_interval_minutes: Any = None
     timeout_minutes: Any = None
     ungraceful: Any = None
@@ -112,10 +94,8 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Un
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig:
     behavior: Any = None
     cross_account_role: Any = None
-    # This field specifies the Amazon Resource Names (ARNs) of the Amazon DocumentDB clusters that the execution block configuration in this workflow step operates on during the region switch. (AI-inferred)
     database_cluster_arns: Any = None
     external_id: Any = None
-    # Specifies the identifier of the Amazon DocumentDB global cluster that the execution step's DocumentDB configuration targets during the region switch workflow. (AI-inferred)
     global_cluster_identifier: Any = None
     timeout_minutes: Any = None
     ungraceful: Any = None
@@ -126,47 +106,36 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncre
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig:
-    # Specifies the list of Auto Scaling Groups targeted for capacity increase during this execution block step's capacity increase configuration. (AI-inferred)
     asgs: Any = None
     capacity_monitoring_approach: Any = None
     target_percent: Any = None
-    # Specifies the maximum time in minutes that the execution block waits for the EC2 Auto Scaling group capacity increase to reach its target before the step is considered failed. (AI-inferred)
     timeout_minutes: Any = None
     ungraceful: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_Services:
-    # The ARN of the Amazon ECS cluster that the ECS service belongs to, used to target the service for capacity increase during the execution block of the workflow step. (AI-inferred)
     cluster_arn: Any = None
-    # The cross-account IAM role assumed to increase the desired capacity of this ECS service in another AWS account during the region switch capacity increase step. (AI-inferred)
     cross_account_role: Any = None
     external_id: Any = None
-    # The ARN of the ECS service that will be targeted for a capacity increase when the execution block runs. (AI-inferred)
     service_arn: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig:
     capacity_monitoring_approach: Any = None
     services: Any = None
-    # The target capacity percentage to set for the ECS service or cluster when this execution block's capacity increase action is executed. (AI-inferred)
     target_percent: Any = None
-    # The maximum time, in minutes, allowed for the ECS capacity increase to complete during this execution block step before the step is considered failed. (AI-inferred)
     timeout_minutes: Any = None
     ungraceful: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClusters:
-    # The Amazon Resource Name (ARN) of the Amazon EKS cluster that the scaling configuration targets, identifying the specific cluster to be scaled during the region switch execution step. (AI-inferred)
     cluster_arn: Any = None
-    # The ARN of the IAM role to assume in the target account owning the EKS cluster, used by the region switch execution to perform scaling changes on that cluster. (AI-inferred)
     cross_account_role: Any = None
     external_id: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceType:
-    # Specifies the Kubernetes API version (e.g., 'v1', 'apps/v1') of the resource type to be scaled, matching the apiVersion used in the resource manifest. (AI-inferred)
     api_version: Any = None
-    # Specifies the Kubernetes resource kind (e.g., Deployment, StatefulSet) that the scaling configuration targets for EKS resource scaling. (AI-inferred)
     kind: Any = None
 
 @dataclasses.dataclass
@@ -191,7 +160,6 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMa
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig:
     action: Any = None
-    # Maps each AWS region to the Lambda event source mapping identifiers that should be enabled or disabled when this region switch execution block runs. (AI-inferred)
     region_event_source_mappings: Any = None
     timeout_minutes: Any = None
     ungraceful: Any = None
@@ -199,14 +167,10 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMa
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfig:
     behavior: Any = None
-    # The ARN of an IAM role that the switch plan assumes to perform Neptune Global Database configuration changes in a different AWS account. (AI-inferred)
     cross_account_role: Any = None
     external_id: Any = None
-    # The identifier of the Neptune global database that this execution block configuration targets during the region switch plan workflow step. (AI-inferred)
     global_cluster_identifier: Any = None
-    # Specifies the Amazon Resource Names (ARNs) of the Neptune DB clusters (one per AWS region) that form a Neptune global database, used by the switch plan execution step to coordinate failover or management of the global database. (AI-inferred)
     region_database_cluster_arns: Any = None
-    # Specifies the maximum time in minutes that the Neptune global database configuration execution block is allowed to run before timing out in a region switch plan step. (AI-inferred)
     timeout_minutes: Any = None
     ungraceful: Any = None
 
@@ -216,12 +180,9 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfig:
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig:
-    # The IAM role ARN to be used for cross-account permissions when creating the RDS cross-region read replica, allowing the operation to be performed in another AWS account. (AI-inferred)
     cross_account_role: Any = None
-    # Maps the ARNs of source RDS DB instances to the configuration specifying how their cross-region read replicas should be created when this execution block is run during a switch plan step. (AI-inferred)
     db_instance_arn_map: Any = None
     external_id: Any = None
-    # The maximum time in minutes to wait for the RDS cross-region read replica creation to complete before the step times out and is marked as failed. (AI-inferred)
     timeout_minutes: Any = None
 
 @dataclasses.dataclass
@@ -234,45 +195,34 @@ class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadRe
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSets:
-    # Identifies the specific Route 53 record set (among multiple with the same name and type, e.g., for weighted or failover routing) that this health check configuration applies to within the switch plan's execution block. (AI-inferred)
     record_set_identifier: Any = None
-    # The AWS Region of the Route 53 record set that this health check configuration monitors, used to control failover routing during a region switch execution block. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig:
-    # Specifies the IAM role that the switch plan assumes to access the Route 53 health check when it resides in a different AWS account. (AI-inferred)
     cross_account_role: Any = None
     external_id: Any = None
-    # This field specifies the ID of the Amazon Route 53 hosted zone associated with the health check, enabling Route 53 to resolve and route the health check's DNS records. (AI-inferred)
     hosted_zone_id: Any = None
-    # The fully qualified domain name (e.g., app.example.com) that the Route 53 health check monitors to assess the health of the target endpoint during the execution block of a region switch plan. (AI-inferred)
     record_name: Any = None
     record_sets: Any = None
-    # The maximum number of minutes that an execution step will wait for a Route 53 health check to reach the desired status before the step times out and is considered failed. (AI-inferred)
     timeout_minutes: Any = None
 
 @dataclasses.dataclass
 class SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration:
     arc_routing_control_config: Any = None
-    # Configures the auto scaling behavior (e.g., min/max capacity or scaling policy) for Aurora Provisioned clusters when this workflow execution block is run. (AI-inferred)
     aurora_provisioned_scaling_config: Any = None
     aurora_serverless_scaling_config: Any = None
     custom_action_lambda_config: Any = None
     document_db_config: Any = None
-    # Configuration for increasing the EC2 Auto Scaling Group capacity as part of a step's execution block, used to pre-scale compute resources during a region switch workflow. (AI-inferred)
     ec2_asg_capacity_increase_config: Any = None
     ecs_capacity_increase_config: Any = None
     eks_resource_scaling_config: Any = None
     execution_approval_config: Any = None
     global_aurora_config: Any = None
     lambda_event_source_mapping_config: Any = None
-    # This object specifies how the execution step should handle an Amazon Neptune global database during a region switch, including the target global database and the failover action to promote a secondary cluster in the destination region. (AI-inferred)
     neptune_global_database_config: Any = None
     parallel_config: Any = None
-    # Configuration for creating a cross-region read replica of an RDS database instance as part of the execution block of this workflow step. (AI-inferred)
     rds_create_cross_region_read_replica_config: Any = None
-    # Specifies the configuration for promoting an Amazon RDS read replica to a standalone DB instance during the execution block of a step in the region switch workflow. (AI-inferred)
     rds_promote_read_replica_config: Any = None
     rds_switchover_read_replica_config: Any = None
     region_switch_plan_config: Any = None
@@ -694,16 +644,12 @@ _SwitchPlan_WorkflowsFields = {
 
 @dataclasses.dataclass
 class SwitchPlanConfig:
-    # A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred)
     associated_alarms: Any = None
     description: Any = None
-    # The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred)
     execution_role: Any = None
     name: Any = None
-    # Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred)
     primary_region: Any = None
     recovery_approach: Any = None
-    # The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred)
     recovery_time_objective_minutes: Any = None
     regions: Any = None
     report_configuration: Any = None
@@ -714,19 +660,15 @@ class SwitchPlanConfig:
 @dataclasses.dataclass
 class SwitchPlanAttrs:
     arn: Any = None
-    # A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred)
     associated_alarms: Any = None
     description: Any = None
-    # The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred)
     execution_role: Any = None
     health_checks_for_plan: Any = None
     name: Any = None
     owner: Any = None
     plan_health_checks: Any = None
-    # Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred)
     primary_region: Any = None
     recovery_approach: Any = None
-    # The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred)
     recovery_time_objective_minutes: Any = None
     regions: Any = None
     report_configuration: Any = None

@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GcmchannelConfig:
-    # The Google API key used to authorize Amazon Pinpoint to send push notifications through Firebase Cloud Messaging (GCM) to Android apps. (AI-inferred)
     api_key: Any = None
-    # The unique identifier for the Amazon Pinpoint application that the GCM channel is associated with. (AI-inferred)
     application_id: Any = None
-    # Specifies the default authentication method for the GCM channel, either 'TOKEN' or 'KEY', which determines how Amazon Pinpoint authenticates with Firebase Cloud Messaging (FCM) when sending push notifications to Android apps. (AI-inferred)
     default_authentication_method: Any = None
-    # Enables or disables the Google Cloud Messaging (GCM) channel for the associated Amazon Pinpoint application, controlling whether push notifications can be sent to Android devices. (AI-inferred)
     enabled: Any = None
-    # A JSON string containing the Firebase Cloud Messaging (FCM) service account credentials (service account key) that Amazon Pinpoint uses to send push notifications through the GCM channel; when specified, it is used instead of the deprecated API key. (AI-inferred)
     service_json: Any = None
 
 @dataclasses.dataclass
 class GcmchannelAttrs:
-    # The Google API key used to authorize Amazon Pinpoint to send push notifications through Firebase Cloud Messaging (GCM) to Android apps. (AI-inferred)
     api_key: Any = None
-    # The unique identifier for the Amazon Pinpoint application that the GCM channel is associated with. (AI-inferred)
     application_id: Any = None
-    # Specifies the default authentication method for the GCM channel, either 'TOKEN' or 'KEY', which determines how Amazon Pinpoint authenticates with Firebase Cloud Messaging (FCM) when sending push notifications to Android apps. (AI-inferred)
     default_authentication_method: Any = None
-    # Enables or disables the Google Cloud Messaging (GCM) channel for the associated Amazon Pinpoint application, controlling whether push notifications can be sent to Android devices. (AI-inferred)
     enabled: Any = None
-    # The identifier of the GCM channel, equal to the associated Pinpoint application ID. (AI-inferred)
     id: Any = None
-    # A JSON string containing the Firebase Cloud Messaging (FCM) service account credentials (service account key) that Amazon Pinpoint uses to send push notifications through the GCM channel; when specified, it is used instead of the deprecated API key. (AI-inferred)
     service_json: Any = None
 
 Gcmchannel = ubx.ResourceBinding(

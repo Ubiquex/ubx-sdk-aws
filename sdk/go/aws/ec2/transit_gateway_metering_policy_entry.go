@@ -11,7 +11,6 @@ type TransitGatewayMeteringPolicyEntryConfig struct {
 	// The ID of the source attachment through which traffic leaves a transit gateway
 	DestinationTransitGatewayAttachmentId any
 	DestinationTransitGatewayAttachmentType any
-	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
 	MeteredAccount any
 	// The rule number of the metering policy entry
 	PolicyRuleNumber any
@@ -36,7 +35,6 @@ type TransitGatewayMeteringPolicyEntryAttrs struct {
 	// The ID of the source attachment through which traffic leaves a transit gateway
 	DestinationTransitGatewayAttachmentId any
 	DestinationTransitGatewayAttachmentType any
-	// The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
 	MeteredAccount any
 	// The rule number of the metering policy entry
 	PolicyRuleNumber any

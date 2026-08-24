@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ScheduledActionConfig struct {
 	// If true, the schedule is enabled. If false, the scheduled action does not trigger.
 	Enable any
-	// The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
 	EndTime any
 	// The IAM role to assume to run the target action.
 	IamRole any
@@ -16,16 +15,13 @@ type ScheduledActionConfig struct {
 	ScheduledActionDescription any
 	// The name of the scheduled action. The name must be unique within an account.
 	ScheduledActionName any
-	// The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
 	StartTime any
-	// Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
 	TargetAction any
 }
 
 type ScheduledActionAttrs struct {
 	// If true, the schedule is enabled. If false, the scheduled action does not trigger.
 	Enable any
-	// The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred)
 	EndTime any
 	// The IAM role to assume to run the target action.
 	IamRole any
@@ -37,11 +33,9 @@ type ScheduledActionAttrs struct {
 	ScheduledActionDescription any
 	// The name of the scheduled action. The name must be unique within an account.
 	ScheduledActionName any
-	// The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred)
 	StartTime any
 	// The state of the scheduled action.
 	State any
-	// Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred)
 	TargetAction any
 }
 

@@ -8,75 +8,55 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook:
-    # Specifies the version of the code hook interface that the Lambda function uses, with '1.0' being the supported value for Lex V2 bots. (AI-inferred)
     code_hook_interface_version: Any = None
-    # The Amazon Resource Name (ARN) of the Lambda function that is invoked as the code hook for the bot alias locale. (AI-inferred)
     lambda_arn: Any = None
 
 @dataclasses.dataclass
 class BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification:
-    # The `lambda_code_hook` object specifies the Amazon Lex Lambda function and its version that is invoked as the code hook for the bot alias locale, enabling custom logic in the conversation flow. (AI-inferred)
     lambda_code_hook: Any = None
 
 @dataclasses.dataclass
 class BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting:
-    # Defines the Lambda code hook specification for a particular locale in the bot alias, including the Lambda ARN and code hook interface version that Lex invokes during conversation. (AI-inferred)
     code_hook_specification: Any = None
-    # Whether the bot alias is enabled for the specified locale; when false, the alias is disabled and unavailable for that locale. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class BotAlias_BotAliasLocaleSettings:
-    # This object defines the alias behavior for a single locale, specifying whether the alias is enabled for that locale and optionally the Lambda code hook invoked for user interactions in that locale. (AI-inferred)
     bot_alias_locale_setting: Any = None
-    # The locale identifier (such as en_US or en_GB) that identifies which set of bot alias locale settings this entry applies to. (AI-inferred)
     locale_id: Any = None
 
 @dataclasses.dataclass
 class BotAlias_BotAliasTags:
-    # The tag key to assign to the Amazon Lex bot alias, used to categorize or identify the alias in AWS tagging systems. (AI-inferred)
     key: Any = None
-    # The value of a tag (a key-value pair) assigned to the Amazon Lex bot alias, used to categorize or manage the alias resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket:
-    # The ARN of the AWS KMS key used to encrypt audio conversation logs delivered to the S3 bucket destination. (AI-inferred)
     kms_key_arn: Any = None
-    # The prefix prepended to the S3 object keys for audio conversation logs, enabling logs to be stored under a specific folder path in the bucket. (AI-inferred)
     log_prefix: Any = None
-    # The ARN of the S3 bucket where Amazon Lex delivers audio conversation logs. (AI-inferred)
     s3_bucket_arn: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_AudioLogSettings_Destination:
-    # The Amazon S3 bucket ARN where audio conversation logs are delivered for this bot alias. (AI-inferred)
     s3_bucket: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_AudioLogSettings:
-    # Specifies the Amazon S3 bucket configuration where audio conversation logs for this Lex bot alias are delivered. (AI-inferred)
     destination: Any = None
-    # Indicates whether audio conversation logs are enabled for the bot alias. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatch:
-    # The ARN of the CloudWatch Logs log group to which text conversation logs are delivered for this Lex bot alias. (AI-inferred)
     cloud_watch_log_group_arn: Any = None
-    # The log prefix to prepend to the names of CloudWatch Logs log streams that store text conversation logs for the Lex bot alias. (AI-inferred)
     log_prefix: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_TextLogSettings_Destination:
-    # Specifies the CloudWatch Logs destination for text conversation logs, including the log group ARN and the IAM role that authorizes Lex to write logs to that group. (AI-inferred)
     cloud_watch: Any = None
 
 @dataclasses.dataclass
 class BotAlias_ConversationLogSettings_TextLogSettings:
-    # Specifies the Amazon S3 bucket where text logs are delivered, including the bucket name and ARN. (AI-inferred)
     destination: Any = None
-    # Determines whether text conversation logs are recorded to the specified CloudWatch Logs log group for the Lex bot alias. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
@@ -218,7 +198,6 @@ class BotAliasAttrs:
     bot_alias_locale_settings: Any = None
     # A unique identifier for a resource.
     bot_alias_name: Any = None
-    # The current status of the bot alias, such as CREATING, READY, or FAILED, indicating whether the alias is prepared for use. (AI-inferred)
     bot_alias_status: Any = None
     # A list of tags to add to the bot alias.
     bot_alias_tags: Any = None

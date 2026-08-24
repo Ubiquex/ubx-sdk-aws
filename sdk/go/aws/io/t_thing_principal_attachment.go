@@ -4,18 +4,14 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TThingPrincipalAttachmentConfig struct {
-	// The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred)
 	Principal any
-	// The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
 	ThingName any
 	ThingPrincipalType any
 }
 
 type TThingPrincipalAttachmentAttrs struct {
 	Id any
-	// The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred)
 	Principal any
-	// The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
 	ThingName any
 	ThingPrincipalType any
 }

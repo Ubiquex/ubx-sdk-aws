@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpcpeeringConnection_Tags {
-  /** The user-defined key of a tag attached to the AWS EC2 VPC Peering Connection, used to label and organize the peering resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -23,7 +22,6 @@ export interface VpcpeeringConnectionConfig {
   peerRoleArn?: string | Computed<string>;
   /** The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request. */
   peerVpcId: string | Computed<string>;
-  /** A list of tag objects (each with a key and value) to attach to the VPC peering connection, used to organize and identify the resource. (AI-inferred) */
   tags?: VpcpeeringConnection_Tags[] | Computed<VpcpeeringConnection_Tags[]>;
   /** The ID of the VPC. */
   vpcId: string | Computed<string>;
@@ -32,7 +30,6 @@ export interface VpcpeeringConnectionConfig {
 export interface VpcpeeringConnectionAttrs {
   /** The Region code to use when calling Security Token Service (STS) to assume the PeerRoleArn, if provided. */
   assumeRoleRegion: string;
-  /** The unique ID of the VPC peering connection, such as pcx-1234567890abcdef0. (AI-inferred) */
   id: string;
   /** The AWS account ID of the owner of the accepter VPC. */
   peerOwnerId: string;
@@ -42,7 +39,6 @@ export interface VpcpeeringConnectionAttrs {
   peerRoleArn: string;
   /** The ID of the VPC with which you are creating the VPC peering connection. You must specify this parameter in the request. */
   peerVpcId: string;
-  /** A list of tag objects (each with a key and value) to attach to the VPC peering connection, used to organize and identify the resource. (AI-inferred) */
   tags: VpcpeeringConnection_Tags[];
   /** The ID of the VPC. */
   vpcId: string;

@@ -4,9 +4,7 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ipset_IpsetDescriptors struct {
-	// Specifies the IP address version (either IPV4 or IPV6) for the CIDR value in this IPSet descriptor. (AI-inferred)
 	Type any
-	// The IP address or CIDR range to include in the WAF IPSet, such as 192.0.2.0/24 or 10.0.0.1. (AI-inferred)
 	Value any
 }
 
@@ -16,18 +14,13 @@ var Ipset_IpsetDescriptorsFields = ubx.FieldMap{
 	}
 
 type IpsetConfig struct {
-	// Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
 	IpsetDescriptors any
-	// The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
 	Name any
 }
 
 type IpsetAttrs struct {
-	// Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
 	IpsetDescriptors any
-	// The unique identifier assigned by AWS to this IP set, used to reference it when associating with AWS WAF rules or updating the set. (AI-inferred)
 	Id any
-	// The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
 	Name any
 }
 

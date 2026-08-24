@@ -12,7 +12,6 @@ class FormationWaitConditionHandleConfig:
 
 @dataclasses.dataclass
 class FormationWaitConditionHandleAttrs:
-    # The unique identifier for the wait condition handle, which is a pre-signed URL used by external signals to notify CloudFormation of completion. (AI-inferred)
     id: Any = None
 
 FormationWaitConditionHandle = ubx.ResourceBinding(

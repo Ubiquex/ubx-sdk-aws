@@ -26,27 +26,19 @@ type Application_ImageConfiguration struct {
 }
 
 type Application_InitialCapacity_Value_WorkerConfiguration struct {
-	// The number of vCPUs allocated to each worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
 	Cpu any
-	// Specifies the disk size in GB for the worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
 	Disk any
-	// The disk type (e.g., SSD or HDD) for the storage attached to each worker instance in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
 	DiskType any
-	// Defines the memory size (in MB) allocated per worker for the initial capacity of the EMR Serverless application. (AI-inferred)
 	Memory any
 }
 
 type Application_InitialCapacity_Value struct {
-	// Specifies the CPU, memory, and disk configuration for workers allocated as the initial capacity of the EMR Serverless application. (AI-inferred)
 	WorkerConfiguration any
-	// The number of workers of the specified worker type (the key in the initial capacity map) to provision for the EMR Serverless application at startup. (AI-inferred)
 	WorkerCount any
 }
 
 type Application_InitialCapacity struct {
-	// Specifies the name of the worker type (for example, driver or executor) for which to define the initial capacity configuration in an AWS EMR Serverless application. (AI-inferred)
 	Key any
-	// Defines the initial capacity configuration for a given worker type (e.g., Driver or Executor) in the serverless application, specifying the number of workers and their CPU/memory resources via the workerCount and workerConfiguration properties. (AI-inferred)
 	Value any
 }
 
@@ -69,13 +61,9 @@ type Application_MaximumCapacity struct {
 }
 
 type Application_MonitoringConfiguration struct {
-	// Specifies the CloudWatch Logs group, log stream name prefix, and optional encryption key ARN that the EMR Serverless application uses to deliver its runtime logs to Amazon CloudWatch. (AI-inferred)
 	CloudWatchLoggingConfiguration any
-	// This field specifies the managed persistence monitoring configuration, controlling whether Spark event logs are persisted and the S3 location where they are stored for the EMR Serverless application. (AI-inferred)
 	ManagedPersistenceMonitoringConfiguration any
-	// Configures the Prometheus monitoring endpoint for the EMR Serverless application by specifying the remote write URL where application metrics are sent. (AI-inferred)
 	PrometheusMonitoringConfiguration any
-	// This nested block configures the S3 monitoring destination for the EMR Serverless application, specifying the S3 URI (log_uri) where logs are delivered and optionally a KMS key ARN (encryption_key_arn) for encrypting the logs. (AI-inferred)
 	S3MonitoringConfiguration any
 }
 
@@ -87,11 +75,8 @@ type Application_NetworkConfiguration struct {
 }
 
 type Application_RuntimeConfiguration struct {
-	// Specifies the classification name (e.g., spark-defaults) for the runtime configuration, which defines the set of properties that apply to the EMR Serverless application. (AI-inferred)
 	Classification any
-	// Specifies a list of sub-configurations for a given runtime configuration classification, allowing nested engine-specific settings (such as Spark or Hive properties) to be applied to the EMR Serverless application. (AI-inferred)
 	Configurations any
-	// Specifies a map of additional key-value pairs to apply as runtime configuration settings for the EMR Serverless application, extending the configuration defined by the parent runtime configuration's key and value fields. (AI-inferred)
 	Properties any
 }
 
@@ -104,7 +89,6 @@ type Application_SchedulerConfiguration struct {
 
 type Application_Tags struct {
 	Key any
-	// The value component of a key-value tag applied to the EMR Serverless application, which can be any string and is used for resource metadata, filtering, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -201,17 +185,13 @@ type ApplicationConfig struct {
 	IdentityCenterConfiguration any
 	// The image configuration.
 	ImageConfiguration any
-	// Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
 	InitialCapacity any
-	// Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
 	InteractiveConfiguration any
-	// The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
 	MaximumCapacity any
 	// Monitoring configuration for batch and interactive JobRun.
 	MonitoringConfiguration any
 	// User friendly Application name.
 	Name any
-	// Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
 	NetworkConfiguration any
 	// EMR release label.
 	ReleaseLabel any
@@ -223,7 +203,6 @@ type ApplicationConfig struct {
 	Tags any
 	// The type of the application
 	Type any
-	// Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
 	WorkerTypeSpecifications any
 }
 
@@ -242,17 +221,13 @@ type ApplicationAttrs struct {
 	IdentityCenterConfiguration any
 	// The image configuration.
 	ImageConfiguration any
-	// Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
 	InitialCapacity any
-	// Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
 	InteractiveConfiguration any
-	// The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
 	MaximumCapacity any
 	// Monitoring configuration for batch and interactive JobRun.
 	MonitoringConfiguration any
 	// User friendly Application name.
 	Name any
-	// Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
 	NetworkConfiguration any
 	// EMR release label.
 	ReleaseLabel any
@@ -264,7 +239,6 @@ type ApplicationAttrs struct {
 	Tags any
 	// The type of the application
 	Type any
-	// Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
 	WorkerTypeSpecifications any
 }
 

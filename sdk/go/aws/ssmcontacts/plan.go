@@ -4,30 +4,22 @@ package ssmcontacts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Plan_Stages_Targets_ChannelTargetInfo struct {
-	// The Amazon Resource Name (ARN) of the contact channel to notify when this stage is triggered. (AI-inferred)
 	ChannelId any
-	// The number of minutes to wait before retrying the contact channel if the previous attempt fails, as part of the channel target configuration in an SSM Contacts plan stage. (AI-inferred)
 	RetryIntervalInMinutes any
 }
 
 type Plan_Stages_Targets_ContactTargetInfo struct {
-	// The Amazon Resource Name (ARN) of the AWS SSM Contacts contact that this stage targets when the escalation plan is executed. (AI-inferred)
 	ContactId any
-	// A boolean that, when true, marks this contact as essential so that if the contact cannot be reached during an incident, the escalation plan stops and does not continue to subsequent targets. (AI-inferred)
 	IsEssential any
 }
 
 type Plan_Stages_Targets struct {
-	// Specifies the target as a contact channel rather than a contact, detailing the contact channel's identifier and the retry interval in minutes to wait before re-contacting it during the escalation stage. (AI-inferred)
 	ChannelTargetInfo any
-	// Identifies an SSM Contacts contact as a target for the stage, using its contact ID and an IsEssential flag that determines whether the contact must be reached for the on-call handoff to continue. (AI-inferred)
 	ContactTargetInfo any
 }
 
 type Plan_Stages struct {
-	// The duration, in minutes, for which this stage of the engagement runs before moving to the next stage or ending the engagement. (AI-inferred)
 	DurationInMinutes any
-	// Specifies the contacts or contact channels that are notified when this stage of the on-call escalation plan is reached, based on the escalation time. (AI-inferred)
 	Targets any
 }
 

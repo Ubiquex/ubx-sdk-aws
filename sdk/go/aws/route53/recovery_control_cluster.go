@@ -4,16 +4,12 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryControlCluster_ClusterEndpoints struct {
-	// The URL of the cluster endpoint for the Route 53 Recovery Control cluster, used to access the cluster's routing control API. (AI-inferred)
 	Endpoint any
-	// The AWS Region (e.g., us-east-1) where the Route 53 Recovery Control Cluster endpoint is located. (AI-inferred)
 	Region any
 }
 
 type RecoveryControlCluster_Tags struct {
-	// The key for a tag attached to the Route53 Recovery Control Cluster, used to categorize and manage the cluster. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Route 53 Recovery Control cluster. (AI-inferred)
 	Value any
 }
 

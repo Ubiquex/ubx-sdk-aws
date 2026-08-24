@@ -4,33 +4,22 @@ package fsx
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageVirtualMachine_ActiveDirectoryConfiguration_SelfManagedActiveDirectoryConfiguration struct {
-	// Specifies the IPv4 addresses of the domain controllers in your self-managed Active Directory, which Amazon FSx uses for DNS resolution when joining the storage virtual machine to the directory. (AI-inferred)
 	DnsIps any
-	// The password for the service account that FSx uses to join the storage virtual machine to the self-managed Active Directory domain. (AI-inferred)
 	DomainJoinServiceAccountSecret any
-	// The fully qualified domain name of the self-managed Active Directory that the storage virtual machine (SVM) will join. (AI-inferred)
 	DomainName any
-	// Specifies the name of the self-managed Active Directory group that is granted administrative privileges on the FSx for Windows File Server file system associated with this storage virtual machine. (AI-inferred)
 	FileSystemAdministratorsGroup any
-	// The distinguished name of the organizational unit (OU) in the self-managed Active Directory where the FSx for ONTAP storage virtual machine's computer account is created. (AI-inferred)
 	OrganizationalUnitDistinguishedName any
-	// The password for the service account user used to join the storage virtual machine to the self-managed Active Directory domain. (AI-inferred)
 	Password any
-	// The user name of a service account with privileges to join the storage virtual machine to the self-managed Active Directory domain. (AI-inferred)
 	UserName any
 }
 
 type StorageVirtualMachine_ActiveDirectoryConfiguration struct {
-	// Specifies the NetBIOS name of the Active Directory computer object that the FSx storage virtual machine will use when it is joined to a Microsoft Active Directory domain. (AI-inferred)
 	NetBiosName any
-	// Specifies the self-managed Microsoft Active Directory configuration for joining the storage virtual machine to the domain, including DNS server IP addresses, domain name, service account username and password, and optional organizational unit and administrator group settings. (AI-inferred)
 	SelfManagedActiveDirectoryConfiguration any
 }
 
 type StorageVirtualMachine_Tags struct {
-	// Defines the key portion of a user-defined tag attached to the FSx Storage Virtual Machine, enabling logical grouping, cost tracking, and access control for the resource. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to the FSx Storage Virtual Machine, used to label and categorize the resource for management and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -59,38 +48,23 @@ var StorageVirtualMachine_TagsFields = ubx.FieldMap{
 	}
 
 type StorageVirtualMachineConfig struct {
-	// Specifies the Active Directory configuration for the storage virtual machine to join a domain, including the NetBIOS name and self-managed Active Directory settings such as domain name, organizational unit, and administrator credentials. (AI-inferred)
 	ActiveDirectoryConfiguration any
-	// The unique identifier of the Amazon FSx for NetApp ONTAP file system on which the storage virtual machine is created. (AI-inferred)
 	FileSystemId any
-	// The name of the storage virtual machine (SVM), which must be unique within the file system. (AI-inferred)
 	Name any
-	// Specifies the security style (UNIX, NTFS, or MIXED) for the storage virtual machine's root volume, determining how file permissions are evaluated for files and directories. (AI-inferred)
 	RootVolumeSecurityStyle any
-	// Sets the password for the storage virtual machine's administrator (vsadmin) account, which must be at least 8 characters and cannot contain '/', '\', or '@'. (AI-inferred)
 	SvmAdminPassword any
-	// Specifies a list of key-value pairs to attach to this FSx storage virtual machine for resource organization, cost tracking, and access control. (AI-inferred)
 	Tags any
 }
 
 type StorageVirtualMachineAttrs struct {
-	// Specifies the Active Directory configuration for the storage virtual machine to join a domain, including the NetBIOS name and self-managed Active Directory settings such as domain name, organizational unit, and administrator credentials. (AI-inferred)
 	ActiveDirectoryConfiguration any
-	// The unique identifier of the Amazon FSx for NetApp ONTAP file system on which the storage virtual machine is created. (AI-inferred)
 	FileSystemId any
-	// The name of the storage virtual machine (SVM), which must be unique within the file system. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) that uniquely identifies this FSx storage virtual machine. (AI-inferred)
 	ResourceArn any
-	// Specifies the security style (UNIX, NTFS, or MIXED) for the storage virtual machine's root volume, determining how file permissions are evaluated for files and directories. (AI-inferred)
 	RootVolumeSecurityStyle any
-	// The unique identifier of the Amazon FSx storage virtual machine. (AI-inferred)
 	StorageVirtualMachineId any
-	// Sets the password for the storage virtual machine's administrator (vsadmin) account, which must be at least 8 characters and cannot contain '/', '\', or '@'. (AI-inferred)
 	SvmAdminPassword any
-	// Specifies a list of key-value pairs to attach to this FSx storage virtual machine for resource organization, cost tracking, and access control. (AI-inferred)
 	Tags any
-	// The universally unique identifier assigned to the storage virtual machine by the FSx service, used to uniquely identify it across all FSx resources. (AI-inferred)
 	Uuid any
 }
 

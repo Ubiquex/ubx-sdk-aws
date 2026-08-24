@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceEnvironment_CapacityLimits:
-    # Specifies the unit of measure (for example, vCPU or memory) used to interpret the capacity limit value in the AWS Batch service environment's capacity limits configuration. (AI-inferred)
     capacity_unit: Any = None
     max_capacity: Any = None
 

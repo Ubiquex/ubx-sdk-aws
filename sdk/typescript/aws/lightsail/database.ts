@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Database_RelationalDatabaseParameters {
-  /** Specifies the allowed values for the relational database parameter, such as a range or list of valid options, as defined by the Lightsail database engine. (AI-inferred) */
   allowedValues?: string | Computed<string>;
-  /** Specifies whether the parameter change is applied immediately or after the database reboots (pending-reboot). (AI-inferred) */
   applyMethod?: string | Computed<string>;
-  /** Indicates whether the parameter is dynamic (applied immediately without a reboot) or static (requires a database reboot to take effect). (AI-inferred) */
   applyType?: string | Computed<string>;
-  /** The data type of the relational database parameter, such as 'string', 'integer', or 'boolean'. (AI-inferred) */
   dataType?: string | Computed<string>;
-  /** Provides a descriptive text explaining the purpose or meaning of the relational database parameter in the AWS Lightsail database. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Indicates whether the specified relational database parameter can be modified from its default value. (AI-inferred) */
   isModifiable?: boolean | Computed<boolean>;
-  /** The name of the database parameter (e.g., `max_connections`) that this entry in the relational database parameter list refers to, used to identify which parameter's value is being specified or modified. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** The value to assign to the specified relational database parameter (identified by its parameter_name) in the Lightsail database, used for configuring engine-level settings such as MySQL or PostgreSQL parameters. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
 export interface Database_Tags {
-  /** The key of a tag attached to the Lightsail database, which identifies the tag for organizing and managing the database resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the Lightsail database, which holds the metadata string that accompanies the tag key. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -83,7 +73,6 @@ export interface DatabaseAttrs {
   backupRetention: boolean;
   /** Indicates the certificate that needs to be associated with the database. */
   caCertificateIdentifier: string;
-  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail database, assigned by AWS upon creation. (AI-inferred) */
   databaseArn: string;
   /** The name of the database to create when the Lightsail database resource is created. For MySQL, if this parameter isn't specified, no database is created in the database resource. For PostgreSQL, if this parameter isn't specified, a database named postgres is created in the database resource. */
   masterDatabaseName: string;

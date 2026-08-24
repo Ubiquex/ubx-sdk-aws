@@ -45,7 +45,6 @@ class QuickConnect_QuickConnectConfig:
 
 @dataclasses.dataclass
 class QuickConnect_Tags:
-    # The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

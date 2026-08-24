@@ -4,44 +4,31 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessTaskDefinition_LoRaWanupdateGatewayTaskEntry_CurrentVersion struct {
-	// Specifies the model name or identifier of the LoRaWAN gateway that this task definition version is intended for. (AI-inferred)
 	Model any
-	// The package version of the LoRaWAN gateway's current firmware, used to identify the existing firmware state before an update task is applied. (AI-inferred)
 	PackageVersion any
-	// The station version of the LoRaWAN gateway, used as part of the gateway's current version information in the update task. (AI-inferred)
 	Station any
 }
 
 type TwirelessTaskDefinition_LoRaWanupdateGatewayTaskEntry struct {
-	// Specifies the current LoRaWAN gateway firmware and software version, represented as a LoRaWANGatewayVersion object, that serves as the baseline for the gateway update task entry. (AI-inferred)
 	CurrentVersion any
-	// Specifies the target LoRaWAN gateway version (model, package, station, and firmware version) that defines the firmware to which the gateway should be updated for this task entry. (AI-inferred)
 	UpdateVersion any
 }
 
 type TwirelessTaskDefinition_Tags struct {
-	// The key of a tag assigned to the IoT Wireless task definition, used to label and categorize the resource for management and identification. (AI-inferred)
 	Key any
 	Value any
 }
 
 type TwirelessTaskDefinition_Update_LoRaWan struct {
-	// Specifies the current LoRaWAN gateway firmware version that the update task expects the device to have before applying the update, used to match gateways eligible for the task definition. (AI-inferred)
 	CurrentVersion any
-	// The cyclic redundancy check (CRC) of the LoRaWAN session signature key, used to validate the integrity of the security key during Over-the-Air (FUOTA) firmware updates. (AI-inferred)
 	SigKeyCrc any
-	// The update signature is a base64-encoded cryptographic signature, generated with the update signing key, that LoRaWAN devices use to verify the authenticity of the multicast session key during a FUOTA (firmware update over the air) for the multicast group defined by this task definition. (AI-inferred)
 	UpdateSignature any
-	// Specifies the LoRaWAN update version metadata, including the firmware update image and the IAM role used to perform the over-the-air firmware update for this wireless task definition. (AI-inferred)
 	UpdateVersion any
 }
 
 type TwirelessTaskDefinition_Update struct {
-	// Specifies the LoRaWAN update configuration for the task definition, including the update signature, signature key CRC, and current and target gateway versions used to create a gateway update task. (AI-inferred)
 	LoRaWan any
-	// Specifies the IAM role that the wireless task definition assumes to update data for the LoRaWAN network server. (AI-inferred)
 	UpdateDataRole any
-	// The S3 URL pointing to the update data (such as a firmware image) that is deployed to target wireless devices during the execution of this task. (AI-inferred)
 	UpdateDataSource any
 }
 
@@ -97,7 +84,6 @@ var TwirelessTaskDefinition_UpdateFields = ubx.FieldMap{
 type TwirelessTaskDefinitionConfig struct {
 	// Whether to automatically create tasks using this task definition for all gateways with the specified current version. If false, the task must me created by calling CreateWirelessGatewayTask.
 	AutoCreateTasks any
-	// Provides the LoRaWAN update gateway task entry, including the current and update version details for the wireless gateway firmware update. (AI-inferred)
 	LoRaWanupdateGatewayTaskEntry any
 	// The name of the new resource.
 	Name any
@@ -105,7 +91,6 @@ type TwirelessTaskDefinitionConfig struct {
 	Tags any
 	// A filter to list only the wireless gateway task definitions that use this task definition type
 	TaskDefinitionType any
-	// The Update object defines the over-the-air firmware update parameters for the task definition, specifying the S3 URL of the firmware update image and the IAM role that AWS IoT Wireless assumes to perform the update. (AI-inferred)
 	Update any
 }
 
@@ -116,7 +101,6 @@ type TwirelessTaskDefinitionAttrs struct {
 	AutoCreateTasks any
 	// The ID of the new wireless gateway task definition
 	Id any
-	// Provides the LoRaWAN update gateway task entry, including the current and update version details for the wireless gateway firmware update. (AI-inferred)
 	LoRaWanupdateGatewayTaskEntry any
 	// The name of the new resource.
 	Name any
@@ -124,7 +108,6 @@ type TwirelessTaskDefinitionAttrs struct {
 	Tags any
 	// A filter to list only the wireless gateway task definitions that use this task definition type
 	TaskDefinitionType any
-	// The Update object defines the over-the-air firmware update parameters for the task definition, specifying the S3 URL of the firmware update image and the IAM role that AWS IoT Wireless assumes to perform the update. (AI-inferred)
 	Update any
 }
 

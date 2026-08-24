@@ -4,7 +4,6 @@ package macie
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AllowList_Tags struct {
-	// The key of a tag that can be applied to this Amazon Macie allow list resource for organizing and identifying it. (AI-inferred)
 	Key any
 	Value any
 }

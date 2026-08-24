@@ -8,34 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IdentityPool_CognitoIdentityProviders:
-    # The app client ID of the user pool that is configured as an identity provider for the Cognito identity pool. (AI-inferred)
     client_id: Any = None
-    # The provider_name uniquely identifies the external identity provider (e.g., 'graph.facebook.com', 'accounts.google.com', or a Cognito user pool provider name) used in the identity pool's authentication flow. (AI-inferred)
     provider_name: Any = None
-    # Specifies whether the identity pool performs a server-side check of the token from the associated Cognito user pool provider, which validates the token with the user pool independently. (AI-inferred)
     server_side_token_check: Any = None
 
 @dataclasses.dataclass
 class IdentityPool_CognitoStreams:
-    # The ARN of the IAM role that Amazon Cognito assumes to publish identity pool events to the specified Kinesis stream. (AI-inferred)
     role_arn: Any = None
-    # The name of the Amazon Kinesis Firehose delivery stream that Cognito uses to deliver identity pool event data when streaming is enabled. (AI-inferred)
     stream_name: Any = None
-    # Indicates whether delivery of stream events from the Cognito identity pool to Amazon Kinesis is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     streaming_status: Any = None
 
 @dataclasses.dataclass
 class IdentityPool_IdentityPoolTags:
-    # The tag key part of a key-value pair used to label an Amazon Cognito identity pool for resource management, cost tracking, and IAM-based access control. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag attached to the Amazon Cognito identity pool. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class IdentityPool_PushSync:
-    # A list of Amazon Resource Names (ARNs) of the SNS platform applications that can be used to send push notifications to devices for Cognito Sync in the identity pool. (AI-inferred)
     application_arns: Any = None
-    # The ARN of the IAM role that Amazon Cognito assumes to send push notifications to the app endpoints configured for the identity pool's push synchronization settings. (AI-inferred)
     role_arn: Any = None
 
 _IdentityPool_CognitoIdentityProvidersFields = {
@@ -62,60 +52,36 @@ _IdentityPool_PushSyncFields = {
 
 @dataclasses.dataclass
 class IdentityPoolConfig:
-    # Determines whether the identity pool permits the classic authentication flow for unauthenticated identities, distinct from the enhanced flow; when false, only the enhanced flow is allowed. (AI-inferred)
     allow_classic_flow: Any = None
-    # Indicates whether the identity pool allows unauthenticated identities to authenticate, enabling guest access for users not signed in to an identity provider. (AI-inferred)
     allow_unauthenticated_identities: Any = None
-    # Maps Amazon Cognito event names (such as SyncTrigger) to Lambda function ARNs that invoke when those events occur for the identity pool. (AI-inferred)
     cognito_events: Any = None
-    # Defines the list of external identity providers (such as Amazon Cognito user pools, social providers like Facebook/Google, or Amazon) that are enabled for the identity pool, including their client IDs and token-check settings. (AI-inferred)
     cognito_identity_providers: Any = None
-    # Configures Amazon Cognito event streaming to Amazon Kinesis for the identity pool, including the Kinesis stream name, IAM role ARN, and streaming status. (AI-inferred)
     cognito_streams: Any = None
-    # Sets the developer provider name (a custom domain string) used to authenticate users via developer authenticated identities, enabling your backend to exchange its own tokens for AWS credentials through the Cognito Identity Pool. (AI-inferred)
     developer_provider_name: Any = None
-    # The name of the Amazon Cognito identity pool, which must be unique within the AWS region and account, and is used to identify the pool in the Cognito console and API. (AI-inferred)
     identity_pool_name: Any = None
     # An array of key-value pairs to apply to this resource.
     identity_pool_tags: Any = None
-    # Specifies the list of Amazon Resource Names (ARNs) for the OpenID Connect (OIDC) identity providers that are trusted to authenticate users for the identity pool. (AI-inferred)
     open_id_connect_provider_arns: Any = None
-    # Defines the push synchronization settings for the identity pool, including the IAM role ARN (RoleArn) and SNS platform application ARNs (SnsPlatformApplicationARNs) that enable sending push notifications to client devices. (AI-inferred)
     push_sync: Any = None
-    # Sets the Amazon Resource Names (ARNs) of SAML identity providers that the Cognito identity pool trusts for authenticating users and issuing AWS credentials. (AI-inferred)
     saml_provider_arns: Any = None
-    # Specifies the mapping of external identity provider names (such as Facebook, Google, or Amazon) to their respective application IDs, enabling those providers as login mechanisms for the Cognito identity pool. (AI-inferred)
     supported_login_providers: Any = None
 
 @dataclasses.dataclass
 class IdentityPoolAttrs:
-    # Determines whether the identity pool permits the classic authentication flow for unauthenticated identities, distinct from the enhanced flow; when false, only the enhanced flow is allowed. (AI-inferred)
     allow_classic_flow: Any = None
-    # Indicates whether the identity pool allows unauthenticated identities to authenticate, enabling guest access for users not signed in to an identity provider. (AI-inferred)
     allow_unauthenticated_identities: Any = None
-    # Maps Amazon Cognito event names (such as SyncTrigger) to Lambda function ARNs that invoke when those events occur for the identity pool. (AI-inferred)
     cognito_events: Any = None
-    # Defines the list of external identity providers (such as Amazon Cognito user pools, social providers like Facebook/Google, or Amazon) that are enabled for the identity pool, including their client IDs and token-check settings. (AI-inferred)
     cognito_identity_providers: Any = None
-    # Configures Amazon Cognito event streaming to Amazon Kinesis for the identity pool, including the Kinesis stream name, IAM role ARN, and streaming status. (AI-inferred)
     cognito_streams: Any = None
-    # Sets the developer provider name (a custom domain string) used to authenticate users via developer authenticated identities, enabling your backend to exchange its own tokens for AWS credentials through the Cognito Identity Pool. (AI-inferred)
     developer_provider_name: Any = None
-    # The unique identifier for the identity pool, a region-prefixed UUID string (e.g., 'us-east-1:12345678-1234-1234-1234-123456789012') assigned by AWS. (AI-inferred)
     id: Any = None
-    # The name of the Amazon Cognito identity pool, which must be unique within the AWS region and account, and is used to identify the pool in the Cognito console and API. (AI-inferred)
     identity_pool_name: Any = None
     # An array of key-value pairs to apply to this resource.
     identity_pool_tags: Any = None
-    # The name of the Cognito Identity Pool, which either reflects the user-specified name or is automatically generated by AWS when the resource is created without one. (AI-inferred)
     name: Any = None
-    # Specifies the list of Amazon Resource Names (ARNs) for the OpenID Connect (OIDC) identity providers that are trusted to authenticate users for the identity pool. (AI-inferred)
     open_id_connect_provider_arns: Any = None
-    # Defines the push synchronization settings for the identity pool, including the IAM role ARN (RoleArn) and SNS platform application ARNs (SnsPlatformApplicationARNs) that enable sending push notifications to client devices. (AI-inferred)
     push_sync: Any = None
-    # Sets the Amazon Resource Names (ARNs) of SAML identity providers that the Cognito identity pool trusts for authenticating users and issuing AWS credentials. (AI-inferred)
     saml_provider_arns: Any = None
-    # Specifies the mapping of external identity provider names (such as Facebook, Google, or Amazon) to their respective application IDs, enabling those providers as login mechanisms for the Cognito identity pool. (AI-inferred)
     supported_login_providers: Any = None
 
 IdentityPool = ubx.ResourceBinding(

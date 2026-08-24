@@ -43,9 +43,7 @@ class LakeFhirdatastore_SseConfiguration:
 
 @dataclasses.dataclass
 class LakeFhirdatastore_Tags:
-    # The key of a tag assigned to the AWS HealthLake FHIR Data Store, used to organize and identify the datastore for cost allocation and resource management. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to an AWS HealthLake FHIR DataStore, used to organize, categorize, and track the datastore for cost allocation and access control. (AI-inferred)
     value: Any = None
 
 _LakeFhirdatastore_IdentityProviderConfigurationFields = {
@@ -89,7 +87,6 @@ class LakeFhirdatastoreConfig:
     preload_data_config: Any = None
     # The server-side encryption key configuration for a customer provided encryption key.
     sse_configuration: Any = None
-    # Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -114,7 +111,6 @@ class LakeFhirdatastoreAttrs:
     preload_data_config: Any = None
     # The server-side encryption key configuration for a customer provided encryption key.
     sse_configuration: Any = None
-    # Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred)
     tags: Any = None
 
 LakeFhirdatastore = ubx.ResourceBinding(

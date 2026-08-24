@@ -4,7 +4,6 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MultiRegionEndpoint_Details_RouteDetails struct {
-	// The AWS Region targeted by this route in the multi-region endpoint's route configuration. (AI-inferred)
 	Region any
 }
 

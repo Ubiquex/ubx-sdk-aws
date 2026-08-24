@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Gateway_Tags {
-  /** The key of a user-defined tag entry in the tags map for this AWS internet gateway, used to label the gateway with custom metadata such as environment or owner. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the Internet Gateway, used to store metadata for identification, organization, or cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -19,7 +17,6 @@ export interface GatewayConfig {
 }
 
 export interface GatewayAttrs {
-  /** The unique identifier (e.g., `igw-...`) assigned by AWS to the internet gateway. (AI-inferred) */
   internetGatewayId: string;
   /** Any tags to assign to the internet gateway. */
   tags: Gateway_Tags[];

@@ -8,21 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TThingGroup_Tags:
-    # The key (name) of a tag assigned to the AWS IoT Thing Group, used to organize and identify the group in AWS. (AI-inferred)
     key: Any = None
-    # The value for a tag attached to the AWS IoT Thing Group resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TThingGroup_ThingGroupProperties_AttributePayload:
-    # Specifies a map of key-value pairs that define the attributes of the IoT thing group, used for describing and grouping things in AWS IoT. (AI-inferred)
     attributes: Any = None
 
 @dataclasses.dataclass
 class TThingGroup_ThingGroupProperties:
-    # The attribute payload defining the thing group's attributes, containing a map of attribute names to values and a boolean merge flag to determine whether to append or replace existing attributes. (AI-inferred)
     attribute_payload: Any = None
-    # The thing group description provides a user-defined text string that describes the purpose or contents of the IoT thing group in the AWS IoT registry. (AI-inferred)
     thing_group_description: Any = None
 
 _TThingGroup_TagsFields = {
@@ -45,32 +40,22 @@ _TThingGroup_ThingGroupPropertiesFields = {
 
 @dataclasses.dataclass
 class TThingGroupConfig:
-    # The name of the parent thing group to which this thing group belongs, establishing a hierarchical relationship in AWS IoT. (AI-inferred)
     parent_group_name: Any = None
-    # The query string that defines the dynamic thing group membership criteria, selecting which AWS IoT things are included in the group. (AI-inferred)
     query_string: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # The user-provided name for this IoT Thing Group, which must be unique within the AWS account; if omitted, CloudFormation or AWS IoT generates a unique name. (AI-inferred)
     thing_group_name: Any = None
-    # The thing group properties object, which specifies the thing group's description and attribute payload (key-value pairs) for the AWS IoT Thing Group. (AI-inferred)
     thing_group_properties: Any = None
 
 @dataclasses.dataclass
 class TThingGroupAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the IoT thing group. (AI-inferred)
     arn: Any = None
-    # The unique identifier of the IoT Thing Group, which is the thing group name as assigned by AWS. (AI-inferred)
     id: Any = None
-    # The name of the parent thing group to which this thing group belongs, establishing a hierarchical relationship in AWS IoT. (AI-inferred)
     parent_group_name: Any = None
-    # The query string that defines the dynamic thing group membership criteria, selecting which AWS IoT things are included in the group. (AI-inferred)
     query_string: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # The user-provided name for this IoT Thing Group, which must be unique within the AWS account; if omitted, CloudFormation or AWS IoT generates a unique name. (AI-inferred)
     thing_group_name: Any = None
-    # The thing group properties object, which specifies the thing group's description and attribute payload (key-value pairs) for the AWS IoT Thing Group. (AI-inferred)
     thing_group_properties: Any = None
 
 TThingGroup = ubx.ResourceBinding(

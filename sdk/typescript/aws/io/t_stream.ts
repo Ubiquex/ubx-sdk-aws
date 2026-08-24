@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TStream_Files_S3Location {
-  /** The name of the S3 bucket that contains the file referenced by this IoT stream file entry. (AI-inferred) */
   bucket?: string | Computed<string>;
-  /** Specifies the S3 object key (path) of the file to be added to the AWS IoT stream, locating the object within the bucket defined by the same s3_location block. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The version ID of the S3 object that contains the file to be streamed. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface TStream_Files {
-  /** The unique numeric identifier for this file within the AWS IoT Stream, used by devices to reference and load the specific file from the stream. (AI-inferred) */
   fileId?: number | Computed<number>;
-  /** Specifies the Amazon S3 location (bucket, key, and optional version) of a file to be added to the AWS IoT stream, used to retrieve the file content for the stream. (AI-inferred) */
   s3Location?: TStream_Files_S3Location | Computed<TStream_Files_S3Location>;
 }
 

@@ -2,14 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Explorer2DefaultViewAssociationConfig {
-  /** The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred) */
   viewArn: string | Computed<string>;
 }
 
 export interface Explorer2DefaultViewAssociationAttrs {
   /** The AWS principal that the default view is associated with, used as the unique identifier for this resource. */
   associatedAwsPrincipal: string;
-  /** The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred) */
   viewArn: string;
 }
 

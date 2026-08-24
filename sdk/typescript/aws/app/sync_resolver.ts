@@ -124,7 +124,6 @@ export interface SyncResolverAttrs {
   requestMappingTemplate: string;
   /** The location of a request mapping template in an S3 bucket. Use this if you want to provision with a template file in S3 rather than embedding it in your CFNshort template. */
   requestMappingTemplateS3Location: string;
-  /** The Amazon Resource Name (ARN) of the AppSync resolver, which uniquely identifies it across all AWS resources. (AI-inferred) */
   resolverArn: string;
   /** The response mapping template. */
   responseMappingTemplate: string;

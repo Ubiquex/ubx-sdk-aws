@@ -4,18 +4,15 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessWirelessDeviceImportTask_Sidewalk struct {
-	// The S3 URL of the CSV file that lists the Sidewalk devices to import as part of this import task. (AI-inferred)
 	DeviceCreationFile any
 	// sidewalk create device's file path
 	DeviceCreationFileList any
 	// sidewalk role
 	Role any
-	// The Sidewalk manufacturing serial number (SMSN) that uniquely identifies the Sidewalk device to be imported in this import task. (AI-inferred)
 	SidewalkManufacturingSn any
 }
 
 type TwirelessWirelessDeviceImportTask_Tags struct {
-	// The key of a tag applied to the AWS IoT Wireless device import task, used for organizing, identifying, and managing the import task via AWS tagging. (AI-inferred)
 	Key any
 	Value any
 }

@@ -9,42 +9,31 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_Tags:
     key: Any = None
-    # The value of a tag key attached to the AWS Clean Rooms ML Training Dataset, used to organize, identify, and manage the dataset through metadata labels. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSource:
-    # The AWS account ID of the Glue Data Catalog that contains the table used as the training data source for the Clean Rooms ML training dataset. (AI-inferred)
     catalog_id: Any = None
-    # The name of the AWS Glue Data Catalog database containing the source table for the training dataset input. (AI-inferred)
     database_name: Any = None
-    # The name of the AWS Glue table that contains the training data for the Clean Rooms ML training dataset. (AI-inferred)
     table_name: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource:
-    # This object defines the AWS Glue table that supplies the training data for this Clean Rooms ML training dataset. (AI-inferred)
     glue_data_source: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_TrainingData_InputConfig_Schema:
-    # Specifies the name of a column in the training data schema, which maps to a column in the configured data source for the Clean Rooms ML training dataset. (AI-inferred)
     column_name: Any = None
-    # Specifies the data type (e.g., INTEGER, STRING) for each column in the training dataset schema, used by AWS Clean Rooms ML to interpret the input data. (AI-inferred)
     column_types: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_TrainingData_InputConfig:
-    # Specifies the S3 location (URI) and type of the data source that provides the training input data for the Clean Rooms ML training dataset. (AI-inferred)
     data_source: Any = None
-    # Defines the schema of the training data input by listing column objects, each specifying a column name and its data type for the Clean Rooms ML training dataset. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDataset_TrainingData:
-    # Specifies the input configuration for the training dataset, including the S3 data source location and the list of column names that make up the schema. (AI-inferred)
     input_config: Any = None
-    # Defines whether the training data for this Clean Rooms ML training dataset is sourced from an Amazon S3 bucket or an AWS Glue table. (AI-inferred)
     type: Any = None
 
 _RoomsMlTrainingDataset_TagsFields = {
@@ -95,32 +84,22 @@ _RoomsMlTrainingDataset_TrainingDataFields = {
 
 @dataclasses.dataclass
 class RoomsMlTrainingDatasetConfig:
-    # A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred)
     description: Any = None
-    # The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred)
     role_arn: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset.
     tags: Any = None
-    # The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred)
     training_data: Any = None
 
 @dataclasses.dataclass
 class RoomsMlTrainingDatasetAttrs:
-    # A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred)
     description: Any = None
-    # The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred)
     role_arn: Any = None
-    # The current status of the training dataset (e.g., ACTIVE or INACTIVE), indicating whether it is available for use. (AI-inferred)
     status: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset.
     tags: Any = None
-    # The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred)
     training_data: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this Clean Rooms ML training dataset. (AI-inferred)
     training_dataset_arn: Any = None
 
 RoomsMlTrainingDataset = ubx.ResourceBinding(

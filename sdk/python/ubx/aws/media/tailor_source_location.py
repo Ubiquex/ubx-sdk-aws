@@ -17,7 +17,6 @@ class TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigur
 
 @dataclasses.dataclass
 class TailorSourceLocation_AccessConfiguration:
-    # Determines the access method for the source location, with valid values `S3_SIGV4` for authenticated Amazon S3 access and `STREAMING` for streaming-based access. (AI-inferred)
     access_type: Any = None
     # <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p>
     secrets_manager_access_token_configuration: Any = None
@@ -29,16 +28,12 @@ class TailorSourceLocation_DefaultSegmentDeliveryConfiguration:
 
 @dataclasses.dataclass
 class TailorSourceLocation_SegmentDeliveryConfigurations:
-    # Specifies the base URL from which MediaTailor retrieves content segments for the source location, serving as the origin for segment delivery. (AI-inferred)
     base_url: Any = None
-    # The name of the segment delivery configuration, which uniquely identifies this configuration within the source location. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class TailorSourceLocation_Tags:
-    # A user-defined tag key assigned to this AWS MediaTailor source location for resource organization and identification. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value user-defined tag applied to the MediaTailor source location, used for identifying, organizing, and managing the resource. (AI-inferred)
     value: Any = None
 
 _TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigurationFields = {
@@ -80,7 +75,6 @@ class TailorSourceLocationConfig:
     http_configuration: Any = None
     # <p>A list of the segment delivery configurations associated with this resource.</p>
     segment_delivery_configurations: Any = None
-    # The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the source location.
     tags: Any = None
@@ -97,7 +91,6 @@ class TailorSourceLocationAttrs:
     http_configuration: Any = None
     # <p>A list of the segment delivery configurations associated with this resource.</p>
     segment_delivery_configurations: Any = None
-    # The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the source location.
     tags: Any = None

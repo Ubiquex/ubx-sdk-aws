@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolUserToGroupAttachmentConfig:
-    # The name of the Cognito user pool group to which the user is attached. (AI-inferred)
     group_name: Any = None
-    # The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred)
     user_pool_id: Any = None
-    # The username of the Cognito user to attach to the specified group. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class UserPoolUserToGroupAttachmentAttrs:
-    # The name of the Cognito user pool group to which the user is attached. (AI-inferred)
     group_name: Any = None
-    # The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred)
     user_pool_id: Any = None
-    # The username of the Cognito user to attach to the specified group. (AI-inferred)
     username: Any = None
 
 UserPoolUserToGroupAttachment = ubx.ResourceBinding(

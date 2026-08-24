@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerStudioLifecycleConfig_Tags {
-  /** The key of a tag assigned to the SageMaker Studio Lifecycle Configuration resource, used to organize and identify it within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag assigned to the SageMaker Studio Lifecycle Configuration, used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

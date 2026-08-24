@@ -11,16 +11,13 @@ export interface Cluster_EncryptionDetails {
 }
 
 export interface Cluster_MultiRegionProperties {
-  /** Specifies the Amazon Resource Names (ARNs) of the linked regional DSQL clusters that form the multi-region cluster. (AI-inferred) */
   clusters?: string[] | Computed<string[]>;
   /** The witness region in a multi-region cluster. */
   witnessRegion?: string | Computed<string>;
 }
 
 export interface Cluster_Tags {
-  /** The key of a tag assigned to the DSQL cluster, used to organize and identify the cluster for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the DSQL cluster, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

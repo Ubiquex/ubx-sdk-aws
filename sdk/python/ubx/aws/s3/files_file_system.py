@@ -12,9 +12,7 @@ class FilesFileSystem_SynchronizationConfiguration_ExpirationDataRules:
 
 @dataclasses.dataclass
 class FilesFileSystem_SynchronizationConfiguration_ImportDataRules:
-    # Specifies the S3 object key prefix that filters which objects are imported from the source S3 bucket to the file system according to this import rule. (AI-inferred)
     prefix: Any = None
-    # Specifies the maximum file size in bytes for files to be included in the synchronization import, so that only files smaller than this value are imported. (AI-inferred)
     size_less_than: Any = None
     trigger: Any = None
 
@@ -37,7 +35,6 @@ _FilesFileSystem_TagsFields = {
 @dataclasses.dataclass
 class FilesFileSystemConfig:
     accept_bucket_warning: Any = None
-    # The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
     bucket: Any = None
     client_token: Any = None
     kms_key_id: Any = None
@@ -48,7 +45,6 @@ class FilesFileSystemConfig:
 @dataclasses.dataclass
 class FilesFileSystemAttrs:
     accept_bucket_warning: Any = None
-    # The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
     bucket: Any = None
     client_token: Any = None
     creation_time: Any = None

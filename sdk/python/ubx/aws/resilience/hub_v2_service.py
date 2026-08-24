@@ -12,64 +12,45 @@ class HubV2Service_Assertions:
 
 @dataclasses.dataclass
 class HubV2Service_AssociatedSystems:
-    # The Amazon Resource Name (ARN) of the system associated with this Resilience Hub service. (AI-inferred)
     system_arn: Any = None
-    # The unique identifiers of the user journeys linked to this associated system, which AWS Resilience Hub uses to align the system with the business processes it supports. (AI-inferred)
     user_journey_ids: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_EffectivePolicyValues_AvailabilitySlo:
-    # The name of the availability service-level objective (SLO) policy that is effective for the AWS Resilience Hub service. (AI-inferred)
     policy_name: Any = None
-    # The effective availability service level objective (SLO) value expressed as a percentage, computed from the applied resiliency policies for the Resilience Hub application. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_EffectivePolicyValues_MultiAzDrApproach:
-    # The name of the resiliency policy that governs the multi-AZ disaster recovery approach, determining the recovery point objective and recovery time objective for an application when an Availability Zone disruption occurs. (AI-inferred)
     policy_name: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_EffectivePolicyValues:
-    # Specifies the target availability service level objective (SLO) for the application, defining the expected uptime or availability target used within the effective resilience policy values. (AI-inferred)
     availability_slo: Any = None
     multi_az_dr_approach: Any = None
-    # The effective recovery point objective (RPO) value for the multi-availability-zone (AZ) failure domain, resolved from the resiliency policy applied to this service. (AI-inferred)
     multi_az_rpo: Any = None
-    # The effective Recovery Time Objective (RTO) for a multi-AZ outage, as derived from the resiliency policy applied to the service. (AI-inferred)
     multi_az_rto: Any = None
-    # Specifies the multi-region disaster recovery approach (e.g., active-active or active-passive) that is applied to the application as defined in the effective resilience policy. (AI-inferred)
     multi_region_dr_approach: Any = None
-    # Specifies the recovery point objective (RPO) that the application must meet in the event of a multi-region disruption, representing the maximum tolerable data loss across AWS Regions. (AI-inferred)
     multi_region_rpo: Any = None
-    # The effective multi-region Recovery Time Objective (RTO) value, an object that defines the maximum allowable downtime for workloads when failing over to another region, as computed from the service's effective policy evaluation. (AI-inferred)
     multi_region_rto: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_InputSources_ResourceConfiguration_Eks:
-    # The ARN of the Amazon EKS cluster that this EKS resource configuration refers to, used to identify the cluster for resilience discovery and assessment. (AI-inferred)
     cluster_arn: Any = None
-    # Specifies the list of Kubernetes namespaces within the EKS cluster that are used to scope the resilience assessment for this input source. (AI-inferred)
     namespaces: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_InputSources_ResourceConfiguration_ResourceTags:
-    # The tag key that, together with the tag value, forms a resource tag entry used to identify or filter resources within the resource configuration of an input source for the Resilience Hub service. (AI-inferred)
     key: Any = None
     values: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_InputSources_ResourceConfiguration:
-    # The Amazon Resource Name (ARN) of the CloudFormation stack that defines the resources for this input source's resource configuration in the Resilience Hub service. (AI-inferred)
     cfn_stack_arn: Any = None
-    # The S3 URL of the design file (e.g., a CloudFormation or Terraform template) that defines the resource configuration for the associated input source in the AWS Resilience Hub service. (AI-inferred)
     design_file_s3_url: Any = None
-    # Configures an Amazon EKS cluster as an input source for the Resilience Hub service, specifying the cluster to be discovered and included in resilience assessments. (AI-inferred)
     eks: Any = None
-    # Specifies the list of key-value tag objects to associate with the resource configuration of an input source, enabling you to categorize and identify the underlying AWS resource in AWS Resilience Hub. (AI-inferred)
     resource_tags: Any = None
-    # Specifies the S3 or Git URL of the Terraform state file that AWS Resilience Hub uses to import the resource configuration and assess the resilience of the application. (AI-inferred)
     tf_state_file_url: Any = None
 
 @dataclasses.dataclass
@@ -78,9 +59,7 @@ class HubV2Service_InputSources:
 
 @dataclasses.dataclass
 class HubV2Service_PermissionModel_CrossAccountRoleArns:
-    # The ARN of an IAM role in another AWS account that AWS Resilience Hub can assume to access and assess resources in that account as part of this permission model. (AI-inferred)
     cross_account_role_arn: Any = None
-    # The external ID that AWS Resilience Hub includes when assuming the cross-account IAM role listed in `permission_model.cross_account_role_arns`, so the role trust policy can verify it via the `sts:ExternalId` condition to prevent confused deputy attacks. (AI-inferred)
     external_id: Any = None
 
 @dataclasses.dataclass
@@ -92,14 +71,11 @@ class HubV2Service_PermissionModel:
 
 @dataclasses.dataclass
 class HubV2Service_ReportConfiguration_ReportOutput_S3:
-    # The AWS account ID of the owner of the S3 bucket where resilience assessment reports are delivered. (AI-inferred)
     bucket_owner: Any = None
-    # Specifies the S3 bucket path (key prefix) under which the resilience report output files are stored. (AI-inferred)
     bucket_path: Any = None
 
 @dataclasses.dataclass
 class HubV2Service_ReportConfiguration_ReportOutput:
-    # Configures the S3 destination (bucket name and object prefix) where AWS Resilience Hub writes the generated report for this service. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
@@ -211,7 +187,6 @@ class HubV2ServiceConfig:
     kms_key_id: Any = None
     # The name of the service.
     name: Any = None
-    # Describes the IAM permission model for how AWS Resilience Hub accesses a protected application's resources, including the model type (e.g., role-based or legacy IAM user), the invoker role name, and optional cross-account role ARNs. (AI-inferred)
     permission_model: Any = None
     # The ARN of the resilience policy to associate.
     policy_arn: Any = None
@@ -242,7 +217,6 @@ class HubV2ServiceAttrs:
     kms_key_id: Any = None
     # The name of the service.
     name: Any = None
-    # Describes the IAM permission model for how AWS Resilience Hub accesses a protected application's resources, including the model type (e.g., role-based or legacy IAM user), the invoker role name, and optional cross-account role ARNs. (AI-inferred)
     permission_model: Any = None
     # The ARN of the resilience policy to associate.
     policy_arn: Any = None

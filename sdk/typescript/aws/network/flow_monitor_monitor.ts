@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FlowMonitorMonitor_LocalResources {
-  /** The identifier of a local resource (such as a subnet or instance) that the monitor targets, typically the resource's ARN or AWS resource ID. (AI-inferred) */
   identifier?: string | Computed<string>;
-  /** The AWS resource type of a local resource to monitor, such as AWS::EC2::VPC, AWS::EC2::Subnet, or AWS::EC2::Instance. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

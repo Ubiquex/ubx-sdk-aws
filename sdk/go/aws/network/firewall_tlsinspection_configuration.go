@@ -4,62 +4,44 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_CheckCertificateRevocationStatus struct {
-	// Defines the action (REJECT or PASS) that AWS Network Firewall takes when the revocation status check for the presented server certificate indicates that the certificate is revoked. (AI-inferred)
 	RevokedStatusAction any
-	// Specifies how AWS Network Firewall handles traffic when the revocation status of a certificate is unknown during TLS inspection, such as by passing or dropping the traffic. (AI-inferred)
 	UnknownStatusAction any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_DestinationPorts struct {
-	// The inclusive lower bound of the destination port range that defines which traffic the TLS inspection scope matches. (AI-inferred)
 	FromPort any
-	// The upper bound (inclusive) of the destination port range that this TLS inspection scope uses to match network traffic. (AI-inferred)
 	ToPort any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes_Destinations struct {
-	// Specifies an IP address or CIDR block used as a destination address in the TLS inspection scope. (AI-inferred)
 	AddressDefinition any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_Scopes struct {
-	// Defines the list of destination port ranges to match for the TLS inspection scope, controlling which inbound traffic to the specified ports is inspected by the Network Firewall TLS inspection configuration. (AI-inferred)
 	DestinationPorts any
-	// Specifies the destination IP addresses or CIDR ranges that define which traffic this TLS inspection scope applies to. (AI-inferred)
 	Destinations any
-	// The list of IP protocol numbers (e.g., 6 for TCP, 17 for UDP) that define which protocols the TLS inspection scope applies to. (AI-inferred)
 	Protocols any
-	// Defines a list of source port ranges (with from_port and to_port) that the TLS inspection scope uses to match incoming traffic, controlling which connections are inspected. (AI-inferred)
 	SourcePorts any
-	// Specifies the source IP addresses for the TLS inspection scope, as a list of address definitions (such as CIDR blocks) that traffic must match to be inspected. (AI-inferred)
 	Sources any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations_ServerCertificates struct {
-	// The Amazon Resource Name (ARN) of the server certificate from AWS Certificate Manager (ACM) that AWS Network Firewall uses for TLS inspection. (AI-inferred)
 	ResourceArn any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration_ServerCertificateConfigurations struct {
-	// The ARN of the certificate authority (CA) used to issue the certificates for this TLS inspection configuration. (AI-inferred)
 	CertificateAuthorityArn any
-	// Defines the actions (pass, drop, or reject) to apply when a client certificate's revocation status check returns 'revoked' or 'unknown' during TLS inspection. (AI-inferred)
 	CheckCertificateRevocationStatus any
-	// Defines the list of network traffic scope objects (matching source/destination CIDRs, ports, and protocols) that determine which server certificate is used for TLS inspection in the AWS Network Firewall configuration. (AI-inferred)
 	Scopes any
-	// Specifies the server certificates that AWS Network Firewall uses to decrypt and inspect TLS traffic for this server certificate configuration, identified by their Amazon Resource Names (ARNs). (AI-inferred)
 	ServerCertificates any
 }
 
 type FirewallTlsinspectionConfiguration_TlsinspectionConfiguration struct {
-	// Defines the list of server certificate configurations, where each configuration specifies an AWS Certificate Manager (ACM) certificate ARN and optional scopes (such as destination IP addresses and protocols) that determine which TLS traffic is decrypted and re-encrypted using that certificate in the Network Firewall TLS inspection configuration. (AI-inferred)
 	ServerCertificateConfigurations any
 }
 
 type FirewallTlsinspectionConfiguration_Tags struct {
-	// The key of a tag attached to the AWS Network Firewall TLS inspection configuration, used for identifying, organizing, and managing the resource. (AI-inferred)
 	Key any
-	// The user-defined string value associated with a tag key on the AWS Network Firewall TLS inspection configuration, used for identifying or categorizing this resource. (AI-inferred)
 	Value any
 }
 
@@ -138,28 +120,19 @@ var FirewallTlsinspectionConfiguration_TagsFields = ubx.FieldMap{
 	}
 
 type FirewallTlsinspectionConfigurationConfig struct {
-	// An optional user-defined description for the TLS inspection configuration, helping to identify the resource within AWS Network Firewall. (AI-inferred)
 	Description any
-	// Defines the TLS inspection configuration for the Network Firewall, including the server certificate configurations that specify how encrypted traffic is decrypted and inspected. (AI-inferred)
 	TlsinspectionConfiguration any
-	// A unique, user-friendly name for the TLS inspection configuration, used to identify it within the AWS account and Region. (AI-inferred)
 	TlsinspectionConfigurationName any
-	// A list of key-value tag objects to attach to the TLS inspection configuration for resource identification, organization, and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type FirewallTlsinspectionConfigurationAttrs struct {
-	// An optional user-defined description for the TLS inspection configuration, helping to identify the resource within AWS Network Firewall. (AI-inferred)
 	Description any
-	// Defines the TLS inspection configuration for the Network Firewall, including the server certificate configurations that specify how encrypted traffic is decrypted and inspected. (AI-inferred)
 	TlsinspectionConfiguration any
 	// A resource ARN.
 	TlsinspectionConfigurationArn any
-	// The unique identifier (UUID) assigned by AWS to this Network Firewall TLS inspection configuration. (AI-inferred)
 	TlsinspectionConfigurationId any
-	// A unique, user-friendly name for the TLS inspection configuration, used to identify it within the AWS account and Region. (AI-inferred)
 	TlsinspectionConfigurationName any
-	// A list of key-value tag objects to attach to the TLS inspection configuration for resource identification, organization, and cost allocation. (AI-inferred)
 	Tags any
 }
 

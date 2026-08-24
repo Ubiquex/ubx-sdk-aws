@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StarConnectionsConnection_Tags {
-  /** The key of a tag attached to the AWS CodeStar Connections connection, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the AWS CodeStar Connections connection, which can be used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

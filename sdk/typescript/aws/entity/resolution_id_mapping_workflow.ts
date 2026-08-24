@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolutionIdMappingWorkflow_IdMappingIncrementalRunConfig {
-  /** Determines whether the incremental run of the ID mapping workflow imports new records (IMPORT) or updates existing record mappings (UPDATE). (AI-inferred) */
   incrementalRunType: string | Computed<string>;
 }
 
@@ -12,7 +11,6 @@ export interface ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderPropert
 }
 
 export interface ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties {
-  /** Specifies the Amazon S3 location of an intermediate source dataset that a provider-based ID mapping workflow can access to improve entity resolution accuracy. (AI-inferred) */
   intermediateSourceConfiguration?: ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties_IntermediateSourceConfiguration | Computed<ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties_IntermediateSourceConfiguration>;
   /** Additional Provider configuration that would be required for the provider service. The Configuration must be in JSON string format */
   providerConfiguration?: unknown | Computed<unknown>;
@@ -21,47 +19,32 @@ export interface ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderPropert
 }
 
 export interface ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_Rules {
-  /** The list of record attribute names (matching keys) that are compared between records to determine if they refer to the same entity within a rule of the rule-based ID mapping workflow. (AI-inferred) */
   matchingKeys?: string[] | Computed<string[]>;
-  /** Provides an identifying name for the rule that defines how matching keys are combined in the rule-based mapping technique of the AWS Entity Resolution ID mapping workflow. (AI-inferred) */
   ruleName?: string | Computed<string>;
 }
 
 export interface ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties {
-  /** Specifies the cardinality of matches for the rule-based ID mapping, either ONE_TO_ONE (each record maps to at most one other record) or MANY_TO_MANY (each record can match multiple records). (AI-inferred) */
   attributeMatchingModel: string | Computed<string>;
-  /** Specifies the record matching model (e.g., ONE_TO_ONE or MANY_TO_MANY) that determines how source records are paired with matched records in the rule-based mapping workflow. (AI-inferred) */
   recordMatchingModel: string | Computed<string>;
-  /** Specifies whether the rule-based properties in the ID mapping workflow apply to the source or target side (valid values: SOURCE or TARGET). (AI-inferred) */
   ruleDefinitionType?: string | Computed<string>;
-  /** Defines the list of matching rules that specify how record attributes are compared (e.g., exact, fuzzy) across source data to link records into an entity. (AI-inferred) */
   rules?: ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_Rules[] | Computed<ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_Rules[]>;
 }
 
 export interface ResolutionIdMappingWorkflow_IdMappingTechniques {
-  /** Specifies whether this ID mapping technique uses rule-based matching or a provider-based machine-learning approach, with allowed values RULE_BASED or PROVIDER. (AI-inferred) */
   idMappingType?: string | Computed<string>;
-  /** Specifies the version of the normalization rules (e.g., '1.0' or '2.0') applied to standardize input records' attributes during the ID mapping workflow, controlling how data is prepared before matching. (AI-inferred) */
   normalizationVersion?: string | Computed<string>;
-  /** Configuration for the ID mapping provider, including the provider schema ARN and provider-specific parameters, used when the id mapping technique is provider-based. (AI-inferred) */
   providerProperties?: ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties | Computed<ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties>;
-  /** Specifies the configuration for rule-based ID matching within the workflow, including the matching rules and attribute mappings used to compare records. (AI-inferred) */
   ruleBasedProperties?: ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties | Computed<ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties>;
 }
 
 export interface ResolutionIdMappingWorkflow_InputSourceConfig {
-  /** The ARN of the input source (such as an Amazon S3 bucket or AWS Glue table) that provides the data for the ID mapping workflow. (AI-inferred) */
   inputSourceArn?: string | Computed<string>;
-  /** The ARN of the AWS Entity Resolution schema that defines the attributes and data format for this input source in the ID mapping workflow. (AI-inferred) */
   schemaArn?: string | Computed<string>;
-  /** Specifies whether the input source is the source or target dataset in the ID mapping workflow, with allowed values SOURCE or TARGET. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface ResolutionIdMappingWorkflow_OutputSourceConfig {
-  /** The ARN of the AWS KMS key used to encrypt the output data written to the S3 output location for this ID mapping workflow. (AI-inferred) */
   kmsarn?: string | Computed<string>;
-  /** Specifies the S3 bucket and object key prefix where the ID mapping workflow writes its output data files. (AI-inferred) */
   outputS3Path?: string | Computed<string>;
 }
 
@@ -136,46 +119,30 @@ const ResolutionIdMappingWorkflow_TagsFields: FieldMap = {
 };
 
 export interface ResolutionIdMappingWorkflowConfig {
-  /** Describes the ID mapping workflow, providing a human-readable summary of its purpose and configuration for management and identification in AWS Entity Resolution. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the incremental run configuration for the ID mapping workflow, defining the interval (and interval type) at which the workflow automatically runs on new data. (AI-inferred) */
   idMappingIncrementalRunConfig?: ResolutionIdMappingWorkflow_IdMappingIncrementalRunConfig | Computed<ResolutionIdMappingWorkflow_IdMappingIncrementalRunConfig>;
-  /** Defines the technique (rule-based or machine learning-based) and its configuration for generating unique IDs when matching records in the ID mapping workflow. (AI-inferred) */
   idMappingTechniques: ResolutionIdMappingWorkflow_IdMappingTechniques | Computed<ResolutionIdMappingWorkflow_IdMappingTechniques>;
-  /** Specifies the list of input data sources (each with an ARN and schema name) from which the entity resolution ID mapping workflow reads records for matching and linking. (AI-inferred) */
   inputSourceConfig: ResolutionIdMappingWorkflow_InputSourceConfig[] | Computed<ResolutionIdMappingWorkflow_InputSourceConfig[]>;
-  /** Configures the destinations where the ID mapping workflow writes its matched record output, specifying the S3 output path and optional KMS key for encryption. (AI-inferred) */
   outputSourceConfig?: ResolutionIdMappingWorkflow_OutputSourceConfig[] | Computed<ResolutionIdMappingWorkflow_OutputSourceConfig[]>;
-  /** The ARN of the IAM role that the Entity Resolution ID mapping workflow assumes to access the input data from the source and write results to the output target. (AI-inferred) */
   roleArn: string | Computed<string>;
-  /** In an AWS Entity Resolution ID mapping workflow, tags are custom key-value pairs you can attach to the workflow resource to help organize, identify, and manage it, as well as support cost allocation and IAM-based access control. (AI-inferred) */
   tags?: ResolutionIdMappingWorkflow_Tags[] | Computed<ResolutionIdMappingWorkflow_Tags[]>;
-  /** The unique name of the ID mapping workflow, used as a friendly identifier when creating and managing the workflow in AWS Entity Resolution. (AI-inferred) */
   workflowName: string | Computed<string>;
 }
 
 export interface ResolutionIdMappingWorkflowAttrs {
   /** The time of this IdMappingWorkflow got created */
   createdAt: string;
-  /** Describes the ID mapping workflow, providing a human-readable summary of its purpose and configuration for management and identification in AWS Entity Resolution. (AI-inferred) */
   description: string;
-  /** Specifies the incremental run configuration for the ID mapping workflow, defining the interval (and interval type) at which the workflow automatically runs on new data. (AI-inferred) */
   idMappingIncrementalRunConfig: ResolutionIdMappingWorkflow_IdMappingIncrementalRunConfig;
-  /** Defines the technique (rule-based or machine learning-based) and its configuration for generating unique IDs when matching records in the ID mapping workflow. (AI-inferred) */
   idMappingTechniques: ResolutionIdMappingWorkflow_IdMappingTechniques;
-  /** Specifies the list of input data sources (each with an ARN and schema name) from which the entity resolution ID mapping workflow reads records for matching and linking. (AI-inferred) */
   inputSourceConfig: ResolutionIdMappingWorkflow_InputSourceConfig[];
-  /** Configures the destinations where the ID mapping workflow writes its matched record output, specifying the S3 output path and optional KMS key for encryption. (AI-inferred) */
   outputSourceConfig: ResolutionIdMappingWorkflow_OutputSourceConfig[];
-  /** The ARN of the IAM role that the Entity Resolution ID mapping workflow assumes to access the input data from the source and write results to the output target. (AI-inferred) */
   roleArn: string;
-  /** In an AWS Entity Resolution ID mapping workflow, tags are custom key-value pairs you can attach to the workflow resource to help organize, identify, and manage it, as well as support cost allocation and IAM-based access control. (AI-inferred) */
   tags: ResolutionIdMappingWorkflow_Tags[];
   /** The time of this IdMappingWorkflow got last updated at */
   updatedAt: string;
   /** The default IdMappingWorkflow arn */
   workflowArn: string;
-  /** The unique name of the ID mapping workflow, used as a friendly identifier when creating and managing the workflow in AWS Entity Resolution. (AI-inferred) */
   workflowName: string;
 }
 

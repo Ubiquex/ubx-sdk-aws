@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ledger_Tags {
-  /** Defines the key of a tag applied to the QLDB ledger, which serves as a user-defined label for identifying and managing the ledger resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the AWS QLDB ledger, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,30 +12,19 @@ const Ledger_TagsFields: FieldMap = {
 };
 
 export interface LedgerConfig {
-  /** Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred) */
   deletionProtection?: boolean | Computed<boolean>;
-  /** The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred) */
   kmsKey?: string | Computed<string>;
-  /** The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred) */
   permissionsMode: string | Computed<string>;
-  /** Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred) */
   tags?: Ledger_Tags[] | Computed<Ledger_Tags[]>;
 }
 
 export interface LedgerAttrs {
-  /** Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred) */
   deletionProtection: boolean;
-  /** The id is the unique name of the QLDB ledger, which serves as the primary identifier for the ledger resource. (AI-inferred) */
   id: string;
-  /** The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred) */
   kmsKey: string;
-  /** The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred) */
   name: string;
-  /** Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred) */
   permissionsMode: string;
-  /** Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred) */
   tags: Ledger_Tags[];
 }
 

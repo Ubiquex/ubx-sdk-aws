@@ -13,9 +13,7 @@ export interface MakerApp_ResourceSpec {
 }
 
 export interface MakerApp_Tags {
-  /** The key of a tag attached to the SageMaker App, used for organizing, cost allocation, and identity-based access control of the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the SageMaker App, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -40,7 +38,6 @@ export interface MakerAppConfig {
   domainId: string | Computed<string>;
   /** Indicates whether the application is launched in recovery mode. */
   recoveryMode?: boolean | Computed<boolean>;
-  /** Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred) */
   resourceSpec?: MakerApp_ResourceSpec | Computed<MakerApp_ResourceSpec>;
   /** A list of tags to apply to the app. */
   tags?: MakerApp_Tags[] | Computed<MakerApp_Tags[]>;
@@ -61,7 +58,6 @@ export interface MakerAppAttrs {
   domainId: string;
   /** Indicates whether the application is launched in recovery mode. */
   recoveryMode: boolean;
-  /** Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred) */
   resourceSpec: MakerApp_ResourceSpec;
   /** A list of tags to apply to the app. */
   tags: MakerApp_Tags[];

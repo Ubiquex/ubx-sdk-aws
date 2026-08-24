@@ -4,28 +4,18 @@ package rum
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitions struct {
-	// A list of event attribute names (dimension keys) from the RUM event JSON that are used as dimensions for the custom metric defined in this metric definition. (AI-inferred)
 	DimensionKeys any
-	// The JSON event pattern that filters which RUM application events are included in this metric definition, used to match event attributes for extracting metric values. (AI-inferred)
 	EventPattern any
-	// The name assigned to this metric definition, which is used as the metric name when the extracted value is sent to the configured CloudWatch destination. (AI-inferred)
 	Name any
-	// The CloudWatch namespace where the extracted metric is published, defaulting to 'AWS/RUM' if not specified. (AI-inferred)
 	Namespace any
-	// Defines the unit label (e.g., 'Milliseconds' or 'Count') that CloudWatch RUM attaches to the metric generated from this metric definition when it is sent to the destination. (AI-inferred)
 	UnitLabel any
-	// The value_key property specifies the key in the event data that CloudWatch RUM uses to extract the numerical value for the custom metric defined by this metric definition. (AI-inferred)
 	ValueKey any
 }
 
 type AppMonitor_AppMonitorConfiguration_MetricDestinations struct {
-	// The destination service to which CloudWatch RUM sends the extracted metrics, such as CloudWatch or Evidently. (AI-inferred)
 	Destination any
-	// The ARN of the CloudWatch Logs log group or Evidently project that receives the metrics, used when metric destinations are configured for the app monitor. (AI-inferred)
 	DestinationArn any
-	// The ARN of an IAM role that grants CloudWatch RUM permission to publish metrics to the destination specified in this metric destination definition. (AI-inferred)
 	IamRoleArn any
-	// Specifies the list of metric definitions for a metric destination, each defining a metric name and the value expression (such as a JSONPath or regex) used to extract the metric value from RUM event data. (AI-inferred)
 	MetricDefinitions any
 }
 
@@ -53,7 +43,6 @@ type AppMonitor_AppMonitorConfiguration struct {
 }
 
 type AppMonitor_CustomEvents struct {
-	// Determines whether custom event collection is enabled or disabled for the app monitor, with allowed values 'ENABLED' and 'DISABLED'. (AI-inferred)
 	Status any
 }
 
@@ -77,9 +66,7 @@ type AppMonitor_ResourcePolicy struct {
 }
 
 type AppMonitor_Tags struct {
-	// The tag key, which is the name of the tag used to categorize and manage the CloudWatch RUM app monitor resource. (AI-inferred)
 	Key any
-	// Specifies the value for a tag key in the map of tags associated with the AWS RUM app monitor resource. (AI-inferred)
 	Value any
 }
 
@@ -162,7 +149,6 @@ type AppMonitorConfig struct {
 	DomainList any
 	// A name for the app monitor
 	Name any
-	// Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
 	Platform any
 	// A structure that defines resource policy attached to your app monitor.
 	ResourcePolicy any
@@ -187,7 +173,6 @@ type AppMonitorAttrs struct {
 	Id any
 	// A name for the app monitor
 	Name any
-	// Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
 	Platform any
 	// A structure that defines resource policy attached to your app monitor.
 	ResourcePolicy any

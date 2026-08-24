@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TCertificateProvider_Tags struct {
-	// The key portion of a tag assigned to the AWS IoT certificate provider resource, used to label and manage the certificate provider with custom metadata. (AI-inferred)
 	Key any
-	// The value string of a tag key-value pair attached to the AWS IoT certificate provider, used to store arbitrary metadata for identification and management. (AI-inferred)
 	Value any
 }
 
@@ -16,24 +14,17 @@ var TCertificateProvider_TagsFields = ubx.FieldMap{
 	}
 
 type TCertificateProviderConfig struct {
-	// The AWS::IoT::CertificateProvider account default for operations property specifies the list of certificate provider operations (RegisterCertificate or RegisterCertificateWithoutCA) for which this certificate provider is the default provider in the AWS account. (AI-inferred)
 	AccountDefaultForOperations any
-	// Specifies the unique name of the AWS IoT certificate provider, which identifies it within the AWS account and region and is referenced when associating CA certificates with this provider. (AI-inferred)
 	CertificateProviderName any
-	// The ARN of the Lambda function that AWS IoT invokes to perform custom certificate signing or validation for this certificate provider. (AI-inferred)
 	LambdaFunctionArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type TCertificateProviderAttrs struct {
-	// The AWS::IoT::CertificateProvider account default for operations property specifies the list of certificate provider operations (RegisterCertificate or RegisterCertificateWithoutCA) for which this certificate provider is the default provider in the AWS account. (AI-inferred)
 	AccountDefaultForOperations any
-	// The Amazon Resource Name (ARN) that uniquely identifies the AWS IoT certificate provider. (AI-inferred)
 	Arn any
-	// Specifies the unique name of the AWS IoT certificate provider, which identifies it within the AWS account and region and is referenced when associating CA certificates with this provider. (AI-inferred)
 	CertificateProviderName any
-	// The ARN of the Lambda function that AWS IoT invokes to perform custom certificate signing or validation for this certificate provider. (AI-inferred)
 	LambdaFunctionArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

@@ -2,23 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SearchServiceApplication_AppConfigs {
-  /** The key name that identifies a specific configuration parameter within the app_configs list of an AWS OpenSearch Service application. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a single key-value pair within the AppConfigs list, which supplies custom settings for the OpenSearch Service application when it is provisioned. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SearchServiceApplication_DataSources {
-  /** Specifies the Amazon Resource Name (ARN) of an underlying AWS data source (for example, an S3 bucket or CloudWatch Logs log group) that this OpenSearch Service application uses for direct querying. (AI-inferred) */
   dataSourceArn?: unknown | Computed<unknown>;
-  /** Specifies a descriptive text for a data source that is associated with the Amazon OpenSearch Service application. (AI-inferred) */
   dataSourceDescription?: string | Computed<string>;
 }
 
 export interface SearchServiceApplication_IamIdentityCenterOptions {
   /** Whether IAM Identity Center is enabled. */
   enabled?: boolean | Computed<boolean>;
-  /** The ARN of the AWS IAM Identity Center instance used to authenticate users for this OpenSearch Service application. (AI-inferred) */
   iamIdentityCenterInstanceArn?: unknown | Computed<unknown>;
   /** The ARN of the IAM role for Identity Center application. */
   iamRoleForIdentityCenterApplicationArn?: string | Computed<string>;

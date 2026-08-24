@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverResolverQueryLoggingConfig_Tags struct {
-	// The key of a tag attached to this Route 53 Resolver query logging configuration, used to categorize and identify the resource (for example, 'Environment' or 'Project'). (AI-inferred)
 	Key any
-	// The value part of a key-value tag assigned to the Route53 Resolver query logging configuration. (AI-inferred)
 	Value any
 }
 

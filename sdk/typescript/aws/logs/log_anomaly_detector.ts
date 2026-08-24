@@ -4,13 +4,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface LogAnomalyDetectorConfig {
   /** Account ID for owner of detector */
   accountId?: string | Computed<string>;
-  /** Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred) */
   anomalyVisibilityTime?: number | Computed<number>;
   /** Name of detector */
   detectorName?: string | Computed<string>;
   /** How often log group is evaluated */
   evaluationFrequency?: string | Computed<string>;
-  /** The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred) */
   filterPattern?: string | Computed<string>;
   /** The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. */
   kmsKeyId?: string | Computed<string>;
@@ -25,7 +23,6 @@ export interface LogAnomalyDetectorAttrs {
   anomalyDetectorArn: string;
   /** Current status of detector. */
   anomalyDetectorStatus: string;
-  /** Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred) */
   anomalyVisibilityTime: number;
   /** When detector was created. */
   creationTimeStamp: number;
@@ -33,7 +30,6 @@ export interface LogAnomalyDetectorAttrs {
   detectorName: string;
   /** How often log group is evaluated */
   evaluationFrequency: string;
-  /** The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred) */
   filterPattern: string;
   /** The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. */
   kmsKeyId: string;

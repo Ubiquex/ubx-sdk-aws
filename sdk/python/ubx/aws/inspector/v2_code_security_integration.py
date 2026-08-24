@@ -8,32 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManaged:
-    # The personal access token for the self-managed GitLab instance that AWS Inspector uses to authenticate and access repositories for code security scanning. (AI-inferred)
     access_token: Any = None
-    # The base URL of the self-managed GitLab instance that AWS Inspector connects to for code security integration. (AI-inferred)
     instance_url: Any = None
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegration_CreateIntegrationDetails:
-    # Provides the configuration details for integrating AWS Inspector code security with a self-managed GitLab instance, including the necessary connection and authentication information. (AI-inferred)
     gitlab_self_managed: Any = None
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegration_UpdateIntegrationDetails_Github:
     code: Any = None
-    # The unique identifier of the GitHub App installation within the GitHub organization or account that AWS Inspector V2 uses to access and scan repositories. (AI-inferred)
     installation_id: Any = None
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManaged:
-    # The personal access token (auth code) required for AWS Inspector v2 to authenticate to the self-managed GitLab instance when updating the code security integration. (AI-inferred)
     auth_code: Any = None
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegration_UpdateIntegrationDetails:
-    # The GitHub-specific configuration object within the update integration details, which defines repository-level scan and encryption settings for the AWS Inspector V2 code security integration. (AI-inferred)
     github: Any = None
-    # This object holds the settings needed to update the integration with a self-managed GitLab repository, including the instance URL and authentication credentials. (AI-inferred)
     gitlab_self_managed: Any = None
 
 _V2CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManagedFields = {
@@ -73,12 +66,10 @@ _V2CodeSecurityIntegration_UpdateIntegrationDetailsFields = {
 
 @dataclasses.dataclass
 class V2CodeSecurityIntegrationConfig:
-    # Specifies the event type and API call used to create the Inspector v2 code security integration, defining when and how the integration is established for a repository. (AI-inferred)
     create_integration_details: Any = None
     # Code Security Integration name
     name: Any = None
     tags: Any = None
-    # Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
     type: Any = None
     update_integration_details: Any = None
 
@@ -88,7 +79,6 @@ class V2CodeSecurityIntegrationAttrs:
     arn: Any = None
     # Authorization URL for OAuth flow
     authorization_url: Any = None
-    # Specifies the event type and API call used to create the Inspector v2 code security integration, defining when and how the integration is established for a repository. (AI-inferred)
     create_integration_details: Any = None
     # Creation timestamp
     created_at: Any = None
@@ -96,12 +86,10 @@ class V2CodeSecurityIntegrationAttrs:
     last_updated_at: Any = None
     # Code Security Integration name
     name: Any = None
-    # The read-only integration status, automatically set to 'ENABLED' or 'DISABLED' to indicate whether Amazon Inspector code security scanning is active for the account. (AI-inferred)
     status: Any = None
     # Reason for the current status
     status_reason: Any = None
     tags: Any = None
-    # Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred)
     type: Any = None
     update_integration_details: Any = None
 

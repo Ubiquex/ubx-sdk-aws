@@ -9,29 +9,19 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class LimitConfig:
     amount_requirement_name: Any = None
-    # Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred)
     description: Any = None
-    # A human-readable name for the limit, used to identify and display the limit in the AWS Deadline Cloud console and API. (AI-inferred)
     display_name: Any = None
-    # The unique identifier of the AWS Deadline Cloud farm to which this limit belongs. (AI-inferred)
     farm_id: Any = None
-    # The maximum number of resources that the limit permits to be used simultaneously, enforcing a cap on concurrent usage in the Deadline Cloud farm. (AI-inferred)
     max_count: Any = None
 
 @dataclasses.dataclass
 class LimitAttrs:
     amount_requirement_name: Any = None
-    # The current number of resources that are using this limit, as tracked by AWS Deadline Cloud and updated automatically as usage changes. (AI-inferred)
     current_count: Any = None
-    # Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred)
     description: Any = None
-    # A human-readable name for the limit, used to identify and display the limit in the AWS Deadline Cloud console and API. (AI-inferred)
     display_name: Any = None
-    # The unique identifier of the AWS Deadline Cloud farm to which this limit belongs. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier assigned by AWS Deadline Cloud to this limit resource when it is created, used to refer to the limit in other resources. (AI-inferred)
     limit_id: Any = None
-    # The maximum number of resources that the limit permits to be used simultaneously, enforcing a cap on concurrent usage in the Deadline Cloud farm. (AI-inferred)
     max_count: Any = None
 
 Limit = ubx.ResourceBinding(

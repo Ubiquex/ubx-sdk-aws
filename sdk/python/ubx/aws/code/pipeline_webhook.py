@@ -15,16 +15,12 @@ class PipelineWebhook_AuthenticationConfiguration:
 
 @dataclasses.dataclass
 class PipelineWebhook_Filters:
-    # The JSON path in the event payload that this webhook filter rule uses to determine which events should trigger the pipeline. (AI-inferred)
     json_path: Any = None
-    # The exact string value that the extracted payload at the filter's JSON path must match for the webhook to trigger the pipeline. (AI-inferred)
     match_equals: Any = None
 
 @dataclasses.dataclass
 class PipelineWebhook_Tags:
-    # The key of a user-defined tag attached to the AWS CodePipeline webhook, which acts as a custom label to identify, organize, and control access to the webhook resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to the CodePipeline webhook, providing user-defined metadata that can be used to organize and filter webhook resources. (AI-inferred)
     value: Any = None
 
 _PipelineWebhook_AuthenticationConfigurationFields = {

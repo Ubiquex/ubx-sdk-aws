@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TsiteWiseGateway_GatewayCapabilitySummaries:
-    # The configuration JSON string for the gateway capability, which defines how the capability is configured (e.g., OPC-UA server endpoint settings) and is validated by the capability's schema. (AI-inferred)
     capability_configuration: Any = None
-    # The namespace that uniquely identifies this IoT SiteWise gateway capability, for example 'iotsitewise:gateway:opcua'. (AI-inferred)
     capability_namespace: Any = None
 
 @dataclasses.dataclass
@@ -34,9 +32,7 @@ class TsiteWiseGateway_GatewayPlatform:
 
 @dataclasses.dataclass
 class TsiteWiseGateway_Tags:
-    # The user-defined key portion of a key-value tag applied to an AWS IoT SiteWise gateway, allowing categorization and filtering of gateway resources. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair assigned to the AWS IoT SiteWise Gateway, used for metadata such as cost allocation, access control, and resource organization. (AI-inferred)
     value: Any = None
 
 _TsiteWiseGateway_GatewayCapabilitySummariesFields = {

@@ -19,7 +19,6 @@ type OutpostsAccessPointConfig struct {
 	Name any
 	// The access point policy associated with this access point.
 	Policy any
-	// The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred)
 	VpcConfiguration any
 }
 
@@ -32,7 +31,6 @@ type OutpostsAccessPointAttrs struct {
 	Name any
 	// The access point policy associated with this access point.
 	Policy any
-	// The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred)
 	VpcConfiguration any
 }
 

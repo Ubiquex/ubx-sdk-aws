@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Keyspace_ReplicationSpecification:
-    # A list of AWS regions where the keyspace is replicated for Multi-Region Replication, enabling data availability across those regions. (AI-inferred)
     region_list: Any = None
-    # Specifies the replication strategy for the keyspace, either SINGLE_REGION for single-region replication or MULTI_REGION for replicating data across multiple AWS regions. (AI-inferred)
     replication_strategy: Any = None
 
 @dataclasses.dataclass
@@ -34,9 +32,7 @@ class KeyspaceConfig:
     client_side_timestamps_enabled: Any = None
     # Name for Cassandra keyspace
     keyspace_name: Any = None
-    # Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred)
     replication_specification: Any = None
-    # Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -45,9 +41,7 @@ class KeyspaceAttrs:
     client_side_timestamps_enabled: Any = None
     # Name for Cassandra keyspace
     keyspace_name: Any = None
-    # Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred)
     replication_specification: Any = None
-    # Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred)
     tags: Any = None
 
 Keyspace = ubx.ResourceBinding(

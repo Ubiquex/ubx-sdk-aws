@@ -4,18 +4,13 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryInstanceConfig struct {
-	// This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
 	InstanceAttributes any
-	// The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
 	ServiceId any
 }
 
 type DiscoveryInstanceAttrs struct {
-	// This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
 	InstanceAttributes any
-	// The unique identifier assigned by AWS Cloud Map to the instance when it is registered within the service. (AI-inferred)
 	InstanceId any
-	// The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
 	ServiceId any
 }
 

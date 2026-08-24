@@ -4,25 +4,18 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsV2ApplicationOutput_Output_DestinationSchema struct {
-	// Specifies the format type for records written to the output destination, such as 'JSON' or 'CSV', for the Kinesis Data Analytics application output schema. (AI-inferred)
 	RecordFormatType any
 }
 
 type AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput struct {
-	// The ARN of the Kinesis Data Firehose delivery stream that the Kinesis Analytics application writes output to. (AI-inferred)
 	ResourceArn any
 }
 
 type AnalyticsV2ApplicationOutput_Output struct {
-	// Defines the data format (e.g., JSON or CSV) used when Kinesis Data Analytics writes records to the output destination. (AI-inferred)
 	DestinationSchema any
-	// Configures a Kinesis Data Firehose delivery stream as the destination for the application output, including the stream's resource ARN and an IAM role ARN for access. (AI-inferred)
 	KinesisFirehoseOutput any
-	// Configures the application output to write to an Amazon Kinesis data stream by specifying the stream's resource ARN and the IAM role ARN that Kinesis Data Analytics assumes to deliver records. (AI-inferred)
 	KinesisStreamsOutput any
-	// Specifies the AWS Lambda function destination for the application output, including the Lambda function's ARN (ResourceARN) and the IAM role ARN (RoleARN) that Kinesis Data Analytics assumes to invoke it. (AI-inferred)
 	LambdaOutput any
-	// The name of the in-application stream (as defined in your application code) from which this output reads data to send to the destination. (AI-inferred)
 	Name any
 }
 
@@ -59,18 +52,13 @@ var AnalyticsV2ApplicationOutput_OutputFields = ubx.FieldMap{
 	}
 
 type AnalyticsV2ApplicationOutputConfig struct {
-	// The name of the Kinesis Data Analytics application to which this output is attached. (AI-inferred)
 	ApplicationName any
-	// Specifies the output destination (Kinesis data stream, Kinesis Data Firehose delivery stream, or AWS Lambda function) and the destination schema for the application's SQL results. (AI-inferred)
 	Output any
 }
 
 type AnalyticsV2ApplicationOutputAttrs struct {
-	// The name of the Kinesis Data Analytics application to which this output is attached. (AI-inferred)
 	ApplicationName any
-	// The unique identifier for the Kinesis Data Analytics v2 application output, computed as a composite of the application name and the output's ID to distinguish multiple outputs on the same application. (AI-inferred)
 	Id any
-	// Specifies the output destination (Kinesis data stream, Kinesis Data Firehose delivery stream, or AWS Lambda function) and the destination schema for the application's SQL results. (AI-inferred)
 	Output any
 }
 

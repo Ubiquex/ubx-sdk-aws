@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindow_Tags struct {
 	Key any
-	// Specifies a user-defined value for a tag that can be used to categorize and manage this Systems Manager maintenance window, such as by project or environment. (AI-inferred)
 	Value any
 }
 

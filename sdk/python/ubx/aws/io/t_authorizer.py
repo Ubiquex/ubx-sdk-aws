@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TAuthorizer_Tags:
-    # The key of a tag to attach to the AWS IoT authorizer, used for organizing and identifying the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT authorizer, used to store arbitrary metadata for the resource. (AI-inferred)
     value: Any = None
 
 _TAuthorizer_TagsFields = {
@@ -20,42 +18,25 @@ _TAuthorizer_TagsFields = {
 
 @dataclasses.dataclass
 class TAuthorizerConfig:
-    # The Amazon Resource Name (ARN) of the Lambda function that AWS IoT invokes to authorize device connections for this authorizer. (AI-inferred)
     authorizer_function_arn: Any = None
-    # The name of the custom IoT authorizer, serving as a unique identifier within the AWS account; if not provided, CloudFormation generates a unique name. (AI-inferred)
     authorizer_name: Any = None
-    # Determines whether AWS IoT caches the authorization results for HTTP requests made to this custom authorizer. (AI-inferred)
     enable_caching_for_http: Any = None
-    # Determines whether token signing is disabled for this custom authorizer; when set to true, AWS IoT Core will not require or verify the signature of the authorization token. (AI-inferred)
     signing_disabled: Any = None
-    # The status of the IoT authorizer, indicating whether it is ACTIVE or INACTIVE, which determines if the authorizer is used for authorization. (AI-inferred)
     status: Any = None
-    # A list of key-value tags to associate with the AWS IoT Authorizer for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
-    # The name of the HTTP header in the incoming request that contains the authentication token used by this custom authorizer. (AI-inferred)
     token_key_name: Any = None
-    # Specifies a map of public keys, each identified by a logical name, that AWS IoT uses to verify the digital signature of the authorization token. (AI-inferred)
     token_signing_public_keys: Any = None
 
 @dataclasses.dataclass
 class TAuthorizerAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS IoT authorizer. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) of the Lambda function that AWS IoT invokes to authorize device connections for this authorizer. (AI-inferred)
     authorizer_function_arn: Any = None
-    # The name of the custom IoT authorizer, serving as a unique identifier within the AWS account; if not provided, CloudFormation generates a unique name. (AI-inferred)
     authorizer_name: Any = None
-    # Determines whether AWS IoT caches the authorization results for HTTP requests made to this custom authorizer. (AI-inferred)
     enable_caching_for_http: Any = None
-    # Determines whether token signing is disabled for this custom authorizer; when set to true, AWS IoT Core will not require or verify the signature of the authorization token. (AI-inferred)
     signing_disabled: Any = None
-    # The status of the IoT authorizer, indicating whether it is ACTIVE or INACTIVE, which determines if the authorizer is used for authorization. (AI-inferred)
     status: Any = None
-    # A list of key-value tags to associate with the AWS IoT Authorizer for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
-    # The name of the HTTP header in the incoming request that contains the authentication token used by this custom authorizer. (AI-inferred)
     token_key_name: Any = None
-    # Specifies a map of public keys, each identified by a logical name, that AWS IoT uses to verify the digital signature of the authorization token. (AI-inferred)
     token_signing_public_keys: Any = None
 
 TAuthorizer = ubx.ResourceBinding(

@@ -4,9 +4,7 @@ package event
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemasDiscoverer_Tags struct {
-	// Specifies a tag key to associate with the EventBridge Schema Discoverer, enabling you to categorize, filter, and control access to the resource via resource-level policies or cost allocation tags. (AI-inferred)
 	Key any
-	// The tag value for the EventBridge Schema Discoverer, paired with a tag key to assign custom metadata such as environment, project, or cost-allocation labels to the discoverer resource. (AI-inferred)
 	Value any
 }
 

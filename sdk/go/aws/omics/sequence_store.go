@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SequenceStore_SseConfig struct {
 	// An encryption key ARN.
 	KeyArn any
-	// Specifies the server-side encryption type for the sequence store; when set to 'KMS', data is encrypted using an AWS KMS key. (AI-inferred)
 	Type any
 }
 
@@ -20,7 +19,6 @@ type SequenceStoreConfig struct {
 	AccessLogLocation any
 	// A description for the store.
 	Description any
-	// Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred)
 	EtagAlgorithmFamily any
 	// An S3 location that is used to store files that have failed a direct upload.
 	FallbackLocation any
@@ -44,7 +42,6 @@ type SequenceStoreAttrs struct {
 	CreationTime any
 	// A description for the store.
 	Description any
-	// Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred)
 	EtagAlgorithmFamily any
 	// An S3 location that is used to store files that have failed a direct upload.
 	FallbackLocation any
@@ -58,11 +55,9 @@ type SequenceStoreAttrs struct {
 	S3AccessPolicy any
 	// The S3 URI of the sequence store.
 	S3Uri any
-	// The unique AWS-generated identifier for the sequence store, used to reference the store in other Omics operations. (AI-inferred)
 	SequenceStoreId any
 	// Server-side encryption (SSE) settings for a store.
 	SseConfig any
-	// The current lifecycle status of the Omics sequence store, such as CREATING, ACTIVE, DELETING, or FAILED. (AI-inferred)
 	Status any
 	// The status message of the sequence store.
 	StatusMessage any

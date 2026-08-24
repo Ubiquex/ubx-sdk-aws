@@ -42,7 +42,6 @@ class ConnectFlowSource_GatewayBridgeSource:
 @dataclasses.dataclass
 class ConnectFlowSource_Tags:
     key: Any = None
-    # Specifies the value portion of a user-defined tag attached to the MediaConnect flow source for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _ConnectFlowSource_DecryptionFields = {

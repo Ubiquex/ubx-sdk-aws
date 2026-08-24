@@ -7,9 +7,7 @@ export interface OpsGuruResourceCollection_ResourceCollectionFilter_CloudFormati
 }
 
 export interface OpsGuruResourceCollection_ResourceCollectionFilter_Tags {
-  /** The tag key (AppBoundaryKey) that DevOps Guru uses to define the application boundary for selecting which tagged AWS resources are included in the resource collection. (AI-inferred) */
   appBoundaryKey?: string | Computed<string>;
-  /** Specifies the list of tag values for the tag key in the parent `tags` filter, used to match which AWS resources are included in the DevOps Guru resource collection. (AI-inferred) */
   tagValues?: string[] | Computed<string[]>;
 }
 

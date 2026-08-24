@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncDomainNameApiAssociationConfig:
-    # The ID of the AppSync API to associate with the custom domain name. (AI-inferred)
     api_id: Any = None
-    # The custom domain name (e.g., api.example.com) that is associated with the AWS AppSync API. (AI-inferred)
     domain_name: Any = None
 
 @dataclasses.dataclass
 class SyncDomainNameApiAssociationAttrs:
-    # The unique identifier that AWS AppSync assigns to the domain name–API association, usable to reference the association in API calls and automation. (AI-inferred)
     api_association_identifier: Any = None
-    # The ID of the AppSync API to associate with the custom domain name. (AI-inferred)
     api_id: Any = None
-    # The custom domain name (e.g., api.example.com) that is associated with the AWS AppSync API. (AI-inferred)
     domain_name: Any = None
 
 SyncDomainNameApiAssociation = ubx.ResourceBinding(

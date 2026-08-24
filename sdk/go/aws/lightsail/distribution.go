@@ -44,9 +44,7 @@ type Distribution_CacheBehaviorSettings struct {
 }
 
 type Distribution_CacheBehaviors struct {
-	// Specifies the cache behavior for the associated path pattern, with supported values of 'cache' or 'no-cache' indicating whether matching requests are cached. (AI-inferred)
 	Behavior any
-	// The path pattern (such as `/images/*`) that determines which requests this cache behavior applies to in the Lightsail distribution. (AI-inferred)
 	Path any
 }
 
@@ -65,9 +63,7 @@ type Distribution_Origin struct {
 }
 
 type Distribution_Tags struct {
-	// The key of a tag to attach to the Lightsail distribution, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// The value part of a tag attached to the Lightsail distribution, used to store arbitrary metadata (e.g., environment, owner) for resource organization, cost allocation, or access control. (AI-inferred)
 	Value any
 }
 
@@ -165,7 +161,6 @@ type DistributionAttrs struct {
 	CertificateName any
 	// Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
 	DefaultCacheBehavior any
-	// The Amazon Resource Name (ARN) uniquely identifying the Lightsail distribution. (AI-inferred)
 	DistributionArn any
 	// The name for the distribution.
 	DistributionName any

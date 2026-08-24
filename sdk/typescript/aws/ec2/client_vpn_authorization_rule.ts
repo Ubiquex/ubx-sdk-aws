@@ -2,29 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClientVpnAuthorizationRuleConfig {
-  /** The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred) */
   accessGroupId?: string | Computed<string>;
-  /** Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred) */
   authorizeAllGroups?: boolean | Computed<boolean>;
-  /** The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred) */
   clientVpnEndpointId: string | Computed<string>;
-  /** A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred) */
   targetNetworkCidr: string | Computed<string>;
 }
 
 export interface ClientVpnAuthorizationRuleAttrs {
-  /** The ID of the Active Directory group that is allowed access to the network; if omitted, all users in the directory are permitted. (AI-inferred) */
   accessGroupId: string;
-  /** Indicates whether to authorize access to all groups, so when set to true, the rule applies to every Active Directory group, and when false, you must specify target groups via the GroupId field. (AI-inferred) */
   authorizeAllGroups: boolean;
-  /** The ID of the Client VPN endpoint to which this authorization rule applies. (AI-inferred) */
   clientVpnEndpointId: string;
-  /** A brief, optional description that identifies the purpose of the Client VPN authorization rule. (AI-inferred) */
   description: string;
   id: string;
-  /** The CIDR block of the target network that this authorization rule grants access to for the specified clients or groups. (AI-inferred) */
   targetNetworkCidr: string;
 }
 

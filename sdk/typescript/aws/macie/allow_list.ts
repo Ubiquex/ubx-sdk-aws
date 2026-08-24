@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AllowList_Tags {
-  /** The key of a tag that can be applied to this Amazon Macie allow list resource for organizing and identifying it. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

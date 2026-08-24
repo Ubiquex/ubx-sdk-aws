@@ -28,7 +28,6 @@ class HubV2Policy_MultiAz:
 @dataclasses.dataclass
 class HubV2Policy_Tags:
     key: Any = None
-    # The value of a tag key-value pair attached to the AWS Resilience Hub v2 policy, used to label and categorize the policy for management. (AI-inferred)
     value: Any = None
 
 _HubV2Policy_AvailabilitySloFields = {
@@ -52,9 +51,7 @@ _HubV2Policy_TagsFields = {
 
 @dataclasses.dataclass
 class HubV2PolicyConfig:
-    # Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred)
     availability_slo: Any = None
-    # Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred)
     data_recovery: Any = None
     # The description of the policy.
     description: Any = None
@@ -71,11 +68,9 @@ class HubV2PolicyConfig:
 class HubV2PolicyAttrs:
     # The number of services associated with this policy.
     associated_service_count: Any = None
-    # Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred)
     availability_slo: Any = None
     # The timestamp when the policy was created.
     created_at: Any = None
-    # Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred)
     data_recovery: Any = None
     # The description of the policy.
     description: Any = None

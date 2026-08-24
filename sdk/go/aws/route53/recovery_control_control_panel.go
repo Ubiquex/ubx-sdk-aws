@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryControlControlPanel_Tags struct {
-	// The key of a tag attached to the Route 53 Recovery Control control panel, used to categorize or identify the resource for management, filtering, and cost allocation. (AI-inferred)
 	Key any
-	// The value component of an arbitrary tag (key-value pair) attached to the Route53 Recovery Control control panel, used to categorize, identify, or manage the resource. (AI-inferred)
 	Value any
 }
 

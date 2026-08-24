@@ -8,31 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TanalyticsChannel_ChannelStorage_CustomerManagedS3:
-    # The name of the S3 bucket in which the channel's data is stored when using customer-managed S3 storage. (AI-inferred)
     bucket: Any = None
-    # Specifies the key prefix for objects stored in the customer-managed S3 bucket in the IoT Analytics channel's storage, used to organize or filter the channel data. (AI-inferred)
     key_prefix: Any = None
-    # The ARN of the IAM role that AWS IoT Analytics assumes to access the customer-managed S3 bucket for storing channel data. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class TanalyticsChannel_ChannelStorage:
-    # Specifies the customer-managed S3 bucket configuration where the IoT Analytics channel stores its data, including the bucket name and optional key prefix. (AI-inferred)
     customer_managed_s3: Any = None
-    # Specifies that AWS IoT Analytics uses a service-managed S3 bucket for channel storage, indicated by the presence of this empty object. (AI-inferred)
     service_managed_s3: Any = None
 
 @dataclasses.dataclass
 class TanalyticsChannel_RetentionPeriod:
-    # Specifies the number of days that message data in the channel is retained, after which it is automatically deleted. (AI-inferred)
     number_of_days: Any = None
-    # When set to true, the channel retains its data indefinitely with no automatic expiration, and when false you must supply a finite retention period in days using the `numberOfDays` field of the same `retentionPeriod` object. (AI-inferred)
     unlimited: Any = None
 
 @dataclasses.dataclass
 class TanalyticsChannel_Tags:
     key: Any = None
-    # The value of a tag associated with an AWS IoT Analytics channel, used to assign metadata for resource tracking and management. (AI-inferred)
     value: Any = None
 
 _TanalyticsChannel_ChannelStorage_CustomerManagedS3Fields = {
@@ -62,25 +54,17 @@ _TanalyticsChannel_TagsFields = {
 
 @dataclasses.dataclass
 class TanalyticsChannelConfig:
-    # The name of the AWS IoT Analytics channel; if omitted, CloudFormation generates a unique name for the channel. (AI-inferred)
     channel_name: Any = None
-    # Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred)
     channel_storage: Any = None
-    # Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred)
     retention_period: Any = None
-    # Tags are key-value pairs that you can attach to an AWS IoT Analytics channel to help identify and organize the channel, and they can be used for resource-level access control and cost tracking. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TanalyticsChannelAttrs:
-    # The name of the AWS IoT Analytics channel; if omitted, CloudFormation generates a unique name for the channel. (AI-inferred)
     channel_name: Any = None
-    # Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred)
     channel_storage: Any = None
     id: Any = None
-    # Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred)
     retention_period: Any = None
-    # Tags are key-value pairs that you can attach to an AWS IoT Analytics channel to help identify and organize the channel, and they can be used for resource-level access control and cost tracking. (AI-inferred)
     tags: Any = None
 
 TanalyticsChannel = ubx.ResourceBinding(

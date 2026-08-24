@@ -4,9 +4,7 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificate_Tags struct {
-	// The key of a tag assigned to the Lightsail certificate, used to categorize and identify the certificate in the Lightsail console and API. (AI-inferred)
 	Key any
-	// The value portion of a tag assigned to the AWS Lightsail certificate, used to label, organize, and support cost allocation for the certificate. (AI-inferred)
 	Value any
 }
 
@@ -27,7 +25,6 @@ type CertificateConfig struct {
 }
 
 type CertificateAttrs struct {
-	// The Amazon Resource Name (ARN) of the Lightsail certificate, assigned by AWS when the certificate is created. (AI-inferred)
 	CertificateArn any
 	// The name for the certificate.
 	CertificateName any

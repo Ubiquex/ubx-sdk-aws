@@ -4,24 +4,16 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessKeyConfig struct {
-	// The serial number for the access key, which must be unique among all access keys belonging to the same IAM user; it allows CloudFormation to create and manage multiple access keys for that user. (AI-inferred)
 	Serial any
-	// Specifies the status of the IAM access key, either Active or Inactive, controlling whether the key can be used for programmatic calls. (AI-inferred)
 	Status any
-	// The name of the IAM user to which this access key belongs. (AI-inferred)
 	UserName any
 }
 
 type AccessKeyAttrs struct {
-	// The AWS access key ID (e.g., AKIA...) that uniquely identifies the IAM access key. (AI-inferred)
 	Id any
-	// The secret access key that is paired with the access key ID and is returned only when the IAM access key is first created, after which it cannot be retrieved again. (AI-inferred)
 	SecretAccessKey any
-	// The serial number for the access key, which must be unique among all access keys belonging to the same IAM user; it allows CloudFormation to create and manage multiple access keys for that user. (AI-inferred)
 	Serial any
-	// Specifies the status of the IAM access key, either Active or Inactive, controlling whether the key can be used for programmatic calls. (AI-inferred)
 	Status any
-	// The name of the IAM user to which this access key belongs. (AI-inferred)
 	UserName any
 }
 

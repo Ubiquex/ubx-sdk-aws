@@ -4,42 +4,33 @@ package cases
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Layout_Content_Basic_MoreInfo_Sections_FieldGroup_Fields struct {
-	// The id of a field within a field group in the 'more info' section of a layout's basic content, referencing the unique identifier of the Amazon Connect Cases case field to display at that position. (AI-inferred)
 	Id any
 }
 
 type Layout_Content_Basic_MoreInfo_Sections_FieldGroup struct {
-	// Specifies the list of case fields to display in this field group within the 'More info' section of the basic layout. (AI-inferred)
 	Fields any
-	// The display name of the field group, shown as a heading in the case layout section to visually group related case fields. (AI-inferred)
 	Name any
 }
 
 type Layout_Content_Basic_MoreInfo_Sections struct {
-	// Defines a field group within a section of the 'More Info' area of the basic case layout, containing the ordered list of field items to be displayed together. (AI-inferred)
 	FieldGroup any
 }
 
 type Layout_Content_Basic_MoreInfo struct {
-	// Specifies the list of sections that make up the 'More Info' area of a basic layout in an AWS Cases layout, where each section can contain text or a reference to a case field. (AI-inferred)
 	Sections any
 }
 
 type Layout_Content_Basic struct {
-	// The 'more_info' object configures the 'More Info' section of a basic layout, defining which case fields are displayed in that additional, separate area of the AWS Cases layout. (AI-inferred)
 	MoreInfo any
-	// Specifies the top panel of the basic layout, defining the sections and field items displayed at the top of the case view. (AI-inferred)
 	TopPanel any
 }
 
 type Layout_Content struct {
-	// The basic layout configuration for the case layout, defining how case panel and additional information sections are arranged on the page. (AI-inferred)
 	Basic any
 }
 
 type Layout_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the AWS Cases layout, used to store arbitrary metadata for the layout. (AI-inferred)
 	Value any
 }
 

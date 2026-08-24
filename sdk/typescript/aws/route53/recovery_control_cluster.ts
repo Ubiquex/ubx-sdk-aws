@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecoveryControlCluster_ClusterEndpoints {
-  /** The URL of the cluster endpoint for the Route 53 Recovery Control cluster, used to access the cluster's routing control API. (AI-inferred) */
   endpoint?: string | Computed<string>;
-  /** The AWS Region (e.g., us-east-1) where the Route 53 Recovery Control Cluster endpoint is located. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface RecoveryControlCluster_Tags {
-  /** The key for a tag attached to the Route53 Recovery Control Cluster, used to categorize and manage the cluster. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Route 53 Recovery Control cluster. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

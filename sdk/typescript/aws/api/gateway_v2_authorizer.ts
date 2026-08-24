@@ -43,7 +43,6 @@ export interface GatewayV2AuthorizerAttrs {
   apiId: string;
   /** Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null. Supported only for ``REQUEST`` authorizers. */
   authorizerCredentialsArn: string;
-  /** The unique AuthorizerId assigned by AWS to the API Gateway v2 authorizer, returned as a read-only attribute and used to reference the authorizer in other resources. (AI-inferred) */
   authorizerId: string;
   /** Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are ``1.0`` and ``2.0``. To learn more, see [Working with Lambda authorizers for HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html). */
   authorizerPayloadFormatVersion: string;

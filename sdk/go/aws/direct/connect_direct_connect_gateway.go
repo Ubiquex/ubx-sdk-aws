@@ -4,9 +4,7 @@ package direct
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectDirectConnectGateway_Tags struct {
-	// The key of a tag assigned to the Direct Connect gateway, used to categorize and identify the resource. (AI-inferred)
 	Key any
-	// Specifies the value of a tag key attached to the Direct Connect gateway, used for identifying and categorizing the gateway resource. (AI-inferred)
 	Value any
 }
 

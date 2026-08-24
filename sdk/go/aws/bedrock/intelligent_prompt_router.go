@@ -9,7 +9,6 @@ type IntelligentPromptRouter_FallbackModel struct {
 }
 
 type IntelligentPromptRouter_RoutingCriteria struct {
-	// The minimum difference in predicted response quality between the larger and smaller models that the intelligent prompt router uses as a threshold to decide whether to route the prompt to the larger model. (AI-inferred)
 	ResponseQualityDifference any
 }
 

@@ -4,20 +4,14 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueFleetAssociationConfig struct {
-	// The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred)
 	FarmId any
-	// The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred)
 	FleetId any
-	// The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred)
 	QueueId any
 }
 
 type QueueFleetAssociationAttrs struct {
-	// The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred)
 	FarmId any
-	// The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred)
 	FleetId any
-	// The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred)
 	QueueId any
 }
 

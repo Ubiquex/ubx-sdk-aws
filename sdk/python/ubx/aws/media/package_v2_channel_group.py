@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PackageV2ChannelGroup_Tags:
-    # The key of a user-defined tag attached to the MediaPackage v2 channel group for metadata and resource management. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag attached to the MediaPackage v2 channel group, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _PackageV2ChannelGroup_TagsFields = {
@@ -20,18 +18,15 @@ _PackageV2ChannelGroup_TagsFields = {
 
 @dataclasses.dataclass
 class PackageV2ChannelGroupConfig:
-    # The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred)
     channel_group_name: Any = None
     # <p>Enter any descriptive text that helps you to identify the channel group.</p>
     description: Any = None
-    # A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PackageV2ChannelGroupAttrs:
     # <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     arn: Any = None
-    # The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred)
     channel_group_name: Any = None
     # <p>The date and time the channel group was created.</p>
     created_at: Any = None
@@ -41,7 +36,6 @@ class PackageV2ChannelGroupAttrs:
     egress_domain: Any = None
     # <p>The date and time the channel group was modified.</p>
     modified_at: Any = None
-    # A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred)
     tags: Any = None
 
 PackageV2ChannelGroup = ubx.ResourceBinding(

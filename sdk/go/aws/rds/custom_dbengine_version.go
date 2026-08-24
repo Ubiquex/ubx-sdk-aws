@@ -4,7 +4,6 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomDbengineVersion_Tags struct {
-	// The key of a tag attached to this AWS RDS Custom DB engine version, used to organize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,7 +14,6 @@ var CustomDbengineVersion_TagsFields = ubx.FieldMap{
 	}
 
 type CustomDbengineVersionConfig struct {
-	// The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred)
 	DatabaseInstallationFiles any
 	// The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``.
 	DatabaseInstallationFilesS3BucketName any
@@ -44,9 +42,7 @@ type CustomDbengineVersionConfig struct {
 }
 
 type CustomDbengineVersionAttrs struct {
-	// The Amazon Resource Name (ARN) assigned to this custom DB engine version by AWS, used to reference the resource in IAM policies and other AWS services. (AI-inferred)
 	DbengineVersionArn any
-	// The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred)
 	DatabaseInstallationFiles any
 	// The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``.
 	DatabaseInstallationFilesS3BucketName any

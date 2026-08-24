@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PackageV2Channel_IngestEndpoints {
-  /** The unique identifier assigned to this ingest endpoint by MediaPackage v2, distinguishing it from other endpoints in the same channel. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The URL of a MediaPackage v2 channel ingest endpoint, which serves as the input destination where upstream streaming content is received. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -22,7 +20,6 @@ export interface PackageV2Channel_OutputHeaderConfiguration {
 
 export interface PackageV2Channel_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value part of a tag assigned to the MediaPackage v2 channel, allowing custom metadata to be associated with the channel. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -41,50 +38,39 @@ const PackageV2Channel_TagsFields: FieldMap = {
 };
 
 export interface PackageV2ChannelConfig {
-  /** The name of the MediaPackage v2 channel group that this channel belongs to, used as part of the channel's identifier and required when creating or referencing the channel. (AI-inferred) */
   channelGroupName: string | Computed<string>;
-  /** The human-readable name of the AWS MediaPackage v2 channel, which must be unique within an AWS account and is incorporated into the channel's Amazon Resource Name (ARN). (AI-inferred) */
   channelName: string | Computed<string>;
   /** <p>Enter any descriptive text that helps you to identify the channel.</p> */
   description?: string | Computed<string>;
   /** <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive.</p> */
   inputSwitchConfiguration?: PackageV2Channel_InputSwitchConfiguration | Computed<PackageV2Channel_InputSwitchConfiguration>;
-  /** Specifies the input type of the channel, which determines whether incoming content is in HLS or CMAF format, with allowed values 'HLS' and 'CMAF'. (AI-inferred) */
   inputType?: string | Computed<string>;
   /** <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN.</p> */
   outputHeaderConfiguration?: PackageV2Channel_OutputHeaderConfiguration | Computed<PackageV2Channel_OutputHeaderConfiguration>;
-  /** Specifies the output locking mode of the MediaPackage v2 channel, which enforces consistent segment timing and alignment across all of the channel's packaging endpoints to enable synchronized downstream playback and failover. (AI-inferred) */
   outputLockingMode?: string | Computed<string>;
-  /** A list of Tag objects (each with Key and Value) that you can attach to a MediaPackage v2 channel to add metadata for organization, access control, and cost tracking. (AI-inferred) */
   tags?: PackageV2Channel_Tags[] | Computed<PackageV2Channel_Tags[]>;
 }
 
 export interface PackageV2ChannelAttrs {
   /** <p>The Amazon Resource Name (ARN) associated with the resource.</p> */
   arn: string;
-  /** The name of the MediaPackage v2 channel group that this channel belongs to, used as part of the channel's identifier and required when creating or referencing the channel. (AI-inferred) */
   channelGroupName: string;
-  /** The human-readable name of the AWS MediaPackage v2 channel, which must be unique within an AWS account and is incorporated into the channel's Amazon Resource Name (ARN). (AI-inferred) */
   channelName: string;
   /** <p>The date and time the channel was created.</p> */
   createdAt: string;
   /** <p>Enter any descriptive text that helps you to identify the channel.</p> */
   description: string;
-  /** The list of ingest URLs that the encoder sends content to for this MediaPackage v2 channel, assigned by AWS when the channel is created. (AI-inferred) */
   ingestEndpointUrls: string[];
   /** <p>The list of ingest endpoints.</p> */
   ingestEndpoints: PackageV2Channel_IngestEndpoints[];
   /** <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive.</p> */
   inputSwitchConfiguration: PackageV2Channel_InputSwitchConfiguration;
-  /** Specifies the input type of the channel, which determines whether incoming content is in HLS or CMAF format, with allowed values 'HLS' and 'CMAF'. (AI-inferred) */
   inputType: string;
   /** <p>The date and time the channel was modified.</p> */
   modifiedAt: string;
   /** <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN.</p> */
   outputHeaderConfiguration: PackageV2Channel_OutputHeaderConfiguration;
-  /** Specifies the output locking mode of the MediaPackage v2 channel, which enforces consistent segment timing and alignment across all of the channel's packaging endpoints to enable synchronized downstream playback and failover. (AI-inferred) */
   outputLockingMode: string;
-  /** A list of Tag objects (each with Key and Value) that you can attach to a MediaPackage v2 channel to add metadata for organization, access control, and cost tracking. (AI-inferred) */
   tags: PackageV2Channel_Tags[];
 }
 

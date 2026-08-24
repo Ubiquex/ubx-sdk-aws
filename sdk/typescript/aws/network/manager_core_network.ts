@@ -2,43 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerCoreNetwork_Edges {
-  /** The Autonomous System Number (ASN) assigned to the edge location for BGP peering within the core network. (AI-inferred) */
   asn?: number | Computed<number>;
-  /** The AWS Region code (e.g., us-east-1) of the core network edge, returned as part of the edges list for the core network. (AI-inferred) */
   edgeLocation?: string | Computed<string>;
-  /** The list of CIDR blocks assigned to a core network edge, indicating the IP address ranges that are routed within that edge's network segment. (AI-inferred) */
   insideCidrBlocks?: string[] | Computed<string[]>;
 }
 
 export interface ManagerCoreNetwork_NetworkFunctionGroups_Segments {
-  /** Specifies the list of segment names to which this segment can forward traffic, defining inter-segment reachability in the core network. (AI-inferred) */
   sendTo?: string[] | Computed<string[]>;
-  /** Specifies the list of network function groups through which traffic from the segment is routed, enabling service insertion in the core network. (AI-inferred) */
   sendVia?: string[] | Computed<string[]>;
 }
 
 export interface ManagerCoreNetwork_NetworkFunctionGroups {
-  /** Specifies the AWS Regions (edge locations) where the network functions in this network function group are deployed and operate within the core network. (AI-inferred) */
   edgeLocations?: string[] | Computed<string[]>;
-  /** The name of the network function group, which uniquely identifies this group within the core network's policy and is referenced when attaching network functions to segments. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the list of core network segment names to which this network function group is associated, controlling the segments where the group's network functions can be deployed. (AI-inferred) */
   segments?: ManagerCoreNetwork_NetworkFunctionGroups_Segments | Computed<ManagerCoreNetwork_NetworkFunctionGroups_Segments>;
 }
 
 export interface ManagerCoreNetwork_Segments {
-  /** Specifies the list of AWS Regions (edge locations) where resources in this segment can be attached, controlling segment availability across the core network's global network. (AI-inferred) */
   edgeLocations?: string[] | Computed<string[]>;
-  /** The name of the network segment, which uniquely identifies it within the core network and is referenced by other configuration elements such as segment actions and route policies. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the list of other segment names within the same core network that this segment is allowed to share attachments with. (AI-inferred) */
   sharedSegments?: string[] | Computed<string[]>;
 }
 
 export interface ManagerCoreNetwork_Tags {
-  /** The key (name) of a user-defined tag assigned to the AWS Network Manager core network. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair applied to the core network, used to store arbitrary metadata for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

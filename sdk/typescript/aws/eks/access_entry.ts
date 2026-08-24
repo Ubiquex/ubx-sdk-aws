@@ -2,23 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessEntry_AccessPolicies_AccessScope {
-  /** The namespaces that the access policy applies to when the access scope type is set to 'namespace', restricting the policy's permissions to those specific Kubernetes namespaces. (AI-inferred) */
   namespaces?: string[] | Computed<string[]>;
-  /** Specifies whether the access policy applies to the entire EKS cluster or only to specific Kubernetes namespaces, with allowed values of 'cluster' or 'namespace'. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface AccessEntry_AccessPolicies {
-  /** Defines the scope of the access policy, either for the entire cluster when the type is 'cluster' or for the specified namespaces when the type is 'namespace'. (AI-inferred) */
   accessScope?: AccessEntry_AccessPolicies_AccessScope | Computed<AccessEntry_AccessPolicies_AccessScope>;
-  /** The ARN of the IAM access policy that is associated with the access entry for the EKS cluster. (AI-inferred) */
   policyArn?: string | Computed<string>;
 }
 
 export interface AccessEntry_Tags {
-  /** A user-defined key for a tag attached to the EKS access entry, used to label and categorize the entry for management and cost tracking in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the EKS access entry, used to categorize or identify the resource for management and access control purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveSdiSource_Tags:
-    # The key of a user-defined tag applied to the SDI source. (AI-inferred)
     key: Any = None
     value: Any = None
 

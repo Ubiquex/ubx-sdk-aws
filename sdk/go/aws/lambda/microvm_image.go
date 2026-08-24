@@ -4,7 +4,6 @@ package lambda
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MicrovmImage_CodeArtifact struct {
-	// The Amazon S3 URI of the code artifact that contains the MicroVM image to be registered as a Lambda MicroVM image. (AI-inferred)
 	Uri any
 }
 
@@ -18,7 +17,6 @@ type MicrovmImage_EnvironmentVariables struct {
 }
 
 type MicrovmImage_Hooks_MicrovmHooks struct {
-	// Specifies the command to execute when the microVM resumes from a paused state, enabling custom lifecycle actions. (AI-inferred)
 	Resume any
 	ResumeTimeoutInSeconds any
 	Run any

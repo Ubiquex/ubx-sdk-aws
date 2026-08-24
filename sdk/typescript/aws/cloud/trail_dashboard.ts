@@ -9,7 +9,6 @@ export interface TrailDashboard_RefreshSchedule_Frequency {
 }
 
 export interface TrailDashboard_RefreshSchedule {
-  /** Defines the automatic refresh frequency for the CloudTrail dashboard, expressed as a unit-value pair (e.g., HOURS with a value of 6 for a six-hour refresh interval). (AI-inferred) */
   frequency?: TrailDashboard_RefreshSchedule_Frequency | Computed<TrailDashboard_RefreshSchedule_Frequency>;
   /** The status of the schedule. Supported values are ENABLED and DISABLED. */
   status?: string | Computed<string>;
@@ -19,14 +18,11 @@ export interface TrailDashboard_RefreshSchedule {
 
 export interface TrailDashboard_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the CloudTrail dashboard, used to assign custom metadata for identifying, organizing, and controlling access to the dashboard (e.g., via IAM conditions and cost allocation tags). (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TrailDashboard_Widgets {
-  /** For each widget in an AWS CloudTrail dashboard, this list of strings supplies the query parameter values that are substituted into the widget's query to filter or scope the displayed data. (AI-inferred) */
   queryParameters?: string[] | Computed<string[]>;
-  /** The SQL query statement that a widget in an AWS CloudTrail dashboard uses to fetch and display data from the CloudTrail event data store. (AI-inferred) */
   queryStatement?: string | Computed<string>;
   viewProperties?: unknown | Computed<unknown>;
 }
@@ -62,7 +58,6 @@ export interface TrailDashboardConfig {
   name?: string | Computed<string>;
   /** Configures the automatic refresh schedule for the dashboard. Includes the frequency unit (DAYS or HOURS) and value, as well as the status (ENABLED or DISABLED) of the refresh schedule. */
   refreshSchedule?: TrailDashboard_RefreshSchedule | Computed<TrailDashboard_RefreshSchedule>;
-  /** A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred) */
   tags?: TrailDashboard_Tags[] | Computed<TrailDashboard_Tags[]>;
   /** Indicates whether the dashboard is protected from termination. */
   terminationProtectionEnabled?: boolean | Computed<boolean>;
@@ -71,7 +66,6 @@ export interface TrailDashboardConfig {
 }
 
 export interface TrailDashboardAttrs {
-  /** The timestamp, in ISO 8601 format, indicating when the CloudTrail dashboard was created, as returned by the CloudTrail DescribeDashboard API. (AI-inferred) */
   createdTimestamp: string;
   /** The ARN of the dashboard. */
   dashboardArn: string;
@@ -81,13 +75,11 @@ export interface TrailDashboardAttrs {
   refreshSchedule: TrailDashboard_RefreshSchedule;
   /** The status of the dashboard. Values are CREATING, CREATED, UPDATING, UPDATED and DELETING. */
   status: string;
-  /** A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred) */
   tags: TrailDashboard_Tags[];
   /** Indicates whether the dashboard is protected from termination. */
   terminationProtectionEnabled: boolean;
   /** The type of the dashboard. Values are CUSTOM and MANAGED. */
   type: string;
-  /** The timestamp indicating when the CloudTrail dashboard was last updated. (AI-inferred) */
   updatedTimestamp: string;
   /** List of widgets on the dashboard */
   widgets: TrailDashboard_Widgets[];

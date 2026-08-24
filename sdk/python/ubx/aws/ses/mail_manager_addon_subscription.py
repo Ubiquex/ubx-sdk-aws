@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class MailManagerAddonSubscription_Tags:
     key: Any = None
-    # Specifies the value component of a tag assigned to the SES Mail Manager Add-On Subscription, allowing you to associate arbitrary metadata with the resource for purposes such as cost tracking or resource organization. (AI-inferred)
     value: Any = None
 
 _MailManagerAddonSubscription_TagsFields = {
@@ -19,20 +18,14 @@ _MailManagerAddonSubscription_TagsFields = {
 
 @dataclasses.dataclass
 class MailManagerAddonSubscriptionConfig:
-    # The name of the third-party email security or spam filtering add-on that this SES Mail Manager add-on subscription subscribes to, enabling its features for the associated mail managers. (AI-inferred)
     addon_name: Any = None
-    # Specifies the tags to apply to the SES Mail Manager Add-On Subscription, where each tag object contains a key and value pair for resource metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MailManagerAddonSubscriptionAttrs:
-    # The name of the third-party email security or spam filtering add-on that this SES Mail Manager add-on subscription subscribes to, enabling its features for the associated mail managers. (AI-inferred)
     addon_name: Any = None
-    # The unique Amazon Resource Name (ARN) assigned by AWS to this add-on subscription, used to reference the subscription in IAM policies and other AWS services. (AI-inferred)
     addon_subscription_arn: Any = None
-    # The unique identifier assigned by AWS to this addon subscription, used to reference the subscription in other resources. (AI-inferred)
     addon_subscription_id: Any = None
-    # Specifies the tags to apply to the SES Mail Manager Add-On Subscription, where each tag object contains a key and value pair for resource metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 MailManagerAddonSubscription = ubx.ResourceBinding(

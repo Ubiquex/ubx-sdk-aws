@@ -6,12 +6,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SightRefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDay struct {
 	// <p>The Day Of Month for scheduled refresh.</p>
 	DayOfMonth any
-	// Specifies the day of the week (for example, SUNDAY) on which the QuickSight dataset refresh runs when the schedule frequency is set to WEEKLY. (AI-inferred)
 	DayOfWeek any
 }
 
 type SightRefreshSchedule_Schedule_ScheduleFrequency struct {
-	// The interval of the QuickSight refresh schedule frequency, which must be one of 'DAILY', 'WEEKLY', or 'MONTHLY', and determines how often the dataset is refreshed. (AI-inferred)
 	Interval any
 	// <p>The day scheduled for refresh.</p>
 	RefreshOnDay any
@@ -22,7 +20,6 @@ type SightRefreshSchedule_Schedule_ScheduleFrequency struct {
 }
 
 type SightRefreshSchedule_Schedule struct {
-	// Specifies whether the scheduled refresh is a FULL_REFRESH or an INCREMENTAL_REFRESH of the QuickSight dataset. (AI-inferred)
 	RefreshType any
 	// <p>Information about the schedule frequency.</p>
 	ScheduleFrequency any
@@ -60,22 +57,16 @@ var SightRefreshSchedule_ScheduleFields = ubx.FieldMap{
 	}
 
 type SightRefreshScheduleConfig struct {
-	// The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred)
 	AwsAccountId any
-	// The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred)
 	DataSetId any
-	// The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred)
 	Schedule any
 }
 
 type SightRefreshScheduleAttrs struct {
 	// <p>The Amazon Resource Name (ARN) of the data source.</p>
 	Arn any
-	// The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred)
 	AwsAccountId any
-	// The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred)
 	DataSetId any
-	// The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred)
 	Schedule any
 }
 

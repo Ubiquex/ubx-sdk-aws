@@ -4,12 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface FlowAlias_ConcurrencyConfiguration {
   /** Number of nodes executed concurrently at a time */
   maxConcurrency?: number | Computed<number>;
-  /** The concurrency configuration type for a Bedrock flow alias, which can be set to SINGLE to restrict the alias to one active flow invocation at a time or PARALLEL to allow multiple concurrent invocations, controlling how the alias handles runtime requests. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface FlowAlias_RoutingConfiguration {
-  /** The version of the Amazon Bedrock flow (such as a numeric version or 'DRAFT') that this alias routes traffic to. (AI-inferred) */
   flowVersion?: string | Computed<string>;
 }
 

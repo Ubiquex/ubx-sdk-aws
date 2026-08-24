@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayGatewayResponseConfig:
-    # Specifies a map of response parameters (such as headers) to customize the API Gateway response, where each key is a parameter name and the value indicates whether the parameter is enabled. (AI-inferred)
     response_parameters: Any = None
-    # Maps MIME content types to Velocity templates that generate the response body for this API Gateway gateway response. (AI-inferred)
     response_templates: Any = None
-    # Specifies the type of API Gateway response to customize (e.g., MISSING_AUTHENTICATION_TOKEN, RESOURCE_NOT_FOUND, DEFAULT_4XX), which must be one of the predefined gateway response types. (AI-inferred)
     response_type: Any = None
-    # The identifier of the REST API to which this gateway response is attached. (AI-inferred)
     rest_api_id: Any = None
-    # Specifies the HTTP status code that API Gateway returns for this gateway response, allowing you to override the default status code for the corresponding error type. (AI-inferred)
     status_code: Any = None
 
 @dataclasses.dataclass
 class GatewayGatewayResponseAttrs:
-    # The unique physical resource id of the gateway response, formed as a composite of the associated REST API ID and the response type (for example, 'restApiId/DEFAULT_4XX') separated by a slash. (AI-inferred)
     id: Any = None
-    # Specifies a map of response parameters (such as headers) to customize the API Gateway response, where each key is a parameter name and the value indicates whether the parameter is enabled. (AI-inferred)
     response_parameters: Any = None
-    # Maps MIME content types to Velocity templates that generate the response body for this API Gateway gateway response. (AI-inferred)
     response_templates: Any = None
-    # Specifies the type of API Gateway response to customize (e.g., MISSING_AUTHENTICATION_TOKEN, RESOURCE_NOT_FOUND, DEFAULT_4XX), which must be one of the predefined gateway response types. (AI-inferred)
     response_type: Any = None
-    # The identifier of the REST API to which this gateway response is attached. (AI-inferred)
     rest_api_id: Any = None
-    # Specifies the HTTP status code that API Gateway returns for this gateway response, allowing you to override the default status code for the corresponding error type. (AI-inferred)
     status_code: Any = None
 
 GatewayGatewayResponse = ubx.ResourceBinding(

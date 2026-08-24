@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MailManagerAddonInstance_Tags:
-    # The key of a tag attached to the SES Mail Manager Addon Instance, used for metadata and resource organization. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS SES Mail Manager add-on instance, used for organization, cost allocation, and access control as an arbitrary string. (AI-inferred)
     value: Any = None
 
 _MailManagerAddonInstance_TagsFields = {
@@ -20,22 +18,15 @@ _MailManagerAddonInstance_TagsFields = {
 
 @dataclasses.dataclass
 class MailManagerAddonInstanceConfig:
-    # The ID of the addon subscription that this addon instance is associated with. (AI-inferred)
     addon_subscription_id: Any = None
-    # Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MailManagerAddonInstanceAttrs:
-    # The Amazon Resource Name (ARN) assigned by AWS that uniquely identifies this Mail Manager add-on instance. (AI-inferred)
     addon_instance_arn: Any = None
-    # The unique identifier assigned to this addon instance by AWS SES Mail Manager. (AI-inferred)
     addon_instance_id: Any = None
-    # The name of the add-on (such as Spamhaus) that this addon instance provides, determined by the addon subscription and returned as a read-only attribute. (AI-inferred)
     addon_name: Any = None
-    # The ID of the addon subscription that this addon instance is associated with. (AI-inferred)
     addon_subscription_id: Any = None
-    # Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred)
     tags: Any = None
 
 MailManagerAddonInstance = ubx.ResourceBinding(

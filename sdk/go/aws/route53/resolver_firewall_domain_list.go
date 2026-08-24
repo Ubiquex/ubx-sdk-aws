@@ -4,7 +4,6 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverFirewallDomainList_Tags struct {
-	// The key of a tag attached to the Route 53 Resolver firewall domain list, used to assign metadata for identifying and organizing the resource in AWS. (AI-inferred)
 	Key any
 	Value any
 }

@@ -8,226 +8,147 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_AddKeys_Entries:
-    # The name of the new field that CloudWatch Logs Transformer adds to the log event, serving as the key in the key-value pair inserted by the add_keys operation. (AI-inferred)
     key: Any = None
-    # For the add_keys processor of a CloudWatch Logs transformer, this boolean specifies whether to overwrite the value of a key if it already exists in a log event (true) or leave the original value unchanged (false). (AI-inferred)
     overwrite_if_exists: Any = None
-    # The value to assign to the new key when the add_keys transformation is applied to a log event in the AWS::Logs::Transformer resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_AddKeys:
-    # The entries list defines the key-value pairs to add to log events, where each entry specifies a key and its value. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_CopyValue_Entries:
-    # Specifies whether to overwrite the destination field with the copied value if that destination field already exists in the log event. (AI-inferred)
     overwrite_if_exists: Any = None
-    # The name of the source field in the log event whose value is copied to the target field by the copy_value transformation. (AI-inferred)
     source: Any = None
-    # Specifies the destination field name in the log event where the value from the source key is copied by the copyValue transformation processor. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_CopyValue:
-    # Defines copy operations that duplicate a value from a source field to a target field within each log event, with each entry specifying the source and target keys. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_Csv:
-    # Provides the ordered list of column names that the CSV transformation processor uses to map comma-separated values extracted from each log event. (AI-inferred)
     columns: Any = None
-    # The delimiter character used by the CSV transformer to separate fields in the log message for parsing. (AI-inferred)
     delimiter: Any = None
-    # Specifies the character used to enclose quoted fields in the CSV input, so that delimiters within quoted fields are treated as literal characters rather than separators. (AI-inferred)
     quote_character: Any = None
-    # The name of the source field in the log event that contains the CSV-formatted data to be parsed into separate fields by the CSV transformer. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_DateTimeConverter:
-    # Specifies the locale (e.g., en-US) used by the date-time converter when parsing or formatting date/time values, affecting language-specific month/day names and date format conventions. (AI-inferred)
     locale: Any = None
-    # The list of date/time patterns that the DateTimeConverter processor attempts to match against the source field's value in order to parse it before converting to the specified target format. (AI-inferred)
     match_patterns: Any = None
-    # The source field specifies the name of the log event field that contains the datetime value to be converted by the date-time converter processor. (AI-inferred)
     source: Any = None
-    # Specifies the time zone (e.g., 'UTC', 'America/New_York') of the source timestamp, which the DateTimeConverter processor uses to interpret and convert the log record's time before applying the target format. (AI-inferred)
     source_timezone: Any = None
-    # Specifies the log event field name where the date/time converter writes the converted date/time value, using the configured target format. (AI-inferred)
     target: Any = None
-    # Defines the target strftime-compatible format (e.g., '%Y-%m-%d %H:%M:%S') that the dateTimeConverter processor uses to rewrite the value of the source datetime field in transformed log events. (AI-inferred)
     target_format: Any = None
-    # Specifies the IANA time zone (e.g., 'America/New_York') to which the source date/time value is converted when setting the target field. (AI-inferred)
     target_timezone: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_DeleteKeys:
-    # The list of log event field names to delete when the transformer's deleteKeys operation is applied. (AI-inferred)
     with_keys: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_Grok:
-    # The grok pattern string used to match and extract named fields from the log event, e.g. '%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{GREEDYDATA:message}'. (AI-inferred)
     match: Any = None
-    # Specifies the source log event field (e.g., @message or a custom field name) that the grok pattern is applied to for extracting structured data. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_ListToMap:
-    # When true, the list_to_map processor flattens the resulting map so that each key maps directly to the value field of the source object, rather than to the entire object. (AI-inferred)
     flatten: Any = None
-    # Specifies how the list-to-map transformation handles multiple list elements that share the same key, with valid values 'first' (use the first value), 'last' (use the last value), or 'all' (collect all values into an array). (AI-inferred)
     flattened_element: Any = None
-    # The name of the attribute in each source list element that is used as the map key when transforming a list of objects into a map. (AI-inferred)
     key: Any = None
-    # The name of the log event field that contains the list of strings to be converted into a map by the ListToMap processor. (AI-inferred)
     source: Any = None
-    # The name of the destination field where the map created from the source list is written. (AI-inferred)
     target: Any = None
-    # Specifies the field in each list item whose value is used as the value in the map produced by the list-to-map transformation. (AI-inferred)
     value_key: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_ParseCloudfront:
-    # The source field specifies the name of the log event attribute that contains the raw CloudFront access log line to be parsed by the parse_cloudfront processor. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_ParseJson:
-    # In the `parseJson` processor, `destination` is the output field path where the JSON-decoded content of the source field is placed; if omitted, the parsed fields are merged directly into the root of the log event. (AI-inferred)
     destination: Any = None
-    # Specifies the name of the source field within the log event whose JSON string value is parsed by the ParseJSON processor. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_ParseKeyValue:
-    # Specifies the destination field in the log event where the parsed key-value pairs are written, such as a top-level key or a nested path. (AI-inferred)
     destination: Any = None
-    # Specifies the delimiter used to separate key-value pairs (fields) in the source log event when applying the parse_key_value transformation, for example a space or comma. (AI-inferred)
     field_delimiter: Any = None
-    # When set, prepends this string to every key parsed from the log message by the parse_key_value processor, so that the generated CloudWatch Logs fields are namespaced under the specified prefix. (AI-inferred)
     key_prefix: Any = None
-    # Sets the specific character (such as '=' or ':') that separates a key from its value when the parse-key-value processor splits a log entry into key-value pairs. (AI-inferred)
     key_value_delimiter: Any = None
-    # Sets the string value to substitute for a key when the input text does not contain a matching value delimiter, so the key is still present with this fallback value. (AI-inferred)
     non_match_value: Any = None
-    # When parsing key-value pairs from the log message, if this flag is true the parser replaces the value of any existing target key with the newly parsed value, otherwise it keeps the existing value. (AI-inferred)
     overwrite_if_exists: Any = None
-    # Specifies the name of the source field in a log event that contains a key-value pair string, which the transformer parses into individual fields according to the configured delimiters. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_ParseToOcsf:
-    # Specifies the OCSF event source (such as 'cloudtrail' or 'vpcflow') that the ParseToOCSF transformer uses to interpret and map the log record into the OCSF schema. (AI-inferred)
     event_source: Any = None
-    # Specifies the version of the OCSF (Open Cybersecurity Schema Framework) mapping to use when converting the log event to OCSF format. (AI-inferred)
     mapping_version: Any = None
-    # Specifies the version of the Open Cybersecurity Schema Framework (OCSF) to use when converting log records to OCSF format. (AI-inferred)
     ocsf_version: Any = None
-    # Specifies the name of the source field in the incoming log event that contains the data to be parsed and converted into OCSF format. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_RenameKeys_Entries:
-    # The original key name in the log event that will be renamed to the value of this entry in the renameKeys transformation. (AI-inferred)
     key: Any = None
-    # If true, the transformer overwrites the target key's value when renaming a source key to a key name that already exists; if false, the rename does not overwrite the existing key and leaves the original key unchanged. (AI-inferred)
     overwrite_if_exists: Any = None
-    # Specifies the new name to assign to a log event key in a renameKeys entry of the CloudWatch Logs transformer, replacing the original key name. (AI-inferred)
     rename_to: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_RenameKeys:
-    # Defines a list of key rename mappings, where each mapping specifies an existing log event key and the new key name to replace it with during transformation. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_SplitString_Entries:
-    # The delimiter string used by the splitString processor to divide the source log field's value into separate parts. (AI-inferred)
     delimiter: Any = None
-    # Specifies the field in the log event whose string value is segmented into multiple substrings using the configured delimiter for the splitString processor. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_SplitString:
-    # The list of split operations, where each entry defines the source field to split, the delimiter to use, and the target field names to receive the resulting substrings. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_SubstituteString_Entries:
-    # Specifies the literal substring within the log event that the substituteString processor will replace with the corresponding 'to' string. (AI-inferred)
     from_: Any = None
-    # The literal string to find within the log event that will be replaced by the corresponding target string in this substitute_string entry. (AI-inferred)
     source: Any = None
-    # The replacement string that is substituted for every occurrence of the entry's source string in the log event during this transformer's substitute_string processing. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_SubstituteString:
-    # The list of source-target string pairs, where each entry specifies a source pattern to find in the log message and the replacement target string to substitute in its place when this SubstituteString transformation runs. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_TypeConverter_Entries:
-    # The key is the name of the log event field that the type converter processes, telling the transformer which field's value should be converted to the target type. (AI-inferred)
     key: Any = None
-    # The target data type to which the field value is converted, such as integer, double, boolean, or string. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig_TypeConverter:
-    # Specifies the list of type conversion entries for the typeConverter processor, where each entry defines a log field name and the target data type to convert that field to. (AI-inferred)
     entries: Any = None
 
 @dataclasses.dataclass
 class Transformer_TransformerConfig:
-    # Defines a set of key-value pairs to append to each log event processed by the transformer, where each entry specifies a key and a value to add to the log record. (AI-inferred)
     add_keys: Any = None
-    # Defines the copyValue transformation for a CloudWatch Logs Transformer, which copies the value from a specified source field to a target field in each log event via a list of entries containing source and target field names. (AI-inferred)
     copy_value: Any = None
-    # The 'csv' property within the transformer configuration defines a processor that parses comma-separated values from a log event field, with options for the source field, delimiter, quote character, column names, and handling of missing or trailing fields. (AI-inferred)
     csv: Any = None
-    # Configures the date-time converter processor, which transforms a datetime field in a log event by specifying a source field, a destination field, and the target output format. (AI-inferred)
     date_time_converter: Any = None
-    # Specifies the log event keys to be removed by the deleteKeys processor within the AWS Logs transformer configuration. (AI-inferred)
     delete_keys: Any = None
-    # Defines a Grok-based transformation processor that uses user-supplied Grok patterns to parse and extract structured fields from a log event's source field. (AI-inferred)
     grok: Any = None
-    # Configures the list-to-map processor, which converts a source list field into a map by extracting key-value pairs from each element. (AI-inferred)
     list_to_map: Any = None
-    # Configures the lowerCaseString processor, which lowercases the values of specified keys in log events. (AI-inferred)
     lower_case_string: Any = None
-    # In the AWS::Logs::Transformer resource, this field defines the key-rename mappings for the moveKeys processor, where each mapping specifies a source key and a target key to rename fields in incoming log events. (AI-inferred)
     move_keys: Any = None
-    # This field configures the CloudFront access log parser, where you specify the source log field to parse (and optionally a destination field for the extracted structured data). (AI-inferred)
     parse_cloudfront: Any = None
-    # Configures the parse JSON processor to parse a specified log message field as JSON and add the resulting key-value pairs to the log event. (AI-inferred)
     parse_json: Any = None
-    # This field configures the `parse_key_value` processor within the CloudFormation `AWS::Logs::Transformer` resource, defining how key-value pairs are extracted from log messages by specifying parameters such as `source`, `destination`, `delimiter`, `key_value_delimiter`, and `key_prefix`. (AI-inferred)
     parse_key_value: Any = None
-    # This object configures the Postgres log parser within the CloudWatch Logs Transformer, specifying the source field that contains the raw PostgreSQL log message so that structured data is extracted from it. (AI-inferred)
     parse_postgres: Any = None
-    # Configures the transformation that parses Route 53 DNS query log events, extracting structured fields such as domain name, query type, and response code from the raw log line. (AI-inferred)
     parse_route53: Any = None
-    # Specifies the configuration for the parse-to-OCSF processor within the transformer, which converts incoming log events to the Open Cybersecurity Schema Framework (OCSF) format. (AI-inferred)
     parse_to_ocsf: Any = None
-    # Defines the ParseVpc processor settings for the transformer, including the source field to parse VPC flow log data from and the target field to write the parsed structured fields to. (AI-inferred)
     parse_vpc: Any = None
-    # Configures a processor that parses AWS WAF log entries into a structured format, extracting fields such as the rule, action, and request details from the raw JSON logs. (AI-inferred)
     parse_waf: Any = None
-    # Specifies a mapping of original log field names to their replacement names, used to rename fields during log transformation. (AI-inferred)
     rename_keys: Any = None
-    # Configures a split-string processor that divides a specified string field into an array of substrings using a delimiter. (AI-inferred)
     split_string: Any = None
-    # The substitute_string object configures a string substitution processor that replaces occurrences of a specified source pattern (regular expression) in the log event message with the provided replacement string. (AI-inferred)
     substitute_string: Any = None
-    # This object configures the TrimString processor, which trims leading and trailing whitespace from the values of the specified fields in the log event. (AI-inferred)
     trim_string: Any = None
-    # Specifies the type converter processor that changes the data type of selected fields in CloudWatch Logs events to a target type (such as integer, double, boolean, or string) for normalization and downstream processing. (AI-inferred)
     type_converter: Any = None
-    # The upper_case_string processor in the transformer config converts the string values of the specified log event fields to uppercase. (AI-inferred)
     upper_case_string: Any = None
 
 _Transformer_TransformerConfig_AddKeys_EntriesFields = {

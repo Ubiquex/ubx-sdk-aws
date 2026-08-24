@@ -10,7 +10,6 @@ export interface TrafficMirrorFilterRule_DestinationPortRange {
 
 export interface TrafficMirrorFilterRule_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -29,7 +28,6 @@ export interface TrafficMirrorFilterRuleConfig {
   description?: string | Computed<string>;
   /** The destination CIDR block to assign to the Traffic Mirror rule. */
   destinationCidrBlock: string | Computed<string>;
-  /** Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred) */
   destinationPortRange?: TrafficMirrorFilterRule_DestinationPortRange | Computed<TrafficMirrorFilterRule_DestinationPortRange>;
   /** The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule. */
   protocol?: number | Computed<number>;
@@ -39,7 +37,6 @@ export interface TrafficMirrorFilterRuleConfig {
   ruleNumber: number | Computed<number>;
   /** The source CIDR block to assign to the Traffic Mirror Filter rule. */
   sourceCidrBlock: string | Computed<string>;
-  /** The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred) */
   sourcePortRange?: TrafficMirrorFilterRule_DestinationPortRange | Computed<TrafficMirrorFilterRule_DestinationPortRange>;
   /** Any tags assigned to the Traffic Mirror Filter rule. */
   tags?: TrafficMirrorFilterRule_Tags[] | Computed<TrafficMirrorFilterRule_Tags[]>;
@@ -54,7 +51,6 @@ export interface TrafficMirrorFilterRuleAttrs {
   description: string;
   /** The destination CIDR block to assign to the Traffic Mirror rule. */
   destinationCidrBlock: string;
-  /** Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred) */
   destinationPortRange: TrafficMirrorFilterRule_DestinationPortRange;
   /** The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule. */
   protocol: number;
@@ -64,7 +60,6 @@ export interface TrafficMirrorFilterRuleAttrs {
   ruleNumber: number;
   /** The source CIDR block to assign to the Traffic Mirror Filter rule. */
   sourceCidrBlock: string;
-  /** The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred) */
   sourcePortRange: TrafficMirrorFilterRule_DestinationPortRange;
   /** Any tags assigned to the Traffic Mirror Filter rule. */
   tags: TrafficMirrorFilterRule_Tags[];

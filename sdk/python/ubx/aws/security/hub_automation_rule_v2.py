@@ -8,120 +8,84 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Actions_ExternalIntegrationConfiguration:
-    # The ARN of the external integration connector (such as a Slack or PagerDuty integration) to which this automation rule action sends findings. (AI-inferred)
     connector_arn: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Actions_FindingFieldsUpdate:
-    # The comment text to attach to the finding when this automation rule action updates the finding's fields (sets the note on the finding). (AI-inferred)
     comment: Any = None
-    # The numeric normalized severity score (0-100) that will be assigned to the finding's severity when this automation rule action updates the finding. (AI-inferred)
     severity_id: Any = None
     status_id: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Actions:
-    # Contains the configuration for sending findings to an external integration, including the ARN of the external integration defined in Security Hub. (AI-inferred)
     external_integration_configuration: Any = None
-    # Specifies the finding fields to update when this automation rule action is triggered, allowing changes to values such as severity, note, workflow status, and related findings. (AI-inferred)
     finding_fields_update: Any = None
-    # Specifies the type of automated response action, such as 'FINDING_FIELDS_UPDATE' to update a finding's fields, 'SNS' to publish to an SNS topic, or 'CUSTOM_ACTION' to invoke a custom action. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFilters_Filter:
-    # Defines the boolean value that the OCSF finding attribute specified in the filter's key must equal to satisfy this boolean filter condition within an automation rule's composite OCSF criteria. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_BooleanFilters:
-    # Specifies the name of the OCSF finding attribute whose boolean value is compared in this filter, such as whether the finding is a false positive. (AI-inferred)
     field_name: Any = None
-    # Specifies the matching criterion for a boolean OCSF filter in a Security Hub automation rule, including the OCSF field name, operator, and value used to evaluate findings. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_Filter_DateRange:
-    # The time unit (DAYS, WEEKS, MONTHS, or YEARS) that, with the date range value, defines a relative window for matching OCSF finding criteria in the Security Hub automation rule. (AI-inferred)
     unit: Any = None
-    # The numeric quantity of the relative date range (e.g., number of days) used to match OCSF findings that occurred within a specified timeframe in the automation rule's criteria. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters_Filter:
-    # Specifies the start and end date values that define the time window for a date-based filter condition within an OCSF composite criteria in a Security Hub automation rule. (AI-inferred)
     date_range: Any = None
-    # Specifies the upper (end) boundary of a date/time range used in a date filter within a composite filter for matching OCSF-format findings against an automation rule's criteria. (AI-inferred)
     end: Any = None
-    # The start of the date range for a DateFilter in a composite filter, specified as an ISO 8601 string (e.g., '2023-01-01T00:00:00Z'), used to match findings with activity timestamps on or after this datetime. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_DateFilters:
-    # Specifies the name of the OCSF (Open Cybersecurity Schema Framework) field that the date filter condition evaluates, determining which timestamp field from the OCSF finding is compared to the provided date range or value. (AI-inferred)
     field_name: Any = None
-    # Defines the actual date-based condition (e.g., a numeric timestamp, date range, or relative offset) applied when evaluating OCSF finding criteria in the automation rule's composite filter. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFilters_Filter:
-    # Specifies the comparison operator (e.g., EQUALS or NOT_EQUALS) that determines how the map filter's value is matched against the finding's map field in the automation rule criteria. (AI-inferred)
     comparison: Any = None
-    # The map key used in a map filter within the composite filter to match on a specific OCSF finding attribute in the Security Hub automation rule criteria. (AI-inferred)
     key: Any = None
-    # In the OCSF finding criteria composite filter, this string defines the expected value that the specified map key must match for a finding to satisfy the map filter and trigger the Security Hub automation rule. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_MapFilters:
-    # The name of the specific OCSF finding field that this map filter condition evaluates, used within a composite filter to match against a defined value. (AI-inferred)
     field_name: Any = None
-    # The filter object within a map filter of an OCSF finding criteria defines the condition (key, comparison operator, and value) used to match findings against map-type fields in a Security Hub automation rule. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFilters_Filter:
-    # Specifies the exact numeric value that the corresponding OCSF finding attribute must equal to satisfy the number filter within a composite filter in the Security Hub automation rule. (AI-inferred)
     eq: Any = None
-    # Defines the lower bound (greater-than-or-equal-to) value for the numeric filter, so that the automation rule matches OCSF findings whose corresponding numeric attribute is at least this value. (AI-inferred)
     gte: Any = None
-    # Specifies the maximum (less-than-or-equal-to) numeric threshold for a composite number filter on an OCSF finding attribute, so the automation rule matches only findings whose value is at or below this number. (AI-inferred)
     lte: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_NumberFilters:
-    # Specifies the OCSF finding field (in the finding's OCSF representation) whose numeric value is evaluated against the configured number filter condition, such as a count or score attribute. (AI-inferred)
     field_name: Any = None
-    # Defines a numeric filter for an OCSF finding field, including the field identifier and the comparison operation (e.g., equals, greater than, less than) to match against the finding's numeric value. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFilters_Filter:
-    # Determines the comparison operator used by the string filter to match the OCSF finding field, such as EQUALS or PREFIX, within a composite filter of an AWS Security Hub automation rule. (AI-inferred)
     comparison: Any = None
-    # The string value to match against the OCSF finding attribute specified by this filter's key in the Security Hub automation rule criteria. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters_StringFilters:
-    # The name of the OCSF finding field that the string filter evaluates within the composite filter, matching findings where that field contains the specified string value. (AI-inferred)
     field_name: Any = None
-    # Defines a single string filter condition inside a composite filter of an OCSF finding criteria, specifying the OCSF field name, comparison operator, and value used to match security findings for an AWS Security Hub automation rule. (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRuleV2_Criteria_OcsfFindingCriteria_CompositeFilters:
-    # This field is the list of BooleanFilter objects within a composite filter group, where each object specifies an OCSF attribute of boolean type and the required boolean value to match in the automation rule's OCSF finding criteria. (AI-inferred)
     boolean_filters: Any = None
-    # Defines a list of date-based filter conditions used within a composite filter to match OCSF findings in Security Hub automation rules based on date fields like creation or update time. (AI-inferred)
     date_filters: Any = None
-    # Defines a list of map filter conditions within a composite criteria block that match OCSF findings based on key-value pairs in map-type fields (such as resource tags), used to determine if the automation rule applies. (AI-inferred)
     map_filters: Any = None
-    # Defines numeric filter conditions (such as equals, greater than, less than) for OCSF fields within a composite filter, enabling the automation rule to match findings based on those numeric field values. (AI-inferred)
     number_filters: Any = None
-    # The logical operator (e.g., `AND` or `OR`) used to combine the multiple OCSF filters within this composite filter, determining whether all or any of the sub-conditions must match for the automation rule's criteria to apply. (AI-inferred)
     operator: Any = None
-    # Defines a list of string filter conditions, each specifying an OCSF field, a comparison operator, and a value, used to match findings for this automation rule's composite filter criteria. (AI-inferred)
     string_filters: Any = None
 
 @dataclasses.dataclass

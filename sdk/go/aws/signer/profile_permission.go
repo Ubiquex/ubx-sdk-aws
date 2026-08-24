@@ -4,28 +4,18 @@ package signer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilePermissionConfig struct {
-	// Specifies the AWS Signer operation (such as 'signer:StartSigningJob' or 'signer:GetSigningProfile') that the principal is allowed to perform on the signing profile. (AI-inferred)
 	Action any
-	// The AWS account ID or IAM principal (such as an IAM role or user ARN) that is granted signing-profile access by this profile permission. (AI-inferred)
 	Principal any
-	// The name of the AWS Signer signing profile to which the permission is granted. (AI-inferred)
 	ProfileName any
-	// The version of the signing profile to which this cross-account permission is scoped; when omitted, the permission applies without version-specific restriction. (AI-inferred)
 	ProfileVersion any
-	// A unique identifier for this signing profile permission statement, used to reference the setting in later updates or removal operations. (AI-inferred)
 	StatementId any
 }
 
 type ProfilePermissionAttrs struct {
-	// Specifies the AWS Signer operation (such as 'signer:StartSigningJob' or 'signer:GetSigningProfile') that the principal is allowed to perform on the signing profile. (AI-inferred)
 	Action any
-	// The AWS account ID or IAM principal (such as an IAM role or user ARN) that is granted signing-profile access by this profile permission. (AI-inferred)
 	Principal any
-	// The name of the AWS Signer signing profile to which the permission is granted. (AI-inferred)
 	ProfileName any
-	// The version of the signing profile to which this cross-account permission is scoped; when omitted, the permission applies without version-specific restriction. (AI-inferred)
 	ProfileVersion any
-	// A unique identifier for this signing profile permission statement, used to reference the setting in later updates or removal operations. (AI-inferred)
 	StatementId any
 }
 

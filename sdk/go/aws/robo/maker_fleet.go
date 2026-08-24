@@ -11,7 +11,6 @@ type MakerFleetConfig struct {
 }
 
 type MakerFleetAttrs struct {
-	// The Amazon Resource Name (ARN) of the RoboMaker fleet, automatically assigned by AWS when the fleet is created. (AI-inferred)
 	Arn any
 	// The name of the fleet.
 	Name any

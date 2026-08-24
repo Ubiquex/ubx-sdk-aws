@@ -10,12 +10,10 @@ import ubx_sdk as ubx
 class SightRefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDay:
     # <p>The Day Of Month for scheduled refresh.</p>
     day_of_month: Any = None
-    # Specifies the day of the week (for example, SUNDAY) on which the QuickSight dataset refresh runs when the schedule frequency is set to WEEKLY. (AI-inferred)
     day_of_week: Any = None
 
 @dataclasses.dataclass
 class SightRefreshSchedule_Schedule_ScheduleFrequency:
-    # The interval of the QuickSight refresh schedule frequency, which must be one of 'DAILY', 'WEEKLY', or 'MONTHLY', and determines how often the dataset is refreshed. (AI-inferred)
     interval: Any = None
     # <p>The day scheduled for refresh.</p>
     refresh_on_day: Any = None
@@ -26,7 +24,6 @@ class SightRefreshSchedule_Schedule_ScheduleFrequency:
 
 @dataclasses.dataclass
 class SightRefreshSchedule_Schedule:
-    # Specifies whether the scheduled refresh is a FULL_REFRESH or an INCREMENTAL_REFRESH of the QuickSight dataset. (AI-inferred)
     refresh_type: Any = None
     # <p>Information about the schedule frequency.</p>
     schedule_frequency: Any = None
@@ -64,22 +61,16 @@ _SightRefreshSchedule_ScheduleFields = {
 
 @dataclasses.dataclass
 class SightRefreshScheduleConfig:
-    # The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred)
     aws_account_id: Any = None
-    # The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred)
     data_set_id: Any = None
-    # The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred)
     schedule: Any = None
 
 @dataclasses.dataclass
 class SightRefreshScheduleAttrs:
     # <p>The Amazon Resource Name (ARN) of the data source.</p>
     arn: Any = None
-    # The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred)
     aws_account_id: Any = None
-    # The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred)
     data_set_id: Any = None
-    # The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred)
     schedule: Any = None
 
 SightRefreshSchedule = ubx.ResourceBinding(

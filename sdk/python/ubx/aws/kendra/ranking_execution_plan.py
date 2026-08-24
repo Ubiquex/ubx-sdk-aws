@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RankingExecutionPlan_CapacityUnits:
-    # Specifies the number of rescore capacity units for the execution plan, which determines the rescoring query capacity (throughput) of the plan. (AI-inferred)
     rescore_capacity_units: Any = None
 
 @dataclasses.dataclass
 class RankingExecutionPlan_Tags:
-    # The key (name) of an arbitrary tag attached to the AWS Kendra Ranking execution plan, used for organizing, identifying, and filtering the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair assigned to the Amazon Kendra Intelligent Ranking execution plan, used to organize, identify, and manage access to the resource. (AI-inferred)
     value: Any = None
 
 _RankingExecutionPlan_CapacityUnitsFields = {
@@ -29,9 +26,7 @@ _RankingExecutionPlan_TagsFields = {
 
 @dataclasses.dataclass
 class RankingExecutionPlanConfig:
-    # Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred)
     capacity_units: Any = None
-    # An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred)
     description: Any = None
     # Name of kendra ranking rescore execution plan
     name: Any = None
@@ -40,11 +35,8 @@ class RankingExecutionPlanConfig:
 
 @dataclasses.dataclass
 class RankingExecutionPlanAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Kendra Ranking execution plan. (AI-inferred)
     arn: Any = None
-    # Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred)
     capacity_units: Any = None
-    # An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred)
     description: Any = None
     # Unique ID of rescore execution plan
     id: Any = None

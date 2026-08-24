@@ -22,7 +22,6 @@ class Application_PortalOptions:
 
 @dataclasses.dataclass
 class Application_Tags:
-    # The key of a tag to be attached to the AWS SSO application. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -59,7 +58,6 @@ class ApplicationConfig:
     portal_options: Any = None
     # Specifies whether the application is enabled or disabled
     status: Any = None
-    # Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -80,7 +78,6 @@ class ApplicationAttrs:
     portal_options: Any = None
     # Specifies whether the application is enabled or disabled
     status: Any = None
-    # Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred)
     tags: Any = None
 
 Application = ubx.ResourceBinding(

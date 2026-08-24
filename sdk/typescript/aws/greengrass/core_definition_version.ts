@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CoreDefinitionVersion_Cores {
-  /** The Amazon Resource Name (ARN) of the AWS IoT certificate that identifies the Greengrass core device when it connects to AWS IoT. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** The logical ID assigned to this core within the Greengrass core definition version, used to uniquely identify the core among the list of cores. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Indicates whether the Greengrass core device's shadow is synchronized with the cloud. (AI-inferred) */
   syncShadow?: boolean | Computed<boolean>;
-  /** The ARN of the AWS IoT Thing that acts as the Greengrass core device in this core definition version. (AI-inferred) */
   thingArn?: string | Computed<string>;
 }
 
@@ -20,18 +16,13 @@ const CoreDefinitionVersion_CoresFields: FieldMap = {
 };
 
 export interface CoreDefinitionVersionConfig {
-  /** The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred) */
   coreDefinitionId: string | Computed<string>;
-  /** The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred) */
   cores: CoreDefinitionVersion_Cores[] | Computed<CoreDefinitionVersion_Cores[]>;
 }
 
 export interface CoreDefinitionVersionAttrs {
-  /** The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred) */
   coreDefinitionId: string;
-  /** The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred) */
   cores: CoreDefinitionVersion_Cores[];
-  /** The unique AWS-assigned version ID (typically a UUID) for the Greengrass core definition version, returned after creation. (AI-inferred) */
   id: string;
 }
 

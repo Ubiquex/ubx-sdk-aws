@@ -15,11 +15,9 @@ type CatalogAppRegistryResourceAssociationConfig struct {
 type CatalogAppRegistryResourceAssociationAttrs struct {
 	// The name or the Id of the Application.
 	Application any
-	// The ARN of the AWS Service Catalog AppRegistry application that this resource association links the associated resource to, which is automatically set by AWS and read-only. (AI-inferred)
 	ApplicationArn any
 	// The name or the Id of the Resource.
 	Resource any
-	// The Amazon Resource Name (ARN) of the resource associated with the AppRegistry application, returned by AWS Service Catalog AppRegistry after the association is created. (AI-inferred)
 	ResourceArn any
 	// The type of the CFN Resource for now it's enum CFN_STACK.
 	ResourceType any

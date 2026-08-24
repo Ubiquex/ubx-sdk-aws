@@ -10,7 +10,6 @@ export interface TsiteWisePortal_Alarms {
 
 export interface TsiteWisePortal_Tags {
   key?: string | Computed<string>;
-  /** The value part of a key-value tag that you assign to the AWS IoT SiteWise portal to help organize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

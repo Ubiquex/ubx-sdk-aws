@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dbsnapshot_Tags:
-    # The key of a tag attached to the RDS DB snapshot, used to assign metadata for resource identification, cost tracking, and IAM-based access control. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag applied to this RDS DB snapshot, providing arbitrary metadata to classify or manage the snapshot. (AI-inferred)
     value: Any = None
 
 _Dbsnapshot_TagsFields = {

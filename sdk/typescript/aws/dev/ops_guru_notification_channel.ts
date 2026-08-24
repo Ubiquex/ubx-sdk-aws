@@ -9,7 +9,6 @@ export interface OpsGuruNotificationChannel_Config_Filters {
 }
 
 export interface OpsGuruNotificationChannel_Config_Sns {
-  /** The ARN of the Amazon SNS topic that DevOps Guru publishes notification messages to for this channel. (AI-inferred) */
   topicArn?: string | Computed<string>;
 }
 

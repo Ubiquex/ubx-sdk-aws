@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerGrant_Tags:
-    # The tag key that you assign to an AWS License Manager grant to categorize and manage the grant. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,36 +18,27 @@ _ManagerGrant_TagsFields = {
 
 @dataclasses.dataclass
 class ManagerGrantConfig:
-    # Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred)
     allowed_operations: Any = None
     # Name for the created Grant.
     grant_name: Any = None
     # Home region for the created grant.
     home_region: Any = None
-    # The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred)
     license_arn: Any = None
-    # Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred)
     principals: Any = None
-    # Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred)
     status: Any = None
     # A list of tags to attach.
     tags: Any = None
 
 @dataclasses.dataclass
 class ManagerGrantAttrs:
-    # Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred)
     allowed_operations: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the license grant in AWS License Manager. (AI-inferred)
     grant_arn: Any = None
     # Name for the created Grant.
     grant_name: Any = None
     # Home region for the created grant.
     home_region: Any = None
-    # The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred)
     license_arn: Any = None
-    # Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred)
     principals: Any = None
-    # Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred)
     status: Any = None
     # A list of tags to attach.
     tags: Any = None

@@ -19,11 +19,9 @@ class CatalogAppRegistryResourceAssociationConfig:
 class CatalogAppRegistryResourceAssociationAttrs:
     # The name or the Id of the Application.
     application: Any = None
-    # The ARN of the AWS Service Catalog AppRegistry application that this resource association links the associated resource to, which is automatically set by AWS and read-only. (AI-inferred)
     application_arn: Any = None
     # The name or the Id of the Resource.
     resource: Any = None
-    # The Amazon Resource Name (ARN) of the resource associated with the AppRegistry application, returned by AWS Service Catalog AppRegistry after the association is created. (AI-inferred)
     resource_arn: Any = None
     # The type of the CFN Resource for now it's enum CFN_STACK.
     resource_type: Any = None

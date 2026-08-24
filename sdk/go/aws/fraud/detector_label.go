@@ -4,9 +4,7 @@ package fraud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectorLabel_Tags struct {
-	// The key of a tag attached to an AWS Fraud Detector label, used for resource organization, filtering, and cost allocation. (AI-inferred)
 	Key any
-	// The value component of a tag attached to an AWS Fraud Detector label, used to store arbitrary metadata for identifying and organizing the label resource. (AI-inferred)
 	Value any
 }
 

@@ -15,7 +15,6 @@ type TwirelessMulticastGroup_LoRaWan struct {
 }
 
 type TwirelessMulticastGroup_Tags struct {
-	// Defines the key of a tag applied to the IoT Wireless Multicast Group, allowing you to attach custom metadata for resource grouping and management. (AI-inferred)
 	Key any
 	Value any
 }
@@ -49,7 +48,6 @@ type TwirelessMulticastGroupAttrs struct {
 	DisassociateWirelessDevice any
 	// Multicast group id. Returned after successful create.
 	Id any
-	// The LoRaWAN radio configuration (downlink class and frequency band) that AWS IoT Wireless applies to this multicast group, returned as a read-only attribute after group creation. (AI-inferred)
 	LoRaWan any
 	// Name of Multicast group
 	Name any

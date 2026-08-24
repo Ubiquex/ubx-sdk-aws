@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayDomainName_EndpointConfiguration:
-    # Determines the IP address version (IPv4 or IPv6) used by the regional API Gateway custom domain name when the endpoint type is REGIONAL. (AI-inferred)
     ip_address_type: Any = None
-    # Specifies the list of endpoint types (EDGE, REGIONAL, or PRIVATE) that determine how the API Gateway domain name is exposed and routed across AWS regions and VPCs. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class GatewayDomainName_MutualTlsAuthentication:
-    # The Amazon S3 URI of the truststore containing the trusted CA certificates used for mutual TLS authentication on the API Gateway domain name. (AI-inferred)
     truststore_uri: Any = None
-    # The version of the S3 object that contains the truststore for mutual TLS authentication. (AI-inferred)
     truststore_version: Any = None
 
 @dataclasses.dataclass
@@ -42,56 +38,37 @@ _GatewayDomainName_TagsFields = {
 
 @dataclasses.dataclass
 class GatewayDomainNameConfig:
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure the edge-optimized domain name's TLS/SSL connections. (AI-inferred)
     certificate_arn: Any = None
-    # The custom domain name (e.g., api.example.com) that API Gateway serves for this domain name resource, which must be registered and associated with an ACM certificate. (AI-inferred)
     domain_name: Any = None
-    # This field sets the endpoint access mode for the API Gateway custom domain name, either PUBLIC for internet access or PRIVATE to restrict access to private VPC endpoints. (AI-inferred)
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of an Amazon API Gateway domain name. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.
     endpoint_configuration: Any = None
-    # Configures mutual TLS (mTLS) for the API Gateway domain name by providing the truststore URI and version used to validate client certificates. (AI-inferred)
     mutual_tls_authentication: Any = None
     # The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the RegionalCertificateArn.
     ownership_verification_certificate_arn: Any = None
-    # Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
     regional_certificate_arn: Any = None
     routing_mode: Any = None
-    # Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
     security_policy: Any = None
-    # Specifies the list of key-value tags to attach to the API Gateway domain name. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class GatewayDomainNameAttrs:
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure the edge-optimized domain name's TLS/SSL connections. (AI-inferred)
     certificate_arn: Any = None
-    # The CloudFront distribution domain name that API Gateway assigns to the custom domain name, used as the target for a Route 53 alias record or CNAME to point the custom domain to the API endpoints. (AI-inferred)
     distribution_domain_name: Any = None
-    # The Route 53 hosted zone ID of the CloudFront distribution associated with this API Gateway custom domain name (used for edge-optimized endpoints). (AI-inferred)
     distribution_hosted_zone_id: Any = None
-    # The custom domain name (e.g., api.example.com) that API Gateway serves for this domain name resource, which must be registered and associated with an ACM certificate. (AI-inferred)
     domain_name: Any = None
-    # The Amazon Resource Name (ARN) of the API Gateway domain name. (AI-inferred)
     domain_name_arn: Any = None
-    # This field sets the endpoint access mode for the API Gateway custom domain name, either PUBLIC for internet access or PRIVATE to restrict access to private VPC endpoints. (AI-inferred)
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of an Amazon API Gateway domain name. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::DomainName](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html) resource.
     endpoint_configuration: Any = None
-    # Configures mutual TLS (mTLS) for the API Gateway domain name by providing the truststore URI and version used to validate client certificates. (AI-inferred)
     mutual_tls_authentication: Any = None
     # The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the RegionalCertificateArn.
     ownership_verification_certificate_arn: Any = None
-    # Specifies the ARN of an AWS Certificate Manager (ACM) certificate to use for the domain name's regional API endpoint, which serves requests for a specific AWS region. (AI-inferred)
     regional_certificate_arn: Any = None
-    # The auto-generated regional domain name (e.g., d-xxxxxxxx.execute-api.region.amazonaws.com) that API Gateway assigns to this custom domain name when configured for a regional endpoint, which is used as the DNS target for routing traffic to API Gateway. (AI-inferred)
     regional_domain_name: Any = None
-    # The Route 53 hosted zone ID for the regional API Gateway endpoint, used to configure DNS alias records pointing to the regional domain name. (AI-inferred)
     regional_hosted_zone_id: Any = None
     routing_mode: Any = None
-    # Specifies the minimum TLS version (e.g., 'TLS_1_0' or 'TLS_1_2') that API Gateway uses for the custom domain name's HTTPS connections. (AI-inferred)
     security_policy: Any = None
-    # Specifies the list of key-value tags to attach to the API Gateway domain name. (AI-inferred)
     tags: Any = None
 
 GatewayDomainName = ubx.ResourceBinding(

@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ArchitectedProfile_ProfileQuestions {
-  /** The unique identifier of a question from a Well-Architected lens that is included in the profile. (AI-inferred) */
   questionId?: string | Computed<string>;
-  /** Specifies the IDs of the choices selected for a question, defining the answer(s) included in the profile for that question. (AI-inferred) */
   selectedChoiceIds?: string[] | Computed<string[]>;
 }
 
 export interface ArchitectedProfile_Tags {
-  /** The user-defined key of a tag attached to the Well-Architected Profile, used to organize and identify the profile in AWS Well-Architected. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS Well-Architected profile, used to identify, organize, or manage the profile. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

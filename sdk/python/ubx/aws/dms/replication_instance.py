@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ReplicationInstance_Tags:
     key: Any = None
-    # The value of a tag assigned to the AWS DMS replication instance, used to associate arbitrary metadata (e.g., environment, owner, or cost center) with the resource for management and cost allocation purposes. (AI-inferred)
     value: Any = None
 
 _ReplicationInstance_TagsFields = {
@@ -19,80 +18,45 @@ _ReplicationInstance_TagsFields = {
 
 @dataclasses.dataclass
 class ReplicationInstanceConfig:
-    # Specifies the amount of storage (in gigabytes) to allocate for the AWS DMS replication instance. (AI-inferred)
     allocated_storage: Any = None
-    # Indicates whether major version upgrades are allowed for the replication instance, and must be set to true to permit such upgrades when the engine version is changed. (AI-inferred)
     allow_major_version_upgrade: Any = None
-    # Indicates whether minor engine version upgrades are applied automatically to the replication instance during the maintenance window. (AI-inferred)
     auto_minor_version_upgrade: Any = None
-    # Specifies the Availability Zone (AZ) in which the AWS DMS replication instance is created, influencing placement and failover behavior for Multi-AZ deployments. (AI-inferred)
     availability_zone: Any = None
-    # Specifies a comma-separated list of DNS name servers that the AWS DMS replication instance uses to resolve domain names for source and target endpoints. (AI-inferred)
     dns_name_servers: Any = None
-    # Specifies the DMS engine version number to use for the replication instance, such as '3.4.4'. (AI-inferred)
     engine_version: Any = None
-    # This field specifies the Amazon Resource Name (ARN) or ID of an AWS KMS customer master key (CMK) used to encrypt the storage and data on the DMS replication instance, instead of the default AWS-managed key. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies whether the replication instance is deployed across multiple Availability Zones for high availability. (AI-inferred)
     multi_az: Any = None
-    # Specifies whether the replication instance uses IPv4 only (ipv4) or dual-stack IPv4 and IPv6 (dual) for network connectivity. (AI-inferred)
     network_type: Any = None
-    # Specifies the preferred time window (in the format ddd:hh24:mi-ddd:hh24:mi, e.g., 'sun:01:00-sun:02:00') during which AWS may perform maintenance on the replication instance. (AI-inferred)
     preferred_maintenance_window: Any = None
-    # Whether the DMS replication instance is publicly accessible, meaning it receives a public IP address and can be reached from the internet, as opposed to being private within the VPC. (AI-inferred)
     publicly_accessible: Any = None
-    # The compute and memory capacity class for the replication instance, such as dms.t2.small or dms.c4.large, which determines the performance and cost of the instance. (AI-inferred)
     replication_instance_class: Any = None
-    # Specifies a user-defined name for the replication instance, which must be unique within the AWS account and region and can include letters, numbers, and hyphens. (AI-inferred)
     replication_instance_identifier: Any = None
-    # The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
     replication_subnet_group_identifier: Any = None
     resource_identifier: Any = None
-    # Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC security group IDs to be associated with the DMS replication instance. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 @dataclasses.dataclass
 class ReplicationInstanceAttrs:
-    # Specifies the amount of storage (in gigabytes) to allocate for the AWS DMS replication instance. (AI-inferred)
     allocated_storage: Any = None
-    # Indicates whether major version upgrades are allowed for the replication instance, and must be set to true to permit such upgrades when the engine version is changed. (AI-inferred)
     allow_major_version_upgrade: Any = None
-    # Indicates whether minor engine version upgrades are applied automatically to the replication instance during the maintenance window. (AI-inferred)
     auto_minor_version_upgrade: Any = None
-    # Specifies the Availability Zone (AZ) in which the AWS DMS replication instance is created, influencing placement and failover behavior for Multi-AZ deployments. (AI-inferred)
     availability_zone: Any = None
-    # Specifies a comma-separated list of DNS name servers that the AWS DMS replication instance uses to resolve domain names for source and target endpoints. (AI-inferred)
     dns_name_servers: Any = None
-    # Specifies the DMS engine version number to use for the replication instance, such as '3.4.4'. (AI-inferred)
     engine_version: Any = None
-    # The Amazon Resource Name (ARN) of the DMS replication instance, generated by AWS and used as the unique Terraform resource identifier. (AI-inferred)
     id: Any = None
-    # This field specifies the Amazon Resource Name (ARN) or ID of an AWS KMS customer master key (CMK) used to encrypt the storage and data on the DMS replication instance, instead of the default AWS-managed key. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies whether the replication instance is deployed across multiple Availability Zones for high availability. (AI-inferred)
     multi_az: Any = None
-    # Specifies whether the replication instance uses IPv4 only (ipv4) or dual-stack IPv4 and IPv6 (dual) for network connectivity. (AI-inferred)
     network_type: Any = None
-    # Specifies the preferred time window (in the format ddd:hh24:mi-ddd:hh24:mi, e.g., 'sun:01:00-sun:02:00') during which AWS may perform maintenance on the replication instance. (AI-inferred)
     preferred_maintenance_window: Any = None
-    # Whether the DMS replication instance is publicly accessible, meaning it receives a public IP address and can be reached from the internet, as opposed to being private within the VPC. (AI-inferred)
     publicly_accessible: Any = None
-    # The compute and memory capacity class for the replication instance, such as dms.t2.small or dms.c4.large, which determines the performance and cost of the instance. (AI-inferred)
     replication_instance_class: Any = None
-    # Specifies a user-defined name for the replication instance, which must be unique within the AWS account and region and can include letters, numbers, and hyphens. (AI-inferred)
     replication_instance_identifier: Any = None
-    # The list of private IP addresses assigned to the AWS Database Migration Service replication instance. (AI-inferred)
     replication_instance_private_ip_addresses: Any = None
-    # The public IP addresses assigned to the DMS replication instance when it is configured for public accessibility. (AI-inferred)
     replication_instance_public_ip_addresses: Any = None
-    # The identifier of an existing DMS replication subnet group that determines the VPC and subnets where the replication instance's network interfaces are placed. (AI-inferred)
     replication_subnet_group_identifier: Any = None
     resource_identifier: Any = None
-    # Specifies the tags (key-value pairs) to associate with the DMS replication instance, which are used for cost allocation, access control, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC security group IDs to be associated with the DMS replication instance. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 ReplicationInstance = ubx.ResourceBinding(

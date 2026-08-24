@@ -4,32 +4,23 @@ package verified
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionsPolicy_Definition_Static struct {
-	// Provides a human-readable description of the static Cedar policy, documenting its purpose or intended effect within the AWS Verified Permissions policy definition. (AI-inferred)
 	Description any
-	// The Cedar policy statement text (in Cedar syntax) that defines the authorization rules for this static policy. (AI-inferred)
 	Statement any
 }
 
 type PermissionsPolicy_Definition_TemplateLinked_Principal struct {
-	// Specifies the unique identifier of the principal entity (within its entity type) to which the template-linked policy applies. (AI-inferred)
 	EntityId any
-	// Specifies the entity type (e.g., 'User' or 'Group') of the principal to which the template-linked policy applies, used to bind the principal placeholder in the policy template. (AI-inferred)
 	EntityType any
 }
 
 type PermissionsPolicy_Definition_TemplateLinked struct {
-	// Specifies the unique identifier of the policy template from which this template-linked policy is created, allowing the policy to inherit the template's statements and placeholders. (AI-inferred)
 	PolicyTemplateId any
-	// Specifies the principal (e.g., a user or group) to which the template-linked policy applies, identified by its entity type and ID, or the special value 'ANY' to match all principals. (AI-inferred)
 	Principal any
-	// Specifies the resource entity (by type and ID) that the template-linked policy applies to, filling in the resource placeholder from the Cedar policy template. (AI-inferred)
 	Resource any
 }
 
 type PermissionsPolicy_Definition struct {
-	// The 'definition.static' object defines a static policy for AWS Verified Permissions, containing the Cedar policy statement text (Statement) and an optional AdditionalDetails field for supplementary information. (AI-inferred)
 	Static any
-	// Defines a policy that is created from a policy template, specifying the template ID and the principal and resource entities to which the template's placeholders are applied. (AI-inferred)
 	TemplateLinked any
 }
 
@@ -71,22 +62,16 @@ var PermissionsPolicy_DefinitionFields = ubx.FieldMap{
 	}
 
 type PermissionsPolicyConfig struct {
-	// Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
 	Definition any
 	Name any
-	// The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred)
 	PolicyStoreId any
 }
 
 type PermissionsPolicyAttrs struct {
-	// Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
 	Definition any
 	Name any
-	// The unique identifier assigned by Amazon Verified Permissions to the policy when it is created, used to reference and manage the policy. (AI-inferred)
 	PolicyId any
-	// The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred)
 	PolicyStoreId any
-	// The type of the policy (STATIC or TEMPLATE_LINKED), indicating whether the policy was defined directly or linked to a policy template. (AI-inferred)
 	PolicyType any
 }
 

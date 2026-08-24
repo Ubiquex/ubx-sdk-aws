@@ -2,19 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApplicationInferenceProfile_ModelSource {
-  /** The Amazon Resource Name (ARN) of an existing Bedrock inference profile to copy from; when this is set, the new application inference profile inherits the model configuration of that source profile instead of specifying a model ARN directly. (AI-inferred) */
   copyFrom?: string | Computed<string>;
 }
 
 export interface ApplicationInferenceProfile_Models {
-  /** The Amazon Resource Name (ARN) of a foundation model or an existing inference profile that is included in the application inference profile's list of models, allowing the profile to invoke that model. (AI-inferred) */
   modelArn?: string | Computed<string>;
 }
 
 export interface ApplicationInferenceProfile_Tags {
-  /** The key of a tag assigned to the Bedrock application inference profile, used for organizing, identifying, and managing the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the Bedrock Application Inference Profile, used to store arbitrary metadata for resource identification, filtering, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -30,7 +26,6 @@ const ApplicationInferenceProfile_TagsFields: FieldMap = {
 export interface ApplicationInferenceProfileConfig {
   /** Description of the inference profile */
   description?: string | Computed<string>;
-  /** The name of the inference profile, which must be unique within the AWS account and Region, used to identify the profile when submitting inference requests. (AI-inferred) */
   inferenceProfileName: string | Computed<string>;
   /** Various ways to encode a list of models in a CreateInferenceProfile request */
   modelSource?: ApplicationInferenceProfile_ModelSource | Computed<ApplicationInferenceProfile_ModelSource>;
@@ -43,13 +38,10 @@ export interface ApplicationInferenceProfileAttrs {
   createdAt: string;
   /** Description of the inference profile */
   description: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the inference profile, assigned by AWS when the profile is created. (AI-inferred) */
   inferenceProfileArn: string;
-  /** The AWS-generated unique identifier for the Bedrock application inference profile, used to reference the profile in subsequent API calls. (AI-inferred) */
   inferenceProfileId: string;
   /** Inference profile identifier. Supports both system-defined inference profile ids, and inference profile ARNs. */
   inferenceProfileIdentifier: string;
-  /** The name of the inference profile, which must be unique within the AWS account and Region, used to identify the profile when submitting inference requests. (AI-inferred) */
   inferenceProfileName: string;
   /** Various ways to encode a list of models in a CreateInferenceProfile request */
   modelSource: ApplicationInferenceProfile_ModelSource;

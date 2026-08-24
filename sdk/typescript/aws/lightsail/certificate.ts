@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Certificate_Tags {
-  /** The key of a tag assigned to the Lightsail certificate, used to categorize and identify the certificate in the Lightsail console and API. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag assigned to the AWS Lightsail certificate, used to label, organize, and support cost allocation for the certificate. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -25,7 +23,6 @@ export interface CertificateConfig {
 }
 
 export interface CertificateAttrs {
-  /** The Amazon Resource Name (ARN) of the Lightsail certificate, assigned by AWS when the certificate is created. (AI-inferred) */
   certificateArn: string;
   /** The name for the certificate. */
   certificateName: string;

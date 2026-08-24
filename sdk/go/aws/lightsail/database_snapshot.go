@@ -11,9 +11,7 @@ type DatabaseSnapshot_Location struct {
 }
 
 type DatabaseSnapshot_Tags struct {
-	// The key of a tag to attach to the Lightsail database snapshot. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Lightsail database snapshot, used to categorize or identify the resource. (AI-inferred)
 	Value any
 }
 

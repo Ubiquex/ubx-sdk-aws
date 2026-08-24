@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MetricFilter_MetricTransformations_Dimensions {
-  /** The name/key of a dimension that is attached to the metric emitted by this CloudWatch Logs metric filter, used to segment the metric data. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of the dimension, which can be a literal string or a JSON path expression (e.g., $.eventType) used to extract a value from the log event and attach it as a dimension to the metric. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface MetricFilter_MetricTransformations {
-  /** Specifies the default value to assign to the CloudWatch metric when a log event matches the filter pattern but no metric value can be extracted from the log data. (AI-inferred) */
   defaultValue?: number | Computed<number>;
-  /** Specifies the dimensions for the metric filter, where each dimension object contains a Key and Value that define a dimension on which to group the metric data. (AI-inferred) */
   dimensions?: MetricFilter_MetricTransformations_Dimensions[] | Computed<MetricFilter_MetricTransformations_Dimensions[]>;
-  /** The name of the CloudWatch metric that the metric filter publishes matching log events to. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** The CloudWatch namespace under which the extracted metric is published by this metric filter transformation. (AI-inferred) */
   metricNamespace?: string | Computed<string>;
-  /** The value to publish for the metric, which can be a literal number or a JSON expression (like '$.field') evaluated from the matched log event and sent to CloudWatch Metrics. (AI-inferred) */
   metricValue?: string | Computed<string>;
-  /** The unit of measure for the metric value (e.g., Seconds, Bytes, Count) that CloudWatch uses to interpret and display the metric's data, aligning with standard AWS unit enums. (AI-inferred) */
   unit?: string | Computed<string>;
 }
 

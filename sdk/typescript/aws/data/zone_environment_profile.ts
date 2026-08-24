@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ZoneEnvironmentProfile_UserParameters {
-  /** The name of a user-defined parameter configured in the environment profile, used to match or reference a parameter declared by the associated environment blueprint when provisioning an environment. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Sets the actual value for a user parameter in the environment profile, which is supplied as the value when the environment is provisioned from this profile. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

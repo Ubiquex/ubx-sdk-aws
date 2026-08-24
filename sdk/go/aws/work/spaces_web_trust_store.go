@@ -14,20 +14,14 @@ var SpacesWebTrustStore_TagsFields = ubx.FieldMap{
 	}
 
 type SpacesWebTrustStoreConfig struct {
-	// A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred)
 	CertificateList any
-	// Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type SpacesWebTrustStoreAttrs struct {
-	// The list of ARNs of the WorkSpaces Web portals that are associated with this trust store. (AI-inferred)
 	AssociatedPortalArns any
-	// A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred)
 	CertificateList any
-	// Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred)
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies the WorkSpaces Web trust store. (AI-inferred)
 	TrustStoreArn any
 }
 

@@ -8,59 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayMethod_Integration_IntegrationResponses:
-    # Specifies how the response payload from the backend integration is handled, such as converting to binary (CONVERT_TO_BINARY), converting to text (CONVERT_TO_TEXT), or leaving it unmodified (passthrough). (AI-inferred)
     content_handling: Any = None
-    # Maps integration response parameters (e.g., backend headers) to method response parameters (e.g., client headers) for this integration response. (AI-inferred)
     response_parameters: Any = None
-    # Maps media types (e.g., application/json) to Velocity templates that transform the integration response payload before it is returned to the API client. (AI-inferred)
     response_templates: Any = None
-    # Specifies a regular expression that API Gateway matches against the backend integration's response body to determine which integration response mapping to use for the corresponding method response. (AI-inferred)
     selection_pattern: Any = None
-    # The HTTP status code that API Gateway returns to the client when the integration response matches the associated selection pattern. (AI-inferred)
     status_code: Any = None
 
 @dataclasses.dataclass
 class GatewayMethod_Integration:
-    # Specifies the list of request parameters (such as query string or header parameters) that define the cache key for the API method's integration, controlling how cached responses are keyed. (AI-inferred)
     cache_key_parameters: Any = None
-    # The cache namespace for the integration's caching behavior, used to scope cached responses so that different integrations under the same method do not share cache entries. (AI-inferred)
     cache_namespace: Any = None
-    # The ID of the VPC link used by this integration when the connection type is VPC_LINK, enabling private connectivity to the integration endpoint. (AI-inferred)
     connection_id: Any = None
-    # Determines the connection type for the integration endpoint, either 'INTERNET' for a public endpoint or 'VPC_LINK' for a private connection via a VPC Link. (AI-inferred)
     connection_type: Any = None
-    # Determines how API Gateway converts the request payload between binary and text formats for the integration, with valid values CONVERT_TO_BINARY or CONVERT_TO_TEXT. (AI-inferred)
     content_handling: Any = None
-    # The ARN of an IAM role that API Gateway assumes to invoke the backend integration, required for AWS service and VPC link integrations. (AI-inferred)
     credentials: Any = None
-    # Specifies the HTTP method (e.g., GET, POST) that API Gateway uses to invoke the backend integration, which can differ from the frontend method of the API Gateway method. (AI-inferred)
     integration_http_method: Any = None
-    # Defines the integration response status codes and their associated response templates, headers, and selection patterns for the method's integration. (AI-inferred)
     integration_responses: Any = None
-    # The target backend endpoint (URI or ARN) that receives requests through this API Gateway method's integration. (AI-inferred)
     integration_target: Any = None
-    # Specifies how the API Gateway integration handles the request body when the Content-Type header does not match any mapping template, with values such as WHEN_NO_MATCH, WHEN_NO_TEMPLATES, or NEVER. (AI-inferred)
     passthrough_behavior: Any = None
-    # Specifies a map of integration request parameters, where each key is an integration request parameter name (e.g., `integration.request.path.id`) and each value is a method request expression (e.g., `method.request.path.id`), controlling how method request data is passed to the backend integration. (AI-inferred)
     request_parameters: Any = None
-    # Maps MIME content types to mapping template strings that API Gateway uses to transform the client's request body before sending it to the backend integration. (AI-inferred)
     request_templates: Any = None
-    # Specifies the response transfer mode for the integration, with valid values of 'binary' (to have the response body base64-encoded for binary media types) or 'passthrough' (to pass the response body unchanged). (AI-inferred)
     response_transfer_mode: Any = None
-    # Specifies the maximum amount of time, in milliseconds, that API Gateway waits for the integration (backend) to respond before returning an error to the client. (AI-inferred)
     timeout_in_millis: Any = None
-    # Specifies the type of backend integration for the method, such as AWS, AWS_PROXY, HTTP, HTTP_PROXY, or MOCK, which determines how API Gateway routes requests to the backend. (AI-inferred)
     type: Any = None
-    # The URI of the backend endpoint that API Gateway invokes for this integration, such as an HTTP/HTTPS URL for HTTP integrations, a Lambda function ARN for AWS integrations, or an AWS service action ARN for other AWS services. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class GatewayMethod_MethodResponses:
-    # Maps response media (MIME) types to the name of the model that describes the response body for the corresponding method response, allowing API Gateway to generate or validate the payload. (AI-inferred)
     response_models: Any = None
-    # Specifies a map of response parameter names (e.g., 'method.response.header.Content-Type') to booleans that indicate whether the response parameter is required, for a method response defined on the API Gateway method. (AI-inferred)
     response_parameters: Any = None
-    # The HTTP status code of the method response that API Gateway returns to the client. (AI-inferred)
     status_code: Any = None
 
 _GatewayMethod_Integration_IntegrationResponsesFields = {
@@ -102,60 +78,38 @@ _GatewayMethod_MethodResponsesFields = {
 
 @dataclasses.dataclass
 class GatewayMethodConfig:
-    # Whether this method requires clients to submit a valid API key, enforced by API Gateway. (AI-inferred)
     api_key_required: Any = None
-    # Specifies the list of OAuth scopes required for the method to be called when the authorization type is set to a Cognito User Pool or OAuth, so only clients presenting a token containing all listed scopes are allowed to invoke the method. (AI-inferred)
     authorization_scopes: Any = None
     # The method's authorization type. This parameter is required. For valid values, see [Method](https://docs.aws.amazon.com/apigateway/latest/api/API_Method.html) in the *API Gateway API Reference*. If you specify the ``AuthorizerId`` property, specify ``CUSTOM`` or ``COGNITO_USER_POOLS`` for this property.
     authorization_type: Any = None
-    # The ID of the API Gateway custom or Cognito authorizer that authorizes requests to this method. (AI-inferred)
     authorizer_id: Any = None
-    # Specifies the HTTP method (such as GET, POST, PUT, or DELETE) that this API Gateway method handles for the given resource path. (AI-inferred)
     http_method: Any = None
     # ``Integration`` is a property of the [AWS::ApiGateway::Method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html) resource that specifies information about the target backend that a method calls.
     integration: Any = None
-    # Specifies the responses that the method can return, including status codes, response parameters, and response models. (AI-inferred)
     method_responses: Any = None
-    # The operation name for the method, used to identify the operation in API Gateway's generated OpenAPI/Swagger definitions. (AI-inferred)
     operation_name: Any = None
-    # A map of media types to model names for the request body, defining the expected schemas for incoming request payloads. (AI-inferred)
     request_models: Any = None
-    # Maps request parameter names to a boolean indicating whether each parameter is required in the method request, allowing you to enforce required query strings, headers, or path parameters. (AI-inferred)
     request_parameters: Any = None
-    # Specifies the ID of the API Gateway request validator that defines the validation rules for this method's request body and parameters. (AI-inferred)
     request_validator_id: Any = None
-    # The identifier of the API Gateway resource to which this method is attached. (AI-inferred)
     resource_id: Any = None
-    # The ID of the REST API (aws_api_gateway_rest_api) that this method belongs to. (AI-inferred)
     rest_api_id: Any = None
 
 @dataclasses.dataclass
 class GatewayMethodAttrs:
-    # Whether this method requires clients to submit a valid API key, enforced by API Gateway. (AI-inferred)
     api_key_required: Any = None
-    # Specifies the list of OAuth scopes required for the method to be called when the authorization type is set to a Cognito User Pool or OAuth, so only clients presenting a token containing all listed scopes are allowed to invoke the method. (AI-inferred)
     authorization_scopes: Any = None
     # The method's authorization type. This parameter is required. For valid values, see [Method](https://docs.aws.amazon.com/apigateway/latest/api/API_Method.html) in the *API Gateway API Reference*. If you specify the ``AuthorizerId`` property, specify ``CUSTOM`` or ``COGNITO_USER_POOLS`` for this property.
     authorization_type: Any = None
-    # The ID of the API Gateway custom or Cognito authorizer that authorizes requests to this method. (AI-inferred)
     authorizer_id: Any = None
-    # Specifies the HTTP method (such as GET, POST, PUT, or DELETE) that this API Gateway method handles for the given resource path. (AI-inferred)
     http_method: Any = None
     # ``Integration`` is a property of the [AWS::ApiGateway::Method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html) resource that specifies information about the target backend that a method calls.
     integration: Any = None
-    # Specifies the responses that the method can return, including status codes, response parameters, and response models. (AI-inferred)
     method_responses: Any = None
-    # The operation name for the method, used to identify the operation in API Gateway's generated OpenAPI/Swagger definitions. (AI-inferred)
     operation_name: Any = None
-    # A map of media types to model names for the request body, defining the expected schemas for incoming request payloads. (AI-inferred)
     request_models: Any = None
-    # Maps request parameter names to a boolean indicating whether each parameter is required in the method request, allowing you to enforce required query strings, headers, or path parameters. (AI-inferred)
     request_parameters: Any = None
-    # Specifies the ID of the API Gateway request validator that defines the validation rules for this method's request body and parameters. (AI-inferred)
     request_validator_id: Any = None
-    # The identifier of the API Gateway resource to which this method is attached. (AI-inferred)
     resource_id: Any = None
-    # The ID of the REST API (aws_api_gateway_rest_api) that this method belongs to. (AI-inferred)
     rest_api_id: Any = None
 
 GatewayMethod = ubx.ResourceBinding(

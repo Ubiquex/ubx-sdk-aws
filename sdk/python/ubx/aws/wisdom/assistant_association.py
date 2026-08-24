@@ -8,22 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfig:
-    # The ARN of the IAM role that grants Amazon Wisdom permission to access the associated Amazon Bedrock knowledge base. (AI-inferred)
     access_role_arn: Any = None
-    # The ARN of the Amazon Bedrock knowledge base that the Amazon Q in Connect (Wisdom) assistant associates with for an external Bedrock knowledge base association. (AI-inferred)
     bedrock_knowledge_base_arn: Any = None
 
 @dataclasses.dataclass
 class AssistantAssociation_Association:
     external_bedrock_knowledge_base_config: Any = None
-    # Identifier of the Amazon Wisdom knowledge base to associate with the assistant, required when the association type is set to KNOWLEDGE_BASE. (AI-inferred)
     knowledge_base_id: Any = None
 
 @dataclasses.dataclass
 class AssistantAssociation_Tags:
-    # The key of a tag assigned to the Wisdom assistant association, serving as the unique identifier for the tag within the resource's tag set. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the Wisdom assistant association, used to organize and identify the resource for cost allocation and access control. (AI-inferred)
     value: Any = None
 
 _AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfigFields = {
@@ -47,27 +42,18 @@ _AssistantAssociation_TagsFields = {
 
 @dataclasses.dataclass
 class AssistantAssociationConfig:
-    # The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred)
     assistant_id: Any = None
-    # Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred)
     association: Any = None
-    # The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
     association_type: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class AssistantAssociationAttrs:
-    # The ARN of the Amazon Wisdom assistant to which this association is attached. (AI-inferred)
     assistant_arn: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Wisdom assistant association, assigned by AWS upon creation. (AI-inferred)
     assistant_association_arn: Any = None
-    # The unique identifier assigned by AWS Wisdom to this assistant association, used to reference the association in API calls and resource relationships. (AI-inferred)
     assistant_association_id: Any = None
-    # The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred)
     assistant_id: Any = None
-    # Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred)
     association: Any = None
-    # The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
     association_type: Any = None
     tags: Any = None
 

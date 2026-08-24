@@ -2,29 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailConfigurationSet_DeliveryOptions {
-  /** The name of the dedicated IP pool that Amazon Pinpoint uses to send email for this configuration set. (AI-inferred) */
   sendingPoolName?: string | Computed<string>;
 }
 
 export interface EmailConfigurationSet_ReputationOptions {
-  /** Enables or disables the publishing of reputation metrics (such as bounce and complaint rates) for email messages sent using this Pinpoint email configuration set. (AI-inferred) */
   reputationMetricsEnabled?: boolean | Computed<boolean>;
 }
 
 export interface EmailConfigurationSet_SendingOptions {
-  /** Enables or disables email sending for the configuration set when set to true or false, respectively. (AI-inferred) */
   sendingEnabled?: boolean | Computed<boolean>;
 }
 
 export interface EmailConfigurationSet_Tags {
-  /** The key of a tag attached to the Amazon Pinpoint email configuration set, used to identify and categorize the configuration set for management, cost tracking, and resource organization purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of an individual tag key on the Amazon Pinpoint email configuration set, used to store metadata for resource identification, organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface EmailConfigurationSet_TrackingOptions {
-  /** Defines the custom domain that Amazon Pinpoint uses to rewrite links in emails for tracking opens and clicks, overriding the default tracking domain. (AI-inferred) */
   customRedirectDomain?: string | Computed<string>;
 }
 
@@ -50,34 +44,21 @@ const EmailConfigurationSet_TrackingOptionsFields: FieldMap = {
 };
 
 export interface EmailConfigurationSetConfig {
-  /** Configures delivery options for emails sent from this configuration set, including the dedicated IP pool (SendingPoolName) and the TLS policy (TlsPolicy). (AI-inferred) */
   deliveryOptions?: EmailConfigurationSet_DeliveryOptions | Computed<EmailConfigurationSet_DeliveryOptions>;
-  /** The unique name of the Amazon Pinpoint email configuration set, used as its identifier when you send email or attach event destinations to it. (AI-inferred) */
   name: string | Computed<string>;
-  /** Configures reputation metrics tracking for this configuration set, determining whether Amazon Pinpoint publishes email reputation data such as bounce and complaint rates to Amazon CloudWatch. (AI-inferred) */
   reputationOptions?: EmailConfigurationSet_ReputationOptions | Computed<EmailConfigurationSet_ReputationOptions>;
-  /** Defines the email sending options for the configuration set, specifically whether email sending is enabled via the SendingEnabled sub-property. (AI-inferred) */
   sendingOptions?: EmailConfigurationSet_SendingOptions | Computed<EmailConfigurationSet_SendingOptions>;
-  /** A list of key-value pairs (Tag objects) to attach to the Amazon Pinpoint email configuration set for identifying, organizing, and managing the resource, including for cost allocation reporting. (AI-inferred) */
   tags?: EmailConfigurationSet_Tags[] | Computed<EmailConfigurationSet_Tags[]>;
-  /** Specifies the custom redirect domain used for open and click tracking in emails sent using this Pinpoint email configuration set. (AI-inferred) */
   trackingOptions?: EmailConfigurationSet_TrackingOptions | Computed<EmailConfigurationSet_TrackingOptions>;
 }
 
 export interface EmailConfigurationSetAttrs {
-  /** Configures delivery options for emails sent from this configuration set, including the dedicated IP pool (SendingPoolName) and the TLS policy (TlsPolicy). (AI-inferred) */
   deliveryOptions: EmailConfigurationSet_DeliveryOptions;
-  /** The unique identifier of the configuration set, which corresponds to the configuration set name in Amazon Pinpoint Email. (AI-inferred) */
   id: string;
-  /** The unique name of the Amazon Pinpoint email configuration set, used as its identifier when you send email or attach event destinations to it. (AI-inferred) */
   name: string;
-  /** Configures reputation metrics tracking for this configuration set, determining whether Amazon Pinpoint publishes email reputation data such as bounce and complaint rates to Amazon CloudWatch. (AI-inferred) */
   reputationOptions: EmailConfigurationSet_ReputationOptions;
-  /** Defines the email sending options for the configuration set, specifically whether email sending is enabled via the SendingEnabled sub-property. (AI-inferred) */
   sendingOptions: EmailConfigurationSet_SendingOptions;
-  /** A list of key-value pairs (Tag objects) to attach to the Amazon Pinpoint email configuration set for identifying, organizing, and managing the resource, including for cost allocation reporting. (AI-inferred) */
   tags: EmailConfigurationSet_Tags[];
-  /** Specifies the custom redirect domain used for open and click tracking in emails sent using this Pinpoint email configuration set. (AI-inferred) */
   trackingOptions: EmailConfigurationSet_TrackingOptions;
 }
 

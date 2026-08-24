@@ -19,15 +19,12 @@ class LiveCloudWatchAlarmTemplateGroupConfig:
 class LiveCloudWatchAlarmTemplateGroupAttrs:
     # A cloudwatch alarm template group's ARN (Amazon Resource Name)
     arn: Any = None
-    # The timestamp (ISO 8601) indicating when this CloudWatch alarm template group was created. (AI-inferred)
     created_at: Any = None
     # A resource's optional description.
     description: Any = None
     # A cloudwatch alarm template group's id. AWS provided template groups have ids that start with `aws-`
     id: Any = None
-    # The computed unique group identifier that AWS MediaLive assigns to the CloudWatch alarm template group, matching the value returned by the CloudFormation Ref intrinsic function for this resource. (AI-inferred)
     identifier: Any = None
-    # Indicates the most recent modification time of the CloudWatch alarm template group, returned as a string in RFC3339 timestamp format. (AI-inferred)
     modified_at: Any = None
     # A resource's name. Names must be unique within the scope of a resource type in a specific region.
     name: Any = None

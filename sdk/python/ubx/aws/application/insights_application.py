@@ -8,180 +8,120 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics:
-    # Specifies the name of the Amazon CloudWatch metric to be monitored for generating alarms in the custom component configuration of Application Insights. (AI-inferred)
     alarm_metric_name: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Alarms:
-    # The name of the CloudWatch alarm that Application Insights monitors for the custom component's configuration details. (AI-inferred)
     alarm_name: Any = None
-    # Specifies the severity level (e.g., HIGH, MEDIUM, or LOW) assigned to a CloudWatch alarm in the custom component configuration, which determines the alarm's criticality in Application Insights monitoring. (AI-inferred)
     severity: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporter:
-    # Specifies the port number that the HA Cluster Prometheus Exporter listens on to expose Prometheus metrics for the custom component's monitoring configuration. (AI-inferred)
     prometheus_port: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporter:
-    # Whether to agree to install the SAP HANA database client on the monitored server for the HANA Prometheus exporter configuration. (AI-inferred)
     agree_to_install_hanadbclient: Any = None
-    # The port number (specified as a string) that the SAP HANA Prometheus exporter listens on, used by Application Insights to collect HANA performance metrics from that endpoint. (AI-inferred)
     hanaport: Any = None
-    # The name of the AWS Secrets Manager secret that stores the HANA database credentials used by the HANA Prometheus exporter for authentication. (AI-inferred)
     hanasecret_name: Any = None
-    # The SAP HANA system ID (SID) of the HANA database that the HANA Prometheus exporter monitors, used to identify the HANA instance when collecting metrics for the custom component. (AI-inferred)
     hanasid: Any = None
-    # Specifies the network port on which the HANA Prometheus exporter exposes metrics for collection by Application Insights. (AI-inferred)
     prometheus_port: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporter:
-    # Specifies the host and port of the JMX endpoint that the Prometheus exporter scrapes to collect metrics. (AI-inferred)
     host_port: Any = None
-    # For a custom component using JMXPrometheusExporter, this URL defines the JMX endpoint the exporter connects to in order to scrape Java application metrics. (AI-inferred)
     jmxurl: Any = None
-    # The port on which the JMX Prometheus exporter exposes metrics for the custom component. (AI-inferred)
     prometheus_port: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs:
-    # Specifies the character encoding (e.g., UTF-8) that Application Insights uses when reading the log file for the custom component. (AI-inferred)
     encoding: Any = None
-    # The name of the CloudWatch Logs log group that Application Insights monitors for the custom component's logs. (AI-inferred)
     log_group_name: Any = None
-    # Specifies the file system path to the log file or directory that Application Insights monitors for the custom component, such as a Windows or Linux log path. (AI-inferred)
     log_path: Any = None
-    # Indicates the type of log (e.g., SQL_SERVER, IIS, APPLICATION, WINDOWS_EVENT) that Application Insights will monitor for the custom component. (AI-inferred)
     log_type: Any = None
-    # For each log monitored in the custom component, this pattern set contains the regular expression patterns Application Insights uses to match and extract metrics from log events. (AI-inferred)
     pattern_set: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporter:
-    # Specifies the SAP NetWeaver instance numbers for which the Prometheus exporter should collect and expose metrics within the custom component configuration. (AI-inferred)
     instance_numbers: Any = None
-    # The TCP port on which the SAP NetWeaver Prometheus exporter listens to expose metrics for Application Insights to scrape. (AI-inferred)
     prometheus_port: Any = None
-    # The SAP system ID (SID) of the SAP NetWeaver system to be monitored by the Prometheus exporter, identifying the specific SAP system in the application's custom component configuration. (AI-inferred)
     sapsid: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes:
-    # Specifies the alarm metrics for a process, where each entry defines a CloudWatch metric name (AlarmMetricName) that Application Insights monitors for that process in the custom component configuration. (AI-inferred)
     alarm_metrics: Any = None
-    # The name of the process on the monitored resource that Application Insights uses to configure custom component monitoring and alarms. (AI-inferred)
     process_name: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporter:
-    # The TCP port on which the SQL Server Prometheus exporter listens to expose metrics for collection by Application Insights. (AI-inferred)
     prometheus_port: Any = None
-    # The name of the AWS Secrets Manager secret that stores the SQL Server credentials used by the Prometheus exporter to connect to the database. (AI-inferred)
     sqlsecret_name: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents:
-    # Specifies the Windows Event Log levels (e.g., CRITICAL, ERROR, WARNING, INFORMATION, VERBOSE) for the given Windows event that Application Insights monitors. (AI-inferred)
     event_levels: Any = None
-    # The name of the Windows Event Log (such as System, Application, or a custom log) that this component monitoring configuration applies to. (AI-inferred)
     event_name: Any = None
-    # The name of the Windows Event Log (such as Application, System, or Security) that AWS Application Insights monitors for the specified Windows event in this custom component's configuration. (AI-inferred)
     log_group_name: Any = None
-    # Defines the event patterns that are matched against Windows Event logs for the custom component configuration, controlling which events are monitored. (AI-inferred)
     pattern_set: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails:
-    # Defines the list of CloudWatch alarm metrics to monitor for the custom component, where each object specifies a CloudWatch alarm by name (AlarmMetricName) to include in the component's configuration. (AI-inferred)
     alarm_metrics: Any = None
-    # A list of CloudWatch alarms to be monitored for the custom component, where each alarm specifies an alarm name and an optional severity level. (AI-inferred)
     alarms: Any = None
-    # Configuration for the HA cluster Prometheus exporter, specifying exporter-specific settings such as the Prometheus port to enable collection of HA cluster metrics for the custom component. (AI-inferred)
     hacluster_prometheus_exporter: Any = None
-    # Contains the settings for the SAP HANA Prometheus exporter, such as the exporter type and the port on which Prometheus metrics are exposed for Application Insights monitoring. (AI-inferred)
     hanaprometheus_exporter: Any = None
-    # Defines the JMX Prometheus exporter endpoint (hostname and port) that CloudWatch Application Insights uses to scrape Java application metrics for the custom component. (AI-inferred)
     jmxprometheus_exporter: Any = None
-    # Specifies the log files to monitor for the custom component, including the log type, file path, and optional log encoding settings. (AI-inferred)
     logs: Any = None
-    # Specifies the configuration for the SAP NetWeaver Prometheus exporter used in a custom component's monitoring, including the instance number and Prometheus exporter port. (AI-inferred)
     net_weaver_prometheus_exporter: Any = None
-    # Specifies the list of operating system processes on the instance that Application Insights monitors for this custom component, where each process entry includes a process name and optional associated alarm metrics. (AI-inferred)
     processes: Any = None
-    # This object configures the Prometheus exporter for monitoring a SQL Server component, specifying the Prometheus port and the AWS Secrets Manager secret that contains the SQL Server credentials. (AI-inferred)
     sqlserver_prometheus_exporter: Any = None
-    # Defines the list of Windows Event Log entries to be monitored as part of the custom component configuration for the Application Insights application. (AI-inferred)
     windows_events: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetails:
-    # Specifies the list of CloudWatch alarm metrics to monitor for the sub-component type defined in this sub-component configuration. (AI-inferred)
     alarm_metrics: Any = None
-    # Specifies the list of log configurations to be monitored for the sub-component type configuration, with each entry defining log group, path, and related monitoring details. (AI-inferred)
     logs: Any = None
-    # A list of process configurations (each containing a process name and its associated alarm metrics) that Application Insights monitors for the custom sub-component type. (AI-inferred)
     processes: Any = None
-    # Configures the list of Windows Event log entries (e.g., Application, Security, System) that Application Insights monitors for this sub-component, specifying each event name, the event levels to collect, and the destination log group. (AI-inferred)
     windows_events: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations:
-    # Specifies the detailed monitoring configuration (e.g., alarm metrics, logs, and Windows events) that is applied to the sub-component type defined by the parent sub_component_type_configurations entry. (AI-inferred)
     sub_component_configuration_details: Any = None
-    # This field specifies the AWS resource type (e.g., AWS::EC2::Instance) of the sub-component within a custom component, determining which resource type the associated sub-component configuration applies to. (AI-inferred)
     sub_component_type: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration:
-    # Specifies the detailed monitoring configuration for a custom component, including the metrics, logs, and Windows events that AWS Application Insights will collect and analyze for that component. (AI-inferred)
     configuration_details: Any = None
-    # Configures monitoring for each sub-component type (e.g., SQL Server or IIS) within the custom component, specifying the metrics and log sets to collect for that sub-component type. (AI-inferred)
     sub_component_type_configurations: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_ComponentMonitoringSettings:
-    # The Amazon Resource Name (ARN) of the component to which these monitoring settings apply, used as an alternative to component name to identify a specific component. (AI-inferred)
     component_arn: Any = None
-    # Specifies whether the component uses default monitoring settings, default settings with overwrites, or fully custom configuration, with allowed values DEFAULT, DEFAULT_WITH_OVERWRITE, or CUSTOM. (AI-inferred)
     component_configuration_mode: Any = None
-    # Specifies the name of the application component to which these monitoring settings apply. (AI-inferred)
     component_name: Any = None
-    # In an Application Insights application's component monitoring settings, the custom_component_configuration field defines the exact monitoring configuration (including sub-component type configurations and monitored metrics/logs) for a component when the component configuration mode is set to CUSTOM. (AI-inferred)
     custom_component_configuration: Any = None
-    # Specifies whether to overwrite the default monitoring configuration for a component, including the monitoring mode (DEFAULT or OVERWRITE) and the custom component configuration used when overwriting. (AI-inferred)
     default_overwrite_component_configuration: Any = None
-    # The tier property specifies the application tier (e.g., DOT_NET_CORE, JAVA_JMX, MYSQL) that defines which monitoring settings apply to the component. (AI-inferred)
     tier: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_CustomComponents:
-    # The user-defined name for the custom component that groups related resources for monitoring in the Application Insights application. (AI-inferred)
     component_name: Any = None
-    # Defines the list of AWS resources, specified by ARN or resource identifier, that are grouped together into this custom component for monitoring by Application Insights. (AI-inferred)
     resource_list: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_LogPatternSets_LogPatterns:
-    # The regular expression pattern used to match log lines for this custom log pattern in Application Insights. (AI-inferred)
     pattern: Any = None
-    # The name to assign to this log pattern within a log pattern set, used to identify the pattern in the configuration. (AI-inferred)
     pattern_name: Any = None
-    # A numeric value that sets the priority order of this log pattern within its log pattern set, where lower ranks are evaluated first. (AI-inferred)
     rank: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_LogPatternSets:
-    # Defines the list of log patterns within a log pattern set, where each pattern specifies a regular expression (Pattern), a name (PatternName), and a rank for evaluation order. (AI-inferred)
     log_patterns: Any = None
-    # The name of a log pattern set in AWS Application Insights, which groups a collection of log patterns to detect specific issues in application logs. (AI-inferred)
     pattern_set_name: Any = None
 
 @dataclasses.dataclass
 class InsightsApplication_Tags:
     key: Any = None
-    # The value of a tag associated with the Application Insights application, used to categorize and manage the resource within AWS. (AI-inferred)
     value: Any = None
 
 _InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetricsFields = {

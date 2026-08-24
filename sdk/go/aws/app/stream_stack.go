@@ -4,16 +4,12 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamStack_AccessEndpoints struct {
-	// Determines the type of access endpoint for the AppStream stack, either APPSTREAM for the AppStream 2.0 streaming interface or INTERNET for a public internet interface. (AI-inferred)
 	EndpointType any
-	// The VPC endpoint ID that AppStream 2.0 uses for this access endpoint, enabling controlled streaming access through a private VPC endpoint. (AI-inferred)
 	VpceId any
 }
 
 type StreamStack_AgentAccessConfig_Settings struct {
-	// Specifies whether to allow or deny access to the AppStream 2.0 agent version indicated by the corresponding version setting, where the action can be 'ALLOW' or 'DENY'. (AI-inferred)
 	AgentAction any
-	// Specifies whether the AppStream 2.0 stack permits agent access during streaming sessions, with the permission value controlling the enabled/disabled state of the agent access configuration. (AI-inferred)
 	Permission any
 }
 
@@ -54,11 +50,8 @@ type StreamStack_ContentRedirection struct {
 }
 
 type StreamStack_StorageConnectors struct {
-	// The type of storage connector to enable for this AppStream stack, such as HOMEFOLDERS, GOOGLE_DRIVE, or ONE_DRIVE. (AI-inferred)
 	ConnectorType any
-	// Specifies the list of domains (e.g., Google Drive or OneDrive) that this storage connector is allowed to use, restricting the connector to those domains for file access and synchronization. (AI-inferred)
 	Domains any
-	// The ResourceIdentifier for a storage connector specifies the backing resource: for HOME_FOLDERS it is the ARN of the Amazon S3 bucket that stores home folders, while for GOOGLE_DRIVE or ONE_DRIVE it is the domain name of the user's cloud storage account. (AI-inferred)
 	ResourceIdentifier any
 }
 
@@ -68,18 +61,13 @@ type StreamStack_StreamingExperienceSettings struct {
 }
 
 type StreamStack_Tags struct {
-	// The key of a tag attached to the AWS AppStream stack, used to organize and identify the stack for cost allocation and access control. (AI-inferred)
 	Key any
-	// The value of an AWS tag applied to the AppStream 2.0 stack, used for organizing and identifying the stack in cost allocation and resource management. (AI-inferred)
 	Value any
 }
 
 type StreamStack_UserSettings struct {
-	// The AppStream 2.0 user action (such as CLIPBOARD_COPY_FROM_LOCAL_DEVICE or FILE_UPLOAD) to which the permission setting applies. (AI-inferred)
 	Action any
-	// For each entry in the stack's user settings, this field defines the maximum clipboard data size (in bytes) allowed for actions that copy clipboard content to or from the local device. (AI-inferred)
 	MaximumLength any
-	// Specifies whether the user action (identified by the sibling 'action' field) is enabled or disabled for the AppStream 2.0 stack, with valid values being 'ENABLED' or 'DISABLED'. (AI-inferred)
 	Permission any
 }
 

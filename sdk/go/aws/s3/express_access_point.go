@@ -22,7 +22,6 @@ type ExpressAccessPoint_Scope struct {
 }
 
 type ExpressAccessPoint_Tags struct {
-	// The tag key is the user-defined name (e.g., 'Environment') for a metadata tag attached to the S3 Express access point, used for categorization and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }
@@ -62,9 +61,7 @@ type ExpressAccessPointConfig struct {
 	Name any
 	// The Access Point Policy you want to apply to this access point.
 	Policy any
-	// Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred)
 	PublicAccessBlockConfiguration any
-	// Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
 	Scope any
 	Tags any
 	// The Virtual Private Cloud (VPC) configuration for a bucket access point.
@@ -84,9 +81,7 @@ type ExpressAccessPointAttrs struct {
 	NetworkOrigin any
 	// The Access Point Policy you want to apply to this access point.
 	Policy any
-	// Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred)
 	PublicAccessBlockConfiguration any
-	// Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
 	Scope any
 	Tags any
 	// The Virtual Private Cloud (VPC) configuration for a bucket access point.

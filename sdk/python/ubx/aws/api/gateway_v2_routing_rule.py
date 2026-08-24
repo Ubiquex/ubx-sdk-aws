@@ -22,7 +22,6 @@ class GatewayV2RoutingRule_Conditions_MatchBasePaths:
 
 @dataclasses.dataclass
 class GatewayV2RoutingRule_Conditions_MatchHeaders_AnyOf:
-    # The name of the HTTP request header that is evaluated by the 'any_of' header-matching condition to determine if the routing rule applies. (AI-inferred)
     header: Any = None
     value_glob: Any = None
 
@@ -100,7 +99,6 @@ class GatewayV2RoutingRuleAttrs:
     domain_name_arn: Any = None
     # The order in which API Gateway evaluates a rule. Priority is evaluated from the lowest value to the highest value. Rules can't have the same priority. Priority values 1-1,000,000 are supported.
     priority: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this API Gateway v2 routing rule within the AWS account and region, used for IAM policies and resource-level references. (AI-inferred)
     routing_rule_arn: Any = None
     routing_rule_id: Any = None
 

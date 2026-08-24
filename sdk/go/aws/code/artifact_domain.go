@@ -4,9 +4,7 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArtifactDomain_Tags struct {
-	// The key of a user-defined tag attached to an AWS CodeArtifact domain, enabling custom metadata for cost allocation, access control, and resource organization. (AI-inferred)
 	Key any
-	// The free-form value of a user-defined tag attached to an AWS CodeArtifact domain, used to add custom metadata for organizing and managing the domain. (AI-inferred)
 	Value any
 }
 

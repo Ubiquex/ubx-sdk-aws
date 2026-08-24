@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class RunnerObservabilityConfiguration_Tags:
     key: Any = None
-    # The value of a tag key-value pair attached to the App Runner observability configuration, used to categorize and identify the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

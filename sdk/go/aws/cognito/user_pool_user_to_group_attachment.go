@@ -4,20 +4,14 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolUserToGroupAttachmentConfig struct {
-	// The name of the Cognito user pool group to which the user is attached. (AI-inferred)
 	GroupName any
-	// The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred)
 	UserPoolId any
-	// The username of the Cognito user to attach to the specified group. (AI-inferred)
 	Username any
 }
 
 type UserPoolUserToGroupAttachmentAttrs struct {
-	// The name of the Cognito user pool group to which the user is attached. (AI-inferred)
 	GroupName any
-	// The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred)
 	UserPoolId any
-	// The username of the Cognito user to attach to the specified group. (AI-inferred)
 	Username any
 }
 

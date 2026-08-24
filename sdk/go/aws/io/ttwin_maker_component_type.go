@@ -4,16 +4,12 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TtwinMakerComponentType_Status_Error struct {
-	// The error code that identifies the type of failure encountered when AWS IoT TwinMaker processed this component type. (AI-inferred)
 	Code any
-	// The message of the error that caused the component type to fail, providing details about what went wrong. (AI-inferred)
 	Message any
 }
 
 type TtwinMakerComponentType_Status struct {
-	// The error object (containing code and message) reported for this AWS IoT TwinMaker component type when its status is in an error state (e.g., after a failed create or update). (AI-inferred)
 	Error any
-	// Represents the lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, DELETING, or ERROR) as reported in the status object returned by AWS IoT TwinMaker. (AI-inferred)
 	State any
 }
 
@@ -47,7 +43,6 @@ type TtwinMakerComponentTypeAttrs struct {
 	ComponentTypeId any
 	// An map of the composite component types in the component type. Each composite component type's key must be unique to this map.
 	CompositeComponentTypes any
-	// The date and time when the component type was created. (AI-inferred)
 	CreationDateTime any
 	// The description of the component type.
 	Description any
@@ -65,11 +60,9 @@ type TtwinMakerComponentTypeAttrs struct {
 	PropertyDefinitions any
 	// An map of the property groups in the component type. Each property group's key must be unique to this map.
 	PropertyGroups any
-	// The status object indicates the current lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, ERROR) and includes error details if an operation failed. (AI-inferred)
 	Status any
 	// A map of key-value pairs to associate with a resource.
 	Tags any
-	// The date and time when the component type was last updated. (AI-inferred)
 	UpdateDateTime any
 	// The ID of the workspace that contains the component type.
 	WorkspaceId any

@@ -4,7 +4,6 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalResolverHostedZoneAssociationConfig struct {
-	// The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
 	HostedZoneId any
 	Name any
 	ResourceArn any
@@ -13,12 +12,10 @@ type GlobalResolverHostedZoneAssociationConfig struct {
 type GlobalResolverHostedZoneAssociationAttrs struct {
 	CreatedAt any
 	HostedZoneAssociationId any
-	// The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
 	HostedZoneId any
 	HostedZoneName any
 	Name any
 	ResourceArn any
-	// The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred)
 	Status any
 	UpdatedAt any
 }

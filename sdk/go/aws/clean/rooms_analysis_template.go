@@ -4,54 +4,40 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsAnalysisTemplate_AnalysisParameters struct {
-	// The default value to use for the analysis parameter when a value is not provided at runtime. (AI-inferred)
 	DefaultValue any
-	// Specifies the name of an analysis parameter in the analysis template, which is used as a placeholder in the template's SQL query. (AI-inferred)
 	Name any
-	// Defines the SQL data type of the parameter (e.g., INT, STRING, BOOLEAN) used to enforce type-checking when the analysis template is run in a Clean Rooms collaboration. (AI-inferred)
 	Type any
 }
 
 type RoomsAnalysisTemplate_ErrorMessageConfiguration struct {
-	// Indicates the type of error message delivery mechanism; when set to 'S3', error messages from the analysis template are written to an Amazon S3 bucket configured in the accompanying S3 property. (AI-inferred)
 	Type any
 }
 
 type RoomsAnalysisTemplate_Schema struct {
-	// The list of table names in the AWS Clean Rooms collaboration that the analysis template's SQL query is permitted to reference, restricting the query's data access. (AI-inferred)
 	ReferencedTables any
 }
 
 type RoomsAnalysisTemplate_Source_Artifacts_AdditionalArtifacts_Location struct {
-	// The S3 bucket name that stores an additional artifact (such as a custom analysis script or supporting file) for the AWS Clean Rooms analysis template's source, as specified in the source's artifacts list. (AI-inferred)
 	Bucket any
-	// The Amazon S3 object key (file name) of an additional artifact that is part of the analysis template's source artifacts. (AI-inferred)
 	Key any
 }
 
 type RoomsAnalysisTemplate_Source_Artifacts_AdditionalArtifacts struct {
-	// Specifies the S3 location (bucket and key) of an additional artifact, such as a supporting file or script, that is part of the analysis template's source artifacts. (AI-inferred)
 	Location any
 }
 
 type RoomsAnalysisTemplate_Source_Artifacts struct {
-	// Specifies additional artifacts (as objects containing artifact URIs) to be included with the analysis template's source, enabling the analysis to use supporting files beyond the primary SQL query. (AI-inferred)
 	AdditionalArtifacts any
-	// The entry_point object specifies the S3 location of the main Python script that serves as the starting point for the analysis in an AWS Clean Rooms analysis template. (AI-inferred)
 	EntryPoint any
-	// The ARN of the IAM role that grants AWS Clean Rooms read access to the S3 objects in the source artifacts location. (AI-inferred)
 	RoleArn any
 }
 
 type RoomsAnalysisTemplate_Source struct {
-	// The S3 URIs of the analysis artifacts (such as SQL query files) that make up the source of the Clean Rooms analysis template. (AI-inferred)
 	Artifacts any
-	// The SQL query text that defines the analysis template's source, used as the basis for the analysis. (AI-inferred)
 	Text any
 }
 
 type RoomsAnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashes struct {
-	// Specifies the SHA-256 hash of an additional artifact file that is part of the source metadata for the analysis template. (AI-inferred)
 	Sha256 any
 }
 
@@ -61,16 +47,12 @@ type RoomsAnalysisTemplate_SourceMetadata_Artifacts struct {
 }
 
 type RoomsAnalysisTemplate_SourceMetadata struct {
-	// Maps artifact names to their S3 URI locations, defining the source code artifacts for the analysis template within the source_metadata block. (AI-inferred)
 	Artifacts any
 }
 
 type RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassification_ColumnMapping struct {
-	// The name of the source column that is assigned a classification in the column mapping for generating ML synthetic data in the analysis template. (AI-inferred)
 	ColumnName any
-	// The semantic type assigned to the mapped column (for example, categorical, numeric, datetime, or free_text) that AWS Clean Rooms uses to guide the ML synthetic data generation process for the analysis template. (AI-inferred)
 	ColumnType any
-	// Indicates whether this column is classified as a predictive feature (input variable) for the machine learning model when generating synthetic data in AWS Clean Rooms, so the service preserves its relationship to the training label. (AI-inferred)
 	IsPredictiveValue any
 }
 
@@ -79,21 +61,16 @@ type RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_Col
 }
 
 type RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters struct {
-	// Specifies the per-column classification (such as categorical or numeric) applied when generating ML synthetic data from the analysis template's underlying dataset, controlling how each column is modeled by the synthetic data generator. (AI-inferred)
 	ColumnClassification any
-	// Specifies the privacy loss budget (epsilon) for the differentially private synthetic data generation, where lower values produce more private but less accurate data. (AI-inferred)
 	Epsilon any
-	// The maximum acceptable membership inference attack score for synthetic data generated for machine learning, providing a privacy threshold to limit the risk of inferring original data membership from the synthetic dataset. (AI-inferred)
 	MaxMembershipInferenceAttackScore any
 }
 
 type RoomsAnalysisTemplate_SyntheticDataParameters struct {
-	// Configures the machine learning model parameters for generating a differentially private synthetic dataset from the analysis template's query results. (AI-inferred)
 	MlSyntheticDataParameters any
 }
 
 type RoomsAnalysisTemplate_Tags struct {
-	// The user-defined key of a tag attached to the AWS Clean Rooms analysis template, used to categorize, organize, and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -213,22 +190,14 @@ var RoomsAnalysisTemplate_TagsFields = ubx.FieldMap{
 type RoomsAnalysisTemplateConfig struct {
 	// The member who can query can provide this placeholder for a literal data value in an analysis template
 	AnalysisParameters any
-	// Specifies a user-provided description for the analysis template to help identify its purpose. (AI-inferred)
 	Description any
-	// Specifies the custom error message (including subject and body) that AWS Clean Rooms returns to users when a query based on this analysis template is denied or fails. (AI-inferred)
 	ErrorMessageConfiguration any
-	// Specifies the query language of the analysis template, with valid values being 'SQL' or 'PYTHON'. (AI-inferred)
 	Format any
-	// The unique identifier of the membership that owns this analysis template. (AI-inferred)
 	MembershipIdentifier any
-	// The name of the analysis template, used to identify and reference the template within the collaboration. (AI-inferred)
 	Name any
-	// Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
 	Schema any
-	// The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
 	Source any
 	SourceMetadata any
-	// Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
 	SyntheticDataParameters any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms analysis template.
 	Tags any
@@ -237,32 +206,19 @@ type RoomsAnalysisTemplateConfig struct {
 type RoomsAnalysisTemplateAttrs struct {
 	// The member who can query can provide this placeholder for a literal data value in an analysis template
 	AnalysisParameters any
-	// The unique identifier assigned by AWS to this analysis template, returned after creation. (AI-inferred)
 	AnalysisTemplateIdentifier any
-	// The Amazon Resource Name (ARN) that uniquely identifies the analysis template in AWS Clean Rooms. (AI-inferred)
 	Arn any
-	// The ARN of the collaboration that this analysis template belongs to. (AI-inferred)
 	CollaborationArn any
-	// The unique identifier of the AWS Clean Rooms collaboration that this analysis template belongs to, which is assigned by AWS and cannot be changed. (AI-inferred)
 	CollaborationIdentifier any
-	// Specifies a user-provided description for the analysis template to help identify its purpose. (AI-inferred)
 	Description any
-	// Specifies the custom error message (including subject and body) that AWS Clean Rooms returns to users when a query based on this analysis template is denied or fails. (AI-inferred)
 	ErrorMessageConfiguration any
-	// Specifies the query language of the analysis template, with valid values being 'SQL' or 'PYTHON'. (AI-inferred)
 	Format any
-	// The ARN of the AWS Clean Rooms membership associated with this analysis template, automatically assigned by AWS. (AI-inferred)
 	MembershipArn any
-	// The unique identifier of the membership that owns this analysis template. (AI-inferred)
 	MembershipIdentifier any
-	// The name of the analysis template, used to identify and reference the template within the collaboration. (AI-inferred)
 	Name any
-	// Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
 	Schema any
-	// The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
 	Source any
 	SourceMetadata any
-	// Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
 	SyntheticDataParameters any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms analysis template.
 	Tags any

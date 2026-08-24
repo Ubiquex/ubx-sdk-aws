@@ -4,28 +4,18 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AipromptVersionConfig struct {
-	// The unique identifier of the AI prompt in Amazon Wisdom that this version belongs to and whose content is versioned. (AI-inferred)
 	AipromptId any
-	// The unique identifier of the Amazon Q in Connect (Wisdom) assistant to which this AI prompt version belongs. (AI-inferred)
 	AssistantId any
-	// The modified_time_seconds field records the Unix epoch time (in seconds) at which the Wisdom AI prompt version was last updated. (AI-inferred)
 	ModifiedTimeSeconds any
 }
 
 type AipromptVersionAttrs struct {
-	// The Amazon Resource Name (ARN) of the Wisdom AI prompt that this version belongs to. (AI-inferred)
 	AipromptArn any
-	// The unique identifier of the AI prompt in Amazon Wisdom that this version belongs to and whose content is versioned. (AI-inferred)
 	AipromptId any
-	// The unique identifier assigned by Amazon Wisdom to the created version of the AI prompt, returned as a read-only attribute after the resource is created. (AI-inferred)
 	AipromptVersionId any
-	// The Amazon Resource Name (ARN) of the Wisdom assistant that this AI prompt version belongs to. (AI-inferred)
 	AssistantArn any
-	// The unique identifier of the Amazon Q in Connect (Wisdom) assistant to which this AI prompt version belongs. (AI-inferred)
 	AssistantId any
-	// The modified_time_seconds field records the Unix epoch time (in seconds) at which the Wisdom AI prompt version was last updated. (AI-inferred)
 	ModifiedTimeSeconds any
-	// The version number of this AI prompt version, as assigned by AWS Wisdom, which uniquely identifies the version within the parent AI prompt. (AI-inferred)
 	VersionNumber any
 }
 

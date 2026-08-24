@@ -4,149 +4,99 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Attribute struct {
-	// The default value string for an attribute property in an IoT SiteWise asset model, used as the initial attribute value when a new asset derived from the model is created. (AI-inferred)
 	DefaultValue any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric_Variables_Value_PropertyPath struct {
-	// For a metric variable in an AWS IoT SiteWise asset model, this name identifies one segment in the property path that references the source property (through a hierarchy) whose value is used in the metric expression. (AI-inferred)
 	Name any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric_Variables_Value struct {
-	// Specifies the external ID of an asset hierarchy that the metric variable's value refers to, so the metric can operate on assets from that hierarchy in AWS IoT SiteWise. (AI-inferred)
 	HierarchyExternalId any
-	// The ID of the asset hierarchy that defines the related assets whose property values are referenced by this metric variable, used to evaluate the metric expression. (AI-inferred)
 	HierarchyId any
-	// The logical ID of an asset model hierarchy that scopes the property referenced by this metric variable, used when computing the metric from an asset related through that hierarchy. (AI-inferred)
 	HierarchyLogicalId any
-	// The external ID of the asset property that this metric variable references, used to identify the property in the metric expression. (AI-inferred)
 	PropertyExternalId any
-	// The physical ID of the asset model property to use as the value for this variable in the metric expression. (AI-inferred)
 	PropertyId any
-	// Specifies the logical ID of an asset model property that provides the value for this metric variable. (AI-inferred)
 	PropertyLogicalId any
-	// Specifies a property path (a list of path segments) that identifies a specific property in a related asset model, used as the value source for this metric variable. (AI-inferred)
 	PropertyPath any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric_Variables struct {
-	// The name of the variable referenced in the metric expression, which maps to an asset property or attribute whose value is used in the computed metric. (AI-inferred)
 	Name any
-	// This object specifies the asset property that a metric expression variable refers to, using a property ID and an optional hierarchy ID to reference properties from other asset models. (AI-inferred)
 	Value any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric_Window_Tumbling struct {
-	// The interval duration (for example, '1h' or '5m') for the tumbling window that defines the frequency at which the metric aggregation is computed. (AI-inferred)
 	Interval any
-	// Specifies the time offset that shifts the start of each tumbling window relative to the interval's scheduled start, expressed as a duration string such as '5m' or '1h'. (AI-inferred)
 	Offset any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric_Window struct {
-	// Configures the tumbling window for this metric property, using a fixed interval to divide time into consecutive, non-overlapping windows over which IoT SiteWise computes the metric. (AI-inferred)
 	Tumbling any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Metric struct {
-	// The mathematical expression (e.g., 'Temperature * 9/5 + 32') that defines how the metric property's value is calculated from other asset properties referenced in the composite model. (AI-inferred)
 	Expression any
-	// Defines the list of named variable mappings used within the metric expression, where each variable references a source asset property (by ID or alias) that provides the measurement data for the calculation. (AI-inferred)
 	Variables any
-	// Defines the time window for the metric calculation, specifying the tumbling interval and an optional delay for data lag in AWS IoT SiteWise asset models. (AI-inferred)
 	Window any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type_Transform struct {
-	// The mathematical expression that defines how this transform property computes its value from other asset properties in the IoT SiteWise asset model. (AI-inferred)
 	Expression any
-	// The list of variables used in the transform expression, where each variable maps a name to a property value that the expression references. (AI-inferred)
 	Variables any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties_Type struct {
-	// Defines the attribute property type configuration for this composite model property, including an optional default value used when no time-series data is provided. (AI-inferred)
 	Attribute any
-	// Configures the composite model property as a metric by specifying an expression and variables that compute a time-series value from other asset properties. (AI-inferred)
 	Metric any
-	// Defines the expression and input variables for a transform property, which computes asset property values from other properties using an IoT SiteWise expression. (AI-inferred)
 	Transform any
-	// Defines the property type within a composite model of the asset model, such as 'Measurement', 'Attribute', 'Metric', or 'Transformation', determining how the property value is handled or calculated. (AI-inferred)
 	TypeName any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels_CompositeModelProperties struct {
-	// Specifies the data type of the property within a composite model, determining whether the property's values are strings, integers, doubles, booleans, or structured data. (AI-inferred)
 	DataType any
 	DataTypeSpec any
-	// An optional customer-defined external ID for a composite model property in an AWS IoT SiteWise asset model, used to map the property to an external system or business object without relying on AWS-generated identifiers. (AI-inferred)
 	ExternalId any
-	// The unique AWS-assigned identifier for this composite model property, used to reference the property within the asset model. (AI-inferred)
 	Id any
-	// A unique, customer-defined logical identifier for a property in an IoT SiteWise asset model composite model, used as a stable reference for the property across the asset model and associated assets. (AI-inferred)
 	LogicalId any
-	// The name of the composite model property, which is a required string that uniquely identifies the property within the composite model in AWS IoT SiteWise. (AI-inferred)
 	Name any
-	// Specifies the property type (Attribute, Measurement, Transform, or Metric) and its configuration for a property within a composite model of an AWS IoT SiteWise asset model. (AI-inferred)
 	Type any
-	// The unit (for example, 'Celsius' or 'm/s') that applies to a property within a composite model of an AWS IoT SiteWise asset model, used to describe the measurement's physical dimension. (AI-inferred)
 	Unit any
 }
 
 type TsiteWiseAssetModel_AssetModelCompositeModels struct {
-	// The unique ID of the child asset model that this hierarchy composite model references, establishing a parent-child relationship between asset models in AWS IoT SiteWise. (AI-inferred)
 	ComposedAssetModelId any
-	// Specifies the list of property definitions for a composite model, including each property's name, data type, unit, and data type configuration. (AI-inferred)
 	CompositeModelProperties any
-	// Provides a textual description of the composite model, clarifying its role or purpose within the IoT SiteWise asset model. (AI-inferred)
 	Description any
-	// Specifies a customer-supplied external ID for the composite model, which can be used to reference it in other AWS services or to align with existing external systems. (AI-inferred)
 	ExternalId any
-	// The unique identifier assigned by AWS IoT SiteWise to the composite model, returned after the asset model is created. (AI-inferred)
 	Id any
-	// The unique, user-defined name for this composite model within the AWS IoT SiteWise asset model, which distinguishes it from other composite models and is used as its identifier when referencing the composite model in API calls. (AI-inferred)
 	Name any
-	// Specifies the external ID of the parent composite model in the same asset model that this composite model is a child of. (AI-inferred)
 	ParentAssetModelCompositeModelExternalId any
-	// The path of composite model names (starting from the asset model root) that specifies the parent composite model for this composite model; it is used to define nested composite models in AWS IoT SiteWise. (AI-inferred)
 	Path any
-	// The type of this composite model, either 'AWS/ALARM' for alarm composite models or a custom component type name defined in the asset model's component type definitions. (AI-inferred)
 	Type any
 }
 
 type TsiteWiseAssetModel_AssetModelHierarchies struct {
-	// Specifies the ID of the child asset model that this hierarchy references, establishing a parent-child relationship between asset models in AWS IoT SiteWise. (AI-inferred)
 	ChildAssetModelId any
-	// The customer-assigned external ID for this asset model hierarchy, which you can use to reference the hierarchy in AWS IoT SiteWise API operations instead of the system-generated ID. (AI-inferred)
 	ExternalId any
-	// The customer-defined logical identifier for the asset model hierarchy, uniquely identifying it within the asset model. (AI-inferred)
 	Id any
-	// Uniquely identifies this hierarchy within the asset model, used as a reference in asset model properties and composite models. (AI-inferred)
 	LogicalId any
-	// The unique name of the hierarchy, used as its logical ID to identify it within the asset model. (AI-inferred)
 	Name any
 }
 
 type TsiteWiseAssetModel_EnforcedAssetModelInterfaceRelationships_PropertyMappings struct {
-	// The external ID of the asset model property that is mapped in the property mapping of an enforced asset model interface relationship. (AI-inferred)
 	AssetModelPropertyExternalId any
-	// Identifies the logical ID of the asset model's own property that an interface relationship property mapping binds to, establishing the correspondence between the interface's external property and the asset model's internal property. (AI-inferred)
 	AssetModelPropertyLogicalId any
-	// The external identifier assigned to a property in the referenced interface asset model, used to match that property to a corresponding property in the current asset model as part of the property mapping configuration for an enforced asset model interface relationship. (AI-inferred)
 	InterfaceAssetModelPropertyExternalId any
 }
 
 type TsiteWiseAssetModel_EnforcedAssetModelInterfaceRelationships struct {
-	// The unique ID of the IoT SiteWise asset model that defines an interface, which this enforced relationship requires another asset model to implement. (AI-inferred)
 	InterfaceAssetModelId any
-	// Defines the mapping of asset model properties between the interfaces of an enforced asset model interface relationship in AWS IoT SiteWise, specifying which property from one interface corresponds to which property on the other. (AI-inferred)
 	PropertyMappings any
 }
 
 type TsiteWiseAssetModel_Tags struct {
 	Key any
-	// The value portion of a key-value tag attached to the AWS IoT SiteWise asset model for metadata and resource management. (AI-inferred)
 	Value any
 }
 

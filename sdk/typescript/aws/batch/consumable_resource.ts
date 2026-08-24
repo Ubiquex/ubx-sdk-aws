@@ -19,7 +19,6 @@ export interface ConsumableResourceAttrs {
   consumableResourceArn: string;
   /** Name of ConsumableResource. */
   consumableResourceName: string;
-  /** The Unix timestamp (in seconds) when AWS Batch created the consumable resource. (AI-inferred) */
   createdAt: number;
   /** In-use Quantity of ConsumableResource. */
   inUseQuantity: number;

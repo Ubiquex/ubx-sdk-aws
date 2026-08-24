@@ -2,13 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TBillingGroup_BillingGroupProperties {
-  /** A user-defined, free-form description of the AWS IoT billing group, used to provide additional context about the group's purpose. (AI-inferred) */
   billingGroupDescription?: string | Computed<string>;
 }
 
 export interface TBillingGroup_Tags {
   key?: string | Computed<string>;
-  /** The string value of a tag assigned to the AWS IoT Billing Group, used to store arbitrary metadata about the billing group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -22,22 +20,16 @@ const TBillingGroup_TagsFields: FieldMap = {
 };
 
 export interface TBillingGroupConfig {
-  /** The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred) */
   billingGroupName?: string | Computed<string>;
-  /** Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred) */
   billingGroupProperties?: TBillingGroup_BillingGroupProperties | Computed<TBillingGroup_BillingGroupProperties>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: TBillingGroup_Tags[] | Computed<TBillingGroup_Tags[]>;
 }
 
 export interface TBillingGroupAttrs {
-  /** The Amazon Resource Name (ARN) of the IoT billing group, uniquely identifying it across AWS. (AI-inferred) */
   arn: string;
-  /** The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred) */
   billingGroupName: string;
-  /** Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred) */
   billingGroupProperties: TBillingGroup_BillingGroupProperties;
-  /** The unique name of the AWS IoT billing group, which serves as the resource's identifier in AWS IoT. (AI-inferred) */
   id: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: TBillingGroup_Tags[];

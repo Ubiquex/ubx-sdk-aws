@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EncoderConfiguration_Tags {
-  /** A user-defined tag key to associate with the IVS encoder configuration, used for resource management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

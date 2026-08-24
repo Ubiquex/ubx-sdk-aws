@@ -21,7 +21,6 @@ export interface GatewayV2VpcLinkAttrs {
   subnetIds: string[];
   /** The collection of tags. Each tag element is associated with a given resource. */
   tags: unknown;
-  /** The service-generated unique identifier (VpcLinkId) assigned to the VPC link when it is created. (AI-inferred) */
   vpcLinkId: string;
 }
 

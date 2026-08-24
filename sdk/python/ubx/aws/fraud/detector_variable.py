@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DetectorVariable_Tags:
-    # The tag key for the AWS Fraud Detector variable, used to assign custom metadata for identifying, organizing, and managing the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AWS Fraud Detector variable, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _DetectorVariable_TagsFields = {

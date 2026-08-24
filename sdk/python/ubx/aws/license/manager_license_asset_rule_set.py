@@ -14,15 +14,12 @@ class ManagerLicenseAssetRuleSet_Rules_RuleStatement_InstanceRuleStatement_AndRu
 
 @dataclasses.dataclass
 class ManagerLicenseAssetRuleSet_Rules_RuleStatement_InstanceRuleStatement_AndRuleStatement:
-    # A list of sub-rule statements that must all match (logical AND) for the containing AND rule statement to be satisfied. (AI-inferred)
     matching_rule_statements: Any = None
 
 @dataclasses.dataclass
 class ManagerLicenseAssetRuleSet_Rules_RuleStatement_InstanceRuleStatement:
-    # Defines a conjunctive (AND) grouping of instance rule statements, such that every condition inside must evaluate to true for the overall license rule to match an EC2 instance. (AI-inferred)
     and_rule_statement: Any = None
     matching_rule_statement: Any = None
-    # The `or_rule_statement` within an `instance_rule_statement` specifies an array of instance rule statements that are combined with logical OR, meaning the rule matches if any one of the included statements (such as `ec2InstanceType` conditions) is true for the instance. (AI-inferred)
     or_rule_statement: Any = None
 
 @dataclasses.dataclass

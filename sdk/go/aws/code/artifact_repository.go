@@ -4,9 +4,7 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArtifactRepository_Tags struct {
-	// The key of a tag attached to the AWS CodeArtifact repository, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value of a tag (key-value pair) applied to an AWS CodeArtifact repository, used to add metadata for organization and cost allocation. (AI-inferred)
 	Value any
 }
 

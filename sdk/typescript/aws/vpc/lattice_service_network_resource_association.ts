@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeServiceNetworkResourceAssociation_Tags {
-  /** The key of a tag attached to the VPC Lattice service network resource association, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair attached to a VPC Lattice service network resource association, used to provide user-defined metadata for identifying or managing the association. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,28 +12,18 @@ const LatticeServiceNetworkResourceAssociation_TagsFields: FieldMap = {
 };
 
 export interface LatticeServiceNetworkResourceAssociationConfig {
-  /** When enabled, this generates a private DNS hostname for the associated resource within the VPC Lattice service network, allowing it to be accessed via DNS resolution from associated VPCs. (AI-inferred) */
   privateDnsEnabled?: boolean | Computed<boolean>;
-  /** The unique identifier of the resource configuration (such as a VPC or AWS service) to associate with the service network. (AI-inferred) */
   resourceConfigurationId?: string | Computed<string>;
-  /** The unique ID of the VPC Lattice service network that this resource association attaches the specified resource to. (AI-inferred) */
   serviceNetworkId?: string | Computed<string>;
-  /** Specifies a list of key-value tag objects to attach to the VPC Lattice service network resource association, which can be used for resource identification, cost allocation, and access control. (AI-inferred) */
   tags?: LatticeServiceNetworkResourceAssociation_Tags[] | Computed<LatticeServiceNetworkResourceAssociation_Tags[]>;
 }
 
 export interface LatticeServiceNetworkResourceAssociationAttrs {
-  /** The Amazon Resource Name (ARN) uniquely identifying this service network resource association. (AI-inferred) */
   arn: string;
-  /** The unique AWS-assigned identifier for the VPC Lattice service network resource association. (AI-inferred) */
   id: string;
-  /** When enabled, this generates a private DNS hostname for the associated resource within the VPC Lattice service network, allowing it to be accessed via DNS resolution from associated VPCs. (AI-inferred) */
   privateDnsEnabled: boolean;
-  /** The unique identifier of the resource configuration (such as a VPC or AWS service) to associate with the service network. (AI-inferred) */
   resourceConfigurationId: string;
-  /** The unique ID of the VPC Lattice service network that this resource association attaches the specified resource to. (AI-inferred) */
   serviceNetworkId: string;
-  /** Specifies a list of key-value tag objects to attach to the VPC Lattice service network resource association, which can be used for resource identification, cost allocation, and access control. (AI-inferred) */
   tags: LatticeServiceNetworkResourceAssociation_Tags[];
 }
 

@@ -48,9 +48,7 @@ class Distribution_CacheBehaviorSettings:
 
 @dataclasses.dataclass
 class Distribution_CacheBehaviors:
-    # Specifies the cache behavior for the associated path pattern, with supported values of 'cache' or 'no-cache' indicating whether matching requests are cached. (AI-inferred)
     behavior: Any = None
-    # The path pattern (such as `/images/*`) that determines which requests this cache behavior applies to in the Lightsail distribution. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
@@ -69,9 +67,7 @@ class Distribution_Origin:
 
 @dataclasses.dataclass
 class Distribution_Tags:
-    # The key of a tag to attach to the Lightsail distribution, used to identify and categorize the resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag attached to the Lightsail distribution, used to store arbitrary metadata (e.g., environment, owner) for resource organization, cost allocation, or access control. (AI-inferred)
     value: Any = None
 
 _Distribution_CacheBehaviorSettings_ForwardedCookiesFields = {
@@ -169,7 +165,6 @@ class DistributionAttrs:
     certificate_name: Any = None
     # Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution.
     default_cache_behavior: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail distribution. (AI-inferred)
     distribution_arn: Any = None
     # The name for the distribution.
     distribution_name: Any = None

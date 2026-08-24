@@ -2,35 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightTopicV2_CustomInstructions {
-  /** The textual content of the custom instruction to associate with the QuickSight topic, which is displayed to users as guidance when they interact with the topic. (AI-inferred) */
   customInstructionsString: string | Computed<string>;
 }
 
 export interface SightTopicV2_DataSetRelations_Left {
-  /** The list of column names on the left side of a dataset relation in a QuickSight topic, which are matched to the right-side columns to define the join relationship. (AI-inferred) */
   columnNames?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the dataset that acts as the left side of a relationship between two datasets in the QuickSight topic. (AI-inferred) */
   dataSetArn?: string | Computed<string>;
 }
 
 export interface SightTopicV2_DataSetRelations {
-  /** The left-hand dataset reference in a data set relation, which identifies the dataset on the left side of a relationship defined in a QuickSight topic. (AI-inferred) */
   left?: SightTopicV2_DataSetRelations_Left | Computed<SightTopicV2_DataSetRelations_Left>;
-  /** The right object identifies the right-side field reference in a dataset relation, containing the dataset ARN and field name needed to link that dataset to the left-side field in the QuickSight topic semantic model. (AI-inferred) */
   right?: SightTopicV2_DataSetRelations_Left | Computed<SightTopicV2_DataSetRelations_Left>;
 }
 
 export interface SightTopicV2_DataSets {
-  /** Specifies the Amazon Resource Name (ARN) of the QuickSight dataset to include in the topic's data set collection. (AI-inferred) */
   dataSetArn?: string | Computed<string>;
-  /** The name of the QuickSight dataset that the topic's data set definition refers to, used to identify the dataset among the topic's data sets. (AI-inferred) */
   dataSetName?: string | Computed<string>;
 }
 
 export interface SightTopicV2_Permissions {
-  /** The list of IAM QuickSight actions (e.g., quickSight:DescribeTopic, quickSight:UpdateTopic, quickSight:DeleteTopic) that the permission entry grants to the specified principal. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the principal (QuickSight user, group, or IAM role) that the associated permission actions apply to for this QuickSight topic. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
@@ -77,46 +68,29 @@ const SightTopicV2_TagsFields: FieldMap = {
 };
 
 export interface SightTopicV2Config {
-  /** The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
   customInstructions?: SightTopicV2_CustomInstructions | Computed<SightTopicV2_CustomInstructions>;
-  /** Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred) */
   dataSetRelations?: SightTopicV2_DataSetRelations[] | Computed<SightTopicV2_DataSetRelations[]>;
-  /** Defines the list of datasets that comprise this QuickSight topic, with each dataset object specifying the dataset ARN and name (and other optional attributes) that the topic uses to build its semantic model. (AI-inferred) */
   dataSets?: SightTopicV2_DataSets[] | Computed<SightTopicV2_DataSets[]>;
-  /** The human-readable summary of the Amazon QuickSight topic, describing its purpose or the data it represents. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The folder_arns field specifies the list of Amazon QuickSight folder ARNs to which this topic is associated, allowing the topic to be organized within folders. (AI-inferred) */
   folderArns?: string[] | Computed<string[]>;
-  /** Sets the display name of the QuickSight topic, which is the human-readable label used to identify the topic in the QuickSight console. (AI-inferred) */
   name?: string | Computed<string>;
-  /** A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred) */
   permissions?: SightTopicV2_Permissions[] | Computed<SightTopicV2_Permissions[]>;
   tags?: SightTopicV2_Tags[] | Computed<SightTopicV2_Tags[]>;
-  /** The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred) */
   topicId?: string | Computed<string>;
 }
 
 export interface SightTopicV2Attrs {
-  /** The Amazon Resource Name (ARN) of the QuickSight topic, assigned by AWS when the topic is created. (AI-inferred) */
   arn: string;
-  /** The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred) */
   awsAccountId: string;
   customInstructions: SightTopicV2_CustomInstructions;
-  /** Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred) */
   dataSetRelations: SightTopicV2_DataSetRelations[];
-  /** Defines the list of datasets that comprise this QuickSight topic, with each dataset object specifying the dataset ARN and name (and other optional attributes) that the topic uses to build its semantic model. (AI-inferred) */
   dataSets: SightTopicV2_DataSets[];
-  /** The human-readable summary of the Amazon QuickSight topic, describing its purpose or the data it represents. (AI-inferred) */
   description: string;
-  /** The folder_arns field specifies the list of Amazon QuickSight folder ARNs to which this topic is associated, allowing the topic to be organized within folders. (AI-inferred) */
   folderArns: string[];
-  /** Sets the display name of the QuickSight topic, which is the human-readable label used to identify the topic in the QuickSight console. (AI-inferred) */
   name: string;
-  /** A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred) */
   permissions: SightTopicV2_Permissions[];
   tags: SightTopicV2_Tags[];
-  /** The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred) */
   topicId: string;
 }
 

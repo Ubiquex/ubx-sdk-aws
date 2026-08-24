@@ -2,60 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TJobTemplate_AbortConfig_CriteriaList {
-  /** The action to take when the abort criteria threshold is reached, which for AWS IoT Job templates is always 'CANCEL'. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Specifies the type of job execution failure (e.g., FAILED or TIMED_OUT) that triggers this abort criterion in the IoT job template's abort configuration. (AI-inferred) */
   failureType?: string | Computed<string>;
-  /** Specifies the minimum number of things that must have executed the job before the thresholdPercentage in this abort criterion can trigger an abort action. (AI-inferred) */
   minNumberOfExecutedThings?: number | Computed<number>;
-  /** The threshold percentage of total job executions that must fail with the specified failure type in order to trigger the job abort, expressed as a number between 0 and 100. (AI-inferred) */
   thresholdPercentage?: number | Computed<number>;
 }
 
 export interface TJobTemplate_AbortConfig {
-  /** Specifies a list of criteria that define when a running IoT job is aborted, including the action (CANCEL or CONTINUE), failure type (FAILED or TIMED_OUT), minimum number of executed things, and threshold percentage. (AI-inferred) */
   criteriaList: TJobTemplate_AbortConfig_CriteriaList[] | Computed<TJobTemplate_AbortConfig_CriteriaList[]>;
 }
 
 export interface TJobTemplate_JobExecutionsRetryConfig_RetryCriteriaList {
-  /** The type of job execution failure that triggers a retry, such as FAILED, TIMED_OUT, or ALL, used in the retry criteria for an AWS IoT job template. (AI-inferred) */
   failureType?: string | Computed<string>;
-  /** Specifies the maximum number of retry attempts for a job execution when it fails with the associated failure type, after which the execution is considered failed. (AI-inferred) */
   numberOfRetries?: number | Computed<number>;
 }
 
 export interface TJobTemplate_JobExecutionsRetryConfig {
-  /** A list of retry criteria, each specifying a failure type (FAILED, TIMED_OUT, or ALL) and the maximum number of retry attempts for job executions that match that failure type, used to configure automatic retries for the job template. (AI-inferred) */
   retryCriteriaList?: TJobTemplate_JobExecutionsRetryConfig_RetryCriteriaList[] | Computed<TJobTemplate_JobExecutionsRetryConfig_RetryCriteriaList[]>;
 }
 
 export interface TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteria {
-  /** The number of notified things at which the job rollout rate will be increased as part of the exponential rollout configuration. (AI-inferred) */
   numberOfNotifiedThings?: number | Computed<number>;
-  /** The number of succeeded job executions (things) that must be reached before the rollout rate is increased exponentially for the remaining things in the job. (AI-inferred) */
   numberOfSucceededThings?: number | Computed<number>;
 }
 
 export interface TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate {
-  /** The number of IoT things that are notified of the job per minute at the start of the rollout, before any rate increases are applied. (AI-inferred) */
   baseRatePerMinute: number | Computed<number>;
-  /** The multiplier applied to the base job execution rollout rate at each interval defined by the rate increase criteria, causing the rate of job executions to grow exponentially over time. (AI-inferred) */
   incrementFactor: number | Computed<number>;
-  /** Specifies the threshold of notified or succeeded job executions that triggers an increase in the job rollout rate during exponential rollout. (AI-inferred) */
   rateIncreaseCriteria: TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteria | Computed<TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate_RateIncreaseCriteria>;
 }
 
 export interface TJobTemplate_JobExecutionsRolloutConfig {
   /** Allows you to create an exponential rate of rollout for a job. */
   exponentialRolloutRate?: TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate | Computed<TJobTemplate_JobExecutionsRolloutConfig_ExponentialRolloutRate>;
-  /** Specifies the maximum number of job executions that AWS IoT starts per minute for this job template's rollout, throttling the rate at which the job is deployed to devices. (AI-inferred) */
   maximumPerMinute?: number | Computed<number>;
 }
 
 export interface TJobTemplate_MaintenanceWindows {
-  /** Specifies the duration in minutes that the maintenance window remains open for job execution, starting from the window's start time, in an AWS IoT job template. (AI-inferred) */
   durationInMinutes?: number | Computed<number>;
-  /** The start time of the maintenance window for the AWS IoT job, specified as a 24-hour time in HH:MM format in UTC. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
@@ -67,9 +51,7 @@ export interface TJobTemplate_PresignedUrlConfig {
 }
 
 export interface TJobTemplate_Tags {
-  /** Specifies the key part of a key-value pair used to tag the IoT job template, which helps in identifying, organizing, and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined string that serves as the value for a tag associated with the AWS IoT job template, allowing you to categorize it for cost tracking, access control, and operational management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -154,7 +136,6 @@ export interface TJobTemplateConfig {
   abortConfig?: TJobTemplate_AbortConfig | Computed<TJobTemplate_AbortConfig>;
   /** A description of the Job Template. */
   description: string | Computed<string>;
-  /** Specifies the package version identifiers that are the deployment targets for the job, used to define the destination software versions in an AWS IoT OTA update job template. (AI-inferred) */
   destinationPackageVersions?: string[] | Computed<string[]>;
   /** The job document. Required if you don't specify a value for documentSource. */
   document?: string | Computed<string>;
@@ -162,13 +143,10 @@ export interface TJobTemplateConfig {
   documentSource?: string | Computed<string>;
   /** Optional for copying a JobTemplate from a pre-existing Job configuration. */
   jobArn?: string | Computed<string>;
-  /** Specifies the retry configuration for failed job executions, including the retry criteria that define which failure types can be retried and the maximum number of retry attempts. (AI-inferred) */
   jobExecutionsRetryConfig?: TJobTemplate_JobExecutionsRetryConfig | Computed<TJobTemplate_JobExecutionsRetryConfig>;
   /** Allows you to create a staged rollout of a job. */
   jobExecutionsRolloutConfig?: TJobTemplate_JobExecutionsRolloutConfig | Computed<TJobTemplate_JobExecutionsRolloutConfig>;
-  /** The unique identifier for the job template, which is required to create and reference the template in AWS IoT. (AI-inferred) */
   jobTemplateId: string | Computed<string>;
-  /** A list of maintenance windows, each specifying a start time and duration in minutes, that restrict when the AWS IoT job is allowed to be executed. (AI-inferred) */
   maintenanceWindows?: TJobTemplate_MaintenanceWindows[] | Computed<TJobTemplate_MaintenanceWindows[]>;
   /** Configuration for pre-signed S3 URLs. */
   presignedUrlConfig?: TJobTemplate_PresignedUrlConfig | Computed<TJobTemplate_PresignedUrlConfig>;
@@ -181,11 +159,9 @@ export interface TJobTemplateConfig {
 export interface TJobTemplateAttrs {
   /** The criteria that determine when and how a job abort takes place. */
   abortConfig: TJobTemplate_AbortConfig;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS IoT job template. (AI-inferred) */
   arn: string;
   /** A description of the Job Template. */
   description: string;
-  /** Specifies the package version identifiers that are the deployment targets for the job, used to define the destination software versions in an AWS IoT OTA update job template. (AI-inferred) */
   destinationPackageVersions: string[];
   /** The job document. Required if you don't specify a value for documentSource. */
   document: string;
@@ -193,13 +169,10 @@ export interface TJobTemplateAttrs {
   documentSource: string;
   /** Optional for copying a JobTemplate from a pre-existing Job configuration. */
   jobArn: string;
-  /** Specifies the retry configuration for failed job executions, including the retry criteria that define which failure types can be retried and the maximum number of retry attempts. (AI-inferred) */
   jobExecutionsRetryConfig: TJobTemplate_JobExecutionsRetryConfig;
   /** Allows you to create a staged rollout of a job. */
   jobExecutionsRolloutConfig: TJobTemplate_JobExecutionsRolloutConfig;
-  /** The unique identifier for the job template, which is required to create and reference the template in AWS IoT. (AI-inferred) */
   jobTemplateId: string;
-  /** A list of maintenance windows, each specifying a start time and duration in minutes, that restrict when the AWS IoT job is allowed to be executed. (AI-inferred) */
   maintenanceWindows: TJobTemplate_MaintenanceWindows[];
   /** Configuration for pre-signed S3 URLs. */
   presignedUrlConfig: TJobTemplate_PresignedUrlConfig;

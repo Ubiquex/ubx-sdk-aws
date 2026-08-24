@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration_Devices struct {
-	// The ARN of the X.509 certificate that identifies the device under test in the Device Advisor suite definition's device configuration. (AI-inferred)
 	CertificateArn any
-	// The ARN of the AWS IoT thing that the Device Advisor suite definition will test, identifying the device under test. (AI-inferred)
 	ThingArn any
 }
 
@@ -24,9 +22,7 @@ type TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration struct {
 }
 
 type TcoreDeviceAdvisorSuiteDefinition_Tags struct {
-	// The key of a tag assigned to the AWS IoT Core Device Advisor suite definition, used for resource categorization and management. (AI-inferred)
 	Key any
-	// The value of a tag (identified by its key) attached to the AWS IoT Device Advisor suite definition, used to add custom metadata for identifying, organizing, and managing this resource. (AI-inferred)
 	Value any
 }
 
@@ -53,7 +49,6 @@ var TcoreDeviceAdvisorSuiteDefinition_TagsFields = ubx.FieldMap{
 	}
 
 type TcoreDeviceAdvisorSuiteDefinitionConfig struct {
-	// Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred)
 	SuiteDefinitionConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -62,7 +57,6 @@ type TcoreDeviceAdvisorSuiteDefinitionConfig struct {
 type TcoreDeviceAdvisorSuiteDefinitionAttrs struct {
 	// The Amazon Resource name for the suite definition.
 	SuiteDefinitionArn any
-	// Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred)
 	SuiteDefinitionConfiguration any
 	// The unique identifier for the suite definition.
 	SuiteDefinitionId any

@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ContactList_Tags {
-  /** The key of a tag attached to this Amazon SES contact list, used for metadata and resource identification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a key-value tag attached to the SES contact list, used for metadata and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ContactList_Topics {
-  /** The default subscription status (OPT_IN or OPT_OUT) that applies to contacts added to the contact list for this topic when they do not specify an explicit preference. (AI-inferred) */
   defaultSubscriptionStatus?: string | Computed<string>;
-  /** Specifies a description of the topic in the contact list, providing additional context about the purpose of the topic. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The human-readable name for the topic, displayed to contacts when they manage their subscriptions. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** The unique, required name for a topic in the SES contact list, used to identify it when configuring subscription preferences and list management. (AI-inferred) */
   topicName?: string | Computed<string>;
 }
 

@@ -8,24 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IdentityPoolPrincipalTagConfig:
-    # The unique identifier of the Cognito identity pool to which these principal tags are associated. (AI-inferred)
     identity_pool_id: Any = None
-    # The name of the identity provider (such as 'Facebook', 'Google', or a custom provider) that this principal tag configuration applies to. (AI-inferred)
     identity_provider_name: Any = None
-    # A map of key-value pairs that define the principal tags to attach to the identity pool's principal for the specified identity provider. (AI-inferred)
     principal_tags: Any = None
-    # Indicates whether to use the default principal tag mappings for the identity provider, causing Cognito to automatically apply its standard tags (such as 'role') instead of the custom principal tags you specify. (AI-inferred)
     use_defaults: Any = None
 
 @dataclasses.dataclass
 class IdentityPoolPrincipalTagAttrs:
-    # The unique identifier of the Cognito identity pool to which these principal tags are associated. (AI-inferred)
     identity_pool_id: Any = None
-    # The name of the identity provider (such as 'Facebook', 'Google', or a custom provider) that this principal tag configuration applies to. (AI-inferred)
     identity_provider_name: Any = None
-    # A map of key-value pairs that define the principal tags to attach to the identity pool's principal for the specified identity provider. (AI-inferred)
     principal_tags: Any = None
-    # Indicates whether to use the default principal tag mappings for the identity provider, causing Cognito to automatically apply its standard tags (such as 'role') instead of the custom principal tags you specify. (AI-inferred)
     use_defaults: Any = None
 
 IdentityPoolPrincipalTag = ubx.ResourceBinding(

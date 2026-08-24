@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Case_Tags struct {
 	Key any
-	// The value component of a tag attached to the AWS Cases case, used to store user-defined metadata for organizing, searching, or managing the case. (AI-inferred)
 	Value any
 }
 

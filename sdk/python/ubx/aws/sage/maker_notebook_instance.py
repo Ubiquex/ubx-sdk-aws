@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerNotebookInstance_InstanceMetadataServiceConfiguration:
-    # Specifies the minimum version of the AWS instance metadata service (IMDS) that the SageMaker notebook instance must support (e.g., '1' or '2'), which forces the instance to use that protocol version or higher for metadata requests. (AI-inferred)
     minimum_instance_metadata_service_version: Any = None
 
 @dataclasses.dataclass
 class MakerNotebookInstance_Tags:
-    # The key of a tag applied to the SageMaker notebook instance, used to identify and organize the resource for management and cost tracking. (AI-inferred)
     key: Any = None
-    # The value of a tag key attached to the SageMaker notebook instance, used to organize, track, and manage AWS resources for billing, access control, and operational purposes. (AI-inferred)
     value: Any = None
 
 _MakerNotebookInstance_InstanceMetadataServiceConfigurationFields = {
@@ -29,74 +26,41 @@ _MakerNotebookInstance_TagsFields = {
 
 @dataclasses.dataclass
 class MakerNotebookInstanceConfig:
-    # Specifies the Elastic Inference accelerator type(s) to attach to the SageMaker notebook instance for accelerating inference workloads. (AI-inferred)
     accelerator_types: Any = None
-    # Specifies a list of Git repository URLs or names that are cloned into the notebook instance's default SageMaker repository, allowing additional code repositories to be available in the instance. (AI-inferred)
     additional_code_repositories: Any = None
-    # Specifies the default Git repository (as a URL or CodeCommit reference) that SageMaker automatically clones into the notebook instance at creation, making its contents available in the instance and connecting it as the default code repository for the notebook's Git integration. (AI-inferred)
     default_code_repository: Any = None
-    # Determines whether the notebook instance has direct access to the internet, accepting 'Enabled' or 'Disabled', where 'Disabled' restricts the instance to resources within its VPC. (AI-inferred)
     direct_internet_access: Any = None
-    # Configures the instance metadata service (IMDS) on the SageMaker notebook instance, including the minimum IMDS version (such as 1 or 2) that the instance must support. (AI-inferred)
     instance_metadata_service_configuration: Any = None
-    # The ML compute instance type (e.g., ml.t2.medium, ml.m5.xlarge) used for the SageMaker notebook instance. (AI-inferred)
     instance_type: Any = None
-    # The ID of an AWS KMS key used by SageMaker to encrypt the data on the notebook instance's attached EBS storage volume. (AI-inferred)
     kms_key_id: Any = None
-    # The name of a SageMaker notebook instance lifecycle configuration, which defines shell scripts that run during instance startup and shutdown. (AI-inferred)
     lifecycle_config_name: Any = None
-    # Specifies a custom name for the SageMaker notebook instance; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     notebook_instance_name: Any = None
-    # Specifies the operating system platform for the SageMaker notebook instance, with allowed values 'Linux' (default) and 'Windows'. (AI-inferred)
     platform_identifier: Any = None
-    # The IAM role ARN that SageMaker assumes to access AWS services and resources on behalf of the notebook instance. (AI-inferred)
     role_arn: Any = None
-    # Specifies whether root access is enabled or disabled for the SageMaker notebook instance, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
     root_access: Any = None
-    # Specifies the VPC security group IDs to associate with the SageMaker notebook instance for network access control. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the ID of the subnet in a customer VPC where the SageMaker notebook instance is launched, enabling network isolation within a chosen subnet. (AI-inferred)
     subnet_id: Any = None
-    # A list of key-value pairs to associate with the SageMaker notebook instance for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
-    # The size in gigabytes of the EBS ML storage volume attached to the SageMaker notebook instance, which can be set between 5 and 16384 GB and determines the available storage for data and code. (AI-inferred)
     volume_size_in_gb: Any = None
 
 @dataclasses.dataclass
 class MakerNotebookInstanceAttrs:
-    # Specifies the Elastic Inference accelerator type(s) to attach to the SageMaker notebook instance for accelerating inference workloads. (AI-inferred)
     accelerator_types: Any = None
-    # Specifies a list of Git repository URLs or names that are cloned into the notebook instance's default SageMaker repository, allowing additional code repositories to be available in the instance. (AI-inferred)
     additional_code_repositories: Any = None
-    # Specifies the default Git repository (as a URL or CodeCommit reference) that SageMaker automatically clones into the notebook instance at creation, making its contents available in the instance and connecting it as the default code repository for the notebook's Git integration. (AI-inferred)
     default_code_repository: Any = None
-    # Determines whether the notebook instance has direct access to the internet, accepting 'Enabled' or 'Disabled', where 'Disabled' restricts the instance to resources within its VPC. (AI-inferred)
     direct_internet_access: Any = None
-    # The unique identifier of the SageMaker notebook instance, which is the same as its name. (AI-inferred)
     id: Any = None
-    # Configures the instance metadata service (IMDS) on the SageMaker notebook instance, including the minimum IMDS version (such as 1 or 2) that the instance must support. (AI-inferred)
     instance_metadata_service_configuration: Any = None
-    # The ML compute instance type (e.g., ml.t2.medium, ml.m5.xlarge) used for the SageMaker notebook instance. (AI-inferred)
     instance_type: Any = None
-    # The ID of an AWS KMS key used by SageMaker to encrypt the data on the notebook instance's attached EBS storage volume. (AI-inferred)
     kms_key_id: Any = None
-    # The name of a SageMaker notebook instance lifecycle configuration, which defines shell scripts that run during instance startup and shutdown. (AI-inferred)
     lifecycle_config_name: Any = None
-    # Specifies a custom name for the SageMaker notebook instance; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     notebook_instance_name: Any = None
-    # Specifies the operating system platform for the SageMaker notebook instance, with allowed values 'Linux' (default) and 'Windows'. (AI-inferred)
     platform_identifier: Any = None
-    # The IAM role ARN that SageMaker assumes to access AWS services and resources on behalf of the notebook instance. (AI-inferred)
     role_arn: Any = None
-    # Specifies whether root access is enabled or disabled for the SageMaker notebook instance, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
     root_access: Any = None
-    # Specifies the VPC security group IDs to associate with the SageMaker notebook instance for network access control. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the ID of the subnet in a customer VPC where the SageMaker notebook instance is launched, enabling network isolation within a chosen subnet. (AI-inferred)
     subnet_id: Any = None
-    # A list of key-value pairs to associate with the SageMaker notebook instance for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
-    # The size in gigabytes of the EBS ML storage volume attached to the SageMaker notebook instance, which can be set between 5 and 16384 GB and determines the available storage for data and code. (AI-inferred)
     volume_size_in_gb: Any = None
 
 MakerNotebookInstance = ubx.ResourceBinding(

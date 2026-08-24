@@ -4,20 +4,14 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationStack_Outputs struct {
-	// The description of a CloudFormation stack output, as defined in the stack template, providing human-readable context for the output value. (AI-inferred)
 	Description any
-	// The export name for a stack output, which makes the output value available to other CloudFormation stacks via Fn::ImportValue. (AI-inferred)
 	ExportName any
-	// Specifies the name of an output exported by the AWS CloudFormation stack, used to identify the corresponding output value within the stack's list of outputs. (AI-inferred)
 	OutputKey any
-	// The actual value of a CloudFormation stack output, returned after the stack has been created or updated. (AI-inferred)
 	OutputValue any
 }
 
 type FormationStack_Tags struct {
-	// The tag key to associate with the CloudFormation stack, used to organize and identify the stack for cost allocation and management. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the CloudFormation stack, used for cost allocation, access control, and organizing stack resources. (AI-inferred)
 	Value any
 }
 
@@ -27,84 +21,46 @@ var FormationStack_TagsFields = ubx.FieldMap{
 	}
 
 type FormationStackConfig struct {
-	// A list of capability values (e.g., CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND) that the stack operation requires to acknowledge creation or modification of IAM resources or to expand macros. (AI-inferred)
 	Capabilities any
-	// Provides a freely formed text description for the AWS CloudFormation stack, which is passed to the AWS CloudFormation service and helps identify the stack's purpose. (AI-inferred)
 	Description any
-	// Disables rollback of the stack if stack creation fails, allowing the stack to remain in a failed state for troubleshooting. (AI-inferred)
 	DisableRollback any
-	// When set to true, enables termination protection on the CloudFormation stack, preventing the stack from being deleted until this setting is disabled. (AI-inferred)
 	EnableTerminationProtection any
-	// The Amazon SNS topic ARNs to which CloudFormation sends stack event notifications, such as resource creation or deletion events. (AI-inferred)
 	NotificationArns any
-	// A map of input parameters to pass to the CloudFormation stack, matching the Parameters declared in the stack's template. (AI-inferred)
 	Parameters any
-	// ARN of the IAM role that AWS CloudFormation assumes to create, update, or delete the stack's resources. (AI-inferred)
 	RoleArn any
-	// The name of the CloudFormation stack, which must be unique within an AWS region and is used to identify the stack in operations. (AI-inferred)
 	StackName any
-	// Specifies the JSON body of a stack policy, which defines permissions that protect stack resources from accidental updates or deletions during stack operations. (AI-inferred)
 	StackPolicyBody any
-	// The URL to the stack policy file, which restricts updates to specific resources within the CloudFormation stack during a stack update. (AI-inferred)
 	StackPolicyUrl any
-	// The reason provided by AWS CloudFormation for the stack's current status, such as why a create, update, or delete operation failed. (AI-inferred)
 	StackStatusReason any
-	// Specifies the list of key-value tags to associate with the CloudFormation stack, which are used to identify, organize, and manage the stack, and which are propagated to tag-supporting resources created by the stack. (AI-inferred)
 	Tags any
-	// The CloudFormation template body, in JSON or YAML format, that defines the stack's resources and properties; you can use this instead of providing a template URL. (AI-inferred)
 	TemplateBody any
-	// The URL of a file (typically in Amazon S3) that contains the CloudFormation template body, used instead of inline template_body. (AI-inferred)
 	TemplateUrl any
-	// The maximum number of minutes that CloudFormation allows for the stack creation to complete before the stack creation fails. (AI-inferred)
 	TimeoutInMinutes any
 }
 
 type FormationStackAttrs struct {
-	// A list of capability values (e.g., CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND) that the stack operation requires to acknowledge creation or modification of IAM resources or to expand macros. (AI-inferred)
 	Capabilities any
-	// The unique ID of the change set that was last executed to create or update the stack, useful for tracking which changes were applied. (AI-inferred)
 	ChangeSetId any
-	// The timestamp indicating when the CloudFormation stack was created, typically in ISO 8601 format. (AI-inferred)
 	CreationTime any
-	// Provides a freely formed text description for the AWS CloudFormation stack, which is passed to the AWS CloudFormation service and helps identify the stack's purpose. (AI-inferred)
 	Description any
-	// Disables rollback of the stack if stack creation fails, allowing the stack to remain in a failed state for troubleshooting. (AI-inferred)
 	DisableRollback any
-	// When set to true, enables termination protection on the CloudFormation stack, preventing the stack from being deleted until this setting is disabled. (AI-inferred)
 	EnableTerminationProtection any
-	// The timestamp of when the CloudFormation stack was last updated, provided as a string. (AI-inferred)
 	LastUpdateTime any
-	// The Amazon SNS topic ARNs to which CloudFormation sends stack event notifications, such as resource creation or deletion events. (AI-inferred)
 	NotificationArns any
-	// A list of the CloudFormation stack's output entries, each containing a key and value from the Outputs section of the stack template, as returned by AWS. (AI-inferred)
 	Outputs any
-	// A map of input parameters to pass to the CloudFormation stack, matching the Parameters declared in the stack's template. (AI-inferred)
 	Parameters any
-	// The unique identifier of the parent CloudFormation stack that this stack is nested within, or an empty string if this is a root-level stack. (AI-inferred)
 	ParentId any
-	// ARN of the IAM role that AWS CloudFormation assumes to create, update, or delete the stack's resources. (AI-inferred)
 	RoleArn any
-	// The root stack ID of a CloudFormation stack, which is the unique identifier of the top-level stack that this stack belongs to (equal to the stack's own ID for a top-level stack). (AI-inferred)
 	RootId any
-	// The unique Amazon Resource Name (ARN) assigned to the CloudFormation stack by AWS when it is created. (AI-inferred)
 	StackId any
-	// The name of the CloudFormation stack, which must be unique within an AWS region and is used to identify the stack in operations. (AI-inferred)
 	StackName any
-	// Specifies the JSON body of a stack policy, which defines permissions that protect stack resources from accidental updates or deletions during stack operations. (AI-inferred)
 	StackPolicyBody any
-	// The URL to the stack policy file, which restricts updates to specific resources within the CloudFormation stack during a stack update. (AI-inferred)
 	StackPolicyUrl any
-	// The current status of the CloudFormation stack as reported by AWS, such as CREATE_COMPLETE, UPDATE_COMPLETE, or DELETE_COMPLETE, and is read-only since it is determined by the service. (AI-inferred)
 	StackStatus any
-	// The reason provided by AWS CloudFormation for the stack's current status, such as why a create, update, or delete operation failed. (AI-inferred)
 	StackStatusReason any
-	// Specifies the list of key-value tags to associate with the CloudFormation stack, which are used to identify, organize, and manage the stack, and which are propagated to tag-supporting resources created by the stack. (AI-inferred)
 	Tags any
-	// The CloudFormation template body, in JSON or YAML format, that defines the stack's resources and properties; you can use this instead of providing a template URL. (AI-inferred)
 	TemplateBody any
-	// The URL of a file (typically in Amazon S3) that contains the CloudFormation template body, used instead of inline template_body. (AI-inferred)
 	TemplateUrl any
-	// The maximum number of minutes that CloudFormation allows for the stack creation to complete before the stack creation fails. (AI-inferred)
 	TimeoutInMinutes any
 }
 

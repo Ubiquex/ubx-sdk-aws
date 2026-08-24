@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CacheSubnetGroup_Tags:
-    # The tag key assigned to the ElastiCache subnet group, used to categorize and manage the resource through AWS tagging features. (AI-inferred)
     key: Any = None
-    # Defines the value of a user-defined tag assigned to the ElastiCache subnet group, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _CacheSubnetGroup_TagsFields = {
@@ -26,7 +24,6 @@ class CacheSubnetGroupConfig:
     description: Any = None
     # The EC2 subnet IDs for the cache subnet group.
     subnet_ids: Any = None
-    # A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -37,7 +34,6 @@ class CacheSubnetGroupAttrs:
     description: Any = None
     # The EC2 subnet IDs for the cache subnet group.
     subnet_ids: Any = None
-    # A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred)
     tags: Any = None
 
 CacheSubnetGroup = ubx.ResourceBinding(

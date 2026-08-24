@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Environment_HighAvailabilityConfig {
-  /** The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred) */
   desiredCapacity: number | Computed<number>;
 }
 
@@ -25,7 +24,6 @@ export interface EnvironmentConfig {
   kmsKeyId?: string | Computed<string>;
   /** The name of the environment. */
   name: string | Computed<string>;
-  /** Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred) */
   networkType?: string | Computed<string>;
   /** Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned. */
   preferredMaintenanceWindow?: string | Computed<string>;
@@ -60,7 +58,6 @@ export interface EnvironmentAttrs {
   kmsKeyId: string;
   /** The name of the environment. */
   name: string;
-  /** Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred) */
   networkType: string;
   /** Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned. */
   preferredMaintenanceWindow: string;

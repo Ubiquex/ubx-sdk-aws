@@ -46,14 +46,12 @@ export interface Scraper_ScraperLoggingConfiguration_ScraperComponents_Config {
 
 export interface Scraper_ScraperLoggingConfiguration_ScraperComponents {
   config?: Scraper_ScraperLoggingConfiguration_ScraperComponents_Config | Computed<Scraper_ScraperLoggingConfiguration_ScraperComponents_Config>;
-  /** The type of scraper component (APISERVER, SCRAPER, or TARGET) for which logging is enabled in the scraper logging configuration. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Scraper_ScraperLoggingConfiguration {
   /** Destination for scraper logging */
   loggingDestination: Scraper_ScraperLoggingConfiguration_LoggingDestination | Computed<Scraper_ScraperLoggingConfiguration_LoggingDestination>;
-  /** Specifies the list of scraper components (such as target allocation or scrape loop) for which logs are enabled and forwarded to the configured log destination for the Amazon Managed Prometheus scraper. (AI-inferred) */
   scraperComponents: Scraper_ScraperLoggingConfiguration_ScraperComponents[] | Computed<Scraper_ScraperLoggingConfiguration_ScraperComponents[]>;
 }
 
@@ -82,7 +80,6 @@ export interface Scraper_Source {
 
 export interface Scraper_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag that can be assigned to an Amazon Managed Service for Prometheus scraper for organizational and identification purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

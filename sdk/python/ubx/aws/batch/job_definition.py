@@ -8,559 +8,354 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobDefinition_ConsumableResourceProperties_ConsumableResourceList:
-    # The name of the consumable resource that the job must acquire from a shared resource pool before it can run, used to enforce limits on concurrent consumption of that resource. (AI-inferred)
     consumable_resource: Any = None
-    # The number of units of the consumable resource named in the list item that the job requires to be allocated for its execution. (AI-inferred)
     quantity: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ConsumableResourceProperties:
-    # The list of consumable resources that the job definition specifies, with each item identifying a resource name and the amount to be acquired from the job queue's pool of that resource before the job can run. (AI-inferred)
     consumable_resource_list: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Environment:
-    # In the AWS Batch job definition's container properties, this is the environment variable name for each entry in the environment list, which is paired with a value to set inside the container. (AI-inferred)
     name: Any = None
-    # The value assigned to the environment variable key in the container's environment for the AWS Batch job definition. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_EphemeralStorage:
-    # Defines the size in GiB of the ephemeral storage volume mounted for use by the container in the AWS Batch job definition. (AI-inferred)
     size_in_gi_b: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_FargatePlatformConfiguration:
-    # Specifies the version of the AWS Fargate platform (e.g., LATEST or a specific version like 1.4.0) used to run the job's containers when the job definition uses Fargate resources. (AI-inferred)
     platform_version: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_LinuxParameters_Devices:
-    # Specifies the path inside the container where the host device is mounted for use by the container process. (AI-inferred)
     container_path: Any = None
-    # Specifies the absolute path of the device on the host instance that is exposed to the container. (AI-inferred)
     host_path: Any = None
-    # Specifies the access permissions (such as READ, WRITE, or MKNOD) granted on a host device mounted into the container for an AWS Batch job definition. (AI-inferred)
     permissions: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_LinuxParameters_Tmpfs:
-    # The absolute file path inside the container at which the tmpfs volume is mounted. (AI-inferred)
     container_path: Any = None
-    # Specifies the mount options (such as read-only, noexec, or size) that will be passed to the tmpfs mount when creating the temporary file system in the container. (AI-inferred)
     mount_options: Any = None
-    # Specifies the size (in MiB) of the tmpfs volume mounted at the container path defined by the corresponding tmpfs entry. (AI-inferred)
     size: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_LinuxParameters:
-    # Specifies a list of host devices to expose to the container in the job's container properties. (AI-inferred)
     devices: Any = None
-    # Specifies whether to run an init process inside the container that reaps zombie processes and forwards signals to the main process, analogous to Docker's --init flag. (AI-inferred)
     init_process_enabled: Any = None
-    # The maximum amount of swap memory (in MiB) the container can use, which is only supported for jobs that run on Fargate resources. (AI-inferred)
     max_swap: Any = None
-    # Specifies the size (in MiB) of the /dev/shm volume for the container's shared memory, letting you increase the default shared memory available to the container. (AI-inferred)
     shared_memory_size: Any = None
-    # Specifies the swappiness value (0–100) for the container's Linux memory-swapping behavior, where 0 disables swapping and 100 maximizes swap aggressiveness, as part of the LinuxParameters of the AWS Batch job definition's container properties. (AI-inferred)
     swappiness: Any = None
-    # Specifies the tmpfs mounts (container path, size in MiB, and mount options) to mount into the container's filesystem for the job's container properties. (AI-inferred)
     tmpfs: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_LogConfiguration_SecretOptions:
-    # Specifies the name of the secret that is passed to the container's log configuration, where the corresponding secret value is retrieved from AWS Secrets Manager or Systems Manager via the sibling `valueFrom` field. (AI-inferred)
     name: Any = None
-    # The ARN of the secret (for example, an AWS Secrets Manager secret) from which AWS Batch retrieves the value to pass to the log driver under the key specified by the `name` field in the same `secret_options` object. (AI-inferred)
     value_from: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_LogConfiguration:
-    # The logging driver used by the container to send logs, such as 'awslogs' for CloudWatch Logs, 'fluentd', or 'splunk', controlling where container output is delivered. (AI-inferred)
     log_driver: Any = None
-    # A map of key-value pairs that configure the selected log driver for the container, such as setting the awslogs group or region when using the awslogs driver. (AI-inferred)
     options: Any = None
-    # This is a list of secret objects that specify sensitive data from AWS Secrets Manager or Systems Manager Parameter Store to be passed to the container's log driver configuration for the AWS Batch job definition's container log configuration. (AI-inferred)
     secret_options: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_MountPoints:
-    # The absolute path inside the container where the selected source volume is mounted, for example /mnt/data. (AI-inferred)
     container_path: Any = None
-    # Indicates whether the container should use the mounted volume in read-only mode, preventing writes from the container to the volume. (AI-inferred)
     read_only: Any = None
-    # The name of the volume to mount from the host, which must match a volume name defined in the container properties' volumes attribute. (AI-inferred)
     source_volume: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_NetworkConfiguration:
-    # Indicates whether the job's container network interface should receive a public IP address when running in a VPC, set to 'ENABLED' or 'DISABLED' (default). (AI-inferred)
     assign_public_ip: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_RepositoryCredentials:
-    # Specifies the ARN or name of an AWS Secrets Manager secret that holds the credentials used to authenticate to a private container image repository. (AI-inferred)
     credentials_parameter: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_ResourceRequirements:
-    # The type of the resource requirement, which must be either MEMORY, VCPU, or GPU (if supported), indicating whether the paired value specifies the container's memory limit, number of vCPUs, or number of GPUs. (AI-inferred)
     type: Any = None
-    # The quantity of the computing resource specified by the accompanying 'type' property (e.g., number of vCPUs or memory in MiB) for this container resource requirement in the AWS Batch job definition. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_RuntimePlatform:
-    # Specifies the CPU architecture for the container, such as X86_64 or ARM64, to select the appropriate runtime platform for the job definition's container properties. (AI-inferred)
     cpu_architecture: Any = None
-    # Specifies the operating system family (e.g., LINUX or WINDOWS_SERVER_2019_CORE) for the container running on a Fargate runtime platform in an AWS Batch job definition. (AI-inferred)
     operating_system_family: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Ulimits:
-    # The hard limit value for the ulimit entry, specifying the maximum resource limit (e.g., number of open files) that the container can reach for the associated ulimit name. (AI-inferred)
     hard_limit: Any = None
-    # The name of the ulimit, such as `cpu` or `nofile`, that identifies the resource limit to set for the container. (AI-inferred)
     name: Any = None
-    # The soft limit for the resource specified by the ulimit name, which is the value enforced by the kernel and can be raised by a process up to the hard limit. (AI-inferred)
     soft_limit: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Volumes_EfsVolumeConfiguration_AuthorizationConfig:
-    # The ID of the Amazon EFS access point to use for this volume, providing an application-specific entry point into the EFS file system. (AI-inferred)
     access_point_id: Any = None
-    # Specifies whether to enable IAM authorization for the EFS volume, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     iam: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Volumes_EfsVolumeConfiguration:
-    # Defines the authorization configuration for the EFS volume, including the EFS access point ID and whether to enable IAM authorization for the mount. (AI-inferred)
     authorization_config: Any = None
-    # The ID of the Amazon EFS file system to be mounted as a volume in the container, which identifies the file system used for the EFS mount point. (AI-inferred)
     file_system_id: Any = None
-    # Sets the directory within the Amazon EFS file system that AWS Batch mounts as the root directory for the volume inside the container. (AI-inferred)
     root_directory: Any = None
-    # Specifies whether to enable Amazon EFS transit encryption for data in transit between the container and the file system, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     transit_encryption: Any = None
-    # Specifies the TCP port used for encrypted (TLS) connections to the Amazon EFS file system when transit encryption is enabled, allowing you to override the default port of 2992. (AI-inferred)
     transit_encryption_port: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Volumes_Host:
-    # The host path on the Amazon ECS container instance (or EC2 host) that is mounted into the container as a volume for the AWS Batch job definition. (AI-inferred)
     source_path: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Volumes_S3FilesVolumeConfiguration:
-    # The ARN of the S3 access point that defines which S3 bucket and prefix is mounted as a volume in the container for this job definition's S3 files volume configuration. (AI-inferred)
     access_point_arn: Any = None
-    # The Amazon Resource Name (ARN) of the S3 file system that is mounted as a volume in the container of the AWS Batch job definition, specified within the S3 files volume configuration. (AI-inferred)
     file_system_arn: Any = None
-    # Sets the subdirectory within the specified S3 bucket that is mounted as the root of the volume in the container, controlling which portion of the bucket is exposed to the job's container. (AI-inferred)
     root_directory: Any = None
-    # The port number used for TLS transit encryption when communicating with the S3 endpoint for this mounted S3 volume, typically 443 when transit encryption is enabled. (AI-inferred)
     transit_encryption_port: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties_Volumes:
-    # Configures the Amazon EFS file system to mount as a volume in the Batch container, including the file system ID, root directory, and encryption settings. (AI-inferred)
     efs_volume_configuration: Any = None
-    # Defines the host-side source path on the EC2 instance for the volume to be mounted into the container. (AI-inferred)
     host: Any = None
-    # The name of the volume, used to reference it from the container's mountPoints. (AI-inferred)
     name: Any = None
-    # This object configures an S3 files volume for the container, specifying the S3 bucket name, object key prefix, and mount point so the container can access files from S3 as a volume. (AI-inferred)
     s3_files_volume_configuration: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ContainerProperties:
-    # The command to pass to the container, as an array of strings, which overrides the default command specified in the container image. (AI-inferred)
     command: Any = None
-    # Enables the Amazon ECS Exec feature for this container, allowing you to run interactive commands inside the running container of the Batch job. (AI-inferred)
     enable_execute_command: Any = None
-    # Defines the environment variables to pass to the container, where each object specifies a variable name and its value. (AI-inferred)
     environment: Any = None
-    # Specifies the size in GiB of the ephemeral storage available to the container, used for temporary data during the job. (AI-inferred)
     ephemeral_storage: Any = None
-    # The ARN of the IAM role that Amazon ECS uses to manage the container, including pulling container images from Amazon ECR and sending logs to Amazon CloudWatch. (AI-inferred)
     execution_role_arn: Any = None
-    # Specifies the platform version to use for the Fargate container, such as 'LATEST' or a specific version like '1.4.0'. (AI-inferred)
     fargate_platform_configuration: Any = None
-    # The Docker image used to launch the container for the Batch job, specified as a string (e.g., a public image like 'amazonlinux:2' or a private Amazon ECR image URI). (AI-inferred)
     image: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the container in the Batch job will assume to make AWS API calls. (AI-inferred)
     job_role_arn: Any = None
-    # Defines Linux-specific runtime parameters for the container in the job definition, such as shared memory size, tmpfs mounts, device mappings, and swap settings. (AI-inferred)
     linux_parameters: Any = None
-    # Specifies the logging configuration for the container, including the log driver (such as awslogs for CloudWatch Logs), driver-specific options, and any secret options for sensitive values. (AI-inferred)
     log_configuration: Any = None
-    # Specifies the amount of memory (in MiB) to reserve for the container running in the AWS Batch job. (AI-inferred)
     memory: Any = None
-    # Defines the list of volumes to mount into the container, specifying the source volume name, the container path where it is mounted, and whether the mount is read-only. (AI-inferred)
     mount_points: Any = None
-    # Specifies whether the job's containers receive a public IP address by setting the AssignPublicIp property (ENABLED or DISABLED) in the Batch container's network configuration. (AI-inferred)
     network_configuration: Any = None
-    # Indicates whether the container runs in privileged mode, granting it access to all host devices and elevated permissions similar to Docker's --privileged flag. (AI-inferred)
     privileged: Any = None
-    # When true, the container's root file system is mounted as read-only, preventing write operations to the root filesystem. (AI-inferred)
     readonly_root_filesystem: Any = None
-    # Configures authentication for pulling a private container image by specifying the Secrets Manager secret (via its credentialsParameter property) that contains the registry credentials. (AI-inferred)
     repository_credentials: Any = None
-    # Specifies a list of resource requirements for the job container, such as the amount of vCPUs, memory, or GPUs, where each item defines a type (e.g., VCPU, MEMORY, GPU) and its corresponding value. (AI-inferred)
     resource_requirements: Any = None
-    # Specifies the operating system family and CPU architecture (e.g., LINUX, X86_64/ARM64) for the container, determining the runtime platform on which the job runs. (AI-inferred)
     runtime_platform: Any = None
-    # Specifies the list of secrets to expose to the container, where each secret defines a name and a valueFrom that references an AWS Secrets Manager secret or an SSM Parameter Store value. (AI-inferred)
     secrets: Any = None
-    # Specifies a list of ulimits to set for containers in the job, each defining a resource limit name along with its hard and soft limits for the container process. (AI-inferred)
     ulimits: Any = None
-    # The user parameter specifies the user name or numeric UID to use for running the container's main process, overriding the default user specified in the container image. (AI-inferred)
     user: Any = None
-    # Specifies the number of vCPUs to reserve for the container, which AWS Batch uses to allocate compute resources for EC2-based job definitions. (AI-inferred)
     vcpus: Any = None
-    # A list of volume definitions for the container, each specifying a volume name and its host path or EFS configuration to be mounted into the container, analogous to Docker bind mounts or volumes. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EcsProperties_TaskProperties_Containers_DependsOn:
-    # Specifies the state (e.g., START, COMPLETED, SUCCESS, or HEALTHY) that the dependency container must reach before the current container can start. (AI-inferred)
     condition: Any = None
-    # The name of the container within the same task definition that the current container depends on, as used to define container dependencies in the dependsOn list for an Amazon ECS task in an AWS Batch job definition. (AI-inferred)
     container_name: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EcsProperties_TaskProperties_Containers_FirelensConfiguration:
-    # A map of key-value options that configure the FireLens log router, such as enabling the log router's own log forwarding or setting custom configuration keys for the chosen Fluentd or Fluent Bit log driver. (AI-inferred)
     options: Any = None
-    # Specifies the Firelens log router type for the container, which must be either 'fluentd' or 'fluentbit', in the ECS task properties of the Batch job definition. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EcsProperties_TaskProperties_Containers:
-    # Specifies the command to pass to the container, which overrides the default command provided in the container image. (AI-inferred)
     command: Any = None
-    # Specifies dependencies of this container on other containers in the same task, using a list of objects that each contain a container name and a condition (such as START or COMPLETE) which determines when this container may start. (AI-inferred)
     depends_on: Any = None
-    # Specifies a list of environment variables to pass to the container, where each object contains 'name' and 'value' keys. (AI-inferred)
     environment: Any = None
-    # Indicates whether the container is essential to the task; if an essential container exits or fails, the entire task stops. (AI-inferred)
     essential: Any = None
-    # Specifies the FireLens configuration for the container's log routing, including the log router type (fluentd or fluentbit), its options, and optional S3 configuration for delivering logs. (AI-inferred)
     firelens_configuration: Any = None
-    # The Docker image used to launch the container for this task in the Batch job's ECS task definition. (AI-inferred)
     image: Any = None
-    # `linux_parameters` specifies Linux-specific container runtime options such as kernel capabilities to add or drop, whether to run an init process, shared memory size, tmpfs mount configurations, and swap memory settings for each container in the Batch ECS task definition. (AI-inferred)
     linux_parameters: Any = None
-    # Specifies the logging configuration for the container, including the log driver (e.g., awslogs, splunk, json-file) and its options, as well as any secret options for the log driver. (AI-inferred)
     log_configuration: Any = None
-    # Mount points for the container, specifying the volumes to mount into the container, including source volume, container path, and read-only flag, for each container defined in the ECS task properties of the Batch job definition. (AI-inferred)
     mount_points: Any = None
-    # Specifies the name of the container within the ECS task definition, used to identify the container and required to be unique among all containers in the task. (AI-inferred)
     name: Any = None
-    # Specifies whether the container runs in privileged mode, granting it extended capabilities and access to host devices, analogous to Docker's --privileged flag. (AI-inferred)
     privileged: Any = None
-    # When true, the container's root filesystem is mounted as read-only, preventing the container from writing to any part of the root filesystem while still allowing writes to mounted volumes. (AI-inferred)
     readonly_root_filesystem: Any = None
-    # Specifies the private registry authentication credentials for the container, referenced by the ARN of a Secrets Manager secret or Systems Manager parameter that stores the credentials, used when pulling a private container image. (AI-inferred)
     repository_credentials: Any = None
-    # Specifies the type and amount of a resource (e.g., GPU or memory) to reserve for the container, where each item in the list contains a Type and Value pair. (AI-inferred)
     resource_requirements: Any = None
-    # Specifies a list of secrets to expose to the container, where each item references an AWS Secrets Manager secret or SSM parameter via its valueFrom ARN, allowing sensitive data to be injected as environment variables or mounted as files. (AI-inferred)
     secrets: Any = None
-    # The timeout in seconds allowed for the container in the ECS task to start before the job is considered failed. (AI-inferred)
     start_timeout: Any = None
-    # Specifies the amount of time (in seconds) to wait for the container to stop before it is forcibly killed, with a minimum of 60 seconds and a maximum of 1800 seconds. (AI-inferred)
     stop_timeout: Any = None
-    # Specifies the ulimit settings for each container in the ECS task defined in the job definition, allowing you to set resource constraints such as the maximum number of open files (nofile) or processes (nproc) with corresponding soft and hard limits. (AI-inferred)
     ulimits: Any = None
-    # Specifies the user name or numeric UID (and optionally group) used to run the container's main process inside the ECS task, such as 'user' or 'uid:gid'. (AI-inferred)
     user: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EcsProperties_TaskProperties:
-    # Defines the list of containers that run in the ECS task for this AWS Batch job definition, where each container specifies its Docker image, command, environment variables, and resource allocation (CPU/memory) within the task. (AI-inferred)
     containers: Any = None
-    # Specifies whether to enable the Amazon ECS Exec feature, which allows you to run interactive commands directly inside the containers of the task for debugging and troubleshooting. (AI-inferred)
     enable_execute_command: Any = None
-    # Specifies the ephemeral storage configuration for the ECS task, allowing you to set the amount of temporary storage in GiB that will be available to the containers running in the task. (AI-inferred)
     ephemeral_storage: Any = None
-    # The ARN of the IAM execution role for the ECS task, which grants the container agent permissions to pull container images from Amazon ECR and access other AWS services like Secrets Manager and CloudWatch Logs for the Batch job's containers. (AI-inferred)
     execution_role_arn: Any = None
-    # Sets the IPC mode for the containers in the task, controlling the inter-process communication namespace (e.g., 'host', 'task', or 'none'). (AI-inferred)
     ipc_mode: Any = None
-    # Specifies the network configuration for the task, such as whether to assign a public IP and which security groups to use. (AI-inferred)
     network_configuration: Any = None
-    # Specifies the network mode for the task's containers (e.g., 'awsvpc', 'host', 'bridge', or 'none'), controlling whether the task receives its own elastic network interface or shares the host's networking. (AI-inferred)
     network_mode: Any = None
-    # Sets the PID namespace mode for containers in the task, allowing either 'host' for sharing the host's PID namespace or 'task' for a dedicated PID namespace. (AI-inferred)
     pid_mode: Any = None
-    # Specifies the version of the ECS platform on which the task runs, such as LATEST or a specific version like 1.4.0, which affects the runtime environment and capabilities available to the container within the AWS Batch job. (AI-inferred)
     platform_version: Any = None
-    # This object specifies the operating system family and CPU architecture (e.g., LINUX, X86_64) for the container, matching the ECS task definition's RuntimePlatform parameter. (AI-inferred)
     runtime_platform: Any = None
-    # Specifies the Amazon Resource Name (ARN) of the IAM task role that the ECS task in this job definition uses, allowing its containers to make AWS API calls. (AI-inferred)
     task_role_arn: Any = None
-    # Defines the list of data volumes for the task, where each volume has a name and either a host path or an empty-directory configuration, and can be mounted into containers via the container's mountPoints. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EcsProperties:
-    # Specifies a list of ECS task properties, each defining the container definitions, volumes, and other task-level settings used by AWS Batch to run a multi-container job. (AI-inferred)
     task_properties: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Containers_Resources:
-    # Specifies the maximum CPU and memory resources (in the form of key-value pairs like cpu and memory) that the EKS container in the Batch job definition is allowed to use. (AI-inferred)
     limits: Any = None
-    # Defines the minimum amount of compute resources (e.g., CPU and memory) requested by the EKS container, specified as a map of Kubernetes resource names to quantity strings. (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Containers_SecurityContext:
-    # Indicates whether a container is allowed to escalate privileges, matching the Kubernetes securityContext.allowPrivilegeEscalation setting for the containers in the pod. (AI-inferred)
     allow_privilege_escalation: Any = None
-    # When true, the container runs in privileged mode, granting it extended capabilities and access to host devices as defined by Kubernetes security context. (AI-inferred)
     privileged: Any = None
-    # When set to true, the container's root filesystem is mounted as read-only, preventing writes to the root filesystem and allowing writes only to mounted volumes. (AI-inferred)
     read_only_root_filesystem: Any = None
-    # The group ID (GID) that the container's main process runs as, overriding the default group from the container image. (AI-inferred)
     run_as_group: Any = None
-    # Indicates whether the container must run as a non-root user, as defined in the Kubernetes security context for the EKS pod. (AI-inferred)
     run_as_non_root: Any = None
-    # Sets the numeric user ID (UID) used to run the container's main process, overriding any image default. (AI-inferred)
     run_as_user: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Containers_VolumeMounts:
-    # Mount path inside the container where the referenced volume is mounted, as defined for each EKS pod container's volume mount in the AWS Batch job definition. (AI-inferred)
     mount_path: Any = None
-    # The name of the volume to mount, which must correspond to a volume defined in the pod's volumes list. (AI-inferred)
     name: Any = None
-    # Specifies whether the volume mount is mounted as read-only inside the EKS container. (AI-inferred)
     read_only: Any = None
-    # The path within the referenced volume to mount instead of the volume's root, allowing a single volume to be shared by multiple mounts at different directories. (AI-inferred)
     sub_path: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Containers:
-    # Specifies the arguments to pass to the container's entrypoint, overriding the default arguments in the container image. (AI-inferred)
     args: Any = None
-    # Specifies the command to run in the container, which overrides the default command defined in the container image (equivalent to the Docker CMD). (AI-inferred)
     command: Any = None
-    # List of environment variables to pass to the EKS container, each specifying a name and value for the container's environment. (AI-inferred)
     env: Any = None
-    # The container image used to launch the EKS pod's container for the AWS Batch job. (AI-inferred)
     image: Any = None
-    # Specifies the Kubernetes image pull policy for the container, such as Always, IfNotPresent, or Never, which controls when the container image is pulled from the registry. (AI-inferred)
     image_pull_policy: Any = None
-    # Specifies the name of the container within the Kubernetes pod, which must be unique within the pod and match the container name as defined in the pod spec. (AI-inferred)
     name: Any = None
-    # Specifies the Kubernetes compute resource requirements for the container, such as CPU and memory, defining optional limits and requests as key-value pairs. (AI-inferred)
     resources: Any = None
-    # This object specifies the Kubernetes security context for the container, including settings such as runAsUser, runAsGroup, privileged, and readOnlyRootFilesystem, which govern container-level permissions and security constraints within the EKS pod. (AI-inferred)
     security_context: Any = None
-    # Specifies the volume mounts for each container in the EKS pod, mapping pod-defined volumes to mount paths inside the container's filesystem. (AI-inferred)
     volume_mounts: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_ImagePullSecrets:
-    # The name of the Kubernetes secret to use as an image pull secret for the EKS pod. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Metadata:
-    # The annotations are arbitrary key-value pairs attached to the Kubernetes pod, used to store non-identifying metadata that can be consumed by tools or AWS Batch integrations, distinct from labels which are used for pod selection. (AI-inferred)
     annotations: Any = None
-    # Defines the Kubernetes labels (key-value pairs) to attach to the pod metadata for an Amazon EKS job definition. (AI-inferred)
     labels: Any = None
-    # The Kubernetes namespace in which to run the EKS pod for the job definition. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Volumes_EmptyDir:
-    # Specifies the storage medium for the emptyDir volume in the pod; set to 'Memory' to use a RAM-backed tmpfs volume, or omit it (empty string) to use the default ephemeral disk storage. (AI-inferred)
     medium: Any = None
-    # The maximum storage size for the emptyDir volume in the EKS pod, specified as a Kubernetes quantity string such as '128Mi'. (AI-inferred)
     size_limit: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Volumes_HostPath:
-    # Specifies the path on the host machine that is mounted into the pod as a hostPath volume. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Volumes_PersistentVolumeClaim:
-    # Specifies the name of the Kubernetes PersistentVolumeClaim (PVC) in the pod's namespace that this volume references, which the AWS Batch EKS pod will mount. (AI-inferred)
     claim_name: Any = None
-    # When set to true, mounts the referenced PersistentVolumeClaim as read-only inside the EKS pod for this AWS Batch job definition. (AI-inferred)
     read_only: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Volumes_Secret:
-    # Specifies whether the referenced Kubernetes secret must exist before the pod starts; when set to true, the secret is optional and its absence does not prevent the pod from starting. (AI-inferred)
     optional: Any = None
-    # The name of the Kubernetes secret to mount as a volume in the pod, referencing a secret that must exist in the same EKS cluster namespace. (AI-inferred)
     secret_name: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties_Volumes:
-    # This object configures an emptyDir volume for an EKS pod in an AWS Batch job definition, creating a temporary, initially empty directory that persists only for the pod's lifetime and can optionally set the medium (e.g., memory) and size limit via nested fields. (AI-inferred)
     empty_dir: Any = None
-    # Defines a hostPath volume for the EKS pod, which mounts a specified directory from the node's filesystem into the container; the nested `path` property sets the host directory path. (AI-inferred)
     host_path: Any = None
-    # The name of the volume, referenced by containers in their volumeMounts to mount this volume. (AI-inferred)
     name: Any = None
-    # Specifies a Kubernetes PersistentVolumeClaim (PVC) volume source for the Batch EKS pod, including the claim name and read-only flag to mount the claim into the container. (AI-inferred)
     persistent_volume_claim: Any = None
-    # Configures a Kubernetes secret volume source for the pod, specifying the secret name and optionally the keys (items) from that secret to expose as files. (AI-inferred)
     secret: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties_PodProperties:
-    # The list of containers that run in the EKS pod defined by these pod properties. (AI-inferred)
     containers: Any = None
-    # Sets the Kubernetes DNS policy for the EKS pod in the job, controlling how DNS resolution is handled (e.g., Default, ClusterFirst, ClusterFirstWithHostNet, or None). (AI-inferred)
     dns_policy: Any = None
-    # Indicates whether the pod should share the host's network namespace, allowing it to use the host network directly. (AI-inferred)
     host_network: Any = None
-    # Specifies a list of image pull secrets (each with a name) used to authenticate with private container registries when pulling the container image for the EKS pod in the job definition. (AI-inferred)
     image_pull_secrets: Any = None
-    # Specifies the list of init containers that run before the main container in the EKS pod for the AWS Batch job definition. (AI-inferred)
     init_containers: Any = None
-    # Defines the Kubernetes metadata (labels and annotations) applied to the pod running the EKS job, used to identify or group the pod within the cluster. (AI-inferred)
     metadata: Any = None
-    # The name of the Kubernetes service account assigned to the pod, which enables IAM roles for service accounts (IRSA) to grant AWS permissions to the pod. (AI-inferred)
     service_account_name: Any = None
-    # Enables sharing the same process namespace across all containers in the EKS pod, equivalent to the Kubernetes `shareProcessNamespace` pod setting. (AI-inferred)
     share_process_namespace: Any = None
-    # Specifies the list of volumes available for mounting into containers in the EKS pod, defining sources like emptyDir or hostPath that correspond to the pod's volumeMounts. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_EksProperties:
-    # Specifies the pod properties for an Amazon EKS-based job, including container definitions, volumes, and pod-level metadata such as service account name and labels. (AI-inferred)
     pod_properties: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_NodeProperties_NodeRangeProperties_Container:
-    # Specifies the command to run in the container, passed as an array of strings that overrides the container image's default command for this AWS Batch job definition's node range. (AI-inferred)
     command: Any = None
-    # When enabled, allows you to use ECS Exec to start an interactive shell or run commands inside the container of a multi-node AWS Batch job, which is helpful for debugging running jobs. (AI-inferred)
     enable_execute_command: Any = None
-    # Defines the environment variables (as a list of objects with name and value keys) that are passed to the container when jobs run for this node range in a multi-node AWS Batch job definition. (AI-inferred)
     environment: Any = None
-    # Specifies the ephemeral storage configuration for the container, defining the size in GiB of temporary storage provisioned beyond the default. (AI-inferred)
     ephemeral_storage: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that AWS Batch assumes so the container can pull images and publish logs, required for Fargate-based job definitions. (AI-inferred)
     execution_role_arn: Any = None
-    # Specifies the Docker image used to run the container for the job defined by this node range property. (AI-inferred)
     image: Any = None
-    # Specifies the Amazon EC2 instance type to launch for the container that runs on this range of nodes in the multi-node AWS Batch job definition. (AI-inferred)
     instance_type: Any = None
-    # The ARN of the IAM role that the container in a node range of a multi-node AWS Batch job can assume to make API calls to AWS services. (AI-inferred)
     job_role_arn: Any = None
-    # Defines Linux-specific container parameters (such as shared memory size, init process enablement, swap settings, devices, and tmpfs mounts) for the Batch container in this node range of a multi-node job definition. (AI-inferred)
     linux_parameters: Any = None
-    # Specifies the logging configuration for the container, such as the log driver (e.g., `awslogs` to send logs to Amazon CloudWatch Logs) and its options. (AI-inferred)
     log_configuration: Any = None
-    # Sets the hard memory limit (in MiB) for the container of jobs in this node range. (AI-inferred)
     memory: Any = None
-    # Defines the mount points for volumes mounted into the container, specifying the container path, source volume, and whether the mount is read-only. (AI-inferred)
     mount_points: Any = None
-    # Indicates whether the container runs in privileged mode (Docker --privileged), which grants it elevated permissions on the host, such as access to devices and kernel capabilities. (AI-inferred)
     privileged: Any = None
-    # Specifies whether the container's root filesystem is mounted as read-only, preventing writes to the root filesystem. (AI-inferred)
     readonly_root_filesystem: Any = None
-    # Provides the credentials required to authenticate with a private container registry, referencing the AWS Secrets Manager secret that holds the repository authentication parameters. (AI-inferred)
     repository_credentials: Any = None
-    # Specifies the types and amounts of compute resources (such as vCPU, memory, and GPU) that the container in this node range requires for the job to run. (AI-inferred)
     resource_requirements: Any = None
-    # Specifies the operating system and CPU architecture (e.g., 'LINUX' and 'X86_64') for the container, allowing the job to run on a compatible Amazon ECS or EKS compute environment. (AI-inferred)
     runtime_platform: Any = None
-    # Defines a list of sensitive data (secrets) to pass to the container as environment variables, where each entry specifies a secret name and the ARN or full name of the AWS Secrets Manager or Systems Manager Parameter Store resource from which to retrieve the value. (AI-inferred)
     secrets: Any = None
-    # Defines the ulimit resource limits (e.g., the maximum number of open files) applied to each container in a node range, where each entry consists of a name, a hard limit, and a soft limit. (AI-inferred)
     ulimits: Any = None
-    # Specifies the user name or numeric UID that the container process runs as inside the job's container, overriding the default user defined in the container image. (AI-inferred)
     user: Any = None
-    # Defines the number of vCPUs to reserve for the container that runs on each node in this node range of the multi-node parallel AWS Batch job definition. (AI-inferred)
     vcpus: Any = None
-    # This is the list of Docker volumes available to the container for jobs in the node range, each specifying a host source path and volume name to be mounted via the container's mount points. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_NodeProperties_NodeRangeProperties_EcsProperties_TaskProperties:
-    # For each node range in a multi-node AWS Batch job definition, this list defines the containers that run as part of the ECS task specified by the parent task properties, with each entry containing the container image, command, environment variables, and resource requirements. (AI-inferred)
     containers: Any = None
-    # Enables ECS Exec (execute command) for the task's containers, allowing you to run interactive commands and debug the job's containers while they are running. (AI-inferred)
     enable_execute_command: Any = None
-    # The ARN of the IAM role that the ECS task in this Batch job node range uses to make AWS API calls (e.g., pulling container images from Amazon ECR). (AI-inferred)
     execution_role_arn: Any = None
-    # Specifies the IPC mode of the ECS task container(s) in the Batch job definition, which can be 'host', 'task', or 'none' to control the IPC namespace. (AI-inferred)
     ipc_mode: Any = None
-    # Specifies the PID (process ID) namespace mode for the containers in the task, either 'host' to share the host's PID namespace or 'task' to give each task a private namespace. (AI-inferred)
     pid_mode: Any = None
-    # Specifies the IAM role that the ECS task container(s) can assume for AWS API calls, controlling permissions granted to the containers within the task. (AI-inferred)
     task_role_arn: Any = None
-    # Specifies the data volumes that can be mounted by containers in the ECS task, allowing persistent storage via EBS volumes or bind mounts from the host. (AI-inferred)
     volumes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_NodeProperties_NodeRangeProperties_EcsProperties:
-    # Defines the list of ECS task properties (each containing container definitions, volumes, and network settings) for the AWS Batch job definition's ECS properties within a node range. (AI-inferred)
     task_properties: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_NodeProperties_NodeRangeProperties:
-    # Defines how much of a named consumable resource (e.g., GPU) a node range consumes in a multi-node AWS Batch job definition, specifying the resource name and quantity. (AI-inferred)
     consumable_resource_properties: Any = None
-    # Defines the container properties (such as image, command, environment, and resource requirements) for the node range in a multi-node parallel AWS Batch job definition. (AI-inferred)
     container: Any = None
-    # Specifies the ECS task properties (such as task definition, container overrides, and resource requirements) that apply to the nodes in this range of the multi-node AWS Batch job definition. (AI-inferred)
     ecs_properties: Any = None
-    # The EKS properties for the job definition, specifying the EKS pod template and container properties used when running the job on Amazon EKS. (AI-inferred)
     eks_properties: Any = None
-    # Specifies the EC2 instance types (or instance families) allowed for the nodes in this node range, overriding the default instance types of the compute environment. (AI-inferred)
     instance_types: Any = None
-    # Specifies the range of node indices (e.g., '0:5' or '1:') that this node range property applies to within a multi-node AWS Batch job definition. (AI-inferred)
     target_nodes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_NodeProperties:
-    # Defines the node index (starting at 0) that is designated as the main node in a multi-node parallel job definition, which runs the coordinating task. (AI-inferred)
     main_node: Any = None
-    # Defines the per-node-range configuration for a multi-node parallel AWS Batch job, mapping a range of node indices to the container properties and instance types (and optional ECS configuration) used for those nodes. (AI-inferred)
     node_range_properties: Any = None
-    # Defines the total number of nodes in a multi-node parallel AWS Batch job, determining the required compute resources across the node group. (AI-inferred)
     num_nodes: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_ResourceRetentionPolicy:
-    # When set to true, this Boolean field tells AWS Batch not to deregister the current job definition revision when an update creates a new revision, leaving the old revision available for use. (AI-inferred)
     skip_deregister_on_update: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_RetryStrategy_EvaluateOnExit:
-    # The action to take when the condition in this evaluate_on_exit rule is satisfied, which is either 'RETRY' to rerun the job or 'EXIT' to end the job's execution. (AI-inferred)
     action: Any = None
-    # The job exit code (or a range of exit codes, e.g., '1-10' or '*') that must be matched for the corresponding retry action to be taken in an AWS Batch job definition's retry strategy. (AI-inferred)
     on_exit_code: Any = None
-    # Specifies the job's status reason string that triggers this evaluate-on-exit action when matched, such as a specific failure reason like 'CapacityError', causing the job to be retried according to the retry strategy. (AI-inferred)
     on_reason: Any = None
-    # Specifies a status reason string to match against the job's status reason, triggering the corresponding retry action when the job exits with that status reason. (AI-inferred)
     on_status_reason: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_RetryStrategy:
-    # Specifies the total number of attempts (including the original) that AWS Batch will make for the job before considering it failed, with a valid range of 1 to 10, so an attempts value of N allows up to N-1 retries on failure. (AI-inferred)
     attempts: Any = None
-    # Lists conditions that trigger specific actions (like retry or mark as failed) based on a job's exit code, status reason, or reason, controlling the retry behavior of the Batch job. (AI-inferred)
     evaluate_on_exit: Any = None
 
 @dataclasses.dataclass
 class JobDefinition_Timeout:
-    # The timeout duration in seconds for a single job attempt; after this time elapses, AWS Batch terminates the attempt. (AI-inferred)
     attempt_duration_seconds: Any = None
 
 _JobDefinition_ConsumableResourceProperties_ConsumableResourceListFields = {
@@ -1201,70 +996,41 @@ _JobDefinition_TimeoutFields = {
 
 @dataclasses.dataclass
 class JobDefinitionConfig:
-    # Defines a consumable resource, including its name and the quantity the job requires from a shared pool, so that concurrent access to the resource can be limited across jobs in the same job queue. (AI-inferred)
     consumable_resource_properties: Any = None
-    # Defines the container configuration for the job, including the Docker image, vCPU and memory requirements, command, environment variables, and other runtime settings. (AI-inferred)
     container_properties: Any = None
-    # Configuration block for the ECS-specific properties of the job definition, holding a list of task properties that define the container images, commands, volumes, and other ECS scheduler settings. (AI-inferred)
     ecs_properties: Any = None
-    # Specifies the Amazon EKS pod properties for this job definition, including the pod template, container specifications, volumes, and other Kubernetes-specific settings. (AI-inferred)
     eks_properties: Any = None
-    # Specifies the name of the job definition; if you omit it, AWS Batch generates a unique name for you. (AI-inferred)
     job_definition_name: Any = None
-    # Specifies the properties for a multi-node parallel (MNP) job, including the number of nodes, the main node index, and the container properties for each node range. (AI-inferred)
     node_properties: Any = None
-    # Specifies a map of key-value pairs that define default parameters, which can be referenced within the container's command using the `Ref::` syntax. (AI-inferred)
     parameters: Any = None
-    # Specifies the platform capabilities (EC2, FARGATE, or FARGATE_SPOT) required for the job to run, determining whether the job uses EC2 or Fargate computing resources. (AI-inferred)
     platform_capabilities: Any = None
-    # Indicates whether tags from the AWS Batch job definition are propagated to the Amazon ECS task that runs the job. (AI-inferred)
     propagate_tags: Any = None
-    # The resource_retention_policy configures the retention of compute resources after a job completes, specifying the number of completed jobs for which AWS Batch will retain resources to aid in troubleshooting. (AI-inferred)
     resource_retention_policy: Any = None
-    # Defines the retry strategy for the job, including the maximum number of retry attempts and the conditions under which a job should be retried based on its exit status. (AI-inferred)
     retry_strategy: Any = None
-    # The scheduling priority for jobs using this job definition, which determines the order in which they are started when multiple jobs share the same job queue, with higher values given higher priority. (AI-inferred)
     scheduling_priority: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The timeout configuration for the job definition, specifying the maximum duration (attemptDurationSeconds) that the job's container can run before it is forcibly terminated. (AI-inferred)
     timeout: Any = None
-    # Specifies whether the job definition runs as a container job or a multinode job, using the value 'container' or 'multinode'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class JobDefinitionAttrs:
-    # Defines a consumable resource, including its name and the quantity the job requires from a shared pool, so that concurrent access to the resource can be limited across jobs in the same job queue. (AI-inferred)
     consumable_resource_properties: Any = None
-    # Defines the container configuration for the job, including the Docker image, vCPU and memory requirements, command, environment variables, and other runtime settings. (AI-inferred)
     container_properties: Any = None
-    # Configuration block for the ECS-specific properties of the job definition, holding a list of task properties that define the container images, commands, volumes, and other ECS scheduler settings. (AI-inferred)
     ecs_properties: Any = None
-    # Specifies the Amazon EKS pod properties for this job definition, including the pod template, container specifications, volumes, and other Kubernetes-specific settings. (AI-inferred)
     eks_properties: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Batch job definition. (AI-inferred)
     job_definition_arn: Any = None
-    # Specifies the name of the job definition; if you omit it, AWS Batch generates a unique name for you. (AI-inferred)
     job_definition_name: Any = None
-    # Specifies the properties for a multi-node parallel (MNP) job, including the number of nodes, the main node index, and the container properties for each node range. (AI-inferred)
     node_properties: Any = None
-    # Specifies a map of key-value pairs that define default parameters, which can be referenced within the container's command using the `Ref::` syntax. (AI-inferred)
     parameters: Any = None
-    # Specifies the platform capabilities (EC2, FARGATE, or FARGATE_SPOT) required for the job to run, determining whether the job uses EC2 or Fargate computing resources. (AI-inferred)
     platform_capabilities: Any = None
-    # Indicates whether tags from the AWS Batch job definition are propagated to the Amazon ECS task that runs the job. (AI-inferred)
     propagate_tags: Any = None
-    # The resource_retention_policy configures the retention of compute resources after a job completes, specifying the number of completed jobs for which AWS Batch will retain resources to aid in troubleshooting. (AI-inferred)
     resource_retention_policy: Any = None
-    # Defines the retry strategy for the job, including the maximum number of retry attempts and the conditions under which a job should be retried based on its exit status. (AI-inferred)
     retry_strategy: Any = None
-    # The scheduling priority for jobs using this job definition, which determines the order in which they are started when multiple jobs share the same job queue, with higher values given higher priority. (AI-inferred)
     scheduling_priority: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The timeout configuration for the job definition, specifying the maximum duration (attemptDurationSeconds) that the job's container can run before it is forcibly terminated. (AI-inferred)
     timeout: Any = None
-    # Specifies whether the job definition runs as a container job or a multinode job, using the value 'container' or 'multinode'. (AI-inferred)
     type: Any = None
 
 JobDefinition = ubx.ResourceBinding(

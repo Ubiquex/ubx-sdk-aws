@@ -15,7 +15,6 @@ class TransitGatewayMeteringPolicyEntryConfig:
     # The ID of the source attachment through which traffic leaves a transit gateway
     destination_transit_gateway_attachment_id: Any = None
     destination_transit_gateway_attachment_type: Any = None
-    # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
     metered_account: Any = None
     # The rule number of the metering policy entry
     policy_rule_number: Any = None
@@ -40,7 +39,6 @@ class TransitGatewayMeteringPolicyEntryAttrs:
     # The ID of the source attachment through which traffic leaves a transit gateway
     destination_transit_gateway_attachment_id: Any = None
     destination_transit_gateway_attachment_type: Any = None
-    # The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred)
     metered_account: Any = None
     # The rule number of the metering policy entry
     policy_rule_number: Any = None

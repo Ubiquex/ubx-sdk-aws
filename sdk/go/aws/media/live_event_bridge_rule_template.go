@@ -4,7 +4,6 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveEventBridgeRuleTemplate_EventTargets struct {
-	// The Amazon Resource Name (ARN) of the target resource that the EventBridge rule invokes for this MediaLive event bridge rule template. (AI-inferred)
 	Arn any
 }
 

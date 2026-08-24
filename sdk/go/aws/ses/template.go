@@ -4,9 +4,7 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Template_Tags struct {
-	// The key of a tag applied to the Amazon SES email template. (AI-inferred)
 	Key any
-	// The value part of a tag assigned to the SES email template, used for metadata organization and cost allocation in AWS. (AI-inferred)
 	Value any
 }
 
@@ -41,7 +39,6 @@ type TemplateConfig struct {
 }
 
 type TemplateAttrs struct {
-	// The id of the aws_ses_template resource is the template name, which uniquely identifies the SES template within the AWS region. (AI-inferred)
 	Id any
 	// The tags (keys and values) associated with the email template.
 	Tags any

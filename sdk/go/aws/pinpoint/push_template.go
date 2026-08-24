@@ -4,49 +4,30 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PushTemplate_Adm struct {
-	// Specifies the action that occurs when a user taps the push notification delivered via ADM, with valid values OPEN_APP, DEEP_LINK, or URL. (AI-inferred)
 	Action any
-	// The message body text that is sent to Amazon Device Messaging (ADM) endpoints as the push notification content. (AI-inferred)
 	Body any
-	// For Amazon Device Messenger (ADM) push notifications, this is the URL of the icon image to display in the notification. (AI-inferred)
 	ImageIconUrl any
-	// The URL of the image to display in the push notification sent to ADM (Amazon Device Messenger) endpoints. (AI-inferred)
 	ImageUrl any
-	// The URL of the small icon image to display in the status bar or as a small icon in notifications sent through Amazon Device Messaging (ADM) from this push template. (AI-inferred)
 	SmallImageIconUrl any
-	// For Amazon Device Messaging (ADM) push notifications, this field specifies the name of the sound file to play when the message is received. (AI-inferred)
 	Sound any
-	// This field specifies the title of the push notification that Amazon Pinpoint sends to Amazon Device Messaging (ADM) endpoints using this template. (AI-inferred)
 	Title any
-	// Specifies the URL to open when a user taps the push notification delivered through Amazon Device Messaging (ADM). (AI-inferred)
 	Url any
 }
 
 type PushTemplate_Apns struct {
-	// The action to take when a user taps the notification sent via APNs; valid values are OPEN_APP, DEEP_LINK, or URL. (AI-inferred)
 	Action any
-	// Specifies the message body (the text content) of the push notification sent to Apple devices through the APNs channel. (AI-inferred)
 	Body any
-	// The URL of the image, video, or other media file to include in the push notification delivered to Apple Push Notification Service (APNS) endpoints. (AI-inferred)
 	MediaUrl any
-	// The name of the sound file to play when an APNs push notification is received, such as 'default' or a custom sound file. (AI-inferred)
 	Sound any
-	// The title of the push notification message sent to Apple Push Notification Service (APNS) endpoints. (AI-inferred)
 	Title any
-	// The URL to be opened when an iOS user taps the APNS push notification, applicable when the message action is set to URL. (AI-inferred)
 	Url any
 }
 
 type PushTemplate_Default struct {
-	// Specifies the action to occur if a recipient taps the push notification, such as opening the app, opening a deep link, or opening a URL. (AI-inferred)
 	Action any
-	// Sets the body text of the push notification message, which is the main content displayed to the user when the notification is delivered. (AI-inferred)
 	Body any
-	// Specifies the sound file name or audio resource to play when the app receives the push notification, interpreted according to the mobile platform (for example, an iOS sound filename or an Android notification sound resource). (AI-inferred)
 	Sound any
-	// The default title of the push notification, used when no platform-specific override is provided. (AI-inferred)
 	Title any
-	// In the default push notification template for an AWS Pinpoint push template, this URL specifies the web address that is opened when the user taps the notification, typically used when the notification's action is set to 'URL'. (AI-inferred)
 	Url any
 }
 
@@ -79,48 +60,28 @@ var PushTemplate_DefaultFields = ubx.FieldMap{
 	}
 
 type PushTemplateConfig struct {
-	// Defines the Amazon Device Messenger (ADM) push notification settings, such as the action, title, body, and URL, used for delivering messages to Fire OS devices. (AI-inferred)
 	Adm any
-	// The Apple Push Notification Service (APNs) settings for this push template, defining the notification content and behavior for iOS devices. (AI-inferred)
 	Apns any
-	// Specifies the push notification settings for the Baidu channel, including message body, title, action, and other platform-specific options for Android devices in China. (AI-inferred)
 	Baidu any
-	// The default message data that applies to all message types and platforms, including the message title, body, and other push notification settings. (AI-inferred)
 	Default any
-	// A JSON string defining the default key-value pairs that map message template variables to their default substitution values for the push notification template. (AI-inferred)
 	DefaultSubstitutions any
-	// Specifies the push notification template settings for Android devices via the Google Cloud Messaging (GCM) channel, including message content, action, and Android-specific delivery options. (AI-inferred)
 	Gcm any
-	// Assigns metadata to the Amazon Pinpoint push notification template in the form of key-value pairs that can be used to categorize and manage the template. (AI-inferred)
 	Tags any
-	// A description of the push notification template, used to identify the template in the Amazon Pinpoint console. (AI-inferred)
 	TemplateDescription any
-	// The name of the push notification template, which uniquely identifies it within your AWS account and must be unique among all templates in your Amazon Pinpoint project. (AI-inferred)
 	TemplateName any
 }
 
 type PushTemplateAttrs struct {
-	// Defines the Amazon Device Messenger (ADM) push notification settings, such as the action, title, body, and URL, used for delivering messages to Fire OS devices. (AI-inferred)
 	Adm any
-	// The Apple Push Notification Service (APNs) settings for this push template, defining the notification content and behavior for iOS devices. (AI-inferred)
 	Apns any
-	// The Amazon Resource Name (ARN) uniquely identifying the push notification template in AWS Pinpoint. (AI-inferred)
 	Arn any
-	// Specifies the push notification settings for the Baidu channel, including message body, title, action, and other platform-specific options for Android devices in China. (AI-inferred)
 	Baidu any
-	// The default message data that applies to all message types and platforms, including the message title, body, and other push notification settings. (AI-inferred)
 	Default any
-	// A JSON string defining the default key-value pairs that map message template variables to their default substitution values for the push notification template. (AI-inferred)
 	DefaultSubstitutions any
-	// Specifies the push notification template settings for Android devices via the Google Cloud Messaging (GCM) channel, including message content, action, and Android-specific delivery options. (AI-inferred)
 	Gcm any
-	// The id is the name of the push template, which uniquely identifies it within the AWS account. (AI-inferred)
 	Id any
-	// Assigns metadata to the Amazon Pinpoint push notification template in the form of key-value pairs that can be used to categorize and manage the template. (AI-inferred)
 	Tags any
-	// A description of the push notification template, used to identify the template in the Amazon Pinpoint console. (AI-inferred)
 	TemplateDescription any
-	// The name of the push notification template, which uniquely identifies it within your AWS account and must be unique among all templates in your Amazon Pinpoint project. (AI-inferred)
 	TemplateName any
 }
 

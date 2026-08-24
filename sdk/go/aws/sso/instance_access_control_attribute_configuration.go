@@ -4,19 +4,15 @@ package sso
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceAccessControlAttributeConfiguration_AccessControlAttributes_Value struct {
-	// For a given access control attribute in this AWS SSO (IAM Identity Center) instance's ABAC configuration, the `source` field lists the identity provider attribute names (e.g., 'email') that are mapped to the attribute key and supply the values used for attribute-based access control. (AI-inferred)
 	Source any
 }
 
 type InstanceAccessControlAttributeConfiguration_AccessControlAttributes struct {
-	// Specifies the name of the user attribute (such as email or department) that this access control attribute entry defines for use in attribute-based access control (ABAC) in IAM Identity Center. (AI-inferred)
 	Key any
-	// Represents the list of values for an access control attribute key, which AWS IAM Identity Center uses to enable attribute-based access control (ABAC) for the instance. (AI-inferred)
 	Value any
 }
 
 type InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfiguration struct {
-	// Defines the list of user attribute key-value pairs (such as email or department) that AWS SSO uses for attribute-based access control (ABAC) in the instance. (AI-inferred)
 	AccessControlAttributes any
 }
 
@@ -42,7 +38,6 @@ var InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeCo
 	}
 
 type InstanceAccessControlAttributeConfigurationConfig struct {
-	// The list of access control attributes that define the user attributes (such as email or department) used in attribute-based access control (ABAC) rules for the AWS SSO (IAM Identity Center) instance. (AI-inferred)
 	AccessControlAttributes any
 	// The InstanceAccessControlAttributeConfiguration property has been deprecated but is still supported for backwards compatibility purposes. We recomend that you use AccessControlAttributes property instead.
 	InstanceAccessControlAttributeConfiguration any
@@ -51,7 +46,6 @@ type InstanceAccessControlAttributeConfigurationConfig struct {
 }
 
 type InstanceAccessControlAttributeConfigurationAttrs struct {
-	// The list of access control attributes that define the user attributes (such as email or department) used in attribute-based access control (ABAC) rules for the AWS SSO (IAM Identity Center) instance. (AI-inferred)
 	AccessControlAttributes any
 	// The InstanceAccessControlAttributeConfiguration property has been deprecated but is still supported for backwards compatibility purposes. We recomend that you use AccessControlAttributes property instead.
 	InstanceAccessControlAttributeConfiguration any

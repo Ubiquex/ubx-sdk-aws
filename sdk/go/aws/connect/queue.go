@@ -4,7 +4,6 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queue_AdditionalEmailAddresses struct {
-	// Specifies the ARN of an additional email address to associate with the Amazon Connect queue, enabling the queue to handle email contacts from multiple addresses. (AI-inferred)
 	EmailAddressArn any
 }
 
@@ -23,9 +22,7 @@ type Queue_OutboundEmailConfig struct {
 }
 
 type Queue_Tags struct {
-	// The key of a tag assigned to the Amazon Connect queue, used for metadata and resource filtering. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Amazon Connect queue. (AI-inferred)
 	Value any
 }
 

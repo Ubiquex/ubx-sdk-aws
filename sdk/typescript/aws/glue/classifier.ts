@@ -80,26 +80,18 @@ const Classifier_XmlclassifierFields: FieldMap = {
 };
 
 export interface ClassifierConfig {
-  /** Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred) */
   csvClassifier?: Classifier_CsvClassifier | Computed<Classifier_CsvClassifier>;
-  /** Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred) */
   grokClassifier?: Classifier_GrokClassifier | Computed<Classifier_GrokClassifier>;
-  /** Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred) */
   jsonClassifier?: Classifier_JsonClassifier | Computed<Classifier_JsonClassifier>;
-  /** Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred) */
   xmlclassifier?: Classifier_Xmlclassifier | Computed<Classifier_Xmlclassifier>;
 }
 
 export interface ClassifierAttrs {
-  /** Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred) */
   csvClassifier: Classifier_CsvClassifier;
-  /** Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred) */
   grokClassifier: Classifier_GrokClassifier;
-  /** Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred) */
   jsonClassifier: Classifier_JsonClassifier;
   /** One of XMLClassifier/Name, GrokClassifier/Name, JsonClassifier/Name or CsvClassifier/Name */
   name: string;
-  /** Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred) */
   xmlclassifier: Classifier_Xmlclassifier;
 }
 

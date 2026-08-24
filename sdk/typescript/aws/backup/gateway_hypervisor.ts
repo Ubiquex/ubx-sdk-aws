@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayHypervisor_Tags {
-  /** The key component of a tag assigned to an AWS Backup Gateway hypervisor, used to label and categorize the resource for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,38 +12,23 @@ const GatewayHypervisor_TagsFields: FieldMap = {
 };
 
 export interface GatewayHypervisorConfig {
-  /** Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred) */
   host?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred) */
   logGroupArn?: string | Computed<string>;
-  /** An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred) */
   password?: string | Computed<string>;
-  /** A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred) */
   tags?: GatewayHypervisor_Tags[] | Computed<GatewayHypervisor_Tags[]>;
-  /** The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
 export interface GatewayHypervisorAttrs {
-  /** Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred) */
   host: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the hypervisor created by AWS Backup Gateway. (AI-inferred) */
   hypervisorArn: string;
-  /** The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred) */
   kmsKeyArn: string;
-  /** The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred) */
   logGroupArn: string;
-  /** An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred) */
   name: string;
-  /** The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred) */
   password: string;
-  /** A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred) */
   tags: GatewayHypervisor_Tags[];
-  /** The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred) */
   username: string;
 }
 

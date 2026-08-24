@@ -13,15 +13,12 @@ export interface LiveEventBridgeRuleTemplateGroupConfig {
 export interface LiveEventBridgeRuleTemplateGroupAttrs {
   /** An eventbridge rule template group's ARN (Amazon Resource Name) */
   arn: string;
-  /** The timestamp indicating when the EventBridge rule template group was created (computed by AWS). (AI-inferred) */
   createdAt: string;
   /** A resource's optional description. */
   description: string;
   /** An eventbridge rule template group's id. AWS provided template groups have ids that start with `aws-` */
   id: string;
-  /** The unique identifier assigned by AWS MediaLive to this event bridge rule template group, used to reference the group after creation. (AI-inferred) */
   identifier: string;
-  /** The date and time when the EventBridge rule template group was last modified. (AI-inferred) */
   modifiedAt: string;
   /** A resource's name. Names must be unique within the scope of a resource type in a specific region. */
   name: string;

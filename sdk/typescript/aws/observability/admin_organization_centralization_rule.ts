@@ -2,37 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfiguration {
-  /** The ARN of the AWS KMS key used to encrypt the backup data for the centralized logging destination, enabling customer-managed encryption of backup copies. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** The AWS Region code (e.g., 'us-east-1') where the backup destination for the centralized logs is provisioned, providing a redundant copy for high availability. (AI-inferred) */
   region: string | Computed<string>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfiguration {
-  /** Specifies the pattern (e.g., a wildcard or regex) used to match CloudWatch log group names from member accounts that are selected for centralization to the destination defined by this rule. (AI-inferred) */
   logGroupNamePattern: string | Computed<string>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration {
-  /** Specifies the strategy to resolve encryption key conflicts when centralizing logs, determining whether the organization's central encryption configuration overrides member accounts' existing log encryption settings or preserves them. (AI-inferred) */
   encryptionConflictResolutionStrategy?: string | Computed<string>;
   encryptionScope?: string | Computed<string>;
-  /** Defines the encryption strategy for logs delivered to the centralized destination, using 'SSE_S3' for AWS-managed encryption or 'SSE_KMS' for customer-managed KMS key encryption. (AI-inferred) */
   encryptionStrategy: string | Computed<string>;
-  /** The ARN of the AWS KMS key used to encrypt logs delivered to the centralization rule's destination, enabling customer-managed key encryption for centralized log data. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration {
   backupConfiguration?: AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfiguration>;
-  /** Specifies an optional prefix and suffix that are added to the original CloudWatch log group names when logs are centralized to the destination account, controlling how the centralized log groups are named. (AI-inferred) */
   logGroupNameConfiguration?: AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfiguration>;
-  /** Configures the encryption settings (such as the AWS KMS key ARN) used to encrypt the logs that are delivered to the centralized destination, ensuring the destination logs are encrypted with the specified key. (AI-inferred) */
   logsEncryptionConfiguration?: AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfiguration {
-  /** Specifies the AWS Region of the backup destination for metrics when the primary destination is unavailable. (AI-inferred) */
   region: string | Computed<string>;
 }
 
@@ -41,19 +32,15 @@ export interface AdminOrganizationCentralizationRule_Rule_Destination_Destinatio
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Destination {
-  /** The AWS account ID of the destination account that receives centralized observability data (logs, metrics, and traces) when the rule's destination type is set to 'ACCOUNT'. (AI-inferred) */
   account?: string | Computed<string>;
   destinationLogsConfiguration?: AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration>;
   destinationMetricsConfiguration?: AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration>;
-  /** The AWS region of the destination where the organization's observability data is centralized by this rule. (AI-inferred) */
   region: string | Computed<string>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Source_SourceLogsConfiguration {
   dataSourceSelectionCriteria?: string | Computed<string>;
-  /** Specifies the strategy to apply to CloudWatch log groups that are encrypted with AWS KMS keys when collecting source logs for the organization's centralization rule. (AI-inferred) */
   encryptedLogGroupStrategy: string | Computed<string>;
-  /** The log_group_selection_criteria field specifies the selection mechanism used to choose which log groups from the source logs configuration are centralized by the rule, such as indicating whether all log groups or only those matching a defined pattern should be included. (AI-inferred) */
   logGroupSelectionCriteria?: string | Computed<string>;
 }
 
@@ -62,18 +49,14 @@ export interface AdminOrganizationCentralizationRule_Rule_Source_SourceMetricsCo
 }
 
 export interface AdminOrganizationCentralizationRule_Rule_Source {
-  /** Specifies the AWS regions (e.g., us-east-1) whose telemetry from the source accounts is included in the centralized observability rule, limiting the rule's scope to those regions. (AI-inferred) */
   regions: string[] | Computed<string[]>;
   scope?: string | Computed<string>;
   sourceLogsConfiguration?: AdminOrganizationCentralizationRule_Rule_Source_SourceLogsConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Source_SourceLogsConfiguration>;
-  /** Determines the metrics to centralize for the given source, enabling the administrator to specify whether to centralize all or a selected set of metrics as part of the observability centralization rule. (AI-inferred) */
   sourceMetricsConfiguration?: AdminOrganizationCentralizationRule_Rule_Source_SourceMetricsConfiguration | Computed<AdminOrganizationCentralizationRule_Rule_Source_SourceMetricsConfiguration>;
 }
 
 export interface AdminOrganizationCentralizationRule_Rule {
-  /** Configures the destination AWS account (and region) that serves as the central monitoring account for receiving observability data from member accounts according to this rule. (AI-inferred) */
   destination: AdminOrganizationCentralizationRule_Rule_Destination | Computed<AdminOrganizationCentralizationRule_Rule_Destination>;
-  /** Defines the source accounts or organizational units whose observability data (such as CloudWatch logs) is aggregated into the delegated administrator account by this organization centralization rule. (AI-inferred) */
   source: AdminOrganizationCentralizationRule_Rule_Source | Computed<AdminOrganizationCentralizationRule_Rule_Source>;
 }
 
@@ -187,20 +170,15 @@ const AdminOrganizationCentralizationRule_TagsFields: FieldMap = {
 };
 
 export interface AdminOrganizationCentralizationRuleConfig {
-  /** The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred) */
   rule: AdminOrganizationCentralizationRule_Rule | Computed<AdminOrganizationCentralizationRule_Rule>;
-  /** A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred) */
   ruleName: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: AdminOrganizationCentralizationRule_Tags[] | Computed<AdminOrganizationCentralizationRule_Tags[]>;
 }
 
 export interface AdminOrganizationCentralizationRuleAttrs {
-  /** The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred) */
   rule: AdminOrganizationCentralizationRule_Rule;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this centralization rule in AWS Observability Admin. (AI-inferred) */
   ruleArn: string;
-  /** A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred) */
   ruleName: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: AdminOrganizationCentralizationRule_Tags[];

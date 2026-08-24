@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ZoneEnvironment_UserParameters {
-  /** Specifies the name of a user parameter for the environment, which must match a parameter defined by the environment blueprint to configure the deployed environment. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value for a user-defined parameter (keyed by the sibling 'name') used to configure the AWS DataZone environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

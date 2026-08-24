@@ -37,7 +37,6 @@ export interface SecurityGroupEgressAttrs {
   fromPort: number;
   /** The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID. */
   groupId: string;
-  /** The unique AWS-assigned ID of the security group egress rule (e.g., 'sgr-...'), used to identify the rule after creation. (AI-inferred) */
   id: string;
   /** The IP protocol name (``tcp``, ``udp``, ``icmp``, ``icmpv6``) or number (see [Protocol Numbers](https://docs.aws.amazon.com/http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)). Use ``-1`` to specify all protocols. When authorizing security group rules, specifying ``-1`` or a protocol number other than ``tcp``, ``udp``, ``icmp``, or ``icmpv6`` allows traffic on all ports, regardless of any port range you specify. For ``tcp``, ``udp``, and ``icmp``, you must specify a port range. For ``icmpv6``, the port range is optional; if you omit the port range, traffic for all types and codes is allowed. */
   ipProtocol: string;

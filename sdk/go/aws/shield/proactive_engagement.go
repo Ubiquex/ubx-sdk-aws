@@ -4,11 +4,8 @@ package shield
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProactiveEngagement_EmergencyContactList struct {
-	// A free-form note field attached to an emergency contact, used to record additional context such as the contact's role or best time to reach them. (AI-inferred)
 	ContactNotes any
-	// The email address where AWS Shield Advanced sends proactive engagement notifications and alerts for this emergency contact. (AI-inferred)
 	EmailAddress any
-	// The phone number of the emergency contact for AWS Shield Advanced proactive engagement notifications. (AI-inferred)
 	PhoneNumber any
 }
 
@@ -26,7 +23,6 @@ type ProactiveEngagementConfig struct {
 }
 
 type ProactiveEngagementAttrs struct {
-	// The AWS account ID that the Shield Advanced proactive engagement configuration applies to; this is automatically resolved to the current account and is read-only. (AI-inferred)
 	AccountId any
 	// A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number.
 	EmergencyContactList any

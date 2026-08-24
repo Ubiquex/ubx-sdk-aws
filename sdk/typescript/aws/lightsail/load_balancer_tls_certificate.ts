@@ -29,7 +29,6 @@ export interface LoadBalancerTlsCertificateAttrs {
   isAttached: boolean;
   /** The name of your load balancer. */
   loadBalancerName: string;
-  /** The Amazon Resource Name (ARN) of the Lightsail load balancer TLS certificate, assigned by AWS when the certificate is created. (AI-inferred) */
   loadBalancerTlsCertificateArn: string;
   /** The validation status of the SSL/TLS certificate. */
   status: string;

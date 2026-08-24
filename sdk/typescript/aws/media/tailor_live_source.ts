@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TailorLiveSource_HttpPackageConfigurations {
-  /** Specifies the relative path to the HTTP media package, which MediaTailor appends to the source location's base URL to fetch the live content. (AI-inferred) */
   path?: string | Computed<string>;
-  /** Specifies the name of the source group to which this HTTP package configuration belongs, allowing MediaTailor to route playback requests to the correct source for a given package type (e.g., DASH or HLS). (AI-inferred) */
   sourceGroup?: string | Computed<string>;
-  /** Specifies the streaming format (e.g., DASH or HLS) for this HTTP package configuration. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TailorLiveSource_Tags {
-  /** Specifies the key for a tag associated with the AWS MediaTailor live source, enabling metadata-based resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined value portion of a tag key-value pair attached to the MediaTailor LiveSource, used for resource metadata, identification, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -31,9 +26,7 @@ const TailorLiveSource_TagsFields: FieldMap = {
 export interface TailorLiveSourceConfig {
   /** <p>A list of HTTP package configuration parameters for this live source.</p> */
   httpPackageConfigurations: TailorLiveSource_HttpPackageConfigurations[] | Computed<TailorLiveSource_HttpPackageConfigurations[]>;
-  /** The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred) */
   liveSourceName: string | Computed<string>;
-  /** The name of the source location that contains this live source. (AI-inferred) */
   sourceLocationName: string | Computed<string>;
   /** The tags to assign to the live source. */
   tags?: TailorLiveSource_Tags[] | Computed<TailorLiveSource_Tags[]>;
@@ -44,9 +37,7 @@ export interface TailorLiveSourceAttrs {
   arn: string;
   /** <p>A list of HTTP package configuration parameters for this live source.</p> */
   httpPackageConfigurations: TailorLiveSource_HttpPackageConfigurations[];
-  /** The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred) */
   liveSourceName: string;
-  /** The name of the source location that contains this live source. (AI-inferred) */
   sourceLocationName: string;
   /** The tags to assign to the live source. */
   tags: TailorLiveSource_Tags[];

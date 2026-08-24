@@ -4,19 +4,14 @@ package work
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesConnectionAlias_Associations struct {
-	// The AWS account ID of the account associated with this WorkSpaces connection alias, enabling cross-account redirection for WorkSpaces clients in that account. (AI-inferred)
 	AssociatedAccountId any
-	// The status of the association between the WorkSpaces connection alias and its associated directory, indicating whether the association is pending, available, or failed. (AI-inferred)
 	AssociationStatus any
-	// The unique identifier for a connection alias association, which is assigned by AWS when the connection alias is associated with a WorkSpaces directory. (AI-inferred)
 	ConnectionIdentifier any
-	// The unique identifier of the WorkSpaces directory that is associated with the connection alias to enable cross-account access. (AI-inferred)
 	ResourceId any
 }
 
 type SpacesConnectionAlias_Tags struct {
 	Key any
-	// The value of a tag assigned to the WorkSpaces connection alias. (AI-inferred)
 	Value any
 }
 
@@ -26,22 +21,15 @@ var SpacesConnectionAlias_TagsFields = ubx.FieldMap{
 	}
 
 type SpacesConnectionAliasConfig struct {
-	// The fully qualified domain name (FQDN) that serves as the custom connection string for the WorkSpaces connection alias, such as 'www.example.com', which must be a valid domain you own and that users will use to connect to their WorkSpaces. (AI-inferred)
 	ConnectionString any
-	// A list of key-value tag pairs assigned to the WorkSpaces Connection Alias to help manage, organize, and identify the alias resource. (AI-inferred)
 	Tags any
 }
 
 type SpacesConnectionAliasAttrs struct {
-	// The unique identifier assigned to the WorkSpaces connection alias when it is created. (AI-inferred)
 	AliasId any
-	// Returns the computed list of associations for this WorkSpaces connection alias, detailing the directories or resources it is linked to along with their association state and resource identifiers. (AI-inferred)
 	Associations any
-	// The current lifecycle state of the connection alias, such as CREATING, CREATED, or DELETING. (AI-inferred)
 	ConnectionAliasState any
-	// The fully qualified domain name (FQDN) that serves as the custom connection string for the WorkSpaces connection alias, such as 'www.example.com', which must be a valid domain you own and that users will use to connect to their WorkSpaces. (AI-inferred)
 	ConnectionString any
-	// A list of key-value tag pairs assigned to the WorkSpaces Connection Alias to help manage, organize, and identify the alias resource. (AI-inferred)
 	Tags any
 }
 

@@ -4,20 +4,16 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveNetwork_IpPools struct {
-	// Specifies the CIDR block address range for an IP pool in the MediaLive network, defining the subnet of IP addresses that can be used. (AI-inferred)
 	Cidr any
 }
 
 type LiveNetwork_Routes struct {
-	// The destination CIDR block (e.g., '10.0.0.0/16') for a static route in the MediaLive network, used to direct matching traffic to the associated gateway. (AI-inferred)
 	Cidr any
-	// The IPv4 gateway address (next hop) used by the MediaLive network route to reach the destination CIDR for network traffic. (AI-inferred)
 	Gateway any
 }
 
 type LiveNetwork_Tags struct {
 	Key any
-	// The value of a user-defined tag applied to the AWS MediaLive network, allowing you to attach arbitrary metadata such as environment, team, or cost center for resource organization and identification. (AI-inferred)
 	Value any
 }
 
@@ -49,7 +45,6 @@ type LiveNetworkConfig struct {
 type LiveNetworkAttrs struct {
 	// The ARN of the Network.
 	Arn any
-	// The list of unique identifiers for the AWS Elemental MediaLive clusters that are associated with this network. (AI-inferred)
 	AssociatedClusterIds any
 	// The unique ID of the Network.
 	Id any
@@ -59,7 +54,6 @@ type LiveNetworkAttrs struct {
 	Name any
 	// The routes for the network
 	Routes any
-	// The current lifecycle state of the MediaLive network, as reported by the AWS MediaLive API (for example, CREATING, CREATE_COMPLETE, UPDATE_COMPLETE, DELETE_COMPLETE). (AI-inferred)
 	State any
 	// A collection of key-value pairs.
 	Tags any

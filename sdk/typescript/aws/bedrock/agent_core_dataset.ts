@@ -20,7 +20,6 @@ export interface AgentCoreDataset_Source {
 
 export interface AgentCoreDataset_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag applied to the Amazon Bedrock Agent Core Dataset, used to help identify, organize, and manage this dataset resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

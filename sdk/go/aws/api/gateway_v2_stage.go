@@ -4,22 +4,15 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayV2Stage_AccessLogSettings struct {
-	// Specifies the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the API Gateway stage sends access logs. (AI-inferred)
 	DestinationArn any
-	// The format string used to customize the access log output for the API Gateway v2 stage, which can include API Gateway context variables such as $context.requestId and $context.identity.sourceIp. (AI-inferred)
 	Format any
 }
 
 type GatewayV2Stage_DefaultRouteSettings struct {
-	// Enables detailed tracing (full request/response data capture) for the default route of the API Gateway stage, which is used with integration logging. (AI-inferred)
 	DataTraceEnabled any
-	// When true, enables detailed CloudWatch metrics for the default route of the API Gateway v2 stage. (AI-inferred)
 	DetailedMetricsEnabled any
-	// Sets the logging level for the default route in the API Gateway v2 stage, controlling which execution logs are emitted (values such as ERROR, WARN, INFO, or OFF). (AI-inferred)
 	LoggingLevel any
-	// Sets the throttling burst limit for the default route of the API Gateway v2 stage, controlling the maximum number of requests that can be handled before throttling is applied. (AI-inferred)
 	ThrottlingBurstLimit any
-	// Sets the per-second request rate limit for the default route throttling settings of the API Gateway v2 stage, used to control the maximum number of requests per second before throttling occurs. (AI-inferred)
 	ThrottlingRateLimit any
 }
 
@@ -37,7 +30,6 @@ var GatewayV2Stage_DefaultRouteSettingsFields = ubx.FieldMap{
 	}
 
 type GatewayV2StageConfig struct {
-	// Configures access logging for the API Gateway stage, including the CloudWatch Logs destination ARN and the log format template. (AI-inferred)
 	AccessLogSettings any
 	// The API identifier.
 	ApiId any
@@ -45,7 +37,6 @@ type GatewayV2StageConfig struct {
 	AutoDeploy any
 	// The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
 	ClientCertificateId any
-	// The default route settings for the stage, including throttling, logging, and data trace settings, that apply to all routes unless a specific route overrides them. (AI-inferred)
 	DefaultRouteSettings any
 	// The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
 	DeploymentId any
@@ -62,7 +53,6 @@ type GatewayV2StageConfig struct {
 }
 
 type GatewayV2StageAttrs struct {
-	// Configures access logging for the API Gateway stage, including the CloudWatch Logs destination ARN and the log format template. (AI-inferred)
 	AccessLogSettings any
 	// The API identifier.
 	ApiId any
@@ -70,7 +60,6 @@ type GatewayV2StageAttrs struct {
 	AutoDeploy any
 	// The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
 	ClientCertificateId any
-	// The default route settings for the stage, including throttling, logging, and data trace settings, that apply to all routes unless a specific route overrides them. (AI-inferred)
 	DefaultRouteSettings any
 	// The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
 	DeploymentId any

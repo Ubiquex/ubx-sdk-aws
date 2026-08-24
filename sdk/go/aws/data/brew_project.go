@@ -11,9 +11,7 @@ type BrewProject_Sample struct {
 }
 
 type BrewProject_Tags struct {
-	// The key of an individual tag attached to an AWS Glue DataBrew project, used to organize, identify, and manage the project resource. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the DataBrew project, used to add metadata for cost allocation, access control, and resource categorization in AWS. (AI-inferred)
 	Value any
 }
 
@@ -36,9 +34,7 @@ type BrewProjectConfig struct {
 	RecipeName any
 	// Role arn
 	RoleArn any
-	// Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred)
 	Sample any
-	// Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred)
 	Tags any
 }
 
@@ -51,9 +47,7 @@ type BrewProjectAttrs struct {
 	RecipeName any
 	// Role arn
 	RoleArn any
-	// Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred)
 	Sample any
-	// Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred)
 	Tags any
 }
 

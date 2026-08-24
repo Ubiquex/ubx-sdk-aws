@@ -15,9 +15,7 @@ class TransitGatewayPeeringAttachment_Status:
 
 @dataclasses.dataclass
 class TransitGatewayPeeringAttachment_Tags:
-    # The key of a tag to attach to the transit gateway peering attachment. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the transit gateway peering attachment, used to identify or organize the resource. (AI-inferred)
     value: Any = None
 
 _TransitGatewayPeeringAttachment_TagsFields = {
@@ -50,7 +48,6 @@ class TransitGatewayPeeringAttachmentAttrs:
     peer_transit_gateway_id: Any = None
     # The state of the transit gateway peering attachment. Note that the initiating state has been deprecated.
     state: Any = None
-    # The current status of the transit gateway peering attachment, reported as an object containing a code (e.g., available or deleted) and a message describing the state in more detail. (AI-inferred)
     status: Any = None
     # The tags for the transit gateway peering attachment.
     tags: Any = None

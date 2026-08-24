@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TCustomMetric_Tags {
-  /** Represents the key of a tag attached to an AWS IoT Custom Metric, enabling metadata-based identification and management of the metric. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

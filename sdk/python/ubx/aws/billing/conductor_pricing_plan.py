@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConductorPricingPlan_Tags:
-    # The key portion of a user-defined tag assigned to the AWS Billing Conductor pricing plan, used to identify and categorize the plan within the resource's tag set. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag key-value pair attached to the AWS Billing Conductor pricing plan, used to organize, track, or control access to the plan. (AI-inferred)
     value: Any = None
 
 _ConductorPricingPlan_TagsFields = {
@@ -21,9 +19,7 @@ _ConductorPricingPlan_TagsFields = {
 @dataclasses.dataclass
 class ConductorPricingPlanConfig:
     description: Any = None
-    # The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
     name: Any = None
-    # The ARNs of the pricing rules to associate with this pricing plan. (AI-inferred)
     pricing_rule_arns: Any = None
     tags: Any = None
 
@@ -36,9 +32,7 @@ class ConductorPricingPlanAttrs:
     description: Any = None
     # Latest modified timestamp in UNIX epoch time format
     last_modified_time: Any = None
-    # The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
     name: Any = None
-    # The ARNs of the pricing rules to associate with this pricing plan. (AI-inferred)
     pricing_rule_arns: Any = None
     # Number of associated pricing rules
     size: Any = None

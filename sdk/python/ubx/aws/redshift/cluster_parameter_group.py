@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterParameterGroup_Parameters:
-    # The name of a Redshift parameter (e.g., max_connections_per_session) whose value is configured by the sibling parameter_value in the parameter group. (AI-inferred)
     parameter_name: Any = None
-    # The value assigned to a specific parameter within the Redshift cluster parameter group, corresponding to the parameter_name key. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
 class ClusterParameterGroup_Tags:
-    # Specifies the key of a tag to attach to the Redshift cluster parameter group, enabling metadata-based identification and management of the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

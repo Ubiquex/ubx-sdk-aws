@@ -2,21 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration {
-  /** The name of the S3 bucket that contains the source network configuration data used by the MGN network migration definition when the source type is S3. (AI-inferred) */
   s3Bucket?: string | Computed<string>;
-  /** Specifies the AWS account ID of the owner of the S3 bucket referenced in the source configuration, enabling MGN to access buckets across accounts for network migration data. (AI-inferred) */
   s3BucketOwner?: string | Computed<string>;
   s3Key?: string | Computed<string>;
 }
 
 export interface NetworkMigrationDefinition_SourceConfigurations {
-  /** Specifies the environment of the source network (typically 'ON_PREMISES' or 'AWS') for each source configuration in the network migration definition. (AI-inferred) */
   sourceEnvironment?: string | Computed<string>;
   sourceS3Configuration?: NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration | Computed<NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration>;
 }
 
 export interface NetworkMigrationDefinition_Tags {
-  /** The key portion of a tag attached to the network migration definition, used to label the resource for filtering, cost tracking, and operational management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

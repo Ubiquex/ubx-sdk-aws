@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerAccount_ExpiryEventsConfiguration {
-  /** Specifies the number of days before certificate expiration when ACM begins emitting expiry-related events, allowing you to adjust the notification lead time. (AI-inferred) */
   daysBeforeExpiry?: number | Computed<number>;
 }
 
@@ -11,14 +10,11 @@ const ManagerAccount_ExpiryEventsConfigurationFields: FieldMap = {
 };
 
 export interface ManagerAccountConfig {
-  /** Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred) */
   expiryEventsConfiguration: ManagerAccount_ExpiryEventsConfiguration | Computed<ManagerAccount_ExpiryEventsConfiguration>;
 }
 
 export interface ManagerAccountAttrs {
-  /** The AWS account ID that owns this ACM account-level configuration, automatically derived from the account in which the resource is deployed. (AI-inferred) */
   accountId: string;
-  /** Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred) */
   expiryEventsConfiguration: ManagerAccount_ExpiryEventsConfiguration;
 }
 

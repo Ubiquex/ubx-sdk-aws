@@ -30,7 +30,6 @@ type RunnerVpcIngressConnectionConfig struct {
 	IngressVpcConfiguration any
 	// The Amazon Resource Name (ARN) of the service.
 	ServiceArn any
-	// Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred)
 	Tags any
 	// The customer-provided Vpc Ingress Connection name.
 	VpcIngressConnectionName any
@@ -45,7 +44,6 @@ type RunnerVpcIngressConnectionAttrs struct {
 	ServiceArn any
 	// The current status of the VpcIngressConnection.
 	Status any
-	// Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred)
 	Tags any
 	// The Amazon Resource Name (ARN) of the VpcIngressConnection.
 	VpcIngressConnectionArn any

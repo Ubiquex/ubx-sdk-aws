@@ -4,14 +4,11 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterParameterGroup_Parameters struct {
-	// The name of a Redshift parameter (e.g., max_connections_per_session) whose value is configured by the sibling parameter_value in the parameter group. (AI-inferred)
 	ParameterName any
-	// The value assigned to a specific parameter within the Redshift cluster parameter group, corresponding to the parameter_name key. (AI-inferred)
 	ParameterValue any
 }
 
 type ClusterParameterGroup_Tags struct {
-	// Specifies the key of a tag to attach to the Redshift cluster parameter group, enabling metadata-based identification and management of the resource. (AI-inferred)
 	Key any
 	Value any
 }

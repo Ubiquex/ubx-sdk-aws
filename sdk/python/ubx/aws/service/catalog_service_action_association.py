@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogServiceActionAssociationConfig:
-    # The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred)
     product_id: Any = None
-    # The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred)
     provisioning_artifact_id: Any = None
-    # The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred)
     service_action_id: Any = None
 
 @dataclasses.dataclass
 class CatalogServiceActionAssociationAttrs:
-    # The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred)
     product_id: Any = None
-    # The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred)
     provisioning_artifact_id: Any = None
-    # The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred)
     service_action_id: Any = None
 
 CatalogServiceActionAssociation = ubx.ResourceBinding(

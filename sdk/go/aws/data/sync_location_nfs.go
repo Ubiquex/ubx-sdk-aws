@@ -15,7 +15,6 @@ type SyncLocationNfs_OnPremConfig struct {
 
 type SyncLocationNfs_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to this AWS DataSync location for NFS, used for metadata, identification, and cost allocation. (AI-inferred)
 	Value any
 }
 

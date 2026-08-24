@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserHierarchyGroup_Tags {
-  /** The key of a tag attached to the Amazon Connect user hierarchy group, forming the key portion of a key-value pair that helps categorize, organize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag (key-value pair) attached to the Amazon Connect user hierarchy group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

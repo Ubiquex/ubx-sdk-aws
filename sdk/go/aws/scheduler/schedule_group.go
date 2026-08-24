@@ -4,9 +4,7 @@ package scheduler
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduleGroup_Tags struct {
-	// The key portion of a tag attached to an AWS EventBridge Scheduler schedule group, used to identify and organize the resource. (AI-inferred)
 	Key any
-	// The value component of a tag attached to the AWS EventBridge Scheduler schedule group, used to define metadata for the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,7 +14,6 @@ var ScheduleGroup_TagsFields = ubx.FieldMap{
 	}
 
 type ScheduleGroupConfig struct {
-	// The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
 	// The list of tags to associate with the schedule group.
 	Tags any
@@ -29,7 +26,6 @@ type ScheduleGroupAttrs struct {
 	CreationDate any
 	// The time at which the schedule group was last modified.
 	LastModificationDate any
-	// The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
 	// Specifies the state of the schedule group.
 	State any

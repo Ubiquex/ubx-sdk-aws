@@ -15,7 +15,6 @@ type GatewayV2DeploymentConfig struct {
 type GatewayV2DeploymentAttrs struct {
 	// The API identifier.
 	ApiId any
-	// The unique identifier assigned by AWS to this API Gateway v2 deployment. (AI-inferred)
 	DeploymentId any
 	// The description for the deployment resource.
 	Description any

@@ -4,7 +4,6 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigApplication_Tags struct {
-	// The tag key of a key-value pair attached to the AWS AppConfig application, used for metadata, cost tracking, and IAM-based access control. (AI-inferred)
 	Key any
 	Value any
 }

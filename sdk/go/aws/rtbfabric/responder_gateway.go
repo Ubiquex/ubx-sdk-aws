@@ -30,12 +30,10 @@ var ResponderGateway_TrustStoreConfigurationFields = ubx.FieldMap{
 	}
 
 type ResponderGatewayConfig struct {
-	// The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
 	AcmCertificateArn any
 	Description any
 	DomainName any
 	GatewayType any
-	// Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
 	ListenerConfig any
 	ManagedEndpointConfiguration any
 	Port any
@@ -46,13 +44,11 @@ type ResponderGatewayConfig struct {
 	SubnetIds any
 	// Tags to assign to the Responder Gateway.
 	Tags any
-	// Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
 	TrustStoreConfiguration any
 	VpcId any
 }
 
 type ResponderGatewayAttrs struct {
-	// The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
 	AcmCertificateArn any
 	Arn any
 	CertificateAssociationStatus any
@@ -62,7 +58,6 @@ type ResponderGatewayAttrs struct {
 	ExternalInboundEndpoint any
 	GatewayId any
 	GatewayType any
-	// Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
 	ListenerConfig any
 	ManagedEndpointConfiguration any
 	Port any
@@ -74,7 +69,6 @@ type ResponderGatewayAttrs struct {
 	SubnetIds any
 	// Tags to assign to the Responder Gateway.
 	Tags any
-	// Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
 	TrustStoreConfiguration any
 	UpdatedTimestamp any
 	VpcId any

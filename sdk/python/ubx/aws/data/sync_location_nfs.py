@@ -19,7 +19,6 @@ class SyncLocationNfs_OnPremConfig:
 @dataclasses.dataclass
 class SyncLocationNfs_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to this AWS DataSync location for NFS, used for metadata, identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _SyncLocationNfs_MountOptionsFields = {

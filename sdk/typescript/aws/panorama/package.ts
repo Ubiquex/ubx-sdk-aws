@@ -15,9 +15,7 @@ export interface Package_StorageLocation {
 }
 
 export interface Package_Tags {
-  /** Specifies the key of a tag to attach to the AWS Panorama package for resource identification and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag that can be attached to the Panorama package, used for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,24 +25,17 @@ const Package_TagsFields: FieldMap = {
 };
 
 export interface PackageConfig {
-  /** The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred) */
   packageName: string | Computed<string>;
-  /** A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: Package_Tags[] | Computed<Package_Tags[]>;
 }
 
 export interface PackageAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Panorama package. (AI-inferred) */
   arn: string;
-  /** The Unix timestamp automatically assigned by AWS when the Package was created, indicating the creation time of the Panorama package. (AI-inferred) */
   createdTime: number;
-  /** The unique identifier of the AWS Panorama package, assigned by AWS when the package is created. (AI-inferred) */
   packageId: string;
-  /** The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred) */
   packageName: string;
   /** A storage location. */
   storageLocation: Package_StorageLocation;
-  /** A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred) */
   tags: Package_Tags[];
 }
 

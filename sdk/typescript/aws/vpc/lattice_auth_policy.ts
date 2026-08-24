@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeAuthPolicyConfig {
-  /** The JSON policy document that defines the authentication and authorization rules for the associated VPC Lattice service or service network, specifying allowed principals, actions, and conditions. (AI-inferred) */
   policy: unknown | Computed<unknown>;
-  /** The resource identifier specifies the ID or ARN of the VPC Lattice service or service network that this auth policy is associated with. (AI-inferred) */
   resourceIdentifier: string | Computed<string>;
 }
 
 export interface LatticeAuthPolicyAttrs {
-  /** The JSON policy document that defines the authentication and authorization rules for the associated VPC Lattice service or service network, specifying allowed principals, actions, and conditions. (AI-inferred) */
   policy: unknown;
-  /** The resource identifier specifies the ID or ARN of the VPC Lattice service or service network that this auth policy is associated with. (AI-inferred) */
   resourceIdentifier: string;
-  /** Returns the current state of the VPC Lattice auth policy, indicating whether the policy is active or inactive. (AI-inferred) */
   state: string;
 }
 

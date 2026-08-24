@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfiguration:
-    # When true, prevents the target tracking scaling policy from reducing (scaling in) the table's read capacity. (AI-inferred)
     disable_scale_in: Any = None
-    # The amount of time in seconds after a scale-in activity completes before another scale-in can begin for the read capacity of the Cassandra table's auto scaling target tracking policy. (AI-inferred)
     scale_in_cooldown: Any = None
-    # The amount of time, in seconds, after a scale-out (increase) activity completes before another scale-out activity can start, used in the target tracking scaling policy for read capacity auto scaling of an Amazon Keyspaces (Cassandra) table. (AI-inferred)
     scale_out_cooldown: Any = None
-    # The target value, expressed as a percentage, for read capacity utilization that the auto scaling policy maintains. (AI-inferred)
     target_value: Any = None
 
 @dataclasses.dataclass
@@ -24,11 +20,8 @@ class Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy:
 
 @dataclasses.dataclass
 class Table_AutoScalingSpecifications_ReadCapacityAutoScaling:
-    # When true, disables auto scaling for the table's read capacity, reverting to the fixed read capacity units configured on the table. (AI-inferred)
     auto_scaling_disabled: Any = None
-    # The maximum number of read capacity units (RCUs) that the table's read capacity can scale up to when auto scaling is enabled. (AI-inferred)
     maximum_units: Any = None
-    # Sets the minimum number of read capacity units for the table's read capacity auto scaling policy in Amazon Keyspaces. (AI-inferred)
     minimum_units: Any = None
     # Represents scaling policy.
     scaling_policy: Any = None
@@ -42,9 +35,7 @@ class Table_AutoScalingSpecifications:
 
 @dataclasses.dataclass
 class Table_BillingMode_ProvisionedThroughput:
-    # The number of read capacity units to provision for the Cassandra table when billing mode is set to provisioned. (AI-inferred)
     read_capacity_units: Any = None
-    # Specifies the number of write capacity units (writes per second) that this Cassandra table can sustain when using provisioned billing mode. (AI-inferred)
     write_capacity_units: Any = None
 
 @dataclasses.dataclass
@@ -70,16 +61,12 @@ class Table_CdcSpecification:
 
 @dataclasses.dataclass
 class Table_ClusteringKeyColumns_Column:
-    # The name of the clustering key column that defines the sort order of rows within each partition of the Cassandra table. (AI-inferred)
     column_name: Any = None
-    # The Cassandra data type of the clustering key column (e.g., 'text', 'int', 'uuid'). (AI-inferred)
     column_type: Any = None
 
 @dataclasses.dataclass
 class Table_ClusteringKeyColumns:
-    # Specifies the name and type of a single column that is used as the clustering key, determining the sort order of rows within a partition in the Cassandra table. (AI-inferred)
     column: Any = None
-    # Specifies the sort order (ASC or DESC) for this clustering key column, determining how rows are stored and queried in the Cassandra table. (AI-inferred)
     order_by: Any = None
 
 @dataclasses.dataclass
@@ -91,18 +78,13 @@ class Table_EncryptionSpecification:
 
 @dataclasses.dataclass
 class Table_ReplicaSpecifications:
-    # Configures the auto scaling settings for read capacity of an Amazon Keyspaces (for Apache Cassandra) table replica, including enablement, minimum and maximum capacity units, and target utilization. (AI-inferred)
     read_capacity_auto_scaling: Any = None
-    # The number of read capacity units provisioned for this specific replica of the Cassandra table in its designated AWS region. (AI-inferred)
     read_capacity_units: Any = None
-    # Specifies the AWS Region where the Cassandra table replica is created, enabling multi-Region replication. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class Table_WarmThroughput:
-    # Number of warm read capacity units per second for the table's warm throughput configuration. (AI-inferred)
     read_units_per_second: Any = None
-    # The number of write capacity units per second allocated for throughput on warm data stored in the Amazon Keyspaces table. (AI-inferred)
     write_units_per_second: Any = None
 
 _Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfigurationFields = {
@@ -211,7 +193,6 @@ _Table_WarmThroughputFields = {
 class TableConfig:
     # Represents the read and write settings used for AutoScaling.
     auto_scaling_specifications: Any = None
-    # Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred)
     billing_mode: Any = None
     # Represents the CDC configuration for the table
     cdc_specification: Any = None
@@ -231,7 +212,6 @@ class TableConfig:
     point_in_time_recovery_enabled: Any = None
     # Non-key columns of the table
     regular_columns: Any = None
-    # Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred)
     replica_specifications: Any = None
     # Name for Cassandra table
     table_name: Any = None
@@ -244,7 +224,6 @@ class TableConfig:
 class TableAttrs:
     # Represents the read and write settings used for AutoScaling.
     auto_scaling_specifications: Any = None
-    # Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred)
     billing_mode: Any = None
     # Represents the CDC configuration for the table
     cdc_specification: Any = None
@@ -264,7 +243,6 @@ class TableAttrs:
     point_in_time_recovery_enabled: Any = None
     # Non-key columns of the table
     regular_columns: Any = None
-    # Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred)
     replica_specifications: Any = None
     # Name for Cassandra table
     table_name: Any = None

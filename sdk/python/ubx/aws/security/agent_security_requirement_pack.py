@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentSecurityRequirementPack_SecurityRequirements:
-    # Provides a human-readable description of the security requirement, explaining the specific security control or configuration the requirement addresses. (AI-inferred)
     description: Any = None
     domain: Any = None
     evaluation: Any = None

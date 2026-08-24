@@ -18,9 +18,7 @@ type Worker_HostProperties struct {
 }
 
 type Worker_Tags struct {
-	// The key for a tag to assign to the AWS Deadline Worker resource, allowing you to categorize and manage workers in AWS Deadline Cloud. (AI-inferred)
 	Key any
-	// The value portion of a tag applied to an AWS Deadline Worker, used to attach custom metadata such as environment or project labels to the worker resource. (AI-inferred)
 	Value any
 }
 

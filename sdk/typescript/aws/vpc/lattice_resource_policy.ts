@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeResourcePolicyConfig {
-  /** The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred) */
   policy: unknown | Computed<unknown>;
-  /** The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred) */
   resourceArn: string | Computed<string>;
 }
 
 export interface LatticeResourcePolicyAttrs {
-  /** The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred) */
   policy: unknown;
-  /** The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred) */
   resourceArn: string;
 }
 

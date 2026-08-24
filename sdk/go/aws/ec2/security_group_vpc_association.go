@@ -13,7 +13,6 @@ type SecurityGroupVpcAssociationConfig struct {
 type SecurityGroupVpcAssociationAttrs struct {
 	// The group ID of the specified security group.
 	GroupId any
-	// The current state of the security group's association with the VPC, which can be one of 'associating', 'associated', 'association-failed', 'disassociating', or 'disassociated'. (AI-inferred)
 	State any
 	// The reason for the state of the security group vpc association.
 	StateReason any

@@ -4,9 +4,7 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VirtualMfadevice_Tags struct {
-	// The tag key for a virtual MFA device in IAM, which identifies a tag applied to the device for organizational or access-control purposes. (AI-inferred)
 	Key any
-	// The value of a tag attached to the IAM virtual MFA device, used as an arbitrary metadata label for organizing, identifying, or managing the device. (AI-inferred)
 	Value any
 }
 
@@ -16,26 +14,17 @@ var VirtualMfadevice_TagsFields = ubx.FieldMap{
 	}
 
 type VirtualMfadeviceConfig struct {
-	// The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred)
 	Path any
-	// Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred)
 	Tags any
-	// Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred)
 	Users any
-	// Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred)
 	VirtualMfaDeviceName any
 }
 
 type VirtualMfadeviceAttrs struct {
-	// The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred)
 	Path any
-	// The ARN (Amazon Resource Name) of the virtual MFA device, which serves as its unique serial number. (AI-inferred)
 	SerialNumber any
-	// Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred)
 	Tags any
-	// Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred)
 	Users any
-	// Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred)
 	VirtualMfaDeviceName any
 }
 

@@ -32,9 +32,7 @@ export interface CacheServerlessCache_Endpoint {
 }
 
 export interface CacheServerlessCache_Tags {
-  /** Specifies the key of a user-defined tag to attach to the ElastiCache Serverless Cache. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined string value for a tag attached to the ElastiCache Serverless Cache, which pairs with a tag key to provide custom metadata for resource organization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

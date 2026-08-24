@@ -15,7 +15,6 @@ class Group_InsightsConfiguration:
 
 @dataclasses.dataclass
 class Group_Tags:
-    # Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -35,7 +34,6 @@ class GroupConfig:
     filter_expression: Any = None
     # The case-sensitive name of the new group. Names must be unique.
     group_name: Any = None
-    # Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
     insights_configuration: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -48,7 +46,6 @@ class GroupAttrs:
     group_arn: Any = None
     # The case-sensitive name of the new group. Names must be unique.
     group_name: Any = None
-    # Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
     insights_configuration: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

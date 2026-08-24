@@ -26,7 +26,6 @@ class AgentCoreDataset_Source:
 @dataclasses.dataclass
 class AgentCoreDataset_Tags:
     key: Any = None
-    # The value of a user-defined tag applied to the Amazon Bedrock Agent Core Dataset, used to help identify, organize, and manage this dataset resource. (AI-inferred)
     value: Any = None
 
 _AgentCoreDataset_Source_InlineExamplesFields = {

@@ -7,9 +7,7 @@ export interface GlobalCluster_GlobalEndpoint {
 }
 
 export interface GlobalCluster_Tags {
-  /** The key of a tag attached to the RDS Global Cluster, used to organize and identify the cluster. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the RDS Global Cluster, used to store custom metadata such as environment, owner, or cost center for the cluster. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -48,7 +46,6 @@ export interface GlobalClusterAttrs {
   engineVersion: string;
   /** The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string. */
   globalClusterIdentifier: string;
-  /** The global endpoint of the RDS global cluster, containing the address and port used to connect to the primary (writer) instance for read/write operations. (AI-inferred) */
   globalEndpoint: GlobalCluster_GlobalEndpoint;
   /** The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string. */
   sourceDbclusterIdentifier: unknown;

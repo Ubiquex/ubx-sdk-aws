@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectFlowVpcInterface_Tags:
-    # The key of a tag attached to the AWS Elemental MediaConnect flow VPC interface, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the MediaConnect flow VPC interface, used for resource metadata and categorization. (AI-inferred)
     value: Any = None
 
 _ConnectFlowVpcInterface_TagsFields = {

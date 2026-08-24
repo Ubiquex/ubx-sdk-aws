@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecordingConfiguration_DestinationConfiguration_S3:
-    # The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred)
     bucket_name: Any = None
 
 @dataclasses.dataclass
@@ -26,7 +25,6 @@ class RecordingConfiguration_RenditionConfiguration:
 @dataclasses.dataclass
 class RecordingConfiguration_Tags:
     key: Any = None
-    # The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

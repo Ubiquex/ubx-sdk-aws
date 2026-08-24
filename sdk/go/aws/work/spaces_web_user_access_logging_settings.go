@@ -16,18 +16,14 @@ var SpacesWebUserAccessLoggingSettings_TagsFields = ubx.FieldMap{
 type SpacesWebUserAccessLoggingSettingsConfig struct {
 	// Kinesis stream ARN to which log events are published.
 	KinesisStreamArn any
-	// A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred)
 	Tags any
 }
 
 type SpacesWebUserAccessLoggingSettingsAttrs struct {
-	// The ARNs of the WorkSpaces Web portals that are associated with this user access logging settings resource. (AI-inferred)
 	AssociatedPortalArns any
 	// Kinesis stream ARN to which log events are published.
 	KinesisStreamArn any
-	// A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred)
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies this user access logging settings resource, used as a reference for attaching the settings to a WorkSpaces Web portal. (AI-inferred)
 	UserAccessLoggingSettingsArn any
 }
 

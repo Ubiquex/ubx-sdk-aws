@@ -25,7 +25,6 @@ export interface ParameterConfig {
 export interface ParameterAttrs {
   /** A regular expression used to validate the parameter value. For example, for ``String`` types with values restricted to numbers, you can specify the following: ``AllowedPattern=^\d+$`` */
   allowedPattern: string;
-  /** The Amazon Resource Name (ARN) assigned to the parameter, which uniquely identifies it within AWS. (AI-inferred) */
   arn: string;
   /** The data type of the parameter, such as ``text`` or ``aws:ec2:image``. The default is ``text``. */
   dataType: string;

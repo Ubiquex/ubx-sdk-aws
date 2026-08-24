@@ -35,7 +35,6 @@ export interface LiveCloudWatchAlarmTemplateAttrs {
   arn: string;
   /** The comparison operator used to compare the specified statistic and the threshold. */
   comparisonOperator: string;
-  /** The date and time when the CloudWatch alarm template was created, returned as a string. (AI-inferred) */
   createdAt: string;
   /** The number of datapoints within the evaluation period that must be breaching to trigger the alarm. */
   datapointsToAlarm: number;
@@ -49,11 +48,9 @@ export interface LiveCloudWatchAlarmTemplateAttrs {
   groupIdentifier: string;
   /** A cloudwatch alarm template's id. AWS provided templates have ids that start with `aws-` */
   id: string;
-  /** The unique identifier (ID) automatically assigned by MediaLive to this CloudWatch alarm template, used to reference the template in AWS APIs and other resources. (AI-inferred) */
   identifier: string;
   /** The name of the metric associated with the alarm. Must be compatible with targetResourceType. */
   metricName: string;
-  /** The timestamp indicating when the CloudWatch alarm template was last modified. (AI-inferred) */
   modifiedAt: string;
   /** A resource's name. Names must be unique within the scope of a resource type in a specific region. */
   name: string;

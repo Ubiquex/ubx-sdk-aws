@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightFlow_Permissions {
   actions?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the IAM principal (user, group, or role) to which the permissions apply, used to grant or restrict access to the QuickSight resource. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 

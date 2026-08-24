@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_Tags:
-    # The key (name) of a user-defined tag applied to the placement group, used to categorize and identify the resource in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

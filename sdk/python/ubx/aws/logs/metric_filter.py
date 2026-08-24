@@ -8,24 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MetricFilter_MetricTransformations_Dimensions:
-    # The name/key of a dimension that is attached to the metric emitted by this CloudWatch Logs metric filter, used to segment the metric data. (AI-inferred)
     key: Any = None
-    # The value of the dimension, which can be a literal string or a JSON path expression (e.g., $.eventType) used to extract a value from the log event and attach it as a dimension to the metric. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MetricFilter_MetricTransformations:
-    # Specifies the default value to assign to the CloudWatch metric when a log event matches the filter pattern but no metric value can be extracted from the log data. (AI-inferred)
     default_value: Any = None
-    # Specifies the dimensions for the metric filter, where each dimension object contains a Key and Value that define a dimension on which to group the metric data. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric that the metric filter publishes matching log events to. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace under which the extracted metric is published by this metric filter transformation. (AI-inferred)
     metric_namespace: Any = None
-    # The value to publish for the metric, which can be a literal number or a JSON expression (like '$.field') evaluated from the matched log event and sent to CloudWatch Metrics. (AI-inferred)
     metric_value: Any = None
-    # The unit of measure for the metric value (e.g., Seconds, Bytes, Count) that CloudWatch uses to interpret and display the metric's data, aligning with standard AWS unit enums. (AI-inferred)
     unit: Any = None
 
 _MetricFilter_MetricTransformations_DimensionsFields = {

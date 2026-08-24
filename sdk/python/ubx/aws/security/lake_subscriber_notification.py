@@ -45,14 +45,12 @@ _LakeSubscriberNotification_NotificationConfigurationFields = {
 
 @dataclasses.dataclass
 class LakeSubscriberNotificationConfig:
-    # Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred)
     notification_configuration: Any = None
     # The ARN for the subscriber
     subscriber_arn: Any = None
 
 @dataclasses.dataclass
 class LakeSubscriberNotificationAttrs:
-    # Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred)
     notification_configuration: Any = None
     # The ARN for the subscriber
     subscriber_arn: Any = None

@@ -4,82 +4,51 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpnconnection_Tags struct {
-	// The tag key (name) for a tag attached to an AWS Site-to-Site VPN connection, used to label and categorize the resource. (AI-inferred)
 	Key any
-	// The value part of a user-defined tag attached to the AWS VPN connection, used to store arbitrary metadata for organizational, filtering, or cost-allocation purposes. (AI-inferred)
 	Value any
 }
 
 type Vpnconnection_VpnTunnelOptionsSpecifications_Ikeversions struct {
-	// Specifies the Internet Key Exchange (IKE) version (ikev1 or ikev2) to use for this VPN tunnel option. (AI-inferred)
 	Value any
 }
 
 type Vpnconnection_VpnTunnelOptionsSpecifications_LogOptions_CloudwatchLogOptions struct {
-	// Whether to enable CloudWatch logging of Border Gateway Protocol (BGP) messages for this VPN tunnel, as part of its CloudWatch log options. (AI-inferred)
 	BgpLogEnabled any
-	// The ARN of the CloudWatch log group that receives Border Gateway Protocol (BGP) logs for this VPN tunnel, enabling BGP event logging in the tunnel's CloudWatch log options. (AI-inferred)
 	BgpLogGroupArn any
-	// Specifies the output format (text or json) for BGP logs delivered to CloudWatch Logs for the VPN tunnel. (AI-inferred)
 	BgpLogOutputFormat any
-	// A boolean that, when true, enables exporting the VPN tunnel's IPsec logs to Amazon CloudWatch Logs for this tunnel option. (AI-inferred)
 	LogEnabled any
-	// The ARN of the CloudWatch log group where logs from the VPN tunnel are delivered when tunnel logging is enabled. (AI-inferred)
 	LogGroupArn any
-	// Specifies the format (json or text) used for VPN tunnel logs delivered to CloudWatch Logs. (AI-inferred)
 	LogOutputFormat any
 }
 
 type Vpnconnection_VpnTunnelOptionsSpecifications_LogOptions struct {
-	// Configures CloudWatch logging for the VPN tunnel, including whether logging is enabled, the destination CloudWatch log group ARN, and the log output format. (AI-inferred)
 	CloudwatchLogOptions any
 }
 
 type Vpnconnection_VpnTunnelOptionsSpecifications_Phase1DhgroupNumbers struct {
-	// Specifies one Diffie-Hellman group number allowed for Phase 1 IKE negotiation on this VPN tunnel, with valid values typically including 2, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, and 24. (AI-inferred)
 	Value any
 }
 
 type Vpnconnection_VpnTunnelOptionsSpecifications struct {
-	// Specifies the action to take after a Dead Peer Detection (DPD) timeout occurs, such as clearing the tunnel, for the VPN connection's tunnel options. (AI-inferred)
 	DpdtimeoutAction any
-	// The DPD timeout in seconds after which a dead peer detection (DPD) timeout occurs for the VPN tunnel, controlling how long the connection waits for a response before considering the peer dead. (AI-inferred)
 	DpdtimeoutSeconds any
-	// When enabled, allows AWS to automatically apply tunnel lifecycle management (such as maintenance and necessary updates) to this VPN tunnel without requiring manual intervention. (AI-inferred)
 	EnableTunnelLifecycleControl any
-	// A list of IKE version configurations that define which Internet Key Exchange versions are allowed for the VPN tunnel, each specifying a Value property indicating the version (e.g., 1 for IKEv1 or 2 for IKEv2). (AI-inferred)
 	Ikeversions any
-	// Configures CloudWatch logging for this VPN tunnel, including enabling log delivery, specifying the CloudWatch log group ARN, and setting the log output format (json or text). (AI-inferred)
 	LogOptions any
-	// Specifies the Diffie-Hellman group numbers permitted for phase 1 IKE negotiation for this VPN tunnel. (AI-inferred)
 	Phase1DhgroupNumbers any
-	// Specifies the encryption algorithms permitted for IKE phase 1 negotiations of the VPN tunnel (e.g., AES-256, AES-128). (AI-inferred)
 	Phase1EncryptionAlgorithms any
-	// Specifies the IKE phase 1 integrity algorithms (such as SHA-1 or SHA-256) used for authentication and integrity validation during VPN tunnel negotiation. (AI-inferred)
 	Phase1IntegrityAlgorithms any
-	// The lifetime of the IKE phase 1 security association in seconds, which controls how often the phase 1 tunnel is renegotiated for a VPN tunnel option. (AI-inferred)
 	Phase1LifetimeSeconds any
-	// Specifies the Diffie-Hellman (DH) group numbers used for the Phase 2 (Quick Mode) negotiation of the VPN tunnel, enabling you to control which DH groups are offered for the second phase of key exchange. (AI-inferred)
 	Phase2DhgroupNumbers any
-	// Defines the allowed encryption algorithms for the IPsec (Phase 2) tunnel, such as AES-128-CBC, which are used to encrypt data traffic over the VPN connection. (AI-inferred)
 	Phase2EncryptionAlgorithms any
-	// Specifies the integrity algorithms permitted for IKE Phase 2 negotiation on the VPN tunnel, controlling which authentication hashes (e.g., SHA1, SHA2_256) are accepted for IPsec security associations. (AI-inferred)
 	Phase2IntegrityAlgorithms any
-	// Specifies the lifetime for phase 2 of the IKE negotiation, in seconds, for the VPN tunnel. (AI-inferred)
 	Phase2LifetimeSeconds any
-	// Specifies the pre-shared key (PSK) for the VPN tunnel, used to authenticate the IPsec connection, which must be 8-64 characters and cannot begin with zero if provided, or AWS generates one automatically if omitted. (AI-inferred)
 	PreSharedKey any
-	// Specifies the percentage of the rekey window (determined by RekeyMarginTime) during which the rekey time is randomly selected for the VPN tunnel. (AI-inferred)
 	RekeyFuzzPercentage any
-	// The margin time in seconds before the phase 2 tunnel rekey deadline at which the VPN rekeys the tunnel, helping ensure the new tunnel is established before the old one expires. (AI-inferred)
 	RekeyMarginTimeSeconds any
-	// Configures the IPsec anti-replay window size, in packets, for the VPN tunnel (allowed values: 64, 128, 256, 512, 1024, 2048, 4096). (AI-inferred)
 	ReplayWindowSize any
-	// Specifies whether the VPN tunnel should be added (created) or removed (deleted) when the tunnel options are applied, with allowed values 'add' or 'remove'. (AI-inferred)
 	StartupAction any
-	// The CIDR block for the inside IP addresses of the VPN tunnel, typically a /30 from the 169.254.0.0/16 range. (AI-inferred)
 	TunnelInsideCidr any
-	// Specifies the IPv6 CIDR block (a /126 from the fd00::/8 range) used for the VPN tunnel's inside IPv6 addresses, enabling IPv6 communication over the tunnel. (AI-inferred)
 	TunnelInsideIpv6Cidr any
 }
 
@@ -240,7 +209,6 @@ type VpnconnectionAttrs struct {
 	Type any
 	// The ID of the VPN concentrator to associate with the VPN connection.
 	VpnConcentratorId any
-	// The unique identifier assigned by AWS to the VPN connection when it is created. (AI-inferred)
 	VpnConnectionId any
 	// The ID of the virtual private gateway at the AWS side of the VPN connection. You must specify either ``TransitGatewayId`` or ``VpnGatewayId``, but not both.
 	VpnGatewayId any

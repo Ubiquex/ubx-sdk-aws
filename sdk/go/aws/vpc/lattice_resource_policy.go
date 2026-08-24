@@ -4,16 +4,12 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeResourcePolicyConfig struct {
-	// The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred)
 	Policy any
-	// The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred)
 	ResourceArn any
 }
 
 type LatticeResourcePolicyAttrs struct {
-	// The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred)
 	Policy any
-	// The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred)
 	ResourceArn any
 }
 

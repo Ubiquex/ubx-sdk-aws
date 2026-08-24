@@ -2,17 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WebAclassociationConfig {
-  /** The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred) */
   resourceArn: string | Computed<string>;
-  /** The unique identifier of the AWS WAF Regional Web ACL that is associated with the specified resource, such as an Application Load Balancer or Amazon API Gateway stage. (AI-inferred) */
   webAclid: string | Computed<string>;
 }
 
 export interface WebAclassociationAttrs {
   id: string;
-  /** The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred) */
   resourceArn: string;
-  /** The unique identifier of the AWS WAF Regional Web ACL that is associated with the specified resource, such as an Application Load Balancer or Amazon API Gateway stage. (AI-inferred) */
   webAclid: string;
 }
 

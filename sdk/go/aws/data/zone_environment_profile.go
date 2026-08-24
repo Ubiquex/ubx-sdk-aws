@@ -4,9 +4,7 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneEnvironmentProfile_UserParameters struct {
-	// The name of a user-defined parameter configured in the environment profile, used to match or reference a parameter declared by the associated environment blueprint when provisioning an environment. (AI-inferred)
 	Name any
-	// Sets the actual value for a user parameter in the environment profile, which is supplied as the value when the environment is provisioned from this profile. (AI-inferred)
 	Value any
 }
 

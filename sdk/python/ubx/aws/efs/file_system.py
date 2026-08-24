@@ -18,35 +18,23 @@ class FileSystem_FileSystemProtection:
 
 @dataclasses.dataclass
 class FileSystem_FileSystemTags:
-    # The key of a tag applied to the EFS file system, used to organize and identify the resource within AWS. (AI-inferred)
     key: Any = None
-    # The value portion of a tag assigned to the EFS file system, used for metadata, cost allocation, or access control. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class FileSystem_LifecyclePolicies:
-    # Specifies when EFS moves files to the Archive storage class (e.g., AFTER_30_DAYS) based on the number of days since last access, as part of the file system's lifecycle policy. (AI-inferred)
     transition_to_archive: Any = None
-    # Specifies the number of days (as a string such as 'AFTER_7_DAYS') after which files are transitioned to the Amazon EFS Infrequent Access (IA) storage class within this lifecycle policy. (AI-inferred)
     transition_to_ia: Any = None
-    # Specifies when EFS transitions files from the Infrequent Access storage class back to the Standard storage class, with the only valid value being AFTER_1_ACCESS, meaning a file is moved after it is accessed once. (AI-inferred)
     transition_to_primary_storage_class: Any = None
 
 @dataclasses.dataclass
 class FileSystem_ReplicationConfiguration_Destinations:
-    # Designates the Availability Zone in which the destination file system of the EFS replication configuration is created, allowing a one-zone replicated file system target; if omitted, AWS chooses an AZ for the destination. (AI-inferred)
     availability_zone_name: Any = None
-    # The ID of the destination EFS file system that receives replicated data from the source file system in an EFS replication configuration. (AI-inferred)
     file_system_id: Any = None
-    # The ID of the AWS KMS key used to encrypt the replicated file system data in the destination Region. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the AWS Region of the destination EFS file system to which the source EFS file system replicates data. (AI-inferred)
     region: Any = None
-    # The ARN of the IAM role that Amazon EFS assumes when replicating the source file system to the destination file system. (AI-inferred)
     role_arn: Any = None
-    # The computed status of the replication destination, indicating whether replication to this file system is enabled, enabling, deleting, or in an error state. (AI-inferred)
     status: Any = None
-    # For an Amazon EFS file system's replication destination, this string contains the descriptive message about the current replication status, such as an error reason when replication is failing. (AI-inferred)
     status_message: Any = None
 
 @dataclasses.dataclass
@@ -102,7 +90,6 @@ class FileSystemConfig:
 
 @dataclasses.dataclass
 class FileSystemAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this EFS file system, used to reference it in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
     # For One Zone file systems, specify the AWS Availability Zone in which to create the file system. Use the format ``us-east-1a`` to specify the Availability Zone. For more information about One Zone file systems, see [EFS file system types](https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html#file-system-type) in the *Amazon EFS User Guide*. One Zone file systems are not available in all Availability Zones in AWS-Regions where Amazon EFS is available.
     availability_zone_name: Any = None
@@ -112,7 +99,6 @@ class FileSystemAttrs:
     bypass_policy_lockout_safety_check: Any = None
     # A Boolean value that, if true, creates an encrypted file system. When creating an encrypted file system, you have the option of specifying a KmsKeyId for an existing kms-key-long. If you don't specify a kms-key, then the default kms-key for EFS, ``/aws/elasticfilesystem``, is used to protect the encrypted file system.
     encrypted: Any = None
-    # The unique AWS-assigned identifier (e.g., fs-12345678) for the EFS file system, returned by AWS and used to reference the file system in other resources. (AI-inferred)
     file_system_id: Any = None
     # The ``FileSystemPolicy`` for the EFS file system. A file system policy is an IAM resource policy used to control NFS access to an EFS file system. For more information, see [Using to control NFS access to Amazon EFS](https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html) in the *Amazon EFS User Guide*.
     file_system_policy: Any = None

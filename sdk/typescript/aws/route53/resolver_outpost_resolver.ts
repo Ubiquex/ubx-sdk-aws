@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolverOutpostResolver_Tags {
-  /** The key of a tag assigned to the Route 53 Resolver Outpost resolver, used to organize, identify, and manage the resolver within AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags struct {
-	// A user-defined key for a tag on this AWS Local Gateway Route Table Virtual Interface Group Association, used to categorize, organize, or filter the resource in AWS. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the Local Gateway Route Table Virtual Interface Group Association, used for identifying and organizing the resource. (AI-inferred)
 	Value any
 }
 

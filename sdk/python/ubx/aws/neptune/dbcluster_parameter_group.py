@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DbclusterParameterGroup_Tags:
     key: Any = None
-    # Specifies the value portion of a tag applied to this Neptune DB cluster parameter group, where each tag is a user-defined key-value pair. (AI-inferred)
     value: Any = None
 
 _DbclusterParameterGroup_TagsFields = {

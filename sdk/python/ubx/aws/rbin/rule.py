@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Rule_ExcludeResourceTags:
-    # Specifies the tag key used to identify resources that should be excluded from the retention rule's cleanup (i.e., resources with this tag key will not be affected by the rule). (AI-inferred)
     resource_tag_key: Any = None
-    # The value of a resource tag that, when matched on a resource, excludes that resource from the retention rule's effect. (AI-inferred)
     resource_tag_value: Any = None
 
 @dataclasses.dataclass
@@ -58,7 +56,6 @@ class RuleConfig:
     description: Any = None
     # Information about the exclude resource tags used to identify resources that are excluded by the retention rule.
     exclude_resource_tags: Any = None
-    # The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
     lock_configuration: Any = None
     # Information about the resource tags used to identify resources that are retained by the retention rule.
     resource_tags: Any = None
@@ -81,7 +78,6 @@ class RuleAttrs:
     exclude_resource_tags: Any = None
     # The unique ID of the retention rule.
     identifier: Any = None
-    # The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
     lock_configuration: Any = None
     # The lock state for the retention rule.
     lock_state: Any = None

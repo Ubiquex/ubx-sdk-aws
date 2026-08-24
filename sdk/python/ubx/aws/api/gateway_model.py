@@ -8,28 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayModelConfig:
-    # The content type (e.g., application/json) for the API Gateway model, used to associate the model with a specific media type in API requests and responses. (AI-inferred)
     content_type: Any = None
-    # This field specifies a human-readable description of the API Gateway model, used to document the model's purpose and assist in management within the API definition. (AI-inferred)
     description: Any = None
     # A name for the model. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the model name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
     name: Any = None
-    # The ID of the RestApi that this model belongs to, linking the model to its parent API Gateway REST API. (AI-inferred)
     rest_api_id: Any = None
-    # Defines the JSON schema (as a string) that describes the data structure for the API Gateway model, used for request/response validation. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class GatewayModelAttrs:
-    # The content type (e.g., application/json) for the API Gateway model, used to associate the model with a specific media type in API requests and responses. (AI-inferred)
     content_type: Any = None
-    # This field specifies a human-readable description of the API Gateway model, used to document the model's purpose and assist in management within the API definition. (AI-inferred)
     description: Any = None
     # A name for the model. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the model name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
     name: Any = None
-    # The ID of the RestApi that this model belongs to, linking the model to its parent API Gateway REST API. (AI-inferred)
     rest_api_id: Any = None
-    # Defines the JSON schema (as a string) that describes the data structure for the API Gateway model, used for request/response validation. (AI-inferred)
     schema: Any = None
 
 GatewayModel = ubx.ResourceBinding(

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessGrantsLocation_Tags {
-  /** The key of a tag attached to the S3 Access Grants location, used to identify and categorize the tag within the resource's tag set. (AI-inferred) */
   key?: string | Computed<string>;
-  /** This field stores the value part of a tag key-value pair attached to the S3 Access Grants Location, which AWS uses to let you organize, identify, and manage the resource through custom metadata such as cost allocation or purpose labels. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -18,7 +16,6 @@ export interface AccessGrantsLocationConfig {
   iamRoleArn: string | Computed<string>;
   /** Descriptor for where the location actually points */
   locationScope: string | Computed<string>;
-  /** Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: AccessGrantsLocation_Tags[] | Computed<AccessGrantsLocation_Tags[]>;
 }
 
@@ -31,7 +28,6 @@ export interface AccessGrantsLocationAttrs {
   iamRoleArn: string;
   /** Descriptor for where the location actually points */
   locationScope: string;
-  /** Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags: AccessGrantsLocation_Tags[];
 }
 

@@ -15,7 +15,6 @@ class LakeSubscriber_SubscriberIdentity:
 
 @dataclasses.dataclass
 class LakeSubscriber_Tags:
-    # The key of a tag attached to the Security Lake subscriber, used to define the tag's name for organizing and identifying the subscriber resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -52,15 +51,11 @@ class LakeSubscriberAttrs:
     access_types: Any = None
     # The ARN for the data lake.
     data_lake_arn: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Resource Access Manager (RAM) resource share that grants the subscriber access to the Security Lake data lake. (AI-inferred)
     resource_share_arn: Any = None
-    # The name of the AWS Resource Access Manager (RAM) resource share automatically created to grant the subscriber access to Security Lake data. (AI-inferred)
     resource_share_name: Any = None
-    # For S3 subscribers, the ARN of the S3 bucket where Security Lake delivers data, computed and returned after the subscriber resource is created. (AI-inferred)
     s3_bucket_arn: Any = None
     # The supported AWS services from which logs and events are collected.
     sources: Any = None
-    # The Amazon Resource Name (ARN) of the Security Lake subscriber, automatically assigned by AWS when the subscriber is created. (AI-inferred)
     subscriber_arn: Any = None
     # The description for your subscriber account in Security Lake.
     subscriber_description: Any = None
@@ -68,7 +63,6 @@ class LakeSubscriberAttrs:
     subscriber_identity: Any = None
     # The name of your Security Lake subscriber account.
     subscriber_name: Any = None
-    # The ARN of the IAM role that the subscriber uses to access the data lake, assigned by Security Lake when the subscriber is created. (AI-inferred)
     subscriber_role_arn: Any = None
     # An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
     tags: Any = None

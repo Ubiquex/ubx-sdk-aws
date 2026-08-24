@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentAgentSpace_AwsResources_Vpcs:
-    # Specifies the ARNs of security groups associated with the VPCs in the agent space's AWS resource configuration, used to control network access for the agent. (AI-inferred)
     security_group_arns: Any = None
-    # Specifies the subnet ARNs associated with each VPC in the agent space's AWS resource configuration, defining the subnets the agent space applies to. (AI-inferred)
     subnet_arns: Any = None
-    # The Amazon Resource Name (ARN) of an Amazon Virtual Private Cloud (VPC) included in the AWS resources associated with this agent space. (AI-inferred)
     vpc_arn: Any = None
 
 @dataclasses.dataclass
@@ -40,55 +37,43 @@ class AgentAgentSpace_CodeReviewSettings:
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities:
     leave_comments: Any = None
-    # Controls whether the Bitbucket integration automatically remediates code-level security issues identified by the agent. (AI-inferred)
     remediate_code: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketRepository:
-    # The repository name (e.g., 'owner/repo') for a Bitbucket repo listed as a provider resource in the security agent space's integrated resources configuration. (AI-inferred)
     name: Any = None
-    # The Bitbucket workspace that owns the integrated repository. (AI-inferred)
     workspace: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities:
-    # Enables or disables the Confluence provider resource's ability to create documents within the integrated Confluence instance for this agent space. (AI-inferred)
     create_document: Any = None
     fetch_document: Any = None
     update_document: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument:
-    # The name of the Confluence document that is configured as a provider resource within the integrated resource settings for the agent space. (AI-inferred)
     name: Any = None
-    # The page_id specifies the unique Confluence page identifier that identifies the document used as a provider resource in the agent space's integrated resource configuration. (AI-inferred)
     page_id: Any = None
     space_key: Any = None
-    # Specifies the title of the Confluence space that the Confluence document provider resource is scoped to, enabling the agent space to reference documents within that specific space. (AI-inferred)
     space_title: Any = None
     title: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_GitHubRepository:
     name: Any = None
-    # The GitHub user or organization that owns the repository to be integrated as a provider resource. (AI-inferred)
     owner: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources_GitLabRepository:
     name: Any = None
-    # The GitLab namespace (group or user path) that identifies the owner of the repository, used to locate the repository within the GitLab provider as part of an integrated resource. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class AgentAgentSpace_IntegratedResources_ProviderResources:
     bitbucket_capabilities: Any = None
-    # A nested object representing a Bitbucket repository configured as an integrated resource provider within the security agent's agent space, containing fields that define the repository connection and integration settings. (AI-inferred)
     bitbucket_repository: Any = None
     confluence_capabilities: Any = None
-    # Configures an Atlassian Confluence document source for the agent space's integrated resources, specifying how Confluence documents are accessed and ingested by the security agent. (AI-inferred)
     confluence_document: Any = None
-    # Specifies the GitHub-specific capabilities and permissions that the security agent can use when integrating with GitHub through the agent space's provider resources. (AI-inferred)
     git_hub_capabilities: Any = None
     git_hub_repository: Any = None
     git_lab_capabilities: Any = None

@@ -51,7 +51,6 @@ type IntegrationsDataIntegrationConfig struct {
 	Name any
 	// The configuration for what data should be pulled from the source.
 	ObjectConfiguration any
-	// Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred)
 	ScheduleConfig any
 	// The URI of the data source.
 	SourceUri any
@@ -74,7 +73,6 @@ type IntegrationsDataIntegrationAttrs struct {
 	Name any
 	// The configuration for what data should be pulled from the source.
 	ObjectConfiguration any
-	// Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred)
 	ScheduleConfig any
 	// The URI of the data source.
 	SourceUri any

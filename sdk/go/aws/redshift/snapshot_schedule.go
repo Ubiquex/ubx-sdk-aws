@@ -4,9 +4,7 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SnapshotSchedule_Tags struct {
-	// The key (name) of a tag applied to the Redshift snapshot schedule, used to organize and identify the schedule. (AI-inferred)
 	Key any
-	// The value of a tag applied to the Redshift snapshot schedule, used for resource organization and identification. (AI-inferred)
 	Value any
 }
 

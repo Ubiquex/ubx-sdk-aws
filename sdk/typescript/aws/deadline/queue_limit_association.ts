@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueueLimitAssociationConfig {
-  /** The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred) */
   farmId: string | Computed<string>;
-  /** The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred) */
   limitId: string | Computed<string>;
-  /** The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred) */
   queueId: string | Computed<string>;
 }
 
 export interface QueueLimitAssociationAttrs {
-  /** The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred) */
   farmId: string;
-  /** The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred) */
   limitId: string;
-  /** The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred) */
   queueId: string;
 }
 

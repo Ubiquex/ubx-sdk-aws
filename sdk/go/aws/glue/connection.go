@@ -4,99 +4,63 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials struct {
-	// The password component of the basic authentication credentials used to authenticate to the data source for this AWS Glue connection. (AI-inferred)
 	Password any
-	// Specifies the username for basic authentication when connecting to the data source using this AWS Glue connection. (AI-inferred)
 	Username any
 }
 
 type Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties struct {
-	// In an AWS Glue connection's OAuth2 authentication configuration for the authorization code grant flow, this field supplies the authorization code returned by the identity provider, which Glue exchanges for access and refresh tokens. (AI-inferred)
 	AuthorizationCode any
-	// The redirect URI to which the OAuth2 authorization server sends the user after authorization, used in the authorization code flow for the Glue connection's authentication configuration. (AI-inferred)
 	RedirectUri any
 }
 
 type Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication struct {
-	// Specifies the reference to an AWS managed OAuth2 client application (e.g., an AWS-supported SaaS application) used for OAuth2 authentication in the Glue connection. (AI-inferred)
 	AwsmanagedClientApplicationReference any
-	// The client ID of the user-managed OAuth2 client application used in the OAuth2 authentication configuration for the Glue connection. (AI-inferred)
 	UserManagedClientApplicationClientId any
 }
 
 type Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials struct {
-	// The OAuth2 access token used by the Glue connection to authenticate with the external data source as part of its OAuth2 authentication flow. (AI-inferred)
 	AccessToken any
-	// The JSON Web Token (JWT) used as the OAuth2 credential for authenticating to the data source in this AWS Glue connection. (AI-inferred)
 	JwtToken any
-	// The refresh token that is used to obtain a new OAuth2 access token when the current access token expires. (AI-inferred)
 	RefreshToken any
-	// The OAuth2 client secret associated with the user-managed client application used for authentication in this AWS Glue connection. (AI-inferred)
 	UserManagedClientApplicationClientSecret any
 }
 
 type Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties struct {
-	// Defines the OAuth2 authorization code grant parameters (such as authorization code and redirect URI) used in the authentication configuration of an AWS Glue connection. (AI-inferred)
 	AuthorizationCodeProperties any
-	// Specifies the OAuth2 client application for the Glue connection's authentication configuration, either referencing an AWS-managed client application or supplying the client ID for a user-managed application. (AI-inferred)
 	Oauth2ClientApplication any
-	// Configures the OAuth2 client credentials (such as authorization code and refresh token) required to authenticate the Glue connection to the data source via OAuth2. (AI-inferred)
 	Oauth2Credentials any
-	// Specifies the OAuth 2.0 grant type (e.g., AUTHORIZATION_CODE, CLIENT_CREDENTIALS) that determines the authorization flow Glue uses to obtain access tokens for this connection. (AI-inferred)
 	Oauth2GrantType any
-	// The OAuth2 token endpoint URL where the connection requests access tokens for authentication. (AI-inferred)
 	TokenUrl any
-	// Defines a map of additional query parameters (key-value pairs) to be appended to the OAuth2 token endpoint URL when retrieving an access token for the Glue connection. (AI-inferred)
 	TokenUrlParametersMap any
 }
 
 type Connection_ConnectionInput_AuthenticationConfiguration struct {
-	// Specifies whether the connection authenticates using basic inline credentials (username and password) or by referencing a secret in AWS Secrets Manager. (AI-inferred)
 	AuthenticationType any
-	// Specifies the username and password used for basic authentication when connecting to the data source for this AWS Glue connection. (AI-inferred)
 	BasicAuthenticationCredentials any
-	// Specifies a JSON object of custom authentication key-value pairs for the Glue connection, used when the authentication type is CUSTOM to pass connector-specific credential parameters. (AI-inferred)
 	CustomAuthenticationCredentials any
-	// The ARN of the AWS KMS key used to encrypt the credentials or secret associated with this Glue connection's authentication configuration. (AI-inferred)
 	KmsKeyArn any
-	// Specifies the OAuth2 authentication parameters (such as client ID, client secret, token URL, and grant type) for the Glue connection. (AI-inferred)
 	Oauth2Properties any
-	// The ARN of the AWS Secrets Manager secret that stores the credentials for the Glue connection's authentication configuration. (AI-inferred)
 	SecretArn any
 }
 
 type Connection_ConnectionInput_PhysicalConnectionRequirements struct {
-	// The Availability Zone (AZ) of the subnet to use when the Glue connection is attached to a VPC, typically required for JDBC and other physical connections. (AI-inferred)
 	AvailabilityZone any
-	// The list of VPC security group IDs that AWS Glue uses when establishing a connection to resources in a private network, controlling inbound and outbound traffic for the connection. (AI-inferred)
 	SecurityGroupIdList any
-	// The ID of the subnet within the VPC where the Glue connection's network interface will be placed. (AI-inferred)
 	SubnetId any
 }
 
 type Connection_ConnectionInput struct {
-	// A map of key-value pairs that define the Athena connection properties (e.g., workgroup and catalog) used when the connection type is ATHENA. (AI-inferred)
 	AthenaProperties any
-	// Configures OAuth-based authentication details (such as client credentials and token endpoint) for Glue connection types that require OAuth, like Salesforce or ServiceNow. (AI-inferred)
 	AuthenticationConfiguration any
-	// A dynamic map of connection type-specific key-value pairs, such as JDBC_CONNECTION_URL, USERNAME, and PASSWORD for JDBC connections, or KAFKA_BOOTSTRAP_SERVERS and security settings for Kafka connections. (AI-inferred)
 	ConnectionProperties any
-	// The type of the connection, such as JDBC, SFTP, MONGODB, KAFKA, or NETWORK, which determines the connector and connection parameters used by AWS Glue. (AI-inferred)
 	ConnectionType any
-	// Specifies the user-defined description for the Glue connection, providing additional context about the connection's purpose or configuration. (AI-inferred)
 	Description any
-	// Specifies a list of match criteria that AWS Glue uses to decide whether this connection should be selected for a given resource, often matching network identifiers such as subnet IDs or security group names. (AI-inferred)
 	MatchCriteria any
-	// Specifies the name of the Glue connection, which must be unique in the AWS account and Region and is used to identify the connection when referencing it in Glue jobs. (AI-inferred)
 	Name any
-	// Specifies the VPC network configuration (subnet ID, security group IDs, and availability zone) needed to establish a physical connection to a data source such as a JDBC database. (AI-inferred)
 	PhysicalConnectionRequirements any
 	PythonProperties any
-	// Specifies a map of key-value pairs for Spark-specific connection properties, such as Spark options like 'spark.sql.autoBroadcastJoinThreshold', used when the Glue connection is consumed by an Apache Spark job. (AI-inferred)
 	SparkProperties any
-	// Indicates whether AWS Glue should validate the connection's credentials by attempting to connect to the data store during creation, defaulting to false. (AI-inferred)
 	ValidateCredentials any
-	// Specifies the list of compute environments (for example, SPARK or ATHENA) against which the connection is validated when the connection is created or updated. (AI-inferred)
 	ValidateForComputeEnvironments any
 }
 
@@ -190,18 +154,13 @@ var Connection_ConnectionInputFields = ubx.FieldMap{
 	}
 
 type ConnectionConfig struct {
-	// The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred)
 	CatalogId any
-	// Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred)
 	ConnectionInput any
 }
 
 type ConnectionAttrs struct {
-	// The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred)
 	CatalogId any
-	// Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred)
 	ConnectionInput any
-	// The name of the Glue connection, serving as its unique resource identifier. (AI-inferred)
 	Id any
 }
 

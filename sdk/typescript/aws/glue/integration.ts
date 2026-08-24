@@ -12,7 +12,6 @@ export interface Integration_IntegrationConfig {
 
 export interface Integration_Tags {
   key?: string | Computed<string>;
-  /** The value of the tag assigned to the Glue integration, used with the tag key to attach metadata for cost allocation, access control, and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -30,7 +29,6 @@ const Integration_TagsFields: FieldMap = {
 export interface IntegrationConfig {
   /** An optional set of non-secret key value pairs that contains additional contextual information about the data. */
   additionalEncryptionContext?: unknown | Computed<unknown>;
-  /** Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred) */
   dataFilter?: string | Computed<string>;
   description?: string | Computed<string>;
   /** The configuration settings for the integration. */
@@ -52,7 +50,6 @@ export interface IntegrationAttrs {
   additionalEncryptionContext: unknown;
   /** The time (UTC) when the integration was created. */
   createTime: string;
-  /** Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred) */
   dataFilter: string;
   description: string;
   /** The Amazon Resource Name (ARN) of the integration. */

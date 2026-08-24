@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolUicustomizationAttachmentConfig {
-  /** The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred) */
   css?: string | Computed<string>;
-  /** The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred) */
   clientId: string | Computed<string>;
-  /** The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface UserPoolUicustomizationAttachmentAttrs {
-  /** The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred) */
   css: string;
-  /** The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred) */
   clientId: string;
-  /** The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred) */
   userPoolId: string;
 }
 

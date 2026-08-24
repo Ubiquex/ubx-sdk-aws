@@ -23,7 +23,6 @@ type ConfigurationSet_ReputationOptions struct {
 }
 
 type ConfigurationSet_SendingOptions struct {
-	// Indicates whether email sending is enabled for the configuration set. (AI-inferred)
 	SendingEnabled any
 }
 
@@ -52,9 +51,7 @@ type ConfigurationSet_SuppressionOptions struct {
 }
 
 type ConfigurationSet_Tags struct {
-	// The key of a tag attached to the Amazon SES configuration set. (AI-inferred)
 	Key any
-	// Specifies the value part of a tag assigned to the SES configuration set, used for metadata and resource management. (AI-inferred)
 	Value any
 }
 

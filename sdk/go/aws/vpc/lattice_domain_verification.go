@@ -9,9 +9,7 @@ type LatticeDomainVerification_Tags struct {
 }
 
 type LatticeDomainVerification_TxtMethodConfig struct {
-	// Specifies the TXT record name (hostname) used for DNS-based verification of domain ownership in VPC Lattice. (AI-inferred)
 	Name any
-	// The TXT record value that must be added to the domain's DNS configuration to verify ownership for AWS VPC Lattice domain verification. (AI-inferred)
 	Value any
 }
 
@@ -21,21 +19,16 @@ var LatticeDomainVerification_TagsFields = ubx.FieldMap{
 	}
 
 type LatticeDomainVerificationConfig struct {
-	// The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
 	DomainName any
 	Tags any
 }
 
 type LatticeDomainVerificationAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this VPC Lattice domain verification resource. (AI-inferred)
 	Arn any
-	// The custom domain name that AWS VPC Lattice will verify to prove ownership before it can be associated with a service network. (AI-inferred)
 	DomainName any
 	Id any
-	// The current state of the domain ownership verification for the VPC Lattice service network, indicating whether the domain has been successfully verified (e.g., IN_PROGRESS, SUCCESS, FAILED). (AI-inferred)
 	Status any
 	Tags any
-	// This read-only object contains the TXT record details (such as record name and value) that AWS VPC Lattice generated for verifying ownership of the specified domain. (AI-inferred)
 	TxtMethodConfig any
 }
 

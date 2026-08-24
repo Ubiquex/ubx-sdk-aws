@@ -4,7 +4,6 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontFunction_FunctionConfig_KeyValueStoreAssociations struct {
-	// The ARN of the CloudFront KeyValueStore to associate with this function, enabling the function to read data from the key value store at runtime. (AI-inferred)
 	KeyValueStoreArn any
 }
 
@@ -23,7 +22,6 @@ type FrontFunction_FunctionMetadata struct {
 }
 
 type FrontFunction_Tags struct {
-	// The tag key (e.g., 'environment') assigned to the CloudFront function for metadata and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }
@@ -63,7 +61,6 @@ type FrontFunctionConfig struct {
 type FrontFunctionAttrs struct {
 	// A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
 	AutoPublish any
-	// The Amazon Resource Name (ARN) that uniquely identifies the CloudFront function, assigned by AWS upon creation. (AI-inferred)
 	FunctionArn any
 	// The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*.
 	FunctionCode any
@@ -73,7 +70,6 @@ type FrontFunctionAttrs struct {
 	FunctionMetadata any
 	// A name to identify the function.
 	Name any
-	// The CloudFront function's stage, which is read-only and indicates whether the function is in the 'DEVELOPMENT' or 'LIVE' lifecycle stage as managed by AWS. (AI-inferred)
 	Stage any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

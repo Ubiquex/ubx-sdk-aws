@@ -4,16 +4,12 @@ package wafv2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAclassociationConfig struct {
-	// The ARN of the AWS resource (such as an Application Load Balancer, API Gateway, or Amazon CloudFront distribution) that this WAFv2 web ACL is being associated with. (AI-inferred)
 	ResourceArn any
-	// The ARN of the AWS WAF v2 web ACL to associate with the specified resource. (AI-inferred)
 	WebAclarn any
 }
 
 type WebAclassociationAttrs struct {
-	// The ARN of the AWS resource (such as an Application Load Balancer, API Gateway, or Amazon CloudFront distribution) that this WAFv2 web ACL is being associated with. (AI-inferred)
 	ResourceArn any
-	// The ARN of the AWS WAF v2 web ACL to associate with the specified resource. (AI-inferred)
 	WebAclarn any
 }
 

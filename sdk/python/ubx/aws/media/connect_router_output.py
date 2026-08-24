@@ -8,53 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration_SecretsManager:
-    # The ARN of the IAM role that MediaConnect assumes to retrieve the encryption key from AWS Secrets Manager for the destination transit encryption. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the encryption key used to decrypt the destination transit content for this MediaConnect flow output. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration:
     automatic: Any = None
-    # Specifies the AWS Secrets Manager configuration, including the secret ARN and IAM role, used to access the encryption key for destination transit encryption. (AI-inferred)
     secrets_manager: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption:
-    # Defines the encryption key setup (key type and key material reference) for transit encryption of the media stream sent from this output to the destination MediaConnect flow. (AI-inferred)
     encryption_key_configuration: Any = None
-    # Specifies the type of encryption key (e.g., 'static-key' or 'speke') used for the destination transit encryption of the MediaConnect flow output, determining how the media stream is encrypted during transmission to the destination. (AI-inferred)
     encryption_key_type: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_MediaConnectFlow:
-    # Specifies the encryption settings for the transport of media between the router and the MediaConnect flow destination, such as the encryption algorithm and key reference used to protect the stream in transit. (AI-inferred)
     destination_transit_encryption: Any = None
-    # The ARN of the AWS Elemental MediaConnect flow to which this router output delivers media, specified within the media_connect_flow destination configuration. (AI-inferred)
     flow_arn: Any = None
-    # Specifies the Amazon Resource Name (ARN) of the MediaConnect flow that serves as the source for this router output. (AI-inferred)
     flow_source_arn: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_MediaLiveInput:
     destination_transit_encryption: Any = None
-    # The ARN of the AWS Elemental MediaLive input that this router output sends the stream to. (AI-inferred)
     media_live_input_arn: Any = None
-    # The ID of the AWS Elemental MediaLive input pipeline (0 or 1) that the MediaConnect router output targets when its configuration is set to a MediaLive input. (AI-inferred)
     media_live_pipeline_id: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rist:
-    # The destination IP address to which the RIST output transmits media packets. (AI-inferred)
     destination_address: Any = None
-    # The UDP destination port number used by the RIST protocol configuration for this MediaConnect router output. (AI-inferred)
     destination_port: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rtp:
-    # The destination IP address to which the MediaConnect router output sends RTP protocol packets. (AI-inferred)
     destination_address: Any = None
-    # The destination UDP port number to which the output's RTP media packets are sent when the protocol configuration is set to RTP. (AI-inferred)
     destination_port: Any = None
     forward_error_correction: Any = None
 
@@ -64,58 +50,40 @@ class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller:
-    # The destination IP address or hostname to which the SRT caller protocol connects for sending the media stream. (AI-inferred)
     destination_address: Any = None
-    # The destination port number that the SRT caller uses to establish the output connection in the standard protocol configuration. (AI-inferred)
     destination_port: Any = None
-    # Defines the encryption settings, including the encryption algorithm and key material, used to encrypt the SRT (Secure Reliable Transport) caller output stream in the MediaConnect router's standard configuration. (AI-inferred)
     encryption_configuration: Any = None
-    # Specifies the minimum latency in milliseconds for the SRT caller output, which sets the lower bound for the SRT stream latency before the connection is considered unstable. (AI-inferred)
     minimum_latency_milliseconds: Any = None
-    # The stream ID to include in the SRT caller connection, identifying the media stream to the receiving endpoint. (AI-inferred)
     stream_id: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtListener:
-    # Configures the encryption properties for the SRT listener, including the encryption algorithm and the reference to the secret key used to encrypt the video stream. (AI-inferred)
     encryption_configuration: Any = None
-    # Sets the minimum latency in milliseconds for the SRT listener, defining the receive buffer delay used to absorb network jitter. (AI-inferred)
     minimum_latency_milliseconds: Any = None
-    # The network port number on which the SRT listener listens for incoming SRT media streams. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration:
-    # The `rist` object contains the RIST (Reliable Internet Stream Transport) protocol-specific configuration for the router output, including parameters such as the RIST profile and stream identifier, within the standard protocol configuration. (AI-inferred)
     rist: Any = None
-    # Configures the RTP protocol-specific options for this router output, including the destination IP address and port for media delivery. (AI-inferred)
     rtp: Any = None
-    # This object specifies the SRT caller settings, including the remote destination address and port that the router output will use to initiate an SRT connection. (AI-inferred)
     srt_caller: Any = None
-    # Defines the SRT listener settings for the MediaConnect router output when using the SRT protocol in listener mode, including the port to listen on and optional encryption parameters for incoming streams. (AI-inferred)
     srt_listener: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration_Standard:
-    # The Amazon Resource Name (ARN) of the Elastic Network Interface (ENI) that the MediaConnect router output uses in its standard configuration to send video traffic. (AI-inferred)
     network_interface_arn: Any = None
     protocol: Any = None
-    # Defines the protocol-specific settings for a standard MediaConnect router output, such as the transport protocol (e.g., Zixi, SRT, RTP) and its associated parameters like stream ID or listener/caller mode. (AI-inferred)
     protocol_configuration: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_Configuration:
     media_connect_flow: Any = None
-    # This object configures the router output to deliver its media stream to an AWS Elemental MediaLive input, specifying the destination input's ARN and connection parameters. (AI-inferred)
     media_live_input: Any = None
-    # Configures a standard router output in AWS MediaConnect, specifying the destination IP address, port, protocol, and related encoding parameters for delivering a flow to a single remote endpoint. (AI-inferred)
     standard: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutput_MaintenanceConfiguration_PreferredDayTime:
-    # The day of the week, specified as an uppercase string such as 'MONDAY' or 'SATURDAY', on which maintenance is preferred for this router output. (AI-inferred)
     day: Any = None
-    # Specifies the preferred time of day (in 24-hour HH:MM format) for the maintenance window on the MediaConnect router output. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
@@ -126,7 +94,6 @@ class ConnectRouterOutput_MaintenanceConfiguration:
 @dataclasses.dataclass
 class ConnectRouterOutput_Tags:
     key: Any = None
-    # The value portion of a tag associated with an AWS Elemental MediaConnect router output, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration_SecretsManagerFields = {
@@ -300,12 +267,10 @@ class ConnectRouterOutputConfig:
     routing_scope: Any = None
     # Key-value pairs that can be used to tag this router output.
     tags: Any = None
-    # Specifies the service tier for the router output, with valid values 'BASIC' and 'STANDARD', controlling the throughput and performance characteristics of the output. (AI-inferred)
     tier: Any = None
 
 @dataclasses.dataclass
 class ConnectRouterOutputAttrs:
-    # The Amazon Resource Name (ARN) of the MediaConnect router output, automatically assigned by AWS upon creation. (AI-inferred)
     arn: Any = None
     # The Availability Zone where you want to create the router output. This must be a valid Availability Zone for the region specified by regionName, or the current region if no regionName is provided.
     availability_zone: Any = None
@@ -327,13 +292,11 @@ class ConnectRouterOutputAttrs:
     output_type: Any = None
     # The Amazon Web Services Region for the router output. Defaults to the current region if not specified.
     region_name: Any = None
-    # The current routing status of the router output, reported by the AWS API as either 'ACTIVE' (actively routing media) or 'STANDBY' (not actively routing media). (AI-inferred)
     routed_state: Any = None
     routing_scope: Any = None
     state: Any = None
     # Key-value pairs that can be used to tag this router output.
     tags: Any = None
-    # Specifies the service tier for the router output, with valid values 'BASIC' and 'STANDARD', controlling the throughput and performance characteristics of the output. (AI-inferred)
     tier: Any = None
     # The timestamp when the router output was last updated.
     updated_at: Any = None

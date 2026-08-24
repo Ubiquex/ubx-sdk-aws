@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbMultiRegionCluster_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the MemoryDB Multi-Region Cluster, used for labeling and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

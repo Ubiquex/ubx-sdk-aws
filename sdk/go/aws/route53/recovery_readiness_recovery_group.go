@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryReadinessRecoveryGroup_Tags struct {
-	// The key of a user-defined tag applied to the Route 53 Recovery Readiness recovery group, used for identifying and categorizing the group within AWS. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Route 53 Recovery Readiness recovery group, used to assign custom metadata for identifying, organizing, or managing the recovery group. (AI-inferred)
 	Value any
 }
 

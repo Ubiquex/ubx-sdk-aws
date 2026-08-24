@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerTransitGatewayPeering_Tags:
-    # The key portion of a user-defined tag applied to the transit gateway peering, used to categorize and identify the resource for cost tracking, access control, and organizational purposes. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS Network Manager transit gateway peering, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _ManagerTransitGatewayPeering_TagsFields = {

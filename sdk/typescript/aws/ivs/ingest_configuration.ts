@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IngestConfiguration_Tags {
-  /** The key of a user-defined tag applied to the IVS ingest configuration, enabling you to categorize and filter the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

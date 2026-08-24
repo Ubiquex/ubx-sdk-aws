@@ -4,9 +4,7 @@ package qldb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ledger_Tags struct {
-	// Defines the key of a tag applied to the QLDB ledger, which serves as a user-defined label for identifying and managing the ledger resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the AWS QLDB ledger, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,30 +14,19 @@ var Ledger_TagsFields = ubx.FieldMap{
 	}
 
 type LedgerConfig struct {
-	// Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred)
 	DeletionProtection any
-	// The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred)
 	KmsKey any
-	// The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred)
 	Name any
-	// Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred)
 	PermissionsMode any
-	// Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred)
 	Tags any
 }
 
 type LedgerAttrs struct {
-	// Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred)
 	DeletionProtection any
-	// The id is the unique name of the QLDB ledger, which serves as the primary identifier for the ledger resource. (AI-inferred)
 	Id any
-	// The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred)
 	KmsKey any
-	// The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred)
 	Name any
-	// Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred)
 	PermissionsMode any
-	// Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred)
 	Tags any
 }
 

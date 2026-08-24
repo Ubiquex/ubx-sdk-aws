@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TSoftwarePackage_Tags {
-  /** The key of a tag attached to the AWS IoT software package. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair assigned to the AWS IoT Software Package, used as metadata to identify, organize, and search for the package. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,20 +12,15 @@ const TSoftwarePackage_TagsFields: FieldMap = {
 };
 
 export interface TSoftwarePackageConfig {
-  /** A free-form text description of the software package (up to 1024 characters) that provides details about its purpose or contents. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The user-defined name for the AWS IoT software package, which must be unique within your AWS account and can be omitted for AWS IoT to auto-generate a name. (AI-inferred) */
   packageName?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: TSoftwarePackage_Tags[] | Computed<TSoftwarePackage_Tags[]>;
 }
 
 export interface TSoftwarePackageAttrs {
-  /** A free-form text description of the software package (up to 1024 characters) that provides details about its purpose or contents. (AI-inferred) */
   description: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS IoT software package in this account and Region. (AI-inferred) */
   packageArn: string;
-  /** The user-defined name for the AWS IoT software package, which must be unique within your AWS account and can be omitted for AWS IoT to auto-generate a name. (AI-inferred) */
   packageName: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: TSoftwarePackage_Tags[];

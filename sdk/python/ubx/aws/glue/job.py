@@ -55,9 +55,7 @@ _Job_NotificationPropertyFields = {
 class JobConfig:
     # The number of capacity units that are allocated to this job.
     allocated_capacity: Any = None
-    # Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
     command: Any = None
-    # Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
     connections: Any = None
     # The default arguments for this job, specified as name-value pairs.
     default_arguments: Any = None
@@ -65,7 +63,6 @@ class JobConfig:
     description: Any = None
     # Indicates whether the job is run with a standard or flexible execution class.
     execution_class: Any = None
-    # Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
     execution_property: Any = None
     # Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
     glue_version: Any = None
@@ -85,7 +82,6 @@ class JobConfig:
     name: Any = None
     # Non-overridable arguments for this job, specified as name-value pairs.
     non_overridable_arguments: Any = None
-    # Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
     notification_property: Any = None
     # The number of workers of a defined workerType that are allocated when a job runs.
     number_of_workers: Any = None
@@ -104,9 +100,7 @@ class JobConfig:
 class JobAttrs:
     # The number of capacity units that are allocated to this job.
     allocated_capacity: Any = None
-    # Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
     command: Any = None
-    # Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
     connections: Any = None
     # The default arguments for this job, specified as name-value pairs.
     default_arguments: Any = None
@@ -114,7 +108,6 @@ class JobAttrs:
     description: Any = None
     # Indicates whether the job is run with a standard or flexible execution class.
     execution_class: Any = None
-    # Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
     execution_property: Any = None
     # Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
     glue_version: Any = None
@@ -134,7 +127,6 @@ class JobAttrs:
     name: Any = None
     # Non-overridable arguments for this job, specified as name-value pairs.
     non_overridable_arguments: Any = None
-    # Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
     notification_property: Any = None
     # The number of workers of a defined workerType that are allocated when a job runs.
     number_of_workers: Any = None

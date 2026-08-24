@@ -4,40 +4,24 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailTemplateConfig struct {
-	// Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
 	DefaultSubstitutions any
-	// The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
 	HtmlPart any
-	// The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
 	Subject any
-	// Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
 	Tags any
-	// A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
 	TemplateDescription any
-	// The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
 	TemplateName any
-	// The plain-text body of the email message defined by this template. (AI-inferred)
 	TextPart any
 }
 
 type EmailTemplateAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the AWS Pinpoint email template. (AI-inferred)
 	Arn any
-	// Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
 	DefaultSubstitutions any
-	// The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
 	HtmlPart any
-	// The unique name assigned to the email template in Amazon Pinpoint, which identifies it within the AWS account and region. (AI-inferred)
 	Id any
-	// The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
 	Subject any
-	// Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
 	Tags any
-	// A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
 	TemplateDescription any
-	// The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
 	TemplateName any
-	// The plain-text body of the email message defined by this template. (AI-inferred)
 	TextPart any
 }
 

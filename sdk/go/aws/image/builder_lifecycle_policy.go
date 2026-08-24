@@ -4,72 +4,49 @@ package image
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BuilderLifecyclePolicy_PolicyDetails_Action_IncludeResources struct {
-	// Determines whether the lifecycle policy action applies to Amazon Machine Images (AMIs) in the resource set. (AI-inferred)
 	Amis any
-	// Specifies whether container images are included as a resource type for this lifecycle policy action. (AI-inferred)
 	Containers any
-	// Specifies whether snapshots are included as a resource type that the lifecycle policy action (such as deletion) applies to. (AI-inferred)
 	Snapshots any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails_Action struct {
-	// Specifies the resource types (e.g., AMIs, container images, and snapshots) that the lifecycle policy action applies to. (AI-inferred)
 	IncludeResources any
-	// Specifies the lifecycle action to apply to matching images when the policy conditions are met, with allowed values of 'DELETE' to remove the image or 'DEPRECATE' to mark it as deprecated. (AI-inferred)
 	Type any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails_ExclusionRules_Amis_LastLaunched struct {
-	// Specifies the time unit (DAYS, WEEKS, MONTHS, or YEARS) used with the numeric value to define the last-launched age threshold for excluding an AMI from the lifecycle policy. (AI-inferred)
 	Unit any
-	// The numeric threshold (e.g., number of days) since an AMI was last launched, used by the last_launched exclusion rule to determine which AMIs are excluded from the lifecycle policy action. (AI-inferred)
 	Value any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails_ExclusionRules_Amis struct {
-	// When set to true, the lifecycle policy excludes AMIs that are public (publicly shared) from the lifecycle action, preventing them from being expired or deregistered. (AI-inferred)
 	IsPublic any
-	// Defines an exclusion criterion based on how recently an AMI was last used to launch an EC2 instance, where a value and unit (e.g., DAYS) set a window such that AMIs launched within that recent period are excluded from the lifecycle policy's actions. (AI-inferred)
 	LastLaunched any
-	// Specifies a list of AWS Regions in which an AMI must also be present to be excluded from the lifecycle policy's delete or deprecate actions; if the AMI exists in any of the listed regions, it will not be affected by the policy. (AI-inferred)
 	Regions any
-	// The list of AWS account IDs that an AMI must be shared with for the AMI to be excluded from the lifecycle policy's action (for example, deregistration). (AI-inferred)
 	SharedAccounts any
-	// Specifies a map of tag keys and values used to identify AMIs that should be excluded from the lifecycle policy's actions, meaning any image with exactly matching tags is not affected by the defined lifecycle rules. (AI-inferred)
 	TagMap any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails_ExclusionRules struct {
-	// Defines AMI-specific exclusion rules that identify AMIs to exempt from lifecycle actions based on shared AWS accounts and tag conditions. (AI-inferred)
 	Amis any
-	// Defines a map of tag keys and values used to identify matching Image Builder resources that should be excluded from the lifecycle policy's actions. (AI-inferred)
 	TagMap any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails_Filter struct {
-	// Sets the minimum number of resources (e.g., images) that must be retained, ensuring that at least this many resources are kept even when a count-based lifecycle filter would otherwise expire more. (AI-inferred)
 	RetainAtLeast any
-	// Indicates the filter type used to select resources for the lifecycle policy action, such as `age`, `tag`, or `schedule`. (AI-inferred)
 	Type any
-	// The unit of time (such as days or months) used with the filter's value to define the retention period for the lifecycle policy. (AI-inferred)
 	Unit any
-	// Specifies the numeric threshold (e.g., the number of days for an AGE filter, or the number of resources for a COUNT filter) at which the lifecycle policy triggers its configured action. (AI-inferred)
 	Value any
 }
 
 type BuilderLifecyclePolicy_PolicyDetails struct {
-	// Defines the lifecycle action (such as deleting the resource or creating a snapshot) that Image Builder performs on the resources selected by the policy's rule. (AI-inferred)
 	Action any
-	// Defines exclusion criteria for the lifecycle policy, allowing resources to be omitted from policy actions based on attributes such as whether they are shared or public, the AWS Regions they reside in, or matching tags. (AI-inferred)
 	ExclusionRules any
-	// Defines the selection criteria (such as age, count, tag values, or retain-at-least threshold) that determine which resources the lifecycle policy actions apply to. (AI-inferred)
 	Filter any
 }
 
 type BuilderLifecyclePolicy_ResourceSelection_Recipes struct {
-	// Specifies the name of an Image Builder recipe (image or container recipe) that the lifecycle policy's resource selection targets, so the policy applies to images built from that recipe. (AI-inferred)
 	Name any
-	// The semantic version of the Image Builder recipe to match in the lifecycle policy's resource selection, identifying the specific recipe version (e.g., 1.0.0) that the policy applies to. (AI-inferred)
 	SemanticVersion any
 }
 

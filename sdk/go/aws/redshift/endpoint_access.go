@@ -4,13 +4,9 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointAccess_VpcEndpoint_NetworkInterfaces struct {
-	// Indicates the Availability Zone in which the network interface associated with the VPC endpoint is located. (AI-inferred)
 	AvailabilityZone any
-	// The unique identifier of the network interface associated with the VPC endpoint used by this Redshift endpoint access, representing the elastic network interface (ENI) that routes traffic to the Redshift cluster. (AI-inferred)
 	NetworkInterfaceId any
-	// The private IPv4 address of one of the network interfaces attached to the VPC endpoint that provides private connectivity to the Redshift cluster. (AI-inferred)
 	PrivateIpAddress any
-	// The subnet ID where the network interface of the VPC endpoint for this Redshift endpoint access is provisioned. (AI-inferred)
 	SubnetId any
 }
 
@@ -24,9 +20,7 @@ type EndpointAccess_VpcEndpoint struct {
 }
 
 type EndpointAccess_VpcSecurityGroups struct {
-	// The current status of a VPC security group associated with the Amazon Redshift endpoint access, indicating whether the security group association is active, being authorized, or being revoked. (AI-inferred)
 	Status any
-	// The ID of a VPC security group associated with the Redshift endpoint access, used to control network access to the endpoint. (AI-inferred)
 	VpcSecurityGroupId any
 }
 

@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamStackFleetAssociationConfig:
-    # The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred)
     fleet_name: Any = None
-    # The name of the AppStream stack that the fleet will be associated with. (AI-inferred)
     stack_name: Any = None
 
 @dataclasses.dataclass
 class StreamStackFleetAssociationAttrs:
-    # The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred)
     fleet_name: Any = None
-    # This computed identifier uniquely identifies the AppStream 2.0 stack-fleet association and is formed from the stack name and fleet name separated by a comma. (AI-inferred)
     id: Any = None
-    # The name of the AppStream stack that the fleet will be associated with. (AI-inferred)
     stack_name: Any = None
 
 StreamStackFleetAssociation = ubx.ResourceBinding(

@@ -4,7 +4,6 @@ package odb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudExadataInfrastructure_CustomerContactsToSendToOci struct {
-	// The email address of a customer contact that Oracle Cloud Infrastructure (OCI) will send notifications to regarding this Exadata infrastructure. (AI-inferred)
 	Email any
 }
 

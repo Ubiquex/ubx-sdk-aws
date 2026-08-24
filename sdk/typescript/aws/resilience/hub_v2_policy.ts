@@ -22,7 +22,6 @@ export interface HubV2Policy_MultiAz {
 
 export interface HubV2Policy_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the AWS Resilience Hub v2 policy, used to label and categorize the policy for management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -46,9 +45,7 @@ const HubV2Policy_TagsFields: FieldMap = {
 };
 
 export interface HubV2PolicyConfig {
-  /** Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred) */
   availabilitySlo?: HubV2Policy_AvailabilitySlo | Computed<HubV2Policy_AvailabilitySlo>;
-  /** Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred) */
   dataRecovery?: HubV2Policy_DataRecovery | Computed<HubV2Policy_DataRecovery>;
   /** The description of the policy. */
   description?: string | Computed<string>;
@@ -65,11 +62,9 @@ export interface HubV2PolicyConfig {
 export interface HubV2PolicyAttrs {
   /** The number of services associated with this policy. */
   associatedServiceCount: number;
-  /** Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred) */
   availabilitySlo: HubV2Policy_AvailabilitySlo;
   /** The timestamp when the policy was created. */
   createdAt: string;
-  /** Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred) */
   dataRecovery: HubV2Policy_DataRecovery;
   /** The description of the policy. */
   description: string;

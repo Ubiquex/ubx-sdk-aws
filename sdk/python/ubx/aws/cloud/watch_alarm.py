@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WatchAlarm_Dimensions:
-    # The name (key) of a CloudWatch metric dimension that, along with its value, is used to identify a particular metric or metric context for the alarm. (AI-inferred)
     name: Any = None
-    # The value for a CloudWatch alarm metric dimension, which combines with the dimension name to uniquely identify a specific metric for the alarm to monitor. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -41,46 +39,30 @@ class WatchAlarm_EvaluationWindow:
 
 @dataclasses.dataclass
 class WatchAlarm_Metrics_MetricStat_Metric:
-    # Specifies the dimensions for the metric, each containing a name and value pair that uniquely identifies the metric within CloudWatch. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric to monitor, such as CPUUtilization or StatusCheckFailed, which must match a published metric in the specified namespace. (AI-inferred)
     metric_name: Any = None
-    # The namespace of the CloudWatch metric, such as AWS/EC2, that identifies the service or application emitting the metric in the metric stat of a composite alarm. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class WatchAlarm_Metrics_MetricStat:
-    # The metric that this statistic is based on, identified by its namespace, metric name, and optional dimensions. (AI-inferred)
     metric: Any = None
-    # The length of time in seconds to aggregate the metric data for this alarm's metric statistic, defining the granularity of data points evaluated for the alarm. (AI-inferred)
     period: Any = None
-    # The statistic to apply to the metric (for example, SampleCount, Average, Sum, Minimum, Maximum, or a percentile such as p99). (AI-inferred)
     stat: Any = None
-    # Specifies the unit of measure for the metric statistic (e.g., Count, Percent, Seconds, Bytes) that the alarm evaluates. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class WatchAlarm_Metrics:
-    # The AWS account ID associated with a metric data query, used to retrieve metrics from another account in a cross-account CloudWatch alarm. (AI-inferred)
     account_id: Any = None
-    # A math expression string (e.g., 'm1 + m2') that defines a computed metric used in the alarm, referencing other metric queries in the same metrics list. (AI-inferred)
     expression: Any = None
-    # A unique identifier for the metric within the alarm's metric configuration, used to reference it in metric math expressions. (AI-inferred)
     id: Any = None
-    # The label is a human-friendly name assigned to a metric or expression in a CloudWatch alarm's metric data query, which is displayed in the CloudWatch console and can be used to identify the metric in alarm graphs. (AI-inferred)
     label: Any = None
-    # Defines the specific CloudWatch metric and statistic to evaluate in this metric data query, including the metric's namespace, name, dimensions, period, and statistical aggregation (e.g., Average). (AI-inferred)
     metric_stat: Any = None
-    # The length of time, in seconds, used each time the specified metric is evaluated for the alarm (e.g., 60 for one-minute evaluation periods). (AI-inferred)
     period: Any = None
-    # Determines whether the time series data for this metric data query is returned in the CloudWatch alarm's metric math expression, and when the alarm uses multiple metric queries, exactly one query must have return_data set to true (typically the metric that drives the alarm). (AI-inferred)
     return_data: Any = None
 
 @dataclasses.dataclass
 class WatchAlarm_Tags:
-    # Specifies the key of a tag applied to the CloudWatch alarm, used to categorize and manage the alarm resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the CloudWatch alarm, used to categorize or identify the alarm for management and billing purposes. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -231,7 +213,6 @@ class WatchAlarmAttrs:
     alarm_description: Any = None
     # The name of the alarm. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the alarm name. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
     alarm_name: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the CloudWatch alarm. (AI-inferred)
     arn: Any = None
     # The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.
     comparison_operator: Any = None

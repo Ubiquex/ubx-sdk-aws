@@ -39,7 +39,6 @@ export interface QuickConnect_QuickConnectConfig {
 }
 
 export interface QuickConnect_Tags {
-  /** The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

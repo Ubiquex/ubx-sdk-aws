@@ -2,32 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig {
-  /** The ID of the Amazon EFS file system that SageMaker mounts in the domain's default space when using this custom file system configuration. (AI-inferred) */
   fileSystemId?: string | Computed<string>;
-  /** Specifies the directory path within the referenced Amazon EFS file system that SageMaker mounts for the domain's default space, where leaving it unset uses the file system root ('/'). (AI-inferred) */
   fileSystemPath?: string | Computed<string>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfig {
-  /** Specifies the absolute path in the Amazon SageMaker Domain default space where the S3 file system is mounted. (AI-inferred) */
   mountPath?: string | Computed<string>;
-  /** The Amazon S3 URI (e.g., s3://bucket/prefix) that specifies the S3 directory mounted as a custom file system in the default space settings for the SageMaker Domain. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs {
-  /** Configures an Amazon EFS file system for the SageMaker domain's default space, specifying the file system ID and mount path. (AI-inferred) */
   efsfileSystemConfig?: MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig | Computed<MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig>;
-  /** Configures an FSx for Lustre file system, including its ID and optional mount path, for attachment to the default user's SageMaker Studio environment within the domain's default space settings. (AI-inferred) */
   fsxLustreFileSystemConfig?: MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig | Computed<MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_EfsfileSystemConfig>;
-  /** Specifies the Amazon S3 file system configuration for a custom file system attached to the SageMaker Domain's default space, defining how an S3 bucket is mounted at a particular path. (AI-inferred) */
   s3FileSystemConfig?: MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfig | Computed<MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs_S3FileSystemConfig>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig {
-  /** Sets the POSIX group ID (GID) for the custom user in the default space settings of the SageMaker Domain, used to control file system permissions. (AI-inferred) */
   gid: number | Computed<number>;
-  /** The numeric POSIX user ID (UID) for the custom POSIX user configuration used by the SageMaker Domain's default space, controlling file ownership on the custom file system. (AI-inferred) */
   uid: number | Computed<number>;
 }
 
@@ -43,21 +34,16 @@ export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifec
 }
 
 export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement {
-  /** Configures idle timeout (in minutes) and lifecycle management mode (e.g., enabled/disabled) to automatically shut down or keep alive JupyterLab apps in the SageMaker Studio default space. (AI-inferred) */
   idleSettings?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement_IdleSettings | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement_IdleSettings>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositories {
-  /** The HTTPS URL of the Git repository that SageMaker clones into the JupyterLab environment for the default space in the SageMaker Domain. (AI-inferred) */
   repositoryUrl?: string | Computed<string>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages {
-  /** The name of the AppImageConfig associated with this custom JupyterLab image, which defines the kernel and file system settings for the image in the SageMaker domain. (AI-inferred) */
   appImageConfigName?: string | Computed<string>;
-  /** The name of the SageMaker image to use for the JupyterLab application in the domain's default space settings. (AI-inferred) */
   imageName?: string | Computed<string>;
-  /** The version number of the SageMaker image to use for the JupyterLab app in the domain's default space, allowing selection among multiple registered versions of the same image. (AI-inferred) */
   imageVersionNumber?: number | Computed<number>;
 }
 
@@ -75,7 +61,6 @@ export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultR
 }
 
 export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings {
-  /** Configures lifecycle management for JupyterLab applications in the default space, such as idle timeout settings that automatically shut down idle apps. (AI-inferred) */
   appLifecycleManagement?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement>;
   /** The lifecycle configuration that runs before the default lifecycle configuration. */
   builtInLifecycleConfigArn?: string | Computed<string>;
@@ -83,14 +68,12 @@ export interface MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings {
   codeRepositories?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositories[] | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CodeRepositories[]>;
   /** A list of custom images for use for JupyterLab apps. */
   customImages?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[] | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[]>;
-  /** Specifies the default SageMaker image, image version, instance type, and lifecycle configuration used when launching JupyterLab apps for this default space. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with JupyterLab apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_JupyterServerAppSettings {
-  /** Specifies the default compute instance type and SageMaker image (including the image ARN and container configuration) used when launching Jupyter Server apps in the default space of the SageMaker Domain. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with JupyterServer apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
@@ -99,16 +82,13 @@ export interface MakerDomain_DefaultSpaceSettings_JupyterServerAppSettings {
 export interface MakerDomain_DefaultSpaceSettings_KernelGatewayAppSettings {
   /** A list of custom SageMaker images that are configured to run as a KernelGateway app. */
   customImages?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[] | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[]>;
-  /** Specifies the default compute instance type, SageMaker image, and optional image version or lifecycle configuration used for kernel gateway apps in the domain's default space settings. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with KernelGateway apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
 }
 
 export interface MakerDomain_DefaultSpaceSettings_SpaceStorageSettings_DefaultEbsStorageSettings {
-  /** Defines the default EBS storage volume size in gigabytes allocated for each SageMaker Domain space. (AI-inferred) */
   defaultEbsVolumeSizeInGb: number | Computed<number>;
-  /** Specifies the maximum size in gigabytes that a SageMaker Studio space can provision for its attached Amazon EBS storage volume, as part of the default space's EBS storage settings. (AI-inferred) */
   maximumEbsVolumeSizeInGb: number | Computed<number>;
 }
 
@@ -118,9 +98,7 @@ export interface MakerDomain_DefaultSpaceSettings_SpaceStorageSettings {
 }
 
 export interface MakerDomain_DefaultSpaceSettings {
-  /** Defines the custom file systems (such as Amazon EFS or Amazon FSx for Lustre) that SageMaker automatically mounts in the default space for users within the domain. (AI-inferred) */
   customFileSystemConfigs?: MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs[] | Computed<MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs[]>;
-  /** Specifies the custom POSIX user ID (UID) and group ID (GID) applied to apps running in the default space of the SageMaker Domain. (AI-inferred) */
   customPosixUserConfig?: MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig | Computed<MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig>;
   /** The execution role for the space. */
   executionRole: string | Computed<string>;
@@ -137,13 +115,11 @@ export interface MakerDomain_DefaultSpaceSettings {
 }
 
 export interface MakerDomain_DefaultUserSettings_CodeEditorAppSettings {
-  /** Specifies the lifecycle management settings, including idle timeout behavior, for the Code Editor application in the SageMaker Domain's default user settings. (AI-inferred) */
   appLifecycleManagement?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_AppLifecycleManagement>;
   /** The lifecycle configuration that runs before the default lifecycle configuration. */
   builtInLifecycleConfigArn?: string | Computed<string>;
   /** A list of custom images for use for CodeEditor apps. */
   customImages?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[] | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[]>;
-  /** Specifies the instance type (and optionally the SageMaker image ARN) that SageMaker uses to preconfigure the Code Editor app for the default user profile. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with CodeEditor apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
@@ -152,7 +128,6 @@ export interface MakerDomain_DefaultUserSettings_CodeEditorAppSettings {
 export interface MakerDomain_DefaultUserSettings_RsessionAppSettings {
   /** A list of custom SageMaker images that are configured to run as a KernelGateway app. */
   customImages?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[] | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_CustomImages[]>;
-  /** Specifies the default SageMaker image (via its ARN) and instance type used when launching RSession gateway apps for users in the domain. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
 }
 
@@ -173,9 +148,7 @@ export interface MakerDomain_DefaultUserSettings_SharingSettings {
 }
 
 export interface MakerDomain_DefaultUserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliases {
-  /** The name of the SageMaker image for which the specified version aliases are hidden from the Studio web portal in the SageMaker Domain's default user settings. (AI-inferred) */
   sageMakerImageName?: string | Computed<string>;
-  /** A list of SageMaker image version aliases (e.g., '1.0', 'latest') that are hidden in the Studio Web Portal for the SageMaker image defined by the parent 'HiddenSageMakerImageVersionAliases' object. (AI-inferred) */
   versionAliases?: string[] | Computed<string[]>;
 }
 
@@ -195,9 +168,7 @@ export interface MakerDomain_DefaultUserSettings {
   autoMountHomeEfs?: string | Computed<string>;
   /** The CodeEditor app settings. */
   codeEditorAppSettings?: MakerDomain_DefaultUserSettings_CodeEditorAppSettings | Computed<MakerDomain_DefaultUserSettings_CodeEditorAppSettings>;
-  /** Specifies configurations for custom file systems (such as Amazon EFS) that user profiles in the SageMaker Domain can mount in their Studio apps. (AI-inferred) */
   customFileSystemConfigs?: MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs[] | Computed<MakerDomain_DefaultSpaceSettings_CustomFileSystemConfigs[]>;
-  /** Specifies the custom POSIX UID and GID for the default user in the SageMaker Domain, overriding default user identity for JupyterLab and kernel gateway processes. (AI-inferred) */
   customPosixUserConfig?: MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig | Computed<MakerDomain_DefaultSpaceSettings_CustomPosixUserConfig>;
   /** Defines which Amazon SageMaker application users are directed to by default. */
   defaultLandingUri?: string | Computed<string>;
@@ -233,7 +204,6 @@ export interface MakerDomain_DomainSettings_DockerSettings {
 }
 
 export interface MakerDomain_DomainSettings_RstudioServerProDomainSettings {
-  /** Specifies the default resource specification, including the instance type, SageMaker image ARN, and optional lifecycle configuration, used when creating RStudio Server Pro sessions in the SageMaker Domain. (AI-inferred) */
   defaultResourceSpec?: MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec | Computed<MakerDomain_DefaultSpaceSettings_JupyterLabAppSettings_DefaultResourceSpec>;
   /** The ARN of the execution role for the RStudioServerPro Domain-level app. */
   domainExecutionRoleArn: string | Computed<string>;
@@ -277,7 +247,6 @@ export interface MakerDomain_DomainSettings {
 
 export interface MakerDomain_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the SageMaker Domain, which you can set to any string to associate custom metadata with the domain for purposes like resource organization, access control, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

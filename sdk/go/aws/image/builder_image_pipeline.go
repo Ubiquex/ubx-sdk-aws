@@ -48,20 +48,14 @@ type BuilderImagePipeline_Schedule struct {
 }
 
 type BuilderImagePipeline_Workflows_Parameters struct {
-	// The name of an individual input parameter passed to an Image Builder workflow configured for this image pipeline, serving as the key that the workflow definition uses to reference the parameter value. (AI-inferred)
 	Name any
-	// Defines the list of string values for a given workflow parameter key in the Image Builder image pipeline's workflow configuration. (AI-inferred)
 	Value any
 }
 
 type BuilderImagePipeline_Workflows struct {
-	// Specifies the action to take when this workflow fails; valid values are CONTINUE or ABORT. (AI-inferred)
 	OnFailure any
-	// The parallel group name for this workflow; multiple workflows with the same parallel group are executed concurrently during the image build process. (AI-inferred)
 	ParallelGroup any
-	// Specifies the list of parameter name/value pairs to pass to a workflow attached to this image pipeline, controlling how that workflow runs during the image build and test process. (AI-inferred)
 	Parameters any
-	// The ARN of an Image Builder workflow to associate with the image pipeline, defining a custom build/test step sequence. (AI-inferred)
 	WorkflowArn any
 }
 

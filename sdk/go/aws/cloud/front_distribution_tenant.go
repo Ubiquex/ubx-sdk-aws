@@ -128,7 +128,6 @@ type FrontDistributionTenantAttrs struct {
 	Arn any
 	// The ID of the connection group for the distribution tenant. If you don't specify a connection group, CloudFront uses the default connection group.
 	ConnectionGroupId any
-	// The timestamp (in ISO 8601 format) indicating when the CloudFront distribution was created. (AI-inferred)
 	CreatedTime any
 	// Customizations for the distribution tenant. For each distribution tenant, you can specify the geographic restrictions, and the Amazon Resource Names (ARNs) for the ACM certificate and WAF web ACL. These are specific values that you can override or disable from the multi-tenant distribution that was used to create the distribution tenant.
 	Customizations any

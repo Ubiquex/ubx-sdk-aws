@@ -17,7 +17,6 @@ type Agreement_CustomDirectories struct {
 }
 
 type Agreement_Tags struct {
-	// The key of a tag attached to an AWS Transfer Family agreement, used to categorize or identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

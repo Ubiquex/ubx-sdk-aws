@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Database_DatabaseInput_CreateTableDefaultPermissions_Principal {
-  /** The unique identifier of the data lake principal (such as an IAM role ARN or an AWS account ID) that is granted the default permissions on tables created in this Glue database. (AI-inferred) */
   dataLakePrincipalIdentifier?: string | Computed<string>;
 }
 
 export interface Database_DatabaseInput_CreateTableDefaultPermissions {
-  /** For each entry in create_table_default_permissions, the list of permissions (e.g., ALL, ALTER, CREATE_TABLE) granted to the specified principal for tables created in the database. (AI-inferred) */
   permissions?: string[] | Computed<string[]>;
-  /** Specifies the IAM principal (such as a user, role, or federated user) to which the default permissions on tables created in this database apply, identified by its data lake principal identifier (for example, an IAM ARN). (AI-inferred) */
   principal?: Database_DatabaseInput_CreateTableDefaultPermissions_Principal | Computed<Database_DatabaseInput_CreateTableDefaultPermissions_Principal>;
 }
 

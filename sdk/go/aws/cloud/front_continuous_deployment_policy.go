@@ -4,9 +4,7 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfig struct {
-	// The HTTP header name that CloudFront inspects to route requests to the staging distribution in this continuous deployment policy. (AI-inferred)
 	Header any
-	// The header value that CloudFront uses to route requests to the staging distribution in the continuous deployment policy. (AI-inferred)
 	Value any
 }
 
@@ -20,7 +18,6 @@ type FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeig
 type FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfig struct {
 	// Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.
 	SessionStickinessConfig any
-	// Specifies the percentage of traffic to route to the staging distribution, with a value between 0 and 100, where 100 sends all traffic to the staging distribution. (AI-inferred)
 	Weight any
 }
 
@@ -110,9 +107,7 @@ type FrontContinuousDeploymentPolicyConfig struct {
 type FrontContinuousDeploymentPolicyAttrs struct {
 	// Contains the configuration for a continuous deployment policy.
 	ContinuousDeploymentPolicyConfig any
-	// The unique identifier that CloudFront assigns to the continuous deployment policy when it is created. (AI-inferred)
 	Id any
-	// The date and time when the continuous deployment policy was last modified, returned as a string in ISO 8601 format. (AI-inferred)
 	LastModifiedTime any
 }
 

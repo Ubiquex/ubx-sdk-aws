@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LoadBalancingV2TrustStoreRevocation_RevocationContents {
-  /** Specifies the type of certificate revocation list (CRL) being added, with supported values like `CRL` and `CRL2` for the AWS Elastic Load Balancing v2 trust store revocation. (AI-inferred) */
   revocationType?: string | Computed<string>;
-  /** The name of the S3 bucket that contains the certificate revocation list (CRL) file to be added to the trust store for this revocation. (AI-inferred) */
   s3Bucket?: string | Computed<string>;
-  /** The S3 object key (file path) of the revocation list file in the S3 bucket, used by the trust store revocation to load the certificate revocation data. (AI-inferred) */
   s3Key?: string | Computed<string>;
-  /** The version ID of the S3 object containing the revocation list to be added to the trust store. (AI-inferred) */
   s3ObjectVersion?: string | Computed<string>;
 }
 
 export interface LoadBalancingV2TrustStoreRevocation_TrustStoreRevocations {
-  /** The number of revoked certificate authority (CA) certificates contained in the trust store revocation, as reported by the AWS Elastic Load Balancing v2 API. (AI-inferred) */
   numberOfRevokedEntries?: number | Computed<number>;
-  /** The unique identifier assigned by AWS to each certificate revocation entry within the trust store's revocation list. (AI-inferred) */
   revocationId?: string | Computed<string>;
-  /** Specifies the revocation type for the trust store revocation, either CRL (certificate revocation list) or CERTIFICATE_AUTHORITY (indicating the content is a CA certificate to be revoked). (AI-inferred) */
   revocationType?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the trust store to which this revocation applies, identifying the target trust store for the revocation operation. (AI-inferred) */
   trustStoreArn?: string | Computed<string>;
 }
 

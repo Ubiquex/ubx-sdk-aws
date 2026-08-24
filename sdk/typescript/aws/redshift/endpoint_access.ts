@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointAccess_VpcEndpoint_NetworkInterfaces {
-  /** Indicates the Availability Zone in which the network interface associated with the VPC endpoint is located. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The unique identifier of the network interface associated with the VPC endpoint used by this Redshift endpoint access, representing the elastic network interface (ENI) that routes traffic to the Redshift cluster. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
-  /** The private IPv4 address of one of the network interfaces attached to the VPC endpoint that provides private connectivity to the Redshift cluster. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
-  /** The subnet ID where the network interface of the VPC endpoint for this Redshift endpoint access is provisioned. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
@@ -22,9 +18,7 @@ export interface EndpointAccess_VpcEndpoint {
 }
 
 export interface EndpointAccess_VpcSecurityGroups {
-  /** The current status of a VPC security group associated with the Amazon Redshift endpoint access, indicating whether the security group association is active, being authorized, or being revoked. (AI-inferred) */
   status?: string | Computed<string>;
-  /** The ID of a VPC security group associated with the Redshift endpoint access, used to control network access to the endpoint. (AI-inferred) */
   vpcSecurityGroupId?: string | Computed<string>;
 }
 

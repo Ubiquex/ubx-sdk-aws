@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolverFirewallRuleGroupAssociation_Tags {
   key?: string | Computed<string>;
-  /** The value part of a tag attached to the Route 53 Resolver firewall rule group association, used to attach arbitrary metadata like environment or owner for identifying and managing the association. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

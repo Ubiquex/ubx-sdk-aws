@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Gateway_Tags {
-  /** The key for a tag assigned to the AWS Customer Gateway resource, used for identification and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag assigned to the customer gateway, used for arbitrary metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -37,7 +35,6 @@ export interface GatewayAttrs {
   bgpAsnExtended: number;
   /** The Amazon Resource Name (ARN) for the customer gateway certificate. */
   certificateArn: string;
-  /** The unique identifier assigned by AWS to the customer gateway, such as cgw-0a1b2c3d4e5f6g7h8. (AI-inferred) */
   customerGatewayId: string;
   /** The name of customer gateway device. */
   deviceName: string;

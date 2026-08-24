@@ -4,13 +4,9 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamProcessor_BoundingBoxRegionsOfInterest struct {
-	// Height of the bounding box region of interest, expressed as a ratio of the overall video frame height (between 0.0 and 1.0). (AI-inferred)
 	Height any
-	// The normalized left (X) coordinate of the bounding box within the video frame that defines the region of interest, in the range 0 to 1. (AI-inferred)
 	Left any
-	// The normalized Y-coordinate of the top-left corner of the bounding box that defines this region of interest in a video frame, measured as a value from 0 (top edge) to 1 (bottom edge). (AI-inferred)
 	Top any
-	// Width of the bounding box that defines a region of interest in the video stream, specified as a normalized fraction of the overall frame width (0.0 to 1.0). (AI-inferred)
 	Width any
 }
 
@@ -51,9 +47,7 @@ type StreamProcessor_S3Destination struct {
 }
 
 type StreamProcessor_Tags struct {
-	// The key of a tag attached to the Amazon Rekognition stream processor, used to assign metadata for identifying, organizing, and managing the resource. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to the Rekognition stream processor, used to store arbitrary metadata such as cost-center or environment identifiers for resource management. (AI-inferred)
 	Value any
 }
 

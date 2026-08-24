@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Segment_Tags:
     key: Any = None
-    # The value of a tag applied to the Evidently segment, used for metadata, resource organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _Segment_TagsFields = {
@@ -19,24 +18,17 @@ _Segment_TagsFields = {
 
 @dataclasses.dataclass
 class SegmentConfig:
-    # A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
     description: Any = None
-    # The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
     name: Any = None
-    # The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
     pattern: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class SegmentAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Evidently segment. (AI-inferred)
     arn: Any = None
-    # A user-supplied text description of the segment, used to clarify its purpose or contents. (AI-inferred)
     description: Any = None
-    # The user-defined name of the audience segment, used to identify it within Evidently experiments and launches. (AI-inferred)
     name: Any = None
-    # The JSON pattern that defines the conditions under which a user matches this segment, used to target audiences for Evidently experiments and launches. (AI-inferred)
     pattern: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

@@ -8,40 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EmailTemplateConfig:
-    # Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
     default_substitutions: Any = None
-    # The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
     html_part: Any = None
-    # The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
     subject: Any = None
-    # Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
     tags: Any = None
-    # A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
     template_description: Any = None
-    # The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
     template_name: Any = None
-    # The plain-text body of the email message defined by this template. (AI-inferred)
     text_part: Any = None
 
 @dataclasses.dataclass
 class EmailTemplateAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Pinpoint email template. (AI-inferred)
     arn: Any = None
-    # Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred)
     default_substitutions: Any = None
-    # The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred)
     html_part: Any = None
-    # The unique name assigned to the email template in Amazon Pinpoint, which identifies it within the AWS account and region. (AI-inferred)
     id: Any = None
-    # The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred)
     subject: Any = None
-    # Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred)
     tags: Any = None
-    # A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred)
     template_description: Any = None
-    # The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred)
     template_name: Any = None
-    # The plain-text body of the email message defined by this template. (AI-inferred)
     text_part: Any = None
 
 EmailTemplate = ubx.ResourceBinding(

@@ -8,86 +8,60 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Connection_AuthParameters_ApiKeyAuthParameters:
-    # The name of the API key for API key authentication, which is used together with the API key value to authenticate requests made through the EventBridge connection. (AI-inferred)
     api_key_name: Any = None
-    # The value of the API key used for authentication when the EventBridge connection uses API key authorization. (AI-inferred)
     api_key_value: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_BasicAuthParameters:
-    # The password to use for basic authentication when connecting to the API destination or endpoint, paired with the username in the same basic auth parameters. (AI-inferred)
     password: Any = None
-    # The username for basic authentication when the EventBridge connection invokes the API destination. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_ConnectivityParameters_ResourceParameters:
-    # The ARN of the resource association used for the connectivity parameters of the EventBridge connection. (AI-inferred)
     resource_association_arn: Any = None
-    # The ARN of the AWS resource configuration (such as a VPC endpoint) used by the EventBridge connection to route traffic through a private network to the destination API. (AI-inferred)
     resource_configuration_arn: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_ConnectivityParameters:
-    # Contains the ARN of the VPC endpoint in the 'ResourceArn' subproperty, defining the private resource target for the EventBridge connection. (AI-inferred)
     resource_parameters: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_InvocationHttpParameters_BodyParameters:
-    # Indicates whether the value of this body parameter is a secret stored in AWS Secrets Manager, which EventBridge retrieves and uses when making the HTTP invocation. (AI-inferred)
     is_value_secret: Any = None
-    # The name of the body parameter to include in the HTTP invocation request for the EventBridge connection. (AI-inferred)
     key: Any = None
-    # The value to be paired with the key for a body parameter in the HTTP invocation parameters of the EventBridge connection. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_InvocationHttpParameters:
-    # This list of key-value objects defines the body parameters that are URL-encoded and sent as the HTTP request body when the EventBridge connection invokes the API destination. (AI-inferred)
     body_parameters: Any = None
-    # A list of key-value pairs (each with `Key` and `Value`) that define the HTTP headers to include in the API invocation request for this EventBridge connection. (AI-inferred)
     header_parameters: Any = None
-    # Defines the query string parameters to be sent in the HTTP request for the EventBridge connection, where each item specifies a parameter key, its value, and whether the value is a secret. (AI-inferred)
     query_string_parameters: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_OauthParameters_ClientParameters:
-    # The OAuth client ID used by the EventBridge connection to authenticate with the target API. (AI-inferred)
     client_id: Any = None
-    # The client secret that the EventBridge connection uses to authenticate to the OAuth authorization endpoint. (AI-inferred)
     client_secret: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters_OauthParameters:
-    # The URL of the OAuth authorization server's endpoint where the connection redirects users for authentication and consent during the OAuth authorization code grant flow. (AI-inferred)
     authorization_endpoint: Any = None
-    # Specifies the OAuth client ID and client secret used to authenticate the connection with the authorization endpoint. (AI-inferred)
     client_parameters: Any = None
-    # The HTTP method (e.g., GET or POST) used for the OAuth authorization request to the specified authorization endpoint for the EventBridge connection. (AI-inferred)
     http_method: Any = None
-    # Specifies additional HTTP parameters (header parameters, query string parameters, and body parameters) to include when making the OAuth authorization request to the authorization endpoint. (AI-inferred)
     oauth_http_parameters: Any = None
 
 @dataclasses.dataclass
 class Connection_AuthParameters:
-    # Specifies the API key name and value used for API key authorization when EventBridge invokes the API destination associated with this connection. (AI-inferred)
     api_key_auth_parameters: Any = None
-    # Defines the username and password used for basic authentication when the EventBridge connection invokes the API destination. (AI-inferred)
     basic_auth_parameters: Any = None
-    # Defines the private connectivity parameters for an EventBridge connection, including a resource configuration ARN and optional resource-specific settings used to reach endpoints within a VPC or via a PrivateLink resource configuration. (AI-inferred)
     connectivity_parameters: Any = None
-    # Configures the HTTP headers, query string, and path parameters that are passed to the API destination invocation when using this connection. (AI-inferred)
     invocation_http_parameters: Any = None
-    # Configuration for OAuth authorization within the connection's authentication parameters, including the authorization endpoint, client application credentials, and HTTP method used to request the token. (AI-inferred)
     oauth_parameters: Any = None
 
 @dataclasses.dataclass
 class ConnectionConfig:
-    # Specifies the authorization type for the EventBridge connection, which can be one of BASIC, OAUTH_CLIENT_CREDENTIALS, or API_KEY, determining how the connection authenticates to the API destination. (AI-inferred)
     authorization_type: Any = None
     # Description of the connection.
     description: Any = None
-    # Specifies the AWS KMS key (by ID, ARN, or alias) used to encrypt the connection's credentials and other sensitive parameters, enabling customer-managed encryption instead of the default AWS-owned key. (AI-inferred)
     kms_key_identifier: Any = None
     # Name of the connection.
     name: Any = None
@@ -98,15 +72,12 @@ class ConnectionAttrs:
     arn: Any = None
     # The arn of the connection resource to be used in IAM policies.
     arn_for_policy: Any = None
-    # The authentication parameters for the event connection, specifying how requests to the destination are authenticated (via API key, basic, or OAuth credentials) along with optional HTTP invocation parameters. (AI-inferred)
     auth_parameters: Any = None
-    # Specifies the authorization type for the EventBridge connection, which can be one of BASIC, OAUTH_CLIENT_CREDENTIALS, or API_KEY, determining how the connection authenticates to the API destination. (AI-inferred)
     authorization_type: Any = None
     # Description of the connection.
     description: Any = None
     # The private resource the HTTP request will be sent to.
     invocation_connectivity_parameters: Any = None
-    # Specifies the AWS KMS key (by ID, ARN, or alias) used to encrypt the connection's credentials and other sensitive parameters, enabling customer-managed encryption instead of the default AWS-owned key. (AI-inferred)
     kms_key_identifier: Any = None
     # Name of the connection.
     name: Any = None

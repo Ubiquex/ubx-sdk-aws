@@ -26,7 +26,6 @@ export interface SyncLocationSmb_MountOptions {
 }
 
 export interface SyncLocationSmb_Tags {
-  /** The key of a tag to assign to the DataSync SMB location, used to categorize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

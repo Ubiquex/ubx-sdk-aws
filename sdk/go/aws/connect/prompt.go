@@ -4,7 +4,6 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Prompt_Tags struct {
-	// The key of a tag assigned to the AWS Connect prompt, used for identifying and categorizing the prompt resource. (AI-inferred)
 	Key any
 	Value any
 }

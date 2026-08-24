@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RestoreTestingPlan_RecoveryPointSelection {
-  /** Specifies the algorithm used to select recovery points for restore testing, where `LATEST_WITHIN_WINDOW` picks the most recent recovery point within the selection window and `RANDOM_WITHIN_WINDOW` picks a random recovery point from that window. (AI-inferred) */
   algorithm: string | Computed<string>;
-  /** Specifies the names of backup vaults whose recovery points are excluded from the restore testing plan selection, preventing those vaults' recovery points from being used in restore tests. (AI-inferred) */
   excludeVaults?: string[] | Computed<string[]>;
-  /** Specifies the names of backup vaults to include in the recovery point selection, so that only recovery points from these vaults are considered for restore testing. (AI-inferred) */
   includeVaults: string[] | Computed<string[]>;
-  /** Specifies the types of backup recovery points to include in the restore testing plan, such as 'CONTINUOUS' or 'SNAPSHOT', determining which recovery points are eligible for testing. (AI-inferred) */
   recoveryPointTypes: string[] | Computed<string[]>;
-  /** Specifies the number of days prior to the current date from which recovery points are eligible for selection in the restore testing plan, restricting tests to recently created recovery points. (AI-inferred) */
   selectionWindowDays?: number | Computed<number>;
 }
 
 export interface RestoreTestingPlan_Tags {
-  /** The key of a tag attached to the AWS Backup restore testing plan, used for organizing, identifying, and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -34,34 +28,21 @@ const RestoreTestingPlan_TagsFields: FieldMap = {
 };
 
 export interface RestoreTestingPlanConfig {
-  /** Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred) */
   recoveryPointSelection: RestoreTestingPlan_RecoveryPointSelection | Computed<RestoreTestingPlan_RecoveryPointSelection>;
-  /** The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred) */
   restoreTestingPlanName: string | Computed<string>;
-  /** Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred) */
   scheduleExpression: string | Computed<string>;
-  /** Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred) */
   scheduleExpressionTimezone?: string | Computed<string>;
-  /** Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred) */
   startWindowHours?: number | Computed<number>;
-  /** A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred) */
   tags?: RestoreTestingPlan_Tags[] | Computed<RestoreTestingPlan_Tags[]>;
 }
 
 export interface RestoreTestingPlanAttrs {
-  /** Defines the recovery point selection criteria for the restore testing plan, including the selection algorithm (e.g., latest or random within a window) and optional filters on resource types and backup vault names to narrow which recovery points are tested. (AI-inferred) */
   recoveryPointSelection: RestoreTestingPlan_RecoveryPointSelection;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the restore testing plan, assigned by AWS when the plan is created. (AI-inferred) */
   restoreTestingPlanArn: string;
-  /** The name of the restore testing plan, which must be unique within your AWS account and is used to identify the plan in AWS Backup. (AI-inferred) */
   restoreTestingPlanName: string;
-  /** Defines the cron or rate expression that determines when the restore testing plan automatically initiates restore tests, such as 'cron(0 12 * * ? *)' or 'rate(1 day)'. (AI-inferred) */
   scheduleExpression: string;
-  /** Specifies the IANA timezone (in Area/Location format, e.g., 'America/New_York') used to evaluate the restore testing plan's schedule expression, enabling the test schedule to run at a local time. (AI-inferred) */
   scheduleExpressionTimezone: string;
-  /** Defines the number of hours after the scheduled time that the restore testing plan is allowed to begin its restore test, providing a time buffer for the test to start within that window. (AI-inferred) */
   startWindowHours: number;
-  /** A list of key-value pairs that assign tags to the AWS Backup restore testing plan, used for organizing, identifying, and managing the plan through cost allocation and access control. (AI-inferred) */
   tags: RestoreTestingPlan_Tags[];
 }
 

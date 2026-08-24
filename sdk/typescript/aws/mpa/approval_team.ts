@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApprovalTeam_ApprovalStrategy_MofN {
-  /** In the M-of-N approval scheme (indicated by the path element 'mof_n'), specifies the minimum number of approvals (the 'm' value) that must be granted by the approval team for the strategy to be satisfied. (AI-inferred) */
   minApprovalsRequired: number | Computed<number>;
 }
 
@@ -51,11 +50,9 @@ export interface ApprovalTeamConfig {
 export interface ApprovalTeamAttrs {
   approvalStrategy: ApprovalTeam_ApprovalStrategy;
   approvers: ApprovalTeam_Approvers[];
-  /** The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred) */
   arn: string;
   creationTime: string;
   description: string;
-  /** A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred) */
   lastUpdateTime: string;
   name: string;
   numberOfApprovers: number;

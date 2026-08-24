@@ -12,7 +12,6 @@ export interface InferenceFeed_Outputs_OutputConfig_Clipping {
 
 export interface InferenceFeed_Outputs_OutputConfig_Subtitling_AspectRatio {
   height?: number | Computed<number>;
-  /** Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred) */
   width?: number | Computed<number>;
 }
 

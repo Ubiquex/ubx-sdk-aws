@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCorePaymentConnector_CredentialProviderConfigurations_CoinbaseCdp {
-  /** The ARN of the credential provider (e.g., an AWS Secrets Manager secret or IAM role) that supplies the API credentials used by the Bedrock agent to authenticate with Coinbase CDP for payment operations. (AI-inferred) */
   credentialProviderArn?: string | Computed<string>;
 }
 

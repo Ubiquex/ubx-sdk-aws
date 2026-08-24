@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TowerEnabledBaseline_Parameters:
-    # The key (name) of a baseline parameter, used to identify a specific configuration parameter defined for the selected baseline in AWS Control Tower. (AI-inferred)
     key: Any = None
-    # The value of a key-value pair supplied as a configuration parameter to the AWS Control Tower baseline being enabled on an account. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TowerEnabledBaseline_Tags:
-    # The key of a tag assigned to the AWS Control Tower enabled baseline, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -31,30 +28,19 @@ _TowerEnabledBaseline_TagsFields = {
 
 @dataclasses.dataclass
 class TowerEnabledBaselineConfig:
-    # The ARN of the AWS Control Tower baseline to enable for the specified account. (AI-inferred)
     baseline_identifier: Any = None
-    # The version of the baseline to enable, used to specify a particular released version of the baseline identified by BaselineIdentifier. (AI-inferred)
     baseline_version: Any = None
-    # A list of parameter key-value pairs that customize the configuration of the enabled baseline when it is applied to an account. (AI-inferred)
     parameters: Any = None
-    # Specifies a list of key-value tags to associate with the AWS Control Tower enabled baseline resource, enabling metadata, cost allocation, and access control. (AI-inferred)
     tags: Any = None
-    # Specifies the ARN of the target AWS account or organizational unit to which the baseline is applied, such as an account ARN or OU ARN. (AI-inferred)
     target_identifier: Any = None
 
 @dataclasses.dataclass
 class TowerEnabledBaselineAttrs:
-    # The ARN of the AWS Control Tower baseline to enable for the specified account. (AI-inferred)
     baseline_identifier: Any = None
-    # The version of the baseline to enable, used to specify a particular released version of the baseline identified by BaselineIdentifier. (AI-inferred)
     baseline_version: Any = None
-    # The unique identifier (Amazon Resource Name) of the enabled baseline, assigned by AWS Control Tower when the baseline is enabled on the target account or organizational unit. (AI-inferred)
     enabled_baseline_identifier: Any = None
-    # A list of parameter key-value pairs that customize the configuration of the enabled baseline when it is applied to an account. (AI-inferred)
     parameters: Any = None
-    # Specifies a list of key-value tags to associate with the AWS Control Tower enabled baseline resource, enabling metadata, cost allocation, and access control. (AI-inferred)
     tags: Any = None
-    # Specifies the ARN of the target AWS account or organizational unit to which the baseline is applied, such as an account ARN or OU ARN. (AI-inferred)
     target_identifier: Any = None
 
 TowerEnabledBaseline = ubx.ResourceBinding(

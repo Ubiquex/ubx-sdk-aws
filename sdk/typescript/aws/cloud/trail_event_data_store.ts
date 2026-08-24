@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrailEventDataStore_AdvancedEventSelectors_FieldSelectors {
-  /** Matches events where the selected field's value ends with any of the specified string suffixes, defining a condition in the CloudTrail event data store's advanced event selector. (AI-inferred) */
   endsWith?: string[] | Computed<string[]>;
-  /** For each field selector in a CloudTrail event data store's advanced event selector, `equals` specifies the list of exact values that the named event field must match for an event to be delivered to the data store. (AI-inferred) */
   equals?: string[] | Computed<string[]>;
-  /** The name of the event attribute (e.g., eventCategory, readOnly, resources.type) that the field selector evaluates to filter which events are ingested into the event data store. (AI-inferred) */
   field?: string | Computed<string>;
-  /** For each advanced event selector field, this list of suffixes defines a `not endsWith` condition: an event matches only if the field's value does not end with any of the specified suffix strings. (AI-inferred) */
   notEndsWith?: string[] | Computed<string[]>;
-  /** Defines a list of values that, if any matches the event field specified by the adjacent field selector, will cause the event to be excluded from the CloudTrail event data store. (AI-inferred) */
   notEquals?: string[] | Computed<string[]>;
-  /** For an advanced event selector on an event data store, this list contains string prefixes; events whose corresponding field value begins with any listed prefix are excluded from matching the selector. (AI-inferred) */
   notStartsWith?: string[] | Computed<string[]>;
-  /** Specifies a list of string prefixes that the value of the selected event field must start with for an event to match this advanced event selector and be included in the event data store. (AI-inferred) */
   startsWith?: string[] | Computed<string[]>;
 }
 
 export interface TrailEventDataStore_AdvancedEventSelectors {
-  /** Defines the list of field selectors within an advanced event selector that specify conditions on event fields, such as eventCategory or eventName, to determine which events are delivered to the event data store. (AI-inferred) */
   fieldSelectors?: TrailEventDataStore_AdvancedEventSelectors_FieldSelectors[] | Computed<TrailEventDataStore_AdvancedEventSelectors_FieldSelectors[]>;
-  /** Provides a friendly name for the advanced event selector, used to identify it when managing multiple selectors in the CloudTrail event data store. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -35,9 +26,7 @@ export interface TrailEventDataStore_InsightSelectors {
 }
 
 export interface TrailEventDataStore_Tags {
-  /** Specifies the key of a tag to assign to the CloudTrail event data store, which is a custom label used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the CloudTrail event data store, used to organize and identify the resource for governance and cost allocation purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -103,7 +92,6 @@ export interface TrailEventDataStoreConfig {
   organizationEnabled?: boolean | Computed<boolean>;
   /** The retention period, in days. */
   retentionPeriod?: number | Computed<number>;
-  /** Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags?: TrailEventDataStore_Tags[] | Computed<TrailEventDataStore_Tags[]>;
   /** Indicates whether the event data store is protected from termination. */
   terminationProtectionEnabled?: boolean | Computed<boolean>;
@@ -116,7 +104,6 @@ export interface TrailEventDataStoreAttrs {
   billingMode: string;
   /** An array that enriches event records in an existing event data store by including additional information specified in individual ContexKeySelector entries. If you add ContextKeySelectors, you must set MaxEventSize to Large. */
   contextKeySelectors: TrailEventDataStore_ContextKeySelectors[];
-  /** The creation time of the CloudTrail event data store, reported by CloudFormation as a read-only timestamp string. (AI-inferred) */
   createdTimestamp: string;
   /** The ARN of the event data store. */
   eventDataStoreArn: string;
@@ -144,11 +131,9 @@ export interface TrailEventDataStoreAttrs {
   retentionPeriod: number;
   /** The status of an event data store. Values are STARTING_INGESTION, ENABLED, STOPPING_INGESTION, STOPPED_INGESTION and PENDING_DELETION. */
   status: string;
-  /** Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags: TrailEventDataStore_Tags[];
   /** Indicates whether the event data store is protected from termination. */
   terminationProtectionEnabled: boolean;
-  /** The timestamp of the last update to the event data store, indicating when its configuration was most recently modified. (AI-inferred) */
   updatedTimestamp: string;
 }
 

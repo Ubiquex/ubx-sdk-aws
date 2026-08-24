@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue:
-    # Specifies the exact string value that the custom JWT authorizer expects for a configured claim in a token, which must be matched to authorize a payment-related request. (AI-inferred)
     match_value_string: Any = None
     match_value_string_list: Any = None
 
@@ -21,15 +20,12 @@ class AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_Custom
 class AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims:
     authorizing_claim_match_value: Any = None
     inbound_token_claim_name: Any = None
-    # Specifies the expected data type (such as string, number, or boolean) of the inbound JWT token's claim value for this custom claim, enabling the authorizer to correctly parse and validate it. (AI-inferred)
     inbound_token_claim_value_type: Any = None
 
 @dataclasses.dataclass
 class AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer:
-    # The list of allowed audience values that the JWT token's audience claim must match for the custom JWT authorizer to authorize requests. (AI-inferred)
     allowed_audience: Any = None
     allowed_clients: Any = None
-    # Defines the list of OAuth 2.0 scopes that must be present in the JWT token's scope claim for the custom JWT authorizer to grant access. (AI-inferred)
     allowed_scopes: Any = None
     custom_claims: Any = None
     discovery_url: Any = None

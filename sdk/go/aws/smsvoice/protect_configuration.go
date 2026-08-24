@@ -4,18 +4,13 @@ package smsvoice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectConfiguration_CountryRuleSet_Mms struct {
-	// The country code to which this MMS rule in the AWS SMS Voice protect configuration's country rule set applies, controlling MMS messaging restrictions for that country. (AI-inferred)
 	CountryCode any
-	// Determines whether MMS messages are allowed or blocked for the specified country rule set within the protect configuration. (AI-inferred)
 	ProtectStatus any
 }
 
 type ProtectConfiguration_CountryRuleSet struct {
-	// Defines a list of MMS messaging rules for a given country in the protect configuration, where each item in the list specifies an action to apply to MMS messages for that country. (AI-inferred)
 	Mms any
-	// The `sms` list under `country_rule_set` defines country-specific SMS protection rules for the protect configuration, allowing you to set per-country settings such as daily spend limits and opt-out behavior for SMS messages. (AI-inferred)
 	Sms any
-	// The voice property contains a list of voice-specific rule objects that control whether voice calls to and from the listed country are allowed or blocked in the protect configuration. (AI-inferred)
 	Voice any
 }
 
@@ -53,7 +48,6 @@ var ProtectConfiguration_TagsFields = ubx.FieldMap{
 	}
 
 type ProtectConfigurationConfig struct {
-	// Defines the per-country rules for the protect configuration, where each key is a two-letter country code and the value is a rule object containing Boolean flags for Sms, Voice, and Send that control whether messages can be sent to that destination. (AI-inferred)
 	CountryRuleSet any
 	// When set to true deletion protection is enabled and protect configuration cannot be deleted. By default this is set to false.
 	DeletionProtectionEnabled any
@@ -64,7 +58,6 @@ type ProtectConfigurationConfig struct {
 type ProtectConfigurationAttrs struct {
 	// The Amazon Resource Name (ARN) of the protect configuration.
 	Arn any
-	// Defines the per-country rules for the protect configuration, where each key is a two-letter country code and the value is a rule object containing Boolean flags for Sms, Voice, and Send that control whether messages can be sent to that destination. (AI-inferred)
 	CountryRuleSet any
 	// When set to true deletion protection is enabled and protect configuration cannot be deleted. By default this is set to false.
 	DeletionProtectionEnabled any

@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Budget_Actions:
-    # A human-readable description of a budget action, explaining the action taken when the budget threshold is reached. (AI-inferred)
     description: Any = None
-    # The percentage of the budget's usage threshold that, when reached, triggers the corresponding budget action (such as stopping or limiting the farm). (AI-inferred)
     threshold_percentage: Any = None
-    # Defines the type of budget action to take when the threshold is reached, such as STOP_SESSION_WORKER or STOP_QUEUE. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -30,7 +27,6 @@ class Budget_Schedule:
 @dataclasses.dataclass
 class Budget_Tags:
     key: Any = None
-    # The value of a tag attached to the AWS Deadline budget, used for organizing and managing the budget resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

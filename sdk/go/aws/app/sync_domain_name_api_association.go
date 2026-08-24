@@ -4,18 +4,13 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncDomainNameApiAssociationConfig struct {
-	// The ID of the AppSync API to associate with the custom domain name. (AI-inferred)
 	ApiId any
-	// The custom domain name (e.g., api.example.com) that is associated with the AWS AppSync API. (AI-inferred)
 	DomainName any
 }
 
 type SyncDomainNameApiAssociationAttrs struct {
-	// The unique identifier that AWS AppSync assigns to the domain name–API association, usable to reference the association in API calls and automation. (AI-inferred)
 	ApiAssociationIdentifier any
-	// The ID of the AppSync API to associate with the custom domain name. (AI-inferred)
 	ApiId any
-	// The custom domain name (e.g., api.example.com) that is associated with the AWS AppSync API. (AI-inferred)
 	DomainName any
 }
 

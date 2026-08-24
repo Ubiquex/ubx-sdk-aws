@@ -2,25 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnalyticsV2ApplicationOutput_Output_DestinationSchema {
-  /** Specifies the format type for records written to the output destination, such as 'JSON' or 'CSV', for the Kinesis Data Analytics application output schema. (AI-inferred) */
   recordFormatType?: string | Computed<string>;
 }
 
 export interface AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput {
-  /** The ARN of the Kinesis Data Firehose delivery stream that the Kinesis Analytics application writes output to. (AI-inferred) */
   resourceArn: string | Computed<string>;
 }
 
 export interface AnalyticsV2ApplicationOutput_Output {
-  /** Defines the data format (e.g., JSON or CSV) used when Kinesis Data Analytics writes records to the output destination. (AI-inferred) */
   destinationSchema: AnalyticsV2ApplicationOutput_Output_DestinationSchema | Computed<AnalyticsV2ApplicationOutput_Output_DestinationSchema>;
-  /** Configures a Kinesis Data Firehose delivery stream as the destination for the application output, including the stream's resource ARN and an IAM role ARN for access. (AI-inferred) */
   kinesisFirehoseOutput?: AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput | Computed<AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput>;
-  /** Configures the application output to write to an Amazon Kinesis data stream by specifying the stream's resource ARN and the IAM role ARN that Kinesis Data Analytics assumes to deliver records. (AI-inferred) */
   kinesisStreamsOutput?: AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput | Computed<AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput>;
-  /** Specifies the AWS Lambda function destination for the application output, including the Lambda function's ARN (ResourceARN) and the IAM role ARN (RoleARN) that Kinesis Data Analytics assumes to invoke it. (AI-inferred) */
   lambdaOutput?: AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput | Computed<AnalyticsV2ApplicationOutput_Output_KinesisFirehoseOutput>;
-  /** The name of the in-application stream (as defined in your application code) from which this output reads data to send to the destination. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -57,18 +50,13 @@ const AnalyticsV2ApplicationOutput_OutputFields: FieldMap = {
 };
 
 export interface AnalyticsV2ApplicationOutputConfig {
-  /** The name of the Kinesis Data Analytics application to which this output is attached. (AI-inferred) */
   applicationName: string | Computed<string>;
-  /** Specifies the output destination (Kinesis data stream, Kinesis Data Firehose delivery stream, or AWS Lambda function) and the destination schema for the application's SQL results. (AI-inferred) */
   output: AnalyticsV2ApplicationOutput_Output | Computed<AnalyticsV2ApplicationOutput_Output>;
 }
 
 export interface AnalyticsV2ApplicationOutputAttrs {
-  /** The name of the Kinesis Data Analytics application to which this output is attached. (AI-inferred) */
   applicationName: string;
-  /** The unique identifier for the Kinesis Data Analytics v2 application output, computed as a composite of the application name and the output's ID to distinguish multiple outputs on the same application. (AI-inferred) */
   id: string;
-  /** Specifies the output destination (Kinesis data stream, Kinesis Data Firehose delivery stream, or AWS Lambda function) and the destination schema for the application's SQL results. (AI-inferred) */
   output: AnalyticsV2ApplicationOutput_Output;
 }
 

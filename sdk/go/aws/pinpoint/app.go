@@ -4,20 +4,14 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppConfig struct {
-	// The display name of the Amazon Pinpoint application. (AI-inferred)
 	Name any
-	// Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type AppAttrs struct {
-	// The Amazon Resource Name (ARN) of the Pinpoint application. (AI-inferred)
 	Arn any
-	// The unique identifier assigned to the Amazon Pinpoint application when it is created. (AI-inferred)
 	Id any
-	// The display name of the Amazon Pinpoint application. (AI-inferred)
 	Name any
-	// Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
 	Tags any
 }
 

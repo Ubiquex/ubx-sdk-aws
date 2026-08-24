@@ -2,37 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConvertQueueConfig {
-  /** The maximum number of concurrent transcoding jobs that this MediaConvert queue can process at the same time. (AI-inferred) */
   concurrentJobs?: number | Computed<number>;
-  /** An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred) */
   description?: string | Computed<string>;
   maximumConcurrentFeeds?: number | Computed<number>;
-  /** The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The pricing plan for the queue, either ON_DEMAND or RESERVED, which determines how you are billed for MediaConvert jobs. (AI-inferred) */
   pricingPlan?: string | Computed<string>;
-  /** The status of the MediaConvert queue, either ACTIVE or PAUSED, which controls whether it can accept and process new jobs. (AI-inferred) */
   status?: string | Computed<string>;
-  /** Assigns key-value tags to the MediaConvert queue, enabling cost allocation, access control, and resource categorization. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface ConvertQueueAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS Elemental MediaConvert queue, assigned by AWS upon creation. (AI-inferred) */
   arn: string;
-  /** The maximum number of concurrent transcoding jobs that this MediaConvert queue can process at the same time. (AI-inferred) */
   concurrentJobs: number;
-  /** An optional user-defined description of the MediaConvert queue, used to identify its purpose in the AWS Elemental MediaConvert console. (AI-inferred) */
   description: string;
   id: string;
   maximumConcurrentFeeds: number;
-  /** The name of the MediaConvert queue; if omitted, AWS Elemental MediaConvert automatically generates a unique queue name. (AI-inferred) */
   name: string;
-  /** The pricing plan for the queue, either ON_DEMAND or RESERVED, which determines how you are billed for MediaConvert jobs. (AI-inferred) */
   pricingPlan: string;
-  /** The status of the MediaConvert queue, either ACTIVE or PAUSED, which controls whether it can accept and process new jobs. (AI-inferred) */
   status: string;
-  /** Assigns key-value tags to the MediaConvert queue, enabling cost allocation, access control, and resource categorization. (AI-inferred) */
   tags: unknown;
 }
 

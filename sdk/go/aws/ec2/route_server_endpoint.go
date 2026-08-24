@@ -4,7 +4,6 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteServerEndpoint_Tags struct {
-	// The key of a tag attached to the EC2 Route Server Endpoint, used to organize and identify the resource in AWS. (AI-inferred)
 	Key any
 	Value any
 }

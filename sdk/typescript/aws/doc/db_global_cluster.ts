@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbGlobalCluster_Tags {
-  /** The key portion of a user-defined tag attached to the Amazon DocumentDB global cluster, used for metadata, cost allocation, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the DocumentDB global cluster. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

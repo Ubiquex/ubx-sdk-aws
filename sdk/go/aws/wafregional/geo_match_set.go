@@ -4,9 +4,7 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GeoMatchSet_GeoMatchConstraints struct {
-	// Specifies the type of geographic constraint, currently only supporting the value 'Country' for a WAF Regional geo match set. (AI-inferred)
 	Type any
-	// The two-letter ISO 3166-1 alpha-2 country code (e.g., 'US' for United States) that the geographic match constraint matches when the constraint's type is 'Country'. (AI-inferred)
 	Value any
 }
 
@@ -16,18 +14,13 @@ var GeoMatchSet_GeoMatchConstraintsFields = ubx.FieldMap{
 	}
 
 type GeoMatchSetConfig struct {
-	// Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
 	GeoMatchConstraints any
-	// A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
 	Name any
 }
 
 type GeoMatchSetAttrs struct {
-	// Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
 	GeoMatchConstraints any
-	// The unique identifier (ID) of the WAF Regional Geo Match Set, as assigned by AWS when the set is created. (AI-inferred)
 	Id any
-	// A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
 	Name any
 }
 

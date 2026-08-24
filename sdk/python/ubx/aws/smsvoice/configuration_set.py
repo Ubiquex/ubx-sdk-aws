@@ -8,36 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationSet_EventDestinations_CloudWatchLogsDestination:
-    # The ARN of the IAM role that Amazon CloudWatch Logs assumes to publish event logs for the configuration set's event destination. (AI-inferred)
     iam_role_arn: Any = None
-    # The ARN of the Amazon CloudWatch Logs log group where the configuration set delivers event notifications. (AI-inferred)
     log_group_arn: Any = None
 
 @dataclasses.dataclass
 class ConfigurationSet_EventDestinations_KinesisFirehoseDestination:
-    # The ARN of the Amazon Kinesis Data Firehose delivery stream to which the configuration set sends event notifications (e.g., message delivery and response events). (AI-inferred)
     delivery_stream_arn: Any = None
-    # The ARN of the IAM role that authorizes AWS SMS Voice to write event notifications to the associated Kinesis Data Firehose delivery stream. (AI-inferred)
     iam_role_arn: Any = None
 
 @dataclasses.dataclass
 class ConfigurationSet_EventDestinations_SnsDestination:
-    # The ARN of the Amazon SNS topic where the configuration set sends event notifications for this event destination. (AI-inferred)
     topic_arn: Any = None
 
 @dataclasses.dataclass
 class ConfigurationSet_EventDestinations:
-    # The CloudWatchLogsDestination object within an event destination of an AWS::SMSVoice::ConfigurationSet specifies the Amazon CloudWatch Logs destination for voice message events, including the IAM role ARN and log group ARN to which the events are delivered. (AI-inferred)
     cloud_watch_logs_destination: Any = None
-    # Specifies whether the event destination is enabled to receive event notifications for the configuration set. (AI-inferred)
     enabled: Any = None
-    # Specifies the name of the event destination, which uniquely identifies this destination within the configuration set. (AI-inferred)
     event_destination_name: Any = None
-    # The Kinesis Data Firehose delivery stream destination for this event destination, specifying the delivery stream ARN and IAM role ARN that AWS SMS Voice uses to deliver event notifications. (AI-inferred)
     kinesis_firehose_destination: Any = None
-    # This field specifies the voice call events (e.g., INITIATED_CALL, RINGING, ANSWERED, COMPLETED, BUSY, FAILED, or NO_ANSWER) that must occur for the associated event destination to send notifications to its target SNS topic. (AI-inferred)
     matching_event_types: Any = None
-    # Configures the Amazon SNS topic to which event notifications are published for this event destination in the SMS voice configuration set. (AI-inferred)
     sns_destination: Any = None
 
 @dataclasses.dataclass
@@ -102,7 +91,6 @@ class ConfigurationSetConfig:
 
 @dataclasses.dataclass
 class ConfigurationSetAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the configuration set in AWS. (AI-inferred)
     arn: Any = None
     # The name to use for the configuration set.
     configuration_set_name: Any = None

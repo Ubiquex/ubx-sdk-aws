@@ -4,7 +4,6 @@ package customer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesDomainObjectType_Tags struct {
-	// The key of a tag attached to the AWS Customer Profiles domain object type, used to organize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

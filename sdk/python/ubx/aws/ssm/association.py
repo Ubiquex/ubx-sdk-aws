@@ -8,30 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Association_OutputLocation_S3Location:
-    # The name of the S3 bucket where the output (such as execution logs) from the SSM association is stored when an output location is configured. (AI-inferred)
     output_s3_bucket_name: Any = None
-    # Specifies the S3 key prefix under which the association's output files are stored in the output S3 bucket, enabling logical grouping or folder structure for the results. (AI-inferred)
     output_s3_key_prefix: Any = None
-    # Specifies the AWS Region where the output S3 bucket resides, so that the association's execution results are written to the correct regional bucket. (AI-inferred)
     output_s3_region: Any = None
 
 @dataclasses.dataclass
 class Association_OutputLocation:
-    # Specifies the S3 bucket, key prefix, and AWS region for storing the output of the association's command execution. (AI-inferred)
     s3_location: Any = None
 
 @dataclasses.dataclass
 class Association_Tags:
-    # The key of a user-defined tag assigned to the SSM association, used to organize, identify, and filter the association within AWS Systems Manager. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS Systems Manager association, which aids in organizing, identifying, and managing the association through AWS tagging policies. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Association_Targets:
-    # Specifies the key of the target filter (e.g., 'InstanceIds' or a tag key) used to select the managed instances to which the SSM association applies. (AI-inferred)
     key: Any = None
-    # Values for the target key, such as EC2 instance IDs when the key is 'InstanceIds' or tag values when the key is a tag-based key like 'tag:Environment'. (AI-inferred)
     values: Any = None
 
 _Association_OutputLocation_S3LocationFields = {
@@ -60,48 +52,37 @@ _Association_TargetsFields = {
 
 @dataclasses.dataclass
 class AssociationConfig:
-    # When true, the SSM association is applied only at the interval specified by its cron schedule, and it will not also run during a configured maintenance window. (AI-inferred)
     apply_only_at_cron_interval: Any = None
     # A role used by association to take actions on your behalf.
     association_dispatch_assume_role: Any = None
     # The name of the association.
     association_name: Any = None
-    # Specifies the name of the parameter in the Automation document that receives the target instance IDs or resource identifiers defined in the association's Targets property. (AI-inferred)
     automation_target_parameter_name: Any = None
-    # Specifies the names or ARNs of Change Calendar resources that define the schedule window during which the SSM association is allowed to run. (AI-inferred)
     calendar_names: Any = None
-    # Sets the compliance severity level for the association, which determines how the association's compliance status is reported in Systems Manager Compliance. (AI-inferred)
     compliance_severity: Any = None
     # The version of the SSM document to associate with the target.
     document_version: Any = None
     # The ID of the instance that the SSM document is associated with.
     instance_id: Any = None
-    # Specifies the maximum number or percentage of targets that can run the association concurrently, used to control the rate at which state manager applies the document to instances. (AI-inferred)
     max_concurrency: Any = None
-    # Specifies the maximum number of errors (or, when expressed as a percentage, the maximum portion of the target set) that can occur before the SSM association stops sending requests to run on additional targets. (AI-inferred)
     max_errors: Any = None
     # The name of the SSM document.
     name: Any = None
-    # Specifies the S3 bucket location where the execution output of the SSM association is stored, allowing log and result data to be saved to a user-defined S3 bucket. (AI-inferred)
     output_location: Any = None
     # Parameter values that the SSM document uses at runtime.
     parameters: Any = None
     # A Cron or Rate expression that specifies when the association is applied to the target.
     schedule_expression: Any = None
-    # Specifies the number of minutes to wait after the scheduled time before the association runs, allowing you to delay execution from the cron or rate schedule defined for the association. (AI-inferred)
     schedule_offset: Any = None
-    # Indicates whether compliance for the association is automatically synced with AWS Systems Manager (AUTO) or manually synced (MANUAL). (AI-inferred)
     sync_compliance: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
     # The targets that the SSM document sends commands to.
     targets: Any = None
-    # Specifies the maximum time in seconds that the provider will wait for the SSM association to reach a successful state after creation or update, after which it returns an error. (AI-inferred)
     wait_for_success_timeout_seconds: Any = None
 
 @dataclasses.dataclass
 class AssociationAttrs:
-    # When true, the SSM association is applied only at the interval specified by its cron schedule, and it will not also run during a configured maintenance window. (AI-inferred)
     apply_only_at_cron_interval: Any = None
     # A role used by association to take actions on your behalf.
     association_dispatch_assume_role: Any = None
@@ -109,37 +90,28 @@ class AssociationAttrs:
     association_id: Any = None
     # The name of the association.
     association_name: Any = None
-    # Specifies the name of the parameter in the Automation document that receives the target instance IDs or resource identifiers defined in the association's Targets property. (AI-inferred)
     automation_target_parameter_name: Any = None
-    # Specifies the names or ARNs of Change Calendar resources that define the schedule window during which the SSM association is allowed to run. (AI-inferred)
     calendar_names: Any = None
-    # Sets the compliance severity level for the association, which determines how the association's compliance status is reported in Systems Manager Compliance. (AI-inferred)
     compliance_severity: Any = None
     # The version of the SSM document to associate with the target.
     document_version: Any = None
     # The ID of the instance that the SSM document is associated with.
     instance_id: Any = None
-    # Specifies the maximum number or percentage of targets that can run the association concurrently, used to control the rate at which state manager applies the document to instances. (AI-inferred)
     max_concurrency: Any = None
-    # Specifies the maximum number of errors (or, when expressed as a percentage, the maximum portion of the target set) that can occur before the SSM association stops sending requests to run on additional targets. (AI-inferred)
     max_errors: Any = None
     # The name of the SSM document.
     name: Any = None
-    # Specifies the S3 bucket location where the execution output of the SSM association is stored, allowing log and result data to be saved to a user-defined S3 bucket. (AI-inferred)
     output_location: Any = None
     # Parameter values that the SSM document uses at runtime.
     parameters: Any = None
     # A Cron or Rate expression that specifies when the association is applied to the target.
     schedule_expression: Any = None
-    # Specifies the number of minutes to wait after the scheduled time before the association runs, allowing you to delay execution from the cron or rate schedule defined for the association. (AI-inferred)
     schedule_offset: Any = None
-    # Indicates whether compliance for the association is automatically synced with AWS Systems Manager (AUTO) or manually synced (MANUAL). (AI-inferred)
     sync_compliance: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
     # The targets that the SSM document sends commands to.
     targets: Any = None
-    # Specifies the maximum time in seconds that the provider will wait for the SSM association to reach a successful state after creation or update, after which it returns an error. (AI-inferred)
     wait_for_success_timeout_seconds: Any = None
 
 Association = ubx.ResourceBinding(

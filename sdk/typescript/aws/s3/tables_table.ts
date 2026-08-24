@@ -9,13 +9,9 @@ export interface TablesTable_Compaction {
 }
 
 export interface TablesTable_IcebergMetadata_IcebergPartitionSpec_Fields {
-  /** The unique numeric identifier for this partition field within the Iceberg partition spec, used to reference the field in table metadata and query operations. (AI-inferred) */
   fieldId?: number | Computed<number>;
-  /** The name of the partition field, which corresponds to a column name in the Iceberg table's schema and defines the source column used for partitioning in the partition spec. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The numeric ID of the source column in the table schema that this partition field derives from, as defined in the Iceberg partition spec. (AI-inferred) */
   sourceId?: number | Computed<number>;
-  /** Specifies the partition transform applied to the source column (e.g., identity, bucket[N], truncate[N], year, month, day, hour, or void) when defining this field in the Iceberg partition spec. (AI-inferred) */
   transform?: string | Computed<string>;
 }
 
@@ -27,13 +23,9 @@ export interface TablesTable_IcebergMetadata_IcebergPartitionSpec {
 }
 
 export interface TablesTable_IcebergMetadata_IcebergSchema_SchemaFieldList {
-  /** The numeric identifier that uniquely distinguishes this schema field from other fields in the table's Iceberg schema. (AI-inferred) */
   id?: number | Computed<number>;
-  /** Specifies the column name for this entry in the Iceberg schema field list, which defines the columns of the S3 Tables table. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether this field in the table's Iceberg schema is required, meaning that every record must include a non-null value for the field. (AI-inferred) */
   required?: boolean | Computed<boolean>;
-  /** Defines the Iceberg data type for a field in the table schema, such as string, int, long, double, boolean, timestamp, or other supported Iceberg types. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -43,15 +35,10 @@ export interface TablesTable_IcebergMetadata_IcebergSchema {
 }
 
 export interface TablesTable_IcebergMetadata_IcebergSchemaV2_SchemaV2FieldList {
-  /** The doc property provides a documentation string that describes the purpose or meaning of the schema field within the Iceberg table's schema v2 definition. (AI-inferred) */
   doc?: string | Computed<string>;
-  /** The unique numeric ID assigned to this field within the Iceberg schema v2 definition, used internally to reference the field in table metadata and data files. (AI-inferred) */
   id?: number | Computed<number>;
-  /** The name of a column (field) within the Iceberg schema version 2 for the S3 Tables table, which identifies the field in the list of fields for that schema. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Indicates whether this column is required (non-nullable) in the Iceberg table schema, meaning it must contain a value in every row. (AI-inferred) */
   required?: boolean | Computed<boolean>;
-  /** Specifies the Iceberg data type for this column in the table schema, defining how values are stored and interpreted (e.g., boolean, int, long, float, double, decimal, date, time, timestamp, string, uuid, fixed, binary, or nested struct/list/map types). (AI-inferred) */
   type?: unknown | Computed<unknown>;
 }
 
@@ -67,13 +54,9 @@ export interface TablesTable_IcebergMetadata_IcebergSchemaV2 {
 }
 
 export interface TablesTable_IcebergMetadata_IcebergSortOrder_Fields {
-  /** Specifies the sort direction (ASC or DESC) for a field in the Iceberg sort order, determining whether rows are ordered ascending or descending by this field. (AI-inferred) */
   direction?: string | Computed<string>;
-  /** Specifies whether null values are positioned first or last when sorting records by this field in the table's Iceberg sort order. (AI-inferred) */
   nullOrder?: string | Computed<string>;
-  /** The source_id field specifies the unique numeric identifier of the column in the Iceberg table's schema that this sort field refers to, defining which column is used for sorting in the table's sort order. (AI-inferred) */
   sourceId?: number | Computed<number>;
-  /** The transform function applied to the column for sorting in the Iceberg sort order, such as identity, bucket[N], truncate[N], or time-based transforms like year, month, day, or hour. (AI-inferred) */
   transform?: string | Computed<string>;
 }
 

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbelasticCluster_Tags {
-  /** The key of a tag attached to the Amazon DocumentDB Elastic Cluster, enabling the resource to be categorized, identified, and filtered by user-defined metadata. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,68 +12,38 @@ const DbelasticCluster_TagsFields: FieldMap = {
 };
 
 export interface DbelasticClusterConfig {
-  /** The administrative (master) username for the DocumentDB elastic cluster, used as the initial admin user for authentication. (AI-inferred) */
   adminUserName: string | Computed<string>;
-  /** Password for the admin user account that is created to access the elastic cluster's database. (AI-inferred) */
   adminUserPassword?: string | Computed<string>;
-  /** Specifies the authentication type for the cluster, indicating whether the admin password is supplied as plain text (PLAIN_TEXT) or via a Secrets Manager secret ARN (SECRET_ARN). (AI-inferred) */
   authType: string | Computed<string>;
-  /** Specifies the number of days that automatic backups of the Amazon DocumentDB elastic cluster are retained. (AI-inferred) */
   backupRetentionPeriod?: number | Computed<number>;
-  /** Specifies the name of the Amazon DocumentDB elastic cluster, which is used as a unique identifier for the cluster within your AWS account and region. (AI-inferred) */
   clusterName: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt data at rest in the DocumentDB elastic cluster. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the preferred daily time range, in UTC (format HH24:MI-HH24:MI), during which AWS automatically creates backups for the Amazon DocumentDB Elastic Cluster. (AI-inferred) */
   preferredBackupWindow?: string | Computed<string>;
-  /** The weekly time range (in UTC) during which system maintenance may occur for the DocumentDB elastic cluster, specified in the format ddd:hh24:mi-ddd:hh24:mi (e.g., Mon:01:00-Mon:02:00). (AI-inferred) */
   preferredMaintenanceWindow?: string | Computed<string>;
-  /** The number of vCPUs allocated to each shard in the Amazon DocumentDB elastic cluster, defining the compute capacity per shard. (AI-inferred) */
   shardCapacity: number | Computed<number>;
-  /** The desired number of shards for the Amazon DocumentDB elastic cluster, where each shard is an independent partition of the cluster's data and this value directly determines the cluster's storage and compute capacity. (AI-inferred) */
   shardCount: number | Computed<number>;
-  /** Specifies the number of instance nodes to provision for each shard in the DocumentDB elastic cluster, affecting shard high availability and failover behavior. (AI-inferred) */
   shardInstanceCount?: number | Computed<number>;
-  /** Specifies the VPC subnet IDs in which the Amazon DocumentDB Elastic Cluster's instances are deployed, determining the cluster's network placement within a VPC. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** Specifies the key-value tags to associate with the DocumentDB Elastic Cluster for resource identification and management within AWS. (AI-inferred) */
   tags?: DbelasticCluster_Tags[] | Computed<DbelasticCluster_Tags[]>;
-  /** A list of VPC security group IDs to associate with the cluster, controlling inbound and outbound network access. (AI-inferred) */
   vpcSecurityGroupIds?: string[] | Computed<string[]>;
 }
 
 export interface DbelasticClusterAttrs {
-  /** The administrative (master) username for the DocumentDB elastic cluster, used as the initial admin user for authentication. (AI-inferred) */
   adminUserName: string;
-  /** Password for the admin user account that is created to access the elastic cluster's database. (AI-inferred) */
   adminUserPassword: string;
-  /** Specifies the authentication type for the cluster, indicating whether the admin password is supplied as plain text (PLAIN_TEXT) or via a Secrets Manager secret ARN (SECRET_ARN). (AI-inferred) */
   authType: string;
-  /** Specifies the number of days that automatic backups of the Amazon DocumentDB elastic cluster are retained. (AI-inferred) */
   backupRetentionPeriod: number;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the DocumentDB elastic cluster. (AI-inferred) */
   clusterArn: string;
-  /** The connection endpoint for the Amazon DocumentDB elastic cluster, used by applications to connect to the cluster. (AI-inferred) */
   clusterEndpoint: string;
-  /** Specifies the name of the Amazon DocumentDB elastic cluster, which is used as a unique identifier for the cluster within your AWS account and region. (AI-inferred) */
   clusterName: string;
-  /** The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt data at rest in the DocumentDB elastic cluster. (AI-inferred) */
   kmsKeyId: string;
-  /** Specifies the preferred daily time range, in UTC (format HH24:MI-HH24:MI), during which AWS automatically creates backups for the Amazon DocumentDB Elastic Cluster. (AI-inferred) */
   preferredBackupWindow: string;
-  /** The weekly time range (in UTC) during which system maintenance may occur for the DocumentDB elastic cluster, specified in the format ddd:hh24:mi-ddd:hh24:mi (e.g., Mon:01:00-Mon:02:00). (AI-inferred) */
   preferredMaintenanceWindow: string;
-  /** The number of vCPUs allocated to each shard in the Amazon DocumentDB elastic cluster, defining the compute capacity per shard. (AI-inferred) */
   shardCapacity: number;
-  /** The desired number of shards for the Amazon DocumentDB elastic cluster, where each shard is an independent partition of the cluster's data and this value directly determines the cluster's storage and compute capacity. (AI-inferred) */
   shardCount: number;
-  /** Specifies the number of instance nodes to provision for each shard in the DocumentDB elastic cluster, affecting shard high availability and failover behavior. (AI-inferred) */
   shardInstanceCount: number;
-  /** Specifies the VPC subnet IDs in which the Amazon DocumentDB Elastic Cluster's instances are deployed, determining the cluster's network placement within a VPC. (AI-inferred) */
   subnetIds: string[];
-  /** Specifies the key-value tags to associate with the DocumentDB Elastic Cluster for resource identification and management within AWS. (AI-inferred) */
   tags: DbelasticCluster_Tags[];
-  /** A list of VPC security group IDs to associate with the cluster, controlling inbound and outbound network access. (AI-inferred) */
   vpcSecurityGroupIds: string[];
 }
 

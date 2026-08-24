@@ -15,43 +15,27 @@ class GatewayStage_AccessLogSetting:
 
 @dataclasses.dataclass
 class GatewayStage_CanarySetting:
-    # The ID of the deployment that the canary will route a percentage of traffic to, allowing you to test changes before shifting all traffic to that deployment. (AI-inferred)
     deployment_id: Any = None
-    # Specifies the percentage of traffic that API Gateway routes to the canary deployment. (AI-inferred)
     percent_traffic: Any = None
-    # A map of stage variable names to values that temporarily override the stage's normal variables for canary traffic in the API Gateway stage, allowing different configuration for the canary version. (AI-inferred)
     stage_variable_overrides: Any = None
-    # Indicates whether the canary should use the stage cache, enabling the canary's traffic to share the cache configured for the API Gateway stage. (AI-inferred)
     use_stage_cache: Any = None
 
 @dataclasses.dataclass
 class GatewayStage_MethodSettings:
-    # Specifies whether the method-level cache in the API Gateway stage encrypts cached response data before storing it. (AI-inferred)
     cache_data_encrypted: Any = None
-    # Specifies the time-to-live (TTL) duration, in seconds, for cached responses for a specific method in the API Gateway stage, controlling how long API Gateway caches a method's response before forwarding a new request to the backend. (AI-inferred)
     cache_ttl_in_seconds: Any = None
-    # Enables or disables API caching for this stage's method, so responses are cached and served from the cache until the cache TTL expires. (AI-inferred)
     caching_enabled: Any = None
-    # Enables data tracing for the method, capturing full request and response payloads in execution logs. (AI-inferred)
     data_trace_enabled: Any = None
-    # The HTTP method (for example GET, POST, or *) to which these method settings apply, where * matches all methods. (AI-inferred)
     http_method: Any = None
-    # Specifies the logging level (OFF, ERROR, or INFO) for the method's execution logs in API Gateway. (AI-inferred)
     logging_level: Any = None
-    # Enables CloudWatch metrics for the API Gateway method associated with this method setting. (AI-inferred)
     metrics_enabled: Any = None
-    # The resource path (e.g., '/pets') in the API Gateway API for which these method settings apply, used together with the HTTP method to identify a specific method on the stage. (AI-inferred)
     resource_path: Any = None
-    # Sets the maximum number of requests per second that API Gateway can serve for the method during a burst, used to control throttling behavior. (AI-inferred)
     throttling_burst_limit: Any = None
-    # Sets the maximum steady-state request rate (requests per second) allowed for a method's throttling configuration in this API Gateway stage. (AI-inferred)
     throttling_rate_limit: Any = None
 
 @dataclasses.dataclass
 class GatewayStage_Tags:
-    # The key of a user-defined tag applied to the API Gateway stage, used for organizing and identifying the stage in AWS cost allocation and resource management. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag assigned to the API Gateway stage, which can be used for cost allocation, resource organization, and access control. (AI-inferred)
     value: Any = None
 
 _GatewayStage_AccessLogSettingFields = {
@@ -88,29 +72,17 @@ _GatewayStage_TagsFields = {
 class GatewayStageConfig:
     # The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.
     access_log_setting: Any = None
-    # Indicates whether a cache cluster is enabled for the API Gateway stage, allowing responses to be cached for performance. (AI-inferred)
     cache_cluster_enabled: Any = None
-    # Specifies the cache cluster size (in gigabytes) for the API Gateway stage, using string values such as '0.5' or '1.6' when caching is enabled. (AI-inferred)
     cache_cluster_size: Any = None
-    # Configures the canary deployment settings for the stage, including the percentage of traffic to route to the canary deployment, the deployment ID, and optional stage variable overrides and cache usage. (AI-inferred)
     canary_setting: Any = None
-    # The ID of the client certificate that API Gateway uses to authenticate client requests to the stage. (AI-inferred)
     client_certificate_id: Any = None
-    # The ID of the API Gateway deployment that this stage points to, determining which version of the API is exposed at this stage's endpoint. (AI-inferred)
     deployment_id: Any = None
-    # A description of the API Gateway stage, providing additional context about its purpose or contents. (AI-inferred)
     description: Any = None
-    # The identifier of the API documentation version to associate with this stage, controlling which published documentation snapshot is exposed for the stage. (AI-inferred)
     documentation_version: Any = None
-    # Configures per-method settings for the stage, including throttling, caching, metrics, and logging, keyed by method path. (AI-inferred)
     method_settings: Any = None
-    # The ID of the REST API that this stage is associated with. (AI-inferred)
     rest_api_id: Any = None
-    # The name of the API Gateway stage (e.g., 'prod', 'dev'), which appears in the API's invoke URL and identifies the deployment associated with this stage. (AI-inferred)
     stage_name: Any = None
-    # A list of key-value pairs used to associate metadata with the API Gateway stage for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # Indicates whether active tracing with AWS X-Ray is enabled for the API Gateway stage. (AI-inferred)
     tracing_enabled: Any = None
     # A map (string-to-string map) that defines the stage variables, where the variable name is the key and the variable value is the value. Variable names are limited to alphanumeric characters. Values must match the following regular expression: ``[A-Za-z0-9-._~:/?#&=,]+``.
     variables: Any = None
@@ -119,29 +91,17 @@ class GatewayStageConfig:
 class GatewayStageAttrs:
     # The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.
     access_log_setting: Any = None
-    # Indicates whether a cache cluster is enabled for the API Gateway stage, allowing responses to be cached for performance. (AI-inferred)
     cache_cluster_enabled: Any = None
-    # Specifies the cache cluster size (in gigabytes) for the API Gateway stage, using string values such as '0.5' or '1.6' when caching is enabled. (AI-inferred)
     cache_cluster_size: Any = None
-    # Configures the canary deployment settings for the stage, including the percentage of traffic to route to the canary deployment, the deployment ID, and optional stage variable overrides and cache usage. (AI-inferred)
     canary_setting: Any = None
-    # The ID of the client certificate that API Gateway uses to authenticate client requests to the stage. (AI-inferred)
     client_certificate_id: Any = None
-    # The ID of the API Gateway deployment that this stage points to, determining which version of the API is exposed at this stage's endpoint. (AI-inferred)
     deployment_id: Any = None
-    # A description of the API Gateway stage, providing additional context about its purpose or contents. (AI-inferred)
     description: Any = None
-    # The identifier of the API documentation version to associate with this stage, controlling which published documentation snapshot is exposed for the stage. (AI-inferred)
     documentation_version: Any = None
-    # Configures per-method settings for the stage, including throttling, caching, metrics, and logging, keyed by method path. (AI-inferred)
     method_settings: Any = None
-    # The ID of the REST API that this stage is associated with. (AI-inferred)
     rest_api_id: Any = None
-    # The name of the API Gateway stage (e.g., 'prod', 'dev'), which appears in the API's invoke URL and identifies the deployment associated with this stage. (AI-inferred)
     stage_name: Any = None
-    # A list of key-value pairs used to associate metadata with the API Gateway stage for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # Indicates whether active tracing with AWS X-Ray is enabled for the API Gateway stage. (AI-inferred)
     tracing_enabled: Any = None
     # A map (string-to-string map) that defines the stage variables, where the variable name is the key and the variable value is the value. Variable names are limited to alphanumeric characters. Values must match the following regular expression: ``[A-Za-z0-9-._~:/?#&=,]+``.
     variables: Any = None

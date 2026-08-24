@@ -4,7 +4,6 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveInputSecurityGroup_WhitelistRules struct {
-	// The CIDR block that is allowed to send input requests to the MediaLive input security group. (AI-inferred)
 	Cidr any
 }
 
@@ -14,17 +13,13 @@ var LiveInputSecurityGroup_WhitelistRulesFields = ubx.FieldMap{
 
 type LiveInputSecurityGroupConfig struct {
 	Tags any
-	// Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
 	WhitelistRules any
 }
 
 type LiveInputSecurityGroupAttrs struct {
-	// The Amazon Resource Name (ARN) of the MediaLive input security group. (AI-inferred)
 	Arn any
-	// The unique identifier of the AWS Elemental MediaLive input security group, returned as a string when the resource is created. (AI-inferred)
 	Id any
 	Tags any
-	// Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
 	WhitelistRules any
 }
 

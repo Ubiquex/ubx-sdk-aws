@@ -14,7 +14,6 @@ export interface Repository_ImageScanningConfiguration {
 }
 
 export interface Repository_ImageTagMutabilityExclusionFilters {
-  /** This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred) */
   imageTagMutabilityExclusionFilterType?: string | Computed<string>;
   imageTagMutabilityExclusionFilterValue?: string | Computed<string>;
 }
@@ -27,9 +26,7 @@ export interface Repository_LifecyclePolicy {
 }
 
 export interface Repository_Tags {
-  /** The key of a user-defined tag applied to the ECR repository, used to add metadata that can be referenced by IAM policies (e.g., ecr:ResourceTag) and for cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a single tag assigned to the ECR repository, used to attach arbitrary metadata for resource identification, organization, and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -79,7 +76,6 @@ export interface RepositoryConfig {
 }
 
 export interface RepositoryAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred) */
   arn: string;
   /** If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories. */
   emptyOnDelete: boolean;
@@ -97,7 +93,6 @@ export interface RepositoryAttrs {
   repositoryName: string;
   /** The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*. */
   repositoryPolicyText: unknown;
-  /** The URI of the Amazon ECR repository, formatted as `aws_account_id.dkr.ecr.region.amazonaws.com/repository_name`, which is used to pull and push Docker images. (AI-inferred) */
   repositoryUri: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Repository_Tags[];

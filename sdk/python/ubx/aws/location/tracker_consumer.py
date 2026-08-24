@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TrackerConsumerConfig:
-    # The Amazon Resource Name (ARN) of the consumer resource (such as an EventBridge rule) that will receive location updates from the tracker. (AI-inferred)
     consumer_arn: Any = None
-    # The name of the Amazon Location Service tracker that the consumer (such as a geofence collection) is associated with, linking the consumer to receive position updates from that tracker. (AI-inferred)
     tracker_name: Any = None
 
 @dataclasses.dataclass
 class TrackerConsumerAttrs:
-    # The Amazon Resource Name (ARN) of the consumer resource (such as an EventBridge rule) that will receive location updates from the tracker. (AI-inferred)
     consumer_arn: Any = None
-    # The name of the Amazon Location Service tracker that the consumer (such as a geofence collection) is associated with, linking the consumer to receive position updates from that tracker. (AI-inferred)
     tracker_name: Any = None
 
 TrackerConsumer = ubx.ResourceBinding(

@@ -15,7 +15,6 @@ class OutpostsEndpoint_FailedReason:
 
 @dataclasses.dataclass
 class OutpostsEndpoint_NetworkInterfaces:
-    # The unique identifier of the Elastic Network Interface (ENI) provisioned for the S3 on Outposts endpoint. (AI-inferred)
     network_interface_id: Any = None
 
 _OutpostsEndpoint_FailedReasonFields = {
@@ -29,7 +28,6 @@ class OutpostsEndpointConfig:
     access_type: Any = None
     # The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint.
     customer_owned_ipv4_pool: Any = None
-    # The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred)
     failed_reason: Any = None
     # The id of the customer outpost on which the bucket resides.
     outpost_id: Any = None
@@ -50,7 +48,6 @@ class OutpostsEndpointAttrs:
     creation_time: Any = None
     # The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint.
     customer_owned_ipv4_pool: Any = None
-    # The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred)
     failed_reason: Any = None
     # The ID of the endpoint.
     id: Any = None
@@ -60,7 +57,6 @@ class OutpostsEndpointAttrs:
     outpost_id: Any = None
     # The ID of the security group to use with the endpoint.
     security_group_id: Any = None
-    # The endpoint's current lifecycle status, such as Available, Pending, or Deleting, indicating the operational state of the S3 on Outposts endpoint. (AI-inferred)
     status: Any = None
     # The ID of the subnet in the selected VPC. The subnet must belong to the Outpost.
     subnet_id: Any = None

@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class TieringConfiguration_ResourceSelection:
     resource_type: Any = None
     resources: Any = None
-    # The number of days after a backup is created that it should be moved to the cold storage tier, controlling the lifecycle transition for the selected resources. (AI-inferred)
     tiering_down_settings_in_days: Any = None
 
 _TieringConfiguration_ResourceSelectionFields = {
@@ -21,23 +20,18 @@ _TieringConfiguration_ResourceSelectionFields = {
 
 @dataclasses.dataclass
 class TieringConfigurationConfig:
-    # The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
     backup_vault_name: Any = None
     resource_selection: Any = None
-    # The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
     tiering_configuration_name: Any = None
     tiering_configuration_tags: Any = None
 
 @dataclasses.dataclass
 class TieringConfigurationAttrs:
-    # The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred)
     backup_vault_name: Any = None
     creation_time: Any = None
-    # The timestamp of the most recent update to this AWS Backup tiering configuration. (AI-inferred)
     last_updated_time: Any = None
     resource_selection: Any = None
     tiering_configuration_arn: Any = None
-    # The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred)
     tiering_configuration_name: Any = None
     tiering_configuration_tags: Any = None
 

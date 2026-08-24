@@ -18,7 +18,6 @@ export interface SyncLocationFsxOpenZfs_Protocol {
 
 export interface SyncLocationFsxOpenZfs_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag (key-value pair) applied to the FSx for OpenZFS DataSync location, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

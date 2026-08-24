@@ -4,19 +4,15 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions struct {
-	// Sets the AWS Organizations entity path (the OU path, e.g., 'ou-1234-abcdefgh') for an organizational unit to exclude from the IPAM default resource discovery, preventing resources in that OU from being automatically discovered. (AI-inferred)
 	OrganizationsEntityPath any
 }
 
 type Ipam_OperatingRegions struct {
-	// The name of the AWS Region in which the IPAM operates, defining one of the operating regions for the IPAM. (AI-inferred)
 	RegionName any
 }
 
 type Ipam_Tags struct {
-	// The key of a user-defined tag applied to the EC2 IPAM resource, used to categorize or identify the IPAM with custom metadata (e.g., 'Name' or 'Environment'). (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag key assigned to the EC2 IPAM resource for organizational or management purposes. (AI-inferred)
 	Value any
 }
 
@@ -36,7 +32,6 @@ var Ipam_TagsFields = ubx.FieldMap{
 type IpamConfig struct {
 	// A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.
 	DefaultResourceDiscoveryOrganizationalUnitExclusions any
-	// A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred)
 	Description any
 	// Enable provisioning of GUA space in private pools.
 	EnablePrivateGua any
@@ -59,7 +54,6 @@ type IpamAttrs struct {
 	DefaultResourceDiscoveryId any
 	// A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.
 	DefaultResourceDiscoveryOrganizationalUnitExclusions any
-	// A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred)
 	Description any
 	// Enable provisioning of GUA space in private pools.
 	EnablePrivateGua any

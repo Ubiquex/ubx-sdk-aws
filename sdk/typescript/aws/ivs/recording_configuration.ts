@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecordingConfiguration_DestinationConfiguration_S3 {
-  /** The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred) */
   bucketName: string | Computed<string>;
 }
 
@@ -20,7 +19,6 @@ export interface RecordingConfiguration_RenditionConfiguration {
 
 export interface RecordingConfiguration_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

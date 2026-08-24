@@ -2,29 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Feature_EntityOverrides {
-  /** The unique identifier of the user or session for which this entity override sets a specific feature variation. (AI-inferred) */
   entityId?: string | Computed<string>;
-  /** The name of the variation to assign to the overridden entity in an entity override. (AI-inferred) */
   variation?: string | Computed<string>;
 }
 
 export interface Feature_Tags {
-  /** The key for a tag attached to the Evidently feature, enabling you to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Evidently feature, used to assign custom metadata for resource organization, cost allocation, and access control in AWS Evidently. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Feature_Variations {
-  /** In a feature variation, when the variation type is boolean, this field specifies the true/false value that is served for that variation. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
-  /** The numeric double value assigned to this variation of the feature, used when the variation's value type is set to double. (AI-inferred) */
   doubleValue?: number | Computed<number>;
-  /** Sets the numeric (long) value for this feature variation, which Evidently returns as the variation's value when the feature is evaluated for a user or session. (AI-inferred) */
   longValue?: number | Computed<number>;
-  /** For a variation of the Evidently feature, this defines the string-typed value that is returned when the feature is evaluated and this variation is selected. (AI-inferred) */
   stringValue?: string | Computed<string>;
-  /** The user-defined name for a variation of the Evidently feature, used to reference this variation when defining traffic allocation or feature evaluation rules. (AI-inferred) */
   variationName?: string | Computed<string>;
 }
 
@@ -47,42 +38,27 @@ const Feature_VariationsFields: FieldMap = {
 };
 
 export interface FeatureConfig {
-  /** Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred) */
   defaultVariation?: string | Computed<string>;
-  /** An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred) */
   entityOverrides?: Feature_EntityOverrides[] | Computed<Feature_EntityOverrides[]>;
-  /** Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred) */
   evaluationStrategy?: string | Computed<string>;
-  /** The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred) */
   name: string | Computed<string>;
-  /** The name or ARN of the Evidently project that this feature belongs to. (AI-inferred) */
   project: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Feature_Tags[] | Computed<Feature_Tags[]>;
-  /** Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred) */
   variations: Feature_Variations[] | Computed<Feature_Variations[]>;
 }
 
 export interface FeatureAttrs {
-  /** The Amazon Resource Name (ARN) uniquely identifying this Evidently feature in AWS. (AI-inferred) */
   arn: string;
-  /** Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred) */
   defaultVariation: string;
-  /** An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred) */
   description: string;
-  /** Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred) */
   entityOverrides: Feature_EntityOverrides[];
-  /** Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred) */
   evaluationStrategy: string;
-  /** The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred) */
   name: string;
-  /** The name or ARN of the Evidently project that this feature belongs to. (AI-inferred) */
   project: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Feature_Tags[];
-  /** Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred) */
   variations: Feature_Variations[];
 }
 

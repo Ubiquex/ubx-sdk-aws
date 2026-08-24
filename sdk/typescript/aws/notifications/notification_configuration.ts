@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NotificationConfiguration_Tags {
-  /** The key part of a tag applied to the notification configuration, used to label and categorize the AWS resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,28 +12,19 @@ const NotificationConfiguration_TagsFields: FieldMap = {
 };
 
 export interface NotificationConfigurationConfig {
-  /** Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred) */
   aggregationDuration?: string | Computed<string>;
-  /** The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred) */
   description: string | Computed<string>;
-  /** The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred) */
   name: string | Computed<string>;
   /** A list of tags that are attached to the role. */
   tags?: NotificationConfiguration_Tags[] | Computed<NotificationConfiguration_Tags[]>;
 }
 
 export interface NotificationConfigurationAttrs {
-  /** Controls how long the notification configuration collects related events before delivering them as one aggregated notification, balancing timeliness against notification volume. (AI-inferred) */
   aggregationDuration: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this notification configuration. (AI-inferred) */
   arn: string;
-  /** The timestamp when the notification configuration was created. (AI-inferred) */
   creationTime: string;
-  /** The Description property is a required string that provides a human-readable description of the notification configuration, enabling users to identify and distinguish configurations within AWS User Notifications. (AI-inferred) */
   description: string;
-  /** The user-defined name for the notification configuration, used to identify and display the configuration in the AWS Management Console and APIs. (AI-inferred) */
   name: string;
-  /** The read-only status of the notification configuration, indicating whether it is active (enabled) or inactive (disabled) for delivering notifications. (AI-inferred) */
   status: string;
   /** A list of tags that are attached to the role. */
   tags: NotificationConfiguration_Tags[];

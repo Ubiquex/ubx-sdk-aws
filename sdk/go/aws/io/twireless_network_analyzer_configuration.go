@@ -5,14 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessNetworkAnalyzerConfiguration_Tags struct {
 	Key any
-	// The value part of a key-value tag on the AWS IoT Wireless Network Analyzer Configuration, used to store custom metadata associated with the resource. (AI-inferred)
 	Value any
 }
 
 type TwirelessNetworkAnalyzerConfiguration_TraceContent struct {
-	// The verbosity level for logs collected by the network analyzer for wireless devices, such as 'OFF', 'INFO', or 'DEBUG'. (AI-inferred)
 	LogLevel any
-	// Specifies whether frame-level information for wireless devices is captured in the network analyzer trace, enabling or disabling wireless device frame tracing. (AI-inferred)
 	WirelessDeviceFrameInfo any
 }
 

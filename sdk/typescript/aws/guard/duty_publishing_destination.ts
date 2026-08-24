@@ -9,9 +9,7 @@ export interface DutyPublishingDestination_DestinationProperties {
 }
 
 export interface DutyPublishingDestination_Tags {
-  /** The key of a tag assigned to the GuardDuty publishing destination, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag that is associated with the GuardDuty publishing destination, used for resource organization, cost tracking, and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -26,18 +24,15 @@ const DutyPublishingDestination_TagsFields: FieldMap = {
 };
 
 export interface DutyPublishingDestinationConfig {
-  /** Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred) */
   destinationProperties: DutyPublishingDestination_DestinationProperties | Computed<DutyPublishingDestination_DestinationProperties>;
   /** The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported. */
   destinationType: string | Computed<string>;
   /** The ID of the GuardDuty detector associated with the publishing destination. */
   detectorId: string | Computed<string>;
-  /** A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred) */
   tags?: DutyPublishingDestination_Tags[] | Computed<DutyPublishingDestination_Tags[]>;
 }
 
 export interface DutyPublishingDestinationAttrs {
-  /** Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred) */
   destinationProperties: DutyPublishingDestination_DestinationProperties;
   /** The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported. */
   destinationType: string;
@@ -49,7 +44,6 @@ export interface DutyPublishingDestinationAttrs {
   publishingFailureStartTimestamp: string;
   /** The status of the publishing destination. */
   status: string;
-  /** A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred) */
   tags: DutyPublishingDestination_Tags[];
 }
 

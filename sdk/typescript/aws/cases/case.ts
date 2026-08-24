@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Case_Tags {
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the AWS Cases case, used to store user-defined metadata for organizing, searching, or managing the case. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

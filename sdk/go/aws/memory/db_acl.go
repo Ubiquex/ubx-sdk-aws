@@ -4,9 +4,7 @@ package memory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbAcl_Tags struct {
-	// The key name of a tag to associate with the MemoryDB ACL. (AI-inferred)
 	Key any
-	// The string value of a key-value pair in the tags map for the MemoryDB ACL, allowing users to attach custom metadata to the resource. (AI-inferred)
 	Value any
 }
 

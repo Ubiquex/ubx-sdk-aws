@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PermissionsPolicyStoreAliasConfig {
-  /** The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred) */
   aliasName: string | Computed<string>;
-  /** The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred) */
   policyStoreId: string | Computed<string>;
 }
 
 export interface PermissionsPolicyStoreAliasAttrs {
-  /** The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred) */
   aliasName: string;
-  /** The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred) */
   policyStoreId: string;
 }
 

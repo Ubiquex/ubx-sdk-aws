@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dbcluster_AssociatedRoles {
-  /** The name of the Neptune feature (for example, `FullTextSearch`) that the associated IAM role enables for the DB cluster. (AI-inferred) */
   featureName?: string | Computed<string>;
-  /** The ARN of an IAM role to associate with the Neptune DB cluster, granting the cluster permissions to access other AWS services such as S3 for data loading or SageMaker for machine learning. (AI-inferred) */
   roleArn?: string | Computed<string>;
 }
 
@@ -16,9 +14,7 @@ export interface Dbcluster_ServerlessScalingConfiguration {
 }
 
 export interface Dbcluster_Tags {
-  /** The tag key for a tag assigned to the Neptune DB cluster, enabling custom categorization and cost tracking. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag applied to the Neptune DB cluster, used for resource identification and organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

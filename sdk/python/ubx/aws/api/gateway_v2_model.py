@@ -27,7 +27,6 @@ class GatewayV2ModelAttrs:
     content_type: Any = None
     # The description of the model.
     description: Any = None
-    # The unique identifier automatically assigned by Amazon API Gateway to this model when it is created. (AI-inferred)
     model_id: Any = None
     # The name of the model.
     name: Any = None

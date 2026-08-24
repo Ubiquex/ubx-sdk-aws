@@ -31,7 +31,6 @@ type TrafficMirrorTargetAttrs struct {
 	Description any
 	// The ID of the Gateway Load Balancer endpoint.
 	GatewayLoadBalancerEndpointId any
-	// The unique AWS-assigned identifier for the traffic mirror target, typically formatted as tmt- followed by alphanumeric characters. (AI-inferred)
 	Id any
 	// The network interface ID that is associated with the target.
 	NetworkInterfaceId any

@@ -12,16 +12,12 @@ type LoadBalancingV2TargetGroup_Matcher struct {
 
 type LoadBalancingV2TargetGroup_Tags struct {
 	Key any
-	// Specifies the value of a user-defined tag applied to the Application Load Balancer target group, used for cost allocation and resource organization without affecting load balancing behavior. (AI-inferred)
 	Value any
 }
 
 type LoadBalancingV2TargetGroup_Targets struct {
-	// Specifies the Availability Zone for this target, used to route traffic to that specific AZ when registering an IP target (and ignored for instance targets). (AI-inferred)
 	AvailabilityZone any
-	// The identifier of the target (e.g., EC2 instance ID, IP address, or Lambda function ARN) to register with the target group. (AI-inferred)
 	Id any
-	// The port on which this target receives traffic, which overrides the target group's default port for that specific target when specified. (AI-inferred)
 	Port any
 	QuicServerId any
 }
@@ -60,7 +56,6 @@ type LoadBalancingV2TargetGroupConfig struct {
 	HealthyThresholdCount any
 	// The type of IP address used for this target group. The possible values are ipv4 and ipv6.
 	IpAddressType any
-	// Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred)
 	Matcher any
 	// The name of the target group.
 	Name any
@@ -105,7 +100,6 @@ type LoadBalancingV2TargetGroupAttrs struct {
 	IpAddressType any
 	// The Amazon Resource Names (ARNs) of the load balancers that route traffic to this target group.
 	LoadBalancerArns any
-	// Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred)
 	Matcher any
 	// The name of the target group.
 	Name any

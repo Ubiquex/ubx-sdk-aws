@@ -15,7 +15,6 @@ export interface AdminS3TableIntegration_LogSources {
 }
 
 export interface AdminS3TableIntegration_Tags {
-  /** The key of a tag that you can assign to the AWS Observability Admin S3 table integration to help identify, categorize, or manage the integration resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

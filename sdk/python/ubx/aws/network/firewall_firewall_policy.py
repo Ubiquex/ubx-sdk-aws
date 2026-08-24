@@ -8,94 +8,67 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_PolicyVariables:
-    # Defines the rule variables (IP sets and port sets) for the firewall policy, which are used by the Suricata rule engine to enable dynamic matching of source and destination IPs or ports. (AI-inferred)
     rule_variables: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatefulEngineOptions_FlowTimeouts:
-    # Specifies the idle timeout in seconds for TCP flows, after which the firewall considers the connection idle and may terminate it. (AI-inferred)
     tcp_idle_timeout_seconds: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatefulEngineOptions:
-    # Specifies the idle timeout durations for TCP and UDP flows processed by the stateful inspection engine. (AI-inferred)
     flow_timeouts: Any = None
-    # Determines the order in which stateful rules are evaluated, with valid values such as DEFAULT_ACTION_ORDER, STRICT_ORDER, and LAST_ACTION_ORDER, affecting how traffic is matched and actions are applied. (AI-inferred)
     rule_order: Any = None
-    # Controls whether packets that do not match any stateful rule are dropped (DROP) or passed to the stateless engine for further inspection (CONTINUE) within the firewall policy's stateful engine options. (AI-inferred)
     stream_exception_policy: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences_Override:
-    # Specifies the override action (DROP, PASS, or CONTINUE) for a stateful rule group reference in the firewall policy, determining how traffic matching the rule group's rules is handled. (AI-inferred)
     action: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatefulRuleGroupReferences:
-    # Enables deep threat inspection for the referenced stateful rule group, allowing the firewall to perform deeper packet analysis on traffic matching that rule group. (AI-inferred)
     deep_threat_inspection: Any = None
-    # This object configures an override action (DROP_TO_FIRST or PASS_TO_FIRST) that alters the default evaluation behavior of the associated stateful rule group reference within the firewall policy. (AI-inferred)
     override: Any = None
-    # Determines the order in which the referenced stateful rule group is evaluated relative to other stateful rule groups in the policy, with lower numbers evaluated first. (AI-inferred)
     priority: Any = None
-    # The ARN of the stateful rule group to associate with the firewall policy, used to apply stateful inspection to matching traffic. (AI-inferred)
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricAction_Dimensions:
-    # The value for a CloudWatch dimension that is attached to the metric published when a stateless custom action is invoked, as part of the firewall policy's publish metric action. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition_PublishMetricAction:
-    # Specifies the list of key-value dimensions that are attached to the CloudWatch metric published by this stateless custom action's publish-metric action. (AI-inferred)
     dimensions: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatelessCustomActions_ActionDefinition:
-    # Configures CloudWatch metric publishing for this stateless custom action, including the metric dimensions to include when metrics are emitted. (AI-inferred)
     publish_metric_action: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatelessCustomActions:
-    # Defines the action taken by a stateless custom action in an AWS Network Firewall policy, which currently supports a publish_metric_action that publishes metrics to Amazon CloudWatch. (AI-inferred)
     action_definition: Any = None
-    # The action_name is a user-defined, policy-unique friendly name for a custom stateless action, which is referenced by stateless rules in the firewall policy to invoke the defined action. (AI-inferred)
     action_name: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy_StatelessRuleGroupReferences:
-    # The priority of a stateless rule group reference, where lower numbers are evaluated first, determining the order in which stateless rule groups are processed within the firewall policy. (AI-inferred)
     priority: Any = None
-    # The Amazon Resource Name (ARN) of the stateless rule group that this reference points to, which the firewall policy uses to apply stateless packet inspection in the specified priority order. (AI-inferred)
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_FirewallPolicy:
-    # Enables the Network Firewall to hold the TLS session and buffer handshake packets during TLS inspection, ensuring the certificate is evaluated before the connection continues. (AI-inferred)
     enable_tlssession_holding: Any = None
-    # Defines named policy variables (such as IP set and port set values) that are substituted into Suricata rules within stateful rule groups associated with this firewall policy, allowing reuse of common values across rules. (AI-inferred)
     policy_variables: Any = None
-    # Specifies the default actions to apply to traffic that does not match any stateful rule group in the firewall policy (e.g., 'aws:drop' or 'aws:pass'). (AI-inferred)
     stateful_default_actions: Any = None
-    # Specifies the stateful engine behavior for the firewall policy, including the rule group evaluation order (STRICT_ORDER or DEFAULT_ACTION_ORDER) and the action to take for stream exceptions (DROP or CONTINUE). (AI-inferred)
     stateful_engine_options: Any = None
-    # Specifies the stateful rule groups, identified by their ARNs, that are used in the firewall policy's stateful rule engine, with an optional priority controlling the order in which their rules are evaluated. (AI-inferred)
     stateful_rule_group_references: Any = None
-    # Defines the list of custom actions you can reference in stateless rules within this firewall policy, where each action specifies a name and an action definition such as publishing metrics to CloudWatch. (AI-inferred)
     stateless_custom_actions: Any = None
-    # Specifies the default actions (e.g., 'aws:pass' or 'aws:drop') to apply to packets that do not match any stateless rule in the firewall policy. (AI-inferred)
     stateless_default_actions: Any = None
-    # A required list of default actions applied to fragmented packets that do not match any stateless rule in the firewall policy, such as 'aws:drop' or 'aws:forward_to_sfe'. (AI-inferred)
     stateless_fragment_default_actions: Any = None
-    # Defines the stateless rule groups to associate with the firewall policy, each with a priority and rule group ARN, controlling the order in which stateless rules are evaluated. (AI-inferred)
     stateless_rule_group_references: Any = None
     # A resource ARN.
     tlsinspection_configuration_arn: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicy_Tags:
-    # A key of a tag that is assigned to the Network Firewall firewall policy to help organize and identify it. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -206,25 +179,18 @@ _FirewallFirewallPolicy_TagsFields = {
 
 @dataclasses.dataclass
 class FirewallFirewallPolicyConfig:
-    # A user-provided description of the firewall policy, used to identify its purpose or contents. (AI-inferred)
     description: Any = None
-    # Defines the core AWS Network Firewall policy configuration, including references to stateless and stateful rule groups and the default actions for unmatched traffic. (AI-inferred)
     firewall_policy: Any = None
-    # The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
     firewall_policy_name: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallPolicyAttrs:
-    # A user-provided description of the firewall policy, used to identify its purpose or contents. (AI-inferred)
     description: Any = None
-    # Defines the core AWS Network Firewall policy configuration, including references to stateless and stateful rule groups and the default actions for unmatched traffic. (AI-inferred)
     firewall_policy: Any = None
     # A resource ARN.
     firewall_policy_arn: Any = None
-    # The unique identifier assigned to the firewall policy by AWS Network Firewall, used to reference this policy in other resources. (AI-inferred)
     firewall_policy_id: Any = None
-    # The descriptive name of the firewall policy, used to identify it within AWS Network Firewall. (AI-inferred)
     firewall_policy_name: Any = None
     tags: Any = None
 

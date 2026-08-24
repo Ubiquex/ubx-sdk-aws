@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncTask_Excludes:
-    # Specifies the type of filter rule used to exclude files from the DataSync task, where the only supported value is 'SIMPLE_PATTERN' for simple pattern matching. (AI-inferred)
     filter_type: Any = None
-    # Specifies a pattern value for an entry in the task's Excludes filter list, which tells DataSync which files or objects to skip during a transfer using the simple pattern matching syntax. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -80,9 +78,7 @@ class SyncTask_Schedule:
 
 @dataclasses.dataclass
 class SyncTask_Tags:
-    # The key of a tag to associate with the AWS DataSync task, enabling you to categorize and manage tasks by metadata. (AI-inferred)
     key: Any = None
-    # The value of the tag assigned to the DataSync task, used for organizing and managing the task in AWS. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -249,9 +245,7 @@ class SyncTaskConfig:
     cloud_watch_log_group_arn: Any = None
     # The ARN of an AWS storage resource's location.
     destination_location_arn: Any = None
-    # Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred)
     excludes: Any = None
-    # Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred)
     includes: Any = None
     # Configures a manifest, which is a list of files or objects that you want DataSync to transfer.
     manifest_config: Any = None
@@ -278,9 +272,7 @@ class SyncTaskAttrs:
     destination_location_arn: Any = None
     # The Amazon Resource Names (ARNs) of the destination ENIs (Elastic Network Interfaces) that were created for your subnet.
     destination_network_interface_arns: Any = None
-    # Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred)
     excludes: Any = None
-    # Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred)
     includes: Any = None
     # Configures a manifest, which is a list of files or objects that you want DataSync to transfer.
     manifest_config: Any = None

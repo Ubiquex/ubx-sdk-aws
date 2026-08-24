@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerModelPackageGroup_Tags struct {
-	// The key part of an AWS key-value tag that can be attached to a SageMaker model package group for resource identification and access control. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair assigned to the SageMaker Model Package Group, allowing you to categorize and manage the group. (AI-inferred)
 	Value any
 }
 
@@ -20,7 +18,6 @@ type MakerModelPackageGroupConfig struct {
 	ModelPackageGroupDescription any
 	// The name of the model package group.
 	ModelPackageGroupName any
-	// JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred)
 	ModelPackageGroupPolicy any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -35,7 +32,6 @@ type MakerModelPackageGroupAttrs struct {
 	ModelPackageGroupDescription any
 	// The name of the model package group.
 	ModelPackageGroupName any
-	// JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred)
 	ModelPackageGroupPolicy any
 	// The status of a modelpackage group job.
 	ModelPackageGroupStatus any

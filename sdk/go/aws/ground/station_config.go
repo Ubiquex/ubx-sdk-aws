@@ -4,125 +4,88 @@ package ground
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StationConfig_ConfigData_AntennaDownlinkConfig_SpectrumConfig_Bandwidth struct {
-	// The unit of measurement for the downlink bandwidth (e.g., MHz or GHz) in the spectrum configuration of the antenna downlink for the Ground Station config. (AI-inferred)
 	Units any
-	// The numeric magnitude of the downlink spectrum bandwidth, which is interpreted along with the separate units field to determine the actual bandwidth in hertz (e.g., if units is 'MHz', the bandwidth in Hz equals this value times 1e6). (AI-inferred)
 	Value any
 }
 
 type StationConfig_ConfigData_AntennaDownlinkConfig_SpectrumConfig struct {
-	// The bandwidth of the downlink signal spectrum, specified as an object with a numeric value and a unit (GHz, MHz, or kHz), defining the width of the frequency range to receive. (AI-inferred)
 	Bandwidth any
-	// Specifies the center frequency of the downlink signal for the antenna's receive spectrum, used to tune the Ground Station receiver. (AI-inferred)
 	CenterFrequency any
-	// The polarization mode (RIGHT_HAND or LEFT_HAND) for the downlink spectrum in the antenna downlink config, specifying the electromagnetic wave orientation used for receiving the signal. (AI-inferred)
 	Polarization any
 }
 
 type StationConfig_ConfigData_AntennaDownlinkConfig struct {
-	// Defines the spectral characteristics of the downlink signal, including center frequency, bandwidth, and polarization, used by the Ground Station to receive data from a satellite. (AI-inferred)
 	SpectrumConfig any
 }
 
 type StationConfig_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfig struct {
-	// Provides the unvalidated JSON that defines the decode configuration for the antenna downlink, specifying how the received signal is demodulated and decoded. (AI-inferred)
 	UnvalidatedJson any
 }
 
 type StationConfig_ConfigData_AntennaDownlinkDemodDecodeConfig struct {
-	// Specifies how the downlink signal is decoded, providing a decode configuration consisting of an unvalidated JSON payload that defines the decoding parameters for the Ground Station antenna downlink demodulation and decode processing. (AI-inferred)
 	DecodeConfig any
-	// Configures the demodulation scheme (e.g., BPSK or QPSK) and processing options used by the antenna downlink demodulation and decode chain. (AI-inferred)
 	DemodulationConfig any
-	// Configures the center frequency and bandwidth of the downlink spectrum to be processed for this demodulation and decoding step. (AI-inferred)
 	SpectrumConfig any
 }
 
 type StationConfig_ConfigData_AntennaUplinkConfig_SpectrumConfig struct {
-	// Specifies the center frequency of the uplink signal, containing a numeric value and a unit (GHz or MHz), used for the antenna uplink spectrum configuration. (AI-inferred)
 	CenterFrequency any
-	// Specifies the polarization of the uplink signal, which can be either RIGHT_HAND or LEFT_HAND. (AI-inferred)
 	Polarization any
 }
 
 type StationConfig_ConfigData_AntennaUplinkConfig struct {
-	// Specifies the frequency and polarization (e.g., RIGHT_HAND or LEFT_HAND) for the uplink radio signal transmitted from the ground station antenna. (AI-inferred)
 	SpectrumConfig any
-	// Specifies the target effective isotropic radiated power (EIRP) for the uplink transmission, defined as an object containing the numeric value and its units (e.g., dBW). (AI-inferred)
 	TargetEirp any
-	// Determines whether the antenna's uplink transmission is disabled; when set to true, the uplink transmitter is turned off so no signal is sent. (AI-inferred)
 	TransmitDisabled any
 }
 
 type StationConfig_ConfigData_DataflowEndpointConfig struct {
-	// The name of the dataflow endpoint that this Ground Station configuration references, identifying where data is sent or received for the dataflow endpoint config. (AI-inferred)
 	DataflowEndpointName any
-	// Specifies the AWS region in which the dataflow endpoint is located. (AI-inferred)
 	DataflowEndpointRegion any
 }
 
 type StationConfig_ConfigData_S3RecordingConfig struct {
-	// The ARN of the S3 bucket where AWS Ground Station stores the recorded data for the S3 recording config. (AI-inferred)
 	BucketArn any
-	// The S3 key prefix under which recorded data files are stored in the bucket, allowing you to organize output files. (AI-inferred)
 	Prefix any
-	// The ARN of the IAM role that AWS Ground Station assumes to write antenna downlink data to the associated S3 bucket. (AI-inferred)
 	RoleArn any
 }
 
 type StationConfig_ConfigData_TelemetrySinkConfig_TelemetrySinkData_KinesisDataStreamData struct {
-	// The Amazon Resource Name (ARN) of the Kinesis data stream that receives telemetry data from the ground station config. (AI-inferred)
 	KinesisDataStreamArn any
-	// The ARN of the IAM role that AWS Ground Station assumes to write telemetry data to the specified Kinesis Data Stream. (AI-inferred)
 	KinesisRoleArn any
 }
 
 type StationConfig_ConfigData_TelemetrySinkConfig_TelemetrySinkData struct {
-	// Specifies the Kinesis Data Stream that serves as the telemetry sink destination, defining where Ground Station telemetry data is delivered for the telemetry sink configuration. (AI-inferred)
 	KinesisDataStreamData any
 }
 
 type StationConfig_ConfigData_TelemetrySinkConfig struct {
-	// The telemetry_sink_data object specifies the dataflow endpoint ARN to which the Ground Station telemetry sink forwards satellite telemetry data. (AI-inferred)
 	TelemetrySinkData any
-	// Specifies the type of telemetry sink used to deliver ground station telemetry data, distinguishing between sink types such as S3 bucket storage and agent-based streaming. (AI-inferred)
 	TelemetrySinkType any
 }
 
 type StationConfig_ConfigData_TrackingConfig struct {
-	// Sets the autotrack mode for the ground station antenna, determining whether automatic satellite tracking is disabled (NO_CONTACT), preferred (PREFERRED), or required (REQUIRED) during a contact. (AI-inferred)
 	Autotrack any
 }
 
 type StationConfig_ConfigData_UplinkEchoConfig struct {
-	// The Amazon Resource Name (ARN) of the antenna uplink config whose transmitted signal is echoed back for the uplink echo function in this Ground Station config. (AI-inferred)
 	AntennaUplinkConfigArn any
-	// When true, enables the Ground Station antenna to receive and downlink echoes of the uplink signal for testing or observation purposes. (AI-inferred)
 	Enabled any
 }
 
 type StationConfig_ConfigData struct {
-	// Defines the receive (downlink) configuration for the Ground Station antenna, specifying parameters such as frequency, bandwidth, and polarization to capture satellite data. (AI-inferred)
 	AntennaDownlinkConfig any
-	// Defines the demodulation and decode configuration for an antenna downlink, including the demodulation settings and decode configuration (typically specified as JSON) used to process the received satellite signal. (AI-inferred)
 	AntennaDownlinkDemodDecodeConfig any
-	// Defines the uplink spectrum settings and target satellite ARN for an antenna uplink configuration in AWS Ground Station. (AI-inferred)
 	AntennaUplinkConfig any
-	// Provides the dataflow endpoint configuration for the Ground Station config, identifying the named endpoint (with its socket address and port) to use for data exchange. (AI-inferred)
 	DataflowEndpointConfig any
-	// Specifies the Amazon S3 bucket and prefix where the Ground Station service stores recorded antenna data when this config is used for S3 recording. (AI-inferred)
 	S3RecordingConfig any
 	TelemetrySinkConfig any
-	// Defines the tracking behavior for the ground station antenna, including the autotrack setting that controls whether automatic satellite tracking is required, preferred, or removed. (AI-inferred)
 	TrackingConfig any
-	// Configures the uplink echo feature for the ground station config, which echoes the uplink signal back for testing and includes the antenna uplink config ARN and an enabled flag. (AI-inferred)
 	UplinkEchoConfig any
 }
 
 type StationConfig_Tags struct {
-	// The key of a tag attached to the AWS Ground Station Config resource, used to label and categorize the configuration with custom metadata such as environment or purpose. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to the AWS Ground Station Config resource, used to categorize or identify the configuration. (AI-inferred)
 	Value any
 }
 
@@ -289,23 +252,17 @@ var StationConfig_TagsFields = ubx.FieldMap{
 	}
 
 type StationConfigConfig struct {
-	// The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
 	ConfigData any
-	// The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
 	Name any
 	Tags any
 }
 
 type StationConfigAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Ground Station config. (AI-inferred)
 	Arn any
-	// The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
 	ConfigData any
 	Id any
-	// The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
 	Name any
 	Tags any
-	// The type of the Ground Station config, such as 'antenna-downlink' or 'tracking', which is automatically derived from the configuration data provided in the resource. (AI-inferred)
 	Type any
 }
 

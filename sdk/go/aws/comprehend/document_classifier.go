@@ -4,67 +4,45 @@ package comprehend
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DocumentClassifier_InputDataConfig_AugmentedManifests struct {
-	// Lists the attribute names (JSON keys) in each augmented manifest line that contain the document text and, optionally, the class label used as training data for the document classifier. (AI-inferred)
 	AttributeNames any
-	// Specifies the S3 URI of the augmented manifest file that contains the labeled documents used to train the document classifier. (AI-inferred)
 	S3Uri any
-	// The split of the augmented manifest data set, which determines whether the documents are used for training or testing the document classifier. (AI-inferred)
 	Split any
 }
 
 type DocumentClassifier_InputDataConfig_DocumentReaderConfig struct {
-	// Specifies the Amazon Textract document reading action to apply to input documents, either TEXTRACT_DETECT_DOCUMENT_TEXT for text extraction or TEXTRACT_ANALYZE_DOCUMENT for extraction including forms and tables. (AI-inferred)
 	DocumentReadAction any
-	// Specifies whether the document reader uses the service default text extraction behavior (SERVICE_DEFAULT) or forces the Textract action defined in the document reader configuration (FORCE_DOCUMENT_READ_ACTION). (AI-inferred)
 	DocumentReadMode any
-	// Specifies a list of feature types (such as TABLES or FORMS) that Amazon Textract should extract from input documents when the document reader processes them, allowing the document classifier to leverage those additional extracted elements. (AI-inferred)
 	FeatureTypes any
 }
 
 type DocumentClassifier_InputDataConfig_Documents struct {
-	// The S3 URI of the training documents (e.g., a CSV or augmented manifest file) used to train the Amazon Comprehend document classifier. (AI-inferred)
 	S3Uri any
-	// The S3 URI of the test documents used to evaluate the trained document classifier model. (AI-inferred)
 	TestS3Uri any
 }
 
 type DocumentClassifier_InputDataConfig struct {
-	// Specifies the augmented manifest files from Amazon SageMaker Ground Truth that provide labeled training data for the document classifier. (AI-inferred)
 	AugmentedManifests any
-	// Specifies the format of the training data for the document classifier, either COMPREHEND_CSV (default) for a CSV file or AUGMENTED_MANIFEST for an augmented manifest file. (AI-inferred)
 	DataFormat any
-	// Specifies the Amazon Textract document reader settings (document read action, read mode, and feature types) used to extract text from input PDF or Word documents for the document classifier. (AI-inferred)
 	DocumentReaderConfig any
-	// Specifies the format of the training data (either COMPREHEND_CSV or AUGMENTED_MANIFEST) for the document classifier. (AI-inferred)
 	DocumentType any
-	// Provides the S3 URIs for the training documents (and optionally test documents) used to train the document classifier. (AI-inferred)
 	Documents any
-	// The single character that separates the label from the text in each line of the training data files for the document classifier (e.g., a pipe '|'). (AI-inferred)
 	LabelDelimiter any
-	// The S3 URI of the bucket or folder that contains the training documents used to train the document classifier. (AI-inferred)
 	S3Uri any
-	// The S3 URI of the test dataset used to evaluate the trained document classifier. (AI-inferred)
 	TestS3Uri any
 }
 
 type DocumentClassifier_OutputDataConfig struct {
-	// The KMS key ID used to encrypt the output data stored in S3 for the document classifier. (AI-inferred)
 	KmsKeyId any
-	// The S3 URI where the document classifier's output data, such as training metrics and evaluation results, is stored. (AI-inferred)
 	S3Uri any
 }
 
 type DocumentClassifier_Tags struct {
-	// The tag key (e.g., 'project') for a user-defined tag attached to the Amazon Comprehend document classifier, used for metadata, cost tracking, and access control. (AI-inferred)
 	Key any
-	// The value part of a tag attached to the Amazon Comprehend document classifier, used for cost allocation or organizational categorization. (AI-inferred)
 	Value any
 }
 
 type DocumentClassifier_VpcConfig struct {
-	// Specifies the list of security group IDs that the Amazon Comprehend document classifier uses when it accesses resources in your VPC, controlling inbound and outbound network traffic for training and inference operations. (AI-inferred)
 	SecurityGroupIds any
-	// The list of subnet IDs in the Amazon VPC where the document classifier runs, enabling private network access to resources such as training data in S3. (AI-inferred)
 	Subnets any
 }
 
@@ -124,58 +102,33 @@ var DocumentClassifier_VpcConfigFields = ubx.FieldMap{
 	}
 
 type DocumentClassifierConfig struct {
-	// The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred)
 	DataAccessRoleArn any
-	// The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred)
 	DocumentClassifierName any
-	// Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred)
 	InputDataConfig any
-	// Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred)
 	LanguageCode any
-	// Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred)
 	Mode any
-	// Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred)
 	ModelKmsKeyId any
-	// The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred)
 	ModelPolicy any
-	// Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred)
 	OutputDataConfig any
-	// Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred)
 	Tags any
-	// Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred)
 	VersionName any
-	// The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred)
 	VolumeKmsKeyId any
-	// Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred)
 	VpcConfig any
 }
 
 type DocumentClassifierAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the document classifier in Amazon Comprehend. (AI-inferred)
 	Arn any
-	// The ARN of the IAM role that Amazon Comprehend assumes to access the training documents in the S3 bucket specified as the input data source for the document classifier. (AI-inferred)
 	DataAccessRoleArn any
-	// The unique name of the document classifier, which identifies it within your AWS account and region. (AI-inferred)
 	DocumentClassifierName any
-	// Specifies the S3 location and format of the training data (documents and labels) used to train the document classifier, including the S3 URI, data format, and optional test data location. (AI-inferred)
 	InputDataConfig any
-	// Specifies the language code of the training documents, such as 'en' for English or 'es' for Spanish, which the document classifier is trained on. (AI-inferred)
 	LanguageCode any
-	// Specifies the classification mode for the document classifier: MULTI_CLASS for assigning a single class per document, or MULTI_LABEL for assigning multiple labels per document. (AI-inferred)
 	Mode any
-	// Specifies the AWS KMS key ID used to encrypt the trained document classifier model. (AI-inferred)
 	ModelKmsKeyId any
-	// The model_policy field specifies a JSON-based resource policy that grants other AWS services or IAM principals permission to use the trained document classifier for inference. (AI-inferred)
 	ModelPolicy any
-	// Specifies the Amazon S3 location (and optionally the AWS KMS key for encryption) where the document classifier training output, such as model artifacts and evaluation metrics, is stored. (AI-inferred)
 	OutputDataConfig any
-	// Specifies a list of key-value tags to attach to the document classifier resource. (AI-inferred)
 	Tags any
-	// Specifies a user-defined version name for the document classifier, allowing you to manage and reference distinct versions of the same classifier within Amazon Comprehend. (AI-inferred)
 	VersionName any
-	// The identifier of the AWS KMS key that Amazon Comprehend uses to encrypt the storage volume attached to the compute instance during training of the document classifier. (AI-inferred)
 	VolumeKmsKeyId any
-	// Configures the VPC settings (security group IDs and subnet IDs) used by the document classifier to access training data or other resources in a private VPC. (AI-inferred)
 	VpcConfig any
 }
 

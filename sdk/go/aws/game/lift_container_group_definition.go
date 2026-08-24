@@ -4,16 +4,12 @@ package game
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiftContainerGroupDefinition_GameServerContainerDefinition_DependsOn struct {
-	// Determines the condition (such as START, COMPLETE, SUCCESS, or HEALTHY) that the referenced dependency container must satisfy before the game server container is allowed to start. (AI-inferred)
 	Condition any
-	// The name of the container that the game server container depends on, used to define the startup order between containers in the container group. (AI-inferred)
 	ContainerName any
 }
 
 type LiftContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverride struct {
-	// The name of the environment variable whose value is being overridden for the game server container defined in this GameLift container group. (AI-inferred)
 	Name any
-	// Specifies the value for an environment variable override applied to the game server container at runtime, replacing any default value defined in the container image. (AI-inferred)
 	Value any
 }
 
@@ -23,20 +19,14 @@ type LiftContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilitie
 }
 
 type LiftContainerGroupDefinition_GameServerContainerDefinition_MountPoints struct {
-	// Specifies whether the mounted volume is read-only or read-write, using values like READ_ONLY or READ_WRITE. (AI-inferred)
 	AccessLevel any
-	// The file path inside the game server container where the mounted volume is accessible, as specified in the mount point configuration for the container group definition. (AI-inferred)
 	ContainerPath any
-	// Specifies the file path on the underlying EC2 instance that the container mount point references, allowing the container to access data stored on the instance's filesystem. (AI-inferred)
 	InstancePath any
 }
 
 type LiftContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration_ContainerPortRanges struct {
-	// Specifies the starting port in a contiguous range of ports that the game server container uses for incoming game traffic, as part of a container port range for the container group definition. (AI-inferred)
 	FromPort any
-	// The network protocol (TCP or UDP) for the container port range, used for routing traffic to the game server container. (AI-inferred)
 	Protocol any
-	// The ending port number in the inclusive range of ports that the game server container uses for inbound game traffic, as part of the container port configuration for the GameLift container group definition. (AI-inferred)
 	ToPort any
 }
 
@@ -67,47 +57,29 @@ type LiftContainerGroupDefinition_GameServerContainerDefinition struct {
 }
 
 type LiftContainerGroupDefinition_SupportContainerDefinitions_HealthCheck struct {
-	// The command to run inside the support container to perform a health check, specified as a list of strings representing the executable and its arguments. (AI-inferred)
 	Command any
-	// Specifies the time interval (in seconds) between successive health check runs for this support container in the GameLift container group definition. (AI-inferred)
 	Interval any
-	// The retries field specifies the number of consecutive failed health checks after which the container is considered unhealthy in the GameLift container group definition. (AI-inferred)
 	Retries any
-	// The number of seconds that the health check waits after the support container starts before beginning its health checks in a GameLift container group definition. (AI-inferred)
 	StartPeriod any
-	// The amount of time (in seconds) that GameLift waits for the container health check command to return before considering the health check failed and marking the container unhealthy. (AI-inferred)
 	Timeout any
 }
 
 type LiftContainerGroupDefinition_SupportContainerDefinitions struct {
-	// The name assigned to the support container, which serves as a unique identifier within the container group definition. (AI-inferred)
 	ContainerName any
-	// Defines which other containers in the same container group must reach a specified condition (e.g., START, COMPLETE, SUCCESS, HEALTHY) before this support container is started. (AI-inferred)
 	DependsOn any
-	// A list of environment variable overrides applied to the support container when it runs, each specifying the variable name and value to replace any value defined in the container image, for a GameLift container group definition. (AI-inferred)
 	EnvironmentOverride any
-	// Indicates whether the support container is essential, meaning that if an essential support container stops or fails, the entire container group is stopped. (AI-inferred)
 	Essential any
-	// Specifies the container health check configuration, including the command to run, interval, timeout, retries, and start period, used by Amazon GameLift to determine whether the support container is healthy. (AI-inferred)
 	HealthCheck any
-	// The URI of the container image that this support container in the GameLift container group definition will pull and run. (AI-inferred)
 	ImageUri any
-	// Configures the Linux kernel capabilities (additional or dropped) for the support container, controlling which privileged operations the container is allowed to perform. (AI-inferred)
 	LinuxCapabilities any
-	// Sets the maximum memory (in mebibytes) that the support container is allowed to use, enforcing a hard limit on its memory consumption. (AI-inferred)
 	MemoryHardLimitMebibytes any
-	// Defines the mount points for the support container, specifying the container path and the source volume to attach for shared storage within the GameLift container group. (AI-inferred)
 	MountPoints any
-	// Defines the port range and protocol (e.g., TCP or UDP) that the support container exposes for inbound traffic in the GameLift container group definition. (AI-inferred)
 	PortConfiguration any
-	// The resolved image digest for the support container, computed from the image URI to uniquely identify the exact container image version used by the container group definition. (AI-inferred)
 	ResolvedImageDigest any
-	// The number of vCPU units allocated to this support container in the GameLift container group definition, which sets the CPU resource limit for that container. (AI-inferred)
 	Vcpu any
 }
 
 type LiftContainerGroupDefinition_Tags struct {
-	// The key of a tag applied to an Amazon GameLift container group definition, enabling resource organization and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }

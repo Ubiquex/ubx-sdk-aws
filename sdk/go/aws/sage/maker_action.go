@@ -25,7 +25,6 @@ type MakerAction_Source struct {
 
 type MakerAction_Tags struct {
 	Key any
-	// The value of a user-defined tag associated with the SageMaker action, used to store arbitrary metadata such as cost centers or environment labels for managing and organizing the resource. (AI-inferred)
 	Value any
 }
 
@@ -54,11 +53,9 @@ type MakerActionConfig struct {
 	ActionType any
 	// The description of the action.
 	Description any
-	// Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred)
 	MetadataProperties any
 	// A list of properties to add to the action.
 	Properties any
-	// Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred)
 	Source any
 	// The status of the action.
 	Status any
@@ -79,11 +76,9 @@ type MakerActionAttrs struct {
 	Description any
 	// When the action was last modified.
 	LastModifiedTime any
-	// Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred)
 	MetadataProperties any
 	// A list of properties to add to the action.
 	Properties any
-	// Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred)
 	Source any
 	// The status of the action.
 	Status any

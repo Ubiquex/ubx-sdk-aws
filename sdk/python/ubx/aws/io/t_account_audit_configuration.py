@@ -83,7 +83,6 @@ class TAccountAuditConfiguration_AuditNotificationTargetConfigurations_Sns:
 
 @dataclasses.dataclass
 class TAccountAuditConfiguration_AuditNotificationTargetConfigurations:
-    # Configures the Amazon SNS topic and IAM role used by AWS IoT Device Defender to deliver account audit notifications, representing the SNS target within the audit notification target configuration map. (AI-inferred)
     sns: Any = None
 
 _TAccountAuditConfiguration_AuditCheckConfigurations_AuthenticatedCognitoRoleOverlyPermissiveCheckFields = {

@@ -16,7 +16,6 @@ class MakerDeviceFleet_OutputConfig:
 @dataclasses.dataclass
 class MakerDeviceFleet_Tags:
     key: Any = None
-    # The value portion of a tag attached to the SageMaker device fleet, allowing you to assign arbitrary metadata for purposes like cost tracking, access control, or operational organization. (AI-inferred)
     value: Any = None
 
 _MakerDeviceFleet_OutputConfigFields = {
@@ -35,7 +34,6 @@ class MakerDeviceFleetConfig:
     description: Any = None
     # The name of the edge device fleet
     device_fleet_name: Any = None
-    # Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred)
     output_config: Any = None
     # Role associated with the device fleet
     role_arn: Any = None
@@ -48,7 +46,6 @@ class MakerDeviceFleetAttrs:
     description: Any = None
     # The name of the edge device fleet
     device_fleet_name: Any = None
-    # Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred)
     output_config: Any = None
     # Role associated with the device fleet
     role_arn: Any = None

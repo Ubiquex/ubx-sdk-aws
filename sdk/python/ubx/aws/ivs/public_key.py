@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class PublicKey_Tags:
     key: Any = None
-    # The value associated with a tag key attached to the AWS IVS public key, used for organizing or identifying the resource. (AI-inferred)
     value: Any = None
 
 _PublicKey_TagsFields = {

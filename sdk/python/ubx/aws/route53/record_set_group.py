@@ -8,80 +8,50 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets_AliasTarget:
-    # The DNS name (hostname) of the AWS resource that this alias record targets, such as an Elastic Load Balancer, CloudFront distribution, or S3 website endpoint. (AI-inferred)
     dnsname: Any = None
-    # When enabled, Route 53 evaluates the health of the alias target resource and uses that health status to determine whether to include the alias target in DNS responses for this record set. (AI-inferred)
     evaluate_target_health: Any = None
-    # The hosted zone ID of the AWS resource (such as a load balancer, CloudFront distribution, or S3 bucket website) that this alias record points to. (AI-inferred)
     hosted_zone_id: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets_CidrRoutingConfig:
-    # The unique identifier of the CIDR collection that defines the IP ranges used for CIDR routing of this record set. (AI-inferred)
     collection_id: Any = None
-    # The name of the CIDR location within the specified CIDR collection that this record set routes traffic to, used when the record set's routing policy is CIDR routing. (AI-inferred)
     location_name: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets_GeoLocation:
-    # Specifies the two-letter AWS continent code (e.g., EU, NA, AS) that Route 53 uses to match the geographic continent of the DNS query for geo-location routing. (AI-inferred)
     continent_code: Any = None
-    # The ISO 3166-1 alpha-2 country code (e.g., 'US', 'DE') that specifies the geographic country from which DNS queries originate, used to route traffic to this record set when geolocation routing is enabled. (AI-inferred)
     country_code: Any = None
-    # Specifies the two-letter code for the state or province (subdivision) that, together with the country code, defines the geographic location for Route 53 geo routing. (AI-inferred)
     subdivision_code: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets_GeoProximityLocation_Coordinates:
-    # The latitude of the geographic coordinate for a geo-proximity routing location, specified in decimal degrees (e.g., 37.7749) to determine the resource's position for traffic routing. (AI-inferred)
     latitude: Any = None
-    # The longitude coordinate (in decimal degrees) of the geo-proximity location, used by Route 53 to calculate proximity and route traffic accordingly. (AI-inferred)
     longitude: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets_GeoProximityLocation:
-    # The AWS region code (for example, 'us-east-1') that identifies an endpoint for geo-proximity routing, used to define the location of an AWS resource in the geo-proximity record set. (AI-inferred)
     awsregion: Any = None
-    # The bias value for the geoproximity routing location, which expands (positive values) or shrinks (negative values) the size of the geographic region from which traffic is routed to this record set, with values ranging from -99 to 99 and a default of 0. (AI-inferred)
     bias: Any = None
-    # Coordinates for the geo-proximity routing location, containing latitude and longitude values that define a point on the map for routing traffic based on user proximity. (AI-inferred)
     coordinates: Any = None
-    # Specifies the identifier of the Local Zone Group (e.g., us-east-1-nyc-1) used as the geo proximity routing location in the record set, which allows traffic to be routed to a set of local zones instead of an individual AWS Region. (AI-inferred)
     local_zone_group: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroup_RecordSets:
-    # Specifies the AWS resource (such as an Elastic Load Balancer, CloudFront distribution, or S3 bucket) to which this alias record points, including the target's hosted zone ID and DNS name, and whether Route 53 should evaluate the health of the target. (AI-inferred)
     alias_target: Any = None
-    # Defines the CIDR routing configuration for the record set, specifying the collection ID and location name that determine which CIDR block this record set responds to. (AI-inferred)
     cidr_routing_config: Any = None
-    # Specifies whether this record set is the PRIMARY or SECONDARY record when using Route 53 failover routing policy, determining which resource serves traffic under normal and failover conditions. (AI-inferred)
     failover: Any = None
-    # Specifies the geographic location for which the record set applies, enabling geolocation routing based on continent, country, or US state. (AI-inferred)
     geo_location: Any = None
-    # Specifies the geographic routing parameters (AWS Region, local zone group, or coordinates, plus an optional bias) for a record set using Route 53 geo-proximity routing. (AI-inferred)
     geo_proximity_location: Any = None
-    # Specifies the ID of the Amazon Route 53 health check that you want to associate with this record set, enabling DNS failover based on the health of the endpoint. (AI-inferred)
     health_check_id: Any = None
-    # The unique identifier of the Route 53 hosted zone in which this individual record set is defined within the record set group. (AI-inferred)
     hosted_zone_id: Any = None
-    # The DNS name of the hosted zone (e.g., example.com) that contains the record set, used as an alternative to the hosted zone ID to identify the parent zone. (AI-inferred)
     hosted_zone_name: Any = None
-    # Indicates whether the record set uses multi-value answer routing, which lets Amazon Route 53 return multiple values, such as IP addresses, in response to DNS queries. (AI-inferred)
     multi_value_answer: Any = None
-    # The DNS name (fully qualified domain name) of the individual record set within the group, such as 'example.com'. (AI-inferred)
     name: Any = None
-    # Specifies the AWS region of the resource that this record set routes traffic to, used for latency-based routing and requiring a corresponding SetIdentifier. (AI-inferred)
     region: Any = None
-    # Specifies the list of values for the DNS record set, such as IP addresses for A or AAAA records or canonical names for CNAME records, which the record answers with. (AI-inferred)
     resource_records: Any = None
-    # The unique identifier that distinguishes this record set from other record sets in the same group, required for weighted, latency, geolocation, or failover routing policies. (AI-inferred)
     set_identifier: Any = None
-    # The time-to-live (TTL) value, in seconds, that DNS resolvers should cache the resource record set before requesting an update from Route 53. (AI-inferred)
     ttl: Any = None
-    # Specifies the DNS record type (such as A, AAAA, CNAME, MX, or TXT) for each record set in the aws_route53_record_set_group, controlling how Route 53 answers queries for the record set's name. (AI-inferred)
     type: Any = None
-    # Specifies the relative weight (0-255) for this record set when using weighted routing, determining the proportion of DNS queries answered with this record set compared to others in the same group. (AI-inferred)
     weight: Any = None
 
 _RecordSetGroup_RecordSets_AliasTargetFields = {
@@ -154,26 +124,17 @@ _RecordSetGroup_RecordSetsFields = {
 
 @dataclasses.dataclass
 class RecordSetGroupConfig:
-    # A free-form comment that describes the record set group, useful for documenting the purpose or contents of the group. (AI-inferred)
     comment: Any = None
-    # Specifies the ID of the Route 53 hosted zone in which the record sets defined in this group are created. (AI-inferred)
     hosted_zone_id: Any = None
-    # The name of the hosted zone (e.g., 'example.com.') in which the record sets are created, serving as an alternative to specifying the hosted zone ID. (AI-inferred)
     hosted_zone_name: Any = None
-    # Defines the list of Route 53 DNS record sets to manage together in this group, where each element specifies a record's name, type, TTL, and resource records or alias target. (AI-inferred)
     record_sets: Any = None
 
 @dataclasses.dataclass
 class RecordSetGroupAttrs:
-    # A free-form comment that describes the record set group, useful for documenting the purpose or contents of the group. (AI-inferred)
     comment: Any = None
-    # Specifies the ID of the Route 53 hosted zone in which the record sets defined in this group are created. (AI-inferred)
     hosted_zone_id: Any = None
-    # The name of the hosted zone (e.g., 'example.com.') in which the record sets are created, serving as an alternative to specifying the hosted zone ID. (AI-inferred)
     hosted_zone_name: Any = None
-    # The unique identifier for the record set group, which is the AWS Route 53 hosted zone ID that the group belongs to and is automatically assigned by the provider. (AI-inferred)
     id: Any = None
-    # Defines the list of Route 53 DNS record sets to manage together in this group, where each element specifies a record's name, type, TTL, and resource records or alias target. (AI-inferred)
     record_sets: Any = None
 
 RecordSetGroup = ubx.ResourceBinding(

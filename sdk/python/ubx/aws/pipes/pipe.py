@@ -8,169 +8,111 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Pipe_EnrichmentParameters_HttpParameters:
-    # Specifies the HTTP headers to include in the enrichment request, mapping each header name to its value (which may be a static string or a dynamic expression). (AI-inferred)
     header_parameters: Any = None
-    # Specifies the list of values to substitute for each path parameter placeholder in the enrichment HTTP endpoint's URL, in the order the placeholders appear. (AI-inferred)
     path_parameter_values: Any = None
-    # Specifies the key-value pairs to be included as query string parameters in the HTTP request when the pipe invokes the enrichment endpoint defined by http_parameters. (AI-inferred)
     query_string_parameters: Any = None
 
 @dataclasses.dataclass
 class Pipe_EnrichmentParameters:
-    # Specifies the HTTP request parameters (including headers, query strings, and path parameter values) for a pipe's enrichment step when the target is an API destination. (AI-inferred)
     http_parameters: Any = None
-    # Specifies the input template, a JSON string with dynamic references, that determines the payload delivered to the enrichment target for each event. (AI-inferred)
     input_template: Any = None
 
 @dataclasses.dataclass
 class Pipe_LogConfiguration_CloudwatchLogsLogDestination:
-    # The ARN of the CloudWatch Logs log group that receives the pipe's execution logs. (AI-inferred)
     log_group_arn: Any = None
 
 @dataclasses.dataclass
 class Pipe_LogConfiguration_FirehoseLogDestination:
-    # The ARN of the Amazon Data Firehose delivery stream to which the pipe's execution logs are delivered when Firehose is selected as the log destination. (AI-inferred)
     delivery_stream_arn: Any = None
 
 @dataclasses.dataclass
 class Pipe_LogConfiguration_S3LogDestination:
-    # The name of the S3 bucket where AWS Pipes delivers execution logs when the pipe's log configuration uses an S3 log destination. (AI-inferred)
     bucket_name: Any = None
-    # The AWS account ID of the Amazon S3 bucket owner, used to validate ownership when the destination bucket is in a different account. (AI-inferred)
     bucket_owner: Any = None
-    # Controls whether the logs delivered to the S3 bucket are formatted as JSON or as plain text, based on the value of this output format field. (AI-inferred)
     output_format: Any = None
-    # The object key prefix to prepend to log files delivered to the S3 bucket when logging is configured for the pipe. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class Pipe_LogConfiguration:
-    # Specifies the CloudWatch Logs log destination (including the log group ARN) for this pipe, used when log_configuration is configured to send execution logs to CloudWatch Logs. (AI-inferred)
     cloudwatch_logs_log_destination: Any = None
-    # Specifies the Amazon Data Firehose delivery stream (via its ARN) to which AWS Pipes delivers execution and diagnostic logs. (AI-inferred)
     firehose_log_destination: Any = None
-    # Controls which pipe execution data fields (such as the input payload, output payload, or metadata) are included in the log records written to the configured log destination for an AWS Pipes pipe. (AI-inferred)
     include_execution_data: Any = None
-    # The log level for the pipe's logging configuration, such as OFF, ERROR, INFO, TRACE, or WARN, controlling the granularity of log entries emitted by the pipe. (AI-inferred)
     level: Any = None
-    # Configures the Amazon S3 bucket, and optionally a prefix, that acts as the destination for logs emitted by the pipe when S3 is selected as the log delivery mechanism. (AI-inferred)
     s3_log_destination: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_ActiveMqbrokerParameters_Credentials:
-    # Specifies the ARN of the AWS Secrets Manager secret that contains the basic authentication credentials (username and password) used to connect to the ActiveMQ broker source. (AI-inferred)
     basic_auth: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_ActiveMqbrokerParameters:
-    # The maximum number of records to include in each batch when reading from the ActiveMQ broker source. (AI-inferred)
     batch_size: Any = None
-    # Defines the authentication credentials required to connect to the ActiveMQ broker, supporting either basic authentication with a username and password or client certificate TLS authentication. (AI-inferred)
     credentials: Any = None
-    # Specifies the maximum number of seconds that EventBridge Pipes waits when gathering events from an ActiveMQ broker source before invoking the target with a batch. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
-    # Specifies the name of the ActiveMQ queue from which the pipe reads messages. (AI-inferred)
     queue_name: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_DynamoDbstreamParameters_DeadLetterConfig:
-    # The ARN of the Amazon SQS queue or Amazon SNS topic that receives events when AWS Pipes fails to deliver them from the DynamoDB stream source. (AI-inferred)
     arn: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_DynamoDbstreamParameters:
-    # The maximum number of records to read from the DynamoDB stream in a single batch when using DynamoDB as a pipe source. (AI-inferred)
     batch_size: Any = None
-    # Specifies the ARN of an SQS queue or SNS topic where records that fail processing from the DynamoDB stream are sent, serving as a dead-letter target for the pipe source. (AI-inferred)
     dead_letter_config: Any = None
-    # Specifies the maximum number of seconds that AWS Pipes will wait to gather records from the DynamoDB stream before sending a batch to the target, allowing you to control the batching behavior. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
-    # Sets the maximum age in seconds that a record from the DynamoDB stream source can be retained before the pipe considers it expired and discards it from processing. (AI-inferred)
     maximum_record_age_in_seconds: Any = None
-    # Specifies the maximum number of retry attempts AWS Pipes will make to deliver an event from a DynamoDB stream source to the pipe's target before giving up. (AI-inferred)
     maximum_retry_attempts: Any = None
-    # Determines how the pipe handles a partial batch failure from the DynamoDB stream, either by discarding the failed batch and continuing (SEND_AND_FORGET) or by sending the failed batch to a destination specified by its ARN. (AI-inferred)
     on_partial_batch_item_failure: Any = None
-    # Sets the maximum number of shards processed concurrently for a DynamoDB stream source, allowing you to scale the pipe's throughput by increasing parallel shard consumption. (AI-inferred)
     parallelization_factor: Any = None
-    # Determines the point in the DynamoDB stream from which the pipe starts reading, with valid values including LATEST, TRIM_HORIZON, and AT_TIMESTAMP. (AI-inferred)
     starting_position: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_FilterCriteria_Filters:
-    # Defines the EventBridge event pattern (as a JSON string) that determines which incoming events from the source are matched and processed, based on the source's filter criteria. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_FilterCriteria:
-    # Specifies the list of event patterns used to filter which source events are processed by the pipe, where each filter defines a JSON pattern that an incoming event must match. (AI-inferred)
     filters: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_KinesisStreamParameters:
-    # The maximum number of records to read from the Kinesis stream in a single batch, which controls how many records are processed at once by the pipe. (AI-inferred)
     batch_size: Any = None
-    # Configuration for sending events that fail processing from the Kinesis stream to a specified Amazon SQS queue or Amazon SNS topic for dead-letter handling. (AI-inferred)
     dead_letter_config: Any = None
-    # Specifies the maximum number of seconds that EventBridge Pipes accumulates records from the Kinesis stream before sending the batch to the target, with a maximum allowed value of 300 seconds. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
-    # Specifies the maximum age in seconds that a record from the source Kinesis stream can be before it is considered expired and skipped, so that stale data is not delivered to the pipe. (AI-inferred)
     maximum_record_age_in_seconds: Any = None
-    # Specifies the maximum number of retry attempts AWS Pipes will make for a batch of Kinesis stream records that fail to be delivered to the target, before invoking dead-letter queue or error handling. (AI-inferred)
     maximum_retry_attempts: Any = None
-    # The ARN of a Lambda function that AWS EventBridge Pipes invokes to handle records that fail processing from a Kinesis stream. (AI-inferred)
     on_partial_batch_item_failure: Any = None
-    # Specifies the number of batches to process concurrently from each shard of the Kinesis stream, allowing you to increase throughput by processing multiple batches in parallel per shard (values 1-10). (AI-inferred)
     parallelization_factor: Any = None
-    # Specifies the position in the Kinesis stream from which to start reading records, with valid values including LATEST, TRIM_HORIZON, and AT_TIMESTAMP. (AI-inferred)
     starting_position: Any = None
-    # The timestamp (in milliseconds since Unix epoch) in the Kinesis stream from which to start reading records when the source's starting position is set to AT_TIMESTAMP. (AI-inferred)
     starting_position_timestamp: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_ManagedStreamingKafkaParameters_Credentials:
-    # The ARN of an AWS Secrets Manager secret that stores the client certificate and private key used for mutual TLS authentication to the MSK cluster. (AI-inferred)
     client_certificate_tls_auth: Any = None
-    # Specifies the ARN of the AWS Secrets Manager secret that contains the SASL/SCRAM-512 credentials used to authenticate to the managed Kafka stream configured as the pipe source. (AI-inferred)
     sasl_scram512_auth: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_ManagedStreamingKafkaParameters:
-    # The maximum number of records to include in a single batch when reading from the managed Kafka topic used as the source of the pipe. (AI-inferred)
     batch_size: Any = None
-    # The consumer group ID that the pipe uses to consume messages from the Amazon Managed Streaming for Apache Kafka (MSK) topic. (AI-inferred)
     consumer_group_id: Any = None
-    # Specifies the Secrets Manager secret ARN(s) used for client authentication (either TLS client certificate or SASL/SCRAM) when connecting to the Amazon MSK stream source. (AI-inferred)
     credentials: Any = None
-    # The maximum number of seconds that AWS Pipes will wait to collect records from the managed Kafka stream before sending a batch to the target, allowing for batching of incoming messages. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
-    # Specifies the starting position in the Kafka stream from which the pipe begins consuming records, with valid values being LATEST (default) or TRIM_HORIZON (earliest available). (AI-inferred)
     starting_position: Any = None
-    # The name of the Kafka topic in the Managed Streaming for Apache Kafka (MSK) cluster from which the pipe reads messages. (AI-inferred)
     topic_name: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_RabbitMqbrokerParameters:
-    # The maximum number of messages from the RabbitMQ broker that can be read in a single batch, before the batch is sent to the target. (AI-inferred)
     batch_size: Any = None
-    # This object holds the basic authentication parameters for connecting to the RabbitMQ broker, specifically the Amazon Resource Name (ARN) of a Secrets Manager secret that stores the broker username and password. (AI-inferred)
     credentials: Any = None
-    # The maximum amount of time in seconds that EventBridge Pipes waits to gather messages from a RabbitMQ broker into a batch before invoking the target, even if the configured batch size has not been reached. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
-    # Specifies the name of the RabbitMQ queue that the pipe consumes messages from when using an Amazon MQ for RabbitMQ broker as the source. (AI-inferred)
     queue_name: Any = None
-    # The name of the RabbitMQ virtual host from which the pipe reads messages. (AI-inferred)
     virtual_host: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_SelfManagedKafkaParameters_Credentials:
-    # The ARN of the AWS Secrets Manager secret that contains the username and password used for basic authentication to the self-managed Kafka cluster. (AI-inferred)
     basic_auth: Any = None
-    # The ARN of an AWS Secrets Manager secret that stores the client certificate and private key for mutual TLS authentication with the self-managed Apache Kafka cluster. (AI-inferred)
     client_certificate_tls_auth: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the SASL SCRAM256 credentials used to authenticate against the self-managed Kafka cluster that is the source of the pipe. (AI-inferred)
     sasl_scram256_auth: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM-512 username and password used to authenticate to the self-managed Apache Kafka cluster. (AI-inferred)
     sasl_scram512_auth: Any = None
 
 @dataclasses.dataclass
@@ -182,263 +124,171 @@ class Pipe_SourceParameters_SelfManagedKafkaParameters_Vpc:
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_SelfManagedKafkaParameters:
-    # Specifies additional Kafka bootstrap server addresses that the pipe may use to connect to the self-managed Kafka cluster, supplementing the primary bootstrap servers for broker discovery. (AI-inferred)
     additional_bootstrap_servers: Any = None
-    # The maximum number of records to read from a self-managed Kafka topic and include in each batch sent to the pipe target. (AI-inferred)
     batch_size: Any = None
-    # Specifies the consumer group ID that the AWS Pipes pipe uses when consuming messages from the self-managed Apache Kafka topic, allowing you to manage offsets and consumer group coordination. (AI-inferred)
     consumer_group_id: Any = None
-    # Specifies the authentication credentials (basic auth, client certificate TLS, or SASL/SCRAM) required to connect to the self-managed Apache Kafka cluster source. (AI-inferred)
     credentials: Any = None
-    # The maximum number of seconds that EventBridge Pipes will wait to accumulate records from the self-managed Apache Kafka source before sending them in a single batch to the target. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
     # Optional SecretManager ARN which stores the database credentials
     server_root_ca_certificate: Any = None
-    # Specifies whether the pipe starts reading messages from the beginning (TRIM_HORIZON) or from the latest offset (LATEST) in the self-managed Kafka topic. (AI-inferred)
     starting_position: Any = None
-    # The name of the Kafka topic from which the pipe consumes messages when using a self-managed Apache Kafka source. (AI-inferred)
     topic_name: Any = None
-    # The VPC configuration (subnets and security groups) that the pipe uses to connect to your self-managed Kafka brokers. (AI-inferred)
     vpc: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters_SqsQueueParameters:
-    # The maximum number of messages that can be polled from the SQS queue in a single batch and then passed as a batch to the pipe's target. (AI-inferred)
     batch_size: Any = None
-    # Specifies the maximum amount of time (in seconds) that EventBridge Pipes accumulates records from the source SQS queue before sending a batch to the target. (AI-inferred)
     maximum_batching_window_in_seconds: Any = None
 
 @dataclasses.dataclass
 class Pipe_SourceParameters:
-    # Specifies the parameters for an Amazon MQ ActiveMQ broker used as the event source, including the queue name, batch size, and credentials for consuming messages. (AI-inferred)
     active_mqbroker_parameters: Any = None
-    # Specifies the DynamoDB stream source parameters, including the stream's starting position and batch size, used when the pipe's source is a DynamoDB stream. (AI-inferred)
     dynamo_dbstream_parameters: Any = None
-    # Defines the event filter patterns (a list of JSON matching patterns) that select which source events are passed through the pipe for processing. (AI-inferred)
     filter_criteria: Any = None
-    # Specifies the parameters for consuming records from an Amazon Kinesis data stream as the pipe source, such as the batch size, starting position, and retry/dead-letter settings. (AI-inferred)
     kinesis_stream_parameters: Any = None
-    # Specifies the parameters that configure an Amazon Managed Streaming for Apache Kafka (MSK) stream as the event source for the pipe, including the topic name, starting position, consumer group ID, and batch settings. (AI-inferred)
     managed_streaming_kafka_parameters: Any = None
-    # Specifies the parameters for using an Amazon MQ for RabbitMQ broker as the pipe's event source, including the queue name, virtual host, credentials, batch size, and batching window. (AI-inferred)
     rabbit_mqbroker_parameters: Any = None
-    # Defines the parameters for using a self-managed Apache Kafka stream as the pipe's event source, including broker connection details, topic name, and authentication credentials. (AI-inferred)
     self_managed_kafka_parameters: Any = None
-    # This configures the polling behavior for an SQS queue used as the event source in AWS Pipes, allowing you to set properties such as the batch size and the maximum batching window in seconds. (AI-inferred)
     sqs_queue_parameters: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_ArrayProperties:
-    # Specifies the number of child jobs to run when the pipe targets an AWS Batch job as an array job, allowing multiple parallel task executions. (AI-inferred)
     size: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_Environment:
-    # The name of the environment variable to set in the container when the AWS Batch job is run by the pipe target. (AI-inferred)
     name: Any = None
-    # The value of the environment variable to set in the container override for the AWS Batch job target of the pipe. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_ContainerOverrides_ResourceRequirements:
-    # The type of resource the container override applies to, such as MEMORY, VCPU, or GPU, controlling how the resource requirement is interpreted. (AI-inferred)
     type: Any = None
-    # The value of the resource requirement (e.g., number of vCPUs or memory in MiB) applied as a container override for an AWS Batch job, corresponding to the type specified in the resource_requirements entry. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_ContainerOverrides:
-    # Overrides the command executed by the container in the AWS Batch job configured as the pipe target, providing a list of strings that replace the default container command. (AI-inferred)
     command: Any = None
-    # Specifies a list of environment variable overrides (each with a `Name` and `Value`) to apply to the container when the pipe's target AWS Batch job is executed. (AI-inferred)
     environment: Any = None
-    # Specifies the instance type to use for the AWS Batch container when the pipe runs a batch job, overriding the default instance type in the job definition. (AI-inferred)
     instance_type: Any = None
-    # Defines the resource requirements (such as GPU count) to override for the AWS Batch container when the pipe sends events to the Batch job target. (AI-inferred)
     resource_requirements: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_DependsOn:
-    # The job ID of a Batch job that must complete before the job submitted by this pipe target can start, used to define job dependencies in the AWS Batch target. (AI-inferred)
     job_id: Any = None
-    # Specifies the type of dependency for the AWS Batch job (e.g., N_TO_N or SEQUENTIAL), defining how the target job's start is conditioned on other jobs in the depends_on list. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters_RetryStrategy:
-    # The number of times to retry the AWS Batch job target when it fails, as part of the retry strategy. (AI-inferred)
     attempts: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_BatchJobParameters:
-    # Configures the array size for the AWS Batch job target, determining how many parallel child jobs are submitted as an array job. (AI-inferred)
     array_properties: Any = None
-    # Overrides the container properties (command, environment, memory, vCPUs, etc.) of the AWS Batch job that the pipe targets when invoking the job. (AI-inferred)
     container_overrides: Any = None
-    # Defines the AWS Batch job dependencies for a Pipes target job, listing prior jobs that must complete successfully before this job can start. (AI-inferred)
     depends_on: Any = None
-    # The name or ARN of the AWS Batch job definition used to run the target job. (AI-inferred)
     job_definition: Any = None
-    # The name to assign to the AWS Batch job that this pipe submits when targeting AWS Batch. (AI-inferred)
     job_name: Any = None
-    # A map of parameter names to values that are passed to the AWS Batch job when the pipe invokes the target, overriding or supplying the job's parameter values. (AI-inferred)
     parameters: Any = None
-    # Specifies the retry strategy for the AWS Batch job, including the number of attempts and the conditions under which the job retries based on exit codes. (AI-inferred)
     retry_strategy: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_CloudWatchLogsParameters:
-    # The name of the CloudWatch Logs log stream where the pipe writes the event data, overriding the default log stream for the target log group. (AI-inferred)
     log_stream_name: Any = None
-    # The Unix timestamp (as a string) to use as the timestamp for the log event sent to CloudWatch Logs, overriding the event's original time. (AI-inferred)
     timestamp: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_CapacityProviderStrategy:
-    # The minimum number of tasks to run on the specified capacity provider as part of the ECS task placement strategy. (AI-inferred)
     base: Any = None
-    # The name of the Amazon ECS capacity provider to use when running the task as part of the capacity provider strategy. (AI-inferred)
     capacity_provider: Any = None
-    # The relative weight of this capacity provider in the ECS task's capacity provider strategy, which AWS Pipes uses when placing the task on the target ECS service or cluster. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration_AwsvpcConfiguration:
-    # Determines whether the ECS task's elastic network interface is assigned a public IP address when using the specified VPC configuration, with values 'ENABLED' or 'DISABLED'. (AI-inferred)
     assign_public_ip: Any = None
-    # A list of security group IDs to attach to the ECS task's elastic network interface when the task uses awsvpc network mode as the target of the pipe. (AI-inferred)
     security_groups: Any = None
-    # The IDs of the subnets in which the ECS task will run when using the awsvpc network mode. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_NetworkConfiguration:
-    # Specifies the VPC configuration (subnets, security groups, and whether to assign a public IP) for the ECS task when its network mode is awsvpc. (AI-inferred)
     awsvpc_configuration: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_Overrides_ContainerOverrides:
-    # In the ECS task overrides for an AWS Pipes target, this list of strings specifies the container command to run, replacing the default command defined in the container image. (AI-inferred)
     command: Any = None
-    # Overrides the number of CPU units reserved for the container in the ECS task, as part of the ECS task override for the pipe target. (AI-inferred)
     cpu: Any = None
-    # Specifies the environment variables (as name/value pairs) to set for the container when the ECS task is run, overriding the values from the container definition. (AI-inferred)
     environment: Any = None
-    # Specifies a list of environment files (typically from Amazon S3) that inject environment variables into the container when the ECS task is the pipe target. (AI-inferred)
     environment_files: Any = None
-    # Specifies the hard memory limit in MiB for the container, overriding the memory value set in the task definition for this ECS task override. (AI-inferred)
     memory: Any = None
-    # The soft memory limit in MiB to reserve for the container, overriding the memoryReservation value from the container definition. (AI-inferred)
     memory_reservation: Any = None
-    # Specifies the name of the container in the ECS task definition that this override applies to. (AI-inferred)
     name: Any = None
-    # Specifies the resource requirements (such as GPU or InferenceAccelerator) to override for the container in the Amazon ECS task when the pipe target is an ECS task. (AI-inferred)
     resource_requirements: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_Overrides_EphemeralStorage:
-    # Specifies the amount of ephemeral storage (in GiB) for the ECS task, overriding the task definition's ephemeral storage configuration when the pipe runs the task. (AI-inferred)
     size_in_gi_b: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_Overrides_InferenceAcceleratorOverrides:
-    # Specifies the device name of the inference accelerator whose settings are overridden in the ECS task definition. (AI-inferred)
     device_name: Any = None
-    # The device type of the inference accelerator override to apply to the ECS task when the pipe invokes the target, such as 'eia1.medium' or 'eia2.large'. (AI-inferred)
     device_type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_Overrides:
-    # Defines a list of container overrides to apply to the ECS task launched by the pipe, allowing per-container changes to command, environment variables, and resource limits during the invocation. (AI-inferred)
     container_overrides: Any = None
-    # The number of CPU units to reserve for the ECS task, overriding the CPU value specified in the task definition. (AI-inferred)
     cpu: Any = None
-    # Specifies the ephemeral storage size override (in GiB) applied to the ECS task when this pipe triggers an ECS task, allowing adjustment of the task's ephemeral storage beyond its registered task definition. (AI-inferred)
     ephemeral_storage: Any = None
-    # The ARN of the IAM execution role that Amazon ECS uses to run the task, overriding the execution role defined in the task definition when the pipe targets an ECS task. (AI-inferred)
     execution_role_arn: Any = None
-    # Overrides the inference accelerator devices for the ECS task launched by this pipe, allowing you to specify a custom device name and type that supersede the task definition's settings. (AI-inferred)
     inference_accelerator_overrides: Any = None
-    # Specifies the total memory (in MiB) override for the ECS task executed by this pipe, replacing the memory limit defined in the task definition when the target is invoked. (AI-inferred)
     memory: Any = None
-    # Specifies the Amazon Resource Name (ARN) of the IAM role that the Amazon ECS task uses as its task role when the pipe triggers the task. (AI-inferred)
     task_role_arn: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_PlacementConstraints:
-    # The placement constraint expression (using Amazon ECS placement constraint syntax, such as a cluster query language expression like 'attribute:ecs.instance-type =~ t2.*') that applies when the placement constraint type is 'memberOf'. (AI-inferred)
     expression: Any = None
-    # Specifies the type of ECS task placement constraint (e.g., distinctInstance or memberOf) that governs how the task is placed on container instances. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_PlacementStrategy:
-    # Specifies the field to apply the placement strategy against (e.g., 'instanceId' or a custom attribute like 'attribute:ecs.availability-zone') when scheduling the ECS task. (AI-inferred)
     field: Any = None
-    # Specifies the type of ECS task placement strategy (e.g., random, spread, or binpack) used when placing the task that the pipe invokes. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters_Tags:
-    # The key of a tag to apply to the ECS task that the pipe launches as its target. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag that is attached to the ECS task when the pipe runs the task. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EcsTaskParameters:
-    # Defines the capacity provider strategy for the ECS task launched by the pipe target, specifying capacity providers and their base and weight values for task placement. (AI-inferred)
     capacity_provider_strategy: Any = None
-    # Specifies whether to enable Amazon ECS managed tags on the ECS task launched as the pipe's target, so that AWS automatically applies system tags to the task. (AI-inferred)
     enable_ecsmanaged_tags: Any = None
-    # Enables Amazon ECS Exec (execute command) for the ECS task when the pipe invokes the target. (AI-inferred)
     enable_execute_command: Any = None
-    # Specifies the ECS task group, a customizable identifier for a set of related tasks, used for task filtering and grouping. (AI-inferred)
     group: Any = None
-    # Specifies the launch type (e.g., FARGATE or EC2) to use when the pipe runs the target Amazon ECS task. (AI-inferred)
     launch_type: Any = None
-    # Specifies the VPC network configuration for the ECS task target, including subnets, security groups, and whether to assign a public IP address. (AI-inferred)
     network_configuration: Any = None
-    # Specifies the ECS task and container overrides (such as command, environment variables, CPU/memory limits, task role, and ephemeral storage) applied when the pipe runs the target task. (AI-inferred)
     overrides: Any = None
-    # Specifies the placement constraints (e.g., distinctInstance or memberOf) that control how the ECS task is placed on container instances when the pipe target runs the task. (AI-inferred)
     placement_constraints: Any = None
-    # Specifies the placement strategy (e.g., spread, binpack, random) used for the ECS task targeted by the pipe, including the strategy type and optional field on which to base it. (AI-inferred)
     placement_strategy: Any = None
-    # Specifies the ECS platform version on which the task runs (e.g., 'LATEST' or a specific version like '1.4.0') when the AWS Pipes target invokes an Amazon ECS task. (AI-inferred)
     platform_version: Any = None
-    # Specifies whether tags from the ECS task definition or service are propagated to the ECS task started when the pipe invokes the target, with valid values being TASK_DEFINITION or SERVICE. (AI-inferred)
     propagate_tags: Any = None
-    # A reference identifier you assign to the ECS task, which is passed to the RunTask API as the referenceId to ensure idempotent task creation and to aid in identifying the task in logs. (AI-inferred)
     reference_id: Any = None
-    # The tags to apply to the ECS task when the pipe invokes the ECS target. (AI-inferred)
     tags: Any = None
-    # The number of ECS tasks to launch for this target. (AI-inferred)
     task_count: Any = None
-    # Specifies the ARN of the ECS task definition that EventBridge Pipes uses to run a task when the pipe's target is an Amazon ECS task. (AI-inferred)
     task_definition_arn: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_EventBridgeEventBusParameters:
-    # Specifies the DetailType value that AWS Pipes assigns to the event when it is delivered to the EventBridge event bus target, allowing the event to be categorized by its type. (AI-inferred)
     detail_type: Any = None
-    # The ID of an EventBridge global endpoint used to route the event to an EventBridge event bus in a different AWS Region. (AI-inferred)
     endpoint_id: Any = None
-    # Specifies the list of ARNs that identify the resources associated with the event, which are included in the event sent to the EventBridge event bus target. (AI-inferred)
     resources: Any = None
-    # Sets the source of the event sent to the EventBridge event bus, identifying the service or application that produced the event. (AI-inferred)
     source: Any = None
-    # The timestamp to assign to the event when sending to the EventBridge event bus target; if omitted, the current time is used. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_KinesisStreamParameters:
-    # The partition key value used by the pipe to route the record to a specific shard of the target Kinesis data stream. (AI-inferred)
     partition_key: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_LambdaFunctionParameters:
-    # Specifies the invocation type for the Lambda function target, either 'RequestResponse' for synchronous invocation (default) or 'Event' for asynchronous invocation. (AI-inferred)
     invocation_type: Any = None
 
 @dataclasses.dataclass
@@ -453,101 +303,65 @@ class Pipe_TargetParameters_RedshiftDataParameters:
     sqls: Any = None
     # A name for Redshift DataAPI statement which can be used as filter of ListStatement.
     statement_name: Any = None
-    # When set to true, this flag includes the original event payload in the request sent to the Redshift Data API by the pipe. (AI-inferred)
     with_event: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_SageMakerPipelineParameters:
-    # Provides a list of name/value pairs that are passed as input parameters to the SageMaker pipeline execution when this pipe targets a SageMaker pipeline. (AI-inferred)
     pipeline_parameter_list: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_SqsQueueParameters:
-    # The deduplication ID used for messages sent to the SQS queue, which ensures exactly-once delivery for FIFO queues. (AI-inferred)
     message_deduplication_id: Any = None
-    # Specifies the message group ID for messages sent to an Amazon SQS FIFO queue, which groups messages to be delivered in a strict order and within a single consumer at a time. (AI-inferred)
     message_group_id: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_TimestreamParameters_DimensionMappings:
-    # The name of the Timestream dimension to which the mapped value is written when the pipe sends data to Amazon Timestream. (AI-inferred)
     dimension_name: Any = None
-    # Specifies the value for the Timestream dimension, which can be a literal string or a JSONPath expression (such as `$.detail.region`) that extracts a value from the event data being sent to the target. (AI-inferred)
     dimension_value: Any = None
-    # Indicates the value type (VARCHAR or BIGINT) for the mapped dimension, used to cast the incoming event value before sending it to Amazon Timestream. (AI-inferred)
     dimension_value_type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings_MultiMeasureAttributeMappings:
-    # Specifies the literal value or JSONPath expression used to populate the multi-measure attribute value in the Timestream record written by this pipe target. (AI-inferred)
     measure_value: Any = None
-    # Specifies the data type of the measure attribute in the Timestream multi-measure record (e.g., DOUBLE, BIGINT, BOOLEAN, VARCHAR, TIMESTAMP) so that Timestream correctly interprets the incoming value. (AI-inferred)
     measure_value_type: Any = None
-    # In an AWS Pipes Timestream target, this defines the name of an individual multi-measure attribute, which becomes the measure name in the Timestream record when using multi-measure mappings. (AI-inferred)
     multi_measure_attribute_name: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_TimestreamParameters_MultiMeasureMappings:
-    # Defines the list of mappings that specify how source data is assigned to each attribute (measure) within a multi-measure record written to Amazon Timestream. (AI-inferred)
     multi_measure_attribute_mappings: Any = None
-    # Specifies the name of the multi-measure record to write to Amazon Timestream when using multi-measure mappings in the pipe target. (AI-inferred)
     multi_measure_name: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_TimestreamParameters_SingleMeasureMappings:
-    # The name of the measure (column) in the Timestream table to which the source record field is mapped. (AI-inferred)
     measure_name: Any = None
-    # Provides the value of a single measure in a Timestream record, which can be a literal string or a dynamic JSON path expression (such as '$.field') resolved from the event payload. (AI-inferred)
     measure_value: Any = None
-    # Specifies the data type of the measure value for this single measure mapping, such as DOUBLE, BIGINT, VARCHAR, or BOOLEAN, which determines how the source data is interpreted when written to Amazon Timestream. (AI-inferred)
     measure_value_type: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters_TimestreamParameters:
-    # Defines the list of dimension mappings that specify how source data is mapped to Timestream record dimension names and values when the pipe target writes to Timestream. (AI-inferred)
     dimension_mappings: Any = None
-    # Specifies the unit of measure for the epoch timestamp value used in the Timestream target's time column, such as MILLISECONDS, SECONDS, MICROSECONDS, or NANOSECONDS. (AI-inferred)
     epoch_time_unit: Any = None
-    # Defines the multi-measure mappings for the Timestream target, specifying a list of measure names and their associated attribute mappings (including attribute value, measure value, and measure value type) to write multi-measure records. (AI-inferred)
     multi_measure_mappings: Any = None
-    # Defines a list of single-measure mappings that specify how source data maps to Timestream measure records, including the measure name, value, and value type. (AI-inferred)
     single_measure_mappings: Any = None
-    # Specifies whether the value in the time field is interpreted as a Unix epoch timestamp (seconds since epoch) or as a formatted timestamp string when writing to Amazon Timestream. (AI-inferred)
     time_field_type: Any = None
-    # Specifies the static timestamp value (as a string) used for the time column when writing the pipe's data to an Amazon Timestream target table. (AI-inferred)
     time_value: Any = None
-    # Specifies the format string used to parse the source event's timestamp field when TimeFieldType is set to TIMESTAMP_FORMAT, determining how AWS Pipes converts the event time into the Timestream record's timestamp. (AI-inferred)
     timestamp_format: Any = None
-    # Provides the value for the version attribute of each record written to the Timestream table, used to enforce record versioning and support upserts. (AI-inferred)
     version_value: Any = None
 
 @dataclasses.dataclass
 class Pipe_TargetParameters:
-    # Specifies the configuration for an AWS Batch job when it is the target of the pipe, including the job definition, job name, and optional array, retry, and container override settings. (AI-inferred)
     batch_job_parameters: Any = None
-    # Specifies the CloudWatch Logs target parameters, including the log stream name and an optional timestamp that is added to each event sent to the log stream. (AI-inferred)
     cloud_watch_logs_parameters: Any = None
-    # Specifies the parameters for running an Amazon ECS task when the Pipe target is an ECS service, including task definition, count, launch type, network configuration, and placement settings. (AI-inferred)
     ecs_task_parameters: Any = None
-    # Configures the parameters used by the pipe when sending events to an Amazon EventBridge event bus target, including the event source, detail type, and optional resources. (AI-inferred)
     event_bridge_event_bus_parameters: Any = None
-    # Specifies the HTTP parameters, including header, query string, and path parameter values, used when the Pipe targets an HTTP endpoint such as an API destination. (AI-inferred)
     http_parameters: Any = None
-    # The template used to transform the input event before it is sent to the target, allowing you to map and extract fields from the original event using JSONPath expressions. (AI-inferred)
     input_template: Any = None
-    # Specifies the parameters for a Kinesis stream target, including the partition key that determines the shard to which the event is delivered. (AI-inferred)
     kinesis_stream_parameters: Any = None
-    # Defines the target-specific parameters for a Lambda function target in an AWS Pipe, including the invocation type (e.g., 'Event' or 'RequestResponse') that controls how the pipe invokes the function. (AI-inferred)
     lambda_function_parameters: Any = None
-    # Defines the configuration for invoking the Amazon Redshift Data API, including the SQL statement, database details, and credentials, when the pipe's target is an Amazon Redshift cluster or serverless workgroup. (AI-inferred)
     redshift_data_parameters: Any = None
-    # Configures the parameters for invoking an Amazon SageMaker pipeline as the pipe's target, specifying the list of pipeline parameters to pass to the pipeline execution. (AI-inferred)
     sage_maker_pipeline_parameters: Any = None
-    # Specifies the parameters for sending events to an SQS queue as the pipe target, including optional message group ID and message deduplication ID for FIFO queues. (AI-inferred)
     sqs_queue_parameters: Any = None
-    # The target parameters for a Step Functions state machine, specifying how the pipe invokes the state machine, including the invocation type such as synchronous (REQUEST_RESPONSE) or asynchronous (FIRE_AND_FORGET) execution. (AI-inferred)
     step_function_state_machine_parameters: Any = None
-    # Specifies the Amazon Timestream target configuration, including the database and table names, time column type, and dimension mappings used to write event data from the pipe. (AI-inferred)
     timestream_parameters: Any = None
 
 _Pipe_EnrichmentParameters_HttpParametersFields = {
@@ -1126,70 +940,39 @@ _Pipe_TargetParametersFields = {
 
 @dataclasses.dataclass
 class PipeConfig:
-    # The description field is an optional user-defined text description for the AWS Pipes pipe, used to identify the pipe's purpose or distinguish it from other pipes. (AI-inferred)
     description: Any = None
-    # Sets the pipe to either RUNNING or STOPPED after creation or update, controlling whether it actively processes events. (AI-inferred)
     desired_state: Any = None
-    # The ARN of the enrichment resource (such as an AWS Lambda function, AWS Step Functions state machine, or API destination) that EventBridge Pipes invokes to transform or enrich the event before sending it to the target. (AI-inferred)
     enrichment: Any = None
-    # Specifies the configuration for the pipe's enrichment stage, including the input template that controls how the source event is transformed before being passed to the enrichment target (e.g., a Lambda function, Step Functions state machine, or API destination). (AI-inferred)
     enrichment_parameters: Any = None
-    # Specifies the ARN, ID, or alias of the AWS KMS key used to encrypt data in the EventBridge Pipe. (AI-inferred)
     kms_key_identifier: Any = None
-    # Configures the destination (such as CloudWatch Logs, Amazon Data Firehose, or Amazon S3) and the log level for the pipe's execution activity, capturing invocation and error logs. (AI-inferred)
     log_configuration: Any = None
-    # The name of the EventBridge pipe; if not provided, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that the pipe assumes to read from the source, invoke the enrichment, and deliver to the target. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the source resource (such as a Kinesis stream, DynamoDB stream, SQS queue, or EventBridge event bus) from which the pipe reads data. (AI-inferred)
     source: Any = None
-    # Defines source-specific configuration for the pipe's integration, including filtering criteria and service-specific settings (e.g., batch size or stream starting position) for sources like SQS, Kinesis, or DynamoDB. (AI-inferred)
     source_parameters: Any = None
-    # Specifies the key-value metadata tags to attach to this EventBridge Pipes pipe for resource identification and management. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) of the target resource (for example, an SQS queue, Lambda function, or EventBridge event bus) to which the pipe delivers events. (AI-inferred)
     target: Any = None
-    # Specifies the target-specific configuration for the pipe, including the input template, input transformation, dead-letter configuration, and parameters tailored to the destination service (such as Lambda, SQS, SNS). (AI-inferred)
     target_parameters: Any = None
 
 @dataclasses.dataclass
 class PipeAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this pipe, assigned by AWS and used to reference the pipe in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
-    # The timestamp of when the pipe was created, represented as a string in ISO 8601 format. (AI-inferred)
     creation_time: Any = None
-    # The current lifecycle state of the pipe, such as RUNNING or STOPPED, as reported by AWS after the pipe is created or updated. (AI-inferred)
     current_state: Any = None
-    # The description field is an optional user-defined text description for the AWS Pipes pipe, used to identify the pipe's purpose or distinguish it from other pipes. (AI-inferred)
     description: Any = None
-    # Sets the pipe to either RUNNING or STOPPED after creation or update, controlling whether it actively processes events. (AI-inferred)
     desired_state: Any = None
-    # The ARN of the enrichment resource (such as an AWS Lambda function, AWS Step Functions state machine, or API destination) that EventBridge Pipes invokes to transform or enrich the event before sending it to the target. (AI-inferred)
     enrichment: Any = None
-    # Specifies the configuration for the pipe's enrichment stage, including the input template that controls how the source event is transformed before being passed to the enrichment target (e.g., a Lambda function, Step Functions state machine, or API destination). (AI-inferred)
     enrichment_parameters: Any = None
-    # Specifies the ARN, ID, or alias of the AWS KMS key used to encrypt data in the EventBridge Pipe. (AI-inferred)
     kms_key_identifier: Any = None
-    # The timestamp indicating when the pipe was last modified. (AI-inferred)
     last_modified_time: Any = None
-    # Configures the destination (such as CloudWatch Logs, Amazon Data Firehose, or Amazon S3) and the log level for the pipe's execution activity, capturing invocation and error logs. (AI-inferred)
     log_configuration: Any = None
-    # The name of the EventBridge pipe; if not provided, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that the pipe assumes to read from the source, invoke the enrichment, and deliver to the target. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the source resource (such as a Kinesis stream, DynamoDB stream, SQS queue, or EventBridge event bus) from which the pipe reads data. (AI-inferred)
     source: Any = None
-    # Defines source-specific configuration for the pipe's integration, including filtering criteria and service-specific settings (e.g., batch size or stream starting position) for sources like SQS, Kinesis, or DynamoDB. (AI-inferred)
     source_parameters: Any = None
-    # The reason why the pipe is in its current state, such as an error message when the pipe is in a failed state. (AI-inferred)
     state_reason: Any = None
-    # Specifies the key-value metadata tags to attach to this EventBridge Pipes pipe for resource identification and management. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) of the target resource (for example, an SQS queue, Lambda function, or EventBridge event bus) to which the pipe delivers events. (AI-inferred)
     target: Any = None
-    # Specifies the target-specific configuration for the pipe, including the input template, input transformation, dead-letter configuration, and parameters tailored to the destination service (such as Lambda, SQS, SNS). (AI-inferred)
     target_parameters: Any = None
 
 Pipe = ubx.ResourceBinding(

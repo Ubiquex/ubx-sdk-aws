@@ -2,35 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamImageBuilder_AccessEndpoints {
-  /** Specifies whether the VPC endpoint for this access endpoint is used for AppStream 2.0 streaming or desktop sessions, with valid values such as AppStream.Streaming and AppStream.Desktop. (AI-inferred) */
   endpointType?: string | Computed<string>;
-  /** The ID of the VPC endpoint used as a private access endpoint for the image builder's streaming session. (AI-inferred) */
   vpceId?: string | Computed<string>;
 }
 
 export interface StreamImageBuilder_DomainJoinInfo {
-  /** The fully qualified name of the Active Directory domain (e.g., example.com) that the image builder joins via the domain join configuration. (AI-inferred) */
   directoryName?: string | Computed<string>;
-  /** The distinguished name of the organizational unit in the Active Directory domain where the image builder computer account is created. (AI-inferred) */
   organizationalUnitDistinguishedName?: string | Computed<string>;
 }
 
 export interface StreamImageBuilder_RootVolumeConfig {
-  /** Specifies the size of the root volume of the image builder in gigabytes. (AI-inferred) */
   volumeSizeInGb?: number | Computed<number>;
 }
 
 export interface StreamImageBuilder_Tags {
-  /** Specifies the key of a tag applied to this AppStream 2.0 image builder, allowing you to organize, track, and control access to the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag applied to the AppStream 2.0 Image Builder, enabling you to categorize and track the resource for cost allocation and operational management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface StreamImageBuilder_VpcConfig {
-  /** The list of security group IDs that are attached to the image builder's elastic network interface within the specified VPC. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs in the VPC where the AppStream image builder is launched. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
@@ -59,74 +50,41 @@ const StreamImageBuilder_VpcConfigFields: FieldMap = {
 };
 
 export interface StreamImageBuilderConfig {
-  /** Specifies the VPC endpoints (via endpoint type and VPC endpoint ID) used for the image builder's streaming sessions, controlling the network access for the image builder. (AI-inferred) */
   accessEndpoints?: StreamImageBuilder_AccessEndpoints[] | Computed<StreamImageBuilder_AccessEndpoints[]>;
-  /** Specifies the version of the AppStream 2.0 agent to install on the image builder, such as a date-based version string (e.g., '01-04-2022') or 'LATEST' to use the latest version. (AI-inferred) */
   appstreamAgentVersion?: string | Computed<string>;
-  /** A user-provided description of the AppStream 2.0 image builder. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The display name of the image builder, which is a user-friendly name shown in the AppStream 2.0 console. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** Specifies the Active Directory domain and service account credentials used to join the image builder to a domain. (AI-inferred) */
   domainJoinInfo?: StreamImageBuilder_DomainJoinInfo | Computed<StreamImageBuilder_DomainJoinInfo>;
-  /** Whether the image builder has default internet access enabled, allowing it to connect to the internet without a custom VPC configuration. (AI-inferred) */
   enableDefaultInternetAccess?: boolean | Computed<boolean>;
-  /** The ARN of the IAM role that AppStream 2.0 assumes to grant the image builder permissions to access AWS services and resources on your behalf. (AI-inferred) */
   iamRoleArn?: string | Computed<string>;
-  /** The ARN of the AppStream image to use as the base for this image builder. (AI-inferred) */
   imageArn?: string | Computed<string>;
-  /** The name of the AppStream 2.0 image used as the base for the image builder. (AI-inferred) */
   imageName?: string | Computed<string>;
-  /** The Amazon EC2 instance type (e.g., stream.standard.medium) used to launch the AppStream 2.0 image builder, determining the compute and memory resources available during image creation. (AI-inferred) */
   instanceType: string | Computed<string>;
-  /** The name of the AppStream 2.0 image builder, which must be unique within the AWS account and is used to identify the image builder in AppStream 2.0. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the size and encryption settings for the root volume of the AppStream 2.0 image builder, including the volume size in gigabytes and an optional AWS KMS key for encryption. (AI-inferred) */
   rootVolumeConfig?: StreamImageBuilder_RootVolumeConfig | Computed<StreamImageBuilder_RootVolumeConfig>;
-  /** A list of software applications to install on the image builder during initial setup, enabling common applications like Chrome or Firefox to be pre-installed for customized images. (AI-inferred) */
   softwaresToInstall?: string[] | Computed<string[]>;
-  /** Specifies a list of software to uninstall from the base image when creating the AppStream image builder, letting you remove pre-installed applications to customize the image for your needs. (AI-inferred) */
   softwaresToUninstall?: string[] | Computed<string[]>;
-  /** Specifies the list of key-value tags to attach to the AppStream 2.0 image builder resource. (AI-inferred) */
   tags?: StreamImageBuilder_Tags[] | Computed<StreamImageBuilder_Tags[]>;
-  /** Specifies the VPC configuration for the image builder, including the security group IDs and subnet IDs that the image builder uses for network access. (AI-inferred) */
   vpcConfig?: StreamImageBuilder_VpcConfig | Computed<StreamImageBuilder_VpcConfig>;
 }
 
 export interface StreamImageBuilderAttrs {
-  /** Specifies the VPC endpoints (via endpoint type and VPC endpoint ID) used for the image builder's streaming sessions, controlling the network access for the image builder. (AI-inferred) */
   accessEndpoints: StreamImageBuilder_AccessEndpoints[];
-  /** Specifies the version of the AppStream 2.0 agent to install on the image builder, such as a date-based version string (e.g., '01-04-2022') or 'LATEST' to use the latest version. (AI-inferred) */
   appstreamAgentVersion: string;
-  /** A user-provided description of the AppStream 2.0 image builder. (AI-inferred) */
   description: string;
-  /** The display name of the image builder, which is a user-friendly name shown in the AppStream 2.0 console. (AI-inferred) */
   displayName: string;
-  /** Specifies the Active Directory domain and service account credentials used to join the image builder to a domain. (AI-inferred) */
   domainJoinInfo: StreamImageBuilder_DomainJoinInfo;
-  /** Whether the image builder has default internet access enabled, allowing it to connect to the internet without a custom VPC configuration. (AI-inferred) */
   enableDefaultInternetAccess: boolean;
-  /** The ARN of the IAM role that AppStream 2.0 assumes to grant the image builder permissions to access AWS services and resources on your behalf. (AI-inferred) */
   iamRoleArn: string;
-  /** The ARN of the AppStream image to use as the base for this image builder. (AI-inferred) */
   imageArn: string;
-  /** The name of the AppStream 2.0 image used as the base for the image builder. (AI-inferred) */
   imageName: string;
-  /** The Amazon EC2 instance type (e.g., stream.standard.medium) used to launch the AppStream 2.0 image builder, determining the compute and memory resources available during image creation. (AI-inferred) */
   instanceType: string;
-  /** The name of the AppStream 2.0 image builder, which must be unique within the AWS account and is used to identify the image builder in AppStream 2.0. (AI-inferred) */
   name: string;
-  /** Specifies the size and encryption settings for the root volume of the AppStream 2.0 image builder, including the volume size in gigabytes and an optional AWS KMS key for encryption. (AI-inferred) */
   rootVolumeConfig: StreamImageBuilder_RootVolumeConfig;
-  /** A list of software applications to install on the image builder during initial setup, enabling common applications like Chrome or Firefox to be pre-installed for customized images. (AI-inferred) */
   softwaresToInstall: string[];
-  /** Specifies a list of software to uninstall from the base image when creating the AppStream image builder, letting you remove pre-installed applications to customize the image for your needs. (AI-inferred) */
   softwaresToUninstall: string[];
-  /** The URL used to connect to the image builder from a web browser for administrative tasks. (AI-inferred) */
   streamingUrl: string;
-  /** Specifies the list of key-value tags to attach to the AppStream 2.0 image builder resource. (AI-inferred) */
   tags: StreamImageBuilder_Tags[];
-  /** Specifies the VPC configuration for the image builder, including the security group IDs and subnet IDs that the image builder uses for network access. (AI-inferred) */
   vpcConfig: StreamImageBuilder_VpcConfig;
 }
 

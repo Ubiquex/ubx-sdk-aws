@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiftContainerGroupDefinition_GameServerContainerDefinition_DependsOn {
-  /** Determines the condition (such as START, COMPLETE, SUCCESS, or HEALTHY) that the referenced dependency container must satisfy before the game server container is allowed to start. (AI-inferred) */
   condition?: string | Computed<string>;
-  /** The name of the container that the game server container depends on, used to define the startup order between containers in the container group. (AI-inferred) */
   containerName?: string | Computed<string>;
 }
 
 export interface LiftContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverride {
-  /** The name of the environment variable whose value is being overridden for the game server container defined in this GameLift container group. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the value for an environment variable override applied to the game server container at runtime, replacing any default value defined in the container image. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -21,20 +17,14 @@ export interface LiftContainerGroupDefinition_GameServerContainerDefinition_Linu
 }
 
 export interface LiftContainerGroupDefinition_GameServerContainerDefinition_MountPoints {
-  /** Specifies whether the mounted volume is read-only or read-write, using values like READ_ONLY or READ_WRITE. (AI-inferred) */
   accessLevel?: string | Computed<string>;
-  /** The file path inside the game server container where the mounted volume is accessible, as specified in the mount point configuration for the container group definition. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** Specifies the file path on the underlying EC2 instance that the container mount point references, allowing the container to access data stored on the instance's filesystem. (AI-inferred) */
   instancePath?: string | Computed<string>;
 }
 
 export interface LiftContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration_ContainerPortRanges {
-  /** Specifies the starting port in a contiguous range of ports that the game server container uses for incoming game traffic, as part of a container port range for the container group definition. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The network protocol (TCP or UDP) for the container port range, used for routing traffic to the game server container. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The ending port number in the inclusive range of ports that the game server container uses for inbound game traffic, as part of the container port configuration for the GameLift container group definition. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
@@ -65,47 +55,29 @@ export interface LiftContainerGroupDefinition_GameServerContainerDefinition {
 }
 
 export interface LiftContainerGroupDefinition_SupportContainerDefinitions_HealthCheck {
-  /** The command to run inside the support container to perform a health check, specified as a list of strings representing the executable and its arguments. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** Specifies the time interval (in seconds) between successive health check runs for this support container in the GameLift container group definition. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** The retries field specifies the number of consecutive failed health checks after which the container is considered unhealthy in the GameLift container group definition. (AI-inferred) */
   retries?: number | Computed<number>;
-  /** The number of seconds that the health check waits after the support container starts before beginning its health checks in a GameLift container group definition. (AI-inferred) */
   startPeriod?: number | Computed<number>;
-  /** The amount of time (in seconds) that GameLift waits for the container health check command to return before considering the health check failed and marking the container unhealthy. (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
 export interface LiftContainerGroupDefinition_SupportContainerDefinitions {
-  /** The name assigned to the support container, which serves as a unique identifier within the container group definition. (AI-inferred) */
   containerName?: string | Computed<string>;
-  /** Defines which other containers in the same container group must reach a specified condition (e.g., START, COMPLETE, SUCCESS, HEALTHY) before this support container is started. (AI-inferred) */
   dependsOn?: LiftContainerGroupDefinition_GameServerContainerDefinition_DependsOn[] | Computed<LiftContainerGroupDefinition_GameServerContainerDefinition_DependsOn[]>;
-  /** A list of environment variable overrides applied to the support container when it runs, each specifying the variable name and value to replace any value defined in the container image, for a GameLift container group definition. (AI-inferred) */
   environmentOverride?: LiftContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverride[] | Computed<LiftContainerGroupDefinition_GameServerContainerDefinition_EnvironmentOverride[]>;
-  /** Indicates whether the support container is essential, meaning that if an essential support container stops or fails, the entire container group is stopped. (AI-inferred) */
   essential?: boolean | Computed<boolean>;
-  /** Specifies the container health check configuration, including the command to run, interval, timeout, retries, and start period, used by Amazon GameLift to determine whether the support container is healthy. (AI-inferred) */
   healthCheck?: LiftContainerGroupDefinition_SupportContainerDefinitions_HealthCheck | Computed<LiftContainerGroupDefinition_SupportContainerDefinitions_HealthCheck>;
-  /** The URI of the container image that this support container in the GameLift container group definition will pull and run. (AI-inferred) */
   imageUri?: string | Computed<string>;
-  /** Configures the Linux kernel capabilities (additional or dropped) for the support container, controlling which privileged operations the container is allowed to perform. (AI-inferred) */
   linuxCapabilities?: LiftContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilities | Computed<LiftContainerGroupDefinition_GameServerContainerDefinition_LinuxCapabilities>;
-  /** Sets the maximum memory (in mebibytes) that the support container is allowed to use, enforcing a hard limit on its memory consumption. (AI-inferred) */
   memoryHardLimitMebibytes?: number | Computed<number>;
-  /** Defines the mount points for the support container, specifying the container path and the source volume to attach for shared storage within the GameLift container group. (AI-inferred) */
   mountPoints?: LiftContainerGroupDefinition_GameServerContainerDefinition_MountPoints[] | Computed<LiftContainerGroupDefinition_GameServerContainerDefinition_MountPoints[]>;
-  /** Defines the port range and protocol (e.g., TCP or UDP) that the support container exposes for inbound traffic in the GameLift container group definition. (AI-inferred) */
   portConfiguration?: LiftContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration | Computed<LiftContainerGroupDefinition_GameServerContainerDefinition_PortConfiguration>;
-  /** The resolved image digest for the support container, computed from the image URI to uniquely identify the exact container image version used by the container group definition. (AI-inferred) */
   resolvedImageDigest?: string | Computed<string>;
-  /** The number of vCPU units allocated to this support container in the GameLift container group definition, which sets the CPU resource limit for that container. (AI-inferred) */
   vcpu?: number | Computed<number>;
 }
 
 export interface LiftContainerGroupDefinition_Tags {
-  /** The key of a tag applied to an Amazon GameLift container group definition, enabling resource organization and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

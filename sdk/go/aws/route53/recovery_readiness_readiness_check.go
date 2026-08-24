@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryReadinessReadinessCheck_Tags struct {
 	Key any
-	// The value half of a key-value tag attached to the Route 53 Recovery Readiness readiness check, used to add custom metadata for organizing and identifying this resource. (AI-inferred)
 	Value any
 }
 

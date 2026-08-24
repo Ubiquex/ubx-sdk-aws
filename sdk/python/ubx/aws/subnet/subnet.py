@@ -13,16 +13,12 @@ class Subnet_BlockPublicAccessStates:
 
 @dataclasses.dataclass
 class Subnet_PrivateDnsNameOptionsOnLaunch:
-    # Indicates whether to enable Resource Name DNS AAAA (IPv6) record for instances launched in this subnet, affecting how instance hostnames resolve in the VPC's private DNS. (AI-inferred)
     enable_resource_name_dns_aaaarecord: Any = None
-    # Specifies whether to enable the automatic creation of an A record for the resource-based name (private DNS name) of instances launched in this subnet, mapping that name to the instance's private IPv4 address within the VPC's private hosted zone. (AI-inferred)
     enable_resource_name_dns_arecord: Any = None
-    # Specifies the type of hostname (ip-name or resource-name) that EC2 instances launched in this subnet will receive for their private DNS hostnames, as part of the subnet's PrivateDnsNameOptionsOnLaunch configuration. (AI-inferred)
     hostname_type: Any = None
 
 @dataclasses.dataclass
 class Subnet_Tags:
-    # The case-sensitive key of a tag applied to the subnet, used to identify and categorize the resource for cost allocation, access control, and operational management. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -82,7 +78,6 @@ class SubnetAttrs:
     availability_zone: Any = None
     # The AZ ID of the subnet.
     availability_zone_id: Any = None
-    # The effective Block Public Access configuration for the subnet, reporting the current state (`allow` or `block`) for both inbound and outbound traffic via `inbound` and `outbound` keys. (AI-inferred)
     block_public_access_states: Any = None
     # The IPv4 CIDR block assigned to the subnet. If you update this property, we create a new subnet, and then delete the existing one.
     cidr_block: Any = None
@@ -96,7 +91,6 @@ class SubnetAttrs:
     ipv4_netmask_length: Any = None
     # The IPv6 CIDR block. If you specify ``AssignIpv6AddressOnCreation``, you must also specify an IPv6 CIDR block.
     ipv6_cidr_block: Any = None
-    # The list of IPv6 CIDR blocks associated with the subnet, automatically populated by AWS as read-only values. (AI-inferred)
     ipv6_cidr_blocks: Any = None
     # An IPv6 IPAM pool ID for the subnet.
     ipv6_ipam_pool_id: Any = None
@@ -106,13 +100,11 @@ class SubnetAttrs:
     ipv6_netmask_length: Any = None
     # Indicates whether instances launched in this subnet receive a public IPv4 address. The default value is ``false``. AWS charges for all public IPv4 addresses, including public IPv4 addresses associated with running instances and Elastic IP addresses. For more information, see the *Public IPv4 Address* tab on the [VPC pricing page](https://docs.aws.amazon.com/vpc/pricing/).
     map_public_ip_on_launch: Any = None
-    # The unique identifier of the network ACL association attached to this subnet, which represents the association between the subnet and its network ACL (either the default or a custom ACL). (AI-inferred)
     network_acl_association_id: Any = None
     # The Amazon Resource Name (ARN) of the Outpost.
     outpost_arn: Any = None
     # The hostname type for EC2 instances launched into this subnet and how DNS A and AAAA record queries to the instances should be handled. For more information, see [Amazon EC2 instance hostname types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html) in the *User Guide*. Available options: + EnableResourceNameDnsAAAARecord (true | false) + EnableResourceNameDnsARecord (true | false) + HostnameType (ip-name | resource-name)
     private_dns_name_options_on_launch: Any = None
-    # The unique identifier assigned by AWS when the subnet is created (e.g., 'subnet-1234567890abcdef0'), which is used to refer to the subnet in other resources. (AI-inferred)
     subnet_id: Any = None
     # Any tags assigned to the subnet.
     tags: Any = None

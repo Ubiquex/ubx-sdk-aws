@@ -4,7 +4,6 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecordingConfiguration_DestinationConfiguration_S3 struct {
-	// The name of the Amazon S3 bucket where AWS IVS stores the recorded video segments for this recording configuration. (AI-inferred)
 	BucketName any
 }
 
@@ -22,7 +21,6 @@ type RecordingConfiguration_RenditionConfiguration struct {
 
 type RecordingConfiguration_Tags struct {
 	Key any
-	// The value of a tag attached to an AWS IVS recording configuration, used to organize, categorize, and manage the resource. (AI-inferred)
 	Value any
 }
 

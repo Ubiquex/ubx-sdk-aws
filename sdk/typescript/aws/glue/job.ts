@@ -49,9 +49,7 @@ const Job_NotificationPropertyFields: FieldMap = {
 export interface JobConfig {
   /** The number of capacity units that are allocated to this job. */
   allocatedCapacity?: number | Computed<number>;
-  /** Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred) */
   command: Job_Command | Computed<Job_Command>;
-  /** Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred) */
   connections?: Job_Connections | Computed<Job_Connections>;
   /** The default arguments for this job, specified as name-value pairs. */
   defaultArguments?: unknown | Computed<unknown>;
@@ -59,7 +57,6 @@ export interface JobConfig {
   description?: string | Computed<string>;
   /** Indicates whether the job is run with a standard or flexible execution class. */
   executionClass?: string | Computed<string>;
-  /** Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred) */
   executionProperty?: Job_ExecutionProperty | Computed<Job_ExecutionProperty>;
   /** Glue version determines the versions of Apache Spark and Python that AWS Glue supports. */
   glueVersion?: string | Computed<string>;
@@ -79,7 +76,6 @@ export interface JobConfig {
   name?: string | Computed<string>;
   /** Non-overridable arguments for this job, specified as name-value pairs. */
   nonOverridableArguments?: unknown | Computed<unknown>;
-  /** Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred) */
   notificationProperty?: Job_NotificationProperty | Computed<Job_NotificationProperty>;
   /** The number of workers of a defined workerType that are allocated when a job runs. */
   numberOfWorkers?: number | Computed<number>;
@@ -98,9 +94,7 @@ export interface JobConfig {
 export interface JobAttrs {
   /** The number of capacity units that are allocated to this job. */
   allocatedCapacity: number;
-  /** Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred) */
   command: Job_Command;
-  /** Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred) */
   connections: Job_Connections;
   /** The default arguments for this job, specified as name-value pairs. */
   defaultArguments: unknown;
@@ -108,7 +102,6 @@ export interface JobAttrs {
   description: string;
   /** Indicates whether the job is run with a standard or flexible execution class. */
   executionClass: string;
-  /** Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred) */
   executionProperty: Job_ExecutionProperty;
   /** Glue version determines the versions of Apache Spark and Python that AWS Glue supports. */
   glueVersion: string;
@@ -128,7 +121,6 @@ export interface JobAttrs {
   name: string;
   /** Non-overridable arguments for this job, specified as name-value pairs. */
   nonOverridableArguments: unknown;
-  /** Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred) */
   notificationProperty: Job_NotificationProperty;
   /** The number of workers of a defined workerType that are allocated when a job runs. */
   numberOfWorkers: number;

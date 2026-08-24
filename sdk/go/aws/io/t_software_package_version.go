@@ -18,9 +18,7 @@ type TSoftwarePackageVersion_Artifact struct {
 }
 
 type TSoftwarePackageVersion_Tags struct {
-	// Specifies the key of a tag attached to the AWS IoT software package version, used to identify and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to this AWS IoT Software Package Version resource, providing arbitrary metadata for the package version. (AI-inferred)
 	Value any
 }
 
@@ -46,11 +44,8 @@ var TSoftwarePackageVersion_TagsFields = ubx.FieldMap{
 type TSoftwarePackageVersionConfig struct {
 	// The artifact location of the package version
 	Artifact any
-	// Specifies metadata attributes as key-value pairs that are attached to the software package version in AWS IoT, allowing you to add custom searchable or informational data to the version's registry entry. (AI-inferred)
 	Attributes any
-	// Provides a user-defined description of this AWS IoT software package version. (AI-inferred)
 	Description any
-	// The name of the AWS IoT software package that this software package version belongs to. (AI-inferred)
 	PackageName any
 	// The inline json job document associated with a software package version
 	Recipe any
@@ -58,22 +53,16 @@ type TSoftwarePackageVersionConfig struct {
 	Sbom any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// The user-specified name for this version of the AWS IoT software package, which must be unique within the package; if omitted, AWS IoT/CloudFormation will generate a unique version name. (AI-inferred)
 	VersionName any
 }
 
 type TSoftwarePackageVersionAttrs struct {
 	// The artifact location of the package version
 	Artifact any
-	// Specifies metadata attributes as key-value pairs that are attached to the software package version in AWS IoT, allowing you to add custom searchable or informational data to the version's registry entry. (AI-inferred)
 	Attributes any
-	// Provides a user-defined description of this AWS IoT software package version. (AI-inferred)
 	Description any
-	// The error reason reported by AWS IoT when the software package version enters a FAILED state, providing details about why version creation or update failed. (AI-inferred)
 	ErrorReason any
-	// The name of the AWS IoT software package that this software package version belongs to. (AI-inferred)
 	PackageName any
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS IoT software package version. (AI-inferred)
 	PackageVersionArn any
 	// The inline json job document associated with a software package version
 	Recipe any
@@ -81,11 +70,9 @@ type TSoftwarePackageVersionAttrs struct {
 	Sbom any
 	// The validation status of the Sbom file
 	SbomValidationStatus any
-	// The current status of the software package version, such as DRAFT, PUBLISHED, or DEPRECATED, as tracked by AWS IoT Software Package Catalog. (AI-inferred)
 	Status any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// The user-specified name for this version of the AWS IoT software package, which must be unique within the package; if omitted, AWS IoT/CloudFormation will generate a unique version name. (AI-inferred)
 	VersionName any
 }
 

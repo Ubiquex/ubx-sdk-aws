@@ -15,7 +15,6 @@ class InboundExternalLink_LinkAttributes_ResponderErrorMasking:
 
 @dataclasses.dataclass
 class InboundExternalLink_LinkAttributes:
-    # In the AWS RTB Fabric inbound external link, the customer_provided_id field within link_attributes is a customer-assigned string identifier for the link, intended for the customer's own tracking and correlation purposes. (AI-inferred)
     customer_provided_id: Any = None
     responder_error_masking: Any = None
 
@@ -83,7 +82,6 @@ _InboundExternalLink_TagsFields = {
 class InboundExternalLinkConfig:
     gateway_id: Any = None
     link_attributes: Any = None
-    # Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
     link_log_settings: Any = None
     # Tags to assign to the Link.
     tags: Any = None
@@ -96,13 +94,10 @@ class InboundExternalLinkAttrs:
     gateway_id: Any = None
     link_attributes: Any = None
     link_id: Any = None
-    # Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
     link_log_settings: Any = None
-    # The read-only link_status attribute reports the current lifecycle state of the inbound external link (for example, ACTIVE or INACTIVE) as maintained by the AWS RTB Fabric service. (AI-inferred)
     link_status: Any = None
     # Tags to assign to the Link.
     tags: Any = None
-    # This computed string is the timestamp indicating when the inbound external link was last updated. (AI-inferred)
     updated_timestamp: Any = None
 
 InboundExternalLink = ubx.ResourceBinding(

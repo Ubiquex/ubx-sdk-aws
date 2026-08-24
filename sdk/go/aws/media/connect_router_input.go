@@ -4,49 +4,35 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_Rist struct {
-	// The port number used for RIST protocol communication in the failover protocol configuration of the MediaConnect router input. (AI-inferred)
 	Port any
-	// The recovery latency in milliseconds for the RIST protocol in the failover configuration of the router input. (AI-inferred)
 	RecoveryLatencyMilliseconds any
 }
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_Rtp struct {
 	ForwardErrorCorrection any
-	// The network port number that the router input uses to receive RTP media traffic when failover is triggered under the rtp protocol configuration. (AI-inferred)
 	Port any
 }
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration_EncryptionKey struct {
-	// The ARN of the IAM role that AWS Elemental MediaConnect assumes to access the AWS KMS key used for decrypting the SRT caller stream, paired with the secret ARN in the same encryption key configuration. (AI-inferred)
 	RoleArn any
-	// The ARN of the AWS Secrets Manager secret that holds the encryption key used to decrypt the incoming SRT caller stream when decryption is enabled. (AI-inferred)
 	SecretArn any
 }
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller_DecryptionConfiguration struct {
-	// Defines the encryption key used to decrypt incoming SRT (Secure Reliable Transport) traffic for an SRT caller protocol within the router input's failover decryption configuration. (AI-inferred)
 	EncryptionKey any
 }
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_SrtCaller struct {
-	// Specifies the algorithm and AWS KMS key or Secrets Manager secret ARN used to decrypt the SRT stream when the router input acts as an SRT caller under this failover protocol configuration. (AI-inferred)
 	DecryptionConfiguration any
-	// Sets the minimum acceptable latency in milliseconds for the SRT caller protocol used in the failover configuration of the AWS MediaConnect router input. (AI-inferred)
 	MinimumLatencyMilliseconds any
-	// The source IP address used by the SRT caller in the failover protocol configuration for a MediaConnect router input. (AI-inferred)
 	SourceAddress any
-	// The source_port specifies the network port on the SRT source endpoint that the SRT caller in the router input's failover configuration connects to. (AI-inferred)
 	SourcePort any
-	// The SRT stream ID used by the SRT caller in this failover configuration to identify the media stream input to the router. (AI-inferred)
 	StreamId any
 }
 
 type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations_SrtListener struct {
-	// The decryption configuration for the SRT listener under failover, defining how encrypted SRT traffic is decrypted by specifying the encryption algorithm and the source of the decryption key (such as a static key or AWS Secrets Manager secret). (AI-inferred)
 	DecryptionConfiguration any
-	// Specifies the minimum latency in milliseconds for the SRT listener used in the router input's failover protocol configuration, which sets the lower bound for the playback buffer to smooth network jitter and packet retransmission. (AI-inferred)
 	MinimumLatencyMilliseconds any
-	// The UDP port number on which the SRT listener accepts incoming SRT connections for this failover configuration. (AI-inferred)
 	Port any
 }
 
@@ -58,9 +44,7 @@ type ConnectRouterInput_Configuration_Failover_ProtocolConfigurations struct {
 }
 
 type ConnectRouterInput_Configuration_Failover struct {
-	// Specifies the Amazon Resource Name (ARN) of the elastic network interface (ENI) that the MediaConnect router input uses for failover, allowing the input to switch to this interface if the primary network interface becomes unavailable. (AI-inferred)
 	NetworkInterfaceArn any
-	// The zero-based index of the source input that serves as the primary source in the failover configuration, ensuring that traffic is routed to this source first and to the secondary source if the primary becomes unavailable. (AI-inferred)
 	PrimarySourceIndex any
 	ProtocolConfigurations any
 	SourcePriorityMode any
@@ -72,53 +56,41 @@ type ConnectRouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption_E
 }
 
 type ConnectRouterInput_Configuration_MediaConnectFlow_SourceTransitDecryption struct {
-	// Defines the encryption key parameters, such as the key ARN, role, and algorithm, used to decrypt the source media arriving over the transit-encrypted MediaConnect flow. (AI-inferred)
 	EncryptionKeyConfiguration any
-	// Specifies the type of encryption key used to decrypt the source transit content in the MediaConnect flow, such as 'static-key' or 'speke'. (AI-inferred)
 	EncryptionKeyType any
 }
 
 type ConnectRouterInput_Configuration_MediaConnectFlow struct {
 	FlowArn any
-	// The Amazon Resource Name (ARN) of the AWS Elemental MediaConnect flow output that serves as the media source for this router input. (AI-inferred)
 	FlowOutputArn any
 	SourceTransitDecryption any
 }
 
 type ConnectRouterInput_Configuration_MediaLiveChannel struct {
-	// The ARN of the AWS Elemental MediaLive channel referenced by the media_live_channel configuration block of this MediaConnect router input. (AI-inferred)
 	MediaLiveChannelArn any
-	// Specifies the name of the MediaLive channel output that this router input is configured to receive media from. (AI-inferred)
 	MediaLiveChannelOutputName any
 	MediaLivePipelineId any
 	SourceTransitDecryption any
 }
 
 type ConnectRouterInput_Configuration_Merge_ProtocolConfigurations struct {
-	// Configuration object that sets the RIST (Reliable Internet Stream Transport) parameters for a protocol configuration within the merge settings of the MediaConnect router input. (AI-inferred)
 	Rist any
-	// Configuration object for the RTP transport protocol settings used by a MediaConnect router input when merging multiple incoming media streams, defining how RTP packets are received and processed. (AI-inferred)
 	Rtp any
 }
 
 type ConnectRouterInput_Configuration_Merge struct {
-	// Specifies the number of milliseconds that the MediaConnect router input waits for a merged input stream to recover after a loss before it switches to the secondary/failover stream, controlling the smoothness of the transition. (AI-inferred)
 	MergeRecoveryWindowMilliseconds any
 	NetworkInterfaceArn any
-	// Specifies the list of protocol configurations that are merged together to allow the router input to accept and combine multiple media streams from different protocols into a single logical input. (AI-inferred)
 	ProtocolConfigurations any
 }
 
 type ConnectRouterInput_Configuration_Standard struct {
-	// The ARN of the network interface used by the standard configuration of this MediaConnect router input to receive media traffic. (AI-inferred)
 	NetworkInterfaceArn any
 	Protocol any
-	// Specifies the protocol-specific settings (such as transport protocol and network parameters) for the standard input of a MediaConnect router. (AI-inferred)
 	ProtocolConfiguration any
 }
 
 type ConnectRouterInput_Configuration struct {
-	// The failover configuration for the MediaConnect router input, defining whether the input participates in automatic failover and its priority relative to other router inputs. (AI-inferred)
 	Failover any
 	MediaConnectFlow any
 	MediaLiveChannel any
@@ -127,16 +99,13 @@ type ConnectRouterInput_Configuration struct {
 }
 
 type ConnectRouterInput_ContentQualityAnalysisConfiguration_ContentLevel_BlackFrames struct {
-	// Specifies whether black frame detection is enabled or disabled in the content level of the content quality analysis configuration for this MediaConnect router input. (AI-inferred)
 	State any
 	ThresholdSeconds any
 }
 
 type ConnectRouterInput_ContentQualityAnalysisConfiguration_ContentLevel struct {
-	// Configures content-level detection settings for black frames in the incoming video stream, allowing you to define when a frame is considered black and how to respond. (AI-inferred)
 	BlackFrames any
 	FrozenFrames any
-	// Specifies the detection parameters for silent audio within the content level of the media input, allowing adjustment of silence thresholds and durations for quality analysis. (AI-inferred)
 	SilentAudio any
 }
 
@@ -151,7 +120,6 @@ type ConnectRouterInput_MaintenanceConfiguration_PreferredDayTime struct {
 
 type ConnectRouterInput_MaintenanceConfiguration struct {
 	Default any
-	// Specifies the preferred day and time within the week for scheduling maintenance on this MediaConnect router input. (AI-inferred)
 	PreferredDayTime any
 }
 
@@ -404,7 +372,6 @@ type ConnectRouterInputConfig struct {
 	Name any
 	// The Amazon Web Services Region for the router input. Defaults to the current region if not specified.
 	RegionName any
-	// Determines the geographic routing boundary (such as a specific Availability Zone or an entire AWS Region) for this MediaConnect router input, controlling where the input can route traffic. (AI-inferred)
 	RoutingScope any
 	// Key-value pairs that can be used to tag and organize this router input.
 	Tags any
@@ -414,7 +381,6 @@ type ConnectRouterInputConfig struct {
 }
 
 type ConnectRouterInputAttrs struct {
-	// This computed, read-only field contains the Amazon Resource Name (ARN) that AWS assigns to uniquely identify the MediaConnect router input, used for cross-service references and IAM authorization. (AI-inferred)
 	Arn any
 	// The Availability Zone where you want to create the router input. This must be a valid Availability Zone for the region specified by regionName, or the current region if no regionName is provided.
 	AvailabilityZone any
@@ -441,9 +407,7 @@ type ConnectRouterInputAttrs struct {
 	RegionName any
 	// The number of router outputs associated with the router input.
 	RoutedOutputs any
-	// Determines the geographic routing boundary (such as a specific Availability Zone or an entire AWS Region) for this MediaConnect router input, controlling where the input can route traffic. (AI-inferred)
 	RoutingScope any
-	// The read-only state of the MediaConnect router input, returned by AWS to indicate whether the input is currently active, inactive, or in an error/transitional state at the router. (AI-inferred)
 	State any
 	// Key-value pairs that can be used to tag and organize this router input.
 	Tags any

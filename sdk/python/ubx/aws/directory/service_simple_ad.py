@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceSimpleAd_Tags:
-    # The key of a tag assigned to the Simple AD directory resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -45,9 +44,7 @@ class ServiceSimpleAdConfig:
     short_name: Any = None
     # The size of the directory.
     size: Any = None
-    # A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred)
     vpc_settings: Any = None
 
 @dataclasses.dataclass
@@ -72,9 +69,7 @@ class ServiceSimpleAdAttrs:
     short_name: Any = None
     # The size of the directory.
     size: Any = None
-    # A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred)
     vpc_settings: Any = None
 
 ServiceSimpleAd = ubx.ResourceBinding(

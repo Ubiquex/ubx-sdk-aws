@@ -4,33 +4,25 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_CapacityConfiguration struct {
-	// The number of capacity units to allocate to the Amazon Q Business index, where each unit adds a fixed amount of storage and query capacity. (AI-inferred)
 	Units any
 }
 
 type Index_DocumentAttributeConfigurations struct {
-	// The unique name of the document attribute that this configuration applies to, used to match metadata fields in ingested documents and reference the attribute in data source schemas. (AI-inferred)
 	Name any
-	// Determines whether the document attribute can be used in search queries, with allowed values ENABLED or DISABLED. (AI-inferred)
 	Search any
-	// Specifies the data type of the document attribute in the index configuration, such as STRING, NUMBER, or DATE, which determines how the attribute is indexed and searched. (AI-inferred)
 	Type any
 }
 
 type Index_IndexStatistics_TextDocumentStatistics struct {
-	// The total size in bytes of text content that has been indexed for the index. (AI-inferred)
 	IndexedTextBytes any
-	// The total number of text documents that have been indexed in the Amazon Q Business index. (AI-inferred)
 	IndexedTextDocumentCount any
 }
 
 type Index_IndexStatistics struct {
-	// Contains the total number of text documents and the number of indexed text documents for the AWS QBusiness index. (AI-inferred)
 	TextDocumentStatistics any
 }
 
 type Index_Tags struct {
-	// The key of a tag pair attached to the Amazon Q Business index, enabling resource categorization and access management. (AI-inferred)
 	Key any
 	Value any
 }
@@ -51,48 +43,28 @@ var Index_TagsFields = ubx.FieldMap{
 	}
 
 type IndexConfig struct {
-	// The unique identifier of the AWS QBusiness application that this index belongs to, required when creating the index. (AI-inferred)
 	ApplicationId any
-	// Specifies the capacity configuration for the index, selecting either the ENTERPRISE or STARTER index type and the number of capacity units to allocate. (AI-inferred)
 	CapacityConfiguration any
-	// A description for the Amazon Q Business index. (AI-inferred)
 	Description any
-	// The display name of the Amazon Q Business index, which is a required, user-visible name that identifies the index in the Q Business console and API operations. (AI-inferred)
 	DisplayName any
-	// Defines which document metadata attributes the index will index and how they can be used for querying and filtering, by specifying each attribute's name, type, and usage configuration. (AI-inferred)
 	DocumentAttributeConfigurations any
-	// A list of key-value tag objects to attach to the Amazon Q Business index, used for organizing, managing, and identifying the resource in AWS. (AI-inferred)
 	Tags any
-	// Specifies whether the Amazon Q Business index is an ENTERPRISE index for general enterprise search or an ANALYTICS index for analytical and data-intensive workloads. (AI-inferred)
 	Type any
 }
 
 type IndexAttrs struct {
-	// The unique identifier of the AWS QBusiness application that this index belongs to, required when creating the index. (AI-inferred)
 	ApplicationId any
-	// Specifies the capacity configuration for the index, selecting either the ENTERPRISE or STARTER index type and the number of capacity units to allocate. (AI-inferred)
 	CapacityConfiguration any
-	// The ISO 8601 timestamp indicating when this Amazon Q Business index was created. (AI-inferred)
 	CreatedAt any
-	// A description for the Amazon Q Business index. (AI-inferred)
 	Description any
-	// The display name of the Amazon Q Business index, which is a required, user-visible name that identifies the index in the Q Business console and API operations. (AI-inferred)
 	DisplayName any
-	// Defines which document metadata attributes the index will index and how they can be used for querying and filtering, by specifying each attribute's name, type, and usage configuration. (AI-inferred)
 	DocumentAttributeConfigurations any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Q Business index, assigned by AWS when the index is created. (AI-inferred)
 	IndexArn any
-	// The unique AWS-assigned identifier for the QBusiness index. (AI-inferred)
 	IndexId any
-	// This computed attribute provides usage statistics for the QBusiness index, such as the total number of indexed documents and the combined byte size of the indexed text. (AI-inferred)
 	IndexStatistics any
-	// The current lifecycle status of the Amazon Q Business index, such as CREATING during provisioning or ACTIVE when ready to use. (AI-inferred)
 	Status any
-	// A list of key-value tag objects to attach to the Amazon Q Business index, used for organizing, managing, and identifying the resource in AWS. (AI-inferred)
 	Tags any
-	// Specifies whether the Amazon Q Business index is an ENTERPRISE index for general enterprise search or an ANALYTICS index for analytical and data-intensive workloads. (AI-inferred)
 	Type any
-	// The timestamp indicating when the QBusiness index was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

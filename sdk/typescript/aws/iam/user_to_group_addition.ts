@@ -2,17 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserToGroupAdditionConfig {
-  /** The name of the IAM group that the user is added to. (AI-inferred) */
   groupName: string | Computed<string>;
-  /** Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred) */
   users: string[] | Computed<string[]>;
 }
 
 export interface UserToGroupAdditionAttrs {
-  /** The name of the IAM group that the user is added to. (AI-inferred) */
   groupName: string;
   id: string;
-  /** Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred) */
   users: string[];
 }
 

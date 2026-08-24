@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SyncGraphQlschemaConfig {
-  /** The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred) */
   apiId: string | Computed<string>;
-  /** The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred) */
   definition?: string | Computed<string>;
-  /** The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred) */
   definitionS3Location?: string | Computed<string>;
 }
 
 export interface SyncGraphQlschemaAttrs {
-  /** The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred) */
   apiId: string;
-  /** The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred) */
   definition: string;
-  /** The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred) */
   definitionS3Location: string;
-  /** The id is the GraphQL API ID that this schema is attached to. (AI-inferred) */
   id: string;
 }
 

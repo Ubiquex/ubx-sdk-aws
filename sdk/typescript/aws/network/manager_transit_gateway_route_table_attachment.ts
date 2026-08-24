@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerTransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_Tags {
-  /** Specifies the key (name) of a tag to apply to the proposed network function group change for the transit gateway route table attachment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag defined in the proposed network function group change for the AWS Network Manager transit gateway route table attachment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

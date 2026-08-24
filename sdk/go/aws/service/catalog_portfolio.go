@@ -4,9 +4,7 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogPortfolio_Tags struct {
-	// The key of a tag attached to the AWS Service Catalog portfolio, used to organize and identify the portfolio for cost allocation and management. (AI-inferred)
 	Key any
-	// The value (a string) of a key-value tag that can be assigned to the AWS Service Catalog portfolio for organizational purposes. (AI-inferred)
 	Value any
 }
 
@@ -16,29 +14,19 @@ var CatalogPortfolio_TagsFields = ubx.FieldMap{
 	}
 
 type CatalogPortfolioConfig struct {
-	// Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred)
 	AcceptLanguage any
-	// A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred)
 	Description any
-	// The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred)
 	DisplayName any
-	// The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
 	ProviderName any
 	Tags any
 }
 
 type CatalogPortfolioAttrs struct {
-	// Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred)
 	AcceptLanguage any
-	// A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred)
 	Description any
-	// The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred)
 	DisplayName any
-	// The unique Service Catalog portfolio identifier (e.g., 'port-xxxxxx') assigned by AWS when the portfolio is created, used to reference the portfolio in other resources and API calls. (AI-inferred)
 	Id any
-	// The name of the AWS Service Catalog portfolio, automatically populated from the portfolio's DisplayName attribute when read from AWS. (AI-inferred)
 	PortfolioName any
-	// The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred)
 	ProviderName any
 	Tags any
 }

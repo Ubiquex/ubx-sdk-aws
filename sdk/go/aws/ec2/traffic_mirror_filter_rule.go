@@ -12,7 +12,6 @@ type TrafficMirrorFilterRule_DestinationPortRange struct {
 
 type TrafficMirrorFilterRule_Tags struct {
 	Key any
-	// The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred)
 	Value any
 }
 
@@ -31,7 +30,6 @@ type TrafficMirrorFilterRuleConfig struct {
 	Description any
 	// The destination CIDR block to assign to the Traffic Mirror rule.
 	DestinationCidrBlock any
-	// Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
 	DestinationPortRange any
 	// The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
 	Protocol any
@@ -41,7 +39,6 @@ type TrafficMirrorFilterRuleConfig struct {
 	RuleNumber any
 	// The source CIDR block to assign to the Traffic Mirror Filter rule.
 	SourceCidrBlock any
-	// The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
 	SourcePortRange any
 	// Any tags assigned to the Traffic Mirror Filter rule.
 	Tags any
@@ -56,7 +53,6 @@ type TrafficMirrorFilterRuleAttrs struct {
 	Description any
 	// The destination CIDR block to assign to the Traffic Mirror rule.
 	DestinationCidrBlock any
-	// Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
 	DestinationPortRange any
 	// The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
 	Protocol any
@@ -66,7 +62,6 @@ type TrafficMirrorFilterRuleAttrs struct {
 	RuleNumber any
 	// The source CIDR block to assign to the Traffic Mirror Filter rule.
 	SourceCidrBlock any
-	// The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
 	SourcePortRange any
 	// Any tags assigned to the Traffic Mirror Filter rule.
 	Tags any

@@ -9,31 +9,23 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SpacesWebSessionLogger_EventFilter:
     all: Any = None
-    # The list of event type strings that the session logger should include in its log output, filtering out any session events not matching these values. (AI-inferred)
     include: Any = None
 
 @dataclasses.dataclass
 class SpacesWebSessionLogger_LogConfiguration_S3:
-    # The name of the S3 bucket that receives WorkSpaces Web session logs. (AI-inferred)
     bucket: Any = None
-    # Specifies the AWS account ID of the S3 bucket owner, used to validate access when delivering session logs to an S3 bucket owned by a different account. (AI-inferred)
     bucket_owner: Any = None
-    # Specifies the hierarchical folder layout used to store session log files in the S3 bucket, typically a date-based pattern (e.g., yyyy/MM/dd/HH/) that controls how logs are partitioned in the bucket. (AI-inferred)
     folder_structure: Any = None
-    # The S3 object key prefix under which session logger log files are stored in the configured S3 bucket. (AI-inferred)
     key_prefix: Any = None
-    # Specifies the file format (TEXT or JSON) for WorkSpaces Web session logs delivered to the configured Amazon S3 bucket. (AI-inferred)
     log_file_format: Any = None
 
 @dataclasses.dataclass
 class SpacesWebSessionLogger_LogConfiguration:
-    # Configures the S3 bucket and key prefix that serves as the destination for WorkSpaces Web session logs when S3 is the selected log output type. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
 class SpacesWebSessionLogger_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to the WorkSpaces Web session logger, used to organize and manage the resource. (AI-inferred)
     value: Any = None
 
 _SpacesWebSessionLogger_EventFilterFields = {
@@ -64,10 +56,8 @@ _SpacesWebSessionLogger_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesWebSessionLoggerConfig:
-    # A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
     additional_encryption_context: Any = None
     customer_managed_key: Any = None
-    # Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
     display_name: Any = None
     event_filter: Any = None
     log_configuration: Any = None
@@ -75,18 +65,13 @@ class SpacesWebSessionLoggerConfig:
 
 @dataclasses.dataclass
 class SpacesWebSessionLoggerAttrs:
-    # A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
     additional_encryption_context: Any = None
-    # The ARNs of the WorkSpaces Web portals to which this session logger is associated. (AI-inferred)
     associated_portal_arns: Any = None
-    # The date and time when the WorkSpaces Web session logger configuration was created, returned as an ISO 8601 formatted string. (AI-inferred)
     creation_date: Any = None
     customer_managed_key: Any = None
-    # Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
     display_name: Any = None
     event_filter: Any = None
     log_configuration: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred)
     session_logger_arn: Any = None
     tags: Any = None
 

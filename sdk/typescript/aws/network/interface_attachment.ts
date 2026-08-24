@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecification {
-  /** Enable ENA Express (Scalable Reliable Datagram) for UDP traffic on the network interface attachment, which can improve throughput and reduce latency for UDP workloads. (AI-inferred) */
   enaSrdUdpEnabled?: boolean | Computed<boolean>;
 }
 
@@ -42,7 +41,6 @@ export interface InterfaceAttachmentConfig {
 }
 
 export interface InterfaceAttachmentAttrs {
-  /** The unique identifier for the attachment between the network interface and the instance. (AI-inferred) */
   attachmentId: string;
   /** Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``. */
   deleteOnTermination: boolean;

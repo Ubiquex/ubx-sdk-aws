@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkInsightsAccessScopeAnalysis_Tags struct {
-	// The key of a user-defined tag that can be attached to the Network Insights Access Scope Analysis resource to label or categorize it for management and identification. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the Network Insights Access Scope Analysis resource, used for custom metadata and resource organization. (AI-inferred)
 	Value any
 }
 
@@ -16,32 +14,20 @@ var NetworkInsightsAccessScopeAnalysis_TagsFields = ubx.FieldMap{
 	}
 
 type NetworkInsightsAccessScopeAnalysisConfig struct {
-	// The ID of the Network Access Scope that this analysis will use to identify and analyze network paths. (AI-inferred)
 	NetworkInsightsAccessScopeId any
-	// Specifies the tags to assign to the Network Insights Access Scope Analysis resource, which are key-value pairs used for identifying and managing the analysis. (AI-inferred)
 	Tags any
 }
 
 type NetworkInsightsAccessScopeAnalysisAttrs struct {
-	// The number of network interfaces analyzed by the access scope analysis. (AI-inferred)
 	AnalyzedEniCount any
-	// The date and time when the network insights access scope analysis completed. (AI-inferred)
 	EndDate any
-	// Indicates whether the analysis detected any network paths matching the access scope, returning 'true' if findings were found and 'false' otherwise. (AI-inferred)
 	FindingsFound any
-	// The Amazon Resource Name (ARN) of the Network Insights Access Scope Analysis. (AI-inferred)
 	NetworkInsightsAccessScopeAnalysisArn any
-	// The unique identifier assigned by AWS to the Network Insights Access Scope Analysis when it is created. (AI-inferred)
 	NetworkInsightsAccessScopeAnalysisId any
-	// The ID of the Network Access Scope that this analysis will use to identify and analyze network paths. (AI-inferred)
 	NetworkInsightsAccessScopeId any
-	// The date and time when the access scope analysis started. (AI-inferred)
 	StartDate any
-	// The status of the access scope analysis, indicating whether it is running, succeeded, or failed. (AI-inferred)
 	Status any
-	// A computed human-readable message that provides additional detail about the status of the network insights access scope analysis, typically indicating the reason when the analysis fails. (AI-inferred)
 	StatusMessage any
-	// Specifies the tags to assign to the Network Insights Access Scope Analysis resource, which are key-value pairs used for identifying and managing the analysis. (AI-inferred)
 	Tags any
 }
 

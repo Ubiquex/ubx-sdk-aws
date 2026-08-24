@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegexPatternSet_Tags:
-    # The tag key, a string that identifies the tag assigned to this WAFv2 regex pattern set, used for resource organization, categorization, and access control. (AI-inferred)
     key: Any = None
-    # The value component of a tag key-value pair attached to the AWS WAFv2 Regex Pattern Set, used to store arbitrary metadata for resource identification and cost allocation. (AI-inferred)
     value: Any = None
 
 _RegexPatternSet_TagsFields = {
@@ -24,11 +22,9 @@ class RegexPatternSetConfig:
     description: Any = None
     # Name of the RegexPatternSet.
     name: Any = None
-    # The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
     regular_expression_list: Any = None
     # Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
     scope: Any = None
-    # A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -41,11 +37,9 @@ class RegexPatternSetAttrs:
     id: Any = None
     # Name of the RegexPatternSet.
     name: Any = None
-    # The list of regular expression patterns, each as a string, that this AWS WAFv2 regex pattern set uses to match against web request content. (AI-inferred)
     regular_expression_list: Any = None
     # Use CLOUDFRONT for CloudFront RegexPatternSet, use REGIONAL for Application Load Balancer and API Gateway.
     scope: Any = None
-    # A list of tag objects (each containing a Key and Value) that are attached to the regex pattern set for AWS resource tagging and cost allocation. (AI-inferred)
     tags: Any = None
 
 RegexPatternSet = ubx.ResourceBinding(

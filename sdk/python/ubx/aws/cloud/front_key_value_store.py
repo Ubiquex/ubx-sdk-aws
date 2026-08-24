@@ -15,7 +15,6 @@ class FrontKeyValueStore_ImportSource:
 
 @dataclasses.dataclass
 class FrontKeyValueStore_Tags:
-    # The key of a tag attached to the CloudFront key value store, used to identify the tag within the tag set. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -42,17 +41,14 @@ class FrontKeyValueStoreConfig:
 
 @dataclasses.dataclass
 class FrontKeyValueStoreAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the CloudFront key value store. (AI-inferred)
     arn: Any = None
     # A comment to describe the Key Value Store. Omitting ``Comment`` from the template during updates will clear the existing comment (set to empty string). To preserve an existing comment, you must explicitly include it in the template.
     comment: Any = None
-    # The unique identifier assigned by AWS to this CloudFront KeyValueStore, used to reference the store in other resources such as CloudFront functions. (AI-inferred)
     id: Any = None
     # The import source for the key value store.
     import_source: Any = None
     # The name of the key value store.
     name: Any = None
-    # The current status of the CloudFront KeyValueStore, such as CREATING or READY, indicating whether the store is ready for use. (AI-inferred)
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

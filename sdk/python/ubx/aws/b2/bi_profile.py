@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BiProfile_Tags:
-    # The key of a tag assigned to the AWS B2B Data Interchange profile, used for cost allocation, organizing resources, and access control. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,39 +18,24 @@ _BiProfile_TagsFields = {
 
 @dataclasses.dataclass
 class BiProfileConfig:
-    # The name of the business organization that this B2BI profile represents, used to identify the company in B2B EDI interchanges. (AI-inferred)
     business_name: Any = None
-    # The email address associated with the AWS B2Bi profile, used for service notifications and communications. (AI-inferred)
     email: Any = None
-    # Determines whether CloudWatch logging is enabled for the profile, with valid values ENABLED or DISABLED, governing the capture of API activity and transaction events. (AI-inferred)
     logging: Any = None
-    # Sets a human-readable name for the AWS B2Bi profile, used to identify it in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The phone number associated with the AWS B2Bi profile, a required contact detail used for the profile's business contact information. (AI-inferred)
     phone: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class BiProfileAttrs:
-    # The name of the business organization that this B2BI profile represents, used to identify the company in B2B EDI interchanges. (AI-inferred)
     business_name: Any = None
-    # The timestamp indicating when the B2B Data Interchange profile was created, returned as a read-only string. (AI-inferred)
     created_at: Any = None
-    # The email address associated with the AWS B2Bi profile, used for service notifications and communications. (AI-inferred)
     email: Any = None
-    # The name of the CloudWatch Logs log group that AWS B2B Data Interchange automatically creates for the profile's activity and error logs. (AI-inferred)
     log_group_name: Any = None
-    # Determines whether CloudWatch logging is enabled for the profile, with valid values ENABLED or DISABLED, governing the capture of API activity and transaction events. (AI-inferred)
     logging: Any = None
-    # The timestamp indicating when the B2B Data Interchange profile was last modified. (AI-inferred)
     modified_at: Any = None
-    # Sets a human-readable name for the AWS B2Bi profile, used to identify it in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The phone number associated with the AWS B2Bi profile, a required contact detail used for the profile's business contact information. (AI-inferred)
     phone: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the B2BI profile, assigned by AWS and used for cross-service references and IAM policies. (AI-inferred)
     profile_arn: Any = None
-    # The unique identifier assigned by AWS to the B2Bi profile, generated upon creation and used to reference the profile in subsequent API operations and CloudFormation resources. (AI-inferred)
     profile_id: Any = None
     tags: Any = None
 

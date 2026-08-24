@@ -13,9 +13,7 @@ export interface ManagerVpcAttachment_Options {
 }
 
 export interface ManagerVpcAttachment_ProposedNetworkFunctionGroupChange_Tags {
-  /** The key of a tag applied to the proposed network function group change for this VPC attachment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag attached to the proposed network function group change for the VPC attachment, used to label or categorize the network function group proposal with metadata such as environment or purpose. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

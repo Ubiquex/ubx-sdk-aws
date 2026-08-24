@@ -4,7 +4,6 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentSecurityRequirementPack_SecurityRequirements struct {
-	// Provides a human-readable description of the security requirement, explaining the specific security control or configuration the requirement addresses. (AI-inferred)
 	Description any
 	Domain any
 	Evaluation any

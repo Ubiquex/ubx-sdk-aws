@@ -8,19 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions:
-    # Sets the AWS Organizations entity path (the OU path, e.g., 'ou-1234-abcdefgh') for an organizational unit to exclude from the IPAM default resource discovery, preventing resources in that OU from being automatically discovered. (AI-inferred)
     organizations_entity_path: Any = None
 
 @dataclasses.dataclass
 class Ipam_OperatingRegions:
-    # The name of the AWS Region in which the IPAM operates, defining one of the operating regions for the IPAM. (AI-inferred)
     region_name: Any = None
 
 @dataclasses.dataclass
 class Ipam_Tags:
-    # The key of a user-defined tag applied to the EC2 IPAM resource, used to categorize or identify the IPAM with custom metadata (e.g., 'Name' or 'Environment'). (AI-inferred)
     key: Any = None
-    # Specifies the value of a user-defined tag key assigned to the EC2 IPAM resource for organizational or management purposes. (AI-inferred)
     value: Any = None
 
 _Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusionsFields = {
@@ -40,7 +36,6 @@ _Ipam_TagsFields = {
 class IpamConfig:
     # A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.
     default_resource_discovery_organizational_unit_exclusions: Any = None
-    # A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred)
     description: Any = None
     # Enable provisioning of GUA space in private pools.
     enable_private_gua: Any = None
@@ -63,7 +58,6 @@ class IpamAttrs:
     default_resource_discovery_id: Any = None
     # A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM.
     default_resource_discovery_organizational_unit_exclusions: Any = None
-    # A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred)
     description: Any = None
     # Enable provisioning of GUA space in private pools.
     enable_private_gua: Any = None

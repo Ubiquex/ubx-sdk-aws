@@ -32,7 +32,6 @@ class FilesAccessPoint_RootDirectory:
 
 @dataclasses.dataclass
 class FilesAccessPoint_Tags:
-    # The key of a user-defined tag attached to the S3 file access point, used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -68,26 +67,20 @@ class FilesAccessPointConfig:
     client_token: Any = None
     # The ID of the S3 Files file system that the access point provides access to.
     file_system_id: Any = None
-    # Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred)
     posix_user: Any = None
-    # Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
     root_directory: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class FilesAccessPointAttrs:
-    # The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred)
     access_point_arn: Any = None
     access_point_id: Any = None
     # (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
     client_token: Any = None
     # The ID of the S3 Files file system that the access point provides access to.
     file_system_id: Any = None
-    # The AWS account ID of the owner that created the S3 access point. (AI-inferred)
     owner_id: Any = None
-    # Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred)
     posix_user: Any = None
-    # Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
     root_directory: Any = None
     status: Any = None
     tags: Any = None

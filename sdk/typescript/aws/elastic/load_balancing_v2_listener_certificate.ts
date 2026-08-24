@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LoadBalancingV2ListenerCertificate_Certificates {
-  /** The ARN of the certificate (from AWS Certificate Manager or IAM) to associate with the listener for TLS/SSL termination. (AI-inferred) */
   certificateArn?: string | Computed<string>;
 }
 
@@ -11,18 +10,13 @@ const LoadBalancingV2ListenerCertificate_CertificatesFields: FieldMap = {
 };
 
 export interface LoadBalancingV2ListenerCertificateConfig {
-  /** Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred) */
   certificates: LoadBalancingV2ListenerCertificate_Certificates[] | Computed<LoadBalancingV2ListenerCertificate_Certificates[]>;
-  /** Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred) */
   listenerArn: string | Computed<string>;
 }
 
 export interface LoadBalancingV2ListenerCertificateAttrs {
-  /** Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred) */
   certificates: LoadBalancingV2ListenerCertificate_Certificates[];
-  /** The unique identifier for the listener certificate, composed of the listener ARN and certificate ARN. (AI-inferred) */
   id: string;
-  /** Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred) */
   listenerArn: string;
 }
 

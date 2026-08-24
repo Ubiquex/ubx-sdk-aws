@@ -4,211 +4,135 @@ package quick
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SightDataSource_AlternateDataSourceParameters_AmazonElasticsearchParameters struct {
-	// The domain name (endpoint) of the Amazon Elasticsearch Service domain that the QuickSight data source connects to when used as an alternate data source parameter. (AI-inferred)
 	Domain any
 }
 
 type SightDataSource_AlternateDataSourceParameters_AthenaParameters_IdentityCenterConfiguration struct {
-	// When set to true, this field enables IAM Identity Center identity propagation for the Athena data source, allowing QuickSight user identities to be passed to Athena for fine-grained access control. (AI-inferred)
 	EnableIdentityPropagation any
 }
 
 type SightDataSource_AlternateDataSourceParameters_AthenaParameters struct {
-	// Configures the use of AWS IAM Identity Center (successor to AWS SSO) for authenticating to Athena when this alternate data source is used, typically including an enabled flag and the ARN of the Identity Center instance. (AI-inferred)
 	IdentityCenterConfiguration any
-	// The ARN of the IAM role that QuickSight assumes when querying Athena for this alternate data source, used to grant permissions to access Athena and the underlying data. (AI-inferred)
 	RoleArn any
-	// The name of the Athena workgroup to use for the data source connection. (AI-inferred)
 	WorkGroup any
 }
 
 type SightDataSource_AlternateDataSourceParameters_AuroraParameters struct {
-	// The name of the Aurora database that the QuickSight data source connects to. (AI-inferred)
 	Database any
-	// The hostname or endpoint of the Aurora database server to use for the connection when this alternate data source parameter is applied. (AI-inferred)
 	Host any
-	// The TCP port number used when connecting to the Aurora database, such as 3306 for Aurora MySQL or 5432 for Aurora PostgreSQL. (AI-inferred)
 	Port any
 }
 
 type SightDataSource_AlternateDataSourceParameters_DatabricksParameters struct {
-	// The hostname of the Databricks workspace or cluster that the QuickSight data source connects to. (AI-inferred)
 	Host any
-	// The TCP port number used to connect to the Databricks cluster when this data source is used as an alternate parameter set. (AI-inferred)
 	Port any
-	// The path to the Databricks SQL endpoint used when connecting to this data source, such as the endpoint identifier portion of the Databricks SQL endpoint URL. (AI-inferred)
 	SqlEndpointPath any
 }
 
 type SightDataSource_AlternateDataSourceParameters_OracleParameters struct {
-	// The name of the Oracle database used for the QuickSight data source connection. (AI-inferred)
 	Database any
-	// The hostname or IP address of the Oracle database server that QuickSight connects to for this data source. (AI-inferred)
 	Host any
-	// The TCP port number on which the Oracle database listens for connections. (AI-inferred)
 	Port any
-	// Indicates whether the Oracle data source connection uses a service name rather than an Oracle System Identifier (SID). (AI-inferred)
 	UseServiceName any
 }
 
 type SightDataSource_AlternateDataSourceParameters_PrestoParameters struct {
-	// The Presto catalog to use for the data source connection, identifying the default schema namespace for queries. (AI-inferred)
 	Catalog any
-	// The host name (endpoint) of the Presto server used by this QuickSight data source connection. (AI-inferred)
 	Host any
-	// The TCP port used to connect to the Presto instance. (AI-inferred)
 	Port any
 }
 
 type SightDataSource_AlternateDataSourceParameters_RdsParameters struct {
-	// The name of the database to connect to within the Amazon RDS instance. (AI-inferred)
 	Database any
-	// The identifier of the Amazon RDS instance used as an alternate data source for the QuickSight data source. (AI-inferred)
 	InstanceId any
 }
 
 type SightDataSource_AlternateDataSourceParameters_RedshiftParameters_Iamparameters struct {
-	// When connecting to Amazon Redshift using IAM credentials, this boolean indicates whether QuickSight automatically creates a database user for the IAM identity that is used for authentication. (AI-inferred)
 	AutoCreateDatabaseUser any
-	// The list of database group names to which the newly created database user is assigned when IAM-based authentication auto-creates the user for this Redshift data source. (AI-inferred)
 	DatabaseGroups any
-	// For the alternate data source parameters, this specifies the database user name to use when connecting to the Redshift cluster with IAM authentication in a QuickSight data source. (AI-inferred)
 	DatabaseUser any
-	// The ARN of the IAM role that Amazon QuickSight assumes to access the Redshift cluster when using IAM-based authentication. (AI-inferred)
 	RoleArn any
 }
 
 type SightDataSource_AlternateDataSourceParameters_RedshiftParameters struct {
-	// The cluster ID of the Amazon Redshift cluster to connect to for this alternate data source. (AI-inferred)
 	ClusterId any
-	// The name of the Redshift database that this alternate data source parameters block uses for the connection. (AI-inferred)
 	Database any
-	// The hostname of the Amazon Redshift cluster that the QuickSight data source connects to. (AI-inferred)
 	Host any
-	// Configures IAM-based authentication for the Redshift alternate data source, including the IAM role ARN and optional database user that QuickSight assumes to access the cluster. (AI-inferred)
 	Iamparameters any
-	// Configures AWS IAM Identity Center (successor to AWS Single Sign-On) integration for the Redshift data source, specifically controlling whether identity propagation is enabled for the connection. (AI-inferred)
 	IdentityCenterConfiguration any
-	// The TCP port number that Amazon QuickSight uses to connect to the Amazon Redshift cluster when this alternate data source is used. (AI-inferred)
 	Port any
 }
 
 type SightDataSource_AlternateDataSourceParameters_S3Parameters_ManifestFileLocation struct {
-	// The name of the S3 bucket that contains the manifest file for the S3 data source defined by these parameters. (AI-inferred)
 	Bucket any
-	// The S3 object key of the QuickSight data source manifest file, specifying the location within the referenced S3 bucket for the S3 parameters of an alternate data source. (AI-inferred)
 	Key any
 }
 
 type SightDataSource_AlternateDataSourceParameters_S3Parameters struct {
-	// Specifies the Amazon S3 bucket and object key (the location) of the manifest file that QuickSight uses to define the files and schema for this S3 data source. (AI-inferred)
 	ManifestFileLocation any
-	// The IAM role ARN that QuickSight assumes to access the S3 bucket for this alternate data source parameter set. (AI-inferred)
 	RoleArn any
 }
 
 type SightDataSource_AlternateDataSourceParameters_S3TablesParameters struct {
-	// The ARN of the S3 table bucket that QuickSight connects to for querying the S3 Tables-backed Iceberg table. (AI-inferred)
 	TableBucketArn any
 }
 
 type SightDataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters_IdentityProviderVpcConnectionProperties struct {
-	// Specifies the ARN of the VPC connection used to reach the identity provider for Snowflake OAuth authentication in a QuickSight data source. (AI-inferred)
 	VpcConnectionArn any
 }
 
 type SightDataSource_AlternateDataSourceParameters_SnowflakeParameters_OauthParameters struct {
-	// Specifies the resource URI of the OAuth identity provider used by QuickSight when authenticating to a Snowflake data source via OAuth. (AI-inferred)
 	IdentityProviderResourceUri any
-	// Specifies the VPC connection properties, including the VPC connection ARN, used for the identity provider when QuickSight authenticates to Snowflake via OAuth. (AI-inferred)
 	IdentityProviderVpcConnectionProperties any
-	// The OAuth scope requested by QuickSight when authenticating to the Snowflake data source via OAuth, determining the access permissions granted to the OAuth token. (AI-inferred)
 	OauthScope any
-	// Specifies the URL of the external OAuth token provider endpoint that QuickSight calls to obtain a Snowflake access token when authenticating to this Snowflake data source using OAuth. (AI-inferred)
 	TokenProviderUrl any
 }
 
 type SightDataSource_AlternateDataSourceParameters_SnowflakeParameters struct {
-	// Determines the authentication mechanism (such as basic user/password or OAuth) when connecting to this alternate Snowflake data source. (AI-inferred)
 	AuthenticationType any
-	// Specifies the name of the Snowflake database that the QuickSight data source connects to for queries. (AI-inferred)
 	Database any
-	// Specifies the database access control role for Snowflake, used by Amazon QuickSight to enforce row-level security when connecting to the Snowflake database. (AI-inferred)
 	DatabaseAccessControlRole any
-	// The hostname of the Snowflake server (e.g., account.snowflakecomputing.com) used to connect to the Snowflake data source in Amazon QuickSight. (AI-inferred)
 	Host any
-	// Specifies the OAuth authentication configuration for connecting to Snowflake, including token URL, client ID, client secret, and scopes. (AI-inferred)
 	OauthParameters any
-	// The name of the Snowflake warehouse to use when connecting to the Snowflake database for this QuickSight data source. (AI-inferred)
 	Warehouse any
 }
 
 type SightDataSource_AlternateDataSourceParameters_SparkParameters struct {
-	// The host name or IP address of the Spark server to use for this alternate data source connection. (AI-inferred)
 	Host any
-	// The port number used for connecting to the Apache Spark data source. (AI-inferred)
 	Port any
 }
 
 type SightDataSource_AlternateDataSourceParameters_StarburstParameters struct {
-	// Specifies whether authentication to the Starburst data source uses a stored password or an OAuth token. (AI-inferred)
 	AuthenticationType any
-	// The catalog name for the Starburst data source, specifying which catalog within the Starburst cluster to connect to. (AI-inferred)
 	Catalog any
-	// The Amazon Resource Name (ARN) of the IAM role that AWS QuickSight assumes to access the Starburst database for this data source. (AI-inferred)
 	DatabaseAccessControlRole any
-	// Specifies the hostname or endpoint of the Starburst server that the QuickSight data source connects to. (AI-inferred)
 	Host any
-	// Specifies the OAuth client credentials (client ID and secret) required to authenticate to the Starburst data source when OAuth-based authentication is selected. (AI-inferred)
 	OauthParameters any
-	// The TCP port number on which the Starburst database server is listening for connections. (AI-inferred)
 	Port any
-	// Specifies the Starburst product type (e.g., STARBURST_ENTERPRISE or STARBURST_GALAXY) used for the data source connection. (AI-inferred)
 	ProductType any
 }
 
 type SightDataSource_AlternateDataSourceParameters struct {
-	// Defines the Amazon Elasticsearch connection parameters, including the domain name, used when this data source connects to an alternate Elasticsearch cluster. (AI-inferred)
 	AmazonElasticsearchParameters any
-	// Specifies the Amazon OpenSearch domain connection parameters (such as the domain name) used when this QuickSight data source is configured as an alternate data source. (AI-inferred)
 	AmazonOpenSearchParameters any
-	// This object configures the Athena-specific connection parameters, including the Athena workgroup and optional IAM role ARN, used when this QuickSight data source connects via an alternate data source definition. (AI-inferred)
 	AthenaParameters any
-	// Provides Aurora-specific connection parameters (such as database, host, and port) for an alternate data source connection in a QuickSight data source. (AI-inferred)
 	AuroraParameters any
-	// Specifies the connection parameters (host, port, and database name) for an Aurora PostgreSQL database when used as an alternate data source in a QuickSight data source. (AI-inferred)
 	AuroraPostgreSqlParameters any
-	// Defines the Databricks-specific connection parameters (including host and port) used when this QuickSight data source is configured with an alternate data source. (AI-inferred)
 	DatabricksParameters any
-	// Specifies the connection parameters for a MariaDB database, including the database name, host, and port, when used as an alternate data source in a QuickSight data source definition. (AI-inferred)
 	MariaDbParameters any
-	// Specifies the MySQL connection parameters (host, port, database, etc.) for an alternate QuickSight data source, allowing the data source to point to a different MySQL instance or cluster for environment-specific configuration. (AI-inferred)
 	MySqlParameters any
-	// Specifies the Oracle database connection properties (host, port, and database name) used when this QuickSight data source is accessed via an alternate data source parameter set. (AI-inferred)
 	OracleParameters any
-	// Configures the host, port, and database name for connecting to an alternate PostgreSQL data source in Amazon QuickSight. (AI-inferred)
 	PostgreSqlParameters any
-	// Provides the connection parameters for a Presto data source, including host, port, and catalog, when declared under an alternate data source configuration for a QuickSight data source. (AI-inferred)
 	PrestoParameters any
-	// Specifies the connection parameters for an Amazon RDS instance, including the database name and the RDS instance ID. (AI-inferred)
 	RdsParameters any
-	// Defines the Redshift-specific connection parameters (such as cluster ID, database name, and authentication) used when this QuickSight data source's alternate data source is an Amazon Redshift cluster. (AI-inferred)
 	RedshiftParameters any
-	// Specifies the S3 path and location for an alternate data source, used to provide S3-specific connection details when configuring a QuickSight data source. (AI-inferred)
 	S3Parameters any
-	// Defines the Amazon S3 Tables connection parameters for this alternate data source, including the target table name. (AI-inferred)
 	S3TablesParameters any
-	// Specifies the connection parameters for a Snowflake data source, including host, port, database, and warehouse, when used as an alternate data source. (AI-inferred)
 	SnowflakeParameters any
-	// Specifies the Spark-specific connection parameters (host, port, and database) for this alternate data source, used when the data source is a Spark cluster. (AI-inferred)
 	SparkParameters any
-	// Defines the connection parameters for a Microsoft SQL Server database (such as host, port, database, and optional instance ID) to be used as an alternate data source parameter set for the QuickSight data source. (AI-inferred)
 	SqlServerParameters any
-	// Specifies the connection parameters for a Starburst data source, including the host, port, catalog, and product type (Galaxy or Enterprise) when defining alternate data source parameters. (AI-inferred)
 	StarburstParameters any
-	// Contains the connection parameters (such as host, port, and database) for a Teradata database when this data source is used as an alternate data source in QuickSight. (AI-inferred)
 	TeradataParameters any
-	// Configuration block for Trino connection parameters (host, port, catalog) when this QuickSight data source is specified as an alternate data source. (AI-inferred)
 	TrinoParameters any
 }
 
@@ -222,11 +146,8 @@ type SightDataSource_Credentials_CredentialPair struct {
 }
 
 type SightDataSource_Credentials_KeyPairCredentials struct {
-	// The SSH username to use with the key pair when authenticating to the data source, typically the username for accessing an Amazon EMR cluster. (AI-inferred)
 	KeyPairUsername any
-	// The PEM-encoded private key used for SSH authentication to the data source host when using key pair credentials. (AI-inferred)
 	PrivateKey any
-	// The passphrase required to decrypt the private key used for SSH key-pair authentication when connecting to a data source in Amazon QuickSight. (AI-inferred)
 	PrivateKeyPassphrase any
 }
 
@@ -235,7 +156,6 @@ type SightDataSource_Credentials struct {
 	CopySourceArn any
 	// <p>The combination of user name and password that are used as credentials.</p>
 	CredentialPair any
-	// Defines the SSH key pair (private key and user name) used to authenticate to the data source when connecting over SSH, as an alternative to username/password credentials. (AI-inferred)
 	KeyPairCredentials any
 	// <p>The Amazon Resource Name (ARN) of the secret associated with the data source in Amazon Secrets Manager.</p>
 	SecretArn any
@@ -244,14 +164,11 @@ type SightDataSource_Credentials struct {
 type SightDataSource_ErrorInfo struct {
 	// <p>Error message.</p>
 	Message any
-	// Specifies the category of the data source connection error (for example, ACCESS_DENIED or COULD_NOT_PARSE) that is reported in the DataSourceErrorInfo structure. (AI-inferred)
 	Type any
 }
 
 type SightDataSource_Permissions struct {
-	// Specifies the list of QuickSight actions (e.g., quicksight:DescribeDataSource, quicksight:UpdateDataSource) granted to a principal in a resource-level permission entry for the data source. (AI-inferred)
 	Actions any
-	// The Amazon Resource Name (ARN) of the IAM user, group, or role to which the permissions in this entry are granted for the QuickSight data source. (AI-inferred)
 	Principal any
 	Resource any
 }
@@ -262,9 +179,7 @@ type SightDataSource_SslProperties struct {
 }
 
 type SightDataSource_Tags struct {
-	// The tag key portion of a key-value pair used to label and organize the QuickSight data source resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key applied to the QuickSight data source, used to store arbitrary metadata for resource management and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -567,27 +482,20 @@ var SightDataSource_TagsFields = ubx.FieldMap{
 type SightDataSourceConfig struct {
 	// <p>A set of alternate data source parameters that you want to share for the credentials stored with this data source. The credentials are applied in tandem with the data source parameters when you copy a data source by using a create or update request. The API operation compares the <code>DataSourceParameters</code> structure that's in the request with the structures in the <code>AlternateDataSourceParameters</code> allow list. If the structures are an exact match, the request is allowed to use the credentials from this existing data source. If the <code>AlternateDataSourceParameters</code> list is null, the <code>Credentials</code> originally used with this <code>DataSourceParameters</code> are automatically allowed.</p>
 	AlternateDataSourceParameters any
-	// The AWS account ID where the QuickSight data source resides; if omitted, the account associated with the current credentials is used. (AI-inferred)
 	AwsAccountId any
 	// <p>Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 	Credentials any
-	// The unique identifier for the QuickSight data source, which is required to reference the data source in other resources and APIs; if omitted, CloudFormation generates a unique ID. (AI-inferred)
 	DataSourceId any
 	// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 	DataSourceParameters any
 	// <p>Error information for the data source creation or update.</p>
 	ErrorInfo any
-	// The list of Amazon Resource Names (ARNs) of QuickSight folders to which this data source is added, organizing it within the folder hierarchy. (AI-inferred)
 	FolderArns any
-	// The display name for the QuickSight data source, which must be unique within the AWS account and is used to identify the data source in the QuickSight console. (AI-inferred)
 	Name any
-	// Defines a list of resource permissions that grant specified principals (such as IAM users, groups, or roles) access to the Amazon QuickSight data source, including the allowed actions for each principal. (AI-inferred)
 	Permissions any
 	// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 	SslProperties any
-	// A list of key-value pairs that act as metadata to identify and organize the QuickSight data source. (AI-inferred)
 	Tags any
-	// The type of the QuickSight data source (e.g., S3, ATHENA, MYSQL, POSTGRESQL), which determines the supported connection properties and how data is accessed. (AI-inferred)
 	Type any
 	// <p>VPC connection properties.</p>
 	VpcConnectionProperties any
@@ -598,33 +506,25 @@ type SightDataSourceAttrs struct {
 	AlternateDataSourceParameters any
 	// <p>The Amazon Resource Name (ARN) of the data source.</p>
 	Arn any
-	// The AWS account ID where the QuickSight data source resides; if omitted, the account associated with the current credentials is used. (AI-inferred)
 	AwsAccountId any
 	// <p>The time that this data source was created.</p>
 	CreatedTime any
 	// <p>Data source credentials. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 	Credentials any
-	// The unique identifier for the QuickSight data source, which is required to reference the data source in other resources and APIs; if omitted, CloudFormation generates a unique ID. (AI-inferred)
 	DataSourceId any
 	// <p>The parameters that Amazon QuickSight uses to connect to your underlying data source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 	DataSourceParameters any
 	// <p>Error information for the data source creation or update.</p>
 	ErrorInfo any
-	// The list of Amazon Resource Names (ARNs) of QuickSight folders to which this data source is added, organizing it within the folder hierarchy. (AI-inferred)
 	FolderArns any
 	// <p>The last time that this data source was updated.</p>
 	LastUpdatedTime any
-	// The display name for the QuickSight data source, which must be unique within the AWS account and is used to identify the data source in the QuickSight console. (AI-inferred)
 	Name any
-	// Defines a list of resource permissions that grant specified principals (such as IAM users, groups, or roles) access to the Amazon QuickSight data source, including the allowed actions for each principal. (AI-inferred)
 	Permissions any
 	// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.</p>
 	SslProperties any
-	// Indicates the current lifecycle state of the QuickSight data source, such as CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, or CREATION_FAILED, as reported by the AWS API. (AI-inferred)
 	Status any
-	// A list of key-value pairs that act as metadata to identify and organize the QuickSight data source. (AI-inferred)
 	Tags any
-	// The type of the QuickSight data source (e.g., S3, ATHENA, MYSQL, POSTGRESQL), which determines the supported connection properties and how data is accessed. (AI-inferred)
 	Type any
 	// <p>VPC connection properties.</p>
 	VpcConnectionProperties any

@@ -8,24 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdmchannelConfig:
-    # The unique identifier of the Amazon Pinpoint application to which the ADM channel is associated. (AI-inferred)
     application_id: Any = None
-    # The client ID obtained from your Amazon Device Messaging (ADM) project, required to authorize Pinpoint to send push notifications to Android apps. (AI-inferred)
     client_id: Any = None
-    # The client secret from the Amazon Device Messaging (ADM) service that Amazon Pinpoint uses to authorize and send push notifications through the ADM channel. (AI-inferred)
     client_secret: Any = None
-    # Indicates whether the ADM channel is enabled for sending push notifications through Amazon Pinpoint. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class AdmchannelAttrs:
-    # The unique identifier of the Amazon Pinpoint application to which the ADM channel is associated. (AI-inferred)
     application_id: Any = None
-    # The client ID obtained from your Amazon Device Messaging (ADM) project, required to authorize Pinpoint to send push notifications to Android apps. (AI-inferred)
     client_id: Any = None
-    # The client secret from the Amazon Device Messaging (ADM) service that Amazon Pinpoint uses to authorize and send push notifications through the ADM channel. (AI-inferred)
     client_secret: Any = None
-    # Indicates whether the ADM channel is enabled for sending push notifications through Amazon Pinpoint. (AI-inferred)
     enabled: Any = None
     id: Any = None
 

@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Integration_ResourceConfig_OpenSearchResourceConfig:
-    # The ARN of the OpenSearch Serverless application that this CloudWatch Logs integration delivers logs to. (AI-inferred)
     application_arn: Any = None
-    # Specifies the IAM principals (e.g., user ARNs, role ARNs) that are granted permission to view the OpenSearch dashboards provisioned for this logs integration. (AI-inferred)
     dashboard_viewer_principals: Any = None
-    # The ARN of the IAM role that CloudWatch Logs assumes to access the configured OpenSearch data source for the integration. (AI-inferred)
     data_source_role_arn: Any = None
-    # The ARN of an AWS KMS customer managed key used to encrypt the Amazon OpenSearch Service domain or data source associated with this CloudWatch Logs integration, enabling customer-controlled encryption at rest. (AI-inferred)
     kms_key_arn: Any = None
-    # Specifies the number of days that log data is retained in the associated OpenSearch index for this CloudWatch Logs integration. (AI-inferred)
     retention_days: Any = None
 
 @dataclasses.dataclass
 class Integration_ResourceConfig:
-    # This object defines the Amazon OpenSearch Service resource configuration for the CloudWatch Logs integration, including the target OpenSearch collection, application, index prefix, and time-to-live (TTL) for the imported log data. (AI-inferred)
     open_search_resource_config: Any = None
 
 _Integration_ResourceConfig_OpenSearchResourceConfigFields = {

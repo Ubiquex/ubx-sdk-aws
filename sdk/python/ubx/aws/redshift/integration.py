@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Integration_Tags:
-    # The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred)
     key: Any = None
     value: Any = None
 

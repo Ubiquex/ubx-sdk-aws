@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Host_Tags struct {
-	// The key of a user-defined tag assigned to the EC2 Dedicated Host. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the EC2 Dedicated Host. (AI-inferred)
 	Value any
 }
 

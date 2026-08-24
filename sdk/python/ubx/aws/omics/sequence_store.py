@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class SequenceStore_SseConfig:
     # An encryption key ARN.
     key_arn: Any = None
-    # Specifies the server-side encryption type for the sequence store; when set to 'KMS', data is encrypted using an AWS KMS key. (AI-inferred)
     type: Any = None
 
 _SequenceStore_SseConfigFields = {
@@ -24,7 +23,6 @@ class SequenceStoreConfig:
     access_log_location: Any = None
     # A description for the store.
     description: Any = None
-    # Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred)
     etag_algorithm_family: Any = None
     # An S3 location that is used to store files that have failed a direct upload.
     fallback_location: Any = None
@@ -48,7 +46,6 @@ class SequenceStoreAttrs:
     creation_time: Any = None
     # A description for the store.
     description: Any = None
-    # Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred)
     etag_algorithm_family: Any = None
     # An S3 location that is used to store files that have failed a direct upload.
     fallback_location: Any = None
@@ -62,11 +59,9 @@ class SequenceStoreAttrs:
     s3_access_policy: Any = None
     # The S3 URI of the sequence store.
     s3_uri: Any = None
-    # The unique AWS-generated identifier for the sequence store, used to reference the store in other Omics operations. (AI-inferred)
     sequence_store_id: Any = None
     # Server-side encryption (SSE) settings for a store.
     sse_config: Any = None
-    # The current lifecycle status of the Omics sequence store, such as CREATING, ACTIVE, DELETING, or FAILED. (AI-inferred)
     status: Any = None
     # The status message of the sequence store.
     status_message: Any = None

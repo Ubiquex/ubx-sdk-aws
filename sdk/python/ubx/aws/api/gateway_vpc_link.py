@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayVpcLink_Tags:
-    # Identifies the key of a user-defined tag attached to the API Gateway VPC Link, used to organize and categorize the resource via AWS tagging conventions. (AI-inferred)
     key: Any = None
-    # Specifies the value for a tag key attached to the VPC Link, enabling metadata-based management, cost allocation, and access control for the resource. (AI-inferred)
     value: Any = None
 
 _GatewayVpcLink_TagsFields = {
@@ -20,26 +18,19 @@ _GatewayVpcLink_TagsFields = {
 
 @dataclasses.dataclass
 class GatewayVpcLinkConfig:
-    # A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
     description: Any = None
-    # The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
     name: Any = None
     # An array of arbitrary tags (key-value pairs) to associate with the VPC link.
     tags: Any = None
-    # Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
     target_arns: Any = None
 
 @dataclasses.dataclass
 class GatewayVpcLinkAttrs:
-    # A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
     description: Any = None
-    # The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
     name: Any = None
     # An array of arbitrary tags (key-value pairs) to associate with the VPC link.
     tags: Any = None
-    # Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
     target_arns: Any = None
-    # The unique identifier (e.g., an alphanumeric string) assigned by AWS to this VPC link, used to reference the link in API Gateway configurations. (AI-inferred)
     vpc_link_id: Any = None
 
 GatewayVpcLink = ubx.ResourceBinding(

@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeService_DnsEntry {
-  /** The fully qualified domain name (FQDN) assigned to the VPC Lattice service's DNS entry, used for routing traffic to the service (e.g., service-id.vpc-lattice-svcs.region.on.aws). (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** The ID of the Amazon Route 53 hosted zone that contains the DNS record for the VPC Lattice service's domain name, returned by the service after it is created. (AI-inferred) */
   hostedZoneId?: string | Computed<string>;
 }
 
 export interface LatticeService_Tags {
-  /** The key component of a tag pair attached to an AWS VPC Lattice service, allowing you to assign custom metadata for organizing and managing the service. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -20,41 +17,25 @@ const LatticeService_TagsFields: FieldMap = {
 };
 
 export interface LatticeServiceConfig {
-  /** Specifies the authentication type for the VPC Lattice service, which can be either NONE (no authentication) or AWS_IAM (requiring IAM-based authentication for requests). (AI-inferred) */
   authType?: string | Computed<string>;
-  /** ARN of the certificate used for TLS encryption on the VPC Lattice service's custom domain. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** Specifies a custom domain name for the VPC Lattice service, allowing you to use your own domain instead of the default generated DNS name. (AI-inferred) */
   customDomainName?: string | Computed<string>;
-  /** Specifies the idle timeout (in seconds) that a connection to the service may remain inactive before it is closed, with a default of 900 seconds. (AI-inferred) */
   idleTimeoutSeconds?: number | Computed<number>;
-  /** A user-friendly name for the VPC Lattice service; if you don't provide one, AWS CloudFormation generates a unique name for the service. (AI-inferred) */
   name?: string | Computed<string>;
   tags?: LatticeService_Tags[] | Computed<LatticeService_Tags[]>;
 }
 
 export interface LatticeServiceAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the VPC Lattice service. (AI-inferred) */
   arn: string;
-  /** Specifies the authentication type for the VPC Lattice service, which can be either NONE (no authentication) or AWS_IAM (requiring IAM-based authentication for requests). (AI-inferred) */
   authType: string;
-  /** ARN of the certificate used for TLS encryption on the VPC Lattice service's custom domain. (AI-inferred) */
   certificateArn: string;
-  /** The timestamp indicating when the VPC Lattice service was created, in ISO 8601 format. (AI-inferred) */
   createdAt: string;
-  /** Specifies a custom domain name for the VPC Lattice service, allowing you to use your own domain instead of the default generated DNS name. (AI-inferred) */
   customDomainName: string;
-  /** The automatically generated DNS entry for the VPC Lattice service, containing the service's domain name and the hosted zone ID that serves its DNS records. (AI-inferred) */
   dnsEntry: LatticeService_DnsEntry;
-  /** The unique service ID assigned by AWS when the VPC Lattice service is created. (AI-inferred) */
   id: string;
-  /** Specifies the idle timeout (in seconds) that a connection to the service may remain inactive before it is closed, with a default of 900 seconds. (AI-inferred) */
   idleTimeoutSeconds: number;
-  /** Indicates the most recent time at which the VPC Lattice service was modified, expressed as a string in ISO 8601 date-time format. (AI-inferred) */
   lastUpdatedAt: string;
-  /** A user-friendly name for the VPC Lattice service; if you don't provide one, AWS CloudFormation generates a unique name for the service. (AI-inferred) */
   name: string;
-  /** The current lifecycle status of the VPC Lattice service (for example, ACTIVE or CREATE_IN_PROGRESS), which is computed by AWS and indicates whether the service is available or still being provisioned. (AI-inferred) */
   status: string;
   tags: LatticeService_Tags[];
 }

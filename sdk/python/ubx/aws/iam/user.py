@@ -15,16 +15,12 @@ class User_LoginProfile:
 
 @dataclasses.dataclass
 class User_Policies:
-    # The JSON-encoded IAM policy document that defines the permissions for this inline policy attached to the IAM user. (AI-inferred)
     policy_document: Any = None
-    # The name of an inline policy attached to the IAM user, uniquely identifying the policy within the user's set of inline policies. (AI-inferred)
     policy_name: Any = None
 
 @dataclasses.dataclass
 class User_Tags:
-    # The key of a tag attached to an IAM user, which can be used in IAM policies to enforce tag-based access control. (AI-inferred)
     key: Any = None
-    # The value of a key-value tag attached to the IAM user, used for metadata management such as cost allocation or attribute-based access control. (AI-inferred)
     value: Any = None
 
 _User_LoginProfileFields = {
@@ -63,7 +59,6 @@ class UserConfig:
 
 @dataclasses.dataclass
 class UserAttrs:
-    # The ARN is a unique identifier for the IAM user in the format arn:aws:iam::account-id:user/username, used for referencing the user in IAM policies. (AI-inferred)
     arn: Any = None
     # A list of group names to which you want to add the user.
     groups: Any = None

@@ -4,13 +4,9 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontAnycastIpList_AnycastIpList_IpamCidrConfigResults struct {
-	// The anycast IP address allocated from the IPAM CIDR configuration for this CloudFront anycast IP list. (AI-inferred)
 	AnycastIp any
-	// The CIDR block (e.g., '10.0.0.0/24') allocated from the IPAM pool for the anycast IP list, as reported in each IPAM CIDR configuration result. (AI-inferred)
 	Cidr any
-	// The Amazon Resource Name (ARN) of the IPAM pool associated with a CIDR configuration result for the CloudFront anycast IP list. (AI-inferred)
 	IpamPoolArn any
-	// The lifecycle status of an individual IPAM CIDR allocation in the CloudFront anycast IP list, such as whether the CIDR is active and ready for use or still pending provisioning. (AI-inferred)
 	Status any
 }
 
@@ -24,7 +20,6 @@ type FrontAnycastIpList_AnycastIpList struct {
 	IpAddressType any
 	// The number of IP addresses in the Anycast static IP list.
 	IpCount any
-	// This field is the read-only list of IPAM CIDR configuration results for the CloudFront anycast IP list, reporting the allocated CIDR block and its allocation status for each specified IPAM configuration. (AI-inferred)
 	IpamCidrConfigResults any
 	// The last time the Anycast static IP list was modified.
 	LastModifiedTime any
@@ -35,16 +30,12 @@ type FrontAnycastIpList_AnycastIpList struct {
 }
 
 type FrontAnycastIpList_IpamCidrConfigs struct {
-	// The CIDR block, specified within an IPAM CIDR configuration, that determines the IP address range used for the CloudFront anycast IP list. (AI-inferred)
 	Cidr any
-	// The ARN of the IPAM pool that supplies the CIDR block for this anycast IP list configuration in CloudFront. (AI-inferred)
 	IpamPoolArn any
 }
 
 type FrontAnycastIpList_Tags_Items struct {
-	// The key (name) of a tag assigned to the CloudFront Anycast IP list, providing a user-defined label for the tag's value. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the CloudFront anycast IP list, used for identifying, organizing, and managing the resource. (AI-inferred)
 	Value any
 }
 
@@ -72,11 +63,9 @@ var FrontAnycastIpList_TagsFields = ubx.FieldMap{
 	}
 
 type FrontAnycastIpListConfig struct {
-	// Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
 	IpAddressType any
 	// The number of IP addresses in the Anycast static IP list.
 	IpCount any
-	// Specifies the IPAM pool CIDR allocations (each including an IPAM pool ID and netmask length) that define the IP address ranges CloudFront will advertise as anycast for this IP list. (AI-inferred)
 	IpamCidrConfigs any
 	// The name of the Anycast static IP list.
 	Name any
@@ -87,16 +76,12 @@ type FrontAnycastIpListConfig struct {
 type FrontAnycastIpListAttrs struct {
 	// An Anycast static IP list. For more information, see [Request Anycast static IPs to use for allowlisting](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html) in the *Amazon CloudFront Developer Guide*.
 	AnycastIpList any
-	// The entity tag (ETag) of the Anycast IP list, which is updated every time the list is modified and is used for conditional updates (e.g., If-Match requests). (AI-inferred)
 	Etag any
 	Id any
-	// Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
 	IpAddressType any
 	// The number of IP addresses in the Anycast static IP list.
 	IpCount any
-	// This computed attribute returns a list of objects, each representing the IPAM CIDR configuration result for a CIDR block associated with this anycast IP list, including details such as the CIDR and its allocation status. (AI-inferred)
 	IpamCidrConfigResults any
-	// Specifies the IPAM pool CIDR allocations (each including an IPAM pool ID and netmask length) that define the IP address ranges CloudFront will advertise as anycast for this IP list. (AI-inferred)
 	IpamCidrConfigs any
 	// The name of the Anycast static IP list.
 	Name any

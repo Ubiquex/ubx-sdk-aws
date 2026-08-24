@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Vpngateway_Tags:
-    # The key of a tag assigned to the VPN Gateway, used to label and categorize the resource for identification and management. (AI-inferred)
     key: Any = None
-    # The value portion of a tag applied to the AWS VPN gateway, allowing you to store arbitrary metadata such as a name, environment, or cost-center alongside the tag key. (AI-inferred)
     value: Any = None
 
 _Vpngateway_TagsFields = {
@@ -35,7 +33,6 @@ class VpngatewayAttrs:
     tags: Any = None
     # The type of VPN connection the virtual private gateway supports.
     type: Any = None
-    # The unique identifier assigned by AWS to the VPN gateway upon creation. (AI-inferred)
     vpngateway_id: Any = None
 
 Vpngateway = ubx.ResourceBinding(

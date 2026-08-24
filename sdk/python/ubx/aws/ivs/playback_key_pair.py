@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PlaybackKeyPair_Tags:
-    # The key portion of a tag attached to the IVS playback key pair, used to label and organize the resource within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the Amazon IVS playback key pair, used for metadata management. (AI-inferred)
     value: Any = None
 
 _PlaybackKeyPair_TagsFields = {

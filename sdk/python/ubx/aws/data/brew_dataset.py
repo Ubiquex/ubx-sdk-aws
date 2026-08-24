@@ -8,41 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BrewDataset_FormatOptions_Csv:
-    # The single character used to separate columns in the CSV file when reading data into the AWS DataBrew dataset. (AI-inferred)
     delimiter: Any = None
-    # Indicates whether the first row of the CSV file is treated as a header row containing column names. (AI-inferred)
     header_row: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_FormatOptions_Excel:
-    # Indicates whether the first row of the Excel file is treated as column headers. (AI-inferred)
     header_row: Any = None
-    # Specifies the 0-based indices of the Excel sheets to include from the workbook, letting you select specific sheets when the file contains multiple sheets. (AI-inferred)
     sheet_indexes: Any = None
-    # Specifies the names of the worksheets within an Excel workbook that DataBrew will read when creating the dataset, allowing you to limit the data to only those sheets. (AI-inferred)
     sheet_names: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_FormatOptions_Json:
-    # Specifies whether JSON objects in the dataset can span multiple lines (true) or must each be contained on a single line (false). (AI-inferred)
     multi_line: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_FormatOptions:
     # Csv options
     csv: Any = None
-    # Defines format-specific settings for Excel inputs, including the sheets to read and whether the first row is treated as a header. (AI-inferred)
     excel: Any = None
     # Json options
     json: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_Input_DataCatalogInputDefinition_TempDirectory:
-    # The S3 bucket where DataBrew stores temporary files created while processing the dataset's Data Catalog input definition. (AI-inferred)
     bucket: Any = None
     # Bucket owner
     bucket_owner: Any = None
-    # The S3 object key prefix within the temporary directory bucket where AWS Glue DataBrew writes intermediate query results when accessing the referenced Data Catalog table. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
@@ -74,11 +65,8 @@ class BrewDataset_Input_Metadata:
 
 @dataclasses.dataclass
 class BrewDataset_Input:
-    # Defines the AWS Glue Data Catalog database and table that AWS DataBrew uses as the source for this dataset. (AI-inferred)
     data_catalog_input_definition: Any = None
-    # Specifies the database connection and query details used to pull data into the dataset, including the connection name, database name, and query string. (AI-inferred)
     database_input_definition: Any = None
-    # Specifies metadata about the dataset's input source, including the SourceArn of the source dataset for lineage and versioning. (AI-inferred)
     metadata: Any = None
     # Input location
     s3_input_definition: Any = None
@@ -94,61 +82,43 @@ class BrewDataset_PathOptions_FilesLimit:
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions_LastModifiedDateCondition_ValuesMap:
-    # For an AWS DataBrew dataset's S3 path options, this value holds the string value associated with a key in the last-modified-date condition's values map, such as the start or end date used to filter files by their last modified date. (AI-inferred)
     value: Any = None
-    # Provides a reference to a value that DataBrew substitutes for a placeholder in the last modified date conditioning expression, allowing the dataset's path file filter to use dynamically referenced values instead of literals. (AI-inferred)
     value_reference: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions_LastModifiedDateCondition:
     # Filtering expression for a parameter
     expression: Any = None
-    # Defines the key-value pairs (e.g., startDate and endDate) that substitute into the last-modified-date condition expression, filtering which S3 files are included in the DataBrew dataset based on their last modified timestamp. (AI-inferred)
     values_map: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions_Parameters_DatasetParameter_DatetimeOptions:
-    # Specifies the custom date/time format (for example, 'yyyy-MM-dd') that defines how the value of a datetime dataset parameter is parsed and interpreted. (AI-inferred)
     format: Any = None
-    # The locale code (e.g., 'en-US') that specifies the language and region used to interpret the datetime format in the dataset path parameter. (AI-inferred)
     locale_code: Any = None
-    # Specifies the timezone offset (e.g., '+05:30' or '-08:00') used to interpret datetime values captured by this dataset parameter. (AI-inferred)
     timezone_offset: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions_Parameters_DatasetParameter:
-    # Determines whether AWS DataBrew adds a column to the dataset that contains the actual value of this path parameter, enabling you to use the parameter value as data. (AI-inferred)
     create_column: Any = None
-    # Defines the datetime parsing options (format, locale, and timezone offset) for a path parameter of type DATETIME in an AWS DataBrew dataset. (AI-inferred)
     datetime_options: Any = None
-    # Specifies a regular expression that DataBrew uses to match the value of the path parameter, so that only matching files are included in the dataset. (AI-inferred)
     filter: Any = None
-    # The name of the dataset parameter that is used as a placeholder in the path expression, which is substituted with the parameter's value when resolving the data source. (AI-inferred)
     name: Any = None
-    # Specifies the data type of the dataset parameter, which can be String, Number, or Datetime, and determines how the parameter value is interpreted when resolving file paths or dataset filters. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions_Parameters:
-    # Defines the data type (e.g., String, Integer, Datetime) and associated parsing options, such as datetime formatting, column creation, and filter criteria, for a single parameterized variable in the dataset's S3 path. (AI-inferred)
     dataset_parameter: Any = None
-    # The name of the parameter placeholder in the S3 path of the dataset, used to map to a corresponding dataset parameter definition for dynamic path resolution. (AI-inferred)
     path_parameter_name: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_PathOptions:
-    # Configures a limit on the number of files that DataBrew uses from the dataset's S3 path, optionally specifying the ordering for file selection. (AI-inferred)
     files_limit: Any = None
-    # Defines a filter expression and value map that restricts the S3 files ingested into the dataset based on their last modified date. (AI-inferred)
     last_modified_date_condition: Any = None
-    # Defines the list of parameters that DataBrew uses to resolve placeholders in the S3 path expression for this dataset, with each parameter specifying its name, type (e.g., STRING or DATETIME), and optional datetime formatting or filter criteria. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class BrewDataset_Tags:
-    # The key of a tag attached to the DataBrew dataset, used to identify the tag in AWS resource tagging. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to this AWS DataBrew dataset, used to categorize or manage the resource. (AI-inferred)
     value: Any = None
 
 _BrewDataset_FormatOptions_CsvFields = {
@@ -327,7 +297,6 @@ class BrewDatasetConfig:
     path_options: Any = None
     # Source type of the dataset
     source: Any = None
-    # Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -344,7 +313,6 @@ class BrewDatasetAttrs:
     path_options: Any = None
     # Source type of the dataset
     source: Any = None
-    # Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred)
     tags: Any = None
 
 BrewDataset = ubx.ResourceBinding(

@@ -18,7 +18,6 @@ class TransitGatewayMulticastDomain_Options:
 @dataclasses.dataclass
 class TransitGatewayMulticastDomain_Tags:
     key: Any = None
-    # The value of a tag key-value pair attached to the transit gateway multicast domain, used to assign arbitrary metadata for identification and management. (AI-inferred)
     value: Any = None
 
 _TransitGatewayMulticastDomain_OptionsFields = {

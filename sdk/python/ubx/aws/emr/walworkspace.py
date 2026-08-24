@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Walworkspace_Tags:
-    # The key (name) of a user-defined tag attached to the EMR WAL workspace, used for resource categorization, cost tracking, and access control. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the EMR WAL workspace, used to store arbitrary metadata for resource identification, organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _Walworkspace_TagsFields = {

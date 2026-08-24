@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectLag_Tags:
-    # Specifies the key of a tag attached to the AWS Direct Connect LAG, used for cost allocation, access control, and resource organization. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair attached to the Direct Connect LAG, used for metadata and resource management. (AI-inferred)
     value: Any = None
 
 _ConnectLag_TagsFields = {

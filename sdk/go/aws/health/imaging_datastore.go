@@ -17,7 +17,6 @@ type ImagingDatastoreAttrs struct {
 	CreatedAt any
 	// The Datastore's ARN.
 	DatastoreArn any
-	// The unique identifier assigned to the datastore by AWS HealthImaging when it is created. (AI-inferred)
 	DatastoreId any
 	// User friendly name for Datastore.
 	DatastoreName any

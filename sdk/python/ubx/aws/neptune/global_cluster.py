@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlobalCluster_Tags:
-    # The user-defined key of a key-value pair tag applied to the AWS::Neptune::GlobalCluster resource. (AI-inferred)
     key: Any = None
-    # The user-defined value associated with a tag key on the Neptune global cluster, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _GlobalCluster_TagsFields = {

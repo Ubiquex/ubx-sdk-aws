@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnomalySubscription_ResourceTags:
-    # The key of a resource tag attached to the AWS Cost Explorer anomaly subscription, used to identify or categorize the subscription within a key-value pair. (AI-inferred)
     key: Any = None
-    # Specifies the value of a key-value tag applied to the AWS Cost Explorer anomaly subscription, used for organizing, filtering, and controlling access to the subscription resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class AnomalySubscription_Subscribers:
-    # The email address or Amazon SNS topic ARN that receives notifications for this anomaly subscription. (AI-inferred)
     address: Any = None
-    # The subscription status of the subscriber, indicating whether the subscriber has confirmed or declined the anomaly alert subscription. (AI-inferred)
     status: Any = None
-    # Specifies the type of AWS Cost Explorer anomaly subscription subscriber, either EMAIL or SNS_TOPIC. (AI-inferred)
     type: Any = None
 
 _AnomalySubscription_ResourceTagsFields = {

@@ -14,9 +14,7 @@ export interface AccessGrant_Grantee {
 }
 
 export interface AccessGrant_Tags {
-  /** The tag key attached to the S3 Access Grant, used to organize and manage the grant, and can be referenced in resource-based policies for access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a given tag key applied to the S3 Access Grant, which is used for organizing, identifying, and managing the resource in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -35,19 +33,16 @@ const AccessGrant_TagsFields: FieldMap = {
 };
 
 export interface AccessGrantConfig {
-  /** Configures the S3 sub-prefix (S3SubPrefix) within the associated access grants location, restricting the access grant's permission scope to that prefix. (AI-inferred) */
   accessGrantsLocationConfiguration?: AccessGrant_AccessGrantsLocationConfiguration | Computed<AccessGrant_AccessGrantsLocationConfiguration>;
   /** The custom S3 location to be accessed by the grantee */
   accessGrantsLocationId: string | Computed<string>;
   /** The ARN of the application grantees will use to access the location */
   applicationArn?: string | Computed<string>;
-  /** Defines the entity that receives the access grant, including its type (such as an IAM principal, directory user, or directory group) and its identifier (e.g., an ARN or directory ID). (AI-inferred) */
   grantee: AccessGrant_Grantee | Computed<AccessGrant_Grantee>;
   /** The level of access to be afforded to the grantee */
   permission: string | Computed<string>;
   /** The type of S3SubPrefix. */
   s3PrefixType?: string | Computed<string>;
-  /** Assigns a list of user-defined tag key-value pairs to the S3 Access Grant to help identify, organize, and manage the grant (e.g., for cost allocation). (AI-inferred) */
   tags?: AccessGrant_Tags[] | Computed<AccessGrant_Tags[]>;
 }
 
@@ -56,7 +51,6 @@ export interface AccessGrantAttrs {
   accessGrantArn: string;
   /** The ID assigned to this access grant. */
   accessGrantId: string;
-  /** Configures the S3 sub-prefix (S3SubPrefix) within the associated access grants location, restricting the access grant's permission scope to that prefix. (AI-inferred) */
   accessGrantsLocationConfiguration: AccessGrant_AccessGrantsLocationConfiguration;
   /** The custom S3 location to be accessed by the grantee */
   accessGrantsLocationId: string;
@@ -64,13 +58,11 @@ export interface AccessGrantAttrs {
   applicationArn: string;
   /** The S3 path of the data to which you are granting access. It is a combination of the S3 path of the registered location and the subprefix. */
   grantScope: string;
-  /** Defines the entity that receives the access grant, including its type (such as an IAM principal, directory user, or directory group) and its identifier (e.g., an ARN or directory ID). (AI-inferred) */
   grantee: AccessGrant_Grantee;
   /** The level of access to be afforded to the grantee */
   permission: string;
   /** The type of S3SubPrefix. */
   s3PrefixType: string;
-  /** Assigns a list of user-defined tag key-value pairs to the S3 Access Grant to help identify, organize, and manage the grant (e.g., for cost allocation). (AI-inferred) */
   tags: AccessGrant_Tags[];
 }
 

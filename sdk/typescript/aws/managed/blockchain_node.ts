@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BlockchainNode_NodeConfiguration {
-  /** Specifies the Availability Zone in which the Amazon Managed Blockchain node is created. (AI-inferred) */
   availabilityZone: string | Computed<string>;
-  /** The EC2 instance type (e.g., bc.t3.large) that determines the compute, memory, and storage capacity allocated to the Managed Blockchain node. (AI-inferred) */
   instanceType: string | Computed<string>;
 }
 
@@ -14,24 +12,16 @@ const BlockchainNode_NodeConfigurationFields: FieldMap = {
 };
 
 export interface BlockchainNodeConfig {
-  /** The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred) */
   memberId?: string | Computed<string>;
-  /** The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred) */
   networkId: string | Computed<string>;
-  /** Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred) */
   nodeConfiguration: BlockchainNode_NodeConfiguration | Computed<BlockchainNode_NodeConfiguration>;
 }
 
 export interface BlockchainNodeAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Managed Blockchain node. (AI-inferred) */
   arn: string;
-  /** The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred) */
   memberId: string;
-  /** The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred) */
   networkId: string;
-  /** Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred) */
   nodeConfiguration: BlockchainNode_NodeConfiguration;
-  /** The unique identifier assigned by AWS to this Managed Blockchain node. (AI-inferred) */
   nodeId: string;
 }
 

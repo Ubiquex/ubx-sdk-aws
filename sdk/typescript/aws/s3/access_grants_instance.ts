@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessGrantsInstance_Tags {
-  /** The key (name) of a tag attached to the S3 Access Grants instance, used to define custom metadata for identification, categorization, or cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of an individual tag key-value pair assigned to the S3 Access Grants instance, enabling cost allocation and resource classification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -16,7 +14,6 @@ const AccessGrantsInstance_TagsFields: FieldMap = {
 export interface AccessGrantsInstanceConfig {
   /** The Amazon Resource Name (ARN) of the specified AWS Identity Center. */
   identityCenterArn?: string | Computed<string>;
-  /** A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred) */
   tags?: AccessGrantsInstance_Tags[] | Computed<AccessGrantsInstance_Tags[]>;
 }
 
@@ -27,7 +24,6 @@ export interface AccessGrantsInstanceAttrs {
   accessGrantsInstanceId: string;
   /** The Amazon Resource Name (ARN) of the specified AWS Identity Center. */
   identityCenterArn: string;
-  /** A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred) */
   tags: AccessGrantsInstance_Tags[];
 }
 

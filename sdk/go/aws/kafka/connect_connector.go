@@ -104,21 +104,16 @@ type ConnectConnector_LogDelivery struct {
 }
 
 type ConnectConnector_Plugins_CustomPlugin struct {
-	// Specifies the Amazon Resource Name (ARN) of the AWS Kafka Connect custom plugin to associate with this connector's plugin configuration. (AI-inferred)
 	CustomPluginArn any
-	// The revision of the custom plugin, which combined with the plugin ARN identifies a specific version of the plugin to use for the connector. (AI-inferred)
 	Revision any
 }
 
 type ConnectConnector_Plugins struct {
-	// For each plugin in the connector's plugin list, this object specifies the custom plugin's ARN and revision, which the connector uses to run the plugin's worker code. (AI-inferred)
 	CustomPlugin any
 }
 
 type ConnectConnector_Tags struct {
-	// The key of a tag assigned to the MSK Connect connector, used to identify, organize, and manage the resource. (AI-inferred)
 	Key any
-	// The value for a tag key attached to the AWS Kafka Connect connector, used to manage, identify, and organize the connector resource. (AI-inferred)
 	Value any
 }
 

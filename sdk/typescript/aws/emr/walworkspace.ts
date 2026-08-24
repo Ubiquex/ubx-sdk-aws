@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Walworkspace_Tags {
-  /** The key (name) of a user-defined tag attached to the EMR WAL workspace, used for resource categorization, cost tracking, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the EMR WAL workspace, used to store arbitrary metadata for resource identification, organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

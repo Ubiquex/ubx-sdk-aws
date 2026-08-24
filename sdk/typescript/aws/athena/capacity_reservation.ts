@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignments {
-  /** Specifies the list of Athena workgroup names assigned to this capacity reservation for query processing. (AI-inferred) */
   workgroupNames?: string[] | Computed<string[]>;
 }
 
@@ -13,7 +12,6 @@ export interface CapacityReservation_CapacityAssignmentConfiguration {
 
 export interface CapacityReservation_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of an arbitrary user-defined tag key assigned to an AWS Athena capacity reservation, allowing metadata-based management and categorization of the reservation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -58,7 +56,6 @@ export interface CapacityReservationAttrs {
   lastSuccessfulAllocationTime: string;
   /** The reservation name. */
   name: string;
-  /** The current lifecycle state of the Athena capacity reservation (e.g., PENDING, ACTIVE, CANCELLING), updated automatically by AWS and not settable by the user. (AI-inferred) */
   status: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: CapacityReservation_Tags[];

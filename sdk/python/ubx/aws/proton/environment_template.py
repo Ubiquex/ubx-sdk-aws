@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class EnvironmentTemplate_Tags:
     key: Any = None
-    # The value of a tag attached to the AWS Proton environment template, which can be used to categorize and identify the template for cost allocation and management within AWS. (AI-inferred)
     value: Any = None
 
 _EnvironmentTemplate_TagsFields = {
@@ -25,9 +24,7 @@ class EnvironmentTemplateConfig:
     display_name: Any = None
     # <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     encryption_key: Any = None
-    # The name of the environment template, used to identify it within AWS Proton. (AI-inferred)
     name: Any = None
-    # The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred)
     provisioning: Any = None
     # <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     tags: Any = None
@@ -42,9 +39,7 @@ class EnvironmentTemplateAttrs:
     display_name: Any = None
     # <p>A customer provided encryption key that Proton uses to encrypt data.</p>
     encryption_key: Any = None
-    # The name of the environment template, used to identify it within AWS Proton. (AI-inferred)
     name: Any = None
-    # The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred)
     provisioning: Any = None
     # <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     tags: Any = None

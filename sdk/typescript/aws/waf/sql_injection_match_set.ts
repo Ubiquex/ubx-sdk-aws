@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch {
-  /** The name of the HTTP header to inspect when field_to_match's Type is HEADER; it is empty for other types such as METHOD, QUERY_STRING, BODY, or URI. (AI-inferred) */
   data?: string | Computed<string>;
-  /** Specifies the type of web request component to inspect, such as HEADER, QUERY_STRING, BODY, URI, or METHOD, for the SQL injection match condition. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SqlInjectionMatchSet_SqlInjectionMatchTuples {
-  /** Specifies the part of the web request (such as a header, body, query string, or URI) that AWS WAF Classic inspects for SQL injection patterns in this SQL injection match tuple. (AI-inferred) */
   fieldToMatch?: SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch | Computed<SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch>;
-  /** Specifies how the text in the web request is transformed (for example, URL_DECODE or HTML_ENTITY_DECODE) before the SQL injection pattern is checked. (AI-inferred) */
   textTransformation?: string | Computed<string>;
 }
 
@@ -30,18 +26,13 @@ const SqlInjectionMatchSet_SqlInjectionMatchTuplesFields: FieldMap = {
 };
 
 export interface SqlInjectionMatchSetConfig {
-  /** Specifies a unique, immutable name for the WAF SQL injection match set, used as its friendly identifier in the AWS WAF console and API. (AI-inferred) */
   name: string | Computed<string>;
-  /** A list of SQL injection match tuples, each defining a FieldToMatch and TextTransformation that CloudFormation uses to identify SQL injection patterns for the WAF match set. (AI-inferred) */
   sqlInjectionMatchTuples?: SqlInjectionMatchSet_SqlInjectionMatchTuples[] | Computed<SqlInjectionMatchSet_SqlInjectionMatchTuples[]>;
 }
 
 export interface SqlInjectionMatchSetAttrs {
-  /** The unique identifier assigned by AWS WAF to this SQL injection match set, used to reference the match set in other resources such as a WebACL. (AI-inferred) */
   id: string;
-  /** Specifies a unique, immutable name for the WAF SQL injection match set, used as its friendly identifier in the AWS WAF console and API. (AI-inferred) */
   name: string;
-  /** A list of SQL injection match tuples, each defining a FieldToMatch and TextTransformation that CloudFormation uses to identify SQL injection patterns for the WAF match set. (AI-inferred) */
   sqlInjectionMatchTuples: SqlInjectionMatchSet_SqlInjectionMatchTuples[];
 }
 

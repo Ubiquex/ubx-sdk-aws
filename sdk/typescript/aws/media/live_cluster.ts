@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveCluster_NetworkSettings_InterfaceMappings {
-  /** Specifies the logical name you assign to a physical network interface in a MediaLive cluster's interface mapping, which is used to reference that interface within the cluster's network configuration. (AI-inferred) */
   logicalInterfaceName?: string | Computed<string>;
-  /** In an AWS::MediaLive::Cluster's network settings, the network_id field of each interface mapping specifies the network identifier (such as a VPC or subnet ID) that the associated IP addresses belong to. (AI-inferred) */
   networkId?: string | Computed<string>;
 }
 
@@ -16,7 +14,6 @@ export interface LiveCluster_NetworkSettings {
 }
 
 export interface LiveCluster_Tags {
-  /** The key of a user-defined tag attached to the AWS MediaLive cluster, used to add custom metadata for identifying, organizing, or managing the cluster in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

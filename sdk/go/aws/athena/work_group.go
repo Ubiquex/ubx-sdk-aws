@@ -4,9 +4,7 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkGroup_Tags struct {
-	// The key of a tag assigned to the Athena work group, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The user-defined value string paired with a tag key on the Athena work group, used for organizing, cost allocation, and tag-based access control. (AI-inferred)
 	Value any
 }
 
@@ -43,7 +41,6 @@ type WorkGroup_WorkGroupConfiguration_EngineVersion struct {
 }
 
 type WorkGroup_WorkGroupConfiguration_ManagedQueryResultsConfiguration struct {
-	// Determines whether this workgroup uses Athena's managed query results bucket to automatically store query results. (AI-inferred)
 	Enabled any
 	// Indicates the encryption configuration for Athena Managed Storage. If not setting this field, Managed Storage will encrypt the query results with Athena's encryption key
 	EncryptionConfiguration any
@@ -144,13 +141,9 @@ type WorkGroup_WorkGroupConfigurationUpdates_ResultConfigurationUpdates struct {
 	ExpectedBucketOwner any
 	// The location in Amazon S3 where your query results are stored, such as s3://path/to/query/bucket/. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using WorkGroupConfiguration
 	OutputLocation any
-	// When set to true, this removes the existing ACL (access control list) configuration from the workgroup's result settings during an update. (AI-inferred)
 	RemoveAclConfiguration any
-	// Indicates whether to remove the encryption configuration for the query results settings of the Athena work group. (AI-inferred)
 	RemoveEncryptionConfiguration any
-	// Whether to remove the expected bucket owner setting from the Athena work group's result configuration for query results, so that the bucket owner check is no longer enforced. (AI-inferred)
 	RemoveExpectedBucketOwner any
-	// This boolean flag, when set to true, removes the previously configured S3 output location for query results in the Athena work group as part of a result configuration update. (AI-inferred)
 	RemoveOutputLocation any
 }
 
@@ -177,7 +170,6 @@ type WorkGroup_WorkGroupConfigurationUpdates struct {
 	PublishCloudWatchMetricsEnabled any
 	// Indicates that the data usage control limit per query is removed.
 	RemoveBytesScannedCutoffPerQuery any
-	// Whether to remove the customer content encryption configuration from the Athena work group during an update. (AI-inferred)
 	RemoveCustomerContentEncryptionConfiguration any
 	// If set to true, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to false, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error.
 	RequesterPaysEnabled any
@@ -199,7 +191,6 @@ type WorkGroupConfig struct {
 	RecursiveDeleteOption any
 	// The state of the workgroup: ENABLED or DISABLED.
 	State any
-	// Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred)
 	Tags any
 }
 
@@ -214,9 +205,7 @@ type WorkGroupAttrs struct {
 	RecursiveDeleteOption any
 	// The state of the workgroup: ENABLED or DISABLED.
 	State any
-	// Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred)
 	Tags any
-	// The computed work group configuration object that defines the query execution settings for this Athena work group, including the result location, encryption, and CloudWatch metrics publishing behavior. (AI-inferred)
 	WorkGroupConfiguration any
 	// The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
 	WorkGroupConfigurationUpdates any

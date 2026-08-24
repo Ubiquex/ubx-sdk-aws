@@ -12,7 +12,6 @@ class StudioSessionMappingConfig:
     identity_name: Any = None
     # Specifies whether the identity to map to the Studio is a user or a group.
     identity_type: Any = None
-    # The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
     session_policy_arn: Any = None
     # The ID of the Amazon EMR Studio to which the user or group will be mapped.
     studio_id: Any = None
@@ -23,7 +22,6 @@ class StudioSessionMappingAttrs:
     identity_name: Any = None
     # Specifies whether the identity to map to the Studio is a user or a group.
     identity_type: Any = None
-    # The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
     session_policy_arn: Any = None
     # The ID of the Amazon EMR Studio to which the user or group will be mapped.
     studio_id: Any = None

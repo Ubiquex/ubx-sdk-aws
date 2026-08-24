@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterSubnetGroup_Tags:
-    # The key of a tag applied to the Redshift cluster subnet group, used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

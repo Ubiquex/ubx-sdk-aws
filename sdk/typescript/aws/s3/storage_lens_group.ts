@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StorageLensGroup_Filter_And_MatchAnyTag {
-  /** Specifies the tag key that objects must have to be included in the S3 Storage Lens group when using the match-any-tag filter condition. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of the tag key-value pair that an object must match for inclusion in the Storage Lens group when using the match-any-tag filter. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

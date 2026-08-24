@@ -13,11 +13,9 @@ const GlobalResolverDnsView_TagsFields: FieldMap = {
 
 export interface GlobalResolverDnsViewConfig {
   clientToken?: string | Computed<string>;
-  /** An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred) */
   description?: string | Computed<string>;
   dnssecValidation?: string | Computed<string>;
   ednsClientSubnet?: string | Computed<string>;
-  /** Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred) */
   firewallRulesFailOpen?: string | Computed<string>;
   globalResolverId: string | Computed<string>;
   name: string | Computed<string>;
@@ -28,18 +26,15 @@ export interface GlobalResolverDnsViewAttrs {
   arn: string;
   clientToken: string;
   createdAt: string;
-  /** An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred) */
   description: string;
   dnsViewId: string;
   dnssecValidation: string;
   ednsClientSubnet: string;
-  /** Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred) */
   firewallRulesFailOpen: string;
   globalResolverId: string;
   name: string;
   status: string;
   tags: GlobalResolverDnsView_Tags[];
-  /** A read-only timestamp that records when the global resolver DNS view was last modified. (AI-inferred) */
   updatedAt: string;
 }
 

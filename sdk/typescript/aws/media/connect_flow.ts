@@ -16,25 +16,17 @@ export interface ConnectFlow_Maintenance {
 }
 
 export interface ConnectFlow_MediaStreams_Attributes_Fmtp {
-  /** The channel_order FMTP parameter defines the ordering of audio channels in the media stream, such as 'L,R' for stereo or 'L,R,C,LFE' for 5.1 surround. (AI-inferred) */
   channelOrder?: string | Computed<string>;
-  /** The colorimetry FMTP parameter of the media stream, which specifies the color space standard (e.g., BT.601, BT.709) for the video content. (AI-inferred) */
   colorimetry?: string | Computed<string>;
-  /** Sets the exact video frame rate (in frames per second) for this media stream, which is included in the FMTP (Format-Specific Parameters) configuration that MediaConnect uses to define the stream's format. (AI-inferred) */
   exactFramerate?: string | Computed<string>;
-  /** The pixel aspect ratio (PAR) for the media stream, expressed as a string ratio such as '16:9'. (AI-inferred) */
   par?: string | Computed<string>;
-  /** Specifies the horizontal and vertical RTP video range (such as 'full' or 'narrow') for the FMTP attributes of this media stream. (AI-inferred) */
   range?: string | Computed<string>;
-  /** Specifies the scan mode (for example, progressive or interlaced) of the video in the media stream's FMTP parameters for an AWS MediaConnect flow. (AI-inferred) */
   scanMode?: string | Computed<string>;
   tcs?: string | Computed<string>;
 }
 
 export interface ConnectFlow_MediaStreams_Attributes {
-  /** The FMTP (Format Parameters) for this media stream, containing codec- or transport-specific parameters (as defined in SDP) that describe the stream's encoding characteristics. (AI-inferred) */
   fmtp?: ConnectFlow_MediaStreams_Attributes_Fmtp | Computed<ConnectFlow_MediaStreams_Attributes_Fmtp>;
-  /** Specifies the language code of the media stream (e.g., 'en-US') in RFC 5646 format, used to identify the language of the audio content. (AI-inferred) */
   lang?: string | Computed<string>;
 }
 
@@ -44,31 +36,20 @@ export interface ConnectFlow_MediaStreams_Tags {
 }
 
 export interface ConnectFlow_MediaStreams {
-  /** The attributes object within a media stream specifies its encoding parameters, such as video resolution, frame rate, and bitrate, which control how the stream is encoded and transmitted. (AI-inferred) */
   attributes?: ConnectFlow_MediaStreams_Attributes | Computed<ConnectFlow_MediaStreams_Attributes>;
-  /** The RTP clock rate (in Hz) for the media stream, which MediaConnect uses to timestamp and synchronize packets for that stream (e.g., 48000 for audio, 90000 for video). (AI-inferred) */
   clockRate?: number | Computed<number>;
-  /** A user-defined description for the media stream, used to identify it within an AWS Elemental MediaConnect flow. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The RTP payload type number (0-127) that identifies the format of the media stream, such as the codec and sampling rate for audio or video. (AI-inferred) */
   fmt?: number | Computed<number>;
-  /** The unique numeric identifier for the media stream within the MediaConnect flow, used to reference the media stream when configuring sources and outputs. (AI-inferred) */
   mediaStreamId?: number | Computed<number>;
-  /** A unique name for the media stream within the MediaConnect flow, used to identify the stream when associating it with outputs or entitlements. (AI-inferred) */
   mediaStreamName?: string | Computed<string>;
-  /** The type of the media stream, such as video, audio, ancillary-data, or combination, which determines how the stream is handled in the flow. (AI-inferred) */
   mediaStreamType?: string | Computed<string>;
   tags?: ConnectFlow_MediaStreams_Tags[] | Computed<ConnectFlow_MediaStreams_Tags[]>;
-  /** The video format of the media stream, specifying the video resolution and frame rate (e.g., '1080p') for the flow's video transport. (AI-inferred) */
   videoFormat?: string | Computed<string>;
 }
 
 export interface ConnectFlow_NdiConfig_NdiDiscoveryServers {
-  /** The IP address or hostname of the NDI Discovery Server used by the flow to discover NDI sources on the network. (AI-inferred) */
   discoveryServerAddress?: string | Computed<string>;
-  /** The TCP port on which the NDI discovery server listens, used to discover NDI sources for the MediaConnect flow. (AI-inferred) */
   discoveryServerPort?: number | Computed<number>;
-  /** Specifies the VPC interface adapter name that the NDI discovery server uses to communicate within a virtual private cloud, enabling the MediaConnect flow to connect to NDI sources on that private network. (AI-inferred) */
   vpcInterfaceAdapter?: string | Computed<string>;
 }
 
@@ -77,7 +58,6 @@ export interface ConnectFlow_NdiConfig {
   machineName?: string | Computed<string>;
   /** A list of up to three NDI discovery server configurations. While not required by the API, this configuration is necessary for NDI functionality to work properly. */
   ndiDiscoveryServers?: ConnectFlow_NdiConfig_NdiDiscoveryServers[] | Computed<ConnectFlow_NdiConfig_NdiDiscoveryServers[]>;
-  /** Specifies whether the NDI (Network Device Interface) output configuration is enabled or disabled for the flow, using values ENABLED or DISABLED. (AI-inferred) */
   ndiState?: string | Computed<string>;
 }
 
@@ -115,48 +95,37 @@ export interface ConnectFlow_Source_GatewayBridgeSource {
 }
 
 export interface ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations_Interface {
-  /** The name of the network interface on the source device that receives the media stream for this input configuration. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations {
-  /** The port number on the referenced interface where this input configuration receives the media stream from the upstream source. (AI-inferred) */
   inputPort?: number | Computed<number>;
-  /** This object identifies the VPC interface used for this input configuration by the flow's VPC interface name, which must correspond to a VPC interface attached to the flow's source. (AI-inferred) */
   interface?: ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations_Interface | Computed<ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations_Interface>;
 }
 
 export interface ConnectFlow_Source_MediaStreamSourceConfigurations {
-  /** The encoding name (e.g., 'raw', 'aac', or 'nal') assigned to the media stream within the flow source's media stream source configuration. (AI-inferred) */
   encodingName?: string | Computed<string>;
-  /** Specifies the input port and network interface for each media stream in the flow's source, enabling the flow to receive each media stream on a dedicated port and interface. (AI-inferred) */
   inputConfigurations?: ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations[] | Computed<ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations[]>;
-  /** Specifies the friendly name of the media stream that this source configuration applies to, matching the media stream name that the upstream source encodes. (AI-inferred) */
   mediaStreamName?: string | Computed<string>;
 }
 
 export interface ConnectFlow_Source_NdiSourceSettings {
-  /** Specifies the NDI source name that identifies the incoming NDI stream to be used as the source for the MediaConnect flow. (AI-inferred) */
   sourceName?: string | Computed<string>;
 }
 
 export interface ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration_SecretsManager {
-  /** The ARN of an IAM role that AWS Elemental MediaConnect assumes to access the AWS Secrets Manager secret containing the transit encryption key for decryption of the source flow. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The ARN of the AWS Secrets Manager secret that stores the decryption key for decrypting transit traffic on this MediaConnect flow source. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration {
   automatic?: unknown | Computed<unknown>;
-  /** Specifies the AWS Secrets Manager secret that contains the encryption key used for decrypting the incoming media source's transit integration. (AI-inferred) */
   secretsManager?: ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration_SecretsManager | Computed<ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration_SecretsManager>;
 }
 
 export interface ConnectFlow_Source_RouterIntegrationTransitDecryption {
   /** Configuration settings for flow transit encryption keys. */
   encryptionKeyConfiguration: ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration | Computed<ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration>;
-  /** The type of encryption key (for example, 'static_key') used by the MediaConnect flow to decrypt the transit stream arriving from the router integration source. (AI-inferred) */
   encryptionKeyType?: string | Computed<string>;
 }
 
@@ -185,11 +154,9 @@ export interface ConnectFlow_Source {
   minLatency?: number | Computed<number>;
   /** The name of the source. */
   name?: string | Computed<string>;
-  /** This object configures the NDI (Network Device Interface) source for the flow, specifying the listening port and NDI tier (e.g., NDI or NDI|HX) that MediaConnect uses to receive the stream from an NDI device. (AI-inferred) */
   ndiSourceSettings?: ConnectFlow_Source_NdiSourceSettings | Computed<ConnectFlow_Source_NdiSourceSettings>;
   /** The protocol that is used by the source. */
   protocol?: string | Computed<string>;
-  /** Indicates the current integration state of the source with an AWS Elemental MediaConnect router, such as ENABLED or DISABLED. (AI-inferred) */
   routerIntegrationState?: string | Computed<string>;
   /** The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow. */
   routerIntegrationTransitDecryption?: ConnectFlow_Source_RouterIntegrationTransitDecryption | Computed<ConnectFlow_Source_RouterIntegrationTransitDecryption>;
@@ -227,25 +194,20 @@ export interface ConnectFlow_SourceFailoverConfig {
   recoveryWindow?: number | Computed<number>;
   /** The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams. */
   sourcePriority?: ConnectFlow_SourceFailoverConfig_SourcePriority | Computed<ConnectFlow_SourceFailoverConfig_SourcePriority>;
-  /** Determines whether automatic source failover is enabled for the MediaConnect flow; set to 'ENABLED' to allow failover to the secondary source, or 'DISABLED' to turn it off. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio {
-  /** Controls whether the flow's source detects silent audio; set to ENABLED to activate monitoring or DISABLED to turn it off. (AI-inferred) */
   state?: string | Computed<string>;
-  /** The duration (in seconds) that incoming audio must remain silent before MediaConnect triggers a silent audio monitoring alarm. (AI-inferred) */
   thresholdSeconds?: number | Computed<number>;
 }
 
 export interface ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings {
-  /** Configures silent audio monitoring for the MediaConnect flow's source, including the duration threshold that triggers a silence alert and whether detection is enabled. (AI-inferred) */
   silentAudio?: ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio | Computed<ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio>;
 }
 
 export interface ConnectFlow_SourceMonitoringConfig_VideoMonitoringSettings {
   blackFrames?: ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio | Computed<ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio>;
-  /** Specifies the detection settings for frozen frames in the video stream, including whether the detection is enabled and the maximum duration (in milliseconds) that a frame can remain unchanged before it is considered frozen. (AI-inferred) */
   frozenFrames?: ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio | Computed<ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio>;
 }
 
@@ -261,16 +223,11 @@ export interface ConnectFlow_SourceMonitoringConfig {
 }
 
 export interface ConnectFlow_VpcInterfaces {
-  /** The name of the VPC interface, which identifies it within the flow. (AI-inferred) */
   name?: string | Computed<string>;
   networkInterfaceIds?: string[] | Computed<string[]>;
-  /** Specifies the network interface type for the VPC interface, either 'EIP' to allocate an Elastic IP address or 'ANY' for a standard network interface without a public IP. (AI-inferred) */
   networkInterfaceType?: string | Computed<string>;
-  /** ARN of the IAM role that MediaConnect assumes to create and manage the elastic network interface in the VPC for this flow's VPC interface. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The list of security group IDs that are associated with the VPC interface used by the MediaConnect flow. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** The ID of the subnet in which the VPC interface is created. (AI-inferred) */
   subnetId?: string | Computed<string>;
   tags?: ConnectFlow_MediaStreams_Tags[] | Computed<ConnectFlow_MediaStreams_Tags[]>;
 }
@@ -418,7 +375,6 @@ const ConnectFlow_VpcInterfacesFields: FieldMap = {
 export interface ConnectFlowConfig {
   /** The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS. */
   availabilityZone?: string | Computed<string>;
-  /** Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred) */
   encodingConfig?: ConnectFlow_EncodingConfig | Computed<ConnectFlow_EncodingConfig>;
   /** Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI sources or outputs on the flow. */
   flowSize?: string | Computed<string>;
@@ -445,7 +401,6 @@ export interface ConnectFlowAttrs {
   availabilityZone: string;
   /** The IP address from which video will be sent to output destinations. */
   egressIp: string;
-  /** Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred) */
   encodingConfig: ConnectFlow_EncodingConfig;
   /** The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow. */
   flowArn: string;

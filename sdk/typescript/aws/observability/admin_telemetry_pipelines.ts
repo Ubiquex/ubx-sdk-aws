@@ -6,29 +6,21 @@ export interface AdminTelemetryPipelines_Configuration {
 }
 
 export interface AdminTelemetryPipelines_Pipeline_StatusReason {
-  /** Provides a human-readable message that explains why the telemetry pipeline is in its current state, as part of the status reason object. (AI-inferred) */
   description?: string | Computed<string>;
 }
 
 export interface AdminTelemetryPipelines_Pipeline_Tags {
-  /** Specifies the key of a tag attached to the telemetry pipeline, used to organize and identify the pipeline within AWS Observability Admin. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value half of a key-value tag attached to the telemetry pipeline, used to store arbitrary metadata (such as an environment or owner name) for identifying and managing the pipeline. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface AdminTelemetryPipelines_Pipeline {
-  /** The ARN (Amazon Resource Name) of a telemetry pipeline, which uniquely identifies the pipeline within the AWS Observability Admin service. (AI-inferred) */
   arn?: string | Computed<string>;
   configuration?: AdminTelemetryPipelines_Configuration | Computed<AdminTelemetryPipelines_Configuration>;
-  /** The Unix epoch timestamp (in seconds) indicating when the telemetry pipeline was created. (AI-inferred) */
   createdTimeStamp?: number | Computed<number>;
-  /** The timestamp (epoch time) indicating when the telemetry pipeline was last updated. (AI-inferred) */
   lastUpdateTimeStamp?: number | Computed<number>;
-  /** The user-defined name that uniquely identifies a telemetry pipeline within the AWS Observability Admin TelemetryPipelines resource. (AI-inferred) */
   name?: string | Computed<string>;
   status?: string | Computed<string>;
-  /** Provides the reason text for the telemetry pipeline's current status, including error details when the pipeline is in a failed or non-active state. (AI-inferred) */
   statusReason?: AdminTelemetryPipelines_Pipeline_StatusReason | Computed<AdminTelemetryPipelines_Pipeline_StatusReason>;
   /** An array of key-value pairs to apply to this resource */
   tags?: AdminTelemetryPipelines_Pipeline_Tags[] | Computed<AdminTelemetryPipelines_Pipeline_Tags[]>;
@@ -55,11 +47,8 @@ export interface AdminTelemetryPipelinesAttrs {
   configuration: AdminTelemetryPipelines_Configuration;
   name: string;
   pipeline: AdminTelemetryPipelines_Pipeline;
-  /** The unique identifier assigned by AWS to the telemetry pipeline, used to reference the pipeline when managing or querying telemetry configurations. (AI-inferred) */
   pipelineIdentifier: string;
-  /** The current lifecycle status of the telemetry pipeline (e.g., CREATING, ACTIVE, or FAILED), as determined by AWS. (AI-inferred) */
   status: string;
-  /** The status_reason object contains detailed information, such as an error code and message, explaining why the telemetry pipeline is in its current state (e.g., ready, failed, or updating). (AI-inferred) */
   statusReason: AdminTelemetryPipelines_Pipeline_StatusReason;
   /** An array of key-value pairs to apply to this resource */
   tags: AdminTelemetryPipelines_Pipeline_Tags[];

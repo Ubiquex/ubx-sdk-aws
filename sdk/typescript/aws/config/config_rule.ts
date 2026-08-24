@@ -7,7 +7,6 @@ export interface ConfigRule_Compliance {
 }
 
 export interface ConfigRule_EvaluationModes {
-  /** Specifies the evaluation mode of the AWS Config rule, which is either 'DETECTIVE' (evaluates resources after changes are made) or 'PROACTIVE' (evaluates resources before deployment to prevent noncompliant resources). (AI-inferred) */
   mode?: string | Computed<string>;
 }
 
@@ -32,11 +31,8 @@ export interface ConfigRule_Source_CustomPolicyDetails {
 }
 
 export interface ConfigRule_Source_SourceDetails {
-  /** For a custom AWS Config rule, this field indicates the AWS service that emits the events that trigger the rule, and the only valid value is `aws.config`. (AI-inferred) */
   eventSource?: string | Computed<string>;
-  /** Specifies how often AWS Config runs the rule's evaluations (e.g., One_Hour, TwentyFour_Hours) when the rule's source details define a periodic trigger. (AI-inferred) */
   maximumExecutionFrequency?: string | Computed<string>;
-  /** The type of event that triggers the AWS Config rule's Lambda function, such as ConfigurationItemChangeNotification or ScheduledNotification. (AI-inferred) */
   messageType?: string | Computed<string>;
 }
 
@@ -107,11 +103,9 @@ export interface ConfigRuleConfig {
 }
 
 export interface ConfigRuleAttrs {
-  /** The Amazon Resource Name (ARN) of the AWS Config rule, automatically assigned by AWS when the rule is created and used to uniquely identify the rule. (AI-inferred) */
   arn: string;
   /** Indicates whether an AWS resource or CC rule is compliant and provides the number of contributors that affect the compliance. */
   compliance: ConfigRule_Compliance;
-  /** The unique identifier assigned by AWS to the Config rule when it is created. (AI-inferred) */
   configRuleId: string;
   /** A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). */
   configRuleName: string;

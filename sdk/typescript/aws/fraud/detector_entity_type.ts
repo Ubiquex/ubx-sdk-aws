@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DetectorEntityType_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value portion of a tag attached to the AWS Fraud Detector entity type resource, enabling you to associate metadata for cost allocation, access control, or resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -44,106 +44,66 @@ class MakerProcessingJob_NetworkConfig:
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingInputs_DatasetDefinition_AthenaDatasetDefinition:
-    # The name of the AWS Glue data catalog that contains the database and table referenced by the Athena query used in this processing job's dataset definition (e.g., 'AwsDataCatalog'). (AI-inferred)
     catalog: Any = None
-    # The name of the Athena database used to query the dataset for this processing job's dataset definition. (AI-inferred)
     database: Any = None
-    # The AWS KMS key ID that SageMaker uses to encrypt the Athena query results, which are stored in the S3 output location defined in the AthenaDatasetDefinition. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the compression format (e.g., GZIP, SNAPPY) applied to the Athena query results stored in the output S3 location for this dataset definition. (AI-inferred)
     output_compression: Any = None
-    # Specifies the data format (e.g., PARQUET, ORC, AVRO, JSON, TEXTFILE) in which the Athena query results are written to the output S3 location for the processing job. (AI-inferred)
     output_format: Any = None
-    # The S3 URI (e.g., s3://bucket/path) where the results of the Athena query used to generate the dataset are written, as part of the At, denaDatasetDefinition for the processing job's dataset input. (AI-inferred)
     output_s3_uri: Any = None
-    # The SQL query executed against Athena to select the dataset used as input for the SageMaker processing job. (AI-inferred)
     query_string: Any = None
-    # The name of the Athena workgroup to use for the query that reads data from Athena. (AI-inferred)
     work_group: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingInputs_DatasetDefinition_RedshiftDatasetDefinition:
-    # The identifier of the Amazon Redshift cluster that contains the dataset to be processed by the SageMaker processing job. (AI-inferred)
     cluster_id: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the Redshift cluster assumes to execute the query and write the resulting dataset to the S3 output location defined in the RedshiftDatasetDefinition. (AI-inferred)
     cluster_role_arn: Any = None
-    # The name of the Redshift database that contains the data to be queried for the processing job. (AI-inferred)
     database: Any = None
-    # Specifies the Redshift database user name used to authenticate the query against the cluster for this dataset definition. (AI-inferred)
     db_user: Any = None
-    # The AWS KMS key ID that Amazon SageMaker uses to encrypt the data retrieved from the Redshift query before writing it to the output S3 location. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the compression type (for example, NONE, GZIP, BZIP2, or ZSTD) applied to the output data from the Redshift query when it is stored in Amazon S3 for a SageMaker processing job. (AI-inferred)
     output_compression: Any = None
-    # Specifies the format (PARQUET or CSV) in which the results of the Redshift query are written to the output S3 location for this processing job's dataset definition. (AI-inferred)
     output_format: Any = None
-    # Specifies the S3 URI where the results of the Redshift query are stored, from which the SageMaker Processing job reads the dataset. (AI-inferred)
     output_s3_uri: Any = None
-    # SQL query that defines the data to be fetched from Amazon Redshift for processing. (AI-inferred)
     query_string: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingInputs_DatasetDefinition:
-    # Configures an Athena dataset for the processing job input, specifying the Athena catalog, database, SQL query, query result output location, and format (e.g., PARQUET or CSV) that define the data to be processed. (AI-inferred)
     athena_dataset_definition: Any = None
-    # Specifies how the input data is distributed across the processing job instances, either 'FullyReplicated' to give every instance a full copy of the data or 'ShardedByS3Object' to partition the S3 objects among the instances. (AI-inferred)
     data_distribution_type: Any = None
-    # Specifies the input mode (File or Pipe) for the dataset definition when the processing job input is defined as a dataset, determining how data is streamed or copied to the processing container. (AI-inferred)
     input_mode: Any = None
-    # The local path on the processing instance where the dataset defined by the Athena or Redshift dataset definition is made available for use by the processing job. (AI-inferred)
     local_path: Any = None
-    # Configures an Amazon Redshift dataset for the SageMaker processing job input by specifying the Redshift cluster, database, user, query string, and S3 output location for query results. (AI-inferred)
     redshift_dataset_definition: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingInputs_S3Input:
-    # The local path in the container instance where the S3 input data is made available for the processing job. (AI-inferred)
     local_path: Any = None
-    # Specifies the compression type of the S3 input data for the processing job, either 'None' for uncompressed or 'Gzip' for gzip-compressed data, which Amazon SageMaker uses to decompress the input before processing. (AI-inferred)
     s3_compression_type: Any = None
-    # Determines how the input data from S3 is distributed among the instances of the processing job: either 'FullyReplicated' (each instance gets a copy of the entire data) or 'ShardedByS3Key' (each instance gets a distinct subset of S3 objects). (AI-inferred)
     s3_data_distribution_type: Any = None
-    # The type of S3 data source, either a prefix (S3Prefix) or a manifest file (ManifestFile), used to locate the input data for the processing job. (AI-inferred)
     s3_data_type: Any = None
-    # Specifies the input mode for the S3 data source of this processing job's input channel, either 'File' or 'Pipe', which controls how the data is streamed to the processing container. (AI-inferred)
     s3_input_mode: Any = None
-    # The S3 URI (e.g., s3://bucket/prefix) of the input data that SageMaker reads for this processing input. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingInputs:
-    # Indicates whether the processing input is managed by the processing application (true) rather than sourced from Amazon S3 (false). (AI-inferred)
     app_managed: Any = None
-    # Defines how to generate input data for the processing job by querying Athena or Redshift and storing the result in S3, according to the specified database, SQL query, and output location. (AI-inferred)
     dataset_definition: Any = None
-    # The name of this processing input, which defines the input channel path inside the processing container (e.g., /opt/ml/processing/input/<input_name>) and must match the channel name expected by the processing script. (AI-inferred)
     input_name: Any = None
-    # Specifies the S3 input source for the processing job, including the S3 URI, local path, data type (e.g., S3Prefix or ManifestFile), and input mode (File or Pipe). (AI-inferred)
     s3_input: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingOutputConfig_Outputs_FeatureStoreOutput:
-    # The name of the SageMaker Feature Store feature group that this processing job's output is written to and ingested into. (AI-inferred)
     feature_group_name: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingOutputConfig_Outputs_S3Output:
-    # The local path inside the processing container where the output data is written before being uploaded to the configured S3 output location. (AI-inferred)
     local_path: Any = None
-    # Determines whether the processing job uploads output to S3 continuously during execution ('Continuous') or only after the job completes ('EndOfJob'). (AI-inferred)
     s3_upload_mode: Any = None
-    # The S3 URI specifying the bucket and prefix where the processing job writes its output data. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerProcessingJob_ProcessingOutputConfig_Outputs:
-    # When set to true, all output operations such as data encryption are managed by the processing job's application rather than by SageMaker; when false (the default), SageMaker manages these operations. (AI-inferred)
     app_managed: Any = None
-    # Configures the processing job's output to an Amazon SageMaker Feature Store, specifying the target feature group name and whether to append or overwrite existing records. (AI-inferred)
     feature_store_output: Any = None
-    # The unique name that identifies this processing output within the SageMaker processing job's output configuration, used to reference the output in the job's specification. (AI-inferred)
     output_name: Any = None
-    # Configures the S3 destination for a processing job output, including the local path in the container and the S3 URI (and optionally the upload mode) where the output is uploaded. (AI-inferred)
     s3_output: Any = None
 
 @dataclasses.dataclass
@@ -176,9 +136,7 @@ class MakerProcessingJob_StoppingCondition:
 
 @dataclasses.dataclass
 class MakerProcessingJob_Tags:
-    # The key portion of a tag that you assign to the SageMaker processing job, used to identify, organize, and control access to the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the SageMaker processing job, paired with the corresponding key to organize and identify AWS resources (e.g., for cost allocation or access control). (AI-inferred)
     value: Any = None
 
 _MakerProcessingJob_AppSpecificationFields = {

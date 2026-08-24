@@ -4,78 +4,50 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolRegionalConfigurationAttachment_EmailConfiguration struct {
-	// Specifies the name of the Amazon SES configuration set that Amazon Cognito uses when sending email messages for the user pool's email configuration. (AI-inferred)
 	ConfigurationSet any
-	// Specifies whether Cognito uses its default email account (COGNITO_DEFAULT) or a developer-provided Amazon SES account (DEVELOPER) to send emails for this regional user pool configuration. (AI-inferred)
 	EmailSendingAccount any
-	// The sender email address that Amazon Cognito uses to send email notifications from the user pool, as part of the attached email configuration. (AI-inferred)
 	From any
-	// The email address that Amazon Cognito uses as the reply-to address for emails sent to users from the user pool. (AI-inferred)
 	ReplyToEmailAddress any
-	// The ARN of a verified email address or domain in Amazon SES that Amazon Cognito uses as the sender for emails sent from the user pool's email configuration. (AI-inferred)
 	SourceArn any
 }
 
 type UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSender struct {
-	// The ARN of the Lambda function that Cognito invokes as the custom email sender to send email messages for the user pool. (AI-inferred)
 	LambdaArn any
-	// Specifies the version (V1_0 or V2_0) of the AWS Lambda function used as the custom email sender in the user pool's email configuration. (AI-inferred)
 	LambdaVersion any
 }
 
 type UserPoolRegionalConfigurationAttachment_LambdaConfig struct {
-	// Specifies the ARN of the Lambda function that Amazon Cognito invokes to create an authentication challenge during custom authentication flows. (AI-inferred)
 	CreateAuthChallenge any
-	// Configures a custom email sender Lambda function for the Cognito user pool, using the specified Lambda ARN and version to handle outgoing email messages instead of Cognito's default email service. (AI-inferred)
 	CustomEmailSender any
-	// The ARN of the Lambda function that Amazon Cognito invokes for the CustomMessage trigger, which customizes verification codes and welcome messages sent to users. (AI-inferred)
 	CustomMessage any
-	// Configures a custom AWS Lambda function to be used as the SMS sender for this Cognito User Pool regional configuration, specifying the Lambda function's ARN and version. (AI-inferred)
 	CustomSmssender any
-	// The ARN of an AWS Lambda function that serves as the DefineAuthChallenge trigger, enabling custom authentication challenge definition for the user pool. (AI-inferred)
 	DefineAuthChallenge any
 	InboundFederation any
-	// Specifies the KMS key ID or ARN that Amazon Cognito uses to encrypt the code delivery messages to users, within the lambda_config block of this regional configuration attachment. (AI-inferred)
 	KmskeyId any
-	// The ARN of a Lambda function that Amazon Cognito invokes after a user is successfully authenticated, enabling custom logic like auditing or post-login workflows. (AI-inferred)
 	PostAuthentication any
-	// The ARN of a Lambda function that Amazon Cognito invokes after a user confirms their account, used to run custom post-confirmation logic such as creating a user profile or sending a welcome message. (AI-inferred)
 	PostConfirmation any
-	// The ARN of an AWS Lambda function that Amazon Cognito invokes before user authentication, allowing you to customize the authentication flow. (AI-inferred)
 	PreAuthentication any
-	// The ARN of an AWS Lambda function that Amazon Cognito invokes before sign-up registration, used to customize the pre-sign-up trigger behavior. (AI-inferred)
 	PreSignUp any
-	// The ARN of the Lambda function that Amazon Cognito invokes for the pre-token generation trigger, allowing customization of the token before it is issued during authentication. (AI-inferred)
 	PreTokenGeneration any
-	// Configuration for the pre token generation Lambda trigger, specifying the ARN and version of the Lambda function that Amazon Cognito invokes before generating tokens for authentication. (AI-inferred)
 	PreTokenGenerationConfig any
-	// The ARN of the Lambda function that is invoked for the Cognito user migration trigger, which allows existing users to be migrated into the user pool when they sign in. (AI-inferred)
 	UserMigration any
-	// The ARN of the Lambda function that Amazon Cognito invokes to verify a user's answer to a custom authentication challenge for the user pool region configuration. (AI-inferred)
 	VerifyAuthChallengeResponse any
 }
 
 type UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSms struct {
-	// The ARN of the IAM role that Amazon Cognito assumes to send SMS messages through Amazon SNS for this regional user pool configuration. (AI-inferred)
 	CallerArn any
-	// Name of the Amazon SNS configuration set used to track and manage SMS messages sent by the user pool for this regional configuration, enabling message delivery status and event logging. (AI-inferred)
 	ConfigurationSetName any
 	ExternalId any
-	// The `in_entity_id` field specifies the India-specific DLT entity ID that is passed as the `AWS.SNS.SMS.EntityId` SMS attribute when Cognito sends SMS messages for this user pool's regional configuration, satisfying TRAI compliance for Indian phone numbers. (AI-inferred)
 	InEntityId any
 	InTemplateId any
-	// Specifies the SMS origination identity (e.g., a sender ID or origination number) used by this regional SMS configuration when Cognito sends SMS messages for the associated user pool. (AI-inferred)
 	OriginationIdentity any
 	Region any
 }
 
 type UserPoolRegionalConfigurationAttachment_SmsConfiguration struct {
 	EumsSms any
-	// The external ID to include in the IAM role trust policy that authorizes Amazon Cognito to send SMS messages through Amazon SNS, preventing the confused deputy problem. (AI-inferred)
 	ExternalId any
-	// The ARN of the IAM role that Amazon Cognito assumes to send SMS messages through Amazon SNS for this user pool's regional SMS configuration. (AI-inferred)
 	SnsCallerArn any
-	// The AWS region where Amazon SNS is configured to send SMS messages for the user pool's SMS configuration. (AI-inferred)
 	SnsRegion any
 }
 
@@ -148,28 +120,22 @@ var UserPoolRegionalConfigurationAttachment_SmsConfigurationFields = ubx.FieldMa
 	}
 
 type UserPoolRegionalConfigurationAttachmentConfig struct {
-	// Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
 	EmailConfiguration any
 	LambdaConfig any
-	// Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
 	SmsConfiguration any
 	// The status of the replica. Set to ACTIVE or INACTIVE.
 	Status any
 	UserPoolId any
-	// A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
 	UserPoolTags any
 }
 
 type UserPoolRegionalConfigurationAttachmentAttrs struct {
-	// Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
 	EmailConfiguration any
 	LambdaConfig any
-	// Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
 	SmsConfiguration any
 	// The status of the replica. Set to ACTIVE or INACTIVE.
 	Status any
 	UserPoolId any
-	// A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
 	UserPoolTags any
 }
 

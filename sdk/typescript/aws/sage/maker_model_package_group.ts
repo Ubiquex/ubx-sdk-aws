@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerModelPackageGroup_Tags {
-  /** The key part of an AWS key-value tag that can be attached to a SageMaker model package group for resource identification and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair assigned to the SageMaker Model Package Group, allowing you to categorize and manage the group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -18,7 +16,6 @@ export interface MakerModelPackageGroupConfig {
   modelPackageGroupDescription?: string | Computed<string>;
   /** The name of the model package group. */
   modelPackageGroupName: string | Computed<string>;
-  /** JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred) */
   modelPackageGroupPolicy?: unknown | Computed<unknown>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: MakerModelPackageGroup_Tags[] | Computed<MakerModelPackageGroup_Tags[]>;
@@ -33,7 +30,6 @@ export interface MakerModelPackageGroupAttrs {
   modelPackageGroupDescription: string;
   /** The name of the model package group. */
   modelPackageGroupName: string;
-  /** JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred) */
   modelPackageGroupPolicy: unknown;
   /** The status of a modelpackage group job. */
   modelPackageGroupStatus: string;

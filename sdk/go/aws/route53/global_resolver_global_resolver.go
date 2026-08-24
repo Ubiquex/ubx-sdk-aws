@@ -25,7 +25,6 @@ type GlobalResolverGlobalResolverConfig struct {
 }
 
 type GlobalResolverGlobalResolverAttrs struct {
-	// The Amazon Resource Name (ARN) that AWS assigns to this Route 53 Global Resolver, used as a unique identifier and in IAM policies and resource references. (AI-inferred)
 	Arn any
 	ClientToken any
 	CreatedAt any
@@ -39,7 +38,6 @@ type GlobalResolverGlobalResolverAttrs struct {
 	ObservabilityRegion any
 	// The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant.
 	Regions any
-	// The current lifecycle status of the Route 53 global resolver rule, reporting values such as COMPLETE, FAILED, UPDATING, or DELETING to indicate the rule's operational state. (AI-inferred)
 	Status any
 	Tags any
 	UpdatedAt any

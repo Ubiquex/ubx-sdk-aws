@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Account_Tags {
-  /** The key portion of a key-value tag assigned to the AWS Organizations account, enabling you to categorize and manage the account for cost allocation, access control, or operational purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a key-value tag assigned to the AWS Organizations account. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

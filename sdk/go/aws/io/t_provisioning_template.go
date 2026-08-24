@@ -4,16 +4,12 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TProvisioningTemplate_PreProvisioningHook struct {
-	// Specifies the payload version for the AWS IoT pre-provisioning hook, controlling the data format that the Lambda function receives (for example, '2020-10-22' or '2021-03-08'). (AI-inferred)
 	PayloadVersion any
-	// The ARN of the Lambda function that AWS IoT invokes as the pre-provisioning hook to validate or customize device provisioning. (AI-inferred)
 	TargetArn any
 }
 
 type TProvisioningTemplate_Tags struct {
-	// The key of a tag assigned to the AWS IoT provisioning template, used to categorize, organize, and identify the resource for management purposes. (AI-inferred)
 	Key any
-	// Specifies the value of a tag attached to the AWS IoT provisioning template, used to label and categorize the resource. (AI-inferred)
 	Value any
 }
 
@@ -28,42 +24,25 @@ var TProvisioningTemplate_TagsFields = ubx.FieldMap{
 	}
 
 type TProvisioningTemplateConfig struct {
-	// The Description property provides an optional, user-defined text description for the AWS IoT provisioning template, aiding in identifying the template's purpose and intended use case. (AI-inferred)
 	Description any
-	// Determines whether the provisioning template is enabled, allowing or denying device provisioning operations through this template. (AI-inferred)
 	Enabled any
-	// The pre-provisioning hook, an object that defines an AWS Lambda function to be invoked before device provisioning to validate or modify the provisioning request, including the Lambda function's ARN and payload version. (AI-inferred)
 	PreProvisioningHook any
-	// The ARN of the IAM role that AWS IoT assumes to perform the provisioning actions defined in the template, such as creating certificates, policies, and thing resources. (AI-inferred)
 	ProvisioningRoleArn any
-	// Specifies an optional array of key-value tags to attach to the IoT provisioning template, which can help organize, identify, and manage the template alongside other AWS resources. (AI-inferred)
 	Tags any
-	// The `template_body` is the JSON-formatted contents of the AWS IoT provisioning template that defines the parameters and resources (such as certificates and policies) to be provisioned for devices. (AI-inferred)
 	TemplateBody any
-	// The unique, user-defined name that identifies this AWS IoT provisioning template. (AI-inferred)
 	TemplateName any
-	// Specifies the provisioning template type, which is either FLEET_PROVISIONING for fleet provisioning or JITP for just-in-time provisioning, determining how devices are provisioned with certificates and policies. (AI-inferred)
 	TemplateType any
 }
 
 type TProvisioningTemplateAttrs struct {
-	// The Description property provides an optional, user-defined text description for the AWS IoT provisioning template, aiding in identifying the template's purpose and intended use case. (AI-inferred)
 	Description any
-	// Determines whether the provisioning template is enabled, allowing or denying device provisioning operations through this template. (AI-inferred)
 	Enabled any
-	// The pre-provisioning hook, an object that defines an AWS Lambda function to be invoked before device provisioning to validate or modify the provisioning request, including the Lambda function's ARN and payload version. (AI-inferred)
 	PreProvisioningHook any
-	// The ARN of the IAM role that AWS IoT assumes to perform the provisioning actions defined in the template, such as creating certificates, policies, and thing resources. (AI-inferred)
 	ProvisioningRoleArn any
-	// Specifies an optional array of key-value tags to attach to the IoT provisioning template, which can help organize, identify, and manage the template alongside other AWS resources. (AI-inferred)
 	Tags any
-	// The Amazon Resource Name (ARN) assigned to the AWS IoT provisioning template, used to uniquely identify the template. (AI-inferred)
 	TemplateArn any
-	// The `template_body` is the JSON-formatted contents of the AWS IoT provisioning template that defines the parameters and resources (such as certificates and policies) to be provisioned for devices. (AI-inferred)
 	TemplateBody any
-	// The unique, user-defined name that identifies this AWS IoT provisioning template. (AI-inferred)
 	TemplateName any
-	// Specifies the provisioning template type, which is either FLEET_PROVISIONING for fleet provisioning or JITP for just-in-time provisioning, determining how devices are provisioned with certificates and policies. (AI-inferred)
 	TemplateType any
 }
 

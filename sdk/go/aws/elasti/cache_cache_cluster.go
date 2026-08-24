@@ -4,44 +4,32 @@ package elasti
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheCacheCluster_ConfigurationEndpoint struct {
-	// The DNS hostname of the configuration endpoint for a Memcached cache cluster, which clients use to discover all cache nodes. (AI-inferred)
 	Address any
-	// The TCP port of the ElastiCache cluster's configuration endpoint, used by Redis clients to connect and discover shard endpoints when cluster mode is enabled. (AI-inferred)
 	Port any
 }
 
 type CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails struct {
-	// The name of the CloudWatch Logs log group where ElastiCache publishes the selected log type (e.g., slow-log or engine-log) when log delivery is configured with CloudWatch Logs as the destination. (AI-inferred)
 	LogGroup any
 }
 
 type CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails struct {
-	// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose delivery stream to which ElastiCache cache engine logs are delivered. (AI-inferred)
 	DeliveryStream any
 }
 
 type CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails struct {
-	// Specifies the CloudWatch Logs destination details for the log delivery configuration, including the log group name where ElastiCache logs are delivered. (AI-inferred)
 	CloudWatchLogsDetails any
-	// The Kinesis Data Firehose destination details object, which contains the delivery stream name where ElastiCache delivers the cache cluster's log records (e.g., slow or engine logs) when log delivery is configured for Firehose. (AI-inferred)
 	KinesisFirehoseDetails any
 }
 
 type CacheCacheCluster_LogDeliveryConfigurations struct {
-	// Specifies the destination for log delivery, which must contain either a CloudWatch Logs log group or a Kinesis Data Firehose delivery stream, matching the selected DestinationType. (AI-inferred)
 	DestinationDetails any
-	// Specifies the type of destination for the logs, either 'cloudwatch-logs' or 'kinesis-firehose', determining whether the log delivery sends logs to Amazon CloudWatch Logs or to Amazon Kinesis Data Firehose. (AI-inferred)
 	DestinationType any
-	// Specifies the format (text or json) in which ElastiCache engine logs or slow logs are delivered to the configured destination. (AI-inferred)
 	LogFormat any
-	// Specifies the type of cache log being delivered, either 'slow-log' for slow query logs or 'engine-log' for engine logs, for the ElastiCache cluster. (AI-inferred)
 	LogType any
 }
 
 type CacheCacheCluster_Tags struct {
-	// The key of a user-defined tag applied to the ElastiCache cache cluster, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag associated with the ElastiCache cache cluster, used to categorize and manage the cluster within AWS. (AI-inferred)
 	Value any
 }
 
@@ -150,7 +138,6 @@ type CacheCacheClusterAttrs struct {
 	CacheSubnetGroupName any
 	// A name for the cache cluster.
 	ClusterName any
-	// The configuration endpoint of the ElastiCache cache cluster, returned as an object containing the DNS address and port that client applications use to connect to the cluster. (AI-inferred)
 	ConfigurationEndpoint any
 	// The name of the cache engine to be used for this cluster.
 	Engine any
@@ -174,7 +161,6 @@ type CacheCacheClusterAttrs struct {
 	PreferredAvailabilityZones any
 	// Specifies the weekly time range during which maintenance on the cluster is performed.
 	PreferredMaintenanceWindow any
-	// The DNS address and port of the Redis cache cluster's primary node, provided as an object with address and port attributes. (AI-inferred)
 	RedisEndpoint any
 	// A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3.
 	SnapshotArns any

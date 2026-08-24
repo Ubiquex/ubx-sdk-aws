@@ -26,7 +26,6 @@ type LayerVersionConfig struct {
 	CompatibleArchitectures any
 	// A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
 	CompatibleRuntimes any
-	// The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
 	Content any
 	// The description of the version.
 	Description any
@@ -41,13 +40,11 @@ type LayerVersionAttrs struct {
 	CompatibleArchitectures any
 	// A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
 	CompatibleRuntimes any
-	// The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
 	Content any
 	// The description of the version.
 	Description any
 	// The name or Amazon Resource Name (ARN) of the layer.
 	LayerName any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Lambda layer version. (AI-inferred)
 	LayerVersionArn any
 	// The layer's software license.
 	LicenseInfo any

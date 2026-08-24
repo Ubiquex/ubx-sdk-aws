@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbsubnetGroup_Tags {
-  /** The key of a tag to associate with the Neptune DB subnet group. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag associated with the Neptune DB subnet group, used to categorize and manage the resource within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

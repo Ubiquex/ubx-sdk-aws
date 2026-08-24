@@ -4,7 +4,6 @@ package ram
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Permission_Tags struct {
-	// The key of a tag to attach to the AWS Resource Access Manager (RAM) permission, used for organizing and filtering the permission in AWS. (AI-inferred)
 	Key any
 	Value any
 }
@@ -21,24 +20,20 @@ type PermissionConfig struct {
 	PolicyTemplate any
 	// The resource type this permission can be used with.
 	ResourceType any
-	// A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
 	Tags any
 }
 
 type PermissionAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Resource Access Manager permission, including the AWS account, region, permission name, and version (e.g., arn:aws:ram:us-east-1:123456789012:permission/MyPermission/1). (AI-inferred)
 	Arn any
 	// Set to true to use this as the default permission.
 	IsResourceTypeDefault any
 	// The name of the permission.
 	Name any
-	// Indicates whether the RAM permission is AWS-managed or customer-managed. (AI-inferred)
 	PermissionType any
 	// Policy template for the permission.
 	PolicyTemplate any
 	// The resource type this permission can be used with.
 	ResourceType any
-	// A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
 	Tags any
 	// Version of the permission.
 	Version any

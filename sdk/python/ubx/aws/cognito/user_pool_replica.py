@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolReplicaConfig:
-    # Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred)
     region_name: Any = None
-    # The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred)
     user_pool_id: Any = None
-    # Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred)
     user_pool_tags_at_create: Any = None
 
 @dataclasses.dataclass
 class UserPoolReplicaAttrs:
-    # Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred)
     region_name: Any = None
-    # The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred)
     user_pool_id: Any = None
-    # Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred)
     user_pool_tags_at_create: Any = None
 
 UserPoolReplica = ubx.ResourceBinding(

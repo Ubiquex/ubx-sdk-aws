@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdTemplateGroupAccessControlEntry_AccessRights {
-  /** Specifies whether the group is granted permission to automatically enroll for certificates, with allowed values 'ALLOW' or 'DENY'. (AI-inferred) */
   autoEnroll?: string | Computed<string>;
-  /** Sets whether the associated Active Directory group is allowed to enroll for certificates using the configured certificate template, forming the enroll access right in this template group access control entry. (AI-inferred) */
   enroll?: string | Computed<string>;
 }
 
@@ -14,24 +12,16 @@ const AdTemplateGroupAccessControlEntry_AccessRightsFields: FieldMap = {
 };
 
 export interface AdTemplateGroupAccessControlEntryConfig {
-  /** Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred) */
   accessRights: AdTemplateGroupAccessControlEntry_AccessRights | Computed<AdTemplateGroupAccessControlEntry_AccessRights>;
-  /** Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred) */
   groupDisplayName: string | Computed<string>;
-  /** Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred) */
   groupSecurityIdentifier: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred) */
   templateArn: string | Computed<string>;
 }
 
 export interface AdTemplateGroupAccessControlEntryAttrs {
-  /** Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred) */
   accessRights: AdTemplateGroupAccessControlEntry_AccessRights;
-  /** Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred) */
   groupDisplayName: string;
-  /** Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred) */
   groupSecurityIdentifier: string;
-  /** The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred) */
   templateArn: string;
 }
 

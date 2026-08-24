@@ -4,13 +4,9 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubscriptionDefinitionVersion_Subscriptions struct {
-	// The subscriptions.id is a required, user-defined unique identifier for each subscription within the AWS Greengrass subscription definition version, used to distinguish and reference individual subscription entries. (AI-inferred)
 	Id any
-	// Specifies the ARN of the source device or Lambda function that publishes messages to the target on the given topic. (AI-inferred)
 	Source any
-	// The MQTT topic filter that determines which messages are routed from the source to the target in this subscription. (AI-inferred)
 	Subject any
-	// Specifies the target of the subscription as an ARN (for example, a Greengrass device, Lambda function, or connector ARN) that receives messages published to the subscription's subject from the source. (AI-inferred)
 	Target any
 }
 
@@ -22,17 +18,13 @@ var SubscriptionDefinitionVersion_SubscriptionsFields = ubx.FieldMap{
 	}
 
 type SubscriptionDefinitionVersionConfig struct {
-	// The ID of the Greengrass subscription definition that this subscription definition version belongs to. (AI-inferred)
 	SubscriptionDefinitionId any
-	// The subscriptions field defines the list of MQTT message routing rules for this subscription definition version, each specifying a source, target, and topic filter that controls how messages are passed between Greengrass devices, functions, and connectors. (AI-inferred)
 	Subscriptions any
 }
 
 type SubscriptionDefinitionVersionAttrs struct {
 	Id any
-	// The ID of the Greengrass subscription definition that this subscription definition version belongs to. (AI-inferred)
 	SubscriptionDefinitionId any
-	// The subscriptions field defines the list of MQTT message routing rules for this subscription definition version, each specifying a source, target, and topic filter that controls how messages are passed between Greengrass devices, functions, and connectors. (AI-inferred)
 	Subscriptions any
 }
 

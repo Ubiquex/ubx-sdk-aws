@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MicrosoftTeamsChannelConfiguration_Tags {
-  /** The user-defined key for a tag attached to an AWS Chatbot Microsoft Teams channel configuration, used for organizing, filtering, and cost-tracking the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value for a key-value pair applied to the AWS Chatbot Microsoft Teams channel configuration resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CostCategory_Tags:
-    # The key portion of a tag applied to the AWS Cost Category. (AI-inferred)
     key: Any = None
-    # Specifies the value portion of a user-defined tag (key-value pair) applied to the AWS Cost Category, used to categorize and track cost allocation. (AI-inferred)
     value: Any = None
 
 _CostCategory_TagsFields = {
@@ -22,9 +20,7 @@ _CostCategory_TagsFields = {
 class CostCategoryConfig:
     # The default value for the cost category
     default_value: Any = None
-    # The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
     name: Any = None
-    # Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
     rule_version: Any = None
     # JSON array format of Expression in Billing and Cost Management API
     rules: Any = None
@@ -41,9 +37,7 @@ class CostCategoryAttrs:
     default_value: Any = None
     # ISO 8601 date time with offset format
     effective_start: Any = None
-    # The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
     name: Any = None
-    # Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
     rule_version: Any = None
     # JSON array format of Expression in Billing and Cost Management API
     rules: Any = None

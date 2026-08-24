@@ -4,21 +4,16 @@ package pcs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queue_ComputeNodeGroupConfigurations struct {
-	// Specifies the unique identifier of the compute node group to which this queue configuration targets, enabling the queue to submit jobs to the resources defined by that compute node group. (AI-inferred)
 	ComputeNodeGroupId any
 }
 
 type Queue_ErrorInfo struct {
-	// The short error code that identifies the type of failure affecting the queue, complementing the error message returned in the same error info object. (AI-inferred)
 	Code any
-	// The error message that provides details about the failure condition affecting the AWS PCS queue, as reported in the queue's error information list. (AI-inferred)
 	Message any
 }
 
 type Queue_SlurmConfiguration_SlurmCustomSettings struct {
-	// The name of a Slurm configuration parameter to set on the queue's Slurm cluster. (AI-inferred)
 	ParameterName any
-	// The value assigned to a custom Slurm parameter (identified by its parameter name) in the AWS PCS queue's Slurm configuration. (AI-inferred)
 	ParameterValue any
 }
 

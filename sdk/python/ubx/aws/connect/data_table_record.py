@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataTableRecord_DataTableRecord_PrimaryValues:
-    # The identifier of the attribute (column) within the Amazon Connect data table's schema that this primary key value is associated with. (AI-inferred)
     attribute_id: Any = None
-    # The value for a primary key attribute of the data table record, which combined with other primary values uniquely identifies a record in the specified Amazon Connect data table. (AI-inferred)
     attribute_value: Any = None
 
 @dataclasses.dataclass
 class DataTableRecord_DataTableRecord:
-    # Specifies the values of the record's primary key fields, which uniquely identify the record within the Amazon Connect data table. (AI-inferred)
     primary_values: Any = None
-    # The list of key-value pairs that constitute the record's data, where each object maps a field name to its value as defined by the Amazon Connect data table's schema. (AI-inferred)
     values: Any = None
 
 _DataTableRecord_DataTableRecord_PrimaryValuesFields = {
@@ -41,19 +37,14 @@ _DataTableRecord_DataTableRecordFields = {
 @dataclasses.dataclass
 class DataTableRecordConfig:
     data_table_arn: Any = None
-    # The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
     data_table_record: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred)
     instance_arn: Any = None
 
 @dataclasses.dataclass
 class DataTableRecordAttrs:
     data_table_arn: Any = None
-    # The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
     data_table_record: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred)
     instance_arn: Any = None
-    # The unique system-generated identifier of the data table record, returned by Amazon Connect after the record is created. (AI-inferred)
     record_id: Any = None
 
 DataTableRecord = ubx.ResourceBinding(

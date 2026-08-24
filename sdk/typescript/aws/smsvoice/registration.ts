@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Registration_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to an AWS SMS Voice registration, which you can use to store arbitrary metadata such as environments, cost centers, or owners for the registration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

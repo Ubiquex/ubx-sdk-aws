@@ -4,18 +4,15 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface GatewayUsagePlanKeyConfig {
   /** The Id of the UsagePlanKey resource. */
   keyId: string | Computed<string>;
-  /** Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred) */
   keyType: string | Computed<string>;
   /** The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer. */
   usagePlanId: string | Computed<string>;
 }
 
 export interface GatewayUsagePlanKeyAttrs {
-  /** The unique resource identifier in Terraform, formed by joining the usage plan ID and the API key ID with a colon. (AI-inferred) */
   id: string;
   /** The Id of the UsagePlanKey resource. */
   keyId: string;
-  /** Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred) */
   keyType: string;
   /** The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer. */
   usagePlanId: string;

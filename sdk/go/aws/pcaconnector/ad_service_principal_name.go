@@ -4,16 +4,12 @@ package pcaconnector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdServicePrincipalNameConfig struct {
-	// The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred)
 	ConnectorArn any
-	// The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred)
 	DirectoryRegistrationArn any
 }
 
 type AdServicePrincipalNameAttrs struct {
-	// The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred)
 	ConnectorArn any
-	// The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred)
 	DirectoryRegistrationArn any
 }
 

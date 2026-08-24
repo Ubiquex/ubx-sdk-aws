@@ -4,30 +4,22 @@ package amplify
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Branch_Backend struct {
-	// Specifies the Amazon Resource Name (ARN) of the CloudFormation stack that provides the backend environment for this Amplify branch, associating the branch with the corresponding backend resources. (AI-inferred)
 	StackArn any
 }
 
 type Branch_BasicAuthConfig struct {
-	// Enables basic authorization for the Amplify branch, requiring users to enter a username and password to access the branch's app. (AI-inferred)
 	EnableBasicAuth any
-	// The password used for basic authentication to access the branch, which must be at least 8 characters and at most 128 characters long. (AI-inferred)
 	Password any
-	// The username for basic authentication that protects access to the Amplify branch's app. (AI-inferred)
 	Username any
 }
 
 type Branch_EnvironmentVariables struct {
-	// The name (key) of an environment variable to set for the Amplify branch, which is used to override or provide configuration to the build process. (AI-inferred)
 	Name any
-	// Specifies the value assigned to the environment variable key for the Amplify branch. (AI-inferred)
 	Value any
 }
 
 type Branch_Tags struct {
-	// Specifies the key of a tag to attach to the Amplify branch resource for organization and cost tracking. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Amplify branch, used to label the branch with arbitrary metadata such as environment, owner, or cost center. (AI-inferred)
 	Value any
 }
 
@@ -52,72 +44,41 @@ var Branch_TagsFields = ubx.FieldMap{
 	}
 
 type BranchConfig struct {
-	// The unique ID of the Amplify app that this branch belongs to. (AI-inferred)
 	AppId any
-	// The backend configuration for the subdomain, represented as a nested object that contains the ARN of the AWS CloudFormation stack providing the linked backend environment for the branch. (AI-inferred)
 	Backend any
-	// Configures basic authentication settings (username and password) for the branch, allowing per-branch overrides of the app-level basic auth configuration. (AI-inferred)
 	BasicAuthConfig any
-	// The name of the branch in the Amplify app, such as 'main' or 'dev', which uniquely identifies the branch within the Amplify service. (AI-inferred)
 	BranchName any
-	// Sets the branch's build specification (buildspec) as a YAML/JSON string, which overrides the app-level build settings for the Amplify branch. (AI-inferred)
 	BuildSpec any
-	// The ARN of the IAM service role that AWS Amplify uses to deploy the branch. (AI-inferred)
 	ComputeRoleArn any
-	// An optional free-form string that describes the purpose or content of the Amplify branch. (AI-inferred)
 	Description any
-	// Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
 	EnableAutoBuild any
 	EnablePerformanceMode any
-	// Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
 	EnablePullRequestPreview any
-	// When set to true, enables skew protection for the Amplify branch, which redirects users to the correct version of the app when the frontend and backend deployments are out of sync. (AI-inferred)
 	EnableSkewProtection any
-	// Defines custom environment variables (name/value pairs) available to the Amplify branch for builds and other operations. (AI-inferred)
 	EnvironmentVariables any
-	// Specifies the web framework used to build the application branch, such as React, Next.js, or Angular. (AI-inferred)
 	Framework any
-	// Specifies the name of the Amplify backend environment that is used for pull request preview deployments for this branch. (AI-inferred)
 	PullRequestEnvironmentName any
-	// Configures the deployment stage for the branch, which determines its environment type in AWS Amplify (e.g., PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL). (AI-inferred)
 	Stage any
-	// A list of key-value pairs that assign metadata tags to the Amplify branch, which can be used for organizing and managing branch resources. (AI-inferred)
 	Tags any
 }
 
 type BranchAttrs struct {
-	// The unique ID of the Amplify app that this branch belongs to. (AI-inferred)
 	AppId any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Amplify branch, assigned by AWS upon creation. (AI-inferred)
 	Arn any
-	// The backend configuration for the subdomain, represented as a nested object that contains the ARN of the AWS CloudFormation stack providing the linked backend environment for the branch. (AI-inferred)
 	Backend any
-	// Configures basic authentication settings (username and password) for the branch, allowing per-branch overrides of the app-level basic auth configuration. (AI-inferred)
 	BasicAuthConfig any
-	// The name of the branch in the Amplify app, such as 'main' or 'dev', which uniquely identifies the branch within the Amplify service. (AI-inferred)
 	BranchName any
-	// Sets the branch's build specification (buildspec) as a YAML/JSON string, which overrides the app-level build settings for the Amplify branch. (AI-inferred)
 	BuildSpec any
-	// The ARN of the IAM service role that AWS Amplify uses to deploy the branch. (AI-inferred)
 	ComputeRoleArn any
-	// An optional free-form string that describes the purpose or content of the Amplify branch. (AI-inferred)
 	Description any
-	// Indicates whether automatic builds are enabled for the branch, causing Amplify to build the branch automatically every time a code change is pushed to the repository. (AI-inferred)
 	EnableAutoBuild any
 	EnablePerformanceMode any
-	// Indicates whether Amplify automatically generates a preview of the branch for every pull request, enabling you to test changes before merging them into the main branch. (AI-inferred)
 	EnablePullRequestPreview any
-	// When set to true, enables skew protection for the Amplify branch, which redirects users to the correct version of the app when the frontend and backend deployments are out of sync. (AI-inferred)
 	EnableSkewProtection any
-	// Defines custom environment variables (name/value pairs) available to the Amplify branch for builds and other operations. (AI-inferred)
 	EnvironmentVariables any
-	// Specifies the web framework used to build the application branch, such as React, Next.js, or Angular. (AI-inferred)
 	Framework any
-	// Specifies the name of the Amplify backend environment that is used for pull request preview deployments for this branch. (AI-inferred)
 	PullRequestEnvironmentName any
-	// Configures the deployment stage for the branch, which determines its environment type in AWS Amplify (e.g., PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL). (AI-inferred)
 	Stage any
-	// A list of key-value pairs that assign metadata tags to the Amplify branch, which can be used for organizing and managing branch resources. (AI-inferred)
 	Tags any
 }
 

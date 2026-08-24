@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TScheduledAudit_Tags struct {
-	// The key of a tag to attach to the AWS IoT scheduled audit resource. (AI-inferred)
 	Key any
-	// The value component of a user-defined tag attached to the AWS IoT scheduled audit, used to attach metadata like environment or owner to the audit resource. (AI-inferred)
 	Value any
 }
 

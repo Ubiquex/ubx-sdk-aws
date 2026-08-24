@@ -4,9 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePolicy_Tags struct {
-	// The key of a tag attached to the AWS Organizations resource policy. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the AWS Organizations resource policy, used to organize and identify the policy. (AI-inferred)
 	Value any
 }
 

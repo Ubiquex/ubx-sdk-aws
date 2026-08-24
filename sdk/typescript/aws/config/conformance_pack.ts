@@ -2,23 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConformancePack_ConformancePackInputParameters {
-  /** The name of an input parameter declared in the conformance pack template, used to provide a value when creating or updating the pack. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** The value assigned to a specific input parameter defined by the conformance pack template, used to customize the pack's configuration when deployed. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
 export interface ConformancePack_Tags {
-  /** The key of a user-defined tag applied to the AWS Config Conformance Pack, used to categorize, organize, or identify the conformance pack resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag key-value pair assigned to the Conformance Pack, used for identifying, organizing, and managing the pack in AWS Config. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ConformancePack_TemplateSsmdocumentDetails {
-  /** The name of the AWS Systems Manager (SSM) document that contains the conformance pack template. (AI-inferred) */
   documentName?: string | Computed<string>;
-  /** The version of the AWS Systems Manager (SSM) document that provides the conformance pack template; when omitted, the default version of the document is used. (AI-inferred) */
   documentVersion?: string | Computed<string>;
 }
 

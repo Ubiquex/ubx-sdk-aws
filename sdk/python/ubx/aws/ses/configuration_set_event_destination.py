@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations:
-    # Specifies the fallback value for the CloudWatch dimension when the dimension value source (message tag or email header) is not present in the email. (AI-inferred)
     default_dimension_value: Any = None
-    # Sets the name of the CloudWatch dimension that Amazon SES attaches to the metrics it publishes for this configuration set's event destination, allowing the metric to be filtered by that dimension in CloudWatch. (AI-inferred)
     dimension_name: Any = None
-    # The dimension_value_source field specifies whether the dimension value is derived from an email header ('emailHeader') or from a message tag ('messageTag') when publishing SES event data to CloudWatch. (AI-inferred)
     dimension_value_source: Any = None
 
 @dataclasses.dataclass
@@ -22,7 +19,6 @@ class ConfigurationSetEventDestination_EventDestination_CloudWatchDestination:
 
 @dataclasses.dataclass
 class ConfigurationSetEventDestination_EventDestination_EventBridgeDestination:
-    # The ARN of the Amazon EventBridge bus to which the SES event is delivered. (AI-inferred)
     event_bus_arn: Any = None
 
 @dataclasses.dataclass
@@ -34,7 +30,6 @@ class ConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestinati
 
 @dataclasses.dataclass
 class ConfigurationSetEventDestination_EventDestination_SnsDestination:
-    # The ARN of the Amazon SNS topic that Amazon SES publishes event notifications to when an email event such as send, bounce, complaint, or delivery occurs. (AI-inferred)
     topic_arn: Any = None
 
 @dataclasses.dataclass
@@ -111,16 +106,13 @@ _ConfigurationSetEventDestination_EventDestinationFields = {
 class ConfigurationSetEventDestinationConfig:
     # The name of the configuration set that contains the event destination.
     configuration_set_name: Any = None
-    # The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred)
     event_destination: Any = None
 
 @dataclasses.dataclass
 class ConfigurationSetEventDestinationAttrs:
     # The name of the configuration set that contains the event destination.
     configuration_set_name: Any = None
-    # The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred)
     event_destination: Any = None
-    # The unique identifier for this resource, composed of the configuration set name and the event destination name separated by a colon (e.g., 'my-set:my-destination'). (AI-inferred)
     id: Any = None
 
 ConfigurationSetEventDestination = ubx.ResourceBinding(

@@ -4,44 +4,32 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupsGroup_Configuration_Parameters struct {
-	// The parameter name (key) in a configuration item for an AWS Resource Group, which identifies what the corresponding values apply to (for example, a tag key or resource-specific filter used by the configuration type). (AI-inferred)
 	Name any
-	// The list of string values assigned to a parameter key in a resource group configuration item, such as the resource types or query criteria that define the group's membership. (AI-inferred)
 	Values any
 }
 
 type GroupsGroup_Configuration struct {
-	// A list of parameter objects (each with a name and values) that configure a configuration item of the resource group, such as specifying the tag key and value for a tag-based group membership query. (AI-inferred)
 	Parameters any
-	// The resource type that the query targets, such as 'AWS::EC2::Instance', used to select which resources are included in the resource group. (AI-inferred)
 	Type any
 }
 
 type GroupsGroup_ResourceQuery_Query_TagFilters struct {
-	// The tag key used to filter resources when defining the group's resource query. (AI-inferred)
 	Key any
-	// The list of tag values that, combined with the tag filter's key, determine which resources are included in the resource group's query results. (AI-inferred)
 	Values any
 }
 
 type GroupsGroup_ResourceQuery_Query struct {
-	// Limits the resources returned by the resource query to only those whose AWS resource types match one of the specified values (e.g., AWS::EC2::Instance), thereby narrowing the set of resources included in the group. (AI-inferred)
 	ResourceTypeFilters any
-	// This field specifies the Amazon Resource Name (ARN) of the CloudFormation stack whose resources are included in the resource group when the resource query type is CLOUDFORMATION_STACK. (AI-inferred)
 	StackIdentifier any
-	// Defines the list of tag filters (each containing a tag key and optional set of tag values) that the resource query uses to determine which AWS resources are included in the resource group. (AI-inferred)
 	TagFilters any
 }
 
 type GroupsGroup_ResourceQuery struct {
-	// The query string that defines the resource selection criteria for the group, expressed using the AWS Resource Groups query syntax (either a JSON object of tag filters and resource type filters, or a CloudFormation stack identifier). (AI-inferred)
 	Query any
-	// Specifies the type of resource query used to define the group's membership, such as TAG_FILTERS_1_0 for tag-based grouping or CLOUDFORMATION_STACK_1_0 for grouping by CloudFormation stack. (AI-inferred)
 	Type any
 }
 
 type GroupsGroup_Tags struct {
-	// Specifies the key portion of a key-value tag that can be applied to the AWS Resource Groups group for identification and cost tracking. (AI-inferred)
 	Key any
 	Value any
 }
@@ -90,34 +78,26 @@ var GroupsGroup_TagsFields = ubx.FieldMap{
 	}
 
 type GroupsGroupConfig struct {
-	// Specifies the configuration items that define the resource group, including the type of query (e.g., TagBased or CloudFormationStackBased) and associated parameters. (AI-inferred)
 	Configuration any
 	// The description of the resource group
 	Description any
 	// The name of the resource group
 	Name any
-	// Specifies the resource query that defines the membership of the group, including the query type (such as TAG_FILTERS) and the underlying query constraints (e.g., resource type filters and tag filters). (AI-inferred)
 	ResourceQuery any
-	// Specifies the Amazon Resource Names (ARNs) of the AWS resources to include in this resource group. (AI-inferred)
 	Resources any
-	// Specifies the metadata tags to attach to the resource group, which are key-value pairs used for cost allocation, access control, and identifying the group. (AI-inferred)
 	Tags any
 }
 
 type GroupsGroupAttrs struct {
 	// The Resource Group ARN.
 	Arn any
-	// Specifies the configuration items that define the resource group, including the type of query (e.g., TagBased or CloudFormationStackBased) and associated parameters. (AI-inferred)
 	Configuration any
 	// The description of the resource group
 	Description any
 	// The name of the resource group
 	Name any
-	// Specifies the resource query that defines the membership of the group, including the query type (such as TAG_FILTERS) and the underlying query constraints (e.g., resource type filters and tag filters). (AI-inferred)
 	ResourceQuery any
-	// Specifies the Amazon Resource Names (ARNs) of the AWS resources to include in this resource group. (AI-inferred)
 	Resources any
-	// Specifies the metadata tags to attach to the resource group, which are key-value pairs used for cost allocation, access control, and identifying the group. (AI-inferred)
 	Tags any
 }
 

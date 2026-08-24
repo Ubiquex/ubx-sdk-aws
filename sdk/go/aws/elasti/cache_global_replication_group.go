@@ -4,27 +4,19 @@ package elasti
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheGlobalReplicationGroup_Members struct {
-	// The identifier of the ElastiCache replication group that is included as a member of the global replication group. (AI-inferred)
 	ReplicationGroupId any
-	// Specifies the AWS Region where the member replication group of this global replication group is located. (AI-inferred)
 	ReplicationGroupRegion any
-	// Indicates whether this member's replication group is the primary (write) or secondary (read) cluster in the global replication group, controlling which cluster accepts writes and acts as the source for replication. (AI-inferred)
 	Role any
 }
 
 type CacheGlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurations struct {
-	// The identifier of the node group (shard) within the regional replication group that this resharding configuration applies to, used to specify which shard's availability zones or slot mapping are adjusted during a resharding operation. (AI-inferred)
 	NodeGroupId any
-	// A list of preferred Availability Zones for the nodes in a node group (shard) during a resharding operation on a regional replication group associated with the ElastiCache Global Datastore. (AI-inferred)
 	PreferredAvailabilityZones any
 }
 
 type CacheGlobalReplicationGroup_RegionalConfigurations struct {
-	// Specifies the ID of the ElastiCache replication group that is associated with this regional configuration within the global replication group. (AI-inferred)
 	ReplicationGroupId any
-	// The AWS Region where the specified ElastiCache replication group resides, identifying one regional member of the global replication group. (AI-inferred)
 	ReplicationGroupRegion any
-	// Defines the list of node-group-level resharding settings, including preferred availability zones, for a regional replication group when the ElastiCache global replication group is resharded. (AI-inferred)
 	ReshardingConfigurations any
 }
 

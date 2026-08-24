@@ -4,9 +4,7 @@ package launch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WizardDeployment_Tags struct {
-	// The key of a tag attached to the AWS Launch Wizard deployment, allowing you to assign arbitrary metadata to the deployment for organizational or cost-tracking purposes. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS Launch Wizard deployment, which lets you attach arbitrary metadata to the deployment for categorization, access control, and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -20,7 +18,6 @@ type WizardDeploymentConfig struct {
 	DeploymentPatternName any
 	// Name of LaunchWizard deployment
 	Name any
-	// The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred)
 	Specifications any
 	// Tags for LaunchWizard deployment
 	Tags any
@@ -43,9 +40,7 @@ type WizardDeploymentAttrs struct {
 	Name any
 	// Resource Group Name created for LaunchWizard deployment
 	ResourceGroup any
-	// The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred)
 	Specifications any
-	// The status of the Launch Wizard deployment, indicating its current lifecycle state such as 'COMPLETED', 'IN_PROGRESS', or 'FAILED'. (AI-inferred)
 	Status any
 	// Tags for LaunchWizard deployment
 	Tags any

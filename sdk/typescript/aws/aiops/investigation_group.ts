@@ -2,27 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InvestigationGroup_ChatbotNotificationChannels {
-  /** The ARNs of the AWS Chatbot configurations that serve as notification channels for the investigation group, enabling alerts to be delivered to configured chat services such as Slack or Microsoft Teams. (AI-inferred) */
   chatConfigurationArns?: string[] | Computed<string[]>;
-  /** The ARN of the Amazon SNS topic that serves as a chatbot notification channel for the investigation group, receiving event notifications and alerts. (AI-inferred) */
   snstopicArn?: string | Computed<string>;
 }
 
 export interface InvestigationGroup_CrossAccountConfigurations {
-  /** The Amazon Resource Name (ARN) of the IAM role in the source account that the investigation group assumes to access data across accounts. (AI-inferred) */
   sourceRoleArn?: string | Computed<string>;
 }
 
 export interface InvestigationGroup_EncryptionConfig {
   encryptionConfigurationType?: string | Computed<string>;
-  /** The ID of the AWS KMS key used to encrypt the data associated with the investigation group, as specified in its encryption configuration. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
 }
 
 export interface InvestigationGroup_Tags {
-  /** The key of a tag attached to the AWS AIOps investigation group, used for resource identification and organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS AIOps investigation group, used to organize and manage the group within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -50,7 +44,6 @@ export interface InvestigationGroupConfig {
   chatbotNotificationChannels?: InvestigationGroup_ChatbotNotificationChannels[] | Computed<InvestigationGroup_ChatbotNotificationChannels[]>;
   /** An array of cross account configurations. */
   crossAccountConfigurations?: InvestigationGroup_CrossAccountConfigurations[] | Computed<InvestigationGroup_CrossAccountConfigurations[]>;
-  /** Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred) */
   encryptionConfig?: InvestigationGroup_EncryptionConfig | Computed<InvestigationGroup_EncryptionConfig>;
   /** Investigation Group policy */
   investigationGroupPolicy?: string | Computed<string>;
@@ -62,7 +55,6 @@ export interface InvestigationGroupConfig {
   retentionInDays?: number | Computed<number>;
   /** The Investigation Role's ARN. */
   roleArn?: string | Computed<string>;
-  /** This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred) */
   tagKeyBoundaries?: string[] | Computed<string[]>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: InvestigationGroup_Tags[] | Computed<InvestigationGroup_Tags[]>;
@@ -79,7 +71,6 @@ export interface InvestigationGroupAttrs {
   createdBy: string;
   /** An array of cross account configurations. */
   crossAccountConfigurations: InvestigationGroup_CrossAccountConfigurations[];
-  /** Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred) */
   encryptionConfig: InvestigationGroup_EncryptionConfig;
   /** Investigation Group policy */
   investigationGroupPolicy: string;
@@ -95,7 +86,6 @@ export interface InvestigationGroupAttrs {
   retentionInDays: number;
   /** The Investigation Role's ARN. */
   roleArn: string;
-  /** This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred) */
   tagKeyBoundaries: string[];
   /** An array of key-value pairs to apply to this resource. */
   tags: InvestigationGroup_Tags[];

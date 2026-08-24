@@ -4,9 +4,7 @@ package event
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemasRegistry_Tags struct {
-	// The tag key associated with the EventBridge Schema Registry, used to assign a custom metadata label that helps organize, identify, and filter the registry by their project, environment, or other criteria. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the EventBridge Schema Registry, used to store arbitrary metadata for resource management and filtering. (AI-inferred)
 	Value any
 }
 

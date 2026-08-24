@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesProfile_Tags struct {
-	// The key of a tag attached to the Route 53 Profiles profile, used to identify and categorize the profile in AWS. (AI-inferred)
 	Key any
-	// The value portion of a tag assigned to the Route 53 Profile, used to organize, identify, and manage access to the profile. (AI-inferred)
 	Value any
 }
 

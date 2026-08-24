@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SnapshotSchedule_Tags {
-  /** The key (name) of a tag applied to the Redshift snapshot schedule, used to organize and identify the schedule. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the Redshift snapshot schedule, used for resource organization and identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

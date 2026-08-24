@@ -9,14 +9,11 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SpacesWorkspaceIpGroup_Tags:
     key: Any = None
-    # The value portion of a key-value tag attached to the WorkSpaces IP group, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class SpacesWorkspaceIpGroup_UserRules:
-    # Specifies the IP address range in CIDR notation (e.g., 203.0.113.0/24) that defines which client IP addresses are permitted or denied access to WorkSpaces in this IP access control group. (AI-inferred)
     ip_rule: Any = None
-    # A human-readable description for the IP access rule, used to label or explain the purpose of the rule within the WorkSpaces IP group. (AI-inferred)
     rule_desc: Any = None
 
 _SpacesWorkspaceIpGroup_TagsFields = {

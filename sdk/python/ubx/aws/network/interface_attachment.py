@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecification:
-    # Enable ENA Express (Scalable Reliable Datagram) for UDP traffic on the network interface attachment, which can improve throughput and reduce latency for UDP workloads. (AI-inferred)
     ena_srd_udp_enabled: Any = None
 
 @dataclasses.dataclass
@@ -48,7 +47,6 @@ class InterfaceAttachmentConfig:
 
 @dataclasses.dataclass
 class InterfaceAttachmentAttrs:
-    # The unique identifier for the attachment between the network interface and the instance. (AI-inferred)
     attachment_id: Any = None
     # Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``.
     delete_on_termination: Any = None

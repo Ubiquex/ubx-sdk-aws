@@ -4,29 +4,20 @@ package evidently
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Feature_EntityOverrides struct {
-	// The unique identifier of the user or session for which this entity override sets a specific feature variation. (AI-inferred)
 	EntityId any
-	// The name of the variation to assign to the overridden entity in an entity override. (AI-inferred)
 	Variation any
 }
 
 type Feature_Tags struct {
-	// The key for a tag attached to the Evidently feature, enabling you to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Evidently feature, used to assign custom metadata for resource organization, cost allocation, and access control in AWS Evidently. (AI-inferred)
 	Value any
 }
 
 type Feature_Variations struct {
-	// In a feature variation, when the variation type is boolean, this field specifies the true/false value that is served for that variation. (AI-inferred)
 	BooleanValue any
-	// The numeric double value assigned to this variation of the feature, used when the variation's value type is set to double. (AI-inferred)
 	DoubleValue any
-	// Sets the numeric (long) value for this feature variation, which Evidently returns as the variation's value when the feature is evaluated for a user or session. (AI-inferred)
 	LongValue any
-	// For a variation of the Evidently feature, this defines the string-typed value that is returned when the feature is evaluated and this variation is selected. (AI-inferred)
 	StringValue any
-	// The user-defined name for a variation of the Evidently feature, used to reference this variation when defining traffic allocation or feature evaluation rules. (AI-inferred)
 	VariationName any
 }
 
@@ -49,42 +40,27 @@ var Feature_VariationsFields = ubx.FieldMap{
 	}
 
 type FeatureConfig struct {
-	// Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
 	DefaultVariation any
-	// An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
 	Description any
-	// Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
 	EntityOverrides any
-	// Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
 	EvaluationStrategy any
-	// The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
 	Name any
-	// The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
 	Project any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
 	Variations any
 }
 
 type FeatureAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this Evidently feature in AWS. (AI-inferred)
 	Arn any
-	// Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
 	DefaultVariation any
-	// An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
 	Description any
-	// Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
 	EntityOverrides any
-	// Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
 	EvaluationStrategy any
-	// The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
 	Name any
-	// The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
 	Project any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
 	Variations any
 }
 

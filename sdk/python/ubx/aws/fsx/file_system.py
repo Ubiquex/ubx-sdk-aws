@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FileSystem_LustreConfiguration_DataReadCacheConfiguration:
-    # Specifies the size in GiB of the data read cache for the FSx for Lustre file system, which caches frequently accessed data to improve read latency. (AI-inferred)
     size_gi_b: Any = None
-    # Specifies the sizing mode (AUTOMATIC or USER_PROVISIONED) for the data read cache on an FSx for Lustre file system that uses HDD storage, controlling whether the cache size is automatically managed or manually set via the Size field. (AI-inferred)
     sizing_mode: Any = None
 
 @dataclasses.dataclass
@@ -20,210 +18,127 @@ class FileSystem_LustreConfiguration_LogConfiguration:
 
 @dataclasses.dataclass
 class FileSystem_LustreConfiguration_MetadataConfiguration:
-    # Specifies the provisioned IOPS to use for the FSx for Lustre file system's metadata, required when the metadata configuration mode is set to USER_PROVISIONED. (AI-inferred)
     iops: Any = None
-    # Controls whether the Lustre file system's metadata configuration is automatically managed (AUTOMATIC) or manually provisioned (USER_PROVISIONED, requiring an Iops value) to determine the IOPS of the metadata storage. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
 class FileSystem_LustreConfiguration:
-    # Specifies how changes to files in the linked S3 bucket are automatically imported into the Lustre file system, with valid values NONE, NEW, and NEW_CHANGED (default is NONE). (AI-inferred)
     auto_import_policy: Any = None
-    # Specifies the number of days to retain automatic backups for the FSx for Lustre file system, where a value of 0 disables automatic backups. (AI-inferred)
     automatic_backup_retention_days: Any = None
-    # Indicates whether tags on the FSx Lustre file system are copied to its automatic and manual backups; defaults to false. (AI-inferred)
     copy_tags_to_backups: Any = None
-    # The time of day (in UTC, 24-hour HH:MM format) when FSx for Lustre automatically creates a daily backup of the file system. (AI-inferred)
     daily_automatic_backup_start_time: Any = None
-    # Specifies the data compression type for the Amazon FSx for Lustre file system, either LZ4 to enable compression or NONE to disable it. (AI-inferred)
     data_compression_type: Any = None
-    # This nested object configures the data read cache for the FSx for Lustre file system, specifying the cache size (and optionally its type) used to accelerate read requests by caching frequently accessed data on faster storage. (AI-inferred)
     data_read_cache_configuration: Any = None
-    # Determines the Lustre file system's deployment type (e.g., SCRATCH_1, SCRATCH_2, PERSISTENT_1, or PERSISTENT_2), which influences performance, data durability, and cost. (AI-inferred)
     deployment_type: Any = None
-    # Determines whether the Lustre file system uses an SSD drive cache for read operations, with valid values 'READ' or 'NONE'. (AI-inferred)
     drive_cache_type: Any = None
-    # Specifies whether to enable Elastic Fabric Adapter (EFA) for the Amazon FSx for Lustre file system, providing low-latency and high-bandwidth networking for HPC workloads. (AI-inferred)
     efa_enabled: Any = None
-    # Specifies the Amazon S3 directory (bucket and optional prefix) to which files are exported from the FSx for Lustre file system when linked to a data repository. (AI-inferred)
     export_path: Any = None
-    # Specifies the Amazon S3 path (starting with s3://) from which data is imported into the Lustre file system, such as an S3 bucket or bucket prefix used as the data repository. (AI-inferred)
     import_path: Any = None
-    # Specifies the size in bytes of the chunks that the FSx for Lustre file system uses when importing files from its linked S3 data repository. (AI-inferred)
     imported_file_chunk_size: Any = None
     log_configuration: Any = None
-    # Configures the metadata storage for the FSx for Lustre file system, allowing either automatic (AWS-managed) metadata capacity or user-provisioned metadata storage with a specified capacity. (AI-inferred)
     metadata_configuration: Any = None
-    # Specifies the per-unit storage throughput (in MB/s per TiB) for the Lustre file system, which is required for persistent deployment types (PERSISTENT_1 or PERSISTENT_2) and must be one of the supported values (e.g., 50, 100, 200). (AI-inferred)
     per_unit_storage_throughput: Any = None
-    # Specifies the throughput capacity of the FSx for Lustre file system in megabytes per second (MB/s), which for PERSISTENT_2 deployment types must be one of 125, 250, 500, or 1000 MB/s, while PERSISTENT_1 requires a value between 50 and 200 MB/s. (AI-inferred)
     throughput_capacity: Any = None
-    # Sets the day and time (in UTC, formatted as d:HH:MM, e.g., '1:04:30') when the weekly maintenance window starts for the FSx for Lustre file system, allowing AWS to perform system maintenance at that scheduled time. (AI-inferred)
     weekly_maintenance_start_time: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OntapConfiguration:
-    # Specifies the number of days that automatic backups are retained before being deleted, with a range from 0 to 90 days, where 0 disables automatic backups. (AI-inferred)
     automatic_backup_retention_days: Any = None
-    # The preferred time in HH:MM UTC format for daily automatic backups of the FSx for ONTAP file system. (AI-inferred)
     daily_automatic_backup_start_time: Any = None
-    # Specifies the deployment type for the FSx for ONTAP file system, either MULTI_AZ_1 for a multi-AZ deployment or SINGLE_AZ_1 for a single-AZ deployment. (AI-inferred)
     deployment_type: Any = None
-    # Specifies the disk I/O operations per second (IOPS) configuration for the ONTAP file system's SSD storage, defining whether IOPS are automatically set (AUTOMATIC) or manually provisioned (USER_PROVISIONED) via the iops property. (AI-inferred)
     disk_iops_configuration: Any = None
-    # Specifies the CIDR block from which FSx for ONTAP assigns IP addresses to the file system's management and data endpoints; if omitted, Amazon FSx automatically chooses an available range. (AI-inferred)
     endpoint_ip_address_range: Any = None
-    # The IPv6 CIDR block from which FSx for ONTAP selects IP addresses for the file system's management and intercluster endpoints. (AI-inferred)
     endpoint_ipv6_address_range: Any = None
-    # The fsx_admin_password specifies the password for the NetApp ONTAP administrator (admin) user on the FSx for ONTAP file system. (AI-inferred)
     fsx_admin_password: Any = None
-    # Specifies the number of high-availability (HA) pairs for the FSx for ONTAP file system, which determines total SSD storage capacity and compute resources, with allowed values of 1, 2, or 4 and a default of 2. (AI-inferred)
     hapairs: Any = None
-    # Specifies the ID of the subnet where the FSx for ONTAP file system's primary management endpoint is placed, allowing you to choose the preferred Availability Zone for management traffic (typically used in multi-AZ deployments). (AI-inferred)
     preferred_subnet_id: Any = None
-    # Specifies the list of VPC route table IDs to be associated with the network interfaces (endpoints) of the FSx for ONTAP file system, controlling how traffic is routed between the file system and other resources in your VPC. (AI-inferred)
     route_table_ids: Any = None
-    # Specifies the sustained throughput capacity of the FSx for ONTAP file system in megabytes per second (MB/s). (AI-inferred)
     throughput_capacity: Any = None
-    # Specifies the throughput capacity in MB/s per high-availability (HA) pair for an FSx for NetApp ONTAP file system, which determines the aggregate performance of the file system. (AI-inferred)
     throughput_capacity_per_hapair: Any = None
-    # Specifies the preferred day and time (in `ddd:hh:mm` format, e.g., `SAT:02:00`) for the start of the weekly maintenance window for the FSx for ONTAP file system. (AI-inferred)
     weekly_maintenance_start_time: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExports_ClientConfigurations:
-    # Specifies the client IP address, CIDR range, or hostname that is allowed to access the NFS export defined in this client configuration. (AI-inferred)
     clients: Any = None
-    # Specifies the list of NFS export options (such as `rw`, `ro`, `sync`, `async`, or `no_root_squash`) that are applied to the client or client range identified in the containing `client_configurations` entry of the root volume's NFS export configuration. (AI-inferred)
     options: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_NfsExports:
-    # Defines the list of client configurations that specify which clients (IP addresses or CIDR ranges) can access the NFS export and the NFS export options (e.g., rw, ro, sync) granted to them. (AI-inferred)
     client_configurations: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OpenZfsconfiguration_RootVolumeConfiguration_UserAndGroupQuotas:
-    # Numeric ID of the user or group to which the quota applies. (AI-inferred)
     id: Any = None
-    # The maximum storage capacity, in GiB, that the specified user or group can consume on the root volume of the FSx for OpenZFS file system, enforced by this user/group quota. (AI-inferred)
     storage_capacity_quota_gi_b: Any = None
-    # Specifies whether the quota applies to a user or a group, with allowed values USER or GROUP. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OpenZfsconfiguration_RootVolumeConfiguration:
-    # Indicates whether tags on the root volume are copied to snapshots taken from that volume for an Amazon FSx for OpenZFS file system. (AI-inferred)
     copy_tags_to_snapshots: Any = None
-    # Specifies the data compression type for the OpenZFS root volume, allowed values are NONE, ZSTD, or LZ4. (AI-inferred)
     data_compression_type: Any = None
-    # Specifies the NFS export configuration for the root volume of the OpenZFS file system, defining the clients and mount options allowed to access the volume. (AI-inferred)
     nfs_exports: Any = None
-    # Specifies whether the root volume of the FSx for OpenZFS file system is read-only, preventing users from writing to the root volume when set to true. (AI-inferred)
     read_only: Any = None
-    # The size in KiB of the data records (blocks) used for the root volume of the OpenZFS file system, which can be set to 4, 8, 16, 32, 64, or 128 and affects performance and compression efficiency. (AI-inferred)
     record_size_ki_b: Any = None
-    # Specifies the list of user and group quotas (each with a type, ID, and storage capacity quota in GiB) applied to the root volume of the OpenZFS file system. (AI-inferred)
     user_and_group_quotas: Any = None
 
 @dataclasses.dataclass
 class FileSystem_OpenZfsconfiguration:
-    # The number of days that automatic backups of the OpenZFS file system are retained; a value of 0 disables automatic backups. (AI-inferred)
     automatic_backup_retention_days: Any = None
-    # Indicates whether to copy the file system's tags to each OpenZFS backup created from it. (AI-inferred)
     copy_tags_to_backups: Any = None
-    # Indicates whether to copy tags from the OpenZFS file system to volumes created within it. (AI-inferred)
     copy_tags_to_volumes: Any = None
-    # The preferred local time (in HH:MM format) at which daily automatic backups of the OpenZFS file system are started. (AI-inferred)
     daily_automatic_backup_start_time: Any = None
-    # Specifies the FSx for OpenZFS deployment type (e.g., SINGLE_AZ_1, SINGLE_AZ_2, or MULTI_AZ_1), which determines whether the file system is deployed in a single or multiple Availability Zones and impacts its availability and performance characteristics. (AI-inferred)
     deployment_type: Any = None
-    # Specifies the disk IOPS configuration for the OpenZFS file system, including the mode (automatic or user-provisioned) and the number of IOPS to provision. (AI-inferred)
     disk_iops_configuration: Any = None
-    # The IP address range in CIDR notation for the OpenZFS file system's management endpoint, which must be within one of the subnets specified for the file system. (AI-inferred)
     endpoint_ip_address_range: Any = None
-    # Defines the IPv6 CIDR block from which the OpenZFS file system's endpoint IP addresses are allocated, allowing you to control the address space for service endpoints. (AI-inferred)
     endpoint_ipv6_address_range: Any = None
-    # Specifies the list of OpenZFS configuration options for the file system, where the only supported value is DELETE_CHILD_VOLUMES_AND_SNAPSHOTS, which permits the file system to be deleted together with its child volumes and snapshots. (AI-inferred)
     options: Any = None
-    # The preferred subnet ID where Amazon FSx for OpenZFS provisions the file system's endpoint network interface, allowing you to control the network placement of the endpoint within your VPC. (AI-inferred)
     preferred_subnet_id: Any = None
-    # Specifies the read cache configuration for the FSx for OpenZFS file system, including the memory size (SizeGiB) allocated for the L2 ARC read cache. (AI-inferred)
     read_cache_configuration: Any = None
-    # This object defines the configuration of the root volume for an Amazon FSx for OpenZFS file system, including settings such as data compression, NFS exports, user and group quotas, and read-only status. (AI-inferred)
     root_volume_configuration: Any = None
-    # Specifies the list of Amazon VPC route table IDs that the FSx for OpenZFS file system uses to route network traffic, allowing it to communicate with resources in other subnets or networks. (AI-inferred)
     route_table_ids: Any = None
-    # Specifies the throughput capacity of the Amazon FSx for OpenZFS file system in megabytes per second (MB/s), determining its performance level. (AI-inferred)
     throughput_capacity: Any = None
-    # Specifies the preferred day and time (in the format d:HH:MM, where d is 1-7 for Monday-Sunday) in UTC to start weekly maintenance for the FSx for OpenZFS file system. (AI-inferred)
     weekly_maintenance_start_time: Any = None
 
 @dataclasses.dataclass
 class FileSystem_Tags:
-    # The key of a tag attached to the FSx file system, used to identify the tag for resource management and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class FileSystem_WindowsConfiguration_AuditLogConfiguration:
-    # Specifies the Amazon Resource Name (ARN) of the destination for Windows File Server audit logs, such as a CloudWatch Logs log group or a Kinesis Data Firehose delivery stream; when omitted, FSx uses its default destination. (AI-inferred)
     audit_log_destination: Any = None
-    # Specifies the level of file-access auditing to record for the Amazon FSx for Windows File Server file system, using values such as DISABLED, SUCCESS_ONLY, FAILURE_ONLY, or SUCCESS_AND_FAILURE to control which successful and/or failed file access operations are written to the audit log destination. (AI-inferred)
     file_access_audit_log_level: Any = None
-    # Specifies the level of file share access auditing for the FSx for Windows File Server, controlling whether success, failure, both, or no file access events are recorded in the audit log (values: DISABLED, SUCCESS_ONLY, FAILURE_ONLY, SUCCESS_AND_FAILURE). (AI-inferred)
     file_share_access_audit_log_level: Any = None
 
 @dataclasses.dataclass
 class FileSystem_WindowsConfiguration_FsrmConfiguration:
     event_log_destination: Any = None
-    # Enables the File Server Resource Manager (FSRM) service on the FSx for Windows File Server, allowing quota management and file screening. (AI-inferred)
     fsrm_service_enabled: Any = None
 
 @dataclasses.dataclass
 class FileSystem_WindowsConfiguration_SelfManagedActiveDirectoryConfiguration:
-    # The DNS IP addresses of the self-managed Active Directory domain controllers that FSx for Windows File Server uses to locate and join the domain. (AI-inferred)
     dns_ips: Any = None
-    # Specifies the ARN or name of an AWS Secrets Manager secret that holds the user name and password for the service account used to join the FSx for Windows file system to a self-managed Active Directory domain, providing an alternative to directly supplying UserName and Password fields. (AI-inferred)
     domain_join_service_account_secret: Any = None
-    # The fully qualified domain name (FQDN) of the self-managed Microsoft Active Directory directory that this FSx Windows File Server will join, for example corp.example.com. (AI-inferred)
     domain_name: Any = None
-    # Specifies the name of the group in the self-managed Active Directory that is granted administrative access to the Amazon FSx for Windows File Server file system. (AI-inferred)
     file_system_administrators_group: Any = None
-    # The distinguished name of the organizational unit (OU) in the self-managed Active Directory where the FSx for Windows File Server computer account is created. (AI-inferred)
     organizational_unit_distinguished_name: Any = None
-    # The password for the service account that Amazon FSx uses to join the self-managed Microsoft Active Directory domain. (AI-inferred)
     password: Any = None
-    # The user name of the service account that Amazon FSx uses to join the Windows File Server to your self-managed Microsoft Active Directory domain. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class FileSystem_WindowsConfiguration:
-    # The ID of the AWS Managed Microsoft Active Directory that this FSx for Windows file system joins, used when the file system is joined to a Managed AD server rather than a self-managed directory. (AI-inferred)
     active_directory_id: Any = None
-    # Specifies additional DNS aliases (CNAME) for the FSx for Windows File Server file system, enabling access via alternate domain names. (AI-inferred)
     aliases: Any = None
-    # Configures the audit log delivery for the Windows file server, specifying the destination for audit logs (e.g., CloudWatch Logs or Amazon S3) and the types of file access events to audit. (AI-inferred)
     audit_log_configuration: Any = None
-    # Specifies the number of days to retain automatic backups for the Amazon FSx for Windows File Server file system; setting this to 0 disables automatic backups. (AI-inferred)
     automatic_backup_retention_days: Any = None
-    # If set to true, tags on the Amazon FSx for Windows File Server file system are copied to its automatic and user-initiated backups (and when tags are specified at backup creation, only those tags are copied), otherwise no tags are copied to backups. (AI-inferred)
     copy_tags_to_backups: Any = None
-    # The preferred time of day (in HH:MM format, UTC) to start the automatic daily backup for the Windows file system. (AI-inferred)
     daily_automatic_backup_start_time: Any = None
-    # Specifies the deployment type for the FSx for Windows File Server, such as MULTI_AZ_1 or SINGLE_AZ_1, which determines whether the file system is deployed across multiple Availability Zones for high availability or in a single Availability Zone for cost savings. (AI-inferred)
     deployment_type: Any = None
-    # Configures the disk I/O performance (IOPS) for an FSx for Windows File Server file system, specifying either automatic mode or a user-provided number of I/O operations per second. (AI-inferred)
     disk_iops_configuration: Any = None
-    # File Server Resource Manager (FSRM) settings for an Amazon FSx for Windows file system, including an enable flag, scheduled scan schedule, and aggregate/per-user quota limits. (AI-inferred)
     fsrm_configuration: Any = None
-    # Specifies the ID of the subnet where AWS places the preferred file server for a MULTI_AZ_1 FSx for Windows File Server file system; when omitted, AWS automatically chooses one from the subnets associated with the file system's VPC. (AI-inferred)
     preferred_subnet_id: Any = None
-    # Configures the file system to join a self-managed Microsoft Active Directory domain, specifying the domain name, DNS servers, and service account credentials for directory access. (AI-inferred)
     self_managed_active_directory_configuration: Any = None
-    # Specifies the sustained throughput of the Amazon FSx for Windows File Server file system in megabytes per second (MB/s), determining its performance tier. (AI-inferred)
     throughput_capacity: Any = None
-    # Sets the preferred weekly maintenance window start time for the FSx Windows file system, formatted as day-of-week:time (e.g., '2:04:00'). (AI-inferred)
     weekly_maintenance_start_time: Any = None
 
 _FileSystem_LustreConfiguration_DataReadCacheConfigurationFields = {
@@ -419,74 +334,41 @@ _FileSystem_WindowsConfigurationFields = {
 
 @dataclasses.dataclass
 class FileSystemConfig:
-    # The ID of an existing FSx backup to use when creating this file system, which restores the file system from that backup instead of creating a new empty one. (AI-inferred)
     backup_id: Any = None
-    # Specifies the type of Amazon FSx file system to create, such as LUSTRE, WINDOWS, ONTAP, or OPENZFS, determining the underlying storage and feature set. (AI-inferred)
     file_system_type: Any = None
-    # Specifies the version of the file system type to use, such as the Lustre version (e.g., 2.10, 2.12) or Windows Server version (e.g., 2012_R2, 2016), for the FSx file system. (AI-inferred)
     file_system_type_version: Any = None
-    # The ID or Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the file system's data at rest, overriding the default service key when specified. (AI-inferred)
     kms_key_id: Any = None
-    # The Lustre configuration for an FSx for Lustre file system, specifying deployment type, data repository import/export paths, and other Lustre-specific settings. (AI-inferred)
     lustre_configuration: Any = None
-    # Determines whether the FSx file system is reachable over the internet ('INTERNET') or only within the VPC ('INTERNAL'). (AI-inferred)
     network_type: Any = None
-    # Specifies the FSx for ONTAP-specific configuration for the file system, including settings like deployment type, throughput capacity, automatic backup retention and start time, disk I/O configuration, admin password, preferred subnet, route tables, and endpoint IP address range. (AI-inferred)
     ontap_configuration: Any = None
-    # The `open_zfsconfiguration` block configures the OpenZFS-specific settings for an Amazon FSx for OpenZFS file system, including deployment type, throughput capacity, and associated options. (AI-inferred)
     open_zfsconfiguration: Any = None
-    # Specifies the list of VPC security group IDs to associate with the file system's network interfaces, controlling inbound and outbound traffic. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the storage capacity in gibibytes (GiB) to provision for the Amazon FSx file system, setting the total amount of storage and subject to type-specific limits and increments (e.g., Lustre requires 1,200–100,000 GiB in multiples of 1,200). (AI-inferred)
     storage_capacity: Any = None
-    # The storage type for the FSx file system, specifying whether it uses SSD or HDD storage, which affects performance and cost. (AI-inferred)
     storage_type: Any = None
-    # The IDs of the subnets in which Amazon FSx creates the file system's network endpoints, with one subnet required for Lustre and two subnets (in different Availability Zones) for Windows File Server. (AI-inferred)
     subnet_ids: Any = None
-    # Specifies a list of key-value tags to assign to the Amazon FSx file system for identifying, organizing, and managing the resource, including for cost allocation. (AI-inferred)
     tags: Any = None
-    # Defines the Windows-specific configuration for an Amazon FSx for Windows File Server file system, including Active Directory settings, throughput capacity, and maintenance window. (AI-inferred)
     windows_configuration: Any = None
 
 @dataclasses.dataclass
 class FileSystemAttrs:
-    # The ID of an existing FSx backup to use when creating this file system, which restores the file system from that backup instead of creating a new empty one. (AI-inferred)
     backup_id: Any = None
-    # The DNS name assigned to the Amazon FSx file system, used to mount the file system. (AI-inferred)
     dnsname: Any = None
-    # Specifies the type of Amazon FSx file system to create, such as LUSTRE, WINDOWS, ONTAP, or OPENZFS, determining the underlying storage and feature set. (AI-inferred)
     file_system_type: Any = None
-    # Specifies the version of the file system type to use, such as the Lustre version (e.g., 2.10, 2.12) or Windows Server version (e.g., 2012_R2, 2016), for the FSx file system. (AI-inferred)
     file_system_type_version: Any = None
-    # The unique identifier of the Amazon FSx file system, such as fs-0123456789abcdef0. (AI-inferred)
     id: Any = None
-    # The ID or Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the file system's data at rest, overriding the default service key when specified. (AI-inferred)
     kms_key_id: Any = None
-    # The Lustre configuration for an FSx for Lustre file system, specifying deployment type, data repository import/export paths, and other Lustre-specific settings. (AI-inferred)
     lustre_configuration: Any = None
-    # The mount name (such as 'lustre') for the Amazon FSx for Lustre file system, used by clients to mount the file system after it is created. (AI-inferred)
     lustre_mount_name: Any = None
-    # Determines whether the FSx file system is reachable over the internet ('INTERNET') or only within the VPC ('INTERNAL'). (AI-inferred)
     network_type: Any = None
-    # Specifies the FSx for ONTAP-specific configuration for the file system, including settings like deployment type, throughput capacity, automatic backup retention and start time, disk I/O configuration, admin password, preferred subnet, route tables, and endpoint IP address range. (AI-inferred)
     ontap_configuration: Any = None
-    # The `open_zfsconfiguration` block configures the OpenZFS-specific settings for an Amazon FSx for OpenZFS file system, including deployment type, throughput capacity, and associated options. (AI-inferred)
     open_zfsconfiguration: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the FSx file system in AWS. (AI-inferred)
     resource_arn: Any = None
-    # The unique identifier of the root volume of the Amazon FSx for OpenZFS file system. (AI-inferred)
     root_volume_id: Any = None
-    # Specifies the list of VPC security group IDs to associate with the file system's network interfaces, controlling inbound and outbound traffic. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the storage capacity in gibibytes (GiB) to provision for the Amazon FSx file system, setting the total amount of storage and subject to type-specific limits and increments (e.g., Lustre requires 1,200–100,000 GiB in multiples of 1,200). (AI-inferred)
     storage_capacity: Any = None
-    # The storage type for the FSx file system, specifying whether it uses SSD or HDD storage, which affects performance and cost. (AI-inferred)
     storage_type: Any = None
-    # The IDs of the subnets in which Amazon FSx creates the file system's network endpoints, with one subnet required for Lustre and two subnets (in different Availability Zones) for Windows File Server. (AI-inferred)
     subnet_ids: Any = None
-    # Specifies a list of key-value tags to assign to the Amazon FSx file system for identifying, organizing, and managing the resource, including for cost allocation. (AI-inferred)
     tags: Any = None
-    # Defines the Windows-specific configuration for an Amazon FSx for Windows File Server file system, including Active Directory settings, throughput capacity, and maintenance window. (AI-inferred)
     windows_configuration: Any = None
 
 FileSystem = ubx.ResourceBinding(

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryControlControlPanel_Tags:
-    # The key of a tag attached to the Route 53 Recovery Control control panel, used to categorize or identify the resource for management, filtering, and cost allocation. (AI-inferred)
     key: Any = None
-    # The value component of an arbitrary tag (key-value pair) attached to the Route53 Recovery Control control panel, used to categorize, identify, or manage the resource. (AI-inferred)
     value: Any = None
 
 _RecoveryControlControlPanel_TagsFields = {

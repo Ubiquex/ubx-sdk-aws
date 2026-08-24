@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceEnvironment_CapacityLimits {
-  /** Specifies the unit of measure (for example, vCPU or memory) used to interpret the capacity limit value in the AWS Batch service environment's capacity limits configuration. (AI-inferred) */
   capacityUnit?: string | Computed<string>;
   maxCapacity?: number | Computed<number>;
 }

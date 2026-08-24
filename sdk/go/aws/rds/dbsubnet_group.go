@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbsubnetGroup_Tags struct {
 	Key any
-	// The value portion of a tag key-value pair attached to the DB subnet group, used for metadata, cost allocation, and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -26,7 +25,6 @@ type DbsubnetGroupConfig struct {
 }
 
 type DbsubnetGroupAttrs struct {
-	// The Amazon Resource Name (ARN) of the DB subnet group, assigned by AWS when the group is created. (AI-inferred)
 	DbsubnetGroupArn any
 	// The description for the DB subnet group.
 	DbsubnetGroupDescription any

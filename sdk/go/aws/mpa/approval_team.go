@@ -4,7 +4,6 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApprovalTeam_ApprovalStrategy_MofN struct {
-	// In the M-of-N approval scheme (indicated by the path element 'mof_n'), specifies the minimum number of approvals (the 'm' value) that must be granted by the approval team for the strategy to be satisfied. (AI-inferred)
 	MinApprovalsRequired any
 }
 
@@ -53,11 +52,9 @@ type ApprovalTeamConfig struct {
 type ApprovalTeamAttrs struct {
 	ApprovalStrategy any
 	Approvers any
-	// The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred)
 	Arn any
 	CreationTime any
 	Description any
-	// A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred)
 	LastUpdateTime any
 	Name any
 	NumberOfApprovers any

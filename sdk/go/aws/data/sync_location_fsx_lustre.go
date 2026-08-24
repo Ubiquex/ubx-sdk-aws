@@ -4,7 +4,6 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncLocationFsxLustre_Tags struct {
-	// The key of a tag to apply to the DataSync location for an FSx for Lustre file system, used for identifying and organizing the location. (AI-inferred)
 	Key any
 	Value any
 }

@@ -8,7 +8,6 @@ export interface AutomatedReasoningPolicy_PolicyDefinition_Rules {
 }
 
 export interface AutomatedReasoningPolicy_PolicyDefinition_Types_Values {
-  /** Provides a human-readable explanation of a specific value defined within a type in the automated reasoning policy, giving the model additional context for interpreting that value. (AI-inferred) */
   description?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -90,7 +89,6 @@ const AutomatedReasoningPolicy_TagsFields: FieldMap = {
 };
 
 export interface AutomatedReasoningPolicyConfig {
-  /** An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred) */
   description?: string | Computed<string>;
   /** Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false */
   forceDelete?: boolean | Computed<boolean>;
@@ -98,7 +96,6 @@ export interface AutomatedReasoningPolicyConfig {
   kmsKeyId?: string | Computed<string>;
   name: string | Computed<string>;
   policyDefinition?: AutomatedReasoningPolicy_PolicyDefinition | Computed<AutomatedReasoningPolicy_PolicyDefinition>;
-  /** A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred) */
   tags?: AutomatedReasoningPolicy_Tags[] | Computed<AutomatedReasoningPolicy_Tags[]>;
 }
 
@@ -107,7 +104,6 @@ export interface AutomatedReasoningPolicyAttrs {
   createdAt: string;
   /** The hash for this version */
   definitionHash: string;
-  /** An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred) */
   description: string;
   /** Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false */
   forceDelete: boolean;
@@ -120,7 +116,6 @@ export interface AutomatedReasoningPolicyAttrs {
   policyDefinition: AutomatedReasoningPolicy_PolicyDefinition;
   /** The id of the policy */
   policyId: string;
-  /** A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred) */
   tags: AutomatedReasoningPolicy_Tags[];
   /** Time this policy was last updated */
   updatedAt: string;

@@ -4,17 +4,14 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa struct {
-	// Specifies the time-to-live (TTL) in seconds for the SOA (Start of Authority) record of the private DNS namespace, controlling how long DNS resolvers cache the SOA information. (AI-inferred)
 	Ttl any
 }
 
 type DiscoveryPrivateDnsNamespace_Properties_DnsProperties struct {
-	// Configures the start of authority (SOA) record settings for the private DNS namespace, allowing you to set the time-to-live (TTL) for the SOA record. (AI-inferred)
 	Soa any
 }
 
 type DiscoveryPrivateDnsNamespace_Properties struct {
-	// Defines the DNS properties for the private namespace, specifically the SOA (Start of Authority) record settings that control the default DNS behavior for the namespace. (AI-inferred)
 	DnsProperties any
 }
 

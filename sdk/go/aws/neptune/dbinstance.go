@@ -4,9 +4,7 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dbinstance_Tags struct {
-	// The key of an arbitrary tag attached to the Neptune DB instance, used to identify the tag for resource organization, cost tracking, and access control. (AI-inferred)
 	Key any
-	// Value of the tag key assigned to the Neptune DB instance, used to organize and identify the resource. (AI-inferred)
 	Value any
 }
 

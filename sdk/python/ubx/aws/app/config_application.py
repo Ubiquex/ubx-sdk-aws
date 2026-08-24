@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigApplication_Tags:
-    # The tag key of a key-value pair attached to the AWS AppConfig application, used for metadata, cost tracking, and IAM-based access control. (AI-inferred)
     key: Any = None
     value: Any = None
 

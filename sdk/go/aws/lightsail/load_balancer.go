@@ -4,9 +4,7 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancer_Tags struct {
-	// The unique key of a tag attached to the Lightsail load balancer, used to identify, organize, and manage the resource for purposes such as cost tracking, access control, and operational grouping. (AI-inferred)
 	Key any
-	// The value of a tag associated with the Lightsail load balancer, allowing you to attach arbitrary metadata to the resource for management and identification. (AI-inferred)
 	Value any
 }
 
@@ -45,7 +43,6 @@ type LoadBalancerAttrs struct {
 	InstancePort any
 	// The IP address type for the load balancer. The possible values are ipv4 for IPv4 only, and dualstack for IPv4 and IPv6. The default value is dualstack.
 	IpAddressType any
-	// The Amazon Resource Name (ARN) that uniquely identifies this Lightsail load balancer. (AI-inferred)
 	LoadBalancerArn any
 	// The name of your load balancer.
 	LoadBalancerName any

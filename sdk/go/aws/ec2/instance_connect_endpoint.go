@@ -18,7 +18,6 @@ type InstanceConnectEndpoint_PublicDnsNames struct {
 }
 
 type InstanceConnectEndpoint_Tags struct {
-	// The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred)
 	Key any
 	Value any
 }

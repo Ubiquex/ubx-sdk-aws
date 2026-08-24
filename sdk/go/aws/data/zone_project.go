@@ -4,38 +4,28 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneProject_MembershipAssignments_Member struct {
-	// The identifier of the AWS DataZone group that is granted membership in the project. (AI-inferred)
 	GroupIdentifier any
-	// Specifies the user identifier for a user assigned to the project via a membership assignment, used to grant that user access to project resources in AWS DataZone. (AI-inferred)
 	UserIdentifier any
 }
 
 type ZoneProject_MembershipAssignments struct {
-	// Specifies the access role (e.g., OWNER or CONTRIBUTOR) granted to the member in the project assignment. (AI-inferred)
 	Designation any
-	// The member object identifies the user or group in Amazon DataZone that is assigned to the project, specifying the principal's identifier and whether it is a USER or GROUP. (AI-inferred)
 	Member any
 }
 
 type ZoneProject_ResourceTags struct {
-	// The key of a resource tag associated with the AWS Data Zone project, specifying the tag name used for identifying and organizing the project resource. (AI-inferred)
 	Key any
-	// The value component of a tag (key-value pair) attached to the AWS DataZone project, used for organizing and managing project resources. (AI-inferred)
 	Value any
 }
 
 type ZoneProject_UserParameters_EnvironmentParameters struct {
-	// The name (key) of an environment parameter configured for the AWS DataZone project's environment, used to pass configuration values when the environment is provisioned. (AI-inferred)
 	Name any
-	// The value of an environment parameter in the project's user parameters, which is passed to the DataZone environment when the project is used. (AI-inferred)
 	Value any
 }
 
 type ZoneProject_UserParameters struct {
-	// Specifies the name of the environment configuration in the DataZone project to which this user parameter applies, allowing parameters to be scoped to a specific environment configuration. (AI-inferred)
 	EnvironmentConfigurationName any
 	EnvironmentId any
-	// This field specifies a list of environment parameter objects that define configuration values for AWS Data Zone environments associated with the project, such as resource names or compute settings, which are applied when environments are created from the project's environment profiles. (AI-inferred)
 	EnvironmentParameters any
 }
 
@@ -131,7 +121,6 @@ type ZoneProjectAttrs struct {
 	ProjectProfileId any
 	// The project profile version to which the project should be updated. You can only specify the following string for this parameter: latest.
 	ProjectProfileVersion any
-	// The current lifecycle status of the Data Zone project, such as 'ACTIVE' or 'DELETING'. (AI-inferred)
 	ProjectStatus any
 	// The resource tags of the project.
 	ResourceTags any

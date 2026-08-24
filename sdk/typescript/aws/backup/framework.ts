@@ -2,34 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Framework_FrameworkControls_ControlInputParameters {
-  /** Specifies the name of an input parameter for a control in an AWS Backup framework, such as requiredRetentionDays, which is passed to the control to customize its behavior. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** Specifies the value assigned to a control input parameter, customizing the framework control's behavior by providing configuration data such as thresholds, identifiers, or other control-specific settings. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
 export interface Framework_FrameworkControls_ControlScope_Tags {
-  /** The tag key used to define the resource tag scope for a backup framework control, filtering which tagged resources the control applies to. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag used in the control scope, which restricts the framework control's evaluation to backup resources that carry that tag key-value pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Framework_FrameworkControls_ControlScope {
-  /** The list of resource IDs (such as ARNs) that the control scope explicitly includes for compliance evaluation in the AWS Backup framework. (AI-inferred) */
   complianceResourceIds?: string[] | Computed<string[]>;
-  /** The list of AWS resource types (e.g., 'AWS::Backup::RecoveryPoint') to which the Backup framework control's compliance scope applies, filtering which resources are evaluated by the control. (AI-inferred) */
   complianceResourceTypes?: string[] | Computed<string[]>;
-  /** Specifies the tag key-value pairs that AWS Backup uses to scope the control, so that only resources matching these tags are included in the framework's compliance evaluation. (AI-inferred) */
   tags?: Framework_FrameworkControls_ControlScope_Tags[] | Computed<Framework_FrameworkControls_ControlScope_Tags[]>;
 }
 
 export interface Framework_FrameworkControls {
-  /** Specifies the input parameters for a control within an AWS Backup framework, such as the retention period threshold that the control evaluates. (AI-inferred) */
   controlInputParameters?: Framework_FrameworkControls_ControlInputParameters[] | Computed<Framework_FrameworkControls_ControlInputParameters[]>;
-  /** The name of the backup framework control, which identifies the specific compliance rule (for example, BACKUP_RECOVERY_POINT_MANUAL_DELETION or BACKUP_RESOURCES_PROTECTED_BY_BACKUP_PLAN) that this framework control evaluates. (AI-inferred) */
   controlName?: string | Computed<string>;
-  /** Specifies the resource types and tags that determine which backup resources the framework control applies to. (AI-inferred) */
   controlScope?: Framework_FrameworkControls_ControlScope | Computed<Framework_FrameworkControls_ControlScope>;
 }
 

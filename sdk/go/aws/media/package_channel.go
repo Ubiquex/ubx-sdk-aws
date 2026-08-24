@@ -9,13 +9,9 @@ type PackageChannel_EgressAccessLogs struct {
 }
 
 type PackageChannel_HlsIngest_IngestEndpoints struct {
-	// The unique identifier assigned by AWS MediaPackage to this HLS ingest endpoint. (AI-inferred)
 	Id any
-	// The password used to authenticate HTTP requests to the HLS ingest endpoint when pushing media content from an upstream encoder. (AI-inferred)
 	Password any
-	// The URL of the HLS ingest endpoint that receives live content from an upstream encoder for the MediaPackage channel. (AI-inferred)
 	Url any
-	// The username used to authenticate to the ingest endpoint when pushing content into the MediaPackage channel. (AI-inferred)
 	Username any
 }
 
@@ -25,9 +21,7 @@ type PackageChannel_HlsIngest struct {
 }
 
 type PackageChannel_Tags struct {
-	// The key of a tag attached to the AWS Elemental MediaPackage channel, enabling you to assign metadata such as environment or project for resource filtering and cost tracking. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair applied to an AWS Elemental MediaPackage channel, used for resource identification and management. (AI-inferred)
 	Value any
 }
 
@@ -43,11 +37,9 @@ var PackageChannel_TagsFields = ubx.FieldMap{
 type PackageChannelConfig struct {
 	// A short text description of the Channel.
 	Description any
-	// This property specifies the CloudWatch Logs log group where egress access logs for the MediaPackage channel are delivered. (AI-inferred)
 	EgressAccessLogs any
 	// The ID of the Channel.
 	Id any
-	// Specifies the CloudWatch Logs log group that captures access logs for incoming requests to the MediaPackage channel's ingress endpoints. (AI-inferred)
 	IngressAccessLogs any
 	// A collection of tags associated with a resource
 	Tags any
@@ -58,13 +50,11 @@ type PackageChannelAttrs struct {
 	Arn any
 	// A short text description of the Channel.
 	Description any
-	// This property specifies the CloudWatch Logs log group where egress access logs for the MediaPackage channel are delivered. (AI-inferred)
 	EgressAccessLogs any
 	// An HTTP Live Streaming (HLS) ingest resource configuration.
 	HlsIngest any
 	// The ID of the Channel.
 	Id any
-	// Specifies the CloudWatch Logs log group that captures access logs for incoming requests to the MediaPackage channel's ingress endpoints. (AI-inferred)
 	IngressAccessLogs any
 	// A collection of tags associated with a resource
 	Tags any

@@ -20,9 +20,7 @@ class ScalingAutoScalingGroup_AvailabilityZoneImpairmentPolicy:
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_CapacityReservationSpecification_CapacityReservationTarget:
-    # Lists the IDs of the Capacity Reservations that the Auto Scaling group targets when launching instances, enabling the group to use multiple specific reservations. (AI-inferred)
     capacity_reservation_ids: Any = None
-    # Specifies a list of ARNs of resource groups that have EC2 Capacity Reservations, which the Auto Scaling group targets when launching instances to use those reserved capacity resources. (AI-inferred)
     capacity_reservation_resource_group_arns: Any = None
 
 @dataclasses.dataclass
@@ -60,26 +58,17 @@ class ScalingAutoScalingGroup_LaunchTemplate:
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_LifecycleHookSpecificationList:
-    # Specifies the action (either 'CONTINUE' or 'ABANDON') that the Auto Scaling group takes when the lifecycle hook times out or if an unexpected failure occurs. (AI-inferred)
     default_result: Any = None
-    # Specifies the maximum time, in seconds, that an instance can remain in a waiting state before the lifecycle hook times out and the Auto Scaling group proceeds with the action. (AI-inferred)
     heartbeat_timeout: Any = None
-    # The name of the lifecycle hook, which must be unique within the Auto Scaling group and is used to identify the hook for lifecycle actions and CloudWatch events. (AI-inferred)
     lifecycle_hook_name: Any = None
-    # The lifecycle transition type (autoscaling:EC2_INSTANCE_LAUNCHING or autoscaling:EC2_INSTANCE_TERMINATING) that triggers the lifecycle hook. (AI-inferred)
     lifecycle_transition: Any = None
-    # The optional metadata string that AWS includes in the notification sent to the SNS topic or Lambda function when the lifecycle hook triggers. (AI-inferred)
     notification_metadata: Any = None
-    # The ARN of the Amazon SNS topic or Amazon SQS queue that Amazon EC2 Auto Scaling sends lifecycle hook notifications to when an instance enters a wait state. (AI-inferred)
     notification_target_arn: Any = None
-    # The ARN of the IAM role that the Auto Scaling group assumes to publish lifecycle hook notifications to the specified notification target (e.g., SNS topic or SQS queue). (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MetricsCollection:
-    # Specifies the granularity (currently only '1Minute') at which CloudWatch metrics are collected for the Auto Scaling group as part of a metrics collection configuration. (AI-inferred)
     granularity: Any = None
-    # The list of Auto Scaling group metrics to collect (such as GroupMinSize, GroupMaxSize, GroupInServiceInstances, etc.) when this metrics collection is enabled. (AI-inferred)
     metrics: Any = None
 
 @dataclasses.dataclass
@@ -99,90 +88,55 @@ class ScalingAutoScalingGroup_MixedInstancesPolicy_InstancesDistribution:
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_AcceleratorCount:
-    # Specifies the maximum number of accelerators (GPUs) that an instance type must have to be eligible for the Auto Scaling group's mixed instances policy. (AI-inferred)
     max: Any = None
-    # The minimum number of accelerators (such as GPUs) that an instance type must have to be eligible for the Auto Scaling group's mixed instances policy override. (AI-inferred)
     min: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu_References:
-    # Specifies an EC2 instance family (such as 'c5' or 'm5') to use as a CPU baseline performance reference when the Auto Scaling group evaluates candidate instance types for the mixed instances policy. (AI-inferred)
     instance_family: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors_Cpu:
-    # Specifies a list of CPU performance factor references (such as Amazon vCPU) used by Auto Scaling to define baseline CPU performance requirements when selecting instance types for the mixed instances policy launch template overrides. (AI-inferred)
     references: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements_BaselinePerformanceFactors:
-    # Defines the baseline CPU performance threshold used by the Auto Scaling group's instance requirements to filter eligible instance types, ensuring instances meet a minimum CPU performance level. (AI-inferred)
     cpu: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides_InstanceRequirements:
-    # Defines the minimum and maximum number of accelerators (such as GPUs or FPGAs) that an instance type must have to be considered for the mixed instances policy launch template overrides. (AI-inferred)
     accelerator_count: Any = None
-    # Specifies the list of hardware accelerator (GPU) manufacturers (e.g., 'nvidia', 'amd', 'xilinx') that instance types must have to satisfy the instance requirements for the mixed instances policy launch template override. (AI-inferred)
     accelerator_manufacturers: Any = None
-    # Specifies the names of GPU accelerators (e.g., a100, v100) that instance types must have, used to filter which instance types satisfy the requirements. (AI-inferred)
     accelerator_names: Any = None
-    # The range of total GPU accelerator memory (in MiB) that an instance must have to match the instance requirements for this Auto Scaling group's mixed instances launch template override. (AI-inferred)
     accelerator_total_memory_mi_b: Any = None
-    # The kinds of hardware accelerators (such as GPU or FPGA) that must be present on the instance types considered for this launch template override in the mixed instances policy. (AI-inferred)
     accelerator_types: Any = None
-    # Specifies the list of instance types that the Auto Scaling group is allowed to use when launching instances, restricting the selection to only these types within the instance requirements of a launch template override. (AI-inferred)
     allowed_instance_types: Any = None
-    # Specifies whether bare metal EC2 instance types are included, excluded, or required when Auto Scaling selects instance types for the mixed instances policy, filtering eligible instance types by the bare metal attribute. (AI-inferred)
     bare_metal: Any = None
-    # The minimum and maximum baseline EBS bandwidth in Mbps an instance must support to be included in the auto scaling group's instance requirements overrides. (AI-inferred)
     baseline_ebs_bandwidth_mbps: Any = None
-    # Defines the baseline performance factors (such as CPU and memory) that instance types must meet when selected through the mixed instances policy's instance requirements. (AI-inferred)
     baseline_performance_factors: Any = None
-    # Specifies whether the Auto Scaling group's instance requirements include burstable performance instance types (such as T2 and T3), accepting values like 'included', 'excluded', or 'required'. (AI-inferred)
     burstable_performance: Any = None
-    # Restricts the eligible instance types to those using the specified CPU manufacturer(s) (e.g., 'intel', 'amd', or 'amazon-web-services') when the Auto Scaling group evaluates instance requirements for mixed instances. (AI-inferred)
     cpu_manufacturers: Any = None
-    # Specifies a list of instance types to explicitly exclude from the set of instance types that satisfy the instance requirements for the Auto Scaling group's mixed instances policy launch template override. (AI-inferred)
     excluded_instance_types: Any = None
-    # Specifies which instance generations (current or previous) are accepted for the instance types Auto Scaling may choose from when launching instances under the mixed instances policy, accepting values 'current' and 'previous'. (AI-inferred)
     instance_generations: Any = None
-    # Determines whether the selected instance types must have local instance storage (values: 'included', 'excluded', 'required', 'optional'), influencing which EC2 instance types are eligible for use in this Auto Scaling group's mixed instances policy. (AI-inferred)
     local_storage: Any = None
-    # Filters the eligible instance types for the launch template's instance requirements to those with the specified local storage types, such as 'hdd' or 'ssd'. (AI-inferred)
     local_storage_types: Any = None
-    # Specifies the maximum price you are willing to pay for a Spot Instance as a percentage of the optimal On-Demand price, filtering eligible instance types in the mixed instances policy's instance requirements. (AI-inferred)
     max_spot_price_as_percentage_of_optimal_on_demand_price: Any = None
-    # Specifies the memory-per-vCPU constraints (in GiB) for instance types allowed by this override, expressed as an object with optional Min and Max values that filter eligible instances for the Auto Scaling group's mixed instances policy. (AI-inferred)
     memory_gi_bper_vcpu: Any = None
-    # Specifies the minimum and maximum memory size in MiB that an instance must have to be considered for use in the Auto Scaling group's mixed instances policy. (AI-inferred)
     memory_mi_b: Any = None
-    # Specifies the minimum and maximum network bandwidth in Gigabits per second (Gbps) that an instance type must meet to be eligible for the Auto Scaling group's mixed instances policy. (AI-inferred)
     network_bandwidth_gbps: Any = None
-    # Specifies the minimum and maximum number of network interfaces that instance types must support, used to filter eligible instance types in the Auto Scaling group's mixed instances policy. (AI-inferred)
     network_interface_count: Any = None
-    # Sets the maximum price you are willing to pay for On-Demand Instances as a percentage above the lowest-priced instance type that satisfies the instance requirements, filtering out instance types whose on-demand price exceeds that threshold. (AI-inferred)
     on_demand_max_price_percentage_over_lowest_price: Any = None
-    # Indicates whether eligible instance types must support EC2 hibernation, so that only instances capable of hibernation are considered for the Auto Scaling group. (AI-inferred)
     require_hibernate_support: Any = None
-    # Specifies the maximum price you are willing to pay for a Spot Instance, as a percentage over the lowest price for the instance type, which controls the Spot Instance types selected for the Auto Scaling group. (AI-inferred)
     spot_max_price_percentage_over_lowest_price: Any = None
-    # Sets the minimum and maximum total local storage (in GB) for instance types eligible in the mixed instances policy, derived from the instance requirements of each launch template override. (AI-inferred)
     total_local_storage_gb: Any = None
-    # Defines the required vCPU count range (minimum and maximum) that an instance type must meet to be considered when using instance requirements to select instance types for the mixed instances policy. (AI-inferred)
     vcpu_count: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_MixedInstancesPolicy_LaunchTemplate_Overrides:
-    # Specifies the AMI ID to use for the override, letting you run different instance types with different Amazon Machine Images within the same Auto Scaling group. (AI-inferred)
     image_id: Any = None
-    # Specifies a set of instance requirements (such as vCPU count, memory, storage, and network performance) that Amazon EC2 Auto Scaling uses to select suitable instance types for the mixed instances policy, rather than a fixed instance type. (AI-inferred)
     instance_requirements: Any = None
-    # Specifies an EC2 instance type to include as an override in the mixed instances policy, so the Auto Scaling group can launch instances of that type in addition to the launch template's default type. (AI-inferred)
     instance_type: Any = None
-    # Specifies the launch template and version to use for each override in a mixed instances policy, letting different instance types or instance requirements reference different launch templates. (AI-inferred)
     launch_template_specification: Any = None
-    # Specifies the relative capacity that this instance type contributes to the Auto Scaling group's desired capacity when using a mixed instances policy, allowing you to scale proportionally across instance types. (AI-inferred)
     weighted_capacity: Any = None
 
 @dataclasses.dataclass
@@ -208,18 +162,13 @@ class ScalingAutoScalingGroup_NotificationConfiguration:
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_Tags:
-    # The key (name) of a tag to associate with the Auto Scaling group, which can be automatically propagated to instances launched by the group. (AI-inferred)
     key: Any = None
-    # Indicates whether to propagate the tag to instances launched by the Auto Scaling group. (AI-inferred)
     propagate_at_launch: Any = None
-    # The value portion of a tag attached to the Auto Scaling group, used to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroup_TrafficSources:
-    # The identifier of the traffic source to attach to the Auto Scaling group, which is the load balancer name for Classic Load Balancers and the ARN for Application, Network, or Gateway Load Balancers and VPC Lattice target groups. (AI-inferred)
     identifier: Any = None
-    # The type of the traffic source identifier, indicating the kind of load balancer or target group (e.g., 'elb' for Classic Load Balancer, 'elbv2' for Application/Network Load Balancer, or 'vpc-lattice' for VPC Lattice) that the Auto Scaling group is attached to; it must be used together with the corresponding Identifier to fully specify the traffic source. (AI-inferred)
     type: Any = None
 
 _ScalingAutoScalingGroup_AvailabilityZoneDistributionFields = {
@@ -509,7 +458,6 @@ class ScalingAutoScalingGroupConfig:
     placement_group: Any = None
     # The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS service on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named ``AWSServiceRoleForAutoScaling``, which it creates if it does not exist. For more information, see [Service-linked roles](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) in the *Amazon EC2 Auto Scaling User Guide*.
     service_linked_role_arn: Any = None
-    # When set to `true`, this flag skips the Auto Scaling group's validation that checks whether its Availability Zone configuration is eligible for zonal shift, allowing the group to be created or updated even if it doesn't meet the zonal shift prerequisites. (AI-inferred)
     skip_zonal_shift_validation: Any = None
     # One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see [Tag Auto Scaling groups and instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html) in the *Amazon EC2 Auto Scaling User Guide*.
     tags: Any = None
@@ -524,7 +472,6 @@ class ScalingAutoScalingGroupConfig:
 
 @dataclasses.dataclass
 class ScalingAutoScalingGroupAttrs:
-    # The ARN (Amazon Resource Name) that uniquely identifies the Auto Scaling group, automatically assigned by AWS and exposed as a read-only computed value. (AI-inferred)
     auto_scaling_group_arn: Any = None
     # The name of the Auto Scaling group. This name must be unique per Region per account. The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and lowercased letters. You cannot use a colon (:) in the name.
     auto_scaling_group_name: Any = None
@@ -590,7 +537,6 @@ class ScalingAutoScalingGroupAttrs:
     placement_group: Any = None
     # The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS service on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named ``AWSServiceRoleForAutoScaling``, which it creates if it does not exist. For more information, see [Service-linked roles](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) in the *Amazon EC2 Auto Scaling User Guide*.
     service_linked_role_arn: Any = None
-    # When set to `true`, this flag skips the Auto Scaling group's validation that checks whether its Availability Zone configuration is eligible for zonal shift, allowing the group to be created or updated even if it doesn't meet the zonal shift prerequisites. (AI-inferred)
     skip_zonal_shift_validation: Any = None
     # One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS volumes, specify the tags in a launch template but use caution. If the launch template specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling overrides the value of that instance tag with the value specified by the Auto Scaling group. For more information, see [Tag Auto Scaling groups and instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html) in the *Amazon EC2 Auto Scaling User Guide*.
     tags: Any = None

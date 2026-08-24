@@ -4,9 +4,7 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WatchDashboard_Tags struct {
-	// The key of a tag attached to the CloudWatch dashboard, used to identify and categorize the dashboard for resource management and cost allocation. (AI-inferred)
 	Key any
-	// Specifies the value for a tag key applied to the CloudWatch dashboard for resource organization and identification. (AI-inferred)
 	Value any
 }
 

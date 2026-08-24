@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CacheSubnetGroup_Tags {
-  /** The tag key assigned to the ElastiCache subnet group, used to categorize and manage the resource through AWS tagging features. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Defines the value of a user-defined tag assigned to the ElastiCache subnet group, used for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -20,7 +18,6 @@ export interface CacheSubnetGroupConfig {
   description: string | Computed<string>;
   /** The EC2 subnet IDs for the cache subnet group. */
   subnetIds: string[] | Computed<string[]>;
-  /** A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred) */
   tags?: CacheSubnetGroup_Tags[] | Computed<CacheSubnetGroup_Tags[]>;
 }
 
@@ -31,7 +28,6 @@ export interface CacheSubnetGroupAttrs {
   description: string;
   /** The EC2 subnet IDs for the cache subnet group. */
   subnetIds: string[];
-  /** A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred) */
   tags: CacheSubnetGroup_Tags[];
 }
 

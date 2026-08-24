@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LatticeResourcePolicyConfig:
-    # The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred)
     policy: Any = None
-    # The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred)
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class LatticeResourcePolicyAttrs:
-    # The JSON policy document that defines the permissions for the VPC Lattice resource, such as a service network or service, controlling which principals can access the resource. (AI-inferred)
     policy: Any = None
-    # The Amazon Resource Name (ARN) of the VPC Lattice resource (such as a service or service network) to which this resource policy is attached. (AI-inferred)
     resource_arn: Any = None
 
 LatticeResourcePolicy = ubx.ResourceBinding(

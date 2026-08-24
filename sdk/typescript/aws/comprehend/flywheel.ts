@@ -2,33 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Flywheel_DataSecurityConfig_VpcConfig {
-  /** A list of security group IDs to associate with the VPC configuration for the AWS Comprehend Flywheel, controlling network access to the resources used by the flywheel. (AI-inferred) */
   securityGroupIds: string[] | Computed<string[]>;
-  /** The list of subnet IDs within the specified VPC where the Amazon Comprehend flywheel launches its resources to enable private, secure communication with other AWS services. (AI-inferred) */
   subnets: string[] | Computed<string[]>;
 }
 
 export interface Flywheel_DataSecurityConfig {
-  /** The AWS KMS key ID used to encrypt the data lake S3 bucket that stores flywheel training data and model artifacts. (AI-inferred) */
   dataLakeKmsKeyId?: string | Computed<string>;
-  /** Specifies the AWS KMS key ARN or ID used to encrypt the model artifacts (trained models) associated with the flywheel. (AI-inferred) */
   modelKmsKeyId?: string | Computed<string>;
-  /** The AWS KMS key ID used to encrypt the storage volume attached to the compute resources for the flywheel's training and evaluation jobs. (AI-inferred) */
   volumeKmsKeyId?: string | Computed<string>;
-  /** Specifies the VPC configuration (subnets and security group IDs) for the flywheel, enabling it to access resources within a private network for secure data processing and storage. (AI-inferred) */
   vpcConfig?: Flywheel_DataSecurityConfig_VpcConfig | Computed<Flywheel_DataSecurityConfig_VpcConfig>;
 }
 
 export interface Flywheel_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Amazon Comprehend flywheel, used to identify and organize the resource, optionally for cost allocation and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Flywheel_TaskConfig_DocumentClassificationConfig {
-  /** Defines the list of labels (classes) that the flywheel's document classification task uses to categorize input documents, such as in a custom classifier. (AI-inferred) */
   labels?: string[] | Computed<string[]>;
-  /** Specifies the document classification mode, either MULTI_CLASS to assign exactly one class per document or MULTI_LABEL to assign one or more labels per document. (AI-inferred) */
   mode: string | Computed<string>;
 }
 
@@ -37,16 +28,12 @@ export interface Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypes {
 }
 
 export interface Flywheel_TaskConfig_EntityRecognitionConfig {
-  /** For this flywheel's entity recognition task, defines the list of custom entity types (e.g., PRODUCT, PERSON) that the model will recognize or be trained to extract from text. (AI-inferred) */
   entityTypes?: Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypes[] | Computed<Flywheel_TaskConfig_EntityRecognitionConfig_EntityTypes[]>;
 }
 
 export interface Flywheel_TaskConfig {
-  /** This object configures the document classification task of the flywheel, specifying the classification mode (MULTI_CLASS or MULTI_LABEL) and, for multi-label mode, the delimiter used to separate labels in the training data. (AI-inferred) */
   documentClassificationConfig?: Flywheel_TaskConfig_DocumentClassificationConfig | Computed<Flywheel_TaskConfig_DocumentClassificationConfig>;
-  /** This object configures the entity recognition task for the flywheel, specifying the custom entity types that the model is trained to detect. (AI-inferred) */
   entityRecognitionConfig?: Flywheel_TaskConfig_EntityRecognitionConfig | Computed<Flywheel_TaskConfig_EntityRecognitionConfig>;
-  /** The language code (e.g., 'en') that specifies the language of the input data for the flywheel's configured task, such as document classification or entity recognition. (AI-inferred) */
   languageCode: string | Computed<string>;
 }
 
@@ -103,42 +90,25 @@ const Flywheel_TaskConfigFields: FieldMap = {
 };
 
 export interface FlywheelConfig {
-  /** The Amazon Resource Name (ARN) of the model that is currently active for the flywheel, used for performing inference and can be updated to switch to a different trained model version. (AI-inferred) */
   activeModelArn?: string | Computed<string>;
-  /** The ARN of the IAM role that allows Amazon Comprehend to access the data (e.g., S3 buckets) used for training and evaluating models in the flywheel. (AI-inferred) */
   dataAccessRoleArn: string | Computed<string>;
-  /** The S3 URI of the data lake that the flywheel uses as its central repository for training data and documents during model training and continuous learning. (AI-inferred) */
   dataLakeS3Uri: string | Computed<string>;
-  /** Configures encryption and network isolation for the flywheel by specifying optional KMS key ARNs for the model, volume, and data lake, along with an optional VPC configuration for private VPC access. (AI-inferred) */
   dataSecurityConfig?: Flywheel_DataSecurityConfig | Computed<Flywheel_DataSecurityConfig>;
-  /** The unique name that identifies the Amazon Comprehend flywheel. (AI-inferred) */
   flywheelName: string | Computed<string>;
-  /** Specifies the type of custom model the flywheel is configured for, either DOCUMENT_CLASSIFIER for document classification or ENTITY_RECOGNIZER for entity recognition. (AI-inferred) */
   modelType?: string | Computed<string>;
-  /** A list of tags (key-value pairs) to assign to the flywheel for metadata and cost tracking, as supported by AWS Comprehend. (AI-inferred) */
   tags?: Flywheel_Tags[] | Computed<Flywheel_Tags[]>;
-  /** Specifies the configuration for the natural language processing task that the flywheel will support, including the language code and task-specific settings such as document classification or entity recognition configurations. (AI-inferred) */
   taskConfig?: Flywheel_TaskConfig | Computed<Flywheel_TaskConfig>;
 }
 
 export interface FlywheelAttrs {
-  /** The Amazon Resource Name (ARN) of the model that is currently active for the flywheel, used for performing inference and can be updated to switch to a different trained model version. (AI-inferred) */
   activeModelArn: string;
-  /** The Amazon Resource Name (ARN) of the dedicated flywheel, automatically assigned by AWS when the flywheel is created and used to reference this flywheel in IAM policies, resource relationships, and Amazon Comprehend API operations. (AI-inferred) */
   arn: string;
-  /** The ARN of the IAM role that allows Amazon Comprehend to access the data (e.g., S3 buckets) used for training and evaluating models in the flywheel. (AI-inferred) */
   dataAccessRoleArn: string;
-  /** The S3 URI of the data lake that the flywheel uses as its central repository for training data and documents during model training and continuous learning. (AI-inferred) */
   dataLakeS3Uri: string;
-  /** Configures encryption and network isolation for the flywheel by specifying optional KMS key ARNs for the model, volume, and data lake, along with an optional VPC configuration for private VPC access. (AI-inferred) */
   dataSecurityConfig: Flywheel_DataSecurityConfig;
-  /** The unique name that identifies the Amazon Comprehend flywheel. (AI-inferred) */
   flywheelName: string;
-  /** Specifies the type of custom model the flywheel is configured for, either DOCUMENT_CLASSIFIER for document classification or ENTITY_RECOGNIZER for entity recognition. (AI-inferred) */
   modelType: string;
-  /** A list of tags (key-value pairs) to assign to the flywheel for metadata and cost tracking, as supported by AWS Comprehend. (AI-inferred) */
   tags: Flywheel_Tags[];
-  /** Specifies the configuration for the natural language processing task that the flywheel will support, including the language code and task-specific settings such as document classification or entity recognition configurations. (AI-inferred) */
   taskConfig: Flywheel_TaskConfig;
 }
 

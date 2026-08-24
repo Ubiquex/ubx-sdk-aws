@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Registry_Tags {
-  /** The tag key part of a key-value pair used to tag an AWS Glue registry, enabling you to categorize and filter the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag attached to this AWS Glue registry, used to categorize, identify, or manage the registry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

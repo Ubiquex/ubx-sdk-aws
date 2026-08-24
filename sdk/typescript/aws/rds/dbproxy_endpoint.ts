@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbproxyEndpoint_Tags {
-  /** The key of a user-defined tag assigned to the RDS DB Proxy endpoint for identification and resource management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -4,7 +4,6 @@ package amazon
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MqConfiguration_Tags struct {
-	// The key of a tag attached to the Amazon MQ configuration, used to identify and organize the resource. (AI-inferred)
 	Key any
 	Value any
 }

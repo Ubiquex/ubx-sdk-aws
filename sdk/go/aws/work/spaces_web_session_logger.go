@@ -5,31 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesWebSessionLogger_EventFilter struct {
 	All any
-	// The list of event type strings that the session logger should include in its log output, filtering out any session events not matching these values. (AI-inferred)
 	Include any
 }
 
 type SpacesWebSessionLogger_LogConfiguration_S3 struct {
-	// The name of the S3 bucket that receives WorkSpaces Web session logs. (AI-inferred)
 	Bucket any
-	// Specifies the AWS account ID of the S3 bucket owner, used to validate access when delivering session logs to an S3 bucket owned by a different account. (AI-inferred)
 	BucketOwner any
-	// Specifies the hierarchical folder layout used to store session log files in the S3 bucket, typically a date-based pattern (e.g., yyyy/MM/dd/HH/) that controls how logs are partitioned in the bucket. (AI-inferred)
 	FolderStructure any
-	// The S3 object key prefix under which session logger log files are stored in the configured S3 bucket. (AI-inferred)
 	KeyPrefix any
-	// Specifies the file format (TEXT or JSON) for WorkSpaces Web session logs delivered to the configured Amazon S3 bucket. (AI-inferred)
 	LogFileFormat any
 }
 
 type SpacesWebSessionLogger_LogConfiguration struct {
-	// Configures the S3 bucket and key prefix that serves as the destination for WorkSpaces Web session logs when S3 is the selected log output type. (AI-inferred)
 	S3 any
 }
 
 type SpacesWebSessionLogger_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the WorkSpaces Web session logger, used to organize and manage the resource. (AI-inferred)
 	Value any
 }
 
@@ -60,10 +52,8 @@ var SpacesWebSessionLogger_TagsFields = ubx.FieldMap{
 	}
 
 type SpacesWebSessionLoggerConfig struct {
-	// A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
 	AdditionalEncryptionContext any
 	CustomerManagedKey any
-	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
 	EventFilter any
 	LogConfiguration any
@@ -71,18 +61,13 @@ type SpacesWebSessionLoggerConfig struct {
 }
 
 type SpacesWebSessionLoggerAttrs struct {
-	// A map of key-value pairs that serve as additional encryption context for the KMS key used to encrypt session log data, providing extra authenticated data to the encryption/decryption process. (AI-inferred)
 	AdditionalEncryptionContext any
-	// The ARNs of the WorkSpaces Web portals to which this session logger is associated. (AI-inferred)
 	AssociatedPortalArns any
-	// The date and time when the WorkSpaces Web session logger configuration was created, returned as an ISO 8601 formatted string. (AI-inferred)
 	CreationDate any
 	CustomerManagedKey any
-	// Specifies the display name for the session logger, providing a human-readable identifier for this logging configuration in the AWS Management Console and CloudFormation stacks. (AI-inferred)
 	DisplayName any
 	EventFilter any
 	LogConfiguration any
-	// The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web session logger and is used to attach the logger to a WorkSpaces Web portal for session logging. (AI-inferred)
 	SessionLoggerArn any
 	Tags any
 }

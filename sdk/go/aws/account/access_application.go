@@ -11,7 +11,6 @@ type AccessApplication_IdentitySource_IdentityCenter struct {
 }
 
 type AccessApplication_IdentitySource struct {
-	// Specifies the AWS IAM Identity Center (successor to AWS SSO) instance to be used as the identity source for the access application, including the required Identity Center ARN. (AI-inferred)
 	IdentityCenter any
 }
 
@@ -35,7 +34,6 @@ type AccessApplicationAttrs struct {
 	ApplicationArn any
 	// The timestamp when the application was created
 	CreatedAt any
-	// The computed identity source object that describes how the access application determines identities, including the source type and the associated IAM Identity Center instance ARN when applicable. (AI-inferred)
 	IdentitySource any
 	// The status of the application
 	Status any

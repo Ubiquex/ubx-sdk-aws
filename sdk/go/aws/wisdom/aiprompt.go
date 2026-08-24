@@ -4,12 +4,10 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfiguration struct {
-	// The prompt template text used in the full AI prompt edit configuration, defining the instructions or content for the AI prompt. (AI-inferred)
 	Text any
 }
 
 type Aiprompt_TemplateConfiguration struct {
-	// Configuration object for the text-based full AI prompt editing template, which contains the prompt text string used as the template content in AWS Wisdom AI prompts. (AI-inferred)
 	TextFullAipromptEditTemplateConfiguration any
 }
 
@@ -26,47 +24,29 @@ var Aiprompt_TemplateConfigurationFields = ubx.FieldMap{
 	}
 
 type AipromptConfig struct {
-	// The API format for the AI prompt, indicating whether the model invocation uses TEXT for a single-turn prompt or CHAT for a chat-based multi-turn conversation. (AI-inferred)
 	ApiFormat any
-	// The unique identifier of the Amazon Wisdom assistant with which this AI prompt is associated. (AI-inferred)
 	AssistantId any
-	// The description field provides an optional, free-text summary of the AI prompt's intended purpose, which can be used for identification and display within Amazon Q in Connect (Wisdom). (AI-inferred)
 	Description any
-	// The model_id field specifies the identifier (such as an ARN) of the underlying model that the Wisdom AI prompt uses to generate responses. (AI-inferred)
 	ModelId any
-	// The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
 	Name any
 	Tags any
-	// Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
 	TemplateConfiguration any
-	// Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
 	TemplateType any
 	Type any
 }
 
 type AipromptAttrs struct {
-	// This read-only attribute holds the Amazon Resource Name (ARN) that uniquely identifies the AWS Wisdom AI prompt resource. (AI-inferred)
 	AipromptArn any
-	// The unique identifier that AWS Wisdom assigns to the AI prompt, returned by the service after the resource is created. (AI-inferred)
 	AipromptId any
-	// The API format for the AI prompt, indicating whether the model invocation uses TEXT for a single-turn prompt or CHAT for a chat-based multi-turn conversation. (AI-inferred)
 	ApiFormat any
-	// The Amazon Resource Name (ARN) of the Amazon Wisdom assistant associated with this AI prompt, provided as a read-only computed attribute. (AI-inferred)
 	AssistantArn any
-	// The unique identifier of the Amazon Wisdom assistant with which this AI prompt is associated. (AI-inferred)
 	AssistantId any
-	// The description field provides an optional, free-text summary of the AI prompt's intended purpose, which can be used for identification and display within Amazon Q in Connect (Wisdom). (AI-inferred)
 	Description any
-	// The model_id field specifies the identifier (such as an ARN) of the underlying model that the Wisdom AI prompt uses to generate responses. (AI-inferred)
 	ModelId any
-	// The Unix epoch time, in seconds, when the AI prompt was last modified. (AI-inferred)
 	ModifiedTimeSeconds any
-	// The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
 	Name any
 	Tags any
-	// Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
 	TemplateConfiguration any
-	// Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
 	TemplateType any
 	Type any
 }

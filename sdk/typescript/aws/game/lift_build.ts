@@ -36,7 +36,6 @@ export interface LiftBuildConfig {
   operatingSystem?: string | Computed<string>;
   /** A server SDK version you used when integrating your game server build with Amazon GameLift. By default Amazon GameLift sets this value to 4.0.2. */
   serverSdkVersion?: string | Computed<string>;
-  /** The S3 bucket and object key where the build's game build files are stored, along with the IAM role ARN that GameLift assumes to access the files. (AI-inferred) */
   storageLocation?: LiftBuild_StorageLocation | Computed<LiftBuild_StorageLocation>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: LiftBuild_Tags[] | Computed<LiftBuild_Tags[]>;
@@ -55,7 +54,6 @@ export interface LiftBuildAttrs {
   operatingSystem: string;
   /** A server SDK version you used when integrating your game server build with Amazon GameLift. By default Amazon GameLift sets this value to 4.0.2. */
   serverSdkVersion: string;
-  /** The S3 bucket and object key where the build's game build files are stored, along with the IAM role ARN that GameLift assumes to access the files. (AI-inferred) */
   storageLocation: LiftBuild_StorageLocation;
   /** An array of key-value pairs to apply to this resource. */
   tags: LiftBuild_Tags[];

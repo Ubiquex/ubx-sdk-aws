@@ -22,7 +22,6 @@ type AgentCoreDataset_Source struct {
 
 type AgentCoreDataset_Tags struct {
 	Key any
-	// The value of a user-defined tag applied to the Amazon Bedrock Agent Core Dataset, used to help identify, organize, and manage this dataset resource. (AI-inferred)
 	Value any
 }
 

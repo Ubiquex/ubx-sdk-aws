@@ -21,146 +21,95 @@ type TeventsAlarmModel_AlarmCapabilities struct {
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_DynamoDb_Payload struct {
-	// Defines the content of the DynamoDB payload in the alarm action by evaluating a string expression that can include variables such as alarm state, input variables, and other contextual data at the time the alarm action executes. (AI-inferred)
 	ContentExpression any
-	// The type of payload for the DynamoDB alarm action, specifying whether the content expression is formatted as JSON or as a string. (AI-inferred)
 	Type any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_DynamoDb struct {
-	// The name of the hash key (partition key) column in the Amazon DynamoDB table where AWS IoT Events writes the alarm event data. (AI-inferred)
 	HashKeyField any
-	// Specifies the data type of the hash key value (e.g., 'STRING' or 'NUMBER') that is written to the DynamoDB table when the alarm action triggers. (AI-inferred)
 	HashKeyType any
-	// The value to use for the partition (hash) key when this alarm event's DynamoDB action writes a record to the configured table, which can be a literal string or an expression evaluated from the alarm input payload. (AI-inferred)
 	HashKeyValue any
-	// Specifies the DynamoDB operation (such as INSERT, UPDATE, or DELETE) that the alarm action performs on the table. (AI-inferred)
 	Operation any
-	// Defines the content and format of the payload sent to the DynamoDB table, specifying the expression and payload type (JSON or STRING) for the DynamoDB action in the alarm's event actions. (AI-inferred)
 	Payload any
-	// Specifies the name of the DynamoDB table column that receives the action payload for this DynamoDB alarm action. (AI-inferred)
 	PayloadField any
-	// Specifies the name of the range key column in the target Amazon DynamoDB table where the IoT Events alarm action writes the alarm data. (AI-inferred)
 	RangeKeyField any
-	// Specifies the data type of the range key for the DynamoDB table entry written by this alarm action, with allowed values 'STRING' or 'NUMBER'. (AI-inferred)
 	RangeKeyType any
-	// Specifies the value to write to the range (sort) key attribute of the DynamoDB table when this alarm event triggers the DynamoDB action. (AI-inferred)
 	RangeKeyValue any
-	// The name of the Amazon DynamoDB table to which the alarm action writes data when triggered. (AI-inferred)
 	TableName any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_DynamoDbv2 struct {
-	// Defines the payload (content expression and type) sent to the DynamoDB table via the DynamoDBv2 action when the alarm event is triggered. (AI-inferred)
 	Payload any
-	// The name of the DynamoDB table to which the alarm data is written by this DynamoDBv2 action. (AI-inferred)
 	TableName any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_Firehose struct {
-	// Specifies the name of the Amazon Kinesis Data Firehose delivery stream that receives the alarm event data when this Firehose action is triggered from the alarm model's alarm event actions. (AI-inferred)
 	DeliveryStreamName any
-	// Defines the body of the message that is sent to the Amazon Kinesis Data Firehose delivery stream when an alarm triggers the Firehose action, using a content expression and payload type. (AI-inferred)
 	Payload any
-	// The separator string (such as a newline or comma) that is inserted between the payloads of multiple alarm events when they are delivered to the Kinesis Data Firehose stream. (AI-inferred)
 	Separator any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotEvents struct {
-	// The name of the AWS IoT Events input that the alarm action sends the alarm event data to. (AI-inferred)
 	InputName any
-	// The payload specifies the content of the input message sent to the AWS IoT Events detector model when the alarm action triggers, typically containing an expression that defines the message body. (AI-inferred)
 	Payload any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_Timestamp struct {
-	// The offset in nanoseconds past the associated second (time_in_seconds) that together form the full timestamp for the AWS IoT SiteWise asset property value written by the alarm action. (AI-inferred)
 	OffsetInNanos any
-	// Specifies the epoch time in seconds for the timestamp of the AWS IoT SiteWise property value written when the alarm action executes. (AI-inferred)
 	TimeInSeconds any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue_Value struct {
-	// The string representation of a boolean value ('true' or 'false') for the asset property that AWS IoT Events writes when an alarm action triggers an Iot SiteWise property value update. (AI-inferred)
 	BooleanValue any
-	// The double_value field specifies the double-precision floating-point value that gets sent to the AWS IoT SiteWise asset property as part of the alarm action's property value update. (AI-inferred)
 	DoubleValue any
-	// Sets the integer value to write to the specified AWS IoT SiteWise asset property when the alarm action is triggered, as a string representation of the integer. (AI-inferred)
 	IntegerValue any
-	// The string value to assign to the AWS IoT SiteWise asset property when the alarm action writes the property value, used when the property data type is STRING. (AI-inferred)
 	StringValue any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotSiteWise_PropertyValue struct {
-	// Sets the quality (GOOD, BAD, or UNCERTAIN) for the asset property value that the alarm action writes to AWS IoT SiteWise. (AI-inferred)
 	Quality any
-	// The timestamp object specifies the Unix epoch time (in seconds and optional nanosecond offset) associated with the asset property value sent to AWS IoT SiteWise from the alarm model's alarm actions. (AI-inferred)
 	Timestamp any
-	// The value object defines the actual data variant (string, integer, double, or boolean) to write to the AWS IoT SiteWise asset property when the alarm action is invoked. (AI-inferred)
 	Value any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotSiteWise struct {
-	// The ID of the AWS IoT SiteWise asset to which alarm data is written when an alarm event occurs. (AI-inferred)
 	AssetId any
-	// The unique identifier for the property value entry sent to AWS IoT SiteWise, which is used to deduplicate request entries and prevent duplicate data writes when the alarm action is triggered. (AI-inferred)
 	EntryId any
-	// Specifies the alias of the AWS IoT SiteWise asset property to which the alarm action sends data (alarm state or value) when the alarm event occurs. (AI-inferred)
 	PropertyAlias any
-	// The ID of the AWS IoT SiteWise asset property that the alarm action writes alarm event data to. (AI-inferred)
 	PropertyId any
-	// Specifies the value to write to the AWS IoT SiteWise asset property when the alarm action executes, defined as an AssetPropertyValue structure that includes a Variant (such as integer, double, string, or boolean) and an optional timestamp. (AI-inferred)
 	PropertyValue any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_IotTopicPublish struct {
-	// The MQTT topic to which AWS IoT Events publishes the alarm state change payload when this IotTopicPublish action is triggered. (AI-inferred)
 	MqttTopic any
-	// Defines the content and format of the message payload sent to the AWS IoT Core MQTT topic by this alarm action, using an expression (e.g., a string or JSON object) that is evaluated to generate the published payload. (AI-inferred)
 	Payload any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_Lambda struct {
-	// The ARN of the Lambda function that AWS IoT Events invokes when the alarm action is triggered. (AI-inferred)
 	FunctionArn any
-	// Defines the payload sent to the AWS Lambda function when the alarm action triggers, including a content expression and a format type (JSON or STRING) that controls how alarm data is serialized in the invocation. (AI-inferred)
 	Payload any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_Sns struct {
-	// Configuration for the message payload sent to the SNS topic, including the content expression and payload type (STRING or JSON). (AI-inferred)
 	Payload any
-	// The ARN of the Amazon SNS topic to which the alarm action sends a notification when the alarm is triggered. (AI-inferred)
 	TargetArn any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions_Sqs struct {
-	// Defines the message body sent to the SQS queue, using a contentExpression that can reference alarm data and a type indicating whether the payload is a JSON or string. (AI-inferred)
 	Payload any
-	// The URL of the SQS queue to which the alarm action sends a message. (AI-inferred)
 	QueueUrl any
-	// Indicates whether to Base64-encode the message payload before sending it to the SQS queue in the alarm action. (AI-inferred)
 	UseBase64 any
 }
 
 type TeventsAlarmModel_AlarmEventActions_AlarmActions struct {
-	// Configuration for writing the alarm state to an Amazon DynamoDB table when the alarm changes state. (AI-inferred)
 	DynamoDb any
-	// Specifies a DynamoDB v2 action that writes alarm state data to an Amazon DynamoDB table. (AI-inferred)
 	DynamoDbv2 any
-	// Configuration for sending an alarm message to a Kinesis Data Firehose delivery stream, including the delivery stream name and an optional payload. (AI-inferred)
 	Firehose any
-	// Specifies the AWS IoT Events action that sends the alarm data to a target IoT Events input, including the required input name and optional payload configuration. (AI-inferred)
 	IotEvents any
-	// The IotSiteWise action configuration for alarm actions, which specifies the AWS IoT SiteWise asset property (by asset ID, property ID, or alias) to which the alarm state is written, optionally including an entry ID. (AI-inferred)
 	IotSiteWise any
-	// Specifies the IoT Topic Publish action parameters, including the MQTT topic to publish to and the payload message to send when the alarm is triggered. (AI-inferred)
 	IotTopicPublish any
-	// Specifies the AWS Lambda function (by ARN) and the input payload that AWS IoT Events invokes when the alarm is triggered. (AI-inferred)
 	Lambda any
-	// Specifies the SNS action details, including the target ARN and optional payload, used to send a notification when the alarm event occurs. (AI-inferred)
 	Sns any
-	// Defines an SQS (Simple Queue Service) action for the alarm event, specifying the target queue URL and optionally whether the message payload is base64-encoded, to which the alarm notification is sent. (AI-inferred)
 	Sqs any
 }
 
@@ -184,7 +133,6 @@ type TeventsAlarmModel_AlarmRule struct {
 }
 
 type TeventsAlarmModel_Tags struct {
-	// Defines the key portion of a tag attached to the AWS IoT Events alarm model, allowing you to categorize and identify the alarm model with custom metadata. (AI-inferred)
 	Key any
 	Value any
 }

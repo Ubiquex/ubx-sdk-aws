@@ -4,20 +4,14 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolReplicaConfig struct {
-	// Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred)
 	RegionName any
-	// The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred)
 	UserPoolId any
-	// Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred)
 	UserPoolTagsAtCreate any
 }
 
 type UserPoolReplicaAttrs struct {
-	// Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred)
 	RegionName any
-	// The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred)
 	UserPoolId any
-	// Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred)
 	UserPoolTagsAtCreate any
 }
 

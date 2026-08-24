@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Prompt_Tags:
-    # The key of a tag assigned to the AWS Connect prompt, used for identifying and categorizing the prompt resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

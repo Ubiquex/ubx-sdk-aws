@@ -8,32 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionsPolicy_Definition_Static:
-    # Provides a human-readable description of the static Cedar policy, documenting its purpose or intended effect within the AWS Verified Permissions policy definition. (AI-inferred)
     description: Any = None
-    # The Cedar policy statement text (in Cedar syntax) that defines the authorization rules for this static policy. (AI-inferred)
     statement: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicy_Definition_TemplateLinked_Principal:
-    # Specifies the unique identifier of the principal entity (within its entity type) to which the template-linked policy applies. (AI-inferred)
     entity_id: Any = None
-    # Specifies the entity type (e.g., 'User' or 'Group') of the principal to which the template-linked policy applies, used to bind the principal placeholder in the policy template. (AI-inferred)
     entity_type: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicy_Definition_TemplateLinked:
-    # Specifies the unique identifier of the policy template from which this template-linked policy is created, allowing the policy to inherit the template's statements and placeholders. (AI-inferred)
     policy_template_id: Any = None
-    # Specifies the principal (e.g., a user or group) to which the template-linked policy applies, identified by its entity type and ID, or the special value 'ANY' to match all principals. (AI-inferred)
     principal: Any = None
-    # Specifies the resource entity (by type and ID) that the template-linked policy applies to, filling in the resource placeholder from the Cedar policy template. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicy_Definition:
-    # The 'definition.static' object defines a static policy for AWS Verified Permissions, containing the Cedar policy statement text (Statement) and an optional AdditionalDetails field for supplementary information. (AI-inferred)
     static: Any = None
-    # Defines a policy that is created from a policy template, specifying the template ID and the principal and resource entities to which the template's placeholders are applied. (AI-inferred)
     template_linked: Any = None
 
 _PermissionsPolicy_Definition_StaticFields = {
@@ -75,22 +66,16 @@ _PermissionsPolicy_DefinitionFields = {
 
 @dataclasses.dataclass
 class PermissionsPolicyConfig:
-    # Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
     definition: Any = None
     name: Any = None
-    # The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred)
     policy_store_id: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyAttrs:
-    # Contains the policy's definition, either a static statement written in Cedar policy syntax or a template-linked reference to a policy template with a principal. (AI-inferred)
     definition: Any = None
     name: Any = None
-    # The unique identifier assigned by Amazon Verified Permissions to the policy when it is created, used to reference and manage the policy. (AI-inferred)
     policy_id: Any = None
-    # The unique identifier of the policy store in AWS Verified Permissions where this policy is created and to which it belongs. (AI-inferred)
     policy_store_id: Any = None
-    # The type of the policy (STATIC or TEMPLATE_LINKED), indicating whether the policy was defined directly or linked to a policy template. (AI-inferred)
     policy_type: Any = None
 
 PermissionsPolicy = ubx.ResourceBinding(

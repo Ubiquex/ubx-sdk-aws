@@ -4,11 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface WebApp_EndpointDetails_Vpc {
   /** The IP address type for the VPC endpoint used by the web app. */
   ipAddressType?: string | Computed<string>;
-  /** List of security group IDs applied to the VPC endpoint for the web app, controlling inbound and outbound traffic to the endpoint. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the subnets within the VPC where the AWS Transfer Family web app's endpoint is deployed, defining the network locations for private accessibility. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** The ID of the VPC to which the Transfer Family web app endpoint is attached, used when the endpoint is VPC-backed rather than public. (AI-inferred) */
   vpcId?: string | Computed<string>;
 }
 
@@ -18,7 +15,6 @@ export interface WebApp_EndpointDetails {
 }
 
 export interface WebApp_IdentityProviderDetails {
-  /** The ARN of the AWS Directory Service directory that serves as the identity provider for user authentication for this AWS Transfer Family web app. (AI-inferred) */
   applicationArn?: string | Computed<string>;
   /** The Amazon Resource Name (ARN) for the IAM Identity Center used for the web app. */
   instanceArn?: string | Computed<string>;
@@ -28,7 +24,6 @@ export interface WebApp_IdentityProviderDetails {
 
 export interface WebApp_Tags {
   key?: string | Computed<string>;
-  /** The user-defined value of a key-value tag attached to the AWS Transfer Family web app, used for metadata such as cost allocation or environment identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -42,7 +37,6 @@ export interface WebApp_WebAppCustomization {
 }
 
 export interface WebApp_WebAppUnits {
-  /** The number of provisioned web app units for this AWS Transfer Family web app, which determines the capacity and concurrency of the web app's endpoints. (AI-inferred) */
   provisioned?: number | Computed<number>;
 }
 
@@ -79,15 +73,11 @@ const WebApp_WebAppUnitsFields: FieldMap = {
 export interface WebAppConfig {
   /** The AccessEndpoint is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value. */
   accessEndpoint?: string | Computed<string>;
-  /** Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred) */
   endpointDetails?: WebApp_EndpointDetails | Computed<WebApp_EndpointDetails>;
   /** Key-value pairs that can be used to group and search for web apps. */
   tags?: WebApp_Tags[] | Computed<WebApp_Tags[]>;
-  /** Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred) */
   webAppCustomization?: WebApp_WebAppCustomization | Computed<WebApp_WebAppCustomization>;
-  /** Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred) */
   webAppEndpointPolicy?: string | Computed<string>;
-  /** Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred) */
   webAppUnits?: WebApp_WebAppUnits | Computed<WebApp_WebAppUnits>;
 }
 
@@ -96,21 +86,16 @@ export interface WebAppAttrs {
   accessEndpoint: string;
   /** Specifies the unique Amazon Resource Name (ARN) for the web app. */
   arn: string;
-  /** Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred) */
   endpointDetails: WebApp_EndpointDetails;
   /** You can provide a structure that contains the details for the identity provider to use with your web app. */
   identityProviderDetails: WebApp_IdentityProviderDetails;
   /** Key-value pairs that can be used to group and search for web apps. */
   tags: WebApp_Tags[];
-  /** The unique identifier of the VPC endpoint that the web app is associated with, used when the web app is deployed within a VPC. (AI-inferred) */
   vpcEndpointId: string;
-  /** Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred) */
   webAppCustomization: WebApp_WebAppCustomization;
-  /** Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred) */
   webAppEndpointPolicy: string;
   /** A unique identifier for the web app. */
   webAppId: string;
-  /** Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred) */
   webAppUnits: WebApp_WebAppUnits;
 }
 

@@ -8,34 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Framework_FrameworkControls_ControlInputParameters:
-    # Specifies the name of an input parameter for a control in an AWS Backup framework, such as requiredRetentionDays, which is passed to the control to customize its behavior. (AI-inferred)
     parameter_name: Any = None
-    # Specifies the value assigned to a control input parameter, customizing the framework control's behavior by providing configuration data such as thresholds, identifiers, or other control-specific settings. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
 class Framework_FrameworkControls_ControlScope_Tags:
-    # The tag key used to define the resource tag scope for a backup framework control, filtering which tagged resources the control applies to. (AI-inferred)
     key: Any = None
-    # The value of a tag used in the control scope, which restricts the framework control's evaluation to backup resources that carry that tag key-value pair. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Framework_FrameworkControls_ControlScope:
-    # The list of resource IDs (such as ARNs) that the control scope explicitly includes for compliance evaluation in the AWS Backup framework. (AI-inferred)
     compliance_resource_ids: Any = None
-    # The list of AWS resource types (e.g., 'AWS::Backup::RecoveryPoint') to which the Backup framework control's compliance scope applies, filtering which resources are evaluated by the control. (AI-inferred)
     compliance_resource_types: Any = None
-    # Specifies the tag key-value pairs that AWS Backup uses to scope the control, so that only resources matching these tags are included in the framework's compliance evaluation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Framework_FrameworkControls:
-    # Specifies the input parameters for a control within an AWS Backup framework, such as the retention period threshold that the control evaluates. (AI-inferred)
     control_input_parameters: Any = None
-    # The name of the backup framework control, which identifies the specific compliance rule (for example, BACKUP_RECOVERY_POINT_MANUAL_DELETION or BACKUP_RESOURCES_PROTECTED_BY_BACKUP_PLAN) that this framework control evaluates. (AI-inferred)
     control_name: Any = None
-    # Specifies the resource types and tags that determine which backup resources the framework control applies to. (AI-inferred)
     control_scope: Any = None
 
 _Framework_FrameworkControls_ControlInputParametersFields = {

@@ -17,7 +17,6 @@ class CacheServerlessCacheSnapshot_ServerlessCacheConfiguration:
 
 @dataclasses.dataclass
 class CacheServerlessCacheSnapshot_Tags:
-    # A user-defined key for a tag attached to this ElastiCache serverless cache snapshot, used for organizing and identifying the resource (e.g., by environment or project). (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -47,7 +46,6 @@ class CacheServerlessCacheSnapshotAttrs:
     create_time: Any = None
     # The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the snapshot. Provide the key ARN: the resource returns the key ARN on read, so supplying a bare key ID or alias for this createOnly property may be reported as drift by CloudFormation.
     kms_key_id: Any = None
-    # This read-only object describes the configuration of the serverless cache from which the snapshot was taken, capturing settings such as the cache engine and related parameters at snapshot time. (AI-inferred)
     serverless_cache_configuration: Any = None
     # The name of an existing serverless cache. The snapshot is created from this cache.
     serverless_cache_name: Any = None

@@ -2,34 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IdentityPool_CognitoIdentityProviders {
-  /** The app client ID of the user pool that is configured as an identity provider for the Cognito identity pool. (AI-inferred) */
   clientId?: string | Computed<string>;
-  /** The provider_name uniquely identifies the external identity provider (e.g., 'graph.facebook.com', 'accounts.google.com', or a Cognito user pool provider name) used in the identity pool's authentication flow. (AI-inferred) */
   providerName?: string | Computed<string>;
-  /** Specifies whether the identity pool performs a server-side check of the token from the associated Cognito user pool provider, which validates the token with the user pool independently. (AI-inferred) */
   serverSideTokenCheck?: boolean | Computed<boolean>;
 }
 
 export interface IdentityPool_CognitoStreams {
-  /** The ARN of the IAM role that Amazon Cognito assumes to publish identity pool events to the specified Kinesis stream. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The name of the Amazon Kinesis Firehose delivery stream that Cognito uses to deliver identity pool event data when streaming is enabled. (AI-inferred) */
   streamName?: string | Computed<string>;
-  /** Indicates whether delivery of stream events from the Cognito identity pool to Amazon Kinesis is enabled (ENABLED) or disabled (DISABLED). (AI-inferred) */
   streamingStatus?: string | Computed<string>;
 }
 
 export interface IdentityPool_IdentityPoolTags {
-  /** The tag key part of a key-value pair used to label an Amazon Cognito identity pool for resource management, cost tracking, and IAM-based access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the Amazon Cognito identity pool. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface IdentityPool_PushSync {
-  /** A list of Amazon Resource Names (ARNs) of the SNS platform applications that can be used to send push notifications to devices for Cognito Sync in the identity pool. (AI-inferred) */
   applicationArns?: string[] | Computed<string[]>;
-  /** The ARN of the IAM role that Amazon Cognito assumes to send push notifications to the app endpoints configured for the identity pool's push synchronization settings. (AI-inferred) */
   roleArn?: string | Computed<string>;
 }
 
@@ -56,60 +46,36 @@ const IdentityPool_PushSyncFields: FieldMap = {
 };
 
 export interface IdentityPoolConfig {
-  /** Determines whether the identity pool permits the classic authentication flow for unauthenticated identities, distinct from the enhanced flow; when false, only the enhanced flow is allowed. (AI-inferred) */
   allowClassicFlow?: boolean | Computed<boolean>;
-  /** Indicates whether the identity pool allows unauthenticated identities to authenticate, enabling guest access for users not signed in to an identity provider. (AI-inferred) */
   allowUnauthenticatedIdentities: boolean | Computed<boolean>;
-  /** Maps Amazon Cognito event names (such as SyncTrigger) to Lambda function ARNs that invoke when those events occur for the identity pool. (AI-inferred) */
   cognitoEvents?: unknown | Computed<unknown>;
-  /** Defines the list of external identity providers (such as Amazon Cognito user pools, social providers like Facebook/Google, or Amazon) that are enabled for the identity pool, including their client IDs and token-check settings. (AI-inferred) */
   cognitoIdentityProviders?: IdentityPool_CognitoIdentityProviders[] | Computed<IdentityPool_CognitoIdentityProviders[]>;
-  /** Configures Amazon Cognito event streaming to Amazon Kinesis for the identity pool, including the Kinesis stream name, IAM role ARN, and streaming status. (AI-inferred) */
   cognitoStreams?: IdentityPool_CognitoStreams | Computed<IdentityPool_CognitoStreams>;
-  /** Sets the developer provider name (a custom domain string) used to authenticate users via developer authenticated identities, enabling your backend to exchange its own tokens for AWS credentials through the Cognito Identity Pool. (AI-inferred) */
   developerProviderName?: string | Computed<string>;
-  /** The name of the Amazon Cognito identity pool, which must be unique within the AWS region and account, and is used to identify the pool in the Cognito console and API. (AI-inferred) */
   identityPoolName?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   identityPoolTags?: IdentityPool_IdentityPoolTags[] | Computed<IdentityPool_IdentityPoolTags[]>;
-  /** Specifies the list of Amazon Resource Names (ARNs) for the OpenID Connect (OIDC) identity providers that are trusted to authenticate users for the identity pool. (AI-inferred) */
   openIdConnectProviderArns?: string[] | Computed<string[]>;
-  /** Defines the push synchronization settings for the identity pool, including the IAM role ARN (RoleArn) and SNS platform application ARNs (SnsPlatformApplicationARNs) that enable sending push notifications to client devices. (AI-inferred) */
   pushSync?: IdentityPool_PushSync | Computed<IdentityPool_PushSync>;
-  /** Sets the Amazon Resource Names (ARNs) of SAML identity providers that the Cognito identity pool trusts for authenticating users and issuing AWS credentials. (AI-inferred) */
   samlProviderArns?: string[] | Computed<string[]>;
-  /** Specifies the mapping of external identity provider names (such as Facebook, Google, or Amazon) to their respective application IDs, enabling those providers as login mechanisms for the Cognito identity pool. (AI-inferred) */
   supportedLoginProviders?: unknown | Computed<unknown>;
 }
 
 export interface IdentityPoolAttrs {
-  /** Determines whether the identity pool permits the classic authentication flow for unauthenticated identities, distinct from the enhanced flow; when false, only the enhanced flow is allowed. (AI-inferred) */
   allowClassicFlow: boolean;
-  /** Indicates whether the identity pool allows unauthenticated identities to authenticate, enabling guest access for users not signed in to an identity provider. (AI-inferred) */
   allowUnauthenticatedIdentities: boolean;
-  /** Maps Amazon Cognito event names (such as SyncTrigger) to Lambda function ARNs that invoke when those events occur for the identity pool. (AI-inferred) */
   cognitoEvents: unknown;
-  /** Defines the list of external identity providers (such as Amazon Cognito user pools, social providers like Facebook/Google, or Amazon) that are enabled for the identity pool, including their client IDs and token-check settings. (AI-inferred) */
   cognitoIdentityProviders: IdentityPool_CognitoIdentityProviders[];
-  /** Configures Amazon Cognito event streaming to Amazon Kinesis for the identity pool, including the Kinesis stream name, IAM role ARN, and streaming status. (AI-inferred) */
   cognitoStreams: IdentityPool_CognitoStreams;
-  /** Sets the developer provider name (a custom domain string) used to authenticate users via developer authenticated identities, enabling your backend to exchange its own tokens for AWS credentials through the Cognito Identity Pool. (AI-inferred) */
   developerProviderName: string;
-  /** The unique identifier for the identity pool, a region-prefixed UUID string (e.g., 'us-east-1:12345678-1234-1234-1234-123456789012') assigned by AWS. (AI-inferred) */
   id: string;
-  /** The name of the Amazon Cognito identity pool, which must be unique within the AWS region and account, and is used to identify the pool in the Cognito console and API. (AI-inferred) */
   identityPoolName: string;
   /** An array of key-value pairs to apply to this resource. */
   identityPoolTags: IdentityPool_IdentityPoolTags[];
-  /** The name of the Cognito Identity Pool, which either reflects the user-specified name or is automatically generated by AWS when the resource is created without one. (AI-inferred) */
   name: string;
-  /** Specifies the list of Amazon Resource Names (ARNs) for the OpenID Connect (OIDC) identity providers that are trusted to authenticate users for the identity pool. (AI-inferred) */
   openIdConnectProviderArns: string[];
-  /** Defines the push synchronization settings for the identity pool, including the IAM role ARN (RoleArn) and SNS platform application ARNs (SnsPlatformApplicationARNs) that enable sending push notifications to client devices. (AI-inferred) */
   pushSync: IdentityPool_PushSync;
-  /** Sets the Amazon Resource Names (ARNs) of SAML identity providers that the Cognito identity pool trusts for authenticating users and issuing AWS credentials. (AI-inferred) */
   samlProviderArns: string[];
-  /** Specifies the mapping of external identity provider names (such as Facebook, Google, or Amazon) to their respective application IDs, enabling those providers as login mechanisms for the Cognito identity pool. (AI-inferred) */
   supportedLoginProviders: unknown;
 }
 

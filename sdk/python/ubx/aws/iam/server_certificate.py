@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerCertificate_Tags:
-    # The key of a tag attached to the IAM server certificate, used to identify and categorize the certificate. (AI-inferred)
     key: Any = None
-    # The value of a tag key attached to the IAM server certificate, used to store custom metadata that helps identify, organize, or manage the certificate within AWS. (AI-inferred)
     value: Any = None
 
 _ServerCertificate_TagsFields = {
@@ -20,34 +18,22 @@ _ServerCertificate_TagsFields = {
 
 @dataclasses.dataclass
 class ServerCertificateConfig:
-    # The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred)
     certificate_body: Any = None
-    # Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred)
     certificate_chain: Any = None
-    # Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred)
     path: Any = None
-    # The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred)
     private_key: Any = None
-    # Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     server_certificate_name: Any = None
-    # Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ServerCertificateAttrs:
     # Amazon Resource Name (ARN) of the server certificate
     arn: Any = None
-    # The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred)
     certificate_body: Any = None
-    # Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred)
     certificate_chain: Any = None
-    # Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred)
     path: Any = None
-    # The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred)
     private_key: Any = None
-    # Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     server_certificate_name: Any = None
-    # Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred)
     tags: Any = None
 
 ServerCertificate = ubx.ResourceBinding(

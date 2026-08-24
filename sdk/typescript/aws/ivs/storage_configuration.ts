@@ -7,9 +7,7 @@ export interface StorageConfiguration_S3 {
 }
 
 export interface StorageConfiguration_Tags {
-  /** The key of a user-defined tag to associate with the IVS storage configuration, used for resource categorization and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** A user-defined tag value (the 'value' part of a key-value tag) applied to this IVS storage configuration for resource identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

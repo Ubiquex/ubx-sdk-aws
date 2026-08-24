@@ -8,37 +8,28 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfiguration:
-    # The ARN of the AWS KMS key used to encrypt the backup data for the centralized logging destination, enabling customer-managed encryption of backup copies. (AI-inferred)
     kms_key_arn: Any = None
-    # The AWS Region code (e.g., 'us-east-1') where the backup destination for the centralized logs is provisioned, providing a redundant copy for high availability. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfiguration:
-    # Specifies the pattern (e.g., a wildcard or regex) used to match CloudWatch log group names from member accounts that are selected for centralization to the destination defined by this rule. (AI-inferred)
     log_group_name_pattern: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration:
-    # Specifies the strategy to resolve encryption key conflicts when centralizing logs, determining whether the organization's central encryption configuration overrides member accounts' existing log encryption settings or preserves them. (AI-inferred)
     encryption_conflict_resolution_strategy: Any = None
     encryption_scope: Any = None
-    # Defines the encryption strategy for logs delivered to the centralized destination, using 'SSE_S3' for AWS-managed encryption or 'SSE_KMS' for customer-managed KMS key encryption. (AI-inferred)
     encryption_strategy: Any = None
-    # The ARN of the AWS KMS key used to encrypt logs delivered to the centralization rule's destination, enabling customer-managed key encryption for centralized log data. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration:
     backup_configuration: Any = None
-    # Specifies an optional prefix and suffix that are added to the original CloudWatch log group names when logs are centralized to the destination account, controlling how the centralized log groups are named. (AI-inferred)
     log_group_name_configuration: Any = None
-    # Configures the encryption settings (such as the AWS KMS key ARN) used to encrypt the logs that are delivered to the centralized destination, ensuring the destination logs are encrypted with the specified key. (AI-inferred)
     logs_encryption_configuration: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfiguration:
-    # Specifies the AWS Region of the backup destination for metrics when the primary destination is unavailable. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
@@ -47,19 +38,15 @@ class AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsCon
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Destination:
-    # The AWS account ID of the destination account that receives centralized observability data (logs, metrics, and traces) when the rule's destination type is set to 'ACCOUNT'. (AI-inferred)
     account: Any = None
     destination_logs_configuration: Any = None
     destination_metrics_configuration: Any = None
-    # The AWS region of the destination where the organization's observability data is centralized by this rule. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Source_SourceLogsConfiguration:
     data_source_selection_criteria: Any = None
-    # Specifies the strategy to apply to CloudWatch log groups that are encrypted with AWS KMS keys when collecting source logs for the organization's centralization rule. (AI-inferred)
     encrypted_log_group_strategy: Any = None
-    # The log_group_selection_criteria field specifies the selection mechanism used to choose which log groups from the source logs configuration are centralized by the rule, such as indicating whether all log groups or only those matching a defined pattern should be included. (AI-inferred)
     log_group_selection_criteria: Any = None
 
 @dataclasses.dataclass
@@ -68,18 +55,14 @@ class AdminOrganizationCentralizationRule_Rule_Source_SourceMetricsConfiguration
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule_Source:
-    # Specifies the AWS regions (e.g., us-east-1) whose telemetry from the source accounts is included in the centralized observability rule, limiting the rule's scope to those regions. (AI-inferred)
     regions: Any = None
     scope: Any = None
     source_logs_configuration: Any = None
-    # Determines the metrics to centralize for the given source, enabling the administrator to specify whether to centralize all or a selected set of metrics as part of the observability centralization rule. (AI-inferred)
     source_metrics_configuration: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRule_Rule:
-    # Configures the destination AWS account (and region) that serves as the central monitoring account for receiving observability data from member accounts according to this rule. (AI-inferred)
     destination: Any = None
-    # Defines the source accounts or organizational units whose observability data (such as CloudWatch logs) is aggregated into the delegated administrator account by this organization centralization rule. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
@@ -193,20 +176,15 @@ _AdminOrganizationCentralizationRule_TagsFields = {
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRuleConfig:
-    # The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred)
     rule: Any = None
-    # A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred)
     rule_name: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class AdminOrganizationCentralizationRuleAttrs:
-    # The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred)
     rule: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this centralization rule in AWS Observability Admin. (AI-inferred)
     rule_arn: Any = None
-    # A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred)
     rule_name: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

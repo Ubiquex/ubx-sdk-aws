@@ -63,24 +63,18 @@ class AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig:
 
 @dataclasses.dataclass
 class AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Categorical:
-    # Specifies the textual definition/description for a category in the categorical rating scale, which instructs the LLM-as-a-judge on how to interpret and score model outputs. (AI-inferred)
     definition: Any = None
-    # The label is the human-readable name assigned to a category in a categorical rating scale, used by the LLM-as-a-judge evaluator to identify the category in prompts and results. (AI-inferred)
     label: Any = None
 
 @dataclasses.dataclass
 class AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Numerical:
-    # Provides a textual description that defines the meaning of a specific numerical rating value in the LLM-as-judge rating scale, guiding the judge model's evaluation criteria. (AI-inferred)
     definition: Any = None
     label: Any = None
-    # The numeric score assigned to a particular rating level in the numerical rating scale used by the LLM-as-judge evaluator for the Bedrock agent core evaluation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale:
-    # Defines the list of categorical rating options (each with a name and description) that the LLM-as-a-judge evaluator uses to score model responses. (AI-inferred)
     categorical: Any = None
-    # Provides the numeric rating scale for the LLM-as-judge, where each item defines a score point (e.g., 1 through 5) and its textual description, used to evaluate agent responses. (AI-inferred)
     numerical: Any = None
 
 @dataclasses.dataclass

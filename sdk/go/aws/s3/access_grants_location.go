@@ -4,9 +4,7 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessGrantsLocation_Tags struct {
-	// The key of a tag attached to the S3 Access Grants location, used to identify and categorize the tag within the resource's tag set. (AI-inferred)
 	Key any
-	// This field stores the value part of a tag key-value pair attached to the S3 Access Grants Location, which AWS uses to let you organize, identify, and manage the resource through custom metadata such as cost allocation or purpose labels. (AI-inferred)
 	Value any
 }
 
@@ -20,7 +18,6 @@ type AccessGrantsLocationConfig struct {
 	IamRoleArn any
 	// Descriptor for where the location actually points
 	LocationScope any
-	// Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 
@@ -33,7 +30,6 @@ type AccessGrantsLocationAttrs struct {
 	IamRoleArn any
 	// Descriptor for where the location actually points
 	LocationScope any
-	// Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 

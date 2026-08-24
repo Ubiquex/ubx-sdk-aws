@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_AccessConfigs {
-  /** Specifies the authentication method (e.g., AWS_IAM or BASIC_AUTH) used to access the Glue Schema Registry when the Lambda event source mapping uses Amazon Managed Kafka. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The URI of the schema registry endpoint that Lambda uses to access and resolve message schemas for the Amazon Managed Kafka (MSK) event source mapping. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface EventSourceMapping_AmazonManagedKafkaEventSourceConfig_SchemaRegistryConfig_SchemaValidationConfigs {
-  /** The name of the Kafka message header attribute that Lambda uses to locate the schema in the MSK Schema Registry for validating records consumed from the topic. (AI-inferred) */
   attribute?: string | Computed<string>;
 }
 
@@ -51,7 +48,6 @@ export interface EventSourceMapping_DocumentDbeventSourceConfig {
 }
 
 export interface EventSourceMapping_FilterCriteria_Filters {
-  /** The pattern is a JSON string in the event pattern format (for example, an EventBridge pattern or a filter pattern for self-managed sources like Kafka) that determines which events are delivered to the Lambda function from the event source mapping, with each filter in the list defining a single pattern to match against the event payload. (AI-inferred) */
   pattern?: string | Computed<string>;
 }
 
@@ -95,7 +91,6 @@ export interface EventSourceMapping_SelfManagedEventSource {
 }
 
 export interface EventSourceMapping_Tags {
-  /** Specifies the key portion of a tag attached to the AWS Lambda event source mapping, which is used to categorize the resource for cost tracking, operational management, and access control via resource-level policies. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -272,7 +267,6 @@ export interface EventSourceMappingAttrs {
   enabled: boolean;
   /** The Amazon Resource Name (ARN) of the event source. + *Amazon Kinesis* – The ARN of the data stream or a stream consumer. + *Amazon DynamoDB Streams* – The ARN of the stream. + *Amazon Simple Queue Service* – The ARN of the queue. + *Amazon Managed Streaming for Apache Kafka* – The ARN of the cluster or the ARN of the VPC connection (for [cross-account event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc)). + *Amazon MQ* – The ARN of the broker. + *Amazon DocumentDB* – The ARN of the DocumentDB change stream. */
   eventSourceArn: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Lambda event source mapping. (AI-inferred) */
   eventSourceMappingArn: string;
   /** An object that contains the filters for an event source. */
   filterCriteria: EventSourceMapping_FilterCriteria;
@@ -280,7 +274,6 @@ export interface EventSourceMappingAttrs {
   functionName: string;
   /** (Kinesis, DynamoDB Streams, and SQS) A list of current response type enums applied to the event source mapping. Valid Values: ``ReportBatchItemFailures`` */
   functionResponseTypes: string[];
-  /** The unique UUID assigned by AWS to this event source mapping, used to reference it in API calls and other resources. (AI-inferred) */
   id: string;
   /** The ARN of the KMSlong (KMS) customer managed key that Lambda uses to encrypt your function's [filter criteria](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-basics). */
   kmsKeyArn: string;

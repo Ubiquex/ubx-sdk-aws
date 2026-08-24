@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigConfigurationProfile_Tags:
-    # Specifies the key of a tag to attach to the AppConfig configuration profile, used for categorizing or identifying the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair applied to the AppConfig configuration profile, used for resource categorization and management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ConfigConfigurationProfile_Validators:
-    # The content of the validator, which is a JSON schema when the validator type is JSON_SCHEMA or the Amazon Resource Name (ARN) of an AWS Lambda function when the validator type is LAMBDA. (AI-inferred)
     content: Any = None
-    # The type of the validator, which determines whether it validates the configuration using a JSON schema (JSON_SCHEMA) or a custom AWS Lambda function (LAMBDA). (AI-inferred)
     type: Any = None
 
 _ConfigConfigurationProfile_TagsFields = {

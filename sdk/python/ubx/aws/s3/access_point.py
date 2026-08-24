@@ -20,7 +20,6 @@ class AccessPoint_PublicAccessBlockConfiguration:
 @dataclasses.dataclass
 class AccessPoint_Tags:
     key: Any = None
-    # The value of a tag key-value pair attached to the S3 access point, used for metadata, cost allocation, and tag-based access control through IAM policies. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -54,7 +53,6 @@ class AccessPointConfig:
     name: Any = None
     # The Access Point Policy you want to apply to this access point.
     policy: Any = None
-    # Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
     public_access_block_configuration: Any = None
     # An arbitrary set of tags (key-value pairs) for this S3 Access Point.
     tags: Any = None
@@ -77,7 +75,6 @@ class AccessPointAttrs:
     network_origin: Any = None
     # The Access Point Policy you want to apply to this access point.
     policy: Any = None
-    # Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
     public_access_block_configuration: Any = None
     # An arbitrary set of tags (key-value pairs) for this S3 Access Point.
     tags: Any = None

@@ -20,9 +20,7 @@ export interface SpaceWeaverSimulationConfig {
   name: string | Computed<string>;
   /** Role ARN. */
   roleArn: string | Computed<string>;
-  /** Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred) */
   schemaS3Location?: SpaceWeaverSimulation_SchemaS3Location | Computed<SpaceWeaverSimulation_SchemaS3Location>;
-  /** The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred) */
   snapshotS3Location?: SpaceWeaverSimulation_SchemaS3Location | Computed<SpaceWeaverSimulation_SchemaS3Location>;
 }
 
@@ -35,9 +33,7 @@ export interface SpaceWeaverSimulationAttrs {
   name: string;
   /** Role ARN. */
   roleArn: string;
-  /** Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred) */
   schemaS3Location: SpaceWeaverSimulation_SchemaS3Location;
-  /** The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred) */
   snapshotS3Location: SpaceWeaverSimulation_SchemaS3Location;
 }
 

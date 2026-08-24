@@ -2,68 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InAppTemplate_Content_BodyConfig {
-  /** Specifies the horizontal alignment of the body text in the in-app message (e.g., LEFT, RIGHT, or CENTER). (AI-inferred) */
   alignment?: string | Computed<string>;
-  /** Specifies the text to display as the body of the in-app message, shown within the message overlay in the mobile app. (AI-inferred) */
   body?: string | Computed<string>;
-  /** Sets the hex color code (for example, #000000) used for the body text in the in-app message content's body configuration. (AI-inferred) */
   textColor?: string | Computed<string>;
 }
 
 export interface InAppTemplate_Content_HeaderConfig {
-  /** Specifies the horizontal alignment (LEFT, CENTER, or RIGHT) of the header text in an in-app message template. (AI-inferred) */
   alignment?: string | Computed<string>;
-  /** The text displayed in the header section of the in-app message. (AI-inferred) */
   header?: string | Computed<string>;
-  /** The hex color code applied to the header text in the in-app message template. (AI-inferred) */
   textColor?: string | Computed<string>;
 }
 
 export interface InAppTemplate_Content_PrimaryBtn_Android {
-  /** Determines what happens when a user taps the primary button on Android, either opening a web URL (LINK), opening an app deep link (DEEP_LINK), or closing the in-app message (CLOSE). (AI-inferred) */
   buttonAction?: string | Computed<string>;
-  /** The URL or deep link that the Android client opens when the user taps the primary button in the in-app message. (AI-inferred) */
   link?: string | Computed<string>;
 }
 
 export interface InAppTemplate_Content_PrimaryBtn_DefaultConfig {
-  /** Specifies the background color of the primary button in the in-app message, provided as a hex color code (e.g., #FF0000). (AI-inferred) */
   backgroundColor?: string | Computed<string>;
-  /** Sets the pixel value for the corner rounding (border radius) of the primary button in the default state of an in-app message template for Amazon Pinpoint. (AI-inferred) */
   borderRadius?: number | Computed<number>;
-  /** Specifies the action performed when a user taps the default primary button in the in-app message, such as opening a link (LINK), a deep link (DEEP_LINK), or closing the message (CLOSE). (AI-inferred) */
   buttonAction?: string | Computed<string>;
-  /** The URL or deep link that the user is taken to when they tap the primary button in the in-app message. (AI-inferred) */
   link?: string | Computed<string>;
-  /** The button label text shown on the primary button in the in-app message's default configuration. (AI-inferred) */
   text?: string | Computed<string>;
-  /** Specifies the hexadecimal color code for the text displayed on the primary button in the default configuration of the in-app message template. (AI-inferred) */
   textColor?: string | Computed<string>;
 }
 
 export interface InAppTemplate_Content_PrimaryBtn {
-  /** This object defines the Android-specific override for the primary button in an in-app message, specifying the button action (such as closing the message, opening a deep link, or navigating to a URL) and the link to use for that action, which takes precedence over the default button settings. (AI-inferred) */
   android?: InAppTemplate_Content_PrimaryBtn_Android | Computed<InAppTemplate_Content_PrimaryBtn_Android>;
-  /** Specifies the default configuration for the primary button in the in-app message, including its background color, border radius, text, text color, and the action taken when the button is tapped (e.g., opening a link or closing the message). (AI-inferred) */
   defaultConfig?: InAppTemplate_Content_PrimaryBtn_DefaultConfig | Computed<InAppTemplate_Content_PrimaryBtn_DefaultConfig>;
-  /** The iOS-specific configuration for the primary button in the in-app template's content, customizing the button's appearance (e.g., text color, background color, border radius) and action on iOS devices, overriding the default configuration. (AI-inferred) */
   ios?: InAppTemplate_Content_PrimaryBtn_Android | Computed<InAppTemplate_Content_PrimaryBtn_Android>;
-  /** Configures how the primary in-app message button behaves on web clients, including the button action (e.g., opening a link, deep link, or closing the message) and the destination URL. (AI-inferred) */
   web?: InAppTemplate_Content_PrimaryBtn_Android | Computed<InAppTemplate_Content_PrimaryBtn_Android>;
 }
 
 export interface InAppTemplate_Content {
-  /** The hexadecimal color code (e.g., #FFFFFF) used as the background color of the in-app message. (AI-inferred) */
   backgroundColor?: string | Computed<string>;
-  /** The `content.body_config` field configures the in-app message body's text, text color, and alignment (e.g., left, center, or right) for the AWS Pinpoint in-app template. (AI-inferred) */
   bodyConfig?: InAppTemplate_Content_BodyConfig | Computed<InAppTemplate_Content_BodyConfig>;
-  /** Configures the header of an in-app message by specifying the header text, text color, and alignment (left, center, or right). (AI-inferred) */
   headerConfig?: InAppTemplate_Content_HeaderConfig | Computed<InAppTemplate_Content_HeaderConfig>;
-  /** Defines the URL of the image displayed in the in-app message content of the Amazon Pinpoint in-app template. (AI-inferred) */
   imageUrl?: string | Computed<string>;
-  /** Defines the primary action button for the in-app message content, including its text, link, and platform-specific styles (iOS, Android, web) that dictate the main user interaction. (AI-inferred) */
   primaryBtn?: InAppTemplate_Content_PrimaryBtn | Computed<InAppTemplate_Content_PrimaryBtn>;
-  /** Configures the optional secondary button of the in-app message, including its enabled state and the action (such as opening a URL or closing the message) that occurs when a user taps it. (AI-inferred) */
   secondaryBtn?: InAppTemplate_Content_PrimaryBtn | Computed<InAppTemplate_Content_PrimaryBtn>;
 }
 
@@ -142,34 +118,21 @@ const InAppTemplate_ContentFields: FieldMap = {
 };
 
 export interface InAppTemplateConfig {
-  /** The list of content objects for the in-app template, each defining the message's header, body, background color, media URL, and optional action buttons. (AI-inferred) */
   content?: InAppTemplate_Content[] | Computed<InAppTemplate_Content[]>;
-  /** Specifies custom key-value pairs (as a map of strings) that are attached to the in-app template, enabling personalized or supplementary data to be used with the message. (AI-inferred) */
   customConfig?: unknown | Computed<unknown>;
-  /** Sets the layout style for the in-app message, determining how and where the message content is displayed (e.g., top banner, bottom banner, or centered). (AI-inferred) */
   layout?: string | Computed<string>;
-  /** A map of key-value pairs that can be assigned to the in-app template to help organize, identify, and manage the resource. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** Specifies a user-friendly description for the in-app message template, which is displayed in the Amazon Pinpoint console. (AI-inferred) */
   templateDescription?: string | Computed<string>;
-  /** The name of the in-app message template, which must be unique within the Amazon Pinpoint project and is used to identify and reference the template in API operations and the console. (AI-inferred) */
   templateName: string | Computed<string>;
 }
 
 export interface InAppTemplateAttrs {
-  /** The Amazon Resource Name (ARN) of the in-app message template. (AI-inferred) */
   arn: string;
-  /** The list of content objects for the in-app template, each defining the message's header, body, background color, media URL, and optional action buttons. (AI-inferred) */
   content: InAppTemplate_Content[];
-  /** Specifies custom key-value pairs (as a map of strings) that are attached to the in-app template, enabling personalized or supplementary data to be used with the message. (AI-inferred) */
   customConfig: unknown;
-  /** Sets the layout style for the in-app message, determining how and where the message content is displayed (e.g., top banner, bottom banner, or centered). (AI-inferred) */
   layout: string;
-  /** A map of key-value pairs that can be assigned to the in-app template to help organize, identify, and manage the resource. (AI-inferred) */
   tags: unknown;
-  /** Specifies a user-friendly description for the in-app message template, which is displayed in the Amazon Pinpoint console. (AI-inferred) */
   templateDescription: string;
-  /** The name of the in-app message template, which must be unique within the Amazon Pinpoint project and is used to identify and reference the template in API operations and the console. (AI-inferred) */
   templateName: string;
 }
 

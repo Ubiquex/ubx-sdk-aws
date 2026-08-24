@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalResolverFirewallDomainList_Tags struct {
-	// The key component of a tag assigned to the Route 53 Resolver firewall domain list, enabling you to categorize and filter the resource by metadata. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to this Route 53 Resolver firewall domain list, used for metadata and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -16,46 +14,33 @@ var GlobalResolverFirewallDomainList_TagsFields = ubx.FieldMap{
 	}
 
 type GlobalResolverFirewallDomainListConfig struct {
-	// A caller-supplied token used to ensure idempotent creation of the Route 53 Resolver firewall domain list, preventing duplicates if the create request is retried. (AI-inferred)
 	ClientToken any
-	// A brief description of the Route53 Resolver firewall domain list, used to record its purpose or what domains it contains. (AI-inferred)
 	Description any
 	// S3 URL to import domains from.
 	DomainFileUrl any
 	// An inline list of domains to use for this domain list.
 	Domains any
 	GlobalResolverId any
-	// The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
 	Name any
 	Tags any
 }
 
 type GlobalResolverFirewallDomainListAttrs struct {
-	// The Amazon Resource Name (ARN) of the Route 53 Resolver firewall domain list, which uniquely identifies the domain list across AWS. (AI-inferred)
 	Arn any
-	// A caller-supplied token used to ensure idempotent creation of the Route 53 Resolver firewall domain list, preventing duplicates if the create request is retried. (AI-inferred)
 	ClientToken any
-	// The timestamp of when the Route 53 Resolver firewall domain list was created. (AI-inferred)
 	CreatedAt any
-	// A brief description of the Route53 Resolver firewall domain list, used to record its purpose or what domains it contains. (AI-inferred)
 	Description any
-	// The number of domains currently in the firewall domain list, as reported by Route 53 Resolver. (AI-inferred)
 	DomainCount any
 	// S3 URL to import domains from.
 	DomainFileUrl any
 	// An inline list of domains to use for this domain list.
 	Domains any
-	// The unique identifier assigned by AWS to the Route 53 Resolver firewall domain list. (AI-inferred)
 	FirewallDomainListId any
 	GlobalResolverId any
-	// The name to assign to the Route 53 Resolver firewall domain list, which serves as its identifier in your AWS account. (AI-inferred)
 	Name any
-	// The current status of the Route 53 Resolver firewall domain list, such as COMPLETE, UPDATING, or DELETING, indicating the lifecycle state of the list. (AI-inferred)
 	Status any
-	// A message from Route 53 Resolver DNS Firewall that provides additional detail about the current status of the domain list, such as an error explanation or confirmation of successful processing. (AI-inferred)
 	StatusMessage any
 	Tags any
-	// Indicates the timestamp (as a string) at which the Route 53 Resolver DNS Firewall domain list was last modified by AWS, matching the ModificationTime attribute returned by the service. (AI-inferred)
 	UpdatedAt any
 }
 

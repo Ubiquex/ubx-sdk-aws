@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BeanstalkConfigurationTemplate_OptionSettings:
-    # The namespace that identifies the AWS service and configuration section (e.g., 'aws:autoscaling:asg') to which the option setting applies in the Elastic Beanstalk configuration template. (AI-inferred)
     namespace: Any = None
-    # The name of the configuration option being set within its namespace, identifying the specific Elastic Beanstalk setting (e.g., 'InstanceType' in the 'aws:autoscaling:launchconfiguration' namespace). (AI-inferred)
     option_name: Any = None
-    # A unique name identifying the specific AWS resource (such as an Auto Scaling group or load balancer) within the Elastic Beanstalk environment that the configuration option applies to. (AI-inferred)
     resource_name: Any = None
-    # The value assigned to the Elastic Beanstalk configuration option identified by the sibling OptionName within the specified Namespace. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -50,7 +46,6 @@ class BeanstalkConfigurationTemplateConfig:
     platform_arn: Any = None
     # The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
     solution_stack_name: Any = None
-    # Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
     source_configuration: Any = None
 
 @dataclasses.dataclass
@@ -67,7 +62,6 @@ class BeanstalkConfigurationTemplateAttrs:
     platform_arn: Any = None
     # The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
     solution_stack_name: Any = None
-    # Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
     source_configuration: Any = None
     # The name of the configuration template
     template_name: Any = None

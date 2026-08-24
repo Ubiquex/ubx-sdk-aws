@@ -8,78 +8,50 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachment_EmailConfiguration:
-    # Specifies the name of the Amazon SES configuration set that Amazon Cognito uses when sending email messages for the user pool's email configuration. (AI-inferred)
     configuration_set: Any = None
-    # Specifies whether Cognito uses its default email account (COGNITO_DEFAULT) or a developer-provided Amazon SES account (DEVELOPER) to send emails for this regional user pool configuration. (AI-inferred)
     email_sending_account: Any = None
-    # The sender email address that Amazon Cognito uses to send email notifications from the user pool, as part of the attached email configuration. (AI-inferred)
     from_: Any = None
-    # The email address that Amazon Cognito uses as the reply-to address for emails sent to users from the user pool. (AI-inferred)
     reply_to_email_address: Any = None
-    # The ARN of a verified email address or domain in Amazon SES that Amazon Cognito uses as the sender for emails sent from the user pool's email configuration. (AI-inferred)
     source_arn: Any = None
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachment_LambdaConfig_CustomEmailSender:
-    # The ARN of the Lambda function that Cognito invokes as the custom email sender to send email messages for the user pool. (AI-inferred)
     lambda_arn: Any = None
-    # Specifies the version (V1_0 or V2_0) of the AWS Lambda function used as the custom email sender in the user pool's email configuration. (AI-inferred)
     lambda_version: Any = None
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachment_LambdaConfig:
-    # Specifies the ARN of the Lambda function that Amazon Cognito invokes to create an authentication challenge during custom authentication flows. (AI-inferred)
     create_auth_challenge: Any = None
-    # Configures a custom email sender Lambda function for the Cognito user pool, using the specified Lambda ARN and version to handle outgoing email messages instead of Cognito's default email service. (AI-inferred)
     custom_email_sender: Any = None
-    # The ARN of the Lambda function that Amazon Cognito invokes for the CustomMessage trigger, which customizes verification codes and welcome messages sent to users. (AI-inferred)
     custom_message: Any = None
-    # Configures a custom AWS Lambda function to be used as the SMS sender for this Cognito User Pool regional configuration, specifying the Lambda function's ARN and version. (AI-inferred)
     custom_smssender: Any = None
-    # The ARN of an AWS Lambda function that serves as the DefineAuthChallenge trigger, enabling custom authentication challenge definition for the user pool. (AI-inferred)
     define_auth_challenge: Any = None
     inbound_federation: Any = None
-    # Specifies the KMS key ID or ARN that Amazon Cognito uses to encrypt the code delivery messages to users, within the lambda_config block of this regional configuration attachment. (AI-inferred)
     kmskey_id: Any = None
-    # The ARN of a Lambda function that Amazon Cognito invokes after a user is successfully authenticated, enabling custom logic like auditing or post-login workflows. (AI-inferred)
     post_authentication: Any = None
-    # The ARN of a Lambda function that Amazon Cognito invokes after a user confirms their account, used to run custom post-confirmation logic such as creating a user profile or sending a welcome message. (AI-inferred)
     post_confirmation: Any = None
-    # The ARN of an AWS Lambda function that Amazon Cognito invokes before user authentication, allowing you to customize the authentication flow. (AI-inferred)
     pre_authentication: Any = None
-    # The ARN of an AWS Lambda function that Amazon Cognito invokes before sign-up registration, used to customize the pre-sign-up trigger behavior. (AI-inferred)
     pre_sign_up: Any = None
-    # The ARN of the Lambda function that Amazon Cognito invokes for the pre-token generation trigger, allowing customization of the token before it is issued during authentication. (AI-inferred)
     pre_token_generation: Any = None
-    # Configuration for the pre token generation Lambda trigger, specifying the ARN and version of the Lambda function that Amazon Cognito invokes before generating tokens for authentication. (AI-inferred)
     pre_token_generation_config: Any = None
-    # The ARN of the Lambda function that is invoked for the Cognito user migration trigger, which allows existing users to be migrated into the user pool when they sign in. (AI-inferred)
     user_migration: Any = None
-    # The ARN of the Lambda function that Amazon Cognito invokes to verify a user's answer to a custom authentication challenge for the user pool region configuration. (AI-inferred)
     verify_auth_challenge_response: Any = None
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachment_SmsConfiguration_EumsSms:
-    # The ARN of the IAM role that Amazon Cognito assumes to send SMS messages through Amazon SNS for this regional user pool configuration. (AI-inferred)
     caller_arn: Any = None
-    # Name of the Amazon SNS configuration set used to track and manage SMS messages sent by the user pool for this regional configuration, enabling message delivery status and event logging. (AI-inferred)
     configuration_set_name: Any = None
     external_id: Any = None
-    # The `in_entity_id` field specifies the India-specific DLT entity ID that is passed as the `AWS.SNS.SMS.EntityId` SMS attribute when Cognito sends SMS messages for this user pool's regional configuration, satisfying TRAI compliance for Indian phone numbers. (AI-inferred)
     in_entity_id: Any = None
     in_template_id: Any = None
-    # Specifies the SMS origination identity (e.g., a sender ID or origination number) used by this regional SMS configuration when Cognito sends SMS messages for the associated user pool. (AI-inferred)
     origination_identity: Any = None
     region: Any = None
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachment_SmsConfiguration:
     eums_sms: Any = None
-    # The external ID to include in the IAM role trust policy that authorizes Amazon Cognito to send SMS messages through Amazon SNS, preventing the confused deputy problem. (AI-inferred)
     external_id: Any = None
-    # The ARN of the IAM role that Amazon Cognito assumes to send SMS messages through Amazon SNS for this user pool's regional SMS configuration. (AI-inferred)
     sns_caller_arn: Any = None
-    # The AWS region where Amazon SNS is configured to send SMS messages for the user pool's SMS configuration. (AI-inferred)
     sns_region: Any = None
 
 _UserPoolRegionalConfigurationAttachment_EmailConfigurationFields = {
@@ -152,28 +124,22 @@ _UserPoolRegionalConfigurationAttachment_SmsConfigurationFields = {
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachmentConfig:
-    # Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
     email_configuration: Any = None
     lambda_config: Any = None
-    # Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
     sms_configuration: Any = None
     # The status of the replica. Set to ACTIVE or INACTIVE.
     status: Any = None
     user_pool_id: Any = None
-    # A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
     user_pool_tags: Any = None
 
 @dataclasses.dataclass
 class UserPoolRegionalConfigurationAttachmentAttrs:
-    # Configures the email delivery settings for the Cognito user pool, including the sender address, reply-to address, and the Amazon SES configuration set or source ARN used to send emails. (AI-inferred)
     email_configuration: Any = None
     lambda_config: Any = None
-    # Specifies the SMS message configuration (e.g., SNS caller ARN and external ID) used by the user pool to send SMS verification codes and MFA messages. (AI-inferred)
     sms_configuration: Any = None
     # The status of the replica. Set to ACTIVE or INACTIVE.
     status: Any = None
     user_pool_id: Any = None
-    # A map of key-value tags to assign to the Amazon Cognito user pool associated with this regional configuration attachment. (AI-inferred)
     user_pool_tags: Any = None
 
 UserPoolRegionalConfigurationAttachment = ubx.ResourceBinding(

@@ -4,9 +4,7 @@ package emr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Walworkspace_Tags struct {
-	// The key (name) of a user-defined tag attached to the EMR WAL workspace, used for resource categorization, cost tracking, and access control. (AI-inferred)
 	Key any
-	// The value component of a tag attached to the EMR WAL workspace, used to store arbitrary metadata for resource identification, organization, and cost allocation. (AI-inferred)
 	Value any
 }
 

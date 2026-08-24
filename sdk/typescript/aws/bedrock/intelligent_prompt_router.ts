@@ -7,7 +7,6 @@ export interface IntelligentPromptRouter_FallbackModel {
 }
 
 export interface IntelligentPromptRouter_RoutingCriteria {
-  /** The minimum difference in predicted response quality between the larger and smaller models that the intelligent prompt router uses as a threshold to decide whether to route the prompt to the larger model. (AI-inferred) */
   responseQualityDifference: number | Computed<number>;
 }
 

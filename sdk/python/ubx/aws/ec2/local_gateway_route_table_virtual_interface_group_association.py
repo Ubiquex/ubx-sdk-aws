@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocalGatewayRouteTableVirtualInterfaceGroupAssociation_Tags:
-    # A user-defined key for a tag on this AWS Local Gateway Route Table Virtual Interface Group Association, used to categorize, organize, or filter the resource in AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag key attached to the Local Gateway Route Table Virtual Interface Group Association, used for identifying and organizing the resource. (AI-inferred)
     value: Any = None
 
 _LocalGatewayRouteTableVirtualInterfaceGroupAssociation_TagsFields = {

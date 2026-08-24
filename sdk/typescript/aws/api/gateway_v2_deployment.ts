@@ -13,7 +13,6 @@ export interface GatewayV2DeploymentConfig {
 export interface GatewayV2DeploymentAttrs {
   /** The API identifier. */
   apiId: string;
-  /** The unique identifier assigned by AWS to this API Gateway v2 deployment. (AI-inferred) */
   deploymentId: string;
   /** The description for the deployment resource. */
   description: string;

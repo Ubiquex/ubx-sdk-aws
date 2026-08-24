@@ -34,22 +34,15 @@ type FormationGuardHook_StackFilters struct {
 }
 
 type FormationGuardHook_TargetFilters_Targets struct {
-	// Specifies whether the Guard hook should be invoked (INVOKE) or skipped (SKIP) for resources matching the target in this target filter. (AI-inferred)
 	Action any
-	// The invocation point for a target in the Guard hook's target filter, indicating which CloudFormation resource lifecycle event (CREATE, UPDATE, or DELETE) triggers the hook for that target. (AI-inferred)
 	InvocationPoint any
-	// The name of a target resource type (for example, AWS::S3::Bucket) that this Guard hook filter matches so the hook is invoked only for resources of that type. (AI-inferred)
 	TargetName any
 }
 
 type FormationGuardHook_TargetFilters struct {
-	// Specifies the list of stack operations (CREATE, UPDATE, DELETE) for which the Guard hook is invoked on the targeted resources. (AI-inferred)
 	Actions any
-	// The invocation points of the target filter, which are the stack lifecycle events (such as BEFORE_CREATION or BEFORE_UPDATE) at which the Guard hook runs for the matched resources. (AI-inferred)
 	InvocationPoints any
-	// Specifies the list of AWS resource type names (for example, 'AWS::S3::Bucket') that this Guard hook evaluates for violations during CloudFormation operations. (AI-inferred)
 	TargetNames any
-	// Defines the resource targets that the Guard hook applies to, using include and exclude patterns based on resource type and resource identifiers. (AI-inferred)
 	Targets any
 }
 
@@ -110,7 +103,6 @@ type FormationGuardHookConfig struct {
 	HookStatus any
 	// S3 Bucket where the guard validate report will be uploaded to
 	LogBucket any
-	// Specifies the Guard hook options, including the RuleStack property that gives the Amazon S3 location of the Guard rules file CloudFormation uses to apply policy validation. (AI-inferred)
 	Options any
 	// S3 Source Location for the Guard files.
 	RuleLocation any
@@ -135,7 +127,6 @@ type FormationGuardHookAttrs struct {
 	HookStatus any
 	// S3 Bucket where the guard validate report will be uploaded to
 	LogBucket any
-	// Specifies the Guard hook options, including the RuleStack property that gives the Amazon S3 location of the Guard rules file CloudFormation uses to apply policy validation. (AI-inferred)
 	Options any
 	// S3 Source Location for the Guard files.
 	RuleLocation any

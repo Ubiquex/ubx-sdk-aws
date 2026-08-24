@@ -4,9 +4,7 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryService_DnsConfig_DnsRecords struct {
-	// The time-to-live (TTL) in seconds for the DNS record, controlling how long resolvers cache it before querying AWS Cloud Map again. (AI-inferred)
 	Ttl any
-	// Specifies the DNS record type (A, AAAA, SRV, or CNAME) for the service's DNS records. (AI-inferred)
 	Type any
 }
 
@@ -34,9 +32,7 @@ type DiscoveryService_HealthCheckCustomConfig struct {
 }
 
 type DiscoveryService_Tags struct {
-	// This key identifies a tag attached to the AWS Cloud Map service, allowing you to assign metadata for cost tracking, access control, or resource organization. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS CloudFormation service discovery service, used to organize, identify, or manage the resource through key-value pairs. (AI-inferred)
 	Value any
 }
 

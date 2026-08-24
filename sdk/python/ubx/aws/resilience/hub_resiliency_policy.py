@@ -56,7 +56,6 @@ _HubResiliencyPolicy_PolicyFields = {
 class HubResiliencyPolicyConfig:
     # Data Location Constraint of the Policy.
     data_location_constraint: Any = None
-    # Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred)
     policy: Any = None
     # Description of Resiliency Policy.
     policy_description: Any = None
@@ -70,7 +69,6 @@ class HubResiliencyPolicyConfig:
 class HubResiliencyPolicyAttrs:
     # Data Location Constraint of the Policy.
     data_location_constraint: Any = None
-    # Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred)
     policy: Any = None
     # Amazon Resource Name (ARN) of the Resiliency Policy.
     policy_arn: Any = None

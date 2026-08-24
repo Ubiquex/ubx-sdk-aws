@@ -4,9 +4,7 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrewSchedule_Tags struct {
-	// The key of a tag assigned to the DataBrew schedule, used to categorize and identify the schedule for cost allocation and access control. (AI-inferred)
 	Key any
-	// The value of a tag attached to an AWS DataBrew schedule, used to organize, categorize, and manage the schedule within AWS. (AI-inferred)
 	Value any
 }
 
@@ -18,22 +16,18 @@ var BrewSchedule_TagsFields = ubx.FieldMap{
 type BrewScheduleConfig struct {
 	// Schedule cron
 	CronExpression any
-	// The list of DataBrew job names that this schedule will start when it fires. (AI-inferred)
 	JobNames any
 	// Schedule Name
 	Name any
-	// The tags to assign to the DataBrew schedule, where each tag consists of a key and an optional value used to categorize and manage the schedule. (AI-inferred)
 	Tags any
 }
 
 type BrewScheduleAttrs struct {
 	// Schedule cron
 	CronExpression any
-	// The list of DataBrew job names that this schedule will start when it fires. (AI-inferred)
 	JobNames any
 	// Schedule Name
 	Name any
-	// The tags to assign to the DataBrew schedule, where each tag consists of a key and an optional value used to categorize and manage the schedule. (AI-inferred)
 	Tags any
 }
 

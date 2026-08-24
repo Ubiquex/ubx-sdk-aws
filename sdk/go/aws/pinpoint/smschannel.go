@@ -4,26 +4,17 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SmschannelConfig struct {
-	// The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred)
 	ApplicationId any
-	// Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred)
 	SenderId any
-	// The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred)
 	ShortCode any
 }
 
 type SmschannelAttrs struct {
-	// The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred)
 	ApplicationId any
-	// Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// The `id` is the unique identifier for this SMS channel, set to the Amazon Pinpoint application ID. (AI-inferred)
 	Id any
-	// A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred)
 	SenderId any
-	// The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred)
 	ShortCode any
 }
 

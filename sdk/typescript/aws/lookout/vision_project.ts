@@ -7,7 +7,6 @@ export interface VisionProjectConfig {
 }
 
 export interface VisionProjectAttrs {
-  /** The Amazon Resource Name (ARN) of the Lookout for Vision project, which uniquely identifies the project in AWS. (AI-inferred) */
   arn: string;
   /** The name of the Amazon Lookout for Vision project */
   projectName: string;

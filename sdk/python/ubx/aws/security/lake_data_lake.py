@@ -18,9 +18,7 @@ class LakeDataLake_LifecycleConfiguration_Expiration:
 
 @dataclasses.dataclass
 class LakeDataLake_LifecycleConfiguration_Transitions:
-    # The number of days after object creation that the lifecycle transition moves the data to the storage class defined in the parent transition rule. (AI-inferred)
     days: Any = None
-    # The S3 storage class (e.g., STANDARD_IA, GLACIER) that this lifecycle transition moves the data lake's objects to after the specified transition_days. (AI-inferred)
     storage_class: Any = None
 
 @dataclasses.dataclass
@@ -39,9 +37,7 @@ class LakeDataLake_ReplicationConfiguration:
 
 @dataclasses.dataclass
 class LakeDataLake_Tags:
-    # The key (name) of a tag in the Tags map that attaches user-defined metadata to the AWS Security Lake data lake, commonly used for cost allocation and resource organization. (AI-inferred)
     key: Any = None
-    # The value component of a tag assigned to the AWS Security Lake data lake, used to attach arbitrary metadata for resource management and identification. (AI-inferred)
     value: Any = None
 
 _LakeDataLake_EncryptionConfigurationFields = {
@@ -90,7 +86,6 @@ class LakeDataLakeConfig:
     meta_store_manager_role_arn: Any = None
     # Provides replication details of Amazon Security Lake object.
     replication_configuration: Any = None
-    # A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -107,7 +102,6 @@ class LakeDataLakeAttrs:
     replication_configuration: Any = None
     # The ARN for the Amazon Security Lake Amazon S3 bucket.
     s3_bucket_arn: Any = None
-    # A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred)
     tags: Any = None
 
 LakeDataLake = ubx.ResourceBinding(

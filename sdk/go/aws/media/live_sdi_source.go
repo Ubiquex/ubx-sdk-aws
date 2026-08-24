@@ -4,7 +4,6 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveSdiSource_Tags struct {
-	// The key of a user-defined tag applied to the SDI source. (AI-inferred)
 	Key any
 	Value any
 }

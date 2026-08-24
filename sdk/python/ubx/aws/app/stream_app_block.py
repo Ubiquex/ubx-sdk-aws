@@ -8,30 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamAppBlock_PostSetupScriptDetails_ScriptS3Location:
-    # Specifies the name of the S3 bucket that contains the post-setup script for this AppStream AppBlock. (AI-inferred)
     s3_bucket: Any = None
-    # The S3 object key (path) of the post-setup script within the S3 bucket specified by script_s3_location, which AppStream 2.0 downloads and executes after setting up the app block. (AI-inferred)
     s3_key: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlock_PostSetupScriptDetails:
     executable_parameters: Any = None
-    # Specifies the path to the executable that runs the post-setup script for the AppStream 2.0 application block. (AI-inferred)
     executable_path: Any = None
-    # The S3 location (bucket and key) of the post-setup script that AppStream 2.0 runs on the streaming instance after the AppBlock application is installed. (AI-inferred)
     script_s3_location: Any = None
-    # Specifies the maximum time, in seconds, that the post-setup script can run before it is considered failed. (AI-inferred)
     timeout_in_seconds: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlock_Tags:
-    # The tag key of a user-defined tag assigned to the AppStream 2.0 app block, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
-    # Defines the key of a tag applied to this AppStream AppBlock resource, which allows you to categorize and manage the resource. (AI-inferred)
     tag_key: Any = None
-    # The value of a custom tag key assigned to the AppStream app block, enabling resource identification, organization, and cost tracking. (AI-inferred)
     tag_value: Any = None
-    # The value component of a key-value tag applied to the AppStream 2.0 app block resource. (AI-inferred)
     value: Any = None
 
 _StreamAppBlock_PostSetupScriptDetails_ScriptS3LocationFields = {
@@ -59,44 +50,26 @@ _StreamAppBlock_TagsFields = {
 
 @dataclasses.dataclass
 class StreamAppBlockConfig:
-    # The description of the AppStream 2.0 AppBlock, a user-defined string that provides human-readable details about the application bundle stored as an app block. (AI-inferred)
     description: Any = None
-    # The display name of the app block, which is the user-friendly name shown in the AppStream 2.0 console and to end users. (AI-inferred)
     display_name: Any = None
-    # The unique name for the app block, used as an identifier in AppStream 2.0. (AI-inferred)
     name: Any = None
-    # Defines the packaging format (either 'CAB' or 'ZIP') used to compress and store the application source files for this AppStream 2.0 app block. (AI-inferred)
     packaging_type: Any = None
-    # Specifies the details of a script that runs after the AppStream app block setup process, including the script path, any executable parameters, and the allowed execution timeout. (AI-inferred)
     post_setup_script_details: Any = None
-    # Specifies the details of the setup script that runs on streaming instances when the app block is deployed, including the script location, executable path, parameters, and timeout. (AI-inferred)
     setup_script_details: Any = None
-    # Specifies the Amazon S3 bucket and object key where the app block's packaged application content is stored, allowing AppStream 2.0 to retrieve the zip file during app block creation. (AI-inferred)
     source_s3_location: Any = None
-    # Specifies the tags (key-value pairs) to associate with the AppStream 2.0 app block, which can be used for categorizing and managing the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlockAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AppStream 2.0 app block. (AI-inferred)
     arn: Any = None
-    # The timestamp (in ISO 8601 format) indicating when the AppStream App Block was created. (AI-inferred)
     created_time: Any = None
-    # The description of the AppStream 2.0 AppBlock, a user-defined string that provides human-readable details about the application bundle stored as an app block. (AI-inferred)
     description: Any = None
-    # The display name of the app block, which is the user-friendly name shown in the AppStream 2.0 console and to end users. (AI-inferred)
     display_name: Any = None
-    # The unique name for the app block, used as an identifier in AppStream 2.0. (AI-inferred)
     name: Any = None
-    # Defines the packaging format (either 'CAB' or 'ZIP') used to compress and store the application source files for this AppStream 2.0 app block. (AI-inferred)
     packaging_type: Any = None
-    # Specifies the details of a script that runs after the AppStream app block setup process, including the script path, any executable parameters, and the allowed execution timeout. (AI-inferred)
     post_setup_script_details: Any = None
-    # Specifies the details of the setup script that runs on streaming instances when the app block is deployed, including the script location, executable path, parameters, and timeout. (AI-inferred)
     setup_script_details: Any = None
-    # Specifies the Amazon S3 bucket and object key where the app block's packaged application content is stored, allowing AppStream 2.0 to retrieve the zip file during app block creation. (AI-inferred)
     source_s3_location: Any = None
-    # Specifies the tags (key-value pairs) to associate with the AppStream 2.0 app block, which can be used for categorizing and managing the resource. (AI-inferred)
     tags: Any = None
 
 StreamAppBlock = ubx.ResourceBinding(

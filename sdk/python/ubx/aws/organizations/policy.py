@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_Tags:
-    # The key of a tag that is attached to the AWS Organizations policy, used to identify the tag's purpose or category. (AI-inferred)
     key: Any = None
-    # The value part of a tag assigned to the AWS Organizations policy, used to organize and identify the policy. (AI-inferred)
     value: Any = None
 
 _Policy_TagsFields = {

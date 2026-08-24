@@ -4,19 +4,15 @@ package qbusiness
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Retriever_Configuration_KendraIndexConfiguration struct {
-	// The unique identifier of the Amazon Kendra index to be used as the retriever in the Amazon Q Business retriever configuration. (AI-inferred)
 	IndexId any
 }
 
 type Retriever_Configuration struct {
-	// Specifies the configuration for using an Amazon Kendra index as the retriever, including the identifier of the Kendra index. (AI-inferred)
 	KendraIndexConfiguration any
-	// Configures the retriever to use a native Amazon Q Business index, specifying the index ID and optional metadata handling settings. (AI-inferred)
 	NativeIndexConfiguration any
 }
 
 type Retriever_Tags struct {
-	// The key of a tag to attach to the Amazon Q Business retriever resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -44,42 +40,25 @@ var Retriever_TagsFields = ubx.FieldMap{
 	}
 
 type RetrieverConfig struct {
-	// The unique identifier of the Amazon Q Business application to which this retriever belongs. (AI-inferred)
 	ApplicationId any
-	// Defines the retriever type-specific configuration, which specifies either the Amazon Kendra index configuration (KendraIndexConfiguration) or the native QBusiness index configuration (NativeIndexConfiguration), determining how documents are retrieved. (AI-inferred)
 	Configuration any
-	// The human-readable name for the retriever, used to identify it in the AWS Q Business console and API responses. (AI-inferred)
 	DisplayName any
-	// The ARN of an IAM role that grants Amazon Q Business permissions to access the data source associated with this retriever. (AI-inferred)
 	RoleArn any
-	// Defines the AWS tags (key-value pairs) applied to the Amazon Q Business retriever resource, which can be used for cost allocation, access control, and metadata organization. (AI-inferred)
 	Tags any
-	// The type of retriever, either NATIVE_INDEX for the Amazon Q Business native index or KENDRA_INDEX for an Amazon Kendra index. (AI-inferred)
 	Type any
 }
 
 type RetrieverAttrs struct {
-	// The unique identifier of the Amazon Q Business application to which this retriever belongs. (AI-inferred)
 	ApplicationId any
-	// Defines the retriever type-specific configuration, which specifies either the Amazon Kendra index configuration (KendraIndexConfiguration) or the native QBusiness index configuration (NativeIndexConfiguration), determining how documents are retrieved. (AI-inferred)
 	Configuration any
-	// Provides the date and time (as an ISO 8601 string) when the QBusiness retriever was created. (AI-inferred)
 	CreatedAt any
-	// The human-readable name for the retriever, used to identify it in the AWS Q Business console and API responses. (AI-inferred)
 	DisplayName any
-	// The Amazon Resource Name (ARN) uniquely identifying this QBusiness retriever in AWS. (AI-inferred)
 	RetrieverArn any
-	// The unique identifier assigned to the Amazon Q Business retriever. (AI-inferred)
 	RetrieverId any
-	// The ARN of an IAM role that grants Amazon Q Business permissions to access the data source associated with this retriever. (AI-inferred)
 	RoleArn any
-	// The current operational status of the Amazon Q Business retriever, such as ACTIVE or INACTIVE, as assigned by the service. (AI-inferred)
 	Status any
-	// Defines the AWS tags (key-value pairs) applied to the Amazon Q Business retriever resource, which can be used for cost allocation, access control, and metadata organization. (AI-inferred)
 	Tags any
-	// The type of retriever, either NATIVE_INDEX for the Amazon Q Business native index or KENDRA_INDEX for an Amazon Kendra index. (AI-inferred)
 	Type any
-	// The timestamp indicating when this Amazon Q Business retriever was most recently updated. (AI-inferred)
 	UpdatedAt any
 }
 

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class StoredQuery_Tags:
     key: Any = None
-    # For an AWS Config stored query, this field provides the value portion of a user-defined tag (key-value pair) used to organize and identify the query resource. (AI-inferred)
     value: Any = None
 
 _StoredQuery_TagsFields = {
@@ -19,26 +18,18 @@ _StoredQuery_TagsFields = {
 
 @dataclasses.dataclass
 class StoredQueryConfig:
-    # The query_description field provides an optional, human-readable description for the AWS Config stored query, used to document the query's purpose or details. (AI-inferred)
     query_description: Any = None
-    # The SQL query expression (in AWS Config query language) that defines the resource configurations to retrieve when this stored query is executed. (AI-inferred)
     query_expression: Any = None
-    # The name of the AWS Config stored query, which must be unique within the AWS account and is used to identify the query resource. (AI-inferred)
     query_name: Any = None
     # The tags for the stored query.
     tags: Any = None
 
 @dataclasses.dataclass
 class StoredQueryAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the stored AWS Config query. (AI-inferred)
     query_arn: Any = None
-    # The query_description field provides an optional, human-readable description for the AWS Config stored query, used to document the query's purpose or details. (AI-inferred)
     query_description: Any = None
-    # The SQL query expression (in AWS Config query language) that defines the resource configurations to retrieve when this stored query is executed. (AI-inferred)
     query_expression: Any = None
-    # The unique identifier assigned by AWS to the stored query when it is created. (AI-inferred)
     query_id: Any = None
-    # The name of the AWS Config stored query, which must be unique within the AWS account and is used to identify the query resource. (AI-inferred)
     query_name: Any = None
     # The tags for the stored query.
     tags: Any = None

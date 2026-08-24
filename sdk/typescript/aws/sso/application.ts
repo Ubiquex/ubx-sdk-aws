@@ -16,7 +16,6 @@ export interface Application_PortalOptions {
 }
 
 export interface Application_Tags {
-  /** The key of a tag to be attached to the AWS SSO application. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -53,7 +52,6 @@ export interface ApplicationConfig {
   portalOptions?: Application_PortalOptions | Computed<Application_PortalOptions>;
   /** Specifies whether the application is enabled or disabled */
   status?: string | Computed<string>;
-  /** Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred) */
   tags?: Application_Tags[] | Computed<Application_Tags[]>;
 }
 
@@ -74,7 +72,6 @@ export interface ApplicationAttrs {
   portalOptions: Application_PortalOptions;
   /** Specifies whether the application is enabled or disabled */
   status: string;
-  /** Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred) */
   tags: Application_Tags[];
 }
 

@@ -14,31 +14,25 @@ class ExpressGatewayService_ActiveConfigurations_IngressPaths:
 @dataclasses.dataclass
 class ExpressGatewayService_ActiveConfigurations_NetworkConfiguration:
     security_groups: Any = None
-    # Specifies the VPC subnets to use for the network configuration of an active configuration, controlling where the ECS Express Gateway service places its elastic network interfaces. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
 class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfiguration:
-    # The name of the CloudWatch Logs log group where container logs are delivered when using the awslogs log driver. (AI-inferred)
     log_group: Any = None
-    # For the awslogs log driver, this prefix is prepended to the container name to define the CloudWatch log stream name, enabling organized log grouping. (AI-inferred)
     log_stream_prefix: Any = None
 
 @dataclasses.dataclass
 class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment:
     name: Any = None
-    # Specifies the string value for an environment variable set on the primary container in the active ECS Express Gateway service configuration. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials:
-    # Specifies the ARN or name of the AWS Secrets Manager secret or Systems Manager parameter that stores the private repository authentication credentials for the primary container. (AI-inferred)
     credentials_parameter: Any = None
 
 @dataclasses.dataclass
 class ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets:
     name: Any = None
-    # The ARN or full name (in the form of a Systems Manager parameter name or Secrets Manager secret ARN) of the external source that stores the secret value to be injected into the container as an environment variable or referenced in the task definition. (AI-inferred)
     value_from: Any = None
 
 @dataclasses.dataclass
@@ -48,7 +42,6 @@ class ExpressGatewayService_ActiveConfigurations_PrimaryContainer:
     container_port: Any = None
     environment: Any = None
     image: Any = None
-    # Specifies the credentials used to authenticate to a private container registry, typically containing a credentialsParameter ARN that references a Secrets Manager secret or SSM parameter. (AI-inferred)
     repository_credentials: Any = None
     secrets: Any = None
 
@@ -70,7 +63,6 @@ class ExpressGatewayService_ActiveConfigurations:
     network_configuration: Any = None
     primary_container: Any = None
     scaling_target: Any = None
-    # Uniquely identifies the version of the service configuration that is among the currently active configurations for the ECS Express Gateway service. (AI-inferred)
     service_revision_arn: Any = None
     task_definition_arn: Any = None
     task_role_arn: Any = None

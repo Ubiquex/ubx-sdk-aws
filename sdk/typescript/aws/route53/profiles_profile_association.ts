@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesProfileAssociation_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag (key-value pair) attached to the Route 53 Profile association, used for metadata, identification, and cost allocation of the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -45,15 +45,10 @@ export interface VerifiedAccessInstance_Tags {
 }
 
 export interface VerifiedAccessInstance_VerifiedAccessTrustProviders {
-  /** A user-provided free-form text that describes the associated AWS Verified Access trust provider for this Verified Access instance, helping identify its purpose or configuration. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Indicates the type of device trust provider (such as Jamf or CrowdStrike) used by this Verified Access trust provider to assess device trust. (AI-inferred) */
   deviceTrustProviderType?: string | Computed<string>;
-  /** Indicates whether the associated Verified Access trust provider is a user trust provider or a device trust provider, thereby determining how the instance evaluates user identity versus device health for access decisions. (AI-inferred) */
   trustProviderType?: string | Computed<string>;
-  /** Specifies the type of the user trust provider (e.g., IAM Identity Center or OIDC) used by the Verified Access instance for user-based authentication. (AI-inferred) */
   userTrustProviderType?: string | Computed<string>;
-  /** The unique ID of the AWS Verified Access trust provider that is associated with this Verified Access instance as part of its configured trust provider list. (AI-inferred) */
   verifiedAccessTrustProviderId?: string | Computed<string>;
 }
 

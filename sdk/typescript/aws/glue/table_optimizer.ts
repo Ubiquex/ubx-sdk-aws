@@ -11,7 +11,6 @@ export interface TableOptimizer_TableOptimizerConfiguration_CompactionConfigurat
 }
 
 export interface TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration {
-  /** Specifies the Iceberg-specific settings for the compaction configuration of the AWS Glue table optimizer, controlling how compaction is performed on Apache Iceberg table data. (AI-inferred) */
   icebergConfiguration?: TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergConfiguration>;
 }
 
@@ -23,21 +22,16 @@ export interface TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionCo
 }
 
 export interface TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration {
-  /** Specifies the Iceberg-specific settings for the orphan file deletion optimizer, including the retention period in days that determines when orphan files are eligible for deletion. (AI-inferred) */
   icebergConfiguration?: TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_IcebergConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_IcebergConfiguration>;
 }
 
 export interface TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfiguration {
-  /** When enabled, this flag instructs the Glue table optimizer to physically delete expired Iceberg data files that are no longer referenced by any retained snapshot as part of the table's retention policy. (AI-inferred) */
   cleanExpiredFiles?: boolean | Computed<boolean>;
-  /** The maximum number of Iceberg snapshots to retain when expiring old snapshots for the table, as part of the table optimizer's retention configuration. (AI-inferred) */
   numberOfSnapshotsToRetain?: number | Computed<number>;
-  /** The number of days to retain Iceberg snapshots before they are automatically expired by the Glue table optimizer. (AI-inferred) */
   snapshotRetentionPeriodInDays?: number | Computed<number>;
 }
 
 export interface TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration {
-  /** Specifies Iceberg-specific snapshot retention settings, such as the number of snapshots to retain and the retention period in days, for the Glue table optimizer's retention configuration. (AI-inferred) */
   icebergConfiguration?: TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfiguration>;
 }
 
@@ -47,17 +41,13 @@ export interface TableOptimizer_TableOptimizerConfiguration_VpcConfiguration {
 }
 
 export interface TableOptimizer_TableOptimizerConfiguration {
-  /** Defines the settings for the compaction operation in the Glue table optimizer, including whether compaction is enabled (Enabled flag) for the table. (AI-inferred) */
   compactionConfiguration?: TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration>;
   /** Whether the table optimization is enabled. */
   enabled: boolean | Computed<boolean>;
-  /** Configuration for the orphan file deletion optimizer, specifying the retention period (in days) for orphan files before they are deleted from the S3 table. (AI-inferred) */
   orphanFileDeletionConfiguration?: TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration>;
-  /** Configures the retention settings for the Glue table optimizer, specifying the snapshot retention period and the number of snapshots to retain for Apache Iceberg tables. (AI-inferred) */
   retentionConfiguration?: TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration>;
   /** A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf. */
   roleArn: string | Computed<string>;
-  /** Configures the VPC settings, including subnet and security group IDs, that the AWS Glue job running the table optimization uses to access resources within a virtual private cloud. (AI-inferred) */
   vpcConfiguration?: TableOptimizer_TableOptimizerConfiguration_VpcConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration_VpcConfiguration>;
 }
 
@@ -138,7 +128,6 @@ export interface TableOptimizerConfig {
   databaseName: string | Computed<string>;
   /** The table name. For Hive compatibility, this must be entirely lowercase. */
   tableName: string | Computed<string>;
-  /** Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred) */
   tableOptimizerConfiguration: TableOptimizer_TableOptimizerConfiguration | Computed<TableOptimizer_TableOptimizerConfiguration>;
   /** The type of table optimizer. */
   type: string | Computed<string>;
@@ -151,7 +140,6 @@ export interface TableOptimizerAttrs {
   databaseName: string;
   /** The table name. For Hive compatibility, this must be entirely lowercase. */
   tableName: string;
-  /** Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred) */
   tableOptimizerConfiguration: TableOptimizer_TableOptimizerConfiguration;
   /** The type of table optimizer. */
   type: string;

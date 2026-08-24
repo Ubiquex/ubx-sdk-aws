@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Profile_Tags:
-    # A user-defined string that serves as the key in a tag attached to an AWS Transfer Family profile, enabling resource categorization and cost allocation. (AI-inferred)
     key: Any = None
-    # Specifies the value part of a tag attached to this AWS Transfer Family profile, allowing you to categorize and manage the profile with custom metadata. (AI-inferred)
     value: Any = None
 
 _Profile_TagsFields = {

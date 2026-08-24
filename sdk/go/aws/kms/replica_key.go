@@ -4,9 +4,7 @@ package kms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicaKey_Tags struct {
-	// The key of a tag attached to the AWS KMS replica key, used as part of a key-value pair to identify, categorize, and manage the resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag that can be assigned to the AWS KMS replica key for resource identification and management. (AI-inferred)
 	Value any
 }
 
@@ -31,13 +29,11 @@ type ReplicaKeyConfig struct {
 }
 
 type ReplicaKeyAttrs struct {
-	// The Amazon Resource Name (ARN) of the replica key. (AI-inferred)
 	Arn any
 	// A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
 	Description any
 	// Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
 	Enabled any
-	// The unique identifier of the replica KMS key, returned as a 32-character UUID string, which can be used to reference the key in IAM policies, aliases, and encryption operations. (AI-inferred)
 	KeyId any
 	// The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
 	KeyPolicy any

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CatalogPortfolio_Tags {
-  /** The key of a tag attached to the AWS Service Catalog portfolio, used to organize and identify the portfolio for cost allocation and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value (a string) of a key-value tag that can be assigned to the AWS Service Catalog portfolio for organizational purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,29 +12,19 @@ const CatalogPortfolio_TagsFields: FieldMap = {
 };
 
 export interface CatalogPortfolioConfig {
-  /** Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred) */
   acceptLanguage?: string | Computed<string>;
-  /** A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred) */
   providerName: string | Computed<string>;
   tags?: CatalogPortfolio_Tags[] | Computed<CatalogPortfolio_Tags[]>;
 }
 
 export interface CatalogPortfolioAttrs {
-  /** Specifies the language code (such as 'en' or 'jp') that AWS Service Catalog uses for localized text when returning portfolio details, ensuring the portfolio's description and related metadata appear in the requested language. (AI-inferred) */
   acceptLanguage: string;
-  /** A user-friendly description of the Service Catalog portfolio, providing additional context about its purpose and contents. (AI-inferred) */
   description: string;
-  /** The name of the portfolio, as displayed in the AWS Service Catalog console. (AI-inferred) */
   displayName: string;
-  /** The unique Service Catalog portfolio identifier (e.g., 'port-xxxxxx') assigned by AWS when the portfolio is created, used to reference the portfolio in other resources and API calls. (AI-inferred) */
   id: string;
-  /** The name of the AWS Service Catalog portfolio, automatically populated from the portfolio's DisplayName attribute when read from AWS. (AI-inferred) */
   portfolioName: string;
-  /** The name of the person or organization that owns and manages the Service Catalog portfolio. (AI-inferred) */
   providerName: string;
   tags: CatalogPortfolio_Tags[];
 }

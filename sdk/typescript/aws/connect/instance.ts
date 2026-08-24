@@ -31,7 +31,6 @@ export interface Instance_Attributes {
 }
 
 export interface Instance_Tags {
-  /** The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -58,7 +57,6 @@ const Instance_TagsFields: FieldMap = {
 };
 
 export interface InstanceConfig {
-  /** Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred) */
   attributes: Instance_Attributes | Computed<Instance_Attributes>;
   /** Existing directoryId user wants to map to the new Connect instance. */
   directoryId?: string | Computed<string>;
@@ -73,7 +71,6 @@ export interface InstanceConfig {
 export interface InstanceAttrs {
   /** An instanceArn is automatically generated on creation based on instanceId. */
   arn: string;
-  /** Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred) */
   attributes: Instance_Attributes;
   /** Timestamp of instance creation logged as part of instance creation. */
   createdTime: string;

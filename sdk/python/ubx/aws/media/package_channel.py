@@ -13,13 +13,9 @@ class PackageChannel_EgressAccessLogs:
 
 @dataclasses.dataclass
 class PackageChannel_HlsIngest_IngestEndpoints:
-    # The unique identifier assigned by AWS MediaPackage to this HLS ingest endpoint. (AI-inferred)
     id: Any = None
-    # The password used to authenticate HTTP requests to the HLS ingest endpoint when pushing media content from an upstream encoder. (AI-inferred)
     password: Any = None
-    # The URL of the HLS ingest endpoint that receives live content from an upstream encoder for the MediaPackage channel. (AI-inferred)
     url: Any = None
-    # The username used to authenticate to the ingest endpoint when pushing content into the MediaPackage channel. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
@@ -29,9 +25,7 @@ class PackageChannel_HlsIngest:
 
 @dataclasses.dataclass
 class PackageChannel_Tags:
-    # The key of a tag attached to the AWS Elemental MediaPackage channel, enabling you to assign metadata such as environment or project for resource filtering and cost tracking. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair applied to an AWS Elemental MediaPackage channel, used for resource identification and management. (AI-inferred)
     value: Any = None
 
 _PackageChannel_EgressAccessLogsFields = {
@@ -47,11 +41,9 @@ _PackageChannel_TagsFields = {
 class PackageChannelConfig:
     # A short text description of the Channel.
     description: Any = None
-    # This property specifies the CloudWatch Logs log group where egress access logs for the MediaPackage channel are delivered. (AI-inferred)
     egress_access_logs: Any = None
     # The ID of the Channel.
     id: Any = None
-    # Specifies the CloudWatch Logs log group that captures access logs for incoming requests to the MediaPackage channel's ingress endpoints. (AI-inferred)
     ingress_access_logs: Any = None
     # A collection of tags associated with a resource
     tags: Any = None
@@ -62,13 +54,11 @@ class PackageChannelAttrs:
     arn: Any = None
     # A short text description of the Channel.
     description: Any = None
-    # This property specifies the CloudWatch Logs log group where egress access logs for the MediaPackage channel are delivered. (AI-inferred)
     egress_access_logs: Any = None
     # An HTTP Live Streaming (HLS) ingest resource configuration.
     hls_ingest: Any = None
     # The ID of the Channel.
     id: Any = None
-    # Specifies the CloudWatch Logs log group that captures access logs for incoming requests to the MediaPackage channel's ingress endpoints. (AI-inferred)
     ingress_access_logs: Any = None
     # A collection of tags associated with a resource
     tags: Any = None

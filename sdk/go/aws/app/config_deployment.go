@@ -4,11 +4,8 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigDeployment_DynamicExtensionParameters struct {
-	// The name of the AppConfig extension that consumes this dynamic parameter during deployment. (AI-inferred)
 	ExtensionReference any
-	// The name of the dynamic extension parameter being set for the AppConfig deployment, used to pass custom configuration to an extension (such as a Lambda function) during a deployment event. (AI-inferred)
 	ParameterName any
-	// Provides the dynamic value supplied to an extension parameter at deployment time, overriding the extension's default parameter value for this deployment. (AI-inferred)
 	ParameterValue any
 }
 
@@ -39,7 +36,6 @@ type ConfigDeploymentConfig struct {
 	DeploymentStrategyId any
 	// A description of the deployment.
 	Description any
-	// A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred)
 	DynamicExtensionParameters any
 	// The environment ID.
 	EnvironmentId any
@@ -62,7 +58,6 @@ type ConfigDeploymentAttrs struct {
 	DeploymentStrategyId any
 	// A description of the deployment.
 	Description any
-	// A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred)
 	DynamicExtensionParameters any
 	// The environment ID.
 	EnvironmentId any

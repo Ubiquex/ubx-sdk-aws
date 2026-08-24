@@ -4,18 +4,14 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamApplication_IconS3Location struct {
-	// The S3 bucket that holds the application icon image file for the AppStream application. (AI-inferred)
 	S3Bucket any
-	// The S3 object key (path) of the application icon image within the S3 bucket specified by the parent IconS3Location property. (AI-inferred)
 	S3Key any
 }
 
 type StreamApplication_Tags struct {
 	Key any
 	TagKey any
-	// The value of a tag assigned to the AppStream application, paired with the corresponding tag key in the tags list. (AI-inferred)
 	TagValue any
-	// The value for the specified tag key, which can be used to categorize and manage the AppStream application resource. (AI-inferred)
 	Value any
 }
 
@@ -32,58 +28,34 @@ var StreamApplication_TagsFields = ubx.FieldMap{
 	}
 
 type StreamApplicationConfig struct {
-	// The Amazon Resource Name (ARN) of the app block that the application is associated with. (AI-inferred)
 	AppBlockArn any
-	// A list of application attribute names to delete from the AppStream application when the CloudFormation stack is updated, used to remove properties that were omitted from the updated template. (AI-inferred)
 	AttributesToDelete any
-	// A user-facing description of the AppStream 2.0 application that is displayed to end users when browsing available applications. (AI-inferred)
 	Description any
-	// A user-friendly name for the application that is displayed in the AppStream 2.0 application catalog. (AI-inferred)
 	DisplayName any
-	// Specifies the S3 bucket and key where the application's icon image file is stored. (AI-inferred)
 	IconS3Location any
-	// Specifies the list of AppStream 2.0 instance families (e.g., GENERAL_PURPOSE, MEMORY_OPTIMIZED) that this application supports, determining which fleet instance types can launch it. (AI-inferred)
 	InstanceFamilies any
-	// The command-line arguments (parameters) passed to the application when it is launched in an AppStream 2.0 streaming session. (AI-inferred)
 	LaunchParameters any
-	// The path to the executable file of the application that AppStream 2.0 launches on the streaming instance. (AI-inferred)
 	LaunchPath any
-	// The unique name of the AppStream 2.0 application, which serves as its identifier within the AWS account and region. (AI-inferred)
 	Name any
-	// Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
 	Platforms any
 	Tags any
-	// Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
 	WorkingDirectory any
 }
 
 type StreamApplicationAttrs struct {
-	// The Amazon Resource Name (ARN) of the app block that the application is associated with. (AI-inferred)
 	AppBlockArn any
-	// The Amazon Resource Name (ARN) that uniquely identifies the AppStream 2.0 application. (AI-inferred)
 	Arn any
-	// A list of application attribute names to delete from the AppStream application when the CloudFormation stack is updated, used to remove properties that were omitted from the updated template. (AI-inferred)
 	AttributesToDelete any
-	// The timestamp when the AppStream application was created. (AI-inferred)
 	CreatedTime any
-	// A user-facing description of the AppStream 2.0 application that is displayed to end users when browsing available applications. (AI-inferred)
 	Description any
-	// A user-friendly name for the application that is displayed in the AppStream 2.0 application catalog. (AI-inferred)
 	DisplayName any
-	// Specifies the S3 bucket and key where the application's icon image file is stored. (AI-inferred)
 	IconS3Location any
-	// Specifies the list of AppStream 2.0 instance families (e.g., GENERAL_PURPOSE, MEMORY_OPTIMIZED) that this application supports, determining which fleet instance types can launch it. (AI-inferred)
 	InstanceFamilies any
-	// The command-line arguments (parameters) passed to the application when it is launched in an AppStream 2.0 streaming session. (AI-inferred)
 	LaunchParameters any
-	// The path to the executable file of the application that AppStream 2.0 launches on the streaming instance. (AI-inferred)
 	LaunchPath any
-	// The unique name of the AppStream 2.0 application, which serves as its identifier within the AWS account and region. (AI-inferred)
 	Name any
-	// Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
 	Platforms any
 	Tags any
-	// Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
 	WorkingDirectory any
 }
 

@@ -37,7 +37,6 @@ export interface ReceiptFilterConfig {
 export interface ReceiptFilterAttrs {
   /** A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it. */
   filter: ReceiptFilter_Filter;
-  /** The name of the SES receipt filter, which serves as the unique Terraform identifier and matches the filter's `name` attribute. (AI-inferred) */
   id: string;
 }
 

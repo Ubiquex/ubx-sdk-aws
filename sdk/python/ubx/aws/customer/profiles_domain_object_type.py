@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProfilesDomainObjectType_Tags:
-    # The key of a tag attached to the AWS Customer Profiles domain object type, used to organize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

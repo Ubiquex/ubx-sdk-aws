@@ -4,7 +4,6 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MessageTemplate_Content_EmailMessageTemplateContent_Body_Html struct {
-	// The HTML body content of the email message template, used when the email body is formatted as HTML. (AI-inferred)
 	Content any
 }
 
@@ -16,9 +15,7 @@ type MessageTemplate_Content_EmailMessageTemplateContent_Body struct {
 }
 
 type MessageTemplate_Content_EmailMessageTemplateContent_Headers struct {
-	// The name of the email header (e.g., a custom header key) in the headers list of the email message template content. (AI-inferred)
 	Name any
-	// The value of an email header in the AWS Wisdom message template's content, paired with a key to define a custom or standard email header sent with the message. (AI-inferred)
 	Value any
 }
 
@@ -207,16 +204,12 @@ type MessageTemplate_GroupingConfiguration struct {
 }
 
 type MessageTemplate_MessageTemplateAttachments struct {
-	// The unique identifier of the attachment to include in the message template, referencing the attachment's ID in Amazon Connect Wisdom. (AI-inferred)
 	AttachmentId any
-	// The name of an attachment in the Wisdom message template, used to identify and reference the attachment when the template is rendered for customers. (AI-inferred)
 	AttachmentName any
-	// For each attachment in an Amazon Wisdom message template, this field is the Amazon S3 presigned URL that grants temporary, secure access to the attachment's underlying object stored in S3. (AI-inferred)
 	S3PresignedUrl any
 }
 
 type MessageTemplate_Tags struct {
-	// The key of a metadata tag attached to the Wisdom message template, allowing users to organize and identify the template within AWS. (AI-inferred)
 	Key any
 	Value any
 }

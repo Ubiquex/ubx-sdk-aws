@@ -11,7 +11,6 @@ type TsiteWiseComputationModel_ComputationModelConfiguration_AnomalyDetection st
 }
 
 type TsiteWiseComputationModel_ComputationModelConfiguration struct {
-	// Specifies the anomaly detection configuration for the IoTSiteWise computation model, including the associated ML model and a threshold that determines when asset data points are flagged as anomalous. (AI-inferred)
 	AnomalyDetection any
 }
 

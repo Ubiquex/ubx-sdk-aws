@@ -16,10 +16,8 @@ var DutyTrustedEntitySet_TagsFields = ubx.FieldMap{
 type DutyTrustedEntitySetConfig struct {
 	Activate any
 	DetectorId any
-	// The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
 	ExpectedBucketOwner any
 	Format any
-	// The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
 	Location any
 	Name any
 	Tags any
@@ -30,11 +28,9 @@ type DutyTrustedEntitySetAttrs struct {
 	CreatedAt any
 	DetectorId any
 	ErrorDetails any
-	// The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
 	ExpectedBucketOwner any
 	Format any
 	Id any
-	// The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
 	Location any
 	Name any
 	Status any

@@ -9,16 +9,12 @@ export interface SearchServerlessCollection_EncryptionConfig {
 }
 
 export interface SearchServerlessCollection_FipsEndpoints {
-  /** The FIPS-compliant collection endpoint URL for the OpenSearch Serverless collection, which is used when the collection is accessed via FIPS-compliant settings. (AI-inferred) */
   collectionEndpoint?: string | Computed<string>;
-  /** The FIPS-compliant URL endpoint for accessing the OpenSearch Dashboards (formerly Kibana) interface for the OpenSearch Serverless collection. (AI-inferred) */
   dashboardEndpoint?: string | Computed<string>;
 }
 
 export interface SearchServerlessCollection_Tags {
-  /** A tag key is a case-sensitive string up to 128 characters (and cannot start with 'aws:') that, when paired with a tag value, attaches metadata to the OpenSearch Serverless collection for management and identification purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the OpenSearch Serverless collection, allowing you to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -77,7 +73,6 @@ export interface SearchServerlessCollectionAttrs {
   description: string;
   /** Encryption settings for the collection */
   encryptionConfig: SearchServerlessCollection_EncryptionConfig;
-  /** A computed object that contains the FIPS-compliant endpoint URLs for the OpenSearch Serverless collection, which are read-only and provided by AWS for accessing the collection over a FIPS-validated connection. (AI-inferred) */
   fipsEndpoints: SearchServerlessCollection_FipsEndpoints;
   /** The identifier of the collection */
   id: string;

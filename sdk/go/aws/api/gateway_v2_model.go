@@ -23,7 +23,6 @@ type GatewayV2ModelAttrs struct {
 	ContentType any
 	// The description of the model.
 	Description any
-	// The unique identifier automatically assigned by Amazon API Gateway to this model when it is created. (AI-inferred)
 	ModelId any
 	// The name of the model.
 	Name any

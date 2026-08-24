@@ -13,14 +13,11 @@ class Template_LayoutConfiguration:
 
 @dataclasses.dataclass
 class Template_RequiredFields:
-    # The identifier of the case field that must be included when creating a case using this template. (AI-inferred)
     field_id: Any = None
 
 @dataclasses.dataclass
 class Template_Rules:
-    # Specifies the unique identifier for a rule within the AWS Cases template, used to reference the rule when defining conditional field requirements. (AI-inferred)
     case_rule_id: Any = None
-    # The unique identifier of the case field in Amazon Cases that this rule applies to, matching a field defined in the associated domain. (AI-inferred)
     field_id: Any = None
 
 @dataclasses.dataclass

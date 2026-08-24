@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BeanstalkEnvironment_OptionSettings {
-  /** Specifies the AWS Elastic Beanstalk configuration namespace (e.g., 'aws:autoscaling:asg', 'aws:ec2:instances') that groups related option settings for the environment. (AI-inferred) */
   namespace?: string | Computed<string>;
-  /** The name of the Elastic Beanstalk configuration option (e.g., 'IamInstanceProfile' or 'InstanceType') that this option setting defines within the specified namespace. (AI-inferred) */
   optionName?: string | Computed<string>;
-  /** Specifies the name of a specific resource (such as an Amazon RDS DB instance or an Auto Scaling group) in the Elastic Beanstalk environment that this option setting applies to, used when the option namespace supports multiple resources of the same type. (AI-inferred) */
   resourceName?: string | Computed<string>;
-  /** Specifies the actual value to apply for the given Elastic Beanstalk configuration option, controlling environment settings such as instance type, load balancing, or health checks. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface BeanstalkEnvironment_Tags {
-  /** The key (name) of a tag assigned to the Elastic Beanstalk environment, used to categorize and filter the resource for cost allocation, access control, and operational management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the Elastic Beanstalk environment, used to categorize and manage the environment as an AWS resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -67,7 +61,6 @@ export interface BeanstalkEnvironmentConfig {
   tags?: BeanstalkEnvironment_Tags[] | Computed<BeanstalkEnvironment_Tags[]>;
   /** The name of the Elastic Beanstalk configuration template to use with the environment. */
   templateName?: string | Computed<string>;
-  /** Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred) */
   tier?: BeanstalkEnvironment_Tier | Computed<BeanstalkEnvironment_Tier>;
   /** The name of the application version to deploy. */
   versionLabel?: string | Computed<string>;
@@ -80,7 +73,6 @@ export interface BeanstalkEnvironmentAttrs {
   cnameprefix: string;
   /** Your description for this environment. */
   description: string;
-  /** The endpoint URL for the environment, which is the CNAME of the load balancer for load-balanced environments or the public DNS address for single-instance environments, used to access the running application. (AI-inferred) */
   endpointUrl: string;
   /** A unique name for the environment. */
   environmentName: string;
@@ -96,7 +88,6 @@ export interface BeanstalkEnvironmentAttrs {
   tags: BeanstalkEnvironment_Tags[];
   /** The name of the Elastic Beanstalk configuration template to use with the environment. */
   templateName: string;
-  /** Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred) */
   tier: BeanstalkEnvironment_Tier;
   /** The name of the application version to deploy. */
   versionLabel: string;

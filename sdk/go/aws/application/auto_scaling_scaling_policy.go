@@ -4,69 +4,46 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_Dimensions struct {
-	// The name of the CloudWatch metric dimension (e.g., 'AutoScalingGroupName') used as a key to identify a specific attribute of the customized capacity metric for predictive scaling. (AI-inferred)
 	Name any
-	// The value part of a name/value pair that defines a CloudWatch metric dimension for the customized capacity metric used in predictive scaling. (AI-inferred)
 	Value any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric struct {
-	// The list of CloudWatch metric dimensions (each a name-value pair) that uniquely identify the metric used as the customized capacity metric in the predictive scaling policy. (AI-inferred)
 	Dimensions any
-	// The name of the CloudWatch metric used as the source for the metric statistic in this metric data query within the custom capacity metric specification of the predictive scaling policy. (AI-inferred)
 	MetricName any
-	// The namespace of the CloudWatch metric (e.g., AWS/EC2, AWS/ApplicationELB) that identifies the AWS service emitting the metric used in the customized capacity metric specification for predictive scaling. (AI-inferred)
 	Namespace any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat struct {
-	// Identifies the CloudWatch metric (by its namespace, metric name, and dimensions) that this metric stat uses as the source data for the customized capacity metric specification in predictive scaling. (AI-inferred)
 	Metric any
-	// The CloudWatch statistic (e.g., Sum, Average, Minimum, Maximum, SampleCount, or a percentile like p99) for the metric used in this customized capacity metric specification of the predictive scaling policy. (AI-inferred)
 	Stat any
-	// The unit of measurement for the metric statistic (e.g., 'Count', 'Percent', 'Bytes') in the customized capacity metric specification for the predictive scaling policy. (AI-inferred)
 	Unit any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries struct {
-	// The math expression used in the metric data query for the customized capacity metric specification, enabling calculated metrics such as aggregation of raw metrics for predictive scaling. (AI-inferred)
 	Expression any
-	// A short name that uniquely identifies this metric data query within the customized capacity metric specification, used to reference the returned data in metric expressions. (AI-inferred)
 	Id any
-	// A human-readable label for the metric data query that identifies the metric or expression used in the customized capacity metric specification for predictive scaling. (AI-inferred)
 	Label any
-	// Specifies the CloudWatch metric statistic to use in the metric data query, providing the metric's namespace, name, dimensions, and the statistic (e.g., Sum) that predictive scaling uses to compute capacity. (AI-inferred)
 	MetricStat any
-	// Indicates whether the result of this metric data query is returned and used as the customized capacity metric in the predictive scaling policy's metric specification, typically set to true for the query that provides the actual capacity value. (AI-inferred)
 	ReturnData any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification struct {
-	// Specifies the metric data queries that define the customized capacity metric(s) used to calculate the target capacity for predictive scaling, where each query can reference a CloudWatch metric or be a math expression based on other queries. (AI-inferred)
 	MetricDataQueries any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_PredefinedLoadMetricSpecification struct {
-	// The predefined load metric type for predictive scaling, such as ASGCPUUtilization or ALBRequestCountPerTarget, which determines the load metric used to compute the capacity forecast. (AI-inferred)
 	PredefinedMetricType any
-	// The resource label that identifies the specific AWS resource (such as an Application Load Balancer or target group) to associate with the predefined load metric for predictive scaling, required for metrics like ALBRequestCountPerTarget. (AI-inferred)
 	ResourceLabel any
 }
 
 type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications struct {
-	// Specifies a custom CloudWatch metric that represents the capacity of the scaling target (e.g., an Auto Scaling group), including the metric name, namespace, and statistic, which Application Auto Scaling uses for predictive scaling forecasting. (AI-inferred)
 	CustomizedCapacityMetricSpecification any
-	// The custom load metric specification for the predictive scaling policy, defining the metric name, namespace, dimensions, and statistic used to represent the resource's load. (AI-inferred)
 	CustomizedLoadMetricSpecification any
-	// Defines the custom CloudWatch metric specification that this predictive scaling metric specification uses for forecasting, including metric name, namespace, dimensions, and statistic. (AI-inferred)
 	CustomizedScalingMetricSpecification any
-	// PredefinedLoadMetricSpecification specifies a predefined metric (e.g., ALBRequestCountPerTarget) to be used as the load metric for the predictive scaling policy, optionally identifying the specific resource with a ResourceLabel. (AI-inferred)
 	PredefinedLoadMetricSpecification any
-	// Defines a predefined metric pair to be used for predictive scaling, specifying the predefined metric type and, for metrics that require it, the resource label. (AI-inferred)
 	PredefinedMetricPairSpecification any
-	// Defines the predefined CloudWatch metric (e.g., ASG CPU utilization or request count per target) that the predictive scaling policy uses as the basis for load forecasts, with an optional resource label to identify the specific resource. (AI-inferred)
 	PredefinedScalingMetricSpecification any
-	// The target value for the scaling metric defined in this specification, which the predictive scaling policy uses to determine the required capacity and adjust the resource's scale. (AI-inferred)
 	TargetValue any
 }
 
@@ -84,11 +61,8 @@ type AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration struct {
 }
 
 type AutoScalingScalingPolicy_StepScalingPolicyConfiguration_StepAdjustments struct {
-	// Defines the exclusive lower bound of the metric value range that triggers this step adjustment, where the range is evaluated relative to the alarm threshold and the associated scaling adjustment is applied only when the CloudWatch metric value falls within that interval. (AI-inferred)
 	MetricIntervalLowerBound any
-	// Specifies the upper bound (exclusive) of the metric value range that triggers this step adjustment, used in step scaling policies to map metric values to scaling adjustments. (AI-inferred)
 	MetricIntervalUpperBound any
-	// The amount, in capacity units, by which to scale (positive to add capacity, negative to remove capacity) when the corresponding step adjustment's metric breach threshold is met. (AI-inferred)
 	ScalingAdjustment any
 }
 
@@ -305,7 +279,6 @@ type AutoScalingScalingPolicyConfig struct {
 }
 
 type AutoScalingScalingPolicyAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Auto Scaling scaling policy. (AI-inferred)
 	Arn any
 	// The name of the scaling policy. Updates to the name of a target tracking scaling policy are not supported, unless you also update the metric used for scaling. To change only a target tracking scaling policy's name, first delete the policy by removing the existing ``AWS::ApplicationAutoScaling::ScalingPolicy`` resource from the template and updating the stack. Then, recreate the resource with the same settings and a different name.
 	PolicyName any

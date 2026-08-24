@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class RecoveryReadinessReadinessCheck_Tags:
     key: Any = None
-    # The value half of a key-value tag attached to the Route 53 Recovery Readiness readiness check, used to add custom metadata for organizing and identifying this resource. (AI-inferred)
     value: Any = None
 
 _RecoveryReadinessReadinessCheck_TagsFields = {

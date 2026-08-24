@@ -15,9 +15,7 @@ class CacheUser_AuthenticationMode:
 
 @dataclasses.dataclass
 class CacheUser_Tags:
-    # The key of a tag attached to the ElastiCache user, used to assign metadata for identification and cost allocation. (AI-inferred)
     key: Any = None
-    # The value component of a tag key-value pair attached to this ElastiCache user, used to categorize or manage the resource. (AI-inferred)
     value: Any = None
 
 _CacheUser_AuthenticationModeFields = {
@@ -34,7 +32,6 @@ _CacheUser_TagsFields = {
 class CacheUserConfig:
     # Access permissions string used for this user account.
     access_string: Any = None
-    # Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred)
     authentication_mode: Any = None
     # The target cache engine for the user.
     engine: Any = None
@@ -55,7 +52,6 @@ class CacheUserAttrs:
     access_string: Any = None
     # The Amazon Resource Name (ARN) of the user account.
     arn: Any = None
-    # Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred)
     authentication_mode: Any = None
     # The target cache engine for the user.
     engine: Any = None

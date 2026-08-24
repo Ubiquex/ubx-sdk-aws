@@ -21,7 +21,6 @@ class PublicRepository_RepositoryCatalogData:
 
 @dataclasses.dataclass
 class PublicRepository_Tags:
-    # The key of a tag attached to the ECR public repository, used to identify, categorize, and organize the repository within your AWS environment. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -51,7 +50,6 @@ class PublicRepositoryConfig:
 
 @dataclasses.dataclass
 class PublicRepositoryAttrs:
-    # The Amazon Resource Name (ARN) assigned to the public ECR repository. (AI-inferred)
     arn: Any = None
     # The details about the repository that are publicly visible in the Amazon ECR Public Gallery. For more information, see [Amazon ECR Public repository catalog data](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-catalog-data.html) in the *Amazon ECR Public User Guide*.
     repository_catalog_data: Any = None

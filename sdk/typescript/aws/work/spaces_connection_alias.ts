@@ -2,19 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpacesConnectionAlias_Associations {
-  /** The AWS account ID of the account associated with this WorkSpaces connection alias, enabling cross-account redirection for WorkSpaces clients in that account. (AI-inferred) */
   associatedAccountId?: string | Computed<string>;
-  /** The status of the association between the WorkSpaces connection alias and its associated directory, indicating whether the association is pending, available, or failed. (AI-inferred) */
   associationStatus?: string | Computed<string>;
-  /** The unique identifier for a connection alias association, which is assigned by AWS when the connection alias is associated with a WorkSpaces directory. (AI-inferred) */
   connectionIdentifier?: string | Computed<string>;
-  /** The unique identifier of the WorkSpaces directory that is associated with the connection alias to enable cross-account access. (AI-inferred) */
   resourceId?: string | Computed<string>;
 }
 
 export interface SpacesConnectionAlias_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the WorkSpaces connection alias. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -24,22 +19,15 @@ const SpacesConnectionAlias_TagsFields: FieldMap = {
 };
 
 export interface SpacesConnectionAliasConfig {
-  /** The fully qualified domain name (FQDN) that serves as the custom connection string for the WorkSpaces connection alias, such as 'www.example.com', which must be a valid domain you own and that users will use to connect to their WorkSpaces. (AI-inferred) */
   connectionString: string | Computed<string>;
-  /** A list of key-value tag pairs assigned to the WorkSpaces Connection Alias to help manage, organize, and identify the alias resource. (AI-inferred) */
   tags?: SpacesConnectionAlias_Tags[] | Computed<SpacesConnectionAlias_Tags[]>;
 }
 
 export interface SpacesConnectionAliasAttrs {
-  /** The unique identifier assigned to the WorkSpaces connection alias when it is created. (AI-inferred) */
   aliasId: string;
-  /** Returns the computed list of associations for this WorkSpaces connection alias, detailing the directories or resources it is linked to along with their association state and resource identifiers. (AI-inferred) */
   associations: SpacesConnectionAlias_Associations[];
-  /** The current lifecycle state of the connection alias, such as CREATING, CREATED, or DELETING. (AI-inferred) */
   connectionAliasState: string;
-  /** The fully qualified domain name (FQDN) that serves as the custom connection string for the WorkSpaces connection alias, such as 'www.example.com', which must be a valid domain you own and that users will use to connect to their WorkSpaces. (AI-inferred) */
   connectionString: string;
-  /** A list of key-value tag pairs assigned to the WorkSpaces Connection Alias to help manage, organize, and identify the alias resource. (AI-inferred) */
   tags: SpacesConnectionAlias_Tags[];
 }
 

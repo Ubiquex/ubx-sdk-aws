@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations {
-  /** Specifies the fallback value for the CloudWatch dimension when the dimension value source (message tag or email header) is not present in the email. (AI-inferred) */
   defaultDimensionValue?: string | Computed<string>;
-  /** Sets the name of the CloudWatch dimension that Amazon SES attaches to the metrics it publishes for this configuration set's event destination, allowing the metric to be filtered by that dimension in CloudWatch. (AI-inferred) */
   dimensionName?: string | Computed<string>;
-  /** The dimension_value_source field specifies whether the dimension value is derived from an email header ('emailHeader') or from a message tag ('messageTag') when publishing SES event data to CloudWatch. (AI-inferred) */
   dimensionValueSource?: string | Computed<string>;
 }
 
@@ -16,7 +13,6 @@ export interface ConfigurationSetEventDestination_EventDestination_CloudWatchDes
 }
 
 export interface ConfigurationSetEventDestination_EventDestination_EventBridgeDestination {
-  /** The ARN of the Amazon EventBridge bus to which the SES event is delivered. (AI-inferred) */
   eventBusArn: string | Computed<string>;
 }
 
@@ -28,7 +24,6 @@ export interface ConfigurationSetEventDestination_EventDestination_KinesisFireho
 }
 
 export interface ConfigurationSetEventDestination_EventDestination_SnsDestination {
-  /** The ARN of the Amazon SNS topic that Amazon SES publishes event notifications to when an email event such as send, bounce, complaint, or delivery occurs. (AI-inferred) */
   topicArn: string | Computed<string>;
 }
 
@@ -105,16 +100,13 @@ const ConfigurationSetEventDestination_EventDestinationFields: FieldMap = {
 export interface ConfigurationSetEventDestinationConfig {
   /** The name of the configuration set that contains the event destination. */
   configurationSetName: string | Computed<string>;
-  /** The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred) */
   eventDestination: ConfigurationSetEventDestination_EventDestination | Computed<ConfigurationSetEventDestination_EventDestination>;
 }
 
 export interface ConfigurationSetEventDestinationAttrs {
   /** The name of the configuration set that contains the event destination. */
   configurationSetName: string;
-  /** The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred) */
   eventDestination: ConfigurationSetEventDestination_EventDestination;
-  /** The unique identifier for this resource, composed of the configuration set name and the event destination name separated by a colon (e.g., 'my-set:my-destination'). (AI-inferred) */
   id: string;
 }
 

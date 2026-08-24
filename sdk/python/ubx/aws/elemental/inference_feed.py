@@ -18,7 +18,6 @@ class InferenceFeed_Outputs_OutputConfig_Clipping:
 @dataclasses.dataclass
 class InferenceFeed_Outputs_OutputConfig_Subtitling_AspectRatio:
     height: Any = None
-    # Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred)
     width: Any = None
 
 @dataclasses.dataclass

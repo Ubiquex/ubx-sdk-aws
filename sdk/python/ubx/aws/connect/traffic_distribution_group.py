@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TrafficDistributionGroup_Tags:
     key: Any = None
-    # The value of a user-defined tag key applied to the AWS Connect traffic distribution group, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _TrafficDistributionGroup_TagsFields = {

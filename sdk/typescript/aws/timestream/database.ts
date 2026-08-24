@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Database_Tags {
-  /** The key of a tag attached to the Timestream database, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag applied to the Timestream database, which holds an arbitrary string for resource categorization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -23,7 +21,6 @@ export interface DatabaseConfig {
 }
 
 export interface DatabaseAttrs {
-  /** The Amazon Resource Name (ARN) of the Timestream database, which uniquely identifies it within AWS. (AI-inferred) */
   arn: string;
   /** The name for the database. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the database name. */
   databaseName: string;

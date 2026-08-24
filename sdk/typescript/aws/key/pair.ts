@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pair_Tags {
-  /** The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -26,13 +25,11 @@ export interface PairConfig {
 }
 
 export interface PairAttrs {
-  /** The SHA-1 digest of the DER-encoded public key for the EC2 key pair, used to verify the key's identity. (AI-inferred) */
   keyFingerprint: string;
   /** The format of the key pair. Default: ``pem`` */
   keyFormat: string;
   /** A unique name for the key pair. Constraints: Up to 255 ASCII characters */
   keyName: string;
-  /** The unique identifier that AWS assigns to the key pair upon creation, for example 'key-1234567890abcdef0'. (AI-inferred) */
   keyPairId: string;
   /** The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa`` */
   keyType: string;

@@ -17,7 +17,6 @@ type StaticIpAttrs struct {
 	IpAddress any
 	// A Boolean value indicating whether the static IP is attached.
 	IsAttached any
-	// The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred)
 	StaticIpArn any
 	// The name of the static IP address.
 	StaticIpName any

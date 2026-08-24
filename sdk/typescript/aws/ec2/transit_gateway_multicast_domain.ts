@@ -12,7 +12,6 @@ export interface TransitGatewayMulticastDomain_Options {
 
 export interface TransitGatewayMulticastDomain_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the transit gateway multicast domain, used to assign arbitrary metadata for identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

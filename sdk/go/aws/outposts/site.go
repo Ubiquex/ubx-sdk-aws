@@ -4,53 +4,32 @@ package outposts
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Site_OperatingAddress struct {
-	// The first line of the street address (e.g., building number and street) for the operating address of the AWS Outpost site, indicating where the Outpost equipment is physically located. (AI-inferred)
 	AddressLine1 any
-	// The second line of the operating address for the Outposts site, used for additional address details such as a suite, unit, or floor number. (AI-inferred)
 	AddressLine2 any
-	// Specifies the third line of the street address for the operating (physical) address of the AWS Outposts site. (AI-inferred)
 	AddressLine3 any
-	// The city portion of the physical operating address where the AWS Outpost site is deployed and operates. (AI-inferred)
 	City any
-	// The name of the contact person associated with the operating address of the Outpost site. (AI-inferred)
 	ContactName any
-	// The phone number of the primary contact person responsible for the Outpost site at this operating address. (AI-inferred)
 	ContactPhoneNumber any
-	// The country code of the operating address for the Outpost site, specified as a two-letter ISO 3166-1 alpha-2 country code. (AI-inferred)
 	CountryCode any
-	// The district or county portion of the operating address where the Outpost site is physically located. (AI-inferred)
 	DistrictOrCounty any
-	// The municipality (city or town) of the operating address for the Outposts site. (AI-inferred)
 	Municipality any
-	// The postal code of the operating address for the Outposts site, which AWS uses for shipping equipment and providing on-site service. (AI-inferred)
 	PostalCode any
-	// The state, province, or region portion of the physical operating address for the AWS Outposts site, required when specifying the site's location. (AI-inferred)
 	StateOrRegion any
 }
 
 type Site_RackPhysicalProperties struct {
-	// Specifies the type of fiber optic cable used by the Outpost rack, either single-mode or multi-mode. (AI-inferred)
 	FiberOpticCableType any
-	// The maximum weight capacity in pounds that the Outpost rack is designed to support, expressed as a string value that defines the physical weight limit for the site's rack. (AI-inferred)
 	MaximumSupportedWeightLbs any
-	// Specifies the optical standard used for the fiber-optic network connection on the Outpost rack, determining the type of fiber (e.g., single-mode or multi-mode) and associated speed/transceiver standard. (AI-inferred)
 	OpticalStandard any
-	// Specifies the type of power connector used for the Outpost rack (e.g., C19 or C21), which influences the physical power infrastructure required at the site. (AI-inferred)
 	PowerConnector any
-	// Specifies the power draw of the rack in kilovolt-amperes (kVA) when defining the physical properties of the AWS Outposts site rack. (AI-inferred)
 	PowerDrawKva any
-	// Indicates whether the power feed for the rack drops from above (overhead) or below (underfloor), which determines how service cabling is routed to the outpost rack. (AI-inferred)
 	PowerFeedDrop any
-	// The power phase (single-phase or three-phase) of the power connection for the Outpost rack, such as SINGLE_PHASE or THREE_PHASE. (AI-inferred)
 	PowerPhase any
-	// Specifies the number of uplinks per rack for the Outpost site, using a string enum value such as 'UPLINK_COUNT_4' or 'UPLINK_COUNT_8'. (AI-inferred)
 	UplinkCount any
-	// Specifies the uplink speed (in Gbps) for the Outpost rack's network connection, such as '1G', '10G', '40G', or '100G'. (AI-inferred)
 	UplinkGbps any
 }
 
 type Site_Tags struct {
-	// The tag key (for example, 'Environment') for a tag attached to this AWS Outposts site. (AI-inferred)
 	Key any
 	Value any
 }
@@ -87,40 +66,24 @@ var Site_TagsFields = ubx.FieldMap{
 	}
 
 type SiteConfig struct {
-	// The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred)
 	Description any
-	// The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred)
 	Name any
-	// An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred)
 	Notes any
-	// The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred)
 	OperatingAddress any
-	// Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred)
 	RackPhysicalProperties any
-	// The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred)
 	ShippingAddress any
-	// A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred)
 	Tags any
 }
 
 type SiteAttrs struct {
-	// The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred)
 	Description any
-	// The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred)
 	Name any
-	// An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred)
 	Notes any
-	// The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred)
 	OperatingAddress any
-	// Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred)
 	RackPhysicalProperties any
-	// The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred)
 	ShippingAddress any
-	// The Amazon Resource Name (ARN) of the Outposts site. (AI-inferred)
 	SiteArn any
-	// The unique identifier assigned by AWS to the Outposts site, used to reference the site in other resources. (AI-inferred)
 	SiteId any
-	// A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred)
 	Tags any
 }
 

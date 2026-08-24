@@ -2,25 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Domain_Certificate {
-  /** The Amazon Resource Name (ARN) of the custom SSL/TLS certificate to use for the domain association, typically from AWS Certificate Manager (ACM) or IAM. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** Specifies the type of SSL/TLS certificate for the custom domain, such as AMPLIFY_MANAGED for Amplify's managed certificate or CUSTOM for a certificate you import or supply. (AI-inferred) */
   certificateType?: string | Computed<string>;
-  /** The DNS record value that must be added to the domain's DNS configuration to verify ownership and enable certificate issuance for the Amplify domain. (AI-inferred) */
   certificateVerificationDnsrecord?: string | Computed<string>;
 }
 
 export interface Domain_CertificateSettings {
-  /** Specifies the type of certificate used for the domain's HTTPS connection, either 'amazon-issued' for an AWS-issued ACM certificate or 'custom' to use a custom certificate via a provided ARN. (AI-inferred) */
   certificateType?: string | Computed<string>;
-  /** The ARN of the custom SSL/TLS certificate that Amplify uses to serve HTTPS for the domain when you choose to use your own certificate instead of the Amplify-managed one. (AI-inferred) */
   customCertificateArn?: string | Computed<string>;
 }
 
 export interface Domain_SubDomainSettings {
-  /** The name of the Amplify app branch that this subdomain setting points to, serving the app content from that branch. (AI-inferred) */
   branchName?: string | Computed<string>;
-  /** Defines the subdomain prefix (for example, `www` or `api`) that routes traffic to a specific branch of the Amplify application, creating a subdomain like `www.example.com` when combined with the domain name. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
@@ -35,48 +28,28 @@ const Domain_SubDomainSettingsFields: FieldMap = {
 };
 
 export interface DomainConfig {
-  /** The unique ID of the Amplify app to which this domain association belongs. (AI-inferred) */
   appId: string | Computed<string>;
-  /** Specifies the list of branch name patterns that automatically create subdomains for the Amplify app's domain, such as wildcard patterns like '*' to cover all branches. (AI-inferred) */
   autoSubDomainCreationPatterns?: string[] | Computed<string[]>;
-  /** The IAM service role that AWS Amplify assumes to automatically manage the Route 53 records for subdomains associated with this domain. (AI-inferred) */
   autoSubDomainIamrole?: string | Computed<string>;
-  /** Configures the SSL/TLS certificate for the domain association, including whether to use an Amplify-managed certificate or a custom certificate ARN. (AI-inferred) */
   certificateSettings?: Domain_CertificateSettings | Computed<Domain_CertificateSettings>;
-  /** The custom root domain name (for example, example.com) that you associate with the Amplify application, serving as the base for the subdomains configured in this domain association. (AI-inferred) */
   domainName: string | Computed<string>;
-  /** Determines whether Amplify automatically creates subdomains for all branches in the app associated with this domain. (AI-inferred) */
   enableAutoSubDomain?: boolean | Computed<boolean>;
-  /** Configures the subdomains for this domain, where each item maps a subdomain prefix (like 'www' or 'app') to a specific Amplify branch, controlling how requests to that subdomain are served. (AI-inferred) */
   subDomainSettings: Domain_SubDomainSettings[] | Computed<Domain_SubDomainSettings[]>;
 }
 
 export interface DomainAttrs {
-  /** The unique ID of the Amplify app to which this domain association belongs. (AI-inferred) */
   appId: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Amplify custom domain association in AWS. (AI-inferred) */
   arn: string;
-  /** Specifies the list of branch name patterns that automatically create subdomains for the Amplify app's domain, such as wildcard patterns like '*' to cover all branches. (AI-inferred) */
   autoSubDomainCreationPatterns: string[];
-  /** The IAM service role that AWS Amplify assumes to automatically manage the Route 53 records for subdomains associated with this domain. (AI-inferred) */
   autoSubDomainIamrole: string;
-  /** Contains the details of the SSL/TLS certificate associated with the Amplify domain, including the certificate Amazon Resource Name (ARN), certificate type (e.g., AMPLIFY_MANAGED or CUSTOM), and the certificate's current status (such as ISSUED or PENDING_VERIFICATION). (AI-inferred) */
   certificate: Domain_Certificate;
-  /** The DNS CNAME record that you must add to your domain's DNS settings to verify domain ownership and issue the SSL certificate for the Amplify domain association. (AI-inferred) */
   certificateRecord: string;
-  /** Configures the SSL/TLS certificate for the domain association, including whether to use an Amplify-managed certificate or a custom certificate ARN. (AI-inferred) */
   certificateSettings: Domain_CertificateSettings;
-  /** The custom root domain name (for example, example.com) that you associate with the Amplify application, serving as the base for the subdomains configured in this domain association. (AI-inferred) */
   domainName: string;
-  /** The status of the domain association, which indicates the current lifecycle state of the domain in Amplify, such as CREATING, VERIFYING, AVAILABLE, UPDATING, or PENDING_DEPLOYMENT. (AI-inferred) */
   domainStatus: string;
-  /** Determines whether Amplify automatically creates subdomains for all branches in the app associated with this domain. (AI-inferred) */
   enableAutoSubDomain: boolean;
-  /** Provides the reason associated with the current status of the Amplify domain association, such as a failed domain verification or certificate issuance failure. (AI-inferred) */
   statusReason: string;
-  /** Configures the subdomains for this domain, where each item maps a subdomain prefix (like 'www' or 'app') to a specific Amplify branch, controlling how requests to that subdomain are served. (AI-inferred) */
   subDomainSettings: Domain_SubDomainSettings[];
-  /** The current update status of the Amplify domain association, such as 'REQUESTING_CERTIFICATE' or 'UPDATING', indicating the progress of an in-progress operation. (AI-inferred) */
   updateStatus: string;
 }
 

@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TailorVodSource_HttpPackageConfigurations {
-  /** The relative path to the manifest file (e.g., /path/to/index.m3u8) for the HTTP package configuration of the VOD source. (AI-inferred) */
   path?: string | Computed<string>;
-  /** The source group name that groups this HTTP package configuration with others in the same VOD source, used by MediaTailor to select the appropriate manifest during playback. (AI-inferred) */
   sourceGroup?: string | Computed<string>;
-  /** Specifies the type of media packaging for this HTTP package configuration, which must be either HLS or DASH. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TailorVodSource_Tags {
-  /** A key in the user-defined tag map applied to the MediaTailor VOD source resource, used for metadata and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag assigned to the MediaTailor VOD source, serving as the value portion of a key-value metadata pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -31,11 +26,9 @@ const TailorVodSource_TagsFields: FieldMap = {
 export interface TailorVodSourceConfig {
   /** <p>A list of HTTP package configuration parameters for this VOD source.</p> */
   httpPackageConfigurations: TailorVodSource_HttpPackageConfigurations[] | Computed<TailorVodSource_HttpPackageConfigurations[]>;
-  /** The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred) */
   sourceLocationName: string | Computed<string>;
   /** The tags to assign to the VOD source. */
   tags?: TailorVodSource_Tags[] | Computed<TailorVodSource_Tags[]>;
-  /** A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred) */
   vodSourceName: string | Computed<string>;
 }
 
@@ -44,11 +37,9 @@ export interface TailorVodSourceAttrs {
   arn: string;
   /** <p>A list of HTTP package configuration parameters for this VOD source.</p> */
   httpPackageConfigurations: TailorVodSource_HttpPackageConfigurations[];
-  /** The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred) */
   sourceLocationName: string;
   /** The tags to assign to the VOD source. */
   tags: TailorVodSource_Tags[];
-  /** A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred) */
   vodSourceName: string;
 }
 

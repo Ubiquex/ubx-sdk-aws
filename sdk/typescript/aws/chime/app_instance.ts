@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AppInstance_Tags {
-  /** The key of a tag that is attached to the Amazon Chime AppInstance resource for identification and organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair attached to the Chime AppInstance, used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

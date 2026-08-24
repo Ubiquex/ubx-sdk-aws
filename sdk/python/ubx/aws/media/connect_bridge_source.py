@@ -33,7 +33,6 @@ class ConnectBridgeSource_NetworkSource:
     network_name: Any = None
     # The network source port.
     port: Any = None
-    # Specifies the transport protocol (RTP or RTP-FEC) used by the network source to ingest the media stream into the bridge. (AI-inferred)
     protocol: Any = None
 
 _ConnectBridgeSource_FlowSource_FlowVpcInterfaceAttachmentFields = {

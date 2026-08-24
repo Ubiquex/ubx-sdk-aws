@@ -4,78 +4,55 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsApplication_Inputs_InputParallelism struct {
-	// Specifies the number of in-application streams to create for the input, controlling how the source data is partitioned for parallel processing within the Kinesis Analytics application. (AI-inferred)
 	Count any
 }
 
 type AnalyticsApplication_Inputs_InputProcessingConfiguration_InputLambdaProcessor struct {
-	// The ARN of the AWS Lambda function that Kinesis Data Analytics invokes to preprocess and transform records in the input stream before they are processed by the application. (AI-inferred)
 	ResourceArn any
-	// The ARN of the IAM role that grants Amazon Kinesis Analytics permission to invoke the specified Lambda function for input preprocessing. (AI-inferred)
 	RoleArn any
 }
 
 type AnalyticsApplication_Inputs_InputProcessingConfiguration struct {
-	// Defines a Lambda function used to pre-process records in the input stream before Kinesis Analytics reads them, including the function's ARN and the IAM role ARN that Kinesis Analytics assumes to invoke it. (AI-inferred)
 	InputLambdaProcessor any
 }
 
 type AnalyticsApplication_Inputs_InputSchema_RecordColumns struct {
-	// Specifies how the column maps to a field in the source record, typically a JSON path (e.g., '$.user_id') for streaming JSON data or a zero-based column position for CSV/TSV inputs. (AI-inferred)
 	Mapping any
-	// The name of the column in the in-application stream that maps to a data element in the streaming source record. (AI-inferred)
 	Name any
-	// Specifies the SQL data type (e.g., INTEGER, VARCHAR, TIMESTAMP) of the column in the input record schema for the Kinesis Analytics application. (AI-inferred)
 	SqlType any
 }
 
 type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParameters struct {
-	// Specifies the single character used to separate fields (columns) within each CSV-format record of the input stream for the Kinesis Analytics application. (AI-inferred)
 	RecordColumnDelimiter any
-	// Specifies the character used to separate rows (records) in the CSV mapping parameter of the record format, such as a newline ('\n'), so that Kinesis Analytics can parse each record from the input data stream. (AI-inferred)
 	RecordRowDelimiter any
 }
 
 type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParameters struct {
-	// Specifies the JSONPath expression pointing to the array of records within the incoming JSON payload, which Kinesis Data Analytics uses to extract each data row for mapping. (AI-inferred)
 	RecordRowPath any
 }
 
 type AnalyticsApplication_Inputs_InputSchema_RecordFormat_MappingParameters struct {
-	// Configures the CSV-specific mapping parameters, such as record column and row delimiters, used to parse the input stream records into the application schema. (AI-inferred)
 	CsvmappingParameters any
-	// Defines the JSON mapping parameters used by the Kinesis Analytics application to parse JSON-formatted input records, including the record row path (RecordRowPath). (AI-inferred)
 	JsonmappingParameters any
 }
 
 type AnalyticsApplication_Inputs_InputSchema_RecordFormat struct {
-	// Defines how the raw input record is parsed and mapped to the schema's columns, either via CSV delimiters (record row delimiter and column delimiter) or via a JSON record row path, depending on which mapping parameter type is supplied. (AI-inferred)
 	MappingParameters any
-	// The record format type for the input stream, specifying whether records are parsed as CSV or JSON. (AI-inferred)
 	RecordFormatType any
 }
 
 type AnalyticsApplication_Inputs_InputSchema struct {
-	// Defines the list of record columns for the input schema, each specifying the column name, SQL type, and optional mapping to the field in the streaming source data. (AI-inferred)
 	RecordColumns any
-	// Specifies the character encoding of the records in the input stream (for example, UTF-8) that the Kinesis Analytics application uses to parse the input schema. (AI-inferred)
 	RecordEncoding any
-	// Defines the record format of incoming source data (e.g., JSON or CSV), including the type and mapping parameters used to parse each record in the input stream before it is processed by the Kinesis Analytics application. (AI-inferred)
 	RecordFormat any
 }
 
 type AnalyticsApplication_Inputs struct {
-	// Configures the input parallelism by specifying the number of in-application streams (Count) to create for the input, which controls how Kinesis Data Analytics processes the streaming data concurrently. (AI-inferred)
 	InputParallelism any
-	// Configures an optional Lambda function that pre-processes and transforms input records before they are consumed by the Kinesis Analytics application, enabling data cleaning or enrichment on the streaming source. (AI-inferred)
 	InputProcessingConfiguration any
-	// Defines how raw records from the streaming source are parsed into in-application columns, specifying the record format (e.g., CSV or JSON), encoding (e.g., UTF-8), and column definitions including names, types, and optional mapping from source fields. (AI-inferred)
 	InputSchema any
-	// Configuration for a Kinesis Firehose delivery stream as the application's streaming input source, specifying the delivery stream ARN and the IAM role that Kinesis Analytics assumes to read from it. (AI-inferred)
 	KinesisFirehoseInput any
-	// Configures a Kinesis stream as the input source for the Kinesis Analytics application, specifying the stream ARN and the IAM role ARN used to read from the stream. (AI-inferred)
 	KinesisStreamsInput any
-	// Specifies a name prefix used to generate the names of in-application streams that Kinesis Analytics creates from the input, and this prefix must be unique within the application. (AI-inferred)
 	NamePrefix any
 }
 
@@ -177,26 +154,17 @@ var AnalyticsApplication_InputsFields = ubx.FieldMap{
 	}
 
 type AnalyticsApplicationConfig struct {
-	// Specifies the SQL statements that define the data processing logic of the Kinesis Analytics application, including how input streams are transformed and output to destinations. (AI-inferred)
 	ApplicationCode any
-	// A user-supplied, optional description string that provides human-readable context for the Kinesis Analytics application. (AI-inferred)
 	ApplicationDescription any
-	// The name of the Kinesis Analytics application, used to identify and reference the application within AWS. (AI-inferred)
 	ApplicationName any
-	// Specifies the streaming sources (e.g., Kinesis streams or Kinesis Firehose delivery streams) that the Kinesis Analytics application reads data from, including source stream identifiers and the schema mapping for how records are parsed into in-application streams. (AI-inferred)
 	Inputs any
 }
 
 type AnalyticsApplicationAttrs struct {
-	// Specifies the SQL statements that define the data processing logic of the Kinesis Analytics application, including how input streams are transformed and output to destinations. (AI-inferred)
 	ApplicationCode any
-	// A user-supplied, optional description string that provides human-readable context for the Kinesis Analytics application. (AI-inferred)
 	ApplicationDescription any
-	// The name of the Kinesis Analytics application, used to identify and reference the application within AWS. (AI-inferred)
 	ApplicationName any
-	// The application name, which serves as the unique identifier for this Kinesis Analytics application. (AI-inferred)
 	Id any
-	// Specifies the streaming sources (e.g., Kinesis streams or Kinesis Firehose delivery streams) that the Kinesis Analytics application reads data from, including source stream identifiers and the schema mapping for how records are parsed into in-application streams. (AI-inferred)
 	Inputs any
 }
 

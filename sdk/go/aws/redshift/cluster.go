@@ -4,26 +4,19 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_Endpoint struct {
-	// The DNS hostname of the Amazon Redshift cluster's connection endpoint, used to connect to the cluster. (AI-inferred)
 	Address any
-	// The TCP port number on which the Redshift cluster accepts incoming connections, typically 5439 by default. (AI-inferred)
 	Port any
 }
 
 type Cluster_LoggingProperties struct {
-	// The name of the S3 bucket where Redshift audit logs are delivered when logging is enabled for the cluster. (AI-inferred)
 	BucketName any
-	// Specifies whether the Redshift cluster's query logging destination is Amazon S3 ('s3') or Amazon CloudWatch Logs ('cloudwatch'), used in the LoggingProperties for enabling and configuring audit logging. (AI-inferred)
 	LogDestinationType any
-	// Specifies the types of Redshift logs (connectionlog, useractivitylog, or userlog) to export to the configured S3 bucket when logging is enabled. (AI-inferred)
 	LogExports any
-	// When cluster logging is enabled, this S3 key prefix is prepended to the log file names uploaded to the destination S3 bucket, allowing logs to be organized under a common folder path. (AI-inferred)
 	S3KeyPrefix any
 }
 
 type Cluster_Tags struct {
 	Key any
-	// Specifies the value component of a user-defined tag attached to the Amazon Redshift cluster, used for resource organization, cost allocation, and access control via the tag key-value pair. (AI-inferred)
 	Value any
 }
 
@@ -92,7 +85,6 @@ type ClusterConfig struct {
 	IamRoles any
 	// The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
 	KmsKeyId any
-	// Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
 	LoggingProperties any
 	// The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
 	MaintenanceTrackName any
@@ -114,7 +106,6 @@ type ClusterConfig struct {
 	NodeType any
 	// The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
 	NumberOfNodes any
-	// The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
 	OwnerAccount any
 	// The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
 	Port any
@@ -191,7 +182,6 @@ type ClusterAttrs struct {
 	ElasticIp any
 	// If true, the data in the cluster is encrypted at rest.
 	Encrypted any
-	// The endpoint object provides the DNS address and port used to connect to the Redshift cluster. (AI-inferred)
 	Endpoint any
 	// An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see Enhanced VPC Routing in the Amazon Redshift Cluster Management Guide. If this option is true , enhanced VPC routing is enabled. Default: false
 	EnhancedVpcRouting any
@@ -203,7 +193,6 @@ type ClusterAttrs struct {
 	IamRoles any
 	// The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
 	KmsKeyId any
-	// Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
 	LoggingProperties any
 	// The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
 	MaintenanceTrackName any
@@ -227,7 +216,6 @@ type ClusterAttrs struct {
 	NodeType any
 	// The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
 	NumberOfNodes any
-	// The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
 	OwnerAccount any
 	// The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
 	Port any

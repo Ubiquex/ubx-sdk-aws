@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveChannelPlacementGroup_Tags struct {
 	Key any
-	// The value of a user-defined tag key attached to the AWS MediaLive channel placement group, used for resource identification, organization, and cost allocation. (AI-inferred)
 	Value any
 }
 

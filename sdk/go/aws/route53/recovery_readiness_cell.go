@@ -4,9 +4,7 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryReadinessCell_Tags struct {
-	// The key of a tag to attach to the Route 53 Recovery Readiness Cell, used to organize and identify the cell for cost allocation and access control. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag applied to the Route 53 Recovery Readiness cell, used for organizing, identifying, and managing the cell with custom metadata. (AI-inferred)
 	Value any
 }
 

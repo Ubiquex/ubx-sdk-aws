@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentCorePaymentConnector_CredentialProviderConfigurations_CoinbaseCdp:
-    # The ARN of the credential provider (e.g., an AWS Secrets Manager secret or IAM role) that supplies the API credentials used by the Bedrock agent to authenticate with Coinbase CDP for payment operations. (AI-inferred)
     credential_provider_arn: Any = None
 
 @dataclasses.dataclass

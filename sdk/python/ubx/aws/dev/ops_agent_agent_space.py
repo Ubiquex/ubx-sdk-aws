@@ -16,15 +16,12 @@ class OpsAgentAgentSpace_OperatorApp_Iam:
 class OpsAgentAgentSpace_OperatorApp_Idc:
     created_at: Any = None
     idc_application_arn: Any = None
-    # The Amazon Resource Name (ARN) of the IAM Identity Center (IdC) instance used by the operator application in the agent space for its identity configuration. (AI-inferred)
     idc_instance_arn: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the operator application assumes within the AWS IAM Identity Center (IDC) configuration for the agent space. (AI-inferred)
     operator_app_role_arn: Any = None
     updated_at: Any = None
 
 @dataclasses.dataclass
 class OpsAgentAgentSpace_OperatorApp:
-    # In an AWS::DevOpsAgent::AgentSpace, the `operator_app.iam` field defines the IAM role and permission settings the operator application uses to securely access AWS resources on behalf of the agent space. (AI-inferred)
     iam: Any = None
     idc: Any = None
 

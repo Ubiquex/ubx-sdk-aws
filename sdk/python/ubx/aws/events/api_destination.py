@@ -10,13 +10,10 @@ import ubx_sdk as ubx
 class ApiDestinationConfig:
     # The arn of the connection.
     connection_arn: Any = None
-    # A description for the API destination to create. (AI-inferred)
     description: Any = None
-    # The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred)
     http_method: Any = None
     # Url endpoint to invoke.
     invocation_endpoint: Any = None
-    # The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred)
     invocation_rate_limit_per_second: Any = None
     # Name of the apiDestination.
     name: Any = None
@@ -29,13 +26,10 @@ class ApiDestinationAttrs:
     arn_for_policy: Any = None
     # The arn of the connection.
     connection_arn: Any = None
-    # A description for the API destination to create. (AI-inferred)
     description: Any = None
-    # The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred)
     http_method: Any = None
     # Url endpoint to invoke.
     invocation_endpoint: Any = None
-    # The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred)
     invocation_rate_limit_per_second: Any = None
     # Name of the apiDestination.
     name: Any = None

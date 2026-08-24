@@ -25,9 +25,7 @@ type ConnectCustomPlugin_Location struct {
 }
 
 type ConnectCustomPlugin_Tags struct {
-	// The key of a tag applied to the AWS Kafka Connect custom plugin, used to organize and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair applied to the Kafka Connect custom plugin, used for AWS resource tagging to support cost allocation, access control, and resource management. (AI-inferred)
 	Value any
 }
 

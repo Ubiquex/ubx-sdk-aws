@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrganizationalUnit_Tags:
-    # The user-defined key (name) of a tag attached to the organizational unit, used to identify and categorize the unit for resource management. (AI-inferred)
     key: Any = None
-    # The value for a tag key attached to the organizational unit, used to assign metadata for management and tracking purposes. (AI-inferred)
     value: Any = None
 
 _OrganizationalUnit_TagsFields = {

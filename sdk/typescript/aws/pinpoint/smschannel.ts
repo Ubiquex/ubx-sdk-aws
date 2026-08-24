@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SmschannelConfig {
-  /** The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred) */
   applicationId: string | Computed<string>;
-  /** Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred) */
   senderId?: string | Computed<string>;
-  /** The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred) */
   shortCode?: string | Computed<string>;
 }
 
 export interface SmschannelAttrs {
-  /** The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred) */
   applicationId: string;
-  /** Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred) */
   enabled: boolean;
-  /** The `id` is the unique identifier for this SMS channel, set to the Amazon Pinpoint application ID. (AI-inferred) */
   id: string;
-  /** A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred) */
   senderId: string;
-  /** The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred) */
   shortCode: string;
 }
 

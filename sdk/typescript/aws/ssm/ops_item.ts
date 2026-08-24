@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OpsItem_Tags {
-  /** Key of a user-defined tag attached to the OpsItem, which can be used to categorize, search, and manage operational work items in AWS Systems Manager OpsCenter. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined value for a tag key on the OpsItem, used to add metadata for identifying, organizing, or filtering the OpsItem in AWS Systems Manager. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

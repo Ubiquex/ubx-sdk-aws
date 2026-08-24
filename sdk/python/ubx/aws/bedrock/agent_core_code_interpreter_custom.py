@@ -8,12 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentCoreCodeInterpreterCustom_Certificates_CertificateLocation:
-    # The ARN of the AWS Secrets Manager secret that stores the certificate for a custom certificate location, used by the AWS Bedrock Agent Core code interpreter custom resource to secure TLS connections. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class AgentCoreCodeInterpreterCustom_Certificates:
-    # The certificate_location property of each certificate specifies the S3 URI of the certificate file that is mounted into the custom core code interpreter container to establish trust for secure connections. (AI-inferred)
     certificate_location: Any = None
 
 @dataclasses.dataclass

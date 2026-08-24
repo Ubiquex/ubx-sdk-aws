@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Registration_Tags struct {
 	Key any
-	// The value of a tag attached to an AWS SMS Voice registration, which you can use to store arbitrary metadata such as environments, cost centers, or owners for the registration. (AI-inferred)
 	Value any
 }
 

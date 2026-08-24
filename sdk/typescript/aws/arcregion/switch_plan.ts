@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SwitchPlan_ReportConfiguration_ReportOutput_S3Configuration {
-  /** The AWS account ID of the owner of the destination S3 bucket, used by the service to verify bucket ownership before writing the report output to prevent accidental writes to unintended buckets. (AI-inferred) */
   bucketOwner?: string | Computed<string>;
   bucketPath?: string | Computed<string>;
 }
@@ -16,16 +15,13 @@ export interface SwitchPlan_ReportConfiguration {
 }
 
 export interface SwitchPlan_Route53HealthChecks {
-  /** The list of Amazon Route 53 health check IDs that the switch plan monitors to assess the health of the active region, helping determine whether a region failover should be initiated. (AI-inferred) */
   healthCheckIds?: string[] | Computed<string[]>;
-  /** This field specifies the Route 53 hosted zone IDs associated with the health checks, which the ARC region switch plan uses to update the corresponding DNS records when a failover occurs. (AI-inferred) */
   hostedZoneIds?: string[] | Computed<string[]>;
   recordNames?: string[] | Computed<string[]>;
   regions?: string[] | Computed<string[]>;
 }
 
 export interface SwitchPlan_Triggers_Conditions {
-  /** The name of the Amazon CloudWatch alarm that must be in ALARM state to satisfy this trigger condition and initiate the switch plan. (AI-inferred) */
   associatedAlarmName?: string | Computed<string>;
   condition?: string | Computed<string>;
 }
@@ -41,43 +37,31 @@ export interface SwitchPlan_Triggers {
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfig {
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
-  /** Defines the AWS regions and the associated ARC routing control identifiers (such as ARNs or names) that the execution block configures to implement the region switch. (AI-inferred) */
   regionAndRoutingControls?: unknown | Computed<unknown>;
   timeoutMinutes?: number | Computed<number>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfig {
-  /** The Amazon Resource Name (ARN) of an IAM role that allows the execution block to perform Aurora provisioned scaling actions in a different AWS account, enabling cross-account failover or scaling operations. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
-  /** The external identifier that must be supplied when assuming an IAM role to perform Aurora provisioning and scaling actions, used as a safety measure to prevent the confused deputy problem. (AI-inferred) */
   externalId?: string | Computed<string>;
-  /** Specifies the identifier of the Aurora global cluster to which this provisioned scaling configuration applies. (AI-inferred) */
   globalClusterIdentifier?: string | Computed<string>;
-  /** Defines the set of Amazon Aurora instance ARNs that the provisioned scaling configuration applies to during an execution block, limiting scaling actions to those instances. (AI-inferred) */
   instanceArns?: unknown | Computed<unknown>;
-  /** Specifies the Amazon Aurora database cluster ARNs within the region that this provisioned scaling configuration targets during a workflow execution block. (AI-inferred) */
   regionDatabaseClusterArns?: unknown | Computed<unknown>;
   timeoutMinutes?: number | Computed<number>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfig {
-  /** The ARN of an IAM role in the target AWS account that is assumed to perform Aurora Serverless scaling operations during a region switch. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
-  /** Specifies the Aurora global cluster identifier (the global database) that this serverless scaling configuration is associated with during the execution step of an ARC region switch workflow. (AI-inferred) */
   globalClusterIdentifier?: string | Computed<string>;
-  /** Specifies a list of Amazon Aurora Serverless database cluster ARNs in the target region whose compute capacity will be scaled according to the Aurora Serverless scaling configuration during this execution step of the switch plan. (AI-inferred) */
   regionDatabaseClusterArns?: unknown | Computed<unknown>;
   targetPercent?: number | Computed<number>;
-  /** Specifies the maximum time in minutes to allow for an Aurora Serverless database to complete a scaling adjustment during an execution step's blocking configuration. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas {
   arn?: string | Computed<string>;
-  /** The ARN of the IAM role that the custom action Lambda function assumes to access or modify resources in another AWS account during the workflow step. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
-  /** The external identifier (ExternalId) that the Lambda function uses when assuming an IAM role for the custom action, helping prevent the confused deputy problem by ensuring the role trust policy requires it. (AI-inferred) */
   externalId?: string | Computed<string>;
 }
 
@@ -90,9 +74,7 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomAc
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig {
   lambdas?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas[] | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas[]>;
-  /** The AWS Region in which the Lambda function for the custom action is invoked during this step of the region switch plan. (AI-inferred) */
   regionToRun?: string | Computed<string>;
-  /** The number of minutes to wait before retrying the custom action Lambda function after a failed execution step in the workflow. (AI-inferred) */
   retryIntervalMinutes?: number | Computed<number>;
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful>;
@@ -105,10 +87,8 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Document
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig {
   behavior?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior>;
   crossAccountRole?: string | Computed<string>;
-  /** This field specifies the Amazon Resource Names (ARNs) of the Amazon DocumentDB clusters that the execution block configuration in this workflow step operates on during the region switch. (AI-inferred) */
   databaseClusterArns?: string[] | Computed<string[]>;
   externalId?: string | Computed<string>;
-  /** Specifies the identifier of the Amazon DocumentDB global cluster that the execution step's DocumentDB configuration targets during the region switch workflow. (AI-inferred) */
   globalClusterIdentifier?: string | Computed<string>;
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungraceful>;
@@ -119,47 +99,36 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCa
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig {
-  /** Specifies the list of Auto Scaling Groups targeted for capacity increase during this execution block step's capacity increase configuration. (AI-inferred) */
   asgs?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas[] | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas[]>;
   capacityMonitoringApproach?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior>;
   targetPercent?: number | Computed<number>;
-  /** Specifies the maximum time in minutes that the execution block waits for the EC2 Auto Scaling group capacity increase to reach its target before the step is considered failed. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_Ungraceful>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_Services {
-  /** The ARN of the Amazon ECS cluster that the ECS service belongs to, used to target the service for capacity increase during the execution block of the workflow step. (AI-inferred) */
   clusterArn?: string | Computed<string>;
-  /** The cross-account IAM role assumed to increase the desired capacity of this ECS service in another AWS account during the region switch capacity increase step. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
-  /** The ARN of the ECS service that will be targeted for a capacity increase when the execution block runs. (AI-inferred) */
   serviceArn?: string | Computed<string>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig {
   capacityMonitoringApproach?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior>;
   services?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_Services[] | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig_Services[]>;
-  /** The target capacity percentage to set for the ECS service or cluster when this execution block's capacity increase action is executed. (AI-inferred) */
   targetPercent?: number | Computed<number>;
-  /** The maximum time, in minutes, allowed for the ECS capacity increase to complete during this execution block step before the step is considered failed. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig_Ungraceful>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_EksClusters {
-  /** The Amazon Resource Name (ARN) of the Amazon EKS cluster that the scaling configuration targets, identifying the specific cluster to be scaled during the region switch execution step. (AI-inferred) */
   clusterArn?: string | Computed<string>;
-  /** The ARN of the IAM role to assume in the target account owning the EKS cluster, used by the region switch execution to perform scaling changes on that cluster. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig_KubernetesResourceType {
-  /** Specifies the Kubernetes API version (e.g., 'v1', 'apps/v1') of the resource type to be scaled, matching the apiVersion used in the resource manifest. (AI-inferred) */
   apiVersion?: string | Computed<string>;
-  /** Specifies the Kubernetes resource kind (e.g., Deployment, StatefulSet) that the scaling configuration targets for EKS resource scaling. (AI-inferred) */
   kind?: string | Computed<string>;
 }
 
@@ -184,7 +153,6 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEv
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig {
   action?: string | Computed<string>;
-  /** Maps each AWS region to the Lambda event source mapping identifiers that should be enabled or disabled when this region switch execution block runs. (AI-inferred) */
   regionEventSourceMappings?: unknown | Computed<unknown>;
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig_Ungraceful>;
@@ -192,14 +160,10 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEv
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfig {
   behavior?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Ungraceful_Behavior>;
-  /** The ARN of an IAM role that the switch plan assumes to perform Neptune Global Database configuration changes in a different AWS account. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
-  /** The identifier of the Neptune global database that this execution block configuration targets during the region switch plan workflow step. (AI-inferred) */
   globalClusterIdentifier?: string | Computed<string>;
-  /** Specifies the Amazon Resource Names (ARNs) of the Neptune DB clusters (one per AWS region) that form a Neptune global database, used by the switch plan execution step to coordinate failover or management of the global database. (AI-inferred) */
   regionDatabaseClusterArns?: unknown | Computed<unknown>;
-  /** Specifies the maximum time in minutes that the Neptune global database configuration execution block is allowed to run before timing out in a region switch plan step. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
   ungraceful?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungraceful | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig_Ungraceful>;
 }
@@ -209,12 +173,9 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Parallel
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig {
-  /** The IAM role ARN to be used for cross-account permissions when creating the RDS cross-region read replica, allowing the operation to be performed in another AWS account. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
-  /** Maps the ARNs of source RDS DB instances to the configuration specifying how their cross-region read replicas should be created when this execution block is run during a switch plan step. (AI-inferred) */
   dbInstanceArnMap?: unknown | Computed<unknown>;
   externalId?: string | Computed<string>;
-  /** The maximum time in minutes to wait for the RDS cross-region read replica creation to complete before the step times out and is marked as failed. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
 }
 
@@ -227,45 +188,34 @@ export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitc
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSets {
-  /** Identifies the specific Route 53 record set (among multiple with the same name and type, e.g., for weighted or failover routing) that this health check configuration applies to within the switch plan's execution block. (AI-inferred) */
   recordSetIdentifier?: string | Computed<string>;
-  /** The AWS Region of the Route 53 record set that this health check configuration monitors, used to control failover routing during a region switch execution block. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig {
-  /** Specifies the IAM role that the switch plan assumes to access the Route 53 health check when it resides in a different AWS account. (AI-inferred) */
   crossAccountRole?: string | Computed<string>;
   externalId?: string | Computed<string>;
-  /** This field specifies the ID of the Amazon Route 53 hosted zone associated with the health check, enabling Route 53 to resolve and route the health check's DNS records. (AI-inferred) */
   hostedZoneId?: string | Computed<string>;
-  /** The fully qualified domain name (e.g., app.example.com) that the Route 53 health check monitors to assess the health of the target endpoint during the execution block of a region switch plan. (AI-inferred) */
   recordName?: string | Computed<string>;
   recordSets?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSets[] | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Route53HealthCheckConfig_RecordSets[]>;
-  /** The maximum number of minutes that an execution step will wait for a Route 53 health check to reach the desired status before the step times out and is considered failed. (AI-inferred) */
   timeoutMinutes?: number | Computed<number>;
 }
 
 export interface SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration {
   arcRoutingControlConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ArcRoutingControlConfig>;
-  /** Configures the auto scaling behavior (e.g., min/max capacity or scaling policy) for Aurora Provisioned clusters when this workflow execution block is run. (AI-inferred) */
   auroraProvisionedScalingConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraProvisionedScalingConfig>;
   auroraServerlessScalingConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_AuroraServerlessScalingConfig>;
   customActionLambdaConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig>;
   documentDbConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig>;
-  /** Configuration for increasing the EC2 Auto Scaling Group capacity as part of a step's execution block, used to pre-scale compute resources during a region switch workflow. (AI-inferred) */
   ec2AsgCapacityIncreaseConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_Ec2AsgCapacityIncreaseConfig>;
   ecsCapacityIncreaseConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EcsCapacityIncreaseConfig>;
   eksResourceScalingConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_EksResourceScalingConfig>;
   executionApprovalConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ExecutionApprovalConfig>;
   globalAuroraConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_DocumentDbConfig>;
   lambdaEventSourceMappingConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_LambdaEventSourceMappingConfig>;
-  /** This object specifies how the execution step should handle an Amazon Neptune global database during a region switch, including the target global database and the failover action to promote a secondary cluster in the destination region. (AI-inferred) */
   neptuneGlobalDatabaseConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_NeptuneGlobalDatabaseConfig>;
   parallelConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_ParallelConfig>;
-  /** Configuration for creating a cross-region read replica of an RDS database instance as part of the execution block of this workflow step. (AI-inferred) */
   rdsCreateCrossRegionReadReplicaConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig>;
-  /** Specifies the configuration for promoting an Amazon RDS read replica to a standalone DB instance during the execution block of a step in the region switch workflow. (AI-inferred) */
   rdsPromoteReadReplicaConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsCreateCrossRegionReadReplicaConfig>;
   rdsSwitchoverReadReplicaConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfig | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_RdsSwitchoverReadReplicaConfig>;
   regionSwitchPlanConfig?: SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas | Computed<SwitchPlan_Workflows_Steps_ExecutionBlockConfiguration_CustomActionLambdaConfig_Lambdas>;
@@ -687,16 +637,12 @@ const SwitchPlan_WorkflowsFields: FieldMap = {
 };
 
 export interface SwitchPlanConfig {
-  /** A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred) */
   associatedAlarms?: unknown | Computed<unknown>;
   description?: string | Computed<string>;
-  /** The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred) */
   executionRole: string | Computed<string>;
   name: string | Computed<string>;
-  /** Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred) */
   primaryRegion?: string | Computed<string>;
   recoveryApproach: string | Computed<string>;
-  /** The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred) */
   recoveryTimeObjectiveMinutes?: number | Computed<number>;
   regions: string[] | Computed<string[]>;
   reportConfiguration?: SwitchPlan_ReportConfiguration | Computed<SwitchPlan_ReportConfiguration>;
@@ -707,19 +653,15 @@ export interface SwitchPlanConfig {
 
 export interface SwitchPlanAttrs {
   arn: string;
-  /** A list of ARNs or names of CloudWatch alarms associated with the region switch plan; when any of these alarms enters the ALARM state, the switch plan is automatically executed to perform the region failover. (AI-inferred) */
   associatedAlarms: unknown;
   description: string;
-  /** The IAM role that AWS Application Recovery Controller (ARC) assumes to execute the region switch plan, granting permissions to update routing controls and perform the crossover of traffic between regions. (AI-inferred) */
   executionRole: string;
   healthChecksForPlan: unknown;
   name: string;
   owner: string;
   planHealthChecks: string[];
-  /** Specifies the AWS region that is considered the primary or active region, which is the source from which traffic is switched to the secondary region during a region switch plan execution. (AI-inferred) */
   primaryRegion: string;
   recoveryApproach: string;
-  /** The target recovery time objective (RTO) in minutes for the switch plan, specifying the maximum acceptable time to resume operations after a failover or region switch. (AI-inferred) */
   recoveryTimeObjectiveMinutes: number;
   regions: string[];
   reportConfiguration: SwitchPlan_ReportConfiguration;

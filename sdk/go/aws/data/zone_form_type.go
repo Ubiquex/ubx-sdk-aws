@@ -4,7 +4,6 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneFormType_Model struct {
-	// The Smithy model definition that specifies the structure and validation rules for the form type. (AI-inferred)
 	Smithy any
 }
 

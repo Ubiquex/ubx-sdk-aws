@@ -13,9 +13,7 @@ export interface TransitGatewayVpcAttachment_Options {
 }
 
 export interface TransitGatewayVpcAttachment_Tags {
-  /** The key of a tag attached to the EC2 Transit Gateway VPC Attachment, used for adding metadata like 'Name' or 'Environment' to identify and manage the attachment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag on the EC2 Transit Gateway VPC Attachment, used for metadata, cost allocation, and IAM resource-level access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -32,38 +30,25 @@ const TransitGatewayVpcAttachment_TagsFields: FieldMap = {
 };
 
 export interface TransitGatewayVpcAttachmentConfig {
-  /** Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred) */
   addSubnetIds?: string[] | Computed<string[]>;
   /** The options for the transit gateway vpc attachment. */
   options?: TransitGatewayVpcAttachment_Options | Computed<TransitGatewayVpcAttachment_Options>;
-  /** Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred) */
   removeSubnetIds?: string[] | Computed<string[]>;
-  /** The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
-  /** Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred) */
   tags?: TransitGatewayVpcAttachment_Tags[] | Computed<TransitGatewayVpcAttachment_Tags[]>;
-  /** The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred) */
   transitGatewayId: string | Computed<string>;
-  /** The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface TransitGatewayVpcAttachmentAttrs {
-  /** Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred) */
   addSubnetIds: string[];
-  /** The AWS-assigned unique identifier for the transit gateway VPC attachment (e.g., tgw-attach-...). (AI-inferred) */
   id: string;
   /** The options for the transit gateway vpc attachment. */
   options: TransitGatewayVpcAttachment_Options;
-  /** Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred) */
   removeSubnetIds: string[];
-  /** The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred) */
   subnetIds: string[];
-  /** Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred) */
   tags: TransitGatewayVpcAttachment_Tags[];
-  /** The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred) */
   transitGatewayId: string;
-  /** The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred) */
   vpcId: string;
 }
 

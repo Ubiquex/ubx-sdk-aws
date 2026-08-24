@@ -8,28 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolGroupConfig:
-    # A description of the user pool group. (AI-inferred)
     description: Any = None
-    # The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred)
     group_name: Any = None
-    # Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred)
     precedence: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred)
     role_arn: Any = None
-    # The ID of the Cognito user pool that this group belongs to. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolGroupAttrs:
-    # A description of the user pool group. (AI-inferred)
     description: Any = None
-    # The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred)
     group_name: Any = None
-    # Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred)
     precedence: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred)
     role_arn: Any = None
-    # The ID of the Cognito user pool that this group belongs to. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolGroup = ubx.ResourceBinding(

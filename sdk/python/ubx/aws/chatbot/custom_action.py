@@ -8,32 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomAction_Attachments_Criteria:
-    # The operator in an attachment criteria condition for an AWS Chatbot custom action, specifying the comparison method (e.g., 'CONTAINS' or 'EQUALS') used to match message attachment key/value pairs when determining whether the action can be invoked. (AI-inferred)
     operator: Any = None
-    # The value that AWS Chatbot compares against the event attribute specified by the sibling 'key' field using the sibling 'operator' logic, to decide whether the attachment should be included for a custom action invocation. (AI-inferred)
     value: Any = None
-    # Specifies the name of a notification message variable that this attachment criterion evaluates (together with an operator and value) to decide whether the corresponding custom action is presented for that notification. (AI-inferred)
     variable_name: Any = None
 
 @dataclasses.dataclass
 class CustomAction_Attachments:
-    # The text displayed on the button within the message attachment for the AWS Chatbot custom action. (AI-inferred)
     button_text: Any = None
-    # The `criteria` list holds filter conditions that determine whether a given notification or command invocation should use this attachment, restricting the custom action to matching events. (AI-inferred)
     criteria: Any = None
-    # Specifies the type of AWS notification (such as a CloudWatch alarm state change) that this attachment associates with the chatbot custom action. (AI-inferred)
     notification_type: Any = None
-    # Defines the map of variable names to values that are substituted into the custom action's command when this attachment is used. (AI-inferred)
     variables: Any = None
 
 @dataclasses.dataclass
 class CustomAction_Definition:
-    # The command text that defines the custom action's behavior, such as a shell command or script, which is executed when the action is triggered. (AI-inferred)
     command_text: Any = None
 
 @dataclasses.dataclass
 class CustomAction_Tags:
-    # The key of a tag attached to the AWS Chatbot custom action, used to identify and categorize the resource for management and cost tracking. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -65,28 +56,19 @@ _CustomAction_TagsFields = {
 
 @dataclasses.dataclass
 class CustomActionConfig:
-    # A unique, human-readable name for the custom action, used to identify and invoke it within AWS Chatbot (e.g., in Slack or Teams slash commands). (AI-inferred)
     action_name: Any = None
-    # Specifies the alias for the custom action, allowing users to invoke the action with a shorter or alternate name in chat. (AI-inferred)
     alias_name: Any = None
     attachments: Any = None
-    # Defines the custom action by providing the command text (CommandText) that the AWS Chatbot runs when the action is invoked. (AI-inferred)
     definition: Any = None
-    # A list of key-value pairs that can be attached to the AWS Chatbot custom action to help identify, organize, and manage the resource, with each object containing a Key and Value property. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class CustomActionAttrs:
-    # A unique, human-readable name for the custom action, used to identify and invoke it within AWS Chatbot (e.g., in Slack or Teams slash commands). (AI-inferred)
     action_name: Any = None
-    # Specifies the alias for the custom action, allowing users to invoke the action with a shorter or alternate name in chat. (AI-inferred)
     alias_name: Any = None
     attachments: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the custom action in AWS Chatbot, assigned by AWS when the resource is created. (AI-inferred)
     custom_action_arn: Any = None
-    # Defines the custom action by providing the command text (CommandText) that the AWS Chatbot runs when the action is invoked. (AI-inferred)
     definition: Any = None
-    # A list of key-value pairs that can be attached to the AWS Chatbot custom action to help identify, organize, and manage the resource, with each object containing a Key and Value property. (AI-inferred)
     tags: Any = None
 
 CustomAction = ubx.ResourceBinding(

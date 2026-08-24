@@ -33,7 +33,6 @@ type PermissionAttrs struct {
 	FunctionName any
 	// The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
 	FunctionUrlAuthType any
-	// The unique identifier for the Lambda permission, typically a combination of the function name and the statement ID. (AI-inferred)
 	Id any
 	// Indicates whether the permission applies when the function is invoked through a function URL.
 	InvokedViaFunctionUrl any

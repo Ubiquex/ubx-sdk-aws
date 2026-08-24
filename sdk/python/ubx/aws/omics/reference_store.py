@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class ReferenceStore_SseConfig:
     # An encryption key ARN.
     key_arn: Any = None
-    # The type of server-side encryption applied to the reference store, which must be either 'KMS' for a customer-managed AWS KMS key or 'S3' for Amazon S3-managed encryption. (AI-inferred)
     type: Any = None
 
 _ReferenceStore_SseConfigFields = {
@@ -26,7 +25,6 @@ class ReferenceStoreConfig:
     name: Any = None
     # Server-side encryption (SSE) settings for a store.
     sse_config: Any = None
-    # A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -39,11 +37,9 @@ class ReferenceStoreAttrs:
     description: Any = None
     # A name for the store.
     name: Any = None
-    # The unique identifier assigned to the reference store by AWS when it is created. (AI-inferred)
     reference_store_id: Any = None
     # Server-side encryption (SSE) settings for a store.
     sse_config: Any = None
-    # A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred)
     tags: Any = None
 
 ReferenceStore = ubx.ResourceBinding(

@@ -4,9 +4,7 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaybackKeyPair_Tags struct {
-	// The key portion of a tag attached to the IVS playback key pair, used to label and organize the resource within AWS. (AI-inferred)
 	Key any
-	// The value of a tag applied to the Amazon IVS playback key pair, used for metadata management. (AI-inferred)
 	Value any
 }
 

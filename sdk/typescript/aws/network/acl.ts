@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Acl_Tags {
-  /** The key of a tag attached to the network ACL, used to label and organize the resource for identification and management within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag applied to the network ACL, used to assign metadata such as purpose or ownership to the ACL. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -21,7 +19,6 @@ export interface AclConfig {
 }
 
 export interface AclAttrs {
-  /** The AWS-assigned identifier for the network ACL, which uses the format acl-xxxxxxxx. (AI-inferred) */
   id: string;
   /** The tags for the network ACL. */
   tags: Acl_Tags[];

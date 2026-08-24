@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TtwinMakerComponentType_Status_Error {
-  /** The error code that identifies the type of failure encountered when AWS IoT TwinMaker processed this component type. (AI-inferred) */
   code?: string | Computed<string>;
-  /** The message of the error that caused the component type to fail, providing details about what went wrong. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface TtwinMakerComponentType_Status {
-  /** The error object (containing code and message) reported for this AWS IoT TwinMaker component type when its status is in an error state (e.g., after a failed create or update). (AI-inferred) */
   error?: TtwinMakerComponentType_Status_Error | Computed<TtwinMakerComponentType_Status_Error>;
-  /** Represents the lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, DELETING, or ERROR) as reported in the status object returned by AWS IoT TwinMaker. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -45,7 +41,6 @@ export interface TtwinMakerComponentTypeAttrs {
   componentTypeId: string;
   /** An map of the composite component types in the component type. Each composite component type's key must be unique to this map. */
   compositeComponentTypes: unknown;
-  /** The date and time when the component type was created. (AI-inferred) */
   creationDateTime: string;
   /** The description of the component type. */
   description: string;
@@ -63,11 +58,9 @@ export interface TtwinMakerComponentTypeAttrs {
   propertyDefinitions: unknown;
   /** An map of the property groups in the component type. Each property group's key must be unique to this map. */
   propertyGroups: unknown;
-  /** The status object indicates the current lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, ERROR) and includes error details if an operation failed. (AI-inferred) */
   status: TtwinMakerComponentType_Status;
   /** A map of key-value pairs to associate with a resource. */
   tags: unknown;
-  /** The date and time when the component type was last updated. (AI-inferred) */
   updateDateTime: string;
   /** The ID of the workspace that contains the component type. */
   workspaceId: string;

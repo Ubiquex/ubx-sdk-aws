@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamresourceDiscoveryAssociation_Tags struct {
-	// The key of a user-defined tag attached to the IPAM resource discovery association, used to organize and identify the resource within AWS. (AI-inferred)
 	Key any
-	// Specifies the value of a tag key attached to the IPAM resource discovery association, used to organize and identify the association for purposes like cost allocation and access management. (AI-inferred)
 	Value any
 }
 

@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessWirelessGateway_LoRaWan:
-    # The LoRaWAN gateway EUI is the unique 16-character hexadecimal identifier for the gateway, required to register it with AWS IoT Wireless. (AI-inferred)
     gateway_eui: Any = None
-    # The LoRaWAN RF region for the gateway, which specifies the frequency band (e.g., US915, EU868) used for communication. (AI-inferred)
     rf_region: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessGateway_Tags:
-    # The key of a tag attached to an AWS IoT wireless gateway, used to organize, identify, and filter the gateway resource for management and cost tracking. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT Wireless Gateway, used for arbitrary metadata, identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _TwirelessWirelessGateway_LoRaWanFields = {
@@ -36,7 +32,6 @@ class TwirelessWirelessGatewayConfig:
     description: Any = None
     # The date and time when the most recent uplink was received.
     last_uplink_received_at: Any = None
-    # The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of Wireless Gateway.
     name: Any = None
@@ -57,7 +52,6 @@ class TwirelessWirelessGatewayAttrs:
     id: Any = None
     # The date and time when the most recent uplink was received.
     last_uplink_received_at: Any = None
-    # The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of Wireless Gateway.
     name: Any = None

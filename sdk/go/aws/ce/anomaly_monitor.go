@@ -4,9 +4,7 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnomalyMonitor_ResourceTags struct {
-	// The tag key for a resource tag applied to the Cost Explorer anomaly monitor, used for identifying and organizing the monitor among AWS resources. (AI-inferred)
 	Key any
-	// The value of a resource tag attached to the AWS Cost Explorer anomaly monitor, used for tagging and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -20,9 +18,7 @@ type AnomalyMonitorConfig struct {
 	MonitorDimension any
 	// The name of the monitor.
 	MonitorName any
-	// A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
 	MonitorSpecification any
-	// Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
 	MonitorType any
 	// Tags to assign to monitor.
 	ResourceTags any
@@ -43,9 +39,7 @@ type AnomalyMonitorAttrs struct {
 	MonitorDimension any
 	// The name of the monitor.
 	MonitorName any
-	// A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred)
 	MonitorSpecification any
-	// Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred)
 	MonitorType any
 	// Tags to assign to monitor.
 	ResourceTags any

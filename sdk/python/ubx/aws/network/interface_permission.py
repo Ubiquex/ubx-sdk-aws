@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterfacePermissionConfig:
-    # The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
     aws_account_id: Any = None
-    # The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
     network_interface_id: Any = None
-    # The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
     permission: Any = None
 
 @dataclasses.dataclass
 class InterfacePermissionAttrs:
-    # The AWS account ID that is granted permission to attach the network interface to an instance or associate it with an Elastic IP. (AI-inferred)
     aws_account_id: Any = None
-    # The unique identifier assigned by AWS to this network interface permission, used to reference the permission in other API calls. (AI-inferred)
     id: Any = None
-    # The ID of the Elastic Network Interface (ENI) to which this permission grants cross-account attachment access. (AI-inferred)
     network_interface_id: Any = None
-    # The type of permission to grant on the network interface, either INSTANCE-ATTACH (allows an instance to attach to the interface) or EIP-ASSOCIATE (allows an Elastic IP to be associated with the interface). (AI-inferred)
     permission: Any = None
 
 InterfacePermission = ubx.ResourceBinding(

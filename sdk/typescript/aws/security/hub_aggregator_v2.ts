@@ -11,7 +11,6 @@ export interface HubAggregatorV2Config {
 }
 
 export interface HubAggregatorV2Attrs {
-  /** The AWS Region to which Security Hub aggregates findings from all linked Regions in the cross-Region aggregation configuration. (AI-inferred) */
   aggregationRegion: string;
   /** The ARN of the AggregatorV2 being created and assigned as the unique identifier */
   aggregatorV2Arn: string;

@@ -4,16 +4,12 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontRealtimeLogConfig_EndPoints_KinesisStreamConfig struct {
-	// The ARN of an IAM role that CloudFront assumes to send real-time log data to the associated Kinesis data stream. (AI-inferred)
 	RoleArn any
-	// The Amazon Resource Name (ARN) of the Kinesis data stream to which CloudFront delivers real-time log data. (AI-inferred)
 	StreamArn any
 }
 
 type FrontRealtimeLogConfig_EndPoints struct {
-	// This object specifies the configuration for the Amazon Kinesis Data Streams destination of a real-time log endpoint, including the stream's Amazon Resource Name (ARN) and the IAM role ARN that CloudFront assumes to publish log records to the stream. (AI-inferred)
 	KinesisStreamConfig any
-	// Specifies the streaming service type for a real-time log configuration endpoint, and the only supported value is 'Kinesis'. (AI-inferred)
 	StreamType any
 }
 
@@ -43,7 +39,6 @@ type FrontRealtimeLogConfigConfig struct {
 }
 
 type FrontRealtimeLogConfigAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the CloudFront real-time log configuration. (AI-inferred)
 	Arn any
 	// Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.
 	EndPoints any

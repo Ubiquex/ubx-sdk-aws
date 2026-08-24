@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DbsubnetGroup_Tags:
     key: Any = None
-    # The value portion of a tag key-value pair attached to the DB subnet group, used for metadata, cost allocation, and identifying the resource. (AI-inferred)
     value: Any = None
 
 _DbsubnetGroup_TagsFields = {
@@ -30,7 +29,6 @@ class DbsubnetGroupConfig:
 
 @dataclasses.dataclass
 class DbsubnetGroupAttrs:
-    # The Amazon Resource Name (ARN) of the DB subnet group, assigned by AWS when the group is created. (AI-inferred)
     dbsubnet_group_arn: Any = None
     # The description for the DB subnet group.
     dbsubnet_group_description: Any = None

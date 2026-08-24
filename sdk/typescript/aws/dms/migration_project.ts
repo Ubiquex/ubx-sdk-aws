@@ -2,29 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MigrationProject_SchemaConversionApplicationAttributes {
-  /** The S3 bucket path (prefix) where the AWS DMS Schema Conversion application stores schema conversion artifacts (such as converted schemas and mapping rules) for the migration project. (AI-inferred) */
   s3BucketPath?: string | Computed<string>;
-  /** The ARN of the IAM role that AWS DMS assumes to access the S3 bucket used by the schema conversion application, enabling it to read and write schema conversion artifacts to the bucket specified by the sibling `s3_bucket_path` attribute. (AI-inferred) */
   s3BucketRoleArn?: string | Computed<string>;
 }
 
 export interface MigrationProject_SourceDataProviderDescriptors {
-  /** The Amazon Resource Name (ARN) of the source data provider used to configure the migration project in AWS Database Migration Service. (AI-inferred) */
   dataProviderArn?: string | Computed<string>;
-  /** Specifies the unique identifier or ARN of the AWS DMS source data provider associated with this migration project. (AI-inferred) */
   dataProviderIdentifier?: string | Computed<string>;
-  /** The name of an existing AWS DMS data provider that acts as the source for this migration project, used within a source data provider descriptor. (AI-inferred) */
   dataProviderName?: string | Computed<string>;
-  /** The ARN of the IAM role that AWS DMS assumes to access the AWS Secrets Manager secret containing the source data provider's credentials. (AI-inferred) */
   secretsManagerAccessRoleArn?: string | Computed<string>;
-  /** Specifies the ARN or name of the AWS Secrets Manager secret that contains the credentials for the source database in the migration project. (AI-inferred) */
   secretsManagerSecretId?: string | Computed<string>;
 }
 
 export interface MigrationProject_Tags {
-  /** The key of a tag that can be assigned to an AWS DMS migration project, used for categorizing, identifying, and managing the project resource within the service. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined string value of a tag applied to an AWS DMS migration project, used to store metadata such as project purpose, owner, or environment for resource management and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbshardGroup_Tags struct {
-	// The key part of a tag that can be applied to the DB shard group for resource organization and cost allocation. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag applied to the DB shard group, used for metadata and resource identification. (AI-inferred)
 	Value any
 }
 
@@ -39,9 +37,7 @@ type DbshardGroupAttrs struct {
 	DbclusterIdentifier any
 	// The name of the DB shard group.
 	DbshardGroupIdentifier any
-	// The immutable AWS-assigned unique identifier for the DB shard group. (AI-inferred)
 	DbshardGroupResourceId any
-	// The connection endpoint of the DB shard group, a DNS hostname that applications use to connect to the shard group's primary writer instance. (AI-inferred)
 	Endpoint any
 	// The maximum capacity of the DB shard group in Aurora capacity units (ACUs).
 	MaxAcu any

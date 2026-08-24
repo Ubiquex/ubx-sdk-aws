@@ -15,7 +15,6 @@ class SubnetNetworkAclAssociationConfig:
 
 @dataclasses.dataclass
 class SubnetNetworkAclAssociationAttrs:
-    # The unique identifier assigned by AWS to the subnet-network ACL association, used to reference the association in AWS APIs and other resources. (AI-inferred)
     association_id: Any = None
     # The ID of the network ACL
     network_acl_id: Any = None

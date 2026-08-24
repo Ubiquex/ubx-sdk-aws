@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BaiduChannelConfig {
-  /** The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred) */
   apiKey: string | Computed<string>;
-  /** The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred) */
   applicationId: string | Computed<string>;
-  /** Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred) */
   secretKey: string | Computed<string>;
 }
 
 export interface BaiduChannelAttrs {
-  /** The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred) */
   apiKey: string;
-  /** The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred) */
   applicationId: string;
-  /** Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred) */
   enabled: boolean;
-  /** The ID of the AWS Pinpoint application this Baidu channel is associated with (the ApplicationId returned by Ref). (AI-inferred) */
   id: string;
-  /** The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred) */
   secretKey: string;
 }
 

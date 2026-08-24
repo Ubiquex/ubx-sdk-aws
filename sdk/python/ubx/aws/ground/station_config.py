@@ -8,125 +8,88 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaDownlinkConfig_SpectrumConfig_Bandwidth:
-    # The unit of measurement for the downlink bandwidth (e.g., MHz or GHz) in the spectrum configuration of the antenna downlink for the Ground Station config. (AI-inferred)
     units: Any = None
-    # The numeric magnitude of the downlink spectrum bandwidth, which is interpreted along with the separate units field to determine the actual bandwidth in hertz (e.g., if units is 'MHz', the bandwidth in Hz equals this value times 1e6). (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaDownlinkConfig_SpectrumConfig:
-    # The bandwidth of the downlink signal spectrum, specified as an object with a numeric value and a unit (GHz, MHz, or kHz), defining the width of the frequency range to receive. (AI-inferred)
     bandwidth: Any = None
-    # Specifies the center frequency of the downlink signal for the antenna's receive spectrum, used to tune the Ground Station receiver. (AI-inferred)
     center_frequency: Any = None
-    # The polarization mode (RIGHT_HAND or LEFT_HAND) for the downlink spectrum in the antenna downlink config, specifying the electromagnetic wave orientation used for receiving the signal. (AI-inferred)
     polarization: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaDownlinkConfig:
-    # Defines the spectral characteristics of the downlink signal, including center frequency, bandwidth, and polarization, used by the Ground Station to receive data from a satellite. (AI-inferred)
     spectrum_config: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaDownlinkDemodDecodeConfig_DecodeConfig:
-    # Provides the unvalidated JSON that defines the decode configuration for the antenna downlink, specifying how the received signal is demodulated and decoded. (AI-inferred)
     unvalidated_json: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaDownlinkDemodDecodeConfig:
-    # Specifies how the downlink signal is decoded, providing a decode configuration consisting of an unvalidated JSON payload that defines the decoding parameters for the Ground Station antenna downlink demodulation and decode processing. (AI-inferred)
     decode_config: Any = None
-    # Configures the demodulation scheme (e.g., BPSK or QPSK) and processing options used by the antenna downlink demodulation and decode chain. (AI-inferred)
     demodulation_config: Any = None
-    # Configures the center frequency and bandwidth of the downlink spectrum to be processed for this demodulation and decoding step. (AI-inferred)
     spectrum_config: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaUplinkConfig_SpectrumConfig:
-    # Specifies the center frequency of the uplink signal, containing a numeric value and a unit (GHz or MHz), used for the antenna uplink spectrum configuration. (AI-inferred)
     center_frequency: Any = None
-    # Specifies the polarization of the uplink signal, which can be either RIGHT_HAND or LEFT_HAND. (AI-inferred)
     polarization: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_AntennaUplinkConfig:
-    # Specifies the frequency and polarization (e.g., RIGHT_HAND or LEFT_HAND) for the uplink radio signal transmitted from the ground station antenna. (AI-inferred)
     spectrum_config: Any = None
-    # Specifies the target effective isotropic radiated power (EIRP) for the uplink transmission, defined as an object containing the numeric value and its units (e.g., dBW). (AI-inferred)
     target_eirp: Any = None
-    # Determines whether the antenna's uplink transmission is disabled; when set to true, the uplink transmitter is turned off so no signal is sent. (AI-inferred)
     transmit_disabled: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_DataflowEndpointConfig:
-    # The name of the dataflow endpoint that this Ground Station configuration references, identifying where data is sent or received for the dataflow endpoint config. (AI-inferred)
     dataflow_endpoint_name: Any = None
-    # Specifies the AWS region in which the dataflow endpoint is located. (AI-inferred)
     dataflow_endpoint_region: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_S3RecordingConfig:
-    # The ARN of the S3 bucket where AWS Ground Station stores the recorded data for the S3 recording config. (AI-inferred)
     bucket_arn: Any = None
-    # The S3 key prefix under which recorded data files are stored in the bucket, allowing you to organize output files. (AI-inferred)
     prefix: Any = None
-    # The ARN of the IAM role that AWS Ground Station assumes to write antenna downlink data to the associated S3 bucket. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_TelemetrySinkConfig_TelemetrySinkData_KinesisDataStreamData:
-    # The Amazon Resource Name (ARN) of the Kinesis data stream that receives telemetry data from the ground station config. (AI-inferred)
     kinesis_data_stream_arn: Any = None
-    # The ARN of the IAM role that AWS Ground Station assumes to write telemetry data to the specified Kinesis Data Stream. (AI-inferred)
     kinesis_role_arn: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_TelemetrySinkConfig_TelemetrySinkData:
-    # Specifies the Kinesis Data Stream that serves as the telemetry sink destination, defining where Ground Station telemetry data is delivered for the telemetry sink configuration. (AI-inferred)
     kinesis_data_stream_data: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_TelemetrySinkConfig:
-    # The telemetry_sink_data object specifies the dataflow endpoint ARN to which the Ground Station telemetry sink forwards satellite telemetry data. (AI-inferred)
     telemetry_sink_data: Any = None
-    # Specifies the type of telemetry sink used to deliver ground station telemetry data, distinguishing between sink types such as S3 bucket storage and agent-based streaming. (AI-inferred)
     telemetry_sink_type: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_TrackingConfig:
-    # Sets the autotrack mode for the ground station antenna, determining whether automatic satellite tracking is disabled (NO_CONTACT), preferred (PREFERRED), or required (REQUIRED) during a contact. (AI-inferred)
     autotrack: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData_UplinkEchoConfig:
-    # The Amazon Resource Name (ARN) of the antenna uplink config whose transmitted signal is echoed back for the uplink echo function in this Ground Station config. (AI-inferred)
     antenna_uplink_config_arn: Any = None
-    # When true, enables the Ground Station antenna to receive and downlink echoes of the uplink signal for testing or observation purposes. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class StationConfig_ConfigData:
-    # Defines the receive (downlink) configuration for the Ground Station antenna, specifying parameters such as frequency, bandwidth, and polarization to capture satellite data. (AI-inferred)
     antenna_downlink_config: Any = None
-    # Defines the demodulation and decode configuration for an antenna downlink, including the demodulation settings and decode configuration (typically specified as JSON) used to process the received satellite signal. (AI-inferred)
     antenna_downlink_demod_decode_config: Any = None
-    # Defines the uplink spectrum settings and target satellite ARN for an antenna uplink configuration in AWS Ground Station. (AI-inferred)
     antenna_uplink_config: Any = None
-    # Provides the dataflow endpoint configuration for the Ground Station config, identifying the named endpoint (with its socket address and port) to use for data exchange. (AI-inferred)
     dataflow_endpoint_config: Any = None
-    # Specifies the Amazon S3 bucket and prefix where the Ground Station service stores recorded antenna data when this config is used for S3 recording. (AI-inferred)
     s3_recording_config: Any = None
     telemetry_sink_config: Any = None
-    # Defines the tracking behavior for the ground station antenna, including the autotrack setting that controls whether automatic satellite tracking is required, preferred, or removed. (AI-inferred)
     tracking_config: Any = None
-    # Configures the uplink echo feature for the ground station config, which echoes the uplink signal back for testing and includes the antenna uplink config ARN and an enabled flag. (AI-inferred)
     uplink_echo_config: Any = None
 
 @dataclasses.dataclass
 class StationConfig_Tags:
-    # The key of a tag attached to the AWS Ground Station Config resource, used to label and categorize the configuration with custom metadata such as environment or purpose. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag attached to the AWS Ground Station Config resource, used to categorize or identify the configuration. (AI-inferred)
     value: Any = None
 
 _StationConfig_ConfigData_AntennaDownlinkConfig_SpectrumConfig_BandwidthFields = {
@@ -293,23 +256,17 @@ _StationConfig_TagsFields = {
 
 @dataclasses.dataclass
 class StationConfigConfig:
-    # The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
     config_data: Any = None
-    # The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
     name: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class StationConfigAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Ground Station config. (AI-inferred)
     arn: Any = None
-    # The required config data that defines this Ground Station config, containing one of the supported configuration types (such as antenna downlink, antenna uplink, antenna downlink demod decode, tracking, dataflow endpoint, or uplink echo) along with its specific parameters. (AI-inferred)
     config_data: Any = None
     id: Any = None
-    # The user-defined name assigned to this AWS Ground Station config, used to identify it within the service. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # The type of the Ground Station config, such as 'antenna-downlink' or 'tracking', which is automatically derived from the configuration data provided in the resource. (AI-inferred)
     type: Any = None
 
 StationConfig = ubx.ResourceBinding(

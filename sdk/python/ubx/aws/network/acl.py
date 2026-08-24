@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Acl_Tags:
-    # The key of a tag attached to the network ACL, used to label and organize the resource for identification and management within AWS. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag applied to the network ACL, used to assign metadata such as purpose or ownership to the ACL. (AI-inferred)
     value: Any = None
 
 _Acl_TagsFields = {
@@ -27,7 +25,6 @@ class AclConfig:
 
 @dataclasses.dataclass
 class AclAttrs:
-    # The AWS-assigned identifier for the network ACL, which uses the format acl-xxxxxxxx. (AI-inferred)
     id: Any = None
     # The tags for the network ACL.
     tags: Any = None

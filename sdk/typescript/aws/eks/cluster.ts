@@ -37,14 +37,11 @@ export interface Cluster_ControlPlaneScalingConfig {
 }
 
 export interface Cluster_EncryptionConfig_Provider {
-  /** The ARN of the AWS KMS key used to encrypt Kubernetes secrets in the EKS cluster. (AI-inferred) */
   keyArn?: string | Computed<string>;
 }
 
 export interface Cluster_EncryptionConfig {
-  /** Specifies the AWS KMS customer master key (CMK) ARN used to encrypt Kubernetes secrets for the EKS cluster. (AI-inferred) */
   provider?: Cluster_EncryptionConfig_Provider | Computed<Cluster_EncryptionConfig_Provider>;
-  /** Specifies the Kubernetes resource types (such as 'secrets') that are encrypted with the KMS key configured in this encryption configuration for the EKS cluster. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
 }
 
@@ -111,7 +108,6 @@ export interface Cluster_KubernetesNetworkConfig {
 }
 
 export interface Cluster_Logging_ClusterLogging_EnabledTypes {
-  /** Specifies one Kubernetes control plane log type (such as api, audit, authenticator, controllerManager, or scheduler) to enable for the EKS cluster. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -151,7 +147,6 @@ export interface Cluster_OutpostConfig {
 }
 
 export interface Cluster_RemoteNetworkConfig_RemoteNodeNetworks {
-  /** Defines the list of CIDR blocks for the remote node networks, specifying the IP address ranges used by remote (hybrid) nodes in the EKS cluster. (AI-inferred) */
   cidrs?: string[] | Computed<string[]>;
 }
 
@@ -188,9 +183,7 @@ export interface Cluster_StorageConfig {
 }
 
 export interface Cluster_Tags {
-  /** The key of a user-defined tag attached to the AWS EKS cluster, which must be unique within the cluster's tag set and is used to categorize or filter the cluster. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag assigned to the EKS cluster, used for metadata such as cost centers or environment identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -392,7 +385,6 @@ export interface ClusterConfig {
   controlPlaneScalingConfig?: Cluster_ControlPlaneScalingConfig | Computed<Cluster_ControlPlaneScalingConfig>;
   /** Set this value to true to enable deletion protection for the cluster. */
   deletionProtection?: boolean | Computed<boolean>;
-  /** Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred) */
   encryptionConfig?: Cluster_EncryptionConfig[] | Computed<Cluster_EncryptionConfig[]>;
   /** Force cluster version update */
   force?: boolean | Computed<boolean>;
@@ -449,7 +441,6 @@ export interface ClusterAttrs {
   controlPlaneScalingConfig: Cluster_ControlPlaneScalingConfig;
   /** Set this value to true to enable deletion protection for the cluster. */
   deletionProtection: boolean;
-  /** Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred) */
   encryptionConfig: Cluster_EncryptionConfig[];
   /** Amazon Resource Name (ARN) or alias of the customer master key (CMK). */
   encryptionConfigKeyArn: string;

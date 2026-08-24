@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiftGameSessionQueue_Destinations:
-    # The ARN of a GameLift fleet or alias that this game session queue uses as a destination for game session placement requests. (AI-inferred)
     destination_arn: Any = None
 
 @dataclasses.dataclass
@@ -18,9 +17,7 @@ class LiftGameSessionQueue_FilterConfiguration:
 
 @dataclasses.dataclass
 class LiftGameSessionQueue_PlayerLatencyPolicies:
-    # Sets the maximum acceptable latency in milliseconds for an individual player to a game location; if the player's latency exceeds this threshold, that location is excluded from consideration for the player's game session placement. (AI-inferred)
     maximum_individual_player_latency_milliseconds: Any = None
-    # The length of time in seconds that this player latency policy remains in effect for the game session placement. (AI-inferred)
     policy_duration_seconds: Any = None
 
 @dataclasses.dataclass
@@ -32,9 +29,7 @@ class LiftGameSessionQueue_PriorityConfiguration:
 
 @dataclasses.dataclass
 class LiftGameSessionQueue_Tags:
-    # The key of a tag attached to this GameLift game session queue, used to organize and identify the queue for cost and access management. (AI-inferred)
     key: Any = None
-    # The value component of a tag key-value pair applied to the GameLift game session queue for resource organization and management. (AI-inferred)
     value: Any = None
 
 _LiftGameSessionQueue_DestinationsFields = {
@@ -66,7 +61,6 @@ class LiftGameSessionQueueConfig:
     custom_event_data: Any = None
     # A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
     destinations: Any = None
-    # Filters the locations where the queue can place new game sessions by specifying a list of allowed AWS region codes. (AI-inferred)
     filter_configuration: Any = None
     # A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
     name: Any = None
@@ -74,7 +68,6 @@ class LiftGameSessionQueueConfig:
     notification_target: Any = None
     # A set of policies that act as a sliding cap on player latency.
     player_latency_policies: Any = None
-    # Specifies the priority settings for the GameLift session queue, including the order in which locations are used and the order in which placement criteria like latency and cost are prioritized. (AI-inferred)
     priority_configuration: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -89,7 +82,6 @@ class LiftGameSessionQueueAttrs:
     custom_event_data: Any = None
     # A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
     destinations: Any = None
-    # Filters the locations where the queue can place new game sessions by specifying a list of allowed AWS region codes. (AI-inferred)
     filter_configuration: Any = None
     # A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
     name: Any = None
@@ -97,7 +89,6 @@ class LiftGameSessionQueueAttrs:
     notification_target: Any = None
     # A set of policies that act as a sliding cap on player latency.
     player_latency_policies: Any = None
-    # Specifies the priority settings for the GameLift session queue, including the order in which locations are used and the order in which placement criteria like latency and cost are prioritized. (AI-inferred)
     priority_configuration: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

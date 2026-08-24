@@ -29,22 +29,17 @@ class Channel_IcebergDestinationConfiguration_DeadLetterQueueS3:
 
 @dataclasses.dataclass
 class Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceList:
-    # The name of a source field in the Kafka record (key or value) that is used as a partition column in the destination Iceberg table. (AI-inferred)
     source_name: Any = None
 
 @dataclasses.dataclass
 class Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec:
     partition_strategy: Any = None
-    # In the MSK channel's Iceberg destination configuration, this list defines the source columns (with their partition transforms) from each incoming Kafka record that determine how data is partitioned in the corresponding destination Iceberg table. (AI-inferred)
     source_list: Any = None
 
 @dataclasses.dataclass
 class Channel_IcebergDestinationConfiguration_DestinationTableList:
-    # The name of the destination database in the target Apache Iceberg catalog where the replicated table is stored, as specified in the Iceberg destination table list. (AI-inferred)
     destination_database_name: Any = None
-    # The name of the Apache Iceberg destination table that the channel's delivery stream writes records to. (AI-inferred)
     destination_table_name: Any = None
-    # Specifies the partitioning scheme for the destination Iceberg table, defining how records are grouped into table partitions using transforms such as bucket, truncate, or time-based functions. (AI-inferred)
     partition_spec: Any = None
 
 @dataclasses.dataclass
@@ -149,7 +144,6 @@ class Channel_TopicConfigurationList_RecordConverter:
 
 @dataclasses.dataclass
 class Channel_TopicConfigurationList_RecordSchema:
-    # The ARN of the AWS Glue Schema Registry schema used to define the record format for the Kafka topic, enabling serialization and validation of messages. (AI-inferred)
     gsr_arn: Any = None
 
 @dataclasses.dataclass

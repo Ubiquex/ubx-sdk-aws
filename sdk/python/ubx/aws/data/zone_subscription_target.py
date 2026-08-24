@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneSubscriptionTarget_SubscriptionTargetConfig:
-    # The JSON-encoded configuration payload for a subscription target form, which contains the target-specific parameters (such as the S3 bucket path, Glue database name, or Redshift cluster) required for delivering subscribed data. (AI-inferred)
     content: Any = None
-    # The name of the metadata form that defines the schema and parameters for this AWS DataZone subscription target configuration. (AI-inferred)
     form_name: Any = None
 
 _ZoneSubscriptionTarget_SubscriptionTargetConfigFields = {

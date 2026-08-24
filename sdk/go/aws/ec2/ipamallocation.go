@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IpamallocationConfig struct {
 	// Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR
 	Cidr any
-	// A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred)
 	Description any
 	// Id of the IPAM Pool.
 	IpamPoolId any
@@ -17,7 +16,6 @@ type IpamallocationConfig struct {
 type IpamallocationAttrs struct {
 	// Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR
 	Cidr any
-	// A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred)
 	Description any
 	// Id of the allocation.
 	IpamPoolAllocationId any

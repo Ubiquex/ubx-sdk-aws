@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue {
-  /** Specifies the exact string value that the custom JWT authorizer expects for a configured claim in a token, which must be matched to authorize a payment-related request. (AI-inferred) */
   matchValueString?: string | Computed<string>;
   matchValueStringList?: string[] | Computed<string[]>;
 }
@@ -15,15 +14,12 @@ export interface AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthor
 export interface AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims {
   authorizingClaimMatchValue?: AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue | Computed<AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue>;
   inboundTokenClaimName?: string | Computed<string>;
-  /** Specifies the expected data type (such as string, number, or boolean) of the inbound JWT token's claim value for this custom claim, enabling the authorizer to correctly parse and validate it. (AI-inferred) */
   inboundTokenClaimValueType?: string | Computed<string>;
 }
 
 export interface AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer {
-  /** The list of allowed audience values that the JWT token's audience claim must match for the custom JWT authorizer to authorize requests. (AI-inferred) */
   allowedAudience?: string[] | Computed<string[]>;
   allowedClients?: string[] | Computed<string[]>;
-  /** Defines the list of OAuth 2.0 scopes that must be present in the JWT token's scope claim for the custom JWT authorizer to grant access. (AI-inferred) */
   allowedScopes?: string[] | Computed<string[]>;
   customClaims?: AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims[] | Computed<AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims[]>;
   discoveryUrl: string | Computed<string>;

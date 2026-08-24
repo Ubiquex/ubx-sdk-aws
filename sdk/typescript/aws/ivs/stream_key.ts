@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamKey_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag assigned to the AWS IVS stream key, used for identifying and categorizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

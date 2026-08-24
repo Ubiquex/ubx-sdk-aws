@@ -35,7 +35,6 @@ class TrafficMirrorTargetAttrs:
     description: Any = None
     # The ID of the Gateway Load Balancer endpoint.
     gateway_load_balancer_endpoint_id: Any = None
-    # The unique AWS-assigned identifier for the traffic mirror target, typically formatted as tmt- followed by alphanumeric characters. (AI-inferred)
     id: Any = None
     # The network interface ID that is associated with the target.
     network_interface_id: Any = None

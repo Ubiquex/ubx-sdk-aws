@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class JobQueue_ComputeEnvironmentOrder:
-    # The Amazon Resource Name (ARN) of the compute environment that is associated with this entry in the job queue's compute environment order. (AI-inferred)
     compute_environment: Any = None
-    # Integer that determines the relative priority of the compute environment within the job queue, where lower values are attempted first. (AI-inferred)
     order: Any = None
 
 @dataclasses.dataclass
 class JobQueue_JobStateTimeLimitActions:
-    # The action to take when a job in the specified state exceeds the time limit, such as CANCEL or CANCEL_AND_RESTART. (AI-inferred)
     action: Any = None
-    # Specifies the maximum time in seconds that a job can remain in a given state before the associated action (such as CANCEL) is triggered for that job. (AI-inferred)
     max_time_seconds: Any = None
-    # The reason to record for the job when this state time limit action is triggered, providing context for why the action (such as cancellation) was taken after the job exceeded the maximum time in the specified state. (AI-inferred)
     reason: Any = None
-    # Specifies the job state (only RUNNABLE is valid) that triggers the time limit action when a job remains in that state longer than max_time_seconds. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -48,42 +42,27 @@ _JobQueue_ServiceEnvironmentOrderFields = {
 
 @dataclasses.dataclass
 class JobQueueConfig:
-    # Defines the ordered list of compute environments for the job queue, where each entry assigns a priority (order) to a compute environment and AWS Batch schedules jobs to the first available environment in that order. (AI-inferred)
     compute_environment_order: Any = None
-    # Specifies the name of the job queue, which must be unique within the AWS account and Region; if not provided, CloudFormation generates a unique name. (AI-inferred)
     job_queue_name: Any = None
-    # Specifies the type of the job queue, either 'COMPUTE' (the default) for running jobs or 'PLAYBACK' for replaying jobs from another queue for testing/debugging. (AI-inferred)
     job_queue_type: Any = None
-    # List of actions that automatically cancel jobs stuck in a specified state (e.g., RUNNABLE) for a configurable maximum time before they are deemed too old. (AI-inferred)
     job_state_time_limit_actions: Any = None
-    # The priority of this job queue relative to other job queues in the same account and region, where higher values cause the queue to be considered earlier when scheduling jobs. (AI-inferred)
     priority: Any = None
-    # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
     scheduling_policy_arn: Any = None
     service_environment_order: Any = None
-    # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class JobQueueAttrs:
-    # Defines the ordered list of compute environments for the job queue, where each entry assigns a priority (order) to a compute environment and AWS Batch schedules jobs to the first available environment in that order. (AI-inferred)
     compute_environment_order: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Batch job queue, assigned by AWS when the queue is created. (AI-inferred)
     job_queue_arn: Any = None
-    # Specifies the name of the job queue, which must be unique within the AWS account and Region; if not provided, CloudFormation generates a unique name. (AI-inferred)
     job_queue_name: Any = None
-    # Specifies the type of the job queue, either 'COMPUTE' (the default) for running jobs or 'PLAYBACK' for replaying jobs from another queue for testing/debugging. (AI-inferred)
     job_queue_type: Any = None
-    # List of actions that automatically cancel jobs stuck in a specified state (e.g., RUNNABLE) for a configurable maximum time before they are deemed too old. (AI-inferred)
     job_state_time_limit_actions: Any = None
-    # The priority of this job queue relative to other job queues in the same account and region, where higher values cause the queue to be considered earlier when scheduling jobs. (AI-inferred)
     priority: Any = None
-    # The Amazon Resource Name (ARN) of the scheduling policy that controls the prioritization and placement of jobs in the AWS Batch job queue. (AI-inferred)
     scheduling_policy_arn: Any = None
     service_environment_order: Any = None
-    # Specifies whether the job queue is enabled to accept new jobs (ENABLED) or disabled (DISABLED), with the default being ENABLED. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None

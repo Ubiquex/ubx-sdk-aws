@@ -20,7 +20,6 @@ type SyncLocationFsxOpenZfs_Protocol struct {
 
 type SyncLocationFsxOpenZfs_Tags struct {
 	Key any
-	// The value of a user-defined tag (key-value pair) applied to the FSx for OpenZFS DataSync location, used for metadata and cost allocation. (AI-inferred)
 	Value any
 }
 

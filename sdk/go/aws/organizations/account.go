@@ -4,9 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Account_Tags struct {
-	// The key portion of a key-value tag assigned to the AWS Organizations account, enabling you to categorize and manage the account for cost allocation, access control, or operational purposes. (AI-inferred)
 	Key any
-	// The value of a key-value tag assigned to the AWS Organizations account. (AI-inferred)
 	Value any
 }
 

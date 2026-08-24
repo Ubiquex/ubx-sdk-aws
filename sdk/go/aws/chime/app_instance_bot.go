@@ -29,9 +29,7 @@ type AppInstanceBot_Configuration struct {
 }
 
 type AppInstanceBot_Tags struct {
-	// The key of a tag attached to the AppInstanceBot, used to categorize and manage the resource (e.g., environment, project) in AWS Chime. (AI-inferred)
 	Key any
-	// The value of a user-defined metadata tag attached to the Amazon Chime App Instance Bot. (AI-inferred)
 	Value any
 }
 

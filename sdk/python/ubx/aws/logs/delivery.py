@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Delivery_Tags:
-    # The key of a tag attached to this CloudWatch Logs delivery, used to assign metadata for identifying, organizing, and managing the delivery resource, including cost allocation and access control. (AI-inferred)
     key: Any = None
     value: Any = None
 

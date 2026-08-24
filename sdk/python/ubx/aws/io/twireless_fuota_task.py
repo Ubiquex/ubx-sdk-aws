@@ -66,7 +66,6 @@ class TwirelessFuotaTaskAttrs:
     fuota_task_status: Any = None
     # FUOTA task id. Returned after successful create.
     id: Any = None
-    # The LoRaWAN-specific configuration for this FUOTA task, containing the multicast frequency and data rate parameters as computed by AWS. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of FUOTA task
     name: Any = None

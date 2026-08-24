@@ -2,23 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PermissionSet_CustomerManagedPolicyReferences {
-  /** The name of the customer managed policy to reference in the permission set. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The IAM path of the customer managed policy, which together with the policy name uniquely identifies the policy to attach to the permission set. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface PermissionSet_PermissionsBoundary {
-  /** Provides the customer managed policy's name and optional path used to set a permissions boundary on the permission set. (AI-inferred) */
   customerManagedPolicyReference?: PermissionSet_CustomerManagedPolicyReferences | Computed<PermissionSet_CustomerManagedPolicyReferences>;
   /** The managed policy to attach. */
   managedPolicyArn?: string | Computed<string>;
 }
 
 export interface PermissionSet_Tags {
-  /** The key of a user-defined tag attached to an AWS SSO Permission Set, which is used to categorize, identify, and manage the permission set within AWS SSO. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value (the non-key component of a key-value pair) attached to the AWS SSO PermissionSet, used to label or categorize the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -42,7 +37,6 @@ const PermissionSet_TagsFields: FieldMap = {
 };
 
 export interface PermissionSetConfig {
-  /** Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred) */
   customerManagedPolicyReferences?: PermissionSet_CustomerManagedPolicyReferences[] | Computed<PermissionSet_CustomerManagedPolicyReferences[]>;
   /** The permission set description. */
   description?: string | Computed<string>;
@@ -50,22 +44,18 @@ export interface PermissionSetConfig {
   inlinePolicy?: unknown | Computed<unknown>;
   /** The sso instance arn that the permission set is owned. */
   instanceArn: string | Computed<string>;
-  /** The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred) */
   managedPolicies?: string[] | Computed<string[]>;
   /** The name you want to assign to this permission set. */
   name: string | Computed<string>;
-  /** Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred) */
   permissionsBoundary?: PermissionSet_PermissionsBoundary | Computed<PermissionSet_PermissionsBoundary>;
   /** The relay state URL that redirect links to any service in the AWS Management Console. */
   relayStateType?: string | Computed<string>;
   /** The length of time that a user can be signed in to an AWS account. */
   sessionDuration?: string | Computed<string>;
-  /** A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: PermissionSet_Tags[] | Computed<PermissionSet_Tags[]>;
 }
 
 export interface PermissionSetAttrs {
-  /** Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred) */
   customerManagedPolicyReferences: PermissionSet_CustomerManagedPolicyReferences[];
   /** The permission set description. */
   description: string;
@@ -73,19 +63,16 @@ export interface PermissionSetAttrs {
   inlinePolicy: unknown;
   /** The sso instance arn that the permission set is owned. */
   instanceArn: string;
-  /** The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred) */
   managedPolicies: string[];
   /** The name you want to assign to this permission set. */
   name: string;
   /** The permission set that the policy will be attached to */
   permissionSetArn: string;
-  /** Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred) */
   permissionsBoundary: PermissionSet_PermissionsBoundary;
   /** The relay state URL that redirect links to any service in the AWS Management Console. */
   relayStateType: string;
   /** The length of time that a user can be signed in to an AWS account. */
   sessionDuration: string;
-  /** A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags: PermissionSet_Tags[];
 }
 

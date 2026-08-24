@@ -4,9 +4,7 @@ package transcribe
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VocabularyFilter_Tags struct {
-	// The key name for a tag assigned to this Amazon Transcribe vocabulary filter, allowing you to categorize and manage the resource by purpose, owner, or environment. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the Amazon Transcribe vocabulary filter for organizing and managing the resource. (AI-inferred)
 	Value any
 }
 

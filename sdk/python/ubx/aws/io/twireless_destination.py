@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessDestination_Tags:
-    # Represents the key of a tag attached to an AWS IoT Wireless destination, enabling you to organize, identify, and filter the resource by custom metadata. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT Wireless destination, used to add metadata for organizing, identifying, or controlling access to the destination resource. (AI-inferred)
     value: Any = None
 
 _TwirelessDestination_TagsFields = {

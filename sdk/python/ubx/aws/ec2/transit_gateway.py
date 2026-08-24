@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGateway_Tags:
-    # Defines the key of a tag applied to the transit gateway, allowing you to categorize and manage the resource with custom metadata. (AI-inferred)
     key: Any = None
-    # Specifies the user-defined value portion of a tag attached to the EC2 Transit Gateway, allowing you to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 _TransitGateway_TagsFields = {
@@ -20,65 +18,39 @@ _TransitGateway_TagsFields = {
 
 @dataclasses.dataclass
 class TransitGatewayConfig:
-    # The private Autonomous System Number (ASN) for the Amazon side of a BGP session, used when the transit gateway is attached to a Direct Connect gateway. (AI-inferred)
     amazon_side_asn: Any = None
-    # The ID of the default route table to which new attachments (such as VPCs, VPN connections) are automatically associated when attached to the transit gateway. (AI-inferred)
     association_default_route_table_id: Any = None
-    # Indicates whether attachment requests from other accounts that share the transit gateway are automatically accepted (enable) or require manual acceptance (disable). (AI-inferred)
     auto_accept_shared_attachments: Any = None
-    # Controls whether transit gateway attachments are automatically associated with the transit gateway's default route table, accepting 'enable' or 'disable', with a default of 'enable'. (AI-inferred)
     default_route_table_association: Any = None
-    # The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
     default_route_table_propagation: Any = None
     description: Any = None
-    # Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
     dns_support: Any = None
     encryption_support: Any = None
-    # Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred)
     multicast_support: Any = None
-    # The propagation_default_route_table_id is the ID of the default route table that is automatically created by the transit gateway and used to propagate routes from attached resources when DefaultRouteTablePropagation is enabled. (AI-inferred)
     propagation_default_route_table_id: Any = None
-    # Controls whether the transit gateway supports security group referencing, which allows VPC attachments to reference security groups in their route tables; valid values are 'enable' (default) or 'disable'. (AI-inferred)
     security_group_referencing_support: Any = None
-    # Attaches the specified tags to the EC2 Transit Gateway, which are key-value pairs used for identification and cost allocation. (AI-inferred)
     tags: Any = None
-    # Specifies the IPv4 CIDR blocks that the transit gateway uses as its internal network range, enabling it to route traffic without conflicting with the CIDRs of attached VPCs and on-premises networks. (AI-inferred)
     transit_gateway_cidr_blocks: Any = None
-    # Indicates whether Equal Cost Multipath (ECMP) routing is enabled for VPN connections attached to this transit gateway, accepting values 'enable' or 'disable' (default 'enable'). (AI-inferred)
     vpn_ecmp_support: Any = None
 
 @dataclasses.dataclass
 class TransitGatewayAttrs:
-    # The private Autonomous System Number (ASN) for the Amazon side of a BGP session, used when the transit gateway is attached to a Direct Connect gateway. (AI-inferred)
     amazon_side_asn: Any = None
-    # The ID of the default route table to which new attachments (such as VPCs, VPN connections) are automatically associated when attached to the transit gateway. (AI-inferred)
     association_default_route_table_id: Any = None
-    # Indicates whether attachment requests from other accounts that share the transit gateway are automatically accepted (enable) or require manual acceptance (disable). (AI-inferred)
     auto_accept_shared_attachments: Any = None
-    # Controls whether transit gateway attachments are automatically associated with the transit gateway's default route table, accepting 'enable' or 'disable', with a default of 'enable'. (AI-inferred)
     default_route_table_association: Any = None
-    # The ID of the default route table to which all new attachments propagate routes. (AI-inferred)
     default_route_table_propagation: Any = None
     description: Any = None
-    # Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred)
     dns_support: Any = None
     encryption_support: Any = None
     encryption_support_state: Any = None
-    # The unique identifier (ID) of the transit gateway, such as tgw-0a1b2c3d4e5f67890, assigned by AWS when the resource is created. (AI-inferred)
     id: Any = None
-    # Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred)
     multicast_support: Any = None
-    # The propagation_default_route_table_id is the ID of the default route table that is automatically created by the transit gateway and used to propagate routes from attached resources when DefaultRouteTablePropagation is enabled. (AI-inferred)
     propagation_default_route_table_id: Any = None
-    # Controls whether the transit gateway supports security group referencing, which allows VPC attachments to reference security groups in their route tables; valid values are 'enable' (default) or 'disable'. (AI-inferred)
     security_group_referencing_support: Any = None
-    # Attaches the specified tags to the EC2 Transit Gateway, which are key-value pairs used for identification and cost allocation. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the EC2 transit gateway in AWS. (AI-inferred)
     transit_gateway_arn: Any = None
-    # Specifies the IPv4 CIDR blocks that the transit gateway uses as its internal network range, enabling it to route traffic without conflicting with the CIDRs of attached VPCs and on-premises networks. (AI-inferred)
     transit_gateway_cidr_blocks: Any = None
-    # Indicates whether Equal Cost Multipath (ECMP) routing is enabled for VPN connections attached to this transit gateway, accepting values 'enable' or 'disable' (default 'enable'). (AI-inferred)
     vpn_ecmp_support: Any = None
 
 TransitGateway = ubx.ResourceBinding(

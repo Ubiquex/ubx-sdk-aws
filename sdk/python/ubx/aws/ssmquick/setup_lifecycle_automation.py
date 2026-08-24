@@ -14,7 +14,6 @@ class SetupLifecycleAutomationConfig:
     automation_parameters: Any = None
     # A unique identifier used for generating a unique logical ID for the custom resource
     resource_key: Any = None
-    # A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +26,6 @@ class SetupLifecycleAutomationAttrs:
     automation_parameters: Any = None
     # A unique identifier used for generating a unique logical ID for the custom resource
     resource_key: Any = None
-    # A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred)
     tags: Any = None
 
 SetupLifecycleAutomation = ubx.ResourceBinding(

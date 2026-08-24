@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceSet_Tags {
-  /** The key of a tag attached to an AWS Firewall Manager resource set, used for organizing, identifying, and filtering the resource set in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag associated with this AWS Firewall Manager resource set, enabling cost allocation and resource metadata management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,30 +12,20 @@ const ResourceSet_TagsFields: FieldMap = {
 };
 
 export interface ResourceSetConfig {
-  /** An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred) */
   resourceTypeList: string[] | Computed<string[]>;
-  /** Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
-  /** The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred) */
   tags?: ResourceSet_Tags[] | Computed<ResourceSet_Tags[]>;
 }
 
 export interface ResourceSetAttrs {
-  /** An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred) */
   description: string;
   /** A Base62 ID */
   id: string;
-  /** The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred) */
   name: string;
-  /** Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred) */
   resourceTypeList: string[];
-  /** Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred) */
   resources: string[];
-  /** The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred) */
   tags: ResourceSet_Tags[];
 }
 

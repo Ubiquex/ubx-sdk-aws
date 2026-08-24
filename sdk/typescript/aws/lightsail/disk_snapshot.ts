@@ -9,9 +9,7 @@ export interface DiskSnapshot_Location {
 }
 
 export interface DiskSnapshot_Tags {
-  /** The key of a tag, such as 'Name' or 'Environment', that you can attach to the Lightsail disk snapshot for identification and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag (key-value pair) applied to the AWS Lightsail disk snapshot. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayResourceConfig:
-    # The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred)
     parent_id: Any = None
-    # The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred)
     path_part: Any = None
-    # The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred)
     rest_api_id: Any = None
 
 @dataclasses.dataclass
 class GatewayResourceAttrs:
-    # The identifier of the parent Resource in this REST API's resource hierarchy, determining the path of this resource relative to the API's root resource. (AI-inferred)
     parent_id: Any = None
-    # The URL path segment (e.g., 'users' or a path parameter like '{userId}') that defines this resource's location in the API's URL hierarchy, appended to the parent resource's path to form the full resource path. (AI-inferred)
     path_part: Any = None
-    # The unique identifier assigned to this API Gateway resource by the service, used to reference the resource in method and integration configurations within the same REST API. (AI-inferred)
     resource_id: Any = None
-    # The ID of the parent RestApi in API Gateway to which this resource belongs. (AI-inferred)
     rest_api_id: Any = None
 
 GatewayResource = ubx.ResourceBinding(

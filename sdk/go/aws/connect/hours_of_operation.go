@@ -9,61 +9,41 @@ type HoursOfOperation_ChildHoursOfOperations struct {
 }
 
 type HoursOfOperation_Config_EndTime struct {
-	// Specifies the hour (0-23) in 24-hour format at which the operating hours end for the configured day. (AI-inferred)
 	Hours any
-	// The minutes component of the time of day when the hours of operation configuration ends, used together with the end_time hour to define the daily closing time. (AI-inferred)
 	Minutes any
 }
 
 type HoursOfOperation_Config struct {
-	// Specifies the day of the week (e.g., MONDAY, TUESDAY) that this hours of operation configuration applies to in the AWS Connect HoursOfOperation resource. (AI-inferred)
 	Day any
-	// The time at which the hours of operation end for a given day, specified as an object with hours and minutes in a 24-hour format. (AI-inferred)
 	EndTime any
-	// The start_time field specifies the time in HH:MM format (24-hour) when the hours of operation begin for the configured day. (AI-inferred)
 	StartTime any
 }
 
 type HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePattern struct {
-	// Specifies the months (1-12) during which this hours-of-operation override recurrence pattern is active, used in combination with other recurrence fields to define a monthly scheduling rule. (AI-inferred)
 	ByMonth any
-	// Defines the days of the month (1-31) on which the hours-of-operation override recurs, used when the recurrence pattern is set to a monthly interval. (AI-inferred)
 	ByMonthDay any
-	// Specifies the occurrence(s) of the weekdays within a month (e.g., 1 for first, 2 for second, -1 for last) on which this hours of operation override recurrence applies. (AI-inferred)
 	ByWeekdayOccurrence any
-	// The frequency unit for the recurrence pattern of this override (e.g., daily, weekly, or monthly), defining how often the override schedule repeats. (AI-inferred)
 	Frequency any
-	// The number of time units (e.g., weeks or months, based on the recurrence pattern's frequency) between each occurrence of the recurring hours of operation override, such as 2 for every other week. (AI-inferred)
 	Interval any
 }
 
 type HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig struct {
-	// Configures the recurrence pattern (e.g., daily, weekly, or monthly interval and specific days) for applying the hours-of-operation override across a repeating schedule defined in the recurrence configuration. (AI-inferred)
 	RecurrencePattern any
 }
 
 type HoursOfOperation_HoursOfOperationOverrides struct {
-	// Specifies the starting timestamp (in ISO 8601 format) from which this hours of operation override takes effect. (AI-inferred)
 	EffectiveFrom any
-	// Specifies the end date and time (in ISO 8601 format) for which this hours of operation override remains in effect, after which the standard hours of operation schedule applies. (AI-inferred)
 	EffectiveTill any
-	// This field provides a unique, user-defined identifier for a specific hours of operation override entry within the hours_of_operation_overrides list, allowing each override to be individually referenced and managed. (AI-inferred)
 	HoursOfOperationOverrideId any
-	// The override config defines the alternative schedule of days and times that overrides the default hours of operation during a specified date/time window. (AI-inferred)
 	OverrideConfig any
-	// Provides a human-readable description for an hours of operation override, enabling administrators to label special schedules such as holidays or one-off events. (AI-inferred)
 	OverrideDescription any
-	// The display name assigned to a specific date override (e.g., a holiday) within an Amazon Connect hours of operation configuration, used to identify the custom schedule for that date. (AI-inferred)
 	OverrideName any
-	// Indicates the type of override, either HOLIDAY or OVERRIDE, determining how the specific-date hours override the weekly configuration. (AI-inferred)
 	OverrideType any
 	RecurrenceConfig any
 }
 
 type HoursOfOperation_Tags struct {
-	// The key part of a tag for the Amazon Connect hours of operation, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value part of a tag key-value pair attached to the Amazon Connect hours of operation resource, used for resource categorization and management. (AI-inferred)
 	Value any
 }
 

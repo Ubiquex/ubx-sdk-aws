@@ -8,22 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamAppBlockBuilder_AccessEndpoints:
-    # Specifies the type of AppStream access endpoint, such as STREAMING for the streaming traffic endpoint, for this AppBlockBuilder. (AI-inferred)
     endpoint_type: Any = None
-    # The ID of the VPC endpoint (vpce-id) that AppStream uses to establish a private connection to the app block builder via the specified access endpoint. (AI-inferred)
     vpce_id: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlockBuilder_Tags:
     key: Any = None
-    # The value portion of a user-defined tag attached to the AppStream 2.0 App Block Builder resource, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlockBuilder_VpcConfig:
-    # Specifies the list of EC2 security group IDs to associate with the AppStream 2.0 App Block Builder's elastic network interface within the configured VPC. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the list of subnet IDs in the VPC where the AppStream 2.0 app block builder will be launched, controlling which subnets are used for its elastic network interface. (AI-inferred)
     subnet_ids: Any = None
 
 _StreamAppBlockBuilder_AccessEndpointsFields = {
@@ -43,56 +38,32 @@ _StreamAppBlockBuilder_VpcConfigFields = {
 
 @dataclasses.dataclass
 class StreamAppBlockBuilderConfig:
-    # Specifies a list of VPC interface endpoints (each with an endpoint type and VPC endpoint ID) that enable private connectivity to the AppStream 2.0 App Block Builder without traversing the public internet. (AI-inferred)
     access_endpoints: Any = None
-    # Specifies the list of ARNs of AppStream 2.0 app blocks to associate with this app block builder, providing the source applications and content used to build new app blocks. (AI-inferred)
     app_block_arns: Any = None
-    # A human-readable, optional description of the app block builder that helps identify its purpose. (AI-inferred)
     description: Any = None
-    # The display_name specifies a user-friendly name for the AppStream 2.0 app block builder that appears in the console, distinct from the immutable Name identifier. (AI-inferred)
     display_name: Any = None
-    # Enables or disables default internet access for the AppStream 2.0 app block builder, allowing it to reach the internet via the default route when no VPC configuration is specified. (AI-inferred)
     enable_default_internet_access: Any = None
-    # Specifies the ARN of the IAM role applied to the AppStream 2.0 app block builder, granting it permissions to access application assets and other AWS resources needed to create app blocks. (AI-inferred)
     iam_role_arn: Any = None
-    # The Amazon EC2 instance type that the AppStream 2.0 App Block Builder uses to build and package applications. (AI-inferred)
     instance_type: Any = None
-    # The unique name for the AppStream 2.0 app block builder. (AI-inferred)
     name: Any = None
-    # The operating system platform for the app block builder, such as WINDOWS_SERVER_2019 or AMAZON_LINUX2. (AI-inferred)
     platform: Any = None
-    # Assigns metadata key-value pairs to the AppStream app block builder, enabling cost tracking, resource organization, and IAM-based access control. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the AppStream 2.0 app block builder, including the security group IDs and subnet IDs that define the network environment in which the builder runs. (AI-inferred)
     vpc_config: Any = None
 
 @dataclasses.dataclass
 class StreamAppBlockBuilderAttrs:
-    # Specifies a list of VPC interface endpoints (each with an endpoint type and VPC endpoint ID) that enable private connectivity to the AppStream 2.0 App Block Builder without traversing the public internet. (AI-inferred)
     access_endpoints: Any = None
-    # Specifies the list of ARNs of AppStream 2.0 app blocks to associate with this app block builder, providing the source applications and content used to build new app blocks. (AI-inferred)
     app_block_arns: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this AppStream 2.0 app block builder. (AI-inferred)
     arn: Any = None
-    # The timestamp indicating when the AppStream App Block Builder was created. (AI-inferred)
     created_time: Any = None
-    # A human-readable, optional description of the app block builder that helps identify its purpose. (AI-inferred)
     description: Any = None
-    # The display_name specifies a user-friendly name for the AppStream 2.0 app block builder that appears in the console, distinct from the immutable Name identifier. (AI-inferred)
     display_name: Any = None
-    # Enables or disables default internet access for the AppStream 2.0 app block builder, allowing it to reach the internet via the default route when no VPC configuration is specified. (AI-inferred)
     enable_default_internet_access: Any = None
-    # Specifies the ARN of the IAM role applied to the AppStream 2.0 app block builder, granting it permissions to access application assets and other AWS resources needed to create app blocks. (AI-inferred)
     iam_role_arn: Any = None
-    # The Amazon EC2 instance type that the AppStream 2.0 App Block Builder uses to build and package applications. (AI-inferred)
     instance_type: Any = None
-    # The unique name for the AppStream 2.0 app block builder. (AI-inferred)
     name: Any = None
-    # The operating system platform for the app block builder, such as WINDOWS_SERVER_2019 or AMAZON_LINUX2. (AI-inferred)
     platform: Any = None
-    # Assigns metadata key-value pairs to the AppStream app block builder, enabling cost tracking, resource organization, and IAM-based access control. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the AppStream 2.0 app block builder, including the security group IDs and subnet IDs that define the network environment in which the builder runs. (AI-inferred)
     vpc_config: Any = None
 
 StreamAppBlockBuilder = ubx.ResourceBinding(

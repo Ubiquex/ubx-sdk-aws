@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LocalGatewayVirtualInterfaceGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair attached to the Local Gateway Virtual Interface Group, enabling you to assign custom metadata for identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

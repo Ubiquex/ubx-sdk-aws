@@ -4,9 +4,7 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerAddonInstance_Tags struct {
-	// The key of a tag attached to the SES Mail Manager Addon Instance, used for metadata and resource organization. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the AWS SES Mail Manager add-on instance, used for organization, cost allocation, and access control as an arbitrary string. (AI-inferred)
 	Value any
 }
 
@@ -16,22 +14,15 @@ var MailManagerAddonInstance_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerAddonInstanceConfig struct {
-	// The ID of the addon subscription that this addon instance is associated with. (AI-inferred)
 	AddonSubscriptionId any
-	// Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type MailManagerAddonInstanceAttrs struct {
-	// The Amazon Resource Name (ARN) assigned by AWS that uniquely identifies this Mail Manager add-on instance. (AI-inferred)
 	AddonInstanceArn any
-	// The unique identifier assigned to this addon instance by AWS SES Mail Manager. (AI-inferred)
 	AddonInstanceId any
-	// The name of the add-on (such as Spamhaus) that this addon instance provides, determined by the addon subscription and returned as a read-only attribute. (AI-inferred)
 	AddonName any
-	// The ID of the addon subscription that this addon instance is associated with. (AI-inferred)
 	AddonSubscriptionId any
-	// Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred)
 	Tags any
 }
 

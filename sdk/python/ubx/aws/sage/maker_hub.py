@@ -13,9 +13,7 @@ class MakerHub_S3StorageConfig:
 
 @dataclasses.dataclass
 class MakerHub_Tags:
-    # The key of a tag attached to the SageMaker Hub, used to identify and categorize the hub for resource management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the SageMaker Hub, which pairs with the corresponding key to organize, identify, and manage the hub resource within your AWS environment. (AI-inferred)
     value: Any = None
 
 _MakerHub_S3StorageConfigFields = {

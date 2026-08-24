@@ -20,7 +20,6 @@ class DataAutomationLibrary_EntityTypes:
 
 @dataclasses.dataclass
 class DataAutomationLibrary_Tags:
-    # The key of a tag to attach to the Bedrock Data Automation Library, used for identifying and categorizing the library. (AI-inferred)
     key: Any = None
     value: Any = None
 

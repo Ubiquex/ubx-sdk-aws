@@ -4,7 +4,6 @@ package cur
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportDefinition_Tags struct {
-	// The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred)
 	Key any
 	Value any
 }
@@ -37,7 +36,6 @@ type ReportDefinitionConfig struct {
 	S3Prefix any
 	// The region of the S3 bucket that AWS delivers the report into.
 	S3Region any
-	// Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
 	Tags any
 	// The granularity of the line items in the report.
 	TimeUnit any
@@ -66,7 +64,6 @@ type ReportDefinitionAttrs struct {
 	S3Prefix any
 	// The region of the S3 bucket that AWS delivers the report into.
 	S3Region any
-	// Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
 	Tags any
 	// The granularity of the line items in the report.
 	TimeUnit any

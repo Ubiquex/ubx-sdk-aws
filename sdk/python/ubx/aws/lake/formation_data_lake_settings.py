@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationDataLakeSettings_Admins:
-    # Specifies the identifier (such as an IAM user ARN, role ARN, or account ID) of a principal that is granted administrative rights to the data lake settings. (AI-inferred)
     data_lake_principal_identifier: Any = None
 
 @dataclasses.dataclass
 class FormationDataLakeSettings_CreateDatabaseDefaultPermissions:
-    # The list of Lake Formation permissions (such as ALL, ALTER, CREATE_TABLE, DESCRIBE, and DROP) that are granted by default to the specified principal when a new database is created in the data lake. (AI-inferred)
     permissions: Any = None
-    # Specifies the principal (such as an IAM role, IAM user, or account) that receives the default permissions for newly created databases in the data lake. (AI-inferred)
     principal: Any = None
 
 _FormationDataLakeSettings_AdminsFields = {
@@ -33,54 +30,31 @@ _FormationDataLakeSettings_CreateDatabaseDefaultPermissionsFields = {
 
 @dataclasses.dataclass
 class FormationDataLakeSettingsConfig:
-    # Specifies the list of data lake administrator principals (e.g., IAM users, roles, or AWS accounts) who are granted administrative permissions on the Lake Formation data catalog and resources. (AI-inferred)
     admins: Any = None
-    # Indicates whether third-party query engines are allowed to access the metadata location for external data filtering in Lake Formation. (AI-inferred)
     allow_external_data_filtering: Any = None
-    # Determines whether external data access is allowed to read full Lake Formation tables without applying row- or column-level security filters, enabling unfiltered table data to be accessed by external engines. (AI-inferred)
     allow_full_table_external_data_access: Any = None
-    # Specifies the list of session tag values that are authorized for the 'lakeFormation:principal' session tag, controlling which principals can use Lake Formation with those session tags. (AI-inferred)
     authorized_session_tag_value_list: Any = None
-    # Specifies the default permissions that Lake Formation automatically grants to principals on newly created databases in the data lake. (AI-inferred)
     create_database_default_permissions: Any = None
-    # The default permissions granted to principals when new tables are created in the data lake. (AI-inferred)
     create_table_default_permissions: Any = None
-    # Specifies the list of data lake principals (AWS accounts or IAM roles) that are allowed to filter data externally in Lake Formation settings, enabling those principals to use external data filtering capabilities. (AI-inferred)
     external_data_filtering_allow_list: Any = None
-    # Specifies the type of mutation to apply to the data lake settings, with allowed values APPEND, REPLACE, ALLOW, or DROP. (AI-inferred)
     mutation_type: Any = None
-    # Specifies the Parameters map of the Lake Formation DataLakeSettings object, which carries administrative settings like CROSS_ACCOUNT_VERSION to control the cross-account permission model version. (AI-inferred)
     parameters: Any = None
-    # A list of Lake Formation principals (such as IAM users or roles) that are granted read-only administrative access to the Data Catalog, allowing them to view data but not modify settings or permissions. (AI-inferred)
     read_only_admins: Any = None
-    # A list of AWS account IDs that are trusted to register resources into the data lake, allowing these accounts to create and manage data lake resources even though they are not the data lake owner. (AI-inferred)
     trusted_resource_owners: Any = None
 
 @dataclasses.dataclass
 class FormationDataLakeSettingsAttrs:
-    # Specifies the list of data lake administrator principals (e.g., IAM users, roles, or AWS accounts) who are granted administrative permissions on the Lake Formation data catalog and resources. (AI-inferred)
     admins: Any = None
-    # Indicates whether third-party query engines are allowed to access the metadata location for external data filtering in Lake Formation. (AI-inferred)
     allow_external_data_filtering: Any = None
-    # Determines whether external data access is allowed to read full Lake Formation tables without applying row- or column-level security filters, enabling unfiltered table data to be accessed by external engines. (AI-inferred)
     allow_full_table_external_data_access: Any = None
-    # Specifies the list of session tag values that are authorized for the 'lakeFormation:principal' session tag, controlling which principals can use Lake Formation with those session tags. (AI-inferred)
     authorized_session_tag_value_list: Any = None
-    # Specifies the default permissions that Lake Formation automatically grants to principals on newly created databases in the data lake. (AI-inferred)
     create_database_default_permissions: Any = None
-    # The default permissions granted to principals when new tables are created in the data lake. (AI-inferred)
     create_table_default_permissions: Any = None
-    # Specifies the list of data lake principals (AWS accounts or IAM roles) that are allowed to filter data externally in Lake Formation settings, enabling those principals to use external data filtering capabilities. (AI-inferred)
     external_data_filtering_allow_list: Any = None
-    # The catalog ID (typically the AWS account ID) that identifies the data lake settings for this resource. (AI-inferred)
     id: Any = None
-    # Specifies the type of mutation to apply to the data lake settings, with allowed values APPEND, REPLACE, ALLOW, or DROP. (AI-inferred)
     mutation_type: Any = None
-    # Specifies the Parameters map of the Lake Formation DataLakeSettings object, which carries administrative settings like CROSS_ACCOUNT_VERSION to control the cross-account permission model version. (AI-inferred)
     parameters: Any = None
-    # A list of Lake Formation principals (such as IAM users or roles) that are granted read-only administrative access to the Data Catalog, allowing them to view data but not modify settings or permissions. (AI-inferred)
     read_only_admins: Any = None
-    # A list of AWS account IDs that are trusted to register resources into the data lake, allowing these accounts to create and manage data lake resources even though they are not the data lake owner. (AI-inferred)
     trusted_resource_owners: Any = None
 
 FormationDataLakeSettings = ubx.ResourceBinding(

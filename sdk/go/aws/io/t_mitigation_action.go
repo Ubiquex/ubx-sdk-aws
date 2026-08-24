@@ -23,12 +23,10 @@ type TMitigationAction_ActionParams_PublishFindingToSnsParams struct {
 }
 
 type TMitigationAction_ActionParams_ReplaceDefaultPolicyVersionParams struct {
-	// The template_name specifies the name of the AWS IoT policy template that is used to generate the new policy version, which then replaces the existing default policy version for the target principal. (AI-inferred)
 	TemplateName any
 }
 
 type TMitigationAction_ActionParams_UpdateCacertificateParams struct {
-	// Specifies whether to activate or deactivate the CA certificate, with allowed values 'ACTIVATE' and 'DEACTIVATE'. (AI-inferred)
 	Action any
 }
 
@@ -48,9 +46,7 @@ type TMitigationAction_ActionParams struct {
 }
 
 type TMitigationAction_Tags struct {
-	// The key of a tag that you can attach to an AWS IoT mitigation action, used to categorize and identify the action by metadata such as environment or purpose. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS IoT mitigation action, used for metadata such as owner, purpose, or environment. (AI-inferred)
 	Value any
 }
 
@@ -119,7 +115,6 @@ type TMitigationActionConfig struct {
 	ActionName any
 	// The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
 	ActionParams any
-	// The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred)
 	RoleArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -130,11 +125,8 @@ type TMitigationActionAttrs struct {
 	ActionName any
 	// The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
 	ActionParams any
-	// The Amazon Resource Name (ARN) uniquely identifying the AWS IoT mitigation action, assigned by AWS upon creation. (AI-inferred)
 	MitigationActionArn any
-	// The unique identifier assigned by AWS IoT to the mitigation action. (AI-inferred)
 	MitigationActionId any
-	// The Amazon Resource Name (ARN) of the IAM role that grants AWS IoT permission to perform the mitigation action. (AI-inferred)
 	RoleArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

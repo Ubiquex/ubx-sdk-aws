@@ -22,26 +22,18 @@ _PackageV2OriginEndpointPolicy_CdnAuthConfigurationFields = {
 class PackageV2OriginEndpointPolicyConfig:
     # <p>The settings to enable CDN authorization headers in MediaPackage.</p>
     cdn_auth_configuration: Any = None
-    # Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred)
     channel_group_name: Any = None
-    # The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred)
     channel_name: Any = None
-    # The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred)
     origin_endpoint_name: Any = None
-    # The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
 class PackageV2OriginEndpointPolicyAttrs:
     # <p>The settings to enable CDN authorization headers in MediaPackage.</p>
     cdn_auth_configuration: Any = None
-    # Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred)
     channel_group_name: Any = None
-    # The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred)
     channel_name: Any = None
-    # The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred)
     origin_endpoint_name: Any = None
-    # The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred)
     policy: Any = None
 
 PackageV2OriginEndpointPolicy = ubx.ResourceBinding(

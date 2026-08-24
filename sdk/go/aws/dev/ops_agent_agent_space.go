@@ -12,15 +12,12 @@ type OpsAgentAgentSpace_OperatorApp_Iam struct {
 type OpsAgentAgentSpace_OperatorApp_Idc struct {
 	CreatedAt any
 	IdcApplicationArn any
-	// The Amazon Resource Name (ARN) of the IAM Identity Center (IdC) instance used by the operator application in the agent space for its identity configuration. (AI-inferred)
 	IdcInstanceArn any
-	// The Amazon Resource Name (ARN) of the IAM role that the operator application assumes within the AWS IAM Identity Center (IDC) configuration for the agent space. (AI-inferred)
 	OperatorAppRoleArn any
 	UpdatedAt any
 }
 
 type OpsAgentAgentSpace_OperatorApp struct {
-	// In an AWS::DevOpsAgent::AgentSpace, the `operator_app.iam` field defines the IAM role and permission settings the operator application uses to securely access AWS resources on behalf of the agent space. (AI-inferred)
 	Iam any
 	Idc any
 }

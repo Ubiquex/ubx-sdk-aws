@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdServicePrincipalNameConfig:
-    # The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred)
     connector_arn: Any = None
-    # The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred)
     directory_registration_arn: Any = None
 
 @dataclasses.dataclass
 class AdServicePrincipalNameAttrs:
-    # The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred)
     connector_arn: Any = None
-    # The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred)
     directory_registration_arn: Any = None
 
 AdServicePrincipalName = ubx.ResourceBinding(

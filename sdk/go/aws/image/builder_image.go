@@ -53,20 +53,14 @@ type BuilderImage_LoggingConfiguration struct {
 }
 
 type BuilderImage_Workflows_Parameters struct {
-	// The name of the workflow parameter, identifying which input parameter of the Image Builder workflow this value corresponds to. (AI-inferred)
 	Name any
-	// Provides a list of values for a workflow parameter, which is passed to an Image Builder workflow during image creation. (AI-inferred)
 	Value any
 }
 
 type BuilderImage_Workflows struct {
-	// Specifies the action to take when this Image Builder workflow fails, with allowed values such as 'Continue' or 'Abort' controlling whether the image build proceeds or stops. (AI-inferred)
 	OnFailure any
-	// Specifies the name of a parallel group in which to run this workflow, allowing workflows in the same group to execute concurrently during the image build process. (AI-inferred)
 	ParallelGroup any
-	// Specifies a list of key-value pairs that Image Builder passes as input parameters to the corresponding workflow when it runs during the image build. (AI-inferred)
 	Parameters any
-	// The Amazon Resource Name (ARN) of the Image Builder workflow to execute as part of the image creation process. (AI-inferred)
 	WorkflowArn any
 }
 

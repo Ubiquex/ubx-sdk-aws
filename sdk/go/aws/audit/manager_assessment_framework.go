@@ -4,21 +4,16 @@ package audit
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerAssessmentFramework_ControlSets_Controls struct {
-	// The identifier (ARN) of the AWS Audit Manager control to include in the control set of the assessment framework. (AI-inferred)
 	Id any
 }
 
 type ManagerAssessmentFramework_ControlSets struct {
-	// Specifies the list of controls for each control set in the assessment framework, where each control entry includes its name, source type, and mapping details so the framework can evaluate evidence against them. (AI-inferred)
 	Controls any
-	// Name of the control set within the assessment framework, identifying a group of related controls. (AI-inferred)
 	Name any
 }
 
 type ManagerAssessmentFramework_Tags struct {
-	// The key (name) of a tag attached to the AWS Audit Manager assessment framework, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// In AWS Audit Manager, this is the value portion of a tag key-value pair attached to the assessment framework, used for custom metadata and resource identification/filtering. (AI-inferred)
 	Value any
 }
 

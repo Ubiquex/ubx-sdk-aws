@@ -21,7 +21,6 @@ type MountTargetConfig struct {
 type MountTargetAttrs struct {
 	// The ID of the file system for which to create the mount target.
 	FileSystemId any
-	// The unique identifier of the EFS mount target, typically the mount target ID (e.g., fsmt-12345678), used to reference the mount target in other resources. (AI-inferred)
 	Id any
 	// If the ``IpAddressType`` for the mount target is IPv4 ( ``IPV4_ONLY`` or ``DUAL_STACK``), then specify the IPv4 address to use. If you do not specify an ``IpAddress``, then Amazon EFS selects an unused IP address from the subnet specified for ``SubnetId``.
 	IpAddress any

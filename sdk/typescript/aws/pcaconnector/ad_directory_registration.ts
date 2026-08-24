@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdDirectoryRegistrationConfig {
-  /** The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred) */
   directoryId: string | Computed<string>;
-  /** Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface AdDirectoryRegistrationAttrs {
-  /** The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred) */
   directoryId: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this directory registration within AWS Private CA Connector for Active Directory. (AI-inferred) */
   directoryRegistrationArn: string;
-  /** Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags: unknown;
 }
 

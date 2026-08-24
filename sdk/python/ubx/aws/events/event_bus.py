@@ -19,9 +19,7 @@ class EventBus_LogConfig:
 
 @dataclasses.dataclass
 class EventBus_Tags:
-    # The key (name) of a tag attached to the Amazon EventBridge event bus. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to an Amazon EventBridge event bus, used for metadata, cost allocation, and resource access control. (AI-inferred)
     value: Any = None
 
 _EventBus_DeadLetterConfigFields = {

@@ -4,9 +4,7 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayVpcLink_Tags struct {
-	// Identifies the key of a user-defined tag attached to the API Gateway VPC Link, used to organize and categorize the resource via AWS tagging conventions. (AI-inferred)
 	Key any
-	// Specifies the value for a tag key attached to the VPC Link, enabling metadata-based management, cost allocation, and access control for the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,26 +14,19 @@ var GatewayVpcLink_TagsFields = ubx.FieldMap{
 	}
 
 type GatewayVpcLinkConfig struct {
-	// A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
 	Description any
-	// The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
 	Name any
 	// An array of arbitrary tags (key-value pairs) to associate with the VPC link.
 	Tags any
-	// Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
 	TargetArns any
 }
 
 type GatewayVpcLinkAttrs struct {
-	// A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred)
 	Description any
-	// The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred)
 	Name any
 	// An array of arbitrary tags (key-value pairs) to associate with the VPC link.
 	Tags any
-	// Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred)
 	TargetArns any
-	// The unique identifier (e.g., an alphanumeric string) assigned by AWS to this VPC link, used to reference the link in API Gateway configurations. (AI-inferred)
 	VpcLinkId any
 }
 

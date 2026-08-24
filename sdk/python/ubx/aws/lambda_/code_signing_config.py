@@ -18,9 +18,7 @@ class CodeSigningConfig_CodeSigningPolicies:
 
 @dataclasses.dataclass
 class CodeSigningConfig_Tags:
-    # The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred)
     value: Any = None
 
 _CodeSigningConfig_AllowedPublishersFields = {

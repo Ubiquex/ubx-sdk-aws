@@ -4,13 +4,11 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TBillingGroup_BillingGroupProperties struct {
-	// A user-defined, free-form description of the AWS IoT billing group, used to provide additional context about the group's purpose. (AI-inferred)
 	BillingGroupDescription any
 }
 
 type TBillingGroup_Tags struct {
 	Key any
-	// The string value of a tag assigned to the AWS IoT Billing Group, used to store arbitrary metadata about the billing group. (AI-inferred)
 	Value any
 }
 
@@ -24,22 +22,16 @@ var TBillingGroup_TagsFields = ubx.FieldMap{
 	}
 
 type TBillingGroupConfig struct {
-	// The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred)
 	BillingGroupName any
-	// Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred)
 	BillingGroupProperties any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type TBillingGroupAttrs struct {
-	// The Amazon Resource Name (ARN) of the IoT billing group, uniquely identifying it across AWS. (AI-inferred)
 	Arn any
-	// The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred)
 	BillingGroupName any
-	// Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred)
 	BillingGroupProperties any
-	// The unique name of the AWS IoT billing group, which serves as the resource's identifier in AWS IoT. (AI-inferred)
 	Id any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

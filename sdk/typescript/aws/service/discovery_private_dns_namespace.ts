@@ -2,17 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa {
-  /** Specifies the time-to-live (TTL) in seconds for the SOA (Start of Authority) record of the private DNS namespace, controlling how long DNS resolvers cache the SOA information. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
 export interface DiscoveryPrivateDnsNamespace_Properties_DnsProperties {
-  /** Configures the start of authority (SOA) record settings for the private DNS namespace, allowing you to set the time-to-live (TTL) for the SOA record. (AI-inferred) */
   soa?: DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa | Computed<DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa>;
 }
 
 export interface DiscoveryPrivateDnsNamespace_Properties {
-  /** Defines the DNS properties for the private namespace, specifically the SOA (Start of Authority) record settings that control the default DNS behavior for the namespace. (AI-inferred) */
   dnsProperties?: DiscoveryPrivateDnsNamespace_Properties_DnsProperties | Computed<DiscoveryPrivateDnsNamespace_Properties_DnsProperties>;
 }
 

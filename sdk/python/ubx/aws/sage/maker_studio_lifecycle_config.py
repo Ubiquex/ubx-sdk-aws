@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerStudioLifecycleConfig_Tags:
-    # The key of a tag assigned to the SageMaker Studio Lifecycle Configuration resource, used to organize and identify it within AWS. (AI-inferred)
     key: Any = None
-    # The value component of a tag assigned to the SageMaker Studio Lifecycle Configuration, used to categorize and manage the resource. (AI-inferred)
     value: Any = None
 
 _MakerStudioLifecycleConfig_TagsFields = {

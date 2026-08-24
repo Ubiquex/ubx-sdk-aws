@@ -4,11 +4,8 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageProfile_FileSystemLocations struct {
-	// The user-defined name for a file system location in the AWS Deadline Cloud storage profile, used to identify the shared or local storage path. (AI-inferred)
 	Name any
-	// The absolute filesystem path (e.g., a mount point or drive letter) on the worker where the file system location referenced by this storage profile entry is accessible. (AI-inferred)
 	Path any
-	// In an AWS Deadline Cloud storage profile, each file system location's `type` indicates whether the location represents a shared file system (accessible to all workers) or a local file system (strictly for a single worker). (AI-inferred)
 	Type any
 }
 
@@ -19,26 +16,17 @@ var StorageProfile_FileSystemLocationsFields = ubx.FieldMap{
 	}
 
 type StorageProfileConfig struct {
-	// The human-readable name of the storage profile, used to identify it in the Deadline Cloud console and API. (AI-inferred)
 	DisplayName any
-	// The unique identifier of the AWS Deadline Cloud farm to which this storage profile belongs. (AI-inferred)
 	FarmId any
-	// Defines the list of file system locations (each consisting of a name and a mount path) that this storage profile makes available to worker instances for accessing job data. (AI-inferred)
 	FileSystemLocations any
-	// Specifies the operating system family (such as WINDOWS or LINUX) that this AWS Deadline Cloud storage profile is configured for. (AI-inferred)
 	OsFamily any
 }
 
 type StorageProfileAttrs struct {
-	// The human-readable name of the storage profile, used to identify it in the Deadline Cloud console and API. (AI-inferred)
 	DisplayName any
-	// The unique identifier of the AWS Deadline Cloud farm to which this storage profile belongs. (AI-inferred)
 	FarmId any
-	// Defines the list of file system locations (each consisting of a name and a mount path) that this storage profile makes available to worker instances for accessing job data. (AI-inferred)
 	FileSystemLocations any
-	// Specifies the operating system family (such as WINDOWS or LINUX) that this AWS Deadline Cloud storage profile is configured for. (AI-inferred)
 	OsFamily any
-	// The unique identifier assigned by AWS Deadline Cloud to this storage profile. (AI-inferred)
 	StorageProfileId any
 }
 

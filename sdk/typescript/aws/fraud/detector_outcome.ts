@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DetectorOutcome_Tags {
-  /** The key of a tag assigned to the AWS Fraud Detector outcome, used to organize and identify the outcome resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

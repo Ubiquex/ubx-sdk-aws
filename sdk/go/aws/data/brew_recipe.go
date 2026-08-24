@@ -4,32 +4,23 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrewRecipe_Steps_Action struct {
-	// Specifies the data transformation action to apply in this recipe step, such as PROJECT or FILTER, matching one of DataBrew's supported operations. (AI-inferred)
 	Operation any
-	// A map of key-value pairs that provides operation-specific configuration for the transformation action, where the required and optional parameters depend on the selected operation (e.g., column names, ranges, or thresholds). (AI-inferred)
 	Parameters any
 }
 
 type BrewRecipe_Steps_ConditionExpressions struct {
-	// The condition operator (such as `isEquals`, `isNull`, or `contains`) that determines whether the recipe step is applied to the target column, compared against the configured value. (AI-inferred)
 	Condition any
-	// Specifies the column in the dataset whose values are evaluated by the condition expression in a DataBrew recipe step. (AI-inferred)
 	TargetColumn any
-	// The value to compare against the target column's content when evaluating the condition expression for a recipe step. (AI-inferred)
 	Value any
 }
 
 type BrewRecipe_Steps struct {
-	// Defines the transformation to apply in this recipe step, specifying the operation type and its parameters. (AI-inferred)
 	Action any
-	// Defines the list of condition expressions for a recipe step, where each expression specifies a condition, target column, and optional value to evaluate whether the step should be applied. (AI-inferred)
 	ConditionExpressions any
 }
 
 type BrewRecipe_Tags struct {
-	// The key of a tag assigned to the DataBrew recipe, used to categorize and identify the resource. (AI-inferred)
 	Key any
-	// Defines the value of a tag applied to the AWS DataBrew recipe, allowing you to add arbitrary metadata for cost allocation, resource grouping, and access control. (AI-inferred)
 	Value any
 }
 
@@ -67,9 +58,7 @@ type BrewRecipeConfig struct {
 	Description any
 	// Recipe name
 	Name any
-	// The ordered list of transformation steps, each specifying a DataBrew action and optional condition expressions, that define the recipe's data processing logic. (AI-inferred)
 	Steps any
-	// Defines one or more custom tags (key-value pairs) to attach to the recipe for metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 
@@ -78,9 +67,7 @@ type BrewRecipeAttrs struct {
 	Description any
 	// Recipe name
 	Name any
-	// The ordered list of transformation steps, each specifying a DataBrew action and optional condition expressions, that define the recipe's data processing logic. (AI-inferred)
 	Steps any
-	// Defines one or more custom tags (key-value pairs) to attach to the recipe for metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 

@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TRoleAlias_Tags struct {
-	// The user-defined key of a tag attached to the AWS IoT Role Alias, used for metadata, cost tracking, and access management. (AI-inferred)
 	Key any
-	// Specifies the value portion of a tag attached to an AWS IoT Role Alias, used for organizing and identifying the alias with custom metadata. (AI-inferred)
 	Value any
 }
 
@@ -16,26 +14,17 @@ var TRoleAlias_TagsFields = ubx.FieldMap{
 	}
 
 type TRoleAliasConfig struct {
-	// Specifies the duration, in seconds, for which the temporary credentials returned by the AWS IoT role alias remain valid when the role is assumed via the alias. (AI-inferred)
 	CredentialDurationSeconds any
-	// The unique name for the role alias, used in IoT policies and API calls to refer to the IAM role associated with this alias. (AI-inferred)
 	RoleAlias any
-	// The Amazon Resource Name (ARN) of the IAM role that the role alias points to, which devices assume when authenticating through the AWS IoT credentials provider. (AI-inferred)
 	RoleArn any
-	// Defines the list of tag objects to attach to the AWS IoT role alias, which can be used to organize, identify, and control access to the alias resource. (AI-inferred)
 	Tags any
 }
 
 type TRoleAliasAttrs struct {
-	// Specifies the duration, in seconds, for which the temporary credentials returned by the AWS IoT role alias remain valid when the role is assumed via the alias. (AI-inferred)
 	CredentialDurationSeconds any
-	// The unique name for the role alias, used in IoT policies and API calls to refer to the IAM role associated with this alias. (AI-inferred)
 	RoleAlias any
-	// The Amazon Resource Name (ARN) of the IoT role alias, automatically assigned by AWS when the alias is created. (AI-inferred)
 	RoleAliasArn any
-	// The Amazon Resource Name (ARN) of the IAM role that the role alias points to, which devices assume when authenticating through the AWS IoT credentials provider. (AI-inferred)
 	RoleArn any
-	// Defines the list of tag objects to attach to the AWS IoT role alias, which can be used to organize, identify, and control access to the alias resource. (AI-inferred)
 	Tags any
 }
 

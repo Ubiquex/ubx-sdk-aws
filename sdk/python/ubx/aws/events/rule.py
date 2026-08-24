@@ -8,219 +8,145 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Rule_Tags:
-    # The user-defined key of a tag attached to the EventBridge rule, used to categorize and manage the rule within AWS. (AI-inferred)
     key: Any = None
-    # The value portion of a tag (key-value pair) attached to the EventBridge rule, used to organize, identify, and control access to the rule. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_AppSyncParameters:
-    # The GraphQL query or mutation (e.g., mutation { ... }) to execute against the AppSync API when this target is triggered by the event rule. (AI-inferred)
     graph_qloperation: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_BatchParameters_ArrayProperties:
-    # The number of child jobs to run when the Batch job is submitted as an array job, controlling how many parallel attempts are launched. (AI-inferred)
     size: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_BatchParameters_RetryStrategy:
-    # Determines the number of times a failed AWS Batch job is retried (total attempts including the original), where each retry moves the job to RUNNABLE status and a value of 1 (the default) means no retries. (AI-inferred)
     attempts: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_BatchParameters:
-    # This object, nested within an EventBridge rule target's Batch parameters, defines the array size of the AWS Batch job, specifying how many child jobs the array job should launch. (AI-inferred)
     array_properties: Any = None
-    # The name or ARN of the AWS Batch job definition to run when the event rule matches an event and targets this Batch job. (AI-inferred)
     job_definition: Any = None
-    # The name of the AWS Batch job to run when this target is invoked by the event rule. (AI-inferred)
     job_name: Any = None
-    # Defines the retry strategy for the Batch job target, including the number of attempts to retry the job submission. (AI-inferred)
     retry_strategy: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_DeadLetterConfig:
-    # The ARN of the SQS queue to which EventBridge routes events that fail to be delivered to the target, as part of the target's dead-letter configuration. (AI-inferred)
     arn: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters_CapacityProviderStrategy:
-    # The base value designates how many tasks, at minimum, to run on the specified capacity provider within the capacity provider strategy for the ECS task launched by this EventBridge rule target. (AI-inferred)
     base: Any = None
-    # The name of the capacity provider (e.g., FARGATE or a custom capacity provider) used by the ECS task target's capacity provider strategy to determine the infrastructure on which the task runs. (AI-inferred)
     capacity_provider: Any = None
-    # The relative weight of the capacity provider, used to determine the proportion of tasks that are scheduled on it when multiple capacity providers are specified in the ECS task's capacity provider strategy. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters_NetworkConfiguration_AwsVpcConfiguration:
-    # Indicates whether the ECS task's elastic network interface should be assigned a public IP address (ENABLED) or not (DISABLED) when the task runs with the awsvpc network mode. (AI-inferred)
     assign_public_ip: Any = None
-    # Specifies the security group IDs to attach to the ECS task's elastic network interface when this EventBridge rule target launches an ECS task, under the VPC configuration. (AI-inferred)
     security_groups: Any = None
-    # The IDs of the subnets in which the ECS task will run when the EventBridge rule triggers it. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters_NetworkConfiguration:
-    # Defines the VPC subnets, security groups, and public IP assignment for the ECS task or service used as the event target. (AI-inferred)
     aws_vpc_configuration: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters_PlacementConstraints:
-    # The placement constraint expression to apply to the ECS task launched by this rule, supporting attribute-based queries like `attribute:ecs.instance-type =~ t2.*` or `distinctInstance`. (AI-inferred)
     expression: Any = None
-    # Specifies the type of ECS placement constraint to apply to the task, with valid values `distinctInstance` or `memberOf`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters_PlacementStrategies:
-    # The field to apply the ECS placement strategy against, such as 'attribute:ecs.availability-zone' or 'instanceId', typically used with the 'spread' placement strategy type. (AI-inferred)
     field: Any = None
-    # For an EventBridge rule target that runs an ECS task, this specifies the type of placement strategy (random, spread, or binpack) used to determine how tasks are placed across container instances. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_EcsParameters:
-    # Defines the capacity provider strategy used for ECS tasks launched by this EventBridge rule target, including a list of capacity providers with their weights and base values. (AI-inferred)
     capacity_provider_strategy: Any = None
-    # Indicates whether to enable Amazon ECS managed tags on the task launched by the EventBridge target. (AI-inferred)
     enable_ecsmanaged_tags: Any = None
-    # Enables ECS Exec for the task's containers, allowing you to run interactive commands inside them. (AI-inferred)
     enable_execute_command: Any = None
-    # The ECS task group to assign to the tasks launched by this EventBridge target, which overrides the group in the task definition and can be used for task grouping and filtering. (AI-inferred)
     group: Any = None
-    # The launch type (EC2 or FARGATE) that specifies how the ECS task is launched when the event rule triggers the target. (AI-inferred)
     launch_type: Any = None
-    # Configures the VPC subnets and security groups used by the ECS task or service that the EventBridge rule target runs. (AI-inferred)
     network_configuration: Any = None
-    # Specifies the placement constraints for the ECS task invoked by the EventBridge rule, controlling which container instances or availability zones the task may be placed on. (AI-inferred)
     placement_constraints: Any = None
-    # Specifies the placement strategy for ECS tasks started by this EventBridge target, controlling how tasks are distributed across container instances in the cluster (e.g., spread, binpack, or random). (AI-inferred)
     placement_strategies: Any = None
-    # The platform version on which the ECS task runs, such as 'LATEST' or a specific version like '1.4.0'. (AI-inferred)
     platform_version: Any = None
-    # Specifies whether to propagate the tags from the task definition to the Amazon ECS task; valid values are `TASK_DEFINITION` or `NONE`. (AI-inferred)
     propagate_tags: Any = None
-    # Specifies the optional reference ID string that identifies the ECS task started by this EventBridge rule target. (AI-inferred)
     reference_id: Any = None
-    # Specifies a list of tags to apply to the ECS task that is launched by the EventBridge rule target. (AI-inferred)
     tag_list: Any = None
-    # Specifies the number of tasks to create when running the ECS task defined in the task definition. (AI-inferred)
     task_count: Any = None
-    # The ARN of the ECS task definition that EventBridge invokes to start the ECS task when the rule fires for this target. (AI-inferred)
     task_definition_arn: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_HttpParameters:
-    # Specifies the HTTP headers to include in the request when the event rule target invokes an API destination or HTTP endpoint. (AI-inferred)
     header_parameters: Any = None
-    # Specifies the list of concrete values to substitute for each path parameter placeholder (e.g., {id}) in the HTTP request URL when the rule invokes an API destination target. (AI-inferred)
     path_parameter_values: Any = None
-    # A map of key-value pairs that are appended to the query string of the HTTP request sent to the target when the rule is invoked, allowing you to pass custom query parameters to an API destination or other HTTP target. (AI-inferred)
     query_string_parameters: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_InputTransformer:
-    # A map of user-defined variable names to JSONPath expressions that extract values from the source event, which are then referenced as variables in the input transformer's template. (AI-inferred)
     input_paths_map: Any = None
-    # Defines the template string that specifies how the event input is transformed before being sent to the target, using JSON paths enclosed in angular brackets (e.g., <$.source>) for dynamic values. (AI-inferred)
     input_template: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_KinesisParameters:
-    # A JSON path expression within the event payload that EventBridge uses to extract the partition key for the Kinesis record, required when the target is a Kinesis stream. (AI-inferred)
     partition_key_path: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_RedshiftDataParameters:
-    # The name of the Amazon Redshift database that the SQL statement is run against when the CloudWatch Events rule triggers the Redshift Data API target. (AI-inferred)
     database: Any = None
-    # The name of the database user that Amazon Redshift Data API uses to access the cluster when executing the SQL statement for this EventBridge target. (AI-inferred)
     db_user: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the Redshift cluster credentials used by the Redshift Data API to execute the target's SQL statement. (AI-inferred)
     secret_manager_arn: Any = None
-    # Specifies the SQL statement text that Amazon EventBridge passes to the Amazon Redshift Data API for execution when the rule triggers this target. (AI-inferred)
     sql: Any = None
-    # A list of SQL statements to be executed against the Amazon Redshift cluster when the event rule triggers the Redshift Data API target. (AI-inferred)
     sqls: Any = None
-    # The name of the Redshift Data API prepared statement to execute when the event rule triggers the target. (AI-inferred)
     statement_name: Any = None
-    # Whether to pass the original event as an `:event` parameter to the Redshift Data API statement executed by this EventBridge target. (AI-inferred)
     with_event: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_RetryPolicy:
-    # The maximum time in seconds (1-86400) that EventBridge retains an event for a target after a failed invocation, after which the event is discarded and no further retries are made. (AI-inferred)
     maximum_event_age_in_seconds: Any = None
-    # The maximum number of times EventBridge retries invoking the target after a failed invocation, as part of the rule's retry policy. (AI-inferred)
     maximum_retry_attempts: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_RunCommandParameters_RunCommandTargets:
-    # The EC2 tag key used by Systems Manager Run Command to select which instances the command targets. (AI-inferred)
     key: Any = None
-    # The list of string values for a RunCommand target, which, together with its key, define the set of EC2 instances (e.g., by tag or resource group) that receive the Systems Manager Run Command invoked by this EventBridge rule. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_RunCommandParameters:
-    # Specifies the AWS Systems Manager Run Command target instances by defining a key (such as an EC2 tag key or resource group) and a list of values used to select which instances the command runs against. (AI-inferred)
     run_command_targets: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_SageMakerPipelineParameters_PipelineParameterList:
-    # The name of a SageMaker pipeline parameter to pass as input when the EventBridge rule target invokes the pipeline. (AI-inferred)
     name: Any = None
-    # The value of a SageMaker pipeline parameter (Name/Value pair) supplied to a SageMaker pipeline when the EventBridge rule triggers the pipeline execution. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_SageMakerPipelineParameters:
-    # The list of SageMaker pipeline input parameters (name-value pairs) that are passed to the pipeline execution when EventBridge invokes the SageMaker pipeline target. (AI-inferred)
     pipeline_parameter_list: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets_SqsParameters:
-    # Specifies the message group ID for messages sent to a FIFO SQS queue as an EventBridge rule target, which groups messages so that they are processed in order and are not interleaved with messages from other groups. (AI-inferred)
     message_group_id: Any = None
 
 @dataclasses.dataclass
 class Rule_Targets:
-    # For an EventBridge target that invokes an AWS AppSync GraphQL API, this object specifies AppSync-specific parameters such as the GraphQL operation (mutation) to execute with the event payload. (AI-inferred)
     app_sync_parameters: Any = None
-    # The ARN of the target resource (such as a Lambda function, SNS topic, or other AWS service) that the rule invokes or sends events to. (AI-inferred)
     arn: Any = None
-    # Specifies the parameters for an AWS Batch job that the event rule invokes as a target, including job definition, job name, array properties, and retry strategy. (AI-inferred)
     batch_parameters: Any = None
-    # Configures a dead-letter queue (specified by its SQS queue ARN) to which EventBridge sends events that fail delivery to this target. (AI-inferred)
     dead_letter_config: Any = None
-    # Specifies the ECS task definition and related settings used when the event target invokes an Amazon ECS task. (AI-inferred)
     ecs_parameters: Any = None
-    # Specifies the HTTP parameters (headers, path, and query string) to use when the target is an API destination or webhook. (AI-inferred)
     http_parameters: Any = None
-    # The Id property of a target provides a unique, user-defined name for that target within the rule, and it is required. (AI-inferred)
     id: Any = None
-    # Specifies the literal text or JSON payload delivered to the target, overriding the original event that triggered the rule. (AI-inferred)
     input: Any = None
-    # A JSONPath string that selects a portion of the original event to pass as the input to this target, overriding the full event payload. (AI-inferred)
     input_path: Any = None
-    # Defines a custom transformation of the incoming event using a set of JSON path mappings and an input template, so the payload delivered to the target is reshaped from the original event. (AI-inferred)
     input_transformer: Any = None
-    # Defines the parameters for a Kinesis stream target, most notably the partition key that determines which shard the event is delivered to. (AI-inferred)
     kinesis_parameters: Any = None
-    # Specifies the parameters for executing an Amazon Redshift Data API statement as the EventBridge rule target, including the database, SQL command, and optional database user or secret manager credentials. (AI-inferred)
     redshift_data_parameters: Any = None
-    # Configures the retry policy for the target, specifying the maximum number of retry attempts and the maximum event age for a failed event invocation. (AI-inferred)
     retry_policy: Any = None
-    # The ARN of the IAM role that EventBridge assumes to invoke the target. (AI-inferred)
     role_arn: Any = None
-    # Specifies the parameters for an AWS Systems Manager Run Command that is invoked when the rule's target is an EC2 instance via SSM Run Command. (AI-inferred)
     run_command_parameters: Any = None
-    # An object that holds the runtime parameters for a SageMaker Pipeline target, including a list of pipeline parameter name-value pairs to pass to the pipeline execution. (AI-inferred)
     sage_maker_pipeline_parameters: Any = None
-    # Configuration for an SQS queue target, containing FIFO-specific settings such as the message group ID and message deduplication ID. (AI-inferred)
     sqs_parameters: Any = None
 
 _Rule_TagsFields = {

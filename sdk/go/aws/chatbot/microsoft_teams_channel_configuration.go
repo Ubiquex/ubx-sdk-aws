@@ -4,9 +4,7 @@ package chatbot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MicrosoftTeamsChannelConfiguration_Tags struct {
-	// The user-defined key for a tag attached to an AWS Chatbot Microsoft Teams channel configuration, used for organizing, filtering, and cost-tracking the resource. (AI-inferred)
 	Key any
-	// The tag value for a key-value pair applied to the AWS Chatbot Microsoft Teams channel configuration resource. (AI-inferred)
 	Value any
 }
 

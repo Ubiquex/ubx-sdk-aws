@@ -35,7 +35,6 @@ class RequesterGatewayAttrs:
     description: Any = None
     domain_name: Any = None
     gateway_id: Any = None
-    # The current status of the requester gateway, indicating its operational lifecycle state such as Active, Inactive, or Deleting, as managed by the RTB Fabric service. (AI-inferred)
     requester_gateway_status: Any = None
     # The ID of one or more security groups in order to create a requester gateway.
     security_group_ids: Any = None

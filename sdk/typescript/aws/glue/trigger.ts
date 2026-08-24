@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Trigger_Actions_NotificationProperty {
-  /** Specifies the number of minutes to wait after a job run completes before sending a notification for this Glue trigger action. (AI-inferred) */
   notifyDelayAfter?: number | Computed<number>;
 }
 
 export interface Trigger_Actions {
-  /** The set of key-value pairs that are passed as arguments to the referenced Glue job when this trigger action runs. (AI-inferred) */
   arguments?: unknown | Computed<unknown>;
-  /** The name of the AWS Glue crawler to start when this trigger action is invoked, used for crawler-based trigger actions. (AI-inferred) */
   crawlerName?: string | Computed<string>;
-  /** The name of the AWS Glue job that will be started when the trigger fires, as defined in the Actions property of the Glue trigger. (AI-inferred) */
   jobName?: string | Computed<string>;
-  /** Defines the notification settings for a Glue trigger action, specifically the number of minutes after a job run starts before a job run delay notification is sent (NotifyDelayAfter). (AI-inferred) */
   notificationProperty?: Trigger_Actions_NotificationProperty | Computed<Trigger_Actions_NotificationProperty>;
-  /** The name of the AWS Glue security configuration that encrypts the job run's data and connections when this trigger action starts a job. (AI-inferred) */
   securityConfiguration?: string | Computed<string>;
-  /** The job run timeout in minutes for the action, overriding the timeout value of the associated job. (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
@@ -29,15 +22,10 @@ export interface Trigger_EventBatchingCondition {
 }
 
 export interface Trigger_Predicate_Conditions {
-  /** The crawl state (e.g., SUCCEEDED, FAILED, RUNNING) that the crawler referenced in this condition must reach for the trigger predicate to evaluate as true. (AI-inferred) */
   crawlState?: string | Computed<string>;
-  /** The name of the AWS Glue crawler that must reach the specified crawl state (e.g., COMPLETED) to satisfy the trigger condition. (AI-inferred) */
   crawlerName?: string | Computed<string>;
-  /** The name of the AWS Glue job whose run state (e.g., SUCCEEDED, FAILED, TIMEOUT) this predicate condition evaluates to determine whether the trigger fires. (AI-inferred) */
   jobName?: string | Computed<string>;
-  /** Specifies the logical operator (AND or OR) that combines this condition with the previous condition in the trigger's predicate, defaulting to AND when not specified. (AI-inferred) */
   logicalOperator?: string | Computed<string>;
-  /** The state (e.g., SUCCEEDED, FAILED) that the referenced job or crawler must be in for this condition to be met within the trigger's predicate. (AI-inferred) */
   state?: string | Computed<string>;
 }
 

@@ -23,9 +23,7 @@ type SyncLocationFsxWindows_ManagedSecretConfig struct {
 }
 
 type SyncLocationFsxWindows_Tags struct {
-	// The key of a tag that you can assign to the DataSync location for FSx for Windows File Server, used to identify and manage the resource. (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag applied to the FSx for Windows File Server DataSync location, used for cost allocation and resource management. (AI-inferred)
 	Value any
 }
 

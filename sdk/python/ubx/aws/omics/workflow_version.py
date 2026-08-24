@@ -8,41 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkflowVersion_ContainerRegistryMap_ImageMappings:
-    # Specifies the destination container image URI that a source image from the container registry map is overridden with for this workflow version's runtime. (AI-inferred)
     destination_image: Any = None
-    # Defines the original container image reference (e.g., `myorg/myapp:latest`) that appears in the workflow definition and is mapped to a destination image for the container registry. (AI-inferred)
     source_image: Any = None
 
 @dataclasses.dataclass
 class WorkflowVersion_ContainerRegistryMap_RegistryMappings:
-    # The AWS account ID associated with the Amazon ECR container registry entry in the container registry map of the workflow version. (AI-inferred)
     ecr_account_id: Any = None
-    # Specifies the ECR repository prefix (including AWS account ID and region) that maps to a container registry name, allowing the workflow version to resolve and pull container images from Amazon ECR. (AI-inferred)
     ecr_repository_prefix: Any = None
     upstream_registry_url: Any = None
     upstream_repository_prefix: Any = None
 
 @dataclasses.dataclass
 class WorkflowVersion_ContainerRegistryMap:
-    # The image_mappings field defines a list of container image mappings that link container names used in the workflow definition to their corresponding image URIs in the container registry map of the AWS Omics workflow version. (AI-inferred)
     image_mappings: Any = None
     registry_mappings: Any = None
 
 @dataclasses.dataclass
 class WorkflowVersion_DefinitionRepository_SourceReference:
-    # The type of source repository (either 'GIT' or 'S3') that contains the workflow definition, used with the source reference to specify which version of the definition to use. (AI-inferred)
     type: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class WorkflowVersion_DefinitionRepository:
-    # The ARN of the AWS CodeStar Connections connection used to access the git repository that contains the workflow definition. (AI-inferred)
     connection_arn: Any = None
-    # A list of file patterns (e.g., glob patterns) that should be excluded from consideration when loading workflow definition files from the configured source repository in the definition_repository block. (AI-inferred)
     exclude_file_patterns: Any = None
-    # The full identifier of the repository that contains the workflow definition, used to locate the source file when the definition is fetched from a repository. (AI-inferred)
     full_repository_id: Any = None
-    # Identifies the specific revision (such as a Git branch, tag, or commit SHA) within the definition repository that this workflow version points to, determining the exact workflow definition source. (AI-inferred)
     source_reference: Any = None
 
 _WorkflowVersion_ContainerRegistryMap_ImageMappingsFields = {
@@ -88,37 +78,23 @@ _WorkflowVersion_DefinitionRepositoryFields = {
 
 @dataclasses.dataclass
 class WorkflowVersionConfig:
-    # Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred)
     accelerators: Any = None
-    # Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred)
     container_registry_map: Any = None
-    # For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred)
     container_registry_map_uri: Any = None
-    # Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred)
     definition_repository: Any = None
-    # The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred)
     definition_uri: Any = None
-    # The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred)
     description: Any = None
-    # Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred)
     engine: Any = None
-    # Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred)
     main: Any = None
-    # Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred)
     parameter_template: Any = None
     # Path to the primary workflow parameter template JSON file inside the repository
     parameter_template_path: Any = None
-    # Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred)
     storage_capacity: Any = None
-    # Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred)
     storage_type: Any = None
     # A map of resource tags
     tags: Any = None
-    # The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
     version_name: Any = None
-    # Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred)
     workflow_bucket_owner_id: Any = None
-    # The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred)
     workflow_id: Any = None
     # The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
     readme_markdown: Any = None
@@ -129,46 +105,28 @@ class WorkflowVersionConfig:
 
 @dataclasses.dataclass
 class WorkflowVersionAttrs:
-    # Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred)
     accelerators: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this Omics workflow version. (AI-inferred)
     arn: Any = None
-    # Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred)
     container_registry_map: Any = None
-    # For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred)
     container_registry_map_uri: Any = None
-    # The timestamp (string in ISO 8601 format) when this workflow version was created, as returned by AWS HealthOmics. (AI-inferred)
     creation_time: Any = None
-    # Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred)
     definition_repository: Any = None
-    # The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred)
     definition_uri: Any = None
-    # The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred)
     description: Any = None
-    # Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred)
     engine: Any = None
-    # Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred)
     main: Any = None
-    # Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred)
     parameter_template: Any = None
     # Path to the primary workflow parameter template JSON file inside the repository
     parameter_template_path: Any = None
-    # The current lifecycle status of the workflow version (e.g., CREATING, ACTIVE, UPDATING, DELETING, or FAILED), as determined by AWS HealthOmics. (AI-inferred)
     status: Any = None
-    # Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred)
     storage_capacity: Any = None
-    # Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred)
     storage_type: Any = None
     # A map of resource tags
     tags: Any = None
-    # The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred)
     type: Any = None
     uuid: Any = None
-    # The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
     version_name: Any = None
-    # Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred)
     workflow_bucket_owner_id: Any = None
-    # The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred)
     workflow_id: Any = None
     # The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
     readme_markdown: Any = None

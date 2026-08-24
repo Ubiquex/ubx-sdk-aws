@@ -4,9 +4,7 @@ package detective
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Graph_Tags struct {
-	// The key of a tag attached to the Detective graph, used to organize, identify, and manage access to the graph through resource-level permissions and cost allocation. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS Detective graph, used to categorize, manage, and control access to the graph alongside other AWS resources. (AI-inferred)
 	Value any
 }
 
@@ -18,7 +16,6 @@ var Graph_TagsFields = ubx.FieldMap{
 type GraphConfig struct {
 	// Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
 	AutoEnableMembers any
-	// The list of tags to attach to the Detective graph, where each tag consists of a key and a value to help organize, identify, and manage the resource. (AI-inferred)
 	Tags any
 }
 
@@ -27,7 +24,6 @@ type GraphAttrs struct {
 	Arn any
 	// Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
 	AutoEnableMembers any
-	// The list of tags to attach to the Detective graph, where each tag consists of a key and a value to help organize, identify, and manage the resource. (AI-inferred)
 	Tags any
 }
 

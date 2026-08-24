@@ -46,20 +46,14 @@ export interface BuilderImagePipeline_Schedule {
 }
 
 export interface BuilderImagePipeline_Workflows_Parameters {
-  /** The name of an individual input parameter passed to an Image Builder workflow configured for this image pipeline, serving as the key that the workflow definition uses to reference the parameter value. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the list of string values for a given workflow parameter key in the Image Builder image pipeline's workflow configuration. (AI-inferred) */
   value?: string[] | Computed<string[]>;
 }
 
 export interface BuilderImagePipeline_Workflows {
-  /** Specifies the action to take when this workflow fails; valid values are CONTINUE or ABORT. (AI-inferred) */
   onFailure?: string | Computed<string>;
-  /** The parallel group name for this workflow; multiple workflows with the same parallel group are executed concurrently during the image build process. (AI-inferred) */
   parallelGroup?: string | Computed<string>;
-  /** Specifies the list of parameter name/value pairs to pass to a workflow attached to this image pipeline, controlling how that workflow runs during the image build and test process. (AI-inferred) */
   parameters?: BuilderImagePipeline_Workflows_Parameters[] | Computed<BuilderImagePipeline_Workflows_Parameters[]>;
-  /** The ARN of an Image Builder workflow to associate with the image pipeline, defining a custom build/test step sequence. (AI-inferred) */
   workflowArn?: string | Computed<string>;
 }
 

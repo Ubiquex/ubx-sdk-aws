@@ -11,7 +11,6 @@ type LakeSubscriber_SubscriberIdentity struct {
 }
 
 type LakeSubscriber_Tags struct {
-	// The key of a tag attached to the Security Lake subscriber, used to define the tag's name for organizing and identifying the subscriber resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -48,15 +47,11 @@ type LakeSubscriberAttrs struct {
 	AccessTypes any
 	// The ARN for the data lake.
 	DataLakeArn any
-	// The Amazon Resource Name (ARN) of the AWS Resource Access Manager (RAM) resource share that grants the subscriber access to the Security Lake data lake. (AI-inferred)
 	ResourceShareArn any
-	// The name of the AWS Resource Access Manager (RAM) resource share automatically created to grant the subscriber access to Security Lake data. (AI-inferred)
 	ResourceShareName any
-	// For S3 subscribers, the ARN of the S3 bucket where Security Lake delivers data, computed and returned after the subscriber resource is created. (AI-inferred)
 	S3BucketArn any
 	// The supported AWS services from which logs and events are collected.
 	Sources any
-	// The Amazon Resource Name (ARN) of the Security Lake subscriber, automatically assigned by AWS when the subscriber is created. (AI-inferred)
 	SubscriberArn any
 	// The description for your subscriber account in Security Lake.
 	SubscriberDescription any
@@ -64,7 +59,6 @@ type LakeSubscriberAttrs struct {
 	SubscriberIdentity any
 	// The name of your Security Lake subscriber account.
 	SubscriberName any
-	// The ARN of the IAM role that the subscriber uses to access the data lake, assigned by Security Lake when the subscriber is created. (AI-inferred)
 	SubscriberRoleArn any
 	// An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string.
 	Tags any

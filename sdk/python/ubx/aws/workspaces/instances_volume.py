@@ -9,13 +9,11 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class InstancesVolume_TagSpecifications_Tags:
     key: Any = None
-    # The value of a tag assigned to the WorkSpaces volume within the tag specification, used to categorize and manage the volume. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class InstancesVolume_TagSpecifications:
     resource_type: Any = None
-    # The tags block within a tag specification, used to define key-value pairs that are attached to the WorkSpaces instance volume for identification and resource management. (AI-inferred)
     tags: Any = None
 
 _InstancesVolume_TagSpecifications_TagsFields = {

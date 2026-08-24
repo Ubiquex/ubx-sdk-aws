@@ -4,20 +4,14 @@ package aps
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnomalyDetector_Configuration_RandomCutForest struct {
-	// Controls the Random Cut Forest anomaly detection sensitivity by specifying whether to ignore data points that are close to the expected value from above, reducing false positives for minor upper-side deviations. (AI-inferred)
 	IgnoreNearExpectedFromAbove any
-	// When enabled, this parameter instructs the Random Cut Forest anomaly detector to ignore deviations that are below but very close to the expected value, preventing them from being flagged as anomalies. (AI-inferred)
 	IgnoreNearExpectedFromBelow any
-	// The PromQL query that selects the time series data to be analyzed for anomalies by the random cut forest algorithm in the anomaly detector. (AI-inferred)
 	Query any
-	// In the Random Cut Forest configuration of an AWS APS anomaly detector, sample_size specifies the number of data points from the input time series used to train the model, balancing training accuracy against computational cost. (AI-inferred)
 	SampleSize any
-	// The number of consecutive time series data points grouped into a single shingle (feature vector) that the Random Cut Forest model considers when evaluating anomalies. (AI-inferred)
 	ShingleSize any
 }
 
 type AnomalyDetector_Configuration struct {
-	// Defines the configuration for the Random Cut Forest algorithm used by this anomaly detector to identify anomalous patterns in Prometheus metric data. (AI-inferred)
 	RandomCutForest any
 }
 
@@ -50,7 +44,6 @@ var AnomalyDetector_LabelsFields = ubx.FieldMap{
 type AnomalyDetectorConfig struct {
 	// The AnomalyDetector alias.
 	Alias any
-	// Configures the anomaly detector with a PromQL-based metric definition and optional dimension filters that determine which metric time series are analyzed for anomalous behavior. (AI-inferred)
 	Configuration any
 	// The AnomalyDetector period of detection and metric generation.
 	EvaluationIntervalInSeconds any
@@ -68,7 +61,6 @@ type AnomalyDetectorAttrs struct {
 	Alias any
 	// The AnomalyDetector ARN.
 	Arn any
-	// Configures the anomaly detector with a PromQL-based metric definition and optional dimension filters that determine which metric time series are analyzed for anomalous behavior. (AI-inferred)
 	Configuration any
 	// The AnomalyDetector period of detection and metric generation.
 	EvaluationIntervalInSeconds any

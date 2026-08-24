@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dhcpoptions_Tags struct {
-	// The key (name) of a tag assigned to the DHCP options set, used to identify and organize the resource within AWS. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag attached to the DHCP options set, used to organize and identify the resource. (AI-inferred)
 	Value any
 }
 
@@ -33,7 +31,6 @@ type DhcpoptionsConfig struct {
 }
 
 type DhcpoptionsAttrs struct {
-	// The unique identifier (DHCP options ID) that AWS assigns to the DHCP options set when it is created, and which is used to associate the set with a VPC or subnet. (AI-inferred)
 	DhcpOptionsId any
 	// This value is used to complete unqualified DNS hostnames.
 	DomainName any

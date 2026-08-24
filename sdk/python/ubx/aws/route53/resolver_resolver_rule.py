@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResolverResolverRule_Tags:
-    # The key of a tag to assign to the Route 53 Resolver rule for organizing and identifying the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Route 53 Resolver rule, used to assign metadata for identifying, organizing, or cost-allocation purposes. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ResolverResolverRule_TargetIps:
-    # The IP address to which DNS queries matching this resolver rule are forwarded. (AI-inferred)
     ip: Any = None
-    # Specifies the IPv6 address of the target Resolver endpoint that this Resolver rule forwards DNS queries to. (AI-inferred)
     ipv6: Any = None
-    # The port on the target IP address to which the Resolver Rule forwards DNS queries (defaults to 53 if not specified). (AI-inferred)
     port: Any = None
-    # The protocol used to forward DNS queries to the target IP address, either 'Do53' for standard DNS over port 53 or 'DoH' for DNS over HTTPS. (AI-inferred)
     protocol: Any = None
-    # The Server Name Indication (SNI) value to include in the TLS handshake when the resolver forwards DNS queries to this target IP using the DoH or DoT protocol. (AI-inferred)
     server_name_indication: Any = None
 
 _ResolverResolverRule_TagsFields = {

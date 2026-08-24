@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface TieringConfiguration_ResourceSelection {
   resourceType?: string | Computed<string>;
   resources?: string[] | Computed<string[]>;
-  /** The number of days after a backup is created that it should be moved to the cold storage tier, controlling the lifecycle transition for the selected resources. (AI-inferred) */
   tieringDownSettingsInDays?: number | Computed<number>;
 }
 
@@ -15,23 +14,18 @@ const TieringConfiguration_ResourceSelectionFields: FieldMap = {
 };
 
 export interface TieringConfigurationConfig {
-  /** The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred) */
   backupVaultName: string | Computed<string>;
   resourceSelection: TieringConfiguration_ResourceSelection[] | Computed<TieringConfiguration_ResourceSelection[]>;
-  /** The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred) */
   tieringConfigurationName: string | Computed<string>;
   tieringConfigurationTags?: unknown | Computed<unknown>;
 }
 
 export interface TieringConfigurationAttrs {
-  /** The name of the AWS Backup vault to which this tiering configuration is applied. (AI-inferred) */
   backupVaultName: string;
   creationTime: string;
-  /** The timestamp of the most recent update to this AWS Backup tiering configuration. (AI-inferred) */
   lastUpdatedTime: string;
   resourceSelection: TieringConfiguration_ResourceSelection[];
   tieringConfigurationArn: string;
-  /** The name that identifies this tiering configuration, which defines when backups transition to the cold storage tier within an AWS Backup plan. (AI-inferred) */
   tieringConfigurationName: string;
   tieringConfigurationTags: unknown;
 }

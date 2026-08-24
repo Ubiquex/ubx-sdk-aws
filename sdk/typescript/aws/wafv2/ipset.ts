@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ipset_Tags {
-  /** The key of a tag attached to the WAFv2 IP set, used to identify and organize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the AWS WAFv2 IP set resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -24,7 +22,6 @@ export interface IpsetConfig {
   name?: string | Computed<string>;
   /** Use CLOUDFRONT for CloudFront IPSet, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string | Computed<string>;
-  /** A list of key-value tags to associate with the WAFv2 IP set, used for resource identification, organization, and access management. (AI-inferred) */
   tags?: Ipset_Tags[] | Computed<Ipset_Tags[]>;
 }
 
@@ -43,7 +40,6 @@ export interface IpsetAttrs {
   name: string;
   /** Use CLOUDFRONT for CloudFront IPSet, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string;
-  /** A list of key-value tags to associate with the WAFv2 IP set, used for resource identification, organization, and access management. (AI-inferred) */
   tags: Ipset_Tags[];
 }
 

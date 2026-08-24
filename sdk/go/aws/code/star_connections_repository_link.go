@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StarConnectionsRepositoryLink_Tags struct {
 	Key any
-	// Specifies the value of a tag key associated with the AWS CodeStar Connections repository link resource. (AI-inferred)
 	Value any
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CarrierGateway_Tags:
-    # The key of a user-defined tag associated with this EC2 Carrier Gateway, used for identifying, organizing, and cost allocation of the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS EC2 Carrier Gateway, used for metadata, organization, and cost tracking alongside its corresponding tag key. (AI-inferred)
     value: Any = None
 
 _CarrierGateway_TagsFields = {

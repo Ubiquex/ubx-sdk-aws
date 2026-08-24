@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkAclEntry_Icmp:
-    # The ICMP code number, used to filter ICMP traffic in a network ACL entry, where it must be specified when the ICMP type is set to a specific value (e.g., 0 for echo request) rather than -1. (AI-inferred)
     code: Any = None
-    # The ICMP type number for the ICMP protocol, used when the protocol is set to ICMP (e.g., 8 for echo request). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class NetworkAclEntry_PortRange:
-    # The starting (lower) port number of the TCP or UDP port range that this network ACL entry rule applies to, used together with the 'to' value to define the range of allowed or denied destination ports. (AI-inferred)
     from_: Any = None
-    # Specifies the highest port number in the inclusive range of ports that this network ACL entry applies to, paired with the port_range.from value to define the upper boundary of allowed or denied traffic. (AI-inferred)
     to: Any = None
 
 _NetworkAclEntry_IcmpFields = {
@@ -36,13 +32,11 @@ class NetworkAclEntryConfig:
     cidr_block: Any = None
     # Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet)
     egress: Any = None
-    # Specifies the ICMP type and code for the network ACL rule when the protocol is ICMP or ICMPv6, used to match specific ICMP traffic patterns. (AI-inferred)
     icmp: Any = None
     # The IPv6 network range to allow or deny, in CIDR notation (for example 2001:db8:1234:1a00::/64)
     ipv6_cidr_block: Any = None
     # The ID of the network ACL
     network_acl_id: Any = None
-    # Specifies the inclusive lower and upper bounds of the port range to match for the network ACL rule, typically used when the protocol is TCP or UDP. (AI-inferred)
     port_range: Any = None
     # The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code
     protocol: Any = None
@@ -57,15 +51,12 @@ class NetworkAclEntryAttrs:
     cidr_block: Any = None
     # Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet)
     egress: Any = None
-    # Specifies the ICMP type and code for the network ACL rule when the protocol is ICMP or ICMPv6, used to match specific ICMP traffic patterns. (AI-inferred)
     icmp: Any = None
-    # A computed identifier that combines the network ACL ID and rule number to uniquely represent this network ACL entry. (AI-inferred)
     id: Any = None
     # The IPv6 network range to allow or deny, in CIDR notation (for example 2001:db8:1234:1a00::/64)
     ipv6_cidr_block: Any = None
     # The ID of the network ACL
     network_acl_id: Any = None
-    # Specifies the inclusive lower and upper bounds of the port range to match for the network ACL rule, typically used when the protocol is TCP or UDP. (AI-inferred)
     port_range: Any = None
     # The protocol number. A value of "-1" means all protocols. If you specify "-1" or a protocol number other than "6" (TCP), "17" (UDP), or "1" (ICMP), traffic on all ports is allowed, regardless of any ports or ICMP types or codes that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol "58" (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code
     protocol: Any = None

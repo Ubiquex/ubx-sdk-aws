@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetails:
-    # The version number of the source bot to use as the basis for the locale version in this bot version. (AI-inferred)
     source_bot_version: Any = None
 
 @dataclasses.dataclass
 class BotVersion_BotVersionLocaleSpecification:
-    # Specifies the details of a locale in the bot version, including the source bot version from which the locale's version is derived. (AI-inferred)
     bot_version_locale_details: Any = None
-    # Identifies the locale (such as 'en_US' or 'en_GB') that this bot version locale specification entry applies to, and must match a locale configured on the bot. (AI-inferred)
     locale_id: Any = None
 
 _BotVersion_BotVersionLocaleSpecification_BotVersionLocaleDetailsFields = {

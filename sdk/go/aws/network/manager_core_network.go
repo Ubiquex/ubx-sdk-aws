@@ -4,43 +4,30 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerCoreNetwork_Edges struct {
-	// The Autonomous System Number (ASN) assigned to the edge location for BGP peering within the core network. (AI-inferred)
 	Asn any
-	// The AWS Region code (e.g., us-east-1) of the core network edge, returned as part of the edges list for the core network. (AI-inferred)
 	EdgeLocation any
-	// The list of CIDR blocks assigned to a core network edge, indicating the IP address ranges that are routed within that edge's network segment. (AI-inferred)
 	InsideCidrBlocks any
 }
 
 type ManagerCoreNetwork_NetworkFunctionGroups_Segments struct {
-	// Specifies the list of segment names to which this segment can forward traffic, defining inter-segment reachability in the core network. (AI-inferred)
 	SendTo any
-	// Specifies the list of network function groups through which traffic from the segment is routed, enabling service insertion in the core network. (AI-inferred)
 	SendVia any
 }
 
 type ManagerCoreNetwork_NetworkFunctionGroups struct {
-	// Specifies the AWS Regions (edge locations) where the network functions in this network function group are deployed and operate within the core network. (AI-inferred)
 	EdgeLocations any
-	// The name of the network function group, which uniquely identifies this group within the core network's policy and is referenced when attaching network functions to segments. (AI-inferred)
 	Name any
-	// Defines the list of core network segment names to which this network function group is associated, controlling the segments where the group's network functions can be deployed. (AI-inferred)
 	Segments any
 }
 
 type ManagerCoreNetwork_Segments struct {
-	// Specifies the list of AWS Regions (edge locations) where resources in this segment can be attached, controlling segment availability across the core network's global network. (AI-inferred)
 	EdgeLocations any
-	// The name of the network segment, which uniquely identifies it within the core network and is referenced by other configuration elements such as segment actions and route policies. (AI-inferred)
 	Name any
-	// Specifies the list of other segment names within the same core network that this segment is allowed to share attachments with. (AI-inferred)
 	SharedSegments any
 }
 
 type ManagerCoreNetwork_Tags struct {
-	// The key (name) of a user-defined tag assigned to the AWS Network Manager core network. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair applied to the core network, used to store arbitrary metadata for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 

@@ -18,26 +18,18 @@ var PackageV2OriginEndpointPolicy_CdnAuthConfigurationFields = ubx.FieldMap{
 type PackageV2OriginEndpointPolicyConfig struct {
 	// <p>The settings to enable CDN authorization headers in MediaPackage.</p>
 	CdnAuthConfiguration any
-	// Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred)
 	ChannelGroupName any
-	// The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred)
 	ChannelName any
-	// The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred)
 	OriginEndpointName any
-	// The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred)
 	Policy any
 }
 
 type PackageV2OriginEndpointPolicyAttrs struct {
 	// <p>The settings to enable CDN authorization headers in MediaPackage.</p>
 	CdnAuthConfiguration any
-	// Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred)
 	ChannelGroupName any
-	// The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred)
 	ChannelName any
-	// The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred)
 	OriginEndpointName any
-	// The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred)
 	Policy any
 }
 

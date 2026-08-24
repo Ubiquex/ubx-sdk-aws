@@ -14,18 +14,14 @@ const SpacesWebUserAccessLoggingSettings_TagsFields: FieldMap = {
 export interface SpacesWebUserAccessLoggingSettingsConfig {
   /** Kinesis stream ARN to which log events are published. */
   kinesisStreamArn: string | Computed<string>;
-  /** A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred) */
   tags?: SpacesWebUserAccessLoggingSettings_Tags[] | Computed<SpacesWebUserAccessLoggingSettings_Tags[]>;
 }
 
 export interface SpacesWebUserAccessLoggingSettingsAttrs {
-  /** The ARNs of the WorkSpaces Web portals that are associated with this user access logging settings resource. (AI-inferred) */
   associatedPortalArns: string[];
   /** Kinesis stream ARN to which log events are published. */
   kinesisStreamArn: string;
-  /** A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred) */
   tags: SpacesWebUserAccessLoggingSettings_Tags[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this user access logging settings resource, used as a reference for attaching the settings to a WorkSpaces Web portal. (AI-inferred) */
   userAccessLoggingSettingsArn: string;
 }
 

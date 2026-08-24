@@ -8,129 +8,85 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerEndpointConfig_AsyncInferenceConfig_ClientConfig:
-    # Sets the maximum number of concurrent invocations per instance that the asynchronous inference client can send to the model, controlling request parallelism for the endpoint. (AI-inferred)
     max_concurrent_invocations_per_instance: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfig:
-    # The ARN of the Amazon SNS topic to which SageMaker sends an error notification when an asynchronous inference request fails. (AI-inferred)
     error_topic: Any = None
-    # Specifies a list of invocation outcomes (e.g., 'SUCCESS' or 'FAILURE') for which the inference response payload is included in the SNS notification for an asynchronous SageMaker endpoint. (AI-inferred)
     include_inference_response_in: Any = None
-    # SNS topic ARN to which SageMaker publishes a notification when an asynchronous inference completes successfully. (AI-inferred)
     success_topic: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_AsyncInferenceConfig_OutputConfig:
-    # Specifies the AWS KMS key ID used to encrypt the async inference output data stored in Amazon S3. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the Amazon SNS topic ARNs to receive success and error notifications for asynchronous inference, and optionally which inference response types to include in those notifications. (AI-inferred)
     notification_config: Any = None
-    # The S3 URI (bucket and prefix) where SageMaker writes the failure response payload for asynchronous inference requests when the model prediction fails. (AI-inferred)
     s3_failure_path: Any = None
-    # The S3 bucket and prefix (path) where the results of asynchronous inference requests are written. (AI-inferred)
     s3_output_path: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_AsyncInferenceConfig:
-    # Specifies client configuration for asynchronous inference, including the maximum number of concurrent invocations per instance allowed for the endpoint. (AI-inferred)
     client_config: Any = None
-    # Configures the S3 output location (and optionally an SNS notification topic) for storing the results of asynchronous inference on this endpoint configuration. (AI-inferred)
     output_config: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_DataCaptureConfig_CaptureContentTypeHeader:
-    # Specifies the list of CSV content types (e.g., 'text/csv') for which Amazon SageMaker captures request and response payloads as part of the data capture configuration for an endpoint. (AI-inferred)
     csv_content_types: Any = None
-    # Specifies the list of content types (e.g., 'application/json') that are classified as JSON for the purpose of data capture on the SageMaker endpoint. (AI-inferred)
     json_content_types: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_DataCaptureConfig_CaptureOptions:
-    # Specifies whether the data capture option applies to the input, output, or both (Input, Output, or InputAndOutput) of the endpoint invocation. (AI-inferred)
     capture_mode: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_DataCaptureConfig:
-    # Specifies the lists of CSV and JSON content types that SageMaker captures for requests and responses in the endpoint's data capture configuration. (AI-inferred)
     capture_content_type_header: Any = None
-    # Specifies which data flows (Request/Input and/or Response/Output) to capture for the endpoint's data capture configuration. (AI-inferred)
     capture_options: Any = None
-    # The S3 URI where Amazon SageMaker stores the captured endpoint data (payloads) for the DataCaptureConfig of this endpoint configuration. (AI-inferred)
     destination_s3_uri: Any = None
-    # Indicates whether data capture is enabled for the endpoint, which controls whether SageMaker captures request and response data for monitoring and debugging. (AI-inferred)
     enable_capture: Any = None
-    # The percentage of incoming requests (0 to 100) to sample for data capture when the endpoint is initially deployed, determining what fraction of traffic is recorded for monitoring or analysis. (AI-inferred)
     initial_sampling_percentage: Any = None
-    # The AWS KMS key ID used to encrypt captured endpoint data at rest in the data capture configuration. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfig:
-    # Defines a template string that determines how feature values are placed into the inference request body for SageMaker Clarify, matching the endpoint's expected input format (e.g., with placeholders like {features}). (AI-inferred)
     content_template: Any = None
-    # Specifies the list of feature names for the model input, enabling SageMaker Clarify to label and interpret features when generating explainability insights for the endpoint configuration. (AI-inferred)
     feature_headers: Any = None
-    # Specifies the data type (categorical or numerical) for each feature, enabling SageMaker Clarify to apply the appropriate explanation method during inference. (AI-inferred)
     feature_types: Any = None
-    # Specifies the name or JSONPath of the features attribute in the input dataset, used by SageMaker Clarify for explanations. (AI-inferred)
     features_attribute: Any = None
-    # The name of the attribute in the SageMaker model's inference response that contains the predicted label, used by SageMaker Clarify to properly parse outputs for bias and explainability analyses. (AI-inferred)
     label_attribute: Any = None
-    # Specifies the names of the label columns in the dataset, used by SageMaker Clarify to identify which model output headers correspond to labels during explanation generation. (AI-inferred)
     label_headers: Any = None
-    # The index of the label column in the input data, used by the SageMaker Clarify explainer to identify the true label for multi-class classification models. (AI-inferred)
     label_index: Any = None
-    # Sets the maximum payload size (in MB) that SageMaker Clarify permits for the inference requests it sends to the endpoint when generating explanations. (AI-inferred)
     max_payload_in_mb: Any = None
-    # The maximum number of records from the input dataset that SageMaker Clarify's inference configuration uses to generate model explanations for the endpoint. (AI-inferred)
     max_record_count: Any = None
-    # The attribute name in the model output that contains the probability for the predicted class, used by SageMaker Clarify to compute SHAP explanations. (AI-inferred)
     probability_attribute: Any = None
-    # The index of the model output that contains the probability of the positive class, used by SageMaker Clarify to interpret predictions for binary classification. (AI-inferred)
     probability_index: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfig:
-    # The MIME type of the SHAP baseline data (e.g., text/csv or application/json) used by SageMaker Clarify for explainability. (AI-inferred)
     mime_type: Any = None
-    # Specifies the baseline data (as a JSON string or S3 URI) used by the SHAP algorithm for explainability in SageMaker Clarify. (AI-inferred)
     shap_baseline: Any = None
-    # The S3 URI of the baseline dataset used as the uniform background data for computing SHAP values in SageMaker Clarify explanations for this endpoint configuration. (AI-inferred)
     shap_baseline_uri: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfig:
-    # Specifies the granularity level for text inputs used by SageMaker Clarify SHAP analysis, either 'token' or 'sentence', determining whether the text is divided into individual tokens or entire sentences for generating explanations. (AI-inferred)
     granularity: Any = None
-    # Specifies the language (e.g., 'en' for English) of the text data for SageMaker Clarify SHAP analysis in the text configuration. (AI-inferred)
     language: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig:
-    # Integer specifying how many samples to use when computing SHAP values for the model predictions, used by SageMaker Clarify to approximate the baseline distribution. (AI-inferred)
     number_of_samples: Any = None
-    # Sets the random seed for the SageMaker Clarify SHAP algorithm to ensure reproducible feature attribution results in the endpoint configuration's explainer config. (AI-inferred)
     seed: Any = None
-    # Specifies the baseline (background) dataset and its serialization format that SageMaker Clarify's SHAP algorithm uses to compute feature attribution values for endpoint predictions. (AI-inferred)
     shap_baseline_config: Any = None
-    # This object configures how SageMaker Clarify's SHAP explainer processes text features, including language and granularity settings for computing feature attribution. (AI-inferred)
     text_config: Any = None
-    # If true, SageMaker Clarify transforms the model's probability output to log-odds (logit) before computing SHAP values, which is appropriate for binary classification problems. (AI-inferred)
     use_logit: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig_ClarifyExplainerConfig:
-    # Determines whether SageMaker Clarify explanations are enabled for the endpoint, with valid values being 'Enabled' or 'Disabled'. (AI-inferred)
     enable_explanations: Any = None
-    # Specifies the input and output data layout (feature headers, feature attribute, label attribute, etc.) that SageMaker Clarify uses to interpret inference requests and responses when generating explainability explanations. (AI-inferred)
     inference_config: Any = None
-    # Specifies the SHAP (SHapley Additive exPlanations) baseline and sampling parameters for the SageMaker Clarify explainer, which are used to generate feature attribution values for model predictions at the endpoint. (AI-inferred)
     shap_config: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ExplainerConfig:
-    # Specifies the configuration for SageMaker Clarify to generate SHAP-based feature attributions for the endpoint, including the SHAP baseline, number of samples, and text configuration for natural language processing. (AI-inferred)
     clarify_explainer_config: Any = None
 
 @dataclasses.dataclass
@@ -141,9 +97,7 @@ class MakerEndpointConfig_MetricsConfig:
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants_CapacityReservationConfig:
-    # Specifies the capacity reservation preference for the production variant, which can be set to 'capacity_reservation' to reserve capacity in an Availability Zone or 'none' to not use capacity reservations. (AI-inferred)
     capacity_reservation_preference: Any = None
-    # The Amazon Resource Name (ARN) of the SageMaker ML instance reservation to apply to this production variant, allowing you to leverage committed-use discounts for the endpoint capacity. (AI-inferred)
     ml_reservation_arn: Any = None
 
 @dataclasses.dataclass
@@ -153,11 +107,8 @@ class MakerEndpointConfig_ProductionVariants_CoreDumpConfig:
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants_InstancePools:
-    # The SageMaker ML compute instance type (e.g., ml.m5.xlarge) used by the corresponding instance pool in a production variant, determining the underlying compute resource that serves traffic for that pool within the endpoint configuration. (AI-inferred)
     instance_type: Any = None
-    # The name of the SageMaker model to serve from this instance pool, overriding the model name specified in the parent production variant so a single endpoint configuration can route traffic to different models across its instance pools. (AI-inferred)
     model_name_override: Any = None
-    # Indicates the priority of this instance pool within the production variant, where a lower numeric value represents a higher precedence that SageMaker uses when selecting an instance type to provision endpoint capacity. (AI-inferred)
     priority: Any = None
 
 @dataclasses.dataclass
@@ -168,12 +119,9 @@ class MakerEndpointConfig_ProductionVariants_ManagedInstanceScaling_ScaleInPolic
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants_ManagedInstanceScaling:
-    # The maximum number of instances that the endpoint's production variant can scale out to when managed instance scaling is enabled. (AI-inferred)
     max_instance_count: Any = None
-    # The minimum number of instances that the SageMaker endpoint production variant can scale down to when managed instance scaling is enabled. (AI-inferred)
     min_instance_count: Any = None
     scale_in_policy: Any = None
-    # Indicates whether managed instance scaling is enabled or disabled for this production variant, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -184,65 +132,42 @@ class MakerEndpointConfig_ProductionVariants_RoutingConfig_PrefixAwareRoutingCon
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants_RoutingConfig:
     prefix_aware_routing_config: Any = None
-    # Specifies the routing strategy for the production variant, controlling how SageMaker distributes inference requests across the variant's instances, with valid values such as 'LEAST_OUTSTANDING_REQUESTS' and 'RANDOM'. (AI-inferred)
     routing_strategy: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants_ServerlessConfig:
-    # Sets the maximum number of concurrent invocations the serverless endpoint can handle, controlling throughput and triggering scaling for this production variant. (AI-inferred)
     max_concurrency: Any = None
-    # Specifies the memory size (in MB) for the serverless endpoint production variant, determining the compute resources allocated for the endpoint. (AI-inferred)
     memory_size_in_mb: Any = None
-    # The number of provisioned concurrency execution environments to pre-warm for the serverless production variant, reducing cold start latency at an additional cost. (AI-inferred)
     provisioned_concurrency: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_ProductionVariants:
-    # Capacity reservation configuration for the production variant, specifying the Amazon EC2 capacity reservation target (such as a CapacityReservationId) to reserve compute capacity for the variant's instances. (AI-inferred)
     capacity_reservation_config: Any = None
-    # The timeout in seconds for the container startup health check, after which SageMaker considers the model in this production variant unhealthy if the container has not reported a healthy status. (AI-inferred)
     container_startup_health_check_timeout_in_seconds: Any = None
     core_dump_config: Any = None
-    # Indicates whether to enable AWS Systems Manager (SSM) access to the container running the model for this production variant, allowing remote debugging and management. (AI-inferred)
     enable_ssmaccess: Any = None
     inference_ami_version: Any = None
-    # The initial number of ML compute instances to launch for this production variant. (AI-inferred)
     initial_instance_count: Any = None
-    # The initial weight assigned to a production variant, determining the proportion of inference traffic routed to this variant relative to other variants in the endpoint configuration. (AI-inferred)
     initial_variant_weight: Any = None
-    # Specifies a list of instance pools for a production variant, where each pool defines an instance type and instance count, enabling the variant to span multiple instance types for capacity and cost optimization. (AI-inferred)
     instance_pools: Any = None
-    # Specifies the Amazon SageMaker ML compute instance type (for example, ml.m4.xlarge) used to host this production variant. (AI-inferred)
     instance_type: Any = None
-    # Specifies settings for managed instance scaling of this production variant, including the minimum and maximum instance counts and whether managed scaling is enabled. (AI-inferred)
     managed_instance_scaling: Any = None
-    # Specifies the maximum time in seconds permitted for SageMaker to download and extract the model artifacts from Amazon S3 onto the inference instance backing this production variant. (AI-inferred)
     model_data_download_timeout_in_seconds: Any = None
-    # The name of the SageMaker model that this production variant will deploy as part of the endpoint configuration. (AI-inferred)
     model_name: Any = None
-    # Determines how incoming requests are distributed across the compute instances backing this production variant, using either a least-outstanding-requests or random routing strategy. (AI-inferred)
     routing_config: Any = None
-    # Specifies the serverless inference configuration for this production variant, including memory size and maximum concurrency settings. (AI-inferred)
     serverless_config: Any = None
-    # Specifies the maximum time in seconds that SageMaker waits for the production variant's instances to be provisioned and become healthy before failing the endpoint deployment. (AI-inferred)
     variant_instance_provision_timeout_in_seconds: Any = None
-    # A unique name for the production variant, used to identify and route traffic to the corresponding model within the SageMaker endpoint configuration. (AI-inferred)
     variant_name: Any = None
-    # Specifies the size of the Amazon EBS volume in gigabytes to attach to each SageMaker endpoint instance for the production variant, providing additional local storage for the container. (AI-inferred)
     volume_size_in_gb: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_Tags:
-    # The key (name) of an individual tag attached to the SageMaker endpoint configuration, used to identify and categorize the resource when paired with its corresponding value. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the SageMaker endpoint configuration, used to categorize and identify the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfig_VpcConfig:
-    # The list of security group IDs that define the VPC security groups applied to the SageMaker endpoint's VPC configuration, governing network access to the model container. (AI-inferred)
     security_group_ids: Any = None
-    # The subnets field specifies the list of subnet IDs in the VPC where the SageMaker endpoint's network interfaces are placed. (AI-inferred)
     subnets: Any = None
 
 _MakerEndpointConfig_AsyncInferenceConfig_ClientConfigFields = {
@@ -483,56 +408,33 @@ _MakerEndpointConfig_VpcConfigFields = {
 
 @dataclasses.dataclass
 class MakerEndpointConfigConfig:
-    # Specifies the configuration for asynchronous inference on the endpoint, including the S3 output path for results, optional notification settings, and client limits such as maximum concurrent invocations per instance. (AI-inferred)
     async_inference_config: Any = None
-    # Configures capturing of request/response data from the endpoint to an S3 location, including whether capture is enabled, sampling percentage, capture options (input/output), and content type headers for monitoring. (AI-inferred)
     data_capture_config: Any = None
-    # If set to true, the endpoint runs in network isolation mode, preventing containers from accessing the internet and restricting traffic to the VPC configured for the endpoint. (AI-inferred)
     enable_network_isolation: Any = None
-    # The name for the endpoint configuration, which must be unique within an AWS Region in your account. (AI-inferred)
     endpoint_config_name: Any = None
-    # The ARN of the IAM role that Amazon SageMaker assumes to access model artifacts and other AWS resources needed to serve the endpoint. (AI-inferred)
     execution_role_arn: Any = None
-    # The explainer configuration for the SageMaker endpoint, specifying the Clarify explainer settings used to generate feature attribution explanations for model predictions. (AI-inferred)
     explainer_config: Any = None
-    # The AWS KMS key ARN used to encrypt data at rest on the ML storage volumes attached to the ML compute instances that host the SageMaker endpoint. (AI-inferred)
     kms_key_id: Any = None
     metrics_config: Any = None
-    # Production variants define the list of model variants to serve at the endpoint, each specifying the model, compute instance type, and traffic weight (initial variant weight) for routing inference requests. (AI-inferred)
     production_variants: Any = None
-    # Defines a list of shadow production variants, each specifying a model to be deployed alongside the primary production variants, which receives a copy of inference requests for testing and monitoring without serving live production traffic. (AI-inferred)
     shadow_production_variants: Any = None
-    # Defines the list of AWS tag objects (each with a Key and Value) to attach to this SageMaker endpoint configuration, which specifies the model, instance type, and settings for a real-time inference endpoint, enabling cost allocation and resource organization. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the SageMaker endpoint, including the subnets and security groups that the endpoint will use to access network resources. (AI-inferred)
     vpc_config: Any = None
 
 @dataclasses.dataclass
 class MakerEndpointConfigAttrs:
-    # Specifies the configuration for asynchronous inference on the endpoint, including the S3 output path for results, optional notification settings, and client limits such as maximum concurrent invocations per instance. (AI-inferred)
     async_inference_config: Any = None
-    # Configures capturing of request/response data from the endpoint to an S3 location, including whether capture is enabled, sampling percentage, capture options (input/output), and content type headers for monitoring. (AI-inferred)
     data_capture_config: Any = None
-    # If set to true, the endpoint runs in network isolation mode, preventing containers from accessing the internet and restricting traffic to the VPC configured for the endpoint. (AI-inferred)
     enable_network_isolation: Any = None
-    # The name for the endpoint configuration, which must be unique within an AWS Region in your account. (AI-inferred)
     endpoint_config_name: Any = None
-    # The ARN of the IAM role that Amazon SageMaker assumes to access model artifacts and other AWS resources needed to serve the endpoint. (AI-inferred)
     execution_role_arn: Any = None
-    # The explainer configuration for the SageMaker endpoint, specifying the Clarify explainer settings used to generate feature attribution explanations for model predictions. (AI-inferred)
     explainer_config: Any = None
-    # The unique name of the SageMaker endpoint configuration, which serves as its primary identifier and is assigned by AWS. (AI-inferred)
     id: Any = None
-    # The AWS KMS key ARN used to encrypt data at rest on the ML storage volumes attached to the ML compute instances that host the SageMaker endpoint. (AI-inferred)
     kms_key_id: Any = None
     metrics_config: Any = None
-    # Production variants define the list of model variants to serve at the endpoint, each specifying the model, compute instance type, and traffic weight (initial variant weight) for routing inference requests. (AI-inferred)
     production_variants: Any = None
-    # Defines a list of shadow production variants, each specifying a model to be deployed alongside the primary production variants, which receives a copy of inference requests for testing and monitoring without serving live production traffic. (AI-inferred)
     shadow_production_variants: Any = None
-    # Defines the list of AWS tag objects (each with a Key and Value) to attach to this SageMaker endpoint configuration, which specifies the model, instance type, and settings for a real-time inference endpoint, enabling cost allocation and resource organization. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration for the SageMaker endpoint, including the subnets and security groups that the endpoint will use to access network resources. (AI-inferred)
     vpc_config: Any = None
 
 MakerEndpointConfig = ubx.ResourceBinding(

@@ -36,7 +36,6 @@ export interface ConnectFlowSource_GatewayBridgeSource {
 
 export interface ConnectFlowSource_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value portion of a user-defined tag attached to the MediaConnect flow source for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -16,7 +16,6 @@ type AccessPoint_PublicAccessBlockConfiguration struct {
 
 type AccessPoint_Tags struct {
 	Key any
-	// The value of a tag key-value pair attached to the S3 access point, used for metadata, cost allocation, and tag-based access control through IAM policies. (AI-inferred)
 	Value any
 }
 
@@ -50,7 +49,6 @@ type AccessPointConfig struct {
 	Name any
 	// The Access Point Policy you want to apply to this access point.
 	Policy any
-	// Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
 	PublicAccessBlockConfiguration any
 	// An arbitrary set of tags (key-value pairs) for this S3 Access Point.
 	Tags any
@@ -73,7 +71,6 @@ type AccessPointAttrs struct {
 	NetworkOrigin any
 	// The Access Point Policy you want to apply to this access point.
 	Policy any
-	// Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred)
 	PublicAccessBlockConfiguration any
 	// An arbitrary set of tags (key-value pairs) for this S3 Access Point.
 	Tags any

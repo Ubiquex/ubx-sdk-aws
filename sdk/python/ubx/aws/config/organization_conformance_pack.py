@@ -8,15 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrganizationConformancePack_ConformancePackInputParameters:
-    # The name of an input parameter for the conformance pack, used to pass a value into the conformance pack template. (AI-inferred)
     parameter_name: Any = None
-    # The value portion of a key-value input parameter pair (with the associated parameter_key) that is supplied to the AWS Config organization conformance pack template when the conformance pack is deployed or updated. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
 class OrganizationConformancePack_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to the AWS Config organization conformance pack, used for metadata and resource identification. (AI-inferred)
     value: Any = None
 
 _OrganizationConformancePack_ConformancePackInputParametersFields = {

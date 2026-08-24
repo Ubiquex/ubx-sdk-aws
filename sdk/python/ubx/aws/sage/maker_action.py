@@ -29,7 +29,6 @@ class MakerAction_Source:
 @dataclasses.dataclass
 class MakerAction_Tags:
     key: Any = None
-    # The value of a user-defined tag associated with the SageMaker action, used to store arbitrary metadata such as cost centers or environment labels for managing and organizing the resource. (AI-inferred)
     value: Any = None
 
 _MakerAction_MetadataPropertiesFields = {
@@ -58,11 +57,9 @@ class MakerActionConfig:
     action_type: Any = None
     # The description of the action.
     description: Any = None
-    # Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred)
     metadata_properties: Any = None
     # A list of properties to add to the action.
     properties: Any = None
-    # Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred)
     source: Any = None
     # The status of the action.
     status: Any = None
@@ -83,11 +80,9 @@ class MakerActionAttrs:
     description: Any = None
     # When the action was last modified.
     last_modified_time: Any = None
-    # Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred)
     metadata_properties: Any = None
     # A list of properties to add to the action.
     properties: Any = None
-    # Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred)
     source: Any = None
     # The status of the action.
     status: Any = None

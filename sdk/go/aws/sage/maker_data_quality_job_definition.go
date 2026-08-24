@@ -87,16 +87,12 @@ type MakerDataQualityJobDefinition_DataQualityJobInput struct {
 }
 
 type MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3Output struct {
-	// The local path on the container instance where the data quality monitoring job writes its output files before they are uploaded to the specified S3 destination. (AI-inferred)
 	LocalPath any
-	// Specifies the S3 upload mode for delivering monitoring outputs, either 'Continuous' to upload data as the monitoring job runs or 'EndOfJob' to upload only after the job completes. (AI-inferred)
 	S3UploadMode any
-	// The S3 URI of the bucket where the data quality monitoring job results (e.g., statistics, constraints, and reports) are stored. (AI-inferred)
 	S3Uri any
 }
 
 type MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs struct {
-	// Configures the Amazon S3 location (S3 URI, local path, and optional KMS encryption key) where the data quality monitoring job's results are stored. (AI-inferred)
 	S3Output any
 }
 
@@ -145,9 +141,7 @@ type MakerDataQualityJobDefinition_StoppingCondition struct {
 }
 
 type MakerDataQualityJobDefinition_Tags struct {
-	// The key (name) of a tag attached to the SageMaker Data Quality Job Definition, used to identify, categorize, and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS SageMaker Data Quality Job Definition, used for identifying, organizing, and controlling access to the resource. (AI-inferred)
 	Value any
 }
 

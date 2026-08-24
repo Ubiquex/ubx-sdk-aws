@@ -4,11 +4,8 @@ package resilience
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HubApp_EventSubscriptions struct {
-	// Specifies the type of Resilience Hub event—such as drift detection, assessment completion, or SOP recommendation—that this subscription monitors to trigger notifications to the configured SNS topic. (AI-inferred)
 	EventType any
-	// The user-defined name for this event subscription, used to identify it within the Resilience Hub application. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) of the SNS topic that Resilience Hub publishes event notifications to for this app subscription. (AI-inferred)
 	SnsTopicArn any
 }
 
@@ -22,28 +19,18 @@ type HubApp_PermissionModel struct {
 }
 
 type HubApp_ResourceMappings_PhysicalResourceId struct {
-	// The AWS account ID where the physical resource identified by this resource mapping is located. (AI-inferred)
 	AwsAccountId any
-	// Specifies the AWS region of the physical resource that the resource mapping references in the Resilience Hub application. (AI-inferred)
 	AwsRegion any
-	// For each resource mapping in an AWS Resilience Hub app, this identifier uniquely identifies the physical AWS resource (such as its ARN or resource ID) that the logical resource maps to. (AI-inferred)
 	Identifier any
-	// Specifies whether the physical resource identifier is an Amazon Resource Name (ARN) or a native resource identifier. (AI-inferred)
 	Type any
 }
 
 type HubApp_ResourceMappings struct {
-	// The name of the Amazon EKS cluster that the resource mapping references as its source in the Resilience Hub app. (AI-inferred)
 	EksSourceName any
-	// The name of the CloudFormation stack that contains the resource identified by this resource mapping in an AWS Resilience Hub app. (AI-inferred)
 	LogicalStackName any
-	// Specifies the type of resource mapping for an application resource, which determines how the physical resource is identified (e.g., Cfn, Stack, Resource, AppRegistryApp, ResourceGroup, Terraform, or EKS). (AI-inferred)
 	MappingType any
-	// An object that uniquely identifies the physical AWS resource backing the logical resource in the mapping, containing fields like awsAccountId, awsRegion, and either stackName or resourceName depending on the resourceMappingType. (AI-inferred)
 	PhysicalResourceId any
-	// Within each resource mapping, this field specifies the logical name of the resource as it appears in the Resilience Hub application, distinguishing it from other mapped resources. (AI-inferred)
 	ResourceName any
-	// When the mapping type is Terraform, this specifies the name of the Terraform source (e.g., state file or module) from which the resource mapping was derived. (AI-inferred)
 	TerraformSourceName any
 }
 
@@ -96,7 +83,6 @@ type HubAppConfig struct {
 	ResiliencyPolicyArn any
 	// An array of ResourceMapping objects.
 	ResourceMappings any
-	// A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred)
 	Tags any
 }
 
@@ -121,7 +107,6 @@ type HubAppAttrs struct {
 	ResiliencyPolicyArn any
 	// An array of ResourceMapping objects.
 	ResourceMappings any
-	// A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred)
 	Tags any
 }
 

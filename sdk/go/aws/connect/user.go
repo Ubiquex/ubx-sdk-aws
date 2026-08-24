@@ -4,27 +4,19 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_AfterContactWorkConfigs_AfterContactWorkConfig struct {
-	// Sets the after contact work (ACW) mode for the user, with valid values typically DEFAULT to use the default ACW duration or CUSTOM to allow specifying a custom timeout. (AI-inferred)
 	AfterContactWorkMode any
-	// The maximum time in seconds an agent is allowed to spend on after-contact work (ACW) before being marked unavailable, as configured for this Amazon Connect user. (AI-inferred)
 	AfterContactWorkTimeLimit any
 }
 
 type User_AfterContactWorkConfigs struct {
-	// Configures a specific after-contact work task for the user, such as AGENT_CALL or AGENT_GREETING, and the duration in seconds allowed for that task. (AI-inferred)
 	AfterContactWorkConfig any
-	// Configures the agent-first-callback feature, which determines whether an agent's first interaction after completing after-contact work is a callback from the previous contact, including whether it is enabled and the timeout period. (AI-inferred)
 	AgentFirstCallbackAfterContactWorkConfig any
-	// The contact channel (e.g., VOICE, CHAT, or TASK) to which this after-contact-work configuration applies for the user. (AI-inferred)
 	Channel any
 }
 
 type User_AutoAcceptConfigs struct {
-	// Indicates whether the agent will automatically accept the first callback in Amazon Connect. (AI-inferred)
 	AgentFirstCallbackAutoAccept any
-	// When set to true, this Amazon Connect user automatically accepts incoming contacts (such as phone calls) without requiring the agent to manually accept them, as configured by the auto-accept settings. (AI-inferred)
 	AutoAccept any
-	// The contact channel (e.g., VOICE or CHAT) for which this auto-accept configuration applies, enabling automatic acceptance of incoming contacts on that channel. (AI-inferred)
 	Channel any
 }
 
@@ -42,9 +34,7 @@ type User_IdentityInfo struct {
 }
 
 type User_PersistentConnectionConfigs struct {
-	// This string indicates which agent communication channel (e.g., CHAT, VOICE, or TASK) the enclosing persistent connection configuration applies to. (AI-inferred)
 	Channel any
-	// When set to true, this enables the persistent chat feature for the Connect user, allowing customers to resume a previous chat session after disconnecting. (AI-inferred)
 	PersistentConnection any
 }
 
@@ -62,32 +52,24 @@ type User_PhoneConfig struct {
 }
 
 type User_PhoneNumberConfigs struct {
-	// The channel (e.g., VOICE or SMS) that this phone number configuration applies to for the Amazon Connect user. (AI-inferred)
 	Channel any
-	// The phone number assigned to the Amazon Connect user, used for desk phone or other non-softphone devices, typically in E.164 format. (AI-inferred)
 	PhoneNumber any
-	// Specifies the type of phone for the user's phone configuration, which can be either `SOFT_PHONE` or `DESK_PHONE`. (AI-inferred)
 	PhoneType any
 }
 
 type User_Tags struct {
 	Key any
-	// The value of a tag key attached to the Amazon Connect user, used to manage and categorize the user resource within AWS. (AI-inferred)
 	Value any
 }
 
 type User_UserProficiencies struct {
-	// The name of the attribute for a user proficiency in AWS Connect, such as a skill or language, which is paired with an attribute value and proficiency level in the user's proficiency assignments. (AI-inferred)
 	AttributeName any
-	// The value of the proficiency attribute (e.g., 'English' for the 'Language' attribute) that defines a user's skill level for routing. (AI-inferred)
 	AttributeValue any
 	Level any
 }
 
 type User_VoiceEnhancementConfigs struct {
-	// Specifies the audio channel (CUSTOMER or AGENT) for this voice enhancement configuration, determining whether the enhancement is applied to the customer's audio or the agent's audio for the Connect user. (AI-inferred)
 	Channel any
-	// Specifies the voice enhancement mode for the Connect user, with 'ENHANCED' enabling enhanced audio processing or 'DISABLED' turning it off. (AI-inferred)
 	VoiceEnhancementMode any
 }
 

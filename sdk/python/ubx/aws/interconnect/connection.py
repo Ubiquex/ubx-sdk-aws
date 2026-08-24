@@ -28,7 +28,6 @@ class Connection_RemoteAccount:
 @dataclasses.dataclass
 class Connection_Tags:
     key: Any = None
-    # The value part of a key-value tag applied to the AWS Direct Connect connection (interconnect) resource, used to store arbitrary metadata for organizing and managing the connection. (AI-inferred)
     value: Any = None
 
 _Connection_AttachPointFields = {

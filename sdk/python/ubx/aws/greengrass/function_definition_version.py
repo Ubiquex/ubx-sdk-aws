@@ -8,64 +8,44 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_DefaultConfig_Execution_RunAs:
-    # Specifies the numeric group ID (GID) used by the Greengrass container to run Lambda functions when applying this default execution configuration for the function definition version. (AI-inferred)
     gid: Any = None
-    # Specifies the numeric user ID (UID) under which the Lambda function process runs when the execution run-as mode is set to a specific user. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_DefaultConfig_Execution:
-    # Specifies the isolation mode (GreengrassContainer or NoContainer) used when Lambda functions in this version run on the Greengrass core. (AI-inferred)
     isolation_mode: Any = None
-    # Specifies the default UID and GID (operating system user and group) that Lambda functions in this Greengrass function definition version run as when invoked on the Greengrass core. (AI-inferred)
     run_as: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_DefaultConfig:
-    # Specifies the default execution behavior for Lambda functions in the Greengrass group, including the isolation mode and the system user and group that the functions run as. (AI-inferred)
     execution: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPolicies:
-    # Specifies the access level granted to the Lambda function for the associated local resource, with valid values 'ro' for read-only or 'rw' for read/write. (AI-inferred)
     permission: Any = None
-    # The ID (ARN) of the local Greengrass resource (e.g., a volume or device) that this policy grants the Lambda function access to. (AI-inferred)
     resource_id: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment:
-    # If true, this grants the Greengrass Lambda function access to the host's /sys filesystem (sysfs) on the core device, with the default being false. (AI-inferred)
     access_sysfs: Any = None
     execution: Any = None
-    # Specifies the list of resource access policies that grant the Lambda function permissions to access Greengrass local resources (such as devices or volumes) on the core, where each policy includes a resource identifier and a read-only or read-write permission. (AI-inferred)
     resource_access_policies: Any = None
-    # A map of key-value pairs that define environment variables passed to the Lambda function when it runs in the Greengrass group. (AI-inferred)
     variables: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_Functions_FunctionConfiguration:
-    # Specifies whether the function's input and output payloads are encoded as JSON or binary, with allowed values 'json' and 'binary' (default is 'json'). (AI-inferred)
     encoding_type: Any = None
-    # Configures the Lambda execution environment for the Greengrass function, including environment variables, resource access policies, and whether sysfs access is allowed. (AI-inferred)
     environment: Any = None
-    # In an AWS Greengrass function definition version, this field sets the command-line arguments passed to the Lambda function when it executes on the Greengrass core. (AI-inferred)
     exec_args: Any = None
-    # Specifies the name or path of the executable that the Lambda function runs, used by the Greengrass function configuration to invoke the function. (AI-inferred)
     executable: Any = None
-    # The amount of memory, in megabytes, allocated to the Lambda function in the Greengrass function configuration. (AI-inferred)
     memory_size: Any = None
-    # Indicates whether the function is pinned to the Greengrass core, meaning it is pre-loaded and stays resident in memory so it can start quickly and run continuously rather than being invoked on demand. (AI-inferred)
     pinned: Any = None
-    # Specifies the maximum execution time in seconds for the Lambda function; when exceeded, the function is stopped (default is 3 seconds). (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersion_Functions:
-    # The Amazon Resource Name (ARN) of the Lambda function that this Greengrass function definition version will deploy to the Greengrass core. (AI-inferred)
     function_arn: Any = None
-    # Specifies the runtime configuration for the Lambda function in the Greengrass group, including its executable, arguments, memory size, timeout, environment variables, and pinned state. (AI-inferred)
     function_configuration: Any = None
-    # The unique identifier for this function within the Greengrass function definition version. (AI-inferred)
     id: Any = None
 
 _FunctionDefinitionVersion_DefaultConfig_Execution_RunAsFields = {
@@ -136,22 +116,15 @@ _FunctionDefinitionVersion_FunctionsFields = {
 
 @dataclasses.dataclass
 class FunctionDefinitionVersionConfig:
-    # Default configuration settings (execution and environment) that apply to all Lambda functions in this Greengrass function definition version unless overridden per-function. (AI-inferred)
     default_config: Any = None
-    # The ID of the AWS Greengrass function definition that this version belongs to. (AI-inferred)
     function_definition_id: Any = None
-    # The list of Lambda functions that are defined in this function definition version, where each object specifies the function's unique ID, its ARN, and its configuration (including memory, timeout, encoding, and environment variables). (AI-inferred)
     functions: Any = None
 
 @dataclasses.dataclass
 class FunctionDefinitionVersionAttrs:
-    # Default configuration settings (execution and environment) that apply to all Lambda functions in this Greengrass function definition version unless overridden per-function. (AI-inferred)
     default_config: Any = None
-    # The ID of the AWS Greengrass function definition that this version belongs to. (AI-inferred)
     function_definition_id: Any = None
-    # The list of Lambda functions that are defined in this function definition version, where each object specifies the function's unique ID, its ARN, and its configuration (including memory, timeout, encoding, and environment variables). (AI-inferred)
     functions: Any = None
-    # The unique Amazon Resource Name (ARN) assigned to this Greengrass function definition version, used as the resource identifier in Terraform. (AI-inferred)
     id: Any = None
 
 FunctionDefinitionVersion = ubx.ResourceBinding(

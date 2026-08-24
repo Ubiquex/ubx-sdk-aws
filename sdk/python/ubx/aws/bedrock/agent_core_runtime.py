@@ -38,12 +38,10 @@ class AgentCoreRuntime_AgentRuntimeArtifact_ContainerConfiguration:
 class AgentCoreRuntime_AgentRuntimeArtifact:
     # Representation of a code configuration
     code_configuration: Any = None
-    # Configures the container image and runtime parameters used to execute the agent's code artifact within the Bedrock Agent Core Runtime. (AI-inferred)
     container_configuration: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfiguration_HostingEnvironments:
-    # The ARN that uniquely identifies a hosting environment permitted to handle requests for the allowed workload configuration of the custom JWT authorizer. (AI-inferred)
     arn: Any = None
 
 @dataclasses.dataclass
@@ -55,44 +53,31 @@ class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorklo
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue:
-    # Specifies the string value that the custom JWT claim must match for the authorizer to authorize the request. (AI-inferred)
     match_value_string: Any = None
-    # Defines a set of allowed values for a custom JWT authorizer claim; the token's corresponding claim must match one of the strings in this list to be authorized. (AI-inferred)
     match_value_string_list: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue:
-    # Specifies the comparison operator (e.g., EQUALS, CONTAINS) used to evaluate the JWT custom claim's actual value against the expected match value in the Bedrock agent core runtime custom JWT authorizer. (AI-inferred)
     claim_match_operator: Any = None
-    # Defines the comparison type (e.g., EQUALS, CONTAINS) and the value that a custom JWT claim must match for the authorizer to authorize the request. (AI-inferred)
     claim_match_value: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims:
-    # The expected value against which the specified custom JWT claim is compared to determine if the request is authorized. (AI-inferred)
     authorizing_claim_match_value: Any = None
-    # The name of the claim in the incoming JWT token that should be extracted and passed as a custom claim to the agent's runtime context. (AI-inferred)
     inbound_token_claim_name: Any = None
-    # Defines the data type to which the value of the JWT claim in the incoming token is cast before it is delivered to the custom authorizer Lambda function (supported values include STRING, NUMBER, and BOOLEAN). (AI-inferred)
     inbound_token_claim_value_type: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource:
-    # Specifies whether the managed VPC endpoint for the custom JWT authorizer's private endpoint uses IPv4, IPv6, or dual-stack IP addressing. (AI-inferred)
     endpoint_ip_address_type: Any = None
-    # The routing domain is the DNS domain name used to route requests to the private endpoint's managed VPC resource, which hosts the custom JWT authorizer for the Bedrock agent core runtime. (AI-inferred)
     routing_domain: Any = None
-    # The list of security group IDs to attach to the managed VPC resource used as the private endpoint for the custom JWT authorizer configuration, controlling which network traffic can reach the endpoint. (AI-inferred)
     security_group_ids: Any = None
-    # The subnet IDs in the managed VPC where AWS deploys the VPC endpoint for the private endpoint configuration of the custom JWT authorizer in the Bedrock Agent Core Runtime. (AI-inferred)
     subnet_ids: Any = None
     tags: Any = None
-    # The ID of the VPC in which AWS creates the managed VPC resource (e.g., an elastic network interface) to privately connect the Bedrock agent runtime to the custom JWT authorizer's private endpoint. (AI-inferred)
     vpc_identifier: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource:
-    # The identifier (ARN) of the Amazon VPC Lattice resource configuration that serves as the private endpoint for the custom JWT authorizer. (AI-inferred)
     resource_configuration_identifier: Any = None
 
 @dataclasses.dataclass
@@ -102,9 +87,7 @@ class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoi
 
 @dataclasses.dataclass
 class AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverrides:
-    # Overrides the domain name of the private endpoint that the custom JWT authorizer uses to validate tokens, allowing the authorizer to reach a different service endpoint than the default. (AI-inferred)
     domain: Any = None
-    # This object specifies the private endpoint host and path used to override the default public endpoint for the custom JWT authorizer, enabling the agent to reach the authorizer within a private network. (AI-inferred)
     private_endpoint: Any = None
 
 @dataclasses.dataclass
@@ -143,24 +126,18 @@ class AgentCoreRuntime_FilesystemConfigurations_CapacityProviderVolume:
 
 @dataclasses.dataclass
 class AgentCoreRuntime_FilesystemConfigurations_EfsAccessPoint:
-    # The Amazon Resource Name (ARN) of the EFS access point that the Bedrock agent core runtime uses to mount the associated EFS filesystem, enabling the agent to access files through that access point. (AI-inferred)
     access_point_arn: Any = None
-    # The directory path in the agent's runtime environment where the EFS file system is mounted when the agent uses the specified access point. (AI-inferred)
     mount_path: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_FilesystemConfigurations_SessionStorage:
-    # Specifies the file system mount path within the Bedrock agent runtime environment where the session storage volume is mounted, enabling the agent to persist and access session data across invocations. (AI-inferred)
     mount_path: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntime_FilesystemConfigurations:
     capacity_provider_volume: Any = None
-    # Specifies the Amazon EFS access point that the Bedrock Agent Core Runtime uses when reading from or writing to the configured EFS filesystem. (AI-inferred)
     efs_access_point: Any = None
-    # This object specifies the S3 access point configuration for the agent's file system, providing the access point ARN and the S3 path or prefix that the agent will use to access files in S3. (AI-inferred)
     s3_files_access_point: Any = None
-    # Defines the session storage configuration for the agent's file system, specifying the Amazon S3 bucket and optional AWS KMS key used to persist session data and state. (AI-inferred)
     session_storage: Any = None
 
 @dataclasses.dataclass
@@ -421,19 +398,16 @@ class AgentCoreRuntimeConfig:
     filesystem_configurations: Any = None
     # Configuration for managing the lifecycle of runtime sessions and resources
     lifecycle_configuration: Any = None
-    # Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
     network_configuration: Any = None
     protocol_configuration: Any = None
     # Configuration for HTTP request headers
     request_header_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
     role_arn: Any = None
     # A map of tag keys and values
     tags: Any = None
 
 @dataclasses.dataclass
 class AgentCoreRuntimeAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred)
     agent_runtime_arn: Any = None
     agent_runtime_artifact: Any = None
     agent_runtime_id: Any = None
@@ -443,7 +417,6 @@ class AgentCoreRuntimeAttrs:
     authorizer_configuration: Any = None
     # Configuration for a capacity provider
     capacity_provider_configuration: Any = None
-    # The creation timestamp of this Bedrock agent core runtime, returned as a read-only string. (AI-inferred)
     created_at: Any = None
     description: Any = None
     # Environment variable attributes
@@ -455,12 +428,10 @@ class AgentCoreRuntimeAttrs:
     last_updated_at: Any = None
     # Configuration for managing the lifecycle of runtime sessions and resources
     lifecycle_configuration: Any = None
-    # Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
     network_configuration: Any = None
     protocol_configuration: Any = None
     # Configuration for HTTP request headers
     request_header_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
     role_arn: Any = None
     status: Any = None
     # A map of tag keys and values

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Case_Tags:
     key: Any = None
-    # The value component of a tag attached to the AWS Cases case, used to store user-defined metadata for organizing, searching, or managing the case. (AI-inferred)
     value: Any = None
 
 _Case_TagsFields = {

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SchemasDiscoverer_Tags:
-    # Specifies a tag key to associate with the EventBridge Schema Discoverer, enabling you to categorize, filter, and control access to the resource via resource-level policies or cost allocation tags. (AI-inferred)
     key: Any = None
-    # The tag value for the EventBridge Schema Discoverer, paired with a tag key to assign custom metadata such as environment, project, or cost-allocation labels to the discoverer resource. (AI-inferred)
     value: Any = None
 
 _SchemasDiscoverer_TagsFields = {

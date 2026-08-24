@@ -51,9 +51,7 @@ var Job_NotificationPropertyFields = ubx.FieldMap{
 type JobConfig struct {
 	// The number of capacity units that are allocated to this job.
 	AllocatedCapacity any
-	// Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
 	Command any
-	// Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
 	Connections any
 	// The default arguments for this job, specified as name-value pairs.
 	DefaultArguments any
@@ -61,7 +59,6 @@ type JobConfig struct {
 	Description any
 	// Indicates whether the job is run with a standard or flexible execution class.
 	ExecutionClass any
-	// Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
 	ExecutionProperty any
 	// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
 	GlueVersion any
@@ -81,7 +78,6 @@ type JobConfig struct {
 	Name any
 	// Non-overridable arguments for this job, specified as name-value pairs.
 	NonOverridableArguments any
-	// Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
 	NotificationProperty any
 	// The number of workers of a defined workerType that are allocated when a job runs.
 	NumberOfWorkers any
@@ -100,9 +96,7 @@ type JobConfig struct {
 type JobAttrs struct {
 	// The number of capacity units that are allocated to this job.
 	AllocatedCapacity any
-	// Specifies the job's run command, including the script language (e.g., Python or Scala), the S3 path to the script, and optionally the Python version. (AI-inferred)
 	Command any
-	// Specifies the names of the AWS Glue connections to be used by the job, enabling it to access external data stores. (AI-inferred)
 	Connections any
 	// The default arguments for this job, specified as name-value pairs.
 	DefaultArguments any
@@ -110,7 +104,6 @@ type JobAttrs struct {
 	Description any
 	// Indicates whether the job is run with a standard or flexible execution class.
 	ExecutionClass any
-	// Specifies the execution property for the job, specifically the maximum number of concurrent runs allowed (MaxConcurrentRuns). (AI-inferred)
 	ExecutionProperty any
 	// Glue version determines the versions of Apache Spark and Python that AWS Glue supports.
 	GlueVersion any
@@ -130,7 +123,6 @@ type JobAttrs struct {
 	Name any
 	// Non-overridable arguments for this job, specified as name-value pairs.
 	NonOverridableArguments any
-	// Specifies the notification property for the job, which contains the number of minutes to wait after a job run starts before AWS Glue sends a notification if the run is still in progress. (AI-inferred)
 	NotificationProperty any
 	// The number of workers of a defined workerType that are allocated when a job runs.
 	NumberOfWorkers any

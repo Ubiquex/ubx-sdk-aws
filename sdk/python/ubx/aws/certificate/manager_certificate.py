@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerCertificate_DomainValidationOptions:
-    # The domain name for which certificate validation options are specified, corresponding to one of the domains in the certificate's Subject Alternative Names. (AI-inferred)
     domain_name: Any = None
-    # The ID of the hosted zone in Route 53 where the DNS validation record for this domain will be created. (AI-inferred)
     hosted_zone_id: Any = None
-    # The domain that AWS Certificate Manager will use for validation (e.g., email or DNS checks), which can be a different domain than the one being certified. (AI-inferred)
     validation_domain: Any = None
 
 @dataclasses.dataclass
 class ManagerCertificate_Tags:
-    # The key of a user-defined tag attached to the AWS Certificate Manager certificate, used for metadata, cost allocation, and resource organization. (AI-inferred)
     key: Any = None
     value: Any = None
 

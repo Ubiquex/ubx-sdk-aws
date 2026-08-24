@@ -13,9 +13,7 @@ class IntegrationsEventIntegration_EventFilter:
 
 @dataclasses.dataclass
 class IntegrationsEventIntegration_Tags:
-    # The key of a tag attached to the Amazon AppIntegrations Event Integration, used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
-    # The value component of a tag for the AWS App Integrations Event Integration, storing arbitrary metadata paired with the tag key for resource organization, cost allocation, and access control. (AI-inferred)
     value: Any = None
 
 _IntegrationsEventIntegration_EventFilterFields = {
@@ -33,7 +31,6 @@ class IntegrationsEventIntegrationConfig:
     description: Any = None
     # The Amazon Eventbridge bus for the event integration.
     event_bridge_bus: Any = None
-    # Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred)
     event_filter: Any = None
     # The name of the event integration.
     name: Any = None
@@ -46,7 +43,6 @@ class IntegrationsEventIntegrationAttrs:
     description: Any = None
     # The Amazon Eventbridge bus for the event integration.
     event_bridge_bus: Any = None
-    # Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred)
     event_filter: Any = None
     # The Amazon Resource Name (ARN) of the event integration.
     event_integration_arn: Any = None

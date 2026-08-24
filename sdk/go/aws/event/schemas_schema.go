@@ -4,9 +4,7 @@ package event
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchemasSchema_Tags struct {
-	// The key of a user-defined tag attached to an EventBridge Schema, used to organize and categorize the schema within AWS. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the EventBridge Schema, used to store arbitrary metadata for the schema resource. (AI-inferred)
 	Value any
 }
 

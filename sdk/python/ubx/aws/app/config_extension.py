@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigExtension_Tags:
-    # The key of a tag attached to the AWS AppConfig extension, used to organize and identify the extension resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS AppConfig extension, used to assign custom metadata for identifying, organizing, and managing the extension resource. (AI-inferred)
     value: Any = None
 
 _ConfigExtension_TagsFields = {
@@ -20,37 +18,29 @@ _ConfigExtension_TagsFields = {
 
 @dataclasses.dataclass
 class ConfigExtensionConfig:
-    # The actions that this AppConfig extension performs when invoked, each defining an action name, target URI, and optional IAM role ARN. (AI-inferred)
     actions: Any = None
     # Description of the extension.
     description: Any = None
-    # The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred)
     latest_version_number: Any = None
     # Name of the extension.
     name: Any = None
-    # Defines the set of input parameters for the extension, including each parameter's name, description, whether it is required, and an optional default value, which are referenced when the extension is invoked during AppConfig configuration deployments. (AI-inferred)
     parameters: Any = None
     # An array of key-value tags to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class ConfigExtensionAttrs:
-    # The actions that this AppConfig extension performs when invoked, each defining an action name, target URI, and optional IAM role ARN. (AI-inferred)
     actions: Any = None
-    # The Amazon Resource Name (ARN) of the AppConfig extension. (AI-inferred)
     arn: Any = None
     # Description of the extension.
     description: Any = None
     id: Any = None
-    # The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred)
     latest_version_number: Any = None
     # Name of the extension.
     name: Any = None
-    # Defines the set of input parameters for the extension, including each parameter's name, description, whether it is required, and an optional default value, which are referenced when the extension is invoked during AppConfig configuration deployments. (AI-inferred)
     parameters: Any = None
     # An array of key-value tags to apply to this resource.
     tags: Any = None
-    # The version number assigned to the extension by AWS AppConfig, which increments each time the extension is updated. (AI-inferred)
     version_number: Any = None
 
 ConfigExtension = ubx.ResourceBinding(

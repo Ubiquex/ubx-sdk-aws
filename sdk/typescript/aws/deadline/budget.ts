@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Budget_Actions {
-  /** A human-readable description of a budget action, explaining the action taken when the budget threshold is reached. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The percentage of the budget's usage threshold that, when reached, triggers the corresponding budget action (such as stopping or limiting the farm). (AI-inferred) */
   thresholdPercentage?: number | Computed<number>;
-  /** Defines the type of budget action to take when the threshold is reached, such as STOP_SESSION_WORKER or STOP_QUEUE. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -24,7 +21,6 @@ export interface Budget_Schedule {
 
 export interface Budget_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Deadline budget, used for organizing and managing the budget resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

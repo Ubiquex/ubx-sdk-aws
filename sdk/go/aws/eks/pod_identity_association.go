@@ -4,9 +4,7 @@ package eks
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PodIdentityAssociation_Tags struct {
-	// The tag key used to label the Pod Identity Association, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the EKS Pod Identity Association, used for labeling, organizing, and managing the association with custom metadata. (AI-inferred)
 	Value any
 }
 

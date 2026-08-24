@@ -8,24 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutoScalingScalableTarget_ScheduledActions_ScalableTargetAction:
-    # Sets the maximum capacity of the scalable target when the scheduled action runs, defining the upper bound for scaling during that time period. (AI-inferred)
     max_capacity: Any = None
-    # The minimum capacity value that the scalable target is adjusted to when the scheduled action executes, as part of the scaling action that overrides the target's current minimum capacity. (AI-inferred)
     min_capacity: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalableTarget_ScheduledActions:
-    # The date and time (in ISO 8601 format) at which the scheduled scaling action stops being active and no longer runs. (AI-inferred)
     end_time: Any = None
-    # The scaling action to apply when the scheduled action is triggered, specifying the minimum and maximum capacities for the scalable target. (AI-inferred)
     scalable_target_action: Any = None
-    # The cron, rate, or at expression that determines when the scheduled scaling action is triggered for the scalable target. (AI-inferred)
     schedule: Any = None
-    # The name of the scheduled action, uniquely identifying it among the scheduled actions for this scalable target. (AI-inferred)
     scheduled_action_name: Any = None
-    # The date and time (in UTC) when the scheduled scaling action is set to start, specified in ISO 8601 format. (AI-inferred)
     start_time: Any = None
-    # The time zone ID (such as 'UTC' or 'America/New_York') that the scheduled action's cron or rate expression is evaluated in. (AI-inferred)
     timezone: Any = None
 
 @dataclasses.dataclass
@@ -82,7 +74,6 @@ class AutoScalingScalableTargetConfig:
 
 @dataclasses.dataclass
 class AutoScalingScalableTargetAttrs:
-    # The Amazon Resource Name (ARN) of the Application Auto Scaling scalable target, uniquely identifying it within AWS. (AI-inferred)
     id: Any = None
     # The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
     max_capacity: Any = None

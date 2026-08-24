@@ -15,11 +15,8 @@ class MakerSimulationApplication_RenderingEngine:
 
 @dataclasses.dataclass
 class MakerSimulationApplication_Sources:
-    # The target processor architecture (X86_64 or ARM64) for the simulation application source bundle, used to match the application with the correct robot simulator architecture. (AI-inferred)
     architecture: Any = None
-    # The name of the Amazon S3 bucket where the robot application source bundle is stored for this simulation application. (AI-inferred)
     s3_bucket: Any = None
-    # The S3 object key of the robot application bundle stored in the bucket specified by the source's s3_bucket, which is a required component of the source configuration for the simulation application. (AI-inferred)
     s3_key: Any = None
 
 _MakerSimulationApplication_RenderingEngineFields = {
@@ -54,7 +51,6 @@ class MakerSimulationApplicationConfig:
 
 @dataclasses.dataclass
 class MakerSimulationApplicationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this RoboMaker simulation application. (AI-inferred)
     arn: Any = None
     # The current revision id.
     current_revision_id: Any = None

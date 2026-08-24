@@ -4,16 +4,12 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegistryScanningConfiguration_Rules_RepositoryFilters struct {
-	// The repository name pattern (such as 'example' or 'prod/*') that the scanning rule uses to match which repositories it applies to. (AI-inferred)
 	Filter any
-	// Specifies the type of repository filter (e.g., WILDCARD) used to match repository names for the ECR scanning rule. (AI-inferred)
 	FilterType any
 }
 
 type RegistryScanningConfiguration_Rules struct {
-	// Defines which repositories a scanning rule applies to by listing repository filters, each with a filter pattern (e.g., a name or wildcard expression) and a filter type (WILDCARD or EXACT) that tells ECR how to match repository names. (AI-inferred)
 	RepositoryFilters any
-	// Specifies the frequency at which ECR scans images in repositories that match this rule, either on each image push (SCAN_ON_PUSH) or continuously (CONTINUOUS_SCAN). (AI-inferred)
 	ScanFrequency any
 }
 

@@ -58,7 +58,6 @@ class Workspace_SamlConfiguration:
 @dataclasses.dataclass
 class Workspace_Tags:
     key: Any = None
-    # The value assigned to a tag key for the Grafana workspace, used to categorize, organize, and track the resource for cost and management purposes. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

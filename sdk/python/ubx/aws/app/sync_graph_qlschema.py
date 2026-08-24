@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncGraphQlschemaConfig:
-    # The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred)
     api_id: Any = None
-    # The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred)
     definition: Any = None
-    # The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred)
     definition_s3_location: Any = None
 
 @dataclasses.dataclass
 class SyncGraphQlschemaAttrs:
-    # The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred)
     api_id: Any = None
-    # The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred)
     definition: Any = None
-    # The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred)
     definition_s3_location: Any = None
-    # The id is the GraphQL API ID that this schema is attached to. (AI-inferred)
     id: Any = None
 
 SyncGraphQlschema = ubx.ResourceBinding(

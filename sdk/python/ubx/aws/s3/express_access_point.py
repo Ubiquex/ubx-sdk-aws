@@ -26,7 +26,6 @@ class ExpressAccessPoint_Scope:
 
 @dataclasses.dataclass
 class ExpressAccessPoint_Tags:
-    # The tag key is the user-defined name (e.g., 'Environment') for a metadata tag attached to the S3 Express access point, used for categorization and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -66,9 +65,7 @@ class ExpressAccessPointConfig:
     name: Any = None
     # The Access Point Policy you want to apply to this access point.
     policy: Any = None
-    # Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred)
     public_access_block_configuration: Any = None
-    # Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
     scope: Any = None
     tags: Any = None
     # The Virtual Private Cloud (VPC) configuration for a bucket access point.
@@ -88,9 +85,7 @@ class ExpressAccessPointAttrs:
     network_origin: Any = None
     # The Access Point Policy you want to apply to this access point.
     policy: Any = None
-    # Configures the public access block settings for the S3 Express access point, letting you override account-level Block Public Access settings for this specific access point. (AI-inferred)
     public_access_block_configuration: Any = None
-    # Defines an optional prefix scope that restricts the S3 Express access point to only objects whose keys start with the specified prefix; if this object is absent, the access point applies to the entire directory bucket. (AI-inferred)
     scope: Any = None
     tags: Any = None
     # The Virtual Private Cloud (VPC) configuration for a bucket access point.

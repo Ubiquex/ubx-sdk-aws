@@ -9,14 +9,11 @@ type Template_LayoutConfiguration struct {
 }
 
 type Template_RequiredFields struct {
-	// The identifier of the case field that must be included when creating a case using this template. (AI-inferred)
 	FieldId any
 }
 
 type Template_Rules struct {
-	// Specifies the unique identifier for a rule within the AWS Cases template, used to reference the rule when defining conditional field requirements. (AI-inferred)
 	CaseRuleId any
-	// The unique identifier of the case field in Amazon Cases that this rule applies to, matching a field defined in the associated domain. (AI-inferred)
 	FieldId any
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WatchCompositeAlarm_Tags {
-  /** The key of a tag attached to the CloudWatch composite alarm, used to identify, categorize, and manage the alarm in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the CloudWatch Composite Alarm, used for organizing, identifying, and managing the alarm resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

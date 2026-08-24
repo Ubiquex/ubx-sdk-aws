@@ -39,14 +39,11 @@ type Cluster_ControlPlaneScalingConfig struct {
 }
 
 type Cluster_EncryptionConfig_Provider struct {
-	// The ARN of the AWS KMS key used to encrypt Kubernetes secrets in the EKS cluster. (AI-inferred)
 	KeyArn any
 }
 
 type Cluster_EncryptionConfig struct {
-	// Specifies the AWS KMS customer master key (CMK) ARN used to encrypt Kubernetes secrets for the EKS cluster. (AI-inferred)
 	Provider any
-	// Specifies the Kubernetes resource types (such as 'secrets') that are encrypted with the KMS key configured in this encryption configuration for the EKS cluster. (AI-inferred)
 	Resources any
 }
 
@@ -113,7 +110,6 @@ type Cluster_KubernetesNetworkConfig struct {
 }
 
 type Cluster_Logging_ClusterLogging_EnabledTypes struct {
-	// Specifies one Kubernetes control plane log type (such as api, audit, authenticator, controllerManager, or scheduler) to enable for the EKS cluster. (AI-inferred)
 	Type any
 }
 
@@ -153,7 +149,6 @@ type Cluster_OutpostConfig struct {
 }
 
 type Cluster_RemoteNetworkConfig_RemoteNodeNetworks struct {
-	// Defines the list of CIDR blocks for the remote node networks, specifying the IP address ranges used by remote (hybrid) nodes in the EKS cluster. (AI-inferred)
 	Cidrs any
 }
 
@@ -190,9 +185,7 @@ type Cluster_StorageConfig struct {
 }
 
 type Cluster_Tags struct {
-	// The key of a user-defined tag attached to the AWS EKS cluster, which must be unique within the cluster's tag set and is used to categorize or filter the cluster. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the EKS cluster, used for metadata such as cost centers or environment identification. (AI-inferred)
 	Value any
 }
 
@@ -394,7 +387,6 @@ type ClusterConfig struct {
 	ControlPlaneScalingConfig any
 	// Set this value to true to enable deletion protection for the cluster.
 	DeletionProtection any
-	// Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
 	EncryptionConfig any
 	// Force cluster version update
 	Force any
@@ -451,7 +443,6 @@ type ClusterAttrs struct {
 	ControlPlaneScalingConfig any
 	// Set this value to true to enable deletion protection for the cluster.
 	DeletionProtection any
-	// Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
 	EncryptionConfig any
 	// Amazon Resource Name (ARN) or alias of the customer master key (CMK).
 	EncryptionConfigKeyArn any

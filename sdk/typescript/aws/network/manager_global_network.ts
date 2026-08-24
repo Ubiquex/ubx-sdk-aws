@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerGlobalNetwork_Tags {
-  /** The key part of a tag attached to the AWS Network Manager global network, used to label and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag associated with this AWS Network Manager global network, used to store an arbitrary string that helps identify or categorize the network for management and cost allocation purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

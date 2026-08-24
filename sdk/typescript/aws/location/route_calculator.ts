@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RouteCalculator_Tags {
-  /** The key of a tag (a user-defined label) applied to the AWS Location route calculator resource, used to categorize the resource for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag key-value pair attached to the Route Calculator, used for metadata management such as cost tracking and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,32 +12,22 @@ const RouteCalculator_TagsFields: FieldMap = {
 };
 
 export interface RouteCalculatorConfig {
-  /** The name of the route calculator, which is required, must be unique within your AWS account, and can only contain alphanumeric characters, hyphens, and underscores, up to 100 characters. (AI-inferred) */
   calculatorName: string | Computed<string>;
-  /** The data source for the route calculator, specifying the geospatial data provider (such as 'Esri' or 'Here') used to calculate routes. (AI-inferred) */
   dataSource: string | Computed<string>;
-  /** An optional user-supplied description for the route calculator resource, used to identify or annotate it. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the pricing plan for the route calculator, which determines the billing method (e.g., RequestBasedUsage, MobileAssetTracking, or MobileAssetManagement) for its usage. (AI-inferred) */
   pricingPlan?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: RouteCalculator_Tags[] | Computed<RouteCalculator_Tags[]>;
 }
 
 export interface RouteCalculatorAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the route calculator. (AI-inferred) */
   arn: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the route calculator in AWS. (AI-inferred) */
   calculatorArn: string;
-  /** The name of the route calculator, which is required, must be unique within your AWS account, and can only contain alphanumeric characters, hyphens, and underscores, up to 100 characters. (AI-inferred) */
   calculatorName: string;
   /** The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ) */
   createTime: string;
-  /** The data source for the route calculator, specifying the geospatial data provider (such as 'Esri' or 'Here') used to calculate routes. (AI-inferred) */
   dataSource: string;
-  /** An optional user-supplied description for the route calculator resource, used to identify or annotate it. (AI-inferred) */
   description: string;
-  /** Defines the pricing plan for the route calculator, which determines the billing method (e.g., RequestBasedUsage, MobileAssetTracking, or MobileAssetManagement) for its usage. (AI-inferred) */
   pricingPlan: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: RouteCalculator_Tags[];

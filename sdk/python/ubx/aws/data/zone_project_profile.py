@@ -8,57 +8,40 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneProjectProfile_EnvironmentConfigurations_AwsAccount:
-    # The AWS account identifier used when provisioning the environment defined in this project profile's environment configuration. (AI-inferred)
     aws_account_id: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectProfile_EnvironmentConfigurations_AwsRegion:
-    # The name of the AWS region (such as us-east-1) where the environment configuration for this DataZone project profile is applied. (AI-inferred)
     region_name: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectProfile_EnvironmentConfigurations_ConfigurationParameters_ParameterOverrides:
-    # Indicates whether the user can edit this parameter override after the project profile has been created, controlling its mutability in the DataZone console or API. (AI-inferred)
     is_editable: Any = None
-    # Specifies the name of the environment parameter that this override entry replaces for the project profile's environment configuration. (AI-inferred)
     name: Any = None
-    # The override value applied to the specified configuration parameter for the environment configuration of a Data Zone project profile. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectProfile_EnvironmentConfigurations_ConfigurationParameters:
-    # Overrides the values of configuration parameters for an environment configuration, allowing the project profile to customize environment settings. (AI-inferred)
     parameter_overrides: Any = None
-    # The list of resolved environment parameter values for this environment configuration, representing the final effective values after merging the environment blueprint's default parameters with any overrides defined in the project profile. (AI-inferred)
     resolved_parameters: Any = None
-    # Specifies the AWS Systems Manager Parameter Store path that provides the value for this configuration parameter in the environment configuration of the AWS DataZone project profile. (AI-inferred)
     ssm_path: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectProfile_EnvironmentConfigurations:
-    # Specifies the AWS account for a per-account environment configuration, controlling which AWS account is used when creating environments for a project in DataZone. (AI-inferred)
     aws_account: Any = None
     aws_region: Any = None
     configuration_parameters: Any = None
     deployment_mode: Any = None
-    # The deployment_order specifies the sequential priority of this environment configuration within the project profile, so environments with lower numbers are deployed first when the profile's environment configurations are applied. (AI-inferred)
     deployment_order: Any = None
-    # Provides a user-defined description for an environment configuration, clarifying the purpose or role of a specific AWS environment (such as its account and region) associated with the DataZone project profile. (AI-inferred)
     description: Any = None
-    # The identifier of the environment blueprint that defines the infrastructure and tools (e.g., a data lake blueprint) to be provisioned for the environment created from this configuration. (AI-inferred)
     environment_blueprint_id: Any = None
-    # The environment_configuration_id uniquely identifies an environment configuration within the project profile, and it is used to reference the configuration that specifies the AWS account, region, and environment type for the environments associated with the profile. (AI-inferred)
     environment_configuration_id: Any = None
-    # The name of an environment configuration, acting as a distinct label for that environment within the AWS Data Zone project profile. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectProfile_ProjectResourceTags:
-    # This boolean indicates whether the value of the project resource tag is editable by project members, so a value of false enforces a fixed tag value across project resources. (AI-inferred)
     is_value_editable: Any = None
-    # Specifies the key of a tag applied to resources associated with an Amazon DataZone project profile. (AI-inferred)
     key: Any = None
-    # The value for a tag key in a project_resource_tags entry, which assigns a tag to the project resources of this AWS Data Zone project profile. (AI-inferred)
     value: Any = None
 
 _ZoneProjectProfile_ProjectResourceTagsFields = {
@@ -69,13 +52,9 @@ _ZoneProjectProfile_ProjectResourceTagsFields = {
 
 @dataclasses.dataclass
 class ZoneProjectProfileConfig:
-    # Indicates whether users are allowed to add custom tags to project resources (such as data assets or environments) when using this project profile. (AI-inferred)
     allow_custom_project_resource_tags: Any = None
-    # A user-provided description of the project profile, which helps identify and document the purpose or characteristics of the profile within Amazon DataZone. (AI-inferred)
     description: Any = None
-    # The identifier of the Amazon DataZone domain in which the project profile is created. (AI-inferred)
     domain_identifier: Any = None
-    # The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred)
     domain_unit_identifier: Any = None
     name: Any = None
     project_resource_tags: Any = None
@@ -85,28 +64,17 @@ class ZoneProjectProfileConfig:
 
 @dataclasses.dataclass
 class ZoneProjectProfileAttrs:
-    # Indicates whether users are allowed to add custom tags to project resources (such as data assets or environments) when using this project profile. (AI-inferred)
     allow_custom_project_resource_tags: Any = None
-    # The timestamp (in ISO 8601 format) indicating when this DataZone project profile was created, assigned by the service and read-only. (AI-inferred)
     created_at: Any = None
-    # The identifier of the AWS principal (user or role) who created the DataZone project profile. (AI-inferred)
     created_by: Any = None
-    # A user-provided description of the project profile, which helps identify and document the purpose or characteristics of the profile within Amazon DataZone. (AI-inferred)
     description: Any = None
-    # The unique identifier of the Amazon DataZone domain that this project profile belongs to. (AI-inferred)
     domain_id: Any = None
-    # The identifier of the Amazon DataZone domain in which the project profile is created. (AI-inferred)
     domain_identifier: Any = None
-    # The service-assigned identifier of the AWS DataZone domain unit that this project profile is scoped to. (AI-inferred)
     domain_unit_id: Any = None
-    # The unique identifier of the Amazon DataZone domain unit that this project profile is associated with, used to scope the profile to a specific domain unit. (AI-inferred)
     domain_unit_identifier: Any = None
-    # A computed list of environment configuration objects for this project profile, each containing the environment blueprint identifier and parameter settings that are applied to projects created from the profile. (AI-inferred)
     environment_configurations: Any = None
-    # The unique identifier assigned by AWS DataZone to this project profile. (AI-inferred)
     id: Any = None
     identifier: Any = None
-    # The timestamp indicating when the project profile was last updated, set automatically by AWS DataZone. (AI-inferred)
     last_updated_at: Any = None
     name: Any = None
     project_resource_tags: Any = None

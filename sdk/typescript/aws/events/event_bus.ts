@@ -13,9 +13,7 @@ export interface EventBus_LogConfig {
 }
 
 export interface EventBus_Tags {
-  /** The key (name) of a tag attached to the Amazon EventBridge event bus. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to an Amazon EventBridge event bus, used for metadata, cost allocation, and resource access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

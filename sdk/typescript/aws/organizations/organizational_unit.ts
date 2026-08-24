@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OrganizationalUnit_Tags {
-  /** The user-defined key (name) of a tag attached to the organizational unit, used to identify and categorize the unit for resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value for a tag key attached to the organizational unit, used to assign metadata for management and tracking purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

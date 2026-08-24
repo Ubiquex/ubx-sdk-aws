@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DatasetGroup_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag (key-value pair) attached to the Amazon Personalize dataset group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

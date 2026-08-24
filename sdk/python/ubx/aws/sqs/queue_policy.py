@@ -15,7 +15,6 @@ class QueuePolicyConfig:
 
 @dataclasses.dataclass
 class QueuePolicyAttrs:
-    # The ID of the SQS queue policy is the URL of the queue to which the policy is attached. (AI-inferred)
     id: Any = None
     # A policy document that contains the permissions for the specified SQS queues. For more information about SQS policies, see [Using custom policies with the access policy language](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html) in the *Developer Guide*.
     policy_document: Any = None

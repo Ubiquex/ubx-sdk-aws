@@ -2,135 +2,90 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig_IncrementalPullConfig {
-  /** The name of the source field containing a datetime that AppFlow uses as a watermark to identify records for incremental pulls in scheduled flows. (AI-inferred) */
   datetimeTypeFieldName?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo {
-  /** The name of the Marketo object (e.g., Lead, Company) from which the integration source connector reads data. (AI-inferred) */
   object: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3 {
-  /** Name of the S3 bucket that contains the source data for this flow. (AI-inferred) */
   bucketName: string | Computed<string>;
-  /** The object key prefix within the S3 bucket that filters which files are ingested as the source for the AppFlow integration. (AI-inferred) */
   bucketPrefix?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Salesforce {
-  /** Indicates whether the Salesforce source connector automatically updates the field mapping to include newly added fields in the source object during subsequent data transfers. (AI-inferred) */
   enableDynamicFieldUpdate?: boolean | Computed<boolean>;
-  /** When enabled, the flow includes Salesforce records that have been deleted and moved to the Recycle Bin, so they are processed by the integration. (AI-inferred) */
   includeDeletedRecords?: boolean | Computed<boolean>;
-  /** Name of the Salesforce object (such as an account or contact) that the source flow reads records from. (AI-inferred) */
   object: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties {
-  /** Provides the Marketo-specific configuration for the source connector, identifying the Marketo object (such as a lead or contact) from which data is extracted during the integration flow. (AI-inferred) */
   marketo?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo>;
-  /** Specifies the configuration for an Amazon S3 source connector, including the bucket name and prefix from which to read data for the integration flow. (AI-inferred) */
   s3?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3 | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_S3>;
-  /** Contains the Salesforce source connector properties (such as the Salesforce object name) used by the AppFlow-based integration to define what data is pulled from Salesforce into Amazon Connect Customer Profiles. (AI-inferred) */
   salesforce?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Salesforce | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Salesforce>;
-  /** Specifies the ServiceNow source settings for the flow, including the ServiceNow object name from which data is pulled during the integration. (AI-inferred) */
   serviceNow?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo>;
-  /** Specifies the Zendesk source connector properties for the flow, including the Zendesk object (for example, tickets) from which data is extracted. (AI-inferred) */
   zendesk?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties_Marketo>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_SourceFlowConfig {
-  /** The name of the AppFlow connector profile that contains the source connection credentials and configuration for the integration flow. (AI-inferred) */
   connectorProfileName?: string | Computed<string>;
-  /** The connector type that identifies the source system for the data flow (e.g., Salesforce, ServiceNow, or S3) when integrating data into Amazon Connect Customer Profiles. (AI-inferred) */
   connectorType: string | Computed<string>;
-  /** Configuration for incremental data pulls from the source, specifying the datetime field name (datetime_type_field_name) used to identify new or updated records. (AI-inferred) */
   incrementalPullConfig?: ProfilesIntegration_FlowDefinition_SourceFlowConfig_IncrementalPullConfig | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_IncrementalPullConfig>;
-  /** Defines the connector-specific properties (such as the source object or entity name and any relevant filters) that AppFlow uses to read data from the selected source connector within the Customer Profiles integration flow. (AI-inferred) */
   sourceConnectorProperties: ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig_SourceConnectorProperties>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_Tasks_ConnectorOperator {
-  /** Specifies the Marketo-specific connector operator (such as PROJECTION, EQUAL_TO, or BETWEEN) applied to records in this flow task, controlling how source fields are read or transformed before being written to the destination. (AI-inferred) */
   marketo?: string | Computed<string>;
-  /** Defines the S3-specific operator (e.g., PROJECTION, EQUAL_TO) applied by this flow task when the connector is S3, controlling how records are transformed or filtered in the Customer Profiles integration flow. (AI-inferred) */
   s3?: string | Computed<string>;
-  /** Specifies the operator for the Salesforce connector in the flow task, such as PROJECTION, EQUAL_TO, GREATER_THAN, LESS_THAN, or NO_OP, which controls how data is filtered or transformed during the integration. (AI-inferred) */
   salesforce?: string | Computed<string>;
-  /** Specifies the operation (such as PROJECTION, EQUAL_TO, or BETWEEN) that ServiceNow applies to the data in this flow task, used when ServiceNow is the connector in the flow definition. (AI-inferred) */
   serviceNow?: string | Computed<string>;
-  /** Specifies the AppFlow connector operator for a Zendesk source or destination in a flow task, defining the comparison/filter condition used when processing records (e.g., PROJECTION, EQUAL_TO, GREATER_THAN, LESS_THAN). (AI-inferred) */
   zendesk?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_Tasks_TaskProperties {
   operatorPropertyKey?: string | Computed<string>;
-  /** The key or name of a task property in a flow definition task, used to configure task-specific settings for the AWS Customer Profiles integration (e.g., 'UNIQUE_ID'). (AI-inferred) */
   property?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_Tasks {
-  /** Specifies the connector-specific operation (operator) to apply to the source data for this task, mapping each source connector type (e.g., S3, Salesforce) to the operator that defines how data is read or transformed (e.g., PROJECTION, EQUAL_TO) within the flow definition. (AI-inferred) */
   connectorOperator?: ProfilesIntegration_FlowDefinition_Tasks_ConnectorOperator | Computed<ProfilesIntegration_FlowDefinition_Tasks_ConnectorOperator>;
-  /** The name of the destination field in the target (e.g., a Customer Profiles profile attribute) where the value from a source field is written, as defined in the task's mapping. (AI-inferred) */
   destinationField?: string | Computed<string>;
-  /** Specifies the list of source fields that a particular AppFlow task in the Customer Profiles integration flow definition operates on, such as fields used in a mapping, filter, or validation task. (AI-inferred) */
   sourceFields?: string[] | Computed<string[]>;
-  /** A list of key-value pairs that define task-specific properties for each AppFlow task in the flow definition, such as source/destination field mappings and transformation settings. (AI-inferred) */
   taskProperties?: ProfilesIntegration_FlowDefinition_Tasks_TaskProperties[] | Computed<ProfilesIntegration_FlowDefinition_Tasks_TaskProperties[]>;
-  /** The type of AppFlow task to execute in this integration flow, such as Map, Filter, Mask, or Concatenate, determining the operation performed on the source fields. (AI-inferred) */
   taskType?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties_Scheduled {
-  /** Determines whether the scheduled flow pulls only new or updated records (incremental) or all records (complete) on each scheduled run. (AI-inferred) */
   dataPullMode?: string | Computed<string>;
-  /** The Unix epoch timestamp (in seconds) that specifies when the scheduled trigger should first start the integration flow, defining the earliest execution time for the scheduled data transfer. (AI-inferred) */
   firstExecutionFrom?: number | Computed<number>;
-  /** Specifies the numeric Unix timestamp at which the scheduled trigger for this integration flow should stop executing, ending the recurring schedule. (AI-inferred) */
   scheduleEndTime?: number | Computed<number>;
-  /** Specifies the cron expression that determines when the integration flow runs on a schedule, used when the trigger type is scheduled in the Customer Profiles integration. (AI-inferred) */
   scheduleExpression: string | Computed<string>;
-  /** Defines the number of seconds (0-3600) by which the scheduled flow's start time is delayed relative to the schedule expression in the flow's scheduled trigger properties. (AI-inferred) */
   scheduleOffset?: number | Computed<number>;
-  /** The timestamp (in epoch milliseconds) at which the scheduled trigger for this Customer Profiles integration flow is first activated, marking the start of the recurring schedule. (AI-inferred) */
   scheduleStartTime?: number | Computed<number>;
-  /** Specifies the timezone in which the scheduled trigger's schedule expression is evaluated, such as 'America/New_York' or 'UTC', for the flow definition in the AWS Customer Profiles integration. (AI-inferred) */
   timezone?: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties {
-  /** Defines the schedule settings for the flow's scheduled trigger, including the schedule expression and timezone that determine when the integration flow runs. (AI-inferred) */
   scheduled?: ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties_Scheduled | Computed<ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties_Scheduled>;
 }
 
 export interface ProfilesIntegration_FlowDefinition_TriggerConfig {
-  /** Specifies the properties specific to the selected trigger type (for instance, schedule expression and timezone for scheduled triggers, or the event-based data pull configuration) that determine when the flow runs within the Customer Profiles integration's flow definition. (AI-inferred) */
   triggerProperties?: ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties | Computed<ProfilesIntegration_FlowDefinition_TriggerConfig_TriggerProperties>;
-  /** Specifies the type of trigger for the integration flow, such as Scheduled, Event, or OnDemand, which determines when data is ingested from the source into Customer Profiles. (AI-inferred) */
   triggerType: string | Computed<string>;
 }
 
 export interface ProfilesIntegration_FlowDefinition {
-  /** Specifies a human-readable description of the AppFlow flow defined in the integration, used to provide context about the data being imported into Amazon Connect Customer Profiles. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the Amazon AppFlow flow that this integration uses to transfer data into Amazon Customer Profiles. (AI-inferred) */
   flowName: string | Computed<string>;
-  /** The ARN of the AWS KMS key used to encrypt data flowing through the flow definition in this Customer Profiles integration. (AI-inferred) */
   kmsArn: string | Computed<string>;
-  /** Defines the source connector configuration for the AppFlow flow used by the integration, including connector type, source entity, and any source-specific settings for pulling data into Amazon Connect Customer Profiles. (AI-inferred) */
   sourceFlowConfig: ProfilesIntegration_FlowDefinition_SourceFlowConfig | Computed<ProfilesIntegration_FlowDefinition_SourceFlowConfig>;
-  /** Specifies the list of data mapping and transformation tasks (e.g., field mapping, filtering, concatenation) that define how source records are processed before being written into Customer Profiles. (AI-inferred) */
   tasks: ProfilesIntegration_FlowDefinition_Tasks[] | Computed<ProfilesIntegration_FlowDefinition_Tasks[]>;
-  /** Determines how and when the integration flow is executed, including the trigger type (such as scheduled or event-based) and associated schedule or event settings. (AI-inferred) */
   triggerConfig: ProfilesIntegration_FlowDefinition_TriggerConfig | Computed<ProfilesIntegration_FlowDefinition_TriggerConfig>;
 }
 
 export interface ProfilesIntegration_ObjectTypeNames {
-  /** The name of an object type in the external source system (e.g., Salesforce, ServiceNow) that maps to a corresponding Customer Profiles object type name as the value in this map entry. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The `value` field specifies the Customer Profiles object type name that the external source object type (identified by the corresponding `key`) is mapped to in the integration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -283,7 +238,6 @@ export interface ProfilesIntegrationConfig {
   domainName: string | Computed<string>;
   /** A list of unique names for active event triggers associated with the integration. */
   eventTriggerNames?: string[] | Computed<string[]>;
-  /** Defines the Amazon AppFlow flow configuration for the integration, specifying the source, transformation tasks, and trigger settings that govern how customer data is ingested into Amazon Connect Customer Profiles. (AI-inferred) */
   flowDefinition?: ProfilesIntegration_FlowDefinition | Computed<ProfilesIntegration_FlowDefinition>;
   /** The name of the ObjectType defined for the 3rd party data in Profile Service */
   objectTypeName?: string | Computed<string>;
@@ -304,7 +258,6 @@ export interface ProfilesIntegrationAttrs {
   domainName: string;
   /** A list of unique names for active event triggers associated with the integration. */
   eventTriggerNames: string[];
-  /** Defines the Amazon AppFlow flow configuration for the integration, specifying the source, transformation tasks, and trigger settings that govern how customer data is ingested into Amazon Connect Customer Profiles. (AI-inferred) */
   flowDefinition: ProfilesIntegration_FlowDefinition;
   /** The time of this integration got last updated at */
   lastUpdatedAt: string;

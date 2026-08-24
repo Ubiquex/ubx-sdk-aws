@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Integration_Tags {
-  /** The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

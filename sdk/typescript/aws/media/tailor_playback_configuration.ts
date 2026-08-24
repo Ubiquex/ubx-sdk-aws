@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TailorPlaybackConfiguration_AdConditioningConfiguration {
-  /** Specifies whether to condition the streaming media file for ad stitching, with allowed values 'NONE' (no conditioning) or 'AUDIO_ONLY' (condition the audio track only). (AI-inferred) */
   streamingMediaFileConditioning: string | Computed<string>;
 }
 
@@ -99,11 +98,9 @@ export interface TailorPlaybackConfiguration_LogConfiguration_ManifestServiceInt
 }
 
 export interface TailorPlaybackConfiguration_LogConfiguration {
-  /** Configures whether MediaTailor logs ad interaction events, such as clicks and impressions, to CloudWatch Logs for this playback configuration, typically via an Enabled flag within the object. (AI-inferred) */
   adsInteractionLog?: TailorPlaybackConfiguration_LogConfiguration_AdsInteractionLog | Computed<TailorPlaybackConfiguration_LogConfiguration_AdsInteractionLog>;
   /** The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose LEGACY_CLOUDWATCH. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose VENDED_LOGS. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream. To use vended logs, you must configure the delivery destination in Amazon CloudWatch */
   enabledLoggingStrategies?: string[] | Computed<string[]>;
-  /** This object configures whether MediaTailor logs manifest service interaction events to Amazon CloudWatch, with an `Enabled` subfield to turn this logging on or off. (AI-inferred) */
   manifestServiceInteractionLog?: TailorPlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLog | Computed<TailorPlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLog>;
   /** The percentage of session logs that MediaTailor sends to your CloudWatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the debug log mode. */
   percentEnabled: number | Computed<number>;
@@ -121,7 +118,6 @@ export interface TailorPlaybackConfiguration_ManifestProcessingRules {
 
 export interface TailorPlaybackConfiguration_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag keyed on the AWS MediaTailor playback configuration, providing an arbitrary string for categorizing, filtering, or cost-allocating the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -240,11 +236,9 @@ export interface TailorPlaybackConfigurationConfig {
   configurationAliases?: unknown | Computed<unknown>;
   /** A map of event names to function identifiers for custom processing during session lifecycle events. */
   functionMapping?: unknown | Computed<unknown>;
-  /** The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred) */
   insertionMode?: string | Computed<string>;
   /** The configuration for pre-roll ad insertion. */
   livePreRollConfiguration?: TailorPlaybackConfiguration_LivePreRollConfiguration | Computed<TailorPlaybackConfiguration_LivePreRollConfiguration>;
-  /** Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred) */
   logConfiguration?: TailorPlaybackConfiguration_LogConfiguration | Computed<TailorPlaybackConfiguration_LogConfiguration>;
   /** The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor. */
   manifestProcessingRules?: TailorPlaybackConfiguration_ManifestProcessingRules | Computed<TailorPlaybackConfiguration_ManifestProcessingRules>;
@@ -285,13 +279,10 @@ export interface TailorPlaybackConfigurationAttrs {
   dashConfiguration: TailorPlaybackConfiguration_DashConfiguration;
   /** A map of event names to function identifiers for custom processing during session lifecycle events. */
   functionMapping: unknown;
-  /** The hls_configuration object is a read-only block that exposes the generated manifest endpoint prefix assigned by MediaTailor for delivering the HLS playlist for this playback configuration. (AI-inferred) */
   hlsConfiguration: TailorPlaybackConfiguration_HlsConfiguration;
-  /** The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred) */
   insertionMode: string;
   /** The configuration for pre-roll ad insertion. */
   livePreRollConfiguration: TailorPlaybackConfiguration_LivePreRollConfiguration;
-  /** Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred) */
   logConfiguration: TailorPlaybackConfiguration_LogConfiguration;
   /** The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor. */
   manifestProcessingRules: TailorPlaybackConfiguration_ManifestProcessingRules;

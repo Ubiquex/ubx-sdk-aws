@@ -11,9 +11,7 @@ export interface Channel_MultitrackInputConfiguration {
 }
 
 export interface Channel_Tags {
-  /** The key of a tag attached to the IVS channel, enabling you to categorize and manage the resource by custom metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The string value of a tag attached to the AWS IVS channel, used to store arbitrary metadata such as environment, project, or owner information. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -37,7 +35,6 @@ export interface ChannelConfig {
   insecureIngest?: boolean | Computed<boolean>;
   /** Channel latency mode. */
   latencyMode?: string | Computed<string>;
-  /** Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred) */
   multitrackInputConfiguration?: Channel_MultitrackInputConfiguration | Computed<Channel_MultitrackInputConfiguration>;
   /** Channel */
   name?: string | Computed<string>;
@@ -64,7 +61,6 @@ export interface ChannelAttrs {
   insecureIngest: boolean;
   /** Channel latency mode. */
   latencyMode: string;
-  /** Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred) */
   multitrackInputConfiguration: Channel_MultitrackInputConfiguration;
   /** Channel */
   name: string;

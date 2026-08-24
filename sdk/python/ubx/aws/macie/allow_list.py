@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AllowList_Tags:
-    # The key of a tag that can be applied to this Amazon Macie allow list resource for organizing and identifying it. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -79,7 +79,6 @@ type TAccountAuditConfiguration_AuditNotificationTargetConfigurations_Sns struct
 }
 
 type TAccountAuditConfiguration_AuditNotificationTargetConfigurations struct {
-	// Configures the Amazon SNS topic and IAM role used by AWS IoT Device Defender to deliver account audit notifications, representing the SNS target within the audit notification target configuration map. (AI-inferred)
 	Sns any
 }
 

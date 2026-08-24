@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamStackFleetAssociationConfig {
-  /** The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred) */
   fleetName: string | Computed<string>;
-  /** The name of the AppStream stack that the fleet will be associated with. (AI-inferred) */
   stackName: string | Computed<string>;
 }
 
 export interface StreamStackFleetAssociationAttrs {
-  /** The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred) */
   fleetName: string;
-  /** This computed identifier uniquely identifies the AppStream 2.0 stack-fleet association and is formed from the stack name and fleet name separated by a comma. (AI-inferred) */
   id: string;
-  /** The name of the AppStream stack that the fleet will be associated with. (AI-inferred) */
   stackName: string;
 }
 

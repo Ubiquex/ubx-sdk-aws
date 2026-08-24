@@ -4,13 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ApiDestinationConfig {
   /** The arn of the connection. */
   connectionArn: string | Computed<string>;
-  /** A description for the API destination to create. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred) */
   httpMethod: string | Computed<string>;
   /** Url endpoint to invoke. */
   invocationEndpoint: string | Computed<string>;
-  /** The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred) */
   invocationRateLimitPerSecond?: number | Computed<number>;
   /** Name of the apiDestination. */
   name?: string | Computed<string>;
@@ -23,13 +20,10 @@ export interface ApiDestinationAttrs {
   arnForPolicy: string;
   /** The arn of the connection. */
   connectionArn: string;
-  /** A description for the API destination to create. (AI-inferred) */
   description: string;
-  /** The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred) */
   httpMethod: string;
   /** Url endpoint to invoke. */
   invocationEndpoint: string;
-  /** The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred) */
   invocationRateLimitPerSecond: number;
   /** Name of the apiDestination. */
   name: string;

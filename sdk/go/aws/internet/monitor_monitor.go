@@ -4,42 +4,30 @@ package internet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitorMonitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfig struct {
-	// Sets the availability health score threshold (0-100) below which CloudWatch Internet Monitor triggers a local health event for the impacted city or metro location. (AI-inferred)
 	HealthScoreThreshold any
-	// The minimum percentage of client traffic that must be impacted to trigger a local availability health event, expressed as a number between 0 and 100. (AI-inferred)
 	MinTrafficImpact any
-	// Specifies whether health events for local availability are enabled or disabled for the monitor, with valid values 'ENABLED' and 'DISABLED'. (AI-inferred)
 	Status any
 }
 
 type MonitorMonitor_HealthEventsConfig struct {
-	// Configures the thresholds and enablement for availability-based local health events, determining when Internet Monitor generates a health event for a specific client location based on local availability score and traffic impact. (AI-inferred)
 	AvailabilityLocalHealthEventsConfig any
-	// Defines the availability score threshold (0-100) for the monitor; when the observed availability score drops below this value, CloudWatch Internet Monitor triggers a health event. (AI-inferred)
 	AvailabilityScoreThreshold any
-	// Configures local health events triggered by performance degradation, including whether the events are enabled, the performance health score threshold that triggers an event, and the minimum traffic impact required for the event to be raised. (AI-inferred)
 	PerformanceLocalHealthEventsConfig any
-	// A value from 0 to 100 that sets the performance score threshold; when a monitored location's performance score falls below this value, AWS Internet Monitor generates a health event. (AI-inferred)
 	PerformanceScoreThreshold any
 }
 
 type MonitorMonitor_InternetMeasurementsLogDelivery_S3Config struct {
-	// The name of the S3 bucket where internet measurements logs are delivered when internet measurements log delivery to Amazon S3 is enabled for the monitor. (AI-inferred)
 	BucketName any
-	// The S3 key prefix (folder path) under which the published internet measurements logs are stored, within the specified S3 bucket. (AI-inferred)
 	BucketPrefix any
-	// Indicates whether internet measurements logs are delivered to the configured S3 bucket, with allowed values 'ENABLED' or 'DISABLED' controlling the delivery. (AI-inferred)
 	LogDeliveryStatus any
 }
 
 type MonitorMonitor_InternetMeasurementsLogDelivery struct {
-	// Specifies the Amazon S3 destination for internet measurements logs, including the bucket name and an optional object key prefix under which logs are stored. (AI-inferred)
 	S3Config any
 }
 
 type MonitorMonitor_Tags struct {
 	Key any
-	// The user-defined value for a tag key attached to the AWS Internet Monitor monitor, used for metadata and resource categorization. (AI-inferred)
 	Value any
 }
 
@@ -84,66 +72,39 @@ var MonitorMonitor_TagsFields = ubx.FieldMap{
 	}
 
 type MonitorMonitorConfig struct {
-	// Configures the thresholds and conditions that determine when Internet Monitor generates health events based on measured availability and performance degradation. (AI-inferred)
 	HealthEventsConfig any
-	// Indicates whether the monitor includes internet health data from linked accounts (member accounts of your AWS Organization). (AI-inferred)
 	IncludeLinkedAccounts any
-	// Defines the configuration for publishing internet measurement data to an Amazon S3 bucket or a CloudWatch Logs log group. (AI-inferred)
 	InternetMeasurementsLogDelivery any
-	// The AWS account ID of a linked account in your organization whose internet health events the monitor reports, enabling you to filter monitoring to a specific linked account. (AI-inferred)
 	LinkedAccountId any
-	// Limits the maximum number of city networks (client locations) that AWS Internet Monitor will monitor for this monitor, overriding the default of 100 to help control monitoring costs. (AI-inferred)
 	MaxCityNetworksToMonitor any
-	// The name of the Internet Monitor monitor, a required unique identifier for the monitor within your AWS account. (AI-inferred)
 	MonitorName any
-	// A list of ARNs (for example, VPCs, Network Load Balancers, or CloudFront distributions) whose internet traffic the monitor will measure and report on. (AI-inferred)
 	Resources any
-	// The list of Amazon Resource Names (ARNs) of the resources (such as VPCs) to add to the Internet Monitor for monitoring traffic. (AI-inferred)
 	ResourcesToAdd any
-	// A list of resource ARNs to remove from the monitor's set of monitored resources when updating the monitor. (AI-inferred)
 	ResourcesToRemove any
-	// Specifies the desired operational state of the Internet Monitor monitor, either ACTIVE to enable monitoring and metric collection or INACTIVE to disable it. (AI-inferred)
 	Status any
-	// Tags to assign to the Internet Monitor monitor, where each tag is a key-value pair used to organize and identify the resource. (AI-inferred)
 	Tags any
-	// Configures the percentage of overall internet traffic that AWS Internet Monitor samples and analyzes, allowing you to trade off monitoring coverage for reduced cost. (AI-inferred)
 	TrafficPercentageToMonitor any
 }
 
 type MonitorMonitorAttrs struct {
 	// The date value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ssZ)
 	CreatedAt any
-	// Configures the thresholds and conditions that determine when Internet Monitor generates health events based on measured availability and performance degradation. (AI-inferred)
 	HealthEventsConfig any
-	// Indicates whether the monitor includes internet health data from linked accounts (member accounts of your AWS Organization). (AI-inferred)
 	IncludeLinkedAccounts any
-	// Defines the configuration for publishing internet measurement data to an Amazon S3 bucket or a CloudWatch Logs log group. (AI-inferred)
 	InternetMeasurementsLogDelivery any
-	// The AWS account ID of a linked account in your organization whose internet health events the monitor reports, enabling you to filter monitoring to a specific linked account. (AI-inferred)
 	LinkedAccountId any
-	// Limits the maximum number of city networks (client locations) that AWS Internet Monitor will monitor for this monitor, overriding the default of 100 to help control monitoring costs. (AI-inferred)
 	MaxCityNetworksToMonitor any
 	// The date value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ssZ)
 	ModifiedAt any
-	// The Amazon Resource Name (ARN) of the Internet Monitor monitor. (AI-inferred)
 	MonitorArn any
-	// The name of the Internet Monitor monitor, a required unique identifier for the monitor within your AWS account. (AI-inferred)
 	MonitorName any
-	// Indicates the processing status of the monitor, such as 'OK' when it is functioning normally or 'PROCESSING' when it is being initialized or updated. (AI-inferred)
 	ProcessingStatus any
-	// Provides additional diagnostic details about the monitor's processing status, including the reason when the monitor is not in an OK state. (AI-inferred)
 	ProcessingStatusInfo any
-	// A list of ARNs (for example, VPCs, Network Load Balancers, or CloudFront distributions) whose internet traffic the monitor will measure and report on. (AI-inferred)
 	Resources any
-	// The list of Amazon Resource Names (ARNs) of the resources (such as VPCs) to add to the Internet Monitor for monitoring traffic. (AI-inferred)
 	ResourcesToAdd any
-	// A list of resource ARNs to remove from the monitor's set of monitored resources when updating the monitor. (AI-inferred)
 	ResourcesToRemove any
-	// Specifies the desired operational state of the Internet Monitor monitor, either ACTIVE to enable monitoring and metric collection or INACTIVE to disable it. (AI-inferred)
 	Status any
-	// Tags to assign to the Internet Monitor monitor, where each tag is a key-value pair used to organize and identify the resource. (AI-inferred)
 	Tags any
-	// Configures the percentage of overall internet traffic that AWS Internet Monitor samples and analyzes, allowing you to trade off monitoring coverage for reduced cost. (AI-inferred)
 	TrafficPercentageToMonitor any
 }
 

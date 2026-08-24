@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OnlyInternetGateway_Tags:
-    # The key portion of a tag attached to the egress-only internet gateway, used for identifying, organizing, and managing this VPC component in AWS. (AI-inferred)
     key: Any = None
-    # The tag value (string) for a tag applied to the egress-only internet gateway, allowing you to categorize and manage this IPv6 outbound-only VPC component. (AI-inferred)
     value: Any = None
 
 _OnlyInternetGateway_TagsFields = {

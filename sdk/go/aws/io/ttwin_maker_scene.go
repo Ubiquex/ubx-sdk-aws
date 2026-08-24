@@ -27,7 +27,6 @@ type TtwinMakerSceneAttrs struct {
 	Capabilities any
 	// The relative path that specifies the location of the content definition file.
 	ContentLocation any
-	// The date and time when the scene was created, returned as a string in date-time format. (AI-inferred)
 	CreationDateTime any
 	// The description of the scene.
 	Description any
@@ -39,7 +38,6 @@ type TtwinMakerSceneAttrs struct {
 	SceneMetadata any
 	// A key-value pair to associate with a resource.
 	Tags any
-	// The date and time when the scene was last updated, in ISO 8601 format. (AI-inferred)
 	UpdateDateTime any
 	// The ID of the scene.
 	WorkspaceId any

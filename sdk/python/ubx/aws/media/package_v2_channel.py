@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PackageV2Channel_IngestEndpoints:
-    # The unique identifier assigned to this ingest endpoint by MediaPackage v2, distinguishing it from other endpoints in the same channel. (AI-inferred)
     id: Any = None
-    # The URL of a MediaPackage v2 channel ingest endpoint, which serves as the input destination where upstream streaming content is received. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
@@ -28,7 +26,6 @@ class PackageV2Channel_OutputHeaderConfiguration:
 @dataclasses.dataclass
 class PackageV2Channel_Tags:
     key: Any = None
-    # Specifies the value part of a tag assigned to the MediaPackage v2 channel, allowing custom metadata to be associated with the channel. (AI-inferred)
     value: Any = None
 
 _PackageV2Channel_InputSwitchConfigurationFields = {
@@ -47,50 +44,39 @@ _PackageV2Channel_TagsFields = {
 
 @dataclasses.dataclass
 class PackageV2ChannelConfig:
-    # The name of the MediaPackage v2 channel group that this channel belongs to, used as part of the channel's identifier and required when creating or referencing the channel. (AI-inferred)
     channel_group_name: Any = None
-    # The human-readable name of the AWS MediaPackage v2 channel, which must be unique within an AWS account and is incorporated into the channel's Amazon Resource Name (ARN). (AI-inferred)
     channel_name: Any = None
     # <p>Enter any descriptive text that helps you to identify the channel.</p>
     description: Any = None
     # <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive.</p>
     input_switch_configuration: Any = None
-    # Specifies the input type of the channel, which determines whether incoming content is in HLS or CMAF format, with allowed values 'HLS' and 'CMAF'. (AI-inferred)
     input_type: Any = None
     # <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN.</p>
     output_header_configuration: Any = None
-    # Specifies the output locking mode of the MediaPackage v2 channel, which enforces consistent segment timing and alignment across all of the channel's packaging endpoints to enable synchronized downstream playback and failover. (AI-inferred)
     output_locking_mode: Any = None
-    # A list of Tag objects (each with Key and Value) that you can attach to a MediaPackage v2 channel to add metadata for organization, access control, and cost tracking. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PackageV2ChannelAttrs:
     # <p>The Amazon Resource Name (ARN) associated with the resource.</p>
     arn: Any = None
-    # The name of the MediaPackage v2 channel group that this channel belongs to, used as part of the channel's identifier and required when creating or referencing the channel. (AI-inferred)
     channel_group_name: Any = None
-    # The human-readable name of the AWS MediaPackage v2 channel, which must be unique within an AWS account and is incorporated into the channel's Amazon Resource Name (ARN). (AI-inferred)
     channel_name: Any = None
     # <p>The date and time the channel was created.</p>
     created_at: Any = None
     # <p>Enter any descriptive text that helps you to identify the channel.</p>
     description: Any = None
-    # The list of ingest URLs that the encoder sends content to for this MediaPackage v2 channel, assigned by AWS when the channel is created. (AI-inferred)
     ingest_endpoint_urls: Any = None
     # <p>The list of ingest endpoints.</p>
     ingest_endpoints: Any = None
     # <p>The configuration for input switching based on the media quality confidence score (MQCS) as provided from AWS Elemental MediaLive.</p>
     input_switch_configuration: Any = None
-    # Specifies the input type of the channel, which determines whether incoming content is in HLS or CMAF format, with allowed values 'HLS' and 'CMAF'. (AI-inferred)
     input_type: Any = None
     # <p>The date and time the channel was modified.</p>
     modified_at: Any = None
     # <p>The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage includes in responses to the CDN.</p>
     output_header_configuration: Any = None
-    # Specifies the output locking mode of the MediaPackage v2 channel, which enforces consistent segment timing and alignment across all of the channel's packaging endpoints to enable synchronized downstream playback and failover. (AI-inferred)
     output_locking_mode: Any = None
-    # A list of Tag objects (each with Key and Value) that you can attach to a MediaPackage v2 channel to add metadata for organization, access control, and cost tracking. (AI-inferred)
     tags: Any = None
 
 PackageV2Channel = ubx.ResourceBinding(

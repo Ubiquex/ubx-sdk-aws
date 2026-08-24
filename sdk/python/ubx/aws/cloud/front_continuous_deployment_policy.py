@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleHeaderPolicyConfig:
-    # The HTTP header name that CloudFront inspects to route requests to the staging distribution in this continuous deployment policy. (AI-inferred)
     header: Any = None
-    # The header value that CloudFront uses to route requests to the staging distribution in the continuous deployment policy. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -24,7 +22,6 @@ class FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWei
 class FrontContinuousDeploymentPolicy_ContinuousDeploymentPolicyConfig_SingleWeightPolicyConfig:
     # Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.
     session_stickiness_config: Any = None
-    # Specifies the percentage of traffic to route to the staging distribution, with a value between 0 and 100, where 100 sends all traffic to the staging distribution. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
@@ -114,9 +111,7 @@ class FrontContinuousDeploymentPolicyConfig:
 class FrontContinuousDeploymentPolicyAttrs:
     # Contains the configuration for a continuous deployment policy.
     continuous_deployment_policy_config: Any = None
-    # The unique identifier that CloudFront assigns to the continuous deployment policy when it is created. (AI-inferred)
     id: Any = None
-    # The date and time when the continuous deployment policy was last modified, returned as a string in ISO 8601 format. (AI-inferred)
     last_modified_time: Any = None
 
 FrontContinuousDeploymentPolicy = ubx.ResourceBinding(

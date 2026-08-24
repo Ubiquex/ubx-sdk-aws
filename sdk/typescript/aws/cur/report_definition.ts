@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReportDefinition_Tags {
-  /** The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -35,7 +34,6 @@ export interface ReportDefinitionConfig {
   s3Prefix: string | Computed<string>;
   /** The region of the S3 bucket that AWS delivers the report into. */
   s3Region: string | Computed<string>;
-  /** Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred) */
   tags?: ReportDefinition_Tags[] | Computed<ReportDefinition_Tags[]>;
   /** The granularity of the line items in the report. */
   timeUnit: string | Computed<string>;
@@ -64,7 +62,6 @@ export interface ReportDefinitionAttrs {
   s3Prefix: string;
   /** The region of the S3 bucket that AWS delivers the report into. */
   s3Region: string;
-  /** Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred) */
   tags: ReportDefinition_Tags[];
   /** The granularity of the line items in the report. */
   timeUnit: string;

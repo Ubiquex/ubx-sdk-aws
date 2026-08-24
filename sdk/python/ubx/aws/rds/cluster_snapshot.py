@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClusterSnapshot_Tags:
-    # The key of a user-defined tag attached to this RDS cluster snapshot, used for organizing, identifying, and managing the snapshot within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag key assigned to the RDS cluster snapshot, used for resource categorization and cost allocation. (AI-inferred)
     value: Any = None
 
 _ClusterSnapshot_TagsFields = {

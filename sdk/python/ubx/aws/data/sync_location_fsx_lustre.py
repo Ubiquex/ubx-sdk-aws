@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncLocationFsxLustre_Tags:
-    # The key of a tag to apply to the DataSync location for an FSx for Lustre file system, used for identifying and organizing the location. (AI-inferred)
     key: Any = None
     value: Any = None
 

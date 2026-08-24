@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerUserProfile_Tags {
-  /** The key of a user-defined tag attached to the SageMaker User Profile, used for cost allocation, environment identification, or other organizational metadata. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -19,16 +18,12 @@ export interface MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycl
 }
 
 export interface MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement {
-  /** Specifies the idle timeout and lifecycle management settings for the Code Editor application in the user profile, controlling when the app enters an idle state or is shut down. (AI-inferred) */
   idleSettings?: MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettings | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettings>;
 }
 
 export interface MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages {
-  /** The name of the SageMaker AppImageConfig resource that specifies the container configuration (e.g., environment variables and file system settings) for this custom image used in the Code Editor app. (AI-inferred) */
   appImageConfigName?: string | Computed<string>;
-  /** The name of the custom Docker image to use for the SageMaker Studio Code Editor app, which should correspond to an image available in an Amazon ECR repository. (AI-inferred) */
   imageName?: string | Computed<string>;
-  /** Specifies the version number of the custom SageMaker image to be used for the Code Editor application in the user profile, allowing you to pin a specific image version when multiple versions are available. (AI-inferred) */
   imageVersionNumber?: number | Computed<number>;
 }
 
@@ -46,49 +41,38 @@ export interface MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultReso
 }
 
 export interface MakerUserProfile_UserSettings_CodeEditorAppSettings {
-  /** Configures the idle timeout settings for the Code Editor application, including whether automatic shutdown is enabled and the maximum idle time in minutes before the app is stopped. (AI-inferred) */
   appLifecycleManagement?: MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement>;
   /** The lifecycle configuration that runs before the default lifecycle configuration. */
   builtInLifecycleConfigArn?: string | Computed<string>;
   /** A list of custom images for use for CodeEditor apps. */
   customImages?: MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[] | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[]>;
-  /** Specifies the default compute instance type and SageMaker image (via ARN) used when launching the Code Editor app for this user profile in SageMaker Studio. (AI-inferred) */
   defaultResourceSpec?: MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with CodeEditor apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
 }
 
 export interface MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig {
-  /** The unique identifier of the Amazon EFS file system to mount for the SageMaker user profile's custom file system configuration. (AI-inferred) */
   fileSystemId?: string | Computed<string>;
-  /** Specifies the path within the Amazon EFS file system that is mounted and made accessible to the SageMaker user profile, defining the directory to mount for that user. (AI-inferred) */
   fileSystemPath?: string | Computed<string>;
 }
 
 export interface MakerUserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfig {
-  /** The absolute path (e.g., '/home/user/mybucket') where the S3 bucket is mounted in the user's SageMaker environment. (AI-inferred) */
   mountPath?: string | Computed<string>;
-  /** Specifies the S3 URI (bucket and optional key prefix) of the Amazon S3 file system that SageMaker mounts for the user profile's custom file system configuration. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerUserProfile_UserSettings_CustomFileSystemConfigs {
-  /** Defines Amazon Elastic File System (EFS) settings for a custom file system attached to the SageMaker user profile, including the EFS file system ID (FileSystemId) and the mount path (FileSystemPath) within the file system. (AI-inferred) */
   efsfileSystemConfig?: MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig | Computed<MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig>;
-  /** Specifies the FSx for Lustre file system configuration to attach and mount in the user's private SageMaker workspace, including the file system ID and mount path. (AI-inferred) */
   fsxLustreFileSystemConfig?: MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig | Computed<MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig>;
   s3FileSystemConfig?: MakerUserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfig | Computed<MakerUserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfig>;
 }
 
 export interface MakerUserProfile_UserSettings_CustomPosixUserConfig {
-  /** The numeric group ID (GID) that SageMaker uses to set filesystem ownership and permissions for the user's JupyterServer or KernelGateway apps when a custom POSIX user configuration is enabled. (AI-inferred) */
   gid: number | Computed<number>;
-  /** Specifies the numeric POSIX user identifier (UID) that SageMaker uses for the execution environment when this custom POSIX user configuration is enabled. (AI-inferred) */
   uid: number | Computed<number>;
 }
 
 export interface MakerUserProfile_UserSettings_JupyterLabAppSettings_CodeRepositories {
-  /** The URL of the Git repository to be associated with the JupyterLab app for the SageMaker user profile, allowing it to be accessed within Studio. (AI-inferred) */
   repositoryUrl?: string | Computed<string>;
 }
 
@@ -100,7 +84,6 @@ export interface MakerUserProfile_UserSettings_JupyterLabAppSettings_EmrSettings
 }
 
 export interface MakerUserProfile_UserSettings_JupyterLabAppSettings {
-  /** Defines the idle-timeout and lifecycle policy for JupyterLab apps in the user profile, automatically shutting down apps that are idle for a configured period. (AI-inferred) */
   appLifecycleManagement?: MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement>;
   /** The lifecycle configuration that runs before the default lifecycle configuration. */
   builtInLifecycleConfigArn?: string | Computed<string>;
@@ -108,7 +91,6 @@ export interface MakerUserProfile_UserSettings_JupyterLabAppSettings {
   codeRepositories?: MakerUserProfile_UserSettings_JupyterLabAppSettings_CodeRepositories[] | Computed<MakerUserProfile_UserSettings_JupyterLabAppSettings_CodeRepositories[]>;
   /** A list of custom images available for use for JupyterLab apps */
   customImages?: MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[] | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[]>;
-  /** Defines the default instance type and SageMaker image (via `InstanceType` and `SageMakerImageArn`) used when launching the user's JupyterLab applications, serving as the fallback environment for all JupyterLab sessions started under this user profile. (AI-inferred) */
   defaultResourceSpec?: MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** Configuration parameters specifying IAM roles assumed by SageMaker's execution role and cluster instances. */
   emrSettings?: MakerUserProfile_UserSettings_JupyterLabAppSettings_EmrSettings | Computed<MakerUserProfile_UserSettings_JupyterLabAppSettings_EmrSettings>;
@@ -117,7 +99,6 @@ export interface MakerUserProfile_UserSettings_JupyterLabAppSettings {
 }
 
 export interface MakerUserProfile_UserSettings_JupyterServerAppSettings {
-  /** Specifies the default instance type, EBS volume size, and lifecycle configuration used when launching the Jupyter Server app for this user profile. (AI-inferred) */
   defaultResourceSpec?: MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with JupyterServer apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
@@ -126,7 +107,6 @@ export interface MakerUserProfile_UserSettings_JupyterServerAppSettings {
 export interface MakerUserProfile_UserSettings_KernelGatewayAppSettings {
   /** A list of custom SageMaker images that are configured to run as a KernelGateway app. */
   customImages?: MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[] | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages[]>;
-  /** Specifies the default instance type and SageMaker image configuration used when a kernel gateway app is started for this user profile. (AI-inferred) */
   defaultResourceSpec?: MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with KernelGateway apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
@@ -149,9 +129,7 @@ export interface MakerUserProfile_UserSettings_SharingSettings {
 }
 
 export interface MakerUserProfile_UserSettings_SpaceStorageSettings_DefaultEbsStorageSettings {
-  /** Sets the default size in gigabytes of the Amazon EBS storage volume that SageMaker provisions for a user's Studio space. (AI-inferred) */
   defaultEbsVolumeSizeInGb: number | Computed<number>;
-  /** Specifies the maximum size in gigabytes for an Amazon EBS volume that can be attached to a SageMaker Studio space for this user profile. (AI-inferred) */
   maximumEbsVolumeSizeInGb: number | Computed<number>;
 }
 
@@ -161,9 +139,7 @@ export interface MakerUserProfile_UserSettings_SpaceStorageSettings {
 }
 
 export interface MakerUserProfile_UserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliases {
-  /** The name of the SageMaker image for which the specified version aliases are hidden in the Studio web portal settings of the user profile. (AI-inferred) */
   sageMakerImageName?: string | Computed<string>;
-  /** Specifies a list of SageMaker image version aliases that are hidden from the user in the SageMaker Studio web portal, preventing the user from using those image versions in the Studio interface. (AI-inferred) */
   versionAliases?: string[] | Computed<string[]>;
 }
 
@@ -183,9 +159,7 @@ export interface MakerUserProfile_UserSettings {
   autoMountHomeEfs?: string | Computed<string>;
   /** The CodeEditor app settings. */
   codeEditorAppSettings?: MakerUserProfile_UserSettings_CodeEditorAppSettings | Computed<MakerUserProfile_UserSettings_CodeEditorAppSettings>;
-  /** Specifies a list of custom file system configurations (such as Amazon EFS or FSx for Lustre) that the user profile can mount. (AI-inferred) */
   customFileSystemConfigs?: MakerUserProfile_UserSettings_CustomFileSystemConfigs[] | Computed<MakerUserProfile_UserSettings_CustomFileSystemConfigs[]>;
-  /** Specifies the custom POSIX user ID (UID) and group ID (GID) that the Jupyter server process runs as within this SageMaker User Profile. (AI-inferred) */
   customPosixUserConfig?: MakerUserProfile_UserSettings_CustomPosixUserConfig | Computed<MakerUserProfile_UserSettings_CustomPosixUserConfig>;
   /** Defines which Amazon SageMaker application users are directed to by default. */
   defaultLandingUri?: string | Computed<string>;

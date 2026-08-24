@@ -8,39 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Server_EndpointDetails:
-    # Specifies the list of Elastic IP allocation IDs to associate with the server's VPC endpoint, allowing the Transfer server to have static IP addresses for its endpoint when the endpoint type is VPC. (AI-inferred)
     address_allocation_ids: Any = None
-    # Specifies the security group IDs attached to the VPC endpoint used by the AWS Transfer Family server, controlling the network traffic allowed to and from the endpoint. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the subnets in your VPC where the AWS Transfer Family server's endpoint is deployed (for VPC or VPC_ENDPOINT endpoint types), allowing the server to be accessed from within your private network. (AI-inferred)
     subnet_ids: Any = None
-    # The ID of the VPC endpoint that the AWS Transfer Family server is associated with when the server's endpoint type is set to VPC. (AI-inferred)
     vpc_endpoint_id: Any = None
-    # The ID of the VPC in which the AWS Transfer Family server's endpoint is hosted when the endpoint type is set to VPC. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class Server_IdentityProviderDetails:
-    # The identifier of the AWS Directory Service directory used as the identity provider for this AWS Transfer Family server, required only when the identity provider type is AWS_DIRECTORY_SERVICE. (AI-inferred)
     directory_id: Any = None
-    # The ARN of the AWS Lambda function that AWS Transfer Family invokes for user authentication and authorization when using the AWS Lambda identity provider type. (AI-inferred)
     function: Any = None
-    # The IAM role that AWS Transfer Family assumes to invoke the Lambda function for user identity management when using a custom identity provider. (AI-inferred)
     invocation_role: Any = None
-    # Configures which SFTP authentication methods (such as PASSWORD and PUBLIC_KEY) are permitted for the AWS Transfer Family server when using the specified identity provider details. (AI-inferred)
     sftp_authentication_methods: Any = None
-    # The URL of the identity provider endpoint that the Transfer server invokes to authenticate users, such as an API Gateway invocation URL or a ServiceNow instance URL. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class Server_ProtocolDetails:
-    # Specifies which transport protocols (HTTP, HTTPS, or both) are supported for AS2 message exchange on an AWS Transfer Family server, controlling the network paths allowed for AS2 traffic. (AI-inferred)
     as2_transports: Any = None
-    # The IP address that the AWS Transfer Family server advertises for passive (PASV/EPSV) FTP connections when using FTPS. (AI-inferred)
     passive_ip: Any = None
-    # Controls whether the SFTP server performs the SETSTAT operation on the client's behalf (DEFAULT) or responds with a success without actually changing file attributes (ENABLE_NO_OP), affecting how file modification times and permissions are handled during SFTP transfers. (AI-inferred)
     set_stat_option: Any = None
-    # Controls whether TLS session resumption is enforced, enabled, or disabled for FTPS connections to the Transfer Family server, with allowed values ENFORCED, ENABLED, and DISABLED. (AI-inferred)
     tls_session_resumption_mode: Any = None
 
 @dataclasses.dataclass
@@ -50,22 +36,17 @@ class Server_S3StorageOptions:
 
 @dataclasses.dataclass
 class Server_Tags:
-    # The key of a user-defined tag attached to the AWS Transfer Family server, used for resource organization and cost tracking. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class Server_WorkflowDetails_OnPartialUpload:
-    # The IAM role ARN that AWS Transfer Family assumes to execute the workflow steps when a file transfer is only partially uploaded (e.g., when the upload session ends before the file is fully received). (AI-inferred)
     execution_role: Any = None
-    # The unique identifier of the AWS Transfer Family workflow to execute when a file upload is partially completed. (AI-inferred)
     workflow_id: Any = None
 
 @dataclasses.dataclass
 class Server_WorkflowDetails:
-    # A list of workflow steps that AWS Transfer Family executes when a file upload to the server fails partway through, allowing you to run custom actions like copying, tagging, or deleting the partially uploaded file. (AI-inferred)
     on_partial_upload: Any = None
-    # A list of workflow details that specify the workflows to run when a file is uploaded to the server, each containing a workflow ID and execution role. (AI-inferred)
     on_upload: Any = None
 
 _Server_EndpointDetailsFields = {
@@ -120,84 +101,47 @@ _Server_WorkflowDetailsFields = {
 
 @dataclasses.dataclass
 class ServerConfig:
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure FTPS connections for the AWS Transfer Family server. (AI-inferred)
     certificate: Any = None
-    # The storage service (S3 or EFS) that this AWS Transfer Family server is configured to use for file storage and management. (AI-inferred)
     domain: Any = None
-    # Specifies the endpoint configuration for the Transfer Family server, including the endpoint type (PUBLIC, VPC, or VPC_ENDPOINT) and VPC-related settings such as subnet IDs, security group IDs, and Elastic IP allocation IDs. (AI-inferred)
     endpoint_details: Any = None
-    # Specifies the type of endpoint for the AWS Transfer Family server, which can be PUBLIC (default), VPC, or VPC_ENDPOINT, determining how clients connect to the server. (AI-inferred)
     endpoint_type: Any = None
-    # Specifies the configuration details for the identity provider that AWS Transfer Family uses to authenticate users on this server, including the invocation role ARN and either the API Gateway URL, AWS Lambda function, or AWS Directory Service directory ID. (AI-inferred)
     identity_provider_details: Any = None
-    # Specifies the type of identity provider for the Transfer Family server, such as SERVICE_MANAGED, API_GATEWAY, AWS_DIRECTORY_SERVICE, or AWS_LAMBDA, which determines how user authentication is handled. (AI-inferred)
     identity_provider_type: Any = None
-    # Specifies whether the Transfer server uses a public IP address or a private IP address within a VPC, with allowed values PUBLIC and VPC. (AI-inferred)
     ip_address_type: Any = None
-    # The ARN of the IAM role that grants AWS Transfer Family permission to write logs for this server to Amazon CloudWatch Logs. (AI-inferred)
     logging_role: Any = None
-    # This field specifies the text of a banner that is displayed to users after they successfully authenticate to the AWS Transfer Family server, appearing after the login process completes. (AI-inferred)
     post_authentication_login_banner: Any = None
-    # A text banner that AWS Transfer Family displays to users before they authenticate to the server, used for security or informational messages. (AI-inferred)
     pre_authentication_login_banner: Any = None
-    # Specifies protocol-specific settings for the AWS Transfer server, including options such as passive IP, TLS session resumption mode, and AS2 transport settings. (AI-inferred)
     protocol_details: Any = None
-    # Specifies the list of file transfer protocols (SFTP, FTP, FTPS) that the AWS Transfer Family server will support. (AI-inferred)
     protocols: Any = None
-    # Configures S3 storage options for the Transfer Family server, including the directory listing optimization setting that controls whether the server uses optimized directory listing for large S3 directories. (AI-inferred)
     s3_storage_options: Any = None
-    # The name of the security policy that defines the TLS protocol versions and cipher suites used to secure SFTP connections to the server. (AI-inferred)
     security_policy_name: Any = None
-    # Specifies the list of Amazon Resource Names (ARNs) of destinations, such as Amazon CloudWatch Logs log groups or Amazon S3 buckets, where structured logs from the AWS Transfer Family server are delivered. (AI-inferred)
     structured_log_destinations: Any = None
-    # Tags are custom key-value labels that you can assign to the AWS Transfer Family server to help organize, identify, and manage it, and they can also be used in resource-level IAM policies to control access to the server. (AI-inferred)
     tags: Any = None
-    # The workflow_details field configures the AWS Transfer Family workflows to execute when files are uploaded to the server, including the on-upload and on-partial-upload workflow steps. (AI-inferred)
     workflow_details: Any = None
 
 @dataclasses.dataclass
 class ServerAttrs:
-    # The Amazon Resource Name (ARN) assigned to the Transfer Family server, which uniquely identifies it across AWS. (AI-inferred)
     arn: Any = None
     # The list of egress IP addresses of this server. These IP addresses are only relevant for servers that use the AS2 protocol. They are used for sending asynchronous MDNs. These IP addresses are assigned automatically when you create an AS2 server. Additionally, if you update an existing server and add the AS2 protocol, static IP addresses are assigned as well.
     as2_service_managed_egress_ip_addresses: Any = None
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure FTPS connections for the AWS Transfer Family server. (AI-inferred)
     certificate: Any = None
-    # The storage service (S3 or EFS) that this AWS Transfer Family server is configured to use for file storage and management. (AI-inferred)
     domain: Any = None
-    # Specifies the endpoint configuration for the Transfer Family server, including the endpoint type (PUBLIC, VPC, or VPC_ENDPOINT) and VPC-related settings such as subnet IDs, security group IDs, and Elastic IP allocation IDs. (AI-inferred)
     endpoint_details: Any = None
-    # Specifies the type of endpoint for the AWS Transfer Family server, which can be PUBLIC (default), VPC, or VPC_ENDPOINT, determining how clients connect to the server. (AI-inferred)
     endpoint_type: Any = None
-    # Specifies the configuration details for the identity provider that AWS Transfer Family uses to authenticate users on this server, including the invocation role ARN and either the API Gateway URL, AWS Lambda function, or AWS Directory Service directory ID. (AI-inferred)
     identity_provider_details: Any = None
-    # Specifies the type of identity provider for the Transfer Family server, such as SERVICE_MANAGED, API_GATEWAY, AWS_DIRECTORY_SERVICE, or AWS_LAMBDA, which determines how user authentication is handled. (AI-inferred)
     identity_provider_type: Any = None
-    # Specifies whether the Transfer server uses a public IP address or a private IP address within a VPC, with allowed values PUBLIC and VPC. (AI-inferred)
     ip_address_type: Any = None
-    # The ARN of the IAM role that grants AWS Transfer Family permission to write logs for this server to Amazon CloudWatch Logs. (AI-inferred)
     logging_role: Any = None
-    # This field specifies the text of a banner that is displayed to users after they successfully authenticate to the AWS Transfer Family server, appearing after the login process completes. (AI-inferred)
     post_authentication_login_banner: Any = None
-    # A text banner that AWS Transfer Family displays to users before they authenticate to the server, used for security or informational messages. (AI-inferred)
     pre_authentication_login_banner: Any = None
-    # Specifies protocol-specific settings for the AWS Transfer server, including options such as passive IP, TLS session resumption mode, and AS2 transport settings. (AI-inferred)
     protocol_details: Any = None
-    # Specifies the list of file transfer protocols (SFTP, FTP, FTPS) that the AWS Transfer Family server will support. (AI-inferred)
     protocols: Any = None
-    # Configures S3 storage options for the Transfer Family server, including the directory listing optimization setting that controls whether the server uses optimized directory listing for large S3 directories. (AI-inferred)
     s3_storage_options: Any = None
-    # The name of the security policy that defines the TLS protocol versions and cipher suites used to secure SFTP connections to the server. (AI-inferred)
     security_policy_name: Any = None
-    # The unique server identifier assigned by AWS for this Transfer Family server (e.g., s-1234567890abcdef), used to reference the server in API calls and other resources. (AI-inferred)
     server_id: Any = None
-    # The state of the AWS Transfer Family server, such as ONLINE or OFFLINE, indicating its lifecycle status. (AI-inferred)
     state: Any = None
-    # Specifies the list of Amazon Resource Names (ARNs) of destinations, such as Amazon CloudWatch Logs log groups or Amazon S3 buckets, where structured logs from the AWS Transfer Family server are delivered. (AI-inferred)
     structured_log_destinations: Any = None
-    # Tags are custom key-value labels that you can assign to the AWS Transfer Family server to help organize, identify, and manage it, and they can also be used in resource-level IAM policies to control access to the server. (AI-inferred)
     tags: Any = None
-    # The workflow_details field configures the AWS Transfer Family workflows to execute when files are uploaded to the server, including the on-upload and on-partial-upload workflow steps. (AI-inferred)
     workflow_details: Any = None
 
 Server = ubx.ResourceBinding(

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerMlflowApp_Tags {
-  /** The key of a tag attached to the SageMaker MLflow App, used to organize, identify, and manage access to the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the SageMaker MLflow App, used to assign metadata such as environment, owner, or cost center for resource management and identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -4,9 +4,7 @@ package elasti
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheSubnetGroup_Tags struct {
-	// The tag key assigned to the ElastiCache subnet group, used to categorize and manage the resource through AWS tagging features. (AI-inferred)
 	Key any
-	// Defines the value of a user-defined tag assigned to the ElastiCache subnet group, used for metadata and resource organization. (AI-inferred)
 	Value any
 }
 
@@ -22,7 +20,6 @@ type CacheSubnetGroupConfig struct {
 	Description any
 	// The EC2 subnet IDs for the cache subnet group.
 	SubnetIds any
-	// A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred)
 	Tags any
 }
 
@@ -33,7 +30,6 @@ type CacheSubnetGroupAttrs struct {
 	Description any
 	// The EC2 subnet IDs for the cache subnet group.
 	SubnetIds any
-	// A list of key-value tag objects to associate with the ElastiCache subnet group, used for organizing, identifying, and allocating costs for the resource. (AI-inferred)
 	Tags any
 }
 

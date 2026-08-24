@@ -24,7 +24,6 @@ const Ipamscope_TagsFields: FieldMap = {
 };
 
 export interface IpamscopeConfig {
-  /** A user-defined description for the IPAM scope. (AI-inferred) */
   description?: string | Computed<string>;
   /** External service configuration to connect your AWS IPAM scope. */
   externalAuthorityConfiguration?: Ipamscope_ExternalAuthorityConfiguration | Computed<Ipamscope_ExternalAuthorityConfiguration>;
@@ -37,7 +36,6 @@ export interface IpamscopeConfig {
 export interface IpamscopeAttrs {
   /** The Amazon Resource Name (ARN) of the IPAM scope. */
   arn: string;
-  /** A user-defined description for the IPAM scope. (AI-inferred) */
   description: string;
   /** External service configuration to connect your AWS IPAM scope. */
   externalAuthorityConfiguration: Ipamscope_ExternalAuthorityConfiguration;

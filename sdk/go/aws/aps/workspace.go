@@ -13,7 +13,6 @@ type Workspace_QueryLoggingConfiguration_Destinations_Filters struct {
 }
 
 type Workspace_QueryLoggingConfiguration_Destinations struct {
-	// Specifies the CloudWatch Logs log group that receives query logs from the Amazon Managed Prometheus workspace. (AI-inferred)
 	CloudWatchLogs any
 	Filters any
 }
@@ -25,26 +24,20 @@ type Workspace_QueryLoggingConfiguration struct {
 
 type Workspace_Tags struct {
 	Key any
-	// The value of a tag key applied to an Amazon Managed Service for Prometheus workspace, used to categorize and manage the workspace for purposes such as environment, team, or cost allocation. (AI-inferred)
 	Value any
 }
 
 type Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSet struct {
-	// The name of a label set in the workspace configuration's limits_per_label_sets section, used to identify a group of labels for applying per-label-set series limits in Amazon Managed Prometheus. (AI-inferred)
 	Name any
-	// The maximum number of active time series allowed for the label set defined in this Amazon Managed Prometheus workspace configuration limit, enforced per label set. (AI-inferred)
 	Value any
 }
 
 type Workspace_WorkspaceConfiguration_LimitsPerLabelSets_Limits struct {
-	// The maximum number of unique time series (combinations of metric name and label values) that a per-label-set limit allows to be active in the workspace, beyond which incoming samples for that label set are rejected and the limit is enforced. (AI-inferred)
 	MaxSeries any
 }
 
 type Workspace_WorkspaceConfiguration_LimitsPerLabelSets struct {
-	// Defines the list of label names (e.g., ["job", "team"]) that group time series into sets, and the workspace configuration applies the associated maximum active series limit per unique set of label values. (AI-inferred)
 	LabelSet any
-	// Specifies the query limits (for example, maximum number of samples and maximum query time) applied to a particular label set within the Amazon Managed Service for Prometheus workspace configuration. (AI-inferred)
 	Limits any
 }
 

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpacesWebNetworkSettings_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Amazon WorkSpaces Web network settings resource, used to categorize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -13,28 +12,18 @@ const SpacesWebNetworkSettings_TagsFields: FieldMap = {
 };
 
 export interface SpacesWebNetworkSettingsConfig {
-  /** One or more security group IDs that define the network traffic rules for the WorkSpaces Web portal, controlling access to the VPC resources it connects to. (AI-inferred) */
   securityGroupIds: string[] | Computed<string[]>;
-  /** The list of subnet IDs in the VPC where the WorkSpaces Web portal's network interfaces are created for the network settings. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
-  /** Assigns a list of tag objects (each containing a key and value) to the WorkSpaces Web network settings resource for identifying, organizing, and managing the resource. (AI-inferred) */
   tags?: SpacesWebNetworkSettings_Tags[] | Computed<SpacesWebNetworkSettings_Tags[]>;
-  /** The ID of the VPC that this WorkSpaces Web network settings configuration is associated with, used to define the network boundary for the web portal. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface SpacesWebNetworkSettingsAttrs {
-  /** The list of ARNs of the web portals associated with this network settings resource. (AI-inferred) */
   associatedPortalArns: string[];
-  /** The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this WorkSpaces Web network settings resource. (AI-inferred) */
   networkSettingsArn: string;
-  /** One or more security group IDs that define the network traffic rules for the WorkSpaces Web portal, controlling access to the VPC resources it connects to. (AI-inferred) */
   securityGroupIds: string[];
-  /** The list of subnet IDs in the VPC where the WorkSpaces Web portal's network interfaces are created for the network settings. (AI-inferred) */
   subnetIds: string[];
-  /** Assigns a list of tag objects (each containing a key and value) to the WorkSpaces Web network settings resource for identifying, organizing, and managing the resource. (AI-inferred) */
   tags: SpacesWebNetworkSettings_Tags[];
-  /** The ID of the VPC that this WorkSpaces Web network settings configuration is associated with, used to define the network boundary for the web portal. (AI-inferred) */
   vpcId: string;
 }
 

@@ -4,256 +4,159 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TaskDefinition_ContainerDefinitions_DependsOn struct {
-	// Specifies the state that the container named in depends_on must reach for this container to start, such as START, COMPLETE, SUCCESS, or HEALTHY. (AI-inferred)
 	Condition any
-	// Specifies the name of the container that this container depends on, as part of the container's dependency conditions within the same task definition. (AI-inferred)
 	ContainerName any
 }
 
 type TaskDefinition_ContainerDefinitions_Environment struct {
-	// The name of the environment variable to configure in the container as part of the task definition's container environment list. (AI-inferred)
 	Name any
-	// The value of the environment variable defined for the container in the ECS task definition, paired with the corresponding name in the environment key-value list. (AI-inferred)
 	Value any
 }
 
 type TaskDefinition_ContainerDefinitions_EnvironmentFiles struct {
-	// Specifies the type of the environment file, where the only supported value is 's3', indicating the file is stored in an Amazon S3 bucket. (AI-inferred)
 	Type any
-	// The Amazon S3 object ARN (e.g., arn:aws:s3:::bucket-name/key-name) of the environment variables file that ECS loads into the container environment. (AI-inferred)
 	Value any
 }
 
 type TaskDefinition_ContainerDefinitions_ExtraHosts struct {
-	// The hostname to add to the container's /etc/hosts file, paired with its IP address in the same extra_hosts entry. (AI-inferred)
 	Hostname any
-	// The IP address to which the corresponding hostname in the extra_hosts entry is resolved inside the container's network configuration (e.g., appended to /etc/hosts). (AI-inferred)
 	IpAddress any
 }
 
 type TaskDefinition_ContainerDefinitions_FirelensConfiguration struct {
-	// Configures FireLens log routing by providing settings such as config-file-type, config-file-value, and enable-ecs-log-metadata. (AI-inferred)
 	Options any
-	// Specifies the log router to use for Firelens, either 'fluentd' or 'fluentbit' (required). (AI-inferred)
 	Type any
 }
 
 type TaskDefinition_ContainerDefinitions_HealthCheck struct {
-	// The command (as a list of strings, e.g., ["CMD-SHELL", "curl -f http://localhost/"]) that the container runs to perform its health check, corresponding directly to the Docker HEALTHCHECK instruction's command portion. (AI-inferred)
 	Command any
-	// The time period in seconds between each container health check execution, as part of the ECS task definition container health check configuration. (AI-inferred)
 	Interval any
-	// Specifies the number of times to retry a failed health check before the container is considered unhealthy, with a default of 3. (AI-inferred)
 	Retries any
-	// Specifies the duration in seconds that Amazon ECS waits after the container starts before it begins counting failed health check results, providing a grace period for containers that need time to initialize before being marked unhealthy. (AI-inferred)
 	StartPeriod any
-	// The number of seconds to wait for a health check to succeed before considering the container unhealthy. (AI-inferred)
 	Timeout any
 }
 
 type TaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities struct {
-	// Specifies additional Linux capabilities to grant the container, such as SYS_ADMIN or NET_ADMIN, in the task definition's Linux parameters. (AI-inferred)
 	Add any
-	// Specifies the Linux capabilities to remove from the container's default set, such as SYS_ADMIN or NET_RAW, to restrict its privileges at runtime. (AI-inferred)
 	Drop any
 }
 
 type TaskDefinition_ContainerDefinitions_LinuxParameters_Devices struct {
-	// The path inside the container at which the host device is mounted and exposed. (AI-inferred)
 	ContainerPath any
-	// The absolute path on the host of the device to expose to the container, used in a Linux container's devices configuration to grant access to host devices. (AI-inferred)
 	HostPath any
-	// Specifies the device permissions (e.g., read, write, mknod) that grant the container access to each host device listed in the devices block, controlling what operations the container can perform on those devices. (AI-inferred)
 	Permissions any
 }
 
 type TaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs struct {
-	// The absolute file path inside the container where the tmpfs volume is mounted. (AI-inferred)
 	ContainerPath any
-	// Specifies the mount options (e.g., size, mode, ro) passed to the tmpfs mount for the container. (AI-inferred)
 	MountOptions any
-	// The size of the tmpfs mount in MiB, specifying the maximum capacity of the temporary filesystem mounted at the container's path. (AI-inferred)
 	Size any
 }
 
 type TaskDefinition_ContainerDefinitions_LinuxParameters struct {
-	// Specifies the Linux capabilities to add or remove from the container's default set, with 'add' and 'drop' lists of capability names. (AI-inferred)
 	Capabilities any
-	// A list of host devices to expose to the container, each specifying the host path, optional container path, and access permissions (read, write, mknod). (AI-inferred)
 	Devices any
-	// When true, runs an init process as PID 1 inside the container to reap zombie processes and properly forward signals, such as SIGTERM, to the main application. (AI-inferred)
 	InitProcessEnabled any
-	// The maximum amount of swap memory (in MiB) the container can use, overriding the host's default swap settings for this container. (AI-inferred)
 	MaxSwap any
-	// Specifies the size in MiB of the shared memory (/dev/shm) volume to allocate for the container, overriding the default 64 MiB. (AI-inferred)
 	SharedMemorySize any
-	// The swappiness parameter controls the relative weight of swapping out anonymous pages versus page cache in the container, accepting an integer from 0 to 100 that is passed as a kernel tuning option. (AI-inferred)
 	Swappiness any
-	// Configures temporary file system (tmpfs) mounts for the container, listing each mount's container path, size in MiB, and optional mount options as defined under LinuxParameters in the ECS task definition. (AI-inferred)
 	Tmpfs any
 }
 
 type TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions struct {
-	// The name (key) of the log driver option for which the referenced secret's value is used, such as 'splunk-token' or 'project' in the log configuration. (AI-inferred)
 	Name any
-	// The ARN of the secret (from AWS Secrets Manager or Systems Manager Parameter Store) that provides the value for the corresponding log driver option in the ECS task definition's log configuration. (AI-inferred)
 	ValueFrom any
 }
 
 type TaskDefinition_ContainerDefinitions_LogConfiguration struct {
-	// Specifies the logging driver used by the container, such as awslogs for CloudWatch Logs, fluentd, syslog, json-file, or splunk, which determines how and where container logs are delivered. (AI-inferred)
 	LogDriver any
-	// The options map provides the key-value configuration parameters for the container's chosen log driver (for example, awslogs-group and awslogs-region for the awslogs driver). (AI-inferred)
 	Options any
-	// Specifies the secrets to pass to the log driver configuration, allowing you to reference sensitive information from AWS Secrets Manager or Systems Manager Parameter Store. (AI-inferred)
 	SecretOptions any
 }
 
 type TaskDefinition_ContainerDefinitions_MountPoints struct {
-	// The container_path specifies the absolute path inside the container where the volume is mounted. (AI-inferred)
 	ContainerPath any
-	// Determines whether the container has read-only access to the mounted volume; when set to true, writes to the volume are rejected, and when false, read/write access is permitted. (AI-inferred)
 	ReadOnly any
-	// Name of the volume to mount, which must match the name of a volume defined in the task definition's volumes block. (AI-inferred)
 	SourceVolume any
 }
 
 type TaskDefinition_ContainerDefinitions_PortMappings struct {
-	// Specifies the application protocol (e.g., http, http2, grpc) for this port mapping, which is used by AWS App Mesh and Amazon ECS Service Connect to route traffic to the container. (AI-inferred)
 	AppProtocol any
-	// The port number on the container that receives inbound traffic, paired with a host port to map a container port to a port on the host for ECS task definition port mappings. (AI-inferred)
 	ContainerPort any
-	// Specifies the inclusive range of container ports to map to the host, using the format 'startPort-endPort' (for example, '8000-8080'), enabling the task to expose multiple ports in one definition. (AI-inferred)
 	ContainerPortRange any
-	// The port number on the container instance (host) that receives inbound traffic and forwards it to the container's `containerPort`, used with bridge and host network modes; it can be left empty to map directly to the container port. (AI-inferred)
 	HostPort any
-	// The name that identifies this port mapping, used when configuring Service Connect for the ECS service. (AI-inferred)
 	Name any
-	// The transport protocol (tcp, udp, or tcpudp) that this port mapping uses for communication in the container definition. (AI-inferred)
 	Protocol any
 }
 
 type TaskDefinition_ContainerDefinitions_RepositoryCredentials struct {
-	// The ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the authentication credentials for the private container repository used by this container definition. (AI-inferred)
 	CredentialsParameter any
 }
 
 type TaskDefinition_ContainerDefinitions_RestartPolicy struct {
-	// Whether the container's restart policy is enabled, allowing ECS to automatically restart the container if it exits or fails. (AI-inferred)
 	Enabled any
-	// Specifies a list of container exit codes that are ignored by the ECS restart policy, so the container is not restarted when it exits with any of these codes. (AI-inferred)
 	IgnoredExitCodes any
-	// The number of seconds to wait after a container exits before attempting to restart it, as part of the ECS restart policy to control the frequency of restart attempts. (AI-inferred)
 	RestartAttemptPeriod any
 }
 
 type TaskDefinition_ContainerDefinitions_SystemControls struct {
-	// The sysctl namespace (kernel parameter name) to configure for the container, such as `kernel.msgmax` or `net.ipv4.ip_forward`. (AI-inferred)
 	Namespace any
-	// The value assigned to the Linux kernel system control (sysctl) specified by the `namespace` field, such as `1` to enable IP forwarding in the container's network namespace. (AI-inferred)
 	Value any
 }
 
 type TaskDefinition_ContainerDefinitions_Ulimits struct {
-	// The hard limit (maximum value) for the ulimit setting on the container, which the container cannot exceed. (AI-inferred)
 	HardLimit any
-	// Specifies the type of ulimit to apply to the container, such as 'cpu', 'nofile', 'nproc', or other valid Linux resource limit names. (AI-inferred)
 	Name any
-	// The lower boundary (soft limit) for the container's ulimit value, specifying the resource limit that can be raised by the process up to the hard limit. (AI-inferred)
 	SoftLimit any
 }
 
 type TaskDefinition_ContainerDefinitions_VolumesFrom struct {
-	// If true, the container mounts the volume from the source container as read-only. (AI-inferred)
 	ReadOnly any
-	// The name of the source container from which this container mounts volumes, as defined in the containerDefinitions. (AI-inferred)
 	SourceContainer any
 }
 
 type TaskDefinition_ContainerDefinitions struct {
-	// The command to run in the container, which overrides the default command specified in the container image. (AI-inferred)
 	Command any
-	// The number of CPU units reserved for this container, which determines the relative CPU share allocated to it within the task. (AI-inferred)
 	Cpu any
-	// A list of ARNs for Windows credential specification files (used for gMSA or domain-joined containers) that are applied to this container definition, either stored in an S3 bucket or in the ECS service-linked role. (AI-inferred)
 	CredentialSpecs any
-	// Specifies dependencies on other containers in the same task, controlling startup and shutdown order by requiring a container to reach a certain condition (e.g., START, COMPLETE, SUCCESS, HEALTHY) before this container starts. (AI-inferred)
 	DependsOn any
-	// When set to true, disables networking for the container, meaning it does not receive a network interface and has no network access within the task. (AI-inferred)
 	DisableNetworking any
-	// A list of DNS search domain names that are passed to the container's resolver configuration, allowing the container to search these domains when resolving hostnames. (AI-inferred)
 	DnsSearchDomains any
-	// Specifies the DNS servers for the container, which are written to the container's /etc/resolv.conf file as nameserver entries. (AI-inferred)
 	DnsServers any
-	// Specifies the custom Docker labels to add to the container as key-value pairs, which can be used for organizing or identifying the container. (AI-inferred)
 	DockerLabels any
-	// Specifies the Docker security options (a list of strings) that are passed to the container runtime, such as 'no-new-privileges', to enforce additional security constraints on the container. (AI-inferred)
 	DockerSecurityOptions any
-	// Specifies the entry point for the container as a list of strings, overriding the default ENTRYPOINT defined in the container image, where the first string is the executable and the rest are arguments. (AI-inferred)
 	EntryPoint any
-	// The environment variables to pass to the container, as a list of objects each containing a name and a value. (AI-inferred)
 	Environment any
-	// A list of environment files (S3 objects) whose contents define environment variables that are injected into the container at task launch. (AI-inferred)
 	EnvironmentFiles any
-	// Specifies whether this container is essential to the task; if an essential container stops or fails, all other containers in the task are stopped and the task is considered failed. (AI-inferred)
 	Essential any
-	// Specifies additional hostname-to-IP address mappings to add to the container's /etc/hosts file, allowing the container to resolve those hostnames. (AI-inferred)
 	ExtraHosts any
-	// Specifies the FireLens configuration for a container in the ECS task definition, enabling log routing to destinations like Fluentd or Fluent Bit via a configurable type and options such as log metadata and config file delivery. (AI-inferred)
 	FirelensConfiguration any
-	// Defines the container health check configuration, including the command to run and parameters such as interval, timeout, retries, and start period, which ECS uses to determine container health. (AI-inferred)
 	HealthCheck any
-	// Sets the hostname of the container, which other containers in the same task definition can use for DNS resolution. (AI-inferred)
 	Hostname any
-	// The Docker image (e.g., a repository URL or image name:tag) to run for this container in the ECS task definition. (AI-inferred)
 	Image any
-	// When set to true, this enables the container's interactive mode, keeping STDIN open and allowing a shell or other process to interact with the container, equivalent to Docker's `--interactive` flag. (AI-inferred)
 	Interactive any
-	// Specifies a list of container names to link, enabling network connectivity and injecting environment variables for inter-container communication. (AI-inferred)
 	Links any
-	// Specifies Linux-specific container configuration options such as kernel capabilities, device mappings, init process enablement, shared memory size, tmpfs mounts, and swap settings for a container in an ECS task definition. (AI-inferred)
 	LinuxParameters any
-	// This object configures the logging driver for the container (e.g., awslogs, json-file, syslog) and its options, such as awslogs-group and awslogs-region, controlling how container logs are captured and delivered to the specified destination. (AI-inferred)
 	LogConfiguration any
-	// Specifies the hard limit (in MiB) of memory available to the container; when the container's memory usage reaches this limit, the container is killed. (AI-inferred)
 	Memory any
-	// The soft memory limit in MiB for the container, which ECS uses for placement and scheduling, allowing the container to burst above this value when the host has spare memory. (AI-inferred)
 	MemoryReservation any
-	// Specifies the mount points for data volumes in the container, including the source volume name and the container path where the volume is mounted. (AI-inferred)
 	MountPoints any
-	// The name of the container definition, which must be unique among all container definitions in the task definition and is used to reference the container from other definitions (e.g., links, dependsOn, and volume mounts). (AI-inferred)
 	Name any
-	// Defines the port mappings for a container, specifying container port, host port, and protocol (tcp/udp), which controls how traffic is routed to the container in the ECS task. (AI-inferred)
 	PortMappings any
-	// When set to true, the container runs in privileged mode, granting it elevated permissions on the host container instance (similar to Docker's --privileged flag). (AI-inferred)
 	Privileged any
-	// Indicates whether to allocate a pseudo-TTY (teletypewriter) for the container, enabling an interactive terminal session, similar to the Docker `--tty` flag. (AI-inferred)
 	PseudoTerminal any
-	// Specifies whether the container's root filesystem is mounted in read-only mode, preventing the container from writing to its root filesystem while still permitting writes to attached volumes. (AI-inferred)
 	ReadonlyRootFilesystem any
-	// Specifies the AWS Secrets Manager secret or SSM parameter ARN that holds the credentials needed to pull the container image from a private registry. (AI-inferred)
 	RepositoryCredentials any
-	// Specifies the type and amount of a resource (such as GPU or InferenceAccelerator) that the container requires, used to request hardware accelerators like NVIDIA GPUs or AWS Inferentia chips. (AI-inferred)
 	ResourceRequirements any
-	// Specifies the restart policy for the container, including whether it is enabled and the attempt period, allowing the container to automatically restart after a failure or exit; it is only supported for tasks using the Fargate launch type. (AI-inferred)
 	RestartPolicy any
-	// Specifies the secrets to pass to the container, referencing either AWS Secrets Manager secrets or SSM Parameter Store parameters, each containing a name and a valueFrom ARN or full SSM parameter name. (AI-inferred)
 	Secrets any
-	// Specifies the time duration in seconds to wait for the container to become healthy after it starts, after which the container is considered failed if it has not reached a healthy state. (AI-inferred)
 	StartTimeout any
-	// The time in seconds to wait for the container to stop after sending SIGTERM before the system sends SIGKILL, overriding the Docker daemon's default stop timeout. (AI-inferred)
 	StopTimeout any
-	// Specifies a list of system control (sysctl) settings to apply to the container, allowing you to modify kernel parameters such as network stack settings (e.g., net.ipv4.ip_forward) as defined in the container definition. (AI-inferred)
 	SystemControls any
-	// Defines a list of ulimit settings for the container that override Docker defaults, each specifying a resource type (such as 'nofile' or 'cpu') along with soft and hard limits. (AI-inferred)
 	Ulimits any
-	// The user name or numeric UID (and optionally group) to run the container process as, overriding the image's default user. (AI-inferred)
 	User any
-	// Specifies whether ECS version consistency is enabled for this container definition, accepting values 'enabled' or 'disabled' to control whether the container image is pinned to an exact digest for immutable deployments. (AI-inferred)
 	VersionConsistency any
-	// Specifies the volumes to mount from other containers in the same task definition, including the source container name and whether the mount is read-only. (AI-inferred)
 	VolumesFrom any
-	// The working directory inside the container where the container's entrypoint command is run. (AI-inferred)
 	WorkingDirectory any
 }
 
@@ -263,16 +166,12 @@ type TaskDefinition_EphemeralStorage struct {
 }
 
 type TaskDefinition_InferenceAccelerators struct {
-	// The name of the inference accelerator device, which the container uses to access the accelerator (e.g., 'device1'). (AI-inferred)
 	DeviceName any
-	// Specifies the Elastic Inference accelerator type (e.g., eia2.medium or eia1.large) to attach to the task. (AI-inferred)
 	DeviceType any
 }
 
 type TaskDefinition_PlacementConstraints struct {
-	// The cluster query language expression that defines the placement constraint when the type is 'memberOf', specifying which container instances the task can be placed on. (AI-inferred)
 	Expression any
-	// The placement constraint type, which must be either 'distinctInstance' (place each task on a distinct container instance) or 'memberOf' (use a cluster query language expression defined in the expression field). (AI-inferred)
 	Type any
 }
 
@@ -293,90 +192,60 @@ type TaskDefinition_RuntimePlatform struct {
 }
 
 type TaskDefinition_Tags struct {
-	// The key (name) of a key-value tag attached to the ECS task definition, used for resource identification and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }
 
 type TaskDefinition_Volumes_DockerVolumeConfiguration struct {
-	// When true, ECS automatically creates the named Docker volume if it does not already exist when the task is launched. (AI-inferred)
 	Autoprovision any
-	// Specifies the Docker volume driver to use, such as 'local' or a third-party driver (e.g., 'rexray'), for the volume configured in the task definition. (AI-inferred)
 	Driver any
-	// Specifies a map of Docker driver-specific options passed to the volume driver when configuring a Docker volume in an ECS task definition. (AI-inferred)
 	DriverOpts any
-	// Specifies key-value pairs that are assigned as Docker volume labels, which serve as metadata for organizing and identifying the volume and are passed to the Docker volume driver. (AI-inferred)
 	Labels any
-	// Determines the lifecycle of the Docker volume, where 'task' auto-provisions and deletes the volume when the task stops, and 'shared' allows the volume to exist independently of any single task. (AI-inferred)
 	Scope any
 }
 
 type TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfig struct {
-	// The access point ID of the EFS file system that Amazon ECS uses to mount the volume, applying the access point's root directory and POSIX user/group permissions to the task's container. (AI-inferred)
 	AccessPointId any
-	// Specifies whether to use IAM authorization for the EFS volume's access point, with a value of 'ENABLED' to enable IAM authentication or 'DISABLED' to use the default EFS security settings. (AI-inferred)
 	Iam any
 }
 
 type TaskDefinition_Volumes_EfsvolumeConfiguration struct {
-	// The authorization configuration for an Amazon EFS volume, specifying the EFS access point ID and IAM role to use for the volume's file system access. (AI-inferred)
 	AuthorizationConfig any
-	// The ID of the Amazon EFS file system that this volume mounts, identifying the target file system for the container's persistent storage. (AI-inferred)
 	FilesystemId any
-	// The path on the Amazon EFS file system to mount as the root directory for the container, defaulting to '/' if not specified. (AI-inferred)
 	RootDirectory any
-	// Indicates whether Amazon EFS uses encryption for data in transit when the volume is mounted in the task, accepting 'ENABLED' to enable encryption or 'DISABLED' to disable it. (AI-inferred)
 	TransitEncryption any
-	// Specifies the port on the EFS file system to use for transit encryption, required when transit encryption is enabled. (AI-inferred)
 	TransitEncryptionPort any
 }
 
 type TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig struct {
-	// Specifies the ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the Microsoft Active Directory domain credentials for mounting the FSx Windows file server volume. (AI-inferred)
 	CredentialsParameter any
-	// The domain field specifies the fully qualified domain name (FQDN) of the Active Directory domain to use for authentication when accessing the FSx Windows File Server volume. (AI-inferred)
 	Domain any
 }
 
 type TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration struct {
-	// Specifies the domain and the AWS Secrets Manager credential secret that the container uses to mount the FSx for Windows File Server volume. (AI-inferred)
 	AuthorizationConfig any
-	// The ID of the Amazon FSx for Windows File Server file system to mount for this volume in the ECS task definition. (AI-inferred)
 	FileSystemId any
-	// The root directory on the FSx Windows File Server file system to mount as the root for the container's volume. (AI-inferred)
 	RootDirectory any
 }
 
 type TaskDefinition_Volumes_Host struct {
-	// Specifies the path on the host container instance (EC2) that is mounted into the container when the volume type is 'host'. (AI-inferred)
 	SourcePath any
 }
 
 type TaskDefinition_Volumes_S3FilesVolumeConfiguration struct {
-	// The Amazon Resource Name (ARN) of the S3 access point that ECS uses to access the S3 bucket for this volume configuration. (AI-inferred)
 	AccessPointArn any
-	// The Amazon Resource Name (ARN) of the S3 bucket that ECS mounts as a file system volume to tasks using the S3 file volume configuration. (AI-inferred)
 	FileSystemArn any
-	// Specifies the subdirectory within the S3 bucket that is mounted as the root of the ECS volume, determining the base path for files exposed via this volume configuration. (AI-inferred)
 	RootDirectory any
-	// Specifies the custom port used for encrypted (TLS) communication with Amazon S3 when the S3 volume's transit encryption is enabled. (AI-inferred)
 	TransitEncryptionPort any
 }
 
 type TaskDefinition_Volumes struct {
-	// When set to true, indicates that the volume is configured on the container instance at launch time rather than being fully specified in the task definition, enabling dynamic volume configuration (such as for Docker volumes) at runtime. (AI-inferred)
 	ConfiguredAtLaunch any
-	// Specifies the Docker volume configuration for a volume in the task definition, including the volume scope, autoprovision setting, driver, driver options, and labels when the volume type is 'docker'. (AI-inferred)
 	DockerVolumeConfiguration any
-	// Configures an Amazon EFS volume for the task definition, specifying the EFS filesystem ID, root directory path, transit encryption and port, and optional IAM authorization via an access point. (AI-inferred)
 	EfsvolumeConfiguration any
-	// Specifies the configuration for using an Amazon FSx for Windows File Server volume as a data volume in the ECS task definition, including the file system ID, root directory, and authorization configuration. (AI-inferred)
 	FsxWindowsFileServerVolumeConfiguration any
-	// The host object defines the source path on the container instance for a bind mount volume, with its `sourcePath` property specifying the exact host directory to mount. (AI-inferred)
 	Host any
-	// The name of the volume, which is referenced by container definitions in the mountPoints.sourceVolume property. (AI-inferred)
 	Name any
-	// Configuration for an Amazon S3 file volume within an ECS task definition, specifying the S3 bucket, key (object path), and optional object version used to mount a single S3 object as a file into the container. (AI-inferred)
 	S3FilesVolumeConfiguration any
 }
 
@@ -749,7 +618,6 @@ type TaskDefinitionConfig struct {
 	ExecutionRoleArn any
 	// The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it.
 	Family any
-	// Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred)
 	InferenceAccelerators any
 	// The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong.
 	IpcMode any
@@ -788,7 +656,6 @@ type TaskDefinitionAttrs struct {
 	ExecutionRoleArn any
 	// The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it.
 	Family any
-	// Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred)
 	InferenceAccelerators any
 	// The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong.
 	IpcMode any
@@ -808,7 +675,6 @@ type TaskDefinitionAttrs struct {
 	RuntimePlatform any
 	// The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies this task definition. (AI-inferred)
 	TaskDefinitionArn any
 	// The short name or full Amazon Resource Name (ARN) of the IAMlong role that grants containers in the task permission to call AWS APIs on your behalf. For more information, see [Amazon ECS Task Role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) in the *Amazon Elastic Container Service Developer Guide*. IAM roles for tasks on Windows require that the ``-EnableTaskIAMRole`` option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see [Windows IAM roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html) in the *Amazon Elastic Container Service Developer Guide*. String validation is done on the ECS side. If an invalid string value is given for ``TaskRoleArn``, it may cause the Cloudformation job to hang.
 	TaskRoleArn any

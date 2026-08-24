@@ -8,7 +8,6 @@ export interface Environment_Checks {
 }
 
 export interface Environment_ConnectivityInfo {
-  /** Specifies the private route server peerings that the EVS environment uses to establish private network connectivity to your VPC. (AI-inferred) */
   privateRouteServerPeerings: string[] | Computed<string[]>;
 }
 
@@ -19,9 +18,7 @@ export interface Environment_Credentials {
 export interface Environment_Hosts {
   dedicatedHostId?: string | Computed<string>;
   hostName?: string | Computed<string>;
-  /** The EC2 instance type of a host in an AWS Elastic Video System (EVS) environment, which determines the compute and memory capacity available for video processing workloads. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** The name of the EC2 key pair used for SSH access to the host nodes in the EVS environment. (AI-inferred) */
   keyName?: string | Computed<string>;
   placementGroupId?: string | Computed<string>;
 }
@@ -35,16 +32,11 @@ export interface Environment_InitialVlans {
   expansionVlan1: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
   expansionVlan2: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
   hcx: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
-  /** The ID of the Amazon EC2 network ACL that controls HCX (Hybrid Cloud Extension) traffic on this initial VLAN in the EVS environment. (AI-inferred) */
   hcxNetworkAclId?: string | Computed<string>;
-  /** Indicates whether the initial VLAN is marked as public for VMware HCX, enabling its use for hybrid cloud network extension. (AI-inferred) */
   isHcxPublic?: boolean | Computed<boolean>;
   nsxUpLink: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
-  /** The vm_management object under initial_vlans specifies the VLAN configuration used for managing virtual machines within the AWS EVS environment. (AI-inferred) */
   vmManagement: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
-  /** Configures the VMkernel management interface for the specified initial VLAN, providing networking details for management traffic within the AWS EVS environment. (AI-inferred) */
   vmkManagement: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
-  /** Specifies the VLAN configuration used for VMware vMotion traffic in the initial VLAN setup for the environment. (AI-inferred) */
   vmotion: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
   vsan: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
   vtep: Environment_InitialVlans_EdgeVtep | Computed<Environment_InitialVlans_EdgeVtep>;
@@ -65,20 +57,14 @@ export interface Environment_Tags {
 }
 
 export interface Environment_VcfHostnames {
-  /** The hostname of the Cloud Builder virtual appliance in the VMware Cloud Foundation (VCF) environment, which is used to deploy and manage the software-defined data center (SDDC) infrastructure. (AI-inferred) */
   cloudBuilder: string | Computed<string>;
   nsx: string | Computed<string>;
   nsxEdge1: string | Computed<string>;
   nsxEdge2: string | Computed<string>;
-  /** Specifies the fully-qualified domain name (FQDN) for the second NSX Manager node (index 1) in the VMware Cloud Foundation environment's hostname configuration block. (AI-inferred) */
   nsxManager1: string | Computed<string>;
-  /** The fully qualified hostname of the second NSX Manager node in the VMware Cloud Foundation (VCF) environment, required by the EVS environment to connect to your VCF management cluster. (AI-inferred) */
   nsxManager2: string | Computed<string>;
-  /** The hostname to assign to the third NSX Manager node within the VMware Cloud Foundation (VCF) environment managed by this AWS Elastic VMware Service (EVS) environment. (AI-inferred) */
   nsxManager3: string | Computed<string>;
-  /** The hostname of the SDDC Manager node in the VMware Cloud Foundation (VCF) environment that this AWS EVS environment is associated with. (AI-inferred) */
   sddcManager: string | Computed<string>;
-  /** The hostname or IP address of the vCenter server in the VMware Cloud Foundation environment represented by this resource. (AI-inferred) */
   vcenter: string | Computed<string>;
 }
 
@@ -204,15 +190,12 @@ export interface EnvironmentConfig {
 export interface EnvironmentAttrs {
   checks: Environment_Checks[];
   connectivityInfo: Environment_ConnectivityInfo;
-  /** This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred) */
   createdAt: string;
   credentials: Environment_Credentials[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred) */
   environmentArn: string;
   environmentId: string;
   /** The name of an EVS environment */
   environmentName: string;
-  /** The read-only `environment_state` field reports the current lifecycle status of the AWS Elemental Video System (EVS) environment as tracked by the `AWS::Evs::Environment` resource. (AI-inferred) */
   environmentState: string;
   /** The initial hosts for environment only required upon creation. Modification after creation will have no effect */
   hosts: Environment_Hosts[];
@@ -225,7 +208,6 @@ export interface EnvironmentAttrs {
   serviceAccessSecurityGroups: Environment_ServiceAccessSecurityGroups;
   serviceAccessSubnetId: string;
   siteId: string;
-  /** A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred) */
   stateDetails: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Environment_Tags[];

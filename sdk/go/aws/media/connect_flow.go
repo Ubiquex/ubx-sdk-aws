@@ -18,25 +18,17 @@ type ConnectFlow_Maintenance struct {
 }
 
 type ConnectFlow_MediaStreams_Attributes_Fmtp struct {
-	// The channel_order FMTP parameter defines the ordering of audio channels in the media stream, such as 'L,R' for stereo or 'L,R,C,LFE' for 5.1 surround. (AI-inferred)
 	ChannelOrder any
-	// The colorimetry FMTP parameter of the media stream, which specifies the color space standard (e.g., BT.601, BT.709) for the video content. (AI-inferred)
 	Colorimetry any
-	// Sets the exact video frame rate (in frames per second) for this media stream, which is included in the FMTP (Format-Specific Parameters) configuration that MediaConnect uses to define the stream's format. (AI-inferred)
 	ExactFramerate any
-	// The pixel aspect ratio (PAR) for the media stream, expressed as a string ratio such as '16:9'. (AI-inferred)
 	Par any
-	// Specifies the horizontal and vertical RTP video range (such as 'full' or 'narrow') for the FMTP attributes of this media stream. (AI-inferred)
 	Range any
-	// Specifies the scan mode (for example, progressive or interlaced) of the video in the media stream's FMTP parameters for an AWS MediaConnect flow. (AI-inferred)
 	ScanMode any
 	Tcs any
 }
 
 type ConnectFlow_MediaStreams_Attributes struct {
-	// The FMTP (Format Parameters) for this media stream, containing codec- or transport-specific parameters (as defined in SDP) that describe the stream's encoding characteristics. (AI-inferred)
 	Fmtp any
-	// Specifies the language code of the media stream (e.g., 'en-US') in RFC 5646 format, used to identify the language of the audio content. (AI-inferred)
 	Lang any
 }
 
@@ -46,31 +38,20 @@ type ConnectFlow_MediaStreams_Tags struct {
 }
 
 type ConnectFlow_MediaStreams struct {
-	// The attributes object within a media stream specifies its encoding parameters, such as video resolution, frame rate, and bitrate, which control how the stream is encoded and transmitted. (AI-inferred)
 	Attributes any
-	// The RTP clock rate (in Hz) for the media stream, which MediaConnect uses to timestamp and synchronize packets for that stream (e.g., 48000 for audio, 90000 for video). (AI-inferred)
 	ClockRate any
-	// A user-defined description for the media stream, used to identify it within an AWS Elemental MediaConnect flow. (AI-inferred)
 	Description any
-	// The RTP payload type number (0-127) that identifies the format of the media stream, such as the codec and sampling rate for audio or video. (AI-inferred)
 	Fmt any
-	// The unique numeric identifier for the media stream within the MediaConnect flow, used to reference the media stream when configuring sources and outputs. (AI-inferred)
 	MediaStreamId any
-	// A unique name for the media stream within the MediaConnect flow, used to identify the stream when associating it with outputs or entitlements. (AI-inferred)
 	MediaStreamName any
-	// The type of the media stream, such as video, audio, ancillary-data, or combination, which determines how the stream is handled in the flow. (AI-inferred)
 	MediaStreamType any
 	Tags any
-	// The video format of the media stream, specifying the video resolution and frame rate (e.g., '1080p') for the flow's video transport. (AI-inferred)
 	VideoFormat any
 }
 
 type ConnectFlow_NdiConfig_NdiDiscoveryServers struct {
-	// The IP address or hostname of the NDI Discovery Server used by the flow to discover NDI sources on the network. (AI-inferred)
 	DiscoveryServerAddress any
-	// The TCP port on which the NDI discovery server listens, used to discover NDI sources for the MediaConnect flow. (AI-inferred)
 	DiscoveryServerPort any
-	// Specifies the VPC interface adapter name that the NDI discovery server uses to communicate within a virtual private cloud, enabling the MediaConnect flow to connect to NDI sources on that private network. (AI-inferred)
 	VpcInterfaceAdapter any
 }
 
@@ -79,7 +60,6 @@ type ConnectFlow_NdiConfig struct {
 	MachineName any
 	// A list of up to three NDI discovery server configurations. While not required by the API, this configuration is necessary for NDI functionality to work properly.
 	NdiDiscoveryServers any
-	// Specifies whether the NDI (Network Device Interface) output configuration is enabled or disabled for the flow, using values ENABLED or DISABLED. (AI-inferred)
 	NdiState any
 }
 
@@ -117,48 +97,37 @@ type ConnectFlow_Source_GatewayBridgeSource struct {
 }
 
 type ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations_Interface struct {
-	// The name of the network interface on the source device that receives the media stream for this input configuration. (AI-inferred)
 	Name any
 }
 
 type ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations struct {
-	// The port number on the referenced interface where this input configuration receives the media stream from the upstream source. (AI-inferred)
 	InputPort any
-	// This object identifies the VPC interface used for this input configuration by the flow's VPC interface name, which must correspond to a VPC interface attached to the flow's source. (AI-inferred)
 	Interface any
 }
 
 type ConnectFlow_Source_MediaStreamSourceConfigurations struct {
-	// The encoding name (e.g., 'raw', 'aac', or 'nal') assigned to the media stream within the flow source's media stream source configuration. (AI-inferred)
 	EncodingName any
-	// Specifies the input port and network interface for each media stream in the flow's source, enabling the flow to receive each media stream on a dedicated port and interface. (AI-inferred)
 	InputConfigurations any
-	// Specifies the friendly name of the media stream that this source configuration applies to, matching the media stream name that the upstream source encodes. (AI-inferred)
 	MediaStreamName any
 }
 
 type ConnectFlow_Source_NdiSourceSettings struct {
-	// Specifies the NDI source name that identifies the incoming NDI stream to be used as the source for the MediaConnect flow. (AI-inferred)
 	SourceName any
 }
 
 type ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration_SecretsManager struct {
-	// The ARN of an IAM role that AWS Elemental MediaConnect assumes to access the AWS Secrets Manager secret containing the transit encryption key for decryption of the source flow. (AI-inferred)
 	RoleArn any
-	// The ARN of the AWS Secrets Manager secret that stores the decryption key for decrypting transit traffic on this MediaConnect flow source. (AI-inferred)
 	SecretArn any
 }
 
 type ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration struct {
 	Automatic any
-	// Specifies the AWS Secrets Manager secret that contains the encryption key used for decrypting the incoming media source's transit integration. (AI-inferred)
 	SecretsManager any
 }
 
 type ConnectFlow_Source_RouterIntegrationTransitDecryption struct {
 	// Configuration settings for flow transit encryption keys.
 	EncryptionKeyConfiguration any
-	// The type of encryption key (for example, 'static_key') used by the MediaConnect flow to decrypt the transit stream arriving from the router integration source. (AI-inferred)
 	EncryptionKeyType any
 }
 
@@ -187,11 +156,9 @@ type ConnectFlow_Source struct {
 	MinLatency any
 	// The name of the source.
 	Name any
-	// This object configures the NDI (Network Device Interface) source for the flow, specifying the listening port and NDI tier (e.g., NDI or NDI|HX) that MediaConnect uses to receive the stream from an NDI device. (AI-inferred)
 	NdiSourceSettings any
 	// The protocol that is used by the source.
 	Protocol any
-	// Indicates the current integration state of the source with an AWS Elemental MediaConnect router, such as ENABLED or DISABLED. (AI-inferred)
 	RouterIntegrationState any
 	// The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
 	RouterIntegrationTransitDecryption any
@@ -229,25 +196,20 @@ type ConnectFlow_SourceFailoverConfig struct {
 	RecoveryWindow any
 	// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
 	SourcePriority any
-	// Determines whether automatic source failover is enabled for the MediaConnect flow; set to 'ENABLED' to allow failover to the secondary source, or 'DISABLED' to turn it off. (AI-inferred)
 	State any
 }
 
 type ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio struct {
-	// Controls whether the flow's source detects silent audio; set to ENABLED to activate monitoring or DISABLED to turn it off. (AI-inferred)
 	State any
-	// The duration (in seconds) that incoming audio must remain silent before MediaConnect triggers a silent audio monitoring alarm. (AI-inferred)
 	ThresholdSeconds any
 }
 
 type ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings struct {
-	// Configures silent audio monitoring for the MediaConnect flow's source, including the duration threshold that triggers a silence alert and whether detection is enabled. (AI-inferred)
 	SilentAudio any
 }
 
 type ConnectFlow_SourceMonitoringConfig_VideoMonitoringSettings struct {
 	BlackFrames any
-	// Specifies the detection settings for frozen frames in the video stream, including whether the detection is enabled and the maximum duration (in milliseconds) that a frame can remain unchanged before it is considered frozen. (AI-inferred)
 	FrozenFrames any
 }
 
@@ -263,16 +225,11 @@ type ConnectFlow_SourceMonitoringConfig struct {
 }
 
 type ConnectFlow_VpcInterfaces struct {
-	// The name of the VPC interface, which identifies it within the flow. (AI-inferred)
 	Name any
 	NetworkInterfaceIds any
-	// Specifies the network interface type for the VPC interface, either 'EIP' to allocate an Elastic IP address or 'ANY' for a standard network interface without a public IP. (AI-inferred)
 	NetworkInterfaceType any
-	// ARN of the IAM role that MediaConnect assumes to create and manage the elastic network interface in the VPC for this flow's VPC interface. (AI-inferred)
 	RoleArn any
-	// The list of security group IDs that are associated with the VPC interface used by the MediaConnect flow. (AI-inferred)
 	SecurityGroupIds any
-	// The ID of the subnet in which the VPC interface is created. (AI-inferred)
 	SubnetId any
 	Tags any
 }
@@ -420,7 +377,6 @@ var ConnectFlow_VpcInterfacesFields = ubx.FieldMap{
 type ConnectFlowConfig struct {
 	// The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
 	AvailabilityZone any
-	// Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred)
 	EncodingConfig any
 	// Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI sources or outputs on the flow.
 	FlowSize any
@@ -447,7 +403,6 @@ type ConnectFlowAttrs struct {
 	AvailabilityZone any
 	// The IP address from which video will be sent to output destinations.
 	EgressIp any
-	// Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred)
 	EncodingConfig any
 	// The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
 	FlowArn any

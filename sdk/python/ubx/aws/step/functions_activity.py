@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FunctionsActivity_EncryptionConfiguration:
-    # Specifies the maximum duration, in seconds, that AWS Step Functions will reuse a customer-managed data key from AWS KMS before requesting a new one for encrypting activity data. (AI-inferred)
     kms_data_key_reuse_period_seconds: Any = None
-    # The AWS KMS key ID or ARN used to encrypt the activity's data when encryption is configured for the Step Functions activity. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the type of encryption key used for the activity's data, distinguishing between a customer-managed AWS KMS key (CUSTOMER_MANAGED_KMS_KEY) and an AWS-owned key (AWS_OWNED_KEY). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class FunctionsActivity_Tags:
-    # The key of a tag attached to the AWS Step Functions activity, used to categorize and manage the activity resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Step Functions activity. (AI-inferred)
     value: Any = None
 
 _FunctionsActivity_EncryptionConfigurationFields = {
@@ -36,19 +31,14 @@ _FunctionsActivity_TagsFields = {
 @dataclasses.dataclass
 class FunctionsActivityConfig:
     encryption_configuration: Any = None
-    # The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred)
     name: Any = None
-    # Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class FunctionsActivityAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying this AWS Step Functions activity, which is used to reference the activity in state machine definitions. (AI-inferred)
     arn: Any = None
     encryption_configuration: Any = None
-    # The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred)
     name: Any = None
-    # Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred)
     tags: Any = None
 
 FunctionsActivity = ubx.ResourceBinding(

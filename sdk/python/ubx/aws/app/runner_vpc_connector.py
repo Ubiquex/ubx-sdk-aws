@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RunnerVpcConnector_Tags:
-    # The key of a user-defined tag that can be attached to the AWS App Runner VPC connector for identification and resource management. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair that can be assigned to the App Runner VPC connector for resource organization, access control, and cost tracking. (AI-inferred)
     value: Any = None
 
 _RunnerVpcConnector_TagsFields = {

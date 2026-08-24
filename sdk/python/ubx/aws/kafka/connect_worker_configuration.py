@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectWorkerConfiguration_Tags:
-    # Specifies the key of a tag to attach to this AWS Managed Kafka Connect worker configuration, enabling cost allocation, resource organization, and access control in AWS. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag applied to the AWS Kafka Connect worker configuration, used for custom metadata, resource organization, and cost tracking. (AI-inferred)
     value: Any = None
 
 _ConnectWorkerConfiguration_TagsFields = {

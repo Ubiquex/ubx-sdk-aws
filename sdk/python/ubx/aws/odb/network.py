@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Network_ManagedServices_CrossRegionS3RestoreSourcesAccess:
     ipv4_addresses: Any = None
-    # Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred)
     region: Any = None
     status: Any = None
 
@@ -92,7 +91,6 @@ class Network_ManagedServices:
 
 @dataclasses.dataclass
 class Network_Tags:
-    # The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

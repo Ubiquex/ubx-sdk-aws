@@ -8,28 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionCondition:
-    # Specifies the WAF action (ALLOW, BLOCK, or COUNT) that must match the action taken by AWS WAF on a request, as part of an action condition in a logging filter. (AI-inferred)
     action: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameCondition:
-    # The name of the AWS WAF label that a web request must have for the logging filter condition to match, thereby including or excluding that request's logs. (AI-inferred)
     label_name: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_LoggingFilter_Filters_Conditions:
-    # Specifies the web request action (e.g., ALLOW, BLOCK, COUNT) that must match for the logging filter condition to apply, allowing log filtering based on the action taken by AWS WAF. (AI-inferred)
     action_condition: Any = None
-    # Defines a condition that matches when a web request carries a label with the exact name specified, allowing the WAFv2 logging filter to include or exclude requests from logging based on that label. (AI-inferred)
     label_name_condition: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_LoggingFilter_Filters:
-    # Specifies whether to keep or drop logs for matching requests, with valid values `KEEP` or `DROP`. (AI-inferred)
     behavior: Any = None
-    # A list of conditions for this logging filter, where each condition pairs a KEEP/DROP action with a label name to match, determining whether matching web requests are included in or excluded from the WAF logs. (AI-inferred)
     conditions: Any = None
-    # Determines whether the filter's conditions must all match (MEETS_ALL) or any one must match (MEETS_ANY) for the filter to apply. (AI-inferred)
     requirement: Any = None
 
 @dataclasses.dataclass
@@ -41,18 +34,13 @@ class LoggingConfiguration_LoggingFilter:
 
 @dataclasses.dataclass
 class LoggingConfiguration_RedactedFields_SingleHeader:
-    # The name of the HTTP header whose values are redacted (masked) from the logs delivered by this WAFv2 logging configuration. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class LoggingConfiguration_RedactedFields:
-    # Redact the HTTP method (e.g., GET, POST) from the logs for web requests matching the logging configuration. (AI-inferred)
     method: Any = None
-    # This field specifies whether to redact the query string of web requests from the logs produced by the WAFv2 logging configuration. (AI-inferred)
     query_string: Any = None
-    # Specifies the name of a single request header whose value WAF will redact in the logging configuration. (AI-inferred)
     single_header: Any = None
-    # When included as an empty object in a redacted_fields block, this setting causes the URI path of matching web requests to be redacted (omitted) from the WAF logging output. (AI-inferred)
     uri_path: Any = None
 
 _LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionConditionFields = {

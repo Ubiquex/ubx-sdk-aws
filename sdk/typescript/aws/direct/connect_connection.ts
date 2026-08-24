@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectConnection_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value for a tag assigned to the Direct Connect connection, used to store arbitrary metadata or cost-allocation information. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

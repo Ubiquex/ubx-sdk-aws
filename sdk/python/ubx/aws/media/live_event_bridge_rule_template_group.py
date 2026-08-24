@@ -19,15 +19,12 @@ class LiveEventBridgeRuleTemplateGroupConfig:
 class LiveEventBridgeRuleTemplateGroupAttrs:
     # An eventbridge rule template group's ARN (Amazon Resource Name)
     arn: Any = None
-    # The timestamp indicating when the EventBridge rule template group was created (computed by AWS). (AI-inferred)
     created_at: Any = None
     # A resource's optional description.
     description: Any = None
     # An eventbridge rule template group's id. AWS provided template groups have ids that start with `aws-`
     id: Any = None
-    # The unique identifier assigned by AWS MediaLive to this event bridge rule template group, used to reference the group after creation. (AI-inferred)
     identifier: Any = None
-    # The date and time when the EventBridge rule template group was last modified. (AI-inferred)
     modified_at: Any = None
     # A resource's name. Names must be unique within the scope of a resource type in a specific region.
     name: Any = None

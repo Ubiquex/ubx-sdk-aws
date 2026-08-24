@@ -8,136 +8,87 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration_AggregateConfiguration:
-    # Specifies the list of ONTAP aggregates (storage pools) to which the volume's data is assigned within the aggregate configuration of an FSx for ONTAP volume. (AI-inferred)
     aggregates: Any = None
-    # For an FSx for ONTAP volume, specifies the number of constituent volumes to create within each aggregate that is selected by the aggregate configuration, controlling the volume's data distribution and performance across aggregates. (AI-inferred)
     constituents_per_aggregate: Any = None
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration_SnaplockConfiguration_AutocommitPeriod:
-    # Specifies the unit of time (DAYS, MONTHS, or YEARS) used with the accompanying value to determine how long after creation a file on a SnapLock volume is automatically committed to a write-once-read-many (WORM) state. (AI-inferred)
     type: Any = None
-    # The numeric value of the autocommit period, used with the unit type to define how long after file modification or creation files are automatically committed to the WORM state in the SnapLock configuration of the FSx for ONTAP volume. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration_SnaplockConfiguration_RetentionPeriod:
-    # Sets the default retention period applied to files on this SnapLock volume when no explicit retention period is specified at file creation. (AI-inferred)
     default_retention: Any = None
-    # Specifies the maximum length of time that a file can remain locked in the SnapLock (WORM) volume, expressed as a value and unit (e.g., years, days). (AI-inferred)
     maximum_retention: Any = None
-    # Specifies the minimum retention period for files in an FSx for ONTAP SnapLock volume, determining how long a file must remain locked before it can be modified or deleted. (AI-inferred)
     minimum_retention: Any = None
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration_SnaplockConfiguration:
-    # The name or ID of the ONTAP volume used to store audit logs for this SnapLock configuration. (AI-inferred)
     audit_log_volume: Any = None
-    # Specifies the duration after which a file on the FSx for ONTAP SnapLock volume is automatically committed to the WORM state, using a predefined interval such as 5 minutes, 1 hour, or 1 day. (AI-inferred)
     autocommit_period: Any = None
-    # Specifies whether privileged delete is enabled or disabled for the SnapLock volume, controlling whether an administrator can permanently delete files before their retention period expires. (AI-inferred)
     privileged_delete: Any = None
-    # Defines the default and maximum retention periods for WORM-protected files in this ONTAP SnapLock volume. (AI-inferred)
     retention_period: Any = None
-    # Specifies the SnapLock immutability mode for the volume, either 'COMPLIANCE' or 'ENTERPRISE', determining the WORM (write-once-read-many) protection behavior. (AI-inferred)
     snaplock_type: Any = None
-    # Turns on volume append mode for the SnapLock volume, allowing existing WORM-protected files to be appended to without modifying or deleting their content. (AI-inferred)
     volume_append_mode_enabled: Any = None
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration_TieringPolicy:
-    # The number of days data must remain in the standard (hot) storage tier before being automatically moved to the cold capacity pool storage tier for this FSx for ONTAP volume's tiering policy. (AI-inferred)
     cooling_period: Any = None
-    # Specifies the tiering policy name that controls how data is tiered from SSD to cold storage for the ONTAP volume, with allowed values like AUTO, ALL, SNAPSHOT_ONLY, or NONE. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Volume_OntapConfiguration:
-    # Configures the ONTAP storage aggregate name and size for the FSx volume, determining which aggregate hosts the volume's data and its allocated storage capacity. (AI-inferred)
     aggregate_configuration: Any = None
-    # Indicates whether tags on the volume are copied to backups created from it. (AI-inferred)
     copy_tags_to_backups: Any = None
-    # The junction path where the ONTAP volume is mounted within the file system, such as /vol1. (AI-inferred)
     junction_path: Any = None
-    # Specifies the ONTAP volume type for the volume, with valid values RW (read/write), DP (data-protection), or LS (load-sharing). (AI-inferred)
     ontap_volume_type: Any = None
-    # Specifies the security style for the FSx for ONTAP volume, which can be UNIX, NTFS, or MIXED, controlling how file and directory permissions are applied. (AI-inferred)
     security_style: Any = None
-    # The size of the FSx for ONTAP volume, specified in bytes. (AI-inferred)
     size_in_bytes: Any = None
-    # Specifies the storage capacity of the FSx for ONTAP volume in megabytes (MB), used to set the volume's size. (AI-inferred)
     size_in_megabytes: Any = None
-    # Specifies the SnapLock (write-once, read-many) compliance settings for the FSx for ONTAP volume, including retention periods, autocommit interval, privileged delete behavior, and whether the volume is a SnapLock audit log volume. (AI-inferred)
     snaplock_configuration: Any = None
-    # The snapshot policy to apply to the FSx for ONTAP volume, controlling automatic snapshot creation schedules. (AI-inferred)
     snapshot_policy: Any = None
-    # Indicates whether storage efficiency, which includes data compression, deduplication, and compaction, is enabled for the FSx for ONTAP volume. (AI-inferred)
     storage_efficiency_enabled: Any = None
-    # The unique identifier of the storage virtual machine (SVM) that will host this FSx for ONTAP volume. (AI-inferred)
     storage_virtual_machine_id: Any = None
-    # Defines the tiering policy for the ONTAP volume, specifying how cold data is moved from the SSD tier to the capacity pool storage, including the tiering policy name and optional cooling period. (AI-inferred)
     tiering_policy: Any = None
-    # Specifies whether the ONTAP volume is a FlexVol (standard flexible volume) or a FlexGroup (a scalable collection of FlexVols), with valid values FLEXVOL and FLEXGROUP. (AI-inferred)
     volume_style: Any = None
 
 @dataclasses.dataclass
 class Volume_OpenZfsconfiguration_NfsExports_ClientConfigurations:
-    # Specifies the clients that can access the NFS export, such as a single IP address, an IP address range in CIDR notation, or a hostname. (AI-inferred)
     clients: Any = None
-    # The list of NFS protocol options (for example, 'nfsvers=4.1' or 'sec=sys') that are applied to the client configuration for this OpenZFS volume export. (AI-inferred)
     options: Any = None
 
 @dataclasses.dataclass
 class Volume_OpenZfsconfiguration_NfsExports:
-    # Specifies the list of client configurations that define which client IP addresses or ranges can access the NFS export and the access options (such as read/write permissions) applied to them. (AI-inferred)
     client_configurations: Any = None
 
 @dataclasses.dataclass
 class Volume_OpenZfsconfiguration_OriginSnapshot:
-    # Specifies the copy strategy to use when creating the OpenZFS volume from the origin snapshot, with allowed values FULL_COPY, INCREMENTAL_COPY, or NONE. (AI-inferred)
     copy_strategy: Any = None
-    # The Amazon Resource Name (ARN) of the OpenZFS snapshot to use as the origin when creating the volume. (AI-inferred)
     snapshot_arn: Any = None
 
 @dataclasses.dataclass
 class Volume_OpenZfsconfiguration_UserAndGroupQuotas:
-    # The numeric UID or GID that identifies the user or group for which this OpenZFS volume quota is set. (AI-inferred)
     id: Any = None
-    # Defines the storage capacity quota in GiB for a user or group on the FSx for OpenZFS volume, limiting how much space that user or group can consume. (AI-inferred)
     storage_capacity_quota_gi_b: Any = None
-    # The type of quota, either USER or GROUP, determines whether the quota applies to a specific user or group by ID. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Volume_OpenZfsconfiguration:
-    # Controls whether tags from this FSx for OpenZFS volume are copied to any snapshots created from it, as specified by CopyTagsToSnapshots. (AI-inferred)
     copy_tags_to_snapshots: Any = None
-    # Specifies the data compression algorithm for the OpenZFS volume, with valid values of NONE, ZSTD, or LZ4. (AI-inferred)
     data_compression_type: Any = None
-    # This field specifies the NFS export configuration for the OpenZFS volume, including client access rules and transit encryption settings for each export. (AI-inferred)
     nfs_exports: Any = None
-    # A list of options for the FSx for OpenZFS volume, where the only supported value is DELETE_CHILD_VOLUMES_AND_SNAPSHOTS, which causes the volume's child volumes and snapshots to be deleted when the volume is deleted. (AI-inferred)
     options: Any = None
-    # Specifies the source snapshot and copy strategy (full or incremental) used to create the OpenZFS volume from an existing FSx for OpenZFS snapshot. (AI-inferred)
     origin_snapshot: Any = None
-    # Specifies the ID of the parent volume in the OpenZFS file system that this volume is a child of, using 'root' to create a root volume. (AI-inferred)
     parent_volume_id: Any = None
-    # When set to true, makes the FSx for OpenZFS volume read-only; when false (default), the volume is writable. (AI-inferred)
     read_only: Any = None
-    # Specifies the record size of the OpenZFS volume in kibibytes (KiB), which controls the block size for file data and must be one of the valid values 4, 8, 16, 32, 64, 128, 256, 512, or 1024 (default 128). (AI-inferred)
     record_size_ki_b: Any = None
-    # Specifies the maximum storage capacity in GiB that the OpenZFS volume can use, acting as a quota; when omitted, the volume may consume all of the file system's available storage. (AI-inferred)
     storage_capacity_quota_gi_b: Any = None
-    # The amount of storage capacity in GiB to reserve for the OpenZFS volume, guaranteeing that this space is available for the volume's data and snapshots. (AI-inferred)
     storage_capacity_reservation_gi_b: Any = None
-    # Defines storage capacity quotas for specific users or groups on the OpenZFS volume, with each entry specifying the quota type (user or group), the user or group ID, and the maximum storage capacity in GiB. (AI-inferred)
     user_and_group_quotas: Any = None
 
 @dataclasses.dataclass
 class Volume_Tags:
-    # The tag key portion of a tag attached to the FSx volume, used to organize and identify the volume, support cost allocation, and enable IAM-based access control, with uniqueness required among tags on the volume. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag associated with the FSx volume, enabling customization of metadata for resource tracking, cost allocation, and access control policies. (AI-inferred)
     value: Any = None
 
 _Volume_OntapConfiguration_AggregateConfigurationFields = {
@@ -275,36 +226,23 @@ _Volume_TagsFields = {
 
 @dataclasses.dataclass
 class VolumeConfig:
-    # The ID of the backup from which the volume is created, used to restore a volume from an existing backup. (AI-inferred)
     backup_id: Any = None
-    # Specifies the name of the Amazon FSx volume, which must be unique within the file system and is used to identify the volume. (AI-inferred)
     name: Any = None
-    # Specifies the ONTAP-specific configuration for an Amazon FSx for NetApp ONTAP volume, including settings such as the junction path, security style, size, and storage efficiency. (AI-inferred)
     ontap_configuration: Any = None
-    # Configures the OpenZFS-specific properties of this FSx volume, such as the parent volume ID, data compression type, NFS export settings, and storage capacity quotas. (AI-inferred)
     open_zfsconfiguration: Any = None
     tags: Any = None
-    # Specifies the type of FSx volume being created, either ONTAP or OPENZFS, which determines the applicable file system and volume configuration. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class VolumeAttrs:
-    # The ID of the backup from which the volume is created, used to restore a volume from an existing backup. (AI-inferred)
     backup_id: Any = None
-    # Specifies the name of the Amazon FSx volume, which must be unique within the file system and is used to identify the volume. (AI-inferred)
     name: Any = None
-    # Specifies the ONTAP-specific configuration for an Amazon FSx for NetApp ONTAP volume, including settings such as the junction path, security style, size, and storage efficiency. (AI-inferred)
     ontap_configuration: Any = None
-    # Configures the OpenZFS-specific properties of this FSx volume, such as the parent volume ID, data compression type, NFS export settings, and storage capacity quotas. (AI-inferred)
     open_zfsconfiguration: Any = None
-    # The Amazon Resource Name (ARN) of the FSx volume. (AI-inferred)
     resource_arn: Any = None
     tags: Any = None
-    # The system-assigned UUID for an FSx for OpenZFS volume, which serves as the unique mount name that clients use to access the volume and is distinct from the volume's resource ID. (AI-inferred)
     uuid: Any = None
-    # The unique AWS-assigned identifier for the FSx volume, formatted as `fsvol-` followed by a 17-character hexadecimal string, which is populated after the volume is created. (AI-inferred)
     volume_id: Any = None
-    # Specifies the type of FSx volume being created, either ONTAP or OPENZFS, which determines the applicable file system and volume configuration. (AI-inferred)
     volume_type: Any = None
 
 Volume = ubx.ResourceBinding(

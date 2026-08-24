@@ -4,29 +4,20 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MigrationProject_SchemaConversionApplicationAttributes struct {
-	// The S3 bucket path (prefix) where the AWS DMS Schema Conversion application stores schema conversion artifacts (such as converted schemas and mapping rules) for the migration project. (AI-inferred)
 	S3BucketPath any
-	// The ARN of the IAM role that AWS DMS assumes to access the S3 bucket used by the schema conversion application, enabling it to read and write schema conversion artifacts to the bucket specified by the sibling `s3_bucket_path` attribute. (AI-inferred)
 	S3BucketRoleArn any
 }
 
 type MigrationProject_SourceDataProviderDescriptors struct {
-	// The Amazon Resource Name (ARN) of the source data provider used to configure the migration project in AWS Database Migration Service. (AI-inferred)
 	DataProviderArn any
-	// Specifies the unique identifier or ARN of the AWS DMS source data provider associated with this migration project. (AI-inferred)
 	DataProviderIdentifier any
-	// The name of an existing AWS DMS data provider that acts as the source for this migration project, used within a source data provider descriptor. (AI-inferred)
 	DataProviderName any
-	// The ARN of the IAM role that AWS DMS assumes to access the AWS Secrets Manager secret containing the source data provider's credentials. (AI-inferred)
 	SecretsManagerAccessRoleArn any
-	// Specifies the ARN or name of the AWS Secrets Manager secret that contains the credentials for the source database in the migration project. (AI-inferred)
 	SecretsManagerSecretId any
 }
 
 type MigrationProject_Tags struct {
-	// The key of a tag that can be assigned to an AWS DMS migration project, used for categorizing, identifying, and managing the project resource within the service. (AI-inferred)
 	Key any
-	// The user-defined string value of a tag applied to an AWS DMS migration project, used to store metadata such as project purpose, owner, or environment for resource management and cost tracking. (AI-inferred)
 	Value any
 }
 

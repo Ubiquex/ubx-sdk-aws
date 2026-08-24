@@ -6,13 +6,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ApiDestinationConfig struct {
 	// The arn of the connection.
 	ConnectionArn any
-	// A description for the API destination to create. (AI-inferred)
 	Description any
-	// The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred)
 	HttpMethod any
 	// Url endpoint to invoke.
 	InvocationEndpoint any
-	// The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred)
 	InvocationRateLimitPerSecond any
 	// Name of the apiDestination.
 	Name any
@@ -25,13 +22,10 @@ type ApiDestinationAttrs struct {
 	ArnForPolicy any
 	// The arn of the connection.
 	ConnectionArn any
-	// A description for the API destination to create. (AI-inferred)
 	Description any
-	// The HTTP method (e.g., GET, POST, PATCH) used when EventBridge invokes the API destination endpoint. (AI-inferred)
 	HttpMethod any
 	// Url endpoint to invoke.
 	InvocationEndpoint any
-	// The maximum number of invocations per second that EventBridge allows to the API destination. (AI-inferred)
 	InvocationRateLimitPerSecond any
 	// Name of the apiDestination.
 	Name any

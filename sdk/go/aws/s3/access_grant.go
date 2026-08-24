@@ -16,9 +16,7 @@ type AccessGrant_Grantee struct {
 }
 
 type AccessGrant_Tags struct {
-	// The tag key attached to the S3 Access Grant, used to organize and manage the grant, and can be referenced in resource-based policies for access control. (AI-inferred)
 	Key any
-	// Specifies the value for a given tag key applied to the S3 Access Grant, which is used for organizing, identifying, and managing the resource in AWS. (AI-inferred)
 	Value any
 }
 
@@ -37,19 +35,16 @@ var AccessGrant_TagsFields = ubx.FieldMap{
 	}
 
 type AccessGrantConfig struct {
-	// Configures the S3 sub-prefix (S3SubPrefix) within the associated access grants location, restricting the access grant's permission scope to that prefix. (AI-inferred)
 	AccessGrantsLocationConfiguration any
 	// The custom S3 location to be accessed by the grantee
 	AccessGrantsLocationId any
 	// The ARN of the application grantees will use to access the location
 	ApplicationArn any
-	// Defines the entity that receives the access grant, including its type (such as an IAM principal, directory user, or directory group) and its identifier (e.g., an ARN or directory ID). (AI-inferred)
 	Grantee any
 	// The level of access to be afforded to the grantee
 	Permission any
 	// The type of S3SubPrefix.
 	S3PrefixType any
-	// Assigns a list of user-defined tag key-value pairs to the S3 Access Grant to help identify, organize, and manage the grant (e.g., for cost allocation). (AI-inferred)
 	Tags any
 }
 
@@ -58,7 +53,6 @@ type AccessGrantAttrs struct {
 	AccessGrantArn any
 	// The ID assigned to this access grant.
 	AccessGrantId any
-	// Configures the S3 sub-prefix (S3SubPrefix) within the associated access grants location, restricting the access grant's permission scope to that prefix. (AI-inferred)
 	AccessGrantsLocationConfiguration any
 	// The custom S3 location to be accessed by the grantee
 	AccessGrantsLocationId any
@@ -66,13 +60,11 @@ type AccessGrantAttrs struct {
 	ApplicationArn any
 	// The S3 path of the data to which you are granting access. It is a combination of the S3 path of the registered location and the subprefix.
 	GrantScope any
-	// Defines the entity that receives the access grant, including its type (such as an IAM principal, directory user, or directory group) and its identifier (e.g., an ARN or directory ID). (AI-inferred)
 	Grantee any
 	// The level of access to be afforded to the grantee
 	Permission any
 	// The type of S3SubPrefix.
 	S3PrefixType any
-	// Assigns a list of user-defined tag key-value pairs to the S3 Access Grant to help identify, organize, and manage the grant (e.g., for cost allocation). (AI-inferred)
 	Tags any
 }
 

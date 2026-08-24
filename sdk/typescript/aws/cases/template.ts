@@ -7,14 +7,11 @@ export interface Template_LayoutConfiguration {
 }
 
 export interface Template_RequiredFields {
-  /** The identifier of the case field that must be included when creating a case using this template. (AI-inferred) */
   fieldId?: string | Computed<string>;
 }
 
 export interface Template_Rules {
-  /** Specifies the unique identifier for a rule within the AWS Cases template, used to reference the rule when defining conditional field requirements. (AI-inferred) */
   caseRuleId?: string | Computed<string>;
-  /** The unique identifier of the case field in Amazon Cases that this rule applies to, matching a field defined in the associated domain. (AI-inferred) */
   fieldId?: string | Computed<string>;
 }
 

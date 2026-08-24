@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FunctionsStateMachineVersionConfig {
-  /** An optional description of the state machine version, used to provide a human-readable label for the version. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the state machine for which this version is created. (AI-inferred) */
   stateMachineArn: string | Computed<string>;
-  /** Specifies the revision ID of the state machine to create the version from; if omitted, the version is created from the latest revision. (AI-inferred) */
   stateMachineRevisionId?: string | Computed<string>;
 }
 
 export interface FunctionsStateMachineVersionAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this state machine version, including the state machine name and version number. (AI-inferred) */
   arn: string;
-  /** An optional description of the state machine version, used to provide a human-readable label for the version. (AI-inferred) */
   description: string;
-  /** The Amazon Resource Name (ARN) of the state machine for which this version is created. (AI-inferred) */
   stateMachineArn: string;
-  /** Specifies the revision ID of the state machine to create the version from; if omitted, the version is created from the latest revision. (AI-inferred) */
   stateMachineRevisionId: string;
 }
 

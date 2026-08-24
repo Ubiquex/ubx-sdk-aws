@@ -4,9 +4,7 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseEndpoint_Tags struct {
-	// The key of a user-defined tag applied to the AWS Deadline license endpoint, enabling you to categorize and manage the endpoint for cost allocation and access control. (AI-inferred)
 	Key any
-	// Specifies the value for a user-defined tag on the Deadline license endpoint, used to categorize, track costs, or apply IAM-based access control through resource tags. (AI-inferred)
 	Value any
 }
 
@@ -16,34 +14,23 @@ var LicenseEndpoint_TagsFields = ubx.FieldMap{
 	}
 
 type LicenseEndpointConfig struct {
-	// Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred)
 	SecurityGroupIds any
-	// The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred)
 	SubnetIds any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// The ID of the VPC in which the license endpoint is created. (AI-inferred)
 	VpcId any
 }
 
 type LicenseEndpointAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the AWS Deadline Cloud license endpoint. (AI-inferred)
 	Arn any
-	// The DNS name assigned to the license endpoint, used to connect to the endpoint for license management. (AI-inferred)
 	DnsName any
-	// The unique identifier assigned by Deadline Cloud when the license endpoint is created. (AI-inferred)
 	LicenseEndpointId any
-	// Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred)
 	SecurityGroupIds any
-	// Represents the current lifecycle state of the license endpoint, such as CREATING, READY, or DELETING, as tracked by AWS Deadline Cloud. (AI-inferred)
 	Status any
-	// A computed string that provides additional context or error details about the current lifecycle state of the AWS Deadline Cloud license endpoint, such as why it might be in a transitional or failed status. (AI-inferred)
 	StatusMessage any
-	// The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred)
 	SubnetIds any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// The ID of the VPC in which the license endpoint is created. (AI-inferred)
 	VpcId any
 }
 

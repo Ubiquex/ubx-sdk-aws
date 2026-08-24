@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayPolicyTable_Tags struct {
 	Key any
-	// The value of a user-defined tag key assigned to the transit gateway policy table, used for metadata and resource identification. (AI-inferred)
 	Value any
 }
 
@@ -15,7 +14,6 @@ var TransitGatewayPolicyTable_TagsFields = ubx.FieldMap{
 	}
 
 type TransitGatewayPolicyTableConfig struct {
-	// Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
 	// The Id of transit gateway
 	TransitGatewayId any
@@ -26,7 +24,6 @@ type TransitGatewayPolicyTableAttrs struct {
 	CreationTime any
 	// State of the transit gateway policy table
 	State any
-	// Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
 	// The Id of transit gateway
 	TransitGatewayId any

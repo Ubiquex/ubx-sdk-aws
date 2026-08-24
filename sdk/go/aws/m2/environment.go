@@ -4,7 +4,6 @@ package m2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environment_HighAvailabilityConfig struct {
-	// The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred)
 	DesiredCapacity any
 }
 
@@ -27,7 +26,6 @@ type EnvironmentConfig struct {
 	KmsKeyId any
 	// The name of the environment.
 	Name any
-	// Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
 	NetworkType any
 	// Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
 	PreferredMaintenanceWindow any
@@ -62,7 +60,6 @@ type EnvironmentAttrs struct {
 	KmsKeyId any
 	// The name of the environment.
 	Name any
-	// Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
 	NetworkType any
 	// Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
 	PreferredMaintenanceWindow any

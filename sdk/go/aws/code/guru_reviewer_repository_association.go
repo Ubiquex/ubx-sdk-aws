@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GuruReviewerRepositoryAssociation_Tags struct {
 	Key any
-	// Specifies the value of a tag attached to the CodeGuru Reviewer repository association, using an arbitrary string for metadata or categorization. (AI-inferred)
 	Value any
 }
 

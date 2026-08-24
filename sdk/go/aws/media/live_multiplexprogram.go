@@ -11,18 +11,13 @@ type LiveMultiplexprogram_MultiplexProgramSettings_ServiceDescriptor struct {
 }
 
 type LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings_StatmuxSettings struct {
-	// Specifies the maximum bitrate in bits per second that the video may use for this program when statistical multiplexing (statmux) is enabled, capping the bandwidth allocated to this program within the multiplex. (AI-inferred)
 	MaximumBitrate any
-	// The minimum bitrate in bits per second that the video encoder will target for this multiplex program when statistical multiplexing is enabled, ensuring the program does not fall below this rate during allocation of multiplex bandwidth. (AI-inferred)
 	MinimumBitrate any
-	// Sets the relative priority of this program's video within the statistical multiplex (statmux) group, where higher numbers cause the multiplexer to allocate bandwidth to this program before lower-priority programs when the total multiplex bandwidth is constrained. (AI-inferred)
 	Priority any
 }
 
 type LiveMultiplexprogram_MultiplexProgramSettings_VideoSettings struct {
-	// The constant bitrate in bits per second for the video output of the MediaLive multiplex program, defining the fixed bitrate when the program's video settings use constant-bitrate encoding. (AI-inferred)
 	ConstantBitrate any
-	// Specifies statistical multiplexing (statmux) settings for the program's video, including priority and minimum/maximum bitrate limits that control how bandwidth is dynamically allocated among programs within the MediaLive multiplex. (AI-inferred)
 	StatmuxSettings any
 }
 
@@ -38,38 +33,23 @@ type LiveMultiplexprogram_MultiplexProgramSettings struct {
 }
 
 type LiveMultiplexprogram_PacketIdentifiersMap struct {
-	// Specifies the packet identifiers (PIDs) for the audio elementary streams in the MediaLive multiplex program. (AI-inferred)
 	AudioPids any
-	// Specifies the DVB Subtitle packet identifiers (PIDs) to associate with the multiplex program, used for delivering DVB subtitle streams through the multiplex. (AI-inferred)
 	DvbSubPids any
-	// Sets the DVB Teletext packet identifier (PID) used by the multiplex program's packet identifiers map. (AI-inferred)
 	DvbTeletextPid any
-	// Specifies the packet identifier (PID) for the Enhanced TV (ETV) platform service within the MPEG-2 transport stream of the MediaLive multiplex program. (AI-inferred)
 	EtvPlatformPid any
-	// Specifies the packet identifier (PID) for the Enhanced TV (ETV) signal within the multiplex program's packet identifiers map, used to carry ETV metadata in the MPEG-2 transport stream. (AI-inferred)
 	EtvSignalPid any
-	// Configures the KLV (Key-Length-Value) data packet identifiers (PIDs) in the multiplex program's packet identifier map, specifying which PIDs carry KLV metadata in the output transport stream. (AI-inferred)
 	KlvDataPids any
-	// The Packet Identifier (PID) for the Program Clock Reference (PCR) stream, which carries timing information for the program in the MediaLive multiplex. (AI-inferred)
 	PcrPid any
-	// Specifies the packet identifier (PID) for the Program Map Table (PMT) in the multiplex program's MPEG-TS packet identifiers map. (AI-inferred)
 	PmtPid any
-	// Sets the packet identifier (PID) for the private metadata stream within the MPEG-2 transport stream of this MediaLive multiplex program. (AI-inferred)
 	PrivateMetadataPid any
-	// Specifies the packet identifiers (PIDs) used for SCTE-27 cue messages in the multiplex output. (AI-inferred)
 	Scte27Pids any
-	// The packet identifier (PID) for SCTE-35 messages in the multiplex program, used to carry ad insertion signaling. (AI-inferred)
 	Scte35Pid any
-	// The packet identifier (PID) assigned for timed metadata (e.g., ID3 timed metadata) in the MPEG-TS output of the MediaLive multiplex program. (AI-inferred)
 	TimedMetadataPid any
-	// The PID (packet identifier) assigned to the video elementary stream in the MPEG-2 transport stream output of the MediaLive multiplex program. (AI-inferred)
 	VideoPid any
 }
 
 type LiveMultiplexprogram_PipelineDetails struct {
-	// Identifies which MediaLive channel pipeline (PIPELINE_0 or PIPELINE_1) is currently active for the multiplex program pipeline. (AI-inferred)
 	ActiveChannelPipeline any
-	// Identifies the MediaLive pipeline (0 or 1) for which the settings in this pipeline detail object apply. (AI-inferred)
 	PipelineId any
 }
 

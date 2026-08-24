@@ -9,16 +9,12 @@ type GuruProfilerProfilingGroup_AgentPermissions struct {
 }
 
 type GuruProfilerProfilingGroup_AnomalyDetectionNotificationConfiguration struct {
-	// The unique identifier assigned by CodeGuru Profiler to an Amazon SNS notification channel used for anomaly detection, which references the channel within the profiling group's configuration. (AI-inferred)
 	ChannelId any
-	// The ARN of the SNS topic to which anomaly detection notifications are published for this profiling group. (AI-inferred)
 	ChannelUri any
 }
 
 type GuruProfilerProfilingGroup_Tags struct {
-	// A key in the tags map of an AWS CodeGuru Profiler profiling group, used to attach custom metadata (such as environment or application name) to the profiling group for resource organization, cost allocation, and access control. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the profiling group, used for cost allocation, resource management, and access control in AWS. (AI-inferred)
 	Value any
 }
 
@@ -54,7 +50,6 @@ type GuruProfilerProfilingGroupAttrs struct {
 	AgentPermissions any
 	// Configuration for Notification Channels for Anomaly Detection feature in CodeGuru Profiler which enables customers to detect anomalies in the application profile for those methods that represent the highest proportion of CPU time or latency
 	AnomalyDetectionNotificationConfiguration any
-	// The Amazon Resource Name (ARN) that uniquely identifies the profiling group. (AI-inferred)
 	Arn any
 	// The compute platform of the profiling group.
 	ComputePlatform any

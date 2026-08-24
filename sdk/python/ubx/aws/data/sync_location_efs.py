@@ -15,9 +15,7 @@ class SyncLocationEfs_Ec2Config:
 
 @dataclasses.dataclass
 class SyncLocationEfs_Tags:
-    # The key of a tag assigned to this AWS DataSync EFS location, used to identify and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to this AWS DataSync location for EFS, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _SyncLocationEfs_Ec2ConfigFields = {

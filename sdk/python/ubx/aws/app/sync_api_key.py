@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncApiKeyConfig:
-    # The unique identifier of the AppSync GraphQL API that this API key is associated with. (AI-inferred)
     api_id: Any = None
-    # An optional user-provided description that helps identify the purpose or owner of the API key. (AI-inferred)
     description: Any = None
-    # The expiration time of the API key, expressed as the number of seconds since the Unix epoch. (AI-inferred)
     expires: Any = None
 
 @dataclasses.dataclass
 class SyncApiKeyAttrs:
-    # The unique identifier of the AppSync GraphQL API that this API key is associated with. (AI-inferred)
     api_id: Any = None
-    # The generated API key value used for authenticating requests to the AppSync GraphQL API. (AI-inferred)
     api_key: Any = None
-    # The unique identifier automatically assigned to the API key by AWS AppSync on creation. (AI-inferred)
     api_key_id: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this AppSync API key. (AI-inferred)
     arn: Any = None
-    # An optional user-provided description that helps identify the purpose or owner of the API key. (AI-inferred)
     description: Any = None
-    # The expiration time of the API key, expressed as the number of seconds since the Unix epoch. (AI-inferred)
     expires: Any = None
 
 SyncApiKey = ubx.ResourceBinding(

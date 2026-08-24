@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneConnection_AwsLocation:
-    # The ARN of the IAM role that DataZone assumes to access the AWS location (e.g., an S3 bucket) for this data connection. (AI-inferred)
     access_role: Any = None
-    # The AWS account ID of the AWS location (account and region) where the DataZone connection is hosted. (AI-inferred)
     aws_account_id: Any = None
-    # The AWS region where the underlying data source resource (for example, a Redshift cluster or AWS Glue database) is located, used by Amazon DataZone to configure the connection. (AI-inferred)
     aws_region: Any = None
-    # The `iam_connection_id` field in `aws_location` specifies the identifier of the IAM role or connection used by the AWS DataZone connection to access resources in the specified AWS account and region. (AI-inferred)
     iam_connection_id: Any = None
 
 @dataclasses.dataclass
@@ -24,209 +20,140 @@ class ZoneConnection_Configurations:
 
 @dataclasses.dataclass
 class ZoneConnection_Props_AmazonQproperties:
-    # Specifies the authentication mode used to connect to Amazon Q from AWS DataZone, controlling how the connection credentials are handled and accepted. (AI-inferred)
     auth_mode: Any = None
-    # Indicates whether the Amazon Q integration is enabled for this DataZone connection, controlling whether the connection can be used with Amazon Q features. (AI-inferred)
     is_enabled: Any = None
-    # The ARN of the Amazon Q profile associated with the Data Zone connection, enabling Amazon Q integration for this connection. (AI-inferred)
     profile_arn: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_AthenaProperties:
-    # The name of the Athena workgroup that this DataZone connection uses for querying data. (AI-inferred)
     workgroup_name: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials:
-    # The password to authenticate with when using basic authentication for the Glue connection defined in this Data Zone connection's Glue properties. (AI-inferred)
     password: Any = None
-    # The username used for basic authentication within the AWS Glue connection's authentication configuration, serving as the principal credential for connecting to the data source. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties:
-    # The OAuth2 authorization code used to exchange for access and refresh tokens when authenticating the AWS Glue connection in Amazon Data Zone. (AI-inferred)
     authorization_code: Any = None
-    # Specifies the redirect URI that the OAuth2 authorization code flow uses to redirect the user after authorization for this Glue connection. (AI-inferred)
     redirect_uri: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication:
-    # Identifier of the AWS-managed OAuth2 client application used for authentication in the AWS Glue connection of this DataZone connection. (AI-inferred)
     awsmanaged_client_application_reference: Any = None
-    # The client ID of the user-managed OAuth2 client application used for authentication in the Glue connection. (AI-inferred)
     user_managed_client_application_client_id: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials:
-    # The OAuth2 access token used to authenticate to the target system for the AWS Glue connection. (AI-inferred)
     access_token: Any = None
-    # The JWT (JSON Web Token) used for OAuth2 authentication in the Glue connection's authentication configuration, enabling secure access to the data source. (AI-inferred)
     jwt_token: Any = None
-    # The OAuth2 refresh token used to obtain a new access token when the current access token expires, for authenticating the AWS Glue connection. (AI-inferred)
     refresh_token: Any = None
-    # The client secret for a user-managed OAuth2 client application, used to authenticate the Glue connection within the DataZone connection's authentication configuration. (AI-inferred)
     user_managed_client_application_client_secret: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties:
-    # This object specifies the authorization code flow parameters for OAuth2 authentication (such as authorization code, token URL, and refresh URL) used within the Glue connection's authentication configuration for the DataZone connection. (AI-inferred)
     authorization_code_properties: Any = None
-    # Specifies the OAuth2 client application used for authentication within this connection's OAuth2 properties, which may be either an AWS-managed or a user-managed client application with credentials. (AI-inferred)
     oauth2_client_application: Any = None
-    # Provides the OAuth2 credentials (including authorization code, JWT token, refresh token, or client secret) used to authenticate the Glue connection referenced by this AWS DataZone connection. (AI-inferred)
     oauth2_credentials: Any = None
-    # Specifies the OAuth 2.0 grant type (e.g., AUTHORIZATION_CODE, CLIENT_CREDENTIALS) used by the AWS Glue OAuth2 authentication configuration for the connection. (AI-inferred)
     oauth2_grant_type: Any = None
-    # The URL of the OAuth2 token endpoint used by the AWS Glue connection for authentication. (AI-inferred)
     token_url: Any = None
-    # A map of key-value pairs that are appended as query parameters to the OAuth2 token request URL for the Glue connection. (AI-inferred)
     token_url_parameters_map: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration:
-    # Specifies the authentication method (e.g., BASIC, OAUTH2) used for the AWS Glue connection, determining how credentials are supplied for the connection. (AI-inferred)
     authentication_type: Any = None
-    # Specifies the username and password credentials used for basic authentication when the underlying AWS Glue connection accesses the external data source. (AI-inferred)
     basic_authentication_credentials: Any = None
-    # Provides the custom authentication credentials (as a JSON map of key-value pairs) for the Glue connection's authentication configuration, used when the authentication type is set to custom. (AI-inferred)
     custom_authentication_credentials: Any = None
-    # The ARN of an AWS KMS key used to encrypt the connection details (such as credentials) in this Glue connection's authentication configuration. (AI-inferred)
     kms_key_arn: Any = None
-    # Defines the OAuth2 authentication parameters (such as grant type, client application, and token URL) for the underlying AWS Glue connection when the authentication type is set to OAuth2. (AI-inferred)
     oauth2_properties: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the credentials used to authenticate the Glue connection within this DataZone connection. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirements:
-    # Specifies the Availability Zone (e.g., us-east-1a) of the subnet in the physical connection requirements for the AWS Glue connection, which determines the zone where the connection's network resources are provisioned. (AI-inferred)
     availability_zone: Any = None
-    # Specifies the list of VPC security group IDs that define the network security rules for the AWS Glue connection used by the DataZone connection. (AI-inferred)
     security_group_id_list: Any = None
-    # The subnet ID within the VPC where AWS Glue places elastic network interfaces for the physical connection, enabling network access between the connection and the target data store. (AI-inferred)
     subnet_id: Any = None
-    # Specifies the list of subnet IDs in the virtual private cloud (VPC) that the underlying AWS Glue connection uses for its physical network connectivity. (AI-inferred)
     subnet_id_list: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties_GlueConnectionInput:
     athena_properties: Any = None
-    # Specifies the authentication type and secret ARN (e.g., USERNAME_PASSWORD or IAM) used by the underlying AWS Glue connection, allowing the DataZone connection to securely authenticate to the target data source. (AI-inferred)
     authentication_configuration: Any = None
-    # Specifies the key-value connection properties for the AWS Glue connection, such as the JDBC URL, username, and password, whose expected keys vary by the Glue connection type. (AI-inferred)
     connection_properties: Any = None
-    # Specifies the type of the underlying AWS Glue connection (e.g., JDBC, SFTP, MONGODB, KAFKA) that this DataZone connection uses. (AI-inferred)
     connection_type: Any = None
-    # The user-provided description of the AWS Glue connection, offering additional context about the connection within the data zone connection setup. (AI-inferred)
     description: Any = None
-    # A list of UTF-8 strings that define the criteria AWS Glue uses to match this connection to data catalog resources, mirroring the MatchCriteria field of the AWS Glue ConnectionInput API. (AI-inferred)
     match_criteria: Any = None
-    # Specifies the name of the AWS Glue connection that this DataZone connection references or creates. (AI-inferred)
     name: Any = None
-    # Specifies the physical connectivity requirements for the underlying AWS Glue connection, including the subnet ID, security group IDs, and availability zone where the connection's resources reside. (AI-inferred)
     physical_connection_requirements: Any = None
     python_properties: Any = None
-    # A dynamic map of Apache Spark configuration properties (key-value pairs) for the AWS Glue connection input, used by AWS DataZone to customize Spark behavior when interacting with the connected data source. (AI-inferred)
     spark_properties: Any = None
-    # When enabled, AWS DataZone validates the AWS Glue connection's credentials during connection creation or update, ensuring the credentials are functional before the connection is provisioned. (AI-inferred)
     validate_credentials: Any = None
-    # Specifies the compute environments (such as SPARK or ATHENA) for which the connection is validated. (AI-inferred)
     validate_for_compute_environments: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_GlueProperties:
-    # The AWS Glue connection input that defines the parameters (such as connection type, properties, and authentication details) for the Glue connection used by the DataZone connection. (AI-inferred)
     glue_connection_input: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_HyperPodProperties:
-    # The name of the SageMaker HyperPod cluster that this DataZone connection targets, used to associate the connection with a specific compute cluster for data access operations. (AI-inferred)
     cluster_name: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_IamProperties:
-    # Specifies whether AWS Glue lineage sync is enabled for this Data Zone connection, allowing lineage metadata to be captured from Glue catalogs. (AI-inferred)
     glue_lineage_sync_enabled: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_MlflowProperties:
-    # The Amazon Resource Name (ARN) of the MLflow tracking server that this DataZone connection uses for accessing experiment tracking and model registry data. (AI-inferred)
     tracking_server_arn: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties_Credentials_UsernamePassword:
-    # The password portion of the username and password credentials used to authenticate to the Amazon Redshift cluster when connecting via DataZone. (AI-inferred)
     password: Any = None
-    # The username part of the username/password credentials used to authenticate to the connected Amazon Redshift cluster. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties_Credentials:
-    # The ARN of the AWS Secrets Manager secret that stores the Amazon Redshift database credentials used by this DataZone connection. (AI-inferred)
     secret_arn: Any = None
-    # Specifies the username and password pair used to authenticate against the Amazon Redshift data source when establishing this DataZone connection. (AI-inferred)
     username_password: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties_LineageSync_Schedule:
-    # Specifies the cron expression that defines how often AWS Data Zone syncs lineage metadata from the Redshift connection. (AI-inferred)
     schedule: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties_LineageSync:
-    # A boolean that turns on or off the automatic synchronization of data lineage for the Redshift connection. (AI-inferred)
     enabled: Any = None
-    # Specifies the cron-based schedule that determines when AWS DataZone runs the Redshift lineage sync for this connection. (AI-inferred)
     schedule: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties_Storage:
-    # The name of the Amazon Redshift cluster hosting the storage that this DataZone connection is configured to use. (AI-inferred)
     cluster_name: Any = None
-    # This field specifies the name of the Amazon Redshift Serverless workgroup that the DataZone connection's storage configuration uses for data access. (AI-inferred)
     workgroup_name: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_RedshiftProperties:
-    # The `credentials` object within `redshift_properties` specifies the authentication details (such as a reference to an AWS Secrets Manager secret) used by AWS DataZone to securely connect to the Amazon Redshift cluster. (AI-inferred)
     credentials: Any = None
-    # The name of the Redshift database that this DataZone connection uses to connect to the Redshift cluster. (AI-inferred)
     database_name: Any = None
-    # The hostname of the Amazon Redshift cluster endpoint that the connection targets. (AI-inferred)
     host: Any = None
-    # This object defines how data lineage metadata is automatically synced from the connected Redshift source, including whether it is enabled and the schedule for the sync operation. (AI-inferred)
     lineage_sync: Any = None
-    # The network port on which the Amazon Redshift cluster accepts connections, used as part of the redshift properties for this DataZone connection. (AI-inferred)
     port: Any = None
-    # The storage object in the DataZone connection's Redshift properties specifies whether the connection targets a provisioned Redshift cluster or a serverless workgroup and includes the relevant cluster or workgroup identifiers and IAM role for access. (AI-inferred)
     storage: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_S3Properties:
-    # Determines whether the S3 location is registered as an access grant location in Amazon Data Zone, enabling access grants to be created for that location. (AI-inferred)
     register_s3_access_grant_location: Any = None
-    # The identifier of the S3 Access Grant location that this DataZone connection uses to grant access to data in S3. (AI-inferred)
     s3_access_grant_location_id: Any = None
-    # The Amazon S3 URI (e.g., s3://bucket-name/prefix) that specifies the location used by the connection. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_SparkEmrProperties:
-    # The Amazon Resource Name (ARN) of the Amazon EMR cluster or compute environment that AWS DataZone uses to run Apache Spark jobs for this connection. (AI-inferred)
     compute_arn: Any = None
-    # The ARN of the IAM instance profile that the Amazon EMR cluster assumes to access AWS resources when running Spark workloads through this DataZone connection. (AI-inferred)
     instance_profile_arn: Any = None
     java_virtual_env: Any = None
-    # The S3 URI (e.g., s3://bucket/logs/) used as the log destination for Amazon EMR Spark jobs configured in the DataZone connection's Spark EMR properties. (AI-inferred)
     log_uri: Any = None
-    # The Amazon Resource Name (ARN) of the managed endpoint on the Amazon EMR cluster that AWS DataZone connects to for Spark workloads. (AI-inferred)
     managed_endpoint_arn: Any = None
-    # The S3 URI of a zipped Python virtual environment used to run PySpark jobs on the Amazon EMR cluster associated with this Data Zone connection. (AI-inferred)
     python_virtual_env: Any = None
-    # The ARN of the IAM role that the Spark EMR runtime assumes when running data processing tasks for this AWS Data Zone connection. (AI-inferred)
     runtime_role: Any = None
-    # The S3 URI of a location containing trusted certificates used to validate the connection to an Amazon EMR cluster for the DataZone Spark EMR connection. (AI-inferred)
     trusted_certificates_s3_uri: Any = None
 
 @dataclasses.dataclass
@@ -235,49 +162,32 @@ class ZoneConnection_Props_SparkGlueProperties_AdditionalArgs:
 
 @dataclasses.dataclass
 class ZoneConnection_Props_SparkGlueProperties:
-    # Defines key-value arguments that are passed to the AWS Glue or Apache Spark environment for this DataZone connection, enabling customization of the runtime configuration. (AI-inferred)
     additional_args: Any = None
-    # The name of the AWS Glue connection to be used by Spark jobs in this DataZone connection. (AI-inferred)
     glue_connection_name: Any = None
-    # Specifies the version of AWS Glue to use for the Spark Glue connection in the DataZone connection. (AI-inferred)
     glue_version: Any = None
     idle_timeout: Any = None
     java_virtual_env: Any = None
-    # Specifies the number of worker nodes to allocate for the AWS Glue Spark job associated with this Data Zone connection. (AI-inferred)
     number_of_workers: Any = None
-    # Specifies the Amazon S3 URI of the Python virtual environment used by the AWS Glue Spark job for this DataZone connection. (AI-inferred)
     python_virtual_env: Any = None
-    # Specifies the AWS Glue worker type (e.g., Standard, G.1X, G.2X) used for the Spark job associated with the DataZone connection's Spark Glue properties. (AI-inferred)
     worker_type: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props_WorkflowsMwaaProperties:
-    # The name of the Amazon Managed Workflows for Apache Airflow (MWAA) environment associated with the DataZone connection's workflow configuration. (AI-inferred)
     mwaa_environment_name: Any = None
 
 @dataclasses.dataclass
 class ZoneConnection_Props:
-    # Configuration for connecting DataZone to Amazon Q Business, including the IAM role and Amazon Q Business application used by the connection. (AI-inferred)
     amazon_qproperties: Any = None
-    # Provides the Athena-specific properties for the connection, such as the Athena workgroup that defines the SQL query execution context. (AI-inferred)
     athena_properties: Any = None
-    # The glue_properties object holds the configuration for an AWS Glue connection, specifically the name of the Glue connection that this DataZone connection will use. (AI-inferred)
     glue_properties: Any = None
     hyper_pod_properties: Any = None
-    # This object specifies the IAM role that AWS DataZone assumes when connecting to the external data source, enabling secure access for the connection. (AI-inferred)
     iam_properties: Any = None
     lakehouse_properties: Any = None
-    # Specifies the MLflow-specific configuration for an AWS Data Zone connection, including the MLflow tracking server endpoint and any associated authentication settings. (AI-inferred)
     mlflow_properties: Any = None
-    # Specifies the Amazon Redshift connection settings for the Data Zone connection, including the cluster endpoint and database details needed to connect to the Redshift data source. (AI-inferred)
     redshift_properties: Any = None
-    # Defines the Amazon S3-specific connection settings, such as the target bucket and object path, for a DataZone connection to an S3 data source. (AI-inferred)
     s3_properties: Any = None
-    # The set of configuration properties AWS DataZone uses to connect to a Spark application on an Amazon EMR cluster. (AI-inferred)
     spark_emr_properties: Any = None
-    # Specifies the configuration for connecting Amazon Data Zone to AWS Glue for Spark workloads, including the execution role and Glue connection details that enable data access and processing. (AI-inferred)
     spark_glue_properties: Any = None
-    # Specifies the Amazon MWAA environment ARN and IAM execution role ARN that AWS DataZone uses to orchestrate workflows for this connection. (AI-inferred)
     workflows_mwaa_properties: Any = None
     workflows_serverless_properties: Any = None
 

@@ -4,7 +4,6 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_Tags struct {
-	// The key portion of a user-defined tag attached to the AWS Redshift Integration resource, used for organization, cost tracking, and access control. (AI-inferred)
 	Key any
 	Value any
 }

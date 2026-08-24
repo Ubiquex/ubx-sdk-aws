@@ -4,22 +4,17 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfig struct {
-	// The ARN of the IAM role that grants Amazon Wisdom permission to access the associated Amazon Bedrock knowledge base. (AI-inferred)
 	AccessRoleArn any
-	// The ARN of the Amazon Bedrock knowledge base that the Amazon Q in Connect (Wisdom) assistant associates with for an external Bedrock knowledge base association. (AI-inferred)
 	BedrockKnowledgeBaseArn any
 }
 
 type AssistantAssociation_Association struct {
 	ExternalBedrockKnowledgeBaseConfig any
-	// Identifier of the Amazon Wisdom knowledge base to associate with the assistant, required when the association type is set to KNOWLEDGE_BASE. (AI-inferred)
 	KnowledgeBaseId any
 }
 
 type AssistantAssociation_Tags struct {
-	// The key of a tag assigned to the Wisdom assistant association, serving as the unique identifier for the tag within the resource's tag set. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the Wisdom assistant association, used to organize and identify the resource for cost allocation and access control. (AI-inferred)
 	Value any
 }
 
@@ -43,27 +38,18 @@ var AssistantAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type AssistantAssociationConfig struct {
-	// The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred)
 	AssistantId any
-	// Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred)
 	Association any
-	// The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
 	AssociationType any
 	Tags any
 }
 
 type AssistantAssociationAttrs struct {
-	// The ARN of the Amazon Wisdom assistant to which this association is attached. (AI-inferred)
 	AssistantArn any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Wisdom assistant association, assigned by AWS upon creation. (AI-inferred)
 	AssistantAssociationArn any
-	// The unique identifier assigned by AWS Wisdom to this assistant association, used to reference the association in API calls and resource relationships. (AI-inferred)
 	AssistantAssociationId any
-	// The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred)
 	AssistantId any
-	// Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred)
 	Association any
-	// The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred)
 	AssociationType any
 	Tags any
 }

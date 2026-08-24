@@ -2,32 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManaged {
-  /** The personal access token for the self-managed GitLab instance that AWS Inspector uses to authenticate and access repositories for code security scanning. (AI-inferred) */
   accessToken: string | Computed<string>;
-  /** The base URL of the self-managed GitLab instance that AWS Inspector connects to for code security integration. (AI-inferred) */
   instanceUrl: string | Computed<string>;
 }
 
 export interface V2CodeSecurityIntegration_CreateIntegrationDetails {
-  /** Provides the configuration details for integrating AWS Inspector code security with a self-managed GitLab instance, including the necessary connection and authentication information. (AI-inferred) */
   gitlabSelfManaged: V2CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManaged | Computed<V2CodeSecurityIntegration_CreateIntegrationDetails_GitlabSelfManaged>;
 }
 
 export interface V2CodeSecurityIntegration_UpdateIntegrationDetails_Github {
   code: string | Computed<string>;
-  /** The unique identifier of the GitHub App installation within the GitHub organization or account that AWS Inspector V2 uses to access and scan repositories. (AI-inferred) */
   installationId: string | Computed<string>;
 }
 
 export interface V2CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManaged {
-  /** The personal access token (auth code) required for AWS Inspector v2 to authenticate to the self-managed GitLab instance when updating the code security integration. (AI-inferred) */
   authCode: string | Computed<string>;
 }
 
 export interface V2CodeSecurityIntegration_UpdateIntegrationDetails {
-  /** The GitHub-specific configuration object within the update integration details, which defines repository-level scan and encryption settings for the AWS Inspector V2 code security integration. (AI-inferred) */
   github?: V2CodeSecurityIntegration_UpdateIntegrationDetails_Github | Computed<V2CodeSecurityIntegration_UpdateIntegrationDetails_Github>;
-  /** This object holds the settings needed to update the integration with a self-managed GitLab repository, including the instance URL and authentication credentials. (AI-inferred) */
   gitlabSelfManaged?: V2CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManaged | Computed<V2CodeSecurityIntegration_UpdateIntegrationDetails_GitlabSelfManaged>;
 }
 
@@ -67,12 +60,10 @@ const V2CodeSecurityIntegration_UpdateIntegrationDetailsFields: FieldMap = {
 };
 
 export interface V2CodeSecurityIntegrationConfig {
-  /** Specifies the event type and API call used to create the Inspector v2 code security integration, defining when and how the integration is established for a repository. (AI-inferred) */
   createIntegrationDetails?: V2CodeSecurityIntegration_CreateIntegrationDetails | Computed<V2CodeSecurityIntegration_CreateIntegrationDetails>;
   /** Code Security Integration name */
   name?: string | Computed<string>;
   tags?: unknown | Computed<unknown>;
-  /** Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred) */
   type?: string | Computed<string>;
   updateIntegrationDetails?: V2CodeSecurityIntegration_UpdateIntegrationDetails | Computed<V2CodeSecurityIntegration_UpdateIntegrationDetails>;
 }
@@ -82,7 +73,6 @@ export interface V2CodeSecurityIntegrationAttrs {
   arn: string;
   /** Authorization URL for OAuth flow */
   authorizationUrl: string;
-  /** Specifies the event type and API call used to create the Inspector v2 code security integration, defining when and how the integration is established for a repository. (AI-inferred) */
   createIntegrationDetails: V2CodeSecurityIntegration_CreateIntegrationDetails;
   /** Creation timestamp */
   createdAt: string;
@@ -90,12 +80,10 @@ export interface V2CodeSecurityIntegrationAttrs {
   lastUpdatedAt: string;
   /** Code Security Integration name */
   name: string;
-  /** The read-only integration status, automatically set to 'ENABLED' or 'DISABLED' to indicate whether Amazon Inspector code security scanning is active for the account. (AI-inferred) */
   status: string;
   /** Reason for the current status */
   statusReason: string;
   tags: unknown;
-  /** Specifies the type of code security integration to configure, such as GITHUB or GITLAB, indicating which source code repository service to connect to Inspector for vulnerability scanning. (AI-inferred) */
   type: string;
   updateIntegrationDetails: V2CodeSecurityIntegration_UpdateIntegrationDetails;
 }

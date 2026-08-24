@@ -2,30 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CatalogLaunchNotificationConstraintConfig {
-  /** Specifies the language code (e.g., 'en') used for responses from the AWS Service Catalog API when managing this launch notification constraint. (AI-inferred) */
   acceptLanguage?: string | Computed<string>;
-  /** A free-form text description of the Service Catalog launch notification constraint, which specifies an SNS topic that receives notifications for provisioning and termination events. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The list of Amazon SNS topic ARNs that receive stack event notifications when the associated product is launched via this Service Catalog launch notification constraint. (AI-inferred) */
   notificationArns: string[] | Computed<string[]>;
-  /** The identifier of the Service Catalog portfolio to which the launch notification constraint applies. (AI-inferred) */
   portfolioId: string | Computed<string>;
-  /** The identifier of the Service Catalog product to which this launch notification constraint is associated, controlling which product's stack events trigger the configured SNS notifications. (AI-inferred) */
   productId: string | Computed<string>;
 }
 
 export interface CatalogLaunchNotificationConstraintAttrs {
-  /** Specifies the language code (e.g., 'en') used for responses from the AWS Service Catalog API when managing this launch notification constraint. (AI-inferred) */
   acceptLanguage: string;
-  /** A free-form text description of the Service Catalog launch notification constraint, which specifies an SNS topic that receives notifications for provisioning and termination events. (AI-inferred) */
   description: string;
   /** Unique identifier for the constraint */
   id: string;
-  /** The list of Amazon SNS topic ARNs that receive stack event notifications when the associated product is launched via this Service Catalog launch notification constraint. (AI-inferred) */
   notificationArns: string[];
-  /** The identifier of the Service Catalog portfolio to which the launch notification constraint applies. (AI-inferred) */
   portfolioId: string;
-  /** The identifier of the Service Catalog product to which this launch notification constraint is associated, controlling which product's stack events trigger the configured SNS notifications. (AI-inferred) */
   productId: string;
 }
 

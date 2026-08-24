@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RouteServerEndpoint_Tags {
-  /** The key of a tag attached to the EC2 Route Server Endpoint, used to organize and identify the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

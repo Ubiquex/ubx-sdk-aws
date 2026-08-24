@@ -86,26 +86,18 @@ _Classifier_XmlclassifierFields = {
 
 @dataclasses.dataclass
 class ClassifierConfig:
-    # Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
     csv_classifier: Any = None
-    # Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
     grok_classifier: Any = None
-    # Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
     json_classifier: Any = None
-    # Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
     xmlclassifier: Any = None
 
 @dataclasses.dataclass
 class ClassifierAttrs:
-    # Defines the configuration for an AWS Glue classifier that parses CSV files, including the delimiter, quote symbol, header detection, and whether to treat a single column as a valid CSV format. (AI-inferred)
     csv_classifier: Any = None
-    # Configures a Grok classifier in AWS Glue, specifying the grok pattern used to parse log or unstructured data, custom pattern definitions, and the classification name applied to matched data. (AI-inferred)
     grok_classifier: Any = None
-    # Specifies a JSON classifier for AWS Glue that uses a JSON path to identify the JSON data structure within input records. (AI-inferred)
     json_classifier: Any = None
     # One of XMLClassifier/Name, GrokClassifier/Name, JsonClassifier/Name or CsvClassifier/Name
     name: Any = None
-    # Defines the row tag and optional classification for an XML classifier, used by AWS Glue to parse XML data and infer its schema. (AI-inferred)
     xmlclassifier: Any = None
 
 Classifier = ubx.ResourceBinding(

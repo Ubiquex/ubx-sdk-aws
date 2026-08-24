@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReplicationSubnetGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag (key-value pair) assigned to the DMS replication subnet group, used to categorize and manage the resource for cost allocation and operational purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

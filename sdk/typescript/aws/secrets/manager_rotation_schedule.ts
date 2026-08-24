@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerRotationSchedule_ExternalSecretRotationMetadata {
-  /** The key of a key-value pair in the external_secret_rotation_metadata map, which is passed as metadata to an external rotation Lambda function to customize the rotation process. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -71,13 +70,11 @@ export interface ManagerRotationScheduleConfig {
   externalSecretRotationMetadata?: ManagerRotationSchedule_ExternalSecretRotationMetadata[] | Computed<ManagerRotationSchedule_ExternalSecretRotationMetadata[]>;
   /** The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret. */
   externalSecretRotationRoleArn?: string | Computed<string>;
-  /** Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred) */
   hostedRotationLambda?: ManagerRotationSchedule_HostedRotationLambda | Computed<ManagerRotationSchedule_HostedRotationLambda>;
   /** Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. */
   rotateImmediatelyOnUpdate?: boolean | Computed<boolean>;
   /** The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function. */
   rotationLambdaArn?: string | Computed<string>;
-  /** Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred) */
   rotationRules?: ManagerRotationSchedule_RotationRules | Computed<ManagerRotationSchedule_RotationRules>;
   /** The ARN or name of the secret to rotate. */
   secretId: string | Computed<string>;
@@ -88,7 +85,6 @@ export interface ManagerRotationScheduleAttrs {
   externalSecretRotationMetadata: ManagerRotationSchedule_ExternalSecretRotationMetadata[];
   /** The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret. */
   externalSecretRotationRoleArn: string;
-  /** Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred) */
   hostedRotationLambda: ManagerRotationSchedule_HostedRotationLambda;
   /** The ARN of the secret. */
   id: string;
@@ -96,7 +92,6 @@ export interface ManagerRotationScheduleAttrs {
   rotateImmediatelyOnUpdate: boolean;
   /** The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function. */
   rotationLambdaArn: string;
-  /** Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred) */
   rotationRules: ManagerRotationSchedule_RotationRules;
   /** The ARN or name of the secret to rotate. */
   secretId: string;

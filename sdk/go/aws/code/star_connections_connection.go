@@ -4,9 +4,7 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StarConnectionsConnection_Tags struct {
-	// The key of a tag attached to the AWS CodeStar Connections connection, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// Specifies the value of a tag attached to the AWS CodeStar Connections connection, which can be used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 

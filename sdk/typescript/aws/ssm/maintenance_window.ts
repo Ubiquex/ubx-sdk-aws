@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MaintenanceWindow_Tags {
   key?: string | Computed<string>;
-  /** Specifies a user-defined value for a tag that can be used to categorize and manage this Systems Manager maintenance window, such as by project or environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

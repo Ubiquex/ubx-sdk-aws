@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpaceEnvironment_FederationParameters_AttributeMap:
-    # This key is an attribute name within the AttributeMap of FederationParameters, which defines custom SAML attributes to be made available during federated sign-in to the FinSpace environment. (AI-inferred)
     key: Any = None
-    # Defines the FinSpace user attribute name that the corresponding SAML attribute (key) is mapped to in the federated authentication configuration of the FinSpace environment. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

@@ -26,46 +26,30 @@ class MakerModelCard_Content_BusinessDetails:
 
 @dataclasses.dataclass
 class MakerModelCard_Content_EvaluationDetails_MetricGroups_MetricData:
-    # Specifies the name of a metric (e.g., 'accuracy' or 'F1 score') reported in a metric group within the model card's evaluation details. (AI-inferred)
     name: Any = None
-    # Provides additional commentary or context about the metric data point, such as computation notes or caveats, within the SageMaker Model Card's evaluation details. (AI-inferred)
     notes: Any = None
-    # Specifies the data type of the metric value (e.g., 'Number' or 'String') for the corresponding metric data entry in the SageMaker Model Card's evaluation details. (AI-inferred)
     type: Any = None
-    # The measured numeric or categorical result of the evaluation metric (e.g., accuracy, F1-score) recorded in the metric data group of the model card's evaluation details. (AI-inferred)
     value: Any = None
-    # Specifies the label or name for the x-axis of a metric chart in the model card's evaluation details, used to describe the independent variable for plotted metric data. (AI-inferred)
     xaxis_name: Any = None
-    # The name of the y-axis for a metric chart, used to label the vertical axis when visualizing metric data in the model card's evaluation details. (AI-inferred)
     yaxis_name: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_EvaluationDetails_MetricGroups:
-    # List of metric data items (name, value, and optional type/notes) within a metric group for an evaluation detail section of the SageMaker model card. (AI-inferred)
     metric_data: Any = None
-    # The name of a group of related evaluation metrics (e.g., 'Accuracy' or 'Latency') within the model card's evaluation details. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_EvaluationDetails:
-    # Lists the datasets used for evaluating the model, indicating the data sources on which the evaluation metrics are based. (AI-inferred)
     datasets: Any = None
-    # The Amazon Resource Name (ARN) of a SageMaker job (such as a processing job) that can be used to reproduce or reference the model evaluation results. (AI-inferred)
     evaluation_job_arn: Any = None
-    # Provides a free-text observation about the model's evaluation results, allowing qualitative insights, caveats, or performance notes to be recorded within the evaluation details section of the SageMaker Model Card. (AI-inferred)
     evaluation_observation: Any = None
-    # Stores arbitrary key-value metadata for this model evaluation detail, providing additional context that is not captured by the structured fields such as name and metric groups. (AI-inferred)
     metadata: Any = None
-    # The list of metric groups for this evaluation detail, where each group contains a name and a list of metric data items that organize related evaluation metrics. (AI-inferred)
     metric_groups: Any = None
-    # Specifies a user-defined name for an evaluation detail, such as a specific evaluation run or metric set, to identify it within the model card's evaluation details list. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_IntendedUses:
-    # A free-form string that provides a detailed explanation or justification for the assigned risk rating within the intended uses section of the SageMaker model card. (AI-inferred)
     explanations_for_risk_rating: Any = None
-    # Specifies the factors that influence the model's efficiency in deployment, such as hardware constraints, inference latency, throughput, or resource consumption, intended to inform model card readers. (AI-inferred)
     factors_affecting_model_efficiency: Any = None
     # intended use cases.
     intended_uses: Any = None
@@ -109,11 +93,8 @@ class MakerModelCard_Content_ModelPackageDetails_CreatedBy:
 
 @dataclasses.dataclass
 class MakerModelCard_Content_ModelPackageDetails_InferenceSpecification_Containers:
-    # Specifies the URI of the container image used for inference in the model package. (AI-inferred)
     image: Any = None
-    # The S3 URL of the model artifacts for this container in the model package's inference specification. (AI-inferred)
     model_data_url: Any = None
-    # The name of the model in the model card's model overview that this inference container is associated with, used to link a specific container to a model. (AI-inferred)
     nearest_model_name: Any = None
 
 @dataclasses.dataclass
@@ -123,20 +104,16 @@ class MakerModelCard_Content_ModelPackageDetails_InferenceSpecification:
 
 @dataclasses.dataclass
 class MakerModelCard_Content_ModelPackageDetails_SourceAlgorithms:
-    # Specifies the name of the algorithm used to create the model in the corresponding source algorithm entry of the model package details in the SageMaker model card. (AI-inferred)
     algorithm_name: Any = None
-    # Specifies the S3 URI where the trained model artifacts for this source algorithm are stored within the model package details. (AI-inferred)
     model_data_url: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_ModelPackageDetails:
     # A description provided for the model approval
     approval_description: Any = None
-    # Created_by provides the SageMaker user context (including IAM identity, user profile, and domain) of the principal who created the model package referenced in the model card's model_package_details. (AI-inferred)
     created_by: Any = None
     # The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.
     domain: Any = None
-    # Specifies the inference specification of the model package, including the container to use for inference and the inputs and outputs the model supports, as part of the model card's model package details. (AI-inferred)
     inference_specification: Any = None
     # Current approval status of model package
     model_approval_status: Any = None
@@ -152,76 +129,57 @@ class MakerModelCard_Content_ModelPackageDetails:
     model_package_status: Any = None
     # Version of the model package
     model_package_version: Any = None
-    # A list of algorithms used to train the model associated with the model package, where each item specifies the algorithm name and its approval status. (AI-inferred)
     source_algorithms: Any = None
     # The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.
     task: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails_ObjectiveFunction_Function:
-    # Specifies the optimization direction (e.g., minimize or maximize) of the objective function used during model training. (AI-inferred)
     condition: Any = None
-    # The name of the objective metric that the model training seeks to optimize, such as 'accuracy' or 'loss', as recorded in the SageMaker Model Card's training details objective function. (AI-inferred)
     facet: Any = None
-    # The objective function (e.g., loss function) used to train the model, recorded in the training details section of the SageMaker model card. (AI-inferred)
     function: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails_ObjectiveFunction:
     # objective function that training job is optimized for.
     function: Any = None
-    # Provides free-form notes or additional context about the objective function used during model training, such as details about the loss function or optimization metric. (AI-inferred)
     notes: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParameters:
-    # The name of a hyperparameter (for example, 'learning_rate') recorded for the SageMaker training job, paired with its value in the corresponding hyper_parameters entry within the model card's training details. (AI-inferred)
     name: Any = None
-    # The value assigned to a specific hyperparameter for the training job, where the hyperparameter name is the corresponding map key. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetrics:
-    # The name of a specific training metric, such as accuracy or loss, recorded for the training job in the model card's training details. (AI-inferred)
     name: Any = None
-    # Adds an optional note to a training metric in the model card, allowing you to document additional context or caveats about that metric's value and how it was measured. (AI-inferred)
     notes: Any = None
-    # The numerical value of a specific training metric (such as loss or accuracy) recorded during model training for the SageMaker model card, paired with the metric's name in the training metrics list. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails_TrainingJobDetails:
-    # Specifies the list of hyperparameter name-value pairs used to configure the training job for the model, as recorded in the model card's training details. (AI-inferred)
     hyper_parameters: Any = None
     # SageMaker Training job arn.
     training_arn: Any = None
     # Location of the model datasets.
     training_datasets: Any = None
-    # Specifies the hardware and software environment (e.g., instance type, GPU, OS, framework, and Python version) used during the model's SageMaker training job, for documentation in the model card. (AI-inferred)
     training_environment: Any = None
-    # A list of training metrics (e.g., loss, accuracy) recorded during the model training job, each containing a name and a numeric value. (AI-inferred)
     training_metrics: Any = None
-    # Specifies the list of hyperparameter names and values that the user explicitly provided for the training job, stored as part of the training job details in the SageMaker model card. (AI-inferred)
     user_provided_hyper_parameters: Any = None
-    # A list of user-provided training metrics (name-value pairs) that are included in the model card to document additional or custom performance measurements for the training job. (AI-inferred)
     user_provided_training_metrics: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content_TrainingDetails:
     # the objective function the model will optimize for.
     objective_function: Any = None
-    # This object specifies the details of the SageMaker training job(s) used to train the model, including the training job name, environment, and training metrics, as part of the training details section of the model card content. (AI-inferred)
     training_job_details: Any = None
-    # Captures additional observations or notes about the model training process, such as insights or anomalies encountered during training. (AI-inferred)
     training_observations: Any = None
 
 @dataclasses.dataclass
 class MakerModelCard_Content:
-    # Specifies the Additional Information section of the model card content, providing a structured place for supplementary details about the model such as development notes, limitations, or other custom content beyond the standard overview, training, and evaluation sections. (AI-inferred)
     additional_information: Any = None
     # Business details.
     business_details: Any = None
-    # Provides the list of evaluation details for the model card, including each evaluation's name, observation, datasets used, and metric groups with their measured values. (AI-inferred)
     evaluation_details: Any = None
     # Intended usage of model.
     intended_uses: Any = None
@@ -248,7 +206,6 @@ class MakerModelCard_SecurityConfig:
 
 @dataclasses.dataclass
 class MakerModelCard_Tags:
-    # The key part of a user-defined tag attached to the SageMaker Model Card, enabling metadata for resource organization, access control, and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 

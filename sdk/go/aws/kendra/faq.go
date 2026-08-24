@@ -4,16 +4,12 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Faq_S3Path struct {
-	// The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred)
 	Bucket any
-	// The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred)
 	Key any
 }
 
 type Faq_Tags struct {
-	// The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred)
 	Key any
-	// The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -36,18 +32,14 @@ type FaqConfig struct {
 	IndexId any
 	// The code for a language.
 	LanguageCode any
-	// The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
 	RoleArn any
-	// The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
 	S3Path any
 	// List of tags
 	Tags any
 }
 
 type FaqAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred)
 	Arn any
 	// Description of the FAQ
 	Description any
@@ -59,11 +51,8 @@ type FaqAttrs struct {
 	IndexId any
 	// The code for a language.
 	LanguageCode any
-	// The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred)
 	RoleArn any
-	// The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred)
 	S3Path any
 	// List of tags
 	Tags any

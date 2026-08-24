@@ -9,7 +9,6 @@ type MakerPipeline_ParallelismConfiguration struct {
 }
 
 type MakerPipeline_Tags struct {
-	// The key of a tag attached to the SageMaker pipeline, used to assign metadata for organizing, identifying, and managing the pipeline resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -24,9 +23,7 @@ var MakerPipeline_TagsFields = ubx.FieldMap{
 	}
 
 type MakerPipelineConfig struct {
-	// Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred)
 	ParallelismConfiguration any
-	// Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred)
 	PipelineDefinition any
 	// The description of the Pipeline.
 	PipelineDescription any
@@ -36,14 +33,11 @@ type MakerPipelineConfig struct {
 	PipelineName any
 	// Role Arn
 	RoleArn any
-	// A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred)
 	Tags any
 }
 
 type MakerPipelineAttrs struct {
-	// Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred)
 	ParallelismConfiguration any
-	// Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred)
 	PipelineDefinition any
 	// The description of the Pipeline.
 	PipelineDescription any
@@ -53,7 +47,6 @@ type MakerPipelineAttrs struct {
 	PipelineName any
 	// Role Arn
 	RoleArn any
-	// A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred)
 	Tags any
 }
 

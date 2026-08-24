@@ -8,49 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessServiceProfile_LoRaWan:
-    # When true, this boolean enables the LoRaWAN service profile to include gateway metadata such as RSSI and SNR in the uplink messages forwarded to AWS IoT Core. (AI-inferred)
     add_gw_metadata: Any = None
-    # Specifies the LoRaWAN channel mask used by the service profile to indicate which channels are enabled for the device. (AI-inferred)
     channel_mask: Any = None
-    # The frequency (in seconds) at which the LoRaWAN network server sends Device Status Request messages to the device, as configured in the service profile's LoRaWAN settings. (AI-inferred)
     dev_status_req_freq: Any = None
-    # This field specifies the downlink bucket size for the LoRaWAN service profile, which controls the maximum burst of downlink traffic by setting the size of the token bucket used for downlink rate limiting. (AI-inferred)
     dl_bucket_size: Any = None
-    # The downlink data rate (in kbps) for the LoRaWAN service profile, controlling the speed at which devices receive messages from the network server. (AI-inferred)
     dl_rate: Any = None
     dl_rate_policy: Any = None
-    # The maximum LoRaWAN data rate (DR) index allowed for wireless transmissions under this service profile. (AI-inferred)
     dr_max: Any = None
-    # Specifies the minimum data rate (DR_min) for LoRaWAN transmissions, setting the lower bound of the allowed data rate range in this service profile. (AI-inferred)
     dr_min: Any = None
-    # When enabled, this LoRaWAN service profile allows a device to perform handover between gateways, as represented by the HrAllowed parameter in the AWS IoT Wireless service profile. (AI-inferred)
     hr_allowed: Any = None
-    # The minimum number of gateways that must successfully receive a LoRaWAN uplink for the transmission to be considered valid, enabling uplink diversity in the IoT Wireless service profile. (AI-inferred)
     min_gw_diversity: Any = None
-    # Indicates whether the LoRaWAN service profile supports network geolocation for devices. (AI-inferred)
     nwk_geo_loc: Any = None
-    # Indicates whether the LoRaWAN service profile allows private network operation for wireless devices. (AI-inferred)
     pr_allowed: Any = None
-    # When true, this enables roaming aggregation (RA) for the LoRaWAN service profile, allowing devices using the profile to participate in RA-based LoRaWAN roaming. (AI-inferred)
     ra_allowed: Any = None
-    # Indicates whether the battery level of the LoRaWAN device is reported to AWS IoT Core for LoRaWAN; when true, the service profile requests that device status reports include battery level. (AI-inferred)
     report_dev_status_battery: Any = None
-    # Controls whether the LoRaWAN service profile reports the device status link margin to the application server. (AI-inferred)
     report_dev_status_margin: Any = None
-    # Specifies the target packet error rate (PER) for the LoRaWAN service profile, representing the maximum acceptable percentage of lost or errored packets in wireless transmissions. (AI-inferred)
     target_per: Any = None
-    # The uplink bucket size, which sets the maximum number of uplink messages that can be sent per second for devices using this LoRaWAN service profile. (AI-inferred)
     ul_bucket_size: Any = None
-    # Sets the uplink data rate for the LoRaWAN service profile, used together with the uplink bucket size and rate policy to govern how uplink messages from wireless devices are rate-limited. (AI-inferred)
     ul_rate: Any = None
-    # Determines the billing rate policy for uplink LoRaWAN messages, typically set to 'Billed' or 'Unbilled' to indicate whether uplink transmissions are billed to the customer. (AI-inferred)
     ul_rate_policy: Any = None
 
 @dataclasses.dataclass
 class TwirelessServiceProfile_Tags:
-    # The key of a tag attached to the AWS IoT Wireless Service Profile, used to identify the tag within the resource's tag set. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS IoT Wireless Service Profile, used for management and identification. (AI-inferred)
     value: Any = None
 
 _TwirelessServiceProfile_TagsFields = {
@@ -71,7 +51,6 @@ class TwirelessServiceProfileAttrs:
     arn: Any = None
     # Service profile Id. Returned after successful create.
     id: Any = None
-    # The LoRaWAN configuration block of the service profile, which contains the maximum EIRP, maximum duty cycle, and flags for join, class B, and class C support as returned by AWS. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of service profile
     name: Any = None

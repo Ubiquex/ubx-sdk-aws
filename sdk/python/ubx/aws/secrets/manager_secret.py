@@ -31,14 +31,11 @@ class ManagerSecret_GenerateSecretString:
 
 @dataclasses.dataclass
 class ManagerSecret_ReplicaRegions:
-    # For a replica of the secret in another region, this specifies the ARN, key ID, or alias of the KMS key used to encrypt the secret in that replica region; if omitted, Secrets Manager uses the default KMS key for that region. (AI-inferred)
     kms_key_id: Any = None
-    # The AWS Region to which the secret is replicated, as part of a multi-Region secret replica configuration. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class ManagerSecret_Tags:
-    # The key of a tag attached to the AWS Secrets Manager secret, used to identify the tag within the secret's tag set. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -90,7 +87,6 @@ class ManagerSecretAttrs:
     description: Any = None
     # Generates a random password. We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support. *Required permissions:*``secretsmanager:GetRandomPassword``. For more information, see [IAM policy actions for Secrets Manager](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssecretsmanager.html#awssecretsmanager-actions-as-permissions) and [Authentication and access control in Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html).
     generate_secret_string: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the secret. (AI-inferred)
     id: Any = None
     # The ARN, key ID, or alias of the KMS key that Secrets Manager uses to encrypt the secret value in the secret. An alias is always prefixed by ``alias/``, for example ``alias/aws/secretsmanager``. For more information, see [About aliases](https://docs.aws.amazon.com/kms/latest/developerguide/alias-about.html). To use a KMS key in a different account, use the key ARN or the alias ARN. If you don't specify this value, then Secrets Manager uses the key ``aws/secretsmanager``. If that key doesn't yet exist, then Secrets Manager creates it for you automatically the first time it encrypts the secret value. If the secret is in a different AWS account from the credentials calling the API, then you can't use ``aws/secretsmanager`` to encrypt the secret, and you must create and use a customer managed KMS key.
     kms_key_id: Any = None

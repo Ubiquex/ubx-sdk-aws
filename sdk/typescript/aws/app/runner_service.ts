@@ -24,7 +24,6 @@ export interface RunnerService_HealthCheckConfiguration {
 export interface RunnerService_InstanceConfiguration {
   /** CPU */
   cpu?: string | Computed<string>;
-  /** The ARN of an IAM role that grants the App Runner service permissions to access other AWS services on behalf of the service's instances. (AI-inferred) */
   instanceRoleArn?: string | Computed<string>;
   /** Memory */
   memory?: string | Computed<string>;
@@ -59,16 +58,13 @@ export interface RunnerService_ObservabilityConfiguration {
 }
 
 export interface RunnerService_SourceConfiguration_AuthenticationConfiguration {
-  /** The ARN of the IAM role that AWS App Runner assumes to access the source code repository or image registry specified in the service's source configuration. (AI-inferred) */
   accessRoleArn?: string | Computed<string>;
   /** Connection Arn */
   connectionArn?: string | Computed<string>;
 }
 
 export interface RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets {
-  /** The name (key) of a runtime environment secret, which becomes the environment variable name that App Runner injects into the service's runtime environment. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The AWS Secrets Manager secret ARN or Systems Manager Parameter Store parameter name whose value is exposed as the runtime environment secret to the App Runner service. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -81,7 +77,6 @@ export interface RunnerService_SourceConfiguration_CodeRepository_CodeConfigurat
   runtime: string | Computed<string>;
   /** The secrets and parameters that get referenced by your service as environment variables */
   runtimeEnvironmentSecrets?: RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[] | Computed<RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[]>;
-  /** Specifies the environment variables to pass to the App Runner service runtime, as a list of key-value pairs where each object contains the variable name and value. (AI-inferred) */
   runtimeEnvironmentVariables?: RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[] | Computed<RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[]>;
   /** Start Command */
   startCommand?: string | Computed<string>;
@@ -117,7 +112,6 @@ export interface RunnerService_SourceConfiguration_ImageRepository_ImageConfigur
   port?: string | Computed<string>;
   /** The secrets and parameters that get referenced by your service as environment variables */
   runtimeEnvironmentSecrets?: RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[] | Computed<RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[]>;
-  /** Specifies a list of key-value pairs, each containing a Name and Value, that define runtime environment variables passed to the App Runner service's container when it uses an image from an image repository. (AI-inferred) */
   runtimeEnvironmentVariables?: RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[] | Computed<RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets[]>;
   /** Start Command */
   startCommand?: string | Computed<string>;
@@ -144,7 +138,6 @@ export interface RunnerService_SourceConfiguration {
 }
 
 export interface RunnerService_Tags {
-  /** The key of a tag attached to an AWS App Runner service, used to organize and manage the service resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -318,7 +311,6 @@ export interface RunnerServiceConfig {
   serviceName?: string | Computed<string>;
   /** Source Code configuration */
   sourceConfiguration: RunnerService_SourceConfiguration | Computed<RunnerService_SourceConfiguration>;
-  /** This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: RunnerService_Tags[] | Computed<RunnerService_Tags[]>;
 }
 
@@ -347,7 +339,6 @@ export interface RunnerServiceAttrs {
   sourceConfiguration: RunnerService_SourceConfiguration;
   /** AppRunner Service status. */
   status: string;
-  /** This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags: RunnerService_Tags[];
 }
 

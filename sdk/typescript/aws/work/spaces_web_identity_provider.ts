@@ -12,30 +12,19 @@ const SpacesWebIdentityProvider_TagsFields: FieldMap = {
 };
 
 export interface SpacesWebIdentityProviderConfig {
-  /** Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred) */
   identityProviderDetails: unknown | Computed<unknown>;
-  /** Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred) */
   identityProviderName: string | Computed<string>;
-  /** Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred) */
   identityProviderType: string | Computed<string>;
-  /** The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred) */
   portalArn?: string | Computed<string>;
-  /** A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred) */
   tags?: SpacesWebIdentityProvider_Tags[] | Computed<SpacesWebIdentityProvider_Tags[]>;
 }
 
 export interface SpacesWebIdentityProviderAttrs {
-  /** The Amazon Resource Name (ARN) of the identity provider, assigned by AWS and used to uniquely identify it. (AI-inferred) */
   identityProviderArn: string;
-  /** Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred) */
   identityProviderDetails: unknown;
-  /** Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred) */
   identityProviderName: string;
-  /** Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred) */
   identityProviderType: string;
-  /** The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred) */
   portalArn: string;
-  /** A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred) */
   tags: SpacesWebIdentityProvider_Tags[];
 }
 

@@ -2,21 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerAssessmentFramework_ControlSets_Controls {
-  /** The identifier (ARN) of the AWS Audit Manager control to include in the control set of the assessment framework. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface ManagerAssessmentFramework_ControlSets {
-  /** Specifies the list of controls for each control set in the assessment framework, where each control entry includes its name, source type, and mapping details so the framework can evaluate evidence against them. (AI-inferred) */
   controls?: ManagerAssessmentFramework_ControlSets_Controls[] | Computed<ManagerAssessmentFramework_ControlSets_Controls[]>;
-  /** Name of the control set within the assessment framework, identifying a group of related controls. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface ManagerAssessmentFramework_Tags {
-  /** The key (name) of a tag attached to the AWS Audit Manager assessment framework, used to identify and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** In AWS Audit Manager, this is the value portion of a tag key-value pair attached to the assessment framework, used for custom metadata and resource identification/filtering. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

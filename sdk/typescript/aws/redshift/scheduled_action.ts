@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ScheduledActionConfig {
   /** If true, the schedule is enabled. If false, the scheduled action does not trigger. */
   enable?: boolean | Computed<boolean>;
-  /** The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred) */
   endTime?: string | Computed<string>;
   /** The IAM role to assume to run the target action. */
   iamRole?: string | Computed<string>;
@@ -14,16 +13,13 @@ export interface ScheduledActionConfig {
   scheduledActionDescription?: string | Computed<string>;
   /** The name of the scheduled action. The name must be unique within an account. */
   scheduledActionName: string | Computed<string>;
-  /** The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred) */
   startTime?: string | Computed<string>;
-  /** Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred) */
   targetAction?: unknown | Computed<unknown>;
 }
 
 export interface ScheduledActionAttrs {
   /** If true, the schedule is enabled. If false, the scheduled action does not trigger. */
   enable: boolean;
-  /** The UTC date and time after which the scheduled action no longer runs; if omitted, the action continues indefinitely until disabled or deleted. (AI-inferred) */
   endTime: string;
   /** The IAM role to assume to run the target action. */
   iamRole: string;
@@ -35,11 +31,9 @@ export interface ScheduledActionAttrs {
   scheduledActionDescription: string;
   /** The name of the scheduled action. The name must be unique within an account. */
   scheduledActionName: string;
-  /** The UTC start time when the scheduled action becomes active, specified in ISO 8601 format. (AI-inferred) */
   startTime: string;
   /** The state of the scheduled action. */
   state: string;
-  /** Configures the specific Redshift cluster operation (such as resize, pause, or resume) that the scheduled action will invoke when it fires. (AI-inferred) */
   targetAction: unknown;
 }
 

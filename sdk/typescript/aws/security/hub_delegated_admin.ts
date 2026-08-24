@@ -9,9 +9,7 @@ export interface HubDelegatedAdminConfig {
 export interface HubDelegatedAdminAttrs {
   /** The AWS-account identifier of the account to designate as the Security Hub CSPM administrator account. */
   adminAccountId: string;
-  /** The AWS account identifier of the delegated Security Hub administrator. (AI-inferred) */
   delegatedAdminIdentifier: string;
-  /** The current delegation status of the Security Hub delegated administrator account, typically ENABLED or DISABLED. (AI-inferred) */
   status: string;
 }
 

@@ -4,20 +4,14 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolUicustomizationAttachmentConfig struct {
-	// The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred)
 	Css any
-	// The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred)
 	ClientId any
-	// The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred)
 	UserPoolId any
 }
 
 type UserPoolUicustomizationAttachmentAttrs struct {
-	// The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred)
 	Css any
-	// The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred)
 	ClientId any
-	// The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred)
 	UserPoolId any
 }
 

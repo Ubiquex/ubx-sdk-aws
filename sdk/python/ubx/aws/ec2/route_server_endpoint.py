@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteServerEndpoint_Tags:
-    # The key of a tag attached to the EC2 Route Server Endpoint, used to organize and identify the resource in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

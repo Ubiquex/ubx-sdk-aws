@@ -4,16 +4,12 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StarGitHubRepository_Code_S3 struct {
-	// The name of the S3 bucket that contains the source code archive used to populate the GitHub repository. (AI-inferred)
 	Bucket any
-	// The S3 object key (file path) of the source code archive in the specified S3 bucket that CodeStar uses to import the GitHub repository. (AI-inferred)
 	Key any
-	// The object version identifier of the S3 object that contains the source code to be committed to the GitHub repository, used to reference a specific version of the object when multiple versions exist in the bucket. (AI-inferred)
 	ObjectVersion any
 }
 
 type StarGitHubRepository_Code struct {
-	// Specifies the S3 bucket and object key (and optionally object version) of the source code archive that AWS CodeStar uses to populate the GitHub repository. (AI-inferred)
 	S3 any
 }
 
@@ -32,42 +28,25 @@ var StarGitHubRepository_CodeFields = ubx.FieldMap{
 	}
 
 type StarGitHubRepositoryConfig struct {
-	// Specifies the S3 bucket, key, and optional object version of a ZIP file containing the source code to be initially committed to the GitHub repository. (AI-inferred)
 	Code any
-	// The Amazon Resource Name (ARN) of the AWS CodeStar Connections connection used to authorize access to the GitHub repository. (AI-inferred)
 	ConnectionArn any
-	// Whether to enable GitHub Issues (the repository's issue tracker) for the GitHub repository. (AI-inferred)
 	EnableIssues any
-	// Indicates whether the GitHub repository is private (true) or public (false). (AI-inferred)
 	IsPrivate any
-	// The GitHub personal access token used to authenticate with GitHub so AWS CodeStar can create and manage the repository on your behalf. (AI-inferred)
 	RepositoryAccessToken any
-	// The description of the GitHub repository, which is displayed on the repository's main page. (AI-inferred)
 	RepositoryDescription any
-	// The name of the GitHub repository to create or associate with this resource. (AI-inferred)
 	RepositoryName any
-	// The GitHub user or organization that owns the repository. (AI-inferred)
 	RepositoryOwner any
 }
 
 type StarGitHubRepositoryAttrs struct {
-	// Specifies the S3 bucket, key, and optional object version of a ZIP file containing the source code to be initially committed to the GitHub repository. (AI-inferred)
 	Code any
-	// The Amazon Resource Name (ARN) of the AWS CodeStar Connections connection used to authorize access to the GitHub repository. (AI-inferred)
 	ConnectionArn any
-	// Whether to enable GitHub Issues (the repository's issue tracker) for the GitHub repository. (AI-inferred)
 	EnableIssues any
-	// The unique identifier for the AWS CodeStar GitHub repository, which CloudFormation returns as the GitHub owner and repository name combined with a slash (e.g., `owner/repo`). (AI-inferred)
 	Id any
-	// Indicates whether the GitHub repository is private (true) or public (false). (AI-inferred)
 	IsPrivate any
-	// The GitHub personal access token used to authenticate with GitHub so AWS CodeStar can create and manage the repository on your behalf. (AI-inferred)
 	RepositoryAccessToken any
-	// The description of the GitHub repository, which is displayed on the repository's main page. (AI-inferred)
 	RepositoryDescription any
-	// The name of the GitHub repository to create or associate with this resource. (AI-inferred)
 	RepositoryName any
-	// The GitHub user or organization that owns the repository. (AI-inferred)
 	RepositoryOwner any
 }
 

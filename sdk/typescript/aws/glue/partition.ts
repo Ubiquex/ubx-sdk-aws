@@ -2,92 +2,59 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Partition_PartitionInput_StorageDescriptor_Columns {
-  /** Sets the optional comment or description for a column within the partition's storage descriptor, providing human-readable context for that column in the AWS Glue Data Catalog. (AI-inferred) */
   comment?: string | Computed<string>;
-  /** The name of a column in the storage descriptor for the partition, defining the schema of the data stored in the partition. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The data type (e.g., string, int, boolean) of the column in the partition's schema, as used by Glue when reading or writing the underlying data format. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaId {
-  /** The name of the AWS Glue Schema Registry that contains the schema referenced by the partition's storage descriptor. (AI-inferred) */
   registryName?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the schema in the AWS Glue Schema Registry that this partition's storage descriptor references. (AI-inferred) */
   schemaArn?: string | Computed<string>;
-  /** The name of the AWS Glue Schema Registry schema that this partition's storage descriptor references. (AI-inferred) */
   schemaName?: string | Computed<string>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor_SchemaReference {
-  /** Identifies the schema in the AWS Glue Schema Registry (by schema ARN or registry name and schema name) that this partition's storage descriptor references via its schema reference. (AI-inferred) */
   schemaId?: Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaId | Computed<Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaId>;
-  /** The unique identifier (UUID) of a specific version of a schema in the AWS Glue Schema Registry, used to reference that schema version for this partition's storage descriptor when schema reference is configured. (AI-inferred) */
   schemaVersionId?: string | Computed<string>;
-  /** The version number of the referenced Glue schema, used to pin the partition's storage descriptor to a specific schema version for schema evolution compatibility. (AI-inferred) */
   schemaVersionNumber?: number | Computed<number>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor_SerdeInfo {
-  /** The name of the serializer/deserializer (SerDe) library used to read and write data for the partition's storage descriptor. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the key-value configuration parameters for the SerDe (serializer/deserializer), such as format-specific options like delimiters, applied to the partition's storage descriptor. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
-  /** Specifies the fully qualified class name of the SerDe library (e.g., org.openx.data.jsonserde.JsonSerDe) used to serialize and deserialize data in the table partition. (AI-inferred) */
   serializationLibrary?: string | Computed<string>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor_SkewedInfo {
-  /** A list of column names in the partition's storage descriptor that are identified as having skewed data values, used together with skewed column value maps for optimizing storage and query performance in AWS Glue. (AI-inferred) */
   skewedColumnNames?: string[] | Computed<string[]>;
-  /** Specifies a mapping from skewed column values to their physical file or directory locations within the storage descriptor, allowing query engines to locate data for unbalanced values efficiently. (AI-inferred) */
   skewedColumnValueLocationMaps?: unknown | Computed<unknown>;
-  /** Specifies the list of skewed values (in the same order and count as the skewed column names) that should be mapped to separate physical locations for asymmetric or skewed data in the Glue table's storage descriptor. (AI-inferred) */
   skewedColumnValues?: string[] | Computed<string[]>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor_SortColumns {
-  /** The name of the column that serves as the sort key for this partition, determining the order of data within the partition's storage descriptor. (AI-inferred) */
   column?: string | Computed<string>;
-  /** Specifies whether the column is sorted in ascending (0) or descending (1) order. (AI-inferred) */
   sortOrder?: number | Computed<number>;
 }
 
 export interface Partition_PartitionInput_StorageDescriptor {
-  /** The list of column names by which the partition data is bucketed (hash-partitioned) within the Glue table. (AI-inferred) */
   bucketColumns?: string[] | Computed<string[]>;
-  /** Defines the columns (name, data type, and optional comment) that make up the schema of the partition's storage descriptor. (AI-inferred) */
   columns?: Partition_PartitionInput_StorageDescriptor_Columns[] | Computed<Partition_PartitionInput_StorageDescriptor_Columns[]>;
-  /** Indicates whether the data in the partition is compressed, as defined in the AWS Glue StorageDescriptor for the partition's table format. (AI-inferred) */
   compressed?: boolean | Computed<boolean>;
-  /** The fully qualified class name of the input format used for reading files in this partition, such as org.apache.hadoop.mapred.TextInputFormat. (AI-inferred) */
   inputFormat?: string | Computed<string>;
-  /** The URI of the storage location (typically an S3 prefix) where the data files for this partition reside, as defined in the partition's StorageDescriptor. (AI-inferred) */
   location?: string | Computed<string>;
-  /** Specifies the number of buckets in the storage descriptor for the partition, which defines the bucketing layout of the underlying data in AWS Glue. (AI-inferred) */
   numberOfBuckets?: number | Computed<number>;
-  /** Specifies the fully qualified class name of the Hadoop OutputFormat used for writing data files in the partition, such as org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat or org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat. (AI-inferred) */
   outputFormat?: string | Computed<string>;
-  /** Specifies custom key-value pairs (parameters) for the storage descriptor, such as SerDe or compression properties, for the Glue partition. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
-  /** Specifies a reference to a schema in the AWS Glue Schema Registry, including the schema identifier and version, that defines the column structure for this partition. (AI-inferred) */
   schemaReference?: Partition_PartitionInput_StorageDescriptor_SchemaReference | Computed<Partition_PartitionInput_StorageDescriptor_SchemaReference>;
-  /** Specifies the serialization/deserialization (SerDe) configuration, including the SerDe library name and parameters, used to interpret the data in the partition's storage descriptor. (AI-inferred) */
   serdeInfo?: Partition_PartitionInput_StorageDescriptor_SerdeInfo | Computed<Partition_PartitionInput_StorageDescriptor_SerdeInfo>;
-  /** Specifies skewed column names, skewed column values, and their location mappings for the partition's storage descriptor, used to optimize storage and query handling for skewed data in the table. (AI-inferred) */
   skewedInfo?: Partition_PartitionInput_StorageDescriptor_SkewedInfo | Computed<Partition_PartitionInput_StorageDescriptor_SkewedInfo>;
-  /** Sorts the data stored in the partition by the specified columns, each entry providing a column name and an integer sort order (0 for descending, 1 for ascending). (AI-inferred) */
   sortColumns?: Partition_PartitionInput_StorageDescriptor_SortColumns[] | Computed<Partition_PartitionInput_StorageDescriptor_SortColumns[]>;
-  /** Specifies whether the partition's data is stored in subdirectories rather than in a single directory, as part of the storage descriptor. (AI-inferred) */
   storedAsSubDirectories?: boolean | Computed<boolean>;
 }
 
 export interface Partition_PartitionInput {
-  /** Specifies key-value pairs that store custom metadata for the partition (e.g., compression type or other table properties), as a dynamic map of strings. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
-  /** Defines the physical storage details for the partition, including its location (such as an S3 path), input and output formats, column schema, SerDe configuration, and bucket or sort key settings. (AI-inferred) */
   storageDescriptor?: Partition_PartitionInput_StorageDescriptor | Computed<Partition_PartitionInput_StorageDescriptor>;
-  /** The list of partition key values that uniquely identify this partition within the Glue table, matching the order of the table's partition key columns. (AI-inferred) */
   values: string[] | Computed<string[]>;
 }
 
@@ -177,26 +144,17 @@ const Partition_PartitionInputFields: FieldMap = {
 };
 
 export interface PartitionConfig {
-  /** The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred) */
   catalogId: string | Computed<string>;
-  /** The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred) */
   databaseName: string | Computed<string>;
-  /** The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred) */
   partitionInput: Partition_PartitionInput | Computed<Partition_PartitionInput>;
-  /** The name of the Glue table to which this partition belongs. (AI-inferred) */
   tableName: string | Computed<string>;
 }
 
 export interface PartitionAttrs {
-  /** The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred) */
   catalogId: string;
-  /** The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred) */
   databaseName: string;
-  /** The unique identifier of the Glue partition, typically a composite of the database name, table name, and partition values (e.g., 'database:table:value1/value2'). (AI-inferred) */
   id: string;
-  /** The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred) */
   partitionInput: Partition_PartitionInput;
-  /** The name of the Glue table to which this partition belongs. (AI-inferred) */
   tableName: string;
 }
 

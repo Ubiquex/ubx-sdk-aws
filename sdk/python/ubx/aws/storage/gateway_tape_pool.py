@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayTapePool_Tags:
-    # The tag key (e.g., 'Environment') that names a metadata tag attached to the tape pool. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag associated with the Storage Gateway tape pool, used to organize and identify the resource in AWS. (AI-inferred)
     value: Any = None
 
 _GatewayTapePool_TagsFields = {

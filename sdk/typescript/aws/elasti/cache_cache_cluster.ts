@@ -2,44 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CacheCacheCluster_ConfigurationEndpoint {
-  /** The DNS hostname of the configuration endpoint for a Memcached cache cluster, which clients use to discover all cache nodes. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The TCP port of the ElastiCache cluster's configuration endpoint, used by Redis clients to connect and discover shard endpoints when cluster mode is enabled. (AI-inferred) */
   port?: string | Computed<string>;
 }
 
 export interface CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails {
-  /** The name of the CloudWatch Logs log group where ElastiCache publishes the selected log type (e.g., slow-log or engine-log) when log delivery is configured with CloudWatch Logs as the destination. (AI-inferred) */
   logGroup?: string | Computed<string>;
 }
 
 export interface CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails {
-  /** The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose delivery stream to which ElastiCache cache engine logs are delivered. (AI-inferred) */
   deliveryStream?: string | Computed<string>;
 }
 
 export interface CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails {
-  /** Specifies the CloudWatch Logs destination details for the log delivery configuration, including the log group name where ElastiCache logs are delivered. (AI-inferred) */
   cloudWatchLogsDetails?: CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails | Computed<CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails>;
-  /** The Kinesis Data Firehose destination details object, which contains the delivery stream name where ElastiCache delivers the cache cluster's log records (e.g., slow or engine logs) when log delivery is configured for Firehose. (AI-inferred) */
   kinesisFirehoseDetails?: CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails | Computed<CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails>;
 }
 
 export interface CacheCacheCluster_LogDeliveryConfigurations {
-  /** Specifies the destination for log delivery, which must contain either a CloudWatch Logs log group or a Kinesis Data Firehose delivery stream, matching the selected DestinationType. (AI-inferred) */
   destinationDetails?: CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails | Computed<CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails>;
-  /** Specifies the type of destination for the logs, either 'cloudwatch-logs' or 'kinesis-firehose', determining whether the log delivery sends logs to Amazon CloudWatch Logs or to Amazon Kinesis Data Firehose. (AI-inferred) */
   destinationType?: string | Computed<string>;
-  /** Specifies the format (text or json) in which ElastiCache engine logs or slow logs are delivered to the configured destination. (AI-inferred) */
   logFormat?: string | Computed<string>;
-  /** Specifies the type of cache log being delivered, either 'slow-log' for slow query logs or 'engine-log' for engine logs, for the ElastiCache cluster. (AI-inferred) */
   logType?: string | Computed<string>;
 }
 
 export interface CacheCacheCluster_Tags {
-  /** The key of a user-defined tag applied to the ElastiCache cache cluster, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag associated with the ElastiCache cache cluster, used to categorize and manage the cluster within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -148,7 +136,6 @@ export interface CacheCacheClusterAttrs {
   cacheSubnetGroupName: string;
   /** A name for the cache cluster. */
   clusterName: string;
-  /** The configuration endpoint of the ElastiCache cache cluster, returned as an object containing the DNS address and port that client applications use to connect to the cluster. (AI-inferred) */
   configurationEndpoint: CacheCacheCluster_ConfigurationEndpoint;
   /** The name of the cache engine to be used for this cluster. */
   engine: string;
@@ -172,7 +159,6 @@ export interface CacheCacheClusterAttrs {
   preferredAvailabilityZones: string[];
   /** Specifies the weekly time range during which maintenance on the cluster is performed. */
   preferredMaintenanceWindow: string;
-  /** The DNS address and port of the Redis cache cluster's primary node, provided as an object with address and port attributes. (AI-inferred) */
   redisEndpoint: CacheCacheCluster_ConfigurationEndpoint;
   /** A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3. */
   snapshotArns: string[];

@@ -28,7 +28,6 @@ export interface RunnerVpcIngressConnectionConfig {
   ingressVpcConfiguration: RunnerVpcIngressConnection_IngressVpcConfiguration | Computed<RunnerVpcIngressConnection_IngressVpcConfiguration>;
   /** The Amazon Resource Name (ARN) of the service. */
   serviceArn: string | Computed<string>;
-  /** Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred) */
   tags?: RunnerVpcIngressConnection_Tags[] | Computed<RunnerVpcIngressConnection_Tags[]>;
   /** The customer-provided Vpc Ingress Connection name. */
   vpcIngressConnectionName?: string | Computed<string>;
@@ -43,7 +42,6 @@ export interface RunnerVpcIngressConnectionAttrs {
   serviceArn: string;
   /** The current status of the VpcIngressConnection. */
   status: string;
-  /** Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred) */
   tags: RunnerVpcIngressConnection_Tags[];
   /** The Amazon Resource Name (ARN) of the VpcIngressConnection. */
   vpcIngressConnectionArn: string;

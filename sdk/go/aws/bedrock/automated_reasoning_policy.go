@@ -10,7 +10,6 @@ type AutomatedReasoningPolicy_PolicyDefinition_Rules struct {
 }
 
 type AutomatedReasoningPolicy_PolicyDefinition_Types_Values struct {
-	// Provides a human-readable explanation of a specific value defined within a type in the automated reasoning policy, giving the model additional context for interpreting that value. (AI-inferred)
 	Description any
 	Value any
 }
@@ -92,7 +91,6 @@ var AutomatedReasoningPolicy_TagsFields = ubx.FieldMap{
 	}
 
 type AutomatedReasoningPolicyConfig struct {
-	// An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred)
 	Description any
 	// Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false
 	ForceDelete any
@@ -100,7 +98,6 @@ type AutomatedReasoningPolicyConfig struct {
 	KmsKeyId any
 	Name any
 	PolicyDefinition any
-	// A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
 	Tags any
 }
 
@@ -109,7 +106,6 @@ type AutomatedReasoningPolicyAttrs struct {
 	CreatedAt any
 	// The hash for this version
 	DefinitionHash any
-	// An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred)
 	Description any
 	// Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false
 	ForceDelete any
@@ -122,7 +118,6 @@ type AutomatedReasoningPolicyAttrs struct {
 	PolicyDefinition any
 	// The id of the policy
 	PolicyId any
-	// A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
 	Tags any
 	// Time this policy was last updated
 	UpdatedAt any

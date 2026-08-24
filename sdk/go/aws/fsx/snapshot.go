@@ -4,9 +4,7 @@ package fsx
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Snapshot_Tags struct {
-	// The key of a tag attached to the Amazon FSx snapshot, used to organize and identify the snapshot within AWS. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the FSx snapshot, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,22 +14,16 @@ var Snapshot_TagsFields = ubx.FieldMap{
 	}
 
 type SnapshotConfig struct {
-	// The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred)
 	Name any
 	Tags any
-	// The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred)
 	VolumeId any
 }
 
 type SnapshotAttrs struct {
-	// The unique identifier assigned by AWS to this FSx snapshot. (AI-inferred)
 	Id any
-	// The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) assigned by AWS to the FSx snapshot, uniquely identifying it across regions and accounts. (AI-inferred)
 	ResourceArn any
 	Tags any
-	// The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred)
 	VolumeId any
 }
 

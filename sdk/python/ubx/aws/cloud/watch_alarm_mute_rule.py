@@ -27,9 +27,7 @@ class WatchAlarmMuteRule_Rule:
 
 @dataclasses.dataclass
 class WatchAlarmMuteRule_Tags:
-    # The key portion of a tag attached to the CloudWatch alarm mute rule, enabling you to categorize and filter the rule among your AWS resources. (AI-inferred)
     key: Any = None
-    # Specifies the value for a tag key on the CloudWatch alarm mute rule, allowing you to categorize or filter the rule in CloudWatch and AWS billing reports. (AI-inferred)
     value: Any = None
 
 _WatchAlarmMuteRule_MuteTargetsFields = {

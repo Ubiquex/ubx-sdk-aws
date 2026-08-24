@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PhoneNumber_MandatoryKeywords_Help {
-  /** The message that the phone number automatically sends to an SMS sender when it receives the mandatory HELP keyword, configuring the help response required for compliant phone numbers. (AI-inferred) */
   message: string | Computed<string>;
 }
 
@@ -14,18 +13,13 @@ export interface PhoneNumber_MandatoryKeywords {
 }
 
 export interface PhoneNumber_OptionalKeywords {
-  /** Defines the opt-in/opt-out behavior (REGISTER or UNREGISTER) that is applied when an inbound SMS message matches the associated optional keyword on this phone number. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Defines a custom keyword that, when received as an inbound SMS message to the phone number, triggers the pre-configured two-way messaging response associated with that keyword. (AI-inferred) */
   keyword?: string | Computed<string>;
-  /** The auto-reply text sent when the associated keyword from the same `optional_keywords` list entry is received by this phone number. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface PhoneNumber_Tags {
-  /** The key of a key-value tag that you associate with the phone number to help organize and manage it. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the SMS voice phone number. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -96,7 +90,6 @@ export interface PhoneNumberConfig {
 }
 
 export interface PhoneNumberAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the phone number resource in Amazon Pinpoint SMS Voice. (AI-inferred) */
   arn: string;
   /** When set to true the sender ID can't be deleted. By default this is set to false. */
   deletionProtectionEnabled: boolean;
@@ -112,9 +105,7 @@ export interface PhoneNumberAttrs {
   optOutListName: string;
   /** A keyword is a word that you can search for on a particular phone number or pool. It is also a specific word or phrase that an end user can send to your number to elicit a response, such as an informational message or a special offer. When your number receives a message that begins with a keyword, AWS End User Messaging SMS and Voice responds with a customizable message. */
   optionalKeywords: PhoneNumber_OptionalKeywords[];
-  /** The E.164-formatted phone number assigned by AWS for this resource, used as the caller ID for sending voice messages. (AI-inferred) */
   phoneNumber: string;
-  /** The service-assigned unique identifier for the phone number, returned by AWS SMS Voice (AWS End User Messaging) after provisioning, used to reference the phone number in API operations and other resources. (AI-inferred) */
   phoneNumberId: string;
   /** By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. */
   selfManagedOptOutsEnabled: boolean;

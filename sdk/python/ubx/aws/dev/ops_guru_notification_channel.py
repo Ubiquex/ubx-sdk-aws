@@ -15,7 +15,6 @@ class OpsGuruNotificationChannel_Config_Filters:
 
 @dataclasses.dataclass
 class OpsGuruNotificationChannel_Config_Sns:
-    # The ARN of the Amazon SNS topic that DevOps Guru publishes notification messages to for this channel. (AI-inferred)
     topic_arn: Any = None
 
 @dataclasses.dataclass

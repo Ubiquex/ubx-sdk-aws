@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Template_Tags:
-    # The key of a tag applied to the Amazon SES email template. (AI-inferred)
     key: Any = None
-    # The value part of a tag assigned to the SES email template, used for metadata organization and cost allocation in AWS. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -45,7 +43,6 @@ class TemplateConfig:
 
 @dataclasses.dataclass
 class TemplateAttrs:
-    # The id of the aws_ses_template resource is the template name, which uniquely identifies the SES template within the AWS region. (AI-inferred)
     id: Any = None
     # The tags (keys and values) associated with the email template.
     tags: Any = None

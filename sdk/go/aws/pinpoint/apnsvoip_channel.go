@@ -4,46 +4,27 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApnsvoipChannelConfig struct {
-	// The unique identifier of the Amazon Pinpoint application that the APNs VoIP channel is associated with. (AI-inferred)
 	ApplicationId any
-	// The Apple-assigned bundle identifier (e.g., com.example.app) for the iOS app that receives APNs VoIP push notifications, used in the Pinpoint APNs VoIP channel configuration. (AI-inferred)
 	BundleId any
-	// The Apple Push Notification service (APNs) VoIP channel certificate (the .pem file content) used for certificate-based authentication with APNs, which must be paired with the PrivateKey to enable sending VoIP push notifications. (AI-inferred)
 	Certificate any
-	// Determines the default authentication method (either certificate-based or token-based) that Amazon Pinpoint uses to authenticate with the Apple Push Notification service (APNs) for sending VoIP messages when both credentials are configured. (AI-inferred)
 	DefaultAuthenticationMethod any
-	// Indicates whether the APNs VoIP (Apple Push Notification service for Voice over IP) channel is enabled for the associated Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// The private key from Apple, paired with the certificate, used to authenticate with Apple Push Notification service for sending VoIP push notifications through this channel. (AI-inferred)
 	PrivateKey any
-	// The Apple Developer Team ID used, along with the token key and key identifier, to authenticate the APNs VoIP channel via token-based authentication for sending push notifications. (AI-inferred)
 	TeamId any
-	// Specifies the token signing key (a .p8 private key from Apple) that Amazon Pinpoint uses to generate authentication tokens for sending VoIP push notifications through the APNs VoIP channel. (AI-inferred)
 	TokenKey any
-	// The key identifier (kid) of the .p8 private token key that Amazon Pinpoint uses to sign APNs authentication tokens for the VoIP channel when the default authentication method is 'token'. (AI-inferred)
 	TokenKeyId any
 }
 
 type ApnsvoipChannelAttrs struct {
-	// The unique identifier of the Amazon Pinpoint application that the APNs VoIP channel is associated with. (AI-inferred)
 	ApplicationId any
-	// The Apple-assigned bundle identifier (e.g., com.example.app) for the iOS app that receives APNs VoIP push notifications, used in the Pinpoint APNs VoIP channel configuration. (AI-inferred)
 	BundleId any
-	// The Apple Push Notification service (APNs) VoIP channel certificate (the .pem file content) used for certificate-based authentication with APNs, which must be paired with the PrivateKey to enable sending VoIP push notifications. (AI-inferred)
 	Certificate any
-	// Determines the default authentication method (either certificate-based or token-based) that Amazon Pinpoint uses to authenticate with the Apple Push Notification service (APNs) for sending VoIP messages when both credentials are configured. (AI-inferred)
 	DefaultAuthenticationMethod any
-	// Indicates whether the APNs VoIP (Apple Push Notification service for Voice over IP) channel is enabled for the associated Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// The unique identifier assigned to the APNs VoIP channel by Amazon Pinpoint. (AI-inferred)
 	Id any
-	// The private key from Apple, paired with the certificate, used to authenticate with Apple Push Notification service for sending VoIP push notifications through this channel. (AI-inferred)
 	PrivateKey any
-	// The Apple Developer Team ID used, along with the token key and key identifier, to authenticate the APNs VoIP channel via token-based authentication for sending push notifications. (AI-inferred)
 	TeamId any
-	// Specifies the token signing key (a .p8 private key from Apple) that Amazon Pinpoint uses to generate authentication tokens for sending VoIP push notifications through the APNs VoIP channel. (AI-inferred)
 	TokenKey any
-	// The key identifier (kid) of the .p8 private token key that Amazon Pinpoint uses to sign APNs authentication tokens for the VoIP channel when the default authentication method is 'token'. (AI-inferred)
 	TokenKeyId any
 }
 

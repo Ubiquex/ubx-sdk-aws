@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerExperimentTrialComponent_MetadataProperties:
-    # Specifies the commit ID of the source code repository associated with the trial component, for tracking lineage and reproducibility. (AI-inferred)
     commit_id: Any = None
-    # Identifies the entity (such as a training job or pipeline execution) that generated this trial component, typically specified as its Amazon Resource Name (ARN) for provenance tracking. (AI-inferred)
     generated_by: Any = None
-    # The unique identifier of the SageMaker project associated with this trial component, used for tracking the component within a project's lineage. (AI-inferred)
     project_id: Any = None
-    # Specifies the repository URI or URL where the source code for the trial component is stored, as part of the metadata properties. (AI-inferred)
     repository: Any = None
 
 @dataclasses.dataclass
 class MakerExperimentTrialComponent_Status:
-    # The message field within the trial component's status object, providing human-readable details such as error descriptions or informational notes about the current state of the SageMaker trial component. (AI-inferred)
     message: Any = None
-    # The current lifecycle status of the trial component, such as InProgress, Completed, Failed, Stopping, or Stopped, as tracked by SageMaker. (AI-inferred)
     primary_status: Any = None
 
 @dataclasses.dataclass
 class MakerExperimentTrialComponent_Tags:
-    # The key (name) of a user-defined tag attached to the SageMaker Experiment Trial Component, used to categorize or identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the SageMaker experiment trial component, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _MakerExperimentTrialComponent_MetadataPropertiesFields = {
@@ -50,46 +42,27 @@ _MakerExperimentTrialComponent_TagsFields = {
 
 @dataclasses.dataclass
 class MakerExperimentTrialComponentConfig:
-    # The human-readable display name of the trial component, which can differ from the automatically generated name and is used for identification in the SageMaker console and API. (AI-inferred)
     display_name: Any = None
-    # The end time of the trial component, specified as an ISO 8601 date-time string (e.g., 2020-06-03T13:45:30Z). (AI-inferred)
     end_time: Any = None
-    # Specifies metadata properties for the trial component, such as a Git commit ID, repository, and project identifier. (AI-inferred)
     metadata_properties: Any = None
-    # Specifies the starting time of the SageMaker trial component, typically in ISO 8601 format (e.g., 2023-01-01T00:00:00Z), used to record when the component's execution began. (AI-inferred)
     start_time: Any = None
-    # Defines the current status of the SageMaker trial component, including a primary status (e.g., InProgress, Completed, Failed) and an optional human-readable message with additional details. (AI-inferred)
     status: Any = None
-    # Associates a list of tag objects (each with Key and Value) with the SageMaker trial component for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
-    # The name of the trial component, a user-defined identifier that must be unique within the AWS account and Region. (AI-inferred)
     trial_component_name: Any = None
 
 @dataclasses.dataclass
 class MakerExperimentTrialComponentAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this SageMaker experiment trial component within AWS. (AI-inferred)
     arn: Any = None
-    # The ISO 8601 timestamp indicating when the SageMaker trial component was created, returned as a read-only string. (AI-inferred)
     creation_time: Any = None
-    # The human-readable display name of the trial component, which can differ from the automatically generated name and is used for identification in the SageMaker console and API. (AI-inferred)
     display_name: Any = None
-    # The end time of the trial component, specified as an ISO 8601 date-time string (e.g., 2020-06-03T13:45:30Z). (AI-inferred)
     end_time: Any = None
-    # The unique resource identifier for this SageMaker experiment trial component, which is its name as used in the SageMaker API. (AI-inferred)
     id: Any = None
-    # The timestamp, formatted as a string, indicating when the SageMaker trial component was last modified. (AI-inferred)
     last_modified_time: Any = None
-    # The Amazon Resource Name (ARN) of the lineage group associated with this SageMaker trial component. (AI-inferred)
     lineage_group_arn: Any = None
-    # Specifies metadata properties for the trial component, such as a Git commit ID, repository, and project identifier. (AI-inferred)
     metadata_properties: Any = None
-    # Specifies the starting time of the SageMaker trial component, typically in ISO 8601 format (e.g., 2023-01-01T00:00:00Z), used to record when the component's execution began. (AI-inferred)
     start_time: Any = None
-    # Defines the current status of the SageMaker trial component, including a primary status (e.g., InProgress, Completed, Failed) and an optional human-readable message with additional details. (AI-inferred)
     status: Any = None
-    # Associates a list of tag objects (each with Key and Value) with the SageMaker trial component for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
-    # The name of the trial component, a user-defined identifier that must be unique within the AWS account and Region. (AI-inferred)
     trial_component_name: Any = None
 
 MakerExperimentTrialComponent = ubx.ResourceBinding(

@@ -4,9 +4,7 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Tags struct {
-	// The key of a user-defined tag attached to the AWS DMS event subscription, used to categorize and identify the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag applied to the AWS DMS event subscription. (AI-inferred)
 	Value any
 }
 

@@ -8,42 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupVersionConfig:
-    # The ARN of the connector definition version to associate with this Greengrass group version. (AI-inferred)
     connector_definition_version_arn: Any = None
-    # The ARN of the core definition version to associate with this Greengrass group version, which defines the core device for the group. (AI-inferred)
     core_definition_version_arn: Any = None
-    # The ARN of the device definition version to include in this Greengrass group version. (AI-inferred)
     device_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the function definition version that this group version references, which determines the Lambda functions included in the group. (AI-inferred)
     function_definition_version_arn: Any = None
-    # The unique identifier of the AWS Greengrass group that this group version belongs to and whose configuration this version specifies. (AI-inferred)
     group_id: Any = None
-    # The ARN of the logger definition version to associate with this Greengrass group version. (AI-inferred)
     logger_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the resource definition version to associate with this Greengrass group version. (AI-inferred)
     resource_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the subscription definition version that this Greengrass group version references for its MQTT subscription routing configuration. (AI-inferred)
     subscription_definition_version_arn: Any = None
 
 @dataclasses.dataclass
 class GroupVersionAttrs:
-    # The ARN of the connector definition version to associate with this Greengrass group version. (AI-inferred)
     connector_definition_version_arn: Any = None
-    # The ARN of the core definition version to associate with this Greengrass group version, which defines the core device for the group. (AI-inferred)
     core_definition_version_arn: Any = None
-    # The ARN of the device definition version to include in this Greengrass group version. (AI-inferred)
     device_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the function definition version that this group version references, which determines the Lambda functions included in the group. (AI-inferred)
     function_definition_version_arn: Any = None
-    # The unique identifier of the AWS Greengrass group that this group version belongs to and whose configuration this version specifies. (AI-inferred)
     group_id: Any = None
-    # The unique identifier of the Greengrass group version, assigned by AWS upon creation. (AI-inferred)
     id: Any = None
-    # The ARN of the logger definition version to associate with this Greengrass group version. (AI-inferred)
     logger_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the resource definition version to associate with this Greengrass group version. (AI-inferred)
     resource_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the subscription definition version that this Greengrass group version references for its MQTT subscription routing configuration. (AI-inferred)
     subscription_definition_version_arn: Any = None
 
 GroupVersion = ubx.ResourceBinding(

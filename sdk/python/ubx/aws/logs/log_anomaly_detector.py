@@ -10,13 +10,11 @@ import ubx_sdk as ubx
 class LogAnomalyDetectorConfig:
     # Account ID for owner of detector
     account_id: Any = None
-    # Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred)
     anomaly_visibility_time: Any = None
     # Name of detector
     detector_name: Any = None
     # How often log group is evaluated
     evaluation_frequency: Any = None
-    # The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred)
     filter_pattern: Any = None
     # The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
     kms_key_id: Any = None
@@ -31,7 +29,6 @@ class LogAnomalyDetectorAttrs:
     anomaly_detector_arn: Any = None
     # Current status of detector.
     anomaly_detector_status: Any = None
-    # Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred)
     anomaly_visibility_time: Any = None
     # When detector was created.
     creation_time_stamp: Any = None
@@ -39,7 +36,6 @@ class LogAnomalyDetectorAttrs:
     detector_name: Any = None
     # How often log group is evaluated
     evaluation_frequency: Any = None
-    # The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred)
     filter_pattern: Any = None
     # The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
     kms_key_id: Any = None

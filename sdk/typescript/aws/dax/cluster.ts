@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_Ssespecification {
-  /** Enables or disables server-side encryption (SSE) for the DAX cluster, using AWS KMS to protect data at rest when enabled. (AI-inferred) */
   sseenabled?: boolean | Computed<boolean>;
 }
 
@@ -11,73 +10,41 @@ const Cluster_SsespecificationFields: FieldMap = {
 };
 
 export interface ClusterConfig {
-  /** Specifies the Availability Zones in which the DAX cluster's nodes are placed, allowing you to distribute nodes across multiple AZs for high availability. (AI-inferred) */
   availabilityZones?: string[] | Computed<string[]>;
-  /** Specifies whether client traffic to the DAX cluster endpoint is encrypted with TLS (valid values: TLS or NONE). (AI-inferred) */
   clusterEndpointEncryptionType?: string | Computed<string>;
-  /** The name of the DAX cluster, which is used as the cluster identifier; if not provided, AWS CloudFormation generates a unique name. (AI-inferred) */
   clusterName?: string | Computed<string>;
-  /** Provides a description of the DAX cluster. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the Amazon Resource Name (ARN) of the IAM role that the DAX cluster uses to access DynamoDB and other required AWS services. (AI-inferred) */
   iamroleArn: string | Computed<string>;
-  /** Specifies the network type for the DAX cluster, such as IPV4 or DUALSTACK, determining whether the cluster uses IPv4 only or supports both IPv4 and IPv6 addressing. (AI-inferred) */
   networkType?: string | Computed<string>;
-  /** The compute instance type (e.g., dax.r4.large) used for each node in the DAX cluster, determining the memory and CPU capacity of the cluster's cache nodes. (AI-inferred) */
   nodeType: string | Computed<string>;
-  /** The ARN of an Amazon SNS topic to which DAX cluster notifications (such as maintenance events) are sent. (AI-inferred) */
   notificationTopicArn?: string | Computed<string>;
-  /** The name of the DAX parameter group that applies cluster-wide settings such as query caching and TTL behavior for this DynamoDB Accelerator cluster. (AI-inferred) */
   parameterGroupName?: string | Computed<string>;
-  /** Specifies the daily time range in UTC during which AWS DAX performs maintenance on the cluster, using the format ddd:hh24:mi-ddd:hh24:mi. (AI-inferred) */
   preferredMaintenanceWindow?: string | Computed<string>;
-  /** The total number of nodes (including the primary node) in the DAX cluster, which determines the cluster's read capacity and high availability. (AI-inferred) */
   replicationFactor: number | Computed<number>;
-  /** Specifies whether server-side encryption is enabled for the DAX cluster by setting an Enabled flag in the SSESpecification object. (AI-inferred) */
   ssespecification?: Cluster_Ssespecification | Computed<Cluster_Ssespecification>;
-  /** The list of VPC security group IDs to associate with the DAX cluster, controlling network access to the cluster. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred) */
   subnetGroupName?: string | Computed<string>;
   tags?: unknown | Computed<unknown>;
 }
 
 export interface ClusterAttrs {
-  /** The ARN (Amazon Resource Name) of the DynamoDB Accelerator (DAX) cluster. (AI-inferred) */
   arn: string;
-  /** Specifies the Availability Zones in which the DAX cluster's nodes are placed, allowing you to distribute nodes across multiple AZs for high availability. (AI-inferred) */
   availabilityZones: string[];
-  /** The endpoint URL (ClusterDiscoveryEndpoint) that DAX client applications use to connect to the cluster, automatically assigned by AWS when the DAX cluster is created. (AI-inferred) */
   clusterDiscoveryEndpoint: string;
-  /** The URL of the cluster discovery endpoint that DAX clients use to connect to the cluster. (AI-inferred) */
   clusterDiscoveryEndpointUrl: string;
-  /** Specifies whether client traffic to the DAX cluster endpoint is encrypted with TLS (valid values: TLS or NONE). (AI-inferred) */
   clusterEndpointEncryptionType: string;
-  /** The name of the DAX cluster, which is used as the cluster identifier; if not provided, AWS CloudFormation generates a unique name. (AI-inferred) */
   clusterName: string;
-  /** Provides a description of the DAX cluster. (AI-inferred) */
   description: string;
-  /** Specifies the Amazon Resource Name (ARN) of the IAM role that the DAX cluster uses to access DynamoDB and other required AWS services. (AI-inferred) */
   iamroleArn: string;
-  /** The unique identifier for the DAX cluster, set to the cluster name. (AI-inferred) */
   id: string;
-  /** Specifies the network type for the DAX cluster, such as IPV4 or DUALSTACK, determining whether the cluster uses IPv4 only or supports both IPv4 and IPv6 addressing. (AI-inferred) */
   networkType: string;
-  /** The compute instance type (e.g., dax.r4.large) used for each node in the DAX cluster, determining the memory and CPU capacity of the cluster's cache nodes. (AI-inferred) */
   nodeType: string;
-  /** The ARN of an Amazon SNS topic to which DAX cluster notifications (such as maintenance events) are sent. (AI-inferred) */
   notificationTopicArn: string;
-  /** The name of the DAX parameter group that applies cluster-wide settings such as query caching and TTL behavior for this DynamoDB Accelerator cluster. (AI-inferred) */
   parameterGroupName: string;
-  /** Specifies the daily time range in UTC during which AWS DAX performs maintenance on the cluster, using the format ddd:hh24:mi-ddd:hh24:mi. (AI-inferred) */
   preferredMaintenanceWindow: string;
-  /** The total number of nodes (including the primary node) in the DAX cluster, which determines the cluster's read capacity and high availability. (AI-inferred) */
   replicationFactor: number;
-  /** Specifies whether server-side encryption is enabled for the DAX cluster by setting an Enabled flag in the SSESpecification object. (AI-inferred) */
   ssespecification: Cluster_Ssespecification;
-  /** The list of VPC security group IDs to associate with the DAX cluster, controlling network access to the cluster. (AI-inferred) */
   securityGroupIds: string[];
-  /** The name of the subnet group that defines the VPC subnets in which the DAX cluster nodes are launched. (AI-inferred) */
   subnetGroupName: string;
   tags: unknown;
 }

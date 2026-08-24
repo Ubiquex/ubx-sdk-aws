@@ -4,9 +4,7 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Acl_Tags struct {
-	// The key of a tag attached to the network ACL, used to label and organize the resource for identification and management within AWS. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag applied to the network ACL, used to assign metadata such as purpose or ownership to the ACL. (AI-inferred)
 	Value any
 }
 
@@ -23,7 +21,6 @@ type AclConfig struct {
 }
 
 type AclAttrs struct {
-	// The AWS-assigned identifier for the network ACL, which uses the format acl-xxxxxxxx. (AI-inferred)
 	Id any
 	// The tags for the network ACL.
 	Tags any

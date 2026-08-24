@@ -8,28 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WatchMetricStream_ExcludeFilters:
-    # The list of metric names within the specified namespace to exclude from the metric stream. (AI-inferred)
     metric_names: Any = None
-    # Defines the CloudWatch namespace (e.g., AWS/EC2) whose metrics are excluded from the metric stream when matched by this exclusion filter. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class WatchMetricStream_StatisticsConfigurations_IncludeMetrics:
-    # The name of the CloudWatch metric for which the specified additional statistics are included in the metric stream. (AI-inferred)
     metric_name: Any = None
-    # The name of the AWS service or custom application namespace (e.g., AWS/EC2, AWS/Lambda) whose metrics are included in this statistics configuration, filtering which metric namespaces are sent to the stream. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class WatchMetricStream_StatisticsConfigurations:
-    # Specifies additional statistics (such as percentiles like p99) to include in the metric stream for metrics that match the namespace and metric name of this statistics configuration. (AI-inferred)
     additional_statistics: Any = None
-    # Specifies the list of metrics (namespace and metric name) to which the corresponding statistics configuration's allowed statistics apply, controlling which metric streams include the configured statistics. (AI-inferred)
     include_metrics: Any = None
 
 @dataclasses.dataclass
 class WatchMetricStream_Tags:
-    # The key of a tag attached to the CloudWatch metric stream, used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

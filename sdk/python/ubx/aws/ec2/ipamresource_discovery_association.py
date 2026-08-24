@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IpamresourceDiscoveryAssociation_Tags:
-    # The key of a user-defined tag attached to the IPAM resource discovery association, used to organize and identify the resource within AWS. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag key attached to the IPAM resource discovery association, used to organize and identify the association for purposes like cost allocation and access management. (AI-inferred)
     value: Any = None
 
 _IpamresourceDiscoveryAssociation_TagsFields = {

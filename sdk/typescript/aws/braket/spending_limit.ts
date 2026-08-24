@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpendingLimit_Tags {
   key?: string | Computed<string>;
-  /** The value part of a tag key-value pair attached to the AWS::Braket::SpendingLimit resource, used to categorize and manage the spending limit with arbitrary metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

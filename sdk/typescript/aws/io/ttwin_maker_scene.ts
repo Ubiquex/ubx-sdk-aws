@@ -25,7 +25,6 @@ export interface TtwinMakerSceneAttrs {
   capabilities: string[];
   /** The relative path that specifies the location of the content definition file. */
   contentLocation: string;
-  /** The date and time when the scene was created, returned as a string in date-time format. (AI-inferred) */
   creationDateTime: string;
   /** The description of the scene. */
   description: string;
@@ -37,7 +36,6 @@ export interface TtwinMakerSceneAttrs {
   sceneMetadata: unknown;
   /** A key-value pair to associate with a resource. */
   tags: unknown;
-  /** The date and time when the scene was last updated, in ISO 8601 format. (AI-inferred) */
   updateDateTime: string;
   /** The ID of the scene. */
   workspaceId: string;

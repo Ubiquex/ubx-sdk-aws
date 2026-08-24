@@ -17,41 +17,31 @@ export interface WebAcl_AssociationConfig {
 }
 
 export interface WebAcl_CaptchaConfig_ImmunityTimeProperty {
-  /** Specifies the duration in seconds that a user who successfully completes a CAPTCHA challenge remains immune from being challenged again by the web ACL. (AI-inferred) */
   immunityTime: number | Computed<number>;
 }
 
 export interface WebAcl_CaptchaConfig {
-  /** Defines how long a CAPTCHA token remains valid after a successful challenge, setting the immunity time during which repeat requests from the same client are exempt from additional CAPTCHA challenges. (AI-inferred) */
   immunityTimeProperty?: WebAcl_CaptchaConfig_ImmunityTimeProperty | Computed<WebAcl_CaptchaConfig_ImmunityTimeProperty>;
 }
 
 export interface WebAcl_DataProtectionConfig_DataProtections_Field {
-  /** Lists the specific names (keys) within the selected field type, such as particular HTTP header names or cookie names, that AWS WAF inspects and applies the data protection action to, with an empty list meaning all components of that type are protected. (AI-inferred) */
   fieldKeys?: string[] | Computed<string[]>;
-  /** Specifies the type of request component (e.g., body, headers, query string, cookies, or JSON body) that the data protection rule's field targets, optionally refined by an identifier. (AI-inferred) */
   fieldType?: string | Computed<string>;
 }
 
 export interface WebAcl_DataProtectionConfig_DataProtections {
-  /** The action that AWS WAF takes when it detects the sensitive data pattern defined by this data protection, such as 'BLOCK' to stop the request or 'COUNT' to observe and log it. (AI-inferred) */
   action?: string | Computed<string>;
   excludeRateBasedDetails?: boolean | Computed<boolean>;
-  /** Exclude rule match details from AWS WAF logs for requests that match this data protection rule, preventing sensitive data that triggered the rule from being exposed in log output. (AI-inferred) */
   excludeRuleMatchDetails?: boolean | Computed<boolean>;
-  /** Specifies the request field (such as a header, cookie, query argument, or JSON body field) whose sensitive data is masked or redacted by this data protection action in the web ACL's data protection configuration. (AI-inferred) */
   field?: WebAcl_DataProtectionConfig_DataProtections_Field | Computed<WebAcl_DataProtectionConfig_DataProtections_Field>;
 }
 
 export interface WebAcl_DataProtectionConfig {
-  /** Specifies the list of data protection rules for the web ACL, each mapping a sensitive data type (e.g., credit card numbers, social security numbers) to an action (omit or redact) that controls how that data appears in AWS WAF logs. (AI-inferred) */
   dataProtections: WebAcl_DataProtectionConfig_DataProtections[] | Computed<WebAcl_DataProtectionConfig_DataProtections[]>;
 }
 
 export interface WebAcl_DefaultAction_Allow_CustomRequestHandling_InsertHeaders {
-  /** The name of the custom HTTP header that AWS WAF inserts into the request when the default action is 'Allow' and custom request handling is configured, as part of the insert_headers list. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the HTTP header that AWS WAF inserts into the request to the origin when the default action is Allow and custom request handling is configured. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -118,565 +108,367 @@ export interface WebAcl_Rules_Action_Monetize {
 }
 
 export interface WebAcl_Rules_Action {
-  /** Defines the 'allow' action for this rule, meaning that matching requests are forwarded to the origin, and can optionally specify custom request handling to add or modify headers before the request is sent to the protected resource. (AI-inferred) */
   allow?: WebAcl_DefaultAction_Allow | Computed<WebAcl_DefaultAction_Allow>;
-  /** Configures the block action for the rule, causing matching requests to be denied, with an option to define a custom response body and headers via CustomResponse. (AI-inferred) */
   block?: WebAcl_DefaultAction_Block | Computed<WebAcl_DefaultAction_Block>;
-  /** Configures the rule's CAPTCHA action, which challenges matching web requests with a CAPTCHA puzzle and includes optional settings for custom response handling and immunity time. (AI-inferred) */
   captcha?: WebAcl_DefaultAction_Allow | Computed<WebAcl_DefaultAction_Allow>;
-  /** Specifies the Challenge action for the rule, which silently validates that a client is a legitimate browser by sending a non-interactive challenge, with optional settings for custom request handling and immunity time. (AI-inferred) */
   challenge?: WebAcl_DefaultAction_Allow | Computed<WebAcl_DefaultAction_Allow>;
-  /** This object defines the count action for a rule, meaning WAF increments a counter for requests that match the rule's statement without allowing or blocking them, and it can optionally include custom request handling to add headers to the request before passing it along. (AI-inferred) */
   count?: WebAcl_DefaultAction_Allow | Computed<WebAcl_DefaultAction_Allow>;
-  /** Specifies the Monetize action, which adds a configurable monetary amount to the token of a matching request so it can be tracked by AWS WAF Fraud Control. (AI-inferred) */
   monetize?: WebAcl_Rules_Action_Monetize | Computed<WebAcl_Rules_Action_Monetize>;
 }
 
 export interface WebAcl_Rules_OverrideAction {
-  /** When configured (as an empty block), this sets the override action for the referenced rule group to Count, so that all rules in the group are evaluated but only counted, bypassing their original actions. (AI-inferred) */
   count?: unknown | Computed<unknown>;
-  /** Specifies that the rule's action is not overridden, so the rule uses its original action as defined in the rule group. (AI-inferred) */
   none?: unknown | Computed<unknown>;
 }
 
 export interface WebAcl_Rules_RuleLabels {
-  /** The name of the label that is attached to matching web requests, which can be referenced by other rules or in logging. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_AndStatement {
-  /** The list of sub-statements that are logically combined with AND, so all must match for the rule's statement to evaluate to true. (AI-inferred) */
   statements?: unknown[] | Computed<unknown[]>;
 }
 
 export interface WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig {
-  /** Determines whether the ASN match statement matches (MATCH) or does not match (NO_MATCH) a request when the IP address in the specified forwarded header is missing or invalid. (AI-inferred) */
   fallbackBehavior?: string | Computed<string>;
-  /** The name of the HTTP header that holds the client IP address to use for ASN matching when traffic is forwarded through a proxy (e.g., X-Forwarded-For). (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_AsnMatchStatement {
-  /** Specifies the list of autonomous system numbers (ASNs) that the client's address must match for the ASN match statement to trigger, with a match occurring if the request's ASN is present in this list. (AI-inferred) */
   asnList?: number[] | Computed<number[]>;
-  /** Specifies how AWS WAF inspects the forwarded client IP address from an HTTP header for an ASN match statement, including the header name and fallback behavior when the header is absent. (AI-inferred) */
   forwardedIpconfig?: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig | Computed<WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body {
-  /** Specifies how AWS WAF treats a request body that exceeds its inspection size limit, with CONTINUE to process normally, MATCH to count as a match, or NO_MATCH to count as no match. (AI-inferred) */
   oversizeHandling?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern {
-  /** When this configuration block is present, it instructs AWS WAF to inspect all cookies in the request, as opposed to only included or excluded cookies. (AI-inferred) */
   all?: unknown | Computed<unknown>;
-  /** In a byte match statement inspecting cookies, specifies the list of cookie names to exclude from inspection, so that the statement only examines cookies not listed here. (AI-inferred) */
   excludedCookies?: string[] | Computed<string[]>;
-  /** Specifies the list of cookie names to include in the cookie match pattern, so AWS WAF inspects only those cookies in the request's cookie header when evaluating the byte match statement. (AI-inferred) */
   includedCookies?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies {
-  /** Specifies the CookieMatchPattern that determines which cookies in the request to inspect for the byte match condition, supporting all cookies, a specified list of included cookies, or all cookies except a list of excluded cookies. (AI-inferred) */
   matchPattern?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies_MatchPattern>;
-  /** Inspects the cookie values in a web ACL rule, with match_scope determining whether WAF checks the entire cookie, only the cookie name, or only the cookie value (ALL, KEY, or VALUE) when inspecting cookies for a byte match statement. (AI-inferred) */
   matchScope?: string | Computed<string>;
-  /** Specifies how AWS WAF handles oversized cookies in the request when inspecting cookie fields, with allowed values CONTINUE (continue inspecting without the oversized cookie), MATCH (treat the request as matching the rule), or NO_MATCH (treat the request as not matching). (AI-inferred) */
   oversizeHandling?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern {
-  /** When this object is present, the match pattern matches all header names in the web request. (AI-inferred) */
   all?: unknown | Computed<unknown>;
-  /** The list of HTTP header names to exclude from inspection when the byte match statement's header match pattern is set to exclude those headers, meaning all other headers are examined. (AI-inferred) */
   excludedHeaders?: string[] | Computed<string[]>;
-  /** Specifies the names of the headers to include when inspecting request headers in the byte match statement, so only the listed headers are considered for the match pattern. (AI-inferred) */
   includedHeaders?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers {
-  /** In an AWS WAFv2 web ACL rule, this object defines the set of request headers that the byte match statement will inspect, supporting options for all headers, a specific list of included headers, or a list of excluded headers. (AI-inferred) */
   matchPattern?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers_MatchPattern>;
-  /** Specifies whether the byte match rule inspects the entire header, the header name (key), or only the header value when evaluating header fields in a web request. (AI-inferred) */
   matchScope?: string | Computed<string>;
-  /** Specifies how AWS WAF handles oversized header keys or values when inspecting request headers for this byte match statement, with valid values of CONTINUE, MATCH, or NO_MATCH. (AI-inferred) */
   oversizeHandling?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint {
-  /** Specifies how AWS WAF should treat a request when it cannot detect a JA3 TLS fingerprint for the connection, causing the byte match statement to match (MATCH) or not match (NO_MATCH). (AI-inferred) */
   fallbackBehavior?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern {
-  /** When present, this property declares that the match pattern applies to all JSON paths within the request body, rather than only to the paths listed in 'IncludedPaths'. (AI-inferred) */
   all?: unknown | Computed<unknown>;
-  /** Specifies the list of JSON paths (e.g., '/foo/bar') within the request body that are inspected for the byte match condition; only values at these paths are matched. (AI-inferred) */
   includedPaths?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody {
-  /** Specifies whether to treat a request as matching or not matching the rule when the request body is not valid JSON, with allowed values 'MATCH' and 'NO_MATCH'. (AI-inferred) */
   invalidFallbackBehavior?: string | Computed<string>;
-  /** Determines which parts of the request's JSON body are inspected by defining either all JSON content or a set of included/excluded JSON paths for the byte match statement. (AI-inferred) */
   matchPattern?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody_MatchPattern>;
-  /** Specifies whether AWS WAF inspects the entire JSON request body, only its keys, or only its values when evaluating byte match conditions. (AI-inferred) */
   matchScope?: string | Computed<string>;
-  /** Determines how AWS WAF handles a JSON request body that exceeds the size limit, either continuing without matching, or treating it as a match or non-match. (AI-inferred) */
   oversizeHandling?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch {
-  /** Configures the byte match statement to inspect the entire query string of the web request, thereby matching against all query arguments. (AI-inferred) */
   allQueryArguments?: unknown | Computed<unknown>;
-  /** This object configures matching on the raw request body for the byte match statement, optionally specifying oversize handling behavior. (AI-inferred) */
   body?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body>;
-  /** Specifies the cookie match settings for the byte match statement, including the cookie filter pattern, match scope (key or value), and oversize handling behavior. (AI-inferred) */
   cookies?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Cookies>;
-  /** Specifies the order in which header names are considered when inspecting HTTP headers for the byte match statement, ensuring consistent evaluation even when headers appear multiple times in the request. (AI-inferred) */
   headerOrder?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Body>;
-  /** Configures the inspection of HTTP request headers for the byte match, specifying the header name and match pattern to match against. (AI-inferred) */
   headers?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Headers>;
-  /** Specifies that the WAFv2 rule inspects the JA3 fingerprint of the TLS client as the request part to match, with a configurable fallback behavior (match or no_match) for when the fingerprint is unavailable. (AI-inferred) */
   ja3Fingerprint?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint>;
-  /** Indicates that the JA4 fingerprint of the client's TLS connection is the field to match in the byte match statement. (AI-inferred) */
   ja4Fingerprint?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint>;
-  /** Specifies the JSON body of a web request as the location to inspect, allowing the rule to match on the structure and values of the parsed JSON payload. (AI-inferred) */
   jsonBody?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_JsonBody>;
-  /** Specifies that the byte match statement inspects the HTTP request method (such as GET or POST) for matching. (AI-inferred) */
   method?: unknown | Computed<unknown>;
-  /** Specifies that the byte match statement inspects the raw query string of the web request, excluding the leading '?', as the field to match. (AI-inferred) */
   queryString?: unknown | Computed<unknown>;
-  /** Defines a single HTTP header to inspect by its name, so the byte match statement evaluates the header's value against its search string. (AI-inferred) */
   singleHeader?: WebAcl_Rules_RuleLabels | Computed<WebAcl_Rules_RuleLabels>;
-  /** Specifies that the match condition inspects a single query string argument by its exact name, allowing you to target a specific query parameter. (AI-inferred) */
   singleQueryArgument?: WebAcl_Rules_RuleLabels | Computed<WebAcl_Rules_RuleLabels>;
-  /** Specifies that the rule inspects the URI fragment (the part of the web request URI that appears after the '#' character) for byte match conditions. (AI-inferred) */
   uriFragment?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint>;
-  /** Specifies that the byte match statement should inspect the URI path of the web request (e.g., the /products/shoes portion, not including the query string). (AI-inferred) */
   uriPath?: unknown | Computed<unknown>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations {
-  /** Determines the order in which this text transformation is applied relative to other pre-parse text transformations, with lower values executed first. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** Specifies the type of text transformation (e.g., LOWERCASE, HTML_ENTITY_DECODE, COMPRESS_WHITE_SPACE) applied to the web request content before the byte match statement evaluates it. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ByteMatchStatement {
-  /** Specifies the web request component (such as a header, query string, URI path, body, or HTTP method) that the byte match statement inspects for matching strings. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** Defines how AWS WAF searches for the specified match string within the web request component, accepting values like EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD. (AI-inferred) */
   positionalConstraint?: string | Computed<string>;
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** Specifies the literal string (or base64-encoded byte sequence) that AWS WAF searches for in the request component inspected by this rule's byte match statement. (AI-inferred) */
   searchString?: string | Computed<string>;
-  /** The base64-encoded string that the byte match statement searches for in the web request, used as an alternative to the plaintext search string. (AI-inferred) */
   searchStringBase64?: string | Computed<string>;
-  /** Specifies the ordered list of text transformations (e.g., LOWERCASE, HTML_ENTITY_DECODE, COMPRESS_WHITE_SPACE) that are applied by priority to the inspected request component before the byte match statement compares it against the search string. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_GeoMatchStatement {
-  /** Specifies the two-character country codes (ISO 3166-1 alpha-2) that the geo match statement uses to match requests originating from those countries. (AI-inferred) */
   countryCodes?: string[] | Computed<string[]>;
-  /** Specifies how to inspect the IP address in a forwarded header for geo matching, including the header name and the fallback behavior when the header is absent or invalid. (AI-inferred) */
   forwardedIpconfig?: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig | Computed<WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig>;
 }
 
 export interface WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfig {
-  /** Determines whether a request that lacks a valid forwarded IP header should match the IP set (MATCH) or not match (NO_MATCH). (AI-inferred) */
   fallbackBehavior?: string | Computed<string>;
-  /** The name of the HTTP header from which AWS WAF extracts the client IP address when using the forwarded IP configuration for an IP set reference statement. (AI-inferred) */
   headerName?: string | Computed<string>;
-  /** Specifies whether AWS WAF should use the first IP address (FIRST) or the last IP address (LAST) from the X-Forwarded-For header when evaluating the IP set reference statement. (AI-inferred) */
   position?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_IpsetReferenceStatement {
-  /** The Amazon Resource Name (ARN) of the AWS WAFv2 IP set that this rule statement references to match traffic based on its IP addresses. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** Defines how to derive the client IP from a forwarded header (such as X-Forwarded-For) for inspection against the referenced IP set, including the header name, fallback behavior, and the position (e.g., FIRST, LAST, or ANY) to select. (AI-inferred) */
   ipsetForwardedIpconfig?: WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfig | Computed<WebAcl_Rules_Statement_IpsetReferenceStatement_IpsetForwardedIpconfig>;
 }
 
 export interface WebAcl_Rules_Statement_LabelMatchStatement {
-  /** The string label name or label namespace prefix that the label match statement checks for, used to match labels added to web requests by other rules. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Determines whether the label match key is interpreted as an exact label (`LABEL`) or as a namespace prefix (`NAMESPACE`) to match against labels applied to the web request or rule. (AI-inferred) */
   scope?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields {
-  /** The name of the request component (such as a JSON body field or form field) that contains the address value, used by the AWS WAF ACFP managed rule set to inspect address-type fields. (AI-inferred) */
   identifier?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection {
-  /** Specifies the identifiers of the address fields in the incoming request that AWS WAF extracts and inspects for the AWSManagedRulesACFPRuleSet, enabling account creation fraud prevention to evaluate the customer's address data. (AI-inferred) */
   addressFields?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields[]>;
-  /** Specifies the request component (such as a header or query parameter) from which the AWS Managed Rules ACFP rule set extracts the email address for account creation fraud prevention. (AI-inferred) */
   emailField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
-  /** Specifies the request field identifier that contains the password for the AWSManagedRulesACFPRuleSet, enabling WAF to locate and inspect the password value in the request payload during account creation fraud prevention. (AI-inferred) */
   passwordField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
-  /** Specifies whether the AWSManagedRulesACFPRuleSet request inspection inspects the request payload as JSON or as form-encoded data (allowed values: JSON, FORM). (AI-inferred) */
   payloadType?: string | Computed<string>;
-  /** Specifies the request fields (such as JSON body fields, headers, or query strings) that contain the phone number, which the AWS Managed Rules ACFP rule set inspects to identify phone numbers in incoming requests for account creation fraud prevention. (AI-inferred) */
   phoneNumberFields?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields[]>;
-  /** Identifies the request component (such as a JSON body field or header) that contains the username, which the AWS Managed Rules ACFP rule set uses to inspect account creation requests for fraud. (AI-inferred) */
   usernameField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContains {
-  /** Specifies the list of strings that must appear in the response body for the login attempt to be considered a failure, used by the AWS Managed Rules ACFP rule set's response inspection. (AI-inferred) */
   failureStrings?: string[] | Computed<string[]>;
-  /** Specifies the strings that the AWS WAF account creation fraud prevention (ACFP) managed rule group searches for in the response body, so that the response is considered successful if any of these strings are present. (AI-inferred) */
   successStrings?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Header {
-  /** Specifies the list of string values that, when found in the configured response header, are treated as a failure signal by the AWS Managed Rules ACFP rule set, causing the request to be blocked. (AI-inferred) */
   failureValues?: string[] | Computed<string[]>;
-  /** Specifies the name of the HTTP response header that AWS WAF inspects for the token value used in the AWSManagedRulesACFPRuleSet's response inspection for the account creation fraud prevention rule group. (AI-inferred) */
   name?: string | Computed<string>;
-  /** In the response inspection configuration for the AWS Managed Rules ACFP rule set, the success_values under the header inspector defines the list of header values that, when present in the specified response header, cause the account creation attempt to be classified as successful. (AI-inferred) */
   successValues?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Json {
-  /** A list of string values that, when present in the JSON response body, indicate a failed authentication or account-creation request, causing the AWS managed rule group to apply its configured action. (AI-inferred) */
   failureValues?: string[] | Computed<string[]>;
-  /** The name of the JSON field in the response body that AWS WAF checks for the account creation success or failure value, as configured in the ACFP rule set's response inspection. (AI-inferred) */
   identifier?: string | Computed<string>;
-  /** A list of string values that, when found in the JSON response body, indicate a successful account creation attempt, allowing the AWS Managed Rules ACFP rule set to override its default success/failure evaluation. (AI-inferred) */
   successValues?: string[] | Computed<string[]>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCode {
-  /** Specifies a list of HTTP status codes (e.g., 403) that the AWS WAFv2 AWSManagedRulesACFPRuleSet treats as failure indicators when inspecting the origin response status code to classify a request as bot traffic. (AI-inferred) */
   failureCodes?: number[] | Computed<number[]>;
-  /** Defines the list of HTTP status codes that the AWS WAF managed rule group for account creation fraud prevention (ACFP) treats as successful when inspecting the response status code, as part of its response inspection configuration. (AI-inferred) */
   successCodes?: number[] | Computed<number[]>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection {
-  /** Defines the response body inspection for the AWS Managed Rules ACFP rule set, specifying the success and failure strings that the WAF service looks for in the response body to determine whether an account creation attempt succeeded or failed. (AI-inferred) */
   bodyContains?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContains | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_BodyContains>;
-  /** Configures AWS WAF to inspect the HTTP header in the response from the protected application, using the specified header name and success values, to determine whether the account creation fraud prevention rule set should treat the request as successful. (AI-inferred) */
   header?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Header | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Header>;
-  /** Specifies the JSON response body field (identifier) that AWS WAF inspects within the response from an account creation attempt to determine whether it succeeded, for the AWSManagedRulesACFPRuleSet managed rule group. (AI-inferred) */
   json?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Json | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_Json>;
-  /** Specifies the expected HTTP status codes in the response that indicate a successful or failed token challenge for the AWS Managed Rules Account Creation Fraud Prevention rule set, used to determine whether to allow or block the request. (AI-inferred) */
   statusCode?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCode | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection_StatusCode>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet {
-  /** The URI path of the account creation endpoint (for example, /signup) that the AWS Managed Rules ACFP rule set inspects to detect account creation fraud. (AI-inferred) */
   creationPath?: string | Computed<string>;
-  /** Controls whether the path values (such as the login or sign-up path) in the AWS Managed Rules ACFP rule set are evaluated as regular expressions rather than literal strings when inspecting request paths. (AI-inferred) */
   enableRegexInPath?: boolean | Computed<boolean>;
-  /** Specifies the JSON path in the request body that identifies the registration page for the AWS Managed Rules account creation fraud prevention (ACFP) rule set to extract and use in its analysis. (AI-inferred) */
   registrationPagePath?: string | Computed<string>;
-  /** Defines the request inspection configuration, including the payload type and the location of username, password, phone number, and email fields in the web request, for the AWS Managed Rules ACFP rule set. (AI-inferred) */
   requestInspection?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection>;
-  /** Configures how the AWS Managed Rules ACFP rule set inspects the HTTP response from the protected resource to identify successful account creation or login attempts, using criteria like status codes, headers, or body content. (AI-inferred) */
   responseInspection?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressions {
-  /** The regular expression pattern that matches request URIs to exempt from the client-side challenge action in the AWS WAFv2 anti-DDoS managed rule group configuration. (AI-inferred) */
   regexString?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge {
-  /** Specifies a list of regular expression patterns for URI paths that are exempt from the challenge action in the client-side action configuration of the AWS Managed Rules Anti-DDoS rule set. (AI-inferred) */
   exemptUriRegularExpressions?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressions[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge_ExemptUriRegularExpressions[]>;
-  /** Specifies the sensitivity level (LOW, MEDIUM, or HIGH) for the challenge action in the AWSManagedRulesAntiDDoSRuleSet managed rule group, controlling how aggressively clients are challenged. (AI-inferred) */
   sensitivity?: string | Computed<string>;
-  /** Specifies whether the challenge action is used as a count action (observing traffic without blocking) or a block action (applying the challenge) for the AWSManagedRulesAntiDDoSRuleSet managed rule group. (AI-inferred) */
   usageOfAction?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig {
-  /** The `challenge` object configures the challenge action for the client-side action of the AWS Managed Rules anti-DDoS rule set, determining that AWS WAF presents a CAPTCHA-style challenge instead of blocking when the rule set flags a request. (AI-inferred) */
   challenge?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig_Challenge>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet {
-  /** Specifies the client-side action (such as Challenge or CAPTCHA) and the list of custom token domains that AWS WAF uses to verify client requests for the AWSManagedRulesAntiDDoSRuleSet. (AI-inferred) */
   clientSideActionConfig?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet_ClientSideActionConfig>;
-  /** Sets the sensitivity threshold for the AWS Managed Rules Anti-DDoS rule set, controlling how aggressively it identifies and blocks potential DDoS traffic (accepting values such as HIGH and LOW). (AI-inferred) */
   sensitivityToBlock?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspection {
-  /** Specifies the password field in the request body that the AWS Managed Rules ATP rule set inspects for account takeover attempts, using its Identifier sub-field. (AI-inferred) */
   passwordField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
-  /** Specifies the format of the request body payload that AWS WAF inspects for the AWSManagedRulesATPRuleSet, either JSON or form data. (AI-inferred) */
   payloadType?: string | Computed<string>;
-  /** Specifies the location (such as a JSON body field or form field) in the web request from which the AWS Managed Rules ATP rule set extracts the username for account takeover protection. (AI-inferred) */
   usernameField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet {
-  /** When set to true, the ATP rule set interprets the login path as a regular expression pattern instead of a literal string. (AI-inferred) */
   enableRegexInPath?: boolean | Computed<boolean>;
-  /** The URI path of the application's login endpoint (e.g., /login) that AWS Managed Rules for Account Takeover Protection (ATP) inspects for anomalous login activity. (AI-inferred) */
   loginPath?: string | Computed<string>;
-  /** Configures how AWS WAFv2 inspects incoming requests for account takeover attempts, specifying the login path and the location of username and password fields in the request, for the AWS Managed Rules Account Takeover Protection rule set. (AI-inferred) */
   requestInspection?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspection | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet_RequestInspection>;
-  /** Configures how AWS WAF inspects the login response to determine whether a login attempt succeeded for the AWS account takeover prevention (ATP) managed rule group. (AI-inferred) */
   responseInspection?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_ResponseInspection>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSet {
-  /** When set to true, enables machine learning for the AWS Managed Rules Bot Control rule set, allowing AWS WAF to use ML models to improve the accuracy of bot detection and classification. (AI-inferred) */
   enableMachineLearning?: boolean | Computed<boolean>;
-  /** Sets the inspection level for the AWSManagedRulesBotControlRuleSet, either COMMON or TARGETED, to control the depth of bot detection rules applied. (AI-inferred) */
   inspectionLevel?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs {
-  /** Configures the AWSManagedRulesACFPRuleSet for the managed rule group, defining the account creation request paths and field identifiers (such as email, phone, and login paths) that AWS WAF inspects to detect and block fraud. (AI-inferred) */
   awsmanagedRulesAcfpruleSet?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet>;
-  /** Specifies the configuration for the AWS Managed Rules Anti-DDoS rule set (AWSManagedRulesAntiDDoSRuleSet), an empty object that enables the AWS WAF managed DDoS protection rules when associated with a managed rule group statement. (AI-inferred) */
   awsmanagedRulesAntiDdoSruleSet?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAntiDdoSruleSet>;
-  /** Configures the AWS Managed Rules ATP (Account Takeover Protection) rule set's settings, such as the login request path and the password field, to detect account takeover attempts. (AI-inferred) */
   awsmanagedRulesAtpruleSet?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAtpruleSet>;
-  /** Configures the AWS Managed Rules Bot Control rule set within the managed rule group, enabling you to set its inspection level (Common or Targeted) and optionally enable machine learning for bot detection. (AI-inferred) */
   awsmanagedRulesBotControlRuleSet?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSet | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesBotControlRuleSet>;
-  /** The URL path of the application's login endpoint, used by the managed rule group (e.g., AWS WAF Bot Control) to identify login attempts for token management and rate-based rules. (AI-inferred) */
   loginPath?: string | Computed<string>;
-  /** Specifies the name of the form field in the request body that contains the password, used by the AWS Managed Rules ATP rule set for account takeover protection analysis. (AI-inferred) */
   passwordField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
-  /** Specifies whether the request body payload inspected by the managed rule group is JSON or form-encoded (FORM_ENCODED), enabling AWS WAF to parse the data for the account takeover prevention or account creation fraud prevention rule sets. (AI-inferred) */
   payloadType?: string | Computed<string>;
-  /** Specifies the request field (by its name/identifier) that contains the account username, used by AWS-managed rule groups for account takeover prevention (ATP) and account creation fraud prevention (ACFP) to inspect login or sign-up attempts. (AI-inferred) */
   usernameField?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs_AwsmanagedRulesAcfpruleSet_RequestInspection_AddressFields>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides {
-  /** Specifies the action (Allow, Block, Count, Captcha, or Challenge) to apply to a specific rule in a managed rule group, overriding that rule's default action within the rule_action_overrides configuration. (AI-inferred) */
   actionToUse?: WebAcl_Rules_Action | Computed<WebAcl_Rules_Action>;
-  /** The name of the specific rule inside the referenced AWS Managed Rules group whose action is being overridden by the paired action_to_use value. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_ManagedRuleGroupStatement {
-  /** Specifies the rules within the managed rule group that you want to exclude from being evaluated for web requests, using a list of objects each containing the rule name to exclude. (AI-inferred) */
   excludedRules?: WebAcl_Rules_RuleLabels[] | Computed<WebAcl_Rules_RuleLabels[]>;
-  /** Specifies additional configuration for the managed rule group, such as the login path and password/username field indicators, which AWS Managed Rules for Bot Control or Account Takeover Prevention use to inspect request payloads. (AI-inferred) */
   managedRuleGroupConfigs?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_ManagedRuleGroupConfigs[]>;
-  /** The name of the AWS managed rule group to use in this statement, such as AWSManagedRulesCommonRuleSet or AWSManagedRulesSQLiRuleSet. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Overrides the action for specific managed rules inside the managed rule group by mapping each managed rule's name to a new action (such as Allow, Block, Count, Captcha, or Challenge) that replaces the rule group's default behavior. (AI-inferred) */
   ruleActionOverrides?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides[]>;
-  /** A nested statement that limits the managed rule group to inspect only requests that match this scope-down condition, so the group's rules run only when this additional statement is satisfied. (AI-inferred) */
   scopeDownStatement?: unknown | Computed<unknown>;
-  /** The name of the vendor that provides the managed rule group, such as 'AWS' for AWS managed rule groups or partner vendors like 'Fortinet' or 'Imperva'. (AI-inferred) */
   vendorName?: string | Computed<string>;
-  /** Specifies the version of the managed rule group to use; when omitted, AWS WAF uses the vendor's default version. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_NotStatement {
-  /** The WAFv2 statement that is logically negated by the enclosing not_statement, allowing the rule to match when the nested statement evaluates to false. (AI-inferred) */
   statement?: unknown | Computed<unknown>;
 }
 
 export interface WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie {
-  /** The name of the cookie whose value will be used as the custom key for aggregating requests in the rate-based rule's custom key configuration. (AI-inferred) */
   name?: string | Computed<string>;
-  /** This list specifies the ordered text transformations (each with a priority and type, e.g., LOWERCASE, URL_DECODE) that are applied to the cookie value before it is used as a key for rate-based rule aggregation, enabling normalized matching for rate limits. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespace {
-  /** Specifies the label namespace used to aggregate requests for a rate-based rule when using a label_namespace custom key, such that all requests carrying a label that begins with this namespace count toward the rate limit. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString {
-  /** Defines the list of text transformations (each with a priority and transformation type) that are applied to the query string value when it is used as a custom key in the rate-based statement's aggregation. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_RateBasedStatement_CustomKeys {
-  /** This field defines a custom key for the rate-based statement that uses the client's ASN (Autonomous System Number) to aggregate requests, so all requests from networks managed by the same ASN count together toward the rate limit. (AI-inferred) */
   asn?: unknown | Computed<unknown>;
-  /** Specifies the cookie to use as a custom request aggregation key for a rate-based rule, including its name and text transformations. (AI-inferred) */
   cookie?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie>;
-  /** Configures the forwarded IP custom key for the rate-based statement, which uses the client IP from a specified header (such as X-Forwarded-For) as the aggregation key for rate limiting and requires a `header_name` argument. (AI-inferred) */
   forwardedIp?: unknown | Computed<unknown>;
-  /** Configures a request header as a custom key for the rate-based statement, so AWS WAF can aggregate and rate-limit requests based on the value of that header after applying any specified text transformations. (AI-inferred) */
   header?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie>;
-  /** Defines the HTTP method (e.g., GET, POST) as a custom key in a rate-based statement, so that requests with the same method are grouped together when counting requests for rate limiting. (AI-inferred) */
   httpmethod?: unknown | Computed<unknown>;
-  /** Specifies that the originating IP address of the web request is used as a custom key for aggregating requests in the rate-based rule. (AI-inferred) */
   ip?: unknown | Computed<unknown>;
-  /** Configures the client's JA3 TLS fingerprint as a custom key for the rate-based rule's request aggregation, containing the fallback behavior to apply when the fingerprint is unavailable. (AI-inferred) */
   ja3Fingerprint?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint>;
-  /** Sets the JA4 fingerprint as a custom key for the rate-based statement, making AWS WAF aggregate requests by the client's JA4 TLS fingerprint when rate limiting. (AI-inferred) */
   ja4Fingerprint?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch_Ja3Fingerprint>;
-  /** Specifies the label namespace used as a custom key in a rate-based rule, so requests with labels from that namespace are grouped together for rate limiting decisions. (AI-inferred) */
   labelNamespace?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespace | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_LabelNamespace>;
-  /** Defines the query argument (query parameter) whose value AWS WAF uses as a custom key for aggregating requests in a rate-based rule statement. (AI-inferred) */
   queryArgument?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_Cookie>;
-  /** This object configures the request's query string as a custom key for rate-based aggregation, with an optional list of text transformations to preprocess the query string before it is counted. (AI-inferred) */
   queryString?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString>;
-  /** Configures the request's URI path as a custom key for the rate-based rule, with optional text transformations applied to the path before counting. (AI-inferred) */
   uriPath?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys_QueryString>;
 }
 
 export interface WebAcl_Rules_Statement_RateBasedStatement {
-  /** Specifies how to aggregate requests for rate limiting in the WAFv2 rate-based rule, with valid values including IP (default), FORWARDED_IP (using the forwarded IP address from a header), or CUSTOM_KEYS (using custom key components like labels or headers). (AI-inferred) */
   aggregateKeyType?: string | Computed<string>;
-  /** Defines the request characteristics (such as header, cookie, query argument, label, or IP) used to aggregate requests for rate limiting, so the rule counts and limits requests grouped by distinct values for those keys instead of just the client IP. (AI-inferred) */
   customKeys?: WebAcl_Rules_Statement_RateBasedStatement_CustomKeys[] | Computed<WebAcl_Rules_Statement_RateBasedStatement_CustomKeys[]>;
-  /** The evaluation window (in seconds) used to calculate the request rate for the rate-based rule, with allowed values of 60, 120, 300, 600, 1200, or 1800. (AI-inferred) */
   evaluationWindowSec?: number | Computed<number>;
-  /** Defines the HTTP header (such as X-Forwarded-For) and fallback behavior used to extract the originating client IP address for rate-based rule evaluation when the request origin IP is masked by a proxy or load balancer. (AI-inferred) */
   forwardedIpconfig?: WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig | Computed<WebAcl_Rules_Statement_AsnMatchStatement_ForwardedIpconfig>;
-  /** The maximum number of requests permitted within a rate-based rule's evaluation window (default 5 minutes) before the rule's action is triggered. (AI-inferred) */
   limit?: number | Computed<number>;
-  /** Narrows the rate-based rule's rate limiting to only those web requests that match this nested statement, so requests that do not match are excluded from the rate count. (AI-inferred) */
   scopeDownStatement?: unknown | Computed<unknown>;
 }
 
 export interface WebAcl_Rules_Statement_RegexMatchStatement {
-  /** Specifies the part of the web request (such as a header, query string, body, or URI path) that the regular expression pattern is matched against. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** A list of text transformation objects with priorities that are applied to the inspected web request content before the regex match statement's standard text transformations, enabling decoding or normalization (e.g., Base64 or HTML entity decoding) prior to pattern matching. (AI-inferred) */
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** The regular expression pattern that AWS WAFv2 uses to inspect the specified web request component (such as a header or query string) for a match in the regex match statement. (AI-inferred) */
   regexString?: string | Computed<string>;
-  /** Defines the ordered list of text transformations that AWS WAF applies to the web request content before it is evaluated against the regular expression in this regex match statement, for example by lowercasing or HTML-decoding the input. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_RegexPatternSetReferenceStatement {
-  /** ARN of the AWS WAFv2 regex pattern set that this statement references, used to match web request components against the regex patterns. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** Specifies the part of the web request (such as a header, the body, or the query string) that AWS WAF inspects for the regex pattern set. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** Applies a list of text transformations to the selected request component before the regex pattern set is evaluated, allowing normalizations like lowercasing or HTML decoding to be performed first. (AI-inferred) */
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** Specifies the ordered list of text transformations (for example, lowercase, URL decode, or HTML entity decode) that are applied to the web request component before it is evaluated against the associated regex pattern set. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_RuleGroupReferenceStatement {
-  /** The Amazon Resource Name (ARN) of the AWS WAFv2 rule group that this statement references, which identifies the rule group to include in the web ACL's rule evaluation. (AI-inferred) */
   arn?: string | Computed<string>;
   excludedRules?: WebAcl_Rules_RuleLabels[] | Computed<WebAcl_Rules_RuleLabels[]>;
-  /** Specifies a list of actions to override for specific rules within the referenced rule group, allowing you to change the action (e.g., Allow, Block, Count) of individual rules without modifying the rule group itself. (AI-inferred) */
   ruleActionOverrides?: WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides[] | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement_RuleActionOverrides[]>;
 }
 
 export interface WebAcl_Rules_Statement_SizeConstraintStatement {
-  /** Specifies the comparison operator (e.g., EQ, GE, LT) used to compare the actual size of the inspected web request component against the declared Size in the size constraint statement of an AWS WAFv2 web ACL rule. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
-  /** Specifies the part of the web request to inspect for the size constraint, such as a header, the query string, the body, or the URI. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** Specifies the list of text transformations (such as lowercase, HTML decode, or normalize path) to apply to the request component before the size constraint check evaluates it. (AI-inferred) */
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** The size, in bytes, that the inspected request component is compared against for the size constraint statement. (AI-inferred) */
   size?: number | Computed<number>;
-  /** A list of text transformations that are applied to the inspected content before the size constraint is evaluated, each specifying a transformation priority and type (e.g., NONE, LOWERCASE, COMPRESS_WHITE_SPACE). (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_SqliMatchStatement {
-  /** Specifies the part of the web request (such as headers, query string, body, or URI path) that AWS WAF Classic should inspect for SQL injection attack patterns. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** A list of text transformations (such as URL_DECODE, HTML_ENTITY_DECODE, or LOWERCASE) that AWS WAF applies to the inspection target before matching it against SQL injection signatures. (AI-inferred) */
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** Controls the sensitivity level of the SQL injection match statement, with 'HIGH' (the default) detecting a broader range of SQL injection attempts and 'LOW' matching only the most common patterns. (AI-inferred) */
   sensitivityLevel?: string | Computed<string>;
-  /** List of text transformations (each with a priority and a transformation type such as URL_DECODE or LOWERCASE) that are applied to the web request content before the SQL injection match statement evaluates it. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement_XssMatchStatement {
-  /** Specifies the part of the web request (such as a header, the body, or all query arguments) that the XSS match statement inspects for cross-site scripting patterns. (AI-inferred) */
   fieldToMatch?: WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch | Computed<WebAcl_Rules_Statement_ByteMatchStatement_FieldToMatch>;
-  /** The list of text transformation objects applied to the web request before AWS WAF parses it for cross-site scripting (XSS) attack signatures. (AI-inferred) */
   preParseTextTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
-  /** Specifies the ordered text transformations to apply to the inspected web request content before evaluating the XSS match condition, enabling normalization such as lowercase conversion or HTML entity decoding. (AI-inferred) */
   textTransformations?: WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[] | Computed<WebAcl_Rules_Statement_ByteMatchStatement_PreParseTextTransformations[]>;
 }
 
 export interface WebAcl_Rules_Statement {
-  /** Represents an AND rule statement that requires all nested statements inside its Statements list to match for the rule to match. (AI-inferred) */
   andStatement?: WebAcl_Rules_Statement_AndStatement | Computed<WebAcl_Rules_Statement_AndStatement>;
-  /** Defines an ASN match statement, which matches requests based on the Autonomous System Number (ASN) of the client IP address by comparing it against a specified list of ASNs. (AI-inferred) */
   asnMatchStatement?: WebAcl_Rules_Statement_AsnMatchStatement | Computed<WebAcl_Rules_Statement_AsnMatchStatement>;
-  /** Configures a byte match rule statement that matches a specific string or binary pattern in a selected component of the web request (e.g., header, query string, body) using a defined positional constraint and optional text transformations. (AI-inferred) */
   byteMatchStatement?: WebAcl_Rules_Statement_ByteMatchStatement | Computed<WebAcl_Rules_Statement_ByteMatchStatement>;
-  /** Specifies a geographic match statement that filters requests by the country of the origin IP address, using an array of two-letter country codes. (AI-inferred) */
   geoMatchStatement?: WebAcl_Rules_Statement_GeoMatchStatement | Computed<WebAcl_Rules_Statement_GeoMatchStatement>;
-  /** Defines a rule statement that matches web requests against the IP addresses contained in a referenced AWS WAF IP set, triggering when the request's source IP falls within the set's CIDR ranges. (AI-inferred) */
   ipsetReferenceStatement?: WebAcl_Rules_Statement_IpsetReferenceStatement | Computed<WebAcl_Rules_Statement_IpsetReferenceStatement>;
-  /** Configures a label match statement that checks whether the request carries a specific label (or label in a namespace) set by a previous rule, enabling rule chaining based on prior label matches. (AI-inferred) */
   labelMatchStatement?: WebAcl_Rules_Statement_LabelMatchStatement | Computed<WebAcl_Rules_Statement_LabelMatchStatement>;
-  /** Defines a rule statement that uses a preconfigured managed rule group from a vendor (e.g., AWS or AWS Marketplace), specifying the group by name and optionally excluding rules from that group. (AI-inferred) */
   managedRuleGroupStatement?: WebAcl_Rules_Statement_ManagedRuleGroupStatement | Computed<WebAcl_Rules_Statement_ManagedRuleGroupStatement>;
-  /** Negates the nested statement, matching web requests that do not match the enclosed statement. (AI-inferred) */
   notStatement?: WebAcl_Rules_Statement_NotStatement | Computed<WebAcl_Rules_Statement_NotStatement>;
-  /** An OR statement that matches a request if any of the nested statements match, allowing you to combine multiple match criteria in a single rule. (AI-inferred) */
   orStatement?: WebAcl_Rules_Statement_AndStatement | Computed<WebAcl_Rules_Statement_AndStatement>;
-  /** Configures the rule as a rate-based statement, which counts matching requests from a given source (such as an IP address or custom key) over a specified time window and triggers the rule's action when the count exceeds the configured limit. (AI-inferred) */
   rateBasedStatement?: WebAcl_Rules_Statement_RateBasedStatement | Computed<WebAcl_Rules_Statement_RateBasedStatement>;
-  /** Defines a rule statement that matches a request component against a specified regular expression pattern, including the pattern string, the component to inspect (such as a header, query string, or body), and any text transformations to apply before evaluation. (AI-inferred) */
   regexMatchStatement?: WebAcl_Rules_Statement_RegexMatchStatement | Computed<WebAcl_Rules_Statement_RegexMatchStatement>;
-  /** A rule statement that references an AWS WAFv2 regex pattern set by its ARN and defines the web request component (like headers, body, or query string) to inspect for regex matches. (AI-inferred) */
   regexPatternSetReferenceStatement?: WebAcl_Rules_Statement_RegexPatternSetReferenceStatement | Computed<WebAcl_Rules_Statement_RegexPatternSetReferenceStatement>;
-  /** Defines a statement that includes all rules from a referenced rule group by its ARN, optionally overriding actions for specific rules. (AI-inferred) */
   ruleGroupReferenceStatement?: WebAcl_Rules_Statement_RuleGroupReferenceStatement | Computed<WebAcl_Rules_Statement_RuleGroupReferenceStatement>;
-  /** This rule statement checks the size of a specified web request component (such as a header, body, or query string) against a defined size limit and comparison operator, matching requests that violate the size constraint. (AI-inferred) */
   sizeConstraintStatement?: WebAcl_Rules_Statement_SizeConstraintStatement | Computed<WebAcl_Rules_Statement_SizeConstraintStatement>;
-  /** Defines a statement that inspects a specified part of the web request (such as body, query string, or URI) for SQL injection patterns, including configurable text transformations to apply before the inspection. (AI-inferred) */
   sqliMatchStatement?: WebAcl_Rules_Statement_SqliMatchStatement | Computed<WebAcl_Rules_Statement_SqliMatchStatement>;
-  /** Defines the criteria for inspecting web requests for cross-site scripting (XSS) attacks, including the part of the request to inspect (e.g., body, query string) and any text transformations to apply. (AI-inferred) */
   xssMatchStatement?: WebAcl_Rules_Statement_XssMatchStatement | Computed<WebAcl_Rules_Statement_XssMatchStatement>;
 }
 
 export interface WebAcl_Rules_VisibilityConfig {
-  /** When true, AWS WAFv2 publishes the rule's metrics to Amazon CloudWatch, allowing you to monitor the rule's activity and performance. (AI-inferred) */
   cloudWatchMetricsEnabled?: boolean | Computed<boolean>;
-  /** For a rule in an AWS WAFv2 web ACL, this specifies the unique name of the CloudWatch metric generated for that rule's traffic, enabling per-rule monitoring in CloudWatch. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** Indicates whether AWS WAF should store a sample of web requests that match the rule's criteria, allowing inspection and analysis of sampled requests. (AI-inferred) */
   sampledRequestsEnabled?: boolean | Computed<boolean>;
 }
 
 export interface WebAcl_Rules {
-  /** Determines the action AWS WAF takes when a web request matches the rule's statement, such as allowing, blocking, counting, or challenging the request. (AI-inferred) */
   action?: WebAcl_Rules_Action | Computed<WebAcl_Rules_Action>;
-  /** Configures the CAPTCHA challenge settings for this rule, such as the token immunity time (in seconds) during which a user who has successfully solved a CAPTCHA is not challenged again. (AI-inferred) */
   captchaConfig?: WebAcl_CaptchaConfig | Computed<WebAcl_CaptchaConfig>;
-  /** Configures challenge action settings, including the immunity time (in seconds) that a successfully challenged client's token remains valid in the web ACL rule. (AI-inferred) */
   challengeConfig?: WebAcl_CaptchaConfig | Computed<WebAcl_CaptchaConfig>;
-  /** The friendly name of the rule, which must be unique within the web ACL. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the override action for a rule that is part of a rule group, which can be set to Count to only count matching requests or None to retain the rule group's original action, and is valid only for rule group rules. (AI-inferred) */
   overrideAction?: WebAcl_Rules_OverrideAction | Computed<WebAcl_Rules_OverrideAction>;
-  /** The integer priority that determines the evaluation order of this rule among all rules in the web ACL, with lower values evaluated first, and each rule requiring a unique priority. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** The rule_labels blocks define custom labels to attach to matching web requests for this rule, allowing later rules in the same web ACL to reference these labels via label match statements. (AI-inferred) */
   ruleLabels?: WebAcl_Rules_RuleLabels[] | Computed<WebAcl_Rules_RuleLabels[]>;
-  /** Specifies the matching logic for a rule in the AWS WAFv2 web ACL, defining which web requests (based on attributes such as IP addresses, geographic region, or request content) the rule evaluates to determine whether to apply its action like allow, block, or count. (AI-inferred) */
   statement?: WebAcl_Rules_Statement | Computed<WebAcl_Rules_Statement>;
-  /** Determines whether AWS WAF records metrics and sampled requests for this rule, including the CloudWatch metric name and whether sampled requests are enabled. (AI-inferred) */
   visibilityConfig?: WebAcl_Rules_VisibilityConfig | Computed<WebAcl_Rules_VisibilityConfig>;
 }
 
 export interface WebAcl_Tags {
-  /** The key of a tag assigned to a WAFv2 Web ACL for cost allocation and resource identification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the Web ACL, used to store arbitrary metadata for identifying, organizing, and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -1615,13 +1407,10 @@ export interface WebAclConfig {
   applicationConfig?: WebAcl_ApplicationConfig | Computed<WebAcl_ApplicationConfig>;
   /** AssociationConfig for body inspection */
   associationConfig?: WebAcl_AssociationConfig | Computed<WebAcl_AssociationConfig>;
-  /** Configures the web ACL's CAPTCHA challenge behavior, including the immunity time that specifies how long a successful CAPTCHA solve exempts a client from being challenged again. (AI-inferred) */
   captchaConfig?: WebAcl_CaptchaConfig | Computed<WebAcl_CaptchaConfig>;
-  /** Specifies the challenge configuration for the web ACL, including an immunity time that controls how long a client that successfully answers a challenge is exempt from subsequent challenges. (AI-inferred) */
   challengeConfig?: WebAcl_CaptchaConfig | Computed<WebAcl_CaptchaConfig>;
   /** Custom response key and body map. */
   customResponseBodies?: unknown | Computed<unknown>;
-  /** Configures data protection for the web ACL, specifying which sensitive data patterns in requests to detect and whether to redact or log them. (AI-inferred) */
   dataProtectionConfig?: WebAcl_DataProtectionConfig | Computed<WebAcl_DataProtectionConfig>;
   /** Default Action WebACL will take against ingress traffic when there is no matching Rule. */
   defaultAction: WebAcl_DefaultAction | Computed<WebAcl_DefaultAction>;
@@ -1637,7 +1426,6 @@ export interface WebAclConfig {
   rules?: WebAcl_Rules[] | Computed<WebAcl_Rules[]>;
   /** Use CLOUDFRONT for CloudFront WebACL, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string | Computed<string>;
-  /** A list of key-value pairs to tag the web ACL for cost allocation, access control, and resource identification, where each object contains a Key and Value. (AI-inferred) */
   tags?: WebAcl_Tags[] | Computed<WebAcl_Tags[]>;
   /** List of domains to accept in web request tokens, in addition to the domain of the protected resource. */
   tokenDomains?: string[] | Computed<string[]>;
@@ -1652,15 +1440,11 @@ export interface WebAclAttrs {
   arn: string;
   /** AssociationConfig for body inspection */
   associationConfig: WebAcl_AssociationConfig;
-  /** The current capacity units consumed by the rules configured in this web ACL, as reported by AWS WAFv2 after applying the rule configurations. (AI-inferred) */
   capacity: number;
-  /** Configures the web ACL's CAPTCHA challenge behavior, including the immunity time that specifies how long a successful CAPTCHA solve exempts a client from being challenged again. (AI-inferred) */
   captchaConfig: WebAcl_CaptchaConfig;
-  /** Specifies the challenge configuration for the web ACL, including an immunity time that controls how long a client that successfully answers a challenge is exempt from subsequent challenges. (AI-inferred) */
   challengeConfig: WebAcl_CaptchaConfig;
   /** Custom response key and body map. */
   customResponseBodies: unknown;
-  /** Configures data protection for the web ACL, specifying which sensitive data patterns in requests to detect and whether to redact or log them. (AI-inferred) */
   dataProtectionConfig: WebAcl_DataProtectionConfig;
   /** Default Action WebACL will take against ingress traffic when there is no matching Rule. */
   defaultAction: WebAcl_DefaultAction;
@@ -1680,7 +1464,6 @@ export interface WebAclAttrs {
   rules: WebAcl_Rules[];
   /** Use CLOUDFRONT for CloudFront WebACL, use REGIONAL for Application Load Balancer and API Gateway. */
   scope: string;
-  /** A list of key-value pairs to tag the web ACL for cost allocation, access control, and resource identification, where each object contains a Key and Value. (AI-inferred) */
   tags: WebAcl_Tags[];
   /** List of domains to accept in web request tokens, in addition to the domain of the protected resource. */
   tokenDomains: string[];

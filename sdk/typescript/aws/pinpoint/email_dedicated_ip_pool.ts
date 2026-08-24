@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailDedicatedIpPool_Tags {
-  /** A key in a key-value tag assigned to the Amazon Pinpoint email dedicated IP pool, used to label the pool for cost allocation and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag applied to the Amazon Pinpoint dedicated IP pool, used for labeling, organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,15 +12,12 @@ const EmailDedicatedIpPool_TagsFields: FieldMap = {
 };
 
 export interface EmailDedicatedIpPoolConfig {
-  /** The name of the dedicated IP pool in Amazon Pinpoint, which serves as the unique identifier when referencing the pool in sending configurations. (AI-inferred) */
   poolName?: string | Computed<string>;
   tags?: EmailDedicatedIpPool_Tags[] | Computed<EmailDedicatedIpPool_Tags[]>;
 }
 
 export interface EmailDedicatedIpPoolAttrs {
-  /** The unique identifier assigned to the dedicated IP pool, which is the same as the pool name. (AI-inferred) */
   id: string;
-  /** The name of the dedicated IP pool in Amazon Pinpoint, which serves as the unique identifier when referencing the pool in sending configurations. (AI-inferred) */
   poolName: string;
   tags: EmailDedicatedIpPool_Tags[];
 }

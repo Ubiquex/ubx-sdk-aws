@@ -9,9 +9,7 @@ type IntegrationsEventIntegration_EventFilter struct {
 }
 
 type IntegrationsEventIntegration_Tags struct {
-	// The key of a tag attached to the Amazon AppIntegrations Event Integration, used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value component of a tag for the AWS App Integrations Event Integration, storing arbitrary metadata paired with the tag key for resource organization, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -29,7 +27,6 @@ type IntegrationsEventIntegrationConfig struct {
 	Description any
 	// The Amazon Eventbridge bus for the event integration.
 	EventBridgeBus any
-	// Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred)
 	EventFilter any
 	// The name of the event integration.
 	Name any
@@ -42,7 +39,6 @@ type IntegrationsEventIntegrationAttrs struct {
 	Description any
 	// The Amazon Eventbridge bus for the event integration.
 	EventBridgeBus any
-	// Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred)
 	EventFilter any
 	// The Amazon Resource Name (ARN) of the event integration.
 	EventIntegrationArn any

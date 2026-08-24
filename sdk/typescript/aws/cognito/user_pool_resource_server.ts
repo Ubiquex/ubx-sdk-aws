@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolResourceServer_Scopes {
-  /** A human-readable description that explains the purpose or permissions of the OAuth 2.0 scope defined for the user pool resource server. (AI-inferred) */
   scopeDescription?: string | Computed<string>;
-  /** The scope_name defines the unique name of the OAuth 2.0 scope that clients can request for authorization from this resource server. (AI-inferred) */
   scopeName?: string | Computed<string>;
 }
 
@@ -14,24 +12,16 @@ const UserPoolResourceServer_ScopesFields: FieldMap = {
 };
 
 export interface UserPoolResourceServerConfig {
-  /** The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred) */
   identifier: string | Computed<string>;
-  /** A friendly name for the resource server, used to identify it within the user pool. (AI-inferred) */
   name: string | Computed<string>;
-  /** Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred) */
   scopes?: UserPoolResourceServer_Scopes[] | Computed<UserPoolResourceServer_Scopes[]>;
-  /** The unique ID of the user pool that this resource server is associated with. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface UserPoolResourceServerAttrs {
-  /** The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred) */
   identifier: string;
-  /** A friendly name for the resource server, used to identify it within the user pool. (AI-inferred) */
   name: string;
-  /** Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred) */
   scopes: UserPoolResourceServer_Scopes[];
-  /** The unique ID of the user pool that this resource server is associated with. (AI-inferred) */
   userPoolId: string;
 }
 

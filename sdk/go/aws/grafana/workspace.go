@@ -54,7 +54,6 @@ type Workspace_SamlConfiguration struct {
 
 type Workspace_Tags struct {
 	Key any
-	// The value assigned to a tag key for the Grafana workspace, used to categorize, organize, and track the resource for cost and management purposes. (AI-inferred)
 	Value any
 }
 

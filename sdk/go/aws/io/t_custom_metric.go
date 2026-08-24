@@ -4,7 +4,6 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TCustomMetric_Tags struct {
-	// Represents the key of a tag attached to an AWS IoT Custom Metric, enabling metadata-based identification and management of the metric. (AI-inferred)
 	Key any
 	Value any
 }

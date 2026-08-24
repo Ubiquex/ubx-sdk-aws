@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryReadinessRecoveryGroup_Tags:
-    # The key of a user-defined tag applied to the Route 53 Recovery Readiness recovery group, used for identifying and categorizing the group within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Route 53 Recovery Readiness recovery group, used to assign custom metadata for identifying, organizing, or managing the recovery group. (AI-inferred)
     value: Any = None
 
 _RecoveryReadinessRecoveryGroup_TagsFields = {

@@ -29,11 +29,8 @@ _DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields = {
 
 @dataclasses.dataclass
 class DbproxyTargetGroupConfig:
-    # Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred)
     connection_pool_configuration_info: Any = None
-    # A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred)
     dbcluster_identifiers: Any = None
-    # Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred)
     dbinstance_identifiers: Any = None
     # The identifier for the proxy.
     dbproxy_name: Any = None
@@ -42,11 +39,8 @@ class DbproxyTargetGroupConfig:
 
 @dataclasses.dataclass
 class DbproxyTargetGroupAttrs:
-    # Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred)
     connection_pool_configuration_info: Any = None
-    # A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred)
     dbcluster_identifiers: Any = None
-    # Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred)
     dbinstance_identifiers: Any = None
     # The identifier for the proxy.
     dbproxy_name: Any = None

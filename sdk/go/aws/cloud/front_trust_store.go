@@ -20,9 +20,7 @@ type FrontTrustStore_CaCertificatesBundleSource struct {
 }
 
 type FrontTrustStore_Tags struct {
-	// The key (name) of a user-defined tag applied to the CloudFront trust store, used to identify and categorize the resource for cost allocation and management. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the CloudFront trust store, used for resource organization and metadata management. (AI-inferred)
 	Value any
 }
 
@@ -61,15 +59,11 @@ type FrontTrustStoreAttrs struct {
 	Arn any
 	// A CA certificates bundle source.
 	CaCertificatesBundleSource any
-	// The entity tag (ETag) that represents the current version of the CloudFront trust store, used for optimistic concurrency control so that you can detect and avoid conflicting updates. (AI-inferred)
 	Etag any
-	// The unique AWS-assigned identifier for the CloudFront trust store, used to reference the trust store when attaching it to a CloudFront distribution. (AI-inferred)
 	Id any
-	// A read-only timestamp indicating the date and time when the AWS CloudFront trust store was last modified. (AI-inferred)
 	LastModifiedTime any
 	// The trust store's name.
 	Name any
-	// The number of CA certificates currently contained in the CloudFront trust store. (AI-inferred)
 	NumberOfCaCertificates any
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.

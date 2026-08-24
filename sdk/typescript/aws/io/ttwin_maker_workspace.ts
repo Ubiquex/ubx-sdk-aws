@@ -17,7 +17,6 @@ export interface TtwinMakerWorkspaceConfig {
 export interface TtwinMakerWorkspaceAttrs {
   /** The ARN of the workspace. */
   arn: string;
-  /** The date and time when the workspace was created, in ISO 8601 format. (AI-inferred) */
   creationDateTime: string;
   /** The description of the workspace. */
   description: string;
@@ -27,7 +26,6 @@ export interface TtwinMakerWorkspaceAttrs {
   s3Location: string;
   /** A map of key-value pairs to associate with a resource. */
   tags: unknown;
-  /** The date and time when the workspace was last updated, in ISO 8601 format. (AI-inferred) */
   updateDateTime: string;
   /** The ID of the workspace. */
   workspaceId: string;

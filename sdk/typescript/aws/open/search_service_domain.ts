@@ -7,188 +7,121 @@ export interface SearchServiceDomain_Aimloptions_S3VectorsEngine {
 }
 
 export interface SearchServiceDomain_Aimloptions {
-  /** Configures the S3 vector engine for the OpenSearch Service domain, which specifies the S3 bucket and IAM role used to store and query vector embeddings for vector search. (AI-inferred) */
   s3VectorsEngine?: SearchServiceDomain_Aimloptions_S3VectorsEngine | Computed<SearchServiceDomain_Aimloptions_S3VectorsEngine>;
-  /** Configuration for serverless vector acceleration on the OpenSearch Service domain, used to enable or disable accelerated vector search for serverless engine workloads. (AI-inferred) */
   serverlessVectorAcceleration?: SearchServiceDomain_Aimloptions_S3VectorsEngine | Computed<SearchServiceDomain_Aimloptions_S3VectorsEngine>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions_IamfederationOptions {
-  /** Indicates whether IAM federation is enabled for the OpenSearch domain's advanced security options, allowing the domain to use IAM roles for authentication instead of internal users. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The SAML response attribute that contains the IAM role mappings used to grant federated users access to the OpenSearch Service domain. (AI-inferred) */
   rolesKey?: string | Computed<string>;
-  /** Specifies the source attribute in the IAM Identity Center (or IdP assertion) that is used to derive the OpenSearch username for federated users. (AI-inferred) */
   subjectKey?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions_Jwtoptions {
-  /** Whether JWT-based authentication is enabled for the OpenSearch domain's advanced security options. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The public key used to verify JWT tokens for JWT authentication within the OpenSearch domain's advanced security settings. (AI-inferred) */
   publicKey?: string | Computed<string>;
-  /** Specifies the JWT payload key whose value contains the user's roles, which OpenSearch Service uses to assign backend roles to the authenticated user. (AI-inferred) */
   rolesKey?: string | Computed<string>;
-  /** The JWT claim key (e.g., 'sub') that contains the user's subject identifier, used to authenticate and map the token to an OpenSearch user for access control. (AI-inferred) */
   subjectKey?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions_MasterUserOptions {
-  /** Specifies the ARN of the IAM user or role that acts as the master user for the OpenSearch domain's fine-grained access control. (AI-inferred) */
   masterUserArn?: string | Computed<string>;
-  /** The master user name for the OpenSearch domain's internal user database, used when configuring fine-grained access control with the internal user database as the master user. (AI-inferred) */
   masterUserName?: string | Computed<string>;
-  /** The master user password for the OpenSearch Service domain's fine-grained access control, used in combination with the master user name to authenticate the primary administrative user. (AI-inferred) */
   masterUserPassword?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions_Samloptions_Idp {
-  /** The unique identifier (entity ID) of the SAML identity provider (IdP) that OpenSearch Service uses for SAML-based authentication, typically the issuer URL from the IdP's SAML metadata. (AI-inferred) */
   entityId: string | Computed<string>;
-  /** The metadata content (XML) of the SAML identity provider used for configuring SAML authentication on the OpenSearch Service domain. (AI-inferred) */
   metadataContent: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions_Samloptions {
-  /** Whether SAML authentication is enabled for the OpenSearch domain. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Configuration for the SAML identity provider, including the entity ID and the IdP metadata XML document, used to enable SAML authentication for the OpenSearch domain. (AI-inferred) */
   idp?: SearchServiceDomain_AdvancedSecurityOptions_Samloptions_Idp | Computed<SearchServiceDomain_AdvancedSecurityOptions_Samloptions_Idp>;
-  /** Specifies the IAM role ARN to use as the master backend role (the master user) for the OpenSearch Service domain when SAML authentication is enabled, granting that role full access to the cluster. (AI-inferred) */
   masterBackendRole?: string | Computed<string>;
-  /** The SAML username of the master user who receives full access to the OpenSearch domain when SAML authentication is enabled. (AI-inferred) */
   masterUserName?: string | Computed<string>;
-  /** Specifies the SAML attribute name that contains the user's roles, which are mapped to OpenSearch backend roles in the advanced security options. (AI-inferred) */
   rolesKey?: string | Computed<string>;
-  /** Specifies the SAML session timeout in minutes, after which an authenticated user's OpenSearch Dashboards session expires. (AI-inferred) */
   sessionTimeoutMinutes?: number | Computed<number>;
-  /** Specifies the SAML assertion attribute (such as NameID) that maps to the user's subject identifier for authentication when SAML is enabled for the OpenSearch domain. (AI-inferred) */
   subjectKey?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_AdvancedSecurityOptions {
-  /** The date and time (in ISO 8601 format) after which anonymous access to the OpenSearch Service domain is automatically disabled, used when temporary anonymous authentication has been enabled. (AI-inferred) */
   anonymousAuthDisableDate?: string | Computed<string>;
-  /** Enables or disables anonymous authentication, allowing unauthenticated users to access the OpenSearch domain without credentials. (AI-inferred) */
   anonymousAuthEnabled?: boolean | Computed<boolean>;
-  /** Enables fine-grained access control (advanced security) for the Amazon OpenSearch Service domain, requiring authentication and authorization for access. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the IAM federation configuration for the OpenSearch Service domain, allowing IAM identities to authenticate to OpenSearch Dashboards through an external identity provider instead of using the internal user database. (AI-inferred) */
   iamfederationOptions?: SearchServiceDomain_AdvancedSecurityOptions_IamfederationOptions | Computed<SearchServiceDomain_AdvancedSecurityOptions_IamfederationOptions>;
-  /** Indicates whether the internal user database is enabled for fine-grained access control in the Amazon OpenSearch Service domain. (AI-inferred) */
   internalUserDatabaseEnabled?: boolean | Computed<boolean>;
-  /** Configures JWT (JSON Web Token) authentication and authorization for the OpenSearch domain's advanced security, including enabling JWT and specifying the subject and roles claim keys for token validation. (AI-inferred) */
   jwtoptions?: SearchServiceDomain_AdvancedSecurityOptions_Jwtoptions | Computed<SearchServiceDomain_AdvancedSecurityOptions_Jwtoptions>;
-  /** Specifies the master user (the administrative user) for the OpenSearch Service domain when fine-grained access control is enabled, allowing you to provide either an IAM role ARN (MasterUserARN) or a username and password (MasterUserName/MasterUserPassword). (AI-inferred) */
   masterUserOptions?: SearchServiceDomain_AdvancedSecurityOptions_MasterUserOptions | Computed<SearchServiceDomain_AdvancedSecurityOptions_MasterUserOptions>;
-  /** Specifies the SAML (Security Assertion Markup Language) options for the domain's advanced security, enabling SAML-based single sign-on for OpenSearch Dashboards with settings such as identity provider metadata, subject key, and roles key. (AI-inferred) */
   samloptions?: SearchServiceDomain_AdvancedSecurityOptions_Samloptions | Computed<SearchServiceDomain_AdvancedSecurityOptions_Samloptions>;
 }
 
 export interface SearchServiceDomain_AutomatedSnapshotPauseOptions {
-  /** Enables or disables the automated snapshot pause feature, allowing Amazon OpenSearch Service to temporarily pause automated snapshots during high traffic or maintenance windows to reduce impact on cluster performance. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
-  /** The UTC time of day at which the automated snapshot pause window ends, after which Amazon OpenSearch Service resumes automated snapshot creation for the domain. (AI-inferred) */
   endTime?: string | Computed<string>;
-  /** Specifies the start time (in UTC, in HH:mm format) of the daily window during which automated snapshots are paused for the OpenSearch Service domain. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_ClusterConfig_NodeOptions_NodeConfig {
-  /** Specifies the number of nodes of the configured node type (such as coordinator nodes) to provision for the OpenSearch domain's cluster, as defined within the node option's node configuration. (AI-inferred) */
   count?: number | Computed<number>;
-  /** This boolean determines whether the specified node configuration (for example, dedicated coordinator nodes) is enabled for the OpenSearch Service domain cluster. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
   type?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_ClusterConfig_NodeOptions {
-  /** Configuration for a node option in the OpenSearch domain cluster, specifying the node count and whether the option is enabled for the selected node type. (AI-inferred) */
   nodeConfig?: SearchServiceDomain_ClusterConfig_NodeOptions_NodeConfig | Computed<SearchServiceDomain_ClusterConfig_NodeOptions_NodeConfig>;
-  /** Specifies the type of node (e.g., 'data', 'master', 'ultrawarm', or 'cold') for which the node option is configured within the OpenSearch domain's cluster configuration. (AI-inferred) */
   nodeType?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_ClusterConfig_ZoneAwarenessConfig {
-  /** Specifies the number of Availability Zones (typically 2 or 3) that the OpenSearch Service domain's cluster spans when zone awareness is enabled, controlling distribution of data nodes across zones for high availability. (AI-inferred) */
   availabilityZoneCount?: number | Computed<number>;
 }
 
 export interface SearchServiceDomain_ClusterConfig {
-  /** Options for managing cold storage in the OpenSearch cluster, where the `Enabled` flag determines whether cold storage is turned on for the domain. (AI-inferred) */
   coldStorageOptions?: SearchServiceDomain_Aimloptions_S3VectorsEngine | Computed<SearchServiceDomain_Aimloptions_S3VectorsEngine>;
-  /** Number of dedicated master nodes to deploy for the OpenSearch Service domain cluster, used when dedicated_master_enabled is true. (AI-inferred) */
   dedicatedMasterCount?: number | Computed<number>;
-  /** Specifies whether the OpenSearch Service domain is configured to use dedicated master nodes, which provide more stable cluster management for production workloads. (AI-inferred) */
   dedicatedMasterEnabled?: boolean | Computed<boolean>;
-  /** Specifies the instance type for the dedicated master nodes of the OpenSearch cluster, typically a value like m5.large.search, and is required when dedicated_master_enabled is set to true. (AI-inferred) */
   dedicatedMasterType?: string | Computed<string>;
-  /** The number of data nodes (instances) that form the OpenSearch Service domain's cluster. (AI-inferred) */
   instanceCount?: number | Computed<number>;
-  /** Defines the Amazon OpenSearch Service instance type for the data nodes in the cluster, such as 'm5.large.search' or 'c5.large.search'. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** Enables or disables Multi-AZ with standby for the OpenSearch Service domain, which deploys the cluster across three Availability Zones (two active data nodes and one standby) to provide higher availability. (AI-inferred) */
   multiAzwithStandbyEnabled?: boolean | Computed<boolean>;
-  /** Configures the list of node options for the OpenSearch domain cluster, allowing you to specify dedicated coordinator nodes and their counts to optimize cluster performance and stability. (AI-inferred) */
   nodeOptions?: SearchServiceDomain_ClusterConfig_NodeOptions[] | Computed<SearchServiceDomain_ClusterConfig_NodeOptions[]>;
-  /** Specifies the number of UltraWarm nodes for the OpenSearch domain, used to enable warm storage tiers in the cluster. (AI-inferred) */
   warmCount?: number | Computed<number>;
-  /** Indicates whether UltraWarm, a low-cost storage tier for large amounts of read-only data in Amazon OpenSearch Service, is enabled for the domain. (AI-inferred) */
   warmEnabled?: boolean | Computed<boolean>;
-  /** Specifies the instance type for UltraWarm nodes in the OpenSearch domain's cluster configuration, enabling the UltraWarm storage tier for warmer, cheaper storage of read-only indices. (AI-inferred) */
   warmType?: string | Computed<string>;
-  /** Specifies the number of Availability Zones for the domain when zone awareness is enabled, used to configure multi-AZ deployment. (AI-inferred) */
   zoneAwarenessConfig?: SearchServiceDomain_ClusterConfig_ZoneAwarenessConfig | Computed<SearchServiceDomain_ClusterConfig_ZoneAwarenessConfig>;
-  /** Indicates whether to enable zone awareness for the OpenSearch domain cluster, which distributes nodes across multiple Availability Zones to improve availability and fault tolerance. (AI-inferred) */
   zoneAwarenessEnabled?: boolean | Computed<boolean>;
 }
 
 export interface SearchServiceDomain_CognitoOptions {
-  /** Indicates whether authentication through Amazon Cognito is enabled for OpenSearch Dashboards (formerly Kibana) on the OpenSearch Service domain. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The ID of the Cognito identity pool used to authenticate users to OpenSearch Dashboards. (AI-inferred) */
   identityPoolId?: string | Computed<string>;
-  /** The ARN of the IAM role that OpenSearch Service assumes to access Amazon Cognito for authentication, which is required when Cognito options are enabled on the domain. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The ID of the Amazon Cognito user pool used for authentication to OpenSearch Dashboards when CognitoOptions is enabled. (AI-inferred) */
   userPoolId?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_DeploymentStrategyOptions {
-  /** Defines whether the OpenSearch Service domain uses a blue/green deployment (creating a new environment and swapping traffic) or an in-place deployment (applying changes directly to the existing cluster) when configuration changes are made. (AI-inferred) */
   deploymentStrategy?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_DomainEndpointOptions {
-  /** Specifies the fully qualified custom domain name (e.g., search.example.com) used as the domain's endpoint when custom endpoint is enabled. (AI-inferred) */
   customEndpoint?: string | Computed<string>;
-  /** The ARN of the AWS Certificate Manager (ACM) certificate that secures the custom endpoint of the OpenSearch Service domain when a custom domain endpoint is enabled. (AI-inferred) */
   customEndpointCertificateArn?: string | Computed<string>;
-  /** Indicates whether a custom endpoint is enabled for the OpenSearch Service domain, allowing you to use a custom domain name instead of the default endpoint. (AI-inferred) */
   customEndpointEnabled?: boolean | Computed<boolean>;
-  /** Indicates whether the OpenSearch Service domain requires all traffic to use HTTPS, disabling HTTP access. (AI-inferred) */
   enforceHttps?: boolean | Computed<boolean>;
-  /** Sets the minimum TLS version for the domain's HTTPS endpoint, with valid values of 'Policy-Min-TLS-1-0-2019-07' (default, allowing TLS 1.0 and above) or 'Policy-Min-TLS-1-2-2019-07' (enforcing TLS 1.2 or higher). (AI-inferred) */
   tlssecurityPolicy?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_Ebsoptions {
-  /** Whether EBS (Elastic Block Store) storage is enabled for the data nodes of the OpenSearch Service domain. (AI-inferred) */
   ebsenabled?: boolean | Computed<boolean>;
-  /** The provisioned IOPS (I/O operations per second) for the EBS volumes attached to the OpenSearch domain, used when the volume type is set to io1, io2, or gp3. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** Sets the provisioned throughput (in MiB/s) for the EBS volumes attached to the OpenSearch Service domain, used when the volume type supports specifying throughput such as gp3. (AI-inferred) */
   throughput?: number | Computed<number>;
-  /** The size in GiB of the EBS volume attached to each data node for the OpenSearch Service domain. (AI-inferred) */
   volumeSize?: number | Computed<number>;
-  /** Specifies the EBS volume type (e.g., gp2, gp3, io1) used for the OpenSearch Service domain's EBS storage volumes. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_EncryptionAtRestOptions {
-  /** Whether encryption of data at rest is enabled for the OpenSearch Service domain, with a custom KMS key configurable via the KmsKeyId property in the same EncryptionAtRestOptions object. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The KMS key ID used for encryption-at-rest of the OpenSearch Service domain, which must be a symmetric customer master key in the same region as the domain. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
 }
 
@@ -208,67 +141,48 @@ export interface SearchServiceDomain_IdentityCenterOptions {
 }
 
 export interface SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow_WindowStartTime {
-  /** The hour of the day (0-23) at which the off-peak maintenance window starts for the OpenSearch Service domain. (AI-inferred) */
   hours: number | Computed<number>;
-  /** The minute (0-59) of the hour at which the daily off-peak window starts for maintenance activities on the OpenSearch Service domain. (AI-inferred) */
   minutes: number | Computed<number>;
 }
 
 export interface SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow {
-  /** Defines the starting hour and minute (UTC) of the daily off-peak maintenance window for the OpenSearch Service domain. (AI-inferred) */
   windowStartTime?: SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow_WindowStartTime | Computed<SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow_WindowStartTime>;
 }
 
 export interface SearchServiceDomain_OffPeakWindowOptions {
-  /** Indicates whether the off-peak maintenance window is enabled for the OpenSearch Service domain, allowing software updates to occur during a scheduled low-traffic period. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the daily off-peak maintenance window for the OpenSearch Service domain by defining the start time (hours and minutes) for when maintenance tasks can be performed. (AI-inferred) */
   offPeakWindow?: SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow | Computed<SearchServiceDomain_OffPeakWindowOptions_OffPeakWindow>;
 }
 
 export interface SearchServiceDomain_ServiceSoftwareOptions {
-  /** The timestamp (ISO 8601 string) at which an available service software update will be automatically applied to the OpenSearch Service domain, as scheduled by AWS. (AI-inferred) */
   automatedUpdateDate?: string | Computed<string>;
-  /** A boolean that indicates whether the currently running service software update on the OpenSearch Service domain can be cancelled. (AI-inferred) */
   cancellable?: boolean | Computed<boolean>;
-  /** The current_version field indicates the version of the OpenSearch service software currently installed on the domain, which is populated by the AWS API and cannot be set by the user. (AI-inferred) */
   currentVersion?: string | Computed<string>;
-  /** Contains a human-readable description of the current or latest service software update for the OpenSearch domain, as reported by the AWS service. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The version of the OpenSearch service software that the domain can be updated to, when an update is available. (AI-inferred) */
   newVersion?: string | Computed<string>;
-  /** A boolean that indicates whether the deployment of the pending service software update is optional, allowing you to defer or manually schedule the update instead of having it automatically applied. (AI-inferred) */
   optionalDeployment?: boolean | Computed<boolean>;
-  /** Indicates whether a new service software update is available for the OpenSearch domain, as reported by the AWS OpenSearch Service. (AI-inferred) */
   updateAvailable?: boolean | Computed<boolean>;
-  /** Indicates the status of a service software update for the OpenSearch Service domain, including states such as PENDING_UPDATE, IN_PROGRESS, COMPLETED, or NOT_AVAILABLE. (AI-inferred) */
   updateStatus?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_SnapshotOptions {
-  /** The hour in UTC at which the OpenSearch Service domain's automated daily snapshots are taken, specified as an integer from 0 to 23. (AI-inferred) */
   automatedSnapshotStartHour?: number | Computed<number>;
 }
 
 export interface SearchServiceDomain_SoftwareUpdateOptions {
-  /** Enables or disables automated software updates (patching) for the OpenSearch Service domain. (AI-inferred) */
   autoSoftwareUpdateEnabled?: boolean | Computed<boolean>;
-  /** This boolean field enables or disables automatic blue/green deployment to update the OpenSearch Service domain to the latest service software. (AI-inferred) */
   useLatestServiceSoftwareForBlueGreen?: boolean | Computed<boolean>;
 }
 
 export interface SearchServiceDomain_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the Amazon OpenSearch Service domain, used for metadata organization, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SearchServiceDomain_Vpcoptions {
   /** Controls whether egress traffic from the domain is routed through the customer VPC. */
   egressEnabled?: boolean | Computed<boolean>;
-  /** The list of security group IDs to associate with the VPC endpoint for the OpenSearch Service domain, controlling network access to the domain within the VPC. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the subnet IDs within a VPC where the OpenSearch domain's VPC endpoints (for the data nodes) are placed, used when the domain is deployed inside a virtual private cloud. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
@@ -417,118 +331,70 @@ const SearchServiceDomain_VpcoptionsFields: FieldMap = {
 };
 
 export interface SearchServiceDomainConfig {
-  /** Configures AI/ML features for the Amazon OpenSearch Service domain, such as natural language query generation and integration with IAM Identity Center. (AI-inferred) */
   aimloptions?: SearchServiceDomain_Aimloptions | Computed<SearchServiceDomain_Aimloptions>;
-  /** IAM policy document (JSON) that defines the resource-based access policy for the OpenSearch domain, specifying which IAM principals and actions are allowed on the domain's APIs and endpoints. (AI-inferred) */
   accessPolicies?: unknown | Computed<unknown>;
-  /** Configures advanced OpenSearch cluster options as key-value pairs, such as allowing explicit index names (rest.action.multi.allow_explicit_index) or setting the maximum number of query clauses (indices.query.bool.max_clause_count). (AI-inferred) */
   advancedOptions?: unknown | Computed<unknown>;
-  /** Configures a recurring time window during which automated snapshots are paused for the OpenSearch Service domain, preventing snapshot creation during periods of high activity or maintenance. (AI-inferred) */
   automatedSnapshotPauseOptions?: SearchServiceDomain_AutomatedSnapshotPauseOptions | Computed<SearchServiceDomain_AutomatedSnapshotPauseOptions>;
-  /** The cluster_config object configures the OpenSearch cluster's compute and sizing settings, including instance type, instance count, dedicated master nodes, and zone awareness for the domain. (AI-inferred) */
   clusterConfig?: SearchServiceDomain_ClusterConfig | Computed<SearchServiceDomain_ClusterConfig>;
-  /** Cognito options for OpenSearch Dashboards authentication, specifying whether Cognito authentication is enabled and the associated Cognito user pool, identity pool, and IAM role used for Dashboards login. (AI-inferred) */
   cognitoOptions?: SearchServiceDomain_CognitoOptions | Computed<SearchServiceDomain_CognitoOptions>;
-  /** Specifies the deployment strategy for the OpenSearch domain, including the deployment mode (e.g., BLUE_GREEN) that controls how updates and changes are applied to the domain during configuration changes. (AI-inferred) */
   deploymentStrategyOptions?: SearchServiceDomain_DeploymentStrategyOptions | Computed<SearchServiceDomain_DeploymentStrategyOptions>;
-  /** Configures endpoint access for the domain, including whether HTTPS is enforced, the TLS security policy version, and optional custom endpoint settings such as a custom hostname and certificate. (AI-inferred) */
   domainEndpointOptions?: SearchServiceDomain_DomainEndpointOptions | Computed<SearchServiceDomain_DomainEndpointOptions>;
-  /** A unique, user-friendly name for the OpenSearch domain, which appears in the domain's endpoint URL (e.g., https://<domain-name>.region.es.amazonaws.com) and must be unique within the AWS account and region. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** Configures the EBS volumes attached to the data nodes of the OpenSearch domain, including volume type, size, and IOPS settings. (AI-inferred) */
   ebsoptions?: SearchServiceDomain_Ebsoptions | Computed<SearchServiceDomain_Ebsoptions>;
-  /** Configures encryption at rest for the OpenSearch Service domain, specifying whether it is enabled and the AWS KMS key ID used to encrypt the domain's data. (AI-inferred) */
   encryptionAtRestOptions?: SearchServiceDomain_EncryptionAtRestOptions | Computed<SearchServiceDomain_EncryptionAtRestOptions>;
   /** The engine mode of the domain. Determines whether the domain runs the standard (GENERAL) engine or the optimized multi-engine (OPTIMIZED) engine. This value cannot be changed after the domain is created. */
   engineMode?: string | Computed<string>;
-  /** The version of the OpenSearch or Elasticsearch engine that the domain runs, such as 'OpenSearch_1.0' or 'Elasticsearch_7.10'. (AI-inferred) */
   engineVersion?: string | Computed<string>;
-  /** Specifies whether the OpenSearch Service domain uses IPv4 only or dual-stack networking (IPv4 and IPv6), controlling the IP address type assigned to the domain endpoints. (AI-inferred) */
   ipaddressType?: string | Computed<string>;
-  /** Configures the publishing of OpenSearch Service domain logs (such as index slow logs, search slow logs, and audit logs) to a CloudWatch Logs group. (AI-inferred) */
   logPublishingOptions?: unknown | Computed<unknown>;
-  /** Specifies settings for encrypting traffic between nodes in the Amazon OpenSearch Service domain, with an Enabled boolean that must be true to activate node-to-node encryption. (AI-inferred) */
   nodeToNodeEncryptionOptions?: SearchServiceDomain_Aimloptions_S3VectorsEngine | Computed<SearchServiceDomain_Aimloptions_S3VectorsEngine>;
-  /** Configures a daily off-peak window during which the OpenSearch Service domain can perform maintenance activities such as software updates, helping minimize impact on active traffic. (AI-inferred) */
   offPeakWindowOptions?: SearchServiceDomain_OffPeakWindowOptions | Computed<SearchServiceDomain_OffPeakWindowOptions>;
-  /** Set this to true to make Terraform skip waiting for shard migration to complete when reducing the number of data nodes in the OpenSearch domain, allowing the cluster configuration update to finish faster. (AI-inferred) */
   skipShardMigrationWait?: boolean | Computed<boolean>;
-  /** Configures the automated snapshot start hour (0-23) for the OpenSearch Service domain, controlling when daily snapshots are taken. (AI-inferred) */
   snapshotOptions?: SearchServiceDomain_SnapshotOptions | Computed<SearchServiceDomain_SnapshotOptions>;
-  /** Controls whether Amazon OpenSearch Service can automatically apply software updates to the domain, including the option to enable or disable automatic updates. (AI-inferred) */
   softwareUpdateOptions?: SearchServiceDomain_SoftwareUpdateOptions | Computed<SearchServiceDomain_SoftwareUpdateOptions>;
   /** An arbitrary set of tags (key-value pairs) for this Domain. */
   tags?: SearchServiceDomain_Tags[] | Computed<SearchServiceDomain_Tags[]>;
   /** The primary use case of the domain. Determines the default configuration tuned for the workload. For GENERAL engine-mode domains, this value can be changed after creation. For OPTIMIZED engine-mode domains, this value cannot be changed after creation. */
   useCase?: string | Computed<string>;
-  /** Configures the Amazon Virtual Private Cloud (VPC) options for the OpenSearch Service domain, specifying the subnets and security groups in which the domain's endpoints will be placed. (AI-inferred) */
   vpcoptions?: SearchServiceDomain_Vpcoptions | Computed<SearchServiceDomain_Vpcoptions>;
 }
 
 export interface SearchServiceDomainAttrs {
-  /** Configures AI/ML features for the Amazon OpenSearch Service domain, such as natural language query generation and integration with IAM Identity Center. (AI-inferred) */
   aimloptions: SearchServiceDomain_Aimloptions;
-  /** IAM policy document (JSON) that defines the resource-based access policy for the OpenSearch domain, specifying which IAM principals and actions are allowed on the domain's APIs and endpoints. (AI-inferred) */
   accessPolicies: unknown;
-  /** Configures advanced OpenSearch cluster options as key-value pairs, such as allowing explicit index names (rest.action.multi.allow_explicit_index) or setting the maximum number of query clauses (indices.query.bool.max_clause_count). (AI-inferred) */
   advancedOptions: unknown;
-  /** The advanced security options applied to the OpenSearch Service domain, including whether fine-grained access control is enabled, the internal user database setting, and the master user or SAML authentication configuration. (AI-inferred) */
   advancedSecurityOptions: SearchServiceDomain_AdvancedSecurityOptions;
-  /** The Amazon Resource Name (ARN) of the OpenSearch domain, uniquely identifying the domain across AWS. (AI-inferred) */
   arn: string;
-  /** Configures a recurring time window during which automated snapshots are paused for the OpenSearch Service domain, preventing snapshot creation during periods of high activity or maintenance. (AI-inferred) */
   automatedSnapshotPauseOptions: SearchServiceDomain_AutomatedSnapshotPauseOptions;
-  /** The cluster_config object configures the OpenSearch cluster's compute and sizing settings, including instance type, instance count, dedicated master nodes, and zone awareness for the domain. (AI-inferred) */
   clusterConfig: SearchServiceDomain_ClusterConfig;
-  /** Cognito options for OpenSearch Dashboards authentication, specifying whether Cognito authentication is enabled and the associated Cognito user pool, identity pool, and IAM role used for Dashboards login. (AI-inferred) */
   cognitoOptions: SearchServiceDomain_CognitoOptions;
-  /** Specifies the deployment strategy for the OpenSearch domain, including the deployment mode (e.g., BLUE_GREEN) that controls how updates and changes are applied to the domain during configuration changes. (AI-inferred) */
   deploymentStrategyOptions: SearchServiceDomain_DeploymentStrategyOptions;
-  /** The Amazon Resource Name (ARN) of the OpenSearch Service domain, uniquely identifying it across AWS. (AI-inferred) */
   domainArn: string;
-  /** The fully qualified domain endpoint URL (e.g., https://search-<domain-name>-<random-string>.<region>.es.amazonaws.com) that is automatically assigned to the OpenSearch domain and can be used to access the search service. (AI-inferred) */
   domainEndpoint: string;
-  /** Configures endpoint access for the domain, including whether HTTPS is enforced, the TLS security policy version, and optional custom endpoint settings such as a custom hostname and certificate. (AI-inferred) */
   domainEndpointOptions: SearchServiceDomain_DomainEndpointOptions;
-  /** This computed field contains the V2 domain endpoint (a URL) for the OpenSearch Service domain, which clients use to access the domain's search and indexing APIs. (AI-inferred) */
   domainEndpointV2: string;
-  /** A computed map of the OpenSearch Service domain's endpoint URLs, with keys such as 'vpc' for the VPC endpoint (when deployed in a VPC) and 'public' for the public endpoint. (AI-inferred) */
   domainEndpoints: unknown;
-  /** A unique, user-friendly name for the OpenSearch domain, which appears in the domain's endpoint URL (e.g., https://<domain-name>.region.es.amazonaws.com) and must be unique within the AWS account and region. (AI-inferred) */
   domainName: string;
-  /** Configures the EBS volumes attached to the data nodes of the OpenSearch domain, including volume type, size, and IOPS settings. (AI-inferred) */
   ebsoptions: SearchServiceDomain_Ebsoptions;
-  /** Configures encryption at rest for the OpenSearch Service domain, specifying whether it is enabled and the AWS KMS key ID used to encrypt the domain's data. (AI-inferred) */
   encryptionAtRestOptions: SearchServiceDomain_EncryptionAtRestOptions;
   /** The engine mode of the domain. Determines whether the domain runs the standard (GENERAL) engine or the optimized multi-engine (OPTIMIZED) engine. This value cannot be changed after the domain is created. */
   engineMode: string;
-  /** The version of the OpenSearch or Elasticsearch engine that the domain runs, such as 'OpenSearch_1.0' or 'Elasticsearch_7.10'. (AI-inferred) */
   engineVersion: string;
-  /** Specifies whether the OpenSearch Service domain uses IPv4 only or dual-stack networking (IPv4 and IPv6), controlling the IP address type assigned to the domain endpoints. (AI-inferred) */
   ipaddressType: string;
-  /** The name of the OpenSearch domain, which serves as the unique identifier for the domain resource. (AI-inferred) */
   id: string;
   /** Options for configuring Identity Center */
   identityCenterOptions: SearchServiceDomain_IdentityCenterOptions;
-  /** Configures the publishing of OpenSearch Service domain logs (such as index slow logs, search slow logs, and audit logs) to a CloudWatch Logs group. (AI-inferred) */
   logPublishingOptions: unknown;
-  /** Specifies settings for encrypting traffic between nodes in the Amazon OpenSearch Service domain, with an Enabled boolean that must be true to activate node-to-node encryption. (AI-inferred) */
   nodeToNodeEncryptionOptions: SearchServiceDomain_Aimloptions_S3VectorsEngine;
-  /** Configures a daily off-peak window during which the OpenSearch Service domain can perform maintenance activities such as software updates, helping minimize impact on active traffic. (AI-inferred) */
   offPeakWindowOptions: SearchServiceDomain_OffPeakWindowOptions;
-  /** Provides the current service software version for the OpenSearch domain, including whether an update is available, the update status, and the scheduled automated update date. (AI-inferred) */
   serviceSoftwareOptions: SearchServiceDomain_ServiceSoftwareOptions;
-  /** Set this to true to make Terraform skip waiting for shard migration to complete when reducing the number of data nodes in the OpenSearch domain, allowing the cluster configuration update to finish faster. (AI-inferred) */
   skipShardMigrationWait: boolean;
-  /** Configures the automated snapshot start hour (0-23) for the OpenSearch Service domain, controlling when daily snapshots are taken. (AI-inferred) */
   snapshotOptions: SearchServiceDomain_SnapshotOptions;
-  /** Controls whether Amazon OpenSearch Service can automatically apply software updates to the domain, including the option to enable or disable automatic updates. (AI-inferred) */
   softwareUpdateOptions: SearchServiceDomain_SoftwareUpdateOptions;
   /** An arbitrary set of tags (key-value pairs) for this Domain. */
   tags: SearchServiceDomain_Tags[];
   /** The primary use case of the domain. Determines the default configuration tuned for the workload. For GENERAL engine-mode domains, this value can be changed after creation. For OPTIMIZED engine-mode domains, this value cannot be changed after creation. */
   useCase: string;
-  /** Configures the Amazon Virtual Private Cloud (VPC) options for the OpenSearch Service domain, specifying the subnets and security groups in which the domain's endpoints will be placed. (AI-inferred) */
   vpcoptions: SearchServiceDomain_Vpcoptions;
 }
 

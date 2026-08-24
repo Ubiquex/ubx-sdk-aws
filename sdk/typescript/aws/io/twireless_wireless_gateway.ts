@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TwirelessWirelessGateway_LoRaWan {
-  /** The LoRaWAN gateway EUI is the unique 16-character hexadecimal identifier for the gateway, required to register it with AWS IoT Wireless. (AI-inferred) */
   gatewayEui: string | Computed<string>;
-  /** The LoRaWAN RF region for the gateway, which specifies the frequency band (e.g., US915, EU868) used for communication. (AI-inferred) */
   rfRegion: string | Computed<string>;
 }
 
 export interface TwirelessWirelessGateway_Tags {
-  /** The key of a tag attached to an AWS IoT wireless gateway, used to organize, identify, and filter the gateway resource for management and cost tracking. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS IoT Wireless Gateway, used for arbitrary metadata, identification, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -30,7 +26,6 @@ export interface TwirelessWirelessGatewayConfig {
   description?: string | Computed<string>;
   /** The date and time when the most recent uplink was received. */
   lastUplinkReceivedAt?: string | Computed<string>;
-  /** The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred) */
   loRaWan: TwirelessWirelessGateway_LoRaWan | Computed<TwirelessWirelessGateway_LoRaWan>;
   /** Name of Wireless Gateway. */
   name?: string | Computed<string>;
@@ -51,7 +46,6 @@ export interface TwirelessWirelessGatewayAttrs {
   id: string;
   /** The date and time when the most recent uplink was received. */
   lastUplinkReceivedAt: string;
-  /** The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred) */
   loRaWan: TwirelessWirelessGateway_LoRaWan;
   /** Name of Wireless Gateway. */
   name: string;

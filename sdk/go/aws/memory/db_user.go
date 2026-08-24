@@ -12,7 +12,6 @@ type DbUser_AuthenticationMode struct {
 
 type DbUser_Tags struct {
 	Key any
-	// The value of the tag key-value pair applied to the MemoryDB user. (AI-inferred)
 	Value any
 }
 
@@ -29,7 +28,6 @@ var DbUser_TagsFields = ubx.FieldMap{
 type DbUserConfig struct {
 	// Access permissions string used for this user account.
 	AccessString any
-	// Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred)
 	AuthenticationMode any
 	// An array of key-value pairs to apply to this user.
 	Tags any
@@ -42,7 +40,6 @@ type DbUserAttrs struct {
 	AccessString any
 	// The Amazon Resource Name (ARN) of the user account.
 	Arn any
-	// Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred)
 	AuthenticationMode any
 	// Indicates the user status. Can be "active", "modifying" or "deleting".
 	Status any

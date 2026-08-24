@@ -4,7 +4,6 @@ package proton
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceTemplate_Tags struct {
-	// The key of a tag attached to the AWS Proton service template, used to identify and categorize the template for operational and cost management purposes. (AI-inferred)
 	Key any
 	Value any
 }
@@ -21,9 +20,7 @@ type ServiceTemplateConfig struct {
 	DisplayName any
 	// <p>A customer provided encryption key that's used to encrypt data.</p>
 	EncryptionKey any
-	// The unique name of the Proton service template. (AI-inferred)
 	Name any
-	// Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred)
 	PipelineProvisioning any
 	// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
 	Tags any
@@ -38,9 +35,7 @@ type ServiceTemplateAttrs struct {
 	DisplayName any
 	// <p>A customer provided encryption key that's used to encrypt data.</p>
 	EncryptionKey any
-	// The unique name of the Proton service template. (AI-inferred)
 	Name any
-	// Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred)
 	PipelineProvisioning any
 	// <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
 	Tags any

@@ -4,92 +4,56 @@ package dms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataProvider_Settings_DocDbSettings struct {
-	// The ARN of the certificate used for secure TLS/SSL connection to the Amazon DocumentDB database when the data provider connects. (AI-inferred)
 	CertificateArn any
-	// The name of the DocumentDB database to which the DMS data provider connects for data migration. (AI-inferred)
 	DatabaseName any
-	// The port number used to connect to the DocumentDB instance. (AI-inferred)
 	Port any
-	// The hostname or cluster endpoint of the Amazon DocumentDB (with MongoDB compatibility) database that this DMS data provider uses to connect for migration. (AI-inferred)
 	ServerName any
-	// Specifies the SSL/TLS mode used when connecting to the DocumentDB cluster, with allowed values including none, require, verify-ca, and verify-full. (AI-inferred)
 	SslMode any
 }
 
 type DataProvider_Settings_MariaDbSettings struct {
-	// The Amazon Resource Name (ARN) of the certificate used for SSL/TLS encryption when connecting to the MariaDB database as a DMS data provider. (AI-inferred)
 	CertificateArn any
-	// The TCP port number on which the MariaDB server listens for incoming connections. (AI-inferred)
 	Port any
-	// The hostname or IP address of the MariaDB database server that the data provider connects to. (AI-inferred)
 	ServerName any
-	// Specifies the SSL mode used for connections to the MariaDB database, with values such as none, require, verify-ca, or verify-full. (AI-inferred)
 	SslMode any
 }
 
 type DataProvider_Settings_MongoDbSettings struct {
-	// Specifies the MongoDB authentication mechanism used when connecting to the database, with valid values including 'default', 'mongodb_cr', and 'scram_sha_1'. (AI-inferred)
 	AuthMechanism any
-	// The name of the MongoDB authentication database (authSource) that contains the user credentials used when connecting to the source database. (AI-inferred)
 	AuthSource any
-	// Specifies the authentication type used when connecting to the MongoDB data source, such as NONE or PASSWORD. (AI-inferred)
 	AuthType any
-	// The Amazon Resource Name (ARN) of the certificate used for SSL/TLS encryption when connecting to the MongoDB database. (AI-inferred)
 	CertificateArn any
-	// The name of the MongoDB database that the DMS data provider uses for connections and migrations. (AI-inferred)
 	DatabaseName any
-	// The TCP port number on which the MongoDB source database is listening for connections. (AI-inferred)
 	Port any
-	// The hostname or IP address of the MongoDB server to connect to for this data provider. (AI-inferred)
 	ServerName any
-	// Specifies the SSL mode used when connecting to the MongoDB data provider, such as 'none', 'require', 'verify-ca', or 'verify-full'. (AI-inferred)
 	SslMode any
 }
 
 type DataProvider_Settings_OracleSettings struct {
-	// Specifies the hostname or IP address of the Oracle Automatic Storage Management (ASM) server that the DMS data provider connects to for Oracle database settings. (AI-inferred)
 	AsmServer any
-	// The Amazon Resource Name (ARN) of the certificate used to encrypt connections to the Oracle database when SSL/TLS is enabled. (AI-inferred)
 	CertificateArn any
-	// Specifies the Oracle database name (SID or service name) that the AWS DMS data provider uses to connect to the Oracle source database. (AI-inferred)
 	DatabaseName any
-	// The TCP port number used to connect to the Oracle database. (AI-inferred)
 	Port any
-	// The ARN of the IAM role that AWS DMS uses to access Oracle Automatic Storage Management (ASM) credentials stored in AWS Secrets Manager for the Oracle data provider. (AI-inferred)
 	SecretsManagerOracleAsmAccessRoleArn any
-	// The identifier of the AWS Secrets Manager secret that stores the Oracle ASM credentials used for this data provider's Oracle settings. (AI-inferred)
 	SecretsManagerOracleAsmSecretId any
-	// The ARN of the IAM role that AWS DMS uses to access the AWS Secrets Manager secret storing the Oracle database encryption key, enabling DMS to decrypt the Oracle database data. (AI-inferred)
 	SecretsManagerSecurityDbEncryptionAccessRoleArn any
-	// Specifies the AWS Secrets Manager secret identifier (ARN or name) that stores the Oracle database security encryption password, used by the DMS data provider to authenticate and access the encrypted Oracle data source. (AI-inferred)
 	SecretsManagerSecurityDbEncryptionSecretId any
-	// The host name or IP address of the Oracle database server that this data provider connects to. (AI-inferred)
 	ServerName any
-	// Specifies the SSL mode (e.g., none, require, verify-ca, verify-full) for connections to the Oracle data provider, controlling whether and how TLS encryption and certificate verification are applied. (AI-inferred)
 	SslMode any
 }
 
 type DataProvider_Settings_RedshiftSettings struct {
-	// The name of the Redshift database that the AWS DMS data provider connects to. (AI-inferred)
 	DatabaseName any
-	// The TCP port number used to connect to the Amazon Redshift data provider (default is 5439). (AI-inferred)
 	Port any
-	// The hostname or IP address of the Amazon Redshift server that the DMS data provider connects to. (AI-inferred)
 	ServerName any
 }
 
 type DataProvider_Settings_SybaseAseSettings struct {
-	// The ARN of the certificate used to encrypt connections between the DMS data provider and the Sybase ASE database via SSL/TLS. (AI-inferred)
 	CertificateArn any
-	// The name of the Sybase ASE database to which the data provider connects. (AI-inferred)
 	DatabaseName any
-	// Indicates whether the password for the Sybase ASE database is encrypted in the data provider settings. (AI-inferred)
 	EncryptPassword any
-	// The TCP port number used to connect to the Sybase Adaptive Server Enterprise database. (AI-inferred)
 	Port any
-	// The hostname or IP address of the Sybase Adaptive Server Enterprise (ASE) database server to which the data provider connects. (AI-inferred)
 	ServerName any
-	// Determines the SSL mode for the Sybase ASE data provider connection, specifying whether SSL is enforced and how the server certificate is verified. (AI-inferred)
 	SslMode any
 }
 
@@ -119,9 +83,7 @@ type DataProvider_Settings struct {
 }
 
 type DataProvider_Tags struct {
-	// The tag key for a tag attached to the AWS DMS data provider, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the DMS Data Provider, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 

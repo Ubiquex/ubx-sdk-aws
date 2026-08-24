@@ -18,7 +18,6 @@ type GatewayV2RoutingRule_Conditions_MatchBasePaths struct {
 }
 
 type GatewayV2RoutingRule_Conditions_MatchHeaders_AnyOf struct {
-	// The name of the HTTP request header that is evaluated by the 'any_of' header-matching condition to determine if the routing rule applies. (AI-inferred)
 	Header any
 	ValueGlob any
 }
@@ -96,7 +95,6 @@ type GatewayV2RoutingRuleAttrs struct {
 	DomainNameArn any
 	// The order in which API Gateway evaluates a rule. Priority is evaluated from the lowest value to the highest value. Rules can't have the same priority. Priority values 1-1,000,000 are supported.
 	Priority any
-	// The Amazon Resource Name (ARN) that uniquely identifies this API Gateway v2 routing rule within the AWS account and region, used for IAM policies and resource-level references. (AI-inferred)
 	RoutingRuleArn any
 	RoutingRuleId any
 }

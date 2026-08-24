@@ -34,14 +34,11 @@ class Catalog_CatalogProperties:
 
 @dataclasses.dataclass
 class Catalog_CreateDatabaseDefaultPermissions_Principal:
-    # The unique identifier (such as an IAM role ARN, IAM user ARN, or AWS account ID) of the Data Lake principal that receives the default permissions for databases created in the Glue catalog. (AI-inferred)
     data_lake_principal_identifier: Any = None
 
 @dataclasses.dataclass
 class Catalog_CreateDatabaseDefaultPermissions:
-    # The list of AWS Glue permissions (e.g., 'ALL' or 'CREATE_TABLE') granted by default to the specified principal on newly created databases in the Data Catalog. (AI-inferred)
     permissions: Any = None
-    # Defines the principal (IAM user, role, or all users) that the Glue database's default permissions are granted to, via its Data Lake principal identifier. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass
@@ -54,7 +51,6 @@ class Catalog_FederatedCatalog:
 @dataclasses.dataclass
 class Catalog_Tags:
     key: Any = None
-    # The value of a tag key in the Tags property of the AWS Glue Catalog, used to attach custom metadata to the Glue Data Catalog for identification and resource management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

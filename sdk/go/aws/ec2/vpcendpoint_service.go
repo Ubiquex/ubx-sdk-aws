@@ -4,13 +4,9 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcendpointService_PrivateDnsNameConfiguration struct {
-	// The private DNS name (e.g., subdomain.example.com) that AWS uses to create a verification record for the VPC endpoint service's private DNS configuration. (AI-inferred)
 	Name any
-	// Indicates the current verification state of the private DNS name associated with the VPC endpoint service, such as pendingVerification, verified, or failed. (AI-inferred)
 	State any
-	// Specifies the type of private DNS name configuration for the VPC endpoint service, with valid values `service` or `interface`, indicating whether the DNS name applies to the service itself or to the endpoint's network interface. (AI-inferred)
 	Type any
-	// The resolved private DNS name value for the VPC endpoint service, which consumers use to access the service via a private DNS name. (AI-inferred)
 	Value any
 }
 
@@ -25,16 +21,11 @@ var VpcendpointService_TagsFields = ubx.FieldMap{
 	}
 
 type VpcendpointServiceConfig struct {
-	// Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
 	AcceptanceRequired any
 	ContributorInsightsEnabled any
-	// The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
 	GatewayLoadBalancerArns any
-	// The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred)
 	NetworkLoadBalancerArns any
-	// Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred)
 	PayerResponsibility any
-	// Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred)
 	PrivateDnsName any
 	// Specify which Ip Address types are supported for VPC endpoint service.
 	SupportedIpAddressTypes any
@@ -45,20 +36,13 @@ type VpcendpointServiceConfig struct {
 }
 
 type VpcendpointServiceAttrs struct {
-	// Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
 	AcceptanceRequired any
 	ContributorInsightsEnabled any
-	// The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
 	GatewayLoadBalancerArns any
-	// The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred)
 	NetworkLoadBalancerArns any
-	// Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred)
 	PayerResponsibility any
-	// Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred)
 	PrivateDnsName any
-	// Provides the details of the private DNS name configuration associated with the VPC endpoint service, including the private DNS name, its type, value, and the current verification state. (AI-inferred)
 	PrivateDnsNameConfiguration any
-	// The unique identifier assigned by AWS to the VPC endpoint service. (AI-inferred)
 	ServiceId any
 	// Specify which Ip Address types are supported for VPC endpoint service.
 	SupportedIpAddressTypes any

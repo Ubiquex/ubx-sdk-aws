@@ -11,7 +11,6 @@ type TailorFunction_CustomOutputConfiguration struct {
 type TailorFunction_HttpRequestConfiguration struct {
 	// The body of the HTTP request.
 	Body any
-	// A map of custom HTTP headers that the MediaTailor function includes in outgoing requests to its configured endpoint, enabling authentication or environment-specific header values. (AI-inferred)
 	Headers any
 	MethodType any
 	Output any
@@ -24,7 +23,6 @@ type TailorFunction_HttpRequestConfiguration struct {
 
 type TailorFunction_SequentialExecutorConfiguration_FunctionList struct {
 	FunctionId any
-	// In the AWS::MediaTailor::Function resource, the run_condition property within the function_list of a sequential executor configuration defines a logical expression that controls when that specific function is executed in the sequence. (AI-inferred)
 	RunCondition any
 }
 
@@ -32,7 +30,6 @@ type TailorFunction_SequentialExecutorConfiguration struct {
 	// The list of functions to execute sequentially.
 	FunctionList any
 	Output any
-	// The runtime environment in which the MediaTailor function's code executes when using the sequential executor configuration, specifying the programming language and version. (AI-inferred)
 	Runtime any
 	// The timeout in milliseconds for the entire sequential execution chain.
 	TimeoutMilliseconds any

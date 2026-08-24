@@ -34,7 +34,6 @@ class RunnerVpcIngressConnectionConfig:
     ingress_vpc_configuration: Any = None
     # The Amazon Resource Name (ARN) of the service.
     service_arn: Any = None
-    # Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred)
     tags: Any = None
     # The customer-provided Vpc Ingress Connection name.
     vpc_ingress_connection_name: Any = None
@@ -49,7 +48,6 @@ class RunnerVpcIngressConnectionAttrs:
     service_arn: Any = None
     # The current status of the VpcIngressConnection.
     status: Any = None
-    # Specifies the tags (key-value pairs) that are applied to the AWS App Runner VPC Ingress Connection to help identify, categorize, and manage this resource. (AI-inferred)
     tags: Any = None
     # The Amazon Resource Name (ARN) of the VpcIngressConnection.
     vpc_ingress_connection_arn: Any = None

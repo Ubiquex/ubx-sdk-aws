@@ -15,9 +15,7 @@ class TFleetMetric_AggregationType:
 
 @dataclasses.dataclass
 class TFleetMetric_Tags:
-    # The key of a tag to attach to the AWS IoT fleet metric, used for organizing, identifying, and managing the resource with custom metadata. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair attached to the AWS IoT Fleet Metric, used for metadata management, resource identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _TFleetMetric_AggregationTypeFields = {

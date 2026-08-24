@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamConsumer_Tags {
-  /** The key of a tag applied to the Kinesis stream consumer, enabling resource identification and attribute-based access control for the consumer. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a tag assigned to the Kinesis stream consumer, used for cost allocation, access control, and metadata organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

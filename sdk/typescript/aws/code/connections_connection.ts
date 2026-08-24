@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectionsConnection_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag assigned to an AWS CodeConnections Connection, used to store arbitrary metadata for identifying and organizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -4,99 +4,67 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HubAutomationRule_Actions_FindingFieldsUpdate_Note struct {
-	// The text of the note that will be applied to the finding when this automation rule action updates the finding's note. (AI-inferred)
 	Text any
-	// Specifies the AWS principal (IAM user or role) that is recorded as the updater of the note when a Security Hub automation rule updates a finding's note. (AI-inferred)
 	UpdatedBy any
 }
 
 type HubAutomationRule_Actions_FindingFieldsUpdate_RelatedFindings struct {
-	// The unique identifier of a related finding to associate with the finding when the automation rule updates the finding's related findings list. (AI-inferred)
 	Id any
-	// The ARN of the AWS Security Hub product (e.g., an AWS service or partner solution) that generated the related finding to be attached when the automation rule updates the finding's related findings list. (AI-inferred)
 	ProductArn any
 }
 
 type HubAutomationRule_Actions_FindingFieldsUpdate_Severity struct {
-	// Specifies the new severity label (e.g., INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL) to apply to a finding when this automation rule action updates finding fields. (AI-inferred)
 	Label any
-	// Specifies the normalized severity value (0-100) to assign to the finding's severity when the automation rule updates the finding fields. (AI-inferred)
 	Normalized any
-	// Defines the numeric severity value (0 to 100) to assign to the finding's product severity field when a Security Hub automation rule updates a finding's severity. (AI-inferred)
 	Product any
 }
 
 type HubAutomationRule_Actions_FindingFieldsUpdate_Workflow struct {
-	// Specifies the workflow status to apply to the finding when the automation rule triggers, with allowed values such as NEW, NOTIFIED, SUPPRESSED, and RESOLVED. (AI-inferred)
 	Status any
 }
 
 type HubAutomationRule_Actions_FindingFieldsUpdate struct {
-	// Sets the finding confidence score (0–100) to the specified value when the automation rule action is applied. (AI-inferred)
 	Confidence any
-	// Sets the criticality value (0–100) assigned to the finding when the automation rule's finding fields update action is applied. (AI-inferred)
 	Criticality any
-	// The note to add to findings when the automation rule triggers a finding-fields update, including the note text and the updated-by principal. (AI-inferred)
 	Note any
-	// Specifies the new list of related findings (each with product ARN and finding ID) to assign to the finding, overwriting any existing related findings when the automation rule performs the finding-field update. (AI-inferred)
 	RelatedFindings any
-	// The severity object in the finding fields update specifies the new severity label and product severity score to be assigned to matching findings. (AI-inferred)
 	Severity any
-	// Specifies the list of finding types to set on the finding when this automation rule action updates the finding fields. (AI-inferred)
 	Types any
-	// Specifies the custom key-value pairs to set as the finding's user-defined fields when this automation rule action updates the finding. (AI-inferred)
 	UserDefinedFields any
-	// When a finding matches this automation rule, this value sets the finding's verification state to the specified enum value (UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, or BENIGN_POSITIVE). (AI-inferred)
 	VerificationState any
-	// Specifies the workflow status (e.g., NEW, NOTIFIED, SUPPRESSED, RESOLVED) to apply to findings when this automation rule action is triggered. (AI-inferred)
 	Workflow any
 }
 
 type HubAutomationRule_Actions struct {
-	// Defines the updates to apply to a finding's fields (such as severity, workflow status, or other configurable attributes) when this Security Hub automation rule action is executed. (AI-inferred)
 	FindingFieldsUpdate any
-	// Defines the type of automation rule action, which determines whether the rule performs a finding update (like changing workflow status or severity) or sends a notification to a chat or custom action. (AI-inferred)
 	Type any
 }
 
 type HubAutomationRule_Criteria_AwsAccountId struct {
-	// Determines the string matching operator (e.g., EQUALS, PREFIX, SUFFIX, NOT_EQUALS) used to compare the finding's AWS account ID against the value specified in the automation rule criterion. (AI-inferred)
 	Comparison any
-	// The exact AWS account ID that a finding's AwsAccountId field must equal for the automation rule to apply. (AI-inferred)
 	Value any
 }
 
 type HubAutomationRule_Criteria_Confidence struct {
-	// The confidence score (0-100) that a finding's Confidence attribute must equal for the automation rule's condition to match. (AI-inferred)
 	Eq any
-	// Matches findings where the confidence score (0-100) is greater than or equal to the specified numeric value. (AI-inferred)
 	Gte any
-	// Specifies the upper bound (less than or equal to) for the confidence score of a Security Hub finding that will trigger this automation rule. (AI-inferred)
 	Lte any
 }
 
 type HubAutomationRule_Criteria_CreatedAt_DateRange struct {
-	// Specifies the time unit (e.g., DAYS or HOURS) used to interpret the value of the relative date range for the CreatedAt criterion, enabling filters such as 'last 7 days' or 'last 24 hours'. (AI-inferred)
 	Unit any
-	// The numeric value that, combined with the associated unit (e.g., DAYS), sets the relative date range for matching a finding's createdAt timestamp in the automation rule, such as 7 for the last 7 days. (AI-inferred)
 	Value any
 }
 
 type HubAutomationRule_Criteria_CreatedAt struct {
-	// Configures the relative date range (e.g., last 7 days) used by the automation rule to match findings based on their 'CreatedAt' timestamp. (AI-inferred)
 	DateRange any
-	// The end of the timestamp range for the `created_at` criterion, matching findings created on or before this ISO 8601 date and time. (AI-inferred)
 	End any
-	// The start of the ISO 8601 timestamp range used to match findings whose creation time (createdAt) is at or after this value. (AI-inferred)
 	Start any
 }
 
 type HubAutomationRule_Criteria_ResourceDetailsOther struct {
-	// Specifies the comparison operator (e.g., EQUALS, NOT_EQUALS, PREFIX, CONTAINS) for the 'resource_details_other' criterion in the automation rule, determining how the finding's custom resource detail key is matched against the provided value. (AI-inferred)
 	Comparison any
-	// The name of a custom resource detail attribute that the automation rule's criteria checks against the resource's 'Other' details map. (AI-inferred)
 	Key any
-	// The value string to match against a custom 'Other' resource detail attribute in Security Hub automation rule criteria. (AI-inferred)
 	Value any
 }
 
@@ -464,7 +432,6 @@ type HubAutomationRuleAttrs struct {
 	Actions any
 	// The date and time, in UTC and ISO 8601 format.
 	CreatedAt any
-	// The AWS Identity and Access Management principal (IAM user or role) that created the automation rule, returned as a read-only attribute. (AI-inferred)
 	CreatedBy any
 	// The criteria that determine which findings a rule applies to.
 	Criteria any
@@ -472,7 +439,6 @@ type HubAutomationRuleAttrs struct {
 	Description any
 	// Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub CSPM applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
 	IsTerminal any
-	// The Amazon Resource Name (ARN) uniquely assigned to the Security Hub automation rule when it is created. (AI-inferred)
 	RuleArn any
 	// The name of the rule.
 	RuleName any

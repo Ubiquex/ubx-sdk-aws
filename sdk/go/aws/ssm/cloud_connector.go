@@ -4,9 +4,7 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CloudConnector_Configuration_AzureConfiguration_Targets_Subscriptions struct {
-	// The display name of an Azure subscription targeted by the SSM Cloud Connector's Azure configuration, identifying the subscription by its human-readable name. (AI-inferred)
 	DisplayName any
-	// The unique Azure subscription ID that the SSM Cloud Connector is configured to manage as part of its Azure connection targets. (AI-inferred)
 	Id any
 }
 

@@ -4,31 +4,23 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsMlConfiguredModelAlgorithm_InferenceContainerConfig struct {
-	// The URI of the container image (stored in Amazon ECR) that hosts the model inference code for this configured model algorithm. (AI-inferred)
 	ImageUri any
 }
 
 type RoomsMlConfiguredModelAlgorithm_Tags struct {
-	// The key of a tag assigned to this AWS Clean Rooms ML configured model algorithm, used to organize, identify, and manage the resource through metadata. (AI-inferred)
 	Key any
 	Value any
 }
 
 type RoomsMlConfiguredModelAlgorithm_TrainingContainerConfig_MetricDefinitions struct {
-	// Specifies the name of a metric to extract from the training container's output logs, enabling CloudWatch monitoring of that metric during model training. (AI-inferred)
 	Name any
-	// The regular expression pattern used to extract the metric value from the training container logs for this metric definition. (AI-inferred)
 	Regex any
 }
 
 type RoomsMlConfiguredModelAlgorithm_TrainingContainerConfig struct {
-	// The `arguments` field of the training container configuration for an AWS Clean Rooms ML configured model algorithm is a list of strings that specify command-line arguments to be passed to the training container when it runs. (AI-inferred)
 	Arguments any
-	// Specifies the entrypoint command (as a list of strings) that the training container executes when started, overriding any image default entrypoint. (AI-inferred)
 	Entrypoint any
-	// Specifies the Amazon Elastic Container Registry (ECR) image URI of the container that runs the model training job for this configured model algorithm. (AI-inferred)
 	ImageUri any
-	// Defines the metrics (e.g., loss, accuracy) to capture from the training container's logs by specifying a name and a regular expression pattern to extract each metric value. (AI-inferred)
 	MetricDefinitions any
 }
 
@@ -58,38 +50,25 @@ var RoomsMlConfiguredModelAlgorithm_TrainingContainerConfigFields = ubx.FieldMap
 	}
 
 type RoomsMlConfiguredModelAlgorithmConfig struct {
-	// An optional, human-readable description that identifies the configured model algorithm and explains its purpose within the AWS Clean Rooms ML resource. (AI-inferred)
 	Description any
-	// Specifies the container configuration, including the Amazon ECR image URI and optional environment variables, for running inference with this configured model algorithm. (AI-inferred)
 	InferenceContainerConfig any
-	// The ARN of the AWS KMS key used to encrypt the configured model algorithm data. (AI-inferred)
 	KmsKeyArn any
-	// The required name for the configured model algorithm, which uniquely identifies it within an AWS account and Region and is used as the resource identifier when referencing it in Clean Rooms ML operations. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that grants the configured model algorithm the necessary permissions to access customer data and other AWS resources during analysis within an AWS Clean Rooms ML collaboration. (AI-inferred)
 	RoleArn any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms-ml configured model algorithm.
 	Tags any
-	// Configures the Docker container (e.g., image URI and runtime parameters) that runs the training algorithm for this configured model algorithm in AWS Clean Rooms ML. (AI-inferred)
 	TrainingContainerConfig any
 }
 
 type RoomsMlConfiguredModelAlgorithmAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the configured model algorithm. (AI-inferred)
 	ConfiguredModelAlgorithmArn any
-	// An optional, human-readable description that identifies the configured model algorithm and explains its purpose within the AWS Clean Rooms ML resource. (AI-inferred)
 	Description any
-	// Specifies the container configuration, including the Amazon ECR image URI and optional environment variables, for running inference with this configured model algorithm. (AI-inferred)
 	InferenceContainerConfig any
-	// The ARN of the AWS KMS key used to encrypt the configured model algorithm data. (AI-inferred)
 	KmsKeyArn any
-	// The required name for the configured model algorithm, which uniquely identifies it within an AWS account and Region and is used as the resource identifier when referencing it in Clean Rooms ML operations. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that grants the configured model algorithm the necessary permissions to access customer data and other AWS resources during analysis within an AWS Clean Rooms ML collaboration. (AI-inferred)
 	RoleArn any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms-ml configured model algorithm.
 	Tags any
-	// Configures the Docker container (e.g., image URI and runtime parameters) that runs the training algorithm for this configured model algorithm in AWS Clean Rooms ML. (AI-inferred)
 	TrainingContainerConfig any
 }
 

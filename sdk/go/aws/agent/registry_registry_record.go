@@ -4,32 +4,25 @@ package agent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider struct {
-	// The AWS Region used by the IAM credential provider when authenticating requests to fetch the agent card from the specified URL. (AI-inferred)
 	Region any
-	// The ARN of the IAM role that the IAM credential provider assumes to authenticate and access the source URL. (AI-inferred)
 	RoleArn any
 	Service any
 }
 
 type RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider struct {
 	CustomParameters any
-	// The OAuth 2.0 grant type used by this credential provider to obtain an access token when fetching from the source URL, such as client_credentials. (AI-inferred)
 	GrantType any
 	ProviderArn any
-	// Defines the list of OAuth 2.0 scopes to request when the OAuth credential provider obtains an access token to access the external URL source. (AI-inferred)
 	Scopes any
 }
 
 type RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider struct {
-	// Configuration for an IAM-based credential provider used to authenticate requests to the source URL from which the A2A agent card is fetched, specifying the IAM role or access keys to use. (AI-inferred)
 	IamCredentialProvider any
 	OauthCredentialProvider any
 }
 
 type RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations struct {
-	// The object that specifies which credential provider to use and its configuration (such as the provider type and provider-specific settings) for securely obtaining the authentication credentials needed to fetch the agent card from the given source URL. (AI-inferred)
 	CredentialProvider any
-	// Selects the authentication protocol (such as basic authentication, OAuth, or API key) used by the credential provider configuration to fetch the agent card from the remote URL in the source. (AI-inferred)
 	CredentialProviderType any
 }
 

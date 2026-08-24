@@ -9,9 +9,7 @@ export interface BrewProject_Sample {
 }
 
 export interface BrewProject_Tags {
-  /** The key of an individual tag attached to an AWS Glue DataBrew project, used to organize, identify, and manage the project resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the DataBrew project, used to add metadata for cost allocation, access control, and resource categorization in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,9 +32,7 @@ export interface BrewProjectConfig {
   recipeName: string | Computed<string>;
   /** Role arn */
   roleArn: string | Computed<string>;
-  /** Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred) */
   sample?: BrewProject_Sample | Computed<BrewProject_Sample>;
-  /** Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred) */
   tags?: BrewProject_Tags[] | Computed<BrewProject_Tags[]>;
 }
 
@@ -49,9 +45,7 @@ export interface BrewProjectAttrs {
   recipeName: string;
   /** Role arn */
   roleArn: string;
-  /** Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred) */
   sample: BrewProject_Sample;
-  /** Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred) */
   tags: BrewProject_Tags[];
 }
 

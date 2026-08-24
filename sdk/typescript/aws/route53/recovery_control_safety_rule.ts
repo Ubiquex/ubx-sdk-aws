@@ -27,9 +27,7 @@ export interface RecoveryControlSafetyRule_RuleConfig {
 }
 
 export interface RecoveryControlSafetyRule_Tags {
-  /** The key of a tag applied to the Route 53 Recovery Control safety rule, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of an individual tag assigned to the AWS Route53 Recovery Control safety rule, used for metadata-based categorization and management of the rule. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

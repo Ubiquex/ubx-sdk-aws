@@ -8,49 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_SecurityGroupEgress:
-    # The IPv4 address range, in CIDR form, that is allowed as the destination for outbound traffic in this security group egress rule. (AI-inferred)
     cidr_ip: Any = None
-    # The destination IPv6 CIDR block for the outbound traffic allowed by this security group egress rule, such as ::/0 for all IPv6 addresses. (AI-inferred)
     cidr_ipv6: Any = None
-    # A human-readable description for the outbound (egress) rule, used to document the rule's purpose or context. (AI-inferred)
     description: Any = None
-    # The ID of the destination prefix list that the egress rule applies to, allowing traffic to the CIDR blocks defined by that prefix list (e.g., for VPC endpoints or managed prefix lists). (AI-inferred)
     destination_prefix_list_id: Any = None
-    # The ID of the destination security group for this egress rule, which allows outbound traffic to that security group. (AI-inferred)
     destination_security_group_id: Any = None
-    # The starting port number of the port range for this outbound (egress) rule, defining the lower bound of destination ports permitted for the specified protocol. (AI-inferred)
     from_port: Any = None
-    # Specifies the IP protocol name or number (such as tcp, udp, icmp, or -1 for all protocols) that this egress rule applies to. (AI-inferred)
     ip_protocol: Any = None
-    # The end of the port range (inclusive) for the destination port in this outbound security group rule; for a single port, set it equal to from_port. (AI-inferred)
     to_port: Any = None
 
 @dataclasses.dataclass
 class Group_SecurityGroupIngress:
-    # The IPv4 CIDR block from which inbound traffic is allowed by this security group ingress rule. (AI-inferred)
     cidr_ip: Any = None
-    # The IPv6 CIDR block (e.g., 2001:db8::/32) that is allowed to send inbound traffic to the security group. (AI-inferred)
     cidr_ipv6: Any = None
-    # A brief, human-readable description for the security group ingress rule, used to document its purpose or source, with a maximum length of 255 characters. (AI-inferred)
     description: Any = None
-    # The starting port number for the inbound rule's port range, or the ICMP type number when the protocol is ICMP. (AI-inferred)
     from_port: Any = None
-    # Specifies the IP protocol name (such as tcp, udp, or icmp), a protocol number, or ' -1 ' to represent all protocols, for the ingress rule. (AI-inferred)
     ip_protocol: Any = None
-    # The ID of an AWS prefix list (such as a managed prefix list for AWS services or VPC endpoints) that serves as the source of the inbound traffic permitted by this ingress rule. (AI-inferred)
     source_prefix_list_id: Any = None
-    # Specifies the ID of the source security group (in the same VPC or a peer VPC) whose instances are allowed to send inbound traffic to this security group, used as the SourceSecurityGroupId property of a security group ingress rule. (AI-inferred)
     source_security_group_id: Any = None
-    # The name of the source security group whose members are allowed inbound access by this ingress rule; this is used for EC2-Classic rules, whereas VPC security groups usually reference the source by its `SourceSecurityGroupId` instead. (AI-inferred)
     source_security_group_name: Any = None
-    # The AWS account ID of the owner of the referenced source security group, required when the source security group belongs to a different AWS account. (AI-inferred)
     source_security_group_owner_id: Any = None
-    # The ending port number of the range for this ingress rule; for a single port, specify the same value as from_port. (AI-inferred)
     to_port: Any = None
 
 @dataclasses.dataclass
 class Group_Tags:
-    # The key of a tag assigned to the security group, used to organize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

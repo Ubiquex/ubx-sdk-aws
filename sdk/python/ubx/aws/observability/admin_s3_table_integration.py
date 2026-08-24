@@ -21,7 +21,6 @@ class AdminS3TableIntegration_LogSources:
 
 @dataclasses.dataclass
 class AdminS3TableIntegration_Tags:
-    # The key of a tag that you can assign to the AWS Observability Admin S3 table integration to help identify, categorize, or manage the integration resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

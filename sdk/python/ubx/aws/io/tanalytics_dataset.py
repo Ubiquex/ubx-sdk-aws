@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_ContainerAction_ResourceConfiguration:
-    # Specifies the compute type (e.g., ACU_1 or ACU_2) allocated for the container action's resource configuration in the AWS IoT Analytics dataset. (AI-inferred)
     compute_type: Any = None
-    # Specifies the size, in gigabytes, of the volume to allocate to the container's storage for this IoT Analytics dataset container action. (AI-inferred)
     volume_size_in_gb: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_ContainerAction_Variables_DatasetContentVersionValue:
-    # The name of the source AWS IoT Analytics dataset whose latest content version is used to populate this variable in the container action. (AI-inferred)
     dataset_name: Any = None
 
 @dataclasses.dataclass
@@ -24,143 +21,101 @@ class TanalyticsDataset_Actions_ContainerAction_Variables_OutputFileUriValue:
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_ContainerAction_Variables:
-    # Configures this container action variable to take its value from the content of the specified dataset (via its DatasetName), effectively supplying the latest dataset content version to the container. (AI-inferred)
     dataset_content_version_value: Any = None
-    # Specifies the double-precision numeric value for this container action variable, which will be passed as a parameter to the containerized application when the dataset content is produced. (AI-inferred)
     double_value: Any = None
-    # This object holds the Amazon S3 file name (URI) of an output file produced by the container action, which is used as the value for this variable. (AI-inferred)
     output_file_uri_value: Any = None
-    # Sets the string value of a variable in the container action's variable list, used to pass a fixed string parameter to the container that generates the dataset content. (AI-inferred)
     string_value: Any = None
-    # The name of the variable to pass to the container action, which is used to identify the value in the container's environment. (AI-inferred)
     variable_name: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_ContainerAction:
-    # The ARN of the IAM role that grants the container action access to the AWS resources it needs to execute, such as data in the datastore or output to other services. (AI-inferred)
     execution_role_arn: Any = None
-    # The Docker image used to run the container action for the IoT Analytics dataset. (AI-inferred)
     image: Any = None
-    # Defines the compute resources (CPU and memory) allocated to the container that runs the container action for the IoT Analytics dataset. (AI-inferred)
     resource_configuration: Any = None
-    # Provides the set of variables (name-value pairs) that are passed as environment parameters to the container when the dataset's container action runs. (AI-inferred)
     variables: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_QueryAction_Filters_DeltaTime:
-    # The number of seconds before the current time from which to include data in the dataset query, used to define a rolling time window. (AI-inferred)
     offset_seconds: Any = None
-    # Provides the time expression (e.g., 'timestamp') that names the message timestamp field used by the delta-time filter to select records within the query's relative time window. (AI-inferred)
     time_expression: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_QueryAction_Filters:
-    # Defines the time-based filter for the IoT Analytics dataset query, using an offset in seconds and a time expression (e.g., cron) to limit data to a specific sliding time window. (AI-inferred)
     delta_time: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions_QueryAction:
-    # A list of filter objects, each containing an 'Include' time-window expression that restricts the rows returned by the query action to a specific time range (e.g., '1hour'), thereby controlling the dataset content. (AI-inferred)
     filters: Any = None
-    # The SQL query that is executed against the IoT Analytics data store to populate this dataset when the query action runs. (AI-inferred)
     sql_query: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Actions:
-    # A user-defined string that names this IoT Analytics dataset action, distinguishing it from other actions in the dataset's actions list. (AI-inferred)
     action_name: Any = None
-    # Defines the container action that runs a Docker container to execute custom code for generating the dataset content, including the Docker image, execution role, and resource configuration. (AI-inferred)
     container_action: Any = None
-    # This object defines a query action that executes an SQL query against the IoT Analytics data source to generate the dataset's content. (AI-inferred)
     query_action: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_ContentDeliveryRules_Destination_IotEventsDestinationConfiguration:
-    # The name of the AWS IoT Events input that receives the dataset contents when this content delivery rule is triggered. (AI-inferred)
     input_name: Any = None
-    # The ARN of the IAM role that grants AWS IoT Analytics permission to deliver dataset contents to the specified AWS IoT Events input. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_ContentDeliveryRules_Destination_S3DestinationConfiguration_GlueConfiguration:
-    # The name of the AWS Glue database in which the dataset's table is registered when content delivery exports the dataset to Amazon S3 via AWS Glue. (AI-inferred)
     database_name: Any = None
-    # The name of the AWS Glue table that the IoT Analytics dataset content is delivered to when using the S3 destination with Glue configuration. (AI-inferred)
     table_name: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_ContentDeliveryRules_Destination_S3DestinationConfiguration:
-    # The name of the S3 bucket where the dataset content is delivered when the content delivery rule triggers. (AI-inferred)
     bucket: Any = None
-    # Specifies the AWS Glue configuration for the S3 destination, including the database and table names under which the dataset content is registered in the Glue Data Catalog. (AI-inferred)
     glue_configuration: Any = None
-    # The S3 object key template (for example, `dataset/{version}/data.json`) under the destination bucket where IoT Analytics dataset contents are delivered, with the `{version}` placeholder replaced by the dataset content version. (AI-inferred)
     key: Any = None
-    # The ARN of the IAM role that grants AWS IoT Analytics permission to write the dataset content to the S3 bucket defined in this destination configuration. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_ContentDeliveryRules_Destination:
-    # Configuration for delivering dataset content to an AWS IoT Events input, specifying the input name and the IAM role used to write the content. (AI-inferred)
     iot_events_destination_configuration: Any = None
-    # Specifies the configuration for delivering dataset content to an Amazon S3 bucket, including the target bucket, key prefix, and output format. (AI-inferred)
     s3_destination_configuration: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_ContentDeliveryRules:
-    # Specifies the destination configuration for delivering dataset content, which can be either an S3 bucket (via S3DestinationConfiguration) or an AWS IoT Events input (via IotEventsDestinationConfiguration), as part of a content delivery rule for the AWS IoT Analytics dataset. (AI-inferred)
     destination: Any = None
-    # For each content delivery rule in an AWS IoT Analytics dataset's content_delivery_rules list, this string provides the rule's entry name, which is used to identify the delivery rule when the dataset content is delivered to its configured destination (e.g., an Amazon S3 bucket). (AI-inferred)
     entry_name: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_LateDataRules_RuleConfiguration_DeltaTimeSessionWindowConfiguration:
-    # The timeout in minutes for the delta time session window, which specifies how long the dataset waits for late data before considering it missing. (AI-inferred)
     timeout_in_minutes: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_LateDataRules_RuleConfiguration:
-    # Configures the delta time session window for a late data rule, defining the maximum delay in minutes between when a data point was emitted and when it arrives, during which the IoT Analytics dataset will still include it in its content. (AI-inferred)
     delta_time_session_window_configuration: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_LateDataRules:
-    # Contains the delta time session window configuration for the late data rule, specifying the timeout in minutes during which late data can still be included in the dataset. (AI-inferred)
     rule_configuration: Any = None
-    # The name of the late data rule, which identifies the rule that configures a delayed data session window for handling late-arriving data in the IoT Analytics dataset. (AI-inferred)
     rule_name: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_RetentionPeriod:
-    # Specifies the number of days that dataset contents are retained before they are automatically deleted. (AI-inferred)
     number_of_days: Any = None
-    # When true, the dataset content is retained indefinitely, and any specified number of days is ignored; when false, content is retained for the specified number of days. (AI-inferred)
     unlimited: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Tags:
-    # The Key of a tag attached to the AWS IoT Analytics dataset, used to identify the tag within the resource's set of tags. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the IoT Analytics dataset, used for user-defined metadata and resource management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Triggers_Schedule:
-    # The cron-based schedule expression that defines when this trigger runs to refresh the IoT Analytics dataset. (AI-inferred)
     schedule_expression: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_Triggers:
-    # Specifies the schedule (cron expression) that determines when this trigger initiates dataset content creation. (AI-inferred)
     schedule: Any = None
-    # This object names another IoT Analytics dataset whose content generation, when completed, automatically triggers an update of this dataset's content. (AI-inferred)
     triggering_dataset: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDataset_VersioningConfiguration:
-    # Maximum number of dataset content versions to retain when dataset versioning is enabled. (AI-inferred)
     max_versions: Any = None
-    # When true, the dataset keeps all versions of its content without a limit, overriding the maxVersions setting; when false, the number of versions is limited by maxVersions. (AI-inferred)
     unlimited: Any = None
 
 _TanalyticsDataset_Actions_ContainerAction_ResourceConfigurationFields = {
@@ -341,41 +296,25 @@ _TanalyticsDataset_VersioningConfigurationFields = {
 
 @dataclasses.dataclass
 class TanalyticsDatasetConfig:
-    # The actions define the orders of operations that create the dataset content, either by running a SQL query on the IoT Analytics data store or by invoking a containerized application to transform the data. (AI-inferred)
     actions: Any = None
-    # Defines the content delivery rules for the dataset, which automate delivery of dataset contents to a destination (such as an Amazon S3 bucket) according to each rule's schedule or trigger configuration. (AI-inferred)
     content_delivery_rules: Any = None
-    # The name to assign to the AWS IoT Analytics dataset; if not provided, CloudFormation generates a unique name. (AI-inferred)
     dataset_name: Any = None
-    # Defines the late data rules for the AWS IoT Analytics dataset, each specifying a delta-time configuration that determines when late-arriving data should trigger a dataset content update. (AI-inferred)
     late_data_rules: Any = None
-    # Specifies how long the dataset's data is retained, either for a finite number of days or indefinitely. (AI-inferred)
     retention_period: Any = None
-    # A list of key-value pairs used to tag the AWS IoT Analytics dataset for identification and categorization. (AI-inferred)
     tags: Any = None
-    # Specifies the list of triggers that determine when the dataset content is generated, each trigger containing either a schedule cron expression or a reference to another dataset whose content creation triggers this dataset. (AI-inferred)
     triggers: Any = None
-    # Configures how dataset content versions are retained, specifying either unlimited versioning or a maximum number of versions to keep. (AI-inferred)
     versioning_configuration: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatasetAttrs:
-    # The actions define the orders of operations that create the dataset content, either by running a SQL query on the IoT Analytics data store or by invoking a containerized application to transform the data. (AI-inferred)
     actions: Any = None
-    # Defines the content delivery rules for the dataset, which automate delivery of dataset contents to a destination (such as an Amazon S3 bucket) according to each rule's schedule or trigger configuration. (AI-inferred)
     content_delivery_rules: Any = None
-    # The name to assign to the AWS IoT Analytics dataset; if not provided, CloudFormation generates a unique name. (AI-inferred)
     dataset_name: Any = None
     id: Any = None
-    # Defines the late data rules for the AWS IoT Analytics dataset, each specifying a delta-time configuration that determines when late-arriving data should trigger a dataset content update. (AI-inferred)
     late_data_rules: Any = None
-    # Specifies how long the dataset's data is retained, either for a finite number of days or indefinitely. (AI-inferred)
     retention_period: Any = None
-    # A list of key-value pairs used to tag the AWS IoT Analytics dataset for identification and categorization. (AI-inferred)
     tags: Any = None
-    # Specifies the list of triggers that determine when the dataset content is generated, each trigger containing either a schedule cron expression or a reference to another dataset whose content creation triggers this dataset. (AI-inferred)
     triggers: Any = None
-    # Configures how dataset content versions are retained, specifying either unlimited versioning or a maximum number of versions to keep. (AI-inferred)
     versioning_configuration: Any = None
 
 TanalyticsDataset = ubx.ResourceBinding(

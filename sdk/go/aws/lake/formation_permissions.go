@@ -4,61 +4,42 @@ package lake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationPermissions_DataLakePrincipal struct {
-	// The data lake principal identifier specifies the unique AWS identity (such as an IAM role ARN, IAM user ARN, or AWS account ID) that the Lake Formation permissions are granted to. (AI-inferred)
 	DataLakePrincipalIdentifier any
 }
 
 type FormationPermissions_Resource_DataLocationResource struct {
-	// The ID of the Data Catalog where the data location is registered, defaulting to the caller's account ID if omitted. (AI-inferred)
 	CatalogId any
-	// The Amazon S3 resource ARN (e.g., arn:aws:s3:::bucket-name) that specifies the data location for which the Lake Formation permissions are granted, under the DataLocationResource of the AWS::LakeFormation::Permissions resource. (AI-inferred)
 	S3Resource any
 }
 
 type FormationPermissions_Resource_DatabaseResource struct {
-	// The identifier of the Data Catalog (typically the AWS account ID) where the target database resides, used to scope the permission grant to the database in that specific catalog. (AI-inferred)
 	CatalogId any
-	// The name of the Lake Formation database to which the permissions apply. (AI-inferred)
 	Name any
 }
 
 type FormationPermissions_Resource_TableResource struct {
-	// The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the table to which Lake Formation permissions are being granted. (AI-inferred)
 	CatalogId any
-	// The name of the Lake Formation database that contains the table for which permissions are being granted. (AI-inferred)
 	DatabaseName any
-	// The name of the Lake Formation table, matching a table in the specified database, to which the permissions are granted. (AI-inferred)
 	Name any
-	// When set, this object indicates that the table resource refers to all tables in the underlying database via a wildcard, rather than a specific named table, for the Lake Formation permissions resource. (AI-inferred)
 	TableWildcard any
 }
 
 type FormationPermissions_Resource_TableWithColumnsResource_ColumnWildcard struct {
-	// The list of column names to exclude from the column wildcard when granting Lake Formation permissions on a table, effectively granting access to all columns except those listed. (AI-inferred)
 	ExcludedColumnNames any
 }
 
 type FormationPermissions_Resource_TableWithColumnsResource struct {
-	// The identifier of the Data Catalog (Glue catalog) in which the table is located; if omitted, defaults to the current AWS account ID. (AI-inferred)
 	CatalogId any
-	// The list of column names in the specified table for which Lake Formation permissions are granted, enabling column-level access control. (AI-inferred)
 	ColumnNames any
-	// Specifies a column wildcard for the table, allowing permissions to apply to all columns except those listed in its excluded column names. (AI-inferred)
 	ColumnWildcard any
-	// The name of the database in the AWS Glue Data Catalog that contains the table for which Lake Formation permissions are being granted or revoked. (AI-inferred)
 	DatabaseName any
-	// The name of the table within the Lake Formation table-with-columns resource that these permissions apply to. (AI-inferred)
 	Name any
 }
 
 type FormationPermissions_Resource struct {
-	// This object specifies the Amazon S3 data location (a bucket or prefix) in the Lake Formation catalog to which the permissions are granted, identified by its resource ARN and optional catalog ID. (AI-inferred)
 	DataLocationResource any
-	// Identifies the specific database in the Lake Formation catalog to which the permissions apply, using the database's name (and optionally its catalog ID). (AI-inferred)
 	DatabaseResource any
-	// Specifies the table (by database and table name or wildcard) in the Lake Formation catalog for which permissions are granted or revoked. (AI-inferred)
 	TableResource any
-	// When set, this object identifies the target data resource for the Lake Formation permissions as a specific Data Catalog table (in a database) with a defined list of columns or a column wildcard, scoping the granted permissions to those columns. (AI-inferred)
 	TableWithColumnsResource any
 }
 
@@ -123,26 +104,17 @@ var FormationPermissions_ResourceFields = ubx.FieldMap{
 	}
 
 type FormationPermissionsConfig struct {
-	// The AWS Lake Formation principal (such as an IAM user, role, or account) that receives the granted permissions, identified by its data lake principal identifier. (AI-inferred)
 	DataLakePrincipal any
-	// The list of Lake Formation permissions to grant on the target resource, such as SELECT, ALTER, DROP, or CREATE_TABLE, defining the actions the principal is allowed to perform. (AI-inferred)
 	Permissions any
-	// The list of Lake Formation permissions (e.g., SELECT, INSERT) that are granted to the principal on the resource along with the ability to grant these same permissions to other principals. (AI-inferred)
 	PermissionsWithGrantOption any
-	// The resource object identifies the data lake resource (such as a catalog, database, table, or table with columns) on which the Lake Formation permissions are granted. (AI-inferred)
 	Resource any
 }
 
 type FormationPermissionsAttrs struct {
-	// The AWS Lake Formation principal (such as an IAM user, role, or account) that receives the granted permissions, identified by its data lake principal identifier. (AI-inferred)
 	DataLakePrincipal any
-	// A computed composite identifier that uniquely represents the Lake Formation permissions grant, encoding the principal, resource, and permissions to allow Terraform to manage and import the resource. (AI-inferred)
 	Id any
-	// The list of Lake Formation permissions to grant on the target resource, such as SELECT, ALTER, DROP, or CREATE_TABLE, defining the actions the principal is allowed to perform. (AI-inferred)
 	Permissions any
-	// The list of Lake Formation permissions (e.g., SELECT, INSERT) that are granted to the principal on the resource along with the ability to grant these same permissions to other principals. (AI-inferred)
 	PermissionsWithGrantOption any
-	// The resource object identifies the data lake resource (such as a catalog, database, table, or table with columns) on which the Lake Formation permissions are granted. (AI-inferred)
 	Resource any
 }
 

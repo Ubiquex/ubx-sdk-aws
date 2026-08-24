@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Nodegroup_LaunchTemplate {
-  /** The ID of the EC2 launch template that specifies the configuration (e.g., instance type, AMI, user data) for the worker nodes in the EKS node group. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The name of the EC2 launch template to use for configuring the node group's instances. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The version of the AWS EC2 launch template that the node group will use to launch instances. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Nodegroup_NodeRepairConfig_NodeRepairConfigOverrides {
-  /** Sets the minimum wait time (in minutes) that an unhealthy node in the EKS managed node group must remain in a failed state before the node repair process automatically replaces it. (AI-inferred) */
   minRepairWaitTimeMins?: number | Computed<number>;
-  /** Specifies the Kubernetes node condition name (e.g., Ready, NetworkUnavailable) that the EKS node auto-repair feature monitors to determine that a node is unhealthy and should be replaced. (AI-inferred) */
   nodeMonitoringCondition?: string | Computed<string>;
-  /** The EKS node health detection reason code (such as DiskPressure, KernelDeadlock, or ReadonlyFilesystem) that identifies which unhealthy node condition this node repair configuration override applies to, allowing you to customize the automated repair behavior for that specific failure reason. (AI-inferred) */
   nodeUnhealthyReason?: string | Computed<string>;
   repairAction?: string | Computed<string>;
 }
@@ -36,27 +30,19 @@ export interface Nodegroup_NodeRepairConfig {
 }
 
 export interface Nodegroup_RemoteAccess {
-  /** The ec2_ssh_key field specifies the name of an existing EC2 key pair that is used to enable SSH access to the worker nodes in the EKS nodegroup. (AI-inferred) */
   ec2SshKey: string | Computed<string>;
-  /** The list of EC2 security group IDs that are allowed SSH (port 22) access to the worker nodes when remote access is enabled for the EKS node group. (AI-inferred) */
   sourceSecurityGroups?: string[] | Computed<string[]>;
 }
 
 export interface Nodegroup_ScalingConfig {
-  /** The desired number of worker nodes that the EKS node group should maintain, as part of its scaling configuration. (AI-inferred) */
   desiredSize?: number | Computed<number>;
-  /** The maximum number of nodes that the node group's Auto Scaling group can scale out to. (AI-inferred) */
   maxSize?: number | Computed<number>;
-  /** The minimum number of worker nodes that the EKS managed node group will scale down to, setting the lower limit for the Auto Scaling group's instance count. (AI-inferred) */
   minSize?: number | Computed<number>;
 }
 
 export interface Nodegroup_Taints {
-  /** The Kubernetes taint effect (e.g., NO_SCHEDULE, NO_EXECUTE, or PREFER_NO_SCHEDULE) that determines how pods are scheduled on nodes in the EKS node group. (AI-inferred) */
   effect?: string | Computed<string>;
-  /** The key of a Kubernetes taint applied to the node group, which together with the effect defines how pods are restricted from scheduling onto the nodes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a Kubernetes taint applied to the node group's nodes, paired with the taint key and effect. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -185,7 +171,6 @@ export interface NodegroupConfig {
 export interface NodegroupAttrs {
   /** The AMI type for your node group. */
   amiType: string;
-  /** The Amazon Resource Name (ARN) of the EKS node group, which uniquely identifies it within AWS and is used for permissions and resource referencing. (AI-inferred) */
   arn: string;
   /** The capacity type of your managed node group. */
   capacityType: string;

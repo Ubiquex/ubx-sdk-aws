@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerAddonSubscription_Tags struct {
 	Key any
-	// Specifies the value component of a tag assigned to the SES Mail Manager Add-On Subscription, allowing you to associate arbitrary metadata with the resource for purposes such as cost tracking or resource organization. (AI-inferred)
 	Value any
 }
 
@@ -15,20 +14,14 @@ var MailManagerAddonSubscription_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerAddonSubscriptionConfig struct {
-	// The name of the third-party email security or spam filtering add-on that this SES Mail Manager add-on subscription subscribes to, enabling its features for the associated mail managers. (AI-inferred)
 	AddonName any
-	// Specifies the tags to apply to the SES Mail Manager Add-On Subscription, where each tag object contains a key and value pair for resource metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type MailManagerAddonSubscriptionAttrs struct {
-	// The name of the third-party email security or spam filtering add-on that this SES Mail Manager add-on subscription subscribes to, enabling its features for the associated mail managers. (AI-inferred)
 	AddonName any
-	// The unique Amazon Resource Name (ARN) assigned by AWS to this add-on subscription, used to reference the subscription in IAM policies and other AWS services. (AI-inferred)
 	AddonSubscriptionArn any
-	// The unique identifier assigned by AWS to this addon subscription, used to reference the subscription in other resources. (AI-inferred)
 	AddonSubscriptionId any
-	// Specifies the tags to apply to the SES Mail Manager Add-On Subscription, where each tag object contains a key and value pair for resource metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 

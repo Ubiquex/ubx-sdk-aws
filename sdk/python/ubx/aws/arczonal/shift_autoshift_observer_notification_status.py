@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShiftAutoshiftObserverNotificationStatusConfig:
-    # Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -17,7 +16,6 @@ class ShiftAutoshiftObserverNotificationStatusAttrs:
     account_id: Any = None
     # Region, used as part of the primary identifier for the resource
     region: Any = None
-    # Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     status: Any = None
 
 ShiftAutoshiftObserverNotificationStatus = ubx.ResourceBinding(

@@ -17,7 +17,6 @@ export interface Schema_Registry {
 
 export interface Schema_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to an AWS Glue schema, which allows you to assign custom metadata to the schema for cost tracking, access control, and operational organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

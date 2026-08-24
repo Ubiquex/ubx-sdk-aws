@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilePermissionConfig {
-  /** Specifies the AWS Signer operation (such as 'signer:StartSigningJob' or 'signer:GetSigningProfile') that the principal is allowed to perform on the signing profile. (AI-inferred) */
   action: string | Computed<string>;
-  /** The AWS account ID or IAM principal (such as an IAM role or user ARN) that is granted signing-profile access by this profile permission. (AI-inferred) */
   principal: string | Computed<string>;
-  /** The name of the AWS Signer signing profile to which the permission is granted. (AI-inferred) */
   profileName: string | Computed<string>;
-  /** The version of the signing profile to which this cross-account permission is scoped; when omitted, the permission applies without version-specific restriction. (AI-inferred) */
   profileVersion?: string | Computed<string>;
-  /** A unique identifier for this signing profile permission statement, used to reference the setting in later updates or removal operations. (AI-inferred) */
   statementId: string | Computed<string>;
 }
 
 export interface ProfilePermissionAttrs {
-  /** Specifies the AWS Signer operation (such as 'signer:StartSigningJob' or 'signer:GetSigningProfile') that the principal is allowed to perform on the signing profile. (AI-inferred) */
   action: string;
-  /** The AWS account ID or IAM principal (such as an IAM role or user ARN) that is granted signing-profile access by this profile permission. (AI-inferred) */
   principal: string;
-  /** The name of the AWS Signer signing profile to which the permission is granted. (AI-inferred) */
   profileName: string;
-  /** The version of the signing profile to which this cross-account permission is scoped; when omitted, the permission applies without version-specific restriction. (AI-inferred) */
   profileVersion: string;
-  /** A unique identifier for this signing profile permission statement, used to reference the setting in later updates or removal operations. (AI-inferred) */
   statementId: string;
 }
 

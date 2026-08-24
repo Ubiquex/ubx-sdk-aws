@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Group_Policies {
-  /** A JSON-formatted IAM policy document that defines the permissions for an inline policy attached to the IAM group. (AI-inferred) */
   policyDocument?: string | Computed<string>;
-  /** Specifies the name of an inline policy attached to the IAM group, used to identify the policy within the group's Policies list. (AI-inferred) */
   policyName?: string | Computed<string>;
 }
 
@@ -25,7 +23,6 @@ export interface GroupConfig {
 }
 
 export interface GroupAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the IAM group, such as arn:aws:iam::123456789012:group/group-name. (AI-inferred) */
   arn: string;
   /** The name of the group to create. Do not include the path in this value. The group name must be unique within the account. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins". If you don't specify a name, CFN generates a unique physical ID and uses that ID for the group name. If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name. If you specify a name, you must specify the ``CAPABILITY_NAMED_IAM`` value to acknowledge your template's capabilities. For more information, see [Acknowledging Resources in Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities). Naming an IAM resource can cause an unrecoverable error if you reuse the same template in multiple Regions. To prevent this, we recommend using ``Fn::Join`` and ``AWS::Region`` to create a Region-specific name, as in the following example: ``{"Fn::Join": ["", [{"Ref": "AWS::Region"}, {"Ref": "MyResourceName"}]]}``. */
   groupName: string;

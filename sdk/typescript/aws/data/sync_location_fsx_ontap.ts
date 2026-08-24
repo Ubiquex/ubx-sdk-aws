@@ -55,7 +55,6 @@ export interface SyncLocationFsxOntap_Protocol {
 }
 
 export interface SyncLocationFsxOntap_Tags {
-  /** The key of a key-value tag applied to the FSx for ONTAP DataSync location, used to organize and identify the location for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

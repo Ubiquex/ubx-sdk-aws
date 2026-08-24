@@ -4,9 +4,7 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlobalCluster_Tags struct {
-	// The user-defined key of a key-value pair tag applied to the AWS::Neptune::GlobalCluster resource. (AI-inferred)
 	Key any
-	// The user-defined value associated with a tag key on the Neptune global cluster, used for metadata and resource categorization. (AI-inferred)
 	Value any
 }
 

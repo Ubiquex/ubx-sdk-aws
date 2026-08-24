@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueryDefinition_Parameters {
   defaultValue?: string | Computed<string>;
-  /** An optional human-readable description of the query definition, used to identify its purpose or contents. (AI-inferred) */
   description?: string | Computed<string>;
   name?: string | Computed<string>;
 }

@@ -4,16 +4,12 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConvertJobTemplate_AccelerationSettings struct {
-	// Indicates whether AWS Elemental MediaConvert job acceleration is enabled for jobs that use this template, with allowed values DISABLED, ENABLED, or PREFERRED. (AI-inferred)
 	Mode any
 }
 
 type ConvertJobTemplate_HopDestinations struct {
-	// This number sets the priority of this hop destination, controlling the order in which the job attempts to hop to the associated queue when higher-priority queues are unavailable. (AI-inferred)
 	Priority any
-	// The name of the MediaConvert queue to which the job will be sent when this hop destination is triggered as part of the job template's queue-hopping configuration. (AI-inferred)
 	Queue any
-	// Specifies the number of minutes to wait before transitioning the job to the next queue in the hop destination list. (AI-inferred)
 	WaitMinutes any
 }
 
@@ -28,49 +24,29 @@ var ConvertJobTemplate_HopDestinationsFields = ubx.FieldMap{
 	}
 
 type ConvertJobTemplateConfig struct {
-	// Configures accelerated transcoding behavior for jobs using this template, with the Mode property set to DISABLED, ENABLED, or PREFERRED to control whether faster GPU-based transcoding is used. (AI-inferred)
 	AccelerationSettings any
-	// Assigns a category to the job template for organizational grouping and management. (AI-inferred)
 	Category any
-	// A user-defined description that helps identify the purpose or contents of the AWS Elemental MediaConvert job template. (AI-inferred)
 	Description any
-	// Specifies the list of alternate MediaConvert queues (as hop destinations with associated priorities) to which a job is re-routed when it cannot be processed in the current queue, as defined in the job template. (AI-inferred)
 	HopDestinations any
-	// Specifies a user-defined name for the MediaConvert job template; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
-	// Specifies the default priority (0-50) for jobs created from this template, where higher values indicate a higher priority in the MediaConvert job queue. (AI-inferred)
 	Priority any
-	// The Amazon Resource Name (ARN) of the MediaConvert queue that jobs created from this template are submitted to, falling back to the account's default queue when not specified. (AI-inferred)
 	Queue any
-	// The JSON-formatted job settings that define the inputs, outputs, and encoding configurations for the MediaConvert job template. (AI-inferred)
 	SettingsJson any
-	// Specifies how often (in seconds) MediaConvert sends job status updates to CloudWatch Events and your SNS topic, with valid values of 10, 12, 15, 20, 30, 60, 120, 180, 240, 300, 360, 420, 480, 540, or 600, defaulting to 600 if not set. (AI-inferred)
 	StatusUpdateInterval any
 	Tags any
 }
 
 type ConvertJobTemplateAttrs struct {
-	// Configures accelerated transcoding behavior for jobs using this template, with the Mode property set to DISABLED, ENABLED, or PREFERRED to control whether faster GPU-based transcoding is used. (AI-inferred)
 	AccelerationSettings any
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Elemental MediaConvert job template. (AI-inferred)
 	Arn any
-	// Assigns a category to the job template for organizational grouping and management. (AI-inferred)
 	Category any
-	// A user-defined description that helps identify the purpose or contents of the AWS Elemental MediaConvert job template. (AI-inferred)
 	Description any
-	// Specifies the list of alternate MediaConvert queues (as hop destinations with associated priorities) to which a job is re-routed when it cannot be processed in the current queue, as defined in the job template. (AI-inferred)
 	HopDestinations any
-	// The name of the MediaConvert job template, which is the resource's unique identifier within the AWS account. (AI-inferred)
 	Id any
-	// Specifies a user-defined name for the MediaConvert job template; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	Name any
-	// Specifies the default priority (0-50) for jobs created from this template, where higher values indicate a higher priority in the MediaConvert job queue. (AI-inferred)
 	Priority any
-	// The Amazon Resource Name (ARN) of the MediaConvert queue that jobs created from this template are submitted to, falling back to the account's default queue when not specified. (AI-inferred)
 	Queue any
-	// The JSON-formatted job settings that define the inputs, outputs, and encoding configurations for the MediaConvert job template. (AI-inferred)
 	SettingsJson any
-	// Specifies how often (in seconds) MediaConvert sends job status updates to CloudWatch Events and your SNS topic, with valid values of 10, 12, 15, 20, 30, 60, 120, 180, 240, 300, 360, 420, 480, 540, or 600, defaulting to 600 if not set. (AI-inferred)
 	StatusUpdateInterval any
 	Tags any
 }

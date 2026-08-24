@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentSecurityRequirementPack_SecurityRequirements {
-  /** Provides a human-readable description of the security requirement, explaining the specific security control or configuration the requirement addresses. (AI-inferred) */
   description?: string | Computed<string>;
   domain?: string | Computed<string>;
   evaluation?: string | Computed<string>;

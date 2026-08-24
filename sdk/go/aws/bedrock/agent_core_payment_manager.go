@@ -4,7 +4,6 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
-	// Specifies the exact string value that the custom JWT authorizer expects for a configured claim in a token, which must be matched to authorize a payment-related request. (AI-inferred)
 	MatchValueString any
 	MatchValueStringList any
 }
@@ -17,15 +16,12 @@ type AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomC
 type AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	AuthorizingClaimMatchValue any
 	InboundTokenClaimName any
-	// Specifies the expected data type (such as string, number, or boolean) of the inbound JWT token's claim value for this custom claim, enabling the authorizer to correctly parse and validate it. (AI-inferred)
 	InboundTokenClaimValueType any
 }
 
 type AgentCorePaymentManager_AuthorizerConfiguration_CustomJwtauthorizer struct {
-	// The list of allowed audience values that the JWT token's audience claim must match for the custom JWT authorizer to authorize requests. (AI-inferred)
 	AllowedAudience any
 	AllowedClients any
-	// Defines the list of OAuth 2.0 scopes that must be present in the JWT token's scope claim for the custom JWT authorizer to grant access. (AI-inferred)
 	AllowedScopes any
 	CustomClaims any
 	DiscoveryUrl any

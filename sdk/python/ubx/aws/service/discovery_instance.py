@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryInstanceConfig:
-    # This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
     instance_attributes: Any = None
-    # The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
     service_id: Any = None
 
 @dataclasses.dataclass
 class DiscoveryInstanceAttrs:
-    # This field is a required map of key-value pairs that define the instance's attributes for AWS Cloud Map service discovery, including standard keys like AWS_INSTANCE_IPV4, AWS_INSTANCE_IPV6, and AWS_INSTANCE_PORT, as well as any custom attributes you need to associate with the instance. (AI-inferred)
     instance_attributes: Any = None
-    # The unique identifier assigned by AWS Cloud Map to the instance when it is registered within the service. (AI-inferred)
     instance_id: Any = None
-    # The ID of the AWS Cloud Map service that this instance is registered with, used as the parent service for the instance's health and discovery configuration. (AI-inferred)
     service_id: Any = None
 
 DiscoveryInstance = ubx.ResourceBinding(

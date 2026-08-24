@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigDeployment_DynamicExtensionParameters:
-    # The name of the AppConfig extension that consumes this dynamic parameter during deployment. (AI-inferred)
     extension_reference: Any = None
-    # The name of the dynamic extension parameter being set for the AppConfig deployment, used to pass custom configuration to an extension (such as a Lambda function) during a deployment event. (AI-inferred)
     parameter_name: Any = None
-    # Provides the dynamic value supplied to an extension parameter at deployment time, overriding the extension's default parameter value for this deployment. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
@@ -43,7 +40,6 @@ class ConfigDeploymentConfig:
     deployment_strategy_id: Any = None
     # A description of the deployment.
     description: Any = None
-    # A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred)
     dynamic_extension_parameters: Any = None
     # The environment ID.
     environment_id: Any = None
@@ -66,7 +62,6 @@ class ConfigDeploymentAttrs:
     deployment_strategy_id: Any = None
     # A description of the deployment.
     description: Any = None
-    # A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred)
     dynamic_extension_parameters: Any = None
     # The environment ID.
     environment_id: Any = None

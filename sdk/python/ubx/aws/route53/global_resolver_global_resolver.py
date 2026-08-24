@@ -29,7 +29,6 @@ class GlobalResolverGlobalResolverConfig:
 
 @dataclasses.dataclass
 class GlobalResolverGlobalResolverAttrs:
-    # The Amazon Resource Name (ARN) that AWS assigns to this Route 53 Global Resolver, used as a unique identifier and in IAM policies and resource references. (AI-inferred)
     arn: Any = None
     client_token: Any = None
     created_at: Any = None
@@ -43,7 +42,6 @@ class GlobalResolverGlobalResolverAttrs:
     observability_region: Any = None
     # The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant.
     regions: Any = None
-    # The current lifecycle status of the Route 53 global resolver rule, reporting values such as COMPLETE, FAILED, UPDATING, or DELETING to indicate the rule's operational state. (AI-inferred)
     status: Any = None
     tags: Any = None
     updated_at: Any = None

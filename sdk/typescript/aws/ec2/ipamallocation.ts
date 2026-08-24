@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface IpamallocationConfig {
   /** Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR */
   cidr?: string | Computed<string>;
-  /** A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred) */
   description?: string | Computed<string>;
   /** Id of the IPAM Pool. */
   ipamPoolId: string | Computed<string>;
@@ -15,7 +14,6 @@ export interface IpamallocationConfig {
 export interface IpamallocationAttrs {
   /** Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR */
   cidr: string;
-  /** A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred) */
   description: string;
   /** Id of the allocation. */
   ipamPoolAllocationId: string;

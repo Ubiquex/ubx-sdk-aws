@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayV2Stage_AccessLogSettings:
-    # Specifies the Amazon Resource Name (ARN) of the CloudWatch Logs log group to which the API Gateway stage sends access logs. (AI-inferred)
     destination_arn: Any = None
-    # The format string used to customize the access log output for the API Gateway v2 stage, which can include API Gateway context variables such as $context.requestId and $context.identity.sourceIp. (AI-inferred)
     format: Any = None
 
 @dataclasses.dataclass
 class GatewayV2Stage_DefaultRouteSettings:
-    # Enables detailed tracing (full request/response data capture) for the default route of the API Gateway stage, which is used with integration logging. (AI-inferred)
     data_trace_enabled: Any = None
-    # When true, enables detailed CloudWatch metrics for the default route of the API Gateway v2 stage. (AI-inferred)
     detailed_metrics_enabled: Any = None
-    # Sets the logging level for the default route in the API Gateway v2 stage, controlling which execution logs are emitted (values such as ERROR, WARN, INFO, or OFF). (AI-inferred)
     logging_level: Any = None
-    # Sets the throttling burst limit for the default route of the API Gateway v2 stage, controlling the maximum number of requests that can be handled before throttling is applied. (AI-inferred)
     throttling_burst_limit: Any = None
-    # Sets the per-second request rate limit for the default route throttling settings of the API Gateway v2 stage, used to control the maximum number of requests per second before throttling occurs. (AI-inferred)
     throttling_rate_limit: Any = None
 
 _GatewayV2Stage_AccessLogSettingsFields = {
@@ -41,7 +34,6 @@ _GatewayV2Stage_DefaultRouteSettingsFields = {
 
 @dataclasses.dataclass
 class GatewayV2StageConfig:
-    # Configures access logging for the API Gateway stage, including the CloudWatch Logs destination ARN and the log format template. (AI-inferred)
     access_log_settings: Any = None
     # The API identifier.
     api_id: Any = None
@@ -49,7 +41,6 @@ class GatewayV2StageConfig:
     auto_deploy: Any = None
     # The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
     client_certificate_id: Any = None
-    # The default route settings for the stage, including throttling, logging, and data trace settings, that apply to all routes unless a specific route overrides them. (AI-inferred)
     default_route_settings: Any = None
     # The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
     deployment_id: Any = None
@@ -66,7 +57,6 @@ class GatewayV2StageConfig:
 
 @dataclasses.dataclass
 class GatewayV2StageAttrs:
-    # Configures access logging for the API Gateway stage, including the CloudWatch Logs destination ARN and the log format template. (AI-inferred)
     access_log_settings: Any = None
     # The API identifier.
     api_id: Any = None
@@ -74,7 +64,6 @@ class GatewayV2StageAttrs:
     auto_deploy: Any = None
     # The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.
     client_certificate_id: Any = None
-    # The default route settings for the stage, including throttling, logging, and data trace settings, that apply to all routes unless a specific route overrides them. (AI-inferred)
     default_route_settings: Any = None
     # The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.
     deployment_id: Any = None

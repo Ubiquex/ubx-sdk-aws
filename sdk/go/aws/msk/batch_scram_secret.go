@@ -4,16 +4,12 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BatchScramSecretConfig struct {
-	// The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred)
 	ClusterArn any
-	// The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred)
 	SecretArnList any
 }
 
 type BatchScramSecretAttrs struct {
-	// The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred)
 	ClusterArn any
-	// The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred)
 	SecretArnList any
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WizardDeployment_Tags:
-    # The key of a tag attached to the AWS Launch Wizard deployment, allowing you to assign arbitrary metadata to the deployment for organizational or cost-tracking purposes. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AWS Launch Wizard deployment, which lets you attach arbitrary metadata to the deployment for categorization, access control, and cost tracking. (AI-inferred)
     value: Any = None
 
 _WizardDeployment_TagsFields = {
@@ -24,7 +22,6 @@ class WizardDeploymentConfig:
     deployment_pattern_name: Any = None
     # Name of LaunchWizard deployment
     name: Any = None
-    # The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred)
     specifications: Any = None
     # Tags for LaunchWizard deployment
     tags: Any = None
@@ -47,9 +44,7 @@ class WizardDeploymentAttrs:
     name: Any = None
     # Resource Group Name created for LaunchWizard deployment
     resource_group: Any = None
-    # The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred)
     specifications: Any = None
-    # The status of the Launch Wizard deployment, indicating its current lifecycle state such as 'COMPLETED', 'IN_PROGRESS', or 'FAILED'. (AI-inferred)
     status: Any = None
     # Tags for LaunchWizard deployment
     tags: Any = None

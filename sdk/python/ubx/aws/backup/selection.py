@@ -8,44 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Selection_BackupSelection_Conditions_StringEquals:
-    # Specifies the tag key that must match for resources to be included in the backup selection when using a StringEquals condition. (AI-inferred)
     condition_key: Any = None
-    # The value that must exactly match the specified condition key (for example, a resource tag's value) for a resource to satisfy this string-equals condition and be included in the backup selection. (AI-inferred)
     condition_value: Any = None
 
 @dataclasses.dataclass
 class Selection_BackupSelection_Conditions:
-    # Specifies tag key-value pairs that resources must match exactly to be included in the backup selection, where each object contains a key and a value that must equal the resource's tag value. (AI-inferred)
     string_equals: Any = None
-    # A list of tag-based conditions that select resources for the backup plan when the value of a specified tag key matches the given pattern, supporting wildcard characters such as * and ?. (AI-inferred)
     string_like: Any = None
-    # Defines a list of key-value pairs that must not equal the resource's tag values for the resource to be included in the backup selection. (AI-inferred)
     string_not_equals: Any = None
-    # Defines a list of key-value conditions that match backup resources whose value for the specified key is not similar to the given pattern, used to exclude resources from the backup selection. (AI-inferred)
     string_not_like: Any = None
 
 @dataclasses.dataclass
 class Selection_BackupSelection_ListOfTags:
-    # The tag key to match when selecting resources based on tag conditions. (AI-inferred)
     condition_key: Any = None
-    # Specifies how the tag condition is evaluated for a resource, and in AWS Backup this must be STRINGEQUALS, meaning the resource must have a tag whose key and value exactly match the specified condition key and value. (AI-inferred)
     condition_type: Any = None
-    # The tag value (or wildcard pattern) that the backup selection uses to match AWS resources by tag, paired with a tag key in the same tag condition. (AI-inferred)
     condition_value: Any = None
 
 @dataclasses.dataclass
 class Selection_BackupSelection:
-    # Defines condition expressions (such as StringEquals or StringLike) evaluated against resource attributes like tags to determine which resources match this backup selection. (AI-inferred)
     conditions: Any = None
-    # The ARN of the IAM role that AWS Backup assumes to perform backup and restore operations, giving it permissions to access the resources being backed up. (AI-inferred)
     iam_role_arn: Any = None
-    # Specifies a list of tag conditions that determine which resources are included in the backup plan, each condition requiring a tag key, a tag value, and a match type such as STRINGEQUALS. (AI-inferred)
     list_of_tags: Any = None
-    # Specifies a list of resource ARNs to exclude from the backup selection, refining which resources are included in the backup plan. (AI-inferred)
     not_resources: Any = None
-    # Specifies the list of resources (by ARN or resource ID) that this backup selection selects for backup, such as EC2 instances or DynamoDB tables. (AI-inferred)
     resources: Any = None
-    # A user-defined name for the backup selection that identifies the set of resources assigned to an AWS Backup plan. (AI-inferred)
     selection_name: Any = None
 
 _Selection_BackupSelection_Conditions_StringEqualsFields = {
@@ -101,20 +86,14 @@ _Selection_BackupSelectionFields = {
 
 @dataclasses.dataclass
 class SelectionConfig:
-    # The unique identifier of the AWS Backup plan to which this backup selection belongs. (AI-inferred)
     backup_plan_id: Any = None
-    # Specifies the resources to be backed up, including the selection name, the IAM role AWS Backup uses to authenticate, and the resource lists or tags that define which resources are included or excluded from the backup plan. (AI-inferred)
     backup_selection: Any = None
 
 @dataclasses.dataclass
 class SelectionAttrs:
-    # The unique identifier of the AWS Backup plan to which this backup selection belongs. (AI-inferred)
     backup_plan_id: Any = None
-    # Specifies the resources to be backed up, including the selection name, the IAM role AWS Backup uses to authenticate, and the resource lists or tags that define which resources are included or excluded from the backup plan. (AI-inferred)
     backup_selection: Any = None
-    # The unique AWS-generated identifier assigned to the backup selection when it is created, used to reference the selection in AWS Backup and IAM policies. (AI-inferred)
     id: Any = None
-    # The unique identifier assigned by AWS Backup to the backup selection, used internally to reference the selection within a backup plan. (AI-inferred)
     selection_id: Any = None
 
 Selection = ubx.ResourceBinding(

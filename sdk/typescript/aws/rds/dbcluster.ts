@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dbcluster_AssociatedRoles {
-  /** The name of the database feature (such as S3_INTEGRATION or LAMBDA) for which the associated IAM role is enabled, allowing the DB cluster to use that feature through the role. (AI-inferred) */
   featureName?: string | Computed<string>;
-  /** Specifies the Amazon Resource Name (ARN) of an IAM role to associate with the DB cluster, enabling the cluster to access other AWS services such as Lambda or IAM database authentication. (AI-inferred) */
   roleArn?: string | Computed<string>;
 }
 
@@ -52,7 +50,6 @@ export interface Dbcluster_ServerlessV2ScalingConfiguration {
 }
 
 export interface Dbcluster_Tags {
-  /** The key of a tag assigned to the RDS DB cluster, used to organize and identify the resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -222,7 +219,6 @@ export interface DbclusterAttrs {
   clusterScalabilityType: string;
   /** A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them. Valid for: Aurora DB clusters and Multi-AZ DB clusters */
   copyTagsToSnapshot: boolean;
-  /** The Amazon Resource Name (ARN) of the DB cluster, automatically assigned by AWS when the cluster is created. (AI-inferred) */
   dbclusterArn: string;
   /** The DB cluster identifier. This parameter is stored as a lowercase string. Constraints: + Must contain from 1 to 63 letters, numbers, or hyphens. + First character must be a letter. + Can't end with a hyphen or contain two consecutive hyphens. Example: ``my-cluster1`` Valid for: Aurora DB clusters and Multi-AZ DB clusters */
   dbclusterIdentifier: string;
@@ -230,7 +226,6 @@ export interface DbclusterAttrs {
   dbclusterInstanceClass: string;
   /** The name of the DB cluster parameter group to associate with this DB cluster. If you apply a parameter group to an existing DB cluster, then its DB instances might need to reboot. This can result in an outage while the DB instances are rebooting. If you apply a change to parameter group associated with a stopped DB cluster, then the update stack waits until the DB cluster is started. To list all of the available DB cluster parameter group names, use the following command: ``aws rds describe-db-cluster-parameter-groups --query "DBClusterParameterGroups[].DBClusterParameterGroupName" --output text`` Valid for: Aurora DB clusters and Multi-AZ DB clusters */
   dbclusterParameterGroupName: string;
-  /** The AWS-generated, Region-unique, immutable resource identifier for this DB cluster (e.g., cluster-XXXXXXXXXXXXXX), used in IAM policy condition keys and resource-level permissions. (AI-inferred) */
   dbclusterResourceId: string;
   /** The name of the DB parameter group to apply to all instances of the DB cluster. When you apply a parameter group using the ``DBInstanceParameterGroupName`` parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately rather than during the next maintenance window. Valid for Cluster Type: Aurora DB clusters only Default: The existing name setting Constraints: + The DB parameter group must be in the same DB parameter group family as this DB cluster. + The ``DBInstanceParameterGroupName`` parameter is valid in combination with the ``AllowMajorVersionUpgrade`` parameter for a major version upgrade only. */
   dbinstanceParameterGroupName: string;
@@ -329,7 +324,6 @@ export interface DbclusterAttrs {
   /** Indicates whether the DB cluster is encrypted. If you specify the ``KmsKeyId`` property, then you must enable encryption. If you specify the ``SourceDBClusterIdentifier`` property, don't specify this property. The value is inherited from the source DB cluster, and if the DB cluster is encrypted, the specified ``KmsKeyId`` property is used. If you specify the ``SnapshotIdentifier`` and the specified snapshot is encrypted, don't specify this property. The value is inherited from the snapshot, and the specified ``KmsKeyId`` property is used. If you specify the ``SnapshotIdentifier`` and the specified snapshot isn't encrypted, you can use this property to specify that the restored DB cluster is encrypted. Specify the ``KmsKeyId`` property for the KMS key to use for encryption. If you don't want the restored DB cluster to be encrypted, then don't set this property or set it to ``false``. If you specify both the ``StorageEncrypted`` and ``SnapshotIdentifier`` properties without specifying the ``KmsKeyId`` property, then the restored DB cluster inherits the encryption settings from the DB snapshot that provide. Valid for: Aurora DB clusters and Multi-AZ DB clusters */
   storageEncrypted: boolean;
   storageEncryptionType: string;
-  /** Storage throughput in MiB/s for an Aurora DB cluster that uses io1 or gp3 storage, governing the I/O performance of the cluster's storage volumes. (AI-inferred) */
   storageThroughput: number;
   /** The storage type to associate with the DB cluster. For information on storage types for Aurora DB clusters, see [Storage configurations for Amazon Aurora DB clusters](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type). For information on storage types for Multi-AZ DB clusters, see [Settings for creating Multi-AZ DB clusters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings). This setting is required to create a Multi-AZ DB cluster. When specified for a Multi-AZ DB cluster, a value for the ``Iops`` parameter is required. Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters Valid Values: + Aurora DB clusters - ``aurora | aurora-iopt1`` + Multi-AZ DB clusters - ``io1 | io2 | gp3`` Default: + Aurora DB clusters - ``aurora`` + Multi-AZ DB clusters - ``io1`` When you create an Aurora DB cluster with the storage type set to ``aurora-iopt1``, the storage type is returned in the response. The storage type isn't returned when you set it to ``aurora``. */
   storageType: string;

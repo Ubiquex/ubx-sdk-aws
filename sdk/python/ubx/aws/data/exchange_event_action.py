@@ -44,7 +44,6 @@ class ExchangeEventAction_Event:
 
 @dataclasses.dataclass
 class ExchangeEventAction_Tags:
-    # Key of a tag attached to an AWS Data Exchange event action, used to categorize, organize, and manage event actions within your AWS account. (AI-inferred)
     key: Any = None
     value: Any = None
 

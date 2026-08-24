@@ -2,86 +2,60 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Connection_AuthParameters_ApiKeyAuthParameters {
-  /** The name of the API key for API key authentication, which is used together with the API key value to authenticate requests made through the EventBridge connection. (AI-inferred) */
   apiKeyName: string | Computed<string>;
-  /** The value of the API key used for authentication when the EventBridge connection uses API key authorization. (AI-inferred) */
   apiKeyValue: string | Computed<string>;
 }
 
 export interface Connection_AuthParameters_BasicAuthParameters {
-  /** The password to use for basic authentication when connecting to the API destination or endpoint, paired with the username in the same basic auth parameters. (AI-inferred) */
   password: string | Computed<string>;
-  /** The username for basic authentication when the EventBridge connection invokes the API destination. (AI-inferred) */
   username: string | Computed<string>;
 }
 
 export interface Connection_AuthParameters_ConnectivityParameters_ResourceParameters {
-  /** The ARN of the resource association used for the connectivity parameters of the EventBridge connection. (AI-inferred) */
   resourceAssociationArn?: string | Computed<string>;
-  /** The ARN of the AWS resource configuration (such as a VPC endpoint) used by the EventBridge connection to route traffic through a private network to the destination API. (AI-inferred) */
   resourceConfigurationArn: string | Computed<string>;
 }
 
 export interface Connection_AuthParameters_ConnectivityParameters {
-  /** Contains the ARN of the VPC endpoint in the 'ResourceArn' subproperty, defining the private resource target for the EventBridge connection. (AI-inferred) */
   resourceParameters: Connection_AuthParameters_ConnectivityParameters_ResourceParameters | Computed<Connection_AuthParameters_ConnectivityParameters_ResourceParameters>;
 }
 
 export interface Connection_AuthParameters_InvocationHttpParameters_BodyParameters {
-  /** Indicates whether the value of this body parameter is a secret stored in AWS Secrets Manager, which EventBridge retrieves and uses when making the HTTP invocation. (AI-inferred) */
   isValueSecret?: boolean | Computed<boolean>;
-  /** The name of the body parameter to include in the HTTP invocation request for the EventBridge connection. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value to be paired with the key for a body parameter in the HTTP invocation parameters of the EventBridge connection. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Connection_AuthParameters_InvocationHttpParameters {
-  /** This list of key-value objects defines the body parameters that are URL-encoded and sent as the HTTP request body when the EventBridge connection invokes the API destination. (AI-inferred) */
   bodyParameters?: Connection_AuthParameters_InvocationHttpParameters_BodyParameters[] | Computed<Connection_AuthParameters_InvocationHttpParameters_BodyParameters[]>;
-  /** A list of key-value pairs (each with `Key` and `Value`) that define the HTTP headers to include in the API invocation request for this EventBridge connection. (AI-inferred) */
   headerParameters?: Connection_AuthParameters_InvocationHttpParameters_BodyParameters[] | Computed<Connection_AuthParameters_InvocationHttpParameters_BodyParameters[]>;
-  /** Defines the query string parameters to be sent in the HTTP request for the EventBridge connection, where each item specifies a parameter key, its value, and whether the value is a secret. (AI-inferred) */
   queryStringParameters?: Connection_AuthParameters_InvocationHttpParameters_BodyParameters[] | Computed<Connection_AuthParameters_InvocationHttpParameters_BodyParameters[]>;
 }
 
 export interface Connection_AuthParameters_OauthParameters_ClientParameters {
-  /** The OAuth client ID used by the EventBridge connection to authenticate with the target API. (AI-inferred) */
   clientId: string | Computed<string>;
-  /** The client secret that the EventBridge connection uses to authenticate to the OAuth authorization endpoint. (AI-inferred) */
   clientSecret: string | Computed<string>;
 }
 
 export interface Connection_AuthParameters_OauthParameters {
-  /** The URL of the OAuth authorization server's endpoint where the connection redirects users for authentication and consent during the OAuth authorization code grant flow. (AI-inferred) */
   authorizationEndpoint: string | Computed<string>;
-  /** Specifies the OAuth client ID and client secret used to authenticate the connection with the authorization endpoint. (AI-inferred) */
   clientParameters: Connection_AuthParameters_OauthParameters_ClientParameters | Computed<Connection_AuthParameters_OauthParameters_ClientParameters>;
-  /** The HTTP method (e.g., GET or POST) used for the OAuth authorization request to the specified authorization endpoint for the EventBridge connection. (AI-inferred) */
   httpMethod: string | Computed<string>;
-  /** Specifies additional HTTP parameters (header parameters, query string parameters, and body parameters) to include when making the OAuth authorization request to the authorization endpoint. (AI-inferred) */
   oauthHttpParameters?: Connection_AuthParameters_InvocationHttpParameters | Computed<Connection_AuthParameters_InvocationHttpParameters>;
 }
 
 export interface Connection_AuthParameters {
-  /** Specifies the API key name and value used for API key authorization when EventBridge invokes the API destination associated with this connection. (AI-inferred) */
   apiKeyAuthParameters?: Connection_AuthParameters_ApiKeyAuthParameters | Computed<Connection_AuthParameters_ApiKeyAuthParameters>;
-  /** Defines the username and password used for basic authentication when the EventBridge connection invokes the API destination. (AI-inferred) */
   basicAuthParameters?: Connection_AuthParameters_BasicAuthParameters | Computed<Connection_AuthParameters_BasicAuthParameters>;
-  /** Defines the private connectivity parameters for an EventBridge connection, including a resource configuration ARN and optional resource-specific settings used to reach endpoints within a VPC or via a PrivateLink resource configuration. (AI-inferred) */
   connectivityParameters?: Connection_AuthParameters_ConnectivityParameters | Computed<Connection_AuthParameters_ConnectivityParameters>;
-  /** Configures the HTTP headers, query string, and path parameters that are passed to the API destination invocation when using this connection. (AI-inferred) */
   invocationHttpParameters?: Connection_AuthParameters_InvocationHttpParameters | Computed<Connection_AuthParameters_InvocationHttpParameters>;
-  /** Configuration for OAuth authorization within the connection's authentication parameters, including the authorization endpoint, client application credentials, and HTTP method used to request the token. (AI-inferred) */
   oauthParameters?: Connection_AuthParameters_OauthParameters | Computed<Connection_AuthParameters_OauthParameters>;
 }
 
 export interface ConnectionConfig {
-  /** Specifies the authorization type for the EventBridge connection, which can be one of BASIC, OAUTH_CLIENT_CREDENTIALS, or API_KEY, determining how the connection authenticates to the API destination. (AI-inferred) */
   authorizationType?: string | Computed<string>;
   /** Description of the connection. */
   description?: string | Computed<string>;
-  /** Specifies the AWS KMS key (by ID, ARN, or alias) used to encrypt the connection's credentials and other sensitive parameters, enabling customer-managed encryption instead of the default AWS-owned key. (AI-inferred) */
   kmsKeyIdentifier?: string | Computed<string>;
   /** Name of the connection. */
   name?: string | Computed<string>;
@@ -92,15 +66,12 @@ export interface ConnectionAttrs {
   arn: string;
   /** The arn of the connection resource to be used in IAM policies. */
   arnForPolicy: string;
-  /** The authentication parameters for the event connection, specifying how requests to the destination are authenticated (via API key, basic, or OAuth credentials) along with optional HTTP invocation parameters. (AI-inferred) */
   authParameters: Connection_AuthParameters;
-  /** Specifies the authorization type for the EventBridge connection, which can be one of BASIC, OAUTH_CLIENT_CREDENTIALS, or API_KEY, determining how the connection authenticates to the API destination. (AI-inferred) */
   authorizationType: string;
   /** Description of the connection. */
   description: string;
   /** The private resource the HTTP request will be sent to. */
   invocationConnectivityParameters: Connection_AuthParameters_ConnectivityParameters;
-  /** Specifies the AWS KMS key (by ID, ARN, or alias) used to encrypt the connection's credentials and other sensitive parameters, enabling customer-managed encryption instead of the default AWS-owned key. (AI-inferred) */
   kmsKeyIdentifier: string;
   /** Name of the connection. */
   name: string;

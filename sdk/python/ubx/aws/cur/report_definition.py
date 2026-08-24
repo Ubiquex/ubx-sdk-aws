@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReportDefinition_Tags:
-    # The key of a user-defined tag applied to the AWS Cost and Usage Report definition, used for resource categorization and cost allocation tracking. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -41,7 +40,6 @@ class ReportDefinitionConfig:
     s3_prefix: Any = None
     # The region of the S3 bucket that AWS delivers the report into.
     s3_region: Any = None
-    # Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
     tags: Any = None
     # The granularity of the line items in the report.
     time_unit: Any = None
@@ -70,7 +68,6 @@ class ReportDefinitionAttrs:
     s3_prefix: Any = None
     # The region of the S3 bucket that AWS delivers the report into.
     s3_region: Any = None
-    # Specifies the list of tag key-value pairs to attach to the AWS Cost and Usage Report definition, enabling resource-level identification and management. (AI-inferred)
     tags: Any = None
     # The granularity of the line items in the report.
     time_unit: Any = None

@@ -10,7 +10,6 @@ type Environment_Checks struct {
 }
 
 type Environment_ConnectivityInfo struct {
-	// Specifies the private route server peerings that the EVS environment uses to establish private network connectivity to your VPC. (AI-inferred)
 	PrivateRouteServerPeerings any
 }
 
@@ -21,9 +20,7 @@ type Environment_Credentials struct {
 type Environment_Hosts struct {
 	DedicatedHostId any
 	HostName any
-	// The EC2 instance type of a host in an AWS Elastic Video System (EVS) environment, which determines the compute and memory capacity available for video processing workloads. (AI-inferred)
 	InstanceType any
-	// The name of the EC2 key pair used for SSH access to the host nodes in the EVS environment. (AI-inferred)
 	KeyName any
 	PlacementGroupId any
 }
@@ -37,16 +34,11 @@ type Environment_InitialVlans struct {
 	ExpansionVlan1 any
 	ExpansionVlan2 any
 	Hcx any
-	// The ID of the Amazon EC2 network ACL that controls HCX (Hybrid Cloud Extension) traffic on this initial VLAN in the EVS environment. (AI-inferred)
 	HcxNetworkAclId any
-	// Indicates whether the initial VLAN is marked as public for VMware HCX, enabling its use for hybrid cloud network extension. (AI-inferred)
 	IsHcxPublic any
 	NsxUpLink any
-	// The vm_management object under initial_vlans specifies the VLAN configuration used for managing virtual machines within the AWS EVS environment. (AI-inferred)
 	VmManagement any
-	// Configures the VMkernel management interface for the specified initial VLAN, providing networking details for management traffic within the AWS EVS environment. (AI-inferred)
 	VmkManagement any
-	// Specifies the VLAN configuration used for VMware vMotion traffic in the initial VLAN setup for the environment. (AI-inferred)
 	Vmotion any
 	Vsan any
 	Vtep any
@@ -67,20 +59,14 @@ type Environment_Tags struct {
 }
 
 type Environment_VcfHostnames struct {
-	// The hostname of the Cloud Builder virtual appliance in the VMware Cloud Foundation (VCF) environment, which is used to deploy and manage the software-defined data center (SDDC) infrastructure. (AI-inferred)
 	CloudBuilder any
 	Nsx any
 	NsxEdge1 any
 	NsxEdge2 any
-	// Specifies the fully-qualified domain name (FQDN) for the second NSX Manager node (index 1) in the VMware Cloud Foundation environment's hostname configuration block. (AI-inferred)
 	NsxManager1 any
-	// The fully qualified hostname of the second NSX Manager node in the VMware Cloud Foundation (VCF) environment, required by the EVS environment to connect to your VCF management cluster. (AI-inferred)
 	NsxManager2 any
-	// The hostname to assign to the third NSX Manager node within the VMware Cloud Foundation (VCF) environment managed by this AWS Elastic VMware Service (EVS) environment. (AI-inferred)
 	NsxManager3 any
-	// The hostname of the SDDC Manager node in the VMware Cloud Foundation (VCF) environment that this AWS EVS environment is associated with. (AI-inferred)
 	SddcManager any
-	// The hostname or IP address of the vCenter server in the VMware Cloud Foundation environment represented by this resource. (AI-inferred)
 	Vcenter any
 }
 
@@ -206,15 +192,12 @@ type EnvironmentConfig struct {
 type EnvironmentAttrs struct {
 	Checks any
 	ConnectivityInfo any
-	// This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred)
 	CreatedAt any
 	Credentials any
-	// The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred)
 	EnvironmentArn any
 	EnvironmentId any
 	// The name of an EVS environment
 	EnvironmentName any
-	// The read-only `environment_state` field reports the current lifecycle status of the AWS Elemental Video System (EVS) environment as tracked by the `AWS::Evs::Environment` resource. (AI-inferred)
 	EnvironmentState any
 	// The initial hosts for environment only required upon creation. Modification after creation will have no effect
 	Hosts any
@@ -227,7 +210,6 @@ type EnvironmentAttrs struct {
 	ServiceAccessSecurityGroups any
 	ServiceAccessSubnetId any
 	SiteId any
-	// A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred)
 	StateDetails any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

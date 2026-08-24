@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProtectionGroup_Tags {
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the AWS Shield Protection Group, used to store custom metadata that helps identify, organize, and manage the protection group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

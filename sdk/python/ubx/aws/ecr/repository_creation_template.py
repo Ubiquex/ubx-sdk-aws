@@ -15,16 +15,12 @@ class RepositoryCreationTemplate_EncryptionConfiguration:
 
 @dataclasses.dataclass
 class RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters:
-    # Specifies the type of filter for image tag mutability exclusions, where 'ALL' matches every tag and 'REGEX' uses a regular expression pattern in the corresponding value field. (AI-inferred)
     image_tag_mutability_exclusion_filter_type: Any = None
-    # This field specifies the tag pattern (such as a regex or wildcard expression) that identifies image tags excluded from the repository creation template's image tag mutability policy, allowing those tags to be overwritten even in immutable repositories. (AI-inferred)
     image_tag_mutability_exclusion_filter_value: Any = None
 
 @dataclasses.dataclass
 class RepositoryCreationTemplate_ResourceTags:
-    # The key of a tag that this repository creation template automatically applies to newly created Amazon ECR repositories. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair in the ResourceTags list of the AWS ECR Repository Creation Template, used to add metadata for identification, categorization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _RepositoryCreationTemplate_EncryptionConfigurationFields = {
@@ -69,7 +65,6 @@ class RepositoryCreationTemplateConfig:
 class RepositoryCreationTemplateAttrs:
     # A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH
     applied_for: Any = None
-    # The creation timestamp (in ISO 8601 format) recorded by AWS ECR when this repository creation template was first created, provided as a read-only computed attribute. (AI-inferred)
     created_at: Any = None
     # The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template.
     custom_role_arn: Any = None
@@ -89,7 +84,6 @@ class RepositoryCreationTemplateAttrs:
     repository_policy: Any = None
     # The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
     resource_tags: Any = None
-    # The timestamp indicating when the AWS ECR repository creation template was last updated. (AI-inferred)
     updated_at: Any = None
 
 RepositoryCreationTemplate = ubx.ResourceBinding(

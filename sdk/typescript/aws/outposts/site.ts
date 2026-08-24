@@ -2,53 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Site_OperatingAddress {
-  /** The first line of the street address (e.g., building number and street) for the operating address of the AWS Outpost site, indicating where the Outpost equipment is physically located. (AI-inferred) */
   addressLine1: string | Computed<string>;
-  /** The second line of the operating address for the Outposts site, used for additional address details such as a suite, unit, or floor number. (AI-inferred) */
   addressLine2?: string | Computed<string>;
-  /** Specifies the third line of the street address for the operating (physical) address of the AWS Outposts site. (AI-inferred) */
   addressLine3?: string | Computed<string>;
-  /** The city portion of the physical operating address where the AWS Outpost site is deployed and operates. (AI-inferred) */
   city: string | Computed<string>;
-  /** The name of the contact person associated with the operating address of the Outpost site. (AI-inferred) */
   contactName: string | Computed<string>;
-  /** The phone number of the primary contact person responsible for the Outpost site at this operating address. (AI-inferred) */
   contactPhoneNumber: string | Computed<string>;
-  /** The country code of the operating address for the Outpost site, specified as a two-letter ISO 3166-1 alpha-2 country code. (AI-inferred) */
   countryCode: string | Computed<string>;
-  /** The district or county portion of the operating address where the Outpost site is physically located. (AI-inferred) */
   districtOrCounty?: string | Computed<string>;
-  /** The municipality (city or town) of the operating address for the Outposts site. (AI-inferred) */
   municipality?: string | Computed<string>;
-  /** The postal code of the operating address for the Outposts site, which AWS uses for shipping equipment and providing on-site service. (AI-inferred) */
   postalCode: string | Computed<string>;
-  /** The state, province, or region portion of the physical operating address for the AWS Outposts site, required when specifying the site's location. (AI-inferred) */
   stateOrRegion: string | Computed<string>;
 }
 
 export interface Site_RackPhysicalProperties {
-  /** Specifies the type of fiber optic cable used by the Outpost rack, either single-mode or multi-mode. (AI-inferred) */
   fiberOpticCableType?: string | Computed<string>;
-  /** The maximum weight capacity in pounds that the Outpost rack is designed to support, expressed as a string value that defines the physical weight limit for the site's rack. (AI-inferred) */
   maximumSupportedWeightLbs?: string | Computed<string>;
-  /** Specifies the optical standard used for the fiber-optic network connection on the Outpost rack, determining the type of fiber (e.g., single-mode or multi-mode) and associated speed/transceiver standard. (AI-inferred) */
   opticalStandard?: string | Computed<string>;
-  /** Specifies the type of power connector used for the Outpost rack (e.g., C19 or C21), which influences the physical power infrastructure required at the site. (AI-inferred) */
   powerConnector?: string | Computed<string>;
-  /** Specifies the power draw of the rack in kilovolt-amperes (kVA) when defining the physical properties of the AWS Outposts site rack. (AI-inferred) */
   powerDrawKva?: string | Computed<string>;
-  /** Indicates whether the power feed for the rack drops from above (overhead) or below (underfloor), which determines how service cabling is routed to the outpost rack. (AI-inferred) */
   powerFeedDrop?: string | Computed<string>;
-  /** The power phase (single-phase or three-phase) of the power connection for the Outpost rack, such as SINGLE_PHASE or THREE_PHASE. (AI-inferred) */
   powerPhase?: string | Computed<string>;
-  /** Specifies the number of uplinks per rack for the Outpost site, using a string enum value such as 'UPLINK_COUNT_4' or 'UPLINK_COUNT_8'. (AI-inferred) */
   uplinkCount?: string | Computed<string>;
-  /** Specifies the uplink speed (in Gbps) for the Outpost rack's network connection, such as '1G', '10G', '40G', or '100G'. (AI-inferred) */
   uplinkGbps?: string | Computed<string>;
 }
 
 export interface Site_Tags {
-  /** The tag key (for example, 'Environment') for a tag attached to this AWS Outposts site. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -85,40 +64,24 @@ const Site_TagsFields: FieldMap = {
 };
 
 export interface SiteConfig {
-  /** The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred) */
   name: string | Computed<string>;
-  /** An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred) */
   notes?: string | Computed<string>;
-  /** The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred) */
   operatingAddress?: Site_OperatingAddress | Computed<Site_OperatingAddress>;
-  /** Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred) */
   rackPhysicalProperties?: Site_RackPhysicalProperties | Computed<Site_RackPhysicalProperties>;
-  /** The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred) */
   shippingAddress?: Site_OperatingAddress | Computed<Site_OperatingAddress>;
-  /** A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred) */
   tags?: Site_Tags[] | Computed<Site_Tags[]>;
 }
 
 export interface SiteAttrs {
-  /** The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred) */
   description: string;
-  /** The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred) */
   name: string;
-  /** An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred) */
   notes: string;
-  /** The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred) */
   operatingAddress: Site_OperatingAddress;
-  /** Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred) */
   rackPhysicalProperties: Site_RackPhysicalProperties;
-  /** The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred) */
   shippingAddress: Site_OperatingAddress;
-  /** The Amazon Resource Name (ARN) of the Outposts site. (AI-inferred) */
   siteArn: string;
-  /** The unique identifier assigned by AWS to the Outposts site, used to reference the site in other resources. (AI-inferred) */
   siteId: string;
-  /** A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred) */
   tags: Site_Tags[];
 }
 

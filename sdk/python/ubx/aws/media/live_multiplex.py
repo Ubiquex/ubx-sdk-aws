@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveMultiplex_Destinations:
-    # Specifies the MediaConnect output destination settings for a multiplex destination, including the ARN of the MediaConnect output. (AI-inferred)
     multiplex_media_connect_output_destination_settings: Any = None
 
 @dataclasses.dataclass
@@ -24,9 +23,7 @@ class LiveMultiplex_MultiplexSettings:
 
 @dataclasses.dataclass
 class LiveMultiplex_Tags:
-    # The key of a tag applied to the AWS Elemental MediaLive Multiplex, used to attach metadata for organizing, cost allocation, and access management of this media transmission resource. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag pair applied to the MediaLive multiplex for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _LiveMultiplex_DestinationsFields = {
@@ -76,7 +73,6 @@ class LiveMultiplexAttrs:
     pipelines_running_count: Any = None
     # The number of programs in the multiplex.
     program_count: Any = None
-    # The current lifecycle state of the MediaLive multiplex, such as IDLE, STARTING, RUNNING, or STOPPING, as reported by AWS. (AI-inferred)
     state: Any = None
     # A collection of key-value pairs.
     tags: Any = None

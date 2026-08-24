@@ -2,22 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamAppBlockBuilder_AccessEndpoints {
-  /** Specifies the type of AppStream access endpoint, such as STREAMING for the streaming traffic endpoint, for this AppBlockBuilder. (AI-inferred) */
   endpointType?: string | Computed<string>;
-  /** The ID of the VPC endpoint (vpce-id) that AppStream uses to establish a private connection to the app block builder via the specified access endpoint. (AI-inferred) */
   vpceId?: string | Computed<string>;
 }
 
 export interface StreamAppBlockBuilder_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag attached to the AppStream 2.0 App Block Builder resource, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface StreamAppBlockBuilder_VpcConfig {
-  /** Specifies the list of EC2 security group IDs to associate with the AppStream 2.0 App Block Builder's elastic network interface within the configured VPC. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs in the VPC where the AppStream 2.0 app block builder will be launched, controlling which subnets are used for its elastic network interface. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
@@ -37,56 +32,32 @@ const StreamAppBlockBuilder_VpcConfigFields: FieldMap = {
 };
 
 export interface StreamAppBlockBuilderConfig {
-  /** Specifies a list of VPC interface endpoints (each with an endpoint type and VPC endpoint ID) that enable private connectivity to the AppStream 2.0 App Block Builder without traversing the public internet. (AI-inferred) */
   accessEndpoints?: StreamAppBlockBuilder_AccessEndpoints[] | Computed<StreamAppBlockBuilder_AccessEndpoints[]>;
-  /** Specifies the list of ARNs of AppStream 2.0 app blocks to associate with this app block builder, providing the source applications and content used to build new app blocks. (AI-inferred) */
   appBlockArns?: string[] | Computed<string[]>;
-  /** A human-readable, optional description of the app block builder that helps identify its purpose. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The display_name specifies a user-friendly name for the AppStream 2.0 app block builder that appears in the console, distinct from the immutable Name identifier. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** Enables or disables default internet access for the AppStream 2.0 app block builder, allowing it to reach the internet via the default route when no VPC configuration is specified. (AI-inferred) */
   enableDefaultInternetAccess?: boolean | Computed<boolean>;
-  /** Specifies the ARN of the IAM role applied to the AppStream 2.0 app block builder, granting it permissions to access application assets and other AWS resources needed to create app blocks. (AI-inferred) */
   iamRoleArn?: string | Computed<string>;
-  /** The Amazon EC2 instance type that the AppStream 2.0 App Block Builder uses to build and package applications. (AI-inferred) */
   instanceType: string | Computed<string>;
-  /** The unique name for the AppStream 2.0 app block builder. (AI-inferred) */
   name: string | Computed<string>;
-  /** The operating system platform for the app block builder, such as WINDOWS_SERVER_2019 or AMAZON_LINUX2. (AI-inferred) */
   platform: string | Computed<string>;
-  /** Assigns metadata key-value pairs to the AppStream app block builder, enabling cost tracking, resource organization, and IAM-based access control. (AI-inferred) */
   tags?: StreamAppBlockBuilder_Tags[] | Computed<StreamAppBlockBuilder_Tags[]>;
-  /** Specifies the VPC configuration for the AppStream 2.0 app block builder, including the security group IDs and subnet IDs that define the network environment in which the builder runs. (AI-inferred) */
   vpcConfig: StreamAppBlockBuilder_VpcConfig | Computed<StreamAppBlockBuilder_VpcConfig>;
 }
 
 export interface StreamAppBlockBuilderAttrs {
-  /** Specifies a list of VPC interface endpoints (each with an endpoint type and VPC endpoint ID) that enable private connectivity to the AppStream 2.0 App Block Builder without traversing the public internet. (AI-inferred) */
   accessEndpoints: StreamAppBlockBuilder_AccessEndpoints[];
-  /** Specifies the list of ARNs of AppStream 2.0 app blocks to associate with this app block builder, providing the source applications and content used to build new app blocks. (AI-inferred) */
   appBlockArns: string[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AppStream 2.0 app block builder. (AI-inferred) */
   arn: string;
-  /** The timestamp indicating when the AppStream App Block Builder was created. (AI-inferred) */
   createdTime: string;
-  /** A human-readable, optional description of the app block builder that helps identify its purpose. (AI-inferred) */
   description: string;
-  /** The display_name specifies a user-friendly name for the AppStream 2.0 app block builder that appears in the console, distinct from the immutable Name identifier. (AI-inferred) */
   displayName: string;
-  /** Enables or disables default internet access for the AppStream 2.0 app block builder, allowing it to reach the internet via the default route when no VPC configuration is specified. (AI-inferred) */
   enableDefaultInternetAccess: boolean;
-  /** Specifies the ARN of the IAM role applied to the AppStream 2.0 app block builder, granting it permissions to access application assets and other AWS resources needed to create app blocks. (AI-inferred) */
   iamRoleArn: string;
-  /** The Amazon EC2 instance type that the AppStream 2.0 App Block Builder uses to build and package applications. (AI-inferred) */
   instanceType: string;
-  /** The unique name for the AppStream 2.0 app block builder. (AI-inferred) */
   name: string;
-  /** The operating system platform for the app block builder, such as WINDOWS_SERVER_2019 or AMAZON_LINUX2. (AI-inferred) */
   platform: string;
-  /** Assigns metadata key-value pairs to the AppStream app block builder, enabling cost tracking, resource organization, and IAM-based access control. (AI-inferred) */
   tags: StreamAppBlockBuilder_Tags[];
-  /** Specifies the VPC configuration for the AppStream 2.0 app block builder, including the security group IDs and subnet IDs that define the network environment in which the builder runs. (AI-inferred) */
   vpcConfig: StreamAppBlockBuilder_VpcConfig;
 }
 

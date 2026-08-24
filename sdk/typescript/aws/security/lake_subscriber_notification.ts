@@ -39,14 +39,12 @@ const LakeSubscriberNotification_NotificationConfigurationFields: FieldMap = {
 };
 
 export interface LakeSubscriberNotificationConfig {
-  /** Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred) */
   notificationConfiguration: LakeSubscriberNotification_NotificationConfiguration | Computed<LakeSubscriberNotification_NotificationConfiguration>;
   /** The ARN for the subscriber */
   subscriberArn: string | Computed<string>;
 }
 
 export interface LakeSubscriberNotificationAttrs {
-  /** Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred) */
   notificationConfiguration: LakeSubscriberNotification_NotificationConfiguration;
   /** The ARN for the subscriber */
   subscriberArn: string;

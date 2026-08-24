@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Certificate_Tags struct {
 	Key any
-	// The value portion of a key-value tag attached to the AWS Transfer Family certificate, used for identifying and categorizing the resource. (AI-inferred)
 	Value any
 }
 

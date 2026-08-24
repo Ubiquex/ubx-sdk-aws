@@ -9,7 +9,6 @@ export interface FrontKeyValueStore_ImportSource {
 }
 
 export interface FrontKeyValueStore_Tags {
-  /** The key of a tag attached to the CloudFront key value store, used to identify the tag within the tag set. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -36,17 +35,14 @@ export interface FrontKeyValueStoreConfig {
 }
 
 export interface FrontKeyValueStoreAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the CloudFront key value store. (AI-inferred) */
   arn: string;
   /** A comment to describe the Key Value Store. Omitting ``Comment`` from the template during updates will clear the existing comment (set to empty string). To preserve an existing comment, you must explicitly include it in the template. */
   comment: string;
-  /** The unique identifier assigned by AWS to this CloudFront KeyValueStore, used to reference the store in other resources such as CloudFront functions. (AI-inferred) */
   id: string;
   /** The import source for the key value store. */
   importSource: FrontKeyValueStore_ImportSource;
   /** The name of the key value store. */
   name: string;
-  /** The current status of the CloudFront KeyValueStore, such as CREATING or READY, indicating whether the store is ready for use. (AI-inferred) */
   status: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: FrontKeyValueStore_Tags[];

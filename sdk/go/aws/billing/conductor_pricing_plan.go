@@ -4,9 +4,7 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConductorPricingPlan_Tags struct {
-	// The key portion of a user-defined tag assigned to the AWS Billing Conductor pricing plan, used to identify and categorize the plan within the resource's tag set. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key-value pair attached to the AWS Billing Conductor pricing plan, used to organize, track, or control access to the plan. (AI-inferred)
 	Value any
 }
 
@@ -17,9 +15,7 @@ var ConductorPricingPlan_TagsFields = ubx.FieldMap{
 
 type ConductorPricingPlanConfig struct {
 	Description any
-	// The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
 	Name any
-	// The ARNs of the pricing rules to associate with this pricing plan. (AI-inferred)
 	PricingRuleArns any
 	Tags any
 }
@@ -32,9 +28,7 @@ type ConductorPricingPlanAttrs struct {
 	Description any
 	// Latest modified timestamp in UNIX epoch time format
 	LastModifiedTime any
-	// The user-defined name for the pricing plan, required when creating the plan in AWS Billing Conductor and used for identification and display. (AI-inferred)
 	Name any
-	// The ARNs of the pricing rules to associate with this pricing plan. (AI-inferred)
 	PricingRuleArns any
 	// Number of associated pricing rules
 	Size any

@@ -4,16 +4,12 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamApplicationFleetAssociationConfig struct {
-	// The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred)
 	ApplicationArn any
-	// The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred)
 	FleetName any
 }
 
 type StreamApplicationFleetAssociationAttrs struct {
-	// The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred)
 	ApplicationArn any
-	// The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred)
 	FleetName any
 }
 

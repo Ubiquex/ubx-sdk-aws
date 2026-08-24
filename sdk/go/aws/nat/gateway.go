@@ -4,16 +4,13 @@ package nat
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateway_AvailabilityZoneAddresses struct {
-	// The allocation IDs of the Elastic IPs to associate with the NAT Gateway for each usable Availability Zone, so that a specific public IP is assigned per AZ. (AI-inferred)
 	AllocationIds any
 	AvailabilityZone any
 	AvailabilityZoneId any
 }
 
 type Gateway_Tags struct {
-	// The key of a tag in the tag set for the NAT gateway, used to categorize and identify the resource. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the NAT gateway, used for resource metadata, organization, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -66,11 +63,9 @@ type GatewayAttrs struct {
 	AvailabilityZoneAddresses any
 	// Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
 	ConnectivityType any
-	// The identifier of the Elastic Network Interface (ENI) automatically created for the NAT gateway to provide network connectivity, as returned by AWS. (AI-inferred)
 	EniId any
 	// The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.
 	MaxDrainDurationSeconds any
-	// The unique identifier assigned by AWS to the NAT gateway. (AI-inferred)
 	NatGatewayId any
 	// The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.
 	PrivateIpAddress any

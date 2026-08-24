@@ -4,7 +4,6 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GraphGraph_Tags struct {
-	// The key of a tag attached to the Neptune Analytics graph, used to identify the tag within the resource's tag set. (AI-inferred)
 	Key any
 	Value any
 }

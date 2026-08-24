@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FrontRealtimeLogConfig_EndPoints_KinesisStreamConfig {
-  /** The ARN of an IAM role that CloudFront assumes to send real-time log data to the associated Kinesis data stream. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Kinesis data stream to which CloudFront delivers real-time log data. (AI-inferred) */
   streamArn?: string | Computed<string>;
 }
 
 export interface FrontRealtimeLogConfig_EndPoints {
-  /** This object specifies the configuration for the Amazon Kinesis Data Streams destination of a real-time log endpoint, including the stream's Amazon Resource Name (ARN) and the IAM role ARN that CloudFront assumes to publish log records to the stream. (AI-inferred) */
   kinesisStreamConfig?: FrontRealtimeLogConfig_EndPoints_KinesisStreamConfig | Computed<FrontRealtimeLogConfig_EndPoints_KinesisStreamConfig>;
-  /** Specifies the streaming service type for a real-time log configuration endpoint, and the only supported value is 'Kinesis'. (AI-inferred) */
   streamType?: string | Computed<string>;
 }
 
@@ -41,7 +37,6 @@ export interface FrontRealtimeLogConfigConfig {
 }
 
 export interface FrontRealtimeLogConfigAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the CloudFront real-time log configuration. (AI-inferred) */
   arn: string;
   /** Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration. */
   endPoints: FrontRealtimeLogConfig_EndPoints[];

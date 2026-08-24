@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResolverResolverEndpoint_IpAddresses:
-    # The specific IP address to assign to the resolver endpoint within the referenced subnet; when not provided, AWS automatically chooses an available IP from that subnet. (AI-inferred)
     ip: Any = None
-    # Specifies the IPv6 address to assign to the Resolver endpoint's elastic network interface (ENI) for this IP address entry, within the given subnet, enabling IPv6-only or dual-stack resolver endpoints. (AI-inferred)
     ipv6: Any = None
-    # The subnet ID where the Route 53 Resolver endpoint's elastic network interface is deployed, defining the VPC subnet from which an IP address is allocated for this resolver endpoint. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class ResolverResolverEndpoint_Tags:
-    # The key of a tag attached to the Route53 Resolver endpoint, enabling you to label the endpoint for filtering, cost tracking, and access control. (AI-inferred)
     key: Any = None
     value: Any = None
 

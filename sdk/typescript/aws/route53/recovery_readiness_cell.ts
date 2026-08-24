@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecoveryReadinessCell_Tags {
-  /** The key of a tag to attach to the Route 53 Recovery Readiness Cell, used to organize and identify the cell for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag applied to the Route 53 Recovery Readiness cell, used for organizing, identifying, and managing the cell with custom metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RunnerObservabilityConfiguration_Tags struct {
 	Key any
-	// The value of a tag key-value pair attached to the App Runner observability configuration, used to categorize and identify the resource. (AI-inferred)
 	Value any
 }
 

@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayRequestValidatorConfig {
-  /** Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The ID of the REST API to which this request validator belongs. (AI-inferred) */
   restApiId: string | Computed<string>;
-  /** Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred) */
   validateRequestBody?: boolean | Computed<boolean>;
-  /** Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred) */
   validateRequestParameters?: boolean | Computed<boolean>;
 }
 
 export interface GatewayRequestValidatorAttrs {
-  /** Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred) */
   name: string;
-  /** The unique identifier assigned by API Gateway to the request validator, returned after creation. (AI-inferred) */
   requestValidatorId: string;
-  /** The ID of the REST API to which this request validator belongs. (AI-inferred) */
   restApiId: string;
-  /** Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred) */
   validateRequestBody: boolean;
-  /** Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred) */
   validateRequestParameters: boolean;
 }
 

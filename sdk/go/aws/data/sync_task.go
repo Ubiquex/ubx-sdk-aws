@@ -4,9 +4,7 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncTask_Excludes struct {
-	// Specifies the type of filter rule used to exclude files from the DataSync task, where the only supported value is 'SIMPLE_PATTERN' for simple pattern matching. (AI-inferred)
 	FilterType any
-	// Specifies a pattern value for an entry in the task's Excludes filter list, which tells DataSync which files or objects to skip during a transfer using the simple pattern matching syntax. (AI-inferred)
 	Value any
 }
 
@@ -76,9 +74,7 @@ type SyncTask_Schedule struct {
 }
 
 type SyncTask_Tags struct {
-	// The key of a tag to associate with the AWS DataSync task, enabling you to categorize and manage tasks by metadata. (AI-inferred)
 	Key any
-	// The value of the tag assigned to the DataSync task, used for organizing and managing the task in AWS. (AI-inferred)
 	Value any
 }
 
@@ -245,9 +241,7 @@ type SyncTaskConfig struct {
 	CloudWatchLogGroupArn any
 	// The ARN of an AWS storage resource's location.
 	DestinationLocationArn any
-	// Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred)
 	Excludes any
-	// Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred)
 	Includes any
 	// Configures a manifest, which is a list of files or objects that you want DataSync to transfer.
 	ManifestConfig any
@@ -274,9 +268,7 @@ type SyncTaskAttrs struct {
 	DestinationLocationArn any
 	// The Amazon Resource Names (ARNs) of the destination ENIs (Elastic Network Interfaces) that were created for your subnet.
 	DestinationNetworkInterfaceArns any
-	// Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred)
 	Excludes any
-	// Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred)
 	Includes any
 	// Configures a manifest, which is a list of files or objects that you want DataSync to transfer.
 	ManifestConfig any

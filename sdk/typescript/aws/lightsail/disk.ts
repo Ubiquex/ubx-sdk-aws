@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Disk_AddOns_AutoSnapshotAddOnRequest {
-  /** Specifies the time of day (in 24-hour HH:00 format, e.g., '02:00') when the automatic snapshot of the disk is created for the auto snapshot add-on. (AI-inferred) */
   snapshotTimeOfDay?: string | Computed<string>;
 }
 
 export interface Disk_AddOns {
-  /** Specifies the type of add-on to enable for the Lightsail disk, such as AutoSnapshot for automatic snapshots. (AI-inferred) */
   addOnType?: string | Computed<string>;
-  /** Configures the automatic snapshot add-on for the Lightsail disk, including the daily time (in HH:00 format) at which the snapshot is created. (AI-inferred) */
   autoSnapshotAddOnRequest?: Disk_AddOns_AutoSnapshotAddOnRequest | Computed<Disk_AddOns_AutoSnapshotAddOnRequest>;
-  /** The status of the disk add-on, typically 'Enabled' or 'Disabled', indicating whether the add-on is active on the Lightsail disk. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
@@ -23,9 +19,7 @@ export interface Disk_Location {
 }
 
 export interface Disk_Tags {
-  /** The key of a tag to attach to the Lightsail disk, used to organize and identify the disk resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the tag value in a key-value pair that you attach to the Lightsail disk for metadata and resource management purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -70,7 +64,6 @@ export interface DiskAttrs {
   attachmentState: string;
   /** The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request. */
   availabilityZone: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Lightsail disk. (AI-inferred) */
   diskArn: string;
   /** The names to use for your new Lightsail disk. */
   diskName: string;

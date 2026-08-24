@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnvironmentTemplate_Tags struct {
 	Key any
-	// The value of a tag attached to the AWS Proton environment template, which can be used to categorize and identify the template for cost allocation and management within AWS. (AI-inferred)
 	Value any
 }
 
@@ -21,9 +20,7 @@ type EnvironmentTemplateConfig struct {
 	DisplayName any
 	// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
 	EncryptionKey any
-	// The name of the environment template, used to identify it within AWS Proton. (AI-inferred)
 	Name any
-	// The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred)
 	Provisioning any
 	// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
 	Tags any
@@ -38,9 +35,7 @@ type EnvironmentTemplateAttrs struct {
 	DisplayName any
 	// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
 	EncryptionKey any
-	// The name of the environment template, used to identify it within AWS Proton. (AI-inferred)
 	Name any
-	// The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred)
 	Provisioning any
 	// <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
 	Tags any

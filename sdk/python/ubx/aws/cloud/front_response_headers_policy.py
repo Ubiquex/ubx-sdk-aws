@@ -30,11 +30,8 @@ class FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig:
 
 @dataclasses.dataclass
 class FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_Items:
-    # The name of the HTTP response header that CloudFront adds to responses when using this policy. (AI-inferred)
     header: Any = None
-    # Controls whether CloudFront overrides the value of the matching response header returned by the origin with the value specified in this custom header item; when false, CloudFront adds the custom header only if the origin does not already return a header with that name. (AI-inferred)
     override: Any = None
-    # The value to be sent in the custom HTTP response header that CloudFront adds to responses for this policy. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -44,7 +41,6 @@ class FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig
 
 @dataclasses.dataclass
 class FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig_Items:
-    # The name of an HTTP response header that CloudFront removes from the response when the response headers policy is applied to a distribution. (AI-inferred)
     header: Any = None
 
 @dataclasses.dataclass
@@ -303,9 +299,7 @@ class FrontResponseHeadersPolicyConfig:
 
 @dataclasses.dataclass
 class FrontResponseHeadersPolicyAttrs:
-    # The unique identifier assigned by CloudFront to this response headers policy, used to reference the policy in distributions. (AI-inferred)
     id: Any = None
-    # The date and time when the response headers policy was last modified, returned as an ISO 8601 string. (AI-inferred)
     last_modified_time: Any = None
     # A response headers policy configuration. A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers.
     response_headers_policy_config: Any = None

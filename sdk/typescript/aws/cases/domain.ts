@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Domain_Tags {
-  /** The tag key for a tag attached to the AWS Cases domain. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value string of a key-value tag applied to the Amazon Connect Cases domain, used to store metadata such as environment or cost center for the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

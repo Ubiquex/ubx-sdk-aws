@@ -4,16 +4,12 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VpcendpointServicePermissionsConfig struct {
-	// Specifies the ARNs of principals (IAM users, roles, or AWS accounts) that are allowed to create interface VPC endpoints to the VPC endpoint service. (AI-inferred)
 	AllowedPrincipals any
-	// The ID of the VPC endpoint service to which the permissions are granted. (AI-inferred)
 	ServiceId any
 }
 
 type VpcendpointServicePermissionsAttrs struct {
-	// Specifies the ARNs of principals (IAM users, roles, or AWS accounts) that are allowed to create interface VPC endpoints to the VPC endpoint service. (AI-inferred)
 	AllowedPrincipals any
-	// The ID of the VPC endpoint service to which the permissions are granted. (AI-inferred)
 	ServiceId any
 }
 

@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationTagConfig:
-    # The identifier of the Data Catalog (usually the AWS account ID) where the LF-tag is defined, defaulting to the current account if not specified. (AI-inferred)
     catalog_id: Any = None
-    # The key (name) of the Lake Formation LF-tag, which together with TagValues forms a tag pair used to classify resources. (AI-inferred)
     tag_key: Any = None
-    # The tag_values field specifies the list of possible values for this Lake Formation tag (LF-tag), which can be assigned to data lake resources for attribute-based access control. (AI-inferred)
     tag_values: Any = None
 
 @dataclasses.dataclass
 class FormationTagAttrs:
-    # The identifier of the Data Catalog (usually the AWS account ID) where the LF-tag is defined, defaulting to the current account if not specified. (AI-inferred)
     catalog_id: Any = None
-    # The key (name) of the Lake Formation LF-tag, which together with TagValues forms a tag pair used to classify resources. (AI-inferred)
     tag_key: Any = None
-    # The tag_values field specifies the list of possible values for this Lake Formation tag (LF-tag), which can be assigned to data lake resources for attribute-based access control. (AI-inferred)
     tag_values: Any = None
 
 FormationTag = ubx.ResourceBinding(

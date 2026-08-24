@@ -8,37 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers_Qualifier:
-    # The URI of the Certification Practice Statement (CPS) for the certificate policy qualifier, specifying where the CA's practices are published. (AI-inferred)
     cps_uri: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_CertificatePolicies_PolicyQualifiers:
-    # The OID identifying the type of certificate policy qualifier (id-qt-cps for a CPS pointer or id-qt-unotice for a user notice). (AI-inferred)
     policy_qualifier_id: Any = None
-    # For a certificate policy qualifier, the Qualifier object carries the CPS URI (a Uniform Resource Identifier pointing to the Certification Practice Statement) as required by RFC 5280. (AI-inferred)
     qualifier: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_CertificatePolicies:
-    # The object identifier (OID) of a certificate policy, as used in the CertificatePolicies X.509 extension (RFC 5280), which identifies the policy under which the certificate is issued. (AI-inferred)
     cert_policy_id: Any = None
-    # A list of policy qualifiers that provide additional information, such as a certification practice statement (CPS) URI, for each certificate policy extension in the certificate. (AI-inferred)
     policy_qualifiers: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_CustomExtensions:
-    # Indicates whether the custom extension is marked as critical in the X.509 certificate, as defined by RFC 5280. (AI-inferred)
     critical: Any = None
-    # The object identifier (OID) for the custom X.509 extension, which is included in the certificate's extensions when using API passthrough in AWS Certificate Manager Private Certificate Authority. (AI-inferred)
     object_identifier: Any = None
-    # The string value of the custom X.509 extension, containing the extension's data (often ASN.1 encoded) to be placed in the certificate. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_ExtendedKeyUsage:
-    # Specifies a custom object identifier (OID) for the ExtendedKeyUsage extension, allowing a non-standard extended key usage value instead of a predefined ExtendedKeyUsageType. (AI-inferred)
     extended_key_usage_object_identifier: Any = None
-    # Specifies a standard extended key usage type (such as SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, or EMAIL_PROTECTION) to include in the certificate's ExtendedKeyUsage extension via the api_passthrough structure. (AI-inferred)
     extended_key_usage_type: Any = None
 
 @dataclasses.dataclass
@@ -64,88 +54,56 @@ class Certificate_ApiPassthrough_Extensions_KeyUsage:
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName_CustomAttributes:
-    # The dotted decimal object identifier (OID) that identifies the attribute type in a custom DirectoryName attribute within a subject alternative name extension of an AWS Private CA certificate. (AI-inferred)
     object_identifier: Any = None
-    # The value of a custom attribute within an X.500 distinguished name (DN) that is used as a subject alternative name (DirectoryName) in the certificate's API passthrough extensions. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_DirectoryName:
-    # The Common Name (CN) component of a directory name (X.500 distinguished name) used as a subject alternative name in the certificate's X.509 extensions, passed through to the ACM Private CA API via the ApiPassthrough structure. (AI-inferred)
     common_name: Any = None
-    # The two-letter ISO 3166 country code in the directoryName form of the SubjectAlternativeName extension when passing X.509 extensions through the ACM Private CA certificate API. (AI-inferred)
     country: Any = None
-    # A list of custom attribute (OID/value) pairs that further qualify the X.500 directory name in the subject alternative names extension of the certificate, passed through to the private CA. (AI-inferred)
     custom_attributes: Any = None
-    # Specifies the distinguished name qualifier (DNQ) to include in the directoryName entry of the Subject Alternative Name extension for the certificate, an optional X.520 attribute that helps disambiguate otherwise identical distinguished names. (AI-inferred)
     distinguished_name_qualifier: Any = None
-    # Specifies the generation qualifier (e.g., Jr., III) for a DirectoryName subject alternative name in the API passthrough configuration for an AWS Private CA certificate. (AI-inferred)
     generation_qualifier: Any = None
-    # Specifies the given name (first name) attribute of the X.500 distinguished name used as a directory-name subject alternative name in the certificate issued by the private CA. (AI-inferred)
     given_name: Any = None
-    # Specifies the initials attribute of an X.500 distinguished name used in the directoryName entry of a SubjectAlternativeNames extension in the certificate's ApiPassthrough configuration. (AI-inferred)
     initials: Any = None
-    # Specifies the locality (L) attribute of a directory name in the subject alternative names extension, indicating the city or place for that certificate subject. (AI-inferred)
     locality: Any = None
-    # The organization (O) attribute of a directory name used as a subject alternative name, specifying the organization to which the certificate subject belongs. (AI-inferred)
     organization: Any = None
-    # Specifies the organizational unit (OU) component of the X.500 directory name in a subject alternative name extension, used to identify the entity associated with the certificate. (AI-inferred)
     organizational_unit: Any = None
-    # Specifies the pseudonym attribute (an X.520 name component) of an X.509 directory name used as a subject alternative name, passed through to ACM Private CA's certificate API as part of the extensions. (AI-inferred)
     pseudonym: Any = None
-    # The serial number attribute of the X.500 distinguished name in a directoryName subject alternative name, used to identify the subject within the directory namespace (not the certificate's serial number). (AI-inferred)
     serial_number: Any = None
-    # The state or province attribute of the directory name (DN) in a subject alternative name extension for the certificate, as provided via the API passthrough. (AI-inferred)
     state: Any = None
-    # Specifies the surname (family name) component of the distinguished name used as a directoryName entry in the subject alternative names extension of the certificate. (AI-inferred)
     surname: Any = None
-    # Specifies the title attribute (e.g., 'Dr.', 'Esq.') of the X.500 directory name used as a subject alternative name in the certificate. (AI-inferred)
     title: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_EdiPartyName:
-    # Specifies the name assigner element of an EDI party name included in the Subject Alternative Name extension, identifying the organization that assigned the EDI party name, passed through to the private CA for certificate issuance. (AI-inferred)
     name_assigner: Any = None
-    # Specifies the name of the EDI (Electronic Data Interchange) party, typically an organization or individual, used in the subject alternative name extension of the certificate to identify the certificate holder for EDI messaging purposes. (AI-inferred)
     party_name: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames_OtherName:
-    # Specifies the object identifier (OID) that defines the type of the 'other name' in a SubjectAlternativeName extension within the certificate's ApiPassthrough, as per RFC 5280. (AI-inferred)
     type_id: Any = None
-    # The value of the OtherName subject alternative name, carrying the actual data (such as a user principal name or a custom string) for the name type identified by the corresponding TypeId OID. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions_SubjectAlternativeNames:
-    # This field specifies a directory name (a distinguished name) to be included as a subject alternative name in the certificate, representing the ASN.1 `directoryName` general name type in the SubjectAlternativeNames extension via the ACM PCA API passthrough. (AI-inferred)
     directory_name: Any = None
-    # The DNS name to include in the Subject Alternative Name extension of the certificate, passed through via the API passthrough. (AI-inferred)
     dns_name: Any = None
-    # Configures an EDI (Electronic Data Interchange) party name to be included as an entry in the certificate's Subject Alternative Name extension, with fields for the party name and the optional name assigner (the organization that assigned it). (AI-inferred)
     edi_party_name: Any = None
-    # The IP address (IPv4 or IPv6) to include as a subject alternative name extension in the certificate issued by the private CA. (AI-inferred)
     ip_address: Any = None
-    # Specifies an otherName subject alternative name, which consists of an object identifier (type_id) and a string-encoded value, for the certificate's Subject Alternative Name extension. (AI-inferred)
     other_name: Any = None
-    # Holds the object identifier (OID) string for a subject alternative name of type REGISTERED_ID, which can be included in the certificate's Subject Alternative Name extension to specify a custom registered identifier. (AI-inferred)
     registered_id: Any = None
-    # The RFC 822 email address to include as a subject alternative name on the certificate. (AI-inferred)
     rfc822_name: Any = None
-    # Specifies a uniform resource identifier (URI) to include as a subject alternative name (SAN) in the certificate's subjectAlternativeName extension. (AI-inferred)
     uniform_resource_identifier: Any = None
 
 @dataclasses.dataclass
 class Certificate_ApiPassthrough_Extensions:
-    # Specifies the certificate policies extension to include in the issued certificate, where each object contains a policy OID and optional policy qualifiers under the API passthrough extensions. (AI-inferred)
     certificate_policies: Any = None
     # Array of X.509 extensions for a certificate.
     custom_extensions: Any = None
-    # Sets the ExtendedKeyUsage extension in the certificate's X.509 extensions (as pass-through to ACM Private CA), listing permitted usages such as server authentication, client authentication, code signing, or custom OID-based purposes. (AI-inferred)
     extended_key_usage: Any = None
     # Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.
     key_usage: Any = None
-    # Specifies one or more subject alternative names (SANs) to include in the certificate's subjectAltName extension, such as DNS names, IP addresses, or email addresses. (AI-inferred)
     subject_alternative_names: Any = None
 
 @dataclasses.dataclass
@@ -317,13 +275,11 @@ _Certificate_ValidityFields = {
 class CertificateConfig:
     # Contains X.509 certificate information to be placed in an issued certificate. An ``APIPassthrough`` or ``APICSRPassthrough`` template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, AWS Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
     api_passthrough: Any = None
-    # The Amazon Resource Name (ARN) of the private certificate authority (CA) that issues the certificate. (AI-inferred)
     certificate_authority_arn: Any = None
     # The certificate signing request (CSR) for the certificate.
     certificate_signing_request: Any = None
     # The name of the algorithm that will be used to sign the certificate to be issued. This parameter should not be confused with the ``SigningAlgorithm`` parameter used to sign a CSR in the ``CreateCertificateAuthority`` action. The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.
     signing_algorithm: Any = None
-    # Specifies the ARN of the certificate template that determines the certificate type (such as end-entity or subordinate CA) and its extensions for the issued certificate. (AI-inferred)
     template_arn: Any = None
     # Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
     validity: Any = None
@@ -334,17 +290,13 @@ class CertificateConfig:
 class CertificateAttrs:
     # Contains X.509 certificate information to be placed in an issued certificate. An ``APIPassthrough`` or ``APICSRPassthrough`` template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, AWS Private CA applies [order of operation rules](https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations) to determine what information is used.
     api_passthrough: Any = None
-    # The Amazon Resource Name (ARN) of the issued certificate, uniquely identifying it within the AWS account and region. (AI-inferred)
     arn: Any = None
-    # The PEM-encoded certificate issued by the private CA for the requested certificate signing request. (AI-inferred)
     certificate: Any = None
-    # The Amazon Resource Name (ARN) of the private certificate authority (CA) that issues the certificate. (AI-inferred)
     certificate_authority_arn: Any = None
     # The certificate signing request (CSR) for the certificate.
     certificate_signing_request: Any = None
     # The name of the algorithm that will be used to sign the certificate to be issued. This parameter should not be confused with the ``SigningAlgorithm`` parameter used to sign a CSR in the ``CreateCertificateAuthority`` action. The specified signing algorithm family (RSA or ECDSA) must match the algorithm family of the CA's secret key.
     signing_algorithm: Any = None
-    # Specifies the ARN of the certificate template that determines the certificate type (such as end-entity or subordinate CA) and its extensions for the issued certificate. (AI-inferred)
     template_arn: Any = None
     # Length of time for which the certificate issued by your private certificate authority (CA), or by the private CA itself, is valid in days, months, or years. You can issue a certificate by calling the ``IssueCertificate`` operation.
     validity: Any = None

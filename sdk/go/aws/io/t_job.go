@@ -4,13 +4,9 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TJob_AbortConfig_CriteriaList struct {
-	// Specifies the abort action (CANCEL or CONTINUE) to perform when the job's abort criteria are met. (AI-inferred)
 	Action any
-	// The type of job execution failure that triggers the abort criteria for an AWS IoT job, such as FAILED, TIMED_OUT, or ALL. (AI-inferred)
 	FailureType any
-	// The minimum number of things that must have completed the job execution before the abort criteria can be evaluated, allowing the abort action to trigger only after a certain number of executions have occurred. (AI-inferred)
 	MinNumberOfExecutedThings any
-	// The percentage of the total number of things in the job that must experience the specified failure type before the abort criteria triggers the abort action, when combined with the minimum number of executed things. (AI-inferred)
 	ThresholdPercentage any
 }
 
@@ -20,9 +16,7 @@ type TJob_AbortConfig struct {
 }
 
 type TJob_JobExecutionsRetryConfig_CriteriaList struct {
-	// Specifies the type of job execution failure (e.g., FAILED, TIMED_OUT, or ALL) that this retry criterion applies to, determining which failures trigger the configured retry count. (AI-inferred)
 	FailureType any
-	// The maximum number of retry attempts for a job execution that fails with the associated failure type before the execution is marked as failed. (AI-inferred)
 	NumberOfRetries any
 }
 
@@ -62,9 +56,7 @@ type TJob_PresignedUrlConfig struct {
 }
 
 type TJob_SchedulingConfig_MaintenanceWindows struct {
-	// Specifies the length of each maintenance window, in minutes, during which the AWS IoT job is allowed to run before the window closes and job executions are paused. (AI-inferred)
 	DurationInMinutes any
-	// The start time of the maintenance window, in ISO 8601 format, during which the AWS IoT job execution can be started. (AI-inferred)
 	StartTime any
 }
 
@@ -80,9 +72,7 @@ type TJob_SchedulingConfig struct {
 }
 
 type TJob_Tags struct {
-	// Specifies the key of a tag to attach to the AWS IoT job, allowing you to categorize, organize, and manage the job resource in AWS. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS IoT Job, used to categorize the job and enable resource-level access control via IAM condition keys such as aws:ResourceTag. (AI-inferred)
 	Value any
 }
 

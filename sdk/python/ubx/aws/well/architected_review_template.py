@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ArchitectedReviewTemplate_Tags:
-    # The tag key that, along with its associated value, forms a user-defined tag applied to the AWS Well-Architected Review Template to facilitate resource categorization and cost tracking. (AI-inferred)
     key: Any = None
-    # The value part of a key-value tag attached to the Well-Architected review template, used to organize and manage the template resource. (AI-inferred)
     value: Any = None
 
 _ArchitectedReviewTemplate_TagsFields = {

@@ -4,9 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Registry_Tags struct {
-	// The tag key part of a key-value pair used to tag an AWS Glue registry, enabling you to categorize and filter the resource. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag attached to this AWS Glue registry, used to categorize, identify, or manage the registry. (AI-inferred)
 	Value any
 }
 

@@ -22,11 +22,9 @@ export interface FrontKeyGroupConfig {
 }
 
 export interface FrontKeyGroupAttrs {
-  /** The unique identifier assigned to the key group by CloudFront. (AI-inferred) */
   id: string;
   /** A key group configuration. A key group contains a list of public keys that you can use with [CloudFront signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html). */
   keyGroupConfig: FrontKeyGroup_KeyGroupConfig;
-  /** The timestamp of the most recent change to this CloudFront key group's configuration, automatically set by AWS when the key group is created or updated. (AI-inferred) */
   lastModifiedTime: string;
 }
 

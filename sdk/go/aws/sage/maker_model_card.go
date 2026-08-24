@@ -22,46 +22,30 @@ type MakerModelCard_Content_BusinessDetails struct {
 }
 
 type MakerModelCard_Content_EvaluationDetails_MetricGroups_MetricData struct {
-	// Specifies the name of a metric (e.g., 'accuracy' or 'F1 score') reported in a metric group within the model card's evaluation details. (AI-inferred)
 	Name any
-	// Provides additional commentary or context about the metric data point, such as computation notes or caveats, within the SageMaker Model Card's evaluation details. (AI-inferred)
 	Notes any
-	// Specifies the data type of the metric value (e.g., 'Number' or 'String') for the corresponding metric data entry in the SageMaker Model Card's evaluation details. (AI-inferred)
 	Type any
-	// The measured numeric or categorical result of the evaluation metric (e.g., accuracy, F1-score) recorded in the metric data group of the model card's evaluation details. (AI-inferred)
 	Value any
-	// Specifies the label or name for the x-axis of a metric chart in the model card's evaluation details, used to describe the independent variable for plotted metric data. (AI-inferred)
 	XaxisName any
-	// The name of the y-axis for a metric chart, used to label the vertical axis when visualizing metric data in the model card's evaluation details. (AI-inferred)
 	YaxisName any
 }
 
 type MakerModelCard_Content_EvaluationDetails_MetricGroups struct {
-	// List of metric data items (name, value, and optional type/notes) within a metric group for an evaluation detail section of the SageMaker model card. (AI-inferred)
 	MetricData any
-	// The name of a group of related evaluation metrics (e.g., 'Accuracy' or 'Latency') within the model card's evaluation details. (AI-inferred)
 	Name any
 }
 
 type MakerModelCard_Content_EvaluationDetails struct {
-	// Lists the datasets used for evaluating the model, indicating the data sources on which the evaluation metrics are based. (AI-inferred)
 	Datasets any
-	// The Amazon Resource Name (ARN) of a SageMaker job (such as a processing job) that can be used to reproduce or reference the model evaluation results. (AI-inferred)
 	EvaluationJobArn any
-	// Provides a free-text observation about the model's evaluation results, allowing qualitative insights, caveats, or performance notes to be recorded within the evaluation details section of the SageMaker Model Card. (AI-inferred)
 	EvaluationObservation any
-	// Stores arbitrary key-value metadata for this model evaluation detail, providing additional context that is not captured by the structured fields such as name and metric groups. (AI-inferred)
 	Metadata any
-	// The list of metric groups for this evaluation detail, where each group contains a name and a list of metric data items that organize related evaluation metrics. (AI-inferred)
 	MetricGroups any
-	// Specifies a user-defined name for an evaluation detail, such as a specific evaluation run or metric set, to identify it within the model card's evaluation details list. (AI-inferred)
 	Name any
 }
 
 type MakerModelCard_Content_IntendedUses struct {
-	// A free-form string that provides a detailed explanation or justification for the assigned risk rating within the intended uses section of the SageMaker model card. (AI-inferred)
 	ExplanationsForRiskRating any
-	// Specifies the factors that influence the model's efficiency in deployment, such as hardware constraints, inference latency, throughput, or resource consumption, intended to inform model card readers. (AI-inferred)
 	FactorsAffectingModelEfficiency any
 	// intended use cases.
 	IntendedUses any
@@ -105,11 +89,8 @@ type MakerModelCard_Content_ModelPackageDetails_CreatedBy struct {
 }
 
 type MakerModelCard_Content_ModelPackageDetails_InferenceSpecification_Containers struct {
-	// Specifies the URI of the container image used for inference in the model package. (AI-inferred)
 	Image any
-	// The S3 URL of the model artifacts for this container in the model package's inference specification. (AI-inferred)
 	ModelDataUrl any
-	// The name of the model in the model card's model overview that this inference container is associated with, used to link a specific container to a model. (AI-inferred)
 	NearestModelName any
 }
 
@@ -119,20 +100,16 @@ type MakerModelCard_Content_ModelPackageDetails_InferenceSpecification struct {
 }
 
 type MakerModelCard_Content_ModelPackageDetails_SourceAlgorithms struct {
-	// Specifies the name of the algorithm used to create the model in the corresponding source algorithm entry of the model package details in the SageMaker model card. (AI-inferred)
 	AlgorithmName any
-	// Specifies the S3 URI where the trained model artifacts for this source algorithm are stored within the model package details. (AI-inferred)
 	ModelDataUrl any
 }
 
 type MakerModelCard_Content_ModelPackageDetails struct {
 	// A description provided for the model approval
 	ApprovalDescription any
-	// Created_by provides the SageMaker user context (including IAM identity, user profile, and domain) of the principal who created the model package referenced in the model card's model_package_details. (AI-inferred)
 	CreatedBy any
 	// The machine learning domain of the model package you specified. Common machine learning domains include computer vision and natural language processing.
 	Domain any
-	// Specifies the inference specification of the model package, including the container to use for inference and the inputs and outputs the model supports, as part of the model card's model package details. (AI-inferred)
 	InferenceSpecification any
 	// Current approval status of model package
 	ModelApprovalStatus any
@@ -148,76 +125,57 @@ type MakerModelCard_Content_ModelPackageDetails struct {
 	ModelPackageStatus any
 	// Version of the model package
 	ModelPackageVersion any
-	// A list of algorithms used to train the model associated with the model package, where each item specifies the algorithm name and its approval status. (AI-inferred)
 	SourceAlgorithms any
 	// The machine learning task you specified that your model package accomplishes. Common machine learning tasks include object detection and image classification.
 	Task any
 }
 
 type MakerModelCard_Content_TrainingDetails_ObjectiveFunction_Function struct {
-	// Specifies the optimization direction (e.g., minimize or maximize) of the objective function used during model training. (AI-inferred)
 	Condition any
-	// The name of the objective metric that the model training seeks to optimize, such as 'accuracy' or 'loss', as recorded in the SageMaker Model Card's training details objective function. (AI-inferred)
 	Facet any
-	// The objective function (e.g., loss function) used to train the model, recorded in the training details section of the SageMaker model card. (AI-inferred)
 	Function any
 }
 
 type MakerModelCard_Content_TrainingDetails_ObjectiveFunction struct {
 	// objective function that training job is optimized for.
 	Function any
-	// Provides free-form notes or additional context about the objective function used during model training, such as details about the loss function or optimization metric. (AI-inferred)
 	Notes any
 }
 
 type MakerModelCard_Content_TrainingDetails_TrainingJobDetails_HyperParameters struct {
-	// The name of a hyperparameter (for example, 'learning_rate') recorded for the SageMaker training job, paired with its value in the corresponding hyper_parameters entry within the model card's training details. (AI-inferred)
 	Name any
-	// The value assigned to a specific hyperparameter for the training job, where the hyperparameter name is the corresponding map key. (AI-inferred)
 	Value any
 }
 
 type MakerModelCard_Content_TrainingDetails_TrainingJobDetails_TrainingMetrics struct {
-	// The name of a specific training metric, such as accuracy or loss, recorded for the training job in the model card's training details. (AI-inferred)
 	Name any
-	// Adds an optional note to a training metric in the model card, allowing you to document additional context or caveats about that metric's value and how it was measured. (AI-inferred)
 	Notes any
-	// The numerical value of a specific training metric (such as loss or accuracy) recorded during model training for the SageMaker model card, paired with the metric's name in the training metrics list. (AI-inferred)
 	Value any
 }
 
 type MakerModelCard_Content_TrainingDetails_TrainingJobDetails struct {
-	// Specifies the list of hyperparameter name-value pairs used to configure the training job for the model, as recorded in the model card's training details. (AI-inferred)
 	HyperParameters any
 	// SageMaker Training job arn.
 	TrainingArn any
 	// Location of the model datasets.
 	TrainingDatasets any
-	// Specifies the hardware and software environment (e.g., instance type, GPU, OS, framework, and Python version) used during the model's SageMaker training job, for documentation in the model card. (AI-inferred)
 	TrainingEnvironment any
-	// A list of training metrics (e.g., loss, accuracy) recorded during the model training job, each containing a name and a numeric value. (AI-inferred)
 	TrainingMetrics any
-	// Specifies the list of hyperparameter names and values that the user explicitly provided for the training job, stored as part of the training job details in the SageMaker model card. (AI-inferred)
 	UserProvidedHyperParameters any
-	// A list of user-provided training metrics (name-value pairs) that are included in the model card to document additional or custom performance measurements for the training job. (AI-inferred)
 	UserProvidedTrainingMetrics any
 }
 
 type MakerModelCard_Content_TrainingDetails struct {
 	// the objective function the model will optimize for.
 	ObjectiveFunction any
-	// This object specifies the details of the SageMaker training job(s) used to train the model, including the training job name, environment, and training metrics, as part of the training details section of the model card content. (AI-inferred)
 	TrainingJobDetails any
-	// Captures additional observations or notes about the model training process, such as insights or anomalies encountered during training. (AI-inferred)
 	TrainingObservations any
 }
 
 type MakerModelCard_Content struct {
-	// Specifies the Additional Information section of the model card content, providing a structured place for supplementary details about the model such as development notes, limitations, or other custom content beyond the standard overview, training, and evaluation sections. (AI-inferred)
 	AdditionalInformation any
 	// Business details.
 	BusinessDetails any
-	// Provides the list of evaluation details for the model card, including each evaluation's name, observation, datasets used, and metric groups with their measured values. (AI-inferred)
 	EvaluationDetails any
 	// Intended usage of model.
 	IntendedUses any
@@ -244,7 +202,6 @@ type MakerModelCard_SecurityConfig struct {
 }
 
 type MakerModelCard_Tags struct {
-	// The key part of a user-defined tag attached to the SageMaker Model Card, enabling metadata for resource organization, access control, and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }

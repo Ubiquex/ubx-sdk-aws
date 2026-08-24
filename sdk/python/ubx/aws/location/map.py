@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Map_Configuration:
-    # Specifies the list of custom layers to include in the map configuration, allowing additional data layers to be displayed on top of the base map style. (AI-inferred)
     custom_layers: Any = None
-    # Sets the ISO 3166-1 alpha-3 country code that determines the political view of the map, controlling which country's rendering of borders, labels, and contested territories is used. (AI-inferred)
     political_view: Any = None
-    # Specifies the map style (e.g., 'VectorEsriStreets' or 'VectorHereExplore') that determines the visual appearance and data provider for the AWS Location map resource. (AI-inferred)
     style: Any = None
 
 @dataclasses.dataclass
 class Map_Tags:
-    # The key of a tag attached to the AWS Location Service map, used to identify and categorize the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag attached to an AWS Location Service map, used for cost allocation and resource identification. (AI-inferred)
     value: Any = None
 
 _Map_ConfigurationFields = {
@@ -35,30 +30,22 @@ _Map_TagsFields = {
 
 @dataclasses.dataclass
 class MapConfig:
-    # Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
     configuration: Any = None
     description: Any = None
-    # A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
     map_name: Any = None
-    # Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred)
     pricing_plan: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class MapAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Location Service map resource. (AI-inferred)
     arn: Any = None
-    # Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
     configuration: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     create_time: Any = None
     description: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred)
     map_arn: Any = None
-    # A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
     map_name: Any = None
-    # Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred)
     pricing_plan: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

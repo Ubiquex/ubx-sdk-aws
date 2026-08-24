@@ -27,9 +27,7 @@ class SyncLocationHdfs_ManagedSecretConfig:
 
 @dataclasses.dataclass
 class SyncLocationHdfs_NameNodes:
-    # The hostname or IP address of the HDFS NameNode to which AWS DataSync connects, part of the name_nodes list for the HDFS location. (AI-inferred)
     hostname: Any = None
-    # The port number on which the HDFS NameNode service is listening for connections. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
@@ -42,7 +40,6 @@ class SyncLocationHdfs_QopConfiguration:
 @dataclasses.dataclass
 class SyncLocationHdfs_Tags:
     key: Any = None
-    # The value portion of a key-value tag that you assign to this AWS DataSync HDFS location, used for metadata and resource management. (AI-inferred)
     value: Any = None
 
 _SyncLocationHdfs_CustomSecretConfigFields = {

@@ -5,13 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancesVolume_TagSpecifications_Tags struct {
 	Key any
-	// The value of a tag assigned to the WorkSpaces volume within the tag specification, used to categorize and manage the volume. (AI-inferred)
 	Value any
 }
 
 type InstancesVolume_TagSpecifications struct {
 	ResourceType any
-	// The tags block within a tag specification, used to define key-value pairs that are attached to the WorkSpaces instance volume for identification and resource management. (AI-inferred)
 	Tags any
 }
 

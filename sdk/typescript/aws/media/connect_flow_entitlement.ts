@@ -23,9 +23,7 @@ export interface ConnectFlowEntitlement_Encryption {
 }
 
 export interface ConnectFlowEntitlement_Tags {
-  /** The key of a tag attached to the AWS Elemental MediaConnect flow entitlement, used to organize, identify, and optionally drive cost allocation for this entitlement resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag key-value pair associated with this AWS Elemental MediaConnect flow entitlement, used for metadata, cost allocation, and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

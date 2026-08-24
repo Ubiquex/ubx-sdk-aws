@@ -2,74 +2,50 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Agent_ActionGroups_ActionGroupExecutor {
-  /** Determines the custom control mode for the action group executor; when set to the string value 'AMAZON_USER_INPUT', the agent returns action group invocation results to the calling application for execution rather than invoking a Lambda function. (AI-inferred) */
   customControl?: string | Computed<string>;
-  /** The ARN of the AWS Lambda function that serves as the executor for this action group in the Bedrock agent. (AI-inferred) */
   lambda?: string | Computed<string>;
 }
 
 export interface Agent_ActionGroups_ApiSchema_S3 {
-  /** The name of the S3 bucket that contains the OpenAPI schema file defining the API for this action group. (AI-inferred) */
   s3BucketName?: string | Computed<string>;
-  /** The S3 object key of the OpenAPI schema file stored in the S3 bucket specified by the sibling s3BucketName, used to define the API schema for this action group. (AI-inferred) */
   s3ObjectKey?: string | Computed<string>;
 }
 
 export interface Agent_ActionGroups_ApiSchema {
-  /** The inline OpenAPI schema (JSON or YAML) string that defines the API operations for the action group, used when the schema is provided directly rather than via an S3 object. (AI-inferred) */
   payload?: string | Computed<string>;
-  /** Specifies the S3 bucket, key, and optional version for the OpenAPI schema that defines the action group's API. (AI-inferred) */
   s3?: Agent_ActionGroups_ApiSchema_S3 | Computed<Agent_ActionGroups_ApiSchema_S3>;
 }
 
 export interface Agent_ActionGroups_FunctionSchema_Functions {
-  /** Describes the function's purpose so that the Amazon Bedrock Agent can evaluate when to invoke it. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the function defined in the function schema for an action group of an Amazon Bedrock agent, which the agent uses to invoke the function. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the parameters for each function in an agent's action group function schema, including each parameter's name, type, description, and required flag for the function invocation. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
-  /** Specifies whether the agent requires user confirmation before invoking this function, with valid values being ENABLED or DISABLED. (AI-inferred) */
   requireConfirmation?: string | Computed<string>;
 }
 
 export interface Agent_ActionGroups_FunctionSchema {
-  /** Defines the list of functions (each with name, description, and parameters) that the Bedrock agent can invoke through this action group. (AI-inferred) */
   functions?: Agent_ActionGroups_FunctionSchema_Functions[] | Computed<Agent_ActionGroups_FunctionSchema_Functions[]>;
 }
 
 export interface Agent_ActionGroups {
-  /** Specifies the executor of an action group, which is either the ARN of a Lambda function that the agent invokes for the action group's logic or a custom control mode (like RETURN_CONTROL) that determines whether the agent hands control back to the caller. (AI-inferred) */
   actionGroupExecutor?: Agent_ActionGroups_ActionGroupExecutor | Computed<Agent_ActionGroups_ActionGroupExecutor>;
-  /** The name of the action group, required to be unique among all action groups defined for the agent and used to reference it in the agent configuration. (AI-inferred) */
   actionGroupName?: string | Computed<string>;
-  /** Indicates whether the action group is enabled or disabled, with allowed values ENABLED and DISABLED. (AI-inferred) */
   actionGroupState?: string | Computed<string>;
-  /** The API schema object for the action group, which provides an S3 location or an inline OpenAPI-compatible payload that defines the operations the agent can invoke. (AI-inferred) */
   apiSchema?: Agent_ActionGroups_ApiSchema | Computed<Agent_ActionGroups_ApiSchema>;
-  /** A free-form text field that describes the purpose or functionality of the action group, which defines the set of APIs or tools the agent can invoke. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the schema of functions available to the agent within this action group, defining the function signatures and parameters that the agent can invoke to interact with external systems. (AI-inferred) */
   functionSchema?: Agent_ActionGroups_FunctionSchema | Computed<Agent_ActionGroups_FunctionSchema>;
-  /** Specifies the unique identifier (signature) of a parent action group when this action group is defined as a sub-action group, establishing a hierarchical relationship between the action groups within the Bedrock agent. (AI-inferred) */
   parentActionGroupSignature?: string | Computed<string>;
-  /** This boolean controls whether the action group's deletion skips the AWS resource-in-use check, allowing the action group to be removed even if it is still considered in use by the agent or other AWS resources. (AI-inferred) */
   skipResourceInUseCheckOnDelete?: boolean | Computed<boolean>;
 }
 
 export interface Agent_AgentCollaborators_AgentDescriptor {
-  /** The Amazon Resource Name (ARN) of the alias of the collaborator agent that this agent can invoke. (AI-inferred) */
   aliasArn?: string | Computed<string>;
 }
 
 export interface Agent_AgentCollaborators {
-  /** Specifies the agent ID and alias ARN that identify the collaborator agent in a multi-agent collaboration, allowing the current Bedrock agent to invoke and delegate to that sub-agent. (AI-inferred) */
   agentDescriptor?: Agent_AgentCollaborators_AgentDescriptor | Computed<Agent_AgentCollaborators_AgentDescriptor>;
-  /** The instruction that the main agent uses to determine how to delegate tasks or queries to this sub-agent collaborator. (AI-inferred) */
   collaborationInstruction?: string | Computed<string>;
-  /** The name of the collaborating agent that this Bedrock agent can call during multi-agent collaboration, used to identify the sub-agent within the agent_collaborators list. (AI-inferred) */
   collaboratorName?: string | Computed<string>;
-  /** Determines whether the conversation history is relayed to the collaborator agent, with values such as TO_COLLABORATOR or DISABLED. (AI-inferred) */
   relayConversationHistory?: string | Computed<string>;
 }
 
@@ -91,11 +67,8 @@ export interface Agent_GuardrailConfiguration {
 }
 
 export interface Agent_KnowledgeBases {
-  /** The description of a knowledge base attached to the Bedrock agent, which provides a free-form text explanation of the knowledge base's purpose and is stored as part of the agent's knowledge base configuration. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The unique identifier of the Amazon Bedrock knowledge base that the agent uses to retrieve information for response generation. (AI-inferred) */
   knowledgeBaseId?: string | Computed<string>;
-  /** Defines the runtime state of the connected knowledge base, allowing you to enable or disable its use by the Amazon Bedrock agent, with valid values of ENABLED and DISABLED. (AI-inferred) */
   knowledgeBaseState?: string | Computed<string>;
 }
 
@@ -114,34 +87,21 @@ export interface Agent_MemoryConfiguration {
 }
 
 export interface Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfiguration {
-  /** Specifies the maximum number of tokens the model is allowed to generate in its response for this prompt configuration. (AI-inferred) */
   maximumLength?: number | Computed<number>;
-  /** Specifies a list of stop sequences (strings) that cause the model to halt token generation when any of them is encountered in the output. (AI-inferred) */
   stopSequences?: string[] | Computed<string[]>;
-  /** Specifies the sampling temperature for the model's inference, controlling the randomness of generated responses for this prompt's configuration, where higher values yield more diverse outputs. (AI-inferred) */
   temperature?: number | Computed<number>;
-  /** The top_k sampling parameter specifies the number of most-likely tokens to consider for each generation step, controlling the randomness and diversity of the model's responses within the prompt's inference configuration. (AI-inferred) */
   topK?: number | Computed<number>;
-  /** Sets the nucleus sampling probability threshold for the foundation model, such that only tokens whose cumulative probability mass reaches this top_p value are considered during response generation. (AI-inferred) */
   topP?: number | Computed<number>;
 }
 
 export interface Agent_PromptOverrideConfiguration_PromptConfigurations {
-  /** Specifies a JSON object of additional inference parameters that are passed through to the foundation model, beyond the standard inference configuration, when the prompt is invoked. (AI-inferred) */
   additionalModelRequestFields?: unknown | Computed<unknown>;
-  /** Provides the base prompt template string for this prompt configuration, which contains the instructions and placeholder variables that the Bedrock agent uses when generating the prompt for the corresponding prompt type. (AI-inferred) */
   basePromptTemplate?: string | Computed<string>;
-  /** The Amazon Bedrock foundation model ID (e.g., 'anthropic.claude-v2') used for this prompt configuration in the agent's prompt override settings. (AI-inferred) */
   foundationModel?: string | Computed<string>;
-  /** Specifies the inference parameters (such as temperature, top P, and maximum length) for a particular prompt configuration in the agent's prompt override settings. (AI-inferred) */
   inferenceConfiguration?: Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfiguration | Computed<Agent_PromptOverrideConfiguration_PromptConfigurations_InferenceConfiguration>;
-  /** Specifies the parsing mode for the prompt configuration, indicating whether the agent uses the default parser (DEFAULT) or an overridden parser prompt (OVERRIDE) to interpret the model's output. (AI-inferred) */
   parserMode?: string | Computed<string>;
-  /** Specifies whether the prompt configuration uses the default Bedrock prompt or a custom override, with valid values PROMPT_CREATION_MODE_DEFAULT and PROMPT_CREATION_MODE_OVERRIDDEN. (AI-inferred) */
   promptCreationMode?: string | Computed<string>;
-  /** Determines whether this prompt override configuration is active (ENABLED) or inactive (DISABLED), controlling whether the custom prompt is used for the associated agent step. (AI-inferred) */
   promptState?: string | Computed<string>;
-  /** Specifies which step in the agent's orchestration flow this prompt override applies to, such as PRE_PROCESSING, ORCHESTRATION, POST_PROCESSING, or KNOWLEDGE_BASE_RESPONSE_GENERATION. (AI-inferred) */
   promptType?: string | Computed<string>;
 }
 

@@ -2,17 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerCodeRepository_GitConfig {
-  /** The branch of the Git repository that SageMaker uses for this code repository. (AI-inferred) */
   branch?: string | Computed<string>;
-  /** The URL where the Git repository is located; SageMaker clones this repository for the code repository. (AI-inferred) */
   repositoryUrl: string | Computed<string>;
-  /** The ARN of an AWS Secrets Manager secret that stores the credentials, such as a username and password, for accessing the private Git repository specified in the Git configuration. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface MakerCodeRepository_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag that is applied to the AWS SageMaker Code Repository, allowing you to associate metadata for resource organization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -28,22 +24,15 @@ const MakerCodeRepository_TagsFields: FieldMap = {
 };
 
 export interface MakerCodeRepositoryConfig {
-  /** Specifies the name of the SageMaker code repository, which uniquely identifies the repository within an AWS account and Region and is used to reference it in SageMaker operations. (AI-inferred) */
   codeRepositoryName?: string | Computed<string>;
-  /** The Git configuration for the SageMaker code repository, which specifies the repository URL and optionally the ARN of an AWS Secrets Manager secret containing Git credentials. (AI-inferred) */
   gitConfig: MakerCodeRepository_GitConfig | Computed<MakerCodeRepository_GitConfig>;
-  /** Specifies the list of tags (key-value pairs) to attach to the SageMaker Code Repository, enabling you to categorize and manage this repository resource. (AI-inferred) */
   tags?: MakerCodeRepository_Tags[] | Computed<MakerCodeRepository_Tags[]>;
 }
 
 export interface MakerCodeRepositoryAttrs {
-  /** Specifies the name of the SageMaker code repository, which uniquely identifies the repository within an AWS account and Region and is used to reference it in SageMaker operations. (AI-inferred) */
   codeRepositoryName: string;
-  /** The Git configuration for the SageMaker code repository, which specifies the repository URL and optionally the ARN of an AWS Secrets Manager secret containing Git credentials. (AI-inferred) */
   gitConfig: MakerCodeRepository_GitConfig;
-  /** The unique name of the SageMaker code repository, which serves as the resource's identifier in AWS and Terraform state. (AI-inferred) */
   id: string;
-  /** Specifies the list of tags (key-value pairs) to attach to the SageMaker Code Repository, enabling you to categorize and manage this repository resource. (AI-inferred) */
   tags: MakerCodeRepository_Tags[];
 }
 

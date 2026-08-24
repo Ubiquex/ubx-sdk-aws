@@ -6,50 +6,35 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type UibuilderForm_Cta_Cancel_Position struct {
 	Below any
 	Fixed any
-	// Specifies the name of the field that the cancel button should be placed to the right of within the form layout. (AI-inferred)
 	RightOf any
 }
 
 type UibuilderForm_Cta_Cancel struct {
-	// The text content (label) displayed on the Cancel button within the call-to-action (CTA) section of the form. (AI-inferred)
 	Children any
-	// Determines whether the cancel button is excluded from the form's call-to-action (CTA) area. (AI-inferred)
 	Excluded any
-	// Defines the offset coordinates (top, right, bottom, left) that determine where the cancel button is placed within the form's call-to-action area in the AWS Amplify UI Builder form definition. (AI-inferred)
 	Position any
 }
 
 type UibuilderForm_Cta struct {
-	// Defines the cancel button's configuration, including its label (children) and position, within the form's call-to-action area. (AI-inferred)
 	Cancel any
-	// Configures the clear button within the form's call-to-action (CTA) area, including its visibility (excluded) and label text (children). (AI-inferred)
 	Clear any
-	// Determines where the call-to-action button is placed within the form layout (e.g., top, bottom, start, or end). (AI-inferred)
 	Position any
-	// Configures the submit button for the form's call-to-action (CTA) area, specifying its label text and visibility. (AI-inferred)
 	Submit any
 }
 
 type UibuilderForm_DataType struct {
-	// Specifies whether the form's data type is backed by an Amplify DataStore model (using 'DataStore') or by a custom data source (using 'Custom'). (AI-inferred)
 	DataSourceType any
-	// The name of the data type (e.g., an Amplify GraphQL model or custom data source) that the form is associated with, as defined in the Amplify UI Builder form's dataType configuration. (AI-inferred)
 	DataTypeName any
 }
 
 type UibuilderForm_Style_HorizontalGap struct {
-	// Defines the horizontal spacing between form elements by referencing a design token from the associated Amplify UI Builder theme. (AI-inferred)
 	TokenReference any
-	// The concrete CSS gap value (e.g., '1rem' or '12px') applied as the horizontal spacing between form elements when the gap is specified as a literal value rather than referencing a design token. (AI-inferred)
 	Value any
 }
 
 type UibuilderForm_Style struct {
-	// The horizontal gap (spacing) between form fields in the style configuration of an AWS Amplify UI Builder form, typically a numeric value representing pixels. (AI-inferred)
 	HorizontalGap any
-	// Specifies the outer padding around the form, which can be configured as a fixed value or a token reference. (AI-inferred)
 	OuterPadding any
-	// Configures the vertical gap between form elements by providing either a fixed spacing value or a reference to an Amplify design token, controlling the vertical layout spacing within the form's style. (AI-inferred)
 	VerticalGap any
 }
 
@@ -117,58 +102,33 @@ var UibuilderForm_StyleFields = ubx.FieldMap{
 	}
 
 type UibuilderFormConfig struct {
-	// The unique identifier of the Amplify application to which this UI Builder form belongs, scoping the form resource to a specific app. (AI-inferred)
 	AppId any
-	// Configures the call-to-action button settings for the Amplify UI Builder form, including the placement (e.g., top, bottom, or both) and the labels/behavior of buttons like submit and clear. (AI-inferred)
 	Cta any
-	// Specifies the data source for the form, including the data source type such as DataStore or custom, and the associated name of the underlying model or data source. (AI-inferred)
 	DataType any
-	// The name of the Amplify environment (such as 'dev' or 'prod') in which this UI Builder form is created and managed. (AI-inferred)
 	EnvironmentName any
-	// Configures the fields that appear in the form, including each field's label, data type, display position, and validation rules. (AI-inferred)
 	Fields any
-	// Specifies the operation the form performs on the data model, with valid values limited to 'create', 'update', or 'delete'. (AI-inferred)
 	FormActionType any
-	// Determines the visual decorator applied to field labels in the generated form, with allowed values such as 'none', 'asterisk', or 'optional' to indicate required or optional fields. (AI-inferred)
 	LabelDecorator any
-	// The name of the Amplify UI Builder form, used to identify the form within the Amplify application. (AI-inferred)
 	Name any
-	// The version of the form schema that defines the structure and validation rules for the form, used by Amplify UI Builder to interpret the form data correctly. (AI-inferred)
 	SchemaVersion any
-	// Configures the sectional (layout) elements of the form—such as headers, footers, or field groups—by providing a map of section names to their positional and styling settings. (AI-inferred)
 	SectionalElements any
-	// Specifies the styling for the form's layout, including horizontal gap, vertical gap, and outer padding values used to space form elements and the container. (AI-inferred)
 	Style any
-	// Specifies a map of tag key-value pairs to attach to the Amplify UI Builder form, used for resource categorization and access control. (AI-inferred)
 	Tags any
 }
 
 type UibuilderFormAttrs struct {
-	// The unique identifier of the Amplify application to which this UI Builder form belongs, scoping the form resource to a specific app. (AI-inferred)
 	AppId any
-	// Configures the call-to-action button settings for the Amplify UI Builder form, including the placement (e.g., top, bottom, or both) and the labels/behavior of buttons like submit and clear. (AI-inferred)
 	Cta any
-	// Specifies the data source for the form, including the data source type such as DataStore or custom, and the associated name of the underlying model or data source. (AI-inferred)
 	DataType any
-	// The name of the Amplify environment (such as 'dev' or 'prod') in which this UI Builder form is created and managed. (AI-inferred)
 	EnvironmentName any
-	// Configures the fields that appear in the form, including each field's label, data type, display position, and validation rules. (AI-inferred)
 	Fields any
-	// Specifies the operation the form performs on the data model, with valid values limited to 'create', 'update', or 'delete'. (AI-inferred)
 	FormActionType any
-	// The unique identifier assigned to this Amplify UI Builder form, used to reference the form within its app and environment. (AI-inferred)
 	Id any
-	// Determines the visual decorator applied to field labels in the generated form, with allowed values such as 'none', 'asterisk', or 'optional' to indicate required or optional fields. (AI-inferred)
 	LabelDecorator any
-	// The name of the Amplify UI Builder form, used to identify the form within the Amplify application. (AI-inferred)
 	Name any
-	// The version of the form schema that defines the structure and validation rules for the form, used by Amplify UI Builder to interpret the form data correctly. (AI-inferred)
 	SchemaVersion any
-	// Configures the sectional (layout) elements of the form—such as headers, footers, or field groups—by providing a map of section names to their positional and styling settings. (AI-inferred)
 	SectionalElements any
-	// Specifies the styling for the form's layout, including horizontal gap, vertical gap, and outer padding values used to space form elements and the container. (AI-inferred)
 	Style any
-	// Specifies a map of tag key-value pairs to attach to the Amplify UI Builder form, used for resource categorization and access control. (AI-inferred)
 	Tags any
 }
 

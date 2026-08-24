@@ -4,16 +4,12 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TtwinMakerEntity_Status_Error struct {
-	// The machine-readable error code returned in the entity's status when AWS IoT TwinMaker fails to create or update the entity, providing a programmatic identifier for the failure type. (AI-inferred)
 	Code any
-	// The error message from AWS IoT TwinMaker explaining why the entity is in the failed or error state. (AI-inferred)
 	Message any
 }
 
 type TtwinMakerEntity_Status struct {
-	// Contains the error code and message returned by AWS IoT TwinMaker when the entity is in an ERROR state, providing details about why an entity operation such as creation or update failed. (AI-inferred)
 	Error any
-	// The current lifecycle state of the IoT TwinMaker entity, such as CREATING, ACTIVE, UPDATING, DELETING, or ERROR, as reported by AWS IoT TwinMaker. (AI-inferred)
 	State any
 }
 
@@ -43,7 +39,6 @@ type TtwinMakerEntityAttrs struct {
 	Components any
 	// A map that sets information about a composite component.
 	CompositeComponents any
-	// The date and time when the IoT TwinMaker entity was created, in ISO 8601 format. (AI-inferred)
 	CreationDateTime any
 	// The description of the entity.
 	Description any
@@ -55,11 +50,9 @@ type TtwinMakerEntityAttrs struct {
 	HasChildEntities any
 	// The ID of the parent entity.
 	ParentEntityId any
-	// The current status of the entity, including its state (e.g., CREATING, UPDATING, ACTIVE, DELETING, DELETED) and any error details if an operation failed. (AI-inferred)
 	Status any
 	// A key-value pair to associate with a resource.
 	Tags any
-	// The date and time when the entity was last updated, returned as a string in ISO 8601 format. (AI-inferred)
 	UpdateDateTime any
 	// The ID of the workspace.
 	WorkspaceId any

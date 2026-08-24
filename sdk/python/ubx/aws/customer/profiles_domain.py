@@ -86,7 +86,6 @@ class ProfilesDomain_RuleBasedMatching_AttributeTypesSelector:
 
 @dataclasses.dataclass
 class ProfilesDomain_RuleBasedMatching_MatchingRules:
-    # Defines a single matching rule by listing the profile attribute names (e.g., '_account.Phone') that must have identical values across profiles for them to be considered a match. (AI-inferred)
     rule: Any = None
 
 @dataclasses.dataclass
@@ -105,7 +104,6 @@ class ProfilesDomain_RuleBasedMatching:
     max_allowed_rule_level_for_matching: Any = None
     # Indicates the maximum allowed rule level for merging.
     max_allowed_rule_level_for_merging: Any = None
-    # The current status of the rule-based matching configuration for the Customer Profiles domain, with values ACTIVE (enabled and running), IN_PROGRESS (being enabled or updated), or DISABLED (turned off). (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -121,9 +119,7 @@ class ProfilesDomain_Stats:
 
 @dataclasses.dataclass
 class ProfilesDomain_Tags:
-    # The key of a user-defined tag that can be attached to the Amazon Connect Customer Profiles domain. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Amazon Connect Customer Profiles domain, used to assign arbitrary metadata for resource organization and cost allocation. (AI-inferred)
     value: Any = None
 
 _ProfilesDomain_Matching_AutoMerging_ConflictResolutionFields = {

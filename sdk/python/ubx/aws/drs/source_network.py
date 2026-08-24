@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SourceNetwork_Tags:
-    # A user-defined key for a tag on the AWS Elastic Disaster Recovery (DRS) Source Network, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

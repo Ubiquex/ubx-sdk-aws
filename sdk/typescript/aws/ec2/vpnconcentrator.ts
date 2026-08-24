@@ -23,13 +23,11 @@ export interface VpnconcentratorConfig {
 export interface VpnconcentratorAttrs {
   /** Any tags assigned to the VPN concentrator. */
   tags: Vpnconcentrator_Tags[];
-  /** The unique identifier of the transit gateway attachment that is automatically provisioned when the VPN connection is associated with a transit gateway. (AI-inferred) */
   transitGatewayAttachmentId: string;
   /** The ID of the transit gateway associated with the VPN concentrator. */
   transitGatewayId: string;
   /** The type of VPN concentrator. */
   type: string;
-  /** The unique identifier automatically assigned by AWS to the VPN concentrator when it is created, used for referencing the resource. (AI-inferred) */
   vpnConcentratorId: string;
 }
 

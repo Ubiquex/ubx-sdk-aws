@@ -2,42 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig {
-  /** Specifies the time-to-live (TTL) in seconds for caching the Lambda authorizer result, after which AppSync discards the cached authorization response and invokes the Lambda authorizer again for the next request. (AI-inferred) */
   authorizerResultTtlInSeconds?: number | Computed<number>;
-  /** The ARN of the AWS Lambda function that serves as the custom authorizer for this additional AppSync authentication provider, invoked by AppSync to authorize requests. (AI-inferred) */
   authorizerUri?: string | Computed<string>;
-  /** Specifies a regular expression that AppSync uses to validate the identity token before invoking the Lambda authorizer function. (AI-inferred) */
   identityValidationExpression?: string | Computed<string>;
 }
 
 export interface SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig {
-  /** The number of milliseconds that an OpenID Connect token remains valid after being issued to a user, controlling token expiration for authentication in AppSync. (AI-inferred) */
   authTtl?: number | Computed<number>;
-  /** The client identifier (audience) that AWS AppSync expects in the 'aud' claim of JWT tokens from the configured OpenID Connect provider, used to validate tokens presented by client applications. (AI-inferred) */
   clientId?: string | Computed<string>;
-  /** The number of milliseconds that a token issued by the OpenID Connect provider remains valid after its 'issued at' (iat) time, controlling how long an issued token can be used for authentication. (AI-inferred) */
   iatTtl?: number | Computed<number>;
-  /** The issuer URL for the OpenID Connect provider, which identifies the OIDC provider issuing the authentication tokens for this additional authentication provider. (AI-inferred) */
   issuer?: string | Computed<string>;
 }
 
 export interface SyncGraphQlapi_AdditionalAuthenticationProviders_UserPoolConfig {
-  /** A regular expression used to validate the app client ID of the Amazon Cognito user pool that is allowed to authenticate through this additional authentication provider. (AI-inferred) */
   appIdClientRegex?: string | Computed<string>;
-  /** The AWS Region in which the specified Amazon Cognito user pool for this additional authentication provider is located. (AI-inferred) */
   awsRegion?: string | Computed<string>;
-  /** The ID of the Amazon Cognito user pool that this additional authentication provider uses to authenticate requests for the AppSync GraphQL API. (AI-inferred) */
   userPoolId?: string | Computed<string>;
 }
 
 export interface SyncGraphQlapi_AdditionalAuthenticationProviders {
-  /** Defines the AWS AppSync authentication method (e.g., API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, or AWS_LAMBDA) that this additional authentication provider uses to authorize requests to the GraphQL API. (AI-inferred) */
   authenticationType?: string | Computed<string>;
-  /** Configures the Lambda authorizer settings, such as the authorizer URI and identity validation expression, for the additional authentication provider on the AppSync GraphQL API. (AI-inferred) */
   lambdaAuthorizerConfig?: SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig | Computed<SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig>;
-  /** Configuration for an OpenID Connect (OIDC) authentication provider, including the issuer URL, client ID, and optional token TTL settings, used when adding an additional authentication provider to the GraphQL API. (AI-inferred) */
   openIdconnectConfig?: SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig | Computed<SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig>;
-  /** Configures the Amazon Cognito user pool settings for an additional authentication provider, specifying the user pool ID, AWS region, and default action for authentication. (AI-inferred) */
   userPoolConfig?: SyncGraphQlapi_AdditionalAuthenticationProviders_UserPoolConfig | Computed<SyncGraphQlapi_AdditionalAuthenticationProviders_UserPoolConfig>;
 }
 
@@ -61,7 +47,6 @@ export interface SyncGraphQlapi_LogConfig {
 
 export interface SyncGraphQlapi_Tags {
   key?: string | Computed<string>;
-  /** The value part of a tag (key-value pair) that is assigned to the AWS AppSync GraphQL API resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -145,21 +130,17 @@ export interface SyncGraphQlapiConfig {
   apiType?: string | Computed<string>;
   /** Security configuration for your GraphQL API */
   authenticationType: string | Computed<string>;
-  /** Specifies the enhanced metrics configuration for this AppSync GraphQL API, including toggles for resolver-level, data source-level, and operation-level CloudWatch metrics. (AI-inferred) */
   enhancedMetricsConfig?: SyncGraphQlapi_EnhancedMetricsConfig | Computed<SyncGraphQlapi_EnhancedMetricsConfig>;
   /** A map containing the list of resources with their properties and environment variables. */
   environmentVariables?: unknown | Computed<unknown>;
   /** Sets the value of the GraphQL API to enable (ENABLED) or disable (DISABLED) introspection. If no value is provided, the introspection configuration will be set to ENABLED by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled. */
   introspectionConfig?: string | Computed<string>;
-  /** Defines the Lambda authorizer configuration for the GraphQL API, specifying the Lambda function ARN and optional settings for result caching and identity validation. (AI-inferred) */
   lambdaAuthorizerConfig?: SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig | Computed<SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig>;
-  /** The log_config block configures CloudWatch Logs for the AppSync GraphQL API, specifying the IAM role ARN and the field-level log level (e.g., ERROR or ALL) for the API's execution logs. (AI-inferred) */
   logConfig?: SyncGraphQlapi_LogConfig | Computed<SyncGraphQlapi_LogConfig>;
   /** The AWS Identity and Access Management service role ARN for a merged API. */
   mergedApiExecutionRoleArn?: string | Computed<string>;
   /** The API name */
   name: string | Computed<string>;
-  /** Configures the OpenID Connect (OIDC) settings for the GraphQL API, including the issuer, client ID, and token lifetime values for API authentication. (AI-inferred) */
   openIdconnectConfig?: SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig | Computed<SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig>;
   /** The owner contact information for an API resource. */
   ownerContact?: string | Computed<string>;
@@ -169,7 +150,6 @@ export interface SyncGraphQlapiConfig {
   resolverCountLimit?: number | Computed<number>;
   /** An arbitrary set of tags (key-value pairs) for this GraphQL API. */
   tags?: SyncGraphQlapi_Tags[] | Computed<SyncGraphQlapi_Tags[]>;
-  /** Configures Amazon Cognito user pool authorization for the GraphQL API, including the user pool ID, AWS region, default action (ALLOW or DENY), and optional app client regex filter. (AI-inferred) */
   userPoolConfig?: SyncGraphQlapi_UserPoolConfig | Computed<SyncGraphQlapi_UserPoolConfig>;
   /** Sets the scope of the GraphQL API to public (GLOBAL) or private (PRIVATE). By default, the scope is set to Global if no value is provided. */
   visibility?: string | Computed<string>;
@@ -188,7 +168,6 @@ export interface SyncGraphQlapiAttrs {
   arn: string;
   /** Security configuration for your GraphQL API */
   authenticationType: string;
-  /** Specifies the enhanced metrics configuration for this AppSync GraphQL API, including toggles for resolver-level, data source-level, and operation-level CloudWatch metrics. (AI-inferred) */
   enhancedMetricsConfig: SyncGraphQlapi_EnhancedMetricsConfig;
   /** A map containing the list of resources with their properties and environment variables. */
   environmentVariables: unknown;
@@ -200,15 +179,12 @@ export interface SyncGraphQlapiAttrs {
   graphQlurl: string;
   /** Sets the value of the GraphQL API to enable (ENABLED) or disable (DISABLED) introspection. If no value is provided, the introspection configuration will be set to ENABLED by default. This field will produce an error if the operation attempts to use the introspection feature while this field is disabled. */
   introspectionConfig: string;
-  /** Defines the Lambda authorizer configuration for the GraphQL API, specifying the Lambda function ARN and optional settings for result caching and identity validation. (AI-inferred) */
   lambdaAuthorizerConfig: SyncGraphQlapi_AdditionalAuthenticationProviders_LambdaAuthorizerConfig;
-  /** The log_config block configures CloudWatch Logs for the AppSync GraphQL API, specifying the IAM role ARN and the field-level log level (e.g., ERROR or ALL) for the API's execution logs. (AI-inferred) */
   logConfig: SyncGraphQlapi_LogConfig;
   /** The AWS Identity and Access Management service role ARN for a merged API. */
   mergedApiExecutionRoleArn: string;
   /** The API name */
   name: string;
-  /** Configures the OpenID Connect (OIDC) settings for the GraphQL API, including the issuer, client ID, and token lifetime values for API authentication. (AI-inferred) */
   openIdconnectConfig: SyncGraphQlapi_AdditionalAuthenticationProviders_OpenIdconnectConfig;
   /** The owner contact information for an API resource. */
   ownerContact: string;
@@ -222,7 +198,6 @@ export interface SyncGraphQlapiAttrs {
   resolverCountLimit: number;
   /** An arbitrary set of tags (key-value pairs) for this GraphQL API. */
   tags: SyncGraphQlapi_Tags[];
-  /** Configures Amazon Cognito user pool authorization for the GraphQL API, including the user pool ID, AWS region, default action (ALLOW or DENY), and optional app client regex filter. (AI-inferred) */
   userPoolConfig: SyncGraphQlapi_UserPoolConfig;
   /** Sets the scope of the GraphQL API to public (GLOBAL) or private (PRIVATE). By default, the scope is set to Global if no value is provided. */
   visibility: string;

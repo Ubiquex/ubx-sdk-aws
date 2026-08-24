@@ -4,16 +4,12 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessWirelessGateway_LoRaWan struct {
-	// The LoRaWAN gateway EUI is the unique 16-character hexadecimal identifier for the gateway, required to register it with AWS IoT Wireless. (AI-inferred)
 	GatewayEui any
-	// The LoRaWAN RF region for the gateway, which specifies the frequency band (e.g., US915, EU868) used for communication. (AI-inferred)
 	RfRegion any
 }
 
 type TwirelessWirelessGateway_Tags struct {
-	// The key of a tag attached to an AWS IoT wireless gateway, used to organize, identify, and filter the gateway resource for management and cost tracking. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS IoT Wireless Gateway, used for arbitrary metadata, identification, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -32,7 +28,6 @@ type TwirelessWirelessGatewayConfig struct {
 	Description any
 	// The date and time when the most recent uplink was received.
 	LastUplinkReceivedAt any
-	// The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred)
 	LoRaWan any
 	// Name of Wireless Gateway.
 	Name any
@@ -53,7 +48,6 @@ type TwirelessWirelessGatewayAttrs struct {
 	Id any
 	// The date and time when the most recent uplink was received.
 	LastUplinkReceivedAt any
-	// The LoRaWAN configuration for the wireless gateway, specifying the gateway EUI and service profile ID. (AI-inferred)
 	LoRaWan any
 	// Name of Wireless Gateway.
 	Name any

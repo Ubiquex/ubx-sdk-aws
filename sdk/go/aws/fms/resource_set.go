@@ -4,9 +4,7 @@ package fms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceSet_Tags struct {
-	// The key of a tag attached to an AWS Firewall Manager resource set, used for organizing, identifying, and filtering the resource set in AWS. (AI-inferred)
 	Key any
-	// The value of a tag associated with this AWS Firewall Manager resource set, enabling cost allocation and resource metadata management. (AI-inferred)
 	Value any
 }
 
@@ -16,30 +14,20 @@ var ResourceSet_TagsFields = ubx.FieldMap{
 	}
 
 type ResourceSetConfig struct {
-	// An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred)
 	Description any
-	// The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred)
 	Name any
-	// Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred)
 	ResourceTypeList any
-	// Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred)
 	Resources any
-	// The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred)
 	Tags any
 }
 
 type ResourceSetAttrs struct {
-	// An optional, user-defined text field that describes the purpose or contents of the AWS Firewall Manager resource set, aiding in identification and management. (AI-inferred)
 	Description any
 	// A Base62 ID
 	Id any
-	// The name of the Firewall Manager resource set, which must be unique within the account and is used to identify the resource set in AWS Firewall Manager. (AI-inferred)
 	Name any
-	// Specifies the list of AWS resource types (such as AWS::S3::Bucket or AWS::EC2::Instance) that are included in the resource set, which Firewall Manager uses to identify the resources to apply policies to. (AI-inferred)
 	ResourceTypeList any
-	// Specifies the list of resource identifiers (such as ARNs) that make up this Firewall Manager resource set, which can then be associated with a Firewall Manager policy. (AI-inferred)
 	Resources any
-	// The list of key-value tag objects to attach to the AWS FMS resource set, used for organizing, identifying, and managing the resource set in AWS Firewall Manager. (AI-inferred)
 	Tags any
 }
 

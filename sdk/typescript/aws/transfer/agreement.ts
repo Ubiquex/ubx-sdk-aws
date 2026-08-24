@@ -15,7 +15,6 @@ export interface Agreement_CustomDirectories {
 }
 
 export interface Agreement_Tags {
-  /** The key of a tag attached to an AWS Transfer Family agreement, used to categorize or identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

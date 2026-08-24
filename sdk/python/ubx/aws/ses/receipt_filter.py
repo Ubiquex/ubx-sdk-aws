@@ -43,7 +43,6 @@ class ReceiptFilterConfig:
 class ReceiptFilterAttrs:
     # A structure that describes the IP address filter to create, which consists of a name, an IP address range, and whether to allow or block mail from it.
     filter: Any = None
-    # The name of the SES receipt filter, which serves as the unique Terraform identifier and matches the filter's `name` attribute. (AI-inferred)
     id: Any = None
 
 ReceiptFilter = ubx.ResourceBinding(

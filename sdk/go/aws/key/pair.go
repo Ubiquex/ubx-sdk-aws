@@ -4,7 +4,6 @@ package key
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pair_Tags struct {
-	// The key of a tag attached to the EC2 key pair, used to organize and identify the resource within AWS. (AI-inferred)
 	Key any
 	Value any
 }
@@ -28,13 +27,11 @@ type PairConfig struct {
 }
 
 type PairAttrs struct {
-	// The SHA-1 digest of the DER-encoded public key for the EC2 key pair, used to verify the key's identity. (AI-inferred)
 	KeyFingerprint any
 	// The format of the key pair. Default: ``pem``
 	KeyFormat any
 	// A unique name for the key pair. Constraints: Up to 255 ASCII characters
 	KeyName any
-	// The unique identifier that AWS assigns to the key pair upon creation, for example 'key-1234567890abcdef0'. (AI-inferred)
 	KeyPairId any
 	// The type of key pair. Note that ED25519 keys are not supported for Windows instances. If the ``PublicKeyMaterial`` property is specified, the ``KeyType`` property is ignored, and the key type is inferred from the ``PublicKeyMaterial`` value. Default: ``rsa``
 	KeyType any

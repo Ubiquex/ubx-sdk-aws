@@ -4,90 +4,60 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReceiptRule_Rule_Actions_AddHeaderAction struct {
-	// The name of the custom header that this action adds to the incoming email, such as 'X-Custom-Header'. (AI-inferred)
 	HeaderName any
-	// The value to be included in the custom header that the receipt rule adds to incoming email messages. (AI-inferred)
 	HeaderValue any
 }
 
 type ReceiptRule_Rule_Actions_BounceAction struct {
-	// The message text to include in the bounce response sent to the original sender when the receipt rule's bounce action triggers. (AI-inferred)
 	Message any
-	// The email address that the bounce message is sent from when this bounce action is triggered. (AI-inferred)
 	Sender any
-	// Defines the three-digit SMTP reply code (e.g., '550') that SES returns to the sender when a bounce action is triggered for a received message. (AI-inferred)
 	SmtpReplyCode any
-	// The SMTP reply code to return to the sender when the email is bounced by this rule, specified as a three-digit numeric string (e.g., '550'). (AI-inferred)
 	StatusCode any
-	// The ARN of the Amazon SNS topic that SES publishes a notification to when the bounce action is applied to a received message. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions_ConnectAction struct {
-	// The ARN of the IAM role that Amazon SES assumes to grant access to the specified Amazon Connect instance when delivering an email through the Connect action of this receipt rule. (AI-inferred)
 	IamroleArn any
-	// The ARN of the Amazon Connect instance that the SES receipt rule's ConnectAction connects the incoming email to. (AI-inferred)
 	InstanceArn any
 }
 
 type ReceiptRule_Rule_Actions_LambdaAction struct {
-	// The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon SES invokes when the receipt rule matches an incoming email. (AI-inferred)
 	FunctionArn any
-	// Specifies whether the Lambda function is invoked asynchronously (Event) or synchronously (RequestResponse) when the SES receipt rule matches an incoming email. (AI-inferred)
 	InvocationType any
-	// The ARN of an Amazon SNS topic that Amazon SES notifies when the Lambda action is invoked by a receipt rule. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions_S3Action struct {
-	// The name of the Amazon S3 bucket where the received email message is stored when this S3 action is invoked. (AI-inferred)
 	BucketName any
-	// The ARN of the IAM role that Amazon SES assumes to write to the S3 bucket specified in this S3 action of the receipt rule. (AI-inferred)
 	IamRoleArn any
-	// The ARN of the AWS KMS key used to encrypt the object stored in Amazon S3 by the S3 action of this SES receipt rule; if not provided, Amazon SES uses the default AWS-managed key for the account. (AI-inferred)
 	KmsKeyArn any
-	// The key prefix to prepend to the object name when storing the received email into the S3 bucket specified by the S3 action of this receipt rule. (AI-inferred)
 	ObjectKeyPrefix any
-	// The ARN of an Amazon SNS topic that Amazon SES publishes a notification to when the message is successfully saved to the S3 bucket by this action. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions_Snsaction struct {
-	// Specifies the encoding (UTF-8 or Base64) used for the email content in the Amazon SNS notification sent by this action. (AI-inferred)
 	Encoding any
-	// The ARN of the Amazon SNS topic to which the receipt rule publishes a notification when an incoming email matches the rule. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions_StopAction struct {
-	// Specifies the scope of the SES receipt rule stop action, which must be set to `RuleSet` to stop evaluating the entire receipt rule set. (AI-inferred)
 	Scope any
-	// The ARN of the Amazon SNS topic to which the SES receipt rule's stop action publishes a notification when the rule set evaluation is terminated. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions_WorkmailAction struct {
-	// The ARN of the Amazon WorkMail organization that receives the email when the receipt rule's WorkMail action is invoked. (AI-inferred)
 	OrganizationArn any
-	// The ARN of an Amazon SNS topic to notify when the WorkMail action is triggered by a receipt rule. (AI-inferred)
 	TopicArn any
 }
 
 type ReceiptRule_Rule_Actions struct {
-	// Specifies an action that adds a header to an incoming email when the receipt rule matches, using the provided header name and value. (AI-inferred)
 	AddHeaderAction any
-	// Configures a bounce action that rejects an incoming email and sends a bounce response to the sender, with configurable message text and optional notification to an SNS topic. (AI-inferred)
 	BounceAction any
 	ConnectAction any
-	// Specifies a Lambda action that invokes an AWS Lambda function when the receipt rule matches an incoming email, with properties for the function ARN, invocation type (Event or RequestResponse), and an optional SNS topic for error notifications. (AI-inferred)
 	LambdaAction any
-	// Configures the S3 action for a receipt rule, which saves the incoming email message to an Amazon S3 bucket. (AI-inferred)
 	S3Action any
-	// Defines an SNS action that publishes the received email notification to an Amazon SNS topic when an incoming email matches the receipt rule. (AI-inferred)
 	Snsaction any
-	// Terminates the receipt rule's action chain, causing SES to stop evaluating subsequent actions and rules for the incoming email. (AI-inferred)
 	StopAction any
-	// Configures the WorkMail action for a receipt rule, specifying the Amazon WorkMail organization ARN (and optional SNS topic) that receives the incoming email. (AI-inferred)
 	WorkmailAction any
 }
 

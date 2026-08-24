@@ -15,7 +15,6 @@ export interface PackagePackagingGroup_EgressAccessLogs {
 
 export interface PackagePackagingGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag assigned to the MediaPackage packaging group, used for resource metadata, organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,9 +33,7 @@ const PackagePackagingGroup_TagsFields: FieldMap = {
 };
 
 export interface PackagePackagingGroupConfig {
-  /** Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred) */
   authorization?: PackagePackagingGroup_Authorization | Computed<PackagePackagingGroup_Authorization>;
-  /** Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred) */
   egressAccessLogs?: PackagePackagingGroup_EgressAccessLogs | Computed<PackagePackagingGroup_EgressAccessLogs>;
   /** The ID of the PackagingGroup. */
   id: string | Computed<string>;
@@ -47,11 +44,9 @@ export interface PackagePackagingGroupConfig {
 export interface PackagePackagingGroupAttrs {
   /** The ARN of the PackagingGroup. */
   arn: string;
-  /** Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred) */
   authorization: PackagePackagingGroup_Authorization;
   /** The fully qualified domain name for Assets in the PackagingGroup. */
   domainName: string;
-  /** Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred) */
   egressAccessLogs: PackagePackagingGroup_EgressAccessLogs;
   /** The ID of the PackagingGroup. */
   id: string;

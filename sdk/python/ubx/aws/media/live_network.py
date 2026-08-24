@@ -8,20 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveNetwork_IpPools:
-    # Specifies the CIDR block address range for an IP pool in the MediaLive network, defining the subnet of IP addresses that can be used. (AI-inferred)
     cidr: Any = None
 
 @dataclasses.dataclass
 class LiveNetwork_Routes:
-    # The destination CIDR block (e.g., '10.0.0.0/16') for a static route in the MediaLive network, used to direct matching traffic to the associated gateway. (AI-inferred)
     cidr: Any = None
-    # The IPv4 gateway address (next hop) used by the MediaLive network route to reach the destination CIDR for network traffic. (AI-inferred)
     gateway: Any = None
 
 @dataclasses.dataclass
 class LiveNetwork_Tags:
     key: Any = None
-    # The value of a user-defined tag applied to the AWS MediaLive network, allowing you to attach arbitrary metadata such as environment, team, or cost center for resource organization and identification. (AI-inferred)
     value: Any = None
 
 _LiveNetwork_IpPoolsFields = {
@@ -53,7 +49,6 @@ class LiveNetworkConfig:
 class LiveNetworkAttrs:
     # The ARN of the Network.
     arn: Any = None
-    # The list of unique identifiers for the AWS Elemental MediaLive clusters that are associated with this network. (AI-inferred)
     associated_cluster_ids: Any = None
     # The unique ID of the Network.
     id: Any = None
@@ -63,7 +58,6 @@ class LiveNetworkAttrs:
     name: Any = None
     # The routes for the network
     routes: Any = None
-    # The current lifecycle state of the MediaLive network, as reported by the AWS MediaLive API (for example, CREATING, CREATE_COMPLETE, UPDATE_COMPLETE, DELETE_COMPLETE). (AI-inferred)
     state: Any = None
     # A collection of key-value pairs.
     tags: Any = None

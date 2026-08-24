@@ -8,29 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Feature_EntityOverrides:
-    # The unique identifier of the user or session for which this entity override sets a specific feature variation. (AI-inferred)
     entity_id: Any = None
-    # The name of the variation to assign to the overridden entity in an entity override. (AI-inferred)
     variation: Any = None
 
 @dataclasses.dataclass
 class Feature_Tags:
-    # The key for a tag attached to the Evidently feature, enabling you to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Evidently feature, used to assign custom metadata for resource organization, cost allocation, and access control in AWS Evidently. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Feature_Variations:
-    # In a feature variation, when the variation type is boolean, this field specifies the true/false value that is served for that variation. (AI-inferred)
     boolean_value: Any = None
-    # The numeric double value assigned to this variation of the feature, used when the variation's value type is set to double. (AI-inferred)
     double_value: Any = None
-    # Sets the numeric (long) value for this feature variation, which Evidently returns as the variation's value when the feature is evaluated for a user or session. (AI-inferred)
     long_value: Any = None
-    # For a variation of the Evidently feature, this defines the string-typed value that is returned when the feature is evaluated and this variation is selected. (AI-inferred)
     string_value: Any = None
-    # The user-defined name for a variation of the Evidently feature, used to reference this variation when defining traffic allocation or feature evaluation rules. (AI-inferred)
     variation_name: Any = None
 
 _Feature_EntityOverridesFields = {
@@ -53,42 +44,27 @@ _Feature_VariationsFields = {
 
 @dataclasses.dataclass
 class FeatureConfig:
-    # Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
     default_variation: Any = None
-    # An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
     description: Any = None
-    # Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
     entity_overrides: Any = None
-    # Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
     evaluation_strategy: Any = None
-    # The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
     name: Any = None
-    # The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
     project: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
     variations: Any = None
 
 @dataclasses.dataclass
 class FeatureAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying this Evidently feature in AWS. (AI-inferred)
     arn: Any = None
-    # Specifies the variation used as the default for an Evidently feature when no targeting rules match or no other overrides apply. (AI-inferred)
     default_variation: Any = None
-    # An optional description of the Evidently feature, used to convey the feature's purpose or intended behavior to viewers in the console. (AI-inferred)
     description: Any = None
-    # Specifies a list of entity overrides, where each override assigns a specific variation to a given entity (such as a user or session) for this feature. (AI-inferred)
     entity_overrides: Any = None
-    # Determines whether the feature is evaluated as a feature flag using allocation rules (ALL_RULES) or as an experiment that exposes the feature to a percentage of users (AFFECTED_USERS). (AI-inferred)
     evaluation_strategy: Any = None
-    # The name of the feature, which must be unique within the Evidently project and can contain only letters, numbers, underscores, and hyphens. (AI-inferred)
     name: Any = None
-    # The name or ARN of the Evidently project that this feature belongs to. (AI-inferred)
     project: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies the list of variations for the feature, where each variation defines a name and a value that the feature can serve to users, enabling A/B testing and experimentation. (AI-inferred)
     variations: Any = None
 
 Feature = ubx.ResourceBinding(

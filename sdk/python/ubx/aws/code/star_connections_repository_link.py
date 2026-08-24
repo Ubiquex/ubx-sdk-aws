@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class StarConnectionsRepositoryLink_Tags:
     key: Any = None
-    # Specifies the value of a tag key associated with the AWS CodeStar Connections repository link resource. (AI-inferred)
     value: Any = None
 
 _StarConnectionsRepositoryLink_TagsFields = {

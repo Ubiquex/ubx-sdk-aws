@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class CacheParameterGroup_Tags:
     key: Any = None
-    # Specifies the value of a user-defined tag attached to the ElastiCache parameter group, enabling metadata-based organization, cost tracking, and IAM access control on the resource. (AI-inferred)
     value: Any = None
 
 _CacheParameterGroup_TagsFields = {

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveChannelPlacementGroup_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the AWS MediaLive channel placement group, used for resource identification, organization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbAcl_Tags {
-  /** The key name of a tag to associate with the MemoryDB ACL. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The string value of a key-value pair in the tags map for the MemoryDB ACL, allowing users to attach custom metadata to the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

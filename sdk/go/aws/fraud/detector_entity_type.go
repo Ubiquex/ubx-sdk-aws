@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectorEntityType_Tags struct {
 	Key any
-	// Specifies the value portion of a tag attached to the AWS Fraud Detector entity type resource, enabling you to associate metadata for cost allocation, access control, or resource identification. (AI-inferred)
 	Value any
 }
 

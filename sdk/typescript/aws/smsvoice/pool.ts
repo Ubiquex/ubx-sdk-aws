@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pool_MandatoryKeywords_Help {
-  /** The help message displayed to users who send a HELP message for this mandatory keyword. (AI-inferred) */
   message: string | Computed<string>;
 }
 
@@ -15,14 +14,11 @@ export interface Pool_MandatoryKeywords {
 
 export interface Pool_OptionalKeywords {
   action?: string | Computed<string>;
-  /** For each optional keyword configured on the SMS voice pool, this is the actual word or phrase (e.g., 'HELP' or a custom term) that a user can text to a pool phone number to trigger a predefined response. (AI-inferred) */
   keyword?: string | Computed<string>;
-  /** The message text that is sent to the sender when they send an SMS containing the associated optional keyword to a phone number in this pool. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Pool_Tags {
-  /** The key of a tag assigned to an SMS voice pool, which defines the tag's name within the pool's AWS resource tags for organizational and cost-allocation purposes. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -92,7 +88,6 @@ export interface PoolConfig {
 }
 
 export interface PoolAttrs {
-  /** The Amazon Resource Name (ARN) assigned to the SMS voice pool when it is created, which uniquely identifies the pool and is used to reference it in IAM policies and other AWS services. (AI-inferred) */
   arn: string;
   /** When set to true the pool can't be deleted. By default this is set to false. */
   deletionProtectionEnabled: boolean;
@@ -104,7 +99,6 @@ export interface PoolAttrs {
   optionalKeywords: Pool_OptionalKeywords[];
   /** The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn and it's IsoCountryCode. */
   originationIdentities: string[];
-  /** The unique identifier assigned by AWS to the created pool. (AI-inferred) */
   poolId: string;
   /** By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests. */
   selfManagedOptOutsEnabled: boolean;

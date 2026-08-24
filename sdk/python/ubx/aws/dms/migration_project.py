@@ -8,29 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MigrationProject_SchemaConversionApplicationAttributes:
-    # The S3 bucket path (prefix) where the AWS DMS Schema Conversion application stores schema conversion artifacts (such as converted schemas and mapping rules) for the migration project. (AI-inferred)
     s3_bucket_path: Any = None
-    # The ARN of the IAM role that AWS DMS assumes to access the S3 bucket used by the schema conversion application, enabling it to read and write schema conversion artifacts to the bucket specified by the sibling `s3_bucket_path` attribute. (AI-inferred)
     s3_bucket_role_arn: Any = None
 
 @dataclasses.dataclass
 class MigrationProject_SourceDataProviderDescriptors:
-    # The Amazon Resource Name (ARN) of the source data provider used to configure the migration project in AWS Database Migration Service. (AI-inferred)
     data_provider_arn: Any = None
-    # Specifies the unique identifier or ARN of the AWS DMS source data provider associated with this migration project. (AI-inferred)
     data_provider_identifier: Any = None
-    # The name of an existing AWS DMS data provider that acts as the source for this migration project, used within a source data provider descriptor. (AI-inferred)
     data_provider_name: Any = None
-    # The ARN of the IAM role that AWS DMS assumes to access the AWS Secrets Manager secret containing the source data provider's credentials. (AI-inferred)
     secrets_manager_access_role_arn: Any = None
-    # Specifies the ARN or name of the AWS Secrets Manager secret that contains the credentials for the source database in the migration project. (AI-inferred)
     secrets_manager_secret_id: Any = None
 
 @dataclasses.dataclass
 class MigrationProject_Tags:
-    # The key of a tag that can be assigned to an AWS DMS migration project, used for categorizing, identifying, and managing the project resource within the service. (AI-inferred)
     key: Any = None
-    # The user-defined string value of a tag applied to an AWS DMS migration project, used to store metadata such as project purpose, owner, or environment for resource management and cost tracking. (AI-inferred)
     value: Any = None
 
 _MigrationProject_SchemaConversionApplicationAttributesFields = {

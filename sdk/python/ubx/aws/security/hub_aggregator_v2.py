@@ -17,7 +17,6 @@ class HubAggregatorV2Config:
 
 @dataclasses.dataclass
 class HubAggregatorV2Attrs:
-    # The AWS Region to which Security Hub aggregates findings from all linked Regions in the cross-Region aggregation configuration. (AI-inferred)
     aggregation_region: Any = None
     # The ARN of the AggregatorV2 being created and assigned as the unique identifier
     aggregator_v2_arn: Any = None

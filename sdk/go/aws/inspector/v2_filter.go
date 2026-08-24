@@ -4,145 +4,84 @@ package inspector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2Filter_FilterCriteria_AwsAccountId struct {
-	// Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the AWS account ID against the filter's value. (AI-inferred)
 	Comparison any
-	// The 12-digit AWS account ID that the filter criterion compares against, using the specified comparison operator, to include or exclude findings originating from that account. (AI-inferred)
 	Value any
 }
 
 type V2Filter_FilterCriteria_EcrImagePushedAt struct {
-	// Sets the inclusive upper bound timestamp for an ECR image push date range, so only images pushed at or before this time match the filter. (AI-inferred)
 	EndInclusive any
-	// The inclusive start timestamp (in Unix epoch seconds) for filtering findings by when the associated ECR image was pushed. (AI-inferred)
 	StartInclusive any
 }
 
 type V2Filter_FilterCriteria_EpssScore struct {
-	// The lower inclusive bound of the EPSS score range used to match findings against the filter. (AI-inferred)
 	LowerInclusive any
-	// Defines the inclusive upper bound of the EPSS score range used to filter Inspector v2 findings, retaining only those with an EPSS score at or below this value. (AI-inferred)
 	UpperInclusive any
 }
 
 type V2Filter_FilterCriteria_PortRange struct {
-	// The inclusive lower bound of the port range used to match network connections in the Inspector v2 filter criteria. (AI-inferred)
 	BeginInclusive any
-	// The inclusive upper bound of the port range used to match findings where the network port associated with the finding falls within the specified range. (AI-inferred)
 	EndInclusive any
 }
 
 type V2Filter_FilterCriteria_ResourceTags struct {
-	// Defines the comparison operator (e.g., EQUALS or NOT_EQUALS) used when matching a resource's tag value against the specified key in the resource_tags filter criteria. (AI-inferred)
 	Comparison any
-	// The key of the resource tag that the Inspector V2 filter uses to match against resource tags when determining which resources are included in or excluded from the filter's findings. (AI-inferred)
 	Key any
-	// The tag value to match for the resource tag filter, used to include or exclude resources based on their tags. (AI-inferred)
 	Value any
 }
 
 type V2Filter_FilterCriteria_VulnerablePackages struct {
-	// Filters findings by the CPU architecture of the vulnerable package, using a comparison operator and value such as 'x86_64' or 'arm64'. (AI-inferred)
 	Architecture any
-	// Specifies the numeric filter condition (comparison and value) for the epoch component of a vulnerable package's version, used to match AWS Inspector V2 findings. (AI-inferred)
 	Epoch any
-	// Specifies the file-path matching condition for filtering findings by vulnerable package location, using a string comparison operator (e.g., EQUALS) and the path value to include or exclude. (AI-inferred)
 	FilePath any
-	// Specifies a filter condition on the name of the vulnerable software package in an Amazon Inspector finding, allowing you to match findings where the package name equals or does not equal a specified string value using a comparison operator. (AI-inferred)
 	Name any
-	// Specifies the release string (such as the distro-specific package release suffix) of the vulnerable package to match when defining the filter criteria. (AI-inferred)
 	Release any
-	// The source_lambda_layer_arn criterion filters findings to include only those vulnerable packages that originate from a specified AWS Lambda layer, matched by its ARN. (AI-inferred)
 	SourceLambdaLayerArn any
-	// Specifies the source layer hash of a vulnerable container image layer to match when filtering Inspector findings, part of the vulnerable packages filter criteria. (AI-inferred)
 	SourceLayerHash any
-	// Configures the version filter for vulnerable packages, using a comparison operator (such as EQUALS) and a value to match the package version in Inspector v2 findings. (AI-inferred)
 	Version any
 }
 
 type V2Filter_FilterCriteria struct {
-	// This filter criterion matches findings based on the AWS account ID that owns the resource, using a list of string filter objects that compare the account ID against specified values (e.g., EQUALS). (AI-inferred)
 	AwsAccountId any
-	// Filter criterion that matches findings based on the name of the security detector (for example, Amazon CodeGuru Security) that identified the code vulnerability. (AI-inferred)
 	CodeVulnerabilityDetectorName any
-	// This filter criterion matches Inspector V2 findings based on the detector tags of a code vulnerability (such as CWE tags), using the specified string comparison operators (for example, EQUALS or NOT_EQUALS) and values. (AI-inferred)
 	CodeVulnerabilityDetectorTags any
-	// Filters Inspector v2 findings based on the file path where a code vulnerability was detected, allowing multiple string comparison conditions (e.g., equals, contains) to include or exclude matching findings. (AI-inferred)
 	CodeVulnerabilityFilePath any
-	// The filter_criteria.component_id field is a list of string filter conditions (comparison and value) that match Inspector v2 findings based on the identifier of the vulnerable software component (e.g., package name or library) associated with the finding. (AI-inferred)
 	ComponentId any
-	// In an AWS Inspector v2 filter, this list of string filters selects findings based on the type of vulnerable component (such as an operating system package or an application dependency) using the configured comparator and value. (AI-inferred)
 	ComponentType any
-	// Filters findings by the Amazon Machine Image (AMI) ID of the associated EC2 instance, using a list of comparison objects with operators and values. (AI-inferred)
 	Ec2InstanceImageId any
-	// Defines a list of string comparison filters on the EC2 instance's subnet ID, used to include or exclude Inspector V2 findings from the filter based on the subnet where the instance resides. (AI-inferred)
 	Ec2InstanceSubnetId any
-	// Filters findings by the VPC ID of the EC2 instance, where each object in the list defines a comparison operator and a VPC ID value that must match for the finding to be included. (AI-inferred)
 	Ec2InstanceVpcId any
-	// Filters findings by the CPU architecture of the ECR container image (e.g., amd64 or arm64) using a comparison operator and value to include or exclude matches. (AI-inferred)
 	EcrImageArchitecture any
-	// Defines a list of filter conditions that match findings based on the SHA256 digest (hash) of the associated Amazon ECR container image, where each condition includes an image hash value and a comparison operator (such as EQUALS or NOT_EQUALS) to evaluate against the finding's image hash. (AI-inferred)
 	EcrImageHash any
-	// Filters findings to include only ECR images whose push date falls within one of the specified date ranges, with each object in the list containing a start and end timestamp. (AI-inferred)
 	EcrImagePushedAt any
-	// Filters Inspector2 findings based on the ECR image registry (typically the AWS account ID of the registry) using the specified comparison and value. (AI-inferred)
 	EcrImageRegistry any
-	// When creating or updating an AWS Inspector V2 filter, this field defines the ECR image repository name condition as a list of criterion objects (each with a comparison operator and value) to include or exclude findings based on the source ECR repository name. (AI-inferred)
 	EcrImageRepositoryName any
-	// Filters findings by matching the provided comparison (e.g., EQUALS) and string against the Amazon ECR image tag associated with the container image. (AI-inferred)
 	EcrImageTags any
-	// Specifies a list of numeric ranges used to filter findings by their Exploit Prediction Scoring System (EPSS) score, matching findings whose EPSS value falls within at least one defined lower and upper boundary. (AI-inferred)
 	EpssScore any
-	// Specifies the exploit availability condition for the filter, using a list of string filter objects with comparison and value to match whether a known exploit exists (e.g., YES or NO) for a finding. (AI-inferred)
 	ExploitAvailable any
-	// Filters findings by their Amazon Resource Name (ARN), using string filter conditions to include or exclude findings with specific ARNs. (AI-inferred)
 	FindingArn any
-	// Filters findings based on their current status (for example, ACTIVE, CLOSED, or SUPPRESSED) using the specified comparison operator and status value. (AI-inferred)
 	FindingStatus any
-	// Specifies the finding type values (such as PACKAGE_VULNERABILITY or CODE_VULNERABILITY) to match when filtering findings, using a comparison operator like EQUALS or NOT_EQUALS. (AI-inferred)
 	FindingType any
-	// Filters findings by the date and time they were first observed, defined as a list of DateFilter objects each specifying an inclusive start and end timestamp. (AI-inferred)
 	FirstObservedAt any
-	// A list of BooleanFilter conditions that match findings based on whether a fix is available for the vulnerability, using a comparison operator (e.g., EQUALS) against a boolean value. (AI-inferred)
 	FixAvailable any
-	// This list of number filter objects defines the criteria for matching findings by their Amazon Inspector risk score, allowing numeric comparisons like EQUALS or GREATER_THAN against a specified score. (AI-inferred)
 	InspectorScore any
-	// Defines a list of StringFilter objects that match Inspector findings by the execution role ARN of the associated Lambda function, using comparison operators like EQUALS or PREFIX to include or exclude findings based on that ARN. (AI-inferred)
 	LambdaFunctionExecutionRoleArn any
-	// Specifies a list of date-range conditions that match findings for Lambda functions whose last modified timestamp falls within the given start and end times. (AI-inferred)
 	LambdaFunctionLastModifiedAt any
-	// Specifies a list of string filter conditions that match findings based on the layers associated with the affected Lambda function. (AI-inferred)
 	LambdaFunctionLayers any
-	// Specifies a list of string filter conditions that match findings based on the name of the associated Lambda function in an Amazon Inspector filter criteria. (AI-inferred)
 	LambdaFunctionName any
-	// Filters findings based on the runtime identifier of the associated Lambda function (e.g., 'nodejs14.x', 'python3.9') using a comparison operator (e.g., EQUALS, NOT_EQUALS) and a value specified in each list item. (AI-inferred)
 	LambdaFunctionRuntime any
-	// Within the filter_criteria block of an AWS Inspector v2 filter, last_observed_at is a list of objects that lets you specify a start and end timestamp to match findings by when the finding was last observed. (AI-inferred)
 	LastObservedAt any
-	// Filters findings based on the network protocol (e.g., TCP, UDP) involved in network reachability findings, using comparison operators such as EQUALS to match the specified protocol values. (AI-inferred)
 	NetworkProtocol any
-	// Matches findings based on the open network port range (begin_port to end_port) observed on the resource. (AI-inferred)
 	PortRange any
-	// Filters findings by the identifiers of related vulnerabilities, using string comparison operators to include or exclude findings whose related Vulnerabilities list matches the specified value. (AI-inferred)
 	RelatedVulnerabilities any
-	// The `resource_id` filter criterion matches findings whose affected resource identifier (such as an EC2 instance ID or ECR repository ARN) equals the specified value according to the chosen comparison operator. (AI-inferred)
 	ResourceId any
-	// Defines the resource tag conditions used to filter Inspector findings, specifying tag keys, values, and comparison operators that resources must match to be included or excluded. (AI-inferred)
 	ResourceTags any
-	// Defines one or more string comparison conditions that filter findings by the resource type (such as EC2, ECR, or Lambda) associated with the finding. (AI-inferred)
 	ResourceType any
-	// Specifies the severity levels (e.g., Critical, High, Medium, Low, Informational) to include or exclude in the Inspector v2 findings filter, using comparison and value objects. (AI-inferred)
 	Severity any
-	// The title criterion in the filter criteria, which matches findings by their title using a comparison operator and one or more string values. (AI-inferred)
 	Title any
-	// The updated_at filter criteria item specifies a date range (with start and end times) used to match findings based on when their findings record was last updated. (AI-inferred)
 	UpdatedAt any
-	// Filters findings by the severity level assigned by the vendor, using a list of string comparison filters to include or exclude findings with specific vendor severity values. (AI-inferred)
 	VendorSeverity any
-	// Specifies the vulnerability identifier (such as a CVE ID) to include or exclude in the filter results, using comparison operators and a value for matching. (AI-inferred)
 	VulnerabilityId any
-	// The vulnerabilitySource criteria filters Inspector v2 findings to those whose vulnerability data originates from a specified source (such as NVD) using one or more string comparison filters. (AI-inferred)
 	VulnerabilitySource any
-	// Filters findings based on the properties of the vulnerable package, such as its name, version, architecture, epoch, release, or source layer hash, using a list of package filter objects. (AI-inferred)
 	VulnerablePackages any
 }
 
@@ -431,13 +370,10 @@ var V2Filter_FilterCriteriaFields = ubx.FieldMap{
 type V2FilterConfig struct {
 	// Findings filter description.
 	Description any
-	// The action taken on findings that match the filter criteria, either 'NONE' to do nothing or 'SUPPRESS' to suppress the findings. (AI-inferred)
 	FilterAction any
-	// The filter criteria object, which specifies the conditions (e.g., on finding fields like severity, resource tags, or EC2 instance properties) that determine which Inspector findings match the filter. (AI-inferred)
 	FilterCriteria any
 	// Findings filter name.
 	Name any
-	// Tags assigned to the Inspector V2 filter, used for organizing and identifying the filter resource in AWS cost allocation and management. (AI-inferred)
 	Tags any
 }
 
@@ -446,13 +382,10 @@ type V2FilterAttrs struct {
 	Arn any
 	// Findings filter description.
 	Description any
-	// The action taken on findings that match the filter criteria, either 'NONE' to do nothing or 'SUPPRESS' to suppress the findings. (AI-inferred)
 	FilterAction any
-	// The filter criteria object, which specifies the conditions (e.g., on finding fields like severity, resource tags, or EC2 instance properties) that determine which Inspector findings match the filter. (AI-inferred)
 	FilterCriteria any
 	// Findings filter name.
 	Name any
-	// Tags assigned to the Inspector V2 filter, used for organizing and identifying the filter resource in AWS cost allocation and management. (AI-inferred)
 	Tags any
 }
 

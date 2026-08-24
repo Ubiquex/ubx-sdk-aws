@@ -19,7 +19,6 @@ type MakerRobotConfig struct {
 type MakerRobotAttrs struct {
 	// The target architecture of the robot.
 	Architecture any
-	// The Amazon Resource Name (ARN) that uniquely identifies the AWS RoboMaker robot within your AWS account. (AI-inferred)
 	Arn any
 	// The Amazon Resource Name (ARN) of the fleet.
 	Fleet any

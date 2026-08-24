@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentAgentSpace_AwsResources_Vpcs {
-  /** Specifies the ARNs of security groups associated with the VPCs in the agent space's AWS resource configuration, used to control network access for the agent. (AI-inferred) */
   securityGroupArns?: string[] | Computed<string[]>;
-  /** Specifies the subnet ARNs associated with each VPC in the agent space's AWS resource configuration, defining the subnets the agent space applies to. (AI-inferred) */
   subnetArns?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of an Amazon Virtual Private Cloud (VPC) included in the AWS resources associated with this agent space. (AI-inferred) */
   vpcArn?: string | Computed<string>;
 }
 
@@ -34,55 +31,43 @@ export interface AgentAgentSpace_CodeReviewSettings {
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities {
   leaveComments?: boolean | Computed<boolean>;
-  /** Controls whether the Bitbucket integration automatically remediates code-level security issues identified by the agent. (AI-inferred) */
   remediateCode?: boolean | Computed<boolean>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketRepository {
-  /** The repository name (e.g., 'owner/repo') for a Bitbucket repo listed as a provider resource in the security agent space's integrated resources configuration. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The Bitbucket workspace that owns the integrated repository. (AI-inferred) */
   workspace?: string | Computed<string>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities {
-  /** Enables or disables the Confluence provider resource's ability to create documents within the integrated Confluence instance for this agent space. (AI-inferred) */
   createDocument?: boolean | Computed<boolean>;
   fetchDocument?: boolean | Computed<boolean>;
   updateDocument?: boolean | Computed<boolean>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument {
-  /** The name of the Confluence document that is configured as a provider resource within the integrated resource settings for the agent space. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The page_id specifies the unique Confluence page identifier that identifies the document used as a provider resource in the agent space's integrated resource configuration. (AI-inferred) */
   pageId?: string | Computed<string>;
   spaceKey?: string | Computed<string>;
-  /** Specifies the title of the Confluence space that the Confluence document provider resource is scoped to, enabling the agent space to reference documents within that specific space. (AI-inferred) */
   spaceTitle?: string | Computed<string>;
   title?: string | Computed<string>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_GitHubRepository {
   name?: string | Computed<string>;
-  /** The GitHub user or organization that owns the repository to be integrated as a provider resource. (AI-inferred) */
   owner?: string | Computed<string>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources_GitLabRepository {
   name?: string | Computed<string>;
-  /** The GitLab namespace (group or user path) that identifies the owner of the repository, used to locate the repository within the GitLab provider as part of an integrated resource. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface AgentAgentSpace_IntegratedResources_ProviderResources {
   bitbucketCapabilities?: AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities>;
-  /** A nested object representing a Bitbucket repository configured as an integrated resource provider within the security agent's agent space, containing fields that define the repository connection and integration settings. (AI-inferred) */
   bitbucketRepository?: AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketRepository | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketRepository>;
   confluenceCapabilities?: AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities>;
-  /** Configures an Atlassian Confluence document source for the agent space's integrated resources, specifying how Confluence documents are accessed and ingested by the security agent. (AI-inferred) */
   confluenceDocument?: AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument>;
-  /** Specifies the GitHub-specific capabilities and permissions that the security agent can use when integrating with GitHub through the agent space's provider resources. (AI-inferred) */
   gitHubCapabilities?: AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities>;
   gitHubRepository?: AgentAgentSpace_IntegratedResources_ProviderResources_GitHubRepository | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_GitHubRepository>;
   gitLabCapabilities?: AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities | Computed<AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities>;

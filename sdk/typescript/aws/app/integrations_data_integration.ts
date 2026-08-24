@@ -49,7 +49,6 @@ export interface IntegrationsDataIntegrationConfig {
   name: string | Computed<string>;
   /** The configuration for what data should be pulled from the source. */
   objectConfiguration?: unknown | Computed<unknown>;
-  /** Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred) */
   scheduleConfig?: IntegrationsDataIntegration_ScheduleConfig | Computed<IntegrationsDataIntegration_ScheduleConfig>;
   /** The URI of the data source. */
   sourceUri: string | Computed<string>;
@@ -72,7 +71,6 @@ export interface IntegrationsDataIntegrationAttrs {
   name: string;
   /** The configuration for what data should be pulled from the source. */
   objectConfiguration: unknown;
-  /** Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred) */
   scheduleConfig: IntegrationsDataIntegration_ScheduleConfig;
   /** The URI of the data source. */
   sourceUri: string;

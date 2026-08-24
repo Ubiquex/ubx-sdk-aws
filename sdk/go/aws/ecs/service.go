@@ -4,11 +4,8 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Service_CapacityProviderStrategy struct {
-	// The base value designates the minimum number of tasks to run on the specified capacity provider; only one capacity provider in a strategy can have a base defined. (AI-inferred)
 	Base any
-	// Specifies the name of the capacity provider (e.g., FARGATE, FARGATE_SPOT, or a custom capacity provider) to use for placing tasks in the ECS service cluster. (AI-inferred)
 	CapacityProvider any
-	// The relative weight of the capacity provider in the strategy, which determines the proportion of tasks that are placed on that provider. (AI-inferred)
 	Weight any
 }
 
@@ -48,21 +45,15 @@ type Service_DeploymentConfiguration_DeploymentCircuitBreaker struct {
 
 type Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfiguration struct {
 	Action any
-	// The maximum number of minutes that an Amazon ECS deployment lifecycle hook can remain running before the deployment is considered failed and rolled back, as part of the service's deployment configuration. (AI-inferred)
 	TimeoutInMinutes any
 }
 
 type Service_DeploymentConfiguration_LifecycleHooks struct {
 	HookDetails any
-	// The ARN of the Lambda function or Amazon ECS task that the deployment lifecycle hook invokes during an Amazon ECS service deployment. (AI-inferred)
 	HookTargetArn any
-	// Lists the deployment lifecycle stages (e.g., PENDING or PRIMARY) during which the ECS service lifecycle hook is invoked. (AI-inferred)
 	LifecycleStages any
-	// The ARN of the IAM role that Amazon ECS assumes to invoke the target of this deployment lifecycle hook during a service deployment. (AI-inferred)
 	RoleArn any
-	// Determines whether the lifecycle hook applies to the task level or the service level, with valid values of TASK and SERVICE, controlling the target scope of the hook during an Amazon ECS deployment. (AI-inferred)
 	TargetType any
-	// Defines the maximum time ECS will wait for the associated lifecycle hook to complete before considering the hook failed and proceeding with the deployment. (AI-inferred)
 	TimeoutConfiguration any
 }
 
@@ -115,20 +106,14 @@ type Service_LoadBalancers_AdvancedConfiguration struct {
 
 type Service_LoadBalancers struct {
 	AdvancedConfiguration any
-	// Specifies the name of the container (as defined in the task definition) that the load balancer routes traffic to, used together with containerPort to register targets in the target group. (AI-inferred)
 	ContainerName any
-	// The port on the container that the load balancer forwards traffic to, used by the associated target group to route requests to the ECS service's container. (AI-inferred)
 	ContainerPort any
-	// The name of the Classic Load Balancer to associate with the ECS service, used when the load balancer type is classic rather than an Application or Network Load Balancer target group. (AI-inferred)
 	LoadBalancerName any
-	// The ARN of the target group to which the ECS service's tasks are registered for the specified load balancer. (AI-inferred)
 	TargetGroupArn any
 }
 
 type Service_Monitoring_MetricConfigurations struct {
-	// Specifies the names of the metrics (such as CPUUtilization or MemoryUtilization) that the Amazon ECS service will emit to CloudWatch as part of its monitoring configuration. (AI-inferred)
 	MetricNames any
-	// The number of seconds between aggregation periods for the ECS service's CloudWatch metric, determining the metric's resolution granularity. (AI-inferred)
 	ResolutionSeconds any
 }
 
@@ -152,16 +137,12 @@ type Service_NetworkConfiguration struct {
 }
 
 type Service_PlacementConstraints struct {
-	// A cluster query language expression that defines the placement constraint for the service when the constraint type is 'memberOf', using the Amazon ECS placement constraint syntax. (AI-inferred)
 	Expression any
-	// Specifies the type of placement constraint, either 'distinctInstance' to place each task on a distinct container instance, or 'memberOf' to apply a cluster query language expression. (AI-inferred)
 	Type any
 }
 
 type Service_PlacementStrategies struct {
-	// The field to apply the placement strategy against; for spread strategies this is often a custom attribute like attribute:ecs.availability-zone, for binpack it is cpu or memory, and it is not used for random strategies. (AI-inferred)
 	Field any
-	// The type of placement strategy to use, such as spread, binpack, or random, for distributing tasks across container instances in the ECS service. (AI-inferred)
 	Type any
 }
 
@@ -173,9 +154,7 @@ type Service_ServiceConnectConfiguration_AccessLogConfiguration struct {
 }
 
 type Service_ServiceConnectConfiguration_LogConfiguration_SecretOptions struct {
-	// Specifies the name of the secret option, which serves as the key for the log driver configuration and pairs with the valueFrom ARN to retrieve the secret value from AWS Secrets Manager. (AI-inferred)
 	Name any
-	// The ARN of the AWS Secrets Manager secret or SSM Parameter Store parameter that supplies the value for the named log configuration option in the ECS Service Connect log configuration. (AI-inferred)
 	ValueFrom any
 }
 
@@ -193,7 +172,6 @@ type Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules
 }
 
 type Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header struct {
-	// The name of the HTTP header that identifies test traffic for routing through this client alias, enabling Service Connect canary deployments. (AI-inferred)
 	Name any
 	Value any
 }
@@ -203,46 +181,32 @@ type Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules
 }
 
 type Service_ServiceConnectConfiguration_Services_ClientAliases struct {
-	// The custom DNS hostname that clients use to access the service through AWS ECS Service Connect, which overrides the default service discovery name within the namespace. (AI-inferred)
 	DnsName any
-	// The port number that clients use to connect to the service through this Service Connect client alias. (AI-inferred)
 	Port any
 	TestTrafficRules any
 }
 
 type Service_ServiceConnectConfiguration_Services_Timeout struct {
-	// Specifies the idle timeout in seconds for a service in the Amazon ECS Service Connect configuration, during which a connection must have activity to remain open, otherwise it is closed. (AI-inferred)
 	IdleTimeoutSeconds any
-	// Defines the maximum time in seconds that an individual request can stay in flight before the Service Connect proxy times it out, enforcing request-level timeout for the ECS Service Connect service. (AI-inferred)
 	PerRequestTimeoutSeconds any
 }
 
 type Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthority struct {
-	// The ARN of the AWS Private Certificate Authority (ACM PCA) that issues the TLS certificate for the ECS Service Connect service. (AI-inferred)
 	AwsPcaAuthorityArn any
 }
 
 type Service_ServiceConnectConfiguration_Services_Tls struct {
-	// Specifies the ARN of the private certificate authority (such as AWS Private CA) that issues the TLS certificates used for the Service Connect service's mutual TLS encryption. (AI-inferred)
 	IssuerCertificateAuthority any
-	// The ARN of the AWS KMS key used to encrypt the private key of the TLS certificate for this Service Connect service. (AI-inferred)
 	KmsKey any
-	// The ARN of the IAM role that Amazon ECS assumes to create the certificate used for the service's Service Connect TLS configuration. (AI-inferred)
 	RoleArn any
 }
 
 type Service_ServiceConnectConfiguration_Services struct {
-	// The list of client aliases for each Service Connect service, which define alternative names and ports for the service to be discovered within the Cloud Map namespace. (AI-inferred)
 	ClientAliases any
-	// The discovery name for this service in Amazon ECS Service Connect, which is used as the DNS hostname for service-to-service communication within the Service Connect namespace. (AI-inferred)
 	DiscoveryName any
-	// Overrides the port that the Amazon ECS Service Connect service uses to accept inbound traffic, so you can map a different ingress port than the default one determined by the service's port configuration. (AI-inferred)
 	IngressPortOverride any
-	// Specifies the name of the port mapping in the task definition that ECS Service Connect uses to route traffic to this service. (AI-inferred)
 	PortName any
-	// Configures the idle and request timeouts (in seconds) for the Service Connect service, with fields for `idleTimeoutSeconds` and `requestTimeoutSeconds`. (AI-inferred)
 	Timeout any
-	// Configures TLS for an individual Service Connect service, specifying the certificate authority (via ARN) that issues client certificates and the optional KMS key used to encrypt the CA's private key. (AI-inferred)
 	Tls any
 }
 
@@ -260,70 +224,45 @@ type Service_ServiceConnectConfiguration struct {
 }
 
 type Service_ServiceRegistries struct {
-	// The name of the container (as specified in the task definition) whose port is used for service discovery with the Cloud Map registry. (AI-inferred)
 	ContainerName any
-	// The port on the container that AWS Cloud Map service discovery uses to route traffic to the ECS service; if omitted, the container's first assigned port is used. (AI-inferred)
 	ContainerPort any
-	// The port number to register with the service registry, overriding the container port from the task definition for service discovery purposes. (AI-inferred)
 	Port any
-	// The Amazon Resource Name (ARN) of the AWS Cloud Map service registry that this ECS service uses for service discovery. (AI-inferred)
 	RegistryArn any
 }
 
 type Service_Tags struct {
-	// The key of a tag attached to the ECS service, used for organizing and identifying the service within AWS. (AI-inferred)
 	Key any
-	// Sets the value of a metadata tag on the ECS service, which can be used for cost allocation, resource lifecycle management, and IAM-based access control. (AI-inferred)
 	Value any
 }
 
 type Service_VolumeConfigurations_ManagedEbsvolume_TagSpecifications struct {
-	// Determines which source of tags (either the ECS task definition or the ECS service) should be propagated to the managed EBS volume, with valid values of TASK_DEFINITION or SERVICE. (AI-inferred)
 	PropagateTags any
-	// The type of Amazon EBS resource (either 'volume' or 'snapshot') to which the tags in this tag specification apply, used when tagging a managed EBS volume attached to an ECS service. (AI-inferred)
 	ResourceType any
-	// Specifies the list of tag key-value pairs to be applied to the managed EBS volume when it is provisioned for the ECS service. (AI-inferred)
 	Tags any
 }
 
 type Service_VolumeConfigurations_ManagedEbsvolume struct {
-	// Specifies whether the managed Amazon EBS volume used by the ECS service task should be encrypted. (AI-inferred)
 	Encrypted any
-	// The filesystem type (e.g., ext4, xfs) to format the managed EBS volume with, used when the ECS service creates and attaches the volume. (AI-inferred)
 	FilesystemType any
-	// Specifies the provisioned IOPS for the managed Amazon EBS volume attached to the ECS service, controlling the volume's input/output performance. (AI-inferred)
 	Iops any
-	// The customer-managed KMS key ARN or ID used to encrypt the managed EBS volume attached to the ECS service's tasks. (AI-inferred)
 	KmsKeyId any
-	// The ARN of the IAM role that Amazon ECS assumes to create, attach, and detach the managed EBS volume for the service, falling back to the service-linked role if not provided. (AI-inferred)
 	RoleArn any
-	// Specifies the size in GiB of the Amazon EBS volume that is created and attached to the container instances when the ECS service uses a managed EBS volume configuration. (AI-inferred)
 	SizeInGiB any
-	// Specifies the snapshot ARN or ID from which the Amazon EBS volume is created, allowing the ECS service's managed volume to be initialized with data from an existing snapshot. (AI-inferred)
 	SnapshotId any
-	// Defines the tag specifications for the Amazon EBS volume that this ECS service creates and manages, specifying which tags are applied to the volume resource when it is provisioned. (AI-inferred)
 	TagSpecifications any
-	// Sets the throughput in MiB/s for the managed EBS volume when the volume type is gp3, controlling the performance throughput of the volume. (AI-inferred)
 	Throughput any
-	// Sets the rate (in GiB per minute) at which the managed EBS volume is initialized, used when restoring from a snapshot to pre-warm blocks and avoid I/O performance degradation before the task accesses them. (AI-inferred)
 	VolumeInitializationRate any
-	// Specifies the Amazon EBS volume type (e.g., gp3, io2) for the managed EBS volume attached to tasks in this ECS service. (AI-inferred)
 	VolumeType any
 }
 
 type Service_VolumeConfigurations struct {
-	// Defines the configuration for an Amazon Elastic Block Store (EBS) volume that is managed by Amazon ECS for use as a service-managed volume in an ECS service, including settings such as size, volume type, file system type, and encryption. (AI-inferred)
 	ManagedEbsvolume any
-	// The name of the EBS volume attached at the ECS service level, which must match the volume name referenced by container mount points as sourceVolume in the task definition. (AI-inferred)
 	Name any
 }
 
 type Service_VpcLatticeConfigurations struct {
-	// Specifies the name of the port mapping in the task definition that VPC Lattice uses to route traffic to the service. (AI-inferred)
 	PortName any
-	// The ARN of the IAM role that Amazon ECS assumes to register and deregister the service with the associated VPC Lattice target group. (AI-inferred)
 	RoleArn any
-	// The ARN of the VPC Lattice target group that this ECS service registers with as a target. (AI-inferred)
 	TargetGroupArn any
 }
 
@@ -730,7 +669,6 @@ type ServiceAttrs struct {
 	LoadBalancers any
 	// The optional monitoring configuration for a service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds.
 	Monitoring any
-	// The unique name of the ECS service within its cluster; when omitted, this is auto-generated by ECS, and this attribute holds the final name after creation. (AI-inferred)
 	Name any
 	// The network configuration for a task or service.
 	NetworkConfiguration any
@@ -746,7 +684,6 @@ type ServiceAttrs struct {
 	Role any
 	// The scheduling strategy to use for the service. For more information, see [Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). There are two service scheduler strategies available: + ``REPLICA``-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types. + ``DAEMON``-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. Tasks using the Fargate launch type or the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types don't support the ``DAEMON`` scheduling strategy.
 	SchedulingStrategy any
-	// The Amazon Resource Name (ARN) that uniquely identifies the ECS service. (AI-inferred)
 	ServiceArn any
 	// The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
 	ServiceConnectConfiguration any

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbGlobalCluster_Tags:
-    # The key portion of a user-defined tag attached to the Amazon DocumentDB global cluster, used for metadata, cost allocation, and access control. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the DocumentDB global cluster. (AI-inferred)
     value: Any = None
 
 _DbGlobalCluster_TagsFields = {

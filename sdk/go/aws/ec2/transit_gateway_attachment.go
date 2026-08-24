@@ -15,9 +15,7 @@ type TransitGatewayAttachment_Options struct {
 }
 
 type TransitGatewayAttachment_Tags struct {
-	// The key portion of a key-value tag attached to the transit gateway attachment, used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The tag value (a free-form string) paired with a tag key to label or categorize the EC2 Transit Gateway attachment for management and identification purposes. (AI-inferred)
 	Value any
 }
 
@@ -36,28 +34,19 @@ var TransitGatewayAttachment_TagsFields = ubx.FieldMap{
 type TransitGatewayAttachmentConfig struct {
 	// The options for the transit gateway vpc attachment.
 	Options any
-	// The IDs of the subnets in the VPC to attach to the transit gateway, with at most one subnet per Availability Zone. (AI-inferred)
 	SubnetIds any
-	// Defines the tags (key-value pairs) to apply to the Transit Gateway Attachment resource for identification and cost allocation. (AI-inferred)
 	Tags any
-	// The ID of the transit gateway to which the attachment (such as a VPC) is associated. (AI-inferred)
 	TransitGatewayId any
-	// The ID of the VPC to attach to the transit gateway. (AI-inferred)
 	VpcId any
 }
 
 type TransitGatewayAttachmentAttrs struct {
-	// The AWS-assigned unique identifier for the transit gateway attachment (e.g., tgw-attach-0123456789abcdef0). (AI-inferred)
 	Id any
 	// The options for the transit gateway vpc attachment.
 	Options any
-	// The IDs of the subnets in the VPC to attach to the transit gateway, with at most one subnet per Availability Zone. (AI-inferred)
 	SubnetIds any
-	// Defines the tags (key-value pairs) to apply to the Transit Gateway Attachment resource for identification and cost allocation. (AI-inferred)
 	Tags any
-	// The ID of the transit gateway to which the attachment (such as a VPC) is associated. (AI-inferred)
 	TransitGatewayId any
-	// The ID of the VPC to attach to the transit gateway. (AI-inferred)
 	VpcId any
 }
 

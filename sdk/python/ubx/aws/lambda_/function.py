@@ -63,9 +63,7 @@ class Function_EphemeralStorage:
 
 @dataclasses.dataclass
 class Function_FileSystemConfigs:
-    # The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system mounted to the Lambda function. (AI-inferred)
     arn: Any = None
-    # Specifies the directory path (starting with '/mnt/') in the Lambda function's file system where the Amazon EFS file system is mounted, such as '/mnt/efs-data'. (AI-inferred)
     local_mount_path: Any = None
 
 @dataclasses.dataclass
@@ -116,9 +114,7 @@ class Function_SnapStartResponse:
 
 @dataclasses.dataclass
 class Function_Tags:
-    # The key of a tag attached to the AWS Lambda function, used to categorize and organize the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag associated with the Lambda function, used to define metadata such as environment, cost center, or ownership for resource management and cost allocation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -273,7 +269,6 @@ class FunctionConfig:
     memory_size: Any = None
     # The type of deployment package. Set to ``Image`` for container image and set ``Zip`` for .zip file archive.
     package_type: Any = None
-    # When set to true, this field triggers publishing a new version of the Lambda function on each deployment, making it the latest published version. (AI-inferred)
     publish_to_latest_published: Any = None
     # The function recursion configuration.
     recursive_loop: Any = None
@@ -302,7 +297,6 @@ class FunctionConfig:
 class FunctionAttrs:
     # The instruction set architecture that the function supports. Enter a string array with one of the valid values (arm64 or x86_64). The default value is ``x86_64``.
     architectures: Any = None
-    # The Amazon Resource Name (ARN) of the Lambda function, which uniquely identifies it within AWS and follows the format arn:aws:lambda:<region>:<account-id>:function:<function-name>. (AI-inferred)
     arn: Any = None
     # Configuration for the capacity provider that manages compute resources for Lambda functions.
     capacity_provider_config: Any = None
@@ -340,7 +334,6 @@ class FunctionAttrs:
     memory_size: Any = None
     # The type of deployment package. Set to ``Image`` for container image and set ``Zip`` for .zip file archive.
     package_type: Any = None
-    # When set to true, this field triggers publishing a new version of the Lambda function on each deployment, making it the latest published version. (AI-inferred)
     publish_to_latest_published: Any = None
     # The function recursion configuration.
     recursive_loop: Any = None

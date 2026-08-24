@@ -4,36 +4,25 @@ package smsvoice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationSet_EventDestinations_CloudWatchLogsDestination struct {
-	// The ARN of the IAM role that Amazon CloudWatch Logs assumes to publish event logs for the configuration set's event destination. (AI-inferred)
 	IamRoleArn any
-	// The ARN of the Amazon CloudWatch Logs log group where the configuration set delivers event notifications. (AI-inferred)
 	LogGroupArn any
 }
 
 type ConfigurationSet_EventDestinations_KinesisFirehoseDestination struct {
-	// The ARN of the Amazon Kinesis Data Firehose delivery stream to which the configuration set sends event notifications (e.g., message delivery and response events). (AI-inferred)
 	DeliveryStreamArn any
-	// The ARN of the IAM role that authorizes AWS SMS Voice to write event notifications to the associated Kinesis Data Firehose delivery stream. (AI-inferred)
 	IamRoleArn any
 }
 
 type ConfigurationSet_EventDestinations_SnsDestination struct {
-	// The ARN of the Amazon SNS topic where the configuration set sends event notifications for this event destination. (AI-inferred)
 	TopicArn any
 }
 
 type ConfigurationSet_EventDestinations struct {
-	// The CloudWatchLogsDestination object within an event destination of an AWS::SMSVoice::ConfigurationSet specifies the Amazon CloudWatch Logs destination for voice message events, including the IAM role ARN and log group ARN to which the events are delivered. (AI-inferred)
 	CloudWatchLogsDestination any
-	// Specifies whether the event destination is enabled to receive event notifications for the configuration set. (AI-inferred)
 	Enabled any
-	// Specifies the name of the event destination, which uniquely identifies this destination within the configuration set. (AI-inferred)
 	EventDestinationName any
-	// The Kinesis Data Firehose delivery stream destination for this event destination, specifying the delivery stream ARN and IAM role ARN that AWS SMS Voice uses to deliver event notifications. (AI-inferred)
 	KinesisFirehoseDestination any
-	// This field specifies the voice call events (e.g., INITIATED_CALL, RINGING, ANSWERED, COMPLETED, BUSY, FAILED, or NO_ANSWER) that must occur for the associated event destination to send notifications to its target SNS topic. (AI-inferred)
 	MatchingEventTypes any
-	// Configures the Amazon SNS topic to which event notifications are published for this event destination in the SMS voice configuration set. (AI-inferred)
 	SnsDestination any
 }
 
@@ -98,7 +87,6 @@ type ConfigurationSetConfig struct {
 }
 
 type ConfigurationSetAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the configuration set in AWS. (AI-inferred)
 	Arn any
 	// The name to use for the configuration set.
 	ConfigurationSetName any

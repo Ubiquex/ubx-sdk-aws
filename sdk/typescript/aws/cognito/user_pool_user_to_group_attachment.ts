@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolUserToGroupAttachmentConfig {
-  /** The name of the Cognito user pool group to which the user is attached. (AI-inferred) */
   groupName: string | Computed<string>;
-  /** The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred) */
   userPoolId: string | Computed<string>;
-  /** The username of the Cognito user to attach to the specified group. (AI-inferred) */
   username: string | Computed<string>;
 }
 
 export interface UserPoolUserToGroupAttachmentAttrs {
-  /** The name of the Cognito user pool group to which the user is attached. (AI-inferred) */
   groupName: string;
-  /** The unique ID of the Cognito user pool that contains the group and user to be attached. (AI-inferred) */
   userPoolId: string;
-  /** The username of the Cognito user to attach to the specified group. (AI-inferred) */
   username: string;
 }
 

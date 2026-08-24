@@ -4,9 +4,7 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayTapePool_Tags struct {
-	// The tag key (e.g., 'Environment') that names a metadata tag attached to the tape pool. (AI-inferred)
 	Key any
-	// The value of a user-defined tag associated with the Storage Gateway tape pool, used to organize and identify the resource in AWS. (AI-inferred)
 	Value any
 }
 

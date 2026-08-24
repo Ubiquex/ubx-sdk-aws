@@ -57,7 +57,6 @@ type SyncLocationFsxOntap_Protocol struct {
 }
 
 type SyncLocationFsxOntap_Tags struct {
-	// The key of a key-value tag applied to the FSx for ONTAP DataSync location, used to organize and identify the location for management and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }

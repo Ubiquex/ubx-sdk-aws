@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubConfigurationPolicy_ConfigurationPolicy_SecurityHub_SecurityControlsConfiguration_SecurityControlCustomParameters:
-    # Defines the map of security control parameter names to their ParameterValue objects (containing ValueType and Value, such as custom or default) for the associated control in the Security Hub configuration policy. (AI-inferred)
     parameters: Any = None
-    # The identifier of the AWS Security Hub security control (e.g., EC2.1) for which the custom parameter values are specified. (AI-inferred)
     security_control_id: Any = None
 
 @dataclasses.dataclass

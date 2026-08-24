@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallLoggingConfiguration_LoggingConfiguration_LogDestinationConfigs:
-    # Specifies the actual destination details as key-value pairs, such as the S3 bucket name, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream, that correspond to the chosen LogDestinationType in the Network Firewall logging configuration. (AI-inferred)
     log_destination: Any = None
-    # Defines the kind of service that receives the firewall logs, such as Amazon S3, CloudWatch Logs, or Kinesis Data Firehose. (AI-inferred)
     log_destination_type: Any = None
-    # The type of Network Firewall log to send to this destination, either ALERT for firewall alert logs or FLOW for firewall flow logs. (AI-inferred)
     log_type: Any = None
 
 @dataclasses.dataclass
 class FirewallLoggingConfiguration_LoggingConfiguration:
-    # Specifies the destinations and log types (alert or flow) to which Network Firewall sends its logs, such as Amazon CloudWatch Logs, Amazon S3, or Amazon Kinesis Data Firehose. (AI-inferred)
     log_destination_configs: Any = None
 
 _FirewallLoggingConfiguration_LoggingConfiguration_LogDestinationConfigsFields = {
@@ -39,9 +35,7 @@ class FirewallLoggingConfigurationConfig:
     enable_monitoring_dashboard: Any = None
     # A resource ARN.
     firewall_arn: Any = None
-    # The name of the Network Firewall firewall resource that this logging configuration applies to, used as an alternative to the firewall ARN. (AI-inferred)
     firewall_name: Any = None
-    # Specifies the logging destinations and configuration for the network firewall, including the list of log destination configs that define where firewall logs are sent (e.g., to CloudWatch Logs, S3, or Kinesis Data Firehose). (AI-inferred)
     logging_configuration: Any = None
 
 @dataclasses.dataclass
@@ -49,9 +43,7 @@ class FirewallLoggingConfigurationAttrs:
     enable_monitoring_dashboard: Any = None
     # A resource ARN.
     firewall_arn: Any = None
-    # The name of the Network Firewall firewall resource that this logging configuration applies to, used as an alternative to the firewall ARN. (AI-inferred)
     firewall_name: Any = None
-    # Specifies the logging destinations and configuration for the network firewall, including the list of log destination configs that define where firewall logs are sent (e.g., to CloudWatch Logs, S3, or Kinesis Data Firehose). (AI-inferred)
     logging_configuration: Any = None
 
 FirewallLoggingConfiguration = ubx.ResourceBinding(

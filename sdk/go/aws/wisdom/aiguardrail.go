@@ -4,11 +4,8 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Aiguardrail_ContentPolicyConfig_FiltersConfig struct {
-	// Sets the moderation intensity for filtering user-provided input for this content filter, using an allowed value of NONE, LOW, MEDIUM, or HIGH to control how strictly the guardrail blocks or modifies incoming messages. (AI-inferred)
 	InputStrength any
-	// Specifies the strength of the content filter applied to the model's output, with allowed values such as NONE, LOW, MEDIUM, or HIGH, determining how aggressively the guardrail blocks or modifies generated content. (AI-inferred)
 	OutputStrength any
-	// The category of harmful content that this filter targets, with allowed values such as PROFANITY, VIOLENCE, SEXUAL, HATE, INSULTS, and MISCONDUCT. (AI-inferred)
 	Type any
 }
 
@@ -18,9 +15,7 @@ type Aiguardrail_ContentPolicyConfig struct {
 }
 
 type Aiguardrail_ContextualGroundingPolicyConfig_FiltersConfig struct {
-	// Sets the confidence threshold (0 to 1) at which the contextual grounding filter considers a response grounded in the source, with higher values increasing strictness and blocking more outputs that lack grounding. (AI-inferred)
 	Threshold any
-	// The type of the contextual grounding filter, which determines whether the filter validates that the response is grounded in the source information (GROUNDING) or is relevant to the user's query (RELEVANCE). (AI-inferred)
 	Type any
 }
 
@@ -30,20 +25,14 @@ type Aiguardrail_ContextualGroundingPolicyConfig struct {
 }
 
 type Aiguardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfig struct {
-	// The action to take on a detected PII entity, either BLOCK to deny the interaction or ANONYMIZE to replace the entity with a placeholder. (AI-inferred)
 	Action any
-	// This field specifies the type of PII entity to detect and protect against, such as EMAIL or PHONE_NUMBER. (AI-inferred)
 	Type any
 }
 
 type Aiguardrail_SensitiveInformationPolicyConfig_RegexesConfig struct {
-	// Specifies the enforcement action applied to content matching the regex pattern, such as blocking the content or anonymizing the detected sensitive data. (AI-inferred)
 	Action any
-	// Provides a descriptive note for a regex configuration in the AI guardrail's sensitive information policy, explaining what kind of sensitive data the regex pattern is intended to detect. (AI-inferred)
 	Description any
-	// The name of a regex configuration within the sensitive information policy, uniquely identifying the regular expression pattern used by the Wisdom AI guardrail. (AI-inferred)
 	Name any
-	// The regular expression pattern used to define a custom regex-based rule for detecting sensitive information in the AI guardrail's sensitive information policy. (AI-inferred)
 	Pattern any
 }
 
@@ -55,13 +44,9 @@ type Aiguardrail_SensitiveInformationPolicyConfig struct {
 }
 
 type Aiguardrail_TopicPolicyConfig_TopicsConfig struct {
-	// The natural-language definition of the topic, used by the guardrail to match user input and decide whether to allow or deny it according to the topic's type. (AI-inferred)
 	Definition any
-	// The examples field specifies a list of representative phrases for a topic, which the guardrail uses to identify and apply the configured topic policy when input matches those phrases. (AI-inferred)
 	Examples any
-	// Name of the topic entry in the topic policy configuration, used to identify the specific topic that the AI guardrail will allow or deny in conversations. (AI-inferred)
 	Name any
-	// Specifies the type of the topic, with the only supported value being 'DENY', which causes the guardrail to block any conversation that matches the topic's definition. (AI-inferred)
 	Type any
 }
 
@@ -71,12 +56,10 @@ type Aiguardrail_TopicPolicyConfig struct {
 }
 
 type Aiguardrail_WordPolicyConfig_ManagedWordListsConfig struct {
-	// Specifies whether this managed word list is the built-in profanity list (PROFANITY) or a custom list (CUSTOM) that you define in the same object. (AI-inferred)
 	Type any
 }
 
 type Aiguardrail_WordPolicyConfig_WordsConfig struct {
-	// The exact word or phrase that the guardrail's word policy is configured to block from appearing in user input or model output. (AI-inferred)
 	Text any
 }
 
@@ -176,7 +159,6 @@ var Aiguardrail_WordPolicyConfigFields = ubx.FieldMap{
 	}
 
 type AiguardrailConfig struct {
-	// The identifier of the Amazon Wisdom assistant to which this AI guardrail is associated. (AI-inferred)
 	AssistantId any
 	// Messaging for when violations are detected in text
 	BlockedInputMessaging any
@@ -188,7 +170,6 @@ type AiguardrailConfig struct {
 	ContextualGroundingPolicyConfig any
 	// Description of the guardrail or its version
 	Description any
-	// Sets the friendly name for the AI guardrail, used to identify it in Amazon Q Business console and API operations. (AI-inferred)
 	Name any
 	// Sensitive information policy config for a guardrail.
 	SensitiveInformationPolicyConfig any
@@ -200,13 +181,9 @@ type AiguardrailConfig struct {
 }
 
 type AiguardrailAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the AI guardrail. (AI-inferred)
 	AiguardrailArn any
-	// The unique identifier assigned by AWS Wisdom for this AI guardrail resource. (AI-inferred)
 	AiguardrailId any
-	// The Amazon Resource Name (ARN) of the Amazon Q (Wisdom) assistant to which this AI guardrail is attached, returned by the service. (AI-inferred)
 	AssistantArn any
-	// The identifier of the Amazon Wisdom assistant to which this AI guardrail is associated. (AI-inferred)
 	AssistantId any
 	// Messaging for when violations are detected in text
 	BlockedInputMessaging any
@@ -218,9 +195,7 @@ type AiguardrailAttrs struct {
 	ContextualGroundingPolicyConfig any
 	// Description of the guardrail or its version
 	Description any
-	// This read-only attribute returns the Unix timestamp, in seconds, of the last modification to the Wisdom AI guardrail. (AI-inferred)
 	ModifiedTimeSeconds any
-	// Sets the friendly name for the AI guardrail, used to identify it in Amazon Q Business console and API operations. (AI-inferred)
 	Name any
 	// Sensitive information policy config for a guardrail.
 	SensitiveInformationPolicyConfig any

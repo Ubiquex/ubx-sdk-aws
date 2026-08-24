@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServiceTemplate_Tags:
-    # The key of a tag attached to the AWS Proton service template, used to identify and categorize the template for operational and cost management purposes. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -25,9 +24,7 @@ class ServiceTemplateConfig:
     display_name: Any = None
     # <p>A customer provided encryption key that's used to encrypt data.</p>
     encryption_key: Any = None
-    # The unique name of the Proton service template. (AI-inferred)
     name: Any = None
-    # Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred)
     pipeline_provisioning: Any = None
     # <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     tags: Any = None
@@ -42,9 +39,7 @@ class ServiceTemplateAttrs:
     display_name: Any = None
     # <p>A customer provided encryption key that's used to encrypt data.</p>
     encryption_key: Any = None
-    # The unique name of the Proton service template. (AI-inferred)
     name: Any = None
-    # Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred)
     pipeline_provisioning: Any = None
     # <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     tags: Any = None

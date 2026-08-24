@@ -4,18 +4,13 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CoreDefinition_InitialVersion_Cores struct {
-	// The ARN of the AWS IoT certificate that authenticates the core device in the Greengrass group. (AI-inferred)
 	CertificateArn any
-	// The user-defined identifier for this core within the Greengrass core definition version, used to reference the core in the group configuration. (AI-inferred)
 	Id any
-	// Indicates whether the Greengrass core device's shadow sync is enabled with the AWS IoT cloud, allowing the local shadow to be synchronized with the cloud-shadow service. (AI-inferred)
 	SyncShadow any
-	// The ARN of the AWS IoT thing that this Greengrass core represents. (AI-inferred)
 	ThingArn any
 }
 
 type CoreDefinition_InitialVersion struct {
-	// Specifies the list of core devices (each with a thing ARN and certificate ARN) that make up the initial version of this AWS Greengrass core definition. (AI-inferred)
 	Cores any
 }
 
@@ -35,26 +30,17 @@ var CoreDefinition_InitialVersionFields = ubx.FieldMap{
 	}
 
 type CoreDefinitionConfig struct {
-	// Defines the initial version of the core definition by specifying a list of Greengrass core devices, each identified by its AWS IoT thing ARN and associated certificate ARN, that are used when the definition is first created. (AI-inferred)
 	InitialVersion any
-	// The name of the AWS IoT Greengrass core definition, a required user-defined identifier used to distinguish this resource. (AI-inferred)
 	Name any
-	// Attaches key-value metadata tags to the AWS Greengrass core definition, useful for organizing and identifying the resource. (AI-inferred)
 	Tags any
 }
 
 type CoreDefinitionAttrs struct {
-	// The Amazon Resource Name (ARN) of the AWS Greengrass core definition, uniquely identifying it across AWS. (AI-inferred)
 	Arn any
-	// The unique AWS-assigned identifier of the Greengrass core definition resource. (AI-inferred)
 	Id any
-	// Defines the initial version of the core definition by specifying a list of Greengrass core devices, each identified by its AWS IoT thing ARN and associated certificate ARN, that are used when the definition is first created. (AI-inferred)
 	InitialVersion any
-	// The Amazon Resource Name (ARN) of the most recent version of the Greengrass core definition, automatically updated whenever the definition is revised. (AI-inferred)
 	LatestVersionArn any
-	// The name of the AWS IoT Greengrass core definition, a required user-defined identifier used to distinguish this resource. (AI-inferred)
 	Name any
-	// Attaches key-value metadata tags to the AWS Greengrass core definition, useful for organizing and identifying the resource. (AI-inferred)
 	Tags any
 }
 

@@ -33,7 +33,6 @@ type LiftAliasConfig struct {
 	Description any
 	// A descriptive label that is associated with an alias. Alias names do not need to be unique.
 	Name any
-	// The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred)
 	RoutingStrategy any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -48,7 +47,6 @@ type LiftAliasAttrs struct {
 	Description any
 	// A descriptive label that is associated with an alias. Alias names do not need to be unique.
 	Name any
-	// The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred)
 	RoutingStrategy any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

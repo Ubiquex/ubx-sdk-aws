@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlobalResolverHostedZoneAssociationConfig {
-  /** The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred) */
   hostedZoneId: string | Computed<string>;
   name: string | Computed<string>;
   resourceArn: string | Computed<string>;
@@ -11,12 +10,10 @@ export interface GlobalResolverHostedZoneAssociationConfig {
 export interface GlobalResolverHostedZoneAssociationAttrs {
   createdAt: string;
   hostedZoneAssociationId: string;
-  /** The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred) */
   hostedZoneId: string;
   hostedZoneName: string;
   name: string;
   resourceArn: string;
-  /** The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred) */
   status: string;
   updatedAt: string;
 }

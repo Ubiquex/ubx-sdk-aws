@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VerifiedAccessEndpoint_CidrOptions_PortRanges struct {
-	// Defines the starting port in a port range that the Verified Access endpoint accepts traffic on for CIDR-based access. (AI-inferred)
 	FromPort any
-	// The inclusive upper bound of the port range that the Verified Access endpoint will accept for traffic coming from the specified CIDR. (AI-inferred)
 	ToPort any
 }
 

@@ -2,41 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BrewDataset_FormatOptions_Csv {
-  /** The single character used to separate columns in the CSV file when reading data into the AWS DataBrew dataset. (AI-inferred) */
   delimiter?: string | Computed<string>;
-  /** Indicates whether the first row of the CSV file is treated as a header row containing column names. (AI-inferred) */
   headerRow?: boolean | Computed<boolean>;
 }
 
 export interface BrewDataset_FormatOptions_Excel {
-  /** Indicates whether the first row of the Excel file is treated as column headers. (AI-inferred) */
   headerRow?: boolean | Computed<boolean>;
-  /** Specifies the 0-based indices of the Excel sheets to include from the workbook, letting you select specific sheets when the file contains multiple sheets. (AI-inferred) */
   sheetIndexes?: number[] | Computed<number[]>;
-  /** Specifies the names of the worksheets within an Excel workbook that DataBrew will read when creating the dataset, allowing you to limit the data to only those sheets. (AI-inferred) */
   sheetNames?: string[] | Computed<string[]>;
 }
 
 export interface BrewDataset_FormatOptions_Json {
-  /** Specifies whether JSON objects in the dataset can span multiple lines (true) or must each be contained on a single line (false). (AI-inferred) */
   multiLine?: boolean | Computed<boolean>;
 }
 
 export interface BrewDataset_FormatOptions {
   /** Csv options */
   csv?: BrewDataset_FormatOptions_Csv | Computed<BrewDataset_FormatOptions_Csv>;
-  /** Defines format-specific settings for Excel inputs, including the sheets to read and whether the first row is treated as a header. (AI-inferred) */
   excel?: BrewDataset_FormatOptions_Excel | Computed<BrewDataset_FormatOptions_Excel>;
   /** Json options */
   json?: BrewDataset_FormatOptions_Json | Computed<BrewDataset_FormatOptions_Json>;
 }
 
 export interface BrewDataset_Input_DataCatalogInputDefinition_TempDirectory {
-  /** The S3 bucket where DataBrew stores temporary files created while processing the dataset's Data Catalog input definition. (AI-inferred) */
   bucket: string | Computed<string>;
   /** Bucket owner */
   bucketOwner?: string | Computed<string>;
-  /** The S3 object key prefix within the temporary directory bucket where AWS Glue DataBrew writes intermediate query results when accessing the referenced Data Catalog table. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
@@ -68,11 +59,8 @@ export interface BrewDataset_Input_Metadata {
 }
 
 export interface BrewDataset_Input {
-  /** Defines the AWS Glue Data Catalog database and table that AWS DataBrew uses as the source for this dataset. (AI-inferred) */
   dataCatalogInputDefinition?: BrewDataset_Input_DataCatalogInputDefinition | Computed<BrewDataset_Input_DataCatalogInputDefinition>;
-  /** Specifies the database connection and query details used to pull data into the dataset, including the connection name, database name, and query string. (AI-inferred) */
   databaseInputDefinition?: BrewDataset_Input_DatabaseInputDefinition | Computed<BrewDataset_Input_DatabaseInputDefinition>;
-  /** Specifies metadata about the dataset's input source, including the SourceArn of the source dataset for lineage and versioning. (AI-inferred) */
   metadata?: BrewDataset_Input_Metadata | Computed<BrewDataset_Input_Metadata>;
   /** Input location */
   s3InputDefinition?: BrewDataset_Input_DataCatalogInputDefinition_TempDirectory | Computed<BrewDataset_Input_DataCatalogInputDefinition_TempDirectory>;
@@ -88,61 +76,43 @@ export interface BrewDataset_PathOptions_FilesLimit {
 }
 
 export interface BrewDataset_PathOptions_LastModifiedDateCondition_ValuesMap {
-  /** For an AWS DataBrew dataset's S3 path options, this value holds the string value associated with a key in the last-modified-date condition's values map, such as the start or end date used to filter files by their last modified date. (AI-inferred) */
   value?: string | Computed<string>;
-  /** Provides a reference to a value that DataBrew substitutes for a placeholder in the last modified date conditioning expression, allowing the dataset's path file filter to use dynamically referenced values instead of literals. (AI-inferred) */
   valueReference?: string | Computed<string>;
 }
 
 export interface BrewDataset_PathOptions_LastModifiedDateCondition {
   /** Filtering expression for a parameter */
   expression: string | Computed<string>;
-  /** Defines the key-value pairs (e.g., startDate and endDate) that substitute into the last-modified-date condition expression, filtering which S3 files are included in the DataBrew dataset based on their last modified timestamp. (AI-inferred) */
   valuesMap: BrewDataset_PathOptions_LastModifiedDateCondition_ValuesMap[] | Computed<BrewDataset_PathOptions_LastModifiedDateCondition_ValuesMap[]>;
 }
 
 export interface BrewDataset_PathOptions_Parameters_DatasetParameter_DatetimeOptions {
-  /** Specifies the custom date/time format (for example, 'yyyy-MM-dd') that defines how the value of a datetime dataset parameter is parsed and interpreted. (AI-inferred) */
   format?: string | Computed<string>;
-  /** The locale code (e.g., 'en-US') that specifies the language and region used to interpret the datetime format in the dataset path parameter. (AI-inferred) */
   localeCode?: string | Computed<string>;
-  /** Specifies the timezone offset (e.g., '+05:30' or '-08:00') used to interpret datetime values captured by this dataset parameter. (AI-inferred) */
   timezoneOffset?: string | Computed<string>;
 }
 
 export interface BrewDataset_PathOptions_Parameters_DatasetParameter {
-  /** Determines whether AWS DataBrew adds a column to the dataset that contains the actual value of this path parameter, enabling you to use the parameter value as data. (AI-inferred) */
   createColumn?: boolean | Computed<boolean>;
-  /** Defines the datetime parsing options (format, locale, and timezone offset) for a path parameter of type DATETIME in an AWS DataBrew dataset. (AI-inferred) */
   datetimeOptions?: BrewDataset_PathOptions_Parameters_DatasetParameter_DatetimeOptions | Computed<BrewDataset_PathOptions_Parameters_DatasetParameter_DatetimeOptions>;
-  /** Specifies a regular expression that DataBrew uses to match the value of the path parameter, so that only matching files are included in the dataset. (AI-inferred) */
   filter?: BrewDataset_PathOptions_LastModifiedDateCondition | Computed<BrewDataset_PathOptions_LastModifiedDateCondition>;
-  /** The name of the dataset parameter that is used as a placeholder in the path expression, which is substituted with the parameter's value when resolving the data source. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the data type of the dataset parameter, which can be String, Number, or Datetime, and determines how the parameter value is interpreted when resolving file paths or dataset filters. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface BrewDataset_PathOptions_Parameters {
-  /** Defines the data type (e.g., String, Integer, Datetime) and associated parsing options, such as datetime formatting, column creation, and filter criteria, for a single parameterized variable in the dataset's S3 path. (AI-inferred) */
   datasetParameter?: BrewDataset_PathOptions_Parameters_DatasetParameter | Computed<BrewDataset_PathOptions_Parameters_DatasetParameter>;
-  /** The name of the parameter placeholder in the S3 path of the dataset, used to map to a corresponding dataset parameter definition for dynamic path resolution. (AI-inferred) */
   pathParameterName?: string | Computed<string>;
 }
 
 export interface BrewDataset_PathOptions {
-  /** Configures a limit on the number of files that DataBrew uses from the dataset's S3 path, optionally specifying the ordering for file selection. (AI-inferred) */
   filesLimit?: BrewDataset_PathOptions_FilesLimit | Computed<BrewDataset_PathOptions_FilesLimit>;
-  /** Defines a filter expression and value map that restricts the S3 files ingested into the dataset based on their last modified date. (AI-inferred) */
   lastModifiedDateCondition?: BrewDataset_PathOptions_LastModifiedDateCondition | Computed<BrewDataset_PathOptions_LastModifiedDateCondition>;
-  /** Defines the list of parameters that DataBrew uses to resolve placeholders in the S3 path expression for this dataset, with each parameter specifying its name, type (e.g., STRING or DATETIME), and optional datetime formatting or filter criteria. (AI-inferred) */
   parameters?: BrewDataset_PathOptions_Parameters[] | Computed<BrewDataset_PathOptions_Parameters[]>;
 }
 
 export interface BrewDataset_Tags {
-  /** The key of a tag attached to the DataBrew dataset, used to identify the tag in AWS resource tagging. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to this AWS DataBrew dataset, used to categorize or manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -321,7 +291,6 @@ export interface BrewDatasetConfig {
   pathOptions?: BrewDataset_PathOptions | Computed<BrewDataset_PathOptions>;
   /** Source type of the dataset */
   source?: string | Computed<string>;
-  /** Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred) */
   tags?: BrewDataset_Tags[] | Computed<BrewDataset_Tags[]>;
 }
 
@@ -338,7 +307,6 @@ export interface BrewDatasetAttrs {
   pathOptions: BrewDataset_PathOptions;
   /** Source type of the dataset */
   source: string;
-  /** Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred) */
   tags: BrewDataset_Tags[];
 }
 

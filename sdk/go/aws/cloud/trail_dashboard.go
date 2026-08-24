@@ -11,7 +11,6 @@ type TrailDashboard_RefreshSchedule_Frequency struct {
 }
 
 type TrailDashboard_RefreshSchedule struct {
-	// Defines the automatic refresh frequency for the CloudTrail dashboard, expressed as a unit-value pair (e.g., HOURS with a value of 6 for a six-hour refresh interval). (AI-inferred)
 	Frequency any
 	// The status of the schedule. Supported values are ENABLED and DISABLED.
 	Status any
@@ -21,14 +20,11 @@ type TrailDashboard_RefreshSchedule struct {
 
 type TrailDashboard_Tags struct {
 	Key any
-	// The value of a tag attached to the CloudTrail dashboard, used to assign custom metadata for identifying, organizing, and controlling access to the dashboard (e.g., via IAM conditions and cost allocation tags). (AI-inferred)
 	Value any
 }
 
 type TrailDashboard_Widgets struct {
-	// For each widget in an AWS CloudTrail dashboard, this list of strings supplies the query parameter values that are substituted into the widget's query to filter or scope the displayed data. (AI-inferred)
 	QueryParameters any
-	// The SQL query statement that a widget in an AWS CloudTrail dashboard uses to fetch and display data from the CloudTrail event data store. (AI-inferred)
 	QueryStatement any
 	ViewProperties any
 }
@@ -64,7 +60,6 @@ type TrailDashboardConfig struct {
 	Name any
 	// Configures the automatic refresh schedule for the dashboard. Includes the frequency unit (DAYS or HOURS) and value, as well as the status (ENABLED or DISABLED) of the refresh schedule.
 	RefreshSchedule any
-	// A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred)
 	Tags any
 	// Indicates whether the dashboard is protected from termination.
 	TerminationProtectionEnabled any
@@ -73,7 +68,6 @@ type TrailDashboardConfig struct {
 }
 
 type TrailDashboardAttrs struct {
-	// The timestamp, in ISO 8601 format, indicating when the CloudTrail dashboard was created, as returned by the CloudTrail DescribeDashboard API. (AI-inferred)
 	CreatedTimestamp any
 	// The ARN of the dashboard.
 	DashboardArn any
@@ -83,13 +77,11 @@ type TrailDashboardAttrs struct {
 	RefreshSchedule any
 	// The status of the dashboard. Values are CREATING, CREATED, UPDATING, UPDATED and DELETING.
 	Status any
-	// A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred)
 	Tags any
 	// Indicates whether the dashboard is protected from termination.
 	TerminationProtectionEnabled any
 	// The type of the dashboard. Values are CUSTOM and MANAGED.
 	Type any
-	// The timestamp indicating when the CloudTrail dashboard was last updated. (AI-inferred)
 	UpdatedTimestamp any
 	// List of widgets on the dashboard
 	Widgets any

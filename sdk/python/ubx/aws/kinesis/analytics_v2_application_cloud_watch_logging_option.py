@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption:
-    # The ARN of the CloudWatch log stream that the Kinesis Data Analytics for Apache Flink application writes its diagnostic logs to. (AI-inferred)
     log_stream_arn: Any = None
 
 _AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields = {
@@ -17,16 +16,12 @@ _AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields = {
 
 @dataclasses.dataclass
 class AnalyticsV2ApplicationCloudWatchLoggingOptionConfig:
-    # The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred)
     application_name: Any = None
-    # Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred)
     cloud_watch_logging_option: Any = None
 
 @dataclasses.dataclass
 class AnalyticsV2ApplicationCloudWatchLoggingOptionAttrs:
-    # The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred)
     application_name: Any = None
-    # Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred)
     cloud_watch_logging_option: Any = None
     id: Any = None
 

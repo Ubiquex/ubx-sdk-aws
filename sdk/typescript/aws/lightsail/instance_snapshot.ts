@@ -9,7 +9,6 @@ export interface InstanceSnapshot_Location {
 }
 
 export interface InstanceSnapshot_Tags {
-  /** Specifies the key of a tag applied to the AWS Lightsail instance snapshot, used for organizing and identifying the snapshot. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

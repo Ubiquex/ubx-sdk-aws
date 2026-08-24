@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TRoleAlias_Tags {
-  /** The user-defined key of a tag attached to the AWS IoT Role Alias, used for metadata, cost tracking, and access management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value portion of a tag attached to an AWS IoT Role Alias, used for organizing and identifying the alias with custom metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,26 +12,17 @@ const TRoleAlias_TagsFields: FieldMap = {
 };
 
 export interface TRoleAliasConfig {
-  /** Specifies the duration, in seconds, for which the temporary credentials returned by the AWS IoT role alias remain valid when the role is assumed via the alias. (AI-inferred) */
   credentialDurationSeconds?: number | Computed<number>;
-  /** The unique name for the role alias, used in IoT policies and API calls to refer to the IAM role associated with this alias. (AI-inferred) */
   roleAlias?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the IAM role that the role alias points to, which devices assume when authenticating through the AWS IoT credentials provider. (AI-inferred) */
   roleArn: string | Computed<string>;
-  /** Defines the list of tag objects to attach to the AWS IoT role alias, which can be used to organize, identify, and control access to the alias resource. (AI-inferred) */
   tags?: TRoleAlias_Tags[] | Computed<TRoleAlias_Tags[]>;
 }
 
 export interface TRoleAliasAttrs {
-  /** Specifies the duration, in seconds, for which the temporary credentials returned by the AWS IoT role alias remain valid when the role is assumed via the alias. (AI-inferred) */
   credentialDurationSeconds: number;
-  /** The unique name for the role alias, used in IoT policies and API calls to refer to the IAM role associated with this alias. (AI-inferred) */
   roleAlias: string;
-  /** The Amazon Resource Name (ARN) of the IoT role alias, automatically assigned by AWS when the alias is created. (AI-inferred) */
   roleAliasArn: string;
-  /** The Amazon Resource Name (ARN) of the IAM role that the role alias points to, which devices assume when authenticating through the AWS IoT credentials provider. (AI-inferred) */
   roleArn: string;
-  /** Defines the list of tag objects to attach to the AWS IoT role alias, which can be used to organize, identify, and control access to the alias resource. (AI-inferred) */
   tags: TRoleAlias_Tags[];
 }
 

@@ -4,9 +4,7 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageV2ChannelGroup_Tags struct {
-	// The key of a user-defined tag attached to the MediaPackage v2 channel group for metadata and resource management. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to the MediaPackage v2 channel group, used for metadata and resource categorization. (AI-inferred)
 	Value any
 }
 
@@ -16,18 +14,15 @@ var PackageV2ChannelGroup_TagsFields = ubx.FieldMap{
 	}
 
 type PackageV2ChannelGroupConfig struct {
-	// The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred)
 	ChannelGroupName any
 	// <p>Enter any descriptive text that helps you to identify the channel group.</p>
 	Description any
-	// A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred)
 	Tags any
 }
 
 type PackageV2ChannelGroupAttrs struct {
 	// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
 	Arn any
-	// The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred)
 	ChannelGroupName any
 	// <p>The date and time the channel group was created.</p>
 	CreatedAt any
@@ -37,7 +32,6 @@ type PackageV2ChannelGroupAttrs struct {
 	EgressDomain any
 	// <p>The date and time the channel group was modified.</p>
 	ModifiedAt any
-	// A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred)
 	Tags any
 }
 

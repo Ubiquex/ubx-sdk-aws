@@ -8,33 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnywhereTrustAnchor_NotificationSettings:
-    # Specifies the channel through which notifications are sent for this trust anchor; valid values are ALL (send to all configured channels) or SNS (send only to an Amazon SNS topic). (AI-inferred)
     channel: Any = None
-    # A boolean that indicates whether notifications for the associated event (e.g., CA certificate expiration) are enabled for this trust anchor. (AI-inferred)
     enabled: Any = None
     event: Any = None
-    # The number of days before a certificate expires that triggers the notification event defined in this notification setting. (AI-inferred)
     threshold: Any = None
 
 @dataclasses.dataclass
 class AnywhereTrustAnchor_Source_SourceData:
-    # The ARN of the AWS Certificate Manager Private Certificate Authority (ACM PCA) that serves as the source of trust for this AWS Roles Anywhere trust anchor. (AI-inferred)
     acm_pca_arn: Any = None
-    # The PEM-encoded X.509 certificate data used as the trust anchor for AWS Roles Anywhere to validate temporary credentials. (AI-inferred)
     x509_certificate_data: Any = None
 
 @dataclasses.dataclass
 class AnywhereTrustAnchor_Source:
-    # Specifies the certificate authority data for the trust anchor, containing either the X.509 certificate contents in x509CertificateData or the ACM Private CA ARN in acmPcaArn, depending on the sourceType. (AI-inferred)
     source_data: Any = None
-    # Specifies the type of trust anchor source, either AWS_ACM_PCA or CERTIFICATE_BUNDLE, which determines how the source data (ACM Private CA ARN or PEM-encoded certificate bundle) is interpreted. (AI-inferred)
     source_type: Any = None
 
 @dataclasses.dataclass
 class AnywhereTrustAnchor_Tags:
-    # Specifies the key of a tag assigned to the AWS IAM Roles Anywhere trust anchor, used to organize, identify, and manage the resource within AWS. (AI-inferred)
     key: Any = None
-    # The value part of a key-value tag attached to the AWS Roles Anywhere trust anchor, used for metadata and resource identification. (AI-inferred)
     value: Any = None
 
 _AnywhereTrustAnchor_NotificationSettingsFields = {
@@ -65,32 +56,20 @@ _AnywhereTrustAnchor_TagsFields = {
 
 @dataclasses.dataclass
 class AnywhereTrustAnchorConfig:
-    # Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred)
     enabled: Any = None
-    # Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred)
     name: Any = None
-    # List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred)
     notification_settings: Any = None
-    # Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred)
     source: Any = None
-    # A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AnywhereTrustAnchorAttrs:
-    # Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred)
     enabled: Any = None
-    # Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred)
     name: Any = None
-    # List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred)
     notification_settings: Any = None
-    # Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred)
     source: Any = None
-    # A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the trust anchor. (AI-inferred)
     trust_anchor_arn: Any = None
-    # The unique identifier assigned by AWS to the trust anchor when it is created, used to reference the trust anchor in other IAM Roles Anywhere operations. (AI-inferred)
     trust_anchor_id: Any = None
 
 AnywhereTrustAnchor = ubx.ResourceBinding(

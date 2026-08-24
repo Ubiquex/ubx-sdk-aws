@@ -55,7 +55,6 @@ class IntegrationsDataIntegrationConfig:
     name: Any = None
     # The configuration for what data should be pulled from the source.
     object_configuration: Any = None
-    # Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred)
     schedule_config: Any = None
     # The URI of the data source.
     source_uri: Any = None
@@ -78,7 +77,6 @@ class IntegrationsDataIntegrationAttrs:
     name: Any = None
     # The configuration for what data should be pulled from the source.
     object_configuration: Any = None
-    # Defines the schedule for data integration runs, specifying a cron expression for the schedule, the first execution timestamp, and the owner of the source data object. (AI-inferred)
     schedule_config: Any = None
     # The URI of the data source.
     source_uri: Any = None

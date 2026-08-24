@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rule_ExcludeResourceTags {
-  /** Specifies the tag key used to identify resources that should be excluded from the retention rule's cleanup (i.e., resources with this tag key will not be affected by the rule). (AI-inferred) */
   resourceTagKey?: string | Computed<string>;
-  /** The value of a resource tag that, when matched on a resource, excludes that resource from the retention rule's effect. (AI-inferred) */
   resourceTagValue?: string | Computed<string>;
 }
 
@@ -52,7 +50,6 @@ export interface RuleConfig {
   description?: string | Computed<string>;
   /** Information about the exclude resource tags used to identify resources that are excluded by the retention rule. */
   excludeResourceTags?: Rule_ExcludeResourceTags[] | Computed<Rule_ExcludeResourceTags[]>;
-  /** The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred) */
   lockConfiguration?: Rule_LockConfiguration | Computed<Rule_LockConfiguration>;
   /** Information about the resource tags used to identify resources that are retained by the retention rule. */
   resourceTags?: Rule_ExcludeResourceTags[] | Computed<Rule_ExcludeResourceTags[]>;
@@ -75,7 +72,6 @@ export interface RuleAttrs {
   excludeResourceTags: Rule_ExcludeResourceTags[];
   /** The unique ID of the retention rule. */
   identifier: string;
-  /** The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred) */
   lockConfiguration: Rule_LockConfiguration;
   /** The lock state for the retention rule. */
   lockState: string;

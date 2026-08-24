@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayDomainNameV2_EndpointConfiguration:
-    # Specifies whether the API Gateway custom domain name endpoint uses IPv4 only (IPV4) or both IPv4 and IPv6 (DUALSTACK). (AI-inferred)
     ip_address_type: Any = None
-    # Specifies the endpoint type for the domain name, where 'REGIONAL' is the only supported value in API Gateway v2 to indicate a regional endpoint. (AI-inferred)
     types: Any = None
 
 @dataclasses.dataclass
 class GatewayDomainNameV2_Tags:
-    # The key of a tag assigned to the API Gateway custom domain name, which you can use to categorize the resource for cost allocation and IAM-based access control. (AI-inferred)
     key: Any = None
-    # The value for a tag key assigned to the API Gateway domain name v2 resource. (AI-inferred)
     value: Any = None
 
 _GatewayDomainNameV2_EndpointConfigurationFields = {
@@ -32,40 +28,29 @@ _GatewayDomainNameV2_TagsFields = {
 
 @dataclasses.dataclass
 class GatewayDomainNameV2Config:
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure the custom domain name's endpoint, such as edge-optimized or regional, for API Gateway v2. (AI-inferred)
     certificate_arn: Any = None
-    # The custom domain name (e.g., api.example.com) that this API Gateway v2 domain name configuration represents, which must be owned by the user and is used as the public endpoint for invoking the associated APIs. (AI-inferred)
     domain_name: Any = None
     endpoint_access_mode: Any = None
     endpoint_configuration: Any = None
-    # A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred)
     policy: Any = None
     # The valid routing modes are [BASE_PATH_MAPPING_ONLY], [ROUTING_RULE_THEN_BASE_PATH_MAPPING] and [ROUTING_RULE_ONLY]. All other inputs are invalid.
     routing_mode: Any = None
-    # The security_policy field specifies the minimum Transport Layer Security (TLS) protocol version for the API Gateway custom domain name's endpoint, with supported values of 'TLS_1_0' and 'TLS_1_2'. (AI-inferred)
     security_policy: Any = None
-    # Specifies the tags (list of objects with Key and Value) to associate with the API Gateway v2 domain name, enabling metadata management and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class GatewayDomainNameV2Attrs:
-    # The ARN of an AWS Certificate Manager (ACM) certificate used to secure the custom domain name's endpoint, such as edge-optimized or regional, for API Gateway v2. (AI-inferred)
     certificate_arn: Any = None
-    # The custom domain name (e.g., api.example.com) that this API Gateway v2 domain name configuration represents, which must be owned by the user and is used as the public endpoint for invoking the associated APIs. (AI-inferred)
     domain_name: Any = None
     # The amazon resource name (ARN) of the domain name resource.
     domain_name_arn: Any = None
-    # The computed unique identifier for the API Gateway v2 domain name resource, which is the domain name string itself used as the resource's primary key in the service. (AI-inferred)
     domain_name_id: Any = None
     endpoint_access_mode: Any = None
     endpoint_configuration: Any = None
-    # A JSON string specifying an IAM resource policy that controls access to the API Gateway domain name's endpoints by allowing or denying invoking principals, source IPs, or VPC origins. (AI-inferred)
     policy: Any = None
     # The valid routing modes are [BASE_PATH_MAPPING_ONLY], [ROUTING_RULE_THEN_BASE_PATH_MAPPING] and [ROUTING_RULE_ONLY]. All other inputs are invalid.
     routing_mode: Any = None
-    # The security_policy field specifies the minimum Transport Layer Security (TLS) protocol version for the API Gateway custom domain name's endpoint, with supported values of 'TLS_1_0' and 'TLS_1_2'. (AI-inferred)
     security_policy: Any = None
-    # Specifies the tags (list of objects with Key and Value) to associate with the API Gateway v2 domain name, enabling metadata management and cost allocation. (AI-inferred)
     tags: Any = None
 
 GatewayDomainNameV2 = ubx.ResourceBinding(

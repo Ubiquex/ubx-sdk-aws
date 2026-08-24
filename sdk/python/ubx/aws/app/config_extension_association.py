@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigExtensionAssociation_Tags:
-    # The key of a tag assigned to the AppConfig extension association, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AppConfig extension association, where the tag key is the map key in the tags block. (AI-inferred)
     value: Any = None
 
 _ConfigExtensionAssociation_TagsFields = {
@@ -20,34 +18,22 @@ _ConfigExtensionAssociation_TagsFields = {
 
 @dataclasses.dataclass
 class ConfigExtensionAssociationConfig:
-    # The name, ID, or Amazon Resource Name (ARN) of the AWS AppConfig extension to associate with the target resource. (AI-inferred)
     extension_identifier: Any = None
-    # The version number of the extension to associate with the resource; if not specified, the latest version of the extension is used. (AI-inferred)
     extension_version_number: Any = None
-    # Specifies the key-value pairs of parameters defined by the AppConfig extension that are passed to the extension when it runs for the associated resource. (AI-inferred)
     parameters: Any = None
-    # The ARN of the AppConfig application, environment, or configuration profile to which the extension is associated and will be applied. (AI-inferred)
     resource_identifier: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class ConfigExtensionAssociationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AppConfig extension association. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) of the AppConfig extension that this association applies to. (AI-inferred)
     extension_arn: Any = None
-    # The name, ID, or Amazon Resource Name (ARN) of the AWS AppConfig extension to associate with the target resource. (AI-inferred)
     extension_identifier: Any = None
-    # The version number of the extension to associate with the resource; if not specified, the latest version of the extension is used. (AI-inferred)
     extension_version_number: Any = None
-    # The system-generated unique identifier for the extension association. (AI-inferred)
     id: Any = None
-    # Specifies the key-value pairs of parameters defined by the AppConfig extension that are passed to the extension when it runs for the associated resource. (AI-inferred)
     parameters: Any = None
-    # The ARN of the AppConfig resource (such as an application, environment, or configuration profile) with which the extension is associated. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the AppConfig application, environment, or configuration profile to which the extension is associated and will be applied. (AI-inferred)
     resource_identifier: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

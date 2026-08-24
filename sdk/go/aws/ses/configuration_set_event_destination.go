@@ -4,11 +4,8 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations struct {
-	// Specifies the fallback value for the CloudWatch dimension when the dimension value source (message tag or email header) is not present in the email. (AI-inferred)
 	DefaultDimensionValue any
-	// Sets the name of the CloudWatch dimension that Amazon SES attaches to the metrics it publishes for this configuration set's event destination, allowing the metric to be filtered by that dimension in CloudWatch. (AI-inferred)
 	DimensionName any
-	// The dimension_value_source field specifies whether the dimension value is derived from an email header ('emailHeader') or from a message tag ('messageTag') when publishing SES event data to CloudWatch. (AI-inferred)
 	DimensionValueSource any
 }
 
@@ -18,7 +15,6 @@ type ConfigurationSetEventDestination_EventDestination_CloudWatchDestination str
 }
 
 type ConfigurationSetEventDestination_EventDestination_EventBridgeDestination struct {
-	// The ARN of the Amazon EventBridge bus to which the SES event is delivered. (AI-inferred)
 	EventBusArn any
 }
 
@@ -30,7 +26,6 @@ type ConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestinatio
 }
 
 type ConfigurationSetEventDestination_EventDestination_SnsDestination struct {
-	// The ARN of the Amazon SNS topic that Amazon SES publishes event notifications to when an email event such as send, bounce, complaint, or delivery occurs. (AI-inferred)
 	TopicArn any
 }
 
@@ -107,16 +102,13 @@ var ConfigurationSetEventDestination_EventDestinationFields = ubx.FieldMap{
 type ConfigurationSetEventDestinationConfig struct {
 	// The name of the configuration set that contains the event destination.
 	ConfigurationSetName any
-	// The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred)
 	EventDestination any
 }
 
 type ConfigurationSetEventDestinationAttrs struct {
 	// The name of the configuration set that contains the event destination.
 	ConfigurationSetName any
-	// The event destination object that specifies which event types (such as send, bounce, or complaint) to publish and to which destination (Amazon SNS, CloudWatch, or Kinesis Firehose). (AI-inferred)
 	EventDestination any
-	// The unique identifier for this resource, composed of the configuration set name and the event destination name separated by a colon (e.g., 'my-set:my-destination'). (AI-inferred)
 	Id any
 }
 

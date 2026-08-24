@@ -4,27 +4,19 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneUserProfile_Details_Iam struct {
-	// The Amazon Resource Name (ARN) of the IAM principal (user or role) associated with the DataZone user profile's IAM details. (AI-inferred)
 	Arn any
-	// The unique identifier of the DataZone group profile associated with this IAM user profile, representing the IAM group membership for the user within the domain. (AI-inferred)
 	GroupProfileId any
-	// The session name that identifies a specific IAM role session when the Data Zone user profile is associated with an IAM role, enabling the profile to correspond to a particular role session. (AI-inferred)
 	SessionName any
 }
 
 type ZoneUserProfile_Details_Sso struct {
-	// The first name of the user as provided by the single sign-on (SSO) identity provider in the AWS Data Zone user profile. (AI-inferred)
 	FirstName any
-	// The last name of the user as configured in the external SSO identity provider, used to display the user's name in Amazon DataZone. (AI-inferred)
 	LastName any
-	// The SSO username of the user associated with the AWS DataZone user profile. (AI-inferred)
 	Username any
 }
 
 type ZoneUserProfile_Details struct {
-	// Specifies the IAM user details for the DataZone user profile, including the ARN of the IAM user. (AI-inferred)
 	Iam any
-	// Contains the IAM Identity Center (SSO) attributes, such as the user's first name, last name, and username, for the Amazon DataZone user profile. (AI-inferred)
 	Sso any
 }
 
@@ -42,7 +34,6 @@ type ZoneUserProfileConfig struct {
 }
 
 type ZoneUserProfileAttrs struct {
-	// The computed details of the DataZone user profile, including the IAM or SSO identity information returned by the service. (AI-inferred)
 	Details any
 	// The identifier of the Amazon DataZone domain in which the user profile is created.
 	DomainId any

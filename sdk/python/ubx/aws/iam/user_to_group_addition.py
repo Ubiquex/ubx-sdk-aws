@@ -8,17 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserToGroupAdditionConfig:
-    # The name of the IAM group that the user is added to. (AI-inferred)
     group_name: Any = None
-    # Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred)
     users: Any = None
 
 @dataclasses.dataclass
 class UserToGroupAdditionAttrs:
-    # The name of the IAM group that the user is added to. (AI-inferred)
     group_name: Any = None
     id: Any = None
-    # Specifies the list of existing IAM user names to add to the group specified in the GroupName property. (AI-inferred)
     users: Any = None
 
 UserToGroupAddition = ubx.ResourceBinding(

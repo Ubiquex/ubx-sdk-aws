@@ -4,15 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface Url_Cors {
   /** Specifies whether credentials are included in the CORS request. */
   allowCredentials?: boolean | Computed<boolean>;
-  /** Specifies the list of HTTP headers that are allowed in cross-origin requests to the Lambda function URL when CORS is enabled. (AI-inferred) */
   allowHeaders?: string[] | Computed<string[]>;
-  /** Specifies the list of HTTP methods (e.g., GET, POST) that are allowed for cross-origin requests to the Lambda function URL. (AI-inferred) */
   allowMethods?: string[] | Computed<string[]>;
-  /** Specifies the list of origins that are allowed to make cross-origin requests to the Lambda function URL. (AI-inferred) */
   allowOrigins?: string[] | Computed<string[]>;
-  /** Specifies the list of response headers that browsers and clients are allowed to access from the cross-origin response in the CORS configuration of an AWS Lambda function URL. (AI-inferred) */
   exposeHeaders?: string[] | Computed<string[]>;
-  /** The maximum time in seconds that the browser caches the preflight response for CORS requests to the Lambda function URL. (AI-inferred) */
   maxAge?: number | Computed<number>;
 }
 
@@ -28,7 +23,6 @@ const Url_CorsFields: FieldMap = {
 export interface UrlConfig {
   /** Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL. */
   authType: string | Computed<string>;
-  /** Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred) */
   cors?: Url_Cors | Computed<Url_Cors>;
   /** The invocation mode for the function's URL. Set to BUFFERED if you want to buffer responses before returning them to the client. Set to RESPONSE_STREAM if you want to stream responses, allowing faster time to first byte and larger response payload sizes. If not set, defaults to BUFFERED. */
   invokeMode?: string | Computed<string>;
@@ -41,7 +35,6 @@ export interface UrlConfig {
 export interface UrlAttrs {
   /** Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL. */
   authType: string;
-  /** Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred) */
   cors: Url_Cors;
   /** The full Amazon Resource Name (ARN) of the function associated with the Function URL. */
   functionArn: string;

@@ -8,48 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_IdMappingWorkflowProperties_ProviderProperties:
-    # Map of provider-specific configuration parameters passed to the entity resolution provider for this ID mapping workflow. (AI-inferred)
     provider_configuration: Any = None
-    # The ARN of the AWS Marketplace provider service used to perform the ID mapping workflow for this ID namespace. (AI-inferred)
     provider_service_arn: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_IdMappingWorkflowProperties_RuleBasedProperties_Rules:
-    # The list of record attribute names (columns) that are compared between source records to determine if they match under this rule in the rule-based mapping workflow. (AI-inferred)
     matching_keys: Any = None
-    # The name that uniquely identifies this matching rule within the rule-based properties of the ID mapping workflow for the entity resolution ID namespace. (AI-inferred)
     rule_name: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_IdMappingWorkflowProperties_RuleBasedProperties:
-    # Specifies the matching model for rule-based ID mapping, determining whether a record is considered a match when all attributes in the rule match (ALL_MATCH) or when any single attribute matches (ANY_MATCH). (AI-inferred)
     attribute_matching_model: Any = None
-    # Specifies the record matching models (e.g., ONE_TO_ONE, ONE_TO_MANY, MANY_TO_MANY) that define the mapping cardinality used by the rule-based matching logic in this ID mapping workflow property. (AI-inferred)
     record_matching_models: Any = None
-    # Specifies the rule definition types (e.g., SOURCE or TARGET) used to categorize the matching rules in the rule-based ID mapping workflow for the ID namespace. (AI-inferred)
     rule_definition_types: Any = None
-    # Defines the list of source-to-target attribute mapping rules used by the rule-based ID mapping workflow, where each rule specifies a source attribute and the corresponding target attribute in the ID namespace. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_IdMappingWorkflowProperties:
-    # Specifies the cardinality of the ID mapping workflow: ONE_TO_ONE for a unique source-to-ID mapping or ONE_TO_MANY for one source record mapping to multiple IDs. (AI-inferred)
     id_mapping_type: Any = None
-    # Specifies the provider-specific configuration for an ID mapping workflow, including the provider configuration map and optional intermediate source S3 location. (AI-inferred)
     provider_properties: Any = None
-    # Configures the rule-based matching configuration for this ID namespace mapping workflow, including the attribute matching model and the list of matching rules that define how source and target attributes are compared. (AI-inferred)
     rule_based_properties: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_InputSourceConfig:
-    # The Amazon Resource Name (ARN) of the input data source (such as an S3 bucket) from which the entity resolution ID namespace reads its records for matching. (AI-inferred)
     input_source_arn: Any = None
-    # Specifies the name of the schema that describes the structure of the input data, which AWS Entity Resolution uses to interpret the fields for record matching. (AI-inferred)
     schema_name: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespace_Tags:
-    # The key of a user-defined tag applied to the AWS Entity Resolution ID namespace, used for metadata organization and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -100,40 +86,26 @@ _ResolutionIdNamespace_TagsFields = {
 
 @dataclasses.dataclass
 class ResolutionIdNamespaceConfig:
-    # An optional free-form description that helps identify the purpose or contents of the ID namespace. (AI-inferred)
     description: Any = None
-    # A list of configurations for ID mapping workflows that define how identifiers are mapped within this namespace, where each item specifies a workflow type (e.g., ID_MAPPING) and its provider properties. (AI-inferred)
     id_mapping_workflow_properties: Any = None
-    # Specifies the name of the ID namespace, which uniquely identifies it within the AWS account and Region. (AI-inferred)
     id_namespace_name: Any = None
-    # Configures the input sources for the ID namespace, specifying each data source's ARN and schema to be used for entity resolution. (AI-inferred)
     input_source_config: Any = None
-    # The ARN of the IAM role that AWS Entity Resolution assumes to read from the input sources configured for this ID namespace. (AI-inferred)
     role_arn: Any = None
-    # Assigns key-value metadata tags to this AWS Entity Resolution ID Namespace resource, enabling cost allocation, access control, and organization of the namespace. (AI-inferred)
     tags: Any = None
-    # Specifies whether the ID namespace is a SOURCE or TARGET type, determining its role in the entity resolution mapping workflow. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class ResolutionIdNamespaceAttrs:
     # The date and time when the IdNamespace was created
     created_at: Any = None
-    # An optional free-form description that helps identify the purpose or contents of the ID namespace. (AI-inferred)
     description: Any = None
-    # A list of configurations for ID mapping workflows that define how identifiers are mapped within this namespace, where each item specifies a workflow type (e.g., ID_MAPPING) and its provider properties. (AI-inferred)
     id_mapping_workflow_properties: Any = None
     # The arn associated with the IdNamespace
     id_namespace_arn: Any = None
-    # Specifies the name of the ID namespace, which uniquely identifies it within the AWS account and Region. (AI-inferred)
     id_namespace_name: Any = None
-    # Configures the input sources for the ID namespace, specifying each data source's ARN and schema to be used for entity resolution. (AI-inferred)
     input_source_config: Any = None
-    # The ARN of the IAM role that AWS Entity Resolution assumes to read from the input sources configured for this ID namespace. (AI-inferred)
     role_arn: Any = None
-    # Assigns key-value metadata tags to this AWS Entity Resolution ID Namespace resource, enabling cost allocation, access control, and organization of the namespace. (AI-inferred)
     tags: Any = None
-    # Specifies whether the ID namespace is a SOURCE or TARGET type, determining its role in the entity resolution mapping workflow. (AI-inferred)
     type: Any = None
     # The date and time when the IdNamespace was updated
     updated_at: Any = None

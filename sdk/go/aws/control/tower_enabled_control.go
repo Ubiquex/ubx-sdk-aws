@@ -4,14 +4,11 @@ package control
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TowerEnabledControl_Parameters struct {
-	// The key (name) of a parameter to supply when enabling the AWS Control Tower control, which identifies the specific configuration option being set. (AI-inferred)
 	Key any
-	// Assigns the value for a Control Tower enabled-control parameter key (e.g., the tag key or allowed region list) that configures the behavior of the control being enabled. (AI-inferred)
 	Value any
 }
 
 type TowerEnabledControl_Tags struct {
-	// The key of a tag attached to the AWS Control Tower enabled control, enabling you to organize and identify the control with custom metadata. (AI-inferred)
 	Key any
 	Value any
 }

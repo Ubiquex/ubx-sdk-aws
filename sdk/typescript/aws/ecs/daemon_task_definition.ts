@@ -2,212 +2,138 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DaemonTaskDefinition_ContainerDefinitions_DependsOn {
-  /** Specifies the condition (START, COMPLETE, SUCCESS, or HEALTHY) that must be satisfied by the referenced dependency container before this container can start. (AI-inferred) */
   condition?: string | Computed<string>;
-  /** The name of the container that this container definition depends on, used in a dependsOn entry to specify the target container for a dependency condition. (AI-inferred) */
   containerName?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_Environment {
-  /** The `name` attribute of an environment variable entry defines the variable name that will be set inside the container's environment. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the environment variable to pass to the container. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_EnvironmentFiles {
-  /** Specifies the source type of the environment file, either 's3' for an Amazon S3 object or 'ssm' for an AWS Systems Manager parameter. (AI-inferred) */
   type?: string | Computed<string>;
-  /** For each environment file entry, this is the ARN of the Amazon S3 object that contains the environment variable definitions to be injected into the container. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_FirelensConfiguration {
-  /** A map of configuration options (e.g., enable-ecs-log-metadata, config-file-type, config-file-value) passed to the Fluent Bit or Fluentd log router when FireLens is configured for the container. (AI-inferred) */
   options?: unknown | Computed<unknown>;
-  /** Sets which log router (fluentd or fluentbit) the Firelens configuration uses to deliver container logs to the configured destination. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_HealthCheck {
-  /** The command to run inside the container to check its health, typically a list starting with 'CMD-SHELL' or 'CMD' followed by the executable or shell command and its arguments. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** Specifies the time period in seconds between each container health check execution for this task definition. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** Number of consecutive failed health checks required before the container is considered unhealthy. (AI-inferred) */
   retries?: number | Computed<number>;
-  /** The number of seconds after the container starts during which failed health checks do not count toward the maximum number of retries, allowing the container to initialize before health check evaluation begins. (AI-inferred) */
   startPeriod?: number | Computed<number>;
-  /** The number of seconds to wait for a health check to return a response before marking the container as unhealthy, with a valid range of 2 to 60 seconds. (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities {
-  /** Specifies the Linux capabilities to add to the container, granting additional kernel permissions beyond the default set. (AI-inferred) */
   add?: string[] | Computed<string[]>;
-  /** Defines the Linux kernel capabilities that should be removed (dropped) from the container's capability set, reducing its privileges. (AI-inferred) */
   drop?: string[] | Computed<string[]>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Devices {
-  /** The path inside the container at which the host device is exposed, as specified in the devices list of LinuxParameters for the container definition. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** The path on the host instance of the device to expose to the container. (AI-inferred) */
   hostPath?: string | Computed<string>;
-  /** Specifies the cgroup permissions (read, write, mknod) to apply to the container device for this device entry in the ECS task definition's Linux parameters. (AI-inferred) */
   permissions?: string[] | Computed<string[]>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs {
-  /** The absolute file path inside the container where the tmpfs volume is mounted. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** Specifies the mount options (such as 'ro' or 'noexec') for the tmpfs mount in the container's Linux parameters. (AI-inferred) */
   mountOptions?: string[] | Computed<string[]>;
-  /** The size (in MiB) of the tmpfs mount to be used in the container's ephemeral storage. (AI-inferred) */
   size?: number | Computed<number>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LinuxParameters {
-  /** Specifies the Linux capabilities to add or remove from the container's default set, using add and drop lists. (AI-inferred) */
   capabilities?: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities | Computed<DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities>;
-  /** Specifies the list of host devices to expose to the container within its Linux parameters, where each device object defines the hostPath, containerPath, and permissions for that device. (AI-inferred) */
   devices?: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Devices[] | Computed<DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Devices[]>;
-  /** Enables the init process (PID 1) inside the container, ensuring that it properly reaps zombie processes and handles signals within the container's namespace. (AI-inferred) */
   initProcessEnabled?: boolean | Computed<boolean>;
-  /** Defines the tmpfs mount configurations for the container, specifying the container path and mount options (such as size and permissions) for each tmpfs volume. (AI-inferred) */
   tmpfs?: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs[] | Computed<DaemonTaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs[]>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions {
-  /** The name (configuration key) of a secret passed to the container's logging driver, whose actual value is retrieved from the AWS Secrets Manager or SSM Parameter Store secret specified in the corresponding valueFrom field. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the ARN of the AWS Secrets Manager secret or SSM Parameter Store parameter from which the container's log driver retrieves the secret value for the given log configuration secret option. (AI-inferred) */
   valueFrom?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_LogConfiguration {
-  /** Specifies the log driver to use for the container (e.g., awslogs, fluentd, gelf, json-file, journald, logentries, syslog, splunk, awsfirelens), which determines how logs are collected and sent to a destination. (AI-inferred) */
   logDriver?: string | Computed<string>;
-  /** Specifies the key-value map of configuration options to pass to the container's log driver, such as awslogs-group, awslogs-region, and awslogs-stream-prefix for the awslogs driver. (AI-inferred) */
   options?: unknown | Computed<unknown>;
-  /** Specifies a list of secrets to pass to the container's log driver, where each entry consists of the name of the log driver option (as the secret key) and the valueFrom ARN that references the secret in AWS Secrets Manager or AWS Systems Manager Parameter Store. (AI-inferred) */
   secretOptions?: DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[] | Computed<DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[]>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_MountPoints {
-  /** The path inside the container at which the volume is mounted, as specified in a mount point for an ECS task definition. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** Indicates whether the container's mount point is read-only; when true, the container can only read from the volume, and when false, it has read-write access. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
-  /** Specifies the name of the volume to mount, which must correspond to a volume defined in the task definition's volumes section. (AI-inferred) */
   sourceVolume?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentials {
-  /** Specifies the ARN of an AWS Secrets Manager secret or SSM parameter that stores the private repository credentials (username and password) used to authenticate when pulling the container image. (AI-inferred) */
   credentialsParameter?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_RestartPolicy {
   enabled?: boolean | Computed<boolean>;
-  /** The list of container exit codes that are ignored by the restart policy, meaning if the container exits with one of these codes, it will not be automatically restarted. (AI-inferred) */
   ignoredExitCodes?: number[] | Computed<number[]>;
-  /** In the restart policy for an ECS container definition, this field sets the time window, in seconds, during which Amazon ECS counts restart attempts against the configured maximum before stopping the container. (AI-inferred) */
   restartAttemptPeriod?: number | Computed<number>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_SystemControls {
-  /** The namespaced kernel parameter path (e.g., net.ipv4.ip_forward) that this system control entry sets inside the container. (AI-inferred) */
   namespace?: string | Computed<string>;
-  /** The value of the kernel parameter (sysctl setting) to apply inside the container, paired with the namespace in the same system_controls block to customize runtime container networking or other kernel defaults. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions_Ulimits {
-  /** The hard limit (maximum value) for the specified ulimit in the container definition, corresponding to the `rlim_max` value used by Docker's `--ulimit` flag. (AI-inferred) */
   hardLimit?: number | Computed<number>;
-  /** The name of the resource limit to set, such as nofile, nproc, or cpu, defining which ulimit is applied to the container. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The soft limit for the specified ulimit, which is the value the kernel enforces for the resource (e.g., file size, open files) in the container. (AI-inferred) */
   softLimit?: number | Computed<number>;
 }
 
 export interface DaemonTaskDefinition_ContainerDefinitions {
-  /** Specifies the command to pass to the container, which overrides the default command set in the container image. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** The number of CPU units reserved for the container, where 1024 CPU units equal one vCPU. (AI-inferred) */
   cpu?: number | Computed<number>;
-  /** Specifies the container dependencies for this container, where each dependency defines a container name and a condition (START or COMPLETE) that must be satisfied before this container can start. (AI-inferred) */
   dependsOn?: DaemonTaskDefinition_ContainerDefinitions_DependsOn[] | Computed<DaemonTaskDefinition_ContainerDefinitions_DependsOn[]>;
-  /** Overrides the default entry point for the container, specified as a list of command-line arguments that form the ENTRYPOINT instruction (e.g., ['/bin/sh', '-c']). (AI-inferred) */
   entryPoint?: string[] | Computed<string[]>;
-  /** Defines the environment variables to pass to the container, as a list of key-value pairs (name and value) that the container can access at runtime. (AI-inferred) */
   environment?: DaemonTaskDefinition_ContainerDefinitions_Environment[] | Computed<DaemonTaskDefinition_ContainerDefinitions_Environment[]>;
-  /** Specifies a list of files (such as those stored in Amazon S3 or AWS Systems Manager Parameter Store) from which environment variables are loaded for the container. (AI-inferred) */
   environmentFiles?: DaemonTaskDefinition_ContainerDefinitions_EnvironmentFiles[] | Computed<DaemonTaskDefinition_ContainerDefinitions_EnvironmentFiles[]>;
-  /** Indicates whether the container is marked as essential; if an essential container stops or fails, the entire task is stopped. (AI-inferred) */
   essential?: boolean | Computed<boolean>;
-  /** Configures the FireLens log router for this container, specifying the log driver type (fluentd or fluentbit) and its associated options for routing container logs to a downstream processor. (AI-inferred) */
   firelensConfiguration?: DaemonTaskDefinition_ContainerDefinitions_FirelensConfiguration | Computed<DaemonTaskDefinition_ContainerDefinitions_FirelensConfiguration>;
-  /** Configures the Docker health check for the container, specifying the command and parameters such as interval, timeout, retries, and start period that Amazon ECS uses to monitor container health. (AI-inferred) */
   healthCheck?: DaemonTaskDefinition_ContainerDefinitions_HealthCheck | Computed<DaemonTaskDefinition_ContainerDefinitions_HealthCheck>;
-  /** Specifies the Docker image name and optionally tag or digest (e.g., 'nginx:latest' or '123456789012.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0') that the container will run from in the ECS task definition. (AI-inferred) */
   image?: string | Computed<string>;
-  /** Specifies whether the container's standard input remains open, equivalent to the Docker interactive (-i) flag. (AI-inferred) */
   interactive?: boolean | Computed<boolean>;
-  /** Configures Linux-specific container settings such as kernel capabilities, devices, tmpfs mounts, shared memory size, and whether to run an init process inside the container. (AI-inferred) */
   linuxParameters?: DaemonTaskDefinition_ContainerDefinitions_LinuxParameters | Computed<DaemonTaskDefinition_ContainerDefinitions_LinuxParameters>;
-  /** Specifies the logging configuration for the container, including the log driver to use, its options, and optional secret options. (AI-inferred) */
   logConfiguration?: DaemonTaskDefinition_ContainerDefinitions_LogConfiguration | Computed<DaemonTaskDefinition_ContainerDefinitions_LogConfiguration>;
-  /** The hard memory limit in MiB for the container; if the container exceeds this memory usage, the ECS agent may stop the container. (AI-inferred) */
   memory?: number | Computed<number>;
-  /** Specifies the soft memory limit (in MiB) for the container, which may be exceeded if the host has spare memory but triggers OOM or task-idle behavior under memory pressure. (AI-inferred) */
   memoryReservation?: number | Computed<number>;
-  /** Specifies which volumes from the task definition to mount into the container, including the container path, source volume, and whether the mount is read-only within each container definition. (AI-inferred) */
   mountPoints?: DaemonTaskDefinition_ContainerDefinitions_MountPoints[] | Computed<DaemonTaskDefinition_ContainerDefinitions_MountPoints[]>;
-  /** The name of the container, used to uniquely identify it within the task definition and required for each container definition. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Determines whether the container runs in privileged mode, giving it full access to host devices and extended Docker capabilities (equivalent to Docker's --privileged flag). (AI-inferred) */
   privileged?: boolean | Computed<boolean>;
-  /** Allocates a pseudo-TTY to the container, providing an interactive terminal session (corresponding to Docker's tty option). (AI-inferred) */
   pseudoTerminal?: boolean | Computed<boolean>;
-  /** When set to true, the container's root filesystem is mounted as read-only, preventing the container from writing to its root filesystem. (AI-inferred) */
   readonlyRootFilesystem?: boolean | Computed<boolean>;
-  /** Provides the Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the private repository credentials used to pull the container image. (AI-inferred) */
   repositoryCredentials?: DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentials | Computed<DaemonTaskDefinition_ContainerDefinitions_RepositoryCredentials>;
-  /** Defines the restart policy for the container in the ECS task definition, specifying whether the container is automatically restarted when it exits and the maximum number of restart attempts allowed. (AI-inferred) */
   restartPolicy?: DaemonTaskDefinition_ContainerDefinitions_RestartPolicy | Computed<DaemonTaskDefinition_ContainerDefinitions_RestartPolicy>;
-  /** Specifies the secrets to inject into the container as environment variables, referencing AWS Systems Manager Parameter Store or AWS Secrets Manager secrets via the valueFrom ARN or name. (AI-inferred) */
   secrets?: DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[] | Computed<DaemonTaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[]>;
-  /** The maximum time in seconds ECS waits for this container to transition from CREATED to RUNNING before stopping the container and failing the task. (AI-inferred) */
   startTimeout?: number | Computed<number>;
-  /** Specifies the time (in seconds) to wait for the container to stop gracefully after a stop signal before force-stopping it, overriding the default Docker stop timeout in this container definition. (AI-inferred) */
   stopTimeout?: number | Computed<number>;
-  /** Specifies a list of Linux kernel system controls (sysctl) for the container, where each entry defines a namespace (e.g., net.core.somaxconn) and a corresponding value to tune kernel parameters. (AI-inferred) */
   systemControls?: DaemonTaskDefinition_ContainerDefinitions_SystemControls[] | Computed<DaemonTaskDefinition_ContainerDefinitions_SystemControls[]>;
-  /** Configures ulimit settings for each container in an ECS daemon task definition, specifying the resource name (e.g., nofile, nproc) and its soft and hard limits. (AI-inferred) */
   ulimits?: DaemonTaskDefinition_ContainerDefinitions_Ulimits[] | Computed<DaemonTaskDefinition_ContainerDefinitions_Ulimits[]>;
-  /** Specifies the user name or UID (and optionally group name or GID) to run the container's process as, overriding the default user defined in the container image. (AI-inferred) */
   user?: string | Computed<string>;
-  /** Sets the working directory inside the container from which the container's default command is executed. (AI-inferred) */
   workingDirectory?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_Tags {
-  /** The key of a tag assigned to the ECS daemon task definition, used to identify, categorize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_Volumes_Host {
-  /** Specifies the absolute path on the container instance host where a bind-mount volume is sourced, used for EC2 launch type tasks when the volume type is 'bind'. (AI-inferred) */
   sourcePath?: string | Computed<string>;
 }
 
 export interface DaemonTaskDefinition_Volumes {
-  /** For each volume defined in the task definition, the host object configures an Amazon ECS host volume, with the optional sourcePath property specifying the path on the container instance host to mount the volume from. (AI-inferred) */
   host?: DaemonTaskDefinition_Volumes_Host | Computed<DaemonTaskDefinition_Volumes_Host>;
-  /** Specifies the name of the volume, which is used to reference this volume from a container definition's mountPoints sourceVolume in the ECS task definition. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -434,7 +360,6 @@ export interface DaemonTaskDefinitionConfig {
   memory?: string | Computed<string>;
   /** The PID namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use ``pidMode: "host"`` or other daemons that use ``pidMode: "shared"``. */
   pidMode?: string | Computed<string>;
-  /** Specifies a list of key-value tag pairs to attach to the ECS task definition, enabling cost allocation and resource grouping. (AI-inferred) */
   tags?: DaemonTaskDefinition_Tags[] | Computed<DaemonTaskDefinition_Tags[]>;
   /** The short name or full Amazon Resource Name (ARN) of the IAM role that grants containers in the daemon task permission to call Amazon Web Services APIs on your behalf. */
   taskRoleArn?: string | Computed<string>;
@@ -447,7 +372,6 @@ export interface DaemonTaskDefinitionAttrs {
   containerDefinitions: DaemonTaskDefinition_ContainerDefinitions[];
   /** The number of CPU units used by the daemon task. */
   cpu: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this ECS daemon task definition within your AWS account and region. (AI-inferred) */
   daemonTaskDefinitionArn: string;
   /** The Amazon Resource Name (ARN) of the task execution role that grants the Amazon ECS container agent permission to make Amazon Web Services API calls on your behalf. */
   executionRoleArn: string;
@@ -459,7 +383,6 @@ export interface DaemonTaskDefinitionAttrs {
   memory: string;
   /** The PID namespace mode for the daemon. The valid values are ``none`` and ``shared``. The default is ``none``. If ``none`` is specified or no value is provided, the daemon runs with its own PID namespace, isolated from other tasks. If ``shared`` is specified, the daemon joins the host PID namespace, making it accessible to non-daemon tasks that use ``pidMode: "host"`` or other daemons that use ``pidMode: "shared"``. */
   pidMode: string;
-  /** Specifies a list of key-value tag pairs to attach to the ECS task definition, enabling cost allocation and resource grouping. (AI-inferred) */
   tags: DaemonTaskDefinition_Tags[];
   /** The short name or full Amazon Resource Name (ARN) of the IAM role that grants containers in the daemon task permission to call Amazon Web Services APIs on your behalf. */
   taskRoleArn: string;

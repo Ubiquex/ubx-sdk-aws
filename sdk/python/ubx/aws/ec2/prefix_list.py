@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PrefixList_Entries:
-    # The CIDR block for the prefix list entry, defining the IP address range that this entry permits. (AI-inferred)
     cidr: Any = None
-    # Provides an optional human-readable description for the CIDR entry in an EC2 prefix list. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class PrefixList_Tags:
-    # The key of a tag (e.g., 'Name') to be assigned to the EC2 prefix list, used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the EC2 prefix list, allowing users to attach arbitrary metadata for identification, management, and cost allocation. (AI-inferred)
     value: Any = None
 
 _PrefixList_EntriesFields = {

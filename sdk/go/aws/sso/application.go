@@ -18,7 +18,6 @@ type Application_PortalOptions struct {
 }
 
 type Application_Tags struct {
-	// The key of a tag to be attached to the AWS SSO application. (AI-inferred)
 	Key any
 	Value any
 }
@@ -55,7 +54,6 @@ type ApplicationConfig struct {
 	PortalOptions any
 	// Specifies whether the application is enabled or disabled
 	Status any
-	// Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred)
 	Tags any
 }
 
@@ -76,7 +74,6 @@ type ApplicationAttrs struct {
 	PortalOptions any
 	// Specifies whether the application is enabled or disabled
 	Status any
-	// Specifies the tags to attach to the SSO application, which are key-value pairs that help you identify, organize, and manage the application in AWS IAM Identity Center. (AI-inferred)
 	Tags any
 }
 

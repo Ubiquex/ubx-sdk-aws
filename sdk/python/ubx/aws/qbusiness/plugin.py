@@ -8,58 +8,41 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Plugin_AuthConfiguration_BasicAuthConfiguration:
-    # The ARN of the IAM role that AWS QBusiness assumes to retrieve the basic authentication credentials stored in AWS Secrets Manager. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the username and password credentials used for basic authentication to the external application configured for the QBusiness plugin. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class Plugin_AuthConfiguration_Oauth2ClientCredentialConfiguration:
-    # The authorization URL to which users are redirected for authentication when using the OAuth 2.0 client credential configuration for the plugin. (AI-inferred)
     authorization_url: Any = None
-    # The ARN of the IAM role that AWS Q Business assumes to retrieve the OAuth2 client credentials stored in AWS Secrets Manager for this plugin's authentication. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the client secret used for the OAuth2 client credential authentication flow. (AI-inferred)
     secret_arn: Any = None
-    # The URL of the OAuth2 token endpoint that the AWS QBusiness plugin calls to exchange its client credentials for an access token. (AI-inferred)
     token_url: Any = None
 
 @dataclasses.dataclass
 class Plugin_AuthConfiguration:
-    # Specifies the basic authentication settings for the AWS QBusiness plugin by providing the ARN of the AWS Secrets Manager secret that stores the credentials used for authentication. (AI-inferred)
     basic_auth_configuration: Any = None
-    # Configures the QBusiness plugin to require no authentication credentials, indicating that the plugin's external service calls do not need user or API keys. (AI-inferred)
     no_auth_configuration: Any = None
-    # Defines the OAuth 2.0 client credential settings for the plugin, including the authorization URL, client ID, client secret, and scope, enabling the plugin to authenticate with the external service. (AI-inferred)
     oauth2_client_credential_configuration: Any = None
 
 @dataclasses.dataclass
 class Plugin_CustomPluginConfiguration_ApiSchema_S3:
-    # The name of the S3 bucket that stores the OpenAPI schema file defining the plugin's API, as referenced by the custom plugin configuration. (AI-inferred)
     bucket: Any = None
-    # The S3 object key (file name) of the OpenAPI schema file that defines the custom plugin's API, stored in the S3 bucket specified by the parent s3 configuration. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class Plugin_CustomPluginConfiguration_ApiSchema:
-    # Contains the inline API schema, in JSON or YAML format, that describes the custom plugin's endpoints and operations for Amazon Q Business to invoke. (AI-inferred)
     payload: Any = None
-    # Configures the Amazon S3 location (bucket and object key) where the OpenAPI schema file for the custom plugin is stored. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
 class Plugin_CustomPluginConfiguration:
-    # Specifies the OpenAPI 3.0 schema that defines the API operations and data structures for the custom plugin, provided either inline as a JSON/YAML payload or as a reference to an S3 object. (AI-inferred)
     api_schema: Any = None
-    # Specifies the type of API schema for the custom plugin, either an S3 object or an inline OpenAPI 3.0 payload, with allowed values S3 and OPEN_API_V3. (AI-inferred)
     api_schema_type: Any = None
-    # Provides a description of the custom plugin, helping users understand its purpose and functionality. (AI-inferred)
     description: Any = None
 
 @dataclasses.dataclass
 class Plugin_Tags:
     key: Any = None
-    # The value of a tag key-value pair attached to the QBusiness plugin, used to store arbitrary metadata for identifying or categorizing the plugin. (AI-inferred)
     value: Any = None
 
 _Plugin_AuthConfiguration_BasicAuthConfigurationFields = {
@@ -119,50 +102,29 @@ _Plugin_TagsFields = {
 
 @dataclasses.dataclass
 class PluginConfig:
-    # The unique identifier of the Amazon Q Business application that this plugin is attached to. (AI-inferred)
     application_id: Any = None
-    # Specifies the authentication configuration for the plugin, defining whether it uses basic or OAuth 2.0 authentication along with the necessary credentials and endpoint details. (AI-inferred)
     auth_configuration: Any = None
-    # Defines the API schema and source code repository settings for a custom plugin in Amazon Q Business when the plugin type is CUSTOM. (AI-inferred)
     custom_plugin_configuration: Any = None
-    # The human-readable name of the plugin, used to identify it in the Amazon Q Business console and APIs. (AI-inferred)
     display_name: Any = None
-    # The URL of the external server or application that the plugin connects to, serving as the endpoint for its configuration. (AI-inferred)
     server_url: Any = None
-    # Indicates the current status of the plugin, such as ENABLED or DISABLED, which determines whether the plugin is active for use in Amazon Q Business applications. (AI-inferred)
     state: Any = None
-    # Specifies the tags (key-value pairs) to attach to the QBusiness plugin resource for cost allocation, organization, and identification. (AI-inferred)
     tags: Any = None
-    # Specifies the type of the third-party application the plugin integrates with, which determines the required authentication and configuration schema (e.g., SERVICE_NOW, SALESFORCE, JIRA, ZENDESK, or CUSTOM). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class PluginAttrs:
-    # The unique identifier of the Amazon Q Business application that this plugin is attached to. (AI-inferred)
     application_id: Any = None
-    # Specifies the authentication configuration for the plugin, defining whether it uses basic or OAuth 2.0 authentication along with the necessary credentials and endpoint details. (AI-inferred)
     auth_configuration: Any = None
-    # The current build status of the Amazon Q Business plugin, indicating whether it is ready to use (e.g., READY), still being created (CREATING), or has failed (FAILED). (AI-inferred)
     build_status: Any = None
-    # The timestamp indicating when the plugin was created. (AI-inferred)
     created_at: Any = None
-    # Defines the API schema and source code repository settings for a custom plugin in Amazon Q Business when the plugin type is CUSTOM. (AI-inferred)
     custom_plugin_configuration: Any = None
-    # The human-readable name of the plugin, used to identify it in the Amazon Q Business console and APIs. (AI-inferred)
     display_name: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the plugin in AWS QBusiness. (AI-inferred)
     plugin_arn: Any = None
-    # The unique identifier assigned by AWS to the plugin in Amazon Q Business when it is created, used to reference the plugin in other APIs and resources. (AI-inferred)
     plugin_id: Any = None
-    # The URL of the external server or application that the plugin connects to, serving as the endpoint for its configuration. (AI-inferred)
     server_url: Any = None
-    # Indicates the current status of the plugin, such as ENABLED or DISABLED, which determines whether the plugin is active for use in Amazon Q Business applications. (AI-inferred)
     state: Any = None
-    # Specifies the tags (key-value pairs) to attach to the QBusiness plugin resource for cost allocation, organization, and identification. (AI-inferred)
     tags: Any = None
-    # Specifies the type of the third-party application the plugin integrates with, which determines the required authentication and configuration schema (e.g., SERVICE_NOW, SALESFORCE, JIRA, ZENDESK, or CUSTOM). (AI-inferred)
     type: Any = None
-    # The timestamp (in ISO 8601 format) indicating when the plugin was last updated, set automatically by AWS QBusiness. (AI-inferred)
     updated_at: Any = None
 
 Plugin = ubx.ResourceBinding(

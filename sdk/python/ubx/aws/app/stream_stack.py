@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamStack_AccessEndpoints:
-    # Determines the type of access endpoint for the AppStream stack, either APPSTREAM for the AppStream 2.0 streaming interface or INTERNET for a public internet interface. (AI-inferred)
     endpoint_type: Any = None
-    # The VPC endpoint ID that AppStream 2.0 uses for this access endpoint, enabling controlled streaming access through a private VPC endpoint. (AI-inferred)
     vpce_id: Any = None
 
 @dataclasses.dataclass
 class StreamStack_AgentAccessConfig_Settings:
-    # Specifies whether to allow or deny access to the AppStream 2.0 agent version indicated by the corresponding version setting, where the action can be 'ALLOW' or 'DENY'. (AI-inferred)
     agent_action: Any = None
-    # Specifies whether the AppStream 2.0 stack permits agent access during streaming sessions, with the permission value controlling the enabled/disabled state of the agent access configuration. (AI-inferred)
     permission: Any = None
 
 @dataclasses.dataclass
@@ -58,11 +54,8 @@ class StreamStack_ContentRedirection:
 
 @dataclasses.dataclass
 class StreamStack_StorageConnectors:
-    # The type of storage connector to enable for this AppStream stack, such as HOMEFOLDERS, GOOGLE_DRIVE, or ONE_DRIVE. (AI-inferred)
     connector_type: Any = None
-    # Specifies the list of domains (e.g., Google Drive or OneDrive) that this storage connector is allowed to use, restricting the connector to those domains for file access and synchronization. (AI-inferred)
     domains: Any = None
-    # The ResourceIdentifier for a storage connector specifies the backing resource: for HOME_FOLDERS it is the ARN of the Amazon S3 bucket that stores home folders, while for GOOGLE_DRIVE or ONE_DRIVE it is the domain name of the user's cloud storage account. (AI-inferred)
     resource_identifier: Any = None
 
 @dataclasses.dataclass
@@ -72,18 +65,13 @@ class StreamStack_StreamingExperienceSettings:
 
 @dataclasses.dataclass
 class StreamStack_Tags:
-    # The key of a tag attached to the AWS AppStream stack, used to organize and identify the stack for cost allocation and access control. (AI-inferred)
     key: Any = None
-    # The value of an AWS tag applied to the AppStream 2.0 stack, used for organizing and identifying the stack in cost allocation and resource management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class StreamStack_UserSettings:
-    # The AppStream 2.0 user action (such as CLIPBOARD_COPY_FROM_LOCAL_DEVICE or FILE_UPLOAD) to which the permission setting applies. (AI-inferred)
     action: Any = None
-    # For each entry in the stack's user settings, this field defines the maximum clipboard data size (in bytes) allowed for actions that copy clipboard content to or from the local device. (AI-inferred)
     maximum_length: Any = None
-    # Specifies whether the user action (identified by the sibling 'action' field) is enabled or disabled for the AppStream 2.0 stack, with valid values being 'ENABLED' or 'DISABLED'. (AI-inferred)
     permission: Any = None
 
 _StreamStack_AccessEndpointsFields = {

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PodIdentityAssociation_Tags {
-  /** The tag key used to label the Pod Identity Association, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the EKS Pod Identity Association, used for labeling, organizing, and managing the association with custom metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

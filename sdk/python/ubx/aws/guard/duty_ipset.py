@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DutyIpset_Tags:
-    # The key of a tag attached to this GuardDuty IP set, used to organize and manage the resource within AWS. (AI-inferred)
     key: Any = None
-    # Specifies the value for a tag key used to manage and categorize the GuardDuty IP set. (AI-inferred)
     value: Any = None
 
 _DutyIpset_TagsFields = {
@@ -20,38 +18,23 @@ _DutyIpset_TagsFields = {
 
 @dataclasses.dataclass
 class DutyIpsetConfig:
-    # Indicates whether the GuardDuty IP set is activated (enabled) for use in threat detection, where true activates the set and false deactivates it. (AI-inferred)
     activate: Any = None
-    # The detector_id specifies the unique ID of the Amazon GuardDuty detector to which this IPSet is associated, identifying the GuardDuty account and region context for the IP set. (AI-inferred)
     detector_id: Any = None
-    # The AWS account ID of the owner of the S3 bucket where the GuardDuty IPSet file is stored, used to validate that the bucket is owned by the expected account. (AI-inferred)
     expected_bucket_owner: Any = None
-    # Specifies the format of the file that contains the IP set, such as TXT, STIX, OTX_CSV, ALIEN_VAULT, or PROOF_POINT. (AI-inferred)
     format: Any = None
-    # The URI (typically an S3 object URL) of the file that contains the IP addresses used by this GuardDuty IPSet. (AI-inferred)
     location: Any = None
-    # The friendly name of the GuardDuty IP set, used to identify it in the GuardDuty console and API. (AI-inferred)
     name: Any = None
-    # The tags to apply to the GuardDuty IPSet, which can be used for organizing, identifying, and controlling access to the resource via IAM policies. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DutyIpsetAttrs:
-    # Indicates whether the GuardDuty IP set is activated (enabled) for use in threat detection, where true activates the set and false deactivates it. (AI-inferred)
     activate: Any = None
-    # The detector_id specifies the unique ID of the Amazon GuardDuty detector to which this IPSet is associated, identifying the GuardDuty account and region context for the IP set. (AI-inferred)
     detector_id: Any = None
-    # The AWS account ID of the owner of the S3 bucket where the GuardDuty IPSet file is stored, used to validate that the bucket is owned by the expected account. (AI-inferred)
     expected_bucket_owner: Any = None
-    # Specifies the format of the file that contains the IP set, such as TXT, STIX, OTX_CSV, ALIEN_VAULT, or PROOF_POINT. (AI-inferred)
     format: Any = None
-    # The unique identifier assigned by GuardDuty to this IPSet. (AI-inferred)
     id: Any = None
-    # The URI (typically an S3 object URL) of the file that contains the IP addresses used by this GuardDuty IPSet. (AI-inferred)
     location: Any = None
-    # The friendly name of the GuardDuty IP set, used to identify it in the GuardDuty console and API. (AI-inferred)
     name: Any = None
-    # The tags to apply to the GuardDuty IPSet, which can be used for organizing, identifying, and controlling access to the resource via IAM policies. (AI-inferred)
     tags: Any = None
 
 DutyIpset = ubx.ResourceBinding(

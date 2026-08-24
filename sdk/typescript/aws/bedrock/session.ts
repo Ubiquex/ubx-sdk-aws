@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Session_Tags {
-  /** The key of a tag attached to the AWS Bedrock session, used to assign metadata for organizing, filtering, and managing the session. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

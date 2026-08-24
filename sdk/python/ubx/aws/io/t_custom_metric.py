@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TCustomMetric_Tags:
-    # Represents the key of a tag attached to an AWS IoT Custom Metric, enabling metadata-based identification and management of the metric. (AI-inferred)
     key: Any = None
     value: Any = None
 

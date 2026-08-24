@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SnapshotSchedule_Tags:
-    # The key (name) of a tag applied to the Redshift snapshot schedule, used to organize and identify the schedule. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the Redshift snapshot schedule, used for resource organization and identification. (AI-inferred)
     value: Any = None
 
 _SnapshotSchedule_TagsFields = {

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpacesThinClientEnvironment_DeviceCreationTags:
-    # The tag key to apply to each WorkSpaces Thin Client device created from this environment, used to tag provisioned devices. (AI-inferred)
     key: Any = None
-    # The value of a tag that is automatically applied to Thin Client devices created from this environment. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -19,13 +17,9 @@ class SpacesThinClientEnvironment_MaintenanceWindow:
     apply_time_of: Any = None
     # The date of maintenance window.
     days_of_the_week: Any = None
-    # The hour of the day in 24-hour time (0-23) at which a custom maintenance window ends, used when the maintenance window type is set to CUSTOM. (AI-inferred)
     end_time_hour: Any = None
-    # The minute (0-59) of the hour at which the maintenance window ends for scheduling maintenance on the Thin Client environment. (AI-inferred)
     end_time_minute: Any = None
-    # The hour (0-23) of the day, in 24-hour time, at which the maintenance window for applying updates to the WorkSpaces Thin Client environment begins. (AI-inferred)
     start_time_hour: Any = None
-    # The minute of the hour, in UTC, at which the maintenance window starts for this WorkSpaces Thin Client environment. (AI-inferred)
     start_time_minute: Any = None
     # The type of maintenance window.
     type: Any = None
@@ -57,7 +51,6 @@ class SpacesThinClientEnvironmentConfig:
     device_creation_tags: Any = None
     # The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment.
     kms_key_arn: Any = None
-    # Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred)
     maintenance_window: Any = None
     # The name of the environment.
     name: Any = None
@@ -90,7 +83,6 @@ class SpacesThinClientEnvironmentAttrs:
     id: Any = None
     # The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment.
     kms_key_arn: Any = None
-    # Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred)
     maintenance_window: Any = None
     # The name of the environment.
     name: Any = None

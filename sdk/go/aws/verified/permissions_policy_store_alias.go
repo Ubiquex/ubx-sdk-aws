@@ -4,16 +4,12 @@ package verified
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionsPolicyStoreAliasConfig struct {
-	// The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred)
 	AliasName any
-	// The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred)
 	PolicyStoreId any
 }
 
 type PermissionsPolicyStoreAliasAttrs struct {
-	// The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred)
 	AliasName any
-	// The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred)
 	PolicyStoreId any
 }
 

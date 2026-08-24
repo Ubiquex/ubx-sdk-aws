@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MultiRegionEndpoint_Details_RouteDetails {
-  /** The AWS Region targeted by this route in the multi-region endpoint's route configuration. (AI-inferred) */
   region?: string | Computed<string>;
 }
 

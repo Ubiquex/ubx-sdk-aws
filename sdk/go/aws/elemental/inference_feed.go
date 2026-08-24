@@ -14,7 +14,6 @@ type InferenceFeed_Outputs_OutputConfig_Clipping struct {
 
 type InferenceFeed_Outputs_OutputConfig_Subtitling_AspectRatio struct {
 	Height any
-	// Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred)
 	Width any
 }
 

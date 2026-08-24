@@ -9,7 +9,6 @@ export interface MakerFleetConfig {
 }
 
 export interface MakerFleetAttrs {
-  /** The Amazon Resource Name (ARN) of the RoboMaker fleet, automatically assigned by AWS when the fleet is created. (AI-inferred) */
   arn: string;
   /** The name of the fleet. */
   name: string;

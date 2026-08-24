@@ -8,38 +8,28 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneProject_MembershipAssignments_Member:
-    # The identifier of the AWS DataZone group that is granted membership in the project. (AI-inferred)
     group_identifier: Any = None
-    # Specifies the user identifier for a user assigned to the project via a membership assignment, used to grant that user access to project resources in AWS DataZone. (AI-inferred)
     user_identifier: Any = None
 
 @dataclasses.dataclass
 class ZoneProject_MembershipAssignments:
-    # Specifies the access role (e.g., OWNER or CONTRIBUTOR) granted to the member in the project assignment. (AI-inferred)
     designation: Any = None
-    # The member object identifies the user or group in Amazon DataZone that is assigned to the project, specifying the principal's identifier and whether it is a USER or GROUP. (AI-inferred)
     member: Any = None
 
 @dataclasses.dataclass
 class ZoneProject_ResourceTags:
-    # The key of a resource tag associated with the AWS Data Zone project, specifying the tag name used for identifying and organizing the project resource. (AI-inferred)
     key: Any = None
-    # The value component of a tag (key-value pair) attached to the AWS DataZone project, used for organizing and managing project resources. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ZoneProject_UserParameters_EnvironmentParameters:
-    # The name (key) of an environment parameter configured for the AWS DataZone project's environment, used to pass configuration values when the environment is provisioned. (AI-inferred)
     name: Any = None
-    # The value of an environment parameter in the project's user parameters, which is passed to the DataZone environment when the project is used. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ZoneProject_UserParameters:
-    # Specifies the name of the environment configuration in the DataZone project to which this user parameter applies, allowing parameters to be scoped to a specific environment configuration. (AI-inferred)
     environment_configuration_name: Any = None
     environment_id: Any = None
-    # This field specifies a list of environment parameter objects that define configuration values for AWS Data Zone environments associated with the project, such as resource names or compute settings, which are applied when environments are created from the project's environment profiles. (AI-inferred)
     environment_parameters: Any = None
 
 _ZoneProject_MembershipAssignments_MemberFields = {
@@ -135,7 +125,6 @@ class ZoneProjectAttrs:
     project_profile_id: Any = None
     # The project profile version to which the project should be updated. You can only specify the following string for this parameter: latest.
     project_profile_version: Any = None
-    # The current lifecycle status of the Data Zone project, such as 'ACTIVE' or 'DELETING'. (AI-inferred)
     project_status: Any = None
     # The resource tags of the project.
     resource_tags: Any = None

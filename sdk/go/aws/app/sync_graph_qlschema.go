@@ -4,22 +4,15 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncGraphQlschemaConfig struct {
-	// The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred)
 	ApiId any
-	// The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred)
 	Definition any
-	// The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred)
 	DefinitionS3Location any
 }
 
 type SyncGraphQlschemaAttrs struct {
-	// The unique identifier (API ID) of the AWS AppSync GraphQL API to which this schema definition is attached. (AI-inferred)
 	ApiId any
-	// The GraphQL schema definition text, which defines the types, queries, mutations, and subscriptions for the AppSync GraphQL API. (AI-inferred)
 	Definition any
-	// The S3 URI (e.g., s3://bucket/key) of the GraphQL schema definition file, used as an alternative to providing the schema inline via the `definition` argument. (AI-inferred)
 	DefinitionS3Location any
-	// The id is the GraphQL API ID that this schema is attached to. (AI-inferred)
 	Id any
 }
 

@@ -5,42 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsMlTrainingDataset_Tags struct {
 	Key any
-	// The value of a tag key attached to the AWS Clean Rooms ML Training Dataset, used to organize, identify, and manage the dataset through metadata labels. (AI-inferred)
 	Value any
 }
 
 type RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSource struct {
-	// The AWS account ID of the Glue Data Catalog that contains the table used as the training data source for the Clean Rooms ML training dataset. (AI-inferred)
 	CatalogId any
-	// The name of the AWS Glue Data Catalog database containing the source table for the training dataset input. (AI-inferred)
 	DatabaseName any
-	// The name of the AWS Glue table that contains the training data for the Clean Rooms ML training dataset. (AI-inferred)
 	TableName any
 }
 
 type RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource struct {
-	// This object defines the AWS Glue table that supplies the training data for this Clean Rooms ML training dataset. (AI-inferred)
 	GlueDataSource any
 }
 
 type RoomsMlTrainingDataset_TrainingData_InputConfig_Schema struct {
-	// Specifies the name of a column in the training data schema, which maps to a column in the configured data source for the Clean Rooms ML training dataset. (AI-inferred)
 	ColumnName any
-	// Specifies the data type (e.g., INTEGER, STRING) for each column in the training dataset schema, used by AWS Clean Rooms ML to interpret the input data. (AI-inferred)
 	ColumnTypes any
 }
 
 type RoomsMlTrainingDataset_TrainingData_InputConfig struct {
-	// Specifies the S3 location (URI) and type of the data source that provides the training input data for the Clean Rooms ML training dataset. (AI-inferred)
 	DataSource any
-	// Defines the schema of the training data input by listing column objects, each specifying a column name and its data type for the Clean Rooms ML training dataset. (AI-inferred)
 	Schema any
 }
 
 type RoomsMlTrainingDataset_TrainingData struct {
-	// Specifies the input configuration for the training dataset, including the S3 data source location and the list of column names that make up the schema. (AI-inferred)
 	InputConfig any
-	// Defines whether the training data for this Clean Rooms ML training dataset is sourced from an Amazon S3 bucket or an AWS Glue table. (AI-inferred)
 	Type any
 }
 
@@ -91,32 +80,22 @@ var RoomsMlTrainingDataset_TrainingDataFields = ubx.FieldMap{
 	}
 
 type RoomsMlTrainingDatasetConfig struct {
-	// A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred)
 	Description any
-	// The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred)
 	RoleArn any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset.
 	Tags any
-	// The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred)
 	TrainingData any
 }
 
 type RoomsMlTrainingDatasetAttrs struct {
-	// A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred)
 	Description any
-	// The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred)
 	Name any
-	// The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred)
 	RoleArn any
-	// The current status of the training dataset (e.g., ACTIVE or INACTIVE), indicating whether it is available for use. (AI-inferred)
 	Status any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset.
 	Tags any
-	// The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred)
 	TrainingData any
-	// The Amazon Resource Name (ARN) that uniquely identifies this Clean Rooms ML training dataset. (AI-inferred)
 	TrainingDatasetArn any
 }
 

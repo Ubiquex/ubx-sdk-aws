@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectGateway_Networks:
-    # CIDR block of the subnet where the gateway's network interface resides, used to define the network's IP address range. (AI-inferred)
     cidr_block: Any = None
-    # The name of the network interface, used to identify it within the gateway. (AI-inferred)
     name: Any = None
 
 _ConnectGateway_NetworksFields = {

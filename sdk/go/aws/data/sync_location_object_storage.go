@@ -23,9 +23,7 @@ type SyncLocationObjectStorage_ManagedSecretConfig struct {
 }
 
 type SyncLocationObjectStorage_Tags struct {
-	// The key of a tag assigned to the DataSync object storage location, used to organize and identify the location for cost tracking and management. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to this AWS DataSync location for object storage, used for identifying, categorizing, or managing the resource. (AI-inferred)
 	Value any
 }
 

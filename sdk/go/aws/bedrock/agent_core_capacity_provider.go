@@ -19,28 +19,19 @@ type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTempl
 
 type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes_Ebs struct {
 	EbsCardIndex any
-	// Indicates whether the EBS volume is encrypted at rest; when true, the volume is encrypted using an AWS KMS key. (AI-inferred)
 	Encrypted any
-	// Specifies the provisioned IOPS (input/output operations per second) for the EBS volume defined in the launch template's block device mapping. (AI-inferred)
 	Iops any
-	// The KMS key ID used to encrypt the ephemeral EBS volumes attached to the EC2 instances launched for the Bedrock agent's compute capacity, enabling customer-managed encryption for these temporary storage volumes. (AI-inferred)
 	KmsKeyId any
-	// Specifies the EBS snapshot ID used to initialize the ephemeral EBS volume attached to EC2 instances launched for this Bedrock agent core capacity provider. (AI-inferred)
 	SnapshotId any
-	// The throughput (in MiB/s) for the EBS volume attached as an ephemeral volume to the compute instances launched by the capacity provider's launch template, determining the sustained I/O performance of that volume. (AI-inferred)
 	Throughput any
 	VolumeInitializationRate any
-	// Specifies the size of the EBS ephemeral volume in GiB within the EC2 launch parameters for the core capacity provider's compute configuration. (AI-inferred)
 	VolumeSize any
 	VolumeType any
 }
 
 type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes struct {
-	// Specifies the device name (e.g., /dev/sdb) for an ephemeral volume in the EC2 launch template configuration used by the Bedrock agent core capacity provider. (AI-inferred)
 	DeviceName any
-	// Configures the Amazon EBS volume settings (such as size, volume type, and encryption) for an ephemeral volume attached to EC2 instances launched using the launch template in the Bedrock agent core capacity provider's compute configuration. (AI-inferred)
 	Ebs any
-	// Sets the virtual device name (e.g., 'ephemeral0') for an ephemeral instance-store volume in the EC2 launch template's block device mapping used by the Bedrock agent core capacity provider's compute configuration. (AI-inferred)
 	VirtualName any
 }
 
@@ -50,7 +41,6 @@ type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTempl
 }
 
 type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_LicenseSpecifications struct {
-	// The ARN of an AWS License Manager license configuration that is applied to EC2 instances launched from this launch template. (AI-inferred)
 	LicenseConfigurationArn any
 }
 
@@ -104,24 +94,16 @@ type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_RootVolume 
 
 type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes_EbsConfiguration struct {
 	Encrypted any
-	// The provisioned IOPS (input/output operations per second) for the EBS volume defined in the EC2 compute configuration of the Bedrock agent core capacity provider. (AI-inferred)
 	Iops any
-	// Specifies the ID of the AWS KMS key used to encrypt the EBS volume defined in the EC2 configuration of the Bedrock Agent Core capacity provider's compute configuration. (AI-inferred)
 	KmsKeyId any
-	// The name field provides a unique logical identifier for the EBS volume within the compute configuration, which is used to reference the volume when attaching or mounting it to the EC2 instances. (AI-inferred)
 	Name any
-	// The size of the Amazon Elastic Block Store (EBS) volume, in GiB, used by the EC2 compute configuration for this Bedrock agent core capacity provider. (AI-inferred)
 	SizeGiB any
-	// The ID of the EBS snapshot from which the volume is created, used to initialize the volume with data when configuring the EC2 compute resources for the Bedrock agent capacity provider. (AI-inferred)
 	SnapshotId any
-	// Specifies the throughput (in MiB/s) for the EBS volumes attached to the EC2 instances in the compute configuration of the Bedrock agent core capacity provider, controlling the I/O performance of the storage. (AI-inferred)
 	Throughput any
-	// Specifies the EBS volume type (e.g., gp3, io2) to use for the volumes attached to the EC2 instances in the compute configuration of the Bedrock agent core capacity provider. (AI-inferred)
 	VolumeType any
 }
 
 type AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes struct {
-	// Specifies the Amazon Elastic Block Store (EBS) volume configuration, including settings like volume size, volume type, and IOPS, for a volume attached to the EC2 instances in the capacity provider's compute configuration. (AI-inferred)
 	EbsConfiguration any
 }
 

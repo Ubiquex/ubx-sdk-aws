@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerSiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_Tags:
-    # The key of a tag associated with the proposed network function group change for the Site-to-Site VPN attachment, used to label the network function group change for tracking and management. (AI-inferred)
     key: Any = None
     value: Any = None
 

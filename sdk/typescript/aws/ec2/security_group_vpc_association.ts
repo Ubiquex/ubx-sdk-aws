@@ -11,7 +11,6 @@ export interface SecurityGroupVpcAssociationConfig {
 export interface SecurityGroupVpcAssociationAttrs {
   /** The group ID of the specified security group. */
   groupId: string;
-  /** The current state of the security group's association with the VPC, which can be one of 'associating', 'associated', 'association-failed', 'disassociating', or 'disassociated'. (AI-inferred) */
   state: string;
   /** The reason for the state of the security group vpc association. */
   stateReason: string;

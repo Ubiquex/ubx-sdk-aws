@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayHypervisor_Tags:
-    # The key component of a tag assigned to an AWS Backup Gateway hypervisor, used to label and categorize the resource for management and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,38 +18,23 @@ _GatewayHypervisor_TagsFields = {
 
 @dataclasses.dataclass
 class GatewayHypervisorConfig:
-    # Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred)
     host: Any = None
-    # The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred)
     kms_key_arn: Any = None
-    # The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred)
     log_group_arn: Any = None
-    # An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred)
     name: Any = None
-    # The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred)
     password: Any = None
-    # A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred)
     tags: Any = None
-    # The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class GatewayHypervisorAttrs:
-    # Specifies the hostname or IP address of the on-premises VMware hypervisor (such as vCenter Server or ESXi) that AWS Backup Gateway connects to for backup operations. (AI-inferred)
     host: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the hypervisor created by AWS Backup Gateway. (AI-inferred)
     hypervisor_arn: Any = None
-    # The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the hypervisor. (AI-inferred)
     kms_key_arn: Any = None
-    # The ARN of the Amazon CloudWatch Logs log group where the hypervisor's logs are delivered. (AI-inferred)
     log_group_arn: Any = None
-    # An optional friendly name for the hypervisor, used to identify the on-premises VMware environment within AWS Backup Gateway. (AI-inferred)
     name: Any = None
-    # The password used to authenticate to the hypervisor management interface (for example, vCenter Server) when registering the on-premises hypervisor with AWS Backup Gateway. (AI-inferred)
     password: Any = None
-    # A list of key-value tags to assign to the AWS Backup Gateway hypervisor for resource management, identification, and cost allocation. (AI-inferred)
     tags: Any = None
-    # The username used to authenticate with the on-premises hypervisor (for example, VMware vCenter) that AWS Backup Gateway manages. (AI-inferred)
     username: Any = None
 
 GatewayHypervisor = ubx.ResourceBinding(

@@ -11,9 +11,7 @@ type Bucket_AccessRules struct {
 }
 
 type Bucket_Tags struct {
-	// The key of a tag to assign to the Lightsail bucket. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Lightsail bucket, used for metadata, identification, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -49,7 +47,6 @@ type BucketAttrs struct {
 	AbleToUpdateBundle any
 	// An object that sets the public accessibility of objects in the specified bucket.
 	AccessRules any
-	// The Amazon Resource Name (ARN) uniquely identifying the Lightsail bucket, such as arn:aws:lightsail:region:account-id:bucket/bucket-name. (AI-inferred)
 	BucketArn any
 	// The name for the bucket.
 	BucketName any

@@ -24,7 +24,6 @@ class BeanstalkApplicationVersionConfig:
     application_name: Any = None
     # A description of this application version.
     description: Any = None
-    # The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
     source_bundle: Any = None
 
 @dataclasses.dataclass
@@ -34,7 +33,6 @@ class BeanstalkApplicationVersionAttrs:
     # A description of this application version.
     description: Any = None
     id: Any = None
-    # The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
     source_bundle: Any = None
 
 BeanstalkApplicationVersion = ubx.ResourceBinding(

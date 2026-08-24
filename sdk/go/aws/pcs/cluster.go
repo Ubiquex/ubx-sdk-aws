@@ -4,22 +4,15 @@ package pcs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_Endpoints struct {
-	// The IPv6 address assigned to this cluster endpoint, enabling connectivity to the AWS PCS cluster management services over IPv6. (AI-inferred)
 	Ipv6Address any
-	// The TCP port number used to access the cluster endpoint, returned by the AWS PCS service for connecting to the cluster's scheduler or management interface. (AI-inferred)
 	Port any
-	// The private IP address of a Parallel Computing Service (AWS PCS) cluster endpoint, such as the Slurm scheduler (Slurmctld) or database (Slurmdbd), used for internal communication within the VPC. (AI-inferred)
 	PrivateIpAddress any
-	// The public IP address of the cluster endpoint, which clients use to connect to the cluster's Slurm scheduler. (AI-inferred)
 	PublicIpAddress any
-	// The type of the cluster endpoint, such as Slurmctld or Slurmdbd, indicating the Slurm service the endpoint provides access to. (AI-inferred)
 	Type any
 }
 
 type Cluster_ErrorInfo struct {
-	// The machine-readable error code returned by AWS PCS when a cluster creation or update operation fails. (AI-inferred)
 	Code any
-	// The human-readable error message from an error_info entry, describing the error condition reported for this AWS PCS cluster. (AI-inferred)
 	Message any
 }
 
@@ -54,9 +47,7 @@ type Cluster_SlurmConfiguration_AuthKey struct {
 }
 
 type Cluster_SlurmConfiguration_CgroupCustomSettings struct {
-	// The name of a parameter to add to the Slurm cgroup.conf file, where each custom setting pairs a parameter name with its value. (AI-inferred)
 	ParameterName any
-	// The value component of a key-value pair in cgroup_custom_settings, used to override or add a custom cgroup parameter in the Slurm configuration of the PCS cluster. (AI-inferred)
 	ParameterValue any
 }
 

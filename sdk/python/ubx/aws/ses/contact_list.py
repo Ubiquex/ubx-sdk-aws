@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ContactList_Tags:
-    # The key of a tag attached to this Amazon SES contact list, used for metadata and resource identification. (AI-inferred)
     key: Any = None
-    # The value of a key-value tag attached to the SES contact list, used for metadata and resource management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ContactList_Topics:
-    # The default subscription status (OPT_IN or OPT_OUT) that applies to contacts added to the contact list for this topic when they do not specify an explicit preference. (AI-inferred)
     default_subscription_status: Any = None
-    # Specifies a description of the topic in the contact list, providing additional context about the purpose of the topic. (AI-inferred)
     description: Any = None
-    # The human-readable name for the topic, displayed to contacts when they manage their subscriptions. (AI-inferred)
     display_name: Any = None
-    # The unique, required name for a topic in the SES contact list, used to identify it when configuring subscription preferences and list management. (AI-inferred)
     topic_name: Any = None
 
 _ContactList_TagsFields = {

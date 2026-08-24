@@ -15,43 +15,30 @@ class CacheReplicationGroup_ConfigurationEndPoint:
 
 @dataclasses.dataclass
 class CacheReplicationGroup_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails:
-    # The name of the CloudWatch Logs log group where ElastiCache delivers the replication group's engine or slow logs when log delivery is configured to CloudWatch Logs. (AI-inferred)
     log_group: Any = None
 
 @dataclasses.dataclass
 class CacheReplicationGroup_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails:
-    # The name of the Amazon Kinesis Data Firehose delivery stream to which the replication group's logs are delivered for this log delivery configuration. (AI-inferred)
     delivery_stream: Any = None
 
 @dataclasses.dataclass
 class CacheReplicationGroup_LogDeliveryConfigurations_DestinationDetails:
-    # Specifies the Amazon CloudWatch Logs destination for delivering replication group logs, including the CloudWatch Logs log group name to which logs are sent. (AI-inferred)
     cloud_watch_logs_details: Any = None
-    # Specifies the Kinesis Data Firehose delivery stream that receives the detailed logs of the ElastiCache replication group, identified by its delivery stream name. (AI-inferred)
     kinesis_firehose_details: Any = None
 
 @dataclasses.dataclass
 class CacheReplicationGroup_LogDeliveryConfigurations:
-    # Specifies the concrete destination (CloudWatch Logs log group ARN or Kinesis Data Firehose delivery stream ARN) for a log delivery configuration of the ElastiCache replication group, selected based on the destination type. (AI-inferred)
     destination_details: Any = None
-    # The type of destination for ElastiCache replication group logs, which must be either 'cloudwatch-logs' or 'kinesis-firehose'. (AI-inferred)
     destination_type: Any = None
-    # For each log delivery configuration on the ElastiCache replication group, this specifies whether the delivered log (for Redis slow logs or engine logs) is in 'text' or 'json' format. (AI-inferred)
     log_format: Any = None
-    # Determines which type of ElastiCache log (engine-log or slow-log) is delivered to the configured destination for the replication group. (AI-inferred)
     log_type: Any = None
 
 @dataclasses.dataclass
 class CacheReplicationGroup_NodeGroupConfiguration:
-    # Assigns a unique zero-padded numeric identifier (e.g., '0001') to each node group in a cluster-mode replication group so that multiple node groups can be individually configured. (AI-inferred)
     node_group_id: Any = None
-    # Specifies the Availability Zone for the primary node of a specific node group (shard) in a cluster-mode-enabled ElastiCache replication group, allowing per-shard placement control. (AI-inferred)
     primary_availability_zone: Any = None
-    # Specifies the list of Availability Zones (AZs) for the replica nodes in this node group (shard), one per replica, so you can control the physical placement of read replicas across AZs for high availability. (AI-inferred)
     replica_availability_zones: Any = None
-    # Specifies the number of replica nodes that should be created in each node group (shard) of the replication group. (AI-inferred)
     replica_count: Any = None
-    # Assigns a contiguous range of hash slots (e.g., '0-4999') to the node group, determining which part of the keyspace the shard manages in a cluster-mode replication group. (AI-inferred)
     slots: Any = None
 
 @dataclasses.dataclass
@@ -68,7 +55,6 @@ class CacheReplicationGroup_ReadEndPoint:
 @dataclasses.dataclass
 class CacheReplicationGroup_Tags:
     key: Any = None
-    # The value of a tag applied to the ElastiCache replication group, which can be used to organize, track, or control access to the resource through IAM policies and cost allocation. (AI-inferred)
     value: Any = None
 
 _CacheReplicationGroup_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields = {
@@ -219,7 +205,6 @@ class CacheReplicationGroupAttrs:
     cache_subnet_group_name: Any = None
     # Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients to connect using both cluster mode enabled and cluster mode disabled. After you migrate all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode configuration and set the cluster mode to Enabled. For more information, see Modify cluster mode.
     cluster_mode: Any = None
-    # The configuration endpoint of the replication group, providing the DNS address and port for client connections. (AI-inferred)
     configuration_end_point: Any = None
     # Enables data tiering. Data tiering is only supported for replication groups using the r6gd node type. This parameter must be set to true when using r6gd nodes.
     data_tiering_enabled: Any = None
@@ -259,11 +244,8 @@ class CacheReplicationGroupAttrs:
     preferred_maintenance_window: Any = None
     # The identifier of the cluster that serves as the primary for this replication group. This cluster must already exist and have a status of available.
     primary_cluster_id: Any = None
-    # The endpoint (hostname and port) of the primary node in the replication group, computed after creation and used by applications to connect for read/write operations. (AI-inferred)
     primary_end_point: Any = None
-    # The read endpoint of the replication group, a DNS address and port used for read-only connections that are distributed across the replica nodes in the cluster. (AI-inferred)
     read_end_point: Any = None
-    # The read-only endpoint (DNS address and port) automatically assigned by ElastiCache that points to the replication group's read replicas, used for distributing read traffic. (AI-inferred)
     reader_end_point: Any = None
     # An optional parameter that specifies the number of replica nodes in each node group (shard). Valid values are 0 to 5. **Note:** Using ReplicasPerNodeGroup with NodeGroupConfiguration results in resource replacement. For online scaling, use ReplicasPerNodeGroup alone.
     replicas_per_node_group: Any = None

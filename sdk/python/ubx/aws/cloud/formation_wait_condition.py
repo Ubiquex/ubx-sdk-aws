@@ -8,23 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationWaitConditionConfig:
-    # The number of success signals that must be received by the CloudFormation wait condition before it is considered complete, matching the Count property of the associated CloudFormation WaitCondition. (AI-inferred)
     count: Any = None
-    # The handle property is the pre-signed URL (from the associated WaitConditionHandle) that a signal is sent to, marking the wait as complete and allowing CloudFormation to finish creating this WaitCondition resource. (AI-inferred)
     handle: Any = None
-    # The number of seconds to wait for the required number of signals to arrive before the wait condition times out. (AI-inferred)
     timeout: Any = None
 
 @dataclasses.dataclass
 class FormationWaitConditionAttrs:
-    # The number of success signals that must be received by the CloudFormation wait condition before it is considered complete, matching the Count property of the associated CloudFormation WaitCondition. (AI-inferred)
     count: Any = None
-    # The map of data returned by the signaled resource or application once the wait condition is fulfilled, providing the payload sent via the signal URL. (AI-inferred)
     data: Any = None
-    # The handle property is the pre-signed URL (from the associated WaitConditionHandle) that a signal is sent to, marking the wait as complete and allowing CloudFormation to finish creating this WaitCondition resource. (AI-inferred)
     handle: Any = None
     id: Any = None
-    # The number of seconds to wait for the required number of signals to arrive before the wait condition times out. (AI-inferred)
     timeout: Any = None
 
 FormationWaitCondition = ubx.ResourceBinding(

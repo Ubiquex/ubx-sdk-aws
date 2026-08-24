@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OnlyInternetGateway_Tags {
-  /** The key portion of a tag attached to the egress-only internet gateway, used for identifying, organizing, and managing this VPC component in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value (string) for a tag applied to the egress-only internet gateway, allowing you to categorize and manage this IPv6 outbound-only VPC component. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

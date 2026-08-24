@@ -4,26 +4,17 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientVpnTargetNetworkAssociationConfig struct {
-	// The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred)
 	AvailabilityZone any
-	// This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred)
 	AvailabilityZoneId any
-	// The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred)
 	ClientVpnEndpointId any
-	// The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred)
 	SubnetId any
 }
 
 type ClientVpnTargetNetworkAssociationAttrs struct {
-	// The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred)
 	AvailabilityZone any
-	// This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred)
 	AvailabilityZoneId any
-	// The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred)
 	ClientVpnEndpointId any
-	// The unique association ID assigned by AWS to the target network (subnet) when it is associated with the Client VPN endpoint. (AI-inferred)
 	Id any
-	// The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred)
 	SubnetId any
 }
 

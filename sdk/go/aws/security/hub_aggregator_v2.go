@@ -13,7 +13,6 @@ type HubAggregatorV2Config struct {
 }
 
 type HubAggregatorV2Attrs struct {
-	// The AWS Region to which Security Hub aggregates findings from all linked Regions in the cross-Region aggregation configuration. (AI-inferred)
 	AggregationRegion any
 	// The ARN of the AggregatorV2 being created and assigned as the unique identifier
 	AggregatorV2Arn any

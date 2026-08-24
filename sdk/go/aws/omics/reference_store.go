@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ReferenceStore_SseConfig struct {
 	// An encryption key ARN.
 	KeyArn any
-	// The type of server-side encryption applied to the reference store, which must be either 'KMS' for a customer-managed AWS KMS key or 'S3' for Amazon S3-managed encryption. (AI-inferred)
 	Type any
 }
 
@@ -22,7 +21,6 @@ type ReferenceStoreConfig struct {
 	Name any
 	// Server-side encryption (SSE) settings for a store.
 	SseConfig any
-	// A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred)
 	Tags any
 }
 
@@ -35,11 +33,9 @@ type ReferenceStoreAttrs struct {
 	Description any
 	// A name for the store.
 	Name any
-	// The unique identifier assigned to the reference store by AWS when it is created. (AI-inferred)
 	ReferenceStoreId any
 	// Server-side encryption (SSE) settings for a store.
 	SseConfig any
-	// A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred)
 	Tags any
 }
 

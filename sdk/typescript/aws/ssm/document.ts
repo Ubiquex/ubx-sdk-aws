@@ -2,24 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Document_Attachments {
-  /** The key name of an attachment entry, such as 'SourceUrl' or 'Script', that specifies the attachment's purpose within an Automation document. (AI-inferred) */
   key?: string | Computed<string>;
   name?: string | Computed<string>;
-  /** Provides the list of source URLs (such as Amazon S3 file URLs) that define the actual content locations for an SSM document attachment, matched with the attachment's key to specify the type of source. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Document_Requires {
-  /** The name of the AWS Systems Manager document that this document requires as a dependency. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The version of another SSM document that this document requires as a dependency, specified in the 'requires' block of the aws_ssm_document resource. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Document_Tags {
-  /** The tag key to assign to the SSM document, used for identifying and managing the document in AWS Systems Manager. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to an SSM document, used to add metadata that supports resource identification, organization, and access control in AWS Systems Manager. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

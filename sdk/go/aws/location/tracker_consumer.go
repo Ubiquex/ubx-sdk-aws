@@ -4,16 +4,12 @@ package location
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrackerConsumerConfig struct {
-	// The Amazon Resource Name (ARN) of the consumer resource (such as an EventBridge rule) that will receive location updates from the tracker. (AI-inferred)
 	ConsumerArn any
-	// The name of the Amazon Location Service tracker that the consumer (such as a geofence collection) is associated with, linking the consumer to receive position updates from that tracker. (AI-inferred)
 	TrackerName any
 }
 
 type TrackerConsumerAttrs struct {
-	// The Amazon Resource Name (ARN) of the consumer resource (such as an EventBridge rule) that will receive location updates from the tracker. (AI-inferred)
 	ConsumerArn any
-	// The name of the Amazon Location Service tracker that the consumer (such as a geofence collection) is associated with, linking the consumer to receive position updates from that tracker. (AI-inferred)
 	TrackerName any
 }
 

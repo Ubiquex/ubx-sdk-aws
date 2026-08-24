@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Table_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key associated with the route table, used to organize and identify the route table within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -20,7 +19,6 @@ export interface TableConfig {
 }
 
 export interface TableAttrs {
-  /** The unique identifier of the route table, assigned by AWS (e.g., rtb-xxxxxxxx). (AI-inferred) */
   routeTableId: string;
   /** Any tags assigned to the route table. */
   tags: Table_Tags[];

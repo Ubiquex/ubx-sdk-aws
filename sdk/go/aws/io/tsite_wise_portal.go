@@ -12,7 +12,6 @@ type TsiteWisePortal_Alarms struct {
 
 type TsiteWisePortal_Tags struct {
 	Key any
-	// The value part of a key-value tag that you assign to the AWS IoT SiteWise portal to help organize and identify the resource. (AI-inferred)
 	Value any
 }
 

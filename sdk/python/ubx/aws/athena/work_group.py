@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WorkGroup_Tags:
-    # The key of a tag assigned to the Athena work group, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The user-defined value string paired with a tag key on the Athena work group, used for organizing, cost allocation, and tag-based access control. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -47,7 +45,6 @@ class WorkGroup_WorkGroupConfiguration_EngineVersion:
 
 @dataclasses.dataclass
 class WorkGroup_WorkGroupConfiguration_ManagedQueryResultsConfiguration:
-    # Determines whether this workgroup uses Athena's managed query results bucket to automatically store query results. (AI-inferred)
     enabled: Any = None
     # Indicates the encryption configuration for Athena Managed Storage. If not setting this field, Managed Storage will encrypt the query results with Athena's encryption key
     encryption_configuration: Any = None
@@ -148,13 +145,9 @@ class WorkGroup_WorkGroupConfigurationUpdates_ResultConfigurationUpdates:
     expected_bucket_owner: Any = None
     # The location in Amazon S3 where your query results are stored, such as s3://path/to/query/bucket/. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using WorkGroupConfiguration
     output_location: Any = None
-    # When set to true, this removes the existing ACL (access control list) configuration from the workgroup's result settings during an update. (AI-inferred)
     remove_acl_configuration: Any = None
-    # Indicates whether to remove the encryption configuration for the query results settings of the Athena work group. (AI-inferred)
     remove_encryption_configuration: Any = None
-    # Whether to remove the expected bucket owner setting from the Athena work group's result configuration for query results, so that the bucket owner check is no longer enforced. (AI-inferred)
     remove_expected_bucket_owner: Any = None
-    # This boolean flag, when set to true, removes the previously configured S3 output location for query results in the Athena work group as part of a result configuration update. (AI-inferred)
     remove_output_location: Any = None
 
 @dataclasses.dataclass
@@ -181,7 +174,6 @@ class WorkGroup_WorkGroupConfigurationUpdates:
     publish_cloud_watch_metrics_enabled: Any = None
     # Indicates that the data usage control limit per query is removed.
     remove_bytes_scanned_cutoff_per_query: Any = None
-    # Whether to remove the customer content encryption configuration from the Athena work group during an update. (AI-inferred)
     remove_customer_content_encryption_configuration: Any = None
     # If set to true, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to false, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error.
     requester_pays_enabled: Any = None
@@ -203,7 +195,6 @@ class WorkGroupConfig:
     recursive_delete_option: Any = None
     # The state of the workgroup: ENABLED or DISABLED.
     state: Any = None
-    # Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -218,9 +209,7 @@ class WorkGroupAttrs:
     recursive_delete_option: Any = None
     # The state of the workgroup: ENABLED or DISABLED.
     state: Any = None
-    # Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred)
     tags: Any = None
-    # The computed work group configuration object that defines the query execution settings for this Athena work group, including the result location, encryption, and CloudWatch metrics publishing behavior. (AI-inferred)
     work_group_configuration: Any = None
     # The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
     work_group_configuration_updates: Any = None

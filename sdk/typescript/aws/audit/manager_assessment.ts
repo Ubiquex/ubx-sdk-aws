@@ -18,39 +18,25 @@ export interface ManagerAssessment_AwsAccount {
 }
 
 export interface ManagerAssessment_Delegations {
-  /** The unique identifier of the AWS Audit Manager assessment that this delegation is associated with, linking the delegation record to its parent assessment. (AI-inferred) */
   assessmentId?: string | Computed<string>;
-  /** The name of the AWS Audit Manager assessment that this delegation belongs to. (AI-inferred) */
   assessmentName?: string | Computed<string>;
-  /** Specifies an optional comment that the delegating administrator can include when delegating the assessment to another administrator, providing context or instructions for the delegation. (AI-inferred) */
   comment?: string | Computed<string>;
-  /** The unique identifier of the control set that is delegated to a reviewer within the assessment. (AI-inferred) */
   controlSetId?: string | Computed<string>;
-  /** The IAM user or role that created this delegation of the assessment. (AI-inferred) */
   createdBy?: string | Computed<string>;
-  /** The creation time of the delegation, represented as a Unix epoch timestamp in seconds. (AI-inferred) */
   creationTime?: number | Computed<number>;
-  /** The unique identifier of the delegation, as assigned by AWS Audit Manager, which allows the assessment to be administered by a different AWS account. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The epoch timestamp indicating when the delegation entry within the assessment was last updated, reflecting changes to the delegation's details or status. (AI-inferred) */
   lastUpdated?: number | Computed<number>;
-  /** The Amazon Resource Name (ARN) of the IAM role that the assessment is delegated to. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The type of IAM role (ADMIN or OWNER) assigned to the delegated role for the assessment, controlling the level of permissions granted. (AI-inferred) */
   roleType?: string | Computed<string>;
-  /** The current workflow state of a delegation, indicating whether the delegated control set assessment is in progress, under review, or complete. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface ManagerAssessment_Roles {
-  /** The Amazon Resource Name (ARN) of the IAM role that is associated with the assessment, used to define the roles that have access to the assessment in AWS Audit Manager. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** Specifies whether the role is a `PROCESS_OWNER`, who owns the overall assessment process, or a `RESOURCE_OWNER`, who owns a specific resource within the assessment. (AI-inferred) */
   roleType?: string | Computed<string>;
 }
 
 export interface ManagerAssessment_Scope_AwsServices {
-  /** The name of an AWS service (e.g., 'S3', 'IAM') that is included in the assessment's scope of audited services. (AI-inferred) */
   serviceName?: string | Computed<string>;
 }
 
@@ -63,7 +49,6 @@ export interface ManagerAssessment_Scope {
 
 export interface ManagerAssessment_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the AWS Audit Manager assessment, used to label or categorize the assessment for organizational purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -145,7 +130,6 @@ export interface ManagerAssessmentConfig {
 export interface ManagerAssessmentAttrs {
   /** The Amazon Resource Name (ARN) of the assessment. */
   arn: string;
-  /** The unique identifier assigned by AWS Audit Manager to the assessment. (AI-inferred) */
   assessmentId: string;
   /** The destination in which evidence reports are stored for the specified assessment. */
   assessmentReportsDestination: ManagerAssessment_AssessmentReportsDestination;

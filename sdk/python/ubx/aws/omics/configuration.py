@@ -9,12 +9,10 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Configuration_RunConfigurations_VpcConfig:
     security_group_ids: Any = None
-    # Specifies the list of subnet IDs to use in the VPC configuration for an AWS Omics workflow run configuration. (AI-inferred)
     subnet_ids: Any = None
 
 @dataclasses.dataclass
 class Configuration_RunConfigurations:
-    # Specifies the VPC settings (subnet IDs and security group IDs) for the compute environment used by Omics runs, enabling workflows to access resources within a Virtual Private Cloud. (AI-inferred)
     vpc_config: Any = None
 
 _Configuration_RunConfigurations_VpcConfigFields = {
@@ -36,7 +34,6 @@ class ConfigurationConfig:
     description: Any = None
     # User-friendly name for the configuration.
     name: Any = None
-    # The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred)
     run_configurations: Any = None
     # A map of resource tags
     tags: Any = None
@@ -51,7 +48,6 @@ class ConfigurationAttrs:
     description: Any = None
     # User-friendly name for the configuration.
     name: Any = None
-    # The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred)
     run_configurations: Any = None
     # Current configuration status.
     status: Any = None

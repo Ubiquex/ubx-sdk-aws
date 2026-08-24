@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpacesEnvironment_Tags:
-    # A user-defined tag key to assign to the Refactor Spaces environment for metadata, cost allocation, and access control. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag key attached to the AWS Refactor Spaces environment, typically used to store metadata such as environment purpose, owner, or cost center. (AI-inferred)
     value: Any = None
 
 _SpacesEnvironment_TagsFields = {
@@ -20,30 +18,21 @@ _SpacesEnvironment_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesEnvironmentConfig:
-    # The description field is an optional string that holds a user-defined, human-readable description of the Refactor Spaces environment, used to provide additional context about the environment's purpose or contents. (AI-inferred)
     description: Any = None
-    # An optional friendly name for the environment; if you don't provide one, AWS Refactor Spaces automatically generates a unique name for the environment. (AI-inferred)
     name: Any = None
-    # Specifies the network fabric type for the Refactor Spaces environment, using either 'TRANSIT_GATEWAY' to create a transit gateway for service connectivity or 'NONE' to operate without a network fabric. (AI-inferred)
     network_fabric_type: Any = None
     # Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
     tags: Any = None
 
 @dataclasses.dataclass
 class SpacesEnvironmentAttrs:
-    # The Amazon Resource Name (ARN) of the AWS Migration Hub Refactor Spaces environment. (AI-inferred)
     arn: Any = None
-    # The description field is an optional string that holds a user-defined, human-readable description of the Refactor Spaces environment, used to provide additional context about the environment's purpose or contents. (AI-inferred)
     description: Any = None
-    # The unique identifier assigned by AWS Refactor Spaces to the environment when it is created. (AI-inferred)
     environment_identifier: Any = None
-    # An optional friendly name for the environment; if you don't provide one, AWS Refactor Spaces automatically generates a unique name for the environment. (AI-inferred)
     name: Any = None
-    # Specifies the network fabric type for the Refactor Spaces environment, using either 'TRANSIT_GATEWAY' to create a transit gateway for service connectivity or 'NONE' to operate without a network fabric. (AI-inferred)
     network_fabric_type: Any = None
     # Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
     tags: Any = None
-    # The unique identifier of the transit gateway associated with this Refactor Spaces environment, assigned by AWS and returned as a read-only attribute after environment creation (relevant when the environment uses a transit gateway network fabric). (AI-inferred)
     transit_gateway_id: Any = None
 
 SpacesEnvironment = ubx.ResourceBinding(

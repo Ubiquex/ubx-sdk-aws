@@ -4,7 +4,6 @@ package fraud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectorOutcome_Tags struct {
-	// The key of a tag assigned to the AWS Fraud Detector outcome, used to organize and identify the outcome resource. (AI-inferred)
 	Key any
 	Value any
 }

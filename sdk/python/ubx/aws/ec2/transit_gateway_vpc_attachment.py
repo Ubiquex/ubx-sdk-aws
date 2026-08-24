@@ -19,9 +19,7 @@ class TransitGatewayVpcAttachment_Options:
 
 @dataclasses.dataclass
 class TransitGatewayVpcAttachment_Tags:
-    # The key of a tag attached to the EC2 Transit Gateway VPC Attachment, used for adding metadata like 'Name' or 'Environment' to identify and manage the attachment. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag on the EC2 Transit Gateway VPC Attachment, used for metadata, cost allocation, and IAM resource-level access control. (AI-inferred)
     value: Any = None
 
 _TransitGatewayVpcAttachment_OptionsFields = {
@@ -38,38 +36,25 @@ _TransitGatewayVpcAttachment_TagsFields = {
 
 @dataclasses.dataclass
 class TransitGatewayVpcAttachmentConfig:
-    # Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred)
     add_subnet_ids: Any = None
     # The options for the transit gateway vpc attachment.
     options: Any = None
-    # Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred)
     remove_subnet_ids: Any = None
-    # The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred)
     subnet_ids: Any = None
-    # Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred)
     tags: Any = None
-    # The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred)
     transit_gateway_id: Any = None
-    # The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class TransitGatewayVpcAttachmentAttrs:
-    # Specifies a list of subnet IDs to add to the transit gateway VPC attachment during an update, expanding the set of subnets used by the attachment for routing traffic. (AI-inferred)
     add_subnet_ids: Any = None
-    # The AWS-assigned unique identifier for the transit gateway VPC attachment (e.g., tgw-attach-...). (AI-inferred)
     id: Any = None
     # The options for the transit gateway vpc attachment.
     options: Any = None
-    # Specifies the list of subnet IDs to remove from the transit gateway VPC attachment during an update, enabling you to detach specific subnets from the attachment without recreating the resource. (AI-inferred)
     remove_subnet_ids: Any = None
-    # The IDs of the subnets in the VPC that the transit gateway attachment routes traffic to and from, with at least one subnet per Availability Zone used by the attachment. (AI-inferred)
     subnet_ids: Any = None
-    # Specifies one or more tags to apply to the transit gateway VPC attachment, with each tag consisting of a key and an optional value. (AI-inferred)
     tags: Any = None
-    # The ID of the transit gateway to which the VPC is attached, creating a VPC attachment in that transit gateway. (AI-inferred)
     transit_gateway_id: Any = None
-    # The ID of the VPC to attach to the transit gateway, which must be in the same AWS account and region as the transit gateway. (AI-inferred)
     vpc_id: Any = None
 
 TransitGatewayVpcAttachment = ubx.ResourceBinding(

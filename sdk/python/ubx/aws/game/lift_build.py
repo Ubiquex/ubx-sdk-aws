@@ -42,7 +42,6 @@ class LiftBuildConfig:
     operating_system: Any = None
     # A server SDK version you used when integrating your game server build with Amazon GameLift. By default Amazon GameLift sets this value to 4.0.2.
     server_sdk_version: Any = None
-    # The S3 bucket and object key where the build's game build files are stored, along with the IAM role ARN that GameLift assumes to access the files. (AI-inferred)
     storage_location: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -61,7 +60,6 @@ class LiftBuildAttrs:
     operating_system: Any = None
     # A server SDK version you used when integrating your game server build with Amazon GameLift. By default Amazon GameLift sets this value to 4.0.2.
     server_sdk_version: Any = None
-    # The S3 bucket and object key where the build's game build files are stored, along with the IAM role ARN that GameLift assumes to access the files. (AI-inferred)
     storage_location: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface HubStandard_DisabledStandardsControls {
-  /** The user-supplied reason for disabling the specified Security Hub standard control in the DisabledStandardsControls list of the AWS::SecurityHub::Standard resource. (AI-inferred) */
   reason?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the specific Security Hub standard control that is disabled for this standard membership. (AI-inferred) */
   standardsControlArn?: string | Computed<string>;
 }
 
@@ -25,7 +23,6 @@ export interface HubStandardAttrs {
   disabledStandardsControls: HubStandard_DisabledStandardsControls[];
   /** The ARN of the standard that you want to enable. To view a list of available ASH standards and their ARNs, use the [DescribeStandards](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html) API operation. */
   standardsArn: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the subscription to a Security Hub standard. (AI-inferred) */
   standardsSubscriptionArn: string;
 }
 

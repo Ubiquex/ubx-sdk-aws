@@ -8,27 +8,19 @@ export interface DataTableAttribute_LockVersion {
 
 export interface DataTableAttribute_Validation_Enum {
   strict?: boolean | Computed<boolean>;
-  /** The allowed string values for this enum validation, which restricts the attribute to one of the specified values. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface DataTableAttribute_Validation {
   enum?: DataTableAttribute_Validation_Enum | Computed<DataTableAttribute_Validation_Enum>;
-  /** Sets the exclusive upper bound for a numeric data table attribute's value, requiring any stored value to be strictly less than this number to pass validation. (AI-inferred) */
   exclusiveMaximum?: number | Computed<number>;
-  /** Defines an exclusive minimum validation constraint on a numeric attribute in an Amazon Connect data table, requiring that the attribute's value must be strictly greater than the specified number. (AI-inferred) */
   exclusiveMinimum?: number | Computed<number>;
-  /** Specifies the maximum number of characters allowed for a string-type attribute value in an AWS Connect data table, used to validate that input does not exceed this length. (AI-inferred) */
   maxLength?: number | Computed<number>;
   maxValues?: number | Computed<number>;
-  /** Specifies the maximum numeric value allowed for a data table attribute when the attribute's validation rule is of numeric type. (AI-inferred) */
   maximum?: number | Computed<number>;
-  /** Specifies the minimum number of characters that a string-type data table attribute value must have to be considered valid in Amazon Connect. (AI-inferred) */
   minLength?: number | Computed<number>;
   minValues?: number | Computed<number>;
-  /** Specifies the minimum numeric value allowed for this data table attribute, used to validate that input is not less than this threshold when the attribute is of a numeric type. (AI-inferred) */
   minimum?: number | Computed<number>;
-  /** The numeric value that an attribute value must be a multiple of, used as a validation constraint for number-type attributes in an Amazon Connect data table. (AI-inferred) */
   multipleOf?: number | Computed<number>;
 }
 
@@ -55,35 +47,26 @@ const DataTableAttribute_ValidationFields: FieldMap = {
 };
 
 export interface DataTableAttributeConfig {
-  /** The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred) */
   dataTableArn: string | Computed<string>;
   description?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred) */
   instanceArn: string | Computed<string>;
   name: string | Computed<string>;
-  /** Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
   validation?: DataTableAttribute_Validation | Computed<DataTableAttribute_Validation>;
-  /** Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred) */
   valueType: string | Computed<string>;
 }
 
 export interface DataTableAttributeAttrs {
   attributeId: string;
-  /** The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred) */
   dataTableArn: string;
   description: string;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred) */
   instanceArn: string;
-  /** The AWS Region where the data table attribute was last updated or modified. (AI-inferred) */
   lastModifiedRegion: string;
   lastModifiedTime: number;
   lockVersion: DataTableAttribute_LockVersion;
   name: string;
-  /** Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred) */
   primary: boolean;
   validation: DataTableAttribute_Validation;
-  /** Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred) */
   valueType: string;
 }
 

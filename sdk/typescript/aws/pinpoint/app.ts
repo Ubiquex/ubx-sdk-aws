@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AppConfig {
-  /** The display name of the Amazon Pinpoint application. (AI-inferred) */
   name: string | Computed<string>;
-  /** Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface AppAttrs {
-  /** The Amazon Resource Name (ARN) of the Pinpoint application. (AI-inferred) */
   arn: string;
-  /** The unique identifier assigned to the Amazon Pinpoint application when it is created. (AI-inferred) */
   id: string;
-  /** The display name of the Amazon Pinpoint application. (AI-inferred) */
   name: string;
-  /** Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred) */
   tags: unknown;
 }
 

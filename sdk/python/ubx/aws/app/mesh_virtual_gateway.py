@@ -8,211 +8,150 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_File:
-    # The file system path to the certificate chain file used for the TLS certificate in the client policy for backend defaults in the App Mesh virtual gateway. (AI-inferred)
     certificate_chain: Any = None
-    # Specifies the file path to the private key used for TLS client authentication in the virtual gateway's backend default client policy. (AI-inferred)
     private_key: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_Sds:
-    # The name of the secret in the Secret Discovery Service (SDS) that provides the TLS certificate for the client policy applied to backend defaults of the virtual gateway. (AI-inferred)
     secret_name: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate:
-    # Specifies the client policy TLS certificate to be sourced from a file on the virtual gateway, including the paths to the certificate chain and private key. (AI-inferred)
     file: Any = None
-    # Configures the virtual gateway's backend-default client TLS certificate to be sourced dynamically through Envoy's Secret Discovery Service (SDS), where the secretName property identifies the secret containing the certificate and private key. (AI-inferred)
     sds: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNames_Match:
-    # Specifies the exact subject alternative names that must be present in the peer certificate for the TLS validation to succeed. (AI-inferred)
     exact: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_SubjectAlternativeNames:
-    # Defines the exact subject alternative names (SANs) that must be present in the certificate presented by a backend for the virtual gateway's default TLS client policy validation to succeed. (AI-inferred)
     match: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_Acm:
-    # The Amazon Resource Names (ARNs) of the AWS Certificate Manager Private Certificate Authority certificates used to validate the client certificate for mutual TLS in the virtual gateway's backend defaults. (AI-inferred)
     certificate_authority_arns: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust_File:
-    # Path to the file containing the certificate chain for validating client certificates in the backend default client policy TLS trust file configuration. (AI-inferred)
     certificate_chain: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation_Trust:
-    # Specifies the AWS Certificate Manager (ACM) Private Certificate Authority trust settings used by the virtual gateway to validate client certificates for TLS backend connections. (AI-inferred)
     acm: Any = None
-    # Defines a file-based trust store for TLS certificate validation in a virtual gateway's backend defaults, specifying the path to a certificate file used as the trusted CA. (AI-inferred)
     file: Any = None
-    # Defines the SDS (Secret Discovery Service) trust configuration for validating the TLS peer certificate in the virtual gateway's backend default client policy, where the secret name holds the CA certificate. (AI-inferred)
     sds: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Validation:
-    # Specifies the subject alternative names (SANs) required in the server certificate for TLS validation when the virtual gateway's default client policy is applied to backend connections. (AI-inferred)
     subject_alternative_names: Any = None
-    # Defines the TLS validation trust for the virtual gateway's backend defaults, specifying how the client certificate chain is trusted via ACM, a file, or SDS. (AI-inferred)
     trust: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls:
-    # Specifies the client certificate the virtual gateway presents to backend services for mutual TLS authentication under the default client policy for all backends. (AI-inferred)
     certificate: Any = None
-    # Indicates whether the TLS client policy is enforced for the virtual gateway's backend defaults, rejecting connections that do not comply with the policy when set to true. (AI-inferred)
     enforce: Any = None
-    # Specifies the destination port numbers for which the TLS client policy applies to traffic from the virtual gateway to its backends, with an empty list meaning the policy applies to all ports. (AI-inferred)
     ports: Any = None
-    # Specifies the TLS trust validation configuration (ACM or file-based trust chain) used by the virtual gateway to validate backend certificates in the client policy. (AI-inferred)
     validation: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy:
-    # Configures the TLS settings (such as validation context, trusted CA certificates, and TLS negotiation mode) for the default client policy that the virtual gateway uses when connecting to backend services, applying unless a more specific policy overrides it. (AI-inferred)
     tls: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_BackendDefaults:
-    # Specifies the client policy for all backend traffic from the virtual gateway, defining TLS settings such as validation and certificate requirements when connecting to backend services. (AI-inferred)
     client_policy: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_ConnectionPool_Grpc:
-    # Specifies the maximum number of concurrent in-flight gRPC requests allowed in the connection pool for a virtual gateway listener. (AI-inferred)
     max_requests: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_ConnectionPool_Http:
-    # Sets the maximum number of outbound connections that the virtual gateway can create to a backend service for the HTTP connection pool. (AI-inferred)
     max_connections: Any = None
-    # The maximum number of pending HTTP requests that can be queued in the virtual gateway's HTTP connection pool before new requests are rejected. (AI-inferred)
     max_pending_requests: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_ConnectionPool:
-    # Defines the gRPC-specific connection pool settings for a virtual gateway listener, which includes the maximum number of concurrent requests allowed to the virtual gateway. (AI-inferred)
     grpc: Any = None
-    # Specifies the HTTP connection pool settings for the virtual gateway listener, including the maximum number of active connections and pending requests. (AI-inferred)
     http: Any = None
-    # Configuration for the HTTP/2 connection pool of the virtual gateway listener, specifying limits such as the maximum number of requests and pending requests. (AI-inferred)
     http2: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_HealthCheck:
-    # The number of consecutive successful health checks required before a virtual gateway listener target is considered healthy. (AI-inferred)
     healthy_threshold: Any = None
-    # The time in milliseconds between each health check attempt for the virtual gateway listener. (AI-inferred)
     interval_millis: Any = None
-    # The URL path for an HTTP or HTTP/2 health check request sent by the virtual gateway listener to determine target health, such as '/ping'. (AI-inferred)
     path: Any = None
-    # The destination port on the virtual gateway listener to send health check requests to. (AI-inferred)
     port: Any = None
-    # Specifies the protocol used for the virtual gateway listener's health check, which can be grpc, http, http2, or tcp. (AI-inferred)
     protocol: Any = None
-    # Specifies the timeout, in milliseconds, for each health check request sent by the virtual gateway listener; if no response is received within this period, the target is considered unhealthy. (AI-inferred)
     timeout_millis: Any = None
-    # The number of consecutive failed health checks that must occur before the virtual gateway listener is marked unhealthy. (AI-inferred)
     unhealthy_threshold: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_PortMapping:
-    # The port number on which the virtual gateway listener accepts traffic. (AI-inferred)
     port: Any = None
-    # Specifies the protocol for the virtual gateway listener's port mapping, which determines how incoming traffic is handled and can be one of grpc, http, or http2. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_Tls_Certificate_Acm:
-    # The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate used for TLS termination on this virtual gateway listener. (AI-inferred)
     certificate_arn: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_Tls_Certificate:
-    # Specifies the AWS Certificate Manager (ACM) certificate used for TLS termination on the virtual gateway listener, identified by its Amazon Resource Name (ARN). (AI-inferred)
     acm: Any = None
-    # Specifies the file path to a TLS certificate and private key stored on the local file system, used to terminate TLS traffic on the virtual gateway's listener. (AI-inferred)
     file: Any = None
-    # This object configures the Secret Discovery Service (SDS) as the source for the TLS certificate on the virtual gateway listener, using a named secret from the Envoy's SDS configuration to provide the certificate and private key. (AI-inferred)
     sds: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_Tls_Validation_Trust:
-    # Configures the file-based trust object that specifies the path to a certificate chain on the file system used for validating the TLS peer certificate. (AI-inferred)
     file: Any = None
-    # Specifies the TLS validation trust source as a secret obtained from Envoy's Secret Discovery Service (SDS), identified by the secret name for the virtual gateway's listener TLS configuration. (AI-inferred)
     sds: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_Tls_Validation:
-    # Specifies the list of subject alternative names (SANs) that must be present on the peer's TLS certificate for it to be considered valid during the virtual gateway's TLS validation. (AI-inferred)
     subject_alternative_names: Any = None
-    # Specifies the TLS validation context trust for the virtual gateway listener, defining how the listener trusts client certificates via either an AWS Certificate Manager (ACM) trust or a file-based trust. (AI-inferred)
     trust: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners_Tls:
-    # Specifies the TLS certificate used by the virtual gateway listener for TLS termination, which can be an ACM certificate or a file certificate containing the certificate chain and private key. (AI-inferred)
     certificate: Any = None
-    # Specifies the TLS mode for the virtual gateway listener, either STRICT (requires TLS for all connections) or PERMISSIVE (allows both TLS and plaintext connections). (AI-inferred)
     mode: Any = None
-    # Defines the TLS validation trust settings (such as ACM private certificate authority or file-based trust) used to validate client certificates for the virtual gateway listener. (AI-inferred)
     validation: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Listeners:
-    # Defines the connection pool settings for a virtual gateway listener, specifying the maximum number of connections or requests for protocols like HTTP, HTTP/2, gRPC, and TCP. (AI-inferred)
     connection_pool: Any = None
-    # Specifies the health check settings used by the virtual gateway listener to determine if the target virtual services or virtual nodes are healthy, enabling the gateway to route traffic only to healthy backends. (AI-inferred)
     health_check: Any = None
-    # Specifies the network port and protocol (such as HTTP, HTTP2, or GRPC) on which the virtual gateway listener receives traffic. (AI-inferred)
     port_mapping: Any = None
-    # Specifies the TLS configuration for the virtual gateway listener, including the TLS mode (e.g., STRICT, PERMISSIVE) and the certificate (from AWS Certificate Manager or a local file) used for server-side TLS termination. (AI-inferred)
     tls: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Logging_AccessLog_File_Format_Json:
-    # Specifies the JSON key name in a key-value pair that defines the format of the virtual gateway's file access log, where the paired value provides the data to be logged. (AI-inferred)
     key: Any = None
-    # Sets the value for a key-value pair in the JSON access log format, which can be a literal string, a request header name, or a predefined expression such as `%CLIENT_IP%` or `%METHOD%`. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Logging_AccessLog_File_Format:
-    # Specifies a list of key-value objects that define the JSON format for the virtual gateway's access log file, where each object contains a key and value to determine what information is logged. (AI-inferred)
     json: Any = None
-    # Specifies the text format string for the virtual gateway's access log file, using Envoy access log format placeholders to define which request and response data is recorded. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Logging_AccessLog_File:
-    # Specifies the format of the access log entries written to the file, either as a JSON structure or as a custom text string with placeholders, for the virtual gateway's file access logging. (AI-inferred)
     format: Any = None
-    # The absolute file path on the Envoy container where the virtual gateway's access logs are written. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Logging_AccessLog:
-    # Specifies configuration for writing virtual gateway access logs to a file, including the file path and optional format. (AI-inferred)
     file: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec_Logging:
-    # Defines the destination for the virtual gateway's Envoy access logs, supporting either a local file path or a mesh-based endpoint for log delivery. (AI-inferred)
     access_log: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGateway_Spec:
-    # Defines the default client policy (including TLS settings) that the virtual gateway applies to all outgoing traffic to its backend services. (AI-inferred)
     backend_defaults: Any = None
-    # Defines the listeners for the virtual gateway, specifying each listener's port mapping (port and protocol) and optionally its health check and TLS settings for incoming traffic. (AI-inferred)
     listeners: Any = None
-    # Configures access logging for the virtual gateway, specifying the destination for access logs (a file or stdout). (AI-inferred)
     logging: Any = None
 
 _MeshVirtualGateway_Spec_BackendDefaults_ClientPolicy_Tls_Certificate_FileFields = {
@@ -505,36 +444,22 @@ _MeshVirtualGateway_SpecFields = {
 
 @dataclasses.dataclass
 class MeshVirtualGatewayConfig:
-    # The name of the AWS App Mesh service mesh that this virtual gateway belongs to. (AI-inferred)
     mesh_name: Any = None
-    # The AWS account ID that owns the service mesh, required when the virtual gateway is being created in a mesh shared from another account. (AI-inferred)
     mesh_owner: Any = None
-    # Defines the configuration for the App Mesh virtual gateway, including its listeners, backend defaults, and logging settings. (AI-inferred)
     spec: Any = None
-    # A list of key-value pairs (each with Key and Value) to associate with the virtual gateway for metadata and resource management. (AI-inferred)
     tags: Any = None
-    # The name of the virtual gateway, which must be unique within the mesh; if omitted, AWS CloudFormation generates a unique name for the virtual gateway. (AI-inferred)
     virtual_gateway_name: Any = None
 
 @dataclasses.dataclass
 class MeshVirtualGatewayAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the virtual gateway in AWS App Mesh. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) assigned to the virtual gateway. (AI-inferred)
     id: Any = None
-    # The name of the AWS App Mesh service mesh that this virtual gateway belongs to. (AI-inferred)
     mesh_name: Any = None
-    # The AWS account ID that owns the service mesh, required when the virtual gateway is being created in a mesh shared from another account. (AI-inferred)
     mesh_owner: Any = None
-    # The AWS account ID of the account that owns the virtual gateway, which is useful when the gateway is shared across AWS accounts. (AI-inferred)
     resource_owner: Any = None
-    # Defines the configuration for the App Mesh virtual gateway, including its listeners, backend defaults, and logging settings. (AI-inferred)
     spec: Any = None
-    # A list of key-value pairs (each with Key and Value) to associate with the virtual gateway for metadata and resource management. (AI-inferred)
     tags: Any = None
-    # The universally unique identifier (UID) assigned to the virtual gateway by AWS App Mesh, distinct from the ARN and used for internal tracking. (AI-inferred)
     uid: Any = None
-    # The name of the virtual gateway, which must be unique within the mesh; if omitted, AWS CloudFormation generates a unique name for the virtual gateway. (AI-inferred)
     virtual_gateway_name: Any = None
 
 MeshVirtualGateway = ubx.ResourceBinding(

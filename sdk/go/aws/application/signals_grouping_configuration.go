@@ -4,11 +4,8 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SignalsGroupingConfiguration_GroupingAttributeDefinitions struct {
-	// Specifies the fallback value used to group telemetry under a particular application or service when the source attribute defined by this grouping attribute definition is missing from the telemetry data. (AI-inferred)
 	DefaultGroupingValue any
-	// The name of the grouping attribute (used as the key in a grouping attribute definition) that identifies how telemetry is grouped in Application Signals, such as an environment or service name. (AI-inferred)
 	GroupingName any
-	// Specifies the list of source telemetry attribute keys (e.g., service.name, environment) that are combined to derive the value of the corresponding grouping attribute in this grouping attribute definition, determining how Application Signals groups telemetry into applications or services. (AI-inferred)
 	GroupingSourceKeys any
 }
 
@@ -26,7 +23,6 @@ type SignalsGroupingConfigurationAttrs struct {
 	// The identifier for the specified AWS account.
 	AccountId any
 	GroupingAttributeDefinitions any
-	// The timestamp of when the grouping configuration was last updated, as set by the AWS service. (AI-inferred)
 	UpdatedAt any
 }
 

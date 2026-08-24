@@ -4,9 +4,7 @@ package direct
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectLag_Tags struct {
-	// Specifies the key of a tag attached to the AWS Direct Connect LAG, used for cost allocation, access control, and resource organization. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair attached to the Direct Connect LAG, used for metadata and resource management. (AI-inferred)
 	Value any
 }
 

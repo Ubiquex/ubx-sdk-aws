@@ -13,9 +13,7 @@ export interface TransitGatewayAttachment_Options {
 }
 
 export interface TransitGatewayAttachment_Tags {
-  /** The key portion of a key-value tag attached to the transit gateway attachment, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value (a free-form string) paired with a tag key to label or categorize the EC2 Transit Gateway attachment for management and identification purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,28 +32,19 @@ const TransitGatewayAttachment_TagsFields: FieldMap = {
 export interface TransitGatewayAttachmentConfig {
   /** The options for the transit gateway vpc attachment. */
   options?: TransitGatewayAttachment_Options | Computed<TransitGatewayAttachment_Options>;
-  /** The IDs of the subnets in the VPC to attach to the transit gateway, with at most one subnet per Availability Zone. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
-  /** Defines the tags (key-value pairs) to apply to the Transit Gateway Attachment resource for identification and cost allocation. (AI-inferred) */
   tags?: TransitGatewayAttachment_Tags[] | Computed<TransitGatewayAttachment_Tags[]>;
-  /** The ID of the transit gateway to which the attachment (such as a VPC) is associated. (AI-inferred) */
   transitGatewayId: string | Computed<string>;
-  /** The ID of the VPC to attach to the transit gateway. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface TransitGatewayAttachmentAttrs {
-  /** The AWS-assigned unique identifier for the transit gateway attachment (e.g., tgw-attach-0123456789abcdef0). (AI-inferred) */
   id: string;
   /** The options for the transit gateway vpc attachment. */
   options: TransitGatewayAttachment_Options;
-  /** The IDs of the subnets in the VPC to attach to the transit gateway, with at most one subnet per Availability Zone. (AI-inferred) */
   subnetIds: string[];
-  /** Defines the tags (key-value pairs) to apply to the Transit Gateway Attachment resource for identification and cost allocation. (AI-inferred) */
   tags: TransitGatewayAttachment_Tags[];
-  /** The ID of the transit gateway to which the attachment (such as a VPC) is associated. (AI-inferred) */
   transitGatewayId: string;
-  /** The ID of the VPC to attach to the transit gateway. (AI-inferred) */
   vpcId: string;
 }
 

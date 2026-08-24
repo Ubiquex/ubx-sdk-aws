@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdTemplateGroupAccessControlEntry_AccessRights:
-    # Specifies whether the group is granted permission to automatically enroll for certificates, with allowed values 'ALLOW' or 'DENY'. (AI-inferred)
     auto_enroll: Any = None
-    # Sets whether the associated Active Directory group is allowed to enroll for certificates using the configured certificate template, forming the enroll access right in this template group access control entry. (AI-inferred)
     enroll: Any = None
 
 _AdTemplateGroupAccessControlEntry_AccessRightsFields = {
@@ -20,24 +18,16 @@ _AdTemplateGroupAccessControlEntry_AccessRightsFields = {
 
 @dataclasses.dataclass
 class AdTemplateGroupAccessControlEntryConfig:
-    # Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred)
     access_rights: Any = None
-    # Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred)
     group_display_name: Any = None
-    # Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred)
     group_security_identifier: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred)
     template_arn: Any = None
 
 @dataclasses.dataclass
 class AdTemplateGroupAccessControlEntryAttrs:
-    # Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred)
     access_rights: Any = None
-    # Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred)
     group_display_name: Any = None
-    # Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred)
     group_security_identifier: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred)
     template_arn: Any = None
 
 AdTemplateGroupAccessControlEntry = ubx.ResourceBinding(

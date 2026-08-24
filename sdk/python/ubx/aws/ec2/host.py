@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Host_Tags:
-    # The key of a user-defined tag assigned to the EC2 Dedicated Host. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to the EC2 Dedicated Host. (AI-inferred)
     value: Any = None
 
 _Host_TagsFields = {

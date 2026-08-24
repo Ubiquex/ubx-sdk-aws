@@ -41,14 +41,12 @@ var LakeSubscriberNotification_NotificationConfigurationFields = ubx.FieldMap{
 	}
 
 type LakeSubscriberNotificationConfig struct {
-	// Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred)
 	NotificationConfiguration any
 	// The ARN for the subscriber
 	SubscriberArn any
 }
 
 type LakeSubscriberNotificationAttrs struct {
-	// Configuration specifying how to notify the subscriber of new data, either via an SQS queue or an HTTPS endpoint. (AI-inferred)
 	NotificationConfiguration any
 	// The ARN for the subscriber
 	SubscriberArn any

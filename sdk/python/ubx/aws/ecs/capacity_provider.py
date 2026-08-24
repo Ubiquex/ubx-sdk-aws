@@ -8,26 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CapacityProvider_AutoScalingGroupProvider_ManagedScaling:
-    # Sets the number of seconds that a newly launched EC2 instance must warm up before its capacity counts toward the managed scaling target of the capacity provider, allowing it to initialize and start accepting tasks. (AI-inferred)
     instance_warmup_period: Any = None
-    # The maximum number of container instances that can be added to or removed from the Auto Scaling group during a single managed scaling activity for the ECS capacity provider. (AI-inferred)
     maximum_scaling_step_size: Any = None
-    # Specifies the minimum number of instances that the managed scaling operation can add or remove in a single scaling activity for the Auto Scaling group used by this capacity provider. (AI-inferred)
     minimum_scaling_step_size: Any = None
-    # Specifies whether managed scaling for the Auto Scaling Group is enabled or disabled, controlling ECS's automatic adjustment of the group's capacity. (AI-inferred)
     status: Any = None
-    # The target capacity percentage for the Auto Scaling group, used by managed scaling to determine when to scale out or in, with a default of 100. (AI-inferred)
     target_capacity: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_AutoScalingGroupProvider:
-    # The Amazon Resource Name (ARN) of the Auto Scaling group that this ECS capacity provider manages to supply container instances for the cluster. (AI-inferred)
     auto_scaling_group_arn: Any = None
-    # Indicates whether Amazon ECS automatically manages draining of the Auto Scaling group instances during scale-in events, allowing tasks to stop gracefully before instance termination. (AI-inferred)
     managed_draining: Any = None
     # The managed scaling settings for the Auto Scaling group capacity provider.
     managed_scaling: Any = None
-    # Enables or disables ECS-managed termination protection for the Auto Scaling group, which prevents ECS-managed instances from being terminated during scale-in events. (AI-inferred)
     managed_termination_protection: Any = None
 
 @dataclasses.dataclass
@@ -41,79 +33,48 @@ class CapacityProvider_ManagedInstancesProvider_InfrastructureOptimization:
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations:
-    # The ARN of the EC2 Capacity Reservation Group that the launch template targets, ensuring instances launched by the capacity provider use capacity from that reservation group. (AI-inferred)
     reservation_group_arn: Any = None
-    # Specifies the capacity reservation preference for the instance launch template, with valid values 'open' (automatically match any open Capacity Reservation) and 'none' (do not use Capacity Reservations). (AI-inferred)
     reservation_preference: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements_AcceleratorCount:
-    # Specifies the maximum number of GPU accelerators (e.g., GPUs) that an instance must have to be selected for the capacity provider's managed instance fleet. (AI-inferred)
     max: Any = None
-    # Specifies the minimum number of accelerators (such as GPUs) that an instance must have to satisfy the instance requirements for the capacity provider's managed instance launch template. (AI-inferred)
     min: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements:
-    # Specifies the minimum and maximum number of GPU accelerators (e.g., for compute-intensive workloads) that instances must have to match the instance requirements for the Auto Scaling group used by this ECS capacity provider. (AI-inferred)
     accelerator_count: Any = None
-    # Specifies the acceptable manufacturers of hardware accelerators (GPUs) for the EC2 instance types that the capacity provider's managed instances can launch, restricting eligible instance types to those with accelerators from the listed manufacturers. (AI-inferred)
     accelerator_manufacturers: Any = None
-    # Specifies the names of GPU accelerators (e.g., 'a100', 'v100') that the instance types must have to be considered for the capacity provider's managed instances. (AI-inferred)
     accelerator_names: Any = None
-    # Specifies the minimum and maximum total memory (in MiB) across all accelerators (e.g., GPUs) that an instance type must have to be eligible for use in the managed Auto Scaling group for this ECS capacity provider, filtering the instance types that can be launched. (AI-inferred)
     accelerator_total_memory_mi_b: Any = None
-    # Specifies the types of hardware accelerators (such as gpu, fpga, or inference) that the EC2 instances must have when using instance requirements to select instance types for the capacity provider's managed instances. (AI-inferred)
     accelerator_types: Any = None
-    # Restricts the eligible EC2 instance types for the capacity provider's managed instances to the explicitly listed instance types within the launch template's instance requirements. (AI-inferred)
     allowed_instance_types: Any = None
-    # Specifies whether the launch template's instance requirements must target bare metal instances, with values `included`, `excluded`, or `required` to indicate whether bare metal instance types are allowed, disallowed, or required. (AI-inferred)
     bare_metal: Any = None
-    # Specifies the minimum baseline EBS bandwidth in Mbps that an instance type must offer for the capacity provider's managed EC2 instances, used as part of the instance requirements to filter eligible instance types. (AI-inferred)
     baseline_ebs_bandwidth_mbps: Any = None
-    # Specifies whether instances with burstable performance (e.g., T2, T3 families) are included or excluded when the capacity provider selects instance types for its managed instances. (AI-inferred)
     burstable_performance: Any = None
-    # Restricts the EC2 instance types eligible for the capacity provider's managed instances to those with a CPU manufacturer listed (e.g., 'intel', 'amd', or 'amazon-web-services' for AWS Graviton processors). (AI-inferred)
     cpu_manufacturers: Any = None
-    # Specifies a list of EC2 instance types to explicitly exclude from the capacity provider's managed Auto Scaling group when instance requirements are used to automatically select compute resources. (AI-inferred)
     excluded_instance_types: Any = None
-    # Specifies the instance generations (e.g., '5' for fifth-generation instances) that are allowed when selecting eligible EC2 instance types under the instance requirements. (AI-inferred)
     instance_generations: Any = None
-    # Specifies whether the instance types used by the ECS capacity provider's Auto Scaling group must include local instance storage, with allowed values of included, excluded, or required. (AI-inferred)
     local_storage: Any = None
-    # Specifies the local storage types (e.g., hdd or ssd) that an instance must support to be eligible for the capacity provider's managed instance fleet, as defined in the instance requirements of the launch template. (AI-inferred)
     local_storage_types: Any = None
-    # The maximum spot price as a percentage of the optimal On-Demand price for the instance, used to set a ceiling on Spot Instance pricing within the Auto Scaling group managed by the ECS capacity provider. (AI-inferred)
     max_spot_price_as_percentage_of_optimal_on_demand_price: Any = None
-    # Defines the minimum and maximum amount of memory (in GiB) per vCPU that the EC2 instances used by the capacity provider's managed instance launch template must have. (AI-inferred)
     memory_gi_bper_vcpu: Any = None
-    # Specifies the minimum and maximum memory (in MiB) that instances must have to be selected for the capacity provider, using the min and max sub-fields of this object. (AI-inferred)
     memory_mi_b: Any = None
-    # Specifies the minimum and maximum network bandwidth (in gigabits per second) that an instance must meet when the capacity provider launches managed instances, used to filter eligible EC2 instance types. (AI-inferred)
     network_bandwidth_gbps: Any = None
-    # The minimum and maximum number of network interfaces that an instance type must support, used to filter eligible instance types when the capacity provider launches instances. (AI-inferred)
     network_interface_count: Any = None
-    # For the managed EC2 Auto Scaling group behind this ECS capacity provider, this sets the maximum price you are willing to pay for On-Demand instances as a percentage above the lowest On-Demand price among the instance types that meet the specified requirements, influencing instance selection. (AI-inferred)
     on_demand_max_price_percentage_over_lowest_price: Any = None
-    # Indicates whether the ECS capacity provider's managed instances must be of a type that supports EC2 hibernation. (AI-inferred)
     require_hibernate_support: Any = None
-    # Sets the maximum price you are willing to pay for a Spot Instance as a percentage of the lowest-priced Spot Instance, allowing you to bid above the baseline Spot price to increase the chance of instance fulfillment. (AI-inferred)
     spot_max_price_percentage_over_lowest_price: Any = None
-    # Configures the minimum and maximum total local storage (in GiB) that an instance type must have for the capacity provider's managed instance launch template. (AI-inferred)
     total_local_storage_gb: Any = None
-    # Specifies the minimum and maximum number of vCPUs that the instance type must have, used to filter EC2 instances for the capacity provider's managed instance fleet. (AI-inferred)
     vcpu_count: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_LocalStorageConfiguration:
-    # Indicates whether to enable the use of local ephemeral storage on the managed EC2 instances for tasks running in this ECS capacity provider. (AI-inferred)
     use_local_storage: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration:
-    # The list of security group IDs to assign to the EC2 instances launched by the managed instance provider's instance launch template, used as part of the network configuration for the ECS capacity provider. (AI-inferred)
     security_groups: Any = None
-    # The list of subnet IDs in which the ECS capacity provider's container instances are launched, specified within the network configuration of the instance launch template. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
@@ -122,41 +83,29 @@ class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate_StorageCo
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider_InstanceLaunchTemplate:
-    # Determines whether the capacity provider launches On-Demand or Spot instances for the managed instances using this launch template. (AI-inferred)
     capacity_option_type: Any = None
     capacity_reservations: Any = None
-    # The ARN of the IAM instance profile that the EC2 instances launched by this capacity provider's managed instances will use to interact with AWS services. (AI-inferred)
     ec2_instance_profile_arn: Any = None
-    # Boolean flag that enables FIPS 140-2 validated cryptographic modules on the container instances launched using this capacity provider's managed instance launch template. (AI-inferred)
     fips_enabled: Any = None
-    # Controls whether instance tags are propagated to the instance metadata service (IMDS) on EC2 instances launched from the launch template specified in the managed instances provider of the ECS capacity provider. (AI-inferred)
     instance_metadata_tags_propagation: Any = None
-    # Defines the instance requirements (e.g., vCPU count, memory, and other attributes) that the Auto Scaling group uses to automatically select EC2 instance types for the managed instances of the ECS capacity provider. (AI-inferred)
     instance_requirements: Any = None
     local_storage_configuration: Any = None
     monitoring: Any = None
-    # Specifies the VPC networking configuration for the EC2 instances launched by the capacity provider, including subnets, security groups, and whether to assign a public IP address, as part of the instance launch template in the managed instances provider. (AI-inferred)
     network_configuration: Any = None
     storage_configuration: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_ManagedInstancesProvider:
-    # Configuration that enables or disables automatic repair (replacement) of unhealthy managed EC2 instances for the ECS capacity provider, controlled by the nested 'enabled' flag. (AI-inferred)
     auto_repair_configuration: Any = None
     # Defines how Amazon ECS Managed Instances optimizes the infrastructure in your capacity provider. Configure it to turn on or off the infrastructure optimization in your capacity provider, and to control the idle EC2 instances optimization delay.
     infrastructure_optimization: Any = None
-    # The ARN of the IAM role that Amazon ECS uses to manage the EC2 instances in the Auto Scaling group associated with this capacity provider. (AI-inferred)
     infrastructure_role_arn: Any = None
-    # Specifies the EC2 launch template that the capacity provider uses to launch instances into the Auto Scaling group it manages. (AI-inferred)
     instance_launch_template: Any = None
-    # Determines whether tags from the Auto Scaling group are propagated to the container instances launched by the capacity provider's managed instance provider; accepts values like `TAG_FROM_AUTO_SCALING_GROUP` and `NONE`. (AI-inferred)
     propagate_tags: Any = None
 
 @dataclasses.dataclass
 class CapacityProvider_Tags:
-    # Specifies the key for a user-defined tag attached to the ECS capacity provider, which can be used for cost allocation, resource organization, and IAM-based access control. (AI-inferred)
     key: Any = None
-    # Specifies the value of a user-defined tag applied to the ECS capacity provider, used for metadata organization and cost tracking. (AI-inferred)
     value: Any = None
 
 _CapacityProvider_AutoScalingGroupProvider_ManagedScalingFields = {
@@ -332,24 +281,18 @@ _CapacityProvider_TagsFields = {
 
 @dataclasses.dataclass
 class CapacityProviderConfig:
-    # Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
     auto_scaling_group_provider: Any = None
     cluster_name: Any = None
     managed_instances_provider: Any = None
-    # Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # Specifies the metadata tags (key-value pairs) to attach to the ECS capacity provider for identifying, organizing, and managing the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class CapacityProviderAttrs:
-    # Configures the Auto Scaling group that backs this ECS capacity provider, including its ARN, optional managed scaling parameters, and managed termination protection settings. (AI-inferred)
     auto_scaling_group_provider: Any = None
     cluster_name: Any = None
     managed_instances_provider: Any = None
-    # Specifies the name of the capacity provider, which must be unique within the account and Region and contain only letters, numbers, underscores, and hyphens (up to 255 characters); if omitted, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # Specifies the metadata tags (key-value pairs) to attach to the ECS capacity provider for identifying, organizing, and managing the resource. (AI-inferred)
     tags: Any = None
 
 CapacityProvider = ubx.ResourceBinding(

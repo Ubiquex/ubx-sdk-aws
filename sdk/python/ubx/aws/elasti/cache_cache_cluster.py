@@ -8,44 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CacheCacheCluster_ConfigurationEndpoint:
-    # The DNS hostname of the configuration endpoint for a Memcached cache cluster, which clients use to discover all cache nodes. (AI-inferred)
     address: Any = None
-    # The TCP port of the ElastiCache cluster's configuration endpoint, used by Redis clients to connect and discover shard endpoints when cluster mode is enabled. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetails:
-    # The name of the CloudWatch Logs log group where ElastiCache publishes the selected log type (e.g., slow-log or engine-log) when log delivery is configured with CloudWatch Logs as the destination. (AI-inferred)
     log_group: Any = None
 
 @dataclasses.dataclass
 class CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_KinesisFirehoseDetails:
-    # The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose delivery stream to which ElastiCache cache engine logs are delivered. (AI-inferred)
     delivery_stream: Any = None
 
 @dataclasses.dataclass
 class CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails:
-    # Specifies the CloudWatch Logs destination details for the log delivery configuration, including the log group name where ElastiCache logs are delivered. (AI-inferred)
     cloud_watch_logs_details: Any = None
-    # The Kinesis Data Firehose destination details object, which contains the delivery stream name where ElastiCache delivers the cache cluster's log records (e.g., slow or engine logs) when log delivery is configured for Firehose. (AI-inferred)
     kinesis_firehose_details: Any = None
 
 @dataclasses.dataclass
 class CacheCacheCluster_LogDeliveryConfigurations:
-    # Specifies the destination for log delivery, which must contain either a CloudWatch Logs log group or a Kinesis Data Firehose delivery stream, matching the selected DestinationType. (AI-inferred)
     destination_details: Any = None
-    # Specifies the type of destination for the logs, either 'cloudwatch-logs' or 'kinesis-firehose', determining whether the log delivery sends logs to Amazon CloudWatch Logs or to Amazon Kinesis Data Firehose. (AI-inferred)
     destination_type: Any = None
-    # Specifies the format (text or json) in which ElastiCache engine logs or slow logs are delivered to the configured destination. (AI-inferred)
     log_format: Any = None
-    # Specifies the type of cache log being delivered, either 'slow-log' for slow query logs or 'engine-log' for engine logs, for the ElastiCache cluster. (AI-inferred)
     log_type: Any = None
 
 @dataclasses.dataclass
 class CacheCacheCluster_Tags:
-    # The key of a user-defined tag applied to the ElastiCache cache cluster, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag associated with the ElastiCache cache cluster, used to categorize and manage the cluster within AWS. (AI-inferred)
     value: Any = None
 
 _CacheCacheCluster_LogDeliveryConfigurations_DestinationDetails_CloudWatchLogsDetailsFields = {
@@ -154,7 +142,6 @@ class CacheCacheClusterAttrs:
     cache_subnet_group_name: Any = None
     # A name for the cache cluster.
     cluster_name: Any = None
-    # The configuration endpoint of the ElastiCache cache cluster, returned as an object containing the DNS address and port that client applications use to connect to the cluster. (AI-inferred)
     configuration_endpoint: Any = None
     # The name of the cache engine to be used for this cluster.
     engine: Any = None
@@ -178,7 +165,6 @@ class CacheCacheClusterAttrs:
     preferred_availability_zones: Any = None
     # Specifies the weekly time range during which maintenance on the cluster is performed.
     preferred_maintenance_window: Any = None
-    # The DNS address and port of the Redis cache cluster's primary node, provided as an object with address and port attributes. (AI-inferred)
     redis_endpoint: Any = None
     # A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies a Redis RDB snapshot file stored in Amazon S3.
     snapshot_arns: Any = None

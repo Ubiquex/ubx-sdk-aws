@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectPrivateVirtualInterface_BgpPeers:
-    # The IP address family (ipv4 or ipv6) used for the BGP session on this Direct Connect private virtual interface. (AI-inferred)
     address_family: Any = None
-    # Specifies the IP address on the Amazon side of the BGP peering session for this BGP peer. (AI-inferred)
     amazon_address: Any = None
-    # The autonomous system number (ASN) for the customer's BGP peer on the private virtual interface. (AI-inferred)
     asn: Any = None
-    # The MD5 authentication key (BGP password) used for BGP peering on this Direct Connect private virtual interface. (AI-inferred)
     auth_key: Any = None
-    # The unique identifier assigned by AWS to the BGP peer configured on this Direct Connect private virtual interface. (AI-inferred)
     bgp_peer_id: Any = None
-    # The customer_address specifies the IP address on the customer's side of the BGP peering session for a private virtual interface in AWS Direct Connect. (AI-inferred)
     customer_address: Any = None
 
 @dataclasses.dataclass
 class ConnectPrivateVirtualInterface_Tags:
-    # The key of a tag attached to the Direct Connect private virtual interface, used to identify the tag in a key-value pair. (AI-inferred)
     key: Any = None
     value: Any = None
 

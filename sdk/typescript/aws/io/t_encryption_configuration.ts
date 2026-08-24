@@ -8,25 +8,17 @@ export interface TEncryptionConfiguration_ConfigurationDetails {
 }
 
 export interface TEncryptionConfigurationConfig {
-  /** Specifies the type of encryption key used for AWS IoT data encryption, either AWS-owned (AWS_OWNED) or customer-managed (CUSTOMER_MANAGED), determining whether you use an AWS-managed key or your own KMS key. (AI-inferred) */
   encryptionType: string | Computed<string>;
-  /** The ARN of the IAM role that AWS IoT assumes to access the customer-managed KMS key used for encrypting device data, required when the encryption type is CUSTOMER_MANAGED_KMS_KEY. (AI-inferred) */
   kmsAccessRoleArn?: string | Computed<string>;
-  /** The ARN of a customer-managed AWS KMS key used to encrypt IoT data; when omitted, AWS IoT uses an AWS-managed key. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
 }
 
 export interface TEncryptionConfigurationAttrs {
-  /** This field contains the AWS account ID of the account that owns the IoT encryption configuration, which is populated automatically by the AWS IoT service. (AI-inferred) */
   accountId: string;
   configurationDetails: TEncryptionConfiguration_ConfigurationDetails;
-  /** Specifies the type of encryption key used for AWS IoT data encryption, either AWS-owned (AWS_OWNED) or customer-managed (CUSTOMER_MANAGED), determining whether you use an AWS-managed key or your own KMS key. (AI-inferred) */
   encryptionType: string;
-  /** The ARN of the IAM role that AWS IoT assumes to access the customer-managed KMS key used for encrypting device data, required when the encryption type is CUSTOMER_MANAGED_KMS_KEY. (AI-inferred) */
   kmsAccessRoleArn: string;
-  /** The ARN of a customer-managed AWS KMS key used to encrypt IoT data; when omitted, AWS IoT uses an AWS-managed key. (AI-inferred) */
   kmsKeyArn: string;
-  /** The computed timestamp indicating when the AWS IoT default encryption configuration was last modified, as returned by the DescribeDefaultEncryptionConfiguration API operation. (AI-inferred) */
   lastModifiedDate: string;
 }
 

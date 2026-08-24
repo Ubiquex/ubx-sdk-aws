@@ -4,11 +4,8 @@ package flow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Log_DestinationOptions struct {
-	// Specifies the file format (plain-text or parquet) used to store VPC flow log records in the destination S3 bucket. (AI-inferred)
 	FileFormat any
-	// Whether to enable Hive-compatible partitioning (e.g., year=2023/month=01/day=01/hour=00) for the S3 destination of the flow log, instead of the default partition format (e.g., 2023/01/01/00). (AI-inferred)
 	HiveCompatiblePartitions any
-	// Indicates whether to partition flow log records in the S3 destination into separate hourly folders, creating a new partition for each hour. (AI-inferred)
 	PerHourPartition any
 }
 
@@ -18,9 +15,7 @@ type Log_TagFieldSpecifications struct {
 }
 
 type Log_Tags struct {
-	// The key of a user-defined tag attached to the VPC flow log, used to organize and identify the log resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag applied to the AWS Flow Log, used for resource identification and management. (AI-inferred)
 	Value any
 }
 
@@ -45,7 +40,6 @@ type LogConfig struct {
 	DeliverCrossAccountRole any
 	// The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName.
 	DeliverLogsPermissionArn any
-	// Specifies the destination options for the flow log, such as the file format (plain-text or parquet), whether to enable Hive-compatible partitions, and whether to partition logs by hour, when delivering to an Amazon S3 bucket. (AI-inferred)
 	DestinationOptions any
 	// Specifies the destination to which the flow log data is to be published. Flow log data can be published to a CloudWatch Logs log group, an Amazon S3 bucket, or a Kinesis Firehose stream. The value specified for this parameter depends on the value specified for LogDestinationType.
 	LogDestination any
@@ -74,7 +68,6 @@ type LogAttrs struct {
 	DeliverCrossAccountRole any
 	// The ARN for the IAM role that permits Amazon EC2 to publish flow logs to a CloudWatch Logs log group in your account. If you specify LogDestinationType as s3 or kinesis-data-firehose, do not specify DeliverLogsPermissionArn or LogGroupName.
 	DeliverLogsPermissionArn any
-	// Specifies the destination options for the flow log, such as the file format (plain-text or parquet), whether to enable Hive-compatible partitions, and whether to partition logs by hour, when delivering to an Amazon S3 bucket. (AI-inferred)
 	DestinationOptions any
 	// The Flow Log ID
 	Id any

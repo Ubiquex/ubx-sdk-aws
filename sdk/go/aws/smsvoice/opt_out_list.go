@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OptOutList_Tags struct {
 	Key any
-	// The value of a tag key-value pair assigned to the AWS SMS Voice opt-out list, used for categorizing or identifying the resource. (AI-inferred)
 	Value any
 }
 

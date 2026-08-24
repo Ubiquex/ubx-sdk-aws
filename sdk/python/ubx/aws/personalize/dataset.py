@@ -26,7 +26,6 @@ class Dataset_DatasetImportJob:
 
 @dataclasses.dataclass
 class Dataset_Tags:
-    # The key of a tag assigned to an Amazon Personalize dataset, used to organize and identify the dataset in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -4,18 +4,13 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamStackFleetAssociationConfig struct {
-	// The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred)
 	FleetName any
-	// The name of the AppStream stack that the fleet will be associated with. (AI-inferred)
 	StackName any
 }
 
 type StreamStackFleetAssociationAttrs struct {
-	// The name of the AppStream 2.0 fleet to associate with the stack. (AI-inferred)
 	FleetName any
-	// This computed identifier uniquely identifies the AppStream 2.0 stack-fleet association and is formed from the stack name and fleet name separated by a comma. (AI-inferred)
 	Id any
-	// The name of the AppStream stack that the fleet will be associated with. (AI-inferred)
 	StackName any
 }
 

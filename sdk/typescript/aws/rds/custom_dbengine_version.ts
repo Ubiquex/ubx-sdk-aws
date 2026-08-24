@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomDbengineVersion_Tags {
-  /** The key of a tag attached to this AWS RDS Custom DB engine version, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,7 +12,6 @@ const CustomDbengineVersion_TagsFields: FieldMap = {
 };
 
 export interface CustomDbengineVersionConfig {
-  /** The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred) */
   databaseInstallationFiles?: string[] | Computed<string[]>;
   /** The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``. */
   databaseInstallationFilesS3BucketName?: string | Computed<string>;
@@ -42,9 +40,7 @@ export interface CustomDbengineVersionConfig {
 }
 
 export interface CustomDbengineVersionAttrs {
-  /** The Amazon Resource Name (ARN) assigned to this custom DB engine version by AWS, used to reference the resource in IAM policies and other AWS services. (AI-inferred) */
   dbengineVersionArn: string;
-  /** The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred) */
   databaseInstallationFiles: string[];
   /** The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``. */
   databaseInstallationFilesS3BucketName: string;

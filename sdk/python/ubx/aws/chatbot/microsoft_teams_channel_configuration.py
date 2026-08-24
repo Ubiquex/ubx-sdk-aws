@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MicrosoftTeamsChannelConfiguration_Tags:
-    # The user-defined key for a tag attached to an AWS Chatbot Microsoft Teams channel configuration, used for organizing, filtering, and cost-tracking the resource. (AI-inferred)
     key: Any = None
-    # The tag value for a key-value pair applied to the AWS Chatbot Microsoft Teams channel configuration resource. (AI-inferred)
     value: Any = None
 
 _MicrosoftTeamsChannelConfiguration_TagsFields = {

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dataset_Tags {
-  /** The tag key (e.g., 'Name' or 'Project') that labels the Rekognition dataset, used for organizing and identifying the dataset in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key attached to the AWS Rekognition Dataset, used for organizing, identifying, and managing the dataset within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

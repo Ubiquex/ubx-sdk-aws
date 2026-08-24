@@ -7,7 +7,6 @@ export interface HubConnectorV2_Issues {
 }
 
 export interface HubConnectorV2_Provider_Azure_ScopeConfiguration {
-  /** Specifies whether the Azure connector scope is a management group or a subscription, defining which Azure resources Security Hub monitors for findings. (AI-inferred) */
   scopeType?: string | Computed<string>;
   scopeValues?: string[] | Computed<string[]>;
 }
@@ -15,28 +14,21 @@ export interface HubConnectorV2_Provider_Azure_ScopeConfiguration {
 export interface HubConnectorV2_Provider_Azure {
   awsconfigConnectorArn?: string | Computed<string>;
   azureRegions?: string[] | Computed<string[]>;
-  /** Configures the Azure subscriptions or management groups that the Security Hub connector will monitor, determining which Azure resources' findings are ingested into Security Hub. (AI-inferred) */
   scopeConfiguration?: HubConnectorV2_Provider_Azure_ScopeConfiguration | Computed<HubConnectorV2_Provider_Azure_ScopeConfiguration>;
 }
 
 export interface HubConnectorV2_Provider_JiraCloud {
-  /** The project key of the Jira Cloud project that receives Security Hub findings from this connector. (AI-inferred) */
   projectKey?: string | Computed<string>;
 }
 
 export interface HubConnectorV2_Provider_ServiceNow {
-  /** The instance name (subdomain) of the ServiceNow tenant that AWS Security Hub connects to for delivering findings, such as 'company' in 'company.service-now.com'. (AI-inferred) */
   instanceName?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the credentials used to authenticate the ServiceNow connector. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface HubConnectorV2_Provider {
-  /** Contains the Azure-specific configuration, including tenant ID and client credentials, that enables the Security Hub connector to ingest security findings from Microsoft Azure. (AI-inferred) */
   azure?: HubConnectorV2_Provider_Azure | Computed<HubConnectorV2_Provider_Azure>;
-  /** This block defines the Jira Cloud connection settings for the Security Hub connector, specifying the Jira instance and authentication parameters so that findings can be exported to Jira Cloud. (AI-inferred) */
   jiraCloud?: HubConnectorV2_Provider_JiraCloud | Computed<HubConnectorV2_Provider_JiraCloud>;
-  /** Configures the ServiceNow integration for the Security Hub connector, specifying the instance endpoint and credentials used to deliver findings to ServiceNow. (AI-inferred) */
   serviceNow?: HubConnectorV2_Provider_ServiceNow | Computed<HubConnectorV2_Provider_ServiceNow>;
 }
 

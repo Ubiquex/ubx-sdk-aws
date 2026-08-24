@@ -9,21 +9,16 @@ export interface Dataset_EncryptionConfig {
 }
 
 export interface Dataset_Schema_Attributes {
-  /** The name of an attribute (column) in the dataset schema, which must match the field name in the source data (e.g., the column header in CSV input). (AI-inferred) */
   attributeName?: string | Computed<string>;
-  /** Specifies the data type of the attribute (column) in the dataset schema, which must be one of string, integer, float, or timestamp, determining how the data is interpreted for forecast training. (AI-inferred) */
   attributeType?: string | Computed<string>;
 }
 
 export interface Dataset_Schema {
-  /** Defines the fields of the dataset, where each attribute specifies a name and a data type (such as string, integer, float, or timestamp) for a column in the dataset. (AI-inferred) */
   attributes?: Dataset_Schema_Attributes[] | Computed<Dataset_Schema_Attributes[]>;
 }
 
 export interface Dataset_Tags {
-  /** The user-defined key of a tag applied to the Amazon Forecast dataset, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the AWS Forecast dataset, used for metadata, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -59,16 +54,12 @@ export interface DatasetConfig {
   datasetType: string | Computed<string>;
   /** The domain associated with the dataset */
   domain: string | Computed<string>;
-  /** If set, this object defines the AWS KMS key used to encrypt the dataset, specified via its KmsKeyArn subfield, enabling server-side encryption of the forecast data. (AI-inferred) */
   encryptionConfig?: Dataset_EncryptionConfig | Computed<Dataset_EncryptionConfig>;
-  /** Defines the dataset schema by specifying the list of attributes (each with a name and data type) that determine the columns of the dataset. (AI-inferred) */
   schema: Dataset_Schema | Computed<Dataset_Schema>;
-  /** Specifies the tags (key-value pairs) to attach to the Forecast dataset for cost allocation and resource management. (AI-inferred) */
   tags?: Dataset_Tags[] | Computed<Dataset_Tags[]>;
 }
 
 export interface DatasetAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the forecast dataset. (AI-inferred) */
   arn: string;
   /** Frequency of data collection. This parameter is required for RELATED_TIME_SERIES */
   dataFrequency: string;
@@ -78,11 +69,8 @@ export interface DatasetAttrs {
   datasetType: string;
   /** The domain associated with the dataset */
   domain: string;
-  /** If set, this object defines the AWS KMS key used to encrypt the dataset, specified via its KmsKeyArn subfield, enabling server-side encryption of the forecast data. (AI-inferred) */
   encryptionConfig: Dataset_EncryptionConfig;
-  /** Defines the dataset schema by specifying the list of attributes (each with a name and data type) that determine the columns of the dataset. (AI-inferred) */
   schema: Dataset_Schema;
-  /** Specifies the tags (key-value pairs) to attach to the Forecast dataset for cost allocation and resource management. (AI-inferred) */
   tags: Dataset_Tags[];
 }
 

@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault:
-    # The AWS KMS customer master key (CMK) ID or ARN used for default server-side encryption with KMS (SSE-KMS) for the S3 Express directory bucket, effective when the SSE algorithm is set to 'aws:kms'. (AI-inferred)
     kmsmaster_key_id: Any = None
-    # Specifies the default server-side encryption algorithm (such as AES256 or aws:kms) for objects stored in the S3 Express directory bucket, used when encryption is not specified at upload time. (AI-inferred)
     ssealgorithm: Any = None
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration:
-    # Enables or disables an S3 Bucket Key for the directory bucket's default SSE-KMS encryption, reducing per-request AWS KMS costs. (AI-inferred)
     bucket_key_enabled: Any = None
-    # Defines the default server-side encryption configuration for the S3 Express Directory Bucket, choosing either SSE-S3 or SSE-KMS with an optional KMS key ID that is applied to objects written without an explicit encryption header. (AI-inferred)
     server_side_encryption_by_default: Any = None
 
 @dataclasses.dataclass
@@ -27,52 +23,33 @@ class ExpressDirectoryBucket_BucketEncryption:
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_InventoryConfigurations_Destination:
-    # The AWS account ID that owns the destination bucket where S3 Express directory bucket inventory reports are delivered, used to verify the bucket owner during configuration. (AI-inferred)
     bucket_account_id: Any = None
-    # The Amazon Resource Name (ARN) of the destination bucket where the inventory reports for this directory bucket are delivered. (AI-inferred)
     bucket_arn: Any = None
-    # The output format (e.g., 'CSV') of the inventory report delivered to the destination bucket. (AI-inferred)
     format: Any = None
-    # The prefix that is prepended to the keys of the inventory report objects when they are delivered to the destination bucket. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_InventoryConfigurations:
-    # Defines the destination Amazon S3 bucket and optional prefix where the inventory report files resulting from this inventory configuration are delivered. (AI-inferred)
     destination: Any = None
-    # Indicates whether this inventory configuration is enabled, so that the S3 Express directory bucket periodically generates and exports inventory lists to the specified destination. (AI-inferred)
     enabled: Any = None
-    # A unique identifier for the inventory configuration, used to distinguish it from other inventory configurations attached to the same directory bucket. (AI-inferred)
     id: Any = None
-    # Specifies whether the inventory report includes all object versions or only current versions, with valid values `All` or `Current`. (AI-inferred)
     included_object_versions: Any = None
-    # Specifies the optional metadata fields (such as Size, LastModifiedDate, StorageClass, or ETag) to include in the inventory output for the S3 Express directory bucket. (AI-inferred)
     optional_fields: Any = None
-    # Specifies the object key prefix that restricts the inventory report to include only objects whose keys start with this prefix, used to filter the set of objects listed in the directory bucket's inventory configuration. (AI-inferred)
     prefix: Any = None
-    # Specifies how often the inventory report is generated for the directory bucket, with valid values of Daily or Weekly. (AI-inferred)
     schedule_frequency: Any = None
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload:
-    # Specifies the number of days after a multipart upload is initiated before the lifecycle rule aborts that incomplete multipart upload in the S3 Express directory bucket. (AI-inferred)
     days_after_initiation: Any = None
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_LifecycleConfiguration_Rules:
-    # Configures a lifecycle rule action that automatically aborts incomplete multipart uploads after the specified number of days since the upload was initiated. (AI-inferred)
     abort_incomplete_multipart_upload: Any = None
-    # Specifies the number of days after object creation when the object expires and is automatically deleted by the lifecycle rule for the S3 Express directory bucket. (AI-inferred)
     expiration_in_days: Any = None
-    # A unique identifier for the lifecycle rule, used to reference and distinguish it from other rules in the S3 Express directory bucket's lifecycle configuration. (AI-inferred)
     id: Any = None
-    # Specifies the minimum object size in bytes for objects to be eligible for this lifecycle rule, so only objects larger than this threshold are affected. (AI-inferred)
     object_size_greater_than: Any = None
-    # Specifies the maximum object size in bytes; only objects smaller than this threshold will match the lifecycle rule filter. (AI-inferred)
     object_size_less_than: Any = None
-    # The key prefix that filters objects in the S3 Express directory bucket so the lifecycle rule applies only to objects with keys starting with that prefix. (AI-inferred)
     prefix: Any = None
-    # Determines whether the lifecycle rule is active, with allowed values 'Enabled' or 'Disabled'. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -82,17 +59,13 @@ class ExpressDirectoryBucket_LifecycleConfiguration:
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_MetricsConfigurations:
-    # For an S3 Express directory bucket, this access point ARN filters the metrics configuration so that metrics are reported only for requests directed to the specified S3 access point. (AI-inferred)
     access_point_arn: Any = None
-    # The unique identifier for this metrics configuration, which must be distinct within the directory bucket and is used to refer to the configuration when setting up CloudWatch bucket metrics. (AI-inferred)
     id: Any = None
-    # Specifies the object key prefix that the metrics configuration applies to, so that only requests for objects with this prefix are included in the emitted metrics. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class ExpressDirectoryBucket_Tags:
     key: Any = None
-    # The value component of a tag attached to the S3 Express directory bucket, used for cost allocation and metadata organization. (AI-inferred)
     value: Any = None
 
 _ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefaultFields = {
@@ -185,13 +158,11 @@ class ExpressDirectoryBucketConfig:
     data_redundancy: Any = None
     # The inventory configuration for an Amazon S3 Express bucket.
     inventory_configurations: Any = None
-    # Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred)
     lifecycle_configuration: Any = None
     # Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.
     location_name: Any = None
     # Specifies the metrics configurations for the Amazon S3 Express bucket.
     metrics_configurations: Any = None
-    # Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -208,13 +179,11 @@ class ExpressDirectoryBucketAttrs:
     data_redundancy: Any = None
     # The inventory configuration for an Amazon S3 Express bucket.
     inventory_configurations: Any = None
-    # Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred)
     lifecycle_configuration: Any = None
     # Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'.
     location_name: Any = None
     # Specifies the metrics configurations for the Amazon S3 Express bucket.
     metrics_configurations: Any = None
-    # Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred)
     tags: Any = None
 
 ExpressDirectoryBucket = ubx.ResourceBinding(

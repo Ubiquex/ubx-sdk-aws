@@ -8,7 +8,6 @@ type StudioSessionMappingConfig struct {
 	IdentityName any
 	// Specifies whether the identity to map to the Studio is a user or a group.
 	IdentityType any
-	// The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
 	SessionPolicyArn any
 	// The ID of the Amazon EMR Studio to which the user or group will be mapped.
 	StudioId any
@@ -19,7 +18,6 @@ type StudioSessionMappingAttrs struct {
 	IdentityName any
 	// Specifies whether the identity to map to the Studio is a user or a group.
 	IdentityType any
-	// The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred)
 	SessionPolicyArn any
 	// The ID of the Amazon EMR Studio to which the user or group will be mapped.
 	StudioId any

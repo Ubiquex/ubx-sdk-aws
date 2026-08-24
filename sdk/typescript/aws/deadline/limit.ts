@@ -3,29 +3,19 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LimitConfig {
   amountRequirementName: string | Computed<string>;
-  /** Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred) */
   description?: string | Computed<string>;
-  /** A human-readable name for the limit, used to identify and display the limit in the AWS Deadline Cloud console and API. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** The unique identifier of the AWS Deadline Cloud farm to which this limit belongs. (AI-inferred) */
   farmId: string | Computed<string>;
-  /** The maximum number of resources that the limit permits to be used simultaneously, enforcing a cap on concurrent usage in the Deadline Cloud farm. (AI-inferred) */
   maxCount: number | Computed<number>;
 }
 
 export interface LimitAttrs {
   amountRequirementName: string;
-  /** The current number of resources that are using this limit, as tracked by AWS Deadline Cloud and updated automatically as usage changes. (AI-inferred) */
   currentCount: number;
-  /** Provides an optional human-readable description for the AWS Deadline Cloud limit, clarifying the limit's purpose or scope. (AI-inferred) */
   description: string;
-  /** A human-readable name for the limit, used to identify and display the limit in the AWS Deadline Cloud console and API. (AI-inferred) */
   displayName: string;
-  /** The unique identifier of the AWS Deadline Cloud farm to which this limit belongs. (AI-inferred) */
   farmId: string;
-  /** The unique identifier assigned by AWS Deadline Cloud to this limit resource when it is created, used to refer to the limit in other resources. (AI-inferred) */
   limitId: string;
-  /** The maximum number of resources that the limit permits to be used simultaneously, enforcing a cap on concurrent usage in the Deadline Cloud farm. (AI-inferred) */
   maxCount: number;
 }
 

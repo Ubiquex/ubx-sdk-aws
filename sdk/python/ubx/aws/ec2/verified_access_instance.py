@@ -51,15 +51,10 @@ class VerifiedAccessInstance_Tags:
 
 @dataclasses.dataclass
 class VerifiedAccessInstance_VerifiedAccessTrustProviders:
-    # A user-provided free-form text that describes the associated AWS Verified Access trust provider for this Verified Access instance, helping identify its purpose or configuration. (AI-inferred)
     description: Any = None
-    # Indicates the type of device trust provider (such as Jamf or CrowdStrike) used by this Verified Access trust provider to assess device trust. (AI-inferred)
     device_trust_provider_type: Any = None
-    # Indicates whether the associated Verified Access trust provider is a user trust provider or a device trust provider, thereby determining how the instance evaluates user identity versus device health for access decisions. (AI-inferred)
     trust_provider_type: Any = None
-    # Specifies the type of the user trust provider (e.g., IAM Identity Center or OIDC) used by the Verified Access instance for user-based authentication. (AI-inferred)
     user_trust_provider_type: Any = None
-    # The unique ID of the AWS Verified Access trust provider that is associated with this Verified Access instance as part of its configured trust provider list. (AI-inferred)
     verified_access_trust_provider_id: Any = None
 
 _VerifiedAccessInstance_LoggingConfigurations_CloudWatchLogsFields = {

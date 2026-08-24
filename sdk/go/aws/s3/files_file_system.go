@@ -8,9 +8,7 @@ type FilesFileSystem_SynchronizationConfiguration_ExpirationDataRules struct {
 }
 
 type FilesFileSystem_SynchronizationConfiguration_ImportDataRules struct {
-	// Specifies the S3 object key prefix that filters which objects are imported from the source S3 bucket to the file system according to this import rule. (AI-inferred)
 	Prefix any
-	// Specifies the maximum file size in bytes for files to be included in the synchronization import, so that only files smaller than this value are imported. (AI-inferred)
 	SizeLessThan any
 	Trigger any
 }
@@ -33,7 +31,6 @@ var FilesFileSystem_TagsFields = ubx.FieldMap{
 
 type FilesFileSystemConfig struct {
 	AcceptBucketWarning any
-	// The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
 	Bucket any
 	ClientToken any
 	KmsKeyId any
@@ -44,7 +41,6 @@ type FilesFileSystemConfig struct {
 
 type FilesFileSystemAttrs struct {
 	AcceptBucketWarning any
-	// The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred)
 	Bucket any
 	ClientToken any
 	CreationTime any

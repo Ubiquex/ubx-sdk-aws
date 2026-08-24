@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectorDefinition_InitialVersion_Connectors:
-    # The ARN of the AWS Greengrass connector to include in the connector definition version. (AI-inferred)
     connector_arn: Any = None
-    # A user-defined identifier for each connector in the Greengrass connector definition version, used to uniquely reference that connector within the group. (AI-inferred)
     id: Any = None
-    # Specifies the configuration parameters for the connector as a map of key-value pairs. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class ConnectorDefinition_InitialVersion:
-    # Specifies the connectors that compose the initial version of the AWS Greengrass connector definition, each providing a connector ARN, a unique ID, and optional parameters for the connector. (AI-inferred)
     connectors: Any = None
 
 _ConnectorDefinition_InitialVersion_ConnectorsFields = {
@@ -36,26 +32,17 @@ _ConnectorDefinition_InitialVersionFields = {
 
 @dataclasses.dataclass
 class ConnectorDefinitionConfig:
-    # Specifies the initial connector definition version that contains the list of connectors and their parameter configurations to be deployed with this Greengrass connector definition. (AI-inferred)
     initial_version: Any = None
-    # The descriptive name of the AWS IoT Greengrass connector definition, required to create and reference the definition in your AWS account. (AI-inferred)
     name: Any = None
-    # Metadata tags to attach to the Greengrass connector definition resource for organization, identification, or cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ConnectorDefinitionAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this Greengrass connector definition. (AI-inferred)
     arn: Any = None
-    # The AWS-assigned unique identifier for this Greengrass connector definition. (AI-inferred)
     id: Any = None
-    # Specifies the initial connector definition version that contains the list of connectors and their parameter configurations to be deployed with this Greengrass connector definition. (AI-inferred)
     initial_version: Any = None
-    # Returns the Amazon Resource Name (ARN) of the most recently created version of this AWS Greengrass connector definition. (AI-inferred)
     latest_version_arn: Any = None
-    # The descriptive name of the AWS IoT Greengrass connector definition, required to create and reference the definition in your AWS account. (AI-inferred)
     name: Any = None
-    # Metadata tags to attach to the Greengrass connector definition resource for organization, identification, or cost allocation. (AI-inferred)
     tags: Any = None
 
 ConnectorDefinition = ubx.ResourceBinding(

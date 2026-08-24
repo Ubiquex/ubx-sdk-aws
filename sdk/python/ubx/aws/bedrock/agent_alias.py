@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentAlias_AgentAliasHistoryEvents_RoutingConfiguration:
-    # The version of the Bedrock agent (for example, 'DRAFT' or a numeric version) that the routing configuration entry associated with this alias history event directs traffic to. (AI-inferred)
     agent_version: Any = None
 
 @dataclasses.dataclass
 class AgentAlias_AgentAliasHistoryEvents:
-    # The timestamp indicating when the agent alias stopped being associated with the agent version that the history event describes. (AI-inferred)
     end_date: Any = None
-    # The routing configuration at the time of this history event, listing the agent versions to which the alias directed traffic. (AI-inferred)
     routing_configuration: Any = None
-    # The timestamp indicating when the alias version associated with this history event began serving as the alias's active version. (AI-inferred)
     start_date: Any = None
 
 _AgentAlias_AgentAliasHistoryEvents_RoutingConfigurationFields = {

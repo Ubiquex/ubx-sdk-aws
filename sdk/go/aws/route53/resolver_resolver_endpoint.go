@@ -4,16 +4,12 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverResolverEndpoint_IpAddresses struct {
-	// The specific IP address to assign to the resolver endpoint within the referenced subnet; when not provided, AWS automatically chooses an available IP from that subnet. (AI-inferred)
 	Ip any
-	// Specifies the IPv6 address to assign to the Resolver endpoint's elastic network interface (ENI) for this IP address entry, within the given subnet, enabling IPv6-only or dual-stack resolver endpoints. (AI-inferred)
 	Ipv6 any
-	// The subnet ID where the Route 53 Resolver endpoint's elastic network interface is deployed, defining the VPC subnet from which an IP address is allocated for this resolver endpoint. (AI-inferred)
 	SubnetId any
 }
 
 type ResolverResolverEndpoint_Tags struct {
-	// The key of a tag attached to the Route53 Resolver endpoint, enabling you to label the endpoint for filtering, cost tracking, and access control. (AI-inferred)
 	Key any
 	Value any
 }

@@ -20,22 +20,15 @@ class ConnectBridge_IngressGatewayBridge:
 
 @dataclasses.dataclass
 class ConnectBridge_Outputs_NetworkOutput:
-    # The destination IP address to which this bridge's network output sends media. (AI-inferred)
     ip_address: Any = None
-    # The name assigned to a network output of the AWS Elemental MediaConnect bridge, used to identify that output within the bridge. (AI-inferred)
     name: Any = None
-    # Specifies the name of the network that this bridge network output uses, identifying the destination network for the output. (AI-inferred)
     network_name: Any = None
-    # The destination port number on which the MediaConnect bridge network output sends media to the remote device. (AI-inferred)
     port: Any = None
-    # Specifies the transport protocol used by the bridge's network output, such as RTP, RTP-FEC, or UDP, for sending media over IP. (AI-inferred)
     protocol: Any = None
-    # The Time-to-Live (TTL) value for multicast packets sent from the network output, limiting the number of network hops the traffic can traverse. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Outputs:
-    # Configures the destination IP address, port, protocol, TTL, and other network parameters for sending the bridge's media output over the network. (AI-inferred)
     network_output: Any = None
 
 @dataclasses.dataclass
@@ -45,52 +38,37 @@ class ConnectBridge_SourceFailoverConfig_SourcePriority:
 
 @dataclasses.dataclass
 class ConnectBridge_SourceFailoverConfig:
-    # Specifies the failover mode of the bridge source, using FAILOVER to enable automatic failover to a redundant source or DEFAULT for standard behavior. (AI-inferred)
     failover_mode: Any = None
     # The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     source_priority: Any = None
-    # Indicates whether automatic failover is enabled or disabled for the bridge's source, with valid values ENABLED or DISABLED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Sources_FlowSource_FlowVpcInterfaceAttachment:
-    # The name of the VPC interface on the source MediaConnect flow that the bridge flow source attaches to for network connectivity. (AI-inferred)
     vpc_interface_name: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Sources_FlowSource:
-    # The Amazon Resource Name (ARN) of the MediaConnect flow that serves as the source of the bridge source. (AI-inferred)
     flow_arn: Any = None
-    # Specifies the VPC interface attachment settings, including the name of the VPC interface, for this flow source of the AWS Elemental MediaConnect bridge. (AI-inferred)
     flow_vpc_interface_attachment: Any = None
-    # Specifies the name assigned to the flow source of the AWS MediaConnect bridge, used to identify the source within the bridge's source configuration. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Sources_NetworkSource_MulticastSourceSettings:
-    # The IP address of the multicast source from which the MediaConnect bridge receives content, used in the multicast source settings of a network source. (AI-inferred)
     multicast_source_ip: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Sources_NetworkSource:
-    # The multicast IP address of the network source that the MediaConnect bridge subscribes to. (AI-inferred)
     multicast_ip: Any = None
-    # Configures the multicast source settings for the network source on the bridge, specifying the multicast IP address and port from which the bridge receives media. (AI-inferred)
     multicast_source_settings: Any = None
-    # A user-defined name that identifies this network source within the bridge's sources configuration in AWS Elemental MediaConnect. (AI-inferred)
     name: Any = None
-    # The name of the network where the bridge source is located, used to identify the network that provides the content for this MediaConnect bridge source. (AI-inferred)
     network_name: Any = None
-    # The network port on the bridge's source that receives the incoming media stream from an on-premises sender. (AI-inferred)
     port: Any = None
-    # Specifies the transport protocol used for the network source, which can be either RTP or RTP-FEC, indicating how the incoming media stream is delivered. (AI-inferred)
     protocol: Any = None
 
 @dataclasses.dataclass
 class ConnectBridge_Sources:
-    # FlowSource is an object that configures the bridge source to use an existing MediaConnect flow as its source, specifying the flow ARN and the VPC interface attachment for the flow. (AI-inferred)
     flow_source: Any = None
-    # Configures the network source for a source in a MediaConnect bridge, defining the multicast IP address, port, and protocol that the bridge listens on to ingest video from the network. (AI-inferred)
     network_source: Any = None
 
 _ConnectBridge_EgressGatewayBridgeFields = {
@@ -179,9 +157,7 @@ _ConnectBridge_SourcesFields = {
 
 @dataclasses.dataclass
 class ConnectBridgeConfig:
-    # Defines the egress gateway bridge settings for an AWS Elemental MediaConnect bridge, including the gateway instance ID and optional maximum bitrate for transmitting media flows to a remote network. (AI-inferred)
     egress_gateway_bridge: Any = None
-    # The 'ingress_gateway_bridge' object configures the ingress gateway bridge settings for the MediaConnect bridge, including the maximum number of outputs it can support. (AI-inferred)
     ingress_gateway_bridge: Any = None
     # The name of the bridge.
     name: Any = None
@@ -198,11 +174,8 @@ class ConnectBridgeConfig:
 class ConnectBridgeAttrs:
     # The Amazon Resource Number (ARN) of the bridge.
     bridge_arn: Any = None
-    # The current lifecycle state of the MediaConnect bridge (e.g., ACTIVE, STANDBY, or DELETING), as reported by AWS after the bridge is created or updated. (AI-inferred)
     bridge_state: Any = None
-    # Defines the egress gateway bridge settings for an AWS Elemental MediaConnect bridge, including the gateway instance ID and optional maximum bitrate for transmitting media flows to a remote network. (AI-inferred)
     egress_gateway_bridge: Any = None
-    # The 'ingress_gateway_bridge' object configures the ingress gateway bridge settings for the MediaConnect bridge, including the maximum number of outputs it can support. (AI-inferred)
     ingress_gateway_bridge: Any = None
     # The name of the bridge.
     name: Any = None

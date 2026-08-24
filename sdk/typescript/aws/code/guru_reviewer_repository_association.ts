@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GuruReviewerRepositoryAssociation_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the CodeGuru Reviewer repository association, using an arbitrary string for metadata or categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

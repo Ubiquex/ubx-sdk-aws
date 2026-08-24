@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface SequenceStore_SseConfig {
   /** An encryption key ARN. */
   keyArn?: string | Computed<string>;
-  /** Specifies the server-side encryption type for the sequence store; when set to 'KMS', data is encrypted using an AWS KMS key. (AI-inferred) */
   type: string | Computed<string>;
 }
 
@@ -18,7 +17,6 @@ export interface SequenceStoreConfig {
   accessLogLocation?: string | Computed<string>;
   /** A description for the store. */
   description?: string | Computed<string>;
-  /** Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred) */
   etagAlgorithmFamily?: string | Computed<string>;
   /** An S3 location that is used to store files that have failed a direct upload. */
   fallbackLocation?: string | Computed<string>;
@@ -42,7 +40,6 @@ export interface SequenceStoreAttrs {
   creationTime: string;
   /** A description for the store. */
   description: string;
-  /** Specifies the ETag algorithm family (e.g., MD5 or SHA256) used to compute ETags for sequence files in this AWS Omics sequence store. (AI-inferred) */
   etagAlgorithmFamily: string;
   /** An S3 location that is used to store files that have failed a direct upload. */
   fallbackLocation: string;
@@ -56,11 +53,9 @@ export interface SequenceStoreAttrs {
   s3AccessPolicy: unknown;
   /** The S3 URI of the sequence store. */
   s3Uri: string;
-  /** The unique AWS-generated identifier for the sequence store, used to reference the store in other Omics operations. (AI-inferred) */
   sequenceStoreId: string;
   /** Server-side encryption (SSE) settings for a store. */
   sseConfig: SequenceStore_SseConfig;
-  /** The current lifecycle status of the Omics sequence store, such as CREATING, ACTIVE, DELETING, or FAILED. (AI-inferred) */
   status: string;
   /** The status message of the sequence store. */
   statusMessage: string;

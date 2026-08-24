@@ -4,11 +4,8 @@ package mwaa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Environment_LoggingConfiguration_DagProcessingLogs struct {
-	// The ARN of the CloudWatch log group where Apache Airflow DAG processing logs are delivered in the MWAA environment. (AI-inferred)
 	CloudWatchLogGroupArn any
-	// Indicates whether DAG processing logs are enabled for the Amazon Managed Workflows for Apache Airflow (MWAA) environment. (AI-inferred)
 	Enabled any
-	// Sets the log level (e.g., CRITICAL, ERROR, WARNING, INFO, or DEBUG) for the DAG processing logs in the Amazon MWAA environment. (AI-inferred)
 	LogLevel any
 }
 

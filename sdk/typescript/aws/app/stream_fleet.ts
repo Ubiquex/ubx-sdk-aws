@@ -2,41 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamFleet_ComputeCapacity {
-  /** The desired number of streaming instances that AppStream 2.0 maintains in the fleet. (AI-inferred) */
   desiredInstances?: number | Computed<number>;
-  /** Specifies the desired number of concurrent streaming sessions for an On-Demand AppStream 2.0 fleet, which AppStream uses to scale the fleet's capacity. (AI-inferred) */
   desiredSessions?: number | Computed<number>;
 }
 
 export interface StreamFleet_DomainJoinInfo {
-  /** Specifies the fully qualified name of the Active Directory domain (e.g., corp.example.com) that the AppStream 2.0 streaming instances will join when the fleet is launched. (AI-inferred) */
   directoryName?: string | Computed<string>;
-  /** The distinguished name of the organizational unit (OU) in Active Directory where the computer accounts for the streaming instances are created when they join the domain. (AI-inferred) */
   organizationalUnitDistinguishedName?: string | Computed<string>;
 }
 
 export interface StreamFleet_RootVolumeConfig {
-  /** The size, in gigabytes, of the root volume (C: drive) for each streaming instance in the AppStream 2.0 fleet, which determines the storage capacity available for the operating system and installed applications. (AI-inferred) */
   volumeSizeInGb?: number | Computed<number>;
 }
 
 export interface StreamFleet_SessionScriptS3Location {
-  /** The name of the S3 bucket where the session script file is stored for the AppStream fleet. (AI-inferred) */
   s3Bucket: string | Computed<string>;
-  /** The S3 object key (file path/name) of the session script within the S3 bucket specified in the session_script_s3_location. (AI-inferred) */
   s3Key: string | Computed<string>;
 }
 
 export interface StreamFleet_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag to associate with the AppStream 2.0 fleet. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface StreamFleet_VpcConfig {
-  /** The list of VPC security group IDs to associate with the fleet instances, controlling inbound and outbound network traffic for AppStream 2.0 streaming instances. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Identifies the subnets where the fleet's streaming instances are launched, to place them within your VPC. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
@@ -70,106 +60,57 @@ const StreamFleet_VpcConfigFields: FieldMap = {
 };
 
 export interface StreamFleetConfig {
-  /** Configures the compute capacity for the fleet by specifying the desired number of streaming instances. (AI-inferred) */
   computeCapacity?: StreamFleet_ComputeCapacity | Computed<StreamFleet_ComputeCapacity>;
-  /** A user-provided description that clarifies the purpose or use of the AppStream 2.0 fleet. (AI-inferred) */
   description?: string | Computed<string>;
-  /** When true, disables the use of the EC2 Instance Metadata Service version 1 (IMDSv1) on the streaming instances of this AppStream 2.0 fleet, forcing IMDSv2 for instance metadata access. (AI-inferred) */
   disableImdsv1?: boolean | Computed<boolean>;
-  /** The maximum time in seconds that a streaming session remains active after a user disconnects before the session is terminated. (AI-inferred) */
   disconnectTimeoutInSeconds?: number | Computed<number>;
-  /** A user-friendly name for the fleet that is displayed in the AppStream 2.0 console and to end users. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** Specifies the Active Directory domain and organizational unit (OU) that the fleet's streaming instances will join, including the directory name and OU distinguished name, to enable domain authentication. (AI-inferred) */
   domainJoinInfo?: StreamFleet_DomainJoinInfo | Computed<StreamFleet_DomainJoinInfo>;
-  /** Indicates whether the fleet's streaming instances are given a default internet gateway, enabling users to access the internet from their streaming sessions. (AI-inferred) */
   enableDefaultInternetAccess?: boolean | Computed<boolean>;
-  /** Specifies whether the AppStream 2.0 fleet uses Always On instances that run continuously or On Demand instances that start only when a user connects, governing instance provisioning and cost. (AI-inferred) */
   fleetType?: string | Computed<string>;
-  /** The ARN of the IAM role that AppStream 2.0 assumes to call AWS APIs on behalf of the fleet's streaming instances. (AI-inferred) */
   iamRoleArn?: string | Computed<string>;
-  /** Specifies the number of seconds a user can remain idle in an AppStream 2.0 streaming session before being automatically disconnected, where 0 means no idle timeout is applied. (AI-inferred) */
   idleDisconnectTimeoutInSeconds?: number | Computed<number>;
-  /** The ARN of the AppStream 2.0 image that the fleet uses to launch streaming instances. (AI-inferred) */
   imageArn?: string | Computed<string>;
-  /** The name of the AppStream 2.0 image to use for the fleet's streaming instances, specified as an alternative to ImageArn. (AI-inferred) */
   imageName?: string | Computed<string>;
-  /** The Amazon EC2 instance type (e.g., stream.standard.medium) that specifies the compute and memory resources for the streaming instances in the AppStream 2.0 fleet. (AI-inferred) */
   instanceType: string | Computed<string>;
-  /** The maximum number of concurrent sessions that the fleet can support, limiting how many users can stream simultaneously. (AI-inferred) */
   maxConcurrentSessions?: number | Computed<number>;
-  /** Specifies the maximum number of concurrent streaming sessions that a single fleet instance can host, which AppStream 2.0 uses to determine how many instances to start and stop to meet capacity. (AI-inferred) */
   maxSessionsPerInstance?: number | Computed<number>;
-  /** Specifies the maximum time, in seconds, that a streaming session can remain active before AppStream 2.0 disconnects the user. (AI-inferred) */
   maxUserDurationInSeconds?: number | Computed<number>;
-  /** The required name of the AppStream 2.0 fleet, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the operating system platform for the fleet's streaming instances, with valid values of WINDOWS or AMAZON_LINUX2. (AI-inferred) */
   platform?: string | Computed<string>;
-  /** Configures the root volume of the AppStream 2.0 fleet's streaming instances, specifying the volume size in gigabytes and optional USB device filter strings. (AI-inferred) */
   rootVolumeConfig?: StreamFleet_RootVolumeConfig | Computed<StreamFleet_RootVolumeConfig>;
-  /** Specifies the Amazon S3 bucket and object key that contains the session script to be run on AppStream 2.0 streaming instances for user sessions. (AI-inferred) */
   sessionScriptS3Location?: StreamFleet_SessionScriptS3Location | Computed<StreamFleet_SessionScriptS3Location>;
-  /** Determines whether the fleet streams applications to users (APP) or provides a full desktop view (DESKTOP). (AI-inferred) */
   streamView?: string | Computed<string>;
-  /** A list of key-value tags to attach to the AppStream fleet, used to categorize and manage the fleet resource. (AI-inferred) */
   tags?: StreamFleet_Tags[] | Computed<StreamFleet_Tags[]>;
-  /** Specifies the USB device filter strings that control which USB devices are available to users during AppStream 2.0 streaming sessions, such as 'vendorId:productId' patterns (up to 20 strings). (AI-inferred) */
   usbDeviceFilterStrings?: string[] | Computed<string[]>;
-  /** Specifies the VPC configuration for the AppStream fleet, including the subnets and security group IDs that the fleet's streaming instances use. (AI-inferred) */
   vpcConfig?: StreamFleet_VpcConfig | Computed<StreamFleet_VpcConfig>;
 }
 
 export interface StreamFleetAttrs {
-  /** Configures the compute capacity for the fleet by specifying the desired number of streaming instances. (AI-inferred) */
   computeCapacity: StreamFleet_ComputeCapacity;
-  /** A user-provided description that clarifies the purpose or use of the AppStream 2.0 fleet. (AI-inferred) */
   description: string;
-  /** When true, disables the use of the EC2 Instance Metadata Service version 1 (IMDSv1) on the streaming instances of this AppStream 2.0 fleet, forcing IMDSv2 for instance metadata access. (AI-inferred) */
   disableImdsv1: boolean;
-  /** The maximum time in seconds that a streaming session remains active after a user disconnects before the session is terminated. (AI-inferred) */
   disconnectTimeoutInSeconds: number;
-  /** A user-friendly name for the fleet that is displayed in the AppStream 2.0 console and to end users. (AI-inferred) */
   displayName: string;
-  /** Specifies the Active Directory domain and organizational unit (OU) that the fleet's streaming instances will join, including the directory name and OU distinguished name, to enable domain authentication. (AI-inferred) */
   domainJoinInfo: StreamFleet_DomainJoinInfo;
-  /** Indicates whether the fleet's streaming instances are given a default internet gateway, enabling users to access the internet from their streaming sessions. (AI-inferred) */
   enableDefaultInternetAccess: boolean;
-  /** Specifies whether the AppStream 2.0 fleet uses Always On instances that run continuously or On Demand instances that start only when a user connects, governing instance provisioning and cost. (AI-inferred) */
   fleetType: string;
-  /** The ARN of the IAM role that AppStream 2.0 assumes to call AWS APIs on behalf of the fleet's streaming instances. (AI-inferred) */
   iamRoleArn: string;
-  /** The unique identifier of the AppStream fleet, which is set to the fleet name provided during creation. (AI-inferred) */
   id: string;
-  /** Specifies the number of seconds a user can remain idle in an AppStream 2.0 streaming session before being automatically disconnected, where 0 means no idle timeout is applied. (AI-inferred) */
   idleDisconnectTimeoutInSeconds: number;
-  /** The ARN of the AppStream 2.0 image that the fleet uses to launch streaming instances. (AI-inferred) */
   imageArn: string;
-  /** The name of the AppStream 2.0 image to use for the fleet's streaming instances, specified as an alternative to ImageArn. (AI-inferred) */
   imageName: string;
-  /** The Amazon EC2 instance type (e.g., stream.standard.medium) that specifies the compute and memory resources for the streaming instances in the AppStream 2.0 fleet. (AI-inferred) */
   instanceType: string;
-  /** The maximum number of concurrent sessions that the fleet can support, limiting how many users can stream simultaneously. (AI-inferred) */
   maxConcurrentSessions: number;
-  /** Specifies the maximum number of concurrent streaming sessions that a single fleet instance can host, which AppStream 2.0 uses to determine how many instances to start and stop to meet capacity. (AI-inferred) */
   maxSessionsPerInstance: number;
-  /** Specifies the maximum time, in seconds, that a streaming session can remain active before AppStream 2.0 disconnects the user. (AI-inferred) */
   maxUserDurationInSeconds: number;
-  /** The required name of the AppStream 2.0 fleet, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string;
-  /** Specifies the operating system platform for the fleet's streaming instances, with valid values of WINDOWS or AMAZON_LINUX2. (AI-inferred) */
   platform: string;
-  /** Configures the root volume of the AppStream 2.0 fleet's streaming instances, specifying the volume size in gigabytes and optional USB device filter strings. (AI-inferred) */
   rootVolumeConfig: StreamFleet_RootVolumeConfig;
-  /** Specifies the Amazon S3 bucket and object key that contains the session script to be run on AppStream 2.0 streaming instances for user sessions. (AI-inferred) */
   sessionScriptS3Location: StreamFleet_SessionScriptS3Location;
-  /** Determines whether the fleet streams applications to users (APP) or provides a full desktop view (DESKTOP). (AI-inferred) */
   streamView: string;
-  /** A list of key-value tags to attach to the AppStream fleet, used to categorize and manage the fleet resource. (AI-inferred) */
   tags: StreamFleet_Tags[];
-  /** Specifies the USB device filter strings that control which USB devices are available to users during AppStream 2.0 streaming sessions, such as 'vendorId:productId' patterns (up to 20 strings). (AI-inferred) */
   usbDeviceFilterStrings: string[];
-  /** Specifies the VPC configuration for the AppStream fleet, including the subnets and security group IDs that the fleet's streaming instances use. (AI-inferred) */
   vpcConfig: StreamFleet_VpcConfig;
 }
 

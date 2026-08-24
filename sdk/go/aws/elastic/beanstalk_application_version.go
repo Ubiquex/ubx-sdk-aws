@@ -20,7 +20,6 @@ type BeanstalkApplicationVersionConfig struct {
 	ApplicationName any
 	// A description of this application version.
 	Description any
-	// The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
 	SourceBundle any
 }
 
@@ -30,7 +29,6 @@ type BeanstalkApplicationVersionAttrs struct {
 	// A description of this application version.
 	Description any
 	Id any
-	// The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred)
 	SourceBundle any
 }
 

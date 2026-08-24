@@ -8,18 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IpamresourceDiscovery_OperatingRegions:
-    # Specifies the AWS Region (e.g., us-east-1) in which the IPAM resource discovery operates. (AI-inferred)
     region_name: Any = None
 
 @dataclasses.dataclass
 class IpamresourceDiscovery_OrganizationalUnitExclusions:
-    # Defines the AWS Organizations entity path (e.g., 'o-1234567890abcdef0') of an organizational unit to exclude from IPAM resource discovery, preventing resources in that OU from being discovered. (AI-inferred)
     organizations_entity_path: Any = None
 
 @dataclasses.dataclass
 class IpamresourceDiscovery_Tags:
     key: Any = None
-    # The value for a tag key attached to the IPAM resource discovery, which is a user-defined string for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _IpamresourceDiscovery_OperatingRegionsFields = {
@@ -37,7 +34,6 @@ _IpamresourceDiscovery_TagsFields = {
 
 @dataclasses.dataclass
 class IpamresourceDiscoveryConfig:
-    # Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred)
     description: Any = None
     # The regions Resource Discovery is enabled for. Allows resource discoveries to be created in these regions, as well as enabling monitoring
     operating_regions: Any = None
@@ -48,7 +44,6 @@ class IpamresourceDiscoveryConfig:
 
 @dataclasses.dataclass
 class IpamresourceDiscoveryAttrs:
-    # Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred)
     description: Any = None
     # Amazon Resource Name (Arn) for the Resource Discovery.
     ipam_resource_discovery_arn: Any = None

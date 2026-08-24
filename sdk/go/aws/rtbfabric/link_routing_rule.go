@@ -45,7 +45,6 @@ var LinkRoutingRule_ConditionsFields = ubx.FieldMap{
 type LinkRoutingRuleConfig struct {
 	// Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
 	Conditions any
-	// The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
 	GatewayId any
 	LinkId any
 	Priority any
@@ -57,9 +56,7 @@ type LinkRoutingRuleAttrs struct {
 	Arn any
 	// Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
 	Conditions any
-	// A timestamp that records when this link routing rule was created, used for tracking and auditing changes. (AI-inferred)
 	CreatedTimestamp any
-	// The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
 	GatewayId any
 	LinkId any
 	Priority any
@@ -67,7 +64,6 @@ type LinkRoutingRuleAttrs struct {
 	Status any
 	// Tags to assign to the LinkRoutingRule.
 	Tags any
-	// The updated_timestamp field captures the date and time when this link routing rule was last modified. (AI-inferred)
 	UpdatedTimestamp any
 }
 

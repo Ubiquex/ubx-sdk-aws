@@ -4,11 +4,8 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TLogging_EventConfigurations struct {
-	// The AWS IoT event type (such as MqttActivity, Connections, or DeviceShadowOperations) that this logging configuration applies to within the event configurations map. (AI-inferred)
 	EventType any
-	// The destination ARN (e.g., an Amazon CloudWatch Logs log group or Amazon S3 bucket) to which AWS IoT delivers logs for the corresponding event configuration. (AI-inferred)
 	LogDestination any
-	// For each event type in the AWS IoT logging event configurations, this property sets the log level (e.g., DEBUG, INFO, ERROR, WARN, or DISABLED) that controls how detailed the IoT logs are for that event type. (AI-inferred)
 	LogLevel any
 }
 

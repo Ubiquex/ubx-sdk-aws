@@ -14,23 +14,14 @@ export interface Guardrail_ContentPolicyConfig_ContentFiltersTierConfig {
 }
 
 export interface Guardrail_ContentPolicyConfig_FiltersConfig {
-  /** Specifies whether the guardrail's content filter blocks or allows the matched content type in user input prompts, accepting values like 'BLOCK' or 'NONE'. (AI-inferred) */
   inputAction?: string | Computed<string>;
-  /** Specifies whether this content filter is enabled for user inputs (prompts) processed by the guardrail. (AI-inferred) */
   inputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the input modalities (e.g., TEXT or IMAGE) that the content filter applies to, allowing the filter to target specific types of content entering the guardrail. (AI-inferred) */
   inputModalities?: string[] | Computed<string[]>;
-  /** Specifies the strength of the content filter applied to user input prompts, controlling how aggressively the guardrail filters content for the input direction (e.g., NONE, LOW, MEDIUM, HIGH). (AI-inferred) */
   inputStrength?: string | Computed<string>;
-  /** Determines whether content matching the filter category is blocked (BLOCK) or allowed (NONE) when it appears in model-generated output. (AI-inferred) */
   outputAction?: string | Computed<string>;
-  /** Determines whether the content policy filter applies to generated model outputs, enabling or disabling the evaluation and filtering of the guardrail's responses for the specified filter category. (AI-inferred) */
   outputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the output modalities (such as TEXT or IMAGE) to which this content filter applies for generated responses. (AI-inferred) */
   outputModalities?: string[] | Computed<string[]>;
-  /** The strength (e.g., NONE, LOW, MEDIUM, HIGH) applied when filtering the model's generated (output) content for the specified content policy filter type, determining how aggressively the guardrail blocks or moderates that content. (AI-inferred) */
   outputStrength?: string | Computed<string>;
-  /** The category of harmful content that this guardrail filter targets, such as SEXUAL, VIOLENCE, HATE, INSULTS, MISCONDUCT, or PROMPT_ATTACK. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -42,13 +33,9 @@ export interface Guardrail_ContentPolicyConfig {
 }
 
 export interface Guardrail_ContextualGroundingPolicyConfig_FiltersConfig {
-  /** Specifies whether the contextual grounding filter blocks the request (BLOCK) or allows it (NONE) when the filter's check fails. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Boolean that enables or disables this specific contextual grounding filter (e.g., grounding or relevance) within the guardrail's contextual grounding policy. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** The confidence threshold (between 0 and 1) for a contextual grounding filter (of type GROUNDING or RELEVANCE), which sets the minimum score the model's response must meet to be considered grounded or relevant, and responses scoring below this threshold are blocked. (AI-inferred) */
   threshold?: number | Computed<number>;
-  /** The type of the contextual grounding filter, which must be either GROUNDING or RELEVANCE, controlling whether the filter checks factual grounding or query relevance. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -63,35 +50,22 @@ export interface Guardrail_CrossRegionConfig {
 }
 
 export interface Guardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfig {
-  /** In an AWS Bedrock Guardrail's sensitive information policy, the `action` property for each PII entity config determines the enforcement response when that type of personally identifiable information is detected, with valid values such as `BLOCK` to deny the input or output, or `ANONYMIZE` to replace it with a placeholder. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Defines how the guardrail responds to detected personally identifiable information (PII) in an end-user prompt, allowing values like 'BLOCK' to deny the request or 'ANONYMIZE' to replace the PII with a placeholder before processing. (AI-inferred) */
   inputAction?: string | Computed<string>;
-  /** Indicates whether the PII filter for this entity type is enabled on input (prompt) text in the guardrail's sensitive information policy. (AI-inferred) */
   inputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the action (e.g., BLOCK or ANONYMIZE) the guardrail applies when the configured PII entity type is detected in the model's output. (AI-inferred) */
   outputAction?: string | Computed<string>;
   outputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the type of PII entity (e.g., EMAIL, PHONE, SSN) to be filtered by the guardrail's sensitive information policy. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Guardrail_SensitiveInformationPolicyConfig_RegexesConfig {
-  /** Determines whether a regex-pattern match triggers blocking (BLOCK) or anonymization/masking (ANONYMIZE) of the detected sensitive information in guarded content. (AI-inferred) */
   action?: string | Computed<string>;
-  /** A user-defined textual description that explains the purpose or context of this custom regex pattern in the guardrail's sensitive information policy. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the action (BLOCK or ANONYMIZE) the guardrail takes when a regex pattern in this configuration matches sensitive information in the prompt (input). (AI-inferred) */
   inputAction?: string | Computed<string>;
-  /** Indicates whether this regex pattern in the guardrail's sensitive information policy is applied to model inputs (prompts) as opposed to only model outputs (responses). (AI-inferred) */
   inputEnabled?: boolean | Computed<boolean>;
-  /** The name of the custom regex pattern defined in the guardrail's sensitive information policy, used to identify and reference the regex-based filter. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether a matched regex pattern in the model's output is blocked or anonymized when detected by the Bedrock guardrail. (AI-inferred) */
   outputAction?: string | Computed<string>;
-  /** Indicates whether the regex pattern for this sensitive information filter is enabled on model output; when false, the pattern is only applied to input. (AI-inferred) */
   outputEnabled?: boolean | Computed<boolean>;
-  /** The regular expression pattern used to detect sensitive information in the guardrail's sensitive information policy. (AI-inferred) */
   pattern?: string | Computed<string>;
 }
 
@@ -103,25 +77,18 @@ export interface Guardrail_SensitiveInformationPolicyConfig {
 }
 
 export interface Guardrail_Tags {
-  /** The key of a tag to apply to the Bedrock guardrail, used for organizing and identifying the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface Guardrail_TopicPolicyConfig_TopicsConfig {
-  /** In the topic policy of an Amazon Bedrock guardrail, each topic's definition provides a natural-language description of the specific subject matter that the guardrail should identify and block or deny in model responses. (AI-inferred) */
   definition?: string | Computed<string>;
-  /** Specifies a list of sample phrases that illustrate the topic, used to improve the accuracy of the guardrail's detection of the topic. (AI-inferred) */
   examples?: string[] | Computed<string[]>;
-  /** Specifies the action the guardrail takes when user input matches this topic, such as BLOCK or ALLOW. (AI-inferred) */
   inputAction?: string | Computed<string>;
   inputEnabled?: boolean | Computed<boolean>;
-  /** The user-defined name of a topic configured in the guardrail's topic policy, used to identify a specific subject (e.g., 'investment advice') that the model is instructed to avoid discussing. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the action taken on the output when a user query or model response matches the topic, with allowed values 'BLOCK' to deny the content and 'NONE' to allow it. (AI-inferred) */
   outputAction?: string | Computed<string>;
   outputEnabled?: boolean | Computed<boolean>;
-  /** Specifies whether the topic is defined as a denied (DENY) or allowed (ALLOW) topic in the guardrail's topic policy. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -133,28 +100,18 @@ export interface Guardrail_TopicPolicyConfig {
 }
 
 export interface Guardrail_WordPolicyConfig_ManagedWordListsConfig {
-  /** Determines the action applied to the input when a word from the managed word list is detected, with values such as BLOCK to block the input or NONE to allow it. (AI-inferred) */
   inputAction?: string | Computed<string>;
-  /** Enables or disables the managed word list (e.g., profanity) filter for user input prompts in the guardrail. (AI-inferred) */
   inputEnabled?: boolean | Computed<boolean>;
-  /** For each managed word list configured in the guardrail's word policy, this field determines the action taken when a word from that list is detected, with allowed values of 'BLOCK' (block the content) or 'NONE' (allow the content). (AI-inferred) */
   outputAction?: string | Computed<string>;
-  /** Indicates whether the managed word list (e.g., profanity) is applied to filter the model's output text. (AI-inferred) */
   outputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the managed word list category to apply to the guardrail, with the supported value PROFANITY for filtering profane language. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Guardrail_WordPolicyConfig_WordsConfig {
-  /** Determines whether a word in this list is blocked when it appears in the user prompt (input) text, with `BLOCK` filtering it out and `NONE` permitting it. (AI-inferred) */
   inputAction?: string | Computed<string>;
-  /** Indicates whether this custom word in the word policy is filtered from the input (user prompt) traffic, as opposed to output (model response) traffic. (AI-inferred) */
   inputEnabled?: boolean | Computed<boolean>;
-  /** Specifies the action the guardrail takes when a model output contains the configured word, with BLOCKED causing the word to be blocked and NONE allowing it to pass through. (AI-inferred) */
   outputAction?: string | Computed<string>;
-  /** Indicates whether the word is enabled for output filtering, meaning that when true, the guardrail prevents the word from appearing in model-generated responses. (AI-inferred) */
   outputEnabled?: boolean | Computed<boolean>;
-  /** The word or phrase that the guardrail's word policy will filter or block in model responses. (AI-inferred) */
   text?: string | Computed<string>;
 }
 

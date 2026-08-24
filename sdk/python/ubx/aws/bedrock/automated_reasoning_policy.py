@@ -14,7 +14,6 @@ class AutomatedReasoningPolicy_PolicyDefinition_Rules:
 
 @dataclasses.dataclass
 class AutomatedReasoningPolicy_PolicyDefinition_Types_Values:
-    # Provides a human-readable explanation of a specific value defined within a type in the automated reasoning policy, giving the model additional context for interpreting that value. (AI-inferred)
     description: Any = None
     value: Any = None
 
@@ -96,7 +95,6 @@ _AutomatedReasoningPolicy_TagsFields = {
 
 @dataclasses.dataclass
 class AutomatedReasoningPolicyConfig:
-    # An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred)
     description: Any = None
     # Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false
     force_delete: Any = None
@@ -104,7 +102,6 @@ class AutomatedReasoningPolicyConfig:
     kms_key_id: Any = None
     name: Any = None
     policy_definition: Any = None
-    # A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -113,7 +110,6 @@ class AutomatedReasoningPolicyAttrs:
     created_at: Any = None
     # The hash for this version
     definition_hash: Any = None
-    # An optional, human-readable explanation of the purpose or contents of the automated reasoning policy. (AI-inferred)
     description: Any = None
     # Specifies whether to force delete the automated reasoning policy even if it has active resources. When false , Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When true , Amazon Bedrock will delete the policy and all its artifacts without validation. Default is false
     force_delete: Any = None
@@ -126,7 +122,6 @@ class AutomatedReasoningPolicyAttrs:
     policy_definition: Any = None
     # The id of the policy
     policy_id: Any = None
-    # A list of key-value tags to associate with the AWS Bedrock automated reasoning policy. (AI-inferred)
     tags: Any = None
     # Time this policy was last updated
     updated_at: Any = None

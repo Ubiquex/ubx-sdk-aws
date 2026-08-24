@@ -11,9 +11,7 @@ type DiskSnapshot_Location struct {
 }
 
 type DiskSnapshot_Tags struct {
-	// The key of a tag, such as 'Name' or 'Environment', that you can attach to the Lightsail disk snapshot for identification and management. (AI-inferred)
 	Key any
-	// The value of a tag (key-value pair) applied to the AWS Lightsail disk snapshot. (AI-inferred)
 	Value any
 }
 

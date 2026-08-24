@@ -17,9 +17,7 @@ class Channel_MultitrackInputConfiguration:
 
 @dataclasses.dataclass
 class Channel_Tags:
-    # The key of a tag attached to the IVS channel, enabling you to categorize and manage the resource by custom metadata. (AI-inferred)
     key: Any = None
-    # The string value of a tag attached to the AWS IVS channel, used to store arbitrary metadata such as environment, project, or owner information. (AI-inferred)
     value: Any = None
 
 _Channel_MultitrackInputConfigurationFields = {
@@ -43,7 +41,6 @@ class ChannelConfig:
     insecure_ingest: Any = None
     # Channel latency mode.
     latency_mode: Any = None
-    # Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
     multitrack_input_configuration: Any = None
     # Channel
     name: Any = None
@@ -70,7 +67,6 @@ class ChannelAttrs:
     insecure_ingest: Any = None
     # Channel latency mode.
     latency_mode: Any = None
-    # Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
     multitrack_input_configuration: Any = None
     # Channel
     name: Any = None

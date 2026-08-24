@@ -26,9 +26,7 @@ class SpaceWeaverSimulationConfig:
     name: Any = None
     # Role ARN.
     role_arn: Any = None
-    # Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred)
     schema_s3_location: Any = None
-    # The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred)
     snapshot_s3_location: Any = None
 
 @dataclasses.dataclass
@@ -41,9 +39,7 @@ class SpaceWeaverSimulationAttrs:
     name: Any = None
     # Role ARN.
     role_arn: Any = None
-    # Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred)
     schema_s3_location: Any = None
-    # The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred)
     snapshot_s3_location: Any = None
 
 SpaceWeaverSimulation = ubx.ResourceBinding(

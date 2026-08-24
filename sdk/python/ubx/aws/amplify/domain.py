@@ -8,25 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Domain_Certificate:
-    # The Amazon Resource Name (ARN) of the custom SSL/TLS certificate to use for the domain association, typically from AWS Certificate Manager (ACM) or IAM. (AI-inferred)
     certificate_arn: Any = None
-    # Specifies the type of SSL/TLS certificate for the custom domain, such as AMPLIFY_MANAGED for Amplify's managed certificate or CUSTOM for a certificate you import or supply. (AI-inferred)
     certificate_type: Any = None
-    # The DNS record value that must be added to the domain's DNS configuration to verify ownership and enable certificate issuance for the Amplify domain. (AI-inferred)
     certificate_verification_dnsrecord: Any = None
 
 @dataclasses.dataclass
 class Domain_CertificateSettings:
-    # Specifies the type of certificate used for the domain's HTTPS connection, either 'amazon-issued' for an AWS-issued ACM certificate or 'custom' to use a custom certificate via a provided ARN. (AI-inferred)
     certificate_type: Any = None
-    # The ARN of the custom SSL/TLS certificate that Amplify uses to serve HTTPS for the domain when you choose to use your own certificate instead of the Amplify-managed one. (AI-inferred)
     custom_certificate_arn: Any = None
 
 @dataclasses.dataclass
 class Domain_SubDomainSettings:
-    # The name of the Amplify app branch that this subdomain setting points to, serving the app content from that branch. (AI-inferred)
     branch_name: Any = None
-    # Defines the subdomain prefix (for example, `www` or `api`) that routes traffic to a specific branch of the Amplify application, creating a subdomain like `www.example.com` when combined with the domain name. (AI-inferred)
     prefix: Any = None
 
 _Domain_CertificateSettingsFields = {
@@ -41,48 +34,28 @@ _Domain_SubDomainSettingsFields = {
 
 @dataclasses.dataclass
 class DomainConfig:
-    # The unique ID of the Amplify app to which this domain association belongs. (AI-inferred)
     app_id: Any = None
-    # Specifies the list of branch name patterns that automatically create subdomains for the Amplify app's domain, such as wildcard patterns like '*' to cover all branches. (AI-inferred)
     auto_sub_domain_creation_patterns: Any = None
-    # The IAM service role that AWS Amplify assumes to automatically manage the Route 53 records for subdomains associated with this domain. (AI-inferred)
     auto_sub_domain_iamrole: Any = None
-    # Configures the SSL/TLS certificate for the domain association, including whether to use an Amplify-managed certificate or a custom certificate ARN. (AI-inferred)
     certificate_settings: Any = None
-    # The custom root domain name (for example, example.com) that you associate with the Amplify application, serving as the base for the subdomains configured in this domain association. (AI-inferred)
     domain_name: Any = None
-    # Determines whether Amplify automatically creates subdomains for all branches in the app associated with this domain. (AI-inferred)
     enable_auto_sub_domain: Any = None
-    # Configures the subdomains for this domain, where each item maps a subdomain prefix (like 'www' or 'app') to a specific Amplify branch, controlling how requests to that subdomain are served. (AI-inferred)
     sub_domain_settings: Any = None
 
 @dataclasses.dataclass
 class DomainAttrs:
-    # The unique ID of the Amplify app to which this domain association belongs. (AI-inferred)
     app_id: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this Amplify custom domain association in AWS. (AI-inferred)
     arn: Any = None
-    # Specifies the list of branch name patterns that automatically create subdomains for the Amplify app's domain, such as wildcard patterns like '*' to cover all branches. (AI-inferred)
     auto_sub_domain_creation_patterns: Any = None
-    # The IAM service role that AWS Amplify assumes to automatically manage the Route 53 records for subdomains associated with this domain. (AI-inferred)
     auto_sub_domain_iamrole: Any = None
-    # Contains the details of the SSL/TLS certificate associated with the Amplify domain, including the certificate Amazon Resource Name (ARN), certificate type (e.g., AMPLIFY_MANAGED or CUSTOM), and the certificate's current status (such as ISSUED or PENDING_VERIFICATION). (AI-inferred)
     certificate: Any = None
-    # The DNS CNAME record that you must add to your domain's DNS settings to verify domain ownership and issue the SSL certificate for the Amplify domain association. (AI-inferred)
     certificate_record: Any = None
-    # Configures the SSL/TLS certificate for the domain association, including whether to use an Amplify-managed certificate or a custom certificate ARN. (AI-inferred)
     certificate_settings: Any = None
-    # The custom root domain name (for example, example.com) that you associate with the Amplify application, serving as the base for the subdomains configured in this domain association. (AI-inferred)
     domain_name: Any = None
-    # The status of the domain association, which indicates the current lifecycle state of the domain in Amplify, such as CREATING, VERIFYING, AVAILABLE, UPDATING, or PENDING_DEPLOYMENT. (AI-inferred)
     domain_status: Any = None
-    # Determines whether Amplify automatically creates subdomains for all branches in the app associated with this domain. (AI-inferred)
     enable_auto_sub_domain: Any = None
-    # Provides the reason associated with the current status of the Amplify domain association, such as a failed domain verification or certificate issuance failure. (AI-inferred)
     status_reason: Any = None
-    # Configures the subdomains for this domain, where each item maps a subdomain prefix (like 'www' or 'app') to a specific Amplify branch, controlling how requests to that subdomain are served. (AI-inferred)
     sub_domain_settings: Any = None
-    # The current update status of the Amplify domain association, such as 'REQUESTING_CERTIFICATE' or 'UPDATING', indicating the progress of an in-progress operation. (AI-inferred)
     update_status: Any = None
 
 Domain = ubx.ResourceBinding(

@@ -8,28 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnnotationStore_Reference:
-    # The Amazon Resource Name (ARN) of the AWS Omics reference that defines the coordinate system against which the annotations in the store are interpreted. (AI-inferred)
     reference_arn: Any = None
 
 @dataclasses.dataclass
 class AnnotationStore_SseConfig:
-    # The ARN of the AWS KMS key used to encrypt the annotation store with server-side encryption. (AI-inferred)
     key_arn: Any = None
-    # The server-side encryption type for the annotation store, specifying whether to use Amazon S3 managed keys (SSE-S3) or AWS KMS managed keys (SSE-KMS). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class AnnotationStore_StoreOptions_TsvStoreOptions:
-    # Specifies whether the TSV annotation store contains chromosome-position-aware data (CHR_POS) or generic annotations (GENERIC), which determines how the store parses the schema and interprets genomic coordinates. (AI-inferred)
     annotation_type: Any = None
-    # Indicates whether the first line of the TSV file is treated as a header row containing column names. (AI-inferred)
     format_to_header: Any = None
-    # Specifies the schema of the TSV annotation store, listing each column's name and data type (such as STRING or LONG) to validate and parse the annotation files. (AI-inferred)
     schema: Any = None
 
 @dataclasses.dataclass
 class AnnotationStore_StoreOptions:
-    # Configures the TSV-format-specific options for the annotation store, including the annotation type (generic or chromosome-position) and the schema that defines the tab-separated column headers and data types. (AI-inferred)
     tsv_store_options: Any = None
 
 _AnnotationStore_ReferenceFields = {
@@ -57,47 +50,29 @@ _AnnotationStore_StoreOptionsFields = {
 
 @dataclasses.dataclass
 class AnnotationStoreConfig:
-    # A user-supplied description of the annotation store, providing optional additional context about the store's purpose or contents. (AI-inferred)
     description: Any = None
-    # The name of the annotation store, which must be unique within the AWS account and region and serves as the primary identifier for the store. (AI-inferred)
     name: Any = None
-    # The reference property specifies the reference genome (such as GRCh38) that the annotation store is associated with, by providing either the ARN or the ID of an existing AWS Omics reference. (AI-inferred)
     reference: Any = None
-    # Specifies the server-side encryption (SSE) configuration for the annotation store, including the encryption type (such as KMS) and the AWS KMS key ARN to use for encrypting data at rest. (AI-inferred)
     sse_config: Any = None
-    # Specifies the file format of the annotation data stored in the annotation store, which is either TSV or VCF and determines the required store options. (AI-inferred)
     store_format: Any = None
-    # StoreOptions specifies the format and schema for the annotation store, allowing you to choose either TSV options (which require a schema for each column) or VCF options (which configure how variant call files are interpreted). (AI-inferred)
     store_options: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class AnnotationStoreAttrs:
-    # The timestamp indicating when the annotation store was created in AWS Omics. (AI-inferred)
     creation_time: Any = None
-    # A user-supplied description of the annotation store, providing optional additional context about the store's purpose or contents. (AI-inferred)
     description: Any = None
     id: Any = None
-    # The name of the annotation store, which must be unique within the AWS account and region and serves as the primary identifier for the store. (AI-inferred)
     name: Any = None
-    # The reference property specifies the reference genome (such as GRCh38) that the annotation store is associated with, by providing either the ARN or the ID of an existing AWS Omics reference. (AI-inferred)
     reference: Any = None
-    # Specifies the server-side encryption (SSE) configuration for the annotation store, including the encryption type (such as KMS) and the AWS KMS key ARN to use for encrypting data at rest. (AI-inferred)
     sse_config: Any = None
-    # The current lifecycle status of the annotation store, which can be one of CREATING, ACTIVE, UPDATING, DELETING, or FAILED. (AI-inferred)
     status: Any = None
-    # Provides a human-readable message about the current operational status of the annotation store, such as the reason a requested operation is pending or failed. (AI-inferred)
     status_message: Any = None
-    # The Amazon Resource Name (ARN) of the annotation store. (AI-inferred)
     store_arn: Any = None
-    # Specifies the file format of the annotation data stored in the annotation store, which is either TSV or VCF and determines the required store options. (AI-inferred)
     store_format: Any = None
-    # StoreOptions specifies the format and schema for the annotation store, allowing you to choose either TSV options (which require a schema for each column) or VCF options (which configure how variant call files are interpreted). (AI-inferred)
     store_options: Any = None
-    # The total storage size of the annotation store in bytes, as reported by the AWS Omics service. (AI-inferred)
     store_size_bytes: Any = None
     tags: Any = None
-    # The timestamp of the last update to the annotation store, reported as an ISO 8601 string. (AI-inferred)
     update_time: Any = None
 
 AnnotationStore = ubx.ResourceBinding(

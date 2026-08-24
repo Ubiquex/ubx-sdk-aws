@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesProfileAssociation_Tags struct {
 	Key any
-	// The value of a tag (key-value pair) attached to the Route 53 Profile association, used for metadata, identification, and cost allocation of the resource. (AI-inferred)
 	Value any
 }
 

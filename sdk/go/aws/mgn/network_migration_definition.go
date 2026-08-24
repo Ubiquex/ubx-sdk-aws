@@ -4,21 +4,17 @@ package mgn
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration struct {
-	// The name of the S3 bucket that contains the source network configuration data used by the MGN network migration definition when the source type is S3. (AI-inferred)
 	S3Bucket any
-	// Specifies the AWS account ID of the owner of the S3 bucket referenced in the source configuration, enabling MGN to access buckets across accounts for network migration data. (AI-inferred)
 	S3BucketOwner any
 	S3Key any
 }
 
 type NetworkMigrationDefinition_SourceConfigurations struct {
-	// Specifies the environment of the source network (typically 'ON_PREMISES' or 'AWS') for each source configuration in the network migration definition. (AI-inferred)
 	SourceEnvironment any
 	SourceS3Configuration any
 }
 
 type NetworkMigrationDefinition_Tags struct {
-	// The key portion of a tag attached to the network migration definition, used to label the resource for filtering, cost tracking, and operational management. (AI-inferred)
 	Key any
 	Value any
 }

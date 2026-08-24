@@ -8,86 +8,53 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues_Cookies:
-    # Specifies which cookies to forward to the origin for this cache behavior: 'all', 'none', or 'whitelist' (the latter requires listing cookie names in 'whitelistedNames'). (AI-inferred)
     forward: Any = None
-    # A list of specific cookie names that CloudFront includes in the origin request when forwarding cookies for this cache behavior, used when the cookie forwarding policy is 'whitelist'. (AI-inferred)
     whitelisted_names: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues:
-    # Specifies how CloudFront forwards cookies from viewer requests to the origin for this cache behavior, controlling whether all, none, or a specific whitelist of cookies are forwarded. (AI-inferred)
     cookies: Any = None
-    # Specifies the list of HTTP header names that CloudFront includes in viewer requests forwarded to the origin for this cache behavior, alongside the default headers. (AI-inferred)
     headers: Any = None
-    # Specifies whether CloudFront forwards query string parameters to the origin; set to true to forward them (and optionally cache based on them) or false to not forward them. (AI-inferred)
     query_string: Any = None
-    # The list of query string parameter names (keys) to include in the cache key for this cache behavior, controlling which query strings are used to determine cache hits when QueryString forwarding is enabled. (AI-inferred)
     query_string_cache_keys: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors_FunctionAssociations:
-    # Specifies the CloudFront event type (such as viewer-request or viewer-response) that triggers the associated CloudFront Function for this cache behavior. (AI-inferred)
     event_type: Any = None
-    # The Amazon Resource Name (ARN) of the CloudFront function that is associated with the cache behavior to perform request and response manipulation. (AI-inferred)
     function_arn: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors_GrpcConfig:
-    # Whether gRPC is enabled for this CloudFront cache behavior. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociations:
-    # Specifies the CloudFront event that triggers the Lambda function, such as viewer-request, viewer-response, origin-request, or origin-response. (AI-inferred)
     event_type: Any = None
-    # When true, includes the request body in the event passed to the associated Lambda function, allowing the function to inspect or modify the body for viewer-request or origin-request triggers. (AI-inferred)
     include_body: Any = None
-    # The ARN of the Lambda function (Lambda@Edge) to associate with this cache behavior, which is invoked to process viewer or origin requests/responses for the specified path pattern. (AI-inferred)
     lambda_function_arn: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CacheBehaviors:
-    # The HTTP methods (e.g., GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE) that CloudFront processes and forwards to the origin for this cache behavior. (AI-inferred)
     allowed_methods: Any = None
-    # The ID of the cache policy attached to this CloudFront cache behavior, which determines the time-to-live (TTL) settings and which HTTP headers, cookies, or query strings are included in the cache key. (AI-inferred)
     cache_policy_id: Any = None
-    # Specifies which HTTP methods (such as GET, HEAD, OPTIONS, PUT, DELETE) CloudFront caches responses for in this cache behavior. (AI-inferred)
     cached_methods: Any = None
-    # Indicates whether CloudFront automatically compresses files (such as HTML, CSS, or JavaScript) for this cache behavior when serving them to viewers. (AI-inferred)
     compress: Any = None
-    # Specifies the default time-to-live (TTL) in seconds for objects in the CloudFront cache for this cache behavior, controlling how long CloudFront retains an object before checking the origin for an updated version. (AI-inferred)
     default_ttl: Any = None
-    # The ID of the field-level encryption configuration to apply to responses that match this cache behavior, enabling protection of sensitive data fields. (AI-inferred)
     field_level_encryption_id: Any = None
-    # Specifies which query strings, cookies, and headers are forwarded to the origin and included in the cache key for requests that match this cache behavior. (AI-inferred)
     forwarded_values: Any = None
-    # Associates CloudFront Functions with this cache behavior, specifying the function ARN and the event type (viewer-request or viewer-response) at which the function is invoked. (AI-inferred)
     function_associations: Any = None
-    # Specifies whether gRPC is enabled for this cache behavior. (AI-inferred)
     grpc_config: Any = None
-    # Specifies the Lambda@Edge functions to invoke for a cache behavior, along with the CloudFront event type (such as viewer-request or origin-response) that triggers each function. (AI-inferred)
     lambda_function_associations: Any = None
-    # The maximum time (in seconds) that objects are cached in CloudFront edge locations for this cache behavior, after which CloudFront will query the origin again regardless of the origin's Cache-Control headers. (AI-inferred)
     max_ttl: Any = None
-    # Defines the minimum time in seconds that CloudFront retains objects in its cache for this cache behavior, ensuring that even if the origin provides a shorter Cache-Control max-age or Expires header, CloudFront still caches the object for at least this duration. (AI-inferred)
     min_ttl: Any = None
-    # The unique identifier of the origin request policy attached to this cache behavior, which determines which headers, cookies, and query string parameters are forwarded from viewers to the origin. (AI-inferred)
     origin_request_policy_id: Any = None
-    # Specifies the URL path pattern (e.g., /images/*) that determines which requests this cache behavior applies to, routing matching requests to the behavior's origin and caching settings. (AI-inferred)
     path_pattern: Any = None
-    # Specifies the ARN of the real-time log configuration that determines which requests are logged in real time for this cache behavior. (AI-inferred)
     realtime_log_config_arn: Any = None
-    # Specifies the ID of the response headers policy that CloudFront attaches to HTTP responses for requests that match this cache behavior. (AI-inferred)
     response_headers_policy_id: Any = None
-    # Indicates whether to enable Smooth Streaming support for this cache behavior, allowing CloudFront to properly serve Microsoft Smooth Streaming media content such as manifests and fragments. (AI-inferred)
     smooth_streaming: Any = None
-    # The ID of the origin (from the distribution's origins) to which requests matching this cache behavior are forwarded. (AI-inferred)
     target_origin_id: Any = None
-    # Specifies the list of key group IDs whose public keys can be used to verify signed URLs or signed cookies for this cache behavior. (AI-inferred)
     trusted_key_groups: Any = None
-    # Specifies the AWS account IDs (or 'self') of trusted signers that are allowed to create signed URLs or signed cookies for this cache behavior, enabling access to private content. (AI-inferred)
     trusted_signers: Any = None
-    # Determines the protocol policy for viewer requests matched by this cache behavior, choosing between allowing HTTP and HTTPS ('allow-all'), enforcing HTTPS only ('https-only'), or redirecting HTTP to HTTPS ('redirect-to-https'). (AI-inferred)
     viewer_protocol_policy: Any = None
 
 @dataclasses.dataclass
@@ -102,13 +69,9 @@ class FrontDistribution_DistributionConfig_ConnectionFunctionAssociation:
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_CustomErrorResponses:
-    # The minimum time (in seconds) that CloudFront caches the custom error response for a given error code before requesting the origin again, configured as part of each custom error response entry. (AI-inferred)
     error_caching_min_ttl: Any = None
-    # The HTTP status code (e.g., 400, 403, 404, 500) for which CloudFront should return the custom error response defined in this custom_error_responses block. (AI-inferred)
     error_code: Any = None
-    # Sets the HTTP status code that CloudFront returns to the viewer for this custom error response, overriding the origin's status code. (AI-inferred)
     response_code: Any = None
-    # The path to the custom error page that CloudFront returns for the corresponding error code in a custom error response. (AI-inferred)
     response_page_path: Any = None
 
 @dataclasses.dataclass
@@ -178,35 +141,26 @@ class FrontDistribution_DistributionConfig_Logging:
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodes:
-    # The list of HTTP status codes from the primary origin that trigger CloudFront to fail over to the secondary origin in the origin group. (AI-inferred)
     items: Any = None
-    # The number of HTTP status codes in the items list that trigger failover for the origin group when a response matches one of these codes. (AI-inferred)
     quantity: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria:
-    # Specifies the HTTP status codes (as an object containing a list of integer codes in `items` and a `quantity` count) that, when returned by the primary origin, trigger failover to the secondary origin for a CloudFront origin group. (AI-inferred)
     status_codes: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_OriginGroups_Items_Members_Items:
-    # The unique identifier of an origin that is a member of this origin group, referencing an origin in the distribution's Origin list to enable failover between origins. (AI-inferred)
     origin_id: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_OriginGroups_Items_Members:
-    # Specifies the list of origin IDs that belong to this origin group, allowing CloudFront to perform failover between them based on the group's failover criteria. (AI-inferred)
     items: Any = None
-    # The number of origins in the origin group; in CloudFront an origin group always consists of exactly two members (primary and secondary), so this quantity must be 2. (AI-inferred)
     quantity: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_OriginGroups_Items:
-    # Specifies the HTTP status codes that, when returned by the primary origin, trigger CloudFront to fail over to the secondary origin for the origin group. (AI-inferred)
     failover_criteria: Any = None
-    # A unique identifier for the origin group, used to reference the origin group when associating it with cache behaviors or in the origin groups' failover configuration. (AI-inferred)
     id: Any = None
-    # Specifies the set of origins in this origin group, including the number of origins (Quantity) and the list of origin identifiers (Items) that CloudFront can fail over between. (AI-inferred)
     members: Any = None
     selection_criteria: Any = None
 
@@ -219,85 +173,54 @@ class FrontDistribution_DistributionConfig_OriginGroups:
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfig:
-    # The ARN of the client certificate, stored in AWS Certificate Manager, that CloudFront presents to this custom origin when using mutual TLS (mTLS). (AI-inferred)
     client_certificate_arn: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_CustomOriginConfig:
-    # Specifies the HTTP port that CloudFront uses to connect to the origin server. (AI-inferred)
     httpport: Any = None
-    # The HTTPS port that CloudFront uses to connect to the custom origin, defaulting to 443 if not specified. (AI-inferred)
     httpsport: Any = None
-    # Specifies the IP address type (IPv4, IPv6, or IPv4 and IPv6) that CloudFront uses when connecting to the custom origin. (AI-inferred)
     ip_address_type: Any = None
-    # Specifies the duration in seconds that CloudFront should keep an idle connection to the custom origin open, with a default of 5 seconds and a valid range of 1–60 seconds. (AI-inferred)
     origin_keepalive_timeout: Any = None
-    # Configures mutual TLS (mTLS) for the custom origin by specifying the S3 bucket container and the ARN of the client certificate that CloudFront presents to the origin. (AI-inferred)
     origin_mtls_config: Any = None
-    # Specifies the protocol policy that CloudFront uses to fetch files from the custom origin, allowing either HTTP only, HTTPS only, or matching the viewer's protocol (values: http-only, https-only, match-viewer). (AI-inferred)
     origin_protocol_policy: Any = None
-    # Specifies the read timeout in seconds that CloudFront waits for a reply from a custom origin server before timing out, applicable only to custom (non-S3) origins and typically ranging from 1 to 60 seconds. (AI-inferred)
     origin_read_timeout: Any = None
-    # Specifies the SSL/TLS protocols that CloudFront may use to establish a secure connection with the custom origin. (AI-inferred)
     origin_sslprotocols: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_OriginCustomHeaders:
-    # The name of a custom header that CloudFront adds to requests sent to the origin. (AI-inferred)
     header_name: Any = None
-    # The value of the custom header that CloudFront adds to requests it sends to the origin. (AI-inferred)
     header_value: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_OriginShield:
-    # Specifies whether Origin Shield is enabled for this origin, adding an additional caching layer that can reduce load on the origin and improve availability. (AI-inferred)
     enabled: Any = None
-    # Specifies the AWS Region where the CloudFront Origin Shield is located, providing an additional caching layer that reduces the load on the origin by aggregating requests from edge locations. (AI-inferred)
     origin_shield_region: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_S3OriginConfig:
-    # Specifies the CloudFront origin access identity (OAI) that CloudFront uses to access the S3 bucket, allowing you to restrict direct access to the bucket and only allow access through the distribution. (AI-inferred)
     origin_access_identity: Any = None
-    # The number of seconds CloudFront waits for a response from the S3 origin, including the time to read the response headers, before timing out (allowed range 1-60, default 30). (AI-inferred)
     origin_read_timeout: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins_VpcOriginConfig:
-    # The amount of time, in seconds, that CloudFront keeps an idle connection to the VPC origin alive before closing it, controlling connection reuse for the VPC origin configuration. (AI-inferred)
     origin_keepalive_timeout: Any = None
-    # The amount of time (in seconds) that CloudFront waits for the VPC origin to respond to a request after it has been forwarded, before considering the request failed. (AI-inferred)
     origin_read_timeout: Any = None
-    # The AWS account ID that owns the VPC endpoint serving as the origin, required when the endpoint is in a different account than the distribution. (AI-inferred)
     owner_account_id: Any = None
-    # The identifier of the CloudFront VPC origin that this origin references, which points to a supported resource (such as an Application Load Balancer) inside a VPC. (AI-inferred)
     vpc_origin_id: Any = None
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_Origins:
-    # Specifies the number of times that CloudFront attempts to connect to the origin before giving up, accepting values from 1 to 3. (AI-inferred)
     connection_attempts: Any = None
-    # For a custom origin, this sets the connection timeout in seconds (1–10, default 3) that CloudFront allows for establishing a TCP connection to the origin server. (AI-inferred)
     connection_timeout: Any = None
-    # Configuration for a custom origin (non-S3) that defines the ports, protocol policy, and SSL settings used when CloudFront communicates with the origin. (AI-inferred)
     custom_origin_config: Any = None
-    # Specifies the DNS domain name of the origin server (e.g., an S3 bucket website endpoint or custom HTTP server) from which CloudFront fetches content for this origin in the distribution. (AI-inferred)
     domain_name: Any = None
-    # The unique identifier for this origin within the distribution, used to reference it in cache behaviors and origin groups. (AI-inferred)
     id: Any = None
-    # The ID of the origin access control (OAC) that is associated with this origin, which CloudFront uses to securely access the origin (e.g., an S3 bucket). (AI-inferred)
     origin_access_control_id: Any = None
-    # Specifies custom headers that CloudFront includes in requests it sends to the origin for this origin configuration. (AI-inferred)
     origin_custom_headers: Any = None
-    # Specifies the directory path that CloudFront automatically appends to the origin's domain name for all requests forwarded to that origin, allowing content to be served from a subdirectory on the origin server. (AI-inferred)
     origin_path: Any = None
-    # Specifies the Origin Shield settings for this origin, including whether it is enabled and the AWS Region for the Origin Shield, to help reduce the load on your origin by caching and consolidating requests. (AI-inferred)
     origin_shield: Any = None
-    # Specifies the maximum time, in seconds, that CloudFront waits for the origin to respond to a request before timing out (also known as the origin read timeout or response completion timeout). (AI-inferred)
     response_completion_timeout: Any = None
-    # Configures the S3 bucket origin settings for this origin, including the CloudFront origin access identity that CloudFront uses to access the bucket. (AI-inferred)
     s3_origin_config: Any = None
-    # Configures this origin to use a VPC origin (e.g., an Application Load Balancer or App Runner service) by specifying the VPC origin's ID and optionally the read and keepalive timeout durations. (AI-inferred)
     vpc_origin_config: Any = None
 
 @dataclasses.dataclass
@@ -362,7 +285,6 @@ class FrontDistribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfig:
 
 @dataclasses.dataclass
 class FrontDistribution_DistributionConfig_ViewerMtlsConfig:
-    # Specifies whether viewer mutual TLS (mTLS) is enabled or disabled, where 'enabled' requires viewer requests to present a valid client certificate from the associated trust store and 'disabled' turns off mTLS enforcement. (AI-inferred)
     mode: Any = None
     # A trust store configuration.
     trust_store_config: Any = None
@@ -425,7 +347,6 @@ class FrontDistribution_DistributionConfig:
 
 @dataclasses.dataclass
 class FrontDistribution_Tags:
-    # The key of a key-value tag applied to the CloudFront distribution, used for organizing and identifying the AWS resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -868,9 +789,7 @@ class FrontDistributionConfig:
 class FrontDistributionAttrs:
     # A distribution configuration.
     distribution_config: Any = None
-    # The CloudFront distribution's automatically assigned domain name (e.g., d111111abcdef8.cloudfront.net) that clients use to access content served by the distribution. (AI-inferred)
     domain_name: Any = None
-    # The unique identifier assigned by AWS CloudFront to the distribution, used to reference the distribution in other resources and APIs. (AI-inferred)
     id: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

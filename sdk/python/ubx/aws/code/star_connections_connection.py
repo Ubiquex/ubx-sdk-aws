@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StarConnectionsConnection_Tags:
-    # The key of a tag attached to the AWS CodeStar Connections connection, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag attached to the AWS CodeStar Connections connection, which can be used to categorize and manage the resource. (AI-inferred)
     value: Any = None
 
 _StarConnectionsConnection_TagsFields = {

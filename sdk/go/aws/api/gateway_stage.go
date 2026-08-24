@@ -11,43 +11,27 @@ type GatewayStage_AccessLogSetting struct {
 }
 
 type GatewayStage_CanarySetting struct {
-	// The ID of the deployment that the canary will route a percentage of traffic to, allowing you to test changes before shifting all traffic to that deployment. (AI-inferred)
 	DeploymentId any
-	// Specifies the percentage of traffic that API Gateway routes to the canary deployment. (AI-inferred)
 	PercentTraffic any
-	// A map of stage variable names to values that temporarily override the stage's normal variables for canary traffic in the API Gateway stage, allowing different configuration for the canary version. (AI-inferred)
 	StageVariableOverrides any
-	// Indicates whether the canary should use the stage cache, enabling the canary's traffic to share the cache configured for the API Gateway stage. (AI-inferred)
 	UseStageCache any
 }
 
 type GatewayStage_MethodSettings struct {
-	// Specifies whether the method-level cache in the API Gateway stage encrypts cached response data before storing it. (AI-inferred)
 	CacheDataEncrypted any
-	// Specifies the time-to-live (TTL) duration, in seconds, for cached responses for a specific method in the API Gateway stage, controlling how long API Gateway caches a method's response before forwarding a new request to the backend. (AI-inferred)
 	CacheTtlInSeconds any
-	// Enables or disables API caching for this stage's method, so responses are cached and served from the cache until the cache TTL expires. (AI-inferred)
 	CachingEnabled any
-	// Enables data tracing for the method, capturing full request and response payloads in execution logs. (AI-inferred)
 	DataTraceEnabled any
-	// The HTTP method (for example GET, POST, or *) to which these method settings apply, where * matches all methods. (AI-inferred)
 	HttpMethod any
-	// Specifies the logging level (OFF, ERROR, or INFO) for the method's execution logs in API Gateway. (AI-inferred)
 	LoggingLevel any
-	// Enables CloudWatch metrics for the API Gateway method associated with this method setting. (AI-inferred)
 	MetricsEnabled any
-	// The resource path (e.g., '/pets') in the API Gateway API for which these method settings apply, used together with the HTTP method to identify a specific method on the stage. (AI-inferred)
 	ResourcePath any
-	// Sets the maximum number of requests per second that API Gateway can serve for the method during a burst, used to control throttling behavior. (AI-inferred)
 	ThrottlingBurstLimit any
-	// Sets the maximum steady-state request rate (requests per second) allowed for a method's throttling configuration in this API Gateway stage. (AI-inferred)
 	ThrottlingRateLimit any
 }
 
 type GatewayStage_Tags struct {
-	// The key of a user-defined tag applied to the API Gateway stage, used for organizing and identifying the stage in AWS cost allocation and resource management. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the API Gateway stage, which can be used for cost allocation, resource organization, and access control. (AI-inferred)
 	Value any
 }
 
@@ -84,29 +68,17 @@ var GatewayStage_TagsFields = ubx.FieldMap{
 type GatewayStageConfig struct {
 	// The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.
 	AccessLogSetting any
-	// Indicates whether a cache cluster is enabled for the API Gateway stage, allowing responses to be cached for performance. (AI-inferred)
 	CacheClusterEnabled any
-	// Specifies the cache cluster size (in gigabytes) for the API Gateway stage, using string values such as '0.5' or '1.6' when caching is enabled. (AI-inferred)
 	CacheClusterSize any
-	// Configures the canary deployment settings for the stage, including the percentage of traffic to route to the canary deployment, the deployment ID, and optional stage variable overrides and cache usage. (AI-inferred)
 	CanarySetting any
-	// The ID of the client certificate that API Gateway uses to authenticate client requests to the stage. (AI-inferred)
 	ClientCertificateId any
-	// The ID of the API Gateway deployment that this stage points to, determining which version of the API is exposed at this stage's endpoint. (AI-inferred)
 	DeploymentId any
-	// A description of the API Gateway stage, providing additional context about its purpose or contents. (AI-inferred)
 	Description any
-	// The identifier of the API documentation version to associate with this stage, controlling which published documentation snapshot is exposed for the stage. (AI-inferred)
 	DocumentationVersion any
-	// Configures per-method settings for the stage, including throttling, caching, metrics, and logging, keyed by method path. (AI-inferred)
 	MethodSettings any
-	// The ID of the REST API that this stage is associated with. (AI-inferred)
 	RestApiId any
-	// The name of the API Gateway stage (e.g., 'prod', 'dev'), which appears in the API's invoke URL and identifies the deployment associated with this stage. (AI-inferred)
 	StageName any
-	// A list of key-value pairs used to associate metadata with the API Gateway stage for cost allocation and management. (AI-inferred)
 	Tags any
-	// Indicates whether active tracing with AWS X-Ray is enabled for the API Gateway stage. (AI-inferred)
 	TracingEnabled any
 	// A map (string-to-string map) that defines the stage variables, where the variable name is the key and the variable value is the value. Variable names are limited to alphanumeric characters. Values must match the following regular expression: ``[A-Za-z0-9-._~:/?#&=,]+``.
 	Variables any
@@ -115,29 +87,17 @@ type GatewayStageConfig struct {
 type GatewayStageAttrs struct {
 	// The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [AWS::ApiGateway::Stage](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html) resource.
 	AccessLogSetting any
-	// Indicates whether a cache cluster is enabled for the API Gateway stage, allowing responses to be cached for performance. (AI-inferred)
 	CacheClusterEnabled any
-	// Specifies the cache cluster size (in gigabytes) for the API Gateway stage, using string values such as '0.5' or '1.6' when caching is enabled. (AI-inferred)
 	CacheClusterSize any
-	// Configures the canary deployment settings for the stage, including the percentage of traffic to route to the canary deployment, the deployment ID, and optional stage variable overrides and cache usage. (AI-inferred)
 	CanarySetting any
-	// The ID of the client certificate that API Gateway uses to authenticate client requests to the stage. (AI-inferred)
 	ClientCertificateId any
-	// The ID of the API Gateway deployment that this stage points to, determining which version of the API is exposed at this stage's endpoint. (AI-inferred)
 	DeploymentId any
-	// A description of the API Gateway stage, providing additional context about its purpose or contents. (AI-inferred)
 	Description any
-	// The identifier of the API documentation version to associate with this stage, controlling which published documentation snapshot is exposed for the stage. (AI-inferred)
 	DocumentationVersion any
-	// Configures per-method settings for the stage, including throttling, caching, metrics, and logging, keyed by method path. (AI-inferred)
 	MethodSettings any
-	// The ID of the REST API that this stage is associated with. (AI-inferred)
 	RestApiId any
-	// The name of the API Gateway stage (e.g., 'prod', 'dev'), which appears in the API's invoke URL and identifies the deployment associated with this stage. (AI-inferred)
 	StageName any
-	// A list of key-value pairs used to associate metadata with the API Gateway stage for cost allocation and management. (AI-inferred)
 	Tags any
-	// Indicates whether active tracing with AWS X-Ray is enabled for the API Gateway stage. (AI-inferred)
 	TracingEnabled any
 	// A map (string-to-string map) that defines the stage variables, where the variable name is the key and the variable value is the value. Variable names are limited to alphanumeric characters. Values must match the following regular expression: ``[A-Za-z0-9-._~:/?#&=,]+``.
 	Variables any

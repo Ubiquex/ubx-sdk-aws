@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TailorLiveSource_HttpPackageConfigurations:
-    # Specifies the relative path to the HTTP media package, which MediaTailor appends to the source location's base URL to fetch the live content. (AI-inferred)
     path: Any = None
-    # Specifies the name of the source group to which this HTTP package configuration belongs, allowing MediaTailor to route playback requests to the correct source for a given package type (e.g., DASH or HLS). (AI-inferred)
     source_group: Any = None
-    # Specifies the streaming format (e.g., DASH or HLS) for this HTTP package configuration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TailorLiveSource_Tags:
-    # Specifies the key for a tag associated with the AWS MediaTailor live source, enabling metadata-based resource management. (AI-inferred)
     key: Any = None
-    # The user-defined value portion of a tag key-value pair attached to the MediaTailor LiveSource, used for resource metadata, identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _TailorLiveSource_HttpPackageConfigurationsFields = {
@@ -37,9 +32,7 @@ _TailorLiveSource_TagsFields = {
 class TailorLiveSourceConfig:
     # <p>A list of HTTP package configuration parameters for this live source.</p>
     http_package_configurations: Any = None
-    # The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred)
     live_source_name: Any = None
-    # The name of the source location that contains this live source. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the live source.
     tags: Any = None
@@ -50,9 +43,7 @@ class TailorLiveSourceAttrs:
     arn: Any = None
     # <p>A list of HTTP package configuration parameters for this live source.</p>
     http_package_configurations: Any = None
-    # The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred)
     live_source_name: Any = None
-    # The name of the source location that contains this live source. (AI-inferred)
     source_location_name: Any = None
     # The tags to assign to the live source.
     tags: Any = None

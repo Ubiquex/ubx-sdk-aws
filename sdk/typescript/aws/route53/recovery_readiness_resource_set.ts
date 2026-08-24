@@ -2,51 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_Nlbresource {
-  /** The ARN of the Network Load Balancer (NLB) that serves as the target resource for this DNS target resource in the Route53 Recovery Readiness resource set. (AI-inferred) */
   arn?: string | Computed<string>;
 }
 
 export interface RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_R53Resource {
-  /** The domain name of the Route 53 record set that the DNS target resource references, used by Route 53 Recovery Readiness to evaluate the resource set's readiness. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** The unique identifier of the Route 53 record set within a hosted zone that this resource set uses as its DNS target for readiness checks. (AI-inferred) */
   recordSetId?: string | Computed<string>;
 }
 
 export interface RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource {
-  /** Contains the Amazon Resource Name (ARN) of the Network Load Balancer that this recovery readiness resource set uses as a failover target. (AI-inferred) */
   nlbresource?: RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_Nlbresource | Computed<RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_Nlbresource>;
-  /** Configuration for a Route 53 resource target, specifying the domain name and record set ID of the Route 53 record that this DNS target resource points to for readiness checks. (AI-inferred) */
   r53Resource?: RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_R53Resource | Computed<RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_R53Resource>;
 }
 
 export interface RecoveryReadinessResourceSet_Resources_DnsTargetResource {
-  /** The fully qualified domain name (FQDN) of the DNS target resource that Route 53 Recovery Readiness monitors to verify DNS routing and determine readiness for failover. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Route 53 hosted zone that contains the DNS record evaluated by this recovery readiness resource set's DNS target resource. (AI-inferred) */
   hostedZoneArn?: string | Computed<string>;
-  /** The ID of the Amazon Route 53 record set that this DNS target resource references, uniquely identifying the record set within its hosted zone for the readiness check. (AI-inferred) */
   recordSetId?: string | Computed<string>;
-  /** The DNS record type (e.g., A, AAAA, or CNAME) used for the DNS target resource in the Route 53 recovery readiness resource set. (AI-inferred) */
   recordType?: string | Computed<string>;
-  /** In a Route 53 Recovery Readiness resource set's DNS target resource, the `target_resource` object specifies the underlying AWS resource (such as an NLB or a Route 53 record set) that the DNS target points to for readiness checks. (AI-inferred) */
   targetResource?: RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource | Computed<RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource>;
 }
 
 export interface RecoveryReadinessResourceSet_Resources {
-  /** A unique identifier for this resource within the resource set, used to distinguish and group component resources when configuring Route53 Recovery Readiness checks. (AI-inferred) */
   componentId?: string | Computed<string>;
-  /** Defines the DNS target (Route 53 record set) resource within a resource set, specifying details such as domain name, hosted zone ARN, record type, and record value that Route 53 Application Recovery Controller monitors for readiness. (AI-inferred) */
   dnsTargetResource?: RecoveryReadinessResourceSet_Resources_DnsTargetResource | Computed<RecoveryReadinessResourceSet_Resources_DnsTargetResource>;
-  /** For each resource in the resource set, a list of ARNs of Cells or Recovery Groups whose readiness checks include this resource, determining which scopes the resource's readiness is evaluated against. (AI-inferred) */
   readinessScopes?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the AWS resource to include in this resource set, identifying the concrete resource whose readiness is being monitored for recovery testing. (AI-inferred) */
   resourceArn?: string | Computed<string>;
 }
 
 export interface RecoveryReadinessResourceSet_Tags {
   key?: string | Computed<string>;
-  /** The value component of each tag applied to the Route 53 Recovery Readiness resource set, used to store arbitrary user-defined metadata for identifying and managing the resource set. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

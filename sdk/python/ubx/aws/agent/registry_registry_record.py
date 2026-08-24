@@ -8,32 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider:
-    # The AWS Region used by the IAM credential provider when authenticating requests to fetch the agent card from the specified URL. (AI-inferred)
     region: Any = None
-    # The ARN of the IAM role that the IAM credential provider assumes to authenticate and access the source URL. (AI-inferred)
     role_arn: Any = None
     service: Any = None
 
 @dataclasses.dataclass
 class RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider:
     custom_parameters: Any = None
-    # The OAuth 2.0 grant type used by this credential provider to obtain an access token when fetching from the source URL, such as client_credentials. (AI-inferred)
     grant_type: Any = None
     provider_arn: Any = None
-    # Defines the list of OAuth 2.0 scopes to request when the OAuth credential provider obtains an access token to access the external URL source. (AI-inferred)
     scopes: Any = None
 
 @dataclasses.dataclass
 class RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider:
-    # Configuration for an IAM-based credential provider used to authenticate requests to the source URL from which the A2A agent card is fetched, specifying the IAM role or access keys to use. (AI-inferred)
     iam_credential_provider: Any = None
     oauth_credential_provider: Any = None
 
 @dataclasses.dataclass
 class RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations:
-    # The object that specifies which credential provider to use and its configuration (such as the provider type and provider-specific settings) for securely obtaining the authentication credentials needed to fetch the agent card from the given source URL. (AI-inferred)
     credential_provider: Any = None
-    # Selects the authentication protocol (such as basic authentication, OAuth, or API key) used by the credential provider configuration to fetch the agent card from the remote URL in the source. (AI-inferred)
     credential_provider_type: Any = None
 
 @dataclasses.dataclass

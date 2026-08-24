@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ArtifactDomain_Tags {
-  /** The key of a user-defined tag attached to an AWS CodeArtifact domain, enabling custom metadata for cost allocation, access control, and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The free-form value of a user-defined tag attached to an AWS CodeArtifact domain, used to add custom metadata for organizing and managing the domain. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

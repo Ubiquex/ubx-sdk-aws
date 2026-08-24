@@ -2,34 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayUsagePlan_ApiStages {
-  /** The identifier of the API for which this usage plan stage association is configured, referencing the API Gateway REST API. (AI-inferred) */
   apiId?: string | Computed<string>;
-  /** In the API Gateway UsagePlan's ApiStages list, this is the name of the deployed stage (such as 'prod') that the usage plan applies to. (AI-inferred) */
   stage?: string | Computed<string>;
-  /** Defines method-level throttling limits for the associated API stage, mapping individual method paths (e.g., 'GET /resource') to their own burst and rate limits. (AI-inferred) */
   throttle?: unknown | Computed<unknown>;
 }
 
 export interface GatewayUsagePlan_Quota {
-  /** The maximum number of API requests permitted during a specified quota period (day, week, or month) for the usage plan, as configured in the quota settings. (AI-inferred) */
   limit?: number | Computed<number>;
-  /** Specifies the number of requests that are deducted from the quota limit at the beginning of each period, effectively reducing the total number of requests allowed for that period. (AI-inferred) */
   offset?: number | Computed<number>;
-  /** The time period (DAY, WEEK, or MONTH) over which the usage plan's request quota is measured and enforced. (AI-inferred) */
   period?: string | Computed<string>;
 }
 
 export interface GatewayUsagePlan_Tags {
-  /** Defines the key of a user-defined tag attached to the API Gateway usage plan, used for metadata, cost allocation, and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value paired with a tag key on the API Gateway usage plan, used for cost allocation, resource organization, and IAM-based access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface GatewayUsagePlan_Throttle {
-  /** The maximum API request rate limit over a time-varying window of one second, defining the burst limit for the usage plan's throttling settings. (AI-inferred) */
   burstLimit?: number | Computed<number>;
-  /** Sets the steady-state request rate limit (in requests per second) allowed for API requests covered by the usage plan's throttling configuration. (AI-inferred) */
   rateLimit?: number | Computed<number>;
 }
 
@@ -56,34 +46,25 @@ const GatewayUsagePlan_ThrottleFields: FieldMap = {
 };
 
 export interface GatewayUsagePlanConfig {
-  /** Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred) */
   apiStages?: GatewayUsagePlan_ApiStages[] | Computed<GatewayUsagePlan_ApiStages[]>;
-  /** An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred) */
   description?: string | Computed<string>;
   /** ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests. */
   quota?: GatewayUsagePlan_Quota | Computed<GatewayUsagePlan_Quota>;
-  /** Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred) */
   tags?: GatewayUsagePlan_Tags[] | Computed<GatewayUsagePlan_Tags[]>;
   /** ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs. */
   throttle?: GatewayUsagePlan_Throttle | Computed<GatewayUsagePlan_Throttle>;
-  /** A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred) */
   usagePlanName?: string | Computed<string>;
 }
 
 export interface GatewayUsagePlanAttrs {
-  /** Associates this usage plan with specific API Gateway stages, optionally configuring per-stage throttling and quota limits for those stages. (AI-inferred) */
   apiStages: GatewayUsagePlan_ApiStages[];
-  /** An optional description that provides a friendly label or purpose for the usage plan, helping to distinguish it from other plans in the API Gateway. (AI-inferred) */
   description: string;
-  /** The unique identifier assigned by AWS API Gateway to this usage plan, used as the resource's id. (AI-inferred) */
   id: string;
   /** ``QuotaSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies a target for the maximum number of requests users can make to your REST APIs. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) to monitor costs and [](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html) to manage API requests. */
   quota: GatewayUsagePlan_Quota;
-  /** Specifies the key-value tags to assign to the usage plan, which AWS uses for cost allocation and resource management. (AI-inferred) */
   tags: GatewayUsagePlan_Tags[];
   /** ``ThrottleSettings`` is a property of the [AWS::ApiGateway::UsagePlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html) resource that specifies the overall request rate (average requests per second) and burst capacity when users call your REST APIs. */
   throttle: GatewayUsagePlan_Throttle;
-  /** A friendly name for the usage plan, used to identify it in the API Gateway console and API calls. (AI-inferred) */
   usagePlanName: string;
 }
 

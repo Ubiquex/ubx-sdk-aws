@@ -4,9 +4,7 @@ package fraud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DetectorVariable_Tags struct {
-	// The tag key for the AWS Fraud Detector variable, used to assign custom metadata for identifying, organizing, and managing the resource. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS Fraud Detector variable, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 

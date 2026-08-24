@@ -2,71 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface App_AutoBranchCreationConfig_BasicAuthConfig {
-  /** Whether to enable basic authentication for automatically created branches, requiring a username and password to access them. (AI-inferred) */
   enableBasicAuth?: boolean | Computed<boolean>;
-  /** The password to use for basic authentication when automatically creating branches for this Amplify app. (AI-inferred) */
   password?: string | Computed<string>;
-  /** Specifies the username used for basic authentication on branches that are automatically created by Amplify. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
 export interface App_AutoBranchCreationConfig_EnvironmentVariables {
-  /** The name of the environment variable to configure for automatically created branches in the Amplify app. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the environment variable that is automatically set for branches created via auto branch creation in the Amplify app. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface App_AutoBranchCreationConfig {
-  /** Specifies the branch name patterns that automatically trigger creation of matching branches in the Amplify app. (AI-inferred) */
   autoBranchCreationPatterns?: string[] | Computed<string[]>;
-  /** Configures basic authentication credentials (username and password) that are automatically applied to branches created according to the auto branch creation patterns. (AI-inferred) */
   basicAuthConfig?: App_AutoBranchCreationConfig_BasicAuthConfig | Computed<App_AutoBranchCreationConfig_BasicAuthConfig>;
-  /** The build specification (buildspec) content, in YAML or JSON format, that AWS Amplify uses to run the build for branches created automatically via the auto branch creation configuration. (AI-inferred) */
   buildSpec?: string | Computed<string>;
-  /** Indicates whether Amplify automatically creates a new app branch for every branch in the connected repository that matches the configured auto branch creation patterns. (AI-inferred) */
   enableAutoBranchCreation?: boolean | Computed<boolean>;
-  /** Enables automated build and deployment of branches that are automatically created for this app when they match the auto-branch-creation pattern. (AI-inferred) */
   enableAutoBuild?: boolean | Computed<boolean>;
-  /** Enables Amplify's performance mode for automatically created branches, which applies performance optimizations such as caching to the deployed app. (AI-inferred) */
   enablePerformanceMode?: boolean | Computed<boolean>;
-  /** Enables pull request previews for branches that are automatically created by Amplify, allowing you to preview changes from pull requests before merging. (AI-inferred) */
   enablePullRequestPreview?: boolean | Computed<boolean>;
-  /** Specifies the environment variables (as key-value pairs) that are applied to branches automatically created for the Amplify app. (AI-inferred) */
   environmentVariables?: App_AutoBranchCreationConfig_EnvironmentVariables[] | Computed<App_AutoBranchCreationConfig_EnvironmentVariables[]>;
-  /** The framework (e.g., React, Angular, Next.js) that AWS Amplify uses to configure the build process for automatically created branches of the app. (AI-inferred) */
   framework?: string | Computed<string>;
-  /** Sets the name of the environment (for example, 'pr') used for pull request preview deployments in the Amplify app's automatic branch creation configuration, so that pull request branches are built and deployed to a separate preview environment. (AI-inferred) */
   pullRequestEnvironmentName?: string | Computed<string>;
-  /** The stage (e.g., PRODUCTION, BETA, DEVELOPMENT) assigned to branches created automatically by the Amplify app's auto branch creation configuration. (AI-inferred) */
   stage?: string | Computed<string>;
 }
 
 export interface App_CacheConfig {
-  /** Determines whether the Amplify app uses the Amplify-managed cache (`AMPLIFY_MANAGED`) or the Amplify-managed cache without cookies (`AMPLIFY_MANAGED_NO_COOKIES`), controlling how edge cache keys are constructed for the app. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface App_CustomRules {
-  /** The condition expression string (e.g., a country code, IP address, or header match) that controls when this custom redirect or rewrite rule is applied. (AI-inferred) */
   condition?: string | Computed<string>;
-  /** The source pattern that matches incoming request URLs to trigger the custom rewrite or redirect rule. (AI-inferred) */
   source?: string | Computed<string>;
-  /** The HTTP status code (e.g., '200' for a rewrite, '301' for a permanent redirect, or '404' for a not-found response) that Amplify applies to this custom rewrite/redirect rule. (AI-inferred) */
   status?: string | Computed<string>;
-  /** The target field of a custom rule specifies the destination URL or path that requests matching the source pattern are redirected or rewritten to in an AWS Amplify app. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface App_JobConfig {
-  /** Specifies the compute resources (size tier) for Amplify build jobs, with valid values BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, or BUILD_GENERAL1_LARGE. (AI-inferred) */
   buildComputeType: string | Computed<string>;
 }
 
 export interface App_Tags {
-  /** The key of a tag assigned to the Amplify application. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag assigned to the Amplify app, used for organizing and identifying AWS resources. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -124,88 +100,48 @@ const App_TagsFields: FieldMap = {
 };
 
 export interface AppConfig {
-  /** GitHub personal access token Amplify uses to authenticate and pull the source repository linked to this app. (AI-inferred) */
   accessToken?: string | Computed<string>;
-  /** Configures which Git branches are automatically created in Amplify and the build/render settings (such as build spec, environment variables, and stage) applied to those branches. (AI-inferred) */
   autoBranchCreationConfig?: App_AutoBranchCreationConfig | Computed<App_AutoBranchCreationConfig>;
-  /** Configures basic authorization for the Amplify app, including an enable flag and the username and password used to protect access. (AI-inferred) */
   basicAuthConfig?: App_AutoBranchCreationConfig_BasicAuthConfig | Computed<App_AutoBranchCreationConfig_BasicAuthConfig>;
-  /** The build specification (buildspec) content for the Amplify app, which defines the build phases and commands used to compile and deploy the application. (AI-inferred) */
   buildSpec?: string | Computed<string>;
-  /** Defines the cache configuration for the Amplify app, including the cache type (`AMPLIFY_MANAGED` or `AMAZON_CLOUDFRONT`) that controls how the application's static assets are cached. (AI-inferred) */
   cacheConfig?: App_CacheConfig | Computed<App_CacheConfig>;
-  /** The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on behalf of the app, used for backend deployments and resource provisioning. (AI-inferred) */
   computeRoleArn?: string | Computed<string>;
-  /** Configures custom HTTP headers for the Amplify app, passed as a string containing header rules (e.g., YAML with pattern and header key-value pairs) that apply to specific path patterns. (AI-inferred) */
   customHeaders?: string | Computed<string>;
-  /** Specifies a list of custom rewrite and redirect rules for the Amplify app, each defining a source pattern, target URL, HTTP status code, and optional condition for matching requests. (AI-inferred) */
   customRules?: App_CustomRules[] | Computed<App_CustomRules[]>;
-  /** A user-defined description that provides additional information about the Amplify application. (AI-inferred) */
   description?: string | Computed<string>;
-  /** If enabled, Amplify automatically deletes the corresponding branch in the Amplify app when a branch is deleted in the connected repository. (AI-inferred) */
   enableBranchAutoDeletion?: boolean | Computed<boolean>;
-  /** A list of key-value pairs that define environment variables for the Amplify app, made available during build and runtime. (AI-inferred) */
   environmentVariables?: App_AutoBranchCreationConfig_EnvironmentVariables[] | Computed<App_AutoBranchCreationConfig_EnvironmentVariables[]>;
-  /** The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on your behalf. (AI-inferred) */
   iamserviceRole?: string | Computed<string>;
-  /** Configures an initial Amplify job that runs when the app is created, specifying the deployment branch and job type (e.g., BUILD or RELEASE). (AI-inferred) */
   jobConfig?: App_JobConfig | Computed<App_JobConfig>;
-  /** The name of the Amplify application, which is a required human-readable identifier displayed in the Amplify console. (AI-inferred) */
   name: string | Computed<string>;
-  /** The personal OAuth token from the Git provider (GitHub or Bitbucket) used to authorize AWS Amplify to access the repository associated with the app. (AI-inferred) */
   oauthToken?: string | Computed<string>;
-  /** Sets the deployment platform for the Amplify app, with valid values including WEB, WEB_DYNAMIC, and WEB_COMPUTE, which determine how the app is built and hosted (e.g., static, dynamic, or server-side rendered). (AI-inferred) */
   platform?: string | Computed<string>;
-  /** The HTTPS URL of the Git repository that AWS Amplify connects to and deploys for the app; if omitted, Amplify creates a blank app with no repository connected. (AI-inferred) */
   repository?: string | Computed<string>;
-  /** Specifies custom tags (key-value pairs) to associate with the Amplify app, which can be used for resource-level permissions, cost allocation, and organizing the app within AWS. (AI-inferred) */
   tags?: App_Tags[] | Computed<App_Tags[]>;
 }
 
 export interface AppAttrs {
-  /** GitHub personal access token Amplify uses to authenticate and pull the source repository linked to this app. (AI-inferred) */
   accessToken: string;
-  /** The unique ID that AWS Amplify assigns to the app upon creation, used to reference the app in Amplify console and API operations. (AI-inferred) */
   appId: string;
-  /** The read-only name assigned to the Amplify app, which identifies the application in the Amplify console and is returned by the Amplify service. (AI-inferred) */
   appName: string;
-  /** The Amazon Resource Name (ARN) of the Amplify app, uniquely identifying it within AWS. (AI-inferred) */
   arn: string;
-  /** Configures which Git branches are automatically created in Amplify and the build/render settings (such as build spec, environment variables, and stage) applied to those branches. (AI-inferred) */
   autoBranchCreationConfig: App_AutoBranchCreationConfig;
-  /** Configures basic authorization for the Amplify app, including an enable flag and the username and password used to protect access. (AI-inferred) */
   basicAuthConfig: App_AutoBranchCreationConfig_BasicAuthConfig;
-  /** The build specification (buildspec) content for the Amplify app, which defines the build phases and commands used to compile and deploy the application. (AI-inferred) */
   buildSpec: string;
-  /** Defines the cache configuration for the Amplify app, including the cache type (`AMPLIFY_MANAGED` or `AMAZON_CLOUDFRONT`) that controls how the application's static assets are cached. (AI-inferred) */
   cacheConfig: App_CacheConfig;
-  /** The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on behalf of the app, used for backend deployments and resource provisioning. (AI-inferred) */
   computeRoleArn: string;
-  /** Configures custom HTTP headers for the Amplify app, passed as a string containing header rules (e.g., YAML with pattern and header key-value pairs) that apply to specific path patterns. (AI-inferred) */
   customHeaders: string;
-  /** Specifies a list of custom rewrite and redirect rules for the Amplify app, each defining a source pattern, target URL, HTTP status code, and optional condition for matching requests. (AI-inferred) */
   customRules: App_CustomRules[];
-  /** The default domain automatically assigned to the Amplify app (e.g., a unique subdomain under amplifyapp.com), served as the primary URL for the app. (AI-inferred) */
   defaultDomain: string;
-  /** A user-defined description that provides additional information about the Amplify application. (AI-inferred) */
   description: string;
-  /** If enabled, Amplify automatically deletes the corresponding branch in the Amplify app when a branch is deleted in the connected repository. (AI-inferred) */
   enableBranchAutoDeletion: boolean;
-  /** A list of key-value pairs that define environment variables for the Amplify app, made available during build and runtime. (AI-inferred) */
   environmentVariables: App_AutoBranchCreationConfig_EnvironmentVariables[];
-  /** The ARN of the IAM service role that AWS Amplify assumes to access AWS resources on your behalf. (AI-inferred) */
   iamserviceRole: string;
-  /** Configures an initial Amplify job that runs when the app is created, specifying the deployment branch and job type (e.g., BUILD or RELEASE). (AI-inferred) */
   jobConfig: App_JobConfig;
-  /** The name of the Amplify application, which is a required human-readable identifier displayed in the Amplify console. (AI-inferred) */
   name: string;
-  /** The personal OAuth token from the Git provider (GitHub or Bitbucket) used to authorize AWS Amplify to access the repository associated with the app. (AI-inferred) */
   oauthToken: string;
-  /** Sets the deployment platform for the Amplify app, with valid values including WEB, WEB_DYNAMIC, and WEB_COMPUTE, which determine how the app is built and hosted (e.g., static, dynamic, or server-side rendered). (AI-inferred) */
   platform: string;
-  /** The HTTPS URL of the Git repository that AWS Amplify connects to and deploys for the app; if omitted, Amplify creates a blank app with no repository connected. (AI-inferred) */
   repository: string;
-  /** Specifies custom tags (key-value pairs) to associate with the Amplify app, which can be used for resource-level permissions, cost allocation, and organizing the app within AWS. (AI-inferred) */
   tags: App_Tags[];
 }
 

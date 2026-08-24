@@ -4,91 +4,64 @@ package lake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationPrincipalPermissions_Principal struct {
-	// Unique identifier for the principal receiving the Lake Formation permissions, such as an AWS account ID, IAM role ARN, or IAM user ARN. (AI-inferred)
 	DataLakePrincipalIdentifier any
 }
 
 type FormationPrincipalPermissions_Resource_DataCellsFilter struct {
-	// The name of the Lake Formation database that contains the data cells filter to which the principal permissions are being granted. (AI-inferred)
 	DatabaseName any
-	// The name of the AWS Lake Formation Data Cells Filter to which the principal permissions are being granted. (AI-inferred)
 	Name any
-	// The AWS Glue Data Catalog ID (usually the account ID) of the catalog that contains the database and table for which this data cells filter is defined. (AI-inferred)
 	TableCatalogId any
-	// The name of the table in the AWS Glue Data Catalog on which the referenced data cells filter is defined, identifying the specific table resource for this Lake Formation principal permission. (AI-inferred)
 	TableName any
 }
 
 type FormationPrincipalPermissions_Resource_DataLocation struct {
-	// The ID of the AWS Glue Data Catalog (typically the AWS account ID) where the S3 data location is registered and for which permissions are being granted. (AI-inferred)
 	CatalogId any
-	// The Amazon Resource Name (ARN) of the S3 data location that this principal permission applies to, identifying the exact AWS Lake Formation data location resource for the permission grant. (AI-inferred)
 	ResourceArn any
 }
 
 type FormationPrincipalPermissions_Resource_Database struct {
-	// The identifier of the Data Catalog (typically the AWS account ID) that contains the database, used to specify which database resource the principal permissions apply to. (AI-inferred)
 	CatalogId any
-	// The name of the AWS Glue Data Catalog database to which the principal permissions apply. (AI-inferred)
 	Name any
 }
 
 type FormationPrincipalPermissions_Resource_Lftag struct {
-	// The ID of the Data Catalog (typically the AWS account ID) that contains the LF-tag on which the principal permissions are granted. (AI-inferred)
 	CatalogId any
-	// The key of the Lake Formation LF-tag that defines the resource to which the principal permissions apply. (AI-inferred)
 	TagKey any
-	// The LF-tag values that, combined with the tag key, identify the tag resource to which the principal permissions are granted. (AI-inferred)
 	TagValues any
 }
 
 type FormationPrincipalPermissions_Resource_LftagPolicy_Expression struct {
-	// The key of the LF-Tag in an LF-Tag policy expression that specifies the set of LF-Tags to which the principal permissions apply. (AI-inferred)
 	TagKey any
-	// Specifies the allowable values for the LF-tag key in a tag condition of the LF-tag policy expression that determines resource access. (AI-inferred)
 	TagValues any
 }
 
 type FormationPrincipalPermissions_Resource_LftagPolicy struct {
-	// The ID of the Glue Data Catalog (typically the AWS account ID) where the LF-Tag policy is defined. (AI-inferred)
 	CatalogId any
-	// The expression is a list of LF-tag key-value pairs that define the set of Lake Formation resources (e.g., databases or tables) to which the granted principal permissions apply, requiring the resource to match all specified tag keys and at least one value from each key's allowed list. (AI-inferred)
 	Expression any
-	// Specifies the resource type for the LF-tag policy, which must be either DATABASE or TABLE, determining the type of Lake Formation resource to which the tag-based permissions apply. (AI-inferred)
 	ResourceType any
 }
 
 type FormationPrincipalPermissions_Resource_Table struct {
-	// The Data Catalog ID (typically the AWS account ID) that contains the table for which the principal permissions are being granted, used to uniquely identify the table resource. (AI-inferred)
 	CatalogId any
-	// The name of the AWS Glue Data Catalog database that contains the table for which these Lake Formation principal permissions are being granted. (AI-inferred)
 	DatabaseName any
-	// The name of the table within the database to which the principal permissions are granted. (AI-inferred)
 	Name any
-	// When set, this field represents a table wildcard, meaning the permission applies to every table under the specified database instead of a single named table. (AI-inferred)
 	TableWildcard any
 }
 
 type FormationPrincipalPermissions_Resource_TableWithColumns_ColumnWildcard struct {
-	// A list of column names to exclude from the column wildcard, meaning all other columns in the table are matched by the wildcard for the Lake Formation permission grant. (AI-inferred)
 	ExcludedColumnNames any
 }
 
 type FormationPrincipalPermissions_Resource_TableWithColumns struct {
-	// The identifier of the Data Catalog, typically the AWS account ID, for the table with columns resource. (AI-inferred)
 	CatalogId any
-	// Specifies the list of column names within the table that the principal's permissions are scoped to, when the resource is set to a TableWithColumns resource. (AI-inferred)
 	ColumnNames any
 	// A wildcard object, consisting of an optional list of excluded column names or indexes.
 	ColumnWildcard any
-	// The name of the database in which the table resides for the table-with-columns resource to which permissions apply. (AI-inferred)
 	DatabaseName any
-	// The name of the table (within the specified database) to which the principal permissions apply for selected columns. (AI-inferred)
 	Name any
 }
 
 type FormationPrincipalPermissions_Resource struct {
-	// When set, this field identifies the Data Catalog itself as the resource to which the granted principal permissions apply, meaning the permissions cover all metadata objects in the catalog. (AI-inferred)
 	Catalog any
 	// A structure that describes certain columns on certain rows.
 	DataCellsFilter any
@@ -212,9 +185,7 @@ var FormationPrincipalPermissions_ResourceFields = ubx.FieldMap{
 
 type FormationPrincipalPermissionsConfig struct {
 	Catalog any
-	// The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
 	Permissions any
-	// The list of Lake Formation permissions to grant to the principal, where the principal also receives the ability to grant these permissions to other principals. (AI-inferred)
 	PermissionsWithGrantOption any
 	// The LFlong principal.
 	Principal any
@@ -224,17 +195,13 @@ type FormationPrincipalPermissionsConfig struct {
 
 type FormationPrincipalPermissionsAttrs struct {
 	Catalog any
-	// The list of Lake Formation permissions to grant to the principal, with allowed values such as ALL, ALTER, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS, DELETE, DESCRIBE, DROP, INSERT, and SELECT. (AI-inferred)
 	Permissions any
-	// The list of Lake Formation permissions to grant to the principal, where the principal also receives the ability to grant these permissions to other principals. (AI-inferred)
 	PermissionsWithGrantOption any
 	// The LFlong principal.
 	Principal any
-	// The identifier of the Lake Formation principal (such as an IAM user or role ARN, or an AWS account ID) to which the permissions are granted or revoked. (AI-inferred)
 	PrincipalIdentifier any
 	// A structure for the resource.
 	Resource any
-	// The unique AWS-generated identifier for this Lake Formation principal permission grant, which encapsulates the principal and resource that the permission applies to. (AI-inferred)
 	ResourceIdentifier any
 }
 

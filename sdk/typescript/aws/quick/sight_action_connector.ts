@@ -3,19 +3,14 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadata {
   apiKey?: string | Computed<string>;
-  /** The base endpoint URL of the external API service that the QuickSight action connector communicates with when using API key authentication. (AI-inferred) */
   baseEndpoint?: string | Computed<string>;
   email?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails_AuthorizationCodeGrantDetails {
-  /** The URL of the OAuth 2.0 authorization server's authorization endpoint to which users are redirected to grant permissions during the authorization code grant flow for the QuickSight action connector. (AI-inferred) */
   authorizationEndpoint?: string | Computed<string>;
-  /** The OAuth 2.0 client ID issued to the QuickSight action connector by the external authorization server, used as the public client identifier during the authorization code grant flow to obtain access tokens. (AI-inferred) */
   clientId?: string | Computed<string>;
-  /** The client secret for the OAuth authorization code grant flow, used by the QuickSight action connector to authenticate with the external service. (AI-inferred) */
   clientSecret?: string | Computed<string>;
-  /** The URL of the OAuth 2.0 token endpoint used in the authorization code grant flow to exchange an authorization code for an access token. (AI-inferred) */
   tokenEndpoint?: string | Computed<string>;
 }
 
@@ -24,29 +19,21 @@ export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadat
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata {
-  /** Contains the OAuth 2.0 client ID and client secret (or a reference to a Secrets Manager secret storing them) used by the QuickSight action connector during the authorization code grant token exchange in its authentication flow. (AI-inferred) */
   authorizationCodeGrantCredentialsDetails?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata_AuthorizationCodeGrantCredentialsDetails>;
   authorizationCodeGrantCredentialsSource?: string | Computed<string>;
-  /** The base endpoint (base URL) of the OAuth authorization server to which Amazon QuickSight sends authorization code grant requests for the action connector's authentication metadata. (AI-inferred) */
   baseEndpoint?: string | Computed<string>;
-  /** Specifies the redirect (callback) URL to which the user is redirected after authorizing the OAuth 2.0 authorization code grant, enabling the QuickSight action connector to exchange the authorization code for tokens. (AI-inferred) */
   redirectUrl?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadata {
-  /** The base endpoint (root URL) of the external service that this basic authentication connection targets, used as the base for all API requests made through the connector. (AI-inferred) */
   baseEndpoint?: string | Computed<string>;
-  /** Specifies the password for HTTP basic authentication to the external endpoint that this QuickSight action connector is configured to call. (AI-inferred) */
   password?: string | Computed<string>;
   username?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails_ClientCredentialsGrantDetails {
-  /** The OAuth client identifier used in the client credentials grant flow to authenticate the QuickSight action connector. (AI-inferred) */
   clientId?: string | Computed<string>;
-  /** The client secret used to authenticate the application when requesting an access token via the OAuth 2.0 client credentials grant for the QuickSight action connector. (AI-inferred) */
   clientSecret?: string | Computed<string>;
-  /** Defines the OAuth 2.0 token endpoint URL that the QuickSight action connector calls with the client credentials grant to obtain an access token for authenticating to the external API. (AI-inferred) */
   tokenEndpoint?: string | Computed<string>;
 }
 
@@ -56,42 +43,34 @@ export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadat
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata {
   baseEndpoint?: string | Computed<string>;
-  /** This object contains the client credentials (e.g., client ID and client secret) and other details needed to perform the OAuth 2.0 client-credentials grant for authenticating the QuickSight action connector to the external service. (AI-inferred) */
   clientCredentialsDetails?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata_ClientCredentialsDetails>;
   clientCredentialsSource?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadata {
-  /** The ARN of the IAM role that QuickSight assumes to authenticate with the external service when using IAM connection metadata for this action connector. (AI-inferred) */
   roleArn?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadata {
-  /** The base endpoint URL that the QuickSight action connector targets when no authentication method (NoneConnectionMetadata) is used. (AI-inferred) */
   baseEndpoint?: string | Computed<string>;
 }
 
 export interface SightActionConnector_AuthenticationConfig_AuthenticationMetadata {
   apiKeyConnectionMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ApiKeyConnectionMetadata>;
-  /** Contains the OAuth 2.0 authorization code grant parameters (such as authorization and token endpoints, client ID, client secret, and scopes) used by QuickSight to authenticate an action connector to an external service. (AI-inferred) */
   authorizationCodeGrantMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_AuthorizationCodeGrantMetadata>;
   basicAuthConnectionMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_BasicAuthConnectionMetadata>;
   clientCredentialsGrantMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_ClientCredentialsGrantMetadata>;
   iamConnectionMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_IamConnectionMetadata>;
-  /** The `noneConnectionMetadata` object is an empty placeholder used within the authentication metadata when the authentication type is set to `none`, indicating that no connection credentials are required for the action connector. (AI-inferred) */
   noneConnectionMetadata?: SightActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata_NoneConnectionMetadata>;
 }
 
 export interface SightActionConnector_AuthenticationConfig {
   authenticationMetadata: SightActionConnector_AuthenticationConfig_AuthenticationMetadata | Computed<SightActionConnector_AuthenticationConfig_AuthenticationMetadata>;
-  /** Specifies the authentication mechanism (such as basic authentication, API key, or OAuth 2.0) that QuickSight uses to authenticate the action connector when invoking the external endpoint. (AI-inferred) */
   authenticationType: string | Computed<string>;
 }
 
 export interface SightActionConnector_Permissions {
-  /** Specifies the list of Amazon QuickSight actions (e.g., "quicksight:DescribeDashboard", "quicksight:UpdateDashboard") that the principal is allowed to perform on the QuickSight resource. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The ARN of the principal (IAM user, group, role, or QuickSight user/group) that the corresponding actions are being granted to for this QuickSight action connector. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
@@ -225,15 +204,12 @@ const SightActionConnector_TagsFields: FieldMap = {
 export interface SightActionConnectorConfig {
   actionConnectorId: string | Computed<string>;
   authenticationConfig: SightActionConnector_AuthenticationConfig | Computed<SightActionConnector_AuthenticationConfig>;
-  /** The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred) */
   awsAccountId: string | Computed<string>;
   description?: string | Computed<string>;
   name: string | Computed<string>;
   permissions?: SightActionConnector_Permissions[] | Computed<SightActionConnector_Permissions[]>;
   tags?: SightActionConnector_Tags[] | Computed<SightActionConnector_Tags[]>;
-  /** The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred) */
   type: string | Computed<string>;
-  /** The ARN of the VPC connection that the QuickSight action connector uses to securely access resources within a private VPC. (AI-inferred) */
   vpcConnectionArn?: string | Computed<string>;
 }
 
@@ -241,7 +217,6 @@ export interface SightActionConnectorAttrs {
   actionConnectorId: string;
   arn: string;
   authenticationConfig: SightActionConnector_AuthenticationConfig;
-  /** The AWS account ID where the QuickSight action connector is deployed, used to scope the resource within the correct account. (AI-inferred) */
   awsAccountId: string;
   createdTime: string;
   description: string;
@@ -251,9 +226,7 @@ export interface SightActionConnectorAttrs {
   permissions: SightActionConnector_Permissions[];
   status: string;
   tags: SightActionConnector_Tags[];
-  /** The type of the QuickSight action connector, identifying the external system or service it integrates with (e.g., ServiceNow, Salesforce, or similar supported platforms), required when defining the connector. (AI-inferred) */
   type: string;
-  /** The ARN of the VPC connection that the QuickSight action connector uses to securely access resources within a private VPC. (AI-inferred) */
   vpcConnectionArn: string;
 }
 

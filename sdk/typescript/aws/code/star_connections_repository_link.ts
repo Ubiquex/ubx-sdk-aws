@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StarConnectionsRepositoryLink_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key associated with the AWS CodeStar Connections repository link resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

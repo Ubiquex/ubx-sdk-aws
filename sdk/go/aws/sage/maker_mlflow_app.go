@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerMlflowApp_Tags struct {
-	// The key of a tag attached to the SageMaker MLflow App, used to organize, identify, and manage access to the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the SageMaker MLflow App, used to assign metadata such as environment, owner, or cost center for resource management and identification. (AI-inferred)
 	Value any
 }
 

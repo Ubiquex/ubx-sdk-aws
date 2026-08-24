@@ -2,18 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TThingPrincipalAttachmentConfig {
-  /** The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred) */
   principal: string | Computed<string>;
-  /** The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred) */
   thingName: string | Computed<string>;
   thingPrincipalType?: string | Computed<string>;
 }
 
 export interface TThingPrincipalAttachmentAttrs {
   id: string;
-  /** The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred) */
   principal: string;
-  /** The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred) */
   thingName: string;
   thingPrincipalType: string;
 }

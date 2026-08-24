@@ -72,7 +72,6 @@ export interface MakerModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInp
   localPath: string | Computed<string>;
   /** Index or JSONpath to locate probabilities */
   probabilityAttribute?: string | Computed<string>;
-  /** The numeric probability threshold value used to convert the predicted probability scores in the batch transform input dataset into binary predictions for model bias analysis. (AI-inferred) */
   probabilityThresholdAttribute?: number | Computed<number>;
   /** Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated */
   s3DataDistributionType?: string | Computed<string>;
@@ -95,7 +94,6 @@ export interface MakerModelBiasJobDefinition_ModelBiasJobInput_EndpointInput {
   localPath: string | Computed<string>;
   /** Index or JSONpath to locate probabilities */
   probabilityAttribute?: string | Computed<string>;
-  /** Specifies the numeric probability threshold used for binary classification by the SageMaker Clarify model bias analysis to convert model output probabilities into predicted labels for the endpoint input. (AI-inferred) */
   probabilityThresholdAttribute?: number | Computed<number>;
   /** Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated */
   s3DataDistributionType?: string | Computed<string>;
@@ -115,16 +113,12 @@ export interface MakerModelBiasJobDefinition_ModelBiasJobInput {
 }
 
 export interface MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3Output {
-  /** The local directory path on the processing container where the model bias job writes its output files before they are uploaded to the specified S3 URI. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Specifies whether the monitoring output is uploaded to S3 continuously during the job or only at the end of the job, with valid values `Continuous` and `EndOfJob`. (AI-inferred) */
   s3UploadMode?: string | Computed<string>;
-  /** The S3 URI where the results of the model bias monitoring job are stored as output, typically an S3 bucket and prefix path. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs {
-  /** Specifies the S3 bucket URI and local directory path where the model bias monitoring job's results are uploaded, with an optional upload mode (e.g., Continuous or EndOfJob) controlling when the data is copied. (AI-inferred) */
   s3Output?: MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3Output | Computed<MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3Output>;
 }
 
@@ -157,9 +151,7 @@ export interface MakerModelBiasJobDefinition_StoppingCondition {
 }
 
 export interface MakerModelBiasJobDefinition_Tags {
-  /** The key of a tag attached to the SageMaker model bias job definition, used for organizing and identifying the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the SageMaker Model Bias Job Definition, used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

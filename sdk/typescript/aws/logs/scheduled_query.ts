@@ -2,21 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ScheduledQuery_DestinationConfiguration_S3Configuration {
-  /** The destination name that CloudWatch Logs uses to construct the S3 path prefix for the scheduled query's result files, enabling distinct storage locations within the specified bucket. (AI-inferred) */
   destinationIdentifier: string | Computed<string>;
-  /** The ARN of the IAM role that allows CloudWatch Logs to write the scheduled query's results to the specified S3 bucket. (AI-inferred) */
   roleArn: string | Computed<string>;
 }
 
 export interface ScheduledQuery_DestinationConfiguration {
-  /** Defines the target S3 bucket (and optional prefix) where the results of the scheduled query will be delivered when the destination type is S3. (AI-inferred) */
   s3Configuration?: ScheduledQuery_DestinationConfiguration_S3Configuration | Computed<ScheduledQuery_DestinationConfiguration_S3Configuration>;
 }
 
 export interface ScheduledQuery_Tags {
-  /** For the AWS::Logs::ScheduledQuery resource, this field is the key of a user-defined tag attached to the scheduled query, which can be used for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the CloudWatch Logs scheduled query, used for organizing, identifying, and tracking costs of the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -39,70 +34,41 @@ const ScheduledQuery_TagsFields: FieldMap = {
 };
 
 export interface ScheduledQueryConfig {
-  /** An optional, user-defined text string that describes the purpose or details of the scheduled query, stored as metadata on the query definition in CloudWatch Logs Insights. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the destination configuration for delivering the results of the scheduled query, including the S3 bucket where the query results are written. (AI-inferred) */
   destinationConfiguration?: ScheduledQuery_DestinationConfiguration | Computed<ScheduledQuery_DestinationConfiguration>;
-  /** The ARN of the IAM role that CloudWatch Logs assumes to execute the scheduled query on your behalf. (AI-inferred) */
   executionRoleArn: string | Computed<string>;
-  /** Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred) */
   logGroupIdentifiers?: string[] | Computed<string[]>;
   name: string | Computed<string>;
-  /** The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred) */
   queryLanguage: string | Computed<string>;
-  /** The CloudWatch Logs Insights query string that the scheduled query executes against the specified log groups to generate its results. (AI-inferred) */
   queryString: string | Computed<string>;
-  /** The optional Unix timestamp (in milliseconds) that defines when the scheduled query's recurrence should end, after which the query will no longer be automatically executed. (AI-inferred) */
   scheduleEndTime?: number | Computed<number>;
-  /** The rate or cron expression that defines how often the CloudWatch Logs scheduled query runs, e.g., 'rate(5 minutes)' or a cron expression. (AI-inferred) */
   scheduleExpression: string | Computed<string>;
-  /** The epoch time (in milliseconds) when the scheduled query's recurring execution schedule starts. (AI-inferred) */
   scheduleStartTime?: number | Computed<number>;
-  /** The number of seconds before a scheduled query execution that determines the start of the time window from which logs are queried, enabling retrieval of logs from a recent period relative to each run. (AI-inferred) */
   startTimeOffset?: number | Computed<number>;
-  /** Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred) */
   state?: string | Computed<string>;
   tags?: ScheduledQuery_Tags[] | Computed<ScheduledQuery_Tags[]>;
-  /** The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred) */
   timezone?: string | Computed<string>;
 }
 
 export interface ScheduledQueryAttrs {
-  /** The creation_time attribute is a read-only number representing the Unix epoch timestamp, in seconds, at which the scheduled query was created. (AI-inferred) */
   creationTime: number;
-  /** An optional, user-defined text string that describes the purpose or details of the scheduled query, stored as metadata on the query definition in CloudWatch Logs Insights. (AI-inferred) */
   description: string;
-  /** Specifies the destination configuration for delivering the results of the scheduled query, including the S3 bucket where the query results are written. (AI-inferred) */
   destinationConfiguration: ScheduledQuery_DestinationConfiguration;
-  /** The ARN of the IAM role that CloudWatch Logs assumes to execute the scheduled query on your behalf. (AI-inferred) */
   executionRoleArn: string;
-  /** Contains the status of the most recent execution of the scheduled query (such as RUNNING, COMPLETE, or FAILED), as a computed read-only value maintained by CloudWatch Logs. (AI-inferred) */
   lastExecutionStatus: string;
-  /** The Unix timestamp of the most recent automatic execution of the scheduled query by CloudWatch Logs. (AI-inferred) */
   lastTriggeredTime: number;
-  /** The timestamp, in Unix time milliseconds, when the scheduled query was last updated. (AI-inferred) */
   lastUpdatedTime: number;
-  /** Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred) */
   logGroupIdentifiers: string[];
   name: string;
-  /** The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred) */
   queryLanguage: string;
-  /** The CloudWatch Logs Insights query string that the scheduled query executes against the specified log groups to generate its results. (AI-inferred) */
   queryString: string;
-  /** The optional Unix timestamp (in milliseconds) that defines when the scheduled query's recurrence should end, after which the query will no longer be automatically executed. (AI-inferred) */
   scheduleEndTime: number;
-  /** The rate or cron expression that defines how often the CloudWatch Logs scheduled query runs, e.g., 'rate(5 minutes)' or a cron expression. (AI-inferred) */
   scheduleExpression: string;
-  /** The epoch time (in milliseconds) when the scheduled query's recurring execution schedule starts. (AI-inferred) */
   scheduleStartTime: number;
-  /** The Amazon Resource Name (ARN) of the scheduled query, assigned by AWS when the query is created. (AI-inferred) */
   scheduledQueryArn: string;
-  /** The number of seconds before a scheduled query execution that determines the start of the time window from which logs are queried, enabling retrieval of logs from a recent period relative to each run. (AI-inferred) */
   startTimeOffset: number;
-  /** Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred) */
   state: string;
   tags: ScheduledQuery_Tags[];
-  /** The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred) */
   timezone: string;
 }
 

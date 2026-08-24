@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class EipassociationConfig:
     # The allocation ID. This is required.
     allocation_id: Any = None
-    # The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred)
     eip: Any = None
     # The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.
     instance_id: Any = None
@@ -23,9 +22,7 @@ class EipassociationConfig:
 class EipassociationAttrs:
     # The allocation ID. This is required.
     allocation_id: Any = None
-    # The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred)
     eip: Any = None
-    # The unique identifier of the Elastic IP association, which is the association ID (e.g., eipassoc-...) returned by AWS. (AI-inferred)
     id: Any = None
     # The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.
     instance_id: Any = None

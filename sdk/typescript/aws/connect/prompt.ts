@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Prompt_Tags {
-  /** The key of a tag assigned to the AWS Connect prompt, used for identifying and categorizing the prompt resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

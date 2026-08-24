@@ -4,9 +4,7 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectGateway_Networks struct {
-	// CIDR block of the subnet where the gateway's network interface resides, used to define the network's IP address range. (AI-inferred)
 	CidrBlock any
-	// The name of the network interface, used to identify it within the gateway. (AI-inferred)
 	Name any
 }
 

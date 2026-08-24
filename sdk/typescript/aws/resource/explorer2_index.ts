@@ -3,17 +3,13 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Explorer2IndexConfig {
   tags?: unknown | Computed<unknown>;
-  /** Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface Explorer2IndexAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Resource Explorer index, assigned by AWS when the index is created. (AI-inferred) */
   arn: string;
-  /** The current lifecycle state of the index, such as ACTIVE, CREATING, UPDATING, or DELETING, as reported by AWS Resource Explorer. (AI-inferred) */
   indexState: string;
   tags: unknown;
-  /** Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred) */
   type: string;
 }
 

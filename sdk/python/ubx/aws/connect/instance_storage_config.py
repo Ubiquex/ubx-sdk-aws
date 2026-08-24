@@ -25,7 +25,6 @@ class InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig:
 
 @dataclasses.dataclass
 class InstanceStorageConfig_KinesisVideoStreamConfig:
-    # Specifies the encryption configuration for the Kinesis Video Stream data storage, including the encryption type (KMS) and the KMS key ID used to encrypt the stream. (AI-inferred)
     encryption_config: Any = None
     # Prefixes are used to infer logical hierarchy
     prefix: Any = None
@@ -38,7 +37,6 @@ class InstanceStorageConfig_S3Config:
     bucket_name: Any = None
     # Prefixes are used to infer logical hierarchy
     bucket_prefix: Any = None
-    # Specifies the encryption configuration for the S3 bucket, including the AWS KMS key ID used to encrypt data at rest. (AI-inferred)
     encryption_config: Any = None
 
 _InstanceStorageConfig_KinesisFirehoseConfigFields = {
@@ -78,15 +76,11 @@ _InstanceStorageConfig_S3ConfigFields = {
 class InstanceStorageConfigConfig:
     # Connect Instance ID with which the storage config will be associated
     instance_arn: Any = None
-    # Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred)
     kinesis_firehose_config: Any = None
-    # Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred)
     kinesis_stream_config: Any = None
-    # Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred)
     kinesis_video_stream_config: Any = None
     # Specifies the type of storage resource available for the instance
     resource_type: Any = None
-    # Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred)
     s3_config: Any = None
     # Specifies the storage type to be associated with the instance
     storage_type: Any = None
@@ -97,15 +91,11 @@ class InstanceStorageConfigAttrs:
     association_id: Any = None
     # Connect Instance ID with which the storage config will be associated
     instance_arn: Any = None
-    # Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred)
     kinesis_firehose_config: Any = None
-    # Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred)
     kinesis_stream_config: Any = None
-    # Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred)
     kinesis_video_stream_config: Any = None
     # Specifies the type of storage resource available for the instance
     resource_type: Any = None
-    # Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred)
     s3_config: Any = None
     # Specifies the storage type to be associated with the instance
     storage_type: Any = None

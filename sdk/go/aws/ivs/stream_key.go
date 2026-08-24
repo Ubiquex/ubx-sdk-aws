@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StreamKey_Tags struct {
 	Key any
-	// Specifies the value of a tag assigned to the AWS IVS stream key, used for identifying and categorizing the resource. (AI-inferred)
 	Value any
 }
 

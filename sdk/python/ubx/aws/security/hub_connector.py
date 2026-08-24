@@ -61,22 +61,18 @@ class HubConnectorConfig:
     description: Any = None
     # The name of the connector.
     name: Any = None
-    # Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred)
     provider: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class HubConnectorAttrs:
-    # The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Security Hub connector. (AI-inferred)
     connector_arn: Any = None
-    # The connector_id is the unique, read-only identifier that AWS Security Hub assigns to the connector upon creation. (AI-inferred)
     connector_id: Any = None
     # The status of the connector
     connector_status: Any = None
     # The timestamp formatted in ISO8601
     created_at: Any = None
-    # The AWS principal (account or IAM identity) that originally created the Security Hub connector. (AI-inferred)
     created_by: Any = None
     # The description of the connector.
     description: Any = None
@@ -90,7 +86,6 @@ class HubConnectorAttrs:
     message: Any = None
     # The name of the connector.
     name: Any = None
-    # Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred)
     provider: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None

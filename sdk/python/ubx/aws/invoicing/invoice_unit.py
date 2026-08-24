@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InvoiceUnit_ResourceTags:
-    # The key part of a resource tag attached to the AWS Invoicing invoice unit, used to define custom metadata for organizing, filtering, and managing the invoice unit. (AI-inferred)
     key: Any = None
-    # The value component of a resource tag (key-value pair) that can be attached to this invoice unit for cost allocation and organizational purposes. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class InvoiceUnit_Rule:
-    # Specifies the list of linked account IDs (as strings) that are included under this invoice unit's rule when grouping accounts for invoicing. (AI-inferred)
     linked_accounts: Any = None
 
 _InvoiceUnit_ResourceTagsFields = {
@@ -29,36 +26,22 @@ _InvoiceUnit_RuleFields = {
 
 @dataclasses.dataclass
 class InvoiceUnitConfig:
-    # The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred)
     description: Any = None
-    # The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred)
     invoice_receiver: Any = None
-    # Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred)
     name: Any = None
-    # The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred)
     resource_tags: Any = None
-    # Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred)
     rule: Any = None
-    # When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred)
     tax_inheritance_disabled: Any = None
 
 @dataclasses.dataclass
 class InvoiceUnitAttrs:
-    # The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred)
     description: Any = None
-    # The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred)
     invoice_receiver: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the invoice unit created by this resource. (AI-inferred)
     invoice_unit_arn: Any = None
-    # The numeric timestamp indicating when the invoice unit was most recently modified, computed and read-only by the service. (AI-inferred)
     last_modified: Any = None
-    # Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred)
     name: Any = None
-    # The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred)
     resource_tags: Any = None
-    # Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred)
     rule: Any = None
-    # When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred)
     tax_inheritance_disabled: Any = None
 
 InvoiceUnit = ubx.ResourceBinding(

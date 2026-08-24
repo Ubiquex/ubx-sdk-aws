@@ -4,16 +4,12 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentAlias_AgentAliasHistoryEvents_RoutingConfiguration struct {
-	// The version of the Bedrock agent (for example, 'DRAFT' or a numeric version) that the routing configuration entry associated with this alias history event directs traffic to. (AI-inferred)
 	AgentVersion any
 }
 
 type AgentAlias_AgentAliasHistoryEvents struct {
-	// The timestamp indicating when the agent alias stopped being associated with the agent version that the history event describes. (AI-inferred)
 	EndDate any
-	// The routing configuration at the time of this history event, listing the agent versions to which the alias directed traffic. (AI-inferred)
 	RoutingConfiguration any
-	// The timestamp indicating when the alias version associated with this history event began serving as the alias's active version. (AI-inferred)
 	StartDate any
 }
 

@@ -4,62 +4,44 @@ package managed
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfiguration struct {
-	// The password for the Hyperledger Fabric admin user associated with this member, used to authenticate to the Managed Blockchain network's Fabric client. (AI-inferred)
 	AdminPassword any
-	// The admin username for the Hyperledger Fabric certificate authority (CA) of the member, used to authenticate as the Fabric CA admin. (AI-inferred)
 	AdminUsername any
 }
 
 type BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration struct {
-	// This object configures Hyperledger Fabric settings for the member, including the admin username and password used to access the member's Fabric CA. (AI-inferred)
 	MemberFabricConfiguration any
 }
 
 type BlockchainMember_MemberConfiguration struct {
-	// An optional description of the Managed Blockchain member, which is attached to the member's configuration for identification purposes. (AI-inferred)
 	Description any
-	// Specifies the Hyperledger Fabric-specific configuration for this Managed Blockchain member, including the administrator credentials (username and password) for the peer node. (AI-inferred)
 	MemberFrameworkConfiguration any
-	// The user-defined name of the member, required in the member configuration, used to identify and distinguish the member within the Managed Blockchain network. (AI-inferred)
 	Name any
 }
 
 type BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfiguration struct {
-	// The Hyperledger Fabric network edition (STARTER or STANDARD) that determines the allowed number of peer nodes and ordering service nodes for the member's network. (AI-inferred)
 	Edition any
 }
 
 type BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration struct {
-	// Specifies the Hyperledger Fabric configuration for the blockchain network, including the Edition property that determines whether the network runs on the STARTER or STANDARD edition for the member's network. (AI-inferred)
 	NetworkFabricConfiguration any
 }
 
 type BlockchainMember_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicy struct {
-	// The maximum duration in hours that a proposal remains open for voting before it expires in the Managed Blockchain network's voting policy. (AI-inferred)
 	ProposalDurationInHours any
-	// Specifies the comparator used to compare the voting threshold against the number of approvals, such as GREATER_THAN or GREATER_THAN_OR_EQUAL_TO. (AI-inferred)
 	ThresholdComparator any
-	// Specifies the percentage of all voting outcomes that must be 'yes' for a proposal to be approved, used by the approval threshold policy in the Managed Blockchain network's voting policy. (AI-inferred)
 	ThresholdPercentage any
 }
 
 type BlockchainMember_NetworkConfiguration_VotingPolicy struct {
-	// Defines the approval threshold rules (such as proposal duration, threshold comparator, and threshold percentage) that govern how Hyperledger Fabric proposals are approved in the member's network. (AI-inferred)
 	ApprovalThresholdPolicy any
 }
 
 type BlockchainMember_NetworkConfiguration struct {
-	// Provides an optional description for the Managed Blockchain network that is created when this member creates a new network as part of its network configuration. (AI-inferred)
 	Description any
-	// The blockchain framework (e.g., HYPERLEDGER_FABRIC or ETHEREUM) that defines the network protocol when creating a new network via the first member. (AI-inferred)
 	Framework any
-	// Specifies the version of the blockchain framework (e.g., Hyperledger Fabric 1.4) that the network configuration uses for the member's network. (AI-inferred)
 	FrameworkVersion any
-	// The name of the Hyperledger Fabric network to be created when the member creates a new network, as specified in the network configuration. (AI-inferred)
 	Name any
-	// Specifies the framework-specific settings for the blockchain network that the member joins, such as the Hyperledger Fabric edition (STARTER or STANDARD) within the network configuration. (AI-inferred)
 	NetworkFrameworkConfiguration any
-	// Defines the voting rules for the network, including the approval threshold and proposal duration, which govern decisions on membership proposals. (AI-inferred)
 	VotingPolicy any
 }
 
@@ -130,26 +112,17 @@ var BlockchainMember_NetworkConfigurationFields = ubx.FieldMap{
 	}
 
 type BlockchainMemberConfig struct {
-	// The unique identifier of the invitation that was sent to this AWS account to join the Managed Blockchain network, required when adding a member to an existing network via an invitation. (AI-inferred)
 	InvitationId any
-	// Specifies the member's configuration, including its name, description, and framework-specific settings such as admin credentials for Hyperledger Fabric. (AI-inferred)
 	MemberConfiguration any
-	// Defines the configuration for creating a new Hyperledger Fabric network when this member is the first member of a new network, including the network name, framework version, and voting policy. (AI-inferred)
 	NetworkConfiguration any
-	// The unique identifier of the Managed Blockchain network to which this member belongs. (AI-inferred)
 	NetworkId any
 }
 
 type BlockchainMemberAttrs struct {
-	// The unique identifier of the invitation that was sent to this AWS account to join the Managed Blockchain network, required when adding a member to an existing network via an invitation. (AI-inferred)
 	InvitationId any
-	// Specifies the member's configuration, including its name, description, and framework-specific settings such as admin credentials for Hyperledger Fabric. (AI-inferred)
 	MemberConfiguration any
-	// The unique identifier assigned by AWS to the Managed Blockchain member when it is created. (AI-inferred)
 	MemberId any
-	// Defines the configuration for creating a new Hyperledger Fabric network when this member is the first member of a new network, including the network name, framework version, and voting policy. (AI-inferred)
 	NetworkConfiguration any
-	// The unique identifier of the Managed Blockchain network to which this member belongs. (AI-inferred)
 	NetworkId any
 }
 

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationSubnetGroup_Tags struct {
 	Key any
-	// The value portion of a tag (key-value pair) assigned to the DMS replication subnet group, used to categorize and manage the resource for cost allocation and operational purposes. (AI-inferred)
 	Value any
 }
 

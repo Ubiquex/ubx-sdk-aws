@@ -8,18 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamApplication_IconS3Location:
-    # The S3 bucket that holds the application icon image file for the AppStream application. (AI-inferred)
     s3_bucket: Any = None
-    # The S3 object key (path) of the application icon image within the S3 bucket specified by the parent IconS3Location property. (AI-inferred)
     s3_key: Any = None
 
 @dataclasses.dataclass
 class StreamApplication_Tags:
     key: Any = None
     tag_key: Any = None
-    # The value of a tag assigned to the AppStream application, paired with the corresponding tag key in the tags list. (AI-inferred)
     tag_value: Any = None
-    # The value for the specified tag key, which can be used to categorize and manage the AppStream application resource. (AI-inferred)
     value: Any = None
 
 _StreamApplication_IconS3LocationFields = {
@@ -36,58 +32,34 @@ _StreamApplication_TagsFields = {
 
 @dataclasses.dataclass
 class StreamApplicationConfig:
-    # The Amazon Resource Name (ARN) of the app block that the application is associated with. (AI-inferred)
     app_block_arn: Any = None
-    # A list of application attribute names to delete from the AppStream application when the CloudFormation stack is updated, used to remove properties that were omitted from the updated template. (AI-inferred)
     attributes_to_delete: Any = None
-    # A user-facing description of the AppStream 2.0 application that is displayed to end users when browsing available applications. (AI-inferred)
     description: Any = None
-    # A user-friendly name for the application that is displayed in the AppStream 2.0 application catalog. (AI-inferred)
     display_name: Any = None
-    # Specifies the S3 bucket and key where the application's icon image file is stored. (AI-inferred)
     icon_s3_location: Any = None
-    # Specifies the list of AppStream 2.0 instance families (e.g., GENERAL_PURPOSE, MEMORY_OPTIMIZED) that this application supports, determining which fleet instance types can launch it. (AI-inferred)
     instance_families: Any = None
-    # The command-line arguments (parameters) passed to the application when it is launched in an AppStream 2.0 streaming session. (AI-inferred)
     launch_parameters: Any = None
-    # The path to the executable file of the application that AppStream 2.0 launches on the streaming instance. (AI-inferred)
     launch_path: Any = None
-    # The unique name of the AppStream 2.0 application, which serves as its identifier within the AWS account and region. (AI-inferred)
     name: Any = None
-    # Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
     platforms: Any = None
     tags: Any = None
-    # Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
     working_directory: Any = None
 
 @dataclasses.dataclass
 class StreamApplicationAttrs:
-    # The Amazon Resource Name (ARN) of the app block that the application is associated with. (AI-inferred)
     app_block_arn: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the AppStream 2.0 application. (AI-inferred)
     arn: Any = None
-    # A list of application attribute names to delete from the AppStream application when the CloudFormation stack is updated, used to remove properties that were omitted from the updated template. (AI-inferred)
     attributes_to_delete: Any = None
-    # The timestamp when the AppStream application was created. (AI-inferred)
     created_time: Any = None
-    # A user-facing description of the AppStream 2.0 application that is displayed to end users when browsing available applications. (AI-inferred)
     description: Any = None
-    # A user-friendly name for the application that is displayed in the AppStream 2.0 application catalog. (AI-inferred)
     display_name: Any = None
-    # Specifies the S3 bucket and key where the application's icon image file is stored. (AI-inferred)
     icon_s3_location: Any = None
-    # Specifies the list of AppStream 2.0 instance families (e.g., GENERAL_PURPOSE, MEMORY_OPTIMIZED) that this application supports, determining which fleet instance types can launch it. (AI-inferred)
     instance_families: Any = None
-    # The command-line arguments (parameters) passed to the application when it is launched in an AppStream 2.0 streaming session. (AI-inferred)
     launch_parameters: Any = None
-    # The path to the executable file of the application that AppStream 2.0 launches on the streaming instance. (AI-inferred)
     launch_path: Any = None
-    # The unique name of the AppStream 2.0 application, which serves as its identifier within the AWS account and region. (AI-inferred)
     name: Any = None
-    # Identifies the operating system platforms on which the AppStream 2.0 application can be launched, with valid values including WINDOWS and AMAZON_LINUX. (AI-inferred)
     platforms: Any = None
     tags: Any = None
-    # Specifies the working directory that the application uses when launched on a streaming instance. (AI-inferred)
     working_directory: Any = None
 
 StreamApplication = ubx.ResourceBinding(

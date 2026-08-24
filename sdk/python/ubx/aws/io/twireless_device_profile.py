@@ -8,50 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessDeviceProfile_LoRaWan:
-    # Specifies the Class B timeout in seconds for the LoRaWAN device profile. (AI-inferred)
     class_btimeout: Any = None
-    # The Class C timeout in seconds for the LoRaWAN device profile, used to configure the receive window timeout for Class C devices. (AI-inferred)
     class_ctimeout: Any = None
-    # Specifies a list of factory preset frequencies for the LoRaWAN device profile, which the device uses during radio configuration. (AI-inferred)
     factory_preset_freqs_list: Any = None
-    # The LoRaWAN MAC version of the device profile, such as 1.0.3 or 1.1, which determines the LoRaWAN specification compliance for the device. (AI-inferred)
     mac_version: Any = None
-    # Sets the maximum duty cycle, as a percentage of time the LoRaWAN device may transmit, to limit channel occupancy. (AI-inferred)
     max_duty_cycle: Any = None
-    # The maximum Effective Isotropic Radiated Power (EIRP) in dBm that the LoRaWAN device is permitted to transmit with, as configured in the LoRaWAN device profile. (AI-inferred)
     max_eirp: Any = None
-    # Ping slot data rate for the LoRaWAN Class B mode, determining the transmission data rate used in the device's periodic ping slots. (AI-inferred)
     ping_slot_dr: Any = None
-    # Sets the frequency (in MHz) used by the LoRaWAN Class B mode for the periodic ping slot on the device profile. (AI-inferred)
     ping_slot_freq: Any = None
-    # Sets the periodicity of LoRaWAN Class B ping slots in the device profile, controlling how frequently the device opens receive windows for downlink messages. (AI-inferred)
     ping_slot_period: Any = None
-    # The revision of the regional parameters document used by the LoRaWAN device profile (e.g., '2017-01-01' or '2020-04-15'), which determines the applicable regional LoRaWAN specification version for the device. (AI-inferred)
     reg_params_revision: Any = None
-    # Specifies the RF region (e.g., US915, EU868) for the LoRaWAN radio, defining the frequency band used for device communication in the device profile. (AI-inferred)
     rf_region: Any = None
-    # Configures the data rate index for the second receive window (RX2) in LoRaWAN, which the device uses for downlink traffic when it does not receive a response in the first receive window. (AI-inferred)
     rx_data_rate2: Any = None
-    # Sets the RX1 delay (in seconds) for the LoRaWAN device profile, which determines how long after an uplink transmission the device opens its first receive window for downlink messages. (AI-inferred)
     rx_delay1: Any = None
-    # Sets the data rate offset for the first receive window (RX1) in LoRaWAN, used to compute the RX1 downlink data rate from the uplink data rate in adaptive data rate mode. (AI-inferred)
     rx_dr_offset1: Any = None
-    # The frequency (in Hz) for the second receive window (RX2) in LoRaWAN, used for downlink transmissions when the device uses this receive window. (AI-inferred)
     rx_freq2: Any = None
-    # Indicates whether the LoRaWAN device profile supports 32-bit frame counters, allowing devices to use a larger frame counter value for reliable over-the-air activation and message integrity. (AI-inferred)
     supports32_bit_fcnt: Any = None
-    # Indicates whether the LoRaWAN device profile supports Class B, enabling scheduled downlink communication using beacon synchronization. (AI-inferred)
     supports_class_b: Any = None
-    # Specifies whether the LoRaWAN device profile supports Class C mode, allowing the device to continuously listen for downlink communications rather than opening receive windows only after uplink transmissions. (AI-inferred)
     supports_class_c: Any = None
-    # Specifies whether the LoRaWAN device supports joining a network via Over-the-Air Activation (OTAA), enabling the Join procedure to obtain network credentials. (AI-inferred)
     supports_join: Any = None
 
 @dataclasses.dataclass
 class TwirelessDeviceProfile_Tags:
-    # Key of a user-defined tag attached to the IoT Wireless device profile, used to identify, organize, and filter the resource in AWS IoT Wireless. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag that can be assigned to the AWS IoT Wireless device profile for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _TwirelessDeviceProfile_LoRaWanFields = {
@@ -83,7 +62,6 @@ _TwirelessDeviceProfile_TagsFields = {
 
 @dataclasses.dataclass
 class TwirelessDeviceProfileConfig:
-    # The lo_ra_wan field configures LoRaWAN-specific parameters for the device profile, including whether the device supports Class B and Class C modes. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of service profile
     name: Any = None
@@ -96,7 +74,6 @@ class TwirelessDeviceProfileAttrs:
     arn: Any = None
     # Service profile Id. Returned after successful create.
     id: Any = None
-    # The lo_ra_wan field configures LoRaWAN-specific parameters for the device profile, including whether the device supports Class B and Class C modes. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of service profile
     name: Any = None

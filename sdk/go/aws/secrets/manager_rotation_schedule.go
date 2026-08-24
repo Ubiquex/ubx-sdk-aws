@@ -4,7 +4,6 @@ package secrets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerRotationSchedule_ExternalSecretRotationMetadata struct {
-	// The key of a key-value pair in the external_secret_rotation_metadata map, which is passed as metadata to an external rotation Lambda function to customize the rotation process. (AI-inferred)
 	Key any
 	Value any
 }
@@ -73,13 +72,11 @@ type ManagerRotationScheduleConfig struct {
 	ExternalSecretRotationMetadata any
 	// The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret.
 	ExternalSecretRotationRoleArn any
-	// Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred)
 	HostedRotationLambda any
 	// Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window.
 	RotateImmediatelyOnUpdate any
 	// The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function.
 	RotationLambdaArn any
-	// Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred)
 	RotationRules any
 	// The ARN or name of the secret to rotate.
 	SecretId any
@@ -90,7 +87,6 @@ type ManagerRotationScheduleAttrs struct {
 	ExternalSecretRotationMetadata any
 	// The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret.
 	ExternalSecretRotationRoleArn any
-	// Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred)
 	HostedRotationLambda any
 	// The ARN of the secret.
 	Id any
@@ -98,7 +94,6 @@ type ManagerRotationScheduleAttrs struct {
 	RotateImmediatelyOnUpdate any
 	// The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function.
 	RotationLambdaArn any
-	// Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred)
 	RotationRules any
 	// The ARN or name of the secret to rotate.
 	SecretId any

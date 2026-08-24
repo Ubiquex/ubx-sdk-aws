@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigEnvironment_Monitors:
-    # The ARN of the Amazon CloudWatch alarm that AppConfig monitors for this environment to detect potential issues during configuration deployments. (AI-inferred)
     alarm_arn: Any = None
-    # The ARN of the IAM role that AWS AppConfig assumes to evaluate the CloudWatch alarm for this monitor during a deployment. (AI-inferred)
     alarm_role_arn: Any = None
 
 @dataclasses.dataclass
 class ConfigEnvironment_Tags:
-    # The key of a tag applied to the AWS AppConfig environment, used for resource organization and cost allocation. (AI-inferred)
     key: Any = None
-    # The value of a tag (key-value pair) attached to the AWS AppConfig environment, used for managing and identifying the resource (e.g., cost allocation or categorization). (AI-inferred)
     value: Any = None
 
 _ConfigEnvironment_MonitorsFields = {

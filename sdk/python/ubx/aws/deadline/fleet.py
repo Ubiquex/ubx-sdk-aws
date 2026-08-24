@@ -8,178 +8,118 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Fleet_Capabilities_Amounts:
-    # Specifies the upper bound of a numeric amount capability (e.g., memory or CPU count) that a fleet worker in AWS Deadline Cloud can provide, used to define a valid range alongside the min value. (AI-inferred)
     max: Any = None
-    # The minimum numeric amount of a specific capability (e.g., vCPUs or memory) that the Deadline fleet can offer, used to match jobs requiring at least that amount. (AI-inferred)
     min: Any = None
-    # The name of the amount capability, which is a string key identifying the resource quantity (e.g., 'gpu' or 'memory') that the fleet advertises in its capabilities. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Fleet_Capabilities_Attributes:
-    # The name of a single fleet capability attribute (for example, 'GPU' or 'OS') within the attributes list of the fleet's capabilities. (AI-inferred)
     name: Any = None
-    # Specifies the list of values for a specific attribute within the fleet's capabilities, enabling job definitions to match fleets based on these attribute values when scheduling jobs in AWS Deadline Cloud. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Fleet_Capabilities:
-    # Specifies the list of amount capabilities for the fleet, where each object defines a named resource (e.g. memory or CPU) along with its minimum and maximum amount that a worker can provide. (AI-inferred)
     amounts: Any = None
-    # Specifies the list of attribute capabilities for the fleet, where each entry defines a custom attribute name and its set of allowed values that workers in the fleet must support. (AI-inferred)
     attributes: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_CustomerManaged_AutoScalingConfiguration:
-    # Specifies the maximum number of worker instances that can be added to the customer-managed fleet per minute during a scale-out event. (AI-inferred)
     scale_out_workers_per_minute: Any = None
-    # Specifies the number of idle workers to maintain as standby capacity, reducing the time jobs wait for worker availability in the auto-scaling fleet. (AI-inferred)
     standby_worker_count: Any = None
-    # The number of seconds a worker can remain idle before it is considered idle by the auto-scaling policy and potentially scaled down. (AI-inferred)
     worker_idle_duration_seconds: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_CustomerManaged_WorkerCapabilities_AcceleratorCount:
-    # The maximum number of accelerators (e.g., GPUs) a single worker in the customer-managed fleet can have, serving as the upper bound for the accelerator count range in worker capabilities. (AI-inferred)
     max: Any = None
-    # The minimum number of accelerators (such as GPUs) that each worker in the customer-managed fleet must have available. (AI-inferred)
     min: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_CustomerManaged_WorkerCapabilities:
-    # Defines the minimum and maximum number of accelerator devices (e.g., GPUs) that must be available on a worker in a customer-managed AWS Deadline fleet. (AI-inferred)
     accelerator_count: Any = None
-    # Specifies the minimum and maximum total accelerator memory in MiB for workers in this customer-managed fleet, used by Deadline Cloud to match tasks requiring a certain amount of accelerator memory. (AI-inferred)
     accelerator_total_memory_mi_b: Any = None
-    # Specifies the GPU accelerator types (e.g., specific GPU model names) available on the worker, which Deadline Cloud uses to match jobs requiring those accelerator types. (AI-inferred)
     accelerator_types: Any = None
-    # Specifies the CPU architecture (x86_64 or arm64) of the worker instances in a customer managed Deadline fleet, used to match jobs that require a specific architecture. (AI-inferred)
     cpu_architecture_type: Any = None
-    # Defines user-defined numeric capability amounts (each with a name and value) that worker instances in a customer-managed fleet advertise, allowing job requirements to match against these custom worker capacity metrics. (AI-inferred)
     custom_amounts: Any = None
-    # Specifies custom worker attributes as key-value pairs that define the worker's capabilities, allowing Deadline Cloud to match jobs to appropriate customer-managed fleet workers. (AI-inferred)
     custom_attributes: Any = None
     memory_mi_b: Any = None
-    # Specifies the operating system family (e.g., Linux or Windows) that workers in a customer-managed fleet must match for task scheduling. (AI-inferred)
     os_family: Any = None
-    # Specifies the minimum and maximum number of vCPUs that each worker instance can have in the customer-managed fleet. (AI-inferred)
     vcpu_count: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_CustomerManaged:
-    # Configures the minimum and maximum worker count that the customer-managed fleet's auto-scaling uses to scale worker instances in response to job demand. (AI-inferred)
     auto_scaling_configuration: Any = None
-    # The operating mode of the customer-managed fleet, set to either RESUME (active and accepting jobs) or PAUSE (suspended and not accepting jobs). (AI-inferred)
     mode: Any = None
-    # The unique identifier of the storage profile that defines the file system locations available to this customer-managed fleet. (AI-inferred)
     storage_profile_id: Any = None
-    # Determines whether tags applied to the fleet are propagated to the underlying EC2 worker instances in a customer-managed fleet, with supported values like NONE (no propagation) or TO_EC2 (propagate tags to EC2 instances). (AI-inferred)
     tag_propagation_mode: Any = None
-    # Defines the hardware and OS capabilities (CPU architecture, OS type, memory, vCPU count, and accelerator types) that worker instances in a customer-managed AWS Deadline Cloud fleet must have. (AI-inferred)
     worker_capabilities: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilities_Selections:
-    # The name of the accelerator selection (e.g., 'nvidia_a10g') that identifies the specific GPU or accelerator type to be used by the service-managed EC2 instances in the Deadline fleet. (AI-inferred)
     name: Any = None
-    # Specifies the runtime (e.g., CUDA) required for the selected GPU accelerator type in a Deadline fleet's service-managed EC2 instances. (AI-inferred)
     runtime: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_AcceleratorCapabilities:
-    # Specifies the minimum and maximum number of GPU accelerators for the fleet's instances, represented as an object with `Min` and `Max` integer properties, used to filter eligible instance types. (AI-inferred)
     count: Any = None
-    # Specifies the list of accelerator (GPU) selections available to the fleet's service-managed EC2 instances, including each accelerator's name and runtime (e.g., 'gpu' or 'opt-in'). (AI-inferred)
     selections: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities_RootEbsVolume:
-    # Specifies the provisioned IOPS (I/O operations per second) for the root EBS volume attached to each instance in the AWS Deadline fleet's service-managed EC2 instances. (AI-inferred)
     iops: Any = None
-    # Specifies the size in GiB of the root EBS volume for the service-managed EC2 instances in the Deadline fleet. (AI-inferred)
     size_gi_b: Any = None
-    # Specifies the throughput in MiB/s for the root EBS volume attached to worker instances in a service-managed EC2 fleet configuration for AWS Deadline Cloud. (AI-inferred)
     throughput_mi_b: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_InstanceCapabilities:
-    # Defines the required GPU accelerator specifications (including accelerator type and count) for the Amazon EC2 instances provisioned for this Deadline fleet. (AI-inferred)
     accelerator_capabilities: Any = None
-    # Specifies the list of EC2 instance types that the fleet is allowed to use for worker instances. (AI-inferred)
     allowed_instance_types: Any = None
-    # Specifies the CPU architecture (x86_64 or arm64) for the Amazon EC2 instances that the service-managed fleet will launch. (AI-inferred)
     cpu_architecture_type: Any = None
-    # Specifies a list of custom amount capabilities (each with a name, min, and max) that the Service Managed EC2 fleet advertises, enabling jobs with matching resource amount requirements to be scheduled on the fleet. (AI-inferred)
     custom_amounts: Any = None
-    # Defines custom key-value pairs (attribute name and value) that worker instances in the fleet advertise as additional capabilities, allowing job requirements to target instances with these specific attributes. (AI-inferred)
     custom_attributes: Any = None
-    # Specifies the EC2 instance types that are excluded from the fleet's capacity, preventing these instance types from being used when provisioning worker instances. (AI-inferred)
     excluded_instance_types: Any = None
-    # Specifies the minimum and maximum memory (in MiB) allowed for instances in the service-managed EC2 fleet, used to constrain eligible instance types. (AI-inferred)
     memory_mi_b: Any = None
-    # Specifies the operating system family (LINUX or WINDOWS) for the service-managed EC2 worker instances in the AWS Deadline Cloud fleet. (AI-inferred)
     os_family: Any = None
-    # Specifies the configuration for the root Amazon EBS volume attached to each service-managed EC2 instance in the Deadline fleet, including settings like volume size, IOPS, throughput, and encryption. (AI-inferred)
     root_ebs_volume: Any = None
-    # Specifies the minimum and maximum number of vCPUs allowed for Amazon EC2 instances in this service-managed fleet. (AI-inferred)
     vcpu_count: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_InstanceMarketOptions:
-    # Specifies the market type for the fleet's EC2 instances, either 'on-demand' or 'spot', determining how the instances are purchased for the Deadline Cloud fleet. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_PersistentVolumeConfiguration:
-    # The provisioned IOPS (input/output operations per second) for the persistent EBS volume attached to instances in the service-managed EC2 fleet, determining storage performance. (AI-inferred)
     iops: Any = None
     last_used_ttl_hours: Any = None
-    # Specifies the absolute file path within the fleet's service-managed EC2 worker instances where the configured persistent volume will be mounted, enabling shared storage access. (AI-inferred)
     mount_path: Any = None
-    # The size of the persistent volume attached to the fleet's worker instances, specified in gibibytes (GiB). (AI-inferred)
     size_gi_b: Any = None
-    # Specifies the throughput (in MiB/s) to provision for the persistent EBS volume attached to the fleet's worker instances. (AI-inferred)
     throughput_mi_b: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2_VpcConfiguration:
-    # Specifies the list of Amazon Resource Names (ARNs) of Deadline Cloud resource configurations to apply to the worker instances launched in the VPC for a service-managed EC2 fleet. (AI-inferred)
     resource_configuration_arns: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration_ServiceManagedEc2:
-    # Specifies the minimum and maximum number of worker instances for the service-managed EC2 fleet, enabling automatic scaling within these bounds. (AI-inferred)
     auto_scaling_configuration: Any = None
-    # Defines the service-managed EC2 instance requirements for the fleet, including min/max CPU cores, min/max memory in MiB, CPU architecture type, OS name, and optionally allowed instance types and root volume size. (AI-inferred)
     instance_capabilities: Any = None
-    # Configures the Spot or On-Demand purchase option for the fleet's EC2 instances, including Spot-specific settings like maximum price and allocation strategy. (AI-inferred)
     instance_market_options: Any = None
-    # Specifies the configuration for the persistent EBS volume attached to each worker instance in the service-managed EC2 fleet, including volume size, type, I/O characteristics, and encryption settings. (AI-inferred)
     persistent_volume_configuration: Any = None
-    # The ID of the storage profile that defines the file system mounts (e.g., Amazon EFS or FSx) available to the fleet's worker instances. (AI-inferred)
     storage_profile_id: Any = None
-    # Specifies the VPC subnets and security groups that the service-managed EC2 instances of the Deadline fleet will use. (AI-inferred)
     vpc_configuration: Any = None
 
 @dataclasses.dataclass
 class Fleet_Configuration:
-    # Specifies the customer-managed configuration for the fleet, including the required worker capabilities (such as CPU architecture, memory, and OS) and the usage mode indicating whether those capabilities are mandatory. (AI-inferred)
     customer_managed: Any = None
-    # The service-managed EC2 configuration specifies the EC2 instances that AWS Deadline Cloud automatically launches and manages for this fleet, including instance capabilities and instance count limits. (AI-inferred)
     service_managed_ec2: Any = None
 
 @dataclasses.dataclass
 class Fleet_HostConfiguration:
-    # Specifies the body of a script that runs on each fleet host at startup, enabling custom configuration of the worker environment in AWS Deadline Cloud. (AI-inferred)
     script_body: Any = None
-    # Specifies the maximum time in seconds that a worker's startup or lifecycle script may run on a host in the Deadline Cloud fleet before the script is considered failed or terminated. (AI-inferred)
     script_timeout_seconds: Any = None
 
 @dataclasses.dataclass
 class Fleet_Tags:
-    # The key of a tag assigned to the AWS Deadline Cloud fleet, providing a user-defined label for organizing and managing the fleet through standard AWS tagging practices. (AI-inferred)
     key: Any = None
-    # The value part of a user-defined tag attached to an AWS Deadline Fleet, used to categorize and manage the fleet for cost allocation or operational purposes. (AI-inferred)
     value: Any = None
 
 _Fleet_Configuration_CustomerManaged_AutoScalingConfigurationFields = {
@@ -387,56 +327,34 @@ _Fleet_TagsFields = {
 
 @dataclasses.dataclass
 class FleetConfig:
-    # Defines the compute environment for the fleet, selecting either a service-managed Amazon EC2 configuration (specifying instance types, allocation strategy, and capacity) or a customer-managed configuration (specifying worker capabilities such as operating system, CPU, and memory). (AI-inferred)
     configuration: Any = None
-    # A human-readable description of the fleet, used to identify the fleet's purpose or configuration in the Deadline Cloud console and APIs. (AI-inferred)
     description: Any = None
-    # The human-readable name assigned to the fleet, used for identification within the Deadline Cloud farm. (AI-inferred)
     display_name: Any = None
-    # The unique identifier of the AWS Deadline Cloud farm that this fleet is associated with. (AI-inferred)
     farm_id: Any = None
-    # Specifies the network configuration for the worker hosts in the fleet, including the VPC subnet IDs and security group IDs that the EC2 instances for service-managed fleets will launch into. (AI-inferred)
     host_configuration: Any = None
-    # The maximum number of worker instances the fleet can scale up to, setting an upper capacity limit for the fleet's auto-scaling behavior. (AI-inferred)
     max_worker_count: Any = None
-    # Specifies the minimum number of worker instances that must be maintained in the fleet, ensuring baseline capacity for render workloads. (AI-inferred)
     min_worker_count: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the fleet's workers assume to interact with AWS services and perform job tasks. (AI-inferred)
     role_arn: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class FleetAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Deadline fleet. (AI-inferred)
     arn: Any = None
-    # This read-only object describes the effective resource capabilities of the fleet, such as CPU architecture, CPU count, memory size, and GPU resources, as reported by AWS Deadline Cloud after fleet creation. (AI-inferred)
     capabilities: Any = None
-    # Defines the compute environment for the fleet, selecting either a service-managed Amazon EC2 configuration (specifying instance types, allocation strategy, and capacity) or a customer-managed configuration (specifying worker capabilities such as operating system, CPU, and memory). (AI-inferred)
     configuration: Any = None
-    # A human-readable description of the fleet, used to identify the fleet's purpose or configuration in the Deadline Cloud console and APIs. (AI-inferred)
     description: Any = None
-    # The human-readable name assigned to the fleet, used for identification within the Deadline Cloud farm. (AI-inferred)
     display_name: Any = None
-    # The unique identifier of the AWS Deadline Cloud farm that this fleet is associated with. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier assigned by Deadline Cloud to the fleet when it is created, returned as a read-only value. (AI-inferred)
     fleet_id: Any = None
-    # Specifies the network configuration for the worker hosts in the fleet, including the VPC subnet IDs and security group IDs that the EC2 instances for service-managed fleets will launch into. (AI-inferred)
     host_configuration: Any = None
-    # The maximum number of worker instances the fleet can scale up to, setting an upper capacity limit for the fleet's auto-scaling behavior. (AI-inferred)
     max_worker_count: Any = None
-    # Specifies the minimum number of worker instances that must be maintained in the fleet, ensuring baseline capacity for render workloads. (AI-inferred)
     min_worker_count: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the fleet's workers assume to interact with AWS services and perform job tasks. (AI-inferred)
     role_arn: Any = None
-    # The current lifecycle state of the fleet, such as CREATING, ACTIVE, UPDATE_IN_PROGRESS, or DELETING, as reported by the Deadline Cloud service. (AI-inferred)
     status: Any = None
-    # The status_message attribute is a read-only string that provides a detailed explanation or reason for the fleet's current status, as reported by AWS Deadline Cloud. (AI-inferred)
     status_message: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # The current number of active workers in the fleet, as computed and maintained by AWS Deadline Cloud. (AI-inferred)
     worker_count: Any = None
 
 Fleet = ubx.ResourceBinding(

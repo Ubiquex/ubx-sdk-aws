@@ -32,11 +32,8 @@ export interface Table_RetentionProperties {
 }
 
 export interface Table_Schema_CompositePartitionKey {
-  /** Specifies whether this partition key must be present in every record, with allowed values 'REQUIRED' or 'OPTIONAL'. (AI-inferred) */
   enforcementInRecord?: string | Computed<string>;
-  /** Specifies the name of the dimension attribute used as the composite partition key for an AWS Timestream table when the partition key type is DIMENSION. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the type of the composite partition key, either DIMENSION for a dimension column or MEASURE for the measure name, controlling how Timestream partitions the table's data. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -46,9 +43,7 @@ export interface Table_Schema {
 }
 
 export interface Table_Tags {
-  /** The key portion of a tag applied to the Timestream table, used to define the tag's name for identifying and organizing the table in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the Timestream table, allowing you to assign an arbitrary string to help categorize, identify, or manage the resource (e.g., for cost allocation). (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -116,7 +111,6 @@ export interface TableConfig {
 }
 
 export interface TableAttrs {
-  /** The Amazon Resource Name (ARN) uniquely identifying this Timestream table. (AI-inferred) */
   arn: string;
   /** The name for the database which the table to be created belongs to. */
   databaseName: string;

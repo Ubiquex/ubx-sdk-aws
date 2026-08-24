@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventSubscription_Tags:
-    # The key name of a tag assigned to this Redshift event subscription, used for management and identifying the resource. (AI-inferred)
     key: Any = None
-    # The value of a key-value tag attached to the AWS Redshift event subscription, used for identifying and managing the resource. (AI-inferred)
     value: Any = None
 
 _EventSubscription_TagsFields = {

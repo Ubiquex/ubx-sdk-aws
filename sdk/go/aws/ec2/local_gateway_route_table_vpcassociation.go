@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayRouteTableVpcassociation_Tags struct {
-	// The key of a tag attached to the Local Gateway Route Table VPC Association, serving as the name portion of a user-defined metadata label for the association. (AI-inferred)
 	Key any
-	// The value of a tag attached to the association between a local gateway route table and a VPC. (AI-inferred)
 	Value any
 }
 
@@ -18,7 +16,6 @@ var LocalGatewayRouteTableVpcassociation_TagsFields = ubx.FieldMap{
 type LocalGatewayRouteTableVpcassociationConfig struct {
 	// The ID of the local gateway route table.
 	LocalGatewayRouteTableId any
-	// Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred)
 	Tags any
 	// The ID of the VPC.
 	VpcId any
@@ -33,7 +30,6 @@ type LocalGatewayRouteTableVpcassociationAttrs struct {
 	LocalGatewayRouteTableVpcAssociationId any
 	// The state of the association.
 	State any
-	// Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred)
 	Tags any
 	// The ID of the VPC.
 	VpcId any

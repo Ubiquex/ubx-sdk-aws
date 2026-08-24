@@ -12,9 +12,7 @@ export interface LakeDataLake_LifecycleConfiguration_Expiration {
 }
 
 export interface LakeDataLake_LifecycleConfiguration_Transitions {
-  /** The number of days after object creation that the lifecycle transition moves the data to the storage class defined in the parent transition rule. (AI-inferred) */
   days?: number | Computed<number>;
-  /** The S3 storage class (e.g., STANDARD_IA, GLACIER) that this lifecycle transition moves the data lake's objects to after the specified transition_days. (AI-inferred) */
   storageClass?: string | Computed<string>;
 }
 
@@ -33,9 +31,7 @@ export interface LakeDataLake_ReplicationConfiguration {
 }
 
 export interface LakeDataLake_Tags {
-  /** The key (name) of a tag in the Tags map that attaches user-defined metadata to the AWS Security Lake data lake, commonly used for cost allocation and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag assigned to the AWS Security Lake data lake, used to attach arbitrary metadata for resource management and identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -84,7 +80,6 @@ export interface LakeDataLakeConfig {
   metaStoreManagerRoleArn?: string | Computed<string>;
   /** Provides replication details of Amazon Security Lake object. */
   replicationConfiguration?: LakeDataLake_ReplicationConfiguration | Computed<LakeDataLake_ReplicationConfiguration>;
-  /** A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred) */
   tags?: LakeDataLake_Tags[] | Computed<LakeDataLake_Tags[]>;
 }
 
@@ -101,7 +96,6 @@ export interface LakeDataLakeAttrs {
   replicationConfiguration: LakeDataLake_ReplicationConfiguration;
   /** The ARN for the Amazon Security Lake Amazon S3 bucket. */
   s3BucketArn: string;
-  /** A list of tag objects (each with a key and value) assigned to the AWS Security Lake data lake, used for metadata organization, cost allocation, and access control. (AI-inferred) */
   tags: LakeDataLake_Tags[];
 }
 

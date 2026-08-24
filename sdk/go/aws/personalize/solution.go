@@ -11,18 +11,13 @@ type Solution_SolutionConfig_AutoMlconfig struct {
 }
 
 type Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRanges struct {
-	// The name of the categorical hyperparameter whose values are tuned during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred)
 	Name any
-	// Specifies the list of allowed categorical values that a categorical hyperparameter (identified by the sibling Name field) can take during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred)
 	Values any
 }
 
 type Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRanges struct {
-	// The maximum value for a continuous hyperparameter range used in hyperparameter optimization for the Amazon Personalize solution. (AI-inferred)
 	MaxValue any
-	// The minimum value of the range for a continuous hyperparameter that Amazon Personalize explores during hyperparameter optimization (HPO) for the solution. (AI-inferred)
 	MinValue any
-	// The name of the continuous hyperparameter to tune during hyperparameter optimization (HPO), which matches a hyperparameter defined in the recipe used by the Amazon Personalize solution. (AI-inferred)
 	Name any
 }
 
@@ -74,9 +69,7 @@ type Solution_SolutionConfig struct {
 }
 
 type Solution_Tags struct {
-	// The key part of a user-defined tag attached to the Amazon Personalize solution, used for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// The value component of a tag key-value pair attached to the Amazon Personalize solution resource. (AI-inferred)
 	Value any
 }
 

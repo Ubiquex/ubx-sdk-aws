@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ReferenceStore_SseConfig {
   /** An encryption key ARN. */
   keyArn?: string | Computed<string>;
-  /** The type of server-side encryption applied to the reference store, which must be either 'KMS' for a customer-managed AWS KMS key or 'S3' for Amazon S3-managed encryption. (AI-inferred) */
   type: string | Computed<string>;
 }
 
@@ -20,7 +19,6 @@ export interface ReferenceStoreConfig {
   name: string | Computed<string>;
   /** Server-side encryption (SSE) settings for a store. */
   sseConfig?: ReferenceStore_SseConfig | Computed<ReferenceStore_SseConfig>;
-  /** A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -33,11 +31,9 @@ export interface ReferenceStoreAttrs {
   description: string;
   /** A name for the store. */
   name: string;
-  /** The unique identifier assigned to the reference store by AWS when it is created. (AI-inferred) */
   referenceStoreId: string;
   /** Server-side encryption (SSE) settings for a store. */
   sseConfig: ReferenceStore_SseConfig;
-  /** A map of key-value tags to assign to the reference store for organizing, identifying, and managing it within AWS Omics. (AI-inferred) */
   tags: unknown;
 }
 

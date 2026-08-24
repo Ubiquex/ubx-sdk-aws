@@ -4,9 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_Tags struct {
-	// The key of a tag that is attached to the AWS Organizations policy, used to identify the tag's purpose or category. (AI-inferred)
 	Key any
-	// The value part of a tag assigned to the AWS Organizations policy, used to organize and identify the policy. (AI-inferred)
 	Value any
 }
 

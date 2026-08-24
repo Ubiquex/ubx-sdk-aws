@@ -14,10 +14,8 @@ const DutyTrustedEntitySet_TagsFields: FieldMap = {
 export interface DutyTrustedEntitySetConfig {
   activate?: boolean | Computed<boolean>;
   detectorId?: string | Computed<string>;
-  /** The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred) */
   expectedBucketOwner?: string | Computed<string>;
   format: string | Computed<string>;
-  /** The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred) */
   location: string | Computed<string>;
   name?: string | Computed<string>;
   tags?: DutyTrustedEntitySet_Tags[] | Computed<DutyTrustedEntitySet_Tags[]>;
@@ -28,11 +26,9 @@ export interface DutyTrustedEntitySetAttrs {
   createdAt: string;
   detectorId: string;
   errorDetails: string;
-  /** The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred) */
   expectedBucketOwner: string;
   format: string;
   id: string;
-  /** The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred) */
   location: string;
   name: string;
   status: string;

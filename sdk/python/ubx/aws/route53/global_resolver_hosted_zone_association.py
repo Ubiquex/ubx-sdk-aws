@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlobalResolverHostedZoneAssociationConfig:
-    # The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
     hosted_zone_id: Any = None
     name: Any = None
     resource_arn: Any = None
@@ -17,12 +16,10 @@ class GlobalResolverHostedZoneAssociationConfig:
 class GlobalResolverHostedZoneAssociationAttrs:
     created_at: Any = None
     hosted_zone_association_id: Any = None
-    # The ID of the Route 53 hosted zone that is being associated with the global resolver in this resource. (AI-inferred)
     hosted_zone_id: Any = None
     hosted_zone_name: Any = None
     name: Any = None
     resource_arn: Any = None
-    # The current status of the association, indicating its lifecycle state with values such as CREATING, COMPLETE, DELETING, DELETED, or FAILED. (AI-inferred)
     status: Any = None
     updated_at: Any = None
 

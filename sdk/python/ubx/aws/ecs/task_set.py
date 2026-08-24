@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TaskSet_CapacityProviderStrategy:
-    # The minimum number of tasks to run on this capacity provider before the task set's weight-based scaling applies. (AI-inferred)
     base: Any = None
-    # The name of the capacity provider, as registered in the ECS cluster, that this task set should use for running tasks. (AI-inferred)
     capacity_provider: Any = None
-    # The relative weight assigned to a capacity provider in the strategy, determining what proportion of tasks from the task set are placed on that provider. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class TaskSet_LoadBalancers:
-    # The name of the container, as defined in the task definition, to which the load balancer routes traffic for this task set. (AI-inferred)
     container_name: Any = None
-    # The container port on which the task set's containers receive traffic from the associated load balancer or target group, used to route incoming requests to the correct container port. (AI-inferred)
     container_port: Any = None
-    # The Amazon Resource Name (ARN) of the target group to which the ECS task set's tasks are registered for load balancing. (AI-inferred)
     target_group_arn: Any = None
 
 @dataclasses.dataclass
@@ -47,20 +41,14 @@ class TaskSet_Scale:
 
 @dataclasses.dataclass
 class TaskSet_ServiceRegistries:
-    # Specifies the container name from the task definition to use for the service discovery (Cloud Map) registry, and if not provided, the default container in the task definition is used. (AI-inferred)
     container_name: Any = None
-    # Specifies the container port that the Amazon ECS task set's service registry uses for service discovery with AWS Cloud Map. (AI-inferred)
     container_port: Any = None
-    # The port number that the service discovery service uses for the task's registry entry, which overrides the container's port mapping if specified. (AI-inferred)
     port: Any = None
-    # The ARN of the AWS Cloud Map service registry in which the task set's tasks are registered for service discovery. (AI-inferred)
     registry_arn: Any = None
 
 @dataclasses.dataclass
 class TaskSet_Tags:
-    # The key of a tag that can be assigned to the ECS task set for organizational or identification purposes. (AI-inferred)
     key: Any = None
-    # Specifies the value of a user-defined tag attached to the ECS task set, which can be used for resource categorization, cost allocation, and operational management. (AI-inferred)
     value: Any = None
 
 _TaskSet_CapacityProviderStrategyFields = {
@@ -108,7 +96,6 @@ _TaskSet_TagsFields = {
 
 @dataclasses.dataclass
 class TaskSetConfig:
-    # Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
     capacity_provider_strategy: Any = None
     # The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
     cluster: Any = None
@@ -116,13 +103,11 @@ class TaskSetConfig:
     external_id: Any = None
     # The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
     launch_type: Any = None
-    # Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
     load_balancers: Any = None
     # An object representing the network configuration for a task or service.
     network_configuration: Any = None
     # The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
     platform_version: Any = None
-    # Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
     scale: Any = None
     # The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
     service: Any = None
@@ -134,7 +119,6 @@ class TaskSetConfig:
 
 @dataclasses.dataclass
 class TaskSetAttrs:
-    # Specifies the capacity provider strategy for the task set, defining which capacity providers to use and the weights and base values that govern how tasks are distributed among them. (AI-inferred)
     capacity_provider_strategy: Any = None
     # The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.
     cluster: Any = None
@@ -144,13 +128,11 @@ class TaskSetAttrs:
     id: Any = None
     # The launch type that new tasks in the task set will use. For more information, see https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the Amazon Elastic Container Service Developer Guide.
     launch_type: Any = None
-    # Configures the load balancer or target groups that route traffic to the tasks in this ECS task set, specifying the container and port to receive traffic. (AI-inferred)
     load_balancers: Any = None
     # An object representing the network configuration for a task or service.
     network_configuration: Any = None
     # The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
     platform_version: Any = None
-    # Specifies the scaling configuration for the task set, including the unit (e.g., PERCENT) and value that determine the target number of tasks for the task set. (AI-inferred)
     scale: Any = None
     # The short name or full Amazon Resource Name (ARN) of the service to create the task set in.
     service: Any = None

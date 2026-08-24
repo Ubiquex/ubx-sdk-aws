@@ -2,150 +2,106 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Prompt_Variants_GenAiResource_Agent {
-  /** The identifier of the Amazon Bedrock agent that serves as the generative AI resource for this prompt variant. (AI-inferred) */
   agentIdentifier?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_GenAiResource {
-  /** Specifies the Amazon Bedrock agent to associate with the prompt variant, identified by the agent's ARN. (AI-inferred) */
   agent?: Prompt_Variants_GenAiResource_Agent | Computed<Prompt_Variants_GenAiResource_Agent>;
 }
 
 export interface Prompt_Variants_InferenceConfiguration_Text {
-  /** Sets the maximum number of tokens the model can generate for text responses in this prompt variant's inference configuration, capping the output length. (AI-inferred) */
   maxTokens?: number | Computed<number>;
-  /** Specifies a list of character sequences that will cause the model to stop generating further text when any of them is encountered in the output. (AI-inferred) */
   stopSequences?: string[] | Computed<string[]>;
-  /** In the Bedrock prompt variant's text inference configuration, temperature controls the randomness of generated text, with lower values yielding more deterministic outputs and higher values increasing creative diversity. (AI-inferred) */
   temperature?: number | Computed<number>;
-  /** Controls nucleus sampling by setting the cumulative probability threshold for token selection in the text generation inference configuration of the prompt variant. (AI-inferred) */
   topP?: number | Computed<number>;
 }
 
 export interface Prompt_Variants_InferenceConfiguration {
-  /** Represents the text inference configuration for the prompt variant, specifying generation parameters such as temperature, topP, maximum tokens, and stop sequences that guide the model's text output. (AI-inferred) */
   text?: Prompt_Variants_InferenceConfiguration_Text | Computed<Prompt_Variants_InferenceConfiguration_Text>;
 }
 
 export interface Prompt_Variants_Metadata {
-  /** In the metadata map of a Bedrock prompt variant, this key defines the name of a user-specified attribute whose value is a string, enabling you to attach custom labels or annotations to the variant. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_InputVariables {
-  /** The name of an input variable that serves as a placeholder within the chat prompt variant's template, replaced by a concrete value when the prompt is invoked. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint {
-  /** Specifies the type of the cache point marker within a message's content, which must be set to 'default' to indicate that the preceding content should be cached for subsequent prompt invocations. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_Messages_Content {
-  /** Defines a cache point within a chat message content block, used to enable prompt caching in Amazon Bedrock by marking a position in the conversation where the prompt can be cached for subsequent requests. (AI-inferred) */
   cachePoint?: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint>;
-  /** Specifies the literal text of a message content block within a chat prompt template for a Bedrock prompt variant, defining the actual wording of a user or assistant message. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_Messages {
-  /** The list of content blocks (such as text or image) that make up the body of a message in a chat prompt template for the prompt variant. (AI-inferred) */
   content?: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages_Content[]>;
-  /** Specifies the conversational role of the message in the chat prompt template, such as 'user' or 'assistant', which determines how the message is positioned in the prompt for the model. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoice {
-  /** When specified under tool_choice, this property instructs the model to select and invoke at least one available tool in the current turn, rather than allowing an automatic or no-tool choice. (AI-inferred) */
   any?: unknown | Computed<unknown>;
-  /** When enabled (e.g., set to true or an empty object), this property sets the tool choice to auto, allowing the model to autonomously decide whether to call a tool and, if so, which one. (AI-inferred) */
   auto?: unknown | Computed<unknown>;
-  /** Specifies the particular tool the model must use, defined by the tool's name within the configured tool list, when the tool choice strategy is set to a specific tool. (AI-inferred) */
   tool?: Prompt_Variants_TemplateConfiguration_Chat_InputVariables | Computed<Prompt_Variants_TemplateConfiguration_Chat_InputVariables>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchema {
-  /** Defines the JSON schema that specifies the input parameters expected by the tool, used by the model to understand how to call the tool. (AI-inferred) */
   json?: unknown | Computed<unknown>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec {
-  /** Provides a description of the tool that the model uses to understand its purpose and decide when to invoke it. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The JSON schema that defines the expected input parameters for the tool, used by the model to construct valid function calls. (AI-inferred) */
   inputSchema?: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchema | Computed<Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchema>;
-  /** The name of the tool (function) that the model can invoke, as defined in the tool specification for the chat configuration of this prompt variant. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools {
-  /** The cachePoint property defines a cache point in the tool configuration, enabling the prompt up to this point to be cached, and its 'type' field (e.g., 'default') specifies the kind of cache point to use. (AI-inferred) */
   cachePoint?: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint>;
-  /** Defines the tool's specification, including its name, description, and a JSON schema that describes the expected input parameters for the model to invoke it. (AI-inferred) */
   toolSpec?: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec | Computed<Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration {
-  /** Determines how the model selects which tool to invoke when multiple tools are available, supporting automatic, any-of, or a forced specific tool choice. (AI-inferred) */
   toolChoice?: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoice | Computed<Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoice>;
-  /** Specifies the list of tools available to the model in the chat tool configuration of the prompt, where each tool object defines its name, description, and input schema for invocation. (AI-inferred) */
   tools?: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools[]>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Chat {
-  /** Defines the list of named variables used in the chat prompt template configuration, each containing a name that corresponds to placeholders substituted with runtime values when invoking the model. (AI-inferred) */
   inputVariables?: Prompt_Variants_TemplateConfiguration_Chat_InputVariables[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_InputVariables[]>;
-  /** Specifies the chat messages (each with a role like user or assistant and content) that define the chat prompt template for this variant. (AI-inferred) */
   messages?: Prompt_Variants_TemplateConfiguration_Chat_Messages[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages[]>;
-  /** Defines the system content blocks for the chat prompt template, containing the high-level instructions and context provided to the model before the conversation messages. (AI-inferred) */
   system?: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages_Content[]>;
-  /** Specifies the list of tools (functions) the model may call in a chat prompt variant, along with optional tool choice settings. (AI-inferred) */
   toolConfiguration?: Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration | Computed<Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Text_TextS3Location {
-  /** The name of the Amazon S3 bucket that contains the prompt template text file for this variant's text configuration. (AI-inferred) */
   bucket?: string | Computed<string>;
-  /** The S3 object key of the text prompt template stored in Amazon S3, used as an alternative to inline text for the prompt variant's text template configuration. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The version field specifies the version ID of the S3 object containing the prompt template text, enabling retrieval of a specific version of the object from Amazon S3. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration_Text {
-  /** Defines a cache point in the text prompt, with a type that chooses between caching the entire prompt ('default') or only the final portion ('final') to optimize prompt caching during inference. (AI-inferred) */
   cachePoint?: Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint | Computed<Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint>;
-  /** Defines the list of placeholder variables (e.g., `{{name}}`, `{{age}}`) used in the text prompt template of this variant, each specifying a name and data type that get substituted at invocation time. (AI-inferred) */
   inputVariables?: Prompt_Variants_TemplateConfiguration_Chat_InputVariables[] | Computed<Prompt_Variants_TemplateConfiguration_Chat_InputVariables[]>;
-  /** The string content of the text prompt template configured for this Bedrock prompt variant. (AI-inferred) */
   text?: string | Computed<string>;
-  /** Specifies the Amazon S3 object location (bucket, key, and optionally version) from which this text prompt variant's template text is loaded, instead of being supplied inline in the text field. (AI-inferred) */
   textS3Location?: Prompt_Variants_TemplateConfiguration_Text_TextS3Location | Computed<Prompt_Variants_TemplateConfiguration_Text_TextS3Location>;
 }
 
 export interface Prompt_Variants_TemplateConfiguration {
-  /** The chat object defines the prompt template configuration for chat-based interactions, including the required list of messages (each with a role and content) and an optional set of system prompts used by the Bedrock prompt variant. (AI-inferred) */
   chat?: Prompt_Variants_TemplateConfiguration_Chat | Computed<Prompt_Variants_TemplateConfiguration_Chat>;
-  /** This block configures the text prompt template for the variant, containing the prompt text and optional input variables that are substituted into the template. (AI-inferred) */
   text?: Prompt_Variants_TemplateConfiguration_Text | Computed<Prompt_Variants_TemplateConfiguration_Text>;
 }
 
 export interface Prompt_Variants {
-  /** Defines additional model request fields as key-value pairs that are passed through to the underlying foundation model for this prompt variant, augmenting or overriding standard inference parameters. (AI-inferred) */
   additionalModelRequestFields?: unknown | Computed<unknown>;
   genAiResource?: Prompt_Variants_GenAiResource | Computed<Prompt_Variants_GenAiResource>;
-  /** Configures the inference settings for the prompt variant, controlling response generation parameters such as temperature, topP, and maximum token count. (AI-inferred) */
   inferenceConfiguration?: Prompt_Variants_InferenceConfiguration | Computed<Prompt_Variants_InferenceConfiguration>;
   metadata?: Prompt_Variants_Metadata[] | Computed<Prompt_Variants_Metadata[]>;
-  /** The Amazon Bedrock foundation model ID (e.g., anthropic.claude-v2) that this prompt variant uses for generating responses. (AI-inferred) */
   modelId?: string | Computed<string>;
-  /** The name of the prompt variant, used to uniquely identify and reference this specific variant within the AWS Bedrock prompt. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the prompt template configuration for this variant, defining the text or chat template structure and how input variables are substituted in the prompt. (AI-inferred) */
   templateConfiguration?: Prompt_Variants_TemplateConfiguration | Computed<Prompt_Variants_TemplateConfiguration>;
-  /** Specifies the format of the prompt template for this variant, where 'TEXT' indicates a plain-text prompt and 'CHAT' indicates a chat-message-style prompt. (AI-inferred) */
   templateType?: string | Computed<string>;
 }
 

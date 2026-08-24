@@ -4,32 +4,20 @@ package guard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DutyMemberConfig struct {
-	// The ID of the GuardDuty detector in the administrator account that the member account is associated with. (AI-inferred)
 	DetectorId any
-	// Whether to disable the email notification sent to the member account when it is invited to GuardDuty. (AI-inferred)
 	DisableEmailNotification any
-	// The email address of the AWS account that is being added as a GuardDuty member, used to identify the account when creating the association. (AI-inferred)
 	Email any
-	// The AWS account ID of the member account being added to the GuardDuty administrator account. (AI-inferred)
 	MemberId any
-	// The custom message included in the invitation sent to the member account when inviting them to join Amazon GuardDuty. (AI-inferred)
 	Message any
-	// The status of the GuardDuty member account, which can be one of Created, Invited, Disabled, or Enabled, and is used to manage the member's association with the GuardDuty administrator account. (AI-inferred)
 	Status any
 }
 
 type DutyMemberAttrs struct {
-	// The ID of the GuardDuty detector in the administrator account that the member account is associated with. (AI-inferred)
 	DetectorId any
-	// Whether to disable the email notification sent to the member account when it is invited to GuardDuty. (AI-inferred)
 	DisableEmailNotification any
-	// The email address of the AWS account that is being added as a GuardDuty member, used to identify the account when creating the association. (AI-inferred)
 	Email any
-	// The AWS account ID of the member account being added to the GuardDuty administrator account. (AI-inferred)
 	MemberId any
-	// The custom message included in the invitation sent to the member account when inviting them to join Amazon GuardDuty. (AI-inferred)
 	Message any
-	// The status of the GuardDuty member account, which can be one of Created, Invited, Disabled, or Enabled, and is used to manage the member's association with the GuardDuty administrator account. (AI-inferred)
 	Status any
 }
 

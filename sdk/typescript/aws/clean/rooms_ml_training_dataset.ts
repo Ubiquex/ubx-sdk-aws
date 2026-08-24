@@ -3,42 +3,31 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoomsMlTrainingDataset_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key attached to the AWS Clean Rooms ML Training Dataset, used to organize, identify, and manage the dataset through metadata labels. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSource {
-  /** The AWS account ID of the Glue Data Catalog that contains the table used as the training data source for the Clean Rooms ML training dataset. (AI-inferred) */
   catalogId?: string | Computed<string>;
-  /** The name of the AWS Glue Data Catalog database containing the source table for the training dataset input. (AI-inferred) */
   databaseName?: string | Computed<string>;
-  /** The name of the AWS Glue table that contains the training data for the Clean Rooms ML training dataset. (AI-inferred) */
   tableName?: string | Computed<string>;
 }
 
 export interface RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource {
-  /** This object defines the AWS Glue table that supplies the training data for this Clean Rooms ML training dataset. (AI-inferred) */
   glueDataSource?: RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSource | Computed<RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource_GlueDataSource>;
 }
 
 export interface RoomsMlTrainingDataset_TrainingData_InputConfig_Schema {
-  /** Specifies the name of a column in the training data schema, which maps to a column in the configured data source for the Clean Rooms ML training dataset. (AI-inferred) */
   columnName?: string | Computed<string>;
-  /** Specifies the data type (e.g., INTEGER, STRING) for each column in the training dataset schema, used by AWS Clean Rooms ML to interpret the input data. (AI-inferred) */
   columnTypes?: string[] | Computed<string[]>;
 }
 
 export interface RoomsMlTrainingDataset_TrainingData_InputConfig {
-  /** Specifies the S3 location (URI) and type of the data source that provides the training input data for the Clean Rooms ML training dataset. (AI-inferred) */
   dataSource?: RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource | Computed<RoomsMlTrainingDataset_TrainingData_InputConfig_DataSource>;
-  /** Defines the schema of the training data input by listing column objects, each specifying a column name and its data type for the Clean Rooms ML training dataset. (AI-inferred) */
   schema?: RoomsMlTrainingDataset_TrainingData_InputConfig_Schema[] | Computed<RoomsMlTrainingDataset_TrainingData_InputConfig_Schema[]>;
 }
 
 export interface RoomsMlTrainingDataset_TrainingData {
-  /** Specifies the input configuration for the training dataset, including the S3 data source location and the list of column names that make up the schema. (AI-inferred) */
   inputConfig?: RoomsMlTrainingDataset_TrainingData_InputConfig | Computed<RoomsMlTrainingDataset_TrainingData_InputConfig>;
-  /** Defines whether the training data for this Clean Rooms ML training dataset is sourced from an Amazon S3 bucket or an AWS Glue table. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -89,32 +78,22 @@ const RoomsMlTrainingDataset_TrainingDataFields: FieldMap = {
 };
 
 export interface RoomsMlTrainingDatasetConfig {
-  /** A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string | Computed<string>;
-  /** The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred) */
   roleArn: string | Computed<string>;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset. */
   tags?: RoomsMlTrainingDataset_Tags[] | Computed<RoomsMlTrainingDataset_Tags[]>;
-  /** The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred) */
   trainingData: RoomsMlTrainingDataset_TrainingData[] | Computed<RoomsMlTrainingDataset_TrainingData[]>;
 }
 
 export interface RoomsMlTrainingDatasetAttrs {
-  /** A user-provided free-form description of the training dataset in AWS Clean Rooms ML, used to annotate and identify the dataset's purpose or contents. (AI-inferred) */
   description: string;
-  /** The name of the training dataset, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string;
-  /** The ARN of the IAM role that AWS Clean Rooms ML assumes to read your training data from the configured data source, granting the necessary permissions for dataset access. (AI-inferred) */
   roleArn: string;
-  /** The current status of the training dataset (e.g., ACTIVE or INACTIVE), indicating whether it is available for use. (AI-inferred) */
   status: string;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms-ml training dataset. */
   tags: RoomsMlTrainingDataset_Tags[];
-  /** The list of training data configurations, each specifying a data source (such as a Glue table) and its column schema, that the Clean Rooms ML training dataset uses to define the input for model training. (AI-inferred) */
   trainingData: RoomsMlTrainingDataset_TrainingData[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Clean Rooms ML training dataset. (AI-inferred) */
   trainingDatasetArn: string;
 }
 

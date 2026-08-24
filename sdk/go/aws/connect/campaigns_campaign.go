@@ -43,9 +43,7 @@ type CampaignsCampaign_OutboundCallConfig struct {
 }
 
 type CampaignsCampaign_Tags struct {
-	// The key of a tag attached to the Amazon Connect Campaigns campaign, used to categorize the resource for cost allocation, ownership, and access control. (AI-inferred)
 	Key any
-	// The string value paired with each tag key on the Amazon Connect campaigns campaign, used for identifying, organizing, and managing the resource. (AI-inferred)
 	Value any
 }
 

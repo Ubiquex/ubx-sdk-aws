@@ -4,9 +4,7 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Oidcprovider_Tags struct {
-	// Specifies the key (name) of a tag assigned to the AWS IAM OIDC provider, allowing you to filter, control access, and track costs for the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the IAM OIDC provider, used to manage, identify, and categorize the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,26 +14,18 @@ var Oidcprovider_TagsFields = ubx.FieldMap{
 	}
 
 type OidcproviderConfig struct {
-	// The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred)
 	ClientIdList any
-	// Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred)
 	Tags any
-	// The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred)
 	ThumbprintList any
-	// Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred)
 	Url any
 }
 
 type OidcproviderAttrs struct {
 	// Amazon Resource Name (ARN) of the OIDC provider
 	Arn any
-	// The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred)
 	ClientIdList any
-	// Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred)
 	Tags any
-	// The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred)
 	ThumbprintList any
-	// Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred)
 	Url any
 }
 

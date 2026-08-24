@@ -3,12 +3,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Configuration_RunConfigurations_VpcConfig {
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs to use in the VPC configuration for an AWS Omics workflow run configuration. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
 export interface Configuration_RunConfigurations {
-  /** Specifies the VPC settings (subnet IDs and security group IDs) for the compute environment used by Omics runs, enabling workflows to access resources within a Virtual Private Cloud. (AI-inferred) */
   vpcConfig?: Configuration_RunConfigurations_VpcConfig | Computed<Configuration_RunConfigurations_VpcConfig>;
 }
 
@@ -30,7 +28,6 @@ export interface ConfigurationConfig {
   description?: string | Computed<string>;
   /** User-friendly name for the configuration. */
   name: string | Computed<string>;
-  /** The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred) */
   runConfigurations: Configuration_RunConfigurations | Computed<Configuration_RunConfigurations>;
   /** A map of resource tags */
   tags?: unknown | Computed<unknown>;
@@ -45,7 +42,6 @@ export interface ConfigurationAttrs {
   description: string;
   /** User-friendly name for the configuration. */
   name: string;
-  /** The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred) */
   runConfigurations: Configuration_RunConfigurations;
   /** Current configuration status. */
   status: string;

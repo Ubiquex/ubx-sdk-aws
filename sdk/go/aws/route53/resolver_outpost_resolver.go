@@ -4,7 +4,6 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverOutpostResolver_Tags struct {
-	// The key of a tag assigned to the Route 53 Resolver Outpost resolver, used to organize, identify, and manage the resolver within AWS. (AI-inferred)
 	Key any
 	Value any
 }

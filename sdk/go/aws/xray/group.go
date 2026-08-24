@@ -11,7 +11,6 @@ type Group_InsightsConfiguration struct {
 }
 
 type Group_Tags struct {
-	// Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred)
 	Key any
 	Value any
 }
@@ -31,7 +30,6 @@ type GroupConfig struct {
 	FilterExpression any
 	// The case-sensitive name of the new group. Names must be unique.
 	GroupName any
-	// Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
 	InsightsConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -44,7 +42,6 @@ type GroupAttrs struct {
 	GroupArn any
 	// The case-sensitive name of the new group. Names must be unique.
 	GroupName any
-	// Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred)
 	InsightsConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

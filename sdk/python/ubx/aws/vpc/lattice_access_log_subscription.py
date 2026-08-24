@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LatticeAccessLogSubscription_Tags:
-    # The key of a tag attached to this VPC Lattice access log subscription, used to identify, categorize, and manage the subscription alongside other VPC Lattice resources. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS VPC Lattice access log subscription, used for organizing and identifying the subscription through key-value metadata such as environment, owner, or cost center. (AI-inferred)
     value: Any = None
 
 _LatticeAccessLogSubscription_TagsFields = {
@@ -20,30 +18,20 @@ _LatticeAccessLogSubscription_TagsFields = {
 
 @dataclasses.dataclass
 class LatticeAccessLogSubscriptionConfig:
-    # The Amazon Resource Name (ARN) of the destination (an S3 bucket, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream) to which VPC Lattice access logs are delivered. (AI-inferred)
     destination_arn: Any = None
-    # Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
     resource_identifier: Any = None
     service_network_log_type: Any = None
-    # A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class LatticeAccessLogSubscriptionAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this VPC Lattice access log subscription, automatically assigned by AWS upon creation. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) of the destination (an S3 bucket, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream) to which VPC Lattice access logs are delivered. (AI-inferred)
     destination_arn: Any = None
-    # The unique identifier assigned to the VPC Lattice access log subscription upon creation. (AI-inferred)
     id: Any = None
-    # The ARN of the service network or service that this access log subscription is associated with. (AI-inferred)
     resource_arn: Any = None
-    # The unique identifier assigned by AWS VPC Lattice to the access log subscription, used to reference the subscription in API calls and other resources. (AI-inferred)
     resource_id: Any = None
-    # Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
     resource_identifier: Any = None
     service_network_log_type: Any = None
-    # A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
     tags: Any = None
 
 LatticeAccessLogSubscription = ubx.ResourceBinding(

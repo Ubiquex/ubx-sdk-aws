@@ -4,7 +4,6 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerUserProfile_Tags struct {
-	// The key of a user-defined tag attached to the SageMaker User Profile, used for cost allocation, environment identification, or other organizational metadata. (AI-inferred)
 	Key any
 	Value any
 }
@@ -21,16 +20,12 @@ type MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement_
 }
 
 type MakerUserProfile_UserSettings_CodeEditorAppSettings_AppLifecycleManagement struct {
-	// Specifies the idle timeout and lifecycle management settings for the Code Editor application in the user profile, controlling when the app enters an idle state or is shut down. (AI-inferred)
 	IdleSettings any
 }
 
 type MakerUserProfile_UserSettings_CodeEditorAppSettings_CustomImages struct {
-	// The name of the SageMaker AppImageConfig resource that specifies the container configuration (e.g., environment variables and file system settings) for this custom image used in the Code Editor app. (AI-inferred)
 	AppImageConfigName any
-	// The name of the custom Docker image to use for the SageMaker Studio Code Editor app, which should correspond to an image available in an Amazon ECR repository. (AI-inferred)
 	ImageName any
-	// Specifies the version number of the custom SageMaker image to be used for the Code Editor application in the user profile, allowing you to pin a specific image version when multiple versions are available. (AI-inferred)
 	ImageVersionNumber any
 }
 
@@ -48,49 +43,38 @@ type MakerUserProfile_UserSettings_CodeEditorAppSettings_DefaultResourceSpec str
 }
 
 type MakerUserProfile_UserSettings_CodeEditorAppSettings struct {
-	// Configures the idle timeout settings for the Code Editor application, including whether automatic shutdown is enabled and the maximum idle time in minutes before the app is stopped. (AI-inferred)
 	AppLifecycleManagement any
 	// The lifecycle configuration that runs before the default lifecycle configuration.
 	BuiltInLifecycleConfigArn any
 	// A list of custom images for use for CodeEditor apps.
 	CustomImages any
-	// Specifies the default compute instance type and SageMaker image (via ARN) used when launching the Code Editor app for this user profile in SageMaker Studio. (AI-inferred)
 	DefaultResourceSpec any
 	// A list of LifecycleConfigArns available for use with CodeEditor apps.
 	LifecycleConfigArns any
 }
 
 type MakerUserProfile_UserSettings_CustomFileSystemConfigs_EfsfileSystemConfig struct {
-	// The unique identifier of the Amazon EFS file system to mount for the SageMaker user profile's custom file system configuration. (AI-inferred)
 	FileSystemId any
-	// Specifies the path within the Amazon EFS file system that is mounted and made accessible to the SageMaker user profile, defining the directory to mount for that user. (AI-inferred)
 	FileSystemPath any
 }
 
 type MakerUserProfile_UserSettings_CustomFileSystemConfigs_S3FileSystemConfig struct {
-	// The absolute path (e.g., '/home/user/mybucket') where the S3 bucket is mounted in the user's SageMaker environment. (AI-inferred)
 	MountPath any
-	// Specifies the S3 URI (bucket and optional key prefix) of the Amazon S3 file system that SageMaker mounts for the user profile's custom file system configuration. (AI-inferred)
 	S3Uri any
 }
 
 type MakerUserProfile_UserSettings_CustomFileSystemConfigs struct {
-	// Defines Amazon Elastic File System (EFS) settings for a custom file system attached to the SageMaker user profile, including the EFS file system ID (FileSystemId) and the mount path (FileSystemPath) within the file system. (AI-inferred)
 	EfsfileSystemConfig any
-	// Specifies the FSx for Lustre file system configuration to attach and mount in the user's private SageMaker workspace, including the file system ID and mount path. (AI-inferred)
 	FsxLustreFileSystemConfig any
 	S3FileSystemConfig any
 }
 
 type MakerUserProfile_UserSettings_CustomPosixUserConfig struct {
-	// The numeric group ID (GID) that SageMaker uses to set filesystem ownership and permissions for the user's JupyterServer or KernelGateway apps when a custom POSIX user configuration is enabled. (AI-inferred)
 	Gid any
-	// Specifies the numeric POSIX user identifier (UID) that SageMaker uses for the execution environment when this custom POSIX user configuration is enabled. (AI-inferred)
 	Uid any
 }
 
 type MakerUserProfile_UserSettings_JupyterLabAppSettings_CodeRepositories struct {
-	// The URL of the Git repository to be associated with the JupyterLab app for the SageMaker user profile, allowing it to be accessed within Studio. (AI-inferred)
 	RepositoryUrl any
 }
 
@@ -102,7 +86,6 @@ type MakerUserProfile_UserSettings_JupyterLabAppSettings_EmrSettings struct {
 }
 
 type MakerUserProfile_UserSettings_JupyterLabAppSettings struct {
-	// Defines the idle-timeout and lifecycle policy for JupyterLab apps in the user profile, automatically shutting down apps that are idle for a configured period. (AI-inferred)
 	AppLifecycleManagement any
 	// The lifecycle configuration that runs before the default lifecycle configuration.
 	BuiltInLifecycleConfigArn any
@@ -110,7 +93,6 @@ type MakerUserProfile_UserSettings_JupyterLabAppSettings struct {
 	CodeRepositories any
 	// A list of custom images available for use for JupyterLab apps
 	CustomImages any
-	// Defines the default instance type and SageMaker image (via `InstanceType` and `SageMakerImageArn`) used when launching the user's JupyterLab applications, serving as the fallback environment for all JupyterLab sessions started under this user profile. (AI-inferred)
 	DefaultResourceSpec any
 	// Configuration parameters specifying IAM roles assumed by SageMaker's execution role and cluster instances.
 	EmrSettings any
@@ -119,7 +101,6 @@ type MakerUserProfile_UserSettings_JupyterLabAppSettings struct {
 }
 
 type MakerUserProfile_UserSettings_JupyterServerAppSettings struct {
-	// Specifies the default instance type, EBS volume size, and lifecycle configuration used when launching the Jupyter Server app for this user profile. (AI-inferred)
 	DefaultResourceSpec any
 	// A list of LifecycleConfigArns available for use with JupyterServer apps.
 	LifecycleConfigArns any
@@ -128,7 +109,6 @@ type MakerUserProfile_UserSettings_JupyterServerAppSettings struct {
 type MakerUserProfile_UserSettings_KernelGatewayAppSettings struct {
 	// A list of custom SageMaker images that are configured to run as a KernelGateway app.
 	CustomImages any
-	// Specifies the default instance type and SageMaker image configuration used when a kernel gateway app is started for this user profile. (AI-inferred)
 	DefaultResourceSpec any
 	// A list of LifecycleConfigArns available for use with KernelGateway apps.
 	LifecycleConfigArns any
@@ -151,9 +131,7 @@ type MakerUserProfile_UserSettings_SharingSettings struct {
 }
 
 type MakerUserProfile_UserSettings_SpaceStorageSettings_DefaultEbsStorageSettings struct {
-	// Sets the default size in gigabytes of the Amazon EBS storage volume that SageMaker provisions for a user's Studio space. (AI-inferred)
 	DefaultEbsVolumeSizeInGb any
-	// Specifies the maximum size in gigabytes for an Amazon EBS volume that can be attached to a SageMaker Studio space for this user profile. (AI-inferred)
 	MaximumEbsVolumeSizeInGb any
 }
 
@@ -163,9 +141,7 @@ type MakerUserProfile_UserSettings_SpaceStorageSettings struct {
 }
 
 type MakerUserProfile_UserSettings_StudioWebPortalSettings_HiddenSageMakerImageVersionAliases struct {
-	// The name of the SageMaker image for which the specified version aliases are hidden in the Studio web portal settings of the user profile. (AI-inferred)
 	SageMakerImageName any
-	// Specifies a list of SageMaker image version aliases that are hidden from the user in the SageMaker Studio web portal, preventing the user from using those image versions in the Studio interface. (AI-inferred)
 	VersionAliases any
 }
 
@@ -185,9 +161,7 @@ type MakerUserProfile_UserSettings struct {
 	AutoMountHomeEfs any
 	// The CodeEditor app settings.
 	CodeEditorAppSettings any
-	// Specifies a list of custom file system configurations (such as Amazon EFS or FSx for Lustre) that the user profile can mount. (AI-inferred)
 	CustomFileSystemConfigs any
-	// Specifies the custom POSIX user ID (UID) and group ID (GID) that the Jupyter server process runs as within this SageMaker User Profile. (AI-inferred)
 	CustomPosixUserConfig any
 	// Defines which Amazon SageMaker application users are directed to by default.
 	DefaultLandingUri any

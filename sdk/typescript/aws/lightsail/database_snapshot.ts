@@ -9,9 +9,7 @@ export interface DatabaseSnapshot_Location {
 }
 
 export interface DatabaseSnapshot_Tags {
-  /** The key of a tag to attach to the Lightsail database snapshot. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Lightsail database snapshot, used to categorize or identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

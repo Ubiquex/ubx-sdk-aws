@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryHttpNamespace_Tags:
-    # Specifies the key (name) of a tag applied to the AWS CloudFormation Service Discovery HTTP namespace, forming the key half of a key-value tag pair. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,24 +18,16 @@ _DiscoveryHttpNamespace_TagsFields = {
 
 @dataclasses.dataclass
 class DiscoveryHttpNamespaceConfig:
-    # Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
     description: Any = None
-    # The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
     name: Any = None
-    # Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DiscoveryHttpNamespaceAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the HTTP namespace in AWS. (AI-inferred)
     arn: Any = None
-    # Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
     description: Any = None
-    # The ID of the HTTP namespace, assigned by AWS Cloud Map when the namespace is created. (AI-inferred)
     id: Any = None
-    # The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
     name: Any = None
-    # Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
     tags: Any = None
 
 DiscoveryHttpNamespace = ubx.ResourceBinding(

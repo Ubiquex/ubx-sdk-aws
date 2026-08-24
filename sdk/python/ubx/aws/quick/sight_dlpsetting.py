@@ -8,35 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightDlpsetting_ProviderConfig_MicrosoftPurview_Credentials:
-    # The ARN of the AWS Secrets Manager secret that stores the credentials (such as the client secret) used to authenticate connections to Microsoft Purview in this QuickSight DLP provider configuration. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class SightDlpsetting_ProviderConfig_MicrosoftPurview_LabelActionMappings:
-    # The action to apply to data when its Microsoft Purview sensitivity label matches the corresponding label in the mapping, such as denying or allowing access. (AI-inferred)
     action: Any = None
-    # The identifier of a Microsoft Purview sensitivity label that is mapped to a DLP action in the QuickSight DLP settings provider configuration. (AI-inferred)
     label_id: Any = None
-    # The label_name specifies the name of a Microsoft Purview sensitivity label that this mapping applies to in the DLP provider configuration. (AI-inferred)
     label_name: Any = None
 
 @dataclasses.dataclass
 class SightDlpsetting_ProviderConfig_MicrosoftPurview:
-    # The credentials configuration holds the authentication secrets (such as tenant ID, client ID, and client secret) required for QuickSight to connect to and integrate with Microsoft Purview as the DLP provider. (AI-inferred)
     credentials: Any = None
-    # Maps Microsoft Purview sensitivity labels to configured actions (e.g., masking or blocking) that QuickSight applies to protect data in dashboards and analyses. (AI-inferred)
     label_action_mappings: Any = None
-    # Controls the action applied to data assets that lack a corresponding Microsoft Purview sensitivity label, determining whether QuickSight allows or blocks access to such unmapped data in DLP policies. (AI-inferred)
     unmapped_action: Any = None
 
 @dataclasses.dataclass
 class SightDlpsetting_ProviderConfig:
-    # The `microsoft_purview` provider configuration block defines the connection settings for integrating QuickSight's DLP policy with Microsoft Purview as an external data governance service. (AI-inferred)
     microsoft_purview: Any = None
 
 @dataclasses.dataclass
 class SightDlpsetting_Tags:
-    # The key of a tag assigned to the QuickSight Data Loss Prevention (DLP) setting, used for organizing and identifying the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -79,40 +70,28 @@ _SightDlpsetting_TagsFields = {
 
 @dataclasses.dataclass
 class SightDlpsettingConfig:
-    # The AWS account ID for which the QuickSight data loss prevention settings are configured. (AI-inferred)
     aws_account_id: Any = None
-    # The required DlpSettingId property specifies a unique, user-defined identifier for the data loss prevention (DLP) setting in Amazon QuickSight. (AI-inferred)
     dlp_setting_id: Any = None
-    # Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred)
     enabled: Any = None
     name: Any = None
-    # Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred)
     provider_config: Any = None
-    # Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred)
     provider_outage_action: Any = None
     provider_type: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class SightDlpsettingAttrs:
-    # The Amazon Resource Name (ARN) of this QuickSight data protection (DLP) setting, which uniquely identifies the setting and is used to reference it in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
-    # The AWS account ID for which the QuickSight data loss prevention settings are configured. (AI-inferred)
     aws_account_id: Any = None
     created_at: Any = None
-    # The required DlpSettingId property specifies a unique, user-defined identifier for the data loss prevention (DLP) setting in Amazon QuickSight. (AI-inferred)
     dlp_setting_id: Any = None
-    # Indicates whether the AWS QuickSight data loss prevention (DLP) setting is enabled, which activates the configured data protection policies for the relevant assets. (AI-inferred)
     enabled: Any = None
     name: Any = None
-    # Specifies the configuration for the data loss prevention (DLP) provider in Amazon QuickSight, including provider-specific parameters required to activate and manage DLP settings. (AI-inferred)
     provider_config: Any = None
-    # Specifies the action QuickSight takes when its configured identity provider becomes unavailable, used to enforce Data Loss Prevention (DLP) controls during outage events. (AI-inferred)
     provider_outage_action: Any = None
     provider_type: Any = None
     status: Any = None
     tags: Any = None
-    # The timestamp of the last update to the QuickSight data loss prevention setting. (AI-inferred)
     updated_at: Any = None
 
 SightDlpsetting = ubx.ResourceBinding(

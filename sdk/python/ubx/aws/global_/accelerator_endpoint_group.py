@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AcceleratorEndpointGroup_EndpointConfigurations:
-    # The ARN of the AWS resource (such as an Application Load Balancer, Network Load Balancer, or EC2 instance) that is attached as an endpoint in this endpoint group. (AI-inferred)
     attachment_arn: Any = None
-    # Indicates whether client IP address preservation is enabled for this endpoint, which keeps the original client IP address in the packet headers forwarded by Global Accelerator to the endpoint. (AI-inferred)
     client_ippreservation_enabled: Any = None
-    # The ARN of the endpoint resource (such as an Application Load Balancer, Network Load Balancer, EC2 instance, or Elastic IP address) that Global Accelerator routes traffic to for this endpoint configuration. (AI-inferred)
     endpoint_id: Any = None
-    # The weight assigned to the endpoint, controlling the proportion of traffic routed to it relative to other endpoints in the group (values 0-255, higher means more traffic). (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
 class AcceleratorEndpointGroup_PortOverrides:
-    # The actual port on the endpoint that receives traffic when this port override is applied, replacing the listener port for the mapped endpoint. (AI-inferred)
     endpoint_port: Any = None
-    # Specifies the original port on the accelerator listener that this port override maps to the endpoint port, redirecting traffic received on that listener port to the endpoint's configured port. (AI-inferred)
     listener_port: Any = None
 
 _AcceleratorEndpointGroup_EndpointConfigurationsFields = {
@@ -44,7 +38,6 @@ class AcceleratorEndpointGroupConfig:
     endpoint_group_region: Any = None
     # The time in seconds between each health check for an endpoint. Must be a value of 10 or 30
     health_check_interval_seconds: Any = None
-    # The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred)
     health_check_path: Any = None
     # The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group.
     health_check_port: Any = None
@@ -52,7 +45,6 @@ class AcceleratorEndpointGroupConfig:
     health_check_protocol: Any = None
     # The Amazon Resource Name (ARN) of the listener
     listener_arn: Any = None
-    # A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred)
     port_overrides: Any = None
     # The number of consecutive health checks required to set the state of the endpoint to unhealthy.
     threshold_count: Any = None
@@ -69,7 +61,6 @@ class AcceleratorEndpointGroupAttrs:
     endpoint_group_region: Any = None
     # The time in seconds between each health check for an endpoint. Must be a value of 10 or 30
     health_check_interval_seconds: Any = None
-    # The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred)
     health_check_path: Any = None
     # The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group.
     health_check_port: Any = None
@@ -77,7 +68,6 @@ class AcceleratorEndpointGroupAttrs:
     health_check_protocol: Any = None
     # The Amazon Resource Name (ARN) of the listener
     listener_arn: Any = None
-    # A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred)
     port_overrides: Any = None
     # The number of consecutive health checks required to set the state of the endpoint to unhealthy.
     threshold_count: Any = None

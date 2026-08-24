@@ -27,7 +27,6 @@ export interface SyncLocationAzureBlob_ManagedSecretConfig {
 
 export interface SyncLocationAzureBlob_Tags {
   key?: string | Computed<string>;
-  /** The value part of a key-value tag assigned to this AWS DataSync location for Azure Blob storage, used to identify and organize the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

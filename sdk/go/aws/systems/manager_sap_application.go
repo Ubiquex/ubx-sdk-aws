@@ -4,27 +4,19 @@ package systems
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerSapApplication_ComponentsInfo struct {
-	// Specifies the type of the SAP component (e.g., HANA or NetWeaver) that this component info entry describes for the AWS Systems Manager for SAP application. (AI-inferred)
 	ComponentType any
-	// The ID of the EC2 instance that hosts this SAP application component. (AI-inferred)
 	Ec2InstanceId any
-	// This field specifies the SAP System Identifier (SID) for an SAP component associated with the application, which AWS Systems Manager for SAP uses to identify and manage the component. (AI-inferred)
 	Sid any
 }
 
 type ManagerSapApplication_Credentials struct {
-	// Specifies whether the credential is for administrative access (ADMIN) or system-level access (SYSTEM) to the SAP application. (AI-inferred)
 	CredentialType any
-	// The name of the SAP database (e.g., an SAP HANA database) that this credential is used to access for the registered SAP application. (AI-inferred)
 	DatabaseName any
-	// The secret ID of the AWS Secrets Manager secret that stores the database credentials for this SAP application. (AI-inferred)
 	SecretId any
 }
 
 type ManagerSapApplication_Tags struct {
-	// A user-defined key within a tag assigned to the SAP application, used to categorize and filter the resource in AWS Systems Manager. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS Systems Manager for SAP application, enabling custom metadata for organization, cost tracking, and resource management. (AI-inferred)
 	Value any
 }
 
@@ -46,42 +38,32 @@ var ManagerSapApplication_TagsFields = ubx.FieldMap{
 	}
 
 type ManagerSapApplicationConfig struct {
-	// The unique identifier of the SAP application to register with AWS Systems Manager for SAP. (AI-inferred)
 	ApplicationId any
-	// The type of the SAP application being registered under Systems Manager for SAP (e.g., ABAP, JAVA, or HANA), which determines how the resource is managed and which components are applicable. (AI-inferred)
 	ApplicationType any
 	// This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
 	ComponentsInfo any
-	// A list of credential objects specifying the authentication details (credential type, secret ID, and optional database name) used by the SAP application to connect to SAP systems. (AI-inferred)
 	Credentials any
 	// The ARN of the SAP HANA database
 	DatabaseArn any
-	// The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
 	Instances any
 	SapInstanceNumber any
-	// Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
 	Sid any
 	// The tags of a SystemsManagerSAP application.
 	Tags any
 }
 
 type ManagerSapApplicationAttrs struct {
-	// The unique identifier of the SAP application to register with AWS Systems Manager for SAP. (AI-inferred)
 	ApplicationId any
-	// The type of the SAP application being registered under Systems Manager for SAP (e.g., ABAP, JAVA, or HANA), which determines how the resource is managed and which components are applicable. (AI-inferred)
 	ApplicationType any
 	// The ARN of the SSM-SAP application
 	Arn any
 	// This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
 	ComponentsInfo any
-	// A list of credential objects specifying the authentication details (credential type, secret ID, and optional database name) used by the SAP application to connect to SAP systems. (AI-inferred)
 	Credentials any
 	// The ARN of the SAP HANA database
 	DatabaseArn any
-	// The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
 	Instances any
 	SapInstanceNumber any
-	// Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
 	Sid any
 	// The tags of a SystemsManagerSAP application.
 	Tags any

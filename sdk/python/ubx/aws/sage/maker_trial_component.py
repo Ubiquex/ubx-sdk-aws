@@ -26,9 +26,7 @@ class MakerTrialComponent_Status:
 
 @dataclasses.dataclass
 class MakerTrialComponent_Tags:
-    # The key of a tag applied to the SageMaker trial component, used to categorize resources for cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the SageMaker trial component, forming a key-value pair used to organize, identify, and manage the resource. (AI-inferred)
     value: Any = None
 
 _MakerTrialComponent_MetadataPropertiesFields = {

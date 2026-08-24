@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerNotebookInstanceLifecycleConfig_OnCreate {
-  /** The base64-encoded shell script that SageMaker executes on the notebook instance during the creation ('onCreate') lifecycle event, allowing custom setup before the instance becomes available. (AI-inferred) */
   content?: string | Computed<string>;
 }
 
@@ -11,22 +10,15 @@ const MakerNotebookInstanceLifecycleConfig_OnCreateFields: FieldMap = {
 };
 
 export interface MakerNotebookInstanceLifecycleConfigConfig {
-  /** The name of the lifecycle configuration, which uniquely identifies it within your AWS account and is used when associating the lifecycle configuration with a notebook instance. (AI-inferred) */
   notebookInstanceLifecycleConfigName?: string | Computed<string>;
-  /** Specifies the lifecycle hooks that run when the notebook instance is created, containing base64-encoded shell script content that executes during instance creation. (AI-inferred) */
   onCreate?: MakerNotebookInstanceLifecycleConfig_OnCreate[] | Computed<MakerNotebookInstanceLifecycleConfig_OnCreate[]>;
-  /** Specifies a list of lifecycle configuration scripts (each a base64-encoded shell script) that Amazon SageMaker runs when the notebook instance starts. (AI-inferred) */
   onStart?: MakerNotebookInstanceLifecycleConfig_OnCreate[] | Computed<MakerNotebookInstanceLifecycleConfig_OnCreate[]>;
 }
 
 export interface MakerNotebookInstanceLifecycleConfigAttrs {
-  /** The computed name (identifier) of the SageMaker notebook instance lifecycle configuration, used as the CloudFormation physical resource ID. (AI-inferred) */
   id: string;
-  /** The name of the lifecycle configuration, which uniquely identifies it within your AWS account and is used when associating the lifecycle configuration with a notebook instance. (AI-inferred) */
   notebookInstanceLifecycleConfigName: string;
-  /** Specifies the lifecycle hooks that run when the notebook instance is created, containing base64-encoded shell script content that executes during instance creation. (AI-inferred) */
   onCreate: MakerNotebookInstanceLifecycleConfig_OnCreate[];
-  /** Specifies a list of lifecycle configuration scripts (each a base64-encoded shell script) that Amazon SageMaker runs when the notebook instance starts. (AI-inferred) */
   onStart: MakerNotebookInstanceLifecycleConfig_OnCreate[];
 }
 

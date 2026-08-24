@@ -15,7 +15,6 @@ class TsiteWiseComputationModel_ComputationModelConfiguration_AnomalyDetection:
 
 @dataclasses.dataclass
 class TsiteWiseComputationModel_ComputationModelConfiguration:
-    # Specifies the anomaly detection configuration for the IoTSiteWise computation model, including the associated ML model and a threshold that determines when asset data points are flagged as anomalous. (AI-inferred)
     anomaly_detection: Any = None
 
 @dataclasses.dataclass

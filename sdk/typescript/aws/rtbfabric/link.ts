@@ -10,12 +10,10 @@ export interface Link_LinkAttributes_ResponderErrorMasking {
 
 export interface Link_LinkAttributes {
   customerProvidedId?: string | Computed<string>;
-  /** Specifies a list of responder error masking rules for the link, determining which error responses from the responder endpoint should be masked or sanitized when the link processes bid requests. (AI-inferred) */
   responderErrorMasking?: Link_LinkAttributes_ResponderErrorMasking[] | Computed<Link_LinkAttributes_ResponderErrorMasking[]>;
 }
 
 export interface Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSampling {
-  /** Defines the percentage (0-100) of error-level application log entries to sample and send to the configured log destination for this RTB Fabric link. (AI-inferred) */
   errorLog: number | Computed<number>;
   filterLog: number | Computed<number>;
 }
@@ -109,7 +107,6 @@ export interface LinkAttrs {
   linkDirection: string;
   linkId: string;
   linkLogSettings: Link_LinkLogSettings;
-  /** The read-only status of the AWS RTB Fabric link, such as whether the link is active or inactive, which is determined and reported by the AWS RTB Fabric service. (AI-inferred) */
   linkStatus: string;
   moduleConfigurationList: Link_ModuleConfigurationList[];
   peerGatewayId: string;

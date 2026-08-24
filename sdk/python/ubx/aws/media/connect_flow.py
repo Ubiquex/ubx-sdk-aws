@@ -22,25 +22,17 @@ class ConnectFlow_Maintenance:
 
 @dataclasses.dataclass
 class ConnectFlow_MediaStreams_Attributes_Fmtp:
-    # The channel_order FMTP parameter defines the ordering of audio channels in the media stream, such as 'L,R' for stereo or 'L,R,C,LFE' for 5.1 surround. (AI-inferred)
     channel_order: Any = None
-    # The colorimetry FMTP parameter of the media stream, which specifies the color space standard (e.g., BT.601, BT.709) for the video content. (AI-inferred)
     colorimetry: Any = None
-    # Sets the exact video frame rate (in frames per second) for this media stream, which is included in the FMTP (Format-Specific Parameters) configuration that MediaConnect uses to define the stream's format. (AI-inferred)
     exact_framerate: Any = None
-    # The pixel aspect ratio (PAR) for the media stream, expressed as a string ratio such as '16:9'. (AI-inferred)
     par: Any = None
-    # Specifies the horizontal and vertical RTP video range (such as 'full' or 'narrow') for the FMTP attributes of this media stream. (AI-inferred)
     range: Any = None
-    # Specifies the scan mode (for example, progressive or interlaced) of the video in the media stream's FMTP parameters for an AWS MediaConnect flow. (AI-inferred)
     scan_mode: Any = None
     tcs: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_MediaStreams_Attributes:
-    # The FMTP (Format Parameters) for this media stream, containing codec- or transport-specific parameters (as defined in SDP) that describe the stream's encoding characteristics. (AI-inferred)
     fmtp: Any = None
-    # Specifies the language code of the media stream (e.g., 'en-US') in RFC 5646 format, used to identify the language of the audio content. (AI-inferred)
     lang: Any = None
 
 @dataclasses.dataclass
@@ -50,31 +42,20 @@ class ConnectFlow_MediaStreams_Tags:
 
 @dataclasses.dataclass
 class ConnectFlow_MediaStreams:
-    # The attributes object within a media stream specifies its encoding parameters, such as video resolution, frame rate, and bitrate, which control how the stream is encoded and transmitted. (AI-inferred)
     attributes: Any = None
-    # The RTP clock rate (in Hz) for the media stream, which MediaConnect uses to timestamp and synchronize packets for that stream (e.g., 48000 for audio, 90000 for video). (AI-inferred)
     clock_rate: Any = None
-    # A user-defined description for the media stream, used to identify it within an AWS Elemental MediaConnect flow. (AI-inferred)
     description: Any = None
-    # The RTP payload type number (0-127) that identifies the format of the media stream, such as the codec and sampling rate for audio or video. (AI-inferred)
     fmt: Any = None
-    # The unique numeric identifier for the media stream within the MediaConnect flow, used to reference the media stream when configuring sources and outputs. (AI-inferred)
     media_stream_id: Any = None
-    # A unique name for the media stream within the MediaConnect flow, used to identify the stream when associating it with outputs or entitlements. (AI-inferred)
     media_stream_name: Any = None
-    # The type of the media stream, such as video, audio, ancillary-data, or combination, which determines how the stream is handled in the flow. (AI-inferred)
     media_stream_type: Any = None
     tags: Any = None
-    # The video format of the media stream, specifying the video resolution and frame rate (e.g., '1080p') for the flow's video transport. (AI-inferred)
     video_format: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_NdiConfig_NdiDiscoveryServers:
-    # The IP address or hostname of the NDI Discovery Server used by the flow to discover NDI sources on the network. (AI-inferred)
     discovery_server_address: Any = None
-    # The TCP port on which the NDI discovery server listens, used to discover NDI sources for the MediaConnect flow. (AI-inferred)
     discovery_server_port: Any = None
-    # Specifies the VPC interface adapter name that the NDI discovery server uses to communicate within a virtual private cloud, enabling the MediaConnect flow to connect to NDI sources on that private network. (AI-inferred)
     vpc_interface_adapter: Any = None
 
 @dataclasses.dataclass
@@ -83,7 +64,6 @@ class ConnectFlow_NdiConfig:
     machine_name: Any = None
     # A list of up to three NDI discovery server configurations. While not required by the API, this configuration is necessary for NDI functionality to work properly.
     ndi_discovery_servers: Any = None
-    # Specifies whether the NDI (Network Device Interface) output configuration is enabled or disabled for the flow, using values ENABLED or DISABLED. (AI-inferred)
     ndi_state: Any = None
 
 @dataclasses.dataclass
@@ -121,48 +101,37 @@ class ConnectFlow_Source_GatewayBridgeSource:
 
 @dataclasses.dataclass
 class ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations_Interface:
-    # The name of the network interface on the source device that receives the media stream for this input configuration. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_MediaStreamSourceConfigurations_InputConfigurations:
-    # The port number on the referenced interface where this input configuration receives the media stream from the upstream source. (AI-inferred)
     input_port: Any = None
-    # This object identifies the VPC interface used for this input configuration by the flow's VPC interface name, which must correspond to a VPC interface attached to the flow's source. (AI-inferred)
     interface: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_MediaStreamSourceConfigurations:
-    # The encoding name (e.g., 'raw', 'aac', or 'nal') assigned to the media stream within the flow source's media stream source configuration. (AI-inferred)
     encoding_name: Any = None
-    # Specifies the input port and network interface for each media stream in the flow's source, enabling the flow to receive each media stream on a dedicated port and interface. (AI-inferred)
     input_configurations: Any = None
-    # Specifies the friendly name of the media stream that this source configuration applies to, matching the media stream name that the upstream source encodes. (AI-inferred)
     media_stream_name: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_NdiSourceSettings:
-    # Specifies the NDI source name that identifies the incoming NDI stream to be used as the source for the MediaConnect flow. (AI-inferred)
     source_name: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration_SecretsManager:
-    # The ARN of an IAM role that AWS Elemental MediaConnect assumes to access the AWS Secrets Manager secret containing the transit encryption key for decryption of the source flow. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the decryption key for decrypting transit traffic on this MediaConnect flow source. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_RouterIntegrationTransitDecryption_EncryptionKeyConfiguration:
     automatic: Any = None
-    # Specifies the AWS Secrets Manager secret that contains the encryption key used for decrypting the incoming media source's transit integration. (AI-inferred)
     secrets_manager: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_Source_RouterIntegrationTransitDecryption:
     # Configuration settings for flow transit encryption keys.
     encryption_key_configuration: Any = None
-    # The type of encryption key (for example, 'static_key') used by the MediaConnect flow to decrypt the transit stream arriving from the router integration source. (AI-inferred)
     encryption_key_type: Any = None
 
 @dataclasses.dataclass
@@ -191,11 +160,9 @@ class ConnectFlow_Source:
     min_latency: Any = None
     # The name of the source.
     name: Any = None
-    # This object configures the NDI (Network Device Interface) source for the flow, specifying the listening port and NDI tier (e.g., NDI or NDI|HX) that MediaConnect uses to receive the stream from an NDI device. (AI-inferred)
     ndi_source_settings: Any = None
     # The protocol that is used by the source.
     protocol: Any = None
-    # Indicates the current integration state of the source with an AWS Elemental MediaConnect router, such as ENABLED or DISABLED. (AI-inferred)
     router_integration_state: Any = None
     # The configuration that defines how content is encrypted during transit between the MediaConnect router and a MediaConnect flow.
     router_integration_transit_decryption: Any = None
@@ -233,25 +200,20 @@ class ConnectFlow_SourceFailoverConfig:
     recovery_window: Any = None
     # The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     source_priority: Any = None
-    # Determines whether automatic source failover is enabled for the MediaConnect flow; set to 'ENABLED' to allow failover to the secondary source, or 'DISABLED' to turn it off. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings_SilentAudio:
-    # Controls whether the flow's source detects silent audio; set to ENABLED to activate monitoring or DISABLED to turn it off. (AI-inferred)
     state: Any = None
-    # The duration (in seconds) that incoming audio must remain silent before MediaConnect triggers a silent audio monitoring alarm. (AI-inferred)
     threshold_seconds: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_SourceMonitoringConfig_AudioMonitoringSettings:
-    # Configures silent audio monitoring for the MediaConnect flow's source, including the duration threshold that triggers a silence alert and whether detection is enabled. (AI-inferred)
     silent_audio: Any = None
 
 @dataclasses.dataclass
 class ConnectFlow_SourceMonitoringConfig_VideoMonitoringSettings:
     black_frames: Any = None
-    # Specifies the detection settings for frozen frames in the video stream, including whether the detection is enabled and the maximum duration (in milliseconds) that a frame can remain unchanged before it is considered frozen. (AI-inferred)
     frozen_frames: Any = None
 
 @dataclasses.dataclass
@@ -267,16 +229,11 @@ class ConnectFlow_SourceMonitoringConfig:
 
 @dataclasses.dataclass
 class ConnectFlow_VpcInterfaces:
-    # The name of the VPC interface, which identifies it within the flow. (AI-inferred)
     name: Any = None
     network_interface_ids: Any = None
-    # Specifies the network interface type for the VPC interface, either 'EIP' to allocate an Elastic IP address or 'ANY' for a standard network interface without a public IP. (AI-inferred)
     network_interface_type: Any = None
-    # ARN of the IAM role that MediaConnect assumes to create and manage the elastic network interface in the VPC for this flow's VPC interface. (AI-inferred)
     role_arn: Any = None
-    # The list of security group IDs that are associated with the VPC interface used by the MediaConnect flow. (AI-inferred)
     security_group_ids: Any = None
-    # The ID of the subnet in which the VPC interface is created. (AI-inferred)
     subnet_id: Any = None
     tags: Any = None
 
@@ -424,7 +381,6 @@ _ConnectFlow_VpcInterfacesFields = {
 class ConnectFlowConfig:
     # The Availability Zone that you want to create the flow in. These options are limited to the Availability Zones within the current AWS.
     availability_zone: Any = None
-    # Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred)
     encoding_config: Any = None
     # Determines the processing capacity and feature set of the flow. Set this optional parameter to LARGE if you want to enable NDI sources or outputs on the flow.
     flow_size: Any = None
@@ -451,7 +407,6 @@ class ConnectFlowAttrs:
     availability_zone: Any = None
     # The IP address from which video will be sent to output destinations.
     egress_ip: Any = None
-    # Configures the video encoding algorithm (such as H.264) and its specific parameters (resolution, bitrate, frame rate) applied to the MediaConnect flow's video stream for output. (AI-inferred)
     encoding_config: Any = None
     # The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow.
     flow_arn: Any = None

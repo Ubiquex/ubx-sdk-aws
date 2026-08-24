@@ -9,33 +9,24 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_Ec2Configuration:
     batch_image_status: Any = None
-    # Specifies a custom Amazon Machine Image (AMI) ID that overrides the default ECS-optimized AMI used for the EC2 instances in the AWS Batch compute environment. (AI-inferred)
     image_id_override: Any = None
-    # This field sets the Kubernetes version for the Amazon EKS optimized AMI used in the EC2 configuration of an AWS Batch compute environment, enabling the compute instances to run a specific Kubernetes minor version. (AI-inferred)
     image_kubernetes_version: Any = None
-    # Specifies the ECS-optimized AMI type (e.g., ECS_AL2 for Linux, ECS_AL2_NVIDIA for GPU) used for EC2 instances in the compute environment. (AI-inferred)
     image_type: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_LaunchTemplate_Overrides:
     launch_template_id: Any = None
     launch_template_name: Any = None
-    # A list of EC2 instance types that override the instance types specified in the launch template used for the AWS Batch compute environment's compute resources. (AI-inferred)
     target_instance_types: Any = None
-    # Determines whether the override user data is provided as plain text (TEXT) or as a base64-encoded string (BASE64) when overriding the EC2 launch template's user data for AWS Batch compute resources. (AI-inferred)
     userdata_type: Any = None
     version: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_LaunchTemplate:
-    # The ID of the Amazon EC2 launch template to use for the compute resources in this AWS Batch compute environment. (AI-inferred)
     launch_template_id: Any = None
-    # The name of the EC2 launch template that AWS Batch uses to launch instances for the compute environment's compute resources. (AI-inferred)
     launch_template_name: Any = None
-    # The overrides list inside the launch template configuration lets you assign different launch templates to specific EC2 instance types used in the compute environment, so those instance types use their own launch template instead of the base one. (AI-inferred)
     overrides: Any = None
     userdata_type: Any = None
-    # The version of the AWS EC2 launch template to use for the compute resources of the Batch compute environment, where you can specify a specific version number or use the special values $Latest or $Default to automatically use the latest or default edition of the launch template. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
@@ -44,14 +35,11 @@ class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_Infrastructur
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_CapacityReservations:
-    # The ARN of the resource group that contains the EC2 Capacity Reservations to be used when launching instances in the managed compute environment. (AI-inferred)
     reservation_group_arn: Any = None
-    # Sets the capacity reservation preference for instances launched via the launch template used by this AWS Batch managed compute environment, where 'open' uses any matching open Capacity Reservation and 'none' skips capacity reservations entirely. (AI-inferred)
     reservation_preference: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_InstanceRequirements:
-    # Limits the pool of EC2 instance types that the compute environment can launch to only those explicitly listed in this allowed instance types list. (AI-inferred)
     allowed_instance_types: Any = None
 
 @dataclasses.dataclass
@@ -60,32 +48,22 @@ class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunc
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_NetworkConfiguration:
-    # Specifies the security group IDs to assign to the EC2 instances in the AWS Batch managed compute environment when the launch template's network configuration is used. (AI-inferred)
     security_groups: Any = None
-    # Specifies the subnets in which the managed compute environment instances are launched, as part of the network configuration of the EC2 launch template referenced by the managed instances provider. (AI-inferred)
     subnets: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate_StorageConfiguration:
-    # Specifies the size in GiB of the storage volume (e.g., an Amazon EBS volume) attached to the managed instances when launched using the specified launch template in the AWS Batch compute environment's managed instances provider. (AI-inferred)
     storage_size_gi_b: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunchTemplate:
-    # Specifies the capacity option (such as ON_DEMAND or SPOT) for instances launched from the provided launch template in the managed instances provider, determining whether the compute environment purchases instances on demand or as spot capacity. (AI-inferred)
     capacity_option_type: Any = None
-    # Specifies the capacity reservation targeting configuration (such as the specific Capacity Reservation ID or the open/reserved preference) for EC2 instances launched by the compute environment's managed instance provider using the given launch template. (AI-inferred)
     capacity_reservations: Any = None
-    # The ARN of the IAM instance profile that is attached to the EC2 instances launched for the AWS Batch managed compute environment. (AI-inferred)
     ec2_instance_profile_arn: Any = None
-    # Enables the use of FIPS (Federal Information Processing Standards) compliant endpoints on EC2 instances launched from this launch template within the AWS Batch managed compute environment. (AI-inferred)
     fips_enabled: Any = None
-    # Specifies whether to enable propagation of instance tags to the instance metadata service (IMDS) for instances launched via the launch template in this AWS Batch compute environment. (AI-inferred)
     instance_metadata_tags_propagation: Any = None
-    # Defines the instance requirements (such as vCPU count, memory, and CPU architecture) used to select EC2 instance types for the managed instances in the AWS Batch compute environment. (AI-inferred)
     instance_requirements: Any = None
     local_storage_configuration: Any = None
-    # Determines whether detailed CloudWatch monitoring is enabled for the EC2 instances launched from this launch template, controlling the granularity of metrics collected (1-minute vs 5-minute intervals). (AI-inferred)
     monitoring: Any = None
     network_configuration: Any = None
     storage_configuration: Any = None
@@ -93,10 +71,8 @@ class ComputeEnvironment_ComputeResources_ManagedInstancesProvider_InstanceLaunc
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources_ManagedInstancesProvider:
     infrastructure_optimization: Any = None
-    # The ARN of the IAM role that AWS Batch assumes to launch and manage the EC2 instances in a managed compute environment that uses the managed instances provider. (AI-inferred)
     infrastructure_role_arn: Any = None
     instance_launch_template: Any = None
-    # When set to true, the tags of the AWS Batch compute environment are propagated to the EC2 instances launched for the managed instances provider. (AI-inferred)
     propagate_tags: Any = None
 
 @dataclasses.dataclass
@@ -105,60 +81,38 @@ class ComputeEnvironment_ComputeResources_ScalingPolicy:
 
 @dataclasses.dataclass
 class ComputeEnvironment_ComputeResources:
-    # Specifies the strategy used by AWS Batch to select which compute resources (e.g., instance types) to use for the compute environment, such as BEST_FIT, BEST_FIT_PROGRESSIVE, or SPOT_CAPACITY_OPTIMIZED. (AI-inferred)
     allocation_strategy: Any = None
-    # The percentage of the On-Demand price that you are willing to pay for Spot Instances in the compute environment's Spot Fleet, influencing the maximum bid price for Spot capacity. (AI-inferred)
     bid_percentage: Any = None
     # Capacity-level tags for compute environments.
     capacity_tags: Any = None
-    # Sets the desired number of vCPUs for the managed EC2 compute environment, which AWS Batch automatically scales between the minimum and maximum vCPU limits based on job queue demand. (AI-inferred)
     desiredv_cpus: Any = None
-    # Defines EC2 configuration settings for the compute resources, including AMI overrides and image type (e.g., ECS or EKS) used for the Batch compute environment's instances. (AI-inferred)
     ec2_configuration: Any = None
-    # The name of the Amazon EC2 key pair used to enable SSH access to the EC2 instances that AWS Batch launches in the compute environment. (AI-inferred)
     ec2_key_pair: Any = None
-    # The AMI ID used for the EC2 instances in the compute environment; when omitted, AWS Batch automatically selects an appropriate Amazon ECS-optimized AMI. (AI-inferred)
     image_id: Any = None
-    # The ARN of the IAM role that the compute environment's EC2 container instances assume to enable the ECS agent to make AWS API calls on your behalf. (AI-inferred)
     instance_role: Any = None
-    # The EC2 instance types that the compute environment may use for its compute resources; if not specified, AWS Batch chooses default instance types based on the allocation strategy. (AI-inferred)
     instance_types: Any = None
-    # Specifies an Amazon EC2 launch template that defines the instance configuration for the compute resources of the AWS Batch compute environment. (AI-inferred)
     launch_template: Any = None
-    # Configures the provider for managed compute instances in the AWS Batch compute environment, allowing selection between EC2 instances and EC2 Fleet and specifying their provisioning details. (AI-inferred)
     managed_instances_provider: Any = None
-    # Maximum number of vCPUs that the compute environment can scale out to, capping the total vCPU capacity of the managed compute resources. (AI-inferred)
     maxv_cpus: Any = None
-    # The minimum number of vCPUs that the compute environment will maintain, defining the lower bound for the managed EC2 compute environment's auto-scaling group. (AI-inferred)
     minv_cpus: Any = None
-    # The name of an EC2 placement group to associate with the compute resources, which controls the physical placement strategy of the launched instances and may affect job performance. (AI-inferred)
     placement_group: Any = None
     scaling_policy: Any = None
-    # This is a list of VPC security group IDs that AWS Batch assigns to the compute resources' EC2 instances (or Fargate tasks) in the managed compute environment, defining the firewall rules for network access. (AI-inferred)
     security_group_ids: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that AWS Batch assumes to launch and manage Spot Fleet instances in the compute environment. (AI-inferred)
     spot_iam_fleet_role: Any = None
-    # The VPC subnet IDs where the Batch compute resources (EC2 instances or Fargate tasks) are launched. (AI-inferred)
     subnets: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The compute resources type (e.g., EC2, SPOT, FARGATE, or FARGATE_SPOT) that determines the infrastructure on which this AWS Batch compute environment runs jobs. (AI-inferred)
     type: Any = None
-    # When enabled, AWS Batch updates the compute environment's instances to the latest Amazon ECS-optimized AMI version (including the ECS container agent) when the environment is updated. (AI-inferred)
     update_to_latest_image_version: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_EksConfiguration:
-    # The Amazon Resource Name (ARN) of the Amazon EKS cluster that this compute environment uses to run Batch jobs. (AI-inferred)
     eks_cluster_arn: Any = None
-    # Specifies the Kubernetes namespace on the Amazon EKS cluster where the AWS Batch compute environment runs its job pods. (AI-inferred)
     kubernetes_namespace: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironment_UpdatePolicy:
-    # The maximum time in minutes that a job in the compute environment can run before AWS Batch terminates it when the compute environment's update policy is applied. (AI-inferred)
     job_execution_timeout_minutes: Any = None
-    # If true, AWS Batch terminates running jobs in the compute environment whenever the compute environment is updated. (AI-inferred)
     terminate_jobs_on_update: Any = None
 
 _ComputeEnvironment_EksConfigurationFields = {
@@ -173,50 +127,32 @@ _ComputeEnvironment_UpdatePolicyFields = {
 
 @dataclasses.dataclass
 class ComputeEnvironmentConfig:
-    # The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     compute_environment_name: Any = None
     context: Any = None
-    # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None
-    # Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
     replace_compute_environment: Any = None
-    # The ARN of the IAM role that AWS Batch assumes to make calls to other AWS services on your behalf when creating and managing the compute environment (required for managed compute environments). (AI-inferred)
     service_role: Any = None
-    # Specifies whether the compute environment is enabled for job submission, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # Specifies whether the compute environment is managed or unmanaged by AWS Batch, with valid values being MANAGED or UNMANAGED. (AI-inferred)
     type: Any = None
-    # The number of vCPUs to allocate to the unmanaged compute environment, used when the compute environment type is set to UNMANAGED. (AI-inferred)
     unmanagedv_cpus: Any = None
-    # Configures the update policy for the compute environment, controlling whether in-progress jobs are terminated and the maximum time to wait for jobs to finish before an update is applied. (AI-inferred)
     update_policy: Any = None
 
 @dataclasses.dataclass
 class ComputeEnvironmentAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Batch compute environment, assigned by AWS when the resource is created. (AI-inferred)
     compute_environment_arn: Any = None
-    # The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     compute_environment_name: Any = None
-    # The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred)
     compute_resources: Any = None
     context: Any = None
-    # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None
-    # Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
     replace_compute_environment: Any = None
-    # The ARN of the IAM role that AWS Batch assumes to make calls to other AWS services on your behalf when creating and managing the compute environment (required for managed compute environments). (AI-inferred)
     service_role: Any = None
-    # Specifies whether the compute environment is enabled for job submission, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     state: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # Specifies whether the compute environment is managed or unmanaged by AWS Batch, with valid values being MANAGED or UNMANAGED. (AI-inferred)
     type: Any = None
-    # The number of vCPUs to allocate to the unmanaged compute environment, used when the compute environment type is set to UNMANAGED. (AI-inferred)
     unmanagedv_cpus: Any = None
-    # Configures the update policy for the compute environment, controlling whether in-progress jobs are terminated and the maximum time to wait for jobs to finish before an update is applied. (AI-inferred)
     update_policy: Any = None
 
 ComputeEnvironment = ubx.ResourceBinding(

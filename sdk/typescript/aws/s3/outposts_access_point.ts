@@ -17,7 +17,6 @@ export interface OutpostsAccessPointConfig {
   name: string | Computed<string>;
   /** The access point policy associated with this access point. */
   policy?: unknown | Computed<unknown>;
-  /** The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred) */
   vpcConfiguration: OutpostsAccessPoint_VpcConfiguration | Computed<OutpostsAccessPoint_VpcConfiguration>;
 }
 
@@ -30,7 +29,6 @@ export interface OutpostsAccessPointAttrs {
   name: string;
   /** The access point policy associated with this access point. */
   policy: unknown;
-  /** The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred) */
   vpcConfiguration: OutpostsAccessPoint_VpcConfiguration;
 }
 

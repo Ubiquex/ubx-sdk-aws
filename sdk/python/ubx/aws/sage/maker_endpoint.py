@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration_Alarms:
-    # The name of the CloudWatch alarm that SageMaker monitors during a deployment to trigger an automatic rollback of the endpoint to the previous configuration if the alarm enters an alarm state. (AI-inferred)
     alarm_name: Any = None
 
 @dataclasses.dataclass
@@ -25,9 +24,7 @@ class MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfigu
 
 @dataclasses.dataclass
 class MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration:
-    # Defines the initial canary step size for shifting traffic to the new endpoint variant during a blue/green deployment, expressed as either an instance count or a capacity percentage. (AI-inferred)
     canary_size: Any = None
-    # Specifies the step size for the linear traffic routing strategy in the blue/green deployment, defined as a capacity size (type and value) that determines how much additional traffic is shifted to the new variant at each step. (AI-inferred)
     linear_step_size: Any = None
     # Specifies the type of traffic routing (e.g., 'AllAtOnce', 'Canary', 'Linear').
     type: Any = None
@@ -40,39 +37,30 @@ class MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy:
     maximum_execution_timeout_in_seconds: Any = None
     # The wait time before terminating the old endpoint during a blue/green deployment.
     termination_wait_in_seconds: Any = None
-    # Specifies the traffic routing strategy (such as canary or linear) and timing parameters that control how SageMaker shifts traffic from the previous endpoint variant to the new one during a blue-green deployment. (AI-inferred)
     traffic_routing_configuration: Any = None
 
 @dataclasses.dataclass
 class MakerEndpoint_DeploymentConfig_RollingUpdatePolicy:
-    # Defines the maximum capacity (number of instances or percentage) that SageMaker updates in a single batch during a rolling update of the endpoint's variant configuration. (AI-inferred)
     maximum_batch_size: Any = None
     # The maximum time allowed for the rolling update, in seconds.
     maximum_execution_timeout_in_seconds: Any = None
-    # Specifies the maximum batch size (as a CapacitySize object with type and value) that SageMaker uses when rolling back instances during a rolling update deployment of the endpoint. (AI-inferred)
     rollback_maximum_batch_size: Any = None
     # The time to wait between steps during the rolling update, in seconds.
     wait_interval_in_seconds: Any = None
 
 @dataclasses.dataclass
 class MakerEndpoint_DeploymentConfig:
-    # Defines the CloudWatch alarms that, when triggered during a SageMaker endpoint deployment, automatically roll back the deployment to the previous endpoint configuration. (AI-inferred)
     auto_rollback_configuration: Any = None
-    # Defines the blue/green deployment strategy for updating the SageMaker endpoint, controlling how traffic gradually or immediately shifts from the previous model variant to the new one during an endpoint update. (AI-inferred)
     blue_green_update_policy: Any = None
-    # Defines the rolling update policy for a SageMaker endpoint deployment, specifying parameters like maximum batch size and wait interval that control how instances are updated during a rollout. (AI-inferred)
     rolling_update_policy: Any = None
 
 @dataclasses.dataclass
 class MakerEndpoint_ExcludeRetainedVariantProperties:
-    # Specifies the type of variant property ('Desktop' or 'Host') to exclude for a retained variant when updating the SageMaker endpoint. (AI-inferred)
     variant_property_type: Any = None
 
 @dataclasses.dataclass
 class MakerEndpoint_Tags:
-    # The key of a tag attached to the SageMaker endpoint, used to organize and identify the resource within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the SageMaker endpoint, used to organize and identify the endpoint for cost allocation and access control. (AI-inferred)
     value: Any = None
 
 _MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields = {
@@ -161,7 +149,6 @@ _MakerEndpoint_TagsFields = {
 
 @dataclasses.dataclass
 class MakerEndpointConfig_:
-    # Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred)
     deployment_config: Any = None
     # The name of the endpoint configuration for the SageMaker endpoint. This is a required property.
     endpoint_config_name: Any = None
@@ -176,7 +163,6 @@ class MakerEndpointConfig_:
 
 @dataclasses.dataclass
 class MakerEndpointAttrs:
-    # Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred)
     deployment_config: Any = None
     # The Amazon Resource Name (ARN) of the endpoint.
     endpoint_arn: Any = None

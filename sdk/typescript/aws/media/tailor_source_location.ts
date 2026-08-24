@@ -11,7 +11,6 @@ export interface TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTo
 }
 
 export interface TailorSourceLocation_AccessConfiguration {
-  /** Determines the access method for the source location, with valid values `S3_SIGV4` for authenticated Amazon S3 access and `STREAMING` for streaming-based access. (AI-inferred) */
   accessType?: string | Computed<string>;
   /** <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p> */
   secretsManagerAccessTokenConfiguration?: TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfiguration | Computed<TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfiguration>;
@@ -23,16 +22,12 @@ export interface TailorSourceLocation_DefaultSegmentDeliveryConfiguration {
 }
 
 export interface TailorSourceLocation_SegmentDeliveryConfigurations {
-  /** Specifies the base URL from which MediaTailor retrieves content segments for the source location, serving as the origin for segment delivery. (AI-inferred) */
   baseUrl?: string | Computed<string>;
-  /** The name of the segment delivery configuration, which uniquely identifies this configuration within the source location. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface TailorSourceLocation_Tags {
-  /** A user-defined tag key assigned to this AWS MediaTailor source location for resource organization and identification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value user-defined tag applied to the MediaTailor source location, used for identifying, organizing, and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -74,7 +69,6 @@ export interface TailorSourceLocationConfig {
   httpConfiguration: TailorSourceLocation_DefaultSegmentDeliveryConfiguration | Computed<TailorSourceLocation_DefaultSegmentDeliveryConfiguration>;
   /** <p>A list of the segment delivery configurations associated with this resource.</p> */
   segmentDeliveryConfigurations?: TailorSourceLocation_SegmentDeliveryConfigurations[] | Computed<TailorSourceLocation_SegmentDeliveryConfigurations[]>;
-  /** The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred) */
   sourceLocationName: string | Computed<string>;
   /** The tags to assign to the source location. */
   tags?: TailorSourceLocation_Tags[] | Computed<TailorSourceLocation_Tags[]>;
@@ -91,7 +85,6 @@ export interface TailorSourceLocationAttrs {
   httpConfiguration: TailorSourceLocation_DefaultSegmentDeliveryConfiguration;
   /** <p>A list of the segment delivery configurations associated with this resource.</p> */
   segmentDeliveryConfigurations: TailorSourceLocation_SegmentDeliveryConfigurations[];
-  /** The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred) */
   sourceLocationName: string;
   /** The tags to assign to the source location. */
   tags: TailorSourceLocation_Tags[];

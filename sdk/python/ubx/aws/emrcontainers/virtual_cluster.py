@@ -8,19 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider_Info_EksInfo:
-    # The Kubernetes namespace in the Amazon EKS cluster where the virtual cluster's resources are deployed. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider_Info:
-    # Specifies the Amazon EKS cluster information for the container provider, including the Kubernetes namespace where the virtual cluster runs. (AI-inferred)
     eks_info: Any = None
 
 @dataclasses.dataclass
 class VirtualCluster_ContainerProvider:
     # The ID of the container cluster
     id: Any = None
-    # The info object inside container_provider contains provider-specific details, specifically the Amazon EKS namespace in which the virtual cluster runs. (AI-inferred)
     info: Any = None
     # The type of the container provider
     type: Any = None
@@ -28,7 +25,6 @@ class VirtualCluster_ContainerProvider:
 @dataclasses.dataclass
 class VirtualCluster_Tags:
     key: Any = None
-    # The value portion of a tag attached to the EMR Containers virtual cluster. (AI-inferred)
     value: Any = None
 
 _VirtualCluster_ContainerProvider_Info_EksInfoFields = {
@@ -60,7 +56,6 @@ _VirtualCluster_TagsFields = {
 
 @dataclasses.dataclass
 class VirtualClusterConfig:
-    # The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
     container_provider: Any = None
     # Name of the virtual cluster.
     name: Any = None
@@ -73,9 +68,7 @@ class VirtualClusterConfig:
 
 @dataclasses.dataclass
 class VirtualClusterAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the EMR Containers virtual cluster in AWS. (AI-inferred)
     arn: Any = None
-    # The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
     container_provider: Any = None
     # Id of the virtual cluster.
     id: Any = None

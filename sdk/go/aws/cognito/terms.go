@@ -9,7 +9,6 @@ type TermsConfig struct {
 	Links any
 	TermsName any
 	TermsSource any
-	// The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
 	UserPoolId any
 }
 
@@ -20,7 +19,6 @@ type TermsAttrs struct {
 	TermsId any
 	TermsName any
 	TermsSource any
-	// The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
 	UserPoolId any
 }
 

@@ -24,7 +24,6 @@ class FormationTypeActivationConfig:
     auto_update: Any = None
     # The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
     execution_role_arn: Any = None
-    # Specifies the Amazon CloudWatch Logs log group name and IAM role ARN used to deliver logs for the registered resource type. (AI-inferred)
     logging_config: Any = None
     # The Major Version of the type you want to enable
     major_version: Any = None
@@ -49,7 +48,6 @@ class FormationTypeActivationAttrs:
     auto_update: Any = None
     # The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
     execution_role_arn: Any = None
-    # Specifies the Amazon CloudWatch Logs log group name and IAM role ARN used to deliver logs for the registered resource type. (AI-inferred)
     logging_config: Any = None
     # The Major Version of the type you want to enable
     major_version: Any = None

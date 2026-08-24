@@ -4,51 +4,34 @@ package lake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationTagAssociation_Lftags struct {
-	// The AWS account ID of the Data Catalog where the LF-tag to associate is defined; if omitted, the current account's Data Catalog is used. (AI-inferred)
 	CatalogId any
-	// The key of an LF-Tag (Lake Formation tag) that is associated with the resource, which must match an existing tag key in AWS Lake Formation. (AI-inferred)
 	TagKey any
-	// The list of tag values for a given LF-Tag key in the tag association, specifying which value(s) of that key are applied to the associated Lake Formation resource. (AI-inferred)
 	TagValues any
 }
 
 type FormationTagAssociation_Resource_Database struct {
-	// The catalog_id property specifies the AWS account ID of the Data Catalog that contains the database to which the tag is being associated. (AI-inferred)
 	CatalogId any
-	// The name of the Data Catalog database to which the LF-tag association applies. (AI-inferred)
 	Name any
 }
 
 type FormationTagAssociation_Resource_Table struct {
-	// The catalog ID (typically the AWS account ID) of the Data Catalog where the table resides, used to identify the table for which the LF-tag association is being defined. (AI-inferred)
 	CatalogId any
-	// The name of the Glue database that contains the table to which the LF-tag association is applied. (AI-inferred)
 	DatabaseName any
-	// The name of the table identified in the resource's table property, specifying which table in the referenced database receives the LF-tag association. (AI-inferred)
 	Name any
-	// When set, this indicates the LF-tag association applies to all tables in the database (a table wildcard), rather than a single named table. (AI-inferred)
 	TableWildcard any
 }
 
 type FormationTagAssociation_Resource_TableWithColumns struct {
-	// Specifies the AWS Glue Data Catalog ID (typically the AWS account ID) that contains the table whose columns are being associated with an LF-tag, required when targeting a specific table's columns. (AI-inferred)
 	CatalogId any
-	// The names of the columns within the specified table to which the LF-tags will be associated. (AI-inferred)
 	ColumnNames any
-	// The name of the database in which the table (and optionally its columns) being associated with LF-tags is located. (AI-inferred)
 	DatabaseName any
-	// The name of the table in the Data Catalog to which this tag association applies, as part of the table_with_columns resource identifier. (AI-inferred)
 	Name any
 }
 
 type FormationTagAssociation_Resource struct {
-	// The unique identifier of the AWS Glue Data Catalog (typically the AWS account ID) in which the target database or table exists, used to locate the resource for the LF-Tag association. (AI-inferred)
 	Catalog any
-	// The `database` object defines a database resource in the AWS Lake Formation catalog, specifying the catalog ID and database name, to which the referenced LF-tags are associated. (AI-inferred)
 	Database any
-	// The table property of the resource object defines the specific table in the AWS Glue Data Catalog to associate the LF-tags with, supplied via its catalog ID, database name, and table name. (AI-inferred)
 	Table any
-	// Specifies the Data Catalog table columns to associate the LF-Tag with, including the catalog ID, database name, table name, and a list of column names. (AI-inferred)
 	TableWithColumns any
 }
 
@@ -97,16 +80,12 @@ var FormationTagAssociation_ResourceFields = ubx.FieldMap{
 	}
 
 type FormationTagAssociationConfig struct {
-	// The list of LF-Tags (key-value pairs) to associate with the specified resource, where each LF-Tag consists of a tag key and a list of tag values. (AI-inferred)
 	Lftags any
-	// Specifies the Lake Formation resource (database, table, or table with columns) to which the LF-tags are attached, including optional catalog ID and resource identifiers. (AI-inferred)
 	Resource any
 }
 
 type FormationTagAssociationAttrs struct {
-	// The list of LF-Tags (key-value pairs) to associate with the specified resource, where each LF-Tag consists of a tag key and a list of tag values. (AI-inferred)
 	Lftags any
-	// Specifies the Lake Formation resource (database, table, or table with columns) to which the LF-tags are attached, including optional catalog ID and resource identifiers. (AI-inferred)
 	Resource any
 	// Unique string identifying the resource. Used as primary identifier, which ideally should be a string
 	ResourceIdentifier any

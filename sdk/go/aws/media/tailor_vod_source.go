@@ -4,18 +4,13 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TailorVodSource_HttpPackageConfigurations struct {
-	// The relative path to the manifest file (e.g., /path/to/index.m3u8) for the HTTP package configuration of the VOD source. (AI-inferred)
 	Path any
-	// The source group name that groups this HTTP package configuration with others in the same VOD source, used by MediaTailor to select the appropriate manifest during playback. (AI-inferred)
 	SourceGroup any
-	// Specifies the type of media packaging for this HTTP package configuration, which must be either HLS or DASH. (AI-inferred)
 	Type any
 }
 
 type TailorVodSource_Tags struct {
-	// A key in the user-defined tag map applied to the MediaTailor VOD source resource, used for metadata and resource organization. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the MediaTailor VOD source, serving as the value portion of a key-value metadata pair. (AI-inferred)
 	Value any
 }
 
@@ -33,11 +28,9 @@ var TailorVodSource_TagsFields = ubx.FieldMap{
 type TailorVodSourceConfig struct {
 	// <p>A list of HTTP package configuration parameters for this VOD source.</p>
 	HttpPackageConfigurations any
-	// The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the VOD source.
 	Tags any
-	// A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred)
 	VodSourceName any
 }
 
@@ -46,11 +39,9 @@ type TailorVodSourceAttrs struct {
 	Arn any
 	// <p>A list of HTTP package configuration parameters for this VOD source.</p>
 	HttpPackageConfigurations any
-	// The name of the MediaTailor source location that this VOD source is associated with; the source location defines the origin server and delivery settings for the media content. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the VOD source.
 	Tags any
-	// A unique identifier for the VOD source within its MediaTailor location, used when referencing the source in playback configurations and other resources. (AI-inferred)
 	VodSourceName any
 }
 

@@ -19,9 +19,7 @@ class LiftScript_StorageLocation:
 
 @dataclasses.dataclass
 class LiftScript_Tags:
-    # The key of a tag attached to the GameLift script, used to identify and categorize the resource. (AI-inferred)
     key: Any = None
-    # The string value paired with a tag key on the GameLift script, used to label and categorize the resource for cost allocation and identity-based policies. (AI-inferred)
     value: Any = None
 
 _LiftScript_StorageLocationFields = {
@@ -42,7 +40,6 @@ class LiftScriptConfig:
     name: Any = None
     # The Node.js version used for execution of the Realtime script.
     node_js_version: Any = None
-    # The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred)
     storage_location: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -63,7 +60,6 @@ class LiftScriptAttrs:
     node_js_version: Any = None
     # The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".
     size_on_disk: Any = None
-    # The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred)
     storage_location: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

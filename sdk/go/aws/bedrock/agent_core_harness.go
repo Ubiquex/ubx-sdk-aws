@@ -4,44 +4,31 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
-	// Specifies the exact string value that a custom claim in the JWT token must match for the authorizer to grant access. (AI-inferred)
 	MatchValueString any
-	// This list defines the set of allowed string values that the corresponding JWT claim must contain (when the claim is a string list) for the request to be authorized by the custom JWT authorizer. (AI-inferred)
 	MatchValueStringList any
 }
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue struct {
-	// Specifies the comparison operator used to evaluate whether the value of a custom claim in the JWT matches the configured authorizing claim match value. (AI-inferred)
 	ClaimMatchOperator any
-	// Specifies the expected claim value that must be matched for the custom JWT authorizer to authorize requests to the Bedrock agent core harness. (AI-inferred)
 	ClaimMatchValue any
 }
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
-	// Specifies the expected value or match condition for a custom claim when using a custom JWT authorizer, allowing the agent to authorize requests based on token claims. (AI-inferred)
 	AuthorizingClaimMatchValue any
 	InboundTokenClaimName any
-	// Specifies the expected data type (e.g., string, number, boolean) for the value of an inbound JWT claim, enabling the custom JWT authorizer to correctly parse and validate that claim during request authorization. (AI-inferred)
 	InboundTokenClaimValueType any
 }
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource struct {
-	// Determines the IP address version (IPv4 or IPv6) assigned to the private endpoint of the managed VPC resource used by the custom JWT authorizer to access the agent core harness. (AI-inferred)
 	EndpointIpAddressType any
-	// Specifies the domain name used for routing traffic to the custom JWT authorizer's private endpoint inside the managed VPC. (AI-inferred)
 	RoutingDomain any
-	// The security group IDs to attach to the managed VPC that backs the private endpoint for the custom JWT authorizer. (AI-inferred)
 	SecurityGroupIds any
-	// Specifies the subnet IDs inside the managed VPC where the private endpoint for the custom JWT authorizer is deployed, allowing the endpoint to be attached to those subnets. (AI-inferred)
 	SubnetIds any
-	// The tags to assign to the AWS-managed VPC resource that hosts the private endpoint for the custom JWT authorizer, enabling resource identification and cost tracking. (AI-inferred)
 	Tags any
-	// The ID of the VPC in which the managed VPC resource for the private endpoint is provisioned, enabling network isolation for the custom JWT authorizer. (AI-inferred)
 	VpcIdentifier any
 }
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource struct {
-	// The identifier of the VPC Lattice resource configuration that defines the self-managed lattice resource used as the private endpoint for the custom JWT authorizer. (AI-inferred)
 	ResourceConfigurationIdentifier any
 }
 
@@ -58,18 +45,13 @@ type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoin
 }
 
 type AgentCoreHarness_AuthorizerConfiguration_CustomJwtauthorizer struct {
-	// This is the list of allowed audiences (the `aud` claim) for the JWT token, and the token must contain one of these values in its audience claim to be accepted by the custom JWT authorizer. (AI-inferred)
 	AllowedAudience any
-	// Specifies the list of client IDs that are permitted to access the API through this custom JWT authorizer, restricting authorization to known OAuth2 clients. (AI-inferred)
 	AllowedClients any
-	// Lists the OAuth 2.0 scopes that must be present in the JWT token for the custom JWT authorizer to allow the request, restricting access to tokens with the required scope claims. (AI-inferred)
 	AllowedScopes any
 	CustomClaims any
-	// The discovery URL that the custom JWT authorizer calls to obtain the OpenID Connect configuration and JSON Web Key Set (JWKS) used for verifying JWT tokens. (AI-inferred)
 	DiscoveryUrl any
 	// Private endpoint configuration for connecting to the OpenID Connect discovery endpoint over a private network.
 	PrivateEndpoint any
-	// Specifies a list of private endpoint overrides that tell the custom JWT authorizer how to reach a JWT issuer or JWKS endpoint through private network routes (such as VPC endpoints) instead of the public internet, so token validation can occur within a private environment. (AI-inferred)
 	PrivateEndpointOverrides any
 }
 
@@ -78,34 +60,27 @@ type AgentCoreHarness_AuthorizerConfiguration struct {
 }
 
 type AgentCoreHarness_Environment_AgentCoreRuntimeEnvironment_FilesystemConfigurations_EfsAccessPoint struct {
-	// The Amazon Resource Name (ARN) of the Elastic File System (EFS) access point used by the Bedrock agent core harness to mount the filesystem in the agent's runtime environment. (AI-inferred)
 	AccessPointArn any
-	// Defines the absolute directory path within the agent's runtime container where the specified Amazon EFS access point filesystem is mounted, making the filesystem available at that location for the agent to read from or write to. (AI-inferred)
 	MountPath any
 }
 
 type AgentCoreHarness_Environment_AgentCoreRuntimeEnvironment_FilesystemConfigurations_SessionStorage struct {
-	// The absolute filesystem path inside the agent runtime environment where the session storage volume is mounted, determining where session state and temporary data are persisted across invocations. (AI-inferred)
 	MountPath any
 }
 
 type AgentCoreHarness_Environment_AgentCoreRuntimeEnvironment_FilesystemConfigurations struct {
 	EfsAccessPoint any
-	// Defines the S3 access point configuration for a file system mount, specifying the access point ARN (and optionally a mount path) through which the Bedrock agent accesses files stored in S3. (AI-inferred)
 	S3FilesAccessPoint any
-	// Specifies the directory or mount point within the attached filesystem where the agent core's session data is stored and persisted across operations. (AI-inferred)
 	SessionStorage any
 }
 
 type AgentCoreHarness_Environment_AgentCoreRuntimeEnvironment_LifecycleConfiguration struct {
-	// Specifies the maximum duration, in seconds, that an idle agent runtime session can remain open before the agent core environment automatically terminates it to free up resources. (AI-inferred)
 	IdleRuntimeSessionTimeout any
 	MaxLifetime any
 }
 
 type AgentCoreHarness_Environment_AgentCoreRuntimeEnvironment_NetworkConfiguration_NetworkModeConfig struct {
 	SecurityGroups any
-	// The list of VPC subnet IDs in which the agent core runtime environment is deployed, defining the network subnets for the harness when configured for VPC-based networking. (AI-inferred)
 	Subnets any
 }
 
@@ -141,10 +116,8 @@ type AgentCoreHarness_EnvironmentArtifact struct {
 
 type AgentCoreHarness_Memory_AgentCoreMemoryConfiguration struct {
 	ActorId any
-	// The Amazon Resource Name (ARN) of the memory resource that the agent core uses to store and recall session context, required when configuring agent core memory. (AI-inferred)
 	Arn any
 	MessagesCount any
-	// Defines the retrieval configuration for the agent's core memory, such as the retrieval type (SEMANTIC or HYBRID) and the number of results to return when the agent recalls past interactions. (AI-inferred)
 	RetrievalConfig any
 }
 
@@ -160,7 +133,6 @@ type AgentCoreHarness_Memory_ManagedMemoryConfiguration struct {
 }
 
 type AgentCoreHarness_Memory struct {
-	// Configures the agent's core memory behavior in the harness, including enabling or disabling memory and specifying the memory type (such as session summary) used by the agent. (AI-inferred)
 	AgentCoreMemoryConfiguration any
 	// Explicitly opt out of memory.
 	Disabled any
@@ -171,30 +143,19 @@ type AgentCoreHarness_Memory struct {
 type AgentCoreHarness_Model_BedrockModelConfig struct {
 	// Provider-specific parameters passed through to the model provider unchanged.
 	AdditionalParams any
-	// Specifies the API format (e.g., `INVOKE_MODEL` or `CONVERSE`) used to invoke the underlying foundation model in the agent's bedrock model configuration. (AI-inferred)
 	ApiFormat any
-	// Configures the maximum number of tokens the Bedrock model is allowed to generate in a single response, effectively capping the output length. (AI-inferred)
 	MaxTokens any
-	// The identifier of the Amazon Bedrock foundation model (e.g., anthropic.claude-v2) that the agent core harness uses to generate responses. (AI-inferred)
 	ModelId any
-	// Sets the sampling temperature for the Bedrock foundation model in the agent's model configuration, where lower values produce more deterministic and focused responses and higher values increase randomness and creativity. (AI-inferred)
 	Temperature any
-	// In the Bedrock model configuration for the agent's core harness, `top_p` sets the nucleus sampling probability threshold (0 to 1) controlling how many top tokens accumulate to that probability mass during response generation. (AI-inferred)
 	TopP any
 }
 
 type AgentCoreHarness_Model_GeminiModelConfig struct {
-	// The ARN of the AWS Secrets Manager secret that stores the API key used to authenticate calls to the Gemini model configured for this agent. (AI-inferred)
 	ApiKeyArn any
-	// The maximum number of tokens the Gemini model can generate in a single response when used by the Bedrock agent core harness. (AI-inferred)
 	MaxTokens any
-	// Specifies the identifier of the Google Gemini foundation model that the Bedrock agent core harness uses for generation. (AI-inferred)
 	ModelId any
-	// Specifies the sampling temperature to apply to the Gemini model, controlling the degree of randomness in generated responses. (AI-inferred)
 	Temperature any
-	// Sets the top-k sampling parameter for Gemini model inference, which limits the model to consider only the k most likely tokens at each generation step. (AI-inferred)
 	TopK any
-	// Specifies the top_p (nucleus sampling) parameter for the Gemini model configuration within the agent core harness, controlling the cumulative probability threshold for token selection during text generation. (AI-inferred)
 	TopP any
 }
 
@@ -202,39 +163,26 @@ type AgentCoreHarness_Model_LiteLlmModelConfig struct {
 	// Provider-specific parameters passed through to LiteLLM unchanged.
 	AdditionalParams any
 	ApiBase any
-	// The ARN of the AWS Secrets Manager secret that stores the API key required to authenticate with the LiteLLM model endpoint. (AI-inferred)
 	ApiKeyArn any
-	// The maximum number of tokens the LiteLLM model is allowed to generate in a single response. (AI-inferred)
 	MaxTokens any
-	// The model identifier string required by LiteLLM to route requests to the underlying provider, typically formatted as 'provider/model-name' (e.g., 'openai/gpt-4'). (AI-inferred)
 	ModelId any
-	// The temperature parameter controls the randomness of the model's generated responses, with lower values making the output more deterministic and focused, and higher values increasing creativity and variability. (AI-inferred)
 	Temperature any
-	// Specifies the top-p (nucleus sampling) value for the LiteLLM model configuration, determining the cumulative probability cutoff for token selection during generation. (AI-inferred)
 	TopP any
 }
 
 type AgentCoreHarness_Model_OpenAiModelConfig struct {
 	// Provider-specific parameters passed through to the model provider unchanged.
 	AdditionalParams any
-	// Specifies the OpenAI API format (e.g., 'chat' or 'responses') the agent uses when invoking this model via the OpenAI-compatible model configuration. (AI-inferred)
 	ApiFormat any
-	// The ARN of the AWS Secrets Manager secret that stores the OpenAI API key used to authenticate requests for the OpenAI model configured in this core harness agent. (AI-inferred)
 	ApiKeyArn any
-	// Specifies the maximum number of tokens the OpenAI-compatible model can generate in a single response for the Bedrock agent core harness, controlling output length. (AI-inferred)
 	MaxTokens any
-	// The unique identifier of the OpenAI-compatible model to use in the core harness's OpenAI model configuration, such as a model name or endpoint ID. (AI-inferred)
 	ModelId any
-	// Sets the sampling temperature for the OpenAI model used by the agent core harness, controlling the randomness of generated responses (lower values are more deterministic, higher values are more creative). (AI-inferred)
 	Temperature any
-	// Sets the top_p nucleus sampling parameter for the OpenAI model, controlling output diversity by capping the cumulative token probability mass considered during generation. (AI-inferred)
 	TopP any
 }
 
 type AgentCoreHarness_Model struct {
-	// Specifies the Amazon Bedrock model configuration for the core harness, including the model ARN and inference settings, to define the model used to test the agent. (AI-inferred)
 	BedrockModelConfig any
-	// Specifies the Gemini-specific inference configuration (e.g., temperature, topP, and token limits) for the foundation model used by the agent core harness. (AI-inferred)
 	GeminiModelConfig any
 	LiteLlmModelConfig any
 	OpenAiModelConfig any
@@ -245,14 +193,11 @@ type AgentCoreHarness_Skills_AwsSkills struct {
 }
 
 type AgentCoreHarness_Skills_Git_Auth struct {
-	// This field specifies the Amazon Resource Name (ARN) of a secret in AWS Secrets Manager that holds the authentication credentials for accessing the Git repository defined for the skill. (AI-inferred)
 	CredentialArn any
-	// The username used for Git authentication when the agent's skill fetches its source from a Git repository. (AI-inferred)
 	Username any
 }
 
 type AgentCoreHarness_Skills_Git struct {
-	// Specifies the authentication credentials (such as a username, password, or personal access token) used to access the private Git repository that contains the skill's source code. (AI-inferred)
 	Auth any
 	Path any
 	Url any
@@ -264,19 +209,16 @@ type AgentCoreHarness_Skills_S3 struct {
 
 type AgentCoreHarness_Skills struct {
 	AwsSkills any
-	// Defines the Git-based source repository that provides the skill's implementation, allowing the harness to pull the skill code from version control. (AI-inferred)
 	Git any
 	Path any
 	S3 any
 }
 
 type AgentCoreHarness_SystemPrompt struct {
-	// The text of the system prompt that defines the agent's behavior and instructions for the AWS Bedrock agent core harness. (AI-inferred)
 	Text any
 }
 
 type AgentCoreHarness_Tags struct {
-	// The key of a tag (key-value pair) attached to the AWS Bedrock Agent Core Harness, used to categorize or identify the resource within AWS. (AI-inferred)
 	Key any
 	Value any
 }
@@ -290,43 +232,31 @@ type AgentCoreHarness_Tools_Config_AgentCoreCodeInterpreter struct {
 }
 
 type AgentCoreHarness_Tools_Config_AgentCoreGateway_OutboundAuth_Oauth struct {
-	// Specifies additional key-value pairs to be included in the OAuth 2.0 token request for outbound authentication of the agent core gateway. (AI-inferred)
 	CustomParameters any
-	// Specifies the default redirect URI that the OAuth authorization server will call back to after successful authentication, used as the return location when the agent core gateway requests OAuth tokens for outbound API access. (AI-inferred)
 	DefaultReturnUrl any
-	// Specifies the OAuth 2.0 grant type used by the agent core to authenticate outbound requests through the agent core gateway. (AI-inferred)
 	GrantType any
 	ProviderArn any
-	// Specifies the list of OAuth 2.0 scopes to request from the authorization server for the Agent Core gateway's outbound authentication, controlling the permissions granted when invoking the configured tool. (AI-inferred)
 	Scopes any
 }
 
 type AgentCoreHarness_Tools_Config_AgentCoreGateway_OutboundAuth struct {
-	// Specifies the AWS IAM configuration used to authenticate outbound requests from the agent core gateway to external tool endpoints, typically including an IAM role ARN for signing and authorizing API calls. (AI-inferred)
 	AwsIam any
-	// When set, the `none` field under outbound_auth selects the 'no authentication' scheme, meaning outbound requests from the agent core gateway are sent without any authentication credentials. (AI-inferred)
 	None any
-	// The `oauth` object under `outbound_auth` specifies the OAuth 2.0 configuration (such as client credentials and token endpoint) used by the agent core gateway to authenticate outgoing requests. (AI-inferred)
 	Oauth any
 }
 
 type AgentCoreHarness_Tools_Config_AgentCoreGateway struct {
 	GatewayArn any
-	// Defines the authentication settings that the agent core gateway uses when making outbound calls to external tools or APIs. (AI-inferred)
 	OutboundAuth any
 }
 
 type AgentCoreHarness_Tools_Config_InlineFunction struct {
-	// Specifies a description of the inline function, which the agent uses to understand when and how to invoke the tool. (AI-inferred)
 	Description any
-	// Defines the JSON Schema that declares the input parameters an inline function tool expects, used for tool invocation validation in the Bedrock agent core harness. (AI-inferred)
 	InputSchema any
 }
 
 type AgentCoreHarness_Tools_Config_RemoteMcp struct {
-	// Specifies the HTTP headers, such as authorization or accept headers, to include when connecting to the remote Model Context Protocol (MCP) server defined in this tool configuration. (AI-inferred)
 	Headers any
-	// Specifies the URL endpoint of a remote Model Context Protocol (MCP) server, which the agent's tool configuration connects to in order to discover and invoke the tools exposed by that server. (AI-inferred)
 	Url any
 }
 
@@ -335,26 +265,21 @@ type AgentCoreHarness_Tools_Config struct {
 	AgentCoreCodeInterpreter any
 	AgentCoreGateway any
 	InlineFunction any
-	// Contains the endpoint URI and optional HTTP headers for connecting the tool to a remote Model Context Protocol (MCP) server. (AI-inferred)
 	RemoteMcp any
 }
 
 type AgentCoreHarness_Tools struct {
 	Config any
 	Name any
-	// Specifies the type of a tool in the agent's tools list, such as ACTION_GROUP, KNOWLEDGE_BASE, or FUNCTION, which determines how the agent invokes the tool. (AI-inferred)
 	Type any
 }
 
 type AgentCoreHarness_Truncation_Config_SlidingWindow struct {
-	// The maximum number of recent conversation messages to retain when the sliding window truncation strategy is applied. (AI-inferred)
 	MessagesCount any
 }
 
 type AgentCoreHarness_Truncation_Config_Summarization struct {
-	// The number of most recent conversation messages to preserve in their original form (i.e., exclude from summarization) when the agent core harness truncates conversation history via summarization. (AI-inferred)
 	PreserveRecentMessages any
-	// Specifies the system prompt the agent uses to generate a summary of past conversation turns when the chat history exceeds the configured truncation limit. (AI-inferred)
 	SummarizationSystemPrompt any
 	SummaryRatio any
 }
@@ -712,7 +637,6 @@ type AgentCoreHarnessConfig struct {
 	MaxIterations any
 	// The maximum number of tokens the agent can generate per iteration.
 	MaxTokens any
-	// Specifies the foundation model configuration (e.g., model ID or inference profile) that the Bedrock agent uses to process prompts and generate responses. (AI-inferred)
 	Model any
 	// The skills available to the agent.
 	Skills any
@@ -750,7 +674,6 @@ type AgentCoreHarnessAttrs struct {
 	// The maximum number of tokens the agent can generate per iteration.
 	MaxTokens any
 	Memory any
-	// Specifies the foundation model configuration (e.g., model ID or inference profile) that the Bedrock agent uses to process prompts and generate responses. (AI-inferred)
 	Model any
 	// The skills available to the agent.
 	Skills any

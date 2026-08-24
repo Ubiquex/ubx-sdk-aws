@@ -4,9 +4,7 @@ package game
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiftMatchmakingConfiguration_GameProperties struct {
-	// The identifying key of a custom game property (a key-value pair) that is passed to a matchmade game session to provide custom configuration data. (AI-inferred)
 	Key any
-	// The string value of a game property key-value pair that is passed to GameLift matchmaking to filter or customize game sessions. (AI-inferred)
 	Value any
 }
 

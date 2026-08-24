@@ -29,7 +29,6 @@ export interface TrafficMirrorTargetAttrs {
   description: string;
   /** The ID of the Gateway Load Balancer endpoint. */
   gatewayLoadBalancerEndpointId: string;
-  /** The unique AWS-assigned identifier for the traffic mirror target, typically formatted as tmt- followed by alphanumeric characters. (AI-inferred) */
   id: string;
   /** The network interface ID that is associated with the target. */
   networkInterfaceId: string;

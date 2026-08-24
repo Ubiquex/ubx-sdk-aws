@@ -25,7 +25,6 @@ class ManagerDevice_Location:
 @dataclasses.dataclass
 class ManagerDevice_Tags:
     key: Any = None
-    # For each tag attached to an AWS Network Manager device, this field specifies the tag's value, enabling you to associate arbitrary metadata (such as device location or environment) with the device for identification, resource organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _ManagerDevice_AwslocationFields = {

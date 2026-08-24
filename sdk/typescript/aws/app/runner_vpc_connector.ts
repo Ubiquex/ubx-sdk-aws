@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RunnerVpcConnector_Tags {
-  /** The key of a user-defined tag that can be attached to the AWS App Runner VPC connector for identification and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair that can be assigned to the App Runner VPC connector for resource organization, access control, and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkGroup_Tags {
-  /** The key of a tag assigned to the Athena work group, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined value string paired with a tag key on the Athena work group, used for organizing, cost allocation, and tag-based access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -41,7 +39,6 @@ export interface WorkGroup_WorkGroupConfiguration_EngineVersion {
 }
 
 export interface WorkGroup_WorkGroupConfiguration_ManagedQueryResultsConfiguration {
-  /** Determines whether this workgroup uses Athena's managed query results bucket to automatically store query results. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
   /** Indicates the encryption configuration for Athena Managed Storage. If not setting this field, Managed Storage will encrypt the query results with Athena's encryption key */
   encryptionConfiguration?: WorkGroup_WorkGroupConfiguration_CustomerContentEncryptionConfiguration | Computed<WorkGroup_WorkGroupConfiguration_CustomerContentEncryptionConfiguration>;
@@ -142,13 +139,9 @@ export interface WorkGroup_WorkGroupConfigurationUpdates_ResultConfigurationUpda
   expectedBucketOwner?: string | Computed<string>;
   /** The location in Amazon S3 where your query results are stored, such as s3://path/to/query/bucket/. To run the query, you must specify the query results location using one of the ways: either for individual queries using either this setting (client-side), or in the workgroup, using WorkGroupConfiguration */
   outputLocation?: string | Computed<string>;
-  /** When set to true, this removes the existing ACL (access control list) configuration from the workgroup's result settings during an update. (AI-inferred) */
   removeAclConfiguration?: boolean | Computed<boolean>;
-  /** Indicates whether to remove the encryption configuration for the query results settings of the Athena work group. (AI-inferred) */
   removeEncryptionConfiguration?: boolean | Computed<boolean>;
-  /** Whether to remove the expected bucket owner setting from the Athena work group's result configuration for query results, so that the bucket owner check is no longer enforced. (AI-inferred) */
   removeExpectedBucketOwner?: boolean | Computed<boolean>;
-  /** This boolean flag, when set to true, removes the previously configured S3 output location for query results in the Athena work group as part of a result configuration update. (AI-inferred) */
   removeOutputLocation?: boolean | Computed<boolean>;
 }
 
@@ -175,7 +168,6 @@ export interface WorkGroup_WorkGroupConfigurationUpdates {
   publishCloudWatchMetricsEnabled?: boolean | Computed<boolean>;
   /** Indicates that the data usage control limit per query is removed. */
   removeBytesScannedCutoffPerQuery?: boolean | Computed<boolean>;
-  /** Whether to remove the customer content encryption configuration from the Athena work group during an update. (AI-inferred) */
   removeCustomerContentEncryptionConfiguration?: boolean | Computed<boolean>;
   /** If set to true, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to false, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. */
   requesterPaysEnabled?: boolean | Computed<boolean>;
@@ -197,7 +189,6 @@ export interface WorkGroupConfig {
   recursiveDeleteOption?: boolean | Computed<boolean>;
   /** The state of the workgroup: ENABLED or DISABLED. */
   state?: string | Computed<string>;
-  /** Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred) */
   tags?: WorkGroup_Tags[] | Computed<WorkGroup_Tags[]>;
 }
 
@@ -212,9 +203,7 @@ export interface WorkGroupAttrs {
   recursiveDeleteOption: boolean;
   /** The state of the workgroup: ENABLED or DISABLED. */
   state: string;
-  /** Specifies the tags to attach to the Athena work group, which can be used for cost tracking, resource organization, and IAM-based access control. (AI-inferred) */
   tags: WorkGroup_Tags[];
-  /** The computed work group configuration object that defines the query execution settings for this Athena work group, including the result location, encryption, and CloudWatch metrics publishing behavior. (AI-inferred) */
   workGroupConfiguration: WorkGroup_WorkGroupConfiguration;
   /** The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified. */
   workGroupConfigurationUpdates: WorkGroup_WorkGroupConfigurationUpdates;

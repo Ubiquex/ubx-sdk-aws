@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Volume_Tags {
-  /** The key of a tag applied to the EBS volume, used to organize, identify, and track the volume by criteria such as environment, owner, or cost center. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the EC2 volume, typically used to store metadata such as a name, environment, or ownership label. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -73,7 +71,6 @@ export interface VolumeAttrs {
   tags: Volume_Tags[];
   /** The throughput to provision for a volume, with a maximum of 2,000 MiB/s. This parameter is valid only for ``gp3`` volumes. The default value is 125. Valid Range: Minimum value of 125. Maximum value of 2000. The maximum ratio of throughput to IOPS is 0.25 MiB/s per IOPS. For example, a volume with 3,000 IOPS can have a maximum throughput of 750 MiB/s (3,000 x 0.25). */
   throughput: number;
-  /** The unique identifier assigned by AWS to the EC2 EBS volume. (AI-inferred) */
   volumeId: string;
   /** Specifies the Amazon EBS Provisioned Rate for Volume Initialization (volume initialization rate), in MiB/s, at which to download the snapshot blocks from Amazon S3 to the volume. This is also known as *volume initialization*. Specifying a volume initialization rate ensures that the volume is initialized at a predictable and consistent rate after creation. This parameter is supported only for volumes created from snapshots. Omit this parameter if: + You want to create the volume using fast snapshot restore. You must specify a snapshot that is enabled for fast snapshot restore. In this case, the volume is fully initialized at creation. If you specify a snapshot that is enabled for fast snapshot restore and a volume initialization rate, the volume will be initialized at the specified rate instead of fast snapshot restore. + You want to create a volume that is initialized at the default rate. For more information, see [Initialize Amazon EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html) in the *Amazon EC2 User Guide*. Valid range: 100 - 300 MiB/s */
   volumeInitializationRate: number;

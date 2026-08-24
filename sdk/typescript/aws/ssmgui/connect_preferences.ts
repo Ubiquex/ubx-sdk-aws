@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectPreferences_ConnectionRecordingPreferences_RecordingDestinations_S3Buckets {
-  /** The name of the S3 bucket used as a destination where connection recording sessions are stored. (AI-inferred) */
   bucketName?: string | Computed<string>;
   bucketOwner?: string | Computed<string>;
 }

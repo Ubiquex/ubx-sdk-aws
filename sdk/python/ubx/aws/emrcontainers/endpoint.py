@@ -8,62 +8,44 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Endpoint_CertificateAuthority:
-    # The ARN of the AWS Certificate Manager (ACM) certificate used to secure the TLS certificate authority for the EMR Containers endpoint. (AI-inferred)
     certificate_arn: Any = None
-    # The PEM-encoded certificate data from the certificate authority that secures the EMR Containers managed endpoint, used by clients to verify TLS connections. (AI-inferred)
     certificate_data: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides_ApplicationConfiguration:
-    # The classification for the application configuration override, such as 'spark-defaults', 'hive-site', or 'yarn-site', which identifies the type of configuration properties being applied when the endpoint is created. (AI-inferred)
     classification: Any = None
-    # Provides a list of application configuration objects, each containing a classification (e.g., spark-defaults) and key-value properties, that override the default EMR on EKS application settings for the endpoint. (AI-inferred)
     configurations: Any = None
-    # Key-value pairs for a configuration classification, used to override application-level settings for the EMR on EKS managed endpoint. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration:
-    # The name of the CloudWatch log group to which EMR on EKS container logs are delivered when monitoring configuration is enabled for this endpoint. (AI-inferred)
     log_group_name: Any = None
-    # Specifies the prefix that is prepended to CloudWatch log stream names for monitoring logs emitted by the EMR on EKS managed endpoint. (AI-inferred)
     log_stream_name_prefix: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration:
-    # The maximum number of rotated container log files to retain for a pod after rotation, after which the oldest logs are deleted. (AI-inferred)
     max_files_to_keep: Any = None
-    # The size threshold in MB at which container logs are rotated for the Amazon EMR on EKS endpoint's monitoring configuration. (AI-inferred)
     rotation_size: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration:
-    # Specifies the S3 URI where logs are stored for monitoring of the EMR on EKS endpoint. (AI-inferred)
     log_uri: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides_MonitoringConfiguration:
-    # This object defines the CloudWatch monitoring configuration for the endpoint, specifying the log group name and optional log stream prefix where EMR Containers delivers application logs. (AI-inferred)
     cloud_watch_monitoring_configuration: Any = None
-    # Specifies the container log rotation settings for the endpoint's monitoring configuration, including the rotation size in megabytes and the maximum number of log files to keep. (AI-inferred)
     container_log_rotation_configuration: Any = None
-    # Determines whether persistent Spark UI is enabled (ENABLED) or disabled (DISABLED) for job runs submitted through this EMR Containers endpoint. (AI-inferred)
     persistent_app_ui: Any = None
-    # Defines the Amazon S3 configuration for monitoring logs of the EMR containers endpoint, including the destination S3 URI (LogUri) and optional encryption key. (AI-inferred)
     s3_monitoring_configuration: Any = None
 
 @dataclasses.dataclass
 class Endpoint_ConfigurationOverrides:
-    # Specifies application-level configuration overrides (e.g., Spark settings) to apply to workloads using this endpoint, where each list entry is a Configuration object containing a classification and its properties. (AI-inferred)
     application_configuration: Any = None
-    # This object overrides the default monitoring configuration for jobs running through the EMR Containers endpoint, specifying where to send logs (CloudWatch log group and S3 location) and whether to enable the persistent application UI. (AI-inferred)
     monitoring_configuration: Any = None
 
 @dataclasses.dataclass
 class Endpoint_Tags:
-    # The key of a user-defined tag attached to the Amazon EMR on EKS endpoint, used for cost allocation and resource identification. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the Amazon EMR on EKS endpoint, used for resource identification, cost allocation, and access control. (AI-inferred)
     value: Any = None
 
 _Endpoint_ConfigurationOverrides_ApplicationConfigurationFields = {
@@ -125,7 +107,6 @@ _Endpoint_TagsFields = {
 
 @dataclasses.dataclass
 class EndpointConfig:
-    # Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred)
     configuration_overrides: Any = None
     # The execution role ARN for the managed endpoint.
     execution_role_arn: Any = None
@@ -148,9 +129,7 @@ class EndpointAttrs:
     arn: Any = None
     # The auth proxy URL for Spark Connect connections.
     auth_proxy_url: Any = None
-    # The certificate_authority object contains the certificate authority details (such as the certificate ARN) for the EKS cluster backing the EMR Containers endpoint, used to establish TLS trust for the endpoint connection. (AI-inferred)
     certificate_authority: Any = None
-    # Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred)
     configuration_overrides: Any = None
     # The date and time when the managed endpoint was created.
     created_at: Any = None

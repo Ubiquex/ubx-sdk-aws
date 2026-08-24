@@ -10,9 +10,7 @@ export interface ConnectRouterNetworkInterface_Configuration_Public {
 }
 
 export interface ConnectRouterNetworkInterface_Configuration_Vpc {
-  /** The list of security group IDs to associate with the VPC network interface for this MediaConnect router, which determines the firewall rules for traffic to and from the interface. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** The ID of the subnet within the customer's VPC where the MediaConnect router network interface is created, as specified in the router's configuration VPC settings. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
@@ -22,9 +20,7 @@ export interface ConnectRouterNetworkInterface_Configuration {
 }
 
 export interface ConnectRouterNetworkInterface_Tags {
-  /** The key of a user-defined tag attached to this MediaConnect router network interface, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag pair applied to the AWS MediaConnect router network interface, used for categorizing, identifying, and managing the resource within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -75,7 +71,6 @@ export interface ConnectRouterNetworkInterfaceConfig {
 }
 
 export interface ConnectRouterNetworkInterfaceAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the MediaConnect router network interface. (AI-inferred) */
   arn: string;
   /** The number of router inputs associated with the network interface. */
   associatedInputCount: number;

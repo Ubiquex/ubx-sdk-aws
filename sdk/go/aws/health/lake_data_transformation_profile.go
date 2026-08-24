@@ -30,9 +30,7 @@ type LakeDataTransformationProfile_Source struct {
 }
 
 type LakeDataTransformationProfile_Tags struct {
-	// The key of a user-defined tag attached to the AWS HealthLake data transformation profile, used to identify, organize, and manage the profile among AWS resources. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to the AWS HealthLake data transformation profile, used to assign arbitrary string metadata for resource identification, organization, and management. (AI-inferred)
 	Value any
 }
 

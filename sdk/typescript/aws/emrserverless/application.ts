@@ -24,27 +24,19 @@ export interface Application_ImageConfiguration {
 }
 
 export interface Application_InitialCapacity_Value_WorkerConfiguration {
-  /** The number of vCPUs allocated to each worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
   cpu?: string | Computed<string>;
-  /** Specifies the disk size in GB for the worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
   disk?: string | Computed<string>;
-  /** The disk type (e.g., SSD or HDD) for the storage attached to each worker instance in the initial capacity configuration of the EMR Serverless application. (AI-inferred) */
   diskType?: string | Computed<string>;
-  /** Defines the memory size (in MB) allocated per worker for the initial capacity of the EMR Serverless application. (AI-inferred) */
   memory?: string | Computed<string>;
 }
 
 export interface Application_InitialCapacity_Value {
-  /** Specifies the CPU, memory, and disk configuration for workers allocated as the initial capacity of the EMR Serverless application. (AI-inferred) */
   workerConfiguration?: Application_InitialCapacity_Value_WorkerConfiguration | Computed<Application_InitialCapacity_Value_WorkerConfiguration>;
-  /** The number of workers of the specified worker type (the key in the initial capacity map) to provision for the EMR Serverless application at startup. (AI-inferred) */
   workerCount?: number | Computed<number>;
 }
 
 export interface Application_InitialCapacity {
-  /** Specifies the name of the worker type (for example, driver or executor) for which to define the initial capacity configuration in an AWS EMR Serverless application. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Defines the initial capacity configuration for a given worker type (e.g., Driver or Executor) in the serverless application, specifying the number of workers and their CPU/memory resources via the workerCount and workerConfiguration properties. (AI-inferred) */
   value?: Application_InitialCapacity_Value | Computed<Application_InitialCapacity_Value>;
 }
 
@@ -67,13 +59,9 @@ export interface Application_MaximumCapacity {
 }
 
 export interface Application_MonitoringConfiguration {
-  /** Specifies the CloudWatch Logs group, log stream name prefix, and optional encryption key ARN that the EMR Serverless application uses to deliver its runtime logs to Amazon CloudWatch. (AI-inferred) */
   cloudWatchLoggingConfiguration?: unknown | Computed<unknown>;
-  /** This field specifies the managed persistence monitoring configuration, controlling whether Spark event logs are persisted and the S3 location where they are stored for the EMR Serverless application. (AI-inferred) */
   managedPersistenceMonitoringConfiguration?: unknown | Computed<unknown>;
-  /** Configures the Prometheus monitoring endpoint for the EMR Serverless application by specifying the remote write URL where application metrics are sent. (AI-inferred) */
   prometheusMonitoringConfiguration?: unknown | Computed<unknown>;
-  /** This nested block configures the S3 monitoring destination for the EMR Serverless application, specifying the S3 URI (log_uri) where logs are delivered and optionally a KMS key ARN (encryption_key_arn) for encrypting the logs. (AI-inferred) */
   s3MonitoringConfiguration?: unknown | Computed<unknown>;
 }
 
@@ -85,11 +73,8 @@ export interface Application_NetworkConfiguration {
 }
 
 export interface Application_RuntimeConfiguration {
-  /** Specifies the classification name (e.g., spark-defaults) for the runtime configuration, which defines the set of properties that apply to the EMR Serverless application. (AI-inferred) */
   classification?: string | Computed<string>;
-  /** Specifies a list of sub-configurations for a given runtime configuration classification, allowing nested engine-specific settings (such as Spark or Hive properties) to be applied to the EMR Serverless application. (AI-inferred) */
   configurations?: unknown[] | Computed<unknown[]>;
-  /** Specifies a map of additional key-value pairs to apply as runtime configuration settings for the EMR Serverless application, extending the configuration defined by the parent runtime configuration's key and value fields. (AI-inferred) */
   properties?: unknown | Computed<unknown>;
 }
 
@@ -102,7 +87,6 @@ export interface Application_SchedulerConfiguration {
 
 export interface Application_Tags {
   key?: string | Computed<string>;
-  /** The value component of a key-value tag applied to the EMR Serverless application, which can be any string and is used for resource metadata, filtering, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -199,17 +183,13 @@ export interface ApplicationConfig {
   identityCenterConfiguration?: Application_IdentityCenterConfiguration | Computed<Application_IdentityCenterConfiguration>;
   /** The image configuration. */
   imageConfiguration?: Application_ImageConfiguration | Computed<Application_ImageConfiguration>;
-  /** Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred) */
   initialCapacity?: Application_InitialCapacity[] | Computed<Application_InitialCapacity[]>;
-  /** Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred) */
   interactiveConfiguration?: Application_InteractiveConfiguration | Computed<Application_InteractiveConfiguration>;
-  /** The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred) */
   maximumCapacity?: Application_MaximumCapacity | Computed<Application_MaximumCapacity>;
   /** Monitoring configuration for batch and interactive JobRun. */
   monitoringConfiguration?: Application_MonitoringConfiguration | Computed<Application_MonitoringConfiguration>;
   /** User friendly Application name. */
   name?: string | Computed<string>;
-  /** Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred) */
   networkConfiguration?: Application_NetworkConfiguration | Computed<Application_NetworkConfiguration>;
   /** EMR release label. */
   releaseLabel: string | Computed<string>;
@@ -221,7 +201,6 @@ export interface ApplicationConfig {
   tags?: Application_Tags[] | Computed<Application_Tags[]>;
   /** The type of the application */
   type: string | Computed<string>;
-  /** Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred) */
   workerTypeSpecifications?: unknown | Computed<unknown>;
 }
 
@@ -240,17 +219,13 @@ export interface ApplicationAttrs {
   identityCenterConfiguration: Application_IdentityCenterConfiguration;
   /** The image configuration. */
   imageConfiguration: Application_ImageConfiguration;
-  /** Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred) */
   initialCapacity: Application_InitialCapacity[];
-  /** Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred) */
   interactiveConfiguration: Application_InteractiveConfiguration;
-  /** The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred) */
   maximumCapacity: Application_MaximumCapacity;
   /** Monitoring configuration for batch and interactive JobRun. */
   monitoringConfiguration: Application_MonitoringConfiguration;
   /** User friendly Application name. */
   name: string;
-  /** Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred) */
   networkConfiguration: Application_NetworkConfiguration;
   /** EMR release label. */
   releaseLabel: string;
@@ -262,7 +237,6 @@ export interface ApplicationAttrs {
   tags: Application_Tags[];
   /** The type of the application */
   type: string;
-  /** Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred) */
   workerTypeSpecifications: unknown;
 }
 

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeployApplication_Tags struct {
 	Key any
-	// The value component of a key-value tag attached to the CodeDeploy application. (AI-inferred)
 	Value any
 }
 

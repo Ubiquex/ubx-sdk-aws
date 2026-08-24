@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpcendpointServicePermissionsConfig {
-  /** Specifies the ARNs of principals (IAM users, roles, or AWS accounts) that are allowed to create interface VPC endpoints to the VPC endpoint service. (AI-inferred) */
   allowedPrincipals?: string[] | Computed<string[]>;
-  /** The ID of the VPC endpoint service to which the permissions are granted. (AI-inferred) */
   serviceId: string | Computed<string>;
 }
 
 export interface VpcendpointServicePermissionsAttrs {
-  /** Specifies the ARNs of principals (IAM users, roles, or AWS accounts) that are allowed to create interface VPC endpoints to the VPC endpoint service. (AI-inferred) */
   allowedPrincipals: string[];
-  /** The ID of the VPC endpoint service to which the permissions are granted. (AI-inferred) */
   serviceId: string;
 }
 

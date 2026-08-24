@@ -4,91 +4,63 @@ package dynamo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbGlobalTable_AttributeDefinitions struct {
-	// The name of the attribute to be used in the global table's key schema or secondary indexes, matching the attribute names in the table's item definitions. (AI-inferred)
 	AttributeName any
-	// The data type of the attribute in the DynamoDB Global Table's attribute definition, which must be one of 'S' (string), 'N' (number), or 'B' (binary). (AI-inferred)
 	AttributeType any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_KeySchema struct {
-	// The name of the attribute that serves as the partition key or sort key in the global secondary index's key schema, which must match an attribute defined in the table's attribute definitions. (AI-inferred)
 	AttributeName any
-	// Specifies whether the key attribute is a HASH (partition) key or RANGE (sort) key for the global secondary index's key schema in a DynamoDB global table. (AI-inferred)
 	KeyType any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_Projection struct {
-	// Specifies the list of non-key attribute names to include in the global secondary index's projection, used only when the projection type is set to INCLUDE. (AI-inferred)
 	NonKeyAttributes any
-	// Specifies the set of attributes that are projected into the global secondary index, allowing values such as KEYS_ONLY, INCLUDE, or ALL to control which table attributes are copied to the index. (AI-inferred)
 	ProjectionType any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_ReadOnDemandThroughputSettings struct {
-	// Sets the maximum number of read request units that the global secondary index can consume in on-demand capacity mode, capping its read throughput within the read on-demand throughput settings. (AI-inferred)
 	MaxReadRequestUnits any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_ReadProvisionedThroughputSettings struct {
-	// For each global secondary index on the DynamoDB global table, this specifies the maximum number of strongly consistent reads consumed per second before DynamoDB returns a ThrottlingException. (AI-inferred)
 	ReadCapacityUnits any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_WarmThroughput struct {
-	// The number of warm read units per second for the global secondary index, used to pre-provision read capacity for on-demand DynamoDB tables to prevent throttling during sudden traffic spikes. (AI-inferred)
 	ReadUnitsPerSecond any
-	// Specifies the number of warm write throughput capacity units to allocate for this global secondary index of the DynamoDB global table. (AI-inferred)
 	WriteUnitsPerSecond any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_WriteOnDemandThroughputSettings struct {
-	// Specifies the maximum number of write request units that the global secondary index can consume per second when the DynamoDB global table is set to on-demand capacity mode. (AI-inferred)
 	MaxWriteRequestUnits any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_WriteProvisionedThroughputSettings_WriteCapacityAutoScalingSettings_TargetTrackingScalingPolicyConfiguration struct {
-	// When set to true, prevents the target tracking scaling policy from scaling in (decreasing) the write capacity of the global secondary index. (AI-inferred)
 	DisableScaleIn any
-	// The scale-in cooldown period, in seconds, for the write capacity auto scaling of this global secondary index, during which DynamoDB suppresses scaling-in actions. (AI-inferred)
 	ScaleInCooldown any
-	// Scale-out cooldown, in seconds, for the write capacity auto scaling target tracking policy of the global secondary index, controlling how long to wait after a scale-out activity before another can start. (AI-inferred)
 	ScaleOutCooldown any
-	// Specifies the target utilization percentage (e.g., 70 for 70%) that the target tracking scaling policy for write capacity of this global secondary index will maintain, triggering scaling when actual utilization deviates. (AI-inferred)
 	TargetValue any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_WriteProvisionedThroughputSettings_WriteCapacityAutoScalingSettings struct {
-	// The maximum number of write capacity units that Application Auto Scaling can scale the global secondary index's write capacity up to under the associated scaling policy, as defined in the write capacity auto scaling settings of a DynamoDB global table. (AI-inferred)
 	MaxCapacity any
-	// The minimum number of write capacity units that the auto scaling policy can scale down to for the global secondary index. (AI-inferred)
 	MinCapacity any
-	// The initial number of write capacity units to allocate for the global secondary index before DynamoDB auto scaling adjusts capacity based on actual utilization. (AI-inferred)
 	SeedCapacity any
-	// Configuration for the target-tracking scaling policy that DynamoDB Auto Scaling uses to manage the write capacity of this global secondary index, including the target utilization percentage (TargetValue) and whether scale-in is disabled. (AI-inferred)
 	TargetTrackingScalingPolicyConfiguration any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes_WriteProvisionedThroughputSettings struct {
-	// Configures auto scaling settings (minimum/maximum write capacity units and target utilization) for the write capacity of the global secondary index in a DynamoDB global table. (AI-inferred)
 	WriteCapacityAutoScalingSettings any
 }
 
 type DbGlobalTable_GlobalSecondaryIndexes struct {
-	// The name of the global secondary index for the DynamoDB global table, which must be unique within the table and is used to query the indexed data. (AI-inferred)
 	IndexName any
-	// Key schema for the global secondary index, defining the partition (HASH) and optional sort (RANGE) key attributes that determine the index's data organization. (AI-inferred)
 	KeySchema any
-	// Specifies the set of attributes that are projected into the global secondary index, including the projection type (e.g., ALL, KEYS_ONLY, or INCLUDE) and any non-key attributes to include when the type is INCLUDE. (AI-inferred)
 	Projection any
-	// Configures the on-demand read throughput settings for this global secondary index, setting the maximum read request units so the index scales automatically with DynamoDB on-demand capacity mode. (AI-inferred)
 	ReadOnDemandThroughputSettings any
-	// Configures the read capacity units or auto scaling settings for read throughput of the specified global secondary index in this DynamoDB global table. (AI-inferred)
 	ReadProvisionedThroughputSettings any
-	// Specifies the warm throughput settings (read and write units per second) for the global secondary index of the DynamoDB global table. (AI-inferred)
 	WarmThroughput any
-	// Specifies the maximum write request units that this global secondary index can consume when the table is set to on-demand capacity mode. (AI-inferred)
 	WriteOnDemandThroughputSettings any
-	// Specifies the write capacity settings (either fixed write capacity units or auto-scaling configuration) for the global secondary index of the DynamoDB global table. (AI-inferred)
 	WriteProvisionedThroughputSettings any
 }
 
@@ -97,121 +69,84 @@ type DbGlobalTable_GlobalTableWitnesses struct {
 }
 
 type DbGlobalTable_LocalSecondaryIndexes struct {
-	// The unique name of the local secondary index, which is required to define the index and is used to reference it in DynamoDB queries and operations. (AI-inferred)
 	IndexName any
-	// Defines the partition key and optional sort key for the local secondary index, using AttributeName and KeyType pairs that must reference attributes declared in the parent table's AttributeDefinitions. (AI-inferred)
 	KeySchema any
-	// Specifies which table attributes are copied into the local secondary index, defined by a ProjectionType (ALL, KEYS_ONLY, or INCLUDE) and optional NonKeyAttributes for the INCLUDE type. (AI-inferred)
 	Projection any
 }
 
 type DbGlobalTable_Replicas_ContributorInsightsSpecification struct {
-	// Specifies whether CloudWatch Contributor Insights is enabled for this replica of the DynamoDB global table. (AI-inferred)
 	Enabled any
 	Mode any
 }
 
 type DbGlobalTable_Replicas_GlobalSecondaryIndexes_ReadProvisionedThroughputSettings struct {
-	// Configures the application auto-scaling settings for the read capacity of the global secondary index in the replica, including minimum and maximum read capacity and the target tracking scaling policy. (AI-inferred)
 	ReadCapacityAutoScalingSettings any
-	// The number of read capacity units to provision for the global secondary index in the specified replica, controlling the read throughput for that index in that region. (AI-inferred)
 	ReadCapacityUnits any
 }
 
 type DbGlobalTable_Replicas_GlobalSecondaryIndexes struct {
-	// Configures whether CloudWatch Contributor Insights is enabled for a specific global secondary index on a replica table of a DynamoDB global table. (AI-inferred)
 	ContributorInsightsSpecification any
-	// The name of the global secondary index in the replica's configuration that the GSI override settings apply to, matching an index defined on the DynamoDB global table. (AI-inferred)
 	IndexName any
-	// Specifies the on-demand (pay-per-request) read throughput settings for the global secondary index replica, including the maximum read request units that can be consumed per second. (AI-inferred)
 	ReadOnDemandThroughputSettings any
-	// Specifies the read capacity settings for a global secondary index in a specific replica of a DynamoDB global table. (AI-inferred)
 	ReadProvisionedThroughputSettings any
 }
 
 type DbGlobalTable_Replicas_KinesisStreamSpecification struct {
-	// Specifies the precision of the ApproximateCreationDateTime value in the Kinesis stream for a replica, either MILLISECOND or MICROSECOND. (AI-inferred)
 	ApproximateCreationDateTimePrecision any
-	// Specifies the ARN of the Amazon Kinesis Data Stream that receives item-level updates for this replica in the DynamoDB global table. (AI-inferred)
 	StreamArn any
 }
 
 type DbGlobalTable_Replicas_PointInTimeRecoverySpecification struct {
-	// Enables or disables point-in-time recovery for the corresponding replica of the DynamoDB global table, allowing the replica to be restored to any point in time within the backup window. (AI-inferred)
 	PointInTimeRecoveryEnabled any
-	// Specifies the number of days for which point-in-time recovery data is retained for the given replica of the DynamoDB global table. (AI-inferred)
 	RecoveryPeriodInDays any
 }
 
 type DbGlobalTable_Replicas_ReplicaStreamSpecification_ResourcePolicy struct {
-	// Specifies the JSON policy document that defines the resource-based permissions for the DynamoDB stream attached to this replica, controlling cross-account or cross-region access to the stream data. (AI-inferred)
 	PolicyDocument any
 }
 
 type DbGlobalTable_Replicas_ReplicaStreamSpecification_Tags struct {
-	// The key of a tag to be applied to the stream specification of a replica in a DynamoDB global table. (AI-inferred)
 	Key any
 	Value any
 }
 
 type DbGlobalTable_Replicas_ReplicaStreamSpecification struct {
-	// Specifies a resource-based policy that controls access to the DynamoDB stream associated with the replica, enabling cross-account stream sharing and read access. (AI-inferred)
 	ResourcePolicy any
 	Tags any
 }
 
 type DbGlobalTable_Replicas_Ssespecification struct {
-	// The KMS key ID or ARN used for server-side encryption in the SSE specification of a specific replica of the DynamoDB global table. (AI-inferred)
 	KmsmasterKeyId any
 }
 
 type DbGlobalTable_Replicas struct {
-	// Specifies the Contributor Insights configuration for this replica, including whether Contributor Insights is enabled on the replica table. (AI-inferred)
 	ContributorInsightsSpecification any
-	// When true, deletion protection is enabled for this replica table in the DynamoDB global table, preventing the replica from being successfully deleted via a DeleteTable operation. (AI-inferred)
 	DeletionProtectionEnabled any
-	// Specifies the global secondary indexes to be configured on a specific replica of the DynamoDB global table, allowing per-replica provisioning overrides (such as read/write capacity) for those indexes in that region. (AI-inferred)
 	GlobalSecondaryIndexes any
-	// Sets the replication mode for the global table, within a replica's global table settings, to either STANDARD (no cross-region replication) or REMOTE (cross-region global table). (AI-inferred)
 	GlobalTableSettingsReplicationMode any
-	// Specifies the Kinesis Data Streams configuration for a replica of the DynamoDB global table, controlling whether a stream is enabled and optionally referencing an existing stream ARN. (AI-inferred)
 	KinesisStreamSpecification any
-	// Configuration for point-in-time recovery (PITR) settings on a specific replica of the DynamoDB global table, containing a boolean flag that enables or disables PITR for that replica. (AI-inferred)
 	PointInTimeRecoverySpecification any
-	// Configures the read on-demand throughput settings for a replica in a DynamoDB global table, including the maximum read request units for on-demand capacity mode. (AI-inferred)
 	ReadOnDemandThroughputSettings any
-	// Defines the provisioned read capacity settings for a specific replica of the DynamoDB global table, including either a fixed read capacity unit count or auto scaling read settings. (AI-inferred)
 	ReadProvisionedThroughputSettings any
-	// The AWS Region in which a replica of the DynamoDB global table is created. (AI-inferred)
 	Region any
-	// Configures DynamoDB Streams for a specific replica in the global table, including whether streaming is enabled and the stream view type (e.g., NEW_IMAGE, OLD_IMAGE) that determines which data changes are written. (AI-inferred)
 	ReplicaStreamSpecification any
-	// Defines the IAM resource-based policy (JSON) applied to the DynamoDB replica table in the corresponding region, allowing replica-specific access control separate from the global table's default policy. (AI-inferred)
 	ResourcePolicy any
-	// Configures the server-side encryption (SSE) for a specific replica of a DynamoDB global table, allowing you to specify an AWS KMS key (via KMSMasterKeyId) for encrypting data in that replica. (AI-inferred)
 	Ssespecification any
-	// Specifies the table class for a replica, either STANDARD or STANDARD_INFREQUENT_ACCESS, which determines the storage and throughput cost tier for that regional table copy. (AI-inferred)
 	TableClass any
-	// Specifies the list of tags to associate with each replica table in the DynamoDB global table, allowing you to apply different tags per replica region. (AI-inferred)
 	Tags any
 }
 
 type DbGlobalTable_Ssespecification struct {
-	// Specifies whether server-side encryption (SSE) is enabled for the DynamoDB global table, with true enabling encryption using AWS Key Management Service (KMS). (AI-inferred)
 	Sseenabled any
-	// Specifies the server-side encryption type for the global table, either AES256 (DynamoDB-managed key) or KMS (AWS KMS customer-managed key). (AI-inferred)
 	Ssetype any
 }
 
 type DbGlobalTable_StreamSpecification struct {
-	// Specifies which item changes (keys only, new image, old image, or both) are captured in the DynamoDB stream for the global table. (AI-inferred)
 	StreamViewType any
 }
 
 type DbGlobalTable_TimeToLiveSpecification struct {
-	// Specifies the name of the item attribute that stores the expiration timestamp, enabling DynamoDB to automatically delete expired items from the global table. (AI-inferred)
 	AttributeName any
-	// Whether time-to-live (TTL) is enabled for the global table, allowing DynamoDB to automatically delete items after a specified expiry timestamp. (AI-inferred)
 	Enabled any
 }
 
@@ -471,86 +406,47 @@ var DbGlobalTable_TimeToLiveSpecificationFields = ubx.FieldMap{
 	}
 
 type DbGlobalTableConfig struct {
-	// Defines the name and type of each attribute used in the key schema (partition key and optional sort key) for the DynamoDB global table, where each item specifies an AttributeName and AttributeType. (AI-inferred)
 	AttributeDefinitions any
-	// Specifies how read and write throughput is billed for the global table, either PROVISIONED (with provisioned capacity) or PAY_PER_REQUEST (on-demand). (AI-inferred)
 	BillingMode any
-	// Specifies the global secondary indexes (GSIs) for the DynamoDB global table, defining each index's name, key schema, projection, and provisioned throughput settings that are replicated across all regional replicas. (AI-inferred)
 	GlobalSecondaryIndexes any
-	// The ARN of an existing DynamoDB table whose data is used to populate the global table when it is created. (AI-inferred)
 	GlobalTableSourceArn any
-	// Configures the witness regions for the DynamoDB global table, which participate in quorum for multi-Region strong consistency without storing a full replica of the table data. (AI-inferred)
 	GlobalTableWitnesses any
-	// Determines the primary key for the global table by listing the attributes that form the partition key and optional sort key, each with a KeyType of HASH or RANGE. (AI-inferred)
 	KeySchema any
-	// A list of local secondary indexes (LSIs) for the global table, each specifying an alternate sort key to enable querying by a non-key attribute within a partition. (AI-inferred)
 	LocalSecondaryIndexes any
-	// Specifies the multi-region consistency mode for the DynamoDB global table, with allowed values of 'EVENTUAL' or 'STRONG', controlling whether strongly consistent reads are available across all replica regions. (AI-inferred)
 	MultiRegionConsistency any
-	// Specifies the read on-demand throughput settings for a replica in the global table, including the maximum read request units allowed when the table uses on-demand capacity mode. (AI-inferred)
 	ReadOnDemandThroughputSettings any
-	// Specifies the read capacity provisioning settings for a replica of the DynamoDB global table, including a fixed read capacity unit count or auto-scaling configuration. (AI-inferred)
 	ReadProvisionedThroughputSettings any
-	// Defines the AWS Regions in which replicas of the DynamoDB global table are created, along with per-replica settings such as point-in-time recovery and contributor insights. (AI-inferred)
 	Replicas any
-	// Specifies the server-side encryption (SSE) configuration for the DynamoDB global table, including whether encryption is enabled and the encryption key type (such as AWS owned or customer-managed KMS) to use. (AI-inferred)
 	Ssespecification any
-	// The stream specification object configures Amazon DynamoDB Streams for the global table, including the stream enabling flag and stream view type that determines which item changes (keys only, new image, old image, or both) are written to the stream. (AI-inferred)
 	StreamSpecification any
-	// The name to assign to the DynamoDB global table; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	TableName any
-	// Configures Time to Live (TTL) settings for the global table, including whether TTL is enabled and the attribute name that stores the expiration timestamp. (AI-inferred)
 	TimeToLiveSpecification any
-	// Specifies the warm throughput (pre-allocated read/write capacity units per second) for the global table to sustain high traffic without throttling. (AI-inferred)
 	WarmThroughput any
-	// Specifies the optional on-demand write capacity cap (MaxWriteRequestUnits) for the DynamoDB global table, applying this write throughput limit uniformly across all replicas. (AI-inferred)
 	WriteOnDemandThroughputSettings any
-	// Configures the write capacity (provisioned throughput) for the AWS::DynamoDB::GlobalTable, specifying either a fixed number of write capacity units or auto-scaling settings for each replica in the global table. (AI-inferred)
 	WriteProvisionedThroughputSettings any
 }
 
 type DbGlobalTableAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the DynamoDB global table, assigned by AWS upon creation. (AI-inferred)
 	Arn any
-	// Defines the name and type of each attribute used in the key schema (partition key and optional sort key) for the DynamoDB global table, where each item specifies an AttributeName and AttributeType. (AI-inferred)
 	AttributeDefinitions any
-	// Specifies how read and write throughput is billed for the global table, either PROVISIONED (with provisioned capacity) or PAY_PER_REQUEST (on-demand). (AI-inferred)
 	BillingMode any
-	// Specifies the global secondary indexes (GSIs) for the DynamoDB global table, defining each index's name, key schema, projection, and provisioned throughput settings that are replicated across all regional replicas. (AI-inferred)
 	GlobalSecondaryIndexes any
-	// The ARN of an existing DynamoDB table whose data is used to populate the global table when it is created. (AI-inferred)
 	GlobalTableSourceArn any
-	// Configures the witness regions for the DynamoDB global table, which participate in quorum for multi-Region strong consistency without storing a full replica of the table data. (AI-inferred)
 	GlobalTableWitnesses any
-	// Determines the primary key for the global table by listing the attributes that form the partition key and optional sort key, each with a KeyType of HASH or RANGE. (AI-inferred)
 	KeySchema any
-	// A list of local secondary indexes (LSIs) for the global table, each specifying an alternate sort key to enable querying by a non-key attribute within a partition. (AI-inferred)
 	LocalSecondaryIndexes any
-	// Specifies the multi-region consistency mode for the DynamoDB global table, with allowed values of 'EVENTUAL' or 'STRONG', controlling whether strongly consistent reads are available across all replica regions. (AI-inferred)
 	MultiRegionConsistency any
-	// Specifies the read on-demand throughput settings for a replica in the global table, including the maximum read request units allowed when the table uses on-demand capacity mode. (AI-inferred)
 	ReadOnDemandThroughputSettings any
-	// Specifies the read capacity provisioning settings for a replica of the DynamoDB global table, including a fixed read capacity unit count or auto-scaling configuration. (AI-inferred)
 	ReadProvisionedThroughputSettings any
-	// Defines the AWS Regions in which replicas of the DynamoDB global table are created, along with per-replica settings such as point-in-time recovery and contributor insights. (AI-inferred)
 	Replicas any
-	// Specifies the server-side encryption (SSE) configuration for the DynamoDB global table, including whether encryption is enabled and the encryption key type (such as AWS owned or customer-managed KMS) to use. (AI-inferred)
 	Ssespecification any
-	// The Amazon Resource Name (ARN) of the DynamoDB stream for the global table, automatically generated when stream specification is configured. (AI-inferred)
 	StreamArn any
-	// The stream specification object configures Amazon DynamoDB Streams for the global table, including the stream enabling flag and stream view type that determines which item changes (keys only, new image, old image, or both) are written to the stream. (AI-inferred)
 	StreamSpecification any
-	// The read-only DynamoDB table ID that uniquely identifies this global table, assigned by AWS when the table is created. (AI-inferred)
 	TableId any
-	// The name to assign to the DynamoDB global table; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	TableName any
-	// Configures Time to Live (TTL) settings for the global table, including whether TTL is enabled and the attribute name that stores the expiration timestamp. (AI-inferred)
 	TimeToLiveSpecification any
-	// Specifies the warm throughput (pre-allocated read/write capacity units per second) for the global table to sustain high traffic without throttling. (AI-inferred)
 	WarmThroughput any
-	// Specifies the optional on-demand write capacity cap (MaxWriteRequestUnits) for the DynamoDB global table, applying this write throughput limit uniformly across all replicas. (AI-inferred)
 	WriteOnDemandThroughputSettings any
-	// Configures the write capacity (provisioned throughput) for the AWS::DynamoDB::GlobalTable, specifying either a fixed number of write capacity units or auto-scaling settings for each replica in the global table. (AI-inferred)
 	WriteProvisionedThroughputSettings any
 }
 

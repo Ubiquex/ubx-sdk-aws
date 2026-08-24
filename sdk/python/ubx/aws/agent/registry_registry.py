@@ -19,13 +19,11 @@ class RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwta
 @dataclasses.dataclass
 class RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue:
     claim_match_operator: Any = None
-    # Specifies the expected value that the custom JWT claim must equal in order for the custom JWT authorizer to authorize a request, as part of the authorizing claim match value configuration. (AI-inferred)
     claim_match_value: Any = None
 
 @dataclasses.dataclass
 class RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims:
     authorizing_claim_match_value: Any = None
-    # The name of the claim in the incoming JWT token that the custom authorizer extracts to evaluate as a custom claim for access control decisions. (AI-inferred)
     inbound_token_claim_name: Any = None
     inbound_token_claim_value_type: Any = None
 

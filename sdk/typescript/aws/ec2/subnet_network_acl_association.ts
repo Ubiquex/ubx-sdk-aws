@@ -9,7 +9,6 @@ export interface SubnetNetworkAclAssociationConfig {
 }
 
 export interface SubnetNetworkAclAssociationAttrs {
-  /** The unique identifier assigned by AWS to the subnet-network ACL association, used to reference the association in AWS APIs and other resources. (AI-inferred) */
   associationId: string;
   /** The ID of the network ACL */
   networkAclId: string;

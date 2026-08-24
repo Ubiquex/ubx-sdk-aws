@@ -4,9 +4,7 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserHierarchyGroup_Tags struct {
-	// The key of a tag attached to the Amazon Connect user hierarchy group, forming the key portion of a key-value pair that helps categorize, organize, and manage the resource. (AI-inferred)
 	Key any
-	// The value portion of a tag (key-value pair) attached to the Amazon Connect user hierarchy group. (AI-inferred)
 	Value any
 }
 

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IntegrationsApplication_ApplicationConfig_ContactHandling {
-  /** Specifies the operational scope of contact handling (the only supported value is DRIVE) for the AppIntegrations application, meaning the app acts as the primary interface during a contact. (AI-inferred) */
   scope: string | Computed<string>;
 }
 
@@ -11,27 +10,21 @@ export interface IntegrationsApplication_ApplicationConfig {
 }
 
 export interface IntegrationsApplication_ApplicationSourceConfig_ExternalUrlConfig {
-  /** The URL that users are redirected to when they access the application from the AppIntegrations UI. (AI-inferred) */
   accessUrl: string | Computed<string>;
-  /** Specifies a list of allowed origins for the external URL of the AppIntegrations application, enabling CORS access from those domains. (AI-inferred) */
   approvedOrigins?: string[] | Computed<string[]>;
 }
 
 export interface IntegrationsApplication_ApplicationSourceConfig {
-  /** Configures the external URL for the AppIntegrations application, specifying the access URL and the list of approved origins. (AI-inferred) */
   externalUrlConfig: IntegrationsApplication_ApplicationSourceConfig_ExternalUrlConfig | Computed<IntegrationsApplication_ApplicationSourceConfig_ExternalUrlConfig>;
 }
 
 export interface IntegrationsApplication_IframeConfig {
-  /** Defines the list of allowed origins that are permitted to embed this AppIntegrations application in an iframe. (AI-inferred) */
   allow?: string[] | Computed<string[]>;
-  /** Defines the sandbox permissions for the iframe used to display the application, where each string in the list corresponds to a token such as 'allow-scripts' or 'allow-same-origin' that controls what the iframe content can do. (AI-inferred) */
   sandbox?: string[] | Computed<string[]>;
 }
 
 export interface IntegrationsApplication_Tags {
   key?: string | Computed<string>;
-  /** The tag value for a key-value pair attached to the AWS AppIntegrations application, used to organize, identify, and manage the application resource within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -78,7 +71,6 @@ export interface IntegrationsApplicationConfig {
   applicationType?: string | Computed<string>;
   /** The application description. */
   description?: string | Computed<string>;
-  /** Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred) */
   iframeConfig?: IntegrationsApplication_IframeConfig | Computed<IntegrationsApplication_IframeConfig>;
   /** The initialization timeout in milliseconds. Required when IsService is true. */
   initializationTimeout?: number | Computed<number>;
@@ -106,7 +98,6 @@ export interface IntegrationsApplicationAttrs {
   description: string;
   /** The id of the application. */
   id: string;
-  /** Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred) */
   iframeConfig: IntegrationsApplication_IframeConfig;
   /** The initialization timeout in milliseconds. Required when IsService is true. */
   initializationTimeout: number;

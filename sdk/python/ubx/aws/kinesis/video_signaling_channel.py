@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VideoSignalingChannel_Tags:
-    # The key of a tag that you can attach to the Kinesis Video Signaling Channel, enabling you to categorize and filter the channel by user-defined metadata. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag attached to the signaling channel, allowing you to store arbitrary metadata (e.g., names, owners, or environments) for resource management and cost allocation. (AI-inferred)
     value: Any = None
 
 _VideoSignalingChannel_TagsFields = {

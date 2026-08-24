@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CloudConnector_Configuration_AzureConfiguration_Targets_Subscriptions {
-  /** The display name of an Azure subscription targeted by the SSM Cloud Connector's Azure configuration, identifying the subscription by its human-readable name. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** The unique Azure subscription ID that the SSM Cloud Connector is configured to manage as part of its Azure connection targets. (AI-inferred) */
   id?: string | Computed<string>;
 }
 

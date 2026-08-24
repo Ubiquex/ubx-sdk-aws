@@ -4,9 +4,7 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Project_Tags struct {
-	// The key of a user-defined tag attached to the AWS Rekognition project, used for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag attached to the Amazon Rekognition project, enabling you to categorize, search, and manage the project within AWS. (AI-inferred)
 	Value any
 }
 
@@ -23,7 +21,6 @@ type ProjectConfig struct {
 }
 
 type ProjectAttrs struct {
-	// The Amazon Resource Name (ARN) of the Rekognition project, uniquely identifying it across AWS. (AI-inferred)
 	Arn any
 	// The name of the project
 	ProjectName any

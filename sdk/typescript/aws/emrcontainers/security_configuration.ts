@@ -116,9 +116,7 @@ export interface SecurityConfiguration_SecurityConfigurationData {
 }
 
 export interface SecurityConfiguration_Tags {
-  /** The key (name) of a user-defined tag attached to the EMR Containers security configuration, used for identifying, categorizing, and managing this AWS resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value portion of a key-value tag assigned to the EMR Containers security configuration, which can be used to filter and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

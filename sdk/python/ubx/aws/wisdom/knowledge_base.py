@@ -8,130 +8,95 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class KnowledgeBase_RenderingConfiguration:
-    # The Amazon S3 URI of a template that Amazon Connect Wisdom uses to render the knowledge base's content when displayed to end users. (AI-inferred)
     template_uri: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_ServerSideEncryptionConfiguration:
-    # The identifier (ARN) of the AWS KMS key used to encrypt the knowledge base data at rest. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_AppIntegrations:
-    # The Amazon Resource Name (ARN) of the AppIntegrations integration that provides the external data source for this Wisdom knowledge base. (AI-inferred)
     app_integration_arn: Any = None
-    # Defines which fields from the integrated application's object (e.g., Salesforce case or account) are ingested into the knowledge base, allowing you to include only the specified attributes. (AI-inferred)
     object_fields: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimits:
-    # The maximum number of web pages (URLs) the web crawler can fetch per minute from a source site, controlling the crawl rate to prevent overloading the site. (AI-inferred)
     rate_limit: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrls:
-    # The URL of a seed page that the web crawler uses as a starting point for crawling the site. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration:
-    # Specifies a list of seed URL objects that determine the starting points for the web crawler when creating a managed source for the Wisdom knowledge base, with each object including the URL and its crawl mode. (AI-inferred)
     seed_urls: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration:
-    # Defines the limits for the web crawler source, including the maximum number of pages to crawl and the maximum rate (requests per second) at which the crawler can send requests. (AI-inferred)
     crawler_limits: Any = None
-    # Specifies a list of URL patterns that the web crawler will exclude from crawling, preventing those pages from being ingested into the knowledge base. (AI-inferred)
     exclusion_filters: Any = None
-    # Specifies a list of URL patterns that determine which web pages are included in the web crawler's crawl, allowing only matching URLs to be ingested into the knowledge base. (AI-inferred)
     inclusion_filters: Any = None
-    # Determines which links the web crawler will follow from the initial seed URL, limiting indexation to pages on the same host, its subdomains, or across the entire web, depending on the chosen scope. (AI-inferred)
     scope: Any = None
-    # Defines the seed URLs and optional URL filters that determine which web pages the crawler starts from and which URLs are included or excluded during crawling. (AI-inferred)
     url_configuration: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration:
-    # Configuration for the managed web crawler source, specifying seed URLs, crawler limits, scope, and inclusion/exclusion filters that govern which web content is ingested into the knowledge base. (AI-inferred)
     web_crawler_configuration: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_SourceConfiguration:
-    # Specifies the Amazon AppIntegrations data integration that supplies the knowledge base content, including the ARN of the AppIntegrations integration (e.g., Salesforce or ServiceNow) and optional object fields to import. (AI-inferred)
     app_integrations: Any = None
-    # The managed source configuration is an optional object that, when present, specifies a managed data source (such as a web crawler) for populating the knowledge base, including the web crawler's URL and crawl behavior settings. (AI-inferred)
     managed_source_configuration: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_Tags:
-    # The key component of a tag applied to the Amazon Wisdom knowledge base, used to label the resource for management and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfiguration:
-    # The maximum number of tokens to include in each chunk when using fixed-size chunking for the knowledge base. (AI-inferred)
     max_tokens: Any = None
-    # The percentage of token overlap between consecutive chunks in the fixed-size chunking strategy, controlling how much context is shared between adjacent chunks for retrieval quality. (AI-inferred)
     overlap_percentage: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurations:
-    # The maximum number of tokens allowed in a single chunk at this level of the hierarchical chunking configuration, controlling the size of text segments created for indexing. (AI-inferred)
     max_tokens: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration:
-    # Defines the list of hierarchical chunking levels, where each level configuration specifies the maximum token size used to split a document into progressively smaller chunks for the knowledge base. (AI-inferred)
     level_configurations: Any = None
-    # Specifies the number of tokens that overlap between consecutive chunks in the hierarchical chunking strategy for the knowledge base's vector ingestion configuration. (AI-inferred)
     overlap_tokens: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfiguration:
-    # Sets the percentile threshold (e.g., 95) used to detect semantic breakpoints in the text, where the chunking algorithm splits content at positions where the semantic distance between adjacent sentences falls above this percentile of all token distances, controlling chunk boundaries for the knowledge base. (AI-inferred)
     breakpoint_percentile_threshold: Any = None
-    # Defines the number of tokens to include as a buffer on either side of a semantic breakpoint, so that the chunking algorithm preserves contextual relevance when splitting the document into semantically coherent chunks. (AI-inferred)
     buffer_size: Any = None
-    # The maximum number of tokens allowed in each semantic chunk when ingesting documents into the Wisdom knowledge base. (AI-inferred)
     max_tokens: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration:
-    # Specifies the chunking strategy (FIXED_SIZE, SEMANTIC, or NONE) used to split source documents into smaller segments for vector ingestion into the knowledge base. (AI-inferred)
     chunking_strategy: Any = None
-    # Configures fixed-size chunking for the knowledge base, which controls how source documents are split into chunks by specifying a maximum token count per chunk and an overlap percentage between adjacent chunks. (AI-inferred)
     fixed_size_chunking_configuration: Any = None
-    # Defines the hierarchical chunking settings, which split content into parent and child chunks with configurable token limits, used when the chunking strategy is HIERARCHICAL. (AI-inferred)
     hierarchical_chunking_configuration: Any = None
-    # Semantic chunking configuration for the knowledge base's vector ingestion, which splits source documents into chunks based on natural semantic boundaries determined by a foundation model, using settings like the breakpoint percentile threshold, buffer size, and maximum token length. (AI-inferred)
     semantic_chunking_configuration: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPrompt:
-    # The text of the prompt that guides the Bedrock foundation model in parsing uploaded documents to extract structured information for the knowledge base. (AI-inferred)
     parsing_prompt_text: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration:
-    # The Amazon Resource Name (ARN) of the Bedrock foundation model that is used to parse and extract structured text from source documents when they are ingested into the knowledge base. (AI-inferred)
     model_arn: Any = None
-    # Specifies a custom prompt that guides the configured Amazon Bedrock foundation model to parse and extract structured information from the contents of ingested documents for the knowledge base. (AI-inferred)
     parsing_prompt: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration:
-    # Specifies the Amazon Bedrock foundation model (by ARN) used for parsing document content in the Wisdom knowledge base. (AI-inferred)
     bedrock_foundation_model_configuration: Any = None
-    # Specifies the parsing strategy used to process documents during vector ingestion, such as 'BEDROCK_FOUNDATION_MODEL' for Bedrock foundation model parsing or 'BEDROCK_DATA_AUTOMATION' for Bedrock data automation pipelines. (AI-inferred)
     parsing_strategy: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBase_VectorIngestionConfiguration:
-    # Specifies how ingested documents are split into chunks (e.g., fixed-size or semantic chunking) before being stored in the knowledge base's vector index. (AI-inferred)
     chunking_configuration: Any = None
-    # Configures how documents are parsed during vector ingestion, including the parsing strategy (e.g., using a foundation model or chunking) and optionally the specific Bedrock foundation model to extract content. (AI-inferred)
     parsing_configuration: Any = None
 
 _KnowledgeBase_RenderingConfigurationFields = {
@@ -285,44 +250,26 @@ _KnowledgeBase_VectorIngestionConfigurationFields = {
 
 @dataclasses.dataclass
 class KnowledgeBaseConfig:
-    # An optional description of the knowledge base, providing a human-readable summary of its contents or purpose in Amazon Connect Wisdom. (AI-inferred)
     description: Any = None
-    # Defines whether the knowledge base is CUSTOM, for content you upload directly, or EXTERNAL, for content connected to an external source such as Salesforce or ServiceNow. (AI-inferred)
     knowledge_base_type: Any = None
-    # A required, user-defined name for the knowledge base, used as its display name and identifier within Amazon Wisdom. (AI-inferred)
     name: Any = None
-    # Specifies the template URI used to render knowledge base content in the Amazon Q in Connect (Wisdom) console, enabling custom display formatting. (AI-inferred)
     rendering_configuration: Any = None
-    # Configures server-side encryption for the knowledge base by specifying the customer-managed KMS key to use (its ARN). (AI-inferred)
     server_side_encryption_configuration: Any = None
-    # Specifies the configuration for the source of the knowledge base content, such as an S3 bucket or an Amazon AppIntegrations configuration that defines where the knowledge base data is ingested from. (AI-inferred)
     source_configuration: Any = None
-    # Specifies the tags (key-value pairs) attached to the Wisdom knowledge base for metadata, cost allocation, and resource management. (AI-inferred)
     tags: Any = None
-    # Specifies the vector ingestion configuration, including chunking and parsing settings, used when documents are ingested into the knowledge base's vector index. (AI-inferred)
     vector_ingestion_configuration: Any = None
 
 @dataclasses.dataclass
 class KnowledgeBaseAttrs:
-    # An optional description of the knowledge base, providing a human-readable summary of its contents or purpose in Amazon Connect Wisdom. (AI-inferred)
     description: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying this Wisdom knowledge base, assigned by AWS upon creation. (AI-inferred)
     knowledge_base_arn: Any = None
-    # The unique identifier for this Amazon Wisdom knowledge base, assigned by AWS upon creation and used to reference the knowledge base in API operations and resource ARNs. (AI-inferred)
     knowledge_base_id: Any = None
-    # Defines whether the knowledge base is CUSTOM, for content you upload directly, or EXTERNAL, for content connected to an external source such as Salesforce or ServiceNow. (AI-inferred)
     knowledge_base_type: Any = None
-    # A required, user-defined name for the knowledge base, used as its display name and identifier within Amazon Wisdom. (AI-inferred)
     name: Any = None
-    # Specifies the template URI used to render knowledge base content in the Amazon Q in Connect (Wisdom) console, enabling custom display formatting. (AI-inferred)
     rendering_configuration: Any = None
-    # Configures server-side encryption for the knowledge base by specifying the customer-managed KMS key to use (its ARN). (AI-inferred)
     server_side_encryption_configuration: Any = None
-    # Specifies the configuration for the source of the knowledge base content, such as an S3 bucket or an Amazon AppIntegrations configuration that defines where the knowledge base data is ingested from. (AI-inferred)
     source_configuration: Any = None
-    # Specifies the tags (key-value pairs) attached to the Wisdom knowledge base for metadata, cost allocation, and resource management. (AI-inferred)
     tags: Any = None
-    # Specifies the vector ingestion configuration, including chunking and parsing settings, used when documents are ingested into the knowledge base's vector index. (AI-inferred)
     vector_ingestion_configuration: Any = None
 
 KnowledgeBase = ubx.ResourceBinding(

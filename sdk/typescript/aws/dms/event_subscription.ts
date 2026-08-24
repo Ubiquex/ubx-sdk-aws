@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventSubscription_Tags {
-  /** The key of a user-defined tag attached to the AWS DMS event subscription, used to categorize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag applied to the AWS DMS event subscription. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

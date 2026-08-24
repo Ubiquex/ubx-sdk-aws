@@ -4,217 +4,143 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_ClearTimer struct {
-	// The name of the timer to clear when this action is executed, matching the timer set by a set_timer action. (AI-inferred)
 	TimerName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb_Payload struct {
-	// The expression that computes the payload content sent to DynamoDB when this action is triggered, evaluated at event execution time using detector variables and input attributes. (AI-inferred)
 	ContentExpression any
-	// Specifies the payload format for the DynamoDB action in an AWS IoT Events detector model, either STRING for a plain text payload or JSON for a structured JSON payload. (AI-inferred)
 	Type any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDb struct {
-	// Specifies the partition (hash) key column name in the target DynamoDB table for the write action, matched with the value expression from hash_key_value to form the item's primary key. (AI-inferred)
 	HashKeyField any
-	// Specifies the data type (STRING or NUMBER) of the hash key attribute in the DynamoDB table entry that the action writes, used when the hash key value is a variable or expression. (AI-inferred)
 	HashKeyType any
-	// The hash key value for the DynamoDB table entry that AWS IoT Events writes when this action is triggered from an 'on_enter' event of a detector state. (AI-inferred)
 	HashKeyValue any
-	// Specifies the DynamoDB write operation to perform when this action is triggered, with valid values of INSERT, UPDATE, or DELETE. (AI-inferred)
 	Operation any
-	// Configures the payload object (defining the content expression and its type) that determines the JSON data written to the DynamoDB item for this detector model action. (AI-inferred)
 	Payload any
 	PayloadField any
-	// Specifies the DynamoDB attribute name that serves as the range (sort) key for the table entry written by this IoT Events DynamoDB action. (AI-inferred)
 	RangeKeyField any
-	// The data type (STRING or NUMBER) of the range key value used when writing to the Amazon DynamoDB table from this detector model action. (AI-inferred)
 	RangeKeyType any
-	// Sets the range key value for the DynamoDB entry written by this action, which can be a static string or an expression referencing input payload or detector state (e.g., '${payload.rangeKey}'). (AI-inferred)
 	RangeKeyValue any
-	// The name of the DynamoDB table that the action writes data to when the detector model enters this state, as part of an on-enter event. (AI-inferred)
 	TableName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_DynamoDbv2 struct {
-	// Specifies the payload content expression and type (e.g., JSON) used to write data to the DynamoDB table in this DynamoDBv2 action. (AI-inferred)
 	Payload any
-	// Specifies the name of the DynamoDB table that the IoT Events DynamoDBv2 action writes the detector's payload to when the associated event is triggered. (AI-inferred)
 	TableName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_Firehose struct {
-	// The name of the Amazon Kinesis Data Firehose delivery stream to which the detector model sends data when this action is triggered. (AI-inferred)
 	DeliveryStreamName any
-	// The payload configuration for the Firehose action, which specifies the content expression (a string expression) and payload type (such as JSON or STRING) that defines the data sent to the Kinesis Data Firehose delivery stream. (AI-inferred)
 	Payload any
-	// Specifies the delimiter string inserted between each JSON message payload when the Firehose action writes to the delivery stream, defaulting to a newline if not provided. (AI-inferred)
 	Separator any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotEvents struct {
-	// The name of the AWS IoT Events input to which this action publishes the detector model's data when the state's on-enter event is executed. (AI-inferred)
 	InputName any
-	// This object defines the payload content and format (JSON or string) sent to an AWS IoT Events input when the associated IoT Events action is triggered from a state's on-enter event. (AI-inferred)
 	Payload any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_Timestamp struct {
-	// Specifies the nanosecond offset to add to the time in seconds when sending the property value timestamp to AWS IoT SiteWise. (AI-inferred)
 	OffsetInNanos any
-	// The time in seconds (Unix epoch) for the property value sent to AWS IoT SiteWise, specified as a string literal or an expression (e.g., ${...}) that evaluates to the timestamp when the data was measured. (AI-inferred)
 	TimeInSeconds any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue_Value struct {
-	// Sets the boolean value for the AWS IoT SiteWise asset property, as a string (e.g., 'true' or 'false'), when the property data type is BOOLEAN. (AI-inferred)
 	BooleanValue any
-	// The double-precision floating-point value (represented as a string) to write to the AWS IoT SiteWise asset property when this action is triggered during the on-enter event of a detector state. (AI-inferred)
 	DoubleValue any
-	// The integer value to write to the referenced AWS IoT SiteWise asset property, specified as a string so it can also contain IoT Events variable expressions (e.g., `${myVariable}`) that resolve to an integer. (AI-inferred)
 	IntegerValue any
-	// The string representation of the value to send to the AWS IoT SiteWise asset property when the detector model's on-enter event action is executed. (AI-inferred)
 	StringValue any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise_PropertyValue struct {
-	// Specifies the quality (e.g., GOOD, BAD, or UNCERTAIN) assigned to the asset property value when publishing data to AWS IoT SiteWise. (AI-inferred)
 	Quality any
-	// Specifies the timestamp (in seconds and nanosecond offset) to associate with the property value when writing to an AWS IoT SiteWise asset property from the detector model's on-enter event action. (AI-inferred)
 	Timestamp any
-	// The asset property value to write to AWS IoT SiteWise, specified as a variant object containing one of a boolean, double, integer, or string value. (AI-inferred)
 	Value any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotSiteWise struct {
-	// The ID of the AWS IoT SiteWise asset to which the detector model writes the property value when the action is triggered. (AI-inferred)
 	AssetId any
-	// Defines the unique entry identifier used to correlate the property value written to AWS IoT SiteWise when this action is triggered. (AI-inferred)
 	EntryId any
-	// The alias of the AWS IoT SiteWise asset property that receives the data from this onEnter event action. (AI-inferred)
 	PropertyAlias any
-	// The ID of the AWS IoT SiteWise asset property (not its name) to which this detector model action writes output data when the on-enter event triggers. (AI-inferred)
 	PropertyId any
-	// Defines the value, timestamp, and quality of the data that AWS IoT Events writes to the specified AWS IoT SiteWise asset property when this action is triggered. (AI-inferred)
 	PropertyValue any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_IotTopicPublish struct {
-	// The MQTT topic to which AWS IoT Events publishes the message when this action is executed. (AI-inferred)
 	MqttTopic any
-	// Defines the message payload (content expression and payload type) that AWS IoT Events publishes to the specified IoT topic when this action is triggered. (AI-inferred)
 	Payload any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_Lambda struct {
-	// The ARN of the AWS Lambda function that AWS IoT Events invokes when a detector model enters the specified state, as part of an on-enter event action. (AI-inferred)
 	FunctionArn any
-	// Specifies the payload content and type (JSON or STRING) sent to the Lambda function when this on-enter event action is invoked in a detector model state. (AI-inferred)
 	Payload any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetTimer struct {
-	// Specifies the duration of the timer in seconds, as a literal numeric string or an expression (e.g., a variable reference) that evaluates to a numeric duration. (AI-inferred)
 	DurationExpression any
-	// The number of seconds to wait before the timer expires and triggers subsequent actions in the detector model. (AI-inferred)
 	Seconds any
-	// The unique name assigned to the timer that this SetTimer action creates or resets, which later detector model events can reference to trigger on its expiry. (AI-inferred)
 	TimerName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_SetVariable struct {
-	// The value to assign to the variable in a setVariable action, which can be a string literal or an expression using input properties, variables, and functions. (AI-inferred)
 	Value any
-	// The name of the variable, defined in the detector model's variable list, to which the setVariable action's value is assigned. (AI-inferred)
 	VariableName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_Sns struct {
-	// Specifies the message content (payload) sent to the SNS topic when this action is triggered, allowing you to define a static or dynamic content expression and the payload format (JSON or string). (AI-inferred)
 	Payload any
-	// The ARN of the Amazon SNS topic to which the IoT Events detector model sends a message when this action is triggered, such as upon entering a state in the on_enter event. (AI-inferred)
 	TargetArn any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions_Sqs struct {
-	// Specifies the content and format (JSON or STRING) of the message body sent to the SQS queue when this IoT Events detector model action is triggered. (AI-inferred)
 	Payload any
-	// The URL of the Amazon SQS queue to which the action sends a message when the detector state is entered. (AI-inferred)
 	QueueUrl any
-	// Enables Base64 encoding of the message body sent to the SQS queue by the detector model's IoT Events action. (AI-inferred)
 	UseBase64 any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events_Actions struct {
-	// Defines a ClearTimer action that stops a previously started timer by its name, preventing the timer's timeout event from firing. (AI-inferred)
 	ClearTimer any
-	// Configures a DynamoDB write action that is executed when the detector enters this state, specifying the target table name and key fields used to store the event payload. (AI-inferred)
 	DynamoDb any
-	// Configuration for a DynamoDB v2 action that writes an item to a DynamoDB table, including the table name, key fields, and the payload to store. (AI-inferred)
 	DynamoDbv2 any
-	// Defines the Firehose action, which delivers the message payload to an Amazon Kinesis Data Firehose delivery stream. (AI-inferred)
 	Firehose any
-	// Configures an IoT Events action that publishes an event to a specified AWS IoT Events input, including the target input name and an optional payload. (AI-inferred)
 	IotEvents any
-	// Defines an IoT SiteWise action that, when the state is entered, writes the detector's computed value to a specified AWS IoT SiteWise asset property using the configured asset ID, property ID, and property value. (AI-inferred)
 	IotSiteWise any
-	// This object configures the IoT Topic Publish action for an on-enter event, causing an MQTT message to be published to the specified AWS IoT Core topic each time the detector model enters this state, with optional payload content. (AI-inferred)
 	IotTopicPublish any
-	// Specifies the lookup of an AWS Lambda function to invoke as part of the actions executed when the detector model enters the state, including the Lambda function ARN and an optional payload to pass. (AI-inferred)
 	Lambda any
-	// The reset_timer action resets an existing timer in the detector model, specifying the timer to reset via its timerName property. (AI-inferred)
 	ResetTimer any
-	// Defines a setTimer action that starts a named timer with a specified duration (in seconds, or via a duration expression) for the detector instance, enabling time-based state transitions or event triggering. (AI-inferred)
 	SetTimer any
-	// Defines a setVariable action that assigns a value (expression) to a named variable in the detector model when this event is triggered. (AI-inferred)
 	SetVariable any
-	// Defines the target SNS topic and message payload for sending notifications from an IoT Events detector model when this on-enter event is triggered. (AI-inferred)
 	Sns any
-	// Specifies the SQS queue URL and optional payload settings for sending messages to an Amazon SQS queue when the event action is triggered. (AI-inferred)
 	Sqs any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter_Events struct {
-	// Specifies the list of actions to execute when this 'on enter' event is triggered, such as setting a variable, resetting a timer, or sending a message to an AWS IoT topic or other AWS service. (AI-inferred)
 	Actions any
-	// For an on-enter lifecycle event of a detector-model state, this condition is a logical expression (using AWS IoT Events expression syntax) that determines whether the event's actions are executed when the state is entered. (AI-inferred)
 	Condition any
-	// The required unique name for this event within the state's on-enter events list, used to identify and distinguish it from other events in the detector model definition. (AI-inferred)
 	EventName any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnEnter struct {
-	// Defines the list of events that are evaluated when the detector instance enters this state, where each event specifies its name, condition, and actions to execute. (AI-inferred)
 	Events any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnInput_TransitionEvents struct {
-	// Specifies the list of actions to execute when the transition event's condition evaluates to true, such as setting variables, managing timers, publishing to AWS IoT Core topics, or sending data to services like Lambda, SNS, Firehose, and DynamoDB. (AI-inferred)
 	Actions any
-	// The Boolean expression that, when evaluated to true, triggers this transition event from one state to another in an AWS IoT Events detector model. (AI-inferred)
 	Condition any
-	// The name of this transition event, which uniquely identifies it among the transition events defined for the state's on_input logic. (AI-inferred)
 	EventName any
-	// The name of the next detector state to transition to when the transition event's condition evaluates to true. (AI-inferred)
 	NextState any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States_OnInput struct {
-	// Defines the list of events processed when the detector instance receives an input message while in this state, where each event can specify a condition and a set of actions such as variable assignment or state transitions. (AI-inferred)
 	Events any
-	// Specifies the list of transition events evaluated when the detector receives input; each event defines an optional condition, actions to run, and a next state to transition to if the condition is true. (AI-inferred)
 	TransitionEvents any
 }
 
 type TeventsDetectorModel_DetectorModelDefinition_States struct {
-	// Defines the events and actions that execute when a detector transitions into this state in the AWS IoT Events detector model. (AI-inferred)
 	OnEnter any
-	// A list of events that run when the detector model leaves this state, allowing cleanup or final actions before transitioning. (AI-inferred)
 	OnExit any
-	// Defines the actions and events to execute when the detector instance receives an input event while in this state. (AI-inferred)
 	OnInput any
-	// Specifies a name for the state that is unique within the detector model, used to identify the state in the detector's logic and referenced by transition events and onInput, onEnter, and onExit event actions. (AI-inferred)
 	StateName any
 }
 

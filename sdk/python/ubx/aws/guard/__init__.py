@@ -4,6 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
+from .duty_custom_detection_rule_association import DutyCustomDetectionRuleAssociation, DutyCustomDetectionRuleAssociationConfig
 from .duty_detector import DutyDetector, DutyDetectorConfig
 from .duty_filter import DutyFilter, DutyFilterConfig
 from .duty_ipset import DutyIpset, DutyIpsetConfig

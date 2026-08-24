@@ -2,18 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IpamresourceDiscovery_OperatingRegions {
-  /** Specifies the AWS Region (e.g., us-east-1) in which the IPAM resource discovery operates. (AI-inferred) */
   regionName?: string | Computed<string>;
 }
 
 export interface IpamresourceDiscovery_OrganizationalUnitExclusions {
-  /** Defines the AWS Organizations entity path (e.g., 'o-1234567890abcdef0') of an organizational unit to exclude from IPAM resource discovery, preventing resources in that OU from being discovered. (AI-inferred) */
   organizationsEntityPath?: string | Computed<string>;
 }
 
 export interface IpamresourceDiscovery_Tags {
   key?: string | Computed<string>;
-  /** The value for a tag key attached to the IPAM resource discovery, which is a user-defined string for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -31,7 +28,6 @@ const IpamresourceDiscovery_TagsFields: FieldMap = {
 };
 
 export interface IpamresourceDiscoveryConfig {
-  /** Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred) */
   description?: string | Computed<string>;
   /** The regions Resource Discovery is enabled for. Allows resource discoveries to be created in these regions, as well as enabling monitoring */
   operatingRegions?: IpamresourceDiscovery_OperatingRegions[] | Computed<IpamresourceDiscovery_OperatingRegions[]>;
@@ -42,7 +38,6 @@ export interface IpamresourceDiscoveryConfig {
 }
 
 export interface IpamresourceDiscoveryAttrs {
-  /** Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred) */
   description: string;
   /** Amazon Resource Name (Arn) for the Resource Discovery. */
   ipamResourceDiscoveryArn: string;

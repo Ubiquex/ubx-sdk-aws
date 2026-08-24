@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbParameterGroup_Tags {
-  /** The key (name) of a tag to attach to the MemoryDB parameter group, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag assigned to the MemoryDB parameter group, used to organize, identify, and manage the resource in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

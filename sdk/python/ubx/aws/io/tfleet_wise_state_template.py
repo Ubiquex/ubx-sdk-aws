@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TfleetWiseStateTemplate_Tags:
-    # The key of a tag attached to the AWS IoT FleetWise state template, used for resource categorization, cost allocation, and access control. (AI-inferred)
     key: Any = None
-    # Defines the tag value for a tag attached to the AWS IoT FleetWise state template, which can be used to categorize or identify the template. (AI-inferred)
     value: Any = None
 
 _TfleetWiseStateTemplate_TagsFields = {
@@ -20,44 +18,26 @@ _TfleetWiseStateTemplate_TagsFields = {
 
 @dataclasses.dataclass
 class TfleetWiseStateTemplateConfig:
-    # Specifies a list of extra dimension signals (e.g., Vehicle.Make, Vehicle.Class) to be collected alongside the signals defined in the state template, enriching the vehicle data with additional metadata. (AI-inferred)
     data_extra_dimensions: Any = None
-    # A brief, user-provided description of the AWS IoT FleetWise state template, which defines a set of vehicle state signals to collect. (AI-inferred)
     description: Any = None
-    # Specifies a list of additional vehicle attribute names (e.g., make, model) to be included as metadata dimensions in the state template's collected data. (AI-inferred)
     metadata_extra_dimensions: Any = None
-    # The required, user-defined name that identifies the state template within AWS IoT FleetWise. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS IoT FleetWise signal catalog that this state template is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # The `state_template_properties` field specifies the list of signal or property names (as strings) that define the set of vehicle data points to collect when using this state template in AWS IoT FleetWise. (AI-inferred)
     state_template_properties: Any = None
-    # A list of Tag objects (each with a Key and Value) that are applied to the AWS IoT FleetWise state template for resource organization and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseStateTemplateAttrs:
-    # The Amazon Resource Name (ARN) of the state template, which uniquely identifies it within AWS. (AI-inferred)
     arn: Any = None
-    # The date and time the state template was created in AWS IoT FleetWise. (AI-inferred)
     creation_time: Any = None
-    # Specifies a list of extra dimension signals (e.g., Vehicle.Make, Vehicle.Class) to be collected alongside the signals defined in the state template, enriching the vehicle data with additional metadata. (AI-inferred)
     data_extra_dimensions: Any = None
-    # A brief, user-provided description of the AWS IoT FleetWise state template, which defines a set of vehicle state signals to collect. (AI-inferred)
     description: Any = None
-    # The read-only unique identifier (a UUID) that AWS IoT FleetWise assigns to this state template upon creation. (AI-inferred)
     id: Any = None
-    # The timestamp of the most recent modification to the state template, automatically set by AWS IoT FleetWise when the resource is created or updated. (AI-inferred)
     last_modification_time: Any = None
-    # Specifies a list of additional vehicle attribute names (e.g., make, model) to be included as metadata dimensions in the state template's collected data. (AI-inferred)
     metadata_extra_dimensions: Any = None
-    # The required, user-defined name that identifies the state template within AWS IoT FleetWise. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS IoT FleetWise signal catalog that this state template is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # The `state_template_properties` field specifies the list of signal or property names (as strings) that define the set of vehicle data points to collect when using this state template in AWS IoT FleetWise. (AI-inferred)
     state_template_properties: Any = None
-    # A list of Tag objects (each with a Key and Value) that are applied to the AWS IoT FleetWise state template for resource organization and cost allocation. (AI-inferred)
     tags: Any = None
 
 TfleetWiseStateTemplate = ubx.ResourceBinding(

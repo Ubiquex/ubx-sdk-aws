@@ -14,46 +14,30 @@ export interface BuilderImageRecipe_AdditionalInstanceConfiguration {
 }
 
 export interface BuilderImageRecipe_BlockDeviceMappings_Ebs {
-  /** Indicates whether the EBS volume should be deleted when the associated EC2 instance is terminated, as part of the block device mapping configuration for the image recipe. (AI-inferred) */
   deleteOnTermination?: boolean | Computed<boolean>;
-  /** Specifies whether the EBS volume created from this block device mapping should be encrypted; when set to true, AWS encrypts the volume at rest using the default EBS encryption key or the KMS key specified in the same EBS configuration. (AI-inferred) */
   encrypted?: boolean | Computed<boolean>;
-  /** The number of I/O operations per second (IOPS) to provision for the EBS volume, applied when the volume type is io1, io2, or gp3, to control the volume's performance level. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** The identifier of the AWS KMS key used to encrypt the EBS volume for this block device mapping in the image recipe. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** The ID of the snapshot to use as the source for the EBS volume in the block device mapping. (AI-inferred) */
   snapshotId?: string | Computed<string>;
-  /** The throughput in MiB/s to provision for the EBS volume, applicable when the volume type is gp3. (AI-inferred) */
   throughput?: number | Computed<number>;
-  /** Specifies the size, in GiB, of the EBS volume used by the block device mapping in the EC2 Image Builder image recipe. (AI-inferred) */
   volumeSize?: number | Computed<number>;
-  /** Specifies the EBS volume type (e.g., gp2, gp3, io1) for the block device in the image recipe's block device mapping. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
 export interface BuilderImageRecipe_BlockDeviceMappings {
-  /** The device name (e.g., /dev/xvda) that identifies the block device mapping to the instance in the Image Builder image recipe. (AI-inferred) */
   deviceName?: string | Computed<string>;
-  /** Specifies the Amazon EBS-specific block device mapping settings, including encryption, volume size, volume type, IOPS, throughput, snapshot ID, KMS key ID, and delete-on-termination behavior, for the corresponding block device in the image recipe. (AI-inferred) */
   ebs?: BuilderImageRecipe_BlockDeviceMappings_Ebs | Computed<BuilderImageRecipe_BlockDeviceMappings_Ebs>;
-  /** When set, this field removes the corresponding device from the image's block device mapping, overriding a device that was present in the base image. (AI-inferred) */
   noDevice?: string | Computed<string>;
-  /** The virtual device name (e.g., 'ephemeral0') for an ephemeral (instance store) block device mapped to the image recipe, used when the mapping specifies a non-EBS virtual storage device. (AI-inferred) */
   virtualName?: string | Computed<string>;
 }
 
 export interface BuilderImageRecipe_Components_Parameters {
-  /** The name (key) of a parameter to pass to the component, which must match a parameter name defined in the component's recipe. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value (or list of values) to assign to a named build component parameter, which is passed to that component when AWS Image Builder uses the recipe to build an image. (AI-inferred) */
   value?: string[] | Computed<string[]>;
 }
 
 export interface BuilderImageRecipe_Components {
-  /** The Amazon Resource Name (ARN) of a component (a software configuration) that is included as a step in the image recipe's build process. (AI-inferred) */
   componentArn?: string | Computed<string>;
-  /** Specifies the list of parameter name-value pairs to pass to the component when the image recipe runs, overriding any default parameter values defined in the component document. (AI-inferred) */
   parameters?: BuilderImageRecipe_Components_Parameters[] | Computed<BuilderImageRecipe_Components_Parameters[]>;
 }
 

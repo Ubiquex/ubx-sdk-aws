@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpacesThinClientEnvironment_DeviceCreationTags {
-  /** The tag key to apply to each WorkSpaces Thin Client device created from this environment, used to tag provisioned devices. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag that is automatically applied to Thin Client devices created from this environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -13,13 +11,9 @@ export interface SpacesThinClientEnvironment_MaintenanceWindow {
   applyTimeOf?: string | Computed<string>;
   /** The date of maintenance window. */
   daysOfTheWeek?: string[] | Computed<string[]>;
-  /** The hour of the day in 24-hour time (0-23) at which a custom maintenance window ends, used when the maintenance window type is set to CUSTOM. (AI-inferred) */
   endTimeHour?: number | Computed<number>;
-  /** The minute (0-59) of the hour at which the maintenance window ends for scheduling maintenance on the Thin Client environment. (AI-inferred) */
   endTimeMinute?: number | Computed<number>;
-  /** The hour (0-23) of the day, in 24-hour time, at which the maintenance window for applying updates to the WorkSpaces Thin Client environment begins. (AI-inferred) */
   startTimeHour?: number | Computed<number>;
-  /** The minute of the hour, in UTC, at which the maintenance window starts for this WorkSpaces Thin Client environment. (AI-inferred) */
   startTimeMinute?: number | Computed<number>;
   /** The type of maintenance window. */
   type: string | Computed<string>;
@@ -51,7 +45,6 @@ export interface SpacesThinClientEnvironmentConfig {
   deviceCreationTags?: SpacesThinClientEnvironment_DeviceCreationTags[] | Computed<SpacesThinClientEnvironment_DeviceCreationTags[]>;
   /** The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment. */
   kmsKeyArn?: string | Computed<string>;
-  /** Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred) */
   maintenanceWindow?: SpacesThinClientEnvironment_MaintenanceWindow | Computed<SpacesThinClientEnvironment_MaintenanceWindow>;
   /** The name of the environment. */
   name?: string | Computed<string>;
@@ -84,7 +77,6 @@ export interface SpacesThinClientEnvironmentAttrs {
   id: string;
   /** The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment. */
   kmsKeyArn: string;
-  /** Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred) */
   maintenanceWindow: SpacesThinClientEnvironment_MaintenanceWindow;
   /** The name of the environment. */
   name: string;

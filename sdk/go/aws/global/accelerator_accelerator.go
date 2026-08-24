@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcceleratorAccelerator_Tags struct {
 	Key any
-	// The value of a tag attached to the accelerator, used to categorize and manage the resource as a user-defined string. (AI-inferred)
 	Value any
 }
 
@@ -29,7 +28,6 @@ type AcceleratorAcceleratorConfig struct {
 	IpAddresses any
 	// Name of accelerator.
 	Name any
-	// Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred)
 	Tags any
 }
 
@@ -58,7 +56,6 @@ type AcceleratorAcceleratorAttrs struct {
 	Ipv6Addresses any
 	// Name of accelerator.
 	Name any
-	// Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred)
 	Tags any
 }
 

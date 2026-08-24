@@ -22,9 +22,7 @@ class ParallelData_ParallelDataConfig:
 
 @dataclasses.dataclass
 class ParallelData_Tags:
-    # The key of a tag (e.g., a name like 'purpose') to associate with the Amazon Translate parallel data resource for managing and categorizing it. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag attached to the AWS Translate parallel data resource, used to categorize or manage the resource. (AI-inferred)
     value: Any = None
 
 _ParallelData_EncryptionKeyFields = {

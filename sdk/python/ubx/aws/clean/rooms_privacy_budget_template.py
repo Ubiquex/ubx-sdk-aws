@@ -8,20 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RoomsPrivacyBudgetTemplate_Parameters_BudgetParameters:
-    # Indicates whether the privacy budget template automatically refreshes the privacy budget on a recurring schedule (e.g., daily or monthly) to renew the querying allowance without manual intervention. (AI-inferred)
     auto_refresh: Any = None
-    # The maximum number of privacy budget units allocated to a parameter, determining how much aggregate data can be exposed while preserving differential privacy. (AI-inferred)
     budget: Any = None
-    # Defines the kind of privacy budget parameter (currently supported value: DIFFERENTIAL_PRIVACY) that determines how the analysis rule enforces differential privacy limits in the template. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RoomsPrivacyBudgetTemplate_Parameters:
     budget_parameters: Any = None
-    # Specifies the epsilon value for the differential privacy budget, which limits the amount of privacy loss allowed for queries using this template. (AI-inferred)
     epsilon: Any = None
     resource_arn: Any = None
-    # The number of users' worth of noise added to each query in the privacy budget template, controlling the level of differential privacy applied to query results. (AI-inferred)
     users_noise_per_query: Any = None
 
 @dataclasses.dataclass
@@ -53,36 +48,23 @@ _RoomsPrivacyBudgetTemplate_TagsFields = {
 
 @dataclasses.dataclass
 class RoomsPrivacyBudgetTemplateConfig:
-    # Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     auto_refresh: Any = None
-    # The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred)
     membership_identifier: Any = None
-    # Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred)
     parameters: Any = None
-    # The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred)
     privacy_budget_type: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template.
     tags: Any = None
 
 @dataclasses.dataclass
 class RoomsPrivacyBudgetTemplateAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the privacy budget template. (AI-inferred)
     arn: Any = None
-    # Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     auto_refresh: Any = None
-    # The Amazon Resource Name (ARN) of the collaboration that this privacy budget template is associated with, assigned by AWS when the template is created. (AI-inferred)
     collaboration_arn: Any = None
-    # collaboration_identifier is the unique identifier of the AWS Clean Rooms collaboration to which this privacy budget template belongs, automatically assigned by AWS and used as a read-only part of the resource's identity. (AI-inferred)
     collaboration_identifier: Any = None
-    # The Amazon Resource Name (ARN) of the membership that this privacy budget template belongs to, which is automatically assigned by AWS Clean Rooms. (AI-inferred)
     membership_arn: Any = None
-    # The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred)
     membership_identifier: Any = None
-    # Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred)
     parameters: Any = None
-    # The AWS-assigned unique identifier for this privacy budget template, used to reference the template in Clean Rooms operations. (AI-inferred)
     privacy_budget_template_identifier: Any = None
-    # The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred)
     privacy_budget_type: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template.
     tags: Any = None

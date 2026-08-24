@@ -8,93 +8,69 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastorePartitions_Partitions_Partition:
-    # The name of the attribute (column) in the AWS IoT Analytics datastore that is used to partition the data when the partition is defined by a simple attribute (as opposed to a timestamp-based partition). (AI-inferred)
     attribute_name: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastorePartitions_Partitions_TimestampPartition:
-    # The name of the timestamp attribute in the message payload that AWS IoT Analytics uses to create time-based partitions within the datastore. (AI-inferred)
     attribute_name: Any = None
-    # Specifies the timestamp format (e.g., a Java SimpleDateFormat pattern) used by the timestamp partition to determine time-based partitioning of data in the AWS IoT Analytics data store. (AI-inferred)
     timestamp_format: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastorePartitions_Partitions:
-    # Defines a partition for the IoT Analytics data store by specifying the message attribute name that acts as the partition key. (AI-inferred)
     partition: Any = None
-    # Defines a timestamp-based partition dimension for the data store, using a specified attribute name and timestamp format to group data by time intervals. (AI-inferred)
     timestamp_partition: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastorePartitions:
-    # Defines the list of partition configurations for the AWS IoT Analytics datastore, where each partition is specified as either a timestamp-based partition (with an attribute name and interval like DAY or HOUR) or an attribute-based partition (with an attribute name). (AI-inferred)
     partitions: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastoreStorage_CustomerManagedS3:
-    # The name of the Amazon S3 bucket in which the datastore stores its data when using customer-managed S3 storage. (AI-inferred)
     bucket: Any = None
-    # The key prefix under which IoT Analytics stores datastore data in the customer-managed S3 bucket. (AI-inferred)
     key_prefix: Any = None
-    # The ARN of the IAM role that grants AWS IoT Analytics permission to access the customer-managed S3 bucket used for datastore storage. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastoreStorage_IotSiteWiseMultiLayerStorage_CustomerManagedS3Storage:
-    # The name of the S3 bucket where the IoT Analytics datastore data is stored when using customer-managed S3 storage. (AI-inferred)
     bucket: Any = None
-    # Specifies the key prefix in the customer-managed S3 bucket under which AWS IoT Analytics stores the multi-layer storage data for the datastore. (AI-inferred)
     key_prefix: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastoreStorage_IotSiteWiseMultiLayerStorage:
-    # This object defines the customer-managed S3 bucket (with an optional key prefix) where the AWS IoT Analytics datastore stores its data when using IoT SiteWise multi-layer storage. (AI-inferred)
     customer_managed_s3_storage: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_DatastoreStorage:
-    # Specifies the customer-managed S3 bucket and optional key prefix where the AWS IoT Analytics datastore stores its data, used when you choose to provide your own S3 storage instead of using the service-managed storage. (AI-inferred)
     customer_managed_s3: Any = None
-    # Specifies the AWS IoT SiteWise multi-layer storage configuration for the datastore, which stores data in a customer-managed Amazon S3 bucket via the nested `customerManagedS3` setting. (AI-inferred)
     iot_site_wise_multi_layer_storage: Any = None
-    # When defined, this object indicates that the datastore uses AWS IoT Analytics-managed S3 storage, meaning the service provisions and manages the S3 bucket on your behalf. (AI-inferred)
     service_managed_s3: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinition_Columns:
-    # Specifies the name of a column in the Parquet schema definition for the datastore, which is used to interpret incoming message data when stored in Parquet format. (AI-inferred)
     name: Any = None
-    # Specifies the data type (e.g., STRING, INTEGER, DOUBLE) for a column in the Parquet schema definition of an AWS IoT Analytics datastore's file format configuration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_FileFormatConfiguration_ParquetConfiguration_SchemaDefinition:
-    # Defines the list of columns that make up the schema of the Parquet file format in the datastore, with each column specifying its name and data type for the stored data. (AI-inferred)
     columns: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_FileFormatConfiguration_ParquetConfiguration:
-    # Specifies the schema definition (column names and data types) that AWS IoT Analytics uses to interpret the data in the datastore when the file format is configured for Parquet. (AI-inferred)
     schema_definition: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_FileFormatConfiguration:
-    # Specifies that the datastore uses the JSON file format, an empty structure that selects JSON as the storage format for message data. (AI-inferred)
     json_configuration: Any = None
-    # Defines the Parquet file format settings for the datastore, including the schema definition that specifies the columns and data types for the data stored. (AI-inferred)
     parquet_configuration: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_RetentionPeriod:
-    # The number of days for which IoT Analytics retains data in the data store before it is automatically deleted. (AI-inferred)
     number_of_days: Any = None
-    # When true, the datastore retains its data indefinitely, and the number of days specified in the retention period is ignored. (AI-inferred)
     unlimited: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastore_Tags:
     key: Any = None
-    # The value of a tag associated with an AWS IoT Analytics datastore, used as user-defined metadata to organize or identify the resource. (AI-inferred)
     value: Any = None
 
 _TanalyticsDatastore_DatastorePartitions_Partitions_PartitionFields = {
@@ -202,34 +178,21 @@ _TanalyticsDatastore_TagsFields = {
 
 @dataclasses.dataclass
 class TanalyticsDatastoreConfig:
-    # The unique name of the AWS IoT Analytics datastore, which is optional; if omitted, AWS CloudFormation generates a unique physical ID for the datastore. (AI-inferred)
     datastore_name: Any = None
-    # This object defines the time-based partitioning configuration for the IoT Analytics datastore, allowing data to be partitioned by a specified time period such as month or week. (AI-inferred)
     datastore_partitions: Any = None
-    # Configure the storage type for the IoT Analytics datastore, choosing between AWS-managed S3 or a customer-managed S3 bucket with an optional prefix for data storage. (AI-inferred)
     datastore_storage: Any = None
-    # Defines the file format (JSON or Parquet) used for data stored in the IoT Analytics datastore, including the Parquet schema when that format is selected. (AI-inferred)
     file_format_configuration: Any = None
-    # The retention period object specifies how long AWS IoT Analytics retains the data in this datastore, either as a finite number of days via `number_of_days` or as unlimited storage via the `unlimited` flag. (AI-inferred)
     retention_period: Any = None
-    # A list of objects that define key-value metadata tags to associate with the IoT Analytics data store for identification and management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TanalyticsDatastoreAttrs:
-    # The unique name of the AWS IoT Analytics datastore, which is optional; if omitted, AWS CloudFormation generates a unique physical ID for the datastore. (AI-inferred)
     datastore_name: Any = None
-    # This object defines the time-based partitioning configuration for the IoT Analytics datastore, allowing data to be partitioned by a specified time period such as month or week. (AI-inferred)
     datastore_partitions: Any = None
-    # Configure the storage type for the IoT Analytics datastore, choosing between AWS-managed S3 or a customer-managed S3 bucket with an optional prefix for data storage. (AI-inferred)
     datastore_storage: Any = None
-    # Defines the file format (JSON or Parquet) used for data stored in the IoT Analytics datastore, including the Parquet schema when that format is selected. (AI-inferred)
     file_format_configuration: Any = None
-    # The computed unique identifier of the AWS IoT Analytics datastore, which is the datastore name assigned by the provider. (AI-inferred)
     id: Any = None
-    # The retention period object specifies how long AWS IoT Analytics retains the data in this datastore, either as a finite number of days via `number_of_days` or as unlimited storage via the `unlimited` flag. (AI-inferred)
     retention_period: Any = None
-    # A list of objects that define key-value metadata tags to associate with the IoT Analytics data store for identification and management. (AI-inferred)
     tags: Any = None
 
 TanalyticsDatastore = ubx.ResourceBinding(

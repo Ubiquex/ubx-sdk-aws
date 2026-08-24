@@ -4,25 +4,18 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ipampool_AllocationResourceTags struct {
-	// The key of a tag that is automatically applied to resources allocated from this IPAM pool, as part of the allocation_resource_tags map. (AI-inferred)
 	Key any
-	// The value of a tag that will be applied to resources that receive CIDR allocations from this IPAM pool. (AI-inferred)
 	Value any
 }
 
 type Ipampool_ProvisionedCidrs struct {
-	// The CIDR block (in CIDR notation) that is provisioned to the IPAM pool, defining a specific address range added to the pool's managed address space. (AI-inferred)
 	Cidr any
 }
 
 type Ipampool_SourceResource struct {
-	// The resource ID of the source resource (such as a VPC) that provides CIDRs to be allocated to the IPAM pool. (AI-inferred)
 	ResourceId any
-	// The AWS account ID of the source resource (such as a VPC or another IPAM pool) that this IPAM pool uses as the origin for its CIDR provisioning, required when defining a source resource for the pool. (AI-inferred)
 	ResourceOwner any
-	// Specifies the AWS region in which the source resource (such as a VPC or subnet) that provides the CIDR block for this IPAM pool resides. (AI-inferred)
 	ResourceRegion any
-	// The type of the source resource being admitted into the IPAM pool, such as 'vpc' or 'subnet', which is paired with the source resource ID to identify the originating VPC or subnet. (AI-inferred)
 	ResourceType any
 }
 
@@ -57,7 +50,6 @@ type IpampoolConfig struct {
 	AutoImport any
 	// Limits which service in Amazon Web Services that the pool can be used in.
 	AwsService any
-	// Sets a user-defined descriptive text for the EC2 IPAM pool, used to identify the pool's purpose and displayed in IPAM management views and API responses. (AI-inferred)
 	Description any
 	// The Id of the scope this pool is a part of.
 	IpamScopeId any
@@ -94,7 +86,6 @@ type IpampoolAttrs struct {
 	AutoImport any
 	// Limits which service in Amazon Web Services that the pool can be used in.
 	AwsService any
-	// Sets a user-defined descriptive text for the EC2 IPAM pool, used to identify the pool's purpose and displayed in IPAM management views and API responses. (AI-inferred)
 	Description any
 	// The Amazon Resource Name (ARN) of the IPAM this pool is a part of.
 	IpamArn any

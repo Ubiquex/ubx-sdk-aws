@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubApp_EventSubscriptions:
-    # Specifies the type of Resilience Hub event—such as drift detection, assessment completion, or SOP recommendation—that this subscription monitors to trigger notifications to the configured SNS topic. (AI-inferred)
     event_type: Any = None
-    # The user-defined name for this event subscription, used to identify it within the Resilience Hub application. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the SNS topic that Resilience Hub publishes event notifications to for this app subscription. (AI-inferred)
     sns_topic_arn: Any = None
 
 @dataclasses.dataclass
@@ -26,28 +23,18 @@ class HubApp_PermissionModel:
 
 @dataclasses.dataclass
 class HubApp_ResourceMappings_PhysicalResourceId:
-    # The AWS account ID where the physical resource identified by this resource mapping is located. (AI-inferred)
     aws_account_id: Any = None
-    # Specifies the AWS region of the physical resource that the resource mapping references in the Resilience Hub application. (AI-inferred)
     aws_region: Any = None
-    # For each resource mapping in an AWS Resilience Hub app, this identifier uniquely identifies the physical AWS resource (such as its ARN or resource ID) that the logical resource maps to. (AI-inferred)
     identifier: Any = None
-    # Specifies whether the physical resource identifier is an Amazon Resource Name (ARN) or a native resource identifier. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class HubApp_ResourceMappings:
-    # The name of the Amazon EKS cluster that the resource mapping references as its source in the Resilience Hub app. (AI-inferred)
     eks_source_name: Any = None
-    # The name of the CloudFormation stack that contains the resource identified by this resource mapping in an AWS Resilience Hub app. (AI-inferred)
     logical_stack_name: Any = None
-    # Specifies the type of resource mapping for an application resource, which determines how the physical resource is identified (e.g., Cfn, Stack, Resource, AppRegistryApp, ResourceGroup, Terraform, or EKS). (AI-inferred)
     mapping_type: Any = None
-    # An object that uniquely identifies the physical AWS resource backing the logical resource in the mapping, containing fields like awsAccountId, awsRegion, and either stackName or resourceName depending on the resourceMappingType. (AI-inferred)
     physical_resource_id: Any = None
-    # Within each resource mapping, this field specifies the logical name of the resource as it appears in the Resilience Hub application, distinguishing it from other mapped resources. (AI-inferred)
     resource_name: Any = None
-    # When the mapping type is Terraform, this specifies the name of the Terraform source (e.g., state file or module) from which the resource mapping was derived. (AI-inferred)
     terraform_source_name: Any = None
 
 _HubApp_EventSubscriptionsFields = {
@@ -100,7 +87,6 @@ class HubAppConfig:
     resiliency_policy_arn: Any = None
     # An array of ResourceMapping objects.
     resource_mappings: Any = None
-    # A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -125,7 +111,6 @@ class HubAppAttrs:
     resiliency_policy_arn: Any = None
     # An array of ResourceMapping objects.
     resource_mappings: Any = None
-    # A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred)
     tags: Any = None
 
 HubApp = ubx.ResourceBinding(

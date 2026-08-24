@@ -27,9 +27,7 @@ class InfluxDbinstance_MaintenanceSchedule:
 
 @dataclasses.dataclass
 class InfluxDbinstance_Tags:
-    # The tag key (name) for a metadata tag attached to the Timestream for InfluxDB database instance, used to identify, categorize, and manage the resource. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag attached to the Timestream for InfluxDB DB instance, used for cost allocation, resource categorization, and access control. (AI-inferred)
     value: Any = None
 
 _InfluxDbinstance_LogDeliveryConfiguration_S3ConfigurationFields = {

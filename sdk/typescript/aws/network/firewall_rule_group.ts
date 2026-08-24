@@ -2,158 +2,110 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FirewallRuleGroup_RuleGroup_ReferenceSets {
-  /** Specifies the named IP set references for the rule group, mapping each reference name to the ARN of an AWS Network Firewall IP set that rules in this rule group can use. (AI-inferred) */
   ipsetReferences?: unknown | Computed<unknown>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RuleVariables {
-  /** Defines named IP set variables, each mapping a key to an object containing a list of CIDR ranges, which can be referenced in the rule group's rules to match source or destination addresses. (AI-inferred) */
   ipsets?: unknown | Computed<unknown>;
-  /** Defines named port sets, each mapping a name to a list of port ranges, which are referenced in the rule group's rules to match source or destination port numbers. (AI-inferred) */
   portSets?: unknown | Computed<unknown>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_RulesSourceList {
-  /** Specifies whether the rule group generates allow or deny rules for the referenced domain list, with values 'ALLOWLIST' or 'DENYLIST'. (AI-inferred) */
   generatedRulesType: string | Computed<string>;
-  /** Specifies the target types to inspect (such as TLS_SNI for TLS server name indication or HTTP_HOST for HTTP host header) when using the domain list rules source in the rule group. (AI-inferred) */
   targetTypes: string[] | Computed<string[]>;
-  /** The list of IP addresses or CIDR blocks that the stateful rule group inspects traffic to or from, as defined in the rules source list. (AI-inferred) */
   targets: string[] | Computed<string[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_Header {
-  /** The destination IP address or CIDR range that the stateful rule matches in the traffic header. (AI-inferred) */
   destination?: string | Computed<string>;
-  /** Defines the destination port (or port range) to match in the stateful rule's header, expressed as a number, a range separated by a colon (e.g., 20:80), or the keyword ANY. (AI-inferred) */
   destinationPort?: string | Computed<string>;
-  /** Specifies the traffic direction to match, either FORWARD or ANY, for stateful rules in the rule group. (AI-inferred) */
   direction?: string | Computed<string>;
-  /** The IP protocol (e.g., TCP, UDP, ICMP, IP) that the stateful rule header matches, determining which network protocol the rule applies to. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** Specifies the source IP address or CIDR range that the stateful rule matches on. (AI-inferred) */
   source?: string | Computed<string>;
-  /** The source port (or port range) to match in the stateful rule's header, representing the originating port of the traffic. (AI-inferred) */
   sourcePort?: string | Computed<string>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptions {
-  /** This field specifies the keyword (name) of a key-value rule option for a stateful rule, such as 'sid', 'rev', 'content', or 'flow', which is used by the Suricata-compatible rule engine to set matching conditions or metadata for the rule. (AI-inferred) */
   keyword?: string | Computed<string>;
-  /** Specifies the values for a Suricata rule option in a stateful rule, such as the rule ID for a `sid` keyword or the message text for a `msg` keyword, used to customize matching and inspection in AWS Network Firewall. (AI-inferred) */
   settings?: string[] | Computed<string[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules {
-  /** Defines the action taken when traffic matches the stateful rule, such as PASS, DROP, ALERT, or REJECT. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Defines the match criteria for a stateful rule's traffic header, specifying the protocol, source and destination IP addresses and ports, and the direction of traffic to match. (AI-inferred) */
   header?: FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_Header | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_Header>;
-  /** Configures the keyword options applied to each stateful rule in the Network Firewall rule group, such as the rule's sid, rev, msg, or protocol-specific keywords. (AI-inferred) */
   ruleOptions?: FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptions[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules_RuleOptions[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_Dimensions {
-  /** The value of a dimension to include in the CloudWatch metric published by the custom action's publish_metric_action. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction {
-  /** Specifies the list of key-value dimension pairs attached to the CloudWatch metric published when this custom action is invoked, enabling you to filter or group the metric by these dimensions. (AI-inferred) */
   dimensions?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_Dimensions[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction_Dimensions[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition {
-  /** Configures the CloudWatch metric publication for this custom action by specifying the dimension(s) that the published metrics are tagged with. (AI-inferred) */
   publishMetricAction?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition_PublishMetricAction>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions {
-  /** Defines the action definition for a custom stateless action, which contains the PublishMetricAction configuration that specifies the CloudWatch metric dimensions to report when the action matches traffic. (AI-inferred) */
   actionDefinition?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions_ActionDefinition>;
-  /** A unique name that identifies a custom action within the rule group, which stateless rules reference to invoke the action's defined behavior. (AI-inferred) */
   actionName?: string | Computed<string>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts {
-  /** The lower bound of the destination port range that a stateless rule uses to match traffic. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The upper bound (inclusive) of a destination port range to match in stateless rule evaluation, with valid values 0-65535 and defaulting to the lower bound if omitted. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations {
-  /** The destination IP address or CIDR block to match in the stateless rule's traffic attributes, such as '192.0.2.0/24'. (AI-inferred) */
   addressDefinition?: string | Computed<string>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Tcpflags {
-  /** Specifies the TCP flags (e.g., FIN, SYN, RST, PSH, ACK, URG, ECE, CWR) to match in the packet's TCP header for the stateless rule. (AI-inferred) */
   flags?: string[] | Computed<string[]>;
-  /** The list of TCP flag names (for example, 'SYN', 'ACK', 'FIN', 'RST') that define which flags in the packet's TCP header are examined (masked) when evaluating this stateless rule's match conditions. (AI-inferred) */
   masks?: string[] | Computed<string[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes {
-  /** Defines the destination port ranges (from and to) that a stateless packet must match for the rule to apply. (AI-inferred) */
   destinationPorts?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts[]>;
-  /** Specifies the destination IP address or CIDR range that the stateless rule matches against traffic to evaluate the rule. (AI-inferred) */
   destinations?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations[]>;
-  /** Specifies the IP protocol numbers (for example, 6 for TCP, 17 for UDP) that the stateless rule matches, or if omitted, matches all protocols. (AI-inferred) */
   protocols?: number[] | Computed<number[]>;
-  /** Defines the source port ranges (with FromPort and ToPort) that the stateless rule matches on for incoming traffic. (AI-inferred) */
   sourcePorts?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_DestinationPorts[]>;
-  /** Specifies the source IP addresses (as CIDR blocks or individual IPs) that this stateless rule matches; if empty, matches any source address. (AI-inferred) */
   sources?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Destinations[]>;
-  /** Defines the TCP flags (e.g., SYN, FIN, ACK) that this stateless rule matches on, including optional masks to limit which flag bits are inspected. (AI-inferred) */
   tcpflags?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Tcpflags[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes_Tcpflags[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition {
-  /** Specifies the actions to take on packets that match the stateless rule, such as 'aws:pass', 'aws:drop', or custom action names defined in the rule group. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** Defines the traffic match criteria (such as source/destination addresses, ports, protocols, and TCP flags) against which the stateless rule evaluates packets. (AI-inferred) */
   matchAttributes?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition_MatchAttributes>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules {
-  /** The priority value for the stateless rule, which determines the order in which rules are evaluated (lower numbers take precedence). (AI-inferred) */
   priority?: number | Computed<number>;
-  /** Defines the actions to take and the matching criteria (such as source and destination addresses, ports, and protocols) for a stateless rule in the rule group. (AI-inferred) */
   ruleDefinition?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules_RuleDefinition>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions {
-  /** Specifies custom actions that can be referenced by stateless rules to perform additional behaviors such as publishing metrics to Amazon CloudWatch. (AI-inferred) */
   customActions?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_CustomActions[]>;
-  /** Defines the list of stateless rules that specify match criteria and actions for packets processed without stateful inspection in the Network Firewall rule group. (AI-inferred) */
   statelessRules: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions_StatelessRules[]>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_RulesSource {
-  /** Specifies the list of IP addresses or domain names that the rule group inspects, the target types (such as HTTP_HOST, TLS_SNI, SOURCE, or DESTINATION) that determine how the targets are matched, and whether matching traffic is allowed or dropped via the GeneratedRulesType. (AI-inferred) */
   rulesSourceList?: FirewallRuleGroup_RuleGroup_RulesSource_RulesSourceList | Computed<FirewallRuleGroup_RuleGroup_RulesSource_RulesSourceList>;
-  /** Specifies the Suricata-compatible rules string that defines the stateful inspection rules for the rule group, used when the rule group is configured as a stateful rule group. (AI-inferred) */
   rulesString?: string | Computed<string>;
-  /** Defines a list of ordered stateful rules, each combining a header (protocol, source, destination, action) with Suricata rule options, used by AWS Network Firewall to perform stateful inspection of traffic. (AI-inferred) */
   statefulRules?: FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules[] | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatefulRules[]>;
-  /** Defines the stateless rules and custom actions to use in a stateless rule group. (AI-inferred) */
   statelessRulesAndCustomActions?: FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions | Computed<FirewallRuleGroup_RuleGroup_RulesSource_StatelessRulesAndCustomActions>;
 }
 
 export interface FirewallRuleGroup_RuleGroup_StatefulRuleOptions {
-  /** Specifies how the stateful rule group evaluates rules: either in the default action order (DEFAULT_ACTION_ORDER) based on action type and priority, or in the strict order in which rules are defined (STRICT_ORDER). (AI-inferred) */
   ruleOrder?: string | Computed<string>;
 }
 
 export interface FirewallRuleGroup_RuleGroup {
-  /** Specifies named sets of IP addresses or domain names that can be referenced by the rule group's stateful rules (e.g., using the REF keyword in Suricata rules). (AI-inferred) */
   referenceSets?: FirewallRuleGroup_RuleGroup_ReferenceSets | Computed<FirewallRuleGroup_RuleGroup_ReferenceSets>;
-  /** Defines the IP sets and port sets that can be referenced by the rule group's rules for matching traffic attributes. (AI-inferred) */
   ruleVariables?: FirewallRuleGroup_RuleGroup_RuleVariables | Computed<FirewallRuleGroup_RuleGroup_RuleVariables>;
-  /** Defines the rules for the rule group, specifying either stateless rules and custom actions or stateful rule configuration using a rules string, rules source list, or individual stateful rules. (AI-inferred) */
   rulesSource: FirewallRuleGroup_RuleGroup_RulesSource | Computed<FirewallRuleGroup_RuleGroup_RulesSource>;
-  /** This object specifies the rule order and stream exception policy for a stateful rule group in AWS Network Firewall. (AI-inferred) */
   statefulRuleOptions?: FirewallRuleGroup_RuleGroup_StatefulRuleOptions | Computed<FirewallRuleGroup_RuleGroup_StatefulRuleOptions>;
 }
 
@@ -368,40 +320,25 @@ const FirewallRuleGroup_TagsFields: FieldMap = {
 };
 
 export interface FirewallRuleGroupConfig {
-  /** The maximum number of capacity units the rule group can consume, limiting the total number of rules and rule actions that can be defined in the group. (AI-inferred) */
   capacity: number | Computed<number>;
-  /** A user-provided description for the rule group, used to identify its purpose or contents within AWS Network Firewall. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Configuration object for the rule group, specifying the stateful or stateless rules source, rule variables, and reference sets that define the network traffic inspection behavior. (AI-inferred) */
   ruleGroup?: FirewallRuleGroup_RuleGroup | Computed<FirewallRuleGroup_RuleGroup>;
-  /** Specifies the name of the rule group, which must be unique within the AWS account and Region. (AI-inferred) */
   ruleGroupName: string | Computed<string>;
-  /** Configures the optional rule group summary feature, which enables generation of per-rule match counts for stateful rules in the group, with an enabled flag and a subject (such as `rulegroupsummary`) that specifies the type of summary. (AI-inferred) */
   summaryConfiguration?: FirewallRuleGroup_SummaryConfiguration | Computed<FirewallRuleGroup_SummaryConfiguration>;
-  /** Specifies the AWS resource tags (key-value pairs) to attach to the Network Firewall rule group, used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags?: FirewallRuleGroup_Tags[] | Computed<FirewallRuleGroup_Tags[]>;
-  /** Specifies whether the rule group is a stateful rule group (STATEFUL) or a stateless rule group (STATELESS), which determines the kind of rules and matching behavior it supports. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface FirewallRuleGroupAttrs {
-  /** The maximum number of capacity units the rule group can consume, limiting the total number of rules and rule actions that can be defined in the group. (AI-inferred) */
   capacity: number;
-  /** A user-provided description for the rule group, used to identify its purpose or contents within AWS Network Firewall. (AI-inferred) */
   description: string;
-  /** Configuration object for the rule group, specifying the stateful or stateless rules source, rule variables, and reference sets that define the network traffic inspection behavior. (AI-inferred) */
   ruleGroup: FirewallRuleGroup_RuleGroup;
   /** A resource ARN. */
   ruleGroupArn: string;
-  /** The unique identifier (UUID) assigned by AWS to the rule group when it is created. (AI-inferred) */
   ruleGroupId: string;
-  /** Specifies the name of the rule group, which must be unique within the AWS account and Region. (AI-inferred) */
   ruleGroupName: string;
-  /** Configures the optional rule group summary feature, which enables generation of per-rule match counts for stateful rules in the group, with an enabled flag and a subject (such as `rulegroupsummary`) that specifies the type of summary. (AI-inferred) */
   summaryConfiguration: FirewallRuleGroup_SummaryConfiguration;
-  /** Specifies the AWS resource tags (key-value pairs) to attach to the Network Firewall rule group, used for cost allocation, access control, and resource organization. (AI-inferred) */
   tags: FirewallRuleGroup_Tags[];
-  /** Specifies whether the rule group is a stateful rule group (STATEFUL) or a stateless rule group (STATELESS), which determines the kind of rules and matching behavior it supports. (AI-inferred) */
   type: string;
 }
 

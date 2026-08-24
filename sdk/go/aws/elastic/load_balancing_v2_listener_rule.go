@@ -4,212 +4,138 @@ package elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancingV2ListenerRule_Actions_AuthenticateCognitoConfig struct {
-	// Specifies a map of additional query parameters (key-value pairs) to be appended to the authentication request URI when redirecting users to the specified Cognito user pool for authentication. (AI-inferred)
 	AuthenticationRequestExtraParams any
-	// Determines how the load balancer handles unauthenticated requests when using Cognito authentication, with valid values being 'authenticate', 'allow', or 'deny'. (AI-inferred)
 	OnUnauthenticatedRequest any
-	// The OAuth 2.0 scope to request from the Cognito user pool during authentication, such as 'openid' or 'aws.cognito.signin.user.admin', which controls the user attributes and access permissions granted to the application. (AI-inferred)
 	Scope any
-	// Specifies the name of the cookie used to maintain session affinity for the authenticate-cognito action, defaulting to AWSELBAuthSessionCookie if not set. (AI-inferred)
 	SessionCookieName any
-	// Specifies the maximum duration of the authentication session, in seconds, for the Amazon Cognito authentication action on this listener rule. (AI-inferred)
 	SessionTimeout any
-	// Specifies the Amazon Resource Name (ARN) of the Amazon Cognito user pool that the Application Load Balancer uses to authenticate users for this listener rule action. (AI-inferred)
 	UserPoolArn any
-	// The client ID of the Cognito user pool client that the load balancer uses when redirecting users for authentication in an authenticate-cognito action. (AI-inferred)
 	UserPoolClientId any
-	// Defines the user pool domain prefix (e.g., 'my-user-pool') that the Application Load Balancer uses when constructing the Cognito authentication endpoint for this listener rule's authenticate-cognito action. (AI-inferred)
 	UserPoolDomain any
 }
 
 type LoadBalancingV2ListenerRule_Actions_AuthenticateOidcConfig struct {
-	// Specifies additional query parameters (key-value pairs) to be appended to the authentication request sent to the OIDC identity provider's authorization endpoint. (AI-inferred)
 	AuthenticationRequestExtraParams any
-	// The absolute URL of the OIDC authorization endpoint to which the load balancer redirects clients for user authentication as part of the authenticate-oidc action. (AI-inferred)
 	AuthorizationEndpoint any
-	// The client identifier (client ID) that the Application Load Balancer uses when communicating with the OIDC identity provider in the authenticate-oidc action. (AI-inferred)
 	ClientId any
-	// The client secret for the OIDC identity provider, used together with the client ID to authenticate when exchanging the authorization code for tokens. (AI-inferred)
 	ClientSecret any
-	// Specifies the OIDC identity provider's issuer identifier (the URL, such as https://example.com) that the ALB uses to validate the issuer claim of the ID token during authentication. (AI-inferred)
 	Issuer any
-	// Specifies the behavior when a user is not authenticated, with valid values `deny`, `allow`, or `authenticate`, where `deny` rejects the request, `allow` permits it unauthenticated, and `authenticate` redirects to the IdP for authentication. (AI-inferred)
 	OnUnauthenticatedRequest any
-	// Specifies the OAuth 2.0 scope for the OIDC authentication request, controlling which user claims are returned and defaulting to `openid`. (AI-inferred)
 	Scope any
-	// Specifies the name of the session cookie that the Application Load Balancer uses to store the OIDC authentication session state for the listener rule's authenticate-OIDC action. (AI-inferred)
 	SessionCookieName any
-	// The maximum duration in seconds that a user remains authenticated via the OIDC identity provider before being forced to re-authenticate; defaults to 604800 seconds (7 days). (AI-inferred)
 	SessionTimeout any
-	// The token endpoint URL of the OIDC identity provider, used by the load balancer to exchange the authorization code for access and ID tokens. (AI-inferred)
 	TokenEndpoint any
-	// When set to true, this boolean indicates that the rule should reuse the OIDC client secret already configured for the same client ID in a previous listener rule, rather than specifying a new ClientSecret in this rule's authenticate_oidc_config. (AI-inferred)
 	UseExistingClientSecret any
-	// The user info endpoint URL of the OIDC identity provider, used to retrieve user claims after authentication in the authenticate-oidc action. (AI-inferred)
 	UserInfoEndpoint any
 }
 
 type LoadBalancingV2ListenerRule_Actions_FixedResponseConfig struct {
-	// Specifies the Content-Type header value for the fixed-response action (e.g., 'text/plain' or 'application/json') that the load balancer returns to the client. (AI-inferred)
 	ContentType any
-	// The response body that the load balancer returns for a fixed-response action when the listener rule condition is met. (AI-inferred)
 	MessageBody any
-	// Specifies the HTTP status code to return in the fixed-response action, for example '200' or '404'. (AI-inferred)
 	StatusCode any
 }
 
 type LoadBalancingV2ListenerRule_Actions_ForwardConfig_TargetGroupStickinessConfig struct {
-	// Specifies the duration in seconds for which the load balancer should keep requests routed to the same target when target group stickiness is enabled on this forward action. (AI-inferred)
 	DurationSeconds any
-	// Indicates whether the client's requests are routed to the same target group for the specified duration, enabling target group stickiness for this forward action. (AI-inferred)
 	Enabled any
 }
 
 type LoadBalancingV2ListenerRule_Actions_ForwardConfig_TargetGroups struct {
-	// The ARN of a target group that receives traffic in a weighted forward action; used with the corresponding weight to distribute requests among multiple target groups configured in the listener rule's forward config. (AI-inferred)
 	TargetGroupArn any
-	// The relative weight assigned to a target group in a weighted forward action, determining the proportion of traffic routed to it compared to other target groups in the same forward config. (AI-inferred)
 	Weight any
 }
 
 type LoadBalancingV2ListenerRule_Actions_ForwardConfig struct {
-	// Specifies the target group stickiness configuration for the forward action, which controls whether client requests are consistently routed to the same target group for the duration set by DurationSeconds. (AI-inferred)
 	TargetGroupStickinessConfig any
-	// Specifies the list of target groups and their weights for forwarding traffic when the listener rule action type is forward. (AI-inferred)
 	TargetGroups any
 }
 
 type LoadBalancingV2ListenerRule_Actions_JwtValidationConfig_AdditionalClaims struct {
-	// The data type (such as string, number, or boolean) of the additional claim's expected value, used to enforce claim format during JWT validation in the ALB listener rule. (AI-inferred)
 	Format any
-	// Specifies the name of an additional claim that must be present in the JWT, used by the ALB 'authenticate-oidc' action's JWT validation configuration for the listener rule. (AI-inferred)
 	Name any
-	// This list defines the allowed string values for the corresponding additional JWT claim (keyed by the parent claim key) that must be matched by the token for the ALB listener rule action's authentication to succeed. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Actions_JwtValidationConfig struct {
-	// Defines additional JWT claims (key-value pairs) that must be present in the token payload with the exact specified values for the ALB's JWT validation to succeed. (AI-inferred)
 	AdditionalClaims any
-	// The expected issuer (iss claim) URL of the JWT tokens that the load balancer's authenticate-oidc action will accept for the listener rule, matching the issuer configured in the OIDC identity provider. (AI-inferred)
 	Issuer any
-	// The URL of the JSON Web Key Set (JWKS) endpoint from which the load balancer fetches the public keys used to validate the JWT signature for the authenticated action. (AI-inferred)
 	JwksEndpoint any
 }
 
 type LoadBalancingV2ListenerRule_Actions_RedirectConfig struct {
-	// The hostname to which the redirect action sends traffic, where you can specify a literal host or use the #{host} variable to preserve the original request's host. (AI-inferred)
 	Host any
-	// The path of the redirect target, which can be a literal path (e.g., /new/index.html) or a pattern using #{...} variables (e.g., /new/#{path}) that is substituted from the original request. (AI-inferred)
 	Path any
-	// Specifies the target port for the redirect, either a fixed port number (1-65535) or the `#{port}` placeholder to preserve the original incoming port. (AI-inferred)
 	Port any
-	// The protocol to use in the redirect action (HTTP, HTTPS, or #{protocol} to preserve the original listener protocol), applied to the URI when the target group redirects requests. (AI-inferred)
 	Protocol any
-	// Specifies the query string to include in the redirect target URL; when omitted, the original request's query string is preserved, and the value can contain literal text or #{...} placeholders to substitute original components. (AI-inferred)
 	Query any
-	// Specifies the HTTP redirect status code (e.g., HTTP_301) to return in the response for a redirect action. (AI-inferred)
 	StatusCode any
 }
 
 type LoadBalancingV2ListenerRule_Actions struct {
-	// Configures the Amazon Cognito user pool attributes (like user pool ARN, client ID, and domain) used for authenticating users when this listener rule action is set to authenticate-cognito. (AI-inferred)
 	AuthenticateCognitoConfig any
-	// Specifies the OpenID Connect (OIDC) identity provider parameters—including issuer, authorization/token/user-info endpoints, client ID, and client secret—that the Application Load Balancer uses to authenticate users when the listener rule action type is `authenticate-oidc`. (AI-inferred)
 	AuthenticateOidcConfig any
-	// Specifies the fixed response action settings for the listener rule, including the HTTP response status code, content type, and message body that the load balancer returns when the rule action is invoked. (AI-inferred)
 	FixedResponseConfig any
-	// Specifies the target groups and target group stickiness settings for the forward action, enabling weighted routing and session stickiness for the listener rule. (AI-inferred)
 	ForwardConfig any
-	// Configures JWT validation parameters (issuer and audience) for an OIDC authentication action in an Application Load Balancer listener rule. (AI-inferred)
 	JwtValidationConfig any
-	// Specifies the order in which this action is evaluated relative to other actions in the listener rule, with lower numbers evaluated first and required when the rule has multiple actions. (AI-inferred)
 	Order any
-	// The redirect configuration for a redirect action, specifying the protocol, host, port, path, query, and HTTP status code (e.g., HTTP_301) for redirecting client requests from one URL to another. (AI-inferred)
 	RedirectConfig any
-	// For a forward action, this attribute specifies the Amazon Resource Name (ARN) of the target group that receives traffic matching the listener rule; it is required when the action type is 'forward'. (AI-inferred)
 	TargetGroupArn any
-	// The type of action to perform when the listener rule matches, such as forward to a target group, redirect, return a fixed response, or authenticate with OIDC or Cognito. (AI-inferred)
 	Type any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_HostHeaderConfig struct {
-	// A list of regular expression patterns that the host header of an incoming request must match for the listener rule condition to be satisfied. (AI-inferred)
 	RegexValues any
-	// Specifies the host header patterns (for example, 'example.com' or '*.example.com') that the listener rule matches against the Host header of incoming requests. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_HttpHeaderConfig struct {
-	// The name of the HTTP header to match in a listener rule condition of the 'http-header' type. (AI-inferred)
 	HttpHeaderName any
-	// In an HTTP header condition of an AWS::ElasticLoadBalancingV2::ListenerRule, this field is the list of value patterns (supporting wildcard characters such as * and ?) that the HTTP header value must match for the rule to apply. (AI-inferred)
 	RegexValues any
-	// Specifies one or more strings to compare against the value of the HTTP header named in the parent http-header condition, and the listener rule condition is satisfied when the request header value matches any of these values, with support for wildcard characters like * and ?. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_HttpRequestMethodConfig struct {
-	// Defines the list of HTTP request methods (e.g., GET, POST) that must match the incoming request method for this listener rule condition to apply. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_QueryStringConfig_Values struct {
-	// Specifies the query string key (parameter name) to match in the listener rule's query string condition. (AI-inferred)
 	Key any
-	// The value of a query string key-value pair that the listener rule inspects in the request's query string to determine whether the condition matches. (AI-inferred)
 	Value any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_QueryStringConfig struct {
-	// Specifies the list of query string key/value pairs that the listener rule condition matches against, where each object contains the key and value to match in the request query string. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Conditions_SourceIpConfig struct {
-	// For a source IP-based listener rule condition, this field specifies whether the allowed source IP addresses are IPv4 or IPv6 addresses. (AI-inferred)
 	IpAddressType any
-	// The list of source IP address CIDR ranges that the rule condition matches for incoming traffic. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Conditions struct {
-	// Specifies the type of condition to match, such as host-header, path-pattern, or http-header, which determines which request attribute the listener rule evaluates. (AI-inferred)
 	Field any
-	// Specifies the host header configuration for a listener rule condition, containing the list of host header values (such as domain names) that the rule uses to match incoming requests. (AI-inferred)
 	HostHeaderConfig any
-	// Configures an HTTP header match condition for the listener rule, specifying the header name and the list of values that the incoming request's HTTP header must match for the rule to apply. (AI-inferred)
 	HttpHeaderConfig any
-	// Specifies the HTTP request method values (such as GET, POST, or DELETE) that a rule condition matches against for forwarding traffic in the Application Load Balancer listener rule. (AI-inferred)
 	HttpRequestMethodConfig any
-	// Defines the path pattern configuration for a path-based routing condition, containing a list of path patterns (e.g., /img/*) that determine whether the listener rule action is taken based on the URL path of the request. (AI-inferred)
 	PathPatternConfig any
-	// Defines the query string key-value pair patterns that an incoming request's query string must match for the corresponding application load balancer listener rule condition to be satisfied. (AI-inferred)
 	QueryStringConfig any
-	// Specifies a list of regular expression patterns used by the listener rule condition to match the request's host header or path pattern, enabling regex-based routing instead of exact values. (AI-inferred)
 	RegexValues any
-	// Defines the source IP matching criteria for a listener rule condition, specifying one or more CIDR ranges that the originating client IP address must fall within for the rule to apply. (AI-inferred)
 	SourceIpConfig any
-	// For a given listener rule condition (such as host-header, path-pattern, or http-header), this is the list of strings to evaluate the request against, where at least one value must match for the condition to be met. (AI-inferred)
 	Values any
 }
 
 type LoadBalancingV2ListenerRule_Transforms_HostHeaderRewriteConfig_Rewrites struct {
 	Regex any
-	// The replace value specifies the new host header string that substitutes the original host header for a given rewrite in the listener rule's host header rewrite configuration, based on the rewrite type. (AI-inferred)
 	Replace any
 }
 
 type LoadBalancingV2ListenerRule_Transforms_HostHeaderRewriteConfig struct {
-	// Specifies the list of host header rewrite rules, where each rule defines an original host header name and its replacement value for requests routed by the listener rule. (AI-inferred)
 	Rewrites any
 }
 
 type LoadBalancingV2ListenerRule_Transforms struct {
-	// This object specifies the configuration for rewriting the Host header of requests that match the listener rule, used within the rule's transforms block. (AI-inferred)
 	HostHeaderRewriteConfig any
 	Type any
-	// Specifies the URL rewrite configuration that transforms the request path (and optionally query string) for requests matching the listener rule, allowing the ALB to modify the incoming URI before routing to the target group. (AI-inferred)
 	UrlRewriteConfig any
 }
 
@@ -434,9 +360,7 @@ type LoadBalancingV2ListenerRuleConfig struct {
 	ListenerArn any
 	// The rule priority. A listener can't have multiple rules with the same priority. If you try to reorder rules by updating their priorities, do not specify a new priority if an existing rule already uses this priority, as this can cause an error. If you need to reuse a priority with a different rule, you must remove it as a priority first, and then specify it in a subsequent update.
 	Priority any
-	// Specifies the list of tags to attach to this listener rule, where each tag object contains a Key and optionally a Value. (AI-inferred)
 	Tags any
-	// Transforms is an optional list of transformation definitions that sequentially modify the HTTP request's headers, query strings, and path before it is forwarded to the target group for rules that match. (AI-inferred)
 	Transforms any
 }
 
@@ -445,17 +369,13 @@ type LoadBalancingV2ListenerRuleAttrs struct {
 	Actions any
 	// The conditions. The rule can optionally include up to one of each of the following conditions: ``http-request-method``, ``host-header``, ``path-pattern``, and ``source-ip``. A rule can also optionally include one or more of each of the following conditions: ``http-header`` and ``query-string``.
 	Conditions any
-	// Indicates whether this listener rule is the default rule of the listener, which handles traffic that does not match any other rule. (AI-inferred)
 	IsDefault any
 	// The Amazon Resource Name (ARN) of the listener.
 	ListenerArn any
 	// The rule priority. A listener can't have multiple rules with the same priority. If you try to reorder rules by updating their priorities, do not specify a new priority if an existing rule already uses this priority, as this can cause an error. If you need to reuse a priority with a different rule, you must remove it as a priority first, and then specify it in a subsequent update.
 	Priority any
-	// The Amazon Resource Name (ARN) of the listener rule, which uniquely identifies the rule within the load balancer after it has been created. (AI-inferred)
 	RuleArn any
-	// Specifies the list of tags to attach to this listener rule, where each tag object contains a Key and optionally a Value. (AI-inferred)
 	Tags any
-	// Transforms is an optional list of transformation definitions that sequentially modify the HTTP request's headers, query strings, and path before it is forwarded to the target group for rules that match. (AI-inferred)
 	Transforms any
 }
 

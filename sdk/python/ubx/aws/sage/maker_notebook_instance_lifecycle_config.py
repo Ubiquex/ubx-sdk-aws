@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerNotebookInstanceLifecycleConfig_OnCreate:
-    # The base64-encoded shell script that SageMaker executes on the notebook instance during the creation ('onCreate') lifecycle event, allowing custom setup before the instance becomes available. (AI-inferred)
     content: Any = None
 
 _MakerNotebookInstanceLifecycleConfig_OnCreateFields = {
@@ -17,22 +16,15 @@ _MakerNotebookInstanceLifecycleConfig_OnCreateFields = {
 
 @dataclasses.dataclass
 class MakerNotebookInstanceLifecycleConfigConfig:
-    # The name of the lifecycle configuration, which uniquely identifies it within your AWS account and is used when associating the lifecycle configuration with a notebook instance. (AI-inferred)
     notebook_instance_lifecycle_config_name: Any = None
-    # Specifies the lifecycle hooks that run when the notebook instance is created, containing base64-encoded shell script content that executes during instance creation. (AI-inferred)
     on_create: Any = None
-    # Specifies a list of lifecycle configuration scripts (each a base64-encoded shell script) that Amazon SageMaker runs when the notebook instance starts. (AI-inferred)
     on_start: Any = None
 
 @dataclasses.dataclass
 class MakerNotebookInstanceLifecycleConfigAttrs:
-    # The computed name (identifier) of the SageMaker notebook instance lifecycle configuration, used as the CloudFormation physical resource ID. (AI-inferred)
     id: Any = None
-    # The name of the lifecycle configuration, which uniquely identifies it within your AWS account and is used when associating the lifecycle configuration with a notebook instance. (AI-inferred)
     notebook_instance_lifecycle_config_name: Any = None
-    # Specifies the lifecycle hooks that run when the notebook instance is created, containing base64-encoded shell script content that executes during instance creation. (AI-inferred)
     on_create: Any = None
-    # Specifies a list of lifecycle configuration scripts (each a base64-encoded shell script) that Amazon SageMaker runs when the notebook instance starts. (AI-inferred)
     on_start: Any = None
 
 MakerNotebookInstanceLifecycleConfig = ubx.ResourceBinding(

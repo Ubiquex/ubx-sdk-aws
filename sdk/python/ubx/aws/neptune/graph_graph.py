@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GraphGraph_Tags:
-    # The key of a tag attached to the Neptune Analytics graph, used to identify the tag within the resource's tag set. (AI-inferred)
     key: Any = None
     value: Any = None
 

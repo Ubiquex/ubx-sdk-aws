@@ -8,21 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneEnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfiguration:
-    # Defines a list of S3 paths to exclude from Lake Formation location registration when provisioning the environment, preventing those locations from being registered as data lake locations. (AI-inferred)
     location_registration_exclude_s3_locations: Any = None
-    # The ARN of the IAM role that AWS DataZone uses to register data lake locations with Lake Formation for this environment blueprint configuration. (AI-inferred)
     location_registration_role: Any = None
 
 @dataclasses.dataclass
 class ZoneEnvironmentBlueprintConfiguration_ProvisioningConfigurations:
-    # Defines the AWS Lake Formation configuration for the environment blueprint, specifying how Data Zone provisions and manages Lake Formation data lake resources, including trusted service principals and location registration settings, when creating environments from the blueprint. (AI-inferred)
     lake_formation_configuration: Any = None
 
 @dataclasses.dataclass
 class ZoneEnvironmentBlueprintConfiguration_RegionalParameters:
-    # The parameters map within each regional parameter set provides the blueprint configuration key-value pairs to be used for environments in that specific AWS region, allowing region-specific overrides. (AI-inferred)
     parameters: Any = None
-    # The AWS region (e.g., us-east-1) to which this set of regional blueprint configuration parameters applies. (AI-inferred)
     region: Any = None
 
 _ZoneEnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfigurationFields = {
@@ -45,52 +40,32 @@ _ZoneEnvironmentBlueprintConfiguration_RegionalParametersFields = {
 
 @dataclasses.dataclass
 class ZoneEnvironmentBlueprintConfigurationConfig:
-    # The unique identifier of the Amazon Data Zone domain for which this environment blueprint configuration is defined. (AI-inferred)
     domain_identifier: Any = None
-    # The list of AWS Regions in which this environment blueprint configuration is enabled and can be used to provision Data Zone environments. (AI-inferred)
     enabled_regions: Any = None
-    # The unique identifier (name or ID) of the Amazon DataZone environment blueprint that this configuration applies to within the domain. (AI-inferred)
     environment_blueprint_identifier: Any = None
-    # The ARN of an IAM policy used as the permission boundary for the environment's service role, limiting the maximum permissions that can be granted to the role. (AI-inferred)
     environment_role_permission_boundary: Any = None
     # Region-agnostic environment blueprint parameters.
     global_parameters: Any = None
-    # The ARN of the IAM role that permits Amazon DataZone to manage access to resources created for the environment blueprint. (AI-inferred)
     manage_access_role_arn: Any = None
-    # Specifies the list of AWS regions where environments can be provisioned from this blueprint, along with the IAM environment role ARN to use for each region. (AI-inferred)
     provisioning_configurations: Any = None
-    # The ARN of the IAM role that AWS DataZone assumes to provision and manage resources for environments created from this blueprint configuration. (AI-inferred)
     provisioning_role_arn: Any = None
-    # Specifies a list of region-specific parameter settings, where each item contains an AWS Region and a set of key-value configuration parameters applied to the environment blueprint in that region. (AI-inferred)
     regional_parameters: Any = None
 
 @dataclasses.dataclass
 class ZoneEnvironmentBlueprintConfigurationAttrs:
-    # The timestamp (in ISO 8601 format) indicating when the environment blueprint configuration was created. (AI-inferred)
     created_at: Any = None
-    # The unique identifier of the Amazon Data Zone domain to which this environment blueprint configuration belongs. (AI-inferred)
     domain_id: Any = None
-    # The unique identifier of the Amazon Data Zone domain for which this environment blueprint configuration is defined. (AI-inferred)
     domain_identifier: Any = None
-    # The list of AWS Regions in which this environment blueprint configuration is enabled and can be used to provision Data Zone environments. (AI-inferred)
     enabled_regions: Any = None
-    # The unique identifier of the environment blueprint that this configuration is associated with, identifying which blueprint's provisioning settings are defined. (AI-inferred)
     environment_blueprint_id: Any = None
-    # The unique identifier (name or ID) of the Amazon DataZone environment blueprint that this configuration applies to within the domain. (AI-inferred)
     environment_blueprint_identifier: Any = None
-    # The ARN of an IAM policy used as the permission boundary for the environment's service role, limiting the maximum permissions that can be granted to the role. (AI-inferred)
     environment_role_permission_boundary: Any = None
     # Region-agnostic environment blueprint parameters.
     global_parameters: Any = None
-    # The ARN of the IAM role that permits Amazon DataZone to manage access to resources created for the environment blueprint. (AI-inferred)
     manage_access_role_arn: Any = None
-    # Specifies the list of AWS regions where environments can be provisioned from this blueprint, along with the IAM environment role ARN to use for each region. (AI-inferred)
     provisioning_configurations: Any = None
-    # The ARN of the IAM role that AWS DataZone assumes to provision and manage resources for environments created from this blueprint configuration. (AI-inferred)
     provisioning_role_arn: Any = None
-    # Specifies a list of region-specific parameter settings, where each item contains an AWS Region and a set of key-value configuration parameters applied to the environment blueprint in that region. (AI-inferred)
     regional_parameters: Any = None
-    # The timestamp of when this environment blueprint configuration was last updated. (AI-inferred)
     updated_at: Any = None
 
 ZoneEnvironmentBlueprintConfiguration = ubx.ResourceBinding(

@@ -15,12 +15,10 @@ class TsiteWiseDataset_DatasetSource_SourceDetail_Kendra:
 
 @dataclasses.dataclass
 class TsiteWiseDataset_DatasetSource_SourceDetail:
-    # The Kendra source detail that specifies the Amazon Kendra index ARN and an IAM role ARN used by the IoT SiteWise dataset to retrieve and ingest data from that index. (AI-inferred)
     kendra: Any = None
 
 @dataclasses.dataclass
 class TsiteWiseDataset_DatasetSource:
-    # Provides source-specific configuration details (such as an Amazon Kendra index or AWS IoT SiteWise source) for the dataset source, as defined by the DatasetSource property of an AWS::IoTSiteWise::Dataset resource. (AI-inferred)
     source_detail: Any = None
     # The format of the dataset source associated with the dataset.
     source_format: Any = None
@@ -30,7 +28,6 @@ class TsiteWiseDataset_DatasetSource:
 @dataclasses.dataclass
 class TsiteWiseDataset_Tags:
     key: Any = None
-    # The value of a tag key-value pair applied to the AWS IoT SiteWise dataset. (AI-inferred)
     value: Any = None
 
 _TsiteWiseDataset_DatasetSource_SourceDetail_KendraFields = {
@@ -67,7 +64,6 @@ class TsiteWiseDatasetConfig:
     dataset_description: Any = None
     # The name of the dataset.
     dataset_name: Any = None
-    # Specifies the source configuration for the IoT SiteWise dataset, including the Amazon S3 location (bucket and prefix) of the data files and the file format for importing data into the dataset. (AI-inferred)
     dataset_source: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -82,7 +78,6 @@ class TsiteWiseDatasetAttrs:
     dataset_id: Any = None
     # The name of the dataset.
     dataset_name: Any = None
-    # Specifies the source configuration for the IoT SiteWise dataset, including the Amazon S3 location (bucket and prefix) of the data files and the file format for importing data into the dataset. (AI-inferred)
     dataset_source: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

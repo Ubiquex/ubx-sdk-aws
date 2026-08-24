@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TailorPlaybackConfiguration_AdConditioningConfiguration:
-    # Specifies whether to condition the streaming media file for ad stitching, with allowed values 'NONE' (no conditioning) or 'AUDIO_ONLY' (condition the audio track only). (AI-inferred)
     streaming_media_file_conditioning: Any = None
 
 @dataclasses.dataclass
@@ -105,11 +104,9 @@ class TailorPlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLog
 
 @dataclasses.dataclass
 class TailorPlaybackConfiguration_LogConfiguration:
-    # Configures whether MediaTailor logs ad interaction events, such as clicks and impressions, to CloudWatch Logs for this playback configuration, typically via an Enabled flag within the object. (AI-inferred)
     ads_interaction_log: Any = None
     # The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose LEGACY_CLOUDWATCH. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose VENDED_LOGS. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream. To use vended logs, you must configure the delivery destination in Amazon CloudWatch
     enabled_logging_strategies: Any = None
-    # This object configures whether MediaTailor logs manifest service interaction events to Amazon CloudWatch, with an `Enabled` subfield to turn this logging on or off. (AI-inferred)
     manifest_service_interaction_log: Any = None
     # The percentage of session logs that MediaTailor sends to your CloudWatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the debug log mode.
     percent_enabled: Any = None
@@ -127,7 +124,6 @@ class TailorPlaybackConfiguration_ManifestProcessingRules:
 @dataclasses.dataclass
 class TailorPlaybackConfiguration_Tags:
     key: Any = None
-    # The value of a tag keyed on the AWS MediaTailor playback configuration, providing an arbitrary string for categorizing, filtering, or cost-allocating the resource. (AI-inferred)
     value: Any = None
 
 _TailorPlaybackConfiguration_AdConditioningConfigurationFields = {
@@ -246,11 +242,9 @@ class TailorPlaybackConfigurationConfig:
     configuration_aliases: Any = None
     # A map of event names to function identifiers for custom processing during session lifecycle events.
     function_mapping: Any = None
-    # The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred)
     insertion_mode: Any = None
     # The configuration for pre-roll ad insertion.
     live_pre_roll_configuration: Any = None
-    # Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred)
     log_configuration: Any = None
     # The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
     manifest_processing_rules: Any = None
@@ -291,13 +285,10 @@ class TailorPlaybackConfigurationAttrs:
     dash_configuration: Any = None
     # A map of event names to function identifiers for custom processing during session lifecycle events.
     function_mapping: Any = None
-    # The hls_configuration object is a read-only block that exposes the generated manifest endpoint prefix assigned by MediaTailor for delivering the HLS playlist for this playback configuration. (AI-inferred)
     hls_configuration: Any = None
-    # The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred)
     insertion_mode: Any = None
     # The configuration for pre-roll ad insertion.
     live_pre_roll_configuration: Any = None
-    # Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred)
     log_configuration: Any = None
     # The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
     manifest_processing_rules: Any = None

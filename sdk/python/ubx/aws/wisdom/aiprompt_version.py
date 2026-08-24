@@ -8,28 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AipromptVersionConfig:
-    # The unique identifier of the AI prompt in Amazon Wisdom that this version belongs to and whose content is versioned. (AI-inferred)
     aiprompt_id: Any = None
-    # The unique identifier of the Amazon Q in Connect (Wisdom) assistant to which this AI prompt version belongs. (AI-inferred)
     assistant_id: Any = None
-    # The modified_time_seconds field records the Unix epoch time (in seconds) at which the Wisdom AI prompt version was last updated. (AI-inferred)
     modified_time_seconds: Any = None
 
 @dataclasses.dataclass
 class AipromptVersionAttrs:
-    # The Amazon Resource Name (ARN) of the Wisdom AI prompt that this version belongs to. (AI-inferred)
     aiprompt_arn: Any = None
-    # The unique identifier of the AI prompt in Amazon Wisdom that this version belongs to and whose content is versioned. (AI-inferred)
     aiprompt_id: Any = None
-    # The unique identifier assigned by Amazon Wisdom to the created version of the AI prompt, returned as a read-only attribute after the resource is created. (AI-inferred)
     aiprompt_version_id: Any = None
-    # The Amazon Resource Name (ARN) of the Wisdom assistant that this AI prompt version belongs to. (AI-inferred)
     assistant_arn: Any = None
-    # The unique identifier of the Amazon Q in Connect (Wisdom) assistant to which this AI prompt version belongs. (AI-inferred)
     assistant_id: Any = None
-    # The modified_time_seconds field records the Unix epoch time (in seconds) at which the Wisdom AI prompt version was last updated. (AI-inferred)
     modified_time_seconds: Any = None
-    # The version number of this AI prompt version, as assigned by AWS Wisdom, which uniquely identifies the version within the parent AI prompt. (AI-inferred)
     version_number: Any = None
 
 AipromptVersion = ubx.ResourceBinding(

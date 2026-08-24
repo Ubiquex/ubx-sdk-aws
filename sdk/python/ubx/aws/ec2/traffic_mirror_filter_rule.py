@@ -16,7 +16,6 @@ class TrafficMirrorFilterRule_DestinationPortRange:
 @dataclasses.dataclass
 class TrafficMirrorFilterRule_Tags:
     key: Any = None
-    # The value of a tag key-value pair assigned to the traffic mirror filter rule, used to organize and identify the rule. (AI-inferred)
     value: Any = None
 
 _TrafficMirrorFilterRule_DestinationPortRangeFields = {
@@ -35,7 +34,6 @@ class TrafficMirrorFilterRuleConfig:
     description: Any = None
     # The destination CIDR block to assign to the Traffic Mirror rule.
     destination_cidr_block: Any = None
-    # Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
     destination_port_range: Any = None
     # The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
     protocol: Any = None
@@ -45,7 +43,6 @@ class TrafficMirrorFilterRuleConfig:
     rule_number: Any = None
     # The source CIDR block to assign to the Traffic Mirror Filter rule.
     source_cidr_block: Any = None
-    # The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
     source_port_range: Any = None
     # Any tags assigned to the Traffic Mirror Filter rule.
     tags: Any = None
@@ -60,7 +57,6 @@ class TrafficMirrorFilterRuleAttrs:
     description: Any = None
     # The destination CIDR block to assign to the Traffic Mirror rule.
     destination_cidr_block: Any = None
-    # Specifies the range of destination ports that the traffic mirror filter rule applies to, defining the destination port interval for mirroring traffic. (AI-inferred)
     destination_port_range: Any = None
     # The number of protocol, for example 17 (UDP), to assign to the Traffic Mirror rule.
     protocol: Any = None
@@ -70,7 +66,6 @@ class TrafficMirrorFilterRuleAttrs:
     rule_number: Any = None
     # The source CIDR block to assign to the Traffic Mirror Filter rule.
     source_cidr_block: Any = None
-    # The range of source ports (from and to) that the traffic mirror filter rule uses to match mirrored traffic based on the packet's source port. (AI-inferred)
     source_port_range: Any = None
     # Any tags assigned to the Traffic Mirror Filter rule.
     tags: Any = None

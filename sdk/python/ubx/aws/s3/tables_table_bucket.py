@@ -20,12 +20,10 @@ class TablesTableBucket_MetricsConfiguration:
 
 @dataclasses.dataclass
 class TablesTableBucket_ReplicationConfiguration_Rules_Destinations:
-    # The ARN of the destination table bucket to which replication rules send copies of table data. (AI-inferred)
     destination_table_bucket_arn: Any = None
 
 @dataclasses.dataclass
 class TablesTableBucket_ReplicationConfiguration_Rules:
-    # Specifies the list of destination table buckets that this S3 Tables replication rule uses as targets for replicating the table bucket's data. (AI-inferred)
     destinations: Any = None
 
 @dataclasses.dataclass
@@ -42,9 +40,7 @@ class TablesTableBucket_StorageClassConfiguration:
 
 @dataclasses.dataclass
 class TablesTableBucket_Tags:
-    # The key of a tag attached to the S3 table bucket, used to categorize and identify the resource for management and cost allocation. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag key attached to the S3 Tables table bucket, used for resource organization, cost allocation, and tag-based IAM access control. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

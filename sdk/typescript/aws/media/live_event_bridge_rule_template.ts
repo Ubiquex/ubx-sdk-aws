@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveEventBridgeRuleTemplate_EventTargets {
-  /** The Amazon Resource Name (ARN) of the target resource that the EventBridge rule invokes for this MediaLive event bridge rule template. (AI-inferred) */
   arn?: string | Computed<string>;
 }
 

@@ -4,18 +4,13 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TailorLiveSource_HttpPackageConfigurations struct {
-	// Specifies the relative path to the HTTP media package, which MediaTailor appends to the source location's base URL to fetch the live content. (AI-inferred)
 	Path any
-	// Specifies the name of the source group to which this HTTP package configuration belongs, allowing MediaTailor to route playback requests to the correct source for a given package type (e.g., DASH or HLS). (AI-inferred)
 	SourceGroup any
-	// Specifies the streaming format (e.g., DASH or HLS) for this HTTP package configuration. (AI-inferred)
 	Type any
 }
 
 type TailorLiveSource_Tags struct {
-	// Specifies the key for a tag associated with the AWS MediaTailor live source, enabling metadata-based resource management. (AI-inferred)
 	Key any
-	// The user-defined value portion of a tag key-value pair attached to the MediaTailor LiveSource, used for resource metadata, identification, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -33,9 +28,7 @@ var TailorLiveSource_TagsFields = ubx.FieldMap{
 type TailorLiveSourceConfig struct {
 	// <p>A list of HTTP package configuration parameters for this live source.</p>
 	HttpPackageConfigurations any
-	// The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred)
 	LiveSourceName any
-	// The name of the source location that contains this live source. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the live source.
 	Tags any
@@ -46,9 +39,7 @@ type TailorLiveSourceAttrs struct {
 	Arn any
 	// <p>A list of HTTP package configuration parameters for this live source.</p>
 	HttpPackageConfigurations any
-	// The name that uniquely identifies this live source within its MediaTailor source location. (AI-inferred)
 	LiveSourceName any
-	// The name of the source location that contains this live source. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the live source.
 	Tags any

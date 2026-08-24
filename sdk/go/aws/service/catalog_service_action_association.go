@@ -4,20 +4,14 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogServiceActionAssociationConfig struct {
-	// The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred)
 	ProductId any
-	// The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred)
 	ProvisioningArtifactId any
-	// The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred)
 	ServiceActionId any
 }
 
 type CatalogServiceActionAssociationAttrs struct {
-	// The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred)
 	ProductId any
-	// The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred)
 	ProvisioningArtifactId any
-	// The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred)
 	ServiceActionId any
 }
 

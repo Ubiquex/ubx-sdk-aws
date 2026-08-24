@@ -4,7 +4,6 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IngestConfiguration_Tags struct {
-	// The key of a user-defined tag applied to the IVS ingest configuration, enabling you to categorize and filter the resource. (AI-inferred)
 	Key any
 	Value any
 }

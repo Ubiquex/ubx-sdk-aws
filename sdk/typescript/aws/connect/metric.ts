@@ -7,7 +7,6 @@ export interface Metric_Filters {
 }
 
 export interface Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanCondition {
-  /** Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the boolean condition in the metric filter. (AI-inferred) */
   comparison?: string | Computed<string>;
 }
 
@@ -17,9 +16,7 @@ export interface Metric_MetricCalculation_CalculationComponents_MetricFilters_Nu
 }
 
 export interface Metric_MetricCalculation_CalculationComponents_MetricFilters_StringCondition {
-  /** Specifies the string comparison operator (e.g., EQUALS, CONTAINS) used to evaluate the metric filter's string condition against an attribute value in Amazon Connect. (AI-inferred) */
   comparison?: string | Computed<string>;
-  /** Defines the list of string values that Amazon Connect evaluates against the string condition's operator to determine which metric records match the filter and are included in the calculation component. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -33,9 +30,7 @@ export interface Metric_MetricCalculation_CalculationComponents_MetricFilters {
 
 export interface Metric_MetricCalculation_CalculationComponents {
   alias?: string | Computed<string>;
-  /** A list of metric filter objects, each specifying a dimension (like QUEUE, AGENT, or CHANNEL) and its accepted values, that determines which data points contribute to the calculated metric component. (AI-inferred) */
   metricFilters?: Metric_MetricCalculation_CalculationComponents_MetricFilters[] | Computed<Metric_MetricCalculation_CalculationComponents_MetricFilters[]>;
-  /** The identifier of the metric that this calculation component references as an input to the overall metric calculation. (AI-inferred) */
   metricId?: string | Computed<string>;
   metricName?: string | Computed<string>;
 }

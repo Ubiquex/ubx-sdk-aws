@@ -8,46 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApnsvoipChannelConfig:
-    # The unique identifier of the Amazon Pinpoint application that the APNs VoIP channel is associated with. (AI-inferred)
     application_id: Any = None
-    # The Apple-assigned bundle identifier (e.g., com.example.app) for the iOS app that receives APNs VoIP push notifications, used in the Pinpoint APNs VoIP channel configuration. (AI-inferred)
     bundle_id: Any = None
-    # The Apple Push Notification service (APNs) VoIP channel certificate (the .pem file content) used for certificate-based authentication with APNs, which must be paired with the PrivateKey to enable sending VoIP push notifications. (AI-inferred)
     certificate: Any = None
-    # Determines the default authentication method (either certificate-based or token-based) that Amazon Pinpoint uses to authenticate with the Apple Push Notification service (APNs) for sending VoIP messages when both credentials are configured. (AI-inferred)
     default_authentication_method: Any = None
-    # Indicates whether the APNs VoIP (Apple Push Notification service for Voice over IP) channel is enabled for the associated Amazon Pinpoint application. (AI-inferred)
     enabled: Any = None
-    # The private key from Apple, paired with the certificate, used to authenticate with Apple Push Notification service for sending VoIP push notifications through this channel. (AI-inferred)
     private_key: Any = None
-    # The Apple Developer Team ID used, along with the token key and key identifier, to authenticate the APNs VoIP channel via token-based authentication for sending push notifications. (AI-inferred)
     team_id: Any = None
-    # Specifies the token signing key (a .p8 private key from Apple) that Amazon Pinpoint uses to generate authentication tokens for sending VoIP push notifications through the APNs VoIP channel. (AI-inferred)
     token_key: Any = None
-    # The key identifier (kid) of the .p8 private token key that Amazon Pinpoint uses to sign APNs authentication tokens for the VoIP channel when the default authentication method is 'token'. (AI-inferred)
     token_key_id: Any = None
 
 @dataclasses.dataclass
 class ApnsvoipChannelAttrs:
-    # The unique identifier of the Amazon Pinpoint application that the APNs VoIP channel is associated with. (AI-inferred)
     application_id: Any = None
-    # The Apple-assigned bundle identifier (e.g., com.example.app) for the iOS app that receives APNs VoIP push notifications, used in the Pinpoint APNs VoIP channel configuration. (AI-inferred)
     bundle_id: Any = None
-    # The Apple Push Notification service (APNs) VoIP channel certificate (the .pem file content) used for certificate-based authentication with APNs, which must be paired with the PrivateKey to enable sending VoIP push notifications. (AI-inferred)
     certificate: Any = None
-    # Determines the default authentication method (either certificate-based or token-based) that Amazon Pinpoint uses to authenticate with the Apple Push Notification service (APNs) for sending VoIP messages when both credentials are configured. (AI-inferred)
     default_authentication_method: Any = None
-    # Indicates whether the APNs VoIP (Apple Push Notification service for Voice over IP) channel is enabled for the associated Amazon Pinpoint application. (AI-inferred)
     enabled: Any = None
-    # The unique identifier assigned to the APNs VoIP channel by Amazon Pinpoint. (AI-inferred)
     id: Any = None
-    # The private key from Apple, paired with the certificate, used to authenticate with Apple Push Notification service for sending VoIP push notifications through this channel. (AI-inferred)
     private_key: Any = None
-    # The Apple Developer Team ID used, along with the token key and key identifier, to authenticate the APNs VoIP channel via token-based authentication for sending push notifications. (AI-inferred)
     team_id: Any = None
-    # Specifies the token signing key (a .p8 private key from Apple) that Amazon Pinpoint uses to generate authentication tokens for sending VoIP push notifications through the APNs VoIP channel. (AI-inferred)
     token_key: Any = None
-    # The key identifier (kid) of the .p8 private token key that Amazon Pinpoint uses to sign APNs authentication tokens for the VoIP channel when the default authentication method is 'token'. (AI-inferred)
     token_key_id: Any = None
 
 ApnsvoipChannel = ubx.ResourceBinding(

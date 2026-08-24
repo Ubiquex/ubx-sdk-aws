@@ -8,18 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TThingPrincipalAttachmentConfig:
-    # The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred)
     principal: Any = None
-    # The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
     thing_name: Any = None
     thing_principal_type: Any = None
 
 @dataclasses.dataclass
 class TThingPrincipalAttachmentAttrs:
     id: Any = None
-    # The ARN of the AWS IoT certificate or Amazon Cognito identity that is attached as a principal to the IoT thing. (AI-inferred)
     principal: Any = None
-    # The name of the AWS IoT thing to which the principal (certificate or Cognito identity) is attached. (AI-inferred)
     thing_name: Any = None
     thing_principal_type: Any = None
 

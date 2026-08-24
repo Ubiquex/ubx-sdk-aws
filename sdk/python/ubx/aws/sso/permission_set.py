@@ -8,23 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionSet_CustomerManagedPolicyReferences:
-    # The name of the customer managed policy to reference in the permission set. (AI-inferred)
     name: Any = None
-    # The IAM path of the customer managed policy, which together with the policy name uniquely identifies the policy to attach to the permission set. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class PermissionSet_PermissionsBoundary:
-    # Provides the customer managed policy's name and optional path used to set a permissions boundary on the permission set. (AI-inferred)
     customer_managed_policy_reference: Any = None
     # The managed policy to attach.
     managed_policy_arn: Any = None
 
 @dataclasses.dataclass
 class PermissionSet_Tags:
-    # The key of a user-defined tag attached to an AWS SSO Permission Set, which is used to categorize, identify, and manage the permission set within AWS SSO. (AI-inferred)
     key: Any = None
-    # The tag value (the non-key component of a key-value pair) attached to the AWS SSO PermissionSet, used to label or categorize the resource. (AI-inferred)
     value: Any = None
 
 _PermissionSet_CustomerManagedPolicyReferencesFields = {
@@ -48,7 +43,6 @@ _PermissionSet_TagsFields = {
 
 @dataclasses.dataclass
 class PermissionSetConfig:
-    # Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred)
     customer_managed_policy_references: Any = None
     # The permission set description.
     description: Any = None
@@ -56,22 +50,18 @@ class PermissionSetConfig:
     inline_policy: Any = None
     # The sso instance arn that the permission set is owned.
     instance_arn: Any = None
-    # The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred)
     managed_policies: Any = None
     # The name you want to assign to this permission set.
     name: Any = None
-    # Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred)
     permissions_boundary: Any = None
     # The relay state URL that redirect links to any service in the AWS Management Console.
     relay_state_type: Any = None
     # The length of time that a user can be signed in to an AWS account.
     session_duration: Any = None
-    # A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PermissionSetAttrs:
-    # Specifies the customer-managed IAM policies (identified by name and path) that are attached to this AWS SSO permission set. (AI-inferred)
     customer_managed_policy_references: Any = None
     # The permission set description.
     description: Any = None
@@ -79,19 +69,16 @@ class PermissionSetAttrs:
     inline_policy: Any = None
     # The sso instance arn that the permission set is owned.
     instance_arn: Any = None
-    # The list of AWS managed policy ARNs to attach to the permission set. (AI-inferred)
     managed_policies: Any = None
     # The name you want to assign to this permission set.
     name: Any = None
     # The permission set that the policy will be attached to
     permission_set_arn: Any = None
-    # Specifies the permissions boundary for the permission set, which can be either a customer-managed policy reference or an AWS managed policy ARN that limits the maximum permissions of the permission set. (AI-inferred)
     permissions_boundary: Any = None
     # The relay state URL that redirect links to any service in the AWS Management Console.
     relay_state_type: Any = None
     # The length of time that a user can be signed in to an AWS account.
     session_duration: Any = None
-    # A list of key-value tags to assign to the AWS SSO permission set, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 PermissionSet = ubx.ResourceBinding(

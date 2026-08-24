@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProfilesRecommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersList:
-    # Specifies the type of event (such as 'OrderPlaced' or 'ProductViewed') from the customer's profile history that the recommender uses as input for generating recommendations. (AI-inferred)
     event_type: Any = None
-    # Determines the minimum value that an event's associated metric must have for the event to be considered by the Customer Profiles recommender, filtering out events that fall below this numeric threshold. (AI-inferred)
     event_value_threshold: Any = None
 
 @dataclasses.dataclass
@@ -38,21 +36,15 @@ class ProfilesRecommender_LatestRecommenderUpdate:
 
 @dataclasses.dataclass
 class ProfilesRecommender_Tags:
-    # The key of a user-defined tag assigned to the AWS Customer Profiles recommender, used for resource identification and cost allocation. (AI-inferred)
     key: Any = None
-    # The value part of an optional user-defined tag assigned to the Amazon Connect Customer Profiles recommender configuration, used for labeling and metadata such as environment or cost center. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ProfilesRecommender_TrainingMetrics_Metrics:
-    # The coverage metric in the recommender's training metrics, indicating the proportion of distinct items from the catalog that appear in at least one recommendation. (AI-inferred)
     coverage: Any = None
     freshness: Any = None
-    # The hit rate of the recommender model, representing the percentage of times the model's predicted recommendation matched the actual outcome during training. (AI-inferred)
     hit: Any = None
-    # The popularity metric value indicates the model's predictive performance on popularity-based next-best-action recommendations within the recommender's training metrics. (AI-inferred)
     popularity: Any = None
-    # The recall metric in the recommender's training metrics indicates the proportion of relevant recommendations that were correctly retrieved out of all relevant items in the training data, providing an evaluation of the recommender model's performance. (AI-inferred)
     recall: Any = None
     similarity: Any = None
 
@@ -128,7 +120,6 @@ class ProfilesRecommenderAttrs:
     status: Any = None
     # The tags used to organize, track, or control access for this resource.
     tags: Any = None
-    # training_metrics is a computed list of objects, each containing a metric name and numeric value, that summarize the performance of the recommender's machine learning training job in AWS Customer Profiles. (AI-inferred)
     training_metrics: Any = None
 
 ProfilesRecommender = ubx.ResourceBinding(

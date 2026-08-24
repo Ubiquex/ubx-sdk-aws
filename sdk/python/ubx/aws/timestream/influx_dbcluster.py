@@ -27,9 +27,7 @@ class InfluxDbcluster_MaintenanceSchedule:
 
 @dataclasses.dataclass
 class InfluxDbcluster_Tags:
-    # The key of a tag to assign to the Timestream InfluxDB cluster, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag assigned to the Timestream for InfluxDB DB cluster, used for metadata management, cost tracking, and access control. (AI-inferred)
     value: Any = None
 
 _InfluxDbcluster_LogDeliveryConfiguration_S3ConfigurationFields = {

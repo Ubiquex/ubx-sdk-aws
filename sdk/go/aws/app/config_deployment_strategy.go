@@ -4,9 +4,7 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigDeploymentStrategy_Tags struct {
-	// The key portion of a key-value tag applied to the AWS AppConfig deployment strategy, used to assign custom metadata for resource management and cost allocation. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag attached to the AWS AppConfig deployment strategy, used to label and categorize the resource for cost tracking and operational management. (AI-inferred)
 	Value any
 }
 

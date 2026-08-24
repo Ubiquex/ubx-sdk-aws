@@ -14,12 +14,10 @@ export interface TablesTableBucket_MetricsConfiguration {
 }
 
 export interface TablesTableBucket_ReplicationConfiguration_Rules_Destinations {
-  /** The ARN of the destination table bucket to which replication rules send copies of table data. (AI-inferred) */
   destinationTableBucketArn?: string | Computed<string>;
 }
 
 export interface TablesTableBucket_ReplicationConfiguration_Rules {
-  /** Specifies the list of destination table buckets that this S3 Tables replication rule uses as targets for replicating the table bucket's data. (AI-inferred) */
   destinations?: TablesTableBucket_ReplicationConfiguration_Rules_Destinations[] | Computed<TablesTableBucket_ReplicationConfiguration_Rules_Destinations[]>;
 }
 
@@ -36,9 +34,7 @@ export interface TablesTableBucket_StorageClassConfiguration {
 }
 
 export interface TablesTableBucket_Tags {
-  /** The key of a tag attached to the S3 table bucket, used to categorize and identify the resource for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key attached to the S3 Tables table bucket, used for resource organization, cost allocation, and tag-based IAM access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

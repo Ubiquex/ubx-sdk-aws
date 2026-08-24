@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamConsumer_Tags:
-    # The key of a tag applied to the Kinesis stream consumer, enabling resource identification and attribute-based access control for the consumer. (AI-inferred)
     key: Any = None
-    # Specifies the value for a tag assigned to the Kinesis stream consumer, used for cost allocation, access control, and metadata organization. (AI-inferred)
     value: Any = None
 
 _StreamConsumer_TagsFields = {

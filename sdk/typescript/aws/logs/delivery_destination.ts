@@ -9,9 +9,7 @@ export interface DeliveryDestination_DeliveryDestinationPolicy {
 }
 
 export interface DeliveryDestination_Tags {
-  /** This field specifies the key of a tag applied to the CloudWatch Logs delivery destination, allowing you to categorize and filter the resource for cost tracking and access management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the CloudWatch Logs delivery destination, used for organizing, categorizing, and controlling access to the destination via IAM policies. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -26,7 +24,6 @@ const DeliveryDestination_TagsFields: FieldMap = {
 };
 
 export interface DeliveryDestinationConfig {
-  /** The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred) */
   deliveryDestinationPolicy?: DeliveryDestination_DeliveryDestinationPolicy | Computed<DeliveryDestination_DeliveryDestinationPolicy>;
   /** Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay. */
   deliveryDestinationType?: string | Computed<string>;
@@ -43,7 +40,6 @@ export interface DeliveryDestinationConfig {
 export interface DeliveryDestinationAttrs {
   /** The Amazon Resource Name (ARN) that uniquely identifies a resource. */
   arn: string;
-  /** The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred) */
   deliveryDestinationPolicy: DeliveryDestination_DeliveryDestinationPolicy;
   /** Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay. */
   deliveryDestinationType: string;

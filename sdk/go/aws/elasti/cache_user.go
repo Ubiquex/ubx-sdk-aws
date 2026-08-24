@@ -11,9 +11,7 @@ type CacheUser_AuthenticationMode struct {
 }
 
 type CacheUser_Tags struct {
-	// The key of a tag attached to the ElastiCache user, used to assign metadata for identification and cost allocation. (AI-inferred)
 	Key any
-	// The value component of a tag key-value pair attached to this ElastiCache user, used to categorize or manage the resource. (AI-inferred)
 	Value any
 }
 
@@ -30,7 +28,6 @@ var CacheUser_TagsFields = ubx.FieldMap{
 type CacheUserConfig struct {
 	// Access permissions string used for this user account.
 	AccessString any
-	// Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred)
 	AuthenticationMode any
 	// The target cache engine for the user.
 	Engine any
@@ -51,7 +48,6 @@ type CacheUserAttrs struct {
 	AccessString any
 	// The Amazon Resource Name (ARN) of the user account.
 	Arn any
-	// Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred)
 	AuthenticationMode any
 	// The target cache engine for the user.
 	Engine any

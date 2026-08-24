@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ContactFlow_Tags:
-    # The key portion of a tag applied to an Amazon Connect contact flow, used to categorize the resource and enforce tag-based access control in IAM policies. (AI-inferred)
     key: Any = None
-    # The value of an individual tag assigned to the Amazon Connect contact flow. (AI-inferred)
     value: Any = None
 
 _ContactFlow_TagsFields = {

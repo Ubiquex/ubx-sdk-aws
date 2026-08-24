@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TPolicy_Tags struct {
-	// The key of a key-value tag attached to an AWS IoT policy, used to categorize and identify the policy resource for management and access control. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS IoT policy, used to organize and categorize the policy for management and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -16,24 +14,16 @@ var TPolicy_TagsFields = ubx.FieldMap{
 	}
 
 type TPolicyConfig struct {
-	// A JSON-formatted policy document that defines the permissions for the AWS IoT policy, specifying allowed or denied actions and resources for IoT principals. (AI-inferred)
 	PolicyDocument any
-	// The name of the AWS IoT policy; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	PolicyName any
-	// A list of key-value pairs to attach to the IoT policy, used for labeling and organizing the policy in AWS. (AI-inferred)
 	Tags any
 }
 
 type TPolicyAttrs struct {
-	// The Amazon Resource Name (ARN) assigned to the AWS IoT policy. (AI-inferred)
 	Arn any
-	// The unique identifier (policy name) of this AWS IoT policy, which is set to the policy name at creation time. (AI-inferred)
 	Id any
-	// A JSON-formatted policy document that defines the permissions for the AWS IoT policy, specifying allowed or denied actions and resources for IoT principals. (AI-inferred)
 	PolicyDocument any
-	// The name of the AWS IoT policy; if omitted, CloudFormation generates a unique name. (AI-inferred)
 	PolicyName any
-	// A list of key-value pairs to attach to the IoT policy, used for labeling and organizing the policy in AWS. (AI-inferred)
 	Tags any
 }
 

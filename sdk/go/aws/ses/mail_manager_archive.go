@@ -4,14 +4,11 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerArchive_Retention struct {
-	// Specifies how long email messages are kept in the archive before being automatically deleted, using a duration string such as '30d' for 30 days or '1y' for one year. (AI-inferred)
 	RetentionPeriod any
 }
 
 type MailManagerArchive_Tags struct {
-	// The key of a tag assigned to the SES Mail Manager Archive, used to categorize and identify the archive for management and cost-allocation purposes. (AI-inferred)
 	Key any
-	// The value part of a tag (key-value pair) applied to the SES Mail Manager archive, used to organize, identify, or track costs for this archive resource. (AI-inferred)
 	Value any
 }
 
@@ -25,30 +22,19 @@ var MailManagerArchive_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerArchiveConfig struct {
-	// The friendly name assigned to this SES Mail Manager archive, used to identify and distinguish it within the account. (AI-inferred)
 	ArchiveName any
-	// The ARN of the AWS KMS key used to encrypt the email archive. (AI-inferred)
 	KmsKeyArn any
-	// Configures the retention period for archived emails, specifying how long messages are stored in the archive before being automatically deleted. (AI-inferred)
 	Retention any
-	// A list of key-value pairs (tags) to associate with the archive, used for organizing, identifying, and managing the Mail Manager archive resource in AWS SES. (AI-inferred)
 	Tags any
 }
 
 type MailManagerArchiveAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying the SES Mail Manager archive. (AI-inferred)
 	ArchiveArn any
-	// The unique identifier assigned by AWS to the mail manager archive upon creation. (AI-inferred)
 	ArchiveId any
-	// The friendly name assigned to this SES Mail Manager archive, used to identify and distinguish it within the account. (AI-inferred)
 	ArchiveName any
-	// The lifecycle state of the archive, such as active or pending deletion, as maintained by AWS SES Mail Manager. (AI-inferred)
 	ArchiveState any
-	// The ARN of the AWS KMS key used to encrypt the email archive. (AI-inferred)
 	KmsKeyArn any
-	// Configures the retention period for archived emails, specifying how long messages are stored in the archive before being automatically deleted. (AI-inferred)
 	Retention any
-	// A list of key-value pairs (tags) to associate with the archive, used for organizing, identifying, and managing the Mail Manager archive resource in AWS SES. (AI-inferred)
 	Tags any
 }
 

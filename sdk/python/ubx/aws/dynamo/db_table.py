@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbTable_AttributeDefinitions:
-    # The name of an attribute in the DynamoDB table's attribute definitions, which must correspond to a key schema attribute (partition key, sort key, or index key) for the table or its secondary indexes. (AI-inferred)
     attribute_name: Any = None
-    # Specifies the data type for the attribute, which must be one of S (string), N (number), or B (binary). (AI-inferred)
     attribute_type: Any = None
 
 @dataclasses.dataclass
@@ -22,54 +20,37 @@ class DbTable_ContributorInsightsSpecification:
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes_KeySchema:
-    # The name of the table attribute that serves as the partition or sort key for this global secondary index, which must match an attribute declared in the table's AttributeDefinitions. (AI-inferred)
     attribute_name: Any = None
-    # Specifies whether the key element is a HASH (partition) key or a RANGE (sort) key in the key schema of the global secondary index. (AI-inferred)
     key_type: Any = None
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes_OnDemandThroughput:
-    # The maximum number of read request units that can be consumed per second by this global secondary index when the table is in on-demand capacity mode. (AI-inferred)
     max_read_request_units: Any = None
-    # Sets the maximum number of write request units that this global secondary index can use when it operates in on-demand (pay-per-request) capacity mode, capping its write throughput. (AI-inferred)
     max_write_request_units: Any = None
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes_Projection:
-    # Lists the additional (non-key) table attributes that are copied into the global secondary index when its projection type is INCLUDE. (AI-inferred)
     non_key_attributes: Any = None
-    # Determines which table attributes are copied to the global secondary index: ALL copies every attribute, KEYS_ONLY copies only the table and index keys, and INCLUDE copies only the attributes listed in the projection's NonKeyAttributes. (AI-inferred)
     projection_type: Any = None
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes_ProvisionedThroughput:
-    # The number of read capacity units to provision for the global secondary index, controlling the index's throughput for strongly consistent reads when using provisioned billing mode. (AI-inferred)
     read_capacity_units: Any = None
-    # The maximum number of write capacity units consumed per second for the global secondary index's provisioned throughput. (AI-inferred)
     write_capacity_units: Any = None
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes_WarmThroughput:
-    # The number of read capacity units per second for warm throughput of the global secondary index. (AI-inferred)
     read_units_per_second: Any = None
-    # The maximum number of write operations per second for the global secondary index's warm throughput, setting a capacity limit for writes to data in the warm storage tier of the DynamoDB table. (AI-inferred)
     write_units_per_second: Any = None
 
 @dataclasses.dataclass
 class DbTable_GlobalSecondaryIndexes:
-    # Configures CloudWatch Contributor Insights for the global secondary index, with an `Enabled` setting to enable or disable Contributor Insights on that index. (AI-inferred)
     contributor_insights_specification: Any = None
-    # The name of the global secondary index, which must be unique within the DynamoDB table and is used to query data through that index. (AI-inferred)
     index_name: Any = None
-    # Specifies the attribute names and key types (HASH or RANGE) that form the partition key and optional sort key for each global secondary index, determining how items are indexed in that GSI. (AI-inferred)
     key_schema: Any = None
-    # Specifies the maximum read and write request units for a global secondary index when the table is configured for on-demand capacity mode, allowing fine-grained control over the index's throughput limits. (AI-inferred)
     on_demand_throughput: Any = None
-    # Configures which table attributes are copied to the global secondary index, including the projection type (ALL, KEYS_ONLY, or INCLUDE) and optional non-key attributes. (AI-inferred)
     projection: Any = None
-    # Configures the read and write capacity units for a global secondary index when the DynamoDB table uses provisioned billing mode. (AI-inferred)
     provisioned_throughput: Any = None
-    # Specifies the warm throughput capacity (read and write units per second) for the global secondary index when the table uses the Standard-IA (Infrequent Access) storage class, allowing throughput to be set separately for data in the warm storage tier. (AI-inferred)
     warm_throughput: Any = None
 
 @dataclasses.dataclass
@@ -113,11 +94,8 @@ class DbTable_KinesisStreamSpecification:
 
 @dataclasses.dataclass
 class DbTable_LocalSecondaryIndexes:
-    # The name of the local secondary index, which must be unique within the table and is used to query the table using an alternate sort key. (AI-inferred)
     index_name: Any = None
-    # Defines the key schema for the local secondary index, specifying the partition key (which must be the same as the table's partition key) and a distinct sort key, each with an attribute name and key type (HASH or RANGE). (AI-inferred)
     key_schema: Any = None
-    # Specifies which table attributes are copied into the local secondary index, using ALL, KEYS_ONLY, or INCLUDE modes, with INCLUDE requiring an explicit list of non-key attributes to project. (AI-inferred)
     projection: Any = None
 
 @dataclasses.dataclass
@@ -367,7 +345,6 @@ class DbTableConfig:
 
 @dataclasses.dataclass
 class DbTableAttrs:
-    # The Amazon Resource Name (ARN) of the DynamoDB table, automatically assigned by AWS when the table is created. (AI-inferred)
     arn: Any = None
     # A list of attributes that describe the key schema for the table and indexes. This property is required to create a DDB table. Update requires: [Some interruptions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt). Replacement if you edit an existing AttributeDefinition.
     attribute_definitions: Any = None
@@ -397,7 +374,6 @@ class DbTableAttrs:
     resource_policy: Any = None
     # Represents the settings used to enable server-side encryption.
     ssespecification: Any = None
-    # The Amazon Resource Name (ARN) of the DynamoDB stream associated with the table, available when a stream specification is enabled on the table. (AI-inferred)
     stream_arn: Any = None
     # Represents the DynamoDB Streams configuration for a table in DynamoDB.
     stream_specification: Any = None

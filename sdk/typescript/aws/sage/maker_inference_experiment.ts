@@ -27,25 +27,18 @@ export interface MakerInferenceExperiment_EndpointMetadata {
 }
 
 export interface MakerInferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfig {
-  /** Specifies the initial number of ML compute instances to provision for the model variant when serving real-time inference in the SageMaker Inference Experiment. (AI-inferred) */
   instanceCount?: number | Computed<number>;
-  /** The ML compute instance type (e.g., ml.m5.large, ml.c5.xlarge) that SageMaker provisions for the real-time inference endpoint of this inference experiment. (AI-inferred) */
   instanceType?: string | Computed<string>;
 }
 
 export interface MakerInferenceExperiment_ModelVariants_InfrastructureConfig {
-  /** Specifies whether the model variant is hosted on real-time infrastructure or asynchronous inference infrastructure, with allowed values of 'RealTime' or 'Async'. (AI-inferred) */
   infrastructureType?: string | Computed<string>;
-  /** Specifies the Amazon SageMaker ML instance type and instance count to use for the model variant's real-time inference endpoint in the inference experiment. (AI-inferred) */
   realTimeInferenceConfig?: MakerInferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfig | Computed<MakerInferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfig>;
 }
 
 export interface MakerInferenceExperiment_ModelVariants {
-  /** Specifies the hosting infrastructure (such as the instance type and instance count) for serving this model variant in the inference experiment. (AI-inferred) */
   infrastructureConfig?: MakerInferenceExperiment_ModelVariants_InfrastructureConfig | Computed<MakerInferenceExperiment_ModelVariants_InfrastructureConfig>;
-  /** Specifies the name of the SageMaker model that this model variant deploys in the inference experiment. (AI-inferred) */
   modelName?: string | Computed<string>;
-  /** The name of the model variant in a SageMaker Inference Experiment, used to uniquely identify the variant within the experiment's configuration. (AI-inferred) */
   variantName?: string | Computed<string>;
 }
 
@@ -57,9 +50,7 @@ export interface MakerInferenceExperiment_Schedule {
 }
 
 export interface MakerInferenceExperiment_ShadowModeConfig_ShadowModelVariants {
-  /** The percentage of inference requests that are routed to this shadow model variant for evaluation. (AI-inferred) */
   samplingPercentage?: number | Computed<number>;
-  /** The name of the model variant that receives a copy of production traffic in shadow mode, allowing you to test its performance without impacting the primary endpoint. (AI-inferred) */
   shadowModelVariantName?: string | Computed<string>;
 }
 
@@ -71,9 +62,7 @@ export interface MakerInferenceExperiment_ShadowModeConfig {
 }
 
 export interface MakerInferenceExperiment_Tags {
-  /** The key of a tag attached to the SageMaker inference experiment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value portion of a key-value tag attached to the SageMaker inference experiment, used to organize, identify, and manage the experiment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

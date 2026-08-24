@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Integration_Tags {
   key?: string | Computed<string>;
-  /** The value component of a resource tag attached to the AWS RDS integration, used to categorize or identify the integration for cost allocation and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,13 +33,11 @@ export interface IntegrationConfig {
 export interface IntegrationAttrs {
   /** An optional set of non-secret key–value pairs that contains additional contextual information about the data. */
   additionalEncryptionContext: unknown;
-  /** The time the integration was created, in ISO 8601 format (e.g., 2023-01-01T00:00:00Z). (AI-inferred) */
   createTime: string;
   /** Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse. */
   dataFilter: string;
   /** A description of the integration. */
   description: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this RDS integration, returned by AWS after creation. (AI-inferred) */
   integrationArn: string;
   /** The name of the integration. */
   integrationName: string;

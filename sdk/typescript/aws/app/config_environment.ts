@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigEnvironment_Monitors {
-  /** The ARN of the Amazon CloudWatch alarm that AppConfig monitors for this environment to detect potential issues during configuration deployments. (AI-inferred) */
   alarmArn?: string | Computed<string>;
-  /** The ARN of the IAM role that AWS AppConfig assumes to evaluate the CloudWatch alarm for this monitor during a deployment. (AI-inferred) */
   alarmRoleArn?: string | Computed<string>;
 }
 
 export interface ConfigEnvironment_Tags {
-  /** The key of a tag applied to the AWS AppConfig environment, used for resource organization and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag (key-value pair) attached to the AWS AppConfig environment, used for managing and identifying the resource (e.g., cost allocation or categorization). (AI-inferred) */
   value?: string | Computed<string>;
 }
 

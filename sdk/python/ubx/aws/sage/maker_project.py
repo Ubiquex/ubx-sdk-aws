@@ -15,9 +15,7 @@ class MakerProject_ServiceCatalogProvisionedProductDetails:
 
 @dataclasses.dataclass
 class MakerProject_ServiceCatalogProvisioningDetails_ProvisioningParameters:
-    # The key that identifies a specific provisioning parameter passed to the Service Catalog product when SageMaker provisions the project. (AI-inferred)
     key: Any = None
-    # The value for a Service Catalog provisioning parameter key, which SageMaker passes to the provisioned product to configure the project resources. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -33,18 +31,13 @@ class MakerProject_ServiceCatalogProvisioningDetails:
 
 @dataclasses.dataclass
 class MakerProject_TemplateProviderDetails_CfnTemplateProviderDetail:
-    # Specifies key-value pairs of provisioning parameters that are passed to the AWS Service Catalog product used to create the SageMaker project, controlling the configuration of the project's resources. (AI-inferred)
     parameters: Any = None
-    # The IAM role ARN that SageMaker assumes to create and manage the CloudFormation stack resources for this project. (AI-inferred)
     role_arn: Any = None
-    # The name of the CloudFormation template used by SageMaker to provision and create the project. (AI-inferred)
     template_name: Any = None
-    # The S3 URL of the AWS CloudFormation template that defines the resources to provision for the SageMaker project. (AI-inferred)
     template_url: Any = None
 
 @dataclasses.dataclass
 class MakerProject_TemplateProviderDetails:
-    # Specifies the CloudFormation template provider details for the SageMaker project, including the template location and configuration used to provision the project. (AI-inferred)
     cfn_template_provider_detail: Any = None
 
 _MakerProject_ServiceCatalogProvisionedProductDetailsFields = {

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DetectorOutcome_Tags:
-    # The key of a tag assigned to the AWS Fraud Detector outcome, used to organize and identify the outcome resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

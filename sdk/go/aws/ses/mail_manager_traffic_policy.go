@@ -4,96 +4,67 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_Analysis struct {
-	// The ARN of the analyzer that defines the email content analysis service (e.g., Amazon Textract or Comprehend) used to evaluate the boolean expression condition in the SES Mail Manager traffic policy. (AI-inferred)
 	Analyzer any
-	// Specifies which field in the analysis result the boolean expression evaluates to make a condition decision. (AI-inferred)
 	ResultField any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate_IsInAddressList struct {
-	// Specifies the address lists that the evaluated email address is checked against for the 'is_in_address_list' condition, determining a match if the address appears in any of the specified lists. (AI-inferred)
 	AddressLists any
-	// Specifies which email address attribute (such as the envelope sender or recipient) the IsInAddressList condition evaluates against the address list. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression_Evaluate struct {
-	// Specifies the analyzer ARN for email content analysis, defining the analysis result that the boolean expression condition evaluates against the configured value. (AI-inferred)
 	Analysis any
-	// This object identifies the SES address list to test for membership, providing the AddressListId that the email's recipient address is compared against. (AI-inferred)
 	IsInAddressList any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_BooleanExpression struct {
-	// For an AWS SES Mail Manager traffic policy boolean condition, this object specifies the email attribute (such as the message sender, recipient, or authentication status like DMARC) that will be evaluated to determine if the policy statement's condition matches. (AI-inferred)
 	Evaluate any
-	// The boolean operator (e.g., EQUALS or NOT_EQUALS) that defines how the evaluated email attribute is compared to the expected boolean value in this traffic policy condition. (AI-inferred)
 	Operator any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression_Evaluate struct {
-	// Specifies which message attribute (e.g., the connecting client's IP) is evaluated against the IP set in this traffic policy condition. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_IpExpression struct {
-	// The evaluate property of the IP expression condition defines which IP address (for example, the source IP address of the email) is checked against the specified values in the traffic policy. (AI-inferred)
 	Evaluate any
-	// In an IP address condition of a traffic policy statement, this operator specifies the matching logic—such as CIDR_MATCHES or NOT_CIDR_MATCHES—that determines whether the source IP address is compared against the CIDR values in the expression's values list. (AI-inferred)
 	Operator any
-	// List of IP addresses or CIDR ranges to match against the source IP address in the traffic policy's IP condition. (AI-inferred)
 	Values any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpression_Evaluate struct {
-	// Specifies an email analysis (such as a rule set or add-on) whose result is used as the string value to evaluate in this traffic policy condition, rather than directly evaluating a raw email attribute. (AI-inferred)
 	Analysis any
-	// Specifies the email attribute (e.g., FROM, TO, SUBJECT, or RECIPIENT) that the string expression evaluates against in the traffic policy condition. (AI-inferred)
 	Attribute any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_StringExpression struct {
-	// Specifies which email attribute (such as the envelope sender, recipient, or TLS status) the string expression condition evaluates in an SES Mail Manager traffic policy statement. (AI-inferred)
 	Evaluate any
-	// Determines how the string in the 'to_evaluate' property is compared to the data source value in a string expression condition, with allowed values such as EQUALS, STARTS_WITH, ENDS_WITH, and CONTAINS. (AI-inferred)
 	Operator any
-	// The list of string values to match against the selected message attribute (e.g., the envelope recipient or sender) in a string expression condition, determining whether a traffic policy statement applies to an email. (AI-inferred)
 	Values any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions_TlsExpression struct {
-	// Defines which TLS attribute (protocol or cipher) is evaluated by this TLS expression in the traffic policy condition. (AI-inferred)
 	Evaluate any
-	// Specifies the comparison operator (such as Equals, StartsWith, or EndsWith) used to evaluate the TLS handshake property against the value in the tls_expression condition. (AI-inferred)
 	Operator any
-	// Specifies the TLS protocol version (e.g., 'TLSv1.2') that the incoming connection must use to match this traffic policy condition. (AI-inferred)
 	Value any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements_Conditions struct {
-	// Defines a logical combination of sub-conditions using operators such as AND or OR, which must evaluate to true for an email to match this traffic policy condition. (AI-inferred)
 	BooleanExpression any
-	// Defines an IP-based condition that matches the source IP address of incoming email against a list of CIDR address ranges using an operator (e.g., CIDR) to determine whether the traffic policy statement applies. (AI-inferred)
 	IpExpression any
-	// Specifies an IPv6 address or CIDR range match condition, using an operator such as CIDR_MATCHES, that an email's source or destination IP must satisfy to trigger the traffic policy statement. (AI-inferred)
 	Ipv6Expression any
-	// This object defines a string-based condition in an SES Mail Manager traffic policy statement, specifying an email attribute (such as envelope sender or recipient) and an operator/value pair to match against for traffic filtering. (AI-inferred)
 	StringExpression any
-	// Defines a TLS condition for the traffic policy statement, used to match inbound email connections based on characteristics such as the TLS protocol version or cipher suite. (AI-inferred)
 	TlsExpression any
 }
 
 type MailManagerTrafficPolicy_PolicyStatements struct {
-	// Defines whether messages that match all conditions of this traffic policy statement are allowed through ('ALLOW') or rejected ('DENY'). (AI-inferred)
 	Action any
-	// A list of conditions that determine when a traffic policy statement applies, matching on message attributes such as sender, recipient, or connection properties. (AI-inferred)
 	Conditions any
 }
 
 type MailManagerTrafficPolicy_Tags struct {
-	// A key of a tag attached to the SES Mail Manager traffic policy, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to an AWS SES Mail Manager traffic policy, used to store custom metadata for organizing, identifying, and managing the policy (e.g., cost center or environment). (AI-inferred)
 	Value any
 }
 
@@ -215,30 +186,20 @@ var MailManagerTrafficPolicy_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerTrafficPolicyConfig struct {
-	// The default action (ALLOW or DENY) that the traffic policy applies to incoming messages that do not match any of the policy's statements. (AI-inferred)
 	DefaultAction any
-	// Sets the maximum incoming email size in bytes that this SES Mail Manager traffic policy will accept, rejecting any message larger than the specified limit. (AI-inferred)
 	MaxMessageSizeBytes any
-	// The list of statements in this traffic policy, where each statement defines a set of conditions and an action (such as allow or deny) for email matching those conditions. (AI-inferred)
 	PolicyStatements any
 	Tags any
-	// A friendly, human-readable name assigned to this traffic policy to identify it within SES Mail Manager. (AI-inferred)
 	TrafficPolicyName any
 }
 
 type MailManagerTrafficPolicyAttrs struct {
-	// The default action (ALLOW or DENY) that the traffic policy applies to incoming messages that do not match any of the policy's statements. (AI-inferred)
 	DefaultAction any
-	// Sets the maximum incoming email size in bytes that this SES Mail Manager traffic policy will accept, rejecting any message larger than the specified limit. (AI-inferred)
 	MaxMessageSizeBytes any
-	// The list of statements in this traffic policy, where each statement defines a set of conditions and an action (such as allow or deny) for email matching those conditions. (AI-inferred)
 	PolicyStatements any
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies this SES Mail Manager traffic policy, used to reference the policy in IAM policies and other AWS services. (AI-inferred)
 	TrafficPolicyArn any
-	// The unique identifier assigned to the SES Mail Manager traffic policy by AWS. (AI-inferred)
 	TrafficPolicyId any
-	// A friendly, human-readable name assigned to this traffic policy to identify it within SES Mail Manager. (AI-inferred)
 	TrafficPolicyName any
 }
 

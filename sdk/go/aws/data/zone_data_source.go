@@ -4,87 +4,61 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneDataSource_AssetFormsInput struct {
-	// The JSON-encoded content of the asset form input, which provides the metadata values to be associated with the asset when the data source is run. (AI-inferred)
 	Content any
-	// The name of the metadata form to associate with each asset ingested through this data source, determining which form schema is applied to the asset metadata. (AI-inferred)
 	FormName any
-	// The identifier of the metadata form type that defines the structure and fields for this asset form input, used when creating or updating assets in Amazon DataZone. (AI-inferred)
 	TypeIdentifier any
-	// The revision identifier of the asset form type to apply, indicating which version of the form schema the data source should use when creating an asset's metadata. (AI-inferred)
 	TypeRevision any
 }
 
 type ZoneDataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurations_FilterExpressions struct {
-	// The SQL-like filter expression string used to include or exclude specific rows from the source table when the DataZone data source runs against the Glue relational configuration. (AI-inferred)
 	Expression any
-	// The type of the filter expression, which indicates whether the expression is an inclusion (INCLUDE) or exclusion (EXCLUDE) rule for the relational data source tables. (AI-inferred)
 	Type any
 }
 
 type ZoneDataSource_Configuration_GlueRunConfiguration_RelationalFilterConfigurations struct {
-	// The name of the AWS Glue database in the Data Catalog that the DataZone data source reads from when using this Glue run configuration. (AI-inferred)
 	DatabaseName any
-	// List of filter expressions, each containing an expression string and a type (e.g., INCLUDE or EXCLUDE), that determine which database objects (tables or views) in the corresponding relational data source are included in or excluded from metadata ingestion in AWS DataZone. (AI-inferred)
 	FilterExpressions any
-	// For an AWS DataZone data source with a Glue run configuration, this schema name specifies the database schema within the relational database whose tables are considered for ingestion, as refined by the associated filter expressions. (AI-inferred)
 	SchemaName any
 }
 
 type ZoneDataSource_Configuration_GlueRunConfiguration struct {
-	// When set to true, this boolean enables automatic import of AWS Glue Data Quality results into Amazon DataZone for the data source. (AI-inferred)
 	AutoImportDataQualityResult any
-	// The name of the AWS Glue catalog that contains the database and table from which this data source will import metadata. (AI-inferred)
 	CatalogName any
-	// The ARN of the IAM role that AWS DataZone assumes to access the AWS Glue data catalog and resources for this data source. (AI-inferred)
 	DataAccessRole any
-	// Specifies a list of relational filter configurations, each defining a database name, optional schema name, and optional filter expression to select which tables from the AWS Glue Data Catalog are ingested by the DataZone data source. (AI-inferred)
 	RelationalFilterConfigurations any
 }
 
 type ZoneDataSource_Configuration_RedshiftRunConfiguration_RedshiftCredentialConfiguration struct {
-	// The ARN of the AWS Secrets Manager secret that stores the Redshift credentials used to connect to the Redshift data source. (AI-inferred)
 	SecretManagerArn any
 }
 
 type ZoneDataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftClusterSource struct {
-	// The name of the Amazon Redshift cluster that AWS Data Zone uses as the source for ingesting data into the data source. (AI-inferred)
 	ClusterName any
 }
 
 type ZoneDataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage_RedshiftServerlessSource struct {
-	// The name of the Redshift Serverless workgroup that serves as the data source for this Amazon Data Zone data source. (AI-inferred)
 	WorkgroupName any
 }
 
 type ZoneDataSource_Configuration_RedshiftRunConfiguration_RedshiftStorage struct {
-	// Specifies the Amazon Redshift cluster that acts as the storage source for the data source, containing the cluster name for the Redshift run configuration. (AI-inferred)
 	RedshiftClusterSource any
-	// Specifies the Amazon Redshift Serverless workgroup that provides the storage for the Redshift data source, identifying the serverless workgroup by its name. (AI-inferred)
 	RedshiftServerlessSource any
 }
 
 type ZoneDataSource_Configuration_RedshiftRunConfiguration struct {
-	// The IAM role (ARN) that AWS Data Zone assumes to access the Amazon Redshift instance or database during data source runs. (AI-inferred)
 	DataAccessRole any
-	// Configures the AWS Secrets Manager secret that stores the credentials used to connect to and query the Amazon Redshift cluster during a data source run. (AI-inferred)
 	RedshiftCredentialConfiguration any
-	// Specifies the Amazon Redshift storage source for the DataZone data source, selecting either a Redshift cluster or a Redshift Serverless workgroup via its nested RedshiftClusterSource or RedshiftServerlessSource property. (AI-inferred)
 	RedshiftStorage any
-	// Defines the list of Redshift relational filter configurations, each specifying a database, schema, table, and filter expression to control which rows are ingested during a data source run. (AI-inferred)
 	RelationalFilterConfigurations any
 }
 
 type ZoneDataSource_Configuration_SageMakerRunConfiguration struct {
-	// Specifies the list of SageMaker asset types (e.g., SageMakerModelQualityJobDefinition) whose metadata this DataZone data source will track and ingest from SageMaker runs. (AI-inferred)
 	TrackingAssets any
 }
 
 type ZoneDataSource_Configuration struct {
-	// Specifies the AWS Glue database and optional filter expression used to discover and ingest data from Glue tables into the DataZone data source. (AI-inferred)
 	GlueRunConfiguration any
-	// Specifies the Redshift-specific settings (such as the IAM role, credential and storage configuration, and relational filter configurations) used when AWS DataZone runs this data source against an Amazon Redshift cluster. (AI-inferred)
 	RedshiftRunConfiguration any
-	// Specifies the SageMaker tracking assets (ARNs) that this Amazon DataZone data source will run against to discover and import metadata from SageMaker Studio. (AI-inferred)
 	SageMakerRunConfiguration any
 }
 
@@ -96,7 +70,6 @@ type ZoneDataSource_Recommendation struct {
 type ZoneDataSource_Schedule struct {
 	// The schedule of the data source runs.
 	Schedule any
-	// The IANA timezone name (e.g., 'America/New_York') used to interpret the cron expression for the data source's scheduled refresh. (AI-inferred)
 	Timezone any
 }
 

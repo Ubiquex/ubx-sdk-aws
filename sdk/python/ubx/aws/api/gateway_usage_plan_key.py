@@ -10,18 +10,15 @@ import ubx_sdk as ubx
 class GatewayUsagePlanKeyConfig:
     # The Id of the UsagePlanKey resource.
     key_id: Any = None
-    # Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred)
     key_type: Any = None
     # The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.
     usage_plan_id: Any = None
 
 @dataclasses.dataclass
 class GatewayUsagePlanKeyAttrs:
-    # The unique resource identifier in Terraform, formed by joining the usage plan ID and the API key ID with a colon. (AI-inferred)
     id: Any = None
     # The Id of the UsagePlanKey resource.
     key_id: Any = None
-    # Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred)
     key_type: Any = None
     # The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.
     usage_plan_id: Any = None

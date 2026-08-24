@@ -7,7 +7,6 @@ export interface TermsConfig {
   links: unknown | Computed<unknown>;
   termsName: string | Computed<string>;
   termsSource: string | Computed<string>;
-  /** The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
@@ -18,7 +17,6 @@ export interface TermsAttrs {
   termsId: string;
   termsName: string;
   termsSource: string;
-  /** The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred) */
   userPoolId: string;
 }
 

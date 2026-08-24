@@ -4,28 +4,18 @@ package wisdom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AiagentVersionConfig struct {
-	// The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred)
 	AiagentId any
-	// The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred)
 	AssistantId any
-	// The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred)
 	ModifiedTimeSeconds any
 }
 
 type AiagentVersionAttrs struct {
-	// The Amazon Resource Name (ARN) of the Wisdom AI agent that this version belongs to. (AI-inferred)
 	AiagentArn any
-	// The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred)
 	AiagentId any
-	// The unique identifier assigned to the AI agent version when it is created. (AI-inferred)
 	AiagentVersionId any
-	// The Amazon Resource Name (ARN) of the Wisdom assistant to which this AI agent version belongs, exposed as a computed read-only attribute after the resource is created. (AI-inferred)
 	AssistantArn any
-	// The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred)
 	AssistantId any
-	// The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred)
 	ModifiedTimeSeconds any
-	// The version number of the AI agent version, automatically assigned by the service. (AI-inferred)
 	VersionNumber any
 }
 

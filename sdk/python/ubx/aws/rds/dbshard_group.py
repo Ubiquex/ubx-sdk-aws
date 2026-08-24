@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbshardGroup_Tags:
-    # The key part of a tag that can be applied to the DB shard group for resource organization and cost allocation. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag applied to the DB shard group, used for metadata and resource identification. (AI-inferred)
     value: Any = None
 
 _DbshardGroup_TagsFields = {
@@ -43,9 +41,7 @@ class DbshardGroupAttrs:
     dbcluster_identifier: Any = None
     # The name of the DB shard group.
     dbshard_group_identifier: Any = None
-    # The immutable AWS-assigned unique identifier for the DB shard group. (AI-inferred)
     dbshard_group_resource_id: Any = None
-    # The connection endpoint of the DB shard group, a DNS hostname that applications use to connect to the shard group's primary writer instance. (AI-inferred)
     endpoint: Any = None
     # The maximum capacity of the DB shard group in Aurora capacity units (ACUs).
     max_acu: Any = None

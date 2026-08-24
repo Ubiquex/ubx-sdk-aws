@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesWebPortal_Tags struct {
 	Key any
-	// The user-defined value portion of a tag assigned to the AWS WorkSpaces Web portal, used to provide metadata and support resource categorization and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -15,87 +14,48 @@ var SpacesWebPortal_TagsFields = ubx.FieldMap{
 	}
 
 type SpacesWebPortalConfig struct {
-	// Specifies a map of additional encryption context (key-value pairs) that is included in the encryption context when AWS KMS encrypts the portal's data using a customer-managed key. (AI-inferred)
 	AdditionalEncryptionContext any
-	// Specifies the authentication method for the WorkSpaces Web portal, which can be either 'Standard' or 'IAM Identity Center'. (AI-inferred)
 	AuthenticationType any
-	// The ARN of the browser settings resource that defines the browser configuration and policies applied to this WorkSpaces Web portal. (AI-inferred)
 	BrowserSettingsArn any
-	// The ARN of the customer managed key used to encrypt the portal's data. (AI-inferred)
 	CustomerManagedKey any
-	// The ARN of the data protection settings resource to associate with the WorkSpaces Web portal, enabling data loss prevention and session monitoring policies for browser sessions. (AI-inferred)
 	DataProtectionSettingsArn any
-	// Specifies the user-visible name for the WorkSpaces Web portal, which appears in the portal's title or header. (AI-inferred)
 	DisplayName any
-	// Specifies the instance type for the WorkSpaces Web portal's streaming sessions, determining the compute and memory resources available to end users. (AI-inferred)
 	InstanceType any
-	// The ARN of the IP access settings resource that defines the IP allowlist for accessing this WorkSpaces Web portal. (AI-inferred)
 	IpAccessSettingsArn any
-	// The maximum number of concurrent user sessions allowed for the WorkSpaces Web portal, capping active sessions to manage resource usage. (AI-inferred)
 	MaxConcurrentSessions any
-	// The ARN of the network settings that the portal uses to define its VPC and security group configuration. (AI-inferred)
 	NetworkSettingsArn any
-	// Specifies the custom domain name (e.g., portal.example.com) that users will use to access the WorkSpaces Web portal, replacing the default portal URL. (AI-inferred)
 	PortalCustomDomain any
-	// Specifies the ARN of the Kinesis data stream (session logger) that captures session logs from the web portal. (AI-inferred)
 	SessionLoggerArn any
-	// Specifies a list of tag objects (each containing a key and value) that are attached to the WorkSpaces Web Portal, enabling you to categorize and manage the resource by cost, environment, or other criteria. (AI-inferred)
 	Tags any
-	// The ARN of the trust store that the WorkSpaces Web portal uses to validate the certificate of the identity provider (IdP) for SAML-based authentication. (AI-inferred)
 	TrustStoreArn any
-	// The ARN of the user access logging settings associated with this WorkSpaces Web portal, which controls the capture and delivery of user access logs. (AI-inferred)
 	UserAccessLoggingSettingsArn any
-	// The ARN of the user settings resource to associate with this WorkSpaces Web portal. (AI-inferred)
 	UserSettingsArn any
 }
 
 type SpacesWebPortalAttrs struct {
-	// Specifies a map of additional encryption context (key-value pairs) that is included in the encryption context when AWS KMS encrypts the portal's data using a customer-managed key. (AI-inferred)
 	AdditionalEncryptionContext any
-	// Specifies the authentication method for the WorkSpaces Web portal, which can be either 'Standard' or 'IAM Identity Center'. (AI-inferred)
 	AuthenticationType any
-	// The ARN of the browser settings resource that defines the browser configuration and policies applied to this WorkSpaces Web portal. (AI-inferred)
 	BrowserSettingsArn any
 	BrowserType any
-	// The timestamp indicating when the WorkSpaces Web portal was created. (AI-inferred)
 	CreationDate any
-	// The ARN of the customer managed key used to encrypt the portal's data. (AI-inferred)
 	CustomerManagedKey any
-	// The ARN of the data protection settings resource to associate with the WorkSpaces Web portal, enabling data loss prevention and session monitoring policies for browser sessions. (AI-inferred)
 	DataProtectionSettingsArn any
-	// Specifies the user-visible name for the WorkSpaces Web portal, which appears in the portal's title or header. (AI-inferred)
 	DisplayName any
-	// Specifies the instance type for the WorkSpaces Web portal's streaming sessions, determining the compute and memory resources available to end users. (AI-inferred)
 	InstanceType any
-	// The ARN of the IP access settings resource that defines the IP allowlist for accessing this WorkSpaces Web portal. (AI-inferred)
 	IpAccessSettingsArn any
-	// The maximum number of concurrent user sessions allowed for the WorkSpaces Web portal, capping active sessions to manage resource usage. (AI-inferred)
 	MaxConcurrentSessions any
-	// The ARN of the network settings that the portal uses to define its VPC and security group configuration. (AI-inferred)
 	NetworkSettingsArn any
-	// The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web portal. (AI-inferred)
 	PortalArn any
-	// Specifies the custom domain name (e.g., portal.example.com) that users will use to access the WorkSpaces Web portal, replacing the default portal URL. (AI-inferred)
 	PortalCustomDomain any
-	// The URL endpoint for accessing the WorkSpaces Web portal, assigned by AWS and available only after the portal is created. (AI-inferred)
 	PortalEndpoint any
-	// The current operational status of the portal, which is a read-only service-assigned value indicating whether it is `Incomplete`, `Pending`, or `Active`. (AI-inferred)
 	PortalStatus any
-	// The renderer type of the portal, a read-only attribute set by AWS to indicate the rendering engine used to deliver web content (such as 'AppStream'). (AI-inferred)
 	RendererType any
-	// The SAML 2.0 metadata XML document for the portal acting as a service provider, automatically generated and returned by AWS so that external identity providers can configure federation trust with the portal. (AI-inferred)
 	ServiceProviderSamlMetadata any
-	// Specifies the ARN of the Kinesis data stream (session logger) that captures session logs from the web portal. (AI-inferred)
 	SessionLoggerArn any
-	// Provides a description of why the portal is in its current status, typically when the status is 'Failed'. (AI-inferred)
 	StatusReason any
-	// Specifies a list of tag objects (each containing a key and value) that are attached to the WorkSpaces Web Portal, enabling you to categorize and manage the resource by cost, environment, or other criteria. (AI-inferred)
 	Tags any
-	// The ARN of the trust store that the WorkSpaces Web portal uses to validate the certificate of the identity provider (IdP) for SAML-based authentication. (AI-inferred)
 	TrustStoreArn any
-	// The ARN of the user access logging settings associated with this WorkSpaces Web portal, which controls the capture and delivery of user access logs. (AI-inferred)
 	UserAccessLoggingSettingsArn any
-	// The ARN of the user settings resource to associate with this WorkSpaces Web portal. (AI-inferred)
 	UserSettingsArn any
 }
 

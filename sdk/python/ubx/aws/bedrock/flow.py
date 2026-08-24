@@ -8,313 +8,217 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Flow_Definition_Connections_Configuration_Conditional:
-    # The name of the condition defined in the flow's conditions configuration that must evaluate to true for the flow to traverse this conditional connection. (AI-inferred)
     condition: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Connections_Configuration_Data:
-    # In an AWS Bedrock Flow connection, this field specifies the name of the output from the source node that is mapped to the corresponding input of the target node. (AI-inferred)
     source_output: Any = None
-    # The name of the input field on the target Flow node that this connection's data is sent to. (AI-inferred)
     target_input: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Connections_Configuration:
-    # Defines the conditional configuration for a connection between nodes in a Bedrock flow, specifying the condition expression that determines whether the flow traverses this connection. (AI-inferred)
     conditional: Any = None
     data: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Connections:
-    # Configuration for a flow connection, where for conditional edges it holds the condition expression that determines whether the flow traverses this connection. (AI-inferred)
     configuration: Any = None
-    # A required unique name that identifies this connection within the Bedrock flow definition, used to reference the connection and distinguish it from other connections in the flow graph. (AI-inferred)
     name: Any = None
-    # The name of the source node in a Bedrock flow connection, indicating which node's output feeds into the connection's target node. (AI-inferred)
     source: Any = None
-    # Specifies the identifier of the destination node in the flow that this connection links to, defining the graph edge's target. (AI-inferred)
     target: Any = None
-    # Specifies the type of the connection between nodes in the flow, indicating whether it represents a data flow ('Data') or a control flow ('Control'). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Agent:
-    # The Amazon Resource Name (ARN) of the Bedrock agent alias that this node uses to invoke the agent. (AI-inferred)
     agent_alias_arn: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Condition_Conditions:
-    # The Boolean expression that is evaluated for this condition in a Condition node, using the flow's variable syntax and expression grammar to determine whether the condition is met. (AI-inferred)
     expression: Any = None
-    # Specifies the unique name of an individual condition within a condition node, which the flow uses to route execution based on the evaluated expression. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Condition:
-    # Defines the list of evaluation rules for a Bedrock Flow condition node, where each rule contains an expression (e.g., a comparison using flow variables) and a unique name that determines which outgoing branch the flow takes. (AI-inferred)
     conditions: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_InlineCode:
-    # The source code (such as JavaScript) to execute for the flow node, provided inline in the flow definition instead of referencing an external file. (AI-inferred)
     code: Any = None
-    # Specifies the programming language (for example, Python) used to interpret and run the inline code in a flow node's inline code configuration. (AI-inferred)
     language: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfiguration:
-    # The unique identifier (ARN) of the Amazon Bedrock guardrail that governs the knowledge base node's responses in the flow. (AI-inferred)
     guardrail_identifier: Any = None
-    # Specifies the version of the guardrail to apply to the knowledge base, such as 'DRAFT' or a specific numeric version. (AI-inferred)
     guardrail_version: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration_Text:
-    # The maximum number of tokens the model can generate in the text response produced by the knowledge base node's inference configuration in the Bedrock flow. (AI-inferred)
     max_tokens: Any = None
-    # Specifies the stop sequences (strings) that signal the model to halt text generation when encountered in the output of the knowledge base node's inference configuration. (AI-inferred)
     stop_sequences: Any = None
-    # Sets the temperature for text generation in the knowledge base node's inference configuration, controlling the randomness and creativity of the generated responses. (AI-inferred)
     temperature: Any = None
-    # Specifies the top-p (nucleus sampling) probability threshold used by the knowledge base node's text inference configuration, limiting generation to the smallest set of tokens whose cumulative probability exceeds this value. (AI-inferred)
     top_p: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration:
-    # The `text` object under `inference_configuration` specifies the generation parameters (such as max tokens, temperature, and stop sequences) for text responses from the underlying model of the knowledge base node. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PerformanceConfig:
-    # Sets the latency optimization tier (e.g., STANDARD or OPTIMIZED) for knowledge base retrieval in the flow node's orchestration, controlling the trade-off between response speed and query accuracy. (AI-inferred)
     latency: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplate:
-    # Specifies the prompt template text used by the knowledge base node's orchestration step to instruct the model how to formulate the final response based on the retrieved context and the user's query. (AI-inferred)
     text_prompt_template: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration:
-    # Specifies additional inference parameters (such as temperature or topP) to send to the foundation model when the knowledge base node performs orchestration. (AI-inferred)
     additional_model_request_fields: Any = None
-    # Specifies the inference parameters (such as temperature, topP, maxTokens) used by the model invoked during knowledge base orchestration in this Bedrock flow node. (AI-inferred)
     inference_config: Any = None
-    # This object configures retrieval performance for the knowledge base node, including the number of results to return and the vector search type (e.g., HYBRID) used during orchestration. (AI-inferred)
     performance_config: Any = None
-    # Defines the prompt template used by the model to orchestrate knowledge base retrieval and response generation within the flow's knowledge base node. (AI-inferred)
     prompt_template: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExclude:
-    # The name of a knowledge-base metadata field to exclude from the reranking process when using selective metadata configuration. (AI-inferred)
     field_name: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration:
-    # Specifies the metadata fields to exclude from consideration when reranking knowledge base results in selective metadata mode, preventing these fields from influencing reranking scores. (AI-inferred)
     fields_to_exclude: Any = None
-    # Specifies the metadata fields (each containing a field name and type) to include when reranking uses selective mode, so only the listed document metadata is considered for reranking decisions. (AI-inferred)
     fields_to_include: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration:
-    # Determines whether all metadata fields or only a selected subset are passed to the Bedrock reranker for reranking, with values such as 'SELECTIVE' or 'ALL'. (AI-inferred)
     selection_mode: Any = None
-    # Defines selective mode settings for the reranking metadata configuration, allowing you to specify which metadata fields should be used by the Bedrock reranker when reranking knowledge base results. (AI-inferred)
     selective_mode_configuration: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_ModelConfiguration:
-    # Specifies additional model-specific request fields (as key-value pairs) to be passed to the reranking model, allowing customization of inference parameters such as top_n or return_documents for the Bedrock reranking operation. (AI-inferred)
     additional_model_request_fields: Any = None
-    # The ARN of the Amazon Bedrock reranking model used to re-rank the knowledge base retrieval results. (AI-inferred)
     model_arn: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration:
-    # Specifies the metadata configuration for the Bedrock reranking model, such as whether to treat metadata as structured or unstructured and which additional metadata fields to include when reranking knowledge base results. (AI-inferred)
     metadata_configuration: Any = None
-    # Specifies the Bedrock model configuration for the reranking step, including the model ARN and any additional model request fields to pass to the reranking model. (AI-inferred)
     model_configuration: Any = None
-    # Within a knowledge base node's reranking configuration, this number specifies how many of the top retrieved results are sent to the configured reranking model. (AI-inferred)
     number_of_reranked_results: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration:
-    # Defines the Amazon Bedrock managed reranking model for this knowledge base node, specifying the model ARN and additional fields in modelConfiguration and the number of reranked results to return. (AI-inferred)
     bedrock_reranking_configuration: Any = None
-    # Specifies the reranking model type for the knowledge base node, indicating whether the reranker is an Amazon Bedrock built-in reranker or a Cohere reranker. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_KnowledgeBase:
-    # Configures the guardrail applied to the inference responses from this knowledge base node, referencing the guardrail's unique identifier and version. (AI-inferred)
     guardrail_configuration: Any = None
-    # Defines the inference parameters (e.g., temperature, topP, topK, maximumLength) applied when the knowledge base node in a Bedrock flow queries the underlying foundation model. (AI-inferred)
     inference_configuration: Any = None
-    # The unique identifier of the Amazon Bedrock knowledge base that this flow node uses to retrieve and ground responses. (AI-inferred)
     knowledge_base_id: Any = None
-    # Specifies the unique identifier of the Amazon Bedrock foundation model used by the knowledge base node to generate responses based on retrieved information. (AI-inferred)
     model_id: Any = None
-    # Specifies the maximum number of retrieved knowledge base results to include in the prompt when the flow node queries the connected knowledge base. (AI-inferred)
     number_of_results: Any = None
     orchestration_configuration: Any = None
-    # Specifies a prompt template for the knowledge base node, used to construct the query sent to the model with placeholders for user input and retrieved context. (AI-inferred)
     prompt_template: Any = None
-    # Configures how retrieval results from the knowledge base are reranked, including the reranking model ARN and the number of top results to keep after reranking. (AI-inferred)
     reranking_configuration: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_LambdaFunction:
-    # The ARN of the AWS Lambda function that this node invokes when the flow executes. (AI-inferred)
     lambda_arn: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Lex:
-    # The ARN of the Amazon Lex bot alias that this node invokes to handle the conversational interaction within the flow. (AI-inferred)
     bot_alias_arn: Any = None
-    # The locale ID (e.g., en_US) of the Amazon Lex bot configured for this node in the Bedrock flow, which determines the language and regional variant used for the bot's interactions. (AI-inferred)
     locale_id: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Loop:
-    # The inline definition of the sub-flow that the loop node iterates over, specifying the nodes and connections that constitute the repeated workflow body. (AI-inferred)
     definition: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_LoopController:
-    # Specifies the condition that determines whether the loop continues to the next iteration, evaluated after each pass through the loop node's body. (AI-inferred)
     continue_condition: Any = None
-    # Specifies the maximum number of iterations the loop node can execute before the flow terminates the loop, preventing infinite loops. (AI-inferred)
     max_iterations: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text_InputVariables:
-    # The name of the input variable that is referenced within the prompt template text and substituted with a runtime value when the flow node executes. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text:
-    # Defines the list of input variables for the inline text prompt template, where each variable's name is declared so it can be referenced as a placeholder in the template text. (AI-inferred)
     input_variables: Any = None
-    # Specifies the actual prompt text used in the inline prompt template, which can include Bedrock prompt variables such as {{variableName}} for dynamic content. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration:
-    # Defines the textual prompt template used for the prompt node when the source is configured inline, supporting variable placeholders for dynamic inputs. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline:
-    # Configures the model inference parameters for the inline prompt source, such as temperature, maximum tokens, and stop sequences, used when the prompt node invokes a model in the Bedrock flow. (AI-inferred)
     inference_configuration: Any = None
-    # Specifies the Amazon Bedrock foundation model ID used by the inline prompt configuration for this prompt node in the flow. (AI-inferred)
     model_id: Any = None
-    # Specifies the template type (TEXT or CHAT) and the actual prompt template content for an inline prompt source in a Bedrock flow node. (AI-inferred)
     template_configuration: Any = None
-    # This field specifies the prompt template format (such as TEXT or CHAT) for an inline prompt source in a Bedrock Flow prompt node, determining how the prompt content is structured and parsed. (AI-inferred)
     template_type: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Resource:
-    # The Amazon Bedrock prompt ARN that supplies the prompt text or prompt template for this node's prompt source configuration. (AI-inferred)
     prompt_arn: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration:
-    # Specifies the inline definition of the prompt, including the model ID, template type (e.g., TEXT), template configuration, and optional inference settings, used directly within the flow node rather than referencing an external prompt resource. (AI-inferred)
     inline: Any = None
-    # For a prompt node within a Bedrock flow, this object specifies the source configuration to reference an existing Amazon Bedrock prompt resource by its ARN rather than defining the prompt inline. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Prompt:
-    # Defines the Amazon Bedrock guardrail applied to the prompt node, specifying the guardrail's unique identifier and version to filter or moderate content. (AI-inferred)
     guardrail_configuration: Any = None
-    # Specifies the source of the prompt for the prompt node in the Bedrock flow, which can be either inline text configured directly or a reference to an existing prompt resource. (AI-inferred)
     source_configuration: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration_S3:
-    # Specifies the name of the S3 bucket from which the retrieval node in this Bedrock flow retrieves data. (AI-inferred)
     bucket_name: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration:
-    # Specifies the Amazon S3 data source for the retrieval node's service configuration, with properties such as the S3 bucket name and an optional object key prefix. (AI-inferred)
     s3: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration_Retrieval:
-    # Configuration for the retrieval service used by the retrieval node, specifying the knowledge base (and optionally model settings) that the node queries to fetch relevant information. (AI-inferred)
     service_configuration: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Configuration:
-    # Configuration for a Bedrock flow node of type 'Agent', specifying the agent alias to invoke and an optional prompt template to customize the agent's behavior. (AI-inferred)
     agent: Any = None
-    # Configures a Collector node in the Bedrock flow, specifying the upstream node outputs to aggregate into a single array for use by downstream nodes. (AI-inferred)
     collector: Any = None
-    # This object specifies the branching condition for a Bedrock Flow condition node, containing the logical expression (and its evaluation type) that determines which outgoing connection the flow follows. (AI-inferred)
     condition: Any = None
-    # Defines the script that is executed directly by the Bedrock flow node, enabling custom processing without referencing an external Lambda function. (AI-inferred)
     inline_code: Any = None
-    # For an input node in a Bedrock flow, this field defines the schema of the flow's input data, including its type (e.g., 'String') and, for structured objects, a list of named properties with their types. (AI-inferred)
     input: Any = None
-    # Defines the configuration for an iterator node in the Bedrock flow, specifying the collection to iterate over and optional limits such as maximum items to control looping. (AI-inferred)
     iterator: Any = None
-    # Specifies the Amazon Bedrock knowledge base and its retrieval configuration, such as the knowledge base ID and query settings, for a Knowledge Base node in the flow. (AI-inferred)
     knowledge_base: Any = None
-    # Specifies the AWS Lambda function to invoke for a Lambda function node in the flow, including the function's ARN and an optional JSON payload to pass to the function. (AI-inferred)
     lambda_function: Any = None
-    # Configuration for an Amazon Lex node in the flow, defining which Lex bot alias to invoke and the locale for conversational interactions. (AI-inferred)
     lex: Any = None
-    # Configuration for a loop node within the flow, specifying the child nodes that form the loop body and the condition node used to determine when to exit the loop. (AI-inferred)
     loop: Any = None
-    # Defines the loop control parameters for a Bedrock Flow loop node, including the array of items to iterate over and optional maximum iteration count. (AI-inferred)
     loop_controller: Any = None
-    # Defines the input for a loop node in the flow, specifying the flow variable or expression that the loop iterates over. (AI-inferred)
     loop_input: Any = None
-    # Defines the output configuration for an Output node in a Bedrock flow, specifying the data type and optional name of the flow's output. (AI-inferred)
     output: Any = None
-    # Defines the prompt settings for a prompt node, including the prompt template, model selection, and inference configuration. (AI-inferred)
     prompt: Any = None
-    # Configures a retrieval node in an Amazon Bedrock flow by specifying the knowledge base to query and the retrieval settings used to fetch relevant information for downstream processing. (AI-inferred)
     retrieval: Any = None
-    # Specifies the configuration for a storage node in the Bedrock flow, including the S3 location where the flow's input data should be saved. (AI-inferred)
     storage: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Inputs:
-    # Specifies the source category of a node input in a Bedrock flow definition, such as `FLOW` for a flow-level parameter or `NODE` for a reference to another node's output, which determines how the flow engine resolves the input's `value` field. (AI-inferred)
     category: Any = None
-    # Specifies the expression that resolves the value for this input, commonly referencing outputs of other nodes using ${...} syntax in Amazon Bedrock flows. (AI-inferred)
     expression: Any = None
-    # The name of the input, which uniquely identifies it within the node and is used as the reference key for accessing the input's value in expressions and for wiring connections between nodes. (AI-inferred)
     name: Any = None
-    # Specifies the data type of the node input, such as String, Number, Boolean, Object, Array, or Reference. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes_Outputs:
-    # The name of this node output, which uniquely identifies it within the node and is used to reference it in downstream node expressions. (AI-inferred)
     name: Any = None
-    # Specifies the data type of the node output (e.g., String, Number, Boolean) so downstream nodes can interpret the value correctly. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Flow_Definition_Nodes:
-    # Holds the node-type-specific settings for a single node in the Bedrock flow, such as the prompt template for a prompt node or the condition logic for a condition node. (AI-inferred)
     configuration: Any = None
-    # Specifies the input parameters that a node in an Amazon Bedrock Flow consumes from the flow's initial inputs or from outputs of preceding nodes, enabling data to be passed into the node's processing logic such as a prompt or condition. (AI-inferred)
     inputs: Any = None
-    # A unique name for the node within the flow, used to identify the node when defining connections to and from other nodes in the flow definition. (AI-inferred)
     name: Any = None
-    # Specifies the list of outputs for a node, where each output includes a name, data type, and an expression that determines the value exposed to downstream nodes in the flow. (AI-inferred)
     outputs: Any = None
-    # Specifies the type of the node (for example, Input, Output, Prompt, or Condition) in the Amazon Bedrock flow, which determines the node's behavior and required properties. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -335,7 +239,6 @@ class Flow_DefinitionS3Location:
 
 @dataclasses.dataclass
 class Flow_Validations:
-    # The message field of a validation object provides a human-readable description of a validation issue found in the flow's definition. (AI-inferred)
     message: Any = None
 
 _Flow_Definition_Connections_Configuration_ConditionalFields = {

@@ -9,9 +9,7 @@ type VideoStream_StreamStorageConfiguration struct {
 }
 
 type VideoStream_Tags struct {
-	// The key (name) portion of a tag attached to the Kinesis Video Stream, used as a unique identifier within the stream's tag set for organizing, managing, and tracking the resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the Kinesis video stream, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 

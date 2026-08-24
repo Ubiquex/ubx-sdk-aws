@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TfleetWiseModelManifest_Tags:
-    # Specifies the key for a tag attached to the AWS IoT FleetWise model manifest, enabling metadata-based identification and organization of the resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag (key-value pair) that can be assigned to the AWS IoT FleetWise model manifest, used to organize, identify, or manage the resource. (AI-inferred)
     value: Any = None
 
 _TfleetWiseModelManifest_TagsFields = {
@@ -20,38 +18,23 @@ _TfleetWiseModelManifest_TagsFields = {
 
 @dataclasses.dataclass
 class TfleetWiseModelManifestConfig:
-    # An optional textual description that helps identify the purpose or contents of the vehicle model manifest in AWS IoT FleetWise. (AI-inferred)
     description: Any = None
-    # The name of the model manifest, which is a unique, user-defined identifier used to reference the manifest within the AWS IoT FleetWise service. (AI-inferred)
     name: Any = None
-    # A list of node names (signals and attributes) from the associated signal catalog that define the signals and attributes included in this model manifest. (AI-inferred)
     nodes: Any = None
-    # The ARN of the AWS IoT FleetWise signal catalog that this model manifest is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # This field sets the lifecycle status of the IoT FleetWise model manifest between DRAFT (editable) and ACTIVE (production-ready), allowing you to control when the manifest becomes usable. (AI-inferred)
     status: Any = None
-    # Specifies the list of tag key-value pairs to attach to the AWS IoT FleetWise model manifest for organizing and managing the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseModelManifestAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the IoT FleetWise model manifest. (AI-inferred)
     arn: Any = None
-    # The creation_time field provides the timestamp (in ISO 8601 format) of when the AWS IoT FleetWise model manifest was created. (AI-inferred)
     creation_time: Any = None
-    # An optional textual description that helps identify the purpose or contents of the vehicle model manifest in AWS IoT FleetWise. (AI-inferred)
     description: Any = None
-    # The timestamp when the model manifest was last modified, set automatically by AWS IoT FleetWise. (AI-inferred)
     last_modification_time: Any = None
-    # The name of the model manifest, which is a unique, user-defined identifier used to reference the manifest within the AWS IoT FleetWise service. (AI-inferred)
     name: Any = None
-    # A list of node names (signals and attributes) from the associated signal catalog that define the signals and attributes included in this model manifest. (AI-inferred)
     nodes: Any = None
-    # The ARN of the AWS IoT FleetWise signal catalog that this model manifest is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # This field sets the lifecycle status of the IoT FleetWise model manifest between DRAFT (editable) and ACTIVE (production-ready), allowing you to control when the manifest becomes usable. (AI-inferred)
     status: Any = None
-    # Specifies the list of tag key-value pairs to attach to the AWS IoT FleetWise model manifest for organizing and managing the resource. (AI-inferred)
     tags: Any = None
 
 TfleetWiseModelManifest = ubx.ResourceBinding(

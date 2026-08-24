@@ -18,14 +18,12 @@ var MqConfigurationAssociation_ConfigurationFields = ubx.FieldMap{
 type MqConfigurationAssociationConfig struct {
 	// ID of the Broker that the configuration should be applied to
 	Broker any
-	// Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred)
 	Configuration any
 }
 
 type MqConfigurationAssociationAttrs struct {
 	// ID of the Broker that the configuration should be applied to
 	Broker any
-	// Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred)
 	Configuration any
 	// The ID of the ConfigurationAssociation Resource
 	Id any

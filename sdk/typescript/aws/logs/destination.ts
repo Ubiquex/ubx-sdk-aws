@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Destination_Tags {
-  /** The key (name) of a tag to associate with the CloudWatch Logs destination, used to identify and organize the destination resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the CloudWatch Logs destination resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,7 +25,6 @@ export interface DestinationConfig {
 }
 
 export interface DestinationAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this CloudWatch Logs destination, returned after creation and used to reference the destination in other AWS resources. (AI-inferred) */
   arn: string;
   /** The name of the destination resource */
   destinationName: string;

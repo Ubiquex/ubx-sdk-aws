@@ -4,7 +4,6 @@ package fsx
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataRepositoryAssociation_S3_AutoExportPolicy struct {
-	// Specifies the file system event types (NEW, CHANGED, DELETED) that trigger automatic export of file data from the FSx for Lustre file system to the linked S3 bucket. (AI-inferred)
 	Events any
 }
 
@@ -16,9 +15,7 @@ type DataRepositoryAssociation_S3 struct {
 }
 
 type DataRepositoryAssociation_Tags struct {
-	// The key of a tag attached to the Amazon FSx data repository association, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair attached to the FSx data repository association, used to assign custom metadata for organizational and identification purposes. (AI-inferred)
 	Value any
 }
 

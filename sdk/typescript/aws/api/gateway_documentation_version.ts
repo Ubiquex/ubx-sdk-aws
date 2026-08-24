@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayDocumentationVersionConfig {
-  /** Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred) */
   documentationVersion: string | Computed<string>;
-  /** The identifier of the REST API to which this documentation version is attached. (AI-inferred) */
   restApiId: string | Computed<string>;
 }
 
 export interface GatewayDocumentationVersionAttrs {
-  /** Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred) */
   description: string;
-  /** The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred) */
   documentationVersion: string;
-  /** The identifier of the REST API to which this documentation version is attached. (AI-inferred) */
   restApiId: string;
 }
 

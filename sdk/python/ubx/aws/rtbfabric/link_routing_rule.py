@@ -49,7 +49,6 @@ _LinkRoutingRule_ConditionsFields = {
 class LinkRoutingRuleConfig:
     # Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
     conditions: Any = None
-    # The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
     gateway_id: Any = None
     link_id: Any = None
     priority: Any = None
@@ -61,9 +60,7 @@ class LinkRoutingRuleAttrs:
     arn: Any = None
     # Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive.
     conditions: Any = None
-    # A timestamp that records when this link routing rule was created, used for tracking and auditing changes. (AI-inferred)
     created_timestamp: Any = None
-    # The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred)
     gateway_id: Any = None
     link_id: Any = None
     priority: Any = None
@@ -71,7 +68,6 @@ class LinkRoutingRuleAttrs:
     status: Any = None
     # Tags to assign to the LinkRoutingRule.
     tags: Any = None
-    # The updated_timestamp field captures the date and time when this link routing rule was last modified. (AI-inferred)
     updated_timestamp: Any = None
 
 LinkRoutingRule = ubx.ResourceBinding(

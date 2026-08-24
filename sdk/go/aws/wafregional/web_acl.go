@@ -4,16 +4,12 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAcl_DefaultAction struct {
-	// The action that AWS WAF takes when a request doesn't match any rule in the web ACL, either 'ALLOW' or 'BLOCK'. (AI-inferred)
 	Type any
 }
 
 type WebAcl_Rules struct {
-	// Determines the action (ALLOW, BLOCK, or COUNT) that AWS WAF Regional applies to a web request when the corresponding rule matches. (AI-inferred)
 	Action any
-	// Determines the evaluation order of the rule within the web ACL, where rules with lower priority values are evaluated first. (AI-inferred)
 	Priority any
-	// Specifies the unique identifier of the AWS WAF Regional rule to associate with this web ACL's rule list. (AI-inferred)
 	RuleId any
 }
 
@@ -32,24 +28,17 @@ var WebAcl_RulesFields = ubx.FieldMap{
 	}
 
 type WebAclConfig struct {
-	// The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
 	DefaultAction any
-	// The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
 	MetricName any
 	Name any
-	// Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
 	Rules any
 }
 
 type WebAclAttrs struct {
-	// The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
 	DefaultAction any
-	// The unique AWS-assigned identifier for the Web ACL, used as the resource ID. (AI-inferred)
 	Id any
-	// The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
 	MetricName any
 	Name any
-	// Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
 	Rules any
 }
 

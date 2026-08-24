@@ -9,7 +9,6 @@ type IntegrationResourceProperty_SourceProcessingProperties struct {
 }
 
 type IntegrationResourceProperty_Tags struct {
-	// The key of a tag assigned to the AWS Glue integration resource, enabling you to categorize and manage the integration according to your organizational conventions. (AI-inferred)
 	Key any
 	Value any
 }

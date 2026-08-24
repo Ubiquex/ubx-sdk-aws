@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Nodegroup_LaunchTemplate:
-    # The ID of the EC2 launch template that specifies the configuration (e.g., instance type, AMI, user data) for the worker nodes in the EKS node group. (AI-inferred)
     id: Any = None
-    # The name of the EC2 launch template to use for configuring the node group's instances. (AI-inferred)
     name: Any = None
-    # The version of the AWS EC2 launch template that the node group will use to launch instances. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Nodegroup_NodeRepairConfig_NodeRepairConfigOverrides:
-    # Sets the minimum wait time (in minutes) that an unhealthy node in the EKS managed node group must remain in a failed state before the node repair process automatically replaces it. (AI-inferred)
     min_repair_wait_time_mins: Any = None
-    # Specifies the Kubernetes node condition name (e.g., Ready, NetworkUnavailable) that the EKS node auto-repair feature monitors to determine that a node is unhealthy and should be replaced. (AI-inferred)
     node_monitoring_condition: Any = None
-    # The EKS node health detection reason code (such as DiskPressure, KernelDeadlock, or ReadonlyFilesystem) that identifies which unhealthy node condition this node repair configuration override applies to, allowing you to customize the automated repair behavior for that specific failure reason. (AI-inferred)
     node_unhealthy_reason: Any = None
     repair_action: Any = None
 
@@ -42,27 +36,19 @@ class Nodegroup_NodeRepairConfig:
 
 @dataclasses.dataclass
 class Nodegroup_RemoteAccess:
-    # The ec2_ssh_key field specifies the name of an existing EC2 key pair that is used to enable SSH access to the worker nodes in the EKS nodegroup. (AI-inferred)
     ec2_ssh_key: Any = None
-    # The list of EC2 security group IDs that are allowed SSH (port 22) access to the worker nodes when remote access is enabled for the EKS node group. (AI-inferred)
     source_security_groups: Any = None
 
 @dataclasses.dataclass
 class Nodegroup_ScalingConfig:
-    # The desired number of worker nodes that the EKS node group should maintain, as part of its scaling configuration. (AI-inferred)
     desired_size: Any = None
-    # The maximum number of nodes that the node group's Auto Scaling group can scale out to. (AI-inferred)
     max_size: Any = None
-    # The minimum number of worker nodes that the EKS managed node group will scale down to, setting the lower limit for the Auto Scaling group's instance count. (AI-inferred)
     min_size: Any = None
 
 @dataclasses.dataclass
 class Nodegroup_Taints:
-    # The Kubernetes taint effect (e.g., NO_SCHEDULE, NO_EXECUTE, or PREFER_NO_SCHEDULE) that determines how pods are scheduled on nodes in the EKS node group. (AI-inferred)
     effect: Any = None
-    # The key of a Kubernetes taint applied to the node group, which together with the effect defines how pods are restricted from scheduling onto the nodes. (AI-inferred)
     key: Any = None
-    # The value component of a Kubernetes taint applied to the node group's nodes, paired with the taint key and effect. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -191,7 +177,6 @@ class NodegroupConfig:
 class NodegroupAttrs:
     # The AMI type for your node group.
     ami_type: Any = None
-    # The Amazon Resource Name (ARN) of the EKS node group, which uniquely identifies it within AWS and is used for permissions and resource referencing. (AI-inferred)
     arn: Any = None
     # The capacity type of your managed node group.
     capacity_type: Any = None

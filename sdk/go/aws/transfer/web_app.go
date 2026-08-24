@@ -6,11 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type WebApp_EndpointDetails_Vpc struct {
 	// The IP address type for the VPC endpoint used by the web app.
 	IpAddressType any
-	// List of security group IDs applied to the VPC endpoint for the web app, controlling inbound and outbound traffic to the endpoint. (AI-inferred)
 	SecurityGroupIds any
-	// Specifies the subnets within the VPC where the AWS Transfer Family web app's endpoint is deployed, defining the network locations for private accessibility. (AI-inferred)
 	SubnetIds any
-	// The ID of the VPC to which the Transfer Family web app endpoint is attached, used when the endpoint is VPC-backed rather than public. (AI-inferred)
 	VpcId any
 }
 
@@ -20,7 +17,6 @@ type WebApp_EndpointDetails struct {
 }
 
 type WebApp_IdentityProviderDetails struct {
-	// The ARN of the AWS Directory Service directory that serves as the identity provider for user authentication for this AWS Transfer Family web app. (AI-inferred)
 	ApplicationArn any
 	// The Amazon Resource Name (ARN) for the IAM Identity Center used for the web app.
 	InstanceArn any
@@ -30,7 +26,6 @@ type WebApp_IdentityProviderDetails struct {
 
 type WebApp_Tags struct {
 	Key any
-	// The user-defined value of a key-value tag attached to the AWS Transfer Family web app, used for metadata such as cost allocation or environment identification. (AI-inferred)
 	Value any
 }
 
@@ -44,7 +39,6 @@ type WebApp_WebAppCustomization struct {
 }
 
 type WebApp_WebAppUnits struct {
-	// The number of provisioned web app units for this AWS Transfer Family web app, which determines the capacity and concurrency of the web app's endpoints. (AI-inferred)
 	Provisioned any
 }
 
@@ -81,15 +75,11 @@ var WebApp_WebAppUnitsFields = ubx.FieldMap{
 type WebAppConfig struct {
 	// The AccessEndpoint is the URL that you provide to your users for them to interact with the Transfer Family web app. You can specify a custom URL or use the default value.
 	AccessEndpoint any
-	// Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred)
 	EndpointDetails any
 	// Key-value pairs that can be used to group and search for web apps.
 	Tags any
-	// Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred)
 	WebAppCustomization any
-	// Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred)
 	WebAppEndpointPolicy any
-	// Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred)
 	WebAppUnits any
 }
 
@@ -98,21 +88,16 @@ type WebAppAttrs struct {
 	AccessEndpoint any
 	// Specifies the unique Amazon Resource Name (ARN) for the web app.
 	Arn any
-	// Specifies the configuration for the web app's endpoint, including whether it is public or hosted within a VPC and the associated network settings such as VPC ID, subnets, and security groups. (AI-inferred)
 	EndpointDetails any
 	// You can provide a structure that contains the details for the identity provider to use with your web app.
 	IdentityProviderDetails any
 	// Key-value pairs that can be used to group and search for web apps.
 	Tags any
-	// The unique identifier of the VPC endpoint that the web app is associated with, used when the web app is deployed within a VPC. (AI-inferred)
 	VpcEndpointId any
-	// Customizes the branding of the AWS Transfer Family web app by specifying an optional logo and title for the web app's interface. (AI-inferred)
 	WebAppCustomization any
-	// Specifies a JSON endpoint policy that controls access to the web application's endpoint, allowing you to restrict access to specific IP addresses or VPC endpoints. (AI-inferred)
 	WebAppEndpointPolicy any
 	// A unique identifier for the web app.
 	WebAppId any
-	// Determines the scaling capacity of the AWS Transfer Family web app by specifying the number of provisioned web app units (via its 'Provisioned' sub-property), which affects the application's performance and concurrency limits. (AI-inferred)
 	WebAppUnits any
 }
 

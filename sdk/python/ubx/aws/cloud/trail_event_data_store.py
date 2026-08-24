@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TrailEventDataStore_AdvancedEventSelectors_FieldSelectors:
-    # Matches events where the selected field's value ends with any of the specified string suffixes, defining a condition in the CloudTrail event data store's advanced event selector. (AI-inferred)
     ends_with: Any = None
-    # For each field selector in a CloudTrail event data store's advanced event selector, `equals` specifies the list of exact values that the named event field must match for an event to be delivered to the data store. (AI-inferred)
     equals: Any = None
-    # The name of the event attribute (e.g., eventCategory, readOnly, resources.type) that the field selector evaluates to filter which events are ingested into the event data store. (AI-inferred)
     field: Any = None
-    # For each advanced event selector field, this list of suffixes defines a `not endsWith` condition: an event matches only if the field's value does not end with any of the specified suffix strings. (AI-inferred)
     not_ends_with: Any = None
-    # Defines a list of values that, if any matches the event field specified by the adjacent field selector, will cause the event to be excluded from the CloudTrail event data store. (AI-inferred)
     not_equals: Any = None
-    # For an advanced event selector on an event data store, this list contains string prefixes; events whose corresponding field value begins with any listed prefix are excluded from matching the selector. (AI-inferred)
     not_starts_with: Any = None
-    # Specifies a list of string prefixes that the value of the selected event field must start with for an event to match this advanced event selector and be included in the event data store. (AI-inferred)
     starts_with: Any = None
 
 @dataclasses.dataclass
 class TrailEventDataStore_AdvancedEventSelectors:
-    # Defines the list of field selectors within an advanced event selector that specify conditions on event fields, such as eventCategory or eventName, to determine which events are delivered to the event data store. (AI-inferred)
     field_selectors: Any = None
-    # Provides a friendly name for the advanced event selector, used to identify it when managing multiple selectors in the CloudTrail event data store. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -41,9 +32,7 @@ class TrailEventDataStore_InsightSelectors:
 
 @dataclasses.dataclass
 class TrailEventDataStore_Tags:
-    # Specifies the key of a tag to assign to the CloudTrail event data store, which is a custom label used for identifying and organizing the resource. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the CloudTrail event data store, used to organize and identify the resource for governance and cost allocation purposes. (AI-inferred)
     value: Any = None
 
 _TrailEventDataStore_AdvancedEventSelectors_FieldSelectorsFields = {
@@ -109,7 +98,6 @@ class TrailEventDataStoreConfig:
     organization_enabled: Any = None
     # The retention period, in days.
     retention_period: Any = None
-    # Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
     # Indicates whether the event data store is protected from termination.
     termination_protection_enabled: Any = None
@@ -122,7 +110,6 @@ class TrailEventDataStoreAttrs:
     billing_mode: Any = None
     # An array that enriches event records in an existing event data store by including additional information specified in individual ContexKeySelector entries. If you add ContextKeySelectors, you must set MaxEventSize to Large.
     context_key_selectors: Any = None
-    # The creation time of the CloudTrail event data store, reported by CloudFormation as a read-only timestamp string. (AI-inferred)
     created_timestamp: Any = None
     # The ARN of the event data store.
     event_data_store_arn: Any = None
@@ -150,11 +137,9 @@ class TrailEventDataStoreAttrs:
     retention_period: Any = None
     # The status of an event data store. Values are STARTING_INGESTION, ENABLED, STOPPING_INGESTION, STOPPED_INGESTION and PENDING_DELETION.
     status: Any = None
-    # Specifies the list of tags (key-value pairs) to associate with the CloudTrail event data store, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
     # Indicates whether the event data store is protected from termination.
     termination_protection_enabled: Any = None
-    # The timestamp of the last update to the event data store, indicating when its configuration was most recently modified. (AI-inferred)
     updated_timestamp: Any = None
 
 TrailEventDataStore = ubx.ResourceBinding(

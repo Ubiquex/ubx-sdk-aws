@@ -9,7 +9,6 @@ type ConductorPricingRule_Tags struct {
 }
 
 type ConductorPricingRule_Tiering_FreeTier struct {
-	// Whether the free tier is activated for this pricing rule, enabling the first set of units to be billed at zero when set to true and disabling the free tier allowance when false. (AI-inferred)
 	Activated any
 }
 
@@ -50,7 +49,6 @@ type ConductorPricingRuleConfig struct {
 	Scope any
 	// The service which a pricing rule is applied on
 	Service any
-	// Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred)
 	Tags any
 	// The set of tiering configurations for the pricing rule.
 	Tiering any
@@ -83,7 +81,6 @@ type ConductorPricingRuleAttrs struct {
 	Scope any
 	// The service which a pricing rule is applied on
 	Service any
-	// Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred)
 	Tags any
 	// The set of tiering configurations for the pricing rule.
 	Tiering any

@@ -8,12 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dataset_PartitionSpec_Fields_Transform:
-    # Defines the target data type (such as STRING, INTEGER, DATE, or TIMESTAMP) that a source field's value is transformed to when generating the partition column for the dataset's partition specification. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Dataset_PartitionSpec_Fields:
-    # The name of a partition field (column) used in the dataset's partition specification to define how the dataset data is partitioned. (AI-inferred)
     name: Any = None
     transform: Any = None
 
@@ -24,16 +22,12 @@ class Dataset_PartitionSpec:
 
 @dataclasses.dataclass
 class Dataset_Schema_Fields:
-    # Indicates whether this field must be present in every record of the dataset, affecting data validation during ingestion. (AI-inferred)
     is_required: Any = None
-    # The name of a field (column) within the schema of an AWS Supply Chain dataset, serving as the unique identifier for that attribute in the dataset. (AI-inferred)
     name: Any = None
-    # The data type of the field (column) in the schema for the AWS Supply Chain dataset, such as STRING, INTEGER, DOUBLE, or TIMESTAMP. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Dataset_Schema_PrimaryKeys:
-    # The name of a column designated as a primary key in the dataset's schema definition. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -48,7 +42,6 @@ class Dataset_Schema:
 @dataclasses.dataclass
 class Dataset_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to the AWS Supply Chain dataset, used to organize, identify, or track the resource. (AI-inferred)
     value: Any = None
 
 _Dataset_PartitionSpec_Fields_TransformFields = {

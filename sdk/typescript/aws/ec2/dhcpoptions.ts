@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dhcpoptions_Tags {
-  /** The key (name) of a tag assigned to the DHCP options set, used to identify and organize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag attached to the DHCP options set, used to organize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -31,7 +29,6 @@ export interface DhcpoptionsConfig {
 }
 
 export interface DhcpoptionsAttrs {
-  /** The unique identifier (DHCP options ID) that AWS assigns to the DHCP options set when it is created, and which is used to associate the set with a VPC or subnet. (AI-inferred) */
   dhcpOptionsId: string;
   /** This value is used to complete unqualified DNS hostnames. */
   domainName: string;

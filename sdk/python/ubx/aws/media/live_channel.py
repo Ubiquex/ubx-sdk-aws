@@ -8,529 +8,327 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveChannel_AnywhereSettings:
-    # Specifies the ID of the channel placement group to use for this MediaLive channel when running in an Anywhere environment, identifying the set of on-premises nodes that will process the channel. (AI-inferred)
     channel_placement_group_id: Any = None
-    # Specifies the ID of the MediaLive Anywhere cluster on which this channel runs. (AI-inferred)
     cluster_id: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_CdiInputSpecification:
-    # Specifies the resolution of the CDI (Cloud Digital Interface) input signal for the MediaLive channel, with supported values HD, FHD, or UHD. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_ChannelEngineVersion:
-    # Defines the version identifier of the MediaLive engine to use for the channel; when not specified, MediaLive automatically uses the default engine version. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations_MediaConnectRouterSettings:
-    # Specifies the encryption protocol (e.g., AES128 or SRTP) used on the transport flow when MediaLive sends output to the AWS Elemental MediaConnect router. (AI-inferred)
     encryption_type: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the credentials used to authenticate to the MediaConnect router for this MediaLive destination. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations_MediaPackageSettings:
-    # The identifier of the MediaPackage channel endpoint that MediaLive uses as the target for this output destination. (AI-inferred)
     channel_endpoint_id: Any = None
-    # Specifies the MediaPackage channel group name to which MediaLive sends this output destination. (AI-inferred)
     channel_group: Any = None
-    # The ID of the AWS Elemental MediaPackage channel to which this MediaLive output destination sends the stream. (AI-inferred)
     channel_id: Any = None
-    # The name of the AWS Elemental MediaPackage channel to which the MediaLive output is sent, used to target the specific MediaPackage channel for the destination. (AI-inferred)
     channel_name: Any = None
-    # Specifies the AWS region of the MediaPackage channel that this MediaLive destination sends output to, allowing the output to target a MediaPackage endpoint in a different region than the MediaLive channel. (AI-inferred)
     media_package_region_name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations_MultiplexSettings:
-    # Specifies the ID of the AWS Elemental MediaConnect multiplex that this MediaLive channel destination sends its output to. (AI-inferred)
     multiplex_id: Any = None
-    # Specifies the name of the program within the multiplex that this destination output is assigned to, used when the channel's destination type is a multiplex (MediaLive Multiplex output). (AI-inferred)
     program_name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations_Settings:
-    # The name of an AWS Systems Manager Parameter Store parameter that holds the password for authenticating with the destination (such as an RTMP endpoint), so the actual password is never placed directly in the configuration. (AI-inferred)
     password_param: Any = None
-    # The name of the stream to which the MediaLive channel pushes content at this destination, typically appended to the destination URL for RTMP or other streaming protocols. (AI-inferred)
     stream_name: Any = None
-    # The URL of the MediaLive channel destination, which specifies the network endpoint or storage location where the encoded output will be sent (for example, an RTMP push URL, a MediaPackage endpoint, or an S3 bucket path). (AI-inferred)
     url: Any = None
-    # The username used for authentication when pushing content to the destination endpoint (e.g., an RTMP server) in these MediaLive channel destination settings. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations_SrtSettings:
-    # Specifies the SRT connection mode as either `CALLER` or `LISTENER`, controlling whether the MediaLive channel initiates or accepts the SRT connection to the destination. (AI-inferred)
     connection_mode: Any = None
-    # The ARN of the AWS Secrets Manager secret that holds the encryption passphrase used to encrypt the SRT (Secure Reliable Transport) output stream for the MediaLive channel destination. (AI-inferred)
     encryption_passphrase_secret_arn: Any = None
-    # The TCP port on which the SRT listener receives incoming content for this destination. (AI-inferred)
     listener_port: Any = None
-    # The SRT stream identifier sent in the SRT handshake when MediaLive transmits this output to the remote SRT listener, allowing the receiver to identify or route the incoming stream. (AI-inferred)
     stream_id: Any = None
-    # Specifies the SRT (Secure Reliable Transport) destination URL to which the MediaLive channel pushes its output stream. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Destinations:
-    # The unique identifier for this MediaLive channel destination, which is referenced by output and output group settings to route media to this specific destination. (AI-inferred)
     id: Any = None
-    # Specifies the logical interface names that the MediaLive channel uses to send output to this destination, applicable when the channel runs in a MediaLive Anywhere environment. (AI-inferred)
     logical_interface_names: Any = None
-    # Specifies a list of MediaConnect router settings for the destination, where each setting includes the router ARN and priority used for routing the channel's output to one or more MediaConnect routers. (AI-inferred)
     media_connect_router_settings: Any = None
-    # Specifies the AWS Elemental MediaPackage channel ID and origin endpoint name that this output destination uses for packaging and delivering the media stream. (AI-inferred)
     media_package_settings: Any = None
-    # Specifies the settings for sending this destination's output to an AWS Elemental MediaLive Multiplex, including the target multiplex ID and program number. (AI-inferred)
     multiplex_settings: Any = None
-    # The list of output destination settings that define the delivery parameters (such as URL, stream name, or port) for each destination in the MediaLive channel. (AI-inferred)
     settings: Any = None
-    # The srt_settings block configures SRT (Secure Reliable Transport) output settings for this destination, including encryption type and latency parameters. (AI-inferred)
     srt_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_AudioNormalizationSettings:
-    # Specifies the audio normalization algorithm used by the MediaLive channel, such as ITU_BS_1770_1 or ITU_BS_1770_2. (AI-inferred)
     algorithm: Any = None
-    # Determines whether the audio normalization algorithm actively corrects the audio (CORRECT_AUDIO) or only measures loudness levels (MEASURE_ONLY) when applied to the audio description. (AI-inferred)
     algorithm_control: Any = None
-    # Specifies the method used to calculate the peak level for audio normalization, either TRUE_PEAK for true peak calculation or ITU_R_1770 for the ITU-R BS.1770 standard. (AI-inferred)
     peak_calculation: Any = None
-    # Sets the peak limiter threshold in dBFS, enforcing an upper bound on the audio sample peak level after normalization to avoid clipping. (AI-inferred)
     peak_limiter_threshold: Any = None
-    # Specifies the target loudness level in LKFS (Loudness Units Full Scale) that the audio normalization algorithm will attempt to achieve for the associated audio track. (AI-inferred)
     target_lkfs: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenCbetSettings:
-    # The Nielsen CBET check digit string specifies the two-digit check digit used with Nielsen's Content Bandwidth Efficient Transport (CBET) watermarking to authenticate the audio watermark. (AI-inferred)
     cbet_check_digit_string: Any = None
-    # Specifies whether the Nielsen CBET step-aside feature is enabled (ENABLED) or disabled (DISABLED), which determines if the CBET watermark is inserted in a separate audio track. (AI-inferred)
     cbet_stepaside: Any = None
-    # Specifies the Nielsen Content Source ID (CSID) used to identify the content source for Nielsen audience measurement in CBET watermarking. (AI-inferred)
     csid: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings_NielsenNaesIiNwSettings:
-    # Specifies the Nielsen check digit string used by the NAES II NW watermarking system for audio audience measurement, embedded by MediaLive in the audio stream for validation. (AI-inferred)
     check_digit_string: Any = None
-    # The Nielsen source ID (SID) that identifies the content source for Nielsen NAES II watermarking in MediaLive audio descriptions. (AI-inferred)
     sid: Any = None
-    # Sets the IANA timezone (e.g., 'UTC' or 'America/New_York') that MediaLive uses to interpret and embed the timecode associated with Nielsen NAES II NW watermarking in the audio output. (AI-inferred)
     timezone: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings_NielsenWatermarksSettings:
-    # Configures the Nielsen CBET (Content Bandwidth Efficient Transport) watermarking settings, which embed Nielsen audio watermarks according to the CBET standard within the audio description's watermarking configuration. (AI-inferred)
     nielsen_cbet_settings: Any = None
-    # Specifies whether the Nielsen audio watermark is applied for final distribution (FINAL_DISTRIBUTOR) or programmed distribution (PROGRAMMED), affecting how MediaLive embeds the watermark in the audio. (AI-inferred)
     nielsen_distribution_type: Any = None
-    # Specifies the Nielsen NAES II NW watermarking settings, which configure how Nielsen network watermarks are inserted into the audio via the NAES II NW protocol, including the destination endpoint for the watermark payload. (AI-inferred)
     nielsen_naes_ii_nw_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_AudioWatermarkingSettings:
-    # Defines the Nielsen watermarking configuration for this audio description, including distribution type and source, to enable audience measurement. (AI-inferred)
     nielsen_watermarks_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_AacSettings:
-    # The average output bitrate in bits per second for the AAC audio codec, which controls the audio quality of the encoded stream. (AI-inferred)
     bitrate: Any = None
-    # Specifies the MPEG-4 AAC audio coding mode (transport format) for the audio encoding, with valid values including ADTS, LATM, and LOAS. (AI-inferred)
     coding_mode: Any = None
-    # Determines how the AAC encoder interprets the incoming audio stream by specifying whether the input format is ADTS or MP4A. (AI-inferred)
     input_type: Any = None
-    # The AAC audio coding profile (HEV1, HEV2, or LC) that determines compression efficiency and compatibility for the audio output in the MediaLive channel's encoder settings. (AI-inferred)
     profile: Any = None
-    # Determines whether the AAC encoder uses constant bitrate (CBR) or variable bitrate (VBR) mode. (AI-inferred)
     rate_control_mode: Any = None
-    # Specifies the raw audio framing format (ADTS or LATM_LOAS) used by the AAC encoder in the MediaLive channel's audio description codec settings. (AI-inferred)
     raw_format: Any = None
-    # The sample rate, in Hz, of the AAC audio output; valid values include 48000, 44100, 32000, 22050, and 16000. (AI-inferred)
     sample_rate: Any = None
-    # Sets the AAC specification (MPEG-2 or MPEG-4), which determines the transport framing used for the AAC audio output. (AI-inferred)
     spec: Any = None
-    # Specifies the VBR quality level (1-10) used only when the AAC rate control mode is set to VBR, representing a trade-off between audio quality and bitrate. (AI-inferred)
     vbr_quality: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_Ac3Settings:
-    # Sets whether the AC3 audio is attenuated by 3 dB to avoid clipping, with valid values 'ATTENUATE_3_DB' and 'NONE'. (AI-inferred)
     attenuation_control: Any = None
-    # The bitrate (in bits per second) for the AC3 audio codec, with valid values ranging from 32000 to 640000 bits per second, as defined by the AC3 settings in the MediaLive channel encoder's audio description. (AI-inferred)
     bitrate: Any = None
-    # Specifies the bitstream mode (such as complete main, commentary, dialogue, or emergency) applied to the AC3 audio encoding in the MediaLive channel. (AI-inferred)
     bitstream_mode: Any = None
-    # Sets the AC3 audio coding mode, which determines the output channel configuration (e.g., 1/0 mono, 2/0 stereo, or 3/2 5.1 surround). (AI-inferred)
     coding_mode: Any = None
-    # Sets the dialogue normalization (dialnorm) level in dB, a value from -31 to -1, that adjusts the program's loudness for AC3 audio encoding in MediaLive. (AI-inferred)
     dialnorm: Any = None
-    # Determines the Dolby Digital dynamic range control profile applied to the AC3 audio, specifying how much dynamic range compression is used (e.g., FILM_STANDARD, MUSIC_LIGHT, or NONE). (AI-inferred)
     drc_profile: Any = None
-    # Enables or disables the low-frequency effects (LFE) filter for the AC3 audio codec, which high-pass filters the LFE (subwoofer) channel to remove unwanted low-frequency content. (AI-inferred)
     lfe_filter: Any = None
-    # Controls whether the AC3 audio metadata (e.g., dialnorm and other parameters) is derived from the input signal (FOLLOW_INPUT) or from the values explicitly configured in this AC3 settings object (USE_CONFIGURED). (AI-inferred)
     metadata_control: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3AtmosSettings:
-    # Specifies the bitrate in bits per second used to encode the Dolby Digital Plus (EAC3) audio stream with Atmos (Dolby Atmos) coding in MediaLive. (AI-inferred)
     bitrate: Any = None
-    # Specifies the channel coding mode for the EAC3-Atmos audio, determining the number and layout of audio channels (e.g., 5.1 or 7.1) transmitted in the Atmos stream. (AI-inferred)
     coding_mode: Any = None
-    # Sets the dialogue normalization (dialnorm) value in dB for the EAC3 Atmos audio output, which tells the decoder the average loudness of the dialogue so it can maintain a consistent loudness level during playback. (AI-inferred)
     dialnorm: Any = None
-    # Sets the Dynamic Range Control (DRC) profile for the line (standard consumer playback) listening mode, controlling the amount of dynamic range compression applied to the EAC3 ATMOS audio (e.g., FILM_STANDARD, NONE). (AI-inferred)
     drc_line: Any = None
-    # Specifies the RF (radio frequency) dynamic range control (DRC) mode for the EAC3 Atmos audio, determining the amount of dynamic range compression applied to the RF encoded signal. (AI-inferred)
     drc_rf: Any = None
-    # Specifies the amount of height gain trim in decibels applied to the Atmos height channels for this audio description. (AI-inferred)
     height_trim: Any = None
-    # Specifies the amount (in dB) by which to trim (attenuate or boost) the surround channels in the EAC3 Atmos audio encoding, adjusting their level relative to the other channels. (AI-inferred)
     surround_trim: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_Eac3Settings:
-    # Determines whether the EAC3 audio decoder applies a 3 dB attenuation when the dialnorm value is set to -31, with allowed values ATTENUATE_3_DB and NONE. (AI-inferred)
     attenuation_control: Any = None
-    # The average bitrate in bits per second for the EAC3 (Dolby Digital Plus) audio encoding; valid values depend on the coding mode. (AI-inferred)
     bitrate: Any = None
-    # Specifies the bitstream mode (service type) for E-AC-3 audio, such as COMPLETE_MAIN, COMMENTARY, or DIALOGUE, which defines how the audio stream is intended to be used by the decoder. (AI-inferred)
     bitstream_mode: Any = None
-    # Specifies the EAC3 (Dolby Digital Plus) audio coding mode, such as CODING_MODE_1_0, CODING_MODE_2_0, or CODING_MODE_3_2, which determines the number and configuration of audio channels. (AI-inferred)
     coding_mode: Any = None
-    # Specifies whether to apply a DC filter to the EAC3 audio signal to remove DC offset, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     dc_filter: Any = None
-    # Sets the EAC3 dialogue normalization (dialnorm) level in dB, which controls the perceived loudness of dialogue in the encoded audio. (AI-inferred)
     dialnorm: Any = None
-    # Determines the dynamic range control profile applied to the line mode output (intended for TV speakers) within the EAC3 audio codec settings. (AI-inferred)
     drc_line: Any = None
-    # Sets the Dynamic Range Compression profile for RF (radio frequency) mode, controlling how much the EAC3 audio's dynamic range is compressed for playback on RF devices. (AI-inferred)
     drc_rf: Any = None
-    # Configures whether the low-frequency effects (LFE) subwoofer channel is encoded in the EAC3 audio output, using values like LFE or NO_LFE to enable or disable that channel. (AI-inferred)
     lfe_control: Any = None
-    # Enables or disables the Low Frequency Effects (LFE) filter in the EAC3 audio codec settings of the MediaLive channel. (AI-inferred)
     lfe_filter: Any = None
-    # The level in decibels (dB) of the center channel when downmixing to the Lo/Ro (left-only/right-only) stereo output in the EAC3 audio codec settings. (AI-inferred)
     lo_ro_center_mix_level: Any = None
-    # Specifies the level (in decibels) at which the surround channels (Ls/Rs) are mixed into the Lo/Ro stereo downmix for the EAC3 audio codec in AWS MediaLive. (AI-inferred)
     lo_ro_surround_mix_level: Any = None
-    # Sets the attenuation level in dB applied to the center channel when downmixing to Lt/Rt stereo, with valid values from -3 to 3 in 1.5 dB increments. (AI-inferred)
     lt_rt_center_mix_level: Any = None
-    # Sets the level of the surround channel mix when producing the Lt/Rt (left total/right total) downmix, controlling the amount of surround audio in the matrixed stereo output. (AI-inferred)
     lt_rt_surround_mix_level: Any = None
-    # Determines whether the EAC3 audio metadata (such as dialnorm and surround mode) is passed through from the input or set from the configured values, using FOLLOW_INPUT or USE_CONFIGURED. (AI-inferred)
     metadata_control: Any = None
-    # Controls whether the input's EAC3 (Dolby Digital Plus) bitstream information is passed through to the output (WHEN_POSSIBLE) or whether the encoder generates its own EAC3 metadata (NO_PASSTHROUGH). (AI-inferred)
     passthrough_control: Any = None
-    # Specifies the phase control setting for EAC3 audio encoding, which adjusts the phase of the audio signal (one of NO_PHASE_CONTROL, PHASE_90, or PHASE_180) to avoid phase cancellation during downmixing. (AI-inferred)
     phase_control: Any = None
-    # Specifies how MediaLive performs the stereo downmix for EAC3 (Dolby Digital Plus) audio, using an enum value such as DPL2, NOT_INDICATED, STEREO, or SURROUND to define the downmix type. (AI-inferred)
     stereo_downmix: Any = None
-    # Controls the Dolby Surround EX mode flag in the E-AC-3 audio bitstream, indicating whether the audio is encoded for an EX (surround EX) playback environment, with values such as NOT_INDICATED, ENABLED, or DISABLED. (AI-inferred)
     surround_ex_mode: Any = None
-    # Specifies the EAC3 surround mode encoding setting, determining whether the audio is encoded for surround sound or not, with allowed values like NOT_INDICATED, ENABLED, or DISABLED. (AI-inferred)
     surround_mode: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_Mp2Settings:
-    # Specifies the average bitrate in bits per second for the MP2 audio codec output. (AI-inferred)
     bitrate: Any = None
-    # Specifies the MP2 audio coding mode, which determines whether the audio is mono or stereo (e.g., CODING_MODE_1_0 for mono, CODING_MODE_2_0 for stereo). (AI-inferred)
     coding_mode: Any = None
-    # The audio sample rate for the MP2 codec, specified in Hz (e.g., 32000, 44100, or 48000). (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings_WavSettings:
-    # The number of bits per sample used to encode the WAV audio output, commonly 8, 16, 24, or 32. (AI-inferred)
     bit_depth: Any = None
-    # Determines the number of audio channels (e.g., 'CODING_MODE_1_0' for mono, 'CODING_MODE_2_0' for stereo) used when encoding the WAV audio output. (AI-inferred)
     coding_mode: Any = None
-    # Specifies the sample rate of the WAV audio output in hertz, which must be one of 8000, 16000, 22050, 32000, 44100, 48000, or 96000 to control audio fidelity and encoding rate. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_CodecSettings:
-    # Settings that configure Advanced Audio Coding (AAC) for the audio encode, including bitrate, sample rate, coding mode, and profile. (AI-inferred)
     aac_settings: Any = None
-    # Configures the AC-3 audio codec settings for the audio description, including bitrate, coding mode, and other AC-3-specific parameters. (AI-inferred)
     ac3_settings: Any = None
-    # Specifies the encoding parameters for the EAC3 (Dolby Digital Plus) Atmos audio codec used by this audio description, such as bitrate, coding mode, and dynamic range control. (AI-inferred)
     eac3_atmos_settings: Any = None
-    # Configures the Dolby Digital Plus (E-AC3) audio codec parameters for this audio description, including options such as bitrate, coding mode, and filter settings. (AI-inferred)
     eac3_settings: Any = None
-    # Configures the MP2 audio codec parameters, including bitrate and sample rate, used when encoding this audio description in MediaLive. (AI-inferred)
     mp2_settings: Any = None
-    # Configures the audio codec to pass the audio through unchanged, so MediaLive does not transcode or modify the audio stream. (AI-inferred)
     pass_through_settings: Any = None
-    # Defines the WAV audio codec configuration for this audio description, specifying uncompressed WAV format parameters such as bit depth and sample rate used by the MediaLive channel. (AI-inferred)
     wav_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappings_InputChannelLevels:
-    # The gain, in decibels (dB), applied to the corresponding input channel when audio remixing is enabled, controlling the channel's relative level in the resulting mix. (AI-inferred)
     gain: Any = None
-    # The zero-based index of the input audio channel to include in the remix mapping. (AI-inferred)
     input_channel: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_RemixSettings_ChannelMappings:
-    # Specifies the gain level (in dB) and source input channel number for each input channel mixed into the output channel of this audio remix mapping. (AI-inferred)
     input_channel_levels: Any = None
-    # Specifies the destination output channel number (0-based index) to which the corresponding source audio channel is remixed in the MediaLive audio remix settings. (AI-inferred)
     output_channel: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions_RemixSettings:
-    # Defines the list of channel mappings that specify how input audio channels are mixed and assigned to each output channel in the audio remix setup, with each mapping containing input channel level configurations and the target output channel index. (AI-inferred)
     channel_mappings: Any = None
-    # For the AWS::MediaLive::Channel resource, this specifies the number of input audio channels to be used in the remix configuration for this audio description, defining how many source channels are available for mapping. (AI-inferred)
     channels_in: Any = None
-    # Specifies the number of output channels for the remixed audio, with a range from 1 to 16. (AI-inferred)
     channels_out: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AudioDescriptions:
-    # Assigns one or more DASH role values (e.g., 'main', 'alternate', 'commentary') to this audio description so that it can be properly labeled in DASH manifest outputs. (AI-inferred)
     audio_dash_roles: Any = None
-    # Audio normalization settings for the audio description, which adjust the loudness to a target level using a specified algorithm (e.g., ITU-R BS.1770) to produce consistent audio output levels. (AI-inferred)
     audio_normalization_settings: Any = None
-    # Specifies the name of the audio selector from the input that this audio description uses as its source, and it must match the Name of an AudioSelector defined in the channel's input attachments or global audio selectors. (AI-inferred)
     audio_selector_name: Any = None
-    # Specifies the type of audio content (e.g., HEARING_IMPAIRED, VISUAL_IMPAIRED_COMMENTARY) to embed in the output for this audio description, following ATSC standards. (AI-inferred)
     audio_type: Any = None
-    # Controls whether the audio type for this audio description is set to follow the input's detected audio type (FOLLOW_INPUT) or to use the separately configured AudioType value (USE_CONFIGURED) in AWS MediaLive. (AI-inferred)
     audio_type_control: Any = None
-    # Configures audio watermarking for the audio description, including Nielsen watermark settings such as provider and distribution identifier. (AI-inferred)
     audio_watermarking_settings: Any = None
-    # Configures the audio codec and its encoding parameters for the audio description, such as AAC, AC3, or other supported codecs in MediaLive. (AI-inferred)
     codec_settings: Any = None
-    # Specifies whether this audio description is marked as accessible for DVB Dash (DASH) outputs, with valid values NONE or ENABLED. (AI-inferred)
     dvb_dash_accessibility: Any = None
-    # The ISO 639-2 three-letter language code identifying the language of the audio in this audio description, used for signaling to downstream outputs and enabling features like language-based switching. (AI-inferred)
     language_code: Any = None
-    # Controls whether the language code in the output follows the input (FOLLOW_INPUT) or uses the configured LanguageCode value (USE_CONFIGURED). (AI-inferred)
     language_code_control: Any = None
-    # Sets the unique name for this audio description, which is referenced by output settings (such as AudioDescriptionName) to route audio to specific outputs. (AI-inferred)
     name: Any = None
-    # Configures how the input audio channels are mapped and mixed to produce the output audio channels for this audio description. (AI-inferred)
     remix_settings: Any = None
-    # Specifies the stream name assigned to the audio output, which output groups such as HLS use to identify the audio rendition in the output manifest. (AI-inferred)
     stream_name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailBlanking_AvailBlankingImage:
-    # The name of the AWS Systems Manager Parameter Store parameter that stores the password used to access the secured avail blanking image URL. (AI-inferred)
     password_param: Any = None
-    # The URI of the image file (e.g., an S3 or HTTP URL) that AWS Elemental MediaLive uses as the static image to display during avail blanking, replacing the underlying video signal. (AI-inferred)
     uri: Any = None
-    # The username used for HTTP Basic authentication when MediaLive fetches the avail blanking image from the specified URI. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailBlanking:
-    # Defines the image used to blank the video during avail periods, including its URI and optional password parameter. (AI-inferred)
     avail_blanking_image: Any = None
-    # Specifies whether avail blanking is enabled or disabled for the channel, accepting values ENABLED or DISABLED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailConfiguration_AvailSettings_Esam:
-    # The identifier that MediaLive passes to the ESAM server to specify the acquisition point from which to retrieve ad avail signaling information. (AI-inferred)
     acquisition_point_id: Any = None
-    # Specifies the offset in milliseconds from the normal start of the ad avail to the actual start of the ad, allowing timing adjustments between the upstream signaling system and MediaLive. (AI-inferred)
     ad_avail_offset: Any = None
-    # References an AWS Systems Manager (SSM) parameter store key that contains the password for authenticating to the ESAM server used for ad avail signaling. (AI-inferred)
     password_param: Any = None
-    # The URL of the ESAM (Event Signaling and Management) POIS (Program Out-of-band Information System) endpoint to which MediaLive sends ad avail signaling messages for the channel's encoder settings. (AI-inferred)
     pois_endpoint: Any = None
-    # The username used to authenticate with the ESAM (Event Signaling and Management) server for signaling ad avail events. (AI-inferred)
     username: Any = None
-    # Specifies the zone identity of the ESAM server, which MediaLive uses to identify the active zone for ad avail signaling. (AI-inferred)
     zone_identity: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailConfiguration_AvailSettings_Scte35SpliceInsert:
-    # Specifies the offset, in milliseconds, from the SCTE-35 splice_insert message to the start of the ad avail, allowing you to adjust the timing of ad insertion. (AI-inferred)
     ad_avail_offset: Any = None
-    # Specifies whether to set the no regional blackout flag (bit) in the SCTE-35 splice insert message, which controls whether regional blackout constraints are applied by downstream devices. (AI-inferred)
     no_regional_blackout_flag: Any = None
-    # Specifies whether AWS Elemental MediaLive follows or ignores the web delivery allowed flag in the SCTE-35 splice insert, with valid values 'FOLLOW' or 'IGNORE'. (AI-inferred)
     web_delivery_allowed_flag: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailConfiguration_AvailSettings:
-    # Configures the ESAM (Event Signaling and Management) server for the channel, defining how ad avail signals are exchanged with the ESAM server, including settings like the acquisition point ID and signal behavior. (AI-inferred)
     esam: Any = None
-    # Determines how MediaLive inserts a SCTE-35 splice insert message into the stream at ad avail boundaries, including the ad avail offset and whether regional blackout and web delivery are allowed. (AI-inferred)
     scte35_splice_insert: Any = None
-    # Specifies the SCTE-35 Time Signal APOS (Avail Placement Opportunity Start) settings for the MediaLive channel, controlling how ad avail opportunities are signaled with time signal messages, including ad avail offset and regional blackout/web delivery flags. (AI-inferred)
     scte35_time_signal_apos: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_AvailConfiguration:
-    # Configures the ad avail signaling for the channel's encoder, specifying the SCTE-35 splice insert or time signal APOS method and associated parameters. (AI-inferred)
     avail_settings: Any = None
-    # Specifies the SCTE-35 segmentation scope for the output, where ALL applies SCTE-35 messages to every segment and NONE disables them. (AI-inferred)
     scte35_segmentation_scope: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_BlackoutSlate:
-    # The blackout_slate_image object specifies the InputLocation (e.g., an S3 URI) of the image to display as the blackout slate during blackout periods defined in the MediaLive channel's encoder settings. (AI-inferred)
     blackout_slate_image: Any = None
-    # Specifies whether MediaLive displays the blackout slate when the network ends, with a value of 'ENABLED' or 'DISABLED'. (AI-inferred)
     network_end_blackout: Any = None
-    # In MediaLive's blackout slate configuration, this property provides the InputLocation of the image to be displayed when the network ends, overriding the default slate for that condition. (AI-inferred)
     network_end_blackout_image: Any = None
-    # Defines an optional network identifier that narrows the blackout slate to only be applied when the lost input belongs to that network; if omitted, the slate applies regardless of network. (AI-inferred)
     network_id: Any = None
-    # The state of the blackout slate, indicating whether the blackout slate is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_CaptionDescriptions_DestinationSettings_BurnInDestinationSettings:
-    # Determines the horizontal alignment of the burn-in captions text within the video frame, such as left, center, or right. (AI-inferred)
     alignment: Any = None
-    # Specifies the background color of the burn-in captions, with allowed values such as BLACK or WHITE. (AI-inferred)
     background_color: Any = None
-    # Sets the opacity of the background color behind burned-in captions as a percentage from 0 (transparent) to 100 (opaque). (AI-inferred)
     background_opacity: Any = None
-    # Specifies the InputLocation object that provides the font file used for rendering burn-in captions in the MediaLive channel. (AI-inferred)
     font: Any = None
-    # Sets the color of the burn-in caption text displayed over the video, with allowed values such as black, blue, green, red, white, and yellow. (AI-inferred)
     font_color: Any = None
-    # Determines the opacity (0 to 100, integer) of the burned-in captions text, where 0 is fully transparent and 100 is fully opaque. (AI-inferred)
     font_opacity: Any = None
-    # Specifies the font resolution in DPI (dots per inch) for burned-in captions, typically 96 or 192, which controls the sharpness of the rendered caption text. (AI-inferred)
     font_resolution: Any = None
-    # Sets the font size for the burned-in captions text, with valid values small, medium, or large. (AI-inferred)
     font_size: Any = None
-    # Specifies the color of the outline surrounding the burned-in caption text, with valid values including BLACK, BLUE, GREEN, RED, WHITE, and YELLOW. (AI-inferred)
     outline_color: Any = None
-    # Specifies the width of the outline around the burn-in caption text; valid values are 1 (thin), 2 (medium), or 3 (thick), controlling the thickness of the text outline in MediaLive burn-in captions. (AI-inferred)
     outline_size: Any = None
-    # Specifies the color of the drop shadow behind the burn-in caption text, with valid values such as BLACK, NONE, or WHITE. (AI-inferred)
     shadow_color: Any = None
-    # Sets the opacity of the shadow behind the burned-in captions text, where 0 is fully transparent and 100 is fully opaque. (AI-inferred)
     shadow_opacity: Any = None
-    # Specifies the horizontal offset in pixels of the shadow relative to the burn-in caption text. (AI-inferred)
     shadow_xoffset: Any = None
-    # Specifies the vertical offset of the burn-in caption drop shadow, in pixels, relative to the caption text baseline. (AI-inferred)
     shadow_yoffset: Any = None
-    # Specifies the maximum number of rows (lines) of captions to display in the burn-in output, controlling the vertical space reserved for rendered subtitles. (AI-inferred)
     subtitle_rows: Any = None
-    # Determines whether the burn-in teletext character grid is fixed to a set size or scales with the video resolution, with valid values FIXED and SCALED. (AI-inferred)
     teletext_grid_control: Any = None
-    # Specifies the horizontal position, in pixels, of the burn-in captions relative to the left edge of the video. (AI-inferred)
     xposition: Any = None
-    # Sets the vertical position (y-coordinate) of the burned-in caption text relative to the top of the video frame, in pixels, within the MediaLive channel's burn-in destination settings. (AI-inferred)
     yposition: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_CaptionDescriptions_DestinationSettings_EbuTtDdestinationSettings:
-    # Specifies the copyright holder string that is embedded in the EBU-TT-D captions output, identifying the copyright information in the caption metadata. (AI-inferred)
     copyright_holder: Any = None
-    # Specifies the default font size in pixels for EBU-TT-D caption text, used when the caption itself does not define a font size. (AI-inferred)
     default_font_size: Any = None
-    # Specifies the default line height in pixels to use for EBU-TT captions when the source caption track does not define an explicit line height. (AI-inferred)
     default_line_height: Any = None
-    # Specifies whether the Ebu-TT-D destination fills the gap between subtitle lines with the background color, an option that applies only when the caption style control is passthrough. (AI-inferred)
     fill_line_gap: Any = None
-    # Specifies the font family to be used for rendering EBU-TT-D captions in the output, controlling the typeface of the displayed subtitles. (AI-inferred)
     font_family: Any = None
-    # Controls whether EBU-TT-D caption style information (such as font, color, and positioning) is included in the output, with valid values of INCLUDE_STYLE or NO_INCLUDE_STYLE. (AI-inferred)
     style_control: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_CaptionDescriptions_DestinationSettings_TtmlDestinationSettings:
-    # Specifies whether the TTML destination should preserve the style information from the source captions (PASSTHROUGH) or apply locally configured style settings (USE_CONFIGURED). (AI-inferred)
     style_control: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_CaptionDescriptions_DestinationSettings:
-    # The `arib_destination_settings` block is an empty (argument-less) configuration object used to select ARIB (Association of Radio Industries and Businesses) as the caption output format for this caption description in the MediaLive channel. (AI-inferred)
     arib_destination_settings: Any = None
-    # Configures burn-in captions that are overlaid directly onto the video frame, controlling appearance such as font, color, and positioning. (AI-inferred)
     burn_in_destination_settings: Any = None
-    # Specifies the destination settings for DVB-Sub captions, controlling how the subtitle text is rendered (e.g., font, color, background, and positioning) in the MediaLive output. (AI-inferred)
     dvb_sub_destination_settings: Any = None
-    # Specifies the EBU-TT-D subtitle output settings (such as font family, fill line gap, and style control) used by the caption destination for a MediaLive channel encoder. (AI-inferred)
     ebu_tt_ddestination_settings: Any = None
-    # Enables this caption destination to embed CEA-608/708 (Line 21) captions directly into the video stream, with no additional output configuration required. (AI-inferred)
     embedded_destination_settings: Any = None
-    # Specifies the destination settings for embedded plus SCTE-20 captions, which embed CEA-608/708 captions and SCTE-20 data into the output video stream. (AI-inferred)
     embedded_plus_scte20_destination_settings: Any = None
-    # Configures RTMP caption info as the destination type for a caption description, embedding captions in an RTMP output as caption info with no additional parameters. (AI-inferred)
     rtmp_caption_info_destination_settings: Any = None
-    # Specifies the SCTE-20 plus embedded caption destination type, an empty configuration object indicating that captions are delivered in the SCTE-20 plus embedded format with no extra parameters. (AI-inferred)
     scte20_plus_embedded_destination_settings: Any = None
-    # Specifies the SCTE-27 caption destination settings, an empty structure that enables embedding SCTE-27 captions in the channel's transport stream output without requiring further configuration. (AI-inferred)
     scte27_destination_settings: Any = None
-    # Configures the output appearance of SMPTE-TT (Timed Text) captions within the MediaLive channel, including settings like font color, opacity, size, outline, shadow and positioning for the caption destination. (AI-inferred)
     smpte_tt_destination_settings: Any = None
-    # Specifies the destination settings for Teletext captions; in the current AWS MediaLive API, this object is an empty placeholder with no configurable properties. (AI-inferred)
     teletext_destination_settings: Any = None
-    # Specifies the settings for TTML caption output in a MediaLive channel, including the destination where the captions are delivered and how style information from the source captions is handled. (AI-inferred)
     ttml_destination_settings: Any = None
-    # Configures how WebVTT subtitle captions are formatted for the output, including accessibility and style control settings. (AI-inferred)
     webvtt_destination_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_CaptionDescriptions:
-    # Indicates whether the caption track is accessible to viewers with hearing impairments, with allowed values of ACCESSIBLE or UNKNOWN. (AI-inferred)
     accessibility: Any = None
-    # Assigns DASH roles (such as CAPTION or DESCRIPTION) to this caption description, controlling how the caption track is labeled in DASH/CMAF output manifests. (AI-inferred)
     caption_dash_roles: Any = None
-    # Specifies the name of the caption selector that supplies the source captions for this caption description in the MediaLive channel encoder settings. (AI-inferred)
     caption_selector_name: Any = None
-    # Defines the destination-specific configuration (such as burn-in or embedded caption settings) for a single caption description in the MediaLive channel's encoder settings. (AI-inferred)
     destination_settings: Any = None
-    # Specifies whether DVB-Sub captions are marked as accessibility captions in DASH outputs, with values like 'ACCESSIBLE' and 'NO_ACCESSIBILITY'. (AI-inferred)
     dvb_dash_accessibility: Any = None
-    # Specifies the language code (e.g., 'eng' for English) for the caption track, identifying the language of the captions in the MediaLive channel output. (AI-inferred)
     language_code: Any = None
-    # Specifies a human-readable description (such as 'English') for the language of the captions, complementing the machine-readable languageCode in the caption description. (AI-inferred)
     language_description: Any = None
-    # The name of this caption description, which must be unique within the MediaLive channel and is used to reference this caption description in output settings. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_ColorCorrectionSettings_GlobalColorCorrections:
-    # Specifies the color space of the input video (for example, HDR10 or HLG) that this global color correction entry applies to, mapping from that source color space to the corresponding output color space. (AI-inferred)
     input_color_space: Any = None
-    # Specifies the target output color space (such as HDR10 or HLG_2020) that MediaLive applies to the video after performing the global color correction. (AI-inferred)
     output_color_space: Any = None
-    # The URI of the color correction lookup table (LUT) file, such as an S3 path, that defines the color transformation for the global color correction. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_ColorCorrectionSettings:
-    # Defines a list of global color space corrections applied to all video in the channel, each specifying an input color space, output color space, and optional gamma and saturation adjustments. (AI-inferred)
     global_color_corrections: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_FeatureActivations:
-    # Controls whether MediaLive automatically prepares inputs before scheduled input switches, with allowed values ENABLED or DISABLED (defaulting to DISABLED). (AI-inferred)
     input_prepare_schedule_actions: Any = None
-    # Configures whether output static image overlay schedule actions are enabled (ENABLED) or disabled (DISABLED) for this MediaLive channel. (AI-inferred)
     output_static_image_overlay_schedule_actions: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_GlobalConfiguration_InputLossBehavior:
-    # The duration (in milliseconds) to wait after the input signal is lost before MediaLive inserts a black frame to replace the missing video in the output. (AI-inferred)
     black_frame_msec: Any = None
-    # Specifies the hexadecimal color value (e.g., #000000 for black) that MediaLive displays when an input is lost and the input loss behavior is set to use a solid color. (AI-inferred)
     input_loss_image_color: Any = None
-    # Specifies the image or color that MediaLive displays as the slate when the input signal is lost. (AI-inferred)
     input_loss_image_slate: Any = None
-    # Specifies whether the input loss image is a solid color or a slate image, determining what viewers see when the input signal is lost. (AI-inferred)
     input_loss_image_type: Any = None
-    # Specifies the number of milliseconds MediaLive repeats the last good frame of the input after signal loss before switching to a black frame or the configured input loss image. (AI-inferred)
     repeat_frame_msec: Any = None
 
 @dataclasses.dataclass
@@ -539,1618 +337,996 @@ class LiveChannel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_Disa
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_EpochLockingSettings:
-    # Specifies a custom epoch value in milliseconds that MediaLive uses as the reference timing point for output locking when epoch locking is enabled, overriding the system default epoch. (AI-inferred)
     custom_epoch: Any = None
-    # Specifies the epoch timestamp (in milliseconds) used as the jam sync reference time for locking the MediaLive channel output to an absolute time in the epoch-locking configuration. (AI-inferred)
     jam_sync_time: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_GlobalConfiguration_OutputLockingSettings_PipelineLockingSettings:
-    # Sets a custom epoch timestamp (in seconds) used as the reference point for MediaLive pipeline locking, enabling multiple pipelines to align their output timing to a specified time instead of the current epoch. (AI-inferred)
     custom_epoch: Any = None
-    # Specifies the pipeline locking method for MediaLive channel outputs, which is either EPOCH_LOCKING to align pipelines to a specific epoch time or PIPELINE_LOCKING to align the two pipelines to each other. (AI-inferred)
     pipeline_locking_method: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_GlobalConfiguration_OutputLockingSettings:
-    # The disabled_locking_settings object is an empty placeholder used when the output locking mode is set to DISABLED, containing no configurable sub-properties. (AI-inferred)
     disabled_locking_settings: Any = None
-    # Specifies the epoch and mode for epoch-based output locking, which sets a common UTC reference time to synchronize the start of the channel's encoded outputs. (AI-inferred)
     epoch_locking_settings: Any = None
-    # This object enables pipeline locking for the channel's output, synchronizing the output of the redundant pipelines to keep them aligned. (AI-inferred)
     pipeline_locking_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_GlobalConfiguration:
-    # Sets the initial audio gain level, in dB, applied to all audio outputs of the channel at the start of processing. (AI-inferred)
     initial_audio_gain: Any = None
-    # Controls whether MediaLive automatically switches to the next configured input when the current input ends, where NONE takes no action and SWITCH_INPUT switches to the next input. (AI-inferred)
     input_end_action: Any = None
-    # Defines how the channel reacts to a loss of input signal, specifying whether to show a black frame, a custom image, or other fallback behavior during input loss. (AI-inferred)
     input_loss_behavior: Any = None
-    # Determines whether the channel synchronizes its outputs using epoch locking or pipeline locking mode for global configuration. (AI-inferred)
     output_locking_mode: Any = None
-    # Configures output locking for the MediaLive channel, specifying how output frames are locked to a reference clock (e.g., EPOCH_LOCKING or PIPELINE_LOCKING) to maintain synchronization across outputs. (AI-inferred)
     output_locking_settings: Any = None
-    # Determines whether the channel output timing is based on the input clock (INPUT_CLOCK) or the system clock (SYSTEM_CLOCK). (AI-inferred)
     output_timing_source: Any = None
-    # Indicates whether MediaLive supports inputs with a frame rate lower than 1 fps by duplicating frames, with valid values ENABLED or DISABLED. (AI-inferred)
     support_low_framerate_inputs: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_MotionGraphicsConfiguration_MotionGraphicsSettings:
-    # Settings that specify an HTML document for motion graphics overlays and optionally how long it should be displayed, used when the channel's motion graphics configuration employs HTML-based motion graphics. (AI-inferred)
     html_motion_graphics_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_MotionGraphicsConfiguration:
-    # Specifies whether motion graphics insertion is enabled (ENABLED) or disabled (DISABLED) for the channel's motion graphics configuration. (AI-inferred)
     motion_graphics_insertion: Any = None
-    # Defines the type and configuration for motion graphics overlays, allowing selection between HTML5-based and SCTE-35-based motion graphics settings in the MediaLive channel output. (AI-inferred)
     motion_graphics_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_NielsenConfiguration:
-    # Specifies the unique distributor ID that MediaLive passes to Nielsen for watermarking, identifying the content distributor in the audio stream. (AI-inferred)
     distributor_id: Any = None
-    # Determines whether MediaLive inserts Nielsen ID3 metadata tags into the PCM audio stream, with allowed values NONE (no tagging) and TAG_PCM (enable tagging). (AI-inferred)
     nielsen_pcm_to_id3_tagging: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings_ArchiveS3Settings:
-    # Specifies the canned ACL (such as PRIVATE, PUBLIC_READ, or BUCKET_OWNER_FULL_CONTROL) that AWS Elemental MediaLive applies to the archive files it writes to the S3 bucket for this archive output group. (AI-inferred)
     canned_acl: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_ArchiveCdnSettings:
-    # Configures the Amazon S3 destination (bucket and prefix) and optional access-control settings used by the archive output group to store MediaLive channel output files. (AI-inferred)
     archive_s3_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings_Destination:
-    # The reference ID that maps this archive output group to a destination defined in the channel's Destinations collection, determining the S3 bucket or MediaStore container where archived outputs are stored. (AI-inferred)
     destination_ref_id: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_ArchiveGroupSettings:
-    # Configures the CDN settings for the archive output group, including S3-specific options like access control and distribution. (AI-inferred)
     archive_cdn_settings: Any = None
-    # Specifies the destination URL (such as an S3 bucket path) where archived media outputs from this archive group are stored. (AI-inferred)
     destination: Any = None
-    # Specifies the number of seconds between rollovers of an archive output file, causing MediaLive to close the current file and begin a new one at each interval. (AI-inferred)
     rollover_interval: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_AdditionalDestinations:
-    # Identifies the alternative MediaPackage ingest endpoint for this additional CMAF ingest destination, using a destination reference ID that corresponds to a destination configured in the output group. (AI-inferred)
     destination: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings_CaptionLanguageMappings:
-    # The zero-based index of the caption channel in the input to map to a specific language code, used to select which caption track is included in the CMAF Ingest output group. (AI-inferred)
     caption_channel: Any = None
-    # The three-letter ISO 639-2 language code that specifies the language of the captions for the CMAF ingest caption language mapping, which is used to populate the language attribute in the output manifest. (AI-inferred)
     language_code: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_CmafIngestGroupSettings:
-    # Defines extra destination endpoints (each an object containing a URL) for the CMAF Ingest output group, allowing the encoded stream to be sent to multiple target locations in addition to the primary destination. (AI-inferred)
     additional_destinations: Any = None
-    # Configures the list of caption language mappings for the CMAF Ingest output group, where each mapping pairs a caption language code with a human-readable language description, enabling proper language metadata for the captions. (AI-inferred)
     caption_language_mappings: Any = None
-    # The destination URL, typically an AWS Elemental MediaStore container endpoint, to which the CMAF ingest output group delivers its streaming segments. (AI-inferred)
     destination: Any = None
-    # Controls whether ID3 metadata from the input is passed through to the CMAF output (PASSTHROUGH) or discarded (NO_PASSTHROUGH). (AI-inferred)
     id3_behavior: Any = None
-    # Appends the specified string to the end of the ID3 timestamp in the CMAF Ingest output, allowing you to customize the ID3 metadata timestamp value. (AI-inferred)
     id3_name_modifier: Any = None
-    # Specifies whether KLV (Key-Length-Value) metadata in the CMAF ingest stream is passed through to the output (PASSTHROUGH) or discarded (NO_PASSTHROUGH). (AI-inferred)
     klv_behavior: Any = None
-    # Sets a name modifier for the KLV (Key-Length-Value) metadata track in the CMAF Ingest output, which MediaLive uses as part of the track name in the output. (AI-inferred)
     klv_name_modifier: Any = None
-    # Determines whether Nielsen ID3 metadata in the incoming source is passed through to the output or ignored, as part of the CMAF ingest output group settings. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # Specifies a string that modifies the name of the Nielsen ID3 metadata inserted by MediaLive in the CMAF ingest output group, allowing you to customize the metadata identifier for Nielsen audience measurement. (AI-inferred)
     nielsen_id3_name_modifier: Any = None
-    # Specifies a custom text string that MediaLive appends to SCTE-35 message names in the CMAF Ingest output group, which can be used to differentiate these events from SCTE-35 messages in other output groups. (AI-inferred)
     scte35_name_modifier: Any = None
-    # Specifies how SCTE-35 ad signaling markers are handled in the CMAF Ingest output group, such as passing them through (PASSTHROUGH), ignoring them (NONE), or allowing the caller to insert them (CALLER_INSERT). (AI-inferred)
     scte35_type: Any = None
-    # Specifies the duration, in seconds, of each CMAF segment that MediaLive writes for this output group. (AI-inferred)
     segment_length: Any = None
-    # Determines whether the segment length value is interpreted in seconds or milliseconds. (AI-inferred)
     segment_length_units: Any = None
-    # Specifies the delay in milliseconds before the CMAF Ingest output group sends its content to the destination. (AI-inferred)
     send_delay_ms: Any = None
-    # For the CMAF Ingest output group in AWS MediaLive, this field specifies the ID3 frame identifier (e.g., PRIV, TDRL, or a custom value) used to embed timed metadata into the output segments. (AI-inferred)
     timed_metadata_id3_frame: Any = None
-    # Determines the interval in seconds between insertions of ID3 timed metadata into the CMAF Ingest output group. (AI-inferred)
     timed_metadata_id3_period: Any = None
-    # Indicates whether timed metadata (such as ID3) from the input is passed through to the CMAF Ingest output; set to PASSTHROUGH to pass through or NO_PASSTHROUGH to discard it. (AI-inferred)
     timed_metadata_passthrough: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettings_FrameCaptureCdnSettings:
-    # Specifies the Amazon S3 CDN settings for a frame-capture output group, including the S3 bucket base URL and optional key prefix used to store captured frames. (AI-inferred)
     frame_capture_s3_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_FrameCaptureGroupSettings:
-    # References an output destination defined in the channel's Destinations list, specifying where frame capture outputs are sent. (AI-inferred)
     destination: Any = None
-    # Specifies the CDN settings (S3 or WebDAV) that MediaLive uses to deliver frame capture output files for this output group. (AI-inferred)
     frame_capture_cdn_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_CaptionLanguageMappings:
-    # Specifies the numeric caption channel (e.g., 1-4) that is mapped to a language code in the HLS output, identifying which embedded caption stream to use for that language. (AI-inferred)
     caption_channel: Any = None
-    # Specifies the language code (e.g., an ISO 639-2 three-letter code) for the caption language mapping, which is inserted into the HLS manifest to associate captions with a particular language. (AI-inferred)
     language_code: Any = None
-    # The language_description specifies the human-readable description of the caption language (for example, "English") that MediaLive includes in the HLS manifest's LANGUAGE attribute for the corresponding caption channel. (AI-inferred)
     language_description: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsAkamaiSettings:
-    # Specifies the number of seconds to wait between retry attempts when establishing a connection to the Akamai CDN for HLS output groups. (AI-inferred)
     connection_retry_interval: Any = None
-    # Sets the number of seconds that HLS file segments are cached for the Akamai CDN before being discarded. (AI-inferred)
     filecache_duration: Any = None
-    # Determines whether the HLS output uses chunked or non-chunked HTTP transfer when sending media to Akamai's CDN, with valid values being 'CHUNKED_TRANSFER' and 'NON_CHUNKED_TRANSFER'. (AI-inferred)
     http_transfer_mode: Any = None
-    # The number of times MediaLive retries a failed HTTP request to the Akamai CDN before considering the transfer failed. (AI-inferred)
     num_retries: Any = None
-    # Number of seconds to wait before retrying a failed connection to the Akamai CDN in HLS output groups. (AI-inferred)
     restart_delay: Any = None
-    # The salt string used to generate the Akamai token for authenticating HLS output requests when delivering content to Akamai CDN. (AI-inferred)
     salt: Any = None
-    # The token specifies the authentication token used by MediaLive to authenticate requests to the Akamai CDN when delivering HLS content. (AI-inferred)
     token: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsBasicPutSettings:
-    # The number of seconds to wait between retry attempts when a connection to the HLS basic PUT destination fails, affecting how frequently MediaLive attempts to re-establish the connection for segment uploads. (AI-inferred)
     connection_retry_interval: Any = None
-    # Specifies the number of seconds that MediaLive caches HLS segment files in the CDN when using basic PUT (e.g., S3) delivery. (AI-inferred)
     filecache_duration: Any = None
-    # Number of retry attempts for HLS basic put operations (uploading segments to the destination) when they fail, allowing the channel to recover from transient errors before giving up. (AI-inferred)
     num_retries: Any = None
-    # The number of seconds that MediaLive waits before restarting a failed HLS file transfer to the CDN when using basic PUT settings. (AI-inferred)
     restart_delay: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsMediaStoreSettings:
-    # Number of seconds MediaLive waits before attempting to reconnect to AWS Elemental MediaStore after a connection is lost, used in HLS output group CDN settings. (AI-inferred)
     connection_retry_interval: Any = None
-    # Specifies the number of seconds that MediaLive caches HLS media files in AWS Elemental MediaStore before they are made available for HTTP requests, controlling the output delay for the HLS stream. (AI-inferred)
     filecache_duration: Any = None
-    # Specifies the AWS Elemental MediaStore storage class (STANDARD or REDUCED_REDUNDANCY) used for the HLS output destination, controlling the storage tier for the media segments. (AI-inferred)
     media_store_storage_class: Any = None
-    # Specifies the number of times MediaLive will retry a request to AWS Elemental MediaStore before considering the delivery failed. (AI-inferred)
     num_retries: Any = None
-    # Specifies the number of seconds to wait before restarting the HLS output to AWS Elemental MediaStore after an interruption occurs. (AI-inferred)
     restart_delay: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings_HlsWebdavSettings:
-    # The number of seconds MediaLive waits between attempts to re-establish a failed connection to the WebDAV server when delivering HLS output. (AI-inferred)
     connection_retry_interval: Any = None
-    # Specifies the number of seconds MediaLive caches HLS segment files locally before uploading them to the WebDAV server, controlling the cache duration for WebDAV delivery. (AI-inferred)
     filecache_duration: Any = None
-    # Specifies whether to use HTTP chunked transfer encoding (CHUNKED) or a standard non-chunked transfer (NON_CHUNKED) when delivering HLS segments to the WebDAV destination. (AI-inferred)
     http_transfer_mode: Any = None
-    # The number of retries to perform when writing HLS output to the WebDAV server. (AI-inferred)
     num_retries: Any = None
-    # The number of seconds to wait before restarting a failed HTTP transfer to the WebDAV server in the HLS output group. (AI-inferred)
     restart_delay: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_HlsCdnSettings:
-    # Configures Akamai CDN-specific parameters for HLS output groups, such as connection retry interval, file cache duration, HTTP transfer mode, restart delay, and authentication salt/token, enabling delivery to Akamai's network. (AI-inferred)
     hls_akamai_settings: Any = None
-    # Configuration for using basic HTTP PUT as the HLS CDN delivery method, specifying retry and cache settings for pushing segments to an origin server. (AI-inferred)
     hls_basic_put_settings: Any = None
-    # Specifies connection, retry, and cache settings for delivering HLS output group content to an AWS Elemental MediaStore CDN, including retry interval, number of retries, file cache duration, and storage class. (AI-inferred)
     hls_media_store_settings: Any = None
-    # Configures Amazon S3 as the content delivery network (CDN) destination for the HLS output group, specifying the S3 bucket and related settings for storing HLS segments. (AI-inferred)
     hls_s3_settings: Any = None
-    # Configures the HLS WebDAV output destination settings for an HLS output group in MediaLive, including HTTP transfer mode, retry behavior, and authentication. (AI-inferred)
     hls_webdav_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettings_StaticKeySettings:
-    # The URL of the HTTP server that MediaLive uses to retrieve the static encryption key for securing HLS output group segments. (AI-inferred)
     key_provider_server: Any = None
-    # The static key value used to encrypt HLS output segments for content protection. (AI-inferred)
     static_key_value: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings_KeyProviderSettings:
-    # Defines the settings for using a static key to encrypt HLS output groups, including the static key value and optional key provider server configuration. (AI-inferred)
     static_key_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_HlsGroupSettings:
-    # Specifies which ad marker types (e.g., ADOBE, ELEMENTAL, SCTE35_ENHANCED) to include in the HLS output for signaling ad insertion events. (AI-inferred)
     ad_markers: Any = None
-    # Base URL for the HLS content segments, prepended to the media segment URLs in the HLS playlist (e.g., an S3 bucket or CDN path). (AI-inferred)
     base_url_content: Any = None
-    # Specifies the secondary base URL for content (video/audio segments) in the HLS output group, which MediaLive uses as an alternative URL for the media segments to provide redundancy or load distribution. (AI-inferred)
     base_url_content1: Any = None
-    # Sets the base URL that is prepended to the HLS manifest file path in the generated URLs for this output group, allowing the manifest to be served from a custom domain or CDN. (AI-inferred)
     base_url_manifest: Any = None
-    # The base URL used to generate the first HLS manifest (manifest1) in this HLS output group. (AI-inferred)
     base_url_manifest1: Any = None
-    # Specifies a list of caption language mappings, each associating a caption channel number with a language code, so that HLS outputs carry correct language metadata for captions. (AI-inferred)
     caption_language_mappings: Any = None
-    # Specifies whether the caption language code is inserted into the HLS manifest's EXT-X-MEDIA tags, with valid values INSERT or NONE, in the HLS output group settings of a MediaLive channel. (AI-inferred)
     caption_language_setting: Any = None
-    # Determines whether the HLS output includes a Cache-Control HTTP header that enables or disables client-side caching of video segments, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     client_cache: Any = None
-    # Specifies the codec specification used in the HLS output, either RFC_4281 or RFC_6381, which determines the format of the codec string in the HLS manifest. (AI-inferred)
     codec_specification: Any = None
-    # Specifies a fixed, user-defined initialization vector (IV) used when encrypting HLS segments, overriding the default auto-generated IV for the output. (AI-inferred)
     constant_iv: Any = None
-    # Defines the destination output reference for the HLS output group, pointing to a preconfigured output location ID that determines where HLS segments and playlists are stored. (AI-inferred)
     destination: Any = None
-    # Determines whether HLS output files are placed in a single directory or in separate subdirectories per stream, with allowed values SINGLE_DIRECTORY and SUBDIRECTORY_PER_STREAM. (AI-inferred)
     directory_structure: Any = None
-    # Determines whether MediaLive inserts EXT-X-DISCONTINUITY tags into the HLS output, with allowed values 'INSERT' or 'NEVER_INSERT'. (AI-inferred)
     discontinuity_tags: Any = None
-    # Sets the encryption type for the HLS output group, controlling whether and how the stream is encrypted (e.g., AES128, SAMPLE_AES, or NONE). (AI-inferred)
     encryption_type: Any = None
-    # Specifies the CDN settings for delivering HLS output, including provider-specific configuration for destinations such as AWS Elemental MediaStore, Amazon S3, or HTTP/PUT-based CDNs. (AI-inferred)
     hls_cdn_settings: Any = None
-    # Specifies the ID3 segment tagging method for the HLS output group, with values such as NO_TAGGING, PRIV, or TDRL to control whether and how ID3 metadata is inserted into each segment. (AI-inferred)
     hls_id3_segment_tagging: Any = None
-    # Specifies whether to include an I-frame-only playlist in the HLS output group, which enables trick-play in HLS players (INCLUDE) or omit it (EXCLUDE). (AI-inferred)
     iframe_only_playlists: Any = None
-    # Determines whether a partially filled HLS segment is emitted or suppressed when the output halts before the segment completes, with accepted values typically 'USE' or 'SUPPRESS'. (AI-inferred)
     incomplete_segment_behavior: Any = None
-    # The number of HLS media segments to retain in the playlist before older segments are removed. (AI-inferred)
     index_nsegments: Any = None
-    # Defines the action taken when the input signal is lost for this HLS output group, with valid values including PAUSE_OUTPUT (stop output) and EMIT_OUTPUT (continue emitting output). (AI-inferred)
     input_loss_action: Any = None
-    # Determines whether the encryption initialization vector (IV) is written into the HLS manifest, with 'INCLUDE' or 'EXCLUDE' as valid values. (AI-inferred)
     iv_in_manifest: Any = None
-    # Determines the source of the initialization vector (IV) for encrypted HLS segments, either following the segment number or the key ID. (AI-inferred)
     iv_source: Any = None
-    # Specifies the number of completed HLS segments to retain in the output destination before older segments are deleted. (AI-inferred)
     keep_segments: Any = None
-    # Specifies the format of the encryption key used in the HLS output group, which is passed to the key provider to control how the key is referenced in the manifest. (AI-inferred)
     key_format: Any = None
-    # Specifies the version of the encryption key format (v1 or v2) used in the HLS output group's media playlists and segments. (AI-inferred)
     key_format_versions: Any = None
-    # Configures the DRM key provider for HLS outputs, defining whether to use a static key or a SPEKE-compliant key server for content encryption. (AI-inferred)
     key_provider_settings: Any = None
-    # Specifies whether the HLS manifest is compressed with gzip or sent uncompressed (none) in the MediaLive HLS output group. (AI-inferred)
     manifest_compression: Any = None
-    # Specifies the format of the segment duration value that MediaLive writes in the HLS manifest's EXTINF tags, either FLOATING_POINT or INTEGER. (AI-inferred)
     manifest_duration_format: Any = None
-    # Specifies the minimum duration, in seconds, for the media segments generated in the HLS output group, preventing segment durations from falling below this threshold. (AI-inferred)
     min_segment_length: Any = None
-    # Determines whether the HLS output group provides a live streaming output (LIVE) or a video-on-demand file-based output (VOD), where VOD writes the manifest and media segments to a destination for later playback. (AI-inferred)
     mode: Any = None
-    # Controls whether the HLS output group generates both manifest files and media segments (MANIFESTS_AND_SEGMENTS) or only media segments (SEGMENTS_ONLY), affecting the output files written to the destination. (AI-inferred)
     output_selection: Any = None
-    # Specifies whether the HLS output group includes the EXT-X-PROGRAM-DATE-TIME tag in the media playlists, which sets the program date and time on segments, typically with values ENABLE or DISABLE. (AI-inferred)
     program_date_time: Any = None
-    # Determines the source of the program date/time (UTC) that MediaLive writes into the HLS playlist, either deriving it from the output timecode or using the system clock. (AI-inferred)
     program_date_time_clock: Any = None
-    # The period in seconds between insertions of the EXT-X-PROGRAM-DATE-TIME tag in the HLS output, used to synchronize player clock timing. (AI-inferred)
     program_date_time_period: Any = None
-    # Specifies whether to generate redundant manifests and segments for HLS outputs, with possible values like MANIFESTS_AND_SEGMENTS or MANIFESTS_ONLY. (AI-inferred)
     redundant_manifest: Any = None
-    # Specifies the length (in seconds) of each MPEG-2 transport stream segment for the HLS output group. (AI-inferred)
     segment_length: Any = None
-    # Specifies whether the HLS output group segments are defined by the input's own segmentation boundaries (USE_INPUT_SEGMENTATION) or packaged as byte-range references into a single output file (SEGMENT_IN_SINGLE_FILE). (AI-inferred)
     segmentation_mode: Any = None
-    # Specifies the number of HLS segment files to write into each subdirectory of the output destination before MediaLive starts a new subdirectory, enabling folder-based organization of generated segments. (AI-inferred)
     segments_per_subdirectory: Any = None
-    # Configures whether the video resolution (widthxheight) is included in the EXT-X-STREAM-INF tag of HLS playlists, with allowed values 'INCLUDE' and 'EXCLUDE'. (AI-inferred)
     stream_inf_resolution: Any = None
-    # Specifies the ID3 frame to use for timed metadata in HLS output segments (for example, PRIV or TDRL). (AI-inferred)
     timed_metadata_id3_frame: Any = None
-    # Specifies the interval in seconds at which MediaLive inserts timed metadata ID3 frames into the HLS output. (AI-inferred)
     timed_metadata_id3_period: Any = None
-    # Sets the amount of time in milliseconds to shift the HLS output's timestamps, where a positive value delays the output and a negative value advances it. (AI-inferred)
     timestamp_delta_milliseconds: Any = None
-    # Controls whether HLS output segments are written as separate .ts files (SEGMENTED_FILES) or appended into a single .ts file (SINGLE_FILE) for the MediaLive channel's HLS output group. (AI-inferred)
     ts_file_mode: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaConnectRouterGroupSettings:
-    # Sets the list of Availability Zones in which the MediaConnect flow for this output group is created, allowing you to specify one or two AZs for high availability and redundancy. (AI-inferred)
     availability_zones: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettings_MediapackageV2GroupSettings:
-    # Adds additional MediaPackage v2 destinations (each with an ID and URL) to this output group, so the encoded stream is delivered to multiple MediaPackage v2 packaging groups in addition to the primary destination. (AI-inferred)
     additional_destinations: Any = None
-    # Configures a list of language mappings for embedded captions, assigning a DASH language code and description to each caption channel so MediaPackage v2 can identify and present the appropriate caption language. (AI-inferred)
     caption_language_mappings: Any = None
-    # Controls whether ID3 metadata (e.g., timed metadata from the input) is passed through to the MediaPackage v2 output group, typically set to PASSTHROUGH or NO_PASSTHROUGH. (AI-inferred)
     id3_behavior: Any = None
-    # Determines whether Key-Length-Value (KLV) metadata from the input is passed through to the MediaPackage v2 output, with allowed values 'NO_PASSTHROUGH' and 'PASSTHROUGH'. (AI-inferred)
     klv_behavior: Any = None
-    # Determines whether Nielsen ID3 metadata is passed through from the input to the MediaPackage v2 output group, with values typically 'PASSTHROUGH' or 'NO_PASSTHROUGH'. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # Determines how SCTE-35 ad signaling markers are handled in the MediaPackage v2 output group, such as passing them through (PASSTHROUGH) or removing them (NONE). (AI-inferred)
     scte35_type: Any = None
-    # The segment length (in seconds) of each media segment that AWS MediaLive generates for the MediaPackage v2 output group, controlling the duration of packaged segments. (AI-inferred)
     segment_length: Any = None
-    # Specifies the unit of measure (SECONDS or MILLISECONDS) for the segment length setting of the MediaPackage v2 output group in AWS Elemental MediaLive. (AI-inferred)
     segment_length_units: Any = None
-    # Specifies the ID3 frame type (such as PRIV) that MediaLive uses to identify and pass through timed metadata from the input to the MediaPackage v2 output group. (AI-inferred)
     timed_metadata_id3_frame: Any = None
-    # Specifies the interval, in seconds, at which ID3 timed metadata is inserted into the output for the MediaPackage v2 output group. (AI-inferred)
     timed_metadata_id3_period: Any = None
-    # Determines whether timed metadata (e.g., ID3 tags) is passed through to the MediaPackage v2 output, enabling or disabling the preservation of timing and metadata information in the streaming pipeline. (AI-inferred)
     timed_metadata_passthrough: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_MediaPackageGroupSettings:
-    # Defines the destination for a MediaPackage output group, specifying the MediaPackage channel ID where the encoded output is delivered. (AI-inferred)
     destination: Any = None
-    # Configures the AWS Elemental MediaPackage v2 output group settings, specifying the MediaPackage v2 channel group, channel, and stream names to which the MediaLive output group delivers content. (AI-inferred)
     mediapackage_v2_group_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_MsSmoothGroupSettings:
-    # Specifies the value of the `c:isLive` attribute in the Microsoft Smooth Streaming manifest, which identifies the acquisition point for the stream. (AI-inferred)
     acquisition_point_id: Any = None
-    # Specifies whether MediaLive uses the configured clock or the input timecode for timecodes in audio-only outputs within the Microsoft Smooth Streaming output group. (AI-inferred)
     audio_only_timecode_control: Any = None
-    # Specifies whether to use a self-signed certificate or a certificate from a certificate authority (such as AWS Certificate Manager) for encrypting the Microsoft Smooth Streaming output. (AI-inferred)
     certificate_mode: Any = None
-    # Specifies the number of seconds MediaLive waits between retry attempts to re-establish a connection to the Microsoft Smooth Streaming destination after a connection failure. (AI-inferred)
     connection_retry_interval: Any = None
-    # Specifies the destination location, as a reference to one of the channel's configured destinations, where the Microsoft Smooth Streaming output group writes its output files. (AI-inferred)
     destination: Any = None
-    # When the event ID mode is set to 'USE_EVENT_ID', this string serves as the event identifier that MediaLive inserts into the Microsoft Smooth Streaming manifest for the output group. (AI-inferred)
     event_id: Any = None
-    # Controls how the Microsoft Smooth Streaming event ID is assigned in the output group, either using the configured event ID or deriving it from the timestamp. (AI-inferred)
     event_id_mode: Any = None
-    # Determines whether MediaLive sends an end-of-stream (EOS) signal when the Microsoft Smooth event stops, with allowed values NONE or SEND_EOS. (AI-inferred)
     event_stop_behavior: Any = None
-    # Specifies the duration, in seconds, that MediaLive buffers file segments in the cache before writing them to the Microsoft Smooth Streaming output destination, controlling the trade-off between output latency and resilience to network interruptions. (AI-inferred)
     filecache_duration: Any = None
-    # Specifies the length in seconds of each media fragment in the Microsoft Smooth Streaming output group, controlling the fragment duration for the Smooth Streaming format. (AI-inferred)
     fragment_length: Any = None
-    # Determines the MediaLive behavior when input loss occurs for the Microsoft Smooth Streaming output group, with options to emit output as-is or pause output entirely. (AI-inferred)
     input_loss_action: Any = None
-    # The number of times the encoder retries sending a chunk to the Microsoft Smooth Streaming endpoint before giving up. (AI-inferred)
     num_retries: Any = None
-    # Specifies the number of seconds to wait before restarting the encoder after a failure or error in the Microsoft Smooth Streaming output group. (AI-inferred)
     restart_delay: Any = None
-    # Determines whether the Smooth Streaming output group uses the input source's existing segmentation (USE_INPUT_SEGMENTATION) or creates its own fixed-size segments (FIXED_SEGMENTATION), controlling how the output is chunked for Microsoft Smooth Streaming playback. (AI-inferred)
     segmentation_mode: Any = None
-    # The number of milliseconds to delay the output to the Microsoft Smooth Streaming endpoint, allowing for buffering or time-shifting of the stream. (AI-inferred)
     send_delay_ms: Any = None
-    # Specifies the type of sparse track to include in the Microsoft Smooth output, enabling insertion of SCTE-35 timed metadata when set to 'SCTE_35', or no sparse track when set to 'NONE'. (AI-inferred)
     sparse_track_type: Any = None
-    # Determines whether MediaLive writes a separate manifest file for each stream in the Smooth Streaming output group (with 'PUT_MANIFEST') or only a single combined manifest (with 'DO_NOT_PUT_MANIFEST'). (AI-inferred)
     stream_manifest_behavior: Any = None
-    # Specifies a millisecond value that MediaLive adds to the input timestamps for the Microsoft Smooth Streaming group, letting you offset the output timeline to compensate for time differences or synchronize with other outputs. (AI-inferred)
     timestamp_offset: Any = None
-    # Specifies whether the Smooth Streaming output's timestamp offset is derived from the input ('FOLLOW_INPUT') or uses a fixed value from the 'timestamp_offset' field ('USE_CONFIGURED_OFFSET'). (AI-inferred)
     timestamp_offset_mode: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_RtmpGroupSettings:
-    # Specifies the SCTE-35 ad markers (e.g., 'ON_CUE_POINT_SCTE35') that MediaLive inserts into the RTMP output group to signal ad insertion points. (AI-inferred)
     ad_markers: Any = None
-    # Specifies the authentication scheme (AKAMAI or COMMON) used for RTMP output connections in this output group. (AI-inferred)
     authentication_scheme: Any = None
-    # Determines how MediaLive reacts when the RTMP output buffer becomes full, either disconnecting immediately or waiting for the server to catch up. (AI-inferred)
     cache_full_behavior: Any = None
-    # Sets the duration in seconds that MediaLive buffers RTMP output data before transmitting it to the destination, smoothing network jitter. (AI-inferred)
     cache_length: Any = None
-    # Specifies how the RTMP output group handles caption data, with allowed values such as PASSTHROUGH to include captions and OMIT to exclude them. (AI-inferred)
     caption_data: Any = None
-    # Enables the insertion of filler NAL units into the RTMP output stream to maintain a consistent group of pictures (GOP) structure and bitrate. (AI-inferred)
     include_filler_nal_units: Any = None
-    # Specifies whether to emit the last frame or drop the video when input loss is detected for this RTMP output group, with allowed values 'EMIT_OUTPUT' and 'DROP'. (AI-inferred)
     input_loss_action: Any = None
-    # Specifies the number of seconds MediaLive waits before attempting to reconnect to the RTMP destination after a connection loss or failure. (AI-inferred)
     restart_delay: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_SrtGroupSettings:
-    # Specifies the action the SRT output group takes when the upstream input is lost, either dropping the producer (DROP_PRODUCER) or continuing to emit output (EMIT_OUTPUT). (AI-inferred)
     input_loss_action: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings_UdpGroupSettings:
-    # Specifies how the UDP output group handles input signal loss, where the value is either 'DROP_PACKETS' to discard data during loss or 'EMIT_PACKETS' to continue emitting packets, as defined in the AWS MediaLive UDP group settings. (AI-inferred)
     input_loss_action: Any = None
-    # Specifies the ID3 frame type used to embed timed metadata in the UDP output group's transport stream. (AI-inferred)
     timed_metadata_id3_frame: Any = None
-    # Specifies the interval in seconds at which ID3 timed metadata is inserted into the UDP output stream. (AI-inferred)
     timed_metadata_id3_period: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_OutputGroupSettings:
-    # Specifies the destination (e.g., an S3 bucket) and rollover interval for an archive output group, controlling where and how archived media segments are written. (AI-inferred)
     archive_group_settings: Any = None
-    # Defines the settings for a CMAF Ingest output group, specifying the destination location (base URL) to which MediaLive outputs CMAF media segments and manifest files. (AI-inferred)
     cmaf_ingest_group_settings: Any = None
-    # Configures the destination S3 location (and optional CDN settings) for a MediaLive frame capture output group, which periodically captures video frames as still JPEG images. (AI-inferred)
     frame_capture_group_settings: Any = None
-    # Configures the HLS output group settings in MediaLive, including segment length, destination, and encryption options for HTTP Live Streaming outputs. (AI-inferred)
     hls_group_settings: Any = None
     media_connect_router_group_settings: Any = None
-    # Configures the destination MediaPackage channel for the output group, specifying the MediaPackage channel ID where the encoded video and audio are delivered. (AI-inferred)
     media_package_group_settings: Any = None
-    # Configures the output group for Microsoft Smooth Streaming delivery, including settings for packaging and streaming your encoded output to an IIS Smooth Streaming endpoint. (AI-inferred)
     ms_smooth_group_settings: Any = None
-    # Settings for an AWS Elemental MediaLive Multiplex output group, configuring how the channel's outputs are delivered to a multiplex destination. (AI-inferred)
     multiplex_group_settings: Any = None
-    # Settings for the RTMP output group, controlling authentication scheme, cache duration and length, caption data handling, input loss behavior, and restart delay when sending the stream to an RTMP destination. (AI-inferred)
     rtmp_group_settings: Any = None
-    # Specifies settings for an SRT output group in an AWS MediaLive channel, including the list of destination endpoints to which the stream is sent. (AI-inferred)
     srt_group_settings: Any = None
-    # Configure how the output is transmitted over UDP, including the action to take on input loss and the timing parameters for embedded ID3 timed metadata. (AI-inferred)
     udp_group_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbNitSettings:
-    # Sets the 16-bit network identifier broadcast in the DVB Network Information Table (NIT) for the M2TS container output. (AI-inferred)
     network_id: Any = None
-    # Specifies the network name to be carried in the DVB Network Information Table (NIT) for the MPEG-2 transport stream. (AI-inferred)
     network_name: Any = None
-    # Specifies the repetition interval, in seconds, for inserting the DVB Network Information Table (NIT) into the M2TS output within the archive output settings. (AI-inferred)
     rep_interval: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbSdtSettings:
-    # Determines the presence and initialization of the Service Description Table (SDT) in the M2TS output, with valid values including SDT_PRESENT, SDT_ABSENT, and SDT_PRESENT_AND_INIT_PACKETS. (AI-inferred)
     output_sdt: Any = None
-    # Specifies the repetition interval (in milliseconds) between consecutive transmissions of the DVB Service Description Table (SDT) in the M2TS output. (AI-inferred)
     rep_interval: Any = None
-    # The service name to be inserted into the DVB Service Description Table (SDT) in the MPEG-2 transport stream. (AI-inferred)
     service_name: Any = None
-    # Specifies the service provider name inserted into the DVB Service Description Table (SDT) within the M2TS container, identifying the broadcaster or content provider. (AI-inferred)
     service_provider_name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings_DvbTdtSettings:
-    # Determines how often the DVB Time and Date Table (TDT) is repeated within the M2TS output, expressed in seconds or frames based on the associated 'rep_interval_unit' setting. (AI-inferred)
     rep_interval: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings_M2tsSettings:
-    # When set to DROP, the M2TS output omits audio packets entirely if no input audio is present; when set to ENCODE_SILENCE, it generates silent audio frames to maintain a continuous audio stream. (AI-inferred)
     absent_input_audio_behavior: Any = None
-    # Whether to enable ARIB (Association of Radio Industries and Businesses) caption data in the M2TS output, used for Japanese digital broadcasting. (AI-inferred)
     arib: Any = None
-    # Specifies the packet identifier (PID) to use for ARIB caption data in the M2TS container of this archive output. (AI-inferred)
     arib_captions_pid: Any = None
-    # Controls how the PID for ARIB captions is assigned in the M2TS container, either automatically by MediaLive or using the configured ARIB captions PID value. (AI-inferred)
     arib_captions_pid_control: Any = None
-    # Determines the audio buffer model (ATSC or DVB) for the M2TS output, controlling how audio data is buffered and timestamped within the transport stream. (AI-inferred)
     audio_buffer_model: Any = None
-    # Specifies the number of audio frames to include in each Packetized Elementary Stream (PES) packet for the M2TS output. (AI-inferred)
     audio_frames_per_pes: Any = None
-    # Specifies the packet identifiers (PIDs) for audio in the MPEG-2 transport stream output, as a single PID or a comma-separated list, overriding the default auto-assignment. (AI-inferred)
     audio_pids: Any = None
-    # Sets the audio stream type in the M2TS container settings, with valid values ATSC or DVB, determining whether the audio stream is formatted for ATSC or DVB transport standards. (AI-inferred)
     audio_stream_type: Any = None
-    # Specifies the target average bitrate in bits per second for the M2TS (MPEG-2 transport stream) container of this archive output, controlling the compressed size and quality of the stored video stream. (AI-inferred)
     bitrate: Any = None
-    # Determines the buffering model for the M2TS output, either MULTIPLEX for a multi-program transport stream or SINGLE_PLEX for a single-program transport stream. (AI-inferred)
     buffer_model: Any = None
-    # Controls whether the M2TS output includes a closed caption descriptor in the PMT (Program Map Table), with 'ENABLED' inserting the descriptor and 'DISABLED' omitting it. (AI-inferred)
     cc_descriptor: Any = None
-    # Configuration for the DVB Network Information Table (NIT) that MediaLive inserts into the M2TS container of this archive output, specifying parameters such as the network ID, network name, and repeat interval. (AI-inferred)
     dvb_nit_settings: Any = None
-    # Configures the DVB Service Description Table (SDT) for the M2TS container, defining the service provider name, service name, and whether to embed the SDT in the output. (AI-inferred)
     dvb_sdt_settings: Any = None
-    # Specifies one or more comma-separated DVB subtitle packet identifiers (PIDs) to embed in the M2TS container of the output. (AI-inferred)
     dvb_sub_pids: Any = None
-    # Configures the DVB Time and Date Table (TDT) for the M2TS container, including an optional repetition interval for inserting time and date information into the transport stream. (AI-inferred)
     dvb_tdt_settings: Any = None
-    # Sets the packet identifier (PID) for DVB Teletext in the M2TS container of an archive output, specified as a string value. (AI-inferred)
     dvb_teletext_pid: Any = None
-    # Specifies whether EBIF (Enhanced Binary Interchange Format) data is inserted into the M2TS output, with valid values of NONE to omit EBIF or PASSTHROUGH to pass through EBIF data from the input. (AI-inferred)
     ebif: Any = None
-    # Specifies how often EBP (Encryption Boundary Point) packets are inserted into the audio stream when using M2TS container settings, either at both video PTS boundaries and fixed intervals (VIDEO_AND_FIXED_INTERVALS) or only at video PTS boundaries (VIDEO_INTERVAL). (AI-inferred)
     ebp_audio_interval: Any = None
-    # The number of milliseconds to look ahead for placement of Elementary Buffer Period (EBP) metadata in the MPEG-TS output. (AI-inferred)
     ebp_lookahead_ms: Any = None
-    # Determines where EBP (Extended Broadcasting Profile) markers are inserted in the M2TS transport stream, with values 'video_and_audio_pids' placing them in both video and audio PIDs or 'video_pid' placing them only in the video PID, affecting SCTE-35 message signaling. (AI-inferred)
     ebp_placement: Any = None
-    # Specifies the PID (Packet Identifier) used for Entitlement Control Messages (ECMs) in the MPEG-2 transport stream, which carry conditional access scrambling information. (AI-inferred)
     ecm_pid: Any = None
-    # Controls whether the elementary stream rate is written into the PES (Packetized Elementary Stream) packets of the MPEG-2 transport stream output, set to either 'INCLUDE' or 'EXCLUDE'. (AI-inferred)
     es_rate_in_pes: Any = None
-    # Sets the PID (packet identifier) for the Enhanced TV (ETV) platform data within the MPEG-2 transport stream output. (AI-inferred)
     etv_platform_pid: Any = None
-    # The PID (packet identifier) for the Enhanced TV (ETV) signal in the MPEG-2 transport stream output. (AI-inferred)
     etv_signal_pid: Any = None
-    # The duration, in seconds, of each MPEG-2 TS fragment emitted by the M2TS container, used for archive or output segmentation. (AI-inferred)
     fragment_time: Any = None
-    # For the M2TS container settings in an archive output group, this field controls whether KLV (Key-Length-Value) metadata is passed through to the transport stream output, accepting values such as 'PASSTHROUGH' or 'NONE'. (AI-inferred)
     klv: Any = None
-    # Specifies one or more PIDs (packet identifiers) used for KLV (Key-Length-Value) metadata in the MPEG-TS output, enabling embedding of SMPTE KLV data in the stream. (AI-inferred)
     klv_data_pids: Any = None
-    # Determines whether Nielsen ID3 metadata is passed through in the M2TS container, with PASSTHROUGH to preserve the tags or NO_PASSTHROUGH to strip them from the archived output. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # Specifies the bitrate (in bits per second) of null packets to insert into the MPEG-2 transport stream to maintain the output bitrate when the input bitrate is lower. (AI-inferred)
     null_packet_bitrate: Any = None
-    # Specifies the interval, in seconds, between Program Association Table (PAT) packets in the MPEG-2 transport stream output. (AI-inferred)
     pat_interval: Any = None
-    # Determines whether Program Clock Reference (PCR) packets are inserted at a configured period or in every packet, with valid values 'CONFIGURED_PCR_PERIOD' or 'PCR_EVERY_PACKET'. (AI-inferred)
     pcr_control: Any = None
-    # Specifies the interval in milliseconds between Program Clock Reference (PCR) packets inserted into the M2TS transport stream. (AI-inferred)
     pcr_period: Any = None
-    # The PID (packet identifier) for the Program Clock Reference (PCR) in the output MPEG-2 transport stream, used to synchronize decoder timing. (AI-inferred)
     pcr_pid: Any = None
-    # Sets the interval in seconds between Program Map Table (PMT) packets in the MPEG-TS multiplex, controlling how frequently the receiver can acquire program tuning information. (AI-inferred)
     pmt_interval: Any = None
-    # Specifies the packet identifier (PID) used for the Program Map Table (PMT) in the MPEG-2 transport stream output of the M2TS container. (AI-inferred)
     pmt_pid: Any = None
-    # Specifies the program number for the MPEG-2 transport stream, identifying this output's program within a multiplexed stream. (AI-inferred)
     program_num: Any = None
-    # Specifies whether the M2TS output uses constant bitrate (CBR) or variable bitrate (VBR) encoding. (AI-inferred)
     rate_mode: Any = None
-    # Specifies the SCTE-27 packet identifiers (PIDs) for ad cue messages in the MPEG-2 transport stream, provided as a comma-separated list of PID numbers. (AI-inferred)
     scte27_pids: Any = None
-    # Controls whether SCTE-35 ad signaling messages are passed through (PASSTHROUGH) or discarded (NONE) in the MPEG-2 Transport Stream output for this M2TS container. (AI-inferred)
     scte35_control: Any = None
-    # Sets the Packet Identifier (PID) for SCTE-35 messages in the MPEG-TS stream, used to carry ad signaling cues. (AI-inferred)
     scte35_pid: Any = None
-    # Adjusts the timing of SCTE-35 splice events in the M2TS output by the specified number of milliseconds, where a positive value shifts the event earlier (preroll) and a negative value shifts it later. (AI-inferred)
     scte35_preroll_pullup_milliseconds: Any = None
-    # Controls whether SCTE-35 segmentation markers are passed through from the input or disabled in the M2TS output for this archive output group. (AI-inferred)
     segmentation_markers: Any = None
-    # Controls how timestamps are handled across MPEG-2 TS segments in the archive output, either maintaining correlation between segments (MAINTAIN_CORRELATION) or resetting the timestamps at the start of each segment (RESET_CORRELATION). (AI-inferred)
     segmentation_style: Any = None
-    # Specifies the duration in seconds of each MPEG-2 transport stream segment within the M2TS container, controlling how the archive output is segmented into timed chunks. (AI-inferred)
     segmentation_time: Any = None
-    # Controls whether timed metadata (such as ID3) is passed through from the input to this M2TS output, with allowed values PASSTHROUGH or NO_PASSTHROUGH. (AI-inferred)
     timed_metadata_behavior: Any = None
-    # Specifies the PID (packet identifier) used for the timed metadata stream (for example, SCTE-35 messages) within the MPEG-2 transport stream (M2TS) container for this archive output. (AI-inferred)
     timed_metadata_pid: Any = None
-    # Sets the transport stream identifier (TSID) carried in the MPEG-TS header of the M2TS output, distinguishing this stream from other multiplexed streams. (AI-inferred)
     transport_stream_id: Any = None
-    # The packet identifier (PID) assigned to the video stream in the MPEG-2 transport stream output. (AI-inferred)
     video_pid: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings_ContainerSettings:
-    # Specifies the M2TS container settings (such as PIDs, bitrate, and rate control) used when archiving the output to an MPEG-2 transport stream. (AI-inferred)
     m2ts_settings: Any = None
-    # Configures the archive output container to use raw storage, meaning the encoded video/audio is written without any container wrapper or multiplexing, preserving the elementary streams as-is. (AI-inferred)
     raw_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_ArchiveOutputSettings:
-    # Configures the container format (e.g., MP4, M2TS, or RAW) for the archived output, including any container-specific parameters such as M2TS settings. (AI-inferred)
     container_settings: Any = None
-    # The file extension (e.g., .ts, .mp4) applied to the archive output file generated for this output group in MediaLive. (AI-inferred)
     extension: Any = None
-    # Appends a custom string to the base file name of the archived media output, enabling multiple outputs in the same archive group to have unique file names. (AI-inferred)
     name_modifier: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_CmafIngestOutputSettings:
-    # Appends the specified text as a suffix to the output file names of the CMAF Ingest output, allowing you to customize or differentiate the generated segments and manifests. (AI-inferred)
     name_modifier: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_AudioOnlyHlsSettings:
-    # Assigns an identifier to the audio-only rendition group in the HLS manifest, enabling the player to group related audio tracks together. (AI-inferred)
     audio_group_id: Any = None
-    # Configures the image shown as the placeholder video track for the audio-only HLS rendition, specified as an InputLocation identifying a JPEG file (typically in Amazon S3) that MediaLive uses for the video representation of the audio-only variant. (AI-inferred)
     audio_only_image: Any = None
-    # Determines whether the HLS audio-only output uses the alternate audio auto-select track type (ALTERNATE_AUDIO_AUTO_SELECT) or the default track type (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT), controlling how the audio rendition is signaled in the HLS master playlist. (AI-inferred)
     audio_track_type: Any = None
-    # Specifies the segment type for the audio-only HLS output, selecting either 'AAC' or 'TS' as the format of the media segments. (AI-inferred)
     segment_type: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_Fmp4HlsSettings:
-    # Specifies the audio rendition sets (a comma-separated list of audio group identifiers) to include in the FMP4 HLS output, determining which audio tracks from the channel input are carried in this output group. (AI-inferred)
     audio_rendition_sets: Any = None
-    # Specifies how AWS Elemental MediaLive handles Nielsen ID3 tags in the FMP4 HLS output, where INSERT adds tags at specified times and NO_TAG suppresses them. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # Determines whether timed metadata (e.g., ID3 tags) is passed through to the fragmented MP4 HLS output, with allowed values PASSTHROUGH and NO_PASSTHROUGH. (AI-inferred)
     timed_metadata_behavior: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettings_M3u8Settings:
-    # The number of audio frames to include in each PES (Packetized Elementary Stream) packet for the HLS output; set to 0 to have AWS MediaLive automatically determine the appropriate value. (AI-inferred)
     audio_frames_per_pes: Any = None
-    # Specifies the audio PIDs (packet identifiers) to include in the M3U8 manifest, as a comma-separated string of PID values. (AI-inferred)
     audio_pids: Any = None
-    # The PID (Packet Identifier) for Entitlement Control Messages (ECM) in the MPEG-2 transport stream, used for conditional access/encryption in the HLS output. (AI-inferred)
     ecm_pid: Any = None
-    # Specifies whether KLV (Key-Length-Value) metadata is passed through to the output (PASSTHROUGH) or ignored (NO_PASSTHROUGH) when generating the HLS M3U8 manifest. (AI-inferred)
     klv_behavior: Any = None
-    # Specifies the packet identifier (PID) for the Key-Length-Value (KLV) data stream in the MPEG-TS multiplex of the HLS output, used to carry ancillary metadata such as subtitles or timing data. (AI-inferred)
     klv_data_pids: Any = None
-    # Determines whether Nielsen ID3 metadata from the source is passed through or removed in the HLS M3U8 output, with allowed values PASSTHROUGH and NO_PASSTHROUGH. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # The number of seconds between insertions of the Program Association Table (PAT) in the MPEG-TS output of the HLS stream. (AI-inferred)
     pat_interval: Any = None
-    # Determines how often the Program Clock Reference (PCR) is inserted in the HLS output, either in every PES packet (PCR_EVERY_PES) or at a configured period (CONFIGURED_PCR_PERIOD). (AI-inferred)
     pcr_control: Any = None
-    # Specifies the interval, in milliseconds, between Program Clock Reference (PCR) packets inserted in the HLS output m3u8 stream. (AI-inferred)
     pcr_period: Any = None
-    # Specifies the PID (Packet ID) for the Program Clock Reference (PCR) in the MPEG-2 transport stream output of the HLS m3u8 settings. (AI-inferred)
     pcr_pid: Any = None
-    # Specifies the interval in seconds between Program Map Table (PMT) packets in the MPEG-TS output, controlling how frequently the PMT is repeated to aid channel tuning. (AI-inferred)
     pmt_interval: Any = None
-    # Specifies the PID (Packet Identifier) value for the Program Map Table (PMT) in the MPEG-TS segments of the HLS output. (AI-inferred)
     pmt_pid: Any = None
-    # Sets the program number for the MPEG-2 transport stream in the HLS output, used in the m3u8 playlist to identify the program. (AI-inferred)
     program_num: Any = None
-    # Specifies how SCTE-35 messages are handled in the HLS M3U8 manifest, with values NO_PASSTHROUGH, PASSTHROUGH, or AD_MARKERS (where AD_MARKERS converts cues to ad markers). (AI-inferred)
     scte35_behavior: Any = None
-    # Specifies the packet identifier (PID) for SCTE-35 ad signaling messages in the MPEG-TS segments of the HLS output, enabling downstream players to recognize and act on ad cues. (AI-inferred)
     scte35_pid: Any = None
-    # Specifies whether ID3 timed metadata is passed through (PASSTHROUGH) or ignored (NO_PASSTHROUGH) in the HLS M3U8 output. (AI-inferred)
     timed_metadata_behavior: Any = None
-    # Sets the packet identifier (PID) in the MPEG-TS segments for timed metadata (such as ID3) in the HLS output's m3u8 settings. (AI-inferred)
     timed_metadata_pid: Any = None
-    # Specifies the Transport Stream ID used in MPEG-TS packet headers for the M3U8 output in this HLS output group. (AI-inferred)
     transport_stream_id: Any = None
-    # Sets the packet identifier (PID) for the video stream in the MPEG-2 transport stream segments generated by the HLS output. (AI-inferred)
     video_pid: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings_StandardHlsSettings:
-    # Specifies the comma-separated list of audio rendition set IDs (for example, program_audio) that MediaLive includes as audio-only renditions in the HLS output group. (AI-inferred)
     audio_rendition_sets: Any = None
-    # Defines the M3U8 manifest and playlist settings, such as timing metadata, PID controls, and segment handling, for the HLS output in MediaLive. (AI-inferred)
     m3u8_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings_HlsSettings:
-    # Configures an audio-only rendition for an HLS output group, specifying the audio group ID, segment control method, and optional audio stream selection or cover image. (AI-inferred)
     audio_only_hls_settings: Any = None
-    # Configures the fragmented MP4 (fMP4) container settings for an HLS output group, including options for audio rendition sets and timed metadata handling. (AI-inferred)
     fmp4_hls_settings: Any = None
-    # This configuration block indicates that the HLS output is a frame-capture HLS output; it has no child arguments and its presence selects the FrameCaptureHlsSettings variant for the HLS settings. (AI-inferred)
     frame_capture_hls_settings: Any = None
-    # Contains the configuration for standard HLS output mode, including the M3U8 container settings and optional audio rendition sets used when the HLS output group is not using MediaStore. (AI-inferred)
     standard_hls_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_HlsOutputSettings:
-    # Specifies whether H.265/HEVC outputs are packaged as HEV1 or HVC1 in the HLS output. (AI-inferred)
     h265_packaging_type: Any = None
-    # Specifies which HLS output variant (standard, audio-only, fragmented MP4, or frame-capture) applies to this output and configures the associated settings for that variant. (AI-inferred)
     hls_settings: Any = None
-    # The name modifier string is prepended to the filenames of HLS output segments and playlists generated by this output group, allowing you to customize or disambiguate object names in the destination bucket. (AI-inferred)
     name_modifier: Any = None
-    # Specifies a string that is appended to the segment duration in the HLS media playlist to fine-tune the reported duration of each segment, commonly used to adjust for rounding or discontinuities. (AI-inferred)
     segment_modifier: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ConnectedRouterInputs:
-    # The ARN of the AWS Elemental MediaConnect router input to connect to pipeline 0 for this output. (AI-inferred)
     pipeline0: Any = None
-    # Specifies the MediaConnect router input ARN (or identifier) to connect to for pipeline 1 (the first redundant pipeline) in this MediaLive output. (AI-inferred)
     pipeline1: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings_ContainerSettings:
-    # The M2TS container settings for this MediaConnect output, defining MPEG-2 transport stream encapsulation parameters such as packetization, PIDs, and buffer model. (AI-inferred)
     m2ts_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaConnectRouterOutputSettings:
-    # The connected_router_inputs field lists the MediaConnect input ARNs that are attached to the MediaConnect router used for this output, enabling MediaLive to route the encoded channel output through that router to those connected inputs. (AI-inferred)
     connected_router_inputs: Any = None
-    # Defines the container format settings for the MediaLive output that is routed to an AWS Elemental MediaConnect flow. (AI-inferred)
     container_settings: Any = None
     destination: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings_MediaPackageV2DestinationSettings:
-    # Specifies the audio group ID that MediaLive assigns to the audio tracks of this output, grouping them under a shared identifier in the MediaPackage v2 asset. (AI-inferred)
     audio_group_id: Any = None
-    # Specifies the audio rendition sets to include in the MediaPackage v2 output, as a comma-separated string of rendition set names. (AI-inferred)
     audio_rendition_sets: Any = None
-    # Sets whether MediaLive automatically selects the HLS output stream for the MediaPackage v2 destination, with typical values like 'ENABLED' or 'DISABLED'. (AI-inferred)
     hls_auto_select: Any = None
-    # The default HLS manifest URL for the MediaPackage v2 destination, which specifies the endpoint to which MediaLive publishes the packaged HLS stream. (AI-inferred)
     hls_default: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MediaPackageOutputSettings:
-    # Configures the destination for MediaPackage v2 outputs by specifying the channel group and channel name to which the encoder sends the packaged stream. (AI-inferred)
     media_package_v2_destination_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MsSmoothOutputSettings:
-    # Specifies the H.265 packaging type (HEV1 or HVC1) used for the Microsoft Smooth Streaming output, controlling how H.265 video is encapsulated for compatibility with Smooth Streaming players. (AI-inferred)
     h265_packaging_type: Any = None
-    # Specifies a string appended to the end of the output file name for Microsoft Smooth Streaming outputs, helping to create unique file names or apply custom naming conventions. (AI-inferred)
     name_modifier: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings_MultiplexM2tsSettings:
-    # Specifies whether to drop the audio or encode silence when input audio is absent in the multiplex M2TS output. (AI-inferred)
     absent_input_audio_behavior: Any = None
     arib: Any = None
-    # Controls the audio buffer model used for smoothing audio bitrate fluctuations in the multiplex M2TS output (e.g., ATSC or DVB). (AI-inferred)
     audio_buffer_model: Any = None
-    # Specifies the number of audio frames to include in each Packetized Elementary Stream (PES) packet for the multiplex M2TS output. (AI-inferred)
     audio_frames_per_pes: Any = None
-    # Determines whether the multiplex M2TS output uses the default audio stream or an alternate audio stream. (AI-inferred)
     audio_stream_type: Any = None
-    # Specifies whether to include the closed caption descriptor in the MPEG-2 transport stream multiplex output, with allowed values 'DISABLED' or 'ENABLED'. (AI-inferred)
     cc_descriptor: Any = None
-    # Specifies whether EBIF (Enhanced Binary Interchange Format) data is included in the M2TS multiplex output, with values NONE to omit it or PASSTHROUGH to pass through EBIF data from the input. (AI-inferred)
     ebif: Any = None
-    # Specifies whether the elementary stream rate is included in the PES (Packetized Elementary Stream) header for the M2TS multiplex output, with value ENABLED or DISABLED. (AI-inferred)
     es_rate_in_pes: Any = None
-    # Specifies how Key-Length-Value (KLV) metadata is handled in the multiplexed M2TS container, where 'PASSTHROUGH' passes KLV data through from the input and 'NONE' discards it. (AI-inferred)
     klv: Any = None
-    # Determines whether Nielsen ID3 metadata is passed through from the input to the multiplex M2TS output, with valid values including PASSTHROUGH and NO_PASSTHROUGH. (AI-inferred)
     nielsen_id3_behavior: Any = None
-    # Controls the timing for sending Program Clock Reference (PCR) packets in the M2TS multiplex output, either at a configured period or on every packet. (AI-inferred)
     pcr_control: Any = None
-    # Specifies the Program Clock Reference (PCR) period in milliseconds between PCR packets in the multiplexed MPEG-2 transport stream. (AI-inferred)
     pcr_period: Any = None
-    # Specifies whether SCTE-35 messages are passed through (PASSTHROUGH) or ignored (NONE) in the multiplex M2TS output. (AI-inferred)
     scte35_control: Any = None
-    # Specifies the number of milliseconds by which SCTE-35 preroll events are pulled up (advanced) in the multiplex M2TS output, adjusting the timing of these events relative to the program timeline. (AI-inferred)
     scte35_preroll_pullup_milliseconds: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings_ContainerSettings:
-    # Configures the M2TS (MPEG-2 Transport Stream) container settings for the multiplex output, controlling packetization details such as PID mappings and buffer model when delivering to an AWS MediaLive Multiplex. (AI-inferred)
     multiplex_m2ts_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_MultiplexOutputSettings:
-    # Specifies the container format and its configuration for the multiplex output, namely the M2TS multiplex container settings that control how the MPEG-2 transport stream is packaged for broadcast. (AI-inferred)
     container_settings: Any = None
-    # Configures the destination of the multiplex output, specifying the MediaConnect flow ARN where the multiplexed video is delivered. (AI-inferred)
     destination: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_RtmpOutputSettings:
-    # Determines whether the RTMP output verifies the authenticity of the server's SSL certificate (VERIFY_AUTHENTICITY) or accepts any self-signed certificate (SELF_SIGNED) when connecting to a secure RTMP endpoint. (AI-inferred)
     certificate_mode: Any = None
-    # Number of seconds to wait before retrying an RTMP output connection after a connection failure. (AI-inferred)
     connection_retry_interval: Any = None
-    # Specifies the destination URL and stream key for the RTMP output, defining where the media stream is published. (AI-inferred)
     destination: Any = None
-    # Specifies the number of times MediaLive retries sending data to the RTMP destination before treating the output as failed. (AI-inferred)
     num_retries: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_SrtOutputSettings:
-    # Specifies the size of the SRT output buffer in milliseconds, which controls the amount of data buffered before transmission and thus influences the target latency of the SRT stream. (AI-inferred)
     buffer_msec: Any = None
-    # The container settings for the SRT output, which define how the encoded audio and video are encapsulated (e.g., MPEG-TS configuration) before transmission over SRT. (AI-inferred)
     container_settings: Any = None
-    # For this SRT output, the destination object references an output destination (an SRT endpoint URL) defined in the enclosing output group's Destinations list, directing where MediaLive sends the stream. (AI-inferred)
     destination: Any = None
-    # Specifies whether the SRT output uses AES-128 encryption or is unencrypted, with values 'AES128' or 'UNENCRYPTED'. (AI-inferred)
     encryption_type: Any = None
-    # The latency (in milliseconds) for the SRT output, setting the target delay to compensate for network jitter and ensure reliable stream delivery. (AI-inferred)
     latency: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettings_FecOutputSettings:
-    # Sets the number of packets per column in the forward error correction (FEC) matrix for a MediaLive UDP output, determining the degree of parity data added for packet loss recovery. (AI-inferred)
     column_depth: Any = None
-    # Specifies whether the UDP output includes column-only or column-and-row forward error correction (FEC), with allowed values 'COLUMN' and 'COLUMN_AND_ROW'. (AI-inferred)
     include_fec: Any = None
-    # Number of packets per row in the Pro-MPEG FEC matrix used for forward error correction of the UDP output. (AI-inferred)
     row_length: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings_UdpOutputSettings:
-    # Specifies the size of the buffer in milliseconds that the UDP output uses to absorb network jitter before sending packets to the destination. (AI-inferred)
     buffer_msec: Any = None
-    # Specifies the container settings (such as M2TS parameters) for the UDP output stream, controlling how the output is packetized. (AI-inferred)
     container_settings: Any = None
-    # Specifies the destination IP address and port to which the UDP output stream is sent. (AI-inferred)
     destination: Any = None
-    # Configures forward error correction (FEC) settings for the UDP output, including parameters like column depth and row length that define the FEC matrix for data protection. (AI-inferred)
     fec_output_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs_OutputSettings:
-    # Archive output settings configure the container format (e.g., MP4) and the destination (such as an S3 bucket or MediaStore container) for delivering an archive (file-based) output from a MediaLive channel. (AI-inferred)
     archive_output_settings: Any = None
-    # Specifies the destination endpoint (URL) and optional authentication credentials used by the MediaLive channel to push CMAF-chunked output to a remote CMAF ingest receiver. (AI-inferred)
     cmaf_ingest_output_settings: Any = None
-    # Specifies the capture interval and its units (milliseconds or seconds) for a frame capture output in a MediaLive channel output group. (AI-inferred)
     frame_capture_output_settings: Any = None
-    # Specifies the HLS-specific packaging settings for this output, including the choice of standard or audio-only HLS variant via nested HlsSettings and optional name/segment modifiers that affect the generated HTTP Live Streaming segment file naming. (AI-inferred)
     hls_output_settings: Any = None
     media_connect_router_output_settings: Any = None
-    # Specifies the settings for an output that is sent to AWS Elemental MediaPackage; this object is empty and serves only to indicate MediaPackage as the output destination. (AI-inferred)
     media_package_output_settings: Any = None
-    # Settings for a Microsoft Smooth Streaming output, controlling parameters such as bitrate, buffer duration, and stream naming. (AI-inferred)
     ms_smooth_output_settings: Any = None
-    # Configures the destination and program reference for sending this output to an AWS Elemental MediaLive Multiplex, enabling the output to be combined into an MPTS stream. (AI-inferred)
     multiplex_output_settings: Any = None
-    # Specifies the RTMP-specific output parameters, such as the destination URL/stream key and connection retry behavior, for a MediaLive output group. (AI-inferred)
     rtmp_output_settings: Any = None
-    # Specifies the SRT (Secure Reliable Transport) protocol-specific output settings for this output, including the SRT destination address and transport configuration, within the MediaLive channel's encoder settings. (AI-inferred)
     srt_output_settings: Any = None
-    # Configures the UDP output destination (address and port) along with container settings (such as M2TS), FEC, and buffer timing for the MediaLive output group. (AI-inferred)
     udp_output_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups_Outputs:
-    # Specifies the list of audio description names (from the channel's audio_description definitions) to include in this output, determining which audio tracks are carried in the output's encoding. (AI-inferred)
     audio_description_names: Any = None
-    # Lists the names of the caption descriptions (defined at the encoder settings level) that should be attached to this output, controlling which captions are included in the output's media. (AI-inferred)
     caption_description_names: Any = None
-    # The name assigned to this output within the output group, used to identify and reference the output in the channel's configuration and downstream systems. (AI-inferred)
     output_name: Any = None
-    # Defines the output-specific settings for a MediaLive channel output, which can be one of several types (e.g., archive, frame capture, HLS, MediaPackage, MS Smooth, RTMP, or UDP) and contains the corresponding nested configuration for that output type. (AI-inferred)
     output_settings: Any = None
-    # The name of the video description that defines the encoding parameters (codec, resolution, bitrate) for the video in this output, which must match a video description defined in the channel's encoder settings. (AI-inferred)
     video_description_name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_OutputGroups:
-    # A user-defined name for this output group, used to identify and manage it within the MediaLive channel. (AI-inferred)
     name: Any = None
-    # Defines the protocol-specific settings for the output group, such as HLS, UDP, or RTMP group settings, that control how the output group formats and delivers its outputs. (AI-inferred)
     output_group_settings: Any = None
-    # The outputs in an output group define each individual stream output, specifying its destination, encoding settings for video, audio, and captions, and other output-specific configuration in a MediaLive channel. (AI-inferred)
     outputs: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_ThumbnailConfiguration:
-    # Indicates whether thumbnail generation is enabled or disabled for the channel, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_TimecodeConfig:
-    # Specifies the source of the timecode for the channel, which can be set to EMBEDDED (from the input), SYSTEMCLOCK, or ZEROBASED, controlling how timecode is generated or passed through in the encoder output. (AI-inferred)
     source: Any = None
-    # When the timecode source is EMBEDDED, this number sets the maximum frame difference between the input timecode and the channel's output timecode that triggers MediaLive to resync the output to the input, controlling how sensitively the channel follows source timecode drift. (AI-inferred)
     sync_threshold: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings_Hdr10Settings:
-    # The maximum content light level (in nits) for the HDR10 metadata, representing the brightest pixel value used in the video content. (AI-inferred)
     max_cll: Any = None
-    # The maximum frame average light level (MaxFALL) in nits, used for HDR10 color space metadata when encoding AV1 video. (AI-inferred)
     max_fall: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_ColorSpaceSettings:
-    # When set, this empty settings block instructs MediaLive to pass the input's color space information through unchanged to the AV1-encoded output, rather than converting it to a specified color space. (AI-inferred)
     color_space_passthrough_settings: Any = None
-    # Specifies the HDR10 high dynamic range metadata settings for the AV1 video encode, including luminance and content light level values that MediaLive signals to HDR-compatible displays. (AI-inferred)
     hdr10_settings: Any = None
-    # Configures HLG2020 color space settings for AV1 video encoding, specifying the constant IP gain and hue adjustment applied to the high dynamic range signal. (AI-inferred)
     hlg2020_settings: Any = None
-    # Specifies the Rec.601 color space settings (contrast and gamma) applied within the AV1 codec configuration for video encoding in MediaLive. (AI-inferred)
     rec601_settings: Any = None
-    # The rec709_settings block is an empty object that specifies the output video should use the Rec.709 color space standard for high-definition content, overriding the input color space when this setting is present. (AI-inferred)
     rec709_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings_TimecodeBurninSettings:
-    # Specifies the font size (SMALL, MEDIUM, or LARGE) for the timecode text burned into the video when AV1 encoding is used. (AI-inferred)
     font_size: Any = None
-    # Determines where the burned-in timecode appears on the video frame, such as TOP_LEFT or BOTTOM_RIGHT. (AI-inferred)
     position: Any = None
-    # Specifies a text prefix that appears before the burned-in timecode in the output, such as 'TC:' to display 'TC:01:00:00:00'. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Av1Settings:
-    # Controls how Active Format Description (AFD) metadata is signaled in the AV1 video encode, accepting values such as NONE, FIXED, FOLLOW_INPUT, or FOLLOW_GET_AFD to manage insertion or passthrough of AFD information. (AI-inferred)
     afd_signaling: Any = None
-    # Specifies the number of bits per color sample (either '8' or '10') used for AV1 video encoding in the MediaLive channel. (AI-inferred)
     bit_depth: Any = None
-    # Specifies the target video bitrate in bits per second for the AV1 video encoding. (AI-inferred)
     bitrate: Any = None
-    # Specifies the size of the video buffer used by the AV1 encoder for rate control, interpreted according to the sibling buf_size_unit setting (e.g., bits or kilobits). (AI-inferred)
     buf_size: Any = None
-    # Configures the color space and high dynamic range (HDR) metadata (e.g., HDR10 or Rec.709) for the AV1 video encoder output. (AI-inferred)
     color_space_settings: Any = None
-    # Specifies the fixed Active Format Description (AFD) value to encode when AFD signaling is set to FIXED for the AV1 codec, used to convey aspect ratio and picture format information. (AI-inferred)
     fixed_afd: Any = None
-    # In the AV1 codec settings, framerate_denominator is the denominator of the frame rate fraction (e.g., 1001 for 29.97 fps) that, together with framerate_numerator, defines the output video's frames per second. (AI-inferred)
     framerate_denominator: Any = None
-    # Sets the numerator of the frame rate (fps) for the AV1 video codec, used together with framerate_denominator to define the output video frame rate. (AI-inferred)
     framerate_numerator: Any = None
-    # The size of the group of pictures (GOP) for the AV1 video encoder, expressed as either frames or seconds depending on the value of the associated gop_size_units setting. (AI-inferred)
     gop_size: Any = None
-    # Specifies whether the GOP size is measured in frames or seconds, with allowed values FRAMES or SECONDS. (AI-inferred)
     gop_size_units: Any = None
-    # Sets the AV1 encoder level, which constrains the maximum resolution, frame rate, and bitrate for the video encode, with allowed values such as auto, 1, 2.1, 4, 6.2, etc. (AI-inferred)
     level: Any = None
-    # Specifies the amount of look-ahead used by the AV1 encoder's rate control, accepting LOW, MEDIUM, or HIGH to trade compression efficiency against latency. (AI-inferred)
     look_ahead_rate_control: Any = None
-    # The maximum bitrate in bits per second for the AV1 video codec, limiting the output bandwidth of the encoded video. (AI-inferred)
     max_bitrate: Any = None
-    # For this AV1 video encoder, min_bitrate defines the lowest bitrate (in bits per second) the encoder will output, preventing the stream from dropping below a guaranteed quality threshold. (AI-inferred)
     min_bitrate: Any = None
-    # Sets the minimum interval between I-frames in frames, controlling how often full-frame encoding occurs in AV1 video output. (AI-inferred)
     min_iinterval: Any = None
-    # Specifies the denominator of the pixel aspect ratio (PAR) for the AV1 video output, used together with par_numerator to define the aspect ratio of individual pixels. (AI-inferred)
     par_denominator: Any = None
-    # Defines the numerator of the pixel aspect ratio (PAR) for the AV1 video encode, which combined with par_denominator determines the display aspect ratio of the output. (AI-inferred)
     par_numerator: Any = None
-    # The quality level (1-10) used when the AV1 encoder's rate control mode is set to QVBR, with higher values producing higher quality video output. (AI-inferred)
     qvbr_quality_level: Any = None
-    # Specifies the rate control mode for AV1 encoding, determining whether the codec uses constant bitrate (CBR) or quality-defined variable bitrate (QVBR) to manage output bitrate. (AI-inferred)
     rate_control_mode: Any = None
-    # Controls whether the AV1 encoder performs scene change detection and how it adjusts the encoded output (such as inserting keyframes) when scene changes occur. (AI-inferred)
     scene_change_detect: Any = None
-    # Enables or disables spatial adaptive quantization, which adjusts compression levels across different spatial regions of the video frame to improve perceptual quality at a given bitrate. (AI-inferred)
     spatial_aq: Any = None
-    # Enables or disables temporal adaptive quantization, which adjusts the quantization strength across time to improve AV1 encoding efficiency and perceived quality. (AI-inferred)
     temporal_aq: Any = None
-    # Configures the burn-in of the timecode into the AV1-encoded video output, including enabling it, setting its on-screen position, and defining the prefix text shown before the timecode. (AI-inferred)
     timecode_burnin_settings: Any = None
-    # Specifies whether to insert timecode information into the AV1 video stream, using either DISABLED (no insertion) or PIC_TIMING_SEI (inserting picture timing SEI messages). (AI-inferred)
     timecode_insertion: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_FrameCaptureSettings:
-    # Specifies the interval, in seconds, between frame captures for the frame capture video codec, supporting fractional values for sub-second capture rates. (AI-inferred)
     capture_interval: Any = None
-    # Specifies the units (SECONDS or MILLISECONDS) for the capture interval used by the frame capture codec settings in an AWS Elemental MediaLive channel encoder. (AI-inferred)
     capture_interval_units: Any = None
-    # Configures the burned-in timecode display on the frame capture output, including the timecode font size, position, and prefix characters that appear on the captured video frames. (AI-inferred)
     timecode_burnin_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_ColorSpaceSettings:
-    # Configures the H.264 color space passthrough settings, an empty block that tells AWS Elemental MediaLive to preserve the input video's color space without conversion when the H.264 colorSpace is set to PASSTHROUGH. (AI-inferred)
     color_space_passthrough_settings: Any = None
-    # Specifies the Rec. 601 color-space correction settings (including contrast, gamma, offset, and saturation) applied to the H.264 encoder video description. (AI-inferred)
     rec601_settings: Any = None
-    # This block enables Rec.709 color space settings for the H.264 encoder, controlling the color space conversion for the video output. (AI-inferred)
     rec709_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings_BandwidthReductionFilterSettings:
-    # Determines the strength of the sharpening filter applied after the bandwidth reduction filter in the H.264 encoder, with values such as DISABLED, LOW, MEDIUM, HIGH, or AUTO. (AI-inferred)
     post_filter_sharpening: Any = None
-    # Determines how strongly the bandwidth reduction filter is applied to the H.264 video stream, adjusting the trade-off between bitrate reduction and video quality. (AI-inferred)
     strength: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings_FilterSettings:
-    # Defines the strength of the bandwidth reduction filter applied to H.264 video, which smooths picture detail to lower the output bitrate, with a configurable level such as LOW, MEDIUM, or HIGH. (AI-inferred)
     bandwidth_reduction_filter_settings: Any = None
-    # Configures temporal filtering for H.264 encoding, which reduces noise by analyzing frames over time, with settings for filter strength and optional post-filter sharpening. (AI-inferred)
     temporal_filter_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H264Settings:
-    # Controls the intensity of adaptive quantization used by the H.264 encoder to improve subjective visual quality by adjusting quantization levels per macroblock (e.g., HIGH, MEDIUM, OFF, AUTO). (AI-inferred)
     adaptive_quantization: Any = None
-    # Specifies how Active Format Description (AFD) metadata is signaled in H.264 output, with values such as NONE, FIXED, FOLLOW_AFD, or FOLLOW_INPUT controlling whether and how AFD is inserted into the video stream. (AI-inferred)
     afd_signaling: Any = None
-    # The average bitrate in bits per second for the H.264 video output, which controls the quality and size of the encoded video stream. (AI-inferred)
     bitrate: Any = None
-    # Specifies the initial decoder buffer fill percentage for H.264 encoded video, controlling how much the buffer is pre-filled at the start of playback. (AI-inferred)
     buf_fill_pct: Any = None
-    # Sets the buffer size (in bits) used by the H.264 rate control algorithm, controlling how much bitrate variation is permitted. (AI-inferred)
     buf_size: Any = None
-    # Controls whether color metadata (such as color space information) is inserted into the H.264 video stream, with allowed values INSERT or IGNORE. (AI-inferred)
     color_metadata: Any = None
-    # Configures color space conversion settings for the H.264 encoder, specifying the input color space and how it is converted to the output color space. (AI-inferred)
     color_space_settings: Any = None
-    # Specifies the entropy encoding mode (CABAC or CAVLC) used for H.264 video compression, balancing compression efficiency against decoder compatibility. (AI-inferred)
     entropy_encoding: Any = None
-    # Configures the video filter settings for the H.264 encoder, including temporal filter settings that reduce noise and improve compression efficiency. (AI-inferred)
     filter_settings: Any = None
-    # When afd_signaling is set to FIXED, this specifies the Active Format Description (AFD) value (a number from 0 to 15 represented as a string) that MediaLive will encode into the H.264 video output. (AI-inferred)
     fixed_afd: Any = None
-    # Enables or disables adaptive quantization to reduce flicker in H.264 video encoding, with accepted values ENABLED or DISABLED. (AI-inferred)
     flicker_aq: Any = None
-    # Controls whether the H.264 encoder forces field (interlaced) pictures instead of progressive frame pictures, with values 'ENABLED' or 'DISABLED'. (AI-inferred)
     force_field_pictures: Any = None
-    # Determines whether the H.264 output uses the input's frame rate (INITIALIZE_FROM_SOURCE) or a fixed frame rate you specify (SPECIFIED) via framerate_numerator and framerate_denominator. (AI-inferred)
     framerate_control: Any = None
-    # Specifies the denominator of the frame rate fraction (together with framerate_numerator) that defines the output video frame rate for H.264 encodes, e.g., 1001 for 30000/1001 ≈ 29.97 fps. (AI-inferred)
     framerate_denominator: Any = None
-    # Defines the integer numerator of the fractional frame rate used for the H.264 video output (e.g., 30000 with a denominator of 1001 yields 29.97 fps) when the frame rate is specified manually. (AI-inferred)
     framerate_numerator: Any = None
-    # Determines whether B-frames are used as reference frames in the H.264 GOP (Group of Pictures) structure, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
     gop_breference: Any = None
-    # Specifies the number of closed GOPs that occur between open GOPs in the H.264 video encode, controlling the cadence of closed GOPs for better error resilience and random access. (AI-inferred)
     gop_closed_cadence: Any = None
-    # Specifies the number of B-frames (bidirectional prediction frames) placed between reference frames in the H.264 Group of Pictures (GOP), which affects compression efficiency and encoding latency. (AI-inferred)
     gop_num_bframes: Any = None
-    # Specifies the number of frames (or seconds, depending on the associated gop_size_units value) between keyframes (GOP length) for the H.264 encoder settings. (AI-inferred)
     gop_size: Any = None
-    # Specifies the units for the Group of Pictures (GOP) size in the H.264 encoder settings, either 'FRAMES' or 'SECONDS', which determines how the gop_size value is interpreted. (AI-inferred)
     gop_size_units: Any = None
-    # Defines the H.264 encoding level for the video output, which limits the maximum decoded picture size, bit rate, and frame rate per the H.264 standard; it can be set to a specific level (e.g., H264_LEVEL_3_1) or AUTO for automatic selection. (AI-inferred)
     level: Any = None
-    # Specifies the rate control mode for H.264 encoding, where HIGH or MEDIUM enables a look-ahead rate control algorithm that can improve video quality but may increase latency, while LOW disables look-ahead. (AI-inferred)
     look_ahead_rate_control: Any = None
-    # Sets the maximum output bitrate in bits per second for this H.264 video encoder, used to cap the encoding rate when variable bitrate (VBR or QVBR) rate control is selected. (AI-inferred)
     max_bitrate: Any = None
-    # Sets the minimum bitrate in bits per second for the H.264 video encoding, which is used when the rate control mode is variable (VBR) to prevent the bitrate from falling too low and help ensure stable video quality. (AI-inferred)
     min_bitrate: Any = None
-    # Sets the minimum interval between I-frames in the H.264 video output, expressed in seconds or frames depending on the GOP size units, controlling keyframe frequency. (AI-inferred)
     min_iinterval: Any = None
-    # Determines the lowest quantization parameter (QP) value that the H.264 encoder can use, which sets an upper bound on video quality and helps control bitrate for the video stream. (AI-inferred)
     min_qp: Any = None
-    # Sets the number of reference frames used for H.264 encoding, balancing compression efficiency against decoder complexity and memory usage. (AI-inferred)
     num_ref_frames: Any = None
-    # Controls whether the pixel aspect ratio (PAR) is set to the source's PAR or manually specified via par_numerator and par_denominator values. (AI-inferred)
     par_control: Any = None
-    # Specifies the denominator of the pixel aspect ratio (PAR) for the H.264 encoded video, used together with par_numerator to define the shape of non-square pixels in the output. (AI-inferred)
     par_denominator: Any = None
-    # The numerator of the pixel aspect ratio (PAR) for the H.264 video output, paired with par_denominator to define the pixel shape. (AI-inferred)
     par_numerator: Any = None
-    # Sets the H.264 profile used for encoding the video, with allowed values like BASELINE, MAIN, HIGH, HIGH_10BIT, and HIGH_422. (AI-inferred)
     profile: Any = None
-    # Specifies the quality level for the H.264 video encode, applicable only when the rate control mode is QVBR, with valid values including MEDIUM, HIGH, HIGHER, HIGHEST, and LOW. (AI-inferred)
     quality_level: Any = None
-    # For QVBR rate control mode, specifies the target video quality level from 1 (lowest) to 10 (highest), to balance bitrate and visual quality. (AI-inferred)
     qvbr_quality_level: Any = None
-    # Controls whether the H.264 encoder uses constant bitrate (CBR), variable bitrate (VBR), or quality-defined variable bitrate (QVBR) for the video output. (AI-inferred)
     rate_control_mode: Any = None
-    # Sets the scanning system for the H.264 video output, either INTERLACED or PROGRESSIVE. (AI-inferred)
     scan_type: Any = None
-    # This field controls whether the H.264 encoder enables or disables scene change detection, which forces a keyframe when a scene change is detected, with allowed values 'ENABLED' and 'DISABLED'. (AI-inferred)
     scene_change_detect: Any = None
-    # Specifies the number of slices per frame for H.264 encoding, accepting an integer from 1 to 4, where a higher number improves error resilience at the cost of compression efficiency. (AI-inferred)
     slices: Any = None
-    # The amount of softening applied to the video output, where values from 0 to 100 control how soft the image appears, with higher values producing a more softened picture. (AI-inferred)
     softness: Any = None
-    # Specifies whether to enable spatial adaptive quantization, which redistributes encoding bits within a frame to preserve detail in areas of high spatial complexity. (AI-inferred)
     spatial_aq: Any = None
-    # Specifies the number of frames in a sub-group of pictures (sub-GOP) for H.264 encoding, controlling the frequency of intra frames within the main GOP to support seeking and segment alignment in streaming outputs. (AI-inferred)
     subgop_length: Any = None
-    # Specifies the H.264 output syntax for the video encode, with values such as DEFAULT or RP2027 (the latter used for broadcast-compliant RP 2027 syntax). (AI-inferred)
     syntax: Any = None
-    # Determines whether H.264 temporal adaptive quantization is enabled or disabled to improve visual quality by adjusting quantizer parameters based on temporal complexity. (AI-inferred)
     temporal_aq: Any = None
-    # Configures the timecode burn-in overlay for the H.264 video, including font size, position, and optional prefix. (AI-inferred)
     timecode_burnin_settings: Any = None
-    # Determines the method of timecode insertion for the H.264 output, using SEI messages (such as PIC_TIMING_SEI or SCTE_35_SEI) or disabling insertion altogether. (AI-inferred)
     timecode_insertion: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings_ColorSpaceSettings:
-    # Indicates that the H.265 encoder should pass through the video's color space information without converting it, preserving the original color metadata. (AI-inferred)
     color_space_passthrough_settings: Any = None
-    # Specifies the Dolby Vision 8.1 color space settings for the H.265 encoder, including the base64-encoded luma and chroma data used to carry Dolby Vision metadata. (AI-inferred)
     dolby_vision81_settings: Any = None
-    # Defines the HDR10 settings (MaxCll and MaxFall) applied to the H.265 video codec within the MediaLive channel's color space settings. (AI-inferred)
     hdr10_settings: Any = None
-    # The hlg2020_settings block, when present, enables the HLG2020 color space for the H.265 video description; it is an empty configuration block that requires no sub-parameters. (AI-inferred)
     hlg2020_settings: Any = None
-    # Defines the color space conversion settings for Rec.601 in the H.265 encoder, including adjustments for contrast, gamma, and gamma correction. (AI-inferred)
     rec601_settings: Any = None
-    # Specifies that the H.265 video encoder should use the Rec.709 color space for output; this settings block is an empty structure that selects Rec.709 conversion. (AI-inferred)
     rec709_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_H265Settings:
-    # Specifies the level of adaptive quantization applied during H.265 encoding (auto, high, low, medium, or off) to improve subjective quality by allocating bits based on local scene complexity. (AI-inferred)
     adaptive_quantization: Any = None
-    # Controls how Active Format Description (AFD) signaling is emitted in the H.265 video encode, with values such as NONE, AUTO, or FIXED determining the handling of AFD metadata. (AI-inferred)
     afd_signaling: Any = None
-    # Sets an alternative transfer function (such as BT709, HLG, or PQ) for the H.265 video to use when the source lacks an embedded transfer function, controlling HDR color interpretation. (AI-inferred)
     alternative_transfer_function: Any = None
-    # Specifies the target average bitrate in bits per second for the H.265 (HEVC) encoder, controlling the output video quality and file size for this video description in the MediaLive channel. (AI-inferred)
     bitrate: Any = None
-    # Sets the size of the encoder's HRD buffer in bits, controlling how much coded H.265 video data can be buffered before output, which affects bitrate constancy and latency. (AI-inferred)
     buf_size: Any = None
-    # Specifies whether MediaLive inserts color metadata (such as color space and range information) into the H.265 encoded video output, with valid values INSERT or IGNORE. (AI-inferred)
     color_metadata: Any = None
-    # Configures the color space settings (including color space type and conversion parameters such as HDR10, Rec. 709, or Rec. 601) for the H.265 video output in the MediaLive channel's encoder settings. (AI-inferred)
     color_space_settings: Any = None
     deblocking: Any = None
-    # Specifies the filter settings for H.265 video encoding, including temporal filter settings that reduce noise and improve compression efficiency. (AI-inferred)
     filter_settings: Any = None
-    # Specifies the Active Format Description (AFD) value that MediaLive embeds in the H.265 output when the AFD signaling mode is set to FIXED, overriding any AFD value from the input source. (AI-inferred)
     fixed_afd: Any = None
-    # Controls whether MediaLive applies adaptive quantization to reduce visual flicker in the H.265 video encode, with values 'ENABLED' or 'DISABLED'. (AI-inferred)
     flicker_aq: Any = None
-    # Specifies the denominator of the frame rate fraction (together with framerateNumerator) that defines the output video frame rate in H.265 encoding, e.g., 1001 for a 29.97 fps rate. (AI-inferred)
     framerate_denominator: Any = None
-    # Specifies the numerator of the frame rate fraction for H.265 encoded video, used with framerate_denominator to determine the output frame rate (e.g., 30000/1001 for 29.97 fps). (AI-inferred)
     framerate_numerator: Any = None
-    # Specifies whether the H.265 encoder uses a B-frame as a reference for subsequent frames (ENABLED) or disables this behavior (DISABLED), affecting compression efficiency and picture structure. (AI-inferred)
     gop_breference: Any = None
-    # Sets the number of B-frames between reference frames to control the GOP closed cadence for the H.265 encoder in a MediaLive channel. (AI-inferred)
     gop_closed_cadence: Any = None
-    # Specifies the number of B-frames between reference frames (I/P frames) in the H.265 encoded output, controlling the GOP structure and compression efficiency. (AI-inferred)
     gop_num_bframes: Any = None
-    # Specifies the maximum interval between keyframes (in frames or seconds, depending on the gop_size_units setting) for the H.265 video encoder. (AI-inferred)
     gop_size: Any = None
-    # Specifies the units for the gop_size field, either SECONDS or FRAMES, in the H.265 encoder settings for a video description in an AWS MediaLive channel. (AI-inferred)
     gop_size_units: Any = None
-    # Specifies the H.265/HEVC level for this video encode, which controls the maximum supported resolution, frame rate, and bitrate for the encoder output (e.g., H265_LEVEL_4_1). (AI-inferred)
     level: Any = None
-    # Determines the look-ahead rate control mode for H.265 encoding in MediaLive, where HIGH improves quality but reduces speed, MEDIUM balances quality and speed, and LOW maximizes encoding speed. (AI-inferred)
     look_ahead_rate_control: Any = None
-    # The maximum bitrate in bits per second for the H.265 video encoder, limiting the output bitrate for this video description. (AI-inferred)
     max_bitrate: Any = None
-    # The minimum bitrate in bits per second that the H.265 encoder should target, ensuring the output stays above this lower bound even in low-complexity scenes. (AI-inferred)
     min_bitrate: Any = None
-    # Sets the minimum interval between I-frames for the H.265 encoder, measured in frames or seconds depending on the gop_size_units setting, to prevent I-frames from occurring more frequently than this value. (AI-inferred)
     min_iinterval: Any = None
-    # Sets the minimum quantization parameter (QP) value for H.265 video encoding in AWS MediaLive, preventing the encoder from using lower QPs that would produce higher quality and larger bitrate. (AI-inferred)
     min_qp: Any = None
-    # Controls whether the H.265 encoder permits motion vectors to cross picture boundaries, with ENABLED allowing them to extend beyond the picture edge and DISABLED restricting them within the picture frame. (AI-inferred)
     mv_over_picture_boundaries: Any = None
-    # Specifies whether temporal motion vector prediction is enabled (ENABLED) or disabled (DISABLED) for H.265 video encoding, affecting inter-frame prediction efficiency and compression. (AI-inferred)
     mv_temporal_predictor: Any = None
-    # Specifies the denominator of the pixel aspect ratio (PAR) for the H.265 video encode, which together with par_numerator controls the display aspect ratio, with 1 commonly denoting square pixels. (AI-inferred)
     par_denominator: Any = None
-    # The numerator of the pixel aspect ratio (PAR) for the H.265 video output, used together with par_denominator to define non-square pixel dimensions. (AI-inferred)
     par_numerator: Any = None
-    # Specifies the H.265 profile for the video encoder, which determines features such as bit depth and chroma subsampling (e.g., MAIN, MAIN_10BIT, HIGH). (AI-inferred)
     profile: Any = None
-    # The `qvbr_quality_level` specifies the target quality level (1–10) for QVBR (Quality-defined Variable Bitrate) rate control in H.265 encodes, where higher values produce better quality and higher bitrates. (AI-inferred)
     qvbr_quality_level: Any = None
-    # Determines whether the H.265 encoder uses constant bitrate (CBR), variable bitrate (VBR), or quality-defined variable bitrate (QVBR) rate control. (AI-inferred)
     rate_control_mode: Any = None
-    # Specifies the scanning mode for the H.265 video output, either progressive or interlaced, controlling whether each frame is encoded as a single progressive frame or split into two interlaced fields. (AI-inferred)
     scan_type: Any = None
-    # Determines whether H.265 scene change detection is enabled or disabled (ENABLED/DISABLED), allowing the encoder to insert IDR frames at scene changes for more efficient compression. (AI-inferred)
     scene_change_detect: Any = None
-    # Specifies the number of slices per picture for H.265 encoding, an integer between 1 and 16. (AI-inferred)
     slices: Any = None
-    # Specifies the number of frames in each sub-group of pictures (sub-GOP) within the H.265 video output, subdividing the GOP to control compression efficiency and error resilience. (AI-inferred)
     subgop_length: Any = None
-    # Specifies the H.265 encoding tier (MAIN or HIGH), which determines the codec's maximum bit rate and quality profile. (AI-inferred)
     tier: Any = None
-    # Specifies the height, in pixels, of each tile used in the H.265 encoding when tiling is enabled, and must be a multiple of 32. (AI-inferred)
     tile_height: Any = None
     tile_padding: Any = None
-    # Specifies the width of each H.265 tile in units of 128x128-pixel blocks, controlling how the frame is divided into tiles for parallel encoding. (AI-inferred)
     tile_width: Any = None
-    # Configures how MediaLive overlays (burns in) the timecode onto the H.265 video output, including settings such as the timecode prefix, source, and font size. (AI-inferred)
     timecode_burnin_settings: Any = None
-    # Specifies whether timecode information is embedded in the H.265 video output, typically via the picture timing SEI message (e.g., DISABLED or PIC_TIMING_SEI). (AI-inferred)
     timecode_insertion: Any = None
-    # Specifies the treeblock size for H.265 encoding in MediaLive, where 'LARGE' and 'SMALL' control the coding tree unit dimensions (e.g., 64x64 for large, 16x16 for small) to trade compression efficiency against quality. (AI-inferred)
     treeblock_size: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2Settings_FilterSettings:
-    # Configures the temporal noise-reduction filter for MPEG-2 encoding, including the filter strength and optional post-filter sharpening, which smooths visual noise across frames to improve compression efficiency. (AI-inferred)
     temporal_filter_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings_Mpeg2Settings:
-    # Controls the MPEG-2 encoder's adaptive quantization mode (OFF, LOW, MEDIUM, or HIGH), which dynamically adjusts quantization levels based on scene complexity to optimize perceptual video quality. (AI-inferred)
     adaptive_quantization: Any = None
-    # Controls the insertion of Active Format Description (AFD) signaling into MPEG-2 video output, with valid values including NONE, AUTO, and FIXED. (AI-inferred)
     afd_signaling: Any = None
-    # Specifies whether to include color metadata (such as color space, color primaries, and transfer characteristics) in the MPEG-2 video output, with allowed values INSERT or IGNORE. (AI-inferred)
     color_metadata: Any = None
-    # Sets whether the MPEG-2 encoder uses the input's color space automatically (AUTO) or forces the color space specified in ColorSpaceRec (FORCE). (AI-inferred)
     color_space: Any = None
-    # Specifies the display aspect ratio (e.g., 4:3 or 16:9) used for the MPEG-2 video encode output. (AI-inferred)
     display_aspect_ratio: Any = None
-    # Configures temporal filtering for MPEG-2 video encoding, controlling the strength of noise reduction applied across frames before compression. (AI-inferred)
     filter_settings: Any = None
-    # Specifies the Active Format Description (AFD) value to be inserted into the MPEG-2 video stream when the associated AFD mode is set to 'fixed'. (AI-inferred)
     fixed_afd: Any = None
-    # The denominator of the fractional frame rate (numerator/denominator) that sets the output frame rate for MPEG-2 encoding, such as 1001 for 29.97 or 59.94 fps or 1 for integer frame rates. (AI-inferred)
     framerate_denominator: Any = None
-    # The numerator of the MPEG-2 output frame rate fraction, paired with framerate_denominator to define values such as 30000/1001 for 29.97 fps. (AI-inferred)
     framerate_numerator: Any = None
-    # Specifies the number of GOPs between each closed GOP, where 0 disables closed GOPs, 1 makes every GOP closed, 2 makes every second GOP closed, and so on. (AI-inferred)
     gop_closed_cadence: Any = None
-    # The number of B-frames (bi-directional predictive frames) to include in each Group of Pictures (GOP) for MPEG2 video encoding. (AI-inferred)
     gop_num_bframes: Any = None
-    # Defines the numeric size of the Group of Pictures (GOP) for MPEG2 encoding, determining how frequently full keyframes are inserted, where the unit (frames or seconds) is specified by the accompanying `gop_size_units` property. (AI-inferred)
     gop_size: Any = None
-    # Specifies whether the gop_size value is measured in frames or seconds for the MPEG2 codec settings. (AI-inferred)
     gop_size_units: Any = None
-    # Specifies whether the MPEG-2 encoded video output uses progressive or interlaced scanning (valid values: PROGRESSIVE or INTERLACED). (AI-inferred)
     scan_type: Any = None
-    # Specifies the number of pictures (frames) in each sub-group of pictures (sub-GOP) used for MPEG-2 video encoding in the MediaLive channel. (AI-inferred)
     subgop_length: Any = None
-    # Specifies how the MPEG2 encoder burns in timecode onto the video output, including settings such as the timecode source and an optional prefix. (AI-inferred)
     timecode_burnin_settings: Any = None
-    # Determines how timecode is inserted into the MPEG2 video output, with allowed values such as DISABLED, GOP_TIMESTAMP, and PIC_TIMING_SEI. (AI-inferred)
     timecode_insertion: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions_CodecSettings:
-    # Configures the AV1 video codec settings for the video description, including frame rate, GOP size, bitrate, and rate control options. (AI-inferred)
     av1_settings: Any = None
-    # Specifies the frame capture codec settings (e.g., capture interval and interval units) used when the video codec is set to FRAME_CAPTURE, configuring how video is captured as JPEG frames. (AI-inferred)
     frame_capture_settings: Any = None
-    # This object configures H.264 video encoding parameters, such as bitrate, frame rate, resolution, profile, and GOP structure, for the associated video description in the MediaLive channel's encoder settings. (AI-inferred)
     h264_settings: Any = None
-    # Specifies the H.265/HEVC codec configuration, including bitrate, frame rate, GOP structure, and rate-control settings, used by MediaLive to encode this video description. (AI-inferred)
     h265_settings: Any = None
-    # The mpeg2_settings object holds the MPEG-2 codec configuration for the video description, specifying parameters such as frame rate, GOP size and structure, scan type, color metadata, and timecode insertion. (AI-inferred)
     mpeg2_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings_VideoDescriptions:
-    # Specifies the video codec and its codec-specific settings (such as H.264 or H.265 parameters) for this video description within the MediaLive channel encoder configuration. (AI-inferred)
     codec_settings: Any = None
-    # The height of the video output in pixels, which combined with `width` defines the encoding resolution of the channel's output video. (AI-inferred)
     height: Any = None
-    # Specifies a unique name for this video description, used to reference it from output settings in the channel via the video_description_name property. (AI-inferred)
     name: Any = None
-    # Determines the encoder's response to AFD (Active Format Description) codes in the input video when applying scaling or aspect ratio adjustments, using values such as NONE, PASSTHROUGH, or RESPOND. (AI-inferred)
     respond_to_afd: Any = None
-    # Specifies how the video is scaled to match the output resolution: DEFAULT preserves the original aspect ratio by adding letterboxing/pillarboxing as needed, while STRETCH_TO_OUTPUT stretches the video to fill the entire output frame, disregarding the original aspect ratio. (AI-inferred)
     scaling_behavior: Any = None
-    # The amount of sharpening to apply to the video output, where a higher value increases sharpness and can improve perceived image quality for the encoded video. (AI-inferred)
     sharpness: Any = None
-    # The width of the video in pixels for this video description, which must be an even number and defaults to the source width if omitted. (AI-inferred)
     width: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_EncoderSettings:
-    # Specifies the list of audio outputs to be encoded, where each item describes the audio source selector, codec settings, and language information for that audio output. (AI-inferred)
     audio_descriptions: Any = None
-    # Determines whether MediaLive inserts black video during ad avails (avail blanking) and optionally specifies an image to display during those periods, controlled by an enabled/disabled state. (AI-inferred)
     avail_blanking: Any = None
-    # Specifies the ad avail configuration for the encoder, including SCTE-35 message handling such as splice insert or time signal settings. (AI-inferred)
     avail_configuration: Any = None
-    # Specifies the blackout slate settings used by the MediaLive encoder to display a slate image (or other content) during blackout periods, such as when the input signal is lost or at the end of a network blackout. (AI-inferred)
     blackout_slate: Any = None
-    # Configures the caption outputs for the MediaLive channel by defining how captions are selected, encoded, and delivered in the encoder settings. (AI-inferred)
     caption_descriptions: Any = None
-    # Configures color space conversion and color correction adjustments applied to the video in the channel's encoder pipeline. (AI-inferred)
     color_correction_settings: Any = None
-    # Specifies which MediaLive encoding features, such as input prepare and static image fade in/out, are enabled for this channel's encoder settings. (AI-inferred)
     feature_activations: Any = None
-    # Configures global encoder settings that apply across all outputs in the MediaLive channel, including input loss behavior, output timing source, and initial frame rate. (AI-inferred)
     global_configuration: Any = None
-    # Configures the motion graphics overlay feature for the channel, specifying whether motion graphics insertion is enabled and the URL of the HTML5 asset to be overlaid on the video output. (AI-inferred)
     motion_graphics_configuration: Any = None
-    # Defines the Nielsen audience measurement settings for the channel, including watermark and distribution configuration used to enable Nielsen tracking in the encoded output. (AI-inferred)
     nielsen_configuration: Any = None
-    # Specifies the output groups for the channel, which define how encoded outputs are packaged and delivered to destinations such as MediaStore, MediaPackage, or S3. (AI-inferred)
     output_groups: Any = None
-    # Configures whether the MediaLive channel generates thumbnails, and if enabled, the interval (in seconds) at which thumbnails are captured. (AI-inferred)
     thumbnail_configuration: Any = None
-    # Configures the channel's timecode source and synchronization, such as using an embedded timecode from the input or generating one from the system clock, for outputs. (AI-inferred)
     timecode_config: Any = None
-    # Specifies the video encoding parameters for the MediaLive channel, including codec settings, resolution, frame rate, bitrate, and other output stream properties for each video description. (AI-inferred)
     video_descriptions: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InferenceSettings_AudioFeedInputs:
-    # Defines the name of an audio selector within the MediaLive channel that supplies the audio to this inference feed, so the inference settings can process that specific audio input. (AI-inferred)
     audio_selector_name: Any = None
     feed_input: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InferenceSettings:
-    # Defines the list of audio feed inputs that supply audio to the MediaLive inference engine, mapping each named audio feed to a source from the channel's input for use in inference operations. (AI-inferred)
     audio_feed_inputs: Any = None
     feed_arn: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_AudioSilenceSettings:
-    # The name of the audio selector that MediaLive monitors for silence to trigger an automatic input failover. (AI-inferred)
     audio_selector_name: Any = None
-    # The duration of audio silence in milliseconds that must be exceeded before the automatic input failover condition is considered met, triggering a failover to the alternate input. (AI-inferred)
     audio_silence_threshold_msec: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_InputLossSettings:
-    # Specifies the threshold in milliseconds that an input must be lost before the automatic input failover condition is considered triggered. (AI-inferred)
     input_loss_threshold_msec: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings_VideoBlackSettings:
-    # The black detection threshold, expressed as a percentage of the video frame (0 means the entire frame must be black, 100 means any black pixels are sufficient), used in the video black failover condition to trigger automatic input failover. (AI-inferred)
     black_detect_threshold: Any = None
-    # The threshold in milliseconds for detecting a black video signal, used as a failover condition trigger in MediaLive channel input failover settings. (AI-inferred)
     video_black_threshold_msec: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions_FailoverConditionSettings:
-    # Defines the audio silence threshold (in milliseconds) that MediaLive monitors to trigger automatic input failover when audio is absent for that duration. (AI-inferred)
     audio_silence_settings: Any = None
-    # Configures the input loss failover condition, specifying the threshold in milliseconds to wait before declaring an input loss and triggering a failover to the backup input. (AI-inferred)
     input_loss_settings: Any = None
-    # Configures failover detection based on black video, including thresholds for black detection and minimum black video duration before triggering an automatic input switch. (AI-inferred)
     video_black_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings_FailoverConditions:
-    # Specifies the condition settings that determine when automatic failover to the backup input is triggered, such as input loss thresholds. (AI-inferred)
     failover_condition_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_AutomaticInputFailoverSettings:
-    # The time, in milliseconds, that MediaLive waits after an input error clears before marking the input as available again for automatic failover, preventing rapid re-failover. (AI-inferred)
     error_clear_time_msec: Any = None
-    # Specifies the list of conditions (such as audio loss or video loss) that, when met, trigger an automatic failover from the primary input to the secondary input in an input attachment with automatic failover enabled. (AI-inferred)
     failover_conditions: Any = None
-    # Determines whether the primary or secondary input is used as the active input when both are healthy, with valid values being PRIMARY_INPUT (default) or SECONDARY_INPUT. (AI-inferred)
     input_preference: Any = None
-    # The unique ID of the secondary input used as the failover target in an automatic input failover pair. (AI-inferred)
     secondary_input_id: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioHlsRenditionSelection:
-    # Specifies the HLS rendition group ID (GROUP-ID) from which to select an audio rendition for this audio selector. (AI-inferred)
     group_id: Any = None
-    # The name of the HLS audio rendition to select for this audio selector, matching the NAME attribute of the rendition in the HLS media playlist. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioLanguageSelection:
-    # The ISO 639-2 language code (e.g., 'eng' for English) used by MediaLive to match and select the appropriate audio track when the audio selector's selection mode is set to LANGUAGE. (AI-inferred)
     language_code: Any = None
-    # Controls whether the audio language selection uses a loose match (selecting the first audio track that matches the specified language) or a strict match (only selecting an audio track whose language exactly matches), with allowed values LOOSE and STRICT. (AI-inferred)
     language_selection_policy: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_DolbyEdecode:
-    # Specifies the Dolby E program number (0-7) to select from the Dolby E audio stream identified by the PID. (AI-inferred)
     program_selection: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids_PremixSettings:
-    # Configures audio normalization for the selected PID, specifying the loudness normalization algorithm (e.g., ITU-R BS.1770-2) and the target loudness level in LUFS to be applied to the audio. (AI-inferred)
     audio_normalization_settings: Any = None
     channels: Any = None
     gain_db: Any = None
-    # Configures the audio remix settings for the selected PID, defining how input channels are combined and mapped to output channels through channel mappings and input channel levels. (AI-inferred)
     remix_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection_Pids:
     dolby_edecode: Any = None
-    # The specific program identifier (PID) of the audio track to extract from the input when using PID-based audio selection in this audio selector. (AI-inferred)
     pid: Any = None
-    # Specifies the settings for a secondary audio PID to be mixed with the primary audio PID selected by the parent, enabling premixing of two audio streams from the same input. (AI-inferred)
     premix_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioPidSelection:
-    # The packet identifier (PID) of the specific audio stream to select from the input when using PID-based audio selection. (AI-inferred)
     pid: Any = None
-    # Specifies the list of program identifiers (PIDs) that the audio selector uses to extract audio from the transport stream input. (AI-inferred)
     pids: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection_Tracks:
-    # Specifies the premix gain (in dB) to apply to the selected audio track in the MediaLive channel input. (AI-inferred)
     premix_settings: Any = None
-    # The zero-based index of the audio track within the input to select for this audio selector. (AI-inferred)
     track: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings_AudioTrackSelection:
-    # Contains the Dolby E decoding settings for the selected audio track, including which Dolby E program to extract and decode. (AI-inferred)
     dolby_edecode: Any = None
-    # The `tracks` list specifies the individual audio tracks to select from the input, where each track object identifies the track by its track ID and optionally a byte-rate range to be used for the audio selector. (AI-inferred)
     tracks: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors_SelectorSettings:
-    # Selects a specific HLS rendition for the audio selector by specifying the rendition's group ID and name, enabling the channel to use that variant from an HLS input as the audio source. (AI-inferred)
     audio_hls_rendition_selection: Any = None
-    # Configures the audio selector to automatically choose the audio track matching a designated language code (e.g., 'eng') from the input source. (AI-inferred)
     audio_language_selection: Any = None
-    # Specifies the audio PID (program identifier) to select from the input source for this audio selector. (AI-inferred)
     audio_pid_selection: Any = None
-    # Specifies audio selection by track number for the input, including a list of tracks and optional Dolby E decode settings. (AI-inferred)
     audio_track_selection: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_AudioSelectors:
-    # Specifies a name for this audio selector, which is used to reference it in audio descriptions and other channel settings. (AI-inferred)
     name: Any = None
-    # Specifies the exact audio stream to select from the source input, using criteria such as PID, language, or track selection. (AI-inferred)
     selector_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_AncillarySourceSettings:
-    # Specifies which of the ancillary data channels (1-4) in the input source to extract captions from. (AI-inferred)
     source_ancillary_channel_number: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_DvbSubSourceSettings:
-    # Sets the language code (e.g., 'eng') that MediaLive uses for OCR processing of DVB Sub bitmap subtitles so they can be converted to text captions. (AI-inferred)
     ocr_language: Any = None
-    # The PID (packet identifier) in the transport stream from which to extract DVB Subtitle captions. (AI-inferred)
     pid: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_EmbeddedSourceSettings:
-    # Specifies whether to convert CEA-608 captions to CEA-708 captions for the embedded captions source, accepting values such as 'DISABLED' or 'UPCONVERT'. (AI-inferred)
     convert608_to708: Any = None
-    # Determines whether SCTE-20 captions embedded in the input are detected, with valid values 'AUTO' to enable detection and 'OFF' to disable it. (AI-inferred)
     scte20_detection: Any = None
-    # Specifies the EIA-608 channel number (1-4) from which to extract embedded captions when the input contains multiple caption channels. (AI-inferred)
     source608_channel_number: Any = None
-    # Specifies the CEA-608 caption track number (1-4) from the embedded source to select for caption extraction. (AI-inferred)
     source608_track_number: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_Scte20SourceSettings:
-    # Specifies whether to upconvert 608 captions to 708 format in the SCTE-20 source settings of a MediaLive caption selector, with valid values like DISABLED or UPCONVERT. (AI-inferred)
     convert608_to708: Any = None
-    # The number of the 608 caption channel to extract from the SCTE-20 source, which can be either 1 or 2. (AI-inferred)
     source608_channel_number: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_SmartSubtitleSourceSettings:
-    # Sets whether the smart subtitle captions are synchronized with the video timing, using the enum values 'DISABLED' (default) or 'ENABLED' to control time alignment with the source content. (AI-inferred)
     caption_synchronization_mode: Any = None
-    # Specifies the ARN of an AWS Elemental MediaLive channel output that supplies the inference feed used by the smart subtitle source for generating captions in this caption selector. (AI-inferred)
     inference_feed_output: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings_OutputRectangle:
-    # The height, in pixels, of the output rectangle that defines the region of the teletext page from which captions are extracted. (AI-inferred)
     height: Any = None
-    # The left offset in pixels of the output rectangle within the teletext source image, specifying the horizontal start position of the region from which teletext captions are extracted. (AI-inferred)
     left_offset: Any = None
-    # The top offset, in pixels, of the output rectangle that defines the teletext caption region within the video frame, measured from the top edge of the frame. (AI-inferred)
     top_offset: Any = None
-    # Specifies the width, in pixels, of the rectangular region of the video frame from which teletext captions are extracted. (AI-inferred)
     width: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings_TeletextSourceSettings:
-    # Specifies the rectangular region within the video frame from which teletext caption data is decoded, defined by left, top, width, and height in pixels. (AI-inferred)
     output_rectangle: Any = None
-    # Specifies the teletext page number to extract captions from in the teletext source for this caption selector. (AI-inferred)
     page_number: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors_SelectorSettings:
-    # Specifies configuration for extracting ancillary captions (such as EIA-608) from the input video, including which ancillary data channel number to use when selecting the captions. (AI-inferred)
     ancillary_source_settings: Any = None
-    # Selects ARIB (Japanese broadcast) captions for the caption selector, and because this settings object is empty in MediaLive, its presence alone enables ARIB caption extraction from the source. (AI-inferred)
     arib_source_settings: Any = None
-    # Defines the DVB-Sub caption source parameters, including the PID and language of the subtitle stream to extract from the input. (AI-inferred)
     dvb_sub_source_settings: Any = None
-    # Specifies the detailed settings for extracting embedded (EIA-608/708) captions from the video input, such as whether to convert 608 captions to 708 and which 608 channel number to capture. (AI-inferred)
     embedded_source_settings: Any = None
-    # Defines the parameters for extracting captions from an SCTE-20 source, such as whether to convert the embedded 608 captions to 708 and which 608 channel number to select. (AI-inferred)
     scte20_source_settings: Any = None
-    # Specifies the packet identifier (PID) and related settings used to extract SCTE-27 captions from the input for this caption selector. (AI-inferred)
     scte27_source_settings: Any = None
-    # Defines the Smart Subtitles caption selector source settings, which specify how MediaLive extracts the subtitle track from the input when that source type is selected. (AI-inferred)
     smart_subtitle_source_settings: Any = None
-    # Settings that define how to extract Teletext captions from the input, including the Teletext page number (and optional output rectangle) to use when decoding the captions. (AI-inferred)
     teletext_source_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_CaptionSelectors:
-    # Specifies the language code of the caption track to select from the input, such as 'eng' or 'spa'. (AI-inferred)
     language_code: Any = None
-    # The name of the caption selector, which links the extracted captions to a specific caption output in the channel. (AI-inferred)
     name: Any = None
-    # Configures the specific caption source format and decoding parameters for this caption selector, such as embedded, ancillary, SCTE-20, SCTE-27, ARIB, DVB-Sub, or teletext settings. (AI-inferred)
     selector_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_NetworkInputSettings_HlsInputSettings:
-    # The maximum bandwidth (in bits per second) that MediaLive uses to select the HLS video variant from the input playlist. (AI-inferred)
     bandwidth: Any = None
-    # Specifies the number of HLS segments that MediaLive buffers before starting playback from the source. (AI-inferred)
     buffer_segments: Any = None
-    # The number of times MediaLive retries fetching a failed HLS segment before reporting an input error. (AI-inferred)
     retries: Any = None
-    # The number of seconds to wait between retry attempts when fetching HLS segments or playlists for this input fails. (AI-inferred)
     retry_interval: Any = None
-    # Determines whether SCTE-35 ad markers are read from the HLS manifest (MANIFEST) or from the elementary stream (ELEMENTAL) of the input. (AI-inferred)
     scte35_source: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_NetworkInputSettings_MulticastInputSettings:
-    # Specifies the source IP address from which the multicast input will receive packets, filtering only traffic originating from that sender. (AI-inferred)
     source_ip_address: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_NetworkInputSettings:
-    # Provides HLS-specific configuration for this network input, such as bandwidth, buffer segments, retry and retry interval, and SCTE-35 handling. (AI-inferred)
     hls_input_settings: Any = None
-    # Contains settings for receiving a multicast UDP input stream, such as the multicast source IP address and port. (AI-inferred)
     multicast_input_settings: Any = None
-    # Specifies the level of server certificate validation for a network input (RTMP) source, with allowed values CHECK_CRYPTOGRAPHY_AND_VALIDATE (default) and CHECK_CRYPTOGRAPHY_ONLY. (AI-inferred)
     server_validation: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_VideoSelector_ColorSpaceSettings:
-    # Configures the HDR10 color space metadata for the video selector, including MaxCLL and MaxFALL values used for tone mapping. (AI-inferred)
     hdr10_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorPid:
-    # The packet identifier (PID) of the video stream to select from an MPEG-TS transport stream. (AI-inferred)
     pid: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_VideoSelector_SelectorSettings_VideoSelectorProgramId:
-    # The numeric program number within the multiplex or transport stream that this video selector will select for processing. (AI-inferred)
     program_id: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_VideoSelector_SelectorSettings:
-    # Defines the PID-based video selector settings, which specify the packet identifier (PID) of the video stream to extract from the input when the video selector is configured to use a PID. (AI-inferred)
     video_selector_pid: Any = None
-    # Specifies the program number (ID) within a multiplexed input that this video selector should use to pick the video stream. (AI-inferred)
     video_selector_program_id: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings_VideoSelector:
-    # Specifies the color space of the input video for this video selector (e.g., REC_601, REC_709, HDR10, or FOLLOW), which MediaLive uses to interpret and process the video's color information. (AI-inferred)
     color_space: Any = None
-    # Defines the color space settings for the video selector, including the color space (e.g., HDR10, HLG) and color space usage (e.g., FALLBACK, FORCE), to control how MediaLive processes the video's color information. (AI-inferred)
     color_space_settings: Any = None
-    # Determines how MediaLive handles color space metadata for the selected video input, with FALLBACK using the input's native color space when present and otherwise the configured color space, and FORCE always using the configured color space. (AI-inferred)
     color_space_usage: Any = None
-    # Specifies the specific video stream selection settings (such as PID, program number, or SCTE-27) used by the video selector to choose the video from the input. (AI-inferred)
     selector_settings: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments_InputSettings:
-    # Configures the audio selectors for the input attachment, which determine the audio tracks to be extracted from the input source and made available for encoding in the MediaLive channel. (AI-inferred)
     audio_selectors: Any = None
-    # Defines the caption selectors for the input, allowing extraction and processing of caption tracks such as embedded or SCTE-27 captions from the input source. (AI-inferred)
     caption_selectors: Any = None
-    # Specifies whether MediaLive applies a deblocking filter to the input video to reduce blocking compression artifacts, with valid values ENABLED or DISABLED. (AI-inferred)
     deblock_filter: Any = None
-    # Enables or disables the noise reduction filter applied to the incoming video signal, with valid values 'DISABLED' or 'ENABLED'. (AI-inferred)
     denoise_filter: Any = None
-    # Specifies the strength of the video filter applied to the input, which is used when the input filter is set to AUTO to adjust the level of filtering. (AI-inferred)
     filter_strength: Any = None
-    # Determines whether MediaLive applies a filter to the input signal, using AUTO (service decides based on input type), DISABLED (no filter), or FORCE (always apply the filter). (AI-inferred)
     input_filter: Any = None
-    # Specifies the network input settings, including HLS input configuration and server validation, that MediaLive applies to this input attachment. (AI-inferred)
     network_input_settings: Any = None
-    # The Packet Identifier (PID) of the SCTE-35 stream in the transport stream input, which MediaLive uses to extract ad-insertion signaling cues. (AI-inferred)
     scte35_pid: Any = None
-    # Controls whether MediaLive prefers or ignores SMPTE 2038 ancillary data embedded in the input, with valid values PREFER or IGNORE. (AI-inferred)
     smpte2038_data_preference: Any = None
-    # Specifies whether MediaLive continues to the next input or loops the current input when the source stream ends (for VOD-type inputs), accepting values like CONTINUE or LOOP. (AI-inferred)
     source_end_behavior: Any = None
-    # Determines which video stream from the attached input is used for the channel, allowing selection by PID or program ID. (AI-inferred)
     video_selector: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputAttachments:
-    # Defines the automatic input failover configuration for this input attachment, including the input preference (primary or not) and failover conditions such as video black that trigger switching to a secondary input. (AI-inferred)
     automatic_input_failover_settings: Any = None
-    # Specifies a user-defined name for this input attachment, used to identify it within the MediaLive channel. (AI-inferred)
     input_attachment_name: Any = None
-    # Identifies the MediaLive input that this attachment connects to the channel, referencing an existing AWS::MediaLive::Input resource. (AI-inferred)
     input_id: Any = None
-    # Specifies the processing and filtering settings for this input attachment, including audio/caption selectors and what happens when the source input ends. (AI-inferred)
     input_settings: Any = None
-    # Defines a list of logical interface names on the attached input that the channel should use, enabling the input attachment to target specific interfaces (e.g., per-pipeline) rather than all available ones. (AI-inferred)
     logical_interface_names: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_InputSpecification:
-    # Specifies the codec (e.g., MPEG2, AVC, or HEVC) of the input, which is part of the channel's input specification that defines the expected input format. (AI-inferred)
     codec: Any = None
-    # Specifies the maximum input bitrate (in megabits per second) that the channel can accept for its input, with supported values such as MAX_10_MBPS, MAX_20_MBPS, and MAX_50_MBPS. (AI-inferred)
     maximum_bitrate: Any = None
-    # Specifies the video resolution of the input source (e.g., SD, HD, UHD) so that MediaLive can properly process and encode the input. (AI-inferred)
     resolution: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_LinkedChannelSettings_FollowerChannelSettings:
     linked_channel_type: Any = None
-    # The ARN of the primary MediaLive channel that this follower channel is linked to for channel-level failover (channel follow) configuration. (AI-inferred)
     primary_channel_arn: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_LinkedChannelSettings_PrimaryChannelSettings:
-    # Specifies whether this linked channel is designated as the primary or secondary channel in the linked-channel relationship, with accepted values `PRIMARY` and `SECONDARY`, within the primary channel settings of the MediaLive channel's linked channel configuration. (AI-inferred)
     linked_channel_type: Any = None
 
 @dataclasses.dataclass
@@ -2160,18 +1336,13 @@ class LiveChannel_LinkedChannelSettings:
 
 @dataclasses.dataclass
 class LiveChannel_Maintenance:
-    # Specifies the day of the week on which the AWS Elemental MediaLive channel's maintenance window is scheduled (for example, MONDAY or TUESDAY). (AI-inferred)
     maintenance_day: Any = None
-    # Specifies the start time (in 24-hour HH:MM format, UTC) for the weekly maintenance window of the MediaLive channel. (AI-inferred)
     maintenance_start_time: Any = None
 
 @dataclasses.dataclass
 class LiveChannel_Vpc:
-    # The list of Elastic IP allocation IDs to assign to the channel's network interfaces in the VPC, giving the channel public IP addresses for internet connectivity. (AI-inferred)
     public_address_allocation_ids: Any = None
-    # The list of security group IDs attached to the elastic network interfaces that MediaLive creates in the VPC for the channel, controlling inbound and outbound traffic for the channel. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the subnets within your VPC where MediaLive places the channel's resources, such as inputs and outputs, to enable access to private resources. (AI-inferred)
     subnet_ids: Any = None
 
 _LiveChannel_AnywhereSettingsFields = {
@@ -4299,82 +3470,47 @@ _LiveChannel_VpcFields = {
 
 @dataclasses.dataclass
 class LiveChannelConfig:
-    # Configures the channel for MediaLive Anywhere, specifying the control plane endpoint and channel placement group to run on-premises MediaLive infrastructure. (AI-inferred)
     anywhere_settings: Any = None
-    # Defines the Cloud Digital Interface (CDI) input configuration for the channel, including the resolution (e.g., HD or FHD) that the CDI inputs must conform to. (AI-inferred)
     cdi_input_specification: Any = None
-    # Specifies whether the MediaLive channel uses the SINGLE_PIPELINE (one pipeline) or STANDARD (two pipelines for high availability) class. (AI-inferred)
     channel_class: Any = None
-    # Specifies the version of the MediaLive engine to run the channel, as an object containing a `version` string (the CloudFormation property `ChannelEngineVersion`). (AI-inferred)
     channel_engine_version: Any = None
-    # This is a list of AWS security group IDs that are attached to the MediaLive channel's elastic network interfaces when the channel is deployed in a VPC, controlling inbound and outbound network traffic to the channel's endpoints. (AI-inferred)
     channel_security_groups: Any = None
-    # Specifies the output destinations for the MediaLive channel, where each destination includes an ID and settings for delivering encoded media to targets like MediaPackage, a multiplex, or other endpoints. (AI-inferred)
     destinations: Any = None
-    # When set to true, this field triggers a dry run of the MediaLive channel create/update operation, validating the configuration without actually provisioning or modifying the channel. (AI-inferred)
     dry_run: Any = None
-    # Defines the encoding configuration for the MediaLive channel, including video, audio, captions, and output group settings that control how input sources are transcoded and delivered. (AI-inferred)
     encoder_settings: Any = None
     inference_settings: Any = None
-    # Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred)
     input_attachments: Any = None
-    # Specifies the input codec, maximum bitrate, and resolution for the channel's inputs, which MediaLive uses to determine the appropriate input settings. (AI-inferred)
     input_specification: Any = None
     linked_channel_settings: Any = None
-    # Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred)
     log_level: Any = None
-    # Specifies the day and start time for the weekly maintenance window of the MediaLive channel. (AI-inferred)
     maintenance: Any = None
-    # The name of the MediaLive channel, a user-friendly identifier for the channel within the AWS account. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Elemental MediaLive assumes to access input sources and output destinations for the channel. (AI-inferred)
     role_arn: Any = None
-    # Specifies the tags (key-value pairs) to attach to the AWS Elemental MediaLive channel, which can be used for cost allocation, access control, and identifying the channel in the AWS console. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC settings, including subnet IDs and security group IDs, that determine which VPC the MediaLive channel runs in. (AI-inferred)
     vpc: Any = None
 
 @dataclasses.dataclass
 class LiveChannelAttrs:
-    # Configures the channel for MediaLive Anywhere, specifying the control plane endpoint and channel placement group to run on-premises MediaLive infrastructure. (AI-inferred)
     anywhere_settings: Any = None
-    # The ARN is the unique Amazon Resource Name assigned to the MediaLive channel, used to reference the channel across AWS services. (AI-inferred)
     arn: Any = None
-    # Defines the Cloud Digital Interface (CDI) input configuration for the channel, including the resolution (e.g., HD or FHD) that the CDI inputs must conform to. (AI-inferred)
     cdi_input_specification: Any = None
-    # Specifies whether the MediaLive channel uses the SINGLE_PIPELINE (one pipeline) or STANDARD (two pipelines for high availability) class. (AI-inferred)
     channel_class: Any = None
-    # Specifies the version of the MediaLive engine to run the channel, as an object containing a `version` string (the CloudFormation property `ChannelEngineVersion`). (AI-inferred)
     channel_engine_version: Any = None
-    # This is a list of AWS security group IDs that are attached to the MediaLive channel's elastic network interfaces when the channel is deployed in a VPC, controlling inbound and outbound network traffic to the channel's endpoints. (AI-inferred)
     channel_security_groups: Any = None
-    # Specifies the output destinations for the MediaLive channel, where each destination includes an ID and settings for delivering encoded media to targets like MediaPackage, a multiplex, or other endpoints. (AI-inferred)
     destinations: Any = None
-    # When set to true, this field triggers a dry run of the MediaLive channel create/update operation, validating the configuration without actually provisioning or modifying the channel. (AI-inferred)
     dry_run: Any = None
-    # Defines the encoding configuration for the MediaLive channel, including video, audio, captions, and output group settings that control how input sources are transcoded and delivered. (AI-inferred)
     encoder_settings: Any = None
-    # The unique channel identifier assigned by AWS when the MediaLive channel is created. (AI-inferred)
     id: Any = None
     inference_settings: Any = None
-    # Defines the list of input attachments for the MediaLive channel, each specifying the input to use, its attached settings, and optional automatic input failover configuration. (AI-inferred)
     input_attachments: Any = None
-    # Specifies the input codec, maximum bitrate, and resolution for the channel's inputs, which MediaLive uses to determine the appropriate input settings. (AI-inferred)
     input_specification: Any = None
-    # The list of input IDs attached to the MediaLive channel. (AI-inferred)
     inputs: Any = None
     linked_channel_settings: Any = None
-    # Specifies the verbosity of the channel's logging, accepting values such as ERROR, WARNING, INFO, and DEBUG to control which log messages are emitted. (AI-inferred)
     log_level: Any = None
-    # Specifies the day and start time for the weekly maintenance window of the MediaLive channel. (AI-inferred)
     maintenance: Any = None
-    # The name of the MediaLive channel, a user-friendly identifier for the channel within the AWS account. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Elemental MediaLive assumes to access input sources and output destinations for the channel. (AI-inferred)
     role_arn: Any = None
-    # Specifies the tags (key-value pairs) to attach to the AWS Elemental MediaLive channel, which can be used for cost allocation, access control, and identifying the channel in the AWS console. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC settings, including subnet IDs and security group IDs, that determine which VPC the MediaLive channel runs in. (AI-inferred)
     vpc: Any = None
 
 LiveChannel = ubx.ResourceBinding(

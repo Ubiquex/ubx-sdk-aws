@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LocalGatewayVirtualInterface_Tags {
-  /** The user-defined key for a tag attached to the EC2 Local Gateway Virtual Interface, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Local Gateway Virtual Interface, used to categorize or identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

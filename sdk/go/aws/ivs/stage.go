@@ -41,9 +41,7 @@ type Stage_AutoParticipantRecordingConfiguration struct {
 }
 
 type Stage_Tags struct {
-	// A key for a metadata tag that you assign to an Amazon IVS Stage resource, enabling you to organize, filter, and control access to the stage for purposes such as cost allocation and resource management. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag applied to the Amazon IVS stage resource, used for metadata, identification, and cost tracking. (AI-inferred)
 	Value any
 }
 

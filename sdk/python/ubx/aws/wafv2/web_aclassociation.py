@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAclassociationConfig:
-    # The ARN of the AWS resource (such as an Application Load Balancer, API Gateway, or Amazon CloudFront distribution) that this WAFv2 web ACL is being associated with. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the AWS WAF v2 web ACL to associate with the specified resource. (AI-inferred)
     web_aclarn: Any = None
 
 @dataclasses.dataclass
 class WebAclassociationAttrs:
-    # The ARN of the AWS resource (such as an Application Load Balancer, API Gateway, or Amazon CloudFront distribution) that this WAFv2 web ACL is being associated with. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the AWS WAF v2 web ACL to associate with the specified resource. (AI-inferred)
     web_aclarn: Any = None
 
 WebAclassociation = ubx.ResourceBinding(

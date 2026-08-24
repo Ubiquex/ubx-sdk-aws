@@ -18,7 +18,6 @@ class Integration_IntegrationConfig:
 @dataclasses.dataclass
 class Integration_Tags:
     key: Any = None
-    # The value of the tag assigned to the Glue integration, used with the tag key to attach metadata for cost allocation, access control, and resource identification. (AI-inferred)
     value: Any = None
 
 _Integration_IntegrationConfigFields = {
@@ -36,7 +35,6 @@ _Integration_TagsFields = {
 class IntegrationConfig:
     # An optional set of non-secret key value pairs that contains additional contextual information about the data.
     additional_encryption_context: Any = None
-    # Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
     data_filter: Any = None
     description: Any = None
     # The configuration settings for the integration.
@@ -58,7 +56,6 @@ class IntegrationAttrs:
     additional_encryption_context: Any = None
     # The time (UTC) when the integration was created.
     create_time: Any = None
-    # Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
     data_filter: Any = None
     description: Any = None
     # The Amazon Resource Name (ARN) of the integration.

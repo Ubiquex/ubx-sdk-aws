@@ -8,21 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dbproxy_Auth:
-    # Specifies the authentication scheme the RDS proxy uses when connecting to the database engine, such as SECRETS for AWS Secrets Manager-based credentials. (AI-inferred)
     auth_scheme: Any = None
-    # Specifies the password authentication method the DB proxy uses for client connections, such as MYSQL_NATIVE_PASSWORD or MYSQL_CACHING_SHA2_PASSWORD for MySQL, or POSTGRES_SCRAM_SHA_256 for PostgreSQL, enabling compatibility with the client's password hashing scheme. (AI-inferred)
     client_password_auth_type: Any = None
-    # A user-supplied description for this authentication entry, helping identify the purpose of the IAM role or secret used to connect to the DB proxy. (AI-inferred)
     description: Any = None
-    # Indicates whether IAM authentication is required or disabled for connections to the DB proxy using this authentication configuration, with allowed values 'REQUIRED' or 'DISABLED'. (AI-inferred)
     iamauth: Any = None
-    # Specifies the Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the database user credentials used by this auth configuration for the RDS proxy. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class Dbproxy_Tags:
     key: Any = None
-    # The value component of a key-value tag attached to the RDS DB proxy, used for organizing and identifying the resource (e.g., by environment or cost center). (AI-inferred)
     value: Any = None
 
 _Dbproxy_AuthFields = {

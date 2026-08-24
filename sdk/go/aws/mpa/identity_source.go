@@ -4,11 +4,8 @@ package mpa
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentitySource_IdentitySourceParameters_IamIdentityCenter struct {
-	// The URL of the approval portal associated with the IAM Identity Center identity source, where users can review and approve or deny access requests. (AI-inferred)
 	ApprovalPortalUrl any
-	// The Amazon Resource Name (ARN) of the AWS IAM Identity Center (successor to AWS Single Sign-On) instance that this identity source is associated with. (AI-inferred)
 	InstanceArn any
-	// The AWS region where the IAM Identity Center (successor to AWS SSO) instance used as the identity source is deployed. (AI-inferred)
 	Region any
 }
 

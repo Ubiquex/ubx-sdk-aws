@@ -4,7 +4,6 @@ package certificate
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerAccount_ExpiryEventsConfiguration struct {
-	// Specifies the number of days before certificate expiration when ACM begins emitting expiry-related events, allowing you to adjust the notification lead time. (AI-inferred)
 	DaysBeforeExpiry any
 }
 
@@ -13,14 +12,11 @@ var ManagerAccount_ExpiryEventsConfigurationFields = ubx.FieldMap{
 	}
 
 type ManagerAccountConfig struct {
-	// Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred)
 	ExpiryEventsConfiguration any
 }
 
 type ManagerAccountAttrs struct {
-	// The AWS account ID that owns this ACM account-level configuration, automatically derived from the account in which the resource is deployed. (AI-inferred)
 	AccountId any
-	// Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred)
 	ExpiryEventsConfiguration any
 }
 

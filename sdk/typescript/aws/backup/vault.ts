@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Vault_LockConfiguration {
-  /** Specifies the number of days after the backup vault lock is applied during which the lock configuration can still be changed or removed, after which the vault lock becomes permanently immutable. (AI-inferred) */
   changeableForDays?: number | Computed<number>;
-  /** Specifies the maximum number of days that the backup vault lock will retain recovery points before they are permanently deleted, enforcing an upper bound on retention for the vault. (AI-inferred) */
   maxRetentionDays?: number | Computed<number>;
-  /** The minimum number of days that recovery points in the backup vault must be retained, enforced by the vault lock configuration. (AI-inferred) */
   minRetentionDays: number | Computed<number>;
 }
 
 export interface Vault_Notifications {
-  /** Specifies the list of backup vault event types (e.g., BACKUP_JOB_STARTED, BACKUP_JOB_COMPLETED) that trigger the SNS notification to the configured topic. (AI-inferred) */
   backupVaultEvents: string[] | Computed<string[]>;
-  /** The ARN of the Amazon SNS topic to which AWS Backup publishes event notifications for this backup vault, as configured for the vault's notification events. (AI-inferred) */
   snstopicArn: string | Computed<string>;
 }
 
@@ -29,34 +24,21 @@ const Vault_NotificationsFields: FieldMap = {
 };
 
 export interface VaultConfig {
-  /** Specifies a resource-based policy (in JSON) that defines which IAM principals can perform actions on the backup vault and its recovery points, such as viewing, creating, or deleting backups. (AI-inferred) */
   accessPolicy?: unknown | Computed<unknown>;
-  /** The name of the backup vault, which must be unique within the account and region. (AI-inferred) */
   backupVaultName: string | Computed<string>;
-  /** Specifies the tags to attach to the backup vault as key-value pairs. (AI-inferred) */
   backupVaultTags?: unknown | Computed<unknown>;
-  /** The ARN of the AWS KMS key used to encrypt backups stored in this backup vault. (AI-inferred) */
   encryptionKeyArn?: string | Computed<string>;
-  /** Specifies the configuration for AWS Backup Vault Lock, including minimum and maximum retention durations (in days) and the period (in days) during which the lock settings can still be modified, enabling an immutable backup vault. (AI-inferred) */
   lockConfiguration?: Vault_LockConfiguration | Computed<Vault_LockConfiguration>;
-  /** Specifies the Amazon SNS topic and the backup vault events (such as BACKUP_JOB_STARTED or BACKUP_JOB_COMPLETED) that trigger notifications for this backup vault. (AI-inferred) */
   notifications?: Vault_Notifications | Computed<Vault_Notifications>;
 }
 
 export interface VaultAttrs {
-  /** Specifies a resource-based policy (in JSON) that defines which IAM principals can perform actions on the backup vault and its recovery points, such as viewing, creating, or deleting backups. (AI-inferred) */
   accessPolicy: unknown;
-  /** The Amazon Resource Name (ARN) of the backup vault, which uniquely identifies it within AWS. (AI-inferred) */
   backupVaultArn: string;
-  /** The name of the backup vault, which must be unique within the account and region. (AI-inferred) */
   backupVaultName: string;
-  /** Specifies the tags to attach to the backup vault as key-value pairs. (AI-inferred) */
   backupVaultTags: unknown;
-  /** The ARN of the AWS KMS key used to encrypt backups stored in this backup vault. (AI-inferred) */
   encryptionKeyArn: string;
-  /** Specifies the configuration for AWS Backup Vault Lock, including minimum and maximum retention durations (in days) and the period (in days) during which the lock settings can still be modified, enabling an immutable backup vault. (AI-inferred) */
   lockConfiguration: Vault_LockConfiguration;
-  /** Specifies the Amazon SNS topic and the backup vault events (such as BACKUP_JOB_STARTED or BACKUP_JOB_COMPLETED) that trigger notifications for this backup vault. (AI-inferred) */
   notifications: Vault_Notifications;
 }
 

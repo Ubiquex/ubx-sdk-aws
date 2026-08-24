@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerModelPackageGroup_Tags:
-    # The key part of an AWS key-value tag that can be attached to a SageMaker model package group for resource identification and access control. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair assigned to the SageMaker Model Package Group, allowing you to categorize and manage the group. (AI-inferred)
     value: Any = None
 
 _MakerModelPackageGroup_TagsFields = {
@@ -24,7 +22,6 @@ class MakerModelPackageGroupConfig:
     model_package_group_description: Any = None
     # The name of the model package group.
     model_package_group_name: Any = None
-    # JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred)
     model_package_group_policy: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -39,7 +36,6 @@ class MakerModelPackageGroupAttrs:
     model_package_group_description: Any = None
     # The name of the model package group.
     model_package_group_name: Any = None
-    # JSON policy document that defines a resource-based access policy for the SageMaker model package group, controlling which AWS accounts or principals can use or manage the group. (AI-inferred)
     model_package_group_policy: Any = None
     # The status of a modelpackage group job.
     model_package_group_status: Any = None

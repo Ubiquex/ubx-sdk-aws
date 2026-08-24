@@ -30,7 +30,6 @@ class RunnerService_HealthCheckConfiguration:
 class RunnerService_InstanceConfiguration:
     # CPU
     cpu: Any = None
-    # The ARN of an IAM role that grants the App Runner service permissions to access other AWS services on behalf of the service's instances. (AI-inferred)
     instance_role_arn: Any = None
     # Memory
     memory: Any = None
@@ -65,16 +64,13 @@ class RunnerService_ObservabilityConfiguration:
 
 @dataclasses.dataclass
 class RunnerService_SourceConfiguration_AuthenticationConfiguration:
-    # The ARN of the IAM role that AWS App Runner assumes to access the source code repository or image registry specified in the service's source configuration. (AI-inferred)
     access_role_arn: Any = None
     # Connection Arn
     connection_arn: Any = None
 
 @dataclasses.dataclass
 class RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets:
-    # The name (key) of a runtime environment secret, which becomes the environment variable name that App Runner injects into the service's runtime environment. (AI-inferred)
     name: Any = None
-    # The AWS Secrets Manager secret ARN or Systems Manager Parameter Store parameter name whose value is exposed as the runtime environment secret to the App Runner service. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -87,7 +83,6 @@ class RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeCon
     runtime: Any = None
     # The secrets and parameters that get referenced by your service as environment variables
     runtime_environment_secrets: Any = None
-    # Specifies the environment variables to pass to the App Runner service runtime, as a list of key-value pairs where each object contains the variable name and value. (AI-inferred)
     runtime_environment_variables: Any = None
     # Start Command
     start_command: Any = None
@@ -123,7 +118,6 @@ class RunnerService_SourceConfiguration_ImageRepository_ImageConfiguration:
     port: Any = None
     # The secrets and parameters that get referenced by your service as environment variables
     runtime_environment_secrets: Any = None
-    # Specifies a list of key-value pairs, each containing a Name and Value, that define runtime environment variables passed to the App Runner service's container when it uses an image from an image repository. (AI-inferred)
     runtime_environment_variables: Any = None
     # Start Command
     start_command: Any = None
@@ -150,7 +144,6 @@ class RunnerService_SourceConfiguration:
 
 @dataclasses.dataclass
 class RunnerService_Tags:
-    # The key of a tag attached to an AWS App Runner service, used to organize and manage the service resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -324,7 +317,6 @@ class RunnerServiceConfig:
     service_name: Any = None
     # Source Code configuration
     source_configuration: Any = None
-    # This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -353,7 +345,6 @@ class RunnerServiceAttrs:
     source_configuration: Any = None
     # AppRunner Service status.
     status: Any = None
-    # This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 RunnerService = ubx.ResourceBinding(

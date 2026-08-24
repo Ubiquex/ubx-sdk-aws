@@ -4,79 +4,54 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting struct {
-	// Indicates whether the Greengrass group owner is automatically added as the owner of the local device resource. (AI-inferred)
 	AutoAddGroupOwner any
-	// The name of the Linux group that owns the local device resource and has read/write access to it. (AI-inferred)
 	GroupOwner any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalDeviceResourceData struct {
-	// Configures the Linux group owner, group ID, and read/write/execute permissions for a local device resource in a Greengrass group, enabling the Greengrass core to access the device with specific ownership and access rights. (AI-inferred)
 	GroupOwnerSetting any
-	// The source_path specifies the local device path on the Greengrass core device that this local device resource maps to, such as /dev/ttyUSB0 or /dev/video0. (AI-inferred)
 	SourcePath any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_LocalVolumeResourceData struct {
-	// The absolute path on the Greengrass core where the source directory is mounted and available to the Lambda function. (AI-inferred)
 	DestinationPath any
-	// Determines whether the Greengrass group owner is automatically granted ownership of the local volume, and optionally specifies a custom group owner for the volume. (AI-inferred)
 	GroupOwnerSetting any
-	// The source path of the local volume resource, specifying the directory on the Greengrass core device that is used as the source for the volume. (AI-inferred)
 	SourcePath any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting struct {
-	// The name of the operating system group that owns the machine learning model artifact downloaded from S3 on the Greengrass core device, used in the owner setting for the S3 machine learning model resource. (AI-inferred)
 	GroupOwner any
-	// The permission level (either 'ro' for read-only or 'rw' for read-write) that the specified group owner has on the referenced S3 machine learning model resource. (AI-inferred)
 	GroupPermission any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData struct {
-	// The absolute filesystem path on the Greengrass core device where the S3 machine learning model is downloaded and stored. (AI-inferred)
 	DestinationPath any
-	// Specifies the Linux group owner and group read/write permission for the S3 machine learning model artifact, controlling its file ownership and access on the AWS IoT Greengrass core. (AI-inferred)
 	OwnerSetting any
-	// The S3 URI of the machine learning model object that this resource references. (AI-inferred)
 	S3Uri any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceData struct {
-	// Specifies the absolute local path on the Greengrass core where the SageMaker machine learning model artifact is downloaded or mounted for use by the Lambda function. (AI-inferred)
 	DestinationPath any
-	// Specifies the owner setting for the SageMaker machine learning model resource, including the Linux group owner and its permissions on the model artifact used by the Greengrass core. (AI-inferred)
 	OwnerSetting any
-	// ARN of the SageMaker training job whose model artifact is used to create the local machine learning model resource in Greengrass. (AI-inferred)
 	SageMakerJobArn any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceData struct {
-	// Specifies additional AWS Secrets Manager staging labels (beyond the default AWSCURRENT) whose secret versions are downloaded to the Greengrass core for this secret resource. (AI-inferred)
 	AdditionalStagingLabelsToDownload any
-	// The ARN of the AWS Secrets Manager secret that this Greengrass resource references, used to retrieve the secret's value on the Greengrass core. (AI-inferred)
 	Arn any
 }
 
 type ResourceDefinitionVersion_Resources_ResourceDataContainer struct {
-	// Configures a local device resource by specifying its source path on the host file system and optional group owner settings, used when the resource is a physical device such as /dev/ttyAMA0. (AI-inferred)
 	LocalDeviceResourceData any
-	// Configures a local volume resource definition for a Greengrass group, specifying the device's source path and the destination path inside the Lambda runtime environment. (AI-inferred)
 	LocalVolumeResourceData any
-	// Specifies the S3 machine learning model resource data, containing the S3 URI of the model and the destination path on the core device. (AI-inferred)
 	S3MachineLearningModelResourceData any
-	// Specifies the resource data container for a SageMaker machine learning model resource, defining the S3 URI of the model artifact and the local destination path on the Greengrass core. (AI-inferred)
 	SageMakerMachineLearningModelResourceData any
-	// Defines the configuration for referencing a secret from AWS Secrets Manager in the Greengrass resource, specifying the secret ARN and any additional properties needed for access. (AI-inferred)
 	SecretsManagerSecretResourceData any
 }
 
 type ResourceDefinitionVersion_Resources struct {
-	// The user-defined ID that uniquely identifies this resource within the Greengrass resource definition version. (AI-inferred)
 	Id any
-	// A user-defined name for the resource (such as a local device, local volume, or S3 object) in an AWS Greengrass resource definition version. (AI-inferred)
 	Name any
-	// Defines the resource data container for each Greengrass resource, specifying either a local device or local volume resource (e.g., source path, permissions). (AI-inferred)
 	ResourceDataContainer any
 }
 
@@ -173,18 +148,13 @@ var ResourceDefinitionVersion_ResourcesFields = ubx.FieldMap{
 	}
 
 type ResourceDefinitionVersionConfig struct {
-	// The ID of the AWS Greengrass resource definition that this version belongs to, required to associate the version with an existing resource definition. (AI-inferred)
 	ResourceDefinitionId any
-	// Specifies the list of resources (such as local volumes, devices, or secrets) that are included in this AWS Greengrass resource definition version. (AI-inferred)
 	Resources any
 }
 
 type ResourceDefinitionVersionAttrs struct {
-	// The unique identifier assigned by AWS to this Greengrass resource definition version. (AI-inferred)
 	Id any
-	// The ID of the AWS Greengrass resource definition that this version belongs to, required to associate the version with an existing resource definition. (AI-inferred)
 	ResourceDefinitionId any
-	// Specifies the list of resources (such as local volumes, devices, or secrets) that are included in this AWS Greengrass resource definition version. (AI-inferred)
 	Resources any
 }
 

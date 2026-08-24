@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PackageV2ChannelGroup_Tags {
-  /** The key of a user-defined tag attached to the MediaPackage v2 channel group for metadata and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the MediaPackage v2 channel group, used for metadata and resource categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,18 +12,15 @@ const PackageV2ChannelGroup_TagsFields: FieldMap = {
 };
 
 export interface PackageV2ChannelGroupConfig {
-  /** The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred) */
   channelGroupName: string | Computed<string>;
   /** <p>Enter any descriptive text that helps you to identify the channel group.</p> */
   description?: string | Computed<string>;
-  /** A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred) */
   tags?: PackageV2ChannelGroup_Tags[] | Computed<PackageV2ChannelGroup_Tags[]>;
 }
 
 export interface PackageV2ChannelGroupAttrs {
   /** <p>The Amazon Resource Name (ARN) associated with the resource.</p> */
   arn: string;
-  /** The unique name for the channel group within the AWS Region, used to identify and reference this group of channels in AWS Elemental MediaPackage v2. (AI-inferred) */
   channelGroupName: string;
   /** <p>The date and time the channel group was created.</p> */
   createdAt: string;
@@ -35,7 +30,6 @@ export interface PackageV2ChannelGroupAttrs {
   egressDomain: string;
   /** <p>The date and time the channel group was modified.</p> */
   modifiedAt: string;
-  /** A list of tag objects (each containing a key and value) to attach to the channel group for organizing and identifying AWS resources. (AI-inferred) */
   tags: PackageV2ChannelGroup_Tags[];
 }
 

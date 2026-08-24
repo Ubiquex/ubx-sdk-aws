@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerExperiment_Tags struct {
-	// The key of a tag applied to the SageMaker experiment, used to assign custom metadata for organizing, searching, and managing the experiment resource. (AI-inferred)
 	Key any
-	// The value part of a user-defined key-value tag attached to an Amazon SageMaker experiment, used for labeling, categorization, and resource management. (AI-inferred)
 	Value any
 }
 

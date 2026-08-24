@@ -4,11 +4,8 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RateBasedRule_MatchPredicates struct {
-	// The ID of the AWS WAF Regional entity (such as a ByteMatchSet, IPSet, SqlInjectionMatchSet, or XssMatchSet) that this rate-based rule predicate uses to inspect web requests. (AI-inferred)
 	DataId any
-	// Whether the predicate's match condition is inverted, so that a True value causes the rate-based rule to match requests that do NOT satisfy the predicate's criteria (e.g., requests not from the specified IP set), while False matches requests that do satisfy them. (AI-inferred)
 	Negated any
-	// The type of the match predicate (e.g., IPMatch, ByteMatch, SqlInjectionMatch), which indicates the kind of pattern to match; for a rate-based rule this is typically IPMatch because the rule matches based on IP addresses. (AI-inferred)
 	Type any
 }
 
@@ -19,30 +16,19 @@ var RateBasedRule_MatchPredicatesFields = ubx.FieldMap{
 	}
 
 type RateBasedRuleConfig struct {
-	// Specifies the list of predicates (such as IP match, byte match, SQL injection, or XSS match conditions) that determine which requests are counted toward the rate limit for blocking in this rate-based rule. (AI-inferred)
 	MatchPredicates any
-	// The CloudWatch metric name for the rule, which must be unique within the web ACL and is used to monitor the rate-based rule's traffic in CloudWatch. (AI-inferred)
 	MetricName any
-	// The friendly name assigned to the AWS WAF Regional rate-based rule, required to identify the rule in the console and API. (AI-inferred)
 	Name any
-	// Specifies the field (always 'IP' for this resource type) that AWS WAF uses to determine the source of web requests for rate limiting, controlling how requests are counted against the rule's rate threshold. (AI-inferred)
 	RateKey any
-	// The maximum number of requests from a single IP address in a 5-minute period that triggers the rate-based rule's action, which for AWS WAF Regional is fixed at 2000. (AI-inferred)
 	RateLimit any
 }
 
 type RateBasedRuleAttrs struct {
-	// The unique identifier assigned by AWS WAF Regional to the rate-based rule, used to reference the rule in other resources. (AI-inferred)
 	Id any
-	// Specifies the list of predicates (such as IP match, byte match, SQL injection, or XSS match conditions) that determine which requests are counted toward the rate limit for blocking in this rate-based rule. (AI-inferred)
 	MatchPredicates any
-	// The CloudWatch metric name for the rule, which must be unique within the web ACL and is used to monitor the rate-based rule's traffic in CloudWatch. (AI-inferred)
 	MetricName any
-	// The friendly name assigned to the AWS WAF Regional rate-based rule, required to identify the rule in the console and API. (AI-inferred)
 	Name any
-	// Specifies the field (always 'IP' for this resource type) that AWS WAF uses to determine the source of web requests for rate limiting, controlling how requests are counted against the rule's rate threshold. (AI-inferred)
 	RateKey any
-	// The maximum number of requests from a single IP address in a 5-minute period that triggers the rate-based rule's action, which for AWS WAF Regional is fixed at 2000. (AI-inferred)
 	RateLimit any
 }
 

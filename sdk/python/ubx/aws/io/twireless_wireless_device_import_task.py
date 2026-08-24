@@ -8,18 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessWirelessDeviceImportTask_Sidewalk:
-    # The S3 URL of the CSV file that lists the Sidewalk devices to import as part of this import task. (AI-inferred)
     device_creation_file: Any = None
     # sidewalk create device's file path
     device_creation_file_list: Any = None
     # sidewalk role
     role: Any = None
-    # The Sidewalk manufacturing serial number (SMSN) that uniquely identifies the Sidewalk device to be imported in this import task. (AI-inferred)
     sidewalk_manufacturing_sn: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDeviceImportTask_Tags:
-    # The key of a tag applied to the AWS IoT Wireless device import task, used for organizing, identifying, and managing the import task via AWS tagging. (AI-inferred)
     key: Any = None
     value: Any = None
 

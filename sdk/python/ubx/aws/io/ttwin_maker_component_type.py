@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TtwinMakerComponentType_Status_Error:
-    # The error code that identifies the type of failure encountered when AWS IoT TwinMaker processed this component type. (AI-inferred)
     code: Any = None
-    # The message of the error that caused the component type to fail, providing details about what went wrong. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class TtwinMakerComponentType_Status:
-    # The error object (containing code and message) reported for this AWS IoT TwinMaker component type when its status is in an error state (e.g., after a failed create or update). (AI-inferred)
     error: Any = None
-    # Represents the lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, DELETING, or ERROR) as reported in the status object returned by AWS IoT TwinMaker. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -51,7 +47,6 @@ class TtwinMakerComponentTypeAttrs:
     component_type_id: Any = None
     # An map of the composite component types in the component type. Each composite component type's key must be unique to this map.
     composite_component_types: Any = None
-    # The date and time when the component type was created. (AI-inferred)
     creation_date_time: Any = None
     # The description of the component type.
     description: Any = None
@@ -69,11 +64,9 @@ class TtwinMakerComponentTypeAttrs:
     property_definitions: Any = None
     # An map of the property groups in the component type. Each property group's key must be unique to this map.
     property_groups: Any = None
-    # The status object indicates the current lifecycle state of the component type (e.g., CREATING, UPDATING, ACTIVE, ERROR) and includes error details if an operation failed. (AI-inferred)
     status: Any = None
     # A map of key-value pairs to associate with a resource.
     tags: Any = None
-    # The date and time when the component type was last updated. (AI-inferred)
     update_date_time: Any = None
     # The ID of the workspace that contains the component type.
     workspace_id: Any = None

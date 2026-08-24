@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TThing_AttributePayload {
-  /** A map of key-value pairs defining the AWS IoT thing's attribute payload, which is used to store and manage the device's metadata attributes. (AI-inferred) */
   attributes?: unknown | Computed<unknown>;
 }
 
@@ -11,20 +10,14 @@ const TThing_AttributePayloadFields: FieldMap = {
 };
 
 export interface TThingConfig {
-  /** Specifies the thing's attribute payload, including a map of attribute names to values and whether to merge with existing attributes on update. (AI-inferred) */
   attributePayload?: TThing_AttributePayload | Computed<TThing_AttributePayload>;
-  /** The unique name to assign to this AWS IoT thing; if omitted, CloudFormation generates a name. (AI-inferred) */
   thingName?: string | Computed<string>;
 }
 
 export interface TThingAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the IoT thing within AWS IoT, used for referencing the thing in IAM policies and other AWS services. (AI-inferred) */
   arn: string;
-  /** Specifies the thing's attribute payload, including a map of attribute names to values and whether to merge with existing attributes on update. (AI-inferred) */
   attributePayload: TThing_AttributePayload;
-  /** For an AWS IoT Thing, the computed id is the thing's name, which is the resource's unique identifier within the AWS IoT registry and its CloudFormation physical ID. (AI-inferred) */
   id: string;
-  /** The unique name to assign to this AWS IoT thing; if omitted, CloudFormation generates a name. (AI-inferred) */
   thingName: string;
 }
 

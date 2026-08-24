@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoadBalancingV2ListenerCertificate_Certificates:
-    # The ARN of the certificate (from AWS Certificate Manager or IAM) to associate with the listener for TLS/SSL termination. (AI-inferred)
     certificate_arn: Any = None
 
 _LoadBalancingV2ListenerCertificate_CertificatesFields = {
@@ -17,18 +16,13 @@ _LoadBalancingV2ListenerCertificate_CertificatesFields = {
 
 @dataclasses.dataclass
 class LoadBalancingV2ListenerCertificateConfig:
-    # Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred)
     certificates: Any = None
-    # Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred)
     listener_arn: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingV2ListenerCertificateAttrs:
-    # Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred)
     certificates: Any = None
-    # The unique identifier for the listener certificate, composed of the listener ARN and certificate ARN. (AI-inferred)
     id: Any = None
-    # Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred)
     listener_arn: Any = None
 
 LoadBalancingV2ListenerCertificate = ubx.ResourceBinding(

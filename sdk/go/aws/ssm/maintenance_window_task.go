@@ -4,34 +4,24 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowTask_LoggingInfo struct {
-	// The AWS Region where the S3 bucket that receives the maintenance window task logs is located. (AI-inferred)
 	Region any
-	// The name of the S3 bucket to which the maintenance window task's execution logs are written, as part of the LoggingInfo configuration for this AWS::SSM::MaintenanceWindowTask resource. (AI-inferred)
 	S3Bucket any
-	// The S3 key prefix (folder path) in the logging bucket where the maintenance window task's output logs are stored. (AI-inferred)
 	S3Prefix any
 }
 
 type MaintenanceWindowTask_Targets struct {
-	// The key field specifies the type of target for the maintenance window task, such as InstanceIds, ResourceGroupNames, or WindowTargetIds, determining how the corresponding values are interpreted. (AI-inferred)
 	Key any
-	// Specifies the values for the maintenance window task target key, such as EC2 instance IDs, resource group names, or tag values, that define which resources the task runs on. (AI-inferred)
 	Values any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowAutomationParameters struct {
-	// The version of the SSM Automation document to use when the maintenance window task runs, such as a specific document version or '$LATEST'. (AI-inferred)
 	DocumentVersion any
-	// The parameters to pass to the AWS Systems Manager Automation runbook (SSM document) when the maintenance window task is executed, specified as a map of parameter names to one or more values. (AI-inferred)
 	Parameters any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowLambdaParameters struct {
-	// Base64-encoded client context data to pass to the Lambda function invoked by the maintenance window task. (AI-inferred)
 	ClientContext any
-	// The JSON string that is passed as the input payload to the Lambda function when the maintenance window task invokes it. (AI-inferred)
 	Payload any
-	// The Lambda function version or alias to invoke for this maintenance window task. (AI-inferred)
 	Qualifier any
 }
 
@@ -43,54 +33,34 @@ type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandP
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters_NotificationConfig struct {
-	// The ARN of the Amazon SNS topic that receives notifications about the status of the Run Command task executed by the maintenance window. (AI-inferred)
 	NotificationArn any
-	// Specifies the Run Command task events (such as Success, Failed, or TimedOut) that trigger a notification to the configured Amazon SNS topic. (AI-inferred)
 	NotificationEvents any
-	// This value indicates whether the SNS notification is for the entire command (Command) or for each instance's invocation (Invocation). (AI-inferred)
 	NotificationType any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowRunCommandParameters struct {
-	// Configures the destination CloudWatch Logs log group and whether the AWS Systems Manager Run Command task output is written to CloudWatch Logs. (AI-inferred)
 	CloudWatchOutputConfig any
-	// The user-specified comment (a friendly description) that is included with the Run Command when the maintenance window task invokes the command. (AI-inferred)
 	Comment any
-	// Specifies the SHA-256 hash of the content of the Systems Manager command document to be run, which SSM validates to ensure the document hasn't been altered before executing the maintenance window task. (AI-inferred)
 	DocumentHash any
-	// Specifies the hash algorithm (either Sha256 or Sha1) used by SSM Run Command to validate the integrity of the document content referenced by the maintenance window task. (AI-inferred)
 	DocumentHashType any
-	// The version of the SSM document to use when the maintenance window task runs the specified command, such as '1' or '$DEFAULT' or '$LATEST'. (AI-inferred)
 	DocumentVersion any
-	// Specifies an Amazon SNS notification configuration for the Run Command task, including the ARN of the SNS topic, the events that trigger notifications (e.g., All, InProgress, Success, TimedOut, Cancelled, Failed), and the notification type (Command or Invocation). (AI-inferred)
 	NotificationConfig any
-	// Specifies the name of the S3 bucket where the output of the Run Command will be stored for the Maintenance Window Run Command task. (AI-inferred)
 	OutputS3BucketName any
-	// Specifies the S3 key prefix under the output S3 bucket where the Run Command invocation output is stored, acting as a subdirectory for the output files. (AI-inferred)
 	OutputS3KeyPrefix any
-	// A map of parameter names to values that are passed to the SSM Run Command document when the maintenance window task is executed. (AI-inferred)
 	Parameters any
-	// The ARN of the IAM service role that AWS Systems Manager assumes to publish Amazon SNS notifications for the Run Command task invoked by this maintenance window. (AI-inferred)
 	ServiceRoleArn any
-	// The maximum number of seconds the command is allowed to run before being stopped and marked as timed out. (AI-inferred)
 	TimeoutSeconds any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters_MaintenanceWindowStepFunctionsParameters struct {
-	// The JSON input string passed to the Step Functions state machine execution when this maintenance window task runs. (AI-inferred)
 	Input any
-	// The name to assign to the Step Functions execution when the maintenance window task invokes the state machine. (AI-inferred)
 	Name any
 }
 
 type MaintenanceWindowTask_TaskInvocationParameters struct {
-	// Specifies the information needed to run an Automation workflow as the maintenance window task, including the document version and the runtime parameters (a map of key-value pairs) that the Automation document requires. (AI-inferred)
 	MaintenanceWindowAutomationParameters any
-	// Configures how the maintenance window invokes an AWS Lambda function, specifying optional client context, function version qualifier, and invocation payload. (AI-inferred)
 	MaintenanceWindowLambdaParameters any
-	// Specifies the parameters for an AWS Systems Manager Run Command task within a maintenance window, including settings like command timeout, S3 output location, IAM service role, and parameters passed to the SSM document. (AI-inferred)
 	MaintenanceWindowRunCommandParameters any
-	// Specifies the input and execution name for a Step Functions state machine when the maintenance window task invokes a STEP_FUNCTIONS target. (AI-inferred)
 	MaintenanceWindowStepFunctionsParameters any
 }
 
@@ -182,7 +152,6 @@ type MaintenanceWindowTaskConfig struct {
 	CutoffBehavior any
 	// A description of the task.
 	Description any
-	// Specifies the Amazon S3 bucket, region, and prefix where the maintenance window task execution logs are stored. (AI-inferred)
 	LoggingInfo any
 	// The maximum number of targets this task can be run for, in parallel.
 	MaxConcurrency any
@@ -198,7 +167,6 @@ type MaintenanceWindowTaskConfig struct {
 	Targets any
 	// The resource that the task uses during execution.
 	TaskArn any
-	// Defines the parameters that AWS Systems Manager uses to run the maintenance window task, including for Run Command, Automation, Step Functions, or Lambda invocation types. (AI-inferred)
 	TaskInvocationParameters any
 	// The parameters to pass to the task when it runs.
 	TaskParameters any
@@ -213,7 +181,6 @@ type MaintenanceWindowTaskAttrs struct {
 	CutoffBehavior any
 	// A description of the task.
 	Description any
-	// Specifies the Amazon S3 bucket, region, and prefix where the maintenance window task execution logs are stored. (AI-inferred)
 	LoggingInfo any
 	// The maximum number of targets this task can be run for, in parallel.
 	MaxConcurrency any
@@ -229,7 +196,6 @@ type MaintenanceWindowTaskAttrs struct {
 	Targets any
 	// The resource that the task uses during execution.
 	TaskArn any
-	// Defines the parameters that AWS Systems Manager uses to run the maintenance window task, including for Run Command, Automation, Step Functions, or Lambda invocation types. (AI-inferred)
 	TaskInvocationParameters any
 	// The parameters to pass to the task when it runs.
 	TaskParameters any

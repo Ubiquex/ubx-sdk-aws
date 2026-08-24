@@ -2,135 +2,87 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Budget_Budget_AutoAdjustData_HistoricalOptions {
-  /** Specifies the number of months of historical spending data that AWS Budgets uses to automatically calculate the adjusted budget amount. (AI-inferred) */
   budgetAdjustmentPeriod: number | Computed<number>;
 }
 
 export interface Budget_Budget_AutoAdjustData {
-  /** Indicates whether the budget's automatic adjustment is based on a forecast of future spend (FORECAST) or on historical spending patterns (HISTORICAL). (AI-inferred) */
   autoAdjustType: string | Computed<string>;
-  /** Specifies the number of historical budget periods (months) of past spending that AWS Budgets uses to calculate the automatically adjusted budget amount. (AI-inferred) */
   historicalOptions?: Budget_Budget_AutoAdjustData_HistoricalOptions | Computed<Budget_Budget_AutoAdjustData_HistoricalOptions>;
 }
 
 export interface Budget_Budget_BudgetLimit {
-  /** The numerical amount of the budget limit, representing the maximum cost or usage allowed by the budget. (AI-inferred) */
   amount: number | Computed<number>;
-  /** The three-letter currency code (e.g., USD) that defines the monetary unit for the budget limit amount and must match the currency of the AWS account. (AI-inferred) */
   unit: string | Computed<string>;
 }
 
 export interface Budget_Budget_CostTypes {
-  /** Specifies whether credits (such as promotional AWS credits) are included when calculating the costs covered by this budget. (AI-inferred) */
   includeCredit?: boolean | Computed<boolean>;
-  /** Determines whether discounts are included in the cost amounts tracked by this budget. (AI-inferred) */
   includeDiscount?: boolean | Computed<boolean>;
-  /** Controls whether the budget includes other non-recurring subscription costs, such as one-time fees for services like Amazon QuickSight. (AI-inferred) */
   includeOtherSubscription?: boolean | Computed<boolean>;
-  /** Whether the budget includes recurring costs (such as monthly subscription or recurring service fees) when calculating actual spend against the budget. (AI-inferred) */
   includeRecurring?: boolean | Computed<boolean>;
-  /** Indicates whether the budget includes refunds when calculating costs. (AI-inferred) */
   includeRefund?: boolean | Computed<boolean>;
-  /** Specifies whether the budget includes subscription costs (such as AWS Support) when determining actual and forecasted spend. (AI-inferred) */
   includeSubscription?: boolean | Computed<boolean>;
-  /** Determines whether AWS Support charges (such as subscription fees for AWS Support plans) are included when calculating the costs tracked by this budget. (AI-inferred) */
   includeSupport?: boolean | Computed<boolean>;
-  /** Specifies whether the budget includes taxes associated with your usage. (AI-inferred) */
   includeTax?: boolean | Computed<boolean>;
-  /** Specifies whether to include upfront fees, such as the one-time payment for Reserved Instances, in the budget's cost calculations. (AI-inferred) */
   includeUpfront?: boolean | Computed<boolean>;
-  /** In AWS Budgets, this boolean flag in the budget's cost types controls whether the budget includes amortized costs, which spread upfront reservation or savings plan charges over the term of the commitment. (AI-inferred) */
   useAmortized?: boolean | Computed<boolean>;
-  /** A boolean flag that indicates whether the budget includes blended costs, which are calculated by mixing the effective rates of on-demand and reserved-instance usage. (AI-inferred) */
   useBlended?: boolean | Computed<boolean>;
 }
 
 export interface Budget_Budget_FilterExpression_CostCategories {
-  /** The name of the AWS Cost Category to use as a filter key for this budget. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the matching options (such as EQUALS, STARTS_WITH) that apply to the cost category values in the budget's filter expression. (AI-inferred) */
   matchOptions?: string[] | Computed<string[]>;
-  /** Defines the specific values of the chosen cost category that the budget filter matches, restricting the budget to only include costs associated with those cost category values. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Budget_Budget_FilterExpression {
-  /** Specifies a list of filter expressions that must all be satisfied (logical AND) for a cost or usage item to be counted in the budget, enabling combined dimension-based filtering (e.g., service and region together). (AI-inferred) */
   and?: unknown[] | Computed<unknown[]>;
-  /** Maps cost category names to lists of values within the budget's filter expression; only actual costs that match at least one of the listed values for each configured cost category are counted toward the budget. (AI-inferred) */
   costCategories?: Budget_Budget_FilterExpression_CostCategories | Computed<Budget_Budget_FilterExpression_CostCategories>;
-  /** Defines the AWS cost dimensions (like SERVICE or REGION) and their allowed values that this budget's filter expression uses to match and track specific cost and usage. (AI-inferred) */
   dimensions?: Budget_Budget_FilterExpression_CostCategories | Computed<Budget_Budget_FilterExpression_CostCategories>;
-  /** The `not` field holds a nested filter expression that is logically negated, so the budget applies only to costs that do not match the nested criteria. (AI-inferred) */
   not?: unknown | Computed<unknown>;
-  /** A list of filter sub-expressions that are combined using OR logic, so that a cost is included in the budget if it matches any of the listed sub-expressions. (AI-inferred) */
   or?: unknown[] | Computed<unknown[]>;
-  /** Defines the tag-based filters (tag key and list of values) that restrict the budget's cost scope to matching tagged resources in the budget filter expression. (AI-inferred) */
   tags?: Budget_Budget_FilterExpression_CostCategories | Computed<Budget_Budget_FilterExpression_CostCategories>;
 }
 
 export interface Budget_Budget_TimePeriod {
-  /** The end date of the budget time period, indicating the last day the budget is active; if omitted, the budget period is open-ended. (AI-inferred) */
   end?: string | Computed<string>;
-  /** The start date and time of the budget's coverage period, expressed in UTC (usually ISO 8601 format), which determines the beginning of the time window over which costs are evaluated against the budget. (AI-inferred) */
   start?: string | Computed<string>;
 }
 
 export interface Budget_Budget {
-  /** Configuration for automatic budget limit adjustment, where AWS adjusts the budget's limit based on historical usage or a forecast, including the autoAdjustType (HISTORICAL or FORECAST) and the corresponding adjustment period options. (AI-inferred) */
   autoAdjustData?: Budget_Budget_AutoAdjustData | Computed<Budget_Budget_AutoAdjustData>;
-  /** Specifies the ARN of an AWS Billing view that the budget is scoped to, allowing the budget to track costs only for the accounts and usage associated with that billing view. (AI-inferred) */
   billingViewArn?: string | Computed<string>;
-  /** Specifies the cost or usage threshold for the budget, defined by an amount and unit (for example, '100.0' and 'USD'). (AI-inferred) */
   budgetLimit?: Budget_Budget_BudgetLimit | Computed<Budget_Budget_BudgetLimit>;
-  /** The name of the budget, which acts as a unique identifier within the AWS account for the specified budget type; if omitted, CloudFormation generates a unique name (e.g., the logical ID). (AI-inferred) */
   budgetName?: string | Computed<string>;
-  /** Specifies the type of budget, such as COST, USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, or SAVINGS_PLANS_COVERAGE, which determines the metric and dimensions used to track your AWS spend or usage. (AI-inferred) */
   budgetType: string | Computed<string>;
-  /** A map of cost filter dimension names (such as Service, LinkedAccount, Region, or TagKeyValue) to lists of values that restricts the budget to matching AWS costs, analogous to the CostFilters property in the AWS Budgets API. (AI-inferred) */
   costFilters?: unknown | Computed<unknown>;
-  /** Specifies the CostTypes object that controls which AWS cost types (such as taxes, subscriptions, recurring charges, support, discounts, credits, and upfront fees) are included or excluded when calculating the budget's actual and forecasted costs. (AI-inferred) */
   costTypes?: Budget_Budget_CostTypes | Computed<Budget_Budget_CostTypes>;
-  /** Specifies a logical expression of key-value filters (such as service, tag, or account) and an operator (AND or OR) that determines which cost and usage data is included in the budget. (AI-inferred) */
   filterExpression?: Budget_Budget_FilterExpression | Computed<Budget_Budget_FilterExpression>;
   metrics?: string[] | Computed<string[]>;
-  /** Specifies budget limits for future cost budget periods, mapping each period's start date (YYYY-MM-DD) to a budget limit amount and unit for that period. (AI-inferred) */
   plannedBudgetLimits?: unknown | Computed<unknown>;
-  /** Specifies the start and end dates that determine the period covered by the budget. (AI-inferred) */
   timePeriod?: Budget_Budget_TimePeriod | Computed<Budget_Budget_TimePeriod>;
-  /** The time unit (DAILY, MONTHLY, QUARTERLY, or ANNUALLY) that defines the period over which the budget tracks costs or usage and resets. (AI-inferred) */
   timeUnit: string | Computed<string>;
 }
 
 export interface Budget_NotificationsWithSubscribers_Notification {
-  /** Specifies the comparison operator (e.g., GREATER_THAN, LESS_THAN, EQUAL_TO) used to evaluate the budget's actual or forecasted value against the notification threshold. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
-  /** Specifies whether the budget notification is triggered by actual spending or a forecasted spend amount. (AI-inferred) */
   notificationType?: string | Computed<string>;
-  /** The numeric threshold value that, when compared against the actual or forecasted budget cost or usage using the notification's comparison operator, triggers the budget notification. (AI-inferred) */
   threshold?: number | Computed<number>;
-  /** Specifies whether the budget notification threshold is expressed as a percentage of the budget limit or as an absolute value (e.g., a dollar amount or usage quantity), corresponding to the PERCENTAGE or ABSOLUTE_VALUE enum values for the budget alarm. (AI-inferred) */
   thresholdType?: string | Computed<string>;
 }
 
 export interface Budget_NotificationsWithSubscribers_Subscribers {
-  /** The email address or SNS topic ARN that receives the budget notification for the associated subscriber type. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The subscription channel type used by the subscriber to receive budget notifications, such as SNS or EMAIL. (AI-inferred) */
   subscriptionType?: string | Computed<string>;
 }
 
 export interface Budget_NotificationsWithSubscribers {
-  /** Defines the notification configuration for a budget, including threshold value, comparison operator (e.g., GREATER_THAN), threshold type (PERCENTAGE or ABSOLUTE_VALUE), and notification type (e.g., ACTUAL or FORECASTED), which triggers an alert to the subscribed SNS topics or email addresses. (AI-inferred) */
   notification?: Budget_NotificationsWithSubscribers_Notification | Computed<Budget_NotificationsWithSubscribers_Notification>;
-  /** Specifies the list of subscribers (email addresses or SNS topic ARNs) that receive the budget notification. (AI-inferred) */
   subscribers?: Budget_NotificationsWithSubscribers_Subscribers[] | Computed<Budget_NotificationsWithSubscribers_Subscribers[]>;
 }
 
 export interface Budget_ResourceTags {
-  /** The key of a resource tag (a key-value pair) applied to the budget, used to categorize or identify the budget for cost allocation and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag entry in the resource_tags map, used to attach metadata to the budget resource for identification and organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -264,22 +216,15 @@ const Budget_ResourceTagsFields: FieldMap = {
 };
 
 export interface BudgetConfig {
-  /** The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred) */
   budget: Budget_Budget | Computed<Budget_Budget>;
-  /** Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred) */
   notificationsWithSubscribers?: Budget_NotificationsWithSubscribers[] | Computed<Budget_NotificationsWithSubscribers[]>;
-  /** Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred) */
   resourceTags?: Budget_ResourceTags[] | Computed<Budget_ResourceTags[]>;
 }
 
 export interface BudgetAttrs {
-  /** The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred) */
   budget: Budget_Budget;
-  /** The budget name, which uniquely identifies the budget within the AWS account and is used as the resource's primary identifier. (AI-inferred) */
   id: string;
-  /** Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred) */
   notificationsWithSubscribers: Budget_NotificationsWithSubscribers[];
-  /** Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred) */
   resourceTags: Budget_ResourceTags[];
 }
 

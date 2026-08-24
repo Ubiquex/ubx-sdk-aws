@@ -4,16 +4,12 @@ package payment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CryptographyAliasConfig struct {
-	// Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred)
 	AliasName any
-	// The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred)
 	KeyArn any
 }
 
 type CryptographyAliasAttrs struct {
-	// Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred)
 	AliasName any
-	// The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred)
 	KeyArn any
 }
 

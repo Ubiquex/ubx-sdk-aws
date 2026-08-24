@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamDirectoryConfig_CertificateBasedAuthProperties {
-  /** The ARN of the AWS Certificate Manager Private CA that AppStream 2.0 uses to issue certificates for certificate-based authentication in this directory configuration. (AI-inferred) */
   certificateAuthorityArn?: string | Computed<string>;
-  /** Indicates whether certificate-based authentication is enabled or disabled for the AppStream directory configuration. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface StreamDirectoryConfig_ServiceAccountCredentials {
-  /** The user name of the service account that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred) */
   accountName: string | Computed<string>;
-  /** The password for the service account that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred) */
   accountPassword: string | Computed<string>;
 }
 
@@ -26,24 +22,16 @@ const StreamDirectoryConfig_ServiceAccountCredentialsFields: FieldMap = {
 };
 
 export interface StreamDirectoryConfigConfig {
-  /** Configures certificate-based authentication for the AppStream 2.0 directory configuration, specifying the status (enabled/disabled) and the ARN of the certificate authority used to issue and validate user certificates. (AI-inferred) */
   certificateBasedAuthProperties?: StreamDirectoryConfig_CertificateBasedAuthProperties | Computed<StreamDirectoryConfig_CertificateBasedAuthProperties>;
-  /** The fully qualified name of the Active Directory domain (for example, corp.example.com) that the AppStream 2.0 directory configuration connects to. (AI-inferred) */
   directoryName: string | Computed<string>;
-  /** Specifies the list of organizational unit (OU) distinguished names in the Active Directory where computer objects for streaming instances are created. (AI-inferred) */
   organizationalUnitDistinguishedNames: string[] | Computed<string[]>;
-  /** The service account credentials (account name and password) that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred) */
   serviceAccountCredentials: StreamDirectoryConfig_ServiceAccountCredentials | Computed<StreamDirectoryConfig_ServiceAccountCredentials>;
 }
 
 export interface StreamDirectoryConfigAttrs {
-  /** Configures certificate-based authentication for the AppStream 2.0 directory configuration, specifying the status (enabled/disabled) and the ARN of the certificate authority used to issue and validate user certificates. (AI-inferred) */
   certificateBasedAuthProperties: StreamDirectoryConfig_CertificateBasedAuthProperties;
-  /** The fully qualified name of the Active Directory domain (for example, corp.example.com) that the AppStream 2.0 directory configuration connects to. (AI-inferred) */
   directoryName: string;
-  /** Specifies the list of organizational unit (OU) distinguished names in the Active Directory where computer objects for streaming instances are created. (AI-inferred) */
   organizationalUnitDistinguishedNames: string[];
-  /** The service account credentials (account name and password) that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred) */
   serviceAccountCredentials: StreamDirectoryConfig_ServiceAccountCredentials;
 }
 

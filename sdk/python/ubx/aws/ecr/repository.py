@@ -20,7 +20,6 @@ class Repository_ImageScanningConfiguration:
 
 @dataclasses.dataclass
 class Repository_ImageTagMutabilityExclusionFilters:
-    # This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred)
     image_tag_mutability_exclusion_filter_type: Any = None
     image_tag_mutability_exclusion_filter_value: Any = None
 
@@ -33,9 +32,7 @@ class Repository_LifecyclePolicy:
 
 @dataclasses.dataclass
 class Repository_Tags:
-    # The key of a user-defined tag applied to the ECR repository, used to add metadata that can be referenced by IAM policies (e.g., ecr:ResourceTag) and for cost allocation. (AI-inferred)
     key: Any = None
-    # The value of a single tag assigned to the ECR repository, used to attach arbitrary metadata for resource identification, organization, and cost tracking. (AI-inferred)
     value: Any = None
 
 _Repository_EncryptionConfigurationFields = {
@@ -85,7 +82,6 @@ class RepositoryConfig:
 
 @dataclasses.dataclass
 class RepositoryAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred)
     arn: Any = None
     # If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
     empty_on_delete: Any = None
@@ -103,7 +99,6 @@ class RepositoryAttrs:
     repository_name: Any = None
     # The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
     repository_policy_text: Any = None
-    # The URI of the Amazon ECR repository, formatted as `aws_account_id.dkr.ecr.region.amazonaws.com/repository_name`, which is used to pull and push Docker images. (AI-inferred)
     repository_uri: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

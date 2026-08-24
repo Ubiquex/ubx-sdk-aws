@@ -13,9 +13,7 @@ type Channel_MultitrackInputConfiguration struct {
 }
 
 type Channel_Tags struct {
-	// The key of a tag attached to the IVS channel, enabling you to categorize and manage the resource by custom metadata. (AI-inferred)
 	Key any
-	// The string value of a tag attached to the AWS IVS channel, used to store arbitrary metadata such as environment, project, or owner information. (AI-inferred)
 	Value any
 }
 
@@ -39,7 +37,6 @@ type ChannelConfig struct {
 	InsecureIngest any
 	// Channel latency mode.
 	LatencyMode any
-	// Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
 	MultitrackInputConfiguration any
 	// Channel
 	Name any
@@ -66,7 +63,6 @@ type ChannelAttrs struct {
 	InsecureIngest any
 	// Channel latency mode.
 	LatencyMode any
-	// Configures multitrack input for the IVS channel, including whether multitrack input is enabled and the maximum resolution allowed for the input. (AI-inferred)
 	MultitrackInputConfiguration any
 	// Channel
 	Name any

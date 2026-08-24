@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbMultiRegionCluster_Tags struct {
 	Key any
-	// The value of a tag attached to the MemoryDB Multi-Region Cluster, used for labeling and cost allocation. (AI-inferred)
 	Value any
 }
 

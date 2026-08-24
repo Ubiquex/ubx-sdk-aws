@@ -21,9 +21,7 @@ export interface SyncLocationObjectStorage_ManagedSecretConfig {
 }
 
 export interface SyncLocationObjectStorage_Tags {
-  /** The key of a tag assigned to the DataSync object storage location, used to organize and identify the location for cost tracking and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to this AWS DataSync location for object storage, used for identifying, categorizing, or managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

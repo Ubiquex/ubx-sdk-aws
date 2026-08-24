@@ -4,9 +4,7 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogicallyAirGappedBackupVault_Notifications struct {
-	// Specifies the list of backup vault event types (e.g., BACKUP_JOB_STARTED, BACKUP_JOB_COMPLETED, RESTORE_JOB_STARTED) that trigger an SNS notification when they occur for this logically air-gapped backup vault. (AI-inferred)
 	BackupVaultEvents any
-	// The ARN of the Amazon SNS topic that AWS Backup uses to send notifications for events related to this logically air-gapped backup vault. (AI-inferred)
 	SnstopicArn any
 }
 
@@ -16,46 +14,27 @@ var LogicallyAirGappedBackupVault_NotificationsFields = ubx.FieldMap{
 	}
 
 type LogicallyAirGappedBackupVaultConfig struct {
-	// The access policy is a JSON resource-based policy that controls which IAM principals can perform actions (such as creating, deleting, or restoring backups) on this logically air-gapped backup vault. (AI-inferred)
 	AccessPolicy any
-	// The name of the logically air-gapped backup vault, which uniquely identifies it within an AWS account and region and must be provided when creating the vault. (AI-inferred)
 	BackupVaultName any
-	// Specifies the key-value tags to assign to the backup vault, enabling you to organize and manage the logically air-gapped vault in AWS Backup. (AI-inferred)
 	BackupVaultTags any
-	// Specifies the AWS KMS key ARN used to encrypt the backups stored in this logically air-gapped backup vault, allowing you to control encryption with a customer-managed key. (AI-inferred)
 	EncryptionKeyArn any
-	// Specifies the maximum retention period in days for backups that can be stored in this logically air-gapped backup vault. (AI-inferred)
 	MaxRetentionDays any
-	// The minimum number of days that backups in this logically air-gapped vault must be retained before they can be deleted, enforcing a locked retention floor. (AI-inferred)
 	MinRetentionDays any
-	// The ARN of the IAM approval team that must authorize the deletion of this logically air-gapped backup vault, enabling multi-party approval (MPA) as a safeguard against accidental or malicious removal. (AI-inferred)
 	MpaApprovalTeamArn any
-	// Configures an optional SNS topic and a list of backup vault event types (such as BACKUP_JOB_COMPLETED or RESTORE_JOB_FAILED) that trigger notifications for this logically air-gapped backup vault. (AI-inferred)
 	Notifications any
 }
 
 type LogicallyAirGappedBackupVaultAttrs struct {
-	// The access policy is a JSON resource-based policy that controls which IAM principals can perform actions (such as creating, deleting, or restoring backups) on this logically air-gapped backup vault. (AI-inferred)
 	AccessPolicy any
-	// The Amazon Resource Name (ARN) assigned to the logically air-gapped backup vault, used to reference the vault in other AWS Backup operations. (AI-inferred)
 	BackupVaultArn any
-	// The name of the logically air-gapped backup vault, which uniquely identifies it within an AWS account and region and must be provided when creating the vault. (AI-inferred)
 	BackupVaultName any
-	// Specifies the key-value tags to assign to the backup vault, enabling you to organize and manage the logically air-gapped vault in AWS Backup. (AI-inferred)
 	BackupVaultTags any
-	// Specifies the AWS KMS key ARN used to encrypt the backups stored in this logically air-gapped backup vault, allowing you to control encryption with a customer-managed key. (AI-inferred)
 	EncryptionKeyArn any
-	// Specifies the maximum retention period in days for backups that can be stored in this logically air-gapped backup vault. (AI-inferred)
 	MaxRetentionDays any
-	// The minimum number of days that backups in this logically air-gapped vault must be retained before they can be deleted, enforcing a locked retention floor. (AI-inferred)
 	MinRetentionDays any
-	// The ARN of the IAM approval team that must authorize the deletion of this logically air-gapped backup vault, enabling multi-party approval (MPA) as a safeguard against accidental or malicious removal. (AI-inferred)
 	MpaApprovalTeamArn any
-	// Configures an optional SNS topic and a list of backup vault event types (such as BACKUP_JOB_COMPLETED or RESTORE_JOB_FAILED) that trigger notifications for this logically air-gapped backup vault. (AI-inferred)
 	Notifications any
-	// The current lifecycle state of the logically air-gapped backup vault (e.g., CREATING, AVAILABLE, FAILED), indicating whether it is ready to store recovery points. (AI-inferred)
 	VaultState any
-	// The type of the backup vault, which for this logically air-gapped resource is set to LOGICALLY_AIR_GAPPED_BACKUP_VAULT to indicate its immutable, WORM-compliant storage behavior. (AI-inferred)
 	VaultType any
 }
 

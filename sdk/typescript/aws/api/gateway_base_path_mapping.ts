@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayBasePathMappingConfig {
-  /** Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred) */
   basePath?: string | Computed<string>;
-  /** The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred) */
   domainName: string | Computed<string>;
-  /** The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred) */
   restApiId?: string | Computed<string>;
-  /** The name of the API Gateway stage that the base path mapping targets. (AI-inferred) */
   stage?: string | Computed<string>;
 }
 
 export interface GatewayBasePathMappingAttrs {
-  /** Specifies the base path of the custom domain that maps to the API, such that requests to that path are routed to the associated API and stage; if not set, the API is served at the root of the domain (path '/'). (AI-inferred) */
   basePath: string;
-  /** The custom domain name (e.g., api.example.com) registered in API Gateway to which this base path mapping is attached, matching the DomainName property of an AWS::ApiGateway::DomainName resource. (AI-inferred) */
   domainName: string;
-  /** The ID of the API Gateway REST API to which the base path mapping routes traffic. (AI-inferred) */
   restApiId: string;
-  /** The name of the API Gateway stage that the base path mapping targets. (AI-inferred) */
   stage: string;
 }
 

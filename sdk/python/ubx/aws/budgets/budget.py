@@ -8,135 +8,87 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Budget_Budget_AutoAdjustData_HistoricalOptions:
-    # Specifies the number of months of historical spending data that AWS Budgets uses to automatically calculate the adjusted budget amount. (AI-inferred)
     budget_adjustment_period: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_AutoAdjustData:
-    # Indicates whether the budget's automatic adjustment is based on a forecast of future spend (FORECAST) or on historical spending patterns (HISTORICAL). (AI-inferred)
     auto_adjust_type: Any = None
-    # Specifies the number of historical budget periods (months) of past spending that AWS Budgets uses to calculate the automatically adjusted budget amount. (AI-inferred)
     historical_options: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_BudgetLimit:
-    # The numerical amount of the budget limit, representing the maximum cost or usage allowed by the budget. (AI-inferred)
     amount: Any = None
-    # The three-letter currency code (e.g., USD) that defines the monetary unit for the budget limit amount and must match the currency of the AWS account. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_CostTypes:
-    # Specifies whether credits (such as promotional AWS credits) are included when calculating the costs covered by this budget. (AI-inferred)
     include_credit: Any = None
-    # Determines whether discounts are included in the cost amounts tracked by this budget. (AI-inferred)
     include_discount: Any = None
-    # Controls whether the budget includes other non-recurring subscription costs, such as one-time fees for services like Amazon QuickSight. (AI-inferred)
     include_other_subscription: Any = None
-    # Whether the budget includes recurring costs (such as monthly subscription or recurring service fees) when calculating actual spend against the budget. (AI-inferred)
     include_recurring: Any = None
-    # Indicates whether the budget includes refunds when calculating costs. (AI-inferred)
     include_refund: Any = None
-    # Specifies whether the budget includes subscription costs (such as AWS Support) when determining actual and forecasted spend. (AI-inferred)
     include_subscription: Any = None
-    # Determines whether AWS Support charges (such as subscription fees for AWS Support plans) are included when calculating the costs tracked by this budget. (AI-inferred)
     include_support: Any = None
-    # Specifies whether the budget includes taxes associated with your usage. (AI-inferred)
     include_tax: Any = None
-    # Specifies whether to include upfront fees, such as the one-time payment for Reserved Instances, in the budget's cost calculations. (AI-inferred)
     include_upfront: Any = None
-    # In AWS Budgets, this boolean flag in the budget's cost types controls whether the budget includes amortized costs, which spread upfront reservation or savings plan charges over the term of the commitment. (AI-inferred)
     use_amortized: Any = None
-    # A boolean flag that indicates whether the budget includes blended costs, which are calculated by mixing the effective rates of on-demand and reserved-instance usage. (AI-inferred)
     use_blended: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_FilterExpression_CostCategories:
-    # The name of the AWS Cost Category to use as a filter key for this budget. (AI-inferred)
     key: Any = None
-    # Specifies the matching options (such as EQUALS, STARTS_WITH) that apply to the cost category values in the budget's filter expression. (AI-inferred)
     match_options: Any = None
-    # Defines the specific values of the chosen cost category that the budget filter matches, restricting the budget to only include costs associated with those cost category values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_FilterExpression:
-    # Specifies a list of filter expressions that must all be satisfied (logical AND) for a cost or usage item to be counted in the budget, enabling combined dimension-based filtering (e.g., service and region together). (AI-inferred)
     and_: Any = None
-    # Maps cost category names to lists of values within the budget's filter expression; only actual costs that match at least one of the listed values for each configured cost category are counted toward the budget. (AI-inferred)
     cost_categories: Any = None
-    # Defines the AWS cost dimensions (like SERVICE or REGION) and their allowed values that this budget's filter expression uses to match and track specific cost and usage. (AI-inferred)
     dimensions: Any = None
-    # The `not` field holds a nested filter expression that is logically negated, so the budget applies only to costs that do not match the nested criteria. (AI-inferred)
     not_: Any = None
-    # A list of filter sub-expressions that are combined using OR logic, so that a cost is included in the budget if it matches any of the listed sub-expressions. (AI-inferred)
     or_: Any = None
-    # Defines the tag-based filters (tag key and list of values) that restrict the budget's cost scope to matching tagged resources in the budget filter expression. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget_TimePeriod:
-    # The end date of the budget time period, indicating the last day the budget is active; if omitted, the budget period is open-ended. (AI-inferred)
     end: Any = None
-    # The start date and time of the budget's coverage period, expressed in UTC (usually ISO 8601 format), which determines the beginning of the time window over which costs are evaluated against the budget. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class Budget_Budget:
-    # Configuration for automatic budget limit adjustment, where AWS adjusts the budget's limit based on historical usage or a forecast, including the autoAdjustType (HISTORICAL or FORECAST) and the corresponding adjustment period options. (AI-inferred)
     auto_adjust_data: Any = None
-    # Specifies the ARN of an AWS Billing view that the budget is scoped to, allowing the budget to track costs only for the accounts and usage associated with that billing view. (AI-inferred)
     billing_view_arn: Any = None
-    # Specifies the cost or usage threshold for the budget, defined by an amount and unit (for example, '100.0' and 'USD'). (AI-inferred)
     budget_limit: Any = None
-    # The name of the budget, which acts as a unique identifier within the AWS account for the specified budget type; if omitted, CloudFormation generates a unique name (e.g., the logical ID). (AI-inferred)
     budget_name: Any = None
-    # Specifies the type of budget, such as COST, USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, or SAVINGS_PLANS_COVERAGE, which determines the metric and dimensions used to track your AWS spend or usage. (AI-inferred)
     budget_type: Any = None
-    # A map of cost filter dimension names (such as Service, LinkedAccount, Region, or TagKeyValue) to lists of values that restricts the budget to matching AWS costs, analogous to the CostFilters property in the AWS Budgets API. (AI-inferred)
     cost_filters: Any = None
-    # Specifies the CostTypes object that controls which AWS cost types (such as taxes, subscriptions, recurring charges, support, discounts, credits, and upfront fees) are included or excluded when calculating the budget's actual and forecasted costs. (AI-inferred)
     cost_types: Any = None
-    # Specifies a logical expression of key-value filters (such as service, tag, or account) and an operator (AND or OR) that determines which cost and usage data is included in the budget. (AI-inferred)
     filter_expression: Any = None
     metrics: Any = None
-    # Specifies budget limits for future cost budget periods, mapping each period's start date (YYYY-MM-DD) to a budget limit amount and unit for that period. (AI-inferred)
     planned_budget_limits: Any = None
-    # Specifies the start and end dates that determine the period covered by the budget. (AI-inferred)
     time_period: Any = None
-    # The time unit (DAILY, MONTHLY, QUARTERLY, or ANNUALLY) that defines the period over which the budget tracks costs or usage and resets. (AI-inferred)
     time_unit: Any = None
 
 @dataclasses.dataclass
 class Budget_NotificationsWithSubscribers_Notification:
-    # Specifies the comparison operator (e.g., GREATER_THAN, LESS_THAN, EQUAL_TO) used to evaluate the budget's actual or forecasted value against the notification threshold. (AI-inferred)
     comparison_operator: Any = None
-    # Specifies whether the budget notification is triggered by actual spending or a forecasted spend amount. (AI-inferred)
     notification_type: Any = None
-    # The numeric threshold value that, when compared against the actual or forecasted budget cost or usage using the notification's comparison operator, triggers the budget notification. (AI-inferred)
     threshold: Any = None
-    # Specifies whether the budget notification threshold is expressed as a percentage of the budget limit or as an absolute value (e.g., a dollar amount or usage quantity), corresponding to the PERCENTAGE or ABSOLUTE_VALUE enum values for the budget alarm. (AI-inferred)
     threshold_type: Any = None
 
 @dataclasses.dataclass
 class Budget_NotificationsWithSubscribers_Subscribers:
-    # The email address or SNS topic ARN that receives the budget notification for the associated subscriber type. (AI-inferred)
     address: Any = None
-    # The subscription channel type used by the subscriber to receive budget notifications, such as SNS or EMAIL. (AI-inferred)
     subscription_type: Any = None
 
 @dataclasses.dataclass
 class Budget_NotificationsWithSubscribers:
-    # Defines the notification configuration for a budget, including threshold value, comparison operator (e.g., GREATER_THAN), threshold type (PERCENTAGE or ABSOLUTE_VALUE), and notification type (e.g., ACTUAL or FORECASTED), which triggers an alert to the subscribed SNS topics or email addresses. (AI-inferred)
     notification: Any = None
-    # Specifies the list of subscribers (email addresses or SNS topic ARNs) that receive the budget notification. (AI-inferred)
     subscribers: Any = None
 
 @dataclasses.dataclass
 class Budget_ResourceTags:
-    # The key of a resource tag (a key-value pair) applied to the budget, used to categorize or identify the budget for cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value of a tag entry in the resource_tags map, used to attach metadata to the budget resource for identification and organization. (AI-inferred)
     value: Any = None
 
 _Budget_Budget_AutoAdjustData_HistoricalOptionsFields = {
@@ -270,22 +222,15 @@ _Budget_ResourceTagsFields = {
 
 @dataclasses.dataclass
 class BudgetConfig:
-    # The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
     budget: Any = None
-    # Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
     notifications_with_subscribers: Any = None
-    # Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
     resource_tags: Any = None
 
 @dataclasses.dataclass
 class BudgetAttrs:
-    # The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
     budget: Any = None
-    # The budget name, which uniquely identifies the budget within the AWS account and is used as the resource's primary identifier. (AI-inferred)
     id: Any = None
-    # Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
     notifications_with_subscribers: Any = None
-    # Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
     resource_tags: Any = None
 
 Budget = ubx.ResourceBinding(

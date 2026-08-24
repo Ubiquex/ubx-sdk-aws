@@ -9,9 +9,7 @@ export interface SyncLocationEfs_Ec2Config {
 }
 
 export interface SyncLocationEfs_Tags {
-  /** The key of a tag assigned to this AWS DataSync EFS location, used to identify and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to this AWS DataSync location for EFS, used for metadata and resource categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

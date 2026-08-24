@@ -4,33 +4,25 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeListener_DefaultAction_FixedResponse struct {
-	// The HTTP status code (for example, 200 or 404) that VPC Lattice returns in the fixed-response action when a request matches this listener's default action. (AI-inferred)
 	StatusCode any
 }
 
 type LatticeListener_DefaultAction_Forward_TargetGroups struct {
-	// The identifier (Amazon Resource Name or ID) of the VPC Lattice target group that this forward action routes traffic to. (AI-inferred)
 	TargetGroupIdentifier any
-	// Specifies the relative weight assigned to this target group in the listener's forward action, controlling the proportion of traffic it receives compared to other target groups in the weighted distribution. (AI-inferred)
 	Weight any
 }
 
 type LatticeListener_DefaultAction_Forward struct {
-	// Defines the list of target groups and their relative weights for the forward action, specifying how incoming traffic is distributed when the listener's default action is a forward. (AI-inferred)
 	TargetGroups any
 }
 
 type LatticeListener_DefaultAction struct {
-	// Defines a fixed-response action for the listener's default action, which returns a specified HTTP status code (e.g., 404) without forwarding traffic to a target group. (AI-inferred)
 	FixedResponse any
-	// Configures the listener's default action to forward incoming requests to one or more VPC Lattice target groups with weighted distribution, where this object holds the list of target groups and their respective weights. (AI-inferred)
 	Forward any
 }
 
 type LatticeListener_Tags struct {
-	// The key of a user-defined tag to attach to the VPC Lattice listener, used for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// The value component of a tag assigned to the VPC Lattice listener, used to categorize the resource for cost allocation, access controls, and operational management. (AI-inferred)
 	Value any
 }
 
@@ -70,40 +62,24 @@ var LatticeListener_TagsFields = ubx.FieldMap{
 	}
 
 type LatticeListenerConfig struct {
-	// The default action defines how the listener handles requests that do not match any other rule, such as forwarding them to a target group or returning a fixed response. (AI-inferred)
 	DefaultAction any
-	// The name of the VPC Lattice listener, which is optional and defaults to an AWS-generated name if not provided. (AI-inferred)
 	Name any
-	// The port number on which the VPC Lattice listener receives incoming traffic, defaulting to 80 for HTTP or 443 for HTTPS when omitted. (AI-inferred)
 	Port any
-	// Specifies the network protocol (HTTP, HTTPS, or TCP) that the VPC Lattice listener uses to accept incoming traffic, as defined by the AWS::VpcLattice::Listener resource. (AI-inferred)
 	Protocol any
-	// The ID or Amazon Resource Name (ARN) of the service that owns this listener. (AI-inferred)
 	ServiceIdentifier any
-	// Specifies a list of tags (key-value pairs) to attach to the VPC Lattice listener, used for identifying and organizing the listener. (AI-inferred)
 	Tags any
 }
 
 type LatticeListenerAttrs struct {
-	// The Amazon Resource Name (ARN) of the VPC Lattice listener, assigned by AWS to uniquely identify the listener resource. (AI-inferred)
 	Arn any
-	// The default action defines how the listener handles requests that do not match any other rule, such as forwarding them to a target group or returning a fixed response. (AI-inferred)
 	DefaultAction any
-	// The unique AWS-assigned identifier for this VPC Lattice listener, used as the Terraform resource ID. (AI-inferred)
 	Id any
-	// The name of the VPC Lattice listener, which is optional and defaults to an AWS-generated name if not provided. (AI-inferred)
 	Name any
-	// The port number on which the VPC Lattice listener receives incoming traffic, defaulting to 80 for HTTP or 443 for HTTPS when omitted. (AI-inferred)
 	Port any
-	// Specifies the network protocol (HTTP, HTTPS, or TCP) that the VPC Lattice listener uses to accept incoming traffic, as defined by the AWS::VpcLattice::Listener resource. (AI-inferred)
 	Protocol any
-	// The Amazon Resource Name (ARN) of the VPC Lattice service that this listener is associated with, assigned by AWS. (AI-inferred)
 	ServiceArn any
-	// The unique identifier of the VPC Lattice service that this listener is attached to, assigned by AWS when the service is provisioned. (AI-inferred)
 	ServiceId any
-	// The ID or Amazon Resource Name (ARN) of the service that owns this listener. (AI-inferred)
 	ServiceIdentifier any
-	// Specifies a list of tags (key-value pairs) to attach to the VPC Lattice listener, used for identifying and organizing the listener. (AI-inferred)
 	Tags any
 }
 

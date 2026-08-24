@@ -10,15 +10,12 @@ export interface OpsAgentAgentSpace_OperatorApp_Iam {
 export interface OpsAgentAgentSpace_OperatorApp_Idc {
   createdAt?: string | Computed<string>;
   idcApplicationArn?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the IAM Identity Center (IdC) instance used by the operator application in the agent space for its identity configuration. (AI-inferred) */
   idcInstanceArn: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the IAM role that the operator application assumes within the AWS IAM Identity Center (IDC) configuration for the agent space. (AI-inferred) */
   operatorAppRoleArn: string | Computed<string>;
   updatedAt?: string | Computed<string>;
 }
 
 export interface OpsAgentAgentSpace_OperatorApp {
-  /** In an AWS::DevOpsAgent::AgentSpace, the `operator_app.iam` field defines the IAM role and permission settings the operator application uses to securely access AWS resources on behalf of the agent space. (AI-inferred) */
   iam?: OpsAgentAgentSpace_OperatorApp_Iam | Computed<OpsAgentAgentSpace_OperatorApp_Iam>;
   idc?: OpsAgentAgentSpace_OperatorApp_Idc | Computed<OpsAgentAgentSpace_OperatorApp_Idc>;
 }

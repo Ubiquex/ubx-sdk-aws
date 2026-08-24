@@ -8,23 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConformancePack_ConformancePackInputParameters:
-    # The name of an input parameter declared in the conformance pack template, used to provide a value when creating or updating the pack. (AI-inferred)
     parameter_name: Any = None
-    # The value assigned to a specific input parameter defined by the conformance pack template, used to customize the pack's configuration when deployed. (AI-inferred)
     parameter_value: Any = None
 
 @dataclasses.dataclass
 class ConformancePack_Tags:
-    # The key of a user-defined tag applied to the AWS Config Conformance Pack, used to categorize, organize, or identify the conformance pack resource in AWS. (AI-inferred)
     key: Any = None
-    # The value part of a tag key-value pair assigned to the Conformance Pack, used for identifying, organizing, and managing the pack in AWS Config. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ConformancePack_TemplateSsmdocumentDetails:
-    # The name of the AWS Systems Manager (SSM) document that contains the conformance pack template. (AI-inferred)
     document_name: Any = None
-    # The version of the AWS Systems Manager (SSM) document that provides the conformance pack template; when omitted, the default version of the document is used. (AI-inferred)
     document_version: Any = None
 
 _ConformancePack_ConformancePackInputParametersFields = {

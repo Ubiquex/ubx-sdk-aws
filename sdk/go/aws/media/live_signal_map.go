@@ -20,13 +20,11 @@ type LiveSignalMap_MonitorDeployment struct {
 }
 
 type LiveSignalMapConfig struct {
-	// Specifies the list of CloudWatch alarm template group identifiers (typically ARNs) that this MediaLive signal map references, so that the alarms defined in those template groups are applied to the signal map for monitoring. (AI-inferred)
 	CloudWatchAlarmTemplateGroupIdentifiers any
 	// A resource's optional description.
 	Description any
 	// A top-level supported AWS resource ARN to discovery a signal map from.
 	DiscoveryEntryPointArn any
-	// Specifies the list of EventBridge rule template group identifiers to associate with this AWS Elemental MediaLive signal map, enabling the signal map to use the event rules from those groups for monitoring and alerting. (AI-inferred)
 	EventBridgeRuleTemplateGroupIdentifiers any
 	// If true, will force a rediscovery of a signal map if an unchanged discoveryEntryPointArn is provided.
 	ForceRediscovery any
@@ -39,11 +37,8 @@ type LiveSignalMapConfig struct {
 type LiveSignalMapAttrs struct {
 	// A signal map's ARN (Amazon Resource Name)
 	Arn any
-	// Specifies the list of CloudWatch alarm template group identifiers (typically ARNs) that this MediaLive signal map references, so that the alarms defined in those template groups are applied to the signal map for monitoring. (AI-inferred)
 	CloudWatchAlarmTemplateGroupIdentifiers any
-	// A read-only list of CloudWatch alarm template group IDs attached to this MediaLive signal map, defining which alarm templates are included as signal sources for the map. (AI-inferred)
 	CloudWatchAlarmTemplateGroupIds any
-	// The date and time when the signal map was created, in ISO 8601 format. (AI-inferred)
 	CreatedAt any
 	// A resource's optional description.
 	Description any
@@ -51,9 +46,7 @@ type LiveSignalMapAttrs struct {
 	DiscoveryEntryPointArn any
 	// Error message associated with a failed creation or failed update attempt of a signal map.
 	ErrorMessage any
-	// Specifies the list of EventBridge rule template group identifiers to associate with this AWS Elemental MediaLive signal map, enabling the signal map to use the event rules from those groups for monitoring and alerting. (AI-inferred)
 	EventBridgeRuleTemplateGroupIdentifiers any
-	// The list of Amazon EventBridge rule template group identifiers associated with the MediaLive signal map, as resolved and maintained by the service. (AI-inferred)
 	EventBridgeRuleTemplateGroupIds any
 	// A map representing an incomplete AWS media workflow as a graph.
 	FailedMediaResourceMap any
@@ -61,15 +54,12 @@ type LiveSignalMapAttrs struct {
 	ForceRediscovery any
 	// A signal map's id.
 	Id any
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Elemental MediaLive signal map. (AI-inferred)
 	Identifier any
-	// The `last_discovered_at` field is a read-only timestamp string representing the date and time when AWS MediaLive last ran its automatic discovery of the signal map's resources. (AI-inferred)
 	LastDiscoveredAt any
 	// Represents the latest successful monitor deployment of a signal map.
 	LastSuccessfulMonitorDeployment any
 	// A map representing an AWS media workflow as a graph.
 	MediaResourceMap any
-	// The timestamp (ISO 8601 format) indicating when the signal map was last modified, automatically set by AWS Elemental MediaLive. (AI-inferred)
 	ModifiedAt any
 	// If true, there are pending monitor changes for this signal map that can be deployed.
 	MonitorChangesPendingDeployment any

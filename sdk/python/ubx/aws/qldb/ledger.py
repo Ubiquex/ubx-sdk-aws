@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Ledger_Tags:
-    # Defines the key of a tag applied to the QLDB ledger, which serves as a user-defined label for identifying and managing the ledger resource. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS QLDB ledger, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _Ledger_TagsFields = {
@@ -20,30 +18,19 @@ _Ledger_TagsFields = {
 
 @dataclasses.dataclass
 class LedgerConfig:
-    # Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred)
     deletion_protection: Any = None
-    # The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred)
     kms_key: Any = None
-    # The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred)
     name: Any = None
-    # Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred)
     permissions_mode: Any = None
-    # Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class LedgerAttrs:
-    # Enables or disables deletion protection for the ledger, preventing the ledger from being deleted when enabled. (AI-inferred)
     deletion_protection: Any = None
-    # The id is the unique name of the QLDB ledger, which serves as the primary identifier for the ledger resource. (AI-inferred)
     id: Any = None
-    # The ARN of a customer-managed AWS KMS key used to encrypt the ledger's data at rest; if omitted, AWS QLDB uses an AWS-owned key. (AI-inferred)
     kms_key: Any = None
-    # The name of the QLDB ledger to create; if you do not provide one, AWS CloudFormation generates a unique name for the ledger. (AI-inferred)
     name: Any = None
-    # Sets the permissions mode for the QLDB ledger, which controls whether all IAM principals can access the ledger through IAM policies (ALLOW_ALL) or whether access is restricted by standard QLDB permissions (STANDARD). (AI-inferred)
     permissions_mode: Any = None
-    # Specifies the list of key-value tags to attach to the QLDB ledger. (AI-inferred)
     tags: Any = None
 
 Ledger = ubx.ResourceBinding(

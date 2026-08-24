@@ -27,9 +27,7 @@ type TestCase_EntryPoint struct {
 }
 
 type TestCase_Tags struct {
-	// The tag key for a label attached to the AWS Connect test case, where each key identifies a specific tag and must be unique among the resource's tags. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag used to label an AWS Connect test case for resource management and categorization. (AI-inferred)
 	Value any
 }
 

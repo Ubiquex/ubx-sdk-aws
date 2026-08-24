@@ -2,62 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfiguration {
-  /** The password for the Hyperledger Fabric admin user associated with this member, used to authenticate to the Managed Blockchain network's Fabric client. (AI-inferred) */
   adminPassword: string | Computed<string>;
-  /** The admin username for the Hyperledger Fabric certificate authority (CA) of the member, used to authenticate as the Fabric CA admin. (AI-inferred) */
   adminUsername: string | Computed<string>;
 }
 
 export interface BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration {
-  /** This object configures Hyperledger Fabric settings for the member, including the admin username and password used to access the member's Fabric CA. (AI-inferred) */
   memberFabricConfiguration?: BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfiguration | Computed<BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration_MemberFabricConfiguration>;
 }
 
 export interface BlockchainMember_MemberConfiguration {
-  /** An optional description of the Managed Blockchain member, which is attached to the member's configuration for identification purposes. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the Hyperledger Fabric-specific configuration for this Managed Blockchain member, including the administrator credentials (username and password) for the peer node. (AI-inferred) */
   memberFrameworkConfiguration?: BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration | Computed<BlockchainMember_MemberConfiguration_MemberFrameworkConfiguration>;
-  /** The user-defined name of the member, required in the member configuration, used to identify and distinguish the member within the Managed Blockchain network. (AI-inferred) */
   name: string | Computed<string>;
 }
 
 export interface BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfiguration {
-  /** The Hyperledger Fabric network edition (STARTER or STANDARD) that determines the allowed number of peer nodes and ordering service nodes for the member's network. (AI-inferred) */
   edition: string | Computed<string>;
 }
 
 export interface BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration {
-  /** Specifies the Hyperledger Fabric configuration for the blockchain network, including the Edition property that determines whether the network runs on the STARTER or STANDARD edition for the member's network. (AI-inferred) */
   networkFabricConfiguration?: BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfiguration | Computed<BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration_NetworkFabricConfiguration>;
 }
 
 export interface BlockchainMember_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicy {
-  /** The maximum duration in hours that a proposal remains open for voting before it expires in the Managed Blockchain network's voting policy. (AI-inferred) */
   proposalDurationInHours?: number | Computed<number>;
-  /** Specifies the comparator used to compare the voting threshold against the number of approvals, such as GREATER_THAN or GREATER_THAN_OR_EQUAL_TO. (AI-inferred) */
   thresholdComparator?: string | Computed<string>;
-  /** Specifies the percentage of all voting outcomes that must be 'yes' for a proposal to be approved, used by the approval threshold policy in the Managed Blockchain network's voting policy. (AI-inferred) */
   thresholdPercentage?: number | Computed<number>;
 }
 
 export interface BlockchainMember_NetworkConfiguration_VotingPolicy {
-  /** Defines the approval threshold rules (such as proposal duration, threshold comparator, and threshold percentage) that govern how Hyperledger Fabric proposals are approved in the member's network. (AI-inferred) */
   approvalThresholdPolicy?: BlockchainMember_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicy | Computed<BlockchainMember_NetworkConfiguration_VotingPolicy_ApprovalThresholdPolicy>;
 }
 
 export interface BlockchainMember_NetworkConfiguration {
-  /** Provides an optional description for the Managed Blockchain network that is created when this member creates a new network as part of its network configuration. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The blockchain framework (e.g., HYPERLEDGER_FABRIC or ETHEREUM) that defines the network protocol when creating a new network via the first member. (AI-inferred) */
   framework: string | Computed<string>;
-  /** Specifies the version of the blockchain framework (e.g., Hyperledger Fabric 1.4) that the network configuration uses for the member's network. (AI-inferred) */
   frameworkVersion: string | Computed<string>;
-  /** The name of the Hyperledger Fabric network to be created when the member creates a new network, as specified in the network configuration. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the framework-specific settings for the blockchain network that the member joins, such as the Hyperledger Fabric edition (STARTER or STANDARD) within the network configuration. (AI-inferred) */
   networkFrameworkConfiguration?: BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration | Computed<BlockchainMember_NetworkConfiguration_NetworkFrameworkConfiguration>;
-  /** Defines the voting rules for the network, including the approval threshold and proposal duration, which govern decisions on membership proposals. (AI-inferred) */
   votingPolicy: BlockchainMember_NetworkConfiguration_VotingPolicy | Computed<BlockchainMember_NetworkConfiguration_VotingPolicy>;
 }
 
@@ -128,26 +110,17 @@ const BlockchainMember_NetworkConfigurationFields: FieldMap = {
 };
 
 export interface BlockchainMemberConfig {
-  /** The unique identifier of the invitation that was sent to this AWS account to join the Managed Blockchain network, required when adding a member to an existing network via an invitation. (AI-inferred) */
   invitationId?: string | Computed<string>;
-  /** Specifies the member's configuration, including its name, description, and framework-specific settings such as admin credentials for Hyperledger Fabric. (AI-inferred) */
   memberConfiguration: BlockchainMember_MemberConfiguration | Computed<BlockchainMember_MemberConfiguration>;
-  /** Defines the configuration for creating a new Hyperledger Fabric network when this member is the first member of a new network, including the network name, framework version, and voting policy. (AI-inferred) */
   networkConfiguration?: BlockchainMember_NetworkConfiguration | Computed<BlockchainMember_NetworkConfiguration>;
-  /** The unique identifier of the Managed Blockchain network to which this member belongs. (AI-inferred) */
   networkId?: string | Computed<string>;
 }
 
 export interface BlockchainMemberAttrs {
-  /** The unique identifier of the invitation that was sent to this AWS account to join the Managed Blockchain network, required when adding a member to an existing network via an invitation. (AI-inferred) */
   invitationId: string;
-  /** Specifies the member's configuration, including its name, description, and framework-specific settings such as admin credentials for Hyperledger Fabric. (AI-inferred) */
   memberConfiguration: BlockchainMember_MemberConfiguration;
-  /** The unique identifier assigned by AWS to the Managed Blockchain member when it is created. (AI-inferred) */
   memberId: string;
-  /** Defines the configuration for creating a new Hyperledger Fabric network when this member is the first member of a new network, including the network name, framework version, and voting policy. (AI-inferred) */
   networkConfiguration: BlockchainMember_NetworkConfiguration;
-  /** The unique identifier of the Managed Blockchain network to which this member belongs. (AI-inferred) */
   networkId: string;
 }
 

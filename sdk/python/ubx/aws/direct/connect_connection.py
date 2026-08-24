@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ConnectConnection_Tags:
     key: Any = None
-    # Specifies the value for a tag assigned to the Direct Connect connection, used to store arbitrary metadata or cost-allocation information. (AI-inferred)
     value: Any = None
 
 _ConnectConnection_TagsFields = {

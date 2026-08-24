@@ -3,14 +3,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpacesWorkspaceIpGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the WorkSpaces IP group, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SpacesWorkspaceIpGroup_UserRules {
-  /** Specifies the IP address range in CIDR notation (e.g., 203.0.113.0/24) that defines which client IP addresses are permitted or denied access to WorkSpaces in this IP access control group. (AI-inferred) */
   ipRule?: string | Computed<string>;
-  /** A human-readable description for the IP access rule, used to label or explain the purpose of the rule within the WorkSpaces IP group. (AI-inferred) */
   ruleDesc?: string | Computed<string>;
 }
 

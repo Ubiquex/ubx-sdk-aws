@@ -8,24 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Document_Attachments:
-    # The key name of an attachment entry, such as 'SourceUrl' or 'Script', that specifies the attachment's purpose within an Automation document. (AI-inferred)
     key: Any = None
     name: Any = None
-    # Provides the list of source URLs (such as Amazon S3 file URLs) that define the actual content locations for an SSM document attachment, matched with the attachment's key to specify the type of source. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Document_Requires:
-    # The name of the AWS Systems Manager document that this document requires as a dependency. (AI-inferred)
     name: Any = None
-    # The version of another SSM document that this document requires as a dependency, specified in the 'requires' block of the aws_ssm_document resource. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Document_Tags:
-    # The tag key to assign to the SSM document, used for identifying and managing the document in AWS Systems Manager. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag attached to an SSM document, used to add metadata that supports resource identification, organization, and access control in AWS Systems Manager. (AI-inferred)
     value: Any = None
 
 _Document_AttachmentsFields = {

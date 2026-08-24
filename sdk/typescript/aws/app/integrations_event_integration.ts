@@ -7,9 +7,7 @@ export interface IntegrationsEventIntegration_EventFilter {
 }
 
 export interface IntegrationsEventIntegration_Tags {
-  /** The key of a tag attached to the Amazon AppIntegrations Event Integration, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag for the AWS App Integrations Event Integration, storing arbitrary metadata paired with the tag key for resource organization, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,7 +25,6 @@ export interface IntegrationsEventIntegrationConfig {
   description?: string | Computed<string>;
   /** The Amazon Eventbridge bus for the event integration. */
   eventBridgeBus: string | Computed<string>;
-  /** Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred) */
   eventFilter: IntegrationsEventIntegration_EventFilter | Computed<IntegrationsEventIntegration_EventFilter>;
   /** The name of the event integration. */
   name: string | Computed<string>;
@@ -40,7 +37,6 @@ export interface IntegrationsEventIntegrationAttrs {
   description: string;
   /** The Amazon Eventbridge bus for the event integration. */
   eventBridgeBus: string;
-  /** Specifies the source of the events that this EventIntegration subscribes to, determining which events are routed into the associated EventBridge bus. (AI-inferred) */
   eventFilter: IntegrationsEventIntegration_EventFilter;
   /** The Amazon Resource Name (ARN) of the event integration. */
   eventIntegrationArn: string;

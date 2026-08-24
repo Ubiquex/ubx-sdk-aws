@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Tags struct {
-	// The key of a tag attached to the AWS RDS event subscription, used to assign custom metadata for identifying and organizing the subscription. (AI-inferred)
 	Key any
-	// Specifies a tag value for a tag key attached to the RDS event subscription, used to organize and identify the subscription in AWS. (AI-inferred)
 	Value any
 }
 

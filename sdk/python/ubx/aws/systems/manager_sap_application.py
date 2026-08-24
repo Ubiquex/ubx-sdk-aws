@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerSapApplication_ComponentsInfo:
-    # Specifies the type of the SAP component (e.g., HANA or NetWeaver) that this component info entry describes for the AWS Systems Manager for SAP application. (AI-inferred)
     component_type: Any = None
-    # The ID of the EC2 instance that hosts this SAP application component. (AI-inferred)
     ec2_instance_id: Any = None
-    # This field specifies the SAP System Identifier (SID) for an SAP component associated with the application, which AWS Systems Manager for SAP uses to identify and manage the component. (AI-inferred)
     sid: Any = None
 
 @dataclasses.dataclass
 class ManagerSapApplication_Credentials:
-    # Specifies whether the credential is for administrative access (ADMIN) or system-level access (SYSTEM) to the SAP application. (AI-inferred)
     credential_type: Any = None
-    # The name of the SAP database (e.g., an SAP HANA database) that this credential is used to access for the registered SAP application. (AI-inferred)
     database_name: Any = None
-    # The secret ID of the AWS Secrets Manager secret that stores the database credentials for this SAP application. (AI-inferred)
     secret_id: Any = None
 
 @dataclasses.dataclass
 class ManagerSapApplication_Tags:
-    # A user-defined key within a tag assigned to the SAP application, used to categorize and filter the resource in AWS Systems Manager. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AWS Systems Manager for SAP application, enabling custom metadata for organization, cost tracking, and resource management. (AI-inferred)
     value: Any = None
 
 _ManagerSapApplication_ComponentsInfoFields = {
@@ -50,42 +42,32 @@ _ManagerSapApplication_TagsFields = {
 
 @dataclasses.dataclass
 class ManagerSapApplicationConfig:
-    # The unique identifier of the SAP application to register with AWS Systems Manager for SAP. (AI-inferred)
     application_id: Any = None
-    # The type of the SAP application being registered under Systems Manager for SAP (e.g., ABAP, JAVA, or HANA), which determines how the resource is managed and which components are applicable. (AI-inferred)
     application_type: Any = None
     # This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
     components_info: Any = None
-    # A list of credential objects specifying the authentication details (credential type, secret ID, and optional database name) used by the SAP application to connect to SAP systems. (AI-inferred)
     credentials: Any = None
     # The ARN of the SAP HANA database
     database_arn: Any = None
-    # The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
     instances: Any = None
     sap_instance_number: Any = None
-    # Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
     sid: Any = None
     # The tags of a SystemsManagerSAP application.
     tags: Any = None
 
 @dataclasses.dataclass
 class ManagerSapApplicationAttrs:
-    # The unique identifier of the SAP application to register with AWS Systems Manager for SAP. (AI-inferred)
     application_id: Any = None
-    # The type of the SAP application being registered under Systems Manager for SAP (e.g., ABAP, JAVA, or HANA), which determines how the resource is managed and which components are applicable. (AI-inferred)
     application_type: Any = None
     # The ARN of the SSM-SAP application
     arn: Any = None
     # This is an optional parameter for component details to which the SAP ABAP application is attached, such as Web Dispatcher.
     components_info: Any = None
-    # A list of credential objects specifying the authentication details (credential type, secret ID, and optional database name) used by the SAP application to connect to SAP systems. (AI-inferred)
     credentials: Any = None
     # The ARN of the SAP HANA database
     database_arn: Any = None
-    # The instances field lists the EC2 instance IDs that host the SAP application components that are registered and managed by this Systems Manager for SAP application. (AI-inferred)
     instances: Any = None
     sap_instance_number: Any = None
-    # Specifies the SAP System Identifier (SID) for the SAP system associated with this application, a three-character code that uniquely identifies the SAP system (e.g., `H20`). (AI-inferred)
     sid: Any = None
     # The tags of a SystemsManagerSAP application.
     tags: Any = None

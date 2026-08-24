@@ -13,7 +13,6 @@ export interface SyncLocationNfs_OnPremConfig {
 
 export interface SyncLocationNfs_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to this AWS DataSync location for NFS, used for metadata, identification, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

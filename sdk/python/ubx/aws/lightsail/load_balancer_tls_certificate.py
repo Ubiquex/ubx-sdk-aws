@@ -35,7 +35,6 @@ class LoadBalancerTlsCertificateAttrs:
     is_attached: Any = None
     # The name of your load balancer.
     load_balancer_name: Any = None
-    # The Amazon Resource Name (ARN) of the Lightsail load balancer TLS certificate, assigned by AWS when the certificate is created. (AI-inferred)
     load_balancer_tls_certificate_arn: Any = None
     # The validation status of the SSL/TLS certificate.
     status: Any = None

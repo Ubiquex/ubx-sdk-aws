@@ -4,30 +4,22 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChannelFlow_Processors_Configuration_Lambda struct {
-	// Specifies whether the Lambda function is invoked asynchronously (ASYNC) or synchronously (SYNC) for this processor in the channel flow. (AI-inferred)
 	InvocationType any
-	// The ARN of the AWS Lambda function that the Amazon Chime channel flow invokes to process messages for this processor. (AI-inferred)
 	ResourceArn any
 }
 
 type ChannelFlow_Processors_Configuration struct {
-	// The configuration block for a Lambda processor in a Chime channel flow, specifying the Lambda function ARN and the IAM role ARN used to invoke it. (AI-inferred)
 	Lambda any
 }
 
 type ChannelFlow_Processors struct {
-	// Defines the configuration for a processor in the channel flow, specifying the Lambda function ARN and the invocation role ARN used when the processor type is Lambda. (AI-inferred)
 	Configuration any
-	// The integer execution order of this processor within the channel flow, which determines the sequence in which processors are invoked during message processing. (AI-inferred)
 	ExecutionOrder any
-	// The action to execute if the processor's primary action fails, such as 'SEND' or 'DELETE'. (AI-inferred)
 	FallbackAction any
-	// The user-defined name that identifies this processor within the channel flow's processor list, used for configuration and runtime reference. (AI-inferred)
 	Name any
 }
 
 type ChannelFlow_Tags struct {
-	// The key of a tag attached to the Chime ChannelFlow resource. (AI-inferred)
 	Key any
 	Value any
 }

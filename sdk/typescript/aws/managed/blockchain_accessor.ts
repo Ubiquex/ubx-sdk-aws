@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BlockchainAccessor_Tags {
-  /** The key of a tag assigned to the Managed Blockchain Accessor, used to organize, identify, and manage accessor resources. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,28 +12,19 @@ const BlockchainAccessor_TagsFields: FieldMap = {
 };
 
 export interface BlockchainAccessorConfig {
-  /** Specifies the accessor type (BILLING_TOKEN, ETHEREUM_GOERLI, or ETHEREUM_MAINNET), which determines whether the accessor is a billing token or grants access to a specific Ethereum network. (AI-inferred) */
   accessorType: string | Computed<string>;
-  /** Specifies the Ethereum network type that the Managed Blockchain accessor connects to, such as ETHEREUM_MAINNET for the public mainnet or ETHEREUM_TESTNET for a public test network. (AI-inferred) */
   networkType?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: BlockchainAccessor_Tags[] | Computed<BlockchainAccessor_Tags[]>;
 }
 
 export interface BlockchainAccessorAttrs {
-  /** Specifies the accessor type (BILLING_TOKEN, ETHEREUM_GOERLI, or ETHEREUM_MAINNET), which determines whether the accessor is a billing token or grants access to a specific Ethereum network. (AI-inferred) */
   accessorType: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Managed Blockchain accessor. (AI-inferred) */
   arn: string;
-  /** The unique billing token assigned by AWS to the accessor, used to identify the accessor for metering and billing when interacting with Amazon Managed Blockchain. (AI-inferred) */
   billingToken: string;
-  /** The timestamp (in ISO 8601 format) at which the AWS Managed Blockchain accessor was created, automatically set by the service and returned as a computed value. (AI-inferred) */
   creationDate: string;
-  /** The unique identifier assigned to the Managed Blockchain accessor by AWS. (AI-inferred) */
   id: string;
-  /** Specifies the Ethereum network type that the Managed Blockchain accessor connects to, such as ETHEREUM_MAINNET for the public mainnet or ETHEREUM_TESTNET for a public test network. (AI-inferred) */
   networkType: string;
-  /** The current lifecycle status of the Managed Blockchain accessor, indicating whether it is available for use (AVAILABLE) or in a deletion state (PENDING_DELETION, DELETED). (AI-inferred) */
   status: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: BlockchainAccessor_Tags[];

@@ -30,7 +30,6 @@ _Ipamscope_TagsFields = {
 
 @dataclasses.dataclass
 class IpamscopeConfig:
-    # A user-defined description for the IPAM scope. (AI-inferred)
     description: Any = None
     # External service configuration to connect your AWS IPAM scope.
     external_authority_configuration: Any = None
@@ -43,7 +42,6 @@ class IpamscopeConfig:
 class IpamscopeAttrs:
     # The Amazon Resource Name (ARN) of the IPAM scope.
     arn: Any = None
-    # A user-defined description for the IPAM scope. (AI-inferred)
     description: Any = None
     # External service configuration to connect your AWS IPAM scope.
     external_authority_configuration: Any = None

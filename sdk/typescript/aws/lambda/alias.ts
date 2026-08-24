@@ -7,9 +7,7 @@ export interface Alias_ProvisionedConcurrencyConfig {
 }
 
 export interface Alias_RoutingConfig_AdditionalVersionWeights {
-  /** The Lambda function version (e.g., '1' or '$LATEST') that receives a portion of the alias's traffic when weight is assigned, serving as the map key in the additional version weights routing configuration. (AI-inferred) */
   functionVersion?: string | Computed<string>;
-  /** Specifies the traffic weight (a number between 0 and 1) that this Lambda function version receives when the alias uses routing configuration to shift traffic between two versions. (AI-inferred) */
   functionWeight?: number | Computed<number>;
 }
 

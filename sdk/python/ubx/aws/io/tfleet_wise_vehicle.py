@@ -8,35 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TfleetWiseVehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic_StateTemplateUpdateRate:
-    # The unit of time (e.g., MILLISECONDS, SECONDS, MINUTES, HOURS) for the periodic state template update rate, which determines how often the state template is updated for the vehicle. (AI-inferred)
     unit: Any = None
-    # The periodic state template update rate in seconds, which determines how often the vehicle sends state template data to AWS IoT FleetWise. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseVehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic:
-    # The state_template_update_rate field defines the interval (e.g., a duration such as '1d' or '1h') at which the periodic state template update strategy triggers an update for the FleetWise vehicle. (AI-inferred)
     state_template_update_rate: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseVehicle_StateTemplates_StateTemplateUpdateStrategy:
-    # Enables the on-change update strategy for this state template, meaning the state template is refreshed whenever the vehicle's signal values change rather than on a periodic schedule. (AI-inferred)
     on_change: Any = None
-    # The periodic update strategy for a state template, indicating that the vehicle should send state updates at a fixed interval configured by its subfields. (AI-inferred)
     periodic: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseVehicle_StateTemplates:
-    # The unique identifier that associates a state template with the vehicle, used to reference the state template within the vehicle's state template associations. (AI-inferred)
     identifier: Any = None
-    # Specifies how the state template is updated, either by a periodic schedule (with a cron/rate expression and an action to take on update) or immediately when a change occurs. (AI-inferred)
     state_template_update_strategy: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseVehicle_Tags:
-    # The key of a user-defined tag attached to the AWS IoT FleetWise vehicle, used for organizing and identifying the resource. (AI-inferred)
     key: Any = None
-    # The value of a single tag attached to the AWS IoT FleetWise vehicle, allowing you to assign arbitrary metadata to the vehicle resource. (AI-inferred)
     value: Any = None
 
 _TfleetWiseVehicle_StateTemplates_StateTemplateUpdateStrategy_Periodic_StateTemplateUpdateRateFields = {
@@ -77,42 +68,25 @@ _TfleetWiseVehicle_TagsFields = {
 
 @dataclasses.dataclass
 class TfleetWiseVehicleConfig:
-    # Specifies whether to create or update the association between the vehicle and its associated fleet, with valid values being CREATE or UPDATE. (AI-inferred)
     association_behavior: Any = None
-    # A map of custom string key-value pairs that define metadata attributes for the vehicle, such as make, model, year, or fleet-specific identifiers, used by AWS IoT FleetWise to describe and manage the vehicle. (AI-inferred)
     attributes: Any = None
-    # The Amazon Resource Name (ARN) of the decoder manifest that defines the signal decoding rules for this vehicle. (AI-inferred)
     decoder_manifest_arn: Any = None
-    # The Amazon Resource Name (ARN) of the model manifest that defines the vehicle's attributes and signals. (AI-inferred)
     model_manifest_arn: Any = None
-    # The unique name of the vehicle, which is used to identify it in AWS IoT FleetWise. (AI-inferred)
     name: Any = None
-    # Specifies a list of state templates that each define a named set of vehicle signals (e.g., speed, gear) to represent and report the vehicle's current state in AWS IoT FleetWise. (AI-inferred)
     state_templates: Any = None
-    # Associates a list of key-value tags with the vehicle for metadata, categorization, and access control in AWS IoT FleetWise. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseVehicleAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the vehicle in AWS IoT FleetWise. (AI-inferred)
     arn: Any = None
-    # Specifies whether to create or update the association between the vehicle and its associated fleet, with valid values being CREATE or UPDATE. (AI-inferred)
     association_behavior: Any = None
-    # A map of custom string key-value pairs that define metadata attributes for the vehicle, such as make, model, year, or fleet-specific identifiers, used by AWS IoT FleetWise to describe and manage the vehicle. (AI-inferred)
     attributes: Any = None
-    # The timestamp (ISO 8601 format) indicating when this vehicle was created in AWS IoT FleetWise. (AI-inferred)
     creation_time: Any = None
-    # The Amazon Resource Name (ARN) of the decoder manifest that defines the signal decoding rules for this vehicle. (AI-inferred)
     decoder_manifest_arn: Any = None
-    # The timestamp of the most recent update to the vehicle's configuration or metadata in AWS IoT FleetWise. (AI-inferred)
     last_modification_time: Any = None
-    # The Amazon Resource Name (ARN) of the model manifest that defines the vehicle's attributes and signals. (AI-inferred)
     model_manifest_arn: Any = None
-    # The unique name of the vehicle, which is used to identify it in AWS IoT FleetWise. (AI-inferred)
     name: Any = None
-    # Specifies a list of state templates that each define a named set of vehicle signals (e.g., speed, gear) to represent and report the vehicle's current state in AWS IoT FleetWise. (AI-inferred)
     state_templates: Any = None
-    # Associates a list of key-value tags with the vehicle for metadata, categorization, and access control in AWS IoT FleetWise. (AI-inferred)
     tags: Any = None
 
 TfleetWiseVehicle = ubx.ResourceBinding(

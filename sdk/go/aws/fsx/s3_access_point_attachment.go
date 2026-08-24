@@ -11,21 +11,17 @@ type S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser stru
 type S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity struct {
 	// Specifies the FSx for ONTAP user identity type, accepts either UNIX or WINDOWS.
 	Type any
-	// Configures the Unix user identity (e.g., user name or UID) that the FSx for ONTAP S3 access point uses to map file system access requests to a specific Unix user's permissions. (AI-inferred)
 	UnixUser any
-	// Specifies the Windows user credentials (domain and password) that define the file system's identity when the FSx for ONTAP file system is joined to an Active Directory domain. (AI-inferred)
 	WindowsUser any
 }
 
 type S3AccessPointAttachment_OntapConfiguration struct {
-	// Identifies the FSx for ONTAP file system and its storage virtual machine (SVM) to which the S3 access point is attached, containing the file system ID and SVM ID. (AI-inferred)
 	FileSystemIdentity any
 	// The ID of the FSx for ONTAP volume that the S3 access point is attached to.
 	VolumeId any
 }
 
 type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGids struct {
-	// The numeric secondary group ID (GID) that is added to the POSIX user's secondary group list for the file system identity used by the S3 access point attachment. (AI-inferred)
 	Gid any
 }
 
@@ -39,14 +35,12 @@ type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser s
 }
 
 type S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity struct {
-	// Defines the POSIX user (UID and GID) on the FSx for OpenZFS file system that is used to map operations from the attached S3 access point. (AI-inferred)
 	PosixUser any
 	// Specifies the FSx for OpenZFS user identity type, accepts only POSIX.
 	Type any
 }
 
 type S3AccessPointAttachment_OpenZfsconfiguration struct {
-	// Specifies the POSIX user ID and group ID (file system identity) that the OpenZFS file system uses when accessing the attached S3 access point. (AI-inferred)
 	FileSystemIdentity any
 	// The ID of the FSx for OpenZFS volume that the S3 access point is attached to.
 	VolumeId any
@@ -64,7 +58,6 @@ type S3AccessPointAttachment_S3AccessPoint struct {
 	Policy any
 	// The S3 access point's ARN.
 	ResourceArn any
-	// Specifies the VPC configuration for the S3 access point, including the VPC ID in which the access point is created and which restricts access to requests originating from that VPC only. (AI-inferred)
 	VpcConfiguration any
 }
 
@@ -130,7 +123,6 @@ var S3AccessPointAttachment_OpenZfsconfigurationFields = ubx.FieldMap{
 type S3AccessPointAttachmentConfig struct {
 	// The name of the S3 access point attachment; also used for the name of the S3 access point.
 	Name any
-	// The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
 	OntapConfiguration any
 	OpenZfsconfiguration any
 	// The type of Amazon FSx volume that the S3 access point is attached to.
@@ -142,7 +134,6 @@ type S3AccessPointAttachmentAttrs struct {
 	Lifecycle any
 	// The name of the S3 access point attachment; also used for the name of the S3 access point.
 	Name any
-	// The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
 	OntapConfiguration any
 	OpenZfsconfiguration any
 	S3AccessPoint any

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResourcePolicy_Tags:
-    # The key of a tag attached to the AWS Organizations resource policy. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the AWS Organizations resource policy, used to organize and identify the policy. (AI-inferred)
     value: Any = None
 
 _ResourcePolicy_TagsFields = {

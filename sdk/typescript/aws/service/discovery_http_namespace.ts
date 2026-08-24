@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryHttpNamespace_Tags {
-  /** Specifies the key (name) of a tag applied to the AWS CloudFormation Service Discovery HTTP namespace, forming the key half of a key-value tag pair. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,24 +12,16 @@ const DiscoveryHttpNamespace_TagsFields: FieldMap = {
 };
 
 export interface DiscoveryHttpNamespaceConfig {
-  /** Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred) */
   tags?: DiscoveryHttpNamespace_Tags[] | Computed<DiscoveryHttpNamespace_Tags[]>;
 }
 
 export interface DiscoveryHttpNamespaceAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the HTTP namespace in AWS. (AI-inferred) */
   arn: string;
-  /** Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred) */
   description: string;
-  /** The ID of the HTTP namespace, assigned by AWS Cloud Map when the namespace is created. (AI-inferred) */
   id: string;
-  /** The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred) */
   name: string;
-  /** Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred) */
   tags: DiscoveryHttpNamespace_Tags[];
 }
 

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration_Alarms {
-  /** The name of the CloudWatch alarm that SageMaker monitors during a deployment to trigger an automatic rollback of the endpoint to the previous configuration if the alarm enters an alarm state. (AI-inferred) */
   alarmName?: string | Computed<string>;
 }
 
@@ -19,9 +18,7 @@ export interface MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRou
 }
 
 export interface MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration {
-  /** Defines the initial canary step size for shifting traffic to the new endpoint variant during a blue/green deployment, expressed as either an instance count or a capacity percentage. (AI-inferred) */
   canarySize?: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize>;
-  /** Specifies the step size for the linear traffic routing strategy in the blue/green deployment, defined as a capacity size (type and value) that determines how much additional traffic is shifted to the new variant at each step. (AI-inferred) */
   linearStepSize?: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize>;
   /** Specifies the type of traffic routing (e.g., 'AllAtOnce', 'Canary', 'Linear'). */
   type: string | Computed<string>;
@@ -34,39 +31,30 @@ export interface MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy {
   maximumExecutionTimeoutInSeconds?: number | Computed<number>;
   /** The wait time before terminating the old endpoint during a blue/green deployment. */
   terminationWaitInSeconds?: number | Computed<number>;
-  /** Specifies the traffic routing strategy (such as canary or linear) and timing parameters that control how SageMaker shifts traffic from the previous endpoint variant to the new one during a blue-green deployment. (AI-inferred) */
   trafficRoutingConfiguration: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration>;
 }
 
 export interface MakerEndpoint_DeploymentConfig_RollingUpdatePolicy {
-  /** Defines the maximum capacity (number of instances or percentage) that SageMaker updates in a single batch during a rolling update of the endpoint's variant configuration. (AI-inferred) */
   maximumBatchSize: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize>;
   /** The maximum time allowed for the rolling update, in seconds. */
   maximumExecutionTimeoutInSeconds?: number | Computed<number>;
-  /** Specifies the maximum batch size (as a CapacitySize object with type and value) that SageMaker uses when rolling back instances during a rolling update deployment of the endpoint. (AI-inferred) */
   rollbackMaximumBatchSize?: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration_CanarySize>;
   /** The time to wait between steps during the rolling update, in seconds. */
   waitIntervalInSeconds: number | Computed<number>;
 }
 
 export interface MakerEndpoint_DeploymentConfig {
-  /** Defines the CloudWatch alarms that, when triggered during a SageMaker endpoint deployment, automatically roll back the deployment to the previous endpoint configuration. (AI-inferred) */
   autoRollbackConfiguration?: MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration | Computed<MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration>;
-  /** Defines the blue/green deployment strategy for updating the SageMaker endpoint, controlling how traffic gradually or immediately shifts from the previous model variant to the new one during an endpoint update. (AI-inferred) */
   blueGreenUpdatePolicy?: MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy | Computed<MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy>;
-  /** Defines the rolling update policy for a SageMaker endpoint deployment, specifying parameters like maximum batch size and wait interval that control how instances are updated during a rollout. (AI-inferred) */
   rollingUpdatePolicy?: MakerEndpoint_DeploymentConfig_RollingUpdatePolicy | Computed<MakerEndpoint_DeploymentConfig_RollingUpdatePolicy>;
 }
 
 export interface MakerEndpoint_ExcludeRetainedVariantProperties {
-  /** Specifies the type of variant property ('Desktop' or 'Host') to exclude for a retained variant when updating the SageMaker endpoint. (AI-inferred) */
   variantPropertyType?: string | Computed<string>;
 }
 
 export interface MakerEndpoint_Tags {
-  /** The key of a tag attached to the SageMaker endpoint, used to organize and identify the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the SageMaker endpoint, used to organize and identify the endpoint for cost allocation and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -155,7 +143,6 @@ const MakerEndpoint_TagsFields: FieldMap = {
 };
 
 export interface MakerEndpointConfig {
-  /** Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred) */
   deploymentConfig?: MakerEndpoint_DeploymentConfig | Computed<MakerEndpoint_DeploymentConfig>;
   /** The name of the endpoint configuration for the SageMaker endpoint. This is a required property. */
   endpointConfigName: string | Computed<string>;
@@ -170,7 +157,6 @@ export interface MakerEndpointConfig {
 }
 
 export interface MakerEndpointAttrs {
-  /** Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred) */
   deploymentConfig: MakerEndpoint_DeploymentConfig;
   /** The Amazon Resource Name (ARN) of the endpoint. */
   endpointArn: string;

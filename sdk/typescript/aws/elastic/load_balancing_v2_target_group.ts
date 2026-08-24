@@ -10,16 +10,12 @@ export interface LoadBalancingV2TargetGroup_Matcher {
 
 export interface LoadBalancingV2TargetGroup_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag applied to the Application Load Balancer target group, used for cost allocation and resource organization without affecting load balancing behavior. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface LoadBalancingV2TargetGroup_Targets {
-  /** Specifies the Availability Zone for this target, used to route traffic to that specific AZ when registering an IP target (and ignored for instance targets). (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The identifier of the target (e.g., EC2 instance ID, IP address, or Lambda function ARN) to register with the target group. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The port on which this target receives traffic, which overrides the target group's default port for that specific target when specified. (AI-inferred) */
   port?: number | Computed<number>;
   quicServerId?: string | Computed<string>;
 }
@@ -58,7 +54,6 @@ export interface LoadBalancingV2TargetGroupConfig {
   healthyThresholdCount?: number | Computed<number>;
   /** The type of IP address used for this target group. The possible values are ipv4 and ipv6. */
   ipAddressType?: string | Computed<string>;
-  /** Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred) */
   matcher?: LoadBalancingV2TargetGroup_Matcher | Computed<LoadBalancingV2TargetGroup_Matcher>;
   /** The name of the target group. */
   name?: string | Computed<string>;
@@ -103,7 +98,6 @@ export interface LoadBalancingV2TargetGroupAttrs {
   ipAddressType: string;
   /** The Amazon Resource Names (ARNs) of the load balancers that route traffic to this target group. */
   loadBalancerArns: string[];
-  /** Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred) */
   matcher: LoadBalancingV2TargetGroup_Matcher;
   /** The name of the target group. */
   name: string;

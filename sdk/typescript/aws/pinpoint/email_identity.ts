@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailIdentity_MailFromAttributes {
-  /** Determines whether Pinpoint uses the default MAIL FROM domain or rejects the message when the custom MAIL FROM domain's MX record is missing or misconfigured (USE_DEFAULT_VALUE or REJECT_MESSAGE). (AI-inferred) */
   behaviorOnMxFailure?: string | Computed<string>;
-  /** The custom MAIL FROM domain that Amazon Pinpoint uses as the envelope MAIL FROM address for emails sent from this email identity. (AI-inferred) */
   mailFromDomain?: string | Computed<string>;
 }
 
 export interface EmailIdentity_Tags {
-  /** The key (name) of a tag attached to the Amazon Pinpoint email identity, used to categorize, manage, and track the resource according to your tagging conventions. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key-value pair to be associated with the Amazon Pinpoint email identity. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -26,42 +22,25 @@ const EmailIdentity_TagsFields: FieldMap = {
 };
 
 export interface EmailIdentityConfig {
-  /** Specifies whether DKIM signing is enabled for the email identity, allowing emails sent from the identity to be signed with the associated DKIM key. (AI-inferred) */
   dkimSigningEnabled?: boolean | Computed<boolean>;
-  /** Enables or disables feedback forwarding for the email identity, causing Amazon Pinpoint to send bounce and complaint notifications to the Return-Path address when enabled. (AI-inferred) */
   feedbackForwardingEnabled?: boolean | Computed<boolean>;
-  /** Specifies the custom MAIL FROM domain and the behavior (use the default value or reject the message) to take when the MAIL FROM domain is not available for this Pinpoint email identity. (AI-inferred) */
   mailFromAttributes?: EmailIdentity_MailFromAttributes | Computed<EmailIdentity_MailFromAttributes>;
-  /** The email address or domain name that serves as the Amazon Pinpoint email identity for sending email. (AI-inferred) */
   name: string | Computed<string>;
-  /** Assigns a list of key-value tags to the Amazon Pinpoint email identity to help organize, identify, and manage the resource (e.g., for cost allocation and access control). (AI-inferred) */
   tags?: EmailIdentity_Tags[] | Computed<EmailIdentity_Tags[]>;
 }
 
 export interface EmailIdentityAttrs {
-  /** Specifies whether DKIM signing is enabled for the email identity, allowing emails sent from the identity to be signed with the associated DKIM key. (AI-inferred) */
   dkimSigningEnabled: boolean;
-  /** Enables or disables feedback forwarding for the email identity, causing Amazon Pinpoint to send bounce and complaint notifications to the Return-Path address when enabled. (AI-inferred) */
   feedbackForwardingEnabled: boolean;
-  /** The email address or domain name that serves as the unique identifier for this Pinpoint email identity. (AI-inferred) */
   id: string;
-  /** The first DNS record name that must be added to your domain's DNS settings to verify ownership of the Amazon Pinpoint email identity. (AI-inferred) */
   identityDnsrecordName1: string;
-  /** The name of the second DNS record (typically a DKIM record) required for email identity verification in Amazon Pinpoint. (AI-inferred) */
   identityDnsrecordName2: string;
-  /** The third DNS record name returned for the email identity, which must be added to your domain's DNS configuration to verify domain ownership. (AI-inferred) */
   identityDnsrecordName3: string;
-  /** This read-only attribute provides the value of the first DNS TXT record that Amazon Pinpoint requires you to add to your domain's DNS settings to verify the email identity for sending email. (AI-inferred) */
   identityDnsrecordValue1: string;
-  /** The second of the three CNAME record values that Amazon Pinpoint provides for a domain-based email identity; you must publish this value in your DNS to verify domain ownership and enable DKIM email signing. (AI-inferred) */
   identityDnsrecordValue2: string;
-  /** The value of the third DNS record (TXT record) that must be created in the domain's DNS settings to verify ownership of the email identity in Amazon Pinpoint. (AI-inferred) */
   identityDnsrecordValue3: string;
-  /** Specifies the custom MAIL FROM domain and the behavior (use the default value or reject the message) to take when the MAIL FROM domain is not available for this Pinpoint email identity. (AI-inferred) */
   mailFromAttributes: EmailIdentity_MailFromAttributes;
-  /** The email address or domain name that serves as the Amazon Pinpoint email identity for sending email. (AI-inferred) */
   name: string;
-  /** Assigns a list of key-value tags to the Amazon Pinpoint email identity to help organize, identify, and manage the resource (e.g., for cost allocation and access control). (AI-inferred) */
   tags: EmailIdentity_Tags[];
 }
 

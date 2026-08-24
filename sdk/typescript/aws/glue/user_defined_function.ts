@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserDefinedFunction_ResourceUris {
-  /** Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred) */
   resourceType?: string | Computed<string>;
-  /** The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 

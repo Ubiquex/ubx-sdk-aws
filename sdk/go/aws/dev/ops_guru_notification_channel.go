@@ -11,7 +11,6 @@ type OpsGuruNotificationChannel_Config_Filters struct {
 }
 
 type OpsGuruNotificationChannel_Config_Sns struct {
-	// The ARN of the Amazon SNS topic that DevOps Guru publishes notification messages to for this channel. (AI-inferred)
 	TopicArn any
 }
 

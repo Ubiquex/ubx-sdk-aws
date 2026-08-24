@@ -32,42 +32,28 @@ type LiftContainerFleet_InstanceConnectionPortRange struct {
 }
 
 type LiftContainerFleet_InstanceInboundPermissions struct {
-	// Specifies the starting port number of the range of inbound ports that are allowed on the container fleet's instances. (AI-inferred)
 	FromPort any
-	// Specifies the CIDR IP address range allowed to connect to the container fleet's game server ports. (AI-inferred)
 	IpRange any
-	// Specifies the IP protocol (TCP or UDP) for the inbound traffic that is allowed to reach the container fleet's instances. (AI-inferred)
 	Protocol any
-	// The upper bound of the port range that is allowed for inbound traffic to the container fleet's instances, used together with the from_port value to define a contiguous range. (AI-inferred)
 	ToPort any
 }
 
 type LiftContainerFleet_Locations_LocationCapacity_ManagedCapacityConfiguration struct {
-	// Determines the number of minutes of idle time (no active game sessions) that must elapse before Amazon GameLift scales in (removes) an instance in the container fleet. (AI-inferred)
 	ScaleInAfterInactivityMinutes any
-	// Controls whether the managed container fleet maintains a warm pool of instances or scales to zero when there are no active game sessions in that location. (AI-inferred)
 	ZeroCapacityStrategy any
 }
 
 type LiftContainerFleet_Locations_LocationCapacity struct {
-	// Sets the desired number of EC2 instances to run in this location for the container fleet, used by GameLift to scale capacity toward that target. (AI-inferred)
 	DesiredEc2Instances any
-	// Specifies the managed capacity configuration for the container fleet at this location, defining settings like the desired number of instances for that location. (AI-inferred)
 	ManagedCapacityConfiguration any
-	// The `max_size` property under a location's `location_capacity` specifies the upper bound of container instances that can run in that location for this GameLift container fleet. (AI-inferred)
 	MaxSize any
-	// The minimum number of container instances that GameLift maintains in the corresponding fleet location, defining the lower bound for auto scaling capacity for that location. (AI-inferred)
 	MinSize any
 }
 
 type LiftContainerFleet_Locations struct {
-	// The name of an AWS Region or Local Zone location to add to the container fleet's set of enabled locations. (AI-inferred)
 	Location any
-	// Specifies the scaling limits for the number of EC2 instances hosting container groups in the corresponding location, including desired, minimum, and maximum counts. (AI-inferred)
 	LocationCapacity any
-	// Indicates the current operational status of the player gateway in the fleet's location, such as ACTIVE or ERROR. (AI-inferred)
 	PlayerGatewayStatus any
-	// Specifies the fleet actions to stop in a particular location (e.g., AUTO_SCALING, CUSTOM_GAME_SERVER_ACTIONS, or CUSTOM_GAME_SERVER_SHUTDOWN) to prevent them from running there for the container fleet. (AI-inferred)
 	StoppedActions any
 }
 
@@ -81,35 +67,23 @@ type LiftContainerFleet_LogConfiguration struct {
 }
 
 type LiftContainerFleet_ScalingPolicies_TargetConfiguration struct {
-	// The target value for the metric used by the target-based scaling policy; GameLift adjusts the fleet's desired capacity to keep the metric near this value. (AI-inferred)
 	TargetValue any
 }
 
 type LiftContainerFleet_ScalingPolicies struct {
-	// The comparison operator used to evaluate the scaling metric against the threshold in the container fleet scaling policy, such as GreaterThanOrEqualToThreshold or LessThanThreshold. (AI-inferred)
 	ComparisonOperator any
-	// The number of consecutive 1-minute evaluation periods that the fleet's metric must breach the policy's threshold before the target tracking scaling policy triggers an adjustment. (AI-inferred)
 	EvaluationPeriods any
-	// The name of the CloudWatch metric (e.g., CPUUtilization, PlayerCount) that this scaling policy watches to determine when to trigger scaling actions for the container fleet. (AI-inferred)
 	MetricName any
-	// The name string that uniquely identifies this scaling policy within the container fleet, used to reference the policy in metrics and API calls. (AI-inferred)
 	Name any
-	// The type of scaling policy for the container fleet, either 'TargetTracking' to adjust capacity based on a target metric value or 'RuleBased' to scale based on custom conditions. (AI-inferred)
 	PolicyType any
-	// The number of instances by which the GameLift Container Fleet's desired capacity is increased or decreased when a CHANGE_IN_CAPACITY scaling policy is triggered. (AI-inferred)
 	ScalingAdjustment any
-	// Specifies whether the scaling adjustment is an absolute change in capacity, an exact capacity value, or a percentage change in capacity (ChangeInCapacity, ExactCapacity, or PercentChangeInCapacity). (AI-inferred)
 	ScalingAdjustmentType any
-	// The target tracking configuration for a scaling policy, specifying the metric and target value (e.g., a target fleet utilization or instance count) that the GameLift container fleet automatically adjusts capacity to maintain. (AI-inferred)
 	TargetConfiguration any
-	// The target value of the specified metric that, when crossed, triggers the scaling adjustment for the container fleet's autoscaling policy. (AI-inferred)
 	Threshold any
 }
 
 type LiftContainerFleet_Tags struct {
-	// The case-sensitive key of a tag attached to the Amazon GameLift container fleet, which serves as the tag's identifier for categorization and cost tracking. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to the GameLift container fleet, used for resource organization, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -235,7 +209,6 @@ type LiftContainerFleetAttrs struct {
 	InstanceInboundPermissions any
 	// The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See Amazon EC2 Instance Types for detailed descriptions.
 	InstanceType any
-	// A list of objects, each representing a GameLift location (AWS Region) where the container fleet has active instances, including the location name and its operational status and capacity, as computed and returned by the service. (AI-inferred)
 	Locations any
 	// A policy the location and provider of logs from the fleet.
 	LogConfiguration any

@@ -21,7 +21,6 @@ class StaticIpAttrs:
     ip_address: Any = None
     # A Boolean value indicating whether the static IP is attached.
     is_attached: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred)
     static_ip_arn: Any = None
     # The name of the static IP address.
     static_ip_name: Any = None

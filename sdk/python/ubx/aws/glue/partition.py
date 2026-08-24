@@ -8,92 +8,59 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_Columns:
-    # Sets the optional comment or description for a column within the partition's storage descriptor, providing human-readable context for that column in the AWS Glue Data Catalog. (AI-inferred)
     comment: Any = None
-    # The name of a column in the storage descriptor for the partition, defining the schema of the data stored in the partition. (AI-inferred)
     name: Any = None
-    # The data type (e.g., string, int, boolean) of the column in the partition's schema, as used by Glue when reading or writing the underlying data format. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_SchemaReference_SchemaId:
-    # The name of the AWS Glue Schema Registry that contains the schema referenced by the partition's storage descriptor. (AI-inferred)
     registry_name: Any = None
-    # The Amazon Resource Name (ARN) of the schema in the AWS Glue Schema Registry that this partition's storage descriptor references. (AI-inferred)
     schema_arn: Any = None
-    # The name of the AWS Glue Schema Registry schema that this partition's storage descriptor references. (AI-inferred)
     schema_name: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_SchemaReference:
-    # Identifies the schema in the AWS Glue Schema Registry (by schema ARN or registry name and schema name) that this partition's storage descriptor references via its schema reference. (AI-inferred)
     schema_id: Any = None
-    # The unique identifier (UUID) of a specific version of a schema in the AWS Glue Schema Registry, used to reference that schema version for this partition's storage descriptor when schema reference is configured. (AI-inferred)
     schema_version_id: Any = None
-    # The version number of the referenced Glue schema, used to pin the partition's storage descriptor to a specific schema version for schema evolution compatibility. (AI-inferred)
     schema_version_number: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_SerdeInfo:
-    # The name of the serializer/deserializer (SerDe) library used to read and write data for the partition's storage descriptor. (AI-inferred)
     name: Any = None
-    # Specifies the key-value configuration parameters for the SerDe (serializer/deserializer), such as format-specific options like delimiters, applied to the partition's storage descriptor. (AI-inferred)
     parameters: Any = None
-    # Specifies the fully qualified class name of the SerDe library (e.g., org.openx.data.jsonserde.JsonSerDe) used to serialize and deserialize data in the table partition. (AI-inferred)
     serialization_library: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_SkewedInfo:
-    # A list of column names in the partition's storage descriptor that are identified as having skewed data values, used together with skewed column value maps for optimizing storage and query performance in AWS Glue. (AI-inferred)
     skewed_column_names: Any = None
-    # Specifies a mapping from skewed column values to their physical file or directory locations within the storage descriptor, allowing query engines to locate data for unbalanced values efficiently. (AI-inferred)
     skewed_column_value_location_maps: Any = None
-    # Specifies the list of skewed values (in the same order and count as the skewed column names) that should be mapped to separate physical locations for asymmetric or skewed data in the Glue table's storage descriptor. (AI-inferred)
     skewed_column_values: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor_SortColumns:
-    # The name of the column that serves as the sort key for this partition, determining the order of data within the partition's storage descriptor. (AI-inferred)
     column: Any = None
-    # Specifies whether the column is sorted in ascending (0) or descending (1) order. (AI-inferred)
     sort_order: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput_StorageDescriptor:
-    # The list of column names by which the partition data is bucketed (hash-partitioned) within the Glue table. (AI-inferred)
     bucket_columns: Any = None
-    # Defines the columns (name, data type, and optional comment) that make up the schema of the partition's storage descriptor. (AI-inferred)
     columns: Any = None
-    # Indicates whether the data in the partition is compressed, as defined in the AWS Glue StorageDescriptor for the partition's table format. (AI-inferred)
     compressed: Any = None
-    # The fully qualified class name of the input format used for reading files in this partition, such as org.apache.hadoop.mapred.TextInputFormat. (AI-inferred)
     input_format: Any = None
-    # The URI of the storage location (typically an S3 prefix) where the data files for this partition reside, as defined in the partition's StorageDescriptor. (AI-inferred)
     location: Any = None
-    # Specifies the number of buckets in the storage descriptor for the partition, which defines the bucketing layout of the underlying data in AWS Glue. (AI-inferred)
     number_of_buckets: Any = None
-    # Specifies the fully qualified class name of the Hadoop OutputFormat used for writing data files in the partition, such as org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat or org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat. (AI-inferred)
     output_format: Any = None
-    # Specifies custom key-value pairs (parameters) for the storage descriptor, such as SerDe or compression properties, for the Glue partition. (AI-inferred)
     parameters: Any = None
-    # Specifies a reference to a schema in the AWS Glue Schema Registry, including the schema identifier and version, that defines the column structure for this partition. (AI-inferred)
     schema_reference: Any = None
-    # Specifies the serialization/deserialization (SerDe) configuration, including the SerDe library name and parameters, used to interpret the data in the partition's storage descriptor. (AI-inferred)
     serde_info: Any = None
-    # Specifies skewed column names, skewed column values, and their location mappings for the partition's storage descriptor, used to optimize storage and query handling for skewed data in the table. (AI-inferred)
     skewed_info: Any = None
-    # Sorts the data stored in the partition by the specified columns, each entry providing a column name and an integer sort order (0 for descending, 1 for ascending). (AI-inferred)
     sort_columns: Any = None
-    # Specifies whether the partition's data is stored in subdirectories rather than in a single directory, as part of the storage descriptor. (AI-inferred)
     stored_as_sub_directories: Any = None
 
 @dataclasses.dataclass
 class Partition_PartitionInput:
-    # Specifies key-value pairs that store custom metadata for the partition (e.g., compression type or other table properties), as a dynamic map of strings. (AI-inferred)
     parameters: Any = None
-    # Defines the physical storage details for the partition, including its location (such as an S3 path), input and output formats, column schema, SerDe configuration, and bucket or sort key settings. (AI-inferred)
     storage_descriptor: Any = None
-    # The list of partition key values that uniquely identify this partition within the Glue table, matching the order of the table's partition key columns. (AI-inferred)
     values: Any = None
 
 _Partition_PartitionInput_StorageDescriptor_ColumnsFields = {
@@ -183,26 +150,17 @@ _Partition_PartitionInputFields = {
 
 @dataclasses.dataclass
 class PartitionConfig:
-    # The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred)
     catalog_id: Any = None
-    # The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred)
     database_name: Any = None
-    # The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred)
     partition_input: Any = None
-    # The name of the Glue table to which this partition belongs. (AI-inferred)
     table_name: Any = None
 
 @dataclasses.dataclass
 class PartitionAttrs:
-    # The identifier of the AWS Glue Data Catalog (typically the AWS account ID) that contains the database and table where this partition is created. (AI-inferred)
     catalog_id: Any = None
-    # The name of the Glue Data Catalog database that contains the table for which this partition is defined. (AI-inferred)
     database_name: Any = None
-    # The unique identifier of the Glue partition, typically a composite of the database name, table name, and partition values (e.g., 'database:table:value1/value2'). (AI-inferred)
     id: Any = None
-    # The partition_input field defines the metadata and storage configuration for a single partition in a Glue table, including its values, storage descriptor, and parameters. (AI-inferred)
     partition_input: Any = None
-    # The name of the Glue table to which this partition belongs. (AI-inferred)
     table_name: Any = None
 
 Partition = ubx.ResourceBinding(

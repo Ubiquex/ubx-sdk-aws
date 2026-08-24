@@ -4,17 +4,13 @@ package wafregional
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WebAclassociationConfig struct {
-	// The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred)
 	ResourceArn any
-	// The unique identifier of the AWS WAF Regional Web ACL that is associated with the specified resource, such as an Application Load Balancer or Amazon API Gateway stage. (AI-inferred)
 	WebAclid any
 }
 
 type WebAclassociationAttrs struct {
 	Id any
-	// The ARN of the AWS resource (such as an Application Load Balancer or Amazon API Gateway stage) to associate with the Web ACL. (AI-inferred)
 	ResourceArn any
-	// The unique identifier of the AWS WAF Regional Web ACL that is associated with the specified resource, such as an Application Load Balancer or Amazon API Gateway stage. (AI-inferred)
 	WebAclid any
 }
 

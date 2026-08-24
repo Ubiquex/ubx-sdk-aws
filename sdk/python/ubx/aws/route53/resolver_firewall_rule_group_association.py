@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ResolverFirewallRuleGroupAssociation_Tags:
     key: Any = None
-    # The value part of a tag attached to the Route 53 Resolver firewall rule group association, used to attach arbitrary metadata like environment or owner for identifying and managing the association. (AI-inferred)
     value: Any = None
 
 _ResolverFirewallRuleGroupAssociation_TagsFields = {

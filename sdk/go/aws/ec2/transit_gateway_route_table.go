@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TransitGatewayRouteTable_Tags struct {
-	// The key of a tag to attach to the transit gateway route table, used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag applied to this EC2 Transit Gateway Route Table, used for identifying or categorizing the resource. (AI-inferred)
 	Value any
 }
 

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Certificate_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the AWS Transfer Family certificate, used for identifying and categorizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

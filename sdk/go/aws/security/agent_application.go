@@ -4,7 +4,6 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentApplication_IdCconfiguration struct {
-	// The ARN of the AWS IAM Identity Center (IdC) application that is used as part of the IdC configuration for this security agent application resource. (AI-inferred)
 	IdCapplicationArn any
 	IdCinstanceArn any
 }

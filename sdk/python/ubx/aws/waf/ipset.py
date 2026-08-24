@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Ipset_IpsetDescriptors:
-    # Specifies the IP address version (either IPV4 or IPV6) for the CIDR value in this IPSet descriptor. (AI-inferred)
     type: Any = None
-    # The IP address or CIDR range to include in the WAF IPSet, such as 192.0.2.0/24 or 10.0.0.1. (AI-inferred)
     value: Any = None
 
 _Ipset_IpsetDescriptorsFields = {
@@ -20,18 +18,13 @@ _Ipset_IpsetDescriptorsFields = {
 
 @dataclasses.dataclass
 class IpsetConfig:
-    # Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
     ipset_descriptors: Any = None
-    # The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class IpsetAttrs:
-    # Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred)
     ipset_descriptors: Any = None
-    # The unique identifier assigned by AWS to this IP set, used to reference it when associating with AWS WAF rules or updating the set. (AI-inferred)
     id: Any = None
-    # The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred)
     name: Any = None
 
 Ipset = ubx.ResourceBinding(

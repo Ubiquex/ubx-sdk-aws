@@ -9,7 +9,6 @@ type FindingsFilter_FindingCriteria struct {
 }
 
 type FindingsFilter_Tags struct {
-	// Specifies the key of a tag that you can attach to the findings filter to help identify and organize it in AWS Macie. (AI-inferred)
 	Key any
 	Value any
 }
@@ -24,11 +23,9 @@ var FindingsFilter_TagsFields = ubx.FieldMap{
 	}
 
 type FindingsFilterConfig struct {
-	// Specifies the action to take on findings that match the filter's criteria, with allowed values ARCHIVE to archive (suppress) the findings or NOOP to not change them, in AWS Macie. (AI-inferred)
 	Action any
 	// Findings filter description
 	Description any
-	// Defines the matching conditions, evaluated against finding attributes such as severity, type, or other properties, that determine which findings are included in the filter. (AI-inferred)
 	FindingCriteria any
 	// Findings filter name
 	Name any
@@ -39,13 +36,11 @@ type FindingsFilterConfig struct {
 }
 
 type FindingsFilterAttrs struct {
-	// Specifies the action to take on findings that match the filter's criteria, with allowed values ARCHIVE to archive (suppress) the findings or NOOP to not change them, in AWS Macie. (AI-inferred)
 	Action any
 	// Findings filter ARN.
 	Arn any
 	// Findings filter description
 	Description any
-	// Defines the matching conditions, evaluated against finding attributes such as severity, type, or other properties, that determine which findings are included in the filter. (AI-inferred)
 	FindingCriteria any
 	// Findings filter ID.
 	Id any

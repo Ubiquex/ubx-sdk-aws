@@ -4,24 +4,17 @@ package verified
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionsPolicyTemplateConfig struct {
-	// Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
 	Description any
 	Name any
-	// The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
 	PolicyStoreId any
-	// The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred)
 	Statement any
 }
 
 type PermissionsPolicyTemplateAttrs struct {
-	// Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred)
 	Description any
 	Name any
-	// The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred)
 	PolicyStoreId any
-	// The unique identifier (UUID) assigned by Amazon Verified Permissions to the policy template, used to reference the template in policies and API operations. (AI-inferred)
 	PolicyTemplateId any
-	// The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred)
 	Statement any
 }
 

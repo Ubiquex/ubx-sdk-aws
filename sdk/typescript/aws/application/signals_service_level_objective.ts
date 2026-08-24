@@ -2,30 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SignalsServiceLevelObjective_BurnRateConfigurations {
-  /** The length of the look-back window, in minutes, over which the burn rate is evaluated for this burn rate configuration. (AI-inferred) */
   lookBackWindowMinutes?: number | Computed<number>;
 }
 
 export interface SignalsServiceLevelObjective_ExclusionWindows_RecurrenceRule {
-  /** The cron expression that defines the recurring schedule for this exclusion window, during which the SLO is not evaluated. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_ExclusionWindows_Window {
-  /** The duration in minutes of the exclusion window, during which the SLO's metric data is excluded from evaluation. (AI-inferred) */
   duration?: number | Computed<number>;
-  /** The unit of time (such as Days or Hours) for the numeric duration of the exclusion window, determining how long the service level objective evaluation is paused. (AI-inferred) */
   durationUnit?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_ExclusionWindows {
-  /** The reason or annotation for excluding this time window from the SLO's evaluation, commonly used to document planned maintenance or expected anomalies. (AI-inferred) */
   reason?: string | Computed<string>;
-  /** Defines the recurrence schedule (cron or rate expression) for a time window during which the service level objective's evaluation is excluded. (AI-inferred) */
   recurrenceRule?: SignalsServiceLevelObjective_ExclusionWindows_RecurrenceRule | Computed<SignalsServiceLevelObjective_ExclusionWindows_RecurrenceRule>;
-  /** Defines the start of an exclusion window, a time period during which the SLO's evaluation is paused so that planned maintenance or other excluded events do not affect the objective's availability calculation. (AI-inferred) */
   startTime?: string | Computed<string>;
-  /** This object specifies the start and end times of the exclusion window, during which the SLO's attainment metric is not evaluated. (AI-inferred) */
   window?: SignalsServiceLevelObjective_ExclusionWindows_Window | Computed<SignalsServiceLevelObjective_ExclusionWindows_Window>;
 }
 
@@ -55,21 +47,16 @@ export interface SignalsServiceLevelObjective_Goal {
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponents {
-  /** The name of the specific operation (e.g., an HTTP endpoint or API call) that this composite SLI component uses to evaluate performance against the SLO. (AI-inferred) */
   operationName?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfig {
-  /** A string specifying the boolean formula (e.g., `${sl1} AND ${sl2}`) that determines how the referenced individual SLIs are combined to form the composite service level objective. (AI-inferred) */
   pattern?: string | Computed<string>;
-  /** Determines the selection mode for a composite SLI, using 'ANY' to require that at least one of the selected operations meets the SLO, or 'ALL' to require that every selected operation meets the SLO. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig {
-  /** Defines the list of individual SLI components (each with its own SLI metric configuration and weight) that are combined to calculate the composite SLI metric for this service level objective. (AI-inferred) */
   compositeSliComponents?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponents[] | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_CompositeSliComponents[]>;
-  /** Defines which underlying service level indicators (SLIs) are selected and combined to calculate the composite SLI for the SLO. (AI-inferred) */
   selectionConfig: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfig | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig_SelectionConfig>;
 }
 
@@ -88,42 +75,28 @@ export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMet
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_Dimensions {
-  /** Specifies the name of a CloudWatch metric dimension (for example, 'ServiceName' or 'Operation') that, together with the dimension value, identifies the bad count metric used in the request-based SLO's monitored request count metric. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of a dimension that identifies the CloudWatch metric used to count bad requests for the request-based SLO. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric {
-  /** Defines the CloudWatch metric dimensions (name-value pairs) that identify the bad count metric used in the request-based SLI's monitored request count metric, enabling the SLI to track unsuccessful requests. (AI-inferred) */
   dimensions?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_Dimensions[] | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric_Dimensions[]>;
-  /** The name of the CloudWatch metric that represents the count of bad or failing requests used to calculate the service level objective's request-based SLI. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** Specifies the CloudWatch namespace of the metric used as the bad request count for the monitored request count metric in the request-based SLI, identifying the service or application that emits the metric. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat {
-  /** The CloudWatch metric that defines the bad count metric, including its namespace, metric name, and dimensions, used to calculate the number of bad requests for the request-based SLI. (AI-inferred) */
   metric?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat_Metric>;
-  /** The period, in seconds, for the CloudWatch metric statistic that collects the bad count metric, which is used as part of the monitored request count metric in the request-based SLI for this Service Level Objective. (AI-inferred) */
   period?: number | Computed<number>;
-  /** The statistic (e.g., Sum, Average) to apply to the metric data for the bad request count metric in the request-based SLI's monitored request count metric, used to evaluate requests that do not meet the SLI objective. (AI-inferred) */
   stat?: string | Computed<string>;
-  /** The unit of the CloudWatch metric statistic (e.g., Count, Bytes, Seconds) that defines the bad request count metric used in the monitored request count metric for this request-based service level objective. (AI-inferred) */
   unit?: string | Computed<string>;
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric {
-  /** The AWS account ID that owns the CloudWatch metric used as the bad count metric for the monitored request count in the SLO, typically needed when the metric is in a different account. (AI-inferred) */
   accountId?: string | Computed<string>;
-  /** The CloudWatch metrics expression that defines the bad count metric used to calculate the service level objective. (AI-inferred) */
   expression?: string | Computed<string>;
-  /** The unique identifier assigned to this bad-count metric definition within the request-based SLI, used to reference the metric in the SLO's monitored request count configuration. (AI-inferred) */
   id?: string | Computed<string>;
-  /** This object defines the CloudWatch metric statistic (including namespace, metric name, dimensions, period, and statistic) that is used to count the number of bad requests for the request-based SLI's monitored request count metric in the SLO. (AI-inferred) */
   metricStat?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_MonitoredRequestCountMetric_BadCountMetric_MetricStat>;
-  /** Controls whether the value of the bad count metric is returned in the CloudWatch metric math expression that defines this request-based SLI, where 'true' surfaces the bad count data as an output and 'false' uses it solely as an intermediate calculation step. (AI-inferred) */
   returnData?: boolean | Computed<boolean>;
 }
 
@@ -135,7 +108,6 @@ export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMet
 }
 
 export interface SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric {
-  /** Configures the request-based SLI as a composite SLI, which aggregates multiple underlying service level indicators into a single SLI metric for the SLO. (AI-inferred) */
   compositeSliConfig?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig>;
   /** Configuration for identifying a dependency and its operation */
   dependencyConfig?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfig | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfig>;
@@ -165,7 +137,6 @@ export interface SignalsServiceLevelObjective_RequestBasedSli {
 }
 
 export interface SignalsServiceLevelObjective_Sli_SliMetric {
-  /** Specifies the composite SLI configuration, which lets you combine multiple service level indicators using boolean AND/OR operators to evaluate the overall SLI for the service level objective. (AI-inferred) */
   compositeSliConfig?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_CompositeSliConfig>;
   /** Configuration for identifying a dependency and its operation */
   dependencyConfig?: SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfig | Computed<SignalsServiceLevelObjective_RequestBasedSli_RequestBasedSliMetric_DependencyConfig>;
@@ -197,9 +168,7 @@ export interface SignalsServiceLevelObjective_Sli {
 }
 
 export interface SignalsServiceLevelObjective_Tags {
-  /** Specifies the key of a tag to attach to the service level objective, enabling you to categorize and manage SLOs by metadata such as environment, team, or cost center. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Application Signals Service Level Objective, used to store arbitrary user-defined metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

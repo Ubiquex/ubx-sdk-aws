@@ -8,29 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EmailConfigurationSet_DeliveryOptions:
-    # The name of the dedicated IP pool that Amazon Pinpoint uses to send email for this configuration set. (AI-inferred)
     sending_pool_name: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSet_ReputationOptions:
-    # Enables or disables the publishing of reputation metrics (such as bounce and complaint rates) for email messages sent using this Pinpoint email configuration set. (AI-inferred)
     reputation_metrics_enabled: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSet_SendingOptions:
-    # Enables or disables email sending for the configuration set when set to true or false, respectively. (AI-inferred)
     sending_enabled: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSet_Tags:
-    # The key of a tag attached to the Amazon Pinpoint email configuration set, used to identify and categorize the configuration set for management, cost tracking, and resource organization purposes. (AI-inferred)
     key: Any = None
-    # The value of an individual tag key on the Amazon Pinpoint email configuration set, used to store metadata for resource identification, organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSet_TrackingOptions:
-    # Defines the custom domain that Amazon Pinpoint uses to rewrite links in emails for tracking opens and clicks, overriding the default tracking domain. (AI-inferred)
     custom_redirect_domain: Any = None
 
 _EmailConfigurationSet_DeliveryOptionsFields = {
@@ -56,34 +50,21 @@ _EmailConfigurationSet_TrackingOptionsFields = {
 
 @dataclasses.dataclass
 class EmailConfigurationSetConfig:
-    # Configures delivery options for emails sent from this configuration set, including the dedicated IP pool (SendingPoolName) and the TLS policy (TlsPolicy). (AI-inferred)
     delivery_options: Any = None
-    # The unique name of the Amazon Pinpoint email configuration set, used as its identifier when you send email or attach event destinations to it. (AI-inferred)
     name: Any = None
-    # Configures reputation metrics tracking for this configuration set, determining whether Amazon Pinpoint publishes email reputation data such as bounce and complaint rates to Amazon CloudWatch. (AI-inferred)
     reputation_options: Any = None
-    # Defines the email sending options for the configuration set, specifically whether email sending is enabled via the SendingEnabled sub-property. (AI-inferred)
     sending_options: Any = None
-    # A list of key-value pairs (Tag objects) to attach to the Amazon Pinpoint email configuration set for identifying, organizing, and managing the resource, including for cost allocation reporting. (AI-inferred)
     tags: Any = None
-    # Specifies the custom redirect domain used for open and click tracking in emails sent using this Pinpoint email configuration set. (AI-inferred)
     tracking_options: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetAttrs:
-    # Configures delivery options for emails sent from this configuration set, including the dedicated IP pool (SendingPoolName) and the TLS policy (TlsPolicy). (AI-inferred)
     delivery_options: Any = None
-    # The unique identifier of the configuration set, which corresponds to the configuration set name in Amazon Pinpoint Email. (AI-inferred)
     id: Any = None
-    # The unique name of the Amazon Pinpoint email configuration set, used as its identifier when you send email or attach event destinations to it. (AI-inferred)
     name: Any = None
-    # Configures reputation metrics tracking for this configuration set, determining whether Amazon Pinpoint publishes email reputation data such as bounce and complaint rates to Amazon CloudWatch. (AI-inferred)
     reputation_options: Any = None
-    # Defines the email sending options for the configuration set, specifically whether email sending is enabled via the SendingEnabled sub-property. (AI-inferred)
     sending_options: Any = None
-    # A list of key-value pairs (Tag objects) to attach to the Amazon Pinpoint email configuration set for identifying, organizing, and managing the resource, including for cost allocation reporting. (AI-inferred)
     tags: Any = None
-    # Specifies the custom redirect domain used for open and click tracking in emails sent using this Pinpoint email configuration set. (AI-inferred)
     tracking_options: Any = None
 
 EmailConfigurationSet = ubx.ResourceBinding(

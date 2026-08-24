@@ -2,499 +2,322 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue {
-  /** Specifies the date, as an ISO 8601 string, that is used as the value to compare against the document attribute in the enrichment condition. (AI-inferred) */
   dateValue?: string | Computed<string>;
-  /** The numeric value used as the expected value when evaluating a document metadata attribute as part of a condition that determines whether inline custom document enrichment actions are applied. (AI-inferred) */
   longValue?: number | Computed<number>;
-  /** Specifies the list of string values that serves as the condition's comparison value when the condition_on_value type is set to StringList, determining whether a Kendra custom document enrichment inline configuration applies based on a match against this list. (AI-inferred) */
   stringListValue?: string[] | Computed<string[]>;
-  /** The string value that a document attribute is compared against in the condition, used when condition_on_value is of string type during custom document enrichment. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition {
-  /** The name (key) of the document metadata attribute whose value is evaluated in this condition for a custom document enrichment inline configuration. (AI-inferred) */
   conditionDocumentAttributeKey?: string | Computed<string>;
-  /** Specifies the value that the document attribute (identified by condition_document_attribute_key) is compared against when evaluating the enrichment condition, allowing you to define the match criteria for the data source's custom document enrichment. (AI-inferred) */
   conditionOnValue?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue>;
-  /** Defines the comparison operator (e.g., Equals, Contains, GreaterThan) used to evaluate the configured document attribute against a value in the condition, controlling when the inline custom document enrichment action is applied. (AI-inferred) */
   operator?: string | Computed<string>;
 }
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Target {
-  /** The name (key) of the document attribute that the inline custom document enrichment configuration will set, modify, or delete in the Amazon Kendra data source's index. (AI-inferred) */
   targetDocumentAttributeKey?: string | Computed<string>;
-  /** Specifies the value to assign to the target document attribute key in an inline custom document enrichment configuration, where the value object can hold a string, string list, long, or date as defined by the Kendra DocumentAttributeValue type. (AI-inferred) */
   targetDocumentAttributeValue?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition_ConditionOnValue>;
-  /** When set to true, deletes the target document attribute's value during inline custom document enrichment, instead of setting or updating it. (AI-inferred) */
   targetDocumentAttributeValueDeletion?: boolean | Computed<boolean>;
 }
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations {
-  /** Defines the document attribute condition that must evaluate to true for the inline custom document enrichment action to be applied during data source ingestion. (AI-inferred) */
   condition?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition>;
-  /** When set to true, this inline configuration deletes the document content (body text) for documents that match the associated condition, making the content unsearchable. (AI-inferred) */
   documentContentDeletion?: boolean | Computed<boolean>;
-  /** Configures the document attribute to be modified by the inline enrichment rule, including the attribute key, the value to set, or whether to delete the attribute. (AI-inferred) */
   target?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Target | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Target>;
 }
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration {
-  /** A condition on document attributes that must be met for the post-extraction hook to be invoked, such as checking that a specific attribute matches a value. (AI-inferred) */
   invocationCondition?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations_Condition>;
-  /** ARN of the Lambda function that AWS Kendra invokes to process documents after the extraction step in the custom document enrichment workflow. (AI-inferred) */
   lambdaArn: string | Computed<string>;
-  /** The name of the S3 bucket that stores the document to be processed by the post-extraction Lambda hook for custom document enrichment in this Kendra data source. (AI-inferred) */
   s3Bucket: string | Computed<string>;
 }
 
 export interface DataSource_CustomDocumentEnrichmentConfiguration {
   /** List of InlineCustomDocumentEnrichmentConfigurations */
   inlineConfigurations?: DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations[] | Computed<DataSource_CustomDocumentEnrichmentConfiguration_InlineConfigurations[]>;
-  /** Specifies the AWS Lambda function, IAM role, and optional S3 bucket that Kendra invokes after extracting documents from the data source, enabling custom enrichment before indexing. (AI-inferred) */
   postExtractionHookConfiguration?: DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration | Computed<DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration>;
-  /** Specifies the AWS Lambda function and associated settings (such as the function ARN, S3 bucket, and IAM role) that Kendra invokes before extracting text from documents during a data source sync, enabling custom pre-processing for document enrichment. (AI-inferred) */
   preExtractionHookConfiguration?: DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration | Computed<DataSource_CustomDocumentEnrichmentConfiguration_PostExtractionHookConfiguration>;
   /** Role ARN */
   roleArn?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings {
-  /** The name of the Confluence attachment field (e.g., title, author) to map from the Confluence data source to an Amazon Kendra index field. (AI-inferred) */
   dataSourceFieldName?: string | Computed<string>;
-  /** The date_field_format specifies the date format (e.g., yyyy/MM/dd) that Kendra uses to parse the Confluence attachment's date field when mapping it to an index field. (AI-inferred) */
   dateFieldFormat?: string | Computed<string>;
-  /** Specifies the name of the Amazon Kendra index field that the Confluence attachment field (defined in the mapping's data source field name) is mapped to. (AI-inferred) */
   indexFieldName?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration {
-  /** Specifies mappings between Confluence attachment fields and Amazon Kendra index fields, enabling you to control how attachment metadata such as attachment title, author, and file type is indexed. (AI-inferred) */
   attachmentFieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Whether to crawl and index attachments from Confluence pages in addition to the page content. (AI-inferred) */
   crawlAttachments?: boolean | Computed<boolean>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfiguration {
-  /** Maps Confluence blog fields to Amazon Kendra index fields, enabling customized indexing of blog content from Confluence. (AI-inferred) */
   blogFieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfiguration {
-  /** Maps Confluence page fields to Amazon Kendra index fields, defining which page attributes are crawled and how they are stored in the index. (AI-inferred) */
   pageFieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfiguration {
-  /** Determines whether AWS Kendra indexes content from archived Confluence spaces when crawling the configured Confluence data source. (AI-inferred) */
   crawlArchivedSpaces?: boolean | Computed<boolean>;
-  /** Specifies whether to crawl personal spaces in the Confluence environment when indexing content for Amazon Kendra. (AI-inferred) */
   crawlPersonalSpaces?: boolean | Computed<boolean>;
-  /** Specifies the keys of Confluence spaces that are excluded from the data source, preventing their content from being indexed. (AI-inferred) */
   excludeSpaces?: string[] | Computed<string[]>;
-  /** Specifies the list of Confluence space keys to include in the crawl, so only content from these spaces is indexed by Amazon Kendra. (AI-inferred) */
   includeSpaces?: string[] | Computed<string[]>;
-  /** Defines mappings from Confluence space attributes (like SPACE_KEY, URL, DISPLAY_URL) to custom Amazon Kendra index fields, letting space metadata be included in search results. (AI-inferred) */
   spaceFieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration {
-  /** A list of security group IDs that the AWS Kendra Confluence data source uses in its VPC configuration to control network access to Confluence resources within the VPC. (AI-inferred) */
   securityGroupIds: string[] | Computed<string[]>;
-  /** The subnet IDs (list of strings) that specify the subnets in the Amazon Virtual Private Cloud (VPC) where the Confluence data source will run, allowing it to access resources in a private VPC. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ConfluenceConfiguration {
-  /** Specifies whether to extract Confluence attachments and how to map attachment fields to Kendra index fields. (AI-inferred) */
   attachmentConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration>;
-  /** Specifies how AWS Kendra indexes Confluence blog posts, including field mappings that define which blog attributes are captured and mapped to Kendra index fields. (AI-inferred) */
   blogConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_BlogConfiguration>;
-  /** Specifies the list of regular expression patterns that exclude matching Confluence content from being indexed by the data source. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** A list of regular expression patterns that define which Confluence content items (e.g., pages, attachments) are included in the Amazon Kendra index for this data source. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** This object defines how Confluence pages are crawled by specifying field mappings from Confluence page fields to Amazon Kendra index fields, enabling those page attributes to be searchable. (AI-inferred) */
   pageConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_PageConfiguration>;
-  /** The ARN of an AWS Secrets Manager secret that stores the credentials used to authenticate with the Confluence instance for the Kendra data source. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** The base URL of the Confluence instance that Amazon Kendra connects to for indexing documents. (AI-inferred) */
   serverUrl: string | Computed<string>;
-  /** Specifies which Confluence spaces to crawl, with options to crawl all spaces, only a specified list, or exclude a specified list from the data source. (AI-inferred) */
   spaceConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_SpaceConfiguration>;
-  /** The version of the Confluence instance, either CLOUD or SERVER, which determines the endpoint and authentication method used when connecting to the data source. (AI-inferred) */
   version: string | Computed<string>;
-  /** Specifies the VPC configuration, including subnets and security group IDs, that the Kendra Confluence data source uses to connect to a Confluence instance inside a VPC. (AI-inferred) */
   vpcConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration>;
 }
 
 export interface DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfiguration {
-  /** Specifies the column name in the database table that contains the group names allowed to access the documents indexed by this Kendra data source. (AI-inferred) */
   allowedGroupsColumnName: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfiguration {
-  /** The list of column names in the database table that Amazon Kendra uses to detect when a row has been added or updated, enabling incremental indexing of the data source. (AI-inferred) */
   changeDetectingColumns: string[] | Computed<string[]>;
-  /** The name of the database column that contains the actual document content to be indexed by Amazon Kendra. (AI-inferred) */
   documentDataColumnName: string | Computed<string>;
-  /** The name of the column in the database table that contains the unique identifier for each document, which Amazon Kendra uses as the document ID for indexing. (AI-inferred) */
   documentIdColumnName: string | Computed<string>;
-  /** The name of the column in the database table that contains the document's title, which Amazon Kendra uses as the title when indexing the document. (AI-inferred) */
   documentTitleColumnName?: string | Computed<string>;
-  /** Maps database columns from the data source's column configuration to Amazon Kendra index fields by specifying the column name and the corresponding index field name and data type. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfiguration {
-  /** The host name or IP address of the database server that Amazon Kendra connects to. (AI-inferred) */
   databaseHost: string | Computed<string>;
-  /** The name of the database that contains the data to be indexed by Amazon Kendra for this database data source, used in the connection configuration. (AI-inferred) */
   databaseName: string | Computed<string>;
-  /** The TCP port number on which the database server listens for connections. (AI-inferred) */
   databasePort: number | Computed<number>;
-  /** The ARN of an AWS Secrets Manager secret that contains the database credentials used by the Kendra data source to connect to the database. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** The name of the database table that Amazon Kendra reads from as its data source when using the database connector. (AI-inferred) */
   tableName: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfiguration {
-  /** Specifies whether SQL identifiers (e.g., table and column names) are enclosed in double quotes when querying the database, with accepted values 'DOUBLE_QUOTES' or 'NO_ENCLOSING'. (AI-inferred) */
   queryIdentifiersEnclosingOption?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_DatabaseConfiguration {
-  /** Defines the column in the database table that stores the access control lists (ACL) for documents, used to enforce user permissions in Amazon Kendra indexes. (AI-inferred) */
   aclConfiguration?: DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfiguration | Computed<DataSource_DataSourceConfiguration_DatabaseConfiguration_AclConfiguration>;
-  /** Maps columns from the database table to Kendra document fields, specifying which column holds the document ID, document data, document title, and defining additional field mappings to the index. (AI-inferred) */
   columnConfiguration: DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfiguration | Computed<DataSource_DataSourceConfiguration_DatabaseConfiguration_ColumnConfiguration>;
-  /** Defines the connection settings for the database, including the host, port, credentials, and SSL configuration, used by the Kendra data source to access the database. (AI-inferred) */
   connectionConfiguration: DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfiguration | Computed<DataSource_DataSourceConfiguration_DatabaseConfiguration_ConnectionConfiguration>;
-  /** The type of database engine for the Kendra database data source, such as RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, or RDS_POSTGRESQL. (AI-inferred) */
   databaseEngineType: string | Computed<string>;
-  /** Defines SQL query execution settings for the Kendra database data source, specifically using the QueryIdentifier property to indicate that extraction runs as a direct query (DIRECT_QUERY). (AI-inferred) */
   sqlConfiguration?: DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfiguration | Computed<DataSource_DataSourceConfiguration_DatabaseConfiguration_SqlConfiguration>;
-  /** This optional object specifies the VPC subnets and security group IDs that AWS Kendra uses to connect to the database (e.g., RDS or Aurora) within your virtual private cloud. (AI-inferred) */
   vpcConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration>;
 }
 
 export interface DataSource_DataSourceConfiguration_GoogleDriveConfiguration {
-  /** Specifies a list of MIME types (e.g., application/pdf) to exclude from indexing when syncing documents from Google Drive. (AI-inferred) */
   excludeMimeTypes?: string[] | Computed<string[]>;
-  /** A list of Google Drive shared drive identifiers that Amazon Kendra excludes from the data source so documents in those shared drives are not indexed. (AI-inferred) */
   excludeSharedDrives?: string[] | Computed<string[]>;
-  /** Specifies a list of Google Drive user accounts whose files or documents should be excluded from indexing by Amazon Kendra. (AI-inferred) */
   excludeUserAccounts?: string[] | Computed<string[]>;
-  /** A list of regular expression patterns that define which Google Drive files or folders to exclude from the indexed content. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** Configures the mapping of Google Drive source fields to Amazon Kendra index fields, allowing you to define which Google Drive attributes (such as title, author, content) are indexed and how they are stored in the corresponding index field names. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Specifies regular expression patterns to include only files in Google Drive that match the patterns in the Amazon Kendra data source, with exclusion patterns taking precedence over inclusions. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** The ARN of the AWS Secrets Manager secret that stores the Google Drive OAuth credentials (client ID and client secret) used to authenticate and authorize the Kendra data source to access the configured Google Drive account. (AI-inferred) */
   secretArn: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path {
-  /** The name of the S3 bucket that stores the OneDrive user's documents, used to map that user to the S3 content specified in the one_drive_user_s3_path. (AI-inferred) */
   bucket: string | Computed<string>;
-  /** Specifies the S3 object key prefix within the given S3 bucket where the OneDrive user's crawled documents are stored during the Kendra data source indexing process. (AI-inferred) */
   key: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers {
-  /** The list of OneDrive user accounts (email addresses or user principal names) whose drive content is indexed by this Kendra data source when users are specified directly in the configuration. (AI-inferred) */
   oneDriveUserList?: string[] | Computed<string[]>;
-  /** The S3 bucket and object key prefix under which the documents belonging to the associated OneDrive user are stored for Kendra to index. (AI-inferred) */
   oneDriveUserS3Path?: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path | Computed<DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path>;
 }
 
 export interface DataSource_DataSourceConfiguration_OneDriveConfiguration {
-  /** When set to true, this flag disables the synchronization and use of local groups (groups defined directly in OneDrive) for document access control, so only groups from the connected directory (e.g., Microsoft 365) are considered. (AI-inferred) */
   disableLocalGroups?: boolean | Computed<boolean>;
-  /** A list of regular expression patterns that define which file paths or folder paths within OneDrive should be excluded from being crawled and indexed by the Kendra data source. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** Specifies the mapping of OneDrive data source fields to Amazon Kendra index fields, allowing you to customize which fields are indexed and how they are named in the index. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Specifies a list of regular expression patterns for including files and folders from OneDrive in the Amazon Kendra index. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** Defines the set of OneDrive users (by user principal or email) whose files and documents are included in the Kendra data source index. (AI-inferred) */
   oneDriveUsers: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers | Computed<DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers>;
-  /** The Amazon Resource Name (ARN) of an AWS Secrets Manager secret that stores the application credentials (client ID and client secret) used to authenticate with Microsoft OneDrive for this Kendra data source. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** The domain of the Office 365 tenant hosting the OneDrive for Business site (e.g., `tenant.onmicrosoft.com`), which Kendra uses to connect to the data source. (AI-inferred) */
   tenantDomain: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfiguration {
-  /** The S3 path to the access control list (ACL) file that defines user and group access permissions for the indexed documents in the S3 data source. (AI-inferred) */
   keyPath?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfiguration {
-  /** Sets the S3 object key prefix that Kendra uses to locate and filter the document metadata files within the S3 bucket when processing documents for the data source. (AI-inferred) */
   s3Prefix?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_S3Configuration {
-  /** Specifies the S3 object that contains the access control list (ACL) data for documents in the S3 data source, including the bucket and key path to that object. (AI-inferred) */
   accessControlListConfiguration?: DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfiguration | Computed<DataSource_DataSourceConfiguration_S3Configuration_AccessControlListConfiguration>;
-  /** The name of the S3 bucket that contains the documents to be indexed by the Kendra data source. (AI-inferred) */
   bucketName: string | Computed<string>;
-  /** Specifies the configuration for document metadata files in the S3 data source, including the S3 prefix where AWS Kendra looks for metadata files to enrich document attributes. (AI-inferred) */
   documentsMetadataConfiguration?: DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfiguration | Computed<DataSource_DataSourceConfiguration_S3Configuration_DocumentsMetadataConfiguration>;
-  /** A list of regular-expression patterns for S3 file paths to exclude from being indexed by Amazon Kendra. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** Regular expression patterns that define which object keys in the S3 bucket are included in the data source, with only files matching at least one pattern being indexed. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** Specifies the S3 object key prefixes that should be included in the Amazon Kendra index, filtering out objects that do not start with these prefixes. (AI-inferred) */
   inclusionPrefixes?: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfiguration {
-  /** The name of the Salesforce field that contains the content of the chatter feed item to be indexed by Kendra. (AI-inferred) */
   documentDataFieldName: string | Computed<string>;
-  /** The name of the field in the Salesforce Chatter feed that contains the document title, used to map that field to the document title for indexing by Amazon Kendra. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Maps Salesforce Chatter feed source fields to Amazon Kendra index fields for the Chatter feed data source. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Filters the type of Salesforce chatter feed items (such as ACTIVE or RESOLVED) that are included when indexing, so only matching items are crawled. (AI-inferred) */
   includeFilterTypes?: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations {
-  /** Specifies the name of the Salesforce field that holds the body/content for custom knowledge article types indexed by Kendra. (AI-inferred) */
   documentDataFieldName?: string | Computed<string>;
-  /** Specifies the name of the field in the custom knowledge article type that maps to the document title for indexing in Amazon Kendra. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Specifies how fields from a custom Salesforce knowledge article type are mapped to Amazon Kendra index fields. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** The name of the custom Salesforce knowledge article type in Salesforce that this configuration defines mappings and title field for. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfiguration {
-  /** Specifies the name of the Salesforce field that contains the knowledge article's content (body) to be indexed by Amazon Kendra. (AI-inferred) */
   documentDataFieldName: string | Computed<string>;
-  /** The name of the Salesforce field whose value is used as the document title when indexing standard knowledge articles in Amazon Kendra. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Maps Salesforce knowledge article fields to Amazon Kendra index fields, allowing specific article attributes to be indexed. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration {
-  /** Defines the list of custom Salesforce knowledge article types to crawl, each with a name, document status field, and field mappings that map source fields to Kendra index fields. (AI-inferred) */
   customKnowledgeArticleTypeConfigurations?: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations[] | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations[]>;
-  /** Specifies which Salesforce knowledge article states (e.g., DRAFT, PUBLISHED, ARCHIVED) Kendra includes when indexing articles from the connected Salesforce instance. (AI-inferred) */
   includedStates: string[] | Computed<string[]>;
-  /** Specifies the indexing configuration for standard Salesforce knowledge articles, including field mappings to Kendra document attributes and the article field used as the document title. (AI-inferred) */
   standardKnowledgeArticleTypeConfiguration?: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfiguration | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_StandardKnowledgeArticleTypeConfiguration>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfiguration {
-  /** Specifies the name of the field within the Salesforce standard object attachment that contains the document title, used by Kendra as the title for the indexed attachment. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Defines the list of mappings that map fields from Salesforce standard object attachments (such as case or account attachments) to Amazon Kendra index fields, controlling how attachment metadata is indexed. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_SalesforceConfiguration {
-  /** Configures how Amazon Kendra indexes Salesforce Chatter feeds, allowing you to specify the data field to use as the document content and map additional Salesforce fields to Kendra attributes. (AI-inferred) */
   chatterFeedConfiguration?: DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfiguration | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_ChatterFeedConfiguration>;
-  /** Specifies whether to crawl and index attachments (files) associated with Salesforce objects in addition to the standard objects during a data source sync. (AI-inferred) */
   crawlAttachments?: boolean | Computed<boolean>;
-  /** A list of regular expression patterns that match Salesforce attachment file names to exclude from being indexed by Kendra. (AI-inferred) */
   excludeAttachmentFilePatterns?: string[] | Computed<string[]>;
-  /** A list of regular expression patterns that determine which Salesforce attachment file names are included in the index; matching attachments are indexed. (AI-inferred) */
   includeAttachmentFilePatterns?: string[] | Computed<string[]>;
-  /** Configures how Salesforce knowledge articles are ingested, including which article states (e.g., DRAFT or PUBLISHED) are indexed and how article fields map to Kendra index fields. (AI-inferred) */
   knowledgeArticleConfiguration?: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration>;
-  /** The ARN of the AWS Secrets Manager secret that stores the authentication credentials (e.g., username, password, or OAuth token) for connecting to Salesforce. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** The URL of the Salesforce instance that contains the data to index. (AI-inferred) */
   serverUrl: string | Computed<string>;
-  /** This object specifies how attachments to standard Salesforce objects are indexed in Amazon Kendra, including the document title field name and optional field mappings for metadata extraction. (AI-inferred) */
   standardObjectAttachmentConfiguration?: DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfiguration | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_StandardObjectAttachmentConfiguration>;
-  /** Specifies the list of standard Salesforce objects (for example, Account, Contact, or Opportunity) that Amazon Kendra crawls from your Salesforce instance, with each object optionally defining field mappings to index its data. (AI-inferred) */
   standardObjectConfigurations?: DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations[] | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration_KnowledgeArticleConfiguration_CustomKnowledgeArticleTypeConfigurations[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfiguration {
-  /** Indicates whether to crawl attachments to ServiceNow knowledge articles when indexing them from the ServiceNow data source. (AI-inferred) */
   crawlAttachments?: boolean | Computed<boolean>;
-  /** Specifies the name of the field in the ServiceNow knowledge article table (such as 'text' or 'html') that contains the article body, which Kendra uses as the document data for indexing. (AI-inferred) */
   documentDataFieldName: string | Computed<string>;
-  /** The name of the ServiceNow field that contains the title of a knowledge article, which Amazon Kendra uses as the document title when indexing the article. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Specifies file patterns (such as file extensions or regex patterns) used to exclude attachment files from being indexed when crawling ServiceNow knowledge articles. (AI-inferred) */
   excludeAttachmentFilePatterns?: string[] | Computed<string[]>;
-  /** Specifies the mapping of ServiceNow knowledge article attributes (such as title, body, or custom fields) to Amazon Kendra index fields, allowing those attributes to be indexed and searched. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Specifies a query used to filter which ServiceNow knowledge articles are ingested into the index. (AI-inferred) */
   filterQuery?: string | Computed<string>;
-  /** Specifies the file name patterns that determine which attachment files of ServiceNow knowledge articles are included for indexing. (AI-inferred) */
   includeAttachmentFilePatterns?: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfiguration {
-  /** Determines whether Amazon Kendra crawls attachments associated with ServiceNow service catalog items. (AI-inferred) */
   crawlAttachments?: boolean | Computed<boolean>;
-  /** The name of the ServiceNow field that holds the body or content of the service catalog item, which Kendra uses as the document text to index. (AI-inferred) */
   documentDataFieldName: string | Computed<string>;
-  /** Specifies the name of the field in ServiceNow service catalog items that Amazon Kendra uses as the document title when indexing those items. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** A list of regular expression patterns used to exclude attachment file names from an indexed ServiceNow service catalog item's attachments in the Kendra data source. (AI-inferred) */
   excludeAttachmentFilePatterns?: string[] | Computed<string[]>;
-  /** Maps ServiceNow Service Catalog source fields to Amazon Kendra index fields for the Kendra data source's ServiceNow connector, allowing customization of how catalog data is indexed. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** A list of file name patterns that determine which attachment files in ServiceNow service catalog items are included for indexing by Amazon Kendra. (AI-inferred) */
   includeAttachmentFilePatterns?: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_ServiceNowConfiguration {
-  /** Specifies the authentication type used to connect to the ServiceNow instance, such as HTTP_BASIC or OAUTH2. (AI-inferred) */
   authenticationType?: string | Computed<string>;
-  /** The base URL of the ServiceNow instance to index, such as https://yourinstance.service-now.com. (AI-inferred) */
   hostUrl: string | Computed<string>;
-  /** Configures how Amazon Kendra indexes ServiceNow knowledge articles for the data source, including the document title field to use, the source template for article URLs, and optional attachment file pattern filters. (AI-inferred) */
   knowledgeArticleConfiguration?: DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfiguration | Computed<DataSource_DataSourceConfiguration_ServiceNowConfiguration_KnowledgeArticleConfiguration>;
-  /** The ARN of an AWS Secrets Manager secret that stores the credentials (user name and password) used to authenticate with the ServiceNow instance. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** Configures the crawling and indexing behavior for ServiceNow service catalog items within the Kendra data source, including attachment processing and document field mappings. (AI-inferred) */
   serviceCatalogConfiguration?: DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfiguration | Computed<DataSource_DataSourceConfiguration_ServiceNowConfiguration_ServiceCatalogConfiguration>;
-  /** Specifies the ServiceNow build version (such as LONDON or OTHERS) that Amazon Kendra uses to determine the correct data extraction and indexing behavior for the connected ServiceNow instance. (AI-inferred) */
   serviceNowBuildVersion: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_SharePointConfiguration {
-  /** When true, AWS Kendra includes file attachments associated with SharePoint items during the crawl; when false, it only indexes the SharePoint items themselves. (AI-inferred) */
   crawlAttachments?: boolean | Computed<boolean>;
-  /** When set to true, prevents AWS Kendra from indexing local SharePoint groups, which reduces the number of access control entries synchronized into the index. (AI-inferred) */
   disableLocalGroups?: boolean | Computed<boolean>;
-  /** The name of the SharePoint column that holds the document title, which Amazon Kendra uses to populate the title attribute for indexed documents and search results. (AI-inferred) */
   documentTitleFieldName?: string | Computed<string>;
-  /** Defines a list of regular expression patterns that identify SharePoint document URLs or paths to exclude from being indexed by Amazon Kendra. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** Defines how SharePoint columns or metadata attributes are mapped to Amazon Kendra index fields, including the source field name and the target index field name and type for ingestion. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** Specifies regular expression patterns that define which SharePoint document URLs are included in the Amazon Kendra index, so only documents whose URL matches any of these patterns are crawled and indexed. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the SharePoint authentication credentials used by Kendra to connect to the SharePoint site. (AI-inferred) */
   secretArn: string | Computed<string>;
-  /** Specifies the SharePoint deployment version (e.g., SHAREPOINT_ONLINE or SHAREPOINT_2019) that the Kendra data source connects to, determining the valid connection URL and authentication requirements. (AI-inferred) */
   sharePointVersion: string | Computed<string>;
-  /** Specifies the S3 location (bucket and key) of the SSL certificate used to securely connect to the SharePoint server when it uses a self-signed certificate. (AI-inferred) */
   sslCertificateS3Path?: DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path | Computed<DataSource_DataSourceConfiguration_OneDriveConfiguration_OneDriveUsers_OneDriveUserS3Path>;
-  /** The list of SharePoint site URLs (paths to SharePoint sites) that this Amazon Kendra data source will crawl to index documents and content. (AI-inferred) */
   urls: string[] | Computed<string[]>;
-  /** Indicates whether to use the SharePoint change log to identify documents that need updating, enabling incremental synchronization instead of a full crawl of the site. (AI-inferred) */
   useChangeLog?: boolean | Computed<boolean>;
-  /** Specifies the VPC configuration (subnets and security group IDs) that Amazon Kendra uses to connect to your SharePoint data source when the SharePoint site is inside a VPC. (AI-inferred) */
   vpcConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_VpcConfiguration>;
 }
 
 export interface DataSource_DataSourceConfiguration_TemplateConfiguration {
-  /** The JSON or YAML template that defines the connection, authentication, and schema configuration for a custom Kendra data source using the TEMPLATE type. (AI-inferred) */
   template: unknown | Computed<unknown>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication {
-  /** The ARN of an AWS Secrets Manager secret that stores the basic authentication credentials (username and password) used by the Kendra web crawler to access the specified host. (AI-inferred) */
   credentials?: string | Computed<string>;
-  /** The hostname of the website that requires this basic authentication, used by the Kendra web crawler to apply the associated credentials when accessing that site. (AI-inferred) */
   host?: string | Computed<string>;
-  /** The port number of the web server to authenticate with when the web crawler accesses the host for basic authentication. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration {
-  /** Specifies the list of basic authentication credentials (host and secret ARN) that the Amazon Kendra web crawler uses to authenticate with websites requiring HTTP basic authentication. (AI-inferred) */
   basicAuthentication?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication[] | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfiguration {
-  /** A list of seed URLs that the web crawler uses as starting points to crawl and index web pages. (AI-inferred) */
   seedUrls: string[] | Computed<string[]>;
-  /** Specifies whether the web crawler crawls only the seed URL's host or also its subdomains, with allowed values HOST_ONLY and SUBDOMAINS. (AI-inferred) */
   webCrawlerMode?: string | Computed<string>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfiguration {
-  /** Specifies the list of sitemap URLs that the web crawler uses to discover pages to index for the Kendra data source. (AI-inferred) */
   siteMaps: string[] | Computed<string[]>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls {
-  /** Defines the seed URLs that the Amazon Kendra web crawler uses as starting points, along with optional crawl depth and URL processing limits. (AI-inferred) */
   seedUrlConfiguration?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfiguration | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SeedUrlConfiguration>;
-  /** Defines the sitemap configuration for the web crawler, specifying a list of sitemap URLs that Amazon Kendra uses to discover web pages to index. (AI-inferred) */
   siteMapsConfiguration?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfiguration | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls_SiteMapsConfiguration>;
 }
 
 export interface DataSource_DataSourceConfiguration_WebCrawlerConfiguration {
-  /** Specifies the authentication configuration used to access websites when crawling with the web crawler, including basic authentication and custom authentication using a secret in AWS Secrets Manager. (AI-inferred) */
   authenticationConfiguration?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration>;
-  /** Specifies the maximum number of link levels from the seed URLs that the web crawler will traverse, controlling how deep into the site's hierarchy the crawler goes. (AI-inferred) */
   crawlDepth?: number | Computed<number>;
-  /** Sets the maximum size in megabytes of a web page that the Kendra web crawler will process; pages larger than this limit are skipped. (AI-inferred) */
   maxContentSizePerPageInMegaBytes?: number | Computed<number>;
-  /** Limits the number of outbound links that the Amazon Kendra web crawler follows from each webpage, preventing excessive crawling of large link-heavy pages. (AI-inferred) */
   maxLinksPerPage?: number | Computed<number>;
-  /** The maximum number of URLs the web crawler can crawl per minute, used to rate-limit the crawl and avoid overloading the target site. (AI-inferred) */
   maxUrlsPerMinuteCrawlRate?: number | Computed<number>;
-  /** Specifies the proxy configuration, including host, port, and optional credentials, that the web crawler uses to connect to the internet when indexing web pages. (AI-inferred) */
   proxyConfiguration?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_AuthenticationConfiguration_BasicAuthentication>;
-  /** A list of regular expression patterns that exclude matching URLs from being crawled by the Amazon Kendra web crawler data source. (AI-inferred) */
   urlExclusionPatterns?: string[] | Computed<string[]>;
-  /** Specifies the regular expression patterns that determine which URLs the web crawler includes for indexing, so only pages matching at least one inclusion pattern are crawled. (AI-inferred) */
   urlInclusionPatterns?: string[] | Computed<string[]>;
-  /** The URLs configuration for the web crawler, specifying the seed URLs (starting points) and site maps used to discover and crawl pages. (AI-inferred) */
   urls: DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration_Urls>;
 }
 
 export interface DataSource_DataSourceConfiguration_WorkDocsConfiguration {
-  /** Determines whether comments from Amazon WorkDocs documents are crawled and included in the index. (AI-inferred) */
   crawlComments?: boolean | Computed<boolean>;
-  /** A list of regular expression patterns to exclude documents or folders from being indexed by the WorkDocs data source. (AI-inferred) */
   exclusionPatterns?: string[] | Computed<string[]>;
-  /** Maps WorkDocs document source fields to Amazon Kendra index fields, defining how document metadata is indexed and stored in the Kendra index. (AI-inferred) */
   fieldMappings?: DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[] | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration_AttachmentConfiguration_AttachmentFieldMappings[]>;
-  /** A list of regular expression patterns that match WorkDocs document names to include in the Kendra index; only documents matching at least one pattern are indexed. (AI-inferred) */
   inclusionPatterns?: string[] | Computed<string[]>;
-  /** Specifies the identifier of the AWS WorkDocs organization (directory) that contains the documents to be indexed by this Kendra data source. (AI-inferred) */
   organizationId: string | Computed<string>;
-  /** Specifies whether to use the WorkDocs change log to identify and update only documents that have changed since the last crawl, rather than scanning the entire repository. (AI-inferred) */
   useChangeLog?: boolean | Computed<boolean>;
 }
 
 export interface DataSource_DataSourceConfiguration {
-  /** Defines the connection settings and crawl scope for indexing content from a Confluence server, including authentication, URL, and which Confluence entities (spaces, blogs, attachments, etc.) to include. (AI-inferred) */
   confluenceConfiguration?: DataSource_DataSourceConfiguration_ConfluenceConfiguration | Computed<DataSource_DataSourceConfiguration_ConfluenceConfiguration>;
-  /** Specifies the connection and indexing settings for a database data source, including the database engine type, connection credentials, VPC configuration, column mappings, and SQL query used to extract documents into Amazon Kendra. (AI-inferred) */
   databaseConfiguration?: DataSource_DataSourceConfiguration_DatabaseConfiguration | Computed<DataSource_DataSourceConfiguration_DatabaseConfiguration>;
-  /** Configures the connector to a Google Drive repository, specifying the AWS Secrets Manager secret for OAuth authentication and the drive path to be indexed. (AI-inferred) */
   googleDriveConfiguration?: DataSource_DataSourceConfiguration_GoogleDriveConfiguration | Computed<DataSource_DataSourceConfiguration_GoogleDriveConfiguration>;
-  /** This object defines the settings required to connect Amazon Kendra to a Microsoft OneDrive for Business account, including the tenant domain, the AWS Secrets Manager secret containing OAuth credentials, and optional inclusion/exclusion patterns to control which documents are indexed. (AI-inferred) */
   oneDriveConfiguration?: DataSource_DataSourceConfiguration_OneDriveConfiguration | Computed<DataSource_DataSourceConfiguration_OneDriveConfiguration>;
   /** S3 data source configuration */
   s3Configuration?: DataSource_DataSourceConfiguration_S3Configuration | Computed<DataSource_DataSourceConfiguration_S3Configuration>;
-  /** Defines the connection settings for a Salesforce data source, including the AWS Secrets Manager secret with OAuth credentials, standard object configurations to index, and optional knowledge article sync settings. (AI-inferred) */
   salesforceConfiguration?: DataSource_DataSourceConfiguration_SalesforceConfiguration | Computed<DataSource_DataSourceConfiguration_SalesforceConfiguration>;
-  /** Configuration for connecting Amazon Kendra to a ServiceNow instance, including authentication details, host URL, and options for indexing knowledge articles and service catalogs. (AI-inferred) */
   serviceNowConfiguration?: DataSource_DataSourceConfiguration_ServiceNowConfiguration | Computed<DataSource_DataSourceConfiguration_ServiceNowConfiguration>;
   /** SharePoint configuration */
   sharePointConfiguration?: DataSource_DataSourceConfiguration_SharePointConfiguration | Computed<DataSource_DataSourceConfiguration_SharePointConfiguration>;
-  /** Provides a JSON template that defines the configuration for a Kendra data source when the data source type is TEMPLATE, enabling custom data source parameters to be specified with the template. (AI-inferred) */
   templateConfiguration?: DataSource_DataSourceConfiguration_TemplateConfiguration | Computed<DataSource_DataSourceConfiguration_TemplateConfiguration>;
-  /** Defines the configuration for crawling web pages, such as seed URLs, crawl depth, and link-following behavior, for the Kendra data source when it is of type `WEBCRAWLER`. (AI-inferred) */
   webCrawlerConfiguration?: DataSource_DataSourceConfiguration_WebCrawlerConfiguration | Computed<DataSource_DataSourceConfiguration_WebCrawlerConfiguration>;
-  /** Configuration for an Amazon WorkDocs data source, specifying the WorkDocs organization ID, whether to crawl comments and shared documents, and which files to include or exclude via patterns. (AI-inferred) */
   workDocsConfiguration?: DataSource_DataSourceConfiguration_WorkDocsConfiguration | Computed<DataSource_DataSourceConfiguration_WorkDocsConfiguration>;
 }
 
 export interface DataSource_Tags {
-  /** The key of a key-value tag attached to the Kendra data source. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -1073,9 +896,7 @@ const DataSource_TagsFields: FieldMap = {
 };
 
 export interface DataSourceConfig {
-  /** Configures custom document enrichment for the data source, allowing you to apply inline transformations or invoke Lambda-based pre- and post-extraction hooks to modify document metadata and content before indexing. (AI-inferred) */
   customDocumentEnrichmentConfiguration?: DataSource_CustomDocumentEnrichmentConfiguration | Computed<DataSource_CustomDocumentEnrichmentConfiguration>;
-  /** Defines the type-specific configuration for the data source, such as connection details, document extraction settings, and metadata mapping for repositories like Amazon S3, databases, or web crawlers. (AI-inferred) */
   dataSourceConfiguration?: DataSource_DataSourceConfiguration | Computed<DataSource_DataSourceConfiguration>;
   /** Description of data source */
   description?: string | Computed<string>;
@@ -1096,11 +917,8 @@ export interface DataSourceConfig {
 }
 
 export interface DataSourceAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Kendra data source in AWS. (AI-inferred) */
   arn: string;
-  /** Configures custom document enrichment for the data source, allowing you to apply inline transformations or invoke Lambda-based pre- and post-extraction hooks to modify document metadata and content before indexing. (AI-inferred) */
   customDocumentEnrichmentConfiguration: DataSource_CustomDocumentEnrichmentConfiguration;
-  /** Defines the type-specific configuration for the data source, such as connection details, document extraction settings, and metadata mapping for repositories like Amazon S3, databases, or web crawlers. (AI-inferred) */
   dataSourceConfiguration: DataSource_DataSourceConfiguration;
   /** Description of data source */
   description: string;

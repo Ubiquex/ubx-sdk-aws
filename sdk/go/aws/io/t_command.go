@@ -4,36 +4,25 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TCommand_MandatoryParameters_DefaultValue struct {
-	// The boolean default value used for this mandatory command parameter when a device executing the command does not supply a value for it. (AI-inferred)
 	B any
 	Bin any
-	// This number specifies the default value for a mandatory parameter in an AWS IoT Command. (AI-inferred)
 	D any
 	I any
 	L any
-	// The string form of the default value (the 'S' attribute) for a mandatory parameter in an AWS IoT command, used to initialize the parameter when not provided at runtime. (AI-inferred)
 	S any
-	// In the AWS IoT Command resource, the 'ul' property holds the string representation of the unsigned long default value for a mandatory command parameter. (AI-inferred)
 	Ul any
 }
 
 type TCommand_MandatoryParameters_ValueConditions_Operand_NumberRange struct {
-	// For the AWS IoT command resource, this string specifies the maximum numeric value allowed by a number-range constraint on a mandatory parameter's operand. (AI-inferred)
 	Max any
-	// Specifies the minimum allowed value for a mandatory command parameter when its value condition is defined as a number range. (AI-inferred)
 	Min any
 }
 
 type TCommand_MandatoryParameters_ValueConditions_Operand struct {
-	// The number field specifies the numeric constant that forms the operand in a value condition applied to a mandatory parameter of an AWS IoT Command, defining the comparison target for validating that parameter's value. (AI-inferred)
 	Number any
-	// Defines the lower and upper bounds of the numeric range that a mandatory parameter's value must fall within for the value condition to be satisfied. (AI-inferred)
 	NumberRange any
-	// Defines the numeric values (represented as strings) that serve as the operand for a value condition on a mandatory parameter of the IoT command, such as the range or allowed numbers for numeric comparisons. (AI-inferred)
 	Numbers any
-	// Specifies the string value of the operand in a value condition applied to a mandatory parameter of an AWS IoT command, defining the expected string match (e.g., equality or pattern) that the parameter's value must satisfy. (AI-inferred)
 	String any
-	// For a value condition on a mandatory parameter of an AWS IoT command, this list specifies the allowed string values that the operand can take. (AI-inferred)
 	Strings any
 }
 
@@ -44,20 +33,15 @@ type TCommand_MandatoryParameters_ValueConditions struct {
 
 type TCommand_MandatoryParameters struct {
 	DefaultValue any
-	// Provides a human-readable description of a mandatory parameter that must be supplied when invoking this AWS IoT command. (AI-inferred)
 	Description any
 	Name any
-	// Defines the data type of a mandatory parameter in an AWS IoT command, restricting the parameter value to a supported primitive type such as STRING, INTEGER, BOOLEAN, FLOAT, or BINARY. (AI-inferred)
 	Type any
 	Value any
-	// Defines the validation conditions (such as equality or range constraints) that the value of each mandatory command parameter must satisfy when the command is invoked in AWS IoT. (AI-inferred)
 	ValueConditions any
 }
 
 type TCommand_Payload struct {
-	// The payload content of the AWS IoT command, which is the message body sent to the target device when the command is invoked. (AI-inferred)
 	Content any
-	// Specifies the MIME content type (such as application/json or text/plain) of the command payload sent to an AWS IoT device. (AI-inferred)
 	ContentType any
 }
 
@@ -169,13 +153,11 @@ type TCommandConfig struct {
 	MandatoryParameters any
 	// The namespace to which the command belongs.
 	Namespace any
-	// Specifies the JSON payload object that is delivered to the target IoT device via MQTT when the command is executed. (AI-inferred)
 	Payload any
 	// The payload template associated with the command.
 	PayloadTemplate any
 	// A flag indicating whether the command is pending deletion.
 	PendingDeletion any
-	// An optional object that specifies the ARN of an AWS Lambda function (via its 'lambdaArn' subfield) used to preprocess the command payload before it is delivered to the target device. (AI-inferred)
 	Preprocessor any
 	// The customer role associated with the command.
 	RoleArn any
@@ -201,13 +183,11 @@ type TCommandAttrs struct {
 	MandatoryParameters any
 	// The namespace to which the command belongs.
 	Namespace any
-	// Specifies the JSON payload object that is delivered to the target IoT device via MQTT when the command is executed. (AI-inferred)
 	Payload any
 	// The payload template associated with the command.
 	PayloadTemplate any
 	// A flag indicating whether the command is pending deletion.
 	PendingDeletion any
-	// An optional object that specifies the ARN of an AWS Lambda function (via its 'lambdaArn' subfield) used to preprocess the command payload before it is delivered to the target device. (AI-inferred)
 	Preprocessor any
 	// The customer role associated with the command.
 	RoleArn any

@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_Endpoints {
-  /** The IPv6 address assigned to this cluster endpoint, enabling connectivity to the AWS PCS cluster management services over IPv6. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
-  /** The TCP port number used to access the cluster endpoint, returned by the AWS PCS service for connecting to the cluster's scheduler or management interface. (AI-inferred) */
   port?: string | Computed<string>;
-  /** The private IP address of a Parallel Computing Service (AWS PCS) cluster endpoint, such as the Slurm scheduler (Slurmctld) or database (Slurmdbd), used for internal communication within the VPC. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
-  /** The public IP address of the cluster endpoint, which clients use to connect to the cluster's Slurm scheduler. (AI-inferred) */
   publicIpAddress?: string | Computed<string>;
-  /** The type of the cluster endpoint, such as Slurmctld or Slurmdbd, indicating the Slurm service the endpoint provides access to. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Cluster_ErrorInfo {
-  /** The machine-readable error code returned by AWS PCS when a cluster creation or update operation fails. (AI-inferred) */
   code?: string | Computed<string>;
-  /** The human-readable error message from an error_info entry, describing the error condition reported for this AWS PCS cluster. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
@@ -52,9 +45,7 @@ export interface Cluster_SlurmConfiguration_AuthKey {
 }
 
 export interface Cluster_SlurmConfiguration_CgroupCustomSettings {
-  /** The name of a parameter to add to the Slurm cgroup.conf file, where each custom setting pairs a parameter name with its value. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** The value component of a key-value pair in cgroup_custom_settings, used to override or add a custom cgroup parameter in the Slurm configuration of the PCS cluster. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 

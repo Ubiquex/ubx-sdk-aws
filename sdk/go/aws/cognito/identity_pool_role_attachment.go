@@ -4,22 +4,15 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdentityPoolRoleAttachmentConfig struct {
-	// The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred)
 	IdentityPoolId any
-	// Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred)
 	RoleMappings any
-	// Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred)
 	Roles any
 }
 
 type IdentityPoolRoleAttachmentAttrs struct {
-	// The unique identifier of the Amazon Cognito identity pool that this role attachment configuration applies to. (AI-inferred)
 	Id any
-	// The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred)
 	IdentityPoolId any
-	// Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred)
 	RoleMappings any
-	// Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred)
 	Roles any
 }
 

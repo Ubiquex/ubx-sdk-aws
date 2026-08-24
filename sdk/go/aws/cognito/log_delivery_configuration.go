@@ -4,30 +4,22 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogDeliveryConfiguration_LogConfigurations_CloudWatchLogsConfiguration struct {
-	// The ARN of the CloudWatch Logs log group where Cognito user pool logs are delivered when CloudWatch Logs is the log destination. (AI-inferred)
 	LogGroupArn any
 }
 
 type LogDeliveryConfiguration_LogConfigurations_FirehoseConfiguration struct {
-	// The Amazon Resource Name (ARN) of the Kinesis Data Firehose delivery stream that receives the specified user pool log events for this log delivery configuration. (AI-inferred)
 	StreamArn any
 }
 
 type LogDeliveryConfiguration_LogConfigurations_S3Configuration struct {
-	// The ARN of the Amazon S3 bucket to which Amazon Cognito user pool logs are delivered for this log configuration. (AI-inferred)
 	BucketArn any
 }
 
 type LogDeliveryConfiguration_LogConfigurations struct {
-	// Specifies the CloudWatch Logs log group (via its ARN) that receives Cognito user pool audit logs for the corresponding event source in the log delivery configuration. (AI-inferred)
 	CloudWatchLogsConfiguration any
-	// Identifies which event source within the Cognito user pool (userNotification or userAuthEvents) this log configuration applies to, controlling which activity is delivered to the associated CloudWatch log group. (AI-inferred)
 	EventSource any
-	// Specifies the Amazon Data Firehose delivery stream destination for a given log type, including the ARN of the delivery stream to which logs are delivered. (AI-inferred)
 	FirehoseConfiguration any
-	// Determines the verbosity of logs (either ERROR or INFO) that are delivered to CloudWatch Logs for a specific event source in the user pool's log delivery configuration. (AI-inferred)
 	LogLevel any
-	// Specifies the Amazon S3 bucket destination (by bucket ARN) for delivering a particular log level from a Cognito user pool, used within one log configuration entry. (AI-inferred)
 	S3Configuration any
 }
 
@@ -64,18 +56,13 @@ var LogDeliveryConfiguration_LogConfigurationsFields = ubx.FieldMap{
 	}
 
 type LogDeliveryConfigurationConfig struct {
-	// Specifies the list of log delivery configurations for the user pool, each defining the event source (e.g., userNotification, userAuthEvents), the log level (e.g., ERROR, INFO), and the destination CloudWatch log group to which Amazon Cognito delivers user activity logs. (AI-inferred)
 	LogConfigurations any
-	// The ID of the Amazon Cognito user pool to which this log delivery configuration applies. (AI-inferred)
 	UserPoolId any
 }
 
 type LogDeliveryConfigurationAttrs struct {
-	// The unique identifier of the user pool to which this log delivery configuration belongs, acting as the resource's primary identifier. (AI-inferred)
 	Id any
-	// Specifies the list of log delivery configurations for the user pool, each defining the event source (e.g., userNotification, userAuthEvents), the log level (e.g., ERROR, INFO), and the destination CloudWatch log group to which Amazon Cognito delivers user activity logs. (AI-inferred)
 	LogConfigurations any
-	// The ID of the Amazon Cognito user pool to which this log delivery configuration applies. (AI-inferred)
 	UserPoolId any
 }
 

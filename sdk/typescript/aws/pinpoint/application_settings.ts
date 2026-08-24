@@ -2,28 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApplicationSettings_CampaignHook {
-  /** The name or ARN of the Lambda function that Amazon Pinpoint invokes as the campaign hook for this application's campaigns and journeys. (AI-inferred) */
   lambdaFunctionName?: string | Computed<string>;
-  /** Specifies whether the associated Lambda function is invoked during campaign filtering (FILTER) or during campaign delivery (DELIVERY). (AI-inferred) */
   mode?: string | Computed<string>;
   webUrl?: string | Computed<string>;
 }
 
 export interface ApplicationSettings_Limits {
-  /** The maximum number of messages that a campaign or journey can send to users in a 24-hour period. (AI-inferred) */
   daily?: number | Computed<number>;
-  /** The maximum number of seconds that a campaign can run before it is stopped. (AI-inferred) */
   maximumDuration?: number | Computed<number>;
-  /** The maximum number of messages that can be sent per second through the Amazon Pinpoint application, as a rate limit for campaigns and journeys. (AI-inferred) */
   messagesPerSecond?: number | Computed<number>;
-  /** The default maximum number of messages that a campaign or journey can send to a single user over the entire duration of the campaign or journey, as configured in the application's limits. (AI-inferred) */
   total?: number | Computed<number>;
 }
 
 export interface ApplicationSettings_QuietTime {
-  /** Specifies the time, in 24-hour HH:MM format, when the daily quiet time ends for the application, marking the end of the window during which messages are not sent to users. (AI-inferred) */
   end: string | Computed<string>;
-  /** Specifies the start time of the daily quiet period, formatted as HH:MM in 24-hour clock using the application's timezone, during which Amazon Pinpoint suppresses sending messages to endpoints. (AI-inferred) */
   start: string | Computed<string>;
 }
 
@@ -46,30 +38,19 @@ const ApplicationSettings_QuietTimeFields: FieldMap = {
 };
 
 export interface ApplicationSettingsConfig {
-  /** Specifies the unique identifier (ID) of the Amazon Pinpoint application to which these settings apply. (AI-inferred) */
   applicationId: string | Computed<string>;
-  /** The campaign hook specifies the Lambda function and invocation mode that Amazon Pinpoint invokes when a campaign sends messages, enabling custom logic like message personalization or filtering during send time. (AI-inferred) */
   campaignHook?: ApplicationSettings_CampaignHook | Computed<ApplicationSettings_CampaignHook>;
-  /** Specifies whether CloudWatch metrics are enabled for the Amazon Pinpoint application. (AI-inferred) */
   cloudWatchMetricsEnabled?: boolean | Computed<boolean>;
-  /** Defines quotas for campaign messaging, including the maximum number of messages per day, total messages, per-second send rate, and maximum campaign duration. (AI-inferred) */
   limits?: ApplicationSettings_Limits | Computed<ApplicationSettings_Limits>;
-  /** Defines a daily quiet time window with start and end times (in HH:MM format) during which Amazon Pinpoint does not deliver messages to endpoints in the application. (AI-inferred) */
   quietTime?: ApplicationSettings_QuietTime | Computed<ApplicationSettings_QuietTime>;
 }
 
 export interface ApplicationSettingsAttrs {
-  /** Specifies the unique identifier (ID) of the Amazon Pinpoint application to which these settings apply. (AI-inferred) */
   applicationId: string;
-  /** The campaign hook specifies the Lambda function and invocation mode that Amazon Pinpoint invokes when a campaign sends messages, enabling custom logic like message personalization or filtering during send time. (AI-inferred) */
   campaignHook: ApplicationSettings_CampaignHook;
-  /** Specifies whether CloudWatch metrics are enabled for the Amazon Pinpoint application. (AI-inferred) */
   cloudWatchMetricsEnabled: boolean;
-  /** This field is the unique identifier of the Amazon Pinpoint application that these settings apply to, equal to the value of the `application_id` argument. (AI-inferred) */
   id: string;
-  /** Defines quotas for campaign messaging, including the maximum number of messages per day, total messages, per-second send rate, and maximum campaign duration. (AI-inferred) */
   limits: ApplicationSettings_Limits;
-  /** Defines a daily quiet time window with start and end times (in HH:MM format) during which Amazon Pinpoint does not deliver messages to endpoints in the application. (AI-inferred) */
   quietTime: ApplicationSettings_QuietTime;
 }
 

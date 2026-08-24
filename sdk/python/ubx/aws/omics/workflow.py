@@ -8,45 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Workflow_ContainerRegistryMap_ImageMappings:
-    # The destination container image URI that replaces the source image when the Omics workflow pulls its containers, redirecting to an alternate registry or repository. (AI-inferred)
     destination_image: Any = None
-    # The original container image URI as referenced in the workflow definition, which is mapped to an alternative image URI for execution via the container registry map. (AI-inferred)
     source_image: Any = None
 
 @dataclasses.dataclass
 class Workflow_ContainerRegistryMap_RegistryMappings:
-    # The AWS account ID of a private Amazon ECR registry mapped to the Omics workflow, allowing the workflow to pull container images from that account's ECR repositories. (AI-inferred)
     ecr_account_id: Any = None
-    # Specifies the Amazon ECR repository prefix used for a given container registry mapping, allowing the Omics workflow to substitute a custom ECR repository for the default registry when building and running workflow container images. (AI-inferred)
     ecr_repository_prefix: Any = None
-    # Specifies the URL of the upstream container registry that the workflow uses to pull container images, allowing registry mappings to redirect image pulls to a private or alternate registry. (AI-inferred)
     upstream_registry_url: Any = None
-    # Specifies the upstream repository prefix that AWS HealthOmics prepends to container image paths when pulling images from the corresponding registry mapping, allowing the workflow to use an alternate repository for container images. (AI-inferred)
     upstream_repository_prefix: Any = None
 
 @dataclasses.dataclass
 class Workflow_ContainerRegistryMap:
-    # Specifies a list of container image mappings that map original image URIs in the workflow definition to replacement URIs (e.g., private registry copies) for the corresponding container registry key. (AI-inferred)
     image_mappings: Any = None
-    # Specifies a list of container registry mappings, each mapping a registry name to an image URI, so that the workflow can use custom or private container images for its tasks. (AI-inferred)
     registry_mappings: Any = None
 
 @dataclasses.dataclass
 class Workflow_DefinitionRepository_SourceReference:
-    # Specifies the type of the source repository (S3 or GIT) that stores the workflow definition for this AWS Omics workflow. (AI-inferred)
     type: Any = None
-    # The `value` field of `source_reference` within `definition_repository` is the actual repository reference (for example, a Git branch, tag, commit hash, or S3 URI) that points to the workflow definition to be used. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Workflow_DefinitionRepository:
-    # The ARN of the AWS CodeStar Connections connection used to access the Git repository that provides the workflow definition. (AI-inferred)
     connection_arn: Any = None
-    # A list of glob-style file patterns that specify which files in the workflow definition repository should be excluded when the workflow source is fetched and packaged. (AI-inferred)
     exclude_file_patterns: Any = None
-    # The full repository ID (e.g., 'owner/repository' for GitHub) of the Git repository that contains the workflow definition, used when the workflow source is a repository rather than an S3 URI or ZIP. (AI-inferred)
     full_repository_id: Any = None
-    # Specifies the S3 URI or GitHub repository path from which the workflow definition is retrieved. (AI-inferred)
     source_reference: Any = None
 
 _Workflow_ContainerRegistryMap_ImageMappingsFields = {
@@ -92,30 +78,19 @@ _Workflow_DefinitionRepositoryFields = {
 
 @dataclasses.dataclass
 class WorkflowConfig:
-    # The accelerators property specifies the type of compute accelerator (such as GPU) to use for the workflow run. (AI-inferred)
     accelerators: Any = None
-    # A map of container image names to their fully-qualified registry image URIs, used to override the default container registries from which the workflow's container images are pulled. (AI-inferred)
     container_registry_map: Any = None
     container_registry_map_uri: Any = None
-    # Specifies the source control repository (type, URI, and version) from which AWS HealthOmics retrieves the workflow definition file when it is not provided inline or via an S3 URI. (AI-inferred)
     definition_repository: Any = None
-    # The S3 URI of the workflow definition file (WDL or Nextflow) that defines this AWS Omics workflow. (AI-inferred)
     definition_uri: Any = None
-    # A user-provided description that is stored with the workflow and displayed in the AWS Omics console to help identify the workflow. (AI-inferred)
     description: Any = None
-    # The engine used to run the workflow, such as WDL, NEXTFLOW, or CWL. (AI-inferred)
     engine: Any = None
-    # Specifies the relative path to the main workflow definition file (the entry point) within the provided workflow package, used when the workflow is defined as a collection of files. (AI-inferred)
     main: Any = None
-    # A user-provided name that identifies the workflow within AWS Omics, used for display in the console and for filtering and looking up the workflow. (AI-inferred)
     name: Any = None
-    # Defines the workflow's input parameters as a map, where each key is a parameter name and the value contains properties such as whether the parameter is optional and its description, used to customize workflow runs. (AI-inferred)
     parameter_template: Any = None
     # Path to the primary workflow parameter template JSON file inside the repository
     parameter_template_path: Any = None
-    # Specifies the storage capacity (in gigabytes) to allocate for the workflow's run environment, controlling the disk space available to tasks during execution. (AI-inferred)
     storage_capacity: Any = None
-    # The type of storage used for the workflow run, either 'STATIC' for a fixed storage capacity or 'DYNAMIC' for storage that scales with input data. (AI-inferred)
     storage_type: Any = None
     # A map of resource tags
     tags: Any = None
@@ -130,44 +105,27 @@ class WorkflowConfig:
 
 @dataclasses.dataclass
 class WorkflowAttrs:
-    # The accelerators property specifies the type of compute accelerator (such as GPU) to use for the workflow run. (AI-inferred)
     accelerators: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Omics workflow. (AI-inferred)
     arn: Any = None
-    # A map of container image names to their fully-qualified registry image URIs, used to override the default container registries from which the workflow's container images are pulled. (AI-inferred)
     container_registry_map: Any = None
     container_registry_map_uri: Any = None
-    # The read-only timestamp indicating when the workflow was created. (AI-inferred)
     creation_time: Any = None
-    # Specifies the source control repository (type, URI, and version) from which AWS HealthOmics retrieves the workflow definition file when it is not provided inline or via an S3 URI. (AI-inferred)
     definition_repository: Any = None
-    # The S3 URI of the workflow definition file (WDL or Nextflow) that defines this AWS Omics workflow. (AI-inferred)
     definition_uri: Any = None
-    # A user-provided description that is stored with the workflow and displayed in the AWS Omics console to help identify the workflow. (AI-inferred)
     description: Any = None
-    # The engine used to run the workflow, such as WDL, NEXTFLOW, or CWL. (AI-inferred)
     engine: Any = None
-    # The unique identifier (workflow ID) assigned to the Omics workflow by AWS upon creation. (AI-inferred)
     id: Any = None
-    # Specifies the relative path to the main workflow definition file (the entry point) within the provided workflow package, used when the workflow is defined as a collection of files. (AI-inferred)
     main: Any = None
-    # A user-provided name that identifies the workflow within AWS Omics, used for display in the console and for filtering and looking up the workflow. (AI-inferred)
     name: Any = None
-    # Defines the workflow's input parameters as a map, where each key is a parameter name and the value contains properties such as whether the parameter is optional and its description, used to customize workflow runs. (AI-inferred)
     parameter_template: Any = None
     # Path to the primary workflow parameter template JSON file inside the repository
     parameter_template_path: Any = None
-    # The current lifecycle status of the Omics workflow, indicating whether it is being created, active, being updated, being deleted, or has failed. (AI-inferred)
     status: Any = None
-    # Specifies the storage capacity (in gigabytes) to allocate for the workflow's run environment, controlling the disk space available to tasks during execution. (AI-inferred)
     storage_capacity: Any = None
-    # The type of storage used for the workflow run, either 'STATIC' for a fixed storage capacity or 'DYNAMIC' for storage that scales with input data. (AI-inferred)
     storage_type: Any = None
     # A map of resource tags
     tags: Any = None
-    # The read-only workflow type, which is set to either 'WDL' or 'NEXTFLOW' by the service based on the workflow's engine. (AI-inferred)
     type: Any = None
-    # The read-only UUID assigned by AWS to uniquely identify this Omics workflow. (AI-inferred)
     uuid: Any = None
     # Optional workflow bucket owner ID to verify the workflow bucket
     workflow_bucket_owner_id: Any = None

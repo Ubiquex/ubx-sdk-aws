@@ -2,62 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Endpoint_CertificateAuthority {
-  /** The ARN of the AWS Certificate Manager (ACM) certificate used to secure the TLS certificate authority for the EMR Containers endpoint. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** The PEM-encoded certificate data from the certificate authority that secures the EMR Containers managed endpoint, used by clients to verify TLS connections. (AI-inferred) */
   certificateData?: string | Computed<string>;
 }
 
 export interface Endpoint_ConfigurationOverrides_ApplicationConfiguration {
-  /** The classification for the application configuration override, such as 'spark-defaults', 'hive-site', or 'yarn-site', which identifies the type of configuration properties being applied when the endpoint is created. (AI-inferred) */
   classification?: string | Computed<string>;
-  /** Provides a list of application configuration objects, each containing a classification (e.g., spark-defaults) and key-value properties, that override the default EMR on EKS application settings for the endpoint. (AI-inferred) */
   configurations?: unknown[] | Computed<unknown[]>;
-  /** Key-value pairs for a configuration classification, used to override application-level settings for the EMR on EKS managed endpoint. (AI-inferred) */
   properties?: unknown | Computed<unknown>;
 }
 
 export interface Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration {
-  /** The name of the CloudWatch log group to which EMR on EKS container logs are delivered when monitoring configuration is enabled for this endpoint. (AI-inferred) */
   logGroupName: string | Computed<string>;
-  /** Specifies the prefix that is prepended to CloudWatch log stream names for monitoring logs emitted by the EMR on EKS managed endpoint. (AI-inferred) */
   logStreamNamePrefix?: string | Computed<string>;
 }
 
 export interface Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration {
-  /** The maximum number of rotated container log files to retain for a pod after rotation, after which the oldest logs are deleted. (AI-inferred) */
   maxFilesToKeep: number | Computed<number>;
-  /** The size threshold in MB at which container logs are rotated for the Amazon EMR on EKS endpoint's monitoring configuration. (AI-inferred) */
   rotationSize: string | Computed<string>;
 }
 
 export interface Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration {
-  /** Specifies the S3 URI where logs are stored for monitoring of the EMR on EKS endpoint. (AI-inferred) */
   logUri: string | Computed<string>;
 }
 
 export interface Endpoint_ConfigurationOverrides_MonitoringConfiguration {
-  /** This object defines the CloudWatch monitoring configuration for the endpoint, specifying the log group name and optional log stream prefix where EMR Containers delivers application logs. (AI-inferred) */
   cloudWatchMonitoringConfiguration?: Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration | Computed<Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration>;
-  /** Specifies the container log rotation settings for the endpoint's monitoring configuration, including the rotation size in megabytes and the maximum number of log files to keep. (AI-inferred) */
   containerLogRotationConfiguration?: Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration | Computed<Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration>;
-  /** Determines whether persistent Spark UI is enabled (ENABLED) or disabled (DISABLED) for job runs submitted through this EMR Containers endpoint. (AI-inferred) */
   persistentAppUi?: string | Computed<string>;
-  /** Defines the Amazon S3 configuration for monitoring logs of the EMR containers endpoint, including the destination S3 URI (LogUri) and optional encryption key. (AI-inferred) */
   s3MonitoringConfiguration?: Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration | Computed<Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration>;
 }
 
 export interface Endpoint_ConfigurationOverrides {
-  /** Specifies application-level configuration overrides (e.g., Spark settings) to apply to workloads using this endpoint, where each list entry is a Configuration object containing a classification and its properties. (AI-inferred) */
   applicationConfiguration?: Endpoint_ConfigurationOverrides_ApplicationConfiguration[] | Computed<Endpoint_ConfigurationOverrides_ApplicationConfiguration[]>;
-  /** This object overrides the default monitoring configuration for jobs running through the EMR Containers endpoint, specifying where to send logs (CloudWatch log group and S3 location) and whether to enable the persistent application UI. (AI-inferred) */
   monitoringConfiguration?: Endpoint_ConfigurationOverrides_MonitoringConfiguration | Computed<Endpoint_ConfigurationOverrides_MonitoringConfiguration>;
 }
 
 export interface Endpoint_Tags {
-  /** The key of a user-defined tag attached to the Amazon EMR on EKS endpoint, used for cost allocation and resource identification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the Amazon EMR on EKS endpoint, used for resource identification, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -119,7 +101,6 @@ const Endpoint_TagsFields: FieldMap = {
 };
 
 export interface EndpointConfig {
-  /** Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred) */
   configurationOverrides?: Endpoint_ConfigurationOverrides | Computed<Endpoint_ConfigurationOverrides>;
   /** The execution role ARN for the managed endpoint. */
   executionRoleArn: string | Computed<string>;
@@ -142,9 +123,7 @@ export interface EndpointAttrs {
   arn: string;
   /** The auth proxy URL for Spark Connect connections. */
   authProxyUrl: string;
-  /** The certificate_authority object contains the certificate authority details (such as the certificate ARN) for the EKS cluster backing the EMR Containers endpoint, used to establish TLS trust for the endpoint connection. (AI-inferred) */
   certificateAuthority: Endpoint_CertificateAuthority;
-  /** Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred) */
   configurationOverrides: Endpoint_ConfigurationOverrides;
   /** The date and time when the managed endpoint was created. */
   createdAt: string;

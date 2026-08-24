@@ -15,21 +15,18 @@ class AccessEntitlement_Entitlement_PrincipalRole_Principal_IdentityCenter:
 
 @dataclasses.dataclass
 class AccessEntitlement_Entitlement_PrincipalRole_Principal:
-    # Specifies the AWS IAM Identity Center (successor to AWS SSO) user or group that acts as the principal for the access entitlement, granting that identity access to the target account. (AI-inferred)
     identity_center: Any = None
 
 @dataclasses.dataclass
 class AccessEntitlement_Entitlement_PrincipalRole:
     # The AWS account ID
     account: Any = None
-    # The IAM user, role, or AWS account that is granted the account access entitlement and assumes the specified principal role in the target AWS account. (AI-inferred)
     principal: Any = None
     # The ARN of the IAM role
     role_arn: Any = None
 
 @dataclasses.dataclass
 class AccessEntitlement_Entitlement:
-    # Defines the IAM role principal, including its role name and optional organizational unit, that is granted the access entitlement to the specified target accounts. (AI-inferred)
     principal_role: Any = None
 
 @dataclasses.dataclass

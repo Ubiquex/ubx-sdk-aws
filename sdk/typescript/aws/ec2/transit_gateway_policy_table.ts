@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayPolicyTable_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key assigned to the transit gateway policy table, used for metadata and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -13,7 +12,6 @@ const TransitGatewayPolicyTable_TagsFields: FieldMap = {
 };
 
 export interface TransitGatewayPolicyTableConfig {
-  /** Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred) */
   tags?: TransitGatewayPolicyTable_Tags[] | Computed<TransitGatewayPolicyTable_Tags[]>;
   /** The Id of transit gateway */
   transitGatewayId: string | Computed<string>;
@@ -24,7 +22,6 @@ export interface TransitGatewayPolicyTableAttrs {
   creationTime: string;
   /** State of the transit gateway policy table */
   state: string;
-  /** Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred) */
   tags: TransitGatewayPolicyTable_Tags[];
   /** The Id of transit gateway */
   transitGatewayId: string;

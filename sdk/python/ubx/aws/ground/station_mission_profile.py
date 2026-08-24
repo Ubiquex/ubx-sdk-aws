@@ -8,25 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StationMissionProfile_DataflowEdges:
-    # The destination is the ARN or ID of the Ground Station config that receives data from the source in this dataflow edge, defining the next step in the mission profile's dataflow path. (AI-inferred)
     destination: Any = None
-    # Specifies the source config for a dataflow edge in the mission profile, identifying where the data stream originates before flowing to the destination config. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class StationMissionProfile_StreamsKmsKey:
-    # The alias ARN of the AWS KMS key used to encrypt the mission profile's data streams, as an alternative to specifying the KMS key ARN directly. (AI-inferred)
     kms_alias_arn: Any = None
-    # Specifies the alias name of the AWS KMS key used to encrypt the data streams (uplink and downlink) associated with this Ground Station mission profile. (AI-inferred)
     kms_alias_name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the satellite data streams processed by the mission profile. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class StationMissionProfile_Tags:
-    # Specifies the key (name) of a tag attached to the AWS Ground Station mission profile, used for resource identification and organization. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS Ground Station mission profile, used for identifying and organizing the resource. (AI-inferred)
     value: Any = None
 
 _StationMissionProfile_DataflowEdgesFields = {
@@ -51,49 +44,39 @@ class StationMissionProfileConfig:
     contact_post_pass_duration_seconds: Any = None
     # Pre-pass time needed before the contact.
     contact_pre_pass_duration_seconds: Any = None
-    # Specifies the list of dataflow edges that define how data moves between satellite and ground station endpoints, with each edge containing source and destination configuration references. (AI-inferred)
     dataflow_edges: Any = None
     # Visibilities with shorter duration than the specified minimum viable contact duration will be ignored when searching for available contacts.
     minimum_viable_contact_duration_seconds: Any = None
     # A name used to identify a mission profile.
     name: Any = None
-    # The AWS KMS key (specified as an ARN or alias) used to encrypt data streams produced by this mission profile, enabling customer-controlled encryption of downlinked satellite data. (AI-inferred)
     streams_kms_key: Any = None
     # The ARN of the KMS Key or Alias Key role used to define permissions on KMS Key usage.
     streams_kms_role: Any = None
-    # Assigns a list of tag objects (key-value pairs) to the AWS Ground Station mission profile, which can be used for cost allocation and resource management. (AI-inferred)
     tags: Any = None
     # ARN of a Config resource of type TelemetrySinkConfig used for telemetry data sink configuration.
     telemetry_sink_config_arn: Any = None
-    # ARN of the tracking config resource that defines how the ground station antenna tracks the satellite during the mission profile. (AI-inferred)
     tracking_config_arn: Any = None
 
 @dataclasses.dataclass
 class StationMissionProfileAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Ground Station mission profile. (AI-inferred)
     arn: Any = None
     # Post-pass time needed after the contact.
     contact_post_pass_duration_seconds: Any = None
     # Pre-pass time needed before the contact.
     contact_pre_pass_duration_seconds: Any = None
-    # Specifies the list of dataflow edges that define how data moves between satellite and ground station endpoints, with each edge containing source and destination configuration references. (AI-inferred)
     dataflow_edges: Any = None
-    # The AWS-assigned unique identifier for this Ground Station mission profile, which is exposed as the 'Id' attribute and used to reference the mission profile in Ground Station APIs. (AI-inferred)
     id: Any = None
     # Visibilities with shorter duration than the specified minimum viable contact duration will be ignored when searching for available contacts.
     minimum_viable_contact_duration_seconds: Any = None
     # A name used to identify a mission profile.
     name: Any = None
     region: Any = None
-    # The AWS KMS key (specified as an ARN or alias) used to encrypt data streams produced by this mission profile, enabling customer-controlled encryption of downlinked satellite data. (AI-inferred)
     streams_kms_key: Any = None
     # The ARN of the KMS Key or Alias Key role used to define permissions on KMS Key usage.
     streams_kms_role: Any = None
-    # Assigns a list of tag objects (key-value pairs) to the AWS Ground Station mission profile, which can be used for cost allocation and resource management. (AI-inferred)
     tags: Any = None
     # ARN of a Config resource of type TelemetrySinkConfig used for telemetry data sink configuration.
     telemetry_sink_config_arn: Any = None
-    # ARN of the tracking config resource that defines how the ground station antenna tracks the satellite during the mission profile. (AI-inferred)
     tracking_config_arn: Any = None
 
 StationMissionProfile = ubx.ResourceBinding(

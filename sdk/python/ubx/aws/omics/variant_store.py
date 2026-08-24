@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VariantStore_Reference:
-    # The Amazon Resource Name (ARN) of the reference genome that the variants in this variant store are aligned to, typically from an AWS HealthOmics reference store. (AI-inferred)
     reference_arn: Any = None
 
 @dataclasses.dataclass
 class VariantStore_SseConfig:
-    # The ARN of the AWS KMS customer-managed key used to encrypt the variant store data at rest. (AI-inferred)
     key_arn: Any = None
-    # Specifies the server-side encryption type for the variant store, which must be either 'KMS' (use a customer-managed key specified in KeyArn) or 'S3' (use S3-managed encryption). (AI-inferred)
     type: Any = None
 
 _VariantStore_ReferenceFields = {
@@ -29,42 +26,25 @@ _VariantStore_SseConfigFields = {
 
 @dataclasses.dataclass
 class VariantStoreConfig:
-    # A user-supplied description of the variant store, providing human-readable context for the resource. (AI-inferred)
     description: Any = None
-    # The name of the variant store, which is required, must be unique within the AWS account and region, and serves as the primary identifier for the resource. (AI-inferred)
     name: Any = None
-    # Configures the reference genome for the variant store, specifying either the ARN or the alias of the reference sequence used for variant annotation. (AI-inferred)
     reference: Any = None
-    # Specifies the server-side encryption configuration for the variant store, including the encryption type (KMS or S3) and the KMS key ARN when using KMS. (AI-inferred)
     sse_config: Any = None
-    # Tags to assign to the variant store for cost allocation, access control, and resource management in AWS Omics. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class VariantStoreAttrs:
-    # The timestamp when the variant store was created, in ISO 8601 format. (AI-inferred)
     creation_time: Any = None
-    # A user-supplied description of the variant store, providing human-readable context for the resource. (AI-inferred)
     description: Any = None
-    # The unique ID of the variant store, which is the same as the store's name and is the identifier used by the AWS Omics API to reference the store. (AI-inferred)
     id: Any = None
-    # The name of the variant store, which is required, must be unique within the AWS account and region, and serves as the primary identifier for the resource. (AI-inferred)
     name: Any = None
-    # Configures the reference genome for the variant store, specifying either the ARN or the alias of the reference sequence used for variant annotation. (AI-inferred)
     reference: Any = None
-    # Specifies the server-side encryption configuration for the variant store, including the encryption type (KMS or S3) and the KMS key ARN when using KMS. (AI-inferred)
     sse_config: Any = None
-    # The current lifecycle status of the variant store, such as CREATING, ACTIVE, UPDATING, DELETING, or FAILED. (AI-inferred)
     status: Any = None
-    # The status message provides additional details about the current state of the variant store, such as the reason for a failure during creation or updates. (AI-inferred)
     status_message: Any = None
-    # The Amazon Resource Name (ARN) of the Omics variant store, assigned by AWS when the store is created. (AI-inferred)
     store_arn: Any = None
-    # The total size of the variant store in bytes, computed and reported by AWS after the store is created. (AI-inferred)
     store_size_bytes: Any = None
-    # Tags to assign to the variant store for cost allocation, access control, and resource management in AWS Omics. (AI-inferred)
     tags: Any = None
-    # The timestamp indicating when the variant store was last updated, typically in ISO 8601 format. (AI-inferred)
     update_time: Any = None
 
 VariantStore = ubx.ResourceBinding(

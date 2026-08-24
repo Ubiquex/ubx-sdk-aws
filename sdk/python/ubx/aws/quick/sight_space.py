@@ -8,22 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightSpace_Permissions:
-    # The list of QuickSight actions, such as quicksight:DescribeSpace, that the principal in the containing permission entry is allowed to perform on this QuickSight space. (AI-inferred)
     actions: Any = None
-    # Specifies the ARN of the IAM user, group, or role that is granted the permissions defined in this entry for the QuickSight space. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass
 class SightSpace_Resources:
-    # The ARN of a QuickSight asset (such as a dashboard, analysis, or dataset) that is associated with and managed within this QuickSight space. (AI-inferred)
     resource_arn: Any = None
-    # The type of QuickSight asset (e.g., DATASET or DASHBOARD) that is included in this space, indicating which resource the entry refers to. (AI-inferred)
     resource_type: Any = None
 
 @dataclasses.dataclass
 class SightSpace_Tags:
     key: Any = None
-    # The value of a key-value tag attached to the QuickSight space, used for cost allocation, access control, and resource identification. (AI-inferred)
     value: Any = None
 
 _SightSpace_PermissionsFields = {

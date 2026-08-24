@@ -29,7 +29,6 @@ type SyncLocationAzureBlob_ManagedSecretConfig struct {
 
 type SyncLocationAzureBlob_Tags struct {
 	Key any
-	// The value part of a key-value tag assigned to this AWS DataSync location for Azure Blob storage, used to identify and organize the resource. (AI-inferred)
 	Value any
 }
 

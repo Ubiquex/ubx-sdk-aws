@@ -4,7 +4,6 @@ package elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancingV2ListenerCertificate_Certificates struct {
-	// The ARN of the certificate (from AWS Certificate Manager or IAM) to associate with the listener for TLS/SSL termination. (AI-inferred)
 	CertificateArn any
 }
 
@@ -13,18 +12,13 @@ var LoadBalancingV2ListenerCertificate_CertificatesFields = ubx.FieldMap{
 	}
 
 type LoadBalancingV2ListenerCertificateConfig struct {
-	// Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred)
 	Certificates any
-	// Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred)
 	ListenerArn any
 }
 
 type LoadBalancingV2ListenerCertificateAttrs struct {
-	// Specifies the list of ACM certificate ARNs to attach to the listener, allowing the load balancer to present these certificates during TLS handshakes. (AI-inferred)
 	Certificates any
-	// The unique identifier for the listener certificate, composed of the listener ARN and certificate ARN. (AI-inferred)
 	Id any
-	// Specifies the ARN of the Application Load Balancer or Network Load Balancer listener to which the certificate is associated. (AI-inferred)
 	ListenerArn any
 }
 

@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamDirectoryConfig_CertificateBasedAuthProperties:
-    # The ARN of the AWS Certificate Manager Private CA that AppStream 2.0 uses to issue certificates for certificate-based authentication in this directory configuration. (AI-inferred)
     certificate_authority_arn: Any = None
-    # Indicates whether certificate-based authentication is enabled or disabled for the AppStream directory configuration. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class StreamDirectoryConfig_ServiceAccountCredentials:
-    # The user name of the service account that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred)
     account_name: Any = None
-    # The password for the service account that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred)
     account_password: Any = None
 
 _StreamDirectoryConfig_CertificateBasedAuthPropertiesFields = {
@@ -32,24 +28,16 @@ _StreamDirectoryConfig_ServiceAccountCredentialsFields = {
 
 @dataclasses.dataclass
 class StreamDirectoryConfigConfig:
-    # Configures certificate-based authentication for the AppStream 2.0 directory configuration, specifying the status (enabled/disabled) and the ARN of the certificate authority used to issue and validate user certificates. (AI-inferred)
     certificate_based_auth_properties: Any = None
-    # The fully qualified name of the Active Directory domain (for example, corp.example.com) that the AppStream 2.0 directory configuration connects to. (AI-inferred)
     directory_name: Any = None
-    # Specifies the list of organizational unit (OU) distinguished names in the Active Directory where computer objects for streaming instances are created. (AI-inferred)
     organizational_unit_distinguished_names: Any = None
-    # The service account credentials (account name and password) that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred)
     service_account_credentials: Any = None
 
 @dataclasses.dataclass
 class StreamDirectoryConfigAttrs:
-    # Configures certificate-based authentication for the AppStream 2.0 directory configuration, specifying the status (enabled/disabled) and the ARN of the certificate authority used to issue and validate user certificates. (AI-inferred)
     certificate_based_auth_properties: Any = None
-    # The fully qualified name of the Active Directory domain (for example, corp.example.com) that the AppStream 2.0 directory configuration connects to. (AI-inferred)
     directory_name: Any = None
-    # Specifies the list of organizational unit (OU) distinguished names in the Active Directory where computer objects for streaming instances are created. (AI-inferred)
     organizational_unit_distinguished_names: Any = None
-    # The service account credentials (account name and password) that AppStream 2.0 uses to join streaming instances to the Active Directory domain. (AI-inferred)
     service_account_credentials: Any = None
 
 StreamDirectoryConfig = ubx.ResourceBinding(

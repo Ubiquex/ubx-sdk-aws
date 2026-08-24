@@ -8,59 +8,43 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_AmazonMskCluster:
-    # The ARN of an Amazon MSK cluster that is included in the replicator's set of Kafka clusters, serving as a source or target for replication. (AI-inferred)
     msk_cluster_arn: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_ApacheKafkaCluster:
-    # A unique user-supplied string that identifies the self-managed Apache Kafka cluster so the MSK replicator can reference it in the replication info. (AI-inferred)
     apache_kafka_cluster_id: Any = None
-    # The bootstrap broker string (comma-separated list of host:port pairs) of the self-managed Apache Kafka cluster used as a source or target for replication. (AI-inferred)
     bootstrap_broker_string: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_ClientAuthentication_Mtls:
-    # The ARN of the AWS Secrets Manager secret containing the client certificate and private key used for mutual TLS authentication when connecting to this Kafka cluster. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_ClientAuthentication_SaslScram:
-    # Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred)
     mechanism: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM credentials used to authenticate to the Kafka cluster. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_ClientAuthentication:
     mtls: Any = None
-    # Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred)
     sasl_scram: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_EncryptionInTransit:
-    # Sets the encryption-in-transit type (either 'TLS' or 'PLAINTEXT') that the MSK replicator uses when communicating with this Kafka cluster. (AI-inferred)
     encryption_type: Any = None
-    # The root CA certificate (in PEM format) used to validate the Kafka broker's certificate when establishing an encrypted TLS connection to the source or target Kafka cluster. (AI-inferred)
     root_ca_certificate: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters_VpcConfig:
-    # Specifies the security groups that the MSK replicator uses to access the Kafka cluster in its VPC. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the list of subnet IDs in the VPC where the Kafka cluster's network interfaces are deployed for the replicator to communicate with the cluster. (AI-inferred)
     subnet_ids: Any = None
 
 @dataclasses.dataclass
 class Replicator_KafkaClusters:
-    # Defines the Amazon MSK cluster details (containing the MSK cluster ARN) for a source or destination Kafka cluster in the replicator. (AI-inferred)
     amazon_msk_cluster: Any = None
-    # Configuration for a self-managed Apache Kafka cluster used as a source or target in the MSK replicator, specifying the bootstrap broker string and VPC settings for network connectivity. (AI-inferred)
     apache_kafka_cluster: Any = None
-    # The client_authentication property specifies the authentication mechanism (such as IAM, TLS, or SASL/SCRAM) used by the replicator to securely connect to this Kafka cluster during replication. (AI-inferred)
     client_authentication: Any = None
-    # Configures encryption-in-transit settings for the connection to this Kafka cluster, specifying whether TLS is used (e.g., TLS or PLAINTEXT). (AI-inferred)
     encryption_in_transit: Any = None
-    # Specifies the VPC configuration for the Kafka cluster, including the subnets and security groups used for network access to the cluster. (AI-inferred)
     vpc_config: Any = None
 
 @dataclasses.dataclass
@@ -102,54 +86,34 @@ class Replicator_LogDelivery:
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_ConsumerGroupReplication:
-    # Determines how consumer group offsets are synchronized from the source Kafka cluster to the target Kafka cluster during replication. (AI-inferred)
     consumer_group_offset_sync_mode: Any = None
-    # The list of consumer group names to exclude from being replicated by the MSK Replicator for this replication pair, meaning their offsets will not be copied between clusters. (AI-inferred)
     consumer_groups_to_exclude: Any = None
-    # A list of consumer group names whose offsets will be replicated from the source Kafka cluster to the target cluster as part of the MSK Replicator's consumer group replication. (AI-inferred)
     consumer_groups_to_replicate: Any = None
-    # Indicates whether to automatically detect and replicate newly created consumer groups to the target cluster during ongoing replication. (AI-inferred)
     detect_and_copy_new_consumer_groups: Any = None
-    # Specifies whether to periodically synchronize consumer group offsets from the source Kafka cluster to the target cluster, ensuring that consumer group positions are kept in sync for failover or migration scenarios. (AI-inferred)
     synchronise_consumer_group_offsets: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_TopicReplication_StartingPosition:
-    # Determines whether topic replication starts from the latest offset (LATEST) or the earliest available offset (EARLIEST) in the source cluster. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList_TopicReplication:
-    # Whether to copy access control lists (ACLs) for topics from the source cluster to the target cluster in the MSK replicator. (AI-inferred)
     copy_access_control_lists_for_topics: Any = None
-    # Indicates whether topic configurations (such as topic-level settings) are copied from the source cluster to the target cluster during replication. (AI-inferred)
     copy_topic_configurations: Any = None
-    # When enabled, the replicator automatically detects newly created topics in the source cluster and begins replicating them to the target cluster. (AI-inferred)
     detect_and_copy_new_topics: Any = None
-    # Specifies where the replicator starts reading topics from in the source cluster, using either the latest or earliest offset to determine the initial synchronization point. (AI-inferred)
     starting_position: Any = None
-    # Specifies the configuration for how replicated topic names are derived, such as using the same name or prefixing with the source alias. (AI-inferred)
     topic_name_configuration: Any = None
-    # Specifies the list of Kafka topic names that are excluded from replication, meaning these topics will not be replicated to the destination cluster. (AI-inferred)
     topics_to_exclude: Any = None
-    # A list of Kafka topic names to replicate from the source cluster to the target cluster. (AI-inferred)
     topics_to_replicate: Any = None
 
 @dataclasses.dataclass
 class Replicator_ReplicationInfoList:
-    # Defines the configuration for replicating consumer groups between the source and target Kafka clusters, including the list of consumer group names to replicate and whether to synchronize their offsets. (AI-inferred)
     consumer_group_replication: Any = None
-    # The ARN of the source Kafka cluster from which the replicator replicates data, specified within each replication info entry. (AI-inferred)
     source_kafka_cluster_arn: Any = None
-    # The identifier of the source Apache Kafka cluster from which data is replicated within a replication configuration. (AI-inferred)
     source_kafka_cluster_id: Any = None
-    # Defines the compression type (e.g., NONE, GZIP, SNAPPY, LZ4, ZSTD) applied to the topic data as it is replicated from the source cluster to the target cluster in the MSK Replicator. (AI-inferred)
     target_compression_type: Any = None
-    # In each replication info entry, the ARN of the target Kafka cluster to which the replicator replicates data. (AI-inferred)
     target_kafka_cluster_arn: Any = None
-    # The identifier (typically the ARN) of the target Kafka cluster that this replication entry replicates topics and consumer group data to. (AI-inferred)
     target_kafka_cluster_id: Any = None
-    # Specifies the topic replication configuration for a given replication pair, including which topics to replicate, the starting position for reading records, and how topic names are handled. (AI-inferred)
     topic_replication: Any = None
 
 @dataclasses.dataclass

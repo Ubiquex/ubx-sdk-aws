@@ -106,9 +106,7 @@ export interface FrontCachePolicyConfig {
 export interface FrontCachePolicyAttrs {
   /** A cache policy configuration. This configuration determines the following: + The values that CloudFront includes in the cache key. These values can include HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer. + The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront cache. If your minimum TTL is greater than 0, CloudFront will cache content for at least the duration specified in the cache policy's minimum TTL, even if the ``Cache-Control: no-cache``, ``no-store``, or ``private`` directives are present in the origin headers. The headers, cookies, and query strings that are included in the cache key are also included in requests that CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that matches the request's cache key. If you want to send values to the origin but *not* include them in the cache key, use ``OriginRequestPolicy``. */
   cachePolicyConfig: FrontCachePolicy_CachePolicyConfig;
-  /** The unique identifier assigned by AWS CloudFront to this cache policy, used to reference it in distributions and other resources. (AI-inferred) */
   id: string;
-  /** The timestamp (ISO 8601) of when the cache policy was last modified. (AI-inferred) */
   lastModifiedTime: string;
 }
 

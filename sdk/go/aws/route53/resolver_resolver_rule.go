@@ -4,22 +4,15 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolverResolverRule_Tags struct {
-	// The key of a tag to assign to the Route 53 Resolver rule for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Route 53 Resolver rule, used to assign metadata for identifying, organizing, or cost-allocation purposes. (AI-inferred)
 	Value any
 }
 
 type ResolverResolverRule_TargetIps struct {
-	// The IP address to which DNS queries matching this resolver rule are forwarded. (AI-inferred)
 	Ip any
-	// Specifies the IPv6 address of the target Resolver endpoint that this Resolver rule forwards DNS queries to. (AI-inferred)
 	Ipv6 any
-	// The port on the target IP address to which the Resolver Rule forwards DNS queries (defaults to 53 if not specified). (AI-inferred)
 	Port any
-	// The protocol used to forward DNS queries to the target IP address, either 'Do53' for standard DNS over port 53 or 'DoH' for DNS over HTTPS. (AI-inferred)
 	Protocol any
-	// The Server Name Indication (SNI) value to include in the TLS handshake when the resolver forwards DNS queries to this target IP using the DoH or DoT protocol. (AI-inferred)
 	ServerNameIndication any
 }
 

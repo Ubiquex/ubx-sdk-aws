@@ -2,40 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailTemplateConfig {
-  /** Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred) */
   defaultSubstitutions?: string | Computed<string>;
-  /** The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred) */
   htmlPart?: string | Computed<string>;
-  /** The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred) */
   subject: string | Computed<string>;
-  /** Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred) */
   templateDescription?: string | Computed<string>;
-  /** The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred) */
   templateName: string | Computed<string>;
-  /** The plain-text body of the email message defined by this template. (AI-inferred) */
   textPart?: string | Computed<string>;
 }
 
 export interface EmailTemplateAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS Pinpoint email template. (AI-inferred) */
   arn: string;
-  /** Defines a JSON object of key-value pairs that specify default values for message variables in the email template, used as fallback substitutions when a send request does not provide them. (AI-inferred) */
   defaultSubstitutions: string;
-  /** The HTML body of the email template, used by Amazon Pinpoint to render the email content in rich text format for recipients. (AI-inferred) */
   htmlPart: string;
-  /** The unique name assigned to the email template in Amazon Pinpoint, which identifies it within the AWS account and region. (AI-inferred) */
   id: string;
-  /** The subject line of the email message, which is required and appears on all emails sent using this template. (AI-inferred) */
   subject: string;
-  /** Assigns key-value pairs to the Amazon Pinpoint email template for organizing and identifying it, with each tag consisting of a key and a value. (AI-inferred) */
   tags: unknown;
-  /** A user-defined description of the email template, used to document the template's purpose or content. (AI-inferred) */
   templateDescription: string;
-  /** The name of the email template, used as the unique identifier for the template in Amazon Pinpoint. (AI-inferred) */
   templateName: string;
-  /** The plain-text body of the email message defined by this template. (AI-inferred) */
   textPart: string;
 }
 

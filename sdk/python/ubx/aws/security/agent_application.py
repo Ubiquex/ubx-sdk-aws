@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AgentApplication_IdCconfiguration:
-    # The ARN of the AWS IAM Identity Center (IdC) application that is used as part of the IdC configuration for this security agent application resource. (AI-inferred)
     id_capplication_arn: Any = None
     id_cinstance_arn: Any = None
 

@@ -8,46 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApnssandboxChannelConfig:
-    # The ID of the Amazon Pinpoint application to which this APNS sandbox channel belongs. (AI-inferred)
     application_id: Any = None
-    # The bundle identifier (App ID) of the iOS application that will receive push notifications through this APNs sandbox channel. (AI-inferred)
     bundle_id: Any = None
-    # The Apple Push Notification service (APNs) sandbox certificate, provided in .pem or .p12 format along with its private key, used to authenticate the Pinpoint app with the APNs sandbox endpoint. (AI-inferred)
     certificate: Any = None
-    # Determines the default authentication method (CERTIFICATE or TOKEN) that Amazon Pinpoint uses to authenticate with the APNs sandbox service for this channel. (AI-inferred)
     default_authentication_method: Any = None
-    # Whether the APNs sandbox channel is enabled for sending push notifications. (AI-inferred)
     enabled: Any = None
-    # The private key (from a .p8 file) used to sign APNs authentication tokens when token-based authentication is enabled for the sandbox channel. (AI-inferred)
     private_key: Any = None
-    # The Apple Developer Team ID, a 10-character alphanumeric string, used for APNs authentication with the sandbox channel. (AI-inferred)
     team_id: Any = None
-    # The private key (.p8 file) from Apple used for token-based authentication in the APNs sandbox channel, required when using token credentials instead of a certificate. (AI-inferred)
     token_key: Any = None
-    # The key ID that Pinpoint uses to identify the private token key when authenticating with the APNs sandbox service. (AI-inferred)
     token_key_id: Any = None
 
 @dataclasses.dataclass
 class ApnssandboxChannelAttrs:
-    # The ID of the Amazon Pinpoint application to which this APNS sandbox channel belongs. (AI-inferred)
     application_id: Any = None
-    # The bundle identifier (App ID) of the iOS application that will receive push notifications through this APNs sandbox channel. (AI-inferred)
     bundle_id: Any = None
-    # The Apple Push Notification service (APNs) sandbox certificate, provided in .pem or .p12 format along with its private key, used to authenticate the Pinpoint app with the APNs sandbox endpoint. (AI-inferred)
     certificate: Any = None
-    # Determines the default authentication method (CERTIFICATE or TOKEN) that Amazon Pinpoint uses to authenticate with the APNs sandbox service for this channel. (AI-inferred)
     default_authentication_method: Any = None
-    # Whether the APNs sandbox channel is enabled for sending push notifications. (AI-inferred)
     enabled: Any = None
-    # The unique identifier of the Amazon Pinpoint application that this APNs sandbox channel is associated with. (AI-inferred)
     id: Any = None
-    # The private key (from a .p8 file) used to sign APNs authentication tokens when token-based authentication is enabled for the sandbox channel. (AI-inferred)
     private_key: Any = None
-    # The Apple Developer Team ID, a 10-character alphanumeric string, used for APNs authentication with the sandbox channel. (AI-inferred)
     team_id: Any = None
-    # The private key (.p8 file) from Apple used for token-based authentication in the APNs sandbox channel, required when using token credentials instead of a certificate. (AI-inferred)
     token_key: Any = None
-    # The key ID that Pinpoint uses to identify the private token key when authenticating with the APNs sandbox service. (AI-inferred)
     token_key_id: Any = None
 
 ApnssandboxChannel = ubx.ResourceBinding(

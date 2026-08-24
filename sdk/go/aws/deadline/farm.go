@@ -4,9 +4,7 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Farm_Tags struct {
-	// The user-defined key for a tag attached to the AWS Deadline Cloud farm, used to identify and organize the resource. (AI-inferred)
 	Key any
-	// Specifies the value of a tag applied to the AWS Deadline Farm, allowing you to categorize and manage the farm with custom metadata such as cost allocation or team identification. (AI-inferred)
 	Value any
 }
 
@@ -17,27 +15,19 @@ var Farm_TagsFields = ubx.FieldMap{
 
 type FarmConfig struct {
 	CostScaleFactor any
-	// A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
 	Description any
-	// Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred)
 	DisplayName any
-	// The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred)
 	KmsKeyArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type FarmAttrs struct {
-	// The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred)
 	Arn any
 	CostScaleFactor any
-	// A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
 	Description any
-	// Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred)
 	DisplayName any
-	// The unique identifier assigned to the farm by AWS Deadline when the farm is created. (AI-inferred)
 	FarmId any
-	// The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred)
 	KmsKeyArn any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

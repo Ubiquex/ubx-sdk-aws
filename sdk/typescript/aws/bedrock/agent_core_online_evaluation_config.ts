@@ -39,7 +39,6 @@ export interface AgentCoreOnlineEvaluationConfig_OutputConfig {
 export interface AgentCoreOnlineEvaluationConfig_Rule_Filters_Value {
   booleanValue?: boolean | Computed<boolean>;
   doubleValue?: number | Computed<number>;
-  /** Provides the string to match in a rule filter for the Bedrock Agent Core online evaluation configuration, when the filter's value type is STRING, to determine which interactions are evaluated. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
@@ -69,7 +68,6 @@ export interface AgentCoreOnlineEvaluationConfig_Rule {
 }
 
 export interface AgentCoreOnlineEvaluationConfig_Tags {
-  /** The key of a tag attached to the Bedrock agent core online evaluation configuration, used to organize and identify the resource by custom metadata such as environment or project. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

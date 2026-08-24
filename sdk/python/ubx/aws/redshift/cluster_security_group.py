@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ClusterSecurityGroup_Tags:
     key: Any = None
-    # The value portion of a tag attached to the Redshift cluster security group, used for labeling and identifying the resource. (AI-inferred)
     value: Any = None
 
 _ClusterSecurityGroup_TagsFields = {
@@ -19,18 +18,13 @@ _ClusterSecurityGroup_TagsFields = {
 
 @dataclasses.dataclass
 class ClusterSecurityGroupConfig:
-    # The required description for the Redshift cluster security group, which provides a human-readable explanation of the security group's purpose. (AI-inferred)
     description: Any = None
-    # A list of tag objects (key and value) used to assign metadata to the Redshift cluster security group for cost tracking and resource management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ClusterSecurityGroupAttrs:
-    # The required description for the Redshift cluster security group, which provides a human-readable explanation of the security group's purpose. (AI-inferred)
     description: Any = None
-    # The unique identifier of the Redshift cluster security group, which is the cluster security group name. (AI-inferred)
     id: Any = None
-    # A list of tag objects (key and value) used to assign metadata to the Redshift cluster security group for cost tracking and resource management. (AI-inferred)
     tags: Any = None
 
 ClusterSecurityGroup = ubx.ResourceBinding(

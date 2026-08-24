@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Environment_LoggingConfiguration_DagProcessingLogs:
-    # The ARN of the CloudWatch log group where Apache Airflow DAG processing logs are delivered in the MWAA environment. (AI-inferred)
     cloud_watch_log_group_arn: Any = None
-    # Indicates whether DAG processing logs are enabled for the Amazon Managed Workflows for Apache Airflow (MWAA) environment. (AI-inferred)
     enabled: Any = None
-    # Sets the log level (e.g., CRITICAL, ERROR, WARNING, INFO, or DEBUG) for the DAG processing logs in the Amazon MWAA environment. (AI-inferred)
     log_level: Any = None
 
 @dataclasses.dataclass

@@ -24,7 +24,6 @@ class LegalHold_RecoveryPointSelection:
 
 @dataclasses.dataclass
 class LegalHold_Tags:
-    # The key of a user-defined tag to attach to the AWS Backup legal hold, used for organizing, categorizing, and controlling access to the resource through IAM tag policies. (AI-inferred)
     key: Any = None
     value: Any = None
 

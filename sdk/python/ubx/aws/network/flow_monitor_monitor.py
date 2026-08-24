@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlowMonitorMonitor_LocalResources:
-    # The identifier of a local resource (such as a subnet or instance) that the monitor targets, typically the resource's ARN or AWS resource ID. (AI-inferred)
     identifier: Any = None
-    # The AWS resource type of a local resource to monitor, such as AWS::EC2::VPC, AWS::EC2::Subnet, or AWS::EC2::Instance. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

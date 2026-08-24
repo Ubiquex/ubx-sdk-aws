@@ -8,16 +8,13 @@ export interface FunctionsStateMachineAlias_DeploymentPreference {
   interval?: number | Computed<number>;
   /** The percentage of traffic to shift to the new version in each increment. */
   percentage?: number | Computed<number>;
-  /** The ARN of the state machine version to be deployed as the target of the alias's traffic-shifting deployment preference, to which traffic is gradually shifted according to the selected deployment strategy. (AI-inferred) */
   stateMachineVersionArn: string | Computed<string>;
   /** The type of deployment to perform. */
   type: string | Computed<string>;
 }
 
 export interface FunctionsStateMachineAlias_RoutingConfiguration {
-  /** The ARN of the state machine version to which a portion of execution traffic is routed when using the alias's routing configuration. (AI-inferred) */
   stateMachineVersionArn?: string | Computed<string>;
-  /** The percentage of traffic (a weight between 0 and 100) routed to the corresponding state machine version in the alias's routing configuration, where all weights in the routing configuration sum to 100. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
@@ -43,7 +40,6 @@ export interface FunctionsStateMachineAliasConfig {
   name?: string | Computed<string>;
   /** The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine. */
   routingConfiguration?: FunctionsStateMachineAlias_RoutingConfiguration[] | Computed<FunctionsStateMachineAlias_RoutingConfiguration[]>;
-  /** The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred) */
   stateMachineArn?: string | Computed<string>;
 }
 
@@ -58,7 +54,6 @@ export interface FunctionsStateMachineAliasAttrs {
   name: string;
   /** The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine. */
   routingConfiguration: FunctionsStateMachineAlias_RoutingConfiguration[];
-  /** The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred) */
   stateMachineArn: string;
 }
 

@@ -77,7 +77,6 @@ export interface TAccountAuditConfiguration_AuditNotificationTargetConfiguration
 }
 
 export interface TAccountAuditConfiguration_AuditNotificationTargetConfigurations {
-  /** Configures the Amazon SNS topic and IAM role used by AWS IoT Device Defender to deliver account audit notifications, representing the SNS target within the audit notification target configuration map. (AI-inferred) */
   sns?: TAccountAuditConfiguration_AuditNotificationTargetConfigurations_Sns | Computed<TAccountAuditConfiguration_AuditNotificationTargetConfigurations_Sns>;
 }
 

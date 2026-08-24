@@ -8,46 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApnschannelConfig:
-    # The unique identifier for the Amazon Pinpoint application that the APNS channel is associated with. (AI-inferred)
     application_id: Any = None
-    # The bundle ID that uniquely identifies the app to Apple's Push Notification service (APNs), used as part of the APNs channel configuration in Amazon Pinpoint. (AI-inferred)
     bundle_id: Any = None
-    # The PEM-encoded Apple Push Notification service (APNs) SSL certificate, which is required when authenticating with a certificate instead of a token for sending push notifications through Amazon Pinpoint. (AI-inferred)
     certificate: Any = None
-    # Specifies the default authentication method for APNs, which must be either 'CERTIFICATE' or 'TOKEN', used to authenticate with Apple Push Notification service for sending push notifications through Amazon Pinpoint. (AI-inferred)
     default_authentication_method: Any = None
-    # Specifies whether to enable the APNs (Apple Push Notification service) channel for the associated Amazon Pinpoint application, allowing it to send push notifications to iOS devices. (AI-inferred)
     enabled: Any = None
-    # The PEM-encoded .p8 private key file issued by Apple that Pinpoint uses for token-based authentication with the Apple Push Notification service (APNs). (AI-inferred)
     private_key: Any = None
-    # The Apple Team ID used to authenticate with Apple Push Notification Service when the APNs channel uses token-based authentication. (AI-inferred)
     team_id: Any = None
-    # The private key (in .p8 format) used to authenticate with Apple Push Notification service, corresponding to the token key ID and team ID. (AI-inferred)
     token_key: Any = None
-    # The Apple Push Notification service key identifier (kid) from the .p8 private key used to authenticate with APNs via token-based credentials, required when using token authentication. (AI-inferred)
     token_key_id: Any = None
 
 @dataclasses.dataclass
 class ApnschannelAttrs:
-    # The unique identifier for the Amazon Pinpoint application that the APNS channel is associated with. (AI-inferred)
     application_id: Any = None
-    # The bundle ID that uniquely identifies the app to Apple's Push Notification service (APNs), used as part of the APNs channel configuration in Amazon Pinpoint. (AI-inferred)
     bundle_id: Any = None
-    # The PEM-encoded Apple Push Notification service (APNs) SSL certificate, which is required when authenticating with a certificate instead of a token for sending push notifications through Amazon Pinpoint. (AI-inferred)
     certificate: Any = None
-    # Specifies the default authentication method for APNs, which must be either 'CERTIFICATE' or 'TOKEN', used to authenticate with Apple Push Notification service for sending push notifications through Amazon Pinpoint. (AI-inferred)
     default_authentication_method: Any = None
-    # Specifies whether to enable the APNs (Apple Push Notification service) channel for the associated Amazon Pinpoint application, allowing it to send push notifications to iOS devices. (AI-inferred)
     enabled: Any = None
-    # The unique identifier assigned to the APNs channel within the Amazon Pinpoint application. (AI-inferred)
     id: Any = None
-    # The PEM-encoded .p8 private key file issued by Apple that Pinpoint uses for token-based authentication with the Apple Push Notification service (APNs). (AI-inferred)
     private_key: Any = None
-    # The Apple Team ID used to authenticate with Apple Push Notification Service when the APNs channel uses token-based authentication. (AI-inferred)
     team_id: Any = None
-    # The private key (in .p8 format) used to authenticate with Apple Push Notification service, corresponding to the token key ID and team ID. (AI-inferred)
     token_key: Any = None
-    # The Apple Push Notification service key identifier (kid) from the .p8 private key used to authenticate with APNs via token-based credentials, required when using token authentication. (AI-inferred)
     token_key_id: Any = None
 
 Apnschannel = ubx.ResourceBinding(

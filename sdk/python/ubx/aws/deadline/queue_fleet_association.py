@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QueueFleetAssociationConfig:
-    # The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred)
     fleet_id: Any = None
-    # The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred)
     queue_id: Any = None
 
 @dataclasses.dataclass
 class QueueFleetAssociationAttrs:
-    # The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred)
     fleet_id: Any = None
-    # The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred)
     queue_id: Any = None
 
 QueueFleetAssociation = ubx.ResourceBinding(

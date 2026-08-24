@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayRequestValidatorConfig:
-    # Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred)
     name: Any = None
-    # The ID of the REST API to which this request validator belongs. (AI-inferred)
     rest_api_id: Any = None
-    # Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred)
     validate_request_body: Any = None
-    # Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred)
     validate_request_parameters: Any = None
 
 @dataclasses.dataclass
 class GatewayRequestValidatorAttrs:
-    # Specifies the name of the API Gateway request validator for identification; if omitted, API Gateway generates a name. (AI-inferred)
     name: Any = None
-    # The unique identifier assigned by API Gateway to the request validator, returned after creation. (AI-inferred)
     request_validator_id: Any = None
-    # The ID of the REST API to which this request validator belongs. (AI-inferred)
     rest_api_id: Any = None
-    # Indicates whether the request validator checks the request body against the configured model schema for the API method. (AI-inferred)
     validate_request_body: Any = None
-    # Indicates whether this request validator validates the query string and header parameters of incoming API requests. (AI-inferred)
     validate_request_parameters: Any = None
 
 GatewayRequestValidator = ubx.ResourceBinding(

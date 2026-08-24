@@ -4,11 +4,8 @@ package ecs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterCapacityProviderAssociations_DefaultCapacityProviderStrategy struct {
-	// The base setting defines the minimum number of tasks that must run on the specified capacity provider before other providers in the default strategy are used, ensuring baseline capacity for the cluster. (AI-inferred)
 	Base any
-	// The name of the capacity provider to be used for this entry in the default capacity provider strategy. (AI-inferred)
 	CapacityProvider any
-	// Determines the relative proportion of tasks that should be placed on this capacity provider as part of the default strategy, where a higher value increases the share of tasks routed to it. (AI-inferred)
 	Weight any
 }
 

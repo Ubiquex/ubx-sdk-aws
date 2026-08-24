@@ -23,9 +23,7 @@ export interface ConnectCustomPlugin_Location {
 }
 
 export interface ConnectCustomPlugin_Tags {
-  /** The key of a tag applied to the AWS Kafka Connect custom plugin, used to organize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair applied to the Kafka Connect custom plugin, used for AWS resource tagging to support cost allocation, access control, and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

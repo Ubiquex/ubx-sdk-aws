@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RunnerAutoScalingConfiguration_Tags {
-  /** The key of a tag to apply to this AWS App Runner auto scaling configuration, used for resource organization and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the App Runner auto scaling configuration, which is a user-defined key-value pair used for labeling and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

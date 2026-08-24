@@ -38,11 +38,8 @@ class Table_RetentionProperties:
 
 @dataclasses.dataclass
 class Table_Schema_CompositePartitionKey:
-    # Specifies whether this partition key must be present in every record, with allowed values 'REQUIRED' or 'OPTIONAL'. (AI-inferred)
     enforcement_in_record: Any = None
-    # Specifies the name of the dimension attribute used as the composite partition key for an AWS Timestream table when the partition key type is DIMENSION. (AI-inferred)
     name: Any = None
-    # Specifies the type of the composite partition key, either DIMENSION for a dimension column or MEASURE for the measure name, controlling how Timestream partitions the table's data. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -52,9 +49,7 @@ class Table_Schema:
 
 @dataclasses.dataclass
 class Table_Tags:
-    # The key portion of a tag applied to the Timestream table, used to define the tag's name for identifying and organizing the table in AWS. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the Timestream table, allowing you to assign an arbitrary string to help categorize, identify, or manage the resource (e.g., for cost allocation). (AI-inferred)
     value: Any = None
 
 _Table_MagneticStoreWriteProperties_MagneticStoreRejectedDataLocation_S3ConfigurationFields = {
@@ -122,7 +117,6 @@ class TableConfig:
 
 @dataclasses.dataclass
 class TableAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying this Timestream table. (AI-inferred)
     arn: Any = None
     # The name for the database which the table to be created belongs to.
     database_name: Any = None

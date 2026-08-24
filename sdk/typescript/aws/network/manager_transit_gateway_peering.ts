@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerTransitGatewayPeering_Tags {
-  /** The key portion of a user-defined tag applied to the transit gateway peering, used to categorize and identify the resource for cost tracking, access control, and organizational purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the AWS Network Manager transit gateway peering, used for metadata and resource categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

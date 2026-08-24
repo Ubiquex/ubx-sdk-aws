@@ -2,59 +2,43 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Replicator_KafkaClusters_AmazonMskCluster {
-  /** The ARN of an Amazon MSK cluster that is included in the replicator's set of Kafka clusters, serving as a source or target for replication. (AI-inferred) */
   mskClusterArn?: string | Computed<string>;
 }
 
 export interface Replicator_KafkaClusters_ApacheKafkaCluster {
-  /** A unique user-supplied string that identifies the self-managed Apache Kafka cluster so the MSK replicator can reference it in the replication info. (AI-inferred) */
   apacheKafkaClusterId?: string | Computed<string>;
-  /** The bootstrap broker string (comma-separated list of host:port pairs) of the self-managed Apache Kafka cluster used as a source or target for replication. (AI-inferred) */
   bootstrapBrokerString?: string | Computed<string>;
 }
 
 export interface Replicator_KafkaClusters_ClientAuthentication_Mtls {
-  /** The ARN of the AWS Secrets Manager secret containing the client certificate and private key used for mutual TLS authentication when connecting to this Kafka cluster. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface Replicator_KafkaClusters_ClientAuthentication_SaslScram {
-  /** Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred) */
   mechanism?: string | Computed<string>;
-  /** The ARN of the AWS Secrets Manager secret that stores the SASL/SCRAM credentials used to authenticate to the Kafka cluster. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface Replicator_KafkaClusters_ClientAuthentication {
   mtls?: Replicator_KafkaClusters_ClientAuthentication_Mtls | Computed<Replicator_KafkaClusters_ClientAuthentication_Mtls>;
-  /** Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred) */
   saslScram?: Replicator_KafkaClusters_ClientAuthentication_SaslScram | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslScram>;
 }
 
 export interface Replicator_KafkaClusters_EncryptionInTransit {
-  /** Sets the encryption-in-transit type (either 'TLS' or 'PLAINTEXT') that the MSK replicator uses when communicating with this Kafka cluster. (AI-inferred) */
   encryptionType?: string | Computed<string>;
-  /** The root CA certificate (in PEM format) used to validate the Kafka broker's certificate when establishing an encrypted TLS connection to the source or target Kafka cluster. (AI-inferred) */
   rootCaCertificate?: string | Computed<string>;
 }
 
 export interface Replicator_KafkaClusters_VpcConfig {
-  /** Specifies the security groups that the MSK replicator uses to access the Kafka cluster in its VPC. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs in the VPC where the Kafka cluster's network interfaces are deployed for the replicator to communicate with the cluster. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
 export interface Replicator_KafkaClusters {
-  /** Defines the Amazon MSK cluster details (containing the MSK cluster ARN) for a source or destination Kafka cluster in the replicator. (AI-inferred) */
   amazonMskCluster?: Replicator_KafkaClusters_AmazonMskCluster | Computed<Replicator_KafkaClusters_AmazonMskCluster>;
-  /** Configuration for a self-managed Apache Kafka cluster used as a source or target in the MSK replicator, specifying the bootstrap broker string and VPC settings for network connectivity. (AI-inferred) */
   apacheKafkaCluster?: Replicator_KafkaClusters_ApacheKafkaCluster | Computed<Replicator_KafkaClusters_ApacheKafkaCluster>;
-  /** The client_authentication property specifies the authentication mechanism (such as IAM, TLS, or SASL/SCRAM) used by the replicator to securely connect to this Kafka cluster during replication. (AI-inferred) */
   clientAuthentication?: Replicator_KafkaClusters_ClientAuthentication | Computed<Replicator_KafkaClusters_ClientAuthentication>;
-  /** Configures encryption-in-transit settings for the connection to this Kafka cluster, specifying whether TLS is used (e.g., TLS or PLAINTEXT). (AI-inferred) */
   encryptionInTransit?: Replicator_KafkaClusters_EncryptionInTransit | Computed<Replicator_KafkaClusters_EncryptionInTransit>;
-  /** Specifies the VPC configuration for the Kafka cluster, including the subnets and security groups used for network access to the cluster. (AI-inferred) */
   vpcConfig?: Replicator_KafkaClusters_VpcConfig | Computed<Replicator_KafkaClusters_VpcConfig>;
 }
 
@@ -96,54 +80,34 @@ export interface Replicator_LogDelivery {
 }
 
 export interface Replicator_ReplicationInfoList_ConsumerGroupReplication {
-  /** Determines how consumer group offsets are synchronized from the source Kafka cluster to the target Kafka cluster during replication. (AI-inferred) */
   consumerGroupOffsetSyncMode?: string | Computed<string>;
-  /** The list of consumer group names to exclude from being replicated by the MSK Replicator for this replication pair, meaning their offsets will not be copied between clusters. (AI-inferred) */
   consumerGroupsToExclude?: string[] | Computed<string[]>;
-  /** A list of consumer group names whose offsets will be replicated from the source Kafka cluster to the target cluster as part of the MSK Replicator's consumer group replication. (AI-inferred) */
   consumerGroupsToReplicate?: string[] | Computed<string[]>;
-  /** Indicates whether to automatically detect and replicate newly created consumer groups to the target cluster during ongoing replication. (AI-inferred) */
   detectAndCopyNewConsumerGroups?: boolean | Computed<boolean>;
-  /** Specifies whether to periodically synchronize consumer group offsets from the source Kafka cluster to the target cluster, ensuring that consumer group positions are kept in sync for failover or migration scenarios. (AI-inferred) */
   synchroniseConsumerGroupOffsets?: boolean | Computed<boolean>;
 }
 
 export interface Replicator_ReplicationInfoList_TopicReplication_StartingPosition {
-  /** Determines whether topic replication starts from the latest offset (LATEST) or the earliest available offset (EARLIEST) in the source cluster. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Replicator_ReplicationInfoList_TopicReplication {
-  /** Whether to copy access control lists (ACLs) for topics from the source cluster to the target cluster in the MSK replicator. (AI-inferred) */
   copyAccessControlListsForTopics?: boolean | Computed<boolean>;
-  /** Indicates whether topic configurations (such as topic-level settings) are copied from the source cluster to the target cluster during replication. (AI-inferred) */
   copyTopicConfigurations?: boolean | Computed<boolean>;
-  /** When enabled, the replicator automatically detects newly created topics in the source cluster and begins replicating them to the target cluster. (AI-inferred) */
   detectAndCopyNewTopics?: boolean | Computed<boolean>;
-  /** Specifies where the replicator starts reading topics from in the source cluster, using either the latest or earliest offset to determine the initial synchronization point. (AI-inferred) */
   startingPosition?: Replicator_ReplicationInfoList_TopicReplication_StartingPosition | Computed<Replicator_ReplicationInfoList_TopicReplication_StartingPosition>;
-  /** Specifies the configuration for how replicated topic names are derived, such as using the same name or prefixing with the source alias. (AI-inferred) */
   topicNameConfiguration?: Replicator_ReplicationInfoList_TopicReplication_StartingPosition | Computed<Replicator_ReplicationInfoList_TopicReplication_StartingPosition>;
-  /** Specifies the list of Kafka topic names that are excluded from replication, meaning these topics will not be replicated to the destination cluster. (AI-inferred) */
   topicsToExclude?: string[] | Computed<string[]>;
-  /** A list of Kafka topic names to replicate from the source cluster to the target cluster. (AI-inferred) */
   topicsToReplicate?: string[] | Computed<string[]>;
 }
 
 export interface Replicator_ReplicationInfoList {
-  /** Defines the configuration for replicating consumer groups between the source and target Kafka clusters, including the list of consumer group names to replicate and whether to synchronize their offsets. (AI-inferred) */
   consumerGroupReplication?: Replicator_ReplicationInfoList_ConsumerGroupReplication | Computed<Replicator_ReplicationInfoList_ConsumerGroupReplication>;
-  /** The ARN of the source Kafka cluster from which the replicator replicates data, specified within each replication info entry. (AI-inferred) */
   sourceKafkaClusterArn?: string | Computed<string>;
-  /** The identifier of the source Apache Kafka cluster from which data is replicated within a replication configuration. (AI-inferred) */
   sourceKafkaClusterId?: string | Computed<string>;
-  /** Defines the compression type (e.g., NONE, GZIP, SNAPPY, LZ4, ZSTD) applied to the topic data as it is replicated from the source cluster to the target cluster in the MSK Replicator. (AI-inferred) */
   targetCompressionType?: string | Computed<string>;
-  /** In each replication info entry, the ARN of the target Kafka cluster to which the replicator replicates data. (AI-inferred) */
   targetKafkaClusterArn?: string | Computed<string>;
-  /** The identifier (typically the ARN) of the target Kafka cluster that this replication entry replicates topics and consumer group data to. (AI-inferred) */
   targetKafkaClusterId?: string | Computed<string>;
-  /** Specifies the topic replication configuration for a given replication pair, including which topics to replicate, the starting position for reading records, and how topic names are handled. (AI-inferred) */
   topicReplication?: Replicator_ReplicationInfoList_TopicReplication | Computed<Replicator_ReplicationInfoList_TopicReplication>;
 }
 

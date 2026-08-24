@@ -4,9 +4,7 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dataset_Tags struct {
-	// The tag key (e.g., 'Name' or 'Project') that labels the Rekognition dataset, used for organizing and identifying the dataset in AWS. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the AWS Rekognition Dataset, used for organizing, identifying, and managing the dataset within AWS. (AI-inferred)
 	Value any
 }
 

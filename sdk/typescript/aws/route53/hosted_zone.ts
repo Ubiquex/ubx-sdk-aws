@@ -7,14 +7,11 @@ export interface HostedZone_HostedZoneConfig {
 }
 
 export interface HostedZone_HostedZoneFeatures {
-  /** Enables accelerated recovery for the hosted zone, which allows Amazon Route 53 Application Recovery Controller to more quickly update DNS records during a failover event. (AI-inferred) */
   enableAcceleratedRecovery?: boolean | Computed<boolean>;
 }
 
 export interface HostedZone_HostedZoneTags {
-  /** The key of a tag assigned to the Route53 hosted zone, used to organize and identify the hosted zone within your AWS environment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag in the HostedZoneTags list, which provides an arbitrary string that, together with the tag key, helps identify and manage the Route 53 hosted zone. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -24,9 +21,7 @@ export interface HostedZone_QueryLoggingConfig {
 }
 
 export interface HostedZone_Vpcs {
-  /** The ID of the VPC that is associated with this private hosted zone, which authorizes the VPC to use the hosted zone for DNS resolution. (AI-inferred) */
   vpcid?: string | Computed<string>;
-  /** Specifies the AWS Region where the VPC that you want to associate with this private hosted zone is located, as required when associating a VPC by ID. (AI-inferred) */
   vpcregion?: string | Computed<string>;
 }
 
@@ -74,11 +69,9 @@ export interface HostedZoneAttrs {
   hostedZoneFeatures: HostedZone_HostedZoneFeatures;
   /** Adds, edits, or deletes tags for a health check or a hosted zone. For information about using tags for cost allocation, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *User Guide*. */
   hostedZoneTags: HostedZone_HostedZoneTags[];
-  /** The unique identifier assigned by Route 53 to the hosted zone, such as Z1234567890ABCDEF. (AI-inferred) */
   id: string;
   /** The name of the domain. Specify a fully qualified domain name, for example, *www.example.com*. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Route 53 treats *www.example.com* (without a trailing dot) and *www.example.com.* (with a trailing dot) as identical. If you're creating a public hosted zone, this is the name you have registered with your DNS registrar. If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of ``NameServers`` that are returned by the ``Fn::GetAtt`` intrinsic function. */
   name: string;
-  /** The list of four authoritative Route 53 name servers assigned to the hosted zone for DNS resolution. (AI-inferred) */
   nameServers: string[];
   /** A complex type that contains information about a configuration for DNS query logging. */
   queryLoggingConfig: HostedZone_QueryLoggingConfig;

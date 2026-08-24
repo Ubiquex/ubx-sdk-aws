@@ -18,7 +18,6 @@ export interface BeanstalkApplicationVersionConfig {
   applicationName: string | Computed<string>;
   /** A description of this application version. */
   description?: string | Computed<string>;
-  /** The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred) */
   sourceBundle: BeanstalkApplicationVersion_SourceBundle | Computed<BeanstalkApplicationVersion_SourceBundle>;
 }
 
@@ -28,7 +27,6 @@ export interface BeanstalkApplicationVersionAttrs {
   /** A description of this application version. */
   description: string;
   id: string;
-  /** The source_bundle specifies the Amazon S3 bucket and key where the application version source bundle is located. (AI-inferred) */
   sourceBundle: BeanstalkApplicationVersion_SourceBundle;
 }
 

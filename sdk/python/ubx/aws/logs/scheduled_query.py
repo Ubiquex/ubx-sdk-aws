@@ -8,21 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScheduledQuery_DestinationConfiguration_S3Configuration:
-    # The destination name that CloudWatch Logs uses to construct the S3 path prefix for the scheduled query's result files, enabling distinct storage locations within the specified bucket. (AI-inferred)
     destination_identifier: Any = None
-    # The ARN of the IAM role that allows CloudWatch Logs to write the scheduled query's results to the specified S3 bucket. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class ScheduledQuery_DestinationConfiguration:
-    # Defines the target S3 bucket (and optional prefix) where the results of the scheduled query will be delivered when the destination type is S3. (AI-inferred)
     s3_configuration: Any = None
 
 @dataclasses.dataclass
 class ScheduledQuery_Tags:
-    # For the AWS::Logs::ScheduledQuery resource, this field is the key of a user-defined tag attached to the scheduled query, which can be used for cost allocation and access control. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag attached to the CloudWatch Logs scheduled query, used for organizing, identifying, and tracking costs of the resource. (AI-inferred)
     value: Any = None
 
 _ScheduledQuery_DestinationConfiguration_S3ConfigurationFields = {
@@ -45,70 +40,41 @@ _ScheduledQuery_TagsFields = {
 
 @dataclasses.dataclass
 class ScheduledQueryConfig:
-    # An optional, user-defined text string that describes the purpose or details of the scheduled query, stored as metadata on the query definition in CloudWatch Logs Insights. (AI-inferred)
     description: Any = None
-    # Specifies the destination configuration for delivering the results of the scheduled query, including the S3 bucket where the query results are written. (AI-inferred)
     destination_configuration: Any = None
-    # The ARN of the IAM role that CloudWatch Logs assumes to execute the scheduled query on your behalf. (AI-inferred)
     execution_role_arn: Any = None
-    # Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
     log_group_identifiers: Any = None
     name: Any = None
-    # The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
     query_language: Any = None
-    # The CloudWatch Logs Insights query string that the scheduled query executes against the specified log groups to generate its results. (AI-inferred)
     query_string: Any = None
-    # The optional Unix timestamp (in milliseconds) that defines when the scheduled query's recurrence should end, after which the query will no longer be automatically executed. (AI-inferred)
     schedule_end_time: Any = None
-    # The rate or cron expression that defines how often the CloudWatch Logs scheduled query runs, e.g., 'rate(5 minutes)' or a cron expression. (AI-inferred)
     schedule_expression: Any = None
-    # The epoch time (in milliseconds) when the scheduled query's recurring execution schedule starts. (AI-inferred)
     schedule_start_time: Any = None
-    # The number of seconds before a scheduled query execution that determines the start of the time window from which logs are queried, enabling retrieval of logs from a recent period relative to each run. (AI-inferred)
     start_time_offset: Any = None
-    # Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred)
     state: Any = None
     tags: Any = None
-    # The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred)
     timezone: Any = None
 
 @dataclasses.dataclass
 class ScheduledQueryAttrs:
-    # The creation_time attribute is a read-only number representing the Unix epoch timestamp, in seconds, at which the scheduled query was created. (AI-inferred)
     creation_time: Any = None
-    # An optional, user-defined text string that describes the purpose or details of the scheduled query, stored as metadata on the query definition in CloudWatch Logs Insights. (AI-inferred)
     description: Any = None
-    # Specifies the destination configuration for delivering the results of the scheduled query, including the S3 bucket where the query results are written. (AI-inferred)
     destination_configuration: Any = None
-    # The ARN of the IAM role that CloudWatch Logs assumes to execute the scheduled query on your behalf. (AI-inferred)
     execution_role_arn: Any = None
-    # Contains the status of the most recent execution of the scheduled query (such as RUNNING, COMPLETE, or FAILED), as a computed read-only value maintained by CloudWatch Logs. (AI-inferred)
     last_execution_status: Any = None
-    # The Unix timestamp of the most recent automatic execution of the scheduled query by CloudWatch Logs. (AI-inferred)
     last_triggered_time: Any = None
-    # The timestamp, in Unix time milliseconds, when the scheduled query was last updated. (AI-inferred)
     last_updated_time: Any = None
-    # Specifies the list of log group names or ARNs that the scheduled query will run against. (AI-inferred)
     log_group_identifiers: Any = None
     name: Any = None
-    # The query language used to parse and execute the scheduled query string, where `CWLI` denotes CloudWatch Logs Insights and `PPL` denotes OpenSearch Piped Processing Language. (AI-inferred)
     query_language: Any = None
-    # The CloudWatch Logs Insights query string that the scheduled query executes against the specified log groups to generate its results. (AI-inferred)
     query_string: Any = None
-    # The optional Unix timestamp (in milliseconds) that defines when the scheduled query's recurrence should end, after which the query will no longer be automatically executed. (AI-inferred)
     schedule_end_time: Any = None
-    # The rate or cron expression that defines how often the CloudWatch Logs scheduled query runs, e.g., 'rate(5 minutes)' or a cron expression. (AI-inferred)
     schedule_expression: Any = None
-    # The epoch time (in milliseconds) when the scheduled query's recurring execution schedule starts. (AI-inferred)
     schedule_start_time: Any = None
-    # The Amazon Resource Name (ARN) of the scheduled query, assigned by AWS when the query is created. (AI-inferred)
     scheduled_query_arn: Any = None
-    # The number of seconds before a scheduled query execution that determines the start of the time window from which logs are queried, enabling retrieval of logs from a recent period relative to each run. (AI-inferred)
     start_time_offset: Any = None
-    # Specifies whether the scheduled query is enabled or disabled (valid values are ENABLED and DISABLED), allowing you to pause or resume automatic execution of the query on its defined schedule. (AI-inferred)
     state: Any = None
     tags: Any = None
-    # The IANA timezone (such as 'UTC' or 'America/New_York') used to evaluate the schedule's cron expression for the scheduled query; if omitted, UTC is assumed. (AI-inferred)
     timezone: Any = None
 
 ScheduledQuery = ubx.ResourceBinding(

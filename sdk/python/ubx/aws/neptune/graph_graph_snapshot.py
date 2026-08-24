@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GraphGraphSnapshot_Tags:
-    # The key of a tag (a key-value pair) attached to the Neptune Graph snapshot, used for identifying, organizing, or managing the resource. (AI-inferred)
     key: Any = None
-    # The value string paired with a tag key in the tags list for the Neptune graph snapshot, used for resource organization and cost tracking. (AI-inferred)
     value: Any = None
 
 _GraphGraphSnapshot_TagsFields = {

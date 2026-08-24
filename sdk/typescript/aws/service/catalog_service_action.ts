@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CatalogServiceAction_Definition {
-  /** The key of a definition entry, which specifies the service action definition parameter being set, such as Name, Version, AssumeRole, or Parameters. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of the service action definition, such as the ARN of an AWS Systems Manager automation document or an AWS Lambda function that the action invokes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,30 +12,19 @@ const CatalogServiceAction_DefinitionFields: FieldMap = {
 };
 
 export interface CatalogServiceActionConfig {
-  /** Specifies the language code (e.g., 'en' for English) used for localized text such as the service action's name and description when interacting with AWS Service Catalog. (AI-inferred) */
   acceptLanguage?: string | Computed<string>;
-  /** Specifies the definition of the Service Catalog service action, including the AWS Systems Manager automation document name, version, IAM assume role, and parameters. (AI-inferred) */
   definition: CatalogServiceAction_Definition[] | Computed<CatalogServiceAction_Definition[]>;
-  /** Specifies the type of service action definition, which for AWS Service Catalog service actions must be set to SSM_AUTOMATION to reference an AWS Systems Manager automation document. (AI-inferred) */
   definitionType: string | Computed<string>;
-  /** A user-defined, human-readable description of the Service Catalog self-service action, displayed in the AWS Management Console to help users understand the action's purpose. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The human-readable name of the AWS Service Catalog service action, required to uniquely identify and display the action in the Service Catalog console and API. (AI-inferred) */
   name: string | Computed<string>;
 }
 
 export interface CatalogServiceActionAttrs {
-  /** Specifies the language code (e.g., 'en' for English) used for localized text such as the service action's name and description when interacting with AWS Service Catalog. (AI-inferred) */
   acceptLanguage: string;
-  /** Specifies the definition of the Service Catalog service action, including the AWS Systems Manager automation document name, version, IAM assume role, and parameters. (AI-inferred) */
   definition: CatalogServiceAction_Definition[];
-  /** Specifies the type of service action definition, which for AWS Service Catalog service actions must be set to SSM_AUTOMATION to reference an AWS Systems Manager automation document. (AI-inferred) */
   definitionType: string;
-  /** A user-defined, human-readable description of the Service Catalog self-service action, displayed in the AWS Management Console to help users understand the action's purpose. (AI-inferred) */
   description: string;
-  /** The unique identifier assigned by AWS to the Service Catalog service action, used to reference it across the AWS service. (AI-inferred) */
   id: string;
-  /** The human-readable name of the AWS Service Catalog service action, required to uniquely identify and display the action in the Service Catalog console and API. (AI-inferred) */
   name: string;
 }
 

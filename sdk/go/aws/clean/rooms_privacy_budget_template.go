@@ -4,20 +4,15 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsPrivacyBudgetTemplate_Parameters_BudgetParameters struct {
-	// Indicates whether the privacy budget template automatically refreshes the privacy budget on a recurring schedule (e.g., daily or monthly) to renew the querying allowance without manual intervention. (AI-inferred)
 	AutoRefresh any
-	// The maximum number of privacy budget units allocated to a parameter, determining how much aggregate data can be exposed while preserving differential privacy. (AI-inferred)
 	Budget any
-	// Defines the kind of privacy budget parameter (currently supported value: DIFFERENTIAL_PRIVACY) that determines how the analysis rule enforces differential privacy limits in the template. (AI-inferred)
 	Type any
 }
 
 type RoomsPrivacyBudgetTemplate_Parameters struct {
 	BudgetParameters any
-	// Specifies the epsilon value for the differential privacy budget, which limits the amount of privacy loss allowed for queries using this template. (AI-inferred)
 	Epsilon any
 	ResourceArn any
-	// The number of users' worth of noise added to each query in the privacy budget template, controlling the level of differential privacy applied to query results. (AI-inferred)
 	UsersNoisePerQuery any
 }
 
@@ -49,36 +44,23 @@ var RoomsPrivacyBudgetTemplate_TagsFields = ubx.FieldMap{
 	}
 
 type RoomsPrivacyBudgetTemplateConfig struct {
-	// Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	AutoRefresh any
-	// The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred)
 	MembershipIdentifier any
-	// Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred)
 	Parameters any
-	// The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred)
 	PrivacyBudgetType any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template.
 	Tags any
 }
 
 type RoomsPrivacyBudgetTemplateAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the privacy budget template. (AI-inferred)
 	Arn any
-	// Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	AutoRefresh any
-	// The Amazon Resource Name (ARN) of the collaboration that this privacy budget template is associated with, assigned by AWS when the template is created. (AI-inferred)
 	CollaborationArn any
-	// collaboration_identifier is the unique identifier of the AWS Clean Rooms collaboration to which this privacy budget template belongs, automatically assigned by AWS and used as a read-only part of the resource's identity. (AI-inferred)
 	CollaborationIdentifier any
-	// The Amazon Resource Name (ARN) of the membership that this privacy budget template belongs to, which is automatically assigned by AWS Clean Rooms. (AI-inferred)
 	MembershipArn any
-	// The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred)
 	MembershipIdentifier any
-	// Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred)
 	Parameters any
-	// The AWS-assigned unique identifier for this privacy budget template, used to reference the template in Clean Rooms operations. (AI-inferred)
 	PrivacyBudgetTemplateIdentifier any
-	// The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred)
 	PrivacyBudgetType any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template.
 	Tags any

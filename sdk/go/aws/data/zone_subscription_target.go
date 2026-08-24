@@ -4,9 +4,7 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneSubscriptionTarget_SubscriptionTargetConfig struct {
-	// The JSON-encoded configuration payload for a subscription target form, which contains the target-specific parameters (such as the S3 bucket path, Glue database name, or Redshift cluster) required for delivering subscribed data. (AI-inferred)
 	Content any
-	// The name of the metadata form that defines the schema and parameters for this AWS DataZone subscription target configuration. (AI-inferred)
 	FormName any
 }
 

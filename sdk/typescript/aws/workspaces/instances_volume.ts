@@ -3,13 +3,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InstancesVolume_TagSpecifications_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the WorkSpaces volume within the tag specification, used to categorize and manage the volume. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface InstancesVolume_TagSpecifications {
   resourceType?: string | Computed<string>;
-  /** The tags block within a tag specification, used to define key-value pairs that are attached to the WorkSpaces instance volume for identification and resource management. (AI-inferred) */
   tags?: InstancesVolume_TagSpecifications_Tags[] | Computed<InstancesVolume_TagSpecifications_Tags[]>;
 }
 

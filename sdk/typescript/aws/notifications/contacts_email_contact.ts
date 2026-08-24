@@ -2,22 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ContactsEmailContact_EmailContact {
-  /** The email address of the contact that will receive AWS notifications. (AI-inferred) */
   address: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the email contact that this resource associates with the notifications service. (AI-inferred) */
   arn: string | Computed<string>;
-  /** The creation time of the email contact, stored as an ISO 8601 string, indicating when the contact was added to AWS User Notifications. (AI-inferred) */
   creationTime: string | Computed<string>;
-  /** The friendly name assigned to the email contact, used to identify the contact in the AWS console and notifications. (AI-inferred) */
   name: string | Computed<string>;
   status: string | Computed<string>;
-  /** The timestamp indicating when this email contact was last updated. (AI-inferred) */
   updateTime: string | Computed<string>;
 }
 
 export interface ContactsEmailContact_Tags {
   key?: string | Computed<string>;
-  /** Provides the string value for a tag key attached to an email contact resource in AWS Notifications Contacts, enabling custom metadata for categorization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,22 +21,16 @@ const ContactsEmailContact_TagsFields: FieldMap = {
 };
 
 export interface ContactsEmailContactConfig {
-  /** The email address of the contact that will be used to receive notifications from AWS services. (AI-inferred) */
   emailAddress: string | Computed<string>;
-  /** The friendly name for the email contact, used as a human-readable identifier for the contact within AWS User Notifications. (AI-inferred) */
   name: string | Computed<string>;
   /** A list of tags that are attached to the role. */
   tags?: ContactsEmailContact_Tags[] | Computed<ContactsEmailContact_Tags[]>;
 }
 
 export interface ContactsEmailContactAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this email contact resource in AWS User Notifications. (AI-inferred) */
   arn: string;
-  /** The email address of the contact that will be used to receive notifications from AWS services. (AI-inferred) */
   emailAddress: string;
-  /** The email_contact field is a computed object that returns the details of the created email contact, including its ARN and current status, from the AWS Notifications Contacts service. (AI-inferred) */
   emailContact: ContactsEmailContact_EmailContact;
-  /** The friendly name for the email contact, used as a human-readable identifier for the contact within AWS User Notifications. (AI-inferred) */
   name: string;
   /** A list of tags that are attached to the role. */
   tags: ContactsEmailContact_Tags[];

@@ -15,7 +15,6 @@ class TailorFunction_CustomOutputConfiguration:
 class TailorFunction_HttpRequestConfiguration:
     # The body of the HTTP request.
     body: Any = None
-    # A map of custom HTTP headers that the MediaTailor function includes in outgoing requests to its configured endpoint, enabling authentication or environment-specific header values. (AI-inferred)
     headers: Any = None
     method_type: Any = None
     output: Any = None
@@ -28,7 +27,6 @@ class TailorFunction_HttpRequestConfiguration:
 @dataclasses.dataclass
 class TailorFunction_SequentialExecutorConfiguration_FunctionList:
     function_id: Any = None
-    # In the AWS::MediaTailor::Function resource, the run_condition property within the function_list of a sequential executor configuration defines a logical expression that controls when that specific function is executed in the sequence. (AI-inferred)
     run_condition: Any = None
 
 @dataclasses.dataclass
@@ -36,7 +34,6 @@ class TailorFunction_SequentialExecutorConfiguration:
     # The list of functions to execute sequentially.
     function_list: Any = None
     output: Any = None
-    # The runtime environment in which the MediaTailor function's code executes when using the sequential executor configuration, specifying the programming language and version. (AI-inferred)
     runtime: Any = None
     # The timeout in milliseconds for the entire sequential execution chain.
     timeout_milliseconds: Any = None

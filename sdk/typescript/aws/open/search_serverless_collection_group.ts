@@ -30,7 +30,6 @@ const SearchServerlessCollectionGroup_TagsFields: FieldMap = {
 };
 
 export interface SearchServerlessCollectionGroupConfig {
-  /** Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred) */
   capacityLimits?: SearchServerlessCollectionGroup_CapacityLimits | Computed<SearchServerlessCollectionGroup_CapacityLimits>;
   /** The description of the collection group. */
   description?: string | Computed<string>;
@@ -47,7 +46,6 @@ export interface SearchServerlessCollectionGroupConfig {
 export interface SearchServerlessCollectionGroupAttrs {
   /** The Amazon Resource Name (ARN) of the collection group. */
   arn: string;
-  /** Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred) */
   capacityLimits: SearchServerlessCollectionGroup_CapacityLimits;
   /** The description of the collection group. */
   description: string;

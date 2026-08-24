@@ -9,14 +9,11 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TwirelessNetworkAnalyzerConfiguration_Tags:
     key: Any = None
-    # The value part of a key-value tag on the AWS IoT Wireless Network Analyzer Configuration, used to store custom metadata associated with the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TwirelessNetworkAnalyzerConfiguration_TraceContent:
-    # The verbosity level for logs collected by the network analyzer for wireless devices, such as 'OFF', 'INFO', or 'DEBUG'. (AI-inferred)
     log_level: Any = None
-    # Specifies whether frame-level information for wireless devices is captured in the network analyzer trace, enabling or disabling wireless device frame tracing. (AI-inferred)
     wireless_device_frame_info: Any = None
 
 _TwirelessNetworkAnalyzerConfiguration_TagsFields = {

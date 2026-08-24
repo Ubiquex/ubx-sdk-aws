@@ -7,9 +7,7 @@ export interface MakerHub_S3StorageConfig {
 }
 
 export interface MakerHub_Tags {
-  /** The key of a tag attached to the SageMaker Hub, used to identify and categorize the hub for resource management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the SageMaker Hub, which pairs with the corresponding key to organize, identify, and manage the hub resource within your AWS environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

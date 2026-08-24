@@ -8,15 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoggerDefinitionVersion_Loggers:
-    # Specifies the component that writes the logs captured by this logger, typically the literal value `GreengrassSystem` for system components or the ARN of a Lambda function for lambda components. (AI-inferred)
     component: Any = None
-    # The unique identifier used to reference this logger component within the logger definition version. (AI-inferred)
     id: Any = None
-    # The log level for this Greengrass logger, determining the minimum severity (e.g., DEBUG, INFO, WARN, ERROR, FATAL) of log messages that will be recorded. (AI-inferred)
     level: Any = None
-    # The maximum amount of file space (in kilobytes) that the logger can use for storing log files, applicable to file-system based loggers in a Greengrass logger definition. (AI-inferred)
     space: Any = None
-    # The logger destination type: AWSCloudWatch for logs published to Amazon CloudWatch Logs, or FileSystem for logs written to the local file system. (AI-inferred)
     type: Any = None
 
 _LoggerDefinitionVersion_LoggersFields = {
@@ -29,18 +24,13 @@ _LoggerDefinitionVersion_LoggersFields = {
 
 @dataclasses.dataclass
 class LoggerDefinitionVersionConfig:
-    # The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred)
     logger_definition_id: Any = None
-    # Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred)
     loggers: Any = None
 
 @dataclasses.dataclass
 class LoggerDefinitionVersionAttrs:
-    # The id is the unique ARN assigned by AWS to this Greengrass logger definition version, used to reference the version in other resources and API calls. (AI-inferred)
     id: Any = None
-    # The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred)
     logger_definition_id: Any = None
-    # Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred)
     loggers: Any = None
 
 LoggerDefinitionVersion = ubx.ResourceBinding(

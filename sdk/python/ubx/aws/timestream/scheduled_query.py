@@ -37,38 +37,26 @@ class ScheduledQuery_ScheduleConfiguration:
 
 @dataclasses.dataclass
 class ScheduledQuery_Tags:
-    # The tag key, which is the name of the tag assigned to the Timestream scheduled query. (AI-inferred)
     key: Any = None
-    # The value string associated with a tag key for the Timestream scheduled query, used for organizing and identifying the query resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ScheduledQuery_TargetConfiguration_TimestreamConfiguration_DimensionMappings:
-    # Specifies the data type (VARCHAR or BIGINT) of the dimension value in the dimension mapping for the Timestream target of the scheduled query. (AI-inferred)
     dimension_value_type: Any = None
-    # Specifies the name of the dimension in the target Timestream table that the scheduled query result column maps to. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappings:
-    # Specifies the data type (e.g., BIGINT, BOOLEAN, DOUBLE, VARCHAR, TIMESTAMP) of the multi-measure attribute's value when mapping query results to a Timestream multi-measure record. (AI-inferred)
     measure_value_type: Any = None
-    # Specifies the source column in the scheduled query result whose value is mapped to the corresponding multi-measure attribute in the Timestream target table. (AI-inferred)
     source_column: Any = None
-    # Specifies the target multi-measure attribute name in the Timestream table to which the source column is mapped for a scheduled query using mixed measure mappings. (AI-inferred)
     target_multi_measure_attribute_name: Any = None
 
 @dataclasses.dataclass
 class ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings:
-    # The measure name to assign to this mapping in the target Timestream table when the scheduled query writes mixed measures. (AI-inferred)
     measure_name: Any = None
-    # Specifies the data type (e.g., DOUBLE, BIGINT, BOOLEAN, VARCHAR, TIMESTAMP) for a measure value in a mixed measure mapping in the target Timestream configuration of a scheduled query. (AI-inferred)
     measure_value_type: Any = None
-    # Defines the list of attribute mappings that specify which query result columns map to each attribute in a multi-measure record written to Timestream, including the source column and target multi-measure attribute name. (AI-inferred)
     multi_measure_attribute_mappings: Any = None
-    # The source column in the scheduled query result that is mapped to a specific measure when writing to the Timestream target table. (AI-inferred)
     source_column: Any = None
-    # Sets the name of the measure column in the scheduled query's target Timestream table that receives the mapped measure value, enabling the query to store mixed-measure results under a custom measure name. (AI-inferred)
     target_measure_name: Any = None
 
 @dataclasses.dataclass

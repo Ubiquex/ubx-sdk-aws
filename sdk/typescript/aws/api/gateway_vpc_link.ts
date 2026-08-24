@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayVpcLink_Tags {
-  /** Identifies the key of a user-defined tag attached to the API Gateway VPC Link, used to organize and categorize the resource via AWS tagging conventions. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a tag key attached to the VPC Link, enabling metadata-based management, cost allocation, and access control for the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,26 +12,19 @@ const GatewayVpcLink_TagsFields: FieldMap = {
 };
 
 export interface GatewayVpcLinkConfig {
-  /** A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred) */
   name: string | Computed<string>;
   /** An array of arbitrary tags (key-value pairs) to associate with the VPC link. */
   tags?: GatewayVpcLink_Tags[] | Computed<GatewayVpcLink_Tags[]>;
-  /** Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred) */
   targetArns: string[] | Computed<string[]>;
 }
 
 export interface GatewayVpcLinkAttrs {
-  /** A user-defined textual description of the VPC link, used to identify and manage the link in API Gateway. (AI-inferred) */
   description: string;
-  /** The user-friendly name of the VPC link, which identifies it within API Gateway. (AI-inferred) */
   name: string;
   /** An array of arbitrary tags (key-value pairs) to associate with the VPC link. */
   tags: GatewayVpcLink_Tags[];
-  /** Specifies the Amazon Resource Names (ARNs) of the Network Load Balancers that the VPC link routes API traffic to, allowing API Gateway to access private resources in a VPC. (AI-inferred) */
   targetArns: string[];
-  /** The unique identifier (e.g., an alphanumeric string) assigned by AWS to this VPC link, used to reference the link in API Gateway configurations. (AI-inferred) */
   vpcLinkId: string;
 }
 

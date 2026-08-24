@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesCalculatedAttributeDefinition_AttributeDetails_Attributes {
-  /** Specifies the name of a source attribute in the Customer Profiles profile that is used as an input for the calculated attribute expression. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -57,7 +56,6 @@ export interface ProfilesCalculatedAttributeDefinition_Readiness {
 }
 
 export interface ProfilesCalculatedAttributeDefinition_Tags {
-  /** The key of a user-defined tag assigned to the calculated attribute definition, enabling categorization and access control for the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -42,9 +42,7 @@ export interface Distribution_CacheBehaviorSettings {
 }
 
 export interface Distribution_CacheBehaviors {
-  /** Specifies the cache behavior for the associated path pattern, with supported values of 'cache' or 'no-cache' indicating whether matching requests are cached. (AI-inferred) */
   behavior?: string | Computed<string>;
-  /** The path pattern (such as `/images/*`) that determines which requests this cache behavior applies to in the Lightsail distribution. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
@@ -63,9 +61,7 @@ export interface Distribution_Origin {
 }
 
 export interface Distribution_Tags {
-  /** The key of a tag to attach to the Lightsail distribution, used to identify and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag attached to the Lightsail distribution, used to store arbitrary metadata (e.g., environment, owner) for resource organization, cost allocation, or access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -163,7 +159,6 @@ export interface DistributionAttrs {
   certificateName: string;
   /** Describes the default cache behavior of an Amazon Lightsail content delivery network (CDN) distribution. */
   defaultCacheBehavior: Distribution_DefaultCacheBehavior;
-  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail distribution. (AI-inferred) */
   distributionArn: string;
   /** The name for the distribution. */
   distributionName: string;

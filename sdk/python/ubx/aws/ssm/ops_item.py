@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OpsItem_Tags:
-    # Key of a user-defined tag attached to the OpsItem, which can be used to categorize, search, and manage operational work items in AWS Systems Manager OpsCenter. (AI-inferred)
     key: Any = None
-    # The user-defined value for a tag key on the OpsItem, used to add metadata for identifying, organizing, or filtering the OpsItem in AWS Systems Manager. (AI-inferred)
     value: Any = None
 
 _OpsItem_TagsFields = {

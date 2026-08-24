@@ -16,9 +16,7 @@ type Stream_StreamModeDetails struct {
 }
 
 type Stream_Tags struct {
-	// The key of a tag attached to the Kinesis stream, used to organize, identify, and manage access to the stream. (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag applied to the Kinesis data stream, allowing you to associate arbitrary metadata with the resource. (AI-inferred)
 	Value any
 }
 

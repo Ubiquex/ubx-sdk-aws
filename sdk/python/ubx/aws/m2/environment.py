@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Environment_HighAvailabilityConfig:
-    # The desired number of instances to run in the high availability configuration of the AWS Mainframe Modernization (M2) environment. (AI-inferred)
     desired_capacity: Any = None
 
 _Environment_HighAvailabilityConfigFields = {
@@ -31,7 +30,6 @@ class EnvironmentConfig:
     kms_key_id: Any = None
     # The name of the environment.
     name: Any = None
-    # Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
     network_type: Any = None
     # Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
     preferred_maintenance_window: Any = None
@@ -66,7 +64,6 @@ class EnvironmentAttrs:
     kms_key_id: Any = None
     # The name of the environment.
     name: Any = None
-    # Specifies the network type for the environment, either 'VPC' for a customer-managed virtual private cloud or 'EDGE' to use the AWS Mainframe Modernization managed network without a VPC. (AI-inferred)
     network_type: Any = None
     # Configures a desired maintenance window for the environment. If you do not provide a value, a random system-generated value will be assigned.
     preferred_maintenance_window: Any = None

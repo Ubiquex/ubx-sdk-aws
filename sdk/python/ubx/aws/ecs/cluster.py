@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_ClusterSettings:
-    # The name of the cluster setting, which identifies the specific setting (such as 'containerInsights') that the corresponding value applies to. (AI-inferred)
     name: Any = None
-    # The value for the ECS cluster setting, such as 'enabled' or 'disabled' for the common 'containerInsights' setting. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -51,11 +49,8 @@ class Cluster_Configuration:
 
 @dataclasses.dataclass
 class Cluster_DefaultCapacityProviderStrategy:
-    # Base specifies the minimum number of tasks that run on this capacity provider within the cluster's capacity provider strategy. (AI-inferred)
     base: Any = None
-    # Specifies the name of the capacity provider (such as FARGATE, FARGATE_SPOT, or a custom Auto Scaling group-based provider) to include in the default capacity provider strategy that Amazon ECS applies when running tasks without an explicit strategy. (AI-inferred)
     capacity_provider: Any = None
-    # Weight is the relative proportion of tasks that should be placed on this capacity provider, used for spreading tasks across providers in the cluster's default capacity provider strategy. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
@@ -66,7 +61,6 @@ class Cluster_ServiceConnectDefaults:
 @dataclasses.dataclass
 class Cluster_Tags:
     key: Any = None
-    # The value of an arbitrary tag assigned to the ECS cluster, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _Cluster_ClusterSettingsFields = {
@@ -144,7 +138,6 @@ class ClusterConfig:
 
 @dataclasses.dataclass
 class ClusterAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this ECS cluster. (AI-inferred)
     arn: Any = None
     # The short name of one or more capacity providers to associate with the cluster. A capacity provider must be associated with a cluster before it can be included as part of the default capacity provider strategy of the cluster or used in a capacity provider strategy when calling the [CreateService](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html) or [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) actions. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not associated with another cluster. New Auto Scaling group capacity providers can be created with the [CreateCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html) API operation. To use a FARGATElong capacity provider, specify either the ``FARGATE`` or ``FARGATE_SPOT`` capacity providers. The FARGATElong capacity providers are available to all accounts and only need to be associated with a cluster to be used. The [PutCapacityProvider](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html) API operation is used to update the list of available capacity providers for a cluster after the cluster is created.
     capacity_providers: Any = None

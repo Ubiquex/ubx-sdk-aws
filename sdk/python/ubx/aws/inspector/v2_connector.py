@@ -8,20 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2Connector_Health:
-    # The `connector_status` field under `health` reports the current health state of the AWS Inspector v2 connector, indicating whether it is operational and able to receive vulnerability findings. (AI-inferred)
     connector_status: Any = None
-    # For the AWS Inspector V2 connector, this field records the timestamp of when the connector's health status was last checked by the service. (AI-inferred)
     last_checked_at: Any = None
-    # The message providing additional details about the health status of the Inspector v2 connector, such as why it is unhealthy or in an error state. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class V2Connector_ProviderConfiguration_Azure_ScopeConfiguration_ContainerImageScanning:
-    # Specifies the scope type for container image scanning in the Azure connector, with valid values 'ALL' indicating all images in the subscribed Azure container registries are scanned, and 'SPECIFIC' indicating only images matching the specified scope objects are scanned. (AI-inferred)
     scope_type: Any = None
     # List of subscription IDs. Empty for TENANT scope.
     scope_values: Any = None
-    # Determines whether container image scanning is enabled or disabled for the Azure scope configuration in the Amazon Inspector v2 connector. (AI-inferred)
     state: Any = None
     # Reason for the current scope state.
     state_reason: Any = None
@@ -48,13 +43,11 @@ class V2Connector_ProviderConfiguration_Azure:
 
 @dataclasses.dataclass
 class V2Connector_ProviderConfiguration:
-    # Configuration for the Azure connector, containing the client ID, client secret, and tenant ID used by AWS Inspector to authenticate with and scan Azure resources. (AI-inferred)
     azure: Any = None
 
 @dataclasses.dataclass
 class V2Connector_Tags:
     key: Any = None
-    # The value part of a tag (key-value pair) that you can assign to the AWS Inspector v2 connector for organizational or billing purposes. (AI-inferred)
     value: Any = None
 
 _V2Connector_TagsFields = {
@@ -83,7 +76,6 @@ class V2ConnectorAttrs:
     enablement_status: Any = None
     # Reason for the current enablement status, if applicable.
     enablement_status_reason: Any = None
-    # Specifies the current health status of the connector (such as HEALTHY or UNHEALTHY) along with the timestamp of the last health status change, as returned by Amazon Inspector V2. (AI-inferred)
     health: Any = None
     # Timestamp when the connector was last updated.
     last_updated_at: Any = None

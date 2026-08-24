@@ -4,9 +4,7 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeServiceNetworkResourceAssociation_Tags struct {
-	// The key of a tag attached to the VPC Lattice service network resource association, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair attached to a VPC Lattice service network resource association, used to provide user-defined metadata for identifying or managing the association. (AI-inferred)
 	Value any
 }
 
@@ -16,28 +14,18 @@ var LatticeServiceNetworkResourceAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type LatticeServiceNetworkResourceAssociationConfig struct {
-	// When enabled, this generates a private DNS hostname for the associated resource within the VPC Lattice service network, allowing it to be accessed via DNS resolution from associated VPCs. (AI-inferred)
 	PrivateDnsEnabled any
-	// The unique identifier of the resource configuration (such as a VPC or AWS service) to associate with the service network. (AI-inferred)
 	ResourceConfigurationId any
-	// The unique ID of the VPC Lattice service network that this resource association attaches the specified resource to. (AI-inferred)
 	ServiceNetworkId any
-	// Specifies a list of key-value tag objects to attach to the VPC Lattice service network resource association, which can be used for resource identification, cost allocation, and access control. (AI-inferred)
 	Tags any
 }
 
 type LatticeServiceNetworkResourceAssociationAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this service network resource association. (AI-inferred)
 	Arn any
-	// The unique AWS-assigned identifier for the VPC Lattice service network resource association. (AI-inferred)
 	Id any
-	// When enabled, this generates a private DNS hostname for the associated resource within the VPC Lattice service network, allowing it to be accessed via DNS resolution from associated VPCs. (AI-inferred)
 	PrivateDnsEnabled any
-	// The unique identifier of the resource configuration (such as a VPC or AWS service) to associate with the service network. (AI-inferred)
 	ResourceConfigurationId any
-	// The unique ID of the VPC Lattice service network that this resource association attaches the specified resource to. (AI-inferred)
 	ServiceNetworkId any
-	// Specifies a list of key-value tag objects to attach to the VPC Lattice service network resource association, which can be used for resource identification, cost allocation, and access control. (AI-inferred)
 	Tags any
 }
 

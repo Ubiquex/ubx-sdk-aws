@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiftMatchmakingConfiguration_GameProperties:
-    # The identifying key of a custom game property (a key-value pair) that is passed to a matchmade game session to provide custom configuration data. (AI-inferred)
     key: Any = None
-    # The string value of a game property key-value pair that is passed to GameLift matchmaking to filter or customize game sessions. (AI-inferred)
     value: Any = None
 
 _LiftMatchmakingConfiguration_GamePropertiesFields = {

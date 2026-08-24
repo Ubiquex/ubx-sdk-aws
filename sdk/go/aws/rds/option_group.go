@@ -4,30 +4,21 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OptionGroup_OptionConfigurations_OptionSettings struct {
-	// The name of an option setting, which identifies the specific engine parameter to configure within the corresponding option configuration for the RDS option group. (AI-inferred)
 	Name any
-	// The value of a key-value option setting that tunes the behavior of the option within the RDS option group, where the setting's name (the 'name' field) determines what this value means (for example, a timeout or a port number). (AI-inferred)
 	Value any
 }
 
 type OptionGroup_OptionConfigurations struct {
-	// Specifies the names of DB security groups that are allowed to use the option in this option configuration. (AI-inferred)
 	DbsecurityGroupMemberships any
-	// The name of the option to be enabled in the RDS option group, such as 'MEMCACHED' or 'IAM'. (AI-inferred)
 	OptionName any
-	// A list of key-value settings that configure the selected option for the DB engine, with each setting containing a Name and a Value. (AI-inferred)
 	OptionSettings any
-	// Specifies the version of the option to apply, when multiple versions are available for that option in the RDS option group. (AI-inferred)
 	OptionVersion any
-	// Specifies the port number on which the option (such as Oracle Enterprise Manager) communicates with the database. (AI-inferred)
 	Port any
-	// Provides a list of VPC security group IDs that are associated with an individual option configuration, governing network access for the option within the VPC. (AI-inferred)
 	VpcSecurityGroupMemberships any
 }
 
 type OptionGroup_Tags struct {
 	Key any
-	// The value component of a key-value tag assigned to the option group, used to categorize or identify the resource. (AI-inferred)
 	Value any
 }
 

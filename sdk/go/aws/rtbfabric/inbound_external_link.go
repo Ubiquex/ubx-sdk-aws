@@ -11,7 +11,6 @@ type InboundExternalLink_LinkAttributes_ResponderErrorMasking struct {
 }
 
 type InboundExternalLink_LinkAttributes struct {
-	// In the AWS RTB Fabric inbound external link, the customer_provided_id field within link_attributes is a customer-assigned string identifier for the link, intended for the customer's own tracking and correlation purposes. (AI-inferred)
 	CustomerProvidedId any
 	ResponderErrorMasking any
 }
@@ -79,7 +78,6 @@ var InboundExternalLink_TagsFields = ubx.FieldMap{
 type InboundExternalLinkConfig struct {
 	GatewayId any
 	LinkAttributes any
-	// Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
 	LinkLogSettings any
 	// Tags to assign to the Link.
 	Tags any
@@ -92,13 +90,10 @@ type InboundExternalLinkAttrs struct {
 	GatewayId any
 	LinkAttributes any
 	LinkId any
-	// Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred)
 	LinkLogSettings any
-	// The read-only link_status attribute reports the current lifecycle state of the inbound external link (for example, ACTIVE or INACTIVE) as maintained by the AWS RTB Fabric service. (AI-inferred)
 	LinkStatus any
 	// Tags to assign to the Link.
 	Tags any
-	// This computed string is the timestamp indicating when the inbound external link was last updated. (AI-inferred)
 	UpdatedTimestamp any
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiftMatchmakingRuleSet_Tags {
-  /** The key of a tag attached to the GameLift matchmaking rule set, used to identify and categorize the rule set for resource management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the GameLift matchmaking rule set, used to organize and identify the rule set within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

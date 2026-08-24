@@ -8,96 +8,68 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_Value:
-    # Provides the date used as the comparison value in the document enrichment condition when the document attribute's value type is DATE, allowing the rule to match documents based on that specific date. (AI-inferred)
     date_value: Any = None
-    # Defines the numeric (long) value to compare against a document attribute in an inline enrichment condition, determining whether the enrichment action applies to documents in the AWS QBusiness data source. (AI-inferred)
     long_value: Any = None
-    # This field provides the list of string values used as the condition value in a QBusiness data source document enrichment inline configuration, allowing multiple attribute values to be matched against when evaluating the condition. (AI-inferred)
     string_list_value: Any = None
-    # The string value used as the comparison target for a document attribute condition in an inline document enrichment configuration. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition:
-    # The name of the document attribute that this condition evaluates, such as a metadata field or content property, to determine whether the enrichment action applies. (AI-inferred)
     key: Any = None
-    # Determines how the document attribute key's value is compared against the condition's value, with allowed values such as EQUALS, NOT_EQUALS, CONTAINS, NOT_CONTAINS, EXISTS, or NOT_EXISTS. (AI-inferred)
     operator: Any = None
-    # Defines the attribute value (such as a string, string list, number, or date) that the document attribute condition compares against, determining whether the inline document enrichment action is applied. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Target:
-    # Specifies whether to overwrite the existing value of the target document attribute with the supplied value or delete the attribute. (AI-inferred)
     attribute_value_operator: Any = None
-    # The key (name) of the document attribute that the inline document enrichment configuration will update or add for the target in the QBusiness data source. (AI-inferred)
     key: Any = None
-    # Specifies the value to assign to the target document attribute in an inline document enrichment configuration, expressed as a DocumentAttributeValue object (which can hold a string, string list, long, or date). (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration_InlineConfigurations:
-    # Defines the document attribute condition (key, operator, and value) that a document must meet for the associated enrichment action to be applied. (AI-inferred)
     condition: Any = None
     document_content_operator: Any = None
-    # Specifies the document attribute that the inline enrichment operation modifies, including the attribute name, the action (such as ADD, DELETE, or REPLACE), and the value to apply. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration_PostExtractionHookConfiguration:
-    # Specifies the document attribute condition (key, operator, value) that must be satisfied for the post-extraction hook to be invoked during document enrichment. (AI-inferred)
     invocation_condition: Any = None
-    # The ARN of the Lambda function invoked after document extraction to perform custom post-extraction enrichment on the Q Business data source. (AI-inferred)
     lambda_arn: Any = None
-    # The ARN of the IAM role that AWS Q Business assumes to invoke the post-extraction Lambda function during document enrichment for this data source. (AI-inferred)
     role_arn: Any = None
-    # The name of the S3 bucket where AWS QBusiness stores the extracted documents that are passed to the post-extraction hook's Lambda function for enrichment. (AI-inferred)
     s3_bucket_name: Any = None
 
 @dataclasses.dataclass
 class DataSource_DocumentEnrichmentConfiguration:
-    # Specifies a list of inline document enrichment configurations that conditionally modify document attributes (e.g., setting, deleting, or altering attribute values) during data ingestion. (AI-inferred)
     inline_configurations: Any = None
-    # Defines the Lambda function invoked after document attributes are extracted, enabling custom post-processing and enrichment of the document before indexing. (AI-inferred)
     post_extraction_hook_configuration: Any = None
-    # Specifies the AWS Lambda function configuration that is invoked before document extraction to perform pre-extraction enrichment on documents from the data source. (AI-inferred)
     pre_extraction_hook_configuration: Any = None
 
 @dataclasses.dataclass
 class DataSource_MediaExtractionConfiguration_AudioExtractionConfiguration:
-    # Specifies whether audio extraction from media files in the Amazon Q Business data source is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     audio_extraction_status: Any = None
 
 @dataclasses.dataclass
 class DataSource_MediaExtractionConfiguration_ImageExtractionConfiguration:
-    # Indicates whether extraction of text from images (such as scanned documents or photos) in the data source is enabled or disabled. (AI-inferred)
     image_extraction_status: Any = None
 
 @dataclasses.dataclass
 class DataSource_MediaExtractionConfiguration_VideoExtractionConfiguration:
-    # Indicates whether video extraction is enabled (ENABLED) or disabled (DISABLED) for the QBusiness data source, controlling whether text is extracted from video files. (AI-inferred)
     video_extraction_status: Any = None
 
 @dataclasses.dataclass
 class DataSource_MediaExtractionConfiguration:
-    # Configures whether audio content from media files in the data source is extracted and indexed, typically by enabling or disabling audio transcription for searchable text. (AI-inferred)
     audio_extraction_configuration: Any = None
-    # Configures image extraction for the data source by specifying whether image extraction is enabled or disabled, allowing text and metadata to be extracted from images. (AI-inferred)
     image_extraction_configuration: Any = None
-    # Configures whether AWS Q Business extracts text from video files (e.g., using speech-to-text or optical character recognition) in the data source, based on its enabled or disabled extraction status. (AI-inferred)
     video_extraction_configuration: Any = None
 
 @dataclasses.dataclass
 class DataSource_Tags:
-    # The key of a key-value tag assigned to the AWS QBusiness data source, used for resource organization and metadata. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class DataSource_VpcConfiguration:
-    # The list of security group IDs to associate with the VPC configuration for the AWS QBusiness data source. (AI-inferred)
     security_group_ids: Any = None
-    # Identifies the subnets in the VPC where the Amazon Q Business data source connector runs to access private resources within your network. (AI-inferred)
     subnet_ids: Any = None
 
 _DataSource_DocumentEnrichmentConfiguration_InlineConfigurations_Condition_ValueFields = {
@@ -212,64 +184,36 @@ _DataSource_VpcConfigurationFields = {
 
 @dataclasses.dataclass
 class DataSourceConfig:
-    # The unique identifier of the Amazon Q Business application to which this data source belongs. (AI-inferred)
     application_id: Any = None
-    # The connector-specific configuration for the data source, provided as a JSON object whose keys and values vary by the DataSourceType (for example, S3, Salesforce, or SharePoint). (AI-inferred)
     configuration: Any = None
-    # Provides a user-defined description that helps identify the purpose or content of the data source. (AI-inferred)
     description: Any = None
-    # The human-readable name of the data source, used to identify it in the Amazon Q Business console and APIs. (AI-inferred)
     display_name: Any = None
-    # This object configures the document enrichment process for the data source, defining pre-extraction and post-extraction transformations such as inline configuration rules or custom Lambda-based hook functions. (AI-inferred)
     document_enrichment_configuration: Any = None
-    # The unique identifier of the Amazon Q Business index to which this data source is associated. (AI-inferred)
     index_id: Any = None
-    # Specifies the configuration for extracting text from media files (such as images and audio) in source documents, including whether extraction is enabled for each media type. (AI-inferred)
     media_extraction_configuration: Any = None
-    # The IAM role ARN that AWS Q Business assumes to access the underlying data source and retrieve documents for indexing. (AI-inferred)
     role_arn: Any = None
-    # Specifies the cron expression that defines how often the data source automatically syncs with its source repository. (AI-inferred)
     sync_schedule: Any = None
-    # A list of tags (key-value pairs) to attach to the QBusiness data source, used for resource identification, organization, and management. (AI-inferred)
     tags: Any = None
-    # Specifies the VPC configuration, including security group IDs and subnet IDs, used by the data source to connect to resources within an Amazon VPC. (AI-inferred)
     vpc_configuration: Any = None
 
 @dataclasses.dataclass
 class DataSourceAttrs:
-    # The unique identifier of the Amazon Q Business application to which this data source belongs. (AI-inferred)
     application_id: Any = None
-    # The connector-specific configuration for the data source, provided as a JSON object whose keys and values vary by the DataSourceType (for example, S3, Salesforce, or SharePoint). (AI-inferred)
     configuration: Any = None
-    # The timestamp indicating when the data source was created in AWS QBusiness. (AI-inferred)
     created_at: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Q Business data source, assigned by AWS upon creation. (AI-inferred)
     data_source_arn: Any = None
-    # The unique identifier assigned by AWS QBusiness to this data source. (AI-inferred)
     data_source_id: Any = None
-    # Provides a user-defined description that helps identify the purpose or content of the data source. (AI-inferred)
     description: Any = None
-    # The human-readable name of the data source, used to identify it in the Amazon Q Business console and APIs. (AI-inferred)
     display_name: Any = None
-    # This object configures the document enrichment process for the data source, defining pre-extraction and post-extraction transformations such as inline configuration rules or custom Lambda-based hook functions. (AI-inferred)
     document_enrichment_configuration: Any = None
-    # The unique identifier of the Amazon Q Business index to which this data source is associated. (AI-inferred)
     index_id: Any = None
-    # Specifies the configuration for extracting text from media files (such as images and audio) in source documents, including whether extraction is enabled for each media type. (AI-inferred)
     media_extraction_configuration: Any = None
-    # The IAM role ARN that AWS Q Business assumes to access the underlying data source and retrieve documents for indexing. (AI-inferred)
     role_arn: Any = None
-    # The current status of the data source, indicating whether it is active, being created, updated, deleted, or has failed. (AI-inferred)
     status: Any = None
-    # Specifies the cron expression that defines how often the data source automatically syncs with its source repository. (AI-inferred)
     sync_schedule: Any = None
-    # A list of tags (key-value pairs) to attach to the QBusiness data source, used for resource identification, organization, and management. (AI-inferred)
     tags: Any = None
-    # The connector type (e.g., S3, Salesforce, SharePoint) reported by the service for this Amazon Q Business data source. (AI-inferred)
     type: Any = None
-    # The timestamp (in ISO 8601 format) of the most recent update to the data source, returned by the service. (AI-inferred)
     updated_at: Any = None
-    # Specifies the VPC configuration, including security group IDs and subnet IDs, used by the data source to connect to resources within an Amazon VPC. (AI-inferred)
     vpc_configuration: Any = None
 
 DataSource = ubx.ResourceBinding(

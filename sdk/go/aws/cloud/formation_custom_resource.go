@@ -4,17 +4,13 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationCustomResourceConfig struct {
-	// The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred)
 	ServiceTimeout any
-	// The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred)
 	ServiceToken any
 }
 
 type FormationCustomResourceAttrs struct {
 	Id any
-	// The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred)
 	ServiceTimeout any
-	// The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred)
 	ServiceToken any
 }
 

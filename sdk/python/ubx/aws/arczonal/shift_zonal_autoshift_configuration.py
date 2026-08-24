@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ShiftZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarms:
-    # The identifier (ARN or name) of a CloudWatch alarm that, when in ALARM state, blocks or stops zonal autoshift practice runs. (AI-inferred)
     alarm_identifier: Any = None
-    # Specifies whether the CloudWatch alarm in the blocking alarms list is a 'BLOCKING' type (as opposed to 'OUTCOME'), which is required for blocking alarms to prevent zonal autoshift when the alarm enters ALARM state. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class ShiftZonalAutoshiftConfiguration_PracticeRunConfiguration:
-    # A list of dates in YYYY-MM-DD format on which zonal autoshift practice runs are blocked and cannot occur. (AI-inferred)
     blocked_dates: Any = None
-    # A list of cron expressions in UTC that define recurring time windows during which the service will not start a practice run for this zonal autoshift configuration. (AI-inferred)
     blocked_windows: Any = None
-    # Specifies the list of CloudWatch alarms that, when in ALARM state, block the practice run from starting (or continuing) for the zonal autoshift configuration. (AI-inferred)
     blocking_alarms: Any = None
-    # Specifies the CloudWatch alarms used to evaluate the outcome of zonal autoshift practice runs, where an alarm entering the ALARM state during a practice run marks it as failed. (AI-inferred)
     outcome_alarms: Any = None
 
 _ShiftZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarmsFields = {
@@ -46,20 +40,14 @@ _ShiftZonalAutoshiftConfiguration_PracticeRunConfigurationFields = {
 
 @dataclasses.dataclass
 class ShiftZonalAutoshiftConfigurationConfig:
-    # Defines the practice run configuration for zonal autoshift, specifying blocking windows/dates and the outcome alarms that must clear for a practice run to be considered successful. (AI-inferred)
     practice_run_configuration: Any = None
-    # The identifier (such as an ARN) of the resource for which the zonal autoshift configuration is set, enabling automatic traffic shifting away from an Availability Zone for that resource. (AI-inferred)
     resource_identifier: Any = None
-    # Sets the desired zonal autoshift status for the configuration, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     zonal_autoshift_status: Any = None
 
 @dataclasses.dataclass
 class ShiftZonalAutoshiftConfigurationAttrs:
-    # Defines the practice run configuration for zonal autoshift, specifying blocking windows/dates and the outcome alarms that must clear for a practice run to be considered successful. (AI-inferred)
     practice_run_configuration: Any = None
-    # The identifier (such as an ARN) of the resource for which the zonal autoshift configuration is set, enabling automatic traffic shifting away from an Availability Zone for that resource. (AI-inferred)
     resource_identifier: Any = None
-    # Sets the desired zonal autoshift status for the configuration, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     zonal_autoshift_status: Any = None
 
 ShiftZonalAutoshiftConfiguration = ubx.ResourceBinding(

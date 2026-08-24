@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerCertificate_DomainValidationOptions {
-  /** The domain name for which certificate validation options are specified, corresponding to one of the domains in the certificate's Subject Alternative Names. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** The ID of the hosted zone in Route 53 where the DNS validation record for this domain will be created. (AI-inferred) */
   hostedZoneId?: string | Computed<string>;
-  /** The domain that AWS Certificate Manager will use for validation (e.g., email or DNS checks), which can be a different domain than the one being certified. (AI-inferred) */
   validationDomain?: string | Computed<string>;
 }
 
 export interface ManagerCertificate_Tags {
-  /** The key of a user-defined tag attached to the AWS Certificate Manager certificate, used for metadata, cost allocation, and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

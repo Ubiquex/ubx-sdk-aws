@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TfleetWiseStateTemplate_Tags struct {
-	// The key of a tag attached to the AWS IoT FleetWise state template, used for resource categorization, cost allocation, and access control. (AI-inferred)
 	Key any
-	// Defines the tag value for a tag attached to the AWS IoT FleetWise state template, which can be used to categorize or identify the template. (AI-inferred)
 	Value any
 }
 
@@ -16,44 +14,26 @@ var TfleetWiseStateTemplate_TagsFields = ubx.FieldMap{
 	}
 
 type TfleetWiseStateTemplateConfig struct {
-	// Specifies a list of extra dimension signals (e.g., Vehicle.Make, Vehicle.Class) to be collected alongside the signals defined in the state template, enriching the vehicle data with additional metadata. (AI-inferred)
 	DataExtraDimensions any
-	// A brief, user-provided description of the AWS IoT FleetWise state template, which defines a set of vehicle state signals to collect. (AI-inferred)
 	Description any
-	// Specifies a list of additional vehicle attribute names (e.g., make, model) to be included as metadata dimensions in the state template's collected data. (AI-inferred)
 	MetadataExtraDimensions any
-	// The required, user-defined name that identifies the state template within AWS IoT FleetWise. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) of the AWS IoT FleetWise signal catalog that this state template is associated with. (AI-inferred)
 	SignalCatalogArn any
-	// The `state_template_properties` field specifies the list of signal or property names (as strings) that define the set of vehicle data points to collect when using this state template in AWS IoT FleetWise. (AI-inferred)
 	StateTemplateProperties any
-	// A list of Tag objects (each with a Key and Value) that are applied to the AWS IoT FleetWise state template for resource organization and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type TfleetWiseStateTemplateAttrs struct {
-	// The Amazon Resource Name (ARN) of the state template, which uniquely identifies it within AWS. (AI-inferred)
 	Arn any
-	// The date and time the state template was created in AWS IoT FleetWise. (AI-inferred)
 	CreationTime any
-	// Specifies a list of extra dimension signals (e.g., Vehicle.Make, Vehicle.Class) to be collected alongside the signals defined in the state template, enriching the vehicle data with additional metadata. (AI-inferred)
 	DataExtraDimensions any
-	// A brief, user-provided description of the AWS IoT FleetWise state template, which defines a set of vehicle state signals to collect. (AI-inferred)
 	Description any
-	// The read-only unique identifier (a UUID) that AWS IoT FleetWise assigns to this state template upon creation. (AI-inferred)
 	Id any
-	// The timestamp of the most recent modification to the state template, automatically set by AWS IoT FleetWise when the resource is created or updated. (AI-inferred)
 	LastModificationTime any
-	// Specifies a list of additional vehicle attribute names (e.g., make, model) to be included as metadata dimensions in the state template's collected data. (AI-inferred)
 	MetadataExtraDimensions any
-	// The required, user-defined name that identifies the state template within AWS IoT FleetWise. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) of the AWS IoT FleetWise signal catalog that this state template is associated with. (AI-inferred)
 	SignalCatalogArn any
-	// The `state_template_properties` field specifies the list of signal or property names (as strings) that define the set of vehicle data points to collect when using this state template in AWS IoT FleetWise. (AI-inferred)
 	StateTemplateProperties any
-	// A list of Tag objects (each with a Key and Value) that are applied to the AWS IoT FleetWise state template for resource organization and cost allocation. (AI-inferred)
 	Tags any
 }
 

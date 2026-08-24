@@ -2,21 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Queue_ComputeNodeGroupConfigurations {
-  /** Specifies the unique identifier of the compute node group to which this queue configuration targets, enabling the queue to submit jobs to the resources defined by that compute node group. (AI-inferred) */
   computeNodeGroupId?: string | Computed<string>;
 }
 
 export interface Queue_ErrorInfo {
-  /** The short error code that identifies the type of failure affecting the queue, complementing the error message returned in the same error info object. (AI-inferred) */
   code?: string | Computed<string>;
-  /** The error message that provides details about the failure condition affecting the AWS PCS queue, as reported in the queue's error information list. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface Queue_SlurmConfiguration_SlurmCustomSettings {
-  /** The name of a Slurm configuration parameter to set on the queue's Slurm cluster. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** The value assigned to a custom Slurm parameter (identified by its parameter name) in the AWS PCS queue's Slurm configuration. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 

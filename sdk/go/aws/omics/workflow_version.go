@@ -4,41 +4,31 @@ package omics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowVersion_ContainerRegistryMap_ImageMappings struct {
-	// Specifies the destination container image URI that a source image from the container registry map is overridden with for this workflow version's runtime. (AI-inferred)
 	DestinationImage any
-	// Defines the original container image reference (e.g., `myorg/myapp:latest`) that appears in the workflow definition and is mapped to a destination image for the container registry. (AI-inferred)
 	SourceImage any
 }
 
 type WorkflowVersion_ContainerRegistryMap_RegistryMappings struct {
-	// The AWS account ID associated with the Amazon ECR container registry entry in the container registry map of the workflow version. (AI-inferred)
 	EcrAccountId any
-	// Specifies the ECR repository prefix (including AWS account ID and region) that maps to a container registry name, allowing the workflow version to resolve and pull container images from Amazon ECR. (AI-inferred)
 	EcrRepositoryPrefix any
 	UpstreamRegistryUrl any
 	UpstreamRepositoryPrefix any
 }
 
 type WorkflowVersion_ContainerRegistryMap struct {
-	// The image_mappings field defines a list of container image mappings that link container names used in the workflow definition to their corresponding image URIs in the container registry map of the AWS Omics workflow version. (AI-inferred)
 	ImageMappings any
 	RegistryMappings any
 }
 
 type WorkflowVersion_DefinitionRepository_SourceReference struct {
-	// The type of source repository (either 'GIT' or 'S3') that contains the workflow definition, used with the source reference to specify which version of the definition to use. (AI-inferred)
 	Type any
 	Value any
 }
 
 type WorkflowVersion_DefinitionRepository struct {
-	// The ARN of the AWS CodeStar Connections connection used to access the git repository that contains the workflow definition. (AI-inferred)
 	ConnectionArn any
-	// A list of file patterns (e.g., glob patterns) that should be excluded from consideration when loading workflow definition files from the configured source repository in the definition_repository block. (AI-inferred)
 	ExcludeFilePatterns any
-	// The full identifier of the repository that contains the workflow definition, used to locate the source file when the definition is fetched from a repository. (AI-inferred)
 	FullRepositoryId any
-	// Identifies the specific revision (such as a Git branch, tag, or commit SHA) within the definition repository that this workflow version points to, determining the exact workflow definition source. (AI-inferred)
 	SourceReference any
 }
 
@@ -84,37 +74,23 @@ var WorkflowVersion_DefinitionRepositoryFields = ubx.FieldMap{
 	}
 
 type WorkflowVersionConfig struct {
-	// Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred)
 	Accelerators any
-	// Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred)
 	ContainerRegistryMap any
-	// For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred)
 	ContainerRegistryMapUri any
-	// Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred)
 	DefinitionRepository any
-	// The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred)
 	DefinitionUri any
-	// The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred)
 	Description any
-	// Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred)
 	Engine any
-	// Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred)
 	Main any
-	// Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred)
 	ParameterTemplate any
 	// Path to the primary workflow parameter template JSON file inside the repository
 	ParameterTemplatePath any
-	// Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred)
 	StorageCapacity any
-	// Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred)
 	StorageType any
 	// A map of resource tags
 	Tags any
-	// The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
 	VersionName any
-	// Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred)
 	WorkflowBucketOwnerId any
-	// The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred)
 	WorkflowId any
 	// The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
 	ReadmeMarkdown any
@@ -125,46 +101,28 @@ type WorkflowVersionConfig struct {
 }
 
 type WorkflowVersionAttrs struct {
-	// Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred)
 	Accelerators any
-	// The Amazon Resource Name (ARN) that uniquely identifies this Omics workflow version. (AI-inferred)
 	Arn any
-	// Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred)
 	ContainerRegistryMap any
-	// For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred)
 	ContainerRegistryMapUri any
-	// The timestamp (string in ISO 8601 format) when this workflow version was created, as returned by AWS HealthOmics. (AI-inferred)
 	CreationTime any
-	// Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred)
 	DefinitionRepository any
-	// The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred)
 	DefinitionUri any
-	// The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred)
 	Description any
-	// Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred)
 	Engine any
-	// Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred)
 	Main any
-	// Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred)
 	ParameterTemplate any
 	// Path to the primary workflow parameter template JSON file inside the repository
 	ParameterTemplatePath any
-	// The current lifecycle status of the workflow version (e.g., CREATING, ACTIVE, UPDATING, DELETING, or FAILED), as determined by AWS HealthOmics. (AI-inferred)
 	Status any
-	// Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred)
 	StorageCapacity any
-	// Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred)
 	StorageType any
 	// A map of resource tags
 	Tags any
-	// The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred)
 	Type any
 	Uuid any
-	// The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred)
 	VersionName any
-	// Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred)
 	WorkflowBucketOwnerId any
-	// The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred)
 	WorkflowId any
 	// The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
 	ReadmeMarkdown any

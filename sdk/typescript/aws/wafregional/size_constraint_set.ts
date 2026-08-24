@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SizeConstraintSet_SizeConstraints_FieldToMatch {
-  /** The name of the HTTP header to match when the field_to_match type is HEADER; it is ignored for all other types. (AI-inferred) */
   data?: string | Computed<string>;
-  /** Determines which part of the web request (e.g., URI, query string, header, method, or body) the size constraint applies to, as specified by the WAF FieldToMatch type. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SizeConstraintSet_SizeConstraints {
-  /** Specifies the comparison operator (e.g., EQ, NE, LT, LE, GT, GE) used to compare the size of the request part against the configured threshold for this size constraint. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
-  /** Specifies the part of a web request that the size constraint inspects, such as a header, query string, body, or URI. (AI-inferred) */
   fieldToMatch?: SizeConstraintSet_SizeConstraints_FieldToMatch | Computed<SizeConstraintSet_SizeConstraints_FieldToMatch>;
-  /** Specifies the size (in bytes) of the web request component (such as a query string, header, or body) that AWS WAF Regional inspects, which is compared against the defined comparison operator for this size constraint. (AI-inferred) */
   size?: number | Computed<number>;
-  /** Specifies the text transformation to apply to the web request before evaluating the size constraint, such as NONE, CMD_LINE, HTML_ENTITY_DECODE, LOWERCASE, or URL_DECODE. (AI-inferred) */
   textTransformation?: string | Computed<string>;
 }
 
@@ -36,18 +30,13 @@ const SizeConstraintSet_SizeConstraintsFields: FieldMap = {
 };
 
 export interface SizeConstraintSetConfig {
-  /** A friendly name used to identify the size constraint set in AWS WAF Regional, which must be unique within the account. (AI-inferred) */
   name: string | Computed<string>;
-  /** Defines the size constraints that the set enforces, where each constraint specifies a part of the request (such as a header or body), a comparison operator, a size in bytes, and an optional text transformation. (AI-inferred) */
   sizeConstraints?: SizeConstraintSet_SizeConstraints[] | Computed<SizeConstraintSet_SizeConstraints[]>;
 }
 
 export interface SizeConstraintSetAttrs {
-  /** The unique AWS-assigned identifier for the WAF Regional Size Constraint Set, used to reference and manage the resource in Terraform. (AI-inferred) */
   id: string;
-  /** A friendly name used to identify the size constraint set in AWS WAF Regional, which must be unique within the account. (AI-inferred) */
   name: string;
-  /** Defines the size constraints that the set enforces, where each constraint specifies a part of the request (such as a header or body), a comparison operator, a size in bytes, and an optional text transformation. (AI-inferred) */
   sizeConstraints: SizeConstraintSet_SizeConstraints[];
 }
 

@@ -6,15 +6,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Url_Cors struct {
 	// Specifies whether credentials are included in the CORS request.
 	AllowCredentials any
-	// Specifies the list of HTTP headers that are allowed in cross-origin requests to the Lambda function URL when CORS is enabled. (AI-inferred)
 	AllowHeaders any
-	// Specifies the list of HTTP methods (e.g., GET, POST) that are allowed for cross-origin requests to the Lambda function URL. (AI-inferred)
 	AllowMethods any
-	// Specifies the list of origins that are allowed to make cross-origin requests to the Lambda function URL. (AI-inferred)
 	AllowOrigins any
-	// Specifies the list of response headers that browsers and clients are allowed to access from the cross-origin response in the CORS configuration of an AWS Lambda function URL. (AI-inferred)
 	ExposeHeaders any
-	// The maximum time in seconds that the browser caches the preflight response for CORS requests to the Lambda function URL. (AI-inferred)
 	MaxAge any
 }
 
@@ -30,7 +25,6 @@ var Url_CorsFields = ubx.FieldMap{
 type UrlConfig struct {
 	// Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL.
 	AuthType any
-	// Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred)
 	Cors any
 	// The invocation mode for the function's URL. Set to BUFFERED if you want to buffer responses before returning them to the client. Set to RESPONSE_STREAM if you want to stream responses, allowing faster time to first byte and larger response payload sizes. If not set, defaults to BUFFERED.
 	InvokeMode any
@@ -43,7 +37,6 @@ type UrlConfig struct {
 type UrlAttrs struct {
 	// Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL.
 	AuthType any
-	// Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred)
 	Cors any
 	// The full Amazon Resource Name (ARN) of the function associated with the Function URL.
 	FunctionArn any

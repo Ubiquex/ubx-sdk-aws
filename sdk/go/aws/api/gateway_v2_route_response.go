@@ -10,7 +10,6 @@ type GatewayV2RouteResponseConfig struct {
 	ModelSelectionExpression any
 	// The response models for the route response.
 	ResponseModels any
-	// A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred)
 	ResponseParameters any
 	// The route ID.
 	RouteId any
@@ -25,11 +24,9 @@ type GatewayV2RouteResponseAttrs struct {
 	ModelSelectionExpression any
 	// The response models for the route response.
 	ResponseModels any
-	// A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred)
 	ResponseParameters any
 	// The route ID.
 	RouteId any
-	// The unique identifier that AWS API Gateway assigns to the route response upon creation, returned as a read-only value for referencing the route response in subsequent API operations. (AI-inferred)
 	RouteResponseId any
 	// The route response key.
 	RouteResponseKey any

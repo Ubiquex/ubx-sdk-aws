@@ -4,9 +4,7 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerTransitGatewayRouteTableAttachment_ProposedNetworkFunctionGroupChange_Tags struct {
-	// Specifies the key (name) of a tag to apply to the proposed network function group change for the transit gateway route table attachment. (AI-inferred)
 	Key any
-	// The value of a tag defined in the proposed network function group change for the AWS Network Manager transit gateway route table attachment. (AI-inferred)
 	Value any
 }
 

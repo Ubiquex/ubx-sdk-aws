@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpendingLimit_Tags struct {
 	Key any
-	// The value part of a tag key-value pair attached to the AWS::Braket::SpendingLimit resource, used to categorize and manage the spending limit with arbitrary metadata. (AI-inferred)
 	Value any
 }
 

@@ -8,33 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Apikey_Restrictions_AllowAndroidApps:
-    # The SHA-1 certificate fingerprint of an Android app that is allowed to use this AWS Location API key, as part of the restriction rules for Android applications. (AI-inferred)
     certificate_fingerprint: Any = None
-    # The Android application package name (e.g., com.example.myapp) that is allowed to use the API key when this restriction applies. (AI-inferred)
     package: Any = None
 
 @dataclasses.dataclass
 class Apikey_Restrictions_AllowAppleApps:
-    # The bundle identifier (bundle ID) of an Apple iOS app, such as com.example.myapp, that is explicitly allowed to use the API key when the allow_apple_apps restriction is applied. (AI-inferred)
     bundle_id: Any = None
 
 @dataclasses.dataclass
 class Apikey_Restrictions:
-    # Specifies the list of action strings (such as geo:GetMap* or geo:SearchPlaceIndexForText) that the API key is permitted to invoke, defining the allowed Amazon Location Service operations for the API key. (AI-inferred)
     allow_actions: Any = None
-    # List of Android application package names (application IDs) that are allowed to use the API key, defining the set of Android apps permitted to call AWS Location services with this key. (AI-inferred)
     allow_android_apps: Any = None
-    # This restriction specifies the list of Apple app bundle identifiers (for example, com.example.app) that are allowed to use the AWS Location API key when making requests. (AI-inferred)
     allow_apple_apps: Any = None
-    # List of allowed HTTP referer strings that can use this API key, restricting requests based on the originating website. (AI-inferred)
     allow_referers: Any = None
-    # Specifies the list of AWS Location Service resource ARNs (or wildcard patterns) that this API key is allowed to access. (AI-inferred)
     allow_resources: Any = None
 
 @dataclasses.dataclass
 class Apikey_Tags:
     key: Any = None
-    # The value of a tag applied to the AWS Location Service API key, used to categorize, filter, and control access to the key via IAM policies and cost allocation. (AI-inferred)
     value: Any = None
 
 _Apikey_Restrictions_AllowAndroidAppsFields = {
@@ -69,44 +60,30 @@ _Apikey_TagsFields = {
 
 @dataclasses.dataclass
 class ApikeyConfig:
-    # An optional user-provided description that annotates or identifies the API key in AWS Location Service. (AI-inferred)
     description: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     expire_time: Any = None
-    # Controls whether the API key can be deleted even when it is still referenced by AWS Location Service resources such as trackers or geofences. (AI-inferred)
     force_delete: Any = None
-    # When true, forces the update of the API key so that you can modify its attributes (such as description) without providing the existing restrictions in the update request. (AI-inferred)
     force_update: Any = None
-    # The name of the API key, which is used to identify and refer to the key in AWS Location Service resources and operations. (AI-inferred)
     key_name: Any = None
-    # Controls whether the Amazon Location API key is exempt from expiration, where true disables expiration so the key never expires, and false (or omitted) allows the key to expire according to its expiration time. (AI-inferred)
     no_expiry: Any = None
-    # Defines the access control rules for the API key, specifying which actions and resources are allowed or denied via the AllowActions, AllowResources, DenyActions, and DenyResources properties. (AI-inferred)
     restrictions: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class ApikeyAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Location Service API key. (AI-inferred)
     arn: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     create_time: Any = None
-    # An optional user-provided description that annotates or identifies the API key in AWS Location Service. (AI-inferred)
     description: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     expire_time: Any = None
-    # Controls whether the API key can be deleted even when it is still referenced by AWS Location Service resources such as trackers or geofences. (AI-inferred)
     force_delete: Any = None
-    # When true, forces the update of the API key so that you can modify its attributes (such as description) without providing the existing restrictions in the update request. (AI-inferred)
     force_update: Any = None
-    # The Amazon Resource Name (ARN) of the API key, which uniquely identifies it across AWS. (AI-inferred)
     key_arn: Any = None
-    # The name of the API key, which is used to identify and refer to the key in AWS Location Service resources and operations. (AI-inferred)
     key_name: Any = None
-    # Controls whether the Amazon Location API key is exempt from expiration, where true disables expiration so the key never expires, and false (or omitted) allows the key to expire according to its expiration time. (AI-inferred)
     no_expiry: Any = None
-    # Defines the access control rules for the API key, specifying which actions and resources are allowed or denied via the AllowActions, AllowResources, DenyActions, and DenyResources properties. (AI-inferred)
     restrictions: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

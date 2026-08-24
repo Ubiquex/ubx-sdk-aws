@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbsecurityGroup_DbsecurityGroupIngress:
-    # The CIDR-format IPv4 address range (e.g., 10.0.0.0/24) authorized by this ingress rule to access the associated RDS DB security group. (AI-inferred)
     cidrip: Any = None
-    # Specifies the ID of the EC2 security group whose instances are allowed to access the DB instances associated with this DB security group. (AI-inferred)
     ec2_security_group_id: Any = None
-    # The name of the EC2 security group that is allowed to access the RDS database, used in an ingress rule for the DB security group. (AI-inferred)
     ec2_security_group_name: Any = None
-    # Specifies the AWS account ID of the owner of the EC2 security group referenced in the ingress rule, which is required when that security group belongs to a different AWS account. (AI-inferred)
     ec2_security_group_owner_id: Any = None
 
 @dataclasses.dataclass
@@ -36,26 +32,17 @@ _DbsecurityGroup_TagsFields = {
 
 @dataclasses.dataclass
 class DbsecurityGroupConfig:
-    # Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred)
     dbsecurity_group_ingress: Any = None
-    # Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred)
     ec2_vpc_id: Any = None
-    # A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred)
     group_description: Any = None
-    # A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DbsecurityGroupAttrs:
-    # Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred)
     dbsecurity_group_ingress: Any = None
-    # Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred)
     ec2_vpc_id: Any = None
-    # A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred)
     group_description: Any = None
-    # The unique identifier for the DB security group, which is the security group name. (AI-inferred)
     id: Any = None
-    # A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 DbsecurityGroup = ubx.ResourceBinding(

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Eip_Tags struct {
 	Key any
-	// The value portion of a key-value tag attached to the Elastic IP address. (AI-inferred)
 	Value any
 }
 
@@ -36,7 +35,6 @@ type EipConfig struct {
 type EipAttrs struct {
 	// An Elastic IP address or a carrier IP address in a Wavelength Zone.
 	Address any
-	// The unique identifier assigned by AWS to this Elastic IP address when it was allocated for use in a VPC. (AI-inferred)
 	AllocationId any
 	// The network (``vpc``). If you define an Elastic IP address and associate it with a VPC that is defined in the same template, you must declare a dependency on the VPC-gateway attachment by using the [DependsOn Attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html) on this resource.
 	Domain any
@@ -46,7 +44,6 @@ type EipAttrs struct {
 	IpamPoolId any
 	// A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between network border groups. Use [DescribeAvailabilityZones](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html) to view the network border groups.
 	NetworkBorderGroup any
-	// The public IPv4 address that AWS allocates to the Elastic IP (EIP) resource, which you can associate with an EC2 instance or network interface. (AI-inferred)
 	PublicIp any
 	// The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool. Updates to the ``PublicIpv4Pool`` property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
 	PublicIpv4Pool any

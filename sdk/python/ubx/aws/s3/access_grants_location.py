@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessGrantsLocation_Tags:
-    # The key of a tag attached to the S3 Access Grants location, used to identify and categorize the tag within the resource's tag set. (AI-inferred)
     key: Any = None
-    # This field stores the value part of a tag key-value pair attached to the S3 Access Grants Location, which AWS uses to let you organize, identify, and manage the resource through custom metadata such as cost allocation or purpose labels. (AI-inferred)
     value: Any = None
 
 _AccessGrantsLocation_TagsFields = {
@@ -24,7 +22,6 @@ class AccessGrantsLocationConfig:
     iam_role_arn: Any = None
     # Descriptor for where the location actually points
     location_scope: Any = None
-    # Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -37,7 +34,6 @@ class AccessGrantsLocationAttrs:
     iam_role_arn: Any = None
     # Descriptor for where the location actually points
     location_scope: Any = None
-    # Specifies the list of key-value tags to attach to the S3 Access Grants Location, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 AccessGrantsLocation = ubx.ResourceBinding(

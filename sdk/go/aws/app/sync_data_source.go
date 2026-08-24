@@ -15,7 +15,6 @@ type SyncDataSource_DynamoDbconfig_DeltaSyncConfig struct {
 type SyncDataSource_DynamoDbconfig struct {
 	// The AWS Region.
 	AwsRegion any
-	// Configures delta synchronization for the DynamoDB-backed AppSync data source, defining the delta sync table and TTL settings that allow the API to push incremental changes (including deletes) to connected clients. (AI-inferred)
 	DeltaSyncConfig any
 	// The table name.
 	TableName any
@@ -47,12 +46,10 @@ type SyncDataSource_HttpConfig_AuthorizationConfig_AwsIamConfig struct {
 type SyncDataSource_HttpConfig_AuthorizationConfig struct {
 	// The authorization type that the HTTP endpoint requires.
 	AuthorizationType any
-	// Specifies the IAM signing region and service name for signing HTTP requests to the data source endpoint when the authorization type is AWS_IAM. (AI-inferred)
 	AwsIamConfig any
 }
 
 type SyncDataSource_HttpConfig struct {
-	// Specifies the authorization type and, when using AWS_IAM, the AWS IAM signing configuration (signing region and service name) for requests to the HTTP endpoint. (AI-inferred)
 	AuthorizationConfig any
 	// The endpoint.
 	Endpoint any
@@ -77,7 +74,6 @@ type SyncDataSource_RelationalDatabaseConfig_RdsHttpEndpointConfig struct {
 }
 
 type SyncDataSource_RelationalDatabaseConfig struct {
-	// The HTTP endpoint configuration for the Amazon RDS relational database used by the AppSync data source, specifying the Aurora Serverless DB cluster, AWS Secrets Manager secret ARN, database name, and region to connect to. (AI-inferred)
 	RdsHttpEndpointConfig any
 	// The type of relational data source.
 	RelationalDatabaseSourceType any
@@ -159,23 +155,15 @@ type SyncDataSourceConfig struct {
 	ApiId any
 	// The description of the data source.
 	Description any
-	// Provides the DynamoDB-specific configuration for the AppSync data source, including the target table name and AWS region (and optionally the read and write capacity settings used by the data source). (AI-inferred)
 	DynamoDbconfig any
-	// Specifies the endpoint and AWS region of an Amazon OpenSearch Service (formerly Elasticsearch) domain that the AppSync data source connects to when the data source type is AMAZON_ELASTICSEARCH. (AI-inferred)
 	ElasticsearchConfig any
-	// Configures an Amazon EventBridge data source by specifying the event bus ARN that the AppSync data source will use to interact with EventBridge events. (AI-inferred)
 	EventBridgeConfig any
-	// Configures the HTTP endpoint and optional authorization settings for an AWS AppSync HTTP data source, including the endpoint URL and any IAM or API key authorization details. (AI-inferred)
 	HttpConfig any
-	// The configuration for an AWS Lambda data source, including the ARN of the Lambda function that AppSync invokes to read and write data. (AI-inferred)
 	LambdaConfig any
-	// Specifies whether CloudWatch metrics are enabled for this AppSync data source, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	MetricsConfig any
 	// Friendly name for you to identify your AppSync data source after creation.
 	Name any
-	// Defines the connection settings (endpoint and region) for using an Amazon OpenSearch Service domain as the AppSync data source. (AI-inferred)
 	OpenSearchServiceConfig any
-	// Specifies the configuration for connecting the AppSync data source to an Amazon RDS or Aurora relational database, defining either the RDS HTTP endpoint (Data API) settings or a Lambda function that accesses the database. (AI-inferred)
 	RelationalDatabaseConfig any
 	// The AWS Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.
 	ServiceRoleArn any
@@ -190,23 +178,15 @@ type SyncDataSourceAttrs struct {
 	DataSourceArn any
 	// The description of the data source.
 	Description any
-	// Provides the DynamoDB-specific configuration for the AppSync data source, including the target table name and AWS region (and optionally the read and write capacity settings used by the data source). (AI-inferred)
 	DynamoDbconfig any
-	// Specifies the endpoint and AWS region of an Amazon OpenSearch Service (formerly Elasticsearch) domain that the AppSync data source connects to when the data source type is AMAZON_ELASTICSEARCH. (AI-inferred)
 	ElasticsearchConfig any
-	// Configures an Amazon EventBridge data source by specifying the event bus ARN that the AppSync data source will use to interact with EventBridge events. (AI-inferred)
 	EventBridgeConfig any
-	// Configures the HTTP endpoint and optional authorization settings for an AWS AppSync HTTP data source, including the endpoint URL and any IAM or API key authorization details. (AI-inferred)
 	HttpConfig any
-	// The configuration for an AWS Lambda data source, including the ARN of the Lambda function that AppSync invokes to read and write data. (AI-inferred)
 	LambdaConfig any
-	// Specifies whether CloudWatch metrics are enabled for this AppSync data source, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	MetricsConfig any
 	// Friendly name for you to identify your AppSync data source after creation.
 	Name any
-	// Defines the connection settings (endpoint and region) for using an Amazon OpenSearch Service domain as the AppSync data source. (AI-inferred)
 	OpenSearchServiceConfig any
-	// Specifies the configuration for connecting the AppSync data source to an Amazon RDS or Aurora relational database, defining either the RDS HTTP endpoint (Data API) settings or a Lambda function that accesses the database. (AI-inferred)
 	RelationalDatabaseConfig any
 	// The AWS Identity and Access Management service role ARN for the data source. The system assumes this role when accessing the data source.
 	ServiceRoleArn any

@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch {
-  /** The name of the HTTP header to inspect when the field_to_match type is HEADER, as used in the SQL injection match tuple. (AI-inferred) */
   data?: string | Computed<string>;
-  /** Specifies the part of the web request to inspect for SQL injection patterns, such as HEADER, QUERY_STRING, BODY, or URI. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SqlInjectionMatchSet_SqlInjectionMatchTuples {
-  /** Identifies the specific portion of the web request (e.g., query string, header, body, or method) that the SQL injection match tuple will inspect for malicious patterns. (AI-inferred) */
   fieldToMatch?: SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch | Computed<SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch>;
-  /** Specifies how the web request component (e.g., the query string or header) is transformed before WAF inspects it for SQL injection patterns, such as 'NONE', 'URL_DECODE', or 'BASE64_DECODE'. (AI-inferred) */
   textTransformation?: string | Computed<string>;
 }
 
@@ -30,18 +26,13 @@ const SqlInjectionMatchSet_SqlInjectionMatchTuplesFields: FieldMap = {
 };
 
 export interface SqlInjectionMatchSetConfig {
-  /** The required friendly name of the SQL injection match set, used to identify it within AWS WAF Regional. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies a list of SQL injection match tuples, each containing a field to match (such as URI or query string) and a text transformation, that together determine which requests are flagged for SQL injection in this AWS WAF Regional match set. (AI-inferred) */
   sqlInjectionMatchTuples?: SqlInjectionMatchSet_SqlInjectionMatchTuples[] | Computed<SqlInjectionMatchSet_SqlInjectionMatchTuples[]>;
 }
 
 export interface SqlInjectionMatchSetAttrs {
-  /** The unique AWS-assigned identifier for this SQL injection match set. (AI-inferred) */
   id: string;
-  /** The required friendly name of the SQL injection match set, used to identify it within AWS WAF Regional. (AI-inferred) */
   name: string;
-  /** Specifies a list of SQL injection match tuples, each containing a field to match (such as URI or query string) and a text transformation, that together determine which requests are flagged for SQL injection in this AWS WAF Regional match set. (AI-inferred) */
   sqlInjectionMatchTuples: SqlInjectionMatchSet_SqlInjectionMatchTuples[];
 }
 

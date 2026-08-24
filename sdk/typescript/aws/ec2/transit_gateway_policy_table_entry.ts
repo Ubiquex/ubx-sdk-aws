@@ -23,7 +23,6 @@ const TransitGatewayPolicyTableEntry_PolicyRuleFields: FieldMap = {
 };
 
 export interface TransitGatewayPolicyTableEntryConfig {
-  /** The policy rule that defines the source and destination CIDR blocks, protocol, port ranges, and action (allow or drop) for the transit gateway policy table entry. (AI-inferred) */
   policyRule: TransitGatewayPolicyTableEntry_PolicyRule | Computed<TransitGatewayPolicyTableEntry_PolicyRule>;
   /** The rule number for the policy table entry. */
   policyRuleNumber: string | Computed<string>;
@@ -34,7 +33,6 @@ export interface TransitGatewayPolicyTableEntryConfig {
 }
 
 export interface TransitGatewayPolicyTableEntryAttrs {
-  /** The policy rule that defines the source and destination CIDR blocks, protocol, port ranges, and action (allow or drop) for the transit gateway policy table entry. (AI-inferred) */
   policyRule: TransitGatewayPolicyTableEntry_PolicyRule;
   /** The rule number for the policy table entry. */
   policyRuleNumber: string;

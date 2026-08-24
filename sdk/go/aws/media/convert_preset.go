@@ -12,7 +12,6 @@ type ConvertPresetConfig struct {
 	Name any
 	// Specify, in JSON format, the transcoding job settings for this output preset. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic.
 	SettingsJson any
-	// Defines the key-value tags applied to the MediaConvert preset, which can be used for categorizing, organizing, and tracking costs associated with the resource. (AI-inferred)
 	Tags any
 }
 
@@ -27,7 +26,6 @@ type ConvertPresetAttrs struct {
 	Name any
 	// Specify, in JSON format, the transcoding job settings for this output preset. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic.
 	SettingsJson any
-	// Defines the key-value tags applied to the MediaConvert preset, which can be used for categorizing, organizing, and tracking costs associated with the resource. (AI-inferred)
 	Tags any
 }
 

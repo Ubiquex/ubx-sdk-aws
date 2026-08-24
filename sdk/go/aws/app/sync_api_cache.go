@@ -4,37 +4,23 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncApiCacheConfig struct {
-	// Determines the caching behavior for the AppSync API cache, either caching entire requests (FULL_REQUEST_CACHING) or only per-resolver results (PER_RESOLVER_CACHING). (AI-inferred)
 	ApiCachingBehavior any
-	// The unique ID of the AppSync API to which this cache configuration applies. (AI-inferred)
 	ApiId any
-	// Indicates whether encryption at rest is enabled for the AppSync API cache, protecting cached data in the underlying ElastiCache for Redis cluster. (AI-inferred)
 	AtRestEncryptionEnabled any
-	// Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
 	HealthMetricsConfig any
-	// Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
 	TransitEncryptionEnabled any
-	// Specifies the time-to-live (TTL) in seconds for cached responses, controlling how long items remain in the API cache before being purged. (AI-inferred)
 	Ttl any
-	// The cache instance type for the AppSync API cache (e.g., T2_SMALL, T2_MEDIUM, R4_LARGE), which determines the cache size and performance characteristics. (AI-inferred)
 	Type any
 }
 
 type SyncApiCacheAttrs struct {
-	// Determines the caching behavior for the AppSync API cache, either caching entire requests (FULL_REQUEST_CACHING) or only per-resolver results (PER_RESOLVER_CACHING). (AI-inferred)
 	ApiCachingBehavior any
-	// The unique ID of the AppSync API to which this cache configuration applies. (AI-inferred)
 	ApiId any
-	// Indicates whether encryption at rest is enabled for the AppSync API cache, protecting cached data in the underlying ElastiCache for Redis cluster. (AI-inferred)
 	AtRestEncryptionEnabled any
-	// Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
 	HealthMetricsConfig any
 	Id any
-	// Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
 	TransitEncryptionEnabled any
-	// Specifies the time-to-live (TTL) in seconds for cached responses, controlling how long items remain in the API cache before being purged. (AI-inferred)
 	Ttl any
-	// The cache instance type for the AppSync API cache (e.g., T2_SMALL, T2_MEDIUM, R4_LARGE), which determines the cache size and performance characteristics. (AI-inferred)
 	Type any
 }
 

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomVerificationEmailTemplate_Tags:
-    # The key part of a tag attached to the Amazon SES custom verification email template, used to categorize or identify the template. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BatchScramSecretConfig:
-    # The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred)
     cluster_arn: Any = None
-    # The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred)
     secret_arn_list: Any = None
 
 @dataclasses.dataclass
 class BatchScramSecretAttrs:
-    # The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred)
     cluster_arn: Any = None
-    # The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred)
     secret_arn_list: Any = None
 
 BatchScramSecret = ubx.ResourceBinding(

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OptOutList_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair assigned to the AWS SMS Voice opt-out list, used for categorizing or identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

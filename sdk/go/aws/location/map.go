@@ -4,18 +4,13 @@ package location
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Map_Configuration struct {
-	// Specifies the list of custom layers to include in the map configuration, allowing additional data layers to be displayed on top of the base map style. (AI-inferred)
 	CustomLayers any
-	// Sets the ISO 3166-1 alpha-3 country code that determines the political view of the map, controlling which country's rendering of borders, labels, and contested territories is used. (AI-inferred)
 	PoliticalView any
-	// Specifies the map style (e.g., 'VectorEsriStreets' or 'VectorHereExplore') that determines the visual appearance and data provider for the AWS Location map resource. (AI-inferred)
 	Style any
 }
 
 type Map_Tags struct {
-	// The key of a tag attached to the AWS Location Service map, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to an AWS Location Service map, used for cost allocation and resource identification. (AI-inferred)
 	Value any
 }
 
@@ -31,30 +26,22 @@ var Map_TagsFields = ubx.FieldMap{
 	}
 
 type MapConfig struct {
-	// Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
 	Configuration any
 	Description any
-	// A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
 	MapName any
-	// Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type MapAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the AWS Location Service map resource. (AI-inferred)
 	Arn any
-	// Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred)
 	Configuration any
 	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
 	CreateTime any
 	Description any
-	// The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred)
 	MapArn any
-	// A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred)
 	MapName any
-	// Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

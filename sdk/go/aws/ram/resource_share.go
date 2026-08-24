@@ -11,9 +11,7 @@ type ResourceShare_ResourceShareConfiguration struct {
 }
 
 type ResourceShare_Tags struct {
-	// The key of a user-defined tag attached to the AWS RAM resource share, used for cost allocation and resource categorization. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS RAM resource share, used for categorizing and managing the resource share. (AI-inferred)
 	Value any
 }
 
@@ -49,7 +47,6 @@ type ResourceShareConfig struct {
 type ResourceShareAttrs struct {
 	// Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
 	AllowExternalPrincipals any
-	// The Amazon Resource Name (ARN) that uniquely identifies the resource share. (AI-inferred)
 	Arn any
 	// The date and time when the resource share was created.
 	CreationTime any

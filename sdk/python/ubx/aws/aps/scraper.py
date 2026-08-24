@@ -52,14 +52,12 @@ class Scraper_ScraperLoggingConfiguration_ScraperComponents_Config:
 @dataclasses.dataclass
 class Scraper_ScraperLoggingConfiguration_ScraperComponents:
     config: Any = None
-    # The type of scraper component (APISERVER, SCRAPER, or TARGET) for which logging is enabled in the scraper logging configuration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Scraper_ScraperLoggingConfiguration:
     # Destination for scraper logging
     logging_destination: Any = None
-    # Specifies the list of scraper components (such as target allocation or scrape loop) for which logs are enabled and forwarded to the configured log destination for the Amazon Managed Prometheus scraper. (AI-inferred)
     scraper_components: Any = None
 
 @dataclasses.dataclass
@@ -88,7 +86,6 @@ class Scraper_Source:
 @dataclasses.dataclass
 class Scraper_Tags:
     key: Any = None
-    # The value portion of a key-value tag that can be assigned to an Amazon Managed Service for Prometheus scraper for organizational and identification purposes. (AI-inferred)
     value: Any = None
 
 _Scraper_Destination_AmpConfigurationFields = {

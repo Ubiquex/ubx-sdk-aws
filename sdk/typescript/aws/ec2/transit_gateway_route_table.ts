@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayRouteTable_Tags {
-  /** The key of a tag to attach to the transit gateway route table, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag applied to this EC2 Transit Gateway Route Table, used for identifying or categorizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

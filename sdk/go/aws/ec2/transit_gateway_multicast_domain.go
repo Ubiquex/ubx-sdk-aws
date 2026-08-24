@@ -14,7 +14,6 @@ type TransitGatewayMulticastDomain_Options struct {
 
 type TransitGatewayMulticastDomain_Tags struct {
 	Key any
-	// The value of a tag key-value pair attached to the transit gateway multicast domain, used to assign arbitrary metadata for identification and management. (AI-inferred)
 	Value any
 }
 

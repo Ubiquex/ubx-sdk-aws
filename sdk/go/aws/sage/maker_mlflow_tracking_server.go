@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerMlflowTrackingServer_Tags struct {
-	// The key part of a key-value tag attached to the SageMaker MLflow Tracking Server, used to identify and organize the resource within AWS. (AI-inferred)
 	Key any
-	// The arbitrary value for a tag attached to the SageMaker MLflow Tracking Server. (AI-inferred)
 	Value any
 }
 

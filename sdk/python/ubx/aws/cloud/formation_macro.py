@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationMacroConfig:
-    # The description field provides a human-readable summary of the macro's purpose or transformation logic, aiding users in understanding what the macro does. (AI-inferred)
     description: Any = None
-    # Specifies the name of the AWS Lambda function that AWS CloudFormation invokes to process template snippets when the macro is executed. (AI-inferred)
     function_name: Any = None
-    # The Amazon CloudWatch Logs log group where the macro function's execution logs are delivered. (AI-inferred)
     log_group_name: Any = None
-    # The ARN of the IAM role that CloudFormation assumes to send logs about the macro execution to the CloudWatch log group. (AI-inferred)
     log_role_arn: Any = None
-    # Defines the name of the macro, used to reference it in CloudFormation templates and required to be unique within the account and region. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class FormationMacroAttrs:
-    # The description field provides a human-readable summary of the macro's purpose or transformation logic, aiding users in understanding what the macro does. (AI-inferred)
     description: Any = None
-    # Specifies the name of the AWS Lambda function that AWS CloudFormation invokes to process template snippets when the macro is executed. (AI-inferred)
     function_name: Any = None
-    # The macro's name, which serves as its unique identifier within CloudFormation. (AI-inferred)
     id: Any = None
-    # The Amazon CloudWatch Logs log group where the macro function's execution logs are delivered. (AI-inferred)
     log_group_name: Any = None
-    # The ARN of the IAM role that CloudFormation assumes to send logs about the macro execution to the CloudWatch log group. (AI-inferred)
     log_role_arn: Any = None
-    # Defines the name of the macro, used to reference it in CloudFormation templates and required to be unique within the account and region. (AI-inferred)
     name: Any = None
 
 FormationMacro = ubx.ResourceBinding(

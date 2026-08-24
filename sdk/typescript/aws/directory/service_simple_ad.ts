@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceSimpleAd_Tags {
-  /** The key of a tag assigned to the Simple AD directory resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -39,9 +38,7 @@ export interface ServiceSimpleAdConfig {
   shortName?: string | Computed<string>;
   /** The size of the directory. */
   size: string | Computed<string>;
-  /** A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags?: ServiceSimpleAd_Tags[] | Computed<ServiceSimpleAd_Tags[]>;
-  /** Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred) */
   vpcSettings: ServiceSimpleAd_VpcSettings | Computed<ServiceSimpleAd_VpcSettings>;
 }
 
@@ -66,9 +63,7 @@ export interface ServiceSimpleAdAttrs {
   shortName: string;
   /** The size of the directory. */
   size: string;
-  /** A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags: ServiceSimpleAd_Tags[];
-  /** Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred) */
   vpcSettings: ServiceSimpleAd_VpcSettings;
 }
 

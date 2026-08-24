@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DatasetGroup_Tags:
     key: Any = None
-    # The value of a tag (key-value pair) attached to the Amazon Personalize dataset group. (AI-inferred)
     value: Any = None
 
 _DatasetGroup_TagsFields = {

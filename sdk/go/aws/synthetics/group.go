@@ -4,9 +4,7 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_Tags struct {
-	// The key part of a key-value tag, used to assign metadata to the canary group for identification and resource management. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Synthetics canary group, which is a user-defined string that helps manage and identify the group. (AI-inferred)
 	Value any
 }
 
@@ -18,9 +16,7 @@ var Group_TagsFields = ubx.FieldMap{
 type GroupConfig struct {
 	// Name of the group.
 	Name any
-	// Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
 	ResourceArns any
-	// Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
 	Tags any
 }
 
@@ -29,9 +25,7 @@ type GroupAttrs struct {
 	Id any
 	// Name of the group.
 	Name any
-	// Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
 	ResourceArns any
-	// Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
 	Tags any
 }
 

@@ -33,38 +33,26 @@ type ScheduledQuery_ScheduleConfiguration struct {
 }
 
 type ScheduledQuery_Tags struct {
-	// The tag key, which is the name of the tag assigned to the Timestream scheduled query. (AI-inferred)
 	Key any
-	// The value string associated with a tag key for the Timestream scheduled query, used for organizing and identifying the query resource. (AI-inferred)
 	Value any
 }
 
 type ScheduledQuery_TargetConfiguration_TimestreamConfiguration_DimensionMappings struct {
-	// Specifies the data type (VARCHAR or BIGINT) of the dimension value in the dimension mapping for the Timestream target of the scheduled query. (AI-inferred)
 	DimensionValueType any
-	// Specifies the name of the dimension in the target Timestream table that the scheduled query result column maps to. (AI-inferred)
 	Name any
 }
 
 type ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings_MultiMeasureAttributeMappings struct {
-	// Specifies the data type (e.g., BIGINT, BOOLEAN, DOUBLE, VARCHAR, TIMESTAMP) of the multi-measure attribute's value when mapping query results to a Timestream multi-measure record. (AI-inferred)
 	MeasureValueType any
-	// Specifies the source column in the scheduled query result whose value is mapped to the corresponding multi-measure attribute in the Timestream target table. (AI-inferred)
 	SourceColumn any
-	// Specifies the target multi-measure attribute name in the Timestream table to which the source column is mapped for a scheduled query using mixed measure mappings. (AI-inferred)
 	TargetMultiMeasureAttributeName any
 }
 
 type ScheduledQuery_TargetConfiguration_TimestreamConfiguration_MixedMeasureMappings struct {
-	// The measure name to assign to this mapping in the target Timestream table when the scheduled query writes mixed measures. (AI-inferred)
 	MeasureName any
-	// Specifies the data type (e.g., DOUBLE, BIGINT, BOOLEAN, VARCHAR, TIMESTAMP) for a measure value in a mixed measure mapping in the target Timestream configuration of a scheduled query. (AI-inferred)
 	MeasureValueType any
-	// Defines the list of attribute mappings that specify which query result columns map to each attribute in a multi-measure record written to Timestream, including the source column and target multi-measure attribute name. (AI-inferred)
 	MultiMeasureAttributeMappings any
-	// The source column in the scheduled query result that is mapped to a specific measure when writing to the Timestream target table. (AI-inferred)
 	SourceColumn any
-	// Sets the name of the measure column in the scheduled query's target Timestream table that receives the mapped measure value, enabling the query to store mixed-measure results under a custom measure name. (AI-inferred)
 	TargetMeasureName any
 }
 

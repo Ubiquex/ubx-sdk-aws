@@ -11,9 +11,7 @@ type HubDelegatedAdminConfig struct {
 type HubDelegatedAdminAttrs struct {
 	// The AWS-account identifier of the account to designate as the Security Hub CSPM administrator account.
 	AdminAccountId any
-	// The AWS account identifier of the delegated Security Hub administrator. (AI-inferred)
 	DelegatedAdminIdentifier any
-	// The current delegation status of the Security Hub delegated administrator account, typically ENABLED or DISABLED. (AI-inferred)
 	Status any
 }
 

@@ -4,18 +4,13 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeAuthPolicyConfig struct {
-	// The JSON policy document that defines the authentication and authorization rules for the associated VPC Lattice service or service network, specifying allowed principals, actions, and conditions. (AI-inferred)
 	Policy any
-	// The resource identifier specifies the ID or ARN of the VPC Lattice service or service network that this auth policy is associated with. (AI-inferred)
 	ResourceIdentifier any
 }
 
 type LatticeAuthPolicyAttrs struct {
-	// The JSON policy document that defines the authentication and authorization rules for the associated VPC Lattice service or service network, specifying allowed principals, actions, and conditions. (AI-inferred)
 	Policy any
-	// The resource identifier specifies the ID or ARN of the VPC Lattice service or service network that this auth policy is associated with. (AI-inferred)
 	ResourceIdentifier any
-	// Returns the current state of the VPC Lattice auth policy, indicating whether the policy is active or inactive. (AI-inferred)
 	State any
 }
 

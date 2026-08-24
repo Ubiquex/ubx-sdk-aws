@@ -4,18 +4,13 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceDefinition_InitialVersion_Devices struct {
-	// The ARN of the AWS IoT certificate that identifies and authenticates the Greengrass device within the device definition version. (AI-inferred)
 	CertificateArn any
-	// The user-defined identifier that uniquely identifies each device within the Greengrass device definition version. (AI-inferred)
 	Id any
-	// Indicates whether the device's shadow is synchronized with AWS IoT for this device in the Greengrass device definition. (AI-inferred)
 	SyncShadow any
-	// The Amazon Resource Name (ARN) of the AWS IoT thing representing the Greengrass device to include in the initial version of this device definition. (AI-inferred)
 	ThingArn any
 }
 
 type DeviceDefinition_InitialVersion struct {
-	// A list of devices (each with a device ID, Thing ARN, Certificate ARN, and optional SyncShadow flag) that comprise the initial version of the AWS Greengrass device definition. (AI-inferred)
 	Devices any
 }
 
@@ -35,26 +30,17 @@ var DeviceDefinition_InitialVersionFields = ubx.FieldMap{
 	}
 
 type DeviceDefinitionConfig struct {
-	// Specifies the initial version of the device definition, containing a list of devices (each with an ID, certificate ARN, and optional sync shadow setting) that is created when the device definition is first created. (AI-inferred)
 	InitialVersion any
-	// Specifies a user-friendly name for the AWS IoT Greengrass device definition, required to identify the definition in the console and API. (AI-inferred)
 	Name any
-	// Tags are user-defined key-value pairs that can be attached to the AWS IoT Greengrass device definition resource for organizing, identifying, and managing it within AWS. (AI-inferred)
 	Tags any
 }
 
 type DeviceDefinitionAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Greengrass device definition, used to reference it in IAM policies and other AWS services. (AI-inferred)
 	Arn any
-	// The service-assigned unique identifier for this AWS IoT Greengrass device definition, used to reference the definition in other resources. (AI-inferred)
 	Id any
-	// Specifies the initial version of the device definition, containing a list of devices (each with an ID, certificate ARN, and optional sync shadow setting) that is created when the device definition is first created. (AI-inferred)
 	InitialVersion any
-	// The Amazon Resource Name (ARN) of the latest version of this AWS IoT Greengrass device definition. (AI-inferred)
 	LatestVersionArn any
-	// Specifies a user-friendly name for the AWS IoT Greengrass device definition, required to identify the definition in the console and API. (AI-inferred)
 	Name any
-	// Tags are user-defined key-value pairs that can be attached to the AWS IoT Greengrass device definition resource for organizing, identifying, and managing it within AWS. (AI-inferred)
 	Tags any
 }
 

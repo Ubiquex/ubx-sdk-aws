@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TtwinMakerEntity_Status_Error:
-    # The machine-readable error code returned in the entity's status when AWS IoT TwinMaker fails to create or update the entity, providing a programmatic identifier for the failure type. (AI-inferred)
     code: Any = None
-    # The error message from AWS IoT TwinMaker explaining why the entity is in the failed or error state. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class TtwinMakerEntity_Status:
-    # Contains the error code and message returned by AWS IoT TwinMaker when the entity is in an ERROR state, providing details about why an entity operation such as creation or update failed. (AI-inferred)
     error: Any = None
-    # The current lifecycle state of the IoT TwinMaker entity, such as CREATING, ACTIVE, UPDATING, DELETING, or ERROR, as reported by AWS IoT TwinMaker. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
@@ -47,7 +43,6 @@ class TtwinMakerEntityAttrs:
     components: Any = None
     # A map that sets information about a composite component.
     composite_components: Any = None
-    # The date and time when the IoT TwinMaker entity was created, in ISO 8601 format. (AI-inferred)
     creation_date_time: Any = None
     # The description of the entity.
     description: Any = None
@@ -59,11 +54,9 @@ class TtwinMakerEntityAttrs:
     has_child_entities: Any = None
     # The ID of the parent entity.
     parent_entity_id: Any = None
-    # The current status of the entity, including its state (e.g., CREATING, UPDATING, ACTIVE, DELETING, DELETED) and any error details if an operation failed. (AI-inferred)
     status: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The date and time when the entity was last updated, returned as a string in ISO 8601 format. (AI-inferred)
     update_date_time: Any = None
     # The ID of the workspace.
     workspace_id: Any = None

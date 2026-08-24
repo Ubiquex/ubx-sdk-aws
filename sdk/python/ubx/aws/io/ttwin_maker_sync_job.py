@@ -21,7 +21,6 @@ class TtwinMakerSyncJobConfig:
 class TtwinMakerSyncJobAttrs:
     # The ARN of the SyncJob.
     arn: Any = None
-    # The date and time at which the AWS IoT TwinMaker sync job was created, expressed in ISO 8601 format. (AI-inferred)
     creation_date_time: Any = None
     # The state of SyncJob.
     state: Any = None
@@ -31,7 +30,6 @@ class TtwinMakerSyncJobAttrs:
     sync_source: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The date and time when the sync job was last updated, in ISO 8601 format. (AI-inferred)
     update_date_time: Any = None
     # The ID of the workspace.
     workspace_id: Any = None

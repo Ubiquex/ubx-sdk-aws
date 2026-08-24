@@ -4,34 +4,21 @@ package events
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArchiveConfig struct {
-	// The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred)
 	ArchiveName any
-	// The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred)
 	Description any
-	// A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred)
 	EventPattern any
-	// Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred)
 	KmsKeyIdentifier any
-	// The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred)
 	RetentionDays any
-	// The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred)
 	SourceArn any
 }
 
 type ArchiveAttrs struct {
-	// The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred)
 	ArchiveName any
-	// The Amazon Resource Name (ARN) that uniquely identifies this EventBridge archive in AWS. (AI-inferred)
 	Arn any
-	// The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred)
 	Description any
-	// A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred)
 	EventPattern any
-	// Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred)
 	KmsKeyIdentifier any
-	// The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred)
 	RetentionDays any
-	// The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred)
 	SourceArn any
 }
 

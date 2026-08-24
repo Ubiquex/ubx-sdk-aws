@@ -4,16 +4,12 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SqlInjectionMatchSet_SqlInjectionMatchTuples_FieldToMatch struct {
-	// The name of the HTTP header to inspect when field_to_match's Type is HEADER; it is empty for other types such as METHOD, QUERY_STRING, BODY, or URI. (AI-inferred)
 	Data any
-	// Specifies the type of web request component to inspect, such as HEADER, QUERY_STRING, BODY, URI, or METHOD, for the SQL injection match condition. (AI-inferred)
 	Type any
 }
 
 type SqlInjectionMatchSet_SqlInjectionMatchTuples struct {
-	// Specifies the part of the web request (such as a header, body, query string, or URI) that AWS WAF Classic inspects for SQL injection patterns in this SQL injection match tuple. (AI-inferred)
 	FieldToMatch any
-	// Specifies how the text in the web request is transformed (for example, URL_DECODE or HTML_ENTITY_DECODE) before the SQL injection pattern is checked. (AI-inferred)
 	TextTransformation any
 }
 
@@ -32,18 +28,13 @@ var SqlInjectionMatchSet_SqlInjectionMatchTuplesFields = ubx.FieldMap{
 	}
 
 type SqlInjectionMatchSetConfig struct {
-	// Specifies a unique, immutable name for the WAF SQL injection match set, used as its friendly identifier in the AWS WAF console and API. (AI-inferred)
 	Name any
-	// A list of SQL injection match tuples, each defining a FieldToMatch and TextTransformation that CloudFormation uses to identify SQL injection patterns for the WAF match set. (AI-inferred)
 	SqlInjectionMatchTuples any
 }
 
 type SqlInjectionMatchSetAttrs struct {
-	// The unique identifier assigned by AWS WAF to this SQL injection match set, used to reference the match set in other resources such as a WebACL. (AI-inferred)
 	Id any
-	// Specifies a unique, immutable name for the WAF SQL injection match set, used as its friendly identifier in the AWS WAF console and API. (AI-inferred)
 	Name any
-	// A list of SQL injection match tuples, each defining a FieldToMatch and TextTransformation that CloudFormation uses to identify SQL injection patterns for the WAF match set. (AI-inferred)
 	SqlInjectionMatchTuples any
 }
 

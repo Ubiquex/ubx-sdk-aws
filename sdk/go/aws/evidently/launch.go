@@ -13,58 +13,39 @@ type Launch_ExecutionStatus struct {
 }
 
 type Launch_Groups struct {
-	// A human-readable description of the launch group, specifying the purpose or context of the traffic segment in the Evidently launch. (AI-inferred)
 	Description any
-	// The name or ARN of the feature that this launch group uses to serve a variation to the assigned traffic. (AI-inferred)
 	Feature any
-	// The name of a group in an AWS Evidently launch, which identifies a feature variation and the percentage of traffic allocated to that group. (AI-inferred)
 	GroupName any
-	// The name of the variation that this launch group is allocated, determining which feature variant is served to users in this group. (AI-inferred)
 	Variation any
 }
 
 type Launch_MetricMonitors struct {
-	// For an AWS Evidently launch metric monitor, this specifies the event attribute name (e.g., `userId`) that identifies the entity the metric is measured for. (AI-inferred)
 	EntityIdKey any
-	// The CloudWatch Events event pattern, specified as a JSON string, that defines which application events are counted for this metric monitor in an Evidently launch, used to extract metric values. (AI-inferred)
 	EventPattern any
-	// The metric_name field is the human-readable name of a metric that the Evidently launch monitors, used by Evidently to identify the metric in console views and when reporting metric values. (AI-inferred)
 	MetricName any
-	// The human-readable label that describes the unit of measurement for the metric being monitored by this metric monitor (for example, 'requests' or 'errors'). (AI-inferred)
 	UnitLabel any
-	// The JSON path or key in the event payload that holds the numeric value used to evaluate the metric for the AWS Evidently launch's metric monitor. (AI-inferred)
 	ValueKey any
 }
 
 type Launch_ScheduledSplitsConfig_GroupWeights struct {
-	// The name of the feature variation (group) to which the corresponding weight is assigned in this scheduled traffic split for the AWS Evidently launch. (AI-inferred)
 	GroupName any
-	// Sets the proportion of traffic allocated to the corresponding variation group for a scheduled split in the Amazon CloudWatch Evidently launch. (AI-inferred)
 	SplitWeight any
 }
 
 type Launch_ScheduledSplitsConfig_SegmentOverrides struct {
-	// The order in which this segment override is evaluated relative to other segment overrides in the same scheduled split, with lower numbers evaluated first. (AI-inferred)
 	EvaluationOrder any
-	// Specifies the name or ARN of the Evidently segment to which the override applies, enabling different traffic allocation or variation choices for users matching that segment during the launch step. (AI-inferred)
 	Segment any
-	// Specifies the traffic percentage allocated to each feature variation for a given audience segment override in a scheduled split of the Evidently launch. (AI-inferred)
 	Weights any
 }
 
 type Launch_ScheduledSplitsConfig struct {
-	// The group_weights list assigns a traffic weight to each launch group (variation) for the scheduled split, determining what percentage of user traffic that variation receives during that time segment. (AI-inferred)
 	GroupWeights any
-	// Configures traffic-split overrides for specific audience segments during a scheduled split, letting you direct different proportions of a segment's users to the launch's variations. (AI-inferred)
 	SegmentOverrides any
-	// The UTC timestamp that marks the start of this step in a scheduled split launch, after which the specified group weights apply. (AI-inferred)
 	StartTime any
 }
 
 type Launch_Tags struct {
-	// Represents a tag key assigned to the Evidently launch, allowing you to categorize and manage this launch resource with custom metadata. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Evidently launch, used to organize and identify the launch resource. (AI-inferred)
 	Value any
 }
 
@@ -124,44 +105,27 @@ var Launch_TagsFields = ubx.FieldMap{
 	}
 
 type LaunchConfig struct {
-	// Provides an optional human-readable description of the launch to help identify its purpose. (AI-inferred)
 	Description any
-	// Configures the execution state of an Amazon CloudWatch Evidently launch by specifying a target status (such as RUNNING or CANCELLED) and an optional status reason, which is used when updating the launch resource. (AI-inferred)
 	ExecutionStatus any
-	// Specifies the launch groups that define how traffic is allocated to feature variations in this Evidently launch. (AI-inferred)
 	Groups any
-	// This list specifies the CloudWatch metrics that Evidently monitors to evaluate the launch's performance, where each monitor defines the metric name, entity ID key, value key, event pattern, and unit label used to measure the launch's success. (AI-inferred)
 	MetricMonitors any
-	// The name of the Evidently launch. (AI-inferred)
 	Name any
-	// The name or ARN of the Evidently project in which this launch is created. (AI-inferred)
 	Project any
-	// A string hashing salt that Evidently uses to compute deterministic assignment of evaluation units to variations, allowing you to change the randomization behavior of the launch. (AI-inferred)
 	RandomizationSalt any
-	// A list of scheduled split configurations that define how traffic is allocated to each feature variation at specified start times, enabling a gradual time-based rollout for the launch. (AI-inferred)
 	ScheduledSplitsConfig any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type LaunchAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Evidently launch within AWS. (AI-inferred)
 	Arn any
-	// Provides an optional human-readable description of the launch to help identify its purpose. (AI-inferred)
 	Description any
-	// Configures the execution state of an Amazon CloudWatch Evidently launch by specifying a target status (such as RUNNING or CANCELLED) and an optional status reason, which is used when updating the launch resource. (AI-inferred)
 	ExecutionStatus any
-	// Specifies the launch groups that define how traffic is allocated to feature variations in this Evidently launch. (AI-inferred)
 	Groups any
-	// This list specifies the CloudWatch metrics that Evidently monitors to evaluate the launch's performance, where each monitor defines the metric name, entity ID key, value key, event pattern, and unit label used to measure the launch's success. (AI-inferred)
 	MetricMonitors any
-	// The name of the Evidently launch. (AI-inferred)
 	Name any
-	// The name or ARN of the Evidently project in which this launch is created. (AI-inferred)
 	Project any
-	// A string hashing salt that Evidently uses to compute deterministic assignment of evaluation units to variations, allowing you to change the randomization behavior of the launch. (AI-inferred)
 	RandomizationSalt any
-	// A list of scheduled split configurations that define how traffic is allocated to each feature variation at specified start times, enabling a gradual time-based rollout for the launch. (AI-inferred)
 	ScheduledSplitsConfig any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

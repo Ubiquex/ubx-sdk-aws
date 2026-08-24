@@ -4,9 +4,7 @@ package global
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcceleratorListener_PortRanges struct {
-	// The first port in the inclusive range of ports (from_port to to_port) that the AWS Global Accelerator listener accepts and forwards traffic on. (AI-inferred)
 	FromPort any
-	// The inclusive ending port number of the range for the listener. (AI-inferred)
 	ToPort any
 }
 
@@ -20,7 +18,6 @@ type AcceleratorListenerConfig struct {
 	AcceleratorArn any
 	// Client affinity lets you direct all requests from a user to the same endpoint.
 	ClientAffinity any
-	// Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred)
 	PortRanges any
 	// The protocol for the listener.
 	Protocol any
@@ -33,7 +30,6 @@ type AcceleratorListenerAttrs struct {
 	ClientAffinity any
 	// The Amazon Resource Name (ARN) of the listener.
 	ListenerArn any
-	// Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred)
 	PortRanges any
 	// The protocol for the listener.
 	Protocol any

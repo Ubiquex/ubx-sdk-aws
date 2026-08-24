@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FargateProfile_Selectors_Labels {
-  /** The key of a Kubernetes label pair used in the selector to match pods that will be scheduled on the Fargate profile. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a Kubernetes label, paired with its key in the selector’s labels map, that a pod must have to be eligible for scheduling on this Fargate profile. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface FargateProfile_Selectors {
-  /** Specifies Kubernetes labels (key-value pairs) that the selector uses to match pods in the specified namespace for scheduling on Fargate. (AI-inferred) */
   labels?: FargateProfile_Selectors_Labels[] | Computed<FargateProfile_Selectors_Labels[]>;
-  /** The Kubernetes namespace that this selector matches; only pods running in this namespace are eligible to be scheduled onto Fargate. (AI-inferred) */
   namespace?: string | Computed<string>;
 }
 
@@ -36,16 +32,13 @@ export interface FargateProfileConfig {
   fargateProfileName?: string | Computed<string>;
   /** The IAM policy arn for pods */
   podExecutionRoleArn: string | Computed<string>;
-  /** Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred) */
   selectors: FargateProfile_Selectors[] | Computed<FargateProfile_Selectors[]>;
-  /** Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred) */
   subnets?: string[] | Computed<string[]>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: FargateProfile_Selectors_Labels[] | Computed<FargateProfile_Selectors_Labels[]>;
 }
 
 export interface FargateProfileAttrs {
-  /** The Amazon Resource Name (ARN) of the Fargate profile. (AI-inferred) */
   arn: string;
   /** Name of the Cluster */
   clusterName: string;
@@ -53,9 +46,7 @@ export interface FargateProfileAttrs {
   fargateProfileName: string;
   /** The IAM policy arn for pods */
   podExecutionRoleArn: string;
-  /** Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred) */
   selectors: FargateProfile_Selectors[];
-  /** Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred) */
   subnets: string[];
   /** An array of key-value pairs to apply to this resource. */
   tags: FargateProfile_Selectors_Labels[];

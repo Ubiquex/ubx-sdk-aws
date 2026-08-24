@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ArtifactDomain_Tags:
-    # The key of a user-defined tag attached to an AWS CodeArtifact domain, enabling custom metadata for cost allocation, access control, and resource organization. (AI-inferred)
     key: Any = None
-    # The free-form value of a user-defined tag attached to an AWS CodeArtifact domain, used to add custom metadata for organizing and managing the domain. (AI-inferred)
     value: Any = None
 
 _ArtifactDomain_TagsFields = {

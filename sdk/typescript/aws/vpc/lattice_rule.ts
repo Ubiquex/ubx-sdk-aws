@@ -2,77 +2,56 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeRule_Action_FixedResponse {
-  /** The HTTP status code (e.g., 200, 404) returned by the fixed-response action of the VPC Lattice rule. (AI-inferred) */
   statusCode: number | Computed<number>;
 }
 
 export interface LatticeRule_Action_Forward_TargetGroups {
-  /** The identifier of the target group to which the VPC Lattice rule forwards matching traffic. (AI-inferred) */
   targetGroupIdentifier?: string | Computed<string>;
-  /** Sets the relative traffic weight (0-999) for this target group in a VPC Lattice rule's forward action, so that higher weights receive a proportionally larger share of matched traffic. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface LatticeRule_Action_Forward {
-  /** Specifies the list of target groups and their weights to which the forward action distributes traffic. (AI-inferred) */
   targetGroups: LatticeRule_Action_Forward_TargetGroups[] | Computed<LatticeRule_Action_Forward_TargetGroups[]>;
 }
 
 export interface LatticeRule_Action {
-  /** The fixed_response block configures a fixed-response action for the rule, allowing you to specify a custom HTTP status code and an optional response body to be returned when the rule's conditions are met. (AI-inferred) */
   fixedResponse?: LatticeRule_Action_FixedResponse | Computed<LatticeRule_Action_FixedResponse>;
-  /** The forward action of the VPC Lattice rule, which specifies the target groups to which matching traffic is forwarded. (AI-inferred) */
   forward?: LatticeRule_Action_Forward | Computed<LatticeRule_Action_Forward>;
 }
 
 export interface LatticeRule_Match_HttpMatch_HeaderMatches_Match {
-  /** When the match type is 'contains', specifies the substring that the header value must include for the rule to match. (AI-inferred) */
   contains?: string | Computed<string>;
-  /** The exact string value that the HTTP request header must match for this header match condition in a VPC Lattice rule. (AI-inferred) */
   exact?: string | Computed<string>;
-  /** Specifies the prefix string that the header value must begin with for the HTTP header match to succeed in the VPC Lattice rule. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface LatticeRule_Match_HttpMatch_HeaderMatches {
-  /** Specifies whether the header value comparison in this HTTP header match is case-sensitive, meaning that when set to false, the matching ignores casing in the header value. (AI-inferred) */
   caseSensitive?: boolean | Computed<boolean>;
-  /** Specifies the match type (e.g., exact, prefix, or contains) and the value used to match the HTTP header value in the VPC Lattice rule. (AI-inferred) */
   match?: LatticeRule_Match_HttpMatch_HeaderMatches_Match | Computed<LatticeRule_Match_HttpMatch_HeaderMatches_Match>;
-  /** The name of the HTTP header to match (e.g., Content-Type, Authorization) in a VPC Lattice rule's HTTP header match condition. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface LatticeRule_Match_HttpMatch_PathMatch_Match {
-  /** The exact path string that the incoming HTTP request's path must match for this rule to apply. (AI-inferred) */
   exact?: string | Computed<string>;
-  /** The URL path prefix that incoming requests must match for the VPC Lattice rule to apply. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface LatticeRule_Match_HttpMatch_PathMatch {
-  /** Determines whether the HTTP path match pattern is case-sensitive, meaning request paths must match the configured path exactly in letter case. (AI-inferred) */
   caseSensitive?: boolean | Computed<boolean>;
-  /** This field defines the path matching pattern (exact, prefix, or wildcard) used to determine whether an incoming HTTP request matches the rule. (AI-inferred) */
   match: LatticeRule_Match_HttpMatch_PathMatch_Match | Computed<LatticeRule_Match_HttpMatch_PathMatch_Match>;
 }
 
 export interface LatticeRule_Match_HttpMatch {
-  /** Specifies a list of HTTP header match criteria for the rule, including header name, value, and match type (exact, prefix, or contains) used to determine whether incoming traffic matches. (AI-inferred) */
   headerMatches?: LatticeRule_Match_HttpMatch_HeaderMatches[] | Computed<LatticeRule_Match_HttpMatch_HeaderMatches[]>;
-  /** The HTTP request method (such as GET, POST, PUT) that incoming requests must use in order for this VPC Lattice rule to match. (AI-inferred) */
   method?: string | Computed<string>;
-  /** Specifies the path matching configuration for the HTTP request in a VPC Lattice rule, including the match type (e.g., PREFIX_MATCH or EXACT_MATCH) and the path value to match. (AI-inferred) */
   pathMatch?: LatticeRule_Match_HttpMatch_PathMatch | Computed<LatticeRule_Match_HttpMatch_PathMatch>;
 }
 
 export interface LatticeRule_Match {
-  /** Defines the HTTP matching criteria (such as method, path, headers, and query parameters) used by the VPC Lattice rule to determine which requests it applies to. (AI-inferred) */
   httpMatch: LatticeRule_Match_HttpMatch | Computed<LatticeRule_Match_HttpMatch>;
 }
 
 export interface LatticeRule_Tags {
-  /** The key of a tag attached to this VPC Lattice rule, used to identify and organize the rule. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -165,40 +144,24 @@ const LatticeRule_TagsFields: FieldMap = {
 };
 
 export interface LatticeRuleConfig {
-  /** Defines how the rule handles matching traffic, such as forwarding to a target group with weighted targets or returning a fixed HTTP response. (AI-inferred) */
   action: LatticeRule_Action | Computed<LatticeRule_Action>;
-  /** The ID or ARN of the VPC Lattice listener that this rule is associated with, defining the listener on which the rule's match conditions and actions are applied. (AI-inferred) */
   listenerIdentifier?: string | Computed<string>;
-  /** The match criteria, such as HTTP method, path, headers, query parameters, or TLS Server Name Indication, that define which incoming traffic this rule evaluates. (AI-inferred) */
   match: LatticeRule_Match | Computed<LatticeRule_Match>;
-  /** Specifies a friendly name for the VPC Lattice rule, which must be unique within its listener. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The priority assigned to the rule, where lower numbers take precedence over higher numbers when multiple rules match a request. (AI-inferred) */
   priority: number | Computed<number>;
-  /** The identifier (ID or ARN) of the VPC Lattice service that owns the listener and rule, used to scope the rule to a specific service's traffic. (AI-inferred) */
   serviceIdentifier?: string | Computed<string>;
-  /** Assigns a list of tags (key-value pairs) to the VPC Lattice rule to help identify and categorize the resource. (AI-inferred) */
   tags?: LatticeRule_Tags[] | Computed<LatticeRule_Tags[]>;
 }
 
 export interface LatticeRuleAttrs {
-  /** Defines how the rule handles matching traffic, such as forwarding to a target group with weighted targets or returning a fixed HTTP response. (AI-inferred) */
   action: LatticeRule_Action;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this VPC Lattice rule. (AI-inferred) */
   arn: string;
-  /** The unique AWS-assigned identifier for this VPC Lattice rule. (AI-inferred) */
   id: string;
-  /** The ID or ARN of the VPC Lattice listener that this rule is associated with, defining the listener on which the rule's match conditions and actions are applied. (AI-inferred) */
   listenerIdentifier: string;
-  /** The match criteria, such as HTTP method, path, headers, query parameters, or TLS Server Name Indication, that define which incoming traffic this rule evaluates. (AI-inferred) */
   match: LatticeRule_Match;
-  /** Specifies a friendly name for the VPC Lattice rule, which must be unique within its listener. (AI-inferred) */
   name: string;
-  /** The priority assigned to the rule, where lower numbers take precedence over higher numbers when multiple rules match a request. (AI-inferred) */
   priority: number;
-  /** The identifier (ID or ARN) of the VPC Lattice service that owns the listener and rule, used to scope the rule to a specific service's traffic. (AI-inferred) */
   serviceIdentifier: string;
-  /** Assigns a list of tags (key-value pairs) to the VPC Lattice rule to help identify and categorize the resource. (AI-inferred) */
   tags: LatticeRule_Tags[];
 }
 

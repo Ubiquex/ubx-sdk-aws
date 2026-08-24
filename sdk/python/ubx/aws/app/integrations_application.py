@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IntegrationsApplication_ApplicationConfig_ContactHandling:
-    # Specifies the operational scope of contact handling (the only supported value is DRIVE) for the AppIntegrations application, meaning the app acts as the primary interface during a contact. (AI-inferred)
     scope: Any = None
 
 @dataclasses.dataclass
@@ -17,27 +16,21 @@ class IntegrationsApplication_ApplicationConfig:
 
 @dataclasses.dataclass
 class IntegrationsApplication_ApplicationSourceConfig_ExternalUrlConfig:
-    # The URL that users are redirected to when they access the application from the AppIntegrations UI. (AI-inferred)
     access_url: Any = None
-    # Specifies a list of allowed origins for the external URL of the AppIntegrations application, enabling CORS access from those domains. (AI-inferred)
     approved_origins: Any = None
 
 @dataclasses.dataclass
 class IntegrationsApplication_ApplicationSourceConfig:
-    # Configures the external URL for the AppIntegrations application, specifying the access URL and the list of approved origins. (AI-inferred)
     external_url_config: Any = None
 
 @dataclasses.dataclass
 class IntegrationsApplication_IframeConfig:
-    # Defines the list of allowed origins that are permitted to embed this AppIntegrations application in an iframe. (AI-inferred)
     allow: Any = None
-    # Defines the sandbox permissions for the iframe used to display the application, where each string in the list corresponds to a token such as 'allow-scripts' or 'allow-same-origin' that controls what the iframe content can do. (AI-inferred)
     sandbox: Any = None
 
 @dataclasses.dataclass
 class IntegrationsApplication_Tags:
     key: Any = None
-    # The tag value for a key-value pair attached to the AWS AppIntegrations application, used to organize, identify, and manage the application resource within AWS. (AI-inferred)
     value: Any = None
 
 _IntegrationsApplication_ApplicationConfig_ContactHandlingFields = {
@@ -84,7 +77,6 @@ class IntegrationsApplicationConfig:
     application_type: Any = None
     # The application description.
     description: Any = None
-    # Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred)
     iframe_config: Any = None
     # The initialization timeout in milliseconds. Required when IsService is true.
     initialization_timeout: Any = None
@@ -112,7 +104,6 @@ class IntegrationsApplicationAttrs:
     description: Any = None
     # The id of the application.
     id: Any = None
-    # Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred)
     iframe_config: Any = None
     # The initialization timeout in milliseconds. Required when IsService is true.
     initialization_timeout: Any = None

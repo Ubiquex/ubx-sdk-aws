@@ -15,11 +15,9 @@ var GlobalResolverDnsView_TagsFields = ubx.FieldMap{
 
 type GlobalResolverDnsViewConfig struct {
 	ClientToken any
-	// An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
 	Description any
 	DnssecValidation any
 	EdnsClientSubnet any
-	// Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
 	FirewallRulesFailOpen any
 	GlobalResolverId any
 	Name any
@@ -30,18 +28,15 @@ type GlobalResolverDnsViewAttrs struct {
 	Arn any
 	ClientToken any
 	CreatedAt any
-	// An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
 	Description any
 	DnsViewId any
 	DnssecValidation any
 	EdnsClientSubnet any
-	// Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
 	FirewallRulesFailOpen any
 	GlobalResolverId any
 	Name any
 	Status any
 	Tags any
-	// A read-only timestamp that records when the global resolver DNS view was last modified. (AI-inferred)
 	UpdatedAt any
 }
 

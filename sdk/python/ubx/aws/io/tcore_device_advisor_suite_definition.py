@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration_Devices:
-    # The ARN of the X.509 certificate that identifies the device under test in the Device Advisor suite definition's device configuration. (AI-inferred)
     certificate_arn: Any = None
-    # The ARN of the AWS IoT thing that the Device Advisor suite definition will test, identifying the device under test. (AI-inferred)
     thing_arn: Any = None
 
 @dataclasses.dataclass
@@ -28,9 +26,7 @@ class TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration:
 
 @dataclasses.dataclass
 class TcoreDeviceAdvisorSuiteDefinition_Tags:
-    # The key of a tag assigned to the AWS IoT Core Device Advisor suite definition, used for resource categorization and management. (AI-inferred)
     key: Any = None
-    # The value of a tag (identified by its key) attached to the AWS IoT Device Advisor suite definition, used to add custom metadata for identifying, organizing, and managing this resource. (AI-inferred)
     value: Any = None
 
 _TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration_DevicesFields = {
@@ -57,7 +53,6 @@ _TcoreDeviceAdvisorSuiteDefinition_TagsFields = {
 
 @dataclasses.dataclass
 class TcoreDeviceAdvisorSuiteDefinitionConfig:
-    # Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred)
     suite_definition_configuration: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -66,7 +61,6 @@ class TcoreDeviceAdvisorSuiteDefinitionConfig:
 class TcoreDeviceAdvisorSuiteDefinitionAttrs:
     # The Amazon Resource name for the suite definition.
     suite_definition_arn: Any = None
-    # Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred)
     suite_definition_configuration: Any = None
     # The unique identifier for the suite definition.
     suite_definition_id: Any = None

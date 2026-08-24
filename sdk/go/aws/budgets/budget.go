@@ -4,135 +4,87 @@ package budgets
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Budget_Budget_AutoAdjustData_HistoricalOptions struct {
-	// Specifies the number of months of historical spending data that AWS Budgets uses to automatically calculate the adjusted budget amount. (AI-inferred)
 	BudgetAdjustmentPeriod any
 }
 
 type Budget_Budget_AutoAdjustData struct {
-	// Indicates whether the budget's automatic adjustment is based on a forecast of future spend (FORECAST) or on historical spending patterns (HISTORICAL). (AI-inferred)
 	AutoAdjustType any
-	// Specifies the number of historical budget periods (months) of past spending that AWS Budgets uses to calculate the automatically adjusted budget amount. (AI-inferred)
 	HistoricalOptions any
 }
 
 type Budget_Budget_BudgetLimit struct {
-	// The numerical amount of the budget limit, representing the maximum cost or usage allowed by the budget. (AI-inferred)
 	Amount any
-	// The three-letter currency code (e.g., USD) that defines the monetary unit for the budget limit amount and must match the currency of the AWS account. (AI-inferred)
 	Unit any
 }
 
 type Budget_Budget_CostTypes struct {
-	// Specifies whether credits (such as promotional AWS credits) are included when calculating the costs covered by this budget. (AI-inferred)
 	IncludeCredit any
-	// Determines whether discounts are included in the cost amounts tracked by this budget. (AI-inferred)
 	IncludeDiscount any
-	// Controls whether the budget includes other non-recurring subscription costs, such as one-time fees for services like Amazon QuickSight. (AI-inferred)
 	IncludeOtherSubscription any
-	// Whether the budget includes recurring costs (such as monthly subscription or recurring service fees) when calculating actual spend against the budget. (AI-inferred)
 	IncludeRecurring any
-	// Indicates whether the budget includes refunds when calculating costs. (AI-inferred)
 	IncludeRefund any
-	// Specifies whether the budget includes subscription costs (such as AWS Support) when determining actual and forecasted spend. (AI-inferred)
 	IncludeSubscription any
-	// Determines whether AWS Support charges (such as subscription fees for AWS Support plans) are included when calculating the costs tracked by this budget. (AI-inferred)
 	IncludeSupport any
-	// Specifies whether the budget includes taxes associated with your usage. (AI-inferred)
 	IncludeTax any
-	// Specifies whether to include upfront fees, such as the one-time payment for Reserved Instances, in the budget's cost calculations. (AI-inferred)
 	IncludeUpfront any
-	// In AWS Budgets, this boolean flag in the budget's cost types controls whether the budget includes amortized costs, which spread upfront reservation or savings plan charges over the term of the commitment. (AI-inferred)
 	UseAmortized any
-	// A boolean flag that indicates whether the budget includes blended costs, which are calculated by mixing the effective rates of on-demand and reserved-instance usage. (AI-inferred)
 	UseBlended any
 }
 
 type Budget_Budget_FilterExpression_CostCategories struct {
-	// The name of the AWS Cost Category to use as a filter key for this budget. (AI-inferred)
 	Key any
-	// Specifies the matching options (such as EQUALS, STARTS_WITH) that apply to the cost category values in the budget's filter expression. (AI-inferred)
 	MatchOptions any
-	// Defines the specific values of the chosen cost category that the budget filter matches, restricting the budget to only include costs associated with those cost category values. (AI-inferred)
 	Values any
 }
 
 type Budget_Budget_FilterExpression struct {
-	// Specifies a list of filter expressions that must all be satisfied (logical AND) for a cost or usage item to be counted in the budget, enabling combined dimension-based filtering (e.g., service and region together). (AI-inferred)
 	And any
-	// Maps cost category names to lists of values within the budget's filter expression; only actual costs that match at least one of the listed values for each configured cost category are counted toward the budget. (AI-inferred)
 	CostCategories any
-	// Defines the AWS cost dimensions (like SERVICE or REGION) and their allowed values that this budget's filter expression uses to match and track specific cost and usage. (AI-inferred)
 	Dimensions any
-	// The `not` field holds a nested filter expression that is logically negated, so the budget applies only to costs that do not match the nested criteria. (AI-inferred)
 	Not any
-	// A list of filter sub-expressions that are combined using OR logic, so that a cost is included in the budget if it matches any of the listed sub-expressions. (AI-inferred)
 	Or any
-	// Defines the tag-based filters (tag key and list of values) that restrict the budget's cost scope to matching tagged resources in the budget filter expression. (AI-inferred)
 	Tags any
 }
 
 type Budget_Budget_TimePeriod struct {
-	// The end date of the budget time period, indicating the last day the budget is active; if omitted, the budget period is open-ended. (AI-inferred)
 	End any
-	// The start date and time of the budget's coverage period, expressed in UTC (usually ISO 8601 format), which determines the beginning of the time window over which costs are evaluated against the budget. (AI-inferred)
 	Start any
 }
 
 type Budget_Budget struct {
-	// Configuration for automatic budget limit adjustment, where AWS adjusts the budget's limit based on historical usage or a forecast, including the autoAdjustType (HISTORICAL or FORECAST) and the corresponding adjustment period options. (AI-inferred)
 	AutoAdjustData any
-	// Specifies the ARN of an AWS Billing view that the budget is scoped to, allowing the budget to track costs only for the accounts and usage associated with that billing view. (AI-inferred)
 	BillingViewArn any
-	// Specifies the cost or usage threshold for the budget, defined by an amount and unit (for example, '100.0' and 'USD'). (AI-inferred)
 	BudgetLimit any
-	// The name of the budget, which acts as a unique identifier within the AWS account for the specified budget type; if omitted, CloudFormation generates a unique name (e.g., the logical ID). (AI-inferred)
 	BudgetName any
-	// Specifies the type of budget, such as COST, USAGE, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, or SAVINGS_PLANS_COVERAGE, which determines the metric and dimensions used to track your AWS spend or usage. (AI-inferred)
 	BudgetType any
-	// A map of cost filter dimension names (such as Service, LinkedAccount, Region, or TagKeyValue) to lists of values that restricts the budget to matching AWS costs, analogous to the CostFilters property in the AWS Budgets API. (AI-inferred)
 	CostFilters any
-	// Specifies the CostTypes object that controls which AWS cost types (such as taxes, subscriptions, recurring charges, support, discounts, credits, and upfront fees) are included or excluded when calculating the budget's actual and forecasted costs. (AI-inferred)
 	CostTypes any
-	// Specifies a logical expression of key-value filters (such as service, tag, or account) and an operator (AND or OR) that determines which cost and usage data is included in the budget. (AI-inferred)
 	FilterExpression any
 	Metrics any
-	// Specifies budget limits for future cost budget periods, mapping each period's start date (YYYY-MM-DD) to a budget limit amount and unit for that period. (AI-inferred)
 	PlannedBudgetLimits any
-	// Specifies the start and end dates that determine the period covered by the budget. (AI-inferred)
 	TimePeriod any
-	// The time unit (DAILY, MONTHLY, QUARTERLY, or ANNUALLY) that defines the period over which the budget tracks costs or usage and resets. (AI-inferred)
 	TimeUnit any
 }
 
 type Budget_NotificationsWithSubscribers_Notification struct {
-	// Specifies the comparison operator (e.g., GREATER_THAN, LESS_THAN, EQUAL_TO) used to evaluate the budget's actual or forecasted value against the notification threshold. (AI-inferred)
 	ComparisonOperator any
-	// Specifies whether the budget notification is triggered by actual spending or a forecasted spend amount. (AI-inferred)
 	NotificationType any
-	// The numeric threshold value that, when compared against the actual or forecasted budget cost or usage using the notification's comparison operator, triggers the budget notification. (AI-inferred)
 	Threshold any
-	// Specifies whether the budget notification threshold is expressed as a percentage of the budget limit or as an absolute value (e.g., a dollar amount or usage quantity), corresponding to the PERCENTAGE or ABSOLUTE_VALUE enum values for the budget alarm. (AI-inferred)
 	ThresholdType any
 }
 
 type Budget_NotificationsWithSubscribers_Subscribers struct {
-	// The email address or SNS topic ARN that receives the budget notification for the associated subscriber type. (AI-inferred)
 	Address any
-	// The subscription channel type used by the subscriber to receive budget notifications, such as SNS or EMAIL. (AI-inferred)
 	SubscriptionType any
 }
 
 type Budget_NotificationsWithSubscribers struct {
-	// Defines the notification configuration for a budget, including threshold value, comparison operator (e.g., GREATER_THAN), threshold type (PERCENTAGE or ABSOLUTE_VALUE), and notification type (e.g., ACTUAL or FORECASTED), which triggers an alert to the subscribed SNS topics or email addresses. (AI-inferred)
 	Notification any
-	// Specifies the list of subscribers (email addresses or SNS topic ARNs) that receive the budget notification. (AI-inferred)
 	Subscribers any
 }
 
 type Budget_ResourceTags struct {
-	// The key of a resource tag (a key-value pair) applied to the budget, used to categorize or identify the budget for cost allocation and management. (AI-inferred)
 	Key any
-	// The value of a tag entry in the resource_tags map, used to attach metadata to the budget resource for identification and organization. (AI-inferred)
 	Value any
 }
 
@@ -266,22 +218,15 @@ var Budget_ResourceTagsFields = ubx.FieldMap{
 	}
 
 type BudgetConfig struct {
-	// The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
 	Budget any
-	// Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
 	NotificationsWithSubscribers any
-	// Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
 	ResourceTags any
 }
 
 type BudgetAttrs struct {
-	// The budget object defines the essential budget configuration, including the budget name, type (COST or USAGE), amount limit, time unit, and optional cost filters and cost types. (AI-inferred)
 	Budget any
-	// The budget name, which uniquely identifies the budget within the AWS account and is used as the resource's primary identifier. (AI-inferred)
 	Id any
-	// Specifies the budget notifications and the email or SNS subscribers to receive alerts when the budget threshold is exceeded. (AI-inferred)
 	NotificationsWithSubscribers any
-	// Specifies a list of resource tag key-value pairs (with Key and Value properties) that are attached to this AWS Budgets budget to help categorize and manage it for cost allocation and filtering. (AI-inferred)
 	ResourceTags any
 }
 

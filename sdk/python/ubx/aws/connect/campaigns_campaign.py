@@ -47,9 +47,7 @@ class CampaignsCampaign_OutboundCallConfig:
 
 @dataclasses.dataclass
 class CampaignsCampaign_Tags:
-    # The key of a tag attached to the Amazon Connect Campaigns campaign, used to categorize the resource for cost allocation, ownership, and access control. (AI-inferred)
     key: Any = None
-    # The string value paired with each tag key on the Amazon Connect campaigns campaign, used for identifying, organizing, and managing the resource. (AI-inferred)
     value: Any = None
 
 _CampaignsCampaign_DialerConfig_AgentlessDialerConfigFields = {

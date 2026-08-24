@@ -2,27 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCoreGatewayTarget_AuthorizationData_Oauth2 {
-  /** The authorization URL of the OAuth2 configuration that the Bedrock agent core gateway target uses to redirect users for authentication and consent. (AI-inferred) */
   authorizationUrl?: string | Computed<string>;
   userId?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_AuthorizationData {
-  /** Specifies the OAuth 2.0 authorization parameters (such as the token endpoint and client credentials) that the core gateway uses to obtain an access token for authenticating requests sent to the target API. (AI-inferred) */
   oauth2?: AgentCoreGatewayTarget_AuthorizationData_Oauth2 | Computed<AgentCoreGatewayTarget_AuthorizationData_Oauth2>;
 }
 
 export interface AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProvider {
-  /** Specifies the location, typically the ARN of an AWS Secrets Manager secret, where the API key credential used to authenticate requests to the target endpoint is stored. (AI-inferred) */
   credentialLocation?: string | Computed<string>;
-  /** Specifies the name of the secret or parameter (e.g., in AWS Secrets Manager) that holds the API key used by the credential provider for the Bedrock agent's core gateway target. (AI-inferred) */
   credentialParameterName?: string | Computed<string>;
   credentialPrefix?: string | Computed<string>;
   providerArn?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider {
-  /** For a core gateway target, this region specifies the AWS Region where the IAM role is assumed by the function executor's credential provider, enabling cross-region access to resources. (AI-inferred) */
   region?: string | Computed<string>;
   service?: string | Computed<string>;
 }
@@ -31,19 +26,14 @@ export interface AgentCoreGatewayTarget_CredentialProviderConfigurations_Credent
 }
 
 export interface AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider {
-  /** Specifies additional key-value pairs to be sent as custom parameters in the OAuth token request to the credential provider's token endpoint, allowing provider-specific fields beyond standard OAuth parameters. (AI-inferred) */
   customParameters?: unknown | Computed<unknown>;
-  /** The default redirect URI to which the OAuth authorization server sends users after successful authentication, used by the OAuth credential provider for this agent core gateway target. (AI-inferred) */
   defaultReturnUrl?: string | Computed<string>;
-  /** The OAuth 2.0 grant type used to request the access token from the token endpoint, such as client_credentials. (AI-inferred) */
   grantType?: AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantType | Computed<AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider_GrantType>;
   providerArn?: string | Computed<string>;
-  /** The list of OAuth 2.0 scopes that the credential provider requests when obtaining an access token for calling the core gateway target. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider {
-  /** Configures the API key credential provider for the Bedrock agent core gateway target, typically referencing a Secrets Manager secret to retrieve the API key and an optional header name for authentication. (AI-inferred) */
   apiKeyCredentialProvider?: AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProvider | Computed<AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_ApiKeyCredentialProvider>;
   iamCredentialProvider?: AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider | Computed<AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider>;
   oauthCredentialProvider?: AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider | Computed<AgentCoreGatewayTarget_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider>;
@@ -55,34 +45,25 @@ export interface AgentCoreGatewayTarget_CredentialProviderConfigurations {
 }
 
 export interface AgentCoreGatewayTarget_MetadataConfiguration {
-  /** Specifies the list of metadata attribute keys that are allowed to be used as query parameters when the agent performs queries against the associated knowledge base. (AI-inferred) */
   allowedQueryParameters?: string[] | Computed<string[]>;
-  /** Specifies the list of HTTP request header names that are allowed to be forwarded or processed as metadata by the Bedrock Agent core gateway target, restricting which incoming request headers are included in the gateway's metadata configuration. (AI-inferred) */
   allowedRequestHeaders?: string[] | Computed<string[]>;
-  /** Determines the HTTP response headers that the agent core gateway target is permitted to include in its responses, configuring the metadata allowed in the gateway output. (AI-inferred) */
   allowedResponseHeaders?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreGatewayTarget_PrivateEndpoint_ManagedVpcResource {
-  /** Specifies the IP address type (IPv4, IPv6, or dualstack) used for the private endpoint connection within the managed VPC resource. (AI-inferred) */
   endpointIpAddressType?: string | Computed<string>;
-  /** Specifies the DNS domain name used for routing requests through the private endpoint to the managed VPC resource. (AI-inferred) */
   routingDomain?: string | Computed<string>;
   securityGroupIds?: string[] | Computed<string[]>;
-  /** The subnet IDs within the managed VPC resource where the private endpoint's elastic network interfaces are placed, determining the network availability and routing for the endpoint. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** Specifies the tags to apply to the AWS-managed VPC resource provisioned for the private endpoint of this Bedrock agent core gateway target. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
   vpcIdentifier?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_PrivateEndpoint_SelfManagedLatticeResource {
-  /** The identifier (typically the ARN) of the VPC Lattice resource configuration that the self-managed lattice resource uses as the target for the Bedrock agent core gateway private endpoint. (AI-inferred) */
   resourceConfigurationIdentifier?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_PrivateEndpoint {
-  /** Defines the Amazon resource inside the Bedrock-managed VPC that the core gateway target's private endpoint is attached to. (AI-inferred) */
   managedVpcResource?: AgentCoreGatewayTarget_PrivateEndpoint_ManagedVpcResource | Computed<AgentCoreGatewayTarget_PrivateEndpoint_ManagedVpcResource>;
   selfManagedLatticeResource?: AgentCoreGatewayTarget_PrivateEndpoint_SelfManagedLatticeResource | Computed<AgentCoreGatewayTarget_PrivateEndpoint_SelfManagedLatticeResource>;
 }
@@ -94,16 +75,12 @@ export interface AgentCoreGatewayTarget_PrivateEndpointManagedResources {
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3 {
-  /** The AWS account ID of the owner of the S3 bucket that contains the agent runtime schema, used to verify bucket ownership and authorize access when fetching the schema. (AI-inferred) */
   bucketOwnerAccountId?: string | Computed<string>;
-  /** The S3 URI pointing to the schema definition file for the agent core runtime, used as the source schema for the gateway target's HTTP configuration. (AI-inferred) */
   uri?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source {
-  /** Specifies the inline OpenAPI schema payload for the AgentCore runtime HTTP target's schema source, providing the API definition directly as a string rather than referencing an S3 location. (AI-inferred) */
   inlinePayload?: string | Computed<string>;
-  /** Defines the S3 bucket and object key that point to the API schema file (e.g., OpenAPI specification) used by the HTTP agent core runtime target. (AI-inferred) */
   s3?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3 | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3>;
 }
 
@@ -113,19 +90,16 @@ export interface AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntim
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime {
   arn?: string | Computed<string>;
-  /** Specifies the version qualifier (e.g., an agent alias or 'DRAFT') used by the agent core runtime to select which version of the Bedrock agent the gateway target routes requests to. (AI-inferred) */
   qualifier?: string | Computed<string>;
   schema?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Http_Passthrough_StickinessConfiguration {
   identifier?: string | Computed<string>;
-  /** The duration in seconds for which a client session remains pinned to the same target in the HTTP passthrough stickiness configuration, after which the sticky session expires. (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Http_Passthrough {
-  /** The endpoint URL to which the gateway forwards HTTP requests when using passthrough mode. (AI-inferred) */
   endpoint?: string | Computed<string>;
   protocolType?: string | Computed<string>;
   schema?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema>;
@@ -155,7 +129,6 @@ export interface AgentCoreGatewayTarget_TargetConfiguration_Inference_Provider_M
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Inference_Provider_Operations_Models {
-  /** Specifies the model identifier or Amazon Resource Name (ARN) for an inference operation within the provider's models configuration for this gateway target. (AI-inferred) */
   model?: string | Computed<string>;
 }
 
@@ -177,34 +150,25 @@ export interface AgentCoreGatewayTarget_TargetConfiguration_Inference {
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFilters {
-  /** Specifies the JSON path used to filter which MCP tools from the API Gateway are available to the Bedrock agent core gateway target, restricting the tool set exposed to the agent. (AI-inferred) */
   filterPath?: string | Computed<string>;
-  /** Filters the exposed API Gateway tool operations to only those whose HTTP method (e.g., GET, POST) is included in this list. (AI-inferred) */
   methods?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverrides {
-  /** In the tool_overrides of the MCP API gateway tool configuration, the description field specifies the custom description that will replace the tool's original description when exposed to the agent model. (AI-inferred) */
   description?: string | Computed<string>;
   method?: string | Computed<string>;
-  /** Specifies the name of the MCP tool whose settings are being overridden in this API Gateway tool configuration for the Bedrock agent core gateway target. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The API Gateway resource path that overrides the default tool endpoint path for the MCP tool configuration when invoked through the Bedrock agent's core gateway target. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration {
-  /** Specifies tool filters for the API Gateway-hosted MCP server, defining include or exclude patterns for tool names to control which tools the agent can access. (AI-inferred) */
   toolFilters?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFilters[] | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolFilters[]>;
-  /** Specifies a list of overrides for the API Gateway tool definitions, letting you customize individual operations such as renaming tools or changing their descriptions before they are made available to the agent. (AI-inferred) */
   toolOverrides?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverrides[] | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration_ToolOverrides[]>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway {
   apiGatewayToolConfiguration?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway_ApiGatewayToolConfiguration>;
-  /** The unique identifier of the Amazon API Gateway REST API that serves as the MCP (Model Context Protocol) endpoint for this target configuration. (AI-inferred) */
   restApiId?: string | Computed<string>;
-  /** The API Gateway stage name (such as 'prod' or 'dev') that identifies the specific deployment stage of the API Gateway endpoint used as the MCP server for this Bedrock agent core gateway target. (AI-inferred) */
   stage?: string | Computed<string>;
 }
 
@@ -215,10 +179,8 @@ export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector_Config
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector_Configurations {
-  /** Provides a human-readable description of a specific MCP connector configuration entry, used to document and identify the purpose of that configuration within the Bedrock Agent core gateway target. (AI-inferred) */
   description?: string | Computed<string>;
   name?: string | Computed<string>;
-  /** Overrides the default parameter values of the MCP connector configuration used by the Bedrock agent's core gateway target, allowing custom values for keys such as endpoint or authentication settings. (AI-inferred) */
   parameterOverrides?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverrides[] | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector_Configurations_ParameterOverrides[]>;
   parameterValues?: unknown | Computed<unknown>;
 }
@@ -230,71 +192,49 @@ export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector {
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema {
-  /** Provides a human-readable description of the input JSON schema that defines the parameters expected by the MCP tool's Lambda function. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the JSON schema for each element of an array-valued input property within the tool's inline input schema, specifying the expected type and structure for array items passed to the MCP Lambda tool. (AI-inferred) */
   items?: unknown | Computed<unknown>;
   properties?: unknown | Computed<unknown>;
-  /** Specifies the list of property names that must be present in the tool's input payload, as defined by the JSON schema in the inline payload. (AI-inferred) */
   required?: string[] | Computed<string[]>;
-  /** Defines the root JSON Schema type (commonly 'object') for the input schema of the MCP tool associated with the Lambda target configuration. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload {
-  /** Provides a human-readable description of the tool within the inline JSON schema of the Lambda-based MCP tool configuration, which the Bedrock agent uses to determine when to invoke the tool. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The JSON Schema object that defines the structure, types, and validation rules for the input parameters of the tool exposed via the MCP Lambda target, enabling the agent to generate and validate tool arguments. (AI-inferred) */
   inputSchema?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema>;
-  /** The name of the tool defined in the inline JSON schema for the MCP server's Lambda tool configuration, which the agent uses to invoke the appropriate function. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the JSON schema that describes the expected structure and data types of the tool's output, which Bedrock Agents uses to validate and interpret the response from the MCP tool. (AI-inferred) */
   outputSchema?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload_InputSchema>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema {
-  /** Defines the inline list of tool schema objects for the Lambda-backed MCP target, specifying the tools' names, descriptions, and input schemas for the agent. (AI-inferred) */
   inlinePayload?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload[] | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema_InlinePayload[]>;
-  /** For an MCP server backed by AWS Lambda, this object defines the S3 bucket and key from which the tool schema is retrieved, allowing the agent to discover the tools exposed by the Lambda-based MCP server. (AI-inferred) */
   s3?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3 | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source_S3>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda {
-  /** The Amazon Resource Name (ARN) of the Lambda function that serves as the MCP (Model Context Protocol) target for the Bedrock Agent core gateway configuration. (AI-inferred) */
   lambdaArn?: string | Computed<string>;
-  /** The tool schema for the Lambda-backed MCP server, defining the tools' input and output structures so the Bedrock agent can invoke them. (AI-inferred) */
   toolSchema?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda_ToolSchema>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp_McpServer {
-  /** The endpoint URL of the MCP (Model Context Protocol) server that the core gateway target connects to for accessing external tools and data sources. (AI-inferred) */
   endpoint?: string | Computed<string>;
   listingMode?: string | Computed<string>;
-  /** The JSON Schema that defines the input parameters for each tool exposed by the Amazon Bedrock agent's Model Context Protocol (MCP) server, enabling the agent to invoke those tools with correctly formatted arguments. (AI-inferred) */
   mcpToolSchema?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source>;
   resourcePriority?: number | Computed<number>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration_Mcp {
-  /** The API Gateway configuration for the MCP server target, including the endpoint URL and required authentication parameters for the Bedrock agent to invoke tools. (AI-inferred) */
   apiGateway?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_ApiGateway>;
-  /** Defines the MCP (Model Context Protocol) server connector configuration, specifying the connection details such as the server name and URI, that the Bedrock agent core gateway target uses to reach an external MCP endpoint. (AI-inferred) */
   connector?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Connector>;
-  /** The lambda configuration block that defines the AWS Lambda function used as the Model Context Protocol (MCP) server endpoint for this core gateway target. (AI-inferred) */
   lambda?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_Lambda>;
-  /** Defines the MCP (Model Context Protocol) server that this core gateway target points to, including its endpoint or ARN. (AI-inferred) */
   mcpServer?: AgentCoreGatewayTarget_TargetConfiguration_Mcp_McpServer | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp_McpServer>;
-  /** The OpenAPI schema for an MCP (Model Context Protocol) server that defines the API operations and tools available to the Bedrock agent when targeting this MCP configuration. (AI-inferred) */
   openApiSchema?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source>;
-  /** The Smithy model (as an object) that defines the tools and operations exposed by the MCP server configured as the target, enabling the Bedrock agent to integrate and invoke those tools. (AI-inferred) */
   smithyModel?: AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http_AgentcoreRuntime_Schema_Source>;
 }
 
 export interface AgentCoreGatewayTarget_TargetConfiguration {
-  /** Specifies the HTTP target configuration for the Bedrock agent core gateway, including the endpoint URL and HTTP method used to forward requests. (AI-inferred) */
   http?: AgentCoreGatewayTarget_TargetConfiguration_Http | Computed<AgentCoreGatewayTarget_TargetConfiguration_Http>;
   inference?: AgentCoreGatewayTarget_TargetConfiguration_Inference | Computed<AgentCoreGatewayTarget_TargetConfiguration_Inference>;
-  /** Defines the Model Context Protocol (MCP) configuration for this Bedrock agent core gateway target, specifying how the agent connects to an external MCP server to access its tools. (AI-inferred) */
   mcp?: AgentCoreGatewayTarget_TargetConfiguration_Mcp | Computed<AgentCoreGatewayTarget_TargetConfiguration_Mcp>;
 }
 
@@ -694,7 +634,6 @@ export interface AgentCoreGatewayTargetConfig {
   gatewayIdentifier?: string | Computed<string>;
   metadataConfiguration?: AgentCoreGatewayTarget_MetadataConfiguration | Computed<AgentCoreGatewayTarget_MetadataConfiguration>;
   name?: string | Computed<string>;
-  /** Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred) */
   privateEndpoint?: AgentCoreGatewayTarget_PrivateEndpoint | Computed<AgentCoreGatewayTarget_PrivateEndpoint>;
   targetConfiguration: AgentCoreGatewayTarget_TargetConfiguration | Computed<AgentCoreGatewayTarget_TargetConfiguration>;
 }
@@ -709,7 +648,6 @@ export interface AgentCoreGatewayTargetAttrs {
   lastSynchronizedAt: string;
   metadataConfiguration: AgentCoreGatewayTarget_MetadataConfiguration;
   name: string;
-  /** Defines the VPC private connection configuration (such as a VPC endpoint ID) that the Amazon Bedrock core gateway uses to securely route requests to a target resource that is not publicly accessible. (AI-inferred) */
   privateEndpoint: AgentCoreGatewayTarget_PrivateEndpoint;
   privateEndpointManagedResources: AgentCoreGatewayTarget_PrivateEndpointManagedResources[];
   protocolType: string;

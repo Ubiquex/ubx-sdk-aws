@@ -4,7 +4,6 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationAssociation_Tags struct {
-	// The key of a tag attached to the AWS Connect integration association, used to categorize or identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

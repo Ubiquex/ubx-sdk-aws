@@ -4,22 +4,17 @@ package quick
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SightSpace_Permissions struct {
-	// The list of QuickSight actions, such as quicksight:DescribeSpace, that the principal in the containing permission entry is allowed to perform on this QuickSight space. (AI-inferred)
 	Actions any
-	// Specifies the ARN of the IAM user, group, or role that is granted the permissions defined in this entry for the QuickSight space. (AI-inferred)
 	Principal any
 }
 
 type SightSpace_Resources struct {
-	// The ARN of a QuickSight asset (such as a dashboard, analysis, or dataset) that is associated with and managed within this QuickSight space. (AI-inferred)
 	ResourceArn any
-	// The type of QuickSight asset (e.g., DATASET or DASHBOARD) that is included in this space, indicating which resource the entry refers to. (AI-inferred)
 	ResourceType any
 }
 
 type SightSpace_Tags struct {
 	Key any
-	// The value of a key-value tag attached to the QuickSight space, used for cost allocation, access control, and resource identification. (AI-inferred)
 	Value any
 }
 

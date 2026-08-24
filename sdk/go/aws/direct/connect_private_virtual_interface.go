@@ -4,22 +4,15 @@ package direct
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectPrivateVirtualInterface_BgpPeers struct {
-	// The IP address family (ipv4 or ipv6) used for the BGP session on this Direct Connect private virtual interface. (AI-inferred)
 	AddressFamily any
-	// Specifies the IP address on the Amazon side of the BGP peering session for this BGP peer. (AI-inferred)
 	AmazonAddress any
-	// The autonomous system number (ASN) for the customer's BGP peer on the private virtual interface. (AI-inferred)
 	Asn any
-	// The MD5 authentication key (BGP password) used for BGP peering on this Direct Connect private virtual interface. (AI-inferred)
 	AuthKey any
-	// The unique identifier assigned by AWS to the BGP peer configured on this Direct Connect private virtual interface. (AI-inferred)
 	BgpPeerId any
-	// The customer_address specifies the IP address on the customer's side of the BGP peering session for a private virtual interface in AWS Direct Connect. (AI-inferred)
 	CustomerAddress any
 }
 
 type ConnectPrivateVirtualInterface_Tags struct {
-	// The key of a tag attached to the Direct Connect private virtual interface, used to identify the tag in a key-value pair. (AI-inferred)
 	Key any
 	Value any
 }

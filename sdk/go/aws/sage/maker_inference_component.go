@@ -4,17 +4,14 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_Alarms struct {
-	// The name of the CloudWatch alarm that triggers an automatic rollback of the SageMaker inference component deployment when it enters an alarm state. (AI-inferred)
 	AlarmName any
 }
 
 type MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration struct {
-	// A list of CloudWatch alarms that, when triggered, cause the inference component deployment to automatically roll back to the previous configuration. (AI-inferred)
 	Alarms any
 }
 
 type MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize struct {
-	// Specifies whether the maximum batch size for a rolling update to a SageMaker Inference Component is expressed as an instance count or as a percentage of the endpoint's total capacity, determining how many instances are updated concurrently during the deployment. (AI-inferred)
 	Type any
 	// The number of copies for the inference component
 	Value any
@@ -23,16 +20,13 @@ type MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSi
 type MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy struct {
 	// Capacity size configuration for the inference component
 	MaximumBatchSize any
-	// Specifies the maximum time in seconds that a rolling update of the SageMaker inference component is allowed to run before the update is considered failed and is rolled back. (AI-inferred)
 	MaximumExecutionTimeoutInSeconds any
 	// Capacity size configuration for the inference component
 	RollbackMaximumBatchSize any
-	// Specifies the number of seconds to wait after each batch of instances is updated before the next batch is deployed during a rolling update for the SageMaker inference component. (AI-inferred)
 	WaitIntervalInSeconds any
 }
 
 type MakerInferenceComponent_DeploymentConfig struct {
-	// Specifies the CloudWatch alarms that trigger automatic rollback of the SageMaker inference component deployment when they enter an alarm state. (AI-inferred)
 	AutoRollbackConfiguration any
 	// The rolling update policy for the inference component
 	RollingUpdatePolicy any
@@ -48,18 +42,13 @@ type MakerInferenceComponent_RuntimeConfig struct {
 }
 
 type MakerInferenceComponent_Specification_ComputeResourceRequirements struct {
-	// Specifies the maximum amount of memory, in megabytes, that the inference component requires for deployment, which SageMaker uses to place the component on an endpoint and ensure sufficient resources are available. (AI-inferred)
 	MaxMemoryRequiredInMb any
-	// Specifies the minimum amount of memory, in megabytes, that the SageMaker inference component needs for its model and runtime to operate successfully. (AI-inferred)
 	MinMemoryRequiredInMb any
-	// The number of accelerator devices required for the inference component, used to determine the appropriate instance type for deployment. (AI-inferred)
 	NumberOfAcceleratorDevicesRequired any
-	// The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred)
 	NumberOfCpuCoresRequired any
 }
 
 type MakerInferenceComponent_Specification_Container_DeployedImage struct {
-	// The timestamp at which the image URI for the container was resolved to the actual image used for the deployed inference component, as a string. (AI-inferred)
 	ResolutionTime any
 	// The image to use for the container that will be materialized for the inference component
 	ResolvedImage any
@@ -68,9 +57,7 @@ type MakerInferenceComponent_Specification_Container_DeployedImage struct {
 }
 
 type MakerInferenceComponent_Specification_Container struct {
-	// The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred)
 	ArtifactUrl any
-	// The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred)
 	DeployedImage any
 	// Environment variables to specify on the container
 	Environment any
@@ -79,29 +66,22 @@ type MakerInferenceComponent_Specification_Container struct {
 }
 
 type MakerInferenceComponent_Specification_StartupParameters struct {
-	// The timeout in seconds that SageMaker waits for the container's health check to succeed during component startup. (AI-inferred)
 	ContainerStartupHealthCheckTimeoutInSeconds any
-	// The maximum time, in seconds, allowed for downloading the model data during inference component startup before the startup is considered failed. (AI-inferred)
 	ModelDataDownloadTimeoutInSeconds any
 }
 
 type MakerInferenceComponent_Specification struct {
 	// The name of the base inference component
 	BaseInferenceComponentName any
-	// Defines the compute resources required for the inference component, including the number of accelerator devices, the number of inference copies, and the minimum and maximum memory (in MB) needed to run the component. (AI-inferred)
 	ComputeResourceRequirements any
-	// Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred)
 	Container any
 	// The name of the model to use with the inference component
 	ModelName any
-	// Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred)
 	StartupParameters any
 }
 
 type MakerInferenceComponent_Tags struct {
-	// The key of a tag assigned to the SageMaker inference component, used to identify, organize, and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the SageMaker inference component, providing metadata for organizing, managing, and identifying the component. (AI-inferred)
 	Value any
 }
 
@@ -171,7 +151,6 @@ type MakerInferenceComponentConfig struct {
 }
 
 type MakerInferenceComponentAttrs struct {
-	// The date and time when the SageMaker inference component was created. (AI-inferred)
 	CreationTime any
 	// The deployment config for the inference component
 	DeploymentConfig any
@@ -185,9 +164,7 @@ type MakerInferenceComponentAttrs struct {
 	InferenceComponentArn any
 	// The name of the inference component
 	InferenceComponentName any
-	// Indicates the current lifecycle status of the SageMaker inference component, such as Creating, InService, Updating, Deleting, or Failed. (AI-inferred)
 	InferenceComponentStatus any
-	// The date and time when the SageMaker inference component was last modified. (AI-inferred)
 	LastModifiedTime any
 	// The runtime config for the inference component
 	RuntimeConfig any

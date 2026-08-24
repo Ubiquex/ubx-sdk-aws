@@ -2,12 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Explorer2View_Filters {
-  /** The Resource Explorer query string that defines which resources are included in the view, using the same syntax as the Search API (e.g., filtering by resource type, tags, or resource properties). (AI-inferred) */
   filterString: string | Computed<string>;
 }
 
 export interface Explorer2View_IncludedProperties {
-  /** The name of a single resource property to include in the view's output, such as 'InstanceId' or 'Tags' for an EC2 instance, determining which fields are returned for each resource in the view. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -20,30 +18,19 @@ const Explorer2View_IncludedPropertiesFields: FieldMap = {
 };
 
 export interface Explorer2ViewConfig {
-  /** Specifies the query filter string that determines which resources are included in this Resource Explorer view. (AI-inferred) */
   filters?: Explorer2View_Filters | Computed<Explorer2View_Filters>;
-  /** Specifies the list of resource property names (each as an 'IncludedProperty' object) to include in the view, controlling which resource properties are returned for resources in the view's search results. (AI-inferred) */
   includedProperties?: Explorer2View_IncludedProperties[] | Computed<Explorer2View_IncludedProperties[]>;
-  /** The scope specifies the AWS Region (or the literal value 'global' to include all Regions) whose resources this view can search, defaulting to the Region of the CloudFormation stack when omitted. (AI-inferred) */
   scope?: string | Computed<string>;
-  /** The Tags property specifies custom key-value pairs to attach to this AWS Resource Explorer view, which you can use to categorize, identify, and manage the view within AWS. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** The user-specified name for the Resource Explorer view, which uniquely identifies the view within your account and Region. (AI-inferred) */
   viewName: string | Computed<string>;
 }
 
 export interface Explorer2ViewAttrs {
-  /** Specifies the query filter string that determines which resources are included in this Resource Explorer view. (AI-inferred) */
   filters: Explorer2View_Filters;
-  /** Specifies the list of resource property names (each as an 'IncludedProperty' object) to include in the view, controlling which resource properties are returned for resources in the view's search results. (AI-inferred) */
   includedProperties: Explorer2View_IncludedProperties[];
-  /** The scope specifies the AWS Region (or the literal value 'global' to include all Regions) whose resources this view can search, defaulting to the Region of the CloudFormation stack when omitted. (AI-inferred) */
   scope: string;
-  /** The Tags property specifies custom key-value pairs to attach to this AWS Resource Explorer view, which you can use to categorize, identify, and manage the view within AWS. (AI-inferred) */
   tags: unknown;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Resource Explorer view. (AI-inferred) */
   viewArn: string;
-  /** The user-specified name for the Resource Explorer view, which uniquely identifies the view within your account and Region. (AI-inferred) */
   viewName: string;
 }
 

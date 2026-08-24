@@ -31,7 +31,6 @@ class GatewayV2IntegrationResponseAttrs:
     content_handling_strategy: Any = None
     # The integration ID.
     integration_id: Any = None
-    # The automatically generated identifier for this integration response, assigned by AWS when the resource is created. (AI-inferred)
     integration_response_id: Any = None
     # The integration response key.
     integration_response_key: Any = None

@@ -4,15 +4,12 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeServiceNetworkVpcAssociation_DnsOptions struct {
-	// Determines whether private DNS resolution is enabled for the VPC associated with the service network, accepting values 'enabled' or 'disabled' to control the private DNS preference. (AI-inferred)
 	PrivateDnsPreference any
-	// The `dns_options.private_dns_specified_domains` field specifies the list of private DNS domain names that the associated VPC will use to resolve service endpoints in the service network, enabling private DNS resolution for the association. (AI-inferred)
 	PrivateDnsSpecifiedDomains any
 }
 
 type LatticeServiceNetworkVpcAssociation_Tags struct {
 	Key any
-	// The value component of a tag attached to the AWS VPC Lattice service network VPC association, used for metadata, identification, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -27,48 +24,28 @@ var LatticeServiceNetworkVpcAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type LatticeServiceNetworkVpcAssociationConfig struct {
-	// DNS options for the VPC association, specifying the DNS type (IPv4 or IPv6) used to resolve service network domains within the associated VPC. (AI-inferred)
 	DnsOptions any
-	// Indicates whether private DNS is enabled for the VPC association, allowing service network endpoints to be resolved using private DNS in the associated VPC. (AI-inferred)
 	PrivateDnsEnabled any
-	// Specifies the list of security group IDs to optionally associate with this VPC Lattice service network VPC association, which control traffic between the VPC and the service network. (AI-inferred)
 	SecurityGroupIds any
-	// The ID or ARN of the Amazon VPC Lattice service network that the VPC association targets. (AI-inferred)
 	ServiceNetworkIdentifier any
-	// Assigns a list of key-value tags to the service network VPC association to help manage and identify it. (AI-inferred)
 	Tags any
-	// The ID of the VPC that is associated with the service network. (AI-inferred)
 	VpcIdentifier any
 }
 
 type LatticeServiceNetworkVpcAssociationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the VPC association, assigned by AWS when the association is created. (AI-inferred)
 	Arn any
-	// The timestamp indicating when the VPC Lattice service network VPC association was created. (AI-inferred)
 	CreatedAt any
-	// DNS options for the VPC association, specifying the DNS type (IPv4 or IPv6) used to resolve service network domains within the associated VPC. (AI-inferred)
 	DnsOptions any
-	// The unique AWS-assigned identifier for this service network VPC association. (AI-inferred)
 	Id any
-	// Indicates whether private DNS is enabled for the VPC association, allowing service network endpoints to be resolved using private DNS in the associated VPC. (AI-inferred)
 	PrivateDnsEnabled any
-	// Specifies the list of security group IDs to optionally associate with this VPC Lattice service network VPC association, which control traffic between the VPC and the service network. (AI-inferred)
 	SecurityGroupIds any
-	// The Amazon Resource Name (ARN) of the service network to which the VPC is associated. (AI-inferred)
 	ServiceNetworkArn any
-	// The unique identifier of the VPC Lattice service network that this association connects to the specified VPC. (AI-inferred)
 	ServiceNetworkId any
-	// The ID or ARN of the Amazon VPC Lattice service network that the VPC association targets. (AI-inferred)
 	ServiceNetworkIdentifier any
-	// The name of the VPC Lattice service network that the VPC is associated with, automatically returned by AWS after the association is created. (AI-inferred)
 	ServiceNetworkName any
-	// The current lifecycle status of the VPC association, such as CREATE_IN_PROGRESS, ACTIVE, or DELETE_IN_PROGRESS, as reported by AWS VPC Lattice. (AI-inferred)
 	Status any
-	// Assigns a list of key-value tags to the service network VPC association to help manage and identify it. (AI-inferred)
 	Tags any
-	// The ID of the VPC that is associated with the service network. (AI-inferred)
 	VpcId any
-	// The ID of the VPC that is associated with the service network. (AI-inferred)
 	VpcIdentifier any
 }
 

@@ -2,30 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FormationResourceConfig {
-  /** When true, enables hybrid access for the registered resource, allowing it to be accessed through both Lake Formation permissions and IAM/S3 permissions. (AI-inferred) */
   hybridAccessEnabled?: boolean | Computed<boolean>;
-  /** The Amazon Resource Name (ARN) of the S3 bucket, database, or table to be registered with AWS Lake Formation. (AI-inferred) */
   resourceArn: string | Computed<string>;
-  /** The ARN of the IAM role that AWS Lake Formation assumes to access and manage the registered S3 data lake location. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** Indicates whether to use the Lake Formation service-linked role when registering the S3 resource; if false, a custom IAM role must be provided in the RoleArn field. (AI-inferred) */
   useServiceLinkedRole: boolean | Computed<boolean>;
-  /** When set to true, this flag registers the S3 location as a federated resource in AWS Lake Formation, enabling integration with a federated data catalog for access management. (AI-inferred) */
   withFederation?: boolean | Computed<boolean>;
 }
 
 export interface FormationResourceAttrs {
-  /** When true, enables hybrid access for the registered resource, allowing it to be accessed through both Lake Formation permissions and IAM/S3 permissions. (AI-inferred) */
   hybridAccessEnabled: boolean;
-  /** This field is the unique identifier of the Lake Formation resource, typically the ARN of the underlying AWS resource (such as an S3 bucket or DynamoDB table) that has been registered. (AI-inferred) */
   id: string;
-  /** The Amazon Resource Name (ARN) of the S3 bucket, database, or table to be registered with AWS Lake Formation. (AI-inferred) */
   resourceArn: string;
-  /** The ARN of the IAM role that AWS Lake Formation assumes to access and manage the registered S3 data lake location. (AI-inferred) */
   roleArn: string;
-  /** Indicates whether to use the Lake Formation service-linked role when registering the S3 resource; if false, a custom IAM role must be provided in the RoleArn field. (AI-inferred) */
   useServiceLinkedRole: boolean;
-  /** When set to true, this flag registers the S3 location as a federated resource in AWS Lake Formation, enabling integration with a federated data catalog for access management. (AI-inferred) */
   withFederation: boolean;
 }
 

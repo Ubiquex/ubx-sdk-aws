@@ -8,58 +8,42 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubInsight_Filters_AwsAccountId:
-    # Specifies the comparison operator (e.g., EQUALS or PREFIX) used to evaluate the AWS account ID filter value in the insight. (AI-inferred)
     comparison: Any = None
-    # The AWS account ID that the insight filter matches against, used to include findings from that specific account. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_Confidence:
-    # Defines the equal-to filter for the Confidence score of a finding, matching findings whose confidence attribute is exactly equal to the specified numeric value. (AI-inferred)
     eq: Any = None
-    # Specifies the lower bound for the confidence score of a finding, filtering to findings with a confidence value greater than or equal to the specified number. (AI-inferred)
     gte: Any = None
-    # The confidence filter that matches findings with a confidence score less than or equal to the specified value. (AI-inferred)
     lte: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_CreatedAt_DateRange:
-    # Specifies the unit of time (DAYS, WEEKS, MONTHS, or YEARS) used by the date range filter to match findings by their creation date. (AI-inferred)
     unit: Any = None
-    # The number of time units (e.g., days) in the date range used to filter findings by their creation time. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_CreatedAt:
-    # Defines a start and end timestamp range that filters findings by their creation time when generating the Security Hub insight. (AI-inferred)
     date_range: Any = None
-    # The end of a date range used to filter findings in a Security Hub insight by the time they were created. (AI-inferred)
     end: Any = None
-    # The start timestamp for the created_at date range filter, which specifies the earliest creation time for findings to be included in the Security Hub insight. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_Keyword:
-    # The keyword string used by the Security Hub insight filter to match findings in which the keyword appears in a finding field, such as the title or a resource tag. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_NetworkDestinationIpV4:
-    # The IPv4 CIDR block for the destination IP address of network traffic, used to filter which findings are included in the Security Hub insight. (AI-inferred)
     cidr: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_ProductFields:
-    # The comparison operator used to match the product field value, such as EQUALS, NOT_EQUALS, CONTAINS, PREFIX, NOT_PREFIX, SUFFIX, or NOT_SUFFIX. (AI-inferred)
     comparison: Any = None
-    # The key of a product-fields filter entry, identifying a product-specific field name (such as 'aws/securityhub/ProductName') whose value, defined by the entry's value, is used to match findings in the insight. (AI-inferred)
     key: Any = None
-    # The value to match against a product-specific field for the filter, used to include findings in the Security Hub insight. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubInsight_Filters_Sample:
-    # Determines whether to include only sample findings (true) or only non-sample findings (false) in the Security Hub insight. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

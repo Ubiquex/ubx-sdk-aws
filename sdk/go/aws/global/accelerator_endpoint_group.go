@@ -4,20 +4,14 @@ package global
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcceleratorEndpointGroup_EndpointConfigurations struct {
-	// The ARN of the AWS resource (such as an Application Load Balancer, Network Load Balancer, or EC2 instance) that is attached as an endpoint in this endpoint group. (AI-inferred)
 	AttachmentArn any
-	// Indicates whether client IP address preservation is enabled for this endpoint, which keeps the original client IP address in the packet headers forwarded by Global Accelerator to the endpoint. (AI-inferred)
 	ClientIppreservationEnabled any
-	// The ARN of the endpoint resource (such as an Application Load Balancer, Network Load Balancer, EC2 instance, or Elastic IP address) that Global Accelerator routes traffic to for this endpoint configuration. (AI-inferred)
 	EndpointId any
-	// The weight assigned to the endpoint, controlling the proportion of traffic routed to it relative to other endpoints in the group (values 0-255, higher means more traffic). (AI-inferred)
 	Weight any
 }
 
 type AcceleratorEndpointGroup_PortOverrides struct {
-	// The actual port on the endpoint that receives traffic when this port override is applied, replacing the listener port for the mapped endpoint. (AI-inferred)
 	EndpointPort any
-	// Specifies the original port on the accelerator listener that this port override maps to the endpoint port, redirecting traffic received on that listener port to the endpoint's configured port. (AI-inferred)
 	ListenerPort any
 }
 
@@ -40,7 +34,6 @@ type AcceleratorEndpointGroupConfig struct {
 	EndpointGroupRegion any
 	// The time in seconds between each health check for an endpoint. Must be a value of 10 or 30
 	HealthCheckIntervalSeconds any
-	// The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred)
 	HealthCheckPath any
 	// The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group.
 	HealthCheckPort any
@@ -48,7 +41,6 @@ type AcceleratorEndpointGroupConfig struct {
 	HealthCheckProtocol any
 	// The Amazon Resource Name (ARN) of the listener
 	ListenerArn any
-	// A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred)
 	PortOverrides any
 	// The number of consecutive health checks required to set the state of the endpoint to unhealthy.
 	ThresholdCount any
@@ -65,7 +57,6 @@ type AcceleratorEndpointGroupAttrs struct {
 	EndpointGroupRegion any
 	// The time in seconds between each health check for an endpoint. Must be a value of 10 or 30
 	HealthCheckIntervalSeconds any
-	// The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred)
 	HealthCheckPath any
 	// The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group.
 	HealthCheckPort any
@@ -73,7 +64,6 @@ type AcceleratorEndpointGroupAttrs struct {
 	HealthCheckProtocol any
 	// The Amazon Resource Name (ARN) of the listener
 	ListenerArn any
-	// A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred)
 	PortOverrides any
 	// The number of consecutive health checks required to set the state of the endpoint to unhealthy.
 	ThresholdCount any

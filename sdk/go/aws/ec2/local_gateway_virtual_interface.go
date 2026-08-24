@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayVirtualInterface_Tags struct {
-	// The user-defined key for a tag attached to the EC2 Local Gateway Virtual Interface, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Local Gateway Virtual Interface, used to categorize or identify the resource. (AI-inferred)
 	Value any
 }
 

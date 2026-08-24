@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VirtualMfadevice_Tags {
-  /** The tag key for a virtual MFA device in IAM, which identifies a tag applied to the device for organizational or access-control purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the IAM virtual MFA device, used as an arbitrary metadata label for organizing, identifying, or managing the device. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,26 +12,17 @@ const VirtualMfadevice_TagsFields: FieldMap = {
 };
 
 export interface VirtualMfadeviceConfig {
-  /** The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred) */
   path?: string | Computed<string>;
-  /** Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred) */
   tags?: VirtualMfadevice_Tags[] | Computed<VirtualMfadevice_Tags[]>;
-  /** Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred) */
   users: string[] | Computed<string[]>;
-  /** Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred) */
   virtualMfaDeviceName?: string | Computed<string>;
 }
 
 export interface VirtualMfadeviceAttrs {
-  /** The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred) */
   path: string;
-  /** The ARN (Amazon Resource Name) of the virtual MFA device, which serves as its unique serial number. (AI-inferred) */
   serialNumber: string;
-  /** Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred) */
   tags: VirtualMfadevice_Tags[];
-  /** Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred) */
   users: string[];
-  /** Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred) */
   virtualMfaDeviceName: string;
 }
 

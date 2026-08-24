@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbAcl_Tags:
-    # The key name of a tag to associate with the MemoryDB ACL. (AI-inferred)
     key: Any = None
-    # The string value of a key-value pair in the tags map for the MemoryDB ACL, allowing users to attach custom metadata to the resource. (AI-inferred)
     value: Any = None
 
 _DbAcl_TagsFields = {

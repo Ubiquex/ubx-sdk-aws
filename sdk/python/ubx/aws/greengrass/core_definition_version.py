@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CoreDefinitionVersion_Cores:
-    # The Amazon Resource Name (ARN) of the AWS IoT certificate that identifies the Greengrass core device when it connects to AWS IoT. (AI-inferred)
     certificate_arn: Any = None
-    # The logical ID assigned to this core within the Greengrass core definition version, used to uniquely identify the core among the list of cores. (AI-inferred)
     id: Any = None
-    # Indicates whether the Greengrass core device's shadow is synchronized with the cloud. (AI-inferred)
     sync_shadow: Any = None
-    # The ARN of the AWS IoT Thing that acts as the Greengrass core device in this core definition version. (AI-inferred)
     thing_arn: Any = None
 
 _CoreDefinitionVersion_CoresFields = {
@@ -26,18 +22,13 @@ _CoreDefinitionVersion_CoresFields = {
 
 @dataclasses.dataclass
 class CoreDefinitionVersionConfig:
-    # The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred)
     core_definition_id: Any = None
-    # The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred)
     cores: Any = None
 
 @dataclasses.dataclass
 class CoreDefinitionVersionAttrs:
-    # The unique ID of the AWS Greengrass core definition that this core definition version is associated with. (AI-inferred)
     core_definition_id: Any = None
-    # The cores list specifies the Greengrass core devices for this core definition version, where each object includes the core device's Thing ARN, its associated certificate ARN, and an optional flag to enable shadow synchronization. (AI-inferred)
     cores: Any = None
-    # The unique AWS-assigned version ID (typically a UUID) for the Greengrass core definition version, returned after creation. (AI-inferred)
     id: Any = None
 
 CoreDefinitionVersion = ubx.ResourceBinding(

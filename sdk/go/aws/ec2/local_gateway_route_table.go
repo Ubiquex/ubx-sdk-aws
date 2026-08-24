@@ -4,7 +4,6 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayRouteTable_Tags struct {
-	// The key of a user-defined tag that can be attached to an EC2 Local Gateway Route Table for resource identification and management. (AI-inferred)
 	Key any
 	Value any
 }
@@ -19,7 +18,6 @@ type LocalGatewayRouteTableConfig struct {
 	LocalGatewayId any
 	// The mode of the local gateway route table.
 	Mode any
-	// A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
 	Tags any
 }
 
@@ -38,7 +36,6 @@ type LocalGatewayRouteTableAttrs struct {
 	OwnerId any
 	// The state of the local gateway route table.
 	State any
-	// A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
 	Tags any
 }
 

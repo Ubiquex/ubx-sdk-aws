@@ -28,7 +28,6 @@ class ZoneOwnerAttrs:
     # The properties of a domain unit's owner.
     owner: Any = None
     owner_identifier: Any = None
-    # Indicates whether the owner associated with the DataZone resource is a user or a group, as determined by the service. (AI-inferred)
     owner_type: Any = None
 
 ZoneOwner = ubx.ResourceBinding(

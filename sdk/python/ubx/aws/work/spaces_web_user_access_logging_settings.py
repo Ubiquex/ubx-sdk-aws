@@ -20,18 +20,14 @@ _SpacesWebUserAccessLoggingSettings_TagsFields = {
 class SpacesWebUserAccessLoggingSettingsConfig:
     # Kinesis stream ARN to which log events are published.
     kinesis_stream_arn: Any = None
-    # A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SpacesWebUserAccessLoggingSettingsAttrs:
-    # The ARNs of the WorkSpaces Web portals that are associated with this user access logging settings resource. (AI-inferred)
     associated_portal_arns: Any = None
     # Kinesis stream ARN to which log events are published.
     kinesis_stream_arn: Any = None
-    # A list of key-value tags to assign to this user access logging settings configuration. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this user access logging settings resource, used as a reference for attaching the settings to a WorkSpaces Web portal. (AI-inferred)
     user_access_logging_settings_arn: Any = None
 
 SpacesWebUserAccessLoggingSettings = ubx.ResourceBinding(

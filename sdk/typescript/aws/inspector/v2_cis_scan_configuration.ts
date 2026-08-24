@@ -6,11 +6,8 @@ export interface V2CisScanConfigurationConfig {
   scanName: string | Computed<string>;
   /** Choose a Schedule cadence */
   schedule: unknown | Computed<unknown>;
-  /** The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred) */
   securityLevel: string | Computed<string>;
-  /** The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred) */
   targets: unknown | Computed<unknown>;
 }
 
@@ -21,11 +18,8 @@ export interface V2CisScanConfigurationAttrs {
   scanName: string;
   /** Choose a Schedule cadence */
   schedule: unknown;
-  /** The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred) */
   securityLevel: string;
-  /** The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred) */
   tags: unknown;
-  /** Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred) */
   targets: unknown;
 }
 

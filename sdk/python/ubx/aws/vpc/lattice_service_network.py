@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LatticeServiceNetwork_SharingConfig:
-    # Whether the service network can be shared with other AWS accounts via AWS Resource Access Manager (RAM). (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class LatticeServiceNetwork_Tags:
-    # The tag key (along with the tag value) used to attach metadata to the VPC Lattice service network for identification and organization. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the VPC Lattice service network, used for cost allocation, resource organization, and IAM-based access control. (AI-inferred)
     value: Any = None
 
 _LatticeServiceNetwork_SharingConfigFields = {
@@ -29,32 +26,20 @@ _LatticeServiceNetwork_TagsFields = {
 
 @dataclasses.dataclass
 class LatticeServiceNetworkConfig:
-    # Determines the authentication method for the service network, accepting either NONE to allow open access or AWS_IAM to require IAM authentication for client requests. (AI-inferred)
     auth_type: Any = None
-    # Specifies the name of the VPC Lattice service network, which must be unique within the account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # Defines the sharing configuration for the service network, with an 'enabled' toggle that allows the network to be shared with other AWS accounts through AWS Resource Access Manager. (AI-inferred)
     sharing_config: Any = None
-    # Specifies the tags to associate with the service network, which can be used for cost allocation and resource management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class LatticeServiceNetworkAttrs:
-    # The Amazon Resource Name (ARN) of the VPC Lattice service network, automatically assigned by AWS upon creation. (AI-inferred)
     arn: Any = None
-    # Determines the authentication method for the service network, accepting either NONE to allow open access or AWS_IAM to require IAM authentication for client requests. (AI-inferred)
     auth_type: Any = None
-    # The date and time when the service network was created. (AI-inferred)
     created_at: Any = None
-    # The unique identifier of the VPC Lattice service network (e.g., sn-0123456789abcdef0), assigned by AWS upon creation. (AI-inferred)
     id: Any = None
-    # The timestamp indicating when the VPC Lattice service network was most recently updated, returned as a read-only string. (AI-inferred)
     last_updated_at: Any = None
-    # Specifies the name of the VPC Lattice service network, which must be unique within the account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
-    # Defines the sharing configuration for the service network, with an 'enabled' toggle that allows the network to be shared with other AWS accounts through AWS Resource Access Manager. (AI-inferred)
     sharing_config: Any = None
-    # Specifies the tags to associate with the service network, which can be used for cost allocation and resource management. (AI-inferred)
     tags: Any = None
 
 LatticeServiceNetwork = ubx.ResourceBinding(

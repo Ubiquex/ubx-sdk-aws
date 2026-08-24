@@ -4,9 +4,7 @@ package managed
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlockchainNode_NodeConfiguration struct {
-	// Specifies the Availability Zone in which the Amazon Managed Blockchain node is created. (AI-inferred)
 	AvailabilityZone any
-	// The EC2 instance type (e.g., bc.t3.large) that determines the compute, memory, and storage capacity allocated to the Managed Blockchain node. (AI-inferred)
 	InstanceType any
 }
 
@@ -16,24 +14,16 @@ var BlockchainNode_NodeConfigurationFields = ubx.FieldMap{
 	}
 
 type BlockchainNodeConfig struct {
-	// The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred)
 	MemberId any
-	// The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred)
 	NetworkId any
-	// Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred)
 	NodeConfiguration any
 }
 
 type BlockchainNodeAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this Managed Blockchain node. (AI-inferred)
 	Arn any
-	// The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred)
 	MemberId any
-	// The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred)
 	NetworkId any
-	// Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred)
 	NodeConfiguration any
-	// The unique identifier assigned by AWS to this Managed Blockchain node. (AI-inferred)
 	NodeId any
 }
 

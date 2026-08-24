@@ -19,7 +19,6 @@ export interface InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig
 }
 
 export interface InstanceStorageConfig_KinesisVideoStreamConfig {
-  /** Specifies the encryption configuration for the Kinesis Video Stream data storage, including the encryption type (KMS) and the KMS key ID used to encrypt the stream. (AI-inferred) */
   encryptionConfig: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig | Computed<InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig>;
   /** Prefixes are used to infer logical hierarchy */
   prefix: string | Computed<string>;
@@ -32,7 +31,6 @@ export interface InstanceStorageConfig_S3Config {
   bucketName: string | Computed<string>;
   /** Prefixes are used to infer logical hierarchy */
   bucketPrefix: string | Computed<string>;
-  /** Specifies the encryption configuration for the S3 bucket, including the AWS KMS key ID used to encrypt data at rest. (AI-inferred) */
   encryptionConfig?: InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig | Computed<InstanceStorageConfig_KinesisVideoStreamConfig_EncryptionConfig>;
 }
 
@@ -72,15 +70,11 @@ const InstanceStorageConfig_S3ConfigFields: FieldMap = {
 export interface InstanceStorageConfigConfig {
   /** Connect Instance ID with which the storage config will be associated */
   instanceArn: string | Computed<string>;
-  /** Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred) */
   kinesisFirehoseConfig?: InstanceStorageConfig_KinesisFirehoseConfig | Computed<InstanceStorageConfig_KinesisFirehoseConfig>;
-  /** Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred) */
   kinesisStreamConfig?: InstanceStorageConfig_KinesisStreamConfig | Computed<InstanceStorageConfig_KinesisStreamConfig>;
-  /** Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred) */
   kinesisVideoStreamConfig?: InstanceStorageConfig_KinesisVideoStreamConfig | Computed<InstanceStorageConfig_KinesisVideoStreamConfig>;
   /** Specifies the type of storage resource available for the instance */
   resourceType: string | Computed<string>;
-  /** Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred) */
   s3Config?: InstanceStorageConfig_S3Config | Computed<InstanceStorageConfig_S3Config>;
   /** Specifies the storage type to be associated with the instance */
   storageType: string | Computed<string>;
@@ -91,15 +85,11 @@ export interface InstanceStorageConfigAttrs {
   associationId: string;
   /** Connect Instance ID with which the storage config will be associated */
   instanceArn: string;
-  /** Configures an Amazon Kinesis Data Firehose delivery stream as the storage destination, requiring the Firehose stream ARN to be specified. (AI-inferred) */
   kinesisFirehoseConfig: InstanceStorageConfig_KinesisFirehoseConfig;
-  /** Defines the Kinesis Data Stream settings (stream ARN and optional encryption) for the storage config when the storage type is set to Kinesis Stream. (AI-inferred) */
   kinesisStreamConfig: InstanceStorageConfig_KinesisStreamConfig;
-  /** Specifies the Kinesis Video Stream configuration for storing Amazon Connect instance data, including the stream ARN and encryption settings. (AI-inferred) */
   kinesisVideoStreamConfig: InstanceStorageConfig_KinesisVideoStreamConfig;
   /** Specifies the type of storage resource available for the instance */
   resourceType: string;
-  /** Configures Amazon S3 as the storage destination for Amazon Connect instance data, specifying the bucket name (and optional prefix) where objects are written. (AI-inferred) */
   s3Config: InstanceStorageConfig_S3Config;
   /** Specifies the storage type to be associated with the instance */
   storageType: string;

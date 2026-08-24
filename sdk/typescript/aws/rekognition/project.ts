@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Project_Tags {
-  /** The key of a user-defined tag attached to the AWS Rekognition project, used for organizing and identifying the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag attached to the Amazon Rekognition project, enabling you to categorize, search, and manage the project within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -21,7 +19,6 @@ export interface ProjectConfig {
 }
 
 export interface ProjectAttrs {
-  /** The Amazon Resource Name (ARN) of the Rekognition project, uniquely identifying it across AWS. (AI-inferred) */
   arn: string;
   /** The name of the project */
   projectName: string;

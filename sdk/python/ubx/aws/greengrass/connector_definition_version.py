@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectorDefinitionVersion_Connectors:
-    # The ARN of the AWS IoT Greengrass connector that this connector definition version includes. (AI-inferred)
     connector_arn: Any = None
-    # The user-defined unique identifier for each connector within the Greengrass connector definition version, used to reference the connector in the group configuration. (AI-inferred)
     id: Any = None
-    # Specifies the configuration parameters for the Greengrass connector, passed as key-value pairs to the connector's Lambda function. (AI-inferred)
     parameters: Any = None
 
 _ConnectorDefinitionVersion_ConnectorsFields = {
@@ -23,18 +20,13 @@ _ConnectorDefinitionVersion_ConnectorsFields = {
 
 @dataclasses.dataclass
 class ConnectorDefinitionVersionConfig:
-    # Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred)
     connector_definition_id: Any = None
-    # Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred)
     connectors: Any = None
 
 @dataclasses.dataclass
 class ConnectorDefinitionVersionAttrs:
-    # Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred)
     connector_definition_id: Any = None
-    # Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred)
     connectors: Any = None
-    # The unique version UUID that AWS IoT Greengrass assigns to this connector definition version, returned by the CreateConnectorDefinitionVersion API. (AI-inferred)
     id: Any = None
 
 ConnectorDefinitionVersion = ubx.ResourceBinding(

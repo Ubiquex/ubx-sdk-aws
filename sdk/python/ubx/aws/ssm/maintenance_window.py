@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class MaintenanceWindow_Tags:
     key: Any = None
-    # Specifies a user-defined value for a tag that can be used to categorize and manage this Systems Manager maintenance window, such as by project or environment. (AI-inferred)
     value: Any = None
 
 _MaintenanceWindow_TagsFields = {

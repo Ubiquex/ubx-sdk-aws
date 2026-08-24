@@ -19,9 +19,7 @@ class LoadBalancingLoadBalancer_AccessLoggingPolicy:
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_AppCookieStickinessPolicy:
-    # The name of the application cookie that the classic load balancer uses to route a user's subsequent requests to the same registered instance for session stickiness. (AI-inferred)
     cookie_name: Any = None
-    # The name to assign to this application-controlled cookie stickiness policy, which is created for the Classic Load Balancer and can be referenced in a listener's policy list to enable session affinity based on a custom application cookie. (AI-inferred)
     policy_name: Any = None
 
 @dataclasses.dataclass
@@ -51,44 +49,29 @@ class LoadBalancingLoadBalancer_HealthCheck:
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_LbcookieStickinessPolicy:
-    # Specifies the time period in seconds after which the load balancer's sticky cookie expires, where omitting it makes the cookie last only for the duration of the browser session. (AI-inferred)
     cookie_expiration_period: Any = None
-    # The name assigned to the LBCookieStickinessPolicy for a Classic Load Balancer, used to identify and reference this policy when configuring listener stickiness. (AI-inferred)
     policy_name: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_Listeners:
-    # The TCP port on the registered EC2 instances to which the Classic Load Balancer forwards traffic, as defined for each listener. (AI-inferred)
     instance_port: Any = None
-    # Specifies the protocol (e.g., HTTP, HTTPS, TCP, SSL) that the Classic Load Balancer uses to communicate with backend instances, which defaults to the listener's protocol if not set. (AI-inferred)
     instance_protocol: Any = None
-    # The external port on which the load balancer listens for incoming client traffic, such as 80 for HTTP or 443 for HTTPS. (AI-inferred)
     load_balancer_port: Any = None
-    # Specifies the list of load balancer policy names to apply to this listener, enabling features like SSL negotiation or backend authentication for traffic on the listener's port. (AI-inferred)
     policy_names: Any = None
-    # Specifies the client-facing protocol for a classic load balancer listener (e.g., HTTP, HTTPS, TCP, or SSL), which must match the port and determines how incoming traffic is handled. (AI-inferred)
     protocol: Any = None
-    # The ARN of the IAM server certificate (or ACM certificate) used for SSL/TLS termination on this listener, required when the listener protocol is HTTPS or SSL. (AI-inferred)
     sslcertificate_id: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_Policies_Attributes:
-    # The name of a policy attribute within a classic load balancer policy, paired with its value to define settings such as session stickiness or cookie behavior. (AI-inferred)
     name: Any = None
-    # The value string for a load balancer policy attribute, paired with its Key, such as a cookie expiration period or stickiness setting. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_Policies:
-    # Specifies the list of key-value attribute pairs (each with a Key and Value) that define the configuration settings for the associated Elastic Load Balancing policy, such as stickiness expiration periods or other policy-specific parameters. (AI-inferred)
     attributes: Any = None
-    # Specifies the list of instance ports to which the classic load balancer policy is applied, commonly used with proxy protocol or other policy types that target specific ports. (AI-inferred)
     instance_ports: Any = None
-    # Specifies the load balancer (front-end) ports to which this classic Elastic Load Balancing policy (e.g., a stickiness or SSL negotiation policy) is applied. (AI-inferred)
     load_balancer_ports: Any = None
-    # The name of the load balancer policy, which must be unique within the load balancer and is used to reference the policy in listener configurations. (AI-inferred)
     policy_name: Any = None
-    # The type of the classic load balancer policy, such as SSLNegotiationPolicyType or ProxyProtocolPolicyType, which determines the policy's behavior and the set of attributes it supports. (AI-inferred)
     policy_type: Any = None
 
 @dataclasses.dataclass
@@ -100,9 +83,7 @@ class LoadBalancingLoadBalancer_SourceSecurityGroup:
 
 @dataclasses.dataclass
 class LoadBalancingLoadBalancer_Tags:
-    # The key of a tag assigned to the Classic Load Balancer, used to identify and categorize the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to a Classic Load Balancer, which together with the tag key forms a key-value pair used for organizing and identifying AWS resources. (AI-inferred)
     value: Any = None
 
 _LoadBalancingLoadBalancer_AccessLoggingPolicyFields = {
@@ -241,7 +222,6 @@ class LoadBalancingLoadBalancerAttrs:
     scheme: Any = None
     # The security groups for the load balancer. Valid only for load balancers in a VPC.
     security_groups: Any = None
-    # Computed read-only object holding the group name and owner alias of the automatically created source security group for the classic load balancer, used to authorize inbound traffic to backend instances in security group rules. (AI-inferred)
     source_security_group: Any = None
     # The IDs of the subnets for the load balancer. You can specify at most one subnet per Availability Zone.
     subnets: Any = None

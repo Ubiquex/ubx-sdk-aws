@@ -8,19 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnywhereProfile_AttributeMappings_MappingRules:
-    # Specifies the exact certificate or SAML assertion attribute value (such as a subject field or attribute name) that this mapping rule matches to populate the IAM session tag defined by the parent attribute mapping. (AI-inferred)
     specifier: Any = None
 
 @dataclasses.dataclass
 class AnywhereProfile_AttributeMappings:
-    # Identifies which X.509 certificate field (such as `x509Subject`, `x509Issuer`, or `x509SAN`) to evaluate when matching mapping rules in an AWS Roles Anywhere profile. (AI-inferred)
     certificate_field: Any = None
-    # Defines the list of matching criteria (source certificate attribute and value pattern) that must be satisfied for the parent attribute mapping to be applied, controlling how certificate attributes are converted into session names or tags for an IAM Roles Anywhere profile. (AI-inferred)
     mapping_rules: Any = None
 
 @dataclasses.dataclass
 class AnywhereProfile_Tags:
-    # The key of a tag (metadata) assigned to the AWS Roles Anywhere profile, used to organize and identify the profile. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -44,52 +40,30 @@ _AnywhereProfile_TagsFields = {
 
 @dataclasses.dataclass
 class AnywhereProfileConfig:
-    # Specifies whether the profile allows the caller to pass a session name in the AssumeRole request's role session name field. (AI-inferred)
     accept_role_session_name: Any = None
-    # Attribute mappings in the AWS Roles Anywhere profile define how to use regular-expression rules to extract values from authenticating X.509 certificate attributes (like the subject or issuer DN) and populate them as session tags on the temporary AWS credentials that the profile grants. (AI-inferred)
     attribute_mappings: Any = None
-    # Defines how long, in seconds, the temporary AWS access credentials issued to a session that uses this profile remain valid. (AI-inferred)
     duration_seconds: Any = None
-    # A boolean that indicates whether the Roles Anywhere profile is enabled and can be used to issue temporary credentials. (AI-inferred)
     enabled: Any = None
-    # Specifies the ARNs of IAM managed policies that are attached to the temporary session credentials when a role is assumed using this AWS Roles Anywhere profile. (AI-inferred)
     managed_policy_arns: Any = None
-    # The friendly name assigned to the IAM Roles Anywhere profile, used as a human-readable identifier for the profile. (AI-inferred)
     name: Any = None
-    # Specifies whether a session created with this profile must include instance properties (such as EC2 instance identifiers) when requesting temporary credentials. (AI-inferred)
     require_instance_properties: Any = None
-    # The list of IAM role ARNs that this profile is allowed to assume for temporary AWS credentials. (AI-inferred)
     role_arns: Any = None
-    # The IAM session policy (as a JSON or YAML policy document) that limits the permissions of the temporary credentials issued by the Roles Anywhere profile. (AI-inferred)
     session_policy: Any = None
-    # Specifies the tags (key-value pairs) that are attached to the AWS Roles Anywhere profile, which can be used for cost allocation, access control via IAM policies, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AnywhereProfileAttrs:
-    # Specifies whether the profile allows the caller to pass a session name in the AssumeRole request's role session name field. (AI-inferred)
     accept_role_session_name: Any = None
-    # Attribute mappings in the AWS Roles Anywhere profile define how to use regular-expression rules to extract values from authenticating X.509 certificate attributes (like the subject or issuer DN) and populate them as session tags on the temporary AWS credentials that the profile grants. (AI-inferred)
     attribute_mappings: Any = None
-    # Defines how long, in seconds, the temporary AWS access credentials issued to a session that uses this profile remain valid. (AI-inferred)
     duration_seconds: Any = None
-    # A boolean that indicates whether the Roles Anywhere profile is enabled and can be used to issue temporary credentials. (AI-inferred)
     enabled: Any = None
-    # Specifies the ARNs of IAM managed policies that are attached to the temporary session credentials when a role is assumed using this AWS Roles Anywhere profile. (AI-inferred)
     managed_policy_arns: Any = None
-    # The friendly name assigned to the IAM Roles Anywhere profile, used as a human-readable identifier for the profile. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Roles Anywhere profile. (AI-inferred)
     profile_arn: Any = None
-    # The unique identifier of the IAM Roles Anywhere profile, assigned by AWS when the profile is created. (AI-inferred)
     profile_id: Any = None
-    # Specifies whether a session created with this profile must include instance properties (such as EC2 instance identifiers) when requesting temporary credentials. (AI-inferred)
     require_instance_properties: Any = None
-    # The list of IAM role ARNs that this profile is allowed to assume for temporary AWS credentials. (AI-inferred)
     role_arns: Any = None
-    # The IAM session policy (as a JSON or YAML policy document) that limits the permissions of the temporary credentials issued by the Roles Anywhere profile. (AI-inferred)
     session_policy: Any = None
-    # Specifies the tags (key-value pairs) that are attached to the AWS Roles Anywhere profile, which can be used for cost allocation, access control via IAM policies, and resource organization. (AI-inferred)
     tags: Any = None
 
 AnywhereProfile = ubx.ResourceBinding(

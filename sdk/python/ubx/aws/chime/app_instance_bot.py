@@ -33,9 +33,7 @@ class AppInstanceBot_Configuration:
 
 @dataclasses.dataclass
 class AppInstanceBot_Tags:
-    # The key of a tag attached to the AppInstanceBot, used to categorize and manage the resource (e.g., environment, project) in AWS Chime. (AI-inferred)
     key: Any = None
-    # The value of a user-defined metadata tag attached to the Amazon Chime App Instance Bot. (AI-inferred)
     value: Any = None
 
 _AppInstanceBot_Configuration_Lex_InvokedByFields = {

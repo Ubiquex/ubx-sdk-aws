@@ -37,9 +37,7 @@ export interface LakeFhirdatastore_SseConfiguration {
 }
 
 export interface LakeFhirdatastore_Tags {
-  /** The key of a tag assigned to the AWS HealthLake FHIR Data Store, used to organize and identify the datastore for cost allocation and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to an AWS HealthLake FHIR DataStore, used to organize, categorize, and track the datastore for cost allocation and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -83,7 +81,6 @@ export interface LakeFhirdatastoreConfig {
   preloadDataConfig?: LakeFhirdatastore_PreloadDataConfig | Computed<LakeFhirdatastore_PreloadDataConfig>;
   /** The server-side encryption key configuration for a customer provided encryption key. */
   sseConfiguration?: LakeFhirdatastore_SseConfiguration | Computed<LakeFhirdatastore_SseConfiguration>;
-  /** Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred) */
   tags?: LakeFhirdatastore_Tags[] | Computed<LakeFhirdatastore_Tags[]>;
 }
 
@@ -108,7 +105,6 @@ export interface LakeFhirdatastoreAttrs {
   preloadDataConfig: LakeFhirdatastore_PreloadDataConfig;
   /** The server-side encryption key configuration for a customer provided encryption key. */
   sseConfiguration: LakeFhirdatastore_SseConfiguration;
-  /** Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred) */
   tags: LakeFhirdatastore_Tags[];
 }
 

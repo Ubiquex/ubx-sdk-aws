@@ -24,7 +24,6 @@ export interface LayerVersionConfig {
   compatibleArchitectures?: string[] | Computed<string[]>;
   /** A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions. */
   compatibleRuntimes?: string[] | Computed<string[]>;
-  /** The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred) */
   content: LayerVersion_Content | Computed<LayerVersion_Content>;
   /** The description of the version. */
   description?: string | Computed<string>;
@@ -39,13 +38,11 @@ export interface LayerVersionAttrs {
   compatibleArchitectures: string[];
   /** A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions. */
   compatibleRuntimes: string[];
-  /** The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred) */
   content: LayerVersion_Content;
   /** The description of the version. */
   description: string;
   /** The name or Amazon Resource Name (ARN) of the layer. */
   layerName: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Lambda layer version. (AI-inferred) */
   layerVersionArn: string;
   /** The layer's software license. */
   licenseInfo: string;

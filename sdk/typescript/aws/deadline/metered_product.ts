@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MeteredProductConfig {
-  /** The unique identifier of the license endpoint with which the metered product is associated in AWS Deadline Cloud. (AI-inferred) */
   licenseEndpointId?: string | Computed<string>;
-  /** The product_id specifies the unique AWS Marketplace product identifier for the software product that is metered and associated with the Deadline farm. (AI-inferred) */
   productId?: string | Computed<string>;
 }
 
 export interface MeteredProductAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Deadline Cloud metered product. (AI-inferred) */
   arn: string;
-  /** The product family (e.g., 'Arnold' or 'V-Ray') that Deadline Cloud assigns to the metered product, automatically determined and read-only. (AI-inferred) */
   family: string;
-  /** The unique identifier of the license endpoint with which the metered product is associated in AWS Deadline Cloud. (AI-inferred) */
   licenseEndpointId: string;
-  /** The network port number on which the metered product's licensing service listens, returned by Deadline Cloud after the product is created. (AI-inferred) */
   port: number;
-  /** The product_id specifies the unique AWS Marketplace product identifier for the software product that is metered and associated with the Deadline farm. (AI-inferred) */
   productId: string;
-  /** The vendor of the metered product, representing the company or provider that offers the software, as assigned by AWS Deadline Cloud. (AI-inferred) */
   vendor: string;
 }
 

@@ -4,15 +4,12 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConformancePack_ConformancePackInputParameters struct {
-	// The name of an input parameter for the conformance pack, used to pass a value into the conformance pack template. (AI-inferred)
 	ParameterName any
-	// The value portion of a key-value input parameter pair (with the associated parameter_key) that is supplied to the AWS Config organization conformance pack template when the conformance pack is deployed or updated. (AI-inferred)
 	ParameterValue any
 }
 
 type OrganizationConformancePack_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the AWS Config organization conformance pack, used for metadata and resource identification. (AI-inferred)
 	Value any
 }
 

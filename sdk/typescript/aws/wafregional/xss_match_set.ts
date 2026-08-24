@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface XssMatchSet_XssMatchTuples_FieldToMatch {
-  /** The value of the `field_to_match` that defines the specific part of the web request to match, such as the header name when `type` is `HEADER`; it is empty for types like `URI` or `QUERY_STRING`. (AI-inferred) */
   data?: string | Computed<string>;
-  /** Specifies the part of the web request (for example, QUERY_STRING, URI, or BODY) that AWS WAF Regional inspects for cross-site scripting (XSS) attack patterns. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface XssMatchSet_XssMatchTuples {
-  /** Specifies the part of a web request (such as a header, query string, or body) that AWS WAF Regional inspects for cross-site scripting attack patterns. (AI-inferred) */
   fieldToMatch?: XssMatchSet_XssMatchTuples_FieldToMatch | Computed<XssMatchSet_XssMatchTuples_FieldToMatch>;
-  /** Specifies how the text in the web request component is transformed (e.g., URL_DECODE, LOWERCASE) before the XSS match rule is evaluated. (AI-inferred) */
   textTransformation?: string | Computed<string>;
 }
 
@@ -30,18 +26,13 @@ const XssMatchSet_XssMatchTuplesFields: FieldMap = {
 };
 
 export interface XssMatchSetConfig {
-  /** The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred) */
   xssMatchTuples?: XssMatchSet_XssMatchTuples[] | Computed<XssMatchSet_XssMatchTuples[]>;
 }
 
 export interface XssMatchSetAttrs {
-  /** The unique identifier assigned by AWS to the WAF Regional XSS match set. (AI-inferred) */
   id: string;
-  /** The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred) */
   name: string;
-  /** Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred) */
   xssMatchTuples: XssMatchSet_XssMatchTuples[];
 }
 

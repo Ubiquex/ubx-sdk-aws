@@ -13,7 +13,6 @@ type TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration_IcebergC
 }
 
 type TableOptimizer_TableOptimizerConfiguration_CompactionConfiguration struct {
-	// Specifies the Iceberg-specific settings for the compaction configuration of the AWS Glue table optimizer, controlling how compaction is performed on Apache Iceberg table data. (AI-inferred)
 	IcebergConfiguration any
 }
 
@@ -25,21 +24,16 @@ type TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration_
 }
 
 type TableOptimizer_TableOptimizerConfiguration_OrphanFileDeletionConfiguration struct {
-	// Specifies the Iceberg-specific settings for the orphan file deletion optimizer, including the retention period in days that determines when orphan files are eligible for deletion. (AI-inferred)
 	IcebergConfiguration any
 }
 
 type TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration_IcebergConfiguration struct {
-	// When enabled, this flag instructs the Glue table optimizer to physically delete expired Iceberg data files that are no longer referenced by any retained snapshot as part of the table's retention policy. (AI-inferred)
 	CleanExpiredFiles any
-	// The maximum number of Iceberg snapshots to retain when expiring old snapshots for the table, as part of the table optimizer's retention configuration. (AI-inferred)
 	NumberOfSnapshotsToRetain any
-	// The number of days to retain Iceberg snapshots before they are automatically expired by the Glue table optimizer. (AI-inferred)
 	SnapshotRetentionPeriodInDays any
 }
 
 type TableOptimizer_TableOptimizerConfiguration_RetentionConfiguration struct {
-	// Specifies Iceberg-specific snapshot retention settings, such as the number of snapshots to retain and the retention period in days, for the Glue table optimizer's retention configuration. (AI-inferred)
 	IcebergConfiguration any
 }
 
@@ -49,17 +43,13 @@ type TableOptimizer_TableOptimizerConfiguration_VpcConfiguration struct {
 }
 
 type TableOptimizer_TableOptimizerConfiguration struct {
-	// Defines the settings for the compaction operation in the Glue table optimizer, including whether compaction is enabled (Enabled flag) for the table. (AI-inferred)
 	CompactionConfiguration any
 	// Whether the table optimization is enabled.
 	Enabled any
-	// Configuration for the orphan file deletion optimizer, specifying the retention period (in days) for orphan files before they are deleted from the S3 table. (AI-inferred)
 	OrphanFileDeletionConfiguration any
-	// Configures the retention settings for the Glue table optimizer, specifying the snapshot retention period and the number of snapshots to retain for Apache Iceberg tables. (AI-inferred)
 	RetentionConfiguration any
 	// A role passed by the caller which gives the service permission to update the resources associated with the optimizer on the caller's behalf.
 	RoleArn any
-	// Configures the VPC settings, including subnet and security group IDs, that the AWS Glue job running the table optimization uses to access resources within a virtual private cloud. (AI-inferred)
 	VpcConfiguration any
 }
 
@@ -140,7 +130,6 @@ type TableOptimizerConfig struct {
 	DatabaseName any
 	// The table name. For Hive compatibility, this must be entirely lowercase.
 	TableName any
-	// Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred)
 	TableOptimizerConfiguration any
 	// The type of table optimizer.
 	Type any
@@ -153,7 +142,6 @@ type TableOptimizerAttrs struct {
 	DatabaseName any
 	// The table name. For Hive compatibility, this must be entirely lowercase.
 	TableName any
-	// Defines the table optimizer's settings, such as whether automatic optimization is enabled and the IAM role ARN that runs the optimizer jobs. (AI-inferred)
 	TableOptimizerConfiguration any
 	// The type of table optimizer.
 	Type any

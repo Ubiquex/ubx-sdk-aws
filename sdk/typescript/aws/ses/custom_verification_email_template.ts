@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomVerificationEmailTemplate_Tags {
-  /** The key part of a tag attached to the Amazon SES custom verification email template, used to categorize or identify the template. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

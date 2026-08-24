@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdServicePrincipalNameConfig {
-  /** The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred) */
   connectorArn: string | Computed<string>;
-  /** The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred) */
   directoryRegistrationArn: string | Computed<string>;
 }
 
 export interface AdServicePrincipalNameAttrs {
-  /** The ARN of the Active Directory connector to which this service principal name is registered. (AI-inferred) */
   connectorArn: string;
-  /** The ARN of the directory registration that this service principal name belongs to, linking the SPN to the associated AWS Managed Microsoft Active Directory. (AI-inferred) */
   directoryRegistrationArn: string;
 }
 

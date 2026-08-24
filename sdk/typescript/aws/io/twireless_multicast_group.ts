@@ -13,7 +13,6 @@ export interface TwirelessMulticastGroup_LoRaWan {
 }
 
 export interface TwirelessMulticastGroup_Tags {
-  /** Defines the key of a tag applied to the IoT Wireless Multicast Group, allowing you to attach custom metadata for resource grouping and management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -47,7 +46,6 @@ export interface TwirelessMulticastGroupAttrs {
   disassociateWirelessDevice: string;
   /** Multicast group id. Returned after successful create. */
   id: string;
-  /** The LoRaWAN radio configuration (downlink class and frequency band) that AWS IoT Wireless applies to this multicast group, returned as a read-only attribute after group creation. (AI-inferred) */
   loRaWan: TwirelessMulticastGroup_LoRaWan;
   /** Name of Multicast group */
   name: string;

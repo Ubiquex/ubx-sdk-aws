@@ -16,9 +16,7 @@ class ConnectRouterNetworkInterface_Configuration_Public:
 
 @dataclasses.dataclass
 class ConnectRouterNetworkInterface_Configuration_Vpc:
-    # The list of security group IDs to associate with the VPC network interface for this MediaConnect router, which determines the firewall rules for traffic to and from the interface. (AI-inferred)
     security_group_ids: Any = None
-    # The ID of the subnet within the customer's VPC where the MediaConnect router network interface is created, as specified in the router's configuration VPC settings. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
@@ -28,9 +26,7 @@ class ConnectRouterNetworkInterface_Configuration:
 
 @dataclasses.dataclass
 class ConnectRouterNetworkInterface_Tags:
-    # The key of a user-defined tag attached to this MediaConnect router network interface, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag pair applied to the AWS MediaConnect router network interface, used for categorizing, identifying, and managing the resource within AWS. (AI-inferred)
     value: Any = None
 
 _ConnectRouterNetworkInterface_Configuration_Public_AllowRulesFields = {
@@ -81,7 +77,6 @@ class ConnectRouterNetworkInterfaceConfig:
 
 @dataclasses.dataclass
 class ConnectRouterNetworkInterfaceAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the MediaConnect router network interface. (AI-inferred)
     arn: Any = None
     # The number of router inputs associated with the network interface.
     associated_input_count: Any = None

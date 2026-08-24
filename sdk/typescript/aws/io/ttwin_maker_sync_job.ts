@@ -15,7 +15,6 @@ export interface TtwinMakerSyncJobConfig {
 export interface TtwinMakerSyncJobAttrs {
   /** The ARN of the SyncJob. */
   arn: string;
-  /** The date and time at which the AWS IoT TwinMaker sync job was created, expressed in ISO 8601 format. (AI-inferred) */
   creationDateTime: string;
   /** The state of SyncJob. */
   state: string;
@@ -25,7 +24,6 @@ export interface TtwinMakerSyncJobAttrs {
   syncSource: string;
   /** A key-value pair to associate with a resource. */
   tags: unknown;
-  /** The date and time when the sync job was last updated, in ISO 8601 format. (AI-inferred) */
   updateDateTime: string;
   /** The ID of the workspace. */
   workspaceId: string;

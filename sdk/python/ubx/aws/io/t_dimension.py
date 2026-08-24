@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TDimension_Tags:
     key: Any = None
-    # The tag value, paired with its key, assigns arbitrary metadata to the AWS IoT Dimension resource for categorization, filtering, and cost allocation. (AI-inferred)
     value: Any = None
 
 _TDimension_TagsFields = {

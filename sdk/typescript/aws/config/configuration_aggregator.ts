@@ -2,27 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigurationAggregator_AccountAggregationSources {
-  /** Specifies the AWS account IDs from which AWS Config will aggregate configuration data into the configuration aggregator. (AI-inferred) */
   accountIds?: string[] | Computed<string[]>;
-  /** Determines whether this account aggregation source includes all AWS regions (true) or only the specific regions listed in the 'regions' property (false). (AI-inferred) */
   allAwsRegions?: boolean | Computed<boolean>;
-  /** The list of AWS regions from which AWS Config aggregates data for the specified source accounts. (AI-inferred) */
   awsRegions?: string[] | Computed<string[]>;
 }
 
 export interface ConfigurationAggregator_OrganizationAggregationSource {
-  /** Indicates whether to aggregate Config data from all AWS regions in the organization (true) or only from the regions specified in the AwsRegions list (false). (AI-inferred) */
   allAwsRegions?: boolean | Computed<boolean>;
-  /** Specifies the list of specific AWS regions from which the organization aggregator collects configuration data; if omitted, all regions are included (as long as the parent's allAwsRegions setting is true). (AI-inferred) */
   awsRegions?: string[] | Computed<string[]>;
-  /** The ARN of the IAM role that AWS Config assumes to access organization data for the organization aggregation source. (AI-inferred) */
   roleArn: string | Computed<string>;
 }
 
 export interface ConfigurationAggregator_Tags {
-  /** The user-defined key of a tag applied to the AWS Config configuration aggregator, used to identify and organize the aggregator resource within your AWS environment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag assigned to the AWS Config configuration aggregator. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -44,24 +36,20 @@ const ConfigurationAggregator_TagsFields: FieldMap = {
 };
 
 export interface ConfigurationAggregatorConfig {
-  /** Specifies the list of AWS accounts from which to aggregate AWS Config configuration data, optionally restricting the regions that are aggregated for each account. (AI-inferred) */
   accountAggregationSources?: ConfigurationAggregator_AccountAggregationSources[] | Computed<ConfigurationAggregator_AccountAggregationSources[]>;
   /** The name of the aggregator. */
   configurationAggregatorName?: string | Computed<string>;
-  /** Specifies the AWS organization (by IAM role ARN and list of regions, with an option to enable all regions) that acts as the source of configuration data for this AWS Config configuration aggregator. (AI-inferred) */
   organizationAggregationSource?: ConfigurationAggregator_OrganizationAggregationSource | Computed<ConfigurationAggregator_OrganizationAggregationSource>;
   /** The tags for the configuration aggregator. */
   tags?: ConfigurationAggregator_Tags[] | Computed<ConfigurationAggregator_Tags[]>;
 }
 
 export interface ConfigurationAggregatorAttrs {
-  /** Specifies the list of AWS accounts from which to aggregate AWS Config configuration data, optionally restricting the regions that are aggregated for each account. (AI-inferred) */
   accountAggregationSources: ConfigurationAggregator_AccountAggregationSources[];
   /** The Amazon Resource Name (ARN) of the aggregator. */
   configurationAggregatorArn: string;
   /** The name of the aggregator. */
   configurationAggregatorName: string;
-  /** Specifies the AWS organization (by IAM role ARN and list of regions, with an option to enable all regions) that acts as the source of configuration data for this AWS Config configuration aggregator. (AI-inferred) */
   organizationAggregationSource: ConfigurationAggregator_OrganizationAggregationSource;
   /** The tags for the configuration aggregator. */
   tags: ConfigurationAggregator_Tags[];

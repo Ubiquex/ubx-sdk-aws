@@ -4,7 +4,6 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerSiteToSiteVpnAttachment_ProposedNetworkFunctionGroupChange_Tags struct {
-	// The key of a tag associated with the proposed network function group change for the Site-to-Site VPN attachment, used to label the network function group change for tracking and management. (AI-inferred)
 	Key any
 	Value any
 }

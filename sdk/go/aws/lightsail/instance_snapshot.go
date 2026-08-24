@@ -11,7 +11,6 @@ type InstanceSnapshot_Location struct {
 }
 
 type InstanceSnapshot_Tags struct {
-	// Specifies the key of a tag applied to the AWS Lightsail instance snapshot, used for organizing and identifying the snapshot. (AI-inferred)
 	Key any
 	Value any
 }

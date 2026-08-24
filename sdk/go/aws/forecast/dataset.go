@@ -11,21 +11,16 @@ type Dataset_EncryptionConfig struct {
 }
 
 type Dataset_Schema_Attributes struct {
-	// The name of an attribute (column) in the dataset schema, which must match the field name in the source data (e.g., the column header in CSV input). (AI-inferred)
 	AttributeName any
-	// Specifies the data type of the attribute (column) in the dataset schema, which must be one of string, integer, float, or timestamp, determining how the data is interpreted for forecast training. (AI-inferred)
 	AttributeType any
 }
 
 type Dataset_Schema struct {
-	// Defines the fields of the dataset, where each attribute specifies a name and a data type (such as string, integer, float, or timestamp) for a column in the dataset. (AI-inferred)
 	Attributes any
 }
 
 type Dataset_Tags struct {
-	// The user-defined key of a tag applied to the Amazon Forecast dataset, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the AWS Forecast dataset, used for metadata, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -61,16 +56,12 @@ type DatasetConfig struct {
 	DatasetType any
 	// The domain associated with the dataset
 	Domain any
-	// If set, this object defines the AWS KMS key used to encrypt the dataset, specified via its KmsKeyArn subfield, enabling server-side encryption of the forecast data. (AI-inferred)
 	EncryptionConfig any
-	// Defines the dataset schema by specifying the list of attributes (each with a name and data type) that determine the columns of the dataset. (AI-inferred)
 	Schema any
-	// Specifies the tags (key-value pairs) to attach to the Forecast dataset for cost allocation and resource management. (AI-inferred)
 	Tags any
 }
 
 type DatasetAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the forecast dataset. (AI-inferred)
 	Arn any
 	// Frequency of data collection. This parameter is required for RELATED_TIME_SERIES
 	DataFrequency any
@@ -80,11 +71,8 @@ type DatasetAttrs struct {
 	DatasetType any
 	// The domain associated with the dataset
 	Domain any
-	// If set, this object defines the AWS KMS key used to encrypt the dataset, specified via its KmsKeyArn subfield, enabling server-side encryption of the forecast data. (AI-inferred)
 	EncryptionConfig any
-	// Defines the dataset schema by specifying the list of attributes (each with a name and data type) that determine the columns of the dataset. (AI-inferred)
 	Schema any
-	// Specifies the tags (key-value pairs) to attach to the Forecast dataset for cost allocation and resource management. (AI-inferred)
 	Tags any
 }
 

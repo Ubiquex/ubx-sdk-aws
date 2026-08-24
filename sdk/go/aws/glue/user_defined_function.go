@@ -4,9 +4,7 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDefinedFunction_ResourceUris struct {
-	// Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred)
 	ResourceType any
-	// The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred)
 	Uri any
 }
 

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RecoveryReadinessReadinessCheck_Tags {
   key?: string | Computed<string>;
-  /** The value half of a key-value tag attached to the Route 53 Recovery Readiness readiness check, used to add custom metadata for organizing and identifying this resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

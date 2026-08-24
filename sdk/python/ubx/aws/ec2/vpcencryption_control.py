@@ -14,9 +14,7 @@ class VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway:
 @dataclasses.dataclass
 class VpcencryptionControl_ResourceExclusions:
     egress_only_internet_gateway: Any = None
-    # Specifies whether Elastic File System (EFS) file systems are excluded from the enforcement of encryption controls in the VPC. (AI-inferred)
     elastic_file_system: Any = None
-    # An object that, when specified, allows Internet Gateways to be excluded from the scope of the VPC encryption control policy. (AI-inferred)
     internet_gateway: Any = None
     lambda_: Any = None
     nat_gateway: Any = None

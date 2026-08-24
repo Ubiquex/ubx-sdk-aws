@@ -8,42 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebExperience_BrowserExtensionConfiguration:
-    # Specifies the browsers (such as Chrome, Firefox, and Edge) for which the AWS Q Business browser extension is enabled in the web experience. (AI-inferred)
     enabled_browser_extensions: Any = None
 
 @dataclasses.dataclass
 class WebExperience_CustomizationConfiguration:
-    # The URL of a custom CSS file that overrides the default styling of the QBusiness web experience to match your organization's branding. (AI-inferred)
     custom_cssurl: Any = None
-    # Specifies the URL of a custom favicon that replaces the default QBusiness icon for the web experience. (AI-inferred)
     favicon_url: Any = None
-    # Defines the URL of a custom font that replaces the default font for the Amazon Q Business web experience. (AI-inferred)
     font_url: Any = None
-    # The URL of a custom logo image that Amazon Q Business displays on the web experience's chat interface. (AI-inferred)
     logo_url: Any = None
 
 @dataclasses.dataclass
 class WebExperience_IdentityProviderConfiguration_OpenIdconnectConfiguration:
-    # The ARN of an AWS Secrets Manager secret that stores the client secret for the OpenID Connect configuration, which the web experience uses to authenticate with the OIDC identity provider. (AI-inferred)
     secrets_arn: Any = None
-    # The ARN of an IAM role that Amazon Q Business assumes to retrieve the OIDC client secret from AWS Secrets Manager for authenticating users to the web experience. (AI-inferred)
     secrets_role: Any = None
 
 @dataclasses.dataclass
 class WebExperience_IdentityProviderConfiguration_SamlConfiguration:
-    # The URL of the identity provider's authentication endpoint to which users are redirected for SAML single sign-on. (AI-inferred)
     authentication_url: Any = None
 
 @dataclasses.dataclass
 class WebExperience_IdentityProviderConfiguration:
-    # Specifies the OpenID Connect (OIDC) configuration for users to authenticate to the web experience, referencing the AWS Secrets Manager secret that stores OIDC client credentials and the IAM role used to retrieve them. (AI-inferred)
     open_idconnect_configuration: Any = None
-    # Configures SAML-based single sign-on for the web experience by specifying the IdP metadata document, the IAM role ARN, and optional user/group attribute mappings for authentication. (AI-inferred)
     saml_configuration: Any = None
 
 @dataclasses.dataclass
 class WebExperience_Tags:
-    # Defines the tag key for a key-value pair assigned to an AWS Q Business web experience, enabling resource categorization, cost management, and access control through AWS tagging. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -87,64 +76,36 @@ _WebExperience_TagsFields = {
 
 @dataclasses.dataclass
 class WebExperienceConfig:
-    # The unique identifier of the AWS QBusiness application to which this web experience is attached. (AI-inferred)
     application_id: Any = None
-    # Configures the browser extension for the web experience, including whether the extension is enabled and the extension name used to access the QBusiness assistant from a supported browser. (AI-inferred)
     browser_extension_configuration: Any = None
-    # Specifies the custom CSS and JavaScript URLs used to customize the appearance and behavior of the AWS Q Business web experience. (AI-inferred)
     customization_configuration: Any = None
-    # Defines the identity provider configuration for the web experience, allowing you to specify either SAML or OIDC settings for user authentication. (AI-inferred)
     identity_provider_configuration: Any = None
-    # A list of allowed origin URLs (e.g., 'https://example.com') that can embed or access this Amazon Q Business web experience, enabling secure integration with your own web applications while controlling cross-origin access. (AI-inferred)
     origins: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the web experience assumes to access AWS services and resources. (AI-inferred)
     role_arn: Any = None
-    # Determines whether sample prompts are shown to users in the AWS Q Business web experience, with allowed values ENABLED or DISABLED. (AI-inferred)
     sample_prompts_control_mode: Any = None
-    # The subtitle for the AWS QBusiness web experience, typically displayed under the title in the chat interface. (AI-inferred)
     subtitle: Any = None
-    # A list of tag objects (each with a key and value) that are attached to the Amazon Q Business web experience for resource identification, cost allocation, and access management. (AI-inferred)
     tags: Any = None
-    # The title of the web experience, which is displayed to users in the browser tab and as the heading of the web experience interface. (AI-inferred)
     title: Any = None
-    # The custom message that Amazon Q Business displays to users when they first open the web experience chat interface. (AI-inferred)
     welcome_message: Any = None
 
 @dataclasses.dataclass
 class WebExperienceAttrs:
-    # The unique identifier of the AWS QBusiness application to which this web experience is attached. (AI-inferred)
     application_id: Any = None
-    # Configures the browser extension for the web experience, including whether the extension is enabled and the extension name used to access the QBusiness assistant from a supported browser. (AI-inferred)
     browser_extension_configuration: Any = None
-    # The timestamp (in ISO 8601 format) indicating when the Amazon Q Business web experience was created. (AI-inferred)
     created_at: Any = None
-    # Specifies the custom CSS and JavaScript URLs used to customize the appearance and behavior of the AWS Q Business web experience. (AI-inferred)
     customization_configuration: Any = None
-    # The default endpoint URL of the web experience, automatically assigned by AWS QBusiness when the web experience is created. (AI-inferred)
     default_endpoint: Any = None
-    # Defines the identity provider configuration for the web experience, allowing you to specify either SAML or OIDC settings for user authentication. (AI-inferred)
     identity_provider_configuration: Any = None
-    # A list of allowed origin URLs (e.g., 'https://example.com') that can embed or access this Amazon Q Business web experience, enabling secure integration with your own web applications while controlling cross-origin access. (AI-inferred)
     origins: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the web experience assumes to access AWS services and resources. (AI-inferred)
     role_arn: Any = None
-    # Determines whether sample prompts are shown to users in the AWS Q Business web experience, with allowed values ENABLED or DISABLED. (AI-inferred)
     sample_prompts_control_mode: Any = None
-    # The current lifecycle status of the web experience, such as CREATING, ACTIVE, or DELETING, as assigned by the QBusiness service. (AI-inferred)
     status: Any = None
-    # The subtitle for the AWS QBusiness web experience, typically displayed under the title in the chat interface. (AI-inferred)
     subtitle: Any = None
-    # A list of tag objects (each with a key and value) that are attached to the Amazon Q Business web experience for resource identification, cost allocation, and access management. (AI-inferred)
     tags: Any = None
-    # The title of the web experience, which is displayed to users in the browser tab and as the heading of the web experience interface. (AI-inferred)
     title: Any = None
-    # The read-only timestamp indicating when the web experience was last updated. (AI-inferred)
     updated_at: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this QBusiness web experience. (AI-inferred)
     web_experience_arn: Any = None
-    # The unique identifier assigned by AWS to this Amazon Q Business web experience, used to reference it in API calls and other resources. (AI-inferred)
     web_experience_id: Any = None
-    # The custom message that Amazon Q Business displays to users when they first open the web experience chat interface. (AI-inferred)
     welcome_message: Any = None
 
 WebExperience = ubx.ResourceBinding(

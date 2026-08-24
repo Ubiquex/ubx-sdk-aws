@@ -2,30 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Project_AppConfigResource {
-  /** The application_id specifies the AWS AppConfig application ID that this Evidently project uses to store and manage its feature flag configuration. (AI-inferred) */
   applicationId: string | Computed<string>;
-  /** The ID of the AWS AppConfig environment that hosts the configuration used by this Evidently project for feature flag evaluation. (AI-inferred) */
   environmentId: string | Computed<string>;
 }
 
 export interface Project_DataDelivery_S3 {
-  /** The name of the S3 bucket to which Evidently delivers experiment and feature-evaluation data for this project. (AI-inferred) */
   bucketName: string | Computed<string>;
-  /** Specifies the S3 key prefix under which AWS Evidently will store evaluation event data for this project when data delivery is configured to an S3 bucket. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface Project_DataDelivery {
-  /** The name of the CloudWatch Logs log group where Evidently delivers the project's data, such as evaluation events, for analysis and monitoring. (AI-inferred) */
   logGroup?: string | Computed<string>;
-  /** Configures the S3 bucket and optional prefix where Evidently delivers project data such as events and evaluation results. (AI-inferred) */
   s3?: Project_DataDelivery_S3 | Computed<Project_DataDelivery_S3>;
 }
 
 export interface Project_Tags {
-  /** The key component of a tag attached to the Amazon Evidently project, allowing you to categorize and filter the project by user-defined labels. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the Evidently project, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -54,28 +46,21 @@ const Project_TagsFields: FieldMap = {
 };
 
 export interface ProjectConfig {
-  /** Specifies the AWS AppConfig application and configuration profile to associate with this Evidently project, enabling the project to use AppConfig as the source for feature flag variations. (AI-inferred) */
   appConfigResource?: Project_AppConfigResource | Computed<Project_AppConfigResource>;
   /** Destinations for data. */
   dataDelivery?: Project_DataDelivery | Computed<Project_DataDelivery>;
-  /** An optional free-form text field that provides a description for the Evidently project. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name to assign to the Evidently project, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Project_Tags[] | Computed<Project_Tags[]>;
 }
 
 export interface ProjectAttrs {
-  /** Specifies the AWS AppConfig application and configuration profile to associate with this Evidently project, enabling the project to use AppConfig as the source for feature flag variations. (AI-inferred) */
   appConfigResource: Project_AppConfigResource;
-  /** The Amazon Resource Name (ARN) of the Evidently project, which uniquely identifies the project in AWS. (AI-inferred) */
   arn: string;
   /** Destinations for data. */
   dataDelivery: Project_DataDelivery;
-  /** An optional free-form text field that provides a description for the Evidently project. (AI-inferred) */
   description: string;
-  /** The name to assign to the Evidently project, which must be unique within the AWS account and Region. (AI-inferred) */
   name: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Project_Tags[];

@@ -4,19 +4,15 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MeshVirtualRouter_Spec_Listeners_PortMapping struct {
-	// Specifies the port number that the virtual router listener uses to receive incoming traffic, as part of its port mapping configuration. (AI-inferred)
 	Port any
-	// Specifies the protocol (grpc, http, http2, or tcp) for the listener's port mapping on the virtual router. (AI-inferred)
 	Protocol any
 }
 
 type MeshVirtualRouter_Spec_Listeners struct {
-	// Specifies the port number and protocol (such as http or tcp) that the virtual router listener uses to receive incoming traffic. (AI-inferred)
 	PortMapping any
 }
 
 type MeshVirtualRouter_Spec struct {
-	// Defines the port mappings (port and protocol) that the virtual router listens on for traffic from virtual services. (AI-inferred)
 	Listeners any
 }
 
@@ -52,36 +48,22 @@ var MeshVirtualRouter_TagsFields = ubx.FieldMap{
 	}
 
 type MeshVirtualRouterConfig struct {
-	// The name of the service mesh in which the virtual router is defined. (AI-inferred)
 	MeshName any
-	// Specifies the AWS account ID of the mesh owner when creating a virtual router in a shared App Mesh mesh owned by another AWS account; if omitted, the mesh is assumed to be in your current account. (AI-inferred)
 	MeshOwner any
-	// Specifies the virtual router's desired configuration, primarily its Listener property that defines the port mapping and protocol for traffic received by the virtual router. (AI-inferred)
 	Spec any
-	// Tags are key-value pairs you can assign to an AWS App Mesh virtual router to organize, identify, and manage access to it through IAM policies, following the standard AWS resource tagging model. (AI-inferred)
 	Tags any
-	// The name of the virtual router, which must be unique within the AWS App Mesh service mesh it belongs to. (AI-inferred)
 	VirtualRouterName any
 }
 
 type MeshVirtualRouterAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the virtual router. (AI-inferred)
 	Arn any
-	// The AWS-assigned unique identifier for this App Mesh virtual router, which is its Amazon Resource Name (ARN). (AI-inferred)
 	Id any
-	// The name of the service mesh in which the virtual router is defined. (AI-inferred)
 	MeshName any
-	// Specifies the AWS account ID of the mesh owner when creating a virtual router in a shared App Mesh mesh owned by another AWS account; if omitted, the mesh is assumed to be in your current account. (AI-inferred)
 	MeshOwner any
-	// The AWS account ID of the account that owns the virtual router, as returned by the App Mesh API in the resource metadata. (AI-inferred)
 	ResourceOwner any
-	// Specifies the virtual router's desired configuration, primarily its Listener property that defines the port mapping and protocol for traffic received by the virtual router. (AI-inferred)
 	Spec any
-	// Tags are key-value pairs you can assign to an AWS App Mesh virtual router to organize, identify, and manage access to it through IAM policies, following the standard AWS resource tagging model. (AI-inferred)
 	Tags any
-	// The unique identifier (UUID) assigned by AWS to the virtual router, used to uniquely reference it within the App Mesh service. (AI-inferred)
 	Uid any
-	// The name of the virtual router, which must be unique within the AWS App Mesh service mesh it belongs to. (AI-inferred)
 	VirtualRouterName any
 }
 

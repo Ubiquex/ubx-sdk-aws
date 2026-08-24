@@ -8,58 +8,42 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResponsePlan_Actions_SsmAutomation_DynamicParameters_Value:
-    # Specifies the dynamic incident variable (such as an incident ARN or severity) that will be resolved at runtime and used as the value for this SSM automation document parameter. (AI-inferred)
     variable: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Actions_SsmAutomation_DynamicParameters:
-    # In the SSM automation action of an Incident Manager response plan, the key in a dynamic_parameters mapping identifies the name of the automation document parameter whose value will be dynamically set from incident data. (AI-inferred)
     key: Any = None
-    # The runtime value assigned to a specific SSM automation document parameter, allowing the response plan to pass incident details or other dynamic values into the automation execution. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Actions_SsmAutomation_Parameters:
-    # The name of the parameter to pass to the SSM automation document when the response plan triggers the runbook. (AI-inferred)
     key: Any = None
-    # The list of values to assign to the corresponding SSM automation document parameter when the response plan triggers the automation run. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Actions_SsmAutomation:
-    # The name of the SSM automation document (runbook) that the response plan executes as part of the automation action. (AI-inferred)
     document_name: Any = None
-    # Specifies the version of the SSM Automation document (runbook) to run when the response plan triggers this automation action. (AI-inferred)
     document_version: Any = None
-    # Defines dynamic parameter key-value pairs to pass to the SSM automation document run as part of the response plan, with each value dynamically derived from incident context (e.g., incident ARN) rather than a static value. (AI-inferred)
     dynamic_parameters: Any = None
-    # Specifies the input parameters to pass to the SSM automation runbook when this response plan action is executed. (AI-inferred)
     parameters: Any = None
-    # The ARN of the IAM role that AWS Systems Manager Automation assumes when executing the automation runbook as part of this response plan's SSM automation action. (AI-inferred)
     role_arn: Any = None
-    # Specifies which AWS account the SSM automation document should run in, either the account that was impacted by the incident (IMPACTED_ACCOUNT) or a different, specifically selected account (SPECIFIC_ACCOUNT). (AI-inferred)
     target_account: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Actions:
-    # Specifies the AWS Systems Manager (SSM) automation document to execute as an action when an incident is created, including the document name, the role assumed for execution, and any input parameters. (AI-inferred)
     ssm_automation: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_ChatChannel:
-    # The list of Amazon SNS topic ARNs that AWS Chatbot uses to send notifications to the configured chat channel for the incident response plan. (AI-inferred)
     chatbot_sns: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_IncidentTemplate_IncidentTags:
-    # The key of a tag to apply to the incident when it is created, as defined in the incident template of the response plan. (AI-inferred)
     key: Any = None
-    # The value of the tag assigned to the incident created from this response plan. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_IncidentTemplate_NotificationTargets:
-    # The ARN of the SNS topic that receives incident notifications when a matching incident is created or updated. (AI-inferred)
     sns_topic_arn: Any = None
 
 @dataclasses.dataclass
@@ -79,21 +63,16 @@ class ResponsePlan_IncidentTemplate:
 
 @dataclasses.dataclass
 class ResponsePlan_Integrations_PagerDutyConfiguration_PagerDutyIncidentConfiguration:
-    # The service_id specifies the unique identifier of the PagerDuty service where incidents will be created when this response plan is executed. (AI-inferred)
     service_id: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Integrations_PagerDutyConfiguration:
-    # The name of the PagerDuty configuration, used to identify this integration within the response plan. (AI-inferred)
     name: Any = None
-    # The PagerDuty incident configuration that specifies the ID of the PagerDuty service where the incident will be created. (AI-inferred)
     pager_duty_incident_configuration: Any = None
-    # The ID or ARN of the AWS Secrets Manager secret that stores the PagerDuty API token used for the PagerDuty integration in the response plan. (AI-inferred)
     secret_id: Any = None
 
 @dataclasses.dataclass
 class ResponsePlan_Integrations:
-    # Defines the PagerDuty settings (including a name and the ARN or secret ID of an AWS Secrets Manager secret that stores the PagerDuty API token) that Incident Manager uses when triggering a PagerDuty incident for this integration. (AI-inferred)
     pager_duty_configuration: Any = None
 
 _ResponsePlan_Actions_SsmAutomation_DynamicParameters_ValueFields = {

@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AiguardrailVersionConfig {
-  /** The unique identifier of the AI guardrail for which this version is created, linking the version to its parent guardrail resource. (AI-inferred) */
   aiguardrailId: string | Computed<string>;
-  /** The unique identifier of the Amazon Connect Wisdom assistant that owns the AI guardrail version. (AI-inferred) */
   assistantId: string | Computed<string>;
-  /** The Unix epoch timestamp (in seconds) when this AI guardrail version was last modified. (AI-inferred) */
   modifiedTimeSeconds?: number | Computed<number>;
 }
 
 export interface AiguardrailVersionAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AI guardrail version in Amazon Wisdom. (AI-inferred) */
   aiguardrailArn: string;
-  /** The unique identifier of the AI guardrail for which this version is created, linking the version to its parent guardrail resource. (AI-inferred) */
   aiguardrailId: string;
-  /** The unique identifier assigned by AWS to this specific version of the AI guardrail, used as a read-only reference to the version resource. (AI-inferred) */
   aiguardrailVersionId: string;
-  /** The Amazon Resource Name (ARN) of the Wisdom assistant to which this AI Guardrail version belongs. (AI-inferred) */
   assistantArn: string;
-  /** The unique identifier of the Amazon Connect Wisdom assistant that owns the AI guardrail version. (AI-inferred) */
   assistantId: string;
-  /** The Unix epoch timestamp (in seconds) when this AI guardrail version was last modified. (AI-inferred) */
   modifiedTimeSeconds: number;
-  /** The version number assigned by the AWS Wisdom service to this AI Guardrail version, uniquely identifying this version within its guardrail. (AI-inferred) */
   versionNumber: number;
 }
 

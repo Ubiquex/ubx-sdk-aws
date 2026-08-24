@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryService_DnsConfig_DnsRecords:
-    # The time-to-live (TTL) in seconds for the DNS record, controlling how long resolvers cache it before querying AWS Cloud Map again. (AI-inferred)
     ttl: Any = None
-    # Specifies the DNS record type (A, AAAA, SRV, or CNAME) for the service's DNS records. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -38,9 +36,7 @@ class DiscoveryService_HealthCheckCustomConfig:
 
 @dataclasses.dataclass
 class DiscoveryService_Tags:
-    # This key identifies a tag attached to the AWS Cloud Map service, allowing you to assign metadata for cost tracking, access control, or resource organization. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the AWS CloudFormation service discovery service, used to organize, identify, or manage the resource through key-value pairs. (AI-inferred)
     value: Any = None
 
 _DiscoveryService_DnsConfig_DnsRecordsFields = {

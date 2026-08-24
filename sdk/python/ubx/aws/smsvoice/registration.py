@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Registration_Tags:
     key: Any = None
-    # The value of a tag attached to an AWS SMS Voice registration, which you can use to store arbitrary metadata such as environments, cost centers, or owners for the registration. (AI-inferred)
     value: Any = None
 
 _Registration_TagsFields = {

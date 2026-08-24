@@ -2,12 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCoreBrowserCustom_BrowserSigning {
-  /** If set to true, enables browser signing, which allows the agent to use an authenticated browser session to access websites during execution. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface AgentCoreBrowserCustom_Certificates_CertificateLocation {
-  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the certificate (and optionally its private key) for the custom core browser's certificate location, used by the Bedrock agent for secure connections. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
@@ -16,7 +14,6 @@ export interface AgentCoreBrowserCustom_Certificates {
 }
 
 export interface AgentCoreBrowserCustom_EnterprisePolicies_Location {
-  /** The S3 bucket that contains the enterprise policy document used by the Bedrock agent's core browser configuration. (AI-inferred) */
   bucket?: string | Computed<string>;
   prefix?: string | Computed<string>;
 }

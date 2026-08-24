@@ -3,13 +3,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FilesFileSystemPolicyConfig {
   fileSystemId: string | Computed<string>;
-  /** The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred) */
   policy: unknown | Computed<unknown>;
 }
 
 export interface FilesFileSystemPolicyAttrs {
   fileSystemId: string;
-  /** The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred) */
   policy: unknown;
 }
 

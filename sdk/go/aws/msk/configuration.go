@@ -4,37 +4,24 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Configuration_LatestRevision struct {
-	// Creation time of the latest revision of the MSK configuration, returned as an RFC3339 timestamp string. (AI-inferred)
 	CreationTime any
-	// The description of the latest revision of this Amazon MSK configuration, which is an optional user-defined string. (AI-inferred)
 	Description any
-	// The revision number of the latest version of the MSK configuration, incremented each time the configuration is updated. (AI-inferred)
 	Revision any
 }
 
 type ConfigurationConfig struct {
-	// A user-friendly description of the MSK configuration. (AI-inferred)
 	Description any
-	// Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred)
 	KafkaVersionsList any
-	// The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred)
 	Name any
-	// Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred)
 	ServerProperties any
 }
 
 type ConfigurationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this MSK configuration. (AI-inferred)
 	Arn any
-	// A user-friendly description of the MSK configuration. (AI-inferred)
 	Description any
-	// Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred)
 	KafkaVersionsList any
-	// Provides details about the latest revision of the MSK configuration, including its revision number, creation time, and description. (AI-inferred)
 	LatestRevision any
-	// The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred)
 	Name any
-	// Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred)
 	ServerProperties any
 }
 

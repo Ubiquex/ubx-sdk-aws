@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BlockchainNode_NodeConfiguration:
-    # Specifies the Availability Zone in which the Amazon Managed Blockchain node is created. (AI-inferred)
     availability_zone: Any = None
-    # The EC2 instance type (e.g., bc.t3.large) that determines the compute, memory, and storage capacity allocated to the Managed Blockchain node. (AI-inferred)
     instance_type: Any = None
 
 _BlockchainNode_NodeConfigurationFields = {
@@ -20,24 +18,16 @@ _BlockchainNode_NodeConfigurationFields = {
 
 @dataclasses.dataclass
 class BlockchainNodeConfig:
-    # The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred)
     member_id: Any = None
-    # The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred)
     network_id: Any = None
-    # Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred)
     node_configuration: Any = None
 
 @dataclasses.dataclass
 class BlockchainNodeAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this Managed Blockchain node. (AI-inferred)
     arn: Any = None
-    # The unique identifier of the Managed Blockchain member to which this node belongs. (AI-inferred)
     member_id: Any = None
-    # The unique identifier of the Managed Blockchain network to which the node belongs. (AI-inferred)
     network_id: Any = None
-    # Defines the operational parameters of the Managed Blockchain node, including the required EC2 instance type and optional Availability Zone and log publishing configuration. (AI-inferred)
     node_configuration: Any = None
-    # The unique identifier assigned by AWS to this Managed Blockchain node. (AI-inferred)
     node_id: Any = None
 
 BlockchainNode = ubx.ResourceBinding(

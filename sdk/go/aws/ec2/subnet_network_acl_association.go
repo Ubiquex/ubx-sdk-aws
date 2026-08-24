@@ -11,7 +11,6 @@ type SubnetNetworkAclAssociationConfig struct {
 }
 
 type SubnetNetworkAclAssociationAttrs struct {
-	// The unique identifier assigned by AWS to the subnet-network ACL association, used to reference the association in AWS APIs and other resources. (AI-inferred)
 	AssociationId any
 	// The ID of the network ACL
 	NetworkAclId any

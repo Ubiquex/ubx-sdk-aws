@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TCacertificate_RegistrationConfig:
-    # The ARN of the AWS IoT role that grants permission to register the CA certificate during device certificate registration. (AI-inferred)
     role_arn: Any = None
-    # The body of the AWS IoT provisioning template used to automatically register device certificates signed by this CA certificate. (AI-inferred)
     template_body: Any = None
-    # The name of the AWS IoT provisioning template used during certificate registration to define the resources and policies automatically created when a device certificate is registered under this CA certificate. (AI-inferred)
     template_name: Any = None
 
 @dataclasses.dataclass
 class TCacertificate_Tags:
-    # The key (name) of a tag attached to the AWS IoT CA certificate, used to identify and categorize the certificate within AWS resource tagging systems. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT CA certificate, used to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 _TCacertificate_RegistrationConfigFields = {
@@ -35,17 +30,11 @@ _TCacertificate_TagsFields = {
 
 @dataclasses.dataclass
 class TCacertificateConfig:
-    # Controls whether certificates signed by this CA certificate are automatically registered with AWS IoT upon first use, with allowed values such as 'ENABLE' and 'DISABLE'. (AI-inferred)
     auto_registration_status: Any = None
-    # The PEM-encoded CA certificate content that AWS IoT uses to register device certificates and verify their authenticity. (AI-inferred)
     cacertificate_pem: Any = None
-    # Specifies whether the CA certificate is used for device authentication (DEFAULT) or TLS client authentication (SNI_ONLY) in AWS IoT. (AI-inferred)
     certificate_mode: Any = None
-    # Specifies the registration configuration for this CA certificate, including the registration template body and the IAM role that AWS IoT uses to provision device certificates. (AI-inferred)
     registration_config: Any = None
-    # When set to true, this boolean removes the auto-registration for device certificates signed by this CA certificate when the CA certificate is deleted from AWS IoT. (AI-inferred)
     remove_auto_registration: Any = None
-    # Specifies the operational status of the CA certificate, which must be either 'ACTIVE' or 'INACTIVE', controlling whether the certificate is enabled for device authentication in AWS IoT. (AI-inferred)
     status: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -54,21 +43,13 @@ class TCacertificateConfig:
 
 @dataclasses.dataclass
 class TCacertificateAttrs:
-    # The Amazon Resource Name (ARN) that AWS assigns to the CA certificate when it is registered in AWS IoT. (AI-inferred)
     arn: Any = None
-    # Controls whether certificates signed by this CA certificate are automatically registered with AWS IoT upon first use, with allowed values such as 'ENABLE' and 'DISABLE'. (AI-inferred)
     auto_registration_status: Any = None
-    # The PEM-encoded CA certificate content that AWS IoT uses to register device certificates and verify their authenticity. (AI-inferred)
     cacertificate_pem: Any = None
-    # Specifies whether the CA certificate is used for device authentication (DEFAULT) or TLS client authentication (SNI_ONLY) in AWS IoT. (AI-inferred)
     certificate_mode: Any = None
-    # The unique identifier of the CA certificate, assigned by AWS IoT when the CA certificate is registered. (AI-inferred)
     id: Any = None
-    # Specifies the registration configuration for this CA certificate, including the registration template body and the IAM role that AWS IoT uses to provision device certificates. (AI-inferred)
     registration_config: Any = None
-    # When set to true, this boolean removes the auto-registration for device certificates signed by this CA certificate when the CA certificate is deleted from AWS IoT. (AI-inferred)
     remove_auto_registration: Any = None
-    # Specifies the operational status of the CA certificate, which must be either 'ACTIVE' or 'INACTIVE', controlling whether the certificate is enabled for device authentication in AWS IoT. (AI-inferred)
     status: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

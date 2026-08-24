@@ -12,7 +12,6 @@ class SyncSourceApiAssociationConfig:
     description: Any = None
     # Identifier of the Merged GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN
     merged_api_identifier: Any = None
-    # The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred)
     source_api_association_config: Any = None
     # Identifier of the Source GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN
     source_api_identifier: Any = None
@@ -35,7 +34,6 @@ class SyncSourceApiAssociationAttrs:
     merged_api_identifier: Any = None
     # ARN of the source API in the association.
     source_api_arn: Any = None
-    # The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred)
     source_api_association_config: Any = None
     # Current status of SourceApiAssociation.
     source_api_association_status: Any = None

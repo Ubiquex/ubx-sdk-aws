@@ -8,30 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResolutionPolicyStatementConfig:
-    # The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred)
     action: Any = None
     # Arn of the resource to which the policy statement is being attached.
     arn: Any = None
-    # The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred)
     condition: Any = None
-    # Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred)
     effect: Any = None
-    # Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred)
     principal: Any = None
     # The Statement Id of the policy statement that is being attached.
     statement_id: Any = None
 
 @dataclasses.dataclass
 class ResolutionPolicyStatementAttrs:
-    # The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred)
     action: Any = None
     # Arn of the resource to which the policy statement is being attached.
     arn: Any = None
-    # The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred)
     condition: Any = None
-    # Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred)
     effect: Any = None
-    # Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred)
     principal: Any = None
     # The Statement Id of the policy statement that is being attached.
     statement_id: Any = None

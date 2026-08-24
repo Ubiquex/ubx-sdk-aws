@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamEntitlement_Attributes {
-  /** The unique name assigned to the AppStream 2.0 entitlement, used to reference the entitlement within its stack. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The 'Value' field of a single attribute in the list of attributes attached to an AWS AppStream 2.0 entitlement, providing the string value associated with the attribute's Name. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,32 +12,20 @@ const StreamEntitlement_AttributesFields: FieldMap = {
 };
 
 export interface StreamEntitlementConfig {
-  /** Specifies whether the entitlement grants access to all applications in the stack ('ALL') or only to applications explicitly associated with the entitlement ('ASSOCIATED'). (AI-inferred) */
   appVisibility: string | Computed<string>;
-  /** A list of key-value attribute pairs that define the entitlement's user-specific settings, such as a user group membership or rule, which AppStream matches against the user's identity to determine which applications they can access. (AI-inferred) */
   attributes: StreamEntitlement_Attributes[] | Computed<StreamEntitlement_Attributes[]>;
-  /** A text description of the entitlement that helps administrators identify its purpose or usage within the AppStream 2.0 stack. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the unique name for the AppStream 2.0 entitlement, used as the primary identifier within its parent stack. (AI-inferred) */
   name: string | Computed<string>;
-  /** The name of the AppStream stack that this entitlement is associated with, specifying which stack the entitlement grants access to. (AI-inferred) */
   stackName: string | Computed<string>;
 }
 
 export interface StreamEntitlementAttrs {
-  /** Specifies whether the entitlement grants access to all applications in the stack ('ALL') or only to applications explicitly associated with the entitlement ('ASSOCIATED'). (AI-inferred) */
   appVisibility: string;
-  /** A list of key-value attribute pairs that define the entitlement's user-specific settings, such as a user group membership or rule, which AppStream matches against the user's identity to determine which applications they can access. (AI-inferred) */
   attributes: StreamEntitlement_Attributes[];
-  /** The date and time when the AppStream 2.0 entitlement was created, returned in ISO 8601 format. (AI-inferred) */
   createdTime: string;
-  /** A text description of the entitlement that helps administrators identify its purpose or usage within the AppStream 2.0 stack. (AI-inferred) */
   description: string;
-  /** The date and time when the AppStream entitlement was last modified, automatically computed by AWS and returned as a string (read-only). (AI-inferred) */
   lastModifiedTime: string;
-  /** Specifies the unique name for the AppStream 2.0 entitlement, used as the primary identifier within its parent stack. (AI-inferred) */
   name: string;
-  /** The name of the AppStream stack that this entitlement is associated with, specifying which stack the entitlement grants access to. (AI-inferred) */
   stackName: string;
 }
 

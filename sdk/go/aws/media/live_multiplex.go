@@ -4,7 +4,6 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveMultiplex_Destinations struct {
-	// Specifies the MediaConnect output destination settings for a multiplex destination, including the ARN of the MediaConnect output. (AI-inferred)
 	MultiplexMediaConnectOutputDestinationSettings any
 }
 
@@ -20,9 +19,7 @@ type LiveMultiplex_MultiplexSettings struct {
 }
 
 type LiveMultiplex_Tags struct {
-	// The key of a tag applied to the AWS Elemental MediaLive Multiplex, used to attach metadata for organizing, cost allocation, and access management of this media transmission resource. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag pair applied to the MediaLive multiplex for metadata and resource organization. (AI-inferred)
 	Value any
 }
 
@@ -72,7 +69,6 @@ type LiveMultiplexAttrs struct {
 	PipelinesRunningCount any
 	// The number of programs in the multiplex.
 	ProgramCount any
-	// The current lifecycle state of the MediaLive multiplex, such as IDLE, STARTING, RUNNING, or STOPPING, as reported by AWS. (AI-inferred)
 	State any
 	// A collection of key-value pairs.
 	Tags any

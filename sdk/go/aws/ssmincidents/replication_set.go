@@ -4,21 +4,16 @@ package ssmincidents
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationSet_Regions_RegionConfiguration struct {
-	// The ARN of the AWS KMS key used to encrypt the replication set data in this region. (AI-inferred)
 	SseKmsKeyId any
 }
 
 type ReplicationSet_Regions struct {
-	// This object defines the per-region encryption configuration for the replication set, specifying the AWS KMS key ARN used to encrypt incident data replicated to that region. (AI-inferred)
 	RegionConfiguration any
-	// The name of an AWS Region to include in the Incident Manager replication set, determining where incident data will be replicated. (AI-inferred)
 	RegionName any
 }
 
 type ReplicationSet_Tags struct {
-	// The key of a tag assigned to the AWS SSM Incident replication set, used to identify and organize the resource. (AI-inferred)
 	Key any
-	// The value of a key-value tag attached to the replication set, used to organize, identify, and manage the resource within AWS Systems Manager Incident Manager. (AI-inferred)
 	Value any
 }
 
@@ -43,7 +38,6 @@ var ReplicationSet_TagsFields = ubx.FieldMap{
 type ReplicationSetConfig struct {
 	// Configures the ReplicationSet deletion protection.
 	DeletionProtected any
-	// The regions list specifies the AWS Regions in which incident records are replicated for this replication set, with each object defining a Region name and an optional customer-managed KMS key for encryption. (AI-inferred)
 	Regions any
 	// The tags to apply to the replication set.
 	Tags any
@@ -54,7 +48,6 @@ type ReplicationSetAttrs struct {
 	Arn any
 	// Configures the ReplicationSet deletion protection.
 	DeletionProtected any
-	// The regions list specifies the AWS Regions in which incident records are replicated for this replication set, with each object defining a Region name and an optional customer-managed KMS key for encryption. (AI-inferred)
 	Regions any
 	// The tags to apply to the replication set.
 	Tags any

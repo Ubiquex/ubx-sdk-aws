@@ -2,27 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CacheGlobalReplicationGroup_Members {
-  /** The identifier of the ElastiCache replication group that is included as a member of the global replication group. (AI-inferred) */
   replicationGroupId?: string | Computed<string>;
-  /** Specifies the AWS Region where the member replication group of this global replication group is located. (AI-inferred) */
   replicationGroupRegion?: string | Computed<string>;
-  /** Indicates whether this member's replication group is the primary (write) or secondary (read) cluster in the global replication group, controlling which cluster accepts writes and acts as the source for replication. (AI-inferred) */
   role?: string | Computed<string>;
 }
 
 export interface CacheGlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurations {
-  /** The identifier of the node group (shard) within the regional replication group that this resharding configuration applies to, used to specify which shard's availability zones or slot mapping are adjusted during a resharding operation. (AI-inferred) */
   nodeGroupId?: string | Computed<string>;
-  /** A list of preferred Availability Zones for the nodes in a node group (shard) during a resharding operation on a regional replication group associated with the ElastiCache Global Datastore. (AI-inferred) */
   preferredAvailabilityZones?: string[] | Computed<string[]>;
 }
 
 export interface CacheGlobalReplicationGroup_RegionalConfigurations {
-  /** Specifies the ID of the ElastiCache replication group that is associated with this regional configuration within the global replication group. (AI-inferred) */
   replicationGroupId?: string | Computed<string>;
-  /** The AWS Region where the specified ElastiCache replication group resides, identifying one regional member of the global replication group. (AI-inferred) */
   replicationGroupRegion?: string | Computed<string>;
-  /** Defines the list of node-group-level resharding settings, including preferred availability zones, for a regional replication group when the ElastiCache global replication group is resharded. (AI-inferred) */
   reshardingConfigurations?: CacheGlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurations[] | Computed<CacheGlobalReplicationGroup_RegionalConfigurations_ReshardingConfigurations[]>;
 }
 

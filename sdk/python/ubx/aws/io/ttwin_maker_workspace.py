@@ -23,7 +23,6 @@ class TtwinMakerWorkspaceConfig:
 class TtwinMakerWorkspaceAttrs:
     # The ARN of the workspace.
     arn: Any = None
-    # The date and time when the workspace was created, in ISO 8601 format. (AI-inferred)
     creation_date_time: Any = None
     # The description of the workspace.
     description: Any = None
@@ -33,7 +32,6 @@ class TtwinMakerWorkspaceAttrs:
     s3_location: Any = None
     # A map of key-value pairs to associate with a resource.
     tags: Any = None
-    # The date and time when the workspace was last updated, in ISO 8601 format. (AI-inferred)
     update_date_time: Any = None
     # The ID of the workspace.
     workspace_id: Any = None

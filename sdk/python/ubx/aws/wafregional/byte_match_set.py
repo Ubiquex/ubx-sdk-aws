@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ByteMatchSet_ByteMatchTuples_FieldToMatch:
-    # Specifies the name of the HTTP header to match when field_to_match.type is 'HEADER'; for all other field types this must be an empty string. (AI-inferred)
     data: Any = None
-    # Specifies the type of web request component (e.g., HEADER, METHOD, QUERY_STRING, URI, or BODY) that the byte match tuple inspects, as defined in the field_to_match object. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class ByteMatchSet_ByteMatchTuples:
-    # Specifies the part of a web request (such as a header, query string, or URI) that AWS WAF Regional inspects for the byte match tuple's search string. (AI-inferred)
     field_to_match: Any = None
-    # This field specifies how the target search string in the byte match tuple must align with the inspected text, using values such as EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, or CONTAINS_WORD, to determine whether an AWS WAF Regional rule matches a request. (AI-inferred)
     positional_constraint: Any = None
-    # Specifies the literal string (e.g., a URL or plain text) that AWS WAF Regional searches for in the web request component defined by the containing byte match tuple; for non-ASCII or binary values, you would instead use the tuple's base64-encoded target property. (AI-inferred)
     target_string: Any = None
-    # The base64-encoded representation of the string that AWS WAF Regional searches for in the specified part of a web request, used when the target string cannot be specified directly due to non-printable or binary characters. (AI-inferred)
     target_string_base64: Any = None
-    # Specifies the text transformation AWS WAF applies to the request content before evaluating the byte match condition, such as converting to lowercase or decoding URL-encoded characters. (AI-inferred)
     text_transformation: Any = None
 
 _ByteMatchSet_ByteMatchTuples_FieldToMatchFields = {
@@ -45,18 +38,13 @@ _ByteMatchSet_ByteMatchTuplesFields = {
 
 @dataclasses.dataclass
 class ByteMatchSetConfig:
-    # Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred)
     byte_match_tuples: Any = None
-    # A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ByteMatchSetAttrs:
-    # Specifies the list of byte match tuples that define the filter criteria (the part of a web request to inspect, the target string, and text transformation) for the AWS WAF Regional byte match set. (AI-inferred)
     byte_match_tuples: Any = None
-    # The AWS-assigned unique identifier (ByteMatchSetId) for the WAF Regional byte match set. (AI-inferred)
     id: Any = None
-    # A friendly name for the byte match set, which is used as a unique identifier within the AWS WAF Regional service. (AI-inferred)
     name: Any = None
 
 ByteMatchSet = ubx.ResourceBinding(

@@ -11,7 +11,6 @@ type FrontKeyValueStore_ImportSource struct {
 }
 
 type FrontKeyValueStore_Tags struct {
-	// The key of a tag attached to the CloudFront key value store, used to identify the tag within the tag set. (AI-inferred)
 	Key any
 	Value any
 }
@@ -38,17 +37,14 @@ type FrontKeyValueStoreConfig struct {
 }
 
 type FrontKeyValueStoreAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the CloudFront key value store. (AI-inferred)
 	Arn any
 	// A comment to describe the Key Value Store. Omitting ``Comment`` from the template during updates will clear the existing comment (set to empty string). To preserve an existing comment, you must explicitly include it in the template.
 	Comment any
-	// The unique identifier assigned by AWS to this CloudFront KeyValueStore, used to reference the store in other resources such as CloudFront functions. (AI-inferred)
 	Id any
 	// The import source for the key value store.
 	ImportSource any
 	// The name of the key value store.
 	Name any
-	// The current status of the CloudFront KeyValueStore, such as CREATING or READY, indicating whether the store is ready for use. (AI-inferred)
 	Status any
 	// A complex type that contains zero or more ``Tag`` elements.
 	Tags any

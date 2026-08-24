@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectFlowVpcInterface_Tags {
-  /** The key of a tag attached to the AWS Elemental MediaConnect flow VPC interface, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the MediaConnect flow VPC interface, used for resource metadata and categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

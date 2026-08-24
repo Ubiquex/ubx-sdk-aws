@@ -4,7 +4,6 @@ package ivs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EncoderConfiguration_Tags struct {
-	// A user-defined tag key to associate with the IVS encoder configuration, used for resource management and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }

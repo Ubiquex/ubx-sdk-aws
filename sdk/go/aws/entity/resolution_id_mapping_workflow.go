@@ -4,7 +4,6 @@ package entity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolutionIdMappingWorkflow_IdMappingIncrementalRunConfig struct {
-	// Determines whether the incremental run of the ID mapping workflow imports new records (IMPORT) or updates existing record mappings (UPDATE). (AI-inferred)
 	IncrementalRunType any
 }
 
@@ -14,7 +13,6 @@ type ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties_Intermed
 }
 
 type ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties struct {
-	// Specifies the Amazon S3 location of an intermediate source dataset that a provider-based ID mapping workflow can access to improve entity resolution accuracy. (AI-inferred)
 	IntermediateSourceConfiguration any
 	// Additional Provider configuration that would be required for the provider service. The Configuration must be in JSON string format
 	ProviderConfiguration any
@@ -23,47 +21,32 @@ type ResolutionIdMappingWorkflow_IdMappingTechniques_ProviderProperties struct {
 }
 
 type ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties_Rules struct {
-	// The list of record attribute names (matching keys) that are compared between records to determine if they refer to the same entity within a rule of the rule-based ID mapping workflow. (AI-inferred)
 	MatchingKeys any
-	// Provides an identifying name for the rule that defines how matching keys are combined in the rule-based mapping technique of the AWS Entity Resolution ID mapping workflow. (AI-inferred)
 	RuleName any
 }
 
 type ResolutionIdMappingWorkflow_IdMappingTechniques_RuleBasedProperties struct {
-	// Specifies the cardinality of matches for the rule-based ID mapping, either ONE_TO_ONE (each record maps to at most one other record) or MANY_TO_MANY (each record can match multiple records). (AI-inferred)
 	AttributeMatchingModel any
-	// Specifies the record matching model (e.g., ONE_TO_ONE or MANY_TO_MANY) that determines how source records are paired with matched records in the rule-based mapping workflow. (AI-inferred)
 	RecordMatchingModel any
-	// Specifies whether the rule-based properties in the ID mapping workflow apply to the source or target side (valid values: SOURCE or TARGET). (AI-inferred)
 	RuleDefinitionType any
-	// Defines the list of matching rules that specify how record attributes are compared (e.g., exact, fuzzy) across source data to link records into an entity. (AI-inferred)
 	Rules any
 }
 
 type ResolutionIdMappingWorkflow_IdMappingTechniques struct {
-	// Specifies whether this ID mapping technique uses rule-based matching or a provider-based machine-learning approach, with allowed values RULE_BASED or PROVIDER. (AI-inferred)
 	IdMappingType any
-	// Specifies the version of the normalization rules (e.g., '1.0' or '2.0') applied to standardize input records' attributes during the ID mapping workflow, controlling how data is prepared before matching. (AI-inferred)
 	NormalizationVersion any
-	// Configuration for the ID mapping provider, including the provider schema ARN and provider-specific parameters, used when the id mapping technique is provider-based. (AI-inferred)
 	ProviderProperties any
-	// Specifies the configuration for rule-based ID matching within the workflow, including the matching rules and attribute mappings used to compare records. (AI-inferred)
 	RuleBasedProperties any
 }
 
 type ResolutionIdMappingWorkflow_InputSourceConfig struct {
-	// The ARN of the input source (such as an Amazon S3 bucket or AWS Glue table) that provides the data for the ID mapping workflow. (AI-inferred)
 	InputSourceArn any
-	// The ARN of the AWS Entity Resolution schema that defines the attributes and data format for this input source in the ID mapping workflow. (AI-inferred)
 	SchemaArn any
-	// Specifies whether the input source is the source or target dataset in the ID mapping workflow, with allowed values SOURCE or TARGET. (AI-inferred)
 	Type any
 }
 
 type ResolutionIdMappingWorkflow_OutputSourceConfig struct {
-	// The ARN of the AWS KMS key used to encrypt the output data written to the S3 output location for this ID mapping workflow. (AI-inferred)
 	Kmsarn any
-	// Specifies the S3 bucket and object key prefix where the ID mapping workflow writes its output data files. (AI-inferred)
 	OutputS3Path any
 }
 
@@ -138,46 +121,30 @@ var ResolutionIdMappingWorkflow_TagsFields = ubx.FieldMap{
 	}
 
 type ResolutionIdMappingWorkflowConfig struct {
-	// Describes the ID mapping workflow, providing a human-readable summary of its purpose and configuration for management and identification in AWS Entity Resolution. (AI-inferred)
 	Description any
-	// Specifies the incremental run configuration for the ID mapping workflow, defining the interval (and interval type) at which the workflow automatically runs on new data. (AI-inferred)
 	IdMappingIncrementalRunConfig any
-	// Defines the technique (rule-based or machine learning-based) and its configuration for generating unique IDs when matching records in the ID mapping workflow. (AI-inferred)
 	IdMappingTechniques any
-	// Specifies the list of input data sources (each with an ARN and schema name) from which the entity resolution ID mapping workflow reads records for matching and linking. (AI-inferred)
 	InputSourceConfig any
-	// Configures the destinations where the ID mapping workflow writes its matched record output, specifying the S3 output path and optional KMS key for encryption. (AI-inferred)
 	OutputSourceConfig any
-	// The ARN of the IAM role that the Entity Resolution ID mapping workflow assumes to access the input data from the source and write results to the output target. (AI-inferred)
 	RoleArn any
-	// In an AWS Entity Resolution ID mapping workflow, tags are custom key-value pairs you can attach to the workflow resource to help organize, identify, and manage it, as well as support cost allocation and IAM-based access control. (AI-inferred)
 	Tags any
-	// The unique name of the ID mapping workflow, used as a friendly identifier when creating and managing the workflow in AWS Entity Resolution. (AI-inferred)
 	WorkflowName any
 }
 
 type ResolutionIdMappingWorkflowAttrs struct {
 	// The time of this IdMappingWorkflow got created
 	CreatedAt any
-	// Describes the ID mapping workflow, providing a human-readable summary of its purpose and configuration for management and identification in AWS Entity Resolution. (AI-inferred)
 	Description any
-	// Specifies the incremental run configuration for the ID mapping workflow, defining the interval (and interval type) at which the workflow automatically runs on new data. (AI-inferred)
 	IdMappingIncrementalRunConfig any
-	// Defines the technique (rule-based or machine learning-based) and its configuration for generating unique IDs when matching records in the ID mapping workflow. (AI-inferred)
 	IdMappingTechniques any
-	// Specifies the list of input data sources (each with an ARN and schema name) from which the entity resolution ID mapping workflow reads records for matching and linking. (AI-inferred)
 	InputSourceConfig any
-	// Configures the destinations where the ID mapping workflow writes its matched record output, specifying the S3 output path and optional KMS key for encryption. (AI-inferred)
 	OutputSourceConfig any
-	// The ARN of the IAM role that the Entity Resolution ID mapping workflow assumes to access the input data from the source and write results to the output target. (AI-inferred)
 	RoleArn any
-	// In an AWS Entity Resolution ID mapping workflow, tags are custom key-value pairs you can attach to the workflow resource to help organize, identify, and manage it, as well as support cost allocation and IAM-based access control. (AI-inferred)
 	Tags any
 	// The time of this IdMappingWorkflow got last updated at
 	UpdatedAt any
 	// The default IdMappingWorkflow arn
 	WorkflowArn any
-	// The unique name of the ID mapping workflow, used as a friendly identifier when creating and managing the workflow in AWS Entity Resolution. (AI-inferred)
 	WorkflowName any
 }
 

@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdDirectoryRegistrationConfig:
-    # The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred)
     directory_id: Any = None
-    # Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AdDirectoryRegistrationAttrs:
-    # The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred)
     directory_id: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this directory registration within AWS Private CA Connector for Active Directory. (AI-inferred)
     directory_registration_arn: Any = None
-    # Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 AdDirectoryRegistration = ubx.ResourceBinding(

@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveNode_NodeInterfaceMappings:
-    # Specifies the logical name (e.g., 'eth0') assigned to a network interface on a MediaLive Anywhere node, used to map that interface to a specific Elastic Network Interface (ENI). (AI-inferred)
     logical_interface_name: Any = None
-    # Specifies whether the node's network interface uses DHCP or static IP addressing for its interface mapping in an AWS Elemental MediaLive cluster. (AI-inferred)
     network_interface_mode: Any = None
-    # Specifies the name of the physical network interface (such as eth0) on the on-premises MediaLive node that is mapped to a logical interface name for MediaLive Anywhere connectivity. (AI-inferred)
     physical_interface_name: Any = None
 
 @dataclasses.dataclass
 class LiveNode_SdiSourceMappings:
-    # The physical SDI input card number on the MediaLive node to which the corresponding SDI source is mapped. (AI-inferred)
     card_number: Any = None
-    # The logical channel number within the MediaLive multiplex to which the corresponding SDI source (specified in the same mapping) is assigned, identifying which channel the SDI input feeds. (AI-inferred)
     channel_number: Any = None
-    # The SDI source identifier (e.g., the ARN of an AWS::MediaLive::SdiSource resource) that this mapping associates with a logical source name on the node, enabling MediaLive channels to use that physical SDI input. (AI-inferred)
     sdi_source: Any = None
 
 @dataclasses.dataclass
 class LiveNode_Tags:
-    # The key of a user-defined tag attached to the AWS Elemental MediaLive node, used for metadata organization and resource categorization. (AI-inferred)
     key: Any = None
-    # The value assigned to a tag on the AWS MediaLive node, used to attach metadata such as environment or cost center for resource management and cost allocation. (AI-inferred)
     value: Any = None
 
 _LiveNode_NodeInterfaceMappingsFields = {

@@ -40,7 +40,6 @@ type ExchangeEventAction_Event struct {
 }
 
 type ExchangeEventAction_Tags struct {
-	// Key of a tag attached to an AWS Data Exchange event action, used to categorize, organize, and manage event actions within your AWS account. (AI-inferred)
 	Key any
 	Value any
 }

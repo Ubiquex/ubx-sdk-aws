@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Collection_Tags:
-    # The key of a user-defined tag applied to the Amazon Rekognition collection, used for organizing and managing the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag attached to the Rekognition collection, used to add metadata for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _Collection_TagsFields = {
@@ -27,7 +25,6 @@ class CollectionConfig:
 
 @dataclasses.dataclass
 class CollectionAttrs:
-    # The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Rekognition collection across the service. (AI-inferred)
     arn: Any = None
     # The name of the collection
     collection_id: Any = None

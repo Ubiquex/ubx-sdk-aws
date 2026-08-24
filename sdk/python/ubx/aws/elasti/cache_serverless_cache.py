@@ -38,9 +38,7 @@ class CacheServerlessCache_Endpoint:
 
 @dataclasses.dataclass
 class CacheServerlessCache_Tags:
-    # Specifies the key of a user-defined tag to attach to the ElastiCache Serverless Cache. (AI-inferred)
     key: Any = None
-    # The user-defined string value for a tag attached to the ElastiCache Serverless Cache, which pairs with a tag key to provide custom metadata for resource organization and management. (AI-inferred)
     value: Any = None
 
 _CacheServerlessCache_CacheUsageLimits_DataStorageFields = {

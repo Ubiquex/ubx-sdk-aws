@@ -4,7 +4,6 @@ package athena
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignments struct {
-	// Specifies the list of Athena workgroup names assigned to this capacity reservation for query processing. (AI-inferred)
 	WorkgroupNames any
 }
 
@@ -15,7 +14,6 @@ type CapacityReservation_CapacityAssignmentConfiguration struct {
 
 type CapacityReservation_Tags struct {
 	Key any
-	// Specifies the value of an arbitrary user-defined tag key assigned to an AWS Athena capacity reservation, allowing metadata-based management and categorization of the reservation. (AI-inferred)
 	Value any
 }
 
@@ -60,7 +58,6 @@ type CapacityReservationAttrs struct {
 	LastSuccessfulAllocationTime any
 	// The reservation name.
 	Name any
-	// The current lifecycle state of the Athena capacity reservation (e.g., PENDING, ACTIVE, CANCELLING), updated automatically by AWS and not settable by the user. (AI-inferred)
 	Status any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

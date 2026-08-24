@@ -19,9 +19,7 @@ class MakerApp_ResourceSpec:
 
 @dataclasses.dataclass
 class MakerApp_Tags:
-    # The key of a tag attached to the SageMaker App, used for organizing, cost allocation, and identity-based access control of the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the SageMaker App, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _MakerApp_ResourceSpecFields = {
@@ -46,7 +44,6 @@ class MakerAppConfig:
     domain_id: Any = None
     # Indicates whether the application is launched in recovery mode.
     recovery_mode: Any = None
-    # Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred)
     resource_spec: Any = None
     # A list of tags to apply to the app.
     tags: Any = None
@@ -67,7 +64,6 @@ class MakerAppAttrs:
     domain_id: Any = None
     # Indicates whether the application is launched in recovery mode.
     recovery_mode: Any = None
-    # Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred)
     resource_spec: Any = None
     # A list of tags to apply to the app.
     tags: Any = None

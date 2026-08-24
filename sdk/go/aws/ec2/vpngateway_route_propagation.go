@@ -11,7 +11,6 @@ type VpngatewayRoutePropagationConfig struct {
 }
 
 type VpngatewayRoutePropagationAttrs struct {
-	// The unique identifier for this VPN gateway route propagation resource, formed by joining the route table ID and the VPN gateway ID with a colon (e.g., rtb-12345678:vgw-12345678). (AI-inferred)
 	Id any
 	// The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to
 	RouteTableIds any

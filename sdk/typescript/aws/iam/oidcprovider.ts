@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Oidcprovider_Tags {
-  /** Specifies the key (name) of a tag assigned to the AWS IAM OIDC provider, allowing you to filter, control access, and track costs for the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the IAM OIDC provider, used to manage, identify, and categorize the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,26 +12,18 @@ const Oidcprovider_TagsFields: FieldMap = {
 };
 
 export interface OidcproviderConfig {
-  /** The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred) */
   clientIdList?: string[] | Computed<string[]>;
-  /** Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred) */
   tags?: Oidcprovider_Tags[] | Computed<Oidcprovider_Tags[]>;
-  /** The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred) */
   thumbprintList?: string[] | Computed<string[]>;
-  /** Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface OidcproviderAttrs {
   /** Amazon Resource Name (ARN) of the OIDC provider */
   arn: string;
-  /** The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred) */
   clientIdList: string[];
-  /** Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred) */
   tags: Oidcprovider_Tags[];
-  /** The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred) */
   thumbprintList: string[];
-  /** Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred) */
   url: string;
 }
 

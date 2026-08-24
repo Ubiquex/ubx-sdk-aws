@@ -24,7 +24,6 @@ type ZoneOwnerAttrs struct {
 	// The properties of a domain unit's owner.
 	Owner any
 	OwnerIdentifier any
-	// Indicates whether the owner associated with the DataZone resource is a user or a group, as determined by the service. (AI-inferred)
 	OwnerType any
 }
 

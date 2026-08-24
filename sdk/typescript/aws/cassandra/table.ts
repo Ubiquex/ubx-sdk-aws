@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfiguration {
-  /** When true, prevents the target tracking scaling policy from reducing (scaling in) the table's read capacity. (AI-inferred) */
   disableScaleIn?: boolean | Computed<boolean>;
-  /** The amount of time in seconds after a scale-in activity completes before another scale-in can begin for the read capacity of the Cassandra table's auto scaling target tracking policy. (AI-inferred) */
   scaleInCooldown?: number | Computed<number>;
-  /** The amount of time, in seconds, after a scale-out (increase) activity completes before another scale-out activity can start, used in the target tracking scaling policy for read capacity auto scaling of an Amazon Keyspaces (Cassandra) table. (AI-inferred) */
   scaleOutCooldown?: number | Computed<number>;
-  /** The target value, expressed as a percentage, for read capacity utilization that the auto scaling policy maintains. (AI-inferred) */
   targetValue: number | Computed<number>;
 }
 
@@ -18,11 +14,8 @@ export interface Table_AutoScalingSpecifications_ReadCapacityAutoScaling_Scaling
 }
 
 export interface Table_AutoScalingSpecifications_ReadCapacityAutoScaling {
-  /** When true, disables auto scaling for the table's read capacity, reverting to the fixed read capacity units configured on the table. (AI-inferred) */
   autoScalingDisabled?: boolean | Computed<boolean>;
-  /** The maximum number of read capacity units (RCUs) that the table's read capacity can scale up to when auto scaling is enabled. (AI-inferred) */
   maximumUnits?: number | Computed<number>;
-  /** Sets the minimum number of read capacity units for the table's read capacity auto scaling policy in Amazon Keyspaces. (AI-inferred) */
   minimumUnits?: number | Computed<number>;
   /** Represents scaling policy. */
   scalingPolicy?: Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy | Computed<Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy>;
@@ -36,9 +29,7 @@ export interface Table_AutoScalingSpecifications {
 }
 
 export interface Table_BillingMode_ProvisionedThroughput {
-  /** The number of read capacity units to provision for the Cassandra table when billing mode is set to provisioned. (AI-inferred) */
   readCapacityUnits: number | Computed<number>;
-  /** Specifies the number of write capacity units (writes per second) that this Cassandra table can sustain when using provisioned billing mode. (AI-inferred) */
   writeCapacityUnits: number | Computed<number>;
 }
 
@@ -64,16 +55,12 @@ export interface Table_CdcSpecification {
 }
 
 export interface Table_ClusteringKeyColumns_Column {
-  /** The name of the clustering key column that defines the sort order of rows within each partition of the Cassandra table. (AI-inferred) */
   columnName?: string | Computed<string>;
-  /** The Cassandra data type of the clustering key column (e.g., 'text', 'int', 'uuid'). (AI-inferred) */
   columnType?: string | Computed<string>;
 }
 
 export interface Table_ClusteringKeyColumns {
-  /** Specifies the name and type of a single column that is used as the clustering key, determining the sort order of rows within a partition in the Cassandra table. (AI-inferred) */
   column?: Table_ClusteringKeyColumns_Column | Computed<Table_ClusteringKeyColumns_Column>;
-  /** Specifies the sort order (ASC or DESC) for this clustering key column, determining how rows are stored and queried in the Cassandra table. (AI-inferred) */
   orderBy?: string | Computed<string>;
 }
 
@@ -85,18 +72,13 @@ export interface Table_EncryptionSpecification {
 }
 
 export interface Table_ReplicaSpecifications {
-  /** Configures the auto scaling settings for read capacity of an Amazon Keyspaces (for Apache Cassandra) table replica, including enablement, minimum and maximum capacity units, and target utilization. (AI-inferred) */
   readCapacityAutoScaling?: Table_AutoScalingSpecifications_ReadCapacityAutoScaling | Computed<Table_AutoScalingSpecifications_ReadCapacityAutoScaling>;
-  /** The number of read capacity units provisioned for this specific replica of the Cassandra table in its designated AWS region. (AI-inferred) */
   readCapacityUnits?: number | Computed<number>;
-  /** Specifies the AWS Region where the Cassandra table replica is created, enabling multi-Region replication. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface Table_WarmThroughput {
-  /** Number of warm read capacity units per second for the table's warm throughput configuration. (AI-inferred) */
   readUnitsPerSecond?: number | Computed<number>;
-  /** The number of write capacity units per second allocated for throughput on warm data stored in the Amazon Keyspaces table. (AI-inferred) */
   writeUnitsPerSecond?: number | Computed<number>;
 }
 
@@ -205,7 +187,6 @@ const Table_WarmThroughputFields: FieldMap = {
 export interface TableConfig {
   /** Represents the read and write settings used for AutoScaling. */
   autoScalingSpecifications?: Table_AutoScalingSpecifications | Computed<Table_AutoScalingSpecifications>;
-  /** Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred) */
   billingMode?: Table_BillingMode | Computed<Table_BillingMode>;
   /** Represents the CDC configuration for the table */
   cdcSpecification?: Table_CdcSpecification | Computed<Table_CdcSpecification>;
@@ -225,7 +206,6 @@ export interface TableConfig {
   pointInTimeRecoveryEnabled?: boolean | Computed<boolean>;
   /** Non-key columns of the table */
   regularColumns?: Table_ClusteringKeyColumns_Column[] | Computed<Table_ClusteringKeyColumns_Column[]>;
-  /** Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred) */
   replicaSpecifications?: Table_ReplicaSpecifications[] | Computed<Table_ReplicaSpecifications[]>;
   /** Name for Cassandra table */
   tableName?: string | Computed<string>;
@@ -238,7 +218,6 @@ export interface TableConfig {
 export interface TableAttrs {
   /** Represents the read and write settings used for AutoScaling. */
   autoScalingSpecifications: Table_AutoScalingSpecifications;
-  /** Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred) */
   billingMode: Table_BillingMode;
   /** Represents the CDC configuration for the table */
   cdcSpecification: Table_CdcSpecification;
@@ -258,7 +237,6 @@ export interface TableAttrs {
   pointInTimeRecoveryEnabled: boolean;
   /** Non-key columns of the table */
   regularColumns: Table_ClusteringKeyColumns_Column[];
-  /** Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred) */
   replicaSpecifications: Table_ReplicaSpecifications[];
   /** Name for Cassandra table */
   tableName: string;

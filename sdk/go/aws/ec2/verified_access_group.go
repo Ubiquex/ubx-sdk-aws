@@ -11,7 +11,6 @@ type VerifiedAccessGroup_SseSpecification struct {
 }
 
 type VerifiedAccessGroup_Tags struct {
-	// The key of a user-defined tag attached to the EC2 Verified Access Group, used to organize and identify the resource in AWS. (AI-inferred)
 	Key any
 	Value any
 }

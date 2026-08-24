@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerAppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariables {
-  /** Specifies the name (key) of an environment variable to set in the container environment for the SageMaker Code Editor app image configuration. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value portion of a key-value pair environment variable that is injected into the SageMaker Code Editor app's container when it launches, paired with the corresponding Key in the same ContainerEnvironmentVariables entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -32,9 +30,7 @@ export interface MakerAppImageConfig_KernelGatewayImageConfig_FileSystemConfig {
 }
 
 export interface MakerAppImageConfig_KernelGatewayImageConfig_KernelSpecs {
-  /** The display name of the kernel as shown in the Jupyter UI for the kernel gateway app. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** The name of the kernel (for example, `python3`) that the SageMaker KernelGateway app uses to launch the kernel specification. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

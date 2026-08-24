@@ -33,7 +33,6 @@ class SyncLocationAzureBlob_ManagedSecretConfig:
 @dataclasses.dataclass
 class SyncLocationAzureBlob_Tags:
     key: Any = None
-    # The value part of a key-value tag assigned to this AWS DataSync location for Azure Blob storage, used to identify and organize the resource. (AI-inferred)
     value: Any = None
 
 _SyncLocationAzureBlob_AzureBlobSasConfigurationFields = {

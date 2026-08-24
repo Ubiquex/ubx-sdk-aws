@@ -15,9 +15,7 @@ class DiskSnapshot_Location:
 
 @dataclasses.dataclass
 class DiskSnapshot_Tags:
-    # The key of a tag, such as 'Name' or 'Environment', that you can attach to the Lightsail disk snapshot for identification and management. (AI-inferred)
     key: Any = None
-    # The value of a tag (key-value pair) applied to the AWS Lightsail disk snapshot. (AI-inferred)
     value: Any = None
 
 _DiskSnapshot_TagsFields = {

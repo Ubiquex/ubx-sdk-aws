@@ -4,9 +4,7 @@ package cases
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_Tags struct {
-	// The tag key for a tag attached to the AWS Cases domain. (AI-inferred)
 	Key any
-	// The value string of a key-value tag applied to the Amazon Connect Cases domain, used to store metadata such as environment or cost center for the resource. (AI-inferred)
 	Value any
 }
 

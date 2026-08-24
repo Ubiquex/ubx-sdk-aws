@@ -7,9 +7,7 @@ export interface Samlprovider_PrivateKeyList {
 }
 
 export interface Samlprovider_Tags {
-  /** The key of a tag attached to the IAM SAML provider, which can be used in IAM policies via the aws:ResourceTag condition key to enforce tag-based access control on the provider. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the AWS IAM SAML provider, allowing you to label or categorize the provider for organizational and management purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -28,14 +26,11 @@ export interface SamlproviderConfig {
   addPrivateKey?: string | Computed<string>;
   /** The encryption setting for the SAML provider */
   assertionEncryptionMode?: string | Computed<string>;
-  /** The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred) */
   name?: string | Computed<string>;
   privateKeyList?: Samlprovider_PrivateKeyList[] | Computed<Samlprovider_PrivateKeyList[]>;
   /** The Key ID of the private key to remove */
   removePrivateKey?: string | Computed<string>;
-  /** The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred) */
   samlMetadataDocument?: string | Computed<string>;
-  /** A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred) */
   tags?: Samlprovider_Tags[] | Computed<Samlprovider_Tags[]>;
 }
 
@@ -46,16 +41,13 @@ export interface SamlproviderAttrs {
   arn: string;
   /** The encryption setting for the SAML provider */
   assertionEncryptionMode: string;
-  /** The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred) */
   name: string;
   privateKeyList: Samlprovider_PrivateKeyList[];
   /** The Key ID of the private key to remove */
   removePrivateKey: string;
-  /** The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred) */
   samlMetadataDocument: string;
   /** The unique identifier assigned to the SAML provider */
   samlProviderUuid: string;
-  /** A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred) */
   tags: Samlprovider_Tags[];
 }
 

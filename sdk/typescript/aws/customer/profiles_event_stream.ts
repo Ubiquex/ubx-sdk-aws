@@ -9,9 +9,7 @@ export interface ProfilesEventStream_DestinationDetails {
 }
 
 export interface ProfilesEventStream_Tags {
-  /** The key of a user-defined tag applied to the event stream resource, which is used for metadata organization, cost allocation, and access control within AWS Customer Profiles. (AI-inferred) */
   key?: string | Computed<string>;
-  /** For an AWS Customer Profiles event stream, this is the value component of a tag entry, used to define a custom attribute for the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

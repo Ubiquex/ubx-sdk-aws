@@ -4,18 +4,13 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TTopicRuleDestination_HttpUrlProperties struct {
-	// The URL of the HTTP endpoint where AWS IoT sends a confirmation message to verify the destination's ownership. (AI-inferred)
 	ConfirmationUrl any
 }
 
 type TTopicRuleDestination_VpcProperties struct {
-	// The ARN of the IAM role that AWS IoT assumes to access the VPC for the topic rule destination's VPC configuration. (AI-inferred)
 	RoleArn any
-	// Specifies the list of security group IDs to attach to the VPC endpoint used by the AWS IoT TopicRuleDestination, controlling network access to the destination. (AI-inferred)
 	SecurityGroups any
-	// The IDs of the subnets in the VPC that the IoT topic rule destination is associated with, used to define the network location for the destination. (AI-inferred)
 	SubnetIds any
-	// The ID of the VPC in which the topic rule destination's network resources are provisioned, used with subnet and security-group settings to route AWS IoT rule actions to VPC targets. (AI-inferred)
 	VpcId any
 }
 
@@ -31,24 +26,18 @@ var TTopicRuleDestination_VpcPropertiesFields = ubx.FieldMap{
 	}
 
 type TTopicRuleDestinationConfig struct {
-	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
 	HttpUrlProperties any
-	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
-	// Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
 	VpcProperties any
 }
 
 type TTopicRuleDestinationAttrs struct {
 	// Amazon Resource Name (ARN).
 	Arn any
-	// Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
 	HttpUrlProperties any
-	// Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
 	Status any
 	// The reasoning for the current status of the TopicRuleDestination.
 	StatusReason any
-	// Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
 	VpcProperties any
 }
 

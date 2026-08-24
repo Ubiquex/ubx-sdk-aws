@@ -17,7 +17,6 @@ type PackagePackagingGroup_EgressAccessLogs struct {
 
 type PackagePackagingGroup_Tags struct {
 	Key any
-	// The value portion of a key-value tag assigned to the MediaPackage packaging group, used for resource metadata, organization, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -36,9 +35,7 @@ var PackagePackagingGroup_TagsFields = ubx.FieldMap{
 	}
 
 type PackagePackagingGroupConfig struct {
-	// Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred)
 	Authorization any
-	// Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred)
 	EgressAccessLogs any
 	// The ID of the PackagingGroup.
 	Id any
@@ -49,11 +46,9 @@ type PackagePackagingGroupConfig struct {
 type PackagePackagingGroupAttrs struct {
 	// The ARN of the PackagingGroup.
 	Arn any
-	// Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred)
 	Authorization any
 	// The fully qualified domain name for Assets in the PackagingGroup.
 	DomainName any
-	// Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred)
 	EgressAccessLogs any
 	// The ID of the PackagingGroup.
 	Id any

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TfleetWiseModelManifest_Tags {
-  /** Specifies the key for a tag attached to the AWS IoT FleetWise model manifest, enabling metadata-based identification and organization of the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag (key-value pair) that can be assigned to the AWS IoT FleetWise model manifest, used to organize, identify, or manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,38 +12,23 @@ const TfleetWiseModelManifest_TagsFields: FieldMap = {
 };
 
 export interface TfleetWiseModelManifestConfig {
-  /** An optional textual description that helps identify the purpose or contents of the vehicle model manifest in AWS IoT FleetWise. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the model manifest, which is a unique, user-defined identifier used to reference the manifest within the AWS IoT FleetWise service. (AI-inferred) */
   name: string | Computed<string>;
-  /** A list of node names (signals and attributes) from the associated signal catalog that define the signals and attributes included in this model manifest. (AI-inferred) */
   nodes?: string[] | Computed<string[]>;
-  /** The ARN of the AWS IoT FleetWise signal catalog that this model manifest is associated with. (AI-inferred) */
   signalCatalogArn: string | Computed<string>;
-  /** This field sets the lifecycle status of the IoT FleetWise model manifest between DRAFT (editable) and ACTIVE (production-ready), allowing you to control when the manifest becomes usable. (AI-inferred) */
   status?: string | Computed<string>;
-  /** Specifies the list of tag key-value pairs to attach to the AWS IoT FleetWise model manifest for organizing and managing the resource. (AI-inferred) */
   tags?: TfleetWiseModelManifest_Tags[] | Computed<TfleetWiseModelManifest_Tags[]>;
 }
 
 export interface TfleetWiseModelManifestAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the IoT FleetWise model manifest. (AI-inferred) */
   arn: string;
-  /** The creation_time field provides the timestamp (in ISO 8601 format) of when the AWS IoT FleetWise model manifest was created. (AI-inferred) */
   creationTime: string;
-  /** An optional textual description that helps identify the purpose or contents of the vehicle model manifest in AWS IoT FleetWise. (AI-inferred) */
   description: string;
-  /** The timestamp when the model manifest was last modified, set automatically by AWS IoT FleetWise. (AI-inferred) */
   lastModificationTime: string;
-  /** The name of the model manifest, which is a unique, user-defined identifier used to reference the manifest within the AWS IoT FleetWise service. (AI-inferred) */
   name: string;
-  /** A list of node names (signals and attributes) from the associated signal catalog that define the signals and attributes included in this model manifest. (AI-inferred) */
   nodes: string[];
-  /** The ARN of the AWS IoT FleetWise signal catalog that this model manifest is associated with. (AI-inferred) */
   signalCatalogArn: string;
-  /** This field sets the lifecycle status of the IoT FleetWise model manifest between DRAFT (editable) and ACTIVE (production-ready), allowing you to control when the manifest becomes usable. (AI-inferred) */
   status: string;
-  /** Specifies the list of tag key-value pairs to attach to the AWS IoT FleetWise model manifest for organizing and managing the resource. (AI-inferred) */
   tags: TfleetWiseModelManifest_Tags[];
 }
 

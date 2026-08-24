@@ -4,231 +4,147 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpec_Fields struct {
-	// The unique integer identifier assigned to this partition field within the Iceberg partition spec, used to distinguish it from other partition fields when the table's partition layout is referenced by Iceberg metadata and query engines. (AI-inferred)
 	FieldId any
-	// Specifies the name of a partition field in the Iceberg partition spec, which is the source column name or a derived name when a partition transform (such as bucket, truncate, or year) is applied. (AI-inferred)
 	Name any
-	// The numeric identifier of the source column in the Iceberg table's schema that this partition field is based on. (AI-inferred)
 	SourceId any
-	// The Iceberg partition transform (e.g., identity, year, month, day, hour, bucket, truncate) applied to the source column in the partition spec field. (AI-inferred)
 	Transform any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_PartitionSpec struct {
-	// Defines the partition fields for the Iceberg table, where each field specifies the source column name and the transform (such as identity, bucket, truncate, year, month, day, or hour) that determines how the table data is partitioned. (AI-inferred)
 	Fields any
-	// Defines the unique identifier for the Iceberg partition spec, used to reference the specific partition spec when creating or updating the table. (AI-inferred)
 	SpecId any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_Schema_Fields struct {
-	// Provides a human-readable documentation string (doc) that describes this field/column in the Iceberg table schema within AWS Glue. (AI-inferred)
 	Doc any
-	// Unique numeric identifier for each column field within the Iceberg table schema, used by Iceberg to reference the field positionally in metadata and partition specs. (AI-inferred)
 	Id any
-	// The name of a column (field) in the Iceberg table schema, used as the column identifier within the Iceberg table input for the Glue table. (AI-inferred)
 	Name any
-	// Indicates whether this field in the Iceberg table schema is required (non-nullable); when false, the field is optional and can contain null values. (AI-inferred)
 	Required any
-	// Defines the data type of a specific field in the Iceberg table's schema, using Iceberg type strings such as 'int', 'string', 'boolean', 'array<...>', or 'struct<...>' to represent primitive or nested types. (AI-inferred)
 	Type any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_Schema struct {
-	// Specifies the required list of column definitions (fields) for the schema of the Iceberg table, where each field defines a column's name and data type in the Glue Data Catalog. (AI-inferred)
 	Fields any
-	// Specifies which field IDs from the Iceberg table schema collectively form the table's identifier (primary key). (AI-inferred)
 	IdentifierFieldIds any
-	// The integer identifier for the Iceberg schema within the table, used to uniquely reference this schema version in the table's Iceberg metadata. (AI-inferred)
 	SchemaId any
-	// The `type` field of the Iceberg table schema, which identifies the top-level Iceberg schema type (usually `struct`) for the Glue table's open table format input. (AI-inferred)
 	Type any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrder_Fields struct {
-	// The sort direction (either 'asc' or 'desc') for this field within the Iceberg table's write order sort spec. (AI-inferred)
 	Direction any
-	// Specifies whether null values are sorted first or last for this field within the Iceberg table's write order sort field, typically set to 'NULLS_FIRST' or 'NULLS_LAST'. (AI-inferred)
 	NullOrder any
-	// The numeric ID of the source column in the Iceberg table schema that this write-order/sort field references, used to define which column the sort order applies to. (AI-inferred)
 	SourceId any
-	// Specifies the Iceberg sort transform (e.g., identity, bucket, truncate, year) applied to the source column for this write-order field in the Iceberg table. (AI-inferred)
 	Transform any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput_WriteOrder struct {
-	// Specifies the list of sort fields that define the write order (sort order) for data written to the underlying Iceberg table, with each field indicating a source column, transform, and sort direction. (AI-inferred)
 	Fields any
-	// The numeric identifier that uniquely identifies this write sort order within the Iceberg table metadata, used to reference and apply the write order when writing data. (AI-inferred)
 	OrderId any
 }
 
 type Table_OpenTableFormatInput_IcebergInput_IcebergTableInput struct {
-	// The S3 URI where the Iceberg table's data and metadata are stored, required when registering the table in the Glue Data Catalog. (AI-inferred)
 	Location any
-	// Specifies the partitioning for an Iceberg table by defining a list of partition fields, where each field names a source column and a transform (such as identity, bucket, or truncate) used to compute partition values. (AI-inferred)
 	PartitionSpec any
-	// A map of key-value pairs specifying Iceberg table properties (e.g., `format-version`, `write.format.default`) to be applied to the Iceberg table when the Glue table uses the Iceberg open table format. (AI-inferred)
 	Properties any
-	// Defines the Iceberg table's schema, including its columns, data types, and structure, as required when using the Iceberg open table format for the Glue table. (AI-inferred)
 	Schema any
 	WriteOrder any
 }
 
 type Table_OpenTableFormatInput_IcebergInput struct {
-	// Configures the Iceberg-specific table metadata, including the metadata operation (such as CREATE or UPDATE) and version, used when the Glue table is registered as an Iceberg table in the Data Catalog. (AI-inferred)
 	IcebergTableInput any
-	// Specifies the metadata operation (e.g., CREATE or UPDATE) to perform when registering the Apache Iceberg table in the Glue Data Catalog. (AI-inferred)
 	MetadataOperation any
-	// The version identifier of the Iceberg table metadata to update, used when the metadata operation is set to UPDATE. (AI-inferred)
 	Version any
 }
 
 type Table_OpenTableFormatInput struct {
-	// Provides Iceberg-specific input settings for the glue table's open table format, including the metadata operation (e.g., CREATE) that AWS Glue should perform on the table's Iceberg metadata. (AI-inferred)
 	IcebergInput any
 }
 
 type Table_TableInput_PartitionKeys struct {
-	// The comment associated with a partition key (column) in the Glue table's schema. (AI-inferred)
 	Comment any
-	// The name of a partition key column in the Glue table's partition keys list. (AI-inferred)
 	Name any
-	// The data type of the partition key column (e.g., STRING, INT, or DATE), defining how the partition values are interpreted in the Glue table's schema. (AI-inferred)
 	Type any
 }
 
 type Table_TableInput_StorageDescriptor_SchemaReference_SchemaId struct {
-	// The name of the AWS Glue Schema Registry that contains the referenced schema. (AI-inferred)
 	RegistryName any
-	// The ARN of the schema in the AWS Glue Schema Registry that this table references, used to uniquely identify the schema when creating or updating the table's storage descriptor. (AI-inferred)
 	SchemaArn any
-	// The name of the schema in the AWS Glue Schema Registry that this table references via its schema_id, used together with the registry name to identify the schema. (AI-inferred)
 	SchemaName any
 }
 
 type Table_TableInput_StorageDescriptor_SchemaReference struct {
-	// Identifies the AWS Glue schema registry schema referenced by this table's storage descriptor, specified via schema ARN or registry name plus schema name. (AI-inferred)
 	SchemaId any
-	// The unique identifier of the specific schema version in the AWS Glue Schema Registry that this table's storage descriptor references, determining the column definition and format used. (AI-inferred)
 	SchemaVersionId any
-	// The version number of the referenced schema in the Glue Schema Registry that this table is based on, used to pin the table to a specific schema version. (AI-inferred)
 	SchemaVersionNumber any
 }
 
 type Table_TableInput_StorageDescriptor_SerdeInfo struct {
-	// The user-supplied name of the serializer/deserializer (SerDe) referenced by this storage descriptor, typically matching the SerDe class name used in the table. (AI-inferred)
 	Name any
-	// A map of key-value configuration parameters passed to the SerDe (serializer/deserializer) specified in serde_info, controlling how data is serialized and deserialized (e.g., 'field.delim' for delimiter-separated formats or 'serialization.format' for Parquet). (AI-inferred)
 	Parameters any
-	// The fully qualified class name of the SerDe (serializer/deserializer) used by AWS Glue to read and write data in the table, such as org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe or org.openx.data.jsonserde.JsonSerDe. (AI-inferred)
 	SerializationLibrary any
 }
 
 type Table_TableInput_StorageDescriptor_SkewedInfo struct {
-	// A list of column names that contain skewed values, enabling AWS Glue to optimize storage and querying for skewed data. (AI-inferred)
 	SkewedColumnNames any
-	// Maps each skewed column value to a distinct file location where rows with that value are stored, enabling optimized handling of data skew in the Glue table's storage descriptor. (AI-inferred)
 	SkewedColumnValueLocationMaps any
-	// The list of values that appear frequently in the skewed columns defined in the parent `skewed_info`, used by Glue to optimize storage and query performance for skewed data. (AI-inferred)
 	SkewedColumnValues any
 }
 
 type Table_TableInput_StorageDescriptor_SortColumns struct {
-	// Specifies the name of a column to be used for sorting the table data in the Glue table's storage descriptor, where each entry in the sort columns list defines a sort key column. (AI-inferred)
 	Column any
-	// The sort order for the sort column, where 0 indicates ascending order and 1 indicates descending order. (AI-inferred)
 	SortOrder any
 }
 
 type Table_TableInput_StorageDescriptor struct {
-	// The list of column names that determine bucketing for the table data, defining how records are distributed into buckets in the storage descriptor. (AI-inferred)
 	BucketColumns any
-	// A list of Column objects defining the table's schema, where each column specifies its name, data type, and optional comment within the storage descriptor. (AI-inferred)
 	Columns any
-	// A boolean flag indicating whether the underlying table data is compressed, as defined in the Glue table's StorageDescriptor. (AI-inferred)
 	Compressed any
-	// The fully qualified Java class name of the input format used to read the table's data, such as 'org.apache.hadoop.mapred.TextInputFormat'. (AI-inferred)
 	InputFormat any
-	// The physical location of the table data, typically an S3 URI (e.g., 's3://bucket/path') that the Glue table points to in its storage descriptor. (AI-inferred)
 	Location any
-	// The number of buckets in the table, which is used by partition pruning and query optimization for bucketed data. (AI-inferred)
 	NumberOfBuckets any
-	// The fully qualified class name of the output format (e.g., org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat) that the table uses to write data, as part of the storage descriptor. (AI-inferred)
 	OutputFormat any
-	// Specifies user-defined key-value parameters for the storage descriptor, allowing custom metadata to be associated with the underlying table storage. (AI-inferred)
 	Parameters any
-	// Specifies a reference to an AWS Glue Schema Registry schema (via schema ID and version) that defines the table's schema instead of providing inline column definitions. (AI-inferred)
 	SchemaReference any
-	// Defines the serialization/deserialization (SerDe) configuration for the table, including the SerDe library name and associated parameters. (AI-inferred)
 	SerdeInfo any
-	// Defines skew information for the table's storage descriptor, including skewed column names, their values, and mapping of those values to file locations to optimize querying of skewed data. (AI-inferred)
 	SkewedInfo any
-	// Specifies the columns (with optional ascending/descending order) by which the table's data is sorted, as part of the Glue table's storage descriptor. (AI-inferred)
 	SortColumns any
-	// This Boolean flag indicates that the table's data is stored in subdirectories, which is typically used for partitioned tables so that AWS Glue treats each partition key value as a directory in the underlying storage. (AI-inferred)
 	StoredAsSubDirectories any
 }
 
 type Table_TableInput_TargetTable struct {
-	// Identifies the AWS Glue Data Catalog (account ID) that contains the target table, used when creating a table link that points to an existing table in another catalog. (AI-inferred)
 	CatalogId any
-	// The name of the database that contains the target table when this Glue table is a resource link pointing to another table. (AI-inferred)
 	DatabaseName any
-	// The name of the target Glue table that this table references when using the TargetTable configuration to point to an existing table. (AI-inferred)
 	Name any
-	// The AWS region in which the target table is located, enabling cross-region references for Glue tables. (AI-inferred)
 	Region any
 }
 
 type Table_TableInput_ViewDefinition_Representations struct {
-	// Specifies the query engine dialect (such as SPARK or ATHENA) used by this representation of the view definition for the AWS Glue table. (AI-inferred)
 	Dialect any
-	// The version of the SQL dialect used by this view representation, enabling AWS Glue to interpret the view text correctly for that dialect. (AI-inferred)
 	DialectVersion any
-	// This field specifies the name of the AWS Glue connection used to validate the SQL representation of the view against the underlying data source. (AI-inferred)
 	ValidationConnection any
-	// The expanded SQL query text for the view representation in the specified dialect, used by AWS Glue to resolve the view's logical table. (AI-inferred)
 	ViewExpandedText any
-	// The original SQL text of the view, as initially defined, for this representation of the AWS Glue table's view definition. (AI-inferred)
 	ViewOriginalText any
 }
 
 type Table_TableInput_ViewDefinition struct {
-	// Specifies the security definer (the principal whose permissions are used) for the view, used when the Glue table's ViewDefinition is set. (AI-inferred)
 	Definer any
-	// A Boolean value that indicates whether the view can be used in a query. (AI-inferred)
 	IsProtected any
-	// Specifies a list of view representations, each providing a dialect-specific SQL query definition (like for Athena or Spark SQL) that defines the view for different query engines. (AI-inferred)
 	Representations any
-	// Specifies the list of source tables (identified by ARN or table identifier) that a Glue view definition is built upon, defining which base tables the view queries. (AI-inferred)
 	SubObjects any
 }
 
 type Table_TableInput struct {
-	// The user-provided description of the table, stored in the AWS Glue Data Catalog to document the table's contents or purpose. (AI-inferred)
 	Description any
-	// The name of the Glue table to be created or updated. (AI-inferred)
 	Name any
-	// Specifies the owner of the table, typically the AWS account ID or IAM role that owns it in the AWS Glue Data Catalog. (AI-inferred)
 	Owner any
-	// Specifies a map of key-value pairs that define the table's metadata and format-specific options, such as 'classification' (e.g., csv, parquet), 'separatorChar', and 'compressionType', which AWS Glue uses when reading or writing the underlying data. (AI-inferred)
 	Parameters any
-	// Defines the list of partition columns for the Glue table, with each object specifying the column name, data type, and optional comment for a partition key. (AI-inferred)
 	PartitionKeys any
-	// Specifies the number of days that the table should be retained in the AWS Glue Data Catalog, as represented by the Retention field of the TableInput property. (AI-inferred)
 	Retention any
-	// Specifies the physical storage information for the table, including its column list, file location, data format (input/output), and SerDe configuration, used by AWS Glue for reading and writing data. (AI-inferred)
 	StorageDescriptor any
-	// Specifies the table type, such as EXTERNAL_TABLE for a table backed by external data or VIRTUAL_VIEW for a view, in the AWS Glue TableInput. (AI-inferred)
 	TableType any
-	// For a table defined as a resource link, this field provides the catalog, database, and name of the destination table that the link resolves to, enabling cross-catalog or cross-database table references in the Glue Data Catalog. (AI-inferred)
 	TargetTable any
-	// This object represents the view definition, including the SQL query (DefinedBy) and sub-objects, that marks the table as a view in the AWS Glue Data Catalog rather than a physical table. (AI-inferred)
 	ViewDefinition any
-	// The expanded SQL text that defines the view when the table is a view, stored in the Glue Data Catalog as part of the TableInput. (AI-inferred)
 	ViewExpandedText any
-	// Specifies the original SQL text used to define a view when the table represents a view rather than a physical table. (AI-inferred)
 	ViewOriginalText any
 }
 
@@ -454,30 +370,19 @@ var Table_TableInputFields = ubx.FieldMap{
 	}
 
 type TableConfig struct {
-	// The ID of the AWS Glue Data Catalog (typically the AWS account ID) in which the table and its parent database reside. (AI-inferred)
 	CatalogId any
-	// The name of the Glue Data Catalog database in which the table is stored. (AI-inferred)
 	DatabaseName any
-	// The name of the table stored in the AWS Glue Data Catalog, uniquely identifying it within the Glue database. (AI-inferred)
 	Name any
-	// Specifies the open table format configuration for the Glue table, including Iceberg input (metadata operation) and table identifier, allowing the table to be used with open data formats like Apache Iceberg. (AI-inferred)
 	OpenTableFormatInput any
-	// The table_input object specifies the full metadata definition of the Glue Data Catalog table, including its name, storage descriptor, partition keys, table type, parameters, and other table properties used when creating or updating the table. (AI-inferred)
 	TableInput any
 }
 
 type TableAttrs struct {
-	// The ID of the AWS Glue Data Catalog (typically the AWS account ID) in which the table and its parent database reside. (AI-inferred)
 	CatalogId any
-	// The name of the Glue Data Catalog database in which the table is stored. (AI-inferred)
 	DatabaseName any
-	// The id is the provider-assigned unique identifier for the Glue table, formatted as the database name and table name joined by a colon (e.g., my_db:my_table). (AI-inferred)
 	Id any
-	// The name of the table stored in the AWS Glue Data Catalog, uniquely identifying it within the Glue database. (AI-inferred)
 	Name any
-	// Specifies the open table format configuration for the Glue table, including Iceberg input (metadata operation) and table identifier, allowing the table to be used with open data formats like Apache Iceberg. (AI-inferred)
 	OpenTableFormatInput any
-	// The table_input object specifies the full metadata definition of the Glue Data Catalog table, including its name, storage descriptor, partition keys, table type, parameters, and other table properties used when creating or updating the table. (AI-inferred)
 	TableInput any
 }
 

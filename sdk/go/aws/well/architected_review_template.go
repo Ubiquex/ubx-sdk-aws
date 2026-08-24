@@ -4,9 +4,7 @@ package well
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArchitectedReviewTemplate_Tags struct {
-	// The tag key that, along with its associated value, forms a user-defined tag applied to the AWS Well-Architected Review Template to facilitate resource categorization and cost tracking. (AI-inferred)
 	Key any
-	// The value part of a key-value tag attached to the Well-Architected review template, used to organize and manage the template resource. (AI-inferred)
 	Value any
 }
 

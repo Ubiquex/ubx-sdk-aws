@@ -21,7 +21,6 @@ class ImagingDatastoreAttrs:
     created_at: Any = None
     # The Datastore's ARN.
     datastore_arn: Any = None
-    # The unique identifier assigned to the datastore by AWS HealthImaging when it is created. (AI-inferred)
     datastore_id: Any = None
     # User friendly name for Datastore.
     datastore_name: Any = None

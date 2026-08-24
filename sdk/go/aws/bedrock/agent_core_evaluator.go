@@ -59,24 +59,18 @@ type AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_ModelConfig struct {
 }
 
 type AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Categorical struct {
-	// Specifies the textual definition/description for a category in the categorical rating scale, which instructs the LLM-as-a-judge on how to interpret and score model outputs. (AI-inferred)
 	Definition any
-	// The label is the human-readable name assigned to a category in a categorical rating scale, used by the LLM-as-a-judge evaluator to identify the category in prompts and results. (AI-inferred)
 	Label any
 }
 
 type AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale_Numerical struct {
-	// Provides a textual description that defines the meaning of a specific numerical rating value in the LLM-as-judge rating scale, guiding the judge model's evaluation criteria. (AI-inferred)
 	Definition any
 	Label any
-	// The numeric score assigned to a particular rating level in the numerical rating scale used by the LLM-as-judge evaluator for the Bedrock agent core evaluation. (AI-inferred)
 	Value any
 }
 
 type AgentCoreEvaluator_EvaluatorConfig_LlmAsAjudge_RatingScale struct {
-	// Defines the list of categorical rating options (each with a name and description) that the LLM-as-a-judge evaluator uses to score model responses. (AI-inferred)
 	Categorical any
-	// Provides the numeric rating scale for the LLM-as-judge, where each item defines a score point (e.g., 1 through 5) and its textual description, used to evaluate agent responses. (AI-inferred)
 	Numerical any
 }
 

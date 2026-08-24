@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TDimension_Tags struct {
 	Key any
-	// The tag value, paired with its key, assigns arbitrary metadata to the AWS IoT Dimension resource for categorization, filtering, and cost allocation. (AI-inferred)
 	Value any
 }
 

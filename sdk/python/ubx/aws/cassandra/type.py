@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Type_Fields:
-    # The name of a field within a user-defined Cassandra type in Amazon Keyspaces, defining the structure of the type. (AI-inferred)
     field_name: Any = None
-    # The Cassandra data type assigned to this field within the custom type definition, specified as a string such as 'int' or 'text'. (AI-inferred)
     field_type: Any = None
 
 _Type_FieldsFields = {

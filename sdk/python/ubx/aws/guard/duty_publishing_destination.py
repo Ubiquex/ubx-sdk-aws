@@ -15,9 +15,7 @@ class DutyPublishingDestination_DestinationProperties:
 
 @dataclasses.dataclass
 class DutyPublishingDestination_Tags:
-    # The key of a tag assigned to the GuardDuty publishing destination, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag that is associated with the GuardDuty publishing destination, used for resource organization, cost tracking, and management. (AI-inferred)
     value: Any = None
 
 _DutyPublishingDestination_DestinationPropertiesFields = {
@@ -32,18 +30,15 @@ _DutyPublishingDestination_TagsFields = {
 
 @dataclasses.dataclass
 class DutyPublishingDestinationConfig:
-    # Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred)
     destination_properties: Any = None
     # The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
     destination_type: Any = None
     # The ID of the GuardDuty detector associated with the publishing destination.
     detector_id: Any = None
-    # A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DutyPublishingDestinationAttrs:
-    # Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred)
     destination_properties: Any = None
     # The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
     destination_type: Any = None
@@ -55,7 +50,6 @@ class DutyPublishingDestinationAttrs:
     publishing_failure_start_timestamp: Any = None
     # The status of the publishing destination.
     status: Any = None
-    # A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred)
     tags: Any = None
 
 DutyPublishingDestination = ubx.ResourceBinding(

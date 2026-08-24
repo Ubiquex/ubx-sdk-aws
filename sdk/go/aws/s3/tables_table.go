@@ -11,13 +11,9 @@ type TablesTable_Compaction struct {
 }
 
 type TablesTable_IcebergMetadata_IcebergPartitionSpec_Fields struct {
-	// The unique numeric identifier for this partition field within the Iceberg partition spec, used to reference the field in table metadata and query operations. (AI-inferred)
 	FieldId any
-	// The name of the partition field, which corresponds to a column name in the Iceberg table's schema and defines the source column used for partitioning in the partition spec. (AI-inferred)
 	Name any
-	// The numeric ID of the source column in the table schema that this partition field derives from, as defined in the Iceberg partition spec. (AI-inferred)
 	SourceId any
-	// Specifies the partition transform applied to the source column (e.g., identity, bucket[N], truncate[N], year, month, day, hour, or void) when defining this field in the Iceberg partition spec. (AI-inferred)
 	Transform any
 }
 
@@ -29,13 +25,9 @@ type TablesTable_IcebergMetadata_IcebergPartitionSpec struct {
 }
 
 type TablesTable_IcebergMetadata_IcebergSchema_SchemaFieldList struct {
-	// The numeric identifier that uniquely distinguishes this schema field from other fields in the table's Iceberg schema. (AI-inferred)
 	Id any
-	// Specifies the column name for this entry in the Iceberg schema field list, which defines the columns of the S3 Tables table. (AI-inferred)
 	Name any
-	// Specifies whether this field in the table's Iceberg schema is required, meaning that every record must include a non-null value for the field. (AI-inferred)
 	Required any
-	// Defines the Iceberg data type for a field in the table schema, such as string, int, long, double, boolean, timestamp, or other supported Iceberg types. (AI-inferred)
 	Type any
 }
 
@@ -45,15 +37,10 @@ type TablesTable_IcebergMetadata_IcebergSchema struct {
 }
 
 type TablesTable_IcebergMetadata_IcebergSchemaV2_SchemaV2FieldList struct {
-	// The doc property provides a documentation string that describes the purpose or meaning of the schema field within the Iceberg table's schema v2 definition. (AI-inferred)
 	Doc any
-	// The unique numeric ID assigned to this field within the Iceberg schema v2 definition, used internally to reference the field in table metadata and data files. (AI-inferred)
 	Id any
-	// The name of a column (field) within the Iceberg schema version 2 for the S3 Tables table, which identifies the field in the list of fields for that schema. (AI-inferred)
 	Name any
-	// Indicates whether this column is required (non-nullable) in the Iceberg table schema, meaning it must contain a value in every row. (AI-inferred)
 	Required any
-	// Specifies the Iceberg data type for this column in the table schema, defining how values are stored and interpreted (e.g., boolean, int, long, float, double, decimal, date, time, timestamp, string, uuid, fixed, binary, or nested struct/list/map types). (AI-inferred)
 	Type any
 }
 
@@ -69,13 +56,9 @@ type TablesTable_IcebergMetadata_IcebergSchemaV2 struct {
 }
 
 type TablesTable_IcebergMetadata_IcebergSortOrder_Fields struct {
-	// Specifies the sort direction (ASC or DESC) for a field in the Iceberg sort order, determining whether rows are ordered ascending or descending by this field. (AI-inferred)
 	Direction any
-	// Specifies whether null values are positioned first or last when sorting records by this field in the table's Iceberg sort order. (AI-inferred)
 	NullOrder any
-	// The source_id field specifies the unique numeric identifier of the column in the Iceberg table's schema that this sort field refers to, defining which column is used for sorting in the table's sort order. (AI-inferred)
 	SourceId any
-	// The transform function applied to the column for sorting in the Iceberg sort order, such as identity, bucket[N], truncate[N], or time-based transforms like year, month, day, or hour. (AI-inferred)
 	Transform any
 }
 

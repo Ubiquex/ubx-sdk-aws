@@ -28,11 +28,9 @@ class FrontKeyGroupConfig:
 
 @dataclasses.dataclass
 class FrontKeyGroupAttrs:
-    # The unique identifier assigned to the key group by CloudFront. (AI-inferred)
     id: Any = None
     # A key group configuration. A key group contains a list of public keys that you can use with [CloudFront signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html).
     key_group_config: Any = None
-    # The timestamp of the most recent change to this CloudFront key group's configuration, automatically set by AWS when the key group is created or updated. (AI-inferred)
     last_modified_time: Any = None
 
 FrontKeyGroup = ubx.ResourceBinding(

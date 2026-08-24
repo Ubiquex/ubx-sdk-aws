@@ -8,35 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdminTelemetryRule_RegionStatuses:
-    # The AWS Region code (e.g., us-east-1) where the telemetry rule is applied or reported, as part of the RegionStatuses list. (AI-inferred)
     region: Any = None
-    # For the corresponding region in the region status list, this attribute contains the Amazon Resource Name (ARN) of the telemetry rule deployed in that region. (AI-inferred)
     rule_arn: Any = None
-    # Indicates whether the telemetry rule is active or inactive in the corresponding region, reflecting the rule's operational state for that region. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectors:
-    # Specifies the list of substrings that the selected event field's value must end with for the CloudTrail advanced event selector to match and the telemetry rule to forward the event. (AI-inferred)
     ends_with: Any = None
-    # Specifies the list of values that the selected CloudTrail event field must match exactly for an event to be included in the advanced event selector. (AI-inferred)
     equals: Any = None
-    # Specifies the name of a CloudTrail event field (e.g., eventCategory, eventName, resources.type) used by an advanced event selector to filter which telemetry events are delivered to CloudTrail. (AI-inferred)
     field: Any = None
-    # Specifies a list of string suffixes that the field value must not end with, excluding events where the corresponding CloudTrail field matches any of these suffixes from being forwarded by the telemetry rule. (AI-inferred)
     not_ends_with: Any = None
-    # In a CloudTrail advanced event selector, not_equals specifies a list of values that the evaluated field must not equal for an event to be included in the telemetry rule's CloudTrail destination. (AI-inferred)
     not_equals: Any = None
-    # Defines a list of prefix strings such that if the value of the selected event field begins with any of these prefixes, that event is excluded from the telemetry rule's CloudTrail-based selection. (AI-inferred)
     not_starts_with: Any = None
-    # In the telemetry rule's CloudTrail destination configuration, this list sets the prefix values for the field selector so that only events whose field value starts with one of these strings are included by the advanced event selector. (AI-inferred)
     starts_with: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors:
-    # Specifies the list of field selectors that define which CloudTrail events match each advanced event selector, by comparing event fields such as eventName, readOnly, or resources against configured values for the telemetry rule. (AI-inferred)
     field_selectors: Any = None
-    # A user-defined name for an advanced event selector, used to identify the selector within the CloudTrail configuration for the Observability Admin telemetry rule. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -48,7 +36,6 @@ class AdminTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters:
 class AdminTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParameters:
     # A delimiter to delineate log fields
     field_delimiter: Any = None
-    # Specifies the output format for the load balancer access logs delivered to the telemetry sink, with valid values 'plain_text' or 'parquet'. (AI-inferred)
     output_format: Any = None
 
 @dataclasses.dataclass
@@ -67,28 +54,21 @@ class AdminTelemetryRule_Rule_DestinationConfiguration_VpcflowLogParameters:
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionCondition:
-    # Specifies the action value (e.g., ALLOW, BLOCK, COUNT) that the condition matches to filter WAF log entries. (AI-inferred)
     action: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameCondition:
-    # The name of the AWS WAF label that must be present on a request for the logging filter condition to match. (AI-inferred)
     label_name: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions:
-    # A condition that matches web requests based on the action taken by AWS WAF (such as ALLOW, BLOCK, or COUNT), used within a logging filter in the WAF logging parameters to determine which requests are logged. (AI-inferred)
     action_condition: Any = None
-    # Defines the exact WAF label name a request must contain for the logging filter to include the log, evaluated as one of the conditions in the filter's list for the WAF logging parameters. (AI-inferred)
     label_name_condition: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters:
-    # Specifies whether to keep or drop WAF logs that match this filter, with allowed values 'KEEP' or 'DROP'. (AI-inferred)
     behavior: Any = None
-    # Defines the list of conditions for a WAF logging filter, where each condition matches on either a web ACL action (such as ALLOW or BLOCK) or a label name to determine which traffic is included in or excluded from the telemetry destination. (AI-inferred)
     conditions: Any = None
-    # Specifies whether the WAF logging filter condition is satisfied as a match (IS) or not match (IS_NOT) when applying the filter's keep/drop behavior to logs. (AI-inferred)
     requirement: Any = None
 
 @dataclasses.dataclass
@@ -100,14 +80,12 @@ class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_Logg
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeader:
-    # The name of the HTTP header that AWS WAF should redact from logs for this single-header redaction field. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields:
     method: Any = None
     query_string: Any = None
-    # This field is the single header redaction specification, which contains the header name to be redacted from AWS WAF logs, ensuring that header's values are excluded from telemetry log output. (AI-inferred)
     single_header: Any = None
     uri_path: Any = None
 
@@ -162,7 +140,6 @@ class AdminTelemetryRule_Rule:
 
 @dataclasses.dataclass
 class AdminTelemetryRule_Tags:
-    # The key of a user-defined tag used to label an AWS::ObservabilityAdmin::TelemetryRule resource, enabling resource organization and cost tracking. (AI-inferred)
     key: Any = None
     value: Any = None
 

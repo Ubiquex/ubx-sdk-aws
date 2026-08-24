@@ -15,7 +15,6 @@ export interface ImagingDatastoreAttrs {
   createdAt: string;
   /** The Datastore's ARN. */
   datastoreArn: string;
-  /** The unique identifier assigned to the datastore by AWS HealthImaging when it is created. (AI-inferred) */
   datastoreId: string;
   /** User friendly name for Datastore. */
   datastoreName: string;

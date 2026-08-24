@@ -4,7 +4,6 @@ package directory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceSimpleAd_Tags struct {
-	// The key of a tag assigned to the Simple AD directory resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -41,9 +40,7 @@ type ServiceSimpleAdConfig struct {
 	ShortName any
 	// The size of the directory.
 	Size any
-	// A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
-	// Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred)
 	VpcSettings any
 }
 
@@ -68,9 +65,7 @@ type ServiceSimpleAdAttrs struct {
 	ShortName any
 	// The size of the directory.
 	Size any
-	// A list of tag objects (each with a Key and Value) to associate with the AWS Directory Service Simple AD directory, enabling cost allocation, access control, and resource identification. (AI-inferred)
 	Tags any
-	// Specifies the VPC configuration for the Simple AD directory, including the VPC ID and the subnets where the directory's domain controllers are deployed. (AI-inferred)
 	VpcSettings any
 }
 

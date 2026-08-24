@@ -13,9 +13,7 @@ export interface LiftScript_StorageLocation {
 }
 
 export interface LiftScript_Tags {
-  /** The key of a tag attached to the GameLift script, used to identify and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The string value paired with a tag key on the GameLift script, used to label and categorize the resource for cost allocation and identity-based policies. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -36,7 +34,6 @@ export interface LiftScriptConfig {
   name?: string | Computed<string>;
   /** The Node.js version used for execution of the Realtime script. */
   nodeJsVersion?: string | Computed<string>;
-  /** The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred) */
   storageLocation: LiftScript_StorageLocation | Computed<LiftScript_StorageLocation>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: LiftScript_Tags[] | Computed<LiftScript_Tags[]>;
@@ -57,7 +54,6 @@ export interface LiftScriptAttrs {
   nodeJsVersion: string;
   /** The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0". */
   sizeOnDisk: number;
-  /** The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred) */
   storageLocation: LiftScript_StorageLocation;
   /** An array of key-value pairs to apply to this resource. */
   tags: LiftScript_Tags[];

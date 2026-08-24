@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Configuration_BlockDeviceMappings_Ebs:
-    # Controls whether the EBS volume defined in this block device mapping is automatically deleted when the EC2 instance terminates. (AI-inferred)
     delete_on_termination: Any = None
-    # Whether the EBS volume in this block device mapping is encrypted, using the default AWS KMS key or the one specified by kms_key_id. (AI-inferred)
     encrypted: Any = None
-    # The number of I/O operations per second (IOPS) to provision for the EBS volume, which is required when the volume type is `io1` (provisioned IOPS SSD) in the launch configuration's block device mapping. (AI-inferred)
     iops: Any = None
-    # The ID of the snapshot to use as the source for the EBS volume in this block device mapping. (AI-inferred)
     snapshot_id: Any = None
-    # The throughput (in MiB/s) to provision for the EBS volume, which is applicable only when the volume type is gp3. (AI-inferred)
     throughput: Any = None
-    # The size of the Amazon EBS volume, in GiB, for the block device mapping in the Auto Scaling launch configuration. (AI-inferred)
     volume_size: Any = None
-    # Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, st1, sc1, standard) for the block device mapped in the launch configuration, affecting performance and cost. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class Configuration_BlockDeviceMappings:
-    # The device name (e.g., /dev/xvda, /dev/sdb) exposed to the EC2 instance for this block device mapping in the launch configuration. (AI-inferred)
     device_name: Any = None
-    # The EBS-specific settings (e.g., volume size, type, IOPS, snapshot, encryption, delete-on-termination) for the volume attached via this block device mapping in the Auto Scaling launch configuration. (AI-inferred)
     ebs: Any = None
-    # When set to true, suppresses the block device mapping for the specified device name, so the launch configuration does not attach that device to instances launched from it. (AI-inferred)
     no_device: Any = None
-    # Specifies the virtual device name (such as ephemeral0 or ephemeral1) for an ephemeral (instance store) block device in the launch configuration's block device mapping. (AI-inferred)
     virtual_name: Any = None
 
 @dataclasses.dataclass

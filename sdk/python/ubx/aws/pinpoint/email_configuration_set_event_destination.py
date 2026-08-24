@@ -8,48 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations:
-    # The default value to use for the CloudWatch metric dimension when the source event does not provide a value for the dimension configuration, so the metric always has a dimension value. (AI-inferred)
     default_dimension_value: Any = None
-    # The name of the CloudWatch dimension to attach to the event destination's metrics for this dimension configuration. (AI-inferred)
     dimension_name: Any = None
-    # Specifies the source of the dimension value (e.g., MESSAGE_TYPE or EVENT_TYPE) that determines which email event metadata is used to populate the CloudWatch metric dimension. (AI-inferred)
     dimension_value_source: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination:
-    # Specifies the list of dimension configurations that define how Pinpoint adds custom dimensions (with a dimension name, value source, and default value) to the CloudWatch metrics when event destinations publish events to CloudWatch. (AI-inferred)
     dimension_configurations: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestination:
-    # The ARN of the Amazon Kinesis Data Firehose delivery stream that Amazon Pinpoint publishes event data to for this event destination. (AI-inferred)
     delivery_stream_arn: Any = None
-    # The ARN of the IAM role that Amazon Pinpoint assumes to send event data to the specified Kinesis Firehose delivery stream. (AI-inferred)
     iam_role_arn: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination_PinpointDestination:
-    # The Amazon Resource Name (ARN) of the Amazon Pinpoint application (project) to which the email configuration set's event destination sends event data. (AI-inferred)
     application_arn: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination_SnsDestination:
-    # The ARN of the Amazon SNS topic where the event destination publishes email event notifications for the Amazon Pinpoint configuration set. (AI-inferred)
     topic_arn: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestination_EventDestination:
-    # Configures the CloudWatch Logs destination for the event destination, including dimension configurations that define how email event metrics are grouped and published to CloudWatch. (AI-inferred)
     cloud_watch_destination: Any = None
-    # Determines whether the event destination is active, controlling whether Amazon Pinpoint delivers event data (such as sends, bounces, or complaints) to the associated destination like an SNS topic, CloudWatch Logs, or Kinesis Firehose. (AI-inferred)
     enabled: Any = None
-    # Configures the Amazon Kinesis Data Firehose delivery stream settings that Amazon Pinpoint uses to send event data when this event destination is triggered. (AI-inferred)
     kinesis_firehose_destination: Any = None
-    # Specifies the email event types (such as OPEN, CLICK, BOUNCE, COMPLAINT, DELIVERY, REJECT, or RENDER_FAILURE) that trigger this event destination to process events. (AI-inferred)
     matching_event_types: Any = None
-    # Specifies the Amazon Pinpoint application ID (ApplicationId) that will receive event notifications from this configuration set. (AI-inferred)
     pinpoint_destination: Any = None
-    # Specifies the Amazon SNS topic (via its TopicArn) that receives email event notifications from this event destination. (AI-inferred)
     sns_destination: Any = None
 
 _EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurationsFields = {
@@ -106,20 +92,14 @@ _EmailConfigurationSetEventDestination_EventDestinationFields = {
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestinationConfig:
-    # The name of the Amazon Pinpoint configuration set that this event destination is associated with. (AI-inferred)
     configuration_set_name: Any = None
-    # Defines the event destination for the email configuration set, specifying where Amazon Pinpoint publishes email event data (such as deliveries, bounces, and complaints) based on matching event types and the chosen destination type (e.g., CloudWatch Logs, Kinesis Data Firehose, or SNS). (AI-inferred)
     event_destination: Any = None
-    # The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred)
     event_destination_name: Any = None
 
 @dataclasses.dataclass
 class EmailConfigurationSetEventDestinationAttrs:
-    # The name of the Amazon Pinpoint configuration set that this event destination is associated with. (AI-inferred)
     configuration_set_name: Any = None
-    # Defines the event destination for the email configuration set, specifying where Amazon Pinpoint publishes email event data (such as deliveries, bounces, and complaints) based on matching event types and the chosen destination type (e.g., CloudWatch Logs, Kinesis Data Firehose, or SNS). (AI-inferred)
     event_destination: Any = None
-    # The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred)
     event_destination_name: Any = None
     id: Any = None
 

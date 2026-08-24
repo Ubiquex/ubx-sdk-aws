@@ -4,7 +4,6 @@ package drs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceNetwork_Tags struct {
-	// A user-defined key for a tag on the AWS Elastic Disaster Recovery (DRS) Source Network, used to categorize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

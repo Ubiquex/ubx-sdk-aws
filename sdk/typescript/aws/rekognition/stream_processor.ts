@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamProcessor_BoundingBoxRegionsOfInterest {
-  /** Height of the bounding box region of interest, expressed as a ratio of the overall video frame height (between 0.0 and 1.0). (AI-inferred) */
   height?: number | Computed<number>;
-  /** The normalized left (X) coordinate of the bounding box within the video frame that defines the region of interest, in the range 0 to 1. (AI-inferred) */
   left?: number | Computed<number>;
-  /** The normalized Y-coordinate of the top-left corner of the bounding box that defines this region of interest in a video frame, measured as a value from 0 (top edge) to 1 (bottom edge). (AI-inferred) */
   top?: number | Computed<number>;
-  /** Width of the bounding box that defines a region of interest in the video stream, specified as a normalized fraction of the overall frame width (0.0 to 1.0). (AI-inferred) */
   width?: number | Computed<number>;
 }
 
@@ -49,9 +45,7 @@ export interface StreamProcessor_S3Destination {
 }
 
 export interface StreamProcessor_Tags {
-  /** The key of a tag attached to the Amazon Rekognition stream processor, used to assign metadata for identifying, organizing, and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the Rekognition stream processor, used to store arbitrary metadata such as cost-center or environment identifiers for resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

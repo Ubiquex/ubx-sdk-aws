@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Network_ManagedServices_CrossRegionS3RestoreSourcesAccess struct {
 	Ipv4Addresses any
-	// Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred)
 	Region any
 	Status any
 }
@@ -88,7 +87,6 @@ type Network_ManagedServices struct {
 }
 
 type Network_Tags struct {
-	// The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred)
 	Key any
 	Value any
 }

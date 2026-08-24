@@ -29,7 +29,6 @@ type ConnectBridgeSource_NetworkSource struct {
 	NetworkName any
 	// The network source port.
 	Port any
-	// Specifies the transport protocol (RTP or RTP-FEC) used by the network source to ingest the media stream into the bridge. (AI-inferred)
 	Protocol any
 }
 

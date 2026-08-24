@@ -11,7 +11,6 @@ type SubnetRouteTableAssociationConfig struct {
 }
 
 type SubnetRouteTableAssociationAttrs struct {
-	// The unique identifier assigned by AWS to the subnet route table association, typically a value like 'rtbassoc-1234567890abcdef0'. (AI-inferred)
 	Id any
 	// The ID of the route table. The physical ID changes when the route table ID is changed.
 	RouteTableId any

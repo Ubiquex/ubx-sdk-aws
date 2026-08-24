@@ -23,9 +23,7 @@ class CloudVmCluster_DbNodes_Tags:
 @dataclasses.dataclass
 class CloudVmCluster_DbNodes:
     backup_ip_id: Any = None
-    # The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred)
     backup_vnic2_id: Any = None
-    # Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred)
     cpu_core_count: Any = None
     db_node_arn: Any = None
     db_node_id: Any = None
@@ -34,13 +32,10 @@ class CloudVmCluster_DbNodes:
     db_system_id: Any = None
     host_ip_id: Any = None
     hostname: Any = None
-    # Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred)
     memory_size_in_gbs: Any = None
-    # For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred)
     ocid: Any = None
     status: Any = None
     tags: Any = None
-    # The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred)
     vnic2_id: Any = None
     vnic_id: Any = None
 

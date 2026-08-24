@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdConnector_VpcInformation {
-  /** Specifies whether the connector uses only IPv4 addresses or both IPv4 and IPv6 (dual-stack) addresses within the VPC, with allowed values IPV4 and DUALSTACK. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
-  /** Specifies the IDs of the security groups that AWS Private CA Connector for Active Directory uses to securely communicate with your directory in the VPC. (AI-inferred) */
   securityGroupIds: string[] | Computed<string[]>;
 }
 
@@ -14,26 +12,17 @@ const AdConnector_VpcInformationFields: FieldMap = {
 };
 
 export interface AdConnectorConfig {
-  /** The Amazon Resource Name (ARN) of the AWS Private CA certificate authority that will issue certificates for the Active Directory connector. (AI-inferred) */
   certificateAuthorityArn: string | Computed<string>;
-  /** The identifier of the AWS Managed Microsoft AD directory that this connector is associated with. (AI-inferred) */
   directoryId: string | Computed<string>;
-  /** Tags (key-value pairs) to associate with the PCA Connector for Active Directory resource, used for identifying, organizing, and managing the connector. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** The VPC information for the connector, specifying the security groups that allow the connector to communicate with the Active Directory in your VPC. (AI-inferred) */
   vpcInformation: AdConnector_VpcInformation | Computed<AdConnector_VpcInformation>;
 }
 
 export interface AdConnectorAttrs {
-  /** The Amazon Resource Name (ARN) of the AWS Private CA certificate authority that will issue certificates for the Active Directory connector. (AI-inferred) */
   certificateAuthorityArn: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the connector created by this resource. (AI-inferred) */
   connectorArn: string;
-  /** The identifier of the AWS Managed Microsoft AD directory that this connector is associated with. (AI-inferred) */
   directoryId: string;
-  /** Tags (key-value pairs) to associate with the PCA Connector for Active Directory resource, used for identifying, organizing, and managing the connector. (AI-inferred) */
   tags: unknown;
-  /** The VPC information for the connector, specifying the security groups that allow the connector to communicate with the Active Directory in your VPC. (AI-inferred) */
   vpcInformation: AdConnector_VpcInformation;
 }
 

@@ -4,12 +4,10 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentCoreBrowserCustom_BrowserSigning struct {
-	// If set to true, enables browser signing, which allows the agent to use an authenticated browser session to access websites during execution. (AI-inferred)
 	Enabled any
 }
 
 type AgentCoreBrowserCustom_Certificates_CertificateLocation struct {
-	// The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that contains the certificate (and optionally its private key) for the custom core browser's certificate location, used by the Bedrock agent for secure connections. (AI-inferred)
 	SecretArn any
 }
 
@@ -18,7 +16,6 @@ type AgentCoreBrowserCustom_Certificates struct {
 }
 
 type AgentCoreBrowserCustom_EnterprisePolicies_Location struct {
-	// The S3 bucket that contains the enterprise policy document used by the Bedrock agent's core browser configuration. (AI-inferred)
 	Bucket any
 	Prefix any
 }

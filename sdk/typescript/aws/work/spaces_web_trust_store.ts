@@ -12,20 +12,14 @@ const SpacesWebTrustStore_TagsFields: FieldMap = {
 };
 
 export interface SpacesWebTrustStoreConfig {
-  /** A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred) */
   certificateList: string[] | Computed<string[]>;
-  /** Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred) */
   tags?: SpacesWebTrustStore_Tags[] | Computed<SpacesWebTrustStore_Tags[]>;
 }
 
 export interface SpacesWebTrustStoreAttrs {
-  /** The list of ARNs of the WorkSpaces Web portals that are associated with this trust store. (AI-inferred) */
   associatedPortalArns: string[];
-  /** A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred) */
   certificateList: string[];
-  /** Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred) */
   tags: SpacesWebTrustStore_Tags[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the WorkSpaces Web trust store. (AI-inferred) */
   trustStoreArn: string;
 }
 

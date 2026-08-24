@@ -8,7 +8,6 @@ export interface SetupLifecycleAutomationConfig {
   automationParameters: unknown | Computed<unknown>;
   /** A unique identifier used for generating a unique logical ID for the custom resource */
   resourceKey: string | Computed<string>;
-  /** A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -21,7 +20,6 @@ export interface SetupLifecycleAutomationAttrs {
   automationParameters: unknown;
   /** A unique identifier used for generating a unique logical ID for the custom resource */
   resourceKey: string;
-  /** A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred) */
   tags: unknown;
 }
 

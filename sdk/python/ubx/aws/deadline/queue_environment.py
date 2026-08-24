@@ -8,32 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QueueEnvironmentConfig:
-    # The unique identifier of the AWS Deadline Cloud farm that this queue environment is associated with. (AI-inferred)
     farm_id: Any = None
-    # Controls the order in which this queue environment is applied relative to other queue environments associated with the same queue, with the priority value used to rank the environments. (AI-inferred)
     priority: Any = None
-    # The unique identifier of the Deadline queue that this environment is associated with, used to scope the environment to a specific queue. (AI-inferred)
     queue_id: Any = None
-    # Defines the queue environment's setup as a structured string (typically JSON), specifying environment variables and script actions that run for jobs using this queue environment. (AI-inferred)
     template: Any = None
-    # Specifies the template format for the queue environment, either JSON or YAML. (AI-inferred)
     template_type: Any = None
 
 @dataclasses.dataclass
 class QueueEnvironmentAttrs:
-    # The unique identifier of the AWS Deadline Cloud farm that this queue environment is associated with. (AI-inferred)
     farm_id: Any = None
-    # The name of the queue environment, which is derived from the `name` field defined in the environment's template content (YAML or JSON). (AI-inferred)
     name: Any = None
-    # Controls the order in which this queue environment is applied relative to other queue environments associated with the same queue, with the priority value used to rank the environments. (AI-inferred)
     priority: Any = None
-    # The unique identifier assigned by AWS Deadline to this queue environment resource. (AI-inferred)
     queue_environment_id: Any = None
-    # The unique identifier of the Deadline queue that this environment is associated with, used to scope the environment to a specific queue. (AI-inferred)
     queue_id: Any = None
-    # Defines the queue environment's setup as a structured string (typically JSON), specifying environment variables and script actions that run for jobs using this queue environment. (AI-inferred)
     template: Any = None
-    # Specifies the template format for the queue environment, either JSON or YAML. (AI-inferred)
     template_type: Any = None
 
 QueueEnvironment = ubx.ResourceBinding(

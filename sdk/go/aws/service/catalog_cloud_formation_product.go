@@ -4,22 +4,15 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogCloudFormationProduct_ProvisioningArtifactParameters_Info struct {
-	// Specifies the physical ID (such as an Amazon S3 object ARN) of an existing CloudFormation template to import as the provisioning artifact, used instead of a template URL to reference the template directly by its resource identification. (AI-inferred)
 	ImportFromPhysicalId any
-	// Specifies the URL from which the CloudFormation template for this provisioning artifact is loaded. (AI-inferred)
 	LoadTemplateFromUrl any
 }
 
 type CatalogCloudFormationProduct_ProvisioningArtifactParameters struct {
-	// Provides a user-friendly description of this provisioning artifact (a version of the product's CloudFormation template), which is displayed to end users in the AWS Service Catalog console when they view or launch the product. (AI-inferred)
 	Description any
-	// If set to true, disables AWS Service Catalog's validation of the CloudFormation template associated with this provisioning artifact, allowing the product to be created without the service checking the template's syntax or resource definitions. (AI-inferred)
 	DisableTemplateValidation any
-	// Specifies the template source information for the provisioning artifact, such as the S3 URL (via the LoadTemplateFromURL key) where the CloudFormation template is stored. (AI-inferred)
 	Info any
-	// The name of the provisioning artifact, displayed as the version name for this CloudFormation product in Service Catalog. (AI-inferred)
 	Name any
-	// The type of provisioning artifact, which can be CLOUD_FORMATION_TEMPLATE, MARKETPLACE, or TERRAFORM, and dictates whether the product template is a CloudFormation template, AWS Marketplace artifact, or Terraform configuration. (AI-inferred)
 	Type any
 }
 
@@ -35,7 +28,6 @@ type CatalogCloudFormationProduct_SourceConnection_ConnectionParameters_CodeStar
 }
 
 type CatalogCloudFormationProduct_SourceConnection_ConnectionParameters struct {
-	// Provides the CodeStar-specific connection details (such as the CodeStar connection ARN, repository branch, and repository path) used by the Service Catalog product to import its template from a source repository. (AI-inferred)
 	CodeStar any
 }
 
@@ -47,9 +39,7 @@ type CatalogCloudFormationProduct_SourceConnection struct {
 }
 
 type CatalogCloudFormationProduct_Tags struct {
-	// The key of a tag to assign to the Service Catalog CloudFormation product. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS Service Catalog CloudFormation product, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -116,7 +106,6 @@ type CatalogCloudFormationProductConfig struct {
 	ProvisioningArtifactParameters any
 	// This property is turned off by default. If turned off, you can update provisioning artifacts or product attributes (such as description, distributor, name, owner, and more) and the associated provisioning artifacts will retain the same unique identifier. Provisioning artifacts are matched within the CloudFormationProduct resource, and only those that have been updated will be changed. Provisioning artifacts are matched by a combinaton of provisioning artifact template URL and name.
 	ReplaceProvisioningArtifacts any
-	// Defines the connection to an external source repository (such as AWS CodeStar or GitHub) from which the CloudFormation template for the product is retrieved, including repository details, branch, and folder. (AI-inferred)
 	SourceConnection any
 	// The support information about the product.
 	SupportDescription any
@@ -153,7 +142,6 @@ type CatalogCloudFormationProductAttrs struct {
 	ProvisioningArtifactParameters any
 	// This property is turned off by default. If turned off, you can update provisioning artifacts or product attributes (such as description, distributor, name, owner, and more) and the associated provisioning artifacts will retain the same unique identifier. Provisioning artifacts are matched within the CloudFormationProduct resource, and only those that have been updated will be changed. Provisioning artifacts are matched by a combinaton of provisioning artifact template URL and name.
 	ReplaceProvisioningArtifacts any
-	// Defines the connection to an external source repository (such as AWS CodeStar or GitHub) from which the CloudFormation template for the product is retrieved, including repository details, branch, and folder. (AI-inferred)
 	SourceConnection any
 	// The support information about the product.
 	SupportDescription any

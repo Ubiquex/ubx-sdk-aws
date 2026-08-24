@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault {
-  /** The AWS KMS customer master key (CMK) ID or ARN used for default server-side encryption with KMS (SSE-KMS) for the S3 Express directory bucket, effective when the SSE algorithm is set to 'aws:kms'. (AI-inferred) */
   kmsmasterKeyId?: unknown | Computed<unknown>;
-  /** Specifies the default server-side encryption algorithm (such as AES256 or aws:kms) for objects stored in the S3 Express directory bucket, used when encryption is not specified at upload time. (AI-inferred) */
   ssealgorithm?: string | Computed<string>;
 }
 
 export interface ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration {
-  /** Enables or disables an S3 Bucket Key for the directory bucket's default SSE-KMS encryption, reducing per-request AWS KMS costs. (AI-inferred) */
   bucketKeyEnabled?: boolean | Computed<boolean>;
-  /** Defines the default server-side encryption configuration for the S3 Express Directory Bucket, choosing either SSE-S3 or SSE-KMS with an optional KMS key ID that is applied to objects written without an explicit encryption header. (AI-inferred) */
   serverSideEncryptionByDefault?: ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault | Computed<ExpressDirectoryBucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault>;
 }
 
@@ -21,52 +17,33 @@ export interface ExpressDirectoryBucket_BucketEncryption {
 }
 
 export interface ExpressDirectoryBucket_InventoryConfigurations_Destination {
-  /** The AWS account ID that owns the destination bucket where S3 Express directory bucket inventory reports are delivered, used to verify the bucket owner during configuration. (AI-inferred) */
   bucketAccountId?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the destination bucket where the inventory reports for this directory bucket are delivered. (AI-inferred) */
   bucketArn?: string | Computed<string>;
-  /** The output format (e.g., 'CSV') of the inventory report delivered to the destination bucket. (AI-inferred) */
   format?: string | Computed<string>;
-  /** The prefix that is prepended to the keys of the inventory report objects when they are delivered to the destination bucket. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface ExpressDirectoryBucket_InventoryConfigurations {
-  /** Defines the destination Amazon S3 bucket and optional prefix where the inventory report files resulting from this inventory configuration are delivered. (AI-inferred) */
   destination?: ExpressDirectoryBucket_InventoryConfigurations_Destination | Computed<ExpressDirectoryBucket_InventoryConfigurations_Destination>;
-  /** Indicates whether this inventory configuration is enabled, so that the S3 Express directory bucket periodically generates and exports inventory lists to the specified destination. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** A unique identifier for the inventory configuration, used to distinguish it from other inventory configurations attached to the same directory bucket. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies whether the inventory report includes all object versions or only current versions, with valid values `All` or `Current`. (AI-inferred) */
   includedObjectVersions?: string | Computed<string>;
-  /** Specifies the optional metadata fields (such as Size, LastModifiedDate, StorageClass, or ETag) to include in the inventory output for the S3 Express directory bucket. (AI-inferred) */
   optionalFields?: string[] | Computed<string[]>;
-  /** Specifies the object key prefix that restricts the inventory report to include only objects whose keys start with this prefix, used to filter the set of objects listed in the directory bucket's inventory configuration. (AI-inferred) */
   prefix?: string | Computed<string>;
-  /** Specifies how often the inventory report is generated for the directory bucket, with valid values of Daily or Weekly. (AI-inferred) */
   scheduleFrequency?: string | Computed<string>;
 }
 
 export interface ExpressDirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload {
-  /** Specifies the number of days after a multipart upload is initiated before the lifecycle rule aborts that incomplete multipart upload in the S3 Express directory bucket. (AI-inferred) */
   daysAfterInitiation?: number | Computed<number>;
 }
 
 export interface ExpressDirectoryBucket_LifecycleConfiguration_Rules {
-  /** Configures a lifecycle rule action that automatically aborts incomplete multipart uploads after the specified number of days since the upload was initiated. (AI-inferred) */
   abortIncompleteMultipartUpload?: ExpressDirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload | Computed<ExpressDirectoryBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload>;
-  /** Specifies the number of days after object creation when the object expires and is automatically deleted by the lifecycle rule for the S3 Express directory bucket. (AI-inferred) */
   expirationInDays?: number | Computed<number>;
-  /** A unique identifier for the lifecycle rule, used to reference and distinguish it from other rules in the S3 Express directory bucket's lifecycle configuration. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies the minimum object size in bytes for objects to be eligible for this lifecycle rule, so only objects larger than this threshold are affected. (AI-inferred) */
   objectSizeGreaterThan?: string | Computed<string>;
-  /** Specifies the maximum object size in bytes; only objects smaller than this threshold will match the lifecycle rule filter. (AI-inferred) */
   objectSizeLessThan?: string | Computed<string>;
-  /** The key prefix that filters objects in the S3 Express directory bucket so the lifecycle rule applies only to objects with keys starting with that prefix. (AI-inferred) */
   prefix?: string | Computed<string>;
-  /** Determines whether the lifecycle rule is active, with allowed values 'Enabled' or 'Disabled'. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
@@ -76,17 +53,13 @@ export interface ExpressDirectoryBucket_LifecycleConfiguration {
 }
 
 export interface ExpressDirectoryBucket_MetricsConfigurations {
-  /** For an S3 Express directory bucket, this access point ARN filters the metrics configuration so that metrics are reported only for requests directed to the specified S3 access point. (AI-inferred) */
   accessPointArn?: string | Computed<string>;
-  /** The unique identifier for this metrics configuration, which must be distinct within the directory bucket and is used to refer to the configuration when setting up CloudWatch bucket metrics. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies the object key prefix that the metrics configuration applies to, so that only requests for objects with this prefix are included in the emitted metrics. (AI-inferred) */
   prefix?: string | Computed<string>;
 }
 
 export interface ExpressDirectoryBucket_Tags {
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the S3 Express directory bucket, used for cost allocation and metadata organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -179,13 +152,11 @@ export interface ExpressDirectoryBucketConfig {
   dataRedundancy: string | Computed<string>;
   /** The inventory configuration for an Amazon S3 Express bucket. */
   inventoryConfigurations?: ExpressDirectoryBucket_InventoryConfigurations[] | Computed<ExpressDirectoryBucket_InventoryConfigurations[]>;
-  /** Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred) */
   lifecycleConfiguration?: ExpressDirectoryBucket_LifecycleConfiguration | Computed<ExpressDirectoryBucket_LifecycleConfiguration>;
   /** Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'. */
   locationName: string | Computed<string>;
   /** Specifies the metrics configurations for the Amazon S3 Express bucket. */
   metricsConfigurations?: ExpressDirectoryBucket_MetricsConfigurations[] | Computed<ExpressDirectoryBucket_MetricsConfigurations[]>;
-  /** Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred) */
   tags?: ExpressDirectoryBucket_Tags[] | Computed<ExpressDirectoryBucket_Tags[]>;
 }
 
@@ -202,13 +173,11 @@ export interface ExpressDirectoryBucketAttrs {
   dataRedundancy: string;
   /** The inventory configuration for an Amazon S3 Express bucket. */
   inventoryConfigurations: ExpressDirectoryBucket_InventoryConfigurations[];
-  /** Defines the lifecycle rules for objects in the S3 Express directory bucket, such as expiration, transition to storage classes, or deletion based on a schedule. (AI-inferred) */
   lifecycleConfiguration: ExpressDirectoryBucket_LifecycleConfiguration;
   /** Specifies the Zone ID of the Availability Zone or Local Zone where the directory bucket will be created. An example Availability Zone ID value is 'use1-az5'. */
   locationName: string;
   /** Specifies the metrics configurations for the Amazon S3 Express bucket. */
   metricsConfigurations: ExpressDirectoryBucket_MetricsConfigurations[];
-  /** Specifies the list of key-value tags to assign to the S3 Express directory bucket, which are used for cost allocation, access control, and metadata management. (AI-inferred) */
   tags: ExpressDirectoryBucket_Tags[];
 }
 

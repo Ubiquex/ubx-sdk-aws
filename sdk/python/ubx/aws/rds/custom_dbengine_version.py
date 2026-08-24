@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomDbengineVersion_Tags:
-    # The key of a tag attached to this AWS RDS Custom DB engine version, used to organize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,7 +18,6 @@ _CustomDbengineVersion_TagsFields = {
 
 @dataclasses.dataclass
 class CustomDbengineVersionConfig:
-    # The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred)
     database_installation_files: Any = None
     # The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``.
     database_installation_files_s3_bucket_name: Any = None
@@ -48,9 +46,7 @@ class CustomDbengineVersionConfig:
 
 @dataclasses.dataclass
 class CustomDbengineVersionAttrs:
-    # The Amazon Resource Name (ARN) assigned to this custom DB engine version by AWS, used to reference the resource in IAM policies and other AWS services. (AI-inferred)
     dbengine_version_arn: Any = None
-    # The S3 object keys of the database installation files located in the specified S3 bucket (and optional prefix) that define the installation files for this custom DB engine version. (AI-inferred)
     database_installation_files: Any = None
     # The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is ``my-custom-installation-files``.
     database_installation_files_s3_bucket_name: Any = None

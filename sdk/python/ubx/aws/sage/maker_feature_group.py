@@ -8,41 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerFeatureGroup_FeatureDefinitions:
-    # Specifies the unique name of a feature (column) within a SageMaker Feature Group's record schema, as part of a feature definition list that defines each attribute and its type. (AI-inferred)
     feature_name: Any = None
-    # The data type of the feature, one of Integral, Fractional, or String, which determines how the feature value is stored and processed in the Amazon SageMaker Feature Store. (AI-inferred)
     feature_type: Any = None
 
 @dataclasses.dataclass
 class MakerFeatureGroup_OfflineStoreConfig_DataCatalogConfig:
-    # The name of the AWS Glue Catalog (commonly 'aws') that contains the database and table used by the feature group's offline store for managing its data catalog entries. (AI-inferred)
     catalog: Any = None
-    # The name of the AWS Glue database in which the SageMaker Feature Group's offline store data catalog table is registered. (AI-inferred)
     database: Any = None
-    # The name of the Glue Data Catalog table (in the specified catalog and database) that stores the offline data for this feature group, allowing it to be queried with Athena or other services. (AI-inferred)
     table_name: Any = None
 
 @dataclasses.dataclass
 class MakerFeatureGroup_OfflineStoreConfig_S3StorageConfig:
-    # The ID of the AWS KMS key used to encrypt the S3 objects in the offline store of the feature group, allowing customer-managed encryption instead of the default SageMaker-managed key. (AI-inferred)
     kms_key_id: Any = None
-    # The S3 URI (bucket and optional prefix) that defines the location where the feature group's offline store data is written and read. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerFeatureGroup_OfflineStoreConfig:
-    # Configures the AWS Glue Data Catalog metadata for the offline store feature table by specifying the Glue catalog, database, and table name. (AI-inferred)
     data_catalog_config: Any = None
-    # When set to true, prevents SageMaker from automatically creating the AWS Glue table that the offline store uses in its configured Data Catalog. (AI-inferred)
     disable_glue_table_creation: Any = None
-    # Configures Amazon S3 storage for the feature group's offline store, specifying the S3 URI (bucket and prefix) where data is stored and an optional KMS key ID for encryption. (AI-inferred)
     s3_storage_config: Any = None
     # Format for the offline store feature group. Iceberg is the optimal format for feature groups shared between offline and online stores.
     table_format: Any = None
 
 @dataclasses.dataclass
 class MakerFeatureGroup_OnlineStoreConfig_SecurityConfig:
-    # Specifies the AWS KMS key ID used to encrypt the feature group's online store, which provides low-latency access for real-time inference and is typically backed by DynamoDB. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
@@ -54,18 +43,14 @@ class MakerFeatureGroup_OnlineStoreConfig_TtlDuration:
 
 @dataclasses.dataclass
 class MakerFeatureGroup_OnlineStoreConfig:
-    # Determines whether the online store is enabled for the feature group; when false, the feature group only uses the offline store and cannot support real-time inference queries. (AI-inferred)
     enable_online_store: Any = None
-    # Specifies the AWS KMS key ID used to encrypt data in the online store of the SageMaker feature group. (AI-inferred)
     security_config: Any = None
-    # Specifies the storage type for the online store of a SageMaker feature group, either Standard (default, uses Amazon Simple Storage Service) or InMemory (uses SageMaker-managed Redis cluster) to control performance and cost. (AI-inferred)
     storage_type: Any = None
     # TTL configuration of the feature group
     ttl_duration: Any = None
 
 @dataclasses.dataclass
 class MakerFeatureGroup_Tags:
-    # The key portion of a tag attached to the SageMaker Feature Group, used for organizing, cost tracking, and access management of the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -154,9 +139,7 @@ class MakerFeatureGroupConfig:
     feature_definitions: Any = None
     # The Name of the FeatureGroup.
     feature_group_name: Any = None
-    # Configures the offline store, an S3-backed data store used for batch analytics with Athena and Glue, including S3 storage configuration, Data Catalog settings, and the option to disable the offline store. (AI-inferred)
     offline_store_config: Any = None
-    # Configures the online store for the feature group, enabling low-latency reads and writes for real-time inference, and includes settings like whether the online store is enabled and the TTL duration for automatic record expiration. (AI-inferred)
     online_store_config: Any = None
     # The Record Identifier Feature Name.
     record_identifier_feature_name: Any = None
@@ -164,7 +147,6 @@ class MakerFeatureGroupConfig:
     role_arn: Any = None
     # An array of key-value pair to apply to this resource.
     tags: Any = None
-    # Defines the read/write throughput configuration for the feature group, specifying either on-demand or provisioned mode with optional capacity units for reads and writes. (AI-inferred)
     throughput_config: Any = None
 
 @dataclasses.dataclass
@@ -181,9 +163,7 @@ class MakerFeatureGroupAttrs:
     feature_group_name: Any = None
     # The status of the feature group.
     feature_group_status: Any = None
-    # Configures the offline store, an S3-backed data store used for batch analytics with Athena and Glue, including S3 storage configuration, Data Catalog settings, and the option to disable the offline store. (AI-inferred)
     offline_store_config: Any = None
-    # Configures the online store for the feature group, enabling low-latency reads and writes for real-time inference, and includes settings like whether the online store is enabled and the TTL duration for automatic record expiration. (AI-inferred)
     online_store_config: Any = None
     # The Record Identifier Feature Name.
     record_identifier_feature_name: Any = None
@@ -191,7 +171,6 @@ class MakerFeatureGroupAttrs:
     role_arn: Any = None
     # An array of key-value pair to apply to this resource.
     tags: Any = None
-    # Defines the read/write throughput configuration for the feature group, specifying either on-demand or provisioned mode with optional capacity units for reads and writes. (AI-inferred)
     throughput_config: Any = None
 
 MakerFeatureGroup = ubx.ResourceBinding(

@@ -2,19 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VirtualCluster_ContainerProvider_Info_EksInfo {
-  /** The Kubernetes namespace in the Amazon EKS cluster where the virtual cluster's resources are deployed. (AI-inferred) */
   namespace: string | Computed<string>;
 }
 
 export interface VirtualCluster_ContainerProvider_Info {
-  /** Specifies the Amazon EKS cluster information for the container provider, including the Kubernetes namespace where the virtual cluster runs. (AI-inferred) */
   eksInfo: VirtualCluster_ContainerProvider_Info_EksInfo | Computed<VirtualCluster_ContainerProvider_Info_EksInfo>;
 }
 
 export interface VirtualCluster_ContainerProvider {
   /** The ID of the container cluster */
   id: string | Computed<string>;
-  /** The info object inside container_provider contains provider-specific details, specifically the Amazon EKS namespace in which the virtual cluster runs. (AI-inferred) */
   info: VirtualCluster_ContainerProvider_Info | Computed<VirtualCluster_ContainerProvider_Info>;
   /** The type of the container provider */
   type: string | Computed<string>;
@@ -22,7 +19,6 @@ export interface VirtualCluster_ContainerProvider {
 
 export interface VirtualCluster_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the EMR Containers virtual cluster. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -54,7 +50,6 @@ const VirtualCluster_TagsFields: FieldMap = {
 };
 
 export interface VirtualClusterConfig {
-  /** The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred) */
   containerProvider: VirtualCluster_ContainerProvider | Computed<VirtualCluster_ContainerProvider>;
   /** Name of the virtual cluster. */
   name: string | Computed<string>;
@@ -67,9 +62,7 @@ export interface VirtualClusterConfig {
 }
 
 export interface VirtualClusterAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the EMR Containers virtual cluster in AWS. (AI-inferred) */
   arn: string;
-  /** The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred) */
   containerProvider: VirtualCluster_ContainerProvider;
   /** Id of the virtual cluster. */
   id: string;

@@ -4,98 +4,61 @@ package customer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_AccountNumber struct {
-	// Defines the data type (e.g., STRING, NUMBER, DATE) for the account_number profile attribute as it is used as a dimension in the segment definition's criteria. (AI-inferred)
 	DimensionType any
-	// Specifies the list of account number values to match against a customer's profile account number for this segment dimension. (AI-inferred)
 	Values any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes_Address struct {
-	// Defines the dimension criteria for the city field within the customer's address profile attribute, specifying whether to include or exclude a set of city values for segment matching. (AI-inferred)
 	City any
-	// Configures the address country attribute as a per-profile dimension for the segment, allowing filtering based on the country value of each profile's address. (AI-inferred)
 	Country any
-	// Specifies the county of the customer's postal address, used as a profile attribute for segment filtering in AWS Customer Profiles segment definitions. (AI-inferred)
 	County any
-	// Specifies the postal code attribute of a customer's address as a profile dimension in a segment definition, including the matching condition and postal code value used to filter customers for the segment. (AI-inferred)
 	PostalCode any
-	// Configures the dimension for the customer's address province, specifying how to match profile provinces against a set of values for inclusion in the segment. (AI-inferred)
 	Province any
-	// This object defines the segment dimension condition based on the customer's address state, such as specifying state values like 'CA' or 'NY' to include or exclude customers in the segment. (AI-inferred)
 	State any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups_Dimensions_ProfileAttributes struct {
-	// Specifies the dimension configuration for the account number profile attribute, defining the inclusion/exclusion type (INCLUSIVE or EXCLUSIVE) and the specific account number values used to segment customer profiles. (AI-inferred)
 	AccountNumber any
-	// For the 'additional_information' profile attribute within a segment group dimension, this object specifies the dimension (inclusive/exclusive values) or criteria rule (e.g., equals, greater than) that determines how profiles are included or excluded from the segment based on that attribute. (AI-inferred)
 	AdditionalInformation any
-	// Defines the address-based dimension criteria (such as city, state, country, and postal code) used to filter profiles in this segment definition. (AI-inferred)
 	Address any
-	// A map of profile attribute names to their dimension criteria (such as inclusion/exclusion values) used to determine which profiles match in this segment group's dimension. (AI-inferred)
 	Attributes any
-	// Defines the billing address attributes of a customer profile (e.g., city, state, postal code, country) used for segment filtering criteria. (AI-inferred)
 	BillingAddress any
-	// Defines the dimension configuration for the customer profile's birth date attribute, enabling segment definitions to filter profiles based on their date of birth. (AI-inferred)
 	BirthDate any
-	// Configures the customer profile's business email address as a profile attribute dimension used for segment filtering, allowing segment definitions to target profiles based on this email field. (AI-inferred)
 	BusinessEmailAddress any
-	// Defines the matching criteria for the 'Business Name' profile attribute within a dimension of a segment definition, used to filter customer profiles by their business name. (AI-inferred)
 	BusinessName any
-	// Specifies how profiles are matched on their business phone number for this segment, using include/exclude criteria and an inclusive/exclusive dimension type. (AI-inferred)
 	BusinessPhoneNumber any
-	// Specifies the segmentation dimension for the profile's email address attribute, defining the criteria (such as matching values or ranges) used to determine which profiles belong to the segment. (AI-inferred)
 	EmailAddress any
-	// Represents the configuration for using the 'FirstName' profile attribute as a dimension in a segment group, defining the condition (e.g., equal, contains, range) that determines which profiles match the segment. (AI-inferred)
 	FirstName any
-	// Specifies the string dimension for the customer's Gender profile attribute (e.g., matching 'Male' or 'Female' values) within a segment group's dimension criteria. (AI-inferred)
 	GenderString any
-	// In an AWS Customer Profiles segment definition, this object defines the home phone number dimension, letting you filter which profiles are included in the segment based on matching phone number values (e.g., as an inclusive or exclusive condition). (AI-inferred)
 	HomePhoneNumber any
-	// Defines the dimension configuration for the customer's last name profile attribute, used to segment profiles based on the LastName field. (AI-inferred)
 	LastName any
-	// Defines the mailing-address components (such as city, state, or postal code) used as a dimension for segmenting customer profiles within a segment definition. (AI-inferred)
 	MailingAddress any
-	// Defines the matching criteria for the profile's middle name attribute within a segment group's dimension, including the dimension type (e.g., STRING), allowed values, and operation used to evaluate profiles. (AI-inferred)
 	MiddleName any
-	// Specifies how to filter profiles by mobile phone number in a segment dimension, using a dimension type (e.g., INCLUSIVE, EXCLUSIVE, CONTAINS, BEGINS_WITH) and a list of values to match. (AI-inferred)
 	MobilePhoneNumber any
-	// This object holds the dimension criteria (inclusive/exclusive match on a set of string values) applied to the `party_type_string` profile attribute when evaluating customer profiles for segment membership. (AI-inferred)
 	PartyTypeString any
-	// Defines the segmentation criteria (such as dimension type and matching conditions) applied to the profile's personal email address within the profile attributes of a segment group's dimensions. (AI-inferred)
 	PersonalEmailAddress any
-	// Specifies the dimension condition for the profile phone number attribute, with fields for the comparison operation and value used to include profiles in the segment. (AI-inferred)
 	PhoneNumber any
 	ProfileType any
-	// Specifies the shipping address profile attribute as a dimension for segment filtering, enabling customer profiles to be grouped or targeted based on their shipping address. (AI-inferred)
 	ShippingAddress any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups_Dimensions struct {
-	// Specifies the calculated attribute conditions for this dimension, where each key is the name of a calculated attribute and the value defines the filter or comparison applied to that attribute's value to include profiles in the segment. (AI-inferred)
 	CalculatedAttributes any
-	// Specifies a map of profile attribute names (e.g., Email, Phone, or custom attributes) to their dimension definitions, which are used to filter or segment customer profiles within the group's dimension criteria. (AI-inferred)
 	ProfileAttributes any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups_SourceSegments struct {
-	// The name of the source segment definition to reference as a source segment within this group, used to build a segment by combining other segment definitions. (AI-inferred)
 	SegmentDefinitionName any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups_Groups struct {
-	// Defines the list of attribute-based criteria (each with an inclusive/exclusive type and matching values) used to filter profiles within this segment group. (AI-inferred)
 	Dimensions any
-	// Specifies the list of existing segment definitions used as source inputs within this group of the segment group, enabling the new segment to be built from previously defined segments that are combined according to the group's logic. (AI-inferred)
 	SourceSegments any
-	// Determines whether a customer must match all conditions (ALL) or any one condition (ANY) in the group's source list to be included in the segment group. (AI-inferred)
 	SourceType any
-	// Specifies whether a profile must match all conditions (ALL) or any condition (ANY) defined within this segment group of the Customer Profiles segment definition. (AI-inferred)
 	Type any
 }
 
 type ProfilesSegmentDefinition_SegmentGroups struct {
-	// Defines the list of segment groups within the segment definition, where each group contains profile attribute conditions used to evaluate and define customer profile membership in the segment. (AI-inferred)
 	Groups any
 	// Specifies the operator on how to handle multiple groups within the same segment.
 	Include any
@@ -103,11 +66,8 @@ type ProfilesSegmentDefinition_SegmentGroups struct {
 
 type ProfilesSegmentDefinition_SegmentSort_Attributes struct {
 	DataType any
-	// The name of the Customer Profiles profile attribute that defines the sort key for the segment results in the segment sort configuration. (AI-inferred)
 	Name any
-	// Defines the sort order (ascending or descending) applied to the corresponding attribute in a segment definition's sort criteria. (AI-inferred)
 	Order any
-	// In the segment sort definition, the 'type' field specifies whether the attribute being sorted is a system-defined profile attribute (SYSTEM) or a custom attribute (CUSTOM) so Customer Profiles can correctly resolve the field to sort by. (AI-inferred)
 	Type any
 }
 
@@ -117,9 +77,7 @@ type ProfilesSegmentDefinition_SegmentSort struct {
 }
 
 type ProfilesSegmentDefinition_Tags struct {
-	// The key of a tag attached to this Customer Profiles segment definition, used to label and categorize the resource for management, filtering, and cost allocation. (AI-inferred)
 	Key any
-	// The value for a tag assigned to the Customer Profiles segment definition, used to store arbitrary metadata such as environment, owner, or cost center for resource management and identification. (AI-inferred)
 	Value any
 }
 
@@ -336,7 +294,6 @@ type ProfilesSegmentDefinitionConfig struct {
 	DomainName any
 	// The unique name of the segment definition.
 	SegmentDefinitionName any
-	// The segment_groups object defines the logical grouping of criteria that determine which customer profiles are included in or excluded from the segment, specifying the groups and an include/exclude flag. (AI-inferred)
 	SegmentGroups any
 	// Defines how segments should be sorted and ordered in the results.
 	SegmentSort any
@@ -359,7 +316,6 @@ type ProfilesSegmentDefinitionAttrs struct {
 	SegmentDefinitionArn any
 	// The unique name of the segment definition.
 	SegmentDefinitionName any
-	// The segment_groups object defines the logical grouping of criteria that determine which customer profiles are included in or excluded from the segment, specifying the groups and an include/exclude flag. (AI-inferred)
 	SegmentGroups any
 	// Defines how segments should be sorted and ordered in the results.
 	SegmentSort any

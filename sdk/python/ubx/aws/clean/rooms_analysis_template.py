@@ -8,54 +8,40 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_AnalysisParameters:
-    # The default value to use for the analysis parameter when a value is not provided at runtime. (AI-inferred)
     default_value: Any = None
-    # Specifies the name of an analysis parameter in the analysis template, which is used as a placeholder in the template's SQL query. (AI-inferred)
     name: Any = None
-    # Defines the SQL data type of the parameter (e.g., INT, STRING, BOOLEAN) used to enforce type-checking when the analysis template is run in a Clean Rooms collaboration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_ErrorMessageConfiguration:
-    # Indicates the type of error message delivery mechanism; when set to 'S3', error messages from the analysis template are written to an Amazon S3 bucket configured in the accompanying S3 property. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Schema:
-    # The list of table names in the AWS Clean Rooms collaboration that the analysis template's SQL query is permitted to reference, restricting the query's data access. (AI-inferred)
     referenced_tables: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Source_Artifacts_AdditionalArtifacts_Location:
-    # The S3 bucket name that stores an additional artifact (such as a custom analysis script or supporting file) for the AWS Clean Rooms analysis template's source, as specified in the source's artifacts list. (AI-inferred)
     bucket: Any = None
-    # The Amazon S3 object key (file name) of an additional artifact that is part of the analysis template's source artifacts. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Source_Artifacts_AdditionalArtifacts:
-    # Specifies the S3 location (bucket and key) of an additional artifact, such as a supporting file or script, that is part of the analysis template's source artifacts. (AI-inferred)
     location: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Source_Artifacts:
-    # Specifies additional artifacts (as objects containing artifact URIs) to be included with the analysis template's source, enabling the analysis to use supporting files beyond the primary SQL query. (AI-inferred)
     additional_artifacts: Any = None
-    # The entry_point object specifies the S3 location of the main Python script that serves as the starting point for the analysis in an AWS Clean Rooms analysis template. (AI-inferred)
     entry_point: Any = None
-    # The ARN of the IAM role that grants AWS Clean Rooms read access to the S3 objects in the source artifacts location. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Source:
-    # The S3 URIs of the analysis artifacts (such as SQL query files) that make up the source of the Clean Rooms analysis template. (AI-inferred)
     artifacts: Any = None
-    # The SQL query text that defines the analysis template's source, used as the basis for the analysis. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_SourceMetadata_Artifacts_AdditionalArtifactHashes:
-    # Specifies the SHA-256 hash of an additional artifact file that is part of the source metadata for the analysis template. (AI-inferred)
     sha256: Any = None
 
 @dataclasses.dataclass
@@ -65,16 +51,12 @@ class RoomsAnalysisTemplate_SourceMetadata_Artifacts:
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_SourceMetadata:
-    # Maps artifact names to their S3 URI locations, defining the source code artifacts for the analysis template within the source_metadata block. (AI-inferred)
     artifacts: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_ColumnClassification_ColumnMapping:
-    # The name of the source column that is assigned a classification in the column mapping for generating ML synthetic data in the analysis template. (AI-inferred)
     column_name: Any = None
-    # The semantic type assigned to the mapped column (for example, categorical, numeric, datetime, or free_text) that AWS Clean Rooms uses to guide the ML synthetic data generation process for the analysis template. (AI-inferred)
     column_type: Any = None
-    # Indicates whether this column is classified as a predictive feature (input variable) for the machine learning model when generating synthetic data in AWS Clean Rooms, so the service preserves its relationship to the training label. (AI-inferred)
     is_predictive_value: Any = None
 
 @dataclasses.dataclass
@@ -83,21 +65,16 @@ class RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters_Co
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_SyntheticDataParameters_MlSyntheticDataParameters:
-    # Specifies the per-column classification (such as categorical or numeric) applied when generating ML synthetic data from the analysis template's underlying dataset, controlling how each column is modeled by the synthetic data generator. (AI-inferred)
     column_classification: Any = None
-    # Specifies the privacy loss budget (epsilon) for the differentially private synthetic data generation, where lower values produce more private but less accurate data. (AI-inferred)
     epsilon: Any = None
-    # The maximum acceptable membership inference attack score for synthetic data generated for machine learning, providing a privacy threshold to limit the risk of inferring original data membership from the synthetic dataset. (AI-inferred)
     max_membership_inference_attack_score: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_SyntheticDataParameters:
-    # Configures the machine learning model parameters for generating a differentially private synthetic dataset from the analysis template's query results. (AI-inferred)
     ml_synthetic_data_parameters: Any = None
 
 @dataclasses.dataclass
 class RoomsAnalysisTemplate_Tags:
-    # The user-defined key of a tag attached to the AWS Clean Rooms analysis template, used to categorize, organize, and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -217,22 +194,14 @@ _RoomsAnalysisTemplate_TagsFields = {
 class RoomsAnalysisTemplateConfig:
     # The member who can query can provide this placeholder for a literal data value in an analysis template
     analysis_parameters: Any = None
-    # Specifies a user-provided description for the analysis template to help identify its purpose. (AI-inferred)
     description: Any = None
-    # Specifies the custom error message (including subject and body) that AWS Clean Rooms returns to users when a query based on this analysis template is denied or fails. (AI-inferred)
     error_message_configuration: Any = None
-    # Specifies the query language of the analysis template, with valid values being 'SQL' or 'PYTHON'. (AI-inferred)
     format: Any = None
-    # The unique identifier of the membership that owns this analysis template. (AI-inferred)
     membership_identifier: Any = None
-    # The name of the analysis template, used to identify and reference the template within the collaboration. (AI-inferred)
     name: Any = None
-    # Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
     schema: Any = None
-    # The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
     source: Any = None
     source_metadata: Any = None
-    # Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
     synthetic_data_parameters: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms analysis template.
     tags: Any = None
@@ -241,32 +210,19 @@ class RoomsAnalysisTemplateConfig:
 class RoomsAnalysisTemplateAttrs:
     # The member who can query can provide this placeholder for a literal data value in an analysis template
     analysis_parameters: Any = None
-    # The unique identifier assigned by AWS to this analysis template, returned after creation. (AI-inferred)
     analysis_template_identifier: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the analysis template in AWS Clean Rooms. (AI-inferred)
     arn: Any = None
-    # The ARN of the collaboration that this analysis template belongs to. (AI-inferred)
     collaboration_arn: Any = None
-    # The unique identifier of the AWS Clean Rooms collaboration that this analysis template belongs to, which is assigned by AWS and cannot be changed. (AI-inferred)
     collaboration_identifier: Any = None
-    # Specifies a user-provided description for the analysis template to help identify its purpose. (AI-inferred)
     description: Any = None
-    # Specifies the custom error message (including subject and body) that AWS Clean Rooms returns to users when a query based on this analysis template is denied or fails. (AI-inferred)
     error_message_configuration: Any = None
-    # Specifies the query language of the analysis template, with valid values being 'SQL' or 'PYTHON'. (AI-inferred)
     format: Any = None
-    # The ARN of the AWS Clean Rooms membership associated with this analysis template, automatically assigned by AWS. (AI-inferred)
     membership_arn: Any = None
-    # The unique identifier of the membership that owns this analysis template. (AI-inferred)
     membership_identifier: Any = None
-    # The name of the analysis template, used to identify and reference the template within the collaboration. (AI-inferred)
     name: Any = None
-    # Specifies the referenced tables (via an AnalysisSchema object) that the analysis template's SQL query is allowed to access. (AI-inferred)
     schema: Any = None
-    # The source object defines the SQL query content for the analysis template, containing the query text that will be executed against the collaboration data. (AI-inferred)
     source: Any = None
     source_metadata: Any = None
-    # Configures the generation of synthetic data based on the analysis template's schema, including the desired row count, for testing analysis queries without using real data. (AI-inferred)
     synthetic_data_parameters: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms analysis template.
     tags: Any = None

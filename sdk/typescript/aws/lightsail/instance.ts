@@ -2,33 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_AddOns_AutoSnapshotAddOnRequest {
-  /** Specifies the time of day (in 24-hour HH:00 format) at which the automatic snapshot is taken for the Lightsail instance when the Auto Snapshot add-on is enabled. (AI-inferred) */
   snapshotTimeOfDay?: string | Computed<string>;
 }
 
 export interface Instance_AddOns {
-  /** Specifies the type of add-on to attach to the Lightsail instance, with the only supported value being `AutoSnapshot` to enable automatic daily snapshots of the instance. (AI-inferred) */
   addOnType?: string | Computed<string>;
-  /** Configures the automatic snapshot add-on for the Lightsail instance, specifying the daily time of day for the snapshot to be created. (AI-inferred) */
   autoSnapshotAddOnRequest?: Instance_AddOns_AutoSnapshotAddOnRequest | Computed<Instance_AddOns_AutoSnapshotAddOnRequest>;
-  /** Indicates whether the add-on is enabled or disabled, with values such as 'Enabled' or 'Disabled' for a Lightsail instance add-on. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface Instance_Hardware_Disks {
-  /** The name of the Lightsail instance to which the disk is attached, which for a disk in an instance's hardware list is typically the instance itself. (AI-inferred) */
   attachedTo?: string | Computed<string>;
-  /** Indicates whether the disk is currently attached to the instance, typically with values such as 'attached' or 'detached'. (AI-inferred) */
   attachmentState?: string | Computed<string>;
-  /** The unique name of the disk attached to the Lightsail instance, used to identify the disk within the instance's hardware configuration. (AI-inferred) */
   diskName?: string | Computed<string>;
-  /** The provisioned input/output operations per second (IOPS) for the block storage disk attached to the Lightsail instance, defining its performance level. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** Indicates whether this disk is the system (boot) disk for the AWS Lightsail instance. (AI-inferred) */
   isSystemDisk?: boolean | Computed<boolean>;
-  /** The device path (e.g., /dev/sda1) for the attached block storage disk on the Lightsail instance, used to identify the disk within the operating system. (AI-inferred) */
   path?: string | Computed<string>;
-  /** The size of the disk in gigabytes for a block storage disk attached to the Lightsail instance, as specified in the hardware.disks list. (AI-inferred) */
   sizeInGb?: string | Computed<string>;
 }
 
@@ -54,25 +43,15 @@ export interface Instance_Networking_MonthlyTransfer {
 }
 
 export interface Instance_Networking_Ports {
-  /** Specifies whether the port rule applies to inbound or outbound traffic, with values 'inbound' or 'outbound'. (AI-inferred) */
   accessDirection?: string | Computed<string>;
-  /** The source IP address or CIDR range that is allowed to access the specified port on the Lightsail instance. (AI-inferred) */
   accessFrom?: string | Computed<string>;
-  /** Specifies whether the port is open to the public internet (Public) or restricted to private access within the Lightsail network (Private). (AI-inferred) */
   accessType?: string | Computed<string>;
-  /** Lists named CIDR aliases (e.g., 'myIp', 'amazon') whose defined IP ranges are used as the allowed source addresses for this port rule in the instance's networking firewall. (AI-inferred) */
   cidrListAliases?: string[] | Computed<string[]>;
-  /** The list of IPv4 CIDR blocks that are allowed to access the instance via the associated port. (AI-inferred) */
   cidrs?: string[] | Computed<string[]>;
-  /** Specifies the common name (e.g., SSH, RDP, HTTP) associated with the port, providing a human-readable label for the port's purpose. (AI-inferred) */
   commonName?: string | Computed<string>;
-  /** The starting port number of a range to open in the Lightsail instance's firewall rules. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The list of IPv6 CIDR blocks that are allowed to access the port in the Lightsail instance networking configuration. (AI-inferred) */
   ipv6Cidrs?: string[] | Computed<string[]>;
-  /** Specifies the network protocol (such as TCP, UDP, or ICMP) that the firewall rule applies to for the Lightsail instance's networking port mapping. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The inclusive end of the port range for this Lightsail instance networking rule, paired with the port set in fromPort to define which ports are opened. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
@@ -91,9 +70,7 @@ export interface Instance_State {
 }
 
 export interface Instance_Tags {
-  /** The key of the tag to associate with the Lightsail instance. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The user-defined value paired with a tag key on the Lightsail instance, used for identifying and organizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -146,7 +123,6 @@ export interface InstanceAttrs {
   bundleId: string;
   /** Hardware of the Instance. */
   hardware: Instance_Hardware;
-  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail instance across AWS. (AI-inferred) */
   instanceArn: string;
   /** The names to use for your new Lightsail instance. */
   instanceName: string;

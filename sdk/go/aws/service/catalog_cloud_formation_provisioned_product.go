@@ -4,26 +4,17 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogCloudFormationProvisionedProduct_ProvisioningParameters struct {
-	// Specifies the name of a provisioning parameter for the Service Catalog product, matching the parameter key defined in the product's CloudFormation template or provisioning artifact. (AI-inferred)
 	Key any
-	// The value associated with a provisioning parameter key that is supplied to the AWS CloudFormation template during product provisioning. (AI-inferred)
 	Value any
 }
 
 type CatalogCloudFormationProvisionedProduct_ProvisioningPreferences struct {
-	// Specifies the list of AWS account IDs where the associated AWS CloudFormation StackSet deploys when provisioning this Service Catalog product. (AI-inferred)
 	StackSetAccounts any
-	// Specifies the number of accounts, per Region, for which stack set operation failures are tolerated before the operation is aborted. (AI-inferred)
 	StackSetFailureToleranceCount any
-	// Specifies the percentage of accounts, per Region, for which a stack set operation can fail before AWS CloudFormation stops the operation and rolls back the stack. (AI-inferred)
 	StackSetFailureTolerancePercentage any
-	// The maximum number of accounts in which AWS CloudFormation StackSets can create stacks concurrently during stack set provisioning. (AI-inferred)
 	StackSetMaxConcurrencyCount any
-	// Specifies the maximum percentage of accounts in which stack instances are created or updated concurrently when AWS Service Catalog provisions the product using a StackSet. (AI-inferred)
 	StackSetMaxConcurrencyPercentage any
-	// Specifies whether the AWS CloudFormation StackSet operation performed during provisioning is a create or update operation. (AI-inferred)
 	StackSetOperationType any
-	// Specifies the AWS Regions where CloudFormation StackSet instances are created when the provisioned product is deployed as a stack set. (AI-inferred)
 	StackSetRegions any
 }
 
@@ -43,64 +34,37 @@ var CatalogCloudFormationProvisionedProduct_ProvisioningPreferencesFields = ubx.
 	}
 
 type CatalogCloudFormationProvisionedProductConfig struct {
-	// Specifies the language code (such as en or jp) used by AWS Service Catalog for localized responses, error messages, and documentation when managing the provisioned product. (AI-inferred)
 	AcceptLanguage any
-	// Specifies the Amazon SNS topic ARNs to which AWS Service Catalog sends provisioning event notifications for this provisioned product. (AI-inferred)
 	NotificationArns any
-	// The unique identifier of the launch path within AWS Service Catalog that determines which portfolio and constraint combination is used to provision this product. (AI-inferred)
 	PathId any
-	// The name of the Service Catalog provisioning path that identifies the specific product-portfolio association and launch constraints used to provision this product. (AI-inferred)
 	PathName any
-	// The unique identifier of the Service Catalog product from which this provisioned product is created. (AI-inferred)
 	ProductId any
-	// The name of the Service Catalog product to provision, used as an alternative to specifying the product ID when provisioning a product. (AI-inferred)
 	ProductName any
-	// The user-friendly name of the provisioned product within AWS Service Catalog. (AI-inferred)
 	ProvisionedProductName any
-	// The identifier of the provisioning artifact (product version) to use when provisioning the Service Catalog product. (AI-inferred)
 	ProvisioningArtifactId any
-	// The name of the Service Catalog provisioning artifact (product version) to use when provisioning the product. (AI-inferred)
 	ProvisioningArtifactName any
-	// Provides a list of key-value pairs that supply the values for parameters defined in the AWS CloudFormation template of the Service Catalog product being provisioned. (AI-inferred)
 	ProvisioningParameters any
-	// Specifies provisioning preferences for the product, including StackSet accounts and regions, failure tolerance counts, and maximum concurrent operation counts for stack set deployments. (AI-inferred)
 	ProvisioningPreferences any
-	// Specifies the list of tags (key-value pairs) to associate with the provisioned product, which are applied to the provisioned CloudFormation stack and its resources. (AI-inferred)
 	Tags any
 }
 
 type CatalogCloudFormationProvisionedProductAttrs struct {
-	// Specifies the language code (such as en or jp) used by AWS Service Catalog for localized responses, error messages, and documentation when managing the provisioned product. (AI-inferred)
 	AcceptLanguage any
-	// The ARN of the CloudFormation stack that AWS Service Catalog provisions for this provisioned product. (AI-inferred)
 	CloudformationStackArn any
-	// Specifies the Amazon SNS topic ARNs to which AWS Service Catalog sends provisioning event notifications for this provisioned product. (AI-inferred)
 	NotificationArns any
 	// List of key-value pair outputs.
 	Outputs any
-	// The unique identifier of the launch path within AWS Service Catalog that determines which portfolio and constraint combination is used to provision this product. (AI-inferred)
 	PathId any
-	// The name of the Service Catalog provisioning path that identifies the specific product-portfolio association and launch constraints used to provision this product. (AI-inferred)
 	PathName any
-	// The unique identifier of the Service Catalog product from which this provisioned product is created. (AI-inferred)
 	ProductId any
-	// The name of the Service Catalog product to provision, used as an alternative to specifying the product ID when provisioning a product. (AI-inferred)
 	ProductName any
-	// The unique identifier (e.g., pp-xxxxxxxx) assigned by AWS Service Catalog to the provisioned product, used to reference and manage the provisioned resource. (AI-inferred)
 	ProvisionedProductId any
-	// The user-friendly name of the provisioned product within AWS Service Catalog. (AI-inferred)
 	ProvisionedProductName any
-	// The identifier of the provisioning artifact (product version) to use when provisioning the Service Catalog product. (AI-inferred)
 	ProvisioningArtifactId any
-	// The name of the Service Catalog provisioning artifact (product version) to use when provisioning the product. (AI-inferred)
 	ProvisioningArtifactName any
-	// Provides a list of key-value pairs that supply the values for parameters defined in the AWS CloudFormation template of the Service Catalog product being provisioned. (AI-inferred)
 	ProvisioningParameters any
-	// Specifies provisioning preferences for the product, including StackSet accounts and regions, failure tolerance counts, and maximum concurrent operation counts for stack set deployments. (AI-inferred)
 	ProvisioningPreferences any
-	// The unique identifier of the provisioning record for the provisioned product, which tracks the provisioning operation's status and details in AWS Service Catalog. (AI-inferred)
 	RecordId any
-	// Specifies the list of tags (key-value pairs) to associate with the provisioned product, which are applied to the provisioned CloudFormation stack and its resources. (AI-inferred)
 	Tags any
 }
 

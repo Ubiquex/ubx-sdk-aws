@@ -4,7 +4,6 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterSubnetGroup_Tags struct {
-	// The key of a tag applied to the Redshift cluster subnet group, used for identifying and organizing the resource. (AI-inferred)
 	Key any
 	Value any
 }

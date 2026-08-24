@@ -4,20 +4,14 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayDocumentationVersionConfig struct {
-	// Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred)
 	Description any
-	// The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred)
 	DocumentationVersion any
-	// The identifier of the REST API to which this documentation version is attached. (AI-inferred)
 	RestApiId any
 }
 
 type GatewayDocumentationVersionAttrs struct {
-	// Provides a human-readable description for the documentation version snapshot, typically indicating the changes or purpose of that version. (AI-inferred)
 	Description any
-	// The version identifier of the API documentation snapshot that this documentation version represents. (AI-inferred)
 	DocumentationVersion any
-	// The identifier of the REST API to which this documentation version is attached. (AI-inferred)
 	RestApiId any
 }
 

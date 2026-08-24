@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VpcendpointService_PrivateDnsNameConfiguration {
-  /** The private DNS name (e.g., subdomain.example.com) that AWS uses to create a verification record for the VPC endpoint service's private DNS configuration. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Indicates the current verification state of the private DNS name associated with the VPC endpoint service, such as pendingVerification, verified, or failed. (AI-inferred) */
   state?: string | Computed<string>;
-  /** Specifies the type of private DNS name configuration for the VPC endpoint service, with valid values `service` or `interface`, indicating whether the DNS name applies to the service itself or to the endpoint's network interface. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The resolved private DNS name value for the VPC endpoint service, which consumers use to access the service via a private DNS name. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -23,16 +19,11 @@ const VpcendpointService_TagsFields: FieldMap = {
 };
 
 export interface VpcendpointServiceConfig {
-  /** Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred) */
   acceptanceRequired?: boolean | Computed<boolean>;
   contributorInsightsEnabled?: boolean | Computed<boolean>;
-  /** The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred) */
   gatewayLoadBalancerArns?: string[] | Computed<string[]>;
-  /** The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred) */
   networkLoadBalancerArns?: string[] | Computed<string[]>;
-  /** Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred) */
   payerResponsibility?: string | Computed<string>;
-  /** Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred) */
   privateDnsName?: string | Computed<string>;
   /** Specify which Ip Address types are supported for VPC endpoint service. */
   supportedIpAddressTypes?: string[] | Computed<string[]>;
@@ -43,20 +34,13 @@ export interface VpcendpointServiceConfig {
 }
 
 export interface VpcendpointServiceAttrs {
-  /** Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred) */
   acceptanceRequired: boolean;
   contributorInsightsEnabled: boolean;
-  /** The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred) */
   gatewayLoadBalancerArns: string[];
-  /** The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred) */
   networkLoadBalancerArns: string[];
-  /** Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred) */
   payerResponsibility: string;
-  /** Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred) */
   privateDnsName: string;
-  /** Provides the details of the private DNS name configuration associated with the VPC endpoint service, including the private DNS name, its type, value, and the current verification state. (AI-inferred) */
   privateDnsNameConfiguration: VpcendpointService_PrivateDnsNameConfiguration;
-  /** The unique identifier assigned by AWS to the VPC endpoint service. (AI-inferred) */
   serviceId: string;
   /** Specify which Ip Address types are supported for VPC endpoint service. */
   supportedIpAddressTypes: string[];

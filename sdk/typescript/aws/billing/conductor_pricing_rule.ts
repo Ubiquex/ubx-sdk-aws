@@ -7,7 +7,6 @@ export interface ConductorPricingRule_Tags {
 }
 
 export interface ConductorPricingRule_Tiering_FreeTier {
-  /** Whether the free tier is activated for this pricing rule, enabling the first set of units to be billed at zero when set to true and disabling the free tier allowance when false. (AI-inferred) */
   activated: boolean | Computed<boolean>;
 }
 
@@ -48,7 +47,6 @@ export interface ConductorPricingRuleConfig {
   scope: string | Computed<string>;
   /** The service which a pricing rule is applied on */
   service?: string | Computed<string>;
-  /** Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred) */
   tags?: ConductorPricingRule_Tags[] | Computed<ConductorPricingRule_Tags[]>;
   /** The set of tiering configurations for the pricing rule. */
   tiering?: ConductorPricingRule_Tiering | Computed<ConductorPricingRule_Tiering>;
@@ -81,7 +79,6 @@ export interface ConductorPricingRuleAttrs {
   scope: string;
   /** The service which a pricing rule is applied on */
   service: string;
-  /** Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred) */
   tags: ConductorPricingRule_Tags[];
   /** The set of tiering configurations for the pricing rule. */
   tiering: ConductorPricingRule_Tiering;

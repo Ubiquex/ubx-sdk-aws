@@ -10,27 +10,19 @@ type DataTableAttribute_LockVersion struct {
 
 type DataTableAttribute_Validation_Enum struct {
 	Strict any
-	// The allowed string values for this enum validation, which restricts the attribute to one of the specified values. (AI-inferred)
 	Values any
 }
 
 type DataTableAttribute_Validation struct {
 	Enum any
-	// Sets the exclusive upper bound for a numeric data table attribute's value, requiring any stored value to be strictly less than this number to pass validation. (AI-inferred)
 	ExclusiveMaximum any
-	// Defines an exclusive minimum validation constraint on a numeric attribute in an Amazon Connect data table, requiring that the attribute's value must be strictly greater than the specified number. (AI-inferred)
 	ExclusiveMinimum any
-	// Specifies the maximum number of characters allowed for a string-type attribute value in an AWS Connect data table, used to validate that input does not exceed this length. (AI-inferred)
 	MaxLength any
 	MaxValues any
-	// Specifies the maximum numeric value allowed for a data table attribute when the attribute's validation rule is of numeric type. (AI-inferred)
 	Maximum any
-	// Specifies the minimum number of characters that a string-type data table attribute value must have to be considered valid in Amazon Connect. (AI-inferred)
 	MinLength any
 	MinValues any
-	// Specifies the minimum numeric value allowed for this data table attribute, used to validate that input is not less than this threshold when the attribute is of a numeric type. (AI-inferred)
 	Minimum any
-	// The numeric value that an attribute value must be a multiple of, used as a validation constraint for number-type attributes in an Amazon Connect data table. (AI-inferred)
 	MultipleOf any
 }
 
@@ -57,35 +49,26 @@ var DataTableAttribute_ValidationFields = ubx.FieldMap{
 	}
 
 type DataTableAttributeConfig struct {
-	// The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
 	DataTableArn any
 	Description any
-	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
 	InstanceArn any
 	Name any
-	// Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
 	Primary any
 	Validation any
-	// Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
 	ValueType any
 }
 
 type DataTableAttributeAttrs struct {
 	AttributeId any
-	// The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
 	DataTableArn any
 	Description any
-	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
 	InstanceArn any
-	// The AWS Region where the data table attribute was last updated or modified. (AI-inferred)
 	LastModifiedRegion any
 	LastModifiedTime any
 	LockVersion any
 	Name any
-	// Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
 	Primary any
 	Validation any
-	// Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
 	ValueType any
 }
 

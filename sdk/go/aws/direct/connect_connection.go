@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectConnection_Tags struct {
 	Key any
-	// Specifies the value for a tag assigned to the Direct Connect connection, used to store arbitrary metadata or cost-allocation information. (AI-inferred)
 	Value any
 }
 

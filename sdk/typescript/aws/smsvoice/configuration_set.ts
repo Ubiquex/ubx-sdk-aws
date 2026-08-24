@@ -2,36 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigurationSet_EventDestinations_CloudWatchLogsDestination {
-  /** The ARN of the IAM role that Amazon CloudWatch Logs assumes to publish event logs for the configuration set's event destination. (AI-inferred) */
   iamRoleArn?: string | Computed<string>;
-  /** The ARN of the Amazon CloudWatch Logs log group where the configuration set delivers event notifications. (AI-inferred) */
   logGroupArn?: string | Computed<string>;
 }
 
 export interface ConfigurationSet_EventDestinations_KinesisFirehoseDestination {
-  /** The ARN of the Amazon Kinesis Data Firehose delivery stream to which the configuration set sends event notifications (e.g., message delivery and response events). (AI-inferred) */
   deliveryStreamArn?: string | Computed<string>;
-  /** The ARN of the IAM role that authorizes AWS SMS Voice to write event notifications to the associated Kinesis Data Firehose delivery stream. (AI-inferred) */
   iamRoleArn?: string | Computed<string>;
 }
 
 export interface ConfigurationSet_EventDestinations_SnsDestination {
-  /** The ARN of the Amazon SNS topic where the configuration set sends event notifications for this event destination. (AI-inferred) */
   topicArn?: string | Computed<string>;
 }
 
 export interface ConfigurationSet_EventDestinations {
-  /** The CloudWatchLogsDestination object within an event destination of an AWS::SMSVoice::ConfigurationSet specifies the Amazon CloudWatch Logs destination for voice message events, including the IAM role ARN and log group ARN to which the events are delivered. (AI-inferred) */
   cloudWatchLogsDestination?: ConfigurationSet_EventDestinations_CloudWatchLogsDestination | Computed<ConfigurationSet_EventDestinations_CloudWatchLogsDestination>;
-  /** Specifies whether the event destination is enabled to receive event notifications for the configuration set. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the name of the event destination, which uniquely identifies this destination within the configuration set. (AI-inferred) */
   eventDestinationName?: string | Computed<string>;
-  /** The Kinesis Data Firehose delivery stream destination for this event destination, specifying the delivery stream ARN and IAM role ARN that AWS SMS Voice uses to deliver event notifications. (AI-inferred) */
   kinesisFirehoseDestination?: ConfigurationSet_EventDestinations_KinesisFirehoseDestination | Computed<ConfigurationSet_EventDestinations_KinesisFirehoseDestination>;
-  /** This field specifies the voice call events (e.g., INITIATED_CALL, RINGING, ANSWERED, COMPLETED, BUSY, FAILED, or NO_ANSWER) that must occur for the associated event destination to send notifications to its target SNS topic. (AI-inferred) */
   matchingEventTypes?: string[] | Computed<string[]>;
-  /** Configures the Amazon SNS topic to which event notifications are published for this event destination in the SMS voice configuration set. (AI-inferred) */
   snsDestination?: ConfigurationSet_EventDestinations_SnsDestination | Computed<ConfigurationSet_EventDestinations_SnsDestination>;
 }
 
@@ -96,7 +85,6 @@ export interface ConfigurationSetConfig {
 }
 
 export interface ConfigurationSetAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the configuration set in AWS. (AI-inferred) */
   arn: string;
   /** The name to use for the configuration set. */
   configurationSetName: string;

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProtectionGroup_Tags struct {
 	Key any
-	// The value component of a tag attached to the AWS Shield Protection Group, used to store custom metadata that helps identify, organize, and manage the protection group. (AI-inferred)
 	Value any
 }
 

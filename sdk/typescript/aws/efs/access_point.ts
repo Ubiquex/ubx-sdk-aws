@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessPoint_AccessPointTags {
-  /** The key of a tag in the access_point_tags list on the EFS access point, corresponding to the Key property of the CloudFormation AccessPointTags tag objects. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the EFS access point, used for metadata and resource categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -73,11 +71,9 @@ export interface AccessPointConfig {
 }
 
 export interface AccessPointAttrs {
-  /** The AWS-assigned unique identifier for the EFS access point, used to reference the access point in other resources or APIs. (AI-inferred) */
   accessPointId: string;
   /** An array of key-value pairs to apply to this resource. For more information, see [Tag](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html). */
   accessPointTags: AccessPoint_AccessPointTags[];
-  /** The Amazon Resource Name (ARN) of the EFS access point, which uniquely identifies the access point within AWS. (AI-inferred) */
   arn: string;
   /** The opaque string specified in the request to ensure idempotent creation. */
   clientToken: string;

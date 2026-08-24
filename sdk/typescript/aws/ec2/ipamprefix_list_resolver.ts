@@ -10,7 +10,6 @@ export interface IpamprefixListResolver_Rules_Conditions {
   cidr?: string | Computed<string>;
   ipamPoolId?: string | Computed<string>;
   operation?: string | Computed<string>;
-  /** Limits the rule to prefix list entries that are associated with the given AWS resource ID, such as a VPC or subnet. (AI-inferred) */
   resourceId?: string | Computed<string>;
   resourceOwner?: string | Computed<string>;
   resourceRegion?: string | Computed<string>;
@@ -19,12 +18,9 @@ export interface IpamprefixListResolver_Rules_Conditions {
 
 export interface IpamprefixListResolver_Rules {
   conditions?: IpamprefixListResolver_Rules_Conditions[] | Computed<IpamprefixListResolver_Rules_Conditions[]>;
-  /** The ID of the IPAM scope that this resolver rule is associated with, used to determine which IPAM-managed prefix list the rule selects during resolution. (AI-inferred) */
   ipamScopeId?: string | Computed<string>;
-  /** Specifies the type of AWS resource (e.g., VPC, subnet) that a rule matches when resolving resources into the prefix list. (AI-inferred) */
   resourceType?: string | Computed<string>;
   ruleType?: string | Computed<string>;
-  /** Specifies the static CIDR block included in a rule entry for the prefix list resolver, defining the IP address range used to match traffic. (AI-inferred) */
   staticCidr?: string | Computed<string>;
 }
 

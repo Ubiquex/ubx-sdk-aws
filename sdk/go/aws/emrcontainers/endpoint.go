@@ -4,62 +4,44 @@ package emrcontainers
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Endpoint_CertificateAuthority struct {
-	// The ARN of the AWS Certificate Manager (ACM) certificate used to secure the TLS certificate authority for the EMR Containers endpoint. (AI-inferred)
 	CertificateArn any
-	// The PEM-encoded certificate data from the certificate authority that secures the EMR Containers managed endpoint, used by clients to verify TLS connections. (AI-inferred)
 	CertificateData any
 }
 
 type Endpoint_ConfigurationOverrides_ApplicationConfiguration struct {
-	// The classification for the application configuration override, such as 'spark-defaults', 'hive-site', or 'yarn-site', which identifies the type of configuration properties being applied when the endpoint is created. (AI-inferred)
 	Classification any
-	// Provides a list of application configuration objects, each containing a classification (e.g., spark-defaults) and key-value properties, that override the default EMR on EKS application settings for the endpoint. (AI-inferred)
 	Configurations any
-	// Key-value pairs for a configuration classification, used to override application-level settings for the EMR on EKS managed endpoint. (AI-inferred)
 	Properties any
 }
 
 type Endpoint_ConfigurationOverrides_MonitoringConfiguration_CloudWatchMonitoringConfiguration struct {
-	// The name of the CloudWatch log group to which EMR on EKS container logs are delivered when monitoring configuration is enabled for this endpoint. (AI-inferred)
 	LogGroupName any
-	// Specifies the prefix that is prepended to CloudWatch log stream names for monitoring logs emitted by the EMR on EKS managed endpoint. (AI-inferred)
 	LogStreamNamePrefix any
 }
 
 type Endpoint_ConfigurationOverrides_MonitoringConfiguration_ContainerLogRotationConfiguration struct {
-	// The maximum number of rotated container log files to retain for a pod after rotation, after which the oldest logs are deleted. (AI-inferred)
 	MaxFilesToKeep any
-	// The size threshold in MB at which container logs are rotated for the Amazon EMR on EKS endpoint's monitoring configuration. (AI-inferred)
 	RotationSize any
 }
 
 type Endpoint_ConfigurationOverrides_MonitoringConfiguration_S3MonitoringConfiguration struct {
-	// Specifies the S3 URI where logs are stored for monitoring of the EMR on EKS endpoint. (AI-inferred)
 	LogUri any
 }
 
 type Endpoint_ConfigurationOverrides_MonitoringConfiguration struct {
-	// This object defines the CloudWatch monitoring configuration for the endpoint, specifying the log group name and optional log stream prefix where EMR Containers delivers application logs. (AI-inferred)
 	CloudWatchMonitoringConfiguration any
-	// Specifies the container log rotation settings for the endpoint's monitoring configuration, including the rotation size in megabytes and the maximum number of log files to keep. (AI-inferred)
 	ContainerLogRotationConfiguration any
-	// Determines whether persistent Spark UI is enabled (ENABLED) or disabled (DISABLED) for job runs submitted through this EMR Containers endpoint. (AI-inferred)
 	PersistentAppUi any
-	// Defines the Amazon S3 configuration for monitoring logs of the EMR containers endpoint, including the destination S3 URI (LogUri) and optional encryption key. (AI-inferred)
 	S3MonitoringConfiguration any
 }
 
 type Endpoint_ConfigurationOverrides struct {
-	// Specifies application-level configuration overrides (e.g., Spark settings) to apply to workloads using this endpoint, where each list entry is a Configuration object containing a classification and its properties. (AI-inferred)
 	ApplicationConfiguration any
-	// This object overrides the default monitoring configuration for jobs running through the EMR Containers endpoint, specifying where to send logs (CloudWatch log group and S3 location) and whether to enable the persistent application UI. (AI-inferred)
 	MonitoringConfiguration any
 }
 
 type Endpoint_Tags struct {
-	// The key of a user-defined tag attached to the Amazon EMR on EKS endpoint, used for cost allocation and resource identification. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the Amazon EMR on EKS endpoint, used for resource identification, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -121,7 +103,6 @@ var Endpoint_TagsFields = ubx.FieldMap{
 	}
 
 type EndpointConfig struct {
-	// Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred)
 	ConfigurationOverrides any
 	// The execution role ARN for the managed endpoint.
 	ExecutionRoleArn any
@@ -144,9 +125,7 @@ type EndpointAttrs struct {
 	Arn any
 	// The auth proxy URL for Spark Connect connections.
 	AuthProxyUrl any
-	// The certificate_authority object contains the certificate authority details (such as the certificate ARN) for the EKS cluster backing the EMR Containers endpoint, used to establish TLS trust for the endpoint connection. (AI-inferred)
 	CertificateAuthority any
-	// Specifies configuration overrides for the EMR on EKS managed endpoint, including application configurations (e.g., Spark properties) and monitoring configurations (e.g., CloudWatch logging and metrics). (AI-inferred)
 	ConfigurationOverrides any
 	// The date and time when the managed endpoint was created.
 	CreatedAt any

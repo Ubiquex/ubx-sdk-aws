@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayV2Integration_TlsConfig:
-    # Defines the server name that API Gateway uses to verify the certificate presented by the target endpoint for a private integration, overriding the target hostname when necessary. (AI-inferred)
     server_name_to_verify: Any = None
 
 _GatewayV2Integration_TlsConfigFields = {

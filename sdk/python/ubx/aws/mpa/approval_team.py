@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApprovalTeam_ApprovalStrategy_MofN:
-    # In the M-of-N approval scheme (indicated by the path element 'mof_n'), specifies the minimum number of approvals (the 'm' value) that must be granted by the approval team for the strategy to be satisfied. (AI-inferred)
     min_approvals_required: Any = None
 
 @dataclasses.dataclass
@@ -57,11 +56,9 @@ class ApprovalTeamConfig:
 class ApprovalTeamAttrs:
     approval_strategy: Any = None
     approvers: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the approval team, used as a durable reference in IAM policies and AWS Marketplace APIs. (AI-inferred)
     arn: Any = None
     creation_time: Any = None
     description: Any = None
-    # A read-only string field that records the time when the approval team was last updated, managed automatically by AWS. (AI-inferred)
     last_update_time: Any = None
     name: Any = None
     number_of_approvers: Any = None

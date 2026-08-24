@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiftMatchmakingConfiguration_GameProperties {
-  /** The identifying key of a custom game property (a key-value pair) that is passed to a matchmade game session to provide custom configuration data. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The string value of a game property key-value pair that is passed to GameLift matchmaking to filter or customize game sessions. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface View_DataFilterExpression_Dimensions {
-  /** The name of the billing dimension to filter on (for example, 'SERVICE' or 'REGION'), which along with the dimension values determines which data is included in the billing view. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies a list of dimension values (such as AWS service names or linked account IDs) that the billing view's data filter expression will match against when selecting which cost and usage data to include in the view. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -16,15 +14,12 @@ export interface View_DataFilterExpression_TimeRange {
 }
 
 export interface View_DataFilterExpression {
-  /** The dimensions property of the data filter expression specifies dimension filters (such as service or region) that restrict the billing view to only include matching billing data. (AI-inferred) */
   dimensions?: View_DataFilterExpression_Dimensions | Computed<View_DataFilterExpression_Dimensions>;
-  /** Specifies tag key-value pairs used by the data filter expression to include only resources that have those tags in the billing view. (AI-inferred) */
   tags?: View_DataFilterExpression_Dimensions | Computed<View_DataFilterExpression_Dimensions>;
   timeRange?: View_DataFilterExpression_TimeRange | Computed<View_DataFilterExpression_TimeRange>;
 }
 
 export interface View_Tags {
-  /** The key (name) of a tag attached to this billing view, used for cost allocation and management in AWS Billing. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -63,11 +58,8 @@ const View_TagsFields: FieldMap = {
 };
 
 export interface ViewConfig {
-  /** DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred) */
   dataFilterExpression?: View_DataFilterExpression | Computed<View_DataFilterExpression>;
-  /** An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred) */
   name: string | Computed<string>;
   /** An array of strings that define the billing view's source. */
   sourceViews: string[] | Computed<string[]>;
@@ -76,18 +68,13 @@ export interface ViewConfig {
 }
 
 export interface ViewAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Billing billing view. (AI-inferred) */
   arn: string;
   billingViewType: string;
   /** The time when the billing view was created. */
   createdAt: number;
-  /** DataFilterExpression selects which cost and usage records are included in the billing view by specifying dimension filters such as service, region, record type, or linked account. (AI-inferred) */
   dataFilterExpression: View_DataFilterExpression;
-  /** An optional user-provided text that gives a human-readable explanation or context for the billing view, helping to distinguish it from other views. (AI-inferred) */
   description: string;
-  /** The name of the AWS Billing view, which is required to uniquely identify the view within your account. (AI-inferred) */
   name: string;
-  /** The AWS account ID of the account that owns the billing view, which is set automatically at creation and cannot be modified. (AI-inferred) */
   ownerAccountId: string;
   /** An array of strings that define the billing view's source. */
   sourceViews: string[];

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoadBalancingV2TrustStore_Tags struct {
 	Key any
-	// Specifies the value of a tag key-value pair attached to the trust store, enabling you to categorize and filter this trust store for operational and cost management within your Elastic Load Balancing v2 configuration. (AI-inferred)
 	Value any
 }
 

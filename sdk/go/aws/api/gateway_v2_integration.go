@@ -4,7 +4,6 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayV2Integration_TlsConfig struct {
-	// Defines the server name that API Gateway uses to verify the certificate presented by the target endpoint for a private integration, overriding the target hostname when necessary. (AI-inferred)
 	ServerNameToVerify any
 }
 

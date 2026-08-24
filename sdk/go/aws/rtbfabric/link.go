@@ -12,12 +12,10 @@ type Link_LinkAttributes_ResponderErrorMasking struct {
 
 type Link_LinkAttributes struct {
 	CustomerProvidedId any
-	// Specifies a list of responder error masking rules for the link, determining which error responses from the responder endpoint should be masked or sanitized when the link processes bid requests. (AI-inferred)
 	ResponderErrorMasking any
 }
 
 type Link_LinkLogSettings_ApplicationLogs_LinkApplicationLogSampling struct {
-	// Defines the percentage (0-100) of error-level application log entries to sample and send to the configured log destination for this RTB Fabric link. (AI-inferred)
 	ErrorLog any
 	FilterLog any
 }
@@ -111,7 +109,6 @@ type LinkAttrs struct {
 	LinkDirection any
 	LinkId any
 	LinkLogSettings any
-	// The read-only status of the AWS RTB Fabric link, such as whether the link is active or inactive, which is determined and reported by the AWS RTB Fabric service. (AI-inferred)
 	LinkStatus any
 	ModuleConfigurationList any
 	PeerGatewayId any

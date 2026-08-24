@@ -26,7 +26,6 @@ export interface FilesAccessPoint_RootDirectory {
 }
 
 export interface FilesAccessPoint_Tags {
-  /** The key of a user-defined tag attached to the S3 file access point, used for identifying and organizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -62,26 +61,20 @@ export interface FilesAccessPointConfig {
   clientToken?: string | Computed<string>;
   /** The ID of the S3 Files file system that the access point provides access to. */
   fileSystemId: string | Computed<string>;
-  /** Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred) */
   posixUser?: FilesAccessPoint_PosixUser | Computed<FilesAccessPoint_PosixUser>;
-  /** Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred) */
   rootDirectory?: FilesAccessPoint_RootDirectory | Computed<FilesAccessPoint_RootDirectory>;
   tags?: FilesAccessPoint_Tags[] | Computed<FilesAccessPoint_Tags[]>;
 }
 
 export interface FilesAccessPointAttrs {
-  /** The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred) */
   accessPointArn: string;
   accessPointId: string;
   /** (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation. */
   clientToken: string;
   /** The ID of the S3 Files file system that the access point provides access to. */
   fileSystemId: string;
-  /** The AWS account ID of the owner that created the S3 access point. (AI-inferred) */
   ownerId: string;
-  /** Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred) */
   posixUser: FilesAccessPoint_PosixUser;
-  /** Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred) */
   rootDirectory: FilesAccessPoint_RootDirectory;
   status: string;
   tags: FilesAccessPoint_Tags[];

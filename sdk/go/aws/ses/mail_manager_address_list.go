@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MailManagerAddressList_Tags struct {
 	Key any
-	// The value component of a tag attached to the SES Mail Manager address list, used to store arbitrary metadata for resource identification, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -15,20 +14,14 @@ var MailManagerAddressList_TagsFields = ubx.FieldMap{
 	}
 
 type MailManagerAddressListConfig struct {
-	// Sets the name of the address list, which identifies it in the SES Mail Manager console and API. (AI-inferred)
 	AddressListName any
-	// Specifies the key-value tags to attach to the SES Mail Manager address list resource, enabling organization, identification, and cost allocation within AWS. (AI-inferred)
 	Tags any
 }
 
 type MailManagerAddressListAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this address list within AWS SES Mail Manager. (AI-inferred)
 	AddressListArn any
-	// The unique identifier assigned by AWS to the address list resource, generated upon creation and used to reference this address list in Mail Manager policies and configurations. (AI-inferred)
 	AddressListId any
-	// Sets the name of the address list, which identifies it in the SES Mail Manager console and API. (AI-inferred)
 	AddressListName any
-	// Specifies the key-value tags to attach to the SES Mail Manager address list resource, enabling organization, identification, and cost allocation within AWS. (AI-inferred)
 	Tags any
 }
 

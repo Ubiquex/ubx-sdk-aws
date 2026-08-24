@@ -8,44 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BiCapability_Configuration_Edi_InputLocation:
-    # The name of the S3 bucket where input EDI files are stored for this capability's EDI configuration, serving as the input location for document exchange. (AI-inferred)
     bucket_name: Any = None
-    # The Amazon S3 object key (file name) within the input bucket where the source EDI document is located for the B2Bi capability's EDI configuration. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class BiCapability_Configuration_Edi_Type_X12Details:
-    # Specifies the X12 transaction set (such as X12_850 or X12_810) for which the EDI capability is configured, determining the exact business document standard handled by this capability. (AI-inferred)
     transaction_set: Any = None
-    # The X12 version for the EDI capability (e.g., VERSION_4010, VERSION_5010), determining the transaction set standard used for EDI document parsing and validation. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class BiCapability_Configuration_Edi_Type:
-    # Specifies the X12-specific settings, such as the transaction set identifier and version, for the EDI capability when the EDI type is X12. (AI-inferred)
     x12_details: Any = None
 
 @dataclasses.dataclass
 class BiCapability_Configuration_Edi:
-    # Specifies whether this EDI capability handles inbound or outbound EDI documents, using the value 'INBOUND' or 'OUTBOUND'. (AI-inferred)
     capability_direction: Any = None
-    # The S3 location (bucket and key) where inbound EDI documents are stored for processing by this AWS B2Bi capability's EDI configuration. (AI-inferred)
     input_location: Any = None
-    # For the EDI configuration of a capability, this object specifies the Amazon S3 location (bucket and key) where AWS B2Bi stores the output files after performing the EDI transformation. (AI-inferred)
     output_location: Any = None
-    # The transformer_id specifies the AWS B2Bi transformer used to process EDI documents for this capability, defining how incoming or outgoing EDI files are mapped and converted according to the transformer's configured settings. (AI-inferred)
     transformer_id: Any = None
-    # Specifies the EDI standard type (e.g., X12) and its associated details, such as transaction set and version, for the EDI configuration of this AWS B2BI capability. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BiCapability_Configuration:
-    # The configuration.edi field holds the EdiConfiguration for the B2Bi capability, specifying the EDI standard (such as X12), the input and output Amazon S3 locations for EDI documents, and the transform options applied. (AI-inferred)
     edi: Any = None
 
 @dataclasses.dataclass
 class BiCapability_Tags:
-    # The key of a user-defined tag to associate with the AWS B2B Data Interchange capability. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -102,34 +90,22 @@ _BiCapability_TagsFields = {
 
 @dataclasses.dataclass
 class BiCapabilityConfig:
-    # The configuration object contains the EDI transformation settings for the B2Bi capability, specifying the EDI type, input/output document locations, and the transformer that processes interchange data. (AI-inferred)
     configuration: Any = None
-    # Lists the Amazon S3 locations of instruction documents that provide supplemental guidance for this capability in AWS B2B Data Interchange. (AI-inferred)
     instructions_documents: Any = None
-    # A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BiCapabilityAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the B2Bi capability, automatically assigned by AWS when the capability is created. (AI-inferred)
     capability_arn: Any = None
-    # The unique identifier that AWS assigns to this B2BI capability when it is created. (AI-inferred)
     capability_id: Any = None
-    # The configuration object contains the EDI transformation settings for the B2Bi capability, specifying the EDI type, input/output document locations, and the transformer that processes interchange data. (AI-inferred)
     configuration: Any = None
-    # The timestamp indicating when the capability was created in AWS B2B Data Interchange. (AI-inferred)
     created_at: Any = None
-    # Lists the Amazon S3 locations of instruction documents that provide supplemental guidance for this capability in AWS B2B Data Interchange. (AI-inferred)
     instructions_documents: Any = None
-    # The timestamp indicating when the B2B capability was last modified. (AI-inferred)
     modified_at: Any = None
-    # A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred)
     type: Any = None
 
 BiCapability = ubx.ResourceBinding(

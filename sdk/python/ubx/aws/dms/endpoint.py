@@ -525,9 +525,7 @@ class Endpoint_SybaseSettings:
 
 @dataclasses.dataclass
 class Endpoint_Tags:
-    # The key portion of a user-defined tag attached to the DMS endpoint, used for identifying and organizing the resource within AWS. (AI-inferred)
     key: Any = None
-    # Specifies the value of a user-defined tag attached to the AWS DMS endpoint. (AI-inferred)
     value: Any = None
 
 _Endpoint_DocDbSettingsFields = {

@@ -2,56 +2,39 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_ExcludeMap {
-  /** The list of AWS account IDs to exclude from the Firewall Manager policy's scope. (AI-inferred) */
   account?: string[] | Computed<string[]>;
-  /** The list of AWS Organizations organizational unit (OU) IDs to exclude from this Firewall Manager policy's scope. (AI-inferred) */
   orgunit?: string[] | Computed<string[]>;
 }
 
 export interface Policy_ResourceTags {
-  /** The key of a tag used to match resources that this AWS Firewall Manager policy applies to, based on the resource's tags. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value, paired with the corresponding key, that Firewall Manager uses to match resources for inclusion in (or exclusion from, depending on the policy's ExcludeResourceTags setting) the policy's scope. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode {
-  /** The numeric ICMP code value used to match specific ICMP messages in the first network ACL entry set of the common Network ACL policy, where -1 matches all ICMP codes for the given type. (AI-inferred) */
   code?: number | Computed<number>;
-  /** The ICMP type number (e.g., 8 for echo request, 3 for destination unreachable) that the network ACL entry matches for ICMP traffic. (AI-inferred) */
   type?: number | Computed<number>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange {
-  /** The inclusive lower bound of the port range that this network ACL entry applies to, used by Firewall Manager to define the starting port for allowing or denying traffic in a Network ACL policy. (AI-inferred) */
   from?: number | Computed<number>;
-  /** The upper bound (inclusive) of the port range for this network ACL entry, defining the last port in the range allowed or denied by the entry. (AI-inferred) */
   to?: number | Computed<number>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries {
-  /** The IPv4 CIDR block (e.g., '10.0.0.0/16') that defines the source or destination network to which this network ACL entry applies, used for matching traffic in the Firewall Manager network ACL policy. (AI-inferred) */
   cidrBlock?: string | Computed<string>;
-  /** Indicates whether this network ACL entry applies to outbound (egress) traffic (true) rather than inbound (ingress) traffic (false). (AI-inferred) */
   egress?: boolean | Computed<boolean>;
-  /** Defines the ICMP type and code numbers that the Network ACL entry uses to match ICMP traffic, limiting the rule to specific ICMP message types. (AI-inferred) */
   icmpTypeCode?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode>;
-  /** The IPv6 CIDR block that this network ACL entry in the first set of entries applies to for the common network ACL policy. (AI-inferred) */
   ipv6CidrBlock?: string | Computed<string>;
-  /** Defines the inclusive range of destination ports (From and To) that this Firewall Manager network ACL entry uses to match traffic for its associated rule action. (AI-inferred) */
   portRange?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange>;
-  /** Specifies the IP protocol (e.g., tcp, udp, icmp, or a protocol number) for the network ACL entry in the Firewall Manager policy. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** Specifies the action of the network ACL entry, either 'allow' to permit matching traffic or 'deny' to block it. (AI-inferred) */
   ruleAction?: string | Computed<string>;
 }
 
 export interface Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet {
   /** NetworkAcl entry list. */
   firstEntries?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[] | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[]>;
-  /** When set to true, Firewall Manager automatically remediates the first entries in the target network ACL to match the policy's specified first entry, replacing non-compliant entries. (AI-inferred) */
   forceRemediateForFirstEntries: boolean | Computed<boolean>;
-  /** Indicates whether AWS Firewall Manager will automatically remediate the last entries of the network ACL to match the policy-defined entries, such as the default deny-all rule. (AI-inferred) */
   forceRemediateForLastEntries: boolean | Computed<boolean>;
   /** NetworkAcl entry list. */
   lastEntries?: Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[] | Computed<Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries[]>;
@@ -179,70 +162,49 @@ const Policy_SecurityServicePolicyDataFields: FieldMap = {
 };
 
 export interface PolicyConfig {
-  /** Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred) */
   deleteAllPolicyResources?: boolean | Computed<boolean>;
   /** An FMS includeMap or excludeMap. */
   excludeMap?: Policy_ExcludeMap | Computed<Policy_ExcludeMap>;
-  /** When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred) */
   excludeResourceTags: boolean | Computed<boolean>;
   /** An FMS includeMap or excludeMap. */
   includeMap?: Policy_ExcludeMap | Computed<Policy_ExcludeMap>;
-  /** A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred) */
   policyDescription?: string | Computed<string>;
-  /** The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred) */
   policyName: string | Computed<string>;
-  /** Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred) */
   remediationEnabled: boolean | Computed<boolean>;
-  /** The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred) */
   resourceSetIds?: string[] | Computed<string[]>;
-  /** Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred) */
   resourceTagLogicalOperator?: string | Computed<string>;
-  /** This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred) */
   resourceTags?: Policy_ResourceTags[] | Computed<Policy_ResourceTags[]>;
   /** An AWS resource type */
   resourceType?: string | Computed<string>;
-  /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList?: string[] | Computed<string[]>;
   resourcesCleanUp?: boolean | Computed<boolean>;
   /** Firewall security service policy data. */
   securityServicePolicyData: Policy_SecurityServicePolicyData | Computed<Policy_SecurityServicePolicyData>;
-  /** The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred) */
   tags?: Policy_ResourceTags[] | Computed<Policy_ResourceTags[]>;
 }
 
 export interface PolicyAttrs {
   /** A resource ARN. */
   arn: string;
-  /** Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred) */
   deleteAllPolicyResources: boolean;
   /** An FMS includeMap or excludeMap. */
   excludeMap: Policy_ExcludeMap;
-  /** When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred) */
   excludeResourceTags: boolean;
-  /** The unique identifier (policy ID) assigned by AWS Firewall Manager to this policy. (AI-inferred) */
   id: string;
   /** An FMS includeMap or excludeMap. */
   includeMap: Policy_ExcludeMap;
-  /** A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred) */
   policyDescription: string;
-  /** The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred) */
   policyName: string;
-  /** Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred) */
   remediationEnabled: boolean;
-  /** The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred) */
   resourceSetIds: string[];
-  /** Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred) */
   resourceTagLogicalOperator: string;
-  /** This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred) */
   resourceTags: Policy_ResourceTags[];
   /** An AWS resource type */
   resourceType: string;
-  /** Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred) */
   resourceTypeList: string[];
   resourcesCleanUp: boolean;
   /** Firewall security service policy data. */
   securityServicePolicyData: Policy_SecurityServicePolicyData;
-  /** The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred) */
   tags: Policy_ResourceTags[];
 }
 

@@ -4,73 +4,56 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAutomationProject_CustomOutputConfiguration_Blueprints struct {
-	// The Amazon Resource Name (ARN) of the blueprint that defines the custom extraction schema applied to the data automation project's output configuration. (AI-inferred)
 	BlueprintArn any
-	// Specifies the stage of the blueprint (e.g., DEVELOPMENT or LIVE) to use for data extraction within the project's custom output configuration. (AI-inferred)
 	BlueprintStage any
-	// Sets the version identifier of the blueprint that defines the data extraction schema for this output configuration. (AI-inferred)
 	BlueprintVersion any
 }
 
 type DataAutomationProject_CustomOutputConfiguration struct {
-	// Specifies the list of blueprint configurations that the custom output uses to define how Bedrock Data Automation extracts and structures data from the input documents. (AI-inferred)
 	Blueprints any
 }
 
 type DataAutomationProject_OverrideConfiguration_Audio_LanguageConfiguration struct {
-	// Specifies the language code used for generative AI output when processing audio content in the project's override configuration, such as the language for summaries or insights generated from the audio. (AI-inferred)
 	GenerativeOutputLanguage any
 	IdentifyMultipleLanguages any
-	// Specifies the list of languages expected in the audio input, which the data automation project uses to process and extract information from the audio. (AI-inferred)
 	InputLanguages any
 }
 
 type DataAutomationProject_OverrideConfiguration_Audio_ModalityProcessing struct {
-	// Specifies whether audio modality processing is enabled or disabled for this Bedrock data automation project, overriding the default audio processing configuration. (AI-inferred)
 	State any
 }
 
 type DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration_PiiEntitiesConfiguration struct {
-	// Specifies the list of personally identifiable information (PII) entity types to detect and redact in audio content, overriding the project's default sensitive data configuration for audio. (AI-inferred)
 	PiiEntityTypes any
 	RedactionMaskMode any
 }
 
 type DataAutomationProject_OverrideConfiguration_Audio_SensitiveDataConfiguration struct {
 	DetectionMode any
-	// The types of sensitive data (e.g., PII categories) that Bedrock Data Automation will detect in the audio content. (AI-inferred)
 	DetectionScope any
-	// Specifies the configuration for detecting and redacting specific PII entity types (such as names, credit card numbers, or addresses) in audio data processed by the AWS Bedrock data automation project, enabling selective redaction of sensitive information. (AI-inferred)
 	PiiEntitiesConfiguration any
 }
 
 type DataAutomationProject_OverrideConfiguration_Audio struct {
-	// Specifies the language (such as ENGLISH or MULTI_LANGUAGE) to apply when processing audio files in the data automation project, determining how speech is transcribed and analyzed. (AI-inferred)
 	LanguageConfiguration any
-	// Specifies the audio modality processing configuration, letting you choose between automatic processing of audio data or overriding it with a custom blueprint ARN. (AI-inferred)
 	ModalityProcessing any
 	SensitiveDataConfiguration any
 }
 
 type DataAutomationProject_OverrideConfiguration_Document struct {
-	// Configures the document modality processing type (e.g., extraction or summarization) applied when overriding the project's default document processing settings. (AI-inferred)
 	ModalityProcessing any
-	// Controls how sensitive data (such as personally identifiable information) is handled when processing documents in this Bedrock Data Automation project, typically to enable or configure automatic redaction of such content in the extraction output. (AI-inferred)
 	SensitiveDataConfiguration any
-	// Configures the document splitter for the Bedrock data automation project, determining how uploaded documents are segmented (e.g., by page or semantic sections) before extraction. (AI-inferred)
 	Splitter any
 }
 
 type DataAutomationProject_OverrideConfiguration_Image struct {
 	ModalityProcessing any
-	// Configures how sensitive data (such as PII) is handled during image extraction in this Bedrock Data Automation project, overriding the project-level default sensitive data settings for image modality. (AI-inferred)
 	SensitiveDataConfiguration any
 }
 
 type DataAutomationProject_OverrideConfiguration_ModalityRouting struct {
 	Jpeg any
 	Mov any
-	// When set, this field maps the MP4 media type to a specific Amazon Bedrock Data Automation blueprint ARN for the project's override configuration, so MP4 video inputs are processed using that blueprint instead of the project's default routing. (AI-inferred)
 	Mp4 any
 	Png any
 }
@@ -78,18 +61,14 @@ type DataAutomationProject_OverrideConfiguration_ModalityRouting struct {
 type DataAutomationProject_OverrideConfiguration struct {
 	Audio any
 	Document any
-	// Specifies the override settings for how image data is processed in the data automation project, including the extraction type used when extracting content from images. (AI-inferred)
 	Image any
 	// Modality routing configuration
 	ModalityRouting any
-	// Overrides the default data automation configuration for video content in the project, specifying settings for the video extraction stage and splitter stage. (AI-inferred)
 	Video any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category_TypeConfiguration_Transcript struct {
-	// Configures the labeling of audio channels in the transcript data, so that extracted transcripts can identify which audio channel each speech segment belongs to. (AI-inferred)
 	ChannelLabeling any
-	// This object configures speaker labeling (speaker diarization) for the audio transcript, controlling whether distinct speakers are identified and labeled in the output. (AI-inferred)
 	SpeakerLabeling any
 }
 
@@ -98,9 +77,7 @@ type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction_Category struct {
-	// Specifies whether the audio extraction category is enabled (ENABLED) or disabled (DISABLED) in the standard output configuration for the AWS::Bedrock::DataAutomationProject resource. (AI-inferred)
 	State any
-	// Provides category-specific configuration for the selected audio extraction type (such as transcript or sentiment), with its nested fields varying based on the category's 'type' value, to tailor how that category is extracted from the audio input. (AI-inferred)
 	TypeConfiguration any
 	Types any
 }
@@ -110,73 +87,54 @@ type DataAutomationProject_StandardOutputConfiguration_Audio_Extraction struct {
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Audio_GenerativeField struct {
-	// Specifies whether generative field extraction is enabled (e.g., ENABLED) or disabled (e.g., DISABLED) for audio in the standard output configuration of the Bedrock Data Automation project. (AI-inferred)
 	State any
-	// Specifies the list of generative field types to be produced for audio data in the standard output configuration of the AWS Bedrock data automation project. (AI-inferred)
 	Types any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Audio struct {
-	// Specifies the audio extraction settings, such as the types of transcripts or analysis to include, for the project's standard output configuration in AWS Bedrock Data Automation. (AI-inferred)
 	Extraction any
-	// In the audio standard output configuration, this object defines a custom generative field—specified by a name and description—that AWS Bedrock Data Automation will attempt to generate from the processed audio. (AI-inferred)
 	GenerativeField any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Document_Extraction_Granularity struct {
-	// Specifies the granularity levels (such as document or page) at which document extraction results are produced in the standard output configuration of the Bedrock Data Automation project. (AI-inferred)
 	Types any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Document_Extraction struct {
-	// Determines whether bounding box coordinates are extracted from documents, and which granularity of bounding boxes (such as word or line) are included in the standard output configuration. (AI-inferred)
 	BoundingBox any
-	// Configures the granularity level for document extraction in the standard output configuration, controlling whether extracted document data is returned at the document, page, or element level for the Amazon Bedrock Data Automation project. (AI-inferred)
 	Granularity any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Document_OutputFormat struct {
-	// This object configures whether Amazon Bedrock Data Automation generates an additional output file format for documents (such as CSV) alongside the primary format, with a state property that enables or disables this extra file. (AI-inferred)
 	AdditionalFileFormat any
-	// This object configures the text format types (such as plain text, markdown, or HTML) that the Bedrock data automation project will output for document extraction. (AI-inferred)
 	TextFormat any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Document struct {
-	// This object defines the document extraction settings for the project's standard output configuration, controlling whether extraction is enabled and which structured data types (e.g., KEY_VALUE_PAIRS, TABLES) are extracted from documents. (AI-inferred)
 	Extraction any
-	// Defines a generative field for document output in AWS Bedrock Data Automation, specifying the field name, data type, and the prompt or instructions that guide the model to generate the field's value from the document's content. (AI-inferred)
 	GenerativeField any
-	// Specifies the output format for documents in the standard output configuration, determining the text format preset and any additional file formats (such as CSV or JSON) for generated extraction output. (AI-inferred)
 	OutputFormat any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Image_Extraction struct {
-	// Specifies the configuration for bounding box extraction from images in the standard output of a Bedrock Data Automation project, typically including an enable/disable setting that controls whether bounding box coordinates are generated. (AI-inferred)
 	BoundingBox any
 	Category any
 }
 
 type DataAutomationProject_StandardOutputConfiguration_Image struct {
-	// Defines the extraction configuration for image files in the standard output configuration, specifying which extraction types (e.g., text extraction) are enabled for the data automation project. (AI-inferred)
 	Extraction any
 	GenerativeField any
 }
 
 type DataAutomationProject_StandardOutputConfiguration struct {
-	// Defines the output settings for audio generated by the data automation project, including the audio file format and sample rate. (AI-inferred)
 	Audio any
-	// Defines the standard output format for document processing, including the output type (such as plain text or structured data) and optionally a data automation blueprint to use. (AI-inferred)
 	Document any
-	// Defines the output configuration for images processed by the data automation project, controlling how image-derived data is extracted and formatted in the standard output. (AI-inferred)
 	Image any
-	// Specifies the standard output configuration for video files in the AWS Bedrock data automation project, controlling which extraction types (e.g., transcript, caption) are produced from videos. (AI-inferred)
 	Video any
 }
 
 type DataAutomationProject_Tags struct {
 	Key any
-	// Specifies the value of a tag attached to the Bedrock Data Automation project, enabling arbitrary metadata such as cost centers or ownership labels. (AI-inferred)
 	Value any
 }
 
@@ -508,7 +466,6 @@ type DataAutomationProjectAttrs struct {
 	ProjectType any
 	// Standard output configuration
 	StandardOutputConfiguration any
-	// The current lifecycle state of the data automation project, such as Creating, Active, Updating, Deleting, or Failed. (AI-inferred)
 	Status any
 	// List of Tags
 	Tags any

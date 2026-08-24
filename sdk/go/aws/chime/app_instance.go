@@ -4,9 +4,7 @@ package chime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppInstance_Tags struct {
-	// The key of a tag that is attached to the Amazon Chime AppInstance resource for identification and organization. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair attached to the Chime AppInstance, used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 

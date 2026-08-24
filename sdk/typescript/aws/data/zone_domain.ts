@@ -11,9 +11,7 @@ export interface ZoneDomain_SingleSignOn {
 }
 
 export interface ZoneDomain_Tags {
-  /** The key (e.g., 'Environment') of a tag to attach to the Amazon DataZone domain, used to organize and manage the domain resource in AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag applied to the DataZone domain, which can be used for resource identification, categorization, and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

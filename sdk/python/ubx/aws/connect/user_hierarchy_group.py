@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserHierarchyGroup_Tags:
-    # The key of a tag attached to the Amazon Connect user hierarchy group, forming the key portion of a key-value pair that helps categorize, organize, and manage the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag (key-value pair) attached to the Amazon Connect user hierarchy group. (AI-inferred)
     value: Any = None
 
 _UserHierarchyGroup_TagsFields = {

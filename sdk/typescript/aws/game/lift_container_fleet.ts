@@ -30,42 +30,28 @@ export interface LiftContainerFleet_InstanceConnectionPortRange {
 }
 
 export interface LiftContainerFleet_InstanceInboundPermissions {
-  /** Specifies the starting port number of the range of inbound ports that are allowed on the container fleet's instances. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** Specifies the CIDR IP address range allowed to connect to the container fleet's game server ports. (AI-inferred) */
   ipRange?: string | Computed<string>;
-  /** Specifies the IP protocol (TCP or UDP) for the inbound traffic that is allowed to reach the container fleet's instances. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The upper bound of the port range that is allowed for inbound traffic to the container fleet's instances, used together with the from_port value to define a contiguous range. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
 export interface LiftContainerFleet_Locations_LocationCapacity_ManagedCapacityConfiguration {
-  /** Determines the number of minutes of idle time (no active game sessions) that must elapse before Amazon GameLift scales in (removes) an instance in the container fleet. (AI-inferred) */
   scaleInAfterInactivityMinutes?: number | Computed<number>;
-  /** Controls whether the managed container fleet maintains a warm pool of instances or scales to zero when there are no active game sessions in that location. (AI-inferred) */
   zeroCapacityStrategy?: string | Computed<string>;
 }
 
 export interface LiftContainerFleet_Locations_LocationCapacity {
-  /** Sets the desired number of EC2 instances to run in this location for the container fleet, used by GameLift to scale capacity toward that target. (AI-inferred) */
   desiredEc2Instances?: number | Computed<number>;
-  /** Specifies the managed capacity configuration for the container fleet at this location, defining settings like the desired number of instances for that location. (AI-inferred) */
   managedCapacityConfiguration?: LiftContainerFleet_Locations_LocationCapacity_ManagedCapacityConfiguration | Computed<LiftContainerFleet_Locations_LocationCapacity_ManagedCapacityConfiguration>;
-  /** The `max_size` property under a location's `location_capacity` specifies the upper bound of container instances that can run in that location for this GameLift container fleet. (AI-inferred) */
   maxSize?: number | Computed<number>;
-  /** The minimum number of container instances that GameLift maintains in the corresponding fleet location, defining the lower bound for auto scaling capacity for that location. (AI-inferred) */
   minSize?: number | Computed<number>;
 }
 
 export interface LiftContainerFleet_Locations {
-  /** The name of an AWS Region or Local Zone location to add to the container fleet's set of enabled locations. (AI-inferred) */
   location?: string | Computed<string>;
-  /** Specifies the scaling limits for the number of EC2 instances hosting container groups in the corresponding location, including desired, minimum, and maximum counts. (AI-inferred) */
   locationCapacity?: LiftContainerFleet_Locations_LocationCapacity | Computed<LiftContainerFleet_Locations_LocationCapacity>;
-  /** Indicates the current operational status of the player gateway in the fleet's location, such as ACTIVE or ERROR. (AI-inferred) */
   playerGatewayStatus?: string | Computed<string>;
-  /** Specifies the fleet actions to stop in a particular location (e.g., AUTO_SCALING, CUSTOM_GAME_SERVER_ACTIONS, or CUSTOM_GAME_SERVER_SHUTDOWN) to prevent them from running there for the container fleet. (AI-inferred) */
   stoppedActions?: string[] | Computed<string[]>;
 }
 
@@ -79,35 +65,23 @@ export interface LiftContainerFleet_LogConfiguration {
 }
 
 export interface LiftContainerFleet_ScalingPolicies_TargetConfiguration {
-  /** The target value for the metric used by the target-based scaling policy; GameLift adjusts the fleet's desired capacity to keep the metric near this value. (AI-inferred) */
   targetValue?: number | Computed<number>;
 }
 
 export interface LiftContainerFleet_ScalingPolicies {
-  /** The comparison operator used to evaluate the scaling metric against the threshold in the container fleet scaling policy, such as GreaterThanOrEqualToThreshold or LessThanThreshold. (AI-inferred) */
   comparisonOperator?: string | Computed<string>;
-  /** The number of consecutive 1-minute evaluation periods that the fleet's metric must breach the policy's threshold before the target tracking scaling policy triggers an adjustment. (AI-inferred) */
   evaluationPeriods?: number | Computed<number>;
-  /** The name of the CloudWatch metric (e.g., CPUUtilization, PlayerCount) that this scaling policy watches to determine when to trigger scaling actions for the container fleet. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** The name string that uniquely identifies this scaling policy within the container fleet, used to reference the policy in metrics and API calls. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The type of scaling policy for the container fleet, either 'TargetTracking' to adjust capacity based on a target metric value or 'RuleBased' to scale based on custom conditions. (AI-inferred) */
   policyType?: string | Computed<string>;
-  /** The number of instances by which the GameLift Container Fleet's desired capacity is increased or decreased when a CHANGE_IN_CAPACITY scaling policy is triggered. (AI-inferred) */
   scalingAdjustment?: number | Computed<number>;
-  /** Specifies whether the scaling adjustment is an absolute change in capacity, an exact capacity value, or a percentage change in capacity (ChangeInCapacity, ExactCapacity, or PercentChangeInCapacity). (AI-inferred) */
   scalingAdjustmentType?: string | Computed<string>;
-  /** The target tracking configuration for a scaling policy, specifying the metric and target value (e.g., a target fleet utilization or instance count) that the GameLift container fleet automatically adjusts capacity to maintain. (AI-inferred) */
   targetConfiguration?: LiftContainerFleet_ScalingPolicies_TargetConfiguration | Computed<LiftContainerFleet_ScalingPolicies_TargetConfiguration>;
-  /** The target value of the specified metric that, when crossed, triggers the scaling adjustment for the container fleet's autoscaling policy. (AI-inferred) */
   threshold?: number | Computed<number>;
 }
 
 export interface LiftContainerFleet_Tags {
-  /** The case-sensitive key of a tag attached to the Amazon GameLift container fleet, which serves as the tag's identifier for categorization and cost tracking. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag attached to the GameLift container fleet, used for resource organization, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -233,7 +207,6 @@ export interface LiftContainerFleetAttrs {
   instanceInboundPermissions: LiftContainerFleet_InstanceInboundPermissions[];
   /** The name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift supports the following EC2 instance types. See Amazon EC2 Instance Types for detailed descriptions. */
   instanceType: string;
-  /** A list of objects, each representing a GameLift location (AWS Region) where the container fleet has active instances, including the location name and its operational status and capacity, as computed and returned by the service. (AI-inferred) */
   locations: LiftContainerFleet_Locations[];
   /** A policy the location and provider of logs from the fleet. */
   logConfiguration: LiftContainerFleet_LogConfiguration;

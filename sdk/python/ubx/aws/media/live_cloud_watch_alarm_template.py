@@ -41,7 +41,6 @@ class LiveCloudWatchAlarmTemplateAttrs:
     arn: Any = None
     # The comparison operator used to compare the specified statistic and the threshold.
     comparison_operator: Any = None
-    # The date and time when the CloudWatch alarm template was created, returned as a string. (AI-inferred)
     created_at: Any = None
     # The number of datapoints within the evaluation period that must be breaching to trigger the alarm.
     datapoints_to_alarm: Any = None
@@ -55,11 +54,9 @@ class LiveCloudWatchAlarmTemplateAttrs:
     group_identifier: Any = None
     # A cloudwatch alarm template's id. AWS provided templates have ids that start with `aws-`
     id: Any = None
-    # The unique identifier (ID) automatically assigned by MediaLive to this CloudWatch alarm template, used to reference the template in AWS APIs and other resources. (AI-inferred)
     identifier: Any = None
     # The name of the metric associated with the alarm. Must be compatible with targetResourceType.
     metric_name: Any = None
-    # The timestamp indicating when the CloudWatch alarm template was last modified. (AI-inferred)
     modified_at: Any = None
     # A resource's name. Names must be unique within the scope of a resource type in a specific region.
     name: Any = None

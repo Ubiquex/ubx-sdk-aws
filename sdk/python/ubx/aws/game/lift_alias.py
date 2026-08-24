@@ -37,7 +37,6 @@ class LiftAliasConfig:
     description: Any = None
     # A descriptive label that is associated with an alias. Alias names do not need to be unique.
     name: Any = None
-    # The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred)
     routing_strategy: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -52,7 +51,6 @@ class LiftAliasAttrs:
     description: Any = None
     # A descriptive label that is associated with an alias. Alias names do not need to be unique.
     name: Any = None
-    # The routing strategy defines how a GameLift alias directs game session requests to fleets, either by specifying a fleet ID for simple routing or by providing a terminal message to stop routing. (AI-inferred)
     routing_strategy: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

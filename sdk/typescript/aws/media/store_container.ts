@@ -2,36 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StoreContainer_CorsPolicy {
-  /** Specifies the list of HTTP headers that are allowed in cross-origin requests to the MediaStore container, defining which headers can be included in the actual request as part of a CORS policy. (AI-inferred) */
   allowedHeaders?: string[] | Computed<string[]>;
-  /** Specifies the list of HTTP methods (such as GET, PUT, POST, DELETE, HEAD) that are allowed for cross-origin requests to this MediaStore container. (AI-inferred) */
   allowedMethods?: string[] | Computed<string[]>;
-  /** Specifies the list of origin domains that are allowed to make cross-origin requests to the MediaStore container. (AI-inferred) */
   allowedOrigins?: string[] | Computed<string[]>;
-  /** Specifies the list of response headers that browsers are allowed to access when making cross-origin requests to the MediaStore container, as part of the CORS rule. (AI-inferred) */
   exposeHeaders?: string[] | Computed<string[]>;
-  /** The number of seconds that the browser is allowed to cache the CORS preflight response for this MediaStore container. (AI-inferred) */
   maxAgeSeconds?: number | Computed<number>;
 }
 
 export interface StoreContainer_MetricPolicy_MetricPolicyRules {
-  /** Specifies the object group name pattern (e.g., '/content/$(folder)') that this metric policy rule applies to, determining which objects' metrics are emitted. (AI-inferred) */
   objectGroup?: string | Computed<string>;
-  /** Provides the friendly name for the object group in an AWS Elemental MediaStore container metric policy rule, identifying a set of object paths that the rule applies to for CloudWatch metric collection. (AI-inferred) */
   objectGroupName?: string | Computed<string>;
 }
 
 export interface StoreContainer_MetricPolicy {
-  /** Specifies whether CloudWatch container-level metrics are enabled for this AWS Elemental MediaStore container, with valid values ENABLED or DISABLED. (AI-inferred) */
   containerLevelMetrics: string | Computed<string>;
-  /** Defines the list of metric policy rules that specify object group patterns and their names for enabling CloudWatch metrics on those object groups within the MediaStore container. (AI-inferred) */
   metricPolicyRules?: StoreContainer_MetricPolicy_MetricPolicyRules[] | Computed<StoreContainer_MetricPolicy_MetricPolicyRules[]>;
 }
 
 export interface StoreContainer_Tags {
-  /** The key of a tag attached to the AWS Elemental MediaStore container, used to identify and categorize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag attached to the AWS Elemental MediaStore container, used to organize and identify the container. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -63,40 +52,24 @@ const StoreContainer_TagsFields: FieldMap = {
 };
 
 export interface StoreContainerConfig {
-  /** Enables or disables access logging for the MediaStore container, which generates detailed logs of requests made to the container. (AI-inferred) */
   accessLoggingEnabled?: boolean | Computed<boolean>;
-  /** The name of the container, which must be unique within the region and can contain only lowercase letters, numbers, and hyphens. (AI-inferred) */
   containerName: string | Computed<string>;
-  /** Configures the Cross-Origin Resource Sharing (CORS) policy for the container, allowing you to specify which origins, methods, and headers are permitted for cross-origin requests to the container's endpoints. (AI-inferred) */
   corsPolicy?: StoreContainer_CorsPolicy[] | Computed<StoreContainer_CorsPolicy[]>;
-  /** Specifies the JSON lifecycle policy for the container, defining rules that automate the deletion of objects after a specified number of days. (AI-inferred) */
   lifecyclePolicy?: string | Computed<string>;
-  /** The metric policy object that configures which CloudWatch metrics MediaStore publishes for the container, including container-level and per-object-group metrics. (AI-inferred) */
   metricPolicy?: StoreContainer_MetricPolicy | Computed<StoreContainer_MetricPolicy>;
-  /** Specifies the resource-based policy, as a JSON string, that defines access permissions for the MediaStore container. (AI-inferred) */
   policy?: string | Computed<string>;
-  /** Specifies the tags (key-value pairs) to attach to the AWS Elemental MediaStore container for organizing, identifying, and managing the resource, such as for cost allocation and access control. (AI-inferred) */
   tags?: StoreContainer_Tags[] | Computed<StoreContainer_Tags[]>;
 }
 
 export interface StoreContainerAttrs {
-  /** Enables or disables access logging for the MediaStore container, which generates detailed logs of requests made to the container. (AI-inferred) */
   accessLoggingEnabled: boolean;
-  /** The name of the container, which must be unique within the region and can contain only lowercase letters, numbers, and hyphens. (AI-inferred) */
   containerName: string;
-  /** Configures the Cross-Origin Resource Sharing (CORS) policy for the container, allowing you to specify which origins, methods, and headers are permitted for cross-origin requests to the container's endpoints. (AI-inferred) */
   corsPolicy: StoreContainer_CorsPolicy[];
-  /** The fully qualified HTTPS endpoint assigned to the MediaStore container, used to access its content. (AI-inferred) */
   endpoint: string;
-  /** The unique container name that identifies this MediaStore container and serves as the resource's primary identifier. (AI-inferred) */
   id: string;
-  /** Specifies the JSON lifecycle policy for the container, defining rules that automate the deletion of objects after a specified number of days. (AI-inferred) */
   lifecyclePolicy: string;
-  /** The metric policy object that configures which CloudWatch metrics MediaStore publishes for the container, including container-level and per-object-group metrics. (AI-inferred) */
   metricPolicy: StoreContainer_MetricPolicy;
-  /** Specifies the resource-based policy, as a JSON string, that defines access permissions for the MediaStore container. (AI-inferred) */
   policy: string;
-  /** Specifies the tags (key-value pairs) to attach to the AWS Elemental MediaStore container for organizing, identifying, and managing the resource, such as for cost allocation and access control. (AI-inferred) */
   tags: StoreContainer_Tags[];
 }
 

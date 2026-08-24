@@ -4,18 +4,13 @@ package step
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FunctionsActivity_EncryptionConfiguration struct {
-	// Specifies the maximum duration, in seconds, that AWS Step Functions will reuse a customer-managed data key from AWS KMS before requesting a new one for encrypting activity data. (AI-inferred)
 	KmsDataKeyReusePeriodSeconds any
-	// The AWS KMS key ID or ARN used to encrypt the activity's data when encryption is configured for the Step Functions activity. (AI-inferred)
 	KmsKeyId any
-	// Specifies the type of encryption key used for the activity's data, distinguishing between a customer-managed AWS KMS key (CUSTOMER_MANAGED_KMS_KEY) and an AWS-owned key (AWS_OWNED_KEY). (AI-inferred)
 	Type any
 }
 
 type FunctionsActivity_Tags struct {
-	// The key of a tag attached to the AWS Step Functions activity, used to categorize and manage the activity resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Step Functions activity. (AI-inferred)
 	Value any
 }
 
@@ -32,19 +27,14 @@ var FunctionsActivity_TagsFields = ubx.FieldMap{
 
 type FunctionsActivityConfig struct {
 	EncryptionConfiguration any
-	// The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred)
 	Name any
-	// Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred)
 	Tags any
 }
 
 type FunctionsActivityAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this AWS Step Functions activity, which is used to reference the activity in state machine definitions. (AI-inferred)
 	Arn any
 	EncryptionConfiguration any
-	// The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred)
 	Name any
-	// Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred)
 	Tags any
 }
 

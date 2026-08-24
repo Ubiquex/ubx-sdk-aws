@@ -2,21 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FirewallFirewall_AvailabilityZoneMappings {
-  /** The Availability Zone (e.g., us-east-1a) where the Network Firewall endpoint is deployed, matching the zone of the associated subnet in the mapping. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
 }
 
 export interface FirewallFirewall_SubnetMappings {
-  /** Specifies whether the firewall endpoint in the associated subnet uses an IPv4 or IPv6 address, with valid values 'IPV4' or 'IPV6'. (AI-inferred) */
   ipaddressType?: string | Computed<string>;
-  /** The ID of the subnet in the VPC where the firewall endpoint is deployed. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
 export interface FirewallFirewall_Tags {
-  /** The key of a tag assigned to the Network Firewall firewall, used to categorize and identify the resource for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value pairs with a corresponding tag key to label the Network Firewall firewall for resource organization, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -35,64 +30,43 @@ const FirewallFirewall_TagsFields: FieldMap = {
 };
 
 export interface FirewallFirewallConfig {
-  /** Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred) */
   availabilityZoneChangeProtection?: boolean | Computed<boolean>;
-  /** Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred) */
   availabilityZoneMappings?: FirewallFirewall_AvailabilityZoneMappings[] | Computed<FirewallFirewall_AvailabilityZoneMappings[]>;
-  /** Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred) */
   deleteProtection?: boolean | Computed<boolean>;
-  /** A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred) */
   description?: string | Computed<string>;
   /** The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both. */
   enabledAnalysisTypes?: string[] | Computed<string[]>;
-  /** A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred) */
   firewallName: string | Computed<string>;
   /** A resource ARN. */
   firewallPolicyArn: string | Computed<string>;
-  /** When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred) */
   firewallPolicyChangeProtection?: boolean | Computed<boolean>;
-  /** Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred) */
   subnetChangeProtection?: boolean | Computed<boolean>;
-  /** Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred) */
   subnetMappings?: FirewallFirewall_SubnetMappings[] | Computed<FirewallFirewall_SubnetMappings[]>;
   tags?: FirewallFirewall_Tags[] | Computed<FirewallFirewall_Tags[]>;
   transitGatewayId?: string | Computed<string>;
-  /** The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred) */
   vpcId?: string | Computed<string>;
 }
 
 export interface FirewallFirewallAttrs {
-  /** Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred) */
   availabilityZoneChangeProtection: boolean;
-  /** Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred) */
   availabilityZoneMappings: FirewallFirewall_AvailabilityZoneMappings[];
-  /** Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred) */
   deleteProtection: boolean;
-  /** A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred) */
   description: string;
   /** The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both. */
   enabledAnalysisTypes: string[];
-  /** The list of VPC endpoint IDs created for the firewall in each of its associated subnets, used to route traffic to the firewall. (AI-inferred) */
   endpointIds: string[];
   /** A resource ARN. */
   firewallArn: string;
-  /** The unique identifier assigned by AWS to this Network Firewall firewall. (AI-inferred) */
   firewallId: string;
-  /** A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred) */
   firewallName: string;
   /** A resource ARN. */
   firewallPolicyArn: string;
-  /** When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred) */
   firewallPolicyChangeProtection: boolean;
-  /** Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred) */
   subnetChangeProtection: boolean;
-  /** Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred) */
   subnetMappings: FirewallFirewall_SubnetMappings[];
   tags: FirewallFirewall_Tags[];
-  /** The unique identifier of the Transit Gateway attachment that connects the firewall to its VPC, populated after the firewall is created. (AI-inferred) */
   transitGatewayAttachmentId: string;
   transitGatewayId: string;
-  /** The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred) */
   vpcId: string;
 }
 

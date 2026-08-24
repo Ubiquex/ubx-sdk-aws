@@ -12,11 +12,8 @@ class V2CisScanConfigurationConfig:
     scan_name: Any = None
     # Choose a Schedule cadence
     schedule: Any = None
-    # The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred)
     security_level: Any = None
-    # The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred)
     targets: Any = None
 
 @dataclasses.dataclass
@@ -27,11 +24,8 @@ class V2CisScanConfigurationAttrs:
     scan_name: Any = None
     # Choose a Schedule cadence
     schedule: Any = None
-    # The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred)
     security_level: Any = None
-    # The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred)
     targets: Any = None
 
 V2CisScanConfiguration = ubx.ResourceBinding(

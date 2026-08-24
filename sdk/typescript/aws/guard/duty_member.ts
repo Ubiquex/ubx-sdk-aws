@@ -2,32 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DutyMemberConfig {
-  /** The ID of the GuardDuty detector in the administrator account that the member account is associated with. (AI-inferred) */
   detectorId?: string | Computed<string>;
-  /** Whether to disable the email notification sent to the member account when it is invited to GuardDuty. (AI-inferred) */
   disableEmailNotification?: boolean | Computed<boolean>;
-  /** The email address of the AWS account that is being added as a GuardDuty member, used to identify the account when creating the association. (AI-inferred) */
   email: string | Computed<string>;
-  /** The AWS account ID of the member account being added to the GuardDuty administrator account. (AI-inferred) */
   memberId?: string | Computed<string>;
-  /** The custom message included in the invitation sent to the member account when inviting them to join Amazon GuardDuty. (AI-inferred) */
   message?: string | Computed<string>;
-  /** The status of the GuardDuty member account, which can be one of Created, Invited, Disabled, or Enabled, and is used to manage the member's association with the GuardDuty administrator account. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface DutyMemberAttrs {
-  /** The ID of the GuardDuty detector in the administrator account that the member account is associated with. (AI-inferred) */
   detectorId: string;
-  /** Whether to disable the email notification sent to the member account when it is invited to GuardDuty. (AI-inferred) */
   disableEmailNotification: boolean;
-  /** The email address of the AWS account that is being added as a GuardDuty member, used to identify the account when creating the association. (AI-inferred) */
   email: string;
-  /** The AWS account ID of the member account being added to the GuardDuty administrator account. (AI-inferred) */
   memberId: string;
-  /** The custom message included in the invitation sent to the member account when inviting them to join Amazon GuardDuty. (AI-inferred) */
   message: string;
-  /** The status of the GuardDuty member account, which can be one of Created, Invited, Disabled, or Enabled, and is used to manage the member's association with the GuardDuty administrator account. (AI-inferred) */
   status: string;
 }
 

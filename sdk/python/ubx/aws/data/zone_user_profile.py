@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneUserProfile_Details_Iam:
-    # The Amazon Resource Name (ARN) of the IAM principal (user or role) associated with the DataZone user profile's IAM details. (AI-inferred)
     arn: Any = None
-    # The unique identifier of the DataZone group profile associated with this IAM user profile, representing the IAM group membership for the user within the domain. (AI-inferred)
     group_profile_id: Any = None
-    # The session name that identifies a specific IAM role session when the Data Zone user profile is associated with an IAM role, enabling the profile to correspond to a particular role session. (AI-inferred)
     session_name: Any = None
 
 @dataclasses.dataclass
 class ZoneUserProfile_Details_Sso:
-    # The first name of the user as provided by the single sign-on (SSO) identity provider in the AWS Data Zone user profile. (AI-inferred)
     first_name: Any = None
-    # The last name of the user as configured in the external SSO identity provider, used to display the user's name in Amazon DataZone. (AI-inferred)
     last_name: Any = None
-    # The SSO username of the user associated with the AWS DataZone user profile. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class ZoneUserProfile_Details:
-    # Specifies the IAM user details for the DataZone user profile, including the ARN of the IAM user. (AI-inferred)
     iam: Any = None
-    # Contains the IAM Identity Center (SSO) attributes, such as the user's first name, last name, and username, for the Amazon DataZone user profile. (AI-inferred)
     sso: Any = None
 
 @dataclasses.dataclass
@@ -46,7 +38,6 @@ class ZoneUserProfileConfig:
 
 @dataclasses.dataclass
 class ZoneUserProfileAttrs:
-    # The computed details of the DataZone user profile, including the IAM or SSO identity information returned by the service. (AI-inferred)
     details: Any = None
     # The identifier of the Amazon DataZone domain in which the user profile is created.
     domain_id: Any = None

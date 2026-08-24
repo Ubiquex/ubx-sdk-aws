@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayClientCertificate_Tags {
   key?: string | Computed<string>;
-  /** The value of an individual tag assigned to the API Gateway client certificate, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -13,18 +12,13 @@ const GatewayClientCertificate_TagsFields: FieldMap = {
 };
 
 export interface GatewayClientCertificateConfig {
-  /** A user-provided description for the client certificate, used to annotate or identify it. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Associates a list of key-value tag pairs with the API Gateway client certificate, enabling cost allocation, access control, and resource categorization. (AI-inferred) */
   tags?: GatewayClientCertificate_Tags[] | Computed<GatewayClientCertificate_Tags[]>;
 }
 
 export interface GatewayClientCertificateAttrs {
-  /** The unique identifier assigned by Amazon API Gateway to the client certificate, used to reference this certificate in other API Gateway resources (e.g., domain names) and returned automatically upon creation. (AI-inferred) */
   clientCertificateId: string;
-  /** A user-provided description for the client certificate, used to annotate or identify it. (AI-inferred) */
   description: string;
-  /** Associates a list of key-value tag pairs with the API Gateway client certificate, enabling cost allocation, access control, and resource categorization. (AI-inferred) */
   tags: GatewayClientCertificate_Tags[];
 }
 

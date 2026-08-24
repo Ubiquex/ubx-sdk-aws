@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Account_Tags:
-    # The key portion of a key-value tag assigned to the AWS Organizations account, enabling you to categorize and manage the account for cost allocation, access control, or operational purposes. (AI-inferred)
     key: Any = None
-    # The value of a key-value tag assigned to the AWS Organizations account. (AI-inferred)
     value: Any = None
 
 _Account_TagsFields = {

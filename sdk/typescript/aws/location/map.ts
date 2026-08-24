@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Map_Configuration {
-  /** Specifies the list of custom layers to include in the map configuration, allowing additional data layers to be displayed on top of the base map style. (AI-inferred) */
   customLayers?: string[] | Computed<string[]>;
-  /** Sets the ISO 3166-1 alpha-3 country code that determines the political view of the map, controlling which country's rendering of borders, labels, and contested territories is used. (AI-inferred) */
   politicalView?: string | Computed<string>;
-  /** Specifies the map style (e.g., 'VectorEsriStreets' or 'VectorHereExplore') that determines the visual appearance and data provider for the AWS Location map resource. (AI-inferred) */
   style: string | Computed<string>;
 }
 
 export interface Map_Tags {
-  /** The key of a tag attached to the AWS Location Service map, used to identify and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to an AWS Location Service map, used for cost allocation and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -29,30 +24,22 @@ const Map_TagsFields: FieldMap = {
 };
 
 export interface MapConfig {
-  /** Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred) */
   configuration: Map_Configuration | Computed<Map_Configuration>;
   description?: string | Computed<string>;
-  /** A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred) */
   mapName: string | Computed<string>;
-  /** Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred) */
   pricingPlan?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Map_Tags[] | Computed<Map_Tags[]>;
 }
 
 export interface MapAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS Location Service map resource. (AI-inferred) */
   arn: string;
-  /** Specifies the map style (e.g., VectorEsriStreets or RasterEsriImagery) used by the map resource. (AI-inferred) */
   configuration: Map_Configuration;
   /** The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ) */
   createTime: string;
   description: string;
-  /** The Amazon Resource Name (ARN) of the AWS Location Service map, assigned by AWS when the map is created. (AI-inferred) */
   mapArn: string;
-  /** A user-defined name for the Amazon Location Service map resource, used to identify it within the AWS account and in API calls. (AI-inferred) */
   mapName: string;
-  /** Specifies the pricing plan for the map, such as RequestBasedUsage, which determines how the map's usage is billed. (AI-inferred) */
   pricingPlan: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Map_Tags[];

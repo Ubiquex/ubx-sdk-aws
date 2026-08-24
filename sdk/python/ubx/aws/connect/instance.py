@@ -37,7 +37,6 @@ class Instance_Attributes:
 
 @dataclasses.dataclass
 class Instance_Tags:
-    # The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -64,7 +63,6 @@ _Instance_TagsFields = {
 
 @dataclasses.dataclass
 class InstanceConfig:
-    # Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
     attributes: Any = None
     # Existing directoryId user wants to map to the new Connect instance.
     directory_id: Any = None
@@ -79,7 +77,6 @@ class InstanceConfig:
 class InstanceAttrs:
     # An instanceArn is automatically generated on creation based on instanceId.
     arn: Any = None
-    # Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
     attributes: Any = None
     # Timestamp of instance creation logged as part of instance creation.
     created_time: Any = None

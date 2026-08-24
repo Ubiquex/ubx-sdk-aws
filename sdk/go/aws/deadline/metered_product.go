@@ -4,24 +4,16 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MeteredProductConfig struct {
-	// The unique identifier of the license endpoint with which the metered product is associated in AWS Deadline Cloud. (AI-inferred)
 	LicenseEndpointId any
-	// The product_id specifies the unique AWS Marketplace product identifier for the software product that is metered and associated with the Deadline farm. (AI-inferred)
 	ProductId any
 }
 
 type MeteredProductAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this Deadline Cloud metered product. (AI-inferred)
 	Arn any
-	// The product family (e.g., 'Arnold' or 'V-Ray') that Deadline Cloud assigns to the metered product, automatically determined and read-only. (AI-inferred)
 	Family any
-	// The unique identifier of the license endpoint with which the metered product is associated in AWS Deadline Cloud. (AI-inferred)
 	LicenseEndpointId any
-	// The network port number on which the metered product's licensing service listens, returned by Deadline Cloud after the product is created. (AI-inferred)
 	Port any
-	// The product_id specifies the unique AWS Marketplace product identifier for the software product that is metered and associated with the Deadline farm. (AI-inferred)
 	ProductId any
-	// The vendor of the metered product, representing the company or provider that offers the software, as assigned by AWS Deadline Cloud. (AI-inferred)
 	Vendor any
 }
 

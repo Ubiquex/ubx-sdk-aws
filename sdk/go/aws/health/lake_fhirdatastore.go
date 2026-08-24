@@ -39,9 +39,7 @@ type LakeFhirdatastore_SseConfiguration struct {
 }
 
 type LakeFhirdatastore_Tags struct {
-	// The key of a tag assigned to the AWS HealthLake FHIR Data Store, used to organize and identify the datastore for cost allocation and resource management. (AI-inferred)
 	Key any
-	// The value of a tag assigned to an AWS HealthLake FHIR DataStore, used to organize, categorize, and track the datastore for cost allocation and access control. (AI-inferred)
 	Value any
 }
 
@@ -85,7 +83,6 @@ type LakeFhirdatastoreConfig struct {
 	PreloadDataConfig any
 	// The server-side encryption key configuration for a customer provided encryption key.
 	SseConfiguration any
-	// Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred)
 	Tags any
 }
 
@@ -110,7 +107,6 @@ type LakeFhirdatastoreAttrs struct {
 	PreloadDataConfig any
 	// The server-side encryption key configuration for a customer provided encryption key.
 	SseConfiguration any
-	// Specifies the tags (key-value pairs) to attach to the FHIR datastore, used for organizing, identifying, and managing the resource, such as for cost allocation or access control. (AI-inferred)
 	Tags any
 }
 

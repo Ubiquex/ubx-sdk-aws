@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_Tags {
-  /** The key of a tag that is attached to the AWS Organizations policy, used to identify the tag's purpose or category. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a tag assigned to the AWS Organizations policy, used to organize and identify the policy. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

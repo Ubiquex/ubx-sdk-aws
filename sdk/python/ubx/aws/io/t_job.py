@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TJob_AbortConfig_CriteriaList:
-    # Specifies the abort action (CANCEL or CONTINUE) to perform when the job's abort criteria are met. (AI-inferred)
     action: Any = None
-    # The type of job execution failure that triggers the abort criteria for an AWS IoT job, such as FAILED, TIMED_OUT, or ALL. (AI-inferred)
     failure_type: Any = None
-    # The minimum number of things that must have completed the job execution before the abort criteria can be evaluated, allowing the abort action to trigger only after a certain number of executions have occurred. (AI-inferred)
     min_number_of_executed_things: Any = None
-    # The percentage of the total number of things in the job that must experience the specified failure type before the abort criteria triggers the abort action, when combined with the minimum number of executed things. (AI-inferred)
     threshold_percentage: Any = None
 
 @dataclasses.dataclass
@@ -24,9 +20,7 @@ class TJob_AbortConfig:
 
 @dataclasses.dataclass
 class TJob_JobExecutionsRetryConfig_CriteriaList:
-    # Specifies the type of job execution failure (e.g., FAILED, TIMED_OUT, or ALL) that this retry criterion applies to, determining which failures trigger the configured retry count. (AI-inferred)
     failure_type: Any = None
-    # The maximum number of retry attempts for a job execution that fails with the associated failure type before the execution is marked as failed. (AI-inferred)
     number_of_retries: Any = None
 
 @dataclasses.dataclass
@@ -66,9 +60,7 @@ class TJob_PresignedUrlConfig:
 
 @dataclasses.dataclass
 class TJob_SchedulingConfig_MaintenanceWindows:
-    # Specifies the length of each maintenance window, in minutes, during which the AWS IoT job is allowed to run before the window closes and job executions are paused. (AI-inferred)
     duration_in_minutes: Any = None
-    # The start time of the maintenance window, in ISO 8601 format, during which the AWS IoT job execution can be started. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -84,9 +76,7 @@ class TJob_SchedulingConfig:
 
 @dataclasses.dataclass
 class TJob_Tags:
-    # Specifies the key of a tag to attach to the AWS IoT job, allowing you to categorize, organize, and manage the job resource in AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT Job, used to categorize the job and enable resource-level access control via IAM condition keys such as aws:ResourceTag. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

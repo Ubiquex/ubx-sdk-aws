@@ -4,7 +4,6 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterfaceAttachment_EnaSrdSpecification_EnaSrdUdpSpecification struct {
-	// Enable ENA Express (Scalable Reliable Datagram) for UDP traffic on the network interface attachment, which can improve throughput and reduce latency for UDP workloads. (AI-inferred)
 	EnaSrdUdpEnabled any
 }
 
@@ -44,7 +43,6 @@ type InterfaceAttachmentConfig struct {
 }
 
 type InterfaceAttachmentAttrs struct {
-	// The unique identifier for the attachment between the network interface and the instance. (AI-inferred)
 	AttachmentId any
 	// Whether to delete the network interface when the instance terminates. By default, this value is set to ``true``.
 	DeleteOnTermination any

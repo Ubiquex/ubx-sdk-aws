@@ -13,9 +13,7 @@ class ContactFlowModule_ExternalInvocationConfiguration:
 
 @dataclasses.dataclass
 class ContactFlowModule_Tags:
-    # The key of a tag assigned to an Amazon Connect contact flow module for resource metadata and management. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the Amazon Connect contact flow module, used for organizing, managing, and identifying the resource within AWS. (AI-inferred)
     value: Any = None
 
 _ContactFlowModule_ExternalInvocationConfigurationFields = {

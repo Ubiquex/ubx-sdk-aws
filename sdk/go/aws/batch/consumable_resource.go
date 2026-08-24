@@ -21,7 +21,6 @@ type ConsumableResourceAttrs struct {
 	ConsumableResourceArn any
 	// Name of ConsumableResource.
 	ConsumableResourceName any
-	// The Unix timestamp (in seconds) when AWS Batch created the consumable resource. (AI-inferred)
 	CreatedAt any
 	// In-use Quantity of ConsumableResource.
 	InUseQuantity any

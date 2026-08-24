@@ -8,46 +8,33 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFilters:
-    # The name of the patch attribute to filter on, such as PRODUCT, CLASSIFICATION, or MSRC_SEVERITY, for the approval rule's patch filter group. (AI-inferred)
     key: Any = None
-    # The list of values used to match patches for the associated patch filter key (e.g., product, classification, or severity) in an AWS SSM patch baseline approval rule. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup:
-    # Defines the patch filters (each with a key and values) that determine which patches this approval rule applies to, such as by product, severity, or classification. (AI-inferred)
     patch_filters: Any = None
 
 @dataclasses.dataclass
 class PatchBaseline_ApprovalRules_PatchRules:
-    # Specifies the number of days after a patch's release date that it is automatically approved for installation in the patch baseline. (AI-inferred)
     approve_after_days: Any = None
-    # The date (in YYYY-MM-DD format) after which the patch is no longer automatically approved for this rule. (AI-inferred)
     approve_until_date: Any = None
-    # Specifies the compliance severity level (e.g., CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, or UNSPECIFIED) assigned to patches that match this rule for reporting and compliance purposes. (AI-inferred)
     compliance_level: Any = None
-    # Indicates whether this approval rule also applies to patches that are not classified as security updates, allowing non-security patches to be approved based on the same schedule and filters. (AI-inferred)
     enable_non_security: Any = None
-    # The patch_filter_group object within a patch rule defines the set of patch filter criteria (e.g., product, severity, classification) that a patch must match for the rule to approve it, with all specified filters required to match (AND logic). (AI-inferred)
     patch_filter_group: Any = None
 
 @dataclasses.dataclass
 class PatchBaseline_ApprovalRules:
-    # A list of patch rules that define which patches are approved for the baseline, including patch filters, approval delay, and compliance level. (AI-inferred)
     patch_rules: Any = None
 
 @dataclasses.dataclass
 class PatchBaseline_Sources:
-    # Specifies the repository configuration string (such as a yum repository configuration for Amazon Linux) that defines the patch source location for this patch baseline. (AI-inferred)
     configuration: Any = None
-    # The name of the patch source, such as 'Amazon Linux 2' or 'Ubuntu', which identifies the repository configured for this patch baseline. (AI-inferred)
     name: Any = None
-    # Specifies the operating system product versions (e.g., 'AmazonLinux2012.03', 'RedhatEnterpriseLinux7') that this patch source repository applies to in the patch baseline. (AI-inferred)
     products: Any = None
 
 @dataclasses.dataclass
 class PatchBaseline_Tags:
-    # The key of a tag attached to the patch baseline, used to organize and identify the baseline for cost, environment, or operational purposes. (AI-inferred)
     key: Any = None
     value: Any = None
 

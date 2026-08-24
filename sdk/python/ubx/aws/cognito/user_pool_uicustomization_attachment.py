@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolUicustomizationAttachmentConfig:
-    # The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred)
     css: Any = None
-    # The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred)
     client_id: Any = None
-    # The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolUicustomizationAttachmentAttrs:
-    # The CSS string that defines the custom styling for the user pool's hosted UI pages. (AI-inferred)
     css: Any = None
-    # The unique ID of the user pool app client to which this UI customization is attached. (AI-inferred)
     client_id: Any = None
-    # The user_pool_id specifies the unique identifier of the Amazon Cognito User Pool where the UI customization will be applied. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolUicustomizationAttachment = ubx.ResourceBinding(

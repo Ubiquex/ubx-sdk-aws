@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Assistant_ServerSideEncryptionConfiguration:
-    # The ARN of the KMS key used to encrypt the Wisdom assistant's data; if left unspecified, Amazon Connect Wisdom uses an AWS managed key. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
 class Assistant_Tags:
-    # The key of a tag attached to the Wisdom assistant, used for identifying and categorizing the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag assigned to the Wisdom assistant, allowing you to attach custom metadata such as environment or project labels to the assistant resource. (AI-inferred)
     value: Any = None
 
 _Assistant_ServerSideEncryptionConfigurationFields = {
@@ -29,32 +26,20 @@ _Assistant_TagsFields = {
 
 @dataclasses.dataclass
 class AssistantConfig:
-    # Specifies a human-readable description for the Wisdom Assistant, providing context about its purpose or use case. (AI-inferred)
     description: Any = None
-    # The name of the Amazon Wisdom assistant, which is a required, user-defined identifier for the assistant resource. (AI-inferred)
     name: Any = None
-    # Specifies the server-side encryption configuration, including the KMS key ARN used to encrypt the Wisdom assistant's data at rest. (AI-inferred)
     server_side_encryption_configuration: Any = None
-    # A list of tags to associate with the Wisdom assistant, which can be used to manage access and identify the resource. (AI-inferred)
     tags: Any = None
-    # Sets the type of the Wisdom assistant, which must be either AGENT or ASSISTANT, controlling whether it serves contact center agents or end users. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class AssistantAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Wisdom assistant. (AI-inferred)
     assistant_arn: Any = None
-    # The unique identifier assigned to the Wisdom assistant, used to reference this assistant in other AWS services and APIs. (AI-inferred)
     assistant_id: Any = None
-    # Specifies a human-readable description for the Wisdom Assistant, providing context about its purpose or use case. (AI-inferred)
     description: Any = None
-    # The name of the Amazon Wisdom assistant, which is a required, user-defined identifier for the assistant resource. (AI-inferred)
     name: Any = None
-    # Specifies the server-side encryption configuration, including the KMS key ARN used to encrypt the Wisdom assistant's data at rest. (AI-inferred)
     server_side_encryption_configuration: Any = None
-    # A list of tags to associate with the Wisdom assistant, which can be used to manage access and identify the resource. (AI-inferred)
     tags: Any = None
-    # Sets the type of the Wisdom assistant, which must be either AGENT or ASSISTANT, controlling whether it serves contact center agents or end users. (AI-inferred)
     type: Any = None
 
 Assistant = ubx.ResourceBinding(

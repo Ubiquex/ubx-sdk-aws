@@ -8,46 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BuilderContainerRecipe_Components_Parameters:
-    # The name (key) of a parameter that is passed to the Image Builder component when building the container image, matching a parameter defined in that component. (AI-inferred)
     name: Any = None
-    # Specifies a list of values to assign to the named build component parameter when this container recipe is used to build an image. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BuilderContainerRecipe_Components:
-    # The Amazon Resource Name (ARN) of the Image Builder component to apply as part of this container recipe's build configuration. (AI-inferred)
     component_arn: Any = None
-    # Defines the list of parameter name/value pairs to supply to an Image Builder component (referenced by the containing components list entry) when the container recipe is used to build a container image, overriding default values defined in the component document. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class BuilderContainerRecipe_InstanceConfiguration_BlockDeviceMappings_Ebs:
-    # Whether the EBS volume should be deleted when the associated EC2 instance is terminated, as part of the block device mapping for the build instance in the Image Builder container recipe. (AI-inferred)
     delete_on_termination: Any = None
-    # Determines whether the EBS volume in this block device mapping is encrypted on the build instance used by the container recipe, matching the standard EC2 block device mapping encryption setting. (AI-inferred)
     encrypted: Any = None
-    # Specifies the IOPS (input/output operations per second) rate for the EBS volume, used only when the volume type is io1, io2, or gp3 in the block device mapping. (AI-inferred)
     iops: Any = None
-    # The KMS key ID used to encrypt the EBS volume defined in this block device mapping, enabling a customer-managed encryption key for the volume created during the image build. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the ID of an existing EBS snapshot to use as the source for the EBS volume defined in this block device mapping. (AI-inferred)
     snapshot_id: Any = None
-    # The throughput in MB/s to provision for the EBS gp3 volume defined in a block device mapping for the instance configuration of the Image Builder container recipe, used to set the performance characteristics of the attached volume during build and test. (AI-inferred)
     throughput: Any = None
-    # For a block device in the container recipe's build instance configuration, the size in GiB of the EBS volume to attach. (AI-inferred)
     volume_size: Any = None
-    # Defines the Amazon EBS volume type for the block device mapped to the build instance, where valid values include gp2, gp3, io1, io2, sc1, st1, and standard. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class BuilderContainerRecipe_InstanceConfiguration_BlockDeviceMappings:
-    # The device name (e.g., /dev/sda1) for a block device attached to the EC2 instance used by Image Builder to build the container image. (AI-inferred)
     device_name: Any = None
-    # Specifies the Amazon EBS volume settings for a block device mapping in the instance configuration, including volume size, volume type, IOPS, encrypted flag, and snapshot identifier. (AI-inferred)
     ebs: Any = None
-    # Indicates whether to suppress this block device mapping so that no device is exposed to the instance, overriding any device mapping from the base image. (AI-inferred)
     no_device: Any = None
-    # Specifies the virtual device name (e.g., ephemeral0) for an ephemeral instance store volume in the block device mapping of the instance used to build the container, matching EC2 ephemeral device naming conventions. (AI-inferred)
     virtual_name: Any = None
 
 @dataclasses.dataclass

@@ -4,18 +4,15 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamresourceDiscovery_OperatingRegions struct {
-	// Specifies the AWS Region (e.g., us-east-1) in which the IPAM resource discovery operates. (AI-inferred)
 	RegionName any
 }
 
 type IpamresourceDiscovery_OrganizationalUnitExclusions struct {
-	// Defines the AWS Organizations entity path (e.g., 'o-1234567890abcdef0') of an organizational unit to exclude from IPAM resource discovery, preventing resources in that OU from being discovered. (AI-inferred)
 	OrganizationsEntityPath any
 }
 
 type IpamresourceDiscovery_Tags struct {
 	Key any
-	// The value for a tag key attached to the IPAM resource discovery, which is a user-defined string for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -33,7 +30,6 @@ var IpamresourceDiscovery_TagsFields = ubx.FieldMap{
 	}
 
 type IpamresourceDiscoveryConfig struct {
-	// Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred)
 	Description any
 	// The regions Resource Discovery is enabled for. Allows resource discoveries to be created in these regions, as well as enabling monitoring
 	OperatingRegions any
@@ -44,7 +40,6 @@ type IpamresourceDiscoveryConfig struct {
 }
 
 type IpamresourceDiscoveryAttrs struct {
-	// Specifies a custom description for the IPAM resource discovery, which is used to provide human-readable context or identification for the discovery resource within the AWS EC2 IPAM service. (AI-inferred)
 	Description any
 	// Amazon Resource Name (Arn) for the Resource Discovery.
 	IpamResourceDiscoveryArn any

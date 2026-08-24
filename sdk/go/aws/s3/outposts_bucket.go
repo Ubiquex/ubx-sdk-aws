@@ -4,45 +4,31 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OutpostsBucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload struct {
-	// The number of days after a multipart upload is initiated before the S3 Outposts bucket lifecycle rule aborts the incomplete multipart upload. (AI-inferred)
 	DaysAfterInitiation any
 }
 
 type OutpostsBucket_LifecycleConfiguration_Rules_Filter_AndOperator_Tags struct {
-	// The key of a tag that, together with its value in the same tag object, defines a condition an object must satisfy for the lifecycle rule's AND filter to match and trigger the configured action. (AI-inferred)
 	Key any
-	// The value of the tag that, along with its key, is evaluated in the And operator of the lifecycle rule filter for the S3 on Outposts bucket. (AI-inferred)
 	Value any
 }
 
 type OutpostsBucket_LifecycleConfiguration_Rules_Filter_AndOperator struct {
-	// Specifies the object key prefix to match, used as part of the AND operator that combines this prefix with other conditions (such as tags) for the lifecycle rule's filter. (AI-inferred)
 	Prefix any
-	// Specifies a list of tags (key-value pairs) that, when combined with other conditions in the AND operator, must all match an object for the lifecycle rule to apply. (AI-inferred)
 	Tags any
 }
 
 type OutpostsBucket_LifecycleConfiguration_Rules_Filter struct {
-	// Defines a logical AND set of conditions (e.g., a prefix and one or more tags) that an object must match for the S3 Outposts bucket lifecycle rule to apply. (AI-inferred)
 	AndOperator any
-	// The key prefix that identifies which objects in the S3 Outposts bucket the lifecycle rule's expiration or transition actions are applied to via the rule's filter. (AI-inferred)
 	Prefix any
-	// Specifies a tag (key-value pair) that an object must have in order for this lifecycle rule to apply to it, acting as the filter condition for objects in the S3 on Outposts bucket. (AI-inferred)
 	Tag any
 }
 
 type OutpostsBucket_LifecycleConfiguration_Rules struct {
-	// Specifies the number of days after initiation that an incomplete multipart upload to the S3 Outposts bucket is aborted, as part of a lifecycle rule. (AI-inferred)
 	AbortIncompleteMultipartUpload any
-	// Sets the specific date (in ISO 8601 format) on which objects subject to this lifecycle rule expire and are permanently deleted by S3 on Outposts. (AI-inferred)
 	ExpirationDate any
-	// Specifies the number of days after object creation when objects governed by this lifecycle rule expire and are permanently deleted from the S3 on Outposts bucket. (AI-inferred)
 	ExpirationInDays any
-	// The filter property of a lifecycle rule specifies the object key prefix, tag, or size criteria that determine which objects in the S3 Outposts bucket the rule applies to. (AI-inferred)
 	Filter any
-	// A unique identifier for this lifecycle rule within the bucket's lifecycle configuration. (AI-inferred)
 	Id any
-	// Indicates whether the lifecycle rule is enabled (active) or disabled (inactive), with allowed values 'Enabled' or 'Disabled'. (AI-inferred)
 	Status any
 }
 
@@ -111,7 +97,6 @@ var OutpostsBucket_LifecycleConfigurationFields = ubx.FieldMap{
 type OutpostsBucketConfig struct {
 	// A name for the bucket.
 	BucketName any
-	// Defines the lifecycle configuration rules for the S3 Outposts bucket, including expiration, transitions, and incomplete multipart upload abort actions, with optional filters and rule statuses. (AI-inferred)
 	LifecycleConfiguration any
 	// The id of the customer outpost on which the bucket resides.
 	OutpostId any
@@ -124,7 +109,6 @@ type OutpostsBucketAttrs struct {
 	Arn any
 	// A name for the bucket.
 	BucketName any
-	// Defines the lifecycle configuration rules for the S3 Outposts bucket, including expiration, transitions, and incomplete multipart upload abort actions, with optional filters and rule statuses. (AI-inferred)
 	LifecycleConfiguration any
 	// The id of the customer outpost on which the bucket resides.
 	OutpostId any

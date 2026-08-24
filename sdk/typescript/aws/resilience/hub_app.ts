@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface HubApp_EventSubscriptions {
-  /** Specifies the type of Resilience Hub event—such as drift detection, assessment completion, or SOP recommendation—that this subscription monitors to trigger notifications to the configured SNS topic. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** The user-defined name for this event subscription, used to identify it within the Resilience Hub application. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the SNS topic that Resilience Hub publishes event notifications to for this app subscription. (AI-inferred) */
   snsTopicArn?: string | Computed<string>;
 }
 
@@ -20,28 +17,18 @@ export interface HubApp_PermissionModel {
 }
 
 export interface HubApp_ResourceMappings_PhysicalResourceId {
-  /** The AWS account ID where the physical resource identified by this resource mapping is located. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
-  /** Specifies the AWS region of the physical resource that the resource mapping references in the Resilience Hub application. (AI-inferred) */
   awsRegion?: string | Computed<string>;
-  /** For each resource mapping in an AWS Resilience Hub app, this identifier uniquely identifies the physical AWS resource (such as its ARN or resource ID) that the logical resource maps to. (AI-inferred) */
   identifier?: string | Computed<string>;
-  /** Specifies whether the physical resource identifier is an Amazon Resource Name (ARN) or a native resource identifier. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface HubApp_ResourceMappings {
-  /** The name of the Amazon EKS cluster that the resource mapping references as its source in the Resilience Hub app. (AI-inferred) */
   eksSourceName?: string | Computed<string>;
-  /** The name of the CloudFormation stack that contains the resource identified by this resource mapping in an AWS Resilience Hub app. (AI-inferred) */
   logicalStackName?: string | Computed<string>;
-  /** Specifies the type of resource mapping for an application resource, which determines how the physical resource is identified (e.g., Cfn, Stack, Resource, AppRegistryApp, ResourceGroup, Terraform, or EKS). (AI-inferred) */
   mappingType?: string | Computed<string>;
-  /** An object that uniquely identifies the physical AWS resource backing the logical resource in the mapping, containing fields like awsAccountId, awsRegion, and either stackName or resourceName depending on the resourceMappingType. (AI-inferred) */
   physicalResourceId?: HubApp_ResourceMappings_PhysicalResourceId | Computed<HubApp_ResourceMappings_PhysicalResourceId>;
-  /** Within each resource mapping, this field specifies the logical name of the resource as it appears in the Resilience Hub application, distinguishing it from other mapped resources. (AI-inferred) */
   resourceName?: string | Computed<string>;
-  /** When the mapping type is Terraform, this specifies the name of the Terraform source (e.g., state file or module) from which the resource mapping was derived. (AI-inferred) */
   terraformSourceName?: string | Computed<string>;
 }
 
@@ -94,7 +81,6 @@ export interface HubAppConfig {
   resiliencyPolicyArn?: string | Computed<string>;
   /** An array of ResourceMapping objects. */
   resourceMappings: HubApp_ResourceMappings[] | Computed<HubApp_ResourceMappings[]>;
-  /** A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -119,7 +105,6 @@ export interface HubAppAttrs {
   resiliencyPolicyArn: string;
   /** An array of ResourceMapping objects. */
   resourceMappings: HubApp_ResourceMappings[];
-  /** A map of key-value tags to attach to the AWS Resilience Hub application, used for identifying, organizing, and enabling attribute-based access control. (AI-inferred) */
   tags: unknown;
 }
 

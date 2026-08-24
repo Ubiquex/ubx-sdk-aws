@@ -9,9 +9,7 @@ type Samlprovider_PrivateKeyList struct {
 }
 
 type Samlprovider_Tags struct {
-	// The key of a tag attached to the IAM SAML provider, which can be used in IAM policies via the aws:ResourceTag condition key to enforce tag-based access control on the provider. (AI-inferred)
 	Key any
-	// The value component of a tag attached to the AWS IAM SAML provider, allowing you to label or categorize the provider for organizational and management purposes. (AI-inferred)
 	Value any
 }
 
@@ -30,14 +28,11 @@ type SamlproviderConfig struct {
 	AddPrivateKey any
 	// The encryption setting for the SAML provider
 	AssertionEncryptionMode any
-	// The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
 	Name any
 	PrivateKeyList any
 	// The Key ID of the private key to remove
 	RemovePrivateKey any
-	// The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred)
 	SamlMetadataDocument any
-	// A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred)
 	Tags any
 }
 
@@ -48,16 +43,13 @@ type SamlproviderAttrs struct {
 	Arn any
 	// The encryption setting for the SAML provider
 	AssertionEncryptionMode any
-	// The name of the SAML provider, which serves as the unique identifier in IAM and is appended to the provider ARN; if omitted, CloudFormation derives it from the resource's logical ID. (AI-inferred)
 	Name any
 	PrivateKeyList any
 	// The Key ID of the private key to remove
 	RemovePrivateKey any
-	// The SAML 2.0 metadata document (XML) that contains the identity provider's entity ID, signing certificate, and other configuration needed for IAM to trust the external SAML identity provider. (AI-inferred)
 	SamlMetadataDocument any
 	// The unique identifier assigned to the SAML provider
 	SamlProviderUuid any
-	// A list of key-value pairs that can be attached to the SAML provider to help identify, categorize, and manage the provider, and can be used in IAM policies for attribute-based access control. (AI-inferred)
 	Tags any
 }
 

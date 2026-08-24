@@ -8,12 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfiguration:
-    # The prompt template text used in the full AI prompt edit configuration, defining the instructions or content for the AI prompt. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Aiprompt_TemplateConfiguration:
-    # Configuration object for the text-based full AI prompt editing template, which contains the prompt text string used as the template content in AWS Wisdom AI prompts. (AI-inferred)
     text_full_aiprompt_edit_template_configuration: Any = None
 
 _Aiprompt_TemplateConfiguration_TextFullAipromptEditTemplateConfigurationFields = {
@@ -30,47 +28,29 @@ _Aiprompt_TemplateConfigurationFields = {
 
 @dataclasses.dataclass
 class AipromptConfig:
-    # The API format for the AI prompt, indicating whether the model invocation uses TEXT for a single-turn prompt or CHAT for a chat-based multi-turn conversation. (AI-inferred)
     api_format: Any = None
-    # The unique identifier of the Amazon Wisdom assistant with which this AI prompt is associated. (AI-inferred)
     assistant_id: Any = None
-    # The description field provides an optional, free-text summary of the AI prompt's intended purpose, which can be used for identification and display within Amazon Q in Connect (Wisdom). (AI-inferred)
     description: Any = None
-    # The model_id field specifies the identifier (such as an ARN) of the underlying model that the Wisdom AI prompt uses to generate responses. (AI-inferred)
     model_id: Any = None
-    # The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
     template_configuration: Any = None
-    # Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
     template_type: Any = None
     type: Any = None
 
 @dataclasses.dataclass
 class AipromptAttrs:
-    # This read-only attribute holds the Amazon Resource Name (ARN) that uniquely identifies the AWS Wisdom AI prompt resource. (AI-inferred)
     aiprompt_arn: Any = None
-    # The unique identifier that AWS Wisdom assigns to the AI prompt, returned by the service after the resource is created. (AI-inferred)
     aiprompt_id: Any = None
-    # The API format for the AI prompt, indicating whether the model invocation uses TEXT for a single-turn prompt or CHAT for a chat-based multi-turn conversation. (AI-inferred)
     api_format: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Wisdom assistant associated with this AI prompt, provided as a read-only computed attribute. (AI-inferred)
     assistant_arn: Any = None
-    # The unique identifier of the Amazon Wisdom assistant with which this AI prompt is associated. (AI-inferred)
     assistant_id: Any = None
-    # The description field provides an optional, free-text summary of the AI prompt's intended purpose, which can be used for identification and display within Amazon Q in Connect (Wisdom). (AI-inferred)
     description: Any = None
-    # The model_id field specifies the identifier (such as an ARN) of the underlying model that the Wisdom AI prompt uses to generate responses. (AI-inferred)
     model_id: Any = None
-    # The Unix epoch time, in seconds, when the AI prompt was last modified. (AI-inferred)
     modified_time_seconds: Any = None
-    # The user-friendly name assigned to the AI prompt, which is used to identify and reference the prompt within the Amazon Wisdom service and its console. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # Defines the prompt template settings for the AI prompt, allowing you to specify either a simple text prompt or a full prompt template with its corresponding type. (AI-inferred)
     template_configuration: Any = None
-    # Defines whether the AI prompt uses a plain text template or a chat-based template, determining the expected configuration format for the prompt. (AI-inferred)
     template_type: Any = None
     type: Any = None
 

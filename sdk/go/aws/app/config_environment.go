@@ -4,16 +4,12 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigEnvironment_Monitors struct {
-	// The ARN of the Amazon CloudWatch alarm that AppConfig monitors for this environment to detect potential issues during configuration deployments. (AI-inferred)
 	AlarmArn any
-	// The ARN of the IAM role that AWS AppConfig assumes to evaluate the CloudWatch alarm for this monitor during a deployment. (AI-inferred)
 	AlarmRoleArn any
 }
 
 type ConfigEnvironment_Tags struct {
-	// The key of a tag applied to the AWS AppConfig environment, used for resource organization and cost allocation. (AI-inferred)
 	Key any
-	// The value of a tag (key-value pair) attached to the AWS AppConfig environment, used for managing and identifying the resource (e.g., cost allocation or categorization). (AI-inferred)
 	Value any
 }
 

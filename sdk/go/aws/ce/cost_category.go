@@ -4,9 +4,7 @@ package ce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostCategory_Tags struct {
-	// The key portion of a tag applied to the AWS Cost Category. (AI-inferred)
 	Key any
-	// Specifies the value portion of a user-defined tag (key-value pair) applied to the AWS Cost Category, used to categorize and track cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -18,9 +16,7 @@ var CostCategory_TagsFields = ubx.FieldMap{
 type CostCategoryConfig struct {
 	// The default value for the cost category
 	DefaultValue any
-	// The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
 	Name any
-	// Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
 	RuleVersion any
 	// JSON array format of Expression in Billing and Cost Management API
 	Rules any
@@ -37,9 +33,7 @@ type CostCategoryAttrs struct {
 	DefaultValue any
 	// ISO 8601 date time with offset format
 	EffectiveStart any
-	// The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred)
 	Name any
-	// Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred)
 	RuleVersion any
 	// JSON array format of Expression in Billing and Cost Management API
 	Rules any

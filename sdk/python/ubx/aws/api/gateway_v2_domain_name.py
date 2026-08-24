@@ -8,17 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayV2DomainName_DomainNameConfigurations:
-    # The ARN of an AWS Certificate Manager certificate that is used to secure the custom domain name's TLS connections. (AI-inferred)
     certificate_arn: Any = None
-    # Specifies a customer-friendly name for the AWS Certificate Manager (ACM) certificate associated with the API Gateway v2 domain name configuration, used for identification purposes alongside the certificate ARN. (AI-inferred)
     certificate_name: Any = None
-    # Defines the endpoint type for the API Gateway domain name, either 'REGIONAL' or 'EDGE', determining how the domain name is routed within AWS. (AI-inferred)
     endpoint_type: Any = None
-    # Specifies the IP address type (IPv4 or dual-stack) used by the custom domain name's endpoint, controlling whether the domain resolves to IPv4-only or both IPv4 and IPv6 addresses. (AI-inferred)
     ip_address_type: Any = None
-    # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used to verify ownership of the custom domain name in the API Gateway v2 domain name configuration. (AI-inferred)
     ownership_verification_certificate_arn: Any = None
-    # Specifies the TLS security policy (TLS_1_0 or TLS_1_2) applied to the custom domain name's API Gateway HTTPS endpoint. (AI-inferred)
     security_policy: Any = None
 
 @dataclasses.dataclass
@@ -59,15 +53,12 @@ class GatewayV2DomainNameConfig:
 class GatewayV2DomainNameAttrs:
     # The custom domain name for your API in Amazon API Gateway. Uppercase letters and the underscore (``_``) character are not supported.
     domain_name: Any = None
-    # The Amazon Resource Name (ARN) of the API Gateway v2 domain name, used to uniquely identify this domain for IAM policies and resource references. (AI-inferred)
     domain_name_arn: Any = None
     # The domain name configurations.
     domain_name_configurations: Any = None
     # If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.
     mutual_tls_authentication: Any = None
-    # The regional domain name automatically assigned by API Gateway v2 to this domain name, serving as the regional endpoint target for routing traffic to the API. (AI-inferred)
     regional_domain_name: Any = None
-    # The Amazon Route 53 hosted zone ID associated with the regional endpoint of this API Gateway v2 domain name. (AI-inferred)
     regional_hosted_zone_id: Any = None
     # The routing mode API Gateway uses to route traffic to your APIs.
     routing_mode: Any = None

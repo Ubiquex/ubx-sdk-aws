@@ -13,7 +13,6 @@ class VisionProjectConfig:
 
 @dataclasses.dataclass
 class VisionProjectAttrs:
-    # The Amazon Resource Name (ARN) of the Lookout for Vision project, which uniquely identifies the project in AWS. (AI-inferred)
     arn: Any = None
     # The name of the Amazon Lookout for Vision project
     project_name: Any = None

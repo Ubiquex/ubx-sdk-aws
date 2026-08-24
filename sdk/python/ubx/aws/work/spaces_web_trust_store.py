@@ -18,20 +18,14 @@ _SpacesWebTrustStore_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesWebTrustStoreConfig:
-    # A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred)
     certificate_list: Any = None
-    # Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SpacesWebTrustStoreAttrs:
-    # The list of ARNs of the WorkSpaces Web portals that are associated with this trust store. (AI-inferred)
     associated_portal_arns: Any = None
-    # A list of PEM-encoded certificates to include in this WorkSpaces Web trust store, used to establish trust for web sessions. (AI-inferred)
     certificate_list: Any = None
-    # Specifies a list of tags (key-value pairs) to attach to this WorkSpaces Web trust store, supporting resource organization and cost allocation. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the WorkSpaces Web trust store. (AI-inferred)
     trust_store_arn: Any = None
 
 SpacesWebTrustStore = ubx.ResourceBinding(

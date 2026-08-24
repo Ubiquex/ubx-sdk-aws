@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnalyzerAnalyzer_AnalyzerConfiguration_InternalAccessConfiguration_InternalAccessAnalysisRule_Inclusions {
-  /** The AWS account IDs to include in the internal access analysis rule, defining the set of accounts whose access to resources is analyzed by the internal access analyzer. (AI-inferred) */
   accountIds?: string[] | Computed<string[]>;
-  /** The list of resource ARNs that define the inclusion scope for the internal access analysis rule, restricting the Access Analyzer's internal access analysis to the specified resources. (AI-inferred) */
   resourceArns?: string[] | Computed<string[]>;
-  /** The list of AWS resource types (such as AWS::S3::Bucket or AWS::IAM::Role) that are explicitly included in the internal access analysis rule, meaning that the internal access analyzer will only analyze these resources for access within your security perimeter. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
 }
 
@@ -26,9 +23,7 @@ export interface AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguratio
 }
 
 export interface AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions {
-  /** The list of AWS account IDs that this exclusion applies to, excluding those accounts' resources from being analyzed by the unused access analysis rule. (AI-inferred) */
   accountIds?: string[] | Computed<string[]>;
-  /** Specifies a list of resource tag key-value pairs that identify AWS resources to exclude from unused access analysis when the exclusion type is set to resource_tag. (AI-inferred) */
   resourceTags?: AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTags[][] | Computed<AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTags[][]>;
 }
 
@@ -52,22 +47,15 @@ export interface AnalyzerAnalyzer_AnalyzerConfiguration {
 }
 
 export interface AnalyzerAnalyzer_ArchiveRules_Filter {
-  /** Specifies a list of strings that the criterion's value must contain for a finding to match the archive rule and be archived. (AI-inferred) */
   contains?: string[] | Computed<string[]>;
-  /** In an archive rule filter, the eq field contains a list of string values that the rule's chosen property (e.g., the principal ARN or resource ID) must exactly match for a finding to be archived. (AI-inferred) */
   eq?: string[] | Computed<string[]>;
-  /** Indicates whether the archive rule filter matches when the specified criterion exists (true) or does not exist (false) on the analyzed resource, used to automatically archive findings based on presence or absence of a property. (AI-inferred) */
   exists?: boolean | Computed<boolean>;
-  /** Specifies a list of values that the filter criterion must not match, causing findings where the specified property does not equal any of these values to be archived under this archive rule. (AI-inferred) */
   neq?: string[] | Computed<string[]>;
-  /** The name of the resource property the archive rule filter applies to, such as 'aws.accountId', 'aws.region', or 'error', used to match against findings in AWS Access Analyzer. (AI-inferred) */
   property?: string | Computed<string>;
 }
 
 export interface AnalyzerAnalyzer_ArchiveRules {
-  /** Defines the filter conditions for an archive rule, specifying which findings to automatically archive by matching criteria such as resource, principal, or other finding attributes. (AI-inferred) */
   filter?: AnalyzerAnalyzer_ArchiveRules_Filter[] | Computed<AnalyzerAnalyzer_ArchiveRules_Filter[]>;
-  /** The name of an archive rule in IAM Access Analyzer, which identifies a rule that automatically archives findings matching its defined criteria. (AI-inferred) */
   ruleName?: string | Computed<string>;
 }
 
@@ -155,7 +143,6 @@ export interface AnalyzerAnalyzerConfig {
   analyzerConfiguration?: AnalyzerAnalyzer_AnalyzerConfiguration | Computed<AnalyzerAnalyzer_AnalyzerConfiguration>;
   /** Analyzer name */
   analyzerName?: string | Computed<string>;
-  /** Archive rules that automatically archive new findings matching the specified filter criteria before they are listed in the analyzer's active findings. (AI-inferred) */
   archiveRules?: AnalyzerAnalyzer_ArchiveRules[] | Computed<AnalyzerAnalyzer_ArchiveRules[]>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTags[] | Computed<AnalyzerAnalyzer_AnalyzerConfiguration_UnusedAccessConfiguration_AnalysisRule_Exclusions_ResourceTags[]>;
@@ -168,7 +155,6 @@ export interface AnalyzerAnalyzerAttrs {
   analyzerConfiguration: AnalyzerAnalyzer_AnalyzerConfiguration;
   /** Analyzer name */
   analyzerName: string;
-  /** Archive rules that automatically archive new findings matching the specified filter criteria before they are listed in the analyzer's active findings. (AI-inferred) */
   archiveRules: AnalyzerAnalyzer_ArchiveRules[];
   /** Amazon Resource Name (ARN) of the analyzer */
   arn: string;

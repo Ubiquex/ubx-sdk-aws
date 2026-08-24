@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReplicaKey_Tags {
-  /** The key of a tag attached to the AWS KMS replica key, used as part of a key-value pair to identify, categorize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag that can be assigned to the AWS KMS replica key for resource identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -29,13 +27,11 @@ export interface ReplicaKeyConfig {
 }
 
 export interface ReplicaKeyAttrs {
-  /** The Amazon Resource Name (ARN) of the replica key. (AI-inferred) */
   arn: string;
   /** A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use. */
   description: string;
   /** Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations. */
   enabled: boolean;
-  /** The unique identifier of the replica KMS key, returned as a 32-character UUID string, which can be used to reference the key in IAM policies, aliases, and encryption operations. (AI-inferred) */
   keyId: string;
   /** The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules. */
   keyPolicy: unknown;

@@ -4,94 +4,63 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_CapacityUnits struct {
-	// The number of query capacity units allocated to the index, which determines the query throughput in queries per second that the index can support. (AI-inferred)
 	QueryCapacityUnits any
-	// Specifies the storage capacity (in gigabytes) provisioned for the Amazon Kendra index, determining how much document content and metadata can be stored. (AI-inferred)
 	StorageCapacityUnits any
 }
 
 type Index_DocumentMetadataConfigurations_Relevance_ValueImportanceItems struct {
-	// The specific metadata field value (e.g., a string like 'Premium') for which the associated importance score adjusts relevance for documents containing that exact value. (AI-inferred)
 	Key any
-	// The numeric importance weight (from 1 to 10) assigned to a specific value of a metadata field, which determines how much that value influences search relevance for the Kendra index, with 5 as the neutral baseline. (AI-inferred)
 	Value any
 }
 
 type Index_DocumentMetadataConfigurations_Relevance struct {
-	// Sets the ISO 8601 duration (e.g., 'P30D') during which a document is considered recent for freshness-based relevance scoring within this metadata field's relevance configuration. (AI-inferred)
 	Duration any
-	// Determines whether the last-updated timestamp of this metadata field is used as a freshness signal to boost recently updated documents in Kendra search ranking. (AI-inferred)
 	Freshness any
-	// Determines the weighting of this custom metadata field in Kendra's relevance scoring, where higher values increase the impact of matches on this field on search result rankings. (AI-inferred)
 	Importance any
-	// Determines whether the values of this metadata field are ranked in ascending or descending order when contributing to a document's relevance score. (AI-inferred)
 	RankOrder any
-	// Specifies a list of importance weights for specific values of this metadata field, used to adjust the relevance ranking of documents based on the presence of those field values. (AI-inferred)
 	ValueImportanceItems any
 }
 
 type Index_DocumentMetadataConfigurations_Search struct {
-	// Indicates whether the metadata field's values can be displayed in the search results returned by Amazon Kendra. (AI-inferred)
 	Displayable any
-	// Indicates whether the metadata field can be used to create facets in Kendra search results, allowing users to filter and narrow down search results by that field. (AI-inferred)
 	Facetable any
-	// Indicates whether this document metadata field can be searched (i.e., used in query text) within the Amazon Kendra index. (AI-inferred)
 	Searchable any
-	// Indicates whether this metadata field can be used to sort search results in the Kendra index. (AI-inferred)
 	Sortable any
 }
 
 type Index_DocumentMetadataConfigurations struct {
-	// The name of a custom metadata field for documents in the index, as defined in the DocumentMetadataConfiguration property. (AI-inferred)
 	Name any
-	// Specifies relevance settings, such as importance and freshness, that control how this metadata field influences search result ranking in the Kendra index. (AI-inferred)
 	Relevance any
-	// Specifies search-related settings for the metadata field, including whether it is facetable, searchable, displayable, and sortable in Amazon Kendra search results. (AI-inferred)
 	Search any
-	// Specifies the data type of the document metadata field (e.g., STRING, STRING_LIST, LONG_VALUE, DATE_VALUE), which determines how the field's values are indexed and used for filtering and search. (AI-inferred)
 	Type any
 }
 
 type Index_ServerSideEncryptionConfiguration struct {
-	// Specifies the AWS KMS key ID (ARN) used to encrypt the index data, enabling customer-managed key encryption for the Amazon Kendra index. (AI-inferred)
 	KmsKeyId any
 }
 
 type Index_Tags struct {
-	// The key of a tag assigned to the Amazon Kendra index, used to categorize and manage the index for cost allocation, access control, and resource organization. (AI-inferred)
 	Key any
-	// The value part of a tag attached to the Amazon Kendra index, used for metadata, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
 type Index_UserTokenConfigurations_JsonTokenTypeConfiguration struct {
-	// The name of the group attribute field in the JSON token that identifies the user's group memberships for access control. (AI-inferred)
 	GroupAttributeField any
-	// Specifies the name of the JSON field that contains the user name, used by the index's JSON token configuration for access control. (AI-inferred)
 	UserNameAttributeField any
 }
 
 type Index_UserTokenConfigurations_JwtTokenTypeConfiguration struct {
-	// Specifies a regular expression pattern used to extract the user name from the JWT token's claim for mapping to a Kendra user identity in access control. (AI-inferred)
 	ClaimRegex any
-	// The name of the JWT token attribute that contains the list of group names for the user, used by Amazon Kendra to filter search results based on group membership. (AI-inferred)
 	GroupAttributeField any
-	// The issuer claim (iss) from the JWT token that identifies the principal that issued the token, used by Kendra to validate the token's origin. (AI-inferred)
 	Issuer any
-	// Specifies where the JWT signing key is stored, either in a URL or in AWS Secrets Manager. (AI-inferred)
 	KeyLocation any
-	// The ARN of an AWS Secrets Manager secret that stores the JWT signing keys used to validate user tokens for Kendra index access control. (AI-inferred)
 	SecretManagerArn any
-	// The URL of the identity provider (IdP) that issues the JWT tokens used for user access control in the Kendra index. (AI-inferred)
 	Url any
-	// The name of the attribute in the JWT token that contains the user name for access control. (AI-inferred)
 	UserNameAttributeField any
 }
 
 type Index_UserTokenConfigurations struct {
-	// Specifies the JSON token type configuration for user token authentication, defining which attributes in the JSON token map to the user name and group fields for access control in Amazon Kendra. (AI-inferred)
 	JsonTokenTypeConfiguration any
-	// Defines the JWT token type configuration for Kendra index user access control, including how to retrieve the JWT token from a secret or URL, and which user and group attributes to use for access control. (AI-inferred)
 	JwtTokenTypeConfiguration any
 }
 
@@ -177,11 +146,8 @@ var Index_UserTokenConfigurationsFields = ubx.FieldMap{
 	}
 
 type IndexConfig struct {
-	// Specifies the query and storage capacity units that configure the throughput and storage capacity of the Amazon Kendra index. (AI-inferred)
 	CapacityUnits any
-	// Provides a description of the Amazon Kendra index, e.g., to indicate its intended use or contents. (AI-inferred)
 	Description any
-	// Configures the list of metadata fields that can be attached to documents in the Kendra index, defining each field's name, data type, and search properties such as faceting, display, and sorting. (AI-inferred)
 	DocumentMetadataConfigurations any
 	// Edition of index
 	Edition any
@@ -189,24 +155,17 @@ type IndexConfig struct {
 	Name any
 	// Role Arn
 	RoleArn any
-	// Specifies the AWS KMS key used to encrypt the index for server-side encryption. (AI-inferred)
 	ServerSideEncryptionConfiguration any
 	// List of tags
 	Tags any
-	// Determines whether user context filtering is applied to search results, using either attribute-based filtering or user token-based access control. (AI-inferred)
 	UserContextPolicy any
-	// Configures token-based user context filtering for the index by specifying either a JSON token or JWT token type and its associated parameters. (AI-inferred)
 	UserTokenConfigurations any
 }
 
 type IndexAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Kendra index within AWS. (AI-inferred)
 	Arn any
-	// Specifies the query and storage capacity units that configure the throughput and storage capacity of the Amazon Kendra index. (AI-inferred)
 	CapacityUnits any
-	// Provides a description of the Amazon Kendra index, e.g., to indicate its intended use or contents. (AI-inferred)
 	Description any
-	// Configures the list of metadata fields that can be attached to documents in the Kendra index, defining each field's name, data type, and search properties such as faceting, display, and sorting. (AI-inferred)
 	DocumentMetadataConfigurations any
 	// Edition of index
 	Edition any
@@ -216,13 +175,10 @@ type IndexAttrs struct {
 	Name any
 	// Role Arn
 	RoleArn any
-	// Specifies the AWS KMS key used to encrypt the index for server-side encryption. (AI-inferred)
 	ServerSideEncryptionConfiguration any
 	// List of tags
 	Tags any
-	// Determines whether user context filtering is applied to search results, using either attribute-based filtering or user token-based access control. (AI-inferred)
 	UserContextPolicy any
-	// Configures token-based user context filtering for the index by specifying either a JSON token or JWT token type and its associated parameters. (AI-inferred)
 	UserTokenConfigurations any
 }
 

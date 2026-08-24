@@ -2,99 +2,69 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValues {
-  /** Specifies the string value for a target field that is set on a case when the AssignSla rule action executes, as part of the case SLA configuration's target field values. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface Rule_Actions_AssignSlaActions_CaseSlaConfiguration {
-  /** Specifies the unique identifier of the case field that holds the SLA target date/time value when executing the assign SLA action on a Connect case. (AI-inferred) */
   fieldId?: string | Computed<string>;
-  /** The name of the Service Level Agreement (SLA) to assign to the case when this rule's assign SLA action is executed. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies a list of case field values (field identifier and value pairs) that are applied to the case when the SLA assignment action is triggered. (AI-inferred) */
   targetFieldValues?: Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValues[] | Computed<Rule_Actions_AssignSlaActions_CaseSlaConfiguration_TargetFieldValues[]>;
-  /** The number of minutes that defines the target service level agreement (SLA) for the case when the assign-sla action is invoked. (AI-inferred) */
   targetSlaMinutes?: number | Computed<number>;
-  /** This field specifies the time unit for the case SLA's duration in the assigned SLA action, using values such as `HOURS` or `DAYS`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Rule_Actions_AssignSlaActions {
-  /** This object defines the Service Level Agreement (SLA) configuration that is assigned to a case when the Assign SLA action is executed in the Amazon Connect rule. (AI-inferred) */
   caseSlaConfiguration?: Rule_Actions_AssignSlaActions_CaseSlaConfiguration | Computed<Rule_Actions_AssignSlaActions_CaseSlaConfiguration>;
-  /** Determines whether the service level agreement (SLA) is assigned as a custom percentage or based on the queue's existing SLA configuration. (AI-inferred) */
   slaAssignmentType?: string | Computed<string>;
 }
 
 export interface Rule_Actions_CreateCaseActions_Fields_Value {
-  /** Specifies the boolean value to assign to a case field in the CreateCase action of an Amazon Connect rule. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
-  /** This field holds the numeric value of a case field when creating a case through the create case action of an Amazon Connect rule, used when the field's data type is a number (double). (AI-inferred) */
   doubleValue?: number | Computed<number>;
-  /** Set the empty_value block inside a create-case action field's value to signal that the new case's corresponding field should be created with a null/empty value. (AI-inferred) */
   emptyValue?: unknown | Computed<unknown>;
-  /** The string value to assign to a case field when a Create Case action runs in an Amazon Connect rule. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface Rule_Actions_CreateCaseActions_Fields {
-  /** The unique identifier of the Amazon Connect Cases field that the create-case action sets to the specified value. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The value assigned to the case field (keyed by the sibling 'key' property) in an Amazon Connect Cases CreateCase action, which can be a static string or a dynamic contact attribute reference like {{Contact.Attributes.attributeName}}. (AI-inferred) */
   value?: Rule_Actions_CreateCaseActions_Fields_Value | Computed<Rule_Actions_CreateCaseActions_Fields_Value>;
 }
 
 export interface Rule_Actions_CreateCaseActions {
-  /** Defines the case fields and their assigned values for the case created by this CreateCase action, using each field's identifier and value. (AI-inferred) */
   fields?: Rule_Actions_CreateCaseActions_Fields[] | Computed<Rule_Actions_CreateCaseActions_Fields[]>;
-  /** The ID of the Amazon Connect Cases template that defines the structure of the case created by this rule action. (AI-inferred) */
   templateId?: string | Computed<string>;
 }
 
 export interface Rule_Actions_EventBridgeActions {
-  /** The unique name for this EventBridge action within the Connect rule, used to identify the action when multiple actions are configured. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Rule_Actions_SendNotificationActions_Exclusion {
-  /** List of Amazon Connect user ARNs to exclude from receiving the notification. (AI-inferred) */
   userArns?: string[] | Computed<string[]>;
-  /** A list of key/value user tag pairs that define an exclusion filter; Amazon Connect excludes users with any of these tags from receiving the notification sent by this SEND_NOTIFICATION action. (AI-inferred) */
   userTags?: unknown | Computed<unknown>;
 }
 
 export interface Rule_Actions_SendNotificationActions {
-  /** The body text of the notification message sent when the rule triggers, such as the content of an email or chat message for the recipient. (AI-inferred) */
   content?: string | Computed<string>;
-  /** Specifies the MIME type of the notification content (for example, 'text/plain' or 'text/html'), determining how the message body is formatted for recipients of the notification. (AI-inferred) */
   contentType?: string | Computed<string>;
-  /** Specifies the delivery channel for the notification, such as EMAIL or SMS, in a send-notification action of an AWS Connect rule. (AI-inferred) */
   deliveryMethod?: string | Computed<string>;
   exclusion?: Rule_Actions_SendNotificationActions_Exclusion | Computed<Rule_Actions_SendNotificationActions_Exclusion>;
-  /** Specifies the recipient of the notification sent by this send notification action, allowing you to target users, queues, or a contact in the Amazon Connect contact flow. (AI-inferred) */
   recipient?: Rule_Actions_SendNotificationActions_Exclusion | Computed<Rule_Actions_SendNotificationActions_Exclusion>;
-  /** The subject line for the email notification sent by this action, used when the delivery method is EMAIL. (AI-inferred) */
   subject?: string | Computed<string>;
 }
 
 export interface Rule_Actions_SubmitAutoEvaluationActions {
-  /** The ARN of the Amazon Connect evaluation form that is automatically submitted for the contact when this rule action triggers. (AI-inferred) */
   evaluationFormArn?: string | Computed<string>;
 }
 
 export interface Rule_Actions_TaskActions {
-  /** The Amazon Resource Name (ARN) of the Amazon Connect contact flow that the task action invokes to create and initiate the task. (AI-inferred) */
   contactFlowArn?: string | Computed<string>;
-  /** The description of the task to create when this rule is triggered, providing context for the task. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the task that Amazon Connect creates when this rule's task action is invoked. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The references field defines a map of key-value pairs attached to the outbound task action created by the rule, supplying task-specific contextual data (e.g., customer identifiers or case numbers) that the contact flow and agents can utilize. (AI-inferred) */
   references?: unknown | Computed<unknown>;
 }
 
 export interface Rule_Actions_UpdateCaseActions {
-  /** Specifies the list of case fields, each with a field ID and value, to update when the rule action triggers, allowing dynamic updates to Amazon Connect Cases data. (AI-inferred) */
   fields?: Rule_Actions_CreateCaseActions_Fields[] | Computed<Rule_Actions_CreateCaseActions_Fields[]>;
 }
 
@@ -120,9 +90,7 @@ export interface Rule_Actions {
 }
 
 export interface Rule_Tags {
-  /** The key of a user-defined tag that can be attached to an Amazon Connect rule to organize and manage the rule within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag applied to the Amazon Connect rule, which you can use to organize, identify, and manage the rule alongside other AWS resources. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -306,7 +274,6 @@ export interface RuleAttrs {
   name: string;
   /** The publish status of the rule. *Allowed values*: ``DRAFT`` | ``PUBLISHED`` */
   publishStatus: string;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect rule, uniquely identifying it within your AWS account. (AI-inferred) */
   ruleArn: string;
   /** The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }. */
   tags: Rule_Tags[];

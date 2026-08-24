@@ -4,18 +4,13 @@ package pcaconnector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdDirectoryRegistrationConfig struct {
-	// The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred)
 	DirectoryId any
-	// Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 
 type AdDirectoryRegistrationAttrs struct {
-	// The identifier of the AWS Managed Microsoft Active Directory that is registered with the Private CA Connector for Active Directory. (AI-inferred)
 	DirectoryId any
-	// The Amazon Resource Name (ARN) that uniquely identifies this directory registration within AWS Private CA Connector for Active Directory. (AI-inferred)
 	DirectoryRegistrationArn any
-	// Assigns metadata tags to the PCa Connector for AD directory registration, which can be used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 

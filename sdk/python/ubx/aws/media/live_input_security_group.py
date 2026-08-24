@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveInputSecurityGroup_WhitelistRules:
-    # The CIDR block that is allowed to send input requests to the MediaLive input security group. (AI-inferred)
     cidr: Any = None
 
 _LiveInputSecurityGroup_WhitelistRulesFields = {
@@ -18,17 +17,13 @@ _LiveInputSecurityGroup_WhitelistRulesFields = {
 @dataclasses.dataclass
 class LiveInputSecurityGroupConfig:
     tags: Any = None
-    # Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
     whitelist_rules: Any = None
 
 @dataclasses.dataclass
 class LiveInputSecurityGroupAttrs:
-    # The Amazon Resource Name (ARN) of the MediaLive input security group. (AI-inferred)
     arn: Any = None
-    # The unique identifier of the AWS Elemental MediaLive input security group, returned as a string when the resource is created. (AI-inferred)
     id: Any = None
     tags: Any = None
-    # Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred)
     whitelist_rules: Any = None
 
 LiveInputSecurityGroup = ubx.ResourceBinding(

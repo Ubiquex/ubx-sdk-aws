@@ -9,16 +9,12 @@ export interface User_LoginProfile {
 }
 
 export interface User_Policies {
-  /** The JSON-encoded IAM policy document that defines the permissions for this inline policy attached to the IAM user. (AI-inferred) */
   policyDocument?: unknown | Computed<unknown>;
-  /** The name of an inline policy attached to the IAM user, uniquely identifying the policy within the user's set of inline policies. (AI-inferred) */
   policyName?: string | Computed<string>;
 }
 
 export interface User_Tags {
-  /** The key of a tag attached to an IAM user, which can be used in IAM policies to enforce tag-based access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a key-value tag attached to the IAM user, used for metadata management such as cost allocation or attribute-based access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -57,7 +53,6 @@ export interface UserConfig {
 }
 
 export interface UserAttrs {
-  /** The ARN is a unique identifier for the IAM user in the format arn:aws:iam::account-id:user/username, used for referencing the user in IAM policies. (AI-inferred) */
   arn: string;
   /** A list of group names to which you want to add the user. */
   groups: string[];

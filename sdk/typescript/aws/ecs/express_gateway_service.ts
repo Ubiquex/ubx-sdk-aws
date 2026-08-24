@@ -8,31 +8,25 @@ export interface ExpressGatewayService_ActiveConfigurations_IngressPaths {
 
 export interface ExpressGatewayService_ActiveConfigurations_NetworkConfiguration {
   securityGroups?: string[] | Computed<string[]>;
-  /** Specifies the VPC subnets to use for the network configuration of an active configuration, controlling where the ECS Express Gateway service places its elastic network interfaces. (AI-inferred) */
   subnets?: string[] | Computed<string[]>;
 }
 
 export interface ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfiguration {
-  /** The name of the CloudWatch Logs log group where container logs are delivered when using the awslogs log driver. (AI-inferred) */
   logGroup?: string | Computed<string>;
-  /** For the awslogs log driver, this prefix is prepended to the container name to define the CloudWatch log stream name, enabling organized log grouping. (AI-inferred) */
   logStreamPrefix?: string | Computed<string>;
 }
 
 export interface ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment {
   name?: string | Computed<string>;
-  /** Specifies the string value for an environment variable set on the primary container in the active ECS Express Gateway service configuration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials {
-  /** Specifies the ARN or name of the AWS Secrets Manager secret or Systems Manager parameter that stores the private repository authentication credentials for the primary container. (AI-inferred) */
   credentialsParameter?: string | Computed<string>;
 }
 
 export interface ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets {
   name?: string | Computed<string>;
-  /** The ARN or full name (in the form of a Systems Manager parameter name or Secrets Manager secret ARN) of the external source that stores the secret value to be injected into the container as an environment variable or referenced in the task definition. (AI-inferred) */
   valueFrom?: string | Computed<string>;
 }
 
@@ -42,7 +36,6 @@ export interface ExpressGatewayService_ActiveConfigurations_PrimaryContainer {
   containerPort?: number | Computed<number>;
   environment?: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment[] | Computed<ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment[]>;
   image?: string | Computed<string>;
-  /** Specifies the credentials used to authenticate to a private container registry, typically containing a credentialsParameter ARN that references a Secrets Manager secret or SSM parameter. (AI-inferred) */
   repositoryCredentials?: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials | Computed<ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials>;
   secrets?: ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets[] | Computed<ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets[]>;
 }
@@ -64,7 +57,6 @@ export interface ExpressGatewayService_ActiveConfigurations {
   networkConfiguration?: ExpressGatewayService_ActiveConfigurations_NetworkConfiguration | Computed<ExpressGatewayService_ActiveConfigurations_NetworkConfiguration>;
   primaryContainer?: ExpressGatewayService_ActiveConfigurations_PrimaryContainer | Computed<ExpressGatewayService_ActiveConfigurations_PrimaryContainer>;
   scalingTarget?: ExpressGatewayService_ActiveConfigurations_ScalingTarget | Computed<ExpressGatewayService_ActiveConfigurations_ScalingTarget>;
-  /** Uniquely identifies the version of the service configuration that is among the currently active configurations for the ECS Express Gateway service. (AI-inferred) */
   serviceRevisionArn?: string | Computed<string>;
   taskDefinitionArn?: string | Computed<string>;
   taskRoleArn?: string | Computed<string>;

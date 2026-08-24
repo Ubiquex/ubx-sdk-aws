@@ -19,11 +19,9 @@ _GlobalResolverDnsView_TagsFields = {
 @dataclasses.dataclass
 class GlobalResolverDnsViewConfig:
     client_token: Any = None
-    # An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
     description: Any = None
     dnssec_validation: Any = None
     edns_client_subnet: Any = None
-    # Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
     firewall_rules_fail_open: Any = None
     global_resolver_id: Any = None
     name: Any = None
@@ -34,18 +32,15 @@ class GlobalResolverDnsViewAttrs:
     arn: Any = None
     client_token: Any = None
     created_at: Any = None
-    # An optional human-readable description that you provide for the DNS view to help manage and identify it. (AI-inferred)
     description: Any = None
     dns_view_id: Any = None
     dnssec_validation: Any = None
     edns_client_subnet: Any = None
-    # Determines whether DNS queries are allowed to pass through (fail open) or are rejected (fail closed) when the Route 53 Resolver DNS Firewall cannot evaluate the configured firewall rules due to an internal error. (AI-inferred)
     firewall_rules_fail_open: Any = None
     global_resolver_id: Any = None
     name: Any = None
     status: Any = None
     tags: Any = None
-    # A read-only timestamp that records when the global resolver DNS view was last modified. (AI-inferred)
     updated_at: Any = None
 
 GlobalResolverDnsView = ubx.ResourceBinding(

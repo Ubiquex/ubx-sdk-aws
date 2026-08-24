@@ -8,68 +8,47 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction:
-    # Specifies whether to block or allow the authentication attempt when the risk level for account takeover is high, accepting values such as 'BLOCK' or 'NO_ACTION'. (AI-inferred)
     event_action: Any = None
-    # Whether Amazon Cognito sends a notification to the user when the high-risk account takeover action is triggered. (AI-inferred)
     notify: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions:
-    # Defines the action to take for high-risk sign-in attempts, including whether to send notifications and whether to block the sign-in for the user pool. (AI-inferred)
     high_action: Any = None
-    # Configures how Amazon Cognito responds to low-risk account takeover events, specifying the event action (such as allowing or blocking) and whether to send notification alerts. (AI-inferred)
     low_action: Any = None
-    # Determines the AWS Cognito action (block, require MFA, or no action) and whether to notify users when the account takeover risk level is medium. (AI-inferred)
     medium_action: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail:
-    # The HTML body of the email notification sent to users when their account is blocked due to account takeover risk. (AI-inferred)
     html_body: Any = None
-    # The subject line of the email notification sent to the user when their account is blocked due to a suspected account takeover. (AI-inferred)
     subject: Any = None
-    # The body text of the email notification sent to users when an account takeover attempt is blocked, as part of the account takeover risk configuration's notify settings. (AI-inferred)
     text_body: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration:
-    # Configuration for the email notification sent when account takeover risk triggers a block action, defining the email subject and body for that notification. (AI-inferred)
     block_email: Any = None
-    # Sets the sender email address ('From' header) for the account-takeover risk notification emails, which must be an Amazon SES verified address or belong to your Amazon Cognito domain. (AI-inferred)
     from_: Any = None
-    # Configures the email notification sent to the user when adaptive authentication requires multi-factor authentication, specifying the email subject and HTML/plain-text body via the NotifyEmailType structure. (AI-inferred)
     mfa_email: Any = None
-    # Configures the email message that is sent to users when no action is taken on an account takeover risk assessment. (AI-inferred)
     no_action_email: Any = None
-    # Specifies the email address that Cognito uses as the reply-to address in the account takeover risk notification emails. (AI-inferred)
     reply_to: Any = None
-    # The ARN of the Amazon SES identity or Amazon SNS topic used as the sender source for account takeover notifications in the Cognito user pool risk configuration. (AI-inferred)
     source_arn: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration:
-    # Defines the response actions (notify and event action) to take for high, medium, and low risk sign-in attempts in the account takeover risk configuration. (AI-inferred)
     actions: Any = None
-    # This object specifies the notification settings for account takeover risk responses, including the source email address, reply-to address, and the email templates (NoActionEmail, MfaEmail, BlockEmail) sent to users when those risk actions are triggered. (AI-inferred)
     notify_configuration: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_Actions:
-    # Specifies the action to take when a compromised credentials risk is detected, with allowed values such as BLOCK or NO_ACTION. (AI-inferred)
     event_action: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration:
-    # Specifies the action to take when compromised credentials are detected, such as blocking the sign-in or allowing it with no action. (AI-inferred)
     actions: Any = None
-    # Specifies the event types (such as SIGN_IN, PASSWORD_CHANGE, or SIGN_UP) to which the compromised credentials risk configuration applies. (AI-inferred)
     event_filter: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration:
-    # Specifies a list of IP address ranges in CIDR notation that are always blocked for authentication in AWS Cognito, regardless of the assessed risk level. (AI-inferred)
     blocked_iprange_list: Any = None
-    # Specifies the list of IP address ranges for which Amazon Cognito will skip (exempt from) the risk-based authentication rules for this user pool client. (AI-inferred)
     skipped_iprange_list: Any = None
 
 _UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighActionFields = {
@@ -155,28 +134,18 @@ _UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationFields = {
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachmentConfig:
-    # Configures the account takeover risk configuration for a user pool, including the actions (e.g., block, MFA) to take for low, medium, and high risk events and the notification settings. (AI-inferred)
     account_takeover_risk_configuration: Any = None
-    # The app client ID of the Amazon Cognito user pool client to which this risk configuration is attached. (AI-inferred)
     client_id: Any = None
-    # This object configures AWS Cognito's compromised credentials risk detection settings, specifying the event types to monitor (e.g., sign-in, sign-up) and the automatic action (block or no action) to take when a compromised credential event is detected. (AI-inferred)
     compromised_credentials_risk_configuration: Any = None
-    # Configures risk exceptions by providing lists of IP address ranges that are either always blocked or always allowed to bypass risk-based authentication checks for the user pool client. (AI-inferred)
     risk_exception_configuration: Any = None
-    # The unique ID of the Amazon Cognito user pool to which this risk configuration is attached. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolRiskConfigurationAttachmentAttrs:
-    # Configures the account takeover risk configuration for a user pool, including the actions (e.g., block, MFA) to take for low, medium, and high risk events and the notification settings. (AI-inferred)
     account_takeover_risk_configuration: Any = None
-    # The app client ID of the Amazon Cognito user pool client to which this risk configuration is attached. (AI-inferred)
     client_id: Any = None
-    # This object configures AWS Cognito's compromised credentials risk detection settings, specifying the event types to monitor (e.g., sign-in, sign-up) and the automatic action (block or no action) to take when a compromised credential event is detected. (AI-inferred)
     compromised_credentials_risk_configuration: Any = None
-    # Configures risk exceptions by providing lists of IP address ranges that are either always blocked or always allowed to bypass risk-based authentication checks for the user pool client. (AI-inferred)
     risk_exception_configuration: Any = None
-    # The unique ID of the Amazon Cognito user pool to which this risk configuration is attached. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolRiskConfigurationAttachment = ubx.ResourceBinding(

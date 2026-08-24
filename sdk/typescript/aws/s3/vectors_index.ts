@@ -14,7 +14,6 @@ export interface VectorsIndex_MetadataConfiguration {
 }
 
 export interface VectorsIndex_Tags {
-  /** Defines the user-supplied key of a tag attached to the S3 Vectors Index resource, which is used to organize and identify the index through metadata and cost-allocation tags. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

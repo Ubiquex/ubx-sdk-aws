@@ -11,36 +11,25 @@ type ComputeNodeGroup_CustomLaunchTemplate struct {
 }
 
 type ComputeNodeGroup_ErrorInfo struct {
-	// A machine-readable code that identifies the specific error encountered while AWS PCS was provisioning or managing this compute node group. (AI-inferred)
 	Code any
-	// The message text that describes the error condition affecting the compute node group. (AI-inferred)
 	Message any
 }
 
 type ComputeNodeGroup_InstanceConfigs struct {
-	// Specifies the EC2 instance type (for example, `c5.large`) that the compute nodes in this instance configuration will use within the compute node group. (AI-inferred)
 	InstanceType any
 }
 
 type ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrapped_ScriptSource struct {
-	// The checksum (e.g., SHA256) of the bootstrap script content in the script source, used to verify the integrity of the script during node bootstrapping in AWS PCS compute node groups. (AI-inferred)
 	Checksum any
-	// The version ID of the S3 object that supplies the bootstrap script for the node bootstrapped lifecycle stage, used to pin to a specific version of the script. (AI-inferred)
 	S3VersionId any
-	// The Amazon S3 URI of the script that AWS PCS runs during the node bootstrapped stage of the compute node group's lifecycle actions. (AI-inferred)
 	ScriptLocation any
 }
 
 type ComputeNodeGroup_NodeLifecycleActions_Stages_NodeBootstrapped struct {
-	// The list of argument strings passed to the custom node lifecycle action script that runs when a compute node in the group completes its bootstrap process, allowing the bootstrap script to be parameterized with specific values. (AI-inferred)
 	Arguments any
-	// The execution policy for the node bootstrapped lifecycle stage, determining whether the compute node continues or fails if the bootstrap script exits with a non-zero code. (AI-inferred)
 	ExecutionPolicy any
-	// Specifies the name of the node bootstrapped stage in the compute node group's lifecycle actions configuration, identifying this lifecycle stage uniquely. (AI-inferred)
 	Name any
-	// The script or command that AWS PCS runs on a compute node if the node bootstrapping lifecycle stage fails, allowing custom error handling such as logging or node cleanup in the compute node group. (AI-inferred)
 	OnError any
-	// Specifies the source (such as an S3 location or URI) from which the bootstrap script is retrieved and executed on a compute node when it reaches the node bootstrapped lifecycle stage. (AI-inferred)
 	ScriptSource any
 }
 
@@ -66,9 +55,7 @@ type ComputeNodeGroup_ScalingConfiguration struct {
 }
 
 type ComputeNodeGroup_SlurmConfiguration_SlurmCustomSettings struct {
-	// The name of a Slurm configuration parameter to apply to the compute node group's slurm_custom_settings. (AI-inferred)
 	ParameterName any
-	// The value associated with a custom Slurm configuration parameter key for the compute node group, which overrides or augments the default Slurm configuration on the cluster. (AI-inferred)
 	ParameterValue any
 }
 

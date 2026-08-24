@@ -2,30 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Rotation_Recurrence_MonthlySettings {
-  /** Specifies the day of the month on which the monthly rotation shift begins, used in monthly recurrence settings for an AWS Systems Manager Incident Manager contacts rotation. (AI-inferred) */
   dayOfMonth?: number | Computed<number>;
-  /** Specifies the time of day (in HH:MM format) when the shift handoff occurs for the monthly rotation schedule, within the monthly recurrence settings. (AI-inferred) */
   handOffTime?: string | Computed<string>;
 }
 
 export interface Rotation_Recurrence_ShiftCoverages_CoverageTimes {
-  /** The time (in HH:MM format) when the shift coverage window ends for the associated day in the rotation recurrence. (AI-inferred) */
   endTime?: string | Computed<string>;
-  /** The start time of the daily coverage window, in 24-hour HH:MM format, that defines when this shift's on-call coverage begins. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
 export interface Rotation_Recurrence_ShiftCoverages {
-  /** Specifies the list of time ranges (each with start and end time) during which on-call coverage is active for a particular day of the week in the rotation's shift coverage schedule. (AI-inferred) */
   coverageTimes?: Rotation_Recurrence_ShiftCoverages_CoverageTimes[] | Computed<Rotation_Recurrence_ShiftCoverages_CoverageTimes[]>;
-  /** The day of the week (e.g., Monday, Tuesday) that this shift coverage applies to within the rotation's recurrence schedule. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
 }
 
 export interface Rotation_Recurrence_WeeklySettings {
-  /** Specifies the day of the week (using a three-letter abbreviation such as MON, TUE, WED, THU, FRI, SAT, or SUN) on which the rotation's weekly on-call shift occurs. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
-  /** The time of day, in 24-hour HH:MM format, when the on-call shift hands off to the next shift on the scheduled day of the week for the rotation recurrence. (AI-inferred) */
   handOffTime?: string | Computed<string>;
 }
 
@@ -46,7 +38,6 @@ export interface Rotation_Recurrence {
 
 export interface Rotation_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the SSM Contacts rotation, used to store metadata such as ownership, environment, or cost center for organizing and managing the rotation resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -109,7 +100,6 @@ export interface RotationConfig {
   recurrence: Rotation_Recurrence | Computed<Rotation_Recurrence>;
   /** Start time of the first shift of Oncall Schedule */
   startTime: string | Computed<string>;
-  /** Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred) */
   tags?: Rotation_Tags[] | Computed<Rotation_Tags[]>;
   /** TimeZone Identifier for the Oncall Schedule */
   timeZoneId: string | Computed<string>;
@@ -126,7 +116,6 @@ export interface RotationAttrs {
   recurrence: Rotation_Recurrence;
   /** Start time of the first shift of Oncall Schedule */
   startTime: string;
-  /** Specifies the tags to attach to the rotation, where each tag is an object containing a Key and Value, used to identify, organize, and manage the rotation resource. (AI-inferred) */
   tags: Rotation_Tags[];
   /** TimeZone Identifier for the Oncall Schedule */
   timeZoneId: string;

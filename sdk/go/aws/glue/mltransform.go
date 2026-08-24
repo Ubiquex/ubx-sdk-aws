@@ -4,13 +4,9 @@ package glue
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Mltransform_InputRecordTables_GlueTables struct {
-	// The identifier of the AWS Glue Data Catalog in which the specified input table resides; if omitted, the current AWS account's catalog ID is used. (AI-inferred)
 	CatalogId any
-	// The name of an AWS Glue connection used to access the source table, required when the table resides in an external data store such as JDBC rather than being purely stored in the Glue Data Catalog. (AI-inferred)
 	ConnectionName any
-	// The name of the AWS Glue Data Catalog database that contains the table used as an input record source for the machine learning transform. (AI-inferred)
 	DatabaseName any
-	// The name of the Glue Data Catalog table that supplies the input records for the ML transform. (AI-inferred)
 	TableName any
 }
 

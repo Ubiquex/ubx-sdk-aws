@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TeventsInput_InputDefinition_Attributes:
-    # Specifies the JSON path (e.g., 'payload.temperature') within the incoming message payload that this input attribute maps to, used by AWS IoT Events to extract attribute data from the input message. (AI-inferred)
     json_path: Any = None
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class TeventsInput_InputDefinition:
 @dataclasses.dataclass
 class TeventsInput_Tags:
     key: Any = None
-    # The value for a tag key attached to an AWS IoT Events input, used to add arbitrary metadata for resource identification and management. (AI-inferred)
     value: Any = None
 
 _TeventsInput_InputDefinition_AttributesFields = {

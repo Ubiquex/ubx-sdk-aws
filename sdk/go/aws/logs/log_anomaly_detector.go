@@ -6,13 +6,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type LogAnomalyDetectorConfig struct {
 	// Account ID for owner of detector
 	AccountId any
-	// Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred)
 	AnomalyVisibilityTime any
 	// Name of detector
 	DetectorName any
 	// How often log group is evaluated
 	EvaluationFrequency any
-	// The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred)
 	FilterPattern any
 	// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
 	KmsKeyId any
@@ -27,7 +25,6 @@ type LogAnomalyDetectorAttrs struct {
 	AnomalyDetectorArn any
 	// Current status of detector.
 	AnomalyDetectorStatus any
-	// Sets the number of days of historical log data that the anomaly detector uses as a baseline to establish normal behavior and detect deviations, effectively controlling how far back the detector looks for anomalies. (AI-inferred)
 	AnomalyVisibilityTime any
 	// When detector was created.
 	CreationTimeStamp any
@@ -35,7 +32,6 @@ type LogAnomalyDetectorAttrs struct {
 	DetectorName any
 	// How often log group is evaluated
 	EvaluationFrequency any
-	// The CloudWatch Logs filter pattern that selects which log events in the associated log groups the anomaly detector analyzes, using standard filter pattern syntax. (AI-inferred)
 	FilterPattern any
 	// The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
 	KmsKeyId any

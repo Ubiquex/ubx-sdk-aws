@@ -2,34 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Application_AttachmentsConfiguration {
-  /** Determines whether users can use attachments in the application's chat sessions, with a required value of either ENABLED or DISABLED. (AI-inferred) */
   attachmentsControlMode: string | Computed<string>;
 }
 
 export interface Application_AutoSubscriptionConfiguration {
-  /** Determines whether AWS Q Business automatically subscribes new users to a default subscription tier (e.g., Q Business Lite or Pro) configured via the default_subscription_type field, with allowed values ENABLED or DISABLED. (AI-inferred) */
   autoSubscribe: string | Computed<string>;
-  /** Specifies the default subscription type (either 'PLUS' or 'ENTERPRISE') that AWS QBusiness automatically assigns to users when auto-subscription is enabled for the application. (AI-inferred) */
   defaultSubscriptionType?: string | Computed<string>;
 }
 
 export interface Application_EncryptionConfiguration {
-  /** Specifies the AWS KMS key used to encrypt application data at rest, provided as a key ID or ARN. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
 }
 
 export interface Application_PersonalizationConfiguration {
-  /** Controls whether personalization is enabled for the Amazon Q Business application, accepting values such as 'ENABLED' or 'DISABLED' to turn the feature on or off. (AI-inferred) */
   personalizationControlMode: string | Computed<string>;
 }
 
 export interface Application_QappsConfiguration {
-  /** Controls whether Q Apps are enabled or disabled for the Amazon Q Business application, with valid values ENABLED or DISABLED. (AI-inferred) */
   qappsControlMode: string | Computed<string>;
 }
 
 export interface Application_QuickSightConfiguration {
-  /** The Amazon QuickSight namespace (e.g., 'default') that the Amazon Q Business application uses to access QuickSight data and assets. (AI-inferred) */
   clientNamespace: string | Computed<string>;
 }
 
@@ -69,76 +62,42 @@ const Application_TagsFields: FieldMap = {
 };
 
 export interface ApplicationConfig {
-  /** Configures whether users can attach files to conversations in the Q Business application, controlled by the AttachmentsControlMode setting (either ENABLED or DISABLED). (AI-inferred) */
   attachmentsConfiguration?: Application_AttachmentsConfiguration | Computed<Application_AttachmentsConfiguration>;
-  /** Determines whether new users are automatically subscribed to the Amazon Q Business application and, if enabled, specifies the default subscription type (ENTERPRISE or STARTER) assigned to them. (AI-inferred) */
   autoSubscriptionConfiguration?: Application_AutoSubscriptionConfiguration | Computed<Application_AutoSubscriptionConfiguration>;
-  /** Specifies the list of OAuth 2.0 client IDs that an Amazon Q Business application accepts from its OIDC identity provider for authenticating users. (AI-inferred) */
   clientIdsForOidc?: string[] | Computed<string[]>;
-  /** Specifies a user-provided description for the Amazon Q Business application, used to convey its purpose or context to administrators. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The display name for the Amazon Q Business application, which is a user-friendly identifier shown in the AWS Management Console and used when referencing the application. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** Specifies the encryption configuration for the Q Business application, including whether to use a customer-managed KMS key and which key to use, for encrypting data at rest. (AI-inferred) */
   encryptionConfiguration?: Application_EncryptionConfiguration | Computed<Application_EncryptionConfiguration>;
-  /** The ARN of the IAM identity provider used by Amazon Q Business to authenticate federated users and authorize their access to the application. (AI-inferred) */
   iamIdentityProviderArn?: string | Computed<string>;
-  /** The ARN of the AWS IAM Identity Center instance that this Q Business application uses for user provisioning and single sign-on. (AI-inferred) */
   identityCenterInstanceArn?: string | Computed<string>;
-  /** Specifies the identity provider protocol used by the QBusiness application to authenticate users, with allowed values including AWS_IAM, SAML, and OIDC. (AI-inferred) */
   identityType?: string | Computed<string>;
-  /** Configures whether Amazon Q Business personalization is enabled for the application, with a PersonalizationControlMode setting that turns personalization on or off. (AI-inferred) */
   personalizationConfiguration?: Application_PersonalizationConfiguration | Computed<Application_PersonalizationConfiguration>;
-  /** Configures whether Q Apps are enabled for the Amazon Q Business application by specifying the QAppsControlMode as ENABLED or DISABLED. (AI-inferred) */
   qappsConfiguration?: Application_QappsConfiguration | Computed<Application_QappsConfiguration>;
-  /** Specifies the Amazon QuickSight integration configuration for the QBusiness application, including the QuickSight client namespace used for user groups. (AI-inferred) */
   quickSightConfiguration?: Application_QuickSightConfiguration | Computed<Application_QuickSightConfiguration>;
-  /** The Amazon Resource Name (ARN) of an IAM role that the QBusiness application assumes to access and manage AWS resources and data sources on the customer's behalf. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The tags field specifies a list of key-value pairs attached to the Amazon Q Business application for resource organization, cost tracking, and access control. (AI-inferred) */
   tags?: Application_Tags[] | Computed<Application_Tags[]>;
 }
 
 export interface ApplicationAttrs {
-  /** The Amazon Resource Name (ARN) of the Q Business application, assigned by AWS when the application is created. (AI-inferred) */
   applicationArn: string;
-  /** The unique identifier that AWS QBusiness automatically assigns to the application when it is created. (AI-inferred) */
   applicationId: string;
-  /** Configures whether users can attach files to conversations in the Q Business application, controlled by the AttachmentsControlMode setting (either ENABLED or DISABLED). (AI-inferred) */
   attachmentsConfiguration: Application_AttachmentsConfiguration;
-  /** Determines whether new users are automatically subscribed to the Amazon Q Business application and, if enabled, specifies the default subscription type (ENTERPRISE or STARTER) assigned to them. (AI-inferred) */
   autoSubscriptionConfiguration: Application_AutoSubscriptionConfiguration;
-  /** Specifies the list of OAuth 2.0 client IDs that an Amazon Q Business application accepts from its OIDC identity provider for authenticating users. (AI-inferred) */
   clientIdsForOidc: string[];
-  /** The timestamp of when the QBusiness application was created, computed by AWS. (AI-inferred) */
   createdAt: string;
-  /** Specifies a user-provided description for the Amazon Q Business application, used to convey its purpose or context to administrators. (AI-inferred) */
   description: string;
-  /** The display name for the Amazon Q Business application, which is a user-friendly identifier shown in the AWS Management Console and used when referencing the application. (AI-inferred) */
   displayName: string;
-  /** Specifies the encryption configuration for the Q Business application, including whether to use a customer-managed KMS key and which key to use, for encrypting data at rest. (AI-inferred) */
   encryptionConfiguration: Application_EncryptionConfiguration;
-  /** The ARN of the IAM identity provider used by Amazon Q Business to authenticate federated users and authorize their access to the application. (AI-inferred) */
   iamIdentityProviderArn: string;
-  /** The ARN of the AWS IAM Identity Center application that is automatically created and associated with this Amazon Q Business application when identity center integration is enabled. (AI-inferred) */
   identityCenterApplicationArn: string;
-  /** The ARN of the AWS IAM Identity Center instance that this Q Business application uses for user provisioning and single sign-on. (AI-inferred) */
   identityCenterInstanceArn: string;
-  /** Specifies the identity provider protocol used by the QBusiness application to authenticate users, with allowed values including AWS_IAM, SAML, and OIDC. (AI-inferred) */
   identityType: string;
-  /** Configures whether Amazon Q Business personalization is enabled for the application, with a PersonalizationControlMode setting that turns personalization on or off. (AI-inferred) */
   personalizationConfiguration: Application_PersonalizationConfiguration;
-  /** Configures whether Q Apps are enabled for the Amazon Q Business application by specifying the QAppsControlMode as ENABLED or DISABLED. (AI-inferred) */
   qappsConfiguration: Application_QappsConfiguration;
-  /** Specifies the Amazon QuickSight integration configuration for the QBusiness application, including the QuickSight client namespace used for user groups. (AI-inferred) */
   quickSightConfiguration: Application_QuickSightConfiguration;
-  /** The Amazon Resource Name (ARN) of an IAM role that the QBusiness application assumes to access and manage AWS resources and data sources on the customer's behalf. (AI-inferred) */
   roleArn: string;
-  /** The current lifecycle status of the QBusiness application (e.g., CREATING, ACTIVE, UPDATING, FAILED), set by the service and read-only. (AI-inferred) */
   status: string;
-  /** The tags field specifies a list of key-value pairs attached to the Amazon Q Business application for resource organization, cost tracking, and access control. (AI-inferred) */
   tags: Application_Tags[];
-  /** The timestamp indicating when the Amazon Q Business application was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

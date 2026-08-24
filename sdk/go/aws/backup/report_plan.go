@@ -13,9 +13,7 @@ type ReportPlan_ReportDeliveryChannel struct {
 }
 
 type ReportPlan_ReportPlanTags struct {
-	// The key of a user-defined tag attached to the AWS Backup report plan, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to the AWS Backup report plan, used for identifying and organizing the report plan. (AI-inferred)
 	Value any
 }
 

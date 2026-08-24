@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WebAcl_DefaultAction:
-    # The action that AWS WAF takes when a request doesn't match any rule in the web ACL, either 'ALLOW' or 'BLOCK'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class WebAcl_Rules:
-    # Determines the action (ALLOW, BLOCK, or COUNT) that AWS WAF Regional applies to a web request when the corresponding rule matches. (AI-inferred)
     action: Any = None
-    # Determines the evaluation order of the rule within the web ACL, where rules with lower priority values are evaluated first. (AI-inferred)
     priority: Any = None
-    # Specifies the unique identifier of the AWS WAF Regional rule to associate with this web ACL's rule list. (AI-inferred)
     rule_id: Any = None
 
 _WebAcl_DefaultActionFields = {
@@ -36,24 +32,17 @@ _WebAcl_RulesFields = {
 
 @dataclasses.dataclass
 class WebAclConfig:
-    # The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
     default_action: Any = None
-    # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
     metric_name: Any = None
     name: Any = None
-    # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class WebAclAttrs:
-    # The action AWS WAF takes when a web request doesn't match any rule in the web ACL, specified as an object with a Type property that can be ALLOW, BLOCK, or COUNT. (AI-inferred)
     default_action: Any = None
-    # The unique AWS-assigned identifier for the Web ACL, used as the resource ID. (AI-inferred)
     id: Any = None
-    # The name of the Amazon CloudWatch metric associated with the web ACL, used for monitoring its activity in CloudWatch. (AI-inferred)
     metric_name: Any = None
     name: Any = None
-    # Defines the ordered list of rules for the web ACL, where each rule specifies the rule's ID (referencing an aws_wafregional_rule or aws_wafregional_rule_group resource) and the action (allow, block, or count) that AWS WAF Regional takes when a request matches the rule. (AI-inferred)
     rules: Any = None
 
 WebAcl = ubx.ResourceBinding(

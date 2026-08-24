@@ -43,7 +43,6 @@ const LinkRoutingRule_ConditionsFields: FieldMap = {
 export interface LinkRoutingRuleConfig {
   /** Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive. */
   conditions: LinkRoutingRule_Conditions | Computed<LinkRoutingRule_Conditions>;
-  /** The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred) */
   gatewayId: string | Computed<string>;
   linkId: string | Computed<string>;
   priority: number | Computed<number>;
@@ -55,9 +54,7 @@ export interface LinkRoutingRuleAttrs {
   arn: string;
   /** Conditions for a routing rule. All non-null fields must match (AND logic). At least one field must be set. HostHeader and HostHeaderWildcard are mutually exclusive. PathPrefix and PathExact are mutually exclusive. */
   conditions: LinkRoutingRule_Conditions;
-  /** A timestamp that records when this link routing rule was created, used for tracking and auditing changes. (AI-inferred) */
   createdTimestamp: string;
-  /** The ID of the gateway (such as an internet gateway or virtual private gateway) that the routing rule uses to direct matching traffic. (AI-inferred) */
   gatewayId: string;
   linkId: string;
   priority: number;
@@ -65,7 +62,6 @@ export interface LinkRoutingRuleAttrs {
   status: string;
   /** Tags to assign to the LinkRoutingRule. */
   tags: LinkRoutingRule_Conditions_QueryStringEquals[];
-  /** The updated_timestamp field captures the date and time when this link routing rule was last modified. (AI-inferred) */
   updatedTimestamp: string;
 }
 

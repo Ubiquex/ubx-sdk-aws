@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetGroup_Tags struct {
 	Key any
-	// The value of a tag (key-value pair) attached to the Amazon Personalize dataset group. (AI-inferred)
 	Value any
 }
 

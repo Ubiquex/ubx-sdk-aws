@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerHumanTaskUi_Tags:
-    # A user-defined tag key that helps identify, organize, and manage costs for this SageMaker human task UI resource, with the value paired in the same tag list entry. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS SageMaker HumanTaskUi resource, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

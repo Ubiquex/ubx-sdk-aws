@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TCertificateProvider_Tags {
-  /** The key portion of a tag assigned to the AWS IoT certificate provider resource, used to label and manage the certificate provider with custom metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value string of a tag key-value pair attached to the AWS IoT certificate provider, used to store arbitrary metadata for identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,24 +12,17 @@ const TCertificateProvider_TagsFields: FieldMap = {
 };
 
 export interface TCertificateProviderConfig {
-  /** The AWS::IoT::CertificateProvider account default for operations property specifies the list of certificate provider operations (RegisterCertificate or RegisterCertificateWithoutCA) for which this certificate provider is the default provider in the AWS account. (AI-inferred) */
   accountDefaultForOperations: string[] | Computed<string[]>;
-  /** Specifies the unique name of the AWS IoT certificate provider, which identifies it within the AWS account and region and is referenced when associating CA certificates with this provider. (AI-inferred) */
   certificateProviderName?: string | Computed<string>;
-  /** The ARN of the Lambda function that AWS IoT invokes to perform custom certificate signing or validation for this certificate provider. (AI-inferred) */
   lambdaFunctionArn: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: TCertificateProvider_Tags[] | Computed<TCertificateProvider_Tags[]>;
 }
 
 export interface TCertificateProviderAttrs {
-  /** The AWS::IoT::CertificateProvider account default for operations property specifies the list of certificate provider operations (RegisterCertificate or RegisterCertificateWithoutCA) for which this certificate provider is the default provider in the AWS account. (AI-inferred) */
   accountDefaultForOperations: string[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS IoT certificate provider. (AI-inferred) */
   arn: string;
-  /** Specifies the unique name of the AWS IoT certificate provider, which identifies it within the AWS account and region and is referenced when associating CA certificates with this provider. (AI-inferred) */
   certificateProviderName: string;
-  /** The ARN of the Lambda function that AWS IoT invokes to perform custom certificate signing or validation for this certificate provider. (AI-inferred) */
   lambdaFunctionArn: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: TCertificateProvider_Tags[];

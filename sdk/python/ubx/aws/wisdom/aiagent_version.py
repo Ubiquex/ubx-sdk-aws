@@ -8,28 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AiagentVersionConfig:
-    # The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred)
     aiagent_id: Any = None
-    # The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred)
     assistant_id: Any = None
-    # The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred)
     modified_time_seconds: Any = None
 
 @dataclasses.dataclass
 class AiagentVersionAttrs:
-    # The Amazon Resource Name (ARN) of the Wisdom AI agent that this version belongs to. (AI-inferred)
     aiagent_arn: Any = None
-    # The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred)
     aiagent_id: Any = None
-    # The unique identifier assigned to the AI agent version when it is created. (AI-inferred)
     aiagent_version_id: Any = None
-    # The Amazon Resource Name (ARN) of the Wisdom assistant to which this AI agent version belongs, exposed as a computed read-only attribute after the resource is created. (AI-inferred)
     assistant_arn: Any = None
-    # The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred)
     assistant_id: Any = None
-    # The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred)
     modified_time_seconds: Any = None
-    # The version number of the AI agent version, automatically assigned by the service. (AI-inferred)
     version_number: Any = None
 
 AiagentVersion = ubx.ResourceBinding(

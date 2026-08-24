@@ -19,7 +19,6 @@ class GatewayV2DeploymentConfig:
 class GatewayV2DeploymentAttrs:
     # The API identifier.
     api_id: Any = None
-    # The unique identifier assigned by AWS to this API Gateway v2 deployment. (AI-inferred)
     deployment_id: Any = None
     # The description for the deployment resource.
     description: Any = None

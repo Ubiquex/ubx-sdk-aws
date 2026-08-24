@@ -4,20 +4,16 @@ package refactor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesService_LambdaEndpoint struct {
-	// The ARN of the AWS Lambda function that serves as the endpoint for this Refactor Spaces service. (AI-inferred)
 	Arn any
 }
 
 type SpacesService_Tags struct {
-	// The key of a tag attached to the AWS Refactor Spaces service, used to organize, identify, and manage the service within your AWS environment. (AI-inferred)
 	Key any
 	Value any
 }
 
 type SpacesService_UrlEndpoint struct {
-	// The optional health check URL for a URL-type service, which AWS Migration Hub Refactor Spaces probes to determine whether the service is healthy before routing traffic to it. (AI-inferred)
 	HealthUrl any
-	// The URL that defines the endpoint address of the AWS Refactor Spaces service, which is the network address at which the service is exposed when using a URL endpoint. (AI-inferred)
 	Url any
 }
 
@@ -36,48 +32,30 @@ var SpacesService_UrlEndpointFields = ubx.FieldMap{
 	}
 
 type SpacesServiceConfig struct {
-	// The unique identifier of the Refactor Spaces application to which this service belongs. (AI-inferred)
 	ApplicationIdentifier any
-	// A user-defined description for the AWS Refactor Spaces service, used to identify the service within the environment. (AI-inferred)
 	Description any
-	// Specifies the type of endpoint the AWS Refactor Spaces service uses, with valid values of API_GATEWAY, AWS_LAMBDA, or URL. (AI-inferred)
 	EndpointType any
-	// The unique identifier of the AWS Refactor Spaces environment in which this service is created. (AI-inferred)
 	EnvironmentIdentifier any
-	// The Lambda endpoint configuration for the service, which specifies the ARN of the Lambda function that the Refactor Spaces service uses as its endpoint. (AI-inferred)
 	LambdaEndpoint any
-	// The name of the Refactor Spaces service, which is a user-defined identifier for the service within its environment. (AI-inferred)
 	Name any
 	// Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
 	Tags any
-	// The configuration for the service's URL endpoint, which specifies the HTTP/HTTPS URL that the service exposes, used when the endpoint type is URL. (AI-inferred)
 	UrlEndpoint any
-	// Specifies the ID of the VPC in which the AWS Refactor Spaces service will be deployed, defining the network environment for its endpoints and resources. (AI-inferred)
 	VpcId any
 }
 
 type SpacesServiceAttrs struct {
-	// The unique identifier of the Refactor Spaces application to which this service belongs. (AI-inferred)
 	ApplicationIdentifier any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Refactor Spaces service across AWS. (AI-inferred)
 	Arn any
-	// A user-defined description for the AWS Refactor Spaces service, used to identify the service within the environment. (AI-inferred)
 	Description any
-	// Specifies the type of endpoint the AWS Refactor Spaces service uses, with valid values of API_GATEWAY, AWS_LAMBDA, or URL. (AI-inferred)
 	EndpointType any
-	// The unique identifier of the AWS Refactor Spaces environment in which this service is created. (AI-inferred)
 	EnvironmentIdentifier any
-	// The Lambda endpoint configuration for the service, which specifies the ARN of the Lambda function that the Refactor Spaces service uses as its endpoint. (AI-inferred)
 	LambdaEndpoint any
-	// The name of the Refactor Spaces service, which is a user-defined identifier for the service within its environment. (AI-inferred)
 	Name any
-	// The unique identifier assigned to the service by AWS Refactor Spaces, used to reference the service within the application and environment. (AI-inferred)
 	ServiceIdentifier any
 	// Metadata that you can assign to help organize the frameworks that you create. Each tag is a key-value pair.
 	Tags any
-	// The configuration for the service's URL endpoint, which specifies the HTTP/HTTPS URL that the service exposes, used when the endpoint type is URL. (AI-inferred)
 	UrlEndpoint any
-	// Specifies the ID of the VPC in which the AWS Refactor Spaces service will be deployed, defining the network environment for its endpoints and resources. (AI-inferred)
 	VpcId any
 }
 

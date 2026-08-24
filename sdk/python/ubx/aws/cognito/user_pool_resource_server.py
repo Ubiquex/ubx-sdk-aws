@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolResourceServer_Scopes:
-    # A human-readable description that explains the purpose or permissions of the OAuth 2.0 scope defined for the user pool resource server. (AI-inferred)
     scope_description: Any = None
-    # The scope_name defines the unique name of the OAuth 2.0 scope that clients can request for authorization from this resource server. (AI-inferred)
     scope_name: Any = None
 
 _UserPoolResourceServer_ScopesFields = {
@@ -20,24 +18,16 @@ _UserPoolResourceServer_ScopesFields = {
 
 @dataclasses.dataclass
 class UserPoolResourceServerConfig:
-    # The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred)
     identifier: Any = None
-    # A friendly name for the resource server, used to identify it within the user pool. (AI-inferred)
     name: Any = None
-    # Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred)
     scopes: Any = None
-    # The unique ID of the user pool that this resource server is associated with. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolResourceServerAttrs:
-    # The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred)
     identifier: Any = None
-    # A friendly name for the resource server, used to identify it within the user pool. (AI-inferred)
     name: Any = None
-    # Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred)
     scopes: Any = None
-    # The unique ID of the user pool that this resource server is associated with. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolResourceServer = ubx.ResourceBinding(

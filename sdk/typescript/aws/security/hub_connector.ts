@@ -55,22 +55,18 @@ export interface HubConnectorConfig {
   description?: string | Computed<string>;
   /** The name of the connector. */
   name: string | Computed<string>;
-  /** Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred) */
   provider: HubConnector_Provider | Computed<HubConnector_Provider>;
   /** A key-value pair to associate with a resource. */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface HubConnectorAttrs {
-  /** The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Security Hub connector. (AI-inferred) */
   connectorArn: string;
-  /** The connector_id is the unique, read-only identifier that AWS Security Hub assigns to the connector upon creation. (AI-inferred) */
   connectorId: string;
   /** The status of the connector */
   connectorStatus: string;
   /** The timestamp formatted in ISO8601 */
   createdAt: string;
-  /** The AWS principal (account or IAM identity) that originally created the Security Hub connector. (AI-inferred) */
   createdBy: string;
   /** The description of the connector. */
   description: string;
@@ -84,7 +80,6 @@ export interface HubConnectorAttrs {
   message: string;
   /** The name of the connector. */
   name: string;
-  /** Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred) */
   provider: HubConnector_Provider;
   /** A key-value pair to associate with a resource. */
   tags: unknown;

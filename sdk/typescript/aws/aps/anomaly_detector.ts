@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnomalyDetector_Configuration_RandomCutForest {
-  /** Controls the Random Cut Forest anomaly detection sensitivity by specifying whether to ignore data points that are close to the expected value from above, reducing false positives for minor upper-side deviations. (AI-inferred) */
   ignoreNearExpectedFromAbove?: unknown | Computed<unknown>;
-  /** When enabled, this parameter instructs the Random Cut Forest anomaly detector to ignore deviations that are below but very close to the expected value, preventing them from being flagged as anomalies. (AI-inferred) */
   ignoreNearExpectedFromBelow?: unknown | Computed<unknown>;
-  /** The PromQL query that selects the time series data to be analyzed for anomalies by the random cut forest algorithm in the anomaly detector. (AI-inferred) */
   query: string | Computed<string>;
-  /** In the Random Cut Forest configuration of an AWS APS anomaly detector, sample_size specifies the number of data points from the input time series used to train the model, balancing training accuracy against computational cost. (AI-inferred) */
   sampleSize?: number | Computed<number>;
-  /** The number of consecutive time series data points grouped into a single shingle (feature vector) that the Random Cut Forest model considers when evaluating anomalies. (AI-inferred) */
   shingleSize?: number | Computed<number>;
 }
 
 export interface AnomalyDetector_Configuration {
-  /** Defines the configuration for the Random Cut Forest algorithm used by this anomaly detector to identify anomalous patterns in Prometheus metric data. (AI-inferred) */
   randomCutForest: AnomalyDetector_Configuration_RandomCutForest | Computed<AnomalyDetector_Configuration_RandomCutForest>;
 }
 
@@ -48,7 +42,6 @@ const AnomalyDetector_LabelsFields: FieldMap = {
 export interface AnomalyDetectorConfig {
   /** The AnomalyDetector alias. */
   alias: string | Computed<string>;
-  /** Configures the anomaly detector with a PromQL-based metric definition and optional dimension filters that determine which metric time series are analyzed for anomalous behavior. (AI-inferred) */
   configuration: AnomalyDetector_Configuration | Computed<AnomalyDetector_Configuration>;
   /** The AnomalyDetector period of detection and metric generation. */
   evaluationIntervalInSeconds?: number | Computed<number>;
@@ -66,7 +59,6 @@ export interface AnomalyDetectorAttrs {
   alias: string;
   /** The AnomalyDetector ARN. */
   arn: string;
-  /** Configures the anomaly detector with a PromQL-based metric definition and optional dimension filters that determine which metric time series are analyzed for anomalous behavior. (AI-inferred) */
   configuration: AnomalyDetector_Configuration;
   /** The AnomalyDetector period of detection and metric generation. */
   evaluationIntervalInSeconds: number;

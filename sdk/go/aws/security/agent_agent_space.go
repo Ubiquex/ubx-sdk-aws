@@ -4,11 +4,8 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentAgentSpace_AwsResources_Vpcs struct {
-	// Specifies the ARNs of security groups associated with the VPCs in the agent space's AWS resource configuration, used to control network access for the agent. (AI-inferred)
 	SecurityGroupArns any
-	// Specifies the subnet ARNs associated with each VPC in the agent space's AWS resource configuration, defining the subnets the agent space applies to. (AI-inferred)
 	SubnetArns any
-	// The Amazon Resource Name (ARN) of an Amazon Virtual Private Cloud (VPC) included in the AWS resources associated with this agent space. (AI-inferred)
 	VpcArn any
 }
 
@@ -36,55 +33,43 @@ type AgentAgentSpace_CodeReviewSettings struct {
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketCapabilities struct {
 	LeaveComments any
-	// Controls whether the Bitbucket integration automatically remediates code-level security issues identified by the agent. (AI-inferred)
 	RemediateCode any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_BitbucketRepository struct {
-	// The repository name (e.g., 'owner/repo') for a Bitbucket repo listed as a provider resource in the security agent space's integrated resources configuration. (AI-inferred)
 	Name any
-	// The Bitbucket workspace that owns the integrated repository. (AI-inferred)
 	Workspace any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceCapabilities struct {
-	// Enables or disables the Confluence provider resource's ability to create documents within the integrated Confluence instance for this agent space. (AI-inferred)
 	CreateDocument any
 	FetchDocument any
 	UpdateDocument any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_ConfluenceDocument struct {
-	// The name of the Confluence document that is configured as a provider resource within the integrated resource settings for the agent space. (AI-inferred)
 	Name any
-	// The page_id specifies the unique Confluence page identifier that identifies the document used as a provider resource in the agent space's integrated resource configuration. (AI-inferred)
 	PageId any
 	SpaceKey any
-	// Specifies the title of the Confluence space that the Confluence document provider resource is scoped to, enabling the agent space to reference documents within that specific space. (AI-inferred)
 	SpaceTitle any
 	Title any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_GitHubRepository struct {
 	Name any
-	// The GitHub user or organization that owns the repository to be integrated as a provider resource. (AI-inferred)
 	Owner any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources_GitLabRepository struct {
 	Name any
-	// The GitLab namespace (group or user path) that identifies the owner of the repository, used to locate the repository within the GitLab provider as part of an integrated resource. (AI-inferred)
 	Namespace any
 }
 
 type AgentAgentSpace_IntegratedResources_ProviderResources struct {
 	BitbucketCapabilities any
-	// A nested object representing a Bitbucket repository configured as an integrated resource provider within the security agent's agent space, containing fields that define the repository connection and integration settings. (AI-inferred)
 	BitbucketRepository any
 	ConfluenceCapabilities any
-	// Configures an Atlassian Confluence document source for the agent space's integrated resources, specifying how Confluence documents are accessed and ingested by the security agent. (AI-inferred)
 	ConfluenceDocument any
-	// Specifies the GitHub-specific capabilities and permissions that the security agent can use when integrating with GitHub through the agent space's provider resources. (AI-inferred)
 	GitHubCapabilities any
 	GitHubRepository any
 	GitLabCapabilities any

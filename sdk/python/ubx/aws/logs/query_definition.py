@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class QueryDefinition_Parameters:
     default_value: Any = None
-    # An optional human-readable description of the query definition, used to identify its purpose or contents. (AI-inferred)
     description: Any = None
     name: Any = None
 

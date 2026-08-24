@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocalGatewayVirtualInterface_Tags:
-    # The user-defined key for a tag attached to the EC2 Local Gateway Virtual Interface, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Local Gateway Virtual Interface, used to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 _LocalGatewayVirtualInterface_TagsFields = {

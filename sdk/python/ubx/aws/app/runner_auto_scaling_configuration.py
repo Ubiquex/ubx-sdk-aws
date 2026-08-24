@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RunnerAutoScalingConfiguration_Tags:
-    # The key of a tag to apply to this AWS App Runner auto scaling configuration, used for resource organization and cost allocation. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the App Runner auto scaling configuration, which is a user-defined key-value pair used for labeling and managing the resource. (AI-inferred)
     value: Any = None
 
 _RunnerAutoScalingConfiguration_TagsFields = {

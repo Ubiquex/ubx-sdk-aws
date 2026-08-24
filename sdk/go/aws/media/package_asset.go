@@ -4,9 +4,7 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageAsset_EgressEndpoints struct {
-	// The identifier of the AWS Elemental MediaPackage packaging configuration that defines how the asset is packaged (e.g., HLS or DASH) for delivery through this egress endpoint. (AI-inferred)
 	PackagingConfigurationId any
-	// The URL for this egress endpoint, which AWS Elemental MediaPackage generates to provide a streaming or download URL for the asset via the associated packaging configuration. (AI-inferred)
 	Url any
 }
 

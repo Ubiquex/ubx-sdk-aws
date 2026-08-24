@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeviceDefinitionVersion_Devices:
-    # The ARN of the AWS IoT certificate used to authenticate the Greengrass device when it connects to the AWS Greengrass core. (AI-inferred)
     certificate_arn: Any = None
-    # The device ID, which must be unique within the device definition version and is used to identify the device in this version. (AI-inferred)
     id: Any = None
-    # Indicates whether the device's shadow is synchronized with the AWS IoT shadow. (AI-inferred)
     sync_shadow: Any = None
-    # The Amazon Resource Name (ARN) of the AWS IoT thing that this device represents in the Greengrass device definition version. (AI-inferred)
     thing_arn: Any = None
 
 _DeviceDefinitionVersion_DevicesFields = {
@@ -26,18 +22,13 @@ _DeviceDefinitionVersion_DevicesFields = {
 
 @dataclasses.dataclass
 class DeviceDefinitionVersionConfig:
-    # The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred)
     device_definition_id: Any = None
-    # Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred)
     devices: Any = None
 
 @dataclasses.dataclass
 class DeviceDefinitionVersionAttrs:
-    # The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred)
     device_definition_id: Any = None
-    # Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred)
     devices: Any = None
-    # The unique identifier assigned by AWS to this Greengrass device definition version, used as a computed resource identifier. (AI-inferred)
     id: Any = None
 
 DeviceDefinitionVersion = ubx.ResourceBinding(

@@ -10,22 +10,16 @@ import ubx_sdk as ubx
 class HubSecurityControlConfig:
     # The most recent reason for updating the customizable properties of a security control. This differs from the UpdateReason field of the BatchUpdateStandardsControlAssociations API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.
     last_update_reason: Any = None
-    # A map of parameter names to their configurations (with value type and actual value) that customize the behavior of the security control. (AI-inferred)
     parameters: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Security Hub security control to which this resource's settings (such as parameters or enablement) apply. (AI-inferred)
     security_control_arn: Any = None
-    # The unique identifier (e.g., 'ACM.1') of the AWS Security Hub security control to configure, which targets that control for parameter updates. (AI-inferred)
     security_control_id: Any = None
 
 @dataclasses.dataclass
 class HubSecurityControlAttrs:
     # The most recent reason for updating the customizable properties of a security control. This differs from the UpdateReason field of the BatchUpdateStandardsControlAssociations API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.
     last_update_reason: Any = None
-    # A map of parameter names to their configurations (with value type and actual value) that customize the behavior of the security control. (AI-inferred)
     parameters: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Security Hub security control to which this resource's settings (such as parameters or enablement) apply. (AI-inferred)
     security_control_arn: Any = None
-    # The unique identifier (e.g., 'ACM.1') of the AWS Security Hub security control to configure, which targets that control for parameter updates. (AI-inferred)
     security_control_id: Any = None
 
 HubSecurityControl = ubx.ResourceBinding(

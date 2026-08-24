@@ -13,7 +13,6 @@ class DataTable_LockVersion:
 
 @dataclasses.dataclass
 class DataTable_Tags:
-    # The key of a tag to attach to the Amazon Connect data table, used for organizing and identifying the resource within AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

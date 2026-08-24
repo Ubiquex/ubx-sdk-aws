@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ArtifactRepository_Tags:
-    # The key of a tag attached to the AWS CodeArtifact repository, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag (key-value pair) applied to an AWS CodeArtifact repository, used to add metadata for organization and cost allocation. (AI-inferred)
     value: Any = None
 
 _ArtifactRepository_TagsFields = {

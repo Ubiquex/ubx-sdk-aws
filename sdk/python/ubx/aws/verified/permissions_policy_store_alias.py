@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionsPolicyStoreAliasConfig:
-    # The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred)
     alias_name: Any = None
-    # The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred)
     policy_store_id: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStoreAliasAttrs:
-    # The alias name provides a friendly, user-defined identifier for the policy store, allowing it to be referenced in authorization requests instead of the raw policy store ID. (AI-inferred)
     alias_name: Any = None
-    # The unique identifier of the Amazon Verified Permissions policy store to which this alias belongs. (AI-inferred)
     policy_store_id: Any = None
 
 PermissionsPolicyStoreAlias = ubx.ResourceBinding(

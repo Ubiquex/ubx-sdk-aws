@@ -4,9 +4,7 @@ package location
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteCalculator_Tags struct {
-	// The key of a tag (a user-defined label) applied to the AWS Location route calculator resource, used to categorize the resource for cost allocation and access control. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag key-value pair attached to the Route Calculator, used for metadata management such as cost tracking and access control. (AI-inferred)
 	Value any
 }
 
@@ -16,32 +14,22 @@ var RouteCalculator_TagsFields = ubx.FieldMap{
 	}
 
 type RouteCalculatorConfig struct {
-	// The name of the route calculator, which is required, must be unique within your AWS account, and can only contain alphanumeric characters, hyphens, and underscores, up to 100 characters. (AI-inferred)
 	CalculatorName any
-	// The data source for the route calculator, specifying the geospatial data provider (such as 'Esri' or 'Here') used to calculate routes. (AI-inferred)
 	DataSource any
-	// An optional user-supplied description for the route calculator resource, used to identify or annotate it. (AI-inferred)
 	Description any
-	// Defines the pricing plan for the route calculator, which determines the billing method (e.g., RequestBasedUsage, MobileAssetTracking, or MobileAssetManagement) for its usage. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type RouteCalculatorAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the route calculator. (AI-inferred)
 	Arn any
-	// The Amazon Resource Name (ARN) that uniquely identifies the route calculator in AWS. (AI-inferred)
 	CalculatorArn any
-	// The name of the route calculator, which is required, must be unique within your AWS account, and can only contain alphanumeric characters, hyphens, and underscores, up to 100 characters. (AI-inferred)
 	CalculatorName any
 	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
 	CreateTime any
-	// The data source for the route calculator, specifying the geospatial data provider (such as 'Esri' or 'Here') used to calculate routes. (AI-inferred)
 	DataSource any
-	// An optional user-supplied description for the route calculator resource, used to identify or annotate it. (AI-inferred)
 	Description any
-	// Defines the pricing plan for the route calculator, which determines the billing method (e.g., RequestBasedUsage, MobileAssetTracking, or MobileAssetManagement) for its usage. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

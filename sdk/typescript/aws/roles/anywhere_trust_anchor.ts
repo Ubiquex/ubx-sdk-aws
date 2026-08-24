@@ -2,33 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnywhereTrustAnchor_NotificationSettings {
-  /** Specifies the channel through which notifications are sent for this trust anchor; valid values are ALL (send to all configured channels) or SNS (send only to an Amazon SNS topic). (AI-inferred) */
   channel?: string | Computed<string>;
-  /** A boolean that indicates whether notifications for the associated event (e.g., CA certificate expiration) are enabled for this trust anchor. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
   event?: string | Computed<string>;
-  /** The number of days before a certificate expires that triggers the notification event defined in this notification setting. (AI-inferred) */
   threshold?: number | Computed<number>;
 }
 
 export interface AnywhereTrustAnchor_Source_SourceData {
-  /** The ARN of the AWS Certificate Manager Private Certificate Authority (ACM PCA) that serves as the source of trust for this AWS Roles Anywhere trust anchor. (AI-inferred) */
   acmPcaArn?: string | Computed<string>;
-  /** The PEM-encoded X.509 certificate data used as the trust anchor for AWS Roles Anywhere to validate temporary credentials. (AI-inferred) */
   x509CertificateData?: string | Computed<string>;
 }
 
 export interface AnywhereTrustAnchor_Source {
-  /** Specifies the certificate authority data for the trust anchor, containing either the X.509 certificate contents in x509CertificateData or the ACM Private CA ARN in acmPcaArn, depending on the sourceType. (AI-inferred) */
   sourceData: AnywhereTrustAnchor_Source_SourceData | Computed<AnywhereTrustAnchor_Source_SourceData>;
-  /** Specifies the type of trust anchor source, either AWS_ACM_PCA or CERTIFICATE_BUNDLE, which determines how the source data (ACM Private CA ARN or PEM-encoded certificate bundle) is interpreted. (AI-inferred) */
   sourceType: string | Computed<string>;
 }
 
 export interface AnywhereTrustAnchor_Tags {
-  /** Specifies the key of a tag assigned to the AWS IAM Roles Anywhere trust anchor, used to organize, identify, and manage the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag attached to the AWS Roles Anywhere trust anchor, used for metadata and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -59,32 +50,20 @@ const AnywhereTrustAnchor_TagsFields: FieldMap = {
 };
 
 export interface AnywhereTrustAnchorConfig {
-  /** Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred) */
   name: string | Computed<string>;
-  /** List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred) */
   notificationSettings?: AnywhereTrustAnchor_NotificationSettings[] | Computed<AnywhereTrustAnchor_NotificationSettings[]>;
-  /** Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred) */
   source: AnywhereTrustAnchor_Source | Computed<AnywhereTrustAnchor_Source>;
-  /** A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred) */
   tags?: AnywhereTrustAnchor_Tags[] | Computed<AnywhereTrustAnchor_Tags[]>;
 }
 
 export interface AnywhereTrustAnchorAttrs {
-  /** Indicates whether the trust anchor is enabled for use with IAM Roles Anywhere. (AI-inferred) */
   enabled: boolean;
-  /** Specifies the name of the IAM Roles Anywhere trust anchor, which is required when creating or updating the resource. (AI-inferred) */
   name: string;
-  /** List of notification settings for the trust anchor, each specifying whether to enable notifications for a given event (e.g., CA certificate expiration) and the threshold in days before expiration to send alerts. (AI-inferred) */
   notificationSettings: AnywhereTrustAnchor_NotificationSettings[];
-  /** Specifies the certificate authority (CA) source for the trust anchor, either AWS Private CA (ACM PCA) or a certificate bundle, along with the corresponding source data. (AI-inferred) */
   source: AnywhereTrustAnchor_Source;
-  /** A list of key-value tags to associate with the trust anchor, which AWS uses to organize, track, and control access to the resource. (AI-inferred) */
   tags: AnywhereTrustAnchor_Tags[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the trust anchor. (AI-inferred) */
   trustAnchorArn: string;
-  /** The unique identifier assigned by AWS to the trust anchor when it is created, used to reference the trust anchor in other IAM Roles Anywhere operations. (AI-inferred) */
   trustAnchorId: string;
 }
 

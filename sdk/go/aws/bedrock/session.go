@@ -4,7 +4,6 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Session_Tags struct {
-	// The key of a tag attached to the AWS Bedrock session, used to assign metadata for organizing, filtering, and managing the session. (AI-inferred)
 	Key any
 	Value any
 }

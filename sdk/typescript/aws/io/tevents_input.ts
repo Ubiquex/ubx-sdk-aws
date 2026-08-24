@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TeventsInput_InputDefinition_Attributes {
-  /** Specifies the JSON path (e.g., 'payload.temperature') within the incoming message payload that this input attribute maps to, used by AWS IoT Events to extract attribute data from the input message. (AI-inferred) */
   jsonPath?: string | Computed<string>;
 }
 
@@ -13,7 +12,6 @@ export interface TeventsInput_InputDefinition {
 
 export interface TeventsInput_Tags {
   key?: string | Computed<string>;
-  /** The value for a tag key attached to an AWS IoT Events input, used to add arbitrary metadata for resource identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

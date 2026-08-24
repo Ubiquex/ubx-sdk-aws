@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerSpace_OwnershipSettings {
-  /** The name of the SageMaker user profile that owns this space, which is required to establish the space's owner in the ownership settings. (AI-inferred) */
   ownerUserProfileName: string | Computed<string>;
 }
 
@@ -12,7 +11,6 @@ export interface MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleMana
 }
 
 export interface MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement {
-  /** Specifies idle timeout and automatic shutdown behavior for the Code Editor application within the SageMaker space. (AI-inferred) */
   idleSettings?: MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettings | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement_IdleSettings>;
 }
 
@@ -28,71 +26,56 @@ export interface MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceS
 }
 
 export interface MakerSpace_SpaceSettings_CodeEditorAppSettings {
-  /** Configures the idle timeout for the Code Editor app in the SageMaker Space, automatically shutting down the app after the specified number of idle minutes. (AI-inferred) */
   appLifecycleManagement?: MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement>;
-  /** Configures the default instance type and SageMaker image (via a ResourceSpec) used when launching the Code Editor application within the SageMaker Space. (AI-inferred) */
   defaultResourceSpec?: MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec>;
 }
 
 export interface MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem {
-  /** The unique identifier of the Amazon EFS file system that SageMaker attaches to this Studio space as a custom file system. (AI-inferred) */
   fileSystemId?: string | Computed<string>;
 }
 
 export interface MakerSpace_SpaceSettings_CustomFileSystems_S3FileSystem {
-  /** Specifies the S3 URI (e.g., s3://bucket-name/prefix) of the S3 file system that is mounted as a custom file system in the SageMaker Space. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerSpace_SpaceSettings_CustomFileSystems {
-  /** Configures an Amazon EFS file system to be attached to the SageMaker Space, specifying the file system ID used for mounting. (AI-inferred) */
   efsfileSystem?: MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem | Computed<MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem>;
-  /** Specifies the FSx for Lustre file system configuration to attach to the SageMaker Space's custom file systems, identifying the file system by its unique ID. (AI-inferred) */
   fsxLustreFileSystem?: MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem | Computed<MakerSpace_SpaceSettings_CustomFileSystems_EfsfileSystem>;
   s3FileSystem?: MakerSpace_SpaceSettings_CustomFileSystems_S3FileSystem | Computed<MakerSpace_SpaceSettings_CustomFileSystems_S3FileSystem>;
 }
 
 export interface MakerSpace_SpaceSettings_JupyterLabAppSettings_CodeRepositories {
-  /** The URL of the Git repository that SageMaker clones and mounts in the JupyterLab app of the SageMaker Space. (AI-inferred) */
   repositoryUrl?: string | Computed<string>;
 }
 
 export interface MakerSpace_SpaceSettings_JupyterLabAppSettings {
-  /** Configures the lifecycle management settings for JupyterLab apps in the SageMaker Space, including idle timeout settings that automatically stop idle apps. (AI-inferred) */
   appLifecycleManagement?: MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_AppLifecycleManagement>;
   /** A list of CodeRepositories available for use with JupyterLab apps. */
   codeRepositories?: MakerSpace_SpaceSettings_JupyterLabAppSettings_CodeRepositories[] | Computed<MakerSpace_SpaceSettings_JupyterLabAppSettings_CodeRepositories[]>;
-  /** Defines the default instance type and SageMaker image (via `instance_type` and `sagemaker_image_arn`) used when launching the JupyterLab app for the SageMaker Space. (AI-inferred) */
   defaultResourceSpec?: MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec>;
 }
 
 export interface MakerSpace_SpaceSettings_JupyterServerAppSettings {
-  /** Specifies the instance type and SageMaker image used for the default Jupyter Server app in the SageMaker space. (AI-inferred) */
   defaultResourceSpec?: MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with JupyterServer apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
 }
 
 export interface MakerSpace_SpaceSettings_KernelGatewayAppSettings_CustomImages {
-  /** The name of the AppImageConfig resource that defines the configuration (such as file system and kernel specification) for the custom image used by the kernel gateway app. (AI-inferred) */
   appImageConfigName?: string | Computed<string>;
-  /** The name of the SageMaker image to be used by the kernel gateway app in the space. (AI-inferred) */
   imageName?: string | Computed<string>;
-  /** Specifies the version number of the SageMaker image to use for the custom image in the kernel gateway app of the space. (AI-inferred) */
   imageVersionNumber?: number | Computed<number>;
 }
 
 export interface MakerSpace_SpaceSettings_KernelGatewayAppSettings {
   /** A list of custom SageMaker images that are configured to run as a KernelGateway app. */
   customImages?: MakerSpace_SpaceSettings_KernelGatewayAppSettings_CustomImages[] | Computed<MakerSpace_SpaceSettings_KernelGatewayAppSettings_CustomImages[]>;
-  /** The default resource specification (e.g., SageMaker image ARN and instance type) used to launch the kernel gateway app for the SageMaker space. (AI-inferred) */
   defaultResourceSpec?: MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings_DefaultResourceSpec>;
   /** A list of LifecycleConfigArns available for use with KernelGateway apps. */
   lifecycleConfigArns?: string[] | Computed<string[]>;
 }
 
 export interface MakerSpace_SpaceSettings_SpaceStorageSettings_EbsStorageSettings {
-  /** Specifies the size of the Amazon EBS volume, in gigabytes, allocated to the SageMaker Space's storage settings. (AI-inferred) */
   ebsVolumeSizeInGb: number | Computed<number>;
 }
 
@@ -102,11 +85,9 @@ export interface MakerSpace_SpaceSettings_SpaceStorageSettings {
 }
 
 export interface MakerSpace_SpaceSettings {
-  /** Specifies the type of SageMaker Studio app that runs in the space, such as JupyterServer or KernelGateway, determining which application interface the space launches. (AI-inferred) */
   appType?: string | Computed<string>;
   /** The CodeEditor app settings. */
   codeEditorAppSettings?: MakerSpace_SpaceSettings_CodeEditorAppSettings | Computed<MakerSpace_SpaceSettings_CodeEditorAppSettings>;
-  /** The list of custom file systems (Amazon EFS or FSx for Lustre) that are mounted to the SageMaker space. (AI-inferred) */
   customFileSystems?: MakerSpace_SpaceSettings_CustomFileSystems[] | Computed<MakerSpace_SpaceSettings_CustomFileSystems[]>;
   /** The JupyterServer app settings. */
   jupyterLabAppSettings?: MakerSpace_SpaceSettings_JupyterLabAppSettings | Computed<MakerSpace_SpaceSettings_JupyterLabAppSettings>;
@@ -118,19 +99,15 @@ export interface MakerSpace_SpaceSettings {
   remoteAccess?: string | Computed<string>;
   /** The flag to enable/disable creation of space managed resources. */
   spaceManagedResources?: string | Computed<string>;
-  /** This object configures the Amazon EBS storage settings for the SageMaker Studio space, including the EBS volume size in gigabytes via the nested EBS storage settings. (AI-inferred) */
   spaceStorageSettings?: MakerSpace_SpaceSettings_SpaceStorageSettings | Computed<MakerSpace_SpaceSettings_SpaceStorageSettings>;
 }
 
 export interface MakerSpace_SpaceSharingSettings {
-  /** Defines whether the SageMaker Studio space is private (only the owner) or shared with other users, with allowed values Private and Shared. (AI-inferred) */
   sharingType: string | Computed<string>;
 }
 
 export interface MakerSpace_Tags {
-  /** The key of a user-defined tag to assign to the SageMaker Space, used for categorizing, cost tracking, and access control on this AWS resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value (the variable part of a key-value pair) for a tag attached to the SageMaker Space, used for metadata management and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -307,15 +284,12 @@ const MakerSpace_TagsFields: FieldMap = {
 export interface MakerSpaceConfig {
   /** The ID of the associated Domain. */
   domainId: string | Computed<string>;
-  /** Defines the ownership settings for the SageMaker Space, specifying the user profile that owns the space. (AI-inferred) */
   ownershipSettings?: MakerSpace_OwnershipSettings | Computed<MakerSpace_OwnershipSettings>;
-  /** Specifies the display name for the SageMaker Space, used to identify the space in the SageMaker Studio user interface. (AI-inferred) */
   spaceDisplayName?: string | Computed<string>;
   /** A name for the Space. */
   spaceName: string | Computed<string>;
   /** A collection of settings that apply to spaces of Amazon SageMaker Studio. These settings are specified when the CreateSpace API is called. */
   spaceSettings?: MakerSpace_SpaceSettings | Computed<MakerSpace_SpaceSettings>;
-  /** Specifies the sharing settings for the SageMaker Space by providing the ARN of a SageMaker resource (e.g., a project) with which the space is shared. (AI-inferred) */
   spaceSharingSettings?: MakerSpace_SpaceSharingSettings | Computed<MakerSpace_SpaceSharingSettings>;
   /** A list of tags to apply to the space. */
   tags?: MakerSpace_Tags[] | Computed<MakerSpace_Tags[]>;
@@ -324,21 +298,17 @@ export interface MakerSpaceConfig {
 export interface MakerSpaceAttrs {
   /** The ID of the associated Domain. */
   domainId: string;
-  /** Defines the ownership settings for the SageMaker Space, specifying the user profile that owns the space. (AI-inferred) */
   ownershipSettings: MakerSpace_OwnershipSettings;
   /** The space Amazon Resource Name (ARN). */
   spaceArn: string;
-  /** Specifies the display name for the SageMaker Space, used to identify the space in the SageMaker Studio user interface. (AI-inferred) */
   spaceDisplayName: string;
   /** A name for the Space. */
   spaceName: string;
   /** A collection of settings that apply to spaces of Amazon SageMaker Studio. These settings are specified when the CreateSpace API is called. */
   spaceSettings: MakerSpace_SpaceSettings;
-  /** Specifies the sharing settings for the SageMaker Space by providing the ARN of a SageMaker resource (e.g., a project) with which the space is shared. (AI-inferred) */
   spaceSharingSettings: MakerSpace_SpaceSharingSettings;
   /** A list of tags to apply to the space. */
   tags: MakerSpace_Tags[];
-  /** The URL used to access the SageMaker Studio space in the web interface. (AI-inferred) */
   url: string;
 }
 

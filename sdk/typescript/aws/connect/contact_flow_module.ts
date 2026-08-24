@@ -7,9 +7,7 @@ export interface ContactFlowModule_ExternalInvocationConfiguration {
 }
 
 export interface ContactFlowModule_Tags {
-  /** The key of a tag assigned to an Amazon Connect contact flow module for resource metadata and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the Amazon Connect contact flow module, used for organizing, managing, and identifying the resource within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

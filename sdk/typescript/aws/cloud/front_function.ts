@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FrontFunction_FunctionConfig_KeyValueStoreAssociations {
-  /** The ARN of the CloudFront KeyValueStore to associate with this function, enabling the function to read data from the key value store at runtime. (AI-inferred) */
   keyValueStoreArn?: string | Computed<string>;
 }
 
@@ -21,7 +20,6 @@ export interface FrontFunction_FunctionMetadata {
 }
 
 export interface FrontFunction_Tags {
-  /** The tag key (e.g., 'environment') assigned to the CloudFront function for metadata and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -61,7 +59,6 @@ export interface FrontFunctionConfig {
 export interface FrontFunctionAttrs {
   /** A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``. */
   autoPublish: boolean;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the CloudFront function, assigned by AWS upon creation. (AI-inferred) */
   functionArn: string;
   /** The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*. */
   functionCode: string;
@@ -71,7 +68,6 @@ export interface FrontFunctionAttrs {
   functionMetadata: FrontFunction_FunctionMetadata;
   /** A name to identify the function. */
   name: string;
-  /** The CloudFront function's stage, which is read-only and indicates whether the function is in the 'DEVELOPMENT' or 'LIVE' lifecycle stage as managed by AWS. (AI-inferred) */
   stage: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: FrontFunction_Tags[];

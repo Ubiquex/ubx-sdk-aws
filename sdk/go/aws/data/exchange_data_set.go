@@ -4,7 +4,6 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExchangeDataSet_Tags struct {
-	// The key (name) of a tag attached to the AWS Data Exchange data set, used to organize, identify, and manage the resource. (AI-inferred)
 	Key any
 	Value any
 }

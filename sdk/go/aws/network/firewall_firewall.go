@@ -4,21 +4,16 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallFirewall_AvailabilityZoneMappings struct {
-	// The Availability Zone (e.g., us-east-1a) where the Network Firewall endpoint is deployed, matching the zone of the associated subnet in the mapping. (AI-inferred)
 	AvailabilityZone any
 }
 
 type FirewallFirewall_SubnetMappings struct {
-	// Specifies whether the firewall endpoint in the associated subnet uses an IPv4 or IPv6 address, with valid values 'IPV4' or 'IPV6'. (AI-inferred)
 	IpaddressType any
-	// The ID of the subnet in the VPC where the firewall endpoint is deployed. (AI-inferred)
 	SubnetId any
 }
 
 type FirewallFirewall_Tags struct {
-	// The key of a tag assigned to the Network Firewall firewall, used to categorize and identify the resource for management and cost allocation. (AI-inferred)
 	Key any
-	// The tag value pairs with a corresponding tag key to label the Network Firewall firewall for resource organization, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -37,64 +32,43 @@ var FirewallFirewall_TagsFields = ubx.FieldMap{
 	}
 
 type FirewallFirewallConfig struct {
-	// Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred)
 	AvailabilityZoneChangeProtection any
-	// Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred)
 	AvailabilityZoneMappings any
-	// Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred)
 	DeleteProtection any
-	// A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred)
 	Description any
 	// The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both.
 	EnabledAnalysisTypes any
-	// A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred)
 	FirewallName any
 	// A resource ARN.
 	FirewallPolicyArn any
-	// When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred)
 	FirewallPolicyChangeProtection any
-	// Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred)
 	SubnetChangeProtection any
-	// Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
 	SubnetMappings any
 	Tags any
 	TransitGatewayId any
-	// The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
 	VpcId any
 }
 
 type FirewallFirewallAttrs struct {
-	// Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred)
 	AvailabilityZoneChangeProtection any
-	// Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred)
 	AvailabilityZoneMappings any
-	// Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred)
 	DeleteProtection any
-	// A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred)
 	Description any
 	// The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both.
 	EnabledAnalysisTypes any
-	// The list of VPC endpoint IDs created for the firewall in each of its associated subnets, used to route traffic to the firewall. (AI-inferred)
 	EndpointIds any
 	// A resource ARN.
 	FirewallArn any
-	// The unique identifier assigned by AWS to this Network Firewall firewall. (AI-inferred)
 	FirewallId any
-	// A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred)
 	FirewallName any
 	// A resource ARN.
 	FirewallPolicyArn any
-	// When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred)
 	FirewallPolicyChangeProtection any
-	// Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred)
 	SubnetChangeProtection any
-	// Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
 	SubnetMappings any
 	Tags any
-	// The unique identifier of the Transit Gateway attachment that connects the firewall to its VPC, populated after the firewall is created. (AI-inferred)
 	TransitGatewayAttachmentId any
 	TransitGatewayId any
-	// The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
 	VpcId any
 }
 

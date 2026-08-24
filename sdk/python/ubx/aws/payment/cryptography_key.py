@@ -8,39 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CryptographyKey_KeyAttributes_KeyModesOfUse:
-    # When true, the key may be used for decryption operations. (AI-inferred)
     decrypt: Any = None
-    # Indicates whether this key can be used to derive other keys in cryptographic operations. (AI-inferred)
     derive_key: Any = None
-    # Specifies whether the key can be used for encryption operations. (AI-inferred)
     encrypt: Any = None
-    # When true, this key is permitted to generate message authentication codes (MACs) as part of its allowed modes of use. (AI-inferred)
     generate: Any = None
-    # If set to true, this key is unrestricted and can be used for any cryptographic operation, bypassing specific mode-of-use constraints in AWS Payment Cryptography. (AI-inferred)
     no_restrictions: Any = None
-    # Specifies whether the key can be used to generate digital signatures. (AI-inferred)
     sign: Any = None
-    # Indicates whether the key can be used to unwrap (decrypt) data or keys that were previously wrapped. (AI-inferred)
     unwrap: Any = None
-    # Indicates whether the cryptographic key can be used to verify digital signatures or message authentication codes. (AI-inferred)
     verify: Any = None
-    # Indicates whether the key can be used to wrap (encrypt) another key. (AI-inferred)
     wrap: Any = None
 
 @dataclasses.dataclass
 class CryptographyKey_KeyAttributes:
-    # Specifies the cryptographic algorithm for the key (e.g., TDES_2KEY, TDES_3KEY, AES_128, AES_192, AES_256, RSA_2048, RSA_3072, RSA_4096), which determines the key's permitted cryptographic operations. (AI-inferred)
     key_algorithm: Any = None
-    # Specifies the class of the cryptographic key, such as whether it is a symmetric key, asymmetric key pair, private key, or public key. (AI-inferred)
     key_class: Any = None
-    # Defines the set of cryptographic operations (such as encrypt, decrypt, sign, verify, wrap, unwrap, generate, derive key) that the key is restricted to perform, with each operation represented as a boolean flag. (AI-inferred)
     key_modes_of_use: Any = None
-    # Specifies the intended cryptographic function of the key, using TR31 key usage values such as TR31_C0_CARD_VERIFICATION_KEY or TR31_D0_SYMMETRIC_DATA_ENCRYPTION_KEY, which constrains how the key can be used in payment operations. (AI-inferred)
     key_usage: Any = None
 
 @dataclasses.dataclass
 class CryptographyKey_Tags:
-    # The key of a user-defined tag applied to an AWS Payment Cryptography key, enabling categorization, filtering, cost allocation, and access control for the key. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -74,36 +60,23 @@ _CryptographyKey_TagsFields = {
 
 @dataclasses.dataclass
 class CryptographyKeyConfig:
-    # Specifies the intended cryptographic key usage for a derived key generated from this key. (AI-inferred)
     derive_key_usage: Any = None
-    # Indicates whether the key is enabled for use in cryptographic operations. (AI-inferred)
     enabled: Any = None
-    # Indicates whether the key material can be exported from AWS Payment Cryptography, enabling use of the key outside the service for encryption operations. (AI-inferred)
     exportable: Any = None
-    # Specifies the cryptographic attributes of the key, including the key algorithm, key class, key usage, and key mode of use, which are required when creating or importing a key. (AI-inferred)
     key_attributes: Any = None
-    # Specifies the algorithm (such as CMAC or HMAC) used to generate the key check value (KCV) for the cryptographic key. (AI-inferred)
     key_check_value_algorithm: Any = None
     # The resource-based policy attached to the key, in JSON format.
     policy: Any = None
-    # Specifies the list of AWS regions to which the key is replicated for cross-region availability and disaster recovery, allowing the key to be used in those regions. (AI-inferred)
     replication_regions: Any = None
-    # Specifies the tags, which are key-value pairs, to associate with the AWS Payment Cryptography key for resource management and cost tracking. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class CryptographyKeyAttrs:
-    # Specifies the intended cryptographic key usage for a derived key generated from this key. (AI-inferred)
     derive_key_usage: Any = None
-    # Indicates whether the key is enabled for use in cryptographic operations. (AI-inferred)
     enabled: Any = None
-    # Indicates whether the key material can be exported from AWS Payment Cryptography, enabling use of the key outside the service for encryption operations. (AI-inferred)
     exportable: Any = None
-    # Specifies the cryptographic attributes of the key, including the key algorithm, key class, key usage, and key mode of use, which are required when creating or importing a key. (AI-inferred)
     key_attributes: Any = None
-    # Specifies the algorithm (such as CMAC or HMAC) used to generate the key check value (KCV) for the cryptographic key. (AI-inferred)
     key_check_value_algorithm: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Payment Cryptography key. (AI-inferred)
     key_identifier: Any = None
     # Defines the source of a key
     key_origin: Any = None
@@ -111,11 +84,8 @@ class CryptographyKeyAttrs:
     key_state: Any = None
     # The resource-based policy attached to the key, in JSON format.
     policy: Any = None
-    # Specifies the list of AWS regions to which the key is replicated for cross-region availability and disaster recovery, allowing the key to be used in those regions. (AI-inferred)
     replication_regions: Any = None
-    # The current replication status of the payment cryptography key, indicating whether key material has been successfully replicated to the configured replica region (e.g., PENDING, SUCCEEDED, FAILED). (AI-inferred)
     replication_status: Any = None
-    # Specifies the tags, which are key-value pairs, to associate with the AWS Payment Cryptography key for resource management and cost tracking. (AI-inferred)
     tags: Any = None
 
 CryptographyKey = ubx.ResourceBinding(

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Schema_Tags {
-  /** The key of a tag attached to the AWS Personalize schema resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

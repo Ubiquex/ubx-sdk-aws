@@ -8,69 +8,46 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric_Dimensions:
-    # The name of the CloudWatch metric dimension (e.g., 'AutoScalingGroupName') used as a key to identify a specific attribute of the customized capacity metric for predictive scaling. (AI-inferred)
     name: Any = None
-    # The value part of a name/value pair that defines a CloudWatch metric dimension for the customized capacity metric used in predictive scaling. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat_Metric:
-    # The list of CloudWatch metric dimensions (each a name-value pair) that uniquely identify the metric used as the customized capacity metric in the predictive scaling policy. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric used as the source for the metric statistic in this metric data query within the custom capacity metric specification of the predictive scaling policy. (AI-inferred)
     metric_name: Any = None
-    # The namespace of the CloudWatch metric (e.g., AWS/EC2, AWS/ApplicationELB) that identifies the AWS service emitting the metric used in the customized capacity metric specification for predictive scaling. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries_MetricStat:
-    # Identifies the CloudWatch metric (by its namespace, metric name, and dimensions) that this metric stat uses as the source data for the customized capacity metric specification in predictive scaling. (AI-inferred)
     metric: Any = None
-    # The CloudWatch statistic (e.g., Sum, Average, Minimum, Maximum, SampleCount, or a percentile like p99) for the metric used in this customized capacity metric specification of the predictive scaling policy. (AI-inferred)
     stat: Any = None
-    # The unit of measurement for the metric statistic (e.g., 'Count', 'Percent', 'Bytes') in the customized capacity metric specification for the predictive scaling policy. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification_MetricDataQueries:
-    # The math expression used in the metric data query for the customized capacity metric specification, enabling calculated metrics such as aggregation of raw metrics for predictive scaling. (AI-inferred)
     expression: Any = None
-    # A short name that uniquely identifies this metric data query within the customized capacity metric specification, used to reference the returned data in metric expressions. (AI-inferred)
     id: Any = None
-    # A human-readable label for the metric data query that identifies the metric or expression used in the customized capacity metric specification for predictive scaling. (AI-inferred)
     label: Any = None
-    # Specifies the CloudWatch metric statistic to use in the metric data query, providing the metric's namespace, name, dimensions, and the statistic (e.g., Sum) that predictive scaling uses to compute capacity. (AI-inferred)
     metric_stat: Any = None
-    # Indicates whether the result of this metric data query is returned and used as the customized capacity metric in the predictive scaling policy's metric specification, typically set to true for the query that provides the actual capacity value. (AI-inferred)
     return_data: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_CustomizedCapacityMetricSpecification:
-    # Specifies the metric data queries that define the customized capacity metric(s) used to calculate the target capacity for predictive scaling, where each query can reference a CloudWatch metric or be a math expression based on other queries. (AI-inferred)
     metric_data_queries: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications_PredefinedLoadMetricSpecification:
-    # The predefined load metric type for predictive scaling, such as ASGCPUUtilization or ALBRequestCountPerTarget, which determines the load metric used to compute the capacity forecast. (AI-inferred)
     predefined_metric_type: Any = None
-    # The resource label that identifies the specific AWS resource (such as an Application Load Balancer or target group) to associate with the predefined load metric for predictive scaling, required for metrics like ALBRequestCountPerTarget. (AI-inferred)
     resource_label: Any = None
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration_MetricSpecifications:
-    # Specifies a custom CloudWatch metric that represents the capacity of the scaling target (e.g., an Auto Scaling group), including the metric name, namespace, and statistic, which Application Auto Scaling uses for predictive scaling forecasting. (AI-inferred)
     customized_capacity_metric_specification: Any = None
-    # The custom load metric specification for the predictive scaling policy, defining the metric name, namespace, dimensions, and statistic used to represent the resource's load. (AI-inferred)
     customized_load_metric_specification: Any = None
-    # Defines the custom CloudWatch metric specification that this predictive scaling metric specification uses for forecasting, including metric name, namespace, dimensions, and statistic. (AI-inferred)
     customized_scaling_metric_specification: Any = None
-    # PredefinedLoadMetricSpecification specifies a predefined metric (e.g., ALBRequestCountPerTarget) to be used as the load metric for the predictive scaling policy, optionally identifying the specific resource with a ResourceLabel. (AI-inferred)
     predefined_load_metric_specification: Any = None
-    # Defines a predefined metric pair to be used for predictive scaling, specifying the predefined metric type and, for metrics that require it, the resource label. (AI-inferred)
     predefined_metric_pair_specification: Any = None
-    # Defines the predefined CloudWatch metric (e.g., ASG CPU utilization or request count per target) that the predictive scaling policy uses as the basis for load forecasts, with an optional resource label to identify the specific resource. (AI-inferred)
     predefined_scaling_metric_specification: Any = None
-    # The target value for the scaling metric defined in this specification, which the predictive scaling policy uses to determine the required capacity and adjust the resource's scale. (AI-inferred)
     target_value: Any = None
 
 @dataclasses.dataclass
@@ -88,11 +65,8 @@ class AutoScalingScalingPolicy_PredictiveScalingPolicyConfiguration:
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicy_StepScalingPolicyConfiguration_StepAdjustments:
-    # Defines the exclusive lower bound of the metric value range that triggers this step adjustment, where the range is evaluated relative to the alarm threshold and the associated scaling adjustment is applied only when the CloudWatch metric value falls within that interval. (AI-inferred)
     metric_interval_lower_bound: Any = None
-    # Specifies the upper bound (exclusive) of the metric value range that triggers this step adjustment, used in step scaling policies to map metric values to scaling adjustments. (AI-inferred)
     metric_interval_upper_bound: Any = None
-    # The amount, in capacity units, by which to scale (positive to add capacity, negative to remove capacity) when the corresponding step adjustment's metric breach threshold is met. (AI-inferred)
     scaling_adjustment: Any = None
 
 @dataclasses.dataclass
@@ -309,7 +283,6 @@ class AutoScalingScalingPolicyConfig:
 
 @dataclasses.dataclass
 class AutoScalingScalingPolicyAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Auto Scaling scaling policy. (AI-inferred)
     arn: Any = None
     # The name of the scaling policy. Updates to the name of a target tracking scaling policy are not supported, unless you also update the metric used for scaling. To change only a target tracking scaling policy's name, first delete the policy by removing the existing ``AWS::ApplicationAutoScaling::ScalingPolicy`` resource from the template and updating the stack. Then, recreate the resource with the same settings and a different name.
     policy_name: Any = None

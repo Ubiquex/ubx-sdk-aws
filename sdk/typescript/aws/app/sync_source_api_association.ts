@@ -6,7 +6,6 @@ export interface SyncSourceApiAssociationConfig {
   description?: string | Computed<string>;
   /** Identifier of the Merged GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN */
   mergedApiIdentifier?: string | Computed<string>;
-  /** The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred) */
   sourceApiAssociationConfig?: unknown | Computed<unknown>;
   /** Identifier of the Source GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN */
   sourceApiIdentifier?: string | Computed<string>;
@@ -29,7 +28,6 @@ export interface SyncSourceApiAssociationAttrs {
   mergedApiIdentifier: string;
   /** ARN of the source API in the association. */
   sourceApiArn: string;
-  /** The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred) */
   sourceApiAssociationConfig: unknown;
   /** Current status of SourceApiAssociation. */
   sourceApiAssociationStatus: string;

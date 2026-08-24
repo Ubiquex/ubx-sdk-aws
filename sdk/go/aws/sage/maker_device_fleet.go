@@ -12,7 +12,6 @@ type MakerDeviceFleet_OutputConfig struct {
 
 type MakerDeviceFleet_Tags struct {
 	Key any
-	// The value portion of a tag attached to the SageMaker device fleet, allowing you to assign arbitrary metadata for purposes like cost tracking, access control, or operational organization. (AI-inferred)
 	Value any
 }
 
@@ -31,7 +30,6 @@ type MakerDeviceFleetConfig struct {
 	Description any
 	// The name of the edge device fleet
 	DeviceFleetName any
-	// Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred)
 	OutputConfig any
 	// Role associated with the device fleet
 	RoleArn any
@@ -44,7 +42,6 @@ type MakerDeviceFleetAttrs struct {
 	Description any
 	// The name of the edge device fleet
 	DeviceFleetName any
-	// Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred)
 	OutputConfig any
 	// Role associated with the device fleet
 	RoleArn any

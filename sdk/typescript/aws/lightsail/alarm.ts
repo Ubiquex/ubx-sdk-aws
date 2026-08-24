@@ -27,7 +27,6 @@ export interface AlarmConfig {
 }
 
 export interface AlarmAttrs {
-  /** The Amazon Resource Name (ARN) of the Lightsail alarm, uniquely identifying it in AWS. (AI-inferred) */
   alarmArn: string;
   /** The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm. */
   alarmName: string;

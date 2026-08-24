@@ -19,7 +19,6 @@ class TwirelessMulticastGroup_LoRaWan:
 
 @dataclasses.dataclass
 class TwirelessMulticastGroup_Tags:
-    # Defines the key of a tag applied to the IoT Wireless Multicast Group, allowing you to attach custom metadata for resource grouping and management. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -53,7 +52,6 @@ class TwirelessMulticastGroupAttrs:
     disassociate_wireless_device: Any = None
     # Multicast group id. Returned after successful create.
     id: Any = None
-    # The LoRaWAN radio configuration (downlink class and frequency band) that AWS IoT Wireless applies to this multicast group, returned as a read-only attribute after group creation. (AI-inferred)
     lo_ra_wan: Any = None
     # Name of Multicast group
     name: Any = None

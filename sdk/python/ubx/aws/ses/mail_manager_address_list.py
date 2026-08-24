@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class MailManagerAddressList_Tags:
     key: Any = None
-    # The value component of a tag attached to the SES Mail Manager address list, used to store arbitrary metadata for resource identification, cost allocation, and access control. (AI-inferred)
     value: Any = None
 
 _MailManagerAddressList_TagsFields = {
@@ -19,20 +18,14 @@ _MailManagerAddressList_TagsFields = {
 
 @dataclasses.dataclass
 class MailManagerAddressListConfig:
-    # Sets the name of the address list, which identifies it in the SES Mail Manager console and API. (AI-inferred)
     address_list_name: Any = None
-    # Specifies the key-value tags to attach to the SES Mail Manager address list resource, enabling organization, identification, and cost allocation within AWS. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MailManagerAddressListAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this address list within AWS SES Mail Manager. (AI-inferred)
     address_list_arn: Any = None
-    # The unique identifier assigned by AWS to the address list resource, generated upon creation and used to reference this address list in Mail Manager policies and configurations. (AI-inferred)
     address_list_id: Any = None
-    # Sets the name of the address list, which identifies it in the SES Mail Manager console and API. (AI-inferred)
     address_list_name: Any = None
-    # Specifies the key-value tags to attach to the SES Mail Manager address list resource, enabling organization, identification, and cost allocation within AWS. (AI-inferred)
     tags: Any = None
 
 MailManagerAddressList = ubx.ResourceBinding(

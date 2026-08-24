@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointAccess_VpcEndpoint_NetworkInterfaces:
-    # Indicates the Availability Zone in which the network interface associated with the VPC endpoint is located. (AI-inferred)
     availability_zone: Any = None
-    # The unique identifier of the network interface associated with the VPC endpoint used by this Redshift endpoint access, representing the elastic network interface (ENI) that routes traffic to the Redshift cluster. (AI-inferred)
     network_interface_id: Any = None
-    # The private IPv4 address of one of the network interfaces attached to the VPC endpoint that provides private connectivity to the Redshift cluster. (AI-inferred)
     private_ip_address: Any = None
-    # The subnet ID where the network interface of the VPC endpoint for this Redshift endpoint access is provisioned. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
@@ -28,9 +24,7 @@ class EndpointAccess_VpcEndpoint:
 
 @dataclasses.dataclass
 class EndpointAccess_VpcSecurityGroups:
-    # The current status of a VPC security group associated with the Amazon Redshift endpoint access, indicating whether the security group association is active, being authorized, or being revoked. (AI-inferred)
     status: Any = None
-    # The ID of a VPC security group associated with the Redshift endpoint access, used to control network access to the endpoint. (AI-inferred)
     vpc_security_group_id: Any = None
 
 @dataclasses.dataclass

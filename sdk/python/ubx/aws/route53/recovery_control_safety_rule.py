@@ -33,9 +33,7 @@ class RecoveryControlSafetyRule_RuleConfig:
 
 @dataclasses.dataclass
 class RecoveryControlSafetyRule_Tags:
-    # The key of a tag applied to the Route 53 Recovery Control safety rule, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of an individual tag assigned to the AWS Route53 Recovery Control safety rule, used for metadata-based categorization and management of the rule. (AI-inferred)
     value: Any = None
 
 _RecoveryControlSafetyRule_AssertionRuleFields = {

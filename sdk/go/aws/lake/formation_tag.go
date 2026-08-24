@@ -4,20 +4,14 @@ package lake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FormationTagConfig struct {
-	// The identifier of the Data Catalog (usually the AWS account ID) where the LF-tag is defined, defaulting to the current account if not specified. (AI-inferred)
 	CatalogId any
-	// The key (name) of the Lake Formation LF-tag, which together with TagValues forms a tag pair used to classify resources. (AI-inferred)
 	TagKey any
-	// The tag_values field specifies the list of possible values for this Lake Formation tag (LF-tag), which can be assigned to data lake resources for attribute-based access control. (AI-inferred)
 	TagValues any
 }
 
 type FormationTagAttrs struct {
-	// The identifier of the Data Catalog (usually the AWS account ID) where the LF-tag is defined, defaulting to the current account if not specified. (AI-inferred)
 	CatalogId any
-	// The key (name) of the Lake Formation LF-tag, which together with TagValues forms a tag pair used to classify resources. (AI-inferred)
 	TagKey any
-	// The tag_values field specifies the list of possible values for this Lake Formation tag (LF-tag), which can be assigned to data lake resources for attribute-based access control. (AI-inferred)
 	TagValues any
 }
 

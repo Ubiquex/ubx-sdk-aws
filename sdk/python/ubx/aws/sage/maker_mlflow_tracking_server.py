@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerMlflowTrackingServer_Tags:
-    # The key part of a key-value tag attached to the SageMaker MLflow Tracking Server, used to identify and organize the resource within AWS. (AI-inferred)
     key: Any = None
-    # The arbitrary value for a tag attached to the SageMaker MLflow Tracking Server. (AI-inferred)
     value: Any = None
 
 _MakerMlflowTrackingServer_TagsFields = {

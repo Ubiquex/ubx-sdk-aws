@@ -8,92 +8,56 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataProvider_Settings_DocDbSettings:
-    # The ARN of the certificate used for secure TLS/SSL connection to the Amazon DocumentDB database when the data provider connects. (AI-inferred)
     certificate_arn: Any = None
-    # The name of the DocumentDB database to which the DMS data provider connects for data migration. (AI-inferred)
     database_name: Any = None
-    # The port number used to connect to the DocumentDB instance. (AI-inferred)
     port: Any = None
-    # The hostname or cluster endpoint of the Amazon DocumentDB (with MongoDB compatibility) database that this DMS data provider uses to connect for migration. (AI-inferred)
     server_name: Any = None
-    # Specifies the SSL/TLS mode used when connecting to the DocumentDB cluster, with allowed values including none, require, verify-ca, and verify-full. (AI-inferred)
     ssl_mode: Any = None
 
 @dataclasses.dataclass
 class DataProvider_Settings_MariaDbSettings:
-    # The Amazon Resource Name (ARN) of the certificate used for SSL/TLS encryption when connecting to the MariaDB database as a DMS data provider. (AI-inferred)
     certificate_arn: Any = None
-    # The TCP port number on which the MariaDB server listens for incoming connections. (AI-inferred)
     port: Any = None
-    # The hostname or IP address of the MariaDB database server that the data provider connects to. (AI-inferred)
     server_name: Any = None
-    # Specifies the SSL mode used for connections to the MariaDB database, with values such as none, require, verify-ca, or verify-full. (AI-inferred)
     ssl_mode: Any = None
 
 @dataclasses.dataclass
 class DataProvider_Settings_MongoDbSettings:
-    # Specifies the MongoDB authentication mechanism used when connecting to the database, with valid values including 'default', 'mongodb_cr', and 'scram_sha_1'. (AI-inferred)
     auth_mechanism: Any = None
-    # The name of the MongoDB authentication database (authSource) that contains the user credentials used when connecting to the source database. (AI-inferred)
     auth_source: Any = None
-    # Specifies the authentication type used when connecting to the MongoDB data source, such as NONE or PASSWORD. (AI-inferred)
     auth_type: Any = None
-    # The Amazon Resource Name (ARN) of the certificate used for SSL/TLS encryption when connecting to the MongoDB database. (AI-inferred)
     certificate_arn: Any = None
-    # The name of the MongoDB database that the DMS data provider uses for connections and migrations. (AI-inferred)
     database_name: Any = None
-    # The TCP port number on which the MongoDB source database is listening for connections. (AI-inferred)
     port: Any = None
-    # The hostname or IP address of the MongoDB server to connect to for this data provider. (AI-inferred)
     server_name: Any = None
-    # Specifies the SSL mode used when connecting to the MongoDB data provider, such as 'none', 'require', 'verify-ca', or 'verify-full'. (AI-inferred)
     ssl_mode: Any = None
 
 @dataclasses.dataclass
 class DataProvider_Settings_OracleSettings:
-    # Specifies the hostname or IP address of the Oracle Automatic Storage Management (ASM) server that the DMS data provider connects to for Oracle database settings. (AI-inferred)
     asm_server: Any = None
-    # The Amazon Resource Name (ARN) of the certificate used to encrypt connections to the Oracle database when SSL/TLS is enabled. (AI-inferred)
     certificate_arn: Any = None
-    # Specifies the Oracle database name (SID or service name) that the AWS DMS data provider uses to connect to the Oracle source database. (AI-inferred)
     database_name: Any = None
-    # The TCP port number used to connect to the Oracle database. (AI-inferred)
     port: Any = None
-    # The ARN of the IAM role that AWS DMS uses to access Oracle Automatic Storage Management (ASM) credentials stored in AWS Secrets Manager for the Oracle data provider. (AI-inferred)
     secrets_manager_oracle_asm_access_role_arn: Any = None
-    # The identifier of the AWS Secrets Manager secret that stores the Oracle ASM credentials used for this data provider's Oracle settings. (AI-inferred)
     secrets_manager_oracle_asm_secret_id: Any = None
-    # The ARN of the IAM role that AWS DMS uses to access the AWS Secrets Manager secret storing the Oracle database encryption key, enabling DMS to decrypt the Oracle database data. (AI-inferred)
     secrets_manager_security_db_encryption_access_role_arn: Any = None
-    # Specifies the AWS Secrets Manager secret identifier (ARN or name) that stores the Oracle database security encryption password, used by the DMS data provider to authenticate and access the encrypted Oracle data source. (AI-inferred)
     secrets_manager_security_db_encryption_secret_id: Any = None
-    # The host name or IP address of the Oracle database server that this data provider connects to. (AI-inferred)
     server_name: Any = None
-    # Specifies the SSL mode (e.g., none, require, verify-ca, verify-full) for connections to the Oracle data provider, controlling whether and how TLS encryption and certificate verification are applied. (AI-inferred)
     ssl_mode: Any = None
 
 @dataclasses.dataclass
 class DataProvider_Settings_RedshiftSettings:
-    # The name of the Redshift database that the AWS DMS data provider connects to. (AI-inferred)
     database_name: Any = None
-    # The TCP port number used to connect to the Amazon Redshift data provider (default is 5439). (AI-inferred)
     port: Any = None
-    # The hostname or IP address of the Amazon Redshift server that the DMS data provider connects to. (AI-inferred)
     server_name: Any = None
 
 @dataclasses.dataclass
 class DataProvider_Settings_SybaseAseSettings:
-    # The ARN of the certificate used to encrypt connections between the DMS data provider and the Sybase ASE database via SSL/TLS. (AI-inferred)
     certificate_arn: Any = None
-    # The name of the Sybase ASE database to which the data provider connects. (AI-inferred)
     database_name: Any = None
-    # Indicates whether the password for the Sybase ASE database is encrypted in the data provider settings. (AI-inferred)
     encrypt_password: Any = None
-    # The TCP port number used to connect to the Sybase Adaptive Server Enterprise database. (AI-inferred)
     port: Any = None
-    # The hostname or IP address of the Sybase Adaptive Server Enterprise (ASE) database server to which the data provider connects. (AI-inferred)
     server_name: Any = None
-    # Determines the SSL mode for the Sybase ASE data provider connection, specifying whether SSL is enforced and how the server certificate is verified. (AI-inferred)
     ssl_mode: Any = None
 
 @dataclasses.dataclass
@@ -123,9 +87,7 @@ class DataProvider_Settings:
 
 @dataclasses.dataclass
 class DataProvider_Tags:
-    # The tag key for a tag attached to the AWS DMS data provider, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag attached to the DMS Data Provider, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _DataProvider_Settings_DocDbSettingsFields = {

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dbsnapshot_Tags {
-  /** The key of a tag attached to the RDS DB snapshot, used to assign metadata for resource identification, cost tracking, and IAM-based access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag applied to this RDS DB snapshot, providing arbitrary metadata to classify or manage the snapshot. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -11,20 +11,14 @@ export interface DataMigration_DataMigrationSettings {
 }
 
 export interface DataMigration_SourceDataSettings {
-  /** Specifies the position in the source database's transaction log (such as binary log) from which AWS DMS starts reading changes when using change data capture (CDC) for the data migration. (AI-inferred) */
   cdcstartPosition?: string | Computed<string>;
-  /** The timestamp (in the source database's timezone) from which change data capture (CDC) begins for ongoing replication in the data migration. (AI-inferred) */
   cdcstartTime?: string | Computed<string>;
-  /** Specifies the UTC timestamp at which Change Data Capture (CDC) stops collecting incremental changes from the source database for this data migration. (AI-inferred) */
   cdcstopTime?: string | Computed<string>;
-  /** Specifies the name of the PostgreSQL replication slot that DMS uses to capture change data for ongoing replication (change data capture) from the source database. (AI-inferred) */
   slotName?: string | Computed<string>;
 }
 
 export interface DataMigration_Tags {
-  /** The key of a tag attached to the AWS DMS data migration resource, used for categorizing, cost tracking, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the DMS data migration resource, used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -51,7 +45,6 @@ export interface DataMigrationConfig {
   dataMigrationIdentifier?: string | Computed<string>;
   /** The property describes a name to identify the data migration. */
   dataMigrationName?: string | Computed<string>;
-  /** Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred) */
   dataMigrationSettings?: DataMigration_DataMigrationSettings | Computed<DataMigration_DataMigrationSettings>;
   /** The property describes the type of migration. */
   dataMigrationType: string | Computed<string>;
@@ -74,7 +67,6 @@ export interface DataMigrationAttrs {
   dataMigrationIdentifier: string;
   /** The property describes a name to identify the data migration. */
   dataMigrationName: string;
-  /** Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred) */
   dataMigrationSettings: DataMigration_DataMigrationSettings;
   /** The property describes the type of migration. */
   dataMigrationType: string;

@@ -4,7 +4,6 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceEnvironment_CapacityLimits struct {
-	// Specifies the unit of measure (for example, vCPU or memory) used to interpret the capacity limit value in the AWS Batch service environment's capacity limits configuration. (AI-inferred)
 	CapacityUnit any
 	MaxCapacity any
 }

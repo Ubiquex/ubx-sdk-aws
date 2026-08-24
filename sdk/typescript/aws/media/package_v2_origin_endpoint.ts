@@ -2,32 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PackageV2OriginEndpoint_DashManifests_AvailabilityStartTimeConfiguration {
-  /** Sets a fixed absolute UTC timestamp (ISO 8601) that anchors the start of the DASH manifest's availability window, instead of letting it roll with the live edge. (AI-inferred) */
   fixedAvailabilityStartTime?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_BaseUrls {
   dvbPriority?: number | Computed<number>;
   dvbWeight?: number | Computed<number>;
-  /** Specifies the service location (such as an AWS region or 'global') that identifies where the base URL for the DASH manifest is hosted, used by MediaPackage v2 to route manifest requests to the appropriate endpoint. (AI-inferred) */
   serviceLocation?: string | Computed<string>;
-  /** The base URL used by the DASH manifest in the origin endpoint, which serves as the origin path for client requests to fetch the manifest and associated media segments. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_DvbSettings_ErrorMetrics {
-  /** This field sets the probability (between 0 and 1) that DVB error metrics are emitted for the DASH manifest, controlling the sampling rate of error metric reporting in MediaPackage v2. (AI-inferred) */
   probability?: number | Computed<number>;
-  /** Specifies the URL to which DVB error metrics are reported for the DASH manifest's DVB settings. (AI-inferred) */
   reportingUrl?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_DvbSettings_FontDownload {
-  /** In AWS Elemental MediaPackage v2 origin endpoints for DASH, this property sets the font family name advertised in the DASH manifest's FontDownload descriptor, which clients use to associate a downloadable font with DVB subtitle rendering. (AI-inferred) */
   fontFamily?: string | Computed<string>;
-  /** The MIME type (e.g., font/ttf) of the font file that MediaPackage downloads for DVB subtitle rendering in the DASH manifest. (AI-inferred) */
   mimeType?: string | Computed<string>;
-  /** Specifies the URL of the font file that MediaPackage downloads to render DVB subtitles in the DASH manifest. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -37,96 +29,60 @@ export interface PackageV2OriginEndpoint_DashManifests_DvbSettings {
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_FilterConfiguration {
-  /** Specifies the ISO 8601 timestamp from which the DASH manifest's content window begins, so that playback starts at a particular point in the source stream rather than from the original start. (AI-inferred) */
   clipStartTime?: string | Computed<string>;
-  /** Specifies the DRM system and encryption settings applied to the DASH manifest when manifest filtering is active, controlling the digital rights management protection for the filtered output. (AI-inferred) */
   drmSettings?: string | Computed<string>;
-  /** The end timestamp (ISO 8601 in UTC) that defines the upper boundary of the content time window to include in the DASH manifest for this origin endpoint. (AI-inferred) */
   end?: string | Computed<string>;
-  /** A regular expression applied to DASH manifest references to include only matching manifests in the origin endpoint's filter configuration. (AI-inferred) */
   manifestFilter?: string | Computed<string>;
-  /** Defines the start timestamp of the DASH manifest's filter window, causing media segments earlier than this time to be excluded from the manifest output. (AI-inferred) */
   start?: string | Computed<string>;
-  /** Delays the DASH manifest by the specified number of seconds so that segments are not listed until that time after they are ingested, effectively shifting the manifest's availability window. (AI-inferred) */
   timeDelaySeconds?: number | Computed<number>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_ProgramInformation {
-  /** Specifies the copyright string to include in the DASH manifest's ProgramInformation element. (AI-inferred) */
   copyright?: string | Computed<string>;
-  /** The language code to place in the program information of the DASH manifest, identifying the primary language of the content (for example, 'en' or 'fr'). (AI-inferred) */
   languageCode?: string | Computed<string>;
-  /** Specifies the URL that is included in the ProgramInformation element of DASH manifests to provide viewers with a link to additional details about the program. (AI-inferred) */
   moreInformationUrl?: string | Computed<string>;
-  /** Specifies the source attribute of the DASH ProgramInformation element, which is included in the manifest as the source of the program information. (AI-inferred) */
   source?: string | Computed<string>;
-  /** Specifies the title of the program information element in the DASH manifest, which appears as the <ProgramInformation> title in the MPD output. (AI-inferred) */
   title?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_ScteDash {
-  /** Specifies the ad marker style for DASH manifests, indicating whether SCTE-35 markers appear as binary (BINARY) or XML (XML). (AI-inferred) */
   adMarkerDash?: string | Computed<string>;
-  /** Controls whether SCTE-35 ad markers are included in the DASH manifest, and which SCTE-35 signals to insert. (AI-inferred) */
   scteInManifests?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration_TtmlConfiguration {
-  /** Specifies the TTML profile for subtitles in this DASH manifest's subtitle configuration, which determines whether subtitles are passed through as-is or converted to DVB-subtitle format. (AI-inferred) */
   ttmlProfile?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration {
-  /** Defines TTML subtitle configuration for DASH manifests, specifying period trigger commands and whether to splice subtitles at period boundaries. (AI-inferred) */
   ttmlConfiguration?: PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration_TtmlConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration_TtmlConfiguration>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests_UtcTiming {
-  /** Specifies how the DASH manifest communicates UTC timing to downstream players, with supported values including HTTP_HEAD, HTTP_ISO, HTTP_XSDATE, and DIRECT. (AI-inferred) */
   timingMode?: string | Computed<string>;
-  /** Specifies the source URL or identifier from which the DASH manifest's UTC timing element retrieves the current wall-clock time, enabling synchronized playback when the timing mode is set to HTTP or HTTP-ISO. (AI-inferred) */
   timingSource?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_DashManifests {
   audioTimelinePattern?: string | Computed<string>;
-  /** Configures the availability start time for the DASH manifest, allowing you to set a specific wall-clock time from which the manifest's content begins playback. (AI-inferred) */
   availabilityStartTimeConfiguration?: PackageV2OriginEndpoint_DashManifests_AvailabilityStartTimeConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_AvailabilityStartTimeConfiguration>;
-  /** For a DASH manifest in an AWS MediaPackage v2 origin endpoint, this field specifies the base URLs that MediaPackage inserts into the manifest's BaseURL elements, enabling clients to resolve segment and submanifest paths relative to these URLs. (AI-inferred) */
   baseUrls?: PackageV2OriginEndpoint_DashManifests_BaseUrls[] | Computed<PackageV2OriginEndpoint_DashManifests_BaseUrls[]>;
-  /** Specifies the compactness of the DASH manifest, where 'COMPACT' includes only the minimum required information to reduce manifest size and 'FULL' includes all available metadata for the manifest. (AI-inferred) */
   compactness?: string | Computed<string>;
-  /** Determines whether the DASH manifest includes DRM signaling (such as ContentProtection elements) for encrypted outputs, with allowed values 'SIGNAL' and 'NO_SIGNAL'. (AI-inferred) */
   drmSignaling?: string | Computed<string>;
-  /** Settings for DVB subtitles in the DASH manifest, specifying the PIDs and language codes of the DVB subtitle tracks to include. (AI-inferred) */
   dvbSettings?: PackageV2OriginEndpoint_DashManifests_DvbSettings | Computed<PackageV2OriginEndpoint_DashManifests_DvbSettings>;
-  /** Defines time-based filtering parameters (start, end, and time delta) that restrict the content window included in the DASH manifest. (AI-inferred) */
   filterConfiguration?: PackageV2OriginEndpoint_DashManifests_FilterConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_FilterConfiguration>;
-  /** The manifest name that uniquely identifies this DASH manifest and is used as part of the endpoint URL to request it. (AI-inferred) */
   manifestName?: string | Computed<string>;
-  /** Specifies the duration (in seconds) of the manifest window, which controls how much live content is available for playback in the DASH manifest. (AI-inferred) */
   manifestWindowSeconds?: number | Computed<number>;
-  /** Specifies the minimum number of seconds that a media player should buffer before starting playback for each DASH manifest generated by this origin endpoint. (AI-inferred) */
   minBufferTimeSeconds?: number | Computed<number>;
-  /** Specifies the minimum update period in seconds for the DASH manifest, indicating to players how often they should check for manifest updates. (AI-inferred) */
   minUpdatePeriodSeconds?: number | Computed<number>;
-  /** Specifies the events (such as ad avail markers, DRM key rotation, source content changes, or slate insertion) that trigger the start of a new DASH period in the generated manifest. (AI-inferred) */
   periodTriggers?: string[] | Computed<string[]>;
-  /** Defines the DASH profiles (e.g., urn:mpeg:dash:profile:isoff-on-demand:2011 or urn:mpeg:dash:profile:isoff-live:2011) that determine the manifest's compliance and feature set for this DASH manifest. (AI-inferred) */
   profiles?: string[] | Computed<string[]>;
-  /** Defines the program information metadata (such as title, copyright, and parental rating) that is included in the DASH manifest generated by this MediaPackage v2 origin endpoint. (AI-inferred) */
   programInformation?: PackageV2OriginEndpoint_DashManifests_ProgramInformation | Computed<PackageV2OriginEndpoint_DashManifests_ProgramInformation>;
-  /** Configures SCTE-DASH ad marker signaling for this DASH manifest by specifying the ad marker format (binary or XML) used to indicate splice points in the stream. (AI-inferred) */
   scteDash?: PackageV2OriginEndpoint_DashManifests_ScteDash | Computed<PackageV2OriginEndpoint_DashManifests_ScteDash>;
-  /** Determines whether the DASH manifest's SegmentTemplate uses a number-based timeline (NUMBER_WITH_TIMELINE) or a time-based timeline (TIME_WITH_TIMELINE) for referencing media segments. (AI-inferred) */
   segmentTemplateFormat?: string | Computed<string>;
-  /** Configures how subtitles are included in the DASH manifest, using subtitle manifest settings and subtitle extensions to map subtitle resources (e.g., WebVTT or TTML) to the output manifest. (AI-inferred) */
   subtitleConfiguration?: PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_SubtitleConfiguration>;
-  /** The duration (in seconds) that the DASH manifest advertises as the suggested presentation delay, indicating to the player how long to buffer before starting playback to ensure smooth rendering. (AI-inferred) */
   suggestedPresentationDelaySeconds?: number | Computed<number>;
-  /** Specifies the URI path type for the DASH manifest, which controls the URL path format (such as V1 or V2) used to access the manifest on the origin endpoint. (AI-inferred) */
   uriPathType?: string | Computed<string>;
-  /** Specifies the UTC timing method (such as HTTP, HTTP-HEAD, HTTP-XSDATE, or DIRECT) and an optional UTC timing offset used in the DASH manifest's UTCTiming element. (AI-inferred) */
   utcTiming?: PackageV2OriginEndpoint_DashManifests_UtcTiming | Computed<PackageV2OriginEndpoint_DashManifests_UtcTiming>;
 }
 
@@ -136,66 +92,43 @@ export interface PackageV2OriginEndpoint_ForceEndpointErrorConfiguration {
 }
 
 export interface PackageV2OriginEndpoint_HlsManifests_ScteHls {
-  /** Specifies the ad marker type for HLS manifests when using SCTE-35 signaling, with supported values such as DATERANGE and SCTE35_ENHANCED. (AI-inferred) */
   adMarkerHls?: string | Computed<string>;
-  /** Specifies the SCTE-35 ad marker mode for the HLS manifest, with values like 'NONE' (no markers) or 'SCTE35_ENHANCED' (include enhanced SCTE-35 markers). (AI-inferred) */
   scteInManifests?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_HlsManifests_StartTag {
-  /** Enables precise placement of the EXT-X-START tag's time offset in the HLS manifest, ensuring the playback start time is exact rather than approximated. (AI-inferred) */
   precise?: boolean | Computed<boolean>;
-  /** Determines the time offset (in seconds) from the beginning of the media playlist that the EXT-X-START tag in the HLS manifest specifies as the preferred playback start point. (AI-inferred) */
   timeOffset?: number | Computed<number>;
 }
 
 export interface PackageV2OriginEndpoint_HlsManifests {
-  /** The name that, when appended to the endpoint URL, creates a child manifest used to serve a low-latency HLS (LL-HLS) variant of the main manifest for this origin endpoint. (AI-inferred) */
   childManifestName?: string | Computed<string>;
-  /** Specifies the start and end timestamps and an optional manifest filter expression that control which content is included in the HLS manifest. (AI-inferred) */
   filterConfiguration?: PackageV2OriginEndpoint_DashManifests_FilterConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_FilterConfiguration>;
-  /** A short string appended to the endpoint URL that uniquely identifies this HLS manifest, creating a distinct path for accessing the manifest. (AI-inferred) */
   manifestName?: string | Computed<string>;
-  /** Specifies the duration of the sliding window for the HLS manifest, in seconds, determining how far back from the live edge the manifest lists available segments. (AI-inferred) */
   manifestWindowSeconds?: number | Computed<number>;
-  /** Specifies the interval in seconds between EXT-X-PROGRAM-DATE-TIME tags inserted in the HLS manifest, used for client synchronization and seeking. (AI-inferred) */
   programDateTimeIntervalSeconds?: number | Computed<number>;
-  /** Configures SCTE-35 ad signaling for the HLS manifest, defining how ad markers are inserted (e.g., using EXT-X-CUE-OUT/EXT-X-CUE-IN cue formats). (AI-inferred) */
   scteHls?: PackageV2OriginEndpoint_HlsManifests_ScteHls | Computed<PackageV2OriginEndpoint_HlsManifests_ScteHls>;
-  /** Specifies the EXT-X-START tag configuration for the HLS manifest, including whether the tag is enabled and the time offset (in seconds) from which playback should start. (AI-inferred) */
   startTag?: PackageV2OriginEndpoint_HlsManifests_StartTag | Computed<PackageV2OriginEndpoint_HlsManifests_StartTag>;
-  /** Determines whether the HLS manifest URI path uses a simple format (e.g., `/manifest`) or a normal format that includes segment duration and start number (e.g., `/1234/5678/manifest`), with allowed values `SIMPLE` and `NORMAL`.} (AI-inferred) */
   uriPathType?: string | Computed<string>;
-  /** The complete URL that serves the HLS manifest for this origin endpoint, computed and returned by AWS MediaPackage v2. (AI-inferred) */
   url?: string | Computed<string>;
-  /** Specifies whether the child manifest URL is URL-encoded in the HLS manifest, which affects how special characters in the child manifest path are represented in the parent manifest. (AI-inferred) */
   urlEncodeChildManifest?: boolean | Computed<boolean>;
 }
 
 export interface PackageV2OriginEndpoint_MssManifests {
-  /** Defines filtering options for the Microsoft Smooth Streaming manifest, such as a start/end time window and a delay, to control which content is available to players. (AI-inferred) */
   filterConfiguration?: PackageV2OriginEndpoint_DashManifests_FilterConfiguration | Computed<PackageV2OriginEndpoint_DashManifests_FilterConfiguration>;
-  /** Determines the format of the Microsoft Smooth Streaming manifest, using COMPACT for a condensed layout or FULL for a detailed layout. (AI-inferred) */
   manifestLayout?: string | Computed<string>;
-  /** The name of the Microsoft Smooth Streaming (MSS) manifest associated with this manifest configuration. (AI-inferred) */
   manifestName?: string | Computed<string>;
-  /** Sets the time window, in seconds, of the Microsoft Smooth Streaming manifest, determining how far back the manifest lists segments for playback. (AI-inferred) */
   manifestWindowSeconds?: number | Computed<number>;
 }
 
 export interface PackageV2OriginEndpoint_Segment_Encryption_EncryptionMethod {
-  /** Specifies the encryption method applied to CMAF (fMP4) segments, with allowed values 'SAMPLE_AES' for sample-based AES and 'AES_CTR' for AES counter mode. (AI-inferred) */
   cmafEncryptionMethod?: string | Computed<string>;
-  /** Specifies the encryption method for Microsoft Smooth Streaming (ISM) segments in the endpoint's encryption configuration. (AI-inferred) */
   ismEncryptionMethod?: string | Computed<string>;
-  /** Specifies the MPEG-TS encryption method (e.g., AES-128 or SAMPLE_AES) used for HLS and low-latency HLS outputs when the encryption method is TS-based. (AI-inferred) */
   tsEncryptionMethod?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpoint_Segment_Encryption_SpekeKeyProvider_EncryptionContractConfiguration {
-  /** Specifies the SPEKE v2.0 encryption contract preset for audio content, selecting the predefined audio encryption scheme and key provider configuration (e.g., PRESET-AUDIO-1) applied to all audio tracks in the origin endpoint's segments. (AI-inferred) */
   presetSpeke20Audio: string | Computed<string>;
-  /** Specifies the SPEKE v2 encryption contract preset for video content, defining the encryption algorithm and key parameters applied to video segments in the origin endpoint. (AI-inferred) */
   presetSpeke20Video: string | Computed<string>;
 }
 
@@ -232,7 +165,6 @@ export interface PackageV2OriginEndpoint_Segment_Scte {
   customAdTypes?: string[] | Computed<string[]>;
   /** <p>The SCTE-35 message types that you want to be treated as ad markers in the output.</p> */
   scteFilter?: string[] | Computed<string[]>;
-  /** Specifies whether SCTE-35 messages are inserted into the media segments for the origin endpoint, with 'INSERT' enabling insertion and 'NONE' disabling it. (AI-inferred) */
   scteInSegments?: string | Computed<string>;
 }
 
@@ -255,9 +187,7 @@ export interface PackageV2OriginEndpoint_Segment {
 }
 
 export interface PackageV2OriginEndpoint_Tags {
-  /** The key of a user-defined tag applied to this MediaPackage v2 origin endpoint, which must be unique among the endpoint's tags and is used for cost allocation and resource filtering. (AI-inferred) */
   key?: string | Computed<string>;
-  /** For the MediaPackage v2 origin endpoint resource, this field specifies the value part of a tag, which is a user-defined string used to organize, identify, and categorize the resource for management and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -476,11 +406,8 @@ const PackageV2OriginEndpoint_TagsFields: FieldMap = {
 };
 
 export interface PackageV2OriginEndpointConfig {
-  /** The name of the channel group that contains the channel this origin endpoint is associated with. (AI-inferred) */
   channelGroupName: string | Computed<string>;
-  /** The name of the MediaPackage v2 channel to which this origin endpoint belongs. (AI-inferred) */
   channelName: string | Computed<string>;
-  /** ContainerType specifies the container format of the packaged content for the origin endpoint, which must be either "ts" (MPEG-TS) or "cmaf" (Common Media Application Format). (AI-inferred) */
   containerType: string | Computed<string>;
   /** <p>A DASH manifest configuration.</p> */
   dashManifests?: PackageV2OriginEndpoint_DashManifests[] | Computed<PackageV2OriginEndpoint_DashManifests[]>;
@@ -490,30 +417,23 @@ export interface PackageV2OriginEndpointConfig {
   forceEndpointErrorConfiguration?: PackageV2OriginEndpoint_ForceEndpointErrorConfiguration | Computed<PackageV2OriginEndpoint_ForceEndpointErrorConfiguration>;
   /** <p>The Microsoft Smooth Streaming (MSS) manifest configurations associated with this origin endpoint.</p> */
   mssManifests?: PackageV2OriginEndpoint_MssManifests[] | Computed<PackageV2OriginEndpoint_MssManifests[]>;
-  /** The name of the origin endpoint, which uniquely identifies it within its parent channel and channel group in AWS MediaPackage v2. (AI-inferred) */
   originEndpointName: string | Computed<string>;
   /** <p>The segment configuration, including the segment name, duration, and other configuration values.</p> */
   segment?: PackageV2OriginEndpoint_Segment | Computed<PackageV2OriginEndpoint_Segment>;
   /** <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p> */
   startoverWindowSeconds?: number | Computed<number>;
-  /** Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred) */
   tags?: PackageV2OriginEndpoint_Tags[] | Computed<PackageV2OriginEndpoint_Tags[]>;
-  /** For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred) */
   uriSeparator?: string | Computed<string>;
 }
 
 export interface PackageV2OriginEndpointAttrs {
   /** <p>The Amazon Resource Name (ARN) associated with the resource.</p> */
   arn: string;
-  /** The name of the channel group that contains the channel this origin endpoint is associated with. (AI-inferred) */
   channelGroupName: string;
-  /** The name of the MediaPackage v2 channel to which this origin endpoint belongs. (AI-inferred) */
   channelName: string;
-  /** ContainerType specifies the container format of the packaged content for the origin endpoint, which must be either "ts" (MPEG-TS) or "cmaf" (Common Media Application Format). (AI-inferred) */
   containerType: string;
   /** <p>The date and time the origin endpoint was created.</p> */
   createdAt: string;
-  /** The URLs of the DASH manifests generated by this origin endpoint, which clients use to access the DASH streaming content. (AI-inferred) */
   dashManifestUrls: string[];
   /** <p>A DASH manifest configuration.</p> */
   dashManifests: PackageV2OriginEndpoint_DashManifests[];
@@ -521,29 +441,23 @@ export interface PackageV2OriginEndpointAttrs {
   description: string;
   /** <p>The failover settings for the endpoint.</p> */
   forceEndpointErrorConfiguration: PackageV2OriginEndpoint_ForceEndpointErrorConfiguration;
-  /** The list of HTTPS URLs for the HLS manifests served by this origin endpoint, used to play back content in HLS-compatible players. (AI-inferred) */
   hlsManifestUrls: string[];
   /** <p>An HTTP live streaming (HLS) manifest configuration.</p> */
   hlsManifests: PackageV2OriginEndpoint_HlsManifests[];
-  /** The list of URLs for the low-latency HLS manifests served by this origin endpoint. (AI-inferred) */
   lowLatencyHlsManifestUrls: string[];
   /** <p>A low-latency HLS manifest configuration.</p> */
   lowLatencyHlsManifests: PackageV2OriginEndpoint_HlsManifests[];
   /** <p>The date and time the origin endpoint was modified.</p> */
   modifiedAt: string;
-  /** The list of URLs for the Microsoft Smooth Streaming (MSS) manifests generated by this MediaPackage v2 origin endpoint, which clients use to access the packaged stream. (AI-inferred) */
   mssManifestUrls: string[];
   /** <p>The Microsoft Smooth Streaming (MSS) manifest configurations associated with this origin endpoint.</p> */
   mssManifests: PackageV2OriginEndpoint_MssManifests[];
-  /** The name of the origin endpoint, which uniquely identifies it within its parent channel and channel group in AWS MediaPackage v2. (AI-inferred) */
   originEndpointName: string;
   /** <p>The segment configuration, including the segment name, duration, and other configuration values.</p> */
   segment: PackageV2OriginEndpoint_Segment;
   /** <p>The size of the window (in seconds) to create a window of the live stream that's available for on-demand viewing. Viewers can start-over or catch-up on content that falls within the window. The maximum startover window is 1,209,600 seconds (14 days).</p> */
   startoverWindowSeconds: number;
-  /** Defines a list of key-value tags to attach to the MediaPackage v2 origin endpoint, enabling resource identification, cost allocation, and access management. (AI-inferred) */
   tags: PackageV2OriginEndpoint_Tags[];
-  /** For the DASH manifest of an AWS Elemental MediaPackage v2 origin endpoint, this property sets the URI separator character (either '/' or '_') used in the segment template URL to delimit segment numbers from the preceding path. (AI-inferred) */
   uriSeparator: string;
 }
 

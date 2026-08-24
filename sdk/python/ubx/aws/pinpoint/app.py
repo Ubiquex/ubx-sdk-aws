@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppConfig:
-    # The display name of the Amazon Pinpoint application. (AI-inferred)
     name: Any = None
-    # Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AppAttrs:
-    # The Amazon Resource Name (ARN) of the Pinpoint application. (AI-inferred)
     arn: Any = None
-    # The unique identifier assigned to the Amazon Pinpoint application when it is created. (AI-inferred)
     id: Any = None
-    # The display name of the Amazon Pinpoint application. (AI-inferred)
     name: Any = None
-    # Assigns tags (key-value pairs) to the Amazon Pinpoint application, enabling categorization and management via AWS Resource Groups and cost allocation. (AI-inferred)
     tags: Any = None
 
 App = ubx.ResourceBinding(

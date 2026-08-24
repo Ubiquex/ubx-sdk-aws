@@ -4,41 +4,29 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeployDeploymentConfig_MinimumHealthyHosts struct {
-	// Specifies whether the minimum healthy hosts value is an absolute number of instances (HOST_COUNT) or a percentage of the fleet (FLEET_PERCENT) that must remain healthy during a deployment. (AI-inferred)
 	Type any
-	// The numeric value that defines the minimum number of healthy hosts (when type is HOST_COUNT) or the minimum percentage of the deployment fleet that must be healthy (when type is FLEET_PERCENT) during a CodeDeploy deployment. (AI-inferred)
 	Value any
 }
 
 type DeployDeploymentConfig_TrafficRoutingConfig_TimeBasedCanary struct {
-	// In a time-based canary deployment, this is the number of minutes to wait after shifting the canary percentage of traffic before shifting the remaining traffic. (AI-inferred)
 	CanaryInterval any
-	// The percentage of traffic to shift to the updated deployment group in the first (canary) increment of a time-based canary deployment, with the remaining traffic shifted in the second increment after the configured interval. (AI-inferred)
 	CanaryPercentage any
 }
 
 type DeployDeploymentConfig_TrafficRoutingConfig_TimeBasedLinear struct {
-	// The number of minutes to wait between each incremental shift of traffic during a time-based linear deployment, used with linear_percentage to control the pace of the rollout. (AI-inferred)
 	LinearInterval any
-	// The percentage of traffic to shift to newly added instances at each interval in a time-based linear deployment configuration. (AI-inferred)
 	LinearPercentage any
 }
 
 type DeployDeploymentConfig_TrafficRoutingConfig struct {
-	// The time_based_canary object inside traffic_routing_config for an AWS CodeDeploy deployment config specifies a canary-style traffic shift, moving a defined percentage of traffic to the new revision first and then the remaining traffic after a fixed time interval. (AI-inferred)
 	TimeBasedCanary any
-	// Specifies a time-based linear traffic routing configuration for a CodeDeploy deployment, which shifts a set percentage of traffic to the updated environment at regular time intervals until deployment completes. (AI-inferred)
 	TimeBasedLinear any
-	// Specifies the traffic-routing strategy for the deployment — allowed values are AllAtOnce (all traffic shifted immediately), TimeBasedLinear (shift traffic incrementally at regular intervals), and TimeBasedCanary (shift a canary portion of traffic, then the remainder). (AI-inferred)
 	Type any
 }
 
 type DeployDeploymentConfig_ZonalConfig struct {
-	// The number of seconds AWS CodeDeploy waits to monitor the health of the first Availability Zone in a zonal ECS deployment before proceeding to the next zone. (AI-inferred)
 	FirstZoneMonitorDurationInSeconds any
-	// Specifies the minimum number or percentage of healthy hosts that must be available in each Availability Zone during a CodeDeploy zonal deployment, configured via a type (HOST_COUNT or FLEET_PERCENT) and a value. (AI-inferred)
 	MinimumHealthyHostsPerZone any
-	// The number of seconds that AWS CodeDeploy monitors the health of the first region after its deployment succeeds, before starting deployment to the next region in a zonal deployment. (AI-inferred)
 	MonitorDurationInSeconds any
 }
 
@@ -86,11 +74,8 @@ type DeployDeploymentConfigConfig struct {
 	ComputePlatform any
 	// A name for the deployment configuration. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the deployment configuration name. For more information, see Name Type.
 	DeploymentConfigName any
-	// Defines the minimum number or percentage of healthy hosts that must remain available during a deployment, where the object specifies a type (HOST_COUNT or FLEET_PERCENT) and a numerical value. (AI-inferred)
 	MinimumHealthyHosts any
-	// Configures how traffic is shifted from the original fleet to the replacement fleet during a deployment, such as a linear or canary strategy with a step percentage and interval. (AI-inferred)
 	TrafficRoutingConfig any
-	// Configures zonal deployment behavior for the deployment config, including settings such as the first-zone monitoring duration, overall monitor duration, and the minimum number of healthy hosts required per zone. (AI-inferred)
 	ZonalConfig any
 }
 
@@ -99,11 +84,8 @@ type DeployDeploymentConfigAttrs struct {
 	ComputePlatform any
 	// A name for the deployment configuration. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the deployment configuration name. For more information, see Name Type.
 	DeploymentConfigName any
-	// Defines the minimum number or percentage of healthy hosts that must remain available during a deployment, where the object specifies a type (HOST_COUNT or FLEET_PERCENT) and a numerical value. (AI-inferred)
 	MinimumHealthyHosts any
-	// Configures how traffic is shifted from the original fleet to the replacement fleet during a deployment, such as a linear or canary strategy with a step percentage and interval. (AI-inferred)
 	TrafficRoutingConfig any
-	// Configures zonal deployment behavior for the deployment config, including settings such as the first-zone monitoring duration, overall monitor duration, and the minimum number of healthy hosts required per zone. (AI-inferred)
 	ZonalConfig any
 }
 

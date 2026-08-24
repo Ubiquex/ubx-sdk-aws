@@ -13,13 +13,11 @@ export interface RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration
 
 export interface RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue {
   claimMatchOperator?: string | Computed<string>;
-  /** Specifies the expected value that the custom JWT claim must equal in order for the custom JWT authorizer to authorize a request, as part of the authorizing claim match value configuration. (AI-inferred) */
   claimMatchValue?: RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue | Computed<RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue>;
 }
 
 export interface RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims {
   authorizingClaimMatchValue?: RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue | Computed<RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue>;
-  /** The name of the claim in the incoming JWT token that the custom authorizer extracts to evaluate as a custom claim for access control decisions. (AI-inferred) */
   inboundTokenClaimName?: string | Computed<string>;
   inboundTokenClaimValueType?: string | Computed<string>;
 }

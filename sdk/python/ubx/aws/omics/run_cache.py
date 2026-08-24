@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class RunCache_Tags:
     key: Any = None
-    # The value of a tag (key-value pair) applied to the AWS Omics run cache. (AI-inferred)
     value: Any = None
 
 _RunCache_TagsFields = {

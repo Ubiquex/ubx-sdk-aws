@@ -4,11 +4,8 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Budget_Actions struct {
-	// A human-readable description of a budget action, explaining the action taken when the budget threshold is reached. (AI-inferred)
 	Description any
-	// The percentage of the budget's usage threshold that, when reached, triggers the corresponding budget action (such as stopping or limiting the farm). (AI-inferred)
 	ThresholdPercentage any
-	// Defines the type of budget action to take when the threshold is reached, such as STOP_SESSION_WORKER or STOP_QUEUE. (AI-inferred)
 	Type any
 }
 
@@ -26,7 +23,6 @@ type Budget_Schedule struct {
 
 type Budget_Tags struct {
 	Key any
-	// The value of a tag attached to the AWS Deadline budget, used for organizing and managing the budget resource. (AI-inferred)
 	Value any
 }
 

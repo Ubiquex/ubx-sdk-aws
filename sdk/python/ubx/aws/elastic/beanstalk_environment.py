@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BeanstalkEnvironment_OptionSettings:
-    # Specifies the AWS Elastic Beanstalk configuration namespace (e.g., 'aws:autoscaling:asg', 'aws:ec2:instances') that groups related option settings for the environment. (AI-inferred)
     namespace: Any = None
-    # The name of the Elastic Beanstalk configuration option (e.g., 'IamInstanceProfile' or 'InstanceType') that this option setting defines within the specified namespace. (AI-inferred)
     option_name: Any = None
-    # Specifies the name of a specific resource (such as an Amazon RDS DB instance or an Auto Scaling group) in the Elastic Beanstalk environment that this option setting applies to, used when the option namespace supports multiple resources of the same type. (AI-inferred)
     resource_name: Any = None
-    # Specifies the actual value to apply for the given Elastic Beanstalk configuration option, controlling environment settings such as instance type, load balancing, or health checks. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BeanstalkEnvironment_Tags:
-    # The key (name) of a tag assigned to the Elastic Beanstalk environment, used to categorize and filter the resource for cost allocation, access control, and operational management. (AI-inferred)
     key: Any = None
-    # The value of a tag applied to the Elastic Beanstalk environment, used to categorize and manage the environment as an AWS resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -73,7 +67,6 @@ class BeanstalkEnvironmentConfig:
     tags: Any = None
     # The name of the Elastic Beanstalk configuration template to use with the environment.
     template_name: Any = None
-    # Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred)
     tier: Any = None
     # The name of the application version to deploy.
     version_label: Any = None
@@ -86,7 +79,6 @@ class BeanstalkEnvironmentAttrs:
     cnameprefix: Any = None
     # Your description for this environment.
     description: Any = None
-    # The endpoint URL for the environment, which is the CNAME of the load balancer for load-balanced environments or the public DNS address for single-instance environments, used to access the running application. (AI-inferred)
     endpoint_url: Any = None
     # A unique name for the environment.
     environment_name: Any = None
@@ -102,7 +94,6 @@ class BeanstalkEnvironmentAttrs:
     tags: Any = None
     # The name of the Elastic Beanstalk configuration template to use with the environment.
     template_name: Any = None
-    # Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred)
     tier: Any = None
     # The name of the application version to deploy.
     version_label: Any = None

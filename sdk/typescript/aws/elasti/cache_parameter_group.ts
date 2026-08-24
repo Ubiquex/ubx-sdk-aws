@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CacheParameterGroup_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag attached to the ElastiCache parameter group, enabling metadata-based organization, cost tracking, and IAM access control on the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

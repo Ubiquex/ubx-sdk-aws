@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AssessmentTargetConfig:
-    # The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred)
     assessment_target_name: Any = None
-    # The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred)
     resource_group_arn: Any = None
 
 @dataclasses.dataclass
 class AssessmentTargetAttrs:
-    # The Amazon Resource Name (ARN) of this Inspector assessment target, used as a reference when creating Inspector assessment templates. (AI-inferred)
     arn: Any = None
-    # The user-defined name for the Amazon Inspector assessment target, used to identify the collection of EC2 instances being assessed. (AI-inferred)
     assessment_target_name: Any = None
-    # The ARN of an AWS Resource Groups group that defines the set of EC2 instances to include in this Inspector assessment target. (AI-inferred)
     resource_group_arn: Any = None
 
 AssessmentTarget = ubx.ResourceBinding(

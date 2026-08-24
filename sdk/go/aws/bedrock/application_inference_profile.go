@@ -4,19 +4,15 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationInferenceProfile_ModelSource struct {
-	// The Amazon Resource Name (ARN) of an existing Bedrock inference profile to copy from; when this is set, the new application inference profile inherits the model configuration of that source profile instead of specifying a model ARN directly. (AI-inferred)
 	CopyFrom any
 }
 
 type ApplicationInferenceProfile_Models struct {
-	// The Amazon Resource Name (ARN) of a foundation model or an existing inference profile that is included in the application inference profile's list of models, allowing the profile to invoke that model. (AI-inferred)
 	ModelArn any
 }
 
 type ApplicationInferenceProfile_Tags struct {
-	// The key of a tag assigned to the Bedrock application inference profile, used for organizing, identifying, and managing the resource within AWS. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key attached to the Bedrock Application Inference Profile, used to store arbitrary metadata for resource identification, filtering, and cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -32,7 +28,6 @@ var ApplicationInferenceProfile_TagsFields = ubx.FieldMap{
 type ApplicationInferenceProfileConfig struct {
 	// Description of the inference profile
 	Description any
-	// The name of the inference profile, which must be unique within the AWS account and Region, used to identify the profile when submitting inference requests. (AI-inferred)
 	InferenceProfileName any
 	// Various ways to encode a list of models in a CreateInferenceProfile request
 	ModelSource any
@@ -45,13 +40,10 @@ type ApplicationInferenceProfileAttrs struct {
 	CreatedAt any
 	// Description of the inference profile
 	Description any
-	// The Amazon Resource Name (ARN) that uniquely identifies the inference profile, assigned by AWS when the profile is created. (AI-inferred)
 	InferenceProfileArn any
-	// The AWS-generated unique identifier for the Bedrock application inference profile, used to reference the profile in subsequent API calls. (AI-inferred)
 	InferenceProfileId any
 	// Inference profile identifier. Supports both system-defined inference profile ids, and inference profile ARNs.
 	InferenceProfileIdentifier any
-	// The name of the inference profile, which must be unique within the AWS account and Region, used to identify the profile when submitting inference requests. (AI-inferred)
 	InferenceProfileName any
 	// Various ways to encode a list of models in a CreateInferenceProfile request
 	ModelSource any

@@ -4,7 +4,6 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointAuthorizationConfig struct {
-	// The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
 	Account any
 	// The cluster identifier.
 	ClusterIdentifier any
@@ -15,7 +14,6 @@ type EndpointAuthorizationConfig struct {
 }
 
 type EndpointAuthorizationAttrs struct {
-	// The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
 	Account any
 	// Indicates whether all VPCs in the grantee account are allowed access to the cluster.
 	AllowedAllVpcs any
@@ -31,9 +29,7 @@ type EndpointAuthorizationAttrs struct {
 	EndpointCount any
 	// Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
 	Force any
-	// The AWS account ID that is granted access to the cluster's endpoint, returned as a computed read-only attribute. (AI-inferred)
 	Grantee any
-	// The AWS account ID of the cluster owner that grants the cross-account endpoint authorization. (AI-inferred)
 	Grantor any
 	// The status of the authorization action.
 	Status any

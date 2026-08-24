@@ -31,7 +31,6 @@ type LoadBalancerTlsCertificateAttrs struct {
 	IsAttached any
 	// The name of your load balancer.
 	LoadBalancerName any
-	// The Amazon Resource Name (ARN) of the Lightsail load balancer TLS certificate, assigned by AWS when the certificate is created. (AI-inferred)
 	LoadBalancerTlsCertificateArn any
 	// The validation status of the SSL/TLS certificate.
 	Status any

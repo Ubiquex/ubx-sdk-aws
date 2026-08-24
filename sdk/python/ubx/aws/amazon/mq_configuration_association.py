@@ -22,14 +22,12 @@ _MqConfigurationAssociation_ConfigurationFields = {
 class MqConfigurationAssociationConfig:
     # ID of the Broker that the configuration should be applied to
     broker: Any = None
-    # Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred)
     configuration: Any = None
 
 @dataclasses.dataclass
 class MqConfigurationAssociationAttrs:
     # ID of the Broker that the configuration should be applied to
     broker: Any = None
-    # Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred)
     configuration: Any = None
     # The ID of the ConfigurationAssociation Resource
     id: Any = None

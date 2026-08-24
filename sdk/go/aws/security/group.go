@@ -4,49 +4,30 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_SecurityGroupEgress struct {
-	// The IPv4 address range, in CIDR form, that is allowed as the destination for outbound traffic in this security group egress rule. (AI-inferred)
 	CidrIp any
-	// The destination IPv6 CIDR block for the outbound traffic allowed by this security group egress rule, such as ::/0 for all IPv6 addresses. (AI-inferred)
 	CidrIpv6 any
-	// A human-readable description for the outbound (egress) rule, used to document the rule's purpose or context. (AI-inferred)
 	Description any
-	// The ID of the destination prefix list that the egress rule applies to, allowing traffic to the CIDR blocks defined by that prefix list (e.g., for VPC endpoints or managed prefix lists). (AI-inferred)
 	DestinationPrefixListId any
-	// The ID of the destination security group for this egress rule, which allows outbound traffic to that security group. (AI-inferred)
 	DestinationSecurityGroupId any
-	// The starting port number of the port range for this outbound (egress) rule, defining the lower bound of destination ports permitted for the specified protocol. (AI-inferred)
 	FromPort any
-	// Specifies the IP protocol name or number (such as tcp, udp, icmp, or -1 for all protocols) that this egress rule applies to. (AI-inferred)
 	IpProtocol any
-	// The end of the port range (inclusive) for the destination port in this outbound security group rule; for a single port, set it equal to from_port. (AI-inferred)
 	ToPort any
 }
 
 type Group_SecurityGroupIngress struct {
-	// The IPv4 CIDR block from which inbound traffic is allowed by this security group ingress rule. (AI-inferred)
 	CidrIp any
-	// The IPv6 CIDR block (e.g., 2001:db8::/32) that is allowed to send inbound traffic to the security group. (AI-inferred)
 	CidrIpv6 any
-	// A brief, human-readable description for the security group ingress rule, used to document its purpose or source, with a maximum length of 255 characters. (AI-inferred)
 	Description any
-	// The starting port number for the inbound rule's port range, or the ICMP type number when the protocol is ICMP. (AI-inferred)
 	FromPort any
-	// Specifies the IP protocol name (such as tcp, udp, or icmp), a protocol number, or ' -1 ' to represent all protocols, for the ingress rule. (AI-inferred)
 	IpProtocol any
-	// The ID of an AWS prefix list (such as a managed prefix list for AWS services or VPC endpoints) that serves as the source of the inbound traffic permitted by this ingress rule. (AI-inferred)
 	SourcePrefixListId any
-	// Specifies the ID of the source security group (in the same VPC or a peer VPC) whose instances are allowed to send inbound traffic to this security group, used as the SourceSecurityGroupId property of a security group ingress rule. (AI-inferred)
 	SourceSecurityGroupId any
-	// The name of the source security group whose members are allowed inbound access by this ingress rule; this is used for EC2-Classic rules, whereas VPC security groups usually reference the source by its `SourceSecurityGroupId` instead. (AI-inferred)
 	SourceSecurityGroupName any
-	// The AWS account ID of the owner of the referenced source security group, required when the source security group belongs to a different AWS account. (AI-inferred)
 	SourceSecurityGroupOwnerId any
-	// The ending port number of the range for this ingress rule; for a single port, specify the same value as from_port. (AI-inferred)
 	ToPort any
 }
 
 type Group_Tags struct {
-	// The key of a tag assigned to the security group, used to organize and identify the resource. (AI-inferred)
 	Key any
 	Value any
 }

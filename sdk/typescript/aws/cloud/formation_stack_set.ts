@@ -18,51 +18,35 @@ export interface FormationStackSet_ManagedExecution {
 export interface FormationStackSet_OperationPreferences {
   /** Specifies how the concurrency level behaves during the operation execution. */
   concurrencyMode?: string | Computed<string>;
-  /** Specifies the maximum number of accounts per Region in which stack instance creation, update, or deletion can fail before CloudFormation stops the stack set operation in that Region. (AI-inferred) */
   failureToleranceCount?: number | Computed<number>;
-  /** The percentage of total stack instances in the stack set that can fail during an operation before CloudFormation stops the operation and considers it failed. (AI-inferred) */
   failureTolerancePercentage?: number | Computed<number>;
-  /** Specifies the maximum number of stack instances that can be operated on concurrently during a stack set operation, as an absolute count rather than a percentage. (AI-inferred) */
   maxConcurrentCount?: number | Computed<number>;
-  /** Specifies the maximum percentage of accounts in the stack set that can be brought online or updated concurrently during stack operations, helping to limit the number of simultaneous deployments. (AI-inferred) */
   maxConcurrentPercentage?: number | Computed<number>;
   /** The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time */
   regionConcurrencyType?: string | Computed<string>;
-  /** Specifies the custom order in which AWS Regions are traversed during stack set operations (create, update, or delete), controlling the sequence of stack instance deployments across those regions. (AI-inferred) */
   regionOrder?: string[] | Computed<string[]>;
 }
 
 export interface FormationStackSet_Parameters {
-  /** The key of a parameter passed to the CloudFormation StackSet, which must match a parameter name declared in the stack template used by the StackSet. (AI-inferred) */
   parameterKey?: string | Computed<string>;
-  /** The value to assign to a specific parameter key when provisioning stacks within the CloudFormation StackSet. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
 export interface FormationStackSet_StackInstancesGroup_DeploymentTargets {
-  /** Specifies how AWS CloudFormation filters accounts within an organization for stack set deployments: 'ALL' targets every account in the organization, while 'INTERSECTION' deploys only to accounts that appear in both the specified target accounts/OrganizationalUnitIds and the organization. (AI-inferred) */
   accountFilterType?: string | Computed<string>;
-  /** Specifies the list of AWS account IDs to which stack instances are deployed for this stack instances group in the StackSet. (AI-inferred) */
   accounts?: string[] | Computed<string[]>;
-  /** The `accounts_url` field specifies a pre-signed Amazon S3 URL to a file containing a list of AWS account IDs that are the deployment targets for stack instances in the stack set group. (AI-inferred) */
   accountsUrl?: string | Computed<string>;
-  /** The list of organizational unit (OU) IDs in AWS Organizations to which the stack set deploys stack instances when using service-managed permissions. (AI-inferred) */
   organizationalUnitIds?: string[] | Computed<string[]>;
 }
 
 export interface FormationStackSet_StackInstancesGroup {
-  /** DeploymentTargets specifies the target AWS accounts or Organizational Units (OUs) in AWS Organizations for stack instance deployment, including optional account list URL and account filter type. (AI-inferred) */
   deploymentTargets?: FormationStackSet_StackInstancesGroup_DeploymentTargets | Computed<FormationStackSet_StackInstancesGroup_DeploymentTargets>;
-  /** Provides the parameter values that override the stack set's default parameters for the stack instances in this group, enabling different configurations per account/region group. (AI-inferred) */
   parameterOverrides?: FormationStackSet_Parameters[] | Computed<FormationStackSet_Parameters[]>;
-  /** The list of AWS Regions in which to create stack instances for this stack set instance group. (AI-inferred) */
   regions?: string[] | Computed<string[]>;
 }
 
 export interface FormationStackSet_Tags {
-  /** The key of a tag attached to the CloudFormation stack set, used to organize, identify, and manage the stack set via cost allocation tags and IAM policies. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of the tag to assign to the StackSet, used for cost allocation, access control, and identifying the StackSet in the AWS Management Console. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -120,7 +104,6 @@ const FormationStackSet_TagsFields: FieldMap = {
 export interface FormationStackSetConfig {
   /** The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. */
   administrationRoleArn?: string | Computed<string>;
-  /** Enables automatic deployment of stack instances to accounts added to the target organizational units or accounts, and optionally retains the stacks when an account is removed from the target scope. (AI-inferred) */
   autoDeployment?: FormationStackSet_AutoDeployment | Computed<FormationStackSet_AutoDeployment>;
   /** Specifies the AWS account that you are acting from. By default, SELF is specified. For self-managed permissions, specify SELF; for service-managed permissions, if you are signed in to the organization's management account, specify SELF. If you are signed in to a delegated administrator account, specify DELEGATED_ADMIN. */
   callAs?: string | Computed<string>;
@@ -153,7 +136,6 @@ export interface FormationStackSetConfig {
 export interface FormationStackSetAttrs {
   /** The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. */
   administrationRoleArn: string;
-  /** Enables automatic deployment of stack instances to accounts added to the target organizational units or accounts, and optionally retains the stacks when an account is removed from the target scope. (AI-inferred) */
   autoDeployment: FormationStackSet_AutoDeployment;
   /** Specifies the AWS account that you are acting from. By default, SELF is specified. For self-managed permissions, specify SELF; for service-managed permissions, if you are signed in to the organization's management account, specify SELF. If you are signed in to a delegated administrator account, specify DELEGATED_ADMIN. */
   callAs: string;

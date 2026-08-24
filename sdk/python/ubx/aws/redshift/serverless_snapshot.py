@@ -8,32 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerlessSnapshot_Snapshot:
-    # The administrator username for the Redshift Serverless namespace at the time the snapshot was created. (AI-inferred)
     admin_username: Any = None
-    # The AWS KMS key ID used to encrypt the snapshot; if not specified, the default AWS-managed key for Redshift Serverless is used. (AI-inferred)
     kms_key_id: Any = None
-    # The Amazon Resource Name (ARN) of the Redshift Serverless namespace that this snapshot is associated with. (AI-inferred)
     namespace_arn: Any = None
-    # The name of the Redshift Serverless namespace from which the snapshot is created, identifying the source namespace whose data is captured in the snapshot. (AI-inferred)
     namespace_name: Any = None
-    # The AWS account ID of the account that owns the snapshot. (AI-inferred)
     owner_account: Any = None
-    # Specifies the number of days that the Redshift Serverless snapshot is retained before being automatically deleted. (AI-inferred)
     retention_period: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Redshift Serverless snapshot. (AI-inferred)
     snapshot_arn: Any = None
-    # The creation time of the Redshift Serverless snapshot, typically a computed ISO 8601 timestamp returned by AWS. (AI-inferred)
     snapshot_create_time: Any = None
-    # The user-defined name of the Redshift Serverless snapshot, used to uniquely identify the snapshot within its namespace. (AI-inferred)
     snapshot_name: Any = None
-    # The current lifecycle status of the serverless snapshot, indicating whether it is AVAILABLE, CREATING, DELETING, or in another state. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class ServerlessSnapshot_Tags:
-    # The key of a user-defined tag attached to an Amazon Redshift Serverless snapshot, used to organize and identify the snapshot for cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value for a tag key assigned to the Redshift Serverless snapshot, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _ServerlessSnapshot_TagsFields = {
@@ -60,7 +48,6 @@ class ServerlessSnapshotAttrs:
     owner_account: Any = None
     # The retention period of the snapshot.
     retention_period: Any = None
-    # The `snapshot` computed attribute contains the full read-only snapshot object returned by the Redshift Serverless API, including details such as the snapshot ARN, namespace name, status, and creation time. (AI-inferred)
     snapshot: Any = None
     # The name of the snapshot.
     snapshot_name: Any = None

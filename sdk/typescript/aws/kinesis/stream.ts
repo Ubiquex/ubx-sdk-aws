@@ -14,9 +14,7 @@ export interface Stream_StreamModeDetails {
 }
 
 export interface Stream_Tags {
-  /** The key of a tag attached to the Kinesis stream, used to organize, identify, and manage access to the stream. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag applied to the Kinesis data stream, allowing you to associate arbitrary metadata with the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

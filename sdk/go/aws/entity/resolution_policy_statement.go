@@ -4,30 +4,22 @@ package entity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolutionPolicyStatementConfig struct {
-	// The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred)
 	Action any
 	// Arn of the resource to which the policy statement is being attached.
 	Arn any
-	// The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred)
 	Condition any
-	// Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred)
 	Effect any
-	// Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred)
 	Principal any
 	// The Statement Id of the policy statement that is being attached.
 	StatementId any
 }
 
 type ResolutionPolicyStatementAttrs struct {
-	// The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred)
 	Action any
 	// Arn of the resource to which the policy statement is being attached.
 	Arn any
-	// The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred)
 	Condition any
-	// Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred)
 	Effect any
-	// Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred)
 	Principal any
 	// The Statement Id of the policy statement that is being attached.
 	StatementId any

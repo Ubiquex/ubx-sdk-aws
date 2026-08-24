@@ -4,9 +4,7 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowMonitorMonitor_LocalResources struct {
-	// The identifier of a local resource (such as a subnet or instance) that the monitor targets, typically the resource's ARN or AWS resource ID. (AI-inferred)
 	Identifier any
-	// The AWS resource type of a local resource to monitor, such as AWS::EC2::VPC, AWS::EC2::Subnet, or AWS::EC2::Instance. (AI-inferred)
 	Type any
 }
 

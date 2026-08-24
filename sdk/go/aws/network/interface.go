@@ -4,49 +4,37 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Interface_ConnectionTrackingSpecification struct {
-	// Specifies the timeout (in seconds) for TCP established connections for the network interface's connection tracking configuration. (AI-inferred)
 	TcpEstablishedTimeout any
-	// The timeout in seconds for UDP streams in the established state on this network interface, after which connection tracking removes the flow if no packets are seen. (AI-inferred)
 	UdpStreamTimeout any
-	// Specifies the idle timeout in seconds for UDP traffic on the network interface, determining how long a UDP flow remains active in connection tracking before it expires. (AI-inferred)
 	UdpTimeout any
 }
 
 type Interface_Ipv4Prefixes struct {
-	// The IPv4 prefix (CIDR block) assigned to the network interface. (AI-inferred)
 	Ipv4Prefix any
 }
 
 type Interface_Ipv6Addresses struct {
-	// Specifies an IPv6 address from the subnet's IPv6 CIDR block to assign to the network interface. (AI-inferred)
 	Ipv6Address any
 }
 
 type Interface_Ipv6Prefixes struct {
-	// The IPv6 prefix (CIDR block) assigned to the network interface, such as 2001:db8::/64. (AI-inferred)
 	Ipv6Prefix any
 }
 
 type Interface_PrivateIpAddresses struct {
-	// Indicates whether this private IP address is the primary private IP address of the network interface. (AI-inferred)
 	Primary any
-	// Specifies the private IPv4 address for a secondary IP address assignment on the network interface. (AI-inferred)
 	PrivateIpAddress any
 }
 
 type Interface_PublicIpDnsNameOptions struct {
-	// Specifies the type of DNS hostname to assign to the public IP address of the network interface, either 'ip-name' (default) or 'resource-name'. (AI-inferred)
 	DnsHostnameType any
-	// The public_dual_stack_dns_name is the fully qualified public DNS hostname that AWS assigns to the network interface, resolving to both its public IPv4 and public IPv6 addresses when dual-stack DNS naming is enabled in the containing public IP DNS name options. (AI-inferred)
 	PublicDualStackDnsName any
-	// The DNS name automatically assigned to the network interface's public IPv4 address (e.g., ec2-203-0-113-10.compute-1.amazonaws.com), determined by the HostnameType and DNS A record settings configured in the public_ip_dns_name_options block. (AI-inferred)
 	PublicIpv4DnsName any
 	PublicIpv6DnsName any
 }
 
 type Interface_Tags struct {
 	Key any
-	// The value of a tag applied to the network interface, used for resource categorization, cost allocation, and access control. (AI-inferred)
 	Value any
 }
 
@@ -79,7 +67,6 @@ var Interface_TagsFields = ubx.FieldMap{
 	}
 
 type InterfaceConfig struct {
-	// Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred)
 	ConnectionTrackingSpecification any
 	// A description for the network interface.
 	Description any
@@ -118,7 +105,6 @@ type InterfaceConfig struct {
 }
 
 type InterfaceAttrs struct {
-	// Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred)
 	ConnectionTrackingSpecification any
 	// A description for the network interface.
 	Description any

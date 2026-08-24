@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerGrant_Tags {
-  /** The tag key that you assign to an AWS License Manager grant to categorize and manage the grant. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,36 +12,27 @@ const ManagerGrant_TagsFields: FieldMap = {
 };
 
 export interface ManagerGrantConfig {
-  /** Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred) */
   allowedOperations?: string[] | Computed<string[]>;
   /** Name for the created Grant. */
   grantName?: string | Computed<string>;
   /** Home region for the created grant. */
   homeRegion?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred) */
   licenseArn?: string | Computed<string>;
-  /** Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred) */
   principals?: string[] | Computed<string[]>;
-  /** Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred) */
   status?: string | Computed<string>;
   /** A list of tags to attach. */
   tags?: ManagerGrant_Tags[] | Computed<ManagerGrant_Tags[]>;
 }
 
 export interface ManagerGrantAttrs {
-  /** Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred) */
   allowedOperations: string[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the license grant in AWS License Manager. (AI-inferred) */
   grantArn: string;
   /** Name for the created Grant. */
   grantName: string;
   /** Home region for the created grant. */
   homeRegion: string;
-  /** The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred) */
   licenseArn: string;
-  /** Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred) */
   principals: string[];
-  /** Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred) */
   status: string;
   /** A list of tags to attach. */
   tags: ManagerGrant_Tags[];

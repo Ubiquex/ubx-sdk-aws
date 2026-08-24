@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Integration_Tags:
     key: Any = None
-    # The value component of a resource tag attached to the AWS RDS integration, used to categorize or identify the integration for cost allocation and management. (AI-inferred)
     value: Any = None
 
 _Integration_TagsFields = {
@@ -40,13 +39,11 @@ class IntegrationConfig:
 class IntegrationAttrs:
     # An optional set of non-secret key–value pairs that contains additional contextual information about the data.
     additional_encryption_context: Any = None
-    # The time the integration was created, in ISO 8601 format (e.g., 2023-01-01T00:00:00Z). (AI-inferred)
     create_time: Any = None
     # Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
     data_filter: Any = None
     # A description of the integration.
     description: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this RDS integration, returned by AWS after creation. (AI-inferred)
     integration_arn: Any = None
     # The name of the integration.
     integration_name: Any = None

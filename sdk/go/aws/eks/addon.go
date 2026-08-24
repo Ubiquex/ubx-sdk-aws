@@ -9,15 +9,12 @@ type Addon_NamespaceConfig struct {
 }
 
 type Addon_PodIdentityAssociations struct {
-	// The ARN of the IAM role to associate with the Kubernetes service account for the EKS pod identity association, which grants pods that use that service account permissions to call AWS APIs. (AI-inferred)
 	RoleArn any
-	// The name of the Kubernetes service account that the addon's pod identity association will map to the specified IAM role, granting the addon permissions via that role. (AI-inferred)
 	ServiceAccount any
 }
 
 type Addon_Tags struct {
 	Key any
-	// The string value assigned to a tag key on the EKS addon, used to store arbitrary metadata such as environment or owner identifiers for the addon. (AI-inferred)
 	Value any
 }
 

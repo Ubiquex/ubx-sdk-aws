@@ -9,18 +9,13 @@ export interface Solution_SolutionConfig_AutoMlconfig {
 }
 
 export interface Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRanges {
-  /** The name of the categorical hyperparameter whose values are tuned during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the list of allowed categorical values that a categorical hyperparameter (identified by the sibling Name field) can take during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRanges {
-  /** The maximum value for a continuous hyperparameter range used in hyperparameter optimization for the Amazon Personalize solution. (AI-inferred) */
   maxValue?: number | Computed<number>;
-  /** The minimum value of the range for a continuous hyperparameter that Amazon Personalize explores during hyperparameter optimization (HPO) for the solution. (AI-inferred) */
   minValue?: number | Computed<number>;
-  /** The name of the continuous hyperparameter to tune during hyperparameter optimization (HPO), which matches a hyperparameter defined in the recipe used by the Amazon Personalize solution. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -72,9 +67,7 @@ export interface Solution_SolutionConfig {
 }
 
 export interface Solution_Tags {
-  /** The key part of a user-defined tag attached to the Amazon Personalize solution, used for organizing and identifying the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag key-value pair attached to the Amazon Personalize solution resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

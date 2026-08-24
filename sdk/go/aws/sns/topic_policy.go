@@ -11,7 +11,6 @@ type TopicPolicyConfig struct {
 }
 
 type TopicPolicyAttrs struct {
-	// The ARN of the SNS topic that this policy is attached to, which serves as the unique identifier for the aws_sns_topic_policy resource. (AI-inferred)
 	Id any
 	// A policy document that contains permissions to add to the specified SNS topics.
 	PolicyDocument any

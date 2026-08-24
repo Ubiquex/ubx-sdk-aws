@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerSecretTargetAttachmentConfig:
-    # The ARN or name of the AWS Secrets Manager secret to attach to the specified target (such as an RDS or Redshift cluster). (AI-inferred)
     secret_id: Any = None
-    # The ARN of the AWS service resource (such as an Amazon RDS database instance or Amazon Redshift cluster) that the secret is attached to. (AI-inferred)
     target_id: Any = None
-    # Specifies the AWS service type of the target that the secret is attached to, such as an RDS DB instance or Redshift cluster. (AI-inferred)
     target_type: Any = None
 
 @dataclasses.dataclass
 class ManagerSecretTargetAttachmentAttrs:
-    # The ARN of the secret that serves as the unique identifier for this attachment resource. (AI-inferred)
     id: Any = None
-    # The ARN or name of the AWS Secrets Manager secret to attach to the specified target (such as an RDS or Redshift cluster). (AI-inferred)
     secret_id: Any = None
-    # The ARN of the AWS service resource (such as an Amazon RDS database instance or Amazon Redshift cluster) that the secret is attached to. (AI-inferred)
     target_id: Any = None
-    # Specifies the AWS service type of the target that the secret is attached to, such as an RDS DB instance or Redshift cluster. (AI-inferred)
     target_type: Any = None
 
 ManagerSecretTargetAttachment = ubx.ResourceBinding(

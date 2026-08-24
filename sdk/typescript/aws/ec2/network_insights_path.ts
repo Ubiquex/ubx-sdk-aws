@@ -2,27 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkInsightsPath_FilterAtDestination_DestinationPortRange {
-  /** The inclusive lower bound of the destination port range used to filter network path analysis at the destination endpoint. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The end (inclusive) of the destination port range used to filter the path analysis at the destination. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
 export interface NetworkInsightsPath_FilterAtDestination {
-  /** The destination IP address to match when filtering network insights path analysis at the destination. (AI-inferred) */
   destinationAddress?: string | Computed<string>;
-  /** Defines the destination port range (from and to) used to filter the network path analysis at the destination, so only traffic sent to that port range is considered for the path. (AI-inferred) */
   destinationPortRange?: NetworkInsightsPath_FilterAtDestination_DestinationPortRange | Computed<NetworkInsightsPath_FilterAtDestination_DestinationPortRange>;
-  /** Specifies the source IPv4 address to match when filtering traffic at the destination endpoint of the network insights path. (AI-inferred) */
   sourceAddress?: string | Computed<string>;
-  /** The source port range to filter network paths at the destination, specifying which source ports are included in the path analysis when the filter is applied at the destination. (AI-inferred) */
   sourcePortRange?: NetworkInsightsPath_FilterAtDestination_DestinationPortRange | Computed<NetworkInsightsPath_FilterAtDestination_DestinationPortRange>;
 }
 
 export interface NetworkInsightsPath_Tags {
-  /** The key portion of a user-defined tag applied to the AWS EC2 Network Insights Path, used for resource categorization and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the EC2 Network Insights Path. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -52,54 +44,31 @@ const NetworkInsightsPath_TagsFields: FieldMap = {
 };
 
 export interface NetworkInsightsPathConfig {
-  /** The ID of the AWS resource that serves as the destination for the network insights path, such as an EC2 instance or network interface, used when specifying the destination by resource ID instead of an IP address. (AI-inferred) */
   destination?: string | Computed<string>;
-  /** The IP address of the destination resource used for the network insights path analysis. (AI-inferred) */
   destinationIp?: string | Computed<string>;
-  /** The destination port to use for the path analysis when the protocol is TCP or UDP. (AI-inferred) */
   destinationPort?: number | Computed<number>;
-  /** Specifies the path filter applied to the destination endpoint, defining the source and destination addresses and port ranges that determine which traffic is analyzed. (AI-inferred) */
   filterAtDestination?: NetworkInsightsPath_FilterAtDestination | Computed<NetworkInsightsPath_FilterAtDestination>;
-  /** Specifies the filter conditions (such as source/destination IP addresses and port ranges) to apply to the source endpoint when analyzing the network path. (AI-inferred) */
   filterAtSource?: NetworkInsightsPath_FilterAtDestination | Computed<NetworkInsightsPath_FilterAtDestination>;
-  /** Specifies the protocol (e.g., TCP or UDP) that the network insights path will analyze between the source and destination. (AI-inferred) */
   protocol: string | Computed<string>;
-  /** Specifies the ID of the source resource (such as an EC2 instance, network interface, or subnet) from which the network insights path originates. (AI-inferred) */
   source: string | Computed<string>;
-  /** Specifies the source IP address for the network insights path, used to set the origin of the path when the source resource has multiple IPs or when directly specifying an IP source. (AI-inferred) */
   sourceIp?: string | Computed<string>;
-  /** The tags to attach to the EC2 Network Insights Path, allowing you to organize and identify the path for cost allocation and resource management. (AI-inferred) */
   tags?: NetworkInsightsPath_Tags[] | Computed<NetworkInsightsPath_Tags[]>;
 }
 
 export interface NetworkInsightsPathAttrs {
-  /** The date and time when the network insights path was created, returned as a string timestamp. (AI-inferred) */
   createdDate: string;
-  /** The ID of the AWS resource that serves as the destination for the network insights path, such as an EC2 instance or network interface, used when specifying the destination by resource ID instead of an IP address. (AI-inferred) */
   destination: string;
-  /** The ARN of the destination resource for the network insights path, computed by AWS after creation. (AI-inferred) */
   destinationArn: string;
-  /** The IP address of the destination resource used for the network insights path analysis. (AI-inferred) */
   destinationIp: string;
-  /** The destination port to use for the path analysis when the protocol is TCP or UDP. (AI-inferred) */
   destinationPort: number;
-  /** Specifies the path filter applied to the destination endpoint, defining the source and destination addresses and port ranges that determine which traffic is analyzed. (AI-inferred) */
   filterAtDestination: NetworkInsightsPath_FilterAtDestination;
-  /** Specifies the filter conditions (such as source/destination IP addresses and port ranges) to apply to the source endpoint when analyzing the network path. (AI-inferred) */
   filterAtSource: NetworkInsightsPath_FilterAtDestination;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Network Insights Path. (AI-inferred) */
   networkInsightsPathArn: string;
-  /** The unique identifier assigned by AWS for this network insights path. (AI-inferred) */
   networkInsightsPathId: string;
-  /** Specifies the protocol (e.g., TCP or UDP) that the network insights path will analyze between the source and destination. (AI-inferred) */
   protocol: string;
-  /** Specifies the ID of the source resource (such as an EC2 instance, network interface, or subnet) from which the network insights path originates. (AI-inferred) */
   source: string;
-  /** The Amazon Resource Name (ARN) of the source resource in this Network Insights Path, which is automatically resolved from the specified Source property and returned as a read-only attribute. (AI-inferred) */
   sourceArn: string;
-  /** Specifies the source IP address for the network insights path, used to set the origin of the path when the source resource has multiple IPs or when directly specifying an IP source. (AI-inferred) */
   sourceIp: string;
-  /** The tags to attach to the EC2 Network Insights Path, allowing you to organize and identify the path for cost allocation and resource management. (AI-inferred) */
   tags: NetworkInsightsPath_Tags[];
 }
 

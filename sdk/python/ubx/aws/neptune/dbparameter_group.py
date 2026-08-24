@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbparameterGroup_Tags:
-    # The customer-defined key portion of a tag attached to the Neptune DB parameter group, used to label and organize the resource according to your own metadata scheme. (AI-inferred)
     key: Any = None
-    # The value part of a key-value tag that can be attached to the AWS Neptune DB parameter group, used for identifying and categorizing the resource for cost allocation and operational management. (AI-inferred)
     value: Any = None
 
 _DbparameterGroup_TagsFields = {

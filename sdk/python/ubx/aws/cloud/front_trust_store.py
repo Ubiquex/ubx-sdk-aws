@@ -24,9 +24,7 @@ class FrontTrustStore_CaCertificatesBundleSource:
 
 @dataclasses.dataclass
 class FrontTrustStore_Tags:
-    # The key (name) of a user-defined tag applied to the CloudFront trust store, used to identify and categorize the resource for cost allocation and management. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the CloudFront trust store, used for resource organization and metadata management. (AI-inferred)
     value: Any = None
 
 _FrontTrustStore_CaCertificatesBundleSource_CaCertificatesBundleS3LocationFields = {
@@ -65,15 +63,11 @@ class FrontTrustStoreAttrs:
     arn: Any = None
     # A CA certificates bundle source.
     ca_certificates_bundle_source: Any = None
-    # The entity tag (ETag) that represents the current version of the CloudFront trust store, used for optimistic concurrency control so that you can detect and avoid conflicting updates. (AI-inferred)
     etag: Any = None
-    # The unique AWS-assigned identifier for the CloudFront trust store, used to reference the trust store when attaching it to a CloudFront distribution. (AI-inferred)
     id: Any = None
-    # A read-only timestamp indicating the date and time when the AWS CloudFront trust store was last modified. (AI-inferred)
     last_modified_time: Any = None
     # The trust store's name.
     name: Any = None
-    # The number of CA certificates currently contained in the CloudFront trust store. (AI-inferred)
     number_of_ca_certificates: Any = None
     status: Any = None
     # A complex type that contains zero or more ``Tag`` elements.

@@ -23,7 +23,6 @@ export interface GlobalResolverGlobalResolverConfig {
 }
 
 export interface GlobalResolverGlobalResolverAttrs {
-  /** The Amazon Resource Name (ARN) that AWS assigns to this Route 53 Global Resolver, used as a unique identifier and in IAM policies and resource references. (AI-inferred) */
   arn: string;
   clientToken: string;
   createdAt: string;
@@ -37,7 +36,6 @@ export interface GlobalResolverGlobalResolverAttrs {
   observabilityRegion: string;
   /** The list of regions the Global Resolver exists in. Regions can be added or removed on update; the order of this list is not significant. */
   regions: string[];
-  /** The current lifecycle status of the Route 53 global resolver rule, reporting values such as COMPLETE, FAILED, UPDATING, or DELETING to indicate the rule's operational state. (AI-inferred) */
   status: string;
   tags: GlobalResolverGlobalResolver_Tags[];
   updatedAt: string;

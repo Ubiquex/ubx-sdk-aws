@@ -4,47 +4,29 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerlessNamespace_Namespace struct {
-	// The ARN of the AWS Secrets Manager secret that stores the administrator password for the Redshift Serverless namespace. (AI-inferred)
 	AdminPasswordSecretArn any
-	// The KMS key ID used to encrypt the admin password secret stored in AWS Secrets Manager for this Redshift Serverless namespace. (AI-inferred)
 	AdminPasswordSecretKmsKeyId any
-	// Specifies the administrator username used to log in to the database within the Redshift Serverless namespace. (AI-inferred)
 	AdminUsername any
-	// The date and time when the Redshift Serverless namespace was created, expressed as a string timestamp. (AI-inferred)
 	CreationDate any
-	// The name of the initial database to create within the Redshift Serverless namespace when it is provisioned, defaulting to 'dev' if not specified. (AI-inferred)
 	DbName any
-	// The ARN of the IAM role to set as the default for the namespace, which Redshift Serverless uses to access other AWS services on behalf of the namespace. (AI-inferred)
 	DefaultIamRoleArn any
-	// The list of IAM role ARNs that the Redshift Serverless namespace can assume to access other AWS services, such as Amazon S3 for data loading or unloading and Redshift Spectrum queries. (AI-inferred)
 	IamRoles any
-	// The AWS KMS key ID used to encrypt the data in the Redshift Serverless namespace; if omitted, the default AWS-managed key for Redshift is used. (AI-inferred)
 	KmsKeyId any
-	// Specifies the list of log types (such as useractivitylog, userlog, or connectionlog) that are exported to Amazon CloudWatch Logs for monitoring the Redshift Serverless namespace. (AI-inferred)
 	LogExports any
-	// The Amazon Resource Name (ARN) uniquely identifying this Redshift Serverless namespace. (AI-inferred)
 	NamespaceArn any
-	// The unique identifier (UUID) assigned by AWS to the Redshift Serverless namespace, which is used to reference the namespace in other operations. (AI-inferred)
 	NamespaceId any
-	// Sets the unique name for the Redshift Serverless namespace, which serves as its identifier in the account and region. (AI-inferred)
 	NamespaceName any
-	// The current state of the Redshift Serverless namespace, such as AVAILABLE, MODIFYING, or DELETING, reflecting its lifecycle and operational readiness. (AI-inferred)
 	Status any
 }
 
 type ServerlessNamespace_SnapshotCopyConfigurations struct {
-	// The customer-managed AWS KMS key ID or ARN that encrypts Redshift Serverless snapshot copies sent to the destination region or account defined in this snapshot copy configuration. (AI-inferred)
 	DestinationKmsKeyId any
-	// The AWS region to which snapshots are copied for this snapshot copy configuration. (AI-inferred)
 	DestinationRegion any
-	// Specifies the number of days that snapshots copied to the destination AWS Region are retained for this snapshot copy configuration in Redshift Serverless. (AI-inferred)
 	SnapshotRetentionPeriod any
 }
 
 type ServerlessNamespace_Tags struct {
-	// The key portion of a tag assigned to the Redshift Serverless namespace for resource organization and cost tracking. (AI-inferred)
 	Key any
-	// The value part of a key-value tag applied to the Redshift Serverless namespace, used for organizing, tracking, and managing the resource within AWS. (AI-inferred)
 	Value any
 }
 
@@ -117,7 +99,6 @@ type ServerlessNamespaceAttrs struct {
 	LogExports any
 	// If true, Amazon Redshift uses AWS Secrets Manager to manage the namespace's admin credentials. You can't use adminUserPassword if manageAdminPassword is true. If manageAdminPassword is false or not set, Amazon Redshift uses adminUserPassword for the admin user account's password.
 	ManageAdminPassword any
-	// The 'namespace' attribute is a computed, read-only object containing the fully resolved properties of the created Redshift Serverless namespace, such as its Amazon Resource Name (ARN), namespace ID, and status, as returned by the AWS API. (AI-inferred)
 	Namespace any
 	// A unique identifier for the namespace. You use this identifier to refer to the namespace for any subsequent namespace operations such as deleting or modifying. All alphabetical characters must be lower case. Namespace name should be unique for all namespaces within an AWS account.
 	NamespaceName any

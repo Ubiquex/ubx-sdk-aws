@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SpacesWebNetworkSettings_Tags:
     key: Any = None
-    # The value of a tag attached to the Amazon WorkSpaces Web network settings resource, used to categorize and identify the resource. (AI-inferred)
     value: Any = None
 
 _SpacesWebNetworkSettings_TagsFields = {
@@ -19,28 +18,18 @@ _SpacesWebNetworkSettings_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesWebNetworkSettingsConfig:
-    # One or more security group IDs that define the network traffic rules for the WorkSpaces Web portal, controlling access to the VPC resources it connects to. (AI-inferred)
     security_group_ids: Any = None
-    # The list of subnet IDs in the VPC where the WorkSpaces Web portal's network interfaces are created for the network settings. (AI-inferred)
     subnet_ids: Any = None
-    # Assigns a list of tag objects (each containing a key and value) to the WorkSpaces Web network settings resource for identifying, organizing, and managing the resource. (AI-inferred)
     tags: Any = None
-    # The ID of the VPC that this WorkSpaces Web network settings configuration is associated with, used to define the network boundary for the web portal. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class SpacesWebNetworkSettingsAttrs:
-    # The list of ARNs of the web portals associated with this network settings resource. (AI-inferred)
     associated_portal_arns: Any = None
-    # The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this WorkSpaces Web network settings resource. (AI-inferred)
     network_settings_arn: Any = None
-    # One or more security group IDs that define the network traffic rules for the WorkSpaces Web portal, controlling access to the VPC resources it connects to. (AI-inferred)
     security_group_ids: Any = None
-    # The list of subnet IDs in the VPC where the WorkSpaces Web portal's network interfaces are created for the network settings. (AI-inferred)
     subnet_ids: Any = None
-    # Assigns a list of tag objects (each containing a key and value) to the WorkSpaces Web network settings resource for identifying, organizing, and managing the resource. (AI-inferred)
     tags: Any = None
-    # The ID of the VPC that this WorkSpaces Web network settings configuration is associated with, used to define the network boundary for the web portal. (AI-inferred)
     vpc_id: Any = None
 
 SpacesWebNetworkSettings = ubx.ResourceBinding(

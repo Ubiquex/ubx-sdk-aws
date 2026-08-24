@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TthingsGraphFlowTemplate_Definition struct {
-	// Specifies the language of the flow template definition; the only supported value is `GRAPHML`, the GraphML XML format used to describe the flow. (AI-inferred)
 	Language any
-	// The GraphQL text that defines the flow template, using AWS IoT Things Graph's data model language. (AI-inferred)
 	Text any
 }
 
@@ -16,18 +14,13 @@ var TthingsGraphFlowTemplate_DefinitionFields = ubx.FieldMap{
 	}
 
 type TthingsGraphFlowTemplateConfig struct {
-	// The version of the user's namespace that the flow template is compatible with, used to ensure the flow definition aligns with a specific published namespace version. (AI-inferred)
 	CompatibleNamespaceVersion any
-	// The definition object specifies the flow template's workflow via a definition document containing the GraphQL language and text that describes the nodes and connections. (AI-inferred)
 	Definition any
 }
 
 type TthingsGraphFlowTemplateAttrs struct {
-	// The version of the user's namespace that the flow template is compatible with, used to ensure the flow definition aligns with a specific published namespace version. (AI-inferred)
 	CompatibleNamespaceVersion any
-	// The definition object specifies the flow template's workflow via a definition document containing the GraphQL language and text that describes the nodes and connections. (AI-inferred)
 	Definition any
-	// The unique identifier of the flow template, as assigned by AWS IoT Things Graph upon creation. (AI-inferred)
 	Id any
 }
 

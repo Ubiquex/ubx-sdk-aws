@@ -4,32 +4,20 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueEnvironmentConfig struct {
-	// The unique identifier of the AWS Deadline Cloud farm that this queue environment is associated with. (AI-inferred)
 	FarmId any
-	// Controls the order in which this queue environment is applied relative to other queue environments associated with the same queue, with the priority value used to rank the environments. (AI-inferred)
 	Priority any
-	// The unique identifier of the Deadline queue that this environment is associated with, used to scope the environment to a specific queue. (AI-inferred)
 	QueueId any
-	// Defines the queue environment's setup as a structured string (typically JSON), specifying environment variables and script actions that run for jobs using this queue environment. (AI-inferred)
 	Template any
-	// Specifies the template format for the queue environment, either JSON or YAML. (AI-inferred)
 	TemplateType any
 }
 
 type QueueEnvironmentAttrs struct {
-	// The unique identifier of the AWS Deadline Cloud farm that this queue environment is associated with. (AI-inferred)
 	FarmId any
-	// The name of the queue environment, which is derived from the `name` field defined in the environment's template content (YAML or JSON). (AI-inferred)
 	Name any
-	// Controls the order in which this queue environment is applied relative to other queue environments associated with the same queue, with the priority value used to rank the environments. (AI-inferred)
 	Priority any
-	// The unique identifier assigned by AWS Deadline to this queue environment resource. (AI-inferred)
 	QueueEnvironmentId any
-	// The unique identifier of the Deadline queue that this environment is associated with, used to scope the environment to a specific queue. (AI-inferred)
 	QueueId any
-	// Defines the queue environment's setup as a structured string (typically JSON), specifying environment variables and script actions that run for jobs using this queue environment. (AI-inferred)
 	Template any
-	// Specifies the template format for the queue environment, either JSON or YAML. (AI-inferred)
 	TemplateType any
 }
 

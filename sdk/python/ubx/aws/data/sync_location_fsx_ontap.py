@@ -61,7 +61,6 @@ class SyncLocationFsxOntap_Protocol:
 
 @dataclasses.dataclass
 class SyncLocationFsxOntap_Tags:
-    # The key of a key-value tag applied to the FSx for ONTAP DataSync location, used to organize and identify the location for management and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 

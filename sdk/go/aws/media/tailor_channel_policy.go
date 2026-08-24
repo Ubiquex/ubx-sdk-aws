@@ -4,14 +4,12 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TailorChannelPolicyConfig struct {
-	// The name of the MediaTailor channel to which this channel policy is attached. (AI-inferred)
 	ChannelName any
 	// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
 	Policy any
 }
 
 type TailorChannelPolicyAttrs struct {
-	// The name of the MediaTailor channel to which this channel policy is attached. (AI-inferred)
 	ChannelName any
 	// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
 	Policy any

@@ -26,7 +26,6 @@ type RunnerService_HealthCheckConfiguration struct {
 type RunnerService_InstanceConfiguration struct {
 	// CPU
 	Cpu any
-	// The ARN of an IAM role that grants the App Runner service permissions to access other AWS services on behalf of the service's instances. (AI-inferred)
 	InstanceRoleArn any
 	// Memory
 	Memory any
@@ -61,16 +60,13 @@ type RunnerService_ObservabilityConfiguration struct {
 }
 
 type RunnerService_SourceConfiguration_AuthenticationConfiguration struct {
-	// The ARN of the IAM role that AWS App Runner assumes to access the source code repository or image registry specified in the service's source configuration. (AI-inferred)
 	AccessRoleArn any
 	// Connection Arn
 	ConnectionArn any
 }
 
 type RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConfigurationValues_RuntimeEnvironmentSecrets struct {
-	// The name (key) of a runtime environment secret, which becomes the environment variable name that App Runner injects into the service's runtime environment. (AI-inferred)
 	Name any
-	// The AWS Secrets Manager secret ARN or Systems Manager Parameter Store parameter name whose value is exposed as the runtime environment secret to the App Runner service. (AI-inferred)
 	Value any
 }
 
@@ -83,7 +79,6 @@ type RunnerService_SourceConfiguration_CodeRepository_CodeConfiguration_CodeConf
 	Runtime any
 	// The secrets and parameters that get referenced by your service as environment variables
 	RuntimeEnvironmentSecrets any
-	// Specifies the environment variables to pass to the App Runner service runtime, as a list of key-value pairs where each object contains the variable name and value. (AI-inferred)
 	RuntimeEnvironmentVariables any
 	// Start Command
 	StartCommand any
@@ -119,7 +114,6 @@ type RunnerService_SourceConfiguration_ImageRepository_ImageConfiguration struct
 	Port any
 	// The secrets and parameters that get referenced by your service as environment variables
 	RuntimeEnvironmentSecrets any
-	// Specifies a list of key-value pairs, each containing a Name and Value, that define runtime environment variables passed to the App Runner service's container when it uses an image from an image repository. (AI-inferred)
 	RuntimeEnvironmentVariables any
 	// Start Command
 	StartCommand any
@@ -146,7 +140,6 @@ type RunnerService_SourceConfiguration struct {
 }
 
 type RunnerService_Tags struct {
-	// The key of a tag attached to an AWS App Runner service, used to organize and manage the service resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -320,7 +313,6 @@ type RunnerServiceConfig struct {
 	ServiceName any
 	// Source Code configuration
 	SourceConfiguration any
-	// This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 
@@ -349,7 +341,6 @@ type RunnerServiceAttrs struct {
 	SourceConfiguration any
 	// AppRunner Service status.
 	Status any
-	// This is a list of tag objects (Key and Value) that attach metadata to an AWS App Runner service, used for cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 

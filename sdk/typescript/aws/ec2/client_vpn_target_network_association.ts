@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClientVpnTargetNetworkAssociationConfig {
-  /** The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred) */
   availabilityZoneId?: string | Computed<string>;
-  /** The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred) */
   clientVpnEndpointId: string | Computed<string>;
-  /** The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
 export interface ClientVpnTargetNetworkAssociationAttrs {
-  /** The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred) */
   availabilityZone: string;
-  /** This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred) */
   availabilityZoneId: string;
-  /** The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred) */
   clientVpnEndpointId: string;
-  /** The unique association ID assigned by AWS to the target network (subnet) when it is associated with the Client VPN endpoint. (AI-inferred) */
   id: string;
-  /** The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred) */
   subnetId: string;
 }
 

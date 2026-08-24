@@ -4,7 +4,6 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerEndpoint_DeploymentConfig_AutoRollbackConfiguration_Alarms struct {
-	// The name of the CloudWatch alarm that SageMaker monitors during a deployment to trigger an automatic rollback of the endpoint to the previous configuration if the alarm enters an alarm state. (AI-inferred)
 	AlarmName any
 }
 
@@ -21,9 +20,7 @@ type MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfigur
 }
 
 type MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy_TrafficRoutingConfiguration struct {
-	// Defines the initial canary step size for shifting traffic to the new endpoint variant during a blue/green deployment, expressed as either an instance count or a capacity percentage. (AI-inferred)
 	CanarySize any
-	// Specifies the step size for the linear traffic routing strategy in the blue/green deployment, defined as a capacity size (type and value) that determines how much additional traffic is shifted to the new variant at each step. (AI-inferred)
 	LinearStepSize any
 	// Specifies the type of traffic routing (e.g., 'AllAtOnce', 'Canary', 'Linear').
 	Type any
@@ -36,39 +33,30 @@ type MakerEndpoint_DeploymentConfig_BlueGreenUpdatePolicy struct {
 	MaximumExecutionTimeoutInSeconds any
 	// The wait time before terminating the old endpoint during a blue/green deployment.
 	TerminationWaitInSeconds any
-	// Specifies the traffic routing strategy (such as canary or linear) and timing parameters that control how SageMaker shifts traffic from the previous endpoint variant to the new one during a blue-green deployment. (AI-inferred)
 	TrafficRoutingConfiguration any
 }
 
 type MakerEndpoint_DeploymentConfig_RollingUpdatePolicy struct {
-	// Defines the maximum capacity (number of instances or percentage) that SageMaker updates in a single batch during a rolling update of the endpoint's variant configuration. (AI-inferred)
 	MaximumBatchSize any
 	// The maximum time allowed for the rolling update, in seconds.
 	MaximumExecutionTimeoutInSeconds any
-	// Specifies the maximum batch size (as a CapacitySize object with type and value) that SageMaker uses when rolling back instances during a rolling update deployment of the endpoint. (AI-inferred)
 	RollbackMaximumBatchSize any
 	// The time to wait between steps during the rolling update, in seconds.
 	WaitIntervalInSeconds any
 }
 
 type MakerEndpoint_DeploymentConfig struct {
-	// Defines the CloudWatch alarms that, when triggered during a SageMaker endpoint deployment, automatically roll back the deployment to the previous endpoint configuration. (AI-inferred)
 	AutoRollbackConfiguration any
-	// Defines the blue/green deployment strategy for updating the SageMaker endpoint, controlling how traffic gradually or immediately shifts from the previous model variant to the new one during an endpoint update. (AI-inferred)
 	BlueGreenUpdatePolicy any
-	// Defines the rolling update policy for a SageMaker endpoint deployment, specifying parameters like maximum batch size and wait interval that control how instances are updated during a rollout. (AI-inferred)
 	RollingUpdatePolicy any
 }
 
 type MakerEndpoint_ExcludeRetainedVariantProperties struct {
-	// Specifies the type of variant property ('Desktop' or 'Host') to exclude for a retained variant when updating the SageMaker endpoint. (AI-inferred)
 	VariantPropertyType any
 }
 
 type MakerEndpoint_Tags struct {
-	// The key of a tag attached to the SageMaker endpoint, used to organize and identify the resource within AWS. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the SageMaker endpoint, used to organize and identify the endpoint for cost allocation and access control. (AI-inferred)
 	Value any
 }
 
@@ -157,7 +145,6 @@ var MakerEndpoint_TagsFields = ubx.FieldMap{
 	}
 
 type MakerEndpointConfig_ struct {
-	// Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred)
 	DeploymentConfig any
 	// The name of the endpoint configuration for the SageMaker endpoint. This is a required property.
 	EndpointConfigName any
@@ -172,7 +159,6 @@ type MakerEndpointConfig_ struct {
 }
 
 type MakerEndpointAttrs struct {
-	// Configures how the SageMaker endpoint is deployed or updated, including rolling update policies such as blue/green or canary deployments. (AI-inferred)
 	DeploymentConfig any
 	// The Amazon Resource Name (ARN) of the endpoint.
 	EndpointArn any

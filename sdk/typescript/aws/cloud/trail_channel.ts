@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrailChannel_Destinations {
-  /** The ARN of the destination resource (e.g., an event data store ARN) where the CloudTrail channel delivers events. (AI-inferred) */
   location?: string | Computed<string>;
-  /** Specifies the type of destination for the CloudTrail channel, which can be either `EVENT_DATA_STORE` (for a CloudTrail Lake event data store) or `AWS_SERVICE` (for an AWS service such as Amazon S3, CloudWatch Logs, or EventBridge). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TrailChannel_Tags {
-  /** The key of a user-defined tag applied to the CloudTrail channel for identification and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the CloudTrail channel, used for organizing, identifying, and managing the channel resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

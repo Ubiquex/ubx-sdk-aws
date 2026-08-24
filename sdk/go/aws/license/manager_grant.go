@@ -4,7 +4,6 @@ package license
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerGrant_Tags struct {
-	// The tag key that you assign to an AWS License Manager grant to categorize and manage the grant. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,36 +14,27 @@ var ManagerGrant_TagsFields = ubx.FieldMap{
 	}
 
 type ManagerGrantConfig struct {
-	// Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred)
 	AllowedOperations any
 	// Name for the created Grant.
 	GrantName any
 	// Home region for the created grant.
 	HomeRegion any
-	// The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred)
 	LicenseArn any
-	// Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred)
 	Principals any
-	// Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred)
 	Status any
 	// A list of tags to attach.
 	Tags any
 }
 
 type ManagerGrantAttrs struct {
-	// Specifies the list of license operations, such as checking out, checking in, creating a grant, or extending consumption, that the grant recipient is permitted to perform on the licensed resource. (AI-inferred)
 	AllowedOperations any
-	// The Amazon Resource Name (ARN) that uniquely identifies the license grant in AWS License Manager. (AI-inferred)
 	GrantArn any
 	// Name for the created Grant.
 	GrantName any
 	// Home region for the created grant.
 	HomeRegion any
-	// The Amazon Resource Name (ARN) of the license whose entitlements are being granted to a recipient. (AI-inferred)
 	LicenseArn any
-	// Specifies the ARNs of the AWS principals (users, roles, or accounts) that receive the license grant. (AI-inferred)
 	Principals any
-	// Specifies the intended lifecycle state of the license grant, such as ACTIVE for immediate activation or PENDING_ACCEPT to require grantee acceptance, and can be updated to REJECTED or DELETED to terminate the grant. (AI-inferred)
 	Status any
 	// A list of tags to attach.
 	Tags any

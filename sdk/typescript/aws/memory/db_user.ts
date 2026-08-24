@@ -10,7 +10,6 @@ export interface DbUser_AuthenticationMode {
 
 export interface DbUser_Tags {
   key?: string | Computed<string>;
-  /** The value of the tag key-value pair applied to the MemoryDB user. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,7 +26,6 @@ const DbUser_TagsFields: FieldMap = {
 export interface DbUserConfig {
   /** Access permissions string used for this user account. */
   accessString?: string | Computed<string>;
-  /** Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred) */
   authenticationMode?: DbUser_AuthenticationMode | Computed<DbUser_AuthenticationMode>;
   /** An array of key-value pairs to apply to this user. */
   tags?: DbUser_Tags[] | Computed<DbUser_Tags[]>;
@@ -40,7 +38,6 @@ export interface DbUserAttrs {
   accessString: string;
   /** The Amazon Resource Name (ARN) of the user account. */
   arn: string;
-  /** Specifies the authentication method for the MemoryDB user, including the authentication type and the list of passwords that can be used to access the user's cluster. (AI-inferred) */
   authenticationMode: DbUser_AuthenticationMode;
   /** Indicates the user status. Can be "active", "modifying" or "deleting". */
   status: string;

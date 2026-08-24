@@ -30,7 +30,6 @@ class LayerVersionConfig:
     compatible_architectures: Any = None
     # A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
     compatible_runtimes: Any = None
-    # The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
     content: Any = None
     # The description of the version.
     description: Any = None
@@ -45,13 +44,11 @@ class LayerVersionAttrs:
     compatible_architectures: Any = None
     # A list of compatible function runtimes. Used for filtering with ListLayers and ListLayerVersions.
     compatible_runtimes: Any = None
-    # The `content` field specifies the Amazon S3 bucket, key, and optional object version that store the Lambda layer version's deployment package. (AI-inferred)
     content: Any = None
     # The description of the version.
     description: Any = None
     # The name or Amazon Resource Name (ARN) of the layer.
     layer_name: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Lambda layer version. (AI-inferred)
     layer_version_arn: Any = None
     # The layer's software license.
     license_info: Any = None

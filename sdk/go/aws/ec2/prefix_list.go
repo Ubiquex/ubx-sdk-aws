@@ -4,16 +4,12 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PrefixList_Entries struct {
-	// The CIDR block for the prefix list entry, defining the IP address range that this entry permits. (AI-inferred)
 	Cidr any
-	// Provides an optional human-readable description for the CIDR entry in an EC2 prefix list. (AI-inferred)
 	Description any
 }
 
 type PrefixList_Tags struct {
-	// The key of a tag (e.g., 'Name') to be assigned to the EC2 prefix list, used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value of a tag applied to the EC2 prefix list, allowing users to attach arbitrary metadata for identification, management, and cost allocation. (AI-inferred)
 	Value any
 }
 

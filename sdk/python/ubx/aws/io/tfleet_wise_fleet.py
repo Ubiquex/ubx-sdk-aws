@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TfleetWiseFleet_Tags:
-    # The key of a tag attached to the AWS IoT FleetWise fleet, used to label and categorize the fleet resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key assigned to the AWS IoT FleetWise fleet, used for identifying or organizing the resource. (AI-inferred)
     value: Any = None
 
 _TfleetWiseFleet_TagsFields = {
@@ -20,30 +18,19 @@ _TfleetWiseFleet_TagsFields = {
 
 @dataclasses.dataclass
 class TfleetWiseFleetConfig:
-    # Provides an optional human-readable description of the fleet, such as its purpose or operational context, with a maximum length of 2048 characters. (AI-inferred)
     description: Any = None
-    # The user-defined unique fleet ID that identifies the fleet in AWS IoT FleetWise, which is required when creating the fleet. (AI-inferred)
     id: Any = None
-    # The ARN of the signal catalog that this fleet is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # Defines a list of tags, each containing a key and value, applied to the AWS IoT FleetWise fleet to support cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TfleetWiseFleetAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the fleet in AWS IoT FleetWise. (AI-inferred)
     arn: Any = None
-    # The timestamp of when the fleet was created in AWS IoT FleetWise, returned as an ISO 8601 formatted string. (AI-inferred)
     creation_time: Any = None
-    # Provides an optional human-readable description of the fleet, such as its purpose or operational context, with a maximum length of 2048 characters. (AI-inferred)
     description: Any = None
-    # The user-defined unique fleet ID that identifies the fleet in AWS IoT FleetWise, which is required when creating the fleet. (AI-inferred)
     id: Any = None
-    # The timestamp (in ISO 8601 format) of the last modification to the fleet. (AI-inferred)
     last_modification_time: Any = None
-    # The ARN of the signal catalog that this fleet is associated with. (AI-inferred)
     signal_catalog_arn: Any = None
-    # Defines a list of tags, each containing a key and value, applied to the AWS IoT FleetWise fleet to support cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
 
 TfleetWiseFleet = ubx.ResourceBinding(

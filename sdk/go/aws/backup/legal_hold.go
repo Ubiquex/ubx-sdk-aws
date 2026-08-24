@@ -20,7 +20,6 @@ type LegalHold_RecoveryPointSelection struct {
 }
 
 type LegalHold_Tags struct {
-	// The key of a user-defined tag to attach to the AWS Backup legal hold, used for organizing, categorizing, and controlling access to the resource through IAM tag policies. (AI-inferred)
 	Key any
 	Value any
 }

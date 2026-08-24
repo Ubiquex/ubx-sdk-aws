@@ -43,14 +43,11 @@ class Cluster_ControlPlaneScalingConfig:
 
 @dataclasses.dataclass
 class Cluster_EncryptionConfig_Provider:
-    # The ARN of the AWS KMS key used to encrypt Kubernetes secrets in the EKS cluster. (AI-inferred)
     key_arn: Any = None
 
 @dataclasses.dataclass
 class Cluster_EncryptionConfig:
-    # Specifies the AWS KMS customer master key (CMK) ARN used to encrypt Kubernetes secrets for the EKS cluster. (AI-inferred)
     provider: Any = None
-    # Specifies the Kubernetes resource types (such as 'secrets') that are encrypted with the KMS key configured in this encryption configuration for the EKS cluster. (AI-inferred)
     resources: Any = None
 
 @dataclasses.dataclass
@@ -117,7 +114,6 @@ class Cluster_KubernetesNetworkConfig:
 
 @dataclasses.dataclass
 class Cluster_Logging_ClusterLogging_EnabledTypes:
-    # Specifies one Kubernetes control plane log type (such as api, audit, authenticator, controllerManager, or scheduler) to enable for the EKS cluster. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -157,7 +153,6 @@ class Cluster_OutpostConfig:
 
 @dataclasses.dataclass
 class Cluster_RemoteNetworkConfig_RemoteNodeNetworks:
-    # Defines the list of CIDR blocks for the remote node networks, specifying the IP address ranges used by remote (hybrid) nodes in the EKS cluster. (AI-inferred)
     cidrs: Any = None
 
 @dataclasses.dataclass
@@ -194,9 +189,7 @@ class Cluster_StorageConfig:
 
 @dataclasses.dataclass
 class Cluster_Tags:
-    # The key of a user-defined tag attached to the AWS EKS cluster, which must be unique within the cluster's tag set and is used to categorize or filter the cluster. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag assigned to the EKS cluster, used for metadata such as cost centers or environment identification. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -398,7 +391,6 @@ class ClusterConfig:
     control_plane_scaling_config: Any = None
     # Set this value to true to enable deletion protection for the cluster.
     deletion_protection: Any = None
-    # Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
     encryption_config: Any = None
     # Force cluster version update
     force: Any = None
@@ -455,7 +447,6 @@ class ClusterAttrs:
     control_plane_scaling_config: Any = None
     # Set this value to true to enable deletion protection for the cluster.
     deletion_protection: Any = None
-    # Specifies the AWS KMS key ARN and the Kubernetes resources (like secrets) to enable envelope encryption for the EKS cluster. (AI-inferred)
     encryption_config: Any = None
     # Amazon Resource Name (ARN) or alias of the customer master key (CMK).
     encryption_config_key_arn: Any = None

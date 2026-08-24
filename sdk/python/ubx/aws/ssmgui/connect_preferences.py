@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConnectPreferences_ConnectionRecordingPreferences_RecordingDestinations_S3Buckets:
-    # The name of the S3 bucket used as a destination where connection recording sessions are stored. (AI-inferred)
     bucket_name: Any = None
     bucket_owner: Any = None
 

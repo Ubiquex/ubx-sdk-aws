@@ -2,36 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation {
-  /** Specifies which additional analyses (such as CORRELATION or REGRESSION) are permitted on the output of aggregation queries governed by this configured table association's aggregation analysis rule. (AI-inferred) */
   allowedAdditionalAnalyses?: string[] | Computed<string[]>;
-  /** The list of collaboration member account IDs (or member ARNs) allowed to receive query results from aggregation queries run against this configured table association. (AI-inferred) */
   allowedResultReceivers?: string[] | Computed<string[]>;
 }
 
 export interface RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1 {
-  /** Specifies the aggregation analysis rule policy parameters for the configured table association, including the allowed aggregate columns, dimension columns, join requirements, and permitted aggregation operators. (AI-inferred) */
   aggregation?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation>;
-  /** The custom analysis rule policy (version v1) for this AWS Clean Rooms configured table association, defining the allowed SQL operations such as joins, aggregations, and output columns that members can use when querying the associated table. (AI-inferred) */
   custom?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation>;
-  /** Configures the list analysis rule for the configured table association, defining the allowed columns that members can select in list queries. (AI-inferred) */
   list?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation>;
 }
 
 export interface RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy {
-  /** Specifies the versioned analysis rule policy for a configured table association, containing the v1 policy that defines allowed aggregation columns, join columns, or custom SQL templates used to constrain queries in the collaboration. (AI-inferred) */
   v1?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1 | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1>;
 }
 
 export interface RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules {
-  /** This object specifies the policy for an analysis rule attached to a configured table association, defining the type of analysis (e.g., aggregation, list, or custom) along with the detailed constraints and parameters (such as aggregation columns, join conditions, and output limits) that govern queries run by collaboration members on the associated table. (AI-inferred) */
   policy?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy>;
-  /** Specifies the type of analysis rule for the configured table association (e.g., AGGREGATION or LIST), which defines the privacy-enforcing query operations allowed on the associated table. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface RoomsConfiguredTableAssociation_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key attached to the AWS Clean Rooms configured table association, used to classify and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -81,38 +72,24 @@ const RoomsConfiguredTableAssociation_TagsFields: FieldMap = {
 };
 
 export interface RoomsConfiguredTableAssociationConfig {
-  /** Configures the analysis rules for the configured table association, specifying the permitted analysis types (e.g., list, aggregate, custom) and their policy constraints for querying the associated configured table within a collaboration. (AI-inferred) */
   configuredTableAssociationAnalysisRules?: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules[] | Computed<RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules[]>;
-  /** The unique identifier of the AWS Clean Rooms configured table that this association links to a membership for collaborative analysis. (AI-inferred) */
   configuredTableIdentifier: string | Computed<string>;
-  /** An optional free-form description of the configured table association, used to provide additional context or identity for the association within the AWS Clean Rooms membership. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The unique identifier of the AWS Clean Rooms membership for which this configured table association is created, linking the configured table to that membership. (AI-inferred) */
   membershipIdentifier: string | Computed<string>;
-  /** A unique, user-provided name for the configured table association, used to identify and manage the association within the AWS Clean Rooms membership. (AI-inferred) */
   name: string | Computed<string>;
-  /** The ARN of the IAM role that AWS Clean Rooms assumes to access the underlying data referenced by the configured table when the associated table is used in analyses. (AI-inferred) */
   roleArn: string | Computed<string>;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration. */
   tags?: RoomsConfiguredTableAssociation_Tags[] | Computed<RoomsConfiguredTableAssociation_Tags[]>;
 }
 
 export interface RoomsConfiguredTableAssociationAttrs {
-  /** The Amazon Resource Name (ARN) of the configured table association, assigned by AWS when the association is created. (AI-inferred) */
   arn: string;
-  /** Configures the analysis rules for the configured table association, specifying the permitted analysis types (e.g., list, aggregate, custom) and their policy constraints for querying the associated configured table within a collaboration. (AI-inferred) */
   configuredTableAssociationAnalysisRules: RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules[];
-  /** The unique identifier assigned by AWS to the configured table association within the membership. (AI-inferred) */
   configuredTableAssociationIdentifier: string;
-  /** The unique identifier of the AWS Clean Rooms configured table that this association links to a membership for collaborative analysis. (AI-inferred) */
   configuredTableIdentifier: string;
-  /** An optional free-form description of the configured table association, used to provide additional context or identity for the association within the AWS Clean Rooms membership. (AI-inferred) */
   description: string;
-  /** The unique identifier of the AWS Clean Rooms membership for which this configured table association is created, linking the configured table to that membership. (AI-inferred) */
   membershipIdentifier: string;
-  /** A unique, user-provided name for the configured table association, used to identify and manage the association within the AWS Clean Rooms membership. (AI-inferred) */
   name: string;
-  /** The ARN of the IAM role that AWS Clean Rooms assumes to access the underlying data referenced by the configured table when the associated table is used in analyses. (AI-inferred) */
   roleArn: string;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration. */
   tags: RoomsConfiguredTableAssociation_Tags[];

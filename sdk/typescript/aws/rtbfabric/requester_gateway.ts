@@ -29,7 +29,6 @@ export interface RequesterGatewayAttrs {
   description: string;
   domainName: string;
   gatewayId: string;
-  /** The current status of the requester gateway, indicating its operational lifecycle state such as Active, Inactive, or Deleting, as managed by the RTB Fabric service. (AI-inferred) */
   requesterGatewayStatus: string;
   /** The ID of one or more security groups in order to create a requester gateway. */
   securityGroupIds: unknown[];

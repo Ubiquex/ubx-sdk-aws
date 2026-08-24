@@ -11,7 +11,6 @@ export interface InstanceProfileConfig {
 }
 
 export interface InstanceProfileAttrs {
-  /** The ARN of the IAM instance profile, which uniquely identifies the profile across AWS and is used when attaching the profile to an EC2 instance or referencing it in IAM policies. (AI-inferred) */
   arn: string;
   /** The name of the instance profile to create. This parameter allows (through its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@- */
   instanceProfileName: string;

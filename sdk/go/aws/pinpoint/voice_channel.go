@@ -4,18 +4,13 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VoiceChannelConfig struct {
-	// The unique identifier for the Amazon Pinpoint application that the voice channel is enabled for. (AI-inferred)
 	ApplicationId any
-	// Specifies whether the voice channel is enabled for sending voice messages through Amazon Pinpoint. (AI-inferred)
 	Enabled any
 }
 
 type VoiceChannelAttrs struct {
-	// The unique identifier for the Amazon Pinpoint application that the voice channel is enabled for. (AI-inferred)
 	ApplicationId any
-	// Specifies whether the voice channel is enabled for sending voice messages through Amazon Pinpoint. (AI-inferred)
 	Enabled any
-	// The unique identifier of the Amazon Pinpoint application that this voice channel belongs to (same value as the ApplicationId). (AI-inferred)
 	Id any
 }
 

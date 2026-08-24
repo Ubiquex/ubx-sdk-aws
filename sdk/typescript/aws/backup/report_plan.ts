@@ -11,9 +11,7 @@ export interface ReportPlan_ReportDeliveryChannel {
 }
 
 export interface ReportPlan_ReportPlanTags {
-  /** The key of a user-defined tag attached to the AWS Backup report plan, used to categorize and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the AWS Backup report plan, used for identifying and organizing the report plan. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

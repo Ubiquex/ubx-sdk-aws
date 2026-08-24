@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory {
-  /** The name of the advanced content category (e.g., 'MALWARE', 'PHISHING', 'BOTNET') that the firewall rule uses to match DNS queries. (AI-inferred) */
   category?: string | Computed<string>;
 }
 
@@ -11,46 +10,30 @@ export interface ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_Partne
 }
 
 export interface ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType {
-  /** Specifies the advanced content category (such as a threat or content type) that the firewall rule targets when its rule type is based on advanced content, allowing the rule group to match domains in that category. (AI-inferred) */
   firewallAdvancedContentCategory?: ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory | Computed<ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory>;
-  /** The `firewall_advanced_threat_category` field specifies the advanced threat category (e.g., malware, phishing) used to filter DNS queries when the firewall rule is set to an advanced rule type (ADVANCED_RULE) in a Route 53 Resolver DNS Firewall rule group. (AI-inferred) */
   firewallAdvancedThreatCategory?: ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory | Computed<ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_FirewallAdvancedContentCategory>;
-  /** An object that specifies the settings for a Route 53 Resolver DNS Firewall rule of type PARTNER_THREAT_PROTECTION, enabling the rule to forward DNS queries to an AWS Partner security solution for advanced threat detection. (AI-inferred) */
   partnerThreatProtection?: ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_PartnerThreatProtection | Computed<ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType_PartnerThreatProtection>;
 }
 
 export interface ResolverFirewallRuleGroup_FirewallRules {
-  /** Determines how the firewall rule handles matching DNS queries: ALLOW permits them, BLOCK returns a block response, and ALERT logs the match without blocking. (AI-inferred) */
   action?: string | Computed<string>;
-  /** Determines the DNS record type (CNAME or TXT) for the override domain, used when a firewall rule blocks a query with an OVERRIDE response. (AI-inferred) */
   blockOverrideDnsType?: string | Computed<string>;
-  /** The fully qualified domain name that is returned as a DNS override when the rule's action is BLOCK and its BlockResponse is set to OVERRIDE, replacing the blocked domain's response. (AI-inferred) */
   blockOverrideDomain?: string | Computed<string>;
-  /** The time-to-live (in seconds) for the DNS record returned when this firewall rule's action is BLOCK with a block response of OVERRIDE, specifying how long resolvers cache the override answer. (AI-inferred) */
   blockOverrideTtl?: number | Computed<number>;
-  /** Specifies the response that Route 53 Resolver DNS Firewall returns when a query matches the rule, using one of the allowed values NODATA, NXDOMAIN, or OVERRIDE (where OVERRIDE uses the rule's block override fields to return a custom response). (AI-inferred) */
   blockResponse?: string | Computed<string>;
-  /** Sets the minimum confidence score (LOW, MEDIUM, or HIGH) required for a domain from a threat intelligence list to be blocked by this firewall rule. (AI-inferred) */
   confidenceThreshold?: string | Computed<string>;
   dnsThreatProtection?: string | Computed<string>;
-  /** The ID of the AWS Route 53 Resolver firewall domain list that this rule uses to match domains. (AI-inferred) */
   firewallDomainListId?: string | Computed<string>;
-  /** Controls whether Route 53 Resolver DNS Firewall inspects the DNS redirection (CNAME) chain to evaluate the ultimate target domain against the rule's domain list, accepting values like INSPECT_REDIRECTION or TRUST_REDIRECTION. (AI-inferred) */
   firewallDomainRedirectionAction?: string | Computed<string>;
   firewallRuleType?: ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType | Computed<ResolverFirewallRuleGroup_FirewallRules_FirewallRuleType>;
-  /** The unique ID of the Route 53 Resolver DNS Firewall threat protection whose managed threat list this rule uses to match DNS queries, used when the rule is based on a threat protection rather than a customer-defined domain list. (AI-inferred) */
   firewallThreatProtectionId?: string | Computed<string>;
-  /** The evaluation priority for this firewall rule within the rule group, where lower numbers are evaluated first (range 1-10000). (AI-inferred) */
   priority?: number | Computed<number>;
-  /** The DNS query type (QTYPE) that this firewall rule applies to, such as A, AAAA, or MX, where an unspecified value matches all query types. (AI-inferred) */
   qtype?: string | Computed<string>;
   status?: string | Computed<string>;
 }
 
 export interface ResolverFirewallRuleGroup_Tags {
-  /** The key of a tag to assign to the Route 53 Resolver firewall rule group for identifying, organizing, or cost-allocation purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Provides the value portion of a tag entry for the Route 53 Resolver firewall rule group, enabling users to associate custom metadata such as environment or cost allocator with the rule group for management and identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

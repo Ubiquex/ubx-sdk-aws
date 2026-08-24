@@ -2,84 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting {
-  /** Indicates whether the Greengrass core (group owner) automatically gains read/write access to the local device, or whether access is manually specified with the GroupOwner property. (AI-inferred) */
   autoAddGroupOwner?: boolean | Computed<boolean>;
-  /** The name of the Linux group that owns the local device resource, used to control file permissions on the device. (AI-inferred) */
   groupOwner?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData {
-  /** Specifies the Linux group owner settings for the local device resource, including whether to automatically add the group owner and which group name to use. (AI-inferred) */
   groupOwnerSetting?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting>;
-  /** The absolute path of the local device on the Greengrass core that this resource references, for example /dev/ttyUSB0 or /dev/video0. (AI-inferred) */
   sourcePath?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalVolumeResourceData {
-  /** The absolute path on the Greengrass core device where the local volume is mounted and made available to Lambda functions. (AI-inferred) */
   destinationPath?: string | Computed<string>;
-  /** Configures the OS group owner and its read/write permissions that are applied to a Greengrass local volume resource, controlling how Lambda functions access the volume's file system. (AI-inferred) */
   groupOwnerSetting?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData_GroupOwnerSetting>;
-  /** The absolute path to the local volume on the Greengrass core device that this resource data represents. (AI-inferred) */
   sourcePath?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting {
-  /** The group name or group ID that will be set as the owner of the downloaded S3 machine learning model resource on the Greengrass core device. (AI-inferred) */
   groupOwner?: string | Computed<string>;
-  /** Specifies the permission level (either 'ro' or 'rw') that the Greengrass group has for the S3 machine learning model resource data in the owner setting. (AI-inferred) */
   groupPermission?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData {
-  /** The absolute path on the Greengrass core device where the S3 machine learning model artifact is downloaded and stored. (AI-inferred) */
   destinationPath?: string | Computed<string>;
-  /** Sets the Linux group owner and group read/write permissions applied to the S3 machine learning model artifact when it is deployed to a Greengrass core device. (AI-inferred) */
   ownerSetting?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting>;
-  /** The S3 URI of the machine learning model artifact that this Greengrass resource points to. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceData {
-  /** The absolute local path on the Greengrass core device where the SageMaker machine learning model artifact is stored or downloaded to. (AI-inferred) */
   destinationPath?: string | Computed<string>;
-  /** Specifies the Linux group owner and permissions for the SageMaker model resource, controlling access to the model on the Greengrass core device. (AI-inferred) */
   ownerSetting?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData_OwnerSetting>;
-  /** The Amazon Resource Name (ARN) of the SageMaker training job that produced the machine learning model to be deployed to the Greengrass core. (AI-inferred) */
   sageMakerJobArn?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceData {
-  /** Specifies additional AWS Secrets Manager staging labels, beyond the default current version, for the referenced secret in the Greengrass resource definition, so that the core device downloads and exposes those labeled secret versions locally. (AI-inferred) */
   additionalStagingLabelsToDownload?: string[] | Computed<string[]>;
-  /** The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that provides the secret value for this Greengrass secret resource. (AI-inferred) */
   arn?: string | Computed<string>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources_ResourceDataContainer {
-  /** Specifies the source path of the local device resource on the Greengrass core device, such as a physical device like /dev/ttyAMA0. (AI-inferred) */
   localDeviceResourceData?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalDeviceResourceData>;
-  /** Specifies the configuration for a local volume resource, including the source path on the host file system, the destination path in the container, and optional group owner and permission settings. (AI-inferred) */
   localVolumeResourceData?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalVolumeResourceData | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_LocalVolumeResourceData>;
-  /** Configures a machine learning model resource hosted in Amazon S3, specifying the model's S3 URI and the local destination path where the Greengrass core will store it. (AI-inferred) */
   s3MachineLearningModelResourceData?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_S3MachineLearningModelResourceData>;
-  /** This object configures an Amazon SageMaker machine learning model as a resource in the Greengrass group, specifying the model ARN and the local destination path on the core device. (AI-inferred) */
   sageMakerMachineLearningModelResourceData?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceData | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SageMakerMachineLearningModelResourceData>;
-  /** Specifies an AWS Secrets Manager secret to be available to the Greengrass group, by providing the secret's ARN and optionally additional staging labels to append for staged secret versions. (AI-inferred) */
   secretsManagerSecretResourceData?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceData | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer_SecretsManagerSecretResourceData>;
 }
 
 export interface ResourceDefinition_InitialVersion_Resources {
-  /** A unique identifier for this resource within the Greengrass resource definition version. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The user-defined name that identifies this resource instance within the Greengrass resource definition version. (AI-inferred) */
   name?: string | Computed<string>;
-  /** An object that encapsulates a single Greengrass resource definition, containing a type field that selects exactly one of the five concrete data structures—local device, local volume, S3 machine learning model, SageMaker machine learning model, or Secrets Manager secret—and holds the corresponding configuration data for that resource type. (AI-inferred) */
   resourceDataContainer?: ResourceDefinition_InitialVersion_Resources_ResourceDataContainer | Computed<ResourceDefinition_InitialVersion_Resources_ResourceDataContainer>;
 }
 
 export interface ResourceDefinition_InitialVersion {
-  /** The `resources` list under `initial_version` defines the set of Greengrass resource instances (such as local device or volume resources) that comprise the initial version of the resource definition. (AI-inferred) */
   resources: ResourceDefinition_InitialVersion_Resources[] | Computed<ResourceDefinition_InitialVersion_Resources[]>;
 }
 
@@ -184,26 +158,17 @@ const ResourceDefinition_InitialVersionFields: FieldMap = {
 };
 
 export interface ResourceDefinitionConfig {
-  /** Defines the initial version of the Greengrass resource definition, which contains an array of resource instances (such as local volumes or secrets) to be associated with the core when first deployed. (AI-inferred) */
   initialVersion?: ResourceDefinition_InitialVersion | Computed<ResourceDefinition_InitialVersion>;
-  /** The name of the resource definition, which provides a user-friendly identifier for this set of local resources in AWS Greengrass. (AI-inferred) */
   name: string | Computed<string>;
-  /** Assigns metadata (key-value pairs) to this AWS Greengrass resource definition for identification and cost allocation. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
 export interface ResourceDefinitionAttrs {
-  /** The Amazon Resource Name (ARN) uniquely identifying this AWS Greengrass resource definition, assigned by AWS upon creation and used to reference the definition in other services. (AI-inferred) */
   arn: string;
-  /** The unique AWS-assigned identifier of the Greengrass resource definition, used to reference this definition in other Greengrass resources and API calls. (AI-inferred) */
   id: string;
-  /** Defines the initial version of the Greengrass resource definition, which contains an array of resource instances (such as local volumes or secrets) to be associated with the core when first deployed. (AI-inferred) */
   initialVersion: ResourceDefinition_InitialVersion;
-  /** The ARN of the latest version of the AWS IoT Greengrass resource definition. (AI-inferred) */
   latestVersionArn: string;
-  /** The name of the resource definition, which provides a user-friendly identifier for this set of local resources in AWS Greengrass. (AI-inferred) */
   name: string;
-  /** Assigns metadata (key-value pairs) to this AWS Greengrass resource definition for identification and cost allocation. (AI-inferred) */
   tags: unknown;
 }
 

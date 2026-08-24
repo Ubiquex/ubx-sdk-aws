@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VerifiedAccessEndpoint_CidrOptions_PortRanges:
-    # Defines the starting port in a port range that the Verified Access endpoint accepts traffic on for CIDR-based access. (AI-inferred)
     from_port: Any = None
-    # The inclusive upper bound of the port range that the Verified Access endpoint will accept for traffic coming from the specified CIDR. (AI-inferred)
     to_port: Any = None
 
 @dataclasses.dataclass

@@ -4,7 +4,6 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveryHttpNamespace_Tags struct {
-	// Specifies the key (name) of a tag applied to the AWS CloudFormation Service Discovery HTTP namespace, forming the key half of a key-value tag pair. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,24 +14,16 @@ var DiscoveryHttpNamespace_TagsFields = ubx.FieldMap{
 	}
 
 type DiscoveryHttpNamespaceConfig struct {
-	// Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
 	Description any
-	// The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
 	Name any
-	// Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
 	Tags any
 }
 
 type DiscoveryHttpNamespaceAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the HTTP namespace in AWS. (AI-inferred)
 	Arn any
-	// Provides an optional human-readable description for the HTTP namespace, helping to identify its purpose or distinguish it from other namespaces in service discovery. (AI-inferred)
 	Description any
-	// The ID of the HTTP namespace, assigned by AWS Cloud Map when the namespace is created. (AI-inferred)
 	Id any
-	// The name of the HTTP namespace, which must be unique within the AWS account and can contain up to 1024 characters. (AI-inferred)
 	Name any
-	// Specifies a list of key-value tags to associate with the HTTP namespace, enabling you to organize, identify, and manage cost allocation for the namespace. (AI-inferred)
 	Tags any
 }
 

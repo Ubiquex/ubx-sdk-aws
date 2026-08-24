@@ -2,15 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolDomain_CustomDomainConfig {
-  /** The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for the custom domain of the Cognito user pool domain. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** Sets the TLS security policy for the CloudFront distribution backing the custom domain, determining the minimum TLS version (e.g., TLS_1_0, TLS_1_2) required for HTTPS connections to the user pool domain. (AI-inferred) */
   securityPolicy?: string | Computed<string>;
 }
 
 export interface UserPoolDomain_Routing_Failover {
   primaryRoute53HealthCheckId: string | Computed<string>;
-  /** Specifies the secondary AWS region to which the user pool domain routes traffic during failover, ensuring availability if the primary region fails. (AI-inferred) */
   secondaryRegion: string | Computed<string>;
 }
 
@@ -37,28 +34,19 @@ const UserPoolDomain_RoutingFields: FieldMap = {
 };
 
 export interface UserPoolDomainConfig {
-  /** Specifies the configuration for a custom domain, including the ARN of the ACM certificate to use for HTTPS. (AI-inferred) */
   customDomainConfig?: UserPoolDomain_CustomDomainConfig | Computed<UserPoolDomain_CustomDomainConfig>;
-  /** The domain (either a custom domain or a prefix) that will be assigned to the user pool to serve the hosted UI, API, and authentication endpoints. (AI-inferred) */
   domain: string | Computed<string>;
-  /** Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred) */
   managedLoginVersion?: number | Computed<number>;
   routing?: UserPoolDomain_Routing | Computed<UserPoolDomain_Routing>;
-  /** The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface UserPoolDomainAttrs {
-  /** The Amazon CloudFront distribution associated with the user pool domain, used to serve traffic for the custom domain. (AI-inferred) */
   cloudFrontDistribution: string;
-  /** Specifies the configuration for a custom domain, including the ARN of the ACM certificate to use for HTTPS. (AI-inferred) */
   customDomainConfig: UserPoolDomain_CustomDomainConfig;
-  /** The domain (either a custom domain or a prefix) that will be assigned to the user pool to serve the hosted UI, API, and authentication endpoints. (AI-inferred) */
   domain: string;
-  /** Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred) */
   managedLoginVersion: number;
   routing: UserPoolDomain_Routing;
-  /** The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred) */
   userPoolId: string;
 }
 

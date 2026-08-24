@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RunCache_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag (key-value pair) applied to the AWS Omics run cache. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

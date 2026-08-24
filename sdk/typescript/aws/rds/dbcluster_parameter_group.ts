@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbclusterParameterGroup_Tags {
-  /** The key of a tag applied to the DB cluster parameter group, used to organize and identify the resource within AWS cost allocation and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the DB cluster parameter group, used to categorize the resource for cost tracking, access control, and operational management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayV2Integration_TlsConfig {
-  /** Defines the server name that API Gateway uses to verify the certificate presented by the target endpoint for a private integration, overriding the target hostname when necessary. (AI-inferred) */
   serverNameToVerify?: string | Computed<string>;
 }
 

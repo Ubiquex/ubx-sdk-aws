@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneEnvironmentProfile_UserParameters:
-    # The name of a user-defined parameter configured in the environment profile, used to match or reference a parameter declared by the associated environment blueprint when provisioning an environment. (AI-inferred)
     name: Any = None
-    # Sets the actual value for a user parameter in the environment profile, which is supplied as the value when the environment is provisioned from this profile. (AI-inferred)
     value: Any = None
 
 _ZoneEnvironmentProfile_UserParametersFields = {

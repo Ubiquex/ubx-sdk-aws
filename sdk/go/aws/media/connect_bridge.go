@@ -16,22 +16,15 @@ type ConnectBridge_IngressGatewayBridge struct {
 }
 
 type ConnectBridge_Outputs_NetworkOutput struct {
-	// The destination IP address to which this bridge's network output sends media. (AI-inferred)
 	IpAddress any
-	// The name assigned to a network output of the AWS Elemental MediaConnect bridge, used to identify that output within the bridge. (AI-inferred)
 	Name any
-	// Specifies the name of the network that this bridge network output uses, identifying the destination network for the output. (AI-inferred)
 	NetworkName any
-	// The destination port number on which the MediaConnect bridge network output sends media to the remote device. (AI-inferred)
 	Port any
-	// Specifies the transport protocol used by the bridge's network output, such as RTP, RTP-FEC, or UDP, for sending media over IP. (AI-inferred)
 	Protocol any
-	// The Time-to-Live (TTL) value for multicast packets sent from the network output, limiting the number of network hops the traffic can traverse. (AI-inferred)
 	Ttl any
 }
 
 type ConnectBridge_Outputs struct {
-	// Configures the destination IP address, port, protocol, TTL, and other network parameters for sending the bridge's media output over the network. (AI-inferred)
 	NetworkOutput any
 }
 
@@ -41,52 +34,37 @@ type ConnectBridge_SourceFailoverConfig_SourcePriority struct {
 }
 
 type ConnectBridge_SourceFailoverConfig struct {
-	// Specifies the failover mode of the bridge source, using FAILOVER to enable automatic failover to a redundant source or DEFAULT for standard behavior. (AI-inferred)
 	FailoverMode any
 	// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
 	SourcePriority any
-	// Indicates whether automatic failover is enabled or disabled for the bridge's source, with valid values ENABLED or DISABLED. (AI-inferred)
 	State any
 }
 
 type ConnectBridge_Sources_FlowSource_FlowVpcInterfaceAttachment struct {
-	// The name of the VPC interface on the source MediaConnect flow that the bridge flow source attaches to for network connectivity. (AI-inferred)
 	VpcInterfaceName any
 }
 
 type ConnectBridge_Sources_FlowSource struct {
-	// The Amazon Resource Name (ARN) of the MediaConnect flow that serves as the source of the bridge source. (AI-inferred)
 	FlowArn any
-	// Specifies the VPC interface attachment settings, including the name of the VPC interface, for this flow source of the AWS Elemental MediaConnect bridge. (AI-inferred)
 	FlowVpcInterfaceAttachment any
-	// Specifies the name assigned to the flow source of the AWS MediaConnect bridge, used to identify the source within the bridge's source configuration. (AI-inferred)
 	Name any
 }
 
 type ConnectBridge_Sources_NetworkSource_MulticastSourceSettings struct {
-	// The IP address of the multicast source from which the MediaConnect bridge receives content, used in the multicast source settings of a network source. (AI-inferred)
 	MulticastSourceIp any
 }
 
 type ConnectBridge_Sources_NetworkSource struct {
-	// The multicast IP address of the network source that the MediaConnect bridge subscribes to. (AI-inferred)
 	MulticastIp any
-	// Configures the multicast source settings for the network source on the bridge, specifying the multicast IP address and port from which the bridge receives media. (AI-inferred)
 	MulticastSourceSettings any
-	// A user-defined name that identifies this network source within the bridge's sources configuration in AWS Elemental MediaConnect. (AI-inferred)
 	Name any
-	// The name of the network where the bridge source is located, used to identify the network that provides the content for this MediaConnect bridge source. (AI-inferred)
 	NetworkName any
-	// The network port on the bridge's source that receives the incoming media stream from an on-premises sender. (AI-inferred)
 	Port any
-	// Specifies the transport protocol used for the network source, which can be either RTP or RTP-FEC, indicating how the incoming media stream is delivered. (AI-inferred)
 	Protocol any
 }
 
 type ConnectBridge_Sources struct {
-	// FlowSource is an object that configures the bridge source to use an existing MediaConnect flow as its source, specifying the flow ARN and the VPC interface attachment for the flow. (AI-inferred)
 	FlowSource any
-	// Configures the network source for a source in a MediaConnect bridge, defining the multicast IP address, port, and protocol that the bridge listens on to ingest video from the network. (AI-inferred)
 	NetworkSource any
 }
 
@@ -175,9 +153,7 @@ var ConnectBridge_SourcesFields = ubx.FieldMap{
 	}
 
 type ConnectBridgeConfig struct {
-	// Defines the egress gateway bridge settings for an AWS Elemental MediaConnect bridge, including the gateway instance ID and optional maximum bitrate for transmitting media flows to a remote network. (AI-inferred)
 	EgressGatewayBridge any
-	// The 'ingress_gateway_bridge' object configures the ingress gateway bridge settings for the MediaConnect bridge, including the maximum number of outputs it can support. (AI-inferred)
 	IngressGatewayBridge any
 	// The name of the bridge.
 	Name any
@@ -194,11 +170,8 @@ type ConnectBridgeConfig struct {
 type ConnectBridgeAttrs struct {
 	// The Amazon Resource Number (ARN) of the bridge.
 	BridgeArn any
-	// The current lifecycle state of the MediaConnect bridge (e.g., ACTIVE, STANDBY, or DELETING), as reported by AWS after the bridge is created or updated. (AI-inferred)
 	BridgeState any
-	// Defines the egress gateway bridge settings for an AWS Elemental MediaConnect bridge, including the gateway instance ID and optional maximum bitrate for transmitting media flows to a remote network. (AI-inferred)
 	EgressGatewayBridge any
-	// The 'ingress_gateway_bridge' object configures the ingress gateway bridge settings for the MediaConnect bridge, including the maximum number of outputs it can support. (AI-inferred)
 	IngressGatewayBridge any
 	// The name of the bridge.
 	Name any

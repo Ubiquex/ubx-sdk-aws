@@ -8,110 +8,74 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Constraints:
-    # For the EMR instance group's auto scaling policy, this required number defines the maximum allowable number of EC2 instances that the instance group can scale up to. (AI-inferred)
     max_capacity: Any = None
-    # The minimum number of EC2 instances that the auto scaling policy for the EMR instance group will maintain, acting as the lower bound in the scaling constraints. (AI-inferred)
     min_capacity: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfiguration:
-    # Specifies how the scaling adjustment is interpreted for the simple scaling policy on an EMR instance group, such as an absolute change in instance count (CHANGE_IN_CAPACITY), a percentage change (PERCENT_CHANGE_IN_CAPACITY), or an exact target capacity (EXACT_CAPACITY). (AI-inferred)
     adjustment_type: Any = None
-    # The amount of time, in seconds, after a scaling activity completes before any further trigger-related scaling activities can start. (AI-inferred)
     cool_down: Any = None
-    # The amount by which to scale the instance group when this policy is triggered, interpreted according to the adjustment type (such as an absolute change in instance count, a percentage change, or an exact target capacity). (AI-inferred)
     scaling_adjustment: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules_Action:
-    # Specifies the market type (ON_DEMAND or SPOT) of the instances that the auto scaling rule's action adds or removes in the EMR instance group. (AI-inferred)
     market: Any = None
-    # Specifies the parameters for a simple scaling action, including the scaling adjustment type (such as CHANGE_IN_CAPACITY), the amount to scale, and an optional cool-down period, used by an EMR instance group auto-scaling rule. (AI-inferred)
     simple_scaling_policy_configuration: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_Dimensions:
-    # Specifies the name (key) of a CloudWatch metric dimension included in the alarm definition that triggers the Amazon EMR instance group auto scaling policy. (AI-inferred)
     key: Any = None
-    # The value assigned to the CloudWatch alarm dimension (e.g., an EMR instance group ID or cluster ID) that identifies the metric scope for the auto-scaling trigger, such as 'InstanceGroupId' or 'JobFlowId'. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition:
-    # Specifies the arithmetic operation to use when comparing the specified statistic and threshold, such as GreaterThanOrEqualToThreshold or LessThanThreshold, for the CloudWatch alarm that triggers the scaling rule. (AI-inferred)
     comparison_operator: Any = None
-    # Specifies the CloudWatch metric dimensions (name/value pairs) that are applied to the alarm metric for this auto scaling rule's trigger. (AI-inferred)
     dimensions: Any = None
-    # Specifies the number of consecutive evaluation periods during which the monitored metric must breach the specified threshold before the CloudWatch alarm triggers the auto scaling rule. (AI-inferred)
     evaluation_periods: Any = None
-    # The name of the CloudWatch metric (e.g., YARNMemoryAvailablePercentage or a custom metric) that the alarm definition monitors to trigger this auto scaling rule for the EMR instance group. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace (e.g., AWS/EMR) that contains the metric being monitored for the auto scaling policy's CloudWatch alarm trigger. (AI-inferred)
     namespace: Any = None
-    # The period is the number of seconds between evaluation periods for the CloudWatch alarm that triggers this scaling rule, determining how often the metric is evaluated. (AI-inferred)
     period: Any = None
-    # Specifies the statistic (such as Average, Sum, SampleCount, Minimum, Maximum, or a percentile) to apply when evaluating the CloudWatch metric for the auto scaling alarm. (AI-inferred)
     statistic: Any = None
-    # The numeric value that the CloudWatch metric is compared against (using the comparison operator) to determine when the alarm triggers for the EMR instance group's auto scaling policy. (AI-inferred)
     threshold: Any = None
-    # The unit of measure for the CloudWatch metric (e.g., Percent, Count, Bytes) that the alarm definition uses to evaluate the auto scaling trigger. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules_Trigger:
-    # Defines the CloudWatch alarm that triggers the scaling rule, specifying metric name, namespace, comparison operator, threshold, evaluation periods, period, statistic, unit, and dimensions. (AI-inferred)
     cloud_watch_alarm_definition: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy_Rules:
-    # Specifies the scaling action to take when this auto scaling rule is triggered, defining how many instances to add or remove (and optionally the market) for the instance group. (AI-inferred)
     action: Any = None
-    # The description of the scaling rule, used to document the purpose of the rule within the auto scaling policy for the EMR instance group. (AI-inferred)
     description: Any = None
-    # The name of the auto scaling rule within the EMR instance group's auto scaling policy. (AI-inferred)
     name: Any = None
-    # Specifies the CloudWatch alarm definition (including metric, comparison operator, threshold, and evaluation periods) that determines when the scaling rule's action is triggered. (AI-inferred)
     trigger: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_AutoScalingPolicy:
-    # Specifies the lower and upper bounds (minimum and maximum capacity) for the number of instances in the EMR instance group, which the auto scaling policy uses to determine scaling limits. (AI-inferred)
     constraints: Any = None
-    # Defines the list of scaling rules (each containing a name, a CloudWatch metric-based condition, and a scaling action) that the auto scaling policy evaluates to automatically add or remove instances in the EMR instance group. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_Configurations:
-    # Specifies the name of the Hadoop configuration group (such as 'core-site' or 'hdfs-site') that this configuration object applies to within the EMR instance group's configuration settings. (AI-inferred)
     classification: Any = None
-    # Specifies a key-value map of properties for the configuration classification (e.g., Hadoop settings) applied to the EMR instance group's applications. (AI-inferred)
     configuration_properties: Any = None
-    # The list of nested configuration objects under a configuration, allowing hierarchical application of multiple classifications and their properties to the instance group. (AI-inferred)
     configurations: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecification:
-    # The IOPS (input/output operations per second) rate for the EBS volume, applicable when the volume type is io1, io2, or gp3. (AI-inferred)
     iops: Any = None
-    # Specifies the size, in GiB, of each EBS volume defined in the volume specification for the EMR instance group's EBS block device configuration. (AI-inferred)
     size_in_gb: Any = None
-    # Specifies the throughput in MiB/s for a gp3 EBS volume attached to an EMR instance group, used when the volume type is gp3 and VolumeSpecification throughput is provided. (AI-inferred)
     throughput: Any = None
-    # Specifies the EBS volume type (e.g., gp2, gp3, io1, or standard) for each block device in the EMR instance group's EBS configuration. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_EbsConfiguration_EbsBlockDeviceConfigs:
-    # Defines the EBS volume configuration, including volume type, size in GB, and optional IOPS, for each EBS block device attached to the instance group. (AI-inferred)
     volume_specification: Any = None
-    # The number of EBS volumes of the specified volume specification to attach to each instance in the instance group. (AI-inferred)
     volumes_per_instance: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfig_EbsConfiguration:
-    # Specifies the list of EBS block device configurations, each defining a volume specification and the number of volumes per instance, to attach to each instance in the EMR instance group. (AI-inferred)
     ebs_block_device_configs: Any = None
-    # Indicates whether the EC2 instances in this EMR instance group are launched as EBS-optimized, providing dedicated network and disk I/O for Amazon EBS volumes. (AI-inferred)
     ebs_optimized: Any = None
 
 _InstanceGroupConfig_AutoScalingPolicy_ConstraintsFields = {
@@ -224,54 +188,31 @@ _InstanceGroupConfig_EbsConfigurationFields = {
 
 @dataclasses.dataclass
 class InstanceGroupConfigConfig:
-    # The auto scaling policy for the EMR instance group, defining constraints on instance counts and CloudWatch metric-based scale-in/scale-out rules. (AI-inferred)
     auto_scaling_policy: Any = None
-    # Sets the maximum hourly price you are willing to pay for Spot Instances in the EMR instance group; if specified, the group uses Spot Instances with this bid price, otherwise it uses On-Demand instances. (AI-inferred)
     bid_price: Any = None
-    # Specifies a list of EMR software configurations (classifications and properties) that override the cluster-level configurations for this instance group. (AI-inferred)
     configurations: Any = None
-    # Specifies a custom Amazon Machine Image (AMI) ID to use for the instances in this EMR instance group, overriding the default EMR AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # The EbsConfiguration property specifies the Elastic Block Store (EBS) volumes to attach to each instance in the Amazon EMR instance group, including whether to use EBS optimization. (AI-inferred)
     ebs_configuration: Any = None
-    # The number of EC2 instances to launch in this EMR instance group. (AI-inferred)
     instance_count: Any = None
-    # Defines the role of this instance group in the EMR cluster, which must be set to MASTER for the primary node group, or CORE or TASK for additional node groups. (AI-inferred)
     instance_role: Any = None
-    # Specifies the EC2 instance type (e.g., m5.xlarge) that Amazon EMR will launch for each instance in this instance group, determining the compute and memory resources available to the group. (AI-inferred)
     instance_type: Any = None
-    # The ID of the EMR cluster (job flow) to which this instance group belongs. (AI-inferred)
     job_flow_id: Any = None
-    # Specifies whether the instance group uses On-Demand or Spot instances, with allowed values ON_DEMAND or SPOT. (AI-inferred)
     market: Any = None
-    # Specifies a user-defined name for the EMR instance group, which is used to identify the group within the cluster. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupConfigAttrs:
-    # The auto scaling policy for the EMR instance group, defining constraints on instance counts and CloudWatch metric-based scale-in/scale-out rules. (AI-inferred)
     auto_scaling_policy: Any = None
-    # Sets the maximum hourly price you are willing to pay for Spot Instances in the EMR instance group; if specified, the group uses Spot Instances with this bid price, otherwise it uses On-Demand instances. (AI-inferred)
     bid_price: Any = None
-    # Specifies a list of EMR software configurations (classifications and properties) that override the cluster-level configurations for this instance group. (AI-inferred)
     configurations: Any = None
-    # Specifies a custom Amazon Machine Image (AMI) ID to use for the instances in this EMR instance group, overriding the default EMR AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # The EbsConfiguration property specifies the Elastic Block Store (EBS) volumes to attach to each instance in the Amazon EMR instance group, including whether to use EBS optimization. (AI-inferred)
     ebs_configuration: Any = None
-    # The `id` is the AWS-assigned unique identifier for the EMR instance group, used to reference the instance group within the EMR cluster. (AI-inferred)
     id: Any = None
-    # The number of EC2 instances to launch in this EMR instance group. (AI-inferred)
     instance_count: Any = None
-    # Defines the role of this instance group in the EMR cluster, which must be set to MASTER for the primary node group, or CORE or TASK for additional node groups. (AI-inferred)
     instance_role: Any = None
-    # Specifies the EC2 instance type (e.g., m5.xlarge) that Amazon EMR will launch for each instance in this instance group, determining the compute and memory resources available to the group. (AI-inferred)
     instance_type: Any = None
-    # The ID of the EMR cluster (job flow) to which this instance group belongs. (AI-inferred)
     job_flow_id: Any = None
-    # Specifies whether the instance group uses On-Demand or Spot instances, with allowed values ON_DEMAND or SPOT. (AI-inferred)
     market: Any = None
-    # Specifies a user-defined name for the EMR instance group, which is used to identify the group within the cluster. (AI-inferred)
     name: Any = None
 
 InstanceGroupConfig = ubx.ResourceBinding(

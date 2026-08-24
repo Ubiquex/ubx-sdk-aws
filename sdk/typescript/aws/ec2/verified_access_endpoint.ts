@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VerifiedAccessEndpoint_CidrOptions_PortRanges {
-  /** Defines the starting port in a port range that the Verified Access endpoint accepts traffic on for CIDR-based access. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The inclusive upper bound of the port range that the Verified Access endpoint will accept for traffic coming from the specified CIDR. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 

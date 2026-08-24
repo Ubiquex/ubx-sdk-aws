@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface EipassociationConfig {
   /** The allocation ID. This is required. */
   allocationId?: string | Computed<string>;
-  /** The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred) */
   eip?: unknown | Computed<unknown>;
   /** The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both. */
   instanceId?: string | Computed<string>;
@@ -17,9 +16,7 @@ export interface EipassociationConfig {
 export interface EipassociationAttrs {
   /** The allocation ID. This is required. */
   allocationId: string;
-  /** The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred) */
   eip: unknown;
-  /** The unique identifier of the Elastic IP association, which is the association ID (e.g., eipassoc-...) returned by AWS. (AI-inferred) */
   id: string;
   /** The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both. */
   instanceId: string;

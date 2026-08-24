@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerAppImageConfig_CodeEditorAppImageConfig_ContainerConfig_ContainerEnvironmentVariables struct {
-	// Specifies the name (key) of an environment variable to set in the container environment for the SageMaker Code Editor app image configuration. (AI-inferred)
 	Key any
-	// Specifies the value portion of a key-value pair environment variable that is injected into the SageMaker Code Editor app's container when it launches, paired with the corresponding Key in the same ContainerEnvironmentVariables entry. (AI-inferred)
 	Value any
 }
 
@@ -34,9 +32,7 @@ type MakerAppImageConfig_KernelGatewayImageConfig_FileSystemConfig struct {
 }
 
 type MakerAppImageConfig_KernelGatewayImageConfig_KernelSpecs struct {
-	// The display name of the kernel as shown in the Jupyter UI for the kernel gateway app. (AI-inferred)
 	DisplayName any
-	// The name of the kernel (for example, `python3`) that the SageMaker KernelGateway app uses to launch the kernel specification. (AI-inferred)
 	Name any
 }
 

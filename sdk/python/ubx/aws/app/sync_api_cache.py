@@ -8,37 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SyncApiCacheConfig:
-    # Determines the caching behavior for the AppSync API cache, either caching entire requests (FULL_REQUEST_CACHING) or only per-resolver results (PER_RESOLVER_CACHING). (AI-inferred)
     api_caching_behavior: Any = None
-    # The unique ID of the AppSync API to which this cache configuration applies. (AI-inferred)
     api_id: Any = None
-    # Indicates whether encryption at rest is enabled for the AppSync API cache, protecting cached data in the underlying ElastiCache for Redis cluster. (AI-inferred)
     at_rest_encryption_enabled: Any = None
-    # Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
     health_metrics_config: Any = None
-    # Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
     transit_encryption_enabled: Any = None
-    # Specifies the time-to-live (TTL) in seconds for cached responses, controlling how long items remain in the API cache before being purged. (AI-inferred)
     ttl: Any = None
-    # The cache instance type for the AppSync API cache (e.g., T2_SMALL, T2_MEDIUM, R4_LARGE), which determines the cache size and performance characteristics. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class SyncApiCacheAttrs:
-    # Determines the caching behavior for the AppSync API cache, either caching entire requests (FULL_REQUEST_CACHING) or only per-resolver results (PER_RESOLVER_CACHING). (AI-inferred)
     api_caching_behavior: Any = None
-    # The unique ID of the AppSync API to which this cache configuration applies. (AI-inferred)
     api_id: Any = None
-    # Indicates whether encryption at rest is enabled for the AppSync API cache, protecting cached data in the underlying ElastiCache for Redis cluster. (AI-inferred)
     at_rest_encryption_enabled: Any = None
-    # Configures whether cache health metrics are enabled for the AppSync API cache, with valid values ENABLED or DISABLED. (AI-inferred)
     health_metrics_config: Any = None
     id: Any = None
-    # Indicates whether encryption in transit is enabled for the AppSync API cache. (AI-inferred)
     transit_encryption_enabled: Any = None
-    # Specifies the time-to-live (TTL) in seconds for cached responses, controlling how long items remain in the API cache before being purged. (AI-inferred)
     ttl: Any = None
-    # The cache instance type for the AppSync API cache (e.g., T2_SMALL, T2_MEDIUM, R4_LARGE), which determines the cache size and performance characteristics. (AI-inferred)
     type: Any = None
 
 SyncApiCache = ubx.ResourceBinding(

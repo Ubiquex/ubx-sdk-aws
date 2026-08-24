@@ -23,7 +23,6 @@ export interface StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_P
 }
 
 export interface StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel {
-  /** Configures the S3 Storage Lens prefix-level storage metrics settings, including whether metrics are enabled and the prefix selection criteria (include/exclude prefixes) for the bucket-level prefix aggregation. (AI-inferred) */
   storageMetrics: StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel_StorageMetrics | Computed<StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel_StorageMetrics>;
 }
 
@@ -43,9 +42,7 @@ export interface StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel {
 }
 
 export interface StorageLens_StorageLensConfiguration_AccountLevel_StorageLensGroupLevel_StorageLensGroupSelectionCriteria {
-  /** Specifies the list of Storage Lens group names to exclude from the account-level Storage Lens aggregation, so that metrics from those groups are not included in the overall view. (AI-inferred) */
   exclude?: string[] | Computed<string[]>;
-  /** The list of Storage Lens group names or ARNs to include in the account-level metrics aggregation, limiting S3 Storage Lens to collect metrics only for the storage covered by those groups. (AI-inferred) */
   include?: string[] | Computed<string[]>;
 }
 
@@ -108,9 +105,7 @@ export interface StorageLens_StorageLensConfiguration_DataExport {
 }
 
 export interface StorageLens_StorageLensConfiguration_Exclude {
-  /** The list of S3 bucket ARNs to exclude from the Storage Lens configuration's metrics. (AI-inferred) */
   buckets?: string[] | Computed<string[]>;
-  /** Specifies the AWS Regions to exclude from generating Amazon S3 Storage Lens metrics, meaning buckets in those regions are ignored in the aggregated view. (AI-inferred) */
   regions?: string[] | Computed<string[]>;
 }
 
@@ -146,7 +141,6 @@ export interface StorageLens_StorageLensConfiguration {
 
 export interface StorageLens_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value component of a key-value tag assigned to the S3 Storage Lens configuration, which can be used to categorize, filter, and control access to the resource via IAM and AWS Organizations policies. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

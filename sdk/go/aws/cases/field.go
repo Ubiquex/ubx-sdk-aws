@@ -14,7 +14,6 @@ type Field_Attributes struct {
 }
 
 type Field_Tags struct {
-	// The key of a user-defined tag attached to the AWS Cases field, used for metadata and resource management. (AI-inferred)
 	Key any
 	Value any
 }

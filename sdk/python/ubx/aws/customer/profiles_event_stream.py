@@ -15,9 +15,7 @@ class ProfilesEventStream_DestinationDetails:
 
 @dataclasses.dataclass
 class ProfilesEventStream_Tags:
-    # The key of a user-defined tag applied to the event stream resource, which is used for metadata organization, cost allocation, and access control within AWS Customer Profiles. (AI-inferred)
     key: Any = None
-    # For an AWS Customer Profiles event stream, this is the value component of a tag entry, used to define a custom attribute for the resource. (AI-inferred)
     value: Any = None
 
 _ProfilesEventStream_TagsFields = {

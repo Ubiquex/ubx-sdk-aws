@@ -2,130 +2,95 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface KnowledgeBase_RenderingConfiguration {
-  /** The Amazon S3 URI of a template that Amazon Connect Wisdom uses to render the knowledge base's content when displayed to end users. (AI-inferred) */
   templateUri?: string | Computed<string>;
 }
 
 export interface KnowledgeBase_ServerSideEncryptionConfiguration {
-  /** The identifier (ARN) of the AWS KMS key used to encrypt the knowledge base data at rest. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_AppIntegrations {
-  /** The Amazon Resource Name (ARN) of the AppIntegrations integration that provides the external data source for this Wisdom knowledge base. (AI-inferred) */
   appIntegrationArn?: string | Computed<string>;
-  /** Defines which fields from the integrated application's object (e.g., Salesforce case or account) are ingested into the knowledge base, allowing you to include only the specified attributes. (AI-inferred) */
   objectFields?: string[] | Computed<string[]>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimits {
-  /** The maximum number of web pages (URLs) the web crawler can fetch per minute from a source site, controlling the crawl rate to prevent overloading the site. (AI-inferred) */
   rateLimit?: number | Computed<number>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrls {
-  /** The URL of a seed page that the web crawler uses as a starting point for crawling the site. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration {
-  /** Specifies a list of seed URL objects that determine the starting points for the web crawler when creating a managed source for the Wisdom knowledge base, with each object including the URL and its crawl mode. (AI-inferred) */
   seedUrls?: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrls[] | Computed<KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration_SeedUrls[]>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration {
-  /** Defines the limits for the web crawler source, including the maximum number of pages to crawl and the maximum rate (requests per second) at which the crawler can send requests. (AI-inferred) */
   crawlerLimits?: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimits | Computed<KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_CrawlerLimits>;
-  /** Specifies a list of URL patterns that the web crawler will exclude from crawling, preventing those pages from being ingested into the knowledge base. (AI-inferred) */
   exclusionFilters?: string[] | Computed<string[]>;
-  /** Specifies a list of URL patterns that determine which web pages are included in the web crawler's crawl, allowing only matching URLs to be ingested into the knowledge base. (AI-inferred) */
   inclusionFilters?: string[] | Computed<string[]>;
-  /** Determines which links the web crawler will follow from the initial seed URL, limiting indexation to pages on the same host, its subdomains, or across the entire web, depending on the chosen scope. (AI-inferred) */
   scope?: string | Computed<string>;
-  /** Defines the seed URLs and optional URL filters that determine which web pages the crawler starts from and which URLs are included or excluded during crawling. (AI-inferred) */
   urlConfiguration?: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration | Computed<KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration_UrlConfiguration>;
 }
 
 export interface KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration {
-  /** Configuration for the managed web crawler source, specifying seed URLs, crawler limits, scope, and inclusion/exclusion filters that govern which web content is ingested into the knowledge base. (AI-inferred) */
   webCrawlerConfiguration?: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration | Computed<KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration_WebCrawlerConfiguration>;
 }
 
 export interface KnowledgeBase_SourceConfiguration {
-  /** Specifies the Amazon AppIntegrations data integration that supplies the knowledge base content, including the ARN of the AppIntegrations integration (e.g., Salesforce or ServiceNow) and optional object fields to import. (AI-inferred) */
   appIntegrations?: KnowledgeBase_SourceConfiguration_AppIntegrations | Computed<KnowledgeBase_SourceConfiguration_AppIntegrations>;
-  /** The managed source configuration is an optional object that, when present, specifies a managed data source (such as a web crawler) for populating the knowledge base, including the web crawler's URL and crawl behavior settings. (AI-inferred) */
   managedSourceConfiguration?: KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration | Computed<KnowledgeBase_SourceConfiguration_ManagedSourceConfiguration>;
 }
 
 export interface KnowledgeBase_Tags {
-  /** The key component of a tag applied to the Amazon Wisdom knowledge base, used to label the resource for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfiguration {
-  /** The maximum number of tokens to include in each chunk when using fixed-size chunking for the knowledge base. (AI-inferred) */
   maxTokens: number | Computed<number>;
-  /** The percentage of token overlap between consecutive chunks in the fixed-size chunking strategy, controlling how much context is shared between adjacent chunks for retrieval quality. (AI-inferred) */
   overlapPercentage: number | Computed<number>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurations {
-  /** The maximum number of tokens allowed in a single chunk at this level of the hierarchical chunking configuration, controlling the size of text segments created for indexing. (AI-inferred) */
   maxTokens?: number | Computed<number>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration {
-  /** Defines the list of hierarchical chunking levels, where each level configuration specifies the maximum token size used to split a document into progressively smaller chunks for the knowledge base. (AI-inferred) */
   levelConfigurations: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurations[] | Computed<KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurations[]>;
-  /** Specifies the number of tokens that overlap between consecutive chunks in the hierarchical chunking strategy for the knowledge base's vector ingestion configuration. (AI-inferred) */
   overlapTokens: number | Computed<number>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfiguration {
-  /** Sets the percentile threshold (e.g., 95) used to detect semantic breakpoints in the text, where the chunking algorithm splits content at positions where the semantic distance between adjacent sentences falls above this percentile of all token distances, controlling chunk boundaries for the knowledge base. (AI-inferred) */
   breakpointPercentileThreshold: number | Computed<number>;
-  /** Defines the number of tokens to include as a buffer on either side of a semantic breakpoint, so that the chunking algorithm preserves contextual relevance when splitting the document into semantically coherent chunks. (AI-inferred) */
   bufferSize: number | Computed<number>;
-  /** The maximum number of tokens allowed in each semantic chunk when ingesting documents into the Wisdom knowledge base. (AI-inferred) */
   maxTokens: number | Computed<number>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration {
-  /** Specifies the chunking strategy (FIXED_SIZE, SEMANTIC, or NONE) used to split source documents into smaller segments for vector ingestion into the knowledge base. (AI-inferred) */
   chunkingStrategy: string | Computed<string>;
-  /** Configures fixed-size chunking for the knowledge base, which controls how source documents are split into chunks by specifying a maximum token count per chunk and an overlap percentage between adjacent chunks. (AI-inferred) */
   fixedSizeChunkingConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChunkingConfiguration>;
-  /** Defines the hierarchical chunking settings, which split content into parent and child chunks with configurable token limits, used when the chunking strategy is HIERARCHICAL. (AI-inferred) */
   hierarchicalChunkingConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration>;
-  /** Semantic chunking configuration for the knowledge base's vector ingestion, which splits source documents into chunks based on natural semantic boundaries determined by a foundation model, using settings like the breakpoint percentile threshold, buffer size, and maximum token length. (AI-inferred) */
   semanticChunkingConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration_SemanticChunkingConfiguration>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPrompt {
-  /** The text of the prompt that guides the Bedrock foundation model in parsing uploaded documents to extract structured information for the knowledge base. (AI-inferred) */
   parsingPromptText: string | Computed<string>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration {
-  /** The Amazon Resource Name (ARN) of the Bedrock foundation model that is used to parse and extract structured text from source documents when they are ingested into the knowledge base. (AI-inferred) */
   modelArn: string | Computed<string>;
-  /** Specifies a custom prompt that guides the configured Amazon Bedrock foundation model to parse and extract structured information from the contents of ingested documents for the knowledge base. (AI-inferred) */
   parsingPrompt?: KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPrompt | Computed<KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration_ParsingPrompt>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration {
-  /** Specifies the Amazon Bedrock foundation model (by ARN) used for parsing document content in the Wisdom knowledge base. (AI-inferred) */
   bedrockFoundationModelConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration_BedrockFoundationModelConfiguration>;
-  /** Specifies the parsing strategy used to process documents during vector ingestion, such as 'BEDROCK_FOUNDATION_MODEL' for Bedrock foundation model parsing or 'BEDROCK_DATA_AUTOMATION' for Bedrock data automation pipelines. (AI-inferred) */
   parsingStrategy: string | Computed<string>;
 }
 
 export interface KnowledgeBase_VectorIngestionConfiguration {
-  /** Specifies how ingested documents are split into chunks (e.g., fixed-size or semantic chunking) before being stored in the knowledge base's vector index. (AI-inferred) */
   chunkingConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ChunkingConfiguration>;
-  /** Configures how documents are parsed during vector ingestion, including the parsing strategy (e.g., using a foundation model or chunking) and optionally the specific Bedrock foundation model to extract content. (AI-inferred) */
   parsingConfiguration?: KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration_ParsingConfiguration>;
 }
 
@@ -279,44 +244,26 @@ const KnowledgeBase_VectorIngestionConfigurationFields: FieldMap = {
 };
 
 export interface KnowledgeBaseConfig {
-  /** An optional description of the knowledge base, providing a human-readable summary of its contents or purpose in Amazon Connect Wisdom. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines whether the knowledge base is CUSTOM, for content you upload directly, or EXTERNAL, for content connected to an external source such as Salesforce or ServiceNow. (AI-inferred) */
   knowledgeBaseType: string | Computed<string>;
-  /** A required, user-defined name for the knowledge base, used as its display name and identifier within Amazon Wisdom. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the template URI used to render knowledge base content in the Amazon Q in Connect (Wisdom) console, enabling custom display formatting. (AI-inferred) */
   renderingConfiguration?: KnowledgeBase_RenderingConfiguration | Computed<KnowledgeBase_RenderingConfiguration>;
-  /** Configures server-side encryption for the knowledge base by specifying the customer-managed KMS key to use (its ARN). (AI-inferred) */
   serverSideEncryptionConfiguration?: KnowledgeBase_ServerSideEncryptionConfiguration | Computed<KnowledgeBase_ServerSideEncryptionConfiguration>;
-  /** Specifies the configuration for the source of the knowledge base content, such as an S3 bucket or an Amazon AppIntegrations configuration that defines where the knowledge base data is ingested from. (AI-inferred) */
   sourceConfiguration?: KnowledgeBase_SourceConfiguration | Computed<KnowledgeBase_SourceConfiguration>;
-  /** Specifies the tags (key-value pairs) attached to the Wisdom knowledge base for metadata, cost allocation, and resource management. (AI-inferred) */
   tags?: KnowledgeBase_Tags[] | Computed<KnowledgeBase_Tags[]>;
-  /** Specifies the vector ingestion configuration, including chunking and parsing settings, used when documents are ingested into the knowledge base's vector index. (AI-inferred) */
   vectorIngestionConfiguration?: KnowledgeBase_VectorIngestionConfiguration | Computed<KnowledgeBase_VectorIngestionConfiguration>;
 }
 
 export interface KnowledgeBaseAttrs {
-  /** An optional description of the knowledge base, providing a human-readable summary of its contents or purpose in Amazon Connect Wisdom. (AI-inferred) */
   description: string;
-  /** The Amazon Resource Name (ARN) uniquely identifying this Wisdom knowledge base, assigned by AWS upon creation. (AI-inferred) */
   knowledgeBaseArn: string;
-  /** The unique identifier for this Amazon Wisdom knowledge base, assigned by AWS upon creation and used to reference the knowledge base in API operations and resource ARNs. (AI-inferred) */
   knowledgeBaseId: string;
-  /** Defines whether the knowledge base is CUSTOM, for content you upload directly, or EXTERNAL, for content connected to an external source such as Salesforce or ServiceNow. (AI-inferred) */
   knowledgeBaseType: string;
-  /** A required, user-defined name for the knowledge base, used as its display name and identifier within Amazon Wisdom. (AI-inferred) */
   name: string;
-  /** Specifies the template URI used to render knowledge base content in the Amazon Q in Connect (Wisdom) console, enabling custom display formatting. (AI-inferred) */
   renderingConfiguration: KnowledgeBase_RenderingConfiguration;
-  /** Configures server-side encryption for the knowledge base by specifying the customer-managed KMS key to use (its ARN). (AI-inferred) */
   serverSideEncryptionConfiguration: KnowledgeBase_ServerSideEncryptionConfiguration;
-  /** Specifies the configuration for the source of the knowledge base content, such as an S3 bucket or an Amazon AppIntegrations configuration that defines where the knowledge base data is ingested from. (AI-inferred) */
   sourceConfiguration: KnowledgeBase_SourceConfiguration;
-  /** Specifies the tags (key-value pairs) attached to the Wisdom knowledge base for metadata, cost allocation, and resource management. (AI-inferred) */
   tags: KnowledgeBase_Tags[];
-  /** Specifies the vector ingestion configuration, including chunking and parsing settings, used when documents are ingested into the knowledge base's vector index. (AI-inferred) */
   vectorIngestionConfiguration: KnowledgeBase_VectorIngestionConfiguration;
 }
 

@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LatticeServiceNetwork_SharingConfig {
-  /** Whether the service network can be shared with other AWS accounts via AWS Resource Access Manager (RAM). (AI-inferred) */
   enabled: boolean | Computed<boolean>;
 }
 
 export interface LatticeServiceNetwork_Tags {
-  /** The tag key (along with the tag value) used to attach metadata to the VPC Lattice service network for identification and organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the VPC Lattice service network, used for cost allocation, resource organization, and IAM-based access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -23,32 +20,20 @@ const LatticeServiceNetwork_TagsFields: FieldMap = {
 };
 
 export interface LatticeServiceNetworkConfig {
-  /** Determines the authentication method for the service network, accepting either NONE to allow open access or AWS_IAM to require IAM authentication for client requests. (AI-inferred) */
   authType?: string | Computed<string>;
-  /** Specifies the name of the VPC Lattice service network, which must be unique within the account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the sharing configuration for the service network, with an 'enabled' toggle that allows the network to be shared with other AWS accounts through AWS Resource Access Manager. (AI-inferred) */
   sharingConfig?: LatticeServiceNetwork_SharingConfig | Computed<LatticeServiceNetwork_SharingConfig>;
-  /** Specifies the tags to associate with the service network, which can be used for cost allocation and resource management. (AI-inferred) */
   tags?: LatticeServiceNetwork_Tags[] | Computed<LatticeServiceNetwork_Tags[]>;
 }
 
 export interface LatticeServiceNetworkAttrs {
-  /** The Amazon Resource Name (ARN) of the VPC Lattice service network, automatically assigned by AWS upon creation. (AI-inferred) */
   arn: string;
-  /** Determines the authentication method for the service network, accepting either NONE to allow open access or AWS_IAM to require IAM authentication for client requests. (AI-inferred) */
   authType: string;
-  /** The date and time when the service network was created. (AI-inferred) */
   createdAt: string;
-  /** The unique identifier of the VPC Lattice service network (e.g., sn-0123456789abcdef0), assigned by AWS upon creation. (AI-inferred) */
   id: string;
-  /** The timestamp indicating when the VPC Lattice service network was most recently updated, returned as a read-only string. (AI-inferred) */
   lastUpdatedAt: string;
-  /** Specifies the name of the VPC Lattice service network, which must be unique within the account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
   name: string;
-  /** Defines the sharing configuration for the service network, with an 'enabled' toggle that allows the network to be shared with other AWS accounts through AWS Resource Access Manager. (AI-inferred) */
   sharingConfig: LatticeServiceNetwork_SharingConfig;
-  /** Specifies the tags to associate with the service network, which can be used for cost allocation and resource management. (AI-inferred) */
   tags: LatticeServiceNetwork_Tags[];
 }
 

@@ -27,7 +27,6 @@ export interface SamplingRule_SamplingRule {
   ruleArn?: string | Computed<string>;
   /** The ARN of the sampling rule. Specify a rule by either name or ARN, but not both. */
   ruleName?: string | Computed<string>;
-  /** Specifies the sampling-rate boost configuration for this X-Ray sampling rule, including whether the boost is enabled, the conditions that trigger it, and the boosted sampling rate to apply when those conditions are met. (AI-inferred) */
   samplingRateBoost?: SamplingRule_SamplingRule_SamplingRateBoost | Computed<SamplingRule_SamplingRule_SamplingRateBoost>;
   /** Matches the name that the service uses to identify itself in segments. */
   serviceName: string | Computed<string>;
@@ -44,7 +43,6 @@ export interface SamplingRule_SamplingRuleRecord {
   createdAt?: string | Computed<string>;
   /** When the rule was modified, in Unix time seconds. */
   modifiedAt?: string | Computed<string>;
-  /** The sampling rule configuration (including rule name, priority, reservoir size, fixed rate, and service matching attributes) embedded within the sampling rule record. (AI-inferred) */
   samplingRule?: SamplingRule_SamplingRule | Computed<SamplingRule_SamplingRule>;
 }
 
@@ -77,9 +75,7 @@ export interface SamplingRule_SamplingRuleUpdate {
 }
 
 export interface SamplingRule_Tags {
-  /** The key of a tag assigned to the AWS X-Ray sampling rule, used to categorize and manage the rule. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag assigned to an AWS X-Ray sampling rule, used for metadata, identification, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -147,11 +143,8 @@ const SamplingRule_TagsFields: FieldMap = {
 export interface SamplingRuleConfig {
   /** The ARN of the sampling rule. Specify a rule by either name or ARN, but not both. */
   ruleName?: string | Computed<string>;
-  /** This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred) */
   samplingRule?: SamplingRule_SamplingRule | Computed<SamplingRule_SamplingRule>;
-  /** The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred) */
   samplingRuleRecord?: SamplingRule_SamplingRuleRecord | Computed<SamplingRule_SamplingRuleRecord>;
-  /** Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred) */
   samplingRuleUpdate?: SamplingRule_SamplingRuleUpdate | Computed<SamplingRule_SamplingRuleUpdate>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: SamplingRule_Tags[] | Computed<SamplingRule_Tags[]>;
@@ -162,11 +155,8 @@ export interface SamplingRuleAttrs {
   ruleArn: string;
   /** The ARN of the sampling rule. Specify a rule by either name or ARN, but not both. */
   ruleName: string;
-  /** This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred) */
   samplingRule: SamplingRule_SamplingRule;
-  /** The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred) */
   samplingRuleRecord: SamplingRule_SamplingRuleRecord;
-  /** Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred) */
   samplingRuleUpdate: SamplingRule_SamplingRuleUpdate;
   /** An array of key-value pairs to apply to this resource. */
   tags: SamplingRule_Tags[];

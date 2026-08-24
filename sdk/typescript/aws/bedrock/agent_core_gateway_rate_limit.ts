@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCoreGatewayRateLimit_Entries_Connections {
   period?: string | Computed<string>;
-  /** The sustained request rate in requests per second that the core gateway allows for this connection when the agent routes traffic through the specified rate limit entry. (AI-inferred) */
   rate?: number | Computed<number>;
 }
 
@@ -45,14 +44,12 @@ export interface AgentCoreGatewayRateLimitConfig {
   dimensionKeys: string[] | Computed<string[]>;
   /** Rule entries mapping dimension values to rate configurations. */
   entries: AgentCoreGatewayRateLimit_Entries[] | Computed<AgentCoreGatewayRateLimit_Entries[]>;
-  /** The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred) */
   gatewayIdentifier?: string | Computed<string>;
   /** Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses. */
   rateLimitId?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayRateLimitAttrs {
-  /** The timestamp at which this Bedrock agent core gateway rate limit was created. (AI-inferred) */
   createdAt: string;
   /** Optional human-readable description for this limit. */
   description: string;
@@ -60,13 +57,11 @@ export interface AgentCoreGatewayRateLimitAttrs {
   dimensionKeys: string[];
   /** Rule entries mapping dimension values to rate configurations. */
   entries: AgentCoreGatewayRateLimit_Entries[];
-  /** The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred) */
   gatewayIdentifier: string;
   /** Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses. */
   rateLimitId: string;
   /** Status of a gateway limit */
   status: string;
-  /** The timestamp (in ISO 8601 format) indicating when this core gateway rate limit was last modified. (AI-inferred) */
   updatedAt: string;
 }
 

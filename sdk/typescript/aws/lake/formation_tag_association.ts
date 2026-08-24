@@ -2,51 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FormationTagAssociation_Lftags {
-  /** The AWS account ID of the Data Catalog where the LF-tag to associate is defined; if omitted, the current account's Data Catalog is used. (AI-inferred) */
   catalogId?: string | Computed<string>;
-  /** The key of an LF-Tag (Lake Formation tag) that is associated with the resource, which must match an existing tag key in AWS Lake Formation. (AI-inferred) */
   tagKey?: string | Computed<string>;
-  /** The list of tag values for a given LF-Tag key in the tag association, specifying which value(s) of that key are applied to the associated Lake Formation resource. (AI-inferred) */
   tagValues?: string[] | Computed<string[]>;
 }
 
 export interface FormationTagAssociation_Resource_Database {
-  /** The catalog_id property specifies the AWS account ID of the Data Catalog that contains the database to which the tag is being associated. (AI-inferred) */
   catalogId: string | Computed<string>;
-  /** The name of the Data Catalog database to which the LF-tag association applies. (AI-inferred) */
   name: string | Computed<string>;
 }
 
 export interface FormationTagAssociation_Resource_Table {
-  /** The catalog ID (typically the AWS account ID) of the Data Catalog where the table resides, used to identify the table for which the LF-tag association is being defined. (AI-inferred) */
   catalogId: string | Computed<string>;
-  /** The name of the Glue database that contains the table to which the LF-tag association is applied. (AI-inferred) */
   databaseName: string | Computed<string>;
-  /** The name of the table identified in the resource's table property, specifying which table in the referenced database receives the LF-tag association. (AI-inferred) */
   name?: string | Computed<string>;
-  /** When set, this indicates the LF-tag association applies to all tables in the database (a table wildcard), rather than a single named table. (AI-inferred) */
   tableWildcard?: unknown | Computed<unknown>;
 }
 
 export interface FormationTagAssociation_Resource_TableWithColumns {
-  /** Specifies the AWS Glue Data Catalog ID (typically the AWS account ID) that contains the table whose columns are being associated with an LF-tag, required when targeting a specific table's columns. (AI-inferred) */
   catalogId: string | Computed<string>;
-  /** The names of the columns within the specified table to which the LF-tags will be associated. (AI-inferred) */
   columnNames: string[] | Computed<string[]>;
-  /** The name of the database in which the table (and optionally its columns) being associated with LF-tags is located. (AI-inferred) */
   databaseName: string | Computed<string>;
-  /** The name of the table in the Data Catalog to which this tag association applies, as part of the table_with_columns resource identifier. (AI-inferred) */
   name: string | Computed<string>;
 }
 
 export interface FormationTagAssociation_Resource {
-  /** The unique identifier of the AWS Glue Data Catalog (typically the AWS account ID) in which the target database or table exists, used to locate the resource for the LF-Tag association. (AI-inferred) */
   catalog?: unknown | Computed<unknown>;
-  /** The `database` object defines a database resource in the AWS Lake Formation catalog, specifying the catalog ID and database name, to which the referenced LF-tags are associated. (AI-inferred) */
   database?: FormationTagAssociation_Resource_Database | Computed<FormationTagAssociation_Resource_Database>;
-  /** The table property of the resource object defines the specific table in the AWS Glue Data Catalog to associate the LF-tags with, supplied via its catalog ID, database name, and table name. (AI-inferred) */
   table?: FormationTagAssociation_Resource_Table | Computed<FormationTagAssociation_Resource_Table>;
-  /** Specifies the Data Catalog table columns to associate the LF-Tag with, including the catalog ID, database name, table name, and a list of column names. (AI-inferred) */
   tableWithColumns?: FormationTagAssociation_Resource_TableWithColumns | Computed<FormationTagAssociation_Resource_TableWithColumns>;
 }
 
@@ -95,16 +78,12 @@ const FormationTagAssociation_ResourceFields: FieldMap = {
 };
 
 export interface FormationTagAssociationConfig {
-  /** The list of LF-Tags (key-value pairs) to associate with the specified resource, where each LF-Tag consists of a tag key and a list of tag values. (AI-inferred) */
   lftags: FormationTagAssociation_Lftags[] | Computed<FormationTagAssociation_Lftags[]>;
-  /** Specifies the Lake Formation resource (database, table, or table with columns) to which the LF-tags are attached, including optional catalog ID and resource identifiers. (AI-inferred) */
   resource: FormationTagAssociation_Resource | Computed<FormationTagAssociation_Resource>;
 }
 
 export interface FormationTagAssociationAttrs {
-  /** The list of LF-Tags (key-value pairs) to associate with the specified resource, where each LF-Tag consists of a tag key and a list of tag values. (AI-inferred) */
   lftags: FormationTagAssociation_Lftags[];
-  /** Specifies the Lake Formation resource (database, table, or table with columns) to which the LF-tags are attached, including optional catalog ID and resource identifiers. (AI-inferred) */
   resource: FormationTagAssociation_Resource;
   /** Unique string identifying the resource. Used as primary identifier, which ideally should be a string */
   resourceIdentifier: string;

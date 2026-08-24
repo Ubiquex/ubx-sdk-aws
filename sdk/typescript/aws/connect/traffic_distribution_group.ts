@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrafficDistributionGroup_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key applied to the AWS Connect traffic distribution group, used for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

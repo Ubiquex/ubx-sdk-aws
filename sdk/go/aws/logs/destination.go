@@ -4,9 +4,7 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Destination_Tags struct {
-	// The key (name) of a tag to associate with the CloudWatch Logs destination, used to identify and organize the destination resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the CloudWatch Logs destination resource. (AI-inferred)
 	Value any
 }
 
@@ -29,7 +27,6 @@ type DestinationConfig struct {
 }
 
 type DestinationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this CloudWatch Logs destination, returned after creation and used to reference the destination in other AWS resources. (AI-inferred)
 	Arn any
 	// The name of the destination resource
 	DestinationName any

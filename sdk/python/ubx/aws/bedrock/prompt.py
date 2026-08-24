@@ -8,150 +8,106 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Prompt_Variants_GenAiResource_Agent:
-    # The identifier of the Amazon Bedrock agent that serves as the generative AI resource for this prompt variant. (AI-inferred)
     agent_identifier: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_GenAiResource:
-    # Specifies the Amazon Bedrock agent to associate with the prompt variant, identified by the agent's ARN. (AI-inferred)
     agent: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_InferenceConfiguration_Text:
-    # Sets the maximum number of tokens the model can generate for text responses in this prompt variant's inference configuration, capping the output length. (AI-inferred)
     max_tokens: Any = None
-    # Specifies a list of character sequences that will cause the model to stop generating further text when any of them is encountered in the output. (AI-inferred)
     stop_sequences: Any = None
-    # In the Bedrock prompt variant's text inference configuration, temperature controls the randomness of generated text, with lower values yielding more deterministic outputs and higher values increasing creative diversity. (AI-inferred)
     temperature: Any = None
-    # Controls nucleus sampling by setting the cumulative probability threshold for token selection in the text generation inference configuration of the prompt variant. (AI-inferred)
     top_p: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_InferenceConfiguration:
-    # Represents the text inference configuration for the prompt variant, specifying generation parameters such as temperature, topP, maximum tokens, and stop sequences that guide the model's text output. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_Metadata:
-    # In the metadata map of a Bedrock prompt variant, this key defines the name of a user-specified attribute whose value is a string, enabling you to attach custom labels or annotations to the variant. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_InputVariables:
-    # The name of an input variable that serves as a placeholder within the chat prompt variant's template, replaced by a concrete value when the prompt is invoked. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint:
-    # Specifies the type of the cache point marker within a message's content, which must be set to 'default' to indicate that the preceding content should be cached for subsequent prompt invocations. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_Messages_Content:
-    # Defines a cache point within a chat message content block, used to enable prompt caching in Amazon Bedrock by marking a position in the conversation where the prompt can be cached for subsequent requests. (AI-inferred)
     cache_point: Any = None
-    # Specifies the literal text of a message content block within a chat prompt template for a Bedrock prompt variant, defining the actual wording of a user or assistant message. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_Messages:
-    # The list of content blocks (such as text or image) that make up the body of a message in a chat prompt template for the prompt variant. (AI-inferred)
     content: Any = None
-    # Specifies the conversational role of the message in the chat prompt template, such as 'user' or 'assistant', which determines how the message is positioned in the prompt for the model. (AI-inferred)
     role: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoice:
-    # When specified under tool_choice, this property instructs the model to select and invoke at least one available tool in the current turn, rather than allowing an automatic or no-tool choice. (AI-inferred)
     any: Any = None
-    # When enabled (e.g., set to true or an empty object), this property sets the tool choice to auto, allowing the model to autonomously decide whether to call a tool and, if so, which one. (AI-inferred)
     auto: Any = None
-    # Specifies the particular tool the model must use, defined by the tool's name within the configured tool list, when the tool choice strategy is set to a specific tool. (AI-inferred)
     tool: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchema:
-    # Defines the JSON schema that specifies the input parameters expected by the tool, used by the model to understand how to call the tool. (AI-inferred)
     json: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec:
-    # Provides a description of the tool that the model uses to understand its purpose and decide when to invoke it. (AI-inferred)
     description: Any = None
-    # The JSON schema that defines the expected input parameters for the tool, used by the model to construct valid function calls. (AI-inferred)
     input_schema: Any = None
-    # The name of the tool (function) that the model can invoke, as defined in the tool specification for the chat configuration of this prompt variant. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools:
-    # The cachePoint property defines a cache point in the tool configuration, enabling the prompt up to this point to be cached, and its 'type' field (e.g., 'default') specifies the kind of cache point to use. (AI-inferred)
     cache_point: Any = None
-    # Defines the tool's specification, including its name, description, and a JSON schema that describes the expected input parameters for the model to invoke it. (AI-inferred)
     tool_spec: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration:
-    # Determines how the model selects which tool to invoke when multiple tools are available, supporting automatic, any-of, or a forced specific tool choice. (AI-inferred)
     tool_choice: Any = None
-    # Specifies the list of tools available to the model in the chat tool configuration of the prompt, where each tool object defines its name, description, and input schema for invocation. (AI-inferred)
     tools: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Chat:
-    # Defines the list of named variables used in the chat prompt template configuration, each containing a name that corresponds to placeholders substituted with runtime values when invoking the model. (AI-inferred)
     input_variables: Any = None
-    # Specifies the chat messages (each with a role like user or assistant and content) that define the chat prompt template for this variant. (AI-inferred)
     messages: Any = None
-    # Defines the system content blocks for the chat prompt template, containing the high-level instructions and context provided to the model before the conversation messages. (AI-inferred)
     system: Any = None
-    # Specifies the list of tools (functions) the model may call in a chat prompt variant, along with optional tool choice settings. (AI-inferred)
     tool_configuration: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Text_TextS3Location:
-    # The name of the Amazon S3 bucket that contains the prompt template text file for this variant's text configuration. (AI-inferred)
     bucket: Any = None
-    # The S3 object key of the text prompt template stored in Amazon S3, used as an alternative to inline text for the prompt variant's text template configuration. (AI-inferred)
     key: Any = None
-    # The version field specifies the version ID of the S3 object containing the prompt template text, enabling retrieval of a specific version of the object from Amazon S3. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration_Text:
-    # Defines a cache point in the text prompt, with a type that chooses between caching the entire prompt ('default') or only the final portion ('final') to optimize prompt caching during inference. (AI-inferred)
     cache_point: Any = None
-    # Defines the list of placeholder variables (e.g., `{{name}}`, `{{age}}`) used in the text prompt template of this variant, each specifying a name and data type that get substituted at invocation time. (AI-inferred)
     input_variables: Any = None
-    # The string content of the text prompt template configured for this Bedrock prompt variant. (AI-inferred)
     text: Any = None
-    # Specifies the Amazon S3 object location (bucket, key, and optionally version) from which this text prompt variant's template text is loaded, instead of being supplied inline in the text field. (AI-inferred)
     text_s3_location: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants_TemplateConfiguration:
-    # The chat object defines the prompt template configuration for chat-based interactions, including the required list of messages (each with a role and content) and an optional set of system prompts used by the Bedrock prompt variant. (AI-inferred)
     chat: Any = None
-    # This block configures the text prompt template for the variant, containing the prompt text and optional input variables that are substituted into the template. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
 class Prompt_Variants:
-    # Defines additional model request fields as key-value pairs that are passed through to the underlying foundation model for this prompt variant, augmenting or overriding standard inference parameters. (AI-inferred)
     additional_model_request_fields: Any = None
     gen_ai_resource: Any = None
-    # Configures the inference settings for the prompt variant, controlling response generation parameters such as temperature, topP, and maximum token count. (AI-inferred)
     inference_configuration: Any = None
     metadata: Any = None
-    # The Amazon Bedrock foundation model ID (e.g., anthropic.claude-v2) that this prompt variant uses for generating responses. (AI-inferred)
     model_id: Any = None
-    # The name of the prompt variant, used to uniquely identify and reference this specific variant within the AWS Bedrock prompt. (AI-inferred)
     name: Any = None
-    # Specifies the prompt template configuration for this variant, defining the text or chat template structure and how input variables are substituted in the prompt. (AI-inferred)
     template_configuration: Any = None
-    # Specifies the format of the prompt template for this variant, where 'TEXT' indicates a plain-text prompt and 'CHAT' indicates a chat-message-style prompt. (AI-inferred)
     template_type: Any = None
 
 _Prompt_Variants_GenAiResource_AgentFields = {

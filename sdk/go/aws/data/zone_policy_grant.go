@@ -4,105 +4,72 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZonePolicyGrant_Detail_AddToProjectMemberPool struct {
-	// Whether the policy grant also applies to child domain units when adding a member to the project member pool. (AI-inferred)
 	IncludeChildDomainUnits any
 }
 
 type ZonePolicyGrant_Detail_CreateEnvironmentProfile struct {
-	// The identifier of the DataZone domain unit to which the create environment profile policy grant applies. (AI-inferred)
 	DomainUnitId any
 }
 
 type ZonePolicyGrant_Detail_CreateProjectFromProjectProfile struct {
-	// Whether the policy grant for creating a project from a project profile also applies to child domain units, enabling the create-project action to be performed in those child domain units as well. (AI-inferred)
 	IncludeChildDomainUnits any
-	// The list of DataZone project profile identifiers that the policy grant applies to, allowing the grantee to create projects from these specific project profiles. (AI-inferred)
 	ProjectProfiles any
 }
 
 type ZonePolicyGrant_Detail struct {
-	// Configures the ADD_TO_PROJECT_MEMBER_POOL policy grant, determining the settings that allow the grantee to add members to a project's member pool. (AI-inferred)
 	AddToProjectMemberPool any
-	// For an AWS DataZone policy grant, this nested object configures the CreateAssetType policy, where its 'include_child_domain_units' field determines whether the permission to create asset types also applies to child domain units. (AI-inferred)
 	CreateAssetType any
-	// Configures the 'Create Domain Unit' policy grant detail, an empty object that, when present, grants the principal permission to create domain units within the DataZone domain. (AI-inferred)
 	CreateDomainUnit any
 	CreateEnvironment any
-	// Specifies the policy grant detail that grants the principal permission to create an environment from a blueprint in Amazon Data Zone. (AI-inferred)
 	CreateEnvironmentFromBlueprint any
-	// This object contains the policy grant details for allowing a principal to create environment profiles in AWS DataZone, including the domain units under which the permission applies. (AI-inferred)
 	CreateEnvironmentProfile any
-	// Specifies the policy grant details for creating form types, including whether the permission also applies to child domain units. (AI-inferred)
 	CreateFormType any
-	// This object defines the policy grant details for creating glossaries in Amazon DataZone, allowing the specified principal to create glossary entries within the target domain or project. (AI-inferred)
 	CreateGlossary any
-	// The create_project details of the policy grant, used when the policy type is set to CREATE_PROJECT, specifying the permissions for creating projects in Amazon Data Zone. (AI-inferred)
 	CreateProject any
-	// The create_project_from_project_profile object defines the policy grant configuration for allowing a principal to create projects from a project profile, typically containing the list of project profile identifiers the grant applies to. (AI-inferred)
 	CreateProjectFromProjectProfile any
-	// When enabled, this flag allows the policy grantee to delegate the ability to create environment profiles to other principals. (AI-inferred)
 	DelegateCreateEnvironmentProfile any
-	// This nested object represents the details of an 'override domain unit owners' policy grant, with an `enabled` boolean indicating whether the grant overrides the domain unit's existing owner list. (AI-inferred)
 	OverrideDomainUnitOwners any
-	// This object contains the detail settings for a policy grant of type OVERRIDE_PROJECT_OWNERS, which grants the principal the ability to override project ownership within AWS DataZone. (AI-inferred)
 	OverrideProjectOwners any
 }
 
 type ZonePolicyGrant_Principal_DomainUnit_DomainUnitGrantFilter struct {
-	// When set to an empty object, this field configures the policy grant to apply to all domain units within the DataZone domain. (AI-inferred)
 	AllDomainUnitsGrantFilter any
 }
 
 type ZonePolicyGrant_Principal_DomainUnit struct {
-	// Specifies the role (owner or member) within the domain unit principal that the policy grant applies to, controlling which users in that domain unit are granted the policy. (AI-inferred)
 	DomainUnitDesignation any
-	// Defines a filter that specifies whether the policy grant applies to all domain units within the domain unit principal or only to a specific list of domain unit IDs, used to scope the grant for a domain unit principal. (AI-inferred)
 	DomainUnitGrantFilter any
-	// The identifier of the Amazon DataZone domain unit that acts as the principal for this policy grant, determining which domain unit receives the granted permissions. (AI-inferred)
 	DomainUnitIdentifier any
 }
 
 type ZonePolicyGrant_Principal_Group struct {
-	// The identifier of the group that is the principal receiving the policy grant in AWS DataZone. (AI-inferred)
 	GroupIdentifier any
 }
 
 type ZonePolicyGrant_Principal_Project_ProjectGrantFilter_DomainUnitFilter struct {
-	// The identifier of the AWS Data Zone domain unit used by the domain unit filter to scope this policy grant for the specified project principal. (AI-inferred)
 	DomainUnit any
-	// Specifies whether the policy grant to the project principal also applies to all child domain units underneath the domain unit selected in this filter. (AI-inferred)
 	IncludeChildDomainUnits any
 }
 
 type ZonePolicyGrant_Principal_Project_ProjectGrantFilter struct {
-	// Specifies a domain unit filter that scopes the project-level policy grant to apply only to the designated domain units within the data zone. (AI-inferred)
 	DomainUnitFilter any
 }
 
 type ZonePolicyGrant_Principal_Project struct {
-	// Specifies whether the project principal is identified by its project ID or its project name, enabling the policy grant to reference a project as the grant principal. (AI-inferred)
 	ProjectDesignation any
-	// Configures a domain unit filter that restricts the policy grant to only members of the project who belong to the specified domain unit. (AI-inferred)
 	ProjectGrantFilter any
-	// The identifier of the Amazon DataZone project that serves as the principal for the policy grant, granting permissions to that project. (AI-inferred)
 	ProjectIdentifier any
 }
 
 type ZonePolicyGrant_Principal_User struct {
-	// A boolean flag that, when set to true, grants the policy to all users in the DataZone domain rather than to a specific user identifier. (AI-inferred)
 	AllUsersGrantFilter any
-	// Specifies the user identifier of the AWS DataZone user who is the principal receiving this policy grant, determining which user the granted permissions apply to. (AI-inferred)
 	UserIdentifier any
 }
 
 type ZonePolicyGrant_Principal struct {
-	// Identifies a domain unit as the principal for the policy grant, so that the grant applies to all users and groups within that domain unit. (AI-inferred)
 	DomainUnit any
-	// Specifies the group principal for the policy grant, containing the unique identifier of the AWS DataZone group that receives the granted permissions. (AI-inferred)
 	Group any
-	// The project object representing the Amazon Data Zone project that will receive the permissions granted by this policy grant. (AI-inferred)
 	Project any
-	// Defines the user principal to which the policy grant is assigned, specifying the Amazon DataZone user by its unique identifier. (AI-inferred)
 	User any
 }
 
@@ -246,15 +213,10 @@ var ZonePolicyGrant_PrincipalFields = ubx.FieldMap{
 
 type ZonePolicyGrantConfig struct {
 	Detail any
-	// The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
 	DomainIdentifier any
-	// The identifier of the Data Zone entity (such as a project, domain, or user) to which the policy grant applies. (AI-inferred)
 	EntityIdentifier any
-	// Specifies the type of DataZone entity (such as 'project', 'user', or 'group') that this policy grant targets, used together with the entity identifier to define the grant's scope. (AI-inferred)
 	EntityType any
-	// Specifies the type of policy grant being created, such as CREATE_DOMAIN_UNIT or DELETE_DOMAIN_UNIT, which dictates the specific permission granted on the target entity. (AI-inferred)
 	PolicyType any
-	// The user, group, or role to which the policy grant is assigned, specifying the principal type and identifier to control which entity receives the granted permissions. (AI-inferred)
 	Principal any
 }
 
@@ -264,17 +226,12 @@ type ZonePolicyGrantAttrs struct {
 	// Specifies the user who created the policy grant member.
 	CreatedBy any
 	Detail any
-	// The identifier of the Amazon DataZone domain where the policy grant is created. (AI-inferred)
 	DomainIdentifier any
-	// The identifier of the Data Zone entity (such as a project, domain, or user) to which the policy grant applies. (AI-inferred)
 	EntityIdentifier any
-	// Specifies the type of DataZone entity (such as 'project', 'user', or 'group') that this policy grant targets, used together with the entity identifier to define the grant's scope. (AI-inferred)
 	EntityType any
 	// The unique identifier of the policy grant returned by the AddPolicyGrant API
 	GrantId any
-	// Specifies the type of policy grant being created, such as CREATE_DOMAIN_UNIT or DELETE_DOMAIN_UNIT, which dictates the specific permission granted on the target entity. (AI-inferred)
 	PolicyType any
-	// The user, group, or role to which the policy grant is assigned, specifying the principal type and identifier to control which entity receives the granted permissions. (AI-inferred)
 	Principal any
 }
 

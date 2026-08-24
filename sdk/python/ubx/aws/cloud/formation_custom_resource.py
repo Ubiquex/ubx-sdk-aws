@@ -8,17 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationCustomResourceConfig:
-    # The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred)
     service_timeout: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred)
     service_token: Any = None
 
 @dataclasses.dataclass
 class FormationCustomResourceAttrs:
     id: Any = None
-    # The maximum amount of time (in seconds) that AWS CloudFormation waits for the custom resource provider to respond before considering the resource operation failed. (AI-inferred)
     service_timeout: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Lambda function or Amazon Simple Notification Service (SNS) topic that implements the custom resource's provisioning logic. (AI-inferred)
     service_token: Any = None
 
 FormationCustomResource = ubx.ResourceBinding(

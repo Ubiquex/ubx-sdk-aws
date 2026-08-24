@@ -2,22 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryPublicDnsNamespace_Properties_DnsProperties_Soa {
-  /** The time-to-live (TTL) in seconds for the Start of Authority (SOA) record of the public DNS namespace, controlling how long DNS resolvers cache that record. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
 export interface DiscoveryPublicDnsNamespace_Properties_DnsProperties {
-  /** This object configures the Start of Authority (SOA) record settings for the public DNS namespace, including the TTL value that determines how long DNS resolvers cache the namespace's SOA record. (AI-inferred) */
   soa?: DiscoveryPublicDnsNamespace_Properties_DnsProperties_Soa | Computed<DiscoveryPublicDnsNamespace_Properties_DnsProperties_Soa>;
 }
 
 export interface DiscoveryPublicDnsNamespace_Properties {
-  /** Configures DNS behavior for the public namespace, specifically the SOA record TTL that controls how long resolvers cache the namespace's authoritative data. (AI-inferred) */
   dnsProperties?: DiscoveryPublicDnsNamespace_Properties_DnsProperties | Computed<DiscoveryPublicDnsNamespace_Properties_DnsProperties>;
 }
 
 export interface DiscoveryPublicDnsNamespace_Tags {
-  /** The key of a tag assigned to the public DNS namespace, used to organize and identify the resource for cost allocation and management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -52,7 +48,6 @@ export interface DiscoveryPublicDnsNamespaceConfig {
   description?: string | Computed<string>;
   /** The name that you want to assign to this namespace. */
   name: string | Computed<string>;
-  /** The `properties` object contains the configuration attributes of the AWS Cloud Map public DNS namespace, including the required `Name`, optional `Description`, and optional `DnsProperties` (which defines SOA record settings). (AI-inferred) */
   properties?: DiscoveryPublicDnsNamespace_Properties | Computed<DiscoveryPublicDnsNamespace_Properties>;
   /** The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
   tags?: DiscoveryPublicDnsNamespace_Tags[] | Computed<DiscoveryPublicDnsNamespace_Tags[]>;
@@ -69,7 +64,6 @@ export interface DiscoveryPublicDnsNamespaceAttrs {
   id: string;
   /** The name that you want to assign to this namespace. */
   name: string;
-  /** The `properties` object contains the configuration attributes of the AWS Cloud Map public DNS namespace, including the required `Name`, optional `Description`, and optional `DnsProperties` (which defines SOA record settings). (AI-inferred) */
   properties: DiscoveryPublicDnsNamespace_Properties;
   /** The tags for the namespace. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
   tags: DiscoveryPublicDnsNamespace_Tags[];

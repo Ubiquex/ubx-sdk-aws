@@ -2,35 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdminOrganizationTelemetryRule_RegionStatuses {
-  /** The AWS region code (e.g., us-east-1) identifying the region whose telemetry rule status is reported in this region_statuses entry. (AI-inferred) */
   region?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the telemetry rule created for a specific region, as reported in the region status map of the organization telemetry rule. (AI-inferred) */
   ruleArn?: string | Computed<string>;
-  /** The current status of the organization telemetry rule in the associated AWS region, indicating whether the rule is active for that region. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectors {
-  /** Defines the list of strings that the value of the referenced field (e.g., event name, resource type) must end with for the event to match the advanced event selector in a CloudTrail telemetry destination configuration. (AI-inferred) */
   endsWith?: string[] | Computed<string[]>;
-  /** In the CloudTrail advanced event selectors of the destination configuration for this organization telemetry rule, the 'equals' field on a field selector defines the list of exact string values that the corresponding CloudTrail event attribute (e.g., eventName, readOnly) must match for the event to be delivered. (AI-inferred) */
   equals?: string[] | Computed<string[]>;
-  /** Specifies the CloudTrail event field name (such as 'eventCategory', 'eventName', or 'resources.type') used by the advanced event selector to filter which events are included for delivery to the configured destination in this organization telemetry rule. (AI-inferred) */
   field?: string | Computed<string>;
-  /** Specifies the list of values that the event field must not end with for the advanced event selector to match, filtering CloudTrail events in the destination configuration of the organization telemetry rule. (AI-inferred) */
   notEndsWith?: string[] | Computed<string[]>;
-  /** In the CloudTrail parameters of the telemetry rule, this list defines the values that the selected event field must not equal for the advanced event selector to match the event for telemetry collection. (AI-inferred) */
   notEquals?: string[] | Computed<string[]>;
-  /** Specifies a list of string prefixes that, when matched at the beginning of the selected event field's value, cause the event to be excluded from delivery, so only events whose field value does not start with any of these strings are delivered. (AI-inferred) */
   notStartsWith?: string[] | Computed<string[]>;
-  /** Within a CloudTrail advanced event selector's field selector, this list defines the prefixes that the selected event field's value must start with for the telemetry rule to forward matching events to CloudTrail. (AI-inferred) */
   startsWith?: string[] | Computed<string[]>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors {
-  /** Specifies the list of field selectors (e.g., eventCategory, eventName, or resource type) used to filter which CloudTrail events are matched by each advanced event selector in the telemetry rule. (AI-inferred) */
   fieldSelectors?: AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectors[] | Computed<AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectors[]>;
-  /** The name of the advanced event selector, an optional user-defined label used to identify the selector within CloudTrail configuration. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -42,7 +30,6 @@ export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_Cl
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParameters {
   /** A delimiter to delineate log fields */
   fieldDelimiter?: string | Computed<string>;
-  /** The output format for the load balancer access logs delivered to the configured destination, specifying whether the logs are written as text (gzip compressed) or in Parquet format. (AI-inferred) */
   outputFormat?: string | Computed<string>;
 }
 
@@ -61,26 +48,20 @@ export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_Vp
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionCondition {
-  /** The action (such as ALLOW, BLOCK, or COUNT) taken by AWS WAF on the matched request, used as the condition for filtering WAF log entries. (AI-inferred) */
   action?: string | Computed<string>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameCondition {
-  /** Specifies the exact WAF label name (e.g., a label added by a rule or rule group) that a web request must carry for this label-name condition in the logging filter to match and be included in the telemetry destination. (AI-inferred) */
   labelName?: string | Computed<string>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions {
-  /** Defines a condition that matches the WAF action (such as ALLOW, BLOCK, or COUNT) of a web request, used to determine whether the logging filter keeps or drops the log entry. (AI-inferred) */
   actionCondition?: AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionCondition | Computed<AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionCondition>;
-  /** Represents the label name matching condition used to filter WAF logs, with properties for the label name and comparison operator. (AI-inferred) */
   labelNameCondition?: AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameCondition | Computed<AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameCondition>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters {
-  /** Determines whether log records that match the filter's condition are kept (KEEP) or dropped (DROP) from the WAF logging output. (AI-inferred) */
   behavior?: string | Computed<string>;
-  /** Specifies the match conditions (such as AWS WAF action, label, or country) applied to each log record to determine whether it is kept or dropped by this logging filter for WAF log delivery. (AI-inferred) */
   conditions?: AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions[] | Computed<AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions[]>;
   requirement?: string | Computed<string>;
 }
@@ -93,15 +74,12 @@ export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_Wa
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeader {
-  /** The name of the HTTP header whose value will be redacted from the WAF logging data for this organization telemetry rule's destination configuration. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields {
-  /** This field indicates that the HTTP method (such as GET or POST) is redacted (omitted) from AWS WAF logs in the telemetry rule's WAF logging destination configuration. (AI-inferred) */
   method?: string | Computed<string>;
   queryString?: string | Computed<string>;
-  /** Configures a single HTTP header to redact from AWS WAF logging output, using a field-match type that identifies the header by its name. (AI-inferred) */
   singleHeader?: AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeader | Computed<AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeader>;
   uriPath?: string | Computed<string>;
 }

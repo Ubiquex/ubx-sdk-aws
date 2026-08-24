@@ -8,33 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityProfile_AllowedAccessControlTags:
-    # The key of a tag entry in the allowed_access_control_tags map, which specifies a tag key that this security profile is permitted to use for access control. (AI-inferred)
     key: Any = None
-    # The value of a tag key that, when present on an AWS Connect resource, grants the user access to that resource according to the tag-based access control rules defined in the security profile. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_AllowedFlowModules:
-    # The identifier of an Amazon Connect flow module that this security profile is permitted to use. (AI-inferred)
     flow_module_id: Any = None
     type: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_Applications:
-    # Specifies the list of permission keys that define the actions a user with this security profile can perform within the associated application namespace (for example, making outbound calls or managing contacts in the agent application). (AI-inferred)
     application_permissions: Any = None
-    # Specifies the namespace of an Amazon Connect application (for example, 'amazon_connect') for which the security profile grants functional permissions, effectively limiting access to that application's resources. (AI-inferred)
     namespace: Any = None
-    # Defines the type of application (e.g., Amazon Connect or Contact Lens) that the security profile's permissions apply to within the Applications list. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class SecurityProfile_GranularAccessControlConfiguration_DataTableAccessControlConfiguration_PrimaryAttributeAccessControlConfiguration_PrimaryAttributeValues:
-    # Specifies the type of access (read, write, or both) that the security profile has to data table entries matching the associated primary attribute value in the AWS Connect granular access control configuration. (AI-inferred)
     access_type: Any = None
-    # The name of the primary attribute (e.g., a contact or customer attribute) whose allowed values are defined in this configuration to restrict access to a data table in Amazon Connect. (AI-inferred)
     attribute_name: Any = None
-    # The list of primary attribute values (such as queue IDs or other defined attributes) that determine which data records are accessible for the given data table in the security profile's granular access control. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -110,7 +101,6 @@ class SecurityProfileConfig:
     applications: Any = None
     # The description of the security profile.
     description: Any = None
-    # Specifies the granular access control settings for the security profile, including the allowed access control tags and whether access is restricted by the agent's hierarchy group. (AI-inferred)
     granular_access_control_configuration: Any = None
     # The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
     hierarchy_restricted_resources: Any = None
@@ -137,7 +127,6 @@ class SecurityProfileAttrs:
     applications: Any = None
     # The description of the security profile.
     description: Any = None
-    # Specifies the granular access control settings for the security profile, including the allowed access control tags and whether access is restricted by the agent's hierarchy group. (AI-inferred)
     granular_access_control_configuration: Any = None
     # The list of resources that a security profile applies hierarchy restrictions to in Amazon Connect.
     hierarchy_restricted_resources: Any = None

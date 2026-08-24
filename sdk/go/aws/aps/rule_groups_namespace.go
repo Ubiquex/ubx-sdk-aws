@@ -4,9 +4,7 @@ package aps
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleGroupsNamespace_Tags struct {
-	// The key of a tag attached to the Amazon Managed Service for Prometheus rule groups namespace, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value for a tag assigned to the AWS Prometheus rule groups namespace, used to organize, identify, and manage the resource through cost allocation and operational metadata. (AI-inferred)
 	Value any
 }
 

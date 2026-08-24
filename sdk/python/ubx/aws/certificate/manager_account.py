@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerAccount_ExpiryEventsConfiguration:
-    # Specifies the number of days before certificate expiration when ACM begins emitting expiry-related events, allowing you to adjust the notification lead time. (AI-inferred)
     days_before_expiry: Any = None
 
 _ManagerAccount_ExpiryEventsConfigurationFields = {
@@ -17,14 +16,11 @@ _ManagerAccount_ExpiryEventsConfigurationFields = {
 
 @dataclasses.dataclass
 class ManagerAccountConfig:
-    # Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred)
     expiry_events_configuration: Any = None
 
 @dataclasses.dataclass
 class ManagerAccountAttrs:
-    # The AWS account ID that owns this ACM account-level configuration, automatically derived from the account in which the resource is deployed. (AI-inferred)
     account_id: Any = None
-    # Configures the day-based threshold (DaysBeforeExpiry) at which AWS Certificate Manager emits certificate expiration events, enabling EventBridge notifications for upcoming renewals. (AI-inferred)
     expiry_events_configuration: Any = None
 
 ManagerAccount = ubx.ResourceBinding(

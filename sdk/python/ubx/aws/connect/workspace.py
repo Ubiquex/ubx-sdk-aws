@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Workspace_Media:
     source: Any = None
-    # Specifies the media channel type (such as PHONE, CHAT, or TASK) that this Amazon Connect workspace configuration supports. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -21,65 +20,43 @@ class Workspace_Pages:
 
 @dataclasses.dataclass
 class Workspace_Tags:
-    # Specifies the tag key used to label the Amazon Connect workspace resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Palette_Canvas:
-    # Sets the background color of the active (focused) canvas area in the dark theme of the Amazon Connect workspace. (AI-inferred)
     active_background: Any = None
-    # Specifies the background color for container elements in the canvas area of the dark theme in the Amazon Connect agent workspace. (AI-inferred)
     container_background: Any = None
-    # Sets the background color (hex string) of the page region within the canvas area when the Amazon Connect agent workspace is in dark theme. (AI-inferred)
     page_background: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Palette_Header:
-    # The background color of the header in the dark theme of the Amazon Connect workspace. (AI-inferred)
     background: Any = None
-    # When set to true, this inverts the colors of action buttons in the header of the dark palette theme for the Amazon Connect workspace. (AI-inferred)
     invert_actions_colors: Any = None
-    # Defines the text color (hex value) used in the header area of the dark theme palette for the Amazon Connect workspace. (AI-inferred)
     text: Any = None
-    # Specifies the color (hex value) of the header's text in the dark theme palette when hovered, used in the Amazon Connect workspace theme. (AI-inferred)
     text_hover: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Palette_Navigation:
-    # Specifies the background color for the navigation area in the dark theme palette of the Amazon Connect Workspace interface. (AI-inferred)
     background: Any = None
-    # When set to true, this property inverts the colors used for action elements (such as buttons or icons) in the navigation section of the dark color palette, enhancing their visibility against the dark background. (AI-inferred)
     invert_actions_colors: Any = None
-    # The color value (e.g., a hex code) for the text displayed in the navigation area when the Amazon Connect agent workspace uses the dark theme. (AI-inferred)
     text: Any = None
-    # Specifies the hex color used for active navigation text in the dark palette of an Amazon Connect workspace theme. (AI-inferred)
     text_active: Any = None
-    # Specifies the background color of active text in the navigation section of the dark theme palette for the Amazon Connect workspace UI. (AI-inferred)
     text_background_active: Any = None
-    # Defines the background color for text in the navigation bar when hovered, within the dark theme palette of the Amazon Connect Workspace. (AI-inferred)
     text_background_hover: Any = None
-    # The color applied to the text of navigation menu items when the user hovers over them, within the dark theme palette of the workspace's UI. (AI-inferred)
     text_hover: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Palette_Primary:
-    # Specifies the hexadecimal color code used to render the active state (e.g., pressed or selected) of primary UI elements in the dark theme of the Amazon Connect workspace. (AI-inferred)
     active: Any = None
-    # The color code for text displayed on top of the primary color in the dark theme palette of the Amazon Connect workspace. (AI-inferred)
     contrast_text: Any = None
-    # The `theme.dark.palette.primary.default` field defines the default color (as a hexadecimal value) for the primary color in the dark theme palette of an Amazon Connect workspace, which is applied to primary actions like buttons and selection highlights in the agent interface. (AI-inferred)
     default: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Palette:
-    # The canvas object within the dark palette defines the color configuration for the main background (canvas) of the Amazon Connect workspace UI when dark mode is active. (AI-inferred)
     canvas: Any = None
-    # Configures the color palette for the header section of the Amazon Connect agent workspace when the dark theme is applied, including background and foreground colors. (AI-inferred)
     header: Any = None
-    # Contains the color configuration for the navigation bar when the Amazon Connect workspace uses the dark theme palette. (AI-inferred)
     navigation: Any = None
-    # Defines the primary color object for the dark mode palette of an Amazon Connect agent workspace theme, controlling the color of key UI elements such as buttons, links, and selected states. (AI-inferred)
     primary: Any = None
 
 @dataclasses.dataclass
@@ -88,21 +65,16 @@ class Workspace_Theme_Dark_Typography_FontFamily:
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark_Typography:
-    # Specifies the font family used for text in the dark theme of the Amazon Connect workspace UI. (AI-inferred)
     font_family: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme_Dark:
-    # Defines the color palette for the dark theme of the Amazon Connect workspace, specifying the colors used for the user interface components. (AI-inferred)
     palette: Any = None
-    # Defines the typography settings (such as font family, size, and weight) for the dark theme of the Amazon Connect workspace, controlling text appearance in that theme. (AI-inferred)
     typography: Any = None
 
 @dataclasses.dataclass
 class Workspace_Theme:
-    # Configures the dark-mode color scheme and styling for the Amazon Connect agent workspace's user interface. (AI-inferred)
     dark: Any = None
-    # Specifies the light mode color theme of the Amazon Connect agent workspace, applying a custom color scheme to the interface when the workspace is displayed in light mode. (AI-inferred)
     light: Any = None
 
 _Workspace_MediaFields = {

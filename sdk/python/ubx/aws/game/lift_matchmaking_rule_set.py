@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiftMatchmakingRuleSet_Tags:
-    # The key of a tag attached to the GameLift matchmaking rule set, used to identify and categorize the rule set for resource management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to the GameLift matchmaking rule set, used to organize and identify the rule set within AWS. (AI-inferred)
     value: Any = None
 
 _LiftMatchmakingRuleSet_TagsFields = {

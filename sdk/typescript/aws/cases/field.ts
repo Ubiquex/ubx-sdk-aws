@@ -12,7 +12,6 @@ export interface Field_Attributes {
 }
 
 export interface Field_Tags {
-  /** The key of a user-defined tag attached to the AWS Cases field, used for metadata and resource management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

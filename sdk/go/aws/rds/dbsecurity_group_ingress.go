@@ -4,28 +4,18 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbsecurityGroupIngressConfig struct {
-	// The CIDR IP range (in the form x.x.x.x/x) that is authorized to access instances in the DB security group. (AI-inferred)
 	Cidrip any
-	// The name of the DB security group to which this ingress rule is added. (AI-inferred)
 	DbsecurityGroupName any
-	// Specifies the ID of the EC2 security group whose traffic is authorized for ingress to the associated RDS DB security group. (AI-inferred)
 	Ec2SecurityGroupId any
-	// The name of the EC2 security group to authorize for ingress to the RDS DB security group. (AI-inferred)
 	Ec2SecurityGroupName any
-	// The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
 }
 
 type DbsecurityGroupIngressAttrs struct {
-	// The CIDR IP range (in the form x.x.x.x/x) that is authorized to access instances in the DB security group. (AI-inferred)
 	Cidrip any
-	// The name of the DB security group to which this ingress rule is added. (AI-inferred)
 	DbsecurityGroupName any
-	// Specifies the ID of the EC2 security group whose traffic is authorized for ingress to the associated RDS DB security group. (AI-inferred)
 	Ec2SecurityGroupId any
-	// The name of the EC2 security group to authorize for ingress to the RDS DB security group. (AI-inferred)
 	Ec2SecurityGroupName any
-	// The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
 	Id any
 }

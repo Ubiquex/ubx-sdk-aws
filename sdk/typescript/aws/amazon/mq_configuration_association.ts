@@ -16,14 +16,12 @@ const MqConfigurationAssociation_ConfigurationFields: FieldMap = {
 export interface MqConfigurationAssociationConfig {
   /** ID of the Broker that the configuration should be applied to */
   broker: string | Computed<string>;
-  /** Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred) */
   configuration: MqConfigurationAssociation_Configuration | Computed<MqConfigurationAssociation_Configuration>;
 }
 
 export interface MqConfigurationAssociationAttrs {
   /** ID of the Broker that the configuration should be applied to */
   broker: string;
-  /** Specifies the Amazon MQ configuration (ID and revision) to associate with the broker in a ConfigurationAssociation resource. (AI-inferred) */
   configuration: MqConfigurationAssociation_Configuration;
   /** The ID of the ConfigurationAssociation Resource */
   id: string;

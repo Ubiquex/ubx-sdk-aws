@@ -8,32 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolIdentityProviderConfig:
-    # Maps user pool attribute names to the corresponding attribute names from the external identity provider (IdP) for this user pool identity provider. (AI-inferred)
     attribute_mapping: Any = None
-    # Specifies a list of custom identifiers for the identity provider that are included in the user's identities claim, enabling your application to distinguish which IdP a user used to sign in. (AI-inferred)
     idp_identifiers: Any = None
-    # A map of provider-specific configuration settings (e.g., client_id, client_secret, and authorize_scopes for OIDC, or MetadataURL for SAML) that define how the identity provider integrates with the user pool. (AI-inferred)
     provider_details: Any = None
-    # The name of the identity provider (e.g., Google, Facebook, LoginWithAmazon, or a custom OIDC/SAML provider name) that uniquely identifies this provider within the user pool. (AI-inferred)
     provider_name: Any = None
-    # The identity provider type, such as 'Facebook', 'Google', 'LoginWithAmazon', 'SignInWithApple', 'OIDC', or 'SAML'. (AI-inferred)
     provider_type: Any = None
-    # The unique identifier of the Amazon Cognito user pool to which this identity provider configuration is attached. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolIdentityProviderAttrs:
-    # Maps user pool attribute names to the corresponding attribute names from the external identity provider (IdP) for this user pool identity provider. (AI-inferred)
     attribute_mapping: Any = None
-    # Specifies a list of custom identifiers for the identity provider that are included in the user's identities claim, enabling your application to distinguish which IdP a user used to sign in. (AI-inferred)
     idp_identifiers: Any = None
-    # A map of provider-specific configuration settings (e.g., client_id, client_secret, and authorize_scopes for OIDC, or MetadataURL for SAML) that define how the identity provider integrates with the user pool. (AI-inferred)
     provider_details: Any = None
-    # The name of the identity provider (e.g., Google, Facebook, LoginWithAmazon, or a custom OIDC/SAML provider name) that uniquely identifies this provider within the user pool. (AI-inferred)
     provider_name: Any = None
-    # The identity provider type, such as 'Facebook', 'Google', 'LoginWithAmazon', 'SignInWithApple', 'OIDC', or 'SAML'. (AI-inferred)
     provider_type: Any = None
-    # The unique identifier of the Amazon Cognito user pool to which this identity provider configuration is attached. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolIdentityProvider = ubx.ResourceBinding(

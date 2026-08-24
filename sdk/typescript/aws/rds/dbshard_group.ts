@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbshardGroup_Tags {
-  /** The key part of a tag that can be applied to the DB shard group for resource organization and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag applied to the DB shard group, used for metadata and resource identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -37,9 +35,7 @@ export interface DbshardGroupAttrs {
   dbclusterIdentifier: string;
   /** The name of the DB shard group. */
   dbshardGroupIdentifier: string;
-  /** The immutable AWS-assigned unique identifier for the DB shard group. (AI-inferred) */
   dbshardGroupResourceId: string;
-  /** The connection endpoint of the DB shard group, a DNS hostname that applications use to connect to the shard group's primary writer instance. (AI-inferred) */
   endpoint: string;
   /** The maximum capacity of the DB shard group in Aurora capacity units (ACUs). */
   maxAcu: number;

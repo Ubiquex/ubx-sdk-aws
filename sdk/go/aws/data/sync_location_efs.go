@@ -11,9 +11,7 @@ type SyncLocationEfs_Ec2Config struct {
 }
 
 type SyncLocationEfs_Tags struct {
-	// The key of a tag assigned to this AWS DataSync EFS location, used to identify and manage the resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to this AWS DataSync location for EFS, used for metadata and resource categorization. (AI-inferred)
 	Value any
 }
 

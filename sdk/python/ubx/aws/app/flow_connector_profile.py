@@ -8,30 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Amplitude:
-    # The Amplitude API key used by AppFlow to authenticate the connector profile with Amplitude's analytics service. (AI-inferred)
     api_key: Any = None
-    # The Amplitude API secret key used by AppFlow to authenticate with your Amplitude account when establishing the connector profile. (AI-inferred)
     secret_key: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_ApiKey:
-    # This field holds the actual API key value used for authenticating with the custom connector in AWS AppFlow, which is required when API key-based credentials are configured. (AI-inferred)
     api_key: Any = None
-    # This field specifies the secret key that accompanies the API key for authenticating requests to the custom connector endpoint in AWS AppFlow. (AI-inferred)
     api_secret_key: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Basic:
-    # The password to use with the username for basic authentication to the custom connector. (AI-inferred)
     password: Any = None
-    # The username used for basic (username/password) authentication when connecting to the custom connector in AppFlow. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Custom:
     # A map for properties for custom authentication.
     credentials_map: Any = None
-    # Specifies the named custom authentication type (e.g., a connector-specific scheme) that the AppFlow custom connector uses for custom authentication, and is required when configuring custom connector credentials for this profile. (AI-inferred)
     custom_authentication_type: Any = None
 
 @dataclasses.dataclass
@@ -43,222 +36,146 @@ class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Cu
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector_Oauth2:
-    # The OAuth 2.0 access token that AppFlow uses to authenticate requests to the custom connector's API. (AI-inferred)
     access_token: Any = None
-    # The client identifier (client ID) issued by the OAuth2 authorization server for the custom connector application. (AI-inferred)
     client_id: Any = None
-    # The client secret paired with the OAuth 2.0 client ID, used by AppFlow to authenticate with the custom connector's authorization server when refreshing access tokens. (AI-inferred)
     client_secret: Any = None
-    # The OAuth 2.0 request details containing the authorization code and redirect URI used to obtain or refresh access tokens for the custom connector profile. (AI-inferred)
     oauth_request: Any = None
-    # The refresh token used to obtain new access tokens when the current access token expires for the custom connector's OAuth2 authentication. (AI-inferred)
     refresh_token: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_CustomConnector:
-    # Contains the API key and, optionally, the secret key used for API key authentication with a custom connector in AppFlow. (AI-inferred)
     api_key: Any = None
-    # Specifies the authentication mechanism for the custom connector, which must be one of APIKEY, BASIC, CUSTOM, or OAUTH2. (AI-inferred)
     authentication_type: Any = None
-    # Contains the username and password used for basic authentication when connecting to the custom connector endpoint. (AI-inferred)
     basic: Any = None
-    # Specifies custom authentication credentials for the custom connector, including the custom authentication type and a map of credential key-value pairs required by the external system. (AI-inferred)
     custom: Any = None
-    # Specifies the OAuth 2.0 token URL and grant type used by the custom connector to obtain an access token for authorization. (AI-inferred)
     oauth2: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Datadog:
-    # The Datadog API key that authenticates the AppFlow connector profile to the Datadog API, required for establishing a connection. (AI-inferred)
     api_key: Any = None
-    # The application key for the Datadog API, used with the API key to authenticate the Datadog connector profile in Amazon AppFlow. (AI-inferred)
     application_key: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Dynatrace:
-    # The API token used to authenticate with Dynatrace when creating the AppFlow connector profile. (AI-inferred)
     api_token: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_GoogleAnalytics:
-    # The OAuth 2.0 access token used by the AppFlow connector to authenticate with Google Analytics. (AI-inferred)
     access_token: Any = None
-    # The OAuth client ID issued by Google for the Google Analytics connector, used in AppFlow to authenticate and authorize access to Google Analytics data. (AI-inferred)
     client_id: Any = None
-    # The client secret from the Google API project used to authenticate the Google Analytics connector profile via OAuth 2.0. (AI-inferred)
     client_secret: Any = None
-    # The OAuth request object containing the authorization code and redirect URI used to exchange for access tokens when connecting to Google Analytics via AppFlow. (AI-inferred)
     connector_oauth_request: Any = None
-    # The refresh token used to obtain new access tokens for the Google Analytics connector profile. (AI-inferred)
     refresh_token: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_InforNexus:
-    # The access key ID used to authenticate with the Infor Nexus API for this AppFlow connector profile. (AI-inferred)
     access_key_id: Any = None
-    # The datakey used to authenticate API requests to Infor Nexus, part of the Infor Nexus connector profile credentials. (AI-inferred)
     datakey: Any = None
-    # The secret access key for authentication with the Infor Nexus API, required when configuring the Infor Nexus connector profile credentials. (AI-inferred)
     secret_access_key: Any = None
-    # The username for the Infor Nexus account used to authenticate the connector profile. (AI-inferred)
     user_id: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Marketo:
-    # The OAuth 2.0 access token that AppFlow uses to authenticate requests with the Marketo connector. (AI-inferred)
     access_token: Any = None
-    # The OAuth 2.0 client ID obtained from the Marketo admin console, used to authenticate the AppFlow connector profile for Marketo. (AI-inferred)
     client_id: Any = None
-    # The client secret (OAuth secret) for your Marketo application, used together with the client ID to authenticate API requests for this AppFlow connector profile. (AI-inferred)
     client_secret: Any = None
-    # Specifies the OAuth request parameters (such as authorization code and redirect URI) used to obtain credentials for the Marketo connector profile in Amazon AppFlow. (AI-inferred)
     connector_oauth_request: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Pardot:
-    # The OAuth access token used to authenticate API requests to the Pardot service in the AppFlow connector profile. (AI-inferred)
     access_token: Any = None
-    # The ARN of an AWS Secrets Manager secret that stores the Pardot OAuth client ID and client secret used to authenticate the AppFlow connector profile. (AI-inferred)
     client_credentials_arn: Any = None
-    # The OAuth request details (such as authorization code and redirect URI) used to exchange for the access token when authenticating the Pardot connector profile. (AI-inferred)
     connector_oauth_request: Any = None
-    # For Pardot connector profiles, this is the OAuth 2.0 refresh token used to obtain a new access token when the current one expires. (AI-inferred)
     refresh_token: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Salesforce:
-    # The OAuth access token used to authenticate with Salesforce when creating the AppFlow connector profile. (AI-inferred)
     access_token: Any = None
-    # The ARN of the AWS Secrets Manager secret containing the OAuth client ID and client secret used to authenticate the Salesforce connector profile. (AI-inferred)
     client_credentials_arn: Any = None
-    # Specifies the OAuth request details (such as authorization code and redirect URI) used during the Salesforce connector profile authorization flow. (AI-inferred)
     connector_oauth_request: Any = None
-    # The JWT token used for authentication when connecting to Salesforce using the OAuth 2.0 JWT bearer flow in an AppFlow connector profile. (AI-inferred)
     jwt_token: Any = None
-    # Specifies the OAuth 2.0 grant type (either AUTHORIZATION_CODE or CLIENT_CREDENTIALS) used by the Salesforce connector profile to obtain an access token for authentication in Amazon AppFlow. (AI-inferred)
     oauth2_grant_type: Any = None
-    # The refresh token from your Salesforce OAuth 2.0 authorization, used by AppFlow to obtain a new access token when the current one expires. (AI-inferred)
     refresh_token: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Sapodata:
-    # Basic authentication credentials (username and password) for the SAPOData connector profile, used to authenticate against the SAP OData endpoint. (AI-inferred)
     basic_auth_credentials: Any = None
-    # OAuth credentials used to authenticate with the SAP OData endpoint, including access token, refresh token, and related OAuth request parameters. (AI-inferred)
     oauth_credentials: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_ServiceNow:
-    # Specifies the OAuth 2.0 credentials (client ID, client secret, access token, and refresh token) that AppFlow uses to authenticate with the ServiceNow instance. (AI-inferred)
     oauth2_credentials: Any = None
-    # The password for the ServiceNow account used to authenticate with the ServiceNow instance when setting up the connector profile. (AI-inferred)
     password: Any = None
-    # The username of the ServiceNow account used to authenticate with the ServiceNow instance. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Singular:
-    # The API key used to authenticate with the Singular marketing analytics platform when configuring a connector profile for Singular in Amazon AppFlow. (AI-inferred)
     api_key: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials_Trendmicro:
-    # The API secret key used to authenticate with Trend Micro for the AppFlow connector profile. (AI-inferred)
     api_secret_key: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileCredentials:
-    # The Amplitude connector-specific credentials, including the API key and secret key, used to authorize AWS AppFlow to access your Amplitude data. (AI-inferred)
     amplitude: Any = None
-    # The credentials for a custom connector, containing properties for custom authentication, API key, or basic authentication parameters. (AI-inferred)
     custom_connector: Any = None
-    # Specifies the credentials required to authenticate with Datadog, including the API key and application key, for use in an AppFlow connector profile. (AI-inferred)
     datadog: Any = None
-    # The Dynatrace credentials object holds the API token that AppFlow uses to authenticate with a Dynatrace instance for data transfer operations. (AI-inferred)
     dynatrace: Any = None
-    # Specifies the Google Analytics-specific OAuth 2.0 credentials (access token, refresh token, and OAuth request details) used to authorize AWS AppFlow to connect to Google Analytics. (AI-inferred)
     google_analytics: Any = None
-    # Specifies the API key and API secret used to authenticate with the Infor Nexus service for AppFlow connections. (AI-inferred)
     infor_nexus: Any = None
-    # Contains the authentication credentials for a Marketo connector profile, including the client ID, client secret, access token, and endpoint URL that AppFlow uses to access your Marketo instance. (AI-inferred)
     marketo: Any = None
-    # Holds the Pardot-specific OAuth 2.0 credentials, such as access token, refresh token, and client credentials, used by AppFlow to authenticate with a Pardot account. (AI-inferred)
     pardot: Any = None
-    # The Redshift connector profile credentials, including the database username and password used to authenticate to the Amazon Redshift data source. (AI-inferred)
     redshift: Any = None
-    # Specifies the Salesforce-specific authentication credentials, including access token, refresh token, client ID, and client secret, required to connect AppFlow to Salesforce. (AI-inferred)
     salesforce: Any = None
-    # This object holds the SAPOData-specific authentication credentials for an AppFlow connector profile, allowing either basic username/password authentication or OAuth-based access tokens/refresh tokens to connect to the SAP OData endpoint. (AI-inferred)
     sapodata: Any = None
-    # The ServiceNow connector credentials specify the user name and password used to authenticate with the ServiceNow instance for data transfers. (AI-inferred)
     service_now: Any = None
-    # The Singular-specific credentials block, holding the API key used to authenticate with the Singular marketing analytics platform. (AI-inferred)
     singular: Any = None
-    # Provides Slack-specific authentication details for the connector profile, such as access token, client ID, and client secret, used to authorize AppFlow access to the Slack workspace. (AI-inferred)
     slack: Any = None
-    # Holds the Snowflake-specific authentication credentials (username and password) used to connect to a Snowflake account for the AppFlow connector profile. (AI-inferred)
     snowflake: Any = None
-    # The credentials for the Trend Micro connector, which require an API secret key to authenticate with the Trend Micro service. (AI-inferred)
     trendmicro: Any = None
-    # Specifies the Veeva login credentials (username and password) required to authenticate to the Veeva CRM system when using this connector profile. (AI-inferred)
     veeva: Any = None
-    # Holds the Zendesk-specific credentials for the AppFlow connector profile, including an API token or OAuth access token and the Zendesk instance URL used for authentication. (AI-inferred)
     zendesk: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnector_Oauth2Properties:
-    # Specifies the OAuth 2.0 grant type (such as CLIENT_CREDENTIALS or AUTHORIZATION_CODE) that the custom connector uses to obtain access tokens for authentication. (AI-inferred)
     oauth2_grant_type: Any = None
-    # The token URL that AWS AppFlow calls to obtain OAuth2 access tokens when authenticating with the custom connector. (AI-inferred)
     token_url: Any = None
     # A map for properties for custom connector Token Url.
     token_url_custom_properties: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_CustomConnector:
-    # For a custom connector profile, these properties define the OAuth 2.0 authentication details, including the token URL, grant type, and any custom token parameters, used to authorize API requests. (AI-inferred)
     oauth2_properties: Any = None
     # A map for properties for custom connector.
     profile_properties: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Datadog:
-    # The base URL of the Datadog instance (e.g., https://datadoghq.com) that AppFlow uses to connect and send data to Datadog. (AI-inferred)
     instance_url: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Pardot:
-    # The unique business unit identifier for the Salesforce Pardot instance that the connector profile authenticates against, required to make Pardot API calls through AppFlow. (AI-inferred)
     business_unit_id: Any = None
-    # The base URL of the Pardot instance (e.g., https://pi.pardot.com) that AppFlow should connect to for the connector profile. (AI-inferred)
     instance_url: Any = None
     # Indicates whether the connector profile applies to a demo or production environment
     is_sandbox_environment: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Redshift:
-    # The name of the Amazon S3 bucket used as a staging location for data to be loaded into Amazon Redshift during an AppFlow flow. (AI-inferred)
     bucket_name: Any = None
-    # The S3 key prefix (path) within the configured staging bucket that AppFlow uses to store temporary intermediate files during data transfer to Amazon Redshift. (AI-inferred)
     bucket_prefix: Any = None
-    # The identifier of the Amazon Redshift cluster that the connector profile uses as its data destination or source. (AI-inferred)
     cluster_identifier: Any = None
-    # The ARN of the IAM role that grants AppFlow permission to access the Redshift cluster via the Amazon Redshift Data API, enabling serverless SQL queries and data transfers for the connector profile. (AI-inferred)
     data_api_role_arn: Any = None
-    # The name of the Amazon Redshift database that the AppFlow connector profile will use for data transfers. (AI-inferred)
     database_name: Any = None
-    # The JDBC URL of the Amazon Redshift database to which AppFlow connects, specifying the cluster endpoint, port, and database name, such as `jdbc:redshift://example-cluster.xxxx.redshift.amazonaws.com:5439/example_db`. (AI-inferred)
     database_url: Any = None
     # If Amazon AppFlow will connect to Amazon Redshift Serverless or Amazon Redshift cluster.
     is_redshift_serverless: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that AppFlow assumes to access the Redshift database. (AI-inferred)
     role_arn: Any = None
-    # The name of the Redshift Serverless workgroup used for data transfers in AppFlow. (AI-inferred)
     workgroup_name: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Salesforce:
-    # The URL of the Salesforce instance that AppFlow uses to connect to your Salesforce account when using this connector profile. (AI-inferred)
     instance_url: Any = None
     # Indicates whether the connector profile applies to a sandbox or production environment
     is_sandbox_environment: Any = None
@@ -267,78 +184,47 @@ class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sal
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sapodata_OauthProperties:
-    # The authorization code URL used in the OAuth flow for the SAP OData connector profile. (AI-inferred)
     auth_code_url: Any = None
-    # Specifies the list of OAuth scopes required for authentication with the SAPOData connector when using OAuth. (AI-inferred)
     oauth_scopes: Any = None
-    # Specifies the OAuth token endpoint URL used to authenticate with the SAPOData (SAP OData) provider. (AI-inferred)
     token_url: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Sapodata:
-    # The URL of the SAP OData endpoint (e.g., https://host:port) that AppFlow uses to connect to the SAP system for this connector profile. (AI-inferred)
     application_host_url: Any = None
-    # The path to the SAP OData service on the SAP system, which AppFlow uses to access the specific OData endpoint for the SAP data source. (AI-inferred)
     application_service_path: Any = None
-    # The SAP client number used to authenticate with the SAP system, typically a three-digit numeric string. (AI-inferred)
     client_number: Any = None
     # If you set this parameter to true, Amazon AppFlow bypasses the single sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.
     disable_sso: Any = None
-    # Specifies the logon language for the SAP OData connector, such as 'EN' for English or 'DE' for German, used during authentication and data retrieval. (AI-inferred)
     logon_language: Any = None
-    # Defines the OAuth 2.0 authentication endpoints (authorization code URL and token URL) for the SAPOData connector profile. (AI-inferred)
     oauth_properties: Any = None
-    # The TCP port number of the SAP OData service endpoint used for the AppFlow connection. (AI-inferred)
     port_number: Any = None
-    # Specifies the name of the AWS PrivateLink service that AppFlow uses to securely connect to the SAP OData endpoint via a VPC endpoint. (AI-inferred)
     private_link_service_name: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties_Snowflake:
-    # The Snowflake account name (or account locator) that the connector profile uses to connect to the Snowflake data warehouse. (AI-inferred)
     account_name: Any = None
-    # The name of the S3 bucket that AppFlow uses as a staging location when transferring data to Snowflake. (AI-inferred)
     bucket_name: Any = None
-    # Specifies the S3 bucket prefix under which AppFlow stages data before loading it into Snowflake, used as the staging location for the Snowflake connector profile. (AI-inferred)
     bucket_prefix: Any = None
-    # The name of the Snowflake PrivateLink service used to establish a private connection between AppFlow and Snowflake. (AI-inferred)
     private_link_service_name: Any = None
-    # The AWS region where the Snowflake account is hosted, used by AppFlow to route connection requests to the correct Snowflake endpoint. (AI-inferred)
     region: Any = None
-    # Specifies the Snowflake stage (such as a named external or internal stage) that AppFlow uses to stage data before loading it into Snowflake for the connection profile. (AI-inferred)
     stage: Any = None
-    # The name of the Snowflake warehouse used by the AppFlow connector for data operations. (AI-inferred)
     warehouse: Any = None
 
 @dataclasses.dataclass
 class FlowConnectorProfile_ConnectorProfileConfig_ConnectorProfileProperties:
-    # Specifies the connector-specific settings for a custom connector profile, including OAuth 2.0 authentication properties and custom key-value profile properties. (AI-inferred)
     custom_connector: Any = None
-    # Contains the Datadog-specific connector profile properties, such as the instance URL, used by AWS AppFlow to connect to your Datadog account. (AI-inferred)
     datadog: Any = None
-    # Specifies the Dynatrace connector profile settings, including the instance URL of the Dynatrace environment to connect to. (AI-inferred)
     dynatrace: Any = None
-    # Contains the Infor Nexus-specific connection settings, including the instance URL required to authenticate with the Infor Nexus instance. (AI-inferred)
     infor_nexus: Any = None
-    # Contains Marketo-specific connection profile settings, including the Marketo instance URL (instanceUrl) that identifies the target Marketo account. (AI-inferred)
     marketo: Any = None
-    # This object contains the connector profile properties specific to the Pardot connector, such as the site address (the Pardot instance URL) used to connect and authenticate with your Pardot account. (AI-inferred)
     pardot: Any = None
-    # The Redshift-specific configuration object that holds the database connection parameters (such as host, port, database name, and credentials) and staging S3 options for an Amazon Redshift destination in this AppFlow connector profile. (AI-inferred)
     redshift: Any = None
-    # Defines the Salesforce-specific connector profile properties, including the instance URL and sandbox indicator used by AppFlow to connect to Salesforce. (AI-inferred)
     salesforce: Any = None
-    # Specifies the SAP OData connector-specific profile settings, including the OData service base URL and authentication credentials such as client ID and client secret. (AI-inferred)
     sapodata: Any = None
-    # Specifies the ServiceNow instance URL that AppFlow uses to connect to the ServiceNow environment when this connector profile is selected. (AI-inferred)
     service_now: Any = None
-    # Contains Slack-specific connection settings for the AppFlow profile, such as the Slack workspace instance URL (InstanceUrl) and optional access token (AccessToken). (AI-inferred)
     slack: Any = None
-    # This object holds the Snowflake-specific connection properties for the AppFlow connector profile, specifying the Snowflake account, warehouse, and staging bucket details used to authenticate and route data to Snowflake. (AI-inferred)
     snowflake: Any = None
-    # Provides the instance URL of your Veeva environment that the AppFlow connector uses to establish connectivity. (AI-inferred)
     veeva: Any = None
-    # This object contains the Zendesk-specific connector profile properties, including the Zendesk instance URL and whether OAuth 2.0 is enabled, used to configure your AppFlow connection to Zendesk. (AI-inferred)
     zendesk: Any = None
 
 @dataclasses.dataclass
@@ -766,7 +652,6 @@ class FlowConnectorProfileConfig:
     connector_profile_config: Any = None
     # The maximum number of items to retrieve in a single batch.
     connector_profile_name: Any = None
-    # Specifies the service or data source type for the connector profile (e.g., Salesforce, SAPOData, Google BigQuery), which determines which connector-specific profile fields are applicable. (AI-inferred)
     connector_type: Any = None
     # The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment variables. If it's not provided, AWS Lambda uses a default service key.
     kmsarn: Any = None
@@ -783,7 +668,6 @@ class FlowConnectorProfileAttrs:
     connector_profile_config: Any = None
     # The maximum number of items to retrieve in a single batch.
     connector_profile_name: Any = None
-    # Specifies the service or data source type for the connector profile (e.g., Salesforce, SAPOData, Google BigQuery), which determines which connector-specific profile fields are applicable. (AI-inferred)
     connector_type: Any = None
     # A unique Arn for Connector-Profile resource
     credentials_arn: Any = None

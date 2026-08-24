@@ -4,23 +4,16 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dbinstance_AdditionalStorageVolumes struct {
-	// The amount of storage, in gibibytes (GiB), to allocate for this additional storage volume attached to the RDS DB instance. (AI-inferred)
 	AllocatedStorage any
-	// The number of provisioned IOPS to allocate for the additional storage volume on the RDS instance, applicable when the volume's storage type is a provisioned-IOPS type such as io1 or io2. (AI-inferred)
 	Iops any
-	// The maximum storage size, in gigabytes, to which this additional storage volume can be automatically scaled when automatic storage expansion is enabled for the DB instance. (AI-inferred)
 	MaxAllocatedStorage any
-	// Specifies the storage throughput in MiB/s for the additional storage volume when using the gp3 storage type. (AI-inferred)
 	StorageThroughput any
 	StorageType any
-	// Specifies the name of an additional storage volume for the DB instance, which must be unique among all additional storage volumes on the instance. (AI-inferred)
 	VolumeName any
 }
 
 type Dbinstance_AssociatedRoles struct {
-	// The name of the feature (e.g., S3_INTEGRATION) that the associated IAM role enables for the DB instance, such as allowing Amazon S3 integration. (AI-inferred)
 	FeatureName any
-	// The ARN of the IAM role to associate with the DB instance, enabling the instance to make API calls to other AWS services like S3 or Lambda on your behalf. (AI-inferred)
 	RoleArn any
 }
 
@@ -48,26 +41,19 @@ type Dbinstance_MasterUserSecret struct {
 }
 
 type Dbinstance_ProcessorFeatures struct {
-	// The name of the processor feature to configure for the RDS DB instance, such as 'coreCount' or 'threadsPerCore', used to set the desired CPU core count and threads per core. (AI-inferred)
 	Name any
-	// Specifies the value for a processor feature (e.g., enabling or disabling Intel Turbo Boost) for a supported DB instance class. (AI-inferred)
 	Value any
 }
 
 type Dbinstance_StatusInfos struct {
-	// The status message returned by RDS for a DB instance's status information entry, such as the reason behind a read replica or maintenance status. (AI-inferred)
 	Message any
-	// Indicates whether the RDS DB instance is operating normally with no issues for this particular status info entry, as returned by the RDS DescribeDBInstances API's DBInstanceStatusInfo object. (AI-inferred)
 	Normal any
-	// The status of a read replica's replication, as reported in the RDS API's StatusInfos list. (AI-inferred)
 	Status any
-	// Indicates the type of an RDS DB instance status entry (e.g., 'read replication') within the status_infos list, which categorizes a particular status message. (AI-inferred)
 	StatusType any
 }
 
 type Dbinstance_Tags struct {
 	Key any
-	// The value component of a key-value tag attached to the DB instance, used for metadata, cost allocation, and resource management in Amazon RDS. (AI-inferred)
 	Value any
 }
 
@@ -248,9 +234,7 @@ type DbinstanceConfig struct {
 	StorageType any
 	// Tags to assign to the DB instance.
 	Tags any
-	// The ARN of the AWS Secrets Manager secret that stores the Transparent Data Encryption (TDE) password for an Oracle DB instance, used to encrypt or decrypt the database. (AI-inferred)
 	TdeCredentialArn any
-	// The password that corresponds to the TDE credential ARN, used to access the Transparent Data Encryption (TDE) key for an Oracle DB instance. (AI-inferred)
 	TdeCredentialPassword any
 	// The time zone of the DB instance. The time zone parameter is currently supported only by [RDS for Db2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-time-zone) and [RDS for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone).
 	Timezone any
@@ -304,13 +288,11 @@ type DbinstanceAttrs struct {
 	DbclusterIdentifier any
 	// The identifier for the Multi-AZ DB cluster snapshot to restore from. For more information on Multi-AZ DB clusters, see [Multi-AZ DB cluster deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html) in the *Amazon RDS User Guide*. Constraints: + Must match the identifier of an existing Multi-AZ DB cluster snapshot. + Can't be specified when ``DBSnapshotIdentifier`` is specified. + Must be specified when ``DBSnapshotIdentifier`` isn't specified. + If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the ``DBClusterSnapshotIdentifier`` must be the ARN of the shared snapshot. + Can't be the identifier of an Aurora DB cluster snapshot.
 	DbclusterSnapshotIdentifier any
-	// Amazon Resource Name (ARN) that uniquely identifies the RDS DB instance. (AI-inferred)
 	DbinstanceArn any
 	// The compute and memory capacity of the DB instance, for example ``db.m5.large``. Not all DB instance classes are available in all AWS-Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see [DB instance classes](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html) in the *Amazon RDS User Guide* or [Aurora DB instance classes](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html) in the *Amazon Aurora User Guide*.
 	DbinstanceClass any
 	// A name for the DB instance. If you specify a name, AWS CloudFormation converts it to lowercase. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the DB instance. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html). For information about constraints that apply to DB instance identifiers, see [Naming constraints in Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html#RDS_Limits.Constraints) in the *Amazon RDS User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
 	DbinstanceIdentifier any
-	// The current lifecycle status of the RDS DB instance, e.g. 'available', 'creating', 'modifying', or 'deleting'. (AI-inferred)
 	DbinstanceStatus any
 	// The meaning of this parameter differs according to the database engine you use. If you specify the ``DBSnapshotIdentifier`` property, this property only applies to RDS for Oracle. *Amazon Aurora* Not applicable. The database name is managed by the DB cluster. *Db2* The name of the database to create when the DB instance is created. If this parameter isn't specified, no database is created in the DB instance. Constraints: + Must contain 1 to 64 letters or numbers. + Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9). + Can't be a word reserved by the specified database engine. *MySQL* The name of the database to create when the DB instance is created. If this parameter is not specified, no database is created in the DB instance. Constraints: + Must contain 1 to 64 letters or numbers. + Can't be a word reserved by the specified database engine *MariaDB* The name of the database to create when the DB instance is created. If this parameter is not specified, no database is created in the DB instance. Constraints: + Must contain 1 to 64 letters or numbers. + Can't be a word reserved by the specified database engine *PostgreSQL* The name of the database to create when the DB instance is created. If this parameter is not specified, the default ``postgres`` database is created in the DB instance. Constraints: + Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9). + Must contain 1 to 63 characters. + Can't be a word reserved by the specified database engine *Oracle* The Oracle System ID (SID) of the created DB instance. If you specify ``null``, the default value ``ORCL`` is used. You can't specify the string NULL, or any other reserved word, for ``DBName``. Default: ``ORCL`` Constraints: + Can't be longer than 8 characters *SQL Server* Not applicable. Must be null.
 	Dbname any
@@ -326,7 +308,6 @@ type DbinstanceAttrs struct {
 	DbsystemId any
 	// The mode of Database Insights to enable for the DB instance. Aurora DB instances inherit this value from the DB cluster, so you can't change this value.
 	DatabaseInsightsMode any
-	// The AWS-generated unique identifier for the RDS DB instance, used for IAM resource-level permissions and other AWS service integrations. (AI-inferred)
 	DbiResourceId any
 	// Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
 	DedicatedLogVolume any
@@ -360,15 +341,12 @@ type DbinstanceAttrs struct {
 	EngineLifecycleSupport any
 	// The version number of the database engine to use. For a list of valid engine versions, use the ``DescribeDBEngineVersions`` action. The following are the database engines and links to information about the major and minor versions that are available with Amazon RDS. Not every database engine is available for every AWS Region. *Amazon Aurora* Not applicable. The version number of the database engine to be used by the DB instance is managed by the DB cluster. *Db2* See [Amazon RDS for Db2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html#Db2.Concepts.VersionMgmt) in the *Amazon RDS User Guide.* *MariaDB* See [MariaDB on Amazon RDS Versions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt) in the *Amazon RDS User Guide.* *Microsoft SQL Server* See [Microsoft SQL Server Versions on Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport) in the *Amazon RDS User Guide.* *MySQL* See [MySQL on Amazon RDS Versions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt) in the *Amazon RDS User Guide.* *Oracle* See [Oracle Database Engine Release Notes](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html) in the *Amazon RDS User Guide.* *PostgreSQL* See [Supported PostgreSQL Database Versions](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions) in the *Amazon RDS User Guide.*
 	EngineVersion any
-	// The timestamp indicating when the DB instance was created, typically in ISO 8601 format. (AI-inferred)
 	InstanceCreateTime any
 	// The number of I/O operations per second (IOPS) that the database provisions. The value must be equal to or greater than 1000. If you specify this property, you must follow the range of allowed ratios of your requested IOPS rate to the amount of storage that you allocate (IOPS to allocated storage). For example, you can provision an Oracle database instance with 1000 IOPS and 200 GiB of storage (a ratio of 5:1), or specify 2000 IOPS with 200 GiB of storage (a ratio of 10:1). For more information, see [Amazon RDS Provisioned IOPS Storage to Improve Performance](https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/CHAP_Storage.html#USER_PIOPS) in the *Amazon RDS User Guide*. If you specify ``io1`` for the ``StorageType`` property, then you must also specify the ``Iops`` property. Constraints: + For RDS for Db2, MariaDB, MySQL, Oracle, and PostgreSQL - Must be a multiple between .5 and 50 of the storage amount for the DB instance. + For RDS for SQL Server - Must be a multiple between 1 and 50 of the storage amount for the DB instance.
 	Iops any
-	// Reports whether an available storage configuration upgrade (e.g., from gp2 to gp3 storage type) exists for the DB instance. (AI-inferred)
 	IsStorageConfigUpgradeAvailable any
 	// The ARN of the AWS KMS key that's used to encrypt the DB instance, such as ``arn:aws:kms:us-east-1:012345678910:key/abcd1234-a123-456a-a12b-a123b4cd56ef``. If you enable the StorageEncrypted property but don't specify this property, AWS CloudFormation uses the default KMS key. If you specify this property, you must set the StorageEncrypted property to true. If you specify the ``SourceDBInstanceIdentifier`` or ``SourceDbiResourceId`` property, don't specify this property. The value is inherited from the source DB instance, and if the DB instance is encrypted, the specified ``KmsKeyId`` property is used. However, if the source DB instance is in a different AWS Region, you must specify a KMS key ID. If you specify the ``SourceDBInstanceAutomatedBackupsArn`` property, don't specify this property. The value is inherited from the source DB instance automated backup, and if the automated backup is encrypted, the specified ``KmsKeyId`` property is used. If you create an encrypted read replica in a different AWS Region, then you must specify a KMS key for the destination AWS Region. KMS encryption keys are specific to the region that they're created in, and you can't use encryption keys from one region in another region. If you specify the ``DBSnapshotIdentifier`` property, don't specify this property. The ``StorageEncrypted`` property value is inherited from the snapshot. If the DB instance is encrypted, the specified ``KmsKeyId`` property is also inherited from the snapshot. If you specify ``DBSecurityGroups``, AWS CloudFormation ignores this property. To specify both a security group and this property, you must use a VPC security group. For more information about Amazon RDS and VPC, see [Using Amazon RDS with Amazon VPC](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html) in the *Amazon RDS User Guide*. *Amazon Aurora* Not applicable. The KMS key identifier is managed by the DB cluster.
 	KmsKeyId any
-	// The latest time, in UTC, to which the DB instance can be restored using point-in-time recovery, returned as a timestamp string (e.g., 2023-12-01T18:00:00Z) that updates as new backups are taken. (AI-inferred)
 	LatestRestorableTime any
 	// License model information for this DB instance. Valid Values: + Aurora MySQL - ``general-public-license`` + Aurora PostgreSQL - ``postgresql-license`` + RDS for Db2 - ``bring-your-own-license``. For more information about RDS for Db2 licensing, see [](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html) in the *Amazon RDS User Guide.* + RDS for MariaDB - ``general-public-license`` + RDS for Microsoft SQL Server - ``license-included`` or ``bring-your-own-media`` + RDS for MySQL - ``general-public-license`` + RDS for Oracle - ``bring-your-own-license`` or ``license-included`` + RDS for PostgreSQL - ``postgresql-license`` If you've specified ``DBSecurityGroups`` and then you update the license model, AWS CloudFormation replaces the underlying DB instance. This will incur some interruptions to database availability.
 	LicenseModel any
@@ -398,7 +376,6 @@ type DbinstanceAttrs struct {
 	NetworkType any
 	// Indicates that the DB instance should be associated with the specified option group. Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance.
 	OptionGroupName any
-	// The progress, as a percentage, of a major version upgrade or database restoration for the DB instance, as reported by the AWS RDS API. (AI-inferred)
 	PercentProgress any
 	// The AWS KMS key identifier for encryption of Performance Insights data. The KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. If you do not specify a value for ``PerformanceInsightsKMSKeyId``, then Amazon RDS uses your default KMS key. There is a default KMS key for your AWS account. Your AWS account has a different default KMS key for each AWS Region. *Update behavior:* Once Performance Insights is enabled with a KMS key, you cannot change to a different physical KMS key without replacing the DB instance. However, the following updates do not require replacement: + Enabling or disabling Performance Insights using the ``EnablePerformanceInsights`` property + Changing between different identifier formats (key ARN, key ID, alias ARN, alias name) of the same physical KMS key + Removing the ``PerformanceInsightsKMSKeyId`` property from your template *Drift behavior:* If you specify ``PerformanceInsightsKMSKeyId`` while ``EnablePerformanceInsights`` is set to ``false``, CloudFormation will report drift. This occurs because the RDS API does not allow setting a KMS key when Performance Insights is disabled. CloudFormation ignores the ``PerformanceInsightsKMSKeyId`` value during instance creation to avoid API errors, resulting in a mismatch between your template and the actual instance configuration. To avoid drift, omit both ``EnablePerformanceInsights`` and ``PerformanceInsightsKMSKeyId`` during initial instance creation, then set both properties together when you're ready to enable Performance Insights. For information about enabling Performance Insights, see [EnablePerformanceInsights](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-enableperformanceinsights).
 	PerformanceInsightsKmskeyId any
@@ -416,17 +393,13 @@ type DbinstanceAttrs struct {
 	PromotionTier any
 	// Indicates whether the DB instance is an internet-facing instance. If you specify true, AWS CloudFormation creates an instance with a publicly resolvable DNS name, which resolves to a public IP address. If you specify false, AWS CloudFormation creates an internal instance with a DNS name that resolves to a private IP address. The default behavior value depends on your VPC setup and the database subnet group. For more information, see the ``PubliclyAccessible`` parameter in the [CreateDBInstance](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html) in the *Amazon RDS API Reference*.
 	PubliclyAccessible any
-	// Lists the identifiers of the Aurora DB clusters for which this DB instance is a read replica, as reported by RDS after creation. (AI-inferred)
 	ReadReplicaDbclusterIdentifiers any
-	// A list of identifiers for any read replicas attached to this RDS DB instance, as reported by the AWS RDS describe-db-instances API. (AI-inferred)
 	ReadReplicaDbinstanceIdentifiers any
 	// The open mode of an Oracle read replica. For more information, see [Working with Oracle Read Replicas for Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html) in the *Amazon RDS User Guide*. This setting is only supported in RDS for Oracle. Default: ``open-read-only`` Valid Values: ``open-read-only`` or ``mounted``
 	ReplicaMode any
 	// The date and time to restore from. This parameter applies to point-in-time recovery. For more information, see [Restoring a DB instance to a specified time](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html) in the in the *Amazon RDS User Guide*. Constraints: + Must be a time in Universal Coordinated Time (UTC) format. + Must be before the latest restorable time for the DB instance. + Can't be specified if the ``UseLatestRestorableTime`` parameter is enabled. Example: ``2009-09-07T23:45:00Z``
 	RestoreTime any
-	// The timestamp indicating when the RDS Custom DB instance will automatically resume full automation mode after a pause, present only when the instance's automation is in a paused state. (AI-inferred)
 	ResumeFullAutomationModeTime any
-	// The Availability Zone of the standby DB instance in a Multi-AZ deployment, automatically populated by AWS and read-only. (AI-inferred)
 	SecondaryAvailabilityZone any
 	// The identifier of the Multi-AZ DB cluster that will act as the source for the read replica. Each DB cluster can have up to 15 read replicas. Constraints: + Must be the identifier of an existing Multi-AZ DB cluster. + Can't be specified if the ``SourceDBInstanceIdentifier`` parameter is also specified. + The specified DB cluster must have automatic backups enabled, that is, its backup retention period must be greater than 0. + The source DB cluster must be in the same AWS-Region as the read replica. Cross-Region replication isn't supported.
 	SourceDbclusterIdentifier any
@@ -438,7 +411,6 @@ type DbinstanceAttrs struct {
 	SourceDbiResourceId any
 	// The ID of the region that contains the source DB instance for the read replica.
 	SourceRegion any
-	// The status_infos field is a read-only list of status information objects for the DB instance, each containing a status type, status value, a descriptive message, and a boolean indicating whether the status is normal. (AI-inferred)
 	StatusInfos any
 	// A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted. If you specify the ``KmsKeyId`` property, then you must enable encryption. If you specify the ``SourceDBInstanceIdentifier`` or ``SourceDbiResourceId`` property, don't specify this property. The value is inherited from the source DB instance, and if the DB instance is encrypted, the specified ``KmsKeyId`` property is used. If you specify the ``SourceDBInstanceAutomatedBackupsArn`` property, don't specify this property. The value is inherited from the source DB instance automated backup. If you specify ``DBSnapshotIdentifier`` property, don't specify this property. The value is inherited from the snapshot. *Amazon Aurora* Not applicable. The encryption for DB instances is managed by the DB cluster.
 	StorageEncrypted any
@@ -448,9 +420,7 @@ type DbinstanceAttrs struct {
 	StorageType any
 	// Tags to assign to the DB instance.
 	Tags any
-	// The ARN of the AWS Secrets Manager secret that stores the Transparent Data Encryption (TDE) password for an Oracle DB instance, used to encrypt or decrypt the database. (AI-inferred)
 	TdeCredentialArn any
-	// The password that corresponds to the TDE credential ARN, used to access the Transparent Data Encryption (TDE) key for an Oracle DB instance. (AI-inferred)
 	TdeCredentialPassword any
 	// The time zone of the DB instance. The time zone parameter is currently supported only by [RDS for Db2](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-time-zone) and [RDS for SQL Server](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone).
 	Timezone any

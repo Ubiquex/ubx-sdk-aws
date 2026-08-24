@@ -25,7 +25,6 @@ var TransitGatewayPolicyTableEntry_PolicyRuleFields = ubx.FieldMap{
 	}
 
 type TransitGatewayPolicyTableEntryConfig struct {
-	// The policy rule that defines the source and destination CIDR blocks, protocol, port ranges, and action (allow or drop) for the transit gateway policy table entry. (AI-inferred)
 	PolicyRule any
 	// The rule number for the policy table entry.
 	PolicyRuleNumber any
@@ -36,7 +35,6 @@ type TransitGatewayPolicyTableEntryConfig struct {
 }
 
 type TransitGatewayPolicyTableEntryAttrs struct {
-	// The policy rule that defines the source and destination CIDR blocks, protocol, port ranges, and action (allow or drop) for the transit gateway policy table entry. (AI-inferred)
 	PolicyRule any
 	// The rule number for the policy table entry.
 	PolicyRuleNumber any

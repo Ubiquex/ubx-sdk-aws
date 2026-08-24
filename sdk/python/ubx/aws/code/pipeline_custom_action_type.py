@@ -8,19 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PipelineCustomActionType_ConfigurationProperties:
-    # A short, user-facing description of the configuration property that is displayed to users in the CodePipeline console. (AI-inferred)
     description: Any = None
-    # Indicates whether the configuration property is a key, which is used to uniquely identify the action instance within AWS CodePipeline. (AI-inferred)
     key: Any = None
-    # The unique, human-readable identifier for a configuration property of the custom action type, used as the property key when specifying action configuration values in a pipeline. (AI-inferred)
     name: Any = None
-    # Indicates whether the configuration property can be used as a filter (queryable) when listing or viewing pipeline executions in the AWS CodePipeline console. (AI-inferred)
     queryable: Any = None
-    # Indicates whether the configuration property is required for the custom action type to be used in a pipeline. (AI-inferred)
     required: Any = None
-    # Specifies whether the configuration property is a secret (such as a password) and should be hidden from view in the CodePipeline console. (AI-inferred)
     secret: Any = None
-    # Specifies the data type of the configuration property that the custom action accepts, such as 'String', 'Number', or 'Boolean', which determines how the property value is handled by the pipeline. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -43,7 +36,6 @@ class PipelineCustomActionType_Settings:
 
 @dataclasses.dataclass
 class PipelineCustomActionType_Tags:
-    # The tag key (such as 'Environment') used to label and categorize this AWS CodePipeline custom action type for management and identification purposes. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -99,7 +91,6 @@ class PipelineCustomActionTypeAttrs:
     category: Any = None
     # The configuration properties for the custom action.
     configuration_properties: Any = None
-    # The unique identifier assigned by AWS CodePipeline to this custom action type upon creation. (AI-inferred)
     id: Any = None
     # Returns information about the details of an artifact.
     input_artifact_details: Any = None

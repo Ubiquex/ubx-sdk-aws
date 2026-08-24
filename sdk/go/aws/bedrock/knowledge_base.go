@@ -9,12 +9,10 @@ type KnowledgeBase_KnowledgeBaseConfiguration_KendraKnowledgeBaseConfiguration s
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_Audio_SegmentationConfiguration struct {
-	// Specifies the fixed duration in seconds for splitting audio into segments for embedding in the Bedrock knowledge base. (AI-inferred)
 	FixedLengthDuration any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_ManagedKnowledgeBaseConfiguration_EmbeddingModelConfiguration_BedrockEmbeddingModelConfiguration_Audio struct {
-	// Configures how audio content is split into segments for embedding generation, including segmentation strategy and segment duration, when creating a knowledge base in Amazon Bedrock. (AI-inferred)
 	SegmentationConfiguration any
 }
 
@@ -90,29 +88,20 @@ type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_Reds
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_CuratedQueries struct {
-	// The natural language phrasing of a curated example query, representing the user's question or intent that the corresponding SQL statement is meant to answer. (AI-inferred)
 	NaturalLanguage any
-	// The SQL query string of a curated query that serves as an example to guide the model's SQL generation for the Redshift-based knowledge base. (AI-inferred)
 	Sql any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_Tables_Columns struct {
-	// Provides a natural-language description of a column in the table context, used by Bedrock to generate accurate SQL queries against the Redshift database. (AI-inferred)
 	Description any
-	// Specifies whether the column is included in the generation context for query generation in the Redshift configuration of the SQL knowledge base. (AI-inferred)
 	Inclusion any
-	// Specifies the name of a column in a Redshift table that the knowledge base uses as context for generating SQL queries. (AI-inferred)
 	Name any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_QueryGenerationConfiguration_GenerationContext_Tables struct {
-	// Specifies the list of columns for each table in the query generation context, where each column object defines the column name and data type used by the model to generate SQL queries. (AI-inferred)
 	Columns any
-	// Provides a human-readable description of the table to help the query generation model understand its purpose and contents for generating SQL queries. (AI-inferred)
 	Description any
-	// Specifies whether the listed Redshift table is included in or excluded from the query generation context, using an enum value such as 'INCLUDE' or 'EXCLUDE'. (AI-inferred)
 	Inclusion any
-	// The name of the Redshift table that is included in the query generation context, allowing the knowledge base to reference this table when generating SQL queries. (AI-inferred)
 	Name any
 }
 
@@ -131,21 +120,16 @@ type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_Reds
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_AwsDataCatalogConfiguration struct {
-	// The list of table names in the AWS Glue Data Catalog that the Redshift SQL knowledge base will use for querying and retrieving data. (AI-inferred)
 	TableNames any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations_RedshiftConfiguration struct {
-	// Specifies the name of the Redshift database that the Amazon Bedrock knowledge base uses to store and query data within the configured Redshift cluster. (AI-inferred)
 	DatabaseName any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration_RedshiftConfiguration_StorageConfigurations struct {
-	// Defines the AWS Glue Data Catalog settings (catalog ID, database name, and table name) that identify the Redshift data source to use for the knowledge base's SQL configuration. (AI-inferred)
 	AwsDataCatalogConfiguration any
-	// Defines the Amazon Redshift connection details for one storage configuration in an Amazon Bedrock SQL knowledge base, including the Redshift server and authentication parameters. (AI-inferred)
 	RedshiftConfiguration any
-	// Specifies the storage format for the Redshift table in the knowledge base's SQL configuration, with allowed values 'ROW' or 'COLUMNAR'. (AI-inferred)
 	Type any
 }
 
@@ -166,14 +150,11 @@ type KnowledgeBase_KnowledgeBaseConfiguration_SqlKnowledgeBaseConfiguration stru
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocations_S3Location struct {
-	// The S3 URI (e.g., s3://bucket-name/object-key) of a supplemental data storage location where additional data for the Bedrock vector knowledge base is stored. (AI-inferred)
 	Uri any
 }
 
 type KnowledgeBase_KnowledgeBaseConfiguration_VectorKnowledgeBaseConfiguration_SupplementalDataStorageConfiguration_SupplementalDataStorageLocations struct {
-	// The S3 location (bucket and key prefix) that specifies where supplemental data files for the knowledge base are stored, used alongside the vector index for retrieval. (AI-inferred)
 	S3Location any
-	// Specifies whether the supplemental data storage location is an Amazon S3 bucket (S3) or in-memory storage (IN_MEMORY) for the Bedrock knowledge base. (AI-inferred)
 	SupplementalDataStorageLocationType any
 }
 

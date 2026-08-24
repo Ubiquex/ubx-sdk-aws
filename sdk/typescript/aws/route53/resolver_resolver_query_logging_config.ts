@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolverResolverQueryLoggingConfig_Tags {
-  /** The key of a tag attached to this Route 53 Resolver query logging configuration, used to categorize and identify the resource (for example, 'Environment' or 'Project'). (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag assigned to the Route53 Resolver query logging configuration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

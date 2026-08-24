@@ -8,13 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TBillingGroup_BillingGroupProperties:
-    # A user-defined, free-form description of the AWS IoT billing group, used to provide additional context about the group's purpose. (AI-inferred)
     billing_group_description: Any = None
 
 @dataclasses.dataclass
 class TBillingGroup_Tags:
     key: Any = None
-    # The string value of a tag assigned to the AWS IoT Billing Group, used to store arbitrary metadata about the billing group. (AI-inferred)
     value: Any = None
 
 _TBillingGroup_BillingGroupPropertiesFields = {
@@ -28,22 +26,16 @@ _TBillingGroup_TagsFields = {
 
 @dataclasses.dataclass
 class TBillingGroupConfig:
-    # The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred)
     billing_group_name: Any = None
-    # Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred)
     billing_group_properties: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class TBillingGroupAttrs:
-    # The Amazon Resource Name (ARN) of the IoT billing group, uniquely identifying it across AWS. (AI-inferred)
     arn: Any = None
-    # The name that uniquely identifies the IoT billing group, used to group devices for consolidated billing and usage tracking. (AI-inferred)
     billing_group_name: Any = None
-    # Contains properties of the billing group, such as a description field (BillingGroupDescription) for identifying the group's purpose. (AI-inferred)
     billing_group_properties: Any = None
-    # The unique name of the AWS IoT billing group, which serves as the resource's identifier in AWS IoT. (AI-inferred)
     id: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

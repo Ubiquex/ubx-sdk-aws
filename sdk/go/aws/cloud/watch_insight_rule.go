@@ -4,7 +4,6 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WatchInsightRule_Tags struct {
-	// The key of a tag attached to the CloudWatch Contributor Insights rule, used for resource categorization, cost allocation, and access management. (AI-inferred)
 	Key any
 	Value any
 }
@@ -15,30 +14,19 @@ var WatchInsightRule_TagsFields = ubx.FieldMap{
 	}
 
 type WatchInsightRuleConfig struct {
-	// When set to true, this boolean indicates that the Contributor Insights rule evaluates logs after they have been processed by a CloudWatch Logs transformation, rather than the original raw logs. (AI-inferred)
 	ApplyOnTransformedLogs any
-	// The JSON rule definition for the Contributor Insights rule, specifying the log filter, aggregation, and metric settings. (AI-inferred)
 	RuleBody any
-	// The name of the Contributor Insights rule, which must be unique within your AWS account and is used to identify and reference the rule in CloudWatch. (AI-inferred)
 	RuleName any
-	// Specifies whether the Contributor Insights rule is enabled or disabled, with valid values ENABLED and DISABLED, controlling whether the rule continuously collects and aggregates log data for the specified metrics. (AI-inferred)
 	RuleState any
-	// A list of key-value tags to attach to the CloudWatch Contributor Insights rule, enabling you to categorize and manage the rule across your AWS environment. (AI-inferred)
 	Tags any
 }
 
 type WatchInsightRuleAttrs struct {
-	// When set to true, this boolean indicates that the Contributor Insights rule evaluates logs after they have been processed by a CloudWatch Logs transformation, rather than the original raw logs. (AI-inferred)
 	ApplyOnTransformedLogs any
-	// The Amazon Resource Name (ARN) that uniquely identifies the CloudWatch contributor insights rule. (AI-inferred)
 	Arn any
-	// The JSON rule definition for the Contributor Insights rule, specifying the log filter, aggregation, and metric settings. (AI-inferred)
 	RuleBody any
-	// The name of the Contributor Insights rule, which must be unique within your AWS account and is used to identify and reference the rule in CloudWatch. (AI-inferred)
 	RuleName any
-	// Specifies whether the Contributor Insights rule is enabled or disabled, with valid values ENABLED and DISABLED, controlling whether the rule continuously collects and aggregates log data for the specified metrics. (AI-inferred)
 	RuleState any
-	// A list of key-value tags to attach to the CloudWatch Contributor Insights rule, enabling you to categorize and manage the rule across your AWS environment. (AI-inferred)
 	Tags any
 }
 

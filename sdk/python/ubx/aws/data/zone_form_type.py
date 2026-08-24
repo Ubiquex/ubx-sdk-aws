@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneFormType_Model:
-    # The Smithy model definition that specifies the structure and validation rules for the form type. (AI-inferred)
     smithy: Any = None
 
 _ZoneFormType_ModelFields = {

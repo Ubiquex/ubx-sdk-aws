@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DiscoveryService_DnsConfig_DnsRecords {
-  /** The time-to-live (TTL) in seconds for the DNS record, controlling how long resolvers cache it before querying AWS Cloud Map again. (AI-inferred) */
   ttl?: number | Computed<number>;
-  /** Specifies the DNS record type (A, AAAA, SRV, or CNAME) for the service's DNS records. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -32,9 +30,7 @@ export interface DiscoveryService_HealthCheckCustomConfig {
 }
 
 export interface DiscoveryService_Tags {
-  /** This key identifies a tag attached to the AWS Cloud Map service, allowing you to assign metadata for cost tracking, access control, or resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS CloudFormation service discovery service, used to organize, identify, or manage the resource through key-value pairs. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

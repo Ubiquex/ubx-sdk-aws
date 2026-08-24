@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Certificate_Tags:
-    # The key of a tag assigned to the Lightsail certificate, used to categorize and identify the certificate in the Lightsail console and API. (AI-inferred)
     key: Any = None
-    # The value portion of a tag assigned to the AWS Lightsail certificate, used to label, organize, and support cost allocation for the certificate. (AI-inferred)
     value: Any = None
 
 _Certificate_TagsFields = {
@@ -31,7 +29,6 @@ class CertificateConfig:
 
 @dataclasses.dataclass
 class CertificateAttrs:
-    # The Amazon Resource Name (ARN) of the Lightsail certificate, assigned by AWS when the certificate is created. (AI-inferred)
     certificate_arn: Any = None
     # The name for the certificate.
     certificate_name: Any = None

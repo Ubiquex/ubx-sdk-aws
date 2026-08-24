@@ -2,22 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfig {
-  /** The ARN of the IAM role that grants Amazon Wisdom permission to access the associated Amazon Bedrock knowledge base. (AI-inferred) */
   accessRoleArn?: string | Computed<string>;
-  /** The ARN of the Amazon Bedrock knowledge base that the Amazon Q in Connect (Wisdom) assistant associates with for an external Bedrock knowledge base association. (AI-inferred) */
   bedrockKnowledgeBaseArn?: string | Computed<string>;
 }
 
 export interface AssistantAssociation_Association {
   externalBedrockKnowledgeBaseConfig?: AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfig | Computed<AssistantAssociation_Association_ExternalBedrockKnowledgeBaseConfig>;
-  /** Identifier of the Amazon Wisdom knowledge base to associate with the assistant, required when the association type is set to KNOWLEDGE_BASE. (AI-inferred) */
   knowledgeBaseId?: string | Computed<string>;
 }
 
 export interface AssistantAssociation_Tags {
-  /** The key of a tag assigned to the Wisdom assistant association, serving as the unique identifier for the tag within the resource's tag set. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the Wisdom assistant association, used to organize and identify the resource for cost allocation and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -41,27 +36,18 @@ const AssistantAssociation_TagsFields: FieldMap = {
 };
 
 export interface AssistantAssociationConfig {
-  /** The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred) */
   assistantId: string | Computed<string>;
-  /** Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred) */
   association: AssistantAssociation_Association | Computed<AssistantAssociation_Association>;
-  /** The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred) */
   associationType: string | Computed<string>;
   tags?: AssistantAssociation_Tags[] | Computed<AssistantAssociation_Tags[]>;
 }
 
 export interface AssistantAssociationAttrs {
-  /** The ARN of the Amazon Wisdom assistant to which this association is attached. (AI-inferred) */
   assistantArn: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Wisdom assistant association, assigned by AWS upon creation. (AI-inferred) */
   assistantAssociationArn: string;
-  /** The unique identifier assigned by AWS Wisdom to this assistant association, used to reference the association in API calls and resource relationships. (AI-inferred) */
   assistantAssociationId: string;
-  /** The unique identifier of the Wisdom assistant to which this association connects, linking the assistant to the associated knowledge base or integration. (AI-inferred) */
   assistantId: string;
-  /** Defines the target of the assistant association by providing the knowledge base identifier for the knowledge base to associate with the Wisdom assistant. (AI-inferred) */
   association: AssistantAssociation_Association;
-  /** The type of resource being associated with the Wisdom assistant, with the only supported value being KNOWLEDGE_BASE for associating a knowledge base. (AI-inferred) */
   associationType: string;
   tags: AssistantAssociation_Tags[];
 }

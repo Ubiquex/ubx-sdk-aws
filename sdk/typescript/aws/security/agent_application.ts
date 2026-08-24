@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentApplication_IdCconfiguration {
-  /** The ARN of the AWS IAM Identity Center (IdC) application that is used as part of the IdC configuration for this security agent application resource. (AI-inferred) */
   idCapplicationArn?: string | Computed<string>;
   idCinstanceArn?: string | Computed<string>;
 }

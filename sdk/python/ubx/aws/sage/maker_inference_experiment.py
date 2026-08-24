@@ -33,25 +33,18 @@ class MakerInferenceExperiment_EndpointMetadata:
 
 @dataclasses.dataclass
 class MakerInferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfig:
-    # Specifies the initial number of ML compute instances to provision for the model variant when serving real-time inference in the SageMaker Inference Experiment. (AI-inferred)
     instance_count: Any = None
-    # The ML compute instance type (e.g., ml.m5.large, ml.c5.xlarge) that SageMaker provisions for the real-time inference endpoint of this inference experiment. (AI-inferred)
     instance_type: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceExperiment_ModelVariants_InfrastructureConfig:
-    # Specifies whether the model variant is hosted on real-time infrastructure or asynchronous inference infrastructure, with allowed values of 'RealTime' or 'Async'. (AI-inferred)
     infrastructure_type: Any = None
-    # Specifies the Amazon SageMaker ML instance type and instance count to use for the model variant's real-time inference endpoint in the inference experiment. (AI-inferred)
     real_time_inference_config: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceExperiment_ModelVariants:
-    # Specifies the hosting infrastructure (such as the instance type and instance count) for serving this model variant in the inference experiment. (AI-inferred)
     infrastructure_config: Any = None
-    # Specifies the name of the SageMaker model that this model variant deploys in the inference experiment. (AI-inferred)
     model_name: Any = None
-    # The name of the model variant in a SageMaker Inference Experiment, used to uniquely identify the variant within the experiment's configuration. (AI-inferred)
     variant_name: Any = None
 
 @dataclasses.dataclass
@@ -63,9 +56,7 @@ class MakerInferenceExperiment_Schedule:
 
 @dataclasses.dataclass
 class MakerInferenceExperiment_ShadowModeConfig_ShadowModelVariants:
-    # The percentage of inference requests that are routed to this shadow model variant for evaluation. (AI-inferred)
     sampling_percentage: Any = None
-    # The name of the model variant that receives a copy of production traffic in shadow mode, allowing you to test its performance without impacting the primary endpoint. (AI-inferred)
     shadow_model_variant_name: Any = None
 
 @dataclasses.dataclass
@@ -77,9 +68,7 @@ class MakerInferenceExperiment_ShadowModeConfig:
 
 @dataclasses.dataclass
 class MakerInferenceExperiment_Tags:
-    # The key of a tag attached to the SageMaker inference experiment. (AI-inferred)
     key: Any = None
-    # Specifies the value portion of a key-value tag attached to the SageMaker inference experiment, used to organize, identify, and manage the experiment. (AI-inferred)
     value: Any = None
 
 _MakerInferenceExperiment_DataStorageConfig_ContentTypeFields = {

@@ -34,12 +34,10 @@ type AgentCoreRuntime_AgentRuntimeArtifact_ContainerConfiguration struct {
 type AgentCoreRuntime_AgentRuntimeArtifact struct {
 	// Representation of a code configuration
 	CodeConfiguration any
-	// Configures the container image and runtime parameters used to execute the agent's code artifact within the Bedrock Agent Core Runtime. (AI-inferred)
 	ContainerConfiguration any
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloadConfiguration_HostingEnvironments struct {
-	// The ARN that uniquely identifies a hosting environment permitted to handle requests for the allowed workload configuration of the custom JWT authorizer. (AI-inferred)
 	Arn any
 }
 
@@ -51,44 +49,31 @@ type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_AllowedWorkloa
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue struct {
-	// Specifies the string value that the custom JWT claim must match for the authorizer to authorize the request. (AI-inferred)
 	MatchValueString any
-	// Defines a set of allowed values for a custom JWT authorizer claim; the token's corresponding claim must match one of the strings in this list to be authorized. (AI-inferred)
 	MatchValueStringList any
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue struct {
-	// Specifies the comparison operator (e.g., EQUALS, CONTAINS) used to evaluate the JWT custom claim's actual value against the expected match value in the Bedrock agent core runtime custom JWT authorizer. (AI-inferred)
 	ClaimMatchOperator any
-	// Defines the comparison type (e.g., EQUALS, CONTAINS) and the value that a custom JWT claim must match for the authorizer to authorize the request. (AI-inferred)
 	ClaimMatchValue any
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
-	// The expected value against which the specified custom JWT claim is compared to determine if the request is authorized. (AI-inferred)
 	AuthorizingClaimMatchValue any
-	// The name of the claim in the incoming JWT token that should be extracted and passed as a custom claim to the agent's runtime context. (AI-inferred)
 	InboundTokenClaimName any
-	// Defines the data type to which the value of the JWT claim in the incoming token is cast before it is delivered to the custom authorizer Lambda function (supported values include STRING, NUMBER, and BOOLEAN). (AI-inferred)
 	InboundTokenClaimValueType any
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource struct {
-	// Specifies whether the managed VPC endpoint for the custom JWT authorizer's private endpoint uses IPv4, IPv6, or dual-stack IP addressing. (AI-inferred)
 	EndpointIpAddressType any
-	// The routing domain is the DNS domain name used to route requests to the private endpoint's managed VPC resource, which hosts the custom JWT authorizer for the Bedrock agent core runtime. (AI-inferred)
 	RoutingDomain any
-	// The list of security group IDs to attach to the managed VPC resource used as the private endpoint for the custom JWT authorizer configuration, controlling which network traffic can reach the endpoint. (AI-inferred)
 	SecurityGroupIds any
-	// The subnet IDs in the managed VPC where AWS deploys the VPC endpoint for the private endpoint configuration of the custom JWT authorizer in the Bedrock Agent Core Runtime. (AI-inferred)
 	SubnetIds any
 	Tags any
-	// The ID of the VPC in which AWS creates the managed VPC resource (e.g., an elastic network interface) to privately connect the Bedrock agent runtime to the custom JWT authorizer's private endpoint. (AI-inferred)
 	VpcIdentifier any
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource struct {
-	// The identifier (ARN) of the Amazon VPC Lattice resource configuration that serves as the private endpoint for the custom JWT authorizer. (AI-inferred)
 	ResourceConfigurationIdentifier any
 }
 
@@ -98,9 +83,7 @@ type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoin
 }
 
 type AgentCoreRuntime_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpointOverrides struct {
-	// Overrides the domain name of the private endpoint that the custom JWT authorizer uses to validate tokens, allowing the authorizer to reach a different service endpoint than the default. (AI-inferred)
 	Domain any
-	// This object specifies the private endpoint host and path used to override the default public endpoint for the custom JWT authorizer, enabling the agent to reach the authorizer within a private network. (AI-inferred)
 	PrivateEndpoint any
 }
 
@@ -139,24 +122,18 @@ type AgentCoreRuntime_FilesystemConfigurations_CapacityProviderVolume struct {
 }
 
 type AgentCoreRuntime_FilesystemConfigurations_EfsAccessPoint struct {
-	// The Amazon Resource Name (ARN) of the EFS access point that the Bedrock agent core runtime uses to mount the associated EFS filesystem, enabling the agent to access files through that access point. (AI-inferred)
 	AccessPointArn any
-	// The directory path in the agent's runtime environment where the EFS file system is mounted when the agent uses the specified access point. (AI-inferred)
 	MountPath any
 }
 
 type AgentCoreRuntime_FilesystemConfigurations_SessionStorage struct {
-	// Specifies the file system mount path within the Bedrock agent runtime environment where the session storage volume is mounted, enabling the agent to persist and access session data across invocations. (AI-inferred)
 	MountPath any
 }
 
 type AgentCoreRuntime_FilesystemConfigurations struct {
 	CapacityProviderVolume any
-	// Specifies the Amazon EFS access point that the Bedrock Agent Core Runtime uses when reading from or writing to the configured EFS filesystem. (AI-inferred)
 	EfsAccessPoint any
-	// This object specifies the S3 access point configuration for the agent's file system, providing the access point ARN and the S3 path or prefix that the agent will use to access files in S3. (AI-inferred)
 	S3FilesAccessPoint any
-	// Defines the session storage configuration for the agent's file system, specifying the Amazon S3 bucket and optional AWS KMS key used to persist session data and state. (AI-inferred)
 	SessionStorage any
 }
 
@@ -417,19 +394,16 @@ type AgentCoreRuntimeConfig struct {
 	FilesystemConfigurations any
 	// Configuration for managing the lifecycle of runtime sessions and resources
 	LifecycleConfiguration any
-	// Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
 	NetworkConfiguration any
 	ProtocolConfiguration any
 	// Configuration for HTTP request headers
 	RequestHeaderConfiguration any
-	// The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
 	RoleArn any
 	// A map of tag keys and values
 	Tags any
 }
 
 type AgentCoreRuntimeAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this Bedrock agent core runtime resource. (AI-inferred)
 	AgentRuntimeArn any
 	AgentRuntimeArtifact any
 	AgentRuntimeId any
@@ -439,7 +413,6 @@ type AgentCoreRuntimeAttrs struct {
 	AuthorizerConfiguration any
 	// Configuration for a capacity provider
 	CapacityProviderConfiguration any
-	// The creation timestamp of this Bedrock agent core runtime, returned as a read-only string. (AI-inferred)
 	CreatedAt any
 	Description any
 	// Environment variable attributes
@@ -451,12 +424,10 @@ type AgentCoreRuntimeAttrs struct {
 	LastUpdatedAt any
 	// Configuration for managing the lifecycle of runtime sessions and resources
 	LifecycleConfiguration any
-	// Provides the VPC configuration (security group IDs and subnet IDs) used by the agent's core runtime to access resources within a private network. (AI-inferred)
 	NetworkConfiguration any
 	ProtocolConfiguration any
 	// Configuration for HTTP request headers
 	RequestHeaderConfiguration any
-	// The Amazon Resource Name (ARN) of the IAM service role that the Bedrock agent core runtime assumes to access AWS services and resources on behalf of the agent. (AI-inferred)
 	RoleArn any
 	Status any
 	// A map of tag keys and values

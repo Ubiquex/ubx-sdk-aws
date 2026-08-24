@@ -13,7 +13,6 @@ type TailorSourceLocation_AccessConfiguration_SecretsManagerAccessTokenConfigura
 }
 
 type TailorSourceLocation_AccessConfiguration struct {
-	// Determines the access method for the source location, with valid values `S3_SIGV4` for authenticated Amazon S3 access and `STREAMING` for streaming-based access. (AI-inferred)
 	AccessType any
 	// <p>AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html">Working with AWS Secrets Manager access token authentication</a>.</p>
 	SecretsManagerAccessTokenConfiguration any
@@ -25,16 +24,12 @@ type TailorSourceLocation_DefaultSegmentDeliveryConfiguration struct {
 }
 
 type TailorSourceLocation_SegmentDeliveryConfigurations struct {
-	// Specifies the base URL from which MediaTailor retrieves content segments for the source location, serving as the origin for segment delivery. (AI-inferred)
 	BaseUrl any
-	// The name of the segment delivery configuration, which uniquely identifies this configuration within the source location. (AI-inferred)
 	Name any
 }
 
 type TailorSourceLocation_Tags struct {
-	// A user-defined tag key assigned to this AWS MediaTailor source location for resource organization and identification. (AI-inferred)
 	Key any
-	// The value portion of a key-value user-defined tag applied to the MediaTailor source location, used for identifying, organizing, and managing the resource. (AI-inferred)
 	Value any
 }
 
@@ -76,7 +71,6 @@ type TailorSourceLocationConfig struct {
 	HttpConfiguration any
 	// <p>A list of the segment delivery configurations associated with this resource.</p>
 	SegmentDeliveryConfigurations any
-	// The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the source location.
 	Tags any
@@ -93,7 +87,6 @@ type TailorSourceLocationAttrs struct {
 	HttpConfiguration any
 	// <p>A list of the segment delivery configurations associated with this resource.</p>
 	SegmentDeliveryConfigurations any
-	// The unique name that identifies this AWS Elemental MediaTailor source location, required when creating the resource and used to reference it in other MediaTailor APIs and resources. (AI-inferred)
 	SourceLocationName any
 	// The tags to assign to the source location.
 	Tags any

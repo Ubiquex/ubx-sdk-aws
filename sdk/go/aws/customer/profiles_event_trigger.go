@@ -4,34 +4,25 @@ package customer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributes struct {
-	// The comparison operator that determines how the referenced object attribute's value is evaluated against the configured values (for example, EQUAL, GREATER_THAN, LESS_THAN, or BETWEEN) in an event trigger condition. (AI-inferred)
 	ComparisonOperator any
-	// Specifies the name of the profile object attribute (e.g., 'Email' or 'LastName') that the event trigger condition evaluates to determine whether to activate the associated workflow. (AI-inferred)
 	FieldName any
-	// The name of the source object type (e.g., Profile or Order) whose field is used as the grouping dimension in the event trigger condition. (AI-inferred)
 	Source any
-	// The list of attribute values that the object attribute (specified by the parent object_attributes.source field) must equal for the event trigger condition to be satisfied. (AI-inferred)
 	Values any
 }
 
 type ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions struct {
-	// Defines the list of customer profile object attributes, along with their comparison operators and values, used as dimensions to evaluate whether the event trigger conditions are met. (AI-inferred)
 	ObjectAttributes any
 }
 
 type ProfilesEventTrigger_EventTriggerConditions struct {
-	// Specifies a list of event trigger dimensions, each defining the object type and matching attribute dimensions (type and values) that together form a condition under which the event trigger fires. (AI-inferred)
 	EventTriggerDimensions any
-	// Specifies the logical operator (AND or OR) used to combine the event triggers within this condition group in the AWS Customer Profiles event trigger, determining whether all or any of the triggers must match. (AI-inferred)
 	LogicalOperator any
 }
 
 type ProfilesEventTrigger_EventTriggerLimits_Periods struct {
-	// Defines the maximum number of times the event trigger can be invoked for a single customer profile within the specified time period. (AI-inferred)
 	MaxInvocationsPerProfile any
 	Unit any
 	Unlimited any
-	// In an Amazon Customer Profiles event trigger limit period, this value specifies the number of time units (such as days or hours) that define the duration during which the trigger's maximum invocations are constrained. (AI-inferred)
 	Value any
 }
 
@@ -43,7 +34,6 @@ type ProfilesEventTrigger_EventTriggerLimits struct {
 }
 
 type ProfilesEventTrigger_Tags struct {
-	// The tag key component of a key-value pair assigned to the event trigger, identifying the tag's name within the resource's tag set. (AI-inferred)
 	Key any
 	Value any
 }

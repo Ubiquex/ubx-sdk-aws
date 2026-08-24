@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbsecurityGroupIngressConfig {
-  /** The CIDR IP range (in the form x.x.x.x/x) that is authorized to access instances in the DB security group. (AI-inferred) */
   cidrip?: string | Computed<string>;
-  /** The name of the DB security group to which this ingress rule is added. (AI-inferred) */
   dbsecurityGroupName: string | Computed<string>;
-  /** Specifies the ID of the EC2 security group whose traffic is authorized for ingress to the associated RDS DB security group. (AI-inferred) */
   ec2SecurityGroupId?: string | Computed<string>;
-  /** The name of the EC2 security group to authorize for ingress to the RDS DB security group. (AI-inferred) */
   ec2SecurityGroupName?: string | Computed<string>;
-  /** The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred) */
   ec2SecurityGroupOwnerId?: string | Computed<string>;
 }
 
 export interface DbsecurityGroupIngressAttrs {
-  /** The CIDR IP range (in the form x.x.x.x/x) that is authorized to access instances in the DB security group. (AI-inferred) */
   cidrip: string;
-  /** The name of the DB security group to which this ingress rule is added. (AI-inferred) */
   dbsecurityGroupName: string;
-  /** Specifies the ID of the EC2 security group whose traffic is authorized for ingress to the associated RDS DB security group. (AI-inferred) */
   ec2SecurityGroupId: string;
-  /** The name of the EC2 security group to authorize for ingress to the RDS DB security group. (AI-inferred) */
   ec2SecurityGroupName: string;
-  /** The AWS account ID of the owner of the EC2 security group referenced by the EC2SecurityGroupName property, used when the security group belongs to a different AWS account. (AI-inferred) */
   ec2SecurityGroupOwnerId: string;
   id: string;
 }

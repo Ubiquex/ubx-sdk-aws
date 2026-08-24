@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeliverySource_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the CloudWatch Logs delivery source, used for organizing, identifying, and managing the resource via metadata such as cost allocation and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

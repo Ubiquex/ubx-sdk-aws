@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_Tags:
-    # The key part of a key-value tag, used to assign metadata to the canary group for identification and resource management. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Synthetics canary group, which is a user-defined string that helps manage and identify the group. (AI-inferred)
     value: Any = None
 
 _Group_TagsFields = {
@@ -22,9 +20,7 @@ _Group_TagsFields = {
 class GroupConfig:
     # Name of the group.
     name: Any = None
-    # Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
     resource_arns: Any = None
-    # Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -33,9 +29,7 @@ class GroupAttrs:
     id: Any = None
     # Name of the group.
     name: Any = None
-    # Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred)
     resource_arns: Any = None
-    # Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred)
     tags: Any = None
 
 Group = ubx.ResourceBinding(

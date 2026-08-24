@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RestoreTestingSelection_ProtectedResourceConditions_StringEquals {
-  /** Specifies the AWS resource tag key (e.g., Environment) that the string_equals condition requires to be present with a matching value on a protected resource for the restore testing selection. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value that a protected resource's attribute or tag (identified by the corresponding key in the enclosing StringEquals key-value pair) must equal for the resource to match this restore testing selection condition. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface RestoreTestingSelection_ProtectedResourceConditions {
-  /** Specifies key-value pairs for tag-based filtering, where a protected resource must have a tag whose key and value exactly match a pair in this list to be included in the restore testing selection. (AI-inferred) */
   stringEquals?: RestoreTestingSelection_ProtectedResourceConditions_StringEquals[] | Computed<RestoreTestingSelection_ProtectedResourceConditions_StringEquals[]>;
-  /** A list of conditions where each specifies a resource attribute (such as a tag key) and a value, and the condition is satisfied when the resource's attribute value does not equal that value, thereby excluding matching protected resources from the restore testing selection. (AI-inferred) */
   stringNotEquals?: RestoreTestingSelection_ProtectedResourceConditions_StringEquals[] | Computed<RestoreTestingSelection_ProtectedResourceConditions_StringEquals[]>;
 }
 
@@ -34,40 +30,24 @@ const RestoreTestingSelection_ProtectedResourceConditionsFields: FieldMap = {
 };
 
 export interface RestoreTestingSelectionConfig {
-  /** The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred) */
   iamRoleArn: string | Computed<string>;
-  /** The ARNs of the protected resources to include in the restore testing selection. (AI-inferred) */
   protectedResourceArns?: string[] | Computed<string[]>;
-  /** Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred) */
   protectedResourceConditions?: RestoreTestingSelection_ProtectedResourceConditions | Computed<RestoreTestingSelection_ProtectedResourceConditions>;
-  /** Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred) */
   protectedResourceType: string | Computed<string>;
-  /** A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred) */
   restoreMetadataOverrides?: unknown | Computed<unknown>;
-  /** The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred) */
   restoreTestingPlanName: string | Computed<string>;
-  /** The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred) */
   restoreTestingSelectionName: string | Computed<string>;
-  /** The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred) */
   validationWindowHours?: number | Computed<number>;
 }
 
 export interface RestoreTestingSelectionAttrs {
-  /** The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred) */
   iamRoleArn: string;
-  /** The ARNs of the protected resources to include in the restore testing selection. (AI-inferred) */
   protectedResourceArns: string[];
-  /** Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred) */
   protectedResourceConditions: RestoreTestingSelection_ProtectedResourceConditions;
-  /** Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred) */
   protectedResourceType: string;
-  /** A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred) */
   restoreMetadataOverrides: unknown;
-  /** The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred) */
   restoreTestingPlanName: string;
-  /** The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred) */
   restoreTestingSelectionName: string;
-  /** The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred) */
   validationWindowHours: number;
 }
 

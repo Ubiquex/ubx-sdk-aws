@@ -4,9 +4,7 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Profile_Tags struct {
-	// A user-defined string that serves as the key in a tag attached to an AWS Transfer Family profile, enabling resource categorization and cost allocation. (AI-inferred)
 	Key any
-	// Specifies the value part of a tag attached to this AWS Transfer Family profile, allowing you to categorize and manage the profile with custom metadata. (AI-inferred)
 	Value any
 }
 

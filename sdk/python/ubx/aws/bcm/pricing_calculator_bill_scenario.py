@@ -9,14 +9,11 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class PricingCalculatorBillScenario_BillInterval:
     end: Any = None
-    # The start of the billing interval for the bill scenario, defining the beginning of the period over which AWS costs are estimated. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class PricingCalculatorBillScenario_Tags:
-    # A user-defined key for a tag attached to the AWS BCM Pricing Calculator bill scenario, used to categorize and track the bill scenario for cost allocation. (AI-inferred)
     key: Any = None
-    # The value part of a key-value tag on the AWS BCM Pricing Calculator bill scenario, used for categorizing and managing the resource. (AI-inferred)
     value: Any = None
 
 _PricingCalculatorBillScenario_TagsFields = {
@@ -30,7 +27,6 @@ class PricingCalculatorBillScenarioConfig:
     cost_category_group_sharing_preference_arn: Any = None
     # The timestamp when the bill scenario expires
     expires_at: Any = None
-    # Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred)
     group_sharing_preference: Any = None
     # The name of the bill scenario
     name: Any = None
@@ -41,7 +37,6 @@ class PricingCalculatorBillScenarioConfig:
 class PricingCalculatorBillScenarioAttrs:
     # The Amazon Resource Name (ARN) of the bill scenario.
     arn: Any = None
-    # The computed time interval (with start and end timestamps) that delineates the billing period the bill scenario analyzes, automatically populated by the AWS BCM Pricing Calculator service. (AI-inferred)
     bill_interval: Any = None
     # The ARN of the cost category group sharing preference
     cost_category_group_sharing_preference_arn: Any = None
@@ -51,13 +46,11 @@ class PricingCalculatorBillScenarioAttrs:
     expires_at: Any = None
     # The failure message if the bill scenario failed
     failure_message: Any = None
-    # Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred)
     group_sharing_preference: Any = None
     # The unique identifier of the bill scenario
     id: Any = None
     # The name of the bill scenario
     name: Any = None
-    # The current lifecycle state of the bill scenario, such as whether it is active, being created, or failed, as determined by the AWS BCM Pricing Calculator service. (AI-inferred)
     status: Any = None
     # An array of key-value pairs to apply to this resource
     tags: Any = None

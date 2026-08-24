@@ -2,49 +2,37 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Interface_ConnectionTrackingSpecification {
-  /** Specifies the timeout (in seconds) for TCP established connections for the network interface's connection tracking configuration. (AI-inferred) */
   tcpEstablishedTimeout?: number | Computed<number>;
-  /** The timeout in seconds for UDP streams in the established state on this network interface, after which connection tracking removes the flow if no packets are seen. (AI-inferred) */
   udpStreamTimeout?: number | Computed<number>;
-  /** Specifies the idle timeout in seconds for UDP traffic on the network interface, determining how long a UDP flow remains active in connection tracking before it expires. (AI-inferred) */
   udpTimeout?: number | Computed<number>;
 }
 
 export interface Interface_Ipv4Prefixes {
-  /** The IPv4 prefix (CIDR block) assigned to the network interface. (AI-inferred) */
   ipv4Prefix?: string | Computed<string>;
 }
 
 export interface Interface_Ipv6Addresses {
-  /** Specifies an IPv6 address from the subnet's IPv6 CIDR block to assign to the network interface. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
 }
 
 export interface Interface_Ipv6Prefixes {
-  /** The IPv6 prefix (CIDR block) assigned to the network interface, such as 2001:db8::/64. (AI-inferred) */
   ipv6Prefix?: string | Computed<string>;
 }
 
 export interface Interface_PrivateIpAddresses {
-  /** Indicates whether this private IP address is the primary private IP address of the network interface. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
-  /** Specifies the private IPv4 address for a secondary IP address assignment on the network interface. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
 }
 
 export interface Interface_PublicIpDnsNameOptions {
-  /** Specifies the type of DNS hostname to assign to the public IP address of the network interface, either 'ip-name' (default) or 'resource-name'. (AI-inferred) */
   dnsHostnameType?: string | Computed<string>;
-  /** The public_dual_stack_dns_name is the fully qualified public DNS hostname that AWS assigns to the network interface, resolving to both its public IPv4 and public IPv6 addresses when dual-stack DNS naming is enabled in the containing public IP DNS name options. (AI-inferred) */
   publicDualStackDnsName?: string | Computed<string>;
-  /** The DNS name automatically assigned to the network interface's public IPv4 address (e.g., ec2-203-0-113-10.compute-1.amazonaws.com), determined by the HostnameType and DNS A record settings configured in the public_ip_dns_name_options block. (AI-inferred) */
   publicIpv4DnsName?: string | Computed<string>;
   publicIpv6DnsName?: string | Computed<string>;
 }
 
 export interface Interface_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag applied to the network interface, used for resource categorization, cost allocation, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -77,7 +65,6 @@ const Interface_TagsFields: FieldMap = {
 };
 
 export interface InterfaceConfig {
-  /** Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred) */
   connectionTrackingSpecification?: Interface_ConnectionTrackingSpecification | Computed<Interface_ConnectionTrackingSpecification>;
   /** A description for the network interface. */
   description?: string | Computed<string>;
@@ -116,7 +103,6 @@ export interface InterfaceConfig {
 }
 
 export interface InterfaceAttrs {
-  /** Specifies the connection tracking configuration for the network interface, including idle timeout values for established TCP connections and UDP flows to control stateful traffic tracking. (AI-inferred) */
   connectionTrackingSpecification: Interface_ConnectionTrackingSpecification;
   /** A description for the network interface. */
   description: string;

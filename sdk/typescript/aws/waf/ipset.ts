@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ipset_IpsetDescriptors {
-  /** Specifies the IP address version (either IPV4 or IPV6) for the CIDR value in this IPSet descriptor. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The IP address or CIDR range to include in the WAF IPSet, such as 192.0.2.0/24 or 10.0.0.1. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,18 +12,13 @@ const Ipset_IpsetDescriptorsFields: FieldMap = {
 };
 
 export interface IpsetConfig {
-  /** Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred) */
   ipsetDescriptors?: Ipset_IpsetDescriptors[] | Computed<Ipset_IpsetDescriptors[]>;
-  /** The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred) */
   name: string | Computed<string>;
 }
 
 export interface IpsetAttrs {
-  /** Defines the list of IP addresses or CIDR ranges for the IPSet, where each descriptor object specifies an IP version (IPv4 or IPv6) and a value representing the address or range. (AI-inferred) */
   ipsetDescriptors: Ipset_IpsetDescriptors[];
-  /** The unique identifier assigned by AWS to this IP set, used to reference it when associating with AWS WAF rules or updating the set. (AI-inferred) */
   id: string;
-  /** The friendly name of the IP set, which cannot be changed after the IP set is created. (AI-inferred) */
   name: string;
 }
 

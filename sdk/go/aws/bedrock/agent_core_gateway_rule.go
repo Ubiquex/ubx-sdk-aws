@@ -10,7 +10,6 @@ type AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride struct {
 
 type AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplit struct {
 	ConfigurationBundle any
-	// Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred)
 	Description any
 	Metadata any
 	Name any
@@ -18,26 +17,21 @@ type AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSp
 }
 
 type AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride struct {
-	// Defines the weighting rules that determine how traffic is distributed among the configuration bundles in the weighted override, with each list entry representing a target bundle and its relative weight. (AI-inferred)
 	TrafficSplit any
 }
 
 type AgentCoreGatewayRule_Actions_ConfigurationBundle struct {
 	StaticOverride any
-	// Specifies the weighted routing override for an action within the core gateway rule's configuration bundle, controlling the proportional share of traffic directed to that action relative to others. (AI-inferred)
 	WeightedOverride any
 }
 
 type AgentCoreGatewayRule_Actions_RouteToTarget_StaticRoute struct {
-	// Specifies the name of the static route's target, which identifies the destination (such as an action group or function) that the Bedrock agent core gateway uses to direct the action. (AI-inferred)
 	TargetName any
 }
 
 type AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplit struct {
-	// A description for this individual traffic split entry, allowing you to annotate the purpose or intended target of the portion of traffic routed through this weighted route path. (AI-inferred)
 	Description any
 	Metadata any
-	// In the weighted route action of a Bedrock core gateway rule, this field provides a human-readable name for each traffic split, distinguishing the multiple targets (such as agents or agent versions) that receive a portion of the request traffic. (AI-inferred)
 	Name any
 	TargetName any
 	Weight any
@@ -49,7 +43,6 @@ type AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute struct {
 
 type AgentCoreGatewayRule_Actions_RouteToTarget struct {
 	StaticRoute any
-	// Specifies a weighted routing strategy that partitions traffic for this action among multiple target resources by assigning each target a numeric weight, so the proportion of requests sent to each target matches its weight relative to the total. (AI-inferred)
 	WeightedRoute any
 }
 
@@ -59,23 +52,19 @@ type AgentCoreGatewayRule_Actions struct {
 }
 
 type AgentCoreGatewayRule_Conditions_MatchPaths struct {
-	// In an AWS Bedrock Agent Core Gateway Rule, the `any_of` list within `match_paths` contains path patterns and the condition is satisfied when the incoming request path matches any of the specified patterns. (AI-inferred)
 	AnyOf any
 }
 
 type AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipal struct {
-	// The ARN of the IAM principal that the condition matches against, within an 'any_of' list in the match_principals block of the gateway rule. (AI-inferred)
 	Arn any
 	Operator any
 }
 
 type AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf struct {
-	// Within the `any_of` list of a Bedrock Agent Core Gateway rule's `match_principals` condition, this object specifies an IAM principal (e.g., by ARN, account ID, or service) that the calling principal must match for the condition to apply. (AI-inferred)
 	IamPrincipal any
 }
 
 type AgentCoreGatewayRule_Conditions_MatchPrincipals struct {
-	// Specifies a list of principal objects to match, such that the condition is satisfied when the incoming request principal matches any one of the listed principals. (AI-inferred)
 	AnyOf any
 }
 
@@ -208,22 +197,18 @@ var AgentCoreGatewayRule_ConditionsFields = ubx.FieldMap{
 
 type AgentCoreGatewayRuleConfig struct {
 	Actions any
-	// A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
 	Conditions any
 	Description any
-	// The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
 	GatewayIdentifier any
 	Priority any
 }
 
 type AgentCoreGatewayRuleAttrs struct {
 	Actions any
-	// A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred)
 	Conditions any
 	CreatedAt any
 	Description any
 	GatewayArn any
-	// The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred)
 	GatewayIdentifier any
 	Priority any
 	RuleId any

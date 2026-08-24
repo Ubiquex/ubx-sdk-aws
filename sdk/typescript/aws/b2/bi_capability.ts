@@ -2,44 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BiCapability_Configuration_Edi_InputLocation {
-  /** The name of the S3 bucket where input EDI files are stored for this capability's EDI configuration, serving as the input location for document exchange. (AI-inferred) */
   bucketName?: string | Computed<string>;
-  /** The Amazon S3 object key (file name) within the input bucket where the source EDI document is located for the B2Bi capability's EDI configuration. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface BiCapability_Configuration_Edi_Type_X12Details {
-  /** Specifies the X12 transaction set (such as X12_850 or X12_810) for which the EDI capability is configured, determining the exact business document standard handled by this capability. (AI-inferred) */
   transactionSet?: string | Computed<string>;
-  /** The X12 version for the EDI capability (e.g., VERSION_4010, VERSION_5010), determining the transaction set standard used for EDI document parsing and validation. (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface BiCapability_Configuration_Edi_Type {
-  /** Specifies the X12-specific settings, such as the transaction set identifier and version, for the EDI capability when the EDI type is X12. (AI-inferred) */
   x12Details?: BiCapability_Configuration_Edi_Type_X12Details | Computed<BiCapability_Configuration_Edi_Type_X12Details>;
 }
 
 export interface BiCapability_Configuration_Edi {
-  /** Specifies whether this EDI capability handles inbound or outbound EDI documents, using the value 'INBOUND' or 'OUTBOUND'. (AI-inferred) */
   capabilityDirection?: string | Computed<string>;
-  /** The S3 location (bucket and key) where inbound EDI documents are stored for processing by this AWS B2Bi capability's EDI configuration. (AI-inferred) */
   inputLocation?: BiCapability_Configuration_Edi_InputLocation | Computed<BiCapability_Configuration_Edi_InputLocation>;
-  /** For the EDI configuration of a capability, this object specifies the Amazon S3 location (bucket and key) where AWS B2Bi stores the output files after performing the EDI transformation. (AI-inferred) */
   outputLocation?: BiCapability_Configuration_Edi_InputLocation | Computed<BiCapability_Configuration_Edi_InputLocation>;
-  /** The transformer_id specifies the AWS B2Bi transformer used to process EDI documents for this capability, defining how incoming or outgoing EDI files are mapped and converted according to the transformer's configured settings. (AI-inferred) */
   transformerId?: string | Computed<string>;
-  /** Specifies the EDI standard type (e.g., X12) and its associated details, such as transaction set and version, for the EDI configuration of this AWS B2BI capability. (AI-inferred) */
   type?: BiCapability_Configuration_Edi_Type | Computed<BiCapability_Configuration_Edi_Type>;
 }
 
 export interface BiCapability_Configuration {
-  /** The configuration.edi field holds the EdiConfiguration for the B2Bi capability, specifying the EDI standard (such as X12), the input and output Amazon S3 locations for EDI documents, and the transform options applied. (AI-inferred) */
   edi?: BiCapability_Configuration_Edi | Computed<BiCapability_Configuration_Edi>;
 }
 
 export interface BiCapability_Tags {
-  /** The key of a user-defined tag to associate with the AWS B2B Data Interchange capability. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -96,34 +84,22 @@ const BiCapability_TagsFields: FieldMap = {
 };
 
 export interface BiCapabilityConfig {
-  /** The configuration object contains the EDI transformation settings for the B2Bi capability, specifying the EDI type, input/output document locations, and the transformer that processes interchange data. (AI-inferred) */
   configuration: BiCapability_Configuration | Computed<BiCapability_Configuration>;
-  /** Lists the Amazon S3 locations of instruction documents that provide supplemental guidance for this capability in AWS B2B Data Interchange. (AI-inferred) */
   instructionsDocuments?: BiCapability_Configuration_Edi_InputLocation[] | Computed<BiCapability_Configuration_Edi_InputLocation[]>;
-  /** A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred) */
   name: string | Computed<string>;
   tags?: BiCapability_Tags[] | Computed<BiCapability_Tags[]>;
-  /** The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface BiCapabilityAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the B2Bi capability, automatically assigned by AWS when the capability is created. (AI-inferred) */
   capabilityArn: string;
-  /** The unique identifier that AWS assigns to this B2BI capability when it is created. (AI-inferred) */
   capabilityId: string;
-  /** The configuration object contains the EDI transformation settings for the B2Bi capability, specifying the EDI type, input/output document locations, and the transformer that processes interchange data. (AI-inferred) */
   configuration: BiCapability_Configuration;
-  /** The timestamp indicating when the capability was created in AWS B2B Data Interchange. (AI-inferred) */
   createdAt: string;
-  /** Lists the Amazon S3 locations of instruction documents that provide supplemental guidance for this capability in AWS B2B Data Interchange. (AI-inferred) */
   instructionsDocuments: BiCapability_Configuration_Edi_InputLocation[];
-  /** The timestamp indicating when the B2B capability was last modified. (AI-inferred) */
   modifiedAt: string;
-  /** A user-specified name for the AWS B2BI capability, which is required when creating the resource and serves as a human-readable identifier for the capability in the AWS B2BI service. (AI-inferred) */
   name: string;
   tags: BiCapability_Tags[];
-  /** The type of the B2BI capability, which determines the document exchange protocol, with 'edi' currently the only supported value. (AI-inferred) */
   type: string;
 }
 

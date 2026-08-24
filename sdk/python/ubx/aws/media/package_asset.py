@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PackageAsset_EgressEndpoints:
-    # The identifier of the AWS Elemental MediaPackage packaging configuration that defines how the asset is packaged (e.g., HLS or DASH) for delivery through this egress endpoint. (AI-inferred)
     packaging_configuration_id: Any = None
-    # The URL for this egress endpoint, which AWS Elemental MediaPackage generates to provide a streaming or download URL for the asset via the associated packaging configuration. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass

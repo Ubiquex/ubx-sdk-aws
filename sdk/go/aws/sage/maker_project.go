@@ -11,9 +11,7 @@ type MakerProject_ServiceCatalogProvisionedProductDetails struct {
 }
 
 type MakerProject_ServiceCatalogProvisioningDetails_ProvisioningParameters struct {
-	// The key that identifies a specific provisioning parameter passed to the Service Catalog product when SageMaker provisions the project. (AI-inferred)
 	Key any
-	// The value for a Service Catalog provisioning parameter key, which SageMaker passes to the provisioned product to configure the project resources. (AI-inferred)
 	Value any
 }
 
@@ -29,18 +27,13 @@ type MakerProject_ServiceCatalogProvisioningDetails struct {
 }
 
 type MakerProject_TemplateProviderDetails_CfnTemplateProviderDetail struct {
-	// Specifies key-value pairs of provisioning parameters that are passed to the AWS Service Catalog product used to create the SageMaker project, controlling the configuration of the project's resources. (AI-inferred)
 	Parameters any
-	// The IAM role ARN that SageMaker assumes to create and manage the CloudFormation stack resources for this project. (AI-inferred)
 	RoleArn any
-	// The name of the CloudFormation template used by SageMaker to provision and create the project. (AI-inferred)
 	TemplateName any
-	// The S3 URL of the AWS CloudFormation template that defines the resources to provision for the SageMaker project. (AI-inferred)
 	TemplateUrl any
 }
 
 type MakerProject_TemplateProviderDetails struct {
-	// Specifies the CloudFormation template provider details for the SageMaker project, including the template location and configuration used to provision the project. (AI-inferred)
 	CfnTemplateProviderDetail any
 }
 

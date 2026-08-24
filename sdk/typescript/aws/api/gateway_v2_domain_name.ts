@@ -2,17 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayV2DomainName_DomainNameConfigurations {
-  /** The ARN of an AWS Certificate Manager certificate that is used to secure the custom domain name's TLS connections. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** Specifies a customer-friendly name for the AWS Certificate Manager (ACM) certificate associated with the API Gateway v2 domain name configuration, used for identification purposes alongside the certificate ARN. (AI-inferred) */
   certificateName?: string | Computed<string>;
-  /** Defines the endpoint type for the API Gateway domain name, either 'REGIONAL' or 'EDGE', determining how the domain name is routed within AWS. (AI-inferred) */
   endpointType?: string | Computed<string>;
-  /** Specifies the IP address type (IPv4 or dual-stack) used by the custom domain name's endpoint, controlling whether the domain resolves to IPv4-only or both IPv4 and IPv6 addresses. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used to verify ownership of the custom domain name in the API Gateway v2 domain name configuration. (AI-inferred) */
   ownershipVerificationCertificateArn?: string | Computed<string>;
-  /** Specifies the TLS security policy (TLS_1_0 or TLS_1_2) applied to the custom domain name's API Gateway HTTPS endpoint. (AI-inferred) */
   securityPolicy?: string | Computed<string>;
 }
 
@@ -53,15 +47,12 @@ export interface GatewayV2DomainNameConfig {
 export interface GatewayV2DomainNameAttrs {
   /** The custom domain name for your API in Amazon API Gateway. Uppercase letters and the underscore (``_``) character are not supported. */
   domainName: string;
-  /** The Amazon Resource Name (ARN) of the API Gateway v2 domain name, used to uniquely identify this domain for IAM policies and resource references. (AI-inferred) */
   domainNameArn: string;
   /** The domain name configurations. */
   domainNameConfigurations: GatewayV2DomainName_DomainNameConfigurations[];
   /** If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API. */
   mutualTlsAuthentication: GatewayV2DomainName_MutualTlsAuthentication;
-  /** The regional domain name automatically assigned by API Gateway v2 to this domain name, serving as the regional endpoint target for routing traffic to the API. (AI-inferred) */
   regionalDomainName: string;
-  /** The Amazon Route 53 hosted zone ID associated with the regional endpoint of this API Gateway v2 domain name. (AI-inferred) */
   regionalHostedZoneId: string;
   /** The routing mode API Gateway uses to route traffic to your APIs. */
   routingMode: string;

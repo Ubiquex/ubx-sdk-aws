@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CatalogServiceActionAssociationConfig {
-  /** The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred) */
   productId: string | Computed<string>;
-  /** The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred) */
   provisioningArtifactId: string | Computed<string>;
-  /** The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred) */
   serviceActionId: string | Computed<string>;
 }
 
 export interface CatalogServiceActionAssociationAttrs {
-  /** The ID (or identifier) of the AWS Service Catalog product to which the self-service action is associated. (AI-inferred) */
   productId: string;
-  /** The ID of the provisioning artifact (product version) that the service action is associated with. (AI-inferred) */
   provisioningArtifactId: string;
-  /** The ID of the AWS Service Catalog service action that this association attaches to the specified provisioning artifact. (AI-inferred) */
   serviceActionId: string;
 }
 

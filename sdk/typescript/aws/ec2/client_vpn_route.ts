@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClientVpnRouteConfig {
-  /** The ID of the Client VPN endpoint to which this route is associated. (AI-inferred) */
   clientVpnEndpointId: string | Computed<string>;
-  /** A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred) */
   destinationCidrBlock: string | Computed<string>;
-  /** The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred) */
   targetVpcSubnetId?: string | Computed<string>;
 }
 
 export interface ClientVpnRouteAttrs {
-  /** The ID of the Client VPN endpoint to which this route is associated. (AI-inferred) */
   clientVpnEndpointId: string;
-  /** A user-defined description for the route, often used to identify its purpose or destination in the Client VPN endpoint. (AI-inferred) */
   description: string;
-  /** The IPv4 CIDR block (e.g., 10.0.0.0/16) of the destination network that this Client VPN route forwards traffic through the VPN tunnel. (AI-inferred) */
   destinationCidrBlock: string;
-  /** The computed unique identifier for the Client VPN route, formatted as the client VPN endpoint ID, destination CIDR block, and target subnet ID separated by colons. (AI-inferred) */
   id: string;
-  /** The ID of the VPC subnet to which the Client VPN endpoint routes traffic for the destination CIDR block. (AI-inferred) */
   targetVpcSubnetId: string;
 }
 

@@ -4,16 +4,12 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SigningConfiguration_Rules_RepositoryFilters struct {
-	// The repository name pattern (e.g., a prefix like 'prod/') that selects which ECR repositories this signing rule applies to, with the matching behavior defined by the associated filter type. (AI-inferred)
 	Filter any
-	// Specifies the matching strategy for a repository filter in an ECR signing configuration rule, where 'PREFIX_MATCH' ensures the rule applies to repositories whose names start with the given filter value. (AI-inferred)
 	FilterType any
 }
 
 type SigningConfiguration_Rules struct {
-	// Specifies the repository filters that determine which Amazon ECR repositories this signing configuration rule applies to, matching by prefix or exact repository name. (AI-inferred)
 	RepositoryFilters any
-	// Specifies the ARN of the AWS Signer signing profile that this rule uses to require signatures on matching container images. (AI-inferred)
 	SigningProfileArn any
 }
 

@@ -4,16 +4,12 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SchedulingPolicy_FairsharePolicy_ShareDistribution struct {
-	// Identifies an individual share within the fair share policy's share distribution list, used by AWS Batch to calculate each share's proportional allocation of compute resources based on its assigned weight factor. (AI-inferred)
 	ShareIdentifier any
-	// The relative weight assigned to a share in an AWS Batch fairshare scheduling policy, controlling the proportional amount of vCPUs or resources allocated to that share compared to others. (AI-inferred)
 	WeightFactor any
 }
 
 type SchedulingPolicy_FairsharePolicy struct {
-	// The percentage (0-99) of compute resources reserved for this scheduling policy's jobs, guaranteeing a minimum level of capacity even when shares are low. (AI-inferred)
 	ComputeReservation any
-	// The amount of time in seconds used to calculate the decay factor for the fair share policy, controlling how quickly the share of resources for a job family decreases over time based on its age. (AI-inferred)
 	ShareDecaySeconds any
 	// List of Share Attributes
 	ShareDistribution any

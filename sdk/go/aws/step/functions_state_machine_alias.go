@@ -10,16 +10,13 @@ type FunctionsStateMachineAlias_DeploymentPreference struct {
 	Interval any
 	// The percentage of traffic to shift to the new version in each increment.
 	Percentage any
-	// The ARN of the state machine version to be deployed as the target of the alias's traffic-shifting deployment preference, to which traffic is gradually shifted according to the selected deployment strategy. (AI-inferred)
 	StateMachineVersionArn any
 	// The type of deployment to perform.
 	Type any
 }
 
 type FunctionsStateMachineAlias_RoutingConfiguration struct {
-	// The ARN of the state machine version to which a portion of execution traffic is routed when using the alias's routing configuration. (AI-inferred)
 	StateMachineVersionArn any
-	// The percentage of traffic (a weight between 0 and 100) routed to the corresponding state machine version in the alias's routing configuration, where all weights in the routing configuration sum to 100. (AI-inferred)
 	Weight any
 }
 
@@ -45,7 +42,6 @@ type FunctionsStateMachineAliasConfig struct {
 	Name any
 	// The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine.
 	RoutingConfiguration any
-	// The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred)
 	StateMachineArn any
 }
 
@@ -60,7 +56,6 @@ type FunctionsStateMachineAliasAttrs struct {
 	Name any
 	// The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine.
 	RoutingConfiguration any
-	// The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred)
 	StateMachineArn any
 }
 

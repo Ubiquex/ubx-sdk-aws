@@ -17,12 +17,10 @@ export interface Capability_Configuration_ArgoCd_NetworkAccess {
 
 export interface Capability_Configuration_ArgoCd_RbacRoleMappings_Identities {
   id?: string | Computed<string>;
-  /** Defines the identity type (user or group) for an Argo CD RBAC role mapping in the EKS capability configuration. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Capability_Configuration_ArgoCd_RbacRoleMappings {
-  /** Specifies a list of IAM principal ARNs (users or roles) that are mapped to the corresponding Argo CD RBAC role, granting those identities the permissions defined for that role in the Kubernetes cluster. (AI-inferred) */
   identities?: Capability_Configuration_ArgoCd_RbacRoleMappings_Identities[] | Computed<Capability_Configuration_ArgoCd_RbacRoleMappings_Identities[]>;
   role?: string | Computed<string>;
 }

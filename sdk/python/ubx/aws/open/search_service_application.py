@@ -8,23 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SearchServiceApplication_AppConfigs:
-    # The key name that identifies a specific configuration parameter within the app_configs list of an AWS OpenSearch Service application. (AI-inferred)
     key: Any = None
-    # The value of a single key-value pair within the AppConfigs list, which supplies custom settings for the OpenSearch Service application when it is provisioned. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class SearchServiceApplication_DataSources:
-    # Specifies the Amazon Resource Name (ARN) of an underlying AWS data source (for example, an S3 bucket or CloudWatch Logs log group) that this OpenSearch Service application uses for direct querying. (AI-inferred)
     data_source_arn: Any = None
-    # Specifies a descriptive text for a data source that is associated with the Amazon OpenSearch Service application. (AI-inferred)
     data_source_description: Any = None
 
 @dataclasses.dataclass
 class SearchServiceApplication_IamIdentityCenterOptions:
     # Whether IAM Identity Center is enabled.
     enabled: Any = None
-    # The ARN of the AWS IAM Identity Center instance used to authenticate users for this OpenSearch Service application. (AI-inferred)
     iam_identity_center_instance_arn: Any = None
     # The ARN of the IAM role for Identity Center application.
     iam_role_for_identity_center_application_arn: Any = None

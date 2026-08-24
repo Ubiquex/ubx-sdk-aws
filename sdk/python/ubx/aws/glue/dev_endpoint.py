@@ -8,70 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DevEndpointConfig:
-    # A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred)
     arguments: Any = None
-    # Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred)
     endpoint_name: Any = None
-    # The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred)
     extra_jars_s3_path: Any = None
-    # The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred)
     extra_python_libs_s3_path: Any = None
-    # Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred)
     glue_version: Any = None
-    # Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred)
     number_of_nodes: Any = None
-    # The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred)
     number_of_workers: Any = None
-    # The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred)
     public_key: Any = None
-    # A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred)
     public_keys: Any = None
-    # The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred)
     role_arn: Any = None
-    # The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred)
     security_configuration: Any = None
-    # List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred)
     security_group_ids: Any = None
-    # The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred)
     subnet_id: Any = None
-    # Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred)
     tags: Any = None
-    # The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred)
     worker_type: Any = None
 
 @dataclasses.dataclass
 class DevEndpointAttrs:
-    # A map of key-value pairs that specify configuration arguments passed to the Apache Spark environment of the development endpoint. (AI-inferred)
     arguments: Any = None
-    # Specifies a user-defined name for this AWS Glue development endpoint, which AWS Glue uses to identify it; if omitted, CloudFormation automatically generates a unique name. (AI-inferred)
     endpoint_name: Any = None
-    # The S3 path to one or more Java JAR files that provide custom jars to be used by the Glue development endpoint. (AI-inferred)
     extra_jars_s3_path: Any = None
-    # The S3 path to a Python library (or set of libraries) that AWS Glue installs on the development endpoint for use by your ETL scripts. (AI-inferred)
     extra_python_libs_s3_path: Any = None
-    # Specifies the AWS Glue version (such as '1.0' or '2.0') that defines the Apache Spark and Python runtime environment for this development endpoint. (AI-inferred)
     glue_version: Any = None
-    # The unique identifier for the Glue development endpoint, which is the same as the endpoint's name and is used as the Terraform resource ID for import and state tracking. (AI-inferred)
     id: Any = None
-    # Specifies the number of compute nodes for the development endpoint, which determines its processing capacity and parallelism. (AI-inferred)
     number_of_nodes: Any = None
-    # The number of worker nodes allocated to this AWS Glue development endpoint. (AI-inferred)
     number_of_workers: Any = None
-    # The SSH public key that AWS Glue uses to authenticate connections to the development endpoint. (AI-inferred)
     public_key: Any = None
-    # A list of SSH public keys used to authenticate to the dev endpoint for secure access. (AI-inferred)
     public_keys: Any = None
-    # The ARN of the IAM role that the development endpoint assumes to access resources such as data stores and scripts. (AI-inferred)
     role_arn: Any = None
-    # The name of an AWS Glue security configuration to attach to this development endpoint, which defines encryption and other security settings. (AI-inferred)
     security_configuration: Any = None
-    # List of security group IDs to attach to the Glue dev endpoint for VPC networking. (AI-inferred)
     security_group_ids: Any = None
-    # The subnet ID within a VPC where the AWS Glue development endpoint is provisioned, used when the endpoint needs access to resources in a Virtual Private Cloud. (AI-inferred)
     subnet_id: Any = None
-    # Specifies a set of key-value tags to attach to the AWS Glue development endpoint, used for resource organization, cost allocation, and access control. (AI-inferred)
     tags: Any = None
-    # The worker type for the development endpoint, such as Standard, G.1X, or G.2X, which determines the compute capacity of each worker. (AI-inferred)
     worker_type: Any = None
 
 DevEndpoint = ubx.ResourceBinding(

@@ -32,22 +32,15 @@ export interface FormationGuardHook_StackFilters {
 }
 
 export interface FormationGuardHook_TargetFilters_Targets {
-  /** Specifies whether the Guard hook should be invoked (INVOKE) or skipped (SKIP) for resources matching the target in this target filter. (AI-inferred) */
   action?: string | Computed<string>;
-  /** The invocation point for a target in the Guard hook's target filter, indicating which CloudFormation resource lifecycle event (CREATE, UPDATE, or DELETE) triggers the hook for that target. (AI-inferred) */
   invocationPoint?: string | Computed<string>;
-  /** The name of a target resource type (for example, AWS::S3::Bucket) that this Guard hook filter matches so the hook is invoked only for resources of that type. (AI-inferred) */
   targetName?: string | Computed<string>;
 }
 
 export interface FormationGuardHook_TargetFilters {
-  /** Specifies the list of stack operations (CREATE, UPDATE, DELETE) for which the Guard hook is invoked on the targeted resources. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The invocation points of the target filter, which are the stack lifecycle events (such as BEFORE_CREATION or BEFORE_UPDATE) at which the Guard hook runs for the matched resources. (AI-inferred) */
   invocationPoints?: string[] | Computed<string[]>;
-  /** Specifies the list of AWS resource type names (for example, 'AWS::S3::Bucket') that this Guard hook evaluates for violations during CloudFormation operations. (AI-inferred) */
   targetNames?: string[] | Computed<string[]>;
-  /** Defines the resource targets that the Guard hook applies to, using include and exclude patterns based on resource type and resource identifiers. (AI-inferred) */
   targets?: FormationGuardHook_TargetFilters_Targets[] | Computed<FormationGuardHook_TargetFilters_Targets[]>;
 }
 
@@ -108,7 +101,6 @@ export interface FormationGuardHookConfig {
   hookStatus: string | Computed<string>;
   /** S3 Bucket where the guard validate report will be uploaded to */
   logBucket?: string | Computed<string>;
-  /** Specifies the Guard hook options, including the RuleStack property that gives the Amazon S3 location of the Guard rules file CloudFormation uses to apply policy validation. (AI-inferred) */
   options?: unknown | Computed<unknown>;
   /** S3 Source Location for the Guard files. */
   ruleLocation: FormationGuardHook_RuleLocation | Computed<FormationGuardHook_RuleLocation>;
@@ -133,7 +125,6 @@ export interface FormationGuardHookAttrs {
   hookStatus: string;
   /** S3 Bucket where the guard validate report will be uploaded to */
   logBucket: string;
-  /** Specifies the Guard hook options, including the RuleStack property that gives the Amazon S3 location of the Guard rules file CloudFormation uses to apply policy validation. (AI-inferred) */
   options: unknown;
   /** S3 Source Location for the Guard files. */
   ruleLocation: FormationGuardHook_RuleLocation;

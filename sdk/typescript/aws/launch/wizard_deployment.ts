@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WizardDeployment_Tags {
-  /** The key of a tag attached to the AWS Launch Wizard deployment, allowing you to assign arbitrary metadata to the deployment for organizational or cost-tracking purposes. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS Launch Wizard deployment, which lets you attach arbitrary metadata to the deployment for categorization, access control, and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -18,7 +16,6 @@ export interface WizardDeploymentConfig {
   deploymentPatternName: string | Computed<string>;
   /** Name of LaunchWizard deployment */
   name: string | Computed<string>;
-  /** The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred) */
   specifications?: unknown | Computed<unknown>;
   /** Tags for LaunchWizard deployment */
   tags?: WizardDeployment_Tags[] | Computed<WizardDeployment_Tags[]>;
@@ -41,9 +38,7 @@ export interface WizardDeploymentAttrs {
   name: string;
   /** Resource Group Name created for LaunchWizard deployment */
   resourceGroup: string;
-  /** The map of key-value pairs that define the application and infrastructure parameters (for example, instance types, subnet IDs, and security group names) used to configure the deployment for the chosen Launch Wizard pattern. (AI-inferred) */
   specifications: unknown;
-  /** The status of the Launch Wizard deployment, indicating its current lifecycle state such as 'COMPLETED', 'IN_PROGRESS', or 'FAILED'. (AI-inferred) */
   status: string;
   /** Tags for LaunchWizard deployment */
   tags: WizardDeployment_Tags[];

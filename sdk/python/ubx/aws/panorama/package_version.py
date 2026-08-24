@@ -10,42 +10,26 @@ import ubx_sdk as ubx
 class PackageVersionConfig:
     # Whether to mark the new version as the latest version.
     mark_latest: Any = None
-    # The AWS account ID that owns the package version, used to identify the package owner when registering a package version for a package shared from another account. (AI-inferred)
     owner_account: Any = None
-    # The ID of the AWS Panorama package to which this package version belongs. (AI-inferred)
     package_id: Any = None
-    # The package version identifier for the AWS Panorama package, used to distinguish this release from other versions of the same package. (AI-inferred)
     package_version: Any = None
-    # Specifies the patch version of the Panorama package, which combined with the package name and package version uniquely identifies a specific package version release in AWS Panorama. (AI-inferred)
     patch_version: Any = None
-    # Determines whether the package version is updated to the latest available patch version for the specified package, enabling automatic updates to the newest patch release. (AI-inferred)
     updated_latest_patch_version: Any = None
 
 @dataclasses.dataclass
 class PackageVersionAttrs:
-    # Indicates whether this patch version is the latest available patch for the package version. (AI-inferred)
     is_latest_patch: Any = None
     # Whether to mark the new version as the latest version.
     mark_latest: Any = None
-    # The AWS account ID that owns the package version, used to identify the package owner when registering a package version for a package shared from another account. (AI-inferred)
     owner_account: Any = None
-    # The Amazon Resource Name (ARN) of the Panorama package that this package version belongs to. (AI-inferred)
     package_arn: Any = None
-    # The ID of the AWS Panorama package to which this package version belongs. (AI-inferred)
     package_id: Any = None
-    # The name of the AWS Panorama package to which this package version belongs, uniquely identifying the package within the account. (AI-inferred)
     package_name: Any = None
-    # The package version identifier for the AWS Panorama package, used to distinguish this release from other versions of the same package. (AI-inferred)
     package_version: Any = None
-    # Specifies the patch version of the Panorama package, which combined with the package name and package version uniquely identifies a specific package version release in AWS Panorama. (AI-inferred)
     patch_version: Any = None
-    # The Unix epoch timestamp (in seconds) when this Panorama package version was registered by the service, as returned by AWS Panorama. (AI-inferred)
     registered_time: Any = None
-    # The service-assigned lifecycle status of the Panorama package version, indicating whether it is registered, active, deleting, or failed, and updated automatically as the package version transitions through its lifecycle. (AI-inferred)
     status: Any = None
-    # The package version's status description, providing contextual details about the current state (such as progress or error information) of the AWS Panorama package version. (AI-inferred)
     status_description: Any = None
-    # Determines whether the package version is updated to the latest available patch version for the specified package, enabling automatic updates to the newest patch release. (AI-inferred)
     updated_latest_patch_version: Any = None
 
 PackageVersion = ubx.ResourceBinding(

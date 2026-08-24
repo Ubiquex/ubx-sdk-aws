@@ -11,9 +11,7 @@ type DutyPublishingDestination_DestinationProperties struct {
 }
 
 type DutyPublishingDestination_Tags struct {
-	// The key of a tag assigned to the GuardDuty publishing destination, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag that is associated with the GuardDuty publishing destination, used for resource organization, cost tracking, and management. (AI-inferred)
 	Value any
 }
 
@@ -28,18 +26,15 @@ var DutyPublishingDestination_TagsFields = ubx.FieldMap{
 	}
 
 type DutyPublishingDestinationConfig struct {
-	// Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred)
 	DestinationProperties any
 	// The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
 	DestinationType any
 	// The ID of the GuardDuty detector associated with the publishing destination.
 	DetectorId any
-	// A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred)
 	Tags any
 }
 
 type DutyPublishingDestinationAttrs struct {
-	// Configures the GuardDuty publishing destination by specifying the ARN of the Amazon S3 bucket to receive findings and the ARN of the AWS KMS key used to encrypt those findings. (AI-inferred)
 	DestinationProperties any
 	// The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
 	DestinationType any
@@ -51,7 +46,6 @@ type DutyPublishingDestinationAttrs struct {
 	PublishingFailureStartTimestamp any
 	// The status of the publishing destination.
 	Status any
-	// A list of key-value tags to attach to the GuardDuty publishing destination for organizing and identifying the resource. (AI-inferred)
 	Tags any
 }
 

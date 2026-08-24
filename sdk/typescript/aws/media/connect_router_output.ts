@@ -2,53 +2,39 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration_SecretsManager {
-  /** The ARN of the IAM role that MediaConnect assumes to retrieve the encryption key from AWS Secrets Manager for the destination transit encryption. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The ARN of the AWS Secrets Manager secret that stores the encryption key used to decrypt the destination transit content for this MediaConnect flow output. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration {
   automatic?: unknown | Computed<unknown>;
-  /** Specifies the AWS Secrets Manager configuration, including the secret ARN and IAM role, used to access the encryption key for destination transit encryption. (AI-inferred) */
   secretsManager?: ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration_SecretsManager | Computed<ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration_SecretsManager>;
 }
 
 export interface ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption {
-  /** Defines the encryption key setup (key type and key material reference) for transit encryption of the media stream sent from this output to the destination MediaConnect flow. (AI-inferred) */
   encryptionKeyConfiguration?: ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration | Computed<ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption_EncryptionKeyConfiguration>;
-  /** Specifies the type of encryption key (e.g., 'static-key' or 'speke') used for the destination transit encryption of the MediaConnect flow output, determining how the media stream is encrypted during transmission to the destination. (AI-inferred) */
   encryptionKeyType?: string | Computed<string>;
 }
 
 export interface ConnectRouterOutput_Configuration_MediaConnectFlow {
-  /** Specifies the encryption settings for the transport of media between the router and the MediaConnect flow destination, such as the encryption algorithm and key reference used to protect the stream in transit. (AI-inferred) */
   destinationTransitEncryption?: ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption | Computed<ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption>;
-  /** The ARN of the AWS Elemental MediaConnect flow to which this router output delivers media, specified within the media_connect_flow destination configuration. (AI-inferred) */
   flowArn?: string | Computed<string>;
-  /** Specifies the Amazon Resource Name (ARN) of the MediaConnect flow that serves as the source for this router output. (AI-inferred) */
   flowSourceArn?: string | Computed<string>;
 }
 
 export interface ConnectRouterOutput_Configuration_MediaLiveInput {
   destinationTransitEncryption?: ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption | Computed<ConnectRouterOutput_Configuration_MediaConnectFlow_DestinationTransitEncryption>;
-  /** The ARN of the AWS Elemental MediaLive input that this router output sends the stream to. (AI-inferred) */
   mediaLiveInputArn?: string | Computed<string>;
-  /** The ID of the AWS Elemental MediaLive input pipeline (0 or 1) that the MediaConnect router output targets when its configuration is set to a MediaLive input. (AI-inferred) */
   mediaLivePipelineId?: string | Computed<string>;
 }
 
 export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rist {
-  /** The destination IP address to which the RIST output transmits media packets. (AI-inferred) */
   destinationAddress?: string | Computed<string>;
-  /** The UDP destination port number used by the RIST protocol configuration for this MediaConnect router output. (AI-inferred) */
   destinationPort?: number | Computed<number>;
 }
 
 export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rtp {
-  /** The destination IP address to which the MediaConnect router output sends RTP protocol packets. (AI-inferred) */
   destinationAddress?: string | Computed<string>;
-  /** The destination UDP port number to which the output's RTP media packets are sent when the protocol configuration is set to RTP. (AI-inferred) */
   destinationPort?: number | Computed<number>;
   forwardErrorCorrection?: string | Computed<string>;
 }
@@ -58,58 +44,40 @@ export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguratio
 }
 
 export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller {
-  /** The destination IP address or hostname to which the SRT caller protocol connects for sending the media stream. (AI-inferred) */
   destinationAddress?: string | Computed<string>;
-  /** The destination port number that the SRT caller uses to establish the output connection in the standard protocol configuration. (AI-inferred) */
   destinationPort?: number | Computed<number>;
-  /** Defines the encryption settings, including the encryption algorithm and key material, used to encrypt the SRT (Secure Reliable Transport) caller output stream in the MediaConnect router's standard configuration. (AI-inferred) */
   encryptionConfiguration?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller_EncryptionConfiguration | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller_EncryptionConfiguration>;
-  /** Specifies the minimum latency in milliseconds for the SRT caller output, which sets the lower bound for the SRT stream latency before the connection is considered unstable. (AI-inferred) */
   minimumLatencyMilliseconds?: number | Computed<number>;
-  /** The stream ID to include in the SRT caller connection, identifying the media stream to the receiving endpoint. (AI-inferred) */
   streamId?: string | Computed<string>;
 }
 
 export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtListener {
-  /** Configures the encryption properties for the SRT listener, including the encryption algorithm and the reference to the secret key used to encrypt the video stream. (AI-inferred) */
   encryptionConfiguration?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller_EncryptionConfiguration | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller_EncryptionConfiguration>;
-  /** Sets the minimum latency in milliseconds for the SRT listener, defining the receive buffer delay used to absorb network jitter. (AI-inferred) */
   minimumLatencyMilliseconds?: number | Computed<number>;
-  /** The network port number on which the SRT listener listens for incoming SRT media streams. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration {
-  /** The `rist` object contains the RIST (Reliable Internet Stream Transport) protocol-specific configuration for the router output, including parameters such as the RIST profile and stream identifier, within the standard protocol configuration. (AI-inferred) */
   rist?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rist | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rist>;
-  /** Configures the RTP protocol-specific options for this router output, including the destination IP address and port for media delivery. (AI-inferred) */
   rtp?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rtp | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_Rtp>;
-  /** This object specifies the SRT caller settings, including the remote destination address and port that the router output will use to initiate an SRT connection. (AI-inferred) */
   srtCaller?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtCaller>;
-  /** Defines the SRT listener settings for the MediaConnect router output when using the SRT protocol in listener mode, including the port to listen on and optional encryption parameters for incoming streams. (AI-inferred) */
   srtListener?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtListener | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration_SrtListener>;
 }
 
 export interface ConnectRouterOutput_Configuration_Standard {
-  /** The Amazon Resource Name (ARN) of the Elastic Network Interface (ENI) that the MediaConnect router output uses in its standard configuration to send video traffic. (AI-inferred) */
   networkInterfaceArn?: string | Computed<string>;
   protocol?: string | Computed<string>;
-  /** Defines the protocol-specific settings for a standard MediaConnect router output, such as the transport protocol (e.g., Zixi, SRT, RTP) and its associated parameters like stream ID or listener/caller mode. (AI-inferred) */
   protocolConfiguration?: ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration | Computed<ConnectRouterOutput_Configuration_Standard_ProtocolConfiguration>;
 }
 
 export interface ConnectRouterOutput_Configuration {
   mediaConnectFlow?: ConnectRouterOutput_Configuration_MediaConnectFlow | Computed<ConnectRouterOutput_Configuration_MediaConnectFlow>;
-  /** This object configures the router output to deliver its media stream to an AWS Elemental MediaLive input, specifying the destination input's ARN and connection parameters. (AI-inferred) */
   mediaLiveInput?: ConnectRouterOutput_Configuration_MediaLiveInput | Computed<ConnectRouterOutput_Configuration_MediaLiveInput>;
-  /** Configures a standard router output in AWS MediaConnect, specifying the destination IP address, port, protocol, and related encoding parameters for delivering a flow to a single remote endpoint. (AI-inferred) */
   standard?: ConnectRouterOutput_Configuration_Standard | Computed<ConnectRouterOutput_Configuration_Standard>;
 }
 
 export interface ConnectRouterOutput_MaintenanceConfiguration_PreferredDayTime {
-  /** The day of the week, specified as an uppercase string such as 'MONDAY' or 'SATURDAY', on which maintenance is preferred for this router output. (AI-inferred) */
   day?: string | Computed<string>;
-  /** Specifies the preferred time of day (in 24-hour HH:MM format) for the maintenance window on the MediaConnect router output. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
@@ -120,7 +88,6 @@ export interface ConnectRouterOutput_MaintenanceConfiguration {
 
 export interface ConnectRouterOutput_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag associated with an AWS Elemental MediaConnect router output, used for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -294,12 +261,10 @@ export interface ConnectRouterOutputConfig {
   routingScope: string | Computed<string>;
   /** Key-value pairs that can be used to tag this router output. */
   tags?: ConnectRouterOutput_Tags[] | Computed<ConnectRouterOutput_Tags[]>;
-  /** Specifies the service tier for the router output, with valid values 'BASIC' and 'STANDARD', controlling the throughput and performance characteristics of the output. (AI-inferred) */
   tier: string | Computed<string>;
 }
 
 export interface ConnectRouterOutputAttrs {
-  /** The Amazon Resource Name (ARN) of the MediaConnect router output, automatically assigned by AWS upon creation. (AI-inferred) */
   arn: string;
   /** The Availability Zone where you want to create the router output. This must be a valid Availability Zone for the region specified by regionName, or the current region if no regionName is provided. */
   availabilityZone: string;
@@ -321,13 +286,11 @@ export interface ConnectRouterOutputAttrs {
   outputType: string;
   /** The Amazon Web Services Region for the router output. Defaults to the current region if not specified. */
   regionName: string;
-  /** The current routing status of the router output, reported by the AWS API as either 'ACTIVE' (actively routing media) or 'STANDBY' (not actively routing media). (AI-inferred) */
   routedState: string;
   routingScope: string;
   state: string;
   /** Key-value pairs that can be used to tag this router output. */
   tags: ConnectRouterOutput_Tags[];
-  /** Specifies the service tier for the router output, with valid values 'BASIC' and 'STANDARD', controlling the throughput and performance characteristics of the output. (AI-inferred) */
   tier: string;
   /** The timestamp when the router output was last updated. */
   updatedAt: string;

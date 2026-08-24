@@ -11,11 +11,8 @@ type MakerSimulationApplication_RenderingEngine struct {
 }
 
 type MakerSimulationApplication_Sources struct {
-	// The target processor architecture (X86_64 or ARM64) for the simulation application source bundle, used to match the application with the correct robot simulator architecture. (AI-inferred)
 	Architecture any
-	// The name of the Amazon S3 bucket where the robot application source bundle is stored for this simulation application. (AI-inferred)
 	S3Bucket any
-	// The S3 object key of the robot application bundle stored in the bucket specified by the source's s3_bucket, which is a required component of the source configuration for the simulation application. (AI-inferred)
 	S3Key any
 }
 
@@ -50,7 +47,6 @@ type MakerSimulationApplicationConfig struct {
 }
 
 type MakerSimulationApplicationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this RoboMaker simulation application. (AI-inferred)
 	Arn any
 	// The current revision id.
 	CurrentRevisionId any

@@ -9,11 +9,8 @@ export interface MakerSimulationApplication_RenderingEngine {
 }
 
 export interface MakerSimulationApplication_Sources {
-  /** The target processor architecture (X86_64 or ARM64) for the simulation application source bundle, used to match the application with the correct robot simulator architecture. (AI-inferred) */
   architecture?: string | Computed<string>;
-  /** The name of the Amazon S3 bucket where the robot application source bundle is stored for this simulation application. (AI-inferred) */
   s3Bucket?: string | Computed<string>;
-  /** The S3 object key of the robot application bundle stored in the bucket specified by the source's s3_bucket, which is a required component of the source configuration for the simulation application. (AI-inferred) */
   s3Key?: string | Computed<string>;
 }
 
@@ -48,7 +45,6 @@ export interface MakerSimulationApplicationConfig {
 }
 
 export interface MakerSimulationApplicationAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this RoboMaker simulation application. (AI-inferred) */
   arn: string;
   /** The current revision id. */
   currentRevisionId: string;

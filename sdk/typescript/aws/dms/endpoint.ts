@@ -519,9 +519,7 @@ export interface Endpoint_SybaseSettings {
 }
 
 export interface Endpoint_Tags {
-  /** The key portion of a user-defined tag attached to the DMS endpoint, used for identifying and organizing the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag attached to the AWS DMS endpoint. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

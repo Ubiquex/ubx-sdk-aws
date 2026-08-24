@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Queue_Tags:
-    # The key (name) of a user-defined tag assigned to the SQS queue, used to categorize and manage the queue. (AI-inferred)
     key: Any = None
-    # The value of a tag assigned to the SQS queue. (AI-inferred)
     value: Any = None
 
 _Queue_TagsFields = {
@@ -55,7 +53,6 @@ class QueueConfig:
 
 @dataclasses.dataclass
 class QueueAttrs:
-    # The Amazon Resource Name (ARN) of the SQS queue, automatically assigned by AWS when the queue is created. (AI-inferred)
     arn: Any = None
     # For first-in-first-out (FIFO) queues, specifies whether to enable content-based deduplication. During the deduplication interval, SQS treats messages that are sent with identical content as duplicates and delivers only one copy of the message. For more information, see the ``ContentBasedDeduplication`` attribute for the ``CreateQueue`` action in the *API Reference*.
     content_based_deduplication: Any = None
@@ -77,7 +74,6 @@ class QueueAttrs:
     message_retention_period: Any = None
     # A name for the queue. To create a FIFO queue, the name of your FIFO queue must end with the ``.fifo`` suffix. For more information, see [Amazon SQS FIFO queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-fifo-queues.html) in the *Developer Guide*. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the queue name. For more information, see [Name type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html) in the *User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
     queue_name: Any = None
-    # The URL identifying the created SQS queue. (AI-inferred)
     queue_url: Any = None
     # Specifies the duration, in seconds, that the ReceiveMessage action call waits until a message is in the queue in order to include it in the response, rather than returning an empty response if a message isn't yet available. You can specify an integer from 1 to 20. Short polling is used as the default or when you specify 0 for this property. For more information, see [Consuming messages using long polling](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html#sqs-long-polling) in the *Developer Guide*.
     receive_message_wait_time_seconds: Any = None

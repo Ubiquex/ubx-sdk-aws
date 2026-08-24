@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Permission_Tags:
-    # The key of a tag to attach to the AWS Resource Access Manager (RAM) permission, used for organizing and filtering the permission in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -25,24 +24,20 @@ class PermissionConfig:
     policy_template: Any = None
     # The resource type this permission can be used with.
     resource_type: Any = None
-    # A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PermissionAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Resource Access Manager permission, including the AWS account, region, permission name, and version (e.g., arn:aws:ram:us-east-1:123456789012:permission/MyPermission/1). (AI-inferred)
     arn: Any = None
     # Set to true to use this as the default permission.
     is_resource_type_default: Any = None
     # The name of the permission.
     name: Any = None
-    # Indicates whether the RAM permission is AWS-managed or customer-managed. (AI-inferred)
     permission_type: Any = None
     # Policy template for the permission.
     policy_template: Any = None
     # The resource type this permission can be used with.
     resource_type: Any = None
-    # A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred)
     tags: Any = None
     # Version of the permission.
     version: Any = None

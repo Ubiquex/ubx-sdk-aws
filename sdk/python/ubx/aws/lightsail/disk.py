@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Disk_AddOns_AutoSnapshotAddOnRequest:
-    # Specifies the time of day (in 24-hour HH:00 format, e.g., '02:00') when the automatic snapshot of the disk is created for the auto snapshot add-on. (AI-inferred)
     snapshot_time_of_day: Any = None
 
 @dataclasses.dataclass
 class Disk_AddOns:
-    # Specifies the type of add-on to enable for the Lightsail disk, such as AutoSnapshot for automatic snapshots. (AI-inferred)
     add_on_type: Any = None
-    # Configures the automatic snapshot add-on for the Lightsail disk, including the daily time (in HH:00 format) at which the snapshot is created. (AI-inferred)
     auto_snapshot_add_on_request: Any = None
-    # The status of the disk add-on, typically 'Enabled' or 'Disabled', indicating whether the add-on is active on the Lightsail disk. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -29,9 +25,7 @@ class Disk_Location:
 
 @dataclasses.dataclass
 class Disk_Tags:
-    # The key of a tag to attach to the Lightsail disk, used to organize and identify the disk resource. (AI-inferred)
     key: Any = None
-    # Specifies the tag value in a key-value pair that you attach to the Lightsail disk for metadata and resource management purposes. (AI-inferred)
     value: Any = None
 
 _Disk_AddOns_AutoSnapshotAddOnRequestFields = {
@@ -76,7 +70,6 @@ class DiskAttrs:
     attachment_state: Any = None
     # The Availability Zone in which to create your instance. Use the following format: us-east-2a (case sensitive). Be sure to add the include Availability Zones parameter to your request.
     availability_zone: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Lightsail disk. (AI-inferred)
     disk_arn: Any = None
     # The names to use for your new Lightsail disk.
     disk_name: Any = None

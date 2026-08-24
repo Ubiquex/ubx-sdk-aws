@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Farm_Tags {
-  /** The user-defined key for a tag attached to the AWS Deadline Cloud farm, used to identify and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag applied to the AWS Deadline Farm, allowing you to categorize and manage the farm with custom metadata such as cost allocation or team identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -15,27 +13,19 @@ const Farm_TagsFields: FieldMap = {
 
 export interface FarmConfig {
   costScaleFactor?: number | Computed<number>;
-  /** A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Farm_Tags[] | Computed<Farm_Tags[]>;
 }
 
 export interface FarmAttrs {
-  /** The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred) */
   arn: string;
   costScaleFactor: number;
-  /** A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred) */
   description: string;
-  /** Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred) */
   displayName: string;
-  /** The unique identifier assigned to the farm by AWS Deadline when the farm is created. (AI-inferred) */
   farmId: string;
-  /** The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred) */
   kmsKeyArn: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Farm_Tags[];

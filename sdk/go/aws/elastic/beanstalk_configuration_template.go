@@ -4,13 +4,9 @@ package elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BeanstalkConfigurationTemplate_OptionSettings struct {
-	// The namespace that identifies the AWS service and configuration section (e.g., 'aws:autoscaling:asg') to which the option setting applies in the Elastic Beanstalk configuration template. (AI-inferred)
 	Namespace any
-	// The name of the configuration option being set within its namespace, identifying the specific Elastic Beanstalk setting (e.g., 'InstanceType' in the 'aws:autoscaling:launchconfiguration' namespace). (AI-inferred)
 	OptionName any
-	// A unique name identifying the specific AWS resource (such as an Auto Scaling group or load balancer) within the Elastic Beanstalk environment that the configuration option applies to. (AI-inferred)
 	ResourceName any
-	// The value assigned to the Elastic Beanstalk configuration option identified by the sibling OptionName within the specified Namespace. (AI-inferred)
 	Value any
 }
 
@@ -46,7 +42,6 @@ type BeanstalkConfigurationTemplateConfig struct {
 	PlatformArn any
 	// The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
 	SolutionStackName any
-	// Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
 	SourceConfiguration any
 }
 
@@ -63,7 +58,6 @@ type BeanstalkConfigurationTemplateAttrs struct {
 	PlatformArn any
 	// The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, 64bit Amazon Linux 2013.09 running Tomcat 7 Java 7. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html) in the AWS Elastic Beanstalk Developer Guide. You must specify SolutionStackName if you don't specify PlatformArn, EnvironmentId, or SourceConfiguration. Use the ListAvailableSolutionStacks API to obtain a list of available solution stacks.
 	SolutionStackName any
-	// Specifies an existing Elastic Beanstalk configuration template (identified by application name and template name) whose settings are copied to create the new configuration template. (AI-inferred)
 	SourceConfiguration any
 	// The name of the configuration template
 	TemplateName any

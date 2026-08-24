@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StoredQuery_Tags struct {
 	Key any
-	// For an AWS Config stored query, this field provides the value portion of a user-defined tag (key-value pair) used to organize and identify the query resource. (AI-inferred)
 	Value any
 }
 
@@ -15,26 +14,18 @@ var StoredQuery_TagsFields = ubx.FieldMap{
 	}
 
 type StoredQueryConfig struct {
-	// The query_description field provides an optional, human-readable description for the AWS Config stored query, used to document the query's purpose or details. (AI-inferred)
 	QueryDescription any
-	// The SQL query expression (in AWS Config query language) that defines the resource configurations to retrieve when this stored query is executed. (AI-inferred)
 	QueryExpression any
-	// The name of the AWS Config stored query, which must be unique within the AWS account and is used to identify the query resource. (AI-inferred)
 	QueryName any
 	// The tags for the stored query.
 	Tags any
 }
 
 type StoredQueryAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the stored AWS Config query. (AI-inferred)
 	QueryArn any
-	// The query_description field provides an optional, human-readable description for the AWS Config stored query, used to document the query's purpose or details. (AI-inferred)
 	QueryDescription any
-	// The SQL query expression (in AWS Config query language) that defines the resource configurations to retrieve when this stored query is executed. (AI-inferred)
 	QueryExpression any
-	// The unique identifier assigned by AWS to the stored query when it is created. (AI-inferred)
 	QueryId any
-	// The name of the AWS Config stored query, which must be unique within the AWS account and is used to identify the query resource. (AI-inferred)
 	QueryName any
 	// The tags for the stored query.
 	Tags any

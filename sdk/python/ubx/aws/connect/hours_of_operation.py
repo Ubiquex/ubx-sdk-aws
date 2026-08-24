@@ -13,61 +13,41 @@ class HoursOfOperation_ChildHoursOfOperations:
 
 @dataclasses.dataclass
 class HoursOfOperation_Config_EndTime:
-    # Specifies the hour (0-23) in 24-hour format at which the operating hours end for the configured day. (AI-inferred)
     hours: Any = None
-    # The minutes component of the time of day when the hours of operation configuration ends, used together with the end_time hour to define the daily closing time. (AI-inferred)
     minutes: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_Config:
-    # Specifies the day of the week (e.g., MONDAY, TUESDAY) that this hours of operation configuration applies to in the AWS Connect HoursOfOperation resource. (AI-inferred)
     day: Any = None
-    # The time at which the hours of operation end for a given day, specified as an object with hours and minutes in a 24-hour format. (AI-inferred)
     end_time: Any = None
-    # The start_time field specifies the time in HH:MM format (24-hour) when the hours of operation begin for the configured day. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig_RecurrencePattern:
-    # Specifies the months (1-12) during which this hours-of-operation override recurrence pattern is active, used in combination with other recurrence fields to define a monthly scheduling rule. (AI-inferred)
     by_month: Any = None
-    # Defines the days of the month (1-31) on which the hours-of-operation override recurs, used when the recurrence pattern is set to a monthly interval. (AI-inferred)
     by_month_day: Any = None
-    # Specifies the occurrence(s) of the weekdays within a month (e.g., 1 for first, 2 for second, -1 for last) on which this hours of operation override recurrence applies. (AI-inferred)
     by_weekday_occurrence: Any = None
-    # The frequency unit for the recurrence pattern of this override (e.g., daily, weekly, or monthly), defining how often the override schedule repeats. (AI-inferred)
     frequency: Any = None
-    # The number of time units (e.g., weeks or months, based on the recurrence pattern's frequency) between each occurrence of the recurring hours of operation override, such as 2 for every other week. (AI-inferred)
     interval: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_HoursOfOperationOverrides_RecurrenceConfig:
-    # Configures the recurrence pattern (e.g., daily, weekly, or monthly interval and specific days) for applying the hours-of-operation override across a repeating schedule defined in the recurrence configuration. (AI-inferred)
     recurrence_pattern: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_HoursOfOperationOverrides:
-    # Specifies the starting timestamp (in ISO 8601 format) from which this hours of operation override takes effect. (AI-inferred)
     effective_from: Any = None
-    # Specifies the end date and time (in ISO 8601 format) for which this hours of operation override remains in effect, after which the standard hours of operation schedule applies. (AI-inferred)
     effective_till: Any = None
-    # This field provides a unique, user-defined identifier for a specific hours of operation override entry within the hours_of_operation_overrides list, allowing each override to be individually referenced and managed. (AI-inferred)
     hours_of_operation_override_id: Any = None
-    # The override config defines the alternative schedule of days and times that overrides the default hours of operation during a specified date/time window. (AI-inferred)
     override_config: Any = None
-    # Provides a human-readable description for an hours of operation override, enabling administrators to label special schedules such as holidays or one-off events. (AI-inferred)
     override_description: Any = None
-    # The display name assigned to a specific date override (e.g., a holiday) within an Amazon Connect hours of operation configuration, used to identify the custom schedule for that date. (AI-inferred)
     override_name: Any = None
-    # Indicates the type of override, either HOLIDAY or OVERRIDE, determining how the specific-date hours override the weekly configuration. (AI-inferred)
     override_type: Any = None
     recurrence_config: Any = None
 
 @dataclasses.dataclass
 class HoursOfOperation_Tags:
-    # The key part of a tag for the Amazon Connect hours of operation, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag key-value pair attached to the Amazon Connect hours of operation resource, used for resource categorization and management. (AI-inferred)
     value: Any = None
 
 _HoursOfOperation_ChildHoursOfOperationsFields = {

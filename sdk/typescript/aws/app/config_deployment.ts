@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigDeployment_DynamicExtensionParameters {
-  /** The name of the AppConfig extension that consumes this dynamic parameter during deployment. (AI-inferred) */
   extensionReference?: string | Computed<string>;
-  /** The name of the dynamic extension parameter being set for the AppConfig deployment, used to pass custom configuration to an extension (such as a Lambda function) during a deployment event. (AI-inferred) */
   parameterName?: string | Computed<string>;
-  /** Provides the dynamic value supplied to an extension parameter at deployment time, overriding the extension's default parameter value for this deployment. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
@@ -37,7 +34,6 @@ export interface ConfigDeploymentConfig {
   deploymentStrategyId: string | Computed<string>;
   /** A description of the deployment. */
   description?: string | Computed<string>;
-  /** A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred) */
   dynamicExtensionParameters?: ConfigDeployment_DynamicExtensionParameters[] | Computed<ConfigDeployment_DynamicExtensionParameters[]>;
   /** The environment ID. */
   environmentId: string | Computed<string>;
@@ -60,7 +56,6 @@ export interface ConfigDeploymentAttrs {
   deploymentStrategyId: string;
   /** A description of the deployment. */
   description: string;
-  /** A list of key-value pairs that specify dynamic parameter values to be passed to the AppConfig extension hooks (e.g., Lambda functions) when the deployment is executed. (AI-inferred) */
   dynamicExtensionParameters: ConfigDeployment_DynamicExtensionParameters[];
   /** The environment ID. */
   environmentId: string;

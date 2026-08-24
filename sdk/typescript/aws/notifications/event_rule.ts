@@ -2,36 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventRuleConfig {
-  /** Specifies a JSON string containing the event pattern that determines which events trigger this rule, such as matching AWS service, event type, or resource attributes. (AI-inferred) */
   eventPattern?: string | Computed<string>;
-  /** Specifies the event type from the source AWS service that this notification rule matches (for example, a named event such as an EC2 instance state-change notification). (AI-inferred) */
   eventType: string | Computed<string>;
-  /** The ARN of the notification configuration to which this event rule belongs, determining the channel and settings used for delivering notifications from matched events. (AI-inferred) */
   notificationConfigurationArn: string | Computed<string>;
-  /** Specifies the AWS Regions in which the event rule is active and should apply. (AI-inferred) */
   regions: string[] | Computed<string[]>;
-  /** Specifies the AWS service or event source (such as aws.ec2) that the notification rule monitors for events, acting as the source of the triggering events. (AI-inferred) */
   source: string | Computed<string>;
 }
 
 export interface EventRuleAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Notifications event rule, used to reference the rule in IAM policies, cross-service resource sharing, and API operations. (AI-inferred) */
   arn: string;
-  /** The timestamp indicating when the event rule was created, formatted as an ISO 8601 date-time string. (AI-inferred) */
   creationTime: string;
-  /** Specifies a JSON string containing the event pattern that determines which events trigger this rule, such as matching AWS service, event type, or resource attributes. (AI-inferred) */
   eventPattern: string;
-  /** Specifies the event type from the source AWS service that this notification rule matches (for example, a named event such as an EC2 instance state-change notification). (AI-inferred) */
   eventType: string;
-  /** The list of Amazon EventBridge managed rule ARNs that AWS automatically creates and manages for this notification event rule. (AI-inferred) */
   managedRules: string[];
-  /** The ARN of the notification configuration to which this event rule belongs, determining the channel and settings used for delivering notifications from matched events. (AI-inferred) */
   notificationConfigurationArn: string;
-  /** Specifies the AWS Regions in which the event rule is active and should apply. (AI-inferred) */
   regions: string[];
-  /** Specifies the AWS service or event source (such as aws.ec2) that the notification rule monitors for events, acting as the source of the triggering events. (AI-inferred) */
   source: string;
-  /** This computed field provides a region-by-region summary of the event rule's status, indicating for each region whether the rule is active or has an error condition. (AI-inferred) */
   statusSummaryByRegion: unknown;
 }
 

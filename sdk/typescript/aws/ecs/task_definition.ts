@@ -2,256 +2,159 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TaskDefinition_ContainerDefinitions_DependsOn {
-  /** Specifies the state that the container named in depends_on must reach for this container to start, such as START, COMPLETE, SUCCESS, or HEALTHY. (AI-inferred) */
   condition?: string | Computed<string>;
-  /** Specifies the name of the container that this container depends on, as part of the container's dependency conditions within the same task definition. (AI-inferred) */
   containerName?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_Environment {
-  /** The name of the environment variable to configure in the container as part of the task definition's container environment list. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the environment variable defined for the container in the ECS task definition, paired with the corresponding name in the environment key-value list. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_EnvironmentFiles {
-  /** Specifies the type of the environment file, where the only supported value is 's3', indicating the file is stored in an Amazon S3 bucket. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The Amazon S3 object ARN (e.g., arn:aws:s3:::bucket-name/key-name) of the environment variables file that ECS loads into the container environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_ExtraHosts {
-  /** The hostname to add to the container's /etc/hosts file, paired with its IP address in the same extra_hosts entry. (AI-inferred) */
   hostname?: string | Computed<string>;
-  /** The IP address to which the corresponding hostname in the extra_hosts entry is resolved inside the container's network configuration (e.g., appended to /etc/hosts). (AI-inferred) */
   ipAddress?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_FirelensConfiguration {
-  /** Configures FireLens log routing by providing settings such as config-file-type, config-file-value, and enable-ecs-log-metadata. (AI-inferred) */
   options?: unknown | Computed<unknown>;
-  /** Specifies the log router to use for Firelens, either 'fluentd' or 'fluentbit' (required). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_HealthCheck {
-  /** The command (as a list of strings, e.g., ["CMD-SHELL", "curl -f http://localhost/"]) that the container runs to perform its health check, corresponding directly to the Docker HEALTHCHECK instruction's command portion. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** The time period in seconds between each container health check execution, as part of the ECS task definition container health check configuration. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** Specifies the number of times to retry a failed health check before the container is considered unhealthy, with a default of 3. (AI-inferred) */
   retries?: number | Computed<number>;
-  /** Specifies the duration in seconds that Amazon ECS waits after the container starts before it begins counting failed health check results, providing a grace period for containers that need time to initialize before being marked unhealthy. (AI-inferred) */
   startPeriod?: number | Computed<number>;
-  /** The number of seconds to wait for a health check to succeed before considering the container unhealthy. (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities {
-  /** Specifies additional Linux capabilities to grant the container, such as SYS_ADMIN or NET_ADMIN, in the task definition's Linux parameters. (AI-inferred) */
   add?: string[] | Computed<string[]>;
-  /** Specifies the Linux capabilities to remove from the container's default set, such as SYS_ADMIN or NET_RAW, to restrict its privileges at runtime. (AI-inferred) */
   drop?: string[] | Computed<string[]>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LinuxParameters_Devices {
-  /** The path inside the container at which the host device is mounted and exposed. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** The absolute path on the host of the device to expose to the container, used in a Linux container's devices configuration to grant access to host devices. (AI-inferred) */
   hostPath?: string | Computed<string>;
-  /** Specifies the device permissions (e.g., read, write, mknod) that grant the container access to each host device listed in the devices block, controlling what operations the container can perform on those devices. (AI-inferred) */
   permissions?: string[] | Computed<string[]>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs {
-  /** The absolute file path inside the container where the tmpfs volume is mounted. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** Specifies the mount options (e.g., size, mode, ro) passed to the tmpfs mount for the container. (AI-inferred) */
   mountOptions?: string[] | Computed<string[]>;
-  /** The size of the tmpfs mount in MiB, specifying the maximum capacity of the temporary filesystem mounted at the container's path. (AI-inferred) */
   size?: number | Computed<number>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LinuxParameters {
-  /** Specifies the Linux capabilities to add or remove from the container's default set, with 'add' and 'drop' lists of capability names. (AI-inferred) */
   capabilities?: TaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities | Computed<TaskDefinition_ContainerDefinitions_LinuxParameters_Capabilities>;
-  /** A list of host devices to expose to the container, each specifying the host path, optional container path, and access permissions (read, write, mknod). (AI-inferred) */
   devices?: TaskDefinition_ContainerDefinitions_LinuxParameters_Devices[] | Computed<TaskDefinition_ContainerDefinitions_LinuxParameters_Devices[]>;
-  /** When true, runs an init process as PID 1 inside the container to reap zombie processes and properly forward signals, such as SIGTERM, to the main application. (AI-inferred) */
   initProcessEnabled?: boolean | Computed<boolean>;
-  /** The maximum amount of swap memory (in MiB) the container can use, overriding the host's default swap settings for this container. (AI-inferred) */
   maxSwap?: number | Computed<number>;
-  /** Specifies the size in MiB of the shared memory (/dev/shm) volume to allocate for the container, overriding the default 64 MiB. (AI-inferred) */
   sharedMemorySize?: number | Computed<number>;
-  /** The swappiness parameter controls the relative weight of swapping out anonymous pages versus page cache in the container, accepting an integer from 0 to 100 that is passed as a kernel tuning option. (AI-inferred) */
   swappiness?: number | Computed<number>;
-  /** Configures temporary file system (tmpfs) mounts for the container, listing each mount's container path, size in MiB, and optional mount options as defined under LinuxParameters in the ECS task definition. (AI-inferred) */
   tmpfs?: TaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs[] | Computed<TaskDefinition_ContainerDefinitions_LinuxParameters_Tmpfs[]>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions {
-  /** The name (key) of the log driver option for which the referenced secret's value is used, such as 'splunk-token' or 'project' in the log configuration. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The ARN of the secret (from AWS Secrets Manager or Systems Manager Parameter Store) that provides the value for the corresponding log driver option in the ECS task definition's log configuration. (AI-inferred) */
   valueFrom?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_LogConfiguration {
-  /** Specifies the logging driver used by the container, such as awslogs for CloudWatch Logs, fluentd, syslog, json-file, or splunk, which determines how and where container logs are delivered. (AI-inferred) */
   logDriver?: string | Computed<string>;
-  /** The options map provides the key-value configuration parameters for the container's chosen log driver (for example, awslogs-group and awslogs-region for the awslogs driver). (AI-inferred) */
   options?: unknown | Computed<unknown>;
-  /** Specifies the secrets to pass to the log driver configuration, allowing you to reference sensitive information from AWS Secrets Manager or Systems Manager Parameter Store. (AI-inferred) */
   secretOptions?: TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[] | Computed<TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[]>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_MountPoints {
-  /** The container_path specifies the absolute path inside the container where the volume is mounted. (AI-inferred) */
   containerPath?: string | Computed<string>;
-  /** Determines whether the container has read-only access to the mounted volume; when set to true, writes to the volume are rejected, and when false, read/write access is permitted. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
-  /** Name of the volume to mount, which must match the name of a volume defined in the task definition's volumes block. (AI-inferred) */
   sourceVolume?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_PortMappings {
-  /** Specifies the application protocol (e.g., http, http2, grpc) for this port mapping, which is used by AWS App Mesh and Amazon ECS Service Connect to route traffic to the container. (AI-inferred) */
   appProtocol?: string | Computed<string>;
-  /** The port number on the container that receives inbound traffic, paired with a host port to map a container port to a port on the host for ECS task definition port mappings. (AI-inferred) */
   containerPort?: number | Computed<number>;
-  /** Specifies the inclusive range of container ports to map to the host, using the format 'startPort-endPort' (for example, '8000-8080'), enabling the task to expose multiple ports in one definition. (AI-inferred) */
   containerPortRange?: string | Computed<string>;
-  /** The port number on the container instance (host) that receives inbound traffic and forwards it to the container's `containerPort`, used with bridge and host network modes; it can be left empty to map directly to the container port. (AI-inferred) */
   hostPort?: number | Computed<number>;
-  /** The name that identifies this port mapping, used when configuring Service Connect for the ECS service. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The transport protocol (tcp, udp, or tcpudp) that this port mapping uses for communication in the container definition. (AI-inferred) */
   protocol?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_RepositoryCredentials {
-  /** The ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the authentication credentials for the private container repository used by this container definition. (AI-inferred) */
   credentialsParameter?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_RestartPolicy {
-  /** Whether the container's restart policy is enabled, allowing ECS to automatically restart the container if it exits or fails. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies a list of container exit codes that are ignored by the ECS restart policy, so the container is not restarted when it exits with any of these codes. (AI-inferred) */
   ignoredExitCodes?: number[] | Computed<number[]>;
-  /** The number of seconds to wait after a container exits before attempting to restart it, as part of the ECS restart policy to control the frequency of restart attempts. (AI-inferred) */
   restartAttemptPeriod?: number | Computed<number>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_SystemControls {
-  /** The sysctl namespace (kernel parameter name) to configure for the container, such as `kernel.msgmax` or `net.ipv4.ip_forward`. (AI-inferred) */
   namespace?: string | Computed<string>;
-  /** The value assigned to the Linux kernel system control (sysctl) specified by the `namespace` field, such as `1` to enable IP forwarding in the container's network namespace. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_Ulimits {
-  /** The hard limit (maximum value) for the ulimit setting on the container, which the container cannot exceed. (AI-inferred) */
   hardLimit?: number | Computed<number>;
-  /** Specifies the type of ulimit to apply to the container, such as 'cpu', 'nofile', 'nproc', or other valid Linux resource limit names. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The lower boundary (soft limit) for the container's ulimit value, specifying the resource limit that can be raised by the process up to the hard limit. (AI-inferred) */
   softLimit?: number | Computed<number>;
 }
 
 export interface TaskDefinition_ContainerDefinitions_VolumesFrom {
-  /** If true, the container mounts the volume from the source container as read-only. (AI-inferred) */
   readOnly?: boolean | Computed<boolean>;
-  /** The name of the source container from which this container mounts volumes, as defined in the containerDefinitions. (AI-inferred) */
   sourceContainer?: string | Computed<string>;
 }
 
 export interface TaskDefinition_ContainerDefinitions {
-  /** The command to run in the container, which overrides the default command specified in the container image. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** The number of CPU units reserved for this container, which determines the relative CPU share allocated to it within the task. (AI-inferred) */
   cpu?: number | Computed<number>;
-  /** A list of ARNs for Windows credential specification files (used for gMSA or domain-joined containers) that are applied to this container definition, either stored in an S3 bucket or in the ECS service-linked role. (AI-inferred) */
   credentialSpecs?: string[] | Computed<string[]>;
-  /** Specifies dependencies on other containers in the same task, controlling startup and shutdown order by requiring a container to reach a certain condition (e.g., START, COMPLETE, SUCCESS, HEALTHY) before this container starts. (AI-inferred) */
   dependsOn?: TaskDefinition_ContainerDefinitions_DependsOn[] | Computed<TaskDefinition_ContainerDefinitions_DependsOn[]>;
-  /** When set to true, disables networking for the container, meaning it does not receive a network interface and has no network access within the task. (AI-inferred) */
   disableNetworking?: boolean | Computed<boolean>;
-  /** A list of DNS search domain names that are passed to the container's resolver configuration, allowing the container to search these domains when resolving hostnames. (AI-inferred) */
   dnsSearchDomains?: string[] | Computed<string[]>;
-  /** Specifies the DNS servers for the container, which are written to the container's /etc/resolv.conf file as nameserver entries. (AI-inferred) */
   dnsServers?: string[] | Computed<string[]>;
-  /** Specifies the custom Docker labels to add to the container as key-value pairs, which can be used for organizing or identifying the container. (AI-inferred) */
   dockerLabels?: unknown | Computed<unknown>;
-  /** Specifies the Docker security options (a list of strings) that are passed to the container runtime, such as 'no-new-privileges', to enforce additional security constraints on the container. (AI-inferred) */
   dockerSecurityOptions?: string[] | Computed<string[]>;
-  /** Specifies the entry point for the container as a list of strings, overriding the default ENTRYPOINT defined in the container image, where the first string is the executable and the rest are arguments. (AI-inferred) */
   entryPoint?: string[] | Computed<string[]>;
-  /** The environment variables to pass to the container, as a list of objects each containing a name and a value. (AI-inferred) */
   environment?: TaskDefinition_ContainerDefinitions_Environment[] | Computed<TaskDefinition_ContainerDefinitions_Environment[]>;
-  /** A list of environment files (S3 objects) whose contents define environment variables that are injected into the container at task launch. (AI-inferred) */
   environmentFiles?: TaskDefinition_ContainerDefinitions_EnvironmentFiles[] | Computed<TaskDefinition_ContainerDefinitions_EnvironmentFiles[]>;
-  /** Specifies whether this container is essential to the task; if an essential container stops or fails, all other containers in the task are stopped and the task is considered failed. (AI-inferred) */
   essential?: boolean | Computed<boolean>;
-  /** Specifies additional hostname-to-IP address mappings to add to the container's /etc/hosts file, allowing the container to resolve those hostnames. (AI-inferred) */
   extraHosts?: TaskDefinition_ContainerDefinitions_ExtraHosts[] | Computed<TaskDefinition_ContainerDefinitions_ExtraHosts[]>;
-  /** Specifies the FireLens configuration for a container in the ECS task definition, enabling log routing to destinations like Fluentd or Fluent Bit via a configurable type and options such as log metadata and config file delivery. (AI-inferred) */
   firelensConfiguration?: TaskDefinition_ContainerDefinitions_FirelensConfiguration | Computed<TaskDefinition_ContainerDefinitions_FirelensConfiguration>;
-  /** Defines the container health check configuration, including the command to run and parameters such as interval, timeout, retries, and start period, which ECS uses to determine container health. (AI-inferred) */
   healthCheck?: TaskDefinition_ContainerDefinitions_HealthCheck | Computed<TaskDefinition_ContainerDefinitions_HealthCheck>;
-  /** Sets the hostname of the container, which other containers in the same task definition can use for DNS resolution. (AI-inferred) */
   hostname?: string | Computed<string>;
-  /** The Docker image (e.g., a repository URL or image name:tag) to run for this container in the ECS task definition. (AI-inferred) */
   image?: string | Computed<string>;
-  /** When set to true, this enables the container's interactive mode, keeping STDIN open and allowing a shell or other process to interact with the container, equivalent to Docker's `--interactive` flag. (AI-inferred) */
   interactive?: boolean | Computed<boolean>;
-  /** Specifies a list of container names to link, enabling network connectivity and injecting environment variables for inter-container communication. (AI-inferred) */
   links?: string[] | Computed<string[]>;
-  /** Specifies Linux-specific container configuration options such as kernel capabilities, device mappings, init process enablement, shared memory size, tmpfs mounts, and swap settings for a container in an ECS task definition. (AI-inferred) */
   linuxParameters?: TaskDefinition_ContainerDefinitions_LinuxParameters | Computed<TaskDefinition_ContainerDefinitions_LinuxParameters>;
-  /** This object configures the logging driver for the container (e.g., awslogs, json-file, syslog) and its options, such as awslogs-group and awslogs-region, controlling how container logs are captured and delivered to the specified destination. (AI-inferred) */
   logConfiguration?: TaskDefinition_ContainerDefinitions_LogConfiguration | Computed<TaskDefinition_ContainerDefinitions_LogConfiguration>;
-  /** Specifies the hard limit (in MiB) of memory available to the container; when the container's memory usage reaches this limit, the container is killed. (AI-inferred) */
   memory?: number | Computed<number>;
-  /** The soft memory limit in MiB for the container, which ECS uses for placement and scheduling, allowing the container to burst above this value when the host has spare memory. (AI-inferred) */
   memoryReservation?: number | Computed<number>;
-  /** Specifies the mount points for data volumes in the container, including the source volume name and the container path where the volume is mounted. (AI-inferred) */
   mountPoints?: TaskDefinition_ContainerDefinitions_MountPoints[] | Computed<TaskDefinition_ContainerDefinitions_MountPoints[]>;
-  /** The name of the container definition, which must be unique among all container definitions in the task definition and is used to reference the container from other definitions (e.g., links, dependsOn, and volume mounts). (AI-inferred) */
   name?: string | Computed<string>;
-  /** Defines the port mappings for a container, specifying container port, host port, and protocol (tcp/udp), which controls how traffic is routed to the container in the ECS task. (AI-inferred) */
   portMappings?: TaskDefinition_ContainerDefinitions_PortMappings[] | Computed<TaskDefinition_ContainerDefinitions_PortMappings[]>;
-  /** When set to true, the container runs in privileged mode, granting it elevated permissions on the host container instance (similar to Docker's --privileged flag). (AI-inferred) */
   privileged?: boolean | Computed<boolean>;
-  /** Indicates whether to allocate a pseudo-TTY (teletypewriter) for the container, enabling an interactive terminal session, similar to the Docker `--tty` flag. (AI-inferred) */
   pseudoTerminal?: boolean | Computed<boolean>;
-  /** Specifies whether the container's root filesystem is mounted in read-only mode, preventing the container from writing to its root filesystem while still permitting writes to attached volumes. (AI-inferred) */
   readonlyRootFilesystem?: boolean | Computed<boolean>;
-  /** Specifies the AWS Secrets Manager secret or SSM parameter ARN that holds the credentials needed to pull the container image from a private registry. (AI-inferred) */
   repositoryCredentials?: TaskDefinition_ContainerDefinitions_RepositoryCredentials | Computed<TaskDefinition_ContainerDefinitions_RepositoryCredentials>;
-  /** Specifies the type and amount of a resource (such as GPU or InferenceAccelerator) that the container requires, used to request hardware accelerators like NVIDIA GPUs or AWS Inferentia chips. (AI-inferred) */
   resourceRequirements?: TaskDefinition_ContainerDefinitions_EnvironmentFiles[] | Computed<TaskDefinition_ContainerDefinitions_EnvironmentFiles[]>;
-  /** Specifies the restart policy for the container, including whether it is enabled and the attempt period, allowing the container to automatically restart after a failure or exit; it is only supported for tasks using the Fargate launch type. (AI-inferred) */
   restartPolicy?: TaskDefinition_ContainerDefinitions_RestartPolicy | Computed<TaskDefinition_ContainerDefinitions_RestartPolicy>;
-  /** Specifies the secrets to pass to the container, referencing either AWS Secrets Manager secrets or SSM Parameter Store parameters, each containing a name and a valueFrom ARN or full SSM parameter name. (AI-inferred) */
   secrets?: TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[] | Computed<TaskDefinition_ContainerDefinitions_LogConfiguration_SecretOptions[]>;
-  /** Specifies the time duration in seconds to wait for the container to become healthy after it starts, after which the container is considered failed if it has not reached a healthy state. (AI-inferred) */
   startTimeout?: number | Computed<number>;
-  /** The time in seconds to wait for the container to stop after sending SIGTERM before the system sends SIGKILL, overriding the Docker daemon's default stop timeout. (AI-inferred) */
   stopTimeout?: number | Computed<number>;
-  /** Specifies a list of system control (sysctl) settings to apply to the container, allowing you to modify kernel parameters such as network stack settings (e.g., net.ipv4.ip_forward) as defined in the container definition. (AI-inferred) */
   systemControls?: TaskDefinition_ContainerDefinitions_SystemControls[] | Computed<TaskDefinition_ContainerDefinitions_SystemControls[]>;
-  /** Defines a list of ulimit settings for the container that override Docker defaults, each specifying a resource type (such as 'nofile' or 'cpu') along with soft and hard limits. (AI-inferred) */
   ulimits?: TaskDefinition_ContainerDefinitions_Ulimits[] | Computed<TaskDefinition_ContainerDefinitions_Ulimits[]>;
-  /** The user name or numeric UID (and optionally group) to run the container process as, overriding the image's default user. (AI-inferred) */
   user?: string | Computed<string>;
-  /** Specifies whether ECS version consistency is enabled for this container definition, accepting values 'enabled' or 'disabled' to control whether the container image is pinned to an exact digest for immutable deployments. (AI-inferred) */
   versionConsistency?: string | Computed<string>;
-  /** Specifies the volumes to mount from other containers in the same task definition, including the source container name and whether the mount is read-only. (AI-inferred) */
   volumesFrom?: TaskDefinition_ContainerDefinitions_VolumesFrom[] | Computed<TaskDefinition_ContainerDefinitions_VolumesFrom[]>;
-  /** The working directory inside the container where the container's entrypoint command is run. (AI-inferred) */
   workingDirectory?: string | Computed<string>;
 }
 
@@ -261,16 +164,12 @@ export interface TaskDefinition_EphemeralStorage {
 }
 
 export interface TaskDefinition_InferenceAccelerators {
-  /** The name of the inference accelerator device, which the container uses to access the accelerator (e.g., 'device1'). (AI-inferred) */
   deviceName?: string | Computed<string>;
-  /** Specifies the Elastic Inference accelerator type (e.g., eia2.medium or eia1.large) to attach to the task. (AI-inferred) */
   deviceType?: string | Computed<string>;
 }
 
 export interface TaskDefinition_PlacementConstraints {
-  /** The cluster query language expression that defines the placement constraint when the type is 'memberOf', specifying which container instances the task can be placed on. (AI-inferred) */
   expression?: string | Computed<string>;
-  /** The placement constraint type, which must be either 'distinctInstance' (place each task on a distinct container instance) or 'memberOf' (use a cluster query language expression defined in the expression field). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -291,90 +190,60 @@ export interface TaskDefinition_RuntimePlatform {
 }
 
 export interface TaskDefinition_Tags {
-  /** The key (name) of a key-value tag attached to the ECS task definition, used for resource identification and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_DockerVolumeConfiguration {
-  /** When true, ECS automatically creates the named Docker volume if it does not already exist when the task is launched. (AI-inferred) */
   autoprovision?: boolean | Computed<boolean>;
-  /** Specifies the Docker volume driver to use, such as 'local' or a third-party driver (e.g., 'rexray'), for the volume configured in the task definition. (AI-inferred) */
   driver?: string | Computed<string>;
-  /** Specifies a map of Docker driver-specific options passed to the volume driver when configuring a Docker volume in an ECS task definition. (AI-inferred) */
   driverOpts?: unknown | Computed<unknown>;
-  /** Specifies key-value pairs that are assigned as Docker volume labels, which serve as metadata for organizing and identifying the volume and are passed to the Docker volume driver. (AI-inferred) */
   labels?: unknown | Computed<unknown>;
-  /** Determines the lifecycle of the Docker volume, where 'task' auto-provisions and deletes the volume when the task stops, and 'shared' allows the volume to exist independently of any single task. (AI-inferred) */
   scope?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfig {
-  /** The access point ID of the EFS file system that Amazon ECS uses to mount the volume, applying the access point's root directory and POSIX user/group permissions to the task's container. (AI-inferred) */
   accessPointId?: string | Computed<string>;
-  /** Specifies whether to use IAM authorization for the EFS volume's access point, with a value of 'ENABLED' to enable IAM authentication or 'DISABLED' to use the default EFS security settings. (AI-inferred) */
   iam?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_EfsvolumeConfiguration {
-  /** The authorization configuration for an Amazon EFS volume, specifying the EFS access point ID and IAM role to use for the volume's file system access. (AI-inferred) */
   authorizationConfig?: TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfig | Computed<TaskDefinition_Volumes_EfsvolumeConfiguration_AuthorizationConfig>;
-  /** The ID of the Amazon EFS file system that this volume mounts, identifying the target file system for the container's persistent storage. (AI-inferred) */
   filesystemId?: string | Computed<string>;
-  /** The path on the Amazon EFS file system to mount as the root directory for the container, defaulting to '/' if not specified. (AI-inferred) */
   rootDirectory?: string | Computed<string>;
-  /** Indicates whether Amazon EFS uses encryption for data in transit when the volume is mounted in the task, accepting 'ENABLED' to enable encryption or 'DISABLED' to disable it. (AI-inferred) */
   transitEncryption?: string | Computed<string>;
-  /** Specifies the port on the EFS file system to use for transit encryption, required when transit encryption is enabled. (AI-inferred) */
   transitEncryptionPort?: number | Computed<number>;
 }
 
 export interface TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig {
-  /** Specifies the ARN of the AWS Secrets Manager secret or Systems Manager parameter that stores the Microsoft Active Directory domain credentials for mounting the FSx Windows file server volume. (AI-inferred) */
   credentialsParameter?: string | Computed<string>;
-  /** The domain field specifies the fully qualified domain name (FQDN) of the Active Directory domain to use for authentication when accessing the FSx Windows File Server volume. (AI-inferred) */
   domain?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration {
-  /** Specifies the domain and the AWS Secrets Manager credential secret that the container uses to mount the FSx for Windows File Server volume. (AI-inferred) */
   authorizationConfig?: TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig | Computed<TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration_AuthorizationConfig>;
-  /** The ID of the Amazon FSx for Windows File Server file system to mount for this volume in the ECS task definition. (AI-inferred) */
   fileSystemId?: string | Computed<string>;
-  /** The root directory on the FSx Windows File Server file system to mount as the root for the container's volume. (AI-inferred) */
   rootDirectory?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_Host {
-  /** Specifies the path on the host container instance (EC2) that is mounted into the container when the volume type is 'host'. (AI-inferred) */
   sourcePath?: string | Computed<string>;
 }
 
 export interface TaskDefinition_Volumes_S3FilesVolumeConfiguration {
-  /** The Amazon Resource Name (ARN) of the S3 access point that ECS uses to access the S3 bucket for this volume configuration. (AI-inferred) */
   accessPointArn?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the S3 bucket that ECS mounts as a file system volume to tasks using the S3 file volume configuration. (AI-inferred) */
   fileSystemArn?: string | Computed<string>;
-  /** Specifies the subdirectory within the S3 bucket that is mounted as the root of the ECS volume, determining the base path for files exposed via this volume configuration. (AI-inferred) */
   rootDirectory?: string | Computed<string>;
-  /** Specifies the custom port used for encrypted (TLS) communication with Amazon S3 when the S3 volume's transit encryption is enabled. (AI-inferred) */
   transitEncryptionPort?: number | Computed<number>;
 }
 
 export interface TaskDefinition_Volumes {
-  /** When set to true, indicates that the volume is configured on the container instance at launch time rather than being fully specified in the task definition, enabling dynamic volume configuration (such as for Docker volumes) at runtime. (AI-inferred) */
   configuredAtLaunch?: boolean | Computed<boolean>;
-  /** Specifies the Docker volume configuration for a volume in the task definition, including the volume scope, autoprovision setting, driver, driver options, and labels when the volume type is 'docker'. (AI-inferred) */
   dockerVolumeConfiguration?: TaskDefinition_Volumes_DockerVolumeConfiguration | Computed<TaskDefinition_Volumes_DockerVolumeConfiguration>;
-  /** Configures an Amazon EFS volume for the task definition, specifying the EFS filesystem ID, root directory path, transit encryption and port, and optional IAM authorization via an access point. (AI-inferred) */
   efsvolumeConfiguration?: TaskDefinition_Volumes_EfsvolumeConfiguration | Computed<TaskDefinition_Volumes_EfsvolumeConfiguration>;
-  /** Specifies the configuration for using an Amazon FSx for Windows File Server volume as a data volume in the ECS task definition, including the file system ID, root directory, and authorization configuration. (AI-inferred) */
   fsxWindowsFileServerVolumeConfiguration?: TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration | Computed<TaskDefinition_Volumes_FsxWindowsFileServerVolumeConfiguration>;
-  /** The host object defines the source path on the container instance for a bind mount volume, with its `sourcePath` property specifying the exact host directory to mount. (AI-inferred) */
   host?: TaskDefinition_Volumes_Host | Computed<TaskDefinition_Volumes_Host>;
-  /** The name of the volume, which is referenced by container definitions in the mountPoints.sourceVolume property. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Configuration for an Amazon S3 file volume within an ECS task definition, specifying the S3 bucket, key (object path), and optional object version used to mount a single S3 object as a file into the container. (AI-inferred) */
   s3FilesVolumeConfiguration?: TaskDefinition_Volumes_S3FilesVolumeConfiguration | Computed<TaskDefinition_Volumes_S3FilesVolumeConfiguration>;
 }
 
@@ -747,7 +616,6 @@ export interface TaskDefinitionConfig {
   executionRoleArn?: string | Computed<string>;
   /** The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it. */
   family?: string | Computed<string>;
-  /** Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred) */
   inferenceAccelerators?: TaskDefinition_InferenceAccelerators[] | Computed<TaskDefinition_InferenceAccelerators[]>;
   /** The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong. */
   ipcMode?: string | Computed<string>;
@@ -786,7 +654,6 @@ export interface TaskDefinitionAttrs {
   executionRoleArn: string;
   /** The name of a family that this task definition is registered to. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add. To use revision numbers when you update a task definition, specify this property. If you don't specify a value, CFNlong generates a new task definition each time that you update it. */
   family: string;
-  /** Configures the Amazon Elastic Inference accelerators to attach to the task, where each accelerator is specified by a device name and device type. (AI-inferred) */
   inferenceAccelerators: TaskDefinition_InferenceAccelerators[];
   /** The IPC resource namespace to use for the containers in the task. The valid values are ``host``, ``task``, or ``none``. If ``host`` is specified, then all containers within the tasks that specified the ``host`` IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If ``task`` is specified, all containers within the specified task share the same IPC resources. If ``none`` is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. If the ``host`` IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. If you are setting namespaced kernel parameters using ``systemControls`` for the containers in the task, the following will apply to your IPC resource namespace. For more information, see [System Controls](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html) in the *Amazon Elastic Container Service Developer Guide*. + For tasks that use the ``host`` IPC mode, IPC namespace related ``systemControls`` are not supported. + For tasks that use the ``task`` IPC mode, IPC namespace related ``systemControls`` will apply to all containers within a task. This parameter is not supported for Windows containers or tasks run on FARGATElong. */
   ipcMode: string;
@@ -806,7 +673,6 @@ export interface TaskDefinitionAttrs {
   runtimePlatform: TaskDefinition_RuntimePlatform;
   /** The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value. You define both of them. The following basic restrictions apply to tags: + Maximum number of tags per resource - 50 + For each resource, each tag key must be unique, and each tag key can have only one value. + Maximum key length - 128 Unicode characters in UTF-8 + Maximum value length - 256 Unicode characters in UTF-8 + If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. + Tag keys and values are case-sensitive. + Do not use ``aws:``, ``AWS:``, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit. */
   tags: TaskDefinition_Tags[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this task definition. (AI-inferred) */
   taskDefinitionArn: string;
   /** The short name or full Amazon Resource Name (ARN) of the IAMlong role that grants containers in the task permission to call AWS APIs on your behalf. For more information, see [Amazon ECS Task Role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) in the *Amazon Elastic Container Service Developer Guide*. IAM roles for tasks on Windows require that the ``-EnableTaskIAMRole`` option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code to use the feature. For more information, see [Windows IAM roles for tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html) in the *Amazon Elastic Container Service Developer Guide*. String validation is done on the ECS side. If an invalid string value is given for ``TaskRoleArn``, it may cause the Cloudformation job to hang. */
   taskRoleArn: string;

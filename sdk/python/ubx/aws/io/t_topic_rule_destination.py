@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TTopicRuleDestination_HttpUrlProperties:
-    # The URL of the HTTP endpoint where AWS IoT sends a confirmation message to verify the destination's ownership. (AI-inferred)
     confirmation_url: Any = None
 
 @dataclasses.dataclass
 class TTopicRuleDestination_VpcProperties:
-    # The ARN of the IAM role that AWS IoT assumes to access the VPC for the topic rule destination's VPC configuration. (AI-inferred)
     role_arn: Any = None
-    # Specifies the list of security group IDs to attach to the VPC endpoint used by the AWS IoT TopicRuleDestination, controlling network access to the destination. (AI-inferred)
     security_groups: Any = None
-    # The IDs of the subnets in the VPC that the IoT topic rule destination is associated with, used to define the network location for the destination. (AI-inferred)
     subnet_ids: Any = None
-    # The ID of the VPC in which the topic rule destination's network resources are provisioned, used with subnet and security-group settings to route AWS IoT rule actions to VPC targets. (AI-inferred)
     vpc_id: Any = None
 
 _TTopicRuleDestination_HttpUrlPropertiesFields = {
@@ -35,24 +30,18 @@ _TTopicRuleDestination_VpcPropertiesFields = {
 
 @dataclasses.dataclass
 class TTopicRuleDestinationConfig:
-    # Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
     http_url_properties: Any = None
-    # Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
     status: Any = None
-    # Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
     vpc_properties: Any = None
 
 @dataclasses.dataclass
 class TTopicRuleDestinationAttrs:
     # Amazon Resource Name (ARN).
     arn: Any = None
-    # Specifies the HTTP destination's confirmation URL, which AWS IoT uses to verify ownership of the endpoint before activating the topic rule destination. (AI-inferred)
     http_url_properties: Any = None
-    # Sets the desired status (ENABLED or DISABLED) of the AWS IoT topic rule destination, controlling whether it can be used by IoT rule actions. (AI-inferred)
     status: Any = None
     # The reasoning for the current status of the TopicRuleDestination.
     status_reason: Any = None
-    # Defines the VPC configuration for the IoT topic rule destination, including the subnets and security groups that the destination uses to deliver messages to resources inside a VPC. (AI-inferred)
     vpc_properties: Any = None
 
 TTopicRuleDestination = ubx.ResourceBinding(

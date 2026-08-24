@@ -2,86 +2,55 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerlessWorkgroup_ConfigParameters {
-  /** The name of the configuration parameter to apply to the Redshift Serverless workgroup, such as max_query_execution_time or enable_user_activity_logging. (AI-inferred) */
   parameterKey?: string | Computed<string>;
-  /** Sets the value for a named configuration parameter of the Redshift Serverless workgroup, where the parameter key is specified in the sibling parameter_key field. (AI-inferred) */
   parameterValue?: string | Computed<string>;
 }
 
 export interface ServerlessWorkgroup_PricePerformanceTarget {
-  /** Sets the numeric price performance target level (0-100) for the Redshift Serverless workgroup, controlling the balance between cost and query performance. (AI-inferred) */
   level?: number | Computed<number>;
-  /** The status of the price performance target for the workgroup, indicating whether the target is currently enabled or disabled. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface ServerlessWorkgroup_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Redshift Serverless workgroup, used for cost allocation and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints_NetworkInterfaces {
-  /** The Availability Zone in which the network interface resides, indicating the specific AZ where the VPC endpoint's elastic network interface is deployed. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The identifier of the network interface (ENI) associated with the VPC endpoint for the Redshift Serverless workgroup. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
-  /** The private IP address of a network interface attached to a VPC endpoint that provides connectivity to the Redshift Serverless workgroup's endpoint. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
-  /** The ID of the subnet in which this network interface is provisioned for a VPC endpoint attached to the Redshift Serverless workgroup endpoint. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
 export interface ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints {
-  /** A list of elastic network interface details (including private IP address, subnet, and availability zone) attached to the VPC endpoint to enable private connectivity to the Redshift Serverless workgroup. (AI-inferred) */
   networkInterfaces?: ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints_NetworkInterfaces[] | Computed<ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints_NetworkInterfaces[]>;
-  /** The identifier of the VPC endpoint (e.g., vpce-0a1b2c3d4e5f6g7h8) that is attached to the workgroup's endpoint for private connectivity. (AI-inferred) */
   vpcEndpointId?: string | Computed<string>;
-  /** The ID of the VPC in which the VPC endpoint providing connectivity to the Redshift Serverless workgroup is provisioned. (AI-inferred) */
   vpcId?: string | Computed<string>;
 }
 
 export interface ServerlessWorkgroup_Workgroup_Endpoint {
-  /** The DNS address of the VPC endpoint for the Redshift Serverless workgroup, used to connect to the workgroup's data. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The TCP port number on which the Redshift Serverless workgroup's endpoint listens for client connections. (AI-inferred) */
   port?: number | Computed<number>;
-  /** The VPC endpoints associated with the Redshift Serverless workgroup's endpoint, each specifying the VPC endpoint ID and its network interfaces (subnet, availability zone, and private IP) for private connectivity within your VPC. (AI-inferred) */
   vpcEndpoints?: ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints[] | Computed<ServerlessWorkgroup_Workgroup_Endpoint_VpcEndpoints[]>;
 }
 
 export interface ServerlessWorkgroup_Workgroup {
-  /** The base data processing capacity of the Redshift Serverless workgroup, specified in Redshift Processing Units (RPUs), which determines the minimum amount of compute resources allocated to the workgroup. (AI-inferred) */
   baseCapacity?: number | Computed<number>;
-  /** Specifies a list of key-value pairs that configure database parameters for the Redshift Serverless workgroup, such as query and session settings. (AI-inferred) */
   configParameters?: ServerlessWorkgroup_ConfigParameters[] | Computed<ServerlessWorkgroup_ConfigParameters[]>;
-  /** Represents the creation date of the Redshift Serverless workgroup, stored as a string in ISO 8601 timestamp format. (AI-inferred) */
   creationDate?: string | Computed<string>;
-  /** The JDBC/ODBC connection endpoint (address and port) for the Redshift Serverless workgroup, used by clients to connect to the data warehouse. (AI-inferred) */
   endpoint?: ServerlessWorkgroup_Workgroup_Endpoint | Computed<ServerlessWorkgroup_Workgroup_Endpoint>;
-  /** When enabled, forces all network traffic between the Redshift Serverless workgroup and other services to route through your VPC instead of over the public internet, enhancing security and isolation. (AI-inferred) */
   enhancedVpcRouting?: boolean | Computed<boolean>;
-  /** Specifies the maximum compute capacity for the workgroup, in Redshift Processing Units (RPUs), which determines the maximum amount of compute resources available for query processing. (AI-inferred) */
   maxCapacity?: number | Computed<number>;
-  /** The name of the namespace to which this Redshift Serverless workgroup is attached, determining the database and data resources the workgroup can access. (AI-inferred) */
   namespaceName?: string | Computed<string>;
-  /** Configures the price-performance target for the Redshift Serverless workgroup, where an enabled flag and a level value control how the service balances query performance against cost by automatically adjusting capacity. (AI-inferred) */
   pricePerformanceTarget?: ServerlessWorkgroup_PricePerformanceTarget | Computed<ServerlessWorkgroup_PricePerformanceTarget>;
-  /** Specifies whether the Redshift Serverless workgroup's endpoint can be accessed from the public internet (true) or is restricted to the associated VPC (false). (AI-inferred) */
   publiclyAccessible?: boolean | Computed<boolean>;
-  /** The list of VPC security group IDs to associate with the workgroup, controlling inbound and outbound network traffic to the Redshift Serverless workgroup. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** The current lifecycle status of the Redshift Serverless workgroup, indicating states such as AVAILABLE, CREATING, UPDATING, or DELETING. (AI-inferred) */
   status?: string | Computed<string>;
-  /** Specifies the list of subnet IDs in the VPC where Redshift Serverless places elastic network interfaces for the workgroup, enabling access to resources in your VPC. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** The track name of the Redshift Serverless workgroup, which specifies the engine track (e.g., 'current' or 'preview') used by the workgroup. (AI-inferred) */
   trackName?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Redshift Serverless workgroup, assigned by AWS upon creation and used to reference the workgroup in IAM policies and other integrations. (AI-inferred) */
   workgroupArn?: string | Computed<string>;
-  /** The unique identifier assigned to the Redshift Serverless workgroup. (AI-inferred) */
   workgroupId?: string | Computed<string>;
-  /** Specifies the name of the Redshift Serverless workgroup, which acts as its unique identifier in the account and region; if omitted, a unique name is automatically generated. (AI-inferred) */
   workgroupName?: string | Computed<string>;
 }
 
@@ -113,7 +82,6 @@ export interface ServerlessWorkgroupConfig {
   namespaceName?: string | Computed<string>;
   /** The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439. */
   port?: number | Computed<number>;
-  /** Configures the price/performance target for the workgroup by setting the base RPU capacity level, allowing you to balance cost against query performance. (AI-inferred) */
   pricePerformanceTarget?: ServerlessWorkgroup_PricePerformanceTarget | Computed<ServerlessWorkgroup_PricePerformanceTarget>;
   /** A value that specifies whether the workgroup can be accessible from a public network. */
   publiclyAccessible?: boolean | Computed<boolean>;
@@ -131,7 +99,6 @@ export interface ServerlessWorkgroupConfig {
   subnetIds?: string[] | Computed<string[]>;
   /** The map of the key-value pairs used to tag the workgroup. */
   tags?: ServerlessWorkgroup_Tags[] | Computed<ServerlessWorkgroup_Tags[]>;
-  /** The name of the track (for example, 'current') that specifies the Amazon Redshift Serverless version or release used by the workgroup. (AI-inferred) */
   trackName?: string | Computed<string>;
   /** The name of the workgroup. */
   workgroupName: string | Computed<string>;
@@ -150,7 +117,6 @@ export interface ServerlessWorkgroupAttrs {
   namespaceName: string;
   /** The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default is 5439. */
   port: number;
-  /** Configures the price/performance target for the workgroup by setting the base RPU capacity level, allowing you to balance cost against query performance. (AI-inferred) */
   pricePerformanceTarget: ServerlessWorkgroup_PricePerformanceTarget;
   /** A value that specifies whether the workgroup can be accessible from a public network. */
   publiclyAccessible: boolean;
@@ -168,9 +134,7 @@ export interface ServerlessWorkgroupAttrs {
   subnetIds: string[];
   /** The map of the key-value pairs used to tag the workgroup. */
   tags: ServerlessWorkgroup_Tags[];
-  /** The name of the track (for example, 'current') that specifies the Amazon Redshift Serverless version or release used by the workgroup. (AI-inferred) */
   trackName: string;
-  /** The `workgroup` computed attribute contains the full set of properties of the created Redshift Serverless workgroup, including its ARN, ID, status, and configuration details, as returned by the AWS API. (AI-inferred) */
   workgroup: ServerlessWorkgroup_Workgroup;
   /** The name of the workgroup. */
   workgroupName: string;

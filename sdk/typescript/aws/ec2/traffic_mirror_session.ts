@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrafficMirrorSession_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the EC2 Traffic Mirror Session, which you can use to organize, identify, and manage the resource within your AWS environment. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

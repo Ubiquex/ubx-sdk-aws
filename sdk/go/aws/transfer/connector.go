@@ -4,14 +4,12 @@ package transfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Connector_As2Config_AsyncMdnConfig struct {
-	// Specifies the list of AS2 server IDs that are used as the intended recipients for asynchronous MDN (Message Disposition Notification) responses in this connector's AS2 configuration. (AI-inferred)
 	ServerIds any
 	// URL of the server to receive the MDN response on
 	Url any
 }
 
 type Connector_As2Config struct {
-	// Configures asynchronous Message Disposition Notification (MDN) handling for the AS2 connector, specifying the destination URL, the Secrets Manager secret ARN used to sign the HTTPS request, and whether to send the original message with the MDN (BOTH or NONE). (AI-inferred)
 	AsyncMdnConfig any
 	// ARN or name of the secret in AWS Secrets Manager which contains the credentials for Basic authentication. If empty, Basic authentication is disabled for the AS2 connector
 	BasicAuthSecretId any
@@ -43,7 +41,6 @@ type Connector_EgressConfig_VpcLattice struct {
 }
 
 type Connector_EgressConfig struct {
-	// Specifies the VPC Lattice configuration used by the AWS Transfer Family connector for routing outbound connections, allowing integration with a VPC Lattice service network to securely reach remote hosts. (AI-inferred)
 	VpcLattice any
 }
 
@@ -58,7 +55,6 @@ type Connector_SftpConfig struct {
 
 type Connector_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the AWS Transfer Family connector, used for metadata such as cost allocation or organizational identification. (AI-inferred)
 	Value any
 }
 
@@ -114,9 +110,7 @@ type ConnectorConfig struct {
 	AccessRole any
 	// Configuration for an AS2 connector.
 	As2Config any
-	// Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
 	EgressConfig any
-	// Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
 	EgressType any
 	// IP address type for Connector
 	IpAddressType any
@@ -141,9 +135,7 @@ type ConnectorAttrs struct {
 	As2Config any
 	// A unique identifier for the connector.
 	ConnectorId any
-	// Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
 	EgressConfig any
-	// Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
 	EgressType any
 	// Detailed error message when Connector in ERRORED status
 	ErrorMessage any
@@ -157,7 +149,6 @@ type ConnectorAttrs struct {
 	ServiceManagedEgressIpAddresses any
 	// Configuration for an SFTP connector.
 	SftpConfig any
-	// The current lifecycle status of the Transfer Family connector, such as ACTIVE or INACTIVE, indicating whether the connector is enabled for file transfers. (AI-inferred)
 	Status any
 	// Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.
 	Tags any

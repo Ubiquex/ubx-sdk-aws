@@ -4,32 +4,20 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolIdentityProviderConfig struct {
-	// Maps user pool attribute names to the corresponding attribute names from the external identity provider (IdP) for this user pool identity provider. (AI-inferred)
 	AttributeMapping any
-	// Specifies a list of custom identifiers for the identity provider that are included in the user's identities claim, enabling your application to distinguish which IdP a user used to sign in. (AI-inferred)
 	IdpIdentifiers any
-	// A map of provider-specific configuration settings (e.g., client_id, client_secret, and authorize_scopes for OIDC, or MetadataURL for SAML) that define how the identity provider integrates with the user pool. (AI-inferred)
 	ProviderDetails any
-	// The name of the identity provider (e.g., Google, Facebook, LoginWithAmazon, or a custom OIDC/SAML provider name) that uniquely identifies this provider within the user pool. (AI-inferred)
 	ProviderName any
-	// The identity provider type, such as 'Facebook', 'Google', 'LoginWithAmazon', 'SignInWithApple', 'OIDC', or 'SAML'. (AI-inferred)
 	ProviderType any
-	// The unique identifier of the Amazon Cognito user pool to which this identity provider configuration is attached. (AI-inferred)
 	UserPoolId any
 }
 
 type UserPoolIdentityProviderAttrs struct {
-	// Maps user pool attribute names to the corresponding attribute names from the external identity provider (IdP) for this user pool identity provider. (AI-inferred)
 	AttributeMapping any
-	// Specifies a list of custom identifiers for the identity provider that are included in the user's identities claim, enabling your application to distinguish which IdP a user used to sign in. (AI-inferred)
 	IdpIdentifiers any
-	// A map of provider-specific configuration settings (e.g., client_id, client_secret, and authorize_scopes for OIDC, or MetadataURL for SAML) that define how the identity provider integrates with the user pool. (AI-inferred)
 	ProviderDetails any
-	// The name of the identity provider (e.g., Google, Facebook, LoginWithAmazon, or a custom OIDC/SAML provider name) that uniquely identifies this provider within the user pool. (AI-inferred)
 	ProviderName any
-	// The identity provider type, such as 'Facebook', 'Google', 'LoginWithAmazon', 'SignInWithApple', 'OIDC', or 'SAML'. (AI-inferred)
 	ProviderType any
-	// The unique identifier of the Amazon Cognito user pool to which this identity provider configuration is attached. (AI-inferred)
 	UserPoolId any
 }
 

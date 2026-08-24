@@ -4,9 +4,7 @@ package quick
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SightFolder_Permissions struct {
-	// Specifies the list of QuickSight actions (e.g., 'quickSight:DescribeFolder', 'quickSight:UpdateFolder') that this permission entry grants to the specified principal on the folder. (AI-inferred)
 	Actions any
-	// The ARN of the QuickSight user or group to which the folder permissions are granted. (AI-inferred)
 	Principal any
 }
 
@@ -26,46 +24,30 @@ var SightFolder_TagsFields = ubx.FieldMap{
 	}
 
 type SightFolderConfig struct {
-	// The AWS account ID that owns the QuickSight folder; if omitted, the account ID from the AWS credentials is used. (AI-inferred)
 	AwsAccountId any
-	// Specifies the unique identifier (FolderId) for the QuickSight folder, which AWS uses to reference the folder in API calls and as a component of the folder's ARN. (AI-inferred)
 	FolderId any
-	// Specifies the type of QuickSight folder, with 'SHARED' being the only supported value, determining that the folder can be shared with other QuickSight users. (AI-inferred)
 	FolderType any
-	// The display name of the QuickSight folder, which defaults to the folder's ID if not provided. (AI-inferred)
 	Name any
-	// The ARN of the parent QuickSight folder under which this folder is created, enabling nested folder hierarchies; if omitted, the folder is created at the root level. (AI-inferred)
 	ParentFolderArn any
-	// Specifies a list of resource permissions for the folder, each granting an IAM principal a set of actions such as quicksight:DescribeFolder or quicksight:UpdateFolder. (AI-inferred)
 	Permissions any
-	// Determines the sharing scope of the folder, either across the entire AWS account (ACCOUNT) or only within a specific namespace (NAMESPACE), controlling which users can access it. (AI-inferred)
 	SharingModel any
-	// A list of tag key-value pairs to associate with the QuickSight folder, used for managing and organizing resources. (AI-inferred)
 	Tags any
 }
 
 type SightFolderAttrs struct {
 	// <p>The Amazon Resource Name (ARN) for the folder.</p>
 	Arn any
-	// The AWS account ID that owns the QuickSight folder; if omitted, the account ID from the AWS credentials is used. (AI-inferred)
 	AwsAccountId any
 	// <p>The time that the folder was created.</p>
 	CreatedTime any
-	// Specifies the unique identifier (FolderId) for the QuickSight folder, which AWS uses to reference the folder in API calls and as a component of the folder's ARN. (AI-inferred)
 	FolderId any
-	// Specifies the type of QuickSight folder, with 'SHARED' being the only supported value, determining that the folder can be shared with other QuickSight users. (AI-inferred)
 	FolderType any
 	// <p>The time that the folder was last updated.</p>
 	LastUpdatedTime any
-	// The display name of the QuickSight folder, which defaults to the folder's ID if not provided. (AI-inferred)
 	Name any
-	// The ARN of the parent QuickSight folder under which this folder is created, enabling nested folder hierarchies; if omitted, the folder is created at the root level. (AI-inferred)
 	ParentFolderArn any
-	// Specifies a list of resource permissions for the folder, each granting an IAM principal a set of actions such as quicksight:DescribeFolder or quicksight:UpdateFolder. (AI-inferred)
 	Permissions any
-	// Determines the sharing scope of the folder, either across the entire AWS account (ACCOUNT) or only within a specific namespace (NAMESPACE), controlling which users can access it. (AI-inferred)
 	SharingModel any
-	// A list of tag key-value pairs to associate with the QuickSight folder, used for managing and organizing resources. (AI-inferred)
 	Tags any
 }
 

@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SchemasRegistryPolicyConfig:
-    # The JSON resource-based policy document that grants or denies permissions to principals for actions on the EventBridge schema registry and its schemas. (AI-inferred)
     policy: Any = None
-    # The name of the EventBridge Schema Registry to which this resource-based policy is attached, identifying the registry whose access permissions the policy controls. (AI-inferred)
     registry_name: Any = None
-    # The revision ID of the registry policy, used for optimistic concurrency control to prevent conflicting updates (you must provide the current revision when updating the policy). (AI-inferred)
     revision_id: Any = None
 
 @dataclasses.dataclass
 class SchemasRegistryPolicyAttrs:
-    # The unique identifier of the registry policy, equal to the name of the registry to which the policy is attached. (AI-inferred)
     id: Any = None
-    # The JSON resource-based policy document that grants or denies permissions to principals for actions on the EventBridge schema registry and its schemas. (AI-inferred)
     policy: Any = None
-    # The name of the EventBridge Schema Registry to which this resource-based policy is attached, identifying the registry whose access permissions the policy controls. (AI-inferred)
     registry_name: Any = None
-    # The revision ID of the registry policy, used for optimistic concurrency control to prevent conflicting updates (you must provide the current revision when updating the policy). (AI-inferred)
     revision_id: Any = None
 
 SchemasRegistryPolicy = ubx.ResourceBinding(

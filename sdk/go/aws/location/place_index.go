@@ -4,14 +4,11 @@ package location
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PlaceIndex_DataSourceConfiguration struct {
-	// Sets the intended use of the place index to either SingleUse (geocode without storing results) or Storage (store results for later use), affecting how AWS Location Service handles query data. (AI-inferred)
 	IntendedUse any
 }
 
 type PlaceIndex_Tags struct {
-	// The key of a tag attached to the Amazon Location Service place index resource, used to identify and organize the resource. (AI-inferred)
 	Key any
-	// The value for a tag assigned to the Amazon Location Service place index, used to organize and identify the resource. (AI-inferred)
 	Value any
 }
 
@@ -25,36 +22,24 @@ var PlaceIndex_TagsFields = ubx.FieldMap{
 	}
 
 type PlaceIndexConfig struct {
-	// The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred)
 	DataSource any
-	// Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred)
 	DataSourceConfiguration any
-	// An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred)
 	Description any
-	// The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred)
 	IndexName any
-	// The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type PlaceIndexAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred)
 	Arn any
 	// The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
 	CreateTime any
-	// The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred)
 	DataSource any
-	// Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred)
 	DataSourceConfiguration any
-	// An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred)
 	Description any
-	// The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred)
 	IndexArn any
-	// The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred)
 	IndexName any
-	// The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred)
 	PricingPlan any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

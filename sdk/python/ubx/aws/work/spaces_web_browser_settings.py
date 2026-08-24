@@ -13,11 +13,8 @@ class SpacesWebBrowserSettings_Tags:
 
 @dataclasses.dataclass
 class SpacesWebBrowserSettings_WebContentFilteringPolicy:
-    # Specifies a list of allowed URL patterns that users are permitted to access when the web content filtering policy is enabled, with all other URLs being blocked. (AI-inferred)
     allowed_urls: Any = None
-    # The list of web content category identifiers to block, which prevents users from accessing websites that belong to the specified categories in this WorkSpaces Web browser settings. (AI-inferred)
     blocked_categories: Any = None
-    # The list of URLs that are blocked by the web content filtering policy, preventing end users from accessing those sites in the WorkSpaces Web browser. (AI-inferred)
     blocked_urls: Any = None
 
 _SpacesWebBrowserSettings_TagsFields = {
@@ -33,30 +30,20 @@ _SpacesWebBrowserSettings_WebContentFilteringPolicyFields = {
 
 @dataclasses.dataclass
 class SpacesWebBrowserSettingsConfig:
-    # Adds key-value pairs to the AWS KMS encryption context used to encrypt the browser settings resource, enabling additional contextual information for auditing and access control. (AI-inferred)
     additional_encryption_context: Any = None
-    # The JSON-formatted string that defines the browser policy, which controls the browser features and behaviors available to WorkSpaces Web users. (AI-inferred)
     browser_policy: Any = None
-    # The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
     customer_managed_key: Any = None
     tags: Any = None
-    # Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
     web_content_filtering_policy: Any = None
 
 @dataclasses.dataclass
 class SpacesWebBrowserSettingsAttrs:
-    # Adds key-value pairs to the AWS KMS encryption context used to encrypt the browser settings resource, enabling additional contextual information for auditing and access control. (AI-inferred)
     additional_encryption_context: Any = None
-    # The list of Amazon Resource Names (ARNs) of the WorkSpaces Web portals that are linked to these browser settings, automatically assigned by the service when a portal is associated. (AI-inferred)
     associated_portal_arns: Any = None
-    # The JSON-formatted string that defines the browser policy, which controls the browser features and behaviors available to WorkSpaces Web users. (AI-inferred)
     browser_policy: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the browser settings resource. (AI-inferred)
     browser_settings_arn: Any = None
-    # The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred)
     customer_managed_key: Any = None
     tags: Any = None
-    # Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred)
     web_content_filtering_policy: Any = None
 
 SpacesWebBrowserSettings = ubx.ResourceBinding(

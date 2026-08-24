@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LogGroup_Tags:
-    # The key of a user-defined tag applied to the CloudWatch log group, used for cost allocation, access control, and resource organization via AWS tagging best practices. (AI-inferred)
     key: Any = None
-    # Specifies the value portion of a tag assigned to the CloudWatch Logs log group, which can be used to categorize the log group for cost tracking and access control. (AI-inferred)
     value: Any = None
 
 _LogGroup_TagsFields = {
@@ -43,7 +41,6 @@ class LogGroupConfig:
 
 @dataclasses.dataclass
 class LogGroupAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying this CloudWatch Logs log group. (AI-inferred)
     arn: Any = None
     # Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.
     bearer_token_authentication_enabled: Any = None

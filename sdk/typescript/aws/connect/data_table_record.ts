@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataTableRecord_DataTableRecord_PrimaryValues {
-  /** The identifier of the attribute (column) within the Amazon Connect data table's schema that this primary key value is associated with. (AI-inferred) */
   attributeId?: string | Computed<string>;
-  /** The value for a primary key attribute of the data table record, which combined with other primary values uniquely identifies a record in the specified Amazon Connect data table. (AI-inferred) */
   attributeValue?: string | Computed<string>;
 }
 
 export interface DataTableRecord_DataTableRecord {
-  /** Specifies the values of the record's primary key fields, which uniquely identify the record within the Amazon Connect data table. (AI-inferred) */
   primaryValues?: DataTableRecord_DataTableRecord_PrimaryValues[] | Computed<DataTableRecord_DataTableRecord_PrimaryValues[]>;
-  /** The list of key-value pairs that constitute the record's data, where each object maps a field name to its value as defined by the Amazon Connect data table's schema. (AI-inferred) */
   values: DataTableRecord_DataTableRecord_PrimaryValues[] | Computed<DataTableRecord_DataTableRecord_PrimaryValues[]>;
 }
 
@@ -35,19 +31,14 @@ const DataTableRecord_DataTableRecordFields: FieldMap = {
 
 export interface DataTableRecordConfig {
   dataTableArn: string | Computed<string>;
-  /** The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred) */
   dataTableRecord: DataTableRecord_DataTableRecord | Computed<DataTableRecord_DataTableRecord>;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred) */
   instanceArn: string | Computed<string>;
 }
 
 export interface DataTableRecordAttrs {
   dataTableArn: string;
-  /** The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred) */
   dataTableRecord: DataTableRecord_DataTableRecord;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred) */
   instanceArn: string;
-  /** The unique system-generated identifier of the data table record, returned by Amazon Connect after the record is created. (AI-inferred) */
   recordId: string;
 }
 

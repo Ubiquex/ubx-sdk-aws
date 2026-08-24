@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ShiftAutoshiftObserverNotificationStatusConfig {
-  /** Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred) */
   status: string | Computed<string>;
 }
 
@@ -11,7 +10,6 @@ export interface ShiftAutoshiftObserverNotificationStatusAttrs {
   accountId: string;
   /** Region, used as part of the primary identifier for the resource */
   region: string;
-  /** Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred) */
   status: string;
 }
 

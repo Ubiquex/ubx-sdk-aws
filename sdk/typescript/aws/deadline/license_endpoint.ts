@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LicenseEndpoint_Tags {
-  /** The key of a user-defined tag applied to the AWS Deadline license endpoint, enabling you to categorize and manage the endpoint for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a user-defined tag on the Deadline license endpoint, used to categorize, track costs, or apply IAM-based access control through resource tags. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,34 +12,23 @@ const LicenseEndpoint_TagsFields: FieldMap = {
 };
 
 export interface LicenseEndpointConfig {
-  /** Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred) */
   securityGroupIds: string[] | Computed<string[]>;
-  /** The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: LicenseEndpoint_Tags[] | Computed<LicenseEndpoint_Tags[]>;
-  /** The ID of the VPC in which the license endpoint is created. (AI-inferred) */
   vpcId: string | Computed<string>;
 }
 
 export interface LicenseEndpointAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the AWS Deadline Cloud license endpoint. (AI-inferred) */
   arn: string;
-  /** The DNS name assigned to the license endpoint, used to connect to the endpoint for license management. (AI-inferred) */
   dnsName: string;
-  /** The unique identifier assigned by Deadline Cloud when the license endpoint is created. (AI-inferred) */
   licenseEndpointId: string;
-  /** Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred) */
   securityGroupIds: string[];
-  /** Represents the current lifecycle state of the license endpoint, such as CREATING, READY, or DELETING, as tracked by AWS Deadline Cloud. (AI-inferred) */
   status: string;
-  /** A computed string that provides additional context or error details about the current lifecycle state of the AWS Deadline Cloud license endpoint, such as why it might be in a transitional or failed status. (AI-inferred) */
   statusMessage: string;
-  /** The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred) */
   subnetIds: string[];
   /** An array of key-value pairs to apply to this resource. */
   tags: LicenseEndpoint_Tags[];
-  /** The ID of the VPC in which the license endpoint is created. (AI-inferred) */
   vpcId: string;
 }
 

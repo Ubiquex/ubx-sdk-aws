@@ -13,43 +13,30 @@ class Bucket_AccelerateConfiguration:
 
 @dataclasses.dataclass
 class Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport_Destination:
-    # The AWS account ID of the destination bucket that receives the storage-class analysis data export, which is the account that owns the destination bucket for cross-account exports. (AI-inferred)
     bucket_account_id: Any = None
-    # The Amazon Resource Name (ARN) of the S3 bucket where the S3 analytics data export file is delivered. (AI-inferred)
     bucket_arn: Any = None
-    # Specifies the file format of the exported storage class analysis data to the destination S3 bucket, with the only supported value being 'CSV'. (AI-inferred)
     format: Any = None
-    # The prefix used to store the storage class analysis data export files in the destination S3 bucket. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class Bucket_AnalyticsConfigurations_StorageClassAnalysis_DataExport:
-    # Specifies the destination S3 bucket (with its ARN, account ID, prefix, and format) to which the storage class analysis data export is delivered. (AI-inferred)
     destination: Any = None
-    # Defines the version of the output schema used when S3 exports storage class analysis results to the configured destination, with the only supported value being 'V_1'. (AI-inferred)
     output_schema_version: Any = None
 
 @dataclasses.dataclass
 class Bucket_AnalyticsConfigurations_StorageClassAnalysis:
-    # Configuration for exporting the results of S3 Storage Class Analysis, defining the destination S3 bucket and the output format (e.g., CSV) for the analysis data. (AI-inferred)
     data_export: Any = None
 
 @dataclasses.dataclass
 class Bucket_AnalyticsConfigurations_TagFilters:
-    # The tag key that defines which objects are included in the S3 analytics configuration's tag-based filter. (AI-inferred)
     key: Any = None
-    # Specifies the tag value used to filter objects for the S3 analytics configuration; objects with this tag value are included in the analytics export. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Bucket_AnalyticsConfigurations:
-    # A unique identifier for the S3 bucket analytics configuration, used to distinguish it from other analytics configurations on the same bucket. (AI-inferred)
     id: Any = None
-    # The object key prefix used to filter which objects in the bucket are included in this S3 analytics configuration, so only objects with keys starting with this prefix are analyzed. (AI-inferred)
     prefix: Any = None
-    # Specifies the data export configuration for storage class analysis, defining where and how the analytics results are delivered (destination bucket, prefix, and output format). (AI-inferred)
     storage_class_analysis: Any = None
-    # The tag filters that specify which objects with matching tag key-value pairs are included in the S3 analytics export configuration. (AI-inferred)
     tag_filters: Any = None
 
 @dataclasses.dataclass
@@ -58,17 +45,13 @@ class Bucket_BucketEncryption_ServerSideEncryptionConfiguration_BlockedEncryptio
 
 @dataclasses.dataclass
 class Bucket_BucketEncryption_ServerSideEncryptionConfiguration_ServerSideEncryptionByDefault:
-    # Specifies the AWS KMS key ID (or ARN) that Amazon S3 uses to encrypt objects by default when the default server-side encryption is set to aws:kms for this bucket. (AI-inferred)
     kmsmaster_key_id: Any = None
-    # Specifies the default server-side encryption algorithm applied to objects written to the S3 bucket, accepting values like AES256, aws:kms, or aws:kms:dsse. (AI-inferred)
     ssealgorithm: Any = None
 
 @dataclasses.dataclass
 class Bucket_BucketEncryption_ServerSideEncryptionConfiguration:
     blocked_encryption_types: Any = None
-    # Whether to enable an S3 Bucket Key for the SSE-KMS encryption rule, which uses a bucket-level key to reduce KMS request costs for all objects encrypted under this bucket. (AI-inferred)
     bucket_key_enabled: Any = None
-    # Specifies the default server-side encryption method applied to objects uploaded to the S3 bucket, including the encryption algorithm (e.g., AES256 or aws:kms) and optional AWS KMS key ID. (AI-inferred)
     server_side_encryption_by_default: Any = None
 
 @dataclasses.dataclass
@@ -78,17 +61,11 @@ class Bucket_BucketEncryption:
 
 @dataclasses.dataclass
 class Bucket_CorsConfiguration_CorsRules:
-    # Specifies the HTTP headers that are allowed in a request to the S3 bucket from a cross-origin origin; each entry can be a specific header name (e.g., 'x-amz-date') or the wildcard '*' to allow all headers. (AI-inferred)
     allowed_headers: Any = None
-    # Specifies the list of HTTP methods (such as GET, PUT, POST, DELETE, HEAD) that are allowed for cross-origin requests to the S3 bucket. (AI-inferred)
     allowed_methods: Any = None
-    # Specifies the origins (scheme, host, and port) that are allowed to make cross-origin requests to the bucket. (AI-inferred)
     allowed_origins: Any = None
-    # Specifies the response headers that are exposed to the client (browser) in the actual S3 CORS response, allowing client-side scripts to access them. (AI-inferred)
     exposed_headers: Any = None
-    # The ID is an optional unique identifier for this CORS rule, up to 255 characters, used to identify the rule within the CORS configuration. (AI-inferred)
     id: Any = None
-    # Specifies the time in seconds that the browser caches the response to a preflight (OPTIONS) request. (AI-inferred)
     max_age: Any = None
 
 @dataclasses.dataclass
@@ -98,104 +75,65 @@ class Bucket_CorsConfiguration:
 
 @dataclasses.dataclass
 class Bucket_IntelligentTieringConfigurations_Tierings:
-    # The access tier (either ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) to which objects are transitioned after the specified number of days in this Intelligent-Tiering configuration. (AI-inferred)
     access_tier: Any = None
-    # The number of days after object creation when S3 Intelligent-Tiering moves the object to the specified access tier (e.g., ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS). (AI-inferred)
     days: Any = None
 
 @dataclasses.dataclass
 class Bucket_IntelligentTieringConfigurations:
-    # A unique identifier for this S3 Intelligent-Tiering configuration, used to distinguish it from other configurations on the same bucket. (AI-inferred)
     id: Any = None
-    # Specifies an object key name prefix that identifies the subset of objects to which this S3 Intelligent-Tiering configuration applies, so only objects with keys beginning with this prefix are included. (AI-inferred)
     prefix: Any = None
-    # Indicates whether the S3 Intelligent-Tiering configuration is enabled or disabled, with allowed values 'Enabled' and 'Disabled'. (AI-inferred)
     status: Any = None
-    # Defines the tag filters (key and value pairs) that determine which objects are eligible for this S3 Intelligent-Tiering configuration, so that only objects with matching tags are included in the tiering behavior. (AI-inferred)
     tag_filters: Any = None
-    # Defines each S3 Intelligent-Tiering tier (ARCHIVE_ACCESS or DEEP_ARCHIVE_ACCESS) and the number of days after which objects are moved to that tier. (AI-inferred)
     tierings: Any = None
 
 @dataclasses.dataclass
 class Bucket_InventoryConfigurations:
-    # The destination configuration for an S3 inventory report, specifying where the inventory list is delivered (e.g., the target S3 bucket ARN, optional prefix, and output format). (AI-inferred)
     destination: Any = None
-    # Indicates whether the inventory configuration is enabled for the S3 bucket. (AI-inferred)
     enabled: Any = None
-    # The unique identifier for this S3 inventory configuration, used to distinguish it from other inventory configurations on the bucket. (AI-inferred)
     id: Any = None
-    # Determines whether the inventory report includes all versions of each object ('All') or only the current version ('Current'). (AI-inferred)
     included_object_versions: Any = None
-    # Specifies the list of additional object metadata fields (such as Size, LastModifiedDate, StorageClass, ETag) to be included in the S3 inventory output for the bucket, in addition to the mandatory fields (bucket name and object key). (AI-inferred)
     optional_fields: Any = None
-    # Filters the inventory to only include objects whose keys begin with the specified prefix, such as 'documents/' or 'logs/'. (AI-inferred)
     prefix: Any = None
-    # Specifies how often the S3 inventory report is generated, either Daily or Weekly. (AI-inferred)
     schedule_frequency: Any = None
 
 @dataclasses.dataclass
 class Bucket_LifecycleConfiguration_Rules_AbortIncompleteMultipartUpload:
-    # Specifies the number of days after a multipart upload is initiated that S3 will abort the incomplete multipart upload, based on the upload's initiation date. (AI-inferred)
     days_after_initiation: Any = None
 
 @dataclasses.dataclass
 class Bucket_LifecycleConfiguration_Rules_NoncurrentVersionExpiration:
-    # The number of newer noncurrent versions of an object to preserve before the oldest noncurrent version becomes eligible for expiration, enabling you to retain a specified number of recent versions while expiring older ones. (AI-inferred)
     newer_noncurrent_versions: Any = None
-    # The number of days after which a noncurrent version of an object is expired and permanently deleted in the S3 lifecycle rule. (AI-inferred)
     noncurrent_days: Any = None
 
 @dataclasses.dataclass
 class Bucket_LifecycleConfiguration_Rules_NoncurrentVersionTransition:
-    # The number of newer noncurrent versions to retain before this lifecycle transition applies, allowing the action to skip recent noncurrent versions and only affect older ones. (AI-inferred)
     newer_noncurrent_versions: Any = None
-    # The storage class that noncurrent object versions are transitioned to, such as GLACIER, DEEP_ARCHIVE, or STANDARD_IA, as defined in the S3 lifecycle noncurrent version transition rule. (AI-inferred)
     storage_class: Any = None
-    # The number of days from when an object version becomes noncurrent to when it is transitioned to the storage class specified in the lifecycle rule's noncurrent version transition. (AI-inferred)
     transition_in_days: Any = None
 
 @dataclasses.dataclass
 class Bucket_LifecycleConfiguration_Rules_Transition:
-    # The S3 storage class to which the objects are transitioned when the lifecycle rule's transition action triggers (for example, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE). (AI-inferred)
     storage_class: Any = None
-    # Specifies the date (in ISO 8601 format) when objects in the bucket are transitioned to the storage class defined by the same transition object, and is mutually exclusive with the 'days' property. (AI-inferred)
     transition_date: Any = None
-    # Specifies the number of days after object creation when the lifecycle transition action (to a specified storage class) takes effect for objects in the S3 bucket. (AI-inferred)
     transition_in_days: Any = None
 
 @dataclasses.dataclass
 class Bucket_LifecycleConfiguration_Rules:
-    # Specifies the number of days after a multipart upload is initiated that the upload must be aborted, as part of an S3 lifecycle rule. (AI-inferred)
     abort_incomplete_multipart_upload: Any = None
-    # Specifies the exact date (in ISO 8601 format) on which Amazon S3 permanently deletes objects matching this lifecycle rule, used as an alternative to specifying a number of days. (AI-inferred)
     expiration_date: Any = None
-    # The number of days after object creation when Amazon S3 permanently deletes objects that match this lifecycle rule. (AI-inferred)
     expiration_in_days: Any = None
-    # Indicates whether Amazon S3 removes expired object delete markers when enforcing this lifecycle rule's expiration action. (AI-inferred)
     expired_object_delete_marker: Any = None
-    # A unique identifier for the S3 lifecycle rule, used to distinguish it from other rules in the same bucket's lifecycle configuration. (AI-inferred)
     id: Any = None
-    # Specifies the expiration behavior for noncurrent versions of objects in the S3 bucket, including the number of days to keep them and optionally how many newer versions to retain. (AI-inferred)
     noncurrent_version_expiration: Any = None
-    # Specifies the number of days after which an object version that is no longer current is automatically deleted by the lifecycle rule. (AI-inferred)
     noncurrent_version_expiration_in_days: Any = None
-    # Specifies when noncurrent versions of an object transition to a different storage class, including the number of days after becoming noncurrent and the target storage class. (AI-inferred)
     noncurrent_version_transition: Any = None
-    # Defines the transition actions for noncurrent versions of objects in an S3 lifecycle rule, specifying when to move them to a different storage class and how many newer versions to consider. (AI-inferred)
     noncurrent_version_transitions: Any = None
-    # Specifies the minimum object size in bytes for which the lifecycle rule applies to objects. (AI-inferred)
     object_size_greater_than: Any = None
-    # Specifies the maximum object size (in bytes) for which the lifecycle rule applies, meaning only objects smaller than this value are eligible for the rule's actions. (AI-inferred)
     object_size_less_than: Any = None
-    # Specifies the object key prefix that this lifecycle rule applies to, limiting the rule's effect to objects with keys that begin with this string. (AI-inferred)
     prefix: Any = None
-    # Whether the lifecycle rule is currently active, with allowed values 'Enabled' or 'Disabled', controlling whether Amazon S3 executes the rule's expiration, transition, or other actions on matching objects. (AI-inferred)
     status: Any = None
-    # Defines tag key-value pairs that must match an object's tags for the lifecycle rule to apply, thereby scoping the rule to a subset of objects. (AI-inferred)
     tag_filters: Any = None
-    # Defines a lifecycle transition action that moves objects to a specified storage class after a specified number of days or on a specific date. (AI-inferred)
     transition: Any = None
-    # Defines a lifecycle transition, specifying when objects should transition to a different storage class (such as STANDARD_IA or GLACIER) based on age in days or a specific date. (AI-inferred)
     transitions: Any = None
 
 @dataclasses.dataclass
@@ -301,13 +239,9 @@ class Bucket_MetadataTableConfiguration:
 
 @dataclasses.dataclass
 class Bucket_MetricsConfigurations:
-    # The ARN of the S3 access point whose requests are filtered into this metrics configuration, restricting CloudWatch request metrics to that access point. (AI-inferred)
     access_point_arn: Any = None
-    # The unique identifier for this S3 metrics configuration, used to reference or manage the configuration. (AI-inferred)
     id: Any = None
-    # The object key prefix that filters the objects included in the S3 metrics configuration, so metrics are collected only for objects whose keys begin with this prefix. (AI-inferred)
     prefix: Any = None
-    # Defines the tag key-value pairs that filter which objects are included in this S3 bucket metrics configuration, so metrics are only collected for objects matching all specified tags. (AI-inferred)
     tag_filters: Any = None
 
 @dataclasses.dataclass
@@ -317,46 +251,33 @@ class Bucket_NotificationConfiguration_EventBridgeConfiguration:
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key_Rules:
-    # Specifies whether the filter rule matches the object key by prefix or suffix, with allowed values of 'prefix' or 'suffix'. (AI-inferred)
     name: Any = None
-    # The value of a filter rule in an S3 bucket's notification configuration that specifies a prefix or suffix pattern which object key names must match to trigger the Lambda function. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_LambdaConfigurations_Filter_S3Key:
-    # A list of S3 key filter rules (each specifying a Name of 'prefix' or 'suffix' and a Value) that determine which object key names trigger the Lambda function notification for this configuration. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_LambdaConfigurations_Filter:
-    # Specifies the S3 object key filter rules (prefix or suffix) that determine which objects trigger the Lambda function notification. (AI-inferred)
     s3_key: Any = None
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_LambdaConfigurations:
-    # The S3 event type (e.g., s3:ObjectCreated:*) that triggers the Lambda function for this notification configuration. (AI-inferred)
     event: Any = None
-    # Defines the object key name prefix and/or suffix filters that determine which S3 object events trigger the associated Lambda function notification. (AI-inferred)
     filter: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the specified event type occurs for this filter. (AI-inferred)
     function: Any = None
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_QueueConfigurations:
-    # The S3 event type (e.g., s3:ObjectCreated:*) that triggers the notification to the SQS queue. (AI-inferred)
     event: Any = None
-    # Defines the object key name filter criteria (prefix and/or suffix rules) that determine which S3 objects trigger the notification to the configured queue. (AI-inferred)
     filter: Any = None
-    # The ARN of the Amazon SQS queue to which the S3 bucket sends event notifications for this queue configuration. (AI-inferred)
     queue: Any = None
 
 @dataclasses.dataclass
 class Bucket_NotificationConfiguration_TopicConfigurations:
-    # The S3 event type (e.g., s3:ObjectCreated:* or s3:ObjectRemoved:*) that triggers the notification to the SNS topic. (AI-inferred)
     event: Any = None
-    # Configures the S3KeyFilter for this SNS topic notification, restricting which object key names (by prefix and/or suffix) trigger the event. (AI-inferred)
     filter: Any = None
-    # The Amazon Resource Name (ARN) of the SNS topic that S3 publishes event notifications to for this topic configuration. (AI-inferred)
     topic: Any = None
 
 @dataclasses.dataclass
@@ -393,7 +314,6 @@ class Bucket_ObjectLockConfiguration:
 
 @dataclasses.dataclass
 class Bucket_OwnershipControls_Rules:
-    # Specifies the object ownership rule applied to new objects in the S3 bucket, with valid values including BucketOwnerPreferred, ObjectWriter, and BucketOwnerEnforced. (AI-inferred)
     object_ownership: Any = None
 
 @dataclasses.dataclass
@@ -414,95 +334,65 @@ class Bucket_PublicAccessBlockConfiguration:
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_DeleteMarkerReplication:
-    # Specifies whether S3 replicates delete markers created in the source bucket to the destination bucket; set to Enabled to replicate them or Disabled to prevent replication. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination_AccessControlTranslation:
-    # Overrides the replica owner to the destination bucket owner by specifying `Destination`, required when replicating objects across AWS accounts. (AI-inferred)
     owner: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination_EncryptionConfiguration:
-    # Specifies the AWS KMS key ID (or ARN) used by Amazon S3 to encrypt the replicated objects in the destination bucket when the destination uses SSE-KMS encryption. (AI-inferred)
     replica_kms_key_id: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination_Metrics_EventThreshold:
-    # The number of minutes after which S3 emits a replication metrics event, used as the event threshold for replication time control (RTC) metrics in the destination bucket. (AI-inferred)
     minutes: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination_Metrics:
-    # Specifies the minimum replication time threshold in minutes (via the 'Minutes' property) that an object must meet for the replication event to be counted and reported in the S3 replication metrics for this destination. (AI-inferred)
     event_threshold: Any = None
-    # Specifies whether replication metrics are enabled for this destination bucket, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination_ReplicationTime:
-    # Indicates whether S3 Replication Time Control (RTC) is enabled for the replication destination, with valid values 'Enabled' or 'Disabled'. (AI-inferred)
     status: Any = None
-    # Specifies the time threshold for S3 Replication Time Control (RTC), defining the number of minutes within which the replicated object is expected to be available in the destination bucket. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Destination:
-    # Specifies the access control translation settings that change the ownership of replicated objects to the destination bucket's AWS account, used when replicating across different AWS accounts (cross-account replication). (AI-inferred)
     access_control_translation: Any = None
-    # The AWS account ID of the destination bucket's owner, required when replicating objects into a bucket in a different AWS account. (AI-inferred)
     account: Any = None
-    # The Amazon Resource Name (ARN) of the S3 bucket to which objects are replicated as part of this replication rule. (AI-inferred)
     bucket: Any = None
-    # Specifies the encryption configuration for objects replicated to the destination bucket, including the KMS key ID used to encrypt the replicas. (AI-inferred)
     encryption_configuration: Any = None
-    # Specifies the replication metrics configuration for the destination bucket, including whether S3 emits metrics (Status) and the event threshold in minutes (EventThreshold) after which replication events are emitted. (AI-inferred)
     metrics: Any = None
-    # Configures S3 Replication Time Control (RTC) for the destination bucket, including whether RTC is enabled and the replication time threshold in minutes. (AI-inferred)
     replication_time: Any = None
-    # The storage class to assign to objects replicated to the destination bucket, overriding the default storage class of the destination bucket; for example, STANDARD, STANDARD_IA, or GLACIER. (AI-inferred)
     storage_class: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Filter_And:
-    # The object key name prefix that must match for objects to be included in an S3 replication rule when the rule's filter uses an AND combination of predicates, typically paired with at least one tag condition. (AI-inferred)
     prefix: Any = None
-    # Specifies a list of tag key-value pairs that an object must include for the replication rule's filter 'and' condition to match, limiting replication to objects that have all of the specified tags. (AI-inferred)
     tag_filters: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_Filter:
-    # Specifies a logical AND combination of filter predicates (typically a prefix and one or more tags) that S3 applies when deciding which objects match the replication rule, requiring all specified criteria to be true. (AI-inferred)
     and_: Any = None
-    # The object key prefix that identifies which objects the replication rule applies to, used as a filter condition in an S3 replication rule. (AI-inferred)
     prefix: Any = None
-    # This field specifies the tag key and value (as nested Key and Value properties) that an object must have for the S3 replication rule's filter to apply, defining the tag-based criteria for selecting objects to replicate. (AI-inferred)
     tag_filter: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules_SourceSelectionCriteria:
-    # Specifies whether Amazon S3 should replicate objects that are modified after being replicated to the destination bucket, using a Status property (Enabled or Disabled) to control the behavior. (AI-inferred)
     replica_modifications: Any = None
-    # A filter that, when its Status is 'Enabled', tells S3 replication to replicate source objects encrypted with SSE-KMS, and when 'Disabled', excludes them from replication. (AI-inferred)
     sse_kms_encrypted_objects: Any = None
 
 @dataclasses.dataclass
 class Bucket_ReplicationConfiguration_Rules:
-    # Specifies whether delete markers created in the source bucket are replicated to the destination bucket, with Status set to Enabled to replicate them or Disabled to skip them. (AI-inferred)
     delete_marker_replication: Any = None
-    # The destination configuration for a replication rule, specifying the target S3 bucket and optional settings such as storage class, account, encryption, access control translation, metrics, and replication time. (AI-inferred)
     destination: Any = None
-    # The filter that defines the object key prefix, tag, or logical AND combination of conditions that determine which objects in the source bucket are replicated by this replication rule. (AI-inferred)
     filter: Any = None
-    # A unique identifier for the replication rule, used to distinguish it from other rules within the same bucket's replication configuration. (AI-inferred)
     id: Any = None
-    # Specifies the object key prefix in the source bucket that identifies which objects this replication rule applies to, with an empty or omitted prefix matching all objects. (AI-inferred)
     prefix: Any = None
-    # The numeric priority for this replication rule, where higher values take precedence when multiple rules match an object, and it is required when multiple rules exist with filters. (AI-inferred)
     priority: Any = None
-    # Specifies additional source selection criteria for the replication rule, such as whether to replicate objects encrypted with SSE-KMS. (AI-inferred)
     source_selection_criteria: Any = None
-    # Specifies whether the replication rule is enabled (Enabled) or disabled (Disabled). (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -521,29 +411,20 @@ class Bucket_WebsiteConfiguration_RedirectAllRequestsTo:
 
 @dataclasses.dataclass
 class Bucket_WebsiteConfiguration_RoutingRules_RedirectRule:
-    # Specifies the host name to use in the redirect request for a routing rule in the S3 website configuration; for example, if the rule matches, requests are redirected to this host instead of the original bucket's website endpoint. (AI-inferred)
     host_name: Any = None
-    # Specifies the HTTP redirect code (such as 301, 302, or 307) that S3 returns in the redirect response when this routing rule matches, overriding the default 301. (AI-inferred)
     http_redirect_code: Any = None
-    # Specifies the protocol (http or https) to use in the redirect location for requests that match the routing rule's condition. (AI-inferred)
     protocol: Any = None
-    # Specifies the object key prefix to use in the redirect request, replacing the matched prefix from the original request. (AI-inferred)
     replace_key_prefix_with: Any = None
-    # Specifies the object key name to use in the redirect request, replacing the entire original key for requests that match the routing rule. (AI-inferred)
     replace_key_with: Any = None
 
 @dataclasses.dataclass
 class Bucket_WebsiteConfiguration_RoutingRules_RoutingRuleCondition:
-    # The HTTP error code (e.g., '404') that the origin must return in order for this routing rule condition to apply. (AI-inferred)
     http_error_code_returned_equals: Any = None
-    # Specifies the object key prefix that must match for the routing rule condition to apply when S3 serves requests from the website endpoint. (AI-inferred)
     key_prefix_equals: Any = None
 
 @dataclasses.dataclass
 class Bucket_WebsiteConfiguration_RoutingRules:
-    # Specifies the redirect behavior for a routing rule, including protocol, host name, port, key replacement, and HTTP redirect code, applied when the rule's condition is met. (AI-inferred)
     redirect_rule: Any = None
-    # Defines the condition (such as a specific HTTP error code or a key prefix) that must be matched for the S3 website routing rule to take effect. (AI-inferred)
     routing_rule_condition: Any = None
 
 @dataclasses.dataclass
@@ -1094,7 +975,6 @@ class BucketConfig:
     bucket_encryption: Any = None
     # A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
     bucket_name: Any = None
-    # This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
     bucket_name_prefix: Any = None
     bucket_namespace: Any = None
     # Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
@@ -1144,14 +1024,11 @@ class BucketAttrs:
     bucket_encryption: Any = None
     # A name for the bucket. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the bucket name. The bucket name must contain only lowercase letters, numbers, periods (.), and dashes (-) and must follow [Amazon S3 bucket restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html). For more information, see [Rules for naming Amazon S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html) in the *Amazon S3 User Guide*. If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you need to replace the resource, specify a new name.
     bucket_name: Any = None
-    # This prefix is used to generate a unique S3 bucket name by combining the specified prefix with a random suffix, ensuring the bucket name is globally unique. (AI-inferred)
     bucket_name_prefix: Any = None
     bucket_namespace: Any = None
     # Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see [Enabling Cross-Origin Resource Sharing](https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html) in the *Amazon S3 User Guide*.
     cors_configuration: Any = None
-    # The bucket's DNS domain name, which is the global S3 endpoint of the form `<bucket-name>.s3.amazonaws.com`, exposed as a computed attribute for resource references. (AI-inferred)
     domain_name: Any = None
-    # The dual-stack domain name for the S3 bucket, which is the automatically generated endpoint that supports both IPv4 and IPv6 connections, typically in the format bucket-name.s3.dualstack.region.amazonaws.com. (AI-inferred)
     dual_stack_domain_name: Any = None
     # Defines how Amazon S3 handles Intelligent-Tiering storage.
     intelligent_tiering_configurations: Any = None
@@ -1177,7 +1054,6 @@ class BucketAttrs:
     ownership_controls: Any = None
     # The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. Bucket-level settings work alongside account-level settings (which may inherit from organization-level policies). For more information about when Amazon S3 considers a bucket or object public, see [The Meaning of "Public"](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status) in the *Amazon S3 User Guide*.
     public_access_block_configuration: Any = None
-    # The AWS S3 bucket's regional domain name, e.g., 'my-bucket.s3.us-west-2.amazonaws.com', which is a constructed endpoint for accessing the bucket in the region where it was created. (AI-inferred)
     regional_domain_name: Any = None
     # A container for replication rules. You can add up to 1,000 rules. The maximum size of a replication configuration is 2 MB. The latest version of the replication configuration XML is V2. For more information about XML V2 replication configurations, see [Replication configuration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html) in the *Amazon S3 User Guide*.
     replication_configuration: Any = None
@@ -1187,7 +1063,6 @@ class BucketAttrs:
     versioning_configuration: Any = None
     # Specifies website configuration parameters for an Amazon S3 bucket.
     website_configuration: Any = None
-    # The website URL endpoint for the S3 bucket when static website hosting is configured, such as http://bucket-name.s3-website-region.amazonaws.com. (AI-inferred)
     website_url: Any = None
 
 Bucket = ubx.ResourceBinding(

@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterSnapshot_Tags struct {
-	// The key of a user-defined tag attached to this RDS cluster snapshot, used for organizing, identifying, and managing the snapshot within AWS. (AI-inferred)
 	Key any
-	// The value of a tag key assigned to the RDS cluster snapshot, used for resource categorization and cost allocation. (AI-inferred)
 	Value any
 }
 

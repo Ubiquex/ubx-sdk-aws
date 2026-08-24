@@ -4,9 +4,7 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigExtensionAssociation_Tags struct {
-	// The key of a tag assigned to the AppConfig extension association, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AppConfig extension association, where the tag key is the map key in the tags block. (AI-inferred)
 	Value any
 }
 
@@ -16,34 +14,22 @@ var ConfigExtensionAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type ConfigExtensionAssociationConfig struct {
-	// The name, ID, or Amazon Resource Name (ARN) of the AWS AppConfig extension to associate with the target resource. (AI-inferred)
 	ExtensionIdentifier any
-	// The version number of the extension to associate with the resource; if not specified, the latest version of the extension is used. (AI-inferred)
 	ExtensionVersionNumber any
-	// Specifies the key-value pairs of parameters defined by the AppConfig extension that are passed to the extension when it runs for the associated resource. (AI-inferred)
 	Parameters any
-	// The ARN of the AppConfig application, environment, or configuration profile to which the extension is associated and will be applied. (AI-inferred)
 	ResourceIdentifier any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type ConfigExtensionAssociationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the AppConfig extension association. (AI-inferred)
 	Arn any
-	// The Amazon Resource Name (ARN) of the AppConfig extension that this association applies to. (AI-inferred)
 	ExtensionArn any
-	// The name, ID, or Amazon Resource Name (ARN) of the AWS AppConfig extension to associate with the target resource. (AI-inferred)
 	ExtensionIdentifier any
-	// The version number of the extension to associate with the resource; if not specified, the latest version of the extension is used. (AI-inferred)
 	ExtensionVersionNumber any
-	// The system-generated unique identifier for the extension association. (AI-inferred)
 	Id any
-	// Specifies the key-value pairs of parameters defined by the AppConfig extension that are passed to the extension when it runs for the associated resource. (AI-inferred)
 	Parameters any
-	// The ARN of the AppConfig resource (such as an application, environment, or configuration profile) with which the extension is associated. (AI-inferred)
 	ResourceArn any
-	// The ARN of the AppConfig application, environment, or configuration profile to which the extension is associated and will be applied. (AI-inferred)
 	ResourceIdentifier any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

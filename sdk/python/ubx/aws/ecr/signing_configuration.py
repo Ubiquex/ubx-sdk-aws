@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SigningConfiguration_Rules_RepositoryFilters:
-    # The repository name pattern (e.g., a prefix like 'prod/') that selects which ECR repositories this signing rule applies to, with the matching behavior defined by the associated filter type. (AI-inferred)
     filter: Any = None
-    # Specifies the matching strategy for a repository filter in an ECR signing configuration rule, where 'PREFIX_MATCH' ensures the rule applies to repositories whose names start with the given filter value. (AI-inferred)
     filter_type: Any = None
 
 @dataclasses.dataclass
 class SigningConfiguration_Rules:
-    # Specifies the repository filters that determine which Amazon ECR repositories this signing configuration rule applies to, matching by prefix or exact repository name. (AI-inferred)
     repository_filters: Any = None
-    # Specifies the ARN of the AWS Signer signing profile that this rule uses to require signatures on matching container images. (AI-inferred)
     signing_profile_arn: Any = None
 
 _SigningConfiguration_Rules_RepositoryFiltersFields = {

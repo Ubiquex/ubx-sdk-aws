@@ -4,9 +4,7 @@ package kafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectWorkerConfiguration_Tags struct {
-	// Specifies the key of a tag to attach to this AWS Managed Kafka Connect worker configuration, enabling cost allocation, resource organization, and access control in AWS. (AI-inferred)
 	Key any
-	// The value component of a key-value tag applied to the AWS Kafka Connect worker configuration, used for custom metadata, resource organization, and cost tracking. (AI-inferred)
 	Value any
 }
 

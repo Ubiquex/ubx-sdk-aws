@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointAuthorizationConfig:
-    # The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
     account: Any = None
     # The cluster identifier.
     cluster_identifier: Any = None
@@ -19,7 +18,6 @@ class EndpointAuthorizationConfig:
 
 @dataclasses.dataclass
 class EndpointAuthorizationAttrs:
-    # The AWS account ID of the customer to be authorized to access the Redshift cluster's VPC endpoint. (AI-inferred)
     account: Any = None
     # Indicates whether all VPCs in the grantee account are allowed access to the cluster.
     allowed_all_vpcs: Any = None
@@ -35,9 +33,7 @@ class EndpointAuthorizationAttrs:
     endpoint_count: Any = None
     # Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.
     force: Any = None
-    # The AWS account ID that is granted access to the cluster's endpoint, returned as a computed read-only attribute. (AI-inferred)
     grantee: Any = None
-    # The AWS account ID of the cluster owner that grants the cross-account endpoint authorization. (AI-inferred)
     grantor: Any = None
     # The status of the authorization action.
     status: Any = None

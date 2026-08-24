@@ -10,31 +10,25 @@ type ExpressGatewayService_ActiveConfigurations_IngressPaths struct {
 
 type ExpressGatewayService_ActiveConfigurations_NetworkConfiguration struct {
 	SecurityGroups any
-	// Specifies the VPC subnets to use for the network configuration of an active configuration, controlling where the ECS Express Gateway service places its elastic network interfaces. (AI-inferred)
 	Subnets any
 }
 
 type ExpressGatewayService_ActiveConfigurations_PrimaryContainer_AwsLogsConfiguration struct {
-	// The name of the CloudWatch Logs log group where container logs are delivered when using the awslogs log driver. (AI-inferred)
 	LogGroup any
-	// For the awslogs log driver, this prefix is prepended to the container name to define the CloudWatch log stream name, enabling organized log grouping. (AI-inferred)
 	LogStreamPrefix any
 }
 
 type ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Environment struct {
 	Name any
-	// Specifies the string value for an environment variable set on the primary container in the active ECS Express Gateway service configuration. (AI-inferred)
 	Value any
 }
 
 type ExpressGatewayService_ActiveConfigurations_PrimaryContainer_RepositoryCredentials struct {
-	// Specifies the ARN or name of the AWS Secrets Manager secret or Systems Manager parameter that stores the private repository authentication credentials for the primary container. (AI-inferred)
 	CredentialsParameter any
 }
 
 type ExpressGatewayService_ActiveConfigurations_PrimaryContainer_Secrets struct {
 	Name any
-	// The ARN or full name (in the form of a Systems Manager parameter name or Secrets Manager secret ARN) of the external source that stores the secret value to be injected into the container as an environment variable or referenced in the task definition. (AI-inferred)
 	ValueFrom any
 }
 
@@ -44,7 +38,6 @@ type ExpressGatewayService_ActiveConfigurations_PrimaryContainer struct {
 	ContainerPort any
 	Environment any
 	Image any
-	// Specifies the credentials used to authenticate to a private container registry, typically containing a credentialsParameter ARN that references a Secrets Manager secret or SSM parameter. (AI-inferred)
 	RepositoryCredentials any
 	Secrets any
 }
@@ -66,7 +59,6 @@ type ExpressGatewayService_ActiveConfigurations struct {
 	NetworkConfiguration any
 	PrimaryContainer any
 	ScalingTarget any
-	// Uniquely identifies the version of the service configuration that is among the currently active configurations for the ECS Express Gateway service. (AI-inferred)
 	ServiceRevisionArn any
 	TaskDefinitionArn any
 	TaskRoleArn any

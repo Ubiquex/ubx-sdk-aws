@@ -8,33 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Instance_AddOns_AutoSnapshotAddOnRequest:
-    # Specifies the time of day (in 24-hour HH:00 format) at which the automatic snapshot is taken for the Lightsail instance when the Auto Snapshot add-on is enabled. (AI-inferred)
     snapshot_time_of_day: Any = None
 
 @dataclasses.dataclass
 class Instance_AddOns:
-    # Specifies the type of add-on to attach to the Lightsail instance, with the only supported value being `AutoSnapshot` to enable automatic daily snapshots of the instance. (AI-inferred)
     add_on_type: Any = None
-    # Configures the automatic snapshot add-on for the Lightsail instance, specifying the daily time of day for the snapshot to be created. (AI-inferred)
     auto_snapshot_add_on_request: Any = None
-    # Indicates whether the add-on is enabled or disabled, with values such as 'Enabled' or 'Disabled' for a Lightsail instance add-on. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class Instance_Hardware_Disks:
-    # The name of the Lightsail instance to which the disk is attached, which for a disk in an instance's hardware list is typically the instance itself. (AI-inferred)
     attached_to: Any = None
-    # Indicates whether the disk is currently attached to the instance, typically with values such as 'attached' or 'detached'. (AI-inferred)
     attachment_state: Any = None
-    # The unique name of the disk attached to the Lightsail instance, used to identify the disk within the instance's hardware configuration. (AI-inferred)
     disk_name: Any = None
-    # The provisioned input/output operations per second (IOPS) for the block storage disk attached to the Lightsail instance, defining its performance level. (AI-inferred)
     iops: Any = None
-    # Indicates whether this disk is the system (boot) disk for the AWS Lightsail instance. (AI-inferred)
     is_system_disk: Any = None
-    # The device path (e.g., /dev/sda1) for the attached block storage disk on the Lightsail instance, used to identify the disk within the operating system. (AI-inferred)
     path: Any = None
-    # The size of the disk in gigabytes for a block storage disk attached to the Lightsail instance, as specified in the hardware.disks list. (AI-inferred)
     size_in_gb: Any = None
 
 @dataclasses.dataclass
@@ -60,25 +49,15 @@ class Instance_Networking_MonthlyTransfer:
 
 @dataclasses.dataclass
 class Instance_Networking_Ports:
-    # Specifies whether the port rule applies to inbound or outbound traffic, with values 'inbound' or 'outbound'. (AI-inferred)
     access_direction: Any = None
-    # The source IP address or CIDR range that is allowed to access the specified port on the Lightsail instance. (AI-inferred)
     access_from: Any = None
-    # Specifies whether the port is open to the public internet (Public) or restricted to private access within the Lightsail network (Private). (AI-inferred)
     access_type: Any = None
-    # Lists named CIDR aliases (e.g., 'myIp', 'amazon') whose defined IP ranges are used as the allowed source addresses for this port rule in the instance's networking firewall. (AI-inferred)
     cidr_list_aliases: Any = None
-    # The list of IPv4 CIDR blocks that are allowed to access the instance via the associated port. (AI-inferred)
     cidrs: Any = None
-    # Specifies the common name (e.g., SSH, RDP, HTTP) associated with the port, providing a human-readable label for the port's purpose. (AI-inferred)
     common_name: Any = None
-    # The starting port number of a range to open in the Lightsail instance's firewall rules. (AI-inferred)
     from_port: Any = None
-    # The list of IPv6 CIDR blocks that are allowed to access the port in the Lightsail instance networking configuration. (AI-inferred)
     ipv6_cidrs: Any = None
-    # Specifies the network protocol (such as TCP, UDP, or ICMP) that the firewall rule applies to for the Lightsail instance's networking port mapping. (AI-inferred)
     protocol: Any = None
-    # The inclusive end of the port range for this Lightsail instance networking rule, paired with the port set in fromPort to define which ports are opened. (AI-inferred)
     to_port: Any = None
 
 @dataclasses.dataclass
@@ -97,9 +76,7 @@ class Instance_State:
 
 @dataclasses.dataclass
 class Instance_Tags:
-    # The key of the tag to associate with the Lightsail instance. (AI-inferred)
     key: Any = None
-    # The user-defined value paired with a tag key on the Lightsail instance, used for identifying and organizing the resource. (AI-inferred)
     value: Any = None
 
 _Instance_AddOns_AutoSnapshotAddOnRequestFields = {
@@ -152,7 +129,6 @@ class InstanceAttrs:
     bundle_id: Any = None
     # Hardware of the Instance.
     hardware: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the Lightsail instance across AWS. (AI-inferred)
     instance_arn: Any = None
     # The names to use for your new Lightsail instance.
     instance_name: Any = None

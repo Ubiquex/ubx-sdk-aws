@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class XssMatchSet_XssMatchTuples_FieldToMatch:
-    # The value of the `field_to_match` that defines the specific part of the web request to match, such as the header name when `type` is `HEADER`; it is empty for types like `URI` or `QUERY_STRING`. (AI-inferred)
     data: Any = None
-    # Specifies the part of the web request (for example, QUERY_STRING, URI, or BODY) that AWS WAF Regional inspects for cross-site scripting (XSS) attack patterns. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class XssMatchSet_XssMatchTuples:
-    # Specifies the part of a web request (such as a header, query string, or body) that AWS WAF Regional inspects for cross-site scripting attack patterns. (AI-inferred)
     field_to_match: Any = None
-    # Specifies how the text in the web request component is transformed (e.g., URL_DECODE, LOWERCASE) before the XSS match rule is evaluated. (AI-inferred)
     text_transformation: Any = None
 
 _XssMatchSet_XssMatchTuples_FieldToMatchFields = {
@@ -36,18 +32,13 @@ _XssMatchSet_XssMatchTuplesFields = {
 
 @dataclasses.dataclass
 class XssMatchSetConfig:
-    # The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
     name: Any = None
-    # Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
     xss_match_tuples: Any = None
 
 @dataclasses.dataclass
 class XssMatchSetAttrs:
-    # The unique identifier assigned by AWS to the WAF Regional XSS match set. (AI-inferred)
     id: Any = None
-    # The friendly name or description of the XSS match set, required to create the resource in AWS WAF Regional. (AI-inferred)
     name: Any = None
-    # Specifies the parts of web requests to inspect for cross-site scripting (XSS) attacks, each tuple defining a field to match and a text transformation. (AI-inferred)
     xss_match_tuples: Any = None
 
 XssMatchSet = ubx.ResourceBinding(

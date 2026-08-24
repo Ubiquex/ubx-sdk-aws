@@ -4,9 +4,7 @@ package roles
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnywhereCrl_Tags struct {
-	// The key of a tag attached to the AWS Roles Anywhere certificate revocation list (CRL), used to categorize and manage the CRL resource according to your organization's tagging scheme. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the AWS Roles Anywhere certificate revocation list (CRL), used for organizing or identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -16,30 +14,19 @@ var AnywhereCrl_TagsFields = ubx.FieldMap{
 	}
 
 type AnywhereCrlConfig struct {
-	// The PEM-encoded certificate revocation list (CRL) data that is uploaded to AWS Roles Anywhere, containing the list of revoked certificates. (AI-inferred)
 	CrlData any
-	// Indicates whether this certificate revocation list (CRL) is enabled for use in revoking certificates in AWS Roles Anywhere. (AI-inferred)
 	Enabled any
-	// Specifies the name of the certificate revocation list (CRL) resource, used to uniquely identify it within AWS Roles Anywhere. (AI-inferred)
 	Name any
-	// A list of tag objects (each with a Key and Value) that you can assign to the AWS Roles Anywhere certificate revocation list to help manage, identify, and control access to it, such as through IAM tag-based policies. (AI-inferred)
 	Tags any
-	// The ARN of the trust anchor that this certificate revocation list is associated with. (AI-inferred)
 	TrustAnchorArn any
 }
 
 type AnywhereCrlAttrs struct {
-	// The PEM-encoded certificate revocation list (CRL) data that is uploaded to AWS Roles Anywhere, containing the list of revoked certificates. (AI-inferred)
 	CrlData any
-	// The system-generated unique identifier (UUID) for the certificate revocation list (CRL) in AWS Roles Anywhere, assigned when the CRL is created and used to reference it in subsequent operations. (AI-inferred)
 	CrlId any
-	// Indicates whether this certificate revocation list (CRL) is enabled for use in revoking certificates in AWS Roles Anywhere. (AI-inferred)
 	Enabled any
-	// Specifies the name of the certificate revocation list (CRL) resource, used to uniquely identify it within AWS Roles Anywhere. (AI-inferred)
 	Name any
-	// A list of tag objects (each with a Key and Value) that you can assign to the AWS Roles Anywhere certificate revocation list to help manage, identify, and control access to it, such as through IAM tag-based policies. (AI-inferred)
 	Tags any
-	// The ARN of the trust anchor that this certificate revocation list is associated with. (AI-inferred)
 	TrustAnchorArn any
 }
 

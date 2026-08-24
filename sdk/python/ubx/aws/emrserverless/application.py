@@ -30,27 +30,19 @@ class Application_ImageConfiguration:
 
 @dataclasses.dataclass
 class Application_InitialCapacity_Value_WorkerConfiguration:
-    # The number of vCPUs allocated to each worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
     cpu: Any = None
-    # Specifies the disk size in GB for the worker in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
     disk: Any = None
-    # The disk type (e.g., SSD or HDD) for the storage attached to each worker instance in the initial capacity configuration of the EMR Serverless application. (AI-inferred)
     disk_type: Any = None
-    # Defines the memory size (in MB) allocated per worker for the initial capacity of the EMR Serverless application. (AI-inferred)
     memory: Any = None
 
 @dataclasses.dataclass
 class Application_InitialCapacity_Value:
-    # Specifies the CPU, memory, and disk configuration for workers allocated as the initial capacity of the EMR Serverless application. (AI-inferred)
     worker_configuration: Any = None
-    # The number of workers of the specified worker type (the key in the initial capacity map) to provision for the EMR Serverless application at startup. (AI-inferred)
     worker_count: Any = None
 
 @dataclasses.dataclass
 class Application_InitialCapacity:
-    # Specifies the name of the worker type (for example, driver or executor) for which to define the initial capacity configuration in an AWS EMR Serverless application. (AI-inferred)
     key: Any = None
-    # Defines the initial capacity configuration for a given worker type (e.g., Driver or Executor) in the serverless application, specifying the number of workers and their CPU/memory resources via the workerCount and workerConfiguration properties. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -73,13 +65,9 @@ class Application_MaximumCapacity:
 
 @dataclasses.dataclass
 class Application_MonitoringConfiguration:
-    # Specifies the CloudWatch Logs group, log stream name prefix, and optional encryption key ARN that the EMR Serverless application uses to deliver its runtime logs to Amazon CloudWatch. (AI-inferred)
     cloud_watch_logging_configuration: Any = None
-    # This field specifies the managed persistence monitoring configuration, controlling whether Spark event logs are persisted and the S3 location where they are stored for the EMR Serverless application. (AI-inferred)
     managed_persistence_monitoring_configuration: Any = None
-    # Configures the Prometheus monitoring endpoint for the EMR Serverless application by specifying the remote write URL where application metrics are sent. (AI-inferred)
     prometheus_monitoring_configuration: Any = None
-    # This nested block configures the S3 monitoring destination for the EMR Serverless application, specifying the S3 URI (log_uri) where logs are delivered and optionally a KMS key ARN (encryption_key_arn) for encrypting the logs. (AI-inferred)
     s3_monitoring_configuration: Any = None
 
 @dataclasses.dataclass
@@ -91,11 +79,8 @@ class Application_NetworkConfiguration:
 
 @dataclasses.dataclass
 class Application_RuntimeConfiguration:
-    # Specifies the classification name (e.g., spark-defaults) for the runtime configuration, which defines the set of properties that apply to the EMR Serverless application. (AI-inferred)
     classification: Any = None
-    # Specifies a list of sub-configurations for a given runtime configuration classification, allowing nested engine-specific settings (such as Spark or Hive properties) to be applied to the EMR Serverless application. (AI-inferred)
     configurations: Any = None
-    # Specifies a map of additional key-value pairs to apply as runtime configuration settings for the EMR Serverless application, extending the configuration defined by the parent runtime configuration's key and value fields. (AI-inferred)
     properties: Any = None
 
 @dataclasses.dataclass
@@ -108,7 +93,6 @@ class Application_SchedulerConfiguration:
 @dataclasses.dataclass
 class Application_Tags:
     key: Any = None
-    # The value component of a key-value tag applied to the EMR Serverless application, which can be any string and is used for resource metadata, filtering, and cost allocation. (AI-inferred)
     value: Any = None
 
 _Application_AutoStartConfigurationFields = {
@@ -205,17 +189,13 @@ class ApplicationConfig:
     identity_center_configuration: Any = None
     # The image configuration.
     image_configuration: Any = None
-    # Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
     initial_capacity: Any = None
-    # Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
     interactive_configuration: Any = None
-    # The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
     maximum_capacity: Any = None
     # Monitoring configuration for batch and interactive JobRun.
     monitoring_configuration: Any = None
     # User friendly Application name.
     name: Any = None
-    # Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
     network_configuration: Any = None
     # EMR release label.
     release_label: Any = None
@@ -227,7 +207,6 @@ class ApplicationConfig:
     tags: Any = None
     # The type of the application
     type: Any = None
-    # Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
     worker_type_specifications: Any = None
 
 @dataclasses.dataclass
@@ -246,17 +225,13 @@ class ApplicationAttrs:
     identity_center_configuration: Any = None
     # The image configuration.
     image_configuration: Any = None
-    # Configures the initial capacity for each worker type (e.g., driver, executor) of the EMR Serverless application, specifying the worker count and the CPU/memory allocated for that type. (AI-inferred)
     initial_capacity: Any = None
-    # Configures interactive capabilities for the EMR Serverless application, including enabling the Livy endpoint and EMR Studio integration. (AI-inferred)
     interactive_configuration: Any = None
-    # The maximum capacity limits (CPU, memory, and optional disk) that the EMR Serverless application is allowed to use, defined as a MaximumAllowedResources object that caps the application's total resource usage. (AI-inferred)
     maximum_capacity: Any = None
     # Monitoring configuration for batch and interactive JobRun.
     monitoring_configuration: Any = None
     # User friendly Application name.
     name: Any = None
-    # Specifies the VPC subnets and security group IDs that the EMR Serverless application uses to run jobs within a private network. (AI-inferred)
     network_configuration: Any = None
     # EMR release label.
     release_label: Any = None
@@ -268,7 +243,6 @@ class ApplicationAttrs:
     tags: Any = None
     # The type of the application
     type: Any = None
-    # Defines CPU and memory specifications for each worker type (e.g., Driver or Executor) in the EMR Serverless application, allowing per-worker-type resource overrides. (AI-inferred)
     worker_type_specifications: Any = None
 
 Application = ubx.ResourceBinding(

@@ -16,11 +16,8 @@ type Schedule_Target_DeadLetterConfig struct {
 }
 
 type Schedule_Target_EcsParameters_CapacityProviderStrategy struct {
-	// The base value in the capacity provider strategy defines the minimum number of tasks that must be run on this capacity provider before the provider's weight is considered for additional task placement. (AI-inferred)
 	Base any
-	// The short name of the capacity provider that ECS uses for placing the task when the schedule triggers. (AI-inferred)
 	CapacityProvider any
-	// Specifies the relative weight of this capacity provider in the strategy, determining the proportional share of tasks placed on it compared to other capacity providers. (AI-inferred)
 	Weight any
 }
 
@@ -39,16 +36,12 @@ type Schedule_Target_EcsParameters_NetworkConfiguration struct {
 }
 
 type Schedule_Target_EcsParameters_PlacementConstraints struct {
-	// The expression, such as attribute:instance-type =~ t2.*, that defines the placement constraint for the Amazon ECS task scheduled by this EventBridge Scheduler schedule. (AI-inferred)
 	Expression any
-	// The type of placement constraint for the ECS task, either 'distinctInstance' to place each task on a different container instance or 'memberOf' to constrain placement using a cluster query language expression. (AI-inferred)
 	Type any
 }
 
 type Schedule_Target_EcsParameters_PlacementStrategy struct {
-	// Specifies the field (for example, `instanceId`, `host`, or an attribute expression) on which the ECS placement strategy operates, matching the ECS `PlacementStrategy.field` property. (AI-inferred)
 	Field any
-	// Specifies the ECS placement strategy type for the scheduler-targeted task, choosing between random, spread, or binpack to control how tasks are distributed across container instances. (AI-inferred)
 	Type any
 }
 
@@ -103,9 +96,7 @@ type Schedule_Target_RetryPolicy struct {
 }
 
 type Schedule_Target_SageMakerPipelineParameters_PipelineParameterList struct {
-	// The name of the SageMaker pipeline parameter to pass to the pipeline execution when the schedule triggers the target. (AI-inferred)
 	Name any
-	// The value to assign to the specified SageMaker pipeline parameter when the schedule triggers the pipeline. (AI-inferred)
 	Value any
 }
 
@@ -297,7 +288,6 @@ type ScheduleConfig struct {
 	GroupName any
 	// The ARN for a KMS Key that will be used to encrypt customer data.
 	KmsKeyArn any
-	// Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred)
 	Name any
 	// The scheduling expression.
 	ScheduleExpression any
@@ -324,7 +314,6 @@ type ScheduleAttrs struct {
 	GroupName any
 	// The ARN for a KMS Key that will be used to encrypt customer data.
 	KmsKeyArn any
-	// Specifies the name of the Amazon EventBridge Scheduler schedule, which must be unique within a schedule group; if omitted, CloudFormation generates a unique name for the schedule. (AI-inferred)
 	Name any
 	// The scheduling expression.
 	ScheduleExpression any

@@ -4,64 +4,45 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordColumns struct {
-	// Specifies the JSONPath expression that maps this record column to the corresponding field in the reference data source's input record. (AI-inferred)
 	Mapping any
-	// The name of the column within the reference data source schema, which is used to reference that column in SQL queries against the reference data source. (AI-inferred)
 	Name any
-	// The SQL data type of the column in the reference data source's record schema, such as VARCHAR(16) or DOUBLE, used to define how the incoming record column is parsed. (AI-inferred)
 	SqlType any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_CsvmappingParameters struct {
-	// The delimiter character that separates columns in CSV records of the reference data source, such as a comma. (AI-inferred)
 	RecordColumnDelimiter any
-	// The delimiter character used to separate records in the CSV reference data source, such as a newline (\n). (AI-inferred)
 	RecordRowDelimiter any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters_JsonmappingParameters struct {
-	// The JSONPath expression that identifies the location of the top-level JSON element containing the data records, typically '$' for the root object, used for mapping reference data source's JSON input. (AI-inferred)
 	RecordRowPath any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat_MappingParameters struct {
-	// Specifies the CSV-specific mapping parameters (row and column delimiters) used to parse the reference data source records when the record format is set to CSV. (AI-inferred)
 	CsvmappingParameters any
-	// Specifies the JSON mapping parameters for the reference data source, including the JSON record row path that identifies the root node of the records in the JSON input. (AI-inferred)
 	JsonmappingParameters any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema_RecordFormat struct {
-	// Specifies the CSV or JSON mapping parameters (such as the record column delimiter for CSV or the record row path for JSON) that define how reference data records are parsed and mapped to columns. (AI-inferred)
 	MappingParameters any
-	// Specifies the record format type for the reference data source, which must be either 'JSON' or 'CSV' and determines how the reference schema parses incoming records. (AI-inferred)
 	RecordFormatType any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_ReferenceSchema struct {
-	// Defines the list of columns in the reference data source schema for the Kinesis Analytics application reference data source, where each column object specifies the column name, SQL type, and optional mapping. (AI-inferred)
 	RecordColumns any
-	// Defines the character encoding used for the reference data records, such as 'UTF-8', so that Kinesis Data Analytics can parse the reference data correctly. (AI-inferred)
 	RecordEncoding any
-	// Defines the record format for the reference data source, specifying whether records are CSV or JSON and the corresponding mapping parameters. (AI-inferred)
 	RecordFormat any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource_S3ReferenceDataSource struct {
-	// The ARN of the S3 bucket that stores the reference data source for the Kinesis Analytics application. (AI-inferred)
 	BucketArn any
-	// The S3 object key (file name) of the reference data file within the S3 bucket, which is read by the Kinesis Analytics application as reference data. (AI-inferred)
 	FileKey any
-	// This field specifies the ARN of the IAM role that Amazon Kinesis Analytics assumes to read the reference data from the S3 bucket defined in the S3ReferenceDataSource. (AI-inferred)
 	ReferenceRoleArn any
 }
 
 type AnalyticsApplicationReferenceDataSource_ReferenceDataSource struct {
-	// Defines the structure (columns, data types, and encoding) of the reference data source, mapping its attributes for use in SQL queries and join operations. (AI-inferred)
 	ReferenceSchema any
-	// Configures the Amazon S3 bucket and file key, along with the IAM role, that provide the reference data source for the Kinesis Analytics application. (AI-inferred)
 	S3ReferenceDataSource any
-	// The name of the in-application reference table that maps to the external reference data source (e.g., an S3 bucket), which you can then reference in your Kinesis Analytics SQL queries. (AI-inferred)
 	TableName any
 }
 
@@ -137,17 +118,13 @@ var AnalyticsApplicationReferenceDataSource_ReferenceDataSourceFields = ubx.Fiel
 	}
 
 type AnalyticsApplicationReferenceDataSourceConfig struct {
-	// The name of the Kinesis Analytics application to which this reference data source is associated. (AI-inferred)
 	ApplicationName any
-	// The reference_data_source field defines the reference data source for the Kinesis Analytics application, including the table name, the S3 location of the reference data, and the reference schema that maps it to the application's input. (AI-inferred)
 	ReferenceDataSource any
 }
 
 type AnalyticsApplicationReferenceDataSourceAttrs struct {
-	// The name of the Kinesis Analytics application to which this reference data source is associated. (AI-inferred)
 	ApplicationName any
 	Id any
-	// The reference_data_source field defines the reference data source for the Kinesis Analytics application, including the table name, the S3 location of the reference data, and the reference schema that maps it to the application's input. (AI-inferred)
 	ReferenceDataSource any
 }
 

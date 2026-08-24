@@ -21,7 +21,6 @@ class GatewayV2ApiMappingConfig:
 class GatewayV2ApiMappingAttrs:
     # The API identifier.
     api_id: Any = None
-    # The unique identifier assigned by AWS to this API mapping, used to reference the mapping in API Gateway v2 operations. (AI-inferred)
     api_mapping_id: Any = None
     # The API mapping key.
     api_mapping_key: Any = None

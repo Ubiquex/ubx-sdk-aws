@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScheduleGroup_Tags:
-    # The key portion of a tag attached to an AWS EventBridge Scheduler schedule group, used to identify and organize the resource. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to the AWS EventBridge Scheduler schedule group, used to define metadata for the resource. (AI-inferred)
     value: Any = None
 
 _ScheduleGroup_TagsFields = {
@@ -20,7 +18,6 @@ _ScheduleGroup_TagsFields = {
 
 @dataclasses.dataclass
 class ScheduleGroupConfig:
-    # The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
     # The list of tags to associate with the schedule group.
     tags: Any = None
@@ -33,7 +30,6 @@ class ScheduleGroupAttrs:
     creation_date: Any = None
     # The time at which the schedule group was last modified.
     last_modification_date: Any = None
-    # The name of the schedule group, which must be unique within your AWS account and Region; if omitted, CloudFormation generates a unique name. (AI-inferred)
     name: Any = None
     # Specifies the state of the schedule group.
     state: Any = None

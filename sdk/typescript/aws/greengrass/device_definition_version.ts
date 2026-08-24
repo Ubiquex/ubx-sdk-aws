@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeviceDefinitionVersion_Devices {
-  /** The ARN of the AWS IoT certificate used to authenticate the Greengrass device when it connects to the AWS Greengrass core. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** The device ID, which must be unique within the device definition version and is used to identify the device in this version. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Indicates whether the device's shadow is synchronized with the AWS IoT shadow. (AI-inferred) */
   syncShadow?: boolean | Computed<boolean>;
-  /** The Amazon Resource Name (ARN) of the AWS IoT thing that this device represents in the Greengrass device definition version. (AI-inferred) */
   thingArn?: string | Computed<string>;
 }
 
@@ -20,18 +16,13 @@ const DeviceDefinitionVersion_DevicesFields: FieldMap = {
 };
 
 export interface DeviceDefinitionVersionConfig {
-  /** The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred) */
   deviceDefinitionId: string | Computed<string>;
-  /** Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred) */
   devices: DeviceDefinitionVersion_Devices[] | Computed<DeviceDefinitionVersion_Devices[]>;
 }
 
 export interface DeviceDefinitionVersionAttrs {
-  /** The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred) */
   deviceDefinitionId: string;
-  /** Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred) */
   devices: DeviceDefinitionVersion_Devices[];
-  /** The unique identifier assigned by AWS to this Greengrass device definition version, used as a computed resource identifier. (AI-inferred) */
   id: string;
 }
 

@@ -31,7 +31,6 @@ class TtwinMakerSceneAttrs:
     capabilities: Any = None
     # The relative path that specifies the location of the content definition file.
     content_location: Any = None
-    # The date and time when the scene was created, returned as a string in date-time format. (AI-inferred)
     creation_date_time: Any = None
     # The description of the scene.
     description: Any = None
@@ -43,7 +42,6 @@ class TtwinMakerSceneAttrs:
     scene_metadata: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # The date and time when the scene was last updated, in ISO 8601 format. (AI-inferred)
     update_date_time: Any = None
     # The ID of the scene.
     workspace_id: Any = None

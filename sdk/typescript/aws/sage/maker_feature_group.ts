@@ -2,41 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerFeatureGroup_FeatureDefinitions {
-  /** Specifies the unique name of a feature (column) within a SageMaker Feature Group's record schema, as part of a feature definition list that defines each attribute and its type. (AI-inferred) */
   featureName?: string | Computed<string>;
-  /** The data type of the feature, one of Integral, Fractional, or String, which determines how the feature value is stored and processed in the Amazon SageMaker Feature Store. (AI-inferred) */
   featureType?: string | Computed<string>;
 }
 
 export interface MakerFeatureGroup_OfflineStoreConfig_DataCatalogConfig {
-  /** The name of the AWS Glue Catalog (commonly 'aws') that contains the database and table used by the feature group's offline store for managing its data catalog entries. (AI-inferred) */
   catalog: string | Computed<string>;
-  /** The name of the AWS Glue database in which the SageMaker Feature Group's offline store data catalog table is registered. (AI-inferred) */
   database: string | Computed<string>;
-  /** The name of the Glue Data Catalog table (in the specified catalog and database) that stores the offline data for this feature group, allowing it to be queried with Athena or other services. (AI-inferred) */
   tableName: string | Computed<string>;
 }
 
 export interface MakerFeatureGroup_OfflineStoreConfig_S3StorageConfig {
-  /** The ID of the AWS KMS key used to encrypt the S3 objects in the offline store of the feature group, allowing customer-managed encryption instead of the default SageMaker-managed key. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** The S3 URI (bucket and optional prefix) that defines the location where the feature group's offline store data is written and read. (AI-inferred) */
   s3Uri: string | Computed<string>;
 }
 
 export interface MakerFeatureGroup_OfflineStoreConfig {
-  /** Configures the AWS Glue Data Catalog metadata for the offline store feature table by specifying the Glue catalog, database, and table name. (AI-inferred) */
   dataCatalogConfig?: MakerFeatureGroup_OfflineStoreConfig_DataCatalogConfig | Computed<MakerFeatureGroup_OfflineStoreConfig_DataCatalogConfig>;
-  /** When set to true, prevents SageMaker from automatically creating the AWS Glue table that the offline store uses in its configured Data Catalog. (AI-inferred) */
   disableGlueTableCreation?: boolean | Computed<boolean>;
-  /** Configures Amazon S3 storage for the feature group's offline store, specifying the S3 URI (bucket and prefix) where data is stored and an optional KMS key ID for encryption. (AI-inferred) */
   s3StorageConfig: MakerFeatureGroup_OfflineStoreConfig_S3StorageConfig | Computed<MakerFeatureGroup_OfflineStoreConfig_S3StorageConfig>;
   /** Format for the offline store feature group. Iceberg is the optimal format for feature groups shared between offline and online stores. */
   tableFormat?: string | Computed<string>;
 }
 
 export interface MakerFeatureGroup_OnlineStoreConfig_SecurityConfig {
-  /** Specifies the AWS KMS key ID used to encrypt the feature group's online store, which provides low-latency access for real-time inference and is typically backed by DynamoDB. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
 }
 
@@ -48,18 +37,14 @@ export interface MakerFeatureGroup_OnlineStoreConfig_TtlDuration {
 }
 
 export interface MakerFeatureGroup_OnlineStoreConfig {
-  /** Determines whether the online store is enabled for the feature group; when false, the feature group only uses the offline store and cannot support real-time inference queries. (AI-inferred) */
   enableOnlineStore?: boolean | Computed<boolean>;
-  /** Specifies the AWS KMS key ID used to encrypt data in the online store of the SageMaker feature group. (AI-inferred) */
   securityConfig?: MakerFeatureGroup_OnlineStoreConfig_SecurityConfig | Computed<MakerFeatureGroup_OnlineStoreConfig_SecurityConfig>;
-  /** Specifies the storage type for the online store of a SageMaker feature group, either Standard (default, uses Amazon Simple Storage Service) or InMemory (uses SageMaker-managed Redis cluster) to control performance and cost. (AI-inferred) */
   storageType?: string | Computed<string>;
   /** TTL configuration of the feature group */
   ttlDuration?: MakerFeatureGroup_OnlineStoreConfig_TtlDuration | Computed<MakerFeatureGroup_OnlineStoreConfig_TtlDuration>;
 }
 
 export interface MakerFeatureGroup_Tags {
-  /** The key portion of a tag attached to the SageMaker Feature Group, used for organizing, cost tracking, and access management of the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -148,9 +133,7 @@ export interface MakerFeatureGroupConfig {
   featureDefinitions: MakerFeatureGroup_FeatureDefinitions[] | Computed<MakerFeatureGroup_FeatureDefinitions[]>;
   /** The Name of the FeatureGroup. */
   featureGroupName: string | Computed<string>;
-  /** Configures the offline store, an S3-backed data store used for batch analytics with Athena and Glue, including S3 storage configuration, Data Catalog settings, and the option to disable the offline store. (AI-inferred) */
   offlineStoreConfig?: MakerFeatureGroup_OfflineStoreConfig | Computed<MakerFeatureGroup_OfflineStoreConfig>;
-  /** Configures the online store for the feature group, enabling low-latency reads and writes for real-time inference, and includes settings like whether the online store is enabled and the TTL duration for automatic record expiration. (AI-inferred) */
   onlineStoreConfig?: MakerFeatureGroup_OnlineStoreConfig | Computed<MakerFeatureGroup_OnlineStoreConfig>;
   /** The Record Identifier Feature Name. */
   recordIdentifierFeatureName: string | Computed<string>;
@@ -158,7 +141,6 @@ export interface MakerFeatureGroupConfig {
   roleArn?: string | Computed<string>;
   /** An array of key-value pair to apply to this resource. */
   tags?: MakerFeatureGroup_Tags[] | Computed<MakerFeatureGroup_Tags[]>;
-  /** Defines the read/write throughput configuration for the feature group, specifying either on-demand or provisioned mode with optional capacity units for reads and writes. (AI-inferred) */
   throughputConfig?: MakerFeatureGroup_ThroughputConfig | Computed<MakerFeatureGroup_ThroughputConfig>;
 }
 
@@ -175,9 +157,7 @@ export interface MakerFeatureGroupAttrs {
   featureGroupName: string;
   /** The status of the feature group. */
   featureGroupStatus: string;
-  /** Configures the offline store, an S3-backed data store used for batch analytics with Athena and Glue, including S3 storage configuration, Data Catalog settings, and the option to disable the offline store. (AI-inferred) */
   offlineStoreConfig: MakerFeatureGroup_OfflineStoreConfig;
-  /** Configures the online store for the feature group, enabling low-latency reads and writes for real-time inference, and includes settings like whether the online store is enabled and the TTL duration for automatic record expiration. (AI-inferred) */
   onlineStoreConfig: MakerFeatureGroup_OnlineStoreConfig;
   /** The Record Identifier Feature Name. */
   recordIdentifierFeatureName: string;
@@ -185,7 +165,6 @@ export interface MakerFeatureGroupAttrs {
   roleArn: string;
   /** An array of key-value pair to apply to this resource. */
   tags: MakerFeatureGroup_Tags[];
-  /** Defines the read/write throughput configuration for the feature group, specifying either on-demand or provisioned mode with optional capacity units for reads and writes. (AI-inferred) */
   throughputConfig: MakerFeatureGroup_ThroughputConfig;
 }
 

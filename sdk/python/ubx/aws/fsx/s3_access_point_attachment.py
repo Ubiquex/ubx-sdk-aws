@@ -15,21 +15,17 @@ class S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser:
 class S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity:
     # Specifies the FSx for ONTAP user identity type, accepts either UNIX or WINDOWS.
     type: Any = None
-    # Configures the Unix user identity (e.g., user name or UID) that the FSx for ONTAP S3 access point uses to map file system access requests to a specific Unix user's permissions. (AI-inferred)
     unix_user: Any = None
-    # Specifies the Windows user credentials (domain and password) that define the file system's identity when the FSx for ONTAP file system is joined to an Active Directory domain. (AI-inferred)
     windows_user: Any = None
 
 @dataclasses.dataclass
 class S3AccessPointAttachment_OntapConfiguration:
-    # Identifies the FSx for ONTAP file system and its storage virtual machine (SVM) to which the S3 access point is attached, containing the file system ID and SVM ID. (AI-inferred)
     file_system_identity: Any = None
     # The ID of the FSx for ONTAP volume that the S3 access point is attached to.
     volume_id: Any = None
 
 @dataclasses.dataclass
 class S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGids:
-    # The numeric secondary group ID (GID) that is added to the POSIX user's secondary group list for the file system identity used by the S3 access point attachment. (AI-inferred)
     gid: Any = None
 
 @dataclasses.dataclass
@@ -43,14 +39,12 @@ class S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser:
 
 @dataclasses.dataclass
 class S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity:
-    # Defines the POSIX user (UID and GID) on the FSx for OpenZFS file system that is used to map operations from the attached S3 access point. (AI-inferred)
     posix_user: Any = None
     # Specifies the FSx for OpenZFS user identity type, accepts only POSIX.
     type: Any = None
 
 @dataclasses.dataclass
 class S3AccessPointAttachment_OpenZfsconfiguration:
-    # Specifies the POSIX user ID and group ID (file system identity) that the OpenZFS file system uses when accessing the attached S3 access point. (AI-inferred)
     file_system_identity: Any = None
     # The ID of the FSx for OpenZFS volume that the S3 access point is attached to.
     volume_id: Any = None
@@ -68,7 +62,6 @@ class S3AccessPointAttachment_S3AccessPoint:
     policy: Any = None
     # The S3 access point's ARN.
     resource_arn: Any = None
-    # Specifies the VPC configuration for the S3 access point, including the VPC ID in which the access point is created and which restricts access to requests originating from that VPC only. (AI-inferred)
     vpc_configuration: Any = None
 
 _S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUserFields = {
@@ -134,7 +127,6 @@ _S3AccessPointAttachment_OpenZfsconfigurationFields = {
 class S3AccessPointAttachmentConfig:
     # The name of the S3 access point attachment; also used for the name of the S3 access point.
     name: Any = None
-    # The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
     ontap_configuration: Any = None
     open_zfsconfiguration: Any = None
     # The type of Amazon FSx volume that the S3 access point is attached to.
@@ -146,7 +138,6 @@ class S3AccessPointAttachmentAttrs:
     lifecycle: Any = None
     # The name of the S3 access point attachment; also used for the name of the S3 access point.
     name: Any = None
-    # The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred)
     ontap_configuration: Any = None
     open_zfsconfiguration: Any = None
     s3_access_point: Any = None

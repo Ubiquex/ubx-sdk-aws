@@ -4,16 +4,12 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTableRecord_DataTableRecord_PrimaryValues struct {
-	// The identifier of the attribute (column) within the Amazon Connect data table's schema that this primary key value is associated with. (AI-inferred)
 	AttributeId any
-	// The value for a primary key attribute of the data table record, which combined with other primary values uniquely identifies a record in the specified Amazon Connect data table. (AI-inferred)
 	AttributeValue any
 }
 
 type DataTableRecord_DataTableRecord struct {
-	// Specifies the values of the record's primary key fields, which uniquely identify the record within the Amazon Connect data table. (AI-inferred)
 	PrimaryValues any
-	// The list of key-value pairs that constitute the record's data, where each object maps a field name to its value as defined by the Amazon Connect data table's schema. (AI-inferred)
 	Values any
 }
 
@@ -37,19 +33,14 @@ var DataTableRecord_DataTableRecordFields = ubx.FieldMap{
 
 type DataTableRecordConfig struct {
 	DataTableArn any
-	// The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
 	DataTableRecord any
-	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred)
 	InstanceArn any
 }
 
 type DataTableRecordAttrs struct {
 	DataTableArn any
-	// The 'data_table_record' object holds the key-value pairs (column names to values) that constitute the record to be inserted into the specified Amazon Connect data table. (AI-inferred)
 	DataTableRecord any
-	// The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table record. (AI-inferred)
 	InstanceArn any
-	// The unique system-generated identifier of the data table record, returned by Amazon Connect after the record is created. (AI-inferred)
 	RecordId any
 }
 

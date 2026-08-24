@@ -13,9 +13,7 @@ class OpsGuruResourceCollection_ResourceCollectionFilter_CloudFormation:
 
 @dataclasses.dataclass
 class OpsGuruResourceCollection_ResourceCollectionFilter_Tags:
-    # The tag key (AppBoundaryKey) that DevOps Guru uses to define the application boundary for selecting which tagged AWS resources are included in the resource collection. (AI-inferred)
     app_boundary_key: Any = None
-    # Specifies the list of tag values for the tag key in the parent `tags` filter, used to match which AWS resources are included in the DevOps Guru resource collection. (AI-inferred)
     tag_values: Any = None
 
 @dataclasses.dataclass

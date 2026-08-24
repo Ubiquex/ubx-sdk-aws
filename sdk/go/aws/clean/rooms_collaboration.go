@@ -4,54 +4,37 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsCollaboration_CreatorMlmemberAbilities struct {
-	// Specifies a list of custom machine learning member ability names to be granted to the creator member of the AWS Clean Rooms collaboration, defining customized ML permissions beyond the default standard abilities. (AI-inferred)
 	CustomMlmemberAbilities any
 }
 
 type RoomsCollaboration_CreatorPaymentConfiguration_JobCompute struct {
-	// Specifies whether the collaboration creator is responsible for paying for job compute costs in the collaboration. (AI-inferred)
 	IsResponsible any
 }
 
 type RoomsCollaboration_CreatorPaymentConfiguration_MachineLearning struct {
-	// Configures the payment responsibility for machine learning model inference in the collaboration, indicating whether the collaboration creator is responsible for the resulting charges. (AI-inferred)
 	ModelInference any
-	// Configuration specifying whether the collaboration creator is responsible for the costs of training machine learning models. (AI-inferred)
 	ModelTraining any
-	// Defines the payment configuration for the synthetic data generation capability under machine learning settings, specifying how the collaboration creator is billed for using this feature in an AWS Clean Rooms collaboration. (AI-inferred)
 	SyntheticDataGeneration any
 }
 
 type RoomsCollaboration_CreatorPaymentConfiguration struct {
-	// Specifies how the collaboration creator pays for compute resources used by members when running jobs (as opposed to interactive queries) within the clean rooms collaboration. (AI-inferred)
 	JobCompute any
-	// Specifies the configuration for whether the collaboration creator is responsible for costs incurred by machine learning queries, typically by setting a status like ENABLED or DISABLED. (AI-inferred)
 	MachineLearning any
-	// Specifies the payment configuration for query compute in the collaboration, determining whether the collaboration creator pays for query compute usage. (AI-inferred)
 	QueryCompute any
 }
 
 type RoomsCollaboration_DataEncryptionMetadata struct {
-	// Indicates whether encrypted tables in the collaboration are allowed to contain cleartext (unencrypted) data. (AI-inferred)
 	AllowCleartext any
-	// Specifies whether this collaboration permits query results to contain duplicate rows under the configured encryption metadata. (AI-inferred)
 	AllowDuplicates any
-	// Controls whether a query in the collaboration can join tables on columns that have different names across different members' datasets. (AI-inferred)
 	AllowJoinsOnColumnsWithDifferentNames any
-	// This required Boolean value determines whether nulls in the underlying data remain as nulls when encrypted in the AWS Clean Rooms collaboration, rather than being encrypted into a non-null value. (AI-inferred)
 	PreserveNulls any
 }
 
 type RoomsCollaboration_Members struct {
-	// The AWS account ID of the member being added to the Clean Rooms collaboration. (AI-inferred)
 	AccountId any
-	// The friendly, human-readable name assigned to a member's AWS account, used to identify that member within the Clean Rooms collaboration. (AI-inferred)
 	DisplayName any
-	// Specifies the list of allowable operations (e.g., CAN_QUERY, CAN_RECEIVE_RESULTS) that this collaboration member is permitted to perform. (AI-inferred)
 	MemberAbilities any
-	// Specifies the ML-specific abilities for the member, such as whether they can query ML-protected data and receive results from ML queries. (AI-inferred)
 	MlmemberAbilities any
-	// Configures how the member pays for query compute in the collaboration, specifically indicating whether the member is responsible for query compute costs via the query_compute.is_responsible property. (AI-inferred)
 	PaymentConfiguration any
 }
 
@@ -133,66 +116,40 @@ var RoomsCollaboration_TagsFields = ubx.FieldMap{
 	}
 
 type RoomsCollaborationConfig struct {
-	// Limits the AWS Regions where members of the collaboration can write query results, restricting result outputs to the specified regions. (AI-inferred)
 	AllowedResultRegions any
-	// Specifies the analytics engine for the collaboration, which must be either `CLEAN_ROOMS_SQL` (the default) or `SPARK`, and controls the query engine used by members of the collaboration. (AI-inferred)
 	AnalyticsEngine any
 	AutoApprovedChangeTypes any
-	// Specifies the display name of the member who creates the collaboration, which is visible to other members in the collaboration. (AI-inferred)
 	CreatorDisplayName any
-	// This object specifies the machine learning abilities granted to the creator member of the AWS Clean Rooms collaboration, determining which custom and standard ML member operations (such as receiving model output or trained models) the creator is permitted to perform. (AI-inferred)
 	CreatorMlmemberAbilities any
-	// Defines the set of abilities (e.g., CAN_QUERY, CAN_RECEIVE_RESULTS) that are granted to the creator of the collaboration, determining what actions the creator can perform within the Clean Rooms collaboration. (AI-inferred)
 	CreatorMemberAbilities any
-	// Determines how the collaboration creator is compensated for query compute costs, including whether the creator accepts responsibility for those costs and the number of query credits provided to collaborating members. (AI-inferred)
 	CreatorPaymentConfiguration any
-	// Specifies the data encryption metadata for the collaboration, controlling whether clear text is allowed, duplicate rows are permitted, joins on columns with different names are allowed, and how null values are preserved. (AI-inferred)
 	DataEncryptionMetadata any
-	// The user-provided description of the collaboration, which helps identify its purpose and can be updated after creation. (AI-inferred)
 	Description any
-	// Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
 	IsMetricsEnabled any
 	JobLogStatus any
-	// Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
 	Members any
-	// The name of the collaboration, a user-defined friendly identifier that must be unique within the AWS account and can be up to 128 characters. (AI-inferred)
 	Name any
-	// Determines whether query logs are enabled for the collaboration, accepting the enum values ENABLED or DISABLED. (AI-inferred)
 	QueryLogStatus any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration.
 	Tags any
 }
 
 type RoomsCollaborationAttrs struct {
-	// Limits the AWS Regions where members of the collaboration can write query results, restricting result outputs to the specified regions. (AI-inferred)
 	AllowedResultRegions any
-	// Specifies the analytics engine for the collaboration, which must be either `CLEAN_ROOMS_SQL` (the default) or `SPARK`, and controls the query engine used by members of the collaboration. (AI-inferred)
 	AnalyticsEngine any
-	// The Amazon Resource Name (ARN) uniquely identifying the Clean Rooms collaboration. (AI-inferred)
 	Arn any
 	AutoApprovedChangeTypes any
-	// The unique identifier assigned by AWS to the collaboration. (AI-inferred)
 	CollaborationIdentifier any
-	// Specifies the display name of the member who creates the collaboration, which is visible to other members in the collaboration. (AI-inferred)
 	CreatorDisplayName any
-	// This object specifies the machine learning abilities granted to the creator member of the AWS Clean Rooms collaboration, determining which custom and standard ML member operations (such as receiving model output or trained models) the creator is permitted to perform. (AI-inferred)
 	CreatorMlmemberAbilities any
-	// Defines the set of abilities (e.g., CAN_QUERY, CAN_RECEIVE_RESULTS) that are granted to the creator of the collaboration, determining what actions the creator can perform within the Clean Rooms collaboration. (AI-inferred)
 	CreatorMemberAbilities any
-	// Determines how the collaboration creator is compensated for query compute costs, including whether the creator accepts responsibility for those costs and the number of query credits provided to collaborating members. (AI-inferred)
 	CreatorPaymentConfiguration any
-	// Specifies the data encryption metadata for the collaboration, controlling whether clear text is allowed, duplicate rows are permitted, joins on columns with different names are allowed, and how null values are preserved. (AI-inferred)
 	DataEncryptionMetadata any
-	// The user-provided description of the collaboration, which helps identify its purpose and can be updated after creation. (AI-inferred)
 	Description any
-	// Whether the collaboration collects metrics about query activity (such as query counts and latency), enabling you to monitor and analyze usage patterns. (AI-inferred)
 	IsMetricsEnabled any
 	JobLogStatus any
-	// Defines the AWS accounts that participate in the collaboration, each with an account ID, display name, and the abilities (such as CAN_QUERY or CAN_RECEIVE_RESULTS) granted to that member. (AI-inferred)
 	Members any
-	// The name of the collaboration, a user-defined friendly identifier that must be unique within the AWS account and can be up to 128 characters. (AI-inferred)
 	Name any
-	// Determines whether query logs are enabled for the collaboration, accepting the enum values ENABLED or DISABLED. (AI-inferred)
 	QueryLogStatus any
 	// An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration.
 	Tags any

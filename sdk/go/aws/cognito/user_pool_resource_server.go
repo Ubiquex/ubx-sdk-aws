@@ -4,9 +4,7 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolResourceServer_Scopes struct {
-	// A human-readable description that explains the purpose or permissions of the OAuth 2.0 scope defined for the user pool resource server. (AI-inferred)
 	ScopeDescription any
-	// The scope_name defines the unique name of the OAuth 2.0 scope that clients can request for authorization from this resource server. (AI-inferred)
 	ScopeName any
 }
 
@@ -16,24 +14,16 @@ var UserPoolResourceServer_ScopesFields = ubx.FieldMap{
 	}
 
 type UserPoolResourceServerConfig struct {
-	// The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred)
 	Identifier any
-	// A friendly name for the resource server, used to identify it within the user pool. (AI-inferred)
 	Name any
-	// Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred)
 	Scopes any
-	// The unique ID of the user pool that this resource server is associated with. (AI-inferred)
 	UserPoolId any
 }
 
 type UserPoolResourceServerAttrs struct {
-	// The unique identifier for the resource server, typically a URI (e.g., https://my-api.example.com), used by clients to reference the resource server and its scopes in OAuth flows. (AI-inferred)
 	Identifier any
-	// A friendly name for the resource server, used to identify it within the user pool. (AI-inferred)
 	Name any
-	// Defines the OAuth 2.0 scopes that this resource server exposes to client apps, each scope specifying a name and a description. (AI-inferred)
 	Scopes any
-	// The unique ID of the user pool that this resource server is associated with. (AI-inferred)
 	UserPoolId any
 }
 

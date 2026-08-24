@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionsConnection_Tags struct {
 	Key any
-	// The value portion of a user-defined tag assigned to an AWS CodeConnections Connection, used to store arbitrary metadata for identifying and organizing the resource. (AI-inferred)
 	Value any
 }
 

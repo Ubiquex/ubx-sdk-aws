@@ -29,7 +29,6 @@ class SearchServerlessIndex_Settings_Index:
 class SearchServerlessIndex_Settings:
     # Custom analysis configuration including analyzers, tokenizers, and filters
     analysis: Any = None
-    # The 'settings.index' object specifies index-level configuration for the OpenSearch Serverless index, including settings like the number of primary shards and replica shards. (AI-inferred)
     index: Any = None
 
 _SearchServerlessIndex_MappingsFields = {
@@ -67,7 +66,6 @@ class SearchServerlessIndexConfig:
     index_name: Any = None
     # Index Mappings
     mappings: Any = None
-    # The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred)
     settings: Any = None
 
 @dataclasses.dataclass
@@ -78,7 +76,6 @@ class SearchServerlessIndexAttrs:
     index_name: Any = None
     # Index Mappings
     mappings: Any = None
-    # The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred)
     settings: Any = None
     # The unique identifier for the index.
     uuid: Any = None

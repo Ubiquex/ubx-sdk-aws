@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class LiveChannelPlacementGroup_Tags:
     key: Any = None
-    # The value of a user-defined tag key attached to the AWS MediaLive channel placement group, used for resource identification, organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _LiveChannelPlacementGroup_TagsFields = {

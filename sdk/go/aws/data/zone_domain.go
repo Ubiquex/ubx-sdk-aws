@@ -13,9 +13,7 @@ type ZoneDomain_SingleSignOn struct {
 }
 
 type ZoneDomain_Tags struct {
-	// The key (e.g., 'Environment') of a tag to attach to the Amazon DataZone domain, used to organize and manage the domain resource in AWS. (AI-inferred)
 	Key any
-	// The value component of a tag applied to the DataZone domain, which can be used for resource identification, categorization, and cost tracking. (AI-inferred)
 	Value any
 }
 

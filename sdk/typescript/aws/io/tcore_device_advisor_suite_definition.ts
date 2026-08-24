@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration_Devices {
-  /** The ARN of the X.509 certificate that identifies the device under test in the Device Advisor suite definition's device configuration. (AI-inferred) */
   certificateArn?: string | Computed<string>;
-  /** The ARN of the AWS IoT thing that the Device Advisor suite definition will test, identifying the device under test. (AI-inferred) */
   thingArn?: string | Computed<string>;
 }
 
@@ -22,9 +20,7 @@ export interface TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration 
 }
 
 export interface TcoreDeviceAdvisorSuiteDefinition_Tags {
-  /** The key of a tag assigned to the AWS IoT Core Device Advisor suite definition, used for resource categorization and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag (identified by its key) attached to the AWS IoT Device Advisor suite definition, used to add custom metadata for identifying, organizing, and managing this resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -51,7 +47,6 @@ const TcoreDeviceAdvisorSuiteDefinition_TagsFields: FieldMap = {
 };
 
 export interface TcoreDeviceAdvisorSuiteDefinitionConfig {
-  /** Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred) */
   suiteDefinitionConfiguration: TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration | Computed<TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: TcoreDeviceAdvisorSuiteDefinition_Tags[] | Computed<TcoreDeviceAdvisorSuiteDefinition_Tags[]>;
@@ -60,7 +55,6 @@ export interface TcoreDeviceAdvisorSuiteDefinitionConfig {
 export interface TcoreDeviceAdvisorSuiteDefinitionAttrs {
   /** The Amazon Resource name for the suite definition. */
   suiteDefinitionArn: string;
-  /** Defines the core configuration for the Device Advisor suite definition, including the device permission role ARN, devices under test, root group, and suite definition name. (AI-inferred) */
   suiteDefinitionConfiguration: TcoreDeviceAdvisorSuiteDefinition_SuiteDefinitionConfiguration;
   /** The unique identifier for the suite definition. */
   suiteDefinitionId: string;

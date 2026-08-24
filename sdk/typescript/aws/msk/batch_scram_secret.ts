@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BatchScramSecretConfig {
-  /** The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred) */
   clusterArn: string | Computed<string>;
-  /** The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred) */
   secretArnList?: string[] | Computed<string[]>;
 }
 
 export interface BatchScramSecretAttrs {
-  /** The ARN of the Amazon MSK cluster to which the batch of SASL/SCRAM secrets will be associated. (AI-inferred) */
   clusterArn: string;
-  /** The list of AWS Secrets Manager secret ARNs to associate with the MSK cluster for SCRAM authentication. (AI-inferred) */
   secretArnList: string[];
 }
 

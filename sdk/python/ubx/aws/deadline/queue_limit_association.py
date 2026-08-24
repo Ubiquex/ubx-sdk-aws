@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QueueLimitAssociationConfig:
-    # The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred)
     limit_id: Any = None
-    # The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred)
     queue_id: Any = None
 
 @dataclasses.dataclass
 class QueueLimitAssociationAttrs:
-    # The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred)
     farm_id: Any = None
-    # The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred)
     limit_id: Any = None
-    # The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred)
     queue_id: Any = None
 
 QueueLimitAssociation = ubx.ResourceBinding(

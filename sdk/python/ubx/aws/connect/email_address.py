@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EmailAddress_AliasConfigurations:
-    # The Amazon Resource Name (ARN) of an email address that is configured as an alias for the primary Connect email address. (AI-inferred)
     email_address_arn: Any = None
 
 @dataclasses.dataclass
 class EmailAddress_Tags:
-    # The user-defined key for a tag attached to the AWS Connect email address, used to organize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Amazon Connect email address resource. (AI-inferred)
     value: Any = None
 
 _EmailAddress_AliasConfigurationsFields = {

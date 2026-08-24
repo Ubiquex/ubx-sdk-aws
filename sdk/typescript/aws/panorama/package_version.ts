@@ -4,42 +4,26 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface PackageVersionConfig {
   /** Whether to mark the new version as the latest version. */
   markLatest?: boolean | Computed<boolean>;
-  /** The AWS account ID that owns the package version, used to identify the package owner when registering a package version for a package shared from another account. (AI-inferred) */
   ownerAccount?: string | Computed<string>;
-  /** The ID of the AWS Panorama package to which this package version belongs. (AI-inferred) */
   packageId: string | Computed<string>;
-  /** The package version identifier for the AWS Panorama package, used to distinguish this release from other versions of the same package. (AI-inferred) */
   packageVersion: string | Computed<string>;
-  /** Specifies the patch version of the Panorama package, which combined with the package name and package version uniquely identifies a specific package version release in AWS Panorama. (AI-inferred) */
   patchVersion: string | Computed<string>;
-  /** Determines whether the package version is updated to the latest available patch version for the specified package, enabling automatic updates to the newest patch release. (AI-inferred) */
   updatedLatestPatchVersion?: string | Computed<string>;
 }
 
 export interface PackageVersionAttrs {
-  /** Indicates whether this patch version is the latest available patch for the package version. (AI-inferred) */
   isLatestPatch: boolean;
   /** Whether to mark the new version as the latest version. */
   markLatest: boolean;
-  /** The AWS account ID that owns the package version, used to identify the package owner when registering a package version for a package shared from another account. (AI-inferred) */
   ownerAccount: string;
-  /** The Amazon Resource Name (ARN) of the Panorama package that this package version belongs to. (AI-inferred) */
   packageArn: string;
-  /** The ID of the AWS Panorama package to which this package version belongs. (AI-inferred) */
   packageId: string;
-  /** The name of the AWS Panorama package to which this package version belongs, uniquely identifying the package within the account. (AI-inferred) */
   packageName: string;
-  /** The package version identifier for the AWS Panorama package, used to distinguish this release from other versions of the same package. (AI-inferred) */
   packageVersion: string;
-  /** Specifies the patch version of the Panorama package, which combined with the package name and package version uniquely identifies a specific package version release in AWS Panorama. (AI-inferred) */
   patchVersion: string;
-  /** The Unix epoch timestamp (in seconds) when this Panorama package version was registered by the service, as returned by AWS Panorama. (AI-inferred) */
   registeredTime: number;
-  /** The service-assigned lifecycle status of the Panorama package version, indicating whether it is registered, active, deleting, or failed, and updated automatically as the package version transitions through its lifecycle. (AI-inferred) */
   status: string;
-  /** The package version's status description, providing contextual details about the current state (such as progress or error information) of the AWS Panorama package version. (AI-inferred) */
   statusDescription: string;
-  /** Determines whether the package version is updated to the latest available patch version for the specified package, enabling automatic updates to the newest patch release. (AI-inferred) */
   updatedLatestPatchVersion: string;
 }
 

@@ -25,13 +25,11 @@ type VpnconcentratorConfig struct {
 type VpnconcentratorAttrs struct {
 	// Any tags assigned to the VPN concentrator.
 	Tags any
-	// The unique identifier of the transit gateway attachment that is automatically provisioned when the VPN connection is associated with a transit gateway. (AI-inferred)
 	TransitGatewayAttachmentId any
 	// The ID of the transit gateway associated with the VPN concentrator.
 	TransitGatewayId any
 	// The type of VPN concentrator.
 	Type any
-	// The unique identifier automatically assigned by AWS to the VPN concentrator when it is created, used for referencing the resource. (AI-inferred)
 	VpnConcentratorId any
 }
 

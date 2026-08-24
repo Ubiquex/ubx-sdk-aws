@@ -2,52 +2,39 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOne {
-  /** Specifies the unique identifier of the case field that acts as the first operand in an equal-to condition used to determine whether the hidden rule action applies. (AI-inferred) */
   fieldId?: string | Computed<string>;
 }
 
 export interface CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwo {
-  /** The Boolean value to which the case field is compared in the equal_to condition, determining when the hidden rule action applies. (AI-inferred) */
   booleanValue?: boolean | Computed<boolean>;
-  /** The double_value specifies the numeric floating-point value that operand_two must hold on a case for the equal_to condition to match during evaluation of the rule's hidden conditions. (AI-inferred) */
   doubleValue?: number | Computed<number>;
-  /** When set, this field indicates that the second operand of the 'equals' condition is an empty value, causing the rule to trigger when the specified case field is empty. (AI-inferred) */
   emptyValue?: unknown | Computed<unknown>;
-  /** For an `equal_to` condition in an AWS Cases case rule's hidden condition set, this field holds the second operand's string literal, which is compared against the first operand (typically a case field) to determine when the rule's action is triggered. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface CaseRule_Rule_Hidden_Conditions_EqualTo {
-  /** This object is the first operand of an equality condition within the hidden conditions of an Amazon Connect Cases rule, specifying the source value (such as a case field reference or literal) to be compared against the second operand. (AI-inferred) */
   operandOne?: CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOne | Computed<CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOne>;
-  /** Defines the second operand (typically a literal value or field reference) in an equality condition of an AWS Cases case rule, specifying what the first operand must match for the condition to be true. (AI-inferred) */
   operandTwo?: CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwo | Computed<CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwo>;
   result?: boolean | Computed<boolean>;
 }
 
 export interface CaseRule_Rule_Hidden_Conditions {
-  /** Defines an equality condition for a hidden case rule, matching when the value of the referenced case field exactly equals the configured value. (AI-inferred) */
   equalTo?: CaseRule_Rule_Hidden_Conditions_EqualTo | Computed<CaseRule_Rule_Hidden_Conditions_EqualTo>;
-  /** This object specifies a 'not equal to' comparison condition that, when true, contributes to hiding the associated field in an AWS Cases case layout. (AI-inferred) */
   notEqualTo?: CaseRule_Rule_Hidden_Conditions_EqualTo | Computed<CaseRule_Rule_Hidden_Conditions_EqualTo>;
 }
 
 export interface CaseRule_Rule_Hidden {
-  /** Within an Amazon Connect Cases case rule, this list contains the conditions under which the rule will hide the designated case fields from the case view. (AI-inferred) */
   conditions?: CaseRule_Rule_Hidden_Conditions[] | Computed<CaseRule_Rule_Hidden_Conditions[]>;
-  /** Determines whether the field is hidden by default when the hidden rule's condition does not evaluate to true (or when no condition is specified). (AI-inferred) */
   defaultValue?: boolean | Computed<boolean>;
 }
 
 export interface CaseRule_Rule {
   hidden?: CaseRule_Rule_Hidden | Computed<CaseRule_Rule_Hidden>;
-  /** Defines the required-field criteria for the rule, specifying which case fields must be present or carry a particular value for a case to comply with the rule. (AI-inferred) */
   required?: CaseRule_Rule_Hidden | Computed<CaseRule_Rule_Hidden>;
 }
 
 export interface CaseRule_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the AWS Cases case rule, used for organizing, filtering, and managing the rule resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

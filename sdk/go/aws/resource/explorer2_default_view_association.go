@@ -4,14 +4,12 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Explorer2DefaultViewAssociationConfig struct {
-	// The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred)
 	ViewArn any
 }
 
 type Explorer2DefaultViewAssociationAttrs struct {
 	// The AWS principal that the default view is associated with, used as the unique identifier for this resource.
 	AssociatedAwsPrincipal any
-	// The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred)
 	ViewArn any
 }
 

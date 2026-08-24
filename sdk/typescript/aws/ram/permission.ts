@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Permission_Tags {
-  /** The key of a tag to attach to the AWS Resource Access Manager (RAM) permission, used for organizing and filtering the permission in AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -19,24 +18,20 @@ export interface PermissionConfig {
   policyTemplate: unknown | Computed<unknown>;
   /** The resource type this permission can be used with. */
   resourceType: string | Computed<string>;
-  /** A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred) */
   tags?: Permission_Tags[] | Computed<Permission_Tags[]>;
 }
 
 export interface PermissionAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Resource Access Manager permission, including the AWS account, region, permission name, and version (e.g., arn:aws:ram:us-east-1:123456789012:permission/MyPermission/1). (AI-inferred) */
   arn: string;
   /** Set to true to use this as the default permission. */
   isResourceTypeDefault: boolean;
   /** The name of the permission. */
   name: string;
-  /** Indicates whether the RAM permission is AWS-managed or customer-managed. (AI-inferred) */
   permissionType: string;
   /** Policy template for the permission. */
   policyTemplate: unknown;
   /** The resource type this permission can be used with. */
   resourceType: string;
-  /** A list of key-value pairs to associate with the custom RAM permission, used for tagging and categorizing the permission in AWS Resource Access Manager. (AI-inferred) */
   tags: Permission_Tags[];
   /** Version of the permission. */
   version: string;

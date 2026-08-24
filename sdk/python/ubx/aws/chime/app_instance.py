@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppInstance_Tags:
-    # The key of a tag that is attached to the Amazon Chime AppInstance resource for identification and organization. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair attached to the Chime AppInstance, used to categorize and manage the resource. (AI-inferred)
     value: Any = None
 
 _AppInstance_TagsFields = {

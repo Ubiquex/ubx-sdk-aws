@@ -4,19 +4,16 @@ package emrcontainers
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VirtualCluster_ContainerProvider_Info_EksInfo struct {
-	// The Kubernetes namespace in the Amazon EKS cluster where the virtual cluster's resources are deployed. (AI-inferred)
 	Namespace any
 }
 
 type VirtualCluster_ContainerProvider_Info struct {
-	// Specifies the Amazon EKS cluster information for the container provider, including the Kubernetes namespace where the virtual cluster runs. (AI-inferred)
 	EksInfo any
 }
 
 type VirtualCluster_ContainerProvider struct {
 	// The ID of the container cluster
 	Id any
-	// The info object inside container_provider contains provider-specific details, specifically the Amazon EKS namespace in which the virtual cluster runs. (AI-inferred)
 	Info any
 	// The type of the container provider
 	Type any
@@ -24,7 +21,6 @@ type VirtualCluster_ContainerProvider struct {
 
 type VirtualCluster_Tags struct {
 	Key any
-	// The value portion of a tag attached to the EMR Containers virtual cluster. (AI-inferred)
 	Value any
 }
 
@@ -56,7 +52,6 @@ var VirtualCluster_TagsFields = ubx.FieldMap{
 	}
 
 type VirtualClusterConfig struct {
-	// The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
 	ContainerProvider any
 	// Name of the virtual cluster.
 	Name any
@@ -69,9 +64,7 @@ type VirtualClusterConfig struct {
 }
 
 type VirtualClusterAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the EMR Containers virtual cluster in AWS. (AI-inferred)
 	Arn any
-	// The container provider configuration that defines the underlying container platform (e.g., Amazon EKS) on which the virtual cluster runs, including the provider type and the Amazon EKS cluster information. (AI-inferred)
 	ContainerProvider any
 	// Id of the virtual cluster.
 	Id any

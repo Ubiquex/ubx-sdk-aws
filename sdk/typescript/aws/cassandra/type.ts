@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Type_Fields {
-  /** The name of a field within a user-defined Cassandra type in Amazon Keyspaces, defining the structure of the type. (AI-inferred) */
   fieldName?: string | Computed<string>;
-  /** The Cassandra data type assigned to this field within the custom type definition, specified as a string such as 'int' or 'text'. (AI-inferred) */
   fieldType?: string | Computed<string>;
 }
 

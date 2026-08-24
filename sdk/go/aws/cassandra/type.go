@@ -4,9 +4,7 @@ package cassandra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Type_Fields struct {
-	// The name of a field within a user-defined Cassandra type in Amazon Keyspaces, defining the structure of the type. (AI-inferred)
 	FieldName any
-	// The Cassandra data type assigned to this field within the custom type definition, specified as a string such as 'int' or 'text'. (AI-inferred)
 	FieldType any
 }
 

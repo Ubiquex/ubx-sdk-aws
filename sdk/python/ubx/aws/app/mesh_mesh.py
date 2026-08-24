@@ -8,26 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MeshMesh_Spec_EgressFilter:
-    # Specifies the egress filter type for the service mesh, either allowing all outbound traffic (ALLOW_ALL) or dropping all outbound traffic (DROP_ALL). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class MeshMesh_Spec_ServiceDiscovery:
-    # Determines the IP preference for DNS service discovery in the mesh, controlling whether DNS queries return only IPv4 addresses, only IPv6 addresses, or prefer one type when both are available. (AI-inferred)
     ip_preference: Any = None
 
 @dataclasses.dataclass
 class MeshMesh_Spec:
-    # Specifies the egress filter type that controls whether outbound traffic from the mesh to external services is allowed (ALLOW_ALL) or blocked (DROP_ALL). (AI-inferred)
     egress_filter: Any = None
-    # Defines mesh-wide service discovery settings, specifically the IP preference (IPv4 or IPv6) used for DNS resolution of virtual service endpoints. (AI-inferred)
     service_discovery: Any = None
 
 @dataclasses.dataclass
 class MeshMesh_Tags:
-    # The key of a user-defined tag attached to the AWS App Mesh mesh, used for resource grouping and identification. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the App Mesh mesh, used for categorizing, cost allocation, and IAM-based access control of the mesh resource. (AI-inferred)
     value: Any = None
 
 _MeshMesh_Spec_EgressFilterFields = {
@@ -58,28 +52,18 @@ _MeshMesh_TagsFields = {
 
 @dataclasses.dataclass
 class MeshMeshConfig:
-    # The name of the App Mesh service mesh; if omitted, CloudFormation generates a unique name, and this name serves as the mesh's resource identifier. (AI-inferred)
     mesh_name: Any = None
-    # Defines the mesh's EgressFilter and optional IpPreference settings, which govern outbound traffic handling and IP protocol preference for the mesh. (AI-inferred)
     spec: Any = None
-    # Specifies the tags (key-value metadata) to attach to the AWS App Mesh mesh resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MeshMeshAttrs:
-    # The Amazon Resource Name (ARN) of the App Mesh mesh. (AI-inferred)
     arn: Any = None
-    # The computed `id` field contains the name of the App Mesh mesh, which serves as the unique identifier for the resource within AWS and in Terraform's state, and is also the primary key used when importing the resource. (AI-inferred)
     id: Any = None
-    # The name of the App Mesh service mesh; if omitted, CloudFormation generates a unique name, and this name serves as the mesh's resource identifier. (AI-inferred)
     mesh_name: Any = None
-    # The AWS account ID that owns the mesh, automatically assigned by AWS and read-only. (AI-inferred)
     mesh_owner: Any = None
-    # The AWS account ID of the mesh owner, which is the account that created the App Mesh mesh resource. (AI-inferred)
     resource_owner: Any = None
-    # Defines the mesh's EgressFilter and optional IpPreference settings, which govern outbound traffic handling and IP protocol preference for the mesh. (AI-inferred)
     spec: Any = None
-    # Specifies the tags (key-value metadata) to attach to the AWS App Mesh mesh resource. (AI-inferred)
     tags: Any = None
     uid: Any = None
 

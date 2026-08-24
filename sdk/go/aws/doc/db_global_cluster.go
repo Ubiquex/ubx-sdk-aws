@@ -4,9 +4,7 @@ package doc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbGlobalCluster_Tags struct {
-	// The key portion of a user-defined tag attached to the Amazon DocumentDB global cluster, used for metadata, cost allocation, and access control. (AI-inferred)
 	Key any
-	// The value of a tag attached to the DocumentDB global cluster. (AI-inferred)
 	Value any
 }
 

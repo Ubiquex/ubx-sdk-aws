@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueueFleetAssociationConfig {
-  /** The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred) */
   farmId: string | Computed<string>;
-  /** The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred) */
   fleetId: string | Computed<string>;
-  /** The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred) */
   queueId: string | Computed<string>;
 }
 
 export interface QueueFleetAssociationAttrs {
-  /** The unique identifier of the AWS Deadline Cloud farm that contains the queue and fleet being associated. (AI-inferred) */
   farmId: string;
-  /** The unique identifier of the fleet that is associated with the queue in AWS Deadline Cloud. (AI-inferred) */
   fleetId: string;
-  /** The unique identifier of the Deadline queue to associate with the fleet, linking the queue to the specified fleet. (AI-inferred) */
   queueId: string;
 }
 

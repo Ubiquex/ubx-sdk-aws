@@ -4,19 +4,12 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_InitialVersion struct {
-	// Specifies the Amazon Resource Name (ARN) of a connector definition version to associate with the group's initial version, defining which connectors are available in the group. (AI-inferred)
 	ConnectorDefinitionVersionArn any
-	// The Amazon Resource Name (ARN) of the core definition version to associate with the initial Greengrass group version. (AI-inferred)
 	CoreDefinitionVersionArn any
-	// The Amazon Resource Name (ARN) of the device definition version to include in the initial group version when the group is created. (AI-inferred)
 	DeviceDefinitionVersionArn any
-	// The ARN of the function definition version that defines the Lambda functions for the Greengrass group, included in the initial group version configuration. (AI-inferred)
 	FunctionDefinitionVersionArn any
-	// The Amazon Resource Name (ARN) of a Greengrass logger definition version to associate with the group's initial version, enabling the group to use the specified logging configuration. (AI-inferred)
 	LoggerDefinitionVersionArn any
-	// This field specifies the Amazon Resource Name (ARN) of the resource definition version that defines the local resources available to the Greengrass group's initial group version, which is used when the group is first created. (AI-inferred)
 	ResourceDefinitionVersionArn any
-	// The ARN of the subscription definition version to associate with the group's initial version. (AI-inferred)
 	SubscriptionDefinitionVersionArn any
 }
 
@@ -31,32 +24,20 @@ var Group_InitialVersionFields = ubx.FieldMap{
 	}
 
 type GroupConfig struct {
-	// Specifies the initial version of the Greengrass group, which includes references to the core, devices, functions, loggers, subscriptions, and resource definitions that define the group's initial configuration. (AI-inferred)
 	InitialVersion any
-	// The name of the Greengrass group, which is a user-defined identifier for the group in AWS IoT Greengrass. (AI-inferred)
 	Name any
-	// The ARN of an IAM role that AWS Greengrass assumes on behalf of the group to access other AWS services (e.g., for Lambda function execution or connector interactions). (AI-inferred)
 	RoleArn any
-	// Tags to assign to the Greengrass group, providing key-value metadata for organizing, identifying, and managing the resource in AWS. (AI-inferred)
 	Tags any
 }
 
 type GroupAttrs struct {
-	// The Amazon Resource Name (ARN) of the Greengrass group, automatically assigned by AWS when the group is created. (AI-inferred)
 	Arn any
-	// The AWS-assigned unique identifier for the Greengrass group. (AI-inferred)
 	Id any
-	// Specifies the initial version of the Greengrass group, which includes references to the core, devices, functions, loggers, subscriptions, and resource definitions that define the group's initial configuration. (AI-inferred)
 	InitialVersion any
-	// The Amazon Resource Name (ARN) of the latest version of the Greengrass group. (AI-inferred)
 	LatestVersionArn any
-	// The name of the Greengrass group, which is a user-defined identifier for the group in AWS IoT Greengrass. (AI-inferred)
 	Name any
-	// The ARN of an IAM role that AWS Greengrass assumes on behalf of the group to access other AWS services (e.g., for Lambda function execution or connector interactions). (AI-inferred)
 	RoleArn any
-	// The timestamp (in milliseconds) when the IAM role was attached to the Greengrass group. (AI-inferred)
 	RoleAttachedAt any
-	// Tags to assign to the Greengrass group, providing key-value metadata for organizing, identifying, and managing the resource in AWS. (AI-inferred)
 	Tags any
 }
 

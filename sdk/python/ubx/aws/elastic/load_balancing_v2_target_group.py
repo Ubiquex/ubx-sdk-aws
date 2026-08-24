@@ -16,16 +16,12 @@ class LoadBalancingV2TargetGroup_Matcher:
 @dataclasses.dataclass
 class LoadBalancingV2TargetGroup_Tags:
     key: Any = None
-    # Specifies the value of a user-defined tag applied to the Application Load Balancer target group, used for cost allocation and resource organization without affecting load balancing behavior. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class LoadBalancingV2TargetGroup_Targets:
-    # Specifies the Availability Zone for this target, used to route traffic to that specific AZ when registering an IP target (and ignored for instance targets). (AI-inferred)
     availability_zone: Any = None
-    # The identifier of the target (e.g., EC2 instance ID, IP address, or Lambda function ARN) to register with the target group. (AI-inferred)
     id: Any = None
-    # The port on which this target receives traffic, which overrides the target group's default port for that specific target when specified. (AI-inferred)
     port: Any = None
     quic_server_id: Any = None
 
@@ -64,7 +60,6 @@ class LoadBalancingV2TargetGroupConfig:
     healthy_threshold_count: Any = None
     # The type of IP address used for this target group. The possible values are ipv4 and ipv6.
     ip_address_type: Any = None
-    # Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred)
     matcher: Any = None
     # The name of the target group.
     name: Any = None
@@ -109,7 +104,6 @@ class LoadBalancingV2TargetGroupAttrs:
     ip_address_type: Any = None
     # The Amazon Resource Names (ARNs) of the load balancers that route traffic to this target group.
     load_balancer_arns: Any = None
-    # Specifies the HTTP or gRPC status code(s) that indicate a successful health check response from a target, such as '200-299' or '0-99' for gRPC. (AI-inferred)
     matcher: Any = None
     # The name of the target group.
     name: Any = None

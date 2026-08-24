@@ -12,9 +12,7 @@ export interface CodeSigningConfig_CodeSigningPolicies {
 }
 
 export interface CodeSigningConfig_Tags {
-  /** The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

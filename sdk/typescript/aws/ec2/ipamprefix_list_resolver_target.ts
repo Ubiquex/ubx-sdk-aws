@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IpamprefixListResolverTarget_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag assigned to the IPAM prefix list resolver target, used for organizing and managing the resource in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

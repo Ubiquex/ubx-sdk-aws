@@ -23,7 +23,6 @@ class MakerRobotConfig:
 class MakerRobotAttrs:
     # The target architecture of the robot.
     architecture: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS RoboMaker robot within your AWS account. (AI-inferred)
     arn: Any = None
     # The Amazon Resource Name (ARN) of the fleet.
     fleet: Any = None

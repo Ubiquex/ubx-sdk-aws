@@ -38,7 +38,6 @@ export interface ExchangeEventAction_Event {
 }
 
 export interface ExchangeEventAction_Tags {
-  /** Key of a tag attached to an AWS Data Exchange event action, used to categorize, organize, and manage event actions within your AWS account. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SlackChannelConfiguration_Tags {
-  /** The key of a tag assigned to an AWS Chatbot Slack channel configuration, enabling cost allocation tracking and resource categorization within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag that can be attached to the AWS Chatbot Slack channel configuration for resource organization and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RankingExecutionPlan_CapacityUnits {
-  /** Specifies the number of rescore capacity units for the execution plan, which determines the rescoring query capacity (throughput) of the plan. (AI-inferred) */
   rescoreCapacityUnits: number | Computed<number>;
 }
 
 export interface RankingExecutionPlan_Tags {
-  /** The key (name) of an arbitrary tag attached to the AWS Kendra Ranking execution plan, used for organizing, identifying, and filtering the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair assigned to the Amazon Kendra Intelligent Ranking execution plan, used to organize, identify, and manage access to the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -23,9 +20,7 @@ const RankingExecutionPlan_TagsFields: FieldMap = {
 };
 
 export interface RankingExecutionPlanConfig {
-  /** Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred) */
   capacityUnits?: RankingExecutionPlan_CapacityUnits | Computed<RankingExecutionPlan_CapacityUnits>;
-  /** An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred) */
   description?: string | Computed<string>;
   /** Name of kendra ranking rescore execution plan */
   name: string | Computed<string>;
@@ -34,11 +29,8 @@ export interface RankingExecutionPlanConfig {
 }
 
 export interface RankingExecutionPlanAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Kendra Ranking execution plan. (AI-inferred) */
   arn: string;
-  /** Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred) */
   capacityUnits: RankingExecutionPlan_CapacityUnits;
-  /** An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred) */
   description: string;
   /** Unique ID of rescore execution plan */
   id: string;

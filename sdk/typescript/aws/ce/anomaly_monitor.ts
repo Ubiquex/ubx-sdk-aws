@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnomalyMonitor_ResourceTags {
-  /** The tag key for a resource tag applied to the Cost Explorer anomaly monitor, used for identifying and organizing the monitor among AWS resources. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a resource tag attached to the AWS Cost Explorer anomaly monitor, used for tagging and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -18,9 +16,7 @@ export interface AnomalyMonitorConfig {
   monitorDimension?: string | Computed<string>;
   /** The name of the monitor. */
   monitorName: string | Computed<string>;
-  /** A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred) */
   monitorSpecification?: string | Computed<string>;
-  /** Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred) */
   monitorType: string | Computed<string>;
   /** Tags to assign to monitor. */
   resourceTags?: AnomalyMonitor_ResourceTags[] | Computed<AnomalyMonitor_ResourceTags[]>;
@@ -41,9 +37,7 @@ export interface AnomalyMonitorAttrs {
   monitorDimension: string;
   /** The name of the monitor. */
   monitorName: string;
-  /** A JSON-formatted string that defines the custom monitoring criteria for the cost anomaly monitor, such as filtering by services, linked accounts, or cost categories, used when the monitor type is CUSTOM. (AI-inferred) */
   monitorSpecification: string;
-  /** Specifies whether the anomaly monitor is a DIMENSIONAL monitor (which watches a specific dimension like service or linked account) or a CUSTOM monitor (which uses a custom threshold on the anomaly score). (AI-inferred) */
   monitorType: string;
   /** Tags to assign to monitor. */
   resourceTags: AnomalyMonitor_ResourceTags[];

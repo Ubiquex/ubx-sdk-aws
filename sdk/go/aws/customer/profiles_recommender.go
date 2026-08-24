@@ -4,9 +4,7 @@ package customer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesRecommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersList struct {
-	// Specifies the type of event (such as 'OrderPlaced' or 'ProductViewed') from the customer's profile history that the recommender uses as input for generating recommendations. (AI-inferred)
 	EventType any
-	// Determines the minimum value that an event's associated metric must have for the event to be considered by the Customer Profiles recommender, filtering out events that fall below this numeric threshold. (AI-inferred)
 	EventValueThreshold any
 }
 
@@ -34,21 +32,15 @@ type ProfilesRecommender_LatestRecommenderUpdate struct {
 }
 
 type ProfilesRecommender_Tags struct {
-	// The key of a user-defined tag assigned to the AWS Customer Profiles recommender, used for resource identification and cost allocation. (AI-inferred)
 	Key any
-	// The value part of an optional user-defined tag assigned to the Amazon Connect Customer Profiles recommender configuration, used for labeling and metadata such as environment or cost center. (AI-inferred)
 	Value any
 }
 
 type ProfilesRecommender_TrainingMetrics_Metrics struct {
-	// The coverage metric in the recommender's training metrics, indicating the proportion of distinct items from the catalog that appear in at least one recommendation. (AI-inferred)
 	Coverage any
 	Freshness any
-	// The hit rate of the recommender model, representing the percentage of times the model's predicted recommendation matched the actual outcome during training. (AI-inferred)
 	Hit any
-	// The popularity metric value indicates the model's predictive performance on popularity-based next-best-action recommendations within the recommender's training metrics. (AI-inferred)
 	Popularity any
-	// The recall metric in the recommender's training metrics indicates the proportion of relevant recommendations that were correctly retrieved out of all relevant items in the training data, providing an evaluation of the recommender model's performance. (AI-inferred)
 	Recall any
 	Similarity any
 }
@@ -124,7 +116,6 @@ type ProfilesRecommenderAttrs struct {
 	Status any
 	// The tags used to organize, track, or control access for this resource.
 	Tags any
-	// training_metrics is a computed list of objects, each containing a metric name and numeric value, that summarize the performance of the recommender's machine learning training job in AWS Customer Profiles. (AI-inferred)
 	TrainingMetrics any
 }
 

@@ -4,55 +4,39 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConductorCustomLineItem_BillingPeriodRange struct {
-	// The exclusive_end_billing_period sets the cutoff billing period, in YYYY-MM-DD format, after which the custom line item is no longer applied, with the range being exclusive so the item remains active through the end of the previous billing period. (AI-inferred)
 	ExclusiveEndBillingPeriod any
-	// The inclusive start billing period that defines the first billing period in the range for which the custom line item is applied. (AI-inferred)
 	InclusiveStartBillingPeriod any
 }
 
 type ConductorCustomLineItem_CustomLineItemChargeDetails_Flat struct {
-	// The required fixed amount (in USD) that AWS Billing Conductor charges for the custom line item when its charge type is set to FLAT. (AI-inferred)
 	ChargeValue any
 }
 
 type ConductorCustomLineItem_CustomLineItemChargeDetails_LineItemFilters struct {
-	// Specifies the billing line item attribute (e.g., LINE_ITEM_TYPE, OPERATION, or USAGE_TYPE) that the filter's value is matched against to determine whether the custom line item is applied. (AI-inferred)
 	Attribute any
-	// The list of attribute values that the line item filter matches against, determining which billing line items are selected for the custom line item's charge calculations. (AI-inferred)
 	AttributeValues any
-	// Determines whether the line item filter should match all, any, or none of the specified filter values, with valid values including MATCH_ALL, MATCH_ANY, NOT_MATCH_ALL, and NOT_MATCH_ANY. (AI-inferred)
 	MatchOption any
-	// Defines the list of matching values (e.g., specific line item types or product names) for the line item filter key, determining which billing line items the custom charge is applied to. (AI-inferred)
 	Values any
 }
 
 type ConductorCustomLineItem_CustomLineItemChargeDetails_Percentage struct {
-	// Specifies a list of Amazon Resource Names (ARNs) of the associated resources that the percentage-based custom line item charge applies to; if omitted, the percentage applies to all resources in the billing group. (AI-inferred)
 	ChildAssociatedResources any
-	// The percentage of the custom line item charge, expressed as a numeric percentage (e.g., 10 for 10%). (AI-inferred)
 	PercentageValue any
 }
 
 type ConductorCustomLineItem_CustomLineItemChargeDetails struct {
-	// Specifies the flat-rate charge details for the custom line item, defining a fixed monetary amount (charge_value) that is applied to the associated billing group's usage. (AI-inferred)
 	Flat any
-	// A list of filters that specify which underlying billing line items the custom line item charge applies to, based on matching attributes such as the AWS service, usage type, or operation. (AI-inferred)
 	LineItemFilters any
-	// The percentage-based charge configuration for the custom line item, which defines the percentage of the associated billing group's usage that is charged and optionally includes child resources. (AI-inferred)
 	Percentage any
-	// The type of custom line item charge, which determines whether the line item is a fee (FEE) or a credit (CREDIT) applied to the customer's bill. (AI-inferred)
 	Type any
 }
 
 type ConductorCustomLineItem_PresentationDetails struct {
-	// Specifies the AWS service (e.g., AmazonS3, AmazonEC2) that the custom line item's charge applies to, as displayed in the customer's billing presentation. (AI-inferred)
 	Service any
 }
 
 type ConductorCustomLineItem_Tags struct {
-	// The key of a user-defined tag attached to the custom line item, used for organizing, categorizing, and filtering billing resources in AWS Billing Conductor. (AI-inferred)
 	Key any
-	// Specifies the value of a tag attached to the custom line item, enabling you to categorize and track this item in AWS Billing Conductor for cost allocation and management. (AI-inferred)
 	Value any
 }
 
@@ -110,19 +94,13 @@ type ConductorCustomLineItemConfig struct {
 	AccountId any
 	// Billing Group ARN
 	BillingGroupArn any
-	// The range of billing periods during which the custom line item is active, defined by an inclusive start and exclusive end billing period. (AI-inferred)
 	BillingPeriodRange any
 	// The display settings of the Custom Line Item.
 	ComputationRule any
-	// Defines the billing charge type (fee or credit) and the associated flat or percentage amount details for the custom line item. (AI-inferred)
 	CustomLineItemChargeDetails any
-	// An optional, user-defined text description that provides additional context about the custom line item, aiding identification in billing reports. (AI-inferred)
 	Description any
-	// The descriptive name assigned to the custom line item, which appears in billing reports to identify the charge. (AI-inferred)
 	Name any
-	// Specifies the customer-facing presentation of the custom line item, including its display name and whether it is visible or hidden on the customer's invoice. (AI-inferred)
 	PresentationDetails any
-	// Assigns a set of AWS resource tags (key-value pairs) to the custom line item for cost allocation, billing group identification, and resource management. (AI-inferred)
 	Tags any
 }
 
@@ -135,27 +113,19 @@ type ConductorCustomLineItemAttrs struct {
 	AssociationSize any
 	// Billing Group ARN
 	BillingGroupArn any
-	// The range of billing periods during which the custom line item is active, defined by an inclusive start and exclusive end billing period. (AI-inferred)
 	BillingPeriodRange any
 	// The display settings of the Custom Line Item.
 	ComputationRule any
 	// Creation timestamp in UNIX epoch time format
 	CreationTime any
-	// The ISO currency code (e.g., 'USD') that denominates the custom line item's charges, automatically set to the currency of the associated billing group. (AI-inferred)
 	CurrencyCode any
-	// Defines the billing charge type (fee or credit) and the associated flat or percentage amount details for the custom line item. (AI-inferred)
 	CustomLineItemChargeDetails any
-	// An optional, user-defined text description that provides additional context about the custom line item, aiding identification in billing reports. (AI-inferred)
 	Description any
 	// Latest modified timestamp in UNIX epoch time format
 	LastModifiedTime any
-	// The descriptive name assigned to the custom line item, which appears in billing reports to identify the charge. (AI-inferred)
 	Name any
-	// Specifies the customer-facing presentation of the custom line item, including its display name and whether it is visible or hidden on the customer's invoice. (AI-inferred)
 	PresentationDetails any
-	// The unique AWS-generated product code that identifies the custom line item in billing reports and invoices. (AI-inferred)
 	ProductCode any
-	// Assigns a set of AWS resource tags (key-value pairs) to the custom line item for cost allocation, billing group identification, and resource management. (AI-inferred)
 	Tags any
 }
 

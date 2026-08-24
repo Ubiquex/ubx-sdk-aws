@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeliverySource_Tags struct {
 	Key any
-	// Specifies the value of a tag attached to the CloudWatch Logs delivery source, used for organizing, identifying, and managing the resource via metadata such as cost allocation and access control. (AI-inferred)
 	Value any
 }
 

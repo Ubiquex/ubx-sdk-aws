@@ -4,23 +4,17 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArtifactPackageGroup_OriginConfiguration_Restrictions_ExternalUpstream struct {
-	// Specifies the list of external upstream repository names to which the restriction mode (e.g., ALLOW or BLOCK) for 'external_upstream' applies in the package group's origin configuration. (AI-inferred)
 	Repositories any
-	// This required string specifies the restriction mode for external upstream repositories (e.g., public registries) in the package group's origin configuration, with allowed values such as ALLOW, BLOCK, or ALLOW_SPECIFIC_REPOSITORIES. (AI-inferred)
 	RestrictionMode any
 }
 
 type ArtifactPackageGroup_OriginConfiguration_Restrictions struct {
-	// Specifies the restriction mode (ALLOW or BLOCK) for whether package versions in this package group can be obtained from external upstream repositories, governing the origin of packages pulled into the repository. (AI-inferred)
 	ExternalUpstream any
-	// Specifies the origin restriction settings for internal upstream repositories, controlling whether package versions can be pulled from other CodeArtifact repositories in the same domain via the `pull` mode (with allowed values `ALLOW`, `BLOCK`, or `ALLOW_OR_BLOCK`). (AI-inferred)
 	InternalUpstream any
-	// Configures the restriction mode for publishing package versions to this package group, controlling whether new package versions can be published directly to the repository associated with this group. (AI-inferred)
 	Publish any
 }
 
 type ArtifactPackageGroup_OriginConfiguration struct {
-	// Specifies the publishing and access restrictions for external and upstream origins to control how package versions are added or read within this package group. (AI-inferred)
 	Restrictions any
 }
 
@@ -74,7 +68,6 @@ type ArtifactPackageGroupConfig struct {
 	DomainName any
 	// The 12-digit account ID of the AWS account that owns the domain.
 	DomainOwner any
-	// Configures the origin restrictions for the package group, controlling whether package versions can be published directly or pulled from upstream repositories. (AI-inferred)
 	OriginConfiguration any
 	// The package group pattern that is used to gather packages.
 	Pattern any
@@ -93,7 +86,6 @@ type ArtifactPackageGroupAttrs struct {
 	DomainName any
 	// The 12-digit account ID of the AWS account that owns the domain.
 	DomainOwner any
-	// Configures the origin restrictions for the package group, controlling whether package versions can be published directly or pulled from upstream repositories. (AI-inferred)
 	OriginConfiguration any
 	// The package group pattern that is used to gather packages.
 	Pattern any

@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessKeyConfig {
-  /** The serial number for the access key, which must be unique among all access keys belonging to the same IAM user; it allows CloudFormation to create and manage multiple access keys for that user. (AI-inferred) */
   serial?: number | Computed<number>;
-  /** Specifies the status of the IAM access key, either Active or Inactive, controlling whether the key can be used for programmatic calls. (AI-inferred) */
   status?: string | Computed<string>;
-  /** The name of the IAM user to which this access key belongs. (AI-inferred) */
   userName: string | Computed<string>;
 }
 
 export interface AccessKeyAttrs {
-  /** The AWS access key ID (e.g., AKIA...) that uniquely identifies the IAM access key. (AI-inferred) */
   id: string;
-  /** The secret access key that is paired with the access key ID and is returned only when the IAM access key is first created, after which it cannot be retrieved again. (AI-inferred) */
   secretAccessKey: string;
-  /** The serial number for the access key, which must be unique among all access keys belonging to the same IAM user; it allows CloudFormation to create and manage multiple access keys for that user. (AI-inferred) */
   serial: number;
-  /** Specifies the status of the IAM access key, either Active or Inactive, controlling whether the key can be used for programmatic calls. (AI-inferred) */
   status: string;
-  /** The name of the IAM user to which this access key belongs. (AI-inferred) */
   userName: string;
 }
 

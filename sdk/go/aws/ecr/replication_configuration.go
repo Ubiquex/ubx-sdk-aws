@@ -4,23 +4,17 @@ package ecr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations struct {
-	// The AWS region of the destination registry to which container images are replicated, such as us-east-1. (AI-inferred)
 	Region any
-	// The AWS account ID of the destination registry where replicated images are stored. (AI-inferred)
 	RegistryId any
 }
 
 type ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters struct {
-	// The repository name prefix pattern (e.g., 'prod/') that determines which ECR repositories are included in the replication rule, matching repositories whose names begin with this filter string. (AI-inferred)
 	Filter any
-	// Specifies the type of repository filter in an ECR replication rule, where PREFIX_MATCH is the only supported value and indicates that the filter value matches repository names by prefix. (AI-inferred)
 	FilterType any
 }
 
 type ReplicationConfiguration_ReplicationConfiguration_Rules struct {
-	// Specifies the destination registry details, including the AWS Region and registry ID, to which this replication rule replicates images. (AI-inferred)
 	Destinations any
-	// Defines which repositories in the source registry are replicated by the rule, using filter type (such as PREFIX_MATCH) and a filter value that matches repository names. (AI-inferred)
 	RepositoryFilters any
 }
 
@@ -66,7 +60,6 @@ type ReplicationConfigurationConfig struct {
 }
 
 type ReplicationConfigurationAttrs struct {
-	// The registry_id is the AWS account ID (or registry ID) of the Amazon ECR private registry that this replication configuration is associated with, automatically assigned by CloudFormation. (AI-inferred)
 	RegistryId any
 	// The replication configuration for a registry.
 	ReplicationConfiguration any

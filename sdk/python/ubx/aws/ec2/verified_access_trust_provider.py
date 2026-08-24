@@ -59,7 +59,6 @@ class VerifiedAccessTrustProvider_SseSpecification:
 @dataclasses.dataclass
 class VerifiedAccessTrustProvider_Tags:
     key: Any = None
-    # The value of a tag attached to the Verified Access trust provider, used to organize, identify, and manage the resource through AWS tagging. (AI-inferred)
     value: Any = None
 
 _VerifiedAccessTrustProvider_DeviceOptionsFields = {

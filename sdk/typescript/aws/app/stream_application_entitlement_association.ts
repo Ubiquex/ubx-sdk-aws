@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamApplicationEntitlementAssociationConfig {
-  /** The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred) */
   applicationIdentifier: string | Computed<string>;
-  /** The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred) */
   entitlementName: string | Computed<string>;
-  /** The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred) */
   stackName: string | Computed<string>;
 }
 
 export interface StreamApplicationEntitlementAssociationAttrs {
-  /** The ARN of the AppStream application that is being associated with the entitlement. (AI-inferred) */
   applicationIdentifier: string;
-  /** The name of the AppStream 2.0 entitlement that the application is being associated with. (AI-inferred) */
   entitlementName: string;
-  /** The name of the AppStream 2.0 stack to which the application and entitlement association is attached. (AI-inferred) */
   stackName: string;
 }
 

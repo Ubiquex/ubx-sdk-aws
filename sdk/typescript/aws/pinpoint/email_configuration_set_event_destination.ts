@@ -2,48 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations {
-  /** The default value to use for the CloudWatch metric dimension when the source event does not provide a value for the dimension configuration, so the metric always has a dimension value. (AI-inferred) */
   defaultDimensionValue?: string | Computed<string>;
-  /** The name of the CloudWatch dimension to attach to the event destination's metrics for this dimension configuration. (AI-inferred) */
   dimensionName?: string | Computed<string>;
-  /** Specifies the source of the dimension value (e.g., MESSAGE_TYPE or EVENT_TYPE) that determines which email event metadata is used to populate the CloudWatch metric dimension. (AI-inferred) */
   dimensionValueSource?: string | Computed<string>;
 }
 
 export interface EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination {
-  /** Specifies the list of dimension configurations that define how Pinpoint adds custom dimensions (with a dimension name, value source, and default value) to the CloudWatch metrics when event destinations publish events to CloudWatch. (AI-inferred) */
   dimensionConfigurations?: EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations[] | Computed<EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination_DimensionConfigurations[]>;
 }
 
 export interface EmailConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestination {
-  /** The ARN of the Amazon Kinesis Data Firehose delivery stream that Amazon Pinpoint publishes event data to for this event destination. (AI-inferred) */
   deliveryStreamArn: string | Computed<string>;
-  /** The ARN of the IAM role that Amazon Pinpoint assumes to send event data to the specified Kinesis Firehose delivery stream. (AI-inferred) */
   iamRoleArn: string | Computed<string>;
 }
 
 export interface EmailConfigurationSetEventDestination_EventDestination_PinpointDestination {
-  /** The Amazon Resource Name (ARN) of the Amazon Pinpoint application (project) to which the email configuration set's event destination sends event data. (AI-inferred) */
   applicationArn?: string | Computed<string>;
 }
 
 export interface EmailConfigurationSetEventDestination_EventDestination_SnsDestination {
-  /** The ARN of the Amazon SNS topic where the event destination publishes email event notifications for the Amazon Pinpoint configuration set. (AI-inferred) */
   topicArn: string | Computed<string>;
 }
 
 export interface EmailConfigurationSetEventDestination_EventDestination {
-  /** Configures the CloudWatch Logs destination for the event destination, including dimension configurations that define how email event metrics are grouped and published to CloudWatch. (AI-inferred) */
   cloudWatchDestination?: EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination | Computed<EmailConfigurationSetEventDestination_EventDestination_CloudWatchDestination>;
-  /** Determines whether the event destination is active, controlling whether Amazon Pinpoint delivers event data (such as sends, bounces, or complaints) to the associated destination like an SNS topic, CloudWatch Logs, or Kinesis Firehose. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Configures the Amazon Kinesis Data Firehose delivery stream settings that Amazon Pinpoint uses to send event data when this event destination is triggered. (AI-inferred) */
   kinesisFirehoseDestination?: EmailConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestination | Computed<EmailConfigurationSetEventDestination_EventDestination_KinesisFirehoseDestination>;
-  /** Specifies the email event types (such as OPEN, CLICK, BOUNCE, COMPLAINT, DELIVERY, REJECT, or RENDER_FAILURE) that trigger this event destination to process events. (AI-inferred) */
   matchingEventTypes: string[] | Computed<string[]>;
-  /** Specifies the Amazon Pinpoint application ID (ApplicationId) that will receive event notifications from this configuration set. (AI-inferred) */
   pinpointDestination?: EmailConfigurationSetEventDestination_EventDestination_PinpointDestination | Computed<EmailConfigurationSetEventDestination_EventDestination_PinpointDestination>;
-  /** Specifies the Amazon SNS topic (via its TopicArn) that receives email event notifications from this event destination. (AI-inferred) */
   snsDestination?: EmailConfigurationSetEventDestination_EventDestination_SnsDestination | Computed<EmailConfigurationSetEventDestination_EventDestination_SnsDestination>;
 }
 
@@ -100,20 +86,14 @@ const EmailConfigurationSetEventDestination_EventDestinationFields: FieldMap = {
 };
 
 export interface EmailConfigurationSetEventDestinationConfig {
-  /** The name of the Amazon Pinpoint configuration set that this event destination is associated with. (AI-inferred) */
   configurationSetName: string | Computed<string>;
-  /** Defines the event destination for the email configuration set, specifying where Amazon Pinpoint publishes email event data (such as deliveries, bounces, and complaints) based on matching event types and the chosen destination type (e.g., CloudWatch Logs, Kinesis Data Firehose, or SNS). (AI-inferred) */
   eventDestination?: EmailConfigurationSetEventDestination_EventDestination | Computed<EmailConfigurationSetEventDestination_EventDestination>;
-  /** The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred) */
   eventDestinationName: string | Computed<string>;
 }
 
 export interface EmailConfigurationSetEventDestinationAttrs {
-  /** The name of the Amazon Pinpoint configuration set that this event destination is associated with. (AI-inferred) */
   configurationSetName: string;
-  /** Defines the event destination for the email configuration set, specifying where Amazon Pinpoint publishes email event data (such as deliveries, bounces, and complaints) based on matching event types and the chosen destination type (e.g., CloudWatch Logs, Kinesis Data Firehose, or SNS). (AI-inferred) */
   eventDestination: EmailConfigurationSetEventDestination_EventDestination;
-  /** The name of the event destination, which uniquely identifies it within the Amazon Pinpoint email configuration set. (AI-inferred) */
   eventDestinationName: string;
   id: string;
 }

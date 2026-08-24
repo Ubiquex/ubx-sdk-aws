@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Host_Tags {
-  /** The key of a user-defined tag assigned to the EC2 Dedicated Host. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the EC2 Dedicated Host. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

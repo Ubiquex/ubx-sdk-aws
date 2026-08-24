@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SlackChannelConfiguration_Tags:
-    # The key of a tag assigned to an AWS Chatbot Slack channel configuration, enabling cost allocation tracking and resource categorization within AWS. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag that can be attached to the AWS Chatbot Slack channel configuration for resource organization and cost allocation. (AI-inferred)
     value: Any = None
 
 _SlackChannelConfiguration_TagsFields = {

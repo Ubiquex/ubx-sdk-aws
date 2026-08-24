@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TPolicy_Tags:
-    # The key of a key-value tag attached to an AWS IoT policy, used to categorize and identify the policy resource for management and access control. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS IoT policy, used to organize and categorize the policy for management and cost tracking. (AI-inferred)
     value: Any = None
 
 _TPolicy_TagsFields = {
@@ -20,24 +18,16 @@ _TPolicy_TagsFields = {
 
 @dataclasses.dataclass
 class TPolicyConfig:
-    # A JSON-formatted policy document that defines the permissions for the AWS IoT policy, specifying allowed or denied actions and resources for IoT principals. (AI-inferred)
     policy_document: Any = None
-    # The name of the AWS IoT policy; if omitted, CloudFormation generates a unique name. (AI-inferred)
     policy_name: Any = None
-    # A list of key-value pairs to attach to the IoT policy, used for labeling and organizing the policy in AWS. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class TPolicyAttrs:
-    # The Amazon Resource Name (ARN) assigned to the AWS IoT policy. (AI-inferred)
     arn: Any = None
-    # The unique identifier (policy name) of this AWS IoT policy, which is set to the policy name at creation time. (AI-inferred)
     id: Any = None
-    # A JSON-formatted policy document that defines the permissions for the AWS IoT policy, specifying allowed or denied actions and resources for IoT principals. (AI-inferred)
     policy_document: Any = None
-    # The name of the AWS IoT policy; if omitted, CloudFormation generates a unique name. (AI-inferred)
     policy_name: Any = None
-    # A list of key-value pairs to attach to the IoT policy, used for labeling and organizing the policy in AWS. (AI-inferred)
     tags: Any = None
 
 TPolicy = ubx.ResourceBinding(

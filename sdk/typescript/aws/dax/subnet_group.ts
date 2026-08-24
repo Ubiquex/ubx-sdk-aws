@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SubnetGroupConfig {
-  /** An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred) */
   subnetGroupName?: string | Computed<string>;
-  /** The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred) */
   subnetIds: string[] | Computed<string[]>;
 }
 
 export interface SubnetGroupAttrs {
-  /** An optional user-provided description that identifies the purpose or context of this DAX subnet group. (AI-inferred) */
   description: string;
-  /** The name of the DAX subnet group, which uniquely identifies the resource within AWS. (AI-inferred) */
   id: string;
-  /** The name of this DAX subnet group; if omitted, CloudFormation generates a unique name based on the logical resource ID. (AI-inferred) */
   subnetGroupName: string;
-  /** The list of subnet IDs in the VPC where the DAX cluster will be deployed, defining the network locations for the cluster's nodes. (AI-inferred) */
   subnetIds: string[];
 }
 

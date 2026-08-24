@@ -47,15 +47,10 @@ type VerifiedAccessInstance_Tags struct {
 }
 
 type VerifiedAccessInstance_VerifiedAccessTrustProviders struct {
-	// A user-provided free-form text that describes the associated AWS Verified Access trust provider for this Verified Access instance, helping identify its purpose or configuration. (AI-inferred)
 	Description any
-	// Indicates the type of device trust provider (such as Jamf or CrowdStrike) used by this Verified Access trust provider to assess device trust. (AI-inferred)
 	DeviceTrustProviderType any
-	// Indicates whether the associated Verified Access trust provider is a user trust provider or a device trust provider, thereby determining how the instance evaluates user identity versus device health for access decisions. (AI-inferred)
 	TrustProviderType any
-	// Specifies the type of the user trust provider (e.g., IAM Identity Center or OIDC) used by the Verified Access instance for user-based authentication. (AI-inferred)
 	UserTrustProviderType any
-	// The unique ID of the AWS Verified Access trust provider that is associated with this Verified Access instance as part of its configured trust provider list. (AI-inferred)
 	VerifiedAccessTrustProviderId any
 }
 

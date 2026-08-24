@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RecoveryControlCluster_ClusterEndpoints:
-    # The URL of the cluster endpoint for the Route 53 Recovery Control cluster, used to access the cluster's routing control API. (AI-inferred)
     endpoint: Any = None
-    # The AWS Region (e.g., us-east-1) where the Route 53 Recovery Control Cluster endpoint is located. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class RecoveryControlCluster_Tags:
-    # The key for a tag attached to the Route53 Recovery Control Cluster, used to categorize and manage the cluster. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Route 53 Recovery Control cluster. (AI-inferred)
     value: Any = None
 
 _RecoveryControlCluster_TagsFields = {

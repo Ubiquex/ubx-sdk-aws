@@ -8,33 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Index_CapacityConfiguration:
-    # The number of capacity units to allocate to the Amazon Q Business index, where each unit adds a fixed amount of storage and query capacity. (AI-inferred)
     units: Any = None
 
 @dataclasses.dataclass
 class Index_DocumentAttributeConfigurations:
-    # The unique name of the document attribute that this configuration applies to, used to match metadata fields in ingested documents and reference the attribute in data source schemas. (AI-inferred)
     name: Any = None
-    # Determines whether the document attribute can be used in search queries, with allowed values ENABLED or DISABLED. (AI-inferred)
     search: Any = None
-    # Specifies the data type of the document attribute in the index configuration, such as STRING, NUMBER, or DATE, which determines how the attribute is indexed and searched. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Index_IndexStatistics_TextDocumentStatistics:
-    # The total size in bytes of text content that has been indexed for the index. (AI-inferred)
     indexed_text_bytes: Any = None
-    # The total number of text documents that have been indexed in the Amazon Q Business index. (AI-inferred)
     indexed_text_document_count: Any = None
 
 @dataclasses.dataclass
 class Index_IndexStatistics:
-    # Contains the total number of text documents and the number of indexed text documents for the AWS QBusiness index. (AI-inferred)
     text_document_statistics: Any = None
 
 @dataclasses.dataclass
 class Index_Tags:
-    # The key of a tag pair attached to the Amazon Q Business index, enabling resource categorization and access management. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -55,48 +47,28 @@ _Index_TagsFields = {
 
 @dataclasses.dataclass
 class IndexConfig:
-    # The unique identifier of the AWS QBusiness application that this index belongs to, required when creating the index. (AI-inferred)
     application_id: Any = None
-    # Specifies the capacity configuration for the index, selecting either the ENTERPRISE or STARTER index type and the number of capacity units to allocate. (AI-inferred)
     capacity_configuration: Any = None
-    # A description for the Amazon Q Business index. (AI-inferred)
     description: Any = None
-    # The display name of the Amazon Q Business index, which is a required, user-visible name that identifies the index in the Q Business console and API operations. (AI-inferred)
     display_name: Any = None
-    # Defines which document metadata attributes the index will index and how they can be used for querying and filtering, by specifying each attribute's name, type, and usage configuration. (AI-inferred)
     document_attribute_configurations: Any = None
-    # A list of key-value tag objects to attach to the Amazon Q Business index, used for organizing, managing, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies whether the Amazon Q Business index is an ENTERPRISE index for general enterprise search or an ANALYTICS index for analytical and data-intensive workloads. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class IndexAttrs:
-    # The unique identifier of the AWS QBusiness application that this index belongs to, required when creating the index. (AI-inferred)
     application_id: Any = None
-    # Specifies the capacity configuration for the index, selecting either the ENTERPRISE or STARTER index type and the number of capacity units to allocate. (AI-inferred)
     capacity_configuration: Any = None
-    # The ISO 8601 timestamp indicating when this Amazon Q Business index was created. (AI-inferred)
     created_at: Any = None
-    # A description for the Amazon Q Business index. (AI-inferred)
     description: Any = None
-    # The display name of the Amazon Q Business index, which is a required, user-visible name that identifies the index in the Q Business console and API operations. (AI-inferred)
     display_name: Any = None
-    # Defines which document metadata attributes the index will index and how they can be used for querying and filtering, by specifying each attribute's name, type, and usage configuration. (AI-inferred)
     document_attribute_configurations: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Q Business index, assigned by AWS when the index is created. (AI-inferred)
     index_arn: Any = None
-    # The unique AWS-assigned identifier for the QBusiness index. (AI-inferred)
     index_id: Any = None
-    # This computed attribute provides usage statistics for the QBusiness index, such as the total number of indexed documents and the combined byte size of the indexed text. (AI-inferred)
     index_statistics: Any = None
-    # The current lifecycle status of the Amazon Q Business index, such as CREATING during provisioning or ACTIVE when ready to use. (AI-inferred)
     status: Any = None
-    # A list of key-value tag objects to attach to the Amazon Q Business index, used for organizing, managing, and identifying the resource in AWS. (AI-inferred)
     tags: Any = None
-    # Specifies whether the Amazon Q Business index is an ENTERPRISE index for general enterprise search or an ANALYTICS index for analytical and data-intensive workloads. (AI-inferred)
     type: Any = None
-    # The timestamp indicating when the QBusiness index was last updated. (AI-inferred)
     updated_at: Any = None
 
 Index = ubx.ResourceBinding(

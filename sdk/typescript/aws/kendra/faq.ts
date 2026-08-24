@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Faq_S3Path {
-  /** The name of the S3 bucket that contains the FAQ data file specified for the Kendra FAQ. (AI-inferred) */
   bucket: string | Computed<string>;
-  /** The S3 object key (file name/path) within the bucket that points to the FAQ file used by the Kendra index. (AI-inferred) */
   key: string | Computed<string>;
 }
 
 export interface Faq_Tags {
-  /** The key of a tag attached to the Kendra FAQ, used to identify and categorize the resource for management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag (a key-value pair) attached to the Amazon Kendra FAQ resource, used for metadata, categorization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,18 +30,14 @@ export interface FaqConfig {
   indexId: string | Computed<string>;
   /** The code for a language. */
   languageCode?: string | Computed<string>;
-  /** The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred) */
   name: string | Computed<string>;
-  /** The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred) */
   roleArn: string | Computed<string>;
-  /** The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred) */
   s3Path: Faq_S3Path | Computed<Faq_S3Path>;
   /** List of tags */
   tags?: Faq_Tags[] | Computed<Faq_Tags[]>;
 }
 
 export interface FaqAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Kendra FAQ resource. (AI-inferred) */
   arn: string;
   /** Description of the FAQ */
   description: string;
@@ -57,11 +49,8 @@ export interface FaqAttrs {
   indexId: string;
   /** The code for a language. */
   languageCode: string;
-  /** The name of the FAQ, a required human-readable identifier used to distinguish this FAQ within Amazon Kendra. (AI-inferred) */
   name: string;
-  /** The ARN of the IAM role that Amazon Kendra assumes to read the FAQ file from your S3 bucket. (AI-inferred) */
   roleArn: string;
-  /** The S3 location (bucket and object key) of the FAQ file stored in Amazon S3. (AI-inferred) */
   s3Path: Faq_S3Path;
   /** List of tags */
   tags: Faq_Tags[];

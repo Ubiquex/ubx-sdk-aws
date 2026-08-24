@@ -4,9 +4,7 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WatchCompositeAlarm_Tags struct {
-	// The key of a tag attached to the CloudWatch composite alarm, used to identify, categorize, and manage the alarm in AWS. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag attached to the CloudWatch Composite Alarm, used for organizing, identifying, and managing the alarm resource. (AI-inferred)
 	Value any
 }
 

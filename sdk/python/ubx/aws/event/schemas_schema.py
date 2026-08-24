@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SchemasSchema_Tags:
-    # The key of a user-defined tag attached to an EventBridge Schema, used to organize and categorize the schema within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag key attached to the EventBridge Schema, used to store arbitrary metadata for the schema resource. (AI-inferred)
     value: Any = None
 
 _SchemasSchema_TagsFields = {

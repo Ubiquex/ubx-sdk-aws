@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Integration_ResourceConfig_OpenSearchResourceConfig {
-  /** The ARN of the OpenSearch Serverless application that this CloudWatch Logs integration delivers logs to. (AI-inferred) */
   applicationArn?: string | Computed<string>;
-  /** Specifies the IAM principals (e.g., user ARNs, role ARNs) that are granted permission to view the OpenSearch dashboards provisioned for this logs integration. (AI-inferred) */
   dashboardViewerPrincipals: string[] | Computed<string[]>;
-  /** The ARN of the IAM role that CloudWatch Logs assumes to access the configured OpenSearch data source for the integration. (AI-inferred) */
   dataSourceRoleArn: string | Computed<string>;
-  /** The ARN of an AWS KMS customer managed key used to encrypt the Amazon OpenSearch Service domain or data source associated with this CloudWatch Logs integration, enabling customer-controlled encryption at rest. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** Specifies the number of days that log data is retained in the associated OpenSearch index for this CloudWatch Logs integration. (AI-inferred) */
   retentionDays?: number | Computed<number>;
 }
 
 export interface Integration_ResourceConfig {
-  /** This object defines the Amazon OpenSearch Service resource configuration for the CloudWatch Logs integration, including the target OpenSearch collection, application, index prefix, and time-to-live (TTL) for the imported log data. (AI-inferred) */
   openSearchResourceConfig?: Integration_ResourceConfig_OpenSearchResourceConfig | Computed<Integration_ResourceConfig_OpenSearchResourceConfig>;
 }
 

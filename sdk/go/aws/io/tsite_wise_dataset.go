@@ -11,12 +11,10 @@ type TsiteWiseDataset_DatasetSource_SourceDetail_Kendra struct {
 }
 
 type TsiteWiseDataset_DatasetSource_SourceDetail struct {
-	// The Kendra source detail that specifies the Amazon Kendra index ARN and an IAM role ARN used by the IoT SiteWise dataset to retrieve and ingest data from that index. (AI-inferred)
 	Kendra any
 }
 
 type TsiteWiseDataset_DatasetSource struct {
-	// Provides source-specific configuration details (such as an Amazon Kendra index or AWS IoT SiteWise source) for the dataset source, as defined by the DatasetSource property of an AWS::IoTSiteWise::Dataset resource. (AI-inferred)
 	SourceDetail any
 	// The format of the dataset source associated with the dataset.
 	SourceFormat any
@@ -26,7 +24,6 @@ type TsiteWiseDataset_DatasetSource struct {
 
 type TsiteWiseDataset_Tags struct {
 	Key any
-	// The value of a tag key-value pair applied to the AWS IoT SiteWise dataset. (AI-inferred)
 	Value any
 }
 
@@ -63,7 +60,6 @@ type TsiteWiseDatasetConfig struct {
 	DatasetDescription any
 	// The name of the dataset.
 	DatasetName any
-	// Specifies the source configuration for the IoT SiteWise dataset, including the Amazon S3 location (bucket and prefix) of the data files and the file format for importing data into the dataset. (AI-inferred)
 	DatasetSource any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -78,7 +74,6 @@ type TsiteWiseDatasetAttrs struct {
 	DatasetId any
 	// The name of the dataset.
 	DatasetName any
-	// Specifies the source configuration for the IoT SiteWise dataset, including the Amazon S3 location (bucket and prefix) of the data files and the file format for importing data into the dataset. (AI-inferred)
 	DatasetSource any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

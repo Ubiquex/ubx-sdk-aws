@@ -8,16 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Gateway_AvailabilityZoneAddresses:
-    # The allocation IDs of the Elastic IPs to associate with the NAT Gateway for each usable Availability Zone, so that a specific public IP is assigned per AZ. (AI-inferred)
     allocation_ids: Any = None
     availability_zone: Any = None
     availability_zone_id: Any = None
 
 @dataclasses.dataclass
 class Gateway_Tags:
-    # The key of a tag in the tag set for the NAT gateway, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to the NAT gateway, used for resource metadata, organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _Gateway_AvailabilityZoneAddressesFields = {
@@ -70,11 +67,9 @@ class GatewayAttrs:
     availability_zone_addresses: Any = None
     # Indicates whether the NAT gateway supports public or private connectivity. The default is public connectivity.
     connectivity_type: Any = None
-    # The identifier of the Elastic Network Interface (ENI) automatically created for the NAT gateway to provide network connectivity, as returned by AWS. (AI-inferred)
     eni_id: Any = None
     # The maximum amount of time to wait (in seconds) before forcibly releasing the IP addresses if connections are still in progress. Default value is 350 seconds.
     max_drain_duration_seconds: Any = None
-    # The unique identifier assigned by AWS to the NAT gateway. (AI-inferred)
     nat_gateway_id: Any = None
     # The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address will be automatically assigned.
     private_ip_address: Any = None

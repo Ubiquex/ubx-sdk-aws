@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EnvironmentTemplate_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Proton environment template, which can be used to categorize and identify the template for cost allocation and management within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -19,9 +18,7 @@ export interface EnvironmentTemplateConfig {
   displayName?: string | Computed<string>;
   /** <p>A customer provided encryption key that Proton uses to encrypt data.</p> */
   encryptionKey?: string | Computed<string>;
-  /** The name of the environment template, used to identify it within AWS Proton. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred) */
   provisioning?: string | Computed<string>;
   /** <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p> */
   tags?: EnvironmentTemplate_Tags[] | Computed<EnvironmentTemplate_Tags[]>;
@@ -36,9 +33,7 @@ export interface EnvironmentTemplateAttrs {
   displayName: string;
   /** <p>A customer provided encryption key that Proton uses to encrypt data.</p> */
   encryptionKey: string;
-  /** The name of the environment template, used to identify it within AWS Proton. (AI-inferred) */
   name: string;
-  /** The provisioning engine used for the environment template, which can be either 'CLOUDFORMATION' or 'TERRAFORM'. (AI-inferred) */
   provisioning: string;
   /** <p>An optional list of metadata items that you can associate with the Proton environment template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p> */
   tags: EnvironmentTemplate_Tags[];

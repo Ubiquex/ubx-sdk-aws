@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentCoreGatewayRateLimit_Entries_Connections struct {
 	Period any
-	// The sustained request rate in requests per second that the core gateway allows for this connection when the agent routes traffic through the specified rate limit entry. (AI-inferred)
 	Rate any
 }
 
@@ -47,14 +46,12 @@ type AgentCoreGatewayRateLimitConfig struct {
 	DimensionKeys any
 	// Rule entries mapping dimension values to rate configurations.
 	Entries any
-	// The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred)
 	GatewayIdentifier any
 	// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
 	RateLimitId any
 }
 
 type AgentCoreGatewayRateLimitAttrs struct {
-	// The timestamp at which this Bedrock agent core gateway rate limit was created. (AI-inferred)
 	CreatedAt any
 	// Optional human-readable description for this limit.
 	Description any
@@ -62,13 +59,11 @@ type AgentCoreGatewayRateLimitAttrs struct {
 	DimensionKeys any
 	// Rule entries mapping dimension values to rate configurations.
 	Entries any
-	// The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred)
 	GatewayIdentifier any
 	// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
 	RateLimitId any
 	// Status of a gateway limit
 	Status any
-	// The timestamp (in ISO 8601 format) indicating when this core gateway rate limit was last modified. (AI-inferred)
 	UpdatedAt any
 }
 

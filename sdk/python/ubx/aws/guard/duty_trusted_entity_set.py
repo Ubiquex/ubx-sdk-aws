@@ -20,10 +20,8 @@ _DutyTrustedEntitySet_TagsFields = {
 class DutyTrustedEntitySetConfig:
     activate: Any = None
     detector_id: Any = None
-    # The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
     expected_bucket_owner: Any = None
     format: Any = None
-    # The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
     location: Any = None
     name: Any = None
     tags: Any = None
@@ -34,11 +32,9 @@ class DutyTrustedEntitySetAttrs:
     created_at: Any = None
     detector_id: Any = None
     error_details: Any = None
-    # The AWS account ID of the S3 bucket owner that GuardDuty expects when accessing the bucket for this trusted entity set, used to verify bucket ownership and prevent cross-account misconfiguration. (AI-inferred)
     expected_bucket_owner: Any = None
     format: Any = None
     id: Any = None
-    # The S3 URI of the file containing the trusted entities (such as IP addresses or domain names) that GuardDuty uses for this set. (AI-inferred)
     location: Any = None
     name: Any = None
     status: Any = None

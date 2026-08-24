@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Snapshot_Tags:
-    # The key of a tag attached to the Amazon FSx snapshot, used to organize and identify the snapshot within AWS. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag attached to the FSx snapshot, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _Snapshot_TagsFields = {
@@ -20,22 +18,16 @@ _Snapshot_TagsFields = {
 
 @dataclasses.dataclass
 class SnapshotConfig:
-    # The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred)
     name: Any = None
     tags: Any = None
-    # The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred)
     volume_id: Any = None
 
 @dataclasses.dataclass
 class SnapshotAttrs:
-    # The unique identifier assigned by AWS to this FSx snapshot. (AI-inferred)
     id: Any = None
-    # The user-assigned name of the FSx snapshot, used to identify it within the volume. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) assigned by AWS to the FSx snapshot, uniquely identifying it across regions and accounts. (AI-inferred)
     resource_arn: Any = None
     tags: Any = None
-    # The ID of the Amazon FSx volume (file system) from which this snapshot is created. (AI-inferred)
     volume_id: Any = None
 
 Snapshot = ubx.ResourceBinding(

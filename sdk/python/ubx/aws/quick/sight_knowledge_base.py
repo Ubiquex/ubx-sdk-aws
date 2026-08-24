@@ -8,12 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightKnowledgeBase_AccessControlConfiguration:
-    # Enables ACL (access control list) enforcement on the QuickSight knowledge base, which controls data access based on ACL rules defined in the access control configuration. (AI-inferred)
     is_aclenabled: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_KnowledgeBaseConfiguration_TemplateConfiguration:
-    # Specifies the Amazon QuickSight template used to initialize and configure the knowledge base. (AI-inferred)
     template: Any = None
 
 @dataclasses.dataclass
@@ -22,40 +20,31 @@ class SightKnowledgeBase_KnowledgeBaseConfiguration:
 
 @dataclasses.dataclass
 class SightKnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfiguration:
-    # Determines whether audio extraction is enabled or disabled for the media extraction configuration, controlling if audio content from media files is processed and indexed for the knowledge base. (AI-inferred)
     audio_extraction_status: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfiguration:
-    # Determines whether text from images in source documents is extracted and indexed, with a required value of `ENABLED` or `DISABLED`. (AI-inferred)
     image_extraction_status: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfiguration:
-    # Determines whether video files in the knowledge base are processed to extract text and metadata for Amazon QuickSight Q to use when answering questions, with accepted values `ENABLED` and `DISABLED`. (AI-inferred)
     video_extraction_status: Any = None
     video_extraction_type: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_MediaExtractionConfiguration:
-    # Specifies the configuration for extracting audio content from media files ingested into the QuickSight knowledge base, enabling downstream processing such as transcription and indexing. (AI-inferred)
     audio_extraction_configuration: Any = None
-    # Defines the settings for extracting text and data from images in media files associated with the QuickSight knowledge base, including whether image extraction is enabled. (AI-inferred)
     image_extraction_configuration: Any = None
-    # Provides the video-specific extraction settings that control how textual content is derived from video files within the knowledge base. (AI-inferred)
     video_extraction_configuration: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_Permissions:
-    # The list of QuickSight IAM actions (for example, quicksight:DescribeKnowledgeBase) that the principal in this permissions entry is authorized to perform on the knowledge base. (AI-inferred)
     actions: Any = None
-    # The IAM principal (user, group, or role) that is granted the specified permissions on the QuickSight knowledge base. (AI-inferred)
     principal: Any = None
     resource: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBase_Tags:
-    # The key of a user-defined tag applied to the QuickSight knowledge base, used to organize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -119,56 +108,40 @@ _SightKnowledgeBase_TagsFields = {
 
 @dataclasses.dataclass
 class SightKnowledgeBaseConfig:
-    # Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
     access_control_configuration: Any = None
     aws_account_id: Any = None
     data_source_arn: Any = None
     description: Any = None
-    # Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
     is_email_notification_opted_for_ingestion_failures: Any = None
     knowledge_base_configuration: Any = None
-    # The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred)
     knowledge_base_id: Any = None
     media_extraction_configuration: Any = None
-    # The name of this QuickSight knowledge base. (AI-inferred)
     name: Any = None
-    # The permissions that control access to the QuickSight knowledge base, consisting of a list of resource permission objects that specify which principals (users, groups, or organizations) can perform certain actions on the resource. (AI-inferred)
     permissions: Any = None
-    # The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
     primary_owner_arn: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class SightKnowledgeBaseAttrs:
-    # Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred)
     access_control_configuration: Any = None
     aws_account_id: Any = None
-    # The timestamp (in ISO 8601 format) indicating when the QuickSight knowledge base was created. (AI-inferred)
     created_at: Any = None
     data_source_arn: Any = None
     description: Any = None
     document_count: Any = None
-    # Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred)
     is_email_notification_opted_for_ingestion_failures: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying the QuickSight knowledge base in AWS. (AI-inferred)
     knowledge_base_arn: Any = None
     knowledge_base_configuration: Any = None
-    # The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred)
     knowledge_base_id: Any = None
-    # The total size of the knowledge base content in bytes, as computed by Amazon QuickSight. (AI-inferred)
     knowledge_base_size_bytes: Any = None
     media_extraction_configuration: Any = None
-    # The name of this QuickSight knowledge base. (AI-inferred)
     name: Any = None
-    # The permissions that control access to the QuickSight knowledge base, consisting of a list of resource permission objects that specify which principals (users, groups, or organizations) can perform certain actions on the resource. (AI-inferred)
     permissions: Any = None
-    # The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred)
     primary_owner_arn: Any = None
     primary_owner_username: Any = None
     status: Any = None
     tags: Any = None
     type: Any = None
-    # The read-only updated_at field holds the timestamp of the last modification to the QuickSight knowledge base. (AI-inferred)
     updated_at: Any = None
 
 SightKnowledgeBase = ubx.ResourceBinding(

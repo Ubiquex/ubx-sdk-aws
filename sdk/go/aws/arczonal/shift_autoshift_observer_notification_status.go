@@ -4,7 +4,6 @@ package arczonal
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ShiftAutoshiftObserverNotificationStatusConfig struct {
-	// Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
 	Status any
 }
 
@@ -13,7 +12,6 @@ type ShiftAutoshiftObserverNotificationStatusAttrs struct {
 	AccountId any
 	// Region, used as part of the primary identifier for the resource
 	Region any
-	// Specifies whether the autoshift observer notification for the account is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
 	Status any
 }
 

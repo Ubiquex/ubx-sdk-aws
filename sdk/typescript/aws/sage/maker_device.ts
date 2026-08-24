@@ -12,7 +12,6 @@ export interface MakerDevice_Device {
 
 export interface MakerDevice_Tags {
   key?: string | Computed<string>;
-  /** The value component of a tag attached to the SageMaker device, used for arbitrary metadata such as environment or cost center. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

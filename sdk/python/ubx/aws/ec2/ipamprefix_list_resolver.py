@@ -16,7 +16,6 @@ class IpamprefixListResolver_Rules_Conditions:
     cidr: Any = None
     ipam_pool_id: Any = None
     operation: Any = None
-    # Limits the rule to prefix list entries that are associated with the given AWS resource ID, such as a VPC or subnet. (AI-inferred)
     resource_id: Any = None
     resource_owner: Any = None
     resource_region: Any = None
@@ -25,12 +24,9 @@ class IpamprefixListResolver_Rules_Conditions:
 @dataclasses.dataclass
 class IpamprefixListResolver_Rules:
     conditions: Any = None
-    # The ID of the IPAM scope that this resolver rule is associated with, used to determine which IPAM-managed prefix list the rule selects during resolution. (AI-inferred)
     ipam_scope_id: Any = None
-    # Specifies the type of AWS resource (e.g., VPC, subnet) that a rule matches when resolving resources into the prefix list. (AI-inferred)
     resource_type: Any = None
     rule_type: Any = None
-    # Specifies the static CIDR block included in a rule entry for the prefix list resolver, defining the IP address range used to match traffic. (AI-inferred)
     static_cidr: Any = None
 
 _IpamprefixListResolver_Rules_Conditions_ResourceTagFields = {

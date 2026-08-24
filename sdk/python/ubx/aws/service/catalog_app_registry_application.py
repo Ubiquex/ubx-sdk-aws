@@ -12,7 +12,6 @@ class CatalogAppRegistryApplicationConfig:
     description: Any = None
     # The name of the application.
     name: Any = None
-    # Assigns AWS resource tags to the Service Catalog AppRegistry application to help identify, organize, and manage it. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -23,15 +22,12 @@ class CatalogAppRegistryApplicationAttrs:
     application_tag_key: Any = None
     # The value of the AWS application tag, which is the identifier of an associated resource. Applications created before 11/13/2023 or applications without the AWS application tag resource group return no value.
     application_tag_value: Any = None
-    # The Amazon Resource Name (ARN) of the AppRegistry application, which uniquely identifies it within AWS and is assigned on creation. (AI-inferred)
     arn: Any = None
     # The description of the application.
     description: Any = None
-    # The unique identifier (ApplicationId) of the AppRegistry application, assigned by AWS and used to reference the application in other AppRegistry resources. (AI-inferred)
     id: Any = None
     # The name of the application.
     name: Any = None
-    # Assigns AWS resource tags to the Service Catalog AppRegistry application to help identify, organize, and manage it. (AI-inferred)
     tags: Any = None
 
 CatalogAppRegistryApplication = ubx.ResourceBinding(

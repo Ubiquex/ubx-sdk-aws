@@ -2,24 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerlessCluster_ClientAuthentication_Sasl_Iam {
-  /** Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred) */
   enabled: boolean | Computed<boolean>;
 }
 
 export interface ServerlessCluster_ClientAuthentication_Sasl {
-  /** Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred) */
   iam: ServerlessCluster_ClientAuthentication_Sasl_Iam | Computed<ServerlessCluster_ClientAuthentication_Sasl_Iam>;
 }
 
 export interface ServerlessCluster_ClientAuthentication {
-  /** Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred) */
   sasl: ServerlessCluster_ClientAuthentication_Sasl | Computed<ServerlessCluster_ClientAuthentication_Sasl>;
 }
 
 export interface ServerlessCluster_VpcConfigs {
-  /** A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred) */
   securityGroups?: string[] | Computed<string[]>;
-  /** The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
@@ -49,26 +44,19 @@ const ServerlessCluster_VpcConfigsFields: FieldMap = {
 };
 
 export interface ServerlessClusterConfig {
-  /** Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred) */
   clientAuthentication: ServerlessCluster_ClientAuthentication | Computed<ServerlessCluster_ClientAuthentication>;
-  /** The name to assign to the serverless Apache Kafka cluster. (AI-inferred) */
   clusterName: string | Computed<string>;
   /** A key-value pair to associate with a resource. */
   tags?: unknown | Computed<unknown>;
-  /** Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred) */
   vpcConfigs: ServerlessCluster_VpcConfigs[] | Computed<ServerlessCluster_VpcConfigs[]>;
 }
 
 export interface ServerlessClusterAttrs {
-  /** The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred) */
   arn: string;
-  /** Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred) */
   clientAuthentication: ServerlessCluster_ClientAuthentication;
-  /** The name to assign to the serverless Apache Kafka cluster. (AI-inferred) */
   clusterName: string;
   /** A key-value pair to associate with a resource. */
   tags: unknown;
-  /** Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred) */
   vpcConfigs: ServerlessCluster_VpcConfigs[];
 }
 

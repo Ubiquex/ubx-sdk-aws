@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReplicaKey_Tags:
-    # The key of a tag attached to the AWS KMS replica key, used as part of a key-value pair to identify, categorize, and manage the resource. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag that can be assigned to the AWS KMS replica key for resource identification and management. (AI-inferred)
     value: Any = None
 
 _ReplicaKey_TagsFields = {
@@ -35,13 +33,11 @@ class ReplicaKeyConfig:
 
 @dataclasses.dataclass
 class ReplicaKeyAttrs:
-    # The Amazon Resource Name (ARN) of the replica key. (AI-inferred)
     arn: Any = None
     # A description of the AWS KMS key. Use a description that helps you to distinguish this AWS KMS key from others in the account, such as its intended use.
     description: Any = None
     # Specifies whether the AWS KMS key is enabled. Disabled AWS KMS keys cannot be used in cryptographic operations.
     enabled: Any = None
-    # The unique identifier of the replica KMS key, returned as a 32-character UUID string, which can be used to reference the key in IAM policies, aliases, and encryption operations. (AI-inferred)
     key_id: Any = None
     # The key policy that authorizes use of the AWS KMS key. The key policy must observe the following rules.
     key_policy: Any = None

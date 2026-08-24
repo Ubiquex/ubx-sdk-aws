@@ -4,13 +4,9 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceDefinitionVersion_Devices struct {
-	// The ARN of the AWS IoT certificate used to authenticate the Greengrass device when it connects to the AWS Greengrass core. (AI-inferred)
 	CertificateArn any
-	// The device ID, which must be unique within the device definition version and is used to identify the device in this version. (AI-inferred)
 	Id any
-	// Indicates whether the device's shadow is synchronized with the AWS IoT shadow. (AI-inferred)
 	SyncShadow any
-	// The Amazon Resource Name (ARN) of the AWS IoT thing that this device represents in the Greengrass device definition version. (AI-inferred)
 	ThingArn any
 }
 
@@ -22,18 +18,13 @@ var DeviceDefinitionVersion_DevicesFields = ubx.FieldMap{
 	}
 
 type DeviceDefinitionVersionConfig struct {
-	// The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred)
 	DeviceDefinitionId any
-	// Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred)
 	Devices any
 }
 
 type DeviceDefinitionVersionAttrs struct {
-	// The ID of the Greengrass device definition to which this version belongs, required to scope the version resource within a specific device definition. (AI-inferred)
 	DeviceDefinitionId any
-	// Defines the list of AWS IoT devices (things) included in this Greengrass device definition version, each specifying the device's ID, thing ARN, certificate ARN, and whether local shadow synchronization is enabled. (AI-inferred)
 	Devices any
-	// The unique identifier assigned by AWS to this Greengrass device definition version, used as a computed resource identifier. (AI-inferred)
 	Id any
 }
 

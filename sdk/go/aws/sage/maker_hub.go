@@ -9,9 +9,7 @@ type MakerHub_S3StorageConfig struct {
 }
 
 type MakerHub_Tags struct {
-	// The key of a tag attached to the SageMaker Hub, used to identify and categorize the hub for resource management and cost allocation. (AI-inferred)
 	Key any
-	// The value component of a tag attached to the SageMaker Hub, which pairs with the corresponding key to organize, identify, and manage the hub resource within your AWS environment. (AI-inferred)
 	Value any
 }
 

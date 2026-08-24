@@ -10,7 +10,6 @@ type SetupLifecycleAutomationConfig struct {
 	AutomationParameters any
 	// A unique identifier used for generating a unique logical ID for the custom resource
 	ResourceKey any
-	// A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred)
 	Tags any
 }
 
@@ -23,7 +22,6 @@ type SetupLifecycleAutomationAttrs struct {
 	AutomationParameters any
 	// A unique identifier used for generating a unique logical ID for the custom resource
 	ResourceKey any
-	// A map of key-value pairs to assign to the SSM Quick Setup lifecycle automation resource for tracking and management. (AI-inferred)
 	Tags any
 }
 

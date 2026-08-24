@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DbMultiRegionCluster_Tags:
     key: Any = None
-    # The value of a tag attached to the MemoryDB Multi-Region Cluster, used for labeling and cost allocation. (AI-inferred)
     value: Any = None
 
 _DbMultiRegionCluster_TagsFields = {

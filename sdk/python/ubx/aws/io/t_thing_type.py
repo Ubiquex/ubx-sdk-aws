@@ -9,29 +9,22 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TThingType_Tags:
     key: Any = None
-    # Specifies the value part of a tag key-value pair used to label the AWS IoT Thing Type. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TThingType_ThingTypeProperties_Mqtt5Configuration_PropagatingAttributes:
-    # Specifies the MQTT5 connection attribute (e.g., SourceIp, ThingName, or ThingTypeName) whose value is propagated into the CONNECT message's user properties for devices of this thing type. (AI-inferred)
     connection_attribute: Any = None
-    # The name of the thing attribute that will be propagated to MQTT5 messages for the AWS IoT Thing Type. (AI-inferred)
     thing_attribute: Any = None
-    # Specifies the key of the MQTT5 user property that carries the value of the associated thing attribute when messages are published. (AI-inferred)
     user_property_key: Any = None
 
 @dataclasses.dataclass
 class TThingType_ThingTypeProperties_Mqtt5Configuration:
-    # Specifies the list of thing attributes (each defined by a key and optional static value) that AWS IoT propagates into MQTT5 messages published by things associated with this thing type. (AI-inferred)
     propagating_attributes: Any = None
 
 @dataclasses.dataclass
 class TThingType_ThingTypeProperties:
     mqtt5_configuration: Any = None
-    # Specifies a list of thing attribute names that can be used to search for things of this thing type in AWS IoT. (AI-inferred)
     searchable_attributes: Any = None
-    # An optional human-readable description that provides additional context about the purpose or characteristics of the AWS IoT thing type. (AI-inferred)
     thing_type_description: Any = None
 
 _TThingType_TagsFields = {
@@ -65,28 +58,20 @@ _TThingType_ThingTypePropertiesFields = {
 
 @dataclasses.dataclass
 class TThingTypeConfig:
-    # Indicates whether the thing type should be deprecated, which prevents new things from being associated with it after the type is created. (AI-inferred)
     deprecate_thing_type: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies a user-defined name for the AWS IoT thing type, which must be unique within the AWS account and is used to identify the thing type in IoT Core operations; if omitted, AWS IoT automatically generates a name. (AI-inferred)
     thing_type_name: Any = None
-    # Configures the properties of the AWS IoT thing type, including a human-readable description and a list of searchable attributes used to search for things of this type. (AI-inferred)
     thing_type_properties: Any = None
 
 @dataclasses.dataclass
 class TThingTypeAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS IoT thing type, assigned by AWS when the type is created. (AI-inferred)
     arn: Any = None
-    # Indicates whether the thing type should be deprecated, which prevents new things from being associated with it after the type is created. (AI-inferred)
     deprecate_thing_type: Any = None
-    # The id is the unique name of the IoT thing type, which serves as the resource's primary identifier and is used to reference the thing type in other AWS IoT operations. (AI-inferred)
     id: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies a user-defined name for the AWS IoT thing type, which must be unique within the AWS account and is used to identify the thing type in IoT Core operations; if omitted, AWS IoT automatically generates a name. (AI-inferred)
     thing_type_name: Any = None
-    # Configures the properties of the AWS IoT thing type, including a human-readable description and a list of searchable attributes used to search for things of this type. (AI-inferred)
     thing_type_properties: Any = None
 
 TThingType = ubx.ResourceBinding(

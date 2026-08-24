@@ -2,73 +2,51 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfiguration {
-  /** The Cedar entity type that Cognito user pool groups are mapped to when groups are converted into principal entities for authorization. (AI-inferred) */
   groupEntityType?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration {
-  /** The list of Amazon Cognito app client IDs that are allowed to use this identity source for authentication. (AI-inferred) */
   clientIds?: string[] | Computed<string[]>;
-  /** Defines the optional group configuration for the Amazon Cognito user pool identity source, specifically setting the GroupEntityType that maps Cognito user pool groups to an entity type used in Cedar policies for group-based authorization. (AI-inferred) */
   groupConfiguration?: PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfiguration | Computed<PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration_GroupConfiguration>;
-  /** The ARN of the Amazon Cognito user pool that this Verified Permissions identity source is associated with, used to validate and authorize user identities within the policy store. (AI-inferred) */
   userPoolArn?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfiguration {
-  /** Specifies the name of the claim in the OIDC token that contains the user's group memberships, used by AWS Verified Permissions to determine group assignments for authorization. (AI-inferred) */
   groupClaim?: string | Computed<string>;
-  /** Specifies the entity type (e.g., "MyApp::Group") that represents groups in the identity source, used to map OIDC group claims to Cedar group entities. (AI-inferred) */
   groupEntityType?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnly {
-  /** The list of allowed audience (aud) claim values that an access token must contain for it to be accepted by the identity source. (AI-inferred) */
   audiences?: string[] | Computed<string[]>;
-  /** Specifies the claim in the access token that should be used as the principal identifier for the identity source. (AI-inferred) */
   principalIdClaim?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnly {
-  /** Specifies the list of OIDC client IDs that are allowed to use the identity token, restricting authentication and authorization to tokens issued for those client applications. (AI-inferred) */
   clientIds?: string[] | Computed<string[]>;
-  /** Specifies the OIDC claim (e.g., 'sub' or 'user_id') from the identity token that is used as the unique principal identifier for the identity source. (AI-inferred) */
   principalIdClaim?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection {
-  /** Configures the OIDC identity source to use only the access token for principal identification, including the claim used to extract the principal ID. (AI-inferred) */
   accessTokenOnly?: PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnly | Computed<PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_AccessTokenOnly>;
-  /** Defines the configuration for accepting only the OIDC identity token for authorization, optionally specifying the list of client IDs that are allowed to use this token. (AI-inferred) */
   identityTokenOnly?: PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnly | Computed<PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection_IdentityTokenOnly>;
 }
 
 export interface PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration {
-  /** The entity ID prefix that is prepended to the subject claim of the OIDC identity token to create the unique principal entity ID used by Amazon Verified Permissions. (AI-inferred) */
   entityIdPrefix?: string | Computed<string>;
-  /** Specifies the OIDC token claim (via its group_claim field) that contains group membership information for the identity source. (AI-inferred) */
   groupConfiguration?: PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfiguration | Computed<PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_GroupConfiguration>;
-  /** The URL of the OpenID Connect issuer, which identifies the OIDC provider and is used to verify the issuer claim in access tokens. (AI-inferred) */
   issuer?: string | Computed<string>;
-  /** Defines how Verified Permissions extracts the principal identifier from an OIDC-issued token by selecting whether to use the access token or the identity token and optionally specifying which token claim to use as the principal's identity. (AI-inferred) */
   tokenSelection?: PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection | Computed<PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration_TokenSelection>;
 }
 
 export interface PermissionsIdentitySource_Configuration {
-  /** Configures an Amazon Cognito user pool as the identity source for AWS Verified Permissions, specifying the user pool ARN and associated client application IDs. (AI-inferred) */
   cognitoUserPoolConfiguration?: PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration | Computed<PermissionsIdentitySource_Configuration_CognitoUserPoolConfiguration>;
-  /** Configuration object that defines the OpenID Connect (OIDC) identity provider settings, including the issuer URL, entity ID prefix, group configuration, and token selection rules for the identity source. (AI-inferred) */
   openIdConnectConfiguration?: PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration | Computed<PermissionsIdentitySource_Configuration_OpenIdConnectConfiguration>;
 }
 
 export interface PermissionsIdentitySource_Details {
-  /** Specifies the client IDs of the identity provider (such as a Cognito user pool app or OIDC application) that are allowed to use this identity source for Amazon Verified Permissions. (AI-inferred) */
   clientIds?: string[] | Computed<string[]>;
-  /** The URL of the OpenID Connect discovery endpoint for the identity provider, which Verified Permissions uses to automatically fetch the provider's configuration. (AI-inferred) */
   discoveryUrl?: string | Computed<string>;
-  /** The issuer URL of the OpenID Connect provider used for this identity source, which AWS Verified Permissions uses to discover and validate tokens issued by that provider. (AI-inferred) */
   openIdIssuer?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Amazon Cognito user pool that acts as the identity provider for this identity source. (AI-inferred) */
   userPoolArn?: string | Computed<string>;
 }
 
@@ -143,24 +121,16 @@ const PermissionsIdentitySource_ConfigurationFields: FieldMap = {
 };
 
 export interface PermissionsIdentitySourceConfig {
-  /** Specifies the identity provider configuration for the identity source, such as Amazon Cognito user pool details (UserPoolArn, ClientId) or an OpenID Connect provider (issuer, client ID, etc.), which Amazon Verified Permissions uses to authenticate and authorize principals. (AI-inferred) */
   configuration: PermissionsIdentitySource_Configuration | Computed<PermissionsIdentitySource_Configuration>;
-  /** The unique identifier of the policy store to which this identity source is attached. (AI-inferred) */
   policyStoreId: string | Computed<string>;
-  /** Specifies the principal entity type (e.g., 'User' or 'Group') that identities from this identity source are mapped to for use in Cedar policies. (AI-inferred) */
   principalEntityType?: string | Computed<string>;
 }
 
 export interface PermissionsIdentitySourceAttrs {
-  /** Specifies the identity provider configuration for the identity source, such as Amazon Cognito user pool details (UserPoolArn, ClientId) or an OpenID Connect provider (issuer, client ID, etc.), which Amazon Verified Permissions uses to authenticate and authorize principals. (AI-inferred) */
   configuration: PermissionsIdentitySource_Configuration;
-  /** `details` returns the computed configuration details of the identity source, including the Amazon Cognito user pool client IDs and group configuration settings, as resolved by AWS Verified Permissions. (AI-inferred) */
   details: PermissionsIdentitySource_Details;
-  /** The unique identifier assigned by AWS to the identity source. (AI-inferred) */
   identitySourceId: string;
-  /** The unique identifier of the policy store to which this identity source is attached. (AI-inferred) */
   policyStoreId: string;
-  /** Specifies the principal entity type (e.g., 'User' or 'Group') that identities from this identity source are mapped to for use in Cedar policies. (AI-inferred) */
   principalEntityType: string;
 }
 

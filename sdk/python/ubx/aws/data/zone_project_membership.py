@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ZoneProjectMembership_Member:
-    # Specifies the identifier of the group that is being granted membership to the DataZone project. (AI-inferred)
     group_identifier: Any = None
-    # The identifier of the user who is being granted membership to the DataZone project, as recognized by the DataZone domain. (AI-inferred)
     user_identifier: Any = None
 
 _ZoneProjectMembership_MemberFields = {
@@ -20,28 +18,18 @@ _ZoneProjectMembership_MemberFields = {
 
 @dataclasses.dataclass
 class ZoneProjectMembershipConfig:
-    # Designates the role of the member in the DataZone project, determining their access permissions (for example, PROJECT_OWNER or PROJECT_CONTRIBUTOR). (AI-inferred)
     designation: Any = None
-    # The unique identifier of the Amazon DataZone domain in which the project and its membership are defined. (AI-inferred)
     domain_identifier: Any = None
-    # Specifies the member to be added to the project, including the member's identifier and type (USER or GROUP). (AI-inferred)
     member: Any = None
-    # The unique identifier (ID) of the Amazon Data Zone project to which the member (user or group) is granted access. (AI-inferred)
     project_identifier: Any = None
 
 @dataclasses.dataclass
 class ZoneProjectMembershipAttrs:
-    # Designates the role of the member in the DataZone project, determining their access permissions (for example, PROJECT_OWNER or PROJECT_CONTRIBUTOR). (AI-inferred)
     designation: Any = None
-    # The unique identifier of the Amazon DataZone domain in which the project and its membership are defined. (AI-inferred)
     domain_identifier: Any = None
-    # Specifies the member to be added to the project, including the member's identifier and type (USER or GROUP). (AI-inferred)
     member: Any = None
-    # The fully qualified identifier of the AWS principal (such as an IAM user ARN, role ARN, or AWS account ID) that is added as a member to the DataZone project. (AI-inferred)
     member_identifier: Any = None
-    # Specifies whether the member is a user or a group, determining how the member identifier is interpreted for this DataZone project membership. (AI-inferred)
     member_identifier_type: Any = None
-    # The unique identifier (ID) of the Amazon Data Zone project to which the member (user or group) is granted access. (AI-inferred)
     project_identifier: Any = None
 
 ZoneProjectMembership = ubx.ResourceBinding(

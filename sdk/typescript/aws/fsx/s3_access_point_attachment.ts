@@ -9,21 +9,17 @@ export interface S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_U
 export interface S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity {
   /** Specifies the FSx for ONTAP user identity type, accepts either UNIX or WINDOWS. */
   type: string | Computed<string>;
-  /** Configures the Unix user identity (e.g., user name or UID) that the FSx for ONTAP S3 access point uses to map file system access requests to a specific Unix user's permissions. (AI-inferred) */
   unixUser?: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser | Computed<S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser>;
-  /** Specifies the Windows user credentials (domain and password) that define the file system's identity when the FSx for ONTAP file system is joined to an Active Directory domain. (AI-inferred) */
   windowsUser?: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser | Computed<S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity_UnixUser>;
 }
 
 export interface S3AccessPointAttachment_OntapConfiguration {
-  /** Identifies the FSx for ONTAP file system and its storage virtual machine (SVM) to which the S3 access point is attached, containing the file system ID and SVM ID. (AI-inferred) */
   fileSystemIdentity: S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity | Computed<S3AccessPointAttachment_OntapConfiguration_FileSystemIdentity>;
   /** The ID of the FSx for ONTAP volume that the S3 access point is attached to. */
   volumeId: string | Computed<string>;
 }
 
 export interface S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser_SecondaryGids {
-  /** The numeric secondary group ID (GID) that is added to the POSIX user's secondary group list for the file system identity used by the S3 access point attachment. (AI-inferred) */
   gid?: number | Computed<number>;
 }
 
@@ -37,14 +33,12 @@ export interface S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity
 }
 
 export interface S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity {
-  /** Defines the POSIX user (UID and GID) on the FSx for OpenZFS file system that is used to map operations from the attached S3 access point. (AI-inferred) */
   posixUser: S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser | Computed<S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity_PosixUser>;
   /** Specifies the FSx for OpenZFS user identity type, accepts only POSIX. */
   type: string | Computed<string>;
 }
 
 export interface S3AccessPointAttachment_OpenZfsconfiguration {
-  /** Specifies the POSIX user ID and group ID (file system identity) that the OpenZFS file system uses when accessing the attached S3 access point. (AI-inferred) */
   fileSystemIdentity: S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity | Computed<S3AccessPointAttachment_OpenZfsconfiguration_FileSystemIdentity>;
   /** The ID of the FSx for OpenZFS volume that the S3 access point is attached to. */
   volumeId: string | Computed<string>;
@@ -62,7 +56,6 @@ export interface S3AccessPointAttachment_S3AccessPoint {
   policy?: unknown | Computed<unknown>;
   /** The S3 access point's ARN. */
   resourceArn?: string | Computed<string>;
-  /** Specifies the VPC configuration for the S3 access point, including the VPC ID in which the access point is created and which restricts access to requests originating from that VPC only. (AI-inferred) */
   vpcConfiguration?: S3AccessPointAttachment_S3AccessPoint_VpcConfiguration | Computed<S3AccessPointAttachment_S3AccessPoint_VpcConfiguration>;
 }
 
@@ -128,7 +121,6 @@ const S3AccessPointAttachment_OpenZfsconfigurationFields: FieldMap = {
 export interface S3AccessPointAttachmentConfig {
   /** The name of the S3 access point attachment; also used for the name of the S3 access point. */
   name: string | Computed<string>;
-  /** The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred) */
   ontapConfiguration?: S3AccessPointAttachment_OntapConfiguration | Computed<S3AccessPointAttachment_OntapConfiguration>;
   openZfsconfiguration?: S3AccessPointAttachment_OpenZfsconfiguration | Computed<S3AccessPointAttachment_OpenZfsconfiguration>;
   /** The type of Amazon FSx volume that the S3 access point is attached to. */
@@ -140,7 +132,6 @@ export interface S3AccessPointAttachmentAttrs {
   lifecycle: string;
   /** The name of the S3 access point attachment; also used for the name of the S3 access point. */
   name: string;
-  /** The ONTAP-specific settings for the S3 access point, defining the FSx for ONTAP volume to attach, the S3 bucket and read/write settings, and an optional alias used to address the access point. (AI-inferred) */
   ontapConfiguration: S3AccessPointAttachment_OntapConfiguration;
   openZfsconfiguration: S3AccessPointAttachment_OpenZfsconfiguration;
   s3AccessPoint: S3AccessPointAttachment_S3AccessPoint;

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Oidcprovider_Tags:
-    # Specifies the key (name) of a tag assigned to the AWS IAM OIDC provider, allowing you to filter, control access, and track costs for the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the IAM OIDC provider, used to manage, identify, and categorize the resource. (AI-inferred)
     value: Any = None
 
 _Oidcprovider_TagsFields = {
@@ -20,26 +18,18 @@ _Oidcprovider_TagsFields = {
 
 @dataclasses.dataclass
 class OidcproviderConfig:
-    # The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred)
     client_id_list: Any = None
-    # Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred)
     tags: Any = None
-    # The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred)
     thumbprint_list: Any = None
-    # Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class OidcproviderAttrs:
     # Amazon Resource Name (ARN) of the OIDC provider
     arn: Any = None
-    # The list of client IDs (also known as audiences) that are allowed to use the OIDC provider to authenticate to AWS. (AI-inferred)
     client_id_list: Any = None
-    # Defines one or more custom tag key-value pairs to attach to the IAM OIDC provider, which can be used for cost allocation, access control, and metadata management. (AI-inferred)
     tags: Any = None
-    # The list of server certificate thumbprints used to identify the OIDC identity provider's server certificate. (AI-inferred)
     thumbprint_list: Any = None
-    # Specifies the URL of the OIDC identity provider (IdP), which must be a valid HTTPS URL that matches the issuer in the OIDC tokens issued by the provider. (AI-inferred)
     url: Any = None
 
 Oidcprovider = ubx.ResourceBinding(

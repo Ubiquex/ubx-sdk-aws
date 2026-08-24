@@ -15,9 +15,7 @@ class DatabaseSnapshot_Location:
 
 @dataclasses.dataclass
 class DatabaseSnapshot_Tags:
-    # The key of a tag to attach to the Lightsail database snapshot. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Lightsail database snapshot, used to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 _DatabaseSnapshot_TagsFields = {

@@ -4,23 +4,18 @@ package open
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SearchServiceApplication_AppConfigs struct {
-	// The key name that identifies a specific configuration parameter within the app_configs list of an AWS OpenSearch Service application. (AI-inferred)
 	Key any
-	// The value of a single key-value pair within the AppConfigs list, which supplies custom settings for the OpenSearch Service application when it is provisioned. (AI-inferred)
 	Value any
 }
 
 type SearchServiceApplication_DataSources struct {
-	// Specifies the Amazon Resource Name (ARN) of an underlying AWS data source (for example, an S3 bucket or CloudWatch Logs log group) that this OpenSearch Service application uses for direct querying. (AI-inferred)
 	DataSourceArn any
-	// Specifies a descriptive text for a data source that is associated with the Amazon OpenSearch Service application. (AI-inferred)
 	DataSourceDescription any
 }
 
 type SearchServiceApplication_IamIdentityCenterOptions struct {
 	// Whether IAM Identity Center is enabled.
 	Enabled any
-	// The ARN of the AWS IAM Identity Center instance used to authenticate users for this OpenSearch Service application. (AI-inferred)
 	IamIdentityCenterInstanceArn any
 	// The ARN of the IAM role for Identity Center application.
 	IamRoleForIdentityCenterApplicationArn any

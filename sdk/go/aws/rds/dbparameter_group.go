@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbparameterGroup_Tags struct {
-	// The key of a tag to attach to the DB parameter group. (AI-inferred)
 	Key any
-	// The value part of a tag assigned to the RDS DB parameter group, enabling custom metadata such as environment, owner, or cost center. (AI-inferred)
 	Value any
 }
 
@@ -29,7 +27,6 @@ type DbparameterGroupConfig struct {
 }
 
 type DbparameterGroupAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the DB parameter group in AWS, automatically assigned by RDS when the group is created. (AI-inferred)
 	DbparameterGroupArn any
 	// The name of the DB parameter group. Constraints: + Must be 1 to 255 letters, numbers, or hyphens. + First character must be a letter + Can't end with a hyphen or contain two consecutive hyphens If you don't specify a value for ``DBParameterGroupName`` property, a name is automatically created for the DB parameter group. This value is stored as a lowercase string.
 	DbparameterGroupName any

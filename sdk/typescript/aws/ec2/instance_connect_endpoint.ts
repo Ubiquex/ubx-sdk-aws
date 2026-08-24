@@ -16,7 +16,6 @@ export interface InstanceConnectEndpoint_PublicDnsNames {
 }
 
 export interface InstanceConnectEndpoint_Tags {
-  /** The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

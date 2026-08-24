@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dbinstance_Tags:
-    # The key of an arbitrary tag attached to the Neptune DB instance, used to identify the tag for resource organization, cost tracking, and access control. (AI-inferred)
     key: Any = None
-    # Value of the tag key assigned to the Neptune DB instance, used to organize and identify the resource. (AI-inferred)
     value: Any = None
 
 _Dbinstance_TagsFields = {

@@ -11,9 +11,7 @@ type DeliveryDestination_DeliveryDestinationPolicy struct {
 }
 
 type DeliveryDestination_Tags struct {
-	// This field specifies the key of a tag applied to the CloudWatch Logs delivery destination, allowing you to categorize and filter the resource for cost tracking and access management. (AI-inferred)
 	Key any
-	// The value of a tag attached to the CloudWatch Logs delivery destination, used for organizing, categorizing, and controlling access to the destination via IAM policies. (AI-inferred)
 	Value any
 }
 
@@ -28,7 +26,6 @@ var DeliveryDestination_TagsFields = ubx.FieldMap{
 	}
 
 type DeliveryDestinationConfig struct {
-	// The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred)
 	DeliveryDestinationPolicy any
 	// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay.
 	DeliveryDestinationType any
@@ -45,7 +42,6 @@ type DeliveryDestinationConfig struct {
 type DeliveryDestinationAttrs struct {
 	// The Amazon Resource Name (ARN) that uniquely identifies a resource.
 	Arn any
-	// The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred)
 	DeliveryDestinationPolicy any
 	// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay.
 	DeliveryDestinationType any

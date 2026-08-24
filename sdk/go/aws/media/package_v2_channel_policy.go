@@ -4,20 +4,14 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PackageV2ChannelPolicyConfig struct {
-	// The name of the MediaPackage v2 channel group that contains the channel to which this policy is attached. (AI-inferred)
 	ChannelGroupName any
-	// The name of the AWS MediaPackage v2 channel that this channel policy applies to. (AI-inferred)
 	ChannelName any
-	// The JSON resource policy document that defines the permissions for accessing the MediaPackage v2 channel, typically specifying allowed principals and actions. (AI-inferred)
 	Policy any
 }
 
 type PackageV2ChannelPolicyAttrs struct {
-	// The name of the MediaPackage v2 channel group that contains the channel to which this policy is attached. (AI-inferred)
 	ChannelGroupName any
-	// The name of the AWS MediaPackage v2 channel that this channel policy applies to. (AI-inferred)
 	ChannelName any
-	// The JSON resource policy document that defines the permissions for accessing the MediaPackage v2 channel, typically specifying allowed principals and actions. (AI-inferred)
 	Policy any
 }
 

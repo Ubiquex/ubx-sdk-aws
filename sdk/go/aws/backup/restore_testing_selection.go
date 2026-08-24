@@ -4,16 +4,12 @@ package backup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreTestingSelection_ProtectedResourceConditions_StringEquals struct {
-	// Specifies the AWS resource tag key (e.g., Environment) that the string_equals condition requires to be present with a matching value on a protected resource for the restore testing selection. (AI-inferred)
 	Key any
-	// The value that a protected resource's attribute or tag (identified by the corresponding key in the enclosing StringEquals key-value pair) must equal for the resource to match this restore testing selection condition. (AI-inferred)
 	Value any
 }
 
 type RestoreTestingSelection_ProtectedResourceConditions struct {
-	// Specifies key-value pairs for tag-based filtering, where a protected resource must have a tag whose key and value exactly match a pair in this list to be included in the restore testing selection. (AI-inferred)
 	StringEquals any
-	// A list of conditions where each specifies a resource attribute (such as a tag key) and a value, and the condition is satisfied when the resource's attribute value does not equal that value, thereby excluding matching protected resources from the restore testing selection. (AI-inferred)
 	StringNotEquals any
 }
 
@@ -36,40 +32,24 @@ var RestoreTestingSelection_ProtectedResourceConditionsFields = ubx.FieldMap{
 	}
 
 type RestoreTestingSelectionConfig struct {
-	// The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred)
 	IamRoleArn any
-	// The ARNs of the protected resources to include in the restore testing selection. (AI-inferred)
 	ProtectedResourceArns any
-	// Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred)
 	ProtectedResourceConditions any
-	// Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred)
 	ProtectedResourceType any
-	// A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred)
 	RestoreMetadataOverrides any
-	// The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred)
 	RestoreTestingPlanName any
-	// The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred)
 	RestoreTestingSelectionName any
-	// The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred)
 	ValidationWindowHours any
 }
 
 type RestoreTestingSelectionAttrs struct {
-	// The ARN of the IAM role that AWS Backup assumes to perform restore testing for the resources included in this restore testing selection. (AI-inferred)
 	IamRoleArn any
-	// The ARNs of the protected resources to include in the restore testing selection. (AI-inferred)
 	ProtectedResourceArns any
-	// Defines the key-value conditions (StringEquals and StringNotEquals) on protected resource attributes, such as tags, to filter which resources are included in the restore testing selection. (AI-inferred)
 	ProtectedResourceConditions any
-	// Specifies the AWS resource type (e.g., 'EBS', 'S3', or '*') that determines which protected resources are included in the restore testing selection. (AI-inferred)
 	ProtectedResourceType any
-	// A map of restore metadata overrides used to customize the restore job parameters for a restore testing selection. (AI-inferred)
 	RestoreMetadataOverrides any
-	// The name of the AWS Backup restore testing plan that this selection is associated with. (AI-inferred)
 	RestoreTestingPlanName any
-	// The name of the restore testing selection, which must be unique among all restore testing selections in the same restore testing plan. (AI-inferred)
 	RestoreTestingSelectionName any
-	// The number of hours in the validation window, starting from the beginning of the restore test, within which the restore test must complete successfully or it is considered failed. (AI-inferred)
 	ValidationWindowHours any
 }
 

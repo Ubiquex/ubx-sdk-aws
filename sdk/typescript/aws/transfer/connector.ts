@@ -2,14 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Connector_As2Config_AsyncMdnConfig {
-  /** Specifies the list of AS2 server IDs that are used as the intended recipients for asynchronous MDN (Message Disposition Notification) responses in this connector's AS2 configuration. (AI-inferred) */
   serverIds: string[] | Computed<string[]>;
   /** URL of the server to receive the MDN response on */
   url: string | Computed<string>;
 }
 
 export interface Connector_As2Config {
-  /** Configures asynchronous Message Disposition Notification (MDN) handling for the AS2 connector, specifying the destination URL, the Secrets Manager secret ARN used to sign the HTTPS request, and whether to send the original message with the MDN (BOTH or NONE). (AI-inferred) */
   asyncMdnConfig?: Connector_As2Config_AsyncMdnConfig | Computed<Connector_As2Config_AsyncMdnConfig>;
   /** ARN or name of the secret in AWS Secrets Manager which contains the credentials for Basic authentication. If empty, Basic authentication is disabled for the AS2 connector */
   basicAuthSecretId?: string | Computed<string>;
@@ -41,7 +39,6 @@ export interface Connector_EgressConfig_VpcLattice {
 }
 
 export interface Connector_EgressConfig {
-  /** Specifies the VPC Lattice configuration used by the AWS Transfer Family connector for routing outbound connections, allowing integration with a VPC Lattice service network to securely reach remote hosts. (AI-inferred) */
   vpcLattice: Connector_EgressConfig_VpcLattice | Computed<Connector_EgressConfig_VpcLattice>;
 }
 
@@ -56,7 +53,6 @@ export interface Connector_SftpConfig {
 
 export interface Connector_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the AWS Transfer Family connector, used for metadata such as cost allocation or organizational identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -112,9 +108,7 @@ export interface ConnectorConfig {
   accessRole: string | Computed<string>;
   /** Configuration for an AS2 connector. */
   as2Config?: Connector_As2Config | Computed<Connector_As2Config>;
-  /** Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred) */
   egressConfig?: Connector_EgressConfig | Computed<Connector_EgressConfig>;
-  /** Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred) */
   egressType?: string | Computed<string>;
   /** IP address type for Connector */
   ipAddressType?: string | Computed<string>;
@@ -139,9 +133,7 @@ export interface ConnectorAttrs {
   as2Config: Connector_As2Config;
   /** A unique identifier for the connector. */
   connectorId: string;
-  /** Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred) */
   egressConfig: Connector_EgressConfig;
-  /** Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred) */
   egressType: string;
   /** Detailed error message when Connector in ERRORED status */
   errorMessage: string;
@@ -155,7 +147,6 @@ export interface ConnectorAttrs {
   serviceManagedEgressIpAddresses: string[];
   /** Configuration for an SFTP connector. */
   sftpConfig: Connector_SftpConfig;
-  /** The current lifecycle status of the Transfer Family connector, such as ACTIVE or INACTIVE, indicating whether the connector is enabled for file transfers. (AI-inferred) */
   status: string;
   /** Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose. */
   tags: Connector_Tags[];

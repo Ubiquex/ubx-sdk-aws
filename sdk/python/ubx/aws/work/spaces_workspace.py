@@ -8,21 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpacesWorkspace_Tags:
-    # The key of a tag assigned to the WorkSpace, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class SpacesWorkspace_WorkspaceProperties:
-    # The name of the compute type for the WorkSpace (e.g., VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS), which determines the hardware specifications such as CPU, memory, and storage resources allocated to the virtual desktop. (AI-inferred)
     compute_type_name: Any = None
-    # Specifies the size of the root volume (C: drive on Windows, / on Linux) for the WorkSpace, in GiB. (AI-inferred)
     root_volume_size_gib: Any = None
-    # Controls whether the WorkSpace runs continuously (ALWAYS_ON) or automatically stops when idle (AUTO_STOP), affecting billing and availability. (AI-inferred)
     running_mode: Any = None
-    # The number of minutes a WorkSpace in AUTO_STOP running mode remains running after the user disconnects before it is automatically stopped, with valid values from 60 to 720 minutes. (AI-inferred)
     running_mode_auto_stop_timeout_in_minutes: Any = None
-    # The size, in GiB, of the user volume (persistent storage for user data) for the WorkSpace. (AI-inferred)
     user_volume_size_gib: Any = None
 
 _SpacesWorkspace_TagsFields = {
@@ -40,44 +34,26 @@ _SpacesWorkspace_WorkspacePropertiesFields = {
 
 @dataclasses.dataclass
 class SpacesWorkspaceConfig:
-    # The ID of the WorkSpace bundle that defines the operating system, software, and compute resources for the WorkSpace. (AI-inferred)
     bundle_id: Any = None
-    # The identifier of the AWS Directory Service directory in which the WorkSpace is registered. (AI-inferred)
     directory_id: Any = None
-    # Specifies whether the root volume (C: drive) of the WorkSpace is encrypted for this WorkSpace. (AI-inferred)
     root_volume_encryption_enabled: Any = None
-    # Specifies key-value tags to associate with the WorkSpace, enabling you to organize, identify, and track the resource for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # The login name of the user in the directory, for whom the WorkSpace is provisioned and associated. (AI-inferred)
     user_name: Any = None
-    # Indicates whether the user volume (the D: drive on Windows or /home on Linux) of the WorkSpace is encrypted. (AI-inferred)
     user_volume_encryption_enabled: Any = None
-    # The AWS KMS key ARN or ID used to encrypt the user and root storage volumes of the WorkSpace, which is required when volume encryption is enabled. (AI-inferred)
     volume_encryption_key: Any = None
-    # Specifies the runtime and storage configuration for the WorkSpace, including compute type, running mode, auto-stop timeout, and root/user volume sizes in GiB. (AI-inferred)
     workspace_properties: Any = None
 
 @dataclasses.dataclass
 class SpacesWorkspaceAttrs:
-    # The ID of the WorkSpace bundle that defines the operating system, software, and compute resources for the WorkSpace. (AI-inferred)
     bundle_id: Any = None
-    # The identifier of the AWS Directory Service directory in which the WorkSpace is registered. (AI-inferred)
     directory_id: Any = None
-    # The unique AWS-assigned identifier for the WorkSpace, typically in the form ws- followed by a string, used to reference the workspace within the account. (AI-inferred)
     id: Any = None
-    # Specifies whether the root volume (C: drive) of the WorkSpace is encrypted for this WorkSpace. (AI-inferred)
     root_volume_encryption_enabled: Any = None
-    # Specifies key-value tags to associate with the WorkSpace, enabling you to organize, identify, and track the resource for cost allocation and management. (AI-inferred)
     tags: Any = None
-    # The login name of the user in the directory, for whom the WorkSpace is provisioned and associated. (AI-inferred)
     user_name: Any = None
-    # Indicates whether the user volume (the D: drive on Windows or /home on Linux) of the WorkSpace is encrypted. (AI-inferred)
     user_volume_encryption_enabled: Any = None
-    # The AWS KMS key ARN or ID used to encrypt the user and root storage volumes of the WorkSpace, which is required when volume encryption is enabled. (AI-inferred)
     volume_encryption_key: Any = None
-    # The unique identifier assigned by AWS to the WorkSpace, such as 'ws-12345678'. (AI-inferred)
     workspace_id: Any = None
-    # Specifies the runtime and storage configuration for the WorkSpace, including compute type, running mode, auto-stop timeout, and root/user volume sizes in GiB. (AI-inferred)
     workspace_properties: Any = None
 
 SpacesWorkspace = ubx.ResourceBinding(

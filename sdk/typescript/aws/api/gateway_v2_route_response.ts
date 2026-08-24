@@ -8,7 +8,6 @@ export interface GatewayV2RouteResponseConfig {
   modelSelectionExpression?: string | Computed<string>;
   /** The response models for the route response. */
   responseModels?: unknown | Computed<unknown>;
-  /** A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred) */
   responseParameters?: unknown | Computed<unknown>;
   /** The route ID. */
   routeId: string | Computed<string>;
@@ -23,11 +22,9 @@ export interface GatewayV2RouteResponseAttrs {
   modelSelectionExpression: string;
   /** The response models for the route response. */
   responseModels: unknown;
-  /** A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred) */
   responseParameters: unknown;
   /** The route ID. */
   routeId: string;
-  /** The unique identifier that AWS API Gateway assigns to the route response upon creation, returned as a read-only value for referencing the route response in subsequent API operations. (AI-inferred) */
   routeResponseId: string;
   /** The route response key. */
   routeResponseKey: string;

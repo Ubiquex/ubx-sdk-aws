@@ -14,7 +14,6 @@ class Environment_Checks:
 
 @dataclasses.dataclass
 class Environment_ConnectivityInfo:
-    # Specifies the private route server peerings that the EVS environment uses to establish private network connectivity to your VPC. (AI-inferred)
     private_route_server_peerings: Any = None
 
 @dataclasses.dataclass
@@ -25,9 +24,7 @@ class Environment_Credentials:
 class Environment_Hosts:
     dedicated_host_id: Any = None
     host_name: Any = None
-    # The EC2 instance type of a host in an AWS Elastic Video System (EVS) environment, which determines the compute and memory capacity available for video processing workloads. (AI-inferred)
     instance_type: Any = None
-    # The name of the EC2 key pair used for SSH access to the host nodes in the EVS environment. (AI-inferred)
     key_name: Any = None
     placement_group_id: Any = None
 
@@ -41,16 +38,11 @@ class Environment_InitialVlans:
     expansion_vlan1: Any = None
     expansion_vlan2: Any = None
     hcx: Any = None
-    # The ID of the Amazon EC2 network ACL that controls HCX (Hybrid Cloud Extension) traffic on this initial VLAN in the EVS environment. (AI-inferred)
     hcx_network_acl_id: Any = None
-    # Indicates whether the initial VLAN is marked as public for VMware HCX, enabling its use for hybrid cloud network extension. (AI-inferred)
     is_hcx_public: Any = None
     nsx_up_link: Any = None
-    # The vm_management object under initial_vlans specifies the VLAN configuration used for managing virtual machines within the AWS EVS environment. (AI-inferred)
     vm_management: Any = None
-    # Configures the VMkernel management interface for the specified initial VLAN, providing networking details for management traffic within the AWS EVS environment. (AI-inferred)
     vmk_management: Any = None
-    # Specifies the VLAN configuration used for VMware vMotion traffic in the initial VLAN setup for the environment. (AI-inferred)
     vmotion: Any = None
     vsan: Any = None
     vtep: Any = None
@@ -71,20 +63,14 @@ class Environment_Tags:
 
 @dataclasses.dataclass
 class Environment_VcfHostnames:
-    # The hostname of the Cloud Builder virtual appliance in the VMware Cloud Foundation (VCF) environment, which is used to deploy and manage the software-defined data center (SDDC) infrastructure. (AI-inferred)
     cloud_builder: Any = None
     nsx: Any = None
     nsx_edge1: Any = None
     nsx_edge2: Any = None
-    # Specifies the fully-qualified domain name (FQDN) for the second NSX Manager node (index 1) in the VMware Cloud Foundation environment's hostname configuration block. (AI-inferred)
     nsx_manager1: Any = None
-    # The fully qualified hostname of the second NSX Manager node in the VMware Cloud Foundation (VCF) environment, required by the EVS environment to connect to your VCF management cluster. (AI-inferred)
     nsx_manager2: Any = None
-    # The hostname to assign to the third NSX Manager node within the VMware Cloud Foundation (VCF) environment managed by this AWS Elastic VMware Service (EVS) environment. (AI-inferred)
     nsx_manager3: Any = None
-    # The hostname of the SDDC Manager node in the VMware Cloud Foundation (VCF) environment that this AWS EVS environment is associated with. (AI-inferred)
     sddc_manager: Any = None
-    # The hostname or IP address of the vCenter server in the VMware Cloud Foundation environment represented by this resource. (AI-inferred)
     vcenter: Any = None
 
 _Environment_ConnectivityInfoFields = {
@@ -210,15 +196,12 @@ class EnvironmentConfig:
 class EnvironmentAttrs:
     checks: Any = None
     connectivity_info: Any = None
-    # This read-only string contains the ISO 8601 timestamp of when the EVS environment was created. (AI-inferred)
     created_at: Any = None
     credentials: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this EVS environment, assigned by AWS when the environment is created. (AI-inferred)
     environment_arn: Any = None
     environment_id: Any = None
     # The name of an EVS environment
     environment_name: Any = None
-    # The read-only `environment_state` field reports the current lifecycle status of the AWS Elemental Video System (EVS) environment as tracked by the `AWS::Evs::Environment` resource. (AI-inferred)
     environment_state: Any = None
     # The initial hosts for environment only required upon creation. Modification after creation will have no effect
     hosts: Any = None
@@ -231,7 +214,6 @@ class EnvironmentAttrs:
     service_access_security_groups: Any = None
     service_access_subnet_id: Any = None
     site_id: Any = None
-    # A read-only string that provides supplementary details about the current state of the AWS EVS environment, including error messages if the environment is not in a healthy state. (AI-inferred)
     state_details: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

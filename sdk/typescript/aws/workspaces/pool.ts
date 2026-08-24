@@ -2,29 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Pool_ApplicationSettings {
-  /** The name of the settings group that defines which application settings are persisted and applied for users of this WorkSpaces Pool. (AI-inferred) */
   settingsGroup?: string | Computed<string>;
-  /** The status of application settings for the WorkSpaces pool, required to be either 'ENABLED' or 'DISABLED' to control whether persistent app settings are active for users in the pool. (AI-inferred) */
   status: string | Computed<string>;
 }
 
 export interface Pool_Capacity {
-  /** Specifies the desired number of concurrent user sessions for the WorkSpaces pool, which the service uses to determine how many instances to run to support the expected load. (AI-inferred) */
   desiredUserSessions: number | Computed<number>;
 }
 
 export interface Pool_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the WorkSpaces pool, used for categorizing, identifying, and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Pool_TimeoutSettings {
-  /** Specifies the maximum time in seconds a user can remain disconnected from a pool WorkSpace before AWS automatically stops the WorkSpace. (AI-inferred) */
   disconnectTimeoutInSeconds?: number | Computed<number>;
-  /** Specifies the length of time, in seconds, that a WorkSpaces Pool session can remain idle before a user is automatically disconnected from their streaming session. (AI-inferred) */
   idleDisconnectTimeoutInSeconds?: number | Computed<number>;
-  /** Specifies the maximum time, in seconds, that a user session can remain active before it is automatically disconnected. (AI-inferred) */
   maxUserDurationInSeconds?: number | Computed<number>;
 }
 
@@ -49,50 +42,29 @@ const Pool_TimeoutSettingsFields: FieldMap = {
 };
 
 export interface PoolConfig {
-  /** Determines whether persistent application settings are enabled for the pool and, if so, specifies the settings group name that stores user application preferences. (AI-inferred) */
   applicationSettings?: Pool_ApplicationSettings | Computed<Pool_ApplicationSettings>;
-  /** The unique identifier of the WorkSpaces bundle that defines the operating system, applications, and hardware configuration for the virtual desktops in the pool. (AI-inferred) */
   bundleId: string | Computed<string>;
-  /** Configures the desired and maximum number of user sessions for the WorkSpaces pool, controlling how many concurrent sessions the pool can support and its auto-scaling limits. (AI-inferred) */
   capacity: Pool_Capacity | Computed<Pool_Capacity>;
-  /** Specifies a user-defined description for the WorkSpaces pool to help identify its purpose. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The identifier of the AWS Directory Service directory that the WorkSpaces pool uses for users and authentication. (AI-inferred) */
   directoryId: string | Computed<string>;
-  /** The name of the WorkSpaces pool, which uniquely identifies the pool within the AWS account and region. (AI-inferred) */
   poolName: string | Computed<string>;
-  /** Specifies whether the WorkSpaces in the pool are always running (ALWAYS_ON) or stop automatically when not in use (AUTO_STOP). (AI-inferred) */
   runningMode?: string | Computed<string>;
-  /** Defines the tags (key-value pairs) to associate with this WorkSpaces pool resource. (AI-inferred) */
   tags?: Pool_Tags[] | Computed<Pool_Tags[]>;
-  /** Defines the session timeout settings for the WorkSpaces pool, including the disconnect timeout, idle disconnect timeout, and maximum user duration in seconds. (AI-inferred) */
   timeoutSettings?: Pool_TimeoutSettings | Computed<Pool_TimeoutSettings>;
 }
 
 export interface PoolAttrs {
-  /** Determines whether persistent application settings are enabled for the pool and, if so, specifies the settings group name that stores user application preferences. (AI-inferred) */
   applicationSettings: Pool_ApplicationSettings;
-  /** The unique identifier of the WorkSpaces bundle that defines the operating system, applications, and hardware configuration for the virtual desktops in the pool. (AI-inferred) */
   bundleId: string;
-  /** Configures the desired and maximum number of user sessions for the WorkSpaces pool, controlling how many concurrent sessions the pool can support and its auto-scaling limits. (AI-inferred) */
   capacity: Pool_Capacity;
-  /** The `created_at` attribute specifies the timestamp when the WorkSpaces pool was created. (AI-inferred) */
   createdAt: string;
-  /** Specifies a user-defined description for the WorkSpaces pool to help identify its purpose. (AI-inferred) */
   description: string;
-  /** The identifier of the AWS Directory Service directory that the WorkSpaces pool uses for users and authentication. (AI-inferred) */
   directoryId: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces pool. (AI-inferred) */
   poolArn: string;
-  /** The unique identifier assigned by AWS to the WorkSpaces pool, used to reference the pool in other resources and API calls. (AI-inferred) */
   poolId: string;
-  /** The name of the WorkSpaces pool, which uniquely identifies the pool within the AWS account and region. (AI-inferred) */
   poolName: string;
-  /** Specifies whether the WorkSpaces in the pool are always running (ALWAYS_ON) or stop automatically when not in use (AUTO_STOP). (AI-inferred) */
   runningMode: string;
-  /** Defines the tags (key-value pairs) to associate with this WorkSpaces pool resource. (AI-inferred) */
   tags: Pool_Tags[];
-  /** Defines the session timeout settings for the WorkSpaces pool, including the disconnect timeout, idle disconnect timeout, and maximum user duration in seconds. (AI-inferred) */
   timeoutSettings: Pool_TimeoutSettings;
 }
 

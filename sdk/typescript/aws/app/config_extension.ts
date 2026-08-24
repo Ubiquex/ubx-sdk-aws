@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigExtension_Tags {
-  /** The key of a tag attached to the AWS AppConfig extension, used to organize and identify the extension resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS AppConfig extension, used to assign custom metadata for identifying, organizing, and managing the extension resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,37 +12,29 @@ const ConfigExtension_TagsFields: FieldMap = {
 };
 
 export interface ConfigExtensionConfig {
-  /** The actions that this AppConfig extension performs when invoked, each defining an action name, target URI, and optional IAM role ARN. (AI-inferred) */
   actions: unknown | Computed<unknown>;
   /** Description of the extension. */
   description?: string | Computed<string>;
-  /** The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred) */
   latestVersionNumber?: number | Computed<number>;
   /** Name of the extension. */
   name: string | Computed<string>;
-  /** Defines the set of input parameters for the extension, including each parameter's name, description, whether it is required, and an optional default value, which are referenced when the extension is invoked during AppConfig configuration deployments. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
   /** An array of key-value tags to apply to this resource. */
   tags?: ConfigExtension_Tags[] | Computed<ConfigExtension_Tags[]>;
 }
 
 export interface ConfigExtensionAttrs {
-  /** The actions that this AppConfig extension performs when invoked, each defining an action name, target URI, and optional IAM role ARN. (AI-inferred) */
   actions: unknown;
-  /** The Amazon Resource Name (ARN) of the AppConfig extension. (AI-inferred) */
   arn: string;
   /** Description of the extension. */
   description: string;
   id: string;
-  /** The version number of the current extension to be replaced, used as an optimistic concurrency check when updating the extension to prevent overwriting concurrent changes. (AI-inferred) */
   latestVersionNumber: number;
   /** Name of the extension. */
   name: string;
-  /** Defines the set of input parameters for the extension, including each parameter's name, description, whether it is required, and an optional default value, which are referenced when the extension is invoked during AppConfig configuration deployments. (AI-inferred) */
   parameters: unknown;
   /** An array of key-value tags to apply to this resource. */
   tags: ConfigExtension_Tags[];
-  /** The version number assigned to the extension by AWS AppConfig, which increments each time the extension is updated. (AI-inferred) */
   versionNumber: number;
 }
 

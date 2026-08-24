@@ -8,32 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BrewRecipe_Steps_Action:
-    # Specifies the data transformation action to apply in this recipe step, such as PROJECT or FILTER, matching one of DataBrew's supported operations. (AI-inferred)
     operation: Any = None
-    # A map of key-value pairs that provides operation-specific configuration for the transformation action, where the required and optional parameters depend on the selected operation (e.g., column names, ranges, or thresholds). (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class BrewRecipe_Steps_ConditionExpressions:
-    # The condition operator (such as `isEquals`, `isNull`, or `contains`) that determines whether the recipe step is applied to the target column, compared against the configured value. (AI-inferred)
     condition: Any = None
-    # Specifies the column in the dataset whose values are evaluated by the condition expression in a DataBrew recipe step. (AI-inferred)
     target_column: Any = None
-    # The value to compare against the target column's content when evaluating the condition expression for a recipe step. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BrewRecipe_Steps:
-    # Defines the transformation to apply in this recipe step, specifying the operation type and its parameters. (AI-inferred)
     action: Any = None
-    # Defines the list of condition expressions for a recipe step, where each expression specifies a condition, target column, and optional value to evaluate whether the step should be applied. (AI-inferred)
     condition_expressions: Any = None
 
 @dataclasses.dataclass
 class BrewRecipe_Tags:
-    # The key of a tag assigned to the DataBrew recipe, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
-    # Defines the value of a tag applied to the AWS DataBrew recipe, allowing you to add arbitrary metadata for cost allocation, resource grouping, and access control. (AI-inferred)
     value: Any = None
 
 _BrewRecipe_Steps_ActionFields = {
@@ -71,9 +62,7 @@ class BrewRecipeConfig:
     description: Any = None
     # Recipe name
     name: Any = None
-    # The ordered list of transformation steps, each specifying a DataBrew action and optional condition expressions, that define the recipe's data processing logic. (AI-inferred)
     steps: Any = None
-    # Defines one or more custom tags (key-value pairs) to attach to the recipe for metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -82,9 +71,7 @@ class BrewRecipeAttrs:
     description: Any = None
     # Recipe name
     name: Any = None
-    # The ordered list of transformation steps, each specifying a DataBrew action and optional condition expressions, that define the recipe's data processing logic. (AI-inferred)
     steps: Any = None
-    # Defines one or more custom tags (key-value pairs) to attach to the recipe for metadata and cost allocation. (AI-inferred)
     tags: Any = None
 
 BrewRecipe = ubx.ResourceBinding(

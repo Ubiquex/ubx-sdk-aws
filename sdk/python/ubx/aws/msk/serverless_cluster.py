@@ -8,24 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication_Sasl_Iam:
-    # Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication_Sasl:
-    # Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred)
     iam: Any = None
 
 @dataclasses.dataclass
 class ServerlessCluster_ClientAuthentication:
-    # Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred)
     sasl: Any = None
 
 @dataclasses.dataclass
 class ServerlessCluster_VpcConfigs:
-    # A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred)
     security_groups: Any = None
-    # The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred)
     subnet_ids: Any = None
 
 _ServerlessCluster_ClientAuthentication_Sasl_IamFields = {
@@ -55,26 +50,19 @@ _ServerlessCluster_VpcConfigsFields = {
 
 @dataclasses.dataclass
 class ServerlessClusterConfig:
-    # Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
     client_authentication: Any = None
-    # The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
     cluster_name: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
     vpc_configs: Any = None
 
 @dataclasses.dataclass
 class ServerlessClusterAttrs:
-    # The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred)
     arn: Any = None
-    # Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
     client_authentication: Any = None
-    # The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
     cluster_name: Any = None
     # A key-value pair to associate with a resource.
     tags: Any = None
-    # Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
     vpc_configs: Any = None
 
 ServerlessCluster = ubx.ResourceBinding(

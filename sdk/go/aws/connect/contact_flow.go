@@ -4,9 +4,7 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContactFlow_Tags struct {
-	// The key portion of a tag applied to an Amazon Connect contact flow, used to categorize the resource and enforce tag-based access control in IAM policies. (AI-inferred)
 	Key any
-	// The value of an individual tag assigned to the Amazon Connect contact flow. (AI-inferred)
 	Value any
 }
 

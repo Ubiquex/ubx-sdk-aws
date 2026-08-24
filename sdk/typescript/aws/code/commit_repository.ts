@@ -2,38 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CommitRepository_Code_S3 {
-  /** The name of the Amazon S3 bucket that contains the source code to be committed to the CodeCommit repository when the repository is created. (AI-inferred) */
   bucket: string | Computed<string>;
-  /** The S3 object key (file path within the bucket) of a ZIP archive containing the initial code that the CodeCommit repository is populated with when the repository is created, as part of the 'code' configuration's 's3' block. (AI-inferred) */
   key: string | Computed<string>;
-  /** Specifies the version ID of the S3 object that contains the initial code for the repository, enabling you to use a specific version when the object has multiple versions. (AI-inferred) */
   objectVersion?: string | Computed<string>;
 }
 
 export interface CommitRepository_Code {
-  /** The name of the branch in the repository to which the initial code (specified in the Code property) is committed when the repository is created. (AI-inferred) */
   branchName?: string | Computed<string>;
-  /** The S3 location (bucket, key, and optional object version) from which AWS CodeCommit imports the code for the repository's initial commit. (AI-inferred) */
   s3: CommitRepository_Code_S3 | Computed<CommitRepository_Code_S3>;
 }
 
 export interface CommitRepository_Tags {
-  /** The key of a tag to associate with the AWS CodeCommit repository, used for identifying and organizing the repository. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS CodeCommit repository, used to store metadata associated with the corresponding tag key. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface CommitRepository_Triggers {
-  /** Specifies the list of branches in the repository for which the trigger's events (such as create, update, or delete) should trigger the associated action (e.g., an SNS notification); if the list is empty, the trigger applies to all branches. (AI-inferred) */
   branches?: string[] | Computed<string[]>;
-  /** The custom_data field of a trigger is an optional string that AWS CodeCommit includes in the SNS notification payload delivered to the trigger's destination ARN, allowing you to pass arbitrary metadata to downstream consumers. (AI-inferred) */
   customData?: string | Computed<string>;
-  /** The ARN of the SNS topic that receives push notifications from this CodeCommit repository when the trigger condition is met. (AI-inferred) */
   destinationArn?: string | Computed<string>;
-  /** Lists the CodeCommit repository events (for example, push, createBranch, deleteBranch, createTag, deleteTag, or updateReference) that activate the trigger. (AI-inferred) */
   events?: string[] | Computed<string[]>;
-  /** The name of an AWS CodeCommit repository trigger, which must be unique within the repository and is used to identify the trigger when configuring and managing repository events. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -66,42 +54,25 @@ const CommitRepository_TriggersFields: FieldMap = {
 };
 
 export interface CommitRepositoryConfig {
-  /** Defines the initial code to be committed to the repository, specifying the S3 source (bucket, key, and optional object version), target branch, and commit message. (AI-inferred) */
   code?: CommitRepository_Code | Computed<CommitRepository_Code>;
-  /** The ID of the AWS KMS key used to encrypt the repository contents; if omitted, an AWS-managed key is used. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the description of the CodeCommit repository, which is displayed in the AWS Management Console and can be up to 1,000 characters long. (AI-inferred) */
   repositoryDescription?: string | Computed<string>;
-  /** Specifies the name of the AWS CodeCommit repository, which must be unique within the AWS account and region, and is used as the repository's identifier for clone URLs and API operations. (AI-inferred) */
   repositoryName: string | Computed<string>;
-  /** Defines a list of key-value tag objects to associate with the AWS CodeCommit repository, enabling you to categorize and filter the repository for cost tracking, access management, and resource organization. (AI-inferred) */
   tags?: CommitRepository_Tags[] | Computed<CommitRepository_Tags[]>;
-  /** Defines the list of SNS notification triggers for the repository, where each trigger specifies the SNS topic ARN, the repository events (such as 'all', 'update', 'create', or 'delete') that will fire the trigger, and optionally the branch names that restrict which events are published. (AI-inferred) */
   triggers?: CommitRepository_Triggers[] | Computed<CommitRepository_Triggers[]>;
 }
 
 export interface CommitRepositoryAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this CodeCommit repository within AWS. (AI-inferred) */
   arn: string;
-  /** The HTTP(S) clone URL for the AWS CodeCommit repository, which is used to clone the repository over HTTPS. (AI-inferred) */
   cloneUrlHttp: string;
-  /** The SSH URL used to clone the CodeCommit repository over SSH. (AI-inferred) */
   cloneUrlSsh: string;
-  /** Defines the initial code to be committed to the repository, specifying the S3 source (bucket, key, and optional object version), target branch, and commit message. (AI-inferred) */
   code: CommitRepository_Code;
-  /** The id is the repository name, which uniquely identifies the CodeCommit repository within AWS and is automatically populated from the repository name argument when the resource is created. (AI-inferred) */
   id: string;
-  /** The ID of the AWS KMS key used to encrypt the repository contents; if omitted, an AWS-managed key is used. (AI-inferred) */
   kmsKeyId: string;
-  /** The name attribute holds the repository name, which matches the RepositoryName property set at creation and is immutable afterwards. (AI-inferred) */
   name: string;
-  /** Specifies the description of the CodeCommit repository, which is displayed in the AWS Management Console and can be up to 1,000 characters long. (AI-inferred) */
   repositoryDescription: string;
-  /** Specifies the name of the AWS CodeCommit repository, which must be unique within the AWS account and region, and is used as the repository's identifier for clone URLs and API operations. (AI-inferred) */
   repositoryName: string;
-  /** Defines a list of key-value tag objects to associate with the AWS CodeCommit repository, enabling you to categorize and filter the repository for cost tracking, access management, and resource organization. (AI-inferred) */
   tags: CommitRepository_Tags[];
-  /** Defines the list of SNS notification triggers for the repository, where each trigger specifies the SNS topic ARN, the repository events (such as 'all', 'update', 'create', or 'delete') that will fire the trigger, and optionally the branch names that restrict which events are published. (AI-inferred) */
   triggers: CommitRepository_Triggers[];
 }
 

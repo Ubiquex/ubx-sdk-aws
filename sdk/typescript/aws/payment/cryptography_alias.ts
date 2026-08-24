@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CryptographyAliasConfig {
-  /** Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred) */
   aliasName: string | Computed<string>;
-  /** The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred) */
   keyArn?: string | Computed<string>;
 }
 
 export interface CryptographyAliasAttrs {
-  /** Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred) */
   aliasName: string;
-  /** The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred) */
   keyArn: string;
 }
 

@@ -2,32 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerlessSnapshot_Snapshot {
-  /** The administrator username for the Redshift Serverless namespace at the time the snapshot was created. (AI-inferred) */
   adminUsername?: string | Computed<string>;
-  /** The AWS KMS key ID used to encrypt the snapshot; if not specified, the default AWS-managed key for Redshift Serverless is used. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Redshift Serverless namespace that this snapshot is associated with. (AI-inferred) */
   namespaceArn?: string | Computed<string>;
-  /** The name of the Redshift Serverless namespace from which the snapshot is created, identifying the source namespace whose data is captured in the snapshot. (AI-inferred) */
   namespaceName?: string | Computed<string>;
-  /** The AWS account ID of the account that owns the snapshot. (AI-inferred) */
   ownerAccount?: string | Computed<string>;
-  /** Specifies the number of days that the Redshift Serverless snapshot is retained before being automatically deleted. (AI-inferred) */
   retentionPeriod?: number | Computed<number>;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Redshift Serverless snapshot. (AI-inferred) */
   snapshotArn?: string | Computed<string>;
-  /** The creation time of the Redshift Serverless snapshot, typically a computed ISO 8601 timestamp returned by AWS. (AI-inferred) */
   snapshotCreateTime?: string | Computed<string>;
-  /** The user-defined name of the Redshift Serverless snapshot, used to uniquely identify the snapshot within its namespace. (AI-inferred) */
   snapshotName?: string | Computed<string>;
-  /** The current lifecycle status of the serverless snapshot, indicating whether it is AVAILABLE, CREATING, DELETING, or in another state. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface ServerlessSnapshot_Tags {
-  /** The key of a user-defined tag attached to an Amazon Redshift Serverless snapshot, used to organize and identify the snapshot for cost allocation and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value for a tag key assigned to the Redshift Serverless snapshot, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -54,7 +42,6 @@ export interface ServerlessSnapshotAttrs {
   ownerAccount: string;
   /** The retention period of the snapshot. */
   retentionPeriod: number;
-  /** The `snapshot` computed attribute contains the full read-only snapshot object returned by the Redshift Serverless API, including details such as the snapshot ARN, namespace name, status, and creation time. (AI-inferred) */
   snapshot: ServerlessSnapshot_Snapshot;
   /** The name of the snapshot. */
   snapshotName: string;

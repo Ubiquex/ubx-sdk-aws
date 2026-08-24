@@ -4,219 +4,145 @@ package events
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rule_Tags struct {
-	// The user-defined key of a tag attached to the EventBridge rule, used to categorize and manage the rule within AWS. (AI-inferred)
 	Key any
-	// The value portion of a tag (key-value pair) attached to the EventBridge rule, used to organize, identify, and control access to the rule. (AI-inferred)
 	Value any
 }
 
 type Rule_Targets_AppSyncParameters struct {
-	// The GraphQL query or mutation (e.g., mutation { ... }) to execute against the AppSync API when this target is triggered by the event rule. (AI-inferred)
 	GraphQloperation any
 }
 
 type Rule_Targets_BatchParameters_ArrayProperties struct {
-	// The number of child jobs to run when the Batch job is submitted as an array job, controlling how many parallel attempts are launched. (AI-inferred)
 	Size any
 }
 
 type Rule_Targets_BatchParameters_RetryStrategy struct {
-	// Determines the number of times a failed AWS Batch job is retried (total attempts including the original), where each retry moves the job to RUNNABLE status and a value of 1 (the default) means no retries. (AI-inferred)
 	Attempts any
 }
 
 type Rule_Targets_BatchParameters struct {
-	// This object, nested within an EventBridge rule target's Batch parameters, defines the array size of the AWS Batch job, specifying how many child jobs the array job should launch. (AI-inferred)
 	ArrayProperties any
-	// The name or ARN of the AWS Batch job definition to run when the event rule matches an event and targets this Batch job. (AI-inferred)
 	JobDefinition any
-	// The name of the AWS Batch job to run when this target is invoked by the event rule. (AI-inferred)
 	JobName any
-	// Defines the retry strategy for the Batch job target, including the number of attempts to retry the job submission. (AI-inferred)
 	RetryStrategy any
 }
 
 type Rule_Targets_DeadLetterConfig struct {
-	// The ARN of the SQS queue to which EventBridge routes events that fail to be delivered to the target, as part of the target's dead-letter configuration. (AI-inferred)
 	Arn any
 }
 
 type Rule_Targets_EcsParameters_CapacityProviderStrategy struct {
-	// The base value designates how many tasks, at minimum, to run on the specified capacity provider within the capacity provider strategy for the ECS task launched by this EventBridge rule target. (AI-inferred)
 	Base any
-	// The name of the capacity provider (e.g., FARGATE or a custom capacity provider) used by the ECS task target's capacity provider strategy to determine the infrastructure on which the task runs. (AI-inferred)
 	CapacityProvider any
-	// The relative weight of the capacity provider, used to determine the proportion of tasks that are scheduled on it when multiple capacity providers are specified in the ECS task's capacity provider strategy. (AI-inferred)
 	Weight any
 }
 
 type Rule_Targets_EcsParameters_NetworkConfiguration_AwsVpcConfiguration struct {
-	// Indicates whether the ECS task's elastic network interface should be assigned a public IP address (ENABLED) or not (DISABLED) when the task runs with the awsvpc network mode. (AI-inferred)
 	AssignPublicIp any
-	// Specifies the security group IDs to attach to the ECS task's elastic network interface when this EventBridge rule target launches an ECS task, under the VPC configuration. (AI-inferred)
 	SecurityGroups any
-	// The IDs of the subnets in which the ECS task will run when the EventBridge rule triggers it. (AI-inferred)
 	Subnets any
 }
 
 type Rule_Targets_EcsParameters_NetworkConfiguration struct {
-	// Defines the VPC subnets, security groups, and public IP assignment for the ECS task or service used as the event target. (AI-inferred)
 	AwsVpcConfiguration any
 }
 
 type Rule_Targets_EcsParameters_PlacementConstraints struct {
-	// The placement constraint expression to apply to the ECS task launched by this rule, supporting attribute-based queries like `attribute:ecs.instance-type =~ t2.*` or `distinctInstance`. (AI-inferred)
 	Expression any
-	// Specifies the type of ECS placement constraint to apply to the task, with valid values `distinctInstance` or `memberOf`. (AI-inferred)
 	Type any
 }
 
 type Rule_Targets_EcsParameters_PlacementStrategies struct {
-	// The field to apply the ECS placement strategy against, such as 'attribute:ecs.availability-zone' or 'instanceId', typically used with the 'spread' placement strategy type. (AI-inferred)
 	Field any
-	// For an EventBridge rule target that runs an ECS task, this specifies the type of placement strategy (random, spread, or binpack) used to determine how tasks are placed across container instances. (AI-inferred)
 	Type any
 }
 
 type Rule_Targets_EcsParameters struct {
-	// Defines the capacity provider strategy used for ECS tasks launched by this EventBridge rule target, including a list of capacity providers with their weights and base values. (AI-inferred)
 	CapacityProviderStrategy any
-	// Indicates whether to enable Amazon ECS managed tags on the task launched by the EventBridge target. (AI-inferred)
 	EnableEcsmanagedTags any
-	// Enables ECS Exec for the task's containers, allowing you to run interactive commands inside them. (AI-inferred)
 	EnableExecuteCommand any
-	// The ECS task group to assign to the tasks launched by this EventBridge target, which overrides the group in the task definition and can be used for task grouping and filtering. (AI-inferred)
 	Group any
-	// The launch type (EC2 or FARGATE) that specifies how the ECS task is launched when the event rule triggers the target. (AI-inferred)
 	LaunchType any
-	// Configures the VPC subnets and security groups used by the ECS task or service that the EventBridge rule target runs. (AI-inferred)
 	NetworkConfiguration any
-	// Specifies the placement constraints for the ECS task invoked by the EventBridge rule, controlling which container instances or availability zones the task may be placed on. (AI-inferred)
 	PlacementConstraints any
-	// Specifies the placement strategy for ECS tasks started by this EventBridge target, controlling how tasks are distributed across container instances in the cluster (e.g., spread, binpack, or random). (AI-inferred)
 	PlacementStrategies any
-	// The platform version on which the ECS task runs, such as 'LATEST' or a specific version like '1.4.0'. (AI-inferred)
 	PlatformVersion any
-	// Specifies whether to propagate the tags from the task definition to the Amazon ECS task; valid values are `TASK_DEFINITION` or `NONE`. (AI-inferred)
 	PropagateTags any
-	// Specifies the optional reference ID string that identifies the ECS task started by this EventBridge rule target. (AI-inferred)
 	ReferenceId any
-	// Specifies a list of tags to apply to the ECS task that is launched by the EventBridge rule target. (AI-inferred)
 	TagList any
-	// Specifies the number of tasks to create when running the ECS task defined in the task definition. (AI-inferred)
 	TaskCount any
-	// The ARN of the ECS task definition that EventBridge invokes to start the ECS task when the rule fires for this target. (AI-inferred)
 	TaskDefinitionArn any
 }
 
 type Rule_Targets_HttpParameters struct {
-	// Specifies the HTTP headers to include in the request when the event rule target invokes an API destination or HTTP endpoint. (AI-inferred)
 	HeaderParameters any
-	// Specifies the list of concrete values to substitute for each path parameter placeholder (e.g., {id}) in the HTTP request URL when the rule invokes an API destination target. (AI-inferred)
 	PathParameterValues any
-	// A map of key-value pairs that are appended to the query string of the HTTP request sent to the target when the rule is invoked, allowing you to pass custom query parameters to an API destination or other HTTP target. (AI-inferred)
 	QueryStringParameters any
 }
 
 type Rule_Targets_InputTransformer struct {
-	// A map of user-defined variable names to JSONPath expressions that extract values from the source event, which are then referenced as variables in the input transformer's template. (AI-inferred)
 	InputPathsMap any
-	// Defines the template string that specifies how the event input is transformed before being sent to the target, using JSON paths enclosed in angular brackets (e.g., <$.source>) for dynamic values. (AI-inferred)
 	InputTemplate any
 }
 
 type Rule_Targets_KinesisParameters struct {
-	// A JSON path expression within the event payload that EventBridge uses to extract the partition key for the Kinesis record, required when the target is a Kinesis stream. (AI-inferred)
 	PartitionKeyPath any
 }
 
 type Rule_Targets_RedshiftDataParameters struct {
-	// The name of the Amazon Redshift database that the SQL statement is run against when the CloudWatch Events rule triggers the Redshift Data API target. (AI-inferred)
 	Database any
-	// The name of the database user that Amazon Redshift Data API uses to access the cluster when executing the SQL statement for this EventBridge target. (AI-inferred)
 	DbUser any
-	// The ARN of the AWS Secrets Manager secret that stores the Redshift cluster credentials used by the Redshift Data API to execute the target's SQL statement. (AI-inferred)
 	SecretManagerArn any
-	// Specifies the SQL statement text that Amazon EventBridge passes to the Amazon Redshift Data API for execution when the rule triggers this target. (AI-inferred)
 	Sql any
-	// A list of SQL statements to be executed against the Amazon Redshift cluster when the event rule triggers the Redshift Data API target. (AI-inferred)
 	Sqls any
-	// The name of the Redshift Data API prepared statement to execute when the event rule triggers the target. (AI-inferred)
 	StatementName any
-	// Whether to pass the original event as an `:event` parameter to the Redshift Data API statement executed by this EventBridge target. (AI-inferred)
 	WithEvent any
 }
 
 type Rule_Targets_RetryPolicy struct {
-	// The maximum time in seconds (1-86400) that EventBridge retains an event for a target after a failed invocation, after which the event is discarded and no further retries are made. (AI-inferred)
 	MaximumEventAgeInSeconds any
-	// The maximum number of times EventBridge retries invoking the target after a failed invocation, as part of the rule's retry policy. (AI-inferred)
 	MaximumRetryAttempts any
 }
 
 type Rule_Targets_RunCommandParameters_RunCommandTargets struct {
-	// The EC2 tag key used by Systems Manager Run Command to select which instances the command targets. (AI-inferred)
 	Key any
-	// The list of string values for a RunCommand target, which, together with its key, define the set of EC2 instances (e.g., by tag or resource group) that receive the Systems Manager Run Command invoked by this EventBridge rule. (AI-inferred)
 	Values any
 }
 
 type Rule_Targets_RunCommandParameters struct {
-	// Specifies the AWS Systems Manager Run Command target instances by defining a key (such as an EC2 tag key or resource group) and a list of values used to select which instances the command runs against. (AI-inferred)
 	RunCommandTargets any
 }
 
 type Rule_Targets_SageMakerPipelineParameters_PipelineParameterList struct {
-	// The name of a SageMaker pipeline parameter to pass as input when the EventBridge rule target invokes the pipeline. (AI-inferred)
 	Name any
-	// The value of a SageMaker pipeline parameter (Name/Value pair) supplied to a SageMaker pipeline when the EventBridge rule triggers the pipeline execution. (AI-inferred)
 	Value any
 }
 
 type Rule_Targets_SageMakerPipelineParameters struct {
-	// The list of SageMaker pipeline input parameters (name-value pairs) that are passed to the pipeline execution when EventBridge invokes the SageMaker pipeline target. (AI-inferred)
 	PipelineParameterList any
 }
 
 type Rule_Targets_SqsParameters struct {
-	// Specifies the message group ID for messages sent to a FIFO SQS queue as an EventBridge rule target, which groups messages so that they are processed in order and are not interleaved with messages from other groups. (AI-inferred)
 	MessageGroupId any
 }
 
 type Rule_Targets struct {
-	// For an EventBridge target that invokes an AWS AppSync GraphQL API, this object specifies AppSync-specific parameters such as the GraphQL operation (mutation) to execute with the event payload. (AI-inferred)
 	AppSyncParameters any
-	// The ARN of the target resource (such as a Lambda function, SNS topic, or other AWS service) that the rule invokes or sends events to. (AI-inferred)
 	Arn any
-	// Specifies the parameters for an AWS Batch job that the event rule invokes as a target, including job definition, job name, array properties, and retry strategy. (AI-inferred)
 	BatchParameters any
-	// Configures a dead-letter queue (specified by its SQS queue ARN) to which EventBridge sends events that fail delivery to this target. (AI-inferred)
 	DeadLetterConfig any
-	// Specifies the ECS task definition and related settings used when the event target invokes an Amazon ECS task. (AI-inferred)
 	EcsParameters any
-	// Specifies the HTTP parameters (headers, path, and query string) to use when the target is an API destination or webhook. (AI-inferred)
 	HttpParameters any
-	// The Id property of a target provides a unique, user-defined name for that target within the rule, and it is required. (AI-inferred)
 	Id any
-	// Specifies the literal text or JSON payload delivered to the target, overriding the original event that triggered the rule. (AI-inferred)
 	Input any
-	// A JSONPath string that selects a portion of the original event to pass as the input to this target, overriding the full event payload. (AI-inferred)
 	InputPath any
-	// Defines a custom transformation of the incoming event using a set of JSON path mappings and an input template, so the payload delivered to the target is reshaped from the original event. (AI-inferred)
 	InputTransformer any
-	// Defines the parameters for a Kinesis stream target, most notably the partition key that determines which shard the event is delivered to. (AI-inferred)
 	KinesisParameters any
-	// Specifies the parameters for executing an Amazon Redshift Data API statement as the EventBridge rule target, including the database, SQL command, and optional database user or secret manager credentials. (AI-inferred)
 	RedshiftDataParameters any
-	// Configures the retry policy for the target, specifying the maximum number of retry attempts and the maximum event age for a failed event invocation. (AI-inferred)
 	RetryPolicy any
-	// The ARN of the IAM role that EventBridge assumes to invoke the target. (AI-inferred)
 	RoleArn any
-	// Specifies the parameters for an AWS Systems Manager Run Command that is invoked when the rule's target is an EC2 instance via SSM Run Command. (AI-inferred)
 	RunCommandParameters any
-	// An object that holds the runtime parameters for a SageMaker Pipeline target, including a list of pipeline parameter name-value pairs to pass to the pipeline execution. (AI-inferred)
 	SageMakerPipelineParameters any
-	// Configuration for an SQS queue target, containing FIFO-specific settings such as the message group ID and message deduplication ID. (AI-inferred)
 	SqsParameters any
 }
 

@@ -4,12 +4,10 @@ package quick
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SightOauthClientApplication_IdentityProviderVpcConnectionProperties struct {
-	// The ARN of the VPC connection used by the identity provider for the OAuth client application, enabling the app to reach the identity provider over a private network. (AI-inferred)
 	VpcConnectionArn any
 }
 
 type SightOauthClientApplication_Tags struct {
-	// The key of a tag that can be assigned to this AWS QuickSight OAuth client application for identification and management. (AI-inferred)
 	Key any
 	Value any
 }
@@ -24,58 +22,33 @@ var SightOauthClientApplication_TagsFields = ubx.FieldMap{
 	}
 
 type SightOauthClientApplicationConfig struct {
-	// The OAuth client ID that identifies the third-party client application being registered with Amazon QuickSight for embedded analytics. (AI-inferred)
 	ClientId any
-	// The client secret associated with the OAuth client application, used by QuickSight to authenticate the application when requesting access tokens from the OAuth authorization server. (AI-inferred)
 	ClientSecret any
-	// Specifies the type of the external data source (for example, Salesforce) for which this QuickSight OAuth client application provides authentication. (AI-inferred)
 	DataSourceType any
-	// This object specifies the VPC connection properties that allow Amazon QuickSight to reach the identity provider's OAuth endpoints over a private network. (AI-inferred)
 	IdentityProviderVpcConnectionProperties any
-	// The name of the OAuth client application, which is required to identify the external application when registering it with QuickSight. (AI-inferred)
 	Name any
-	// The URL of the OAuth authorization endpoint to which users are redirected to authenticate for the QuickSight OAuth client application. (AI-inferred)
 	OauthAuthorizationEndpointUrl any
-	// The identifier of the OAuth client application being registered with Amazon QuickSight. (AI-inferred)
 	OauthClientApplicationId any
-	// Specifies the authentication method used by the OAuth client application, with allowed values such as CLIENT_SECRET or JWT_BEARER, which determines how the client authenticates to QuickSight during token exchange. (AI-inferred)
 	OauthClientAuthenticationType any
-	// The OAuth scopes that define the permissions granted to the QuickSight OAuth client application, specifying which QuickSight API actions it can perform on the user's behalf. (AI-inferred)
 	OauthScopes any
-	// The URL of the OAuth token endpoint where the QuickSight OAuth client application exchanges authorization codes or refreshes tokens to obtain access tokens. (AI-inferred)
 	OauthTokenEndpointUrl any
-	// This property defines a list of tag objects (each containing a Key and Value) to attach to the Amazon QuickSight OAuth client application, used for resource management, cost allocation, and metadata. (AI-inferred)
 	Tags any
 }
 
 type SightOauthClientApplicationAttrs struct {
-	// The Amazon Resource Name (ARN) of the registered OAuth client application, which uniquely identifies it for use in IAM policies and QuickSight APIs. (AI-inferred)
 	Arn any
-	// The OAuth client ID that identifies the third-party client application being registered with Amazon QuickSight for embedded analytics. (AI-inferred)
 	ClientId any
-	// The client secret associated with the OAuth client application, used by QuickSight to authenticate the application when requesting access tokens from the OAuth authorization server. (AI-inferred)
 	ClientSecret any
-	// The creation timestamp of the QuickSight OAuth client application, returned as a string in ISO 8601 date-time format. (AI-inferred)
 	CreatedTime any
-	// Specifies the type of the external data source (for example, Salesforce) for which this QuickSight OAuth client application provides authentication. (AI-inferred)
 	DataSourceType any
-	// This object specifies the VPC connection properties that allow Amazon QuickSight to reach the identity provider's OAuth endpoints over a private network. (AI-inferred)
 	IdentityProviderVpcConnectionProperties any
-	// The timestamp of the last update to this QuickSight OAuth client application, returned as a read-only string. (AI-inferred)
 	LastUpdatedTime any
-	// The name of the OAuth client application, which is required to identify the external application when registering it with QuickSight. (AI-inferred)
 	Name any
-	// The URL of the OAuth authorization endpoint to which users are redirected to authenticate for the QuickSight OAuth client application. (AI-inferred)
 	OauthAuthorizationEndpointUrl any
-	// The identifier of the OAuth client application being registered with Amazon QuickSight. (AI-inferred)
 	OauthClientApplicationId any
-	// Specifies the authentication method used by the OAuth client application, with allowed values such as CLIENT_SECRET or JWT_BEARER, which determines how the client authenticates to QuickSight during token exchange. (AI-inferred)
 	OauthClientAuthenticationType any
-	// The OAuth scopes that define the permissions granted to the QuickSight OAuth client application, specifying which QuickSight API actions it can perform on the user's behalf. (AI-inferred)
 	OauthScopes any
-	// The URL of the OAuth token endpoint where the QuickSight OAuth client application exchanges authorization codes or refreshes tokens to obtain access tokens. (AI-inferred)
 	OauthTokenEndpointUrl any
-	// This property defines a list of tag objects (each containing a Key and Value) to attach to the Amazon QuickSight OAuth client application, used for resource management, cost allocation, and metadata. (AI-inferred)
 	Tags any
 }
 

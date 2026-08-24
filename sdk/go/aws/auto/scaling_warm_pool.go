@@ -4,7 +4,6 @@ package auto
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScalingWarmPool_InstanceReusePolicy struct {
-	// When true, instances that are scaled in from the Auto Scaling group are returned to the warm pool for reuse instead of being terminated. (AI-inferred)
 	ReuseOnScaleIn any
 }
 
@@ -13,28 +12,18 @@ var ScalingWarmPool_InstanceReusePolicyFields = ubx.FieldMap{
 	}
 
 type ScalingWarmPoolConfig struct {
-	// The name of the Auto Scaling group for which the warm pool is configured. (AI-inferred)
 	AutoScalingGroupName any
-	// Configures the instance reuse policy for the warm pool, which controls whether instances removed during scale-in are reused when the Auto Scaling group scales out. (AI-inferred)
 	InstanceReusePolicy any
-	// Specifies the maximum number of instances that can be in the warm pool and the Auto Scaling group together, defaulting to the group's maximum capacity if not provided. (AI-inferred)
 	MaxGroupPreparedCapacity any
-	// Specifies the minimum number of instances to maintain in the warm pool. (AI-inferred)
 	MinSize any
-	// Specifies whether instances in the warm pool are stopped (Stopped, so they do not incur instance charges) or running (Running, so they incur instance charges). (AI-inferred)
 	PoolState any
 }
 
 type ScalingWarmPoolAttrs struct {
-	// The name of the Auto Scaling group for which the warm pool is configured. (AI-inferred)
 	AutoScalingGroupName any
-	// Configures the instance reuse policy for the warm pool, which controls whether instances removed during scale-in are reused when the Auto Scaling group scales out. (AI-inferred)
 	InstanceReusePolicy any
-	// Specifies the maximum number of instances that can be in the warm pool and the Auto Scaling group together, defaulting to the group's maximum capacity if not provided. (AI-inferred)
 	MaxGroupPreparedCapacity any
-	// Specifies the minimum number of instances to maintain in the warm pool. (AI-inferred)
 	MinSize any
-	// Specifies whether instances in the warm pool are stopped (Stopped, so they do not incur instance charges) or running (Running, so they incur instance charges). (AI-inferred)
 	PoolState any
 }
 

@@ -52,7 +52,6 @@ export interface Workspace_SamlConfiguration {
 
 export interface Workspace_Tags {
   key?: string | Computed<string>;
-  /** The value assigned to a tag key for the Grafana workspace, used to categorize, organize, and track the resource for cost and management purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

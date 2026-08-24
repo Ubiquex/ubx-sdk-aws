@@ -4,7 +4,6 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption struct {
-	// The ARN of the CloudWatch log stream that the Kinesis Data Analytics for Apache Flink application writes its diagnostic logs to. (AI-inferred)
 	LogStreamArn any
 }
 
@@ -13,16 +12,12 @@ var AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionFields 
 	}
 
 type AnalyticsV2ApplicationCloudWatchLoggingOptionConfig struct {
-	// The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred)
 	ApplicationName any
-	// Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred)
 	CloudWatchLoggingOption any
 }
 
 type AnalyticsV2ApplicationCloudWatchLoggingOptionAttrs struct {
-	// The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred)
 	ApplicationName any
-	// Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred)
 	CloudWatchLoggingOption any
 	Id any
 }

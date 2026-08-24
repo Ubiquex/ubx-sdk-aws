@@ -2,26 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Cluster_Endpoint {
-  /** The DNS hostname of the Amazon Redshift cluster's connection endpoint, used to connect to the cluster. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The TCP port number on which the Redshift cluster accepts incoming connections, typically 5439 by default. (AI-inferred) */
   port?: string | Computed<string>;
 }
 
 export interface Cluster_LoggingProperties {
-  /** The name of the S3 bucket where Redshift audit logs are delivered when logging is enabled for the cluster. (AI-inferred) */
   bucketName?: string | Computed<string>;
-  /** Specifies whether the Redshift cluster's query logging destination is Amazon S3 ('s3') or Amazon CloudWatch Logs ('cloudwatch'), used in the LoggingProperties for enabling and configuring audit logging. (AI-inferred) */
   logDestinationType?: string | Computed<string>;
-  /** Specifies the types of Redshift logs (connectionlog, useractivitylog, or userlog) to export to the configured S3 bucket when logging is enabled. (AI-inferred) */
   logExports?: string[] | Computed<string[]>;
-  /** When cluster logging is enabled, this S3 key prefix is prepended to the log file names uploaded to the destination S3 bucket, allowing logs to be organized under a common folder path. (AI-inferred) */
   s3KeyPrefix?: string | Computed<string>;
 }
 
 export interface Cluster_Tags {
   key?: string | Computed<string>;
-  /** Specifies the value component of a user-defined tag attached to the Amazon Redshift cluster, used for resource organization, cost allocation, and access control via the tag key-value pair. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -90,7 +83,6 @@ export interface ClusterConfig {
   iamRoles?: string[] | Computed<string[]>;
   /** The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster. */
   kmsKeyId?: unknown | Computed<unknown>;
-  /** Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred) */
   loggingProperties?: Cluster_LoggingProperties | Computed<Cluster_LoggingProperties>;
   /** The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied. */
   maintenanceTrackName?: string | Computed<string>;
@@ -112,7 +104,6 @@ export interface ClusterConfig {
   nodeType: string | Computed<string>;
   /** The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node. */
   numberOfNodes?: number | Computed<number>;
-  /** The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred) */
   ownerAccount?: string | Computed<string>;
   /** The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings */
   port?: number | Computed<number>;
@@ -189,7 +180,6 @@ export interface ClusterAttrs {
   elasticIp: string;
   /** If true, the data in the cluster is encrypted at rest. */
   encrypted: boolean;
-  /** The endpoint object provides the DNS address and port used to connect to the Redshift cluster. (AI-inferred) */
   endpoint: Cluster_Endpoint;
   /** An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see Enhanced VPC Routing in the Amazon Redshift Cluster Management Guide. If this option is true , enhanced VPC routing is enabled. Default: false */
   enhancedVpcRouting: boolean;
@@ -201,7 +191,6 @@ export interface ClusterAttrs {
   iamRoles: string[];
   /** The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster. */
   kmsKeyId: unknown;
-  /** Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred) */
   loggingProperties: Cluster_LoggingProperties;
   /** The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied. */
   maintenanceTrackName: string;
@@ -225,7 +214,6 @@ export interface ClusterAttrs {
   nodeType: string;
   /** The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node. */
   numberOfNodes: number;
-  /** The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred) */
   ownerAccount: string;
   /** The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings */
   port: number;

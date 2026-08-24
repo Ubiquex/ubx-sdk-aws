@@ -4,18 +4,13 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TCacertificate_RegistrationConfig struct {
-	// The ARN of the AWS IoT role that grants permission to register the CA certificate during device certificate registration. (AI-inferred)
 	RoleArn any
-	// The body of the AWS IoT provisioning template used to automatically register device certificates signed by this CA certificate. (AI-inferred)
 	TemplateBody any
-	// The name of the AWS IoT provisioning template used during certificate registration to define the resources and policies automatically created when a device certificate is registered under this CA certificate. (AI-inferred)
 	TemplateName any
 }
 
 type TCacertificate_Tags struct {
-	// The key (name) of a tag attached to the AWS IoT CA certificate, used to identify and categorize the certificate within AWS resource tagging systems. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS IoT CA certificate, used to categorize or identify the resource. (AI-inferred)
 	Value any
 }
 
@@ -31,17 +26,11 @@ var TCacertificate_TagsFields = ubx.FieldMap{
 	}
 
 type TCacertificateConfig struct {
-	// Controls whether certificates signed by this CA certificate are automatically registered with AWS IoT upon first use, with allowed values such as 'ENABLE' and 'DISABLE'. (AI-inferred)
 	AutoRegistrationStatus any
-	// The PEM-encoded CA certificate content that AWS IoT uses to register device certificates and verify their authenticity. (AI-inferred)
 	CacertificatePem any
-	// Specifies whether the CA certificate is used for device authentication (DEFAULT) or TLS client authentication (SNI_ONLY) in AWS IoT. (AI-inferred)
 	CertificateMode any
-	// Specifies the registration configuration for this CA certificate, including the registration template body and the IAM role that AWS IoT uses to provision device certificates. (AI-inferred)
 	RegistrationConfig any
-	// When set to true, this boolean removes the auto-registration for device certificates signed by this CA certificate when the CA certificate is deleted from AWS IoT. (AI-inferred)
 	RemoveAutoRegistration any
-	// Specifies the operational status of the CA certificate, which must be either 'ACTIVE' or 'INACTIVE', controlling whether the certificate is enabled for device authentication in AWS IoT. (AI-inferred)
 	Status any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -50,21 +39,13 @@ type TCacertificateConfig struct {
 }
 
 type TCacertificateAttrs struct {
-	// The Amazon Resource Name (ARN) that AWS assigns to the CA certificate when it is registered in AWS IoT. (AI-inferred)
 	Arn any
-	// Controls whether certificates signed by this CA certificate are automatically registered with AWS IoT upon first use, with allowed values such as 'ENABLE' and 'DISABLE'. (AI-inferred)
 	AutoRegistrationStatus any
-	// The PEM-encoded CA certificate content that AWS IoT uses to register device certificates and verify their authenticity. (AI-inferred)
 	CacertificatePem any
-	// Specifies whether the CA certificate is used for device authentication (DEFAULT) or TLS client authentication (SNI_ONLY) in AWS IoT. (AI-inferred)
 	CertificateMode any
-	// The unique identifier of the CA certificate, assigned by AWS IoT when the CA certificate is registered. (AI-inferred)
 	Id any
-	// Specifies the registration configuration for this CA certificate, including the registration template body and the IAM role that AWS IoT uses to provision device certificates. (AI-inferred)
 	RegistrationConfig any
-	// When set to true, this boolean removes the auto-registration for device certificates signed by this CA certificate when the CA certificate is deleted from AWS IoT. (AI-inferred)
 	RemoveAutoRegistration any
-	// Specifies the operational status of the CA certificate, which must be either 'ACTIVE' or 'INACTIVE', controlling whether the certificate is enabled for device authentication in AWS IoT. (AI-inferred)
 	Status any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

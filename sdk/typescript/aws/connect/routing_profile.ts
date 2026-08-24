@@ -2,44 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoutingProfile_ManualAssignmentQueueConfigs_QueueReference {
-  /** Specifies the contact channel (VOICE, CHAT, or TASK) for the queue reference in this manual assignment queue configuration, determining which channel the queue handles for manual assignment in the routing profile. (AI-inferred) */
   channel?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Amazon Connect queue that is included in the routing profile's manual assignment queue configuration, allowing agents to manually assign contacts to that queue. (AI-inferred) */
   queueArn?: string | Computed<string>;
 }
 
 export interface RoutingProfile_ManualAssignmentQueueConfigs {
-  /** Specifies the queue and its contact channel (such as VOICE or CHAT) that manual assignment uses to route contacts, containing the queue ID and channel type. (AI-inferred) */
   queueReference?: RoutingProfile_ManualAssignmentQueueConfigs_QueueReference | Computed<RoutingProfile_ManualAssignmentQueueConfigs_QueueReference>;
 }
 
 export interface RoutingProfile_MediaConcurrencies_CrossChannelBehavior {
-  /** Determines whether contacts from other channels are allowed to be routed to the agent while the agent is handling a contact on this media channel, with valid values ALLOW or DENY. (AI-inferred) */
   behaviorType?: string | Computed<string>;
 }
 
 export interface RoutingProfile_MediaConcurrencies {
-  /** Specifies the contact channel type (e.g., VOICE, CHAT, or TASK) to which the media concurrency limit applies in the Amazon Connect routing profile. (AI-inferred) */
   channel?: string | Computed<string>;
-  /** The maximum number of concurrent contacts of the channel (e.g., VOICE, CHAT) that an agent assigned to this routing profile can handle at the same time. (AI-inferred) */
   concurrency?: number | Computed<number>;
-  /** Specifies how contacts from other channels are routed when this channel's concurrency limit is reached, with a `behavior_type` value (`ROUTE_CURRENT_CHANNEL_ONLY` or `ROUTE_ANY_CHANNEL`) controlling whether only the current channel or any channel can be routed to the agent. (AI-inferred) */
   crossChannelBehavior?: RoutingProfile_MediaConcurrencies_CrossChannelBehavior | Computed<RoutingProfile_MediaConcurrencies_CrossChannelBehavior>;
 }
 
 export interface RoutingProfile_QueueConfigs {
-  /** Specifies the delay in seconds that a contact waits in this queue before the routing profile attempts to route the contact to a lower-priority queue (or to an available agent, if no other queues are configured). (AI-inferred) */
   delay?: number | Computed<number>;
-  /** The priority assigned to a specific queue in the routing profile, where lower numbers indicate higher routing priority and contact distribution order. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** Specifies the Amazon Connect queue to which this routing profile queue configuration applies, identified by its queue ID or ARN. (AI-inferred) */
   queueReference?: RoutingProfile_ManualAssignmentQueueConfigs_QueueReference | Computed<RoutingProfile_ManualAssignmentQueueConfigs_QueueReference>;
 }
 
 export interface RoutingProfile_Tags {
-  /** The user-defined key of a tag that can be attached to an Amazon Connect routing profile to add custom metadata for resource management and categorization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag associated with the AWS Connect routing profile, used for resource metadata and categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

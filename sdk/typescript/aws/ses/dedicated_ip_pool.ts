@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DedicatedIpPool_Tags {
-  /** The key (e.g., 'Environment') of a tag assigned to this SES dedicated IP pool, used to categorize or identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag assigned to the Amazon SES dedicated IP pool, providing user-defined metadata for resource organization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -23,28 +23,19 @@ class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemp
 @dataclasses.dataclass
 class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes_Ebs:
     ebs_card_index: Any = None
-    # Indicates whether the EBS volume is encrypted at rest; when true, the volume is encrypted using an AWS KMS key. (AI-inferred)
     encrypted: Any = None
-    # Specifies the provisioned IOPS (input/output operations per second) for the EBS volume defined in the launch template's block device mapping. (AI-inferred)
     iops: Any = None
-    # The KMS key ID used to encrypt the ephemeral EBS volumes attached to the EC2 instances launched for the Bedrock agent's compute capacity, enabling customer-managed encryption for these temporary storage volumes. (AI-inferred)
     kms_key_id: Any = None
-    # Specifies the EBS snapshot ID used to initialize the ephemeral EBS volume attached to EC2 instances launched for this Bedrock agent core capacity provider. (AI-inferred)
     snapshot_id: Any = None
-    # The throughput (in MiB/s) for the EBS volume attached as an ephemeral volume to the compute instances launched by the capacity provider's launch template, determining the sustained I/O performance of that volume. (AI-inferred)
     throughput: Any = None
     volume_initialization_rate: Any = None
-    # Specifies the size of the EBS ephemeral volume in GiB within the EC2 launch parameters for the core capacity provider's compute configuration. (AI-inferred)
     volume_size: Any = None
     volume_type: Any = None
 
 @dataclasses.dataclass
 class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_EphemeralVolumes:
-    # Specifies the device name (e.g., /dev/sdb) for an ephemeral volume in the EC2 launch template configuration used by the Bedrock agent core capacity provider. (AI-inferred)
     device_name: Any = None
-    # Configures the Amazon EBS volume settings (such as size, volume type, and encryption) for an ephemeral volume attached to EC2 instances launched using the launch template in the Bedrock agent core capacity provider's compute configuration. (AI-inferred)
     ebs: Any = None
-    # Sets the virtual device name (e.g., 'ephemeral0') for an ephemeral instance-store volume in the EC2 launch template's block device mapping used by the Bedrock agent core capacity provider's compute configuration. (AI-inferred)
     virtual_name: Any = None
 
 @dataclasses.dataclass
@@ -54,7 +45,6 @@ class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemp
 
 @dataclasses.dataclass
 class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_LaunchTemplateSource_LaunchParameters_LicenseSpecifications:
-    # The ARN of an AWS License Manager license configuration that is applied to EC2 instances launched from this launch template. (AI-inferred)
     license_configuration_arn: Any = None
 
 @dataclasses.dataclass
@@ -108,24 +98,16 @@ class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_RootVolume
 @dataclasses.dataclass
 class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes_EbsConfiguration:
     encrypted: Any = None
-    # The provisioned IOPS (input/output operations per second) for the EBS volume defined in the EC2 compute configuration of the Bedrock agent core capacity provider. (AI-inferred)
     iops: Any = None
-    # Specifies the ID of the AWS KMS key used to encrypt the EBS volume defined in the EC2 configuration of the Bedrock Agent Core capacity provider's compute configuration. (AI-inferred)
     kms_key_id: Any = None
-    # The name field provides a unique logical identifier for the EBS volume within the compute configuration, which is used to reference the volume when attaching or mounting it to the EC2 instances. (AI-inferred)
     name: Any = None
-    # The size of the Amazon Elastic Block Store (EBS) volume, in GiB, used by the EC2 compute configuration for this Bedrock agent core capacity provider. (AI-inferred)
     size_gi_b: Any = None
-    # The ID of the EBS snapshot from which the volume is created, used to initialize the volume with data when configuring the EC2 compute resources for the Bedrock agent capacity provider. (AI-inferred)
     snapshot_id: Any = None
-    # Specifies the throughput (in MiB/s) for the EBS volumes attached to the EC2 instances in the compute configuration of the Bedrock agent core capacity provider, controlling the I/O performance of the storage. (AI-inferred)
     throughput: Any = None
-    # Specifies the EBS volume type (e.g., gp3, io2) to use for the volumes attached to the EC2 instances in the compute configuration of the Bedrock agent core capacity provider. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class AgentCoreCapacityProvider_ComputeConfiguration_Ec2Configuration_Volumes:
-    # Specifies the Amazon Elastic Block Store (EBS) volume configuration, including settings like volume size, volume type, and IOPS, for a volume attached to the EC2 instances in the capacity provider's compute configuration. (AI-inferred)
     ebs_configuration: Any = None
 
 @dataclasses.dataclass

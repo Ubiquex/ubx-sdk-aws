@@ -4,14 +4,11 @@ package kendra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RankingExecutionPlan_CapacityUnits struct {
-	// Specifies the number of rescore capacity units for the execution plan, which determines the rescoring query capacity (throughput) of the plan. (AI-inferred)
 	RescoreCapacityUnits any
 }
 
 type RankingExecutionPlan_Tags struct {
-	// The key (name) of an arbitrary tag attached to the AWS Kendra Ranking execution plan, used for organizing, identifying, and filtering the resource. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair assigned to the Amazon Kendra Intelligent Ranking execution plan, used to organize, identify, and manage access to the resource. (AI-inferred)
 	Value any
 }
 
@@ -25,9 +22,7 @@ var RankingExecutionPlan_TagsFields = ubx.FieldMap{
 	}
 
 type RankingExecutionPlanConfig struct {
-	// Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred)
 	CapacityUnits any
-	// An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred)
 	Description any
 	// Name of kendra ranking rescore execution plan
 	Name any
@@ -36,11 +31,8 @@ type RankingExecutionPlanConfig struct {
 }
 
 type RankingExecutionPlanAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Kendra Ranking execution plan. (AI-inferred)
 	Arn any
-	// Specifies the capacity configuration for the execution plan, including the number of rescore capacity units allocated to handle query processing for Amazon Kendra Intelligent Ranking. (AI-inferred)
 	CapacityUnits any
-	// An optional description of the Amazon Kendra ranking execution plan, used to provide additional context or identification for the plan. (AI-inferred)
 	Description any
 	// Unique ID of rescore execution plan
 	Id any

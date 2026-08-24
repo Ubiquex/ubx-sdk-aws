@@ -15,9 +15,7 @@ type ManagerVpcAttachment_Options struct {
 }
 
 type ManagerVpcAttachment_ProposedNetworkFunctionGroupChange_Tags struct {
-	// The key of a tag applied to the proposed network function group change for this VPC attachment. (AI-inferred)
 	Key any
-	// The value part of a tag attached to the proposed network function group change for the VPC attachment, used to label or categorize the network function group proposal with metadata such as environment or purpose. (AI-inferred)
 	Value any
 }
 

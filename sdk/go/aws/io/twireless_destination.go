@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessDestination_Tags struct {
-	// Represents the key of a tag attached to an AWS IoT Wireless destination, enabling you to organize, identify, and filter the resource by custom metadata. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS IoT Wireless destination, used to add metadata for organizing, identifying, or controlling access to the destination resource. (AI-inferred)
 	Value any
 }
 

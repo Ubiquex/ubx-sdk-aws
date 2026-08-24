@@ -57,22 +57,18 @@ type HubConnectorConfig struct {
 	Description any
 	// The name of the connector.
 	Name any
-	// Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred)
 	Provider any
 	// A key-value pair to associate with a resource.
 	Tags any
 }
 
 type HubConnectorAttrs struct {
-	// The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Security Hub connector. (AI-inferred)
 	ConnectorArn any
-	// The connector_id is the unique, read-only identifier that AWS Security Hub assigns to the connector upon creation. (AI-inferred)
 	ConnectorId any
 	// The status of the connector
 	ConnectorStatus any
 	// The timestamp formatted in ISO8601
 	CreatedAt any
-	// The AWS principal (account or IAM identity) that originally created the Security Hub connector. (AI-inferred)
 	CreatedBy any
 	// The description of the connector.
 	Description any
@@ -86,7 +82,6 @@ type HubConnectorAttrs struct {
 	Message any
 	// The name of the connector.
 	Name any
-	// Specifies the provider configuration for the Security Hub connector, including the provider type (for example, AWS or a partner) that determines how the connector is set up to ingest findings into Security Hub. (AI-inferred)
 	Provider any
 	// A key-value pair to associate with a resource.
 	Tags any

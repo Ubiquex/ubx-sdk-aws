@@ -8,36 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TCommand_MandatoryParameters_DefaultValue:
-    # The boolean default value used for this mandatory command parameter when a device executing the command does not supply a value for it. (AI-inferred)
     b: Any = None
     bin: Any = None
-    # This number specifies the default value for a mandatory parameter in an AWS IoT Command. (AI-inferred)
     d: Any = None
     i: Any = None
     l: Any = None
-    # The string form of the default value (the 'S' attribute) for a mandatory parameter in an AWS IoT command, used to initialize the parameter when not provided at runtime. (AI-inferred)
     s: Any = None
-    # In the AWS IoT Command resource, the 'ul' property holds the string representation of the unsigned long default value for a mandatory command parameter. (AI-inferred)
     ul: Any = None
 
 @dataclasses.dataclass
 class TCommand_MandatoryParameters_ValueConditions_Operand_NumberRange:
-    # For the AWS IoT command resource, this string specifies the maximum numeric value allowed by a number-range constraint on a mandatory parameter's operand. (AI-inferred)
     max: Any = None
-    # Specifies the minimum allowed value for a mandatory command parameter when its value condition is defined as a number range. (AI-inferred)
     min: Any = None
 
 @dataclasses.dataclass
 class TCommand_MandatoryParameters_ValueConditions_Operand:
-    # The number field specifies the numeric constant that forms the operand in a value condition applied to a mandatory parameter of an AWS IoT Command, defining the comparison target for validating that parameter's value. (AI-inferred)
     number: Any = None
-    # Defines the lower and upper bounds of the numeric range that a mandatory parameter's value must fall within for the value condition to be satisfied. (AI-inferred)
     number_range: Any = None
-    # Defines the numeric values (represented as strings) that serve as the operand for a value condition on a mandatory parameter of the IoT command, such as the range or allowed numbers for numeric comparisons. (AI-inferred)
     numbers: Any = None
-    # Specifies the string value of the operand in a value condition applied to a mandatory parameter of an AWS IoT command, defining the expected string match (e.g., equality or pattern) that the parameter's value must satisfy. (AI-inferred)
     string: Any = None
-    # For a value condition on a mandatory parameter of an AWS IoT command, this list specifies the allowed string values that the operand can take. (AI-inferred)
     strings: Any = None
 
 @dataclasses.dataclass
@@ -48,20 +37,15 @@ class TCommand_MandatoryParameters_ValueConditions:
 @dataclasses.dataclass
 class TCommand_MandatoryParameters:
     default_value: Any = None
-    # Provides a human-readable description of a mandatory parameter that must be supplied when invoking this AWS IoT command. (AI-inferred)
     description: Any = None
     name: Any = None
-    # Defines the data type of a mandatory parameter in an AWS IoT command, restricting the parameter value to a supported primitive type such as STRING, INTEGER, BOOLEAN, FLOAT, or BINARY. (AI-inferred)
     type: Any = None
     value: Any = None
-    # Defines the validation conditions (such as equality or range constraints) that the value of each mandatory command parameter must satisfy when the command is invoked in AWS IoT. (AI-inferred)
     value_conditions: Any = None
 
 @dataclasses.dataclass
 class TCommand_Payload:
-    # The payload content of the AWS IoT command, which is the message body sent to the target device when the command is invoked. (AI-inferred)
     content: Any = None
-    # Specifies the MIME content type (such as application/json or text/plain) of the command payload sent to an AWS IoT device. (AI-inferred)
     content_type: Any = None
 
 @dataclasses.dataclass
@@ -173,13 +157,11 @@ class TCommandConfig:
     mandatory_parameters: Any = None
     # The namespace to which the command belongs.
     namespace: Any = None
-    # Specifies the JSON payload object that is delivered to the target IoT device via MQTT when the command is executed. (AI-inferred)
     payload: Any = None
     # The payload template associated with the command.
     payload_template: Any = None
     # A flag indicating whether the command is pending deletion.
     pending_deletion: Any = None
-    # An optional object that specifies the ARN of an AWS Lambda function (via its 'lambdaArn' subfield) used to preprocess the command payload before it is delivered to the target device. (AI-inferred)
     preprocessor: Any = None
     # The customer role associated with the command.
     role_arn: Any = None
@@ -205,13 +187,11 @@ class TCommandAttrs:
     mandatory_parameters: Any = None
     # The namespace to which the command belongs.
     namespace: Any = None
-    # Specifies the JSON payload object that is delivered to the target IoT device via MQTT when the command is executed. (AI-inferred)
     payload: Any = None
     # The payload template associated with the command.
     payload_template: Any = None
     # A flag indicating whether the command is pending deletion.
     pending_deletion: Any = None
-    # An optional object that specifies the ARN of an AWS Lambda function (via its 'lambdaArn' subfield) used to preprocess the command payload before it is delivered to the target device. (AI-inferred)
     preprocessor: Any = None
     # The customer role associated with the command.
     role_arn: Any = None

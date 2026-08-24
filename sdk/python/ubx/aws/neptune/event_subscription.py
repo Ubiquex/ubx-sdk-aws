@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventSubscription_Tags:
-    # The key of a tag attached to the Neptune event subscription, used to organize, categorize, and identify the subscription for cost allocation and resource management. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Neptune event subscription, used for metadata such as environment, owner, or cost tracking. (AI-inferred)
     value: Any = None
 
 _EventSubscription_TagsFields = {

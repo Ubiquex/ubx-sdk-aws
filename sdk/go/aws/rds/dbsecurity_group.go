@@ -4,13 +4,9 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbsecurityGroup_DbsecurityGroupIngress struct {
-	// The CIDR-format IPv4 address range (e.g., 10.0.0.0/24) authorized by this ingress rule to access the associated RDS DB security group. (AI-inferred)
 	Cidrip any
-	// Specifies the ID of the EC2 security group whose instances are allowed to access the DB instances associated with this DB security group. (AI-inferred)
 	Ec2SecurityGroupId any
-	// The name of the EC2 security group that is allowed to access the RDS database, used in an ingress rule for the DB security group. (AI-inferred)
 	Ec2SecurityGroupName any
-	// Specifies the AWS account ID of the owner of the EC2 security group referenced in the ingress rule, which is required when that security group belongs to a different AWS account. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
 }
 
@@ -32,26 +28,17 @@ var DbsecurityGroup_TagsFields = ubx.FieldMap{
 	}
 
 type DbsecurityGroupConfig struct {
-	// Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred)
 	DbsecurityGroupIngress any
-	// Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred)
 	Ec2VpcId any
-	// A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred)
 	GroupDescription any
-	// A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type DbsecurityGroupAttrs struct {
-	// Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred)
 	DbsecurityGroupIngress any
-	// Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred)
 	Ec2VpcId any
-	// A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred)
 	GroupDescription any
-	// The unique identifier for the DB security group, which is the security group name. (AI-inferred)
 	Id any
-	// A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred)
 	Tags any
 }
 

@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LatticeServiceNetworkServiceAssociation_DnsEntry:
-    # The DNS domain name of the service that is exposed through the VPC Lattice service network association, used by clients in associated VPCs to reach the service. (AI-inferred)
     domain_name: Any = None
-    # The ID of the Route 53 hosted zone that contains the DNS record for the service network service association's DNS entry. (AI-inferred)
     hosted_zone_id: Any = None
 
 @dataclasses.dataclass
 class LatticeServiceNetworkServiceAssociation_Tags:
-    # The key of a tag assigned to the VPC Lattice service network service association, used for organizing and managing the resource in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -26,42 +23,25 @@ _LatticeServiceNetworkServiceAssociation_TagsFields = {
 
 @dataclasses.dataclass
 class LatticeServiceNetworkServiceAssociationConfig:
-    # The ID or Amazon Resource Name (ARN) of the VPC Lattice service that is associated with the service network. (AI-inferred)
     service_identifier: Any = None
-    # The ID or Amazon Resource Name (ARN) of the service network that the service is associated with. (AI-inferred)
     service_network_identifier: Any = None
-    # Specifies a list of tag objects (key-value pairs) to attach to this VPC Lattice service network service association for metadata and cost tracking. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class LatticeServiceNetworkServiceAssociationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the VPC Lattice service network service association. (AI-inferred)
     arn: Any = None
-    # The timestamp (in ISO 8601 format) indicating when the service network service association was created. (AI-inferred)
     created_at: Any = None
-    # The generated DNS entry for the service within the VPC Lattice service network, containing the service's domain name and the hosted zone ID where the association's DNS record is configured. (AI-inferred)
     dns_entry: Any = None
-    # The unique AWS-assigned identifier for the VPC Lattice service network service association (for example, an `snssa-` string) that is returned after creation and can be used to reference the association in other resources or API calls. (AI-inferred)
     id: Any = None
-    # The ARN of the service that is associated with the service network through this association. (AI-inferred)
     service_arn: Any = None
-    # The ID of the service that is associated with the service network, returned as a read-only attribute. (AI-inferred)
     service_id: Any = None
-    # The ID or Amazon Resource Name (ARN) of the VPC Lattice service that is associated with the service network. (AI-inferred)
     service_identifier: Any = None
-    # The name of the VPC Lattice service that is associated with the service network, returned as a read-only attribute after the association is created. (AI-inferred)
     service_name: Any = None
-    # The Amazon Resource Name (ARN) of the service network that this service network service association links to a service, uniquely identifying the service network within AWS VPC Lattice. (AI-inferred)
     service_network_arn: Any = None
-    # The unique identifier of the VPC Lattice service network to which the service is associated, assigned by AWS. (AI-inferred)
     service_network_id: Any = None
-    # The ID or Amazon Resource Name (ARN) of the service network that the service is associated with. (AI-inferred)
     service_network_identifier: Any = None
-    # The name of the VPC Lattice service network that the associated service is connected to, populated automatically by AWS. (AI-inferred)
     service_network_name: Any = None
-    # The current status of the service network service association, such as 'ACTIVE', 'CREATE_IN_PROGRESS', or 'DELETE_IN_PROGRESS', reflecting its lifecycle state in VPC Lattice. (AI-inferred)
     status: Any = None
-    # Specifies a list of tag objects (key-value pairs) to attach to this VPC Lattice service network service association for metadata and cost tracking. (AI-inferred)
     tags: Any = None
 
 LatticeServiceNetworkServiceAssociation = ubx.ResourceBinding(

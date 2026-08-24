@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FormationResourceConfig:
-    # When true, enables hybrid access for the registered resource, allowing it to be accessed through both Lake Formation permissions and IAM/S3 permissions. (AI-inferred)
     hybrid_access_enabled: Any = None
-    # The Amazon Resource Name (ARN) of the S3 bucket, database, or table to be registered with AWS Lake Formation. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the IAM role that AWS Lake Formation assumes to access and manage the registered S3 data lake location. (AI-inferred)
     role_arn: Any = None
-    # Indicates whether to use the Lake Formation service-linked role when registering the S3 resource; if false, a custom IAM role must be provided in the RoleArn field. (AI-inferred)
     use_service_linked_role: Any = None
-    # When set to true, this flag registers the S3 location as a federated resource in AWS Lake Formation, enabling integration with a federated data catalog for access management. (AI-inferred)
     with_federation: Any = None
 
 @dataclasses.dataclass
 class FormationResourceAttrs:
-    # When true, enables hybrid access for the registered resource, allowing it to be accessed through both Lake Formation permissions and IAM/S3 permissions. (AI-inferred)
     hybrid_access_enabled: Any = None
-    # This field is the unique identifier of the Lake Formation resource, typically the ARN of the underlying AWS resource (such as an S3 bucket or DynamoDB table) that has been registered. (AI-inferred)
     id: Any = None
-    # The Amazon Resource Name (ARN) of the S3 bucket, database, or table to be registered with AWS Lake Formation. (AI-inferred)
     resource_arn: Any = None
-    # The ARN of the IAM role that AWS Lake Formation assumes to access and manage the registered S3 data lake location. (AI-inferred)
     role_arn: Any = None
-    # Indicates whether to use the Lake Formation service-linked role when registering the S3 resource; if false, a custom IAM role must be provided in the RoleArn field. (AI-inferred)
     use_service_linked_role: Any = None
-    # When set to true, this flag registers the S3 location as a federated resource in AWS Lake Formation, enabling integration with a federated data catalog for access management. (AI-inferred)
     with_federation: Any = None
 
 FormationResource = ubx.ResourceBinding(

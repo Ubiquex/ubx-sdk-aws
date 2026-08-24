@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NotificationHub_NotificationHubStatusSummary {
   notificationHubStatus: string | Computed<string>;
-  /** A human-readable explanation accompanying the hub's status that provides additional context when the notification hub is not fully active, such as a reason for an inactive or pending state. (AI-inferred) */
   notificationHubStatusReason: string | Computed<string>;
 }
 
@@ -13,9 +12,7 @@ export interface NotificationHubConfig {
 }
 
 export interface NotificationHubAttrs {
-  /** The date and time when the notification hub was created, typically returned as a string in ISO 8601 format. (AI-inferred) */
   creationTime: string;
-  /** Returns a summary of the current status of the notification hub in each region where it is enabled, with each entry specifying the region and its operational status (such as ACTIVE). (AI-inferred) */
   notificationHubStatusSummary: NotificationHub_NotificationHubStatusSummary;
   /** Region that NotificationHub is present in. */
   region: string;

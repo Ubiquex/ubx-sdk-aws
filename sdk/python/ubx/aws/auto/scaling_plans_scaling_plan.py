@@ -8,98 +8,62 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ApplicationSource_TagFilters:
-    # The tag key used in a tag filter to identify resources that belong to the application source for the scaling plan. (AI-inferred)
     key: Any = None
-    # The tag values to match for the associated tag key; when specified, only resources whose tag value for that key equals one of these values are included in the application source. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ApplicationSource:
-    # The Amazon Resource Name (ARN) of the CloudFormation stack whose resources define the application for the scaling plan, used when the application source is a CloudFormation stack. (AI-inferred)
     cloud_formation_stack_arn: Any = None
-    # Specifies tag-based filters that identify the AWS resources (such as EC2 instances) to include in the scaling plan from the source application. (AI-inferred)
     tag_filters: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecification_Dimensions:
-    # Specifies the dimension name (key) used to define a metric dimension (such as LoadBalancerName or TargetGroup) for the customized load metric specification in the scaling plan's predictive scaling configuration. (AI-inferred)
     name: Any = None
-    # The value that corresponds to the dimension key for the custom load metric, used to fully identify the metric in CloudWatch for the scaling plan's load forecasting. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions_CustomizedLoadMetricSpecification:
-    # Specifies the CloudWatch metric dimensions (key-value pairs) that uniquely identify the custom load metric used by AWS Auto Scaling for load forecasting. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric used as the customized load metric for predictive scaling, specified in a scaling instruction's customized load metric specification. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace of the custom load metric used for predictive scaling, such as 'AWS/SQS' or a custom namespace, which is required to identify the metared in CloudWatch. (AI-inferred)
     namespace: Any = None
-    # The statistic of the customized load metric, such as Sum or Average, that AWS Auto Scaling uses to calculate load capacity for the scaling plan. (AI-inferred)
     statistic: Any = None
-    # The unit of measure for the customized load metric (e.g., Count, Percent, Bytes) that AWS Auto Scaling uses to evaluate the metric values when predicting capacity requirements. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions_PredefinedLoadMetricSpecification:
-    # The type of predefined load metric (e.g., ASGTotalCPUUtilization, ALBTargetGroupRequestCount) that the scaling plan uses to track resource load for predictive scaling. (AI-inferred)
     predefined_load_metric_type: Any = None
-    # This field specifies the resource identifier (such as an Application Load Balancer target group ARN) that the predefined load metric applies to, required only when the predefined_load_metric_type references a resource-specific metric like ALBTargetGroupRequestCount. (AI-inferred)
     resource_label: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions_TargetTrackingConfigurations_PredefinedScalingMetricSpecification:
-    # The type of predefined metric that the target tracking scaling policy uses, such as ASGAverageCPUUtilization or DynamoDBReadCapacityUtilization. (AI-inferred)
     predefined_scaling_metric_type: Any = None
-    # The resource label identifies the specific AWS resource (such as a DynamoDB table name or Aurora DB cluster name) whose predefined metric is used for target tracking scaling, and it is required for predefined metric types that are not EC2 or Application Auto Scaling metrics. (AI-inferred)
     resource_label: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions_TargetTrackingConfigurations:
-    # Defines the custom CloudWatch metric specification used for target tracking scaling, allowing you to specify a metric name, namespace, dimensions, and statistic instead of using a predefined metric. (AI-inferred)
     customized_scaling_metric_specification: Any = None
-    # When set to true, this target tracking configuration prevents scale-in actions, meaning the Auto Scaling group will only scale out based on the metric, not scale in. (AI-inferred)
     disable_scale_in: Any = None
-    # Specifies the estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics used for target tracking scaling, preventing premature scaling actions based on instances that are still warming up. (AI-inferred)
     estimated_instance_warmup: Any = None
-    # Defines the predefined CloudWatch metric (such as DynamoDBReadCapacityUtilization or DynamoDBWriteCapacityUtilization) that the target tracking scaling policy uses to track utilization, including an optional resource label to identify the specific resource dimension. (AI-inferred)
     predefined_scaling_metric_specification: Any = None
-    # The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start. (AI-inferred)
     scale_in_cooldown: Any = None
-    # The amount of time, in seconds, after a scale-out activity completes before another scale-out activity can start for the target tracking configuration. (AI-inferred)
     scale_out_cooldown: Any = None
-    # The target value for the metric that the scaling policy will maintain, such as a CPU utilization percentage or a request count per target, used to trigger scaling actions. (AI-inferred)
     target_value: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlan_ScalingInstructions:
-    # Defines a custom load metric (metric name, statistic, dimensions, and unit) used for predictive scaling within this scaling instruction, tracking application load to forecast capacity. (AI-inferred)
     customized_load_metric_specification: Any = None
-    # When true, disables dynamic scaling for the resources targeted by this scaling instruction, so that capacity will not be automatically adjusted in response to load. (AI-inferred)
     disable_dynamic_scaling: Any = None
-    # The maximum capacity that the scalable resource can reach, used by the scaling plan to limit scale-out activities for the resource defined in this scaling instruction. (AI-inferred)
     max_capacity: Any = None
-    # Defines the minimum capacity of the scalable resource, so that the scaling plan does not scale the resource below this value. (AI-inferred)
     min_capacity: Any = None
-    # Specifies the predefined load metric configuration for predictive scaling within a scaling instruction, identifying the load metric type (such as ASGTotalCPUUtilization or ALBRequestCountPerTarget) used to calculate the forecast load. (AI-inferred)
     predefined_load_metric_specification: Any = None
-    # Determines how the maximum capacity of the Auto Scaling group is set when predictive scaling is active, with allowed values such as SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, and SetMaxCapacityAboveForecastCapacity. (AI-inferred)
     predictive_scaling_max_capacity_behavior: Any = None
-    # The maximum capacity buffer, expressed as a percentage, that predictive scaling can exceed the forecasted capacity to accommodate forecast inaccuracies in each scaling instruction. (AI-inferred)
     predictive_scaling_max_capacity_buffer: Any = None
-    # Determines whether predictive scaling only generates forecasts (ForecastOnly) or also uses those forecasts to scale capacity (ForecastAndScale). (AI-inferred)
     predictive_scaling_mode: Any = None
-    # Specifies the identifier of the resource to scale, formatted as the resource type followed by a colon and the resource's unique name (for example, autoScalingGroup:my-asg for an Auto Scaling group). (AI-inferred)
     resource_id: Any = None
-    # The scalable dimension that the scaling instruction applies to, such as an Auto Scaling group's desired capacity or an ECS service's desired count. (AI-inferred)
     scalable_dimension: Any = None
-    # Determines whether AWS Auto Scaling keeps or replaces existing scaling policies on the target resource when the scaling plan is applied, with allowed values KeepExternalPolicies and ReplaceExternalPolicies. (AI-inferred)
     scaling_policy_update_behavior: Any = None
-    # Specifies the buffer time (in seconds) that AWS Auto Scaling waits before applying a scheduled scaling action, to account for latency in resource initialization. (AI-inferred)
     scheduled_action_buffer_time: Any = None
-    # The AWS service namespace (e.g., autoscaling, dynamodb, ecs, etc.) that identifies the service or resource type to which this scaling instruction applies, determining which scalable targets are configured. (AI-inferred)
     service_namespace: Any = None
-    # In each scaling instruction, defines the list of target tracking configurations that specify a metric and target value, causing the scaling plan to adjust capacity when the metric deviates from the target. (AI-inferred)
     target_tracking_configurations: Any = None
 
 _ScalingPlansScalingPlan_ApplicationSource_TagFiltersFields = {
@@ -192,22 +156,15 @@ _ScalingPlansScalingPlan_ScalingInstructionsFields = {
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlanConfig:
-    # Defines the application source for the scaling plan, including either CloudFormation stack names or tag filters that identify the resources to scale. (AI-inferred)
     application_source: Any = None
-    # Specifies the scaling instructions for the resources to be managed, including the service namespace, resource ID, scalable dimension, minimum and maximum capacities, and target tracking configurations. (AI-inferred)
     scaling_instructions: Any = None
 
 @dataclasses.dataclass
 class ScalingPlansScalingPlanAttrs:
-    # Defines the application source for the scaling plan, including either CloudFormation stack names or tag filters that identify the resources to scale. (AI-inferred)
     application_source: Any = None
-    # The Terraform resource identifier for an Auto Scaling Plan, set to the scale plan's unique name used for state tracking and import. (AI-inferred)
     id: Any = None
-    # Specifies the scaling instructions for the resources to be managed, including the service namespace, resource ID, scalable dimension, minimum and maximum capacities, and target tracking configurations. (AI-inferred)
     scaling_instructions: Any = None
-    # The name of the scaling plan, which uniquely identifies it within the AWS account and is used to reference the plan in AWS Auto Scaling APIs and other resources. (AI-inferred)
     scaling_plan_name: Any = None
-    # The version number of the scaling plan, which must be provided on updates to ensure you are modifying the latest version of the plan. (AI-inferred)
     scaling_plan_version: Any = None
 
 ScalingPlansScalingPlan = ubx.ResourceBinding(

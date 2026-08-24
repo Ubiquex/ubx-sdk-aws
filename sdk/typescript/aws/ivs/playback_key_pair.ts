@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PlaybackKeyPair_Tags {
-  /** The key portion of a tag attached to the IVS playback key pair, used to label and organize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the Amazon IVS playback key pair, used for metadata management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

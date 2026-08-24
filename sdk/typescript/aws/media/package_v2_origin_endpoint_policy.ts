@@ -16,26 +16,18 @@ const PackageV2OriginEndpointPolicy_CdnAuthConfigurationFields: FieldMap = {
 export interface PackageV2OriginEndpointPolicyConfig {
   /** <p>The settings to enable CDN authorization headers in MediaPackage.</p> */
   cdnAuthConfiguration?: PackageV2OriginEndpointPolicy_CdnAuthConfiguration | Computed<PackageV2OriginEndpointPolicy_CdnAuthConfiguration>;
-  /** Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred) */
   channelGroupName: string | Computed<string>;
-  /** The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred) */
   channelName: string | Computed<string>;
-  /** The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred) */
   originEndpointName: string | Computed<string>;
-  /** The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred) */
   policy: unknown | Computed<unknown>;
 }
 
 export interface PackageV2OriginEndpointPolicyAttrs {
   /** <p>The settings to enable CDN authorization headers in MediaPackage.</p> */
   cdnAuthConfiguration: PackageV2OriginEndpointPolicy_CdnAuthConfiguration;
-  /** Specifies the name of the MediaPackage v2 channel group that contains the origin endpoint to which this policy is attached. (AI-inferred) */
   channelGroupName: string;
-  /** The name of the AWS MediaPackage v2 channel that contains the origin endpoint for which this policy is defined. (AI-inferred) */
   channelName: string;
-  /** The name of the MediaPackage v2 origin endpoint that this resource attaches the IAM resource policy to. (AI-inferred) */
   originEndpointName: string;
-  /** The IAM resource policy document (in JSON) that authorizes specific principals or accounts to access this MediaPackage v2 origin endpoint, controlling allowed API actions such as playback or content retrieval. (AI-inferred) */
   policy: unknown;
 }
 

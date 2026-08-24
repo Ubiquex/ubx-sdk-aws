@@ -8,23 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SecurityConfiguration_EncryptionConfiguration_CloudWatchEncryption:
-    # Specifies whether CloudWatch Logs encryption is disabled or uses SSE-KMS for the Glue security configuration, with allowed values 'DISABLED' and 'SSE-KMS'. (AI-inferred)
     cloud_watch_encryption_mode: Any = None
-    # The ARN of the AWS KMS key used to encrypt CloudWatch log data for the Glue security configuration. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class SecurityConfiguration_EncryptionConfiguration_JobBookmarksEncryption:
-    # Sets the encryption mode for job bookmark data to either DISABLED (no encryption) or CSE-KMS (client-side encryption via an AWS KMS key specified in the same job_bookmarks_encryption block). (AI-inferred)
     job_bookmarks_encryption_mode: Any = None
-    # The ARN of the AWS KMS key used to encrypt job bookmark data when job bookmark encryption is enabled for the Glue security configuration. (AI-inferred)
     kms_key_arn: Any = None
 
 @dataclasses.dataclass
 class SecurityConfiguration_EncryptionConfiguration_S3Encryptions:
-    # The ARN of the AWS KMS key used to encrypt data in Amazon S3 when the encryption mode is set to SSE-KMS, as part of a Glue security configuration's S3 encryption settings. (AI-inferred)
     kms_key_arn: Any = None
-    # Specifies the S3 encryption mode for the Glue security configuration, which can be 'DISABLED', 'SSE-S3', or 'SSE-KMS' to control how data in S3 is encrypted. (AI-inferred)
     s3_encryption_mode: Any = None
 
 @dataclasses.dataclass

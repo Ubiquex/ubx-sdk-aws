@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption {
-  /** The ARN of the CloudWatch log stream that the Kinesis Data Analytics for Apache Flink application writes its diagnostic logs to. (AI-inferred) */
   logStreamArn: string | Computed<string>;
 }
 
@@ -11,16 +10,12 @@ const AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOptionField
 };
 
 export interface AnalyticsV2ApplicationCloudWatchLoggingOptionConfig {
-  /** The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred) */
   applicationName: string | Computed<string>;
-  /** Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred) */
   cloudWatchLoggingOption: AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption | Computed<AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption>;
 }
 
 export interface AnalyticsV2ApplicationCloudWatchLoggingOptionAttrs {
-  /** The name of the Kinesis Data Analytics for Apache Flink application to which this CloudWatch logging option is attached. (AI-inferred) */
   applicationName: string;
-  /** Configures the CloudWatch Logs log stream (via its ARN) to which the Kinesis Analytics v2 application sends operational logs and metrics. (AI-inferred) */
   cloudWatchLoggingOption: AnalyticsV2ApplicationCloudWatchLoggingOption_CloudWatchLoggingOption;
   id: string;
 }

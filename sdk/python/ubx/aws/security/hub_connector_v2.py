@@ -13,7 +13,6 @@ class HubConnectorV2_Issues:
 
 @dataclasses.dataclass
 class HubConnectorV2_Provider_Azure_ScopeConfiguration:
-    # Specifies whether the Azure connector scope is a management group or a subscription, defining which Azure resources Security Hub monitors for findings. (AI-inferred)
     scope_type: Any = None
     scope_values: Any = None
 
@@ -21,28 +20,21 @@ class HubConnectorV2_Provider_Azure_ScopeConfiguration:
 class HubConnectorV2_Provider_Azure:
     awsconfig_connector_arn: Any = None
     azure_regions: Any = None
-    # Configures the Azure subscriptions or management groups that the Security Hub connector will monitor, determining which Azure resources' findings are ingested into Security Hub. (AI-inferred)
     scope_configuration: Any = None
 
 @dataclasses.dataclass
 class HubConnectorV2_Provider_JiraCloud:
-    # The project key of the Jira Cloud project that receives Security Hub findings from this connector. (AI-inferred)
     project_key: Any = None
 
 @dataclasses.dataclass
 class HubConnectorV2_Provider_ServiceNow:
-    # The instance name (subdomain) of the ServiceNow tenant that AWS Security Hub connects to for delivering findings, such as 'company' in 'company.service-now.com'. (AI-inferred)
     instance_name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Secrets Manager secret that stores the credentials used to authenticate the ServiceNow connector. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class HubConnectorV2_Provider:
-    # Contains the Azure-specific configuration, including tenant ID and client credentials, that enables the Security Hub connector to ingest security findings from Microsoft Azure. (AI-inferred)
     azure: Any = None
-    # This block defines the Jira Cloud connection settings for the Security Hub connector, specifying the Jira instance and authentication parameters so that findings can be exported to Jira Cloud. (AI-inferred)
     jira_cloud: Any = None
-    # Configures the ServiceNow integration for the Security Hub connector, specifying the instance endpoint and credentials used to deliver findings to ServiceNow. (AI-inferred)
     service_now: Any = None
 
 _HubConnectorV2_Provider_Azure_ScopeConfigurationFields = {

@@ -4,9 +4,7 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessGrantsInstance_Tags struct {
-	// The key (name) of a tag attached to the S3 Access Grants instance, used to define custom metadata for identification, categorization, or cost allocation. (AI-inferred)
 	Key any
-	// The value of an individual tag key-value pair assigned to the S3 Access Grants instance, enabling cost allocation and resource classification. (AI-inferred)
 	Value any
 }
 
@@ -18,7 +16,6 @@ var AccessGrantsInstance_TagsFields = ubx.FieldMap{
 type AccessGrantsInstanceConfig struct {
 	// The Amazon Resource Name (ARN) of the specified AWS Identity Center.
 	IdentityCenterArn any
-	// A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred)
 	Tags any
 }
 
@@ -29,7 +26,6 @@ type AccessGrantsInstanceAttrs struct {
 	AccessGrantsInstanceId any
 	// The Amazon Resource Name (ARN) of the specified AWS Identity Center.
 	IdentityCenterArn any
-	// A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred)
 	Tags any
 }
 

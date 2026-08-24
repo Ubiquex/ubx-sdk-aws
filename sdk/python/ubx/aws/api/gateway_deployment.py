@@ -8,55 +8,37 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayDeployment_DeploymentCanarySettings:
-    # The percentage (0.0 to 100.0) of live traffic routed to the canary deployment, controlling gradual traffic shifting. (AI-inferred)
     percent_traffic: Any = None
-    # A map of stage variable names to their override values, applied to the canary stage so that the canary deployment uses different variable settings than the regular deployment. (AI-inferred)
     stage_variable_overrides: Any = None
-    # Determines whether the canary deployment uses the stage cache for caching responses when a canary release is enabled. (AI-inferred)
     use_stage_cache: Any = None
 
 @dataclasses.dataclass
 class GatewayDeployment_StageDescription_AccessLogSetting:
-    # The ARN of the CloudWatch Logs log group to which API Gateway sends access logs for the stage described by this deployment. (AI-inferred)
     destination_arn: Any = None
-    # Defines the format of the access log written to CloudWatch Logs, supporting context variables like $context.requestId and $context.identity.sourceIp. (AI-inferred)
     format: Any = None
 
 @dataclasses.dataclass
 class GatewayDeployment_StageDescription_MethodSettings:
-    # Whether the data stored in the API Gateway method cache is encrypted. (AI-inferred)
     cache_data_encrypted: Any = None
-    # Specifies the time-to-live (TTL) in seconds for the API Gateway cache for a given method, determining how long cached responses are stored before being invalidated. (AI-inferred)
     cache_ttl_in_seconds: Any = None
-    # Indicates whether API Gateway caches responses from the method for the associated stage. (AI-inferred)
     caching_enabled: Any = None
-    # Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. (AI-inferred)
     data_trace_enabled: Any = None
-    # The HTTP method (e.g., GET, POST) to which this method setting applies for the API Gateway stage. (AI-inferred)
     http_method: Any = None
-    # Specifies the logging level (OFF, ERROR, or INFO) for this API Gateway method, controlling the verbosity of CloudWatch Logs entries pushed from the method execution. (AI-inferred)
     logging_level: Any = None
-    # Enables or disables CloudWatch metrics for the API method, allowing monitoring of latency, error rates, and call counts in the stage. (AI-inferred)
     metrics_enabled: Any = None
-    # The API resource path (e.g., /pets) for which these method-level settings (like caching, throttling, logging) apply in the API Gateway deployment stage. (AI-inferred)
     resource_path: Any = None
-    # The maximum number of requests per second that Amazon API Gateway can service for the given method before throttling is applied (the burst limit). (AI-inferred)
     throttling_burst_limit: Any = None
-    # The throttling rate limit (in requests per second) for the method, used by API Gateway to control the steady-state request rate for that method in the deployment's stage description method settings. (AI-inferred)
     throttling_rate_limit: Any = None
 
 @dataclasses.dataclass
 class GatewayDeployment_StageDescription_Tags:
-    # The key of a tag entry in the stage description's tags map, which attaches that tag to the API Gateway stage created by this deployment. (AI-inferred)
     key: Any = None
-    # The value of a tag (key-value pair) assigned to the API Gateway stage defined in this deployment's stage description, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class GatewayDeployment_StageDescription:
     # The ``AccessLogSetting`` property type specifies settings for logging access in this stage. ``AccessLogSetting`` is a property of the [StageDescription](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html) property type.
     access_log_setting: Any = None
-    # Whether to enable a cache cluster for the API Gateway stage, allowing responses from integrations to be cached to improve performance and reduce backend load. (AI-inferred)
     cache_cluster_enabled: Any = None
     # The size of the stage's cache cluster. For more information, see [cacheClusterSize](https://docs.aws.amazon.com/apigateway/latest/api/API_CreateStage.html#apigw-CreateStage-request-cacheClusterSize) in the *API Gateway API Reference*.
     cache_cluster_size: Any = None
@@ -164,28 +146,21 @@ _GatewayDeployment_StageDescriptionFields = {
 class GatewayDeploymentConfig:
     # The ``DeploymentCanarySettings`` property type specifies settings for the canary deployment.
     deployment_canary_settings: Any = None
-    # Specifies a description for this API Gateway deployment, which is often used to document the purpose or version of the deployed API. (AI-inferred)
     description: Any = None
-    # The identifier of the RestApi resource that this deployment belongs to. (AI-inferred)
     rest_api_id: Any = None
     # ``StageDescription`` is a property of the [AWS::ApiGateway::Deployment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html) resource that configures a deployment stage.
     stage_description: Any = None
-    # The name of the API Gateway stage (e.g., 'prod', 'dev') that this deployment is associated with, and when specified, the deployment updates or creates that stage's current deployment. (AI-inferred)
     stage_name: Any = None
 
 @dataclasses.dataclass
 class GatewayDeploymentAttrs:
     # The ``DeploymentCanarySettings`` property type specifies settings for the canary deployment.
     deployment_canary_settings: Any = None
-    # The unique identifier assigned by AWS to this API Gateway deployment, which is used to reference the deployment in other resources such as stages and usage plans. (AI-inferred)
     deployment_id: Any = None
-    # Specifies a description for this API Gateway deployment, which is often used to document the purpose or version of the deployed API. (AI-inferred)
     description: Any = None
-    # The identifier of the RestApi resource that this deployment belongs to. (AI-inferred)
     rest_api_id: Any = None
     # ``StageDescription`` is a property of the [AWS::ApiGateway::Deployment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html) resource that configures a deployment stage.
     stage_description: Any = None
-    # The name of the API Gateway stage (e.g., 'prod', 'dev') that this deployment is associated with, and when specified, the deployment updates or creates that stage's current deployment. (AI-inferred)
     stage_name: Any = None
 
 GatewayDeployment = ubx.ResourceBinding(

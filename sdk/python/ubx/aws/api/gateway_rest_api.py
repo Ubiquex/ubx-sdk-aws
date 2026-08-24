@@ -19,18 +19,13 @@ class GatewayRestApi_BodyS3Location:
 
 @dataclasses.dataclass
 class GatewayRestApi_EndpointConfiguration:
-    # Specifies the IP address type for the API Gateway REST API endpoint, supporting values of 'ipv4' or 'ipv6' to indicate whether the endpoint uses IPv4 or IPv6 addressing. (AI-inferred)
     ip_address_type: Any = None
-    # The list of endpoint types for the REST API, specifying whether it is deployed at an edge location, in a specific region, or privately, with valid values EDGE, REGIONAL, and PRIVATE. (AI-inferred)
     types: Any = None
-    # A list of VPC endpoint IDs attached to the REST API, used to create regional or private endpoints that allow access from within those VPC endpoints. (AI-inferred)
     vpc_endpoint_ids: Any = None
 
 @dataclasses.dataclass
 class GatewayRestApi_Tags:
-    # A tag key that you assign to this API Gateway REST API, used for cost allocation and organizational metadata. (AI-inferred)
     key: Any = None
-    # The value for a user-defined tag assigned to the API Gateway REST API, used for metadata and resource management. (AI-inferred)
     value: Any = None
 
 _GatewayRestApi_BodyS3LocationFields = {
@@ -53,78 +48,56 @@ _GatewayRestApi_TagsFields = {
 
 @dataclasses.dataclass
 class GatewayRestApiConfig:
-    # Determines whether API keys are sourced from the request header or from an authorizer, with allowed values HEADER and AUTHORIZER. (AI-inferred)
     api_key_source_type: Any = None
-    # Defines the binary media types (e.g., image/png, application/octet-stream) that the REST API treats as binary data, enabling API Gateway to handle binary payloads for those content types. (AI-inferred)
     binary_media_types: Any = None
     # An OpenAPI specification that defines a set of RESTful APIs in JSON format. For YAML templates, you can also provide the specification in YAML format.
     body: Any = None
     # ``S3Location`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger) file that defines a set of RESTful APIs in JSON or YAML. On January 1, 2016, the Swagger Specification was donated to the [OpenAPI initiative](https://docs.aws.amazon.com/https://www.openapis.org/), becoming the foundation of the OpenAPI Specification.
     body_s3_location: Any = None
-    # The ID of an existing RestApi from which to clone the configuration to create this API. (AI-inferred)
     clone_from: Any = None
-    # Specifies a user-defined description for the REST API, which is displayed in the API Gateway console to document the API's purpose. (AI-inferred)
     description: Any = None
-    # When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
     disable_execute_api_endpoint: Any = None
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
     endpoint_configuration: Any = None
-    # When creating or updating the REST API from an OpenAPI definition, setting this to true causes the operation to fail if any warnings are generated, while false (the default) allows warnings to be ignored. (AI-inferred)
     fail_on_warnings: Any = None
-    # Sets the minimum threshold in bytes that a response payload must reach before API Gateway applies compression to the response, enabling gzip compression for larger payloads. (AI-inferred)
     minimum_compression_size: Any = None
     # This property applies only when you use OpenAPI to define your REST API. The ``Mode`` determines how API Gateway handles resource updates. Valid values are ``overwrite`` or ``merge``. For ``overwrite``, the new API definition replaces the existing one. The existing API identifier remains unchanged. For ``merge``, the new API definition is merged with the existing API. If you don't specify this property, a default value is chosen. For REST APIs created before March 29, 2021, the default is ``overwrite``. For REST APIs created after March 29, 2021, the new API definition takes precedence, but any container types such as endpoint configurations and binary media types are merged with the existing API. Use the default mode to define top-level ``RestApi`` properties in addition to using OpenAPI. Generally, it's preferred to use API Gateway's OpenAPI extensions to model these properties.
     mode: Any = None
     # The name of the RestApi. A name is required if the REST API is not based on an OpenAPI specification.
     name: Any = None
-    # Map of API Gateway configuration parameters for the REST API, supporting the 'endpointConfigurationTypes' (comma-separated list of endpoint types) and 'binaryMediaTypes' (comma-separated list of binary media types) keys. (AI-inferred)
     parameters: Any = None
     # A policy document that contains the permissions for the ``RestApi`` resource. To set the ARN for the policy, use the ``!Join`` intrinsic function with ``""`` as delimiter and values of ``"execute-api:/"`` and ``"*"``.
     policy: Any = None
-    # Specifies the minimum TLS version allowed for the REST API's endpoint, either 'TLS_1_0' or 'TLS_1_2'. (AI-inferred)
     security_policy: Any = None
-    # Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class GatewayRestApiAttrs:
-    # Determines whether API keys are sourced from the request header or from an authorizer, with allowed values HEADER and AUTHORIZER. (AI-inferred)
     api_key_source_type: Any = None
-    # Defines the binary media types (e.g., image/png, application/octet-stream) that the REST API treats as binary data, enabling API Gateway to handle binary payloads for those content types. (AI-inferred)
     binary_media_types: Any = None
     # An OpenAPI specification that defines a set of RESTful APIs in JSON format. For YAML templates, you can also provide the specification in YAML format.
     body: Any = None
     # ``S3Location`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource that specifies the Amazon S3 location of a OpenAPI (formerly Swagger) file that defines a set of RESTful APIs in JSON or YAML. On January 1, 2016, the Swagger Specification was donated to the [OpenAPI initiative](https://docs.aws.amazon.com/https://www.openapis.org/), becoming the foundation of the OpenAPI Specification.
     body_s3_location: Any = None
-    # The ID of an existing RestApi from which to clone the configuration to create this API. (AI-inferred)
     clone_from: Any = None
-    # Specifies a user-defined description for the REST API, which is displayed in the API Gateway console to document the API's purpose. (AI-inferred)
     description: Any = None
-    # When set to true, disables the default execute-api endpoint for the REST API, so the API is accessible only through custom domain names. (AI-inferred)
     disable_execute_api_endpoint: Any = None
     endpoint_access_mode: Any = None
     # The ``EndpointConfiguration`` property type specifies the endpoint types and IP address types of a REST API. ``EndpointConfiguration`` is a property of the [AWS::ApiGateway::RestApi](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html) resource.
     endpoint_configuration: Any = None
-    # When creating or updating the REST API from an OpenAPI definition, setting this to true causes the operation to fail if any warnings are generated, while false (the default) allows warnings to be ignored. (AI-inferred)
     fail_on_warnings: Any = None
-    # Sets the minimum threshold in bytes that a response payload must reach before API Gateway applies compression to the response, enabling gzip compression for larger payloads. (AI-inferred)
     minimum_compression_size: Any = None
     # This property applies only when you use OpenAPI to define your REST API. The ``Mode`` determines how API Gateway handles resource updates. Valid values are ``overwrite`` or ``merge``. For ``overwrite``, the new API definition replaces the existing one. The existing API identifier remains unchanged. For ``merge``, the new API definition is merged with the existing API. If you don't specify this property, a default value is chosen. For REST APIs created before March 29, 2021, the default is ``overwrite``. For REST APIs created after March 29, 2021, the new API definition takes precedence, but any container types such as endpoint configurations and binary media types are merged with the existing API. Use the default mode to define top-level ``RestApi`` properties in addition to using OpenAPI. Generally, it's preferred to use API Gateway's OpenAPI extensions to model these properties.
     mode: Any = None
     # The name of the RestApi. A name is required if the REST API is not based on an OpenAPI specification.
     name: Any = None
-    # Map of API Gateway configuration parameters for the REST API, supporting the 'endpointConfigurationTypes' (comma-separated list of endpoint types) and 'binaryMediaTypes' (comma-separated list of binary media types) keys. (AI-inferred)
     parameters: Any = None
     # A policy document that contains the permissions for the ``RestApi`` resource. To set the ARN for the policy, use the ``!Join`` intrinsic function with ``""`` as delimiter and values of ``"execute-api:/"`` and ``"*"``.
     policy: Any = None
-    # The unique identifier for the REST API, assigned by AWS API Gateway when the resource is created. (AI-inferred)
     rest_api_id: Any = None
-    # The unique identifier of the root resource (the top-level path '/') of the API Gateway REST API. (AI-inferred)
     root_resource_id: Any = None
-    # Specifies the minimum TLS version allowed for the REST API's endpoint, either 'TLS_1_0' or 'TLS_1_2'. (AI-inferred)
     security_policy: Any = None
-    # Defines a list of key-value pairs to tag the API Gateway REST API, enabling cost allocation, resource-level access control, and management of the API resource. (AI-inferred)
     tags: Any = None
 
 GatewayRestApi = ubx.ResourceBinding(

@@ -2,48 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PipelinePipeline_ParameterObjects_Attributes {
-  /** The name of the attribute within a parameter object in an AWS Data Pipeline pipeline definition, used to specify parameter metadata such as 'description' or 'type'. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The string value of an attribute within a parameter object, used to define a parameter's value in the pipeline definition. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface PipelinePipeline_ParameterObjects {
-  /** Defines the list of key-value attribute pairs (ParameterAttribute) that specify the configuration of a parameter object, such as its default value and description, in the AWS Data Pipeline pipeline definition. (AI-inferred) */
   attributes?: PipelinePipeline_ParameterObjects_Attributes[] | Computed<PipelinePipeline_ParameterObjects_Attributes[]>;
-  /** The unique identifier for this parameter object within the pipeline's parameter definitions, used to reference it from pipeline expressions and resources. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface PipelinePipeline_ParameterValues {
-  /** The identifier of a parameter defined in the pipeline's ParameterObjects list, used to map this value to that parameter. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The string value assigned to a keyed parameter in the pipeline's parameter values, providing a runtime value to substitute into the pipeline definition at creation or update. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface PipelinePipeline_PipelineObjects_Fields {
-  /** The key is the name of the field in a Data Pipeline object definition, such as 'name', 'type', or 'schedule'. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The reference to another pipeline object's ID, used to link objects within the pipeline definition. (AI-inferred) */
   refValue?: string | Computed<string>;
-  /** Sets the literal string value for a field in a Data Pipeline object definition, used when the field holds a direct string rather than a reference to another pipeline object. (AI-inferred) */
   stringValue?: string | Computed<string>;
 }
 
 export interface PipelinePipeline_PipelineObjects {
-  /** Defines the properties of each pipeline object via a list of key-value pairs (Field objects), which specify attributes such as name, type, schedule, and dependencies, either as literal values or references to other pipeline objects. (AI-inferred) */
   fields?: PipelinePipeline_PipelineObjects_Fields[] | Computed<PipelinePipeline_PipelineObjects_Fields[]>;
-  /** The unique identifier for this pipeline object within the pipeline definition, used to reference it from other objects. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The user-defined name of a pipeline object within the AWS Data Pipeline definition. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface PipelinePipeline_PipelineTags {
-  /** The key of a tag applied to the Data Pipeline, used to categorize and manage the pipeline within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the Data Pipeline, used for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -115,7 +101,6 @@ export interface PipelinePipelineAttrs {
   parameterObjects: PipelinePipeline_ParameterObjects[];
   /** The parameter values used with the pipeline. */
   parameterValues: PipelinePipeline_ParameterValues[];
-  /** The unique identifier assigned by AWS to the pipeline. (AI-inferred) */
   pipelineId: string;
   /** The objects that define the pipeline. These objects overwrite the existing pipeline definition. Not all objects, fields, and values can be updated. For information about restrictions, see Editing Your Pipeline in the AWS Data Pipeline Developer Guide. */
   pipelineObjects: PipelinePipeline_PipelineObjects[];

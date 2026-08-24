@@ -8,49 +8,33 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontStreamingDistribution_StreamingDistributionConfig_Logging:
-    # The Amazon S3 bucket to which CloudFront delivers access logs for the streaming distribution. (AI-inferred)
     bucket: Any = None
-    # Specifies whether CloudFront writes access logs for the streaming distribution to the S3 bucket named in the logging bucket property. (AI-inferred)
     enabled: Any = None
-    # This string specifies the prefix that CloudFront adds to the beginning of the access log file names for this streaming distribution when it writes logs to the configured Amazon S3 bucket. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
 class FrontStreamingDistribution_StreamingDistributionConfig_S3Origin:
-    # The domain name of the S3 bucket that acts as the origin for the CloudFront streaming distribution, typically formatted as `<bucket-name>.s3.amazonaws.com`. (AI-inferred)
     domain_name: Any = None
-    # The CloudFront origin access identity (OAI) to associate with the S3 origin for the streaming distribution, which permits CloudFront to access private S3 content. (AI-inferred)
     origin_access_identity: Any = None
 
 @dataclasses.dataclass
 class FrontStreamingDistribution_StreamingDistributionConfig_TrustedSigners:
-    # Specifies the AWS account numbers of trusted signers (accounts with CloudFront key pairs) allowed to create signed URLs or signed cookies for this streaming distribution. (AI-inferred)
     aws_account_numbers: Any = None
-    # Indicates whether trusted signers are enabled for the streaming distribution, so that when true, the accounts in the AwsAccountNumbers list can create signed URLs, and when false, only the creating AWS account can create signed URLs. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class FrontStreamingDistribution_StreamingDistributionConfig:
-    # List of alternate domain names (CNAMEs) that can be used to access the streaming distribution in addition to the default cloudfront.net domain name. (AI-inferred)
     aliases: Any = None
-    # The required string comment that describes the CloudFront streaming distribution, which must be provided in the streaming distribution configuration. (AI-inferred)
     comment: Any = None
-    # Determines whether the CloudFront streaming distribution is enabled to accept and serve viewer requests. (AI-inferred)
     enabled: Any = None
-    # Configures access logging for the streaming distribution, specifying whether logging is enabled, the S3 bucket where logs are stored, and the log file prefix. (AI-inferred)
     logging: Any = None
-    # Specifies the price class for the CloudFront streaming distribution, which determines the geographic set of edge locations used and the associated pricing tier (e.g., PriceClass_100, PriceClass_200, or PriceClass_All). (AI-inferred)
     price_class: Any = None
-    # Specifies the S3 bucket (domain_name) and CloudFront origin access identity used to authorize access for the streaming distribution's origin. (AI-inferred)
     s3_origin: Any = None
-    # Specifies the AWS account IDs (or 'self' for the owner account) that are permitted to create signed URLs for private content served by this CloudFront streaming distribution, including an Enabled flag indicating whether the trusted signer list is active. (AI-inferred)
     trusted_signers: Any = None
 
 @dataclasses.dataclass
 class FrontStreamingDistribution_Tags:
-    # A tag key used to assign a custom metadata label to the CloudFront streaming distribution for organization, cost allocation, or access control purposes. (AI-inferred)
     key: Any = None
-    # The value portion of a tag applied to the CloudFront streaming distribution, allowing you to associate arbitrary metadata such as environment or cost center with the resource for tracking and management. (AI-inferred)
     value: Any = None
 
 _FrontStreamingDistribution_StreamingDistributionConfig_LoggingFields = {
@@ -98,20 +82,14 @@ _FrontStreamingDistribution_TagsFields = {
 
 @dataclasses.dataclass
 class FrontStreamingDistributionConfig:
-    # The required configuration object for the CloudFront streaming distribution, specifying the S3 origin, enabled flag, optional aliases, comment, logging settings, and trusted signers for RTMP streaming. (AI-inferred)
     streaming_distribution_config: Any = None
-    # Configures the list of tag objects (each with a Key and Value) that are attached to the CloudFront streaming distribution for organization, cost tracking, and access management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class FrontStreamingDistributionAttrs:
-    # The domain name (such as d111111abcdef8.cloudfront.net) that CloudFront assigns to the streaming distribution and that clients use to request content. (AI-inferred)
     domain_name: Any = None
-    # The unique identifier assigned to the CloudFront streaming distribution by AWS, used as the distribution ID. (AI-inferred)
     id: Any = None
-    # The required configuration object for the CloudFront streaming distribution, specifying the S3 origin, enabled flag, optional aliases, comment, logging settings, and trusted signers for RTMP streaming. (AI-inferred)
     streaming_distribution_config: Any = None
-    # Configures the list of tag objects (each with a Key and Value) that are attached to the CloudFront streaming distribution for organization, cost tracking, and access management. (AI-inferred)
     tags: Any = None
 
 FrontStreamingDistribution = ubx.ResourceBinding(

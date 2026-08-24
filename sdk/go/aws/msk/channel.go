@@ -25,22 +25,17 @@ type Channel_IcebergDestinationConfiguration_DeadLetterQueueS3 struct {
 }
 
 type Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceList struct {
-	// The name of a source field in the Kafka record (key or value) that is used as a partition column in the destination Iceberg table. (AI-inferred)
 	SourceName any
 }
 
 type Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec struct {
 	PartitionStrategy any
-	// In the MSK channel's Iceberg destination configuration, this list defines the source columns (with their partition transforms) from each incoming Kafka record that determine how data is partitioned in the corresponding destination Iceberg table. (AI-inferred)
 	SourceList any
 }
 
 type Channel_IcebergDestinationConfiguration_DestinationTableList struct {
-	// The name of the destination database in the target Apache Iceberg catalog where the replicated table is stored, as specified in the Iceberg destination table list. (AI-inferred)
 	DestinationDatabaseName any
-	// The name of the Apache Iceberg destination table that the channel's delivery stream writes records to. (AI-inferred)
 	DestinationTableName any
-	// Specifies the partitioning scheme for the destination Iceberg table, defining how records are grouped into table partitions using transforms such as bucket, truncate, or time-based functions. (AI-inferred)
 	PartitionSpec any
 }
 
@@ -145,7 +140,6 @@ type Channel_TopicConfigurationList_RecordConverter struct {
 }
 
 type Channel_TopicConfigurationList_RecordSchema struct {
-	// The ARN of the AWS Glue Schema Registry schema used to define the record format for the Kafka topic, enabling serialization and validation of messages. (AI-inferred)
 	GsrArn any
 }
 

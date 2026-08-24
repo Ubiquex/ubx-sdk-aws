@@ -4,20 +4,14 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_ResourceConfig_OpenSearchResourceConfig struct {
-	// The ARN of the OpenSearch Serverless application that this CloudWatch Logs integration delivers logs to. (AI-inferred)
 	ApplicationArn any
-	// Specifies the IAM principals (e.g., user ARNs, role ARNs) that are granted permission to view the OpenSearch dashboards provisioned for this logs integration. (AI-inferred)
 	DashboardViewerPrincipals any
-	// The ARN of the IAM role that CloudWatch Logs assumes to access the configured OpenSearch data source for the integration. (AI-inferred)
 	DataSourceRoleArn any
-	// The ARN of an AWS KMS customer managed key used to encrypt the Amazon OpenSearch Service domain or data source associated with this CloudWatch Logs integration, enabling customer-controlled encryption at rest. (AI-inferred)
 	KmsKeyArn any
-	// Specifies the number of days that log data is retained in the associated OpenSearch index for this CloudWatch Logs integration. (AI-inferred)
 	RetentionDays any
 }
 
 type Integration_ResourceConfig struct {
-	// This object defines the Amazon OpenSearch Service resource configuration for the CloudWatch Logs integration, including the target OpenSearch collection, application, index prefix, and time-to-live (TTL) for the imported log data. (AI-inferred)
 	OpenSearchResourceConfig any
 }
 

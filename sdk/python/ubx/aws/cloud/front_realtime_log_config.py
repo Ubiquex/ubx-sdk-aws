@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontRealtimeLogConfig_EndPoints_KinesisStreamConfig:
-    # The ARN of an IAM role that CloudFront assumes to send real-time log data to the associated Kinesis data stream. (AI-inferred)
     role_arn: Any = None
-    # The Amazon Resource Name (ARN) of the Kinesis data stream to which CloudFront delivers real-time log data. (AI-inferred)
     stream_arn: Any = None
 
 @dataclasses.dataclass
 class FrontRealtimeLogConfig_EndPoints:
-    # This object specifies the configuration for the Amazon Kinesis Data Streams destination of a real-time log endpoint, including the stream's Amazon Resource Name (ARN) and the IAM role ARN that CloudFront assumes to publish log records to the stream. (AI-inferred)
     kinesis_stream_config: Any = None
-    # Specifies the streaming service type for a real-time log configuration endpoint, and the only supported value is 'Kinesis'. (AI-inferred)
     stream_type: Any = None
 
 _FrontRealtimeLogConfig_EndPoints_KinesisStreamConfigFields = {
@@ -47,7 +43,6 @@ class FrontRealtimeLogConfigConfig:
 
 @dataclasses.dataclass
 class FrontRealtimeLogConfigAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the CloudFront real-time log configuration. (AI-inferred)
     arn: Any = None
     # Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.
     end_points: Any = None

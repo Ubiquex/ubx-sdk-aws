@@ -9,9 +9,7 @@ type GlobalCluster_GlobalEndpoint struct {
 }
 
 type GlobalCluster_Tags struct {
-	// The key of a tag attached to the RDS Global Cluster, used to organize and identify the cluster. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key attached to the RDS Global Cluster, used to store custom metadata such as environment, owner, or cost center for the cluster. (AI-inferred)
 	Value any
 }
 
@@ -50,7 +48,6 @@ type GlobalClusterAttrs struct {
 	EngineVersion any
 	// The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.
 	GlobalClusterIdentifier any
-	// The global endpoint of the RDS global cluster, containing the address and port used to connect to the primary (writer) instance for read/write operations. (AI-inferred)
 	GlobalEndpoint any
 	// The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional. This parameter is stored as a lowercase string.
 	SourceDbclusterIdentifier any

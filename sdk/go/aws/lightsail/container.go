@@ -4,29 +4,20 @@ package lightsail
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Container_ContainerServiceDeployment_Containers_Environment struct {
-	// Sets the value for an environment variable key in the container, which is passed to the container at runtime in the Lightsail container service deployment. (AI-inferred)
 	Value any
-	// The name of an environment variable for the container, paired with its value in the container's environment map. (AI-inferred)
 	Variable any
 }
 
 type Container_ContainerServiceDeployment_Containers_Ports struct {
-	// The port number that the container listens on, used by the Lightsail container service to expose the container's application to incoming traffic. (AI-inferred)
 	Port any
-	// The protocol assigned to a container's open port, such as HTTP, HTTPS, TCP, or UDP, defining how traffic reaches the container within an AWS Lightsail container service deployment. (AI-inferred)
 	Protocol any
 }
 
 type Container_ContainerServiceDeployment_Containers struct {
-	// Specifies the command to run inside the container, overriding the default entrypoint or command from the container image, as an array of strings. (AI-inferred)
 	Command any
-	// The unique name of the container within the Lightsail container service deployment, used to identify the container in the deployment configuration and when routing traffic from the service's public endpoint. (AI-inferred)
 	ContainerName any
-	// Defines the environment variables (as key-value pairs) to pass into the container within a Lightsail container service deployment. (AI-inferred)
 	Environment any
-	// Specifies the container image (e.g., a Docker Hub image or Amazon ECR repository URI) to use for this container in the Lightsail container service deployment. (AI-inferred)
 	Image any
-	// Defines the ports on which the container listens, including the port number and the protocol (HTTP, HTTPS, TCP, or UDP) that the container service routes requests to for each exposed port. (AI-inferred)
 	Ports any
 }
 
@@ -74,15 +65,12 @@ type Container_PrivateRegistryAccess struct {
 }
 
 type Container_PublicDomainNames struct {
-	// The name of the SSL/TLS certificate associated with the corresponding public domain name in the Lightsail container service configuration. (AI-inferred)
 	CertificateName any
-	// The list of fully qualified domain names (such as subdomains or alternate names) attached to a main domain entry for the Lightsail container service, used to route custom domain traffic to the service. (AI-inferred)
 	DomainNames any
 }
 
 type Container_Tags struct {
 	Key any
-	// The value of a tag key attached to the Lightsail container service, used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 
@@ -172,7 +160,6 @@ type ContainerConfig struct {
 }
 
 type ContainerAttrs struct {
-	// The Amazon Resource Name (ARN) of the Lightsail container service. (AI-inferred)
 	ContainerArn any
 	// Describes a container deployment configuration of an Amazon Lightsail container service.
 	ContainerServiceDeployment any

@@ -2,99 +2,63 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials {
-  /** The password component of the basic authentication credentials used to authenticate to the data source for this AWS Glue connection. (AI-inferred) */
   password?: string | Computed<string>;
-  /** Specifies the username for basic authentication when connecting to the data source using this AWS Glue connection. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties {
-  /** In an AWS Glue connection's OAuth2 authentication configuration for the authorization code grant flow, this field supplies the authorization code returned by the identity provider, which Glue exchanges for access and refresh tokens. (AI-inferred) */
   authorizationCode?: string | Computed<string>;
-  /** The redirect URI to which the OAuth2 authorization server sends the user after authorization, used in the authorization code flow for the Glue connection's authentication configuration. (AI-inferred) */
   redirectUri?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication {
-  /** Specifies the reference to an AWS managed OAuth2 client application (e.g., an AWS-supported SaaS application) used for OAuth2 authentication in the Glue connection. (AI-inferred) */
   awsmanagedClientApplicationReference?: string | Computed<string>;
-  /** The client ID of the user-managed OAuth2 client application used in the OAuth2 authentication configuration for the Glue connection. (AI-inferred) */
   userManagedClientApplicationClientId?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials {
-  /** The OAuth2 access token used by the Glue connection to authenticate with the external data source as part of its OAuth2 authentication flow. (AI-inferred) */
   accessToken?: string | Computed<string>;
-  /** The JSON Web Token (JWT) used as the OAuth2 credential for authenticating to the data source in this AWS Glue connection. (AI-inferred) */
   jwtToken?: string | Computed<string>;
-  /** The refresh token that is used to obtain a new OAuth2 access token when the current access token expires. (AI-inferred) */
   refreshToken?: string | Computed<string>;
-  /** The OAuth2 client secret associated with the user-managed client application used for authentication in this AWS Glue connection. (AI-inferred) */
   userManagedClientApplicationClientSecret?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties {
-  /** Defines the OAuth2 authorization code grant parameters (such as authorization code and redirect URI) used in the authentication configuration of an AWS Glue connection. (AI-inferred) */
   authorizationCodeProperties?: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties | Computed<Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties>;
-  /** Specifies the OAuth2 client application for the Glue connection's authentication configuration, either referencing an AWS-managed client application or supplying the client ID for a user-managed application. (AI-inferred) */
   oauth2ClientApplication?: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication | Computed<Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication>;
-  /** Configures the OAuth2 client credentials (such as authorization code and refresh token) required to authenticate the Glue connection to the data source via OAuth2. (AI-inferred) */
   oauth2Credentials?: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials | Computed<Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials>;
-  /** Specifies the OAuth 2.0 grant type (e.g., AUTHORIZATION_CODE, CLIENT_CREDENTIALS) that determines the authorization flow Glue uses to obtain access tokens for this connection. (AI-inferred) */
   oauth2GrantType?: string | Computed<string>;
-  /** The OAuth2 token endpoint URL where the connection requests access tokens for authentication. (AI-inferred) */
   tokenUrl?: string | Computed<string>;
-  /** Defines a map of additional query parameters (key-value pairs) to be appended to the OAuth2 token endpoint URL when retrieving an access token for the Glue connection. (AI-inferred) */
   tokenUrlParametersMap?: unknown | Computed<unknown>;
 }
 
 export interface Connection_ConnectionInput_AuthenticationConfiguration {
-  /** Specifies whether the connection authenticates using basic inline credentials (username and password) or by referencing a secret in AWS Secrets Manager. (AI-inferred) */
   authenticationType: string | Computed<string>;
-  /** Specifies the username and password used for basic authentication when connecting to the data source for this AWS Glue connection. (AI-inferred) */
   basicAuthenticationCredentials?: Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials | Computed<Connection_ConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials>;
-  /** Specifies a JSON object of custom authentication key-value pairs for the Glue connection, used when the authentication type is CUSTOM to pass connector-specific credential parameters. (AI-inferred) */
   customAuthenticationCredentials?: unknown | Computed<unknown>;
-  /** The ARN of the AWS KMS key used to encrypt the credentials or secret associated with this Glue connection's authentication configuration. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** Specifies the OAuth2 authentication parameters (such as client ID, client secret, token URL, and grant type) for the Glue connection. (AI-inferred) */
   oauth2Properties?: Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties | Computed<Connection_ConnectionInput_AuthenticationConfiguration_Oauth2Properties>;
-  /** The ARN of the AWS Secrets Manager secret that stores the credentials for the Glue connection's authentication configuration. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput_PhysicalConnectionRequirements {
-  /** The Availability Zone (AZ) of the subnet to use when the Glue connection is attached to a VPC, typically required for JDBC and other physical connections. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The list of VPC security group IDs that AWS Glue uses when establishing a connection to resources in a private network, controlling inbound and outbound traffic for the connection. (AI-inferred) */
   securityGroupIdList?: string[] | Computed<string[]>;
-  /** The ID of the subnet within the VPC where the Glue connection's network interface will be placed. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
 export interface Connection_ConnectionInput {
-  /** A map of key-value pairs that define the Athena connection properties (e.g., workgroup and catalog) used when the connection type is ATHENA. (AI-inferred) */
   athenaProperties?: unknown | Computed<unknown>;
-  /** Configures OAuth-based authentication details (such as client credentials and token endpoint) for Glue connection types that require OAuth, like Salesforce or ServiceNow. (AI-inferred) */
   authenticationConfiguration?: Connection_ConnectionInput_AuthenticationConfiguration | Computed<Connection_ConnectionInput_AuthenticationConfiguration>;
-  /** A dynamic map of connection type-specific key-value pairs, such as JDBC_CONNECTION_URL, USERNAME, and PASSWORD for JDBC connections, or KAFKA_BOOTSTRAP_SERVERS and security settings for Kafka connections. (AI-inferred) */
   connectionProperties?: unknown | Computed<unknown>;
-  /** The type of the connection, such as JDBC, SFTP, MONGODB, KAFKA, or NETWORK, which determines the connector and connection parameters used by AWS Glue. (AI-inferred) */
   connectionType: string | Computed<string>;
-  /** Specifies the user-defined description for the Glue connection, providing additional context about the connection's purpose or configuration. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies a list of match criteria that AWS Glue uses to decide whether this connection should be selected for a given resource, often matching network identifiers such as subnet IDs or security group names. (AI-inferred) */
   matchCriteria?: string[] | Computed<string[]>;
-  /** Specifies the name of the Glue connection, which must be unique in the AWS account and Region and is used to identify the connection when referencing it in Glue jobs. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the VPC network configuration (subnet ID, security group IDs, and availability zone) needed to establish a physical connection to a data source such as a JDBC database. (AI-inferred) */
   physicalConnectionRequirements?: Connection_ConnectionInput_PhysicalConnectionRequirements | Computed<Connection_ConnectionInput_PhysicalConnectionRequirements>;
   pythonProperties?: unknown | Computed<unknown>;
-  /** Specifies a map of key-value pairs for Spark-specific connection properties, such as Spark options like 'spark.sql.autoBroadcastJoinThreshold', used when the Glue connection is consumed by an Apache Spark job. (AI-inferred) */
   sparkProperties?: unknown | Computed<unknown>;
-  /** Indicates whether AWS Glue should validate the connection's credentials by attempting to connect to the data store during creation, defaulting to false. (AI-inferred) */
   validateCredentials?: boolean | Computed<boolean>;
-  /** Specifies the list of compute environments (for example, SPARK or ATHENA) against which the connection is validated when the connection is created or updated. (AI-inferred) */
   validateForComputeEnvironments?: string[] | Computed<string[]>;
 }
 
@@ -188,18 +152,13 @@ const Connection_ConnectionInputFields: FieldMap = {
 };
 
 export interface ConnectionConfig {
-  /** The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred) */
   catalogId: string | Computed<string>;
-  /** Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred) */
   connectionInput: Connection_ConnectionInput | Computed<Connection_ConnectionInput>;
 }
 
 export interface ConnectionAttrs {
-  /** The identifier of the AWS Data Catalog (typically the AWS account ID) in which the Glue connection is stored or referenced. (AI-inferred) */
   catalogId: string;
-  /** Configuration object that defines the properties of an AWS Glue connection, including connection type, connection properties, and physical connection requirements for the target data store. (AI-inferred) */
   connectionInput: Connection_ConnectionInput;
-  /** The name of the Glue connection, serving as its unique resource identifier. (AI-inferred) */
   id: string;
 }
 

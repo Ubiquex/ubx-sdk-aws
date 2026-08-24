@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CloudExadataInfrastructure_CustomerContactsToSendToOci:
-    # The email address of a customer contact that Oracle Cloud Infrastructure (OCI) will send notifications to regarding this Exadata infrastructure. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass

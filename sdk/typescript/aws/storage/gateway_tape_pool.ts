@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayTapePool_Tags {
-  /** The tag key (e.g., 'Environment') that names a metadata tag attached to the tape pool. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag associated with the Storage Gateway tape pool, used to organize and identify the resource in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryDefinition_Parameters struct {
 	DefaultValue any
-	// An optional human-readable description of the query definition, used to identify its purpose or contents. (AI-inferred)
 	Description any
 	Name any
 }

@@ -7,7 +7,6 @@ export interface MakerPipeline_ParallelismConfiguration {
 }
 
 export interface MakerPipeline_Tags {
-  /** The key of a tag attached to the SageMaker pipeline, used to assign metadata for organizing, identifying, and managing the pipeline resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -22,9 +21,7 @@ const MakerPipeline_TagsFields: FieldMap = {
 };
 
 export interface MakerPipelineConfig {
-  /** Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred) */
   parallelismConfiguration?: MakerPipeline_ParallelismConfiguration | Computed<MakerPipeline_ParallelismConfiguration>;
-  /** Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred) */
   pipelineDefinition: unknown | Computed<unknown>;
   /** The description of the Pipeline. */
   pipelineDescription?: string | Computed<string>;
@@ -34,14 +31,11 @@ export interface MakerPipelineConfig {
   pipelineName: string | Computed<string>;
   /** Role Arn */
   roleArn: string | Computed<string>;
-  /** A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred) */
   tags?: MakerPipeline_Tags[] | Computed<MakerPipeline_Tags[]>;
 }
 
 export interface MakerPipelineAttrs {
-  /** Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred) */
   parallelismConfiguration: MakerPipeline_ParallelismConfiguration;
-  /** Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred) */
   pipelineDefinition: unknown;
   /** The description of the Pipeline. */
   pipelineDescription: string;
@@ -51,7 +45,6 @@ export interface MakerPipelineAttrs {
   pipelineName: string;
   /** Role Arn */
   roleArn: string;
-  /** A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred) */
   tags: MakerPipeline_Tags[];
 }
 

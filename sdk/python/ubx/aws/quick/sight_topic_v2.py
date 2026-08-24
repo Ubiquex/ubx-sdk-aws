@@ -8,35 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightTopicV2_CustomInstructions:
-    # The textual content of the custom instruction to associate with the QuickSight topic, which is displayed to users as guidance when they interact with the topic. (AI-inferred)
     custom_instructions_string: Any = None
 
 @dataclasses.dataclass
 class SightTopicV2_DataSetRelations_Left:
-    # The list of column names on the left side of a dataset relation in a QuickSight topic, which are matched to the right-side columns to define the join relationship. (AI-inferred)
     column_names: Any = None
-    # The Amazon Resource Name (ARN) of the dataset that acts as the left side of a relationship between two datasets in the QuickSight topic. (AI-inferred)
     data_set_arn: Any = None
 
 @dataclasses.dataclass
 class SightTopicV2_DataSetRelations:
-    # The left-hand dataset reference in a data set relation, which identifies the dataset on the left side of a relationship defined in a QuickSight topic. (AI-inferred)
     left: Any = None
-    # The right object identifies the right-side field reference in a dataset relation, containing the dataset ARN and field name needed to link that dataset to the left-side field in the QuickSight topic semantic model. (AI-inferred)
     right: Any = None
 
 @dataclasses.dataclass
 class SightTopicV2_DataSets:
-    # Specifies the Amazon Resource Name (ARN) of the QuickSight dataset to include in the topic's data set collection. (AI-inferred)
     data_set_arn: Any = None
-    # The name of the QuickSight dataset that the topic's data set definition refers to, used to identify the dataset among the topic's data sets. (AI-inferred)
     data_set_name: Any = None
 
 @dataclasses.dataclass
 class SightTopicV2_Permissions:
-    # The list of IAM QuickSight actions (e.g., quickSight:DescribeTopic, quickSight:UpdateTopic, quickSight:DeleteTopic) that the permission entry grants to the specified principal. (AI-inferred)
     actions: Any = None
-    # The Amazon Resource Name (ARN) of the principal (QuickSight user, group, or IAM role) that the associated permission actions apply to for this QuickSight topic. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass
@@ -83,46 +74,29 @@ _SightTopicV2_TagsFields = {
 
 @dataclasses.dataclass
 class SightTopicV2Config:
-    # The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred)
     aws_account_id: Any = None
     custom_instructions: Any = None
-    # Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred)
     data_set_relations: Any = None
-    # Defines the list of datasets that comprise this QuickSight topic, with each dataset object specifying the dataset ARN and name (and other optional attributes) that the topic uses to build its semantic model. (AI-inferred)
     data_sets: Any = None
-    # The human-readable summary of the Amazon QuickSight topic, describing its purpose or the data it represents. (AI-inferred)
     description: Any = None
-    # The folder_arns field specifies the list of Amazon QuickSight folder ARNs to which this topic is associated, allowing the topic to be organized within folders. (AI-inferred)
     folder_arns: Any = None
-    # Sets the display name of the QuickSight topic, which is the human-readable label used to identify the topic in the QuickSight console. (AI-inferred)
     name: Any = None
-    # A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
     permissions: Any = None
     tags: Any = None
-    # The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
     topic_id: Any = None
 
 @dataclasses.dataclass
 class SightTopicV2Attrs:
-    # The Amazon Resource Name (ARN) of the QuickSight topic, assigned by AWS when the topic is created. (AI-inferred)
     arn: Any = None
-    # The AWS account ID in which the QuickSight topic is created or managed; defaults to the account associated with the provider credentials if not specified. (AI-inferred)
     aws_account_id: Any = None
     custom_instructions: Any = None
-    # Specifies the relationships among the datasets associated with the QuickSight topic, enabling the topic to understand how to join or relate data from different sources. (AI-inferred)
     data_set_relations: Any = None
-    # Defines the list of datasets that comprise this QuickSight topic, with each dataset object specifying the dataset ARN and name (and other optional attributes) that the topic uses to build its semantic model. (AI-inferred)
     data_sets: Any = None
-    # The human-readable summary of the Amazon QuickSight topic, describing its purpose or the data it represents. (AI-inferred)
     description: Any = None
-    # The folder_arns field specifies the list of Amazon QuickSight folder ARNs to which this topic is associated, allowing the topic to be organized within folders. (AI-inferred)
     folder_arns: Any = None
-    # Sets the display name of the QuickSight topic, which is the human-readable label used to identify the topic in the QuickSight console. (AI-inferred)
     name: Any = None
-    # A list of resource permissions that grant or revoke access to the QuickSight topic for specific principals (users, groups, or folders), each specifying allowed actions. (AI-inferred)
     permissions: Any = None
     tags: Any = None
-    # The unique identifier for the QuickSight topic, used when importing an existing topic or to reference the topic in other resources. (AI-inferred)
     topic_id: Any = None
 
 SightTopicV2 = ubx.ResourceBinding(

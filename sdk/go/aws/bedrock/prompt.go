@@ -4,150 +4,106 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Prompt_Variants_GenAiResource_Agent struct {
-	// The identifier of the Amazon Bedrock agent that serves as the generative AI resource for this prompt variant. (AI-inferred)
 	AgentIdentifier any
 }
 
 type Prompt_Variants_GenAiResource struct {
-	// Specifies the Amazon Bedrock agent to associate with the prompt variant, identified by the agent's ARN. (AI-inferred)
 	Agent any
 }
 
 type Prompt_Variants_InferenceConfiguration_Text struct {
-	// Sets the maximum number of tokens the model can generate for text responses in this prompt variant's inference configuration, capping the output length. (AI-inferred)
 	MaxTokens any
-	// Specifies a list of character sequences that will cause the model to stop generating further text when any of them is encountered in the output. (AI-inferred)
 	StopSequences any
-	// In the Bedrock prompt variant's text inference configuration, temperature controls the randomness of generated text, with lower values yielding more deterministic outputs and higher values increasing creative diversity. (AI-inferred)
 	Temperature any
-	// Controls nucleus sampling by setting the cumulative probability threshold for token selection in the text generation inference configuration of the prompt variant. (AI-inferred)
 	TopP any
 }
 
 type Prompt_Variants_InferenceConfiguration struct {
-	// Represents the text inference configuration for the prompt variant, specifying generation parameters such as temperature, topP, maximum tokens, and stop sequences that guide the model's text output. (AI-inferred)
 	Text any
 }
 
 type Prompt_Variants_Metadata struct {
-	// In the metadata map of a Bedrock prompt variant, this key defines the name of a user-specified attribute whose value is a string, enabling you to attach custom labels or annotations to the variant. (AI-inferred)
 	Key any
 	Value any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_InputVariables struct {
-	// The name of an input variable that serves as a placeholder within the chat prompt variant's template, replaced by a concrete value when the prompt is invoked. (AI-inferred)
 	Name any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_Messages_Content_CachePoint struct {
-	// Specifies the type of the cache point marker within a message's content, which must be set to 'default' to indicate that the preceding content should be cached for subsequent prompt invocations. (AI-inferred)
 	Type any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_Messages_Content struct {
-	// Defines a cache point within a chat message content block, used to enable prompt caching in Amazon Bedrock by marking a position in the conversation where the prompt can be cached for subsequent requests. (AI-inferred)
 	CachePoint any
-	// Specifies the literal text of a message content block within a chat prompt template for a Bedrock prompt variant, defining the actual wording of a user or assistant message. (AI-inferred)
 	Text any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_Messages struct {
-	// The list of content blocks (such as text or image) that make up the body of a message in a chat prompt template for the prompt variant. (AI-inferred)
 	Content any
-	// Specifies the conversational role of the message in the chat prompt template, such as 'user' or 'assistant', which determines how the message is positioned in the prompt for the model. (AI-inferred)
 	Role any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_ToolChoice struct {
-	// When specified under tool_choice, this property instructs the model to select and invoke at least one available tool in the current turn, rather than allowing an automatic or no-tool choice. (AI-inferred)
 	Any any
-	// When enabled (e.g., set to true or an empty object), this property sets the tool choice to auto, allowing the model to autonomously decide whether to call a tool and, if so, which one. (AI-inferred)
 	Auto any
-	// Specifies the particular tool the model must use, defined by the tool's name within the configured tool list, when the tool choice strategy is set to a specific tool. (AI-inferred)
 	Tool any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec_InputSchema struct {
-	// Defines the JSON schema that specifies the input parameters expected by the tool, used by the model to understand how to call the tool. (AI-inferred)
 	Json any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools_ToolSpec struct {
-	// Provides a description of the tool that the model uses to understand its purpose and decide when to invoke it. (AI-inferred)
 	Description any
-	// The JSON schema that defines the expected input parameters for the tool, used by the model to construct valid function calls. (AI-inferred)
 	InputSchema any
-	// The name of the tool (function) that the model can invoke, as defined in the tool specification for the chat configuration of this prompt variant. (AI-inferred)
 	Name any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration_Tools struct {
-	// The cachePoint property defines a cache point in the tool configuration, enabling the prompt up to this point to be cached, and its 'type' field (e.g., 'default') specifies the kind of cache point to use. (AI-inferred)
 	CachePoint any
-	// Defines the tool's specification, including its name, description, and a JSON schema that describes the expected input parameters for the model to invoke it. (AI-inferred)
 	ToolSpec any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat_ToolConfiguration struct {
-	// Determines how the model selects which tool to invoke when multiple tools are available, supporting automatic, any-of, or a forced specific tool choice. (AI-inferred)
 	ToolChoice any
-	// Specifies the list of tools available to the model in the chat tool configuration of the prompt, where each tool object defines its name, description, and input schema for invocation. (AI-inferred)
 	Tools any
 }
 
 type Prompt_Variants_TemplateConfiguration_Chat struct {
-	// Defines the list of named variables used in the chat prompt template configuration, each containing a name that corresponds to placeholders substituted with runtime values when invoking the model. (AI-inferred)
 	InputVariables any
-	// Specifies the chat messages (each with a role like user or assistant and content) that define the chat prompt template for this variant. (AI-inferred)
 	Messages any
-	// Defines the system content blocks for the chat prompt template, containing the high-level instructions and context provided to the model before the conversation messages. (AI-inferred)
 	System any
-	// Specifies the list of tools (functions) the model may call in a chat prompt variant, along with optional tool choice settings. (AI-inferred)
 	ToolConfiguration any
 }
 
 type Prompt_Variants_TemplateConfiguration_Text_TextS3Location struct {
-	// The name of the Amazon S3 bucket that contains the prompt template text file for this variant's text configuration. (AI-inferred)
 	Bucket any
-	// The S3 object key of the text prompt template stored in Amazon S3, used as an alternative to inline text for the prompt variant's text template configuration. (AI-inferred)
 	Key any
-	// The version field specifies the version ID of the S3 object containing the prompt template text, enabling retrieval of a specific version of the object from Amazon S3. (AI-inferred)
 	Version any
 }
 
 type Prompt_Variants_TemplateConfiguration_Text struct {
-	// Defines a cache point in the text prompt, with a type that chooses between caching the entire prompt ('default') or only the final portion ('final') to optimize prompt caching during inference. (AI-inferred)
 	CachePoint any
-	// Defines the list of placeholder variables (e.g., `{{name}}`, `{{age}}`) used in the text prompt template of this variant, each specifying a name and data type that get substituted at invocation time. (AI-inferred)
 	InputVariables any
-	// The string content of the text prompt template configured for this Bedrock prompt variant. (AI-inferred)
 	Text any
-	// Specifies the Amazon S3 object location (bucket, key, and optionally version) from which this text prompt variant's template text is loaded, instead of being supplied inline in the text field. (AI-inferred)
 	TextS3Location any
 }
 
 type Prompt_Variants_TemplateConfiguration struct {
-	// The chat object defines the prompt template configuration for chat-based interactions, including the required list of messages (each with a role and content) and an optional set of system prompts used by the Bedrock prompt variant. (AI-inferred)
 	Chat any
-	// This block configures the text prompt template for the variant, containing the prompt text and optional input variables that are substituted into the template. (AI-inferred)
 	Text any
 }
 
 type Prompt_Variants struct {
-	// Defines additional model request fields as key-value pairs that are passed through to the underlying foundation model for this prompt variant, augmenting or overriding standard inference parameters. (AI-inferred)
 	AdditionalModelRequestFields any
 	GenAiResource any
-	// Configures the inference settings for the prompt variant, controlling response generation parameters such as temperature, topP, and maximum token count. (AI-inferred)
 	InferenceConfiguration any
 	Metadata any
-	// The Amazon Bedrock foundation model ID (e.g., anthropic.claude-v2) that this prompt variant uses for generating responses. (AI-inferred)
 	ModelId any
-	// The name of the prompt variant, used to uniquely identify and reference this specific variant within the AWS Bedrock prompt. (AI-inferred)
 	Name any
-	// Specifies the prompt template configuration for this variant, defining the text or chat template structure and how input variables are substituted in the prompt. (AI-inferred)
 	TemplateConfiguration any
-	// Specifies the format of the prompt template for this variant, where 'TEXT' indicates a plain-text prompt and 'CHAT' indicates a chat-message-style prompt. (AI-inferred)
 	TemplateType any
 }
 

@@ -13,15 +13,12 @@ class Addon_NamespaceConfig:
 
 @dataclasses.dataclass
 class Addon_PodIdentityAssociations:
-    # The ARN of the IAM role to associate with the Kubernetes service account for the EKS pod identity association, which grants pods that use that service account permissions to call AWS APIs. (AI-inferred)
     role_arn: Any = None
-    # The name of the Kubernetes service account that the addon's pod identity association will map to the specified IAM role, granting the addon permissions via that role. (AI-inferred)
     service_account: Any = None
 
 @dataclasses.dataclass
 class Addon_Tags:
     key: Any = None
-    # The string value assigned to a tag key on the EKS addon, used to store arbitrary metadata such as environment or owner identifiers for the addon. (AI-inferred)
     value: Any = None
 
 _Addon_NamespaceConfigFields = {

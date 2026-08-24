@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ZoneConnection_AwsLocation {
-  /** The ARN of the IAM role that DataZone assumes to access the AWS location (e.g., an S3 bucket) for this data connection. (AI-inferred) */
   accessRole?: string | Computed<string>;
-  /** The AWS account ID of the AWS location (account and region) where the DataZone connection is hosted. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
-  /** The AWS region where the underlying data source resource (for example, a Redshift cluster or AWS Glue database) is located, used by Amazon DataZone to configure the connection. (AI-inferred) */
   awsRegion?: string | Computed<string>;
-  /** The `iam_connection_id` field in `aws_location` specifies the identifier of the IAM role or connection used by the AWS DataZone connection to access resources in the specified AWS account and region. (AI-inferred) */
   iamConnectionId?: string | Computed<string>;
 }
 
@@ -18,209 +14,140 @@ export interface ZoneConnection_Configurations {
 }
 
 export interface ZoneConnection_Props_AmazonQproperties {
-  /** Specifies the authentication mode used to connect to Amazon Q from AWS DataZone, controlling how the connection credentials are handled and accepted. (AI-inferred) */
   authMode?: string | Computed<string>;
-  /** Indicates whether the Amazon Q integration is enabled for this DataZone connection, controlling whether the connection can be used with Amazon Q features. (AI-inferred) */
   isEnabled?: boolean | Computed<boolean>;
-  /** The ARN of the Amazon Q profile associated with the Data Zone connection, enabling Amazon Q integration for this connection. (AI-inferred) */
   profileArn?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_AthenaProperties {
-  /** The name of the Athena workgroup that this DataZone connection uses for querying data. (AI-inferred) */
   workgroupName?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials {
-  /** The password to authenticate with when using basic authentication for the Glue connection defined in this Data Zone connection's Glue properties. (AI-inferred) */
   password?: string | Computed<string>;
-  /** The username used for basic authentication within the AWS Glue connection's authentication configuration, serving as the principal credential for connecting to the data source. (AI-inferred) */
   userName?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties {
-  /** The OAuth2 authorization code used to exchange for access and refresh tokens when authenticating the AWS Glue connection in Amazon Data Zone. (AI-inferred) */
   authorizationCode?: string | Computed<string>;
-  /** Specifies the redirect URI that the OAuth2 authorization code flow uses to redirect the user after authorization for this Glue connection. (AI-inferred) */
   redirectUri?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication {
-  /** Identifier of the AWS-managed OAuth2 client application used for authentication in the AWS Glue connection of this DataZone connection. (AI-inferred) */
   awsmanagedClientApplicationReference?: string | Computed<string>;
-  /** The client ID of the user-managed OAuth2 client application used for authentication in the Glue connection. (AI-inferred) */
   userManagedClientApplicationClientId?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials {
-  /** The OAuth2 access token used to authenticate to the target system for the AWS Glue connection. (AI-inferred) */
   accessToken?: string | Computed<string>;
-  /** The JWT (JSON Web Token) used for OAuth2 authentication in the Glue connection's authentication configuration, enabling secure access to the data source. (AI-inferred) */
   jwtToken?: string | Computed<string>;
-  /** The OAuth2 refresh token used to obtain a new access token when the current access token expires, for authenticating the AWS Glue connection. (AI-inferred) */
   refreshToken?: string | Computed<string>;
-  /** The client secret for a user-managed OAuth2 client application, used to authenticate the Glue connection within the DataZone connection's authentication configuration. (AI-inferred) */
   userManagedClientApplicationClientSecret?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties {
-  /** This object specifies the authorization code flow parameters for OAuth2 authentication (such as authorization code, token URL, and refresh URL) used within the Glue connection's authentication configuration for the DataZone connection. (AI-inferred) */
   authorizationCodeProperties?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_AuthorizationCodeProperties>;
-  /** Specifies the OAuth2 client application used for authentication within this connection's OAuth2 properties, which may be either an AWS-managed or a user-managed client application with credentials. (AI-inferred) */
   oauth2ClientApplication?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2ClientApplication>;
-  /** Provides the OAuth2 credentials (including authorization code, JWT token, refresh token, or client secret) used to authenticate the Glue connection referenced by this AWS DataZone connection. (AI-inferred) */
   oauth2Credentials?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties_Oauth2Credentials>;
-  /** Specifies the OAuth 2.0 grant type (e.g., AUTHORIZATION_CODE, CLIENT_CREDENTIALS) used by the AWS Glue OAuth2 authentication configuration for the connection. (AI-inferred) */
   oauth2GrantType?: string | Computed<string>;
-  /** The URL of the OAuth2 token endpoint used by the AWS Glue connection for authentication. (AI-inferred) */
   tokenUrl?: string | Computed<string>;
-  /** A map of key-value pairs that are appended as query parameters to the OAuth2 token request URL for the Glue connection. (AI-inferred) */
   tokenUrlParametersMap?: unknown | Computed<unknown>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration {
-  /** Specifies the authentication method (e.g., BASIC, OAUTH2) used for the AWS Glue connection, determining how credentials are supplied for the connection. (AI-inferred) */
   authenticationType?: string | Computed<string>;
-  /** Specifies the username and password credentials used for basic authentication when the underlying AWS Glue connection accesses the external data source. (AI-inferred) */
   basicAuthenticationCredentials?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_BasicAuthenticationCredentials>;
-  /** Provides the custom authentication credentials (as a JSON map of key-value pairs) for the Glue connection's authentication configuration, used when the authentication type is set to custom. (AI-inferred) */
   customAuthenticationCredentials?: unknown | Computed<unknown>;
-  /** The ARN of an AWS KMS key used to encrypt the connection details (such as credentials) in this Glue connection's authentication configuration. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** Defines the OAuth2 authentication parameters (such as grant type, client application, and token URL) for the underlying AWS Glue connection when the authentication type is set to OAuth2. (AI-inferred) */
   oauth2Properties?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration_Oauth2Properties>;
-  /** The ARN of the AWS Secrets Manager secret that stores the credentials used to authenticate the Glue connection within this DataZone connection. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirements {
-  /** Specifies the Availability Zone (e.g., us-east-1a) of the subnet in the physical connection requirements for the AWS Glue connection, which determines the zone where the connection's network resources are provisioned. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** Specifies the list of VPC security group IDs that define the network security rules for the AWS Glue connection used by the DataZone connection. (AI-inferred) */
   securityGroupIdList?: string[] | Computed<string[]>;
-  /** The subnet ID within the VPC where AWS Glue places elastic network interfaces for the physical connection, enabling network access between the connection and the target data store. (AI-inferred) */
   subnetId?: string | Computed<string>;
-  /** Specifies the list of subnet IDs in the virtual private cloud (VPC) that the underlying AWS Glue connection uses for its physical network connectivity. (AI-inferred) */
   subnetIdList?: string[] | Computed<string[]>;
 }
 
 export interface ZoneConnection_Props_GlueProperties_GlueConnectionInput {
   athenaProperties?: unknown | Computed<unknown>;
-  /** Specifies the authentication type and secret ARN (e.g., USERNAME_PASSWORD or IAM) used by the underlying AWS Glue connection, allowing the DataZone connection to securely authenticate to the target data source. (AI-inferred) */
   authenticationConfiguration?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_AuthenticationConfiguration>;
-  /** Specifies the key-value connection properties for the AWS Glue connection, such as the JDBC URL, username, and password, whose expected keys vary by the Glue connection type. (AI-inferred) */
   connectionProperties?: unknown | Computed<unknown>;
-  /** Specifies the type of the underlying AWS Glue connection (e.g., JDBC, SFTP, MONGODB, KAFKA) that this DataZone connection uses. (AI-inferred) */
   connectionType?: string | Computed<string>;
-  /** The user-provided description of the AWS Glue connection, offering additional context about the connection within the data zone connection setup. (AI-inferred) */
   description?: string | Computed<string>;
-  /** A list of UTF-8 strings that define the criteria AWS Glue uses to match this connection to data catalog resources, mirroring the MatchCriteria field of the AWS Glue ConnectionInput API. (AI-inferred) */
   matchCriteria?: string | Computed<string>;
-  /** Specifies the name of the AWS Glue connection that this DataZone connection references or creates. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the physical connectivity requirements for the underlying AWS Glue connection, including the subnet ID, security group IDs, and availability zone where the connection's resources reside. (AI-inferred) */
   physicalConnectionRequirements?: ZoneConnection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirements | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput_PhysicalConnectionRequirements>;
   pythonProperties?: unknown | Computed<unknown>;
-  /** A dynamic map of Apache Spark configuration properties (key-value pairs) for the AWS Glue connection input, used by AWS DataZone to customize Spark behavior when interacting with the connected data source. (AI-inferred) */
   sparkProperties?: unknown | Computed<unknown>;
-  /** When enabled, AWS DataZone validates the AWS Glue connection's credentials during connection creation or update, ensuring the credentials are functional before the connection is provisioned. (AI-inferred) */
   validateCredentials?: boolean | Computed<boolean>;
-  /** Specifies the compute environments (such as SPARK or ATHENA) for which the connection is validated. (AI-inferred) */
   validateForComputeEnvironments?: string[] | Computed<string[]>;
 }
 
 export interface ZoneConnection_Props_GlueProperties {
-  /** The AWS Glue connection input that defines the parameters (such as connection type, properties, and authentication details) for the Glue connection used by the DataZone connection. (AI-inferred) */
   glueConnectionInput?: ZoneConnection_Props_GlueProperties_GlueConnectionInput | Computed<ZoneConnection_Props_GlueProperties_GlueConnectionInput>;
 }
 
 export interface ZoneConnection_Props_HyperPodProperties {
-  /** The name of the SageMaker HyperPod cluster that this DataZone connection targets, used to associate the connection with a specific compute cluster for data access operations. (AI-inferred) */
   clusterName?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_IamProperties {
-  /** Specifies whether AWS Glue lineage sync is enabled for this Data Zone connection, allowing lineage metadata to be captured from Glue catalogs. (AI-inferred) */
   glueLineageSyncEnabled?: boolean | Computed<boolean>;
 }
 
 export interface ZoneConnection_Props_MlflowProperties {
-  /** The Amazon Resource Name (ARN) of the MLflow tracking server that this DataZone connection uses for accessing experiment tracking and model registry data. (AI-inferred) */
   trackingServerArn?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties_Credentials_UsernamePassword {
-  /** The password portion of the username and password credentials used to authenticate to the Amazon Redshift cluster when connecting via DataZone. (AI-inferred) */
   password?: string | Computed<string>;
-  /** The username part of the username/password credentials used to authenticate to the connected Amazon Redshift cluster. (AI-inferred) */
   username?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties_Credentials {
-  /** The ARN of the AWS Secrets Manager secret that stores the Amazon Redshift database credentials used by this DataZone connection. (AI-inferred) */
   secretArn?: string | Computed<string>;
-  /** Specifies the username and password pair used to authenticate against the Amazon Redshift data source when establishing this DataZone connection. (AI-inferred) */
   usernamePassword?: ZoneConnection_Props_RedshiftProperties_Credentials_UsernamePassword | Computed<ZoneConnection_Props_RedshiftProperties_Credentials_UsernamePassword>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties_LineageSync_Schedule {
-  /** Specifies the cron expression that defines how often AWS Data Zone syncs lineage metadata from the Redshift connection. (AI-inferred) */
   schedule?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties_LineageSync {
-  /** A boolean that turns on or off the automatic synchronization of data lineage for the Redshift connection. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the cron-based schedule that determines when AWS DataZone runs the Redshift lineage sync for this connection. (AI-inferred) */
   schedule?: ZoneConnection_Props_RedshiftProperties_LineageSync_Schedule | Computed<ZoneConnection_Props_RedshiftProperties_LineageSync_Schedule>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties_Storage {
-  /** The name of the Amazon Redshift cluster hosting the storage that this DataZone connection is configured to use. (AI-inferred) */
   clusterName?: string | Computed<string>;
-  /** This field specifies the name of the Amazon Redshift Serverless workgroup that the DataZone connection's storage configuration uses for data access. (AI-inferred) */
   workgroupName?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_RedshiftProperties {
-  /** The `credentials` object within `redshift_properties` specifies the authentication details (such as a reference to an AWS Secrets Manager secret) used by AWS DataZone to securely connect to the Amazon Redshift cluster. (AI-inferred) */
   credentials?: ZoneConnection_Props_RedshiftProperties_Credentials | Computed<ZoneConnection_Props_RedshiftProperties_Credentials>;
-  /** The name of the Redshift database that this DataZone connection uses to connect to the Redshift cluster. (AI-inferred) */
   databaseName?: string | Computed<string>;
-  /** The hostname of the Amazon Redshift cluster endpoint that the connection targets. (AI-inferred) */
   host?: string | Computed<string>;
-  /** This object defines how data lineage metadata is automatically synced from the connected Redshift source, including whether it is enabled and the schedule for the sync operation. (AI-inferred) */
   lineageSync?: ZoneConnection_Props_RedshiftProperties_LineageSync | Computed<ZoneConnection_Props_RedshiftProperties_LineageSync>;
-  /** The network port on which the Amazon Redshift cluster accepts connections, used as part of the redshift properties for this DataZone connection. (AI-inferred) */
   port?: number | Computed<number>;
-  /** The storage object in the DataZone connection's Redshift properties specifies whether the connection targets a provisioned Redshift cluster or a serverless workgroup and includes the relevant cluster or workgroup identifiers and IAM role for access. (AI-inferred) */
   storage?: ZoneConnection_Props_RedshiftProperties_Storage | Computed<ZoneConnection_Props_RedshiftProperties_Storage>;
 }
 
 export interface ZoneConnection_Props_S3Properties {
-  /** Determines whether the S3 location is registered as an access grant location in Amazon Data Zone, enabling access grants to be created for that location. (AI-inferred) */
   registerS3AccessGrantLocation?: boolean | Computed<boolean>;
-  /** The identifier of the S3 Access Grant location that this DataZone connection uses to grant access to data in S3. (AI-inferred) */
   s3AccessGrantLocationId?: string | Computed<string>;
-  /** The Amazon S3 URI (e.g., s3://bucket-name/prefix) that specifies the location used by the connection. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_SparkEmrProperties {
-  /** The Amazon Resource Name (ARN) of the Amazon EMR cluster or compute environment that AWS DataZone uses to run Apache Spark jobs for this connection. (AI-inferred) */
   computeArn?: string | Computed<string>;
-  /** The ARN of the IAM instance profile that the Amazon EMR cluster assumes to access AWS resources when running Spark workloads through this DataZone connection. (AI-inferred) */
   instanceProfileArn?: string | Computed<string>;
   javaVirtualEnv?: string | Computed<string>;
-  /** The S3 URI (e.g., s3://bucket/logs/) used as the log destination for Amazon EMR Spark jobs configured in the DataZone connection's Spark EMR properties. (AI-inferred) */
   logUri?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the managed endpoint on the Amazon EMR cluster that AWS DataZone connects to for Spark workloads. (AI-inferred) */
   managedEndpointArn?: string | Computed<string>;
-  /** The S3 URI of a zipped Python virtual environment used to run PySpark jobs on the Amazon EMR cluster associated with this Data Zone connection. (AI-inferred) */
   pythonVirtualEnv?: string | Computed<string>;
-  /** The ARN of the IAM role that the Spark EMR runtime assumes when running data processing tasks for this AWS Data Zone connection. (AI-inferred) */
   runtimeRole?: string | Computed<string>;
-  /** The S3 URI of a location containing trusted certificates used to validate the connection to an Amazon EMR cluster for the DataZone Spark EMR connection. (AI-inferred) */
   trustedCertificatesS3Uri?: string | Computed<string>;
 }
 
@@ -229,49 +156,32 @@ export interface ZoneConnection_Props_SparkGlueProperties_AdditionalArgs {
 }
 
 export interface ZoneConnection_Props_SparkGlueProperties {
-  /** Defines key-value arguments that are passed to the AWS Glue or Apache Spark environment for this DataZone connection, enabling customization of the runtime configuration. (AI-inferred) */
   additionalArgs?: ZoneConnection_Props_SparkGlueProperties_AdditionalArgs | Computed<ZoneConnection_Props_SparkGlueProperties_AdditionalArgs>;
-  /** The name of the AWS Glue connection to be used by Spark jobs in this DataZone connection. (AI-inferred) */
   glueConnectionName?: string | Computed<string>;
-  /** Specifies the version of AWS Glue to use for the Spark Glue connection in the DataZone connection. (AI-inferred) */
   glueVersion?: string | Computed<string>;
   idleTimeout?: number | Computed<number>;
   javaVirtualEnv?: string | Computed<string>;
-  /** Specifies the number of worker nodes to allocate for the AWS Glue Spark job associated with this Data Zone connection. (AI-inferred) */
   numberOfWorkers?: number | Computed<number>;
-  /** Specifies the Amazon S3 URI of the Python virtual environment used by the AWS Glue Spark job for this DataZone connection. (AI-inferred) */
   pythonVirtualEnv?: string | Computed<string>;
-  /** Specifies the AWS Glue worker type (e.g., Standard, G.1X, G.2X) used for the Spark job associated with the DataZone connection's Spark Glue properties. (AI-inferred) */
   workerType?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props_WorkflowsMwaaProperties {
-  /** The name of the Amazon Managed Workflows for Apache Airflow (MWAA) environment associated with the DataZone connection's workflow configuration. (AI-inferred) */
   mwaaEnvironmentName?: string | Computed<string>;
 }
 
 export interface ZoneConnection_Props {
-  /** Configuration for connecting DataZone to Amazon Q Business, including the IAM role and Amazon Q Business application used by the connection. (AI-inferred) */
   amazonQproperties?: ZoneConnection_Props_AmazonQproperties | Computed<ZoneConnection_Props_AmazonQproperties>;
-  /** Provides the Athena-specific properties for the connection, such as the Athena workgroup that defines the SQL query execution context. (AI-inferred) */
   athenaProperties?: ZoneConnection_Props_AthenaProperties | Computed<ZoneConnection_Props_AthenaProperties>;
-  /** The glue_properties object holds the configuration for an AWS Glue connection, specifically the name of the Glue connection that this DataZone connection will use. (AI-inferred) */
   glueProperties?: ZoneConnection_Props_GlueProperties | Computed<ZoneConnection_Props_GlueProperties>;
   hyperPodProperties?: ZoneConnection_Props_HyperPodProperties | Computed<ZoneConnection_Props_HyperPodProperties>;
-  /** This object specifies the IAM role that AWS DataZone assumes when connecting to the external data source, enabling secure access for the connection. (AI-inferred) */
   iamProperties?: ZoneConnection_Props_IamProperties | Computed<ZoneConnection_Props_IamProperties>;
   lakehouseProperties?: ZoneConnection_Props_IamProperties | Computed<ZoneConnection_Props_IamProperties>;
-  /** Specifies the MLflow-specific configuration for an AWS Data Zone connection, including the MLflow tracking server endpoint and any associated authentication settings. (AI-inferred) */
   mlflowProperties?: ZoneConnection_Props_MlflowProperties | Computed<ZoneConnection_Props_MlflowProperties>;
-  /** Specifies the Amazon Redshift connection settings for the Data Zone connection, including the cluster endpoint and database details needed to connect to the Redshift data source. (AI-inferred) */
   redshiftProperties?: ZoneConnection_Props_RedshiftProperties | Computed<ZoneConnection_Props_RedshiftProperties>;
-  /** Defines the Amazon S3-specific connection settings, such as the target bucket and object path, for a DataZone connection to an S3 data source. (AI-inferred) */
   s3Properties?: ZoneConnection_Props_S3Properties | Computed<ZoneConnection_Props_S3Properties>;
-  /** The set of configuration properties AWS DataZone uses to connect to a Spark application on an Amazon EMR cluster. (AI-inferred) */
   sparkEmrProperties?: ZoneConnection_Props_SparkEmrProperties | Computed<ZoneConnection_Props_SparkEmrProperties>;
-  /** Specifies the configuration for connecting Amazon Data Zone to AWS Glue for Spark workloads, including the execution role and Glue connection details that enable data access and processing. (AI-inferred) */
   sparkGlueProperties?: ZoneConnection_Props_SparkGlueProperties | Computed<ZoneConnection_Props_SparkGlueProperties>;
-  /** Specifies the Amazon MWAA environment ARN and IAM execution role ARN that AWS DataZone uses to orchestrate workflows for this connection. (AI-inferred) */
   workflowsMwaaProperties?: ZoneConnection_Props_WorkflowsMwaaProperties | Computed<ZoneConnection_Props_WorkflowsMwaaProperties>;
   workflowsServerlessProperties?: unknown | Computed<unknown>;
 }

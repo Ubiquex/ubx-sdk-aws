@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TowerLandingZone_Tags:
-    # Key of a user-defined tag to apply to the AWS Control Tower landing zone resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,32 +18,21 @@ _TowerLandingZone_TagsFields = {
 
 @dataclasses.dataclass
 class TowerLandingZoneConfig:
-    # The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
     manifest: Any = None
     remediation_types: Any = None
-    # The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
-    # The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class TowerLandingZoneAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this landing zone. (AI-inferred)
     arn: Any = None
-    # Indicates the current drift detection status of the landing zone (e.g., DRIFTED, IN_SYNC, NOT_CHECKING), showing whether the landing zone's configuration has deviated from the expected baseline. (AI-inferred)
     drift_status: Any = None
-    # The unique identifier (ARN) of the AWS Control Tower landing zone, assigned by AWS when the landing zone is created. (AI-inferred)
     landing_zone_identifier: Any = None
-    # The latest available version of the AWS Control Tower landing zone that you can update to. (AI-inferred)
     latest_available_version: Any = None
-    # The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred)
     manifest: Any = None
     remediation_types: Any = None
-    # The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred)
     status: Any = None
-    # The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred)
     tags: Any = None
-    # The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred)
     version: Any = None
 
 TowerLandingZone = ubx.ResourceBinding(

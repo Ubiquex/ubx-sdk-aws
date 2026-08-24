@@ -27,9 +27,7 @@ class SyncLocationFsxWindows_ManagedSecretConfig:
 
 @dataclasses.dataclass
 class SyncLocationFsxWindows_Tags:
-    # The key of a tag that you can assign to the DataSync location for FSx for Windows File Server, used to identify and manage the resource. (AI-inferred)
     key: Any = None
-    # Specifies the value of a user-defined tag applied to the FSx for Windows File Server DataSync location, used for cost allocation and resource management. (AI-inferred)
     value: Any = None
 
 _SyncLocationFsxWindows_CustomSecretConfigFields = {

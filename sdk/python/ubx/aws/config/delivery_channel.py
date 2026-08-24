@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeliveryChannel_ConfigSnapshotDeliveryProperties:
-    # Specifies the frequency with which AWS Config delivers configuration snapshots to the S3 bucket, accepting values like One_Hour, Three_Hours, Six_Hours, Twelve_Hours, and TwentyFour_Hours. (AI-inferred)
     delivery_frequency: Any = None
 
 _DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields = {
@@ -17,34 +16,21 @@ _DeliveryChannel_ConfigSnapshotDeliveryPropertiesFields = {
 
 @dataclasses.dataclass
 class DeliveryChannelConfig:
-    # Specifies how often AWS Config delivers configuration snapshot updates (e.g., every hour, six hours, or twenty-four hours) to the delivery channel's destination. (AI-inferred)
     config_snapshot_delivery_properties: Any = None
-    # The name of the AWS Config delivery channel, which must be unique in the account and defaults to 'default' if not specified. (AI-inferred)
     name: Any = None
-    # Specifies the name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files for the account. (AI-inferred)
     s3_bucket_name: Any = None
-    # The prefix for the Amazon S3 keys that AWS Config uses to store configuration snapshots and delivery logs in the bucket. (AI-inferred)
     s3_key_prefix: Any = None
-    # The ARN of the AWS KMS key that AWS Config uses to encrypt the configuration snapshots and configuration history delivered to the Amazon S3 bucket. (AI-inferred)
     s3_kms_key_arn: Any = None
-    # The ARN of the Amazon SNS topic to which AWS Config delivers configuration snapshots and configuration change notifications. (AI-inferred)
     sns_topic_arn: Any = None
 
 @dataclasses.dataclass
 class DeliveryChannelAttrs:
-    # Specifies how often AWS Config delivers configuration snapshot updates (e.g., every hour, six hours, or twenty-four hours) to the delivery channel's destination. (AI-inferred)
     config_snapshot_delivery_properties: Any = None
-    # This field is the name of the AWS Config delivery channel, which serves as its unique identifier and is typically set to 'default' unless otherwise specified. (AI-inferred)
     id: Any = None
-    # The name of the AWS Config delivery channel, which must be unique in the account and defaults to 'default' if not specified. (AI-inferred)
     name: Any = None
-    # Specifies the name of the Amazon S3 bucket to which AWS Config delivers configuration snapshots and configuration history files for the account. (AI-inferred)
     s3_bucket_name: Any = None
-    # The prefix for the Amazon S3 keys that AWS Config uses to store configuration snapshots and delivery logs in the bucket. (AI-inferred)
     s3_key_prefix: Any = None
-    # The ARN of the AWS KMS key that AWS Config uses to encrypt the configuration snapshots and configuration history delivered to the Amazon S3 bucket. (AI-inferred)
     s3_kms_key_arn: Any = None
-    # The ARN of the Amazon SNS topic to which AWS Config delivers configuration snapshots and configuration change notifications. (AI-inferred)
     sns_topic_arn: Any = None
 
 DeliveryChannel = ubx.ResourceBinding(

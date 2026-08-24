@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TPolicyPrincipalAttachmentConfig {
-  /** The name of the AWS IoT policy that will be attached to the specified principal (such as a certificate or Amazon Cognito identity) in the AWS::IoT::PolicyPrincipalAttachment resource. (AI-inferred) */
   policyName: string | Computed<string>;
-  /** The ARN of the IoT principal (e.g., a certificate ARN or Cognito identity) to which the policy is attached. (AI-inferred) */
   principal: string | Computed<string>;
 }
 
 export interface TPolicyPrincipalAttachmentAttrs {
-  /** This computed identifier uniquely represents the attachment between the IoT policy and the principal (certificate ARN or Cognito identity), typically composed of the policy name and the target principal ARN. (AI-inferred) */
   id: string;
-  /** The name of the AWS IoT policy that will be attached to the specified principal (such as a certificate or Amazon Cognito identity) in the AWS::IoT::PolicyPrincipalAttachment resource. (AI-inferred) */
   policyName: string;
-  /** The ARN of the IoT principal (e.g., a certificate ARN or Cognito identity) to which the policy is attached. (AI-inferred) */
   principal: string;
 }
 

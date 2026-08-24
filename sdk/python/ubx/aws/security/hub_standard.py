@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubStandard_DisabledStandardsControls:
-    # The user-supplied reason for disabling the specified Security Hub standard control in the DisabledStandardsControls list of the AWS::SecurityHub::Standard resource. (AI-inferred)
     reason: Any = None
-    # The Amazon Resource Name (ARN) of the specific Security Hub standard control that is disabled for this standard membership. (AI-inferred)
     standards_control_arn: Any = None
 
 _HubStandard_DisabledStandardsControlsFields = {
@@ -31,7 +29,6 @@ class HubStandardAttrs:
     disabled_standards_controls: Any = None
     # The ARN of the standard that you want to enable. To view a list of available ASH standards and their ARNs, use the [DescribeStandards](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html) API operation.
     standards_arn: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the subscription to a Security Hub standard. (AI-inferred)
     standards_subscription_arn: Any = None
 
 HubStandard = ubx.ResourceBinding(

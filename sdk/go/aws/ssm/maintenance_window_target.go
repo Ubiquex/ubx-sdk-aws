@@ -4,9 +4,7 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MaintenanceWindowTarget_Targets struct {
-	// Specifies the type of target, such as 'InstanceIds' to match EC2 instance IDs or a tag key in the format 'tag:key' to match instances by tag, which determines how the associated Values are interpreted. (AI-inferred)
 	Key any
-	// Specifies the values for the maintenance window target key, such as EC2 instance IDs when the key is 'InstanceIds' or resource group names when the key is 'ResourceGroup'. (AI-inferred)
 	Values any
 }
 

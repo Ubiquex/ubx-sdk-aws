@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TThing_AttributePayload:
-    # A map of key-value pairs defining the AWS IoT thing's attribute payload, which is used to store and manage the device's metadata attributes. (AI-inferred)
     attributes: Any = None
 
 _TThing_AttributePayloadFields = {
@@ -17,20 +16,14 @@ _TThing_AttributePayloadFields = {
 
 @dataclasses.dataclass
 class TThingConfig:
-    # Specifies the thing's attribute payload, including a map of attribute names to values and whether to merge with existing attributes on update. (AI-inferred)
     attribute_payload: Any = None
-    # The unique name to assign to this AWS IoT thing; if omitted, CloudFormation generates a name. (AI-inferred)
     thing_name: Any = None
 
 @dataclasses.dataclass
 class TThingAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the IoT thing within AWS IoT, used for referencing the thing in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
-    # Specifies the thing's attribute payload, including a map of attribute names to values and whether to merge with existing attributes on update. (AI-inferred)
     attribute_payload: Any = None
-    # For an AWS IoT Thing, the computed id is the thing's name, which is the resource's unique identifier within the AWS IoT registry and its CloudFormation physical ID. (AI-inferred)
     id: Any = None
-    # The unique name to assign to this AWS IoT thing; if omitted, CloudFormation generates a name. (AI-inferred)
     thing_name: Any = None
 
 TThing = ubx.ResourceBinding(

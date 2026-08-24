@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_AlarmConfiguration_Alarms:
-    # The name of a CloudWatch alarm that this CodeDeploy deployment group monitors to automatically stop a deployment if the alarm enters an alarming state. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -102,23 +101,17 @@ class DeployDeploymentGroup_DeploymentStyle:
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_Ecsservices:
-    # The name of the ECS cluster where the ECS service targeted by the CodeDeploy deployment group is running. (AI-inferred)
     cluster_name: Any = None
-    # The name of the ECS service that the deployment group targets, as specified in the ECSServices configuration. (AI-inferred)
     service_name: Any = None
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_Ec2TagFilters:
-    # The EC2 tag key (e.g., 'Environment') used to match instances for the deployment group's tag filter. (AI-inferred)
     key: Any = None
-    # Specifies the tag filter type (KEY_ONLY, VALUE_ONLY, or KEY_AND_VALUE) used to match EC2 instances for the deployment group. (AI-inferred)
     type: Any = None
-    # The tag value that the deployment group's EC2 tag filter matches against to select instances for deployment. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_Ec2TagSet_Ec2TagSetList:
-    # A list of EC2 tag filters (each with Key, Value, and Type) that collectively define a tag group; an instance must match all tags in this group to be included in the deployment group via this EC2 tag set list entry. (AI-inferred)
     ec2_tag_group: Any = None
 
 @dataclasses.dataclass
@@ -128,16 +121,12 @@ class DeployDeploymentGroup_Ec2TagSet:
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList_ProdTrafficRoute:
-    # The ARNs of the Elastic Load Balancing listeners that route traffic to the production target group in a blue/green deployment, enabling CodeDeploy to shift production traffic to the replacement target group after deployment. (AI-inferred)
     listener_arns: Any = None
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_LoadBalancerInfo_TargetGroupPairInfoList:
-    # In an AWS CodeDeploy blue/green deployment using paired target groups, prod_traffic_route specifies the listener ARN (or ARNs) on the load balancer that currently routes production traffic to the original (blue) target group, which CodeDeploy automatically updates to shift traffic to the replacement (green) target group during the deployment. (AI-inferred)
     prod_traffic_route: Any = None
-    # Specifies the list of target groups that make up a blue/green target group pair for an Application Load Balancer or Network Load Balancer, each containing the name or ARN of a target group used for the blue/green deployment traffic routing. (AI-inferred)
     target_groups: Any = None
-    # This traffic route object lists the target group ARNs that CodeDeploy sends test traffic to during a blue/green deployment, letting you validate the replacement environment before production traffic is shifted. (AI-inferred)
     test_traffic_route: Any = None
 
 @dataclasses.dataclass
@@ -151,7 +140,6 @@ class DeployDeploymentGroup_LoadBalancerInfo:
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_OnPremisesTagSet_OnPremisesTagSetList:
-    # Defines a list of on-premises instance tag filters (key, value, and match type) that constitute a single tag group within an on-premises tag set, used to select on-premises instances for the CodeDeploy deployment group. (AI-inferred)
     on_premises_tag_group: Any = None
 
 @dataclasses.dataclass
@@ -162,16 +150,12 @@ class DeployDeploymentGroup_OnPremisesTagSet:
 @dataclasses.dataclass
 class DeployDeploymentGroup_Tags:
     key: Any = None
-    # The user-defined value for a tag key attached to an AWS CodeDeploy deployment group, enabling resource categorization and metadata management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DeployDeploymentGroup_TriggerConfigurations:
-    # The list of CodeDeploy deployment or instance events (e.g., DeploymentSuccess, DeploymentFailure) that will trigger the SNS notification for this trigger configuration. (AI-inferred)
     trigger_events: Any = None
-    # The name of a trigger configuration for the deployment group, used to identify this trigger among the configured CloudWatch Events or SNS triggers. (AI-inferred)
     trigger_name: Any = None
-    # The ARN of the Amazon SNS topic that AWS CodeDeploy uses to send notifications when the deployment lifecycle events specified in the trigger configuration occur. (AI-inferred)
     trigger_target_arn: Any = None
 
 _DeployDeploymentGroup_AlarmConfiguration_AlarmsFields = {

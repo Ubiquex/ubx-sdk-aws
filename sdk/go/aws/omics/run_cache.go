@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RunCache_Tags struct {
 	Key any
-	// The value of a tag (key-value pair) applied to the AWS Omics run cache. (AI-inferred)
 	Value any
 }
 

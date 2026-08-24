@@ -4,9 +4,7 @@ package rbin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rule_ExcludeResourceTags struct {
-	// Specifies the tag key used to identify resources that should be excluded from the retention rule's cleanup (i.e., resources with this tag key will not be affected by the rule). (AI-inferred)
 	ResourceTagKey any
-	// The value of a resource tag that, when matched on a resource, excludes that resource from the retention rule's effect. (AI-inferred)
 	ResourceTagValue any
 }
 
@@ -54,7 +52,6 @@ type RuleConfig struct {
 	Description any
 	// Information about the exclude resource tags used to identify resources that are excluded by the retention rule.
 	ExcludeResourceTags any
-	// The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
 	LockConfiguration any
 	// Information about the resource tags used to identify resources that are retained by the retention rule.
 	ResourceTags any
@@ -77,7 +74,6 @@ type RuleAttrs struct {
 	ExcludeResourceTags any
 	// The unique ID of the retention rule.
 	Identifier any
-	// The lock configuration for the Recycle Bin rule, specifying the lock mode ('governance' or 'compliance') that determines whether the rule can be modified or deleted after creation. (AI-inferred)
 	LockConfiguration any
 	// The lock state for the retention rule.
 	LockState any

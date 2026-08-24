@@ -9,9 +9,7 @@ export interface TransitGatewayPeeringAttachment_Status {
 }
 
 export interface TransitGatewayPeeringAttachment_Tags {
-  /** The key of a tag to attach to the transit gateway peering attachment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the transit gateway peering attachment, used to identify or organize the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -44,7 +42,6 @@ export interface TransitGatewayPeeringAttachmentAttrs {
   peerTransitGatewayId: string;
   /** The state of the transit gateway peering attachment. Note that the initiating state has been deprecated. */
   state: string;
-  /** The current status of the transit gateway peering attachment, reported as an object containing a code (e.g., available or deleted) and a message describing the state in more detail. (AI-inferred) */
   status: TransitGatewayPeeringAttachment_Status;
   /** The tags for the transit gateway peering attachment. */
   tags: TransitGatewayPeeringAttachment_Tags[];

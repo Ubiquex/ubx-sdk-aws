@@ -42,25 +42,15 @@ export interface PackageOriginEndpoint_CmafPackage_Encryption {
 }
 
 export interface PackageOriginEndpoint_CmafPackage_HlsManifests {
-  /** Determines how SCTE-35 ad markers are handled in the HLS manifests for this CMAF endpoint, with supported values including PASSTHROUGH, SCTE35_ENHANCED, DATERANGE, and NONE. (AI-inferred) */
   adMarkers?: string | Computed<string>;
-  /** Specifies which SCTE-35 ad marker types (e.g., SPLICE_INSERT, BREAK) in the source content trigger ad insertion in this HLS manifest. (AI-inferred) */
   adTriggers?: string[] | Computed<string[]>;
-  /** Specifies the ad marker restrictions for this HLS manifest in the CMAF packaging configuration, limiting which ad markers are permitted (NONE, RESTRICTED, UNRESTRICTED, or BOTH). (AI-inferred) */
   adsOnDeliveryRestrictions?: string | Computed<string>;
-  /** Unique identifier for this HLS manifest within the CMAF package, which is used to construct the manifest's URL and must be unique among all HLS manifests for the endpoint. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Whether to include an I-frame only stream (a video stream containing only key frames) in this HLS manifest. (AI-inferred) */
   includeIframeOnlyStream?: boolean | Computed<boolean>;
-  /** Sets the short string that MediaPackage appends to the end of the base URL to create the unique path for the generated HLS manifest file in the CMAF package. (AI-inferred) */
   manifestName?: string | Computed<string>;
-  /** Determines whether the HLS manifest for the CMAF package uses an EVENT or VOD playlist type, controlling whether the playlist grows as new content is published or remains a fixed VOD playlist. (AI-inferred) */
   playlistType?: string | Computed<string>;
-  /** Specifies the duration in seconds of the sliding window for the HLS manifest, controlling how much of the live stream's media segments are listed in the playlist. (AI-inferred) */
   playlistWindowSeconds?: number | Computed<number>;
-  /** For each HLS manifest under the CMAF package, this interval (in seconds) controls how often EXT-X-PROGRAM-DATE-TIME tags are inserted into the manifest, enabling downstream players to align content with absolute time. (AI-inferred) */
   programDateTimeIntervalSeconds?: number | Computed<number>;
-  /** The complete URL that clients use to request this HLS manifest from the MediaPackage origin endpoint. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
@@ -185,9 +175,7 @@ export interface PackageOriginEndpoint_MssPackage {
 }
 
 export interface PackageOriginEndpoint_Tags {
-  /** The key of a user-defined tag attached to the MediaPackage origin endpoint, which can be used to categorize and manage the resource, such as for cost allocation or access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Elemental MediaPackage origin endpoint, used to categorize the resource for cost allocation and IAM resource-level permissions. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

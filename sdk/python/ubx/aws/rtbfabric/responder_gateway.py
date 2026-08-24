@@ -34,12 +34,10 @@ _ResponderGateway_TrustStoreConfigurationFields = {
 
 @dataclasses.dataclass
 class ResponderGatewayConfig:
-    # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
     acm_certificate_arn: Any = None
     description: Any = None
     domain_name: Any = None
     gateway_type: Any = None
-    # Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
     listener_config: Any = None
     managed_endpoint_configuration: Any = None
     port: Any = None
@@ -50,13 +48,11 @@ class ResponderGatewayConfig:
     subnet_ids: Any = None
     # Tags to assign to the Responder Gateway.
     tags: Any = None
-    # Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
     trust_store_configuration: Any = None
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class ResponderGatewayAttrs:
-    # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for TLS/SSL termination on the responder gateway's public endpoint. (AI-inferred)
     acm_certificate_arn: Any = None
     arn: Any = None
     certificate_association_status: Any = None
@@ -66,7 +62,6 @@ class ResponderGatewayAttrs:
     external_inbound_endpoint: Any = None
     gateway_id: Any = None
     gateway_type: Any = None
-    # Configures the network listener for the responder gateway, specifying the port and protocol (such as HTTP or HTTPS) on which it accepts incoming bid requests. (AI-inferred)
     listener_config: Any = None
     managed_endpoint_configuration: Any = None
     port: Any = None
@@ -78,7 +73,6 @@ class ResponderGatewayAttrs:
     subnet_ids: Any = None
     # Tags to assign to the Responder Gateway.
     tags: Any = None
-    # Configures the trust store used by the responder gateway to validate client certificates during mutual TLS handshakes, enabling secure client authentication. (AI-inferred)
     trust_store_configuration: Any = None
     updated_timestamp: Any = None
     vpc_id: Any = None

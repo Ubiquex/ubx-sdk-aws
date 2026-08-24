@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GeofenceCollection_Tags:
-    # The key of a tag attached to the AWS Location geofence collection, used to label the resource with custom metadata for identification, organization, and access control. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,13 +18,9 @@ _GeofenceCollection_TagsFields = {
 
 @dataclasses.dataclass
 class GeofenceCollectionConfig:
-    # The name of the geofence collection, which must be unique within the AWS account and region and serves as the collection's identifier. (AI-inferred)
     collection_name: Any = None
-    # An optional descriptive text that provides a human-readable overview or purpose of the geofence collection in Amazon Location Service. (AI-inferred)
     description: Any = None
-    # The identifier (key ID or ARN) of the customer-managed AWS KMS key used to encrypt the geofence collection's data. (AI-inferred)
     kms_key_id: Any = None
-    # The pricing plan for the geofence collection, which determines the billing model (such as request-based usage) for geofencing operations performed on that collection. (AI-inferred)
     pricing_plan: Any = None
     # This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
     pricing_plan_data_source: Any = None
@@ -34,19 +29,13 @@ class GeofenceCollectionConfig:
 
 @dataclasses.dataclass
 class GeofenceCollectionAttrs:
-    # The unique Amazon Resource Name (ARN) assigned to the geofence collection. (AI-inferred)
     arn: Any = None
-    # The Amazon Resource Name (ARN) of the geofence collection, which uniquely identifies it within AWS and is assigned by the service when the collection is created. (AI-inferred)
     collection_arn: Any = None
-    # The name of the geofence collection, which must be unique within the AWS account and region and serves as the collection's identifier. (AI-inferred)
     collection_name: Any = None
     # The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ)
     create_time: Any = None
-    # An optional descriptive text that provides a human-readable overview or purpose of the geofence collection in Amazon Location Service. (AI-inferred)
     description: Any = None
-    # The identifier (key ID or ARN) of the customer-managed AWS KMS key used to encrypt the geofence collection's data. (AI-inferred)
     kms_key_id: Any = None
-    # The pricing plan for the geofence collection, which determines the billing model (such as request-based usage) for geofencing operations performed on that collection. (AI-inferred)
     pricing_plan: Any = None
     # This shape is deprecated since 2022-02-01: Deprecated. No longer allowed.
     pricing_plan_data_source: Any = None

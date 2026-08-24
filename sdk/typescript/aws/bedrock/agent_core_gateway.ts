@@ -2,58 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue {
-  /** The exact string value that the specified custom claim must match for the request to be authorized. (AI-inferred) */
   matchValueString?: string | Computed<string>;
   matchValueStringList?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue {
-  /** Determines the comparison operator (e.g., equals) used when evaluating whether a custom JWT claim's value matches the configured authorizing claim match value in the JWT authorizer of the Bedrock agent core gateway. (AI-inferred) */
   claimMatchOperator?: string | Computed<string>;
-  /** Defines the exact value that a custom claim in the incoming JWT token must match to authorize the request to the Bedrock agent core gateway, used by the custom JWT authorizer's custom claims configuration. (AI-inferred) */
   claimMatchValue?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue_ClaimMatchValue>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims {
-  /** Specifies the value that a custom claim in the JWT token must match for the request to be authorized by the Bedrock Agent Core Gateway's custom JWT authorizer. (AI-inferred) */
   authorizingClaimMatchValue?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue>;
   inboundTokenClaimName?: string | Computed<string>;
-  /** For the custom JWT authorizer on the Bedrock Agent Core Gateway, this field determines whether the value of the inbound token claim is interpreted as a single string or an array of strings when extracting custom claims. (AI-inferred) */
   inboundTokenClaimValueType?: string | Computed<string>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource {
-  /** Specifies the IP address type (IPv4 or IPv6) for the managed VPC endpoint used to privately access the custom JWT authorizer. (AI-inferred) */
   endpointIpAddressType?: string | Computed<string>;
   routingDomain?: string | Computed<string>;
-  /** The security group IDs to attach to the managed VPC resources that back this private endpoint, controlling network traffic for the custom JWT authorizer. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs in the managed VPC used for the private endpoint of the custom JWT authorizer, determining where the endpoint resources are placed for network connectivity. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** The ID of the VPC in which the managed VPC resource for the private endpoint is provisioned. (AI-inferred) */
   vpcIdentifier?: string | Computed<string>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource {
-  /** The unique identifier of the Amazon VPC Lattice resource configuration that the custom JWT authorizer's private endpoint uses to route requests to the self-managed lattice resource. (AI-inferred) */
   resourceConfigurationIdentifier?: string | Computed<string>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint {
-  /** Defines the managed VPC configuration (VPC ID, subnet IDs, security group IDs) used by the private endpoint of the custom JWT authorizer in the Bedrock Agent Core Gateway resource. (AI-inferred) */
   managedVpcResource?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_ManagedVpcResource>;
   selfManagedLatticeResource?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint_SelfManagedLatticeResource>;
 }
 
 export interface AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer {
   advertisedScopeMapping?: unknown | Computed<unknown>;
-  /** Specifies the list of allowed audience values (the 'aud' claim) that a JWT must contain to be accepted by the custom JWT authorizer for this Agent Core Gateway. (AI-inferred) */
   allowedAudience?: string[] | Computed<string[]>;
   allowedClients?: string[] | Computed<string[]>;
-  /** Specifies the list of JWT scopes that must be present in the token's claims for the custom JWT authorizer to allow the request through the core gateway. (AI-inferred) */
   allowedScopes?: string[] | Computed<string[]>;
   customClaims?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims[] | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims[]>;
-  /** This field specifies the OIDC discovery URL (e.g., https://auth.example.com/.well-known/openid-configuration) that the custom JWT authorizer fetches to obtain the JWKS (JSON Web Key Set) used to validate the JWT tokens presented to the agent's core gateway. (AI-inferred) */
   discoveryUrl?: string | Computed<string>;
   privateEndpoint?: AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint | Computed<AgentCoreGateway_AuthorizerConfiguration_CustomJwtauthorizer_PrivateEndpoint>;
 }
@@ -63,7 +49,6 @@ export interface AgentCoreGateway_AuthorizerConfiguration {
 }
 
 export interface AgentCoreGateway_InterceptorConfigurations_InputConfiguration_PayloadFilter_Exclude {
-  /** Specifies the name of a field in the input payload that should be excluded from the payload sent to the interceptor as part of the payload filter's exclude list. (AI-inferred) */
   field?: string | Computed<string>;
 }
 
@@ -72,9 +57,7 @@ export interface AgentCoreGateway_InterceptorConfigurations_InputConfiguration_P
 }
 
 export interface AgentCoreGateway_InterceptorConfigurations_InputConfiguration {
-  /** Whether the original request headers are included and passed through to the interceptor Lambda when the agent intercepts an invocation. (AI-inferred) */
   passRequestHeaders?: boolean | Computed<boolean>;
-  /** This object defines the payload filter for the interceptor's input configuration, specifying a matching pattern and type that determine which parts of the incoming payload are allowed through to the agent for processing. (AI-inferred) */
   payloadFilter?: AgentCoreGateway_InterceptorConfigurations_InputConfiguration_PayloadFilter | Computed<AgentCoreGateway_InterceptorConfigurations_InputConfiguration_PayloadFilter>;
 }
 
@@ -83,15 +66,12 @@ export interface AgentCoreGateway_InterceptorConfigurations_Interceptor_Lambda {
 }
 
 export interface AgentCoreGateway_InterceptorConfigurations_Interceptor {
-  /** Defines the Lambda function configuration used by the interceptor to hook into and process requests and responses flowing through the Bedrock agent core gateway. (AI-inferred) */
   lambda?: AgentCoreGateway_InterceptorConfigurations_Interceptor_Lambda | Computed<AgentCoreGateway_InterceptorConfigurations_Interceptor_Lambda>;
 }
 
 export interface AgentCoreGateway_InterceptorConfigurations {
   inputConfiguration?: AgentCoreGateway_InterceptorConfigurations_InputConfiguration | Computed<AgentCoreGateway_InterceptorConfigurations_InputConfiguration>;
-  /** Specifies the agent lifecycle stages (such as PRE_PROCESSING and POST_PROCESSING) at which the interceptor Lambda function is invoked to intercept requests and responses. (AI-inferred) */
   interceptionPoints?: string[] | Computed<string[]>;
-  /** Specifies the interceptor to be invoked by the core gateway, including its ARN and interception type (e.g., request or response). (AI-inferred) */
   interceptor?: AgentCoreGateway_InterceptorConfigurations_Interceptor | Computed<AgentCoreGateway_InterceptorConfigurations_Interceptor>;
 }
 
@@ -101,23 +81,18 @@ export interface AgentCoreGateway_PolicyEngineConfiguration {
 }
 
 export interface AgentCoreGateway_ProtocolConfiguration_Mcp_SessionConfiguration {
-  /** Specifies the maximum duration in seconds that an MCP session remains active before timing out, controlling the lifespan of Model Context Protocol server connections used by the agent's core gateway. (AI-inferred) */
   sessionTimeoutInSeconds?: number | Computed<number>;
 }
 
 export interface AgentCoreGateway_ProtocolConfiguration_Mcp_StreamingConfiguration {
-  /** This boolean enables response streaming in the MCP streaming configuration of the agent core gateway, allowing data to be delivered incrementally rather than as a single complete payload. (AI-inferred) */
   enableResponseStreaming?: boolean | Computed<boolean>;
 }
 
 export interface AgentCoreGateway_ProtocolConfiguration_Mcp {
   instructions?: string | Computed<string>;
-  /** Determines whether the agent discovers tools from the MCP server via exact tool-name matching or semantic search. (AI-inferred) */
   searchType?: string | Computed<string>;
   sessionConfiguration?: AgentCoreGateway_ProtocolConfiguration_Mcp_SessionConfiguration | Computed<AgentCoreGateway_ProtocolConfiguration_Mcp_SessionConfiguration>;
-  /** Configures streaming behavior for MCP (Model Context Protocol) communication, including whether MCP messages are streamed between the agent and the core gateway. (AI-inferred) */
   streamingConfiguration?: AgentCoreGateway_ProtocolConfiguration_Mcp_StreamingConfiguration | Computed<AgentCoreGateway_ProtocolConfiguration_Mcp_StreamingConfiguration>;
-  /** Specifies the list of MCP (Model Context Protocol) versions, such as '2024-11-05', that the gateway supports when communicating with connected MCP servers. (AI-inferred) */
   supportedVersions?: string[] | Computed<string[]>;
 }
 
@@ -296,27 +271,21 @@ const AgentCoreGateway_ProtocolTypeFields: FieldMap = {
 
 export interface AgentCoreGatewayConfig {
   authorizerConfiguration?: AgentCoreGateway_AuthorizerConfiguration | Computed<AgentCoreGateway_AuthorizerConfiguration>;
-  /** Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred) */
   authorizerType: string | Computed<string>;
   description?: string | Computed<string>;
   exceptionLevel?: string | Computed<string>;
-  /** Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred) */
   interceptorConfigurations?: AgentCoreGateway_InterceptorConfigurations[] | Computed<AgentCoreGateway_InterceptorConfigurations[]>;
-  /** The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
   name: string | Computed<string>;
   policyEngineConfiguration?: AgentCoreGateway_PolicyEngineConfiguration | Computed<AgentCoreGateway_PolicyEngineConfiguration>;
   protocolConfiguration?: AgentCoreGateway_ProtocolConfiguration | Computed<AgentCoreGateway_ProtocolConfiguration>;
-  /** Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred) */
   protocolType?: AgentCoreGateway_ProtocolType | Computed<AgentCoreGateway_ProtocolType>;
-  /** The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred) */
   roleArn: string | Computed<string>;
   tags?: unknown | Computed<unknown>;
 }
 
 export interface AgentCoreGatewayAttrs {
   authorizerConfiguration: AgentCoreGateway_AuthorizerConfiguration;
-  /** Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred) */
   authorizerType: string;
   createdAt: string;
   description: string;
@@ -324,16 +293,12 @@ export interface AgentCoreGatewayAttrs {
   gatewayArn: string;
   gatewayIdentifier: string;
   gatewayUrl: string;
-  /** Specifies a list of interceptor configurations that attach Lambda-based hooks to the agent core gateway for monitoring, modifying, or short-circuiting requests and responses between clients and the agent. (AI-inferred) */
   interceptorConfigurations: AgentCoreGateway_InterceptorConfigurations[];
-  /** The ARN of the customer-managed AWS KMS key used to encrypt the Bedrock agent core gateway's data at rest, providing control over encryption. (AI-inferred) */
   kmsKeyArn: string;
   name: string;
   policyEngineConfiguration: AgentCoreGateway_PolicyEngineConfiguration;
   protocolConfiguration: AgentCoreGateway_ProtocolConfiguration;
-  /** Defines the communication protocol used by the core gateway, with supported values of 'APPLICATION' for application-to-agent traffic and 'AGENTS' for agent-to-agent traffic. (AI-inferred) */
   protocolType: AgentCoreGateway_ProtocolType;
-  /** The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred) */
   roleArn: string;
   status: string;
   statusReasons: string[];

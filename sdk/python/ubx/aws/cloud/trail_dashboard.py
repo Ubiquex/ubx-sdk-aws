@@ -15,7 +15,6 @@ class TrailDashboard_RefreshSchedule_Frequency:
 
 @dataclasses.dataclass
 class TrailDashboard_RefreshSchedule:
-    # Defines the automatic refresh frequency for the CloudTrail dashboard, expressed as a unit-value pair (e.g., HOURS with a value of 6 for a six-hour refresh interval). (AI-inferred)
     frequency: Any = None
     # The status of the schedule. Supported values are ENABLED and DISABLED.
     status: Any = None
@@ -25,14 +24,11 @@ class TrailDashboard_RefreshSchedule:
 @dataclasses.dataclass
 class TrailDashboard_Tags:
     key: Any = None
-    # The value of a tag attached to the CloudTrail dashboard, used to assign custom metadata for identifying, organizing, and controlling access to the dashboard (e.g., via IAM conditions and cost allocation tags). (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TrailDashboard_Widgets:
-    # For each widget in an AWS CloudTrail dashboard, this list of strings supplies the query parameter values that are substituted into the widget's query to filter or scope the displayed data. (AI-inferred)
     query_parameters: Any = None
-    # The SQL query statement that a widget in an AWS CloudTrail dashboard uses to fetch and display data from the CloudTrail event data store. (AI-inferred)
     query_statement: Any = None
     view_properties: Any = None
 
@@ -68,7 +64,6 @@ class TrailDashboardConfig:
     name: Any = None
     # Configures the automatic refresh schedule for the dashboard. Includes the frequency unit (DAYS or HOURS) and value, as well as the status (ENABLED or DISABLED) of the refresh schedule.
     refresh_schedule: Any = None
-    # A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred)
     tags: Any = None
     # Indicates whether the dashboard is protected from termination.
     termination_protection_enabled: Any = None
@@ -77,7 +72,6 @@ class TrailDashboardConfig:
 
 @dataclasses.dataclass
 class TrailDashboardAttrs:
-    # The timestamp, in ISO 8601 format, indicating when the CloudTrail dashboard was created, as returned by the CloudTrail DescribeDashboard API. (AI-inferred)
     created_timestamp: Any = None
     # The ARN of the dashboard.
     dashboard_arn: Any = None
@@ -87,13 +81,11 @@ class TrailDashboardAttrs:
     refresh_schedule: Any = None
     # The status of the dashboard. Values are CREATING, CREATED, UPDATING, UPDATED and DELETING.
     status: Any = None
-    # A list of tag objects (each containing a key and value) to attach to the CloudTrail dashboard, enabling resource identification, cost allocation, and AWS resource management. (AI-inferred)
     tags: Any = None
     # Indicates whether the dashboard is protected from termination.
     termination_protection_enabled: Any = None
     # The type of the dashboard. Values are CUSTOM and MANAGED.
     type: Any = None
-    # The timestamp indicating when the CloudTrail dashboard was last updated. (AI-inferred)
     updated_timestamp: Any = None
     # List of widgets on the dashboard
     widgets: Any = None

@@ -17,7 +17,6 @@ class SecurityGroupVpcAssociationConfig:
 class SecurityGroupVpcAssociationAttrs:
     # The group ID of the specified security group.
     group_id: Any = None
-    # The current state of the security group's association with the VPC, which can be one of 'associating', 'associated', 'association-failed', 'disassociating', or 'disassociated'. (AI-inferred)
     state: Any = None
     # The reason for the state of the security group vpc association.
     state_reason: Any = None

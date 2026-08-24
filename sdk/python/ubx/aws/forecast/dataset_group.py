@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DatasetGroup_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to the Amazon Forecast dataset group, used to organize, categorize, or identify the resource (e.g., by project or environment). (AI-inferred)
     value: Any = None
 
 _DatasetGroup_TagsFields = {

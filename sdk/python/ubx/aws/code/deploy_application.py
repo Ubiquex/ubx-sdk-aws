@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class DeployApplication_Tags:
     key: Any = None
-    # The value component of a key-value tag attached to the CodeDeploy application. (AI-inferred)
     value: Any = None
 
 _DeployApplication_TagsFields = {

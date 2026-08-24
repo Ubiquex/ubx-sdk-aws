@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CidrCollection_Locations:
-    # Specifies the list of CIDR blocks (such as '192.0.2.0/24') that define the IP address ranges for this location within the Route 53 CIDR collection, which are then used for DNS routing policies. (AI-inferred)
     cidr_list: Any = None
-    # The name of the CIDR location within the CIDR collection, serving as a unique identifier for associating the location's CIDR blocks with routing rules. (AI-inferred)
     location_name: Any = None
 
 _CidrCollection_LocationsFields = {

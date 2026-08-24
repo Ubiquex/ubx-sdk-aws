@@ -25,11 +25,8 @@ var DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields = ubx.FieldMap{
 	}
 
 type DbproxyTargetGroupConfig struct {
-	// Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred)
 	ConnectionPoolConfigurationInfo any
-	// A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred)
 	DbclusterIdentifiers any
-	// Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred)
 	DbinstanceIdentifiers any
 	// The identifier for the proxy.
 	DbproxyName any
@@ -38,11 +35,8 @@ type DbproxyTargetGroupConfig struct {
 }
 
 type DbproxyTargetGroupAttrs struct {
-	// Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred)
 	ConnectionPoolConfigurationInfo any
-	// A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred)
 	DbclusterIdentifiers any
-	// Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred)
 	DbinstanceIdentifiers any
 	// The identifier for the proxy.
 	DbproxyName any

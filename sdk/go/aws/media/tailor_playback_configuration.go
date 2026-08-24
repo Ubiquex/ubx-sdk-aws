@@ -4,7 +4,6 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TailorPlaybackConfiguration_AdConditioningConfiguration struct {
-	// Specifies whether to condition the streaming media file for ad stitching, with allowed values 'NONE' (no conditioning) or 'AUDIO_ONLY' (condition the audio track only). (AI-inferred)
 	StreamingMediaFileConditioning any
 }
 
@@ -101,11 +100,9 @@ type TailorPlaybackConfiguration_LogConfiguration_ManifestServiceInteractionLog 
 }
 
 type TailorPlaybackConfiguration_LogConfiguration struct {
-	// Configures whether MediaTailor logs ad interaction events, such as clicks and impressions, to CloudWatch Logs for this playback configuration, typically via an Enabled flag within the object. (AI-inferred)
 	AdsInteractionLog any
 	// The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor to send logs directly to Amazon CloudWatch Logs, choose LEGACY_CLOUDWATCH. To configure MediaTailor to send logs to CloudWatch, which then vends the logs to your destination of choice, choose VENDED_LOGS. Supported destinations are CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream. To use vended logs, you must configure the delivery destination in Amazon CloudWatch
 	EnabledLoggingStrategies any
-	// This object configures whether MediaTailor logs manifest service interaction events to Amazon CloudWatch, with an `Enabled` subfield to turn this logging on or off. (AI-inferred)
 	ManifestServiceInteractionLog any
 	// The percentage of session logs that MediaTailor sends to your CloudWatch Logs account. For example, if your playback configuration has 1000 sessions and percentEnabled is set to 60, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs. MediaTailor decides at random which of the playback configuration sessions to send logs for. If you want to view logs for a specific session, you can use the debug log mode.
 	PercentEnabled any
@@ -123,7 +120,6 @@ type TailorPlaybackConfiguration_ManifestProcessingRules struct {
 
 type TailorPlaybackConfiguration_Tags struct {
 	Key any
-	// The value of a tag keyed on the AWS MediaTailor playback configuration, providing an arbitrary string for categorizing, filtering, or cost-allocating the resource. (AI-inferred)
 	Value any
 }
 
@@ -242,11 +238,9 @@ type TailorPlaybackConfigurationConfig struct {
 	ConfigurationAliases any
 	// A map of event names to function identifiers for custom processing during session lifecycle events.
 	FunctionMapping any
-	// The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred)
 	InsertionMode any
 	// The configuration for pre-roll ad insertion.
 	LivePreRollConfiguration any
-	// Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred)
 	LogConfiguration any
 	// The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
 	ManifestProcessingRules any
@@ -287,13 +281,10 @@ type TailorPlaybackConfigurationAttrs struct {
 	DashConfiguration any
 	// A map of event names to function identifiers for custom processing during session lifecycle events.
 	FunctionMapping any
-	// The hls_configuration object is a read-only block that exposes the generated manifest endpoint prefix assigned by MediaTailor for delivering the HLS playlist for this playback configuration. (AI-inferred)
 	HlsConfiguration any
-	// The mode for ad insertion in the playback configuration, where PLAYER_SERVER directs MediaTailor to handle server-side ad insertion and CUSTOM allows the use of a custom ad insertion server. (AI-inferred)
 	InsertionMode any
 	// The configuration for pre-roll ad insertion.
 	LivePreRollConfiguration any
-	// Configures CloudWatch Logs logging for the playback configuration, including the percentage of session logs to send to CloudWatch Logs. (AI-inferred)
 	LogConfiguration any
 	// The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
 	ManifestProcessingRules any

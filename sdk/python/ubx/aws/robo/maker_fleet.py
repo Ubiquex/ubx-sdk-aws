@@ -15,7 +15,6 @@ class MakerFleetConfig:
 
 @dataclasses.dataclass
 class MakerFleetAttrs:
-    # The Amazon Resource Name (ARN) of the RoboMaker fleet, automatically assigned by AWS when the fleet is created. (AI-inferred)
     arn: Any = None
     # The name of the fleet.
     name: Any = None

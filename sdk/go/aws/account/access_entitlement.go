@@ -11,21 +11,18 @@ type AccessEntitlement_Entitlement_PrincipalRole_Principal_IdentityCenter struct
 }
 
 type AccessEntitlement_Entitlement_PrincipalRole_Principal struct {
-	// Specifies the AWS IAM Identity Center (successor to AWS SSO) user or group that acts as the principal for the access entitlement, granting that identity access to the target account. (AI-inferred)
 	IdentityCenter any
 }
 
 type AccessEntitlement_Entitlement_PrincipalRole struct {
 	// The AWS account ID
 	Account any
-	// The IAM user, role, or AWS account that is granted the account access entitlement and assumes the specified principal role in the target AWS account. (AI-inferred)
 	Principal any
 	// The ARN of the IAM role
 	RoleArn any
 }
 
 type AccessEntitlement_Entitlement struct {
-	// Defines the IAM role principal, including its role name and optional organizational unit, that is granted the access entitlement to the specified target accounts. (AI-inferred)
 	PrincipalRole any
 }
 

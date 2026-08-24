@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_Tags struct {
 	Key any
-	// The value component of a resource tag attached to the AWS RDS integration, used to categorize or identify the integration for cost allocation and management. (AI-inferred)
 	Value any
 }
 
@@ -36,13 +35,11 @@ type IntegrationConfig struct {
 type IntegrationAttrs struct {
 	// An optional set of non-secret key–value pairs that contains additional contextual information about the data.
 	AdditionalEncryptionContext any
-	// The time the integration was created, in ISO 8601 format (e.g., 2023-01-01T00:00:00Z). (AI-inferred)
 	CreateTime any
 	// Data filters for the integration. These filters determine which tables from the source database are sent to the target Amazon Redshift data warehouse.
 	DataFilter any
 	// A description of the integration.
 	Description any
-	// The Amazon Resource Name (ARN) that uniquely identifies this RDS integration, returned by AWS after creation. (AI-inferred)
 	IntegrationArn any
 	// The name of the integration.
 	IntegrationName any

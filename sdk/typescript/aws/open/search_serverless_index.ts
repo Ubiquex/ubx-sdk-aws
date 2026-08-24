@@ -23,7 +23,6 @@ export interface SearchServerlessIndex_Settings_Index {
 export interface SearchServerlessIndex_Settings {
   /** Custom analysis configuration including analyzers, tokenizers, and filters */
   analysis?: SearchServerlessIndex_Settings_Analysis | Computed<SearchServerlessIndex_Settings_Analysis>;
-  /** The 'settings.index' object specifies index-level configuration for the OpenSearch Serverless index, including settings like the number of primary shards and replica shards. (AI-inferred) */
   index?: SearchServerlessIndex_Settings_Index | Computed<SearchServerlessIndex_Settings_Index>;
 }
 
@@ -61,7 +60,6 @@ export interface SearchServerlessIndexConfig {
   indexName: string | Computed<string>;
   /** Index Mappings */
   mappings?: SearchServerlessIndex_Mappings | Computed<SearchServerlessIndex_Mappings>;
-  /** The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred) */
   settings?: SearchServerlessIndex_Settings | Computed<SearchServerlessIndex_Settings>;
 }
 
@@ -72,7 +70,6 @@ export interface SearchServerlessIndexAttrs {
   indexName: string;
   /** Index Mappings */
   mappings: SearchServerlessIndex_Mappings;
-  /** The settings object configures index-level settings such as the number of primary shards and replica shards for the OpenSearch Serverless index. (AI-inferred) */
   settings: SearchServerlessIndex_Settings;
   /** The unique identifier for the index. */
   uuid: string;

@@ -4,16 +4,12 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Role_Policies struct {
-	// The JSON or YAML policy document that defines the permissions for an inline IAM role policy, specifying allowed or denied actions and resources. (AI-inferred)
 	PolicyDocument any
-	// Specifies the name of an inline IAM policy attached to the role as part of the policies list. (AI-inferred)
 	PolicyName any
 }
 
 type Role_Tags struct {
-	// The key portion of a tag attached to the IAM role, used to organize and identify the role within AWS. (AI-inferred)
 	Key any
-	// Specifies a user-generated value for an arbitrary tag attached to the IAM role, which can be used for role identification and attribute-based access control (ABAC). (AI-inferred)
 	Value any
 }
 
@@ -49,7 +45,6 @@ type RoleConfig struct {
 }
 
 type RoleAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the IAM role in AWS. (AI-inferred)
 	Arn any
 	// The trust policy that is associated with this role. Trust policies define which entities can assume the role. You can associate only one trust policy with a role. For an example of a policy that can be used to assume a role, see [Template Examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#aws-resource-iam-role--examples). For more information about the elements that you can use in an IAM policy, see [Policy Elements Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *User Guide*.
 	AssumeRolePolicyDocument any
@@ -65,7 +60,6 @@ type RoleAttrs struct {
 	PermissionsBoundary any
 	// Adds or updates an inline policy document that is embedded in the specified IAM role. When you embed an inline policy in a role, the inline policy is used as part of the role's access (permissions) policy. The role's trust policy is created at the same time as the role. You can update a role's trust policy later. For more information about IAM roles, go to [Using Roles to Delegate Permissions and Federate Identities](https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html). A role can also have an attached managed policy. For information about policies, see [Managed Policies and Inline Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html) in the *User Guide*. For information about limits on the number of inline policies that you can embed with a role, see [Limitations on Entities](https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html) in the *User Guide*. If an external policy (such as ``AWS::IAM::Policy`` or ``AWS::IAM::ManagedPolicy``) has a ``Ref`` to a role and if a resource (such as ``AWS::ECS::Service``) also has a ``Ref`` to the same role, add a ``DependsOn`` attribute to the resource to make the resource depend on the external policy. This dependency ensures that the role's policy is available throughout the resource's lifecycle. For example, when you delete a stack with an ``AWS::ECS::Service`` resource, the ``DependsOn`` attribute ensures that CFN deletes the ``AWS::ECS::Service`` resource before deleting its role's policy.
 	Policies any
-	// The stable, unique identifier (RoleId) that AWS assigns to the IAM role, such as AROA... (AI-inferred)
 	RoleId any
 	// A name for the IAM role, up to 64 characters in length. For valid values, see the ``RoleName`` parameter for the [CreateRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html) action in the *User Guide*. This parameter allows (per its [regex pattern](https://docs.aws.amazon.com/http://wikipedia.org/wiki/regex)) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-. The role name must be unique within the account. Role names are not distinguished by case. For example, you cannot create roles named both "Role1" and "role1". If you don't specify a name, CFN generates a unique physical ID and uses that ID for the role name. If you specify a name, you must specify the ``CAPABILITY_NAMED_IAM`` value to acknowledge your template's capabilities. For more information, see [Acknowledging Resources in Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#using-iam-capabilities). Naming an IAM resource can cause an unrecoverable error if you reuse the same template in multiple Regions. To prevent this, we recommend using ``Fn::Join`` and ``AWS::Region`` to create a Region-specific name, as in the following example: ``{"Fn::Join": ["", [{"Ref": "AWS::Region"}, {"Ref": "MyResourceName"}]]}``.
 	RoleName any

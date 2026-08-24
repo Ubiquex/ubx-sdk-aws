@@ -8,29 +8,21 @@ type AdminTelemetryPipelines_Configuration struct {
 }
 
 type AdminTelemetryPipelines_Pipeline_StatusReason struct {
-	// Provides a human-readable message that explains why the telemetry pipeline is in its current state, as part of the status reason object. (AI-inferred)
 	Description any
 }
 
 type AdminTelemetryPipelines_Pipeline_Tags struct {
-	// Specifies the key of a tag attached to the telemetry pipeline, used to organize and identify the pipeline within AWS Observability Admin. (AI-inferred)
 	Key any
-	// The value half of a key-value tag attached to the telemetry pipeline, used to store arbitrary metadata (such as an environment or owner name) for identifying and managing the pipeline. (AI-inferred)
 	Value any
 }
 
 type AdminTelemetryPipelines_Pipeline struct {
-	// The ARN (Amazon Resource Name) of a telemetry pipeline, which uniquely identifies the pipeline within the AWS Observability Admin service. (AI-inferred)
 	Arn any
 	Configuration any
-	// The Unix epoch timestamp (in seconds) indicating when the telemetry pipeline was created. (AI-inferred)
 	CreatedTimeStamp any
-	// The timestamp (epoch time) indicating when the telemetry pipeline was last updated. (AI-inferred)
 	LastUpdateTimeStamp any
-	// The user-defined name that uniquely identifies a telemetry pipeline within the AWS Observability Admin TelemetryPipelines resource. (AI-inferred)
 	Name any
 	Status any
-	// Provides the reason text for the telemetry pipeline's current status, including error details when the pipeline is in a failed or non-active state. (AI-inferred)
 	StatusReason any
 	// An array of key-value pairs to apply to this resource
 	Tags any
@@ -57,11 +49,8 @@ type AdminTelemetryPipelinesAttrs struct {
 	Configuration any
 	Name any
 	Pipeline any
-	// The unique identifier assigned by AWS to the telemetry pipeline, used to reference the pipeline when managing or querying telemetry configurations. (AI-inferred)
 	PipelineIdentifier any
-	// The current lifecycle status of the telemetry pipeline (e.g., CREATING, ACTIVE, or FAILED), as determined by AWS. (AI-inferred)
 	Status any
-	// The status_reason object contains detailed information, such as an error code and message, explaining why the telemetry pipeline is in its current state (e.g., ready, failed, or updating). (AI-inferred)
 	StatusReason any
 	// An array of key-value pairs to apply to this resource
 	Tags any

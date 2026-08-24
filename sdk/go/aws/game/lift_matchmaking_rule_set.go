@@ -4,9 +4,7 @@ package game
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiftMatchmakingRuleSet_Tags struct {
-	// The key of a tag attached to the GameLift matchmaking rule set, used to identify and categorize the rule set for resource management and cost allocation. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the GameLift matchmaking rule set, used to organize and identify the rule set within AWS. (AI-inferred)
 	Value any
 }
 

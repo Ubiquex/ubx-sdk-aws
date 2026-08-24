@@ -2,285 +2,165 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkInsightsAnalysis_AlternatePathHints {
-  /** The ARN of the component referenced by the alternate path hint, identifying the network resource on the alternate path in the network insights analysis. (AI-inferred) */
   componentArn?: string | Computed<string>;
-  /** The component_id of an alternate path hint identifies the ID of the network component (such as a subnet or network interface) on the alternate path discovered during the network insights analysis. (AI-inferred) */
   componentId?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_Acl {
-  /** The Amazon Resource Name (ARN) of the network ACL associated with this explanation component in the network insights analysis. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** The ID of the network ACL (network access control list) that this explanation entry refers to in the network insights analysis result. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_AclRule_PortRange {
-  /** The inclusive lower bound of the port range that this network ACL rule matches for the analyzed path. (AI-inferred) */
   from?: number | Computed<number>;
-  /** The inclusive upper bound of the port range for the network ACL rule described in this explanation. (AI-inferred) */
   to?: number | Computed<number>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_AclRule {
-  /** The CIDR block (IPv4 or IPv6 range) matched by the network ACL rule referenced in this explanation of the network insights analysis path. (AI-inferred) */
   cidr?: string | Computed<string>;
-  /** Indicates whether this network ACL rule applies to outbound (egress) traffic, as opposed to inbound (ingress) traffic. (AI-inferred) */
   egress?: boolean | Computed<boolean>;
-  /** Specifies the inclusive range of ports (from and to port numbers) that the network ACL rule applies to in the reachability explanation. (AI-inferred) */
   portRange?: NetworkInsightsAnalysis_Explanations_AclRule_PortRange | Computed<NetworkInsightsAnalysis_Explanations_AclRule_PortRange>;
-  /** The IP protocol (e.g., tcp, udp, icmp, or a protocol number) that the network ACL rule applies to, identifying which traffic matches this rule in the analysis explanation. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The action taken by the network ACL rule, either 'allow' or 'deny', indicating whether the rule permits or drops the traffic. (AI-inferred) */
   ruleAction?: string | Computed<string>;
-  /** The rule number of the network ACL entry that was matched during the path analysis, as part of the ACL rule explanation. (AI-inferred) */
   ruleNumber?: number | Computed<number>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_ClassicLoadBalancerListener {
-  /** The port on the EC2 instance to which the Classic Load Balancer listener forwards traffic, as recorded in the network insights analysis explanation. (AI-inferred) */
   instancePort?: number | Computed<number>;
-  /** The port number on which the Classic Load Balancer listener accepts traffic, as identified by the network insights analysis. (AI-inferred) */
   loadBalancerPort?: number | Computed<number>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_LoadBalancerTarget {
-  /** The IP address of the load balancer target that is part of the network insights analysis explanation. (AI-inferred) */
   address?: string | Computed<string>;
-  /** Specifies the Availability Zone where the load balancer target is located, as recorded in the explanation of the network insights analysis. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The EC2 instance that serves as the destination for load balancer traffic in the analyzed network path, as recorded in the Network Insights analysis explanation. (AI-inferred) */
   instance?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The port on the load balancer target that the network path analysis identified as the destination for traffic. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_RouteTableRoute {
-  /** The IPv4 destination CIDR block for this route table route entry, used to match traffic in the network insights analysis explanation. (AI-inferred) */
   destinationCidr?: string | Computed<string>;
-  /** The ID of the managed prefix list that serves as the destination for the route table entry, identifying the set of CIDR blocks to which this route applies. (AI-inferred) */
   destinationPrefixListId?: string | Computed<string>;
-  /** The ID of the egress-only internet gateway used as the target for this route table route, for IPv6 traffic destined outside the VPC. (AI-inferred) */
   egressOnlyInternetGatewayId?: string | Computed<string>;
-  /** The ID of the gateway (such as an internet gateway or virtual private gateway) associated with the route table route being analyzed. (AI-inferred) */
   gatewayId?: string | Computed<string>;
-  /** The ID of the EC2 instance that is the target of the route table entry in the network path explanation. (AI-inferred) */
   instanceId?: string | Computed<string>;
-  /** The ID of the NAT gateway that serves as the target of the route table route, indicating that traffic matching the route is forwarded to this NAT gateway in the network insights analysis explanation. (AI-inferred) */
   natGatewayId?: string | Computed<string>;
-  /** The network interface ID of the target (next hop) for a route in the route table, as discovered by the network insights analysis, identifying the ENI that traffic is forwarded to for the matching destination. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
-  /** The origin of the route table route, indicating how the route was created (e.g., CreateRoute, CreateRouteTable, EnableVgwRoutePropagation, etc.). (AI-inferred) */
   origin?: string | Computed<string>;
-  /** Indicates the state (e.g., 'active' or 'blackhole') of the route table route that contributed to the explanation of the network insights analysis path. (AI-inferred) */
   state?: string | Computed<string>;
-  /** The ID of the transit gateway through which the route table route forwards traffic when the route's target is a transit gateway. (AI-inferred) */
   transitGatewayId?: string | Computed<string>;
-  /** For a route table route explanation in a network insights analysis, this field contains the ID of the VPC peering connection that serves as the route's target, if applicable. (AI-inferred) */
   vpcPeeringConnectionId?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_SecurityGroupRule {
-  /** The IPv4 CIDR block associated with this security group rule, representing the source or destination address range that the rule applies to. (AI-inferred) */
   cidr?: string | Computed<string>;
-  /** The direction of the security group rule, either 'ingress' or 'egress', indicating whether the rule applies to inbound or outbound traffic relative to the security group. (AI-inferred) */
   direction?: string | Computed<string>;
-  /** The inclusive range of ports (from and to) that the security group rule applies to in the network insights analysis explanation. (AI-inferred) */
   portRange?: NetworkInsightsAnalysis_Explanations_AclRule_PortRange | Computed<NetworkInsightsAnalysis_Explanations_AclRule_PortRange>;
-  /** The ID of the prefix list (e.g., 'pl-12345678') that the security group rule uses as its source or destination, when the rule references a prefix list instead of a CIDR range or security group. (AI-inferred) */
   prefixListId?: string | Computed<string>;
-  /** The IP protocol (e.g., tcp, udp, icmp, or -1 for all) that the matched security group rule applies to, as listed in the network insights analysis explanation. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The ID of the security group that contains the rule referenced in this explanation of the network insights analysis path. (AI-inferred) */
   securityGroupId?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations_TransitGatewayRouteTableRoute {
-  /** The ID of the transit gateway attachment (such as a VPC or VPN attachment) that the transit gateway route table route points to, as identified in the network insights path analysis. (AI-inferred) */
   attachmentId?: string | Computed<string>;
-  /** The destination CIDR block for the route in the transit gateway route table that explains the path. (AI-inferred) */
   destinationCidr?: string | Computed<string>;
-  /** The ID of the prefix list that serves as the destination of the transit gateway route table route identified in this network insights explanation. (AI-inferred) */
   prefixListId?: string | Computed<string>;
-  /** The resource ID of the transit gateway route table route's target, which identifies the resource (such as a transit gateway attachment) to which the route forwards traffic in the network path analysis. (AI-inferred) */
   resourceId?: string | Computed<string>;
-  /** The type of AWS resource (e.g., a subnet or virtual private gateway) that the transit gateway route table route directs traffic to, as reported in an explanation for a network insights analysis. (AI-inferred) */
   resourceType?: string | Computed<string>;
-  /** Indicates how the route was introduced into the transit gateway route table, such as 'static' or 'propagated', as part of the path explanation. (AI-inferred) */
   routeOrigin?: string | Computed<string>;
-  /** The state of the transit gateway route table route encountered during the analysis, such as 'active' or 'blackhole', indicating whether the route is currently usable for forwarding traffic. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_Explanations {
-  /** Specifies the network ACL component evaluated during the Network Insights path analysis, including its rules and whether it allowed or denied the traffic. (AI-inferred) */
   acl?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The network ACL rule that explains the traffic path, including details such as CIDR, port range, protocol, rule action, and rule number. (AI-inferred) */
   aclRule?: NetworkInsightsAnalysis_Explanations_AclRule | Computed<NetworkInsightsAnalysis_Explanations_AclRule>;
-  /** The IP address or CIDR block that this explanatory component in the network path analysis refers to, identifying the specific address involved in the reachability explanation. (AI-inferred) */
   address?: string | Computed<string>;
-  /** The list of IP addresses associated with the component or step described by this explanation in the network insights analysis. (AI-inferred) */
   addresses?: string[] | Computed<string[]>;
-  /** The 'attached_to' object identifies the network resource (such as an EC2 instance, network interface, or internet gateway) to which the explained network path component is attached. (AI-inferred) */
   attachedTo?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The list of Availability Zones for the component or network path analyzed in this explanation, indicating which AZs are involved in the path's reachability or analysis. (AI-inferred) */
   availabilityZones?: string[] | Computed<string[]>;
-  /** The list of CIDR address ranges associated with this explanation in the network insights analysis, indicating the relevant IP blocks for the analysis step. (AI-inferred) */
   cidrs?: string[] | Computed<string[]>;
-  /** Configuration details of the Classic Load Balancer listener (such as its load balancer port and instance port) that is associated with this step of the network insights analysis explanation. (AI-inferred) */
   classicLoadBalancerListener?: NetworkInsightsAnalysis_Explanations_ClassicLoadBalancerListener | Computed<NetworkInsightsAnalysis_Explanations_ClassicLoadBalancerListener>;
-  /** This object represents the network component (such as an EC2 instance, subnet, security group, or VPC) that an explanation step in the network insights path analysis refers to, providing identifying metadata like ARN and name. (AI-inferred) */
   component?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** For each explanation in a network insights analysis, this field contains the AWS account ID that owns the component being described by that explanation. (AI-inferred) */
   componentAccount?: string | Computed<string>;
-  /** The AWS Region where the component referenced by this explanation is located. (AI-inferred) */
   componentRegion?: string | Computed<string>;
-  /** The customer gateway object referenced in this network path explanation, identifying the customer gateway (e.g., its ID and ARN) involved in a VPN connection segment of the analyzed path. (AI-inferred) */
   customerGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Represents the destination network component (such as a subnet, network interface, or security group) identified for the analyzed path in the Network Insights analysis explanation. (AI-inferred) */
   destination?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The destination VPC for this explanation, identifying the VPC where the analyzed traffic flow's destination endpoint resides. (AI-inferred) */
   destinationVpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The direction of the network path for this explanation, either 'IN' or 'OUT', indicating whether the traffic is inbound or outbound relative to the analyzed component. (AI-inferred) */
   direction?: string | Computed<string>;
-  /** Information about the Elastic Load Balancer listener involved in the network reachability analysis, including its ARN and the load balancer it belongs to. (AI-inferred) */
   elasticLoadBalancerListener?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** A machine-readable code representing the specific cause or rule that explains the network path finding, such as 'SECURITY_GROUP' or 'NETWORK_ACL'. (AI-inferred) */
   explanationCode?: string | Computed<string>;
-  /** The route table that handled the ingress (incoming) direction of the analyzed network path, providing details about which route table the traffic entered through. (AI-inferred) */
   ingressRouteTable?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Represents the internet gateway that is referenced by this explanation, identifying which gateway is involved in the analyzed network path. (AI-inferred) */
   internetGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The Amazon Resource Name (ARN) of the Elastic Load Balancing load balancer referenced by this explanation component, identifying the specific load balancer involved in the analyzed network path. (AI-inferred) */
   loadBalancerArn?: string | Computed<string>;
-  /** The port on which the load balancer listener accepts traffic, as identified in the network insights analysis explanation. (AI-inferred) */
   loadBalancerListenerPort?: number | Computed<number>;
-  /** Identifies the load balancer target that is a component of this explanation, including details such as the target instance and its availability zone. (AI-inferred) */
   loadBalancerTarget?: NetworkInsightsAnalysis_Explanations_LoadBalancerTarget | Computed<NetworkInsightsAnalysis_Explanations_LoadBalancerTarget>;
-  /** Provides details about a load balancer target group involved in the analyzed network path, including its ARN and port as a component of the explanation. (AI-inferred) */
   loadBalancerTargetGroup?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Lists the target groups associated with a load balancer component in the network insights explanation, including each target group's ARN and configuration details. (AI-inferred) */
   loadBalancerTargetGroups?: NetworkInsightsAnalysis_Explanations_Acl[] | Computed<NetworkInsightsAnalysis_Explanations_Acl[]>;
-  /** The port on which the load balancer target (such as an EC2 instance) listens for traffic, as identified during the network insights analysis explanation. (AI-inferred) */
   loadBalancerTargetPort?: number | Computed<number>;
-  /** Provides the identifier of the missing network component (such as a subnet, network interface, or route table) that caused the Network Insights analysis to explain why a path is not reachable. (AI-inferred) */
   missingComponent?: string | Computed<string>;
-  /** The NAT gateway component of the explanation, providing the ARN and ID of the NAT gateway encountered along the analyzed network path. (AI-inferred) */
   natGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The network interface that this explanation step refers to, containing attributes such as its ID, subnet, and security groups. (AI-inferred) */
   networkInterface?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Identifies the specific packet field (such as source address, destination address, protocol, or port) that the explanation is analyzing to clarify why a network path is reachable or unreachable. (AI-inferred) */
   packetField?: string | Computed<string>;
-  /** The network port number associated with the traffic flow at this explanation step in the EC2 Network Insights Analysis, typically representing the destination port of the analyzed path. (AI-inferred) */
   port?: number | Computed<number>;
-  /** Port ranges associated with this explanation, representing the source or destination port(s) that contribute to the analyzed network path. (AI-inferred) */
   portRanges?: NetworkInsightsAnalysis_Explanations_AclRule_PortRange[] | Computed<NetworkInsightsAnalysis_Explanations_AclRule_PortRange[]>;
-  /** For a hop in the analyzed network path, this object supplies details about the AWS managed prefix list (e.g., its ID, name, and associated CIDR entries) that matched or influenced the explanation. (AI-inferred) */
   prefixList?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The list of network protocols (e.g., TCP, UDP, ICMP) associated with this explanation entry in the network insights analysis. (AI-inferred) */
   protocols?: string[] | Computed<string[]>;
-  /** Describes the route table component involved in the network insights analysis, including its route table ID and associated routes. (AI-inferred) */
   routeTable?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Details about the route table route involved in the network analysis, including attributes such as destination CIDR, prefix, and route table ID. (AI-inferred) */
   routeTableRoute?: NetworkInsightsAnalysis_Explanations_RouteTableRoute | Computed<NetworkInsightsAnalysis_Explanations_RouteTableRoute>;
-  /** The security group component involved in a network path explanation, containing the security group's ARN, ID, and name. (AI-inferred) */
   securityGroup?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides the security group rule details (protocol, port range, direction, and source/destination) evaluated during the network insights analysis, explaining how traffic was allowed or denied. (AI-inferred) */
   securityGroupRule?: NetworkInsightsAnalysis_Explanations_SecurityGroupRule | Computed<NetworkInsightsAnalysis_Explanations_SecurityGroupRule>;
-  /** The security groups referenced in the explanation, each with its ID and ARN, which are part of the analyzed network path. (AI-inferred) */
   securityGroups?: NetworkInsightsAnalysis_Explanations_Acl[] | Computed<NetworkInsightsAnalysis_Explanations_Acl[]>;
-  /** Represents the source VPC involved in the network path explanation, identifying the VPC from which the analyzed traffic originates. (AI-inferred) */
   sourceVpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The reachability state of the network path component represented by this explanation, either 'reachable' or 'not reachable'. (AI-inferred) */
   state?: string | Computed<string>;
-  /** Describes the subnet involved in the network path explanation, including its identifiers and configuration details. (AI-inferred) */
   subnet?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides details about the subnet route table associated with this explanation, including its ARN and subnet ID, as part of the network insights analysis results. (AI-inferred) */
   subnetRouteTable?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Identifies the Transit Gateway involved in the network path explanation for the EC2 Network Insights Analysis, represented by its Amazon Resource Name (ARN). (AI-inferred) */
   transitGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Describes the transit gateway attachment involved in the analyzed network path, including its resource ID and type to identify how traffic traverses the transit gateway. (AI-inferred) */
   transitGatewayAttachment?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides details about the transit gateway route table that was evaluated during the network reachability analysis, identifying the route table that influenced the traffic path in this explanation step. (AI-inferred) */
   transitGatewayRouteTable?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides detailed information about the transit gateway route table route used in the analyzed network path, including the route table ID, destination CIDR block, and associated transit gateway attachment or resource identifiers. (AI-inferred) */
   transitGatewayRouteTableRoute?: NetworkInsightsAnalysis_Explanations_TransitGatewayRouteTableRoute | Computed<NetworkInsightsAnalysis_Explanations_TransitGatewayRouteTableRoute>;
-  /** Describes the VPC (Virtual Private Cloud) component associated with a specific explanation in the network insights analysis, identifying the VPC where the analyzed network path segment occurs. (AI-inferred) */
   vpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides the VPC endpoint details (such as its ID and configuration) for the corresponding component in the network insights analysis path. (AI-inferred) */
   vpcEndpoint?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Contains the VPC peering connection properties (e.g., its ID) associated with a given explanation element in the network insights analysis, identifying the peering connection involved in the analyzed network path. (AI-inferred) */
   vpcPeeringConnection?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides the VPN connection associated with a step in the network insights analysis path, including its identifier and configuration details. (AI-inferred) */
   vpnConnection?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Describes the VPN gateway component in the network path explanation, including its ARN and ID. (AI-inferred) */
   vpnGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
 }
 
 export interface NetworkInsightsAnalysis_ForwardPathComponents_AdditionalDetails {
-  /** The type of additional detail reported for this forward path component, indicating the specific category of network insight (e.g., a route or security group rule) that provides context about the component's role in the analyzed path. (AI-inferred) */
   additionalDetailType?: string | Computed<string>;
-  /** Identifies the specific network component (such as an EC2 instance, subnet, or security group) that the additional detail in the forward path component refers to, including its identifier and ARN. (AI-inferred) */
   component?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
   loadBalancers?: NetworkInsightsAnalysis_Explanations_Acl[] | Computed<NetworkInsightsAnalysis_Explanations_Acl[]>;
-  /** Specifies the name of the AWS service (such as VPC or Subnet) that the additional detail component describes within a forward path component of a Network Insights analysis. (AI-inferred) */
   serviceName?: string | Computed<string>;
 }
 
 export interface NetworkInsightsAnalysis_ForwardPathComponents_InboundHeader {
-  /** The list of destination IP addresses in the inbound packet header for this forward path component, showing where the captured traffic is destined. (AI-inferred) */
   destinationAddresses?: string[] | Computed<string[]>;
-  /** Specifies the destination port ranges in the inbound header of a forward path component, representing the destination port values that the analyzed traffic matched. (AI-inferred) */
   destinationPortRanges?: NetworkInsightsAnalysis_Explanations_AclRule_PortRange[] | Computed<NetworkInsightsAnalysis_Explanations_AclRule_PortRange[]>;
-  /** The IP protocol number (e.g., '6' for TCP, '17' for UDP) carried in the inbound packet header at this point in the analyzed network path. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The list of source IP addresses contained in the inbound traffic header of this forward path component, indicating the origins of the traffic analyzed at this point. (AI-inferred) */
   sourceAddresses?: string[] | Computed<string[]>;
-  /** The list of source port ranges (each with a from/to value) in the inbound packet header for this path component, indicating which TCP/UDP source ports the analyzed traffic matched during the network insights analysis. (AI-inferred) */
   sourcePortRanges?: NetworkInsightsAnalysis_Explanations_AclRule_PortRange[] | Computed<NetworkInsightsAnalysis_Explanations_AclRule_PortRange[]>;
 }
 
 export interface NetworkInsightsAnalysis_ForwardPathComponents {
-  /** The network ACL rule that applies to this forward path component, containing details such as rule number, action (allow/deny), protocol, port range, and CIDR block. (AI-inferred) */
   aclRule?: NetworkInsightsAnalysis_Explanations_AclRule | Computed<NetworkInsightsAnalysis_Explanations_AclRule>;
-  /** Provides additional detail entries for a path component in the network insights analysis, where each entry contains a detail type and the component that the detail applies to. (AI-inferred) */
   additionalDetails?: NetworkInsightsAnalysis_ForwardPathComponents_AdditionalDetails[] | Computed<NetworkInsightsAnalysis_ForwardPathComponents_AdditionalDetails[]>;
-  /** Identifies the specific network component (such as a subnet, instance, or network interface) at this step of the forward network path, providing its ID and ARN. (AI-inferred) */
   component?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** The VPC that serves as the destination for this step in the analyzed network path. (AI-inferred) */
   destinationVpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides the ARN, ID, and name of the Elastic Load Balancer listener component at this point in the forwarded network path. (AI-inferred) */
   elasticLoadBalancerListener?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Provides a list of explanation objects that describe the detailed reasoning for each network path component, including security group rules, route table entries, and other network configurations encountered along the analyzed path. (AI-inferred) */
   explanations?: NetworkInsightsAnalysis_Explanations[] | Computed<NetworkInsightsAnalysis_Explanations[]>;
-  /** Describes the packet header (source/destination IP addresses, ports, and protocol) for inbound traffic at this component of the analyzed network path. (AI-inferred) */
   inboundHeader?: NetworkInsightsAnalysis_ForwardPathComponents_InboundHeader | Computed<NetworkInsightsAnalysis_ForwardPathComponents_InboundHeader>;
-  /** The outbound_header object captures the IP header details (such as source and destination addresses and ports) for the outgoing packet of this forward path component. (AI-inferred) */
   outboundHeader?: NetworkInsightsAnalysis_ForwardPathComponents_InboundHeader | Computed<NetworkInsightsAnalysis_ForwardPathComponents_InboundHeader>;
-  /** Describes the route table route that was used to forward traffic at this component of the analyzed network path, including routing details such as destination CIDR block, target gateway, or instance. (AI-inferred) */
   routeTableRoute?: NetworkInsightsAnalysis_Explanations_RouteTableRoute | Computed<NetworkInsightsAnalysis_Explanations_RouteTableRoute>;
-  /** Describes the security group rule matched at this component of the analyzed forward network path, including the rule's security group ID, direction, protocol, port range, and source/destination CIDR or prefix list. (AI-inferred) */
   securityGroupRule?: NetworkInsightsAnalysis_Explanations_SecurityGroupRule | Computed<NetworkInsightsAnalysis_Explanations_SecurityGroupRule>;
-  /** The order of this component within the analyzed network path, used to sequence the path components. (AI-inferred) */
   sequenceNumber?: number | Computed<number>;
-  /** The name of the AWS service that the path component is associated with, such as VPC, Subnet, Internet Gateway, or VPC Endpoint. (AI-inferred) */
   serviceName?: string | Computed<string>;
-  /** The source VPC for this network path component, represented as a component object that includes the VPC's ARN, ID, and related metadata to show where traffic originates at this hop. (AI-inferred) */
   sourceVpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Represents the subnet resource that is a component of the forward path in an EC2 Network Insights Analysis, including its identifying details such as ARN and subnet ID. (AI-inferred) */
   subnet?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Describes the transit gateway involved in this forward path component, including its ARN, ID, name, and associated route table ID. (AI-inferred) */
   transitGateway?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
-  /** Information about the transit gateway route table route that was used to forward traffic at this component of the analyzed forward path. (AI-inferred) */
   transitGatewayRouteTableRoute?: NetworkInsightsAnalysis_Explanations_TransitGatewayRouteTableRoute | Computed<NetworkInsightsAnalysis_Explanations_TransitGatewayRouteTableRoute>;
-  /** The VPC that contains this component in the analyzed network path. (AI-inferred) */
   vpc?: NetworkInsightsAnalysis_Explanations_Acl | Computed<NetworkInsightsAnalysis_Explanations_Acl>;
 }
 
 export interface NetworkInsightsAnalysis_Tags {
-  /** The key of a tag assigned to the Network Insights Analysis, used to identify and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key attached to the EC2 Network Insights Analysis resource, used for identifying and organizing the analysis. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -290,50 +170,29 @@ const NetworkInsightsAnalysis_TagsFields: FieldMap = {
 };
 
 export interface NetworkInsightsAnalysisConfig {
-  /** The list of additional AWS account IDs to include in the network insights analysis, enabling cross-account reachability analysis by including resources from those accounts. (AI-inferred) */
   additionalAccounts?: string[] | Computed<string[]>;
-  /** The Amazon Resource Names (ARNs) of the resources that the analyzed path must include. (AI-inferred) */
   filterInArns?: string[] | Computed<string[]>;
-  /** The ARNs of resources to exclude from the network insights analysis. (AI-inferred) */
   filterOutArns?: string[] | Computed<string[]>;
-  /** The ID of the network insights path that this analysis will run against. (AI-inferred) */
   networkInsightsPathId: string | Computed<string>;
-  /** Assigns metadata tags to the network insights analysis resource for identification and organization. (AI-inferred) */
   tags?: NetworkInsightsAnalysis_Tags[] | Computed<NetworkInsightsAnalysis_Tags[]>;
 }
 
 export interface NetworkInsightsAnalysisAttrs {
-  /** The list of additional AWS account IDs to include in the network insights analysis, enabling cross-account reachability analysis by including resources from those accounts. (AI-inferred) */
   additionalAccounts: string[];
-  /** Lists the potential intermediate components (by ID and ARN) that could form an alternate valid path between the analyzed source and destination. (AI-inferred) */
   alternatePathHints: NetworkInsightsAnalysis_AlternatePathHints[];
-  /** Returns a list of explanation objects that describe the network path analysis results, including the source, destination, and intermediate components along the path. (AI-inferred) */
   explanations: NetworkInsightsAnalysis_Explanations[];
-  /** The Amazon Resource Names (ARNs) of the resources that the analyzed path must include. (AI-inferred) */
   filterInArns: string[];
-  /** The ARNs of resources to exclude from the network insights analysis. (AI-inferred) */
   filterOutArns: string[];
-  /** The list of network components (e.g., network interfaces, subnets, route table entries, security group rules) that the packet traverses in the forward direction from source to destination in the network insights analysis. (AI-inferred) */
   forwardPathComponents: NetworkInsightsAnalysis_ForwardPathComponents[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies this network insights analysis. (AI-inferred) */
   networkInsightsAnalysisArn: string;
-  /** The unique identifier assigned by AWS to the Network Insights Analysis resource. (AI-inferred) */
   networkInsightsAnalysisId: string;
-  /** The ID of the network insights path that this analysis will run against. (AI-inferred) */
   networkInsightsPathId: string;
-  /** Indicates whether a network path was found between the source and destination in the network insights analysis. (AI-inferred) */
   networkPathFound: boolean;
-  /** The list of network components that constitute the return path of the analyzed network journey, detailing each hop's resource type and identifiers. (AI-inferred) */
   returnPathComponents: NetworkInsightsAnalysis_ForwardPathComponents[];
-  /** The timestamp indicating when the network insights analysis was started. (AI-inferred) */
   startDate: string;
-  /** The current status of the network insights analysis, such as 'running', 'succeeded', or 'failed'. (AI-inferred) */
   status: string;
-  /** Provides additional context about the current status of the network insights analysis, such as the reason the analysis failed or could not be completed. (AI-inferred) */
   statusMessage: string;
-  /** A list of AWS account IDs that the analysis suggests might contain resources (such as security groups or network ACLs) relevant to the network path, even though they are not directly on the path. (AI-inferred) */
   suggestedAccounts: string[];
-  /** Assigns metadata tags to the network insights analysis resource for identification and organization. (AI-inferred) */
   tags: NetworkInsightsAnalysis_Tags[];
 }
 

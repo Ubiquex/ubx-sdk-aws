@@ -102,21 +102,16 @@ export interface ConnectConnector_LogDelivery {
 }
 
 export interface ConnectConnector_Plugins_CustomPlugin {
-  /** Specifies the Amazon Resource Name (ARN) of the AWS Kafka Connect custom plugin to associate with this connector's plugin configuration. (AI-inferred) */
   customPluginArn?: string | Computed<string>;
-  /** The revision of the custom plugin, which combined with the plugin ARN identifies a specific version of the plugin to use for the connector. (AI-inferred) */
   revision?: number | Computed<number>;
 }
 
 export interface ConnectConnector_Plugins {
-  /** For each plugin in the connector's plugin list, this object specifies the custom plugin's ARN and revision, which the connector uses to run the plugin's worker code. (AI-inferred) */
   customPlugin?: ConnectConnector_Plugins_CustomPlugin | Computed<ConnectConnector_Plugins_CustomPlugin>;
 }
 
 export interface ConnectConnector_Tags {
-  /** The key of a tag assigned to the MSK Connect connector, used to identify, organize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value for a tag key attached to the AWS Kafka Connect connector, used to manage, identify, and organize the connector resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

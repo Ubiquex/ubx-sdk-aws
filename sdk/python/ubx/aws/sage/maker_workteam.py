@@ -8,35 +8,26 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerWorkteam_MemberDefinitions_CognitoMemberDefinition:
-    # The client ID of the Amazon Cognito app client used to authenticate members of the SageMaker workteam. (AI-inferred)
     cognito_client_id: Any = None
-    # Specifies the Cognito user group that is allowed to access this SageMaker work team. (AI-inferred)
     cognito_user_group: Any = None
-    # The ID of the Amazon Cognito user pool that contains the work team members. (AI-inferred)
     cognito_user_pool: Any = None
 
 @dataclasses.dataclass
 class MakerWorkteam_MemberDefinitions_OidcMemberDefinition:
-    # Specifies the list of OIDC group names that define the members of the workteam for this OIDC member definition. (AI-inferred)
     oidc_groups: Any = None
 
 @dataclasses.dataclass
 class MakerWorkteam_MemberDefinitions:
-    # Configures the Amazon Cognito user group that is granted access to this work team by specifying the cognito user pool, client app, and user group for the member definition. (AI-inferred)
     cognito_member_definition: Any = None
-    # Specifies the OIDC identity provider (IdP) ID and a list of group names that define membership in the SageMaker work team. (AI-inferred)
     oidc_member_definition: Any = None
 
 @dataclasses.dataclass
 class MakerWorkteam_NotificationConfiguration:
-    # The ARN of the Amazon SNS topic that SageMaker sends workteam lifecycle notifications to, such as when the workteam is created or updated. (AI-inferred)
     notification_topic_arn: Any = None
 
 @dataclasses.dataclass
 class MakerWorkteam_Tags:
-    # The tag key assigned to the SageMaker workteam, used for resource categorization and cost allocation. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag applied to the SageMaker workteam, used for metadata such as cost allocation or environment identification. (AI-inferred)
     value: Any = None
 
 _MakerWorkteam_MemberDefinitions_CognitoMemberDefinitionFields = {
@@ -73,34 +64,21 @@ _MakerWorkteam_TagsFields = {
 
 @dataclasses.dataclass
 class MakerWorkteamConfig:
-    # A description of the SageMaker work team that provides details about the team's purpose or composition. (AI-inferred)
     description: Any = None
-    # Defines the list of workers for the SageMaker work team, where each member definition specifies either an Amazon Cognito user pool or an OIDC identity provider to grant worker access. (AI-inferred)
     member_definitions: Any = None
-    # Specifies the SNS topic ARN (via its `NotificationTopicArn`) that SageMaker uses to send notifications about workteam-related events, such as labeling job updates. (AI-inferred)
     notification_configuration: Any = None
-    # Specifies one or more tags (key-value pairs) to assign to the SageMaker Workteam resource, enabling cost allocation and management of the workforce. (AI-inferred)
     tags: Any = None
-    # The name of the SageMaker workforce that this workteam is associated with, determining the pool of workers available to the workteam. (AI-inferred)
     workforce_name: Any = None
-    # The name of the SageMaker work team, which must be unique within your AWS account and region; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
     workteam_name: Any = None
 
 @dataclasses.dataclass
 class MakerWorkteamAttrs:
-    # A description of the SageMaker work team that provides details about the team's purpose or composition. (AI-inferred)
     description: Any = None
-    # The unique identifier for the SageMaker work team, which is set to the work team's name and is used for state tracking in Terraform. (AI-inferred)
     id: Any = None
-    # Defines the list of workers for the SageMaker work team, where each member definition specifies either an Amazon Cognito user pool or an OIDC identity provider to grant worker access. (AI-inferred)
     member_definitions: Any = None
-    # Specifies the SNS topic ARN (via its `NotificationTopicArn`) that SageMaker uses to send notifications about workteam-related events, such as labeling job updates. (AI-inferred)
     notification_configuration: Any = None
-    # Specifies one or more tags (key-value pairs) to assign to the SageMaker Workteam resource, enabling cost allocation and management of the workforce. (AI-inferred)
     tags: Any = None
-    # The name of the SageMaker workforce that this workteam is associated with, determining the pool of workers available to the workteam. (AI-inferred)
     workforce_name: Any = None
-    # The name of the SageMaker work team, which must be unique within your AWS account and region; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
     workteam_name: Any = None
 
 MakerWorkteam = ubx.ResourceBinding(

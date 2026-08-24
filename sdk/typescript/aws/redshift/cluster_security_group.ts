@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClusterSecurityGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the Redshift cluster security group, used for labeling and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -13,18 +12,13 @@ const ClusterSecurityGroup_TagsFields: FieldMap = {
 };
 
 export interface ClusterSecurityGroupConfig {
-  /** The required description for the Redshift cluster security group, which provides a human-readable explanation of the security group's purpose. (AI-inferred) */
   description: string | Computed<string>;
-  /** A list of tag objects (key and value) used to assign metadata to the Redshift cluster security group for cost tracking and resource management. (AI-inferred) */
   tags?: ClusterSecurityGroup_Tags[] | Computed<ClusterSecurityGroup_Tags[]>;
 }
 
 export interface ClusterSecurityGroupAttrs {
-  /** The required description for the Redshift cluster security group, which provides a human-readable explanation of the security group's purpose. (AI-inferred) */
   description: string;
-  /** The unique identifier of the Redshift cluster security group, which is the cluster security group name. (AI-inferred) */
   id: string;
-  /** A list of tag objects (key and value) used to assign metadata to the Redshift cluster security group for cost tracking and resource management. (AI-inferred) */
   tags: ClusterSecurityGroup_Tags[];
 }
 

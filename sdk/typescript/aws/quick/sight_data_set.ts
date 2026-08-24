@@ -2,42 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightDataSet_ColumnGroups_GeoSpatialColumnGroup {
-  /** The list of column names that are grouped together to form a geographical hierarchy (e.g., country, state, city) for mapping in QuickSight visualizations. (AI-inferred) */
   columns?: string[] | Computed<string[]>;
-  /** Specifies the two-letter country code (e.g., US, GB) that defines the geographic hierarchy and mapping for the columns in this geospatial column group in the QuickSight dataset. (AI-inferred) */
   countryCode?: string | Computed<string>;
-  /** The name of the geospatial column group, which uniquely identifies the group within the QuickSight data set. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface SightDataSet_ColumnGroups {
-  /** Defines a geospatial column group in a QuickSight dataset, specifying which columns are treated as geographic data and the country code used for map rendering. (AI-inferred) */
   geoSpatialColumnGroup?: SightDataSet_ColumnGroups_GeoSpatialColumnGroup | Computed<SightDataSet_ColumnGroups_GeoSpatialColumnGroup>;
 }
 
 export interface SightDataSet_ColumnLevelPermissionRules {
-  /** The list of column names that this column-level permission rule applies to, controlling which columns are visible to the users or groups specified in the rule. (AI-inferred) */
   columnNames?: string[] | Computed<string[]>;
-  /** The list of Amazon QuickSight user or group principal ARNs that this column-level permission rule applies to, granting them access to the specified columns. (AI-inferred) */
   principals?: string[] | Computed<string[]>;
 }
 
 export interface SightDataSet_DataPrepConfiguration {
-  /** Determines the destination table names for the data set after the data prep transformations are applied, mapping each source table to its corresponding output table within the QuickSight data set. (AI-inferred) */
   destinationTableMap: unknown | Computed<unknown>;
-  /** Defines a mapping of physical table IDs to their corresponding source table definitions, used during data preparation for the QuickSight dataset. (AI-inferred) */
   sourceTableMap: unknown | Computed<unknown>;
-  /** Defines the map of data preparation transform steps for the QuickSight dataset, where each entry maps a user-defined step name to a TransformStep object specifying the transform action (such as filter, project, or rename) to apply. (AI-inferred) */
   transformStepMap: unknown | Computed<unknown>;
 }
 
 export interface SightDataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlert {
-  /** Indicates whether the email alert for data set refresh failure is enabled or disabled, with allowed values such as ENABLED or DISABLED. (AI-inferred) */
   alertStatus?: string | Computed<string>;
 }
 
 export interface SightDataSet_DataSetRefreshProperties_FailureConfiguration {
-  /** Configures email notifications to specified recipients when a dataset refresh fails. (AI-inferred) */
   emailAlert?: SightDataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlert | Computed<SightDataSet_DataSetRefreshProperties_FailureConfiguration_EmailAlert>;
 }
 
@@ -46,7 +35,6 @@ export interface SightDataSet_DataSetRefreshProperties_RefreshConfiguration_Incr
   columnName: string | Computed<string>;
   /** <p>The lookback window column size.</p> */
   size: number | Computed<number>;
-  /** Specifies the unit of measurement for the lookback window size (e.g., DAY or HOUR), which determines how much historical data is included in the incremental refresh window. (AI-inferred) */
   sizeUnit: string | Computed<string>;
 }
 
@@ -61,7 +49,6 @@ export interface SightDataSet_DataSetRefreshProperties_RefreshConfiguration {
 }
 
 export interface SightDataSet_DataSetRefreshProperties {
-  /** Specifies the retry behavior when a QuickSight dataset refresh fails, defining the maximum number of retry attempts and the wait interval between retries. (AI-inferred) */
   failureConfiguration?: SightDataSet_DataSetRefreshProperties_FailureConfiguration | Computed<SightDataSet_DataSetRefreshProperties_FailureConfiguration>;
   /** <p>The refresh configuration of a dataset.</p> */
   refreshConfiguration?: SightDataSet_DataSetRefreshProperties_RefreshConfiguration | Computed<SightDataSet_DataSetRefreshProperties_RefreshConfiguration>;
@@ -75,57 +62,39 @@ export interface SightDataSet_DataSetUsageConfiguration {
 }
 
 export interface SightDataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValues {
-  /** Defines the list of static default date-time values (as strings) for a date time dataset parameter, used when no dynamic default value is provided for the QuickSight data set parameter. (AI-inferred) */
   staticValues?: string[] | Computed<string[]>;
 }
 
 export interface SightDataSet_DatasetParameters_DateTimeDatasetParameter {
-  /** Specifies the default values for a date-time dataset parameter, which is a container that holds a list of timestamp strings to apply when the parameter is not explicitly provided. (AI-inferred) */
   defaultValues?: SightDataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValues | Computed<SightDataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValues>;
-  /** The unique identifier for the date-time dataset parameter within the QuickSight dataset. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The unique name that identifies this date-time dataset parameter, used to reference the parameter within the dataset's queries and when configuring parameter controls. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the granularity of the date-time dataset parameter (e.g., YEAR, MONTH, DAY, HOUR), which controls how the date-time values are interpreted or aggregated in QuickSight. (AI-inferred) */
   timeGranularity?: string | Computed<string>;
-  /** Indicates the value type of the date-time dataset parameter, which can be 'SINGLE' for a single date-time value or 'MULTI_VALUED' for multiple date-time values, controlling how the parameter is used in dataset filters and queries. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface SightDataSet_DatasetParameters_DecimalDatasetParameter_DefaultValues {
-  /** The list of static decimal numbers used as the default values for this decimal dataset parameter when no value is provided by the user. (AI-inferred) */
   staticValues?: number[] | Computed<number[]>;
 }
 
 export interface SightDataSet_DatasetParameters_DecimalDatasetParameter {
-  /** Defines the default decimal values for the decimal dataset parameter, which are used when no parameter value is supplied during dataset or analysis operations. (AI-inferred) */
   defaultValues?: SightDataSet_DatasetParameters_DecimalDatasetParameter_DefaultValues | Computed<SightDataSet_DatasetParameters_DecimalDatasetParameter_DefaultValues>;
-  /** The unique identifier for the decimal dataset parameter, used to reference this parameter within the QuickSight dataset and in dataset operations such as custom SQL or filters. (AI-inferred) */
   id?: string | Computed<string>;
-  /** A unique name that identifies this decimal dataset parameter within the dataset, which can be referenced in custom SQL or other dataset configurations. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether the decimal dataset parameter accepts a single value or multiple values, using the enum values SINGLE_VALUED or MULTI_VALUED. (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface SightDataSet_DatasetParameters_StringDatasetParameter {
-  /** Specifies the default string values for this string dataset parameter, which are used when the parameter is not provided at analysis runtime. (AI-inferred) */
   defaultValues?: SightDataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValues | Computed<SightDataSet_DatasetParameters_DateTimeDatasetParameter_DefaultValues>;
   id?: string | Computed<string>;
-  /** The name that identifies this QuickSight dataset string parameter, used to reference the parameter in dataset custom SQL (for example, ${param_name}) and dataset expressions. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether the string dataset parameter permits a single value ('SINGLE_VALUED') or multiple values ('MULTI_VALUED'). (AI-inferred) */
   valueType?: string | Computed<string>;
 }
 
 export interface SightDataSet_DatasetParameters {
-  /** Defines a date-time dataset parameter in Amazon QuickSight, specifying its ID, name, value type (single or multi-valued), optional time granularity, and default values for filtering dataset content. (AI-inferred) */
   dateTimeDatasetParameter?: SightDataSet_DatasetParameters_DateTimeDatasetParameter | Computed<SightDataSet_DatasetParameters_DateTimeDatasetParameter>;
-  /** Defines a decimal (numeric) parameter for the QuickSight dataset, specifying its name and list of numeric values. (AI-inferred) */
   decimalDatasetParameter?: SightDataSet_DatasetParameters_DecimalDatasetParameter | Computed<SightDataSet_DatasetParameters_DecimalDatasetParameter>;
-  /** Defines an integer parameter for the QuickSight dataset, including its name, value type (single or multi-valued), and default values. (AI-inferred) */
   integerDatasetParameter?: SightDataSet_DatasetParameters_DecimalDatasetParameter | Computed<SightDataSet_DatasetParameters_DecimalDatasetParameter>;
-  /** Defines a string dataset parameter for a QuickSight dataset, specifying its name and list of string values used in queries or filters. (AI-inferred) */
   stringDatasetParameter?: SightDataSet_DatasetParameters_StringDatasetParameter | Computed<SightDataSet_DatasetParameters_StringDatasetParameter>;
 }
 
@@ -137,60 +106,44 @@ export interface SightDataSet_IngestionWaitPolicy {
 }
 
 export interface SightDataSet_OutputColumns {
-  /** A description of the output column, providing additional context about the data contained in that column within the QuickSight dataset. (AI-inferred) */
   description?: string | Computed<string>;
   id?: string | Computed<string>;
-  /** The name of the output column, which defines the column heading in the resulting dataset schema for Amazon QuickSight. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The sub data type of the output column in an Amazon QuickSight data set, which further refines the column's data type, for instance indicating that a string column carries geospatial data. (AI-inferred) */
   subType?: string | Computed<string>;
-  /** Specifies the data type of the output column (e.g., STRING, INTEGER, DECIMAL, DATETIME) in the QuickSight dataset output schema. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface SightDataSet_PerformanceConfiguration_UniqueKeys {
-  /** The list of column names that together form a unique key for the dataset, used by QuickSight to identify unique rows for performance optimization and incremental data refresh. (AI-inferred) */
   columnNames?: string[] | Computed<string[]>;
 }
 
 export interface SightDataSet_PerformanceConfiguration {
-  /** Specifies a list of unique key configurations for the QuickSight dataset's performance configuration, where each unique key defines one or more column names that uniquely identify each row, enabling incremental data refresh and performance optimization. (AI-inferred) */
   uniqueKeys?: SightDataSet_PerformanceConfiguration_UniqueKeys[] | Computed<SightDataSet_PerformanceConfiguration_UniqueKeys[]>;
 }
 
 export interface SightDataSet_Permissions {
-  /** Specifies the list of QuickSight actions (e.g., 'quicksight:DescribeDataSet', 'quicksight:UpdateDataSet', 'quicksight:DeleteDataSet') allowed for the associated principal on the data set. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The ARN of the principal (user, group, or role) that the permissions entry grants or revokes actions on the dataset. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
 export interface SightDataSet_RowLevelPermissionDataSet {
   /** <p>The Amazon Resource Name (ARN) of the dataset that contains permissions for RLS.</p> */
   arn: string | Computed<string>;
-  /** The format version of the row-level security dataset, where VERSION_1 is the legacy format and VERSION_2 is the current format supporting additional features such as multiple role hierarchies. (AI-inferred) */
   formatVersion?: string | Computed<string>;
   /** <p>The namespace associated with the dataset that contains permissions for RLS.</p> */
   namespace?: string | Computed<string>;
-  /** Specifies whether the row-level permission dataset grants or denies access to the underlying data, with valid values of GRANT_ACCESS or DENY_ACCESS. (AI-inferred) */
   permissionPolicy: string | Computed<string>;
-  /** Specifies whether the row-level permission dataset is currently enabled (ENABLED) or disabled (DISABLED) for the QuickSight data set. (AI-inferred) */
   status?: string | Computed<string>;
 }
 
 export interface SightDataSet_RowLevelPermissionTagConfiguration_TagRules {
-  /** The name of the dataset column that this row-level permission tag rule uses to map tag values to rows for access control. (AI-inferred) */
   columnName?: string | Computed<string>;
-  /** The value that, when the tag key's value equals this string, grants access to all rows in the dataset (bypassing row-level permission filtering). (AI-inferred) */
   matchAllValue?: string | Computed<string>;
-  /** Defines the tag key that QuickSight matches against a user's tag values to enforce row-level security for the dataset. (AI-inferred) */
   tagKey?: string | Computed<string>;
-  /** The delimiter used to separate multiple values within a single tag rule's tag value for row-level permission tag configuration in this QuickSight dataset. (AI-inferred) */
   tagMultiValueDelimiter?: string | Computed<string>;
 }
 
 export interface SightDataSet_RowLevelPermissionTagConfiguration {
-  /** Indicates whether row-level security tag rules are enabled (ENABLED) or disabled (DISABLED) for the QuickSight dataset. (AI-inferred) */
   status?: string | Computed<string>;
   /** <p>A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to it to apply Row-level security (RLS) to the dataset.</p> */
   tagRuleConfigurations?: string[][] | Computed<string[][]>;
@@ -199,45 +152,34 @@ export interface SightDataSet_RowLevelPermissionTagConfiguration {
 }
 
 export interface SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadata {
-  /** The name of the uploaded document that provides custom instruction content for the QuickSight data set's semantic model. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction {
-  /** The actual textual content of an inline custom instruction for QuickSight's semantic model, providing specific guidance on how data should be interpreted or processed in the data set. (AI-inferred) */
   instructionText?: string | Computed<string>;
-  /** For an inline custom instruction in the QuickSight data set's semantic model, this object stores the metadata of a document uploaded to Amazon S3 that contains the instruction's content. (AI-inferred) */
   uploadedDocumentMetadata?: SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadata | Computed<SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction_UploadedDocumentMetadata>;
 }
 
 export interface SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions {
-  /** Contains the inline text of a custom instruction attached to the dataset's semantic metadata, providing explicit guidance to the QuickSight semantic model for interpreting or using the data. (AI-inferred) */
   inlineCustomInstruction?: SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction | Computed<SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions_InlineCustomInstruction>;
 }
 
 export interface SightDataSet_SemanticModelConfiguration_SemanticMetadata_Description {
-  /** Specifies the free-form text description for a semantic metadata item (such as a column) in the QuickSight dataset's semantic model, providing human-readable business context. (AI-inferred) */
   text?: string | Computed<string>;
 }
 
 export interface SightDataSet_SemanticModelConfiguration_SemanticMetadata {
-  /** Specifies a list of custom instruction objects that provide additional business context and guidance to QuickSight's semantic model, enhancing natural language query interpretation for the data set. (AI-inferred) */
   customInstructions?: SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions[] | Computed<SightDataSet_SemanticModelConfiguration_SemanticMetadata_CustomInstructions[]>;
-  /** The description field inside semantic_metadata provides a human-readable explanation of the semantic metadata entry, describing the purpose or meaning of the semantic type assigned to a data path in the QuickSight data set's semantic model. (AI-inferred) */
   description?: SightDataSet_SemanticModelConfiguration_SemanticMetadata_Description | Computed<SightDataSet_SemanticModelConfiguration_SemanticMetadata_Description>;
 }
 
 export interface SightDataSet_SemanticModelConfiguration {
-  /** The semantic_metadata list defines the semantic entities and their field mappings for the QuickSight semantic model configuration, enabling natural language query and other semantic features on the data set. (AI-inferred) */
   semanticMetadata?: SightDataSet_SemanticModelConfiguration_SemanticMetadata[] | Computed<SightDataSet_SemanticModelConfiguration_SemanticMetadata[]>;
-  /** A map of table names to semantic model table definitions, configuring how each table in the QuickSight dataset is modeled for semantic model features such as natural language querying (Q) by defining measures, dimensions, and hierarchies. (AI-inferred) */
   tableMap?: unknown | Computed<unknown>;
 }
 
 export interface SightDataSet_Tags {
-  /** Specifies the key of a tag applied to the QuickSight data set, enabling resource identification, categorization, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Value of a tag applied to the Amazon QuickSight data set, used to categorize or filter the resource for management, access control, or cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -483,14 +425,12 @@ const SightDataSet_TagsFields: FieldMap = {
 };
 
 export interface SightDataSetConfig {
-  /** The AWS account ID that owns the data set, defaulting to the account used to make the request if not specified. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
   /** <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p> */
   columnGroups?: SightDataSet_ColumnGroups[] | Computed<SightDataSet_ColumnGroups[]>;
   /** <p>A set of one or more definitions of a <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_ColumnLevelPermissionRule.html">ColumnLevelPermissionRule</a> </code>.</p> */
   columnLevelPermissionRules?: SightDataSet_ColumnLevelPermissionRules[] | Computed<SightDataSet_ColumnLevelPermissionRules[]>;
   dataPrepConfiguration?: SightDataSet_DataPrepConfiguration | Computed<SightDataSet_DataPrepConfiguration>;
-  /** The user-defined unique identifier for the QuickSight dataset within an AWS Region; if omitted, QuickSight generates one automatically. (AI-inferred) */
   dataSetId?: string | Computed<string>;
   /** <p>The refresh properties of a dataset.</p> */
   dataSetRefreshProperties?: SightDataSet_DataSetRefreshProperties | Computed<SightDataSet_DataSetRefreshProperties>;
@@ -498,40 +438,32 @@ export interface SightDataSetConfig {
   dataSetUsageConfiguration?: SightDataSet_DataSetUsageConfiguration | Computed<SightDataSet_DataSetUsageConfiguration>;
   /** <p>The parameter declarations of the dataset.</p> */
   datasetParameters?: SightDataSet_DatasetParameters[] | Computed<SightDataSet_DatasetParameters[]>;
-  /** Configures field folders, a map of folder names to objects listing the dataset columns that should be grouped under each folder, enabling organized browsing of fields in QuickSight. (AI-inferred) */
   fieldFolders?: unknown | Computed<unknown>;
   /** <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p> */
   folderArns?: string[] | Computed<string[]>;
-  /** The import mode for the dataset, which determines whether data is stored in SPICE (in-memory) for fast analytics or queried directly from the underlying data source; valid values are SPICE and DIRECT_QUERY. (AI-inferred) */
   importMode?: string | Computed<string>;
   /** <p>Wait policy to use when creating/updating dataset. Default is to wait for SPICE ingestion to finish with timeout of 36 hours.</p> */
   ingestionWaitPolicy?: SightDataSet_IngestionWaitPolicy | Computed<SightDataSet_IngestionWaitPolicy>;
-  /** Maps logical table names to their definitions, enabling custom data views over physical tables with transformations, joins, and filters. (AI-inferred) */
   logicalTableMap?: unknown | Computed<unknown>;
   /** <p>The display name for the dataset.</p> */
   name?: string | Computed<string>;
-  /** Defines performance settings for the dataset, specifically a list of unique key configurations used to optimize query performance. (AI-inferred) */
   performanceConfiguration?: SightDataSet_PerformanceConfiguration | Computed<SightDataSet_PerformanceConfiguration>;
   /** <p>A list of resource permissions on the dataset.</p> */
   permissions?: SightDataSet_Permissions[] | Computed<SightDataSet_Permissions[]>;
-  /** Defines the physical tables backing the dataset, mapping each physical table identifier to its source definition (relational table, custom SQL, or S3 source). (AI-inferred) */
   physicalTableMap?: unknown | Computed<unknown>;
   /** <p>Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.</p> */
   rowLevelPermissionDataSet?: SightDataSet_RowLevelPermissionDataSet | Computed<SightDataSet_RowLevelPermissionDataSet>;
   /** <p>The configuration of tags on a dataset to set row-level security. </p> */
   rowLevelPermissionTagConfiguration?: SightDataSet_RowLevelPermissionTagConfiguration | Computed<SightDataSet_RowLevelPermissionTagConfiguration>;
-  /** Configures the dataset's semantic model properties, providing lists of configured and unconfigured semantic model property configurations that map dataset columns to semantic types for Amazon QuickSight Q. (AI-inferred) */
   semanticModelConfiguration?: SightDataSet_SemanticModelConfiguration | Computed<SightDataSet_SemanticModelConfiguration>;
   /** <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p> */
   tags?: SightDataSet_Tags[] | Computed<SightDataSet_Tags[]>;
-  /** Determines whether the dataset is used as a visual or as a query in AWS QuickSight. (AI-inferred) */
   useAs?: string | Computed<string>;
 }
 
 export interface SightDataSetAttrs {
   /** <p>The Amazon Resource Name (ARN) of the resource.</p> */
   arn: string;
-  /** The AWS account ID that owns the data set, defaulting to the account used to make the request if not specified. (AI-inferred) */
   awsAccountId: string;
   /** <p>Groupings of columns that work together in certain Amazon QuickSight features. Currently, only geospatial hierarchy is supported.</p> */
   columnGroups: SightDataSet_ColumnGroups[];
@@ -542,7 +474,6 @@ export interface SightDataSetAttrs {
   /** <p>The time that this dataset was created.</p> */
   createdTime: string;
   dataPrepConfiguration: SightDataSet_DataPrepConfiguration;
-  /** The user-defined unique identifier for the QuickSight dataset within an AWS Region; if omitted, QuickSight generates one automatically. (AI-inferred) */
   dataSetId: string;
   /** <p>The refresh properties of a dataset.</p> */
   dataSetRefreshProperties: SightDataSet_DataSetRefreshProperties;
@@ -550,37 +481,30 @@ export interface SightDataSetAttrs {
   dataSetUsageConfiguration: SightDataSet_DataSetUsageConfiguration;
   /** <p>The parameter declarations of the dataset.</p> */
   datasetParameters: SightDataSet_DatasetParameters[];
-  /** Configures field folders, a map of folder names to objects listing the dataset columns that should be grouped under each folder, enabling organized browsing of fields in QuickSight. (AI-inferred) */
   fieldFolders: unknown;
   /** <p>When you create the dataset, Amazon QuickSight adds the dataset to these folders.</p> */
   folderArns: string[];
-  /** The import mode for the dataset, which determines whether data is stored in SPICE (in-memory) for fast analytics or queried directly from the underlying data source; valid values are SPICE and DIRECT_QUERY. (AI-inferred) */
   importMode: string;
   /** <p>Wait policy to use when creating/updating dataset. Default is to wait for SPICE ingestion to finish with timeout of 36 hours.</p> */
   ingestionWaitPolicy: SightDataSet_IngestionWaitPolicy;
   /** <p>The last time that this dataset was updated.</p> */
   lastUpdatedTime: string;
-  /** Maps logical table names to their definitions, enabling custom data views over physical tables with transformations, joins, and filters. (AI-inferred) */
   logicalTableMap: unknown;
   /** <p>The display name for the dataset.</p> */
   name: string;
   /** <p>The list of columns after all transforms. These columns are available in templates, analyses, and dashboards.</p> */
   outputColumns: SightDataSet_OutputColumns[];
-  /** Defines performance settings for the dataset, specifically a list of unique key configurations used to optimize query performance. (AI-inferred) */
   performanceConfiguration: SightDataSet_PerformanceConfiguration;
   /** <p>A list of resource permissions on the dataset.</p> */
   permissions: SightDataSet_Permissions[];
-  /** Defines the physical tables backing the dataset, mapping each physical table identifier to its source definition (relational table, custom SQL, or S3 source). (AI-inferred) */
   physicalTableMap: unknown;
   /** <p>Information about a dataset that contains permissions for row-level security (RLS). The permissions dataset maps fields to users or groups. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/restrict-access-to-a-data-set-using-row-level-security.html">Using Row-Level Security (RLS) to Restrict Access to a Dataset</a> in the <i>Amazon QuickSight User Guide</i>.</p> <p>The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code> is not supported for new RLS datasets.</p> */
   rowLevelPermissionDataSet: SightDataSet_RowLevelPermissionDataSet;
   /** <p>The configuration of tags on a dataset to set row-level security. </p> */
   rowLevelPermissionTagConfiguration: SightDataSet_RowLevelPermissionTagConfiguration;
-  /** Configures the dataset's semantic model properties, providing lists of configured and unconfigured semantic model property configurations that map dataset columns to semantic types for Amazon QuickSight Q. (AI-inferred) */
   semanticModelConfiguration: SightDataSet_SemanticModelConfiguration;
   /** <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.</p> */
   tags: SightDataSet_Tags[];
-  /** Determines whether the dataset is used as a visual or as a query in AWS QuickSight. (AI-inferred) */
   useAs: string;
 }
 

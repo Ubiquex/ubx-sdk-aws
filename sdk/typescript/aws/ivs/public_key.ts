@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PublicKey_Tags {
   key?: string | Computed<string>;
-  /** The value associated with a tag key attached to the AWS IVS public key, used for organizing or identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

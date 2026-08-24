@@ -24,9 +24,7 @@ class FrontCloudFrontOriginAccessIdentityConfig:
 class FrontCloudFrontOriginAccessIdentityAttrs:
     # Origin access identity configuration. Send a ``GET`` request to the ``/CloudFront API version/CloudFront/identity ID/config`` resource.
     cloud_front_origin_access_identity_config: Any = None
-    # The unique identifier assigned to the CloudFront origin access identity, which is used as the principal in S3 bucket policies and referenced in CloudFront distribution origin settings. (AI-inferred)
     id: Any = None
-    # The canonical user ID associated with the CloudFront origin access identity, which you can use to grant the OAI permissions to access S3 objects via a bucket policy. (AI-inferred)
     s3_canonical_user_id: Any = None
 
 FrontCloudFrontOriginAccessIdentity = ubx.ResourceBinding(

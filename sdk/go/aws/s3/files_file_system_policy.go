@@ -5,13 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FilesFileSystemPolicyConfig struct {
 	FileSystemId any
-	// The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
 	Policy any
 }
 
 type FilesFileSystemPolicyAttrs struct {
 	FileSystemId any
-	// The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
 	Policy any
 }
 

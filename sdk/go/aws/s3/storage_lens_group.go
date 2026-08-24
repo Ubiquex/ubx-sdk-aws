@@ -4,9 +4,7 @@ package s3
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageLensGroup_Filter_And_MatchAnyTag struct {
-	// Specifies the tag key that objects must have to be included in the S3 Storage Lens group when using the match-any-tag filter condition. (AI-inferred)
 	Key any
-	// The value of the tag key-value pair that an object must match for inclusion in the Storage Lens group when using the match-any-tag filter. (AI-inferred)
 	Value any
 }
 

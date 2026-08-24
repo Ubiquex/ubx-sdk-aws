@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VpcblockPublicAccessExclusion_Tags:
-    # The key of a tag to assign to the AWS EC2 VPC Block Public Access exclusion. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag key assigned to the VPC Block Public Access exclusion, used for identifying and organizing the AWS resource. (AI-inferred)
     value: Any = None
 
 _VpcblockPublicAccessExclusion_TagsFields = {

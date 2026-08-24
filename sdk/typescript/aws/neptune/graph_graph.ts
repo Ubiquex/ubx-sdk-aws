@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GraphGraph_Tags {
-  /** The key of a tag attached to the Neptune Analytics graph, used to identify the tag within the resource's tag set. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

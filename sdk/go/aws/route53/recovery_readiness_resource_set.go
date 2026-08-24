@@ -4,51 +4,36 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_Nlbresource struct {
-	// The ARN of the Network Load Balancer (NLB) that serves as the target resource for this DNS target resource in the Route53 Recovery Readiness resource set. (AI-inferred)
 	Arn any
 }
 
 type RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource_R53Resource struct {
-	// The domain name of the Route 53 record set that the DNS target resource references, used by Route 53 Recovery Readiness to evaluate the resource set's readiness. (AI-inferred)
 	DomainName any
-	// The unique identifier of the Route 53 record set within a hosted zone that this resource set uses as its DNS target for readiness checks. (AI-inferred)
 	RecordSetId any
 }
 
 type RecoveryReadinessResourceSet_Resources_DnsTargetResource_TargetResource struct {
-	// Contains the Amazon Resource Name (ARN) of the Network Load Balancer that this recovery readiness resource set uses as a failover target. (AI-inferred)
 	Nlbresource any
-	// Configuration for a Route 53 resource target, specifying the domain name and record set ID of the Route 53 record that this DNS target resource points to for readiness checks. (AI-inferred)
 	R53Resource any
 }
 
 type RecoveryReadinessResourceSet_Resources_DnsTargetResource struct {
-	// The fully qualified domain name (FQDN) of the DNS target resource that Route 53 Recovery Readiness monitors to verify DNS routing and determine readiness for failover. (AI-inferred)
 	DomainName any
-	// The Amazon Resource Name (ARN) of the Route 53 hosted zone that contains the DNS record evaluated by this recovery readiness resource set's DNS target resource. (AI-inferred)
 	HostedZoneArn any
-	// The ID of the Amazon Route 53 record set that this DNS target resource references, uniquely identifying the record set within its hosted zone for the readiness check. (AI-inferred)
 	RecordSetId any
-	// The DNS record type (e.g., A, AAAA, or CNAME) used for the DNS target resource in the Route 53 recovery readiness resource set. (AI-inferred)
 	RecordType any
-	// In a Route 53 Recovery Readiness resource set's DNS target resource, the `target_resource` object specifies the underlying AWS resource (such as an NLB or a Route 53 record set) that the DNS target points to for readiness checks. (AI-inferred)
 	TargetResource any
 }
 
 type RecoveryReadinessResourceSet_Resources struct {
-	// A unique identifier for this resource within the resource set, used to distinguish and group component resources when configuring Route53 Recovery Readiness checks. (AI-inferred)
 	ComponentId any
-	// Defines the DNS target (Route 53 record set) resource within a resource set, specifying details such as domain name, hosted zone ARN, record type, and record value that Route 53 Application Recovery Controller monitors for readiness. (AI-inferred)
 	DnsTargetResource any
-	// For each resource in the resource set, a list of ARNs of Cells or Recovery Groups whose readiness checks include this resource, determining which scopes the resource's readiness is evaluated against. (AI-inferred)
 	ReadinessScopes any
-	// The Amazon Resource Name (ARN) of the AWS resource to include in this resource set, identifying the concrete resource whose readiness is being monitored for recovery testing. (AI-inferred)
 	ResourceArn any
 }
 
 type RecoveryReadinessResourceSet_Tags struct {
 	Key any
-	// The value component of each tag applied to the Route 53 Recovery Readiness resource set, used to store arbitrary user-defined metadata for identifying and managing the resource set. (AI-inferred)
 	Value any
 }
 

@@ -4,9 +4,7 @@ package rekognition
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Collection_Tags struct {
-	// The key of a user-defined tag applied to the Amazon Rekognition collection, used for organizing and managing the resource. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag attached to the Rekognition collection, used to add metadata for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -23,7 +21,6 @@ type CollectionConfig struct {
 }
 
 type CollectionAttrs struct {
-	// The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Rekognition collection across the service. (AI-inferred)
 	Arn any
 	// The name of the collection
 	CollectionId any

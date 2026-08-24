@@ -4,9 +4,7 @@ package doc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbDbsubnetGroup_Tags struct {
-	// The key of a user-defined tag attached to the Amazon DocumentDB DB subnet group, used for organizing, identifying, and managing the resource (e.g., via cost allocation or access control). (AI-inferred)
 	Key any
-	// Specifies the value of a tag attached to the DocumentDB DB subnet group, used for metadata and cost allocation. (AI-inferred)
 	Value any
 }
 

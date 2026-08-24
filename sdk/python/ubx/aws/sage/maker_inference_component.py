@@ -8,17 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_Alarms:
-    # The name of the CloudWatch alarm that triggers an automatic rollback of the SageMaker inference component deployment when it enters an alarm state. (AI-inferred)
     alarm_name: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration:
-    # A list of CloudWatch alarms that, when triggered, cause the inference component deployment to automatically roll back to the previous configuration. (AI-inferred)
     alarms: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize:
-    # Specifies whether the maximum batch size for a rolling update to a SageMaker Inference Component is expressed as an instance count or as a percentage of the endpoint's total capacity, determining how many instances are updated concurrently during the deployment. (AI-inferred)
     type: Any = None
     # The number of copies for the inference component
     value: Any = None
@@ -27,16 +24,13 @@ class MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchS
 class MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy:
     # Capacity size configuration for the inference component
     maximum_batch_size: Any = None
-    # Specifies the maximum time in seconds that a rolling update of the SageMaker inference component is allowed to run before the update is considered failed and is rolled back. (AI-inferred)
     maximum_execution_timeout_in_seconds: Any = None
     # Capacity size configuration for the inference component
     rollback_maximum_batch_size: Any = None
-    # Specifies the number of seconds to wait after each batch of instances is updated before the next batch is deployed during a rolling update for the SageMaker inference component. (AI-inferred)
     wait_interval_in_seconds: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_DeploymentConfig:
-    # Specifies the CloudWatch alarms that trigger automatic rollback of the SageMaker inference component deployment when they enter an alarm state. (AI-inferred)
     auto_rollback_configuration: Any = None
     # The rolling update policy for the inference component
     rolling_update_policy: Any = None
@@ -52,18 +46,13 @@ class MakerInferenceComponent_RuntimeConfig:
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Specification_ComputeResourceRequirements:
-    # Specifies the maximum amount of memory, in megabytes, that the inference component requires for deployment, which SageMaker uses to place the component on an endpoint and ensure sufficient resources are available. (AI-inferred)
     max_memory_required_in_mb: Any = None
-    # Specifies the minimum amount of memory, in megabytes, that the SageMaker inference component needs for its model and runtime to operate successfully. (AI-inferred)
     min_memory_required_in_mb: Any = None
-    # The number of accelerator devices required for the inference component, used to determine the appropriate instance type for deployment. (AI-inferred)
     number_of_accelerator_devices_required: Any = None
-    # The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred)
     number_of_cpu_cores_required: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Specification_Container_DeployedImage:
-    # The timestamp at which the image URI for the container was resolved to the actual image used for the deployed inference component, as a string. (AI-inferred)
     resolution_time: Any = None
     # The image to use for the container that will be materialized for the inference component
     resolved_image: Any = None
@@ -72,9 +61,7 @@ class MakerInferenceComponent_Specification_Container_DeployedImage:
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Specification_Container:
-    # The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred)
     artifact_url: Any = None
-    # The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred)
     deployed_image: Any = None
     # Environment variables to specify on the container
     environment: Any = None
@@ -83,29 +70,22 @@ class MakerInferenceComponent_Specification_Container:
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Specification_StartupParameters:
-    # The timeout in seconds that SageMaker waits for the container's health check to succeed during component startup. (AI-inferred)
     container_startup_health_check_timeout_in_seconds: Any = None
-    # The maximum time, in seconds, allowed for downloading the model data during inference component startup before the startup is considered failed. (AI-inferred)
     model_data_download_timeout_in_seconds: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Specification:
     # The name of the base inference component
     base_inference_component_name: Any = None
-    # Defines the compute resources required for the inference component, including the number of accelerator devices, the number of inference copies, and the minimum and maximum memory (in MB) needed to run the component. (AI-inferred)
     compute_resource_requirements: Any = None
-    # Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred)
     container: Any = None
     # The name of the model to use with the inference component
     model_name: Any = None
-    # Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred)
     startup_parameters: Any = None
 
 @dataclasses.dataclass
 class MakerInferenceComponent_Tags:
-    # The key of a tag assigned to the SageMaker inference component, used to identify, organize, and manage the resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the SageMaker inference component, providing metadata for organizing, managing, and identifying the component. (AI-inferred)
     value: Any = None
 
 _MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_AlarmsFields = {
@@ -175,7 +155,6 @@ class MakerInferenceComponentConfig:
 
 @dataclasses.dataclass
 class MakerInferenceComponentAttrs:
-    # The date and time when the SageMaker inference component was created. (AI-inferred)
     creation_time: Any = None
     # The deployment config for the inference component
     deployment_config: Any = None
@@ -189,9 +168,7 @@ class MakerInferenceComponentAttrs:
     inference_component_arn: Any = None
     # The name of the inference component
     inference_component_name: Any = None
-    # Indicates the current lifecycle status of the SageMaker inference component, such as Creating, InService, Updating, Deleting, or Failed. (AI-inferred)
     inference_component_status: Any = None
-    # The date and time when the SageMaker inference component was last modified. (AI-inferred)
     last_modified_time: Any = None
     # The runtime config for the inference component
     runtime_config: Any = None

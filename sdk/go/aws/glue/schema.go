@@ -19,7 +19,6 @@ type Schema_Registry struct {
 
 type Schema_Tags struct {
 	Key any
-	// The value of a tag attached to an AWS Glue schema, which allows you to assign custom metadata to the schema for cost tracking, access control, and operational organization. (AI-inferred)
 	Value any
 }
 

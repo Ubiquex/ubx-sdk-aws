@@ -2,32 +2,25 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider {
-  /** The AWS Region used by the IAM credential provider when authenticating requests to fetch the agent card from the specified URL. (AI-inferred) */
   region?: string | Computed<string>;
-  /** The ARN of the IAM role that the IAM credential provider assumes to authenticate and access the source URL. (AI-inferred) */
   roleArn?: string | Computed<string>;
   service?: string | Computed<string>;
 }
 
 export interface RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider {
   customParameters?: unknown | Computed<unknown>;
-  /** The OAuth 2.0 grant type used by this credential provider to obtain an access token when fetching from the source URL, such as client_credentials. (AI-inferred) */
   grantType?: string | Computed<string>;
   providerArn?: string | Computed<string>;
-  /** Defines the list of OAuth 2.0 scopes to request when the OAuth credential provider obtains an access token to access the external URL source. (AI-inferred) */
   scopes?: string[] | Computed<string[]>;
 }
 
 export interface RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider {
-  /** Configuration for an IAM-based credential provider used to authenticate requests to the source URL from which the A2A agent card is fetched, specifying the IAM role or access keys to use. (AI-inferred) */
   iamCredentialProvider?: RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider | Computed<RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_IamCredentialProvider>;
   oauthCredentialProvider?: RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider | Computed<RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider_OauthCredentialProvider>;
 }
 
 export interface RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations {
-  /** The object that specifies which credential provider to use and its configuration (such as the provider type and provider-specific settings) for securely obtaining the authentication credentials needed to fetch the agent card from the given source URL. (AI-inferred) */
   credentialProvider?: RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider | Computed<RegistryRegistryRecord_Descriptors_A2aAgentCard_Source_FromUrl_CredentialProviderConfigurations_CredentialProvider>;
-  /** Selects the authentication protocol (such as basic authentication, OAuth, or API key) used by the credential provider configuration to fetch the agent card from the remote URL in the source. (AI-inferred) */
   credentialProviderType?: string | Computed<string>;
 }
 

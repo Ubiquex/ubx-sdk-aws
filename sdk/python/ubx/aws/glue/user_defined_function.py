@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserDefinedFunction_ResourceUris:
-    # Specifies the type of resource stored at the URI, such as 'JAR', 'FILE', or 'ARCHIVE', for the user-defined function's resource URIs. (AI-inferred)
     resource_type: Any = None
-    # The URI (typically an S3 path or similar location) of the resource (e.g., jar, archive, or file) associated with the user-defined function. (AI-inferred)
     uri: Any = None
 
 _UserDefinedFunction_ResourceUrisFields = {

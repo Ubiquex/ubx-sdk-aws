@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConfigApplication_Tags {
-  /** The tag key of a key-value pair attached to the AWS AppConfig application, used for metadata, cost tracking, and IAM-based access control. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

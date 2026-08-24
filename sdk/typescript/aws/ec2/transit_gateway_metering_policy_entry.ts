@@ -9,7 +9,6 @@ export interface TransitGatewayMeteringPolicyEntryConfig {
   /** The ID of the source attachment through which traffic leaves a transit gateway */
   destinationTransitGatewayAttachmentId?: string | Computed<string>;
   destinationTransitGatewayAttachmentType?: string | Computed<string>;
-  /** The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred) */
   meteredAccount: string | Computed<string>;
   /** The rule number of the metering policy entry */
   policyRuleNumber: number | Computed<number>;
@@ -34,7 +33,6 @@ export interface TransitGatewayMeteringPolicyEntryAttrs {
   /** The ID of the source attachment through which traffic leaves a transit gateway */
   destinationTransitGatewayAttachmentId: string;
   destinationTransitGatewayAttachmentType: string;
-  /** The AWS account ID of the account whose traffic traversing the transit gateway is metered under this metering policy entry. (AI-inferred) */
   meteredAccount: string;
   /** The rule number of the metering policy entry */
   policyRuleNumber: number;

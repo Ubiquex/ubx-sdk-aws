@@ -15,9 +15,7 @@ type MakerApp_ResourceSpec struct {
 }
 
 type MakerApp_Tags struct {
-	// The key of a tag attached to the SageMaker App, used for organizing, cost allocation, and identity-based access control of the resource. (AI-inferred)
 	Key any
-	// The value of a tag applied to the SageMaker App, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -42,7 +40,6 @@ type MakerAppConfig struct {
 	DomainId any
 	// Indicates whether the application is launched in recovery mode.
 	RecoveryMode any
-	// Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred)
 	ResourceSpec any
 	// A list of tags to apply to the app.
 	Tags any
@@ -63,7 +60,6 @@ type MakerAppAttrs struct {
 	DomainId any
 	// Indicates whether the application is launched in recovery mode.
 	RecoveryMode any
-	// Specifies the SageMaker image version ARN and the compute instance type used for this SageMaker app. (AI-inferred)
 	ResourceSpec any
 	// A list of tags to apply to the app.
 	Tags any

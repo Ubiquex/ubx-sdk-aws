@@ -22,9 +22,7 @@ type SpaceWeaverSimulationConfig struct {
 	Name any
 	// Role ARN.
 	RoleArn any
-	// Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred)
 	SchemaS3Location any
-	// The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred)
 	SnapshotS3Location any
 }
 
@@ -37,9 +35,7 @@ type SpaceWeaverSimulationAttrs struct {
 	Name any
 	// Role ARN.
 	RoleArn any
-	// Specifies the Amazon S3 location (bucket and key) of the JSON schema that defines the entities and components for the simulation. (AI-inferred)
 	SchemaS3Location any
-	// The Amazon S3 bucket and key location of a simulation snapshot that SimSpace Weaver uses to initialize the simulation from a saved state. (AI-inferred)
 	SnapshotS3Location any
 }
 

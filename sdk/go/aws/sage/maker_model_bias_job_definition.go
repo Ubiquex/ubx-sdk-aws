@@ -74,7 +74,6 @@ type MakerModelBiasJobDefinition_ModelBiasJobInput_BatchTransformInput struct {
 	LocalPath any
 	// Index or JSONpath to locate probabilities
 	ProbabilityAttribute any
-	// The numeric probability threshold value used to convert the predicted probability scores in the batch transform input dataset into binary predictions for model bias analysis. (AI-inferred)
 	ProbabilityThresholdAttribute any
 	// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
 	S3DataDistributionType any
@@ -97,7 +96,6 @@ type MakerModelBiasJobDefinition_ModelBiasJobInput_EndpointInput struct {
 	LocalPath any
 	// Index or JSONpath to locate probabilities
 	ProbabilityAttribute any
-	// Specifies the numeric probability threshold used for binary classification by the SageMaker Clarify model bias analysis to convert model output probabilities into predicted labels for the endpoint input. (AI-inferred)
 	ProbabilityThresholdAttribute any
 	// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
 	S3DataDistributionType any
@@ -117,16 +115,12 @@ type MakerModelBiasJobDefinition_ModelBiasJobInput struct {
 }
 
 type MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs_S3Output struct {
-	// The local directory path on the processing container where the model bias job writes its output files before they are uploaded to the specified S3 URI. (AI-inferred)
 	LocalPath any
-	// Specifies whether the monitoring output is uploaded to S3 continuously during the job or only at the end of the job, with valid values `Continuous` and `EndOfJob`. (AI-inferred)
 	S3UploadMode any
-	// The S3 URI where the results of the model bias monitoring job are stored as output, typically an S3 bucket and prefix path. (AI-inferred)
 	S3Uri any
 }
 
 type MakerModelBiasJobDefinition_ModelBiasJobOutputConfig_MonitoringOutputs struct {
-	// Specifies the S3 bucket URI and local directory path where the model bias monitoring job's results are uploaded, with an optional upload mode (e.g., Continuous or EndOfJob) controlling when the data is copied. (AI-inferred)
 	S3Output any
 }
 
@@ -159,9 +153,7 @@ type MakerModelBiasJobDefinition_StoppingCondition struct {
 }
 
 type MakerModelBiasJobDefinition_Tags struct {
-	// The key of a tag attached to the SageMaker model bias job definition, used for organizing and identifying the resource. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the SageMaker Model Bias Job Definition, used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 

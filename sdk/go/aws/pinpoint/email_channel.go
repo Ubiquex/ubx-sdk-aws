@@ -4,38 +4,23 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EmailChannelConfig struct {
-	// The unique identifier for the Amazon Pinpoint application (project) that the email channel is associated with. (AI-inferred)
 	ApplicationId any
-	// The name of the Amazon SES configuration set that is applied to emails sent through this Amazon Pinpoint email channel. (AI-inferred)
 	ConfigurationSet any
-	// Specifies whether the email channel is enabled for the Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// The verified email address that Amazon Pinpoint uses as the sender for emails sent through this channel. (AI-inferred)
 	FromAddress any
-	// Specifies the Amazon SES identity (a verified email address or domain) that Amazon Pinpoint uses to send email through this channel. (AI-inferred)
 	Identity any
-	// The ARN of the IAM role that Amazon Pinpoint assumes to submit email through Amazon SES on behalf of your account for orchestrated sends, such as messages sent via journeys or campaigns on this email channel. (AI-inferred)
 	OrchestrationSendingRoleArn any
-	// The ARN of the IAM role that Amazon Pinpoint assumes to send email through Amazon Simple Email Service (SES) on behalf of the application's email channel. (AI-inferred)
 	RoleArn any
 }
 
 type EmailChannelAttrs struct {
-	// The unique identifier for the Amazon Pinpoint application (project) that the email channel is associated with. (AI-inferred)
 	ApplicationId any
-	// The name of the Amazon SES configuration set that is applied to emails sent through this Amazon Pinpoint email channel. (AI-inferred)
 	ConfigurationSet any
-	// Specifies whether the email channel is enabled for the Amazon Pinpoint application. (AI-inferred)
 	Enabled any
-	// The verified email address that Amazon Pinpoint uses as the sender for emails sent through this channel. (AI-inferred)
 	FromAddress any
-	// The `id` field stores the ApplicationId of the Amazon Pinpoint application associated with this email channel, as returned by the Pinpoint API. (AI-inferred)
 	Id any
-	// Specifies the Amazon SES identity (a verified email address or domain) that Amazon Pinpoint uses to send email through this channel. (AI-inferred)
 	Identity any
-	// The ARN of the IAM role that Amazon Pinpoint assumes to submit email through Amazon SES on behalf of your account for orchestrated sends, such as messages sent via journeys or campaigns on this email channel. (AI-inferred)
 	OrchestrationSendingRoleArn any
-	// The ARN of the IAM role that Amazon Pinpoint assumes to send email through Amazon Simple Email Service (SES) on behalf of the application's email channel. (AI-inferred)
 	RoleArn any
 }
 

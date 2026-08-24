@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiftLocation_Tags:
-    # The key of a tag assigned to the GameLift location, used to organize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,16 +18,13 @@ _LiftLocation_TagsFields = {
 
 @dataclasses.dataclass
 class LiftLocationConfig:
-    # Specifies the name of the GameLift location, which is typically an AWS Region code (e.g., 'us-east-1') or a custom location name used to identify the location for game hosting. (AI-inferred)
     location_name: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class LiftLocationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the GameLift location, returned after the location is created and used for referencing it in IAM policies and other resources. (AI-inferred)
     location_arn: Any = None
-    # Specifies the name of the GameLift location, which is typically an AWS Region code (e.g., 'us-east-1') or a custom location name used to identify the location for game hosting. (AI-inferred)
     location_name: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

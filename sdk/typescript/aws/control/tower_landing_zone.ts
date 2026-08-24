@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TowerLandingZone_Tags {
-  /** Key of a user-defined tag to apply to the AWS Control Tower landing zone resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,32 +12,21 @@ const TowerLandingZone_TagsFields: FieldMap = {
 };
 
 export interface TowerLandingZoneConfig {
-  /** The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred) */
   manifest: unknown | Computed<unknown>;
   remediationTypes?: string[] | Computed<string[]>;
-  /** The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags?: TowerLandingZone_Tags[] | Computed<TowerLandingZone_Tags[]>;
-  /** The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred) */
   version: string | Computed<string>;
 }
 
 export interface TowerLandingZoneAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this landing zone. (AI-inferred) */
   arn: string;
-  /** Indicates the current drift detection status of the landing zone (e.g., DRIFTED, IN_SYNC, NOT_CHECKING), showing whether the landing zone's configuration has deviated from the expected baseline. (AI-inferred) */
   driftStatus: string;
-  /** The unique identifier (ARN) of the AWS Control Tower landing zone, assigned by AWS when the landing zone is created. (AI-inferred) */
   landingZoneIdentifier: string;
-  /** The latest available version of the AWS Control Tower landing zone that you can update to. (AI-inferred) */
   latestAvailableVersion: string;
-  /** The manifest is a structured JSON document that defines the landing zone configuration, including the version, governed Regions, organizational structure, and security controls, which AWS Control Tower uses to create or update the landing zone. (AI-inferred) */
   manifest: unknown;
   remediationTypes: string[];
-  /** The current lifecycle status of the landing zone, such as ACTIVE, FAILED, or PROCESSING. (AI-inferred) */
   status: string;
-  /** The tags to associate with the AWS Control Tower landing zone, enabling cost allocation, access control, and resource identification. (AI-inferred) */
   tags: TowerLandingZone_Tags[];
-  /** The version of the AWS Control Tower landing zone to provision (e.g., 3.0 or 3.1), which determines the set of controls and configurations applied. (AI-inferred) */
   version: string;
 }
 

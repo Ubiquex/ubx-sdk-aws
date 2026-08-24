@@ -17,16 +17,13 @@ class Cluster_EncryptionDetails:
 
 @dataclasses.dataclass
 class Cluster_MultiRegionProperties:
-    # Specifies the Amazon Resource Names (ARNs) of the linked regional DSQL clusters that form the multi-region cluster. (AI-inferred)
     clusters: Any = None
     # The witness region in a multi-region cluster.
     witness_region: Any = None
 
 @dataclasses.dataclass
 class Cluster_Tags:
-    # The key of a tag assigned to the DSQL cluster, used to organize and identify the cluster for management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the DSQL cluster, used for metadata and cost allocation. (AI-inferred)
     value: Any = None
 
 _Cluster_MultiRegionPropertiesFields = {

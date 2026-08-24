@@ -13,7 +13,6 @@ class TermsConfig:
     links: Any = None
     terms_name: Any = None
     terms_source: Any = None
-    # The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
@@ -24,7 +23,6 @@ class TermsAttrs:
     terms_id: Any = None
     terms_name: Any = None
     terms_source: Any = None
-    # The unique identifier of the Amazon Cognito user pool to which these terms are associated. (AI-inferred)
     user_pool_id: Any = None
 
 Terms = ubx.ResourceBinding(

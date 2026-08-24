@@ -4,9 +4,7 @@ package ec2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CarrierGateway_Tags struct {
-	// The key of a user-defined tag associated with this EC2 Carrier Gateway, used for identifying, organizing, and cost allocation of the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS EC2 Carrier Gateway, used for metadata, organization, and cost tracking alongside its corresponding tag key. (AI-inferred)
 	Value any
 }
 

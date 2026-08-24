@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VpcendpointService_PrivateDnsNameConfiguration:
-    # The private DNS name (e.g., subdomain.example.com) that AWS uses to create a verification record for the VPC endpoint service's private DNS configuration. (AI-inferred)
     name: Any = None
-    # Indicates the current verification state of the private DNS name associated with the VPC endpoint service, such as pendingVerification, verified, or failed. (AI-inferred)
     state: Any = None
-    # Specifies the type of private DNS name configuration for the VPC endpoint service, with valid values `service` or `interface`, indicating whether the DNS name applies to the service itself or to the endpoint's network interface. (AI-inferred)
     type: Any = None
-    # The resolved private DNS name value for the VPC endpoint service, which consumers use to access the service via a private DNS name. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -29,16 +25,11 @@ _VpcendpointService_TagsFields = {
 
 @dataclasses.dataclass
 class VpcendpointServiceConfig:
-    # Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
     acceptance_required: Any = None
     contributor_insights_enabled: Any = None
-    # The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
     gateway_load_balancer_arns: Any = None
-    # The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred)
     network_load_balancer_arns: Any = None
-    # Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred)
     payer_responsibility: Any = None
-    # Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred)
     private_dns_name: Any = None
     # Specify which Ip Address types are supported for VPC endpoint service.
     supported_ip_address_types: Any = None
@@ -49,20 +40,13 @@ class VpcendpointServiceConfig:
 
 @dataclasses.dataclass
 class VpcendpointServiceAttrs:
-    # Indicates whether acceptance of connection requests to the VPC endpoint service is required from the service consumer. (AI-inferred)
     acceptance_required: Any = None
     contributor_insights_enabled: Any = None
-    # The ARNs of one or more Gateway Load Balancers to associate with the endpoint service, routing traffic from the service to these load balancers. (AI-inferred)
     gateway_load_balancer_arns: Any = None
-    # The ARNs of one or more Network Load Balancers (NLBs) that will be associated with the VPC endpoint service to route traffic from consumer VPC endpoints to your service. (AI-inferred)
     network_load_balancer_arns: Any = None
-    # Indicates which party is responsible for the costs of the VPC endpoint (either 'ServiceOwner' or 'ServiceConsumer'), allowing the service provider to choose whether the endpoint consumer pays for the endpoint connections. (AI-inferred)
     payer_responsibility: Any = None
-    # Specifies a custom private DNS name for the VPC endpoint service, which consumers use to access the service over PrivateLink instead of the default service name. (AI-inferred)
     private_dns_name: Any = None
-    # Provides the details of the private DNS name configuration associated with the VPC endpoint service, including the private DNS name, its type, value, and the current verification state. (AI-inferred)
     private_dns_name_configuration: Any = None
-    # The unique identifier assigned by AWS to the VPC endpoint service. (AI-inferred)
     service_id: Any = None
     # Specify which Ip Address types are supported for VPC endpoint service.
     supported_ip_address_types: Any = None

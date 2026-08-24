@@ -2,68 +2,47 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction {
-  /** Specifies whether to block or allow the authentication attempt when the risk level for account takeover is high, accepting values such as 'BLOCK' or 'NO_ACTION'. (AI-inferred) */
   eventAction: string | Computed<string>;
-  /** Whether Amazon Cognito sends a notification to the user when the high-risk account takeover action is triggered. (AI-inferred) */
   notify: boolean | Computed<boolean>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions {
-  /** Defines the action to take for high-risk sign-in attempts, including whether to send notifications and whether to block the sign-in for the user pool. (AI-inferred) */
   highAction?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction>;
-  /** Configures how Amazon Cognito responds to low-risk account takeover events, specifying the event action (such as allowing or blocking) and whether to send notification alerts. (AI-inferred) */
   lowAction?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction>;
-  /** Determines the AWS Cognito action (block, require MFA, or no action) and whether to notify users when the account takeover risk level is medium. (AI-inferred) */
   mediumAction?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions_HighAction>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail {
-  /** The HTML body of the email notification sent to users when their account is blocked due to account takeover risk. (AI-inferred) */
   htmlBody?: string | Computed<string>;
-  /** The subject line of the email notification sent to the user when their account is blocked due to a suspected account takeover. (AI-inferred) */
   subject: string | Computed<string>;
-  /** The body text of the email notification sent to users when an account takeover attempt is blocked, as part of the account takeover risk configuration's notify settings. (AI-inferred) */
   textBody?: string | Computed<string>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration {
-  /** Configuration for the email notification sent when account takeover risk triggers a block action, defining the email subject and body for that notification. (AI-inferred) */
   blockEmail?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail>;
-  /** Sets the sender email address ('From' header) for the account-takeover risk notification emails, which must be an Amazon SES verified address or belong to your Amazon Cognito domain. (AI-inferred) */
   from?: string | Computed<string>;
-  /** Configures the email notification sent to the user when adaptive authentication requires multi-factor authentication, specifying the email subject and HTML/plain-text body via the NotifyEmailType structure. (AI-inferred) */
   mfaEmail?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail>;
-  /** Configures the email message that is sent to users when no action is taken on an account takeover risk assessment. (AI-inferred) */
   noActionEmail?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration_BlockEmail>;
-  /** Specifies the email address that Cognito uses as the reply-to address in the account takeover risk notification emails. (AI-inferred) */
   replyTo?: string | Computed<string>;
-  /** The ARN of the Amazon SES identity or Amazon SNS topic used as the sender source for account takeover notifications in the Cognito user pool risk configuration. (AI-inferred) */
   sourceArn: string | Computed<string>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration {
-  /** Defines the response actions (notify and event action) to take for high, medium, and low risk sign-in attempts in the account takeover risk configuration. (AI-inferred) */
   actions: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_Actions>;
-  /** This object specifies the notification settings for account takeover risk responses, including the source email address, reply-to address, and the email templates (NoActionEmail, MfaEmail, BlockEmail) sent to users when those risk actions are triggered. (AI-inferred) */
   notifyConfiguration?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration_NotifyConfiguration>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_Actions {
-  /** Specifies the action to take when a compromised credentials risk is detected, with allowed values such as BLOCK or NO_ACTION. (AI-inferred) */
   eventAction: string | Computed<string>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration {
-  /** Specifies the action to take when compromised credentials are detected, such as blocking the sign-in or allowing it with no action. (AI-inferred) */
   actions: UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_Actions | Computed<UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration_Actions>;
-  /** Specifies the event types (such as SIGN_IN, PASSWORD_CHANGE, or SIGN_UP) to which the compromised credentials risk configuration applies. (AI-inferred) */
   eventFilter?: string[] | Computed<string[]>;
 }
 
 export interface UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration {
-  /** Specifies a list of IP address ranges in CIDR notation that are always blocked for authentication in AWS Cognito, regardless of the assessed risk level. (AI-inferred) */
   blockedIprangeList?: string[] | Computed<string[]>;
-  /** Specifies the list of IP address ranges for which Amazon Cognito will skip (exempt from) the risk-based authentication rules for this user pool client. (AI-inferred) */
   skippedIprangeList?: string[] | Computed<string[]>;
 }
 
@@ -149,28 +128,18 @@ const UserPoolRiskConfigurationAttachment_RiskExceptionConfigurationFields: Fiel
 };
 
 export interface UserPoolRiskConfigurationAttachmentConfig {
-  /** Configures the account takeover risk configuration for a user pool, including the actions (e.g., block, MFA) to take for low, medium, and high risk events and the notification settings. (AI-inferred) */
   accountTakeoverRiskConfiguration?: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration | Computed<UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration>;
-  /** The app client ID of the Amazon Cognito user pool client to which this risk configuration is attached. (AI-inferred) */
   clientId: string | Computed<string>;
-  /** This object configures AWS Cognito's compromised credentials risk detection settings, specifying the event types to monitor (e.g., sign-in, sign-up) and the automatic action (block or no action) to take when a compromised credential event is detected. (AI-inferred) */
   compromisedCredentialsRiskConfiguration?: UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration | Computed<UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration>;
-  /** Configures risk exceptions by providing lists of IP address ranges that are either always blocked or always allowed to bypass risk-based authentication checks for the user pool client. (AI-inferred) */
   riskExceptionConfiguration?: UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration | Computed<UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration>;
-  /** The unique ID of the Amazon Cognito user pool to which this risk configuration is attached. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface UserPoolRiskConfigurationAttachmentAttrs {
-  /** Configures the account takeover risk configuration for a user pool, including the actions (e.g., block, MFA) to take for low, medium, and high risk events and the notification settings. (AI-inferred) */
   accountTakeoverRiskConfiguration: UserPoolRiskConfigurationAttachment_AccountTakeoverRiskConfiguration;
-  /** The app client ID of the Amazon Cognito user pool client to which this risk configuration is attached. (AI-inferred) */
   clientId: string;
-  /** This object configures AWS Cognito's compromised credentials risk detection settings, specifying the event types to monitor (e.g., sign-in, sign-up) and the automatic action (block or no action) to take when a compromised credential event is detected. (AI-inferred) */
   compromisedCredentialsRiskConfiguration: UserPoolRiskConfigurationAttachment_CompromisedCredentialsRiskConfiguration;
-  /** Configures risk exceptions by providing lists of IP address ranges that are either always blocked or always allowed to bypass risk-based authentication checks for the user pool client. (AI-inferred) */
   riskExceptionConfiguration: UserPoolRiskConfigurationAttachment_RiskExceptionConfiguration;
-  /** The unique ID of the Amazon Cognito user pool to which this risk configuration is attached. (AI-inferred) */
   userPoolId: string;
 }
 

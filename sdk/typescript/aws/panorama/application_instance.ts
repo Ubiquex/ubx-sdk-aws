@@ -2,13 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApplicationInstance_ManifestOverridesPayload {
-  /** The JSON payload data that overrides the application manifest for this AWS Panorama application instance, enabling device-specific customization of the deployment. (AI-inferred) */
   payloadData?: string | Computed<string>;
 }
 
 export interface ApplicationInstance_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the AWS Panorama application instance, allowing users to assign arbitrary metadata for identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -22,54 +20,36 @@ const ApplicationInstance_TagsFields: FieldMap = {
 };
 
 export interface ApplicationInstanceConfig {
-  /** The unique ID of a previously deployed AWS Panorama application instance that this new instance should replace, enabling a replacement deployment. (AI-inferred) */
   applicationInstanceIdToReplace?: string | Computed<string>;
-  /** The ID or ARN of the AWS Panorama device that this application instance is deployed to and runs on. (AI-inferred) */
   defaultRuntimeContextDevice: string | Computed<string>;
-  /** A user-specified description that provides a human-readable label for the application instance, typically used to identify it in the AWS Panorama console and APIs. (AI-inferred) */
   description?: string | Computed<string>;
   /** Parameter overrides for an application instance. This is a JSON document that has a single key (``PayloadData``) where the value is an escaped string representation of the overrides document. */
   manifestOverridesPayload?: ApplicationInstance_ManifestOverridesPayload | Computed<ApplicationInstance_ManifestOverridesPayload>;
   /** A application verion's manifest file. This is a JSON document that has a single key (``PayloadData``) where the value is an escaped string representation of the application manifest (``graph.json``). This file is located in the ``graphs`` folder in your application source. */
   manifestPayload: ApplicationInstance_ManifestOverridesPayload | Computed<ApplicationInstance_ManifestOverridesPayload>;
-  /** A user-defined name for the application instance, used for identification in the AWS Panorama console and API. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The ARN of the IAM role that the application instance assumes to access AWS services during runtime. (AI-inferred) */
   runtimeRoleArn?: string | Computed<string>;
   /** List of tags */
   tags?: ApplicationInstance_Tags[] | Computed<ApplicationInstance_Tags[]>;
 }
 
 export interface ApplicationInstanceAttrs {
-  /** The unique identifier assigned by AWS to this Panorama application instance. (AI-inferred) */
   applicationInstanceId: string;
-  /** The unique ID of a previously deployed AWS Panorama application instance that this new instance should replace, enabling a replacement deployment. (AI-inferred) */
   applicationInstanceIdToReplace: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Panorama application instance. (AI-inferred) */
   arn: string;
-  /** The Unix epoch timestamp in seconds indicating when the AWS Panorama application instance was created. (AI-inferred) */
   createdTime: number;
-  /** The ID or ARN of the AWS Panorama device that this application instance is deployed to and runs on. (AI-inferred) */
   defaultRuntimeContextDevice: string;
-  /** The name of the AWS Panorama device (appliance) that serves as the default runtime context for this application instance, returned as a computed read-only attribute by CloudFormation. (AI-inferred) */
   defaultRuntimeContextDeviceName: string;
-  /** A user-specified description that provides a human-readable label for the application instance, typically used to identify it in the AWS Panorama console and APIs. (AI-inferred) */
   description: string;
-  /** The health status of the application instance on its device, indicating whether the deployed application is operating normally (e.g., HEALTHY, UNHEALTHY, or NOT_AVAILABLE) and populated by AWS after the instance is created. (AI-inferred) */
   healthStatus: string;
-  /** The Unix epoch timestamp indicating when the application instance was last updated, as reported by the AWS Panorama service. (AI-inferred) */
   lastUpdatedTime: number;
   /** Parameter overrides for an application instance. This is a JSON document that has a single key (``PayloadData``) where the value is an escaped string representation of the overrides document. */
   manifestOverridesPayload: ApplicationInstance_ManifestOverridesPayload;
   /** A application verion's manifest file. This is a JSON document that has a single key (``PayloadData``) where the value is an escaped string representation of the application manifest (``graph.json``). This file is located in the ``graphs`` folder in your application source. */
   manifestPayload: ApplicationInstance_ManifestOverridesPayload;
-  /** A user-defined name for the application instance, used for identification in the AWS Panorama console and API. (AI-inferred) */
   name: string;
-  /** The ARN of the IAM role that the application instance assumes to access AWS services during runtime. (AI-inferred) */
   runtimeRoleArn: string;
-  /** The current deployment status of the application instance, indicating whether it is pending, in progress, succeeded, failed, or running on the AWS Panorama device. (AI-inferred) */
   status: string;
-  /** Provides a human-readable description of the current status of the application instance, including error details when the instance is in a failed state. (AI-inferred) */
   statusDescription: string;
   /** List of tags */
   tags: ApplicationInstance_Tags[];

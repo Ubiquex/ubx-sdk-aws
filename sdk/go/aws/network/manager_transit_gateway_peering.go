@@ -4,9 +4,7 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerTransitGatewayPeering_Tags struct {
-	// The key portion of a user-defined tag applied to the transit gateway peering, used to categorize and identify the resource for cost tracking, access control, and organizational purposes. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the AWS Network Manager transit gateway peering, used for metadata and resource categorization. (AI-inferred)
 	Value any
 }
 

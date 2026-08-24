@@ -8,7 +8,6 @@ type SyncSourceApiAssociationConfig struct {
 	Description any
 	// Identifier of the Merged GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN
 	MergedApiIdentifier any
-	// The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred)
 	SourceApiAssociationConfig any
 	// Identifier of the Source GraphQLApi to associate. It could be either GraphQLApi ApiId or ARN
 	SourceApiIdentifier any
@@ -31,7 +30,6 @@ type SyncSourceApiAssociationAttrs struct {
 	MergedApiIdentifier any
 	// ARN of the source API in the association.
 	SourceApiArn any
-	// The configuration for this AppSync source API association, including the merge type (AUTO_MERGE or MANUAL_MERGE) that controls how the source API's schema is merged into the associated merged API. (AI-inferred)
 	SourceApiAssociationConfig any
 	// Current status of SourceApiAssociation.
 	SourceApiAssociationStatus any

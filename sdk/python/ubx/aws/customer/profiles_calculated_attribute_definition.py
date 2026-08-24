@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProfilesCalculatedAttributeDefinition_AttributeDetails_Attributes:
-    # Specifies the name of a source attribute in the Customer Profiles profile that is used as an input for the calculated attribute expression. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -63,7 +62,6 @@ class ProfilesCalculatedAttributeDefinition_Readiness:
 
 @dataclasses.dataclass
 class ProfilesCalculatedAttributeDefinition_Tags:
-    # The key of a user-defined tag assigned to the calculated attribute definition, enabling categorization and access control for the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -4,12 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface SightRefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDay {
   /** <p>The Day Of Month for scheduled refresh.</p> */
   dayOfMonth?: string | Computed<string>;
-  /** Specifies the day of the week (for example, SUNDAY) on which the QuickSight dataset refresh runs when the schedule frequency is set to WEEKLY. (AI-inferred) */
   dayOfWeek?: string | Computed<string>;
 }
 
 export interface SightRefreshSchedule_Schedule_ScheduleFrequency {
-  /** The interval of the QuickSight refresh schedule frequency, which must be one of 'DAILY', 'WEEKLY', or 'MONTHLY', and determines how often the dataset is refreshed. (AI-inferred) */
   interval?: string | Computed<string>;
   /** <p>The day scheduled for refresh.</p> */
   refreshOnDay?: SightRefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDay | Computed<SightRefreshSchedule_Schedule_ScheduleFrequency_RefreshOnDay>;
@@ -20,7 +18,6 @@ export interface SightRefreshSchedule_Schedule_ScheduleFrequency {
 }
 
 export interface SightRefreshSchedule_Schedule {
-  /** Specifies whether the scheduled refresh is a FULL_REFRESH or an INCREMENTAL_REFRESH of the QuickSight dataset. (AI-inferred) */
   refreshType?: string | Computed<string>;
   /** <p>Information about the schedule frequency.</p> */
   scheduleFrequency?: SightRefreshSchedule_Schedule_ScheduleFrequency | Computed<SightRefreshSchedule_Schedule_ScheduleFrequency>;
@@ -58,22 +55,16 @@ const SightRefreshSchedule_ScheduleFields: FieldMap = {
 };
 
 export interface SightRefreshScheduleConfig {
-  /** The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
-  /** The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred) */
   dataSetId?: string | Computed<string>;
-  /** The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred) */
   schedule?: SightRefreshSchedule_Schedule | Computed<SightRefreshSchedule_Schedule>;
 }
 
 export interface SightRefreshScheduleAttrs {
   /** <p>The Amazon Resource Name (ARN) of the data source.</p> */
   arn: string;
-  /** The AWS account ID that contains the dataset(s) associated with this refresh schedule; if not specified, the provider's default account is used. (AI-inferred) */
   awsAccountId: string;
-  /** The unique identifier of the QuickSight dataset that this refresh schedule is associated with and will refresh. (AI-inferred) */
   dataSetId: string;
-  /** The schedule object configures when and how the QuickSight dataset is refreshed, specifying the refresh type (full or incremental), the frequency interval (hourly, daily, weekly, monthly), and the time-of-day and timezone for the refresh. (AI-inferred) */
   schedule: SightRefreshSchedule_Schedule;
 }
 

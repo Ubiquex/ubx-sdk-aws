@@ -61,17 +61,13 @@ export interface VpcendpointConfig {
 }
 
 export interface VpcendpointAttrs {
-  /** The timestamp indicating when the VPC endpoint was created, as returned by the EC2 API. (AI-inferred) */
   creationTimestamp: string;
-  /** This computed attribute returns the list of DNS hostnames assigned to the VPC endpoint, allowing clients to connect to the endpoint by name. (AI-inferred) */
   dnsEntries: string[];
   /** Describes the DNS options for an endpoint. */
   dnsOptions: Vpcendpoint_DnsOptions;
-  /** The unique identifier assigned by AWS to the VPC endpoint, typically in the format vpce-xxxxxxxx (e.g., vpce-0123456789abcdef0). (AI-inferred) */
   id: string;
   /** The supported IP address types. */
   ipAddressType: string;
-  /** The list of elastic network interface (ENI) IDs created in the subnets for this VPC endpoint, used for routing traffic to the endpoint service. (AI-inferred) */
   networkInterfaceIds: string[];
   /** An endpoint policy, which controls access to the service from the VPC. The default endpoint policy allows full access to the service. Endpoint policies are supported only for gateway and interface endpoints. For CloudFormation templates in YAML, you can provide the policy in JSON or YAML format. For example, if you have a JSON policy, you can convert it to YAML before including it in the YAML template, and CFNlong converts the policy to JSON format before calling the API actions for privatelink. Alternatively, you can include the JSON directly in the YAML, as shown in the following ``Properties`` section: ``Properties: VpcEndpointType: 'Interface' ServiceName: !Sub 'com.amazonaws.${AWS::Region}.logs' PolicyDocument: '{ "Version":"2012-10-17", "Statement": [{ "Effect":"Allow", "Principal":"*", "Action":["logs:Describe*","logs:Get*","logs:List*","logs:FilterLogEvents"], "Resource":"*" }] }'`` */
   policyDocument: string;

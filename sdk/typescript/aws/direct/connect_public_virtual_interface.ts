@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectPublicVirtualInterface_BgpPeers {
-  /** The IP address family (IPv4 or IPv6) to use for the BGP peer on this Direct Connect public virtual interface. (AI-inferred) */
   addressFamily?: string | Computed<string>;
-  /** The public IP address assigned to the Amazon side of the BGP session for this peer on the Direct Connect public virtual interface. (AI-inferred) */
   amazonAddress?: string | Computed<string>;
-  /** The autonomous system number (ASN) of the BGP peer for this Direct Connect public virtual interface. (AI-inferred) */
   asn?: string | Computed<string>;
-  /** Specifies the BGP MD5 authentication key (BGP password) required for establishing the BGP session with this Direct Connect peer. (AI-inferred) */
   authKey?: string | Computed<string>;
-  /** The BGP peer ID is a unique identifier assigned by AWS Direct Connect to this BGP peer when it is created on the public virtual interface. (AI-inferred) */
   bgpPeerId?: string | Computed<string>;
-  /** The customer-side IP address for this BGP peer, used as the BGP endpoint on the customer's router for the public virtual interface. (AI-inferred) */
   customerAddress?: string | Computed<string>;
 }
 
 export interface ConnectPublicVirtualInterface_Tags {
-  /** Specifies the key of a tag to apply to the AWS Direct Connect public virtual interface for managing and categorizing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair attached to the AWS Direct Connect public virtual interface, used to organize or identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

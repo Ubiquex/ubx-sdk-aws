@@ -14,9 +14,7 @@ type CodeSigningConfig_CodeSigningPolicies struct {
 }
 
 type CodeSigningConfig_Tags struct {
-	// The key of a tag assigned to the AWS Lambda code signing configuration, used to identify and organize the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag applied to the AWS Lambda code signing configuration. (AI-inferred)
 	Value any
 }
 

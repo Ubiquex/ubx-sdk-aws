@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationHub_NotificationHubStatusSummary struct {
 	NotificationHubStatus any
-	// A human-readable explanation accompanying the hub's status that provides additional context when the notification hub is not fully active, such as a reason for an inactive or pending state. (AI-inferred)
 	NotificationHubStatusReason any
 }
 
@@ -15,9 +14,7 @@ type NotificationHubConfig struct {
 }
 
 type NotificationHubAttrs struct {
-	// The date and time when the notification hub was created, typically returned as a string in ISO 8601 format. (AI-inferred)
 	CreationTime any
-	// Returns a summary of the current status of the notification hub in each region where it is enabled, with each entry specifying the region and its operational status (such as ACTIVE). (AI-inferred)
 	NotificationHubStatusSummary any
 	// Region that NotificationHub is present in.
 	Region any

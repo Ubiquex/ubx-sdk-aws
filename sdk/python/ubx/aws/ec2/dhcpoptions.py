@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dhcpoptions_Tags:
-    # The key (name) of a tag assigned to the DHCP options set, used to identify and organize the resource within AWS. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag attached to the DHCP options set, used to organize and identify the resource. (AI-inferred)
     value: Any = None
 
 _Dhcpoptions_TagsFields = {
@@ -37,7 +35,6 @@ class DhcpoptionsConfig:
 
 @dataclasses.dataclass
 class DhcpoptionsAttrs:
-    # The unique identifier (DHCP options ID) that AWS assigns to the DHCP options set when it is created, and which is used to associate the set with a VPC or subnet. (AI-inferred)
     dhcp_options_id: Any = None
     # This value is used to complete unqualified DNS hostnames.
     domain_name: Any = None

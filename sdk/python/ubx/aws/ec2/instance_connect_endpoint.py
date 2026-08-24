@@ -22,7 +22,6 @@ class InstanceConnectEndpoint_PublicDnsNames:
 
 @dataclasses.dataclass
 class InstanceConnectEndpoint_Tags:
-    # The key of a tag attached to the EC2 Instance Connect Endpoint, used to identify, categorize, and filter the resource within AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LicenseEndpoint_Tags:
-    # The key of a user-defined tag applied to the AWS Deadline license endpoint, enabling you to categorize and manage the endpoint for cost allocation and access control. (AI-inferred)
     key: Any = None
-    # Specifies the value for a user-defined tag on the Deadline license endpoint, used to categorize, track costs, or apply IAM-based access control through resource tags. (AI-inferred)
     value: Any = None
 
 _LicenseEndpoint_TagsFields = {
@@ -20,34 +18,23 @@ _LicenseEndpoint_TagsFields = {
 
 @dataclasses.dataclass
 class LicenseEndpointConfig:
-    # Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred)
     security_group_ids: Any = None
-    # The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred)
     subnet_ids: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # The ID of the VPC in which the license endpoint is created. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class LicenseEndpointAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AWS Deadline Cloud license endpoint. (AI-inferred)
     arn: Any = None
-    # The DNS name assigned to the license endpoint, used to connect to the endpoint for license management. (AI-inferred)
     dns_name: Any = None
-    # The unique identifier assigned by Deadline Cloud when the license endpoint is created. (AI-inferred)
     license_endpoint_id: Any = None
-    # Specifies the list of VPC security group IDs to associate with the license endpoint's elastic network interface, defining the firewall rules that permit traffic to and from the license endpoint. (AI-inferred)
     security_group_ids: Any = None
-    # Represents the current lifecycle state of the license endpoint, such as CREATING, READY, or DELETING, as tracked by AWS Deadline Cloud. (AI-inferred)
     status: Any = None
-    # A computed string that provides additional context or error details about the current lifecycle state of the AWS Deadline Cloud license endpoint, such as why it might be in a transitional or failed status. (AI-inferred)
     status_message: Any = None
-    # The list of subnet IDs in the VPC where the license endpoint's elastic network interfaces are provisioned to connect to license servers. (AI-inferred)
     subnet_ids: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
-    # The ID of the VPC in which the license endpoint is created. (AI-inferred)
     vpc_id: Any = None
 
 LicenseEndpoint = ubx.ResourceBinding(

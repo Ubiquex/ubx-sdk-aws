@@ -17,9 +17,7 @@ type Package_StorageLocation struct {
 }
 
 type Package_Tags struct {
-	// Specifies the key of a tag to attach to the AWS Panorama package for resource identification and management. (AI-inferred)
 	Key any
-	// The value component of a key-value tag that can be attached to the Panorama package, used for metadata and resource organization. (AI-inferred)
 	Value any
 }
 
@@ -29,24 +27,17 @@ var Package_TagsFields = ubx.FieldMap{
 	}
 
 type PackageConfig struct {
-	// The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred)
 	PackageName any
-	// A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 
 type PackageAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Panorama package. (AI-inferred)
 	Arn any
-	// The Unix timestamp automatically assigned by AWS when the Package was created, indicating the creation time of the Panorama package. (AI-inferred)
 	CreatedTime any
-	// The unique identifier of the AWS Panorama package, assigned by AWS when the package is created. (AI-inferred)
 	PackageId any
-	// The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred)
 	PackageName any
 	// A storage location.
 	StorageLocation any
-	// A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred)
 	Tags any
 }
 

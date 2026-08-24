@@ -4,9 +4,7 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeAccessLogSubscription_Tags struct {
-	// The key of a tag attached to this VPC Lattice access log subscription, used to identify, categorize, and manage the subscription alongside other VPC Lattice resources. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the AWS VPC Lattice access log subscription, used for organizing and identifying the subscription through key-value metadata such as environment, owner, or cost center. (AI-inferred)
 	Value any
 }
 
@@ -16,30 +14,20 @@ var LatticeAccessLogSubscription_TagsFields = ubx.FieldMap{
 	}
 
 type LatticeAccessLogSubscriptionConfig struct {
-	// The Amazon Resource Name (ARN) of the destination (an S3 bucket, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream) to which VPC Lattice access logs are delivered. (AI-inferred)
 	DestinationArn any
-	// Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
 	ResourceIdentifier any
 	ServiceNetworkLogType any
-	// A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
 	Tags any
 }
 
 type LatticeAccessLogSubscriptionAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this VPC Lattice access log subscription, automatically assigned by AWS upon creation. (AI-inferred)
 	Arn any
-	// The Amazon Resource Name (ARN) of the destination (an S3 bucket, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream) to which VPC Lattice access logs are delivered. (AI-inferred)
 	DestinationArn any
-	// The unique identifier assigned to the VPC Lattice access log subscription upon creation. (AI-inferred)
 	Id any
-	// The ARN of the service network or service that this access log subscription is associated with. (AI-inferred)
 	ResourceArn any
-	// The unique identifier assigned by AWS VPC Lattice to the access log subscription, used to reference the subscription in API calls and other resources. (AI-inferred)
 	ResourceId any
-	// Specifies the ID or ARN of the service network or service that the access log subscription is associated with, determining which resource's access logs are delivered to the destination. (AI-inferred)
 	ResourceIdentifier any
 	ServiceNetworkLogType any
-	// A list of tag objects (Key and Value) to attach to the VPC Lattice access log subscription, used for organization, cost tracking, and resource management. (AI-inferred)
 	Tags any
 }
 

@@ -118,9 +118,7 @@ type SecurityConfiguration_SecurityConfigurationData struct {
 }
 
 type SecurityConfiguration_Tags struct {
-	// The key (name) of a user-defined tag attached to the EMR Containers security configuration, used for identifying, categorizing, and managing this AWS resource. (AI-inferred)
 	Key any
-	// Specifies the value portion of a key-value tag assigned to the EMR Containers security configuration, which can be used to filter and manage the resource. (AI-inferred)
 	Value any
 }
 

@@ -8,14 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Connector_As2Config_AsyncMdnConfig:
-    # Specifies the list of AS2 server IDs that are used as the intended recipients for asynchronous MDN (Message Disposition Notification) responses in this connector's AS2 configuration. (AI-inferred)
     server_ids: Any = None
     # URL of the server to receive the MDN response on
     url: Any = None
 
 @dataclasses.dataclass
 class Connector_As2Config:
-    # Configures asynchronous Message Disposition Notification (MDN) handling for the AS2 connector, specifying the destination URL, the Secrets Manager secret ARN used to sign the HTTPS request, and whether to send the original message with the MDN (BOTH or NONE). (AI-inferred)
     async_mdn_config: Any = None
     # ARN or name of the secret in AWS Secrets Manager which contains the credentials for Basic authentication. If empty, Basic authentication is disabled for the AS2 connector
     basic_auth_secret_id: Any = None
@@ -47,7 +45,6 @@ class Connector_EgressConfig_VpcLattice:
 
 @dataclasses.dataclass
 class Connector_EgressConfig:
-    # Specifies the VPC Lattice configuration used by the AWS Transfer Family connector for routing outbound connections, allowing integration with a VPC Lattice service network to securely reach remote hosts. (AI-inferred)
     vpc_lattice: Any = None
 
 @dataclasses.dataclass
@@ -62,7 +59,6 @@ class Connector_SftpConfig:
 @dataclasses.dataclass
 class Connector_Tags:
     key: Any = None
-    # The value of a user-defined tag attached to the AWS Transfer Family connector, used for metadata such as cost allocation or organizational identification. (AI-inferred)
     value: Any = None
 
 _Connector_As2Config_AsyncMdnConfigFields = {
@@ -118,9 +114,7 @@ class ConnectorConfig:
     access_role: Any = None
     # Configuration for an AS2 connector.
     as2_config: Any = None
-    # Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
     egress_config: Any = None
-    # Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
     egress_type: Any = None
     # IP address type for Connector
     ip_address_type: Any = None
@@ -145,9 +139,7 @@ class ConnectorAttrs:
     as2_config: Any = None
     # A unique identifier for the connector.
     connector_id: Any = None
-    # Specifies the S3 access point that acts as the source location from which the AWS Transfer Family connector reads files to send to the remote server. (AI-inferred)
     egress_config: Any = None
-    # Specifies the protocol type for the connector (either 'AS2' or 'SFTP') to use for outbound file transfers. (AI-inferred)
     egress_type: Any = None
     # Detailed error message when Connector in ERRORED status
     error_message: Any = None
@@ -161,7 +153,6 @@ class ConnectorAttrs:
     service_managed_egress_ip_addresses: Any = None
     # Configuration for an SFTP connector.
     sftp_config: Any = None
-    # The current lifecycle status of the Transfer Family connector, such as ACTIVE or INACTIVE, indicating whether the connector is enabled for file transfers. (AI-inferred)
     status: Any = None
     # Key-value pairs that can be used to group and search for connectors. Tags are metadata attached to connectors for any purpose.
     tags: Any = None

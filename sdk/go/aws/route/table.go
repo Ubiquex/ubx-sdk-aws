@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Table_Tags struct {
 	Key any
-	// The value of a user-defined tag key associated with the route table, used to organize and identify the route table within AWS. (AI-inferred)
 	Value any
 }
 
@@ -22,7 +21,6 @@ type TableConfig struct {
 }
 
 type TableAttrs struct {
-	// The unique identifier of the route table, assigned by AWS (e.g., rtb-xxxxxxxx). (AI-inferred)
 	RouteTableId any
 	// Any tags assigned to the route table.
 	Tags any

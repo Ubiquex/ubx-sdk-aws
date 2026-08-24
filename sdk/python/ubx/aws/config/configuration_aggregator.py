@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigurationAggregator_AccountAggregationSources:
-    # Specifies the AWS account IDs from which AWS Config will aggregate configuration data into the configuration aggregator. (AI-inferred)
     account_ids: Any = None
-    # Determines whether this account aggregation source includes all AWS regions (true) or only the specific regions listed in the 'regions' property (false). (AI-inferred)
     all_aws_regions: Any = None
-    # The list of AWS regions from which AWS Config aggregates data for the specified source accounts. (AI-inferred)
     aws_regions: Any = None
 
 @dataclasses.dataclass
 class ConfigurationAggregator_OrganizationAggregationSource:
-    # Indicates whether to aggregate Config data from all AWS regions in the organization (true) or only from the regions specified in the AwsRegions list (false). (AI-inferred)
     all_aws_regions: Any = None
-    # Specifies the list of specific AWS regions from which the organization aggregator collects configuration data; if omitted, all regions are included (as long as the parent's allAwsRegions setting is true). (AI-inferred)
     aws_regions: Any = None
-    # The ARN of the IAM role that AWS Config assumes to access organization data for the organization aggregation source. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class ConfigurationAggregator_Tags:
-    # The user-defined key of a tag applied to the AWS Config configuration aggregator, used to identify and organize the aggregator resource within your AWS environment. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag assigned to the AWS Config configuration aggregator. (AI-inferred)
     value: Any = None
 
 _ConfigurationAggregator_AccountAggregationSourcesFields = {
@@ -50,24 +42,20 @@ _ConfigurationAggregator_TagsFields = {
 
 @dataclasses.dataclass
 class ConfigurationAggregatorConfig:
-    # Specifies the list of AWS accounts from which to aggregate AWS Config configuration data, optionally restricting the regions that are aggregated for each account. (AI-inferred)
     account_aggregation_sources: Any = None
     # The name of the aggregator.
     configuration_aggregator_name: Any = None
-    # Specifies the AWS organization (by IAM role ARN and list of regions, with an option to enable all regions) that acts as the source of configuration data for this AWS Config configuration aggregator. (AI-inferred)
     organization_aggregation_source: Any = None
     # The tags for the configuration aggregator.
     tags: Any = None
 
 @dataclasses.dataclass
 class ConfigurationAggregatorAttrs:
-    # Specifies the list of AWS accounts from which to aggregate AWS Config configuration data, optionally restricting the regions that are aggregated for each account. (AI-inferred)
     account_aggregation_sources: Any = None
     # The Amazon Resource Name (ARN) of the aggregator.
     configuration_aggregator_arn: Any = None
     # The name of the aggregator.
     configuration_aggregator_name: Any = None
-    # Specifies the AWS organization (by IAM role ARN and list of regions, with an option to enable all regions) that acts as the source of configuration data for this AWS Config configuration aggregator. (AI-inferred)
     organization_aggregation_source: Any = None
     # The tags for the configuration aggregator.
     tags: Any = None

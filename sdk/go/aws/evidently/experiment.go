@@ -4,31 +4,21 @@ package evidently
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Experiment_MetricGoals struct {
-	// Specifies whether the experiment aims to increase or decrease the value of the metric, with allowed values of 'INCREASE' or 'DECREASE'. (AI-inferred)
 	DesiredChange any
-	// The key in the experiment event data that identifies the entity (e.g., user or session) for which the metric goal is evaluated. (AI-inferred)
 	EntityIdKey any
-	// Defines the CloudWatch Events event pattern (as a JSON string) that selects which events Evidently counts for this metric goal in the experiment. (AI-inferred)
 	EventPattern any
-	// The name of the metric that this experiment goal tracks, typically the CloudWatch metric name used to evaluate experiment results. (AI-inferred)
 	MetricName any
-	// The unit label is a human-readable label for the units of measurement associated with the metric goal (e.g., 'requests', 'users', 'conversions'), used for display in the Evidently console and experiment analysis. (AI-inferred)
 	UnitLabel any
-	// The name of the field in the event data that Evidently reads to obtain the numeric value for the experiment's metric goal, which is the value the service measures for the goal. (AI-inferred)
 	ValueKey any
 }
 
 type Experiment_OnlineAbConfig_TreatmentWeights struct {
-	// In an online AB experiment, split_weight is the proportion of traffic allocated to this treatment, expressed as an integer weight out of 100000 total (e.g., 10000 means 10%), and the weights across all treatments must sum to 100000. (AI-inferred)
 	SplitWeight any
-	// The name of the treatment in the experiment that this weight applies to, used to allocate traffic among treatments in the online AB configuration. (AI-inferred)
 	Treatment any
 }
 
 type Experiment_OnlineAbConfig struct {
-	// The name of the treatment that serves as the control group within the online A/B experiment, against which all other treatment variations are compared and measured. (AI-inferred)
 	ControlTreatmentName any
-	// Defines the traffic allocation percentages for each treatment in the experiment, where each object maps a treatment name to a weight (0-100) representing the percentage of traffic to send to that treatment in the online AB experiment. (AI-inferred)
 	TreatmentWeights any
 }
 
@@ -44,19 +34,14 @@ type Experiment_RunningStatus struct {
 }
 
 type Experiment_Tags struct {
-	// The key portion of a key-value tag applied to the Evidently experiment, used for metadata and resource categorization. (AI-inferred)
 	Key any
 	Value any
 }
 
 type Experiment_Treatments struct {
-	// A human-readable description of the treatment, explaining its purpose or the variation it represents within the Evidently experiment. (AI-inferred)
 	Description any
-	// The name of the feature that this treatment applies to, which must reference an existing feature in the Evidently project. (AI-inferred)
 	Feature any
-	// The name of a treatment (variation) in the Evidently experiment, used to identify the treatment among the experiment's variations and when viewing analysis results. (AI-inferred)
 	TreatmentName any
-	// The name of the feature variation that this treatment uses in the experiment. (AI-inferred)
 	Variation any
 }
 
@@ -103,58 +88,35 @@ var Experiment_TreatmentsFields = ubx.FieldMap{
 	}
 
 type ExperimentConfig struct {
-	// Provides an optional, human-readable description of the experiment to convey its purpose or context. (AI-inferred)
 	Description any
-	// Metric goals define the success metrics of the experiment, each specifying the metric to monitor (via a metric name or a CloudWatch metric definition), the desired change direction (increase or decrease), and the entity ID and value extraction keys used to evaluate results from event data. (AI-inferred)
 	MetricGoals any
-	// The name of the experiment, which must be unique within the project. (AI-inferred)
 	Name any
-	// The online_ab_config object configures the online A/B experiment, specifying the control treatment name and the percentage of traffic allocated to each treatment variant. (AI-inferred)
 	OnlineAbConfig any
-	// The name or ARN of the Evidently project that contains this experiment. (AI-inferred)
 	Project any
-	// Sets the randomization salt used by Evidently to hash the entity ID, determining the variation assignment for a given user or entity in the experiment. (AI-inferred)
 	RandomizationSalt any
-	// When set to true during an update, removes the segment currently associated with the Evidently experiment, so the experiment no longer targets that audience segment. (AI-inferred)
 	RemoveSegment any
-	// RunningStatus is an object that lets you control the experiment's current lifecycle state, such as setting it to RUNNING to start the experiment or COMPLETED to stop it. (AI-inferred)
 	RunningStatus any
-	// The percentage (0-100) of the audience that is randomly allocated to the experiment, determining the proportion of incoming traffic that is subject to the experiment's treatment variants. (AI-inferred)
 	SamplingRate any
-	// The name or ARN of an Evidently segment that restricts the experiment to a defined user audience; if omitted, the experiment runs on the full eligible population. (AI-inferred)
 	Segment any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Defines the list of treatments (variants) for the experiment, each specifying the feature to vary, a treatment name, and an optional description, which the Evidently service uses to split traffic and evaluate results. (AI-inferred)
 	Treatments any
 }
 
 type ExperimentAttrs struct {
-	// The Amazon Resource Name (ARN) of the experiment, which uniquely identifies it in AWS Evidently. (AI-inferred)
 	Arn any
-	// Provides an optional, human-readable description of the experiment to convey its purpose or context. (AI-inferred)
 	Description any
-	// Metric goals define the success metrics of the experiment, each specifying the metric to monitor (via a metric name or a CloudWatch metric definition), the desired change direction (increase or decrease), and the entity ID and value extraction keys used to evaluate results from event data. (AI-inferred)
 	MetricGoals any
-	// The name of the experiment, which must be unique within the project. (AI-inferred)
 	Name any
-	// The online_ab_config object configures the online A/B experiment, specifying the control treatment name and the percentage of traffic allocated to each treatment variant. (AI-inferred)
 	OnlineAbConfig any
-	// The name or ARN of the Evidently project that contains this experiment. (AI-inferred)
 	Project any
-	// Sets the randomization salt used by Evidently to hash the entity ID, determining the variation assignment for a given user or entity in the experiment. (AI-inferred)
 	RandomizationSalt any
-	// When set to true during an update, removes the segment currently associated with the Evidently experiment, so the experiment no longer targets that audience segment. (AI-inferred)
 	RemoveSegment any
-	// RunningStatus is an object that lets you control the experiment's current lifecycle state, such as setting it to RUNNING to start the experiment or COMPLETED to stop it. (AI-inferred)
 	RunningStatus any
-	// The percentage (0-100) of the audience that is randomly allocated to the experiment, determining the proportion of incoming traffic that is subject to the experiment's treatment variants. (AI-inferred)
 	SamplingRate any
-	// The name or ARN of an Evidently segment that restricts the experiment to a defined user audience; if omitted, the experiment runs on the full eligible population. (AI-inferred)
 	Segment any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Defines the list of treatments (variants) for the experiment, each specifying the feature to vary, a treatment name, and an optional description, which the Evidently service uses to split traffic and evaluate results. (AI-inferred)
 	Treatments any
 }
 

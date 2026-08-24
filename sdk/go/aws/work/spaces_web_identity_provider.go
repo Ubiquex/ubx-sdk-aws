@@ -14,30 +14,19 @@ var SpacesWebIdentityProvider_TagsFields = ubx.FieldMap{
 	}
 
 type SpacesWebIdentityProviderConfig struct {
-	// Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred)
 	IdentityProviderDetails any
-	// Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred)
 	IdentityProviderName any
-	// Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred)
 	IdentityProviderType any
-	// The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred)
 	PortalArn any
-	// A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
 }
 
 type SpacesWebIdentityProviderAttrs struct {
-	// The Amazon Resource Name (ARN) of the identity provider, assigned by AWS and used to uniquely identify it. (AI-inferred)
 	IdentityProviderArn any
-	// Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred)
 	IdentityProviderDetails any
-	// Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred)
 	IdentityProviderName any
-	// Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred)
 	IdentityProviderType any
-	// The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred)
 	PortalArn any
-	// A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred)
 	Tags any
 }
 

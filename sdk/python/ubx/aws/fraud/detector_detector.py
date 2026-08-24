@@ -8,56 +8,35 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DetectorDetector_AssociatedModels:
-    # ARN of the Amazon Fraud Detector model associated with this detector. (AI-inferred)
     arn: Any = None
 
 @dataclasses.dataclass
 class DetectorDetector_EventType_EntityTypes_Tags:
-    # The tag key (e.g., 'environment') attached to an entity type within the detector's event type, used for resource management and identification. (AI-inferred)
     key: Any = None
-    # The value of a key-value tag attached to an entity type, enabling categorization and management of that entity type within the AWS Fraud Detector detector's event type. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class DetectorDetector_EventType_EntityTypes:
-    # The Amazon Resource Name (ARN) that uniquely identifies an entity type (e.g., customer, merchant) defined in the event type for the detector. (AI-inferred)
     arn: Any = None
-    # The timestamp (in ISO 8601 format) set by AWS Fraud Detector when the entity type was created, returned as a computed attribute of the event type's entity types. (AI-inferred)
     created_time: Any = None
-    # Provides a human-readable description of the entity type (e.g., customer, merchant) that is used within the event type in Amazon Fraud Detector. (AI-inferred)
     description: Any = None
-    # Indicates whether the entity type is defined inline within the event type resource (true) or references an existing Amazon Fraud Detector entity type (false). (AI-inferred)
     inline: Any = None
-    # The timestamp (in ISO 8601 format) indicating when this entity type within the event type was last updated by the AWS Fraud Detector service. (AI-inferred)
     last_updated_time: Any = None
-    # The name of an entity type (e.g., 'customer' or 'merchant') associated with the event type, used to categorize entities in fraud detection models. (AI-inferred)
     name: Any = None
-    # The resource tags (key-value pairs) to attach to this entity type within the detector's event type, used for managing and categorizing the AWS Fraud Detector entity-type resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DetectorDetector_EventType_EventVariables:
-    # The Amazon Resource Name (ARN) that uniquely identifies this event variable, automatically assigned by AWS Fraud Detector upon creation. (AI-inferred)
     arn: Any = None
-    # The timestamp in ISO 8601 format indicating when the event variable was created in Amazon Fraud Detector. (AI-inferred)
     created_time: Any = None
-    # Specifies whether the event variable's value is sourced from the event data ('EVENT') or from a model's output score ('MODEL_SCORE') in the Amazon Fraud Detector detector. (AI-inferred)
     data_source: Any = None
-    # Defines the data type of the event variable (e.g., STRING, INTEGER, FLOAT, BOOLEAN) used to capture event data for fraud detection analysis. (AI-inferred)
     data_type: Any = None
-    # The default value assigned to this event variable when it is not provided in the event data, used for model training and fraud prediction. (AI-inferred)
     default_value: Any = None
-    # A description of the event variable, providing context about what data it represents within the detector's event type. (AI-inferred)
     description: Any = None
-    # Specifies whether the event variable is defined inline as part of this detector (true) or references an existing event variable in Amazon Fraud Detector (false). (AI-inferred)
     inline: Any = None
-    # The timestamp, in ISO 8601 format, indicating when this event variable was last updated, automatically maintained by AWS Fraud Detector. (AI-inferred)
     last_updated_time: Any = None
-    # The name of an event variable that identifies the input field associated with the detector's event type, used in model training and rules. (AI-inferred)
     name: Any = None
-    # Tags (key-value pairs) applied to this specific event variable for filtering, cost allocation, and access management within AWS Fraud Detector. (AI-inferred)
     tags: Any = None
-    # Sets the variable type (e.g., EMAIL_ADDRESS, IP_ADDRESS) for an event variable in the event type, defining the semantic category of the data used by the detector's fraud model. (AI-inferred)
     variable_type: Any = None
 
 @dataclasses.dataclass
@@ -68,13 +47,9 @@ class DetectorDetector_EventType:
     created_time: Any = None
     # The description of the event type.
     description: Any = None
-    # Defines the entity types associated with the event type, which identify the people or things involved in the event (e.g., customer, merchant) for Amazon Fraud Detector analysis. (AI-inferred)
     entity_types: Any = None
-    # Defines the list of event variables (name, type, and default value) that make up the event type's structure and are used by the detector to process incoming events for fraud prediction. (AI-inferred)
     event_variables: Any = None
-    # Indicates whether the event type is defined inline within the detector resource (created during detector creation) rather than referencing an already existing event type. (AI-inferred)
     inline: Any = None
-    # The labels list defines the possible outcome categories (such as 'fraud' and 'legitimate') that the detector's event type can assign to events for model training and risk classification. (AI-inferred)
     labels: Any = None
     # The time when the event type was last updated.
     last_updated_time: Any = None
@@ -85,27 +60,16 @@ class DetectorDetector_EventType:
 
 @dataclasses.dataclass
 class DetectorDetector_Rules:
-    # The ARN of the Amazon Fraud Detector rule associated with this detector, used to identify and link the rule to the detector's version. (AI-inferred)
     arn: Any = None
-    # The creation timestamp of the rule, formatted as an ISO 8601 string, which is set by AWS when the rule is created. (AI-inferred)
     created_time: Any = None
-    # The description of a rule in the AWS Fraud Detector detector, a free-form string that explains the rule's purpose or logic for operational clarity. (AI-inferred)
     description: Any = None
-    # The ID of the detector to which this rule belongs, which for rules defined within a detector resource is the same as the containing detector's ID. (AI-inferred)
     detector_id: Any = None
-    # The logical expression written in the Fraud Detector rule language that is evaluated against event variables to determine whether the rule is satisfied and triggers its associated outcomes. (AI-inferred)
     expression: Any = None
-    # The language used for the rule's expression, with the only supported value being DETECTORPY. (AI-inferred)
     language: Any = None
-    # The timestamp, in ISO 8601 format, indicating when the rule was last updated. (AI-inferred)
     last_updated_time: Any = None
-    # Defines the list of outcomes (decision labels such as 'fraud' or 'legitimate') that are associated with a fraud detection rule and are emitted when the rule's conditions match. (AI-inferred)
     outcomes: Any = None
-    # The unique identifier for a rule within the detector's rule set, used to reference and manage the rule's configuration in Amazon Fraud Detector. (AI-inferred)
     rule_id: Any = None
-    # The version identifier of the rule, which distinguishes this rule's iteration from other versions of the same rule ID within the detector. (AI-inferred)
     rule_version: Any = None
-    # A list of key-value tags assigned to this rule in the AWS Fraud Detector detector, used for identifying, managing, and organizing the rule. (AI-inferred)
     tags: Any = None
 
 _DetectorDetector_EventType_EntityTypes_TagsFields = {
@@ -121,7 +85,6 @@ class DetectorDetectorConfig:
     detector_id: Any = None
     # The desired detector version status for the detector
     detector_version_status: Any = None
-    # Controls how the detector's rules are evaluated during fraud detection, accepting either ALL_MATCHED (evaluate all rules) or FIRST_MATCHED (stop after the first matching rule). (AI-inferred)
     rule_execution_mode: Any = None
     # Tags associated with this detector.
     tags: Any = None
@@ -142,13 +105,10 @@ class DetectorDetectorAttrs:
     detector_version_id: Any = None
     # The desired detector version status for the detector
     detector_version_status: Any = None
-    # The event type configuration for the detector, which defines the event variables, entity types, and labels used to evaluate fraud events. (AI-inferred)
     event_type: Any = None
     # The time when the detector was last updated.
     last_updated_time: Any = None
-    # Controls how the detector's rules are evaluated during fraud detection, accepting either ALL_MATCHED (evaluate all rules) or FIRST_MATCHED (stop after the first matching rule). (AI-inferred)
     rule_execution_mode: Any = None
-    # The list of rules associated with the detector, providing the fully resolved rule configurations (including rule ID, expression, language, and outcomes) as returned by the AWS Fraud Detector service. (AI-inferred)
     rules: Any = None
     # Tags associated with this detector.
     tags: Any = None

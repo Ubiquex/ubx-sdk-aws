@@ -8,30 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogLaunchNotificationConstraintConfig:
-    # Specifies the language code (e.g., 'en') used for responses from the AWS Service Catalog API when managing this launch notification constraint. (AI-inferred)
     accept_language: Any = None
-    # A free-form text description of the Service Catalog launch notification constraint, which specifies an SNS topic that receives notifications for provisioning and termination events. (AI-inferred)
     description: Any = None
-    # The list of Amazon SNS topic ARNs that receive stack event notifications when the associated product is launched via this Service Catalog launch notification constraint. (AI-inferred)
     notification_arns: Any = None
-    # The identifier of the Service Catalog portfolio to which the launch notification constraint applies. (AI-inferred)
     portfolio_id: Any = None
-    # The identifier of the Service Catalog product to which this launch notification constraint is associated, controlling which product's stack events trigger the configured SNS notifications. (AI-inferred)
     product_id: Any = None
 
 @dataclasses.dataclass
 class CatalogLaunchNotificationConstraintAttrs:
-    # Specifies the language code (e.g., 'en') used for responses from the AWS Service Catalog API when managing this launch notification constraint. (AI-inferred)
     accept_language: Any = None
-    # A free-form text description of the Service Catalog launch notification constraint, which specifies an SNS topic that receives notifications for provisioning and termination events. (AI-inferred)
     description: Any = None
     # Unique identifier for the constraint
     id: Any = None
-    # The list of Amazon SNS topic ARNs that receive stack event notifications when the associated product is launched via this Service Catalog launch notification constraint. (AI-inferred)
     notification_arns: Any = None
-    # The identifier of the Service Catalog portfolio to which the launch notification constraint applies. (AI-inferred)
     portfolio_id: Any = None
-    # The identifier of the Service Catalog product to which this launch notification constraint is associated, controlling which product's stack events trigger the configured SNS notifications. (AI-inferred)
     product_id: Any = None
 
 CatalogLaunchNotificationConstraint = ubx.ResourceBinding(

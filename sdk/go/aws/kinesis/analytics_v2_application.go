@@ -46,9 +46,7 @@ type AnalyticsV2Application_ApplicationConfiguration_ApplicationSystemRollbackCo
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_EnvironmentProperties_PropertyGroups struct {
-	// A unique identifier that names this property group within the application's environment properties, used to reference and retrieve the group's key-value pairs at runtime. (AI-inferred)
 	PropertyGroupId any
-	// Associates a set of string key-value pairs that make up a property group, which is passed to the Kinesis Analytics application as part of its environment properties for runtime configuration. (AI-inferred)
 	PropertyMap any
 }
 
@@ -98,76 +96,54 @@ type AnalyticsV2Application_ApplicationConfiguration_FlinkApplicationConfigurati
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputParallelism struct {
-	// The number of in-application streams to create from the streaming source, which determines the parallelism of input processing. (AI-inferred)
 	Count any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration_InputLambdaProcessor struct {
-	// The ARN of the AWS Lambda function that is used to preprocess records in the input stream before they are processed by the SQL application. (AI-inferred)
 	ResourceArn any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputProcessingConfiguration struct {
-	// Configures the AWS Lambda function used to preprocess the streaming records for this input, specifying the function's ARN and the IAM role ARN that Kinesis Data Analytics assumes to invoke it. (AI-inferred)
 	InputLambdaProcessor any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordColumns struct {
-	// For a Kinesis Analytics SQL application, this field specifies how the record column maps to the source stream data, such as the JSON property name or the zero-based CSV column index. (AI-inferred)
 	Mapping any
-	// The name of the column in the in-application input stream, used to reference this field in SQL queries within the Kinesis Data Analytics application. (AI-inferred)
 	Name any
-	// Specifies the SQL data type (such as INTEGER, VARCHAR, or TIMESTAMP) that the streaming source column is cast to for use in the Kinesis Analytics SQL application's queries. (AI-inferred)
 	SqlType any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_CsvmappingParameters struct {
-	// The delimiter character or string used to separate columns in each CSV record of the streaming input, such as a comma or pipe, that Kinesis Data Analytics uses to parse the record into fields. (AI-inferred)
 	RecordColumnDelimiter any
-	// Specifies the delimiter character(s) used to separate rows in the CSV input, such as a newline ('\n') or carriage return/line feed ('\r\n'). (AI-inferred)
 	RecordRowDelimiter any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters_JsonmappingParameters struct {
-	// Specifies the JSON path (e.g., '$.payload') to the top-level object that contains the record rows in the incoming JSON data, which is used to map JSON records to the input schema columns. (AI-inferred)
 	RecordRowPath any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat_MappingParameters struct {
-	// Specifies the CSV mapping parameters, including the record row delimiter and record column delimiter, that define how to parse incoming CSV records into the SQL input schema. (AI-inferred)
 	CsvmappingParameters any
-	// Configures JSON record mapping parameters for the input stream, including the record row path that specifies the JSON path to the root element of each record. (AI-inferred)
 	JsonmappingParameters any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema_RecordFormat struct {
-	// Specifies the mapping parameters for the record format, such as the JSON record path or CSV delimiters, used to parse the input records. (AI-inferred)
 	MappingParameters any
-	// Specifies the record format type for the streaming source input, which must be either CSV or JSON. (AI-inferred)
 	RecordFormatType any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs_InputSchema struct {
-	// Defines the list of columns that map fields in the streaming input source to named, typed values available to SQL queries in the Kinesis Data Analytics application. (AI-inferred)
 	RecordColumns any
-	// Specifies the encoding of records in the input stream, such as UTF-8 or BASE64, so the Kinesis Data Analytics application can correctly parse the incoming data. (AI-inferred)
 	RecordEncoding any
-	// Specifies the record format (e.g., JSON or CSV) and its mapping parameters used to parse the actual streaming data for the input schema. (AI-inferred)
 	RecordFormat any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration_Inputs struct {
-	// Sets the parallelism for a SQL streaming input by specifying the number of in-application streams Kinesis Data Analytics creates to process data. (AI-inferred)
 	InputParallelism any
-	// Defines an input processing configuration that uses an AWS Lambda function to pre-process records from the streaming source before the SQL application's query analyzes them. (AI-inferred)
 	InputProcessingConfiguration any
-	// Defines the schema of the streaming input for a SQL application, including column names and types, record encoding (e.g., CSV or JSON), and mapping configuration for how the source data is parsed. (AI-inferred)
 	InputSchema any
-	// Configures a Kinesis Data Firehose delivery stream as the streaming source for the SQL application input, specifying the delivery stream's ARN and the IAM role that allows Kinesis Analytics to read from it. (AI-inferred)
 	KinesisFirehoseInput any
-	// Configures the input for the SQL application to read from an Amazon Kinesis data stream, specifying the stream's resource ARN and the IAM role ARN that grants access. (AI-inferred)
 	KinesisStreamsInput any
-	// Specifies the prefix used to name the in-application stream(s) that Kinesis Data Analytics creates for this input, allowing the SQL application to reference the incoming streaming data via a generated stream name based on this prefix. (AI-inferred)
 	NamePrefix any
 }
 
@@ -177,9 +153,7 @@ type AnalyticsV2Application_ApplicationConfiguration_SqlApplicationConfiguration
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_VpcConfigurations struct {
-	// The list of security group IDs that the VPC configuration attaches to the VPC endpoint for the Kinesis Analytics application to access resources in the VPC. (AI-inferred)
 	SecurityGroupIds any
-	// Specifies the IDs of the subnets in which the Kinesis Data Analytics application's elastic network interfaces are placed, enabling the application to access resources within the VPC. (AI-inferred)
 	SubnetIds any
 }
 
@@ -194,20 +168,14 @@ type AnalyticsV2Application_ApplicationConfiguration_ZeppelinApplicationConfigur
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfiguration_MavenReference struct {
-	// The Maven artifact ID (e.g., the JAR's artifact name) of the custom library to attach to the Zeppelin application as a custom artifact, used with the group ID and version to resolve the artifact from Maven. (AI-inferred)
 	ArtifactId any
-	// The Maven groupId that identifies the organization or project owning the custom artifact (such as a JAR) which Zeppelin will fetch from a Maven repository for the application's custom artifacts configuration. (AI-inferred)
 	GroupId any
-	// The version of the Maven artifact referenced for a custom artifact in the Zeppelin application configuration. (AI-inferred)
 	Version any
 }
 
 type AnalyticsV2Application_ApplicationConfiguration_ZeppelinApplicationConfiguration_CustomArtifactsConfiguration struct {
-	// Specifies the kind of custom artifact (either 'UDF' for a user-defined function or 'DEPENDENCY_JAR' for a JAR dependency) that is being provided to the Zeppelin application. (AI-inferred)
 	ArtifactType any
-	// Identifies a Maven artifact (by group ID, artifact ID, and version) to be loaded as a custom artifact in the Zeppelin application. (AI-inferred)
 	MavenReference any
-	// Specifies the S3 bucket and object key (and optionally an object version) where the custom artifact, such as a JAR or other dependency, is stored for the Zeppelin application in the Kinesis Analytics Studio notebook. (AI-inferred)
 	S3ContentLocation any
 }
 

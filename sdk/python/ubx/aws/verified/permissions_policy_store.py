@@ -8,37 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_DeletionProtection:
-    # Specifies whether deletion protection is enabled (ENABLED) or disabled (DISABLED) for the policy store, controlling whether the policy store can be deleted. (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_EncryptionSettings_KmsEncryptionSettings:
-    # Specifies a map of encryption context key-value pairs that are included as authenticated data in the KMS encryption operation when a customer-managed key encrypts the policy store, providing an extra layer of integrity and auditability. (AI-inferred)
     encryption_context: Any = None
-    # The Amazon Resource Name (ARN) of the customer managed AWS KMS key used to encrypt the policy store when KMS encryption is configured. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_EncryptionSettings:
-    # Specifies the default encryption configuration for the policy store, choosing between AWS-managed encryption and a customer-managed AWS KMS key to protect the policy store's data. (AI-inferred)
     default: Any = None
-    # Specifies the customer-managed AWS KMS key configuration used to encrypt the policy store, including the KMS key ARN. (AI-inferred)
     kms_encryption_settings: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_EncryptionState:
     default: Any = None
-    # The KMS encryption state configuration for the policy store, containing a status field that indicates whether AWS KMS customer-managed key encryption is enabled (ENABLED) or disabled (DISABLED). (AI-inferred)
     kms_encryption_state: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_Schema:
-    # The Cedar schema for the policy store, expressed as a JSON string that defines the entity types and actions used in authorization policies. (AI-inferred)
     cedar_json: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStore_Tags:
-    # The key of a tag that can be assigned to the AWS Verified Permissions policy store to help organize, identify, and manage the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -71,38 +63,25 @@ _PermissionsPolicyStore_TagsFields = {
 
 @dataclasses.dataclass
 class PermissionsPolicyStoreConfig:
-    # Whether deletion protection is enabled for this policy store, which prevents the policy store from being deleted until the setting is disabled. (AI-inferred)
     deletion_protection: Any = None
-    # Provides a free-form, human-readable description of the policy store to help identify its purpose or manage it among other stores. (AI-inferred)
     description: Any = None
-    # Specifies the AWS KMS key (customer-managed or AWS-managed) used to encrypt the policy store's data; if omitted, the store is encrypted with an AWS-managed key. (AI-inferred)
     encryption_settings: Any = None
-    # Defines the Cedar schema for the policy store, specifying entity types, their attributes, and actions, which determines the valid policies and authorization requests. (AI-inferred)
     schema: Any = None
     # The tags to add to the policy store
     tags: Any = None
-    # Configures the validation mode (OFF or STRICT) for the Cedar policies stored in the policy store, determining whether and how strictly policies are validated. (AI-inferred)
     validation_settings: Any = None
 
 @dataclasses.dataclass
 class PermissionsPolicyStoreAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying the policy store, assigned by AWS when the policy store is created. (AI-inferred)
     arn: Any = None
-    # Whether deletion protection is enabled for this policy store, which prevents the policy store from being deleted until the setting is disabled. (AI-inferred)
     deletion_protection: Any = None
-    # Provides a free-form, human-readable description of the policy store to help identify its purpose or manage it among other stores. (AI-inferred)
     description: Any = None
-    # Specifies the AWS KMS key (customer-managed or AWS-managed) used to encrypt the policy store's data; if omitted, the store is encrypted with an AWS-managed key. (AI-inferred)
     encryption_settings: Any = None
-    # The computed encryption_state object describes the policy store's current encryption configuration, distinguishing between AWS-managed encryption and customer-managed KMS encryption and including the KMS key ARN when applicable. (AI-inferred)
     encryption_state: Any = None
-    # The unique identifier assigned by AWS to the policy store when it is created. (AI-inferred)
     policy_store_id: Any = None
-    # Defines the Cedar schema for the policy store, specifying entity types, their attributes, and actions, which determines the valid policies and authorization requests. (AI-inferred)
     schema: Any = None
     # The tags to add to the policy store
     tags: Any = None
-    # Configures the validation mode (OFF or STRICT) for the Cedar policies stored in the policy store, determining whether and how strictly policies are validated. (AI-inferred)
     validation_settings: Any = None
 
 PermissionsPolicyStore = ubx.ResourceBinding(

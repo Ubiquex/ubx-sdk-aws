@@ -2,64 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FunctionDefinitionVersion_DefaultConfig_Execution_RunAs {
-  /** Specifies the numeric group ID (GID) used by the Greengrass container to run Lambda functions when applying this default execution configuration for the function definition version. (AI-inferred) */
   gid?: number | Computed<number>;
-  /** Specifies the numeric user ID (UID) under which the Lambda function process runs when the execution run-as mode is set to a specific user. (AI-inferred) */
   uid?: number | Computed<number>;
 }
 
 export interface FunctionDefinitionVersion_DefaultConfig_Execution {
-  /** Specifies the isolation mode (GreengrassContainer or NoContainer) used when Lambda functions in this version run on the Greengrass core. (AI-inferred) */
   isolationMode?: string | Computed<string>;
-  /** Specifies the default UID and GID (operating system user and group) that Lambda functions in this Greengrass function definition version run as when invoked on the Greengrass core. (AI-inferred) */
   runAs?: FunctionDefinitionVersion_DefaultConfig_Execution_RunAs | Computed<FunctionDefinitionVersion_DefaultConfig_Execution_RunAs>;
 }
 
 export interface FunctionDefinitionVersion_DefaultConfig {
-  /** Specifies the default execution behavior for Lambda functions in the Greengrass group, including the isolation mode and the system user and group that the functions run as. (AI-inferred) */
   execution: FunctionDefinitionVersion_DefaultConfig_Execution | Computed<FunctionDefinitionVersion_DefaultConfig_Execution>;
 }
 
 export interface FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPolicies {
-  /** Specifies the access level granted to the Lambda function for the associated local resource, with valid values 'ro' for read-only or 'rw' for read/write. (AI-inferred) */
   permission?: string | Computed<string>;
-  /** The ID (ARN) of the local Greengrass resource (e.g., a volume or device) that this policy grants the Lambda function access to. (AI-inferred) */
   resourceId?: string | Computed<string>;
 }
 
 export interface FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment {
-  /** If true, this grants the Greengrass Lambda function access to the host's /sys filesystem (sysfs) on the core device, with the default being false. (AI-inferred) */
   accessSysfs?: boolean | Computed<boolean>;
   execution?: FunctionDefinitionVersion_DefaultConfig_Execution | Computed<FunctionDefinitionVersion_DefaultConfig_Execution>;
-  /** Specifies the list of resource access policies that grant the Lambda function permissions to access Greengrass local resources (such as devices or volumes) on the core, where each policy includes a resource identifier and a read-only or read-write permission. (AI-inferred) */
   resourceAccessPolicies?: FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPolicies[] | Computed<FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment_ResourceAccessPolicies[]>;
-  /** A map of key-value pairs that define environment variables passed to the Lambda function when it runs in the Greengrass group. (AI-inferred) */
   variables?: unknown | Computed<unknown>;
 }
 
 export interface FunctionDefinitionVersion_Functions_FunctionConfiguration {
-  /** Specifies whether the function's input and output payloads are encoded as JSON or binary, with allowed values 'json' and 'binary' (default is 'json'). (AI-inferred) */
   encodingType?: string | Computed<string>;
-  /** Configures the Lambda execution environment for the Greengrass function, including environment variables, resource access policies, and whether sysfs access is allowed. (AI-inferred) */
   environment?: FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment | Computed<FunctionDefinitionVersion_Functions_FunctionConfiguration_Environment>;
-  /** In an AWS Greengrass function definition version, this field sets the command-line arguments passed to the Lambda function when it executes on the Greengrass core. (AI-inferred) */
   execArgs?: string | Computed<string>;
-  /** Specifies the name or path of the executable that the Lambda function runs, used by the Greengrass function configuration to invoke the function. (AI-inferred) */
   executable?: string | Computed<string>;
-  /** The amount of memory, in megabytes, allocated to the Lambda function in the Greengrass function configuration. (AI-inferred) */
   memorySize?: number | Computed<number>;
-  /** Indicates whether the function is pinned to the Greengrass core, meaning it is pre-loaded and stays resident in memory so it can start quickly and run continuously rather than being invoked on demand. (AI-inferred) */
   pinned?: boolean | Computed<boolean>;
-  /** Specifies the maximum execution time in seconds for the Lambda function; when exceeded, the function is stopped (default is 3 seconds). (AI-inferred) */
   timeout?: number | Computed<number>;
 }
 
 export interface FunctionDefinitionVersion_Functions {
-  /** The Amazon Resource Name (ARN) of the Lambda function that this Greengrass function definition version will deploy to the Greengrass core. (AI-inferred) */
   functionArn?: string | Computed<string>;
-  /** Specifies the runtime configuration for the Lambda function in the Greengrass group, including its executable, arguments, memory size, timeout, environment variables, and pinned state. (AI-inferred) */
   functionConfiguration?: FunctionDefinitionVersion_Functions_FunctionConfiguration | Computed<FunctionDefinitionVersion_Functions_FunctionConfiguration>;
-  /** The unique identifier for this function within the Greengrass function definition version. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
@@ -130,22 +110,15 @@ const FunctionDefinitionVersion_FunctionsFields: FieldMap = {
 };
 
 export interface FunctionDefinitionVersionConfig {
-  /** Default configuration settings (execution and environment) that apply to all Lambda functions in this Greengrass function definition version unless overridden per-function. (AI-inferred) */
   defaultConfig?: FunctionDefinitionVersion_DefaultConfig | Computed<FunctionDefinitionVersion_DefaultConfig>;
-  /** The ID of the AWS Greengrass function definition that this version belongs to. (AI-inferred) */
   functionDefinitionId: string | Computed<string>;
-  /** The list of Lambda functions that are defined in this function definition version, where each object specifies the function's unique ID, its ARN, and its configuration (including memory, timeout, encoding, and environment variables). (AI-inferred) */
   functions: FunctionDefinitionVersion_Functions[] | Computed<FunctionDefinitionVersion_Functions[]>;
 }
 
 export interface FunctionDefinitionVersionAttrs {
-  /** Default configuration settings (execution and environment) that apply to all Lambda functions in this Greengrass function definition version unless overridden per-function. (AI-inferred) */
   defaultConfig: FunctionDefinitionVersion_DefaultConfig;
-  /** The ID of the AWS Greengrass function definition that this version belongs to. (AI-inferred) */
   functionDefinitionId: string;
-  /** The list of Lambda functions that are defined in this function definition version, where each object specifies the function's unique ID, its ARN, and its configuration (including memory, timeout, encoding, and environment variables). (AI-inferred) */
   functions: FunctionDefinitionVersion_Functions[];
-  /** The unique Amazon Resource Name (ARN) assigned to this Greengrass function definition version, used as the resource identifier in Terraform. (AI-inferred) */
   id: string;
 }
 

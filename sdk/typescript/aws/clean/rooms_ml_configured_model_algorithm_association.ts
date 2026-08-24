@@ -3,64 +3,48 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize {
   unit: string | Computed<string>;
-  /** The maximum size, in bytes, allowed for a trained model export as part of the privacy configuration's trained model exports policy. (AI-inferred) */
   value: number | Computed<number>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports {
-  /** The list of file names that are allowed to be exported from the trained model when this trained model exports policy is applied in the privacy configuration. (AI-inferred) */
   filesToExport: string[] | Computed<string[]>;
-  /** Limits the maximum size of a trained model export allowed by the privacy policy, preventing the export of models larger than the specified threshold. (AI-inferred) */
   maxSize: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfig {
-  /** Specifies the list of custom data identifier patterns (regular expressions) used by the log redaction configuration to detect and redact sensitive custom entities in container logs from trained model inference jobs for this configured model algorithm association. (AI-inferred) */
   customDataIdentifiers?: string[] | Computed<string[]>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration {
-  /** Configures custom entities for log redaction in trained model inference jobs, defining the names and regular expression patterns used to redact sensitive data from container logs. (AI-inferred) */
   customEntityConfig?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfig | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration_CustomEntityConfig>;
-  /** Specifies the list of sensitive data entity types that should be redacted from the container logs of trained model inference jobs in this configured model algorithm association. (AI-inferred) */
   entitiesToRedact?: string[] | Computed<string[]>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs {
-  /** Lists the AWS account IDs permitted to access the container logs produced during trained model inference jobs, as configured in the association's privacy policy. (AI-inferred) */
   allowedAccountIds?: string[] | Computed<string[]>;
-  /** The filter pattern defines a pattern (e.g., a CloudWatch Logs-style filter) used to select which container log lines are captured or recorded for trained model inference jobs under this privacy policy. (AI-inferred) */
   filterPattern?: string | Computed<string>;
-  /** Defines the redaction settings applied to container logs from trained model inference jobs, ensuring sensitive data is removed before logs are stored or processed, as part of the privacy configuration for the configured model algorithm association. (AI-inferred) */
   logRedactionConfiguration?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs_LogRedactionConfiguration>;
   logType?: string | Computed<string>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs {
   containerLogs?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs[] | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs[]>;
-  /** Defines the maximum output size cap for trained model inference jobs, enforcing privacy constraints by limiting the volume of data that can be returned. (AI-inferred) */
   maxOutputSize?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetrics {
-  /** The noise level (HIGH, MEDIUM, or LOW) that sets the amount of differential privacy noise added to container metrics for trained models, balancing privacy protection against metric utility in the Clean Rooms ML association. (AI-inferred) */
   noiseLevel: string | Computed<string>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels {
-  /** Defines the list of container log configurations (each specifying a CloudWatch Logs log group ARN and a log type) that are permitted for the trained model container as part of this algorithm association's privacy policy. (AI-inferred) */
   containerLogs?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs[] | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs_ContainerLogs[]>;
   containerMetrics?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetrics | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels_ContainerMetrics>;
-  /** Sets the maximum size limit for trained model artifacts in the privacy configuration, expressed as an object with a numeric size and a unit, to prevent overly large models from being exported. (AI-inferred) */
   maxArtifactSize?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports_MaxSize>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies {
-  /** Defines the policy for exporting trained models from the configured model algorithm association, specifying the allowed S3 destinations and any restrictions on where model artifacts may be written. (AI-inferred) */
   trainedModelExports?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelExports>;
-  /** Specifies the privacy policy for trained model inference jobs on this configured model algorithm association, governing how inference job outputs are handled and where they may be sent. (AI-inferred) */
   trainedModelInferenceJobs?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModelInferenceJobs>;
-  /** Defines the trained models policy within the privacy configuration, specifying how trained models generated from the associated configured model algorithm can be accessed and used by collaboration members. (AI-inferred) */
   trainedModels?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration_Policies_TrainedModels>;
 }
 
@@ -178,34 +162,22 @@ const RoomsMlConfiguredModelAlgorithmAssociation_TagsFields: FieldMap = {
 };
 
 export interface RoomsMlConfiguredModelAlgorithmAssociationConfig {
-  /** The ARN of the configured model algorithm that this association links to the configured model. (AI-inferred) */
   configuredModelAlgorithmArn: string | Computed<string>;
-  /** The description field is an optional, user-defined text string that describes the configured model algorithm association, allowing you to identify its purpose or context within AWS Clean Rooms ML. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The unique identifier (UUID) of the AWS Clean Rooms membership that this configured model algorithm association is created within and scoped to. (AI-inferred) */
   membershipIdentifier: string | Computed<string>;
-  /** The name of the configured model algorithm association, which provides a required identifier for the association within AWS Clean Rooms ML. (AI-inferred) */
   name: string | Computed<string>;
-  /** Defines the privacy policies for the configured model algorithm association, including the direct analysis privacy budget template and output configuration constraints that govern how query results are protected in the collaboration. (AI-inferred) */
   privacyConfiguration?: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration | Computed<RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration>;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms-ml configured model algorithm association. */
   tags?: RoomsMlConfiguredModelAlgorithmAssociation_Tags[] | Computed<RoomsMlConfiguredModelAlgorithmAssociation_Tags[]>;
 }
 
 export interface RoomsMlConfiguredModelAlgorithmAssociationAttrs {
-  /** The identifier of the AWS Clean Rooms collaboration that contains this configured model algorithm association, used to scope the association to a specific collaboration environment. (AI-inferred) */
   collaborationIdentifier: string;
-  /** The ARN of the configured model algorithm that this association links to the configured model. (AI-inferred) */
   configuredModelAlgorithmArn: string;
-  /** The Amazon Resource Name (ARN) of the configured model algorithm association. (AI-inferred) */
   configuredModelAlgorithmAssociationArn: string;
-  /** The description field is an optional, user-defined text string that describes the configured model algorithm association, allowing you to identify its purpose or context within AWS Clean Rooms ML. (AI-inferred) */
   description: string;
-  /** The unique identifier (UUID) of the AWS Clean Rooms membership that this configured model algorithm association is created within and scoped to. (AI-inferred) */
   membershipIdentifier: string;
-  /** The name of the configured model algorithm association, which provides a required identifier for the association within AWS Clean Rooms ML. (AI-inferred) */
   name: string;
-  /** Defines the privacy policies for the configured model algorithm association, including the direct analysis privacy budget template and output configuration constraints that govern how query results are protected in the collaboration. (AI-inferred) */
   privacyConfiguration: RoomsMlConfiguredModelAlgorithmAssociation_PrivacyConfiguration;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms-ml configured model algorithm association. */
   tags: RoomsMlConfiguredModelAlgorithmAssociation_Tags[];

@@ -2,59 +2,41 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SyncApi_Dns {
-  /** The HTTP endpoint (URL) for the AppSync API, which is used to send GraphQL requests over unencrypted HTTP. (AI-inferred) */
   http?: string | Computed<string>;
-  /** The realtime DNS endpoint (fully qualified domain name) for the AppSync API, used by clients to establish WebSocket connections for real-time GraphQL subscriptions. (AI-inferred) */
   realtime?: string | Computed<string>;
 }
 
 export interface SyncApi_EventConfig_AuthProviders_CognitoConfig {
-  /** Defines a regular expression that the Cognito app client ID must match for the AppSync Event API's auth provider to grant access. (AI-inferred) */
   appIdClientRegex?: string | Computed<string>;
-  /** Specifies the AWS region where the associated Cognito User Pool is located, used to resolve the pool for event API authentication. (AI-inferred) */
   awsRegion?: string | Computed<string>;
-  /** The ID of the Cognito user pool used as an authentication provider for the AppSync event API. (AI-inferred) */
   userPoolId?: string | Computed<string>;
 }
 
 export interface SyncApi_EventConfig_AuthProviders_LambdaAuthorizerConfig {
-  /** Specifies the time-to-live duration, in seconds, for caching the Lambda authorizer's result in an AWS AppSync event API. (AI-inferred) */
   authorizerResultTtlInSeconds?: number | Computed<number>;
-  /** The URI of the Lambda function that acts as the custom authorizer for this auth provider, which AppSync invokes to authorize requests to the event API. (AI-inferred) */
   authorizerUri?: string | Computed<string>;
-  /** A regular expression that the identity token must match for the Lambda authorizer to accept the request; if the token does not match, the request is denied. (AI-inferred) */
   identityValidationExpression?: string | Computed<string>;
 }
 
 export interface SyncApi_EventConfig_AuthProviders_OpenIdconnectConfig {
-  /** Specifies the authorization token time-to-live (TTL) in seconds that AppSync uses to determine how long an OpenID Connect token remains valid for the event API's OpenID Connect authentication provider. (AI-inferred) */
   authTtl?: number | Computed<number>;
-  /** The client ID issued by your OpenID Connect provider for the AppSync API, used by AppSync to validate incoming tokens. (AI-inferred) */
   clientId?: string | Computed<string>;
-  /** The number of milliseconds that a token remains valid after its issued-at (iat) time, used to validate the OIDC token in the AppSync API's event authentication provider. (AI-inferred) */
   iatTtl?: number | Computed<number>;
-  /** The issuer URL of the OpenID Connect provider used to validate tokens for authorizing requests to the AWS AppSync event API. (AI-inferred) */
   issuer?: string | Computed<string>;
 }
 
 export interface SyncApi_EventConfig_AuthProviders {
-  /** Specifies the authentication type (e.g., AMAZON_COGNITO_USER_POOLS, AWS_IAM, OPENID_CONNECT) for an auth provider used in the AppSync API's event configuration for real-time WebSocket subscriptions. (AI-inferred) */
   authType?: string | Computed<string>;
-  /** Configures Amazon Cognito User Pools as an authentication provider for the AppSync Events API by specifying the AWS region, user pool ID, and optional app client regex for authorization. (AI-inferred) */
   cognitoConfig?: SyncApi_EventConfig_AuthProviders_CognitoConfig | Computed<SyncApi_EventConfig_AuthProviders_CognitoConfig>;
-  /** Configures the Lambda authorizer settings (such as the Lambda function URI, result caching TTL, and identity validation expression) for an AWS_LAMBDA authentication provider used in the event configuration of an AWS AppSync API. (AI-inferred) */
   lambdaAuthorizerConfig?: SyncApi_EventConfig_AuthProviders_LambdaAuthorizerConfig | Computed<SyncApi_EventConfig_AuthProviders_LambdaAuthorizerConfig>;
-  /** Defines the OpenID Connect (OIDC) authentication parameters—such as issuer, client ID, and token time-to-live settings—used by the event API's authentication provider to validate OIDC tokens for real-time connections. (AI-inferred) */
   openIdconnectConfig?: SyncApi_EventConfig_AuthProviders_OpenIdconnectConfig | Computed<SyncApi_EventConfig_AuthProviders_OpenIdconnectConfig>;
 }
 
 export interface SyncApi_EventConfig_ConnectionAuthModes {
-  /** The authentication type (such as API_KEY, AWS_IAM, or AMAZON_COGNITO_USER_POOLS) used by AppSync to authorize client connections to the event API's real-time WebSocket endpoint. (AI-inferred) */
   authType?: string | Computed<string>;
 }
 
 export interface SyncApi_EventConfig_LogConfig {
-  /** The ARN of the IAM role that AWS AppSync assumes to write event logs to CloudWatch Logs for this API. (AI-inferred) */
   cloudWatchLogsRoleArn: string | Computed<string>;
   /** Logging level for the AppSync API. */
   logLevel: string | Computed<string>;
@@ -74,9 +56,7 @@ export interface SyncApi_EventConfig {
 }
 
 export interface SyncApi_Tags {
-  /** The key of a tag to be applied to the AWS AppSync GraphQL API for resource management and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair applied to the AWS AppSync API. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

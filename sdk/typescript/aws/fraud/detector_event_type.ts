@@ -2,51 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DetectorEventType_EntityTypes_Tags {
-  /** The key of a tag assigned to an entity type defined within this event type. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to an entity type in the AWS Fraud Detector event type, used for categorizing and managing the entity type resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface DetectorEventType_EntityTypes {
-  /** The unique Amazon Resource Name (ARN) of an entity type defined within the event type. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** The creation timestamp of the entity type within the AWS Fraud Detector event type, returned as a read-only ISO 8601 formatted string. (AI-inferred) */
   createdTime?: string | Computed<string>;
-  /** The description of an entity type (a category of participants in the event, such as a customer or account) that is associated with the AWS Fraud Detector event type, providing additional context about that entity type. (AI-inferred) */
   description?: string | Computed<string>;
-  /** When true, the entity type definition is provided inline within the event type resource rather than referencing an existing entity type by ARN or name. (AI-inferred) */
   inline?: boolean | Computed<boolean>;
-  /** The timestamp, in ISO 8601 format, indicating when this entity type was last updated within the AWS Fraud Detector event type. (AI-inferred) */
   lastUpdatedTime?: string | Computed<string>;
-  /** Specifies the name of an entity type (e.g., 'customer', 'account') that is associated with this event type in Amazon Fraud Detector. (AI-inferred) */
   name?: string | Computed<string>;
-  /** A list of key-value tags to assign to this entity type within the event type, enabling resource management and cost tracking. (AI-inferred) */
   tags?: DetectorEventType_EntityTypes_Tags[] | Computed<DetectorEventType_EntityTypes_Tags[]>;
 }
 
 export interface DetectorEventType_EventVariables {
-  /** The ARN of the event variable, which uniquely identifies it in Amazon Fraud Detector. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** The timestamp indicating when this event variable was created in Amazon Fraud Detector. (AI-inferred) */
   createdTime?: string | Computed<string>;
-  /** The data source of the event variable, indicating whether its value is derived from the event data ('EVENT') or from a model score ('MODEL_SCORE'). (AI-inferred) */
   dataSource?: string | Computed<string>;
-  /** Specifies the data type (STRING, INTEGER, FLOAT, or BOOLEAN) for an event variable, determining how the variable value is interpreted in fraud detection event evaluations. (AI-inferred) */
   dataType?: string | Computed<string>;
-  /** The default value for the event variable, used when no value is supplied for the variable in an event. (AI-inferred) */
   defaultValue?: string | Computed<string>;
-  /** Specifies a human-readable description for the event variable, clarifying its purpose and usage in the fraud detector event type. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies whether the event variable is defined inline in the event type, as opposed to referencing an existing variable from the AWS Fraud Detector variable library. (AI-inferred) */
   inline?: boolean | Computed<boolean>;
-  /** The timestamp, in ISO 8601 format, indicating when this event variable was last updated. (AI-inferred) */
   lastUpdatedTime?: string | Computed<string>;
-  /** The unique name of an event variable associated with the event type, used to identify the variable in fraud detection rules and model training. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the list of AWS tags (key-value pairs) to associate with the event variable, used to organize, manage, and identify the variable within the AWS Fraud Detector event type. (AI-inferred) */
   tags?: DetectorEventType_EntityTypes_Tags[] | Computed<DetectorEventType_EntityTypes_Tags[]>;
-  /** Specifies the semantic category or type of the event variable (such as CARD_BIN, EMAIL_ADDRESS, or IP_ADDRESS) so that AWS Fraud Detector can apply the appropriate domain-specific interpretation when evaluating fraud risk. (AI-inferred) */
   variableType?: string | Computed<string>;
 }
 
@@ -71,11 +51,8 @@ export interface DetectorEventTypeAttrs {
   createdTime: string;
   /** The description of the event type. */
   description: string;
-  /** This computed field lists the entity types associated with the event type, each defining a named entity (such as a customer or transaction) with an optional description that Amazon Fraud Detector evaluates for fraudulent activity. (AI-inferred) */
   entityTypes: DetectorEventType_EntityTypes[];
-  /** The list of event variables that define the individual data elements of an event (such as IP address, email, transaction amount, or card number), each specifying its data source, data type, default value, and variable type for Amazon Fraud Detector to use in fraud analysis. (AI-inferred) */
   eventVariables: DetectorEventType_EventVariables[];
-  /** The list of labels that define the possible classifications for events of this fraud detector event type, where each label object includes its name and other metadata, reflecting the labels currently associated with the event type. (AI-inferred) */
   labels: DetectorEventType_EntityTypes[];
   /** The time when the event type was last updated. */
   lastUpdatedTime: string;

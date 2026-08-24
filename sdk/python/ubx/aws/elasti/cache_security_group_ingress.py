@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CacheSecurityGroupIngressConfig:
-    # The name of the existing ElastiCache cache security group to which the ingress rule is applied, allowing access from the specified EC2 security group. (AI-inferred)
     cache_security_group_name: Any = None
-    # The name of the EC2 security group that is permitted to access the associated ElastiCache security group. (AI-inferred)
     ec2_security_group_name: Any = None
-    # The AWS account ID of the owner of the EC2 security group specified in the ingress rule, used when authorizing cross-account access. (AI-inferred)
     ec2_security_group_owner_id: Any = None
 
 @dataclasses.dataclass
 class CacheSecurityGroupIngressAttrs:
-    # The name of the existing ElastiCache cache security group to which the ingress rule is applied, allowing access from the specified EC2 security group. (AI-inferred)
     cache_security_group_name: Any = None
-    # The name of the EC2 security group that is permitted to access the associated ElastiCache security group. (AI-inferred)
     ec2_security_group_name: Any = None
-    # The AWS account ID of the owner of the EC2 security group specified in the ingress rule, used when authorizing cross-account access. (AI-inferred)
     ec2_security_group_owner_id: Any = None
-    # The computed unique identifier for this ElastiCache security group ingress rule, composed from the cache security group name, the EC2 security group name, and the EC2 security group owner ID to uniquely represent the authorization. (AI-inferred)
     id: Any = None
 
 CacheSecurityGroupIngress = ubx.ResourceBinding(

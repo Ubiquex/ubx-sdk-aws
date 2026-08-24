@@ -23,7 +23,6 @@ class OutpostsAccessPointConfig:
     name: Any = None
     # The access point policy associated with this access point.
     policy: Any = None
-    # The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred)
     vpc_configuration: Any = None
 
 @dataclasses.dataclass
@@ -36,7 +35,6 @@ class OutpostsAccessPointAttrs:
     name: Any = None
     # The access point policy associated with this access point.
     policy: Any = None
-    # The VPC configuration that specifies the virtual private cloud (VPC) in which the S3 on Outposts access point is accessible, containing the required VPC ID. (AI-inferred)
     vpc_configuration: Any = None
 
 OutpostsAccessPoint = ubx.ResourceBinding(

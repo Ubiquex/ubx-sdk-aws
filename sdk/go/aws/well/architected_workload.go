@@ -11,9 +11,7 @@ type ArchitectedWorkload_DiscoveryConfig struct {
 }
 
 type ArchitectedWorkload_Tags struct {
-	// Defines the key (name) of a tag attached to the Well-Architected workload, used to organize, identify, and control access to the workload resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key applied to the AWS Well-Architected workload, used for metadata, cost allocation, or resource management. (AI-inferred)
 	Value any
 }
 

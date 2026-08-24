@@ -38,106 +38,66 @@ export interface MakerProcessingJob_NetworkConfig {
 }
 
 export interface MakerProcessingJob_ProcessingInputs_DatasetDefinition_AthenaDatasetDefinition {
-  /** The name of the AWS Glue data catalog that contains the database and table referenced by the Athena query used in this processing job's dataset definition (e.g., 'AwsDataCatalog'). (AI-inferred) */
   catalog?: string | Computed<string>;
-  /** The name of the Athena database used to query the dataset for this processing job's dataset definition. (AI-inferred) */
   database?: string | Computed<string>;
-  /** The AWS KMS key ID that SageMaker uses to encrypt the Athena query results, which are stored in the S3 output location defined in the AthenaDatasetDefinition. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the compression format (e.g., GZIP, SNAPPY) applied to the Athena query results stored in the output S3 location for this dataset definition. (AI-inferred) */
   outputCompression?: string | Computed<string>;
-  /** Specifies the data format (e.g., PARQUET, ORC, AVRO, JSON, TEXTFILE) in which the Athena query results are written to the output S3 location for the processing job. (AI-inferred) */
   outputFormat?: string | Computed<string>;
-  /** The S3 URI (e.g., s3://bucket/path) where the results of the Athena query used to generate the dataset are written, as part of the At, denaDatasetDefinition for the processing job's dataset input. (AI-inferred) */
   outputS3Uri?: string | Computed<string>;
-  /** The SQL query executed against Athena to select the dataset used as input for the SageMaker processing job. (AI-inferred) */
   queryString?: string | Computed<string>;
-  /** The name of the Athena workgroup to use for the query that reads data from Athena. (AI-inferred) */
   workGroup?: string | Computed<string>;
 }
 
 export interface MakerProcessingJob_ProcessingInputs_DatasetDefinition_RedshiftDatasetDefinition {
-  /** The identifier of the Amazon Redshift cluster that contains the dataset to be processed by the SageMaker processing job. (AI-inferred) */
   clusterId?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the IAM role that the Redshift cluster assumes to execute the query and write the resulting dataset to the S3 output location defined in the RedshiftDatasetDefinition. (AI-inferred) */
   clusterRoleArn?: string | Computed<string>;
-  /** The name of the Redshift database that contains the data to be queried for the processing job. (AI-inferred) */
   database?: string | Computed<string>;
-  /** Specifies the Redshift database user name used to authenticate the query against the cluster for this dataset definition. (AI-inferred) */
   dbUser?: string | Computed<string>;
-  /** The AWS KMS key ID that Amazon SageMaker uses to encrypt the data retrieved from the Redshift query before writing it to the output S3 location. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the compression type (for example, NONE, GZIP, BZIP2, or ZSTD) applied to the output data from the Redshift query when it is stored in Amazon S3 for a SageMaker processing job. (AI-inferred) */
   outputCompression?: string | Computed<string>;
-  /** Specifies the format (PARQUET or CSV) in which the results of the Redshift query are written to the output S3 location for this processing job's dataset definition. (AI-inferred) */
   outputFormat?: string | Computed<string>;
-  /** Specifies the S3 URI where the results of the Redshift query are stored, from which the SageMaker Processing job reads the dataset. (AI-inferred) */
   outputS3Uri?: string | Computed<string>;
-  /** SQL query that defines the data to be fetched from Amazon Redshift for processing. (AI-inferred) */
   queryString?: string | Computed<string>;
 }
 
 export interface MakerProcessingJob_ProcessingInputs_DatasetDefinition {
-  /** Configures an Athena dataset for the processing job input, specifying the Athena catalog, database, SQL query, query result output location, and format (e.g., PARQUET or CSV) that define the data to be processed. (AI-inferred) */
   athenaDatasetDefinition?: MakerProcessingJob_ProcessingInputs_DatasetDefinition_AthenaDatasetDefinition | Computed<MakerProcessingJob_ProcessingInputs_DatasetDefinition_AthenaDatasetDefinition>;
-  /** Specifies how the input data is distributed across the processing job instances, either 'FullyReplicated' to give every instance a full copy of the data or 'ShardedByS3Object' to partition the S3 objects among the instances. (AI-inferred) */
   dataDistributionType?: string | Computed<string>;
-  /** Specifies the input mode (File or Pipe) for the dataset definition when the processing job input is defined as a dataset, determining how data is streamed or copied to the processing container. (AI-inferred) */
   inputMode?: string | Computed<string>;
-  /** The local path on the processing instance where the dataset defined by the Athena or Redshift dataset definition is made available for use by the processing job. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Configures an Amazon Redshift dataset for the SageMaker processing job input by specifying the Redshift cluster, database, user, query string, and S3 output location for query results. (AI-inferred) */
   redshiftDatasetDefinition?: MakerProcessingJob_ProcessingInputs_DatasetDefinition_RedshiftDatasetDefinition | Computed<MakerProcessingJob_ProcessingInputs_DatasetDefinition_RedshiftDatasetDefinition>;
 }
 
 export interface MakerProcessingJob_ProcessingInputs_S3Input {
-  /** The local path in the container instance where the S3 input data is made available for the processing job. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Specifies the compression type of the S3 input data for the processing job, either 'None' for uncompressed or 'Gzip' for gzip-compressed data, which Amazon SageMaker uses to decompress the input before processing. (AI-inferred) */
   s3CompressionType?: string | Computed<string>;
-  /** Determines how the input data from S3 is distributed among the instances of the processing job: either 'FullyReplicated' (each instance gets a copy of the entire data) or 'ShardedByS3Key' (each instance gets a distinct subset of S3 objects). (AI-inferred) */
   s3DataDistributionType?: string | Computed<string>;
-  /** The type of S3 data source, either a prefix (S3Prefix) or a manifest file (ManifestFile), used to locate the input data for the processing job. (AI-inferred) */
   s3DataType?: string | Computed<string>;
-  /** Specifies the input mode for the S3 data source of this processing job's input channel, either 'File' or 'Pipe', which controls how the data is streamed to the processing container. (AI-inferred) */
   s3InputMode?: string | Computed<string>;
-  /** The S3 URI (e.g., s3://bucket/prefix) of the input data that SageMaker reads for this processing input. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerProcessingJob_ProcessingInputs {
-  /** Indicates whether the processing input is managed by the processing application (true) rather than sourced from Amazon S3 (false). (AI-inferred) */
   appManaged?: boolean | Computed<boolean>;
-  /** Defines how to generate input data for the processing job by querying Athena or Redshift and storing the result in S3, according to the specified database, SQL query, and output location. (AI-inferred) */
   datasetDefinition?: MakerProcessingJob_ProcessingInputs_DatasetDefinition | Computed<MakerProcessingJob_ProcessingInputs_DatasetDefinition>;
-  /** The name of this processing input, which defines the input channel path inside the processing container (e.g., /opt/ml/processing/input/<input_name>) and must match the channel name expected by the processing script. (AI-inferred) */
   inputName?: string | Computed<string>;
-  /** Specifies the S3 input source for the processing job, including the S3 URI, local path, data type (e.g., S3Prefix or ManifestFile), and input mode (File or Pipe). (AI-inferred) */
   s3Input?: MakerProcessingJob_ProcessingInputs_S3Input | Computed<MakerProcessingJob_ProcessingInputs_S3Input>;
 }
 
 export interface MakerProcessingJob_ProcessingOutputConfig_Outputs_FeatureStoreOutput {
-  /** The name of the SageMaker Feature Store feature group that this processing job's output is written to and ingested into. (AI-inferred) */
   featureGroupName?: string | Computed<string>;
 }
 
 export interface MakerProcessingJob_ProcessingOutputConfig_Outputs_S3Output {
-  /** The local path inside the processing container where the output data is written before being uploaded to the configured S3 output location. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Determines whether the processing job uploads output to S3 continuously during execution ('Continuous') or only after the job completes ('EndOfJob'). (AI-inferred) */
   s3UploadMode?: string | Computed<string>;
-  /** The S3 URI specifying the bucket and prefix where the processing job writes its output data. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerProcessingJob_ProcessingOutputConfig_Outputs {
-  /** When set to true, all output operations such as data encryption are managed by the processing job's application rather than by SageMaker; when false (the default), SageMaker manages these operations. (AI-inferred) */
   appManaged?: boolean | Computed<boolean>;
-  /** Configures the processing job's output to an Amazon SageMaker Feature Store, specifying the target feature group name and whether to append or overwrite existing records. (AI-inferred) */
   featureStoreOutput?: MakerProcessingJob_ProcessingOutputConfig_Outputs_FeatureStoreOutput | Computed<MakerProcessingJob_ProcessingOutputConfig_Outputs_FeatureStoreOutput>;
-  /** The unique name that identifies this processing output within the SageMaker processing job's output configuration, used to reference the output in the job's specification. (AI-inferred) */
   outputName?: string | Computed<string>;
-  /** Configures the S3 destination for a processing job output, including the local path in the container and the S3 URI (and optionally the upload mode) where the output is uploaded. (AI-inferred) */
   s3Output?: MakerProcessingJob_ProcessingOutputConfig_Outputs_S3Output | Computed<MakerProcessingJob_ProcessingOutputConfig_Outputs_S3Output>;
 }
 
@@ -170,9 +130,7 @@ export interface MakerProcessingJob_StoppingCondition {
 }
 
 export interface MakerProcessingJob_Tags {
-  /** The key portion of a tag that you assign to the SageMaker processing job, used to identify, organize, and control access to the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the SageMaker processing job, paired with the corresponding key to organize and identify AWS resources (e.g., for cost allocation or access control). (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -16,7 +16,6 @@ class TsiteWisePortal_Alarms:
 @dataclasses.dataclass
 class TsiteWisePortal_Tags:
     key: Any = None
-    # The value part of a key-value tag that you assign to the AWS IoT SiteWise portal to help organize and identify the resource. (AI-inferred)
     value: Any = None
 
 _TsiteWisePortal_AlarmsFields = {

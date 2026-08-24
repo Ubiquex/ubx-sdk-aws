@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Mltransform_InputRecordTables_GlueTables {
-  /** The identifier of the AWS Glue Data Catalog in which the specified input table resides; if omitted, the current AWS account's catalog ID is used. (AI-inferred) */
   catalogId?: string | Computed<string>;
-  /** The name of an AWS Glue connection used to access the source table, required when the table resides in an external data store such as JDBC rather than being purely stored in the Glue Data Catalog. (AI-inferred) */
   connectionName?: string | Computed<string>;
-  /** The name of the AWS Glue Data Catalog database that contains the table used as an input record source for the machine learning transform. (AI-inferred) */
   databaseName?: string | Computed<string>;
-  /** The name of the Glue Data Catalog table that supplies the input records for the ML transform. (AI-inferred) */
   tableName?: string | Computed<string>;
 }
 

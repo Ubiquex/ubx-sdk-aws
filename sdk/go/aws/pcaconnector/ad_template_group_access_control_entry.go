@@ -4,9 +4,7 @@ package pcaconnector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdTemplateGroupAccessControlEntry_AccessRights struct {
-	// Specifies whether the group is granted permission to automatically enroll for certificates, with allowed values 'ALLOW' or 'DENY'. (AI-inferred)
 	AutoEnroll any
-	// Sets whether the associated Active Directory group is allowed to enroll for certificates using the configured certificate template, forming the enroll access right in this template group access control entry. (AI-inferred)
 	Enroll any
 }
 
@@ -16,24 +14,16 @@ var AdTemplateGroupAccessControlEntry_AccessRightsFields = ubx.FieldMap{
 	}
 
 type AdTemplateGroupAccessControlEntryConfig struct {
-	// Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred)
 	AccessRights any
-	// Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred)
 	GroupDisplayName any
-	// Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred)
 	GroupSecurityIdentifier any
-	// The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred)
 	TemplateArn any
 }
 
 type AdTemplateGroupAccessControlEntryAttrs struct {
-	// Specifies the permissions for the group on the certificate template, including which operations are allowed or denied (such as enroll and autoenroll) via nested Allow and Deny blocks. (AI-inferred)
 	AccessRights any
-	// Specifies the display name of the Active Directory security group that this template access control entry grants certificate enrollment permissions to. (AI-inferred)
 	GroupDisplayName any
-	// Specifies the security identifier (SID) of the Active Directory group to which this access control entry grants permissions for the associated template. (AI-inferred)
 	GroupSecurityIdentifier any
-	// The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory template that this group access control entry applies to. (AI-inferred)
 	TemplateArn any
 }
 

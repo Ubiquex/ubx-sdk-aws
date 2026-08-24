@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventTracker_Tags {
-  /** The key of a user-defined tag assigned to the Amazon Personalize event tracker, used for metadata and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the Amazon Personalize event tracker, used for categorizing and managing the tracker resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

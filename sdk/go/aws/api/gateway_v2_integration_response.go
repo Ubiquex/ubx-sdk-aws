@@ -27,7 +27,6 @@ type GatewayV2IntegrationResponseAttrs struct {
 	ContentHandlingStrategy any
 	// The integration ID.
 	IntegrationId any
-	// The automatically generated identifier for this integration response, assigned by AWS when the resource is created. (AI-inferred)
 	IntegrationResponseId any
 	// The integration response key.
 	IntegrationResponseKey any

@@ -15,9 +15,7 @@ class ResourceShare_ResourceShareConfiguration:
 
 @dataclasses.dataclass
 class ResourceShare_Tags:
-    # The key of a user-defined tag attached to the AWS RAM resource share, used for cost allocation and resource categorization. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS RAM resource share, used for categorizing and managing the resource share. (AI-inferred)
     value: Any = None
 
 _ResourceShare_ResourceShareConfigurationFields = {
@@ -53,7 +51,6 @@ class ResourceShareConfig:
 class ResourceShareAttrs:
     # Specifies whether principals outside your organization in AWS Organizations can be associated with a resource share. A value of `true` lets you share with individual AWS accounts that are not in your organization. A value of `false` only has meaning if your account is a member of an AWS Organization. The default value is `true`.
     allow_external_principals: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the resource share. (AI-inferred)
     arn: Any = None
     # The date and time when the resource share was created.
     creation_time: Any = None

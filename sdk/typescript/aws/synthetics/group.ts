@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Group_Tags {
-  /** The key part of a key-value tag, used to assign metadata to the canary group for identification and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Synthetics canary group, which is a user-defined string that helps manage and identify the group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -16,9 +14,7 @@ const Group_TagsFields: FieldMap = {
 export interface GroupConfig {
   /** Name of the group. */
   name: string | Computed<string>;
-  /** Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred) */
   resourceArns?: string[] | Computed<string[]>;
-  /** Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred) */
   tags?: Group_Tags[] | Computed<Group_Tags[]>;
 }
 
@@ -27,9 +23,7 @@ export interface GroupAttrs {
   id: string;
   /** Name of the group. */
   name: string;
-  /** Specifies the ARNs of the Synthetics canaries to associate with this group, making them members of the group. (AI-inferred) */
   resourceArns: string[];
-  /** Tags are metadata labels (key-value pairs) that you can assign to the Synthetics group to help organize, identify, and manage it, with each tag defined by a key and optional value. (AI-inferred) */
   tags: Group_Tags[];
 }
 

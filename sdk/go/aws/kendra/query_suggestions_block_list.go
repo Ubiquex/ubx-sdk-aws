@@ -11,9 +11,7 @@ type QuerySuggestionsBlockList_SourceS3Path struct {
 }
 
 type QuerySuggestionsBlockList_Tags struct {
-	// The tag key for a tag assigned to the query suggestions block list, used to organize, categorize, and identify the resource within your AWS environment. (AI-inferred)
 	Key any
-	// tags.value represents the value component of a user-defined tag attached to the Amazon Kendra query suggestions block list, enabling you to assign metadata such as environment, project, or cost center for resource organization and management. (AI-inferred)
 	Value any
 }
 

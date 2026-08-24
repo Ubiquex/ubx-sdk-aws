@@ -20,9 +20,7 @@ type FrontCloudFrontOriginAccessIdentityConfig struct {
 type FrontCloudFrontOriginAccessIdentityAttrs struct {
 	// Origin access identity configuration. Send a ``GET`` request to the ``/CloudFront API version/CloudFront/identity ID/config`` resource.
 	CloudFrontOriginAccessIdentityConfig any
-	// The unique identifier assigned to the CloudFront origin access identity, which is used as the principal in S3 bucket policies and referenced in CloudFront distribution origin settings. (AI-inferred)
 	Id any
-	// The canonical user ID associated with the CloudFront origin access identity, which you can use to grant the OAI permissions to access S3 objects via a bucket policy. (AI-inferred)
 	S3CanonicalUserId any
 }
 

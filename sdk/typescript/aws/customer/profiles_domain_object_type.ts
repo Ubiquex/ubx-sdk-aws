@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesDomainObjectType_Tags {
-  /** The key of a tag attached to the AWS Customer Profiles domain object type, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

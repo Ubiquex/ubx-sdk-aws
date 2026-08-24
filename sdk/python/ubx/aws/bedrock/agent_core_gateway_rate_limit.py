@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class AgentCoreGatewayRateLimit_Entries_Connections:
     period: Any = None
-    # The sustained request rate in requests per second that the core gateway allows for this connection when the agent routes traffic through the specified rate limit entry. (AI-inferred)
     rate: Any = None
 
 @dataclasses.dataclass
@@ -51,14 +50,12 @@ class AgentCoreGatewayRateLimitConfig:
     dimension_keys: Any = None
     # Rule entries mapping dimension values to rate configurations.
     entries: Any = None
-    # The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred)
     gateway_identifier: Any = None
     # Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
     rate_limit_id: Any = None
 
 @dataclasses.dataclass
 class AgentCoreGatewayRateLimitAttrs:
-    # The timestamp at which this Bedrock agent core gateway rate limit was created. (AI-inferred)
     created_at: Any = None
     # Optional human-readable description for this limit.
     description: Any = None
@@ -66,13 +63,11 @@ class AgentCoreGatewayRateLimitAttrs:
     dimension_keys: Any = None
     # Rule entries mapping dimension values to rate configurations.
     entries: Any = None
-    # The unique identifier of the Bedrock Agent core gateway to which this rate limit is applied. (AI-inferred)
     gateway_identifier: Any = None
     # Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
     rate_limit_id: Any = None
     # Status of a gateway limit
     status: Any = None
-    # The timestamp (in ISO 8601 format) indicating when this core gateway rate limit was last modified. (AI-inferred)
     updated_at: Any = None
 
 AgentCoreGatewayRateLimit = ubx.ResourceBinding(

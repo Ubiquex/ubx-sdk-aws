@@ -17,11 +17,9 @@ class CatalogAppRegistryAttributeGroupAssociationConfig:
 class CatalogAppRegistryAttributeGroupAssociationAttrs:
     # The name or the Id of the Application.
     application: Any = None
-    # The Amazon Resource Name (ARN) of the application associated with the attribute group in this AppRegistry attribute group association. (AI-inferred)
     application_arn: Any = None
     # The name or the Id of the AttributeGroup.
     attribute_group: Any = None
-    # The Amazon Resource Name (ARN) of the attribute group that is associated with the application in AWS Service Catalog AppRegistry. (AI-inferred)
     attribute_group_arn: Any = None
 
 CatalogAppRegistryAttributeGroupAssociation = ubx.ResourceBinding(

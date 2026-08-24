@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SyncTask_Excludes {
-  /** Specifies the type of filter rule used to exclude files from the DataSync task, where the only supported value is 'SIMPLE_PATTERN' for simple pattern matching. (AI-inferred) */
   filterType?: string | Computed<string>;
-  /** Specifies a pattern value for an entry in the task's Excludes filter list, which tells DataSync which files or objects to skip during a transfer using the simple pattern matching syntax. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -74,9 +72,7 @@ export interface SyncTask_Schedule {
 }
 
 export interface SyncTask_Tags {
-  /** The key of a tag to associate with the AWS DataSync task, enabling you to categorize and manage tasks by metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of the tag assigned to the DataSync task, used for organizing and managing the task in AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -243,9 +239,7 @@ export interface SyncTaskConfig {
   cloudWatchLogGroupArn?: string | Computed<string>;
   /** The ARN of an AWS storage resource's location. */
   destinationLocationArn: string | Computed<string>;
-  /** Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred) */
   excludes?: SyncTask_Excludes[] | Computed<SyncTask_Excludes[]>;
-  /** Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred) */
   includes?: SyncTask_Excludes[] | Computed<SyncTask_Excludes[]>;
   /** Configures a manifest, which is a list of files or objects that you want DataSync to transfer. */
   manifestConfig?: SyncTask_ManifestConfig | Computed<SyncTask_ManifestConfig>;
@@ -272,9 +266,7 @@ export interface SyncTaskAttrs {
   destinationLocationArn: string;
   /** The Amazon Resource Names (ARNs) of the destination ENIs (Elastic Network Interfaces) that were created for your subnet. */
   destinationNetworkInterfaceArns: string[];
-  /** Specifies the filter rules that define which files or directories to exclude from the data transfer, using pattern-based matching to skip matching paths during the sync task. (AI-inferred) */
   excludes: SyncTask_Excludes[];
-  /** Specifies a list of filter rules that determine which files or S3 objects to include in the DataSync task, with each rule defining an Attribute (e.g., file path) and a Value pattern to match. (AI-inferred) */
   includes: SyncTask_Excludes[];
   /** Configures a manifest, which is a list of files or objects that you want DataSync to transfer. */
   manifestConfig: SyncTask_ManifestConfig;

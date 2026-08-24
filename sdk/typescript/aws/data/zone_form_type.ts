@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ZoneFormType_Model {
-  /** The Smithy model definition that specifies the structure and validation rules for the form type. (AI-inferred) */
   smithy?: string | Computed<string>;
 }
 

@@ -7,7 +7,6 @@ export interface TransitGatewayConnect_Options {
 }
 
 export interface TransitGatewayConnect_Tags {
-  /** The key of a user-defined tag assigned to the EC2 Transit Gateway Connect attachment. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -22,7 +21,6 @@ const TransitGatewayConnect_TagsFields: FieldMap = {
 };
 
 export interface TransitGatewayConnectConfig {
-  /** Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred) */
   options: TransitGatewayConnect_Options | Computed<TransitGatewayConnect_Options>;
   /** The tags for the attachment. */
   tags?: TransitGatewayConnect_Tags[] | Computed<TransitGatewayConnect_Tags[]>;
@@ -33,7 +31,6 @@ export interface TransitGatewayConnectConfig {
 export interface TransitGatewayConnectAttrs {
   /** The creation time. */
   creationTime: string;
-  /** Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred) */
   options: TransitGatewayConnect_Options;
   /** The state of the attachment. */
   state: string;

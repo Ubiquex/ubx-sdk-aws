@@ -10,15 +10,10 @@ import ubx_sdk as ubx
 class Url_Cors:
     # Specifies whether credentials are included in the CORS request.
     allow_credentials: Any = None
-    # Specifies the list of HTTP headers that are allowed in cross-origin requests to the Lambda function URL when CORS is enabled. (AI-inferred)
     allow_headers: Any = None
-    # Specifies the list of HTTP methods (e.g., GET, POST) that are allowed for cross-origin requests to the Lambda function URL. (AI-inferred)
     allow_methods: Any = None
-    # Specifies the list of origins that are allowed to make cross-origin requests to the Lambda function URL. (AI-inferred)
     allow_origins: Any = None
-    # Specifies the list of response headers that browsers and clients are allowed to access from the cross-origin response in the CORS configuration of an AWS Lambda function URL. (AI-inferred)
     expose_headers: Any = None
-    # The maximum time in seconds that the browser caches the preflight response for CORS requests to the Lambda function URL. (AI-inferred)
     max_age: Any = None
 
 _Url_CorsFields = {
@@ -34,7 +29,6 @@ _Url_CorsFields = {
 class UrlConfig:
     # Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL.
     auth_type: Any = None
-    # Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred)
     cors: Any = None
     # The invocation mode for the function's URL. Set to BUFFERED if you want to buffer responses before returning them to the client. Set to RESPONSE_STREAM if you want to stream responses, allowing faster time to first byte and larger response payload sizes. If not set, defaults to BUFFERED.
     invoke_mode: Any = None
@@ -47,7 +41,6 @@ class UrlConfig:
 class UrlAttrs:
     # Can be either AWS_IAM if the requests are authorized via IAM, or NONE if no authorization is configured on the Function URL.
     auth_type: Any = None
-    # Configures cross-origin resource sharing (CORS) settings for the Lambda function URL, specifying allowed origins, methods, headers, and other CORS options. (AI-inferred)
     cors: Any = None
     # The full Amazon Resource Name (ARN) of the function associated with the Function URL.
     function_arn: Any = None

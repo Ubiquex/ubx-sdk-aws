@@ -7,15 +7,12 @@ export interface Addon_NamespaceConfig {
 }
 
 export interface Addon_PodIdentityAssociations {
-  /** The ARN of the IAM role to associate with the Kubernetes service account for the EKS pod identity association, which grants pods that use that service account permissions to call AWS APIs. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The name of the Kubernetes service account that the addon's pod identity association will map to the specified IAM role, granting the addon permissions via that role. (AI-inferred) */
   serviceAccount?: string | Computed<string>;
 }
 
 export interface Addon_Tags {
   key?: string | Computed<string>;
-  /** The string value assigned to a tag key on the EKS addon, used to store arbitrary metadata such as environment or owner identifiers for the addon. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

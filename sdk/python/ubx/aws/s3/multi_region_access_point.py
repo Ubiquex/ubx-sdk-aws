@@ -19,9 +19,7 @@ class MultiRegionAccessPoint_PublicAccessBlockConfiguration:
 
 @dataclasses.dataclass
 class MultiRegionAccessPoint_Regions:
-    # The name of the S3 bucket to route requests to in this Region of the Multi-Region Access Point. (AI-inferred)
     bucket: Any = None
-    # The AWS account ID that owns the bucket in the specified Region for the Multi-Region Access Point. (AI-inferred)
     bucket_account_id: Any = None
 
 _MultiRegionAccessPoint_PublicAccessBlockConfigurationFields = {
@@ -40,7 +38,6 @@ _MultiRegionAccessPoint_RegionsFields = {
 class MultiRegionAccessPointConfig:
     # The name you want to assign to this Multi Region Access Point.
     name: Any = None
-    # This object configures the Multi-Region Access Point's public access block settings, allowing you to block public ACLs, ignore existing public ACLs, block public bucket policies, and restrict cross-account access to buckets with public policies. (AI-inferred)
     public_access_block_configuration: Any = None
     # The list of buckets that you want to associate this Multi Region Access Point with.
     regions: Any = None
@@ -53,7 +50,6 @@ class MultiRegionAccessPointAttrs:
     created_at: Any = None
     # The name you want to assign to this Multi Region Access Point.
     name: Any = None
-    # This object configures the Multi-Region Access Point's public access block settings, allowing you to block public ACLs, ignore existing public ACLs, block public bucket policies, and restrict cross-account access to buckets with public policies. (AI-inferred)
     public_access_block_configuration: Any = None
     # The list of buckets that you want to associate this Multi Region Access Point with.
     regions: Any = None

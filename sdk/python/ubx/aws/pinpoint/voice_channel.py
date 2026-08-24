@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VoiceChannelConfig:
-    # The unique identifier for the Amazon Pinpoint application that the voice channel is enabled for. (AI-inferred)
     application_id: Any = None
-    # Specifies whether the voice channel is enabled for sending voice messages through Amazon Pinpoint. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class VoiceChannelAttrs:
-    # The unique identifier for the Amazon Pinpoint application that the voice channel is enabled for. (AI-inferred)
     application_id: Any = None
-    # Specifies whether the voice channel is enabled for sending voice messages through Amazon Pinpoint. (AI-inferred)
     enabled: Any = None
-    # The unique identifier of the Amazon Pinpoint application that this voice channel belongs to (same value as the ApplicationId). (AI-inferred)
     id: Any = None
 
 VoiceChannel = ubx.ResourceBinding(

@@ -33,7 +33,6 @@ class SamplingRule_SamplingRule:
     rule_arn: Any = None
     # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
     rule_name: Any = None
-    # Specifies the sampling-rate boost configuration for this X-Ray sampling rule, including whether the boost is enabled, the conditions that trigger it, and the boosted sampling rate to apply when those conditions are met. (AI-inferred)
     sampling_rate_boost: Any = None
     # Matches the name that the service uses to identify itself in segments.
     service_name: Any = None
@@ -50,7 +49,6 @@ class SamplingRule_SamplingRuleRecord:
     created_at: Any = None
     # When the rule was modified, in Unix time seconds.
     modified_at: Any = None
-    # The sampling rule configuration (including rule name, priority, reservoir size, fixed rate, and service matching attributes) embedded within the sampling rule record. (AI-inferred)
     sampling_rule: Any = None
 
 @dataclasses.dataclass
@@ -83,9 +81,7 @@ class SamplingRule_SamplingRuleUpdate:
 
 @dataclasses.dataclass
 class SamplingRule_Tags:
-    # The key of a tag assigned to the AWS X-Ray sampling rule, used to categorize and manage the rule. (AI-inferred)
     key: Any = None
-    # The value component of a tag assigned to an AWS X-Ray sampling rule, used for metadata, identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _SamplingRule_SamplingRule_SamplingRateBoostFields = {
@@ -153,11 +149,8 @@ _SamplingRule_TagsFields = {
 class SamplingRuleConfig:
     # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
     rule_name: Any = None
-    # This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
     sampling_rule: Any = None
-    # The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
     sampling_rule_record: Any = None
-    # Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
     sampling_rule_update: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -168,11 +161,8 @@ class SamplingRuleAttrs:
     rule_arn: Any = None
     # The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
     rule_name: Any = None
-    # This object defines the X-Ray sampling rule's configuration, including priority, reservoir size, fixed rate, and matching criteria such as host, service, HTTP method, URL path, resource ARN, and attributes. (AI-inferred)
     sampling_rule: Any = None
-    # The sampling_rule_record field contains the complete sampling rule record, including the rule name, ARN, creation and modification timestamps, and the sampling rule's configuration details such as priority, reservoir size, and fixed rate. (AI-inferred)
     sampling_rule_record: Any = None
-    # Sampling rule update configuration for an existing AWS X-Ray sampling rule, specifying the desired changes such as reservoir size, fixed rate, and rule attributes. (AI-inferred)
     sampling_rule_update: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

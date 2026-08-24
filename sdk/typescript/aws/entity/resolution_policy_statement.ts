@@ -2,30 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResolutionPolicyStatementConfig {
-  /** The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred) */
   action?: string[] | Computed<string[]>;
   /** Arn of the resource to which the policy statement is being attached. */
   arn: string | Computed<string>;
-  /** The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred) */
   condition?: string | Computed<string>;
-  /** Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred) */
   effect?: string | Computed<string>;
-  /** Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred) */
   principal?: string[] | Computed<string[]>;
   /** The Statement Id of the policy statement that is being attached. */
   statementId: string | Computed<string>;
 }
 
 export interface ResolutionPolicyStatementAttrs {
-  /** The list of AWS Identity and Access Management (IAM) actions, such as entityresolution:CreateMatchingWorkflow, that this policy statement allows or denies for the specified Entity Resolution resource. (AI-inferred) */
   action: string[];
   /** Arn of the resource to which the policy statement is being attached. */
   arn: string;
-  /** The condition statement (a JSON-formatted string) that specifies when the policy statement takes effect, using IAM condition operators and keys such as aws:SourceAccount or aws:SourceArn. (AI-inferred) */
   condition: string;
-  /** Determines whether the policy statement allows or denies the specified actions on the Entity Resolution resource, typically specified as 'Allow' or 'Deny'. (AI-inferred) */
   effect: string;
-  /** Defines the list of AWS principals (such as IAM role ARNs, IAM user ARNs, or AWS account IDs) that the entity resolution policy statement authorizes, controlling which principals can access the associated Entity Resolution resource. (AI-inferred) */
   principal: string[];
   /** The Statement Id of the policy statement that is being attached. */
   statementId: string;

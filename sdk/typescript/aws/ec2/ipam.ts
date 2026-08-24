@@ -2,19 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions {
-  /** Sets the AWS Organizations entity path (the OU path, e.g., 'ou-1234-abcdefgh') for an organizational unit to exclude from the IPAM default resource discovery, preventing resources in that OU from being automatically discovered. (AI-inferred) */
   organizationsEntityPath?: string | Computed<string>;
 }
 
 export interface Ipam_OperatingRegions {
-  /** The name of the AWS Region in which the IPAM operates, defining one of the operating regions for the IPAM. (AI-inferred) */
   regionName?: string | Computed<string>;
 }
 
 export interface Ipam_Tags {
-  /** The key of a user-defined tag applied to the EC2 IPAM resource, used to categorize or identify the IPAM with custom metadata (e.g., 'Name' or 'Environment'). (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a user-defined tag key assigned to the EC2 IPAM resource for organizational or management purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -34,7 +30,6 @@ const Ipam_TagsFields: FieldMap = {
 export interface IpamConfig {
   /** A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM. */
   defaultResourceDiscoveryOrganizationalUnitExclusions?: Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions[] | Computed<Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions[]>;
-  /** A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred) */
   description?: string | Computed<string>;
   /** Enable provisioning of GUA space in private pools. */
   enablePrivateGua?: boolean | Computed<boolean>;
@@ -57,7 +52,6 @@ export interface IpamAttrs {
   defaultResourceDiscoveryId: string;
   /** A set of organizational unit (OU) exclusions for the default resource discovery, created with this IPAM. */
   defaultResourceDiscoveryOrganizationalUnitExclusions: Ipam_DefaultResourceDiscoveryOrganizationalUnitExclusions[];
-  /** A user-specified, free-form text description of the IP address manager (IPAM) used to identify it in the AWS console and APIs. (AI-inferred) */
   description: string;
   /** Enable provisioning of GUA space in private pools. */
   enablePrivateGua: boolean;

@@ -4,51 +4,37 @@ package step
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FunctionsStateMachine_DefinitionS3Location struct {
-	// The name of the Amazon S3 bucket that contains the state machine definition file (the JSON or YAML file referenced by the Key in the same DefinitionS3Location property). (AI-inferred)
 	Bucket any
-	// The S3 object key of the state machine definition file, located within the bucket specified by the sibling 'bucket' field of the same 'definition_s3_location' object. (AI-inferred)
 	Key any
-	// The version ID of the S3 object that contains the state machine definition. (AI-inferred)
 	Version any
 }
 
 type FunctionsStateMachine_EncryptionConfiguration struct {
-	// Specifies the maximum time, in seconds, that Step Functions reuses a KMS data key before it must request a new one from the customer managed key for encrypting state machine data at rest. (AI-inferred)
 	KmsDataKeyReusePeriodSeconds any
-	// Specifies the AWS KMS key ID, ARN, or alias used to encrypt state machine data when you enable a customer-managed encryption key for the state machine. (AI-inferred)
 	KmsKeyId any
-	// Determines whether the state machine uses AWS-owned encryption or a customer-managed KMS key for encrypting execution data at rest. (AI-inferred)
 	Type any
 }
 
 type FunctionsStateMachine_LoggingConfiguration_Destinations_CloudWatchLogsLogGroup struct {
-	// The ARN of the CloudWatch Logs log group where Step Functions writes execution history and runtime output for the state machine. (AI-inferred)
 	LogGroupArn any
 }
 
 type FunctionsStateMachine_LoggingConfiguration_Destinations struct {
-	// Specifies the CloudWatch Logs log group (via its ARN) to which the state machine sends execution history and execution-level logs when logging is enabled. (AI-inferred)
 	CloudWatchLogsLogGroup any
 }
 
 type FunctionsStateMachine_LoggingConfiguration struct {
-	// Specifies the list of log destinations, such as CloudWatch Logs log groups, where execution history logs for the state machine are delivered. (AI-inferred)
 	Destinations any
-	// Specifies whether the state machine's execution data (input and output) is included in the CloudWatch Logs log entries for the logging configuration. (AI-inferred)
 	IncludeExecutionData any
-	// Specifies the verbosity level of execution data recorded in CloudWatch Logs, with valid values OFF, ALL, ERROR, and FATAL. (AI-inferred)
 	Level any
 }
 
 type FunctionsStateMachine_Tags struct {
-	// The key (name) of a user-defined tag applied to the AWS Step Functions state machine, used to organize, identify, and control access to the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the Step Functions state machine, which can be used for cost allocation, access control, and operational grouping. (AI-inferred)
 	Value any
 }
 
 type FunctionsStateMachine_TracingConfiguration struct {
-	// When set to true, enables AWS X-Ray tracing for the state machine execution, allowing you to trace and analyze the execution steps. (AI-inferred)
 	Enabled any
 }
 
@@ -96,58 +82,33 @@ var FunctionsStateMachine_TracingConfigurationFields = ubx.FieldMap{
 	}
 
 type FunctionsStateMachineConfig struct {
-	// The Amazon States Language definition, a JSON or YAML string that specifies the state machine's states, transitions, and execution logic. (AI-inferred)
 	Definition any
-	// Specifies the S3 bucket and key (and optional version) from which the Amazon States Language definition of the state machine is loaded. (AI-inferred)
 	DefinitionS3Location any
-	// Specifies the Amazon States Language (ASL) definition of the Step Functions state machine as a JSON string. (AI-inferred)
 	DefinitionString any
-	// Provides key-value pairs that substitute variables in the state machine definition string, allowing the same definition to be reused across environments by replacing ${key} placeholders. (AI-inferred)
 	DefinitionSubstitutions any
-	// Configures encryption for the state machine's data, allowing you to specify either an AWS-owned key or a customer-managed AWS KMS key via the `kmsKeyId` and `type` properties. (AI-inferred)
 	EncryptionConfiguration any
-	// Specifies the logging configuration for the Step Functions state machine, including the log level (e.g., ALL or ERROR), whether execution data is included in logs, and the destination CloudWatch Logs log group for capturing execution history. (AI-inferred)
 	LoggingConfiguration any
-	// The Amazon Resource Name (ARN) of the IAM role that AWS Step Functions assumes to execute the state machine's tasks. (AI-inferred)
 	RoleArn any
-	// Specifies the name of the state machine, which must be unique within your AWS account and region and is used to identify the state machine in AWS Step Functions. (AI-inferred)
 	StateMachineName any
-	// Specifies whether the state machine is a STANDARD or EXPRESS workflow type. (AI-inferred)
 	StateMachineType any
-	// A list of key-value pairs that you can associate with the Step Functions state machine to help categorize, manage, and control access to the resource, such as for cost allocation or IAM policies. (AI-inferred)
 	Tags any
-	// Configures AWS X-Ray tracing for the state machine by setting the 'Enabled' flag, which controls whether trace data is collected for executions. (AI-inferred)
 	TracingConfiguration any
 }
 
 type FunctionsStateMachineAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Step Functions state machine. (AI-inferred)
 	Arn any
-	// The Amazon States Language definition, a JSON or YAML string that specifies the state machine's states, transitions, and execution logic. (AI-inferred)
 	Definition any
-	// Specifies the S3 bucket and key (and optional version) from which the Amazon States Language definition of the state machine is loaded. (AI-inferred)
 	DefinitionS3Location any
-	// Specifies the Amazon States Language (ASL) definition of the Step Functions state machine as a JSON string. (AI-inferred)
 	DefinitionString any
-	// Provides key-value pairs that substitute variables in the state machine definition string, allowing the same definition to be reused across environments by replacing ${key} placeholders. (AI-inferred)
 	DefinitionSubstitutions any
-	// Configures encryption for the state machine's data, allowing you to specify either an AWS-owned key or a customer-managed AWS KMS key via the `kmsKeyId` and `type` properties. (AI-inferred)
 	EncryptionConfiguration any
-	// Specifies the logging configuration for the Step Functions state machine, including the log level (e.g., ALL or ERROR), whether execution data is included in logs, and the destination CloudWatch Logs log group for capturing execution history. (AI-inferred)
 	LoggingConfiguration any
-	// The name of the Step Functions state machine, which is automatically generated by AWS if not explicitly configured and must be unique within the AWS account and region. (AI-inferred)
 	Name any
-	// The Amazon Resource Name (ARN) of the IAM role that AWS Step Functions assumes to execute the state machine's tasks. (AI-inferred)
 	RoleArn any
-	// Specifies the name of the state machine, which must be unique within your AWS account and region and is used to identify the state machine in AWS Step Functions. (AI-inferred)
 	StateMachineName any
-	// The revision identifier for the state machine, which changes each time the state machine definition is updated. (AI-inferred)
 	StateMachineRevisionId any
-	// Specifies whether the state machine is a STANDARD or EXPRESS workflow type. (AI-inferred)
 	StateMachineType any
-	// A list of key-value pairs that you can associate with the Step Functions state machine to help categorize, manage, and control access to the resource, such as for cost allocation or IAM policies. (AI-inferred)
 	Tags any
-	// Configures AWS X-Ray tracing for the state machine by setting the 'Enabled' flag, which controls whether trace data is collected for executions. (AI-inferred)
 	TracingConfiguration any
 }
 

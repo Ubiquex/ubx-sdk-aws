@@ -15,9 +15,7 @@ class EquipmentInferenceScheduler_DataInputConfiguration_InferenceInputNameConfi
 
 @dataclasses.dataclass
 class EquipmentInferenceScheduler_DataInputConfiguration_S3InputConfiguration:
-    # The name of the S3 bucket that contains the sensor or equipment data used as input for the inference scheduler. (AI-inferred)
     bucket: Any = None
-    # The S3 key prefix under the input bucket that identifies the sensor data files used by the inference scheduler for running model inferences. (AI-inferred)
     prefix: Any = None
 
 @dataclasses.dataclass
@@ -38,9 +36,7 @@ class EquipmentInferenceScheduler_DataOutputConfiguration:
 
 @dataclasses.dataclass
 class EquipmentInferenceScheduler_Tags:
-    # The key portion of a tag attached to the inference scheduler. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair that can be attached to the Lookout for Equipment inference scheduler, used for custom metadata, resource grouping, and cost allocation. (AI-inferred)
     value: Any = None
 
 _EquipmentInferenceScheduler_DataInputConfiguration_InferenceInputNameConfigurationFields = {

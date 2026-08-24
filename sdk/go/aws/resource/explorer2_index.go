@@ -5,17 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Explorer2IndexConfig struct {
 	Tags any
-	// Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred)
 	Type any
 }
 
 type Explorer2IndexAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the Resource Explorer index, assigned by AWS when the index is created. (AI-inferred)
 	Arn any
-	// The current lifecycle state of the index, such as ACTIVE, CREATING, UPDATING, or DELETING, as reported by AWS Resource Explorer. (AI-inferred)
 	IndexState any
 	Tags any
-	// Specifies the index type, either LOCAL (indexes resources in your account and region) or AGGREGATOR (aggregates indices from multiple accounts and regions). (AI-inferred)
 	Type any
 }
 

@@ -4,50 +4,29 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TwirelessDeviceProfile_LoRaWan struct {
-	// Specifies the Class B timeout in seconds for the LoRaWAN device profile. (AI-inferred)
 	ClassBtimeout any
-	// The Class C timeout in seconds for the LoRaWAN device profile, used to configure the receive window timeout for Class C devices. (AI-inferred)
 	ClassCtimeout any
-	// Specifies a list of factory preset frequencies for the LoRaWAN device profile, which the device uses during radio configuration. (AI-inferred)
 	FactoryPresetFreqsList any
-	// The LoRaWAN MAC version of the device profile, such as 1.0.3 or 1.1, which determines the LoRaWAN specification compliance for the device. (AI-inferred)
 	MacVersion any
-	// Sets the maximum duty cycle, as a percentage of time the LoRaWAN device may transmit, to limit channel occupancy. (AI-inferred)
 	MaxDutyCycle any
-	// The maximum Effective Isotropic Radiated Power (EIRP) in dBm that the LoRaWAN device is permitted to transmit with, as configured in the LoRaWAN device profile. (AI-inferred)
 	MaxEirp any
-	// Ping slot data rate for the LoRaWAN Class B mode, determining the transmission data rate used in the device's periodic ping slots. (AI-inferred)
 	PingSlotDr any
-	// Sets the frequency (in MHz) used by the LoRaWAN Class B mode for the periodic ping slot on the device profile. (AI-inferred)
 	PingSlotFreq any
-	// Sets the periodicity of LoRaWAN Class B ping slots in the device profile, controlling how frequently the device opens receive windows for downlink messages. (AI-inferred)
 	PingSlotPeriod any
-	// The revision of the regional parameters document used by the LoRaWAN device profile (e.g., '2017-01-01' or '2020-04-15'), which determines the applicable regional LoRaWAN specification version for the device. (AI-inferred)
 	RegParamsRevision any
-	// Specifies the RF region (e.g., US915, EU868) for the LoRaWAN radio, defining the frequency band used for device communication in the device profile. (AI-inferred)
 	RfRegion any
-	// Configures the data rate index for the second receive window (RX2) in LoRaWAN, which the device uses for downlink traffic when it does not receive a response in the first receive window. (AI-inferred)
 	RxDataRate2 any
-	// Sets the RX1 delay (in seconds) for the LoRaWAN device profile, which determines how long after an uplink transmission the device opens its first receive window for downlink messages. (AI-inferred)
 	RxDelay1 any
-	// Sets the data rate offset for the first receive window (RX1) in LoRaWAN, used to compute the RX1 downlink data rate from the uplink data rate in adaptive data rate mode. (AI-inferred)
 	RxDrOffset1 any
-	// The frequency (in Hz) for the second receive window (RX2) in LoRaWAN, used for downlink transmissions when the device uses this receive window. (AI-inferred)
 	RxFreq2 any
-	// Indicates whether the LoRaWAN device profile supports 32-bit frame counters, allowing devices to use a larger frame counter value for reliable over-the-air activation and message integrity. (AI-inferred)
 	Supports32BitFcnt any
-	// Indicates whether the LoRaWAN device profile supports Class B, enabling scheduled downlink communication using beacon synchronization. (AI-inferred)
 	SupportsClassB any
-	// Specifies whether the LoRaWAN device profile supports Class C mode, allowing the device to continuously listen for downlink communications rather than opening receive windows only after uplink transmissions. (AI-inferred)
 	SupportsClassC any
-	// Specifies whether the LoRaWAN device supports joining a network via Over-the-Air Activation (OTAA), enabling the Join procedure to obtain network credentials. (AI-inferred)
 	SupportsJoin any
 }
 
 type TwirelessDeviceProfile_Tags struct {
-	// Key of a user-defined tag attached to the IoT Wireless device profile, used to identify, organize, and filter the resource in AWS IoT Wireless. (AI-inferred)
 	Key any
-	// The value portion of a key-value tag that can be assigned to the AWS IoT Wireless device profile for metadata and resource organization. (AI-inferred)
 	Value any
 }
 
@@ -79,7 +58,6 @@ var TwirelessDeviceProfile_TagsFields = ubx.FieldMap{
 	}
 
 type TwirelessDeviceProfileConfig struct {
-	// The lo_ra_wan field configures LoRaWAN-specific parameters for the device profile, including whether the device supports Class B and Class C modes. (AI-inferred)
 	LoRaWan any
 	// Name of service profile
 	Name any
@@ -92,7 +70,6 @@ type TwirelessDeviceProfileAttrs struct {
 	Arn any
 	// Service profile Id. Returned after successful create.
 	Id any
-	// The lo_ra_wan field configures LoRaWAN-specific parameters for the device profile, including whether the device supports Class B and Class C modes. (AI-inferred)
 	LoRaWan any
 	// Name of service profile
 	Name any

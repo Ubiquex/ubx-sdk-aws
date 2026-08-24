@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AcceleratorAccelerator_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag attached to the accelerator, used to categorize and manage the resource as a user-defined string. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -27,7 +26,6 @@ export interface AcceleratorAcceleratorConfig {
   ipAddresses?: string[] | Computed<string[]>;
   /** Name of accelerator. */
   name: string | Computed<string>;
-  /** Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred) */
   tags?: AcceleratorAccelerator_Tags[] | Computed<AcceleratorAccelerator_Tags[]>;
 }
 
@@ -56,7 +54,6 @@ export interface AcceleratorAcceleratorAttrs {
   ipv6Addresses: string[];
   /** Name of accelerator. */
   name: string;
-  /** Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred) */
   tags: AcceleratorAccelerator_Tags[];
 }
 

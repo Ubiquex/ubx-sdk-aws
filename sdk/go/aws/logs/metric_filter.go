@@ -4,24 +4,16 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricFilter_MetricTransformations_Dimensions struct {
-	// The name/key of a dimension that is attached to the metric emitted by this CloudWatch Logs metric filter, used to segment the metric data. (AI-inferred)
 	Key any
-	// The value of the dimension, which can be a literal string or a JSON path expression (e.g., $.eventType) used to extract a value from the log event and attach it as a dimension to the metric. (AI-inferred)
 	Value any
 }
 
 type MetricFilter_MetricTransformations struct {
-	// Specifies the default value to assign to the CloudWatch metric when a log event matches the filter pattern but no metric value can be extracted from the log data. (AI-inferred)
 	DefaultValue any
-	// Specifies the dimensions for the metric filter, where each dimension object contains a Key and Value that define a dimension on which to group the metric data. (AI-inferred)
 	Dimensions any
-	// The name of the CloudWatch metric that the metric filter publishes matching log events to. (AI-inferred)
 	MetricName any
-	// The CloudWatch namespace under which the extracted metric is published by this metric filter transformation. (AI-inferred)
 	MetricNamespace any
-	// The value to publish for the metric, which can be a literal number or a JSON expression (like '$.field') evaluated from the matched log event and sent to CloudWatch Metrics. (AI-inferred)
 	MetricValue any
-	// The unit of measure for the metric value (e.g., Seconds, Bytes, Count) that CloudWatch uses to interpret and display the metric's data, aligning with standard AWS unit enums. (AI-inferred)
 	Unit any
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbDbcluster_ServerlessV2ScalingConfiguration:
-    # The maximum number of DocumentDB capacity units (DCUs) that the serverless v2 cluster can scale up to, setting the upper bound for compute and memory capacity. (AI-inferred)
     max_capacity: Any = None
-    # The minimum capacity in Amazon Capacity Units (ACUs) that the DocumentDB Serverless v2 cluster can scale down to. (AI-inferred)
     min_capacity: Any = None
 
 @dataclasses.dataclass
@@ -30,134 +28,72 @@ _DbDbcluster_TagsFields = {
 
 @dataclasses.dataclass
 class DbDbclusterConfig:
-    # The list of Availability Zones where the cluster's instances are distributed, enabling multi-AZ deployment for high availability. (AI-inferred)
     availability_zones: Any = None
-    # The number of days for which automated backups of the DocumentDB cluster are retained. (AI-inferred)
     backup_retention_period: Any = None
-    # Indicates whether to copy all tags from the DB cluster to snapshots of the cluster, so that the snapshots inherit the cluster's tags. (AI-inferred)
     copy_tags_to_snapshot: Any = None
-    # Specifies a unique identifier for the DB cluster, which is stored as a lowercase string and used as the cluster's name. (AI-inferred)
     dbcluster_identifier: Any = None
-    # The name of the DocumentDB cluster parameter group to associate with this DB cluster, which contains engine configuration values applied to all instances in the cluster. (AI-inferred)
     dbcluster_parameter_group_name: Any = None
-    # The name of the DB subnet group the DocumentDB cluster uses, which must contain subnets in at least two Availability Zones. (AI-inferred)
     dbsubnet_group_name: Any = None
-    # When set to true, deletion protection is enabled for this DocumentDB cluster, preventing the cluster from being deleted via the AWS Management Console or API until deletion protection is explicitly disabled. (AI-inferred)
     deletion_protection: Any = None
-    # Specifies the log types (for example, 'audit' or 'profiler') that the DocumentDB cluster exports to Amazon CloudWatch Logs. (AI-inferred)
     enable_cloudwatch_logs_exports: Any = None
-    # Specifies the version number of the database engine (e.g., '4.0', '5.0') to use for the DocumentDB cluster. (AI-inferred)
     engine_version: Any = None
-    # The identifier of the Amazon DocumentDB global cluster to which this DB cluster belongs, used to join a cluster to a global cluster that spans multiple regions. (AI-inferred)
     global_cluster_identifier: Any = None
-    # The AWS KMS key ID or ARN used to encrypt the storage for this DocumentDB cluster. (AI-inferred)
     kms_key_id: Any = None
-    # Indicates whether the master user password is managed by AWS Secrets Manager, enabling automatic rotation and secure retrieval. (AI-inferred)
     manage_master_user_password: Any = None
-    # The password for the master database user used to authenticate and manage the Amazon DocumentDB cluster, required when creating a new cluster unless you are restoring from a snapshot. (AI-inferred)
     master_user_password: Any = None
-    # The AWS KMS key identifier used to encrypt the master user password stored as a secret in AWS Secrets Manager, where omitting it defaults to the aws/secretsmanager key. (AI-inferred)
     master_user_secret_kms_key_id: Any = None
-    # The master username for the DocumentDB cluster, used to authenticate as the administrative user. (AI-inferred)
     master_username: Any = None
-    # Specifies the network type for the cluster, either IPV4 for IPv4 only or DUAL to support both IPv4 and IPv6 addressing. (AI-inferred)
     network_type: Any = None
-    # The port number on which the DocumentDB DB cluster accepts connections, defaulting to 27017. (AI-inferred)
     port: Any = None
-    # The daily time range, in UTC and 24-hour format (HH24:MI-HH24:MI), during which automated backups are created for the DocumentDB cluster. (AI-inferred)
     preferred_backup_window: Any = None
-    # The weekly time range (in UTC) during which system maintenance, such as patching, may occur on the Amazon DocumentDB cluster, specified in the format ddd:hh24:mi-ddd:hh24:mi (e.g., Mon:00:00-Mon:03:00). (AI-inferred)
     preferred_maintenance_window: Any = None
-    # Specifies the UTC time (in ISO 8601 format) to restore the DB cluster to, when performing a point-in-time restore. (AI-inferred)
     restore_to_time: Any = None
-    # Specifies the type of restore to perform when creating the DB cluster from a snapshot or point-in-time backup, with allowed values typically being 'full' or 'copy-on-write'. (AI-inferred)
     restore_type: Any = None
-    # Indicates whether to rotate the master user password for the DocumentDB cluster; enabling this triggers generation of a new password stored as a secret in AWS Secrets Manager. (AI-inferred)
     rotate_master_user_password: Any = None
-    # Configures the minimum and maximum Amazon DocumentDB capacity units (ACUs) for a DocumentDB cluster running in Serverless v2 mode. (AI-inferred)
     serverless_v2_scaling_configuration: Any = None
-    # The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
     snapshot_identifier: Any = None
     source_dbcluster_identifier: Any = None
-    # Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
     storage_encrypted: Any = None
-    # Selects the storage configuration for the DocumentDB cluster, where 'standard' uses general-purpose SSD storage and 'iopt1' uses I/O-Optimized storage with dedicated IOPS pricing. (AI-inferred)
     storage_type: Any = None
-    # A list of key-value tags to attach to the DocumentDB cluster for identification and resource management. (AI-inferred)
     tags: Any = None
-    # When performing a point-in-time restore, this boolean determines whether to restore the DB cluster to the latest restorable time; if true, `restore_to_time` must be omitted, and a source cluster identifier is required. (AI-inferred)
     use_latest_restorable_time: Any = None
-    # The list of VPC security group IDs to associate with the DocumentDB cluster, controlling which network security groups can access the cluster. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 @dataclasses.dataclass
 class DbDbclusterAttrs:
-    # The list of Availability Zones where the cluster's instances are distributed, enabling multi-AZ deployment for high availability. (AI-inferred)
     availability_zones: Any = None
-    # The number of days for which automated backups of the DocumentDB cluster are retained. (AI-inferred)
     backup_retention_period: Any = None
-    # The unique cluster resource identifier assigned by AWS when the DocDB cluster is created, used to construct the cluster ARN. (AI-inferred)
     cluster_resource_id: Any = None
-    # Indicates whether to copy all tags from the DB cluster to snapshots of the cluster, so that the snapshots inherit the cluster's tags. (AI-inferred)
     copy_tags_to_snapshot: Any = None
-    # Specifies a unique identifier for the DB cluster, which is stored as a lowercase string and used as the cluster's name. (AI-inferred)
     dbcluster_identifier: Any = None
-    # The name of the DocumentDB cluster parameter group to associate with this DB cluster, which contains engine configuration values applied to all instances in the cluster. (AI-inferred)
     dbcluster_parameter_group_name: Any = None
-    # The name of the DB subnet group the DocumentDB cluster uses, which must contain subnets in at least two Availability Zones. (AI-inferred)
     dbsubnet_group_name: Any = None
-    # When set to true, deletion protection is enabled for this DocumentDB cluster, preventing the cluster from being deleted via the AWS Management Console or API until deletion protection is explicitly disabled. (AI-inferred)
     deletion_protection: Any = None
-    # Specifies the log types (for example, 'audit' or 'profiler') that the DocumentDB cluster exports to Amazon CloudWatch Logs. (AI-inferred)
     enable_cloudwatch_logs_exports: Any = None
-    # The endpoint is the read-only primary connection hostname for the DocumentDB cluster, used to connect applications to the cluster's primary instance. (AI-inferred)
     endpoint: Any = None
-    # Specifies the version number of the database engine (e.g., '4.0', '5.0') to use for the DocumentDB cluster. (AI-inferred)
     engine_version: Any = None
-    # The identifier of the Amazon DocumentDB global cluster to which this DB cluster belongs, used to join a cluster to a global cluster that spans multiple regions. (AI-inferred)
     global_cluster_identifier: Any = None
-    # The cluster's unique identifier, which corresponds to the DB cluster's name as specified at creation time. (AI-inferred)
     id: Any = None
-    # The AWS KMS key ID or ARN used to encrypt the storage for this DocumentDB cluster. (AI-inferred)
     kms_key_id: Any = None
-    # Indicates whether the master user password is managed by AWS Secrets Manager, enabling automatic rotation and secure retrieval. (AI-inferred)
     manage_master_user_password: Any = None
-    # The password for the master database user used to authenticate and manage the Amazon DocumentDB cluster, required when creating a new cluster unless you are restoring from a snapshot. (AI-inferred)
     master_user_password: Any = None
-    # The AWS KMS key identifier used to encrypt the master user password stored as a secret in AWS Secrets Manager, where omitting it defaults to the aws/secretsmanager key. (AI-inferred)
     master_user_secret_kms_key_id: Any = None
-    # The master username for the DocumentDB cluster, used to authenticate as the administrative user. (AI-inferred)
     master_username: Any = None
-    # Specifies the network type for the cluster, either IPV4 for IPv4 only or DUAL to support both IPv4 and IPv6 addressing. (AI-inferred)
     network_type: Any = None
-    # The port number on which the DocumentDB DB cluster accepts connections, defaulting to 27017. (AI-inferred)
     port: Any = None
-    # The daily time range, in UTC and 24-hour format (HH24:MI-HH24:MI), during which automated backups are created for the DocumentDB cluster. (AI-inferred)
     preferred_backup_window: Any = None
-    # The weekly time range (in UTC) during which system maintenance, such as patching, may occur on the Amazon DocumentDB cluster, specified in the format ddd:hh24:mi-ddd:hh24:mi (e.g., Mon:00:00-Mon:03:00). (AI-inferred)
     preferred_maintenance_window: Any = None
-    # The reader endpoint for the DocumentDB cluster, which routes read connections to available replica instances. (AI-inferred)
     read_endpoint: Any = None
-    # Specifies the UTC time (in ISO 8601 format) to restore the DB cluster to, when performing a point-in-time restore. (AI-inferred)
     restore_to_time: Any = None
-    # Specifies the type of restore to perform when creating the DB cluster from a snapshot or point-in-time backup, with allowed values typically being 'full' or 'copy-on-write'. (AI-inferred)
     restore_type: Any = None
-    # Indicates whether to rotate the master user password for the DocumentDB cluster; enabling this triggers generation of a new password stored as a secret in AWS Secrets Manager. (AI-inferred)
     rotate_master_user_password: Any = None
-    # Configures the minimum and maximum Amazon DocumentDB capacity units (ACUs) for a DocumentDB cluster running in Serverless v2 mode. (AI-inferred)
     serverless_v2_scaling_configuration: Any = None
-    # The identifier of an existing DB cluster snapshot to restore the cluster from when creating it. (AI-inferred)
     snapshot_identifier: Any = None
     source_dbcluster_identifier: Any = None
-    # Indicates whether the DB cluster's storage is encrypted at rest, using AWS Key Management Service (KMS) keys. (AI-inferred)
     storage_encrypted: Any = None
-    # Selects the storage configuration for the DocumentDB cluster, where 'standard' uses general-purpose SSD storage and 'iopt1' uses I/O-Optimized storage with dedicated IOPS pricing. (AI-inferred)
     storage_type: Any = None
-    # A list of key-value tags to attach to the DocumentDB cluster for identification and resource management. (AI-inferred)
     tags: Any = None
-    # When performing a point-in-time restore, this boolean determines whether to restore the DB cluster to the latest restorable time; if true, `restore_to_time` must be omitted, and a source cluster identifier is required. (AI-inferred)
     use_latest_restorable_time: Any = None
-    # The list of VPC security group IDs to associate with the DocumentDB cluster, controlling which network security groups can access the cluster. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 DbDbcluster = ubx.ResourceBinding(

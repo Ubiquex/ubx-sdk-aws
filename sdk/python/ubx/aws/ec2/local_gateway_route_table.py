@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocalGatewayRouteTable_Tags:
-    # The key of a user-defined tag that can be attached to an EC2 Local Gateway Route Table for resource identification and management. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -23,7 +22,6 @@ class LocalGatewayRouteTableConfig:
     local_gateway_id: Any = None
     # The mode of the local gateway route table.
     mode: Any = None
-    # A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -42,7 +40,6 @@ class LocalGatewayRouteTableAttrs:
     owner_id: Any = None
     # The state of the local gateway route table.
     state: Any = None
-    # A list of key-value pairs to associate with the local gateway route table for identification and categorization, where each object consists of a Key and a Value string. (AI-inferred)
     tags: Any = None
 
 LocalGatewayRouteTable = ubx.ResourceBinding(

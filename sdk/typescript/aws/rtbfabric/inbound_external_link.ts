@@ -9,7 +9,6 @@ export interface InboundExternalLink_LinkAttributes_ResponderErrorMasking {
 }
 
 export interface InboundExternalLink_LinkAttributes {
-  /** In the AWS RTB Fabric inbound external link, the customer_provided_id field within link_attributes is a customer-assigned string identifier for the link, intended for the customer's own tracking and correlation purposes. (AI-inferred) */
   customerProvidedId?: string | Computed<string>;
   responderErrorMasking?: InboundExternalLink_LinkAttributes_ResponderErrorMasking[] | Computed<InboundExternalLink_LinkAttributes_ResponderErrorMasking[]>;
 }
@@ -77,7 +76,6 @@ const InboundExternalLink_TagsFields: FieldMap = {
 export interface InboundExternalLinkConfig {
   gatewayId: string | Computed<string>;
   linkAttributes?: InboundExternalLink_LinkAttributes | Computed<InboundExternalLink_LinkAttributes>;
-  /** Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred) */
   linkLogSettings: InboundExternalLink_LinkLogSettings | Computed<InboundExternalLink_LinkLogSettings>;
   /** Tags to assign to the Link. */
   tags?: InboundExternalLink_Tags[] | Computed<InboundExternalLink_Tags[]>;
@@ -90,13 +88,10 @@ export interface InboundExternalLinkAttrs {
   gatewayId: string;
   linkAttributes: InboundExternalLink_LinkAttributes;
   linkId: string;
-  /** Specifies the logging configuration for the inbound external link, including the destination where log records are delivered and the level of detail captured for link activity. (AI-inferred) */
   linkLogSettings: InboundExternalLink_LinkLogSettings;
-  /** The read-only link_status attribute reports the current lifecycle state of the inbound external link (for example, ACTIVE or INACTIVE) as maintained by the AWS RTB Fabric service. (AI-inferred) */
   linkStatus: string;
   /** Tags to assign to the Link. */
   tags: InboundExternalLink_Tags[];
-  /** This computed string is the timestamp indicating when the inbound external link was last updated. (AI-inferred) */
   updatedTimestamp: string;
 }
 

@@ -23,11 +23,8 @@ const DbproxyTargetGroup_ConnectionPoolConfigurationInfoFields: FieldMap = {
 };
 
 export interface DbproxyTargetGroupConfig {
-  /** Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred) */
   connectionPoolConfigurationInfo?: DbproxyTargetGroup_ConnectionPoolConfigurationInfo | Computed<DbproxyTargetGroup_ConnectionPoolConfigurationInfo>;
-  /** A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred) */
   dbclusterIdentifiers?: string[] | Computed<string[]>;
-  /** Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred) */
   dbinstanceIdentifiers?: string[] | Computed<string[]>;
   /** The identifier for the proxy. */
   dbproxyName: string | Computed<string>;
@@ -36,11 +33,8 @@ export interface DbproxyTargetGroupConfig {
 }
 
 export interface DbproxyTargetGroupAttrs {
-  /** Configures the connection pool for the DB proxy target group, including maximum connections percentage, maximum idle connections percentage, connection borrow timeout, and session pinning filters. (AI-inferred) */
   connectionPoolConfigurationInfo: DbproxyTargetGroup_ConnectionPoolConfigurationInfo;
-  /** A list of identifiers of Aurora DB clusters that this RDS Proxy target group is associated with, enabling the proxy to route database connections to the specified clusters. (AI-inferred) */
   dbclusterIdentifiers: string[];
-  /** Specifies the list of identifiers for the RDS DB instances that are associated with this DB proxy target group. (AI-inferred) */
   dbinstanceIdentifiers: string[];
   /** The identifier for the proxy. */
   dbproxyName: string;

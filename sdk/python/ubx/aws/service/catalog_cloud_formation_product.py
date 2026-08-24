@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogCloudFormationProduct_ProvisioningArtifactParameters_Info:
-    # Specifies the physical ID (such as an Amazon S3 object ARN) of an existing CloudFormation template to import as the provisioning artifact, used instead of a template URL to reference the template directly by its resource identification. (AI-inferred)
     import_from_physical_id: Any = None
-    # Specifies the URL from which the CloudFormation template for this provisioning artifact is loaded. (AI-inferred)
     load_template_from_url: Any = None
 
 @dataclasses.dataclass
 class CatalogCloudFormationProduct_ProvisioningArtifactParameters:
-    # Provides a user-friendly description of this provisioning artifact (a version of the product's CloudFormation template), which is displayed to end users in the AWS Service Catalog console when they view or launch the product. (AI-inferred)
     description: Any = None
-    # If set to true, disables AWS Service Catalog's validation of the CloudFormation template associated with this provisioning artifact, allowing the product to be created without the service checking the template's syntax or resource definitions. (AI-inferred)
     disable_template_validation: Any = None
-    # Specifies the template source information for the provisioning artifact, such as the S3 URL (via the LoadTemplateFromURL key) where the CloudFormation template is stored. (AI-inferred)
     info: Any = None
-    # The name of the provisioning artifact, displayed as the version name for this CloudFormation product in Service Catalog. (AI-inferred)
     name: Any = None
-    # The type of provisioning artifact, which can be CLOUD_FORMATION_TEMPLATE, MARKETPLACE, or TERRAFORM, and dictates whether the product template is a CloudFormation template, AWS Marketplace artifact, or Terraform configuration. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -39,7 +32,6 @@ class CatalogCloudFormationProduct_SourceConnection_ConnectionParameters_CodeSta
 
 @dataclasses.dataclass
 class CatalogCloudFormationProduct_SourceConnection_ConnectionParameters:
-    # Provides the CodeStar-specific connection details (such as the CodeStar connection ARN, repository branch, and repository path) used by the Service Catalog product to import its template from a source repository. (AI-inferred)
     code_star: Any = None
 
 @dataclasses.dataclass
@@ -51,9 +43,7 @@ class CatalogCloudFormationProduct_SourceConnection:
 
 @dataclasses.dataclass
 class CatalogCloudFormationProduct_Tags:
-    # The key of a tag to assign to the Service Catalog CloudFormation product. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS Service Catalog CloudFormation product, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _CatalogCloudFormationProduct_ProvisioningArtifactParameters_InfoFields = {
@@ -120,7 +110,6 @@ class CatalogCloudFormationProductConfig:
     provisioning_artifact_parameters: Any = None
     # This property is turned off by default. If turned off, you can update provisioning artifacts or product attributes (such as description, distributor, name, owner, and more) and the associated provisioning artifacts will retain the same unique identifier. Provisioning artifacts are matched within the CloudFormationProduct resource, and only those that have been updated will be changed. Provisioning artifacts are matched by a combinaton of provisioning artifact template URL and name.
     replace_provisioning_artifacts: Any = None
-    # Defines the connection to an external source repository (such as AWS CodeStar or GitHub) from which the CloudFormation template for the product is retrieved, including repository details, branch, and folder. (AI-inferred)
     source_connection: Any = None
     # The support information about the product.
     support_description: Any = None
@@ -157,7 +146,6 @@ class CatalogCloudFormationProductAttrs:
     provisioning_artifact_parameters: Any = None
     # This property is turned off by default. If turned off, you can update provisioning artifacts or product attributes (such as description, distributor, name, owner, and more) and the associated provisioning artifacts will retain the same unique identifier. Provisioning artifacts are matched within the CloudFormationProduct resource, and only those that have been updated will be changed. Provisioning artifacts are matched by a combinaton of provisioning artifact template URL and name.
     replace_provisioning_artifacts: Any = None
-    # Defines the connection to an external source repository (such as AWS CodeStar or GitHub) from which the CloudFormation template for the product is retrieved, including repository details, branch, and folder. (AI-inferred)
     source_connection: Any = None
     # The support information about the product.
     support_description: Any = None

@@ -8,15 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TransitGatewayConnectPeer_ConnectPeerConfiguration_BgpConfigurations:
-    # BGP status of the Connect Peer's BGP session, indicating whether the Border Gateway Protocol session is up or down. (AI-inferred)
     bgp_status: Any = None
-    # The IP address of the BGP peer used for establishing BGP sessions with the Transit Gateway Connect Peer. (AI-inferred)
     peer_address: Any = None
-    # Specifies the autonomous system number (ASN) of the BGP peer for the Connect peer, which is used to configure BGP peering between the transit gateway and the Connect attachment. (AI-inferred)
     peer_asn: Any = None
-    # Specifies the IP address on the Transit Gateway side that will be used as the local endpoint for the BGP session with the Connect peer. (AI-inferred)
     transit_gateway_address: Any = None
-    # The autonomous system number (ASN) that the transit gateway uses for the BGP session with the Connect peer. (AI-inferred)
     transit_gateway_asn: Any = None
 
 @dataclasses.dataclass
@@ -51,7 +46,6 @@ class TransitGatewayConnectPeerConfig:
 
 @dataclasses.dataclass
 class TransitGatewayConnectPeerAttrs:
-    # The computed configuration of the transit gateway Connect peer, including the tunnel protocol, inside CIDR blocks, the transit gateway and peer addresses, and BGP configuration options. (AI-inferred)
     connect_peer_configuration: Any = None
     # The creation time.
     creation_time: Any = None

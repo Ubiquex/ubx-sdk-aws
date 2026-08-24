@@ -9,9 +9,7 @@ export interface Bucket_AccessRules {
 }
 
 export interface Bucket_Tags {
-  /** The key of a tag to assign to the Lightsail bucket. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Lightsail bucket, used for metadata, identification, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -47,7 +45,6 @@ export interface BucketAttrs {
   ableToUpdateBundle: boolean;
   /** An object that sets the public accessibility of objects in the specified bucket. */
   accessRules: Bucket_AccessRules;
-  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail bucket, such as arn:aws:lightsail:region:account-id:bucket/bucket-name. (AI-inferred) */
   bucketArn: string;
   /** The name for the bucket. */
   bucketName: string;

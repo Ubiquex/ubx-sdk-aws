@@ -4,37 +4,28 @@ package observability
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_BackupConfiguration struct {
-	// The ARN of the AWS KMS key used to encrypt the backup data for the centralized logging destination, enabling customer-managed encryption of backup copies. (AI-inferred)
 	KmsKeyArn any
-	// The AWS Region code (e.g., 'us-east-1') where the backup destination for the centralized logs is provisioned, providing a redundant copy for high availability. (AI-inferred)
 	Region any
 }
 
 type AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogGroupNameConfiguration struct {
-	// Specifies the pattern (e.g., a wildcard or regex) used to match CloudWatch log group names from member accounts that are selected for centralization to the destination defined by this rule. (AI-inferred)
 	LogGroupNamePattern any
 }
 
 type AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration_LogsEncryptionConfiguration struct {
-	// Specifies the strategy to resolve encryption key conflicts when centralizing logs, determining whether the organization's central encryption configuration overrides member accounts' existing log encryption settings or preserves them. (AI-inferred)
 	EncryptionConflictResolutionStrategy any
 	EncryptionScope any
-	// Defines the encryption strategy for logs delivered to the centralized destination, using 'SSE_S3' for AWS-managed encryption or 'SSE_KMS' for customer-managed KMS key encryption. (AI-inferred)
 	EncryptionStrategy any
-	// The ARN of the AWS KMS key used to encrypt logs delivered to the centralization rule's destination, enabling customer-managed key encryption for centralized log data. (AI-inferred)
 	KmsKeyArn any
 }
 
 type AdminOrganizationCentralizationRule_Rule_Destination_DestinationLogsConfiguration struct {
 	BackupConfiguration any
-	// Specifies an optional prefix and suffix that are added to the original CloudWatch log group names when logs are centralized to the destination account, controlling how the centralized log groups are named. (AI-inferred)
 	LogGroupNameConfiguration any
-	// Configures the encryption settings (such as the AWS KMS key ARN) used to encrypt the logs that are delivered to the centralized destination, ensuring the destination logs are encrypted with the specified key. (AI-inferred)
 	LogsEncryptionConfiguration any
 }
 
 type AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConfiguration_BackupConfiguration struct {
-	// Specifies the AWS Region of the backup destination for metrics when the primary destination is unavailable. (AI-inferred)
 	Region any
 }
 
@@ -43,19 +34,15 @@ type AdminOrganizationCentralizationRule_Rule_Destination_DestinationMetricsConf
 }
 
 type AdminOrganizationCentralizationRule_Rule_Destination struct {
-	// The AWS account ID of the destination account that receives centralized observability data (logs, metrics, and traces) when the rule's destination type is set to 'ACCOUNT'. (AI-inferred)
 	Account any
 	DestinationLogsConfiguration any
 	DestinationMetricsConfiguration any
-	// The AWS region of the destination where the organization's observability data is centralized by this rule. (AI-inferred)
 	Region any
 }
 
 type AdminOrganizationCentralizationRule_Rule_Source_SourceLogsConfiguration struct {
 	DataSourceSelectionCriteria any
-	// Specifies the strategy to apply to CloudWatch log groups that are encrypted with AWS KMS keys when collecting source logs for the organization's centralization rule. (AI-inferred)
 	EncryptedLogGroupStrategy any
-	// The log_group_selection_criteria field specifies the selection mechanism used to choose which log groups from the source logs configuration are centralized by the rule, such as indicating whether all log groups or only those matching a defined pattern should be included. (AI-inferred)
 	LogGroupSelectionCriteria any
 }
 
@@ -64,18 +51,14 @@ type AdminOrganizationCentralizationRule_Rule_Source_SourceMetricsConfiguration 
 }
 
 type AdminOrganizationCentralizationRule_Rule_Source struct {
-	// Specifies the AWS regions (e.g., us-east-1) whose telemetry from the source accounts is included in the centralized observability rule, limiting the rule's scope to those regions. (AI-inferred)
 	Regions any
 	Scope any
 	SourceLogsConfiguration any
-	// Determines the metrics to centralize for the given source, enabling the administrator to specify whether to centralize all or a selected set of metrics as part of the observability centralization rule. (AI-inferred)
 	SourceMetricsConfiguration any
 }
 
 type AdminOrganizationCentralizationRule_Rule struct {
-	// Configures the destination AWS account (and region) that serves as the central monitoring account for receiving observability data from member accounts according to this rule. (AI-inferred)
 	Destination any
-	// Defines the source accounts or organizational units whose observability data (such as CloudWatch logs) is aggregated into the delegated administrator account by this organization centralization rule. (AI-inferred)
 	Source any
 }
 
@@ -189,20 +172,15 @@ var AdminOrganizationCentralizationRule_TagsFields = ubx.FieldMap{
 	}
 
 type AdminOrganizationCentralizationRuleConfig struct {
-	// The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred)
 	Rule any
-	// A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred)
 	RuleName any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
 }
 
 type AdminOrganizationCentralizationRuleAttrs struct {
-	// The rule configuration that defines how observability data is centralized across the organization, including the type of data to centralize and the target accounts or organizational units. (AI-inferred)
 	Rule any
-	// The Amazon Resource Name (ARN) that uniquely identifies this centralization rule in AWS Observability Admin. (AI-inferred)
 	RuleArn any
-	// A user-defined name for the organization centralization rule, required to uniquely identify and manage the rule within AWS Observability Admin. (AI-inferred)
 	RuleName any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

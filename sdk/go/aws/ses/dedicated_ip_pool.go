@@ -4,9 +4,7 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DedicatedIpPool_Tags struct {
-	// The key (e.g., 'Environment') of a tag assigned to this SES dedicated IP pool, used to categorize or identify the resource. (AI-inferred)
 	Key any
-	// The value component of a tag assigned to the Amazon SES dedicated IP pool, providing user-defined metadata for resource organization and management. (AI-inferred)
 	Value any
 }
 

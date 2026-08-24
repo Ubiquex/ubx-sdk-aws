@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontFunction_FunctionConfig_KeyValueStoreAssociations:
-    # The ARN of the CloudFront KeyValueStore to associate with this function, enabling the function to read data from the key value store at runtime. (AI-inferred)
     key_value_store_arn: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +26,6 @@ class FrontFunction_FunctionMetadata:
 
 @dataclasses.dataclass
 class FrontFunction_Tags:
-    # The tag key (e.g., 'environment') assigned to the CloudFront function for metadata and cost allocation. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -67,7 +65,6 @@ class FrontFunctionConfig:
 class FrontFunctionAttrs:
     # A flag that determines whether to automatically publish the function to the ``LIVE`` stage when it’s created. To automatically publish to the ``LIVE`` stage, set this property to ``true``.
     auto_publish: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the CloudFront function, assigned by AWS upon creation. (AI-inferred)
     function_arn: Any = None
     # The function code. For more information about writing a CloudFront function, see [Writing function code for CloudFront Functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html) in the *Amazon CloudFront Developer Guide*.
     function_code: Any = None
@@ -77,7 +74,6 @@ class FrontFunctionAttrs:
     function_metadata: Any = None
     # A name to identify the function.
     name: Any = None
-    # The CloudFront function's stage, which is read-only and indicates whether the function is in the 'DEVELOPMENT' or 'LIVE' lifecycle stage as managed by AWS. (AI-inferred)
     stage: Any = None
     # A complex type that contains zero or more ``Tag`` elements.
     tags: Any = None

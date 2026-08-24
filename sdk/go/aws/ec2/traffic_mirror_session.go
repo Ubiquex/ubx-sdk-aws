@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficMirrorSession_Tags struct {
 	Key any
-	// The value of a user-defined tag key attached to the EC2 Traffic Mirror Session, which you can use to organize, identify, and manage the resource within your AWS environment. (AI-inferred)
 	Value any
 }
 

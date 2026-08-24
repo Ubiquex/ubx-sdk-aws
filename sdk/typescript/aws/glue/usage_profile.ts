@@ -12,7 +12,6 @@ const UsageProfile_TagsFields: FieldMap = {
 };
 
 export interface UsageProfileConfig {
-  /** The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred) */
   configuration?: unknown | Computed<unknown>;
   /** The description of the UsageProfile. */
   description?: string | Computed<string>;
@@ -23,7 +22,6 @@ export interface UsageProfileConfig {
 }
 
 export interface UsageProfileAttrs {
-  /** The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred) */
   configuration: unknown;
   /** Creation time. */
   createdOn: string;

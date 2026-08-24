@@ -11,11 +11,8 @@ type MakerRobotApplication_RobotSoftwareSuite struct {
 }
 
 type MakerRobotApplication_Sources struct {
-	// Specifies the processor architecture (X86_64, ARM64, or ARMHF) that the robot application source bundle is built for, as part of the source's S3 location configuration. (AI-inferred)
 	Architecture any
-	// The name of the S3 bucket that stores the robot application source archive, which AWS RoboMaker uses to deploy the application to robot devices. (AI-inferred)
 	S3Bucket any
-	// The S3 object key (path) of the robot application source bundle, which combined with the S3 bucket identifies the uploaded application archive for the RoboMaker robot application. (AI-inferred)
 	S3Key any
 }
 
@@ -46,7 +43,6 @@ type MakerRobotApplicationConfig struct {
 }
 
 type MakerRobotApplicationAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS RoboMaker robot application. (AI-inferred)
 	Arn any
 	// The revision ID of robot application.
 	CurrentRevisionId any

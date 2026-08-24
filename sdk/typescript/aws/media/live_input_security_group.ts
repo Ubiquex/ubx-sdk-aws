@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveInputSecurityGroup_WhitelistRules {
-  /** The CIDR block that is allowed to send input requests to the MediaLive input security group. (AI-inferred) */
   cidr?: string | Computed<string>;
 }
 
@@ -12,17 +11,13 @@ const LiveInputSecurityGroup_WhitelistRulesFields: FieldMap = {
 
 export interface LiveInputSecurityGroupConfig {
   tags?: unknown | Computed<unknown>;
-  /** Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred) */
   whitelistRules?: LiveInputSecurityGroup_WhitelistRules[] | Computed<LiveInputSecurityGroup_WhitelistRules[]>;
 }
 
 export interface LiveInputSecurityGroupAttrs {
-  /** The Amazon Resource Name (ARN) of the MediaLive input security group. (AI-inferred) */
   arn: string;
-  /** The unique identifier of the AWS Elemental MediaLive input security group, returned as a string when the resource is created. (AI-inferred) */
   id: string;
   tags: unknown;
-  /** Specifies the list of IPv4 CIDR blocks (with optional descriptions) that are allowed to access the input security group, controlling which source IPs can send media content. (AI-inferred) */
   whitelistRules: LiveInputSecurityGroup_WhitelistRules[];
 }
 

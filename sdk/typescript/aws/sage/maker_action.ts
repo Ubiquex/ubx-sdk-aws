@@ -23,7 +23,6 @@ export interface MakerAction_Source {
 
 export interface MakerAction_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag associated with the SageMaker action, used to store arbitrary metadata such as cost centers or environment labels for managing and organizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -52,11 +51,9 @@ export interface MakerActionConfig {
   actionType: string | Computed<string>;
   /** The description of the action. */
   description?: string | Computed<string>;
-  /** Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred) */
   metadataProperties?: MakerAction_MetadataProperties | Computed<MakerAction_MetadataProperties>;
   /** A list of properties to add to the action. */
   properties?: unknown | Computed<unknown>;
-  /** Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred) */
   source: MakerAction_Source | Computed<MakerAction_Source>;
   /** The status of the action. */
   status?: string | Computed<string>;
@@ -77,11 +74,9 @@ export interface MakerActionAttrs {
   description: string;
   /** When the action was last modified. */
   lastModifiedTime: string;
-  /** Specifies the metadata properties for the SageMaker action, including the source repository, commit ID, the entity that generated the action, and the project ID associated with it. (AI-inferred) */
   metadataProperties: MakerAction_MetadataProperties;
   /** A list of properties to add to the action. */
   properties: unknown;
-  /** Specifies the source location and type that identify where this SageMaker action was defined or triggered, such as an Amazon S3 URI or a pipeline execution ARN. (AI-inferred) */
   source: MakerAction_Source;
   /** The status of the action. */
   status: string;

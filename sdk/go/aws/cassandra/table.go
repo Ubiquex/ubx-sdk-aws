@@ -4,13 +4,9 @@ package cassandra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
-	// When true, prevents the target tracking scaling policy from reducing (scaling in) the table's read capacity. (AI-inferred)
 	DisableScaleIn any
-	// The amount of time in seconds after a scale-in activity completes before another scale-in can begin for the read capacity of the Cassandra table's auto scaling target tracking policy. (AI-inferred)
 	ScaleInCooldown any
-	// The amount of time, in seconds, after a scale-out (increase) activity completes before another scale-out activity can start, used in the target tracking scaling policy for read capacity auto scaling of an Amazon Keyspaces (Cassandra) table. (AI-inferred)
 	ScaleOutCooldown any
-	// The target value, expressed as a percentage, for read capacity utilization that the auto scaling policy maintains. (AI-inferred)
 	TargetValue any
 }
 
@@ -20,11 +16,8 @@ type Table_AutoScalingSpecifications_ReadCapacityAutoScaling_ScalingPolicy struc
 }
 
 type Table_AutoScalingSpecifications_ReadCapacityAutoScaling struct {
-	// When true, disables auto scaling for the table's read capacity, reverting to the fixed read capacity units configured on the table. (AI-inferred)
 	AutoScalingDisabled any
-	// The maximum number of read capacity units (RCUs) that the table's read capacity can scale up to when auto scaling is enabled. (AI-inferred)
 	MaximumUnits any
-	// Sets the minimum number of read capacity units for the table's read capacity auto scaling policy in Amazon Keyspaces. (AI-inferred)
 	MinimumUnits any
 	// Represents scaling policy.
 	ScalingPolicy any
@@ -38,9 +31,7 @@ type Table_AutoScalingSpecifications struct {
 }
 
 type Table_BillingMode_ProvisionedThroughput struct {
-	// The number of read capacity units to provision for the Cassandra table when billing mode is set to provisioned. (AI-inferred)
 	ReadCapacityUnits any
-	// Specifies the number of write capacity units (writes per second) that this Cassandra table can sustain when using provisioned billing mode. (AI-inferred)
 	WriteCapacityUnits any
 }
 
@@ -66,16 +57,12 @@ type Table_CdcSpecification struct {
 }
 
 type Table_ClusteringKeyColumns_Column struct {
-	// The name of the clustering key column that defines the sort order of rows within each partition of the Cassandra table. (AI-inferred)
 	ColumnName any
-	// The Cassandra data type of the clustering key column (e.g., 'text', 'int', 'uuid'). (AI-inferred)
 	ColumnType any
 }
 
 type Table_ClusteringKeyColumns struct {
-	// Specifies the name and type of a single column that is used as the clustering key, determining the sort order of rows within a partition in the Cassandra table. (AI-inferred)
 	Column any
-	// Specifies the sort order (ASC or DESC) for this clustering key column, determining how rows are stored and queried in the Cassandra table. (AI-inferred)
 	OrderBy any
 }
 
@@ -87,18 +74,13 @@ type Table_EncryptionSpecification struct {
 }
 
 type Table_ReplicaSpecifications struct {
-	// Configures the auto scaling settings for read capacity of an Amazon Keyspaces (for Apache Cassandra) table replica, including enablement, minimum and maximum capacity units, and target utilization. (AI-inferred)
 	ReadCapacityAutoScaling any
-	// The number of read capacity units provisioned for this specific replica of the Cassandra table in its designated AWS region. (AI-inferred)
 	ReadCapacityUnits any
-	// Specifies the AWS Region where the Cassandra table replica is created, enabling multi-Region replication. (AI-inferred)
 	Region any
 }
 
 type Table_WarmThroughput struct {
-	// Number of warm read capacity units per second for the table's warm throughput configuration. (AI-inferred)
 	ReadUnitsPerSecond any
-	// The number of write capacity units per second allocated for throughput on warm data stored in the Amazon Keyspaces table. (AI-inferred)
 	WriteUnitsPerSecond any
 }
 
@@ -207,7 +189,6 @@ var Table_WarmThroughputFields = ubx.FieldMap{
 type TableConfig struct {
 	// Represents the read and write settings used for AutoScaling.
 	AutoScalingSpecifications any
-	// Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred)
 	BillingMode any
 	// Represents the CDC configuration for the table
 	CdcSpecification any
@@ -227,7 +208,6 @@ type TableConfig struct {
 	PointInTimeRecoveryEnabled any
 	// Non-key columns of the table
 	RegularColumns any
-	// Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred)
 	ReplicaSpecifications any
 	// Name for Cassandra table
 	TableName any
@@ -240,7 +220,6 @@ type TableConfig struct {
 type TableAttrs struct {
 	// Represents the read and write settings used for AutoScaling.
 	AutoScalingSpecifications any
-	// Specifies the billing mode for the Cassandra table, choosing between on-demand and provisioned capacity, and when provisioned, includes the read/write capacity settings. (AI-inferred)
 	BillingMode any
 	// Represents the CDC configuration for the table
 	CdcSpecification any
@@ -260,7 +239,6 @@ type TableAttrs struct {
 	PointInTimeRecoveryEnabled any
 	// Non-key columns of the table
 	RegularColumns any
-	// Defines the AWS Regions and optional provisioned read/write capacity settings for each replica in a multi-Region Amazon Keyspaces table. (AI-inferred)
 	ReplicaSpecifications any
 	// Name for Cassandra table
 	TableName any

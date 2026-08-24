@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class IpamprefixListResolverTarget_Tags:
     key: Any = None
-    # The value of a user-defined tag assigned to the IPAM prefix list resolver target, used for organizing and managing the resource in AWS. (AI-inferred)
     value: Any = None
 
 _IpamprefixListResolverTarget_TagsFields = {

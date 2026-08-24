@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SmschannelConfig:
-    # The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred)
     application_id: Any = None
-    # Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred)
     enabled: Any = None
-    # A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred)
     sender_id: Any = None
-    # The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred)
     short_code: Any = None
 
 @dataclasses.dataclass
 class SmschannelAttrs:
-    # The unique identifier for the Amazon Pinpoint application (project) that the SMS channel is associated with. (AI-inferred)
     application_id: Any = None
-    # Specifies whether the SMS channel is enabled for sending text messages through the Amazon Pinpoint application. (AI-inferred)
     enabled: Any = None
-    # The `id` is the unique identifier for this SMS channel, set to the Amazon Pinpoint application ID. (AI-inferred)
     id: Any = None
-    # A custom alphanumeric sender ID that appears on recipients' devices when they receive SMS messages sent from this Pinpoint SMS channel. (AI-inferred)
     sender_id: Any = None
-    # The registered short code to use for sending SMS messages with the Amazon Pinpoint SMS channel. (AI-inferred)
     short_code: Any = None
 
 Smschannel = ubx.ResourceBinding(

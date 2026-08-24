@@ -17,7 +17,6 @@ type AdminS3TableIntegration_LogSources struct {
 }
 
 type AdminS3TableIntegration_Tags struct {
-	// The key of a tag that you can assign to the AWS Observability Admin S3 table integration to help identify, categorize, or manage the integration resource. (AI-inferred)
 	Key any
 	Value any
 }

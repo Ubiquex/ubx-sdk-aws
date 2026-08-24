@@ -4,9 +4,7 @@ package egress
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnlyInternetGateway_Tags struct {
-	// The key portion of a tag attached to the egress-only internet gateway, used for identifying, organizing, and managing this VPC component in AWS. (AI-inferred)
 	Key any
-	// The tag value (string) for a tag applied to the egress-only internet gateway, allowing you to categorize and manage this IPv6 outbound-only VPC component. (AI-inferred)
 	Value any
 }
 

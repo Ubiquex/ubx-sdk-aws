@@ -85,9 +85,7 @@ type GatewayV2ApiConfig struct {
 }
 
 type GatewayV2ApiAttrs struct {
-	// The automatically generated endpoint URL (e.g., https://<api-id>.execute-api.<region>.amazonaws.com) that clients use to invoke the API. (AI-inferred)
 	ApiEndpoint any
-	// The unique identifier assigned by AWS API Gateway v2 to this API when it is created, used to reference the API in other resources. (AI-inferred)
 	ApiId any
 	// An API key selection expression. Supported only for WebSocket APIs. See [API Key Selection Expressions](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
 	ApiKeySelectionExpression any

@@ -4,7 +4,6 @@ package personalize
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_Tags struct {
-	// The key of a tag attached to the AWS Personalize schema resource. (AI-inferred)
 	Key any
 	Value any
 }

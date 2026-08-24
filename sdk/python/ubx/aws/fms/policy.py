@@ -8,56 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Policy_ExcludeMap:
-    # The list of AWS account IDs to exclude from the Firewall Manager policy's scope. (AI-inferred)
     account: Any = None
-    # The list of AWS Organizations organizational unit (OU) IDs to exclude from this Firewall Manager policy's scope. (AI-inferred)
     orgunit: Any = None
 
 @dataclasses.dataclass
 class Policy_ResourceTags:
-    # The key of a tag used to match resources that this AWS Firewall Manager policy applies to, based on the resource's tags. (AI-inferred)
     key: Any = None
-    # The tag value, paired with the corresponding key, that Firewall Manager uses to match resources for inclusion in (or exclusion from, depending on the policy's ExcludeResourceTags setting) the policy's scope. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_IcmpTypeCode:
-    # The numeric ICMP code value used to match specific ICMP messages in the first network ACL entry set of the common Network ACL policy, where -1 matches all ICMP codes for the given type. (AI-inferred)
     code: Any = None
-    # The ICMP type number (e.g., 8 for echo request, 3 for destination unreachable) that the network ACL entry matches for ICMP traffic. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries_PortRange:
-    # The inclusive lower bound of the port range that this network ACL entry applies to, used by Firewall Manager to define the starting port for allowing or denying traffic in a Network ACL policy. (AI-inferred)
     from_: Any = None
-    # The upper bound (inclusive) of the port range for this network ACL entry, defining the last port in the range allowed or denied by the entry. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet_FirstEntries:
-    # The IPv4 CIDR block (e.g., '10.0.0.0/16') that defines the source or destination network to which this network ACL entry applies, used for matching traffic in the Firewall Manager network ACL policy. (AI-inferred)
     cidr_block: Any = None
-    # Indicates whether this network ACL entry applies to outbound (egress) traffic (true) rather than inbound (ingress) traffic (false). (AI-inferred)
     egress: Any = None
-    # Defines the ICMP type and code numbers that the Network ACL entry uses to match ICMP traffic, limiting the rule to specific ICMP message types. (AI-inferred)
     icmp_type_code: Any = None
-    # The IPv6 CIDR block that this network ACL entry in the first set of entries applies to for the common network ACL policy. (AI-inferred)
     ipv6_cidr_block: Any = None
-    # Defines the inclusive range of destination ports (From and To) that this Firewall Manager network ACL entry uses to match traffic for its associated rule action. (AI-inferred)
     port_range: Any = None
-    # Specifies the IP protocol (e.g., tcp, udp, icmp, or a protocol number) for the network ACL entry in the Firewall Manager policy. (AI-inferred)
     protocol: Any = None
-    # Specifies the action of the network ACL entry, either 'allow' to permit matching traffic or 'deny' to block it. (AI-inferred)
     rule_action: Any = None
 
 @dataclasses.dataclass
 class Policy_SecurityServicePolicyData_PolicyOption_NetworkAclCommonPolicy_NetworkAclEntrySet:
     # NetworkAcl entry list.
     first_entries: Any = None
-    # When set to true, Firewall Manager automatically remediates the first entries in the target network ACL to match the policy's specified first entry, replacing non-compliant entries. (AI-inferred)
     force_remediate_for_first_entries: Any = None
-    # Indicates whether AWS Firewall Manager will automatically remediate the last entries of the network ACL to match the policy-defined entries, such as the default deny-all rule. (AI-inferred)
     force_remediate_for_last_entries: Any = None
     # NetworkAcl entry list.
     last_entries: Any = None
@@ -185,70 +168,49 @@ _Policy_SecurityServicePolicyDataFields = {
 
 @dataclasses.dataclass
 class PolicyConfig:
-    # Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred)
     delete_all_policy_resources: Any = None
     # An FMS includeMap or excludeMap.
     exclude_map: Any = None
-    # When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred)
     exclude_resource_tags: Any = None
     # An FMS includeMap or excludeMap.
     include_map: Any = None
-    # A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred)
     policy_description: Any = None
-    # The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred)
     policy_name: Any = None
-    # Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred)
     remediation_enabled: Any = None
-    # The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred)
     resource_set_ids: Any = None
-    # Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred)
     resource_tag_logical_operator: Any = None
-    # This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred)
     resource_tags: Any = None
     # An AWS resource type
     resource_type: Any = None
-    # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
     resource_type_list: Any = None
     resources_clean_up: Any = None
     # Firewall security service policy data.
     security_service_policy_data: Any = None
-    # The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PolicyAttrs:
     # A resource ARN.
     arn: Any = None
-    # Indicates whether AWS Firewall Manager deletes all resources managed by this policy (such as AWS WAF rule groups or Shield protections) when the policy itself is deleted. (AI-inferred)
     delete_all_policy_resources: Any = None
     # An FMS includeMap or excludeMap.
     exclude_map: Any = None
-    # When true, the policy applies only to resources that do not have the tags specified in the associated 'resource_tags' list, thereby excluding tagged resources from the policy's scope; when false, it applies to resources that have those tags. (AI-inferred)
     exclude_resource_tags: Any = None
-    # The unique identifier (policy ID) assigned by AWS Firewall Manager to this policy. (AI-inferred)
     id: Any = None
     # An FMS includeMap or excludeMap.
     include_map: Any = None
-    # A description of the AWS Firewall Manager policy, used to identify the policy's purpose or scope. (AI-inferred)
     policy_description: Any = None
-    # The friendly name of the Firewall Manager policy, used to identify it in the AWS console and API operations. (AI-inferred)
     policy_name: Any = None
-    # Indicates whether Firewall Manager automatically applies the policy's rules to noncompliant resources to remediate them. (AI-inferred)
     remediation_enabled: Any = None
-    # The list of IDs of the resource sets to which this AWS Firewall Manager policy applies. (AI-inferred)
     resource_set_ids: Any = None
-    # Specifies the logical operator (AND or OR) used to combine multiple resource tag conditions in the AWS Firewall Manager policy when determining which resources are included or excluded. (AI-inferred)
     resource_tag_logical_operator: Any = None
-    # This list of tags identifies the AWS resources to which the Firewall Manager policy applies, allowing the policy to target resources based on their associated tags. (AI-inferred)
     resource_tags: Any = None
     # An AWS resource type
     resource_type: Any = None
-    # Specifies the list of AWS resource types (e.g., AWS::EC2::Instance, AWS::ElasticLoadBalancingV2::LoadBalancer) to which this Firewall Manager policy applies, filtering the resources evaluated and protected by the policy. (AI-inferred)
     resource_type_list: Any = None
     resources_clean_up: Any = None
     # Firewall security service policy data.
     security_service_policy_data: Any = None
-    # The tags to assign to the Firewall Manager policy, which are key-value pairs that help you identify, organize, and manage the policy, and can be used for cost allocation and access control. (AI-inferred)
     tags: Any = None
 
 Policy = ubx.ResourceBinding(

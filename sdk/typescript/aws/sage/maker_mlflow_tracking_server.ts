@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerMlflowTrackingServer_Tags {
-  /** The key part of a key-value tag attached to the SageMaker MLflow Tracking Server, used to identify and organize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The arbitrary value for a tag attached to the SageMaker MLflow Tracking Server. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

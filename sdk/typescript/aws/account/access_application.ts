@@ -9,7 +9,6 @@ export interface AccessApplication_IdentitySource_IdentityCenter {
 }
 
 export interface AccessApplication_IdentitySource {
-  /** Specifies the AWS IAM Identity Center (successor to AWS SSO) instance to be used as the identity source for the access application, including the required Identity Center ARN. (AI-inferred) */
   identityCenter: AccessApplication_IdentitySource_IdentityCenter | Computed<AccessApplication_IdentitySource_IdentityCenter>;
 }
 
@@ -33,7 +32,6 @@ export interface AccessApplicationAttrs {
   applicationArn: string;
   /** The timestamp when the application was created */
   createdAt: string;
-  /** The computed identity source object that describes how the access application determines identities, including the source type and the associated IAM Identity Center instance ARN when applicable. (AI-inferred) */
   identitySource: AccessApplication_IdentitySource;
   /** The status of the application */
   status: string;

@@ -27,7 +27,6 @@ class ConfigurationSet_ReputationOptions:
 
 @dataclasses.dataclass
 class ConfigurationSet_SendingOptions:
-    # Indicates whether email sending is enabled for the configuration set. (AI-inferred)
     sending_enabled: Any = None
 
 @dataclasses.dataclass
@@ -56,9 +55,7 @@ class ConfigurationSet_SuppressionOptions:
 
 @dataclasses.dataclass
 class ConfigurationSet_Tags:
-    # The key of a tag attached to the Amazon SES configuration set. (AI-inferred)
     key: Any = None
-    # Specifies the value part of a tag assigned to the SES configuration set, used for metadata and resource management. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

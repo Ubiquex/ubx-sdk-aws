@@ -9,13 +9,11 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class FilesFileSystemPolicyConfig:
     file_system_id: Any = None
-    # The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
 class FilesFileSystemPolicyAttrs:
     file_system_id: Any = None
-    # The policy field specifies the JSON-formatted resource-based policy that grants or denies access to the associated Amazon EFS file system for specified principals, actions, and conditions. (AI-inferred)
     policy: Any = None
 
 FilesFileSystemPolicy = ubx.ResourceBinding(

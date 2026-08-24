@@ -4,28 +4,21 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsIdMappingTable_InputReferenceConfig struct {
-	// Specifies the Amazon Resource Name (ARN) of the input reference data source (such as an Amazon S3 bucket) that contains the records used to create the ID mapping table in AWS Clean Rooms. (AI-inferred)
 	InputReferenceArn any
-	// A Boolean flag that indicates whether AWS Clean Rooms automatically manages the resource policies for the input reference (the underlying AWS resource) so that the ID mapping table can access it; if set to true, Clean Rooms handles required policy changes, and if false, you are responsible for managing them. (AI-inferred)
 	ManageResourcePolicies any
 }
 
 type RoomsIdMappingTable_InputReferenceProperties_IdMappingTableInputSource struct {
-	// The unique identifier of the ID namespace association that serves as the input source for this ID mapping table, linking the ID namespace to the collaboration. (AI-inferred)
 	IdNamespaceAssociationId any
-	// Specifies whether the associated input source ARN represents the source or target for the ID mapping table, with allowed values SOURCE or TARGET. (AI-inferred)
 	Type any
 }
 
 type RoomsIdMappingTable_InputReferenceProperties struct {
-	// Specifies the S3 data source(s) that AWS Clean Rooms reads to build the ID mapping table, with each item providing an input source ARN. (AI-inferred)
 	IdMappingTableInputSource any
 }
 
 type RoomsIdMappingTable_Tags struct {
-	// The key (name) of a user-defined tag (key-value pair) attached to the AWS Clean Rooms ID mapping table, used for metadata organization and resource identification. (AI-inferred)
 	Key any
-	// The value of a user-defined tag associated with the AWS Clean Rooms ID Mapping Table, used for organizing and identifying the resource. (AI-inferred)
 	Value any
 }
 
@@ -40,44 +33,26 @@ var RoomsIdMappingTable_TagsFields = ubx.FieldMap{
 	}
 
 type RoomsIdMappingTableConfig struct {
-	// An optional user-defined description that provides context or identification for the ID mapping table in AWS Clean Rooms. (AI-inferred)
 	Description any
-	// Configures the input reference for the ID mapping table, specifying the ARN of the source data or entity resolution resource and whether AWS Clean Rooms manages the resource policies. (AI-inferred)
 	InputReferenceConfig any
-	// Specifies the Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the ID mapping table data. (AI-inferred)
 	KmsKeyArn any
-	// The unique identifier of the AWS Clean Rooms membership that owns this ID mapping table. (AI-inferred)
 	MembershipIdentifier any
-	// The user-defined name of the ID mapping table, used to identify and reference it within the AWS Clean Rooms collaboration. (AI-inferred)
 	Name any
-	// The list of tags to apply to the ID mapping table, where each tag consists of a required key and an optional value. (AI-inferred)
 	Tags any
 }
 
 type RoomsIdMappingTableAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Clean Rooms ID mapping table in AWS. (AI-inferred)
 	Arn any
-	// The Amazon Resource Name (ARN) of the AWS Clean Rooms collaboration that contains this ID mapping table, automatically assigned by AWS. (AI-inferred)
 	CollaborationArn any
-	// The unique identifier assigned by AWS to the collaboration that contains this ID mapping table. (AI-inferred)
 	CollaborationIdentifier any
-	// An optional user-defined description that provides context or identification for the ID mapping table in AWS Clean Rooms. (AI-inferred)
 	Description any
-	// The system-generated unique identifier (such as the Amazon Resource Name) of the AWS Clean Rooms ID mapping table, used to reference the table within the service. (AI-inferred)
 	IdMappingTableIdentifier any
-	// Configures the input reference for the ID mapping table, specifying the ARN of the source data or entity resolution resource and whether AWS Clean Rooms manages the resource policies. (AI-inferred)
 	InputReferenceConfig any
-	// The computed inputReferenceProperties object contains the resolved list of input reference column/table pairs that define how the ID mapping table maps identifiers across its referenced tables. (AI-inferred)
 	InputReferenceProperties any
-	// Specifies the Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the ID mapping table data. (AI-inferred)
 	KmsKeyArn any
-	// The Amazon Resource Name (ARN) of the AWS Clean Rooms membership that owns this ID mapping table. (AI-inferred)
 	MembershipArn any
-	// The unique identifier of the AWS Clean Rooms membership that owns this ID mapping table. (AI-inferred)
 	MembershipIdentifier any
-	// The user-defined name of the ID mapping table, used to identify and reference it within the AWS Clean Rooms collaboration. (AI-inferred)
 	Name any
-	// The list of tags to apply to the ID mapping table, where each tag consists of a required key and an optional value. (AI-inferred)
 	Tags any
 }
 

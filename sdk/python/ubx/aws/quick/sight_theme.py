@@ -41,12 +41,10 @@ class SightTheme_Configuration_Sheet:
 
 @dataclasses.dataclass
 class SightTheme_Configuration_Typography_FontFamilies:
-    # Specifies the name of a font family (such as 'Arial' or 'Roboto') to apply to text in the Amazon QuickSight theme's typography settings. (AI-inferred)
     font_family: Any = None
 
 @dataclasses.dataclass
 class SightTheme_Configuration_Typography:
-    # Specifies the list of font families used in the theme's typography, where each item is an object that identifies a font by name for use in QuickSight visuals. (AI-inferred)
     font_families: Any = None
 
 @dataclasses.dataclass
@@ -90,30 +88,23 @@ class SightTheme_Configuration:
     data_color_palette: Any = None
     # <p>The theme display options for sheets. </p>
     sheet: Any = None
-    # Specifies the typography configuration for the theme, including the font families that can be used in visualizations. (AI-inferred)
     typography: Any = None
     # <p>The theme colors that apply to UI and to charts, excluding data colors. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> </p>
     uicolor_palette: Any = None
 
 @dataclasses.dataclass
 class SightTheme_Permissions:
-    # Specifies the list of QuickSight actions (e.g., 'quicksight:DescribeTheme', 'quicksight:UpdateTheme') that the principal is allowed to perform on the theme. (AI-inferred)
     actions: Any = None
-    # The IAM identity (ARN or name) that is granted the specified actions on the Amazon QuickSight theme. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass
 class SightTheme_Tags:
-    # The key of a tag attached to the QuickSight theme, used to categorize and manage the theme resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag assigned to the Amazon QuickSight theme, used to store arbitrary metadata such as environment or owner. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class SightTheme_Version_Errors:
-    # The error message describing why a specific theme version could not be created or updated in Amazon QuickSight. (AI-inferred)
     message: Any = None
-    # The type of error that occurred during the creation or update of a QuickSight theme version, indicating the nature of the failure. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -130,7 +121,6 @@ class SightTheme_Version:
     description: Any = None
     # <p>Errors associated with the theme.</p>
     errors: Any = None
-    # Status of the theme version, representing the current state of creation or update (e.g., CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED). (AI-inferred)
     status: Any = None
     # <p>The version number of the theme.</p>
     version_number: Any = None
@@ -245,30 +235,21 @@ _SightTheme_TagsFields = {
 
 @dataclasses.dataclass
 class SightThemeConfig:
-    # The AWS account ID where the QuickSight theme is created, scoping the theme resource to that specific account. (AI-inferred)
     aws_account_id: Any = None
-    # The ID of the base theme that this theme inherits its default styles from, such as MIDNIGHT or CLASSIC. (AI-inferred)
     base_theme_id: Any = None
     # <p>The theme configuration. This configuration contains all of the display properties for a theme.</p>
     configuration: Any = None
-    # The display name of the QuickSight theme, used to identify it in the QuickSight console and API. (AI-inferred)
     name: Any = None
-    # Specifies the list of access permissions for the theme, where each item grants a principal (user, group, or role ARN) a set of allowed actions such as quicksight:DescribeTheme and quicksight:UpdateTheme. (AI-inferred)
     permissions: Any = None
-    # A list of key-value tag pairs to attach to the QuickSight theme for resource management and categorization. (AI-inferred)
     tags: Any = None
-    # The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred)
     theme_id: Any = None
-    # Specifies the description of the theme version, providing context about the changes or purpose of this iteration of the QuickSight theme. (AI-inferred)
     version_description: Any = None
 
 @dataclasses.dataclass
 class SightThemeAttrs:
     # <p>The Amazon Resource Name (ARN) of the theme.</p>
     arn: Any = None
-    # The AWS account ID where the QuickSight theme is created, scoping the theme resource to that specific account. (AI-inferred)
     aws_account_id: Any = None
-    # The ID of the base theme that this theme inherits its default styles from, such as MIDNIGHT or CLASSIC. (AI-inferred)
     base_theme_id: Any = None
     # <p>The theme configuration. This configuration contains all of the display properties for a theme.</p>
     configuration: Any = None
@@ -276,18 +257,13 @@ class SightThemeAttrs:
     created_time: Any = None
     # <p>The date and time that the theme was last updated.</p>
     last_updated_time: Any = None
-    # The display name of the QuickSight theme, used to identify it in the QuickSight console and API. (AI-inferred)
     name: Any = None
-    # Specifies the list of access permissions for the theme, where each item grants a principal (user, group, or role ARN) a set of allowed actions such as quicksight:DescribeTheme and quicksight:UpdateTheme. (AI-inferred)
     permissions: Any = None
-    # A list of key-value tag pairs to attach to the QuickSight theme for resource management and categorization. (AI-inferred)
     tags: Any = None
-    # The unique identifier for the theme, which must be unique within an AWS account and is used to reference the theme in other QuickSight resources. (AI-inferred)
     theme_id: Any = None
     type: Any = None
     # <p>A version of a theme.</p>
     version: Any = None
-    # Specifies the description of the theme version, providing context about the changes or purpose of this iteration of the QuickSight theme. (AI-inferred)
     version_description: Any = None
 
 SightTheme = ubx.ResourceBinding(

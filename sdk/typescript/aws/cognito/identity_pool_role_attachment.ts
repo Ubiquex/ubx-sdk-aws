@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IdentityPoolRoleAttachmentConfig {
-  /** The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred) */
   identityPoolId: string | Computed<string>;
-  /** Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred) */
   roleMappings?: unknown | Computed<unknown>;
-  /** Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred) */
   roles?: unknown | Computed<unknown>;
 }
 
 export interface IdentityPoolRoleAttachmentAttrs {
-  /** The unique identifier of the Amazon Cognito identity pool that this role attachment configuration applies to. (AI-inferred) */
   id: string;
-  /** The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred) */
   identityPoolId: string;
-  /** Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred) */
   roleMappings: unknown;
-  /** Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred) */
   roles: unknown;
 }
 

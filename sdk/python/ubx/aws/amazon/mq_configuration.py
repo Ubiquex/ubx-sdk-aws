@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MqConfiguration_Tags:
-    # The key of a tag attached to the Amazon MQ configuration, used to identify and organize the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

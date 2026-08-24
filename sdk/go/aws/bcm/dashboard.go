@@ -5,123 +5,85 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboard_Tags struct {
 	Key any
-	// Specifies the value of a tag attached to the AWS BCM dashboard, allowing you to associate custom metadata with the dashboard for resource organization and cost allocation. (AI-inferred)
 	Value any
 }
 
 type Dashboard_Widgets_Configs_DisplayConfig struct {
-	// The graph field defines the chart type and display options for the widget's visualization of cost and usage data within the AWS Billing and Cost Management dashboard. (AI-inferred)
 	Graph any
-	// Provides the table-specific display configuration for a widget in a BCM dashboard, defining the tabular layout of cost data. (AI-inferred)
 	Table any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter_CostCategories struct {
-	// The cost category key (dimension) that the dashboard widget's cost and usage query filters on, used to include or exclude data based on matching cost category values. (AI-inferred)
 	Key any
-	// Specifies the matching criteria (such as EQUALS, STARTS_WITH, or CONTAINS) used to compare the cost category values in the filter for this dashboard widget's cost and usage query. (AI-inferred)
 	MatchOptions any
-	// The list of cost category values to include in the cost and usage filter for the dashboard widget. (AI-inferred)
 	Values any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_Filter struct {
-	// A list of filter expression objects that must all evaluate to true (logical AND) for a cost and usage record to be included in the dashboard widget's underlying Cost Explorer query. (AI-inferred)
 	And any
-	// Maps Cost Category names to lists of Cost Category values in the widget's cost-and-usage query filter, so that the dashboard only includes data matching those Cost Categories. (AI-inferred)
 	CostCategories any
-	// Specifies dimension filters (such as SERVICE, REGION, or USAGE_TYPE) and their allowed values to restrict the cost and usage data returned for the dashboard widget. (AI-inferred)
 	Dimensions any
-	// Defines a logical NOT operator that negates the evaluation of a nested cost-and-usage filter expression within the dashboard widget's query parameters. (AI-inferred)
 	Not any
-	// A list of cost and usage filter expressions that are combined with logical OR, so that a resource or usage line item is included if it matches any of the contained filter conditions. (AI-inferred)
 	Or any
 	Tags any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_GroupBy struct {
-	// Specifies the dimension name (e.g., 'AZ', 'SERVICE', or 'LINKED_ACCOUNT') by which the cost and usage data is grouped in the dashboard widget. (AI-inferred)
 	Key any
-	// Specifies the type of grouping dimension (e.g., DIMENSION, TAG, COST_CATEGORY) used when aggregating cost and usage data for this widget's query. (AI-inferred)
 	Type any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange_EndTime struct {
 	Type any
-	// The end date/time value of the time range used by the cost-and-usage query for the widget, defining the upper bound of the data period. (AI-inferred)
 	Value any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage_TimeRange struct {
-	// Specifies the end boundary of the time range used to filter cost and usage data for the widget's query, as an object containing a timestamp or date expression (such as '2024-12-31') that defines the upper limit for reported metrics. (AI-inferred)
 	EndTime any
-	// Defines the start of the custom time window (as an ISO 8601 timestamp) for which the cost and usage data is retrieved in the widget. (AI-inferred)
 	StartTime any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_CostAndUsage struct {
-	// This filter object defines the criteria (e.g., service, region, tag, or cost category) that restrict which cost and usage data is returned and displayed in the dashboard widget. (AI-inferred)
 	Filter any
-	// Specifies the time granularity (e.g., DAILY or MONTHLY) for the cost and usage data displayed in the dashboard widget. (AI-inferred)
 	Granularity any
-	// Specifies the list of grouping definitions (e.g., by service, linked account, or region) that control how cost and usage data is aggregated in the widget, mirroring the GroupBy parameter of an AWS Cost Explorer query. (AI-inferred)
 	GroupBy any
-	// Specifies the list of Cost Explorer metric names (e.g., BlendedCost, UnblendedCost, UsageQuantity) to be included in the widget's cost-and-usage query and displayed on the dashboard. (AI-inferred)
 	Metrics any
 	TimeRange any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage_Filter struct {
 	And any
-	// The cost category filter for the reservation coverage query, mapping each cost category name to a list of values used to include or exclude matching reservation coverage data. (AI-inferred)
 	CostCategories any
-	// Defines a map of dimension names (e.g., REGION, INSTANCE_TYPE) to lists of allowed values, which filters the reservation coverage data displayed in the widget based on those dimension criteria. (AI-inferred)
 	Dimensions any
-	// The NOT logical operator that negates a nested filter expression for the reservation coverage query, so results exclude resources that match the inner filter condition. (AI-inferred)
 	Not any
-	// A map of tag keys and values that filter the reservation coverage data displayed in the dashboard widget, ensuring only resources matching those tags are included in the coverage metrics. (AI-inferred)
 	Tags any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_ReservationCoverage struct {
-	// Specifies the cost explorer query filter criteria (such as services, accounts, regions, or tags) used to narrow the reservation coverage data displayed by the corresponding dashboard widget. (AI-inferred)
 	Filter any
-	// Specifies the time granularity (e.g., DAILY, MONTHLY, HOURLY) for the reservation coverage data displayed in the widget. (AI-inferred)
 	Granularity any
-	// Specifies the dimensions (such as LINKED_ACCOUNT, REGION, or INSTANCE_TYPE) by which reservation coverage data is grouped in the widget's Cost Explorer query. (AI-inferred)
 	GroupBy any
 	Metrics any
-	// Defines the time range (e.g., start and end dates) for which reservation coverage metrics are aggregated and displayed in the dashboard widget. (AI-inferred)
 	TimeRange any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_ReservationUtilization struct {
-	// Defines the expression that filters which reservation utilization data (e.g., by account, service, region, or tags) is displayed in the widget's chart. (AI-inferred)
 	Filter any
-	// Specifies the granularity of reservation utilization data displayed in the widget, such as DAILY or MONTHLY. (AI-inferred)
 	Granularity any
-	// Specifies the dimensions or tags by which to group the reservation utilization data in the dashboard widget, such as instance type, region, or linked account. (AI-inferred)
 	GroupBy any
-	// Specifies the time interval (e.g., a preset like 'last 3 months' or custom start/end dates) for which reservation utilization metrics are queried and displayed in the widget. (AI-inferred)
 	TimeRange any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters_SavingsPlansUtilization struct {
-	// The filter object defines the conditions (such as account, region, service, or tag dimensions) used to narrow the savings plans utilization data displayed by the widget. (AI-inferred)
 	Filter any
-	// Specifies the time granularity (e.g., DAILY, MONTHLY, or HOURLY) for the savings plans utilization query used by this dashboard widget. (AI-inferred)
 	Granularity any
-	// Configures the time interval (start and end dates) for which savings plans utilization metrics are queried and displayed in the dashboard widget. (AI-inferred)
 	TimeRange any
 }
 
 type Dashboard_Widgets_Configs_QueryParameters struct {
-	// Specifies the cost and usage query parameters for the widget, such as the time period, granularity, and metrics to display. (AI-inferred)
 	CostAndUsage any
-	// This object specifies the query parameters that determine how the dashboard widget calculates and displays reservation coverage, showing the percentage of AWS usage covered by Reserved Instances and Savings Plans. (AI-inferred)
 	ReservationCoverage any
 	ReservationUtilization any
-	// Specifies the query parameters for displaying Savings Plans coverage data in a BCM dashboard widget, allowing you to customize what coverage information is included. (AI-inferred)
 	SavingsPlansCoverage any
 	SavingsPlansUtilization any
 }
@@ -134,12 +96,9 @@ type Dashboard_Widgets_Configs struct {
 type Dashboard_Widgets struct {
 	Configs any
 	Description any
-	// In an AWS BCM Dashboard, the height of a widget defines its vertical size on the dashboard grid, expressed in grid units. (AI-inferred)
 	Height any
 	HorizontalOffset any
-	// The title text that is displayed on the widget in the AWS BCM (Billing and Cost Management) dashboard. (AI-inferred)
 	Title any
-	// The width of the widget in grid units on the BCM dashboard, determining how many columns of the dashboard's layout the widget occupies. (AI-inferred)
 	Width any
 }
 
@@ -352,10 +311,8 @@ var Dashboard_WidgetsFields = ubx.FieldMap{
 
 type DashboardConfig struct {
 	Description any
-	// A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
 	Name any
 	Tags any
-	// This required list contains the widget definitions—each specifying a visual block like a chart or KPI tile—that together form the content of the BCM dashboard. (AI-inferred)
 	Widgets any
 }
 
@@ -363,13 +320,10 @@ type DashboardAttrs struct {
 	Arn any
 	CreatedAt any
 	Description any
-	// A user-specified unique name for the AWS Billing and Cost Management dashboard, used to identify and display the dashboard in the console. (AI-inferred)
 	Name any
 	Tags any
 	Type any
-	// The `updated_at` attribute is a read-only timestamp that records when the AWS Billing and Cost Management dashboard was last updated, automatically set by the service. (AI-inferred)
 	UpdatedAt any
-	// This required list contains the widget definitions—each specifying a visual block like a chart or KPI tile—that together form the content of the BCM dashboard. (AI-inferred)
 	Widgets any
 }
 

@@ -9,7 +9,6 @@ export interface Room_MessageReviewHandler {
 }
 
 export interface Room_Tags {
-  /** The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

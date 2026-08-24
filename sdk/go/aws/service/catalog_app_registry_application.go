@@ -8,7 +8,6 @@ type CatalogAppRegistryApplicationConfig struct {
 	Description any
 	// The name of the application.
 	Name any
-	// Assigns AWS resource tags to the Service Catalog AppRegistry application to help identify, organize, and manage it. (AI-inferred)
 	Tags any
 }
 
@@ -19,15 +18,12 @@ type CatalogAppRegistryApplicationAttrs struct {
 	ApplicationTagKey any
 	// The value of the AWS application tag, which is the identifier of an associated resource. Applications created before 11/13/2023 or applications without the AWS application tag resource group return no value.
 	ApplicationTagValue any
-	// The Amazon Resource Name (ARN) of the AppRegistry application, which uniquely identifies it within AWS and is assigned on creation. (AI-inferred)
 	Arn any
 	// The description of the application.
 	Description any
-	// The unique identifier (ApplicationId) of the AppRegistry application, assigned by AWS and used to reference the application in other AppRegistry resources. (AI-inferred)
 	Id any
 	// The name of the application.
 	Name any
-	// Assigns AWS resource tags to the Service Catalog AppRegistry application to help identify, organize, and manage it. (AI-inferred)
 	Tags any
 }
 

@@ -4,7 +4,6 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationsApplication_ApplicationConfig_ContactHandling struct {
-	// Specifies the operational scope of contact handling (the only supported value is DRIVE) for the AppIntegrations application, meaning the app acts as the primary interface during a contact. (AI-inferred)
 	Scope any
 }
 
@@ -13,27 +12,21 @@ type IntegrationsApplication_ApplicationConfig struct {
 }
 
 type IntegrationsApplication_ApplicationSourceConfig_ExternalUrlConfig struct {
-	// The URL that users are redirected to when they access the application from the AppIntegrations UI. (AI-inferred)
 	AccessUrl any
-	// Specifies a list of allowed origins for the external URL of the AppIntegrations application, enabling CORS access from those domains. (AI-inferred)
 	ApprovedOrigins any
 }
 
 type IntegrationsApplication_ApplicationSourceConfig struct {
-	// Configures the external URL for the AppIntegrations application, specifying the access URL and the list of approved origins. (AI-inferred)
 	ExternalUrlConfig any
 }
 
 type IntegrationsApplication_IframeConfig struct {
-	// Defines the list of allowed origins that are permitted to embed this AppIntegrations application in an iframe. (AI-inferred)
 	Allow any
-	// Defines the sandbox permissions for the iframe used to display the application, where each string in the list corresponds to a token such as 'allow-scripts' or 'allow-same-origin' that controls what the iframe content can do. (AI-inferred)
 	Sandbox any
 }
 
 type IntegrationsApplication_Tags struct {
 	Key any
-	// The tag value for a key-value pair attached to the AWS AppIntegrations application, used to organize, identify, and manage the application resource within AWS. (AI-inferred)
 	Value any
 }
 
@@ -80,7 +73,6 @@ type IntegrationsApplicationConfig struct {
 	ApplicationType any
 	// The application description.
 	Description any
-	// Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred)
 	IframeConfig any
 	// The initialization timeout in milliseconds. Required when IsService is true.
 	InitializationTimeout any
@@ -108,7 +100,6 @@ type IntegrationsApplicationAttrs struct {
 	Description any
 	// The id of the application.
 	Id any
-	// Iframe configuration for the application, specifying the AccessUrl to embed and the ApprovedOrigins list that controls which domains can host the iframe. (AI-inferred)
 	IframeConfig any
 	// The initialization timeout in milliseconds. Required when IsService is true.
 	InitializationTimeout any

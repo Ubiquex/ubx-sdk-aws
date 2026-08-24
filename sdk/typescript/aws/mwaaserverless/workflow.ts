@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Workflow_DefinitionS3Location {
-  /** The name of the S3 bucket where the workflow definition file (DAG) for this MWAA Serverless workflow is stored. (AI-inferred) */
   bucket: string | Computed<string>;
-  /** The S3 object key (key) identifying the workflow definition file within the bucket specified by the parent definition_s3_location, which is required to load the workflow's DAG from S3. (AI-inferred) */
   objectKey: string | Computed<string>;
-  /** The specific version identifier of the S3 object that contains the workflow definition, used to reference a particular version of the file in the S3 bucket. (AI-inferred) */
   versionId?: string | Computed<string>;
 }
 
 export interface Workflow_EncryptionConfiguration {
-  /** Specifies the customer-managed AWS KMS key ID (or ARN/alias) that Amazon MWAA uses to encrypt the serverless workflow's definition and related data at rest. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
   type: string | Computed<string>;
 }
@@ -21,14 +17,11 @@ export interface Workflow_LoggingConfiguration {
 }
 
 export interface Workflow_NetworkConfiguration {
-  /** A list of security group IDs that AWS MWAA attaches to the VPC network interfaces of the serverless workflow environment, controlling inbound and outbound traffic. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Provides the private subnet IDs within your VPC that the serverless workflow's underlying AWS resources are placed in, allowing the workflow to run in your own isolated network. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
 }
 
 export interface Workflow_ScheduleConfiguration {
-  /** The cron expression that defines the schedule on which the serverless workflow runs, using standard Unix cron syntax. (AI-inferred) */
   cronExpression?: string | Computed<string>;
 }
 
@@ -55,41 +48,29 @@ const Workflow_NetworkConfigurationFields: FieldMap = {
 export interface WorkflowConfig {
   definitionS3Location: Workflow_DefinitionS3Location | Computed<Workflow_DefinitionS3Location>;
   description?: string | Computed<string>;
-  /** Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred) */
   encryptionConfiguration?: Workflow_EncryptionConfiguration | Computed<Workflow_EncryptionConfiguration>;
-  /** Configures the logging settings for the AWS MWAA serverless workflow, specifying whether to enable logging and the log level (e.g., INFO, WARNING, ERROR, CRITICAL) for each component such as DAG processing, scheduler, task, web server, and worker logs. (AI-inferred) */
   loggingConfiguration?: Workflow_LoggingConfiguration | Computed<Workflow_LoggingConfiguration>;
   name?: string | Computed<string>;
-  /** Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred) */
   networkConfiguration?: Workflow_NetworkConfiguration | Computed<Workflow_NetworkConfiguration>;
-  /** The Amazon Resource Name (ARN) of the IAM role that Amazon MWAA (Managed Workflows for Apache Airflow) assumes to access resources in your account, such as S3 buckets and CloudWatch Logs, on behalf of the serverless workflow. (AI-inferred) */
   roleArn: string | Computed<string>;
   /** A map of key-value pairs to be applied as tags */
   tags?: unknown | Computed<unknown>;
-  /** Specifies how the workflow is triggered, with allowed values such as SCHEDULE (for cron-based scheduling) or EVENT (for event-driven execution). (AI-inferred) */
   triggerMode?: string | Computed<string>;
 }
 
 export interface WorkflowAttrs {
-  /** The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred) */
   createdAt: string;
   definitionS3Location: Workflow_DefinitionS3Location;
   description: string;
-  /** Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred) */
   encryptionConfiguration: Workflow_EncryptionConfiguration;
-  /** Configures the logging settings for the AWS MWAA serverless workflow, specifying whether to enable logging and the log level (e.g., INFO, WARNING, ERROR, CRITICAL) for each component such as DAG processing, scheduler, task, web server, and worker logs. (AI-inferred) */
   loggingConfiguration: Workflow_LoggingConfiguration;
-  /** The read-only timestamp (in ISO 8601 format) indicating when the MWAA serverless workflow was last modified, as provided by the AWS API. (AI-inferred) */
   modifiedAt: string;
   name: string;
-  /** Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred) */
   networkConfiguration: Workflow_NetworkConfiguration;
-  /** The Amazon Resource Name (ARN) of the IAM role that Amazon MWAA (Managed Workflows for Apache Airflow) assumes to access resources in your account, such as S3 buckets and CloudWatch Logs, on behalf of the serverless workflow. (AI-inferred) */
   roleArn: string;
   scheduleConfiguration: Workflow_ScheduleConfiguration;
   /** A map of key-value pairs to be applied as tags */
   tags: unknown;
-  /** Specifies how the workflow is triggered, with allowed values such as SCHEDULE (for cron-based scheduling) or EVENT (for event-driven execution). (AI-inferred) */
   triggerMode: string;
   workflowArn: string;
   workflowStatus: string;

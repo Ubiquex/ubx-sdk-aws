@@ -29,9 +29,7 @@ class ConnectFlowEntitlement_Encryption:
 
 @dataclasses.dataclass
 class ConnectFlowEntitlement_Tags:
-    # The key of a tag attached to the AWS Elemental MediaConnect flow entitlement, used to organize, identify, and optionally drive cost allocation for this entitlement resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag key-value pair associated with this AWS Elemental MediaConnect flow entitlement, used for metadata, cost allocation, and resource management. (AI-inferred)
     value: Any = None
 
 _ConnectFlowEntitlement_EncryptionFields = {

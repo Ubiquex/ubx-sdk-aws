@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TtwinMakerEntity_Status_Error {
-  /** The machine-readable error code returned in the entity's status when AWS IoT TwinMaker fails to create or update the entity, providing a programmatic identifier for the failure type. (AI-inferred) */
   code?: string | Computed<string>;
-  /** The error message from AWS IoT TwinMaker explaining why the entity is in the failed or error state. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface TtwinMakerEntity_Status {
-  /** Contains the error code and message returned by AWS IoT TwinMaker when the entity is in an ERROR state, providing details about why an entity operation such as creation or update failed. (AI-inferred) */
   error?: TtwinMakerEntity_Status_Error | Computed<TtwinMakerEntity_Status_Error>;
-  /** The current lifecycle state of the IoT TwinMaker entity, such as CREATING, ACTIVE, UPDATING, DELETING, or ERROR, as reported by AWS IoT TwinMaker. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
@@ -41,7 +37,6 @@ export interface TtwinMakerEntityAttrs {
   components: unknown;
   /** A map that sets information about a composite component. */
   compositeComponents: unknown;
-  /** The date and time when the IoT TwinMaker entity was created, in ISO 8601 format. (AI-inferred) */
   creationDateTime: string;
   /** The description of the entity. */
   description: string;
@@ -53,11 +48,9 @@ export interface TtwinMakerEntityAttrs {
   hasChildEntities: boolean;
   /** The ID of the parent entity. */
   parentEntityId: string;
-  /** The current status of the entity, including its state (e.g., CREATING, UPDATING, ACTIVE, DELETING, DELETED) and any error details if an operation failed. (AI-inferred) */
   status: TtwinMakerEntity_Status;
   /** A key-value pair to associate with a resource. */
   tags: unknown;
-  /** The date and time when the entity was last updated, returned as a string in ISO 8601 format. (AI-inferred) */
   updateDateTime: string;
   /** The ID of the workspace. */
   workspaceId: string;

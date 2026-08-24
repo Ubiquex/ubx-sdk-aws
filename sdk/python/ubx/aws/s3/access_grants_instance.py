@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessGrantsInstance_Tags:
-    # The key (name) of a tag attached to the S3 Access Grants instance, used to define custom metadata for identification, categorization, or cost allocation. (AI-inferred)
     key: Any = None
-    # The value of an individual tag key-value pair assigned to the S3 Access Grants instance, enabling cost allocation and resource classification. (AI-inferred)
     value: Any = None
 
 _AccessGrantsInstance_TagsFields = {
@@ -22,7 +20,6 @@ _AccessGrantsInstance_TagsFields = {
 class AccessGrantsInstanceConfig:
     # The Amazon Resource Name (ARN) of the specified AWS Identity Center.
     identity_center_arn: Any = None
-    # A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -33,7 +30,6 @@ class AccessGrantsInstanceAttrs:
     access_grants_instance_id: Any = None
     # The Amazon Resource Name (ARN) of the specified AWS Identity Center.
     identity_center_arn: Any = None
-    # A list of tag objects (each with a Key and Value) to attach to the S3 Access Grants instance, enabling metadata categorization and cost tracking for this resource. (AI-inferred)
     tags: Any = None
 
 AccessGrantsInstance = ubx.ResourceBinding(

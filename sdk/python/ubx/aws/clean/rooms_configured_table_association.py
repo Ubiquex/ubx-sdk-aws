@@ -8,36 +8,27 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_Aggregation:
-    # Specifies which additional analyses (such as CORRELATION or REGRESSION) are permitted on the output of aggregation queries governed by this configured table association's aggregation analysis rule. (AI-inferred)
     allowed_additional_analyses: Any = None
-    # The list of collaboration member account IDs (or member ARNs) allowed to receive query results from aggregation queries run against this configured table association. (AI-inferred)
     allowed_result_receivers: Any = None
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1:
-    # Specifies the aggregation analysis rule policy parameters for the configured table association, including the allowed aggregate columns, dimension columns, join requirements, and permitted aggregation operators. (AI-inferred)
     aggregation: Any = None
-    # The custom analysis rule policy (version v1) for this AWS Clean Rooms configured table association, defining the allowed SQL operations such as joins, aggregations, and output columns that members can use when querying the associated table. (AI-inferred)
     custom: Any = None
-    # Configures the list analysis rule for the configured table association, defining the allowed columns that members can select in list queries. (AI-inferred)
     list: Any = None
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy:
-    # Specifies the versioned analysis rule policy for a configured table association, containing the v1 policy that defines allowed aggregation columns, join columns, or custom SQL templates used to constrain queries in the collaboration. (AI-inferred)
     v1: Any = None
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules:
-    # This object specifies the policy for an analysis rule attached to a configured table association, defining the type of analysis (e.g., aggregation, list, or custom) along with the detailed constraints and parameters (such as aggregation columns, join conditions, and output limits) that govern queries run by collaboration members on the associated table. (AI-inferred)
     policy: Any = None
-    # Specifies the type of analysis rule for the configured table association (e.g., AGGREGATION or LIST), which defines the privacy-enforcing query operations allowed on the associated table. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociation_Tags:
     key: Any = None
-    # Specifies the value of a tag key attached to the AWS Clean Rooms configured table association, used to classify and manage the resource. (AI-inferred)
     value: Any = None
 
 _RoomsConfiguredTableAssociation_ConfiguredTableAssociationAnalysisRules_Policy_V1_AggregationFields = {
@@ -87,38 +78,24 @@ _RoomsConfiguredTableAssociation_TagsFields = {
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociationConfig:
-    # Configures the analysis rules for the configured table association, specifying the permitted analysis types (e.g., list, aggregate, custom) and their policy constraints for querying the associated configured table within a collaboration. (AI-inferred)
     configured_table_association_analysis_rules: Any = None
-    # The unique identifier of the AWS Clean Rooms configured table that this association links to a membership for collaborative analysis. (AI-inferred)
     configured_table_identifier: Any = None
-    # An optional free-form description of the configured table association, used to provide additional context or identity for the association within the AWS Clean Rooms membership. (AI-inferred)
     description: Any = None
-    # The unique identifier of the AWS Clean Rooms membership for which this configured table association is created, linking the configured table to that membership. (AI-inferred)
     membership_identifier: Any = None
-    # A unique, user-provided name for the configured table association, used to identify and manage the association within the AWS Clean Rooms membership. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms assumes to access the underlying data referenced by the configured table when the associated table is used in analyses. (AI-inferred)
     role_arn: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration.
     tags: Any = None
 
 @dataclasses.dataclass
 class RoomsConfiguredTableAssociationAttrs:
-    # The Amazon Resource Name (ARN) of the configured table association, assigned by AWS when the association is created. (AI-inferred)
     arn: Any = None
-    # Configures the analysis rules for the configured table association, specifying the permitted analysis types (e.g., list, aggregate, custom) and their policy constraints for querying the associated configured table within a collaboration. (AI-inferred)
     configured_table_association_analysis_rules: Any = None
-    # The unique identifier assigned by AWS to the configured table association within the membership. (AI-inferred)
     configured_table_association_identifier: Any = None
-    # The unique identifier of the AWS Clean Rooms configured table that this association links to a membership for collaborative analysis. (AI-inferred)
     configured_table_identifier: Any = None
-    # An optional free-form description of the configured table association, used to provide additional context or identity for the association within the AWS Clean Rooms membership. (AI-inferred)
     description: Any = None
-    # The unique identifier of the AWS Clean Rooms membership for which this configured table association is created, linking the configured table to that membership. (AI-inferred)
     membership_identifier: Any = None
-    # A unique, user-provided name for the configured table association, used to identify and manage the association within the AWS Clean Rooms membership. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Clean Rooms assumes to access the underlying data referenced by the configured table when the associated table is used in analyses. (AI-inferred)
     role_arn: Any = None
     # An arbitrary set of tags (key-value pairs) for this cleanrooms collaboration.
     tags: Any = None

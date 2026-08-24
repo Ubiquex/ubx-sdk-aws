@@ -4,21 +4,16 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ZoneEnvironmentBlueprintConfiguration_ProvisioningConfigurations_LakeFormationConfiguration struct {
-	// Defines a list of S3 paths to exclude from Lake Formation location registration when provisioning the environment, preventing those locations from being registered as data lake locations. (AI-inferred)
 	LocationRegistrationExcludeS3Locations any
-	// The ARN of the IAM role that AWS DataZone uses to register data lake locations with Lake Formation for this environment blueprint configuration. (AI-inferred)
 	LocationRegistrationRole any
 }
 
 type ZoneEnvironmentBlueprintConfiguration_ProvisioningConfigurations struct {
-	// Defines the AWS Lake Formation configuration for the environment blueprint, specifying how Data Zone provisions and manages Lake Formation data lake resources, including trusted service principals and location registration settings, when creating environments from the blueprint. (AI-inferred)
 	LakeFormationConfiguration any
 }
 
 type ZoneEnvironmentBlueprintConfiguration_RegionalParameters struct {
-	// The parameters map within each regional parameter set provides the blueprint configuration key-value pairs to be used for environments in that specific AWS region, allowing region-specific overrides. (AI-inferred)
 	Parameters any
-	// The AWS region (e.g., us-east-1) to which this set of regional blueprint configuration parameters applies. (AI-inferred)
 	Region any
 }
 
@@ -41,52 +36,32 @@ var ZoneEnvironmentBlueprintConfiguration_RegionalParametersFields = ubx.FieldMa
 	}
 
 type ZoneEnvironmentBlueprintConfigurationConfig struct {
-	// The unique identifier of the Amazon Data Zone domain for which this environment blueprint configuration is defined. (AI-inferred)
 	DomainIdentifier any
-	// The list of AWS Regions in which this environment blueprint configuration is enabled and can be used to provision Data Zone environments. (AI-inferred)
 	EnabledRegions any
-	// The unique identifier (name or ID) of the Amazon DataZone environment blueprint that this configuration applies to within the domain. (AI-inferred)
 	EnvironmentBlueprintIdentifier any
-	// The ARN of an IAM policy used as the permission boundary for the environment's service role, limiting the maximum permissions that can be granted to the role. (AI-inferred)
 	EnvironmentRolePermissionBoundary any
 	// Region-agnostic environment blueprint parameters.
 	GlobalParameters any
-	// The ARN of the IAM role that permits Amazon DataZone to manage access to resources created for the environment blueprint. (AI-inferred)
 	ManageAccessRoleArn any
-	// Specifies the list of AWS regions where environments can be provisioned from this blueprint, along with the IAM environment role ARN to use for each region. (AI-inferred)
 	ProvisioningConfigurations any
-	// The ARN of the IAM role that AWS DataZone assumes to provision and manage resources for environments created from this blueprint configuration. (AI-inferred)
 	ProvisioningRoleArn any
-	// Specifies a list of region-specific parameter settings, where each item contains an AWS Region and a set of key-value configuration parameters applied to the environment blueprint in that region. (AI-inferred)
 	RegionalParameters any
 }
 
 type ZoneEnvironmentBlueprintConfigurationAttrs struct {
-	// The timestamp (in ISO 8601 format) indicating when the environment blueprint configuration was created. (AI-inferred)
 	CreatedAt any
-	// The unique identifier of the Amazon Data Zone domain to which this environment blueprint configuration belongs. (AI-inferred)
 	DomainId any
-	// The unique identifier of the Amazon Data Zone domain for which this environment blueprint configuration is defined. (AI-inferred)
 	DomainIdentifier any
-	// The list of AWS Regions in which this environment blueprint configuration is enabled and can be used to provision Data Zone environments. (AI-inferred)
 	EnabledRegions any
-	// The unique identifier of the environment blueprint that this configuration is associated with, identifying which blueprint's provisioning settings are defined. (AI-inferred)
 	EnvironmentBlueprintId any
-	// The unique identifier (name or ID) of the Amazon DataZone environment blueprint that this configuration applies to within the domain. (AI-inferred)
 	EnvironmentBlueprintIdentifier any
-	// The ARN of an IAM policy used as the permission boundary for the environment's service role, limiting the maximum permissions that can be granted to the role. (AI-inferred)
 	EnvironmentRolePermissionBoundary any
 	// Region-agnostic environment blueprint parameters.
 	GlobalParameters any
-	// The ARN of the IAM role that permits Amazon DataZone to manage access to resources created for the environment blueprint. (AI-inferred)
 	ManageAccessRoleArn any
-	// Specifies the list of AWS regions where environments can be provisioned from this blueprint, along with the IAM environment role ARN to use for each region. (AI-inferred)
 	ProvisioningConfigurations any
-	// The ARN of the IAM role that AWS DataZone assumes to provision and manage resources for environments created from this blueprint configuration. (AI-inferred)
 	ProvisioningRoleArn any
-	// Specifies a list of region-specific parameter settings, where each item contains an AWS Region and a set of key-value configuration parameters applied to the environment blueprint in that region. (AI-inferred)
 	RegionalParameters any
-	// The timestamp of when this environment blueprint configuration was last updated. (AI-inferred)
 	UpdatedAt any
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Studio_Tags {
-  /** Defines a user-defined tag key for the Amazon EMR Studio, which can be used for cost allocation, access control, and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag applied to the EMR Studio, used to categorize, identify, or manage the studio resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -20,7 +18,6 @@ export interface StudioConfig {
   defaultS3Location: string | Computed<string>;
   /** A detailed description of the Studio. */
   description?: string | Computed<string>;
-  /** The ARN of an AWS KMS key used to encrypt data within the EMR Studio workspace, such as notebooks and artifacts. (AI-inferred) */
   encryptionKeyArn?: string | Computed<string>;
   /** The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by VpcId. */
   engineSecurityGroupId: string | Computed<string>;
@@ -34,15 +31,12 @@ export interface StudioConfig {
   idpRelayStateParameterName?: string | Computed<string>;
   /** A descriptive name for the Amazon EMR Studio. */
   name: string | Computed<string>;
-  /** The IAM role that EMR Studio assumes to call AWS services on your behalf. (AI-inferred) */
   serviceRole: string | Computed<string>;
   /** A list of up to 5 subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by VpcId. Studio users can create a Workspace in any of the specified subnets. */
   subnetIds: string[] | Computed<string[]>;
-  /** A list of key-value tags to attach to the EMR Studio, used for organizing, managing, and cost allocation of the resource in AWS. (AI-inferred) */
   tags?: Studio_Tags[] | Computed<Studio_Tags[]>;
   /** A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is false. */
   trustedIdentityPropagationEnabled?: boolean | Computed<boolean>;
-  /** The IAM role that EMR Studio users assume, granting permissions for their studio work within the EMR Studio environment. (AI-inferred) */
   userRole?: string | Computed<string>;
   /** The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio. */
   vpcId: string | Computed<string>;
@@ -51,7 +45,6 @@ export interface StudioConfig {
 }
 
 export interface StudioAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this EMR Studio in AWS. (AI-inferred) */
   arn: string;
   /** Specifies whether the Studio authenticates users using single sign-on (SSO) or IAM. Amazon EMR Studio currently only supports SSO authentication. */
   authMode: string;
@@ -59,7 +52,6 @@ export interface StudioAttrs {
   defaultS3Location: string;
   /** A detailed description of the Studio. */
   description: string;
-  /** The ARN of an AWS KMS key used to encrypt data within the EMR Studio workspace, such as notebooks and artifacts. (AI-inferred) */
   encryptionKeyArn: string;
   /** The ID of the Amazon EMR Studio Engine security group. The Engine security group allows inbound network traffic from the Workspace security group, and it must be in the same VPC specified by VpcId. */
   engineSecurityGroupId: string;
@@ -73,19 +65,16 @@ export interface StudioAttrs {
   idpRelayStateParameterName: string;
   /** A descriptive name for the Amazon EMR Studio. */
   name: string;
-  /** The IAM role that EMR Studio assumes to call AWS services on your behalf. (AI-inferred) */
   serviceRole: string;
   /** The ID of the EMR Studio. */
   studioId: string;
   /** A list of up to 5 subnet IDs to associate with the Studio. The subnets must belong to the VPC specified by VpcId. Studio users can create a Workspace in any of the specified subnets. */
   subnetIds: string[];
-  /** A list of key-value tags to attach to the EMR Studio, used for organizing, managing, and cost allocation of the resource in AWS. (AI-inferred) */
   tags: Studio_Tags[];
   /** A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is false. */
   trustedIdentityPropagationEnabled: boolean;
   /** The unique Studio access URL. */
   url: string;
-  /** The IAM role that EMR Studio users assume, granting permissions for their studio work within the EMR Studio environment. (AI-inferred) */
   userRole: string;
   /** The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio. */
   vpcId: string;

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class NotificationHub_NotificationHubStatusSummary:
     notification_hub_status: Any = None
-    # A human-readable explanation accompanying the hub's status that provides additional context when the notification hub is not fully active, such as a reason for an inactive or pending state. (AI-inferred)
     notification_hub_status_reason: Any = None
 
 @dataclasses.dataclass
@@ -19,9 +18,7 @@ class NotificationHubConfig:
 
 @dataclasses.dataclass
 class NotificationHubAttrs:
-    # The date and time when the notification hub was created, typically returned as a string in ISO 8601 format. (AI-inferred)
     creation_time: Any = None
-    # Returns a summary of the current status of the notification hub in each region where it is enabled, with each entry specifying the region and its operational status (such as ACTIVE). (AI-inferred)
     notification_hub_status_summary: Any = None
     # Region that NotificationHub is present in.
     region: Any = None

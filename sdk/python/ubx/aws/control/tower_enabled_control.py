@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TowerEnabledControl_Parameters:
-    # The key (name) of a parameter to supply when enabling the AWS Control Tower control, which identifies the specific configuration option being set. (AI-inferred)
     key: Any = None
-    # Assigns the value for a Control Tower enabled-control parameter key (e.g., the tag key or allowed region list) that configures the behavior of the control being enabled. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class TowerEnabledControl_Tags:
-    # The key of a tag attached to the AWS Control Tower enabled control, enabling you to organize and identify the control with custom metadata. (AI-inferred)
     key: Any = None
     value: Any = None
 

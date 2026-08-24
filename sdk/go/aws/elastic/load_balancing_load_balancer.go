@@ -15,9 +15,7 @@ type LoadBalancingLoadBalancer_AccessLoggingPolicy struct {
 }
 
 type LoadBalancingLoadBalancer_AppCookieStickinessPolicy struct {
-	// The name of the application cookie that the classic load balancer uses to route a user's subsequent requests to the same registered instance for session stickiness. (AI-inferred)
 	CookieName any
-	// The name to assign to this application-controlled cookie stickiness policy, which is created for the Classic Load Balancer and can be referenced in a listener's policy list to enable session affinity based on a custom application cookie. (AI-inferred)
 	PolicyName any
 }
 
@@ -47,44 +45,29 @@ type LoadBalancingLoadBalancer_HealthCheck struct {
 }
 
 type LoadBalancingLoadBalancer_LbcookieStickinessPolicy struct {
-	// Specifies the time period in seconds after which the load balancer's sticky cookie expires, where omitting it makes the cookie last only for the duration of the browser session. (AI-inferred)
 	CookieExpirationPeriod any
-	// The name assigned to the LBCookieStickinessPolicy for a Classic Load Balancer, used to identify and reference this policy when configuring listener stickiness. (AI-inferred)
 	PolicyName any
 }
 
 type LoadBalancingLoadBalancer_Listeners struct {
-	// The TCP port on the registered EC2 instances to which the Classic Load Balancer forwards traffic, as defined for each listener. (AI-inferred)
 	InstancePort any
-	// Specifies the protocol (e.g., HTTP, HTTPS, TCP, SSL) that the Classic Load Balancer uses to communicate with backend instances, which defaults to the listener's protocol if not set. (AI-inferred)
 	InstanceProtocol any
-	// The external port on which the load balancer listens for incoming client traffic, such as 80 for HTTP or 443 for HTTPS. (AI-inferred)
 	LoadBalancerPort any
-	// Specifies the list of load balancer policy names to apply to this listener, enabling features like SSL negotiation or backend authentication for traffic on the listener's port. (AI-inferred)
 	PolicyNames any
-	// Specifies the client-facing protocol for a classic load balancer listener (e.g., HTTP, HTTPS, TCP, or SSL), which must match the port and determines how incoming traffic is handled. (AI-inferred)
 	Protocol any
-	// The ARN of the IAM server certificate (or ACM certificate) used for SSL/TLS termination on this listener, required when the listener protocol is HTTPS or SSL. (AI-inferred)
 	SslcertificateId any
 }
 
 type LoadBalancingLoadBalancer_Policies_Attributes struct {
-	// The name of a policy attribute within a classic load balancer policy, paired with its value to define settings such as session stickiness or cookie behavior. (AI-inferred)
 	Name any
-	// The value string for a load balancer policy attribute, paired with its Key, such as a cookie expiration period or stickiness setting. (AI-inferred)
 	Value any
 }
 
 type LoadBalancingLoadBalancer_Policies struct {
-	// Specifies the list of key-value attribute pairs (each with a Key and Value) that define the configuration settings for the associated Elastic Load Balancing policy, such as stickiness expiration periods or other policy-specific parameters. (AI-inferred)
 	Attributes any
-	// Specifies the list of instance ports to which the classic load balancer policy is applied, commonly used with proxy protocol or other policy types that target specific ports. (AI-inferred)
 	InstancePorts any
-	// Specifies the load balancer (front-end) ports to which this classic Elastic Load Balancing policy (e.g., a stickiness or SSL negotiation policy) is applied. (AI-inferred)
 	LoadBalancerPorts any
-	// The name of the load balancer policy, which must be unique within the load balancer and is used to reference the policy in listener configurations. (AI-inferred)
 	PolicyName any
-	// The type of the classic load balancer policy, such as SSLNegotiationPolicyType or ProxyProtocolPolicyType, which determines the policy's behavior and the set of attributes it supports. (AI-inferred)
 	PolicyType any
 }
 
@@ -96,9 +79,7 @@ type LoadBalancingLoadBalancer_SourceSecurityGroup struct {
 }
 
 type LoadBalancingLoadBalancer_Tags struct {
-	// The key of a tag assigned to the Classic Load Balancer, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to a Classic Load Balancer, which together with the tag key forms a key-value pair used for organizing and identifying AWS resources. (AI-inferred)
 	Value any
 }
 
@@ -237,7 +218,6 @@ type LoadBalancingLoadBalancerAttrs struct {
 	Scheme any
 	// The security groups for the load balancer. Valid only for load balancers in a VPC.
 	SecurityGroups any
-	// Computed read-only object holding the group name and owner alias of the automatically created source security group for the classic load balancer, used to authorize inbound traffic to backend instances in security group rules. (AI-inferred)
 	SourceSecurityGroup any
 	// The IDs of the subnets for the load balancer. You can specify at most one subnet per Availability Zone.
 	Subnets any

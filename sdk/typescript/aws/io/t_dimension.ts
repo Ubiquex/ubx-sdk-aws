@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TDimension_Tags {
   key?: string | Computed<string>;
-  /** The tag value, paired with its key, assigns arbitrary metadata to the AWS IoT Dimension resource for categorization, filtering, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

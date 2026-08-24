@@ -5,13 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_DomainEntries struct {
 	Id any
-	// Indicates whether the domain entry is an alias record that routes traffic to an AWS resource such as a load balancer or distribution, rather than a standard DNS record with a literal target. (AI-inferred)
 	IsAlias any
-	// The subdomain or hostname for the DNS record, such as 'www' or '@' for the root domain, that this domain entry defines. (AI-inferred)
 	Name any
-	// The destination value that this Lightsail domain DNS record resolves to, such as an IPv4 address for an A record or a hostname for a CNAME record. (AI-inferred)
 	Target any
-	// The DNS record type for this domain entry, such as A, CNAME, MX, or TXT. (AI-inferred)
 	Type any
 }
 
@@ -23,7 +19,6 @@ type Domain_Location struct {
 }
 
 type Domain_Tags struct {
-	// The key of a tag that can be assigned to a Lightsail domain, enabling you to categorize, manage, and control access to the domain. (AI-inferred)
 	Key any
 	Value any
 }

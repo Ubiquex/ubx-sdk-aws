@@ -4,9 +4,7 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HubStandard_DisabledStandardsControls struct {
-	// The user-supplied reason for disabling the specified Security Hub standard control in the DisabledStandardsControls list of the AWS::SecurityHub::Standard resource. (AI-inferred)
 	Reason any
-	// The Amazon Resource Name (ARN) of the specific Security Hub standard control that is disabled for this standard membership. (AI-inferred)
 	StandardsControlArn any
 }
 
@@ -27,7 +25,6 @@ type HubStandardAttrs struct {
 	DisabledStandardsControls any
 	// The ARN of the standard that you want to enable. To view a list of available ASH standards and their ARNs, use the [DescribeStandards](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html) API operation.
 	StandardsArn any
-	// The Amazon Resource Name (ARN) that uniquely identifies the subscription to a Security Hub standard. (AI-inferred)
 	StandardsSubscriptionArn any
 }
 

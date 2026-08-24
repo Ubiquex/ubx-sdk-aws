@@ -25,7 +25,6 @@ export interface GatewayV2IntegrationResponseAttrs {
   contentHandlingStrategy: string;
   /** The integration ID. */
   integrationId: string;
-  /** The automatically generated identifier for this integration response, assigned by AWS when the resource is created. (AI-inferred) */
   integrationResponseId: string;
   /** The integration response key. */
   integrationResponseKey: string;

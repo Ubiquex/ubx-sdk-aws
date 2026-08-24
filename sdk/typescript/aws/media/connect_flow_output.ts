@@ -13,61 +13,45 @@ export interface ConnectFlowOutput_Encryption {
 }
 
 export interface ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_Interface {
-  /** The name of the VPC interface on the MediaConnect flow used as the egress interface for this destination configuration, which must match a VPC interface already defined on the flow. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations {
-  /** The IP address to which the MediaConnect flow delivers the media stream output for this destination configuration. (AI-inferred) */
   destinationIp?: string | Computed<string>;
-  /** Specifies the destination port number to which the media stream output sends data for this destination configuration. (AI-inferred) */
   destinationPort?: number | Computed<number>;
-  /** Specifies the VPC interface configuration, including the interface name and type, that AWS Elemental MediaConnect uses to route the output media stream to its destination. (AI-inferred) */
   interface?: ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_Interface | Computed<ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations_Interface>;
 }
 
 export interface ConnectFlowOutput_MediaStreamOutputConfigurations_EncodingParameters {
-  /** Controls the amount of compression applied to the video stream for this media stream output configuration's encoding parameters, with lower values generally yielding higher quality and higher values increasing compression. (AI-inferred) */
   compressionFactor?: number | Computed<number>;
-  /** Specifies the encoder profile (such as high, medium, or quality) that MediaConnect uses to encode the media stream for this flow output. (AI-inferred) */
   encoderProfile?: string | Computed<string>;
 }
 
 export interface ConnectFlowOutput_MediaStreamOutputConfigurations {
-  /** A list of destination configurations that specify the IP address and port for sending a media stream, along with protocol-specific settings such as RTP or UDP parameters. (AI-inferred) */
   destinationConfigurations?: ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations[] | Computed<ConnectFlowOutput_MediaStreamOutputConfigurations_DestinationConfigurations[]>;
-  /** Specifies the encoding name for the media stream output, such as 'jxsv' or 'raw', which identifies the compression scheme used for the stream. (AI-inferred) */
   encodingName?: string | Computed<string>;
-  /** Configures the encoding parameters for a media stream output, such as the compression factor and encoder profile applied to the stream. (AI-inferred) */
   encodingParameters?: ConnectFlowOutput_MediaStreamOutputConfigurations_EncodingParameters | Computed<ConnectFlowOutput_MediaStreamOutputConfigurations_EncodingParameters>;
-  /** The name of the media stream that this output configuration sends to, matching the media stream name defined in the flow's media stream settings. (AI-inferred) */
   mediaStreamName?: string | Computed<string>;
 }
 
 export interface ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManager {
-  /** The ARN of the IAM role that AWS Elemental MediaConnect assumes to access the encryption key stored in AWS Secrets Manager for transit encryption of this router integration. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The ARN of the AWS Secrets Manager secret that holds the static encryption key configured for transit encryption on this MediaConnect flow output when routed through a router integration. (AI-inferred) */
   secretArn?: string | Computed<string>;
 }
 
 export interface ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration {
-  /** When set to true, AWS Elemental MediaConnect automatically generates and manages an encryption key for the router integration's transit encryption, and you do not need to specify a key ARN; when false, you must provide an explicit key ARN in the surrounding encryption key configuration. (AI-inferred) */
   automatic?: unknown | Computed<unknown>;
-  /** Defines the configuration for referencing an encryption key stored in AWS Secrets Manager, typically including the secret's ARN or name and the IAM role that grants MediaConnect permission to retrieve it. (AI-inferred) */
   secretsManager?: ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManager | Computed<ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration_SecretsManager>;
 }
 
 export interface ConnectFlowOutput_RouterIntegrationTransitEncryption {
   /** Configuration settings for flow transit encryption keys. */
   encryptionKeyConfiguration: ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration | Computed<ConnectFlowOutput_RouterIntegrationTransitEncryption_EncryptionKeyConfiguration>;
-  /** Defines the type of encryption key used for the router integration transit encryption, with valid values such as `static-key` and `srt-password`. (AI-inferred) */
   encryptionKeyType?: string | Computed<string>;
 }
 
 export interface ConnectFlowOutput_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag associated with this AWS Elemental MediaConnect flow output, used for cost allocation, access control, or organizational metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

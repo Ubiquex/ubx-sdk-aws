@@ -4,12 +4,10 @@ package scn
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dataset_PartitionSpec_Fields_Transform struct {
-	// Defines the target data type (such as STRING, INTEGER, DATE, or TIMESTAMP) that a source field's value is transformed to when generating the partition column for the dataset's partition specification. (AI-inferred)
 	Type any
 }
 
 type Dataset_PartitionSpec_Fields struct {
-	// The name of a partition field (column) used in the dataset's partition specification to define how the dataset data is partitioned. (AI-inferred)
 	Name any
 	Transform any
 }
@@ -20,16 +18,12 @@ type Dataset_PartitionSpec struct {
 }
 
 type Dataset_Schema_Fields struct {
-	// Indicates whether this field must be present in every record of the dataset, affecting data validation during ingestion. (AI-inferred)
 	IsRequired any
-	// The name of a field (column) within the schema of an AWS Supply Chain dataset, serving as the unique identifier for that attribute in the dataset. (AI-inferred)
 	Name any
-	// The data type of the field (column) in the schema for the AWS Supply Chain dataset, such as STRING, INTEGER, DOUBLE, or TIMESTAMP. (AI-inferred)
 	Type any
 }
 
 type Dataset_Schema_PrimaryKeys struct {
-	// The name of a column designated as a primary key in the dataset's schema definition. (AI-inferred)
 	Name any
 }
 
@@ -44,7 +38,6 @@ type Dataset_Schema struct {
 
 type Dataset_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the AWS Supply Chain dataset, used to organize, identify, or track the resource. (AI-inferred)
 	Value any
 }
 

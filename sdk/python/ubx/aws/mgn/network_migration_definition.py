@@ -8,21 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkMigrationDefinition_SourceConfigurations_SourceS3Configuration:
-    # The name of the S3 bucket that contains the source network configuration data used by the MGN network migration definition when the source type is S3. (AI-inferred)
     s3_bucket: Any = None
-    # Specifies the AWS account ID of the owner of the S3 bucket referenced in the source configuration, enabling MGN to access buckets across accounts for network migration data. (AI-inferred)
     s3_bucket_owner: Any = None
     s3_key: Any = None
 
 @dataclasses.dataclass
 class NetworkMigrationDefinition_SourceConfigurations:
-    # Specifies the environment of the source network (typically 'ON_PREMISES' or 'AWS') for each source configuration in the network migration definition. (AI-inferred)
     source_environment: Any = None
     source_s3_configuration: Any = None
 
 @dataclasses.dataclass
 class NetworkMigrationDefinition_Tags:
-    # The key portion of a tag attached to the network migration definition, used to label the resource for filtering, cost tracking, and operational management. (AI-inferred)
     key: Any = None
     value: Any = None
 

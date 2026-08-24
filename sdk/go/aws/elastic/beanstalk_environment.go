@@ -4,20 +4,14 @@ package elastic
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BeanstalkEnvironment_OptionSettings struct {
-	// Specifies the AWS Elastic Beanstalk configuration namespace (e.g., 'aws:autoscaling:asg', 'aws:ec2:instances') that groups related option settings for the environment. (AI-inferred)
 	Namespace any
-	// The name of the Elastic Beanstalk configuration option (e.g., 'IamInstanceProfile' or 'InstanceType') that this option setting defines within the specified namespace. (AI-inferred)
 	OptionName any
-	// Specifies the name of a specific resource (such as an Amazon RDS DB instance or an Auto Scaling group) in the Elastic Beanstalk environment that this option setting applies to, used when the option namespace supports multiple resources of the same type. (AI-inferred)
 	ResourceName any
-	// Specifies the actual value to apply for the given Elastic Beanstalk configuration option, controlling environment settings such as instance type, load balancing, or health checks. (AI-inferred)
 	Value any
 }
 
 type BeanstalkEnvironment_Tags struct {
-	// The key (name) of a tag assigned to the Elastic Beanstalk environment, used to categorize and filter the resource for cost allocation, access control, and operational management. (AI-inferred)
 	Key any
-	// The value of a tag applied to the Elastic Beanstalk environment, used to categorize and manage the environment as an AWS resource. (AI-inferred)
 	Value any
 }
 
@@ -69,7 +63,6 @@ type BeanstalkEnvironmentConfig struct {
 	Tags any
 	// The name of the Elastic Beanstalk configuration template to use with the environment.
 	TemplateName any
-	// Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred)
 	Tier any
 	// The name of the application version to deploy.
 	VersionLabel any
@@ -82,7 +75,6 @@ type BeanstalkEnvironmentAttrs struct {
 	Cnameprefix any
 	// Your description for this environment.
 	Description any
-	// The endpoint URL for the environment, which is the CNAME of the load balancer for load-balanced environments or the public DNS address for single-instance environments, used to access the running application. (AI-inferred)
 	EndpointUrl any
 	// A unique name for the environment.
 	EnvironmentName any
@@ -98,7 +90,6 @@ type BeanstalkEnvironmentAttrs struct {
 	Tags any
 	// The name of the Elastic Beanstalk configuration template to use with the environment.
 	TemplateName any
-	// Specifies the environment tier (such as WebServer or Worker) including its name, type, and version, determining whether the Elastic Beanstalk environment runs a web server or a background worker. (AI-inferred)
 	Tier any
 	// The name of the application version to deploy.
 	VersionLabel any

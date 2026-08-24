@@ -28,7 +28,6 @@ type FilesAccessPoint_RootDirectory struct {
 }
 
 type FilesAccessPoint_Tags struct {
-	// The key of a user-defined tag attached to the S3 file access point, used for identifying and organizing the resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -64,26 +63,20 @@ type FilesAccessPointConfig struct {
 	ClientToken any
 	// The ID of the S3 Files file system that the access point provides access to.
 	FileSystemId any
-	// Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred)
 	PosixUser any
-	// Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
 	RootDirectory any
 	Tags any
 }
 
 type FilesAccessPointAttrs struct {
-	// The Amazon Resource Name (ARN) of the S3 access point, which uniquely identifies the access point and is used for making requests to S3 through the access point. (AI-inferred)
 	AccessPointArn any
 	AccessPointId any
 	// (optional) A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
 	ClientToken any
 	// The ID of the S3 Files file system that the access point provides access to.
 	FileSystemId any
-	// The AWS account ID of the owner that created the S3 access point. (AI-inferred)
 	OwnerId any
-	// Defines the POSIX user ID (UID) and group ID (GID) for the S3 on Outposts access point, controlling file-level permissions for NFS access. (AI-inferred)
 	PosixUser any
-	// Specifies the root directory path within the S3 bucket that the access point is restricted to, so requests through the access point can only access objects under that prefix (supported for S3 on Outposts buckets). (AI-inferred)
 	RootDirectory any
 	Status any
 	Tags any

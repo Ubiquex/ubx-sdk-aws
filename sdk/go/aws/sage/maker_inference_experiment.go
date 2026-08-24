@@ -29,25 +29,18 @@ type MakerInferenceExperiment_EndpointMetadata struct {
 }
 
 type MakerInferenceExperiment_ModelVariants_InfrastructureConfig_RealTimeInferenceConfig struct {
-	// Specifies the initial number of ML compute instances to provision for the model variant when serving real-time inference in the SageMaker Inference Experiment. (AI-inferred)
 	InstanceCount any
-	// The ML compute instance type (e.g., ml.m5.large, ml.c5.xlarge) that SageMaker provisions for the real-time inference endpoint of this inference experiment. (AI-inferred)
 	InstanceType any
 }
 
 type MakerInferenceExperiment_ModelVariants_InfrastructureConfig struct {
-	// Specifies whether the model variant is hosted on real-time infrastructure or asynchronous inference infrastructure, with allowed values of 'RealTime' or 'Async'. (AI-inferred)
 	InfrastructureType any
-	// Specifies the Amazon SageMaker ML instance type and instance count to use for the model variant's real-time inference endpoint in the inference experiment. (AI-inferred)
 	RealTimeInferenceConfig any
 }
 
 type MakerInferenceExperiment_ModelVariants struct {
-	// Specifies the hosting infrastructure (such as the instance type and instance count) for serving this model variant in the inference experiment. (AI-inferred)
 	InfrastructureConfig any
-	// Specifies the name of the SageMaker model that this model variant deploys in the inference experiment. (AI-inferred)
 	ModelName any
-	// The name of the model variant in a SageMaker Inference Experiment, used to uniquely identify the variant within the experiment's configuration. (AI-inferred)
 	VariantName any
 }
 
@@ -59,9 +52,7 @@ type MakerInferenceExperiment_Schedule struct {
 }
 
 type MakerInferenceExperiment_ShadowModeConfig_ShadowModelVariants struct {
-	// The percentage of inference requests that are routed to this shadow model variant for evaluation. (AI-inferred)
 	SamplingPercentage any
-	// The name of the model variant that receives a copy of production traffic in shadow mode, allowing you to test its performance without impacting the primary endpoint. (AI-inferred)
 	ShadowModelVariantName any
 }
 
@@ -73,9 +64,7 @@ type MakerInferenceExperiment_ShadowModeConfig struct {
 }
 
 type MakerInferenceExperiment_Tags struct {
-	// The key of a tag attached to the SageMaker inference experiment. (AI-inferred)
 	Key any
-	// Specifies the value portion of a key-value tag attached to the SageMaker inference experiment, used to organize, identify, and manage the experiment. (AI-inferred)
 	Value any
 }
 

@@ -41,7 +41,6 @@ type AgentCoreOnlineEvaluationConfig_OutputConfig struct {
 type AgentCoreOnlineEvaluationConfig_Rule_Filters_Value struct {
 	BooleanValue any
 	DoubleValue any
-	// Provides the string to match in a rule filter for the Bedrock Agent Core online evaluation configuration, when the filter's value type is STRING, to determine which interactions are evaluated. (AI-inferred)
 	StringValue any
 }
 
@@ -71,7 +70,6 @@ type AgentCoreOnlineEvaluationConfig_Rule struct {
 }
 
 type AgentCoreOnlineEvaluationConfig_Tags struct {
-	// The key of a tag attached to the Bedrock agent core online evaluation configuration, used to organize and identify the resource by custom metadata such as environment or project. (AI-inferred)
 	Key any
 	Value any
 }

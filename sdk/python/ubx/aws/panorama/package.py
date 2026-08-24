@@ -21,9 +21,7 @@ class Package_StorageLocation:
 
 @dataclasses.dataclass
 class Package_Tags:
-    # Specifies the key of a tag to attach to the AWS Panorama package for resource identification and management. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag that can be attached to the Panorama package, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _Package_TagsFields = {
@@ -33,24 +31,17 @@ _Package_TagsFields = {
 
 @dataclasses.dataclass
 class PackageConfig:
-    # The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred)
     package_name: Any = None
-    # A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class PackageAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the Panorama package. (AI-inferred)
     arn: Any = None
-    # The Unix timestamp automatically assigned by AWS when the Package was created, indicating the creation time of the Panorama package. (AI-inferred)
     created_time: Any = None
-    # The unique identifier of the AWS Panorama package, assigned by AWS when the package is created. (AI-inferred)
     package_id: Any = None
-    # The unique name of the Panorama package that identifies it within your AWS account and is used when creating or referencing the package in the AWS Panorama console and API. (AI-inferred)
     package_name: Any = None
     # A storage location.
     storage_location: Any = None
-    # A list of tag objects (each with a Key and Value) to attach to the AWS Panorama package, enabling cost allocation, access control, and resource organization. (AI-inferred)
     tags: Any = None
 
 Package = ubx.ResourceBinding(

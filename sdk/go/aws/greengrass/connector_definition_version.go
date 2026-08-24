@@ -4,11 +4,8 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectorDefinitionVersion_Connectors struct {
-	// The ARN of the AWS IoT Greengrass connector that this connector definition version includes. (AI-inferred)
 	ConnectorArn any
-	// The user-defined unique identifier for each connector within the Greengrass connector definition version, used to reference the connector in the group configuration. (AI-inferred)
 	Id any
-	// Specifies the configuration parameters for the Greengrass connector, passed as key-value pairs to the connector's Lambda function. (AI-inferred)
 	Parameters any
 }
 
@@ -19,18 +16,13 @@ var ConnectorDefinitionVersion_ConnectorsFields = ubx.FieldMap{
 	}
 
 type ConnectorDefinitionVersionConfig struct {
-	// Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred)
 	ConnectorDefinitionId any
-	// Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred)
 	Connectors any
 }
 
 type ConnectorDefinitionVersionAttrs struct {
-	// Specifies the ID of the Greengrass connector definition to which this version belongs, linking the version to its parent ConnectorDefinition resource. (AI-inferred)
 	ConnectorDefinitionId any
-	// Defines the list of connectors that make up this Greengrass connector definition version, where each connector specifies its connector ARN and configuration parameters. (AI-inferred)
 	Connectors any
-	// The unique version UUID that AWS IoT Greengrass assigns to this connector definition version, returned by the CreateConnectorDefinitionVersion API. (AI-inferred)
 	Id any
 }
 

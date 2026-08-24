@@ -4,7 +4,6 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Vpc_Tags struct {
-	// This field represents the key of a user-defined tag applied to the VPC, forming the key-value pair in the VPC's tag set. (AI-inferred)
 	Key any
 	Value any
 }
@@ -83,11 +82,8 @@ type VpcConfig struct {
 type VpcAttrs struct {
 	// The IPv4 network range for the VPC, in CIDR notation. For example, ``10.0.0.0/16``. We modify the specified CIDR block to its canonical form; for example, if you specify ``100.68.0.18/18``, we modify it to ``100.68.0.0/18``. You must specify either``CidrBlock`` or ``Ipv4IpamPoolId``.
 	CidrBlock any
-	// This computed field contains the list of IPv4 CIDR block associations for the VPC, including the primary CIDR block and any secondary CIDR blocks attached to the VPC. (AI-inferred)
 	CidrBlockAssociations any
-	// The ID of the default network ACL that AWS automatically creates for the VPC. (AI-inferred)
 	DefaultNetworkAcl any
-	// The ID of the default security group that AWS automatically creates for the VPC. (AI-inferred)
 	DefaultSecurityGroup any
 	// Indicates whether the instances launched in the VPC get DNS hostnames. If enabled, instances in the VPC get DNS hostnames; otherwise, they do not. Disabled by default for nondefault VPCs. For more information, see [DNS attributes in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-dns.html#vpc-dns-support). You can only enable DNS hostnames if you've enabled DNS support.
 	EnableDnsHostnames any
@@ -99,13 +95,11 @@ type VpcAttrs struct {
 	Ipv4IpamPoolId any
 	// The netmask length of the IPv4 CIDR you want to allocate to this VPC from an Amazon VPC IP Address Manager (IPAM) pool. For more information about IPAM, see [What is IPAM?](https://docs.aws.amazon.com//vpc/latest/ipam/what-is-it-ipam.html) in the *Amazon VPC IPAM User Guide*.
 	Ipv4NetmaskLength any
-	// The IPv6 CIDR block(s) assigned to the VPC, computed by AWS and returned as a list of strings. (AI-inferred)
 	Ipv6CidrBlocks any
 	// The tags for the VPC.
 	Tags any
 	// Describes the configuration and state of VPC encryption controls. For more information, see [Enforce VPC encryption in transit](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html) in the *Amazon VPC User Guide*.
 	VpcEncryptionControl any
-	// The unique identifier assigned by AWS to the VPC when it is created, used to reference the VPC elsewhere. (AI-inferred)
 	VpcId any
 }
 

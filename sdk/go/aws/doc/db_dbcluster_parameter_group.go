@@ -4,9 +4,7 @@ package doc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbDbclusterParameterGroup_Tags struct {
-	// The key of a key-value tag attached to the DocumentDB cluster parameter group, used to identify and categorize the resource within AWS. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the DocumentDB cluster parameter group, which together with the tag key forms a key-value label used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 

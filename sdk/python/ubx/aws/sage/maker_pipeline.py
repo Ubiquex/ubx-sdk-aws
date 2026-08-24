@@ -13,7 +13,6 @@ class MakerPipeline_ParallelismConfiguration:
 
 @dataclasses.dataclass
 class MakerPipeline_Tags:
-    # The key of a tag attached to the SageMaker pipeline, used to assign metadata for organizing, identifying, and managing the pipeline resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -28,9 +27,7 @@ _MakerPipeline_TagsFields = {
 
 @dataclasses.dataclass
 class MakerPipelineConfig:
-    # Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred)
     parallelism_configuration: Any = None
-    # Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred)
     pipeline_definition: Any = None
     # The description of the Pipeline.
     pipeline_description: Any = None
@@ -40,14 +37,11 @@ class MakerPipelineConfig:
     pipeline_name: Any = None
     # Role Arn
     role_arn: Any = None
-    # A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class MakerPipelineAttrs:
-    # Defines the parallelism configuration for the SageMaker pipeline, including the maximum number of execution steps that can run in parallel. (AI-inferred)
     parallelism_configuration: Any = None
-    # Specifies the SageMaker pipeline definition, as a JSON or YAML string that describes the pipeline's steps, parameters, and configuration. (AI-inferred)
     pipeline_definition: Any = None
     # The description of the Pipeline.
     pipeline_description: Any = None
@@ -57,7 +51,6 @@ class MakerPipelineAttrs:
     pipeline_name: Any = None
     # Role Arn
     role_arn: Any = None
-    # A list of key-value pairs attached to an AWS SageMaker pipeline to help organize, identify, and manage it, often used for cost allocation and access control. (AI-inferred)
     tags: Any = None
 
 MakerPipeline = ubx.ResourceBinding(

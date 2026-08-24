@@ -12,7 +12,6 @@ export interface Pipeline_EncryptionAtRestOptions {
 }
 
 export interface Pipeline_LogPublishingOptions_CloudWatchLogDestination {
-  /** The name of the CloudWatch Logs log group where the OpenSearch Ingestion pipeline publishes logs. (AI-inferred) */
   logGroup: string | Computed<string>;
 }
 
@@ -24,41 +23,29 @@ export interface Pipeline_LogPublishingOptions {
 }
 
 export interface Pipeline_ResourcePolicy {
-  /** The `policy` field specifies the JSON resource-based policy document that defines permissions for the OpenSearch Ingestion pipeline to access specified AWS resources, such as the source and sink data stores. (AI-inferred) */
   policy: unknown | Computed<unknown>;
 }
 
 export interface Pipeline_Tags {
-  /** The key of a user-defined tag to attach to the OpenSearch Ingestion pipeline. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the OpenSearch Ingestion pipeline, used to store metadata such as environment, owner, or cost center for resource identification and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions {
-  /** Indicates whether the OpenSearch Ingestion pipeline's VPC endpoint is attached to a VPC, enabling the pipeline to access resources within that VPC when set to true. (AI-inferred) */
   attachToVpc?: boolean | Computed<boolean>;
-  /** The CIDR block (e.g., 10.0.0.0/16) that defines the IP address range for the VPC attachment of the OpenSearch Ingestion pipeline's VPC endpoint. (AI-inferred) */
   cidrBlock?: string | Computed<string>;
 }
 
 export interface Pipeline_VpcEndpoints_VpcOptions {
-  /** Specifies the security group IDs to attach to the VPC endpoint for the OpenSearch Ingestion pipeline, controlling network traffic to and from the endpoint within the VPC. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the subnet IDs within the VPC where the OpenSearch Ingestion pipeline's VPC endpoint will be provisioned. (AI-inferred) */
   subnetIds?: string[] | Computed<string[]>;
-  /** Configures VPC attachment options for the OpenSearch Ingestion pipeline's VPC endpoint, including whether to attach to a VPC endpoint service and the IAM role used for that attachment. (AI-inferred) */
   vpcAttachmentOptions?: Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions | Computed<Pipeline_VpcEndpoints_VpcOptions_VpcAttachmentOptions>;
-  /** Indicates whether the VPC endpoint for this OpenSearch Ingestion pipeline is managed by the customer ('CUSTOMER') or by the AWS service ('SERVICE') in the pipeline's VPC options. (AI-inferred) */
   vpcEndpointManagement?: string | Computed<string>;
 }
 
 export interface Pipeline_VpcEndpoints {
-  /** The unique identifier of a VPC endpoint that clients can use to access the OpenSearch Ingestion pipeline within its VPC. (AI-inferred) */
   vpcEndpointId?: string | Computed<string>;
-  /** The ID of the VPC in which the VPC endpoint for the OpenSearch Ingestion pipeline is automatically created, allowing the pipeline to be accessed within that VPC. (AI-inferred) */
   vpcId?: string | Computed<string>;
-  /** VPC configuration for a VPC endpoint, specifying the subnet IDs and security group IDs associated with the endpoint in the pipeline's VPC. (AI-inferred) */
   vpcOptions?: Pipeline_VpcEndpoints_VpcOptions | Computed<Pipeline_VpcEndpoints_VpcOptions>;
 }
 
@@ -125,7 +112,6 @@ export interface PipelineConfig {
   pipelineName: string | Computed<string>;
   /** The Pipeline Role (ARN) for the pipeline. */
   pipelineRoleArn?: string | Computed<string>;
-  /** The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred) */
   resourcePolicy?: Pipeline_ResourcePolicy | Computed<Pipeline_ResourcePolicy>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Pipeline_Tags[] | Computed<Pipeline_Tags[]>;
@@ -154,7 +140,6 @@ export interface PipelineAttrs {
   pipelineName: string;
   /** The Pipeline Role (ARN) for the pipeline. */
   pipelineRoleArn: string;
-  /** The IAM resource policy that grants other AWS services permissions to send messages or data to the OpenSearch Ingestion pipeline. (AI-inferred) */
   resourcePolicy: Pipeline_ResourcePolicy;
   /** An array of key-value pairs to apply to this resource. */
   tags: Pipeline_Tags[];

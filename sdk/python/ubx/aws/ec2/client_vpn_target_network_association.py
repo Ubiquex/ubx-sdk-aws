@@ -8,26 +8,17 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ClientVpnTargetNetworkAssociationConfig:
-    # The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred)
     availability_zone: Any = None
-    # This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred)
     availability_zone_id: Any = None
-    # The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred)
     client_vpn_endpoint_id: Any = None
-    # The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class ClientVpnTargetNetworkAssociationAttrs:
-    # The availability zone of the subnet that the Client VPN endpoint is associated with, automatically derived from the specified subnet. (AI-inferred)
     availability_zone: Any = None
-    # This field contains the unique identifier of the Availability Zone where the target network's subnet resides; it is automatically populated from the associated subnet and cannot be independently set. (AI-inferred)
     availability_zone_id: Any = None
-    # The ID of the Client VPN endpoint to which the target network is associated. (AI-inferred)
     client_vpn_endpoint_id: Any = None
-    # The unique association ID assigned by AWS to the target network (subnet) when it is associated with the Client VPN endpoint. (AI-inferred)
     id: Any = None
-    # The ID of the subnet to associate with the Client VPN endpoint, enabling the endpoint to route traffic to and from that subnet's network. (AI-inferred)
     subnet_id: Any = None
 
 ClientVpnTargetNetworkAssociation = ubx.ResourceBinding(

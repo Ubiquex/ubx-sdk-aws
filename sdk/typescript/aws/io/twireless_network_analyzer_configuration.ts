@@ -3,14 +3,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TwirelessNetworkAnalyzerConfiguration_Tags {
   key?: string | Computed<string>;
-  /** The value part of a key-value tag on the AWS IoT Wireless Network Analyzer Configuration, used to store custom metadata associated with the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TwirelessNetworkAnalyzerConfiguration_TraceContent {
-  /** The verbosity level for logs collected by the network analyzer for wireless devices, such as 'OFF', 'INFO', or 'DEBUG'. (AI-inferred) */
   logLevel?: string | Computed<string>;
-  /** Specifies whether frame-level information for wireless devices is captured in the network analyzer trace, enabling or disabling wireless device frame tracing. (AI-inferred) */
   wirelessDeviceFrameInfo?: string | Computed<string>;
 }
 

@@ -82,7 +82,6 @@ type ProfilesDomain_RuleBasedMatching_AttributeTypesSelector struct {
 }
 
 type ProfilesDomain_RuleBasedMatching_MatchingRules struct {
-	// Defines a single matching rule by listing the profile attribute names (e.g., '_account.Phone') that must have identical values across profiles for them to be considered a match. (AI-inferred)
 	Rule any
 }
 
@@ -101,7 +100,6 @@ type ProfilesDomain_RuleBasedMatching struct {
 	MaxAllowedRuleLevelForMatching any
 	// Indicates the maximum allowed rule level for merging.
 	MaxAllowedRuleLevelForMerging any
-	// The current status of the rule-based matching configuration for the Customer Profiles domain, with values ACTIVE (enabled and running), IN_PROGRESS (being enabled or updated), or DISABLED (turned off). (AI-inferred)
 	Status any
 }
 
@@ -117,9 +115,7 @@ type ProfilesDomain_Stats struct {
 }
 
 type ProfilesDomain_Tags struct {
-	// The key of a user-defined tag that can be attached to the Amazon Connect Customer Profiles domain. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Amazon Connect Customer Profiles domain, used to assign arbitrary metadata for resource organization and cost allocation. (AI-inferred)
 	Value any
 }
 

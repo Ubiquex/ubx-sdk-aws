@@ -15,9 +15,7 @@ type MultiRegionAccessPoint_PublicAccessBlockConfiguration struct {
 }
 
 type MultiRegionAccessPoint_Regions struct {
-	// The name of the S3 bucket to route requests to in this Region of the Multi-Region Access Point. (AI-inferred)
 	Bucket any
-	// The AWS account ID that owns the bucket in the specified Region for the Multi-Region Access Point. (AI-inferred)
 	BucketAccountId any
 }
 
@@ -36,7 +34,6 @@ var MultiRegionAccessPoint_RegionsFields = ubx.FieldMap{
 type MultiRegionAccessPointConfig struct {
 	// The name you want to assign to this Multi Region Access Point.
 	Name any
-	// This object configures the Multi-Region Access Point's public access block settings, allowing you to block public ACLs, ignore existing public ACLs, block public bucket policies, and restrict cross-account access to buckets with public policies. (AI-inferred)
 	PublicAccessBlockConfiguration any
 	// The list of buckets that you want to associate this Multi Region Access Point with.
 	Regions any
@@ -49,7 +46,6 @@ type MultiRegionAccessPointAttrs struct {
 	CreatedAt any
 	// The name you want to assign to this Multi Region Access Point.
 	Name any
-	// This object configures the Multi-Region Access Point's public access block settings, allowing you to block public ACLs, ignore existing public ACLs, block public bucket policies, and restrict cross-account access to buckets with public policies. (AI-inferred)
 	PublicAccessBlockConfiguration any
 	// The list of buckets that you want to associate this Multi Region Access Point with.
 	Regions any

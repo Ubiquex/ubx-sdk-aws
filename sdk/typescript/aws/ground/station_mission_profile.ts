@@ -2,25 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StationMissionProfile_DataflowEdges {
-  /** The destination is the ARN or ID of the Ground Station config that receives data from the source in this dataflow edge, defining the next step in the mission profile's dataflow path. (AI-inferred) */
   destination?: string | Computed<string>;
-  /** Specifies the source config for a dataflow edge in the mission profile, identifying where the data stream originates before flowing to the destination config. (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface StationMissionProfile_StreamsKmsKey {
-  /** The alias ARN of the AWS KMS key used to encrypt the mission profile's data streams, as an alternative to specifying the KMS key ARN directly. (AI-inferred) */
   kmsAliasArn?: string | Computed<string>;
-  /** Specifies the alias name of the AWS KMS key used to encrypt the data streams (uplink and downlink) associated with this Ground Station mission profile. (AI-inferred) */
   kmsAliasName?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the satellite data streams processed by the mission profile. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
 }
 
 export interface StationMissionProfile_Tags {
-  /** Specifies the key (name) of a tag attached to the AWS Ground Station mission profile, used for resource identification and organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS Ground Station mission profile, used for identifying and organizing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -45,49 +38,39 @@ export interface StationMissionProfileConfig {
   contactPostPassDurationSeconds?: number | Computed<number>;
   /** Pre-pass time needed before the contact. */
   contactPrePassDurationSeconds?: number | Computed<number>;
-  /** Specifies the list of dataflow edges that define how data moves between satellite and ground station endpoints, with each edge containing source and destination configuration references. (AI-inferred) */
   dataflowEdges: StationMissionProfile_DataflowEdges[] | Computed<StationMissionProfile_DataflowEdges[]>;
   /** Visibilities with shorter duration than the specified minimum viable contact duration will be ignored when searching for available contacts. */
   minimumViableContactDurationSeconds: number | Computed<number>;
   /** A name used to identify a mission profile. */
   name: string | Computed<string>;
-  /** The AWS KMS key (specified as an ARN or alias) used to encrypt data streams produced by this mission profile, enabling customer-controlled encryption of downlinked satellite data. (AI-inferred) */
   streamsKmsKey?: StationMissionProfile_StreamsKmsKey | Computed<StationMissionProfile_StreamsKmsKey>;
   /** The ARN of the KMS Key or Alias Key role used to define permissions on KMS Key usage. */
   streamsKmsRole?: string | Computed<string>;
-  /** Assigns a list of tag objects (key-value pairs) to the AWS Ground Station mission profile, which can be used for cost allocation and resource management. (AI-inferred) */
   tags?: StationMissionProfile_Tags[] | Computed<StationMissionProfile_Tags[]>;
   /** ARN of a Config resource of type TelemetrySinkConfig used for telemetry data sink configuration. */
   telemetrySinkConfigArn?: string | Computed<string>;
-  /** ARN of the tracking config resource that defines how the ground station antenna tracks the satellite during the mission profile. (AI-inferred) */
   trackingConfigArn: string | Computed<string>;
 }
 
 export interface StationMissionProfileAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS Ground Station mission profile. (AI-inferred) */
   arn: string;
   /** Post-pass time needed after the contact. */
   contactPostPassDurationSeconds: number;
   /** Pre-pass time needed before the contact. */
   contactPrePassDurationSeconds: number;
-  /** Specifies the list of dataflow edges that define how data moves between satellite and ground station endpoints, with each edge containing source and destination configuration references. (AI-inferred) */
   dataflowEdges: StationMissionProfile_DataflowEdges[];
-  /** The AWS-assigned unique identifier for this Ground Station mission profile, which is exposed as the 'Id' attribute and used to reference the mission profile in Ground Station APIs. (AI-inferred) */
   id: string;
   /** Visibilities with shorter duration than the specified minimum viable contact duration will be ignored when searching for available contacts. */
   minimumViableContactDurationSeconds: number;
   /** A name used to identify a mission profile. */
   name: string;
   region: string;
-  /** The AWS KMS key (specified as an ARN or alias) used to encrypt data streams produced by this mission profile, enabling customer-controlled encryption of downlinked satellite data. (AI-inferred) */
   streamsKmsKey: StationMissionProfile_StreamsKmsKey;
   /** The ARN of the KMS Key or Alias Key role used to define permissions on KMS Key usage. */
   streamsKmsRole: string;
-  /** Assigns a list of tag objects (key-value pairs) to the AWS Ground Station mission profile, which can be used for cost allocation and resource management. (AI-inferred) */
   tags: StationMissionProfile_Tags[];
   /** ARN of a Config resource of type TelemetrySinkConfig used for telemetry data sink configuration. */
   telemetrySinkConfigArn: string;
-  /** ARN of the tracking config resource that defines how the ground station antenna tracks the satellite during the mission profile. (AI-inferred) */
   trackingConfigArn: string;
 }
 

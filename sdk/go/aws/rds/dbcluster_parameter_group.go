@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterParameterGroup_Tags struct {
-	// The key of a tag applied to the DB cluster parameter group, used to organize and identify the resource within AWS cost allocation and management. (AI-inferred)
 	Key any
-	// The value of a tag applied to the DB cluster parameter group, used to categorize the resource for cost tracking, access control, and operational management. (AI-inferred)
 	Value any
 }
 

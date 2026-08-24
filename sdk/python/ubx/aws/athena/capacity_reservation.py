@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignments:
-    # Specifies the list of Athena workgroup names assigned to this capacity reservation for query processing. (AI-inferred)
     workgroup_names: Any = None
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class CapacityReservation_CapacityAssignmentConfiguration:
 @dataclasses.dataclass
 class CapacityReservation_Tags:
     key: Any = None
-    # Specifies the value of an arbitrary user-defined tag key assigned to an AWS Athena capacity reservation, allowing metadata-based management and categorization of the reservation. (AI-inferred)
     value: Any = None
 
 _CapacityReservation_CapacityAssignmentConfiguration_CapacityAssignmentsFields = {
@@ -64,7 +62,6 @@ class CapacityReservationAttrs:
     last_successful_allocation_time: Any = None
     # The reservation name.
     name: Any = None
-    # The current lifecycle state of the Athena capacity reservation (e.g., PENDING, ACTIVE, CANCELLING), updated automatically by AWS and not settable by the user. (AI-inferred)
     status: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

@@ -4,7 +4,6 @@ package ses
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomVerificationEmailTemplate_Tags struct {
-	// The key part of a tag attached to the Amazon SES custom verification email template, used to categorize or identify the template. (AI-inferred)
 	Key any
 	Value any
 }

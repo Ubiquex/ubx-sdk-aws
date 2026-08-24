@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BrewSchedule_Tags {
-  /** The key of a tag assigned to the DataBrew schedule, used to categorize and identify the schedule for cost allocation and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to an AWS DataBrew schedule, used to organize, categorize, and manage the schedule within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -16,22 +14,18 @@ const BrewSchedule_TagsFields: FieldMap = {
 export interface BrewScheduleConfig {
   /** Schedule cron */
   cronExpression: string | Computed<string>;
-  /** The list of DataBrew job names that this schedule will start when it fires. (AI-inferred) */
   jobNames?: string[] | Computed<string[]>;
   /** Schedule Name */
   name: string | Computed<string>;
-  /** The tags to assign to the DataBrew schedule, where each tag consists of a key and an optional value used to categorize and manage the schedule. (AI-inferred) */
   tags?: BrewSchedule_Tags[] | Computed<BrewSchedule_Tags[]>;
 }
 
 export interface BrewScheduleAttrs {
   /** Schedule cron */
   cronExpression: string;
-  /** The list of DataBrew job names that this schedule will start when it fires. (AI-inferred) */
   jobNames: string[];
   /** Schedule Name */
   name: string;
-  /** The tags to assign to the DataBrew schedule, where each tag consists of a key and an optional value used to categorize and manage the schedule. (AI-inferred) */
   tags: BrewSchedule_Tags[];
 }
 

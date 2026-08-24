@@ -9,7 +9,6 @@ export interface TailorFunction_CustomOutputConfiguration {
 export interface TailorFunction_HttpRequestConfiguration {
   /** The body of the HTTP request. */
   body?: string | Computed<string>;
-  /** A map of custom HTTP headers that the MediaTailor function includes in outgoing requests to its configured endpoint, enabling authentication or environment-specific header values. (AI-inferred) */
   headers?: unknown | Computed<unknown>;
   methodType: string | Computed<string>;
   output?: unknown | Computed<unknown>;
@@ -22,7 +21,6 @@ export interface TailorFunction_HttpRequestConfiguration {
 
 export interface TailorFunction_SequentialExecutorConfiguration_FunctionList {
   functionId?: string | Computed<string>;
-  /** In the AWS::MediaTailor::Function resource, the run_condition property within the function_list of a sequential executor configuration defines a logical expression that controls when that specific function is executed in the sequence. (AI-inferred) */
   runCondition?: string | Computed<string>;
 }
 
@@ -30,7 +28,6 @@ export interface TailorFunction_SequentialExecutorConfiguration {
   /** The list of functions to execute sequentially. */
   functionList: TailorFunction_SequentialExecutorConfiguration_FunctionList[] | Computed<TailorFunction_SequentialExecutorConfiguration_FunctionList[]>;
   output?: unknown | Computed<unknown>;
-  /** The runtime environment in which the MediaTailor function's code executes when using the sequential executor configuration, specifying the programming language and version. (AI-inferred) */
   runtime: string | Computed<string>;
   /** The timeout in milliseconds for the entire sequential execution chain. */
   timeoutMilliseconds: number | Computed<number>;

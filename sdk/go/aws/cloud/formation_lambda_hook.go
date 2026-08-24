@@ -34,22 +34,15 @@ type FormationLambdaHook_StackFilters struct {
 }
 
 type FormationLambdaHook_TargetFilters_Targets struct {
-	// Specifies the CloudFormation action (e.g., CREATE, UPDATE, DELETE) that triggers the Lambda hook for the targeted resource types. (AI-inferred)
 	Action any
-	// Specifies the invocation timing relative to the targeted CloudFormation operation (e.g., `BEFORE` or `AFTER`), determining whether the Lambda hook runs before or after the action on the matched resources. (AI-inferred)
 	InvocationPoint any
-	// The name of the resource type (e.g., AWS::S3::Bucket) or logical resource ID that the CloudFormation Lambda hook's target filter matches, depending on whether the target type is RESOURCE_TYPE or RESOURCE_NAME. (AI-inferred)
 	TargetName any
 }
 
 type FormationLambdaHook_TargetFilters struct {
-	// Specifies the list of CloudFormation change actions (e.g., Create, Update, Delete) that trigger the Lambda hook invocation. (AI-inferred)
 	Actions any
-	// Specifies the list of CloudFormation hook invocation points (such as BEFORE_CREATE, BEFORE_UPDATE, BEFORE_DELETE) at which the Lambda hook is triggered for the matching target resources. (AI-inferred)
 	InvocationPoints any
-	// Specifies the list of AWS resource type names (e.g., AWS::S3::Bucket) that this Lambda hook targets, controlling which resource types trigger the hook. (AI-inferred)
 	TargetNames any
-	// The list of target objects that define which CloudFormation resources this Lambda hook is triggered for, where each target specifies a resource type (e.g., AWS::S3::Bucket) and optionally a specific resource name to narrow the hook's scope. (AI-inferred)
 	Targets any
 }
 

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StarNotificationsNotificationRule_Targets:
-    # Specifies the Amazon Resource Name (ARN) of the target (such as an SNS topic) that receives notifications from this notification rule. (AI-inferred)
     target_address: Any = None
-    # Specifies the type of notification target (e.g., SNS for an Amazon SNS topic or AWSChatbotSlack for an AWS Chatbot) that the notification rule sends events to. (AI-inferred)
     target_type: Any = None
 
 _StarNotificationsNotificationRule_TargetsFields = {
@@ -20,48 +18,29 @@ _StarNotificationsNotificationRule_TargetsFields = {
 
 @dataclasses.dataclass
 class StarNotificationsNotificationRuleConfig:
-    # The ARN of the IAM user or role that created the notification rule. (AI-inferred)
     created_by: Any = None
-    # Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred)
     detail_type: Any = None
     event_type_id: Any = None
-    # The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred)
     event_type_ids: Any = None
-    # The name of the notification rule, which identifies it in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS resource (such as a CodeBuild project, CodePipeline pipeline, or repository) that the notification rule is associated with. (AI-inferred)
     resource: Any = None
-    # Determines whether the notification rule is active, with valid values ENABLED and DISABLED (defaulting to ENABLED when omitted). (AI-inferred)
     status: Any = None
-    # Tags (key-value pairs) that can be attached to the notification rule to help identify, organize, and manage it within AWS. (AI-inferred)
     tags: Any = None
-    # The ARN of the SNS topic or the client ID of the AWS Chatbot channel that receives notifications from this notification rule. (AI-inferred)
     target_address: Any = None
-    # The list of targets that receive notifications from the notification rule, where each target specifies the target's address (such as the ARN of an SNS topic or AWS Chatbot configuration) and the target type. (AI-inferred)
     targets: Any = None
 
 @dataclasses.dataclass
 class StarNotificationsNotificationRuleAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the notification rule. (AI-inferred)
     arn: Any = None
-    # The ARN of the IAM user or role that created the notification rule. (AI-inferred)
     created_by: Any = None
-    # Specifies the level of detail included in the notifications, with BASIC providing only essential event information and FULL providing complete event details. (AI-inferred)
     detail_type: Any = None
     event_type_id: Any = None
-    # The list of event type IDs (e.g., codecommit-repository-comments-on-commits or codepipeline-pipeline-stage-execution-failed) that trigger the notification rule, each identifying a specific AWS service event that activates the notification. (AI-inferred)
     event_type_ids: Any = None
-    # The name of the notification rule, which identifies it in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS resource (such as a CodeBuild project, CodePipeline pipeline, or repository) that the notification rule is associated with. (AI-inferred)
     resource: Any = None
-    # Determines whether the notification rule is active, with valid values ENABLED and DISABLED (defaulting to ENABLED when omitted). (AI-inferred)
     status: Any = None
-    # Tags (key-value pairs) that can be attached to the notification rule to help identify, organize, and manage it within AWS. (AI-inferred)
     tags: Any = None
-    # The ARN of the SNS topic or the client ID of the AWS Chatbot channel that receives notifications from this notification rule. (AI-inferred)
     target_address: Any = None
-    # The list of targets that receive notifications from the notification rule, where each target specifies the target's address (such as the ARN of an SNS topic or AWS Chatbot configuration) and the target type. (AI-inferred)
     targets: Any = None
 
 StarNotificationsNotificationRule = ubx.ResourceBinding(

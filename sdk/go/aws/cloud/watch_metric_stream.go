@@ -4,28 +4,21 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WatchMetricStream_ExcludeFilters struct {
-	// The list of metric names within the specified namespace to exclude from the metric stream. (AI-inferred)
 	MetricNames any
-	// Defines the CloudWatch namespace (e.g., AWS/EC2) whose metrics are excluded from the metric stream when matched by this exclusion filter. (AI-inferred)
 	Namespace any
 }
 
 type WatchMetricStream_StatisticsConfigurations_IncludeMetrics struct {
-	// The name of the CloudWatch metric for which the specified additional statistics are included in the metric stream. (AI-inferred)
 	MetricName any
-	// The name of the AWS service or custom application namespace (e.g., AWS/EC2, AWS/Lambda) whose metrics are included in this statistics configuration, filtering which metric namespaces are sent to the stream. (AI-inferred)
 	Namespace any
 }
 
 type WatchMetricStream_StatisticsConfigurations struct {
-	// Specifies additional statistics (such as percentiles like p99) to include in the metric stream for metrics that match the namespace and metric name of this statistics configuration. (AI-inferred)
 	AdditionalStatistics any
-	// Specifies the list of metrics (namespace and metric name) to which the corresponding statistics configuration's allowed statistics apply, controlling which metric streams include the configured statistics. (AI-inferred)
 	IncludeMetrics any
 }
 
 type WatchMetricStream_Tags struct {
-	// The key of a tag attached to the CloudWatch metric stream, used for identifying and organizing the resource. (AI-inferred)
 	Key any
 	Value any
 }

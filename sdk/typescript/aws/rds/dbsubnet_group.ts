@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbsubnetGroup_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag key-value pair attached to the DB subnet group, used for metadata, cost allocation, and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -24,7 +23,6 @@ export interface DbsubnetGroupConfig {
 }
 
 export interface DbsubnetGroupAttrs {
-  /** The Amazon Resource Name (ARN) of the DB subnet group, assigned by AWS when the group is created. (AI-inferred) */
   dbsubnetGroupArn: string;
   /** The description for the DB subnet group. */
   dbsubnetGroupDescription: string;

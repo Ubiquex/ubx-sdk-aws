@@ -20,7 +20,6 @@ type FormationTypeActivationConfig struct {
 	AutoUpdate any
 	// The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
 	ExecutionRoleArn any
-	// Specifies the Amazon CloudWatch Logs log group name and IAM role ARN used to deliver logs for the registered resource type. (AI-inferred)
 	LoggingConfig any
 	// The Major Version of the type you want to enable
 	MajorVersion any
@@ -45,7 +44,6 @@ type FormationTypeActivationAttrs struct {
 	AutoUpdate any
 	// The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls AWS APIs in any of its handlers, you must create an IAM execution role that includes the necessary permissions to call those AWS APIs, and provision that execution role in your account. CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
 	ExecutionRoleArn any
-	// Specifies the Amazon CloudWatch Logs log group name and IAM role ARN used to deliver logs for the registered resource type. (AI-inferred)
 	LoggingConfig any
 	// The Major Version of the type you want to enable
 	MajorVersion any

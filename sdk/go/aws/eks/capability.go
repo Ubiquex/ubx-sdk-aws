@@ -19,12 +19,10 @@ type Capability_Configuration_ArgoCd_NetworkAccess struct {
 
 type Capability_Configuration_ArgoCd_RbacRoleMappings_Identities struct {
 	Id any
-	// Defines the identity type (user or group) for an Argo CD RBAC role mapping in the EKS capability configuration. (AI-inferred)
 	Type any
 }
 
 type Capability_Configuration_ArgoCd_RbacRoleMappings struct {
-	// Specifies a list of IAM principal ARNs (users or roles) that are mapped to the corresponding Argo CD RBAC role, granting those identities the permissions defined for that role in the Kubernetes cluster. (AI-inferred)
 	Identities any
 	Role any
 }

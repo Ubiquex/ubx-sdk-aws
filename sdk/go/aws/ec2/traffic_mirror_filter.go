@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficMirrorFilter_Tags struct {
 	Key any
-	// The value portion of a tag entry attached to the EC2 Traffic Mirror Filter, used to store arbitrary metadata for identification or categorization. (AI-inferred)
 	Value any
 }
 

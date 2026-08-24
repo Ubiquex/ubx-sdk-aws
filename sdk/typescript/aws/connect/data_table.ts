@@ -7,7 +7,6 @@ export interface DataTable_LockVersion {
 }
 
 export interface DataTable_Tags {
-  /** The key of a tag to attach to the Amazon Connect data table, used for organizing and identifying the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BlockchainAccessor_Tags:
-    # The key of a tag assigned to the Managed Blockchain Accessor, used to organize, identify, and manage accessor resources. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -19,28 +18,19 @@ _BlockchainAccessor_TagsFields = {
 
 @dataclasses.dataclass
 class BlockchainAccessorConfig:
-    # Specifies the accessor type (BILLING_TOKEN, ETHEREUM_GOERLI, or ETHEREUM_MAINNET), which determines whether the accessor is a billing token or grants access to a specific Ethereum network. (AI-inferred)
     accessor_type: Any = None
-    # Specifies the Ethereum network type that the Managed Blockchain accessor connects to, such as ETHEREUM_MAINNET for the public mainnet or ETHEREUM_TESTNET for a public test network. (AI-inferred)
     network_type: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class BlockchainAccessorAttrs:
-    # Specifies the accessor type (BILLING_TOKEN, ETHEREUM_GOERLI, or ETHEREUM_MAINNET), which determines whether the accessor is a billing token or grants access to a specific Ethereum network. (AI-inferred)
     accessor_type: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the Managed Blockchain accessor. (AI-inferred)
     arn: Any = None
-    # The unique billing token assigned by AWS to the accessor, used to identify the accessor for metering and billing when interacting with Amazon Managed Blockchain. (AI-inferred)
     billing_token: Any = None
-    # The timestamp (in ISO 8601 format) at which the AWS Managed Blockchain accessor was created, automatically set by the service and returned as a computed value. (AI-inferred)
     creation_date: Any = None
-    # The unique identifier assigned to the Managed Blockchain accessor by AWS. (AI-inferred)
     id: Any = None
-    # Specifies the Ethereum network type that the Managed Blockchain accessor connects to, such as ETHEREUM_MAINNET for the public mainnet or ETHEREUM_TESTNET for a public test network. (AI-inferred)
     network_type: Any = None
-    # The current lifecycle status of the Managed Blockchain accessor, indicating whether it is available for use (AVAILABLE) or in a deletion state (PENDING_DELETION, DELETED). (AI-inferred)
     status: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

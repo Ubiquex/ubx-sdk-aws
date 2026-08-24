@@ -8,15 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolDomain_CustomDomainConfig:
-    # The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate used for the custom domain of the Cognito user pool domain. (AI-inferred)
     certificate_arn: Any = None
-    # Sets the TLS security policy for the CloudFront distribution backing the custom domain, determining the minimum TLS version (e.g., TLS_1_0, TLS_1_2) required for HTTPS connections to the user pool domain. (AI-inferred)
     security_policy: Any = None
 
 @dataclasses.dataclass
 class UserPoolDomain_Routing_Failover:
     primary_route53_health_check_id: Any = None
-    # Specifies the secondary AWS region to which the user pool domain routes traffic during failover, ensuring availability if the primary region fails. (AI-inferred)
     secondary_region: Any = None
 
 @dataclasses.dataclass
@@ -43,28 +40,19 @@ _UserPoolDomain_RoutingFields = {
 
 @dataclasses.dataclass
 class UserPoolDomainConfig:
-    # Specifies the configuration for a custom domain, including the ARN of the ACM certificate to use for HTTPS. (AI-inferred)
     custom_domain_config: Any = None
-    # The domain (either a custom domain or a prefix) that will be assigned to the user pool to serve the hosted UI, API, and authentication endpoints. (AI-inferred)
     domain: Any = None
-    # Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
     managed_login_version: Any = None
     routing: Any = None
-    # The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
     user_pool_id: Any = None
 
 @dataclasses.dataclass
 class UserPoolDomainAttrs:
-    # The Amazon CloudFront distribution associated with the user pool domain, used to serve traffic for the custom domain. (AI-inferred)
     cloud_front_distribution: Any = None
-    # Specifies the configuration for a custom domain, including the ARN of the ACM certificate to use for HTTPS. (AI-inferred)
     custom_domain_config: Any = None
-    # The domain (either a custom domain or a prefix) that will be assigned to the user pool to serve the hosted UI, API, and authentication endpoints. (AI-inferred)
     domain: Any = None
-    # Specify the version of the managed login experience for the user pool domain, with 1 representing the original hosted UI and 2 representing the new managed login experience. (AI-inferred)
     managed_login_version: Any = None
     routing: Any = None
-    # The ID of the Amazon Cognito user pool to associate with the custom domain or Amazon Cognito-hosted domain. (AI-inferred)
     user_pool_id: Any = None
 
 UserPoolDomain = ubx.ResourceBinding(

@@ -27,7 +27,6 @@ export interface ConnectBridgeSource_NetworkSource {
   networkName: string | Computed<string>;
   /** The network source port. */
   port: number | Computed<number>;
-  /** Specifies the transport protocol (RTP or RTP-FEC) used by the network source to ingest the media stream into the bridge. (AI-inferred) */
   protocol: string | Computed<string>;
 }
 

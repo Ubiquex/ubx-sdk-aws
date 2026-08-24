@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbclusterParameterGroup_Tags struct {
 	Key any
-	// Specifies the value portion of a tag applied to this Neptune DB cluster parameter group, where each tag is a user-defined key-value pair. (AI-inferred)
 	Value any
 }
 

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MessageTemplate_Content_EmailMessageTemplateContent_Body_Html:
-    # The HTML body content of the email message template, used when the email body is formatted as HTML. (AI-inferred)
     content: Any = None
 
 @dataclasses.dataclass
@@ -20,9 +19,7 @@ class MessageTemplate_Content_EmailMessageTemplateContent_Body:
 
 @dataclasses.dataclass
 class MessageTemplate_Content_EmailMessageTemplateContent_Headers:
-    # The name of the email header (e.g., a custom header key) in the headers list of the email message template content. (AI-inferred)
     name: Any = None
-    # The value of an email header in the AWS Wisdom message template's content, paired with a key to define a custom or standard email header sent with the message. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -211,16 +208,12 @@ class MessageTemplate_GroupingConfiguration:
 
 @dataclasses.dataclass
 class MessageTemplate_MessageTemplateAttachments:
-    # The unique identifier of the attachment to include in the message template, referencing the attachment's ID in Amazon Connect Wisdom. (AI-inferred)
     attachment_id: Any = None
-    # The name of an attachment in the Wisdom message template, used to identify and reference the attachment when the template is rendered for customers. (AI-inferred)
     attachment_name: Any = None
-    # For each attachment in an Amazon Wisdom message template, this field is the Amazon S3 presigned URL that grants temporary, secure access to the attachment's underlying object stored in S3. (AI-inferred)
     s3_presigned_url: Any = None
 
 @dataclasses.dataclass
 class MessageTemplate_Tags:
-    # The key of a metadata tag attached to the Wisdom message template, allowing users to organize and identify the template within AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

@@ -9,21 +9,18 @@ export interface AccessEntitlement_Entitlement_PrincipalRole_Principal_IdentityC
 }
 
 export interface AccessEntitlement_Entitlement_PrincipalRole_Principal {
-  /** Specifies the AWS IAM Identity Center (successor to AWS SSO) user or group that acts as the principal for the access entitlement, granting that identity access to the target account. (AI-inferred) */
   identityCenter: AccessEntitlement_Entitlement_PrincipalRole_Principal_IdentityCenter | Computed<AccessEntitlement_Entitlement_PrincipalRole_Principal_IdentityCenter>;
 }
 
 export interface AccessEntitlement_Entitlement_PrincipalRole {
   /** The AWS account ID */
   account?: string | Computed<string>;
-  /** The IAM user, role, or AWS account that is granted the account access entitlement and assumes the specified principal role in the target AWS account. (AI-inferred) */
   principal: AccessEntitlement_Entitlement_PrincipalRole_Principal | Computed<AccessEntitlement_Entitlement_PrincipalRole_Principal>;
   /** The ARN of the IAM role */
   roleArn: string | Computed<string>;
 }
 
 export interface AccessEntitlement_Entitlement {
-  /** Defines the IAM role principal, including its role name and optional organizational unit, that is granted the access entitlement to the specified target accounts. (AI-inferred) */
   principalRole: AccessEntitlement_Entitlement_PrincipalRole | Computed<AccessEntitlement_Entitlement_PrincipalRole>;
 }
 

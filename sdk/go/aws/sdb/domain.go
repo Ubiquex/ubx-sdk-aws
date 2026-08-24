@@ -9,7 +9,6 @@ type DomainConfig struct {
 
 type DomainAttrs struct {
 	Description any
-	// The unique identifier of the SimpleDB domain, which is set to the domain name used to reference the domain in AWS. (AI-inferred)
 	Id any
 }
 

@@ -4,15 +4,10 @@ package greengrass
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LoggerDefinitionVersion_Loggers struct {
-	// Specifies the component that writes the logs captured by this logger, typically the literal value `GreengrassSystem` for system components or the ARN of a Lambda function for lambda components. (AI-inferred)
 	Component any
-	// The unique identifier used to reference this logger component within the logger definition version. (AI-inferred)
 	Id any
-	// The log level for this Greengrass logger, determining the minimum severity (e.g., DEBUG, INFO, WARN, ERROR, FATAL) of log messages that will be recorded. (AI-inferred)
 	Level any
-	// The maximum amount of file space (in kilobytes) that the logger can use for storing log files, applicable to file-system based loggers in a Greengrass logger definition. (AI-inferred)
 	Space any
-	// The logger destination type: AWSCloudWatch for logs published to Amazon CloudWatch Logs, or FileSystem for logs written to the local file system. (AI-inferred)
 	Type any
 }
 
@@ -25,18 +20,13 @@ var LoggerDefinitionVersion_LoggersFields = ubx.FieldMap{
 	}
 
 type LoggerDefinitionVersionConfig struct {
-	// The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred)
 	LoggerDefinitionId any
-	// Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred)
 	Loggers any
 }
 
 type LoggerDefinitionVersionAttrs struct {
-	// The id is the unique ARN assigned by AWS to this Greengrass logger definition version, used to reference the version in other resources and API calls. (AI-inferred)
 	Id any
-	// The ID of the Greengrass logger definition that this version belongs to, required when creating a logger definition version. (AI-inferred)
 	LoggerDefinitionId any
-	// Specifies a list of logger configuration objects, each for an AWS Greengrass component, that determine where logs are sent (CloudWatch Logs or local file system) and the minimum log level to record. (AI-inferred)
 	Loggers any
 }
 

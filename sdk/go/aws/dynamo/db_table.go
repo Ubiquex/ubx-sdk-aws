@@ -4,9 +4,7 @@ package dynamo
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbTable_AttributeDefinitions struct {
-	// The name of an attribute in the DynamoDB table's attribute definitions, which must correspond to a key schema attribute (partition key, sort key, or index key) for the table or its secondary indexes. (AI-inferred)
 	AttributeName any
-	// Specifies the data type for the attribute, which must be one of S (string), N (number), or B (binary). (AI-inferred)
 	AttributeType any
 }
 
@@ -18,54 +16,37 @@ type DbTable_ContributorInsightsSpecification struct {
 }
 
 type DbTable_GlobalSecondaryIndexes_KeySchema struct {
-	// The name of the table attribute that serves as the partition or sort key for this global secondary index, which must match an attribute declared in the table's AttributeDefinitions. (AI-inferred)
 	AttributeName any
-	// Specifies whether the key element is a HASH (partition) key or a RANGE (sort) key in the key schema of the global secondary index. (AI-inferred)
 	KeyType any
 }
 
 type DbTable_GlobalSecondaryIndexes_OnDemandThroughput struct {
-	// The maximum number of read request units that can be consumed per second by this global secondary index when the table is in on-demand capacity mode. (AI-inferred)
 	MaxReadRequestUnits any
-	// Sets the maximum number of write request units that this global secondary index can use when it operates in on-demand (pay-per-request) capacity mode, capping its write throughput. (AI-inferred)
 	MaxWriteRequestUnits any
 }
 
 type DbTable_GlobalSecondaryIndexes_Projection struct {
-	// Lists the additional (non-key) table attributes that are copied into the global secondary index when its projection type is INCLUDE. (AI-inferred)
 	NonKeyAttributes any
-	// Determines which table attributes are copied to the global secondary index: ALL copies every attribute, KEYS_ONLY copies only the table and index keys, and INCLUDE copies only the attributes listed in the projection's NonKeyAttributes. (AI-inferred)
 	ProjectionType any
 }
 
 type DbTable_GlobalSecondaryIndexes_ProvisionedThroughput struct {
-	// The number of read capacity units to provision for the global secondary index, controlling the index's throughput for strongly consistent reads when using provisioned billing mode. (AI-inferred)
 	ReadCapacityUnits any
-	// The maximum number of write capacity units consumed per second for the global secondary index's provisioned throughput. (AI-inferred)
 	WriteCapacityUnits any
 }
 
 type DbTable_GlobalSecondaryIndexes_WarmThroughput struct {
-	// The number of read capacity units per second for warm throughput of the global secondary index. (AI-inferred)
 	ReadUnitsPerSecond any
-	// The maximum number of write operations per second for the global secondary index's warm throughput, setting a capacity limit for writes to data in the warm storage tier of the DynamoDB table. (AI-inferred)
 	WriteUnitsPerSecond any
 }
 
 type DbTable_GlobalSecondaryIndexes struct {
-	// Configures CloudWatch Contributor Insights for the global secondary index, with an `Enabled` setting to enable or disable Contributor Insights on that index. (AI-inferred)
 	ContributorInsightsSpecification any
-	// The name of the global secondary index, which must be unique within the DynamoDB table and is used to query data through that index. (AI-inferred)
 	IndexName any
-	// Specifies the attribute names and key types (HASH or RANGE) that form the partition key and optional sort key for each global secondary index, determining how items are indexed in that GSI. (AI-inferred)
 	KeySchema any
-	// Specifies the maximum read and write request units for a global secondary index when the table is configured for on-demand capacity mode, allowing fine-grained control over the index's throughput limits. (AI-inferred)
 	OnDemandThroughput any
-	// Configures which table attributes are copied to the global secondary index, including the projection type (ALL, KEYS_ONLY, or INCLUDE) and optional non-key attributes. (AI-inferred)
 	Projection any
-	// Configures the read and write capacity units for a global secondary index when the DynamoDB table uses provisioned billing mode. (AI-inferred)
 	ProvisionedThroughput any
-	// Specifies the warm throughput capacity (read and write units per second) for the global secondary index when the table uses the Standard-IA (Infrequent Access) storage class, allowing throughput to be set separately for data in the warm storage tier. (AI-inferred)
 	WarmThroughput any
 }
 
@@ -109,11 +90,8 @@ type DbTable_KinesisStreamSpecification struct {
 }
 
 type DbTable_LocalSecondaryIndexes struct {
-	// The name of the local secondary index, which must be unique within the table and is used to query the table using an alternate sort key. (AI-inferred)
 	IndexName any
-	// Defines the key schema for the local secondary index, specifying the partition key (which must be the same as the table's partition key) and a distinct sort key, each with an attribute name and key type (HASH or RANGE). (AI-inferred)
 	KeySchema any
-	// Specifies which table attributes are copied into the local secondary index, using ALL, KEYS_ONLY, or INCLUDE modes, with INCLUDE requiring an explicit list of non-key attributes to project. (AI-inferred)
 	Projection any
 }
 
@@ -363,7 +341,6 @@ type DbTableConfig struct {
 }
 
 type DbTableAttrs struct {
-	// The Amazon Resource Name (ARN) of the DynamoDB table, automatically assigned by AWS when the table is created. (AI-inferred)
 	Arn any
 	// A list of attributes that describe the key schema for the table and indexes. This property is required to create a DDB table. Update requires: [Some interruptions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt). Replacement if you edit an existing AttributeDefinition.
 	AttributeDefinitions any
@@ -393,7 +370,6 @@ type DbTableAttrs struct {
 	ResourcePolicy any
 	// Represents the settings used to enable server-side encryption.
 	Ssespecification any
-	// The Amazon Resource Name (ARN) of the DynamoDB stream associated with the table, available when a stream specification is enabled on the table. (AI-inferred)
 	StreamArn any
 	// Represents the DynamoDB Streams configuration for a table in DynamoDB.
 	StreamSpecification any

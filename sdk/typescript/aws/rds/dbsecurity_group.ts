@@ -2,13 +2,9 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbsecurityGroup_DbsecurityGroupIngress {
-  /** The CIDR-format IPv4 address range (e.g., 10.0.0.0/24) authorized by this ingress rule to access the associated RDS DB security group. (AI-inferred) */
   cidrip?: string | Computed<string>;
-  /** Specifies the ID of the EC2 security group whose instances are allowed to access the DB instances associated with this DB security group. (AI-inferred) */
   ec2SecurityGroupId?: string | Computed<string>;
-  /** The name of the EC2 security group that is allowed to access the RDS database, used in an ingress rule for the DB security group. (AI-inferred) */
   ec2SecurityGroupName?: string | Computed<string>;
-  /** Specifies the AWS account ID of the owner of the EC2 security group referenced in the ingress rule, which is required when that security group belongs to a different AWS account. (AI-inferred) */
   ec2SecurityGroupOwnerId?: string | Computed<string>;
 }
 
@@ -30,26 +26,17 @@ const DbsecurityGroup_TagsFields: FieldMap = {
 };
 
 export interface DbsecurityGroupConfig {
-  /** Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred) */
   dbsecurityGroupIngress: DbsecurityGroup_DbsecurityGroupIngress[] | Computed<DbsecurityGroup_DbsecurityGroupIngress[]>;
-  /** Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred) */
   ec2VpcId?: string | Computed<string>;
-  /** A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred) */
   groupDescription: string | Computed<string>;
-  /** A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred) */
   tags?: DbsecurityGroup_Tags[] | Computed<DbsecurityGroup_Tags[]>;
 }
 
 export interface DbsecurityGroupAttrs {
-  /** Specifies the ingress rules (CIDR IP ranges or EC2 security groups) that are granted network access to the DB instances associated with this DB security group. (AI-inferred) */
   dbsecurityGroupIngress: DbsecurityGroup_DbsecurityGroupIngress[];
-  /** Specifies the ID of the Amazon VPC in which to create the RDS DB security group, allowing the group to control network access to DB instances inside that VPC. (AI-inferred) */
   ec2VpcId: string;
-  /** A user-supplied description for the DB security group, which is required and helps identify the group's purpose. (AI-inferred) */
   groupDescription: string;
-  /** The unique identifier for the DB security group, which is the security group name. (AI-inferred) */
   id: string;
-  /** A list of key-value tags to assign to the DB security group for metadata and cost allocation. (AI-inferred) */
   tags: DbsecurityGroup_Tags[];
 }
 

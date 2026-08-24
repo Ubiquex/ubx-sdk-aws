@@ -6,9 +6,7 @@ export interface FilesFileSystem_SynchronizationConfiguration_ExpirationDataRule
 }
 
 export interface FilesFileSystem_SynchronizationConfiguration_ImportDataRules {
-  /** Specifies the S3 object key prefix that filters which objects are imported from the source S3 bucket to the file system according to this import rule. (AI-inferred) */
   prefix?: string | Computed<string>;
-  /** Specifies the maximum file size in bytes for files to be included in the synchronization import, so that only files smaller than this value are imported. (AI-inferred) */
   sizeLessThan?: number | Computed<number>;
   trigger?: string | Computed<string>;
 }
@@ -31,7 +29,6 @@ const FilesFileSystem_TagsFields: FieldMap = {
 
 export interface FilesFileSystemConfig {
   acceptBucketWarning?: boolean | Computed<boolean>;
-  /** The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred) */
   bucket: string | Computed<string>;
   clientToken?: string | Computed<string>;
   kmsKeyId?: string | Computed<string>;
@@ -42,7 +39,6 @@ export interface FilesFileSystemConfig {
 
 export interface FilesFileSystemAttrs {
   acceptBucketWarning: boolean;
-  /** The name of the S3 bucket that stores the underlying file data for this file system. (AI-inferred) */
   bucket: string;
   clientToken: string;
   creationTime: string;

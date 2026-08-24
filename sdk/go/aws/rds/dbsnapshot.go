@@ -4,9 +4,7 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dbsnapshot_Tags struct {
-	// The key of a tag attached to the RDS DB snapshot, used to assign metadata for resource identification, cost tracking, and IAM-based access control. (AI-inferred)
 	Key any
-	// The value of a user-defined tag applied to this RDS DB snapshot, providing arbitrary metadata to classify or manage the snapshot. (AI-inferred)
 	Value any
 }
 

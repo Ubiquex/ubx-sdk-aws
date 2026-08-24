@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SightFlow_Permissions struct {
 	Actions any
-	// The Amazon Resource Name (ARN) of the IAM principal (user, group, or role) to which the permissions apply, used to grant or restrict access to the QuickSight resource. (AI-inferred)
 	Principal any
 }
 

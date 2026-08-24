@@ -4,313 +4,217 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Flow_Definition_Connections_Configuration_Conditional struct {
-	// The name of the condition defined in the flow's conditions configuration that must evaluate to true for the flow to traverse this conditional connection. (AI-inferred)
 	Condition any
 }
 
 type Flow_Definition_Connections_Configuration_Data struct {
-	// In an AWS Bedrock Flow connection, this field specifies the name of the output from the source node that is mapped to the corresponding input of the target node. (AI-inferred)
 	SourceOutput any
-	// The name of the input field on the target Flow node that this connection's data is sent to. (AI-inferred)
 	TargetInput any
 }
 
 type Flow_Definition_Connections_Configuration struct {
-	// Defines the conditional configuration for a connection between nodes in a Bedrock flow, specifying the condition expression that determines whether the flow traverses this connection. (AI-inferred)
 	Conditional any
 	Data any
 }
 
 type Flow_Definition_Connections struct {
-	// Configuration for a flow connection, where for conditional edges it holds the condition expression that determines whether the flow traverses this connection. (AI-inferred)
 	Configuration any
-	// A required unique name that identifies this connection within the Bedrock flow definition, used to reference the connection and distinguish it from other connections in the flow graph. (AI-inferred)
 	Name any
-	// The name of the source node in a Bedrock flow connection, indicating which node's output feeds into the connection's target node. (AI-inferred)
 	Source any
-	// Specifies the identifier of the destination node in the flow that this connection links to, defining the graph edge's target. (AI-inferred)
 	Target any
-	// Specifies the type of the connection between nodes in the flow, indicating whether it represents a data flow ('Data') or a control flow ('Control'). (AI-inferred)
 	Type any
 }
 
 type Flow_Definition_Nodes_Configuration_Agent struct {
-	// The Amazon Resource Name (ARN) of the Bedrock agent alias that this node uses to invoke the agent. (AI-inferred)
 	AgentAliasArn any
 }
 
 type Flow_Definition_Nodes_Configuration_Condition_Conditions struct {
-	// The Boolean expression that is evaluated for this condition in a Condition node, using the flow's variable syntax and expression grammar to determine whether the condition is met. (AI-inferred)
 	Expression any
-	// Specifies the unique name of an individual condition within a condition node, which the flow uses to route execution based on the evaluated expression. (AI-inferred)
 	Name any
 }
 
 type Flow_Definition_Nodes_Configuration_Condition struct {
-	// Defines the list of evaluation rules for a Bedrock Flow condition node, where each rule contains an expression (e.g., a comparison using flow variables) and a unique name that determines which outgoing branch the flow takes. (AI-inferred)
 	Conditions any
 }
 
 type Flow_Definition_Nodes_Configuration_InlineCode struct {
-	// The source code (such as JavaScript) to execute for the flow node, provided inline in the flow definition instead of referencing an external file. (AI-inferred)
 	Code any
-	// Specifies the programming language (for example, Python) used to interpret and run the inline code in a flow node's inline code configuration. (AI-inferred)
 	Language any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_GuardrailConfiguration struct {
-	// The unique identifier (ARN) of the Amazon Bedrock guardrail that governs the knowledge base node's responses in the flow. (AI-inferred)
 	GuardrailIdentifier any
-	// Specifies the version of the guardrail to apply to the knowledge base, such as 'DRAFT' or a specific numeric version. (AI-inferred)
 	GuardrailVersion any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration_Text struct {
-	// The maximum number of tokens the model can generate in the text response produced by the knowledge base node's inference configuration in the Bedrock flow. (AI-inferred)
 	MaxTokens any
-	// Specifies the stop sequences (strings) that signal the model to halt text generation when encountered in the output of the knowledge base node's inference configuration. (AI-inferred)
 	StopSequences any
-	// Sets the temperature for text generation in the knowledge base node's inference configuration, controlling the randomness and creativity of the generated responses. (AI-inferred)
 	Temperature any
-	// Specifies the top-p (nucleus sampling) probability threshold used by the knowledge base node's text inference configuration, limiting generation to the smallest set of tokens whose cumulative probability exceeds this value. (AI-inferred)
 	TopP any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_InferenceConfiguration struct {
-	// The `text` object under `inference_configuration` specifies the generation parameters (such as max tokens, temperature, and stop sequences) for text responses from the underlying model of the knowledge base node. (AI-inferred)
 	Text any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PerformanceConfig struct {
-	// Sets the latency optimization tier (e.g., STANDARD or OPTIMIZED) for knowledge base retrieval in the flow node's orchestration, controlling the trade-off between response speed and query accuracy. (AI-inferred)
 	Latency any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration_PromptTemplate struct {
-	// Specifies the prompt template text used by the knowledge base node's orchestration step to instruct the model how to formulate the final response based on the retrieved context and the user's query. (AI-inferred)
 	TextPromptTemplate any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_OrchestrationConfiguration struct {
-	// Specifies additional inference parameters (such as temperature or topP) to send to the foundation model when the knowledge base node performs orchestration. (AI-inferred)
 	AdditionalModelRequestFields any
-	// Specifies the inference parameters (such as temperature, topP, maxTokens) used by the model invoked during knowledge base orchestration in this Bedrock flow node. (AI-inferred)
 	InferenceConfig any
-	// This object configures retrieval performance for the knowledge base node, including the number of results to return and the vector search type (e.g., HYBRID) used during orchestration. (AI-inferred)
 	PerformanceConfig any
-	// Defines the prompt template used by the model to orchestrate knowledge base retrieval and response generation within the flow's knowledge base node. (AI-inferred)
 	PromptTemplate any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration_FieldsToExclude struct {
-	// The name of a knowledge-base metadata field to exclude from the reranking process when using selective metadata configuration. (AI-inferred)
 	FieldName any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration_SelectiveModeConfiguration struct {
-	// Specifies the metadata fields to exclude from consideration when reranking knowledge base results in selective metadata mode, preventing these fields from influencing reranking scores. (AI-inferred)
 	FieldsToExclude any
-	// Specifies the metadata fields (each containing a field name and type) to include when reranking uses selective mode, so only the listed document metadata is considered for reranking decisions. (AI-inferred)
 	FieldsToInclude any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_MetadataConfiguration struct {
-	// Determines whether all metadata fields or only a selected subset are passed to the Bedrock reranker for reranking, with values such as 'SELECTIVE' or 'ALL'. (AI-inferred)
 	SelectionMode any
-	// Defines selective mode settings for the reranking metadata configuration, allowing you to specify which metadata fields should be used by the Bedrock reranker when reranking knowledge base results. (AI-inferred)
 	SelectiveModeConfiguration any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration_ModelConfiguration struct {
-	// Specifies additional model-specific request fields (as key-value pairs) to be passed to the reranking model, allowing customization of inference parameters such as top_n or return_documents for the Bedrock reranking operation. (AI-inferred)
 	AdditionalModelRequestFields any
-	// The ARN of the Amazon Bedrock reranking model used to re-rank the knowledge base retrieval results. (AI-inferred)
 	ModelArn any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration_BedrockRerankingConfiguration struct {
-	// Specifies the metadata configuration for the Bedrock reranking model, such as whether to treat metadata as structured or unstructured and which additional metadata fields to include when reranking knowledge base results. (AI-inferred)
 	MetadataConfiguration any
-	// Specifies the Bedrock model configuration for the reranking step, including the model ARN and any additional model request fields to pass to the reranking model. (AI-inferred)
 	ModelConfiguration any
-	// Within a knowledge base node's reranking configuration, this number specifies how many of the top retrieved results are sent to the configured reranking model. (AI-inferred)
 	NumberOfRerankedResults any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase_RerankingConfiguration struct {
-	// Defines the Amazon Bedrock managed reranking model for this knowledge base node, specifying the model ARN and additional fields in modelConfiguration and the number of reranked results to return. (AI-inferred)
 	BedrockRerankingConfiguration any
-	// Specifies the reranking model type for the knowledge base node, indicating whether the reranker is an Amazon Bedrock built-in reranker or a Cohere reranker. (AI-inferred)
 	Type any
 }
 
 type Flow_Definition_Nodes_Configuration_KnowledgeBase struct {
-	// Configures the guardrail applied to the inference responses from this knowledge base node, referencing the guardrail's unique identifier and version. (AI-inferred)
 	GuardrailConfiguration any
-	// Defines the inference parameters (e.g., temperature, topP, topK, maximumLength) applied when the knowledge base node in a Bedrock flow queries the underlying foundation model. (AI-inferred)
 	InferenceConfiguration any
-	// The unique identifier of the Amazon Bedrock knowledge base that this flow node uses to retrieve and ground responses. (AI-inferred)
 	KnowledgeBaseId any
-	// Specifies the unique identifier of the Amazon Bedrock foundation model used by the knowledge base node to generate responses based on retrieved information. (AI-inferred)
 	ModelId any
-	// Specifies the maximum number of retrieved knowledge base results to include in the prompt when the flow node queries the connected knowledge base. (AI-inferred)
 	NumberOfResults any
 	OrchestrationConfiguration any
-	// Specifies a prompt template for the knowledge base node, used to construct the query sent to the model with placeholders for user input and retrieved context. (AI-inferred)
 	PromptTemplate any
-	// Configures how retrieval results from the knowledge base are reranked, including the reranking model ARN and the number of top results to keep after reranking. (AI-inferred)
 	RerankingConfiguration any
 }
 
 type Flow_Definition_Nodes_Configuration_LambdaFunction struct {
-	// The ARN of the AWS Lambda function that this node invokes when the flow executes. (AI-inferred)
 	LambdaArn any
 }
 
 type Flow_Definition_Nodes_Configuration_Lex struct {
-	// The ARN of the Amazon Lex bot alias that this node invokes to handle the conversational interaction within the flow. (AI-inferred)
 	BotAliasArn any
-	// The locale ID (e.g., en_US) of the Amazon Lex bot configured for this node in the Bedrock flow, which determines the language and regional variant used for the bot's interactions. (AI-inferred)
 	LocaleId any
 }
 
 type Flow_Definition_Nodes_Configuration_Loop struct {
-	// The inline definition of the sub-flow that the loop node iterates over, specifying the nodes and connections that constitute the repeated workflow body. (AI-inferred)
 	Definition any
 }
 
 type Flow_Definition_Nodes_Configuration_LoopController struct {
-	// Specifies the condition that determines whether the loop continues to the next iteration, evaluated after each pass through the loop node's body. (AI-inferred)
 	ContinueCondition any
-	// Specifies the maximum number of iterations the loop node can execute before the flow terminates the loop, preventing infinite loops. (AI-inferred)
 	MaxIterations any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text_InputVariables struct {
-	// The name of the input variable that is referenced within the prompt template text and substituted with a runtime value when the flow node executes. (AI-inferred)
 	Name any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration_Text struct {
-	// Defines the list of input variables for the inline text prompt template, where each variable's name is declared so it can be referenced as a placeholder in the template text. (AI-inferred)
 	InputVariables any
-	// Specifies the actual prompt text used in the inline prompt template, which can include Bedrock prompt variables such as {{variableName}} for dynamic content. (AI-inferred)
 	Text any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline_TemplateConfiguration struct {
-	// Defines the textual prompt template used for the prompt node when the source is configured inline, supporting variable placeholders for dynamic inputs. (AI-inferred)
 	Text any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Inline struct {
-	// Configures the model inference parameters for the inline prompt source, such as temperature, maximum tokens, and stop sequences, used when the prompt node invokes a model in the Bedrock flow. (AI-inferred)
 	InferenceConfiguration any
-	// Specifies the Amazon Bedrock foundation model ID used by the inline prompt configuration for this prompt node in the flow. (AI-inferred)
 	ModelId any
-	// Specifies the template type (TEXT or CHAT) and the actual prompt template content for an inline prompt source in a Bedrock flow node. (AI-inferred)
 	TemplateConfiguration any
-	// This field specifies the prompt template format (such as TEXT or CHAT) for an inline prompt source in a Bedrock Flow prompt node, determining how the prompt content is structured and parsed. (AI-inferred)
 	TemplateType any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration_Resource struct {
-	// The Amazon Bedrock prompt ARN that supplies the prompt text or prompt template for this node's prompt source configuration. (AI-inferred)
 	PromptArn any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt_SourceConfiguration struct {
-	// Specifies the inline definition of the prompt, including the model ID, template type (e.g., TEXT), template configuration, and optional inference settings, used directly within the flow node rather than referencing an external prompt resource. (AI-inferred)
 	Inline any
-	// For a prompt node within a Bedrock flow, this object specifies the source configuration to reference an existing Amazon Bedrock prompt resource by its ARN rather than defining the prompt inline. (AI-inferred)
 	Resource any
 }
 
 type Flow_Definition_Nodes_Configuration_Prompt struct {
-	// Defines the Amazon Bedrock guardrail applied to the prompt node, specifying the guardrail's unique identifier and version to filter or moderate content. (AI-inferred)
 	GuardrailConfiguration any
-	// Specifies the source of the prompt for the prompt node in the Bedrock flow, which can be either inline text configured directly or a reference to an existing prompt resource. (AI-inferred)
 	SourceConfiguration any
 }
 
 type Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration_S3 struct {
-	// Specifies the name of the S3 bucket from which the retrieval node in this Bedrock flow retrieves data. (AI-inferred)
 	BucketName any
 }
 
 type Flow_Definition_Nodes_Configuration_Retrieval_ServiceConfiguration struct {
-	// Specifies the Amazon S3 data source for the retrieval node's service configuration, with properties such as the S3 bucket name and an optional object key prefix. (AI-inferred)
 	S3 any
 }
 
 type Flow_Definition_Nodes_Configuration_Retrieval struct {
-	// Configuration for the retrieval service used by the retrieval node, specifying the knowledge base (and optionally model settings) that the node queries to fetch relevant information. (AI-inferred)
 	ServiceConfiguration any
 }
 
 type Flow_Definition_Nodes_Configuration struct {
-	// Configuration for a Bedrock flow node of type 'Agent', specifying the agent alias to invoke and an optional prompt template to customize the agent's behavior. (AI-inferred)
 	Agent any
-	// Configures a Collector node in the Bedrock flow, specifying the upstream node outputs to aggregate into a single array for use by downstream nodes. (AI-inferred)
 	Collector any
-	// This object specifies the branching condition for a Bedrock Flow condition node, containing the logical expression (and its evaluation type) that determines which outgoing connection the flow follows. (AI-inferred)
 	Condition any
-	// Defines the script that is executed directly by the Bedrock flow node, enabling custom processing without referencing an external Lambda function. (AI-inferred)
 	InlineCode any
-	// For an input node in a Bedrock flow, this field defines the schema of the flow's input data, including its type (e.g., 'String') and, for structured objects, a list of named properties with their types. (AI-inferred)
 	Input any
-	// Defines the configuration for an iterator node in the Bedrock flow, specifying the collection to iterate over and optional limits such as maximum items to control looping. (AI-inferred)
 	Iterator any
-	// Specifies the Amazon Bedrock knowledge base and its retrieval configuration, such as the knowledge base ID and query settings, for a Knowledge Base node in the flow. (AI-inferred)
 	KnowledgeBase any
-	// Specifies the AWS Lambda function to invoke for a Lambda function node in the flow, including the function's ARN and an optional JSON payload to pass to the function. (AI-inferred)
 	LambdaFunction any
-	// Configuration for an Amazon Lex node in the flow, defining which Lex bot alias to invoke and the locale for conversational interactions. (AI-inferred)
 	Lex any
-	// Configuration for a loop node within the flow, specifying the child nodes that form the loop body and the condition node used to determine when to exit the loop. (AI-inferred)
 	Loop any
-	// Defines the loop control parameters for a Bedrock Flow loop node, including the array of items to iterate over and optional maximum iteration count. (AI-inferred)
 	LoopController any
-	// Defines the input for a loop node in the flow, specifying the flow variable or expression that the loop iterates over. (AI-inferred)
 	LoopInput any
-	// Defines the output configuration for an Output node in a Bedrock flow, specifying the data type and optional name of the flow's output. (AI-inferred)
 	Output any
-	// Defines the prompt settings for a prompt node, including the prompt template, model selection, and inference configuration. (AI-inferred)
 	Prompt any
-	// Configures a retrieval node in an Amazon Bedrock flow by specifying the knowledge base to query and the retrieval settings used to fetch relevant information for downstream processing. (AI-inferred)
 	Retrieval any
-	// Specifies the configuration for a storage node in the Bedrock flow, including the S3 location where the flow's input data should be saved. (AI-inferred)
 	Storage any
 }
 
 type Flow_Definition_Nodes_Inputs struct {
-	// Specifies the source category of a node input in a Bedrock flow definition, such as `FLOW` for a flow-level parameter or `NODE` for a reference to another node's output, which determines how the flow engine resolves the input's `value` field. (AI-inferred)
 	Category any
-	// Specifies the expression that resolves the value for this input, commonly referencing outputs of other nodes using ${...} syntax in Amazon Bedrock flows. (AI-inferred)
 	Expression any
-	// The name of the input, which uniquely identifies it within the node and is used as the reference key for accessing the input's value in expressions and for wiring connections between nodes. (AI-inferred)
 	Name any
-	// Specifies the data type of the node input, such as String, Number, Boolean, Object, Array, or Reference. (AI-inferred)
 	Type any
 }
 
 type Flow_Definition_Nodes_Outputs struct {
-	// The name of this node output, which uniquely identifies it within the node and is used to reference it in downstream node expressions. (AI-inferred)
 	Name any
-	// Specifies the data type of the node output (e.g., String, Number, Boolean) so downstream nodes can interpret the value correctly. (AI-inferred)
 	Type any
 }
 
 type Flow_Definition_Nodes struct {
-	// Holds the node-type-specific settings for a single node in the Bedrock flow, such as the prompt template for a prompt node or the condition logic for a condition node. (AI-inferred)
 	Configuration any
-	// Specifies the input parameters that a node in an Amazon Bedrock Flow consumes from the flow's initial inputs or from outputs of preceding nodes, enabling data to be passed into the node's processing logic such as a prompt or condition. (AI-inferred)
 	Inputs any
-	// A unique name for the node within the flow, used to identify the node when defining connections to and from other nodes in the flow definition. (AI-inferred)
 	Name any
-	// Specifies the list of outputs for a node, where each output includes a name, data type, and an expression that determines the value exposed to downstream nodes in the flow. (AI-inferred)
 	Outputs any
-	// Specifies the type of the node (for example, Input, Output, Prompt, or Condition) in the Amazon Bedrock flow, which determines the node's behavior and required properties. (AI-inferred)
 	Type any
 }
 
@@ -331,7 +235,6 @@ type Flow_DefinitionS3Location struct {
 }
 
 type Flow_Validations struct {
-	// The message field of a validation object provides a human-readable description of a validation issue found in the flow's definition. (AI-inferred)
 	Message any
 }
 

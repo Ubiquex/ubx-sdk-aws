@@ -4,7 +4,6 @@ package memory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbSubnetGroup_Tags struct {
-	// The key portion of a tag applied to this MemoryDB subnet group, used to organize, identify, and apply IAM-based access controls to the resource. (AI-inferred)
 	Key any
 	Value any
 }

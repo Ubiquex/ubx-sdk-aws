@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MailManagerRelay_Authentication:
-    # Indicates that the relay does not require any authentication when connecting to the destination SMTP server, as represented by an empty no-authentication configuration. (AI-inferred)
     no_authentication: Any = None
-    # The ARN of the AWS Secrets Manager secret containing the SMTP credentials (username and password) used for authentication when the relay connects to the remote mail server. (AI-inferred)
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class MailManagerRelay_Tags:
-    # The key of a tag attached to the SES Mail Manager Relay resource, used to identify and organize the relay within AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -31,29 +28,19 @@ _MailManagerRelay_TagsFields = {
 
 @dataclasses.dataclass
 class MailManagerRelayConfig:
-    # Specifies the authentication mechanism and credentials used by this SES Mail Manager relay to connect to the destination SMTP server, such as basic authentication or no authentication. (AI-inferred)
     authentication: Any = None
-    # An optional friendly name that identifies this SMTP relay to make it easier to manage within the SES Mail Manager configuration. (AI-inferred)
     relay_name: Any = None
-    # The hostname or IP address of the destination SMTP server that this relay uses to forward email. (AI-inferred)
     server_name: Any = None
-    # Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
     server_port: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class MailManagerRelayAttrs:
-    # Specifies the authentication mechanism and credentials used by this SES Mail Manager relay to connect to the destination SMTP server, such as basic authentication or no authentication. (AI-inferred)
     authentication: Any = None
-    # The Amazon Resource Name (ARN) of the SES Mail Manager relay, assigned by AWS when the relay is created. (AI-inferred)
     relay_arn: Any = None
-    # The unique identifier automatically assigned by AWS to this Mail Manager relay, used to reference the relay in other resources. (AI-inferred)
     relay_id: Any = None
-    # An optional friendly name that identifies this SMTP relay to make it easier to manage within the SES Mail Manager configuration. (AI-inferred)
     relay_name: Any = None
-    # The hostname or IP address of the destination SMTP server that this relay uses to forward email. (AI-inferred)
     server_name: Any = None
-    # Sets the TCP port number on the destination mail server that the SES Mail Manager relay uses for SMTP email relaying. (AI-inferred)
     server_port: Any = None
     tags: Any = None
 

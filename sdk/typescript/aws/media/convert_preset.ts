@@ -10,7 +10,6 @@ export interface ConvertPresetConfig {
   name?: string | Computed<string>;
   /** Specify, in JSON format, the transcoding job settings for this output preset. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic. */
   settingsJson: unknown | Computed<unknown>;
-  /** Defines the key-value tags applied to the MediaConvert preset, which can be used for categorizing, organizing, and tracking costs associated with the resource. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
 }
 
@@ -25,7 +24,6 @@ export interface ConvertPresetAttrs {
   name: string;
   /** Specify, in JSON format, the transcoding job settings for this output preset. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic. */
   settingsJson: unknown;
-  /** Defines the key-value tags applied to the MediaConvert preset, which can be used for categorizing, organizing, and tracking costs associated with the resource. (AI-inferred) */
   tags: unknown;
 }
 

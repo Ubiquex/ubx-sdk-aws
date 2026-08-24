@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConductorBillingGroup_AccountGrouping:
-    # When enabled, accounts in the organization that are not already associated with another billing group are automatically added to this billing group. (AI-inferred)
     auto_associate: Any = None
-    # Identifies the AWS accounts that are members of this billing group by their linked account IDs, determining which accounts are billed together under the group's pricing rules. (AI-inferred)
     linked_account_ids: Any = None
     responsibility_transfer_arn: Any = None
 
@@ -21,7 +19,6 @@ class ConductorBillingGroup_ComputationPreference:
 
 @dataclasses.dataclass
 class ConductorBillingGroup_Tags:
-    # The key of a user-defined tag assigned to an AWS Billing Conductor billing group, used to organize and identify the group for cost tracking and management. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -42,44 +39,32 @@ _ConductorBillingGroup_TagsFields = {
 
 @dataclasses.dataclass
 class ConductorBillingGroupConfig:
-    # Specifies the linked accounts (by their account IDs) that are grouped together in this AWS Billing Conductor billing group for consolidated billing and custom pricing. (AI-inferred)
     account_grouping: Any = None
-    # Specifies the cost computation preference for the billing group, referencing the pricing rule ARN that determines how the group's billed amounts are calculated. (AI-inferred)
     computation_preference: Any = None
-    # An optional string that supplies a human-readable explanation of the billing group's purpose or contents, limited to 1024 characters. (AI-inferred)
     description: Any = None
-    # The user-defined name of the billing group, which must be unique within the AWS account and is used to identify the billing group in the Billing Conductor console and APIs. (AI-inferred)
     name: Any = None
     # This account will act as a virtual payer account of the billing group
     primary_account_id: Any = None
-    # A list of tag objects that define key-value pairs to attach to the billing group, enabling you to categorize and manage billing groups within AWS Billing Conductor. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ConductorBillingGroupAttrs:
-    # Specifies the linked accounts (by their account IDs) that are grouped together in this AWS Billing Conductor billing group for consolidated billing and custom pricing. (AI-inferred)
     account_grouping: Any = None
     # Billing Group ARN
     arn: Any = None
-    # Specifies the cost computation preference for the billing group, referencing the pricing rule ARN that determines how the group's billed amounts are calculated. (AI-inferred)
     computation_preference: Any = None
     # Creation timestamp in UNIX epoch time format
     creation_time: Any = None
-    # An optional string that supplies a human-readable explanation of the billing group's purpose or contents, limited to 1024 characters. (AI-inferred)
     description: Any = None
     # Latest modified timestamp in UNIX epoch time format
     last_modified_time: Any = None
-    # The user-defined name of the billing group, which must be unique within the AWS account and is used to identify the billing group in the Billing Conductor console and APIs. (AI-inferred)
     name: Any = None
     # This account will act as a virtual payer account of the billing group
     primary_account_id: Any = None
     # Number of accounts in the billing group
     size: Any = None
-    # This read-only field indicates the current lifecycle status of the billing group, such as ACTIVE, in the AWS Billing Conductor service. (AI-inferred)
     status: Any = None
-    # The reason for the current status of the billing group, providing contextual details when the group is not fully active (e.g., why it failed or is in a transient state). (AI-inferred)
     status_reason: Any = None
-    # A list of tag objects that define key-value pairs to attach to the billing group, enabling you to categorize and manage billing groups within AWS Billing Conductor. (AI-inferred)
     tags: Any = None
 
 ConductorBillingGroup = ubx.ResourceBinding(

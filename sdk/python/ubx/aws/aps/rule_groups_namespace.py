@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuleGroupsNamespace_Tags:
-    # The key of a tag attached to the Amazon Managed Service for Prometheus rule groups namespace, used to categorize and manage the resource. (AI-inferred)
     key: Any = None
-    # The value for a tag assigned to the AWS Prometheus rule groups namespace, used to organize, identify, and manage the resource through cost allocation and operational metadata. (AI-inferred)
     value: Any = None
 
 _RuleGroupsNamespace_TagsFields = {

@@ -55,7 +55,6 @@ type VerifiedAccessTrustProvider_SseSpecification struct {
 
 type VerifiedAccessTrustProvider_Tags struct {
 	Key any
-	// The value of a tag attached to the Verified Access trust provider, used to organize, identify, and manage the resource through AWS tagging. (AI-inferred)
 	Value any
 }
 

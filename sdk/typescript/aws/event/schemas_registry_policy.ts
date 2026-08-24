@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SchemasRegistryPolicyConfig {
-  /** The JSON resource-based policy document that grants or denies permissions to principals for actions on the EventBridge schema registry and its schemas. (AI-inferred) */
   policy: unknown | Computed<unknown>;
-  /** The name of the EventBridge Schema Registry to which this resource-based policy is attached, identifying the registry whose access permissions the policy controls. (AI-inferred) */
   registryName: string | Computed<string>;
-  /** The revision ID of the registry policy, used for optimistic concurrency control to prevent conflicting updates (you must provide the current revision when updating the policy). (AI-inferred) */
   revisionId?: string | Computed<string>;
 }
 
 export interface SchemasRegistryPolicyAttrs {
-  /** The unique identifier of the registry policy, equal to the name of the registry to which the policy is attached. (AI-inferred) */
   id: string;
-  /** The JSON resource-based policy document that grants or denies permissions to principals for actions on the EventBridge schema registry and its schemas. (AI-inferred) */
   policy: unknown;
-  /** The name of the EventBridge Schema Registry to which this resource-based policy is attached, identifying the registry whose access permissions the policy controls. (AI-inferred) */
   registryName: string;
-  /** The revision ID of the registry policy, used for optimistic concurrency control to prevent conflicting updates (you must provide the current revision when updating the policy). (AI-inferred) */
   revisionId: string;
 }
 

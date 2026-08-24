@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LocalGatewayRouteTableVpcassociation_Tags:
-    # The key of a tag attached to the Local Gateway Route Table VPC Association, serving as the name portion of a user-defined metadata label for the association. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the association between a local gateway route table and a VPC. (AI-inferred)
     value: Any = None
 
 _LocalGatewayRouteTableVpcassociation_TagsFields = {
@@ -22,7 +20,6 @@ _LocalGatewayRouteTableVpcassociation_TagsFields = {
 class LocalGatewayRouteTableVpcassociationConfig:
     # The ID of the local gateway route table.
     local_gateway_route_table_id: Any = None
-    # Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred)
     tags: Any = None
     # The ID of the VPC.
     vpc_id: Any = None
@@ -37,7 +34,6 @@ class LocalGatewayRouteTableVpcassociationAttrs:
     local_gateway_route_table_vpc_association_id: Any = None
     # The state of the association.
     state: Any = None
-    # Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred)
     tags: Any = None
     # The ID of the VPC.
     vpc_id: Any = None

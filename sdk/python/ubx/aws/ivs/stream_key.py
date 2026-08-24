@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class StreamKey_Tags:
     key: Any = None
-    # Specifies the value of a tag assigned to the AWS IVS stream key, used for identifying and categorizing the resource. (AI-inferred)
     value: Any = None
 
 _StreamKey_TagsFields = {

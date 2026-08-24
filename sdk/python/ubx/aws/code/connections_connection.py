@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ConnectionsConnection_Tags:
     key: Any = None
-    # The value portion of a user-defined tag assigned to an AWS CodeConnections Connection, used to store arbitrary metadata for identifying and organizing the resource. (AI-inferred)
     value: Any = None
 
 _ConnectionsConnection_TagsFields = {

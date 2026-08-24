@@ -11,7 +11,6 @@ type OutpostsEndpoint_FailedReason struct {
 }
 
 type OutpostsEndpoint_NetworkInterfaces struct {
-	// The unique identifier of the Elastic Network Interface (ENI) provisioned for the S3 on Outposts endpoint. (AI-inferred)
 	NetworkInterfaceId any
 }
 
@@ -25,7 +24,6 @@ type OutpostsEndpointConfig struct {
 	AccessType any
 	// The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint.
 	CustomerOwnedIpv4Pool any
-	// The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred)
 	FailedReason any
 	// The id of the customer outpost on which the bucket resides.
 	OutpostId any
@@ -46,7 +44,6 @@ type OutpostsEndpointAttrs struct {
 	CreationTime any
 	// The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint.
 	CustomerOwnedIpv4Pool any
-	// The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred)
 	FailedReason any
 	// The ID of the endpoint.
 	Id any
@@ -56,7 +53,6 @@ type OutpostsEndpointAttrs struct {
 	OutpostId any
 	// The ID of the security group to use with the endpoint.
 	SecurityGroupId any
-	// The endpoint's current lifecycle status, such as Available, Pending, or Deleting, indicating the operational state of the S3 on Outposts endpoint. (AI-inferred)
 	Status any
 	// The ID of the subnet in the selected VPC. The subnet must belong to the Outpost.
 	SubnetId any

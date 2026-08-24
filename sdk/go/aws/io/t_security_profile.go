@@ -4,73 +4,49 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TSecurityProfile_AdditionalMetricsToRetainV2_MetricDimension struct {
-	// The name of the AWS IoT Device Defender metric dimension (such as a device or topic filter) that defines the scope for the metric to retain in the security profile. (AI-inferred)
 	DimensionName any
-	// The operator (IN or NOT_IN) that determines whether the metric applies to values that are in or not in the specified dimension. (AI-inferred)
 	Operator any
 }
 
 type TSecurityProfile_AdditionalMetricsToRetainV2 struct {
 	ExportMetric any
-	// The name of the AWS IoT device metric to retain for the security profile, as part of the MetricToRetain object in AdditionalMetricsToRetainV2. (AI-inferred)
 	Metric any
-	// Specifies the named dimension (e.g., a thing group or device attribute) and operator (IN or NOT_IN) that scopes the additional metric to be retained by the AWS IoT security profile. (AI-inferred)
 	MetricDimension any
 }
 
 type TSecurityProfile_Behaviors_Criteria_MlDetectionConfig struct {
-	// Determines the sensitivity (LOW, MEDIUM, or HIGH) of the machine learning anomaly detection model used to evaluate behavior in this AWS IoT Device Defender security profile behavior. (AI-inferred)
 	ConfidenceLevel any
 }
 
 type TSecurityProfile_Behaviors_Criteria_StatisticalThreshold struct {
-	// The statistical calculation (e.g., Average, Count, Sum, Variance) that AWS IoT Device Defender applies to the monitored metric to compare against the threshold. (AI-inferred)
 	Statistic any
 }
 
 type TSecurityProfile_Behaviors_Criteria_Value struct {
-	// Specifies the list of IPv4 or IPv6 CIDR blocks (e.g., '192.168.1.0/24') that define the allowed network address range for the security profile behavior's metric value, used in AWS IoT Device Defender to monitor device network connection locations. (AI-inferred)
 	Cidrs any
-	// The numeric threshold (specified as a string) for the number of times the metric can occur within the evaluation window before the security profile behavior triggers an alert. (AI-inferred)
 	Count any
-	// Specifies the numeric threshold value that the AWS IoT behavior's criteria uses to evaluate the selected metric and trigger an alert if the metric crosses it according to the comparison operator. (AI-inferred)
 	Number any
 	Numbers any
-	// The list of allowed destination port numbers for the behavior's criteria, used when the metric is `aws:message-by-ports`. (AI-inferred)
 	Ports any
-	// Defines a list of expected string values for string-based metrics in the behavior criteria, used as the benchmark against which device behavior is compared. (AI-inferred)
 	Strings any
 }
 
 type TSecurityProfile_Behaviors_Criteria struct {
-	// Specifies the comparison operator (e.g., less-than, greater-than-equals, in-set) used by the AWS IoT Security Profile behavior to evaluate whether a device's reported metric value deviates from the configured threshold during a detection window. (AI-inferred)
 	ComparisonOperator any
-	// The number of consecutive datapoints that must violate the behavior's criteria before an alarm is triggered. (AI-inferred)
 	ConsecutiveDatapointsToAlarm any
-	// The number of consecutive datapoints that must fall within the clear threshold for the alarm to be cleared (resolving a detected violation). (AI-inferred)
 	ConsecutiveDatapointsToClear any
-	// Specifies the time period (in seconds) over which the behavior metric is measured and compared against the configured value to detect a violation. (AI-inferred)
 	DurationSeconds any
-	// Specifies the machine learning detection configuration for a Device Defender security profile behavior, including the confidence level (LOW, MEDIUM, or HIGH) at which the behavior is triggered. (AI-inferred)
 	MlDetectionConfig any
-	// Defines the statistical threshold (statistic and confidence level) that AWS IoT Device Defender evaluates the behavior's metric against to trigger an alarm in the security profile. (AI-inferred)
 	StatisticalThreshold any
-	// The metric value to compare against, such as a count, number, set of CIDRs, or set of ports, as defined by the behavior's metric type. (AI-inferred)
 	Value any
 }
 
 type TSecurityProfile_Behaviors struct {
-	// Defines the conditions (such as comparison operator, value, and duration) that trigger an alert when a device's behavior deviates from the expected threshold in an AWS IoT Security Profile. (AI-inferred)
 	Criteria any
-	// Specifies whether the device behavior metric is exported to CloudWatch. (AI-inferred)
 	ExportMetric any
-	// The name of the AWS IoT Device Defender metric (such as 'aws:message-byte-size' or 'aws:all') that this behavior monitors, where the behavior's criteria will be evaluated against metric values reported by devices. (AI-inferred)
 	Metric any
-	// For a security profile behavior, this object specifies the metric's dimension—the name of an AWS IoT dimension (such as a thing group or topic) and an optional IN/NOT_IN operator that defines whether the metric is included or excluded for that dimension. (AI-inferred)
 	MetricDimension any
-	// The unique, required name for a behavior within the AWS IoT Device Defender security profile, used to identify the behavior and its associated metrics. (AI-inferred)
 	Name any
-	// Whether to suppress alerts for this behavior, preventing violation alerts from being generated for this specific behavior in the security profile. (AI-inferred)
 	SuppressAlerts any
 }
 
@@ -82,7 +58,6 @@ type TSecurityProfile_MetricsExportConfig struct {
 }
 
 type TSecurityProfile_Tags struct {
-	// The key (name) of a tag attached to the AWS IoT Security Profile, used to identify and categorize the profile. (AI-inferred)
 	Key any
 	Value any
 }

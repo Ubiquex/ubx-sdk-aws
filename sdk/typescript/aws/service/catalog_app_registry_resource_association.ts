@@ -13,11 +13,9 @@ export interface CatalogAppRegistryResourceAssociationConfig {
 export interface CatalogAppRegistryResourceAssociationAttrs {
   /** The name or the Id of the Application. */
   application: string;
-  /** The ARN of the AWS Service Catalog AppRegistry application that this resource association links the associated resource to, which is automatically set by AWS and read-only. (AI-inferred) */
   applicationArn: string;
   /** The name or the Id of the Resource. */
   resource: string;
-  /** The Amazon Resource Name (ARN) of the resource associated with the AppRegistry application, returned by AWS Service Catalog AppRegistry after the association is created. (AI-inferred) */
   resourceArn: string;
   /** The type of the CFN Resource for now it's enum CFN_STACK. */
   resourceType: string;

@@ -130,7 +130,6 @@ class SyncResolverAttrs:
     request_mapping_template: Any = None
     # The location of a request mapping template in an S3 bucket. Use this if you want to provision with a template file in S3 rather than embedding it in your CFNshort template.
     request_mapping_template_s3_location: Any = None
-    # The Amazon Resource Name (ARN) of the AppSync resolver, which uniquely identifies it across all AWS resources. (AI-inferred)
     resolver_arn: Any = None
     # The response mapping template.
     response_mapping_template: Any = None

@@ -4,9 +4,7 @@ package work
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpacesThinClientEnvironment_DeviceCreationTags struct {
-	// The tag key to apply to each WorkSpaces Thin Client device created from this environment, used to tag provisioned devices. (AI-inferred)
 	Key any
-	// The value of a tag that is automatically applied to Thin Client devices created from this environment. (AI-inferred)
 	Value any
 }
 
@@ -15,13 +13,9 @@ type SpacesThinClientEnvironment_MaintenanceWindow struct {
 	ApplyTimeOf any
 	// The date of maintenance window.
 	DaysOfTheWeek any
-	// The hour of the day in 24-hour time (0-23) at which a custom maintenance window ends, used when the maintenance window type is set to CUSTOM. (AI-inferred)
 	EndTimeHour any
-	// The minute (0-59) of the hour at which the maintenance window ends for scheduling maintenance on the Thin Client environment. (AI-inferred)
 	EndTimeMinute any
-	// The hour (0-23) of the day, in 24-hour time, at which the maintenance window for applying updates to the WorkSpaces Thin Client environment begins. (AI-inferred)
 	StartTimeHour any
-	// The minute of the hour, in UTC, at which the maintenance window starts for this WorkSpaces Thin Client environment. (AI-inferred)
 	StartTimeMinute any
 	// The type of maintenance window.
 	Type any
@@ -53,7 +47,6 @@ type SpacesThinClientEnvironmentConfig struct {
 	DeviceCreationTags any
 	// The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment.
 	KmsKeyArn any
-	// Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred)
 	MaintenanceWindow any
 	// The name of the environment.
 	Name any
@@ -86,7 +79,6 @@ type SpacesThinClientEnvironmentAttrs struct {
 	Id any
 	// The Amazon Resource Name (ARN) of the AWS Key Management Service key used to encrypt the environment.
 	KmsKeyArn any
-	// Defines the recurring maintenance window for the environment, specifying the days of the week and the start/end times (in UTC) when AWS can perform maintenance on the thin client environment. (AI-inferred)
 	MaintenanceWindow any
 	// The name of the environment.
 	Name any

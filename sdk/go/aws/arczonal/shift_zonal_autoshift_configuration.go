@@ -4,20 +4,14 @@ package arczonal
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ShiftZonalAutoshiftConfiguration_PracticeRunConfiguration_BlockingAlarms struct {
-	// The identifier (ARN or name) of a CloudWatch alarm that, when in ALARM state, blocks or stops zonal autoshift practice runs. (AI-inferred)
 	AlarmIdentifier any
-	// Specifies whether the CloudWatch alarm in the blocking alarms list is a 'BLOCKING' type (as opposed to 'OUTCOME'), which is required for blocking alarms to prevent zonal autoshift when the alarm enters ALARM state. (AI-inferred)
 	Type any
 }
 
 type ShiftZonalAutoshiftConfiguration_PracticeRunConfiguration struct {
-	// A list of dates in YYYY-MM-DD format on which zonal autoshift practice runs are blocked and cannot occur. (AI-inferred)
 	BlockedDates any
-	// A list of cron expressions in UTC that define recurring time windows during which the service will not start a practice run for this zonal autoshift configuration. (AI-inferred)
 	BlockedWindows any
-	// Specifies the list of CloudWatch alarms that, when in ALARM state, block the practice run from starting (or continuing) for the zonal autoshift configuration. (AI-inferred)
 	BlockingAlarms any
-	// Specifies the CloudWatch alarms used to evaluate the outcome of zonal autoshift practice runs, where an alarm entering the ALARM state during a practice run marks it as failed. (AI-inferred)
 	OutcomeAlarms any
 }
 
@@ -42,20 +36,14 @@ var ShiftZonalAutoshiftConfiguration_PracticeRunConfigurationFields = ubx.FieldM
 	}
 
 type ShiftZonalAutoshiftConfigurationConfig struct {
-	// Defines the practice run configuration for zonal autoshift, specifying blocking windows/dates and the outcome alarms that must clear for a practice run to be considered successful. (AI-inferred)
 	PracticeRunConfiguration any
-	// The identifier (such as an ARN) of the resource for which the zonal autoshift configuration is set, enabling automatic traffic shifting away from an Availability Zone for that resource. (AI-inferred)
 	ResourceIdentifier any
-	// Sets the desired zonal autoshift status for the configuration, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ZonalAutoshiftStatus any
 }
 
 type ShiftZonalAutoshiftConfigurationAttrs struct {
-	// Defines the practice run configuration for zonal autoshift, specifying blocking windows/dates and the outcome alarms that must clear for a practice run to be considered successful. (AI-inferred)
 	PracticeRunConfiguration any
-	// The identifier (such as an ARN) of the resource for which the zonal autoshift configuration is set, enabling automatic traffic shifting away from an Availability Zone for that resource. (AI-inferred)
 	ResourceIdentifier any
-	// Sets the desired zonal autoshift status for the configuration, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
 	ZonalAutoshiftStatus any
 }
 

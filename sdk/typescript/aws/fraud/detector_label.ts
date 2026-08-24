@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DetectorLabel_Tags {
-  /** The key of a tag attached to an AWS Fraud Detector label, used for resource organization, filtering, and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag attached to an AWS Fraud Detector label, used to store arbitrary metadata for identifying and organizing the label resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

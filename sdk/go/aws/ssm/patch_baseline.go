@@ -4,46 +4,33 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup_PatchFilters struct {
-	// The name of the patch attribute to filter on, such as PRODUCT, CLASSIFICATION, or MSRC_SEVERITY, for the approval rule's patch filter group. (AI-inferred)
 	Key any
-	// The list of values used to match patches for the associated patch filter key (e.g., product, classification, or severity) in an AWS SSM patch baseline approval rule. (AI-inferred)
 	Values any
 }
 
 type PatchBaseline_ApprovalRules_PatchRules_PatchFilterGroup struct {
-	// Defines the patch filters (each with a key and values) that determine which patches this approval rule applies to, such as by product, severity, or classification. (AI-inferred)
 	PatchFilters any
 }
 
 type PatchBaseline_ApprovalRules_PatchRules struct {
-	// Specifies the number of days after a patch's release date that it is automatically approved for installation in the patch baseline. (AI-inferred)
 	ApproveAfterDays any
-	// The date (in YYYY-MM-DD format) after which the patch is no longer automatically approved for this rule. (AI-inferred)
 	ApproveUntilDate any
-	// Specifies the compliance severity level (e.g., CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, or UNSPECIFIED) assigned to patches that match this rule for reporting and compliance purposes. (AI-inferred)
 	ComplianceLevel any
-	// Indicates whether this approval rule also applies to patches that are not classified as security updates, allowing non-security patches to be approved based on the same schedule and filters. (AI-inferred)
 	EnableNonSecurity any
-	// The patch_filter_group object within a patch rule defines the set of patch filter criteria (e.g., product, severity, classification) that a patch must match for the rule to approve it, with all specified filters required to match (AND logic). (AI-inferred)
 	PatchFilterGroup any
 }
 
 type PatchBaseline_ApprovalRules struct {
-	// A list of patch rules that define which patches are approved for the baseline, including patch filters, approval delay, and compliance level. (AI-inferred)
 	PatchRules any
 }
 
 type PatchBaseline_Sources struct {
-	// Specifies the repository configuration string (such as a yum repository configuration for Amazon Linux) that defines the patch source location for this patch baseline. (AI-inferred)
 	Configuration any
-	// The name of the patch source, such as 'Amazon Linux 2' or 'Ubuntu', which identifies the repository configured for this patch baseline. (AI-inferred)
 	Name any
-	// Specifies the operating system product versions (e.g., 'AmazonLinux2012.03', 'RedhatEnterpriseLinux7') that this patch source repository applies to in the patch baseline. (AI-inferred)
 	Products any
 }
 
 type PatchBaseline_Tags struct {
-	// The key of a tag attached to the patch baseline, used to organize and identify the baseline for cost, environment, or operational purposes. (AI-inferred)
 	Key any
 	Value any
 }

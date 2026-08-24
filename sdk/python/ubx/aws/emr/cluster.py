@@ -8,360 +8,232 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_Applications:
-    # For each EMR application (e.g., Spark or Hive), this map supplies extra key-value configuration that is forwarded to the application at cluster creation time. (AI-inferred)
     additional_info: Any = None
-    # The args attribute supplies a list of command-line arguments that are passed to the corresponding EMR application (for example, Hadoop or Spark) at launch time to customize its behavior or configuration. (AI-inferred)
     args: Any = None
-    # The name of an application to install on the EMR cluster, such as 'Hadoop' or 'Spark'. (AI-inferred)
     name: Any = None
-    # The exact version of the application (for example, '2.4.4' for Spark or '2.8.5' for Hadoop) to install on the EMR cluster, matching the Version field of the AWS::EMR::Cluster Application property. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Cluster_AutoTerminationPolicy:
-    # Specifies the number of seconds the cluster can remain idle before it automatically terminates, as part of the auto-termination policy. (AI-inferred)
     idle_timeout: Any = None
 
 @dataclasses.dataclass
 class Cluster_BootstrapActions_ScriptBootstrapAction:
-    # A list of string arguments to pass to the bootstrap script (Path) when it runs on each cluster instance during startup. (AI-inferred)
     args: Any = None
-    # The S3 location (URI) of the bootstrap action script that runs on cluster instances during startup. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
 class Cluster_BootstrapActions:
-    # The name of the bootstrap action, a user-defined label used to identify the action in the EMR cluster configuration. (AI-inferred)
     name: Any = None
-    # Specifies the S3 location of the bootstrap script and optional arguments to pass to it when the bootstrap action runs on each cluster node before application startup. (AI-inferred)
     script_bootstrap_action: Any = None
 
 @dataclasses.dataclass
 class Cluster_Configurations:
-    # The classification property specifies the name of the configuration classification (such as core-site, hdfs-site, or yarn-site) that is being customized within the EMR cluster's list of configurations. (AI-inferred)
     classification: Any = None
-    # Map of key-value pairs used by the EMR service to override or set specific application settings for the given configuration classification (e.g., properties for Hadoop, Spark, HBase, or other services), which are applied to the corresponding config files on the cluster nodes. (AI-inferred)
     configuration_properties: Any = None
-    # Specifies a list of nested configuration objects within a single configuration, allowing hierarchical customization of EMR applications by grouping related settings. (AI-inferred)
     configurations: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecification:
-    # The number of I/O operations per second (IOPS) that the EBS volume should support, used to configure the performance of the attached storage. (AI-inferred)
     iops: Any = None
-    # The size in GiB of each EBS volume attached to the core instance fleet instances in the EMR cluster, defining the storage capacity for each block device. (AI-inferred)
     size_in_gb: Any = None
-    # The provisioned throughput in MiB/s for the EBS volume, applicable when the volume type is gp3 to control I/O performance. (AI-inferred)
     throughput: Any = None
-    # Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, or standard) for the EBS volumes attached to the core instance fleet's instance type configuration. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs:
-    # Defines the EBS volume attributes (volume type, size, and IOPS) for a block device in the EBS configuration of an instance type in the core instance fleet. (AI-inferred)
     volume_specification: Any = None
-    # The number of EBS volumes to attach to each instance for this EBS block device configuration in the core instance fleet. (AI-inferred)
     volumes_per_instance: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_InstanceTypeConfigs_EbsConfiguration:
-    # Specifies the list of EBS block device configurations (such as volume type, size, and number of volumes) to attach to each core instance in the core instance fleet. (AI-inferred)
     ebs_block_device_configs: Any = None
-    # When set to true, this flag indicates that the Amazon EBS volumes for the specified instance type in the core instance fleet are EBS-optimized, providing dedicated throughput for EBS I/O to enhance storage performance. (AI-inferred)
     ebs_optimized: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_InstanceTypeConfigs:
-    # Specifies the maximum spot price you are willing to pay per instance hour for this instance type in the core instance fleet; if not set, the default on-demand or spot price is used. (AI-inferred)
     bid_price: Any = None
-    # Sets the bid price for Spot Instances as a percentage of the On-Demand price, enabling cost control for core nodes within the instance fleet configuration. (AI-inferred)
     bid_price_as_percentage_of_on_demand_price: Any = None
-    # List of EMR Configuration objects (with Classification and Properties) that apply EMR settings, such as Hadoop, Spark, or Hive configurations, specifically to the EC2 instances of this instance type in the core instance fleet, overriding cluster-level settings. (AI-inferred)
     configurations: Any = None
-    # The custom AMI ID to use for launching EC2 instances of this instance type in the core instance fleet, overriding the default EMR AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # Specifies the Elastic Block Store (EBS) configuration, including block device configurations and EBS-optimized settings, for each EC2 instance of a given instance type in the core instance fleet of the EMR cluster. (AI-inferred)
     ebs_configuration: Any = None
-    # The EC2 instance type (e.g., m5.xlarge) to use for the core instance fleet when using instance fleets in the EMR cluster. (AI-inferred)
     instance_type: Any = None
-    # Specifies the allocation priority for this instance type within the core instance fleet, where a lower value gives it higher precedence when Amazon EMR provisions instances. (AI-inferred)
     priority: Any = None
-    # Defines the number of capacity units that this instance type contributes to the core instance fleet's target capacity, enabling mixed instance type scaling. (AI-inferred)
     weighted_capacity: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions:
-    # Specifies whether core instance fleet instances can use unused capacity from open EC2 Capacity Reservations, with 'open' allowing it and 'none' preventing it. (AI-inferred)
     capacity_reservation_preference: Any = None
-    # The ARN of the Capacity Reservation resource group in which to launch the core instance fleet's on-demand instances. (AI-inferred)
     capacity_reservation_resource_group_arn: Any = None
-    # Determines whether the EMR cluster's core instance fleet on-demand instances will launch into unused EC2 Capacity Reservations first, with the value use-capacity-reservations-first enabling that behavior. (AI-inferred)
     usage_strategy: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_LaunchSpecifications_OnDemandSpecification:
-    # Specifies the allocation strategy for Amazon EC2 On-Demand instances in the core instance fleet, controlling how capacity is provisioned across Availability Zones, with values such as 'lowest-price' and 'prioritized'. (AI-inferred)
     allocation_strategy: Any = None
-    # Configures how On-Demand instances in this core instance fleet use EC2 Capacity Reservations, including whether to launch into any available reservation or only a specifically targeted one. (AI-inferred)
     capacity_reservation_options: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_LaunchSpecifications_SpotSpecification:
-    # Defines the Spot Instance allocation strategy for the core instance fleet, controlling how Amazon EMR selects and provisions Spot Instances across specified instance types (e.g., lowest-price, diversified, capacity-optimized, price-capacity-optimized). (AI-inferred)
     allocation_strategy: Any = None
-    # The block duration in minutes for Spot instances in the core instance fleet, which reserves them for that period without interruption (commonly 0 or 60–360 in 30-minute steps). (AI-inferred)
     block_duration_minutes: Any = None
-    # Specifies the action to take when Spot Instances cannot be provisioned within the timeout period, either switching to On-Demand capacity (SWITCH_TO_ON_DEMAND) or terminating the cluster (TERMINATE_CLUSTER). (AI-inferred)
     timeout_action: Any = None
-    # Specifies the timeout duration in minutes that EMR waits for Spot instances in the core instance fleet to be provisioned before applying the configured TimeoutAction, with a valid range of 5 to 1440 minutes. (AI-inferred)
     timeout_duration_minutes: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_LaunchSpecifications:
-    # Defines the allocation strategy for On-Demand Instances launched by the core instance fleet, such as lowest-price or prioritized, via the AllocationStrategy property. (AI-inferred)
     on_demand_specification: Any = None
-    # Specifies the Spot Instance provisioning timeout and allocation strategy for the core instance fleet's Spot Instances. (AI-inferred)
     spot_specification: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_ResizeSpecifications_OnDemandResizeSpecification:
-    # Determines the allocation strategy (lowest-price or prioritized) for launching on-demand instances in the core instance fleet when EMR managed scaling triggers a resize, as defined in the on-demand resize specification. (AI-inferred)
     allocation_strategy: Any = None
-    # Specifies the capacity reservation options for the on-demand resize specification of the core instance fleet, including the preference (open or targeted) and the ARN of a capacity reservation resource group to use for targeted reservations. (AI-inferred)
     capacity_reservation_options: Any = None
-    # Sets the maximum time in minutes (1–600) for an on-demand resize of the core instance fleet to complete, after which EMR treats the resize as failed. (AI-inferred)
     timeout_duration_minutes: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_ResizeSpecifications_SpotResizeSpecification:
-    # Specifies the allocation strategy for launching spot instances during a resize of the core instance fleet, either 'capacity-optimized' or 'lowest-price'. (AI-inferred)
     allocation_strategy: Any = None
-    # For the core instance fleet, this sets the maximum time in minutes that Amazon EMR will wait for the required spot capacity to be fulfilled during a resize, after which the resize attempt is considered unsuccessful. (AI-inferred)
     timeout_duration_minutes: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet_ResizeSpecifications:
-    # Specifies the on-demand resize specification for the core instance fleet, containing the timeout duration (in minutes) after which a resize request is cancelled if not completed. (AI-inferred)
     on_demand_resize_specification: Any = None
-    # Specifies the timeout duration and allocation strategy for resizing the core instance fleet's spot capacity, controlling how Amazon EMR scales spot instances when the fleet is resized. (AI-inferred)
     spot_resize_specification: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceFleet:
-    # Defines the EC2 instance type configurations (such as instance type, bid price, weighted capacity, and EBS settings) used for the core instance fleet in the EMR cluster. (AI-inferred)
     instance_type_configs: Any = None
-    # Specifies the Spot Instance procurement settings for the core instance fleet, including the allocation strategy, provisioning timeout duration, and timeout action. (AI-inferred)
     launch_specifications: Any = None
-    # A friendly name for the core instance fleet in the EMR cluster, used to identify this fleet within the cluster configuration and in metrics. (AI-inferred)
     name: Any = None
-    # Specifies the resize specifications for the core instance fleet, controlling the spot resize behavior including the timeout duration and allocation strategy used when resizing spot instances. (AI-inferred)
     resize_specifications: Any = None
-    # Specifies the target number of on-demand EC2 instances to launch in the core instance fleet of the EMR cluster. (AI-inferred)
     target_on_demand_capacity: Any = None
-    # Specifies the target number of Spot Instances to provision in the core instance fleet for the Amazon EMR cluster, where core nodes run Hadoop DataNode and manage HDFS storage. (AI-inferred)
     target_spot_capacity: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Constraints:
-    # Sets the maximum number of EC2 instances that the core instance group can scale out to under this auto scaling policy, acting as the upper capacity limit for the group. (AI-inferred)
     max_capacity: Any = None
-    # The minimum number of EC2 instances that the core instance group can scale down to when the auto scaling policy is active. (AI-inferred)
     min_capacity: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules_Action_SimpleScalingPolicyConfiguration:
-    # Specifies the type of adjustment to make to the core instance group's capacity when this scaling rule triggers, such as adding or removing a fixed number of instances (CHANGE_IN_CAPACITY), adjusting by a percentage (PERCENT_CHANGE_IN_CAPACITY), or setting an exact instance count (EXACT_CAPACITY). (AI-inferred)
     adjustment_type: Any = None
-    # The cool-down period, in seconds, that must elapse after a scaling activity completes before another scaling activity can be triggered by this simple scaling policy. (AI-inferred)
     cool_down: Any = None
-    # The scaling_adjustment specifies the amount by which to scale the core instance group's instance count (positive to scale out, negative to scale in) when the simple scaling policy action triggers. (AI-inferred)
     scaling_adjustment: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules_Action:
-    # Specifies the market type (ON_DEMAND or SPOT) for instances provisioned by the scaling action in the core instance group's auto scaling policy. (AI-inferred)
     market: Any = None
-    # Defines the simple scaling action for the rule, including the scaling adjustment amount, adjustment type (e.g., CHANGE_IN_CAPACITY, EXACT_CAPACITY, PERCENT_CHANGE_IN_CAPACITY), and optional cooldown period in seconds. (AI-inferred)
     simple_scaling_policy_configuration: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition_Dimensions:
-    # Specifies the name of a CloudWatch metric dimension (for example, 'JobFlowId' or 'InstanceGroupId') that this auto scaling alarm definition uses to scope the metric for the EMR core instance group. (AI-inferred)
     key: Any = None
-    # Specifies the value of a CloudWatch alarm dimension pair, such as a job flow ID, that identifies the metric being monitored for the auto scaling rule. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules_Trigger_CloudWatchAlarmDefinition:
-    # Specifies the arithmetic operation to use when comparing the specified statistic and threshold (e.g., GreaterThanOrEqualToThreshold, LessThanThreshold, GreaterThanThreshold, LessThanOrEqualToThreshold). (AI-inferred)
     comparison_operator: Any = None
-    # Specifies the dimensions (name-value pairs) for the CloudWatch alarm metric used by the auto scaling policy's trigger to filter the metric data for the core instance group. (AI-inferred)
     dimensions: Any = None
-    # The number of consecutive CloudWatch evaluation periods over which the metric must breach the threshold before the alarm and associated auto scaling rule trigger. (AI-inferred)
     evaluation_periods: Any = None
-    # The name of the CloudWatch metric (e.g., YARNMemoryAvailablePercentage or PreemptedVCores) that the alarm monitors to trigger the EMR auto scaling policy's scaling rule. (AI-inferred)
     metric_name: Any = None
-    # Specifies the CloudWatch namespace of the metric used in the alarm definition for the EMR core instance group auto scaling policy trigger, such as AWS/ElasticMapReduce for EMR metrics. (AI-inferred)
     namespace: Any = None
-    # The length of time, in seconds, used to evaluate the CloudWatch metric for the alarm that triggers the auto-scaling rule. (AI-inferred)
     period: Any = None
-    # The statistic to apply to the metric used in the CloudWatch alarm, such as AVERAGE, SUM, MINIMUM, MAXIMUM, SAMPLE_COUNT, or PERCENTILE. (AI-inferred)
     statistic: Any = None
-    # The numeric value that the specified CloudWatch metric must reach or exceed to trigger the alarm, used by EMR's automatic scaling policy for the core instance group. (AI-inferred)
     threshold: Any = None
-    # The unit of measure for the CloudWatch metric used in the alarm definition, such as 'Percent' or 'Seconds'. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules_Trigger:
-    # Defines the CloudWatch alarm that triggers the scaling rule, specifying the metric, namespace, period, statistic, threshold, comparison operator, and evaluation periods used to monitor the core instance group. (AI-inferred)
     cloud_watch_alarm_definition: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy_Rules:
-    # Specifies the scaling action to take when the rule condition is met, including the required SimpleScalingPolicyConfiguration (adjustment type, scaling adjustment, and cooldown) and an optional Market to move instances to. (AI-inferred)
     action: Any = None
-    # A user-defined description that provides additional context for the auto scaling rule's purpose or behavior within the EMR core instance group. (AI-inferred)
     description: Any = None
-    # A friendly name that uniquely identifies this scaling rule within the auto scaling policy for the EMR core instance group. (AI-inferred)
     name: Any = None
-    # Defines the CloudWatch alarm conditions (such as metric, comparison operator, threshold, and period) that trigger the scaling action for this auto scaling rule of the core instance group. (AI-inferred)
     trigger: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup_AutoScalingPolicy:
-    # Specifies the minimum and maximum number of instances that the core instance group can scale to under the auto scaling policy. (AI-inferred)
     constraints: Any = None
-    # Specifies the list of scaling rules (each with a CloudWatch alarm trigger and a scaling action) that determine when the core instance group automatically adds or removes instances. (AI-inferred)
     rules: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_CoreInstanceGroup:
-    # Defines the automatic scaling policy for the core instance group, specifying scaling constraints (minimum and maximum instance counts) and scaling rules that adjust the number of core instances based on CloudWatch metrics. (AI-inferred)
     auto_scaling_policy: Any = None
-    # The bid price for Spot Instances within the core instance group, which determines the maximum price you are willing to pay per instance-hour for the core nodes. (AI-inferred)
     bid_price: Any = None
-    # This field provides a list of application configurations (classifications and properties) to apply to the core instance group, overriding the cluster-level configurations for those nodes. (AI-inferred)
     configurations: Any = None
-    # This field specifies the ID of a custom Amazon Machine Image (AMI) used for the EC2 instances in the core instance group, overriding the default EMR AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # Specifies the Amazon EBS configuration, including block device mappings and EBS optimization settings, for the core instance group of the EMR cluster. (AI-inferred)
     ebs_configuration: Any = None
-    # The number of EC2 instances in the core instance group of the EMR cluster, which run data node and node manager daemons for HDFS and YARN. (AI-inferred)
     instance_count: Any = None
-    # EC2 instance type (e.g., m5.xlarge) launched for each core node in the EMR cluster, responsible for running HDFS DataNode and task execution on data stored in the cluster. (AI-inferred)
     instance_type: Any = None
-    # Specifies whether the core instance group uses On-Demand or Spot instances, with ON_DEMAND as the default, allowing Spot to reduce costs by tolerating instance interruptions. (AI-inferred)
     market: Any = None
-    # A user-defined name for the core instance group in the EMR cluster, used to identify it among other instance groups. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances_Placement:
-    # Specifies the Amazon EC2 Availability Zone (AZ) where the EMR cluster's EC2 instances will be launched. (AI-inferred)
     availability_zone: Any = None
 
 @dataclasses.dataclass
 class Cluster_Instances:
-    # A list of additional Amazon EC2 security group IDs to attach to the master node(s) of the EMR cluster, in addition to the security groups managed by Amazon EMR. (AI-inferred)
     additional_master_security_groups: Any = None
-    # A list of additional Amazon EC2 security groups to attach to slave (core and task) nodes in the EMR cluster, in addition to the automatically created security group. (AI-inferred)
     additional_slave_security_groups: Any = None
-    # Specifies the configuration for the core instance fleet, which consists of core nodes that run the Hadoop DataNode and YARN NodeManager services and process data for the cluster. (AI-inferred)
     core_instance_fleet: Any = None
-    # Configuration block for the core (worker) instance group, defining instance type, count, and EBS volume settings for the core nodes of the EMR cluster. (AI-inferred)
     core_instance_group: Any = None
-    # The name of the EC2 key pair used to enable SSH access to the cluster's EC2 instances. (AI-inferred)
     ec2_key_name: Any = None
-    # The ID of the EC2 subnet in which the EMR cluster's EC2 instances are launched, controlling which VPC subnet the cluster nodes reside in. (AI-inferred)
     ec2_subnet_id: Any = None
-    # Specifies the EC2 subnet IDs where the cluster's instances are launched, enabling distribution across multiple Availability Zones. (AI-inferred)
     ec2_subnet_ids: Any = None
-    # The ID of the Amazon EC2 security group that EMR automatically applies to the master node(s) of the cluster; if you don't specify one, EMR creates and uses a default security group. (AI-inferred)
     emr_managed_master_security_group: Any = None
-    # The EC2 security group ID that Amazon EMR uses for the core and task (slave) nodes in the cluster, controlling their network traffic. (AI-inferred)
     emr_managed_slave_security_group: Any = None
-    # Specifies the version of Apache Hadoop to install on the EMR cluster, overriding the default version for the chosen release label. (AI-inferred)
     hadoop_version: Any = None
-    # Controls whether the EMR cluster automatically terminates after completing all steps (False) or keeps running until explicitly terminated (True). (AI-inferred)
     keep_job_flow_alive_when_no_steps: Any = None
-    # Specifies the master instance fleet, which defines the target capacity and instance type configurations (including Spot and On-Demand options) for the primary node of the EMR cluster. (AI-inferred)
     master_instance_fleet: Any = None
-    # Defines the EC2 instance configuration for the master node group of the EMR cluster, including instance type, purchase option, and number of instances. (AI-inferred)
     master_instance_group: Any = None
-    # Specifies the Availability Zone(s) in which the cluster's EC2 instances are launched. (AI-inferred)
     placement: Any = None
-    # Specifies the ID or name of the Amazon EC2 security group that Amazon EMR uses for service access, enabling the cluster to communicate with other AWS services. (AI-inferred)
     service_access_security_group: Any = None
-    # Configures the task instance fleets for the EMR cluster, specifying the mixed instance types, target on-demand and spot capacities, and launch specifications for task nodes. (AI-inferred)
     task_instance_fleets: Any = None
-    # Specifies the configuration for the task instance groups of the EMR cluster, which are optional groups of instances used solely to execute tasks and can be scaled independently without affecting the master and core nodes. (AI-inferred)
     task_instance_groups: Any = None
-    # Indicates whether termination protection is enabled for the cluster, preventing accidental termination via the API, CLI, or console. (AI-inferred)
     termination_protected: Any = None
-    # Specifies whether Amazon EMR automatically replaces unhealthy nodes in the cluster to maintain cluster availability. (AI-inferred)
     unhealthy_node_replacement: Any = None
 
 @dataclasses.dataclass
 class Cluster_KerberosAttributes:
-    # The password for the Active Directory domain join user (ADDomainJoinUser) that the cluster uses to join the Active Directory domain. (AI-inferred)
     addomain_join_password: Any = None
-    # The user name used to join the cluster to the Active Directory domain for Kerberos authentication. (AI-inferred)
     addomain_join_user: Any = None
-    # Specifies the password for the cross-realm trust principal, which is used to establish trust between the EMR cluster's Kerberos realm and an external Kerberos realm. (AI-inferred)
     cross_realm_trust_principal_password: Any = None
-    # The password for the Kerberos Key Distribution Center (KDC) administrator principal, used to authenticate to the KDC for managing Kerberos principals. (AI-inferred)
     kdc_admin_password: Any = None
-    # The Kerberos realm name (e.g., EC2.INTERNAL) used for the cluster's Kerberos authentication. (AI-inferred)
     realm: Any = None
 
 @dataclasses.dataclass
 class Cluster_ManagedScalingPolicy_ComputeLimits:
-    # The maximum number of capacity units (as defined by the unit type, e.g., instance groups or instance fleets) that the managed scaling policy can scale out to for the EMR cluster. (AI-inferred)
     maximum_capacity_units: Any = None
-    # Specifies the maximum capacity units (either instances or vCPUs, as defined by the unit type) for the core instance group, capping how far managed scaling can scale out the core nodes. (AI-inferred)
     maximum_core_capacity_units: Any = None
-    # Sets the maximum number of capacity units that can be allocated to On-Demand instances in the cluster's managed scaling policy, capping the scale-out for on-demand compute. (AI-inferred)
     maximum_on_demand_capacity_units: Any = None
-    # Specifies the minimum capacity, in the unit type defined by the compute limit's unit_type (e.g., instance units or vCPU), that the cluster's managed scaling policy will maintain when the cluster is running. (AI-inferred)
     minimum_capacity_units: Any = None
-    # Specifies the unit of measurement for the compute limit, either 'InstanceFleetUnits' (units of instance fleet capacity) or 'Instances' (number of EC2 instances), which determines how the maximum and minimum capacity values are interpreted in the EMR managed scaling policy. (AI-inferred)
     unit_type: Any = None
 
 @dataclasses.dataclass
 class Cluster_ManagedScalingPolicy:
-    # Specifies the minimum and maximum capacity limits (in units such as instances or vCPUs) for each supported unit type, which are used by the cluster's managed scaling policy to determine scaling boundaries. (AI-inferred)
     compute_limits: Any = None
-    # Specifies the managed scaling strategy for the cluster, with valid values 'DEFAULT' (scale based on YARN memory) and 'ADVANCED' (use custom scaling policies). (AI-inferred)
     scaling_strategy: Any = None
-    # Sets the utilization performance index for the managed scaling policy, a value between 0 and 1 that overrides the default target utilization and influences how aggressively the cluster scales in response to workloads. (AI-inferred)
     utilization_performance_index: Any = None
 
 @dataclasses.dataclass
 class Cluster_PlacementGroupConfigs:
-    # The EMR instance role (MASTER, CORE, or TASK) to which this placement group configuration applies. (AI-inferred)
     instance_role: Any = None
-    # Specifies the placement strategy (SPREAD, CLUSTER, or PARTITION) used for the EC2 instances of the given instance role, controlling how instances are distributed across hardware within the placement group. (AI-inferred)
     placement_strategy: Any = None
 
 @dataclasses.dataclass
 class Cluster_Steps_HadoopJarStep:
-    # Arguments to pass to the main class of the Hadoop JAR step. (AI-inferred)
     args: Any = None
-    # The location (typically an Amazon S3 URI) of the JAR file containing the main class that the Hadoop step will execute. (AI-inferred)
     jar: Any = None
-    # Specifies the fully qualified name of the main class in the JAR for the Hadoop step; when this is not provided, the JAR file's manifest must contain a Main-Class entry. (AI-inferred)
     main_class: Any = None
-    # Specifies the key-value pairs passed as properties to the Hadoop JAR step, which are available to the main class at runtime. (AI-inferred)
     step_properties: Any = None
 
 @dataclasses.dataclass
 class Cluster_Steps:
-    # Specifies the action to take when a step in the EMR cluster fails, with valid values being CONTINUE to proceed with subsequent steps, TERMINATE_CLUSTER to shut down the cluster immediately, or CANCEL_AND_WAIT to cancel remaining steps and wait. (AI-inferred)
     action_on_failure: Any = None
-    # Specifies the configuration for a Hadoop JAR step, which defines a MapReduce or standalone JAR job to run on the EMR cluster, including the JAR location, main class, arguments, and optional properties. (AI-inferred)
     hadoop_jar_step: Any = None
-    # The name of the EMR cluster step, used to identify the step within the cluster. (AI-inferred)
     name: Any = None
 
 _Cluster_ApplicationsFields = {
@@ -732,120 +604,64 @@ _Cluster_StepsFields = {
 
 @dataclasses.dataclass
 class ClusterConfig:
-    # A JSON string used to enable additional Amazon EMR cluster features, such as setting "instanceAwsClientVpn" to true. (AI-inferred)
     additional_info: Any = None
-    # Specifies the applications (such as Hadoop, Spark, Hive) to install on the EMR cluster, where each object provides the application name and optionally its version. (AI-inferred)
     applications: Any = None
-    # The IAM role ARN that Amazon EMR assumes to manage automatic scaling of the cluster. (AI-inferred)
     auto_scaling_role: Any = None
-    # Specifies the auto-termination policy for the EMR cluster, determining the idle timeout in seconds after which the cluster is automatically terminated. (AI-inferred)
     auto_termination_policy: Any = None
-    # A list of bootstrap actions that run on cluster nodes before Hadoop starts, allowing you to configure the instances (e.g., install applications or adjust settings) via scripts. (AI-inferred)
     bootstrap_actions: Any = None
-    # Specifies the list of application configurations (e.g., for Hadoop, Spark, Hive) applied to the EMR cluster, allowing overrides of default settings via classification properties and nested configuration blocks. (AI-inferred)
     configurations: Any = None
-    # Specifies a custom Amazon Machine Image (AMI) to use for the EC2 instances in the EMR cluster, overriding the default EMR-provided AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # This field sets the provisioned IOPS for the EBS root volume of each EC2 instance in the EMR cluster, allowing higher performance for root volumes supporting provisioned IOPS. (AI-inferred)
     ebs_root_volume_iops: Any = None
-    # Specifies the size in GiB of the Amazon EBS root device volume for each EC2 instance in the EMR cluster; if omitted, EMR uses a default root volume size of 10 GiB. (AI-inferred)
     ebs_root_volume_size: Any = None
-    # Sets the throughput in MiB/s for the EBS root volume attached to each EC2 instance in the EMR cluster. (AI-inferred)
     ebs_root_volume_throughput: Any = None
-    # Specifies the EC2 instance configuration for the cluster, including master, core, and task instance groups, the EC2 key name, and placement settings. (AI-inferred)
     instances: Any = None
-    # The IAM role (instance profile) that Amazon EMR assumes on behalf of the cluster's EC2 instances to access other AWS services, such as S3 and DynamoDB. (AI-inferred)
     job_flow_role: Any = None
-    # Configures Kerberos authentication for the EMR cluster by specifying the Kerberos realm, KDC admin password, and optional Active Directory domain join settings. (AI-inferred)
     kerberos_attributes: Any = None
-    # The AWS KMS key ID or ARN used to encrypt log files generated by the EMR cluster. (AI-inferred)
     log_encryption_kms_key_id: Any = None
-    # The Amazon S3 location (e.g., s3://bucket/prefix) where the EMR cluster's log files are stored. (AI-inferred)
     log_uri: Any = None
-    # Defines a managed scaling policy for the EMR cluster, which automatically scales core and task nodes based on workload using compute limits. (AI-inferred)
     managed_scaling_policy: Any = None
-    # The name of the EMR cluster, required to identify the cluster in the AWS Management Console and API. (AI-inferred)
     name: Any = None
-    # Specifies the Amazon Linux release version to use for the EMR cluster (e.g., 'Amazon Linux 2' or 'Amazon Linux 2023'). (AI-inferred)
     osrelease_label: Any = None
-    # Specifies EC2 placement group configurations for the cluster's instance roles (master, core, task), including the placement strategy such as SPREAD or PARTITION to control how instances are distributed across hardware. (AI-inferred)
     placement_group_configs: Any = None
-    # The Amazon EMR release label (e.g., emr-6.9.0) that specifies the versions of Hadoop, Spark, Hive, and other bundled applications installed on the cluster. (AI-inferred)
     release_label: Any = None
-    # Determines how EC2 instances are terminated during automatic scale-in or instance group resizing, either at the instance-hour boundary (TERMINATE_AT_INSTANCE_HOUR) or when tasks finish (TERMINATE_AT_TASK_COMPLETION). (AI-inferred)
     scale_down_behavior: Any = None
-    # The name of the Amazon EMR security configuration to attach to the cluster, which defines Kerberos authentication and data encryption settings. (AI-inferred)
     security_configuration: Any = None
-    # The IAM role that Amazon EMR assumes to call other AWS services on your behalf when processing the cluster. (AI-inferred)
     service_role: Any = None
-    # Specifies the maximum number of parallel execution steps that the EMR cluster can run concurrently. (AI-inferred)
     step_concurrency_level: Any = None
-    # Specifies a sequence of Hadoop job steps to execute on the EMR cluster, where each step includes a name, an action on failure, and a HadoopJarStep configuration defining the JAR and arguments. (AI-inferred)
     steps: Any = None
-    # Tags are key-value pairs that you attach to the EMR cluster to help with cost allocation, organization, and access control using IAM policies. (AI-inferred)
     tags: Any = None
-    # Indicates whether the EMR cluster is visible to all IAM users in the AWS account, with false restricting visibility to only the IAM user who created the cluster. (AI-inferred)
     visible_to_all_users: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
-    # A JSON string used to enable additional Amazon EMR cluster features, such as setting "instanceAwsClientVpn" to true. (AI-inferred)
     additional_info: Any = None
-    # Specifies the applications (such as Hadoop, Spark, Hive) to install on the EMR cluster, where each object provides the application name and optionally its version. (AI-inferred)
     applications: Any = None
-    # The IAM role ARN that Amazon EMR assumes to manage automatic scaling of the cluster. (AI-inferred)
     auto_scaling_role: Any = None
-    # Specifies the auto-termination policy for the EMR cluster, determining the idle timeout in seconds after which the cluster is automatically terminated. (AI-inferred)
     auto_termination_policy: Any = None
-    # A list of bootstrap actions that run on cluster nodes before Hadoop starts, allowing you to configure the instances (e.g., install applications or adjust settings) via scripts. (AI-inferred)
     bootstrap_actions: Any = None
-    # Specifies the list of application configurations (e.g., for Hadoop, Spark, Hive) applied to the EMR cluster, allowing overrides of default settings via classification properties and nested configuration blocks. (AI-inferred)
     configurations: Any = None
-    # Specifies a custom Amazon Machine Image (AMI) to use for the EC2 instances in the EMR cluster, overriding the default EMR-provided AMI. (AI-inferred)
     custom_ami_id: Any = None
-    # This field sets the provisioned IOPS for the EBS root volume of each EC2 instance in the EMR cluster, allowing higher performance for root volumes supporting provisioned IOPS. (AI-inferred)
     ebs_root_volume_iops: Any = None
-    # Specifies the size in GiB of the Amazon EBS root device volume for each EC2 instance in the EMR cluster; if omitted, EMR uses a default root volume size of 10 GiB. (AI-inferred)
     ebs_root_volume_size: Any = None
-    # Sets the throughput in MiB/s for the EBS root volume attached to each EC2 instance in the EMR cluster. (AI-inferred)
     ebs_root_volume_throughput: Any = None
-    # The unique identifier of the EMR cluster, assigned by AWS (e.g., j-2AXXXXXX). (AI-inferred)
     id: Any = None
-    # Specifies the EC2 instance configuration for the cluster, including master, core, and task instance groups, the EC2 key name, and placement settings. (AI-inferred)
     instances: Any = None
-    # The IAM role (instance profile) that Amazon EMR assumes on behalf of the cluster's EC2 instances to access other AWS services, such as S3 and DynamoDB. (AI-inferred)
     job_flow_role: Any = None
-    # Configures Kerberos authentication for the EMR cluster by specifying the Kerberos realm, KDC admin password, and optional Active Directory domain join settings. (AI-inferred)
     kerberos_attributes: Any = None
-    # The AWS KMS key ID or ARN used to encrypt log files generated by the EMR cluster. (AI-inferred)
     log_encryption_kms_key_id: Any = None
-    # The Amazon S3 location (e.g., s3://bucket/prefix) where the EMR cluster's log files are stored. (AI-inferred)
     log_uri: Any = None
-    # Defines a managed scaling policy for the EMR cluster, which automatically scales core and task nodes based on workload using compute limits. (AI-inferred)
     managed_scaling_policy: Any = None
-    # The publicly resolvable DNS hostname of the cluster's master node, used for SSH or web access to the master instance. (AI-inferred)
     master_public_dns: Any = None
-    # The name of the EMR cluster, required to identify the cluster in the AWS Management Console and API. (AI-inferred)
     name: Any = None
-    # Specifies the Amazon Linux release version to use for the EMR cluster (e.g., 'Amazon Linux 2' or 'Amazon Linux 2023'). (AI-inferred)
     osrelease_label: Any = None
-    # Specifies EC2 placement group configurations for the cluster's instance roles (master, core, task), including the placement strategy such as SPREAD or PARTITION to control how instances are distributed across hardware. (AI-inferred)
     placement_group_configs: Any = None
-    # The Amazon EMR release label (e.g., emr-6.9.0) that specifies the versions of Hadoop, Spark, Hive, and other bundled applications installed on the cluster. (AI-inferred)
     release_label: Any = None
-    # Determines how EC2 instances are terminated during automatic scale-in or instance group resizing, either at the instance-hour boundary (TERMINATE_AT_INSTANCE_HOUR) or when tasks finish (TERMINATE_AT_TASK_COMPLETION). (AI-inferred)
     scale_down_behavior: Any = None
-    # The name of the Amazon EMR security configuration to attach to the cluster, which defines Kerberos authentication and data encryption settings. (AI-inferred)
     security_configuration: Any = None
-    # The IAM role that Amazon EMR assumes to call other AWS services on your behalf when processing the cluster. (AI-inferred)
     service_role: Any = None
-    # Specifies the maximum number of parallel execution steps that the EMR cluster can run concurrently. (AI-inferred)
     step_concurrency_level: Any = None
-    # Specifies a sequence of Hadoop job steps to execute on the EMR cluster, where each step includes a name, an action on failure, and a HadoopJarStep configuration defining the JAR and arguments. (AI-inferred)
     steps: Any = None
-    # Tags are key-value pairs that you attach to the EMR cluster to help with cost allocation, organization, and access control using IAM policies. (AI-inferred)
     tags: Any = None
-    # Indicates whether the EMR cluster is visible to all IAM users in the AWS account, with false restricting visibility to only the IAM user who created the cluster. (AI-inferred)
     visible_to_all_users: Any = None
 
 Cluster = ubx.ResourceBinding(

@@ -14,7 +14,6 @@ type MakerDevice_Device struct {
 
 type MakerDevice_Tags struct {
 	Key any
-	// The value component of a tag attached to the SageMaker device, used for arbitrary metadata such as environment or cost center. (AI-inferred)
 	Value any
 }
 

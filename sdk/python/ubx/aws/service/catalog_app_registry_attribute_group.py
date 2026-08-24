@@ -8,28 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogAppRegistryAttributeGroupConfig:
-    # The attributes field is a required JSON object of key-value pairs that defines the actual attribute data stored by this AppRegistry attribute group, which can be used to associate metadata like environment, project, or owner with AWS applications and resources. (AI-inferred)
     attributes: Any = None
     # The description of the attribute group.
     description: Any = None
     # The name of the attribute group.
     name: Any = None
-    # A map of key-value pairs to attach to the attribute group for identifying, organizing, and managing the resource in AWS Service Catalog AppRegistry. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class CatalogAppRegistryAttributeGroupAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the attribute group, assigned by AWS upon creation. (AI-inferred)
     arn: Any = None
-    # The attributes field is a required JSON object of key-value pairs that defines the actual attribute data stored by this AppRegistry attribute group, which can be used to associate metadata like environment, project, or owner with AWS applications and resources. (AI-inferred)
     attributes: Any = None
     # The description of the attribute group.
     description: Any = None
-    # The unique identifier assigned to the AppRegistry attribute group when it is created, used as the primary reference to this resource. (AI-inferred)
     id: Any = None
     # The name of the attribute group.
     name: Any = None
-    # A map of key-value pairs to attach to the attribute group for identifying, organizing, and managing the resource in AWS Service Catalog AppRegistry. (AI-inferred)
     tags: Any = None
 
 CatalogAppRegistryAttributeGroup = ubx.ResourceBinding(

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Certificate_Tags:
     key: Any = None
-    # The value portion of a key-value tag attached to the AWS Transfer Family certificate, used for identifying and categorizing the resource. (AI-inferred)
     value: Any = None
 
 _Certificate_TagsFields = {

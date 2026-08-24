@@ -9,9 +9,7 @@ type OpsGuruResourceCollection_ResourceCollectionFilter_CloudFormation struct {
 }
 
 type OpsGuruResourceCollection_ResourceCollectionFilter_Tags struct {
-	// The tag key (AppBoundaryKey) that DevOps Guru uses to define the application boundary for selecting which tagged AWS resources are included in the resource collection. (AI-inferred)
 	AppBoundaryKey any
-	// Specifies the list of tag values for the tag key in the parent `tags` filter, used to match which AWS resources are included in the DevOps Guru resource collection. (AI-inferred)
 	TagValues any
 }
 

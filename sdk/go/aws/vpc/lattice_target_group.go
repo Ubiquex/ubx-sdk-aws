@@ -4,60 +4,39 @@ package vpc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LatticeTargetGroup_Config_HealthCheck_Matcher struct {
-	// Specifies the HTTP status code or range (e.g., '200' or '200-299') that a target must return in response to a health check request for it to be considered healthy for this VPC Lattice target group. (AI-inferred)
 	HttpCode any
 }
 
 type LatticeTargetGroup_Config_HealthCheck struct {
-	// Indicates whether health checks are enabled for the target group; when set to false, the target group does not perform health-check probing on its registered targets. (AI-inferred)
 	Enabled any
-	// The time in seconds between each health check of a target in the VPC Lattice target group, with a default of 30 and a valid range of 5 to 300. (AI-inferred)
 	HealthCheckIntervalSeconds any
-	// Specifies the number of seconds to wait for a target's health check response before considering it unhealthy. (AI-inferred)
 	HealthCheckTimeoutSeconds any
-	// The number of consecutive successful health checks that must occur before a target is marked as healthy. (AI-inferred)
 	HealthyThresholdCount any
-	// Defines the expected HTTP response status codes (e.g., '200' or '200-299') that indicate a healthy target for the health check, structured as an object containing the 'httpCode' property. (AI-inferred)
 	Matcher any
-	// The destination path for HTTP/HTTPS health check requests, used to determine target health, such as '/health'. (AI-inferred)
 	Path any
-	// The port number on the target that the health check requests are sent to, which overrides the target's traffic port if specified. (AI-inferred)
 	Port any
-	// Specifies the protocol (HTTP, HTTPS, or TCP) used by VPC Lattice for health checks on targets in this target group, where TCP performs a connection check and HTTP/HTTPS send a request to the configured health check path. (AI-inferred)
 	Protocol any
-	// Determines whether health check requests to targets use HTTP/1.1 or HTTP/2 when the health check protocol is HTTP or HTTPS. (AI-inferred)
 	ProtocolVersion any
-	// The number of consecutive failed health checks required to mark a target as unhealthy in the VPC Lattice target group's health check configuration. (AI-inferred)
 	UnhealthyThresholdCount any
 }
 
 type LatticeTargetGroup_Config struct {
-	// Specifies the health check configuration for the VPC Lattice target group, including protocol, port, path, matcher, interval, timeout, and threshold counts used to determine target health. (AI-inferred)
 	HealthCheck any
-	// Determines the IP address version (IPv4 or IPv6) used for targets when the target type is IP, with IPv4 as the default if omitted. (AI-inferred)
 	IpAddressType any
-	// Specifies the version of the event structure (V1 or V2) that VPC Lattice uses when invoking the Lambda target for this target group, controlling the format of the event payload delivered to the function. (AI-inferred)
 	LambdaEventStructureVersion any
-	// The port number on which the VPC Lattice target group's targets listen for traffic, specified within the target group's configuration. (AI-inferred)
 	Port any
-	// Specifies the network protocol used by the target group to route traffic to its targets (e.g., HTTP, HTTPS, or TCP). (AI-inferred)
 	Protocol any
-	// The HTTP protocol version (HTTP1 or HTTP2) that the target group uses for routing requests to its targets. (AI-inferred)
 	ProtocolVersion any
-	// The ID of the VPC in which the target group's targets are located, required for target groups of type IP or ALB but not for Lambda targets. (AI-inferred)
 	VpcIdentifier any
 }
 
 type LatticeTargetGroup_Tags struct {
 	Key any
-	// The value of a user-defined tag applied to the VPC Lattice target group, used for organizing or identifying the resource. (AI-inferred)
 	Value any
 }
 
 type LatticeTargetGroup_Targets struct {
-	// The ID of the target resource, such as an EC2 instance ID, an IP address, or a Lambda function ARN. (AI-inferred)
 	Id any
-	// The network port on which the target receives traffic; if omitted, the target group's default port is used. (AI-inferred)
 	Port any
 }
 
@@ -107,38 +86,23 @@ var LatticeTargetGroup_TargetsFields = ubx.FieldMap{
 	}
 
 type LatticeTargetGroupConfig struct {
-	// Config specifies the target group's configuration settings, such as the protocol, port, VPC identifier, and health check parameters. (AI-inferred)
 	Config any
-	// The name of the VPC Lattice target group, providing a friendly identifier for the resource. (AI-inferred)
 	Name any
-	// Defines the tags to associate with the VPC Lattice target group, where each tag is an object with a Key and Value, used to manage, identify, and categorize the target group. (AI-inferred)
 	Tags any
-	// Specifies the list of targets (by ID or IP address) to register with this target group, optionally with a port. (AI-inferred)
 	Targets any
-	// Determines whether the target group routes traffic to IP addresses ('IP'), Lambda functions ('LAMBDA'), or Application Load Balancers ('ALB'). (AI-inferred)
 	Type any
 }
 
 type LatticeTargetGroupAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the VPC Lattice target group, automatically assigned by AWS upon creation. (AI-inferred)
 	Arn any
-	// Config specifies the target group's configuration settings, such as the protocol, port, VPC identifier, and health check parameters. (AI-inferred)
 	Config any
-	// The timestamp (in ISO 8601 format) representing when the target group was created. (AI-inferred)
 	CreatedAt any
-	// The unique VPC Lattice target group identifier assigned by AWS upon creation, a string with a 'tg-' prefix (e.g., 'tg-0a1b2c3d4e5f67890') used to reference the target group in VPC Lattice operations. (AI-inferred)
 	Id any
-	// The timestamp indicating when the target group was last updated. (AI-inferred)
 	LastUpdatedAt any
-	// The name of the VPC Lattice target group, providing a friendly identifier for the resource. (AI-inferred)
 	Name any
-	// Indicates the current lifecycle status of the target group, such as ACTIVE or DRAFT, reflecting whether the target group is ready for use. (AI-inferred)
 	Status any
-	// Defines the tags to associate with the VPC Lattice target group, where each tag is an object with a Key and Value, used to manage, identify, and categorize the target group. (AI-inferred)
 	Tags any
-	// Specifies the list of targets (by ID or IP address) to register with this target group, optionally with a port. (AI-inferred)
 	Targets any
-	// Determines whether the target group routes traffic to IP addresses ('IP'), Lambda functions ('LAMBDA'), or Application Load Balancers ('ALB'). (AI-inferred)
 	Type any
 }
 

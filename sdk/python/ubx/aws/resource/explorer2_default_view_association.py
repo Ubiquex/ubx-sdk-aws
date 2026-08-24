@@ -8,14 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Explorer2DefaultViewAssociationConfig:
-    # The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred)
     view_arn: Any = None
 
 @dataclasses.dataclass
 class Explorer2DefaultViewAssociationAttrs:
     # The AWS principal that the default view is associated with, used as the unique identifier for this resource.
     associated_aws_principal: Any = None
-    # The ARN of the Resource Explorer view that will be set as the default view for the account. (AI-inferred)
     view_arn: Any = None
 
 Explorer2DefaultViewAssociation = ubx.ResourceBinding(

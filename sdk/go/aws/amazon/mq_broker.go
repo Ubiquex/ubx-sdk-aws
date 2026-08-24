@@ -4,48 +4,32 @@ package amazon
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MqBroker_Configuration struct {
-	// The unique identifier of the Amazon MQ configuration that defines the broker's engine settings and parameters. (AI-inferred)
 	Id any
-	// The revision number of the Amazon MQ broker configuration that identifies a specific version of the configuration to apply, required when specifying a configuration for the broker. (AI-inferred)
 	Revision any
 }
 
 type MqBroker_EncryptionOptions struct {
 	// The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data. The Key ARN is recommended so that drift can be detected, but a key ID or key alias will also be accepted for API compatibility reasons.
 	KmsKeyId any
-	// Indicates whether to use an AWS-owned key for encrypting data at rest on the broker; when set to false, you must supply a customer-managed KMS key ID in the `KmsKeyId` field. (AI-inferred)
 	UseAwsOwnedKey any
 }
 
 type MqBroker_LdapServerMetadata struct {
-	// Specifies the list of fully qualified domain names (FQDN) of the LDAP servers used for authentication in the Amazon MQ broker's LDAP server metadata. (AI-inferred)
 	Hosts any
-	// Specifies the LDAP distinguished name (DN) of the base object for role (group) searches, used to authenticate and authorize user roles in the Amazon MQ broker's LDAP server metadata. (AI-inferred)
 	RoleBase any
-	// Specifies the LDAP attribute name that contains the role name for role-based access control when using LDAP authentication for the Amazon MQ broker. (AI-inferred)
 	RoleName any
-	// The LDAP search filter (e.g., `(memberOf=cn=myrole,ou=groups,dc=example,dc=com)`) used to locate role (group) entries in the directory when mapping users to roles for the Amazon MQ broker's LDAP authentication. (AI-inferred)
 	RoleSearchMatching any
-	// Specifies whether the LDAP role search should recursively search the entire subtree beneath the role base (true) or only a single level (false). (AI-inferred)
 	RoleSearchSubtree any
-	// The password for the service account that Amazon MQ uses to authenticate to the LDAP server when LDAP-based user authentication and authorization is configured. (AI-inferred)
 	ServiceAccountPassword any
-	// The username of the LDAP service account that Amazon MQ uses to authenticate and bind to the LDAP server for user and group queries. (AI-inferred)
 	ServiceAccountUsername any
-	// Specifies the Distinguished Name (DN) of the base directory entry in the LDAP server that contains the user accounts used for authentication and authorization for the Amazon MQ broker. (AI-inferred)
 	UserBase any
-	// Specifies the name of the LDAP role that is associated with the user for the Amazon MQ broker, defining the user's permissions in the LDAP directory. (AI-inferred)
 	UserRoleName any
-	// Provides the LDAP search filter, using `%s` as a placeholder for the username, that Amazon MQ uses to locate the user entry during authentication. (AI-inferred)
 	UserSearchMatching any
-	// This boolean specifies whether the LDAP search for users is performed across the entire directory subtree (true) or only at the base context (false). (AI-inferred)
 	UserSearchSubtree any
 }
 
 type MqBroker_Logs struct {
-	// Specifies whether to enable audit logging for the broker, which publishes audit log entries to the configured CloudWatch Logs log group. (AI-inferred)
 	Audit any
-	// Whether to enable general logging for the Amazon MQ broker, which publishes broker activity logs to Amazon CloudWatch Logs. (AI-inferred)
 	General any
 }
 
@@ -60,20 +44,14 @@ type MqBroker_MaintenanceWindowStartTime struct {
 
 type MqBroker_Tags struct {
 	Key any
-	// The value part of a key-value tag assigned to the Amazon MQ broker, used to categorize, identify, and manage the broker for cost allocation and resource grouping. (AI-inferred)
 	Value any
 }
 
 type MqBroker_Users struct {
-	// Whether the user is allowed to access the ActiveMQ web console for this broker. (AI-inferred)
 	ConsoleAccess any
-	// Specifies the list of authorization groups that this user belongs to, which define the user's permissions on the Amazon MQ broker. (AI-inferred)
 	Groups any
-	// The password for the Amazon MQ broker user, used to authenticate client connections to the broker's messaging endpoints. (AI-inferred)
 	Password any
-	// Indicates whether this user is a replication user, which is required for ActiveMQ brokers to replicate data between active and standby brokers. (AI-inferred)
 	ReplicationUser any
-	// The username for a user that can access the broker, used as part of the credentials to authenticate to the ActiveMQ broker. (AI-inferred)
 	Username any
 }
 
@@ -126,45 +104,29 @@ var MqBroker_UsersFields = ubx.FieldMap{
 	}
 
 type MqBrokerConfig struct {
-	// Defines the authentication strategy for the broker, where SIMPLE uses built-in username/password authentication and LDAP integrates with an external LDAP server for ActiveMQ brokers. (AI-inferred)
 	AuthenticationStrategy any
-	// Indicates whether the broker automatically upgrades to new minor versions of the Amazon MQ engine as they are released by AWS. (AI-inferred)
 	AutoMinorVersionUpgrade any
-	// A user-defined name for the broker that must be unique within your AWS account and region, used to identify the Amazon MQ broker. (AI-inferred)
 	BrokerName any
-	// Specifies the ID and revision of the Amazon MQ broker configuration that defines the broker's engine settings and other configuration parameters. (AI-inferred)
 	Configuration any
-	// Specifies the data replication mode for the Amazon MQ broker, allowing either 'NONE' to disable replication or 'CRDR' to enable continuous data replication to a secondary broker in another region. (AI-inferred)
 	DataReplicationMode any
 	// The ARN of the primary broker that is used to replicate data from in a data replication pair when creating a replica. This field is only used at creation-time. Changes to it subsequently are ignored by CloudFormation. Information on the current primary is available on the DataReplicationMetadata object returned by the API.
 	DataReplicationPrimaryBrokerArn any
-	// Determines whether the broker runs as a single instance or as an active/standby pair across multiple Availability Zones. (AI-inferred)
 	DeploymentMode any
-	// Specifies the encryption configuration for the broker, including the KMS key ID to use and whether to use an AWS-owned key for encrypting data at rest. (AI-inferred)
 	EncryptionOptions any
-	// The type of broker engine to provision, such as ActiveMQ or RabbitMQ, which determines the broker's messaging protocol and features. (AI-inferred)
 	EngineType any
 	// The version specified to use. See also EngineVersionCurrent.
 	EngineVersion any
-	// The Amazon MQ broker instance type (e.g., mq.t3.micro, mq.m5.large) that determines the compute and memory capacity of the broker. (AI-inferred)
 	HostInstanceType any
-	// Defines the LDAP server connection and search parameters (such as hosts, service account credentials, and user/role search criteria) used by the broker to authenticate and authorize users when the broker's authentication strategy is set to LDAP. (AI-inferred)
 	LdapServerMetadata any
-	// Specifies the logging configuration for the Amazon MQ broker, including whether general and audit logs are enabled. (AI-inferred)
 	Logs any
-	// Specifies the preferred maintenance window start time (day of week, time of day, and time zone) during which Amazon MQ performs maintenance on the broker. (AI-inferred)
 	MaintenanceWindowStartTime any
-	// Determines whether the broker can be reached from the public internet (true) or only from within the associated VPC (false). (AI-inferred)
 	PubliclyAccessible any
 	// The ARNs of the resource shares to be associated with the broker.
 	ResourceShareArns any
-	// List of security group IDs to associate with the broker for controlling network traffic. (AI-inferred)
 	SecurityGroups any
 	// The broker's storage size in GB.
 	StorageSize any
-	// The storage type (EBS or EFS) used for the broker's message store, determining the underlying storage backend for the Amazon MQ broker. (AI-inferred)
 	StorageType any
-	// Specifies the subnets where the broker's instances are deployed: one subnet for a single-instance broker, or two subnets in different Availability Zones for an active/standby broker; if you provide subnet IDs, you must also provide the SecurityGroups property. (AI-inferred)
 	SubnetIds any
 	Tags any
 	// Users to configure on the broker. For RabbitMQ, this should be one user, created when the broker is created, and changes thereafter are ignored. For ActiveMQ, changes to anything but Password are detected and will trigger an update, but changes to Password cannot be detected so updates to Password may not take effect unless there is some other change.
@@ -172,72 +134,47 @@ type MqBrokerConfig struct {
 }
 
 type MqBrokerAttrs struct {
-	// The list of AMQP protocol connection endpoints (host:port) for the Amazon MQ RabbitMQ broker instances, used by clients to connect. (AI-inferred)
 	AmqpEndpoints any
-	// The Amazon Resource Name (ARN) of the Amazon MQ broker. (AI-inferred)
 	Arn any
-	// Defines the authentication strategy for the broker, where SIMPLE uses built-in username/password authentication and LDAP integrates with an external LDAP server for ActiveMQ brokers. (AI-inferred)
 	AuthenticationStrategy any
-	// Indicates whether the broker automatically upgrades to new minor versions of the Amazon MQ engine as they are released by AWS. (AI-inferred)
 	AutoMinorVersionUpgrade any
-	// A user-defined name for the broker that must be unique within your AWS account and region, used to identify the Amazon MQ broker. (AI-inferred)
 	BrokerName any
-	// Specifies the ID and revision of the Amazon MQ broker configuration that defines the broker's engine settings and other configuration parameters. (AI-inferred)
 	Configuration any
 	// The ID of the current actual configuration.
 	ConfigurationId any
 	// The revision of the current actual configuration.
 	ConfigurationRevision any
-	// Provides the list of console URLs for accessing the ActiveMQ web console of each broker instance in the Amazon MQ broker. (AI-inferred)
 	ConsoleUrls any
-	// Specifies the data replication mode for the Amazon MQ broker, allowing either 'NONE' to disable replication or 'CRDR' to enable continuous data replication to a secondary broker in another region. (AI-inferred)
 	DataReplicationMode any
 	// The ARN of the primary broker that is used to replicate data from in a data replication pair when creating a replica. This field is only used at creation-time. Changes to it subsequently are ignored by CloudFormation. Information on the current primary is available on the DataReplicationMetadata object returned by the API.
 	DataReplicationPrimaryBrokerArn any
-	// Determines whether the broker runs as a single instance or as an active/standby pair across multiple Availability Zones. (AI-inferred)
 	DeploymentMode any
-	// Specifies the encryption configuration for the broker, including the KMS key ID to use and whether to use an AWS-owned key for encrypting data at rest. (AI-inferred)
 	EncryptionOptions any
-	// The type of broker engine to provision, such as ActiveMQ or RabbitMQ, which determines the broker's messaging protocol and features. (AI-inferred)
 	EngineType any
 	// The version specified to use. See also EngineVersionCurrent.
 	EngineVersion any
 	// The version in use. This may have more precision than the specified EngineVersion.
 	EngineVersionCurrent any
-	// The Amazon MQ broker instance type (e.g., mq.t3.micro, mq.m5.large) that determines the compute and memory capacity of the broker. (AI-inferred)
 	HostInstanceType any
-	// The unique broker identifier assigned by Amazon MQ, which serves as the Terraform resource ID. (AI-inferred)
 	Id any
-	// Computed list of IP addresses assigned to the broker, with one entry per broker instance (for example, two for active/standby deployments). (AI-inferred)
 	IpAddresses any
-	// Defines the LDAP server connection and search parameters (such as hosts, service account credentials, and user/role search criteria) used by the broker to authenticate and authorize users when the broker's authentication strategy is set to LDAP. (AI-inferred)
 	LdapServerMetadata any
-	// Specifies the logging configuration for the Amazon MQ broker, including whether general and audit logs are enabled. (AI-inferred)
 	Logs any
-	// Specifies the preferred maintenance window start time (day of week, time of day, and time zone) during which Amazon MQ performs maintenance on the broker. (AI-inferred)
 	MaintenanceWindowStartTime any
-	// The list of MQTT protocol endpoints (host and port) for the Amazon MQ broker, computed and returned as strings for client connections. (AI-inferred)
 	MqttEndpoints any
-	// The list of OpenWire protocol endpoints (broker host and port) that clients can use to connect to the Amazon MQ broker. (AI-inferred)
 	OpenWireEndpoints any
-	// Determines whether the broker can be reached from the public internet (true) or only from within the associated VPC (false). (AI-inferred)
 	PubliclyAccessible any
 	// The ARNs of the resource shares to be associated with the broker.
 	ResourceShareArns any
-	// List of security group IDs to associate with the broker for controlling network traffic. (AI-inferred)
 	SecurityGroups any
-	// The list of STOMP protocol endpoints (URLs) that clients use to connect to the broker, including both plain and TLS-secured connection strings. (AI-inferred)
 	StompEndpoints any
 	// The broker's storage size in GB.
 	StorageSize any
-	// The storage type (EBS or EFS) used for the broker's message store, determining the underlying storage backend for the Amazon MQ broker. (AI-inferred)
 	StorageType any
-	// Specifies the subnets where the broker's instances are deployed: one subnet for a single-instance broker, or two subnets in different Availability Zones for an active/standby broker; if you provide subnet IDs, you must also provide the SecurityGroups property. (AI-inferred)
 	SubnetIds any
 	Tags any
 	// Users to configure on the broker. For RabbitMQ, this should be one user, created when the broker is created, and changes thereafter are ignored. For ActiveMQ, changes to anything but Password are detected and will trigger an update, but changes to Password cannot be detected so updates to Password may not take effect unless there is some other change.
 	Users any
-	// The list of WebSocket Secure (WSS) protocol endpoints for the Amazon MQ broker, automatically populated after the broker is created. (AI-inferred)
 	WssEndpoints any
 }
 

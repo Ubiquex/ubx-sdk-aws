@@ -4,26 +4,17 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BaiduChannelConfig struct {
-	// The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred)
 	ApiKey any
-	// The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred)
 	ApplicationId any
-	// Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred)
 	Enabled any
-	// The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred)
 	SecretKey any
 }
 
 type BaiduChannelAttrs struct {
-	// The API key from Baidu Cloud Push used to authenticate the Baidu channel with the Baidu Push service. (AI-inferred)
 	ApiKey any
-	// The unique ID of the Amazon Pinpoint application to which this Baidu channel belongs and is configured for sending push notifications. (AI-inferred)
 	ApplicationId any
-	// Indicates whether the Baidu channel is enabled for delivering push notifications to the app. (AI-inferred)
 	Enabled any
-	// The ID of the AWS Pinpoint application this Baidu channel is associated with (the ApplicationId returned by Ref). (AI-inferred)
 	Id any
-	// The Baidu Cloud Push API secret key, used together with the API key to authenticate Amazon Pinpoint with Baidu's push notification service for this channel. (AI-inferred)
 	SecretKey any
 }
 

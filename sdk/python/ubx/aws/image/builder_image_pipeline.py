@@ -52,20 +52,14 @@ class BuilderImagePipeline_Schedule:
 
 @dataclasses.dataclass
 class BuilderImagePipeline_Workflows_Parameters:
-    # The name of an individual input parameter passed to an Image Builder workflow configured for this image pipeline, serving as the key that the workflow definition uses to reference the parameter value. (AI-inferred)
     name: Any = None
-    # Defines the list of string values for a given workflow parameter key in the Image Builder image pipeline's workflow configuration. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class BuilderImagePipeline_Workflows:
-    # Specifies the action to take when this workflow fails; valid values are CONTINUE or ABORT. (AI-inferred)
     on_failure: Any = None
-    # The parallel group name for this workflow; multiple workflows with the same parallel group are executed concurrently during the image build process. (AI-inferred)
     parallel_group: Any = None
-    # Specifies the list of parameter name/value pairs to pass to a workflow attached to this image pipeline, controlling how that workflow runs during the image build and test process. (AI-inferred)
     parameters: Any = None
-    # The ARN of an Image Builder workflow to associate with the image pipeline, defining a custom build/test step sequence. (AI-inferred)
     workflow_arn: Any = None
 
 _BuilderImagePipeline_ImageScanningConfiguration_EcrConfigurationFields = {

@@ -26,11 +26,8 @@ type FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CorsConfig struct {
 }
 
 type FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig_Items struct {
-	// The name of the HTTP response header that CloudFront adds to responses when using this policy. (AI-inferred)
 	Header any
-	// Controls whether CloudFront overrides the value of the matching response header returned by the origin with the value specified in this custom header item; when false, CloudFront adds the custom header only if the origin does not already return a header with that name. (AI-inferred)
 	Override any
-	// The value to be sent in the custom HTTP response header that CloudFront adds to responses for this policy. (AI-inferred)
 	Value any
 }
 
@@ -40,7 +37,6 @@ type FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_CustomHeadersConfig 
 }
 
 type FrontResponseHeadersPolicy_ResponseHeadersPolicyConfig_RemoveHeadersConfig_Items struct {
-	// The name of an HTTP response header that CloudFront removes from the response when the response headers policy is applied to a distribution. (AI-inferred)
 	Header any
 }
 
@@ -299,9 +295,7 @@ type FrontResponseHeadersPolicyConfig struct {
 }
 
 type FrontResponseHeadersPolicyAttrs struct {
-	// The unique identifier assigned by CloudFront to this response headers policy, used to reference the policy in distributions. (AI-inferred)
 	Id any
-	// The date and time when the response headers policy was last modified, returned as an ISO 8601 string. (AI-inferred)
 	LastModifiedTime any
 	// A response headers policy configuration. A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers.
 	ResponseHeadersPolicyConfig any

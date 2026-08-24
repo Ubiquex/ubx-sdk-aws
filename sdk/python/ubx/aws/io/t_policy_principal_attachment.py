@@ -8,18 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TPolicyPrincipalAttachmentConfig:
-    # The name of the AWS IoT policy that will be attached to the specified principal (such as a certificate or Amazon Cognito identity) in the AWS::IoT::PolicyPrincipalAttachment resource. (AI-inferred)
     policy_name: Any = None
-    # The ARN of the IoT principal (e.g., a certificate ARN or Cognito identity) to which the policy is attached. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass
 class TPolicyPrincipalAttachmentAttrs:
-    # This computed identifier uniquely represents the attachment between the IoT policy and the principal (certificate ARN or Cognito identity), typically composed of the policy name and the target principal ARN. (AI-inferred)
     id: Any = None
-    # The name of the AWS IoT policy that will be attached to the specified principal (such as a certificate or Amazon Cognito identity) in the AWS::IoT::PolicyPrincipalAttachment resource. (AI-inferred)
     policy_name: Any = None
-    # The ARN of the IoT principal (e.g., a certificate ARN or Cognito identity) to which the policy is attached. (AI-inferred)
     principal: Any = None
 
 TPolicyPrincipalAttachment = ubx.ResourceBinding(

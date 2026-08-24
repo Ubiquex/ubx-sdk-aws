@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Mltransform_InputRecordTables_GlueTables:
-    # The identifier of the AWS Glue Data Catalog in which the specified input table resides; if omitted, the current AWS account's catalog ID is used. (AI-inferred)
     catalog_id: Any = None
-    # The name of an AWS Glue connection used to access the source table, required when the table resides in an external data store such as JDBC rather than being purely stored in the Glue Data Catalog. (AI-inferred)
     connection_name: Any = None
-    # The name of the AWS Glue Data Catalog database that contains the table used as an input record source for the machine learning transform. (AI-inferred)
     database_name: Any = None
-    # The name of the Glue Data Catalog table that supplies the input records for the ML transform. (AI-inferred)
     table_name: Any = None
 
 @dataclasses.dataclass

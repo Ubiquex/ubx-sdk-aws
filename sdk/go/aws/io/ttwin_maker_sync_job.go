@@ -17,7 +17,6 @@ type TtwinMakerSyncJobConfig struct {
 type TtwinMakerSyncJobAttrs struct {
 	// The ARN of the SyncJob.
 	Arn any
-	// The date and time at which the AWS IoT TwinMaker sync job was created, expressed in ISO 8601 format. (AI-inferred)
 	CreationDateTime any
 	// The state of SyncJob.
 	State any
@@ -27,7 +26,6 @@ type TtwinMakerSyncJobAttrs struct {
 	SyncSource any
 	// A key-value pair to associate with a resource.
 	Tags any
-	// The date and time when the sync job was last updated, in ISO 8601 format. (AI-inferred)
 	UpdateDateTime any
 	// The ID of the workspace.
 	WorkspaceId any

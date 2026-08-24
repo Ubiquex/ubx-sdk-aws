@@ -13,7 +13,6 @@ class FindingsFilter_FindingCriteria:
 
 @dataclasses.dataclass
 class FindingsFilter_Tags:
-    # Specifies the key of a tag that you can attach to the findings filter to help identify and organize it in AWS Macie. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -28,11 +27,9 @@ _FindingsFilter_TagsFields = {
 
 @dataclasses.dataclass
 class FindingsFilterConfig:
-    # Specifies the action to take on findings that match the filter's criteria, with allowed values ARCHIVE to archive (suppress) the findings or NOOP to not change them, in AWS Macie. (AI-inferred)
     action: Any = None
     # Findings filter description
     description: Any = None
-    # Defines the matching conditions, evaluated against finding attributes such as severity, type, or other properties, that determine which findings are included in the filter. (AI-inferred)
     finding_criteria: Any = None
     # Findings filter name
     name: Any = None
@@ -43,13 +40,11 @@ class FindingsFilterConfig:
 
 @dataclasses.dataclass
 class FindingsFilterAttrs:
-    # Specifies the action to take on findings that match the filter's criteria, with allowed values ARCHIVE to archive (suppress) the findings or NOOP to not change them, in AWS Macie. (AI-inferred)
     action: Any = None
     # Findings filter ARN.
     arn: Any = None
     # Findings filter description
     description: Any = None
-    # Defines the matching conditions, evaluated against finding attributes such as severity, type, or other properties, that determine which findings are included in the filter. (AI-inferred)
     finding_criteria: Any = None
     # Findings filter ID.
     id: Any = None

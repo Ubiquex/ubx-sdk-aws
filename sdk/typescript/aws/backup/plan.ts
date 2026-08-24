@@ -2,85 +2,56 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Plan_BackupPlan_AdvancedBackupSettings {
-  /** Specifies the key-value pairs that configure advanced backup settings for the associated resource type, such as enabling Windows VSS for Windows workloads via a key like `WindowsVSS` set to `enabled`. (AI-inferred) */
   backupOptions?: unknown | Computed<unknown>;
-  /** Specifies the AWS resource type (such as EC2, RDS, or DynamoDB) to which these advanced backup settings apply. (AI-inferred) */
   resourceType?: string | Computed<string>;
 }
 
 export interface Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle {
-  /** For a copy action in a backup plan rule, this specifies the number of days after the copied recovery point is created before it is permanently deleted. (AI-inferred) */
   deleteAfterDays?: number | Computed<number>;
-  /** For each copied recovery point, the number of days after creation when AWS Backup moves it to cold storage. (AI-inferred) */
   moveToColdStorageAfterDays?: number | Computed<number>;
-  /** When set to true, this boolean opts the backup copy created by this copy action into transitioning to the archive storage tier for supported resources, based on the lifecycle's archive-after days setting. (AI-inferred) */
   optInToArchiveForSupportedResources?: boolean | Computed<boolean>;
 }
 
 export interface Plan_BackupPlan_BackupPlanRule_CopyActions {
-  /** Specifies the Amazon Resource Name (ARN) of the backup vault to which the backup copy is sent when a backup rule's copy action is executed. (AI-inferred) */
   destinationBackupVaultArn?: string | Computed<string>;
-  /** For each copy action in a backup plan rule, this lifecycle object specifies when the copied recovery point transitions to cold storage (MoveToColdStorageAfterDays) and when it expires and is deleted (DeleteAfterDays). (AI-inferred) */
   lifecycle?: Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle | Computed<Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle>;
 }
 
 export interface Plan_BackupPlan_BackupPlanRule_IndexActions {
-  /** Defines the AWS resource types to index for backup search (for example, S3), enabling item-level querying and recovery from the backup. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
 }
 
 export interface Plan_BackupPlan_BackupPlanRule_ScanActions {
-  /** Enables or disables the malware scan action on backups created under this backup plan rule. (AI-inferred) */
   malwareScanner?: string | Computed<string>;
-  /** Specifies the mode for scanning backups, with value 'ON' to enable malware scanning or 'OFF' to disable it for the associated backup rule. (AI-inferred) */
   scanMode?: string | Computed<string>;
 }
 
 export interface Plan_BackupPlan_BackupPlanRule {
-  /** Specifies the time window, in minutes, within which the backup job must complete; if the job exceeds this duration, AWS Backup cancels it. (AI-inferred) */
   completionWindowMinutes?: number | Computed<number>;
-  /** Configures the copy actions, each of which copies a backup created by this rule to a separate destination Backup vault (optionally applying a different lifecycle). (AI-inferred) */
   copyActions?: Plan_BackupPlan_BackupPlanRule_CopyActions[] | Computed<Plan_BackupPlan_BackupPlanRule_CopyActions[]>;
-  /** Specifies whether to enable continuous backup for the rule, which provides point-in-time recovery (PITR) with a retention window of up to 35 days. (AI-inferred) */
   enableContinuousBackup?: boolean | Computed<boolean>;
-  /** Configures backup indexing for the rule by specifying the resource types whose backups will be indexed, enabling fast search and query of backup contents. (AI-inferred) */
   indexActions?: Plan_BackupPlan_BackupPlanRule_IndexActions[] | Computed<Plan_BackupPlan_BackupPlanRule_IndexActions[]>;
-  /** Defines when backups expire and optionally move to cold storage, via DeleteAfterDays and MoveToColdStorageAfterDays settings for the rule. (AI-inferred) */
   lifecycle?: Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle | Computed<Plan_BackupPlan_BackupPlanRule_CopyActions_Lifecycle>;
-  /** Specifies the key-value tags that AWS Backup applies to recovery points created by this backup plan rule. (AI-inferred) */
   recoveryPointTags?: unknown | Computed<unknown>;
-  /** A human-readable name for the backup rule that uniquely identifies it within the backup plan. (AI-inferred) */
   ruleName?: string | Computed<string>;
   scanActions?: Plan_BackupPlan_BackupPlanRule_ScanActions[] | Computed<Plan_BackupPlan_BackupPlanRule_ScanActions[]>;
-  /** Defines the schedule for the backup rule using a cron or rate expression, such as `cron(0 5 * * ? *)` or `rate(12 hours)`. (AI-inferred) */
   scheduleExpression?: string | Computed<string>;
-  /** Specifies the timezone (e.g., America/New_York or Etc/UTC) in which the backup rule's schedule expression is evaluated, determining when the backup is scheduled to run. (AI-inferred) */
   scheduleExpressionTimezone?: string | Computed<string>;
-  /** The number of minutes before the scheduled backup start time that AWS Backup can wait before starting the backup, providing a window to accommodate resource availability or conflicts. (AI-inferred) */
   startWindowMinutes?: number | Computed<number>;
-  /** The name of the backup vault in which the backups created by this rule are stored. (AI-inferred) */
   targetBackupVault?: string | Computed<string>;
-  /** The ARN of the logically air-gapped backup vault that this backup plan rule targets, causing backups to be stored in an immutable, ransomware-protected vault for the rule's retention period. (AI-inferred) */
   targetLogicallyAirGappedBackupVaultArn?: string | Computed<string>;
 }
 
 export interface Plan_BackupPlan_ScanSettings {
-  /** Indicates whether AWS Backup malware scanning is enabled for the backup plan, with accepted string values 'TRUE' or 'FALSE' that determine if newly created backups are scanned for potentially malicious software. (AI-inferred) */
   malwareScanner?: string | Computed<string>;
-  /** Lists the AWS resource types (e.g., 'Aurora', 'RDS') that are selected for malware scanning under the backup plan's scan settings. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
-  /** The ARN of the IAM role that AWS Backup uses to scan backups for sensitive data, typically via Amazon Macie, when vault scanning is enabled. (AI-inferred) */
   scannerRoleArn?: string | Computed<string>;
 }
 
 export interface Plan_BackupPlan {
-  /** Specifies backup options for specific resource types, such as enabling Windows VSS for EC2 instances, by associating a resource type with backup option key-value pairs. (AI-inferred) */
   advancedBackupSettings?: Plan_BackupPlan_AdvancedBackupSettings[] | Computed<Plan_BackupPlan_AdvancedBackupSettings[]>;
-  /** The user-defined name for the backup plan, used to identify it in AWS Backup and required when creating the plan. (AI-inferred) */
   backupPlanName: string | Computed<string>;
-  /** Specifies the list of backup rules, each defining the backup schedule, lifecycle (transition to cold storage or expiration), and target backup vault for the AWS Backup plan. (AI-inferred) */
   backupPlanRule: Plan_BackupPlan_BackupPlanRule[] | Computed<Plan_BackupPlan_BackupPlanRule[]>;
-  /** Specifies the scanning configuration used by AWS Backup to run malware detection on supported backup resources (such as S3) when backups are created under this backup plan. (AI-inferred) */
   scanSettings?: Plan_BackupPlan_ScanSettings[] | Computed<Plan_BackupPlan_ScanSettings[]>;
 }
 
@@ -171,22 +142,15 @@ const Plan_BackupPlanFields: FieldMap = {
 };
 
 export interface PlanConfig {
-  /** Provides the backup plan configuration, including the plan name and the set of backup rules that define the backup schedule, lifecycle, and vault. (AI-inferred) */
   backupPlan: Plan_BackupPlan | Computed<Plan_BackupPlan>;
-  /** Tags (key-value pairs) to attach to the backup plan for cost allocation, access control, and resource management in AWS Backup. (AI-inferred) */
   backupPlanTags?: unknown | Computed<unknown>;
 }
 
 export interface PlanAttrs {
-  /** Provides the backup plan configuration, including the plan name and the set of backup rules that define the backup schedule, lifecycle, and vault. (AI-inferred) */
   backupPlan: Plan_BackupPlan;
-  /** The Amazon Resource Name (ARN) of the backup plan, uniquely identifying the resource across AWS, such as arn:aws:backup:region:account:backup-plan:plan-id. (AI-inferred) */
   backupPlanArn: string;
-  /** The unique identifier assigned by AWS Backup when the backup plan is created. (AI-inferred) */
   backupPlanId: string;
-  /** Tags (key-value pairs) to attach to the backup plan for cost allocation, access control, and resource management in AWS Backup. (AI-inferred) */
   backupPlanTags: unknown;
-  /** The version identifier of the backup plan, which changes each time the plan is updated. (AI-inferred) */
   versionId: string;
 }
 

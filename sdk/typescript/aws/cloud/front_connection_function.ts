@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FrontConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociations {
-  /** The ARN of the CloudFront key value store to associate with the function, granting the function read access to that store's data during invocation at the edge. (AI-inferred) */
   keyValueStoreArn?: string | Computed<string>;
 }
 
@@ -60,12 +59,9 @@ export interface FrontConnectionFunctionAttrs {
   connectionFunctionCode: string;
   /** Contains configuration information about a CloudFront function. */
   connectionFunctionConfig: FrontConnectionFunction_ConnectionFunctionConfig;
-  /** The date and time when the CloudFront function was created, as reported by AWS. (AI-inferred) */
   createdTime: string;
-  /** Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred) */
   etag: string;
   id: string;
-  /** The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred) */
   lastModifiedTime: string;
   /** The connection function name. */
   name: string;

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class OptOutList_Tags:
     key: Any = None
-    # The value of a tag key-value pair assigned to the AWS SMS Voice opt-out list, used for categorizing or identifying the resource. (AI-inferred)
     value: Any = None
 
 _OptOutList_TagsFields = {

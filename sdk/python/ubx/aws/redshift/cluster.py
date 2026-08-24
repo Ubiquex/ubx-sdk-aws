@@ -8,26 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Cluster_Endpoint:
-    # The DNS hostname of the Amazon Redshift cluster's connection endpoint, used to connect to the cluster. (AI-inferred)
     address: Any = None
-    # The TCP port number on which the Redshift cluster accepts incoming connections, typically 5439 by default. (AI-inferred)
     port: Any = None
 
 @dataclasses.dataclass
 class Cluster_LoggingProperties:
-    # The name of the S3 bucket where Redshift audit logs are delivered when logging is enabled for the cluster. (AI-inferred)
     bucket_name: Any = None
-    # Specifies whether the Redshift cluster's query logging destination is Amazon S3 ('s3') or Amazon CloudWatch Logs ('cloudwatch'), used in the LoggingProperties for enabling and configuring audit logging. (AI-inferred)
     log_destination_type: Any = None
-    # Specifies the types of Redshift logs (connectionlog, useractivitylog, or userlog) to export to the configured S3 bucket when logging is enabled. (AI-inferred)
     log_exports: Any = None
-    # When cluster logging is enabled, this S3 key prefix is prepended to the log file names uploaded to the destination S3 bucket, allowing logs to be organized under a common folder path. (AI-inferred)
     s3_key_prefix: Any = None
 
 @dataclasses.dataclass
 class Cluster_Tags:
     key: Any = None
-    # Specifies the value component of a user-defined tag attached to the Amazon Redshift cluster, used for resource organization, cost allocation, and access control via the tag key-value pair. (AI-inferred)
     value: Any = None
 
 _Cluster_LoggingPropertiesFields = {
@@ -96,7 +89,6 @@ class ClusterConfig:
     iam_roles: Any = None
     # The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
     kms_key_id: Any = None
-    # Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
     logging_properties: Any = None
     # The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
     maintenance_track_name: Any = None
@@ -118,7 +110,6 @@ class ClusterConfig:
     node_type: Any = None
     # The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
     number_of_nodes: Any = None
-    # The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
     owner_account: Any = None
     # The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
     port: Any = None
@@ -195,7 +186,6 @@ class ClusterAttrs:
     elastic_ip: Any = None
     # If true, the data in the cluster is encrypted at rest.
     encrypted: Any = None
-    # The endpoint object provides the DNS address and port used to connect to the Redshift cluster. (AI-inferred)
     endpoint: Any = None
     # An option that specifies whether to create the cluster with enhanced VPC routing enabled. To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC. For more information, see Enhanced VPC Routing in the Amazon Redshift Cluster Management Guide. If this option is true , enhanced VPC routing is enabled. Default: false
     enhanced_vpc_routing: Any = None
@@ -207,7 +197,6 @@ class ClusterAttrs:
     iam_roles: Any = None
     # The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.
     kms_key_id: Any = None
-    # Configures Amazon Redshift audit logging to an S3 bucket, specifying the destination bucket and optional key prefix for log files. (AI-inferred)
     logging_properties: Any = None
     # The name for the maintenance track that you want to assign for the cluster. This name change is asynchronous. The new track name stays in the PendingModifiedValues for the cluster until the next maintenance window. When the maintenance track changes, the cluster is switched to the latest cluster release available for the maintenance track. At this point, the maintenance track name is applied.
     maintenance_track_name: Any = None
@@ -231,7 +220,6 @@ class ClusterAttrs:
     node_type: Any = None
     # The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
     number_of_nodes: Any = None
-    # The AWS account ID of the owner of the snapshot from which the Redshift cluster is being restored, used when restoring from a snapshot in another account. (AI-inferred)
     owner_account: Any = None
     # The port number on which the cluster accepts incoming connections. The cluster is accessible only via the JDBC and ODBC connection strings
     port: Any = None

@@ -24,7 +24,6 @@ type HubV2Policy_MultiAz struct {
 
 type HubV2Policy_Tags struct {
 	Key any
-	// The value of a tag key-value pair attached to the AWS Resilience Hub v2 policy, used to label and categorize the policy for management. (AI-inferred)
 	Value any
 }
 
@@ -48,9 +47,7 @@ var HubV2Policy_TagsFields = ubx.FieldMap{
 	}
 
 type HubV2PolicyConfig struct {
-	// Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred)
 	AvailabilitySlo any
-	// Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred)
 	DataRecovery any
 	// The description of the policy.
 	Description any
@@ -67,11 +64,9 @@ type HubV2PolicyConfig struct {
 type HubV2PolicyAttrs struct {
 	// The number of services associated with this policy.
 	AssociatedServiceCount any
-	// Defines the availability service level objective (SLO) for the policy, specifying the target uptime percentage (e.g., 99.99%) that the application must meet to be considered resilient. (AI-inferred)
 	AvailabilitySlo any
 	// The timestamp when the policy was created.
 	CreatedAt any
-	// Defines the data recovery objectives for the policy, specifying the targeted Recovery Point Objective (RPO) and Recovery Time Objective (RTO) in seconds for restoring data after a disruption. (AI-inferred)
 	DataRecovery any
 	// The description of the policy.
 	Description any

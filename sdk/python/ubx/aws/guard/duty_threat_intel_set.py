@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DutyThreatIntelSet_Tags:
-    # The user-defined key of a tag applied to the GuardDuty threat intel set, used to categorize, identify, and manage the resource through AWS tagging conventions. (AI-inferred)
     key: Any = None
-    # The value portion of a tag assigned to the GuardDuty threat intel set, used for resource-level permissions, cost allocation, and organization. (AI-inferred)
     value: Any = None
 
 _DutyThreatIntelSet_TagsFields = {
@@ -20,38 +18,23 @@ _DutyThreatIntelSet_TagsFields = {
 
 @dataclasses.dataclass
 class DutyThreatIntelSetConfig:
-    # Whether the threat intel set is activated (enabled) for use by GuardDuty, as opposed to being created but inactive. (AI-inferred)
     activate: Any = None
-    # The ID of the GuardDuty detector to which this threat intel set belongs, or the default detector if not specified. (AI-inferred)
     detector_id: Any = None
-    # Specifies the AWS account ID expected to own the S3 bucket that holds the threat intel set file, allowing GuardDuty to verify the bucket owner before accessing it. (AI-inferred)
     expected_bucket_owner: Any = None
-    # The format of the threat intelligence set file (e.g., TXT, STIX, OTX_CSV, or ALIEN_VAULT) that GuardDuty uses to parse the uploaded list. (AI-inferred)
     format: Any = None
-    # The URI (typically an S3 object URL) of the file that contains the threat intelligence set content. (AI-inferred)
     location: Any = None
-    # A friendly name for the threat intel set, used for identification and display in GuardDuty. (AI-inferred)
     name: Any = None
-    # Specifies the key-value tags to attach to the GuardDuty threat intel set for managing and identifying the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class DutyThreatIntelSetAttrs:
-    # Whether the threat intel set is activated (enabled) for use by GuardDuty, as opposed to being created but inactive. (AI-inferred)
     activate: Any = None
-    # The ID of the GuardDuty detector to which this threat intel set belongs, or the default detector if not specified. (AI-inferred)
     detector_id: Any = None
-    # Specifies the AWS account ID expected to own the S3 bucket that holds the threat intel set file, allowing GuardDuty to verify the bucket owner before accessing it. (AI-inferred)
     expected_bucket_owner: Any = None
-    # The format of the threat intelligence set file (e.g., TXT, STIX, OTX_CSV, or ALIEN_VAULT) that GuardDuty uses to parse the uploaded list. (AI-inferred)
     format: Any = None
-    # The unique identifier assigned by AWS to the GuardDuty threat intel set, which is the ThreatIntelSetId. (AI-inferred)
     id: Any = None
-    # The URI (typically an S3 object URL) of the file that contains the threat intelligence set content. (AI-inferred)
     location: Any = None
-    # A friendly name for the threat intel set, used for identification and display in GuardDuty. (AI-inferred)
     name: Any = None
-    # Specifies the key-value tags to attach to the GuardDuty threat intel set for managing and identifying the resource. (AI-inferred)
     tags: Any = None
 
 DutyThreatIntelSet = ubx.ResourceBinding(

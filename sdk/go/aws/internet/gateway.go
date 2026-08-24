@@ -4,9 +4,7 @@ package internet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Gateway_Tags struct {
-	// The key of a user-defined tag entry in the tags map for this AWS internet gateway, used to label the gateway with custom metadata such as environment or owner. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the Internet Gateway, used to store metadata for identification, organization, or cost allocation. (AI-inferred)
 	Value any
 }
 
@@ -21,7 +19,6 @@ type GatewayConfig struct {
 }
 
 type GatewayAttrs struct {
-	// The unique identifier (e.g., `igw-...`) assigned by AWS to the internet gateway. (AI-inferred)
 	InternetGatewayId any
 	// Any tags to assign to the internet gateway.
 	Tags any

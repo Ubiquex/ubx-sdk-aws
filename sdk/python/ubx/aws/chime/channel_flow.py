@@ -8,30 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ChannelFlow_Processors_Configuration_Lambda:
-    # Specifies whether the Lambda function is invoked asynchronously (ASYNC) or synchronously (SYNC) for this processor in the channel flow. (AI-inferred)
     invocation_type: Any = None
-    # The ARN of the AWS Lambda function that the Amazon Chime channel flow invokes to process messages for this processor. (AI-inferred)
     resource_arn: Any = None
 
 @dataclasses.dataclass
 class ChannelFlow_Processors_Configuration:
-    # The configuration block for a Lambda processor in a Chime channel flow, specifying the Lambda function ARN and the IAM role ARN used to invoke it. (AI-inferred)
     lambda_: Any = None
 
 @dataclasses.dataclass
 class ChannelFlow_Processors:
-    # Defines the configuration for a processor in the channel flow, specifying the Lambda function ARN and the invocation role ARN used when the processor type is Lambda. (AI-inferred)
     configuration: Any = None
-    # The integer execution order of this processor within the channel flow, which determines the sequence in which processors are invoked during message processing. (AI-inferred)
     execution_order: Any = None
-    # The action to execute if the processor's primary action fails, such as 'SEND' or 'DELETE'. (AI-inferred)
     fallback_action: Any = None
-    # The user-defined name that identifies this processor within the channel flow's processor list, used for configuration and runtime reference. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class ChannelFlow_Tags:
-    # The key of a tag attached to the Chime ChannelFlow resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

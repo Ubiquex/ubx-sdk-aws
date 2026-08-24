@@ -2,170 +2,113 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPool_AccountRecoverySetting_RecoveryMechanisms {
-  /** The name of the recovery mechanism, which must be one of `verified_email`, `verified_phone_number`, or `admin_only` and identifies the method (email, phone, or admin) used for user account recovery. (AI-inferred) */
   name?: string | Computed<string>;
-  /** This number determines the order in which the recovery mechanism is attempted for user account recovery, with lower values having higher precedence and being tried first. (AI-inferred) */
   priority?: number | Computed<number>;
 }
 
 export interface UserPool_AccountRecoverySetting {
-  /** Specifies the ordered list of account recovery mechanisms (like verified email or phone number) with priorities that determine how a user can recover their account in this user pool. (AI-inferred) */
   recoveryMechanisms?: UserPool_AccountRecoverySetting_RecoveryMechanisms[] | Computed<UserPool_AccountRecoverySetting_RecoveryMechanisms[]>;
 }
 
 export interface UserPool_AdminCreateUserConfig_InviteMessageTemplate {
-  /** Specifies the body of the email message that is sent as an invitation to a new user when an administrator creates the user in the user pool, allowing placeholders such as {username} and {####} for the temporary password/verification code. (AI-inferred) */
   emailMessage?: string | Computed<string>;
-  /** The subject line for the email invitation message sent to a newly created user when an administrator creates the user account in the user pool. (AI-inferred) */
   emailSubject?: string | Computed<string>;
-  /** The SMS message body that is sent to a user when an admin creates their account, containing placeholders for the username and the temporary password. (AI-inferred) */
   smsmessage?: string | Computed<string>;
 }
 
 export interface UserPool_AdminCreateUserConfig {
-  /** When true, only administrators are allowed to create user accounts in the user pool, disabling self-registration by end users. (AI-inferred) */
   allowAdminCreateUserOnly?: boolean | Computed<boolean>;
-  /** Configures the email subject, email body, and SMS body used in the invitation message sent to a new user when an administrator creates that user's account. (AI-inferred) */
   inviteMessageTemplate?: UserPool_AdminCreateUserConfig_InviteMessageTemplate | Computed<UserPool_AdminCreateUserConfig_InviteMessageTemplate>;
-  /** Sets the number of days that a user account created by an administrator remains valid without any sign-in activity, after which it expires and the user must reset their password. (AI-inferred) */
   unusedAccountValidityDays?: number | Computed<number>;
 }
 
 export interface UserPool_DeviceConfiguration {
-  /** If true, a challenge is required when a user attempts to sign in from a device that has not been previously recognized, as part of the user pool's device tracking and remembered device settings. (AI-inferred) */
   challengeRequiredOnNewDevice?: boolean | Computed<boolean>;
-  /** When true, a user's device is remembered only if the user explicitly chooses to remember it during sign-in; when false, devices are automatically remembered regardless of user prompt. (AI-inferred) */
   deviceOnlyRememberedOnUserPrompt?: boolean | Computed<boolean>;
 }
 
 export interface UserPool_EmailConfiguration {
-  /** The name of the Amazon SES configuration set to use when sending emails from the user pool. (AI-inferred) */
   configurationSet?: string | Computed<string>;
-  /** Specifies which email account Amazon Cognito uses to send emails, either Cognito's default account ('COGNITO_DEFAULT') or a developer-configured Amazon SES account ('DEVELOPER'). (AI-inferred) */
   emailSendingAccount?: string | Computed<string>;
-  /** The sender email address that Amazon Cognito uses in the 'From' field of emails it sends to users, which must be verified in Amazon Simple Email Service (SES). (AI-inferred) */
   from?: string | Computed<string>;
-  /** The email address that recipients of Cognito notification emails can reply to, configured in the email configuration of the user pool. (AI-inferred) */
   replyToEmailAddress?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of a verified email address in Amazon SES that Cognito uses as the sender for user pool emails. (AI-inferred) */
   sourceArn?: string | Computed<string>;
 }
 
 export interface UserPool_IssuerConfiguration {
-  /** The type field in issuer_configuration selects whether the user pool issues tokens with a custom issuer URL (provided via the associated issuer field) or uses the default Cognito issuer, thereby controlling the issuer claim. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface UserPool_KeyConfiguration {
-  /** Defines the cryptographic key type (RSA or ECC) used for signing the user pool's JSON Web Tokens (JWTs). (AI-inferred) */
   keyType?: string | Computed<string>;
-  /** The ARN of an AWS KMS customer-managed key that Amazon Cognito uses to encrypt user pool data at rest instead of the default AWS-owned encryption key. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
 }
 
 export interface UserPool_LambdaConfig_CustomEmailSender {
-  /** The Amazon Resource Name (ARN) of the Lambda function that Cognito invokes to send custom email messages for the user pool. (AI-inferred) */
   lambdaArn?: string | Computed<string>;
-  /** The version of the AWS Lambda function to invoke for custom email sending, which must be set to 'V1_0'. (AI-inferred) */
   lambdaVersion?: string | Computed<string>;
 }
 
 export interface UserPool_LambdaConfig {
-  /** The ARN of the Lambda function invoked when Cognito needs to create a custom authentication challenge as part of the user pool's custom authentication flow. (AI-inferred) */
   createAuthChallenge?: string | Computed<string>;
-  /** Configuration for a custom email sender Lambda trigger, specifying the ARN and version of the Lambda function that handles sending email notifications for the user pool. (AI-inferred) */
   customEmailSender?: UserPool_LambdaConfig_CustomEmailSender | Computed<UserPool_LambdaConfig_CustomEmailSender>;
-  /** ARN of the Lambda function Amazon Cognito invokes to customize email and SMS messages for user verification, invitation, and account confirmation. (AI-inferred) */
   customMessage?: string | Computed<string>;
-  /** The configuration for a custom SMS sender Lambda trigger, specifying the Lambda function ARN and version used to send SMS messages for user verification and account recovery. (AI-inferred) */
   customSmssender?: UserPool_LambdaConfig_CustomEmailSender | Computed<UserPool_LambdaConfig_CustomEmailSender>;
-  /** The ARN of the Lambda function invoked for the Define Auth Challenge trigger, which determines whether a custom authentication challenge is required and defines the challenge presented to the user. (AI-inferred) */
   defineAuthChallenge?: string | Computed<string>;
   inboundFederation?: UserPool_LambdaConfig_CustomEmailSender | Computed<UserPool_LambdaConfig_CustomEmailSender>;
-  /** The KMS key ID to use for encrypting the Lambda environment variables of the user pool's Lambda trigger functions. (AI-inferred) */
   kmskeyId?: string | Computed<string>;
-  /** The ARN of a Lambda function that Amazon Cognito invokes after a user is authenticated, enabling custom post-authentication logic such as logging or modifying the authentication response. (AI-inferred) */
   postAuthentication?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito triggers after a user confirms their account, enabling custom post-confirmation workflows. (AI-inferred) */
   postConfirmation?: string | Computed<string>;
-  /** The ARN of the Lambda function invoked by the pre-authentication trigger for the user pool. (AI-inferred) */
   preAuthentication?: string | Computed<string>;
-  /** The ARN of an AWS Lambda function that Amazon Cognito invokes as a pre sign-up trigger, allowing you to customize or validate the sign-up flow before the user is created. (AI-inferred) */
   preSignUp?: string | Computed<string>;
-  /** The ARN of an AWS Lambda function that Amazon Cognito invokes before generating identity and access tokens, allowing you to customize token claims. (AI-inferred) */
   preTokenGeneration?: string | Computed<string>;
-  /** Specifies the ARN and version of the Lambda function to invoke on the pre token generation trigger, enabling customization of access token and ID token claims. (AI-inferred) */
   preTokenGenerationConfig?: UserPool_LambdaConfig_CustomEmailSender | Computed<UserPool_LambdaConfig_CustomEmailSender>;
-  /** The ARN of an AWS Lambda function that Amazon Cognito invokes to migrate a user from an external user directory into the user pool when the user attempts to sign in for the first time. (AI-inferred) */
   userMigration?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of a Lambda function that AWS Cognito invokes to verify a user's response to a custom auth challenge, enabling custom verification logic during authentication. (AI-inferred) */
   verifyAuthChallengeResponse?: string | Computed<string>;
 }
 
 export interface UserPool_Policies_PasswordPolicy {
-  /** Specifies the minimum number of characters a user password must contain in the Cognito user pool, enforcing a length requirement with a default of 8 characters. (AI-inferred) */
   minimumLength?: number | Computed<number>;
-  /** Specifies the number of previous passwords that Amazon Cognito remembers for each user, preventing the reuse of those passwords when a user changes their password. (AI-inferred) */
   passwordHistorySize?: number | Computed<number>;
-  /** Specifies whether user passwords must contain at least one lowercase letter, with true enforcing the requirement and false making it optional. (AI-inferred) */
   requireLowercase?: boolean | Computed<boolean>;
-  /** A Boolean that specifies whether passwords in the user pool must include at least one numeric character (0-9) when users set or change their password. (AI-inferred) */
   requireNumbers?: boolean | Computed<boolean>;
-  /** Specifies whether passwords in the user pool must contain at least one symbol (non-alphanumeric character). (AI-inferred) */
   requireSymbols?: boolean | Computed<boolean>;
-  /** Specifies whether passwords in the user pool must contain at least one uppercase letter (A-Z). (AI-inferred) */
   requireUppercase?: boolean | Computed<boolean>;
-  /** The number of days a temporary password generated for a user (e.g., by an admin or during a password reset) remains valid before the user must change it. (AI-inferred) */
   temporaryPasswordValidityDays?: number | Computed<number>;
 }
 
 export interface UserPool_Policies_SignInPolicy {
-  /** Specifies the list of authentication factors (such as PASSWORD, EMAIL_OTP, SMS_OTP, or WEB_AUTHN) that are allowed as the first step in the sign-in flow for the user pool. (AI-inferred) */
   allowedFirstAuthFactors?: string[] | Computed<string[]>;
 }
 
 export interface UserPool_Policies {
-  /** Specifies the password policy for the user pool, including rules for minimum length, required character types (uppercase, lowercase, numbers, symbols), and temporary password validity, which must be satisfied by users when they set or change their passwords. (AI-inferred) */
   passwordPolicy?: UserPool_Policies_PasswordPolicy | Computed<UserPool_Policies_PasswordPolicy>;
-  /** Defines the sign-in policy for the Cognito user pool, which dictates the allowed sign-in methods (such as username, email, or phone number) and whether sign-in aliases are enabled. (AI-inferred) */
   signInPolicy?: UserPool_Policies_SignInPolicy | Computed<UserPool_Policies_SignInPolicy>;
 }
 
 export interface UserPool_Schema_NumberAttributeConstraints {
-  /** Sets the inclusive maximum numeric value allowed for a custom Number-type schema attribute in the user pool, so that submitted values above this limit are rejected. (AI-inferred) */
   maxValue?: string | Computed<string>;
-  /** Defines the lower bound for the numeric value of a number-type custom attribute in the user pool's schema. (AI-inferred) */
   minValue?: string | Computed<string>;
 }
 
 export interface UserPool_Schema_StringAttributeConstraints {
-  /** Maximum number of characters allowed in a string attribute value, used to define the upper bound for string schema attributes in the user pool. (AI-inferred) */
   maxLength?: string | Computed<string>;
-  /** The minimum number of characters that a string attribute value must contain, enforced for the Cognito user pool schema attribute. (AI-inferred) */
   minLength?: string | Computed<string>;
 }
 
 export interface UserPool_Schema {
-  /** Specifies the data type of the user pool schema attribute, which must be one of String, Number, DateTime, or Boolean and determines how the attribute's value is stored and validated. (AI-inferred) */
   attributeDataType?: string | Computed<string>;
-  /** Indicates whether the schema attribute is a developer-only custom attribute that cannot be modified by end users and is only settable through the Cognito admin/developer APIs. (AI-inferred) */
   developerOnlyAttribute?: boolean | Computed<boolean>;
-  /** This boolean property specifies whether the user pool schema attribute can be changed after the user profile is created. (AI-inferred) */
   mutable?: boolean | Computed<boolean>;
-  /** Specifies the name of the user pool schema attribute, such as a built-in or custom attribute like 'email' or 'my_custom_attr'. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the minimum and maximum numeric values allowed for a schema attribute of type Number in the user pool schema. (AI-inferred) */
   numberAttributeConstraints?: UserPool_Schema_NumberAttributeConstraints | Computed<UserPool_Schema_NumberAttributeConstraints>;
-  /** Specifies whether this user pool schema attribute is required for users signing up. (AI-inferred) */
   required?: boolean | Computed<boolean>;
-  /** Configures the minimum and maximum character length limits for a string attribute in the user pool's schema definition. (AI-inferred) */
   stringAttributeConstraints?: UserPool_Schema_StringAttributeConstraints | Computed<UserPool_Schema_StringAttributeConstraints>;
 }
 
 export interface UserPool_SmsConfiguration_EumsSms {
   callerArn: string | Computed<string>;
   configurationSetName?: string | Computed<string>;
-  /** The external ID that AWS Cognito includes when it assumes the IAM role for sending SMS messages, preventing confused-deputy attacks and must match the external ID on the role's trust policy. (AI-inferred) */
   externalId?: string | Computed<string>;
   inEntityId?: string | Computed<string>;
   inTemplateId?: string | Computed<string>;
@@ -175,48 +118,34 @@ export interface UserPool_SmsConfiguration_EumsSms {
 
 export interface UserPool_SmsConfiguration {
   eumsSms?: UserPool_SmsConfiguration_EumsSms | Computed<UserPool_SmsConfiguration_EumsSms>;
-  /** An arbitrary string that must match the `sts:ExternalId` condition in the IAM role's trust policy that Cognito assumes to send SMS messages via Amazon SNS, providing a security control against the confused deputy problem. (AI-inferred) */
   externalId?: string | Computed<string>;
-  /** The ARN of the IAM role that Amazon Cognito assumes to send SMS messages via Amazon SNS for the user pool. (AI-inferred) */
   snsCallerArn?: string | Computed<string>;
-  /** Specifies the AWS Region in which Amazon SNS is used for sending SMS messages from the user pool. (AI-inferred) */
   snsRegion?: string | Computed<string>;
 }
 
 export interface UserPool_UserAttributeUpdateSettings {
-  /** Specifies which user attributes (such as email or phone_number) require verification before a user can update them in the Cognito user pool, and if any attribute is listed, that attribute's change is blocked until the new value is verified via a verification code or token. (AI-inferred) */
   attributesRequireVerificationBeforeUpdate: string[] | Computed<string[]>;
 }
 
 export interface UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlows {
-  /** Determines the AWS Cognito Advanced Security mode (AUDIT or ENFORCED) for custom authentication flows, overriding the pool-level advanced security mode. (AI-inferred) */
   customAuthMode?: string | Computed<string>;
 }
 
 export interface UserPool_UserPoolAddOns {
-  /** Specifies additional authentication flows, such as custom auth, to be included in the advanced security threat protection settings for the user pool. (AI-inferred) */
   advancedSecurityAdditionalFlows?: UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlows | Computed<UserPool_UserPoolAddOns_AdvancedSecurityAdditionalFlows>;
-  /** Specifies the advanced security mode for the user pool, which can be OFF, AUDIT, or ENFORCED, enabling features like compromised credential detection and account takeover protection. (AI-inferred) */
   advancedSecurityMode?: string | Computed<string>;
 }
 
 export interface UserPool_UsernameConfiguration {
-  /** Determines whether usernames in the user pool are case-sensitive, meaning 'User' and 'user' would be considered distinct when true, and the same when false. (AI-inferred) */
   caseSensitive?: boolean | Computed<boolean>;
 }
 
 export interface UserPool_VerificationMessageTemplate {
-  /** Specifies whether the default email verification message uses a confirmation link or a confirmation code, with valid values CONFIRM_WITH_LINK or CONFIRM_WITH_CODE. (AI-inferred) */
   defaultEmailOption?: string | Computed<string>;
-  /** Specifies the body of the email message sent to users for verification purposes (such as account or email/phone verification), which can include the verification code placeholder {####}. (AI-inferred) */
   emailMessage?: string | Computed<string>;
-  /** The custom email message body, including a placeholder for the verification link, that Amazon Cognito sends to users when email verification uses a link instead of a code. (AI-inferred) */
   emailMessageByLink?: string | Computed<string>;
-  /** The subject line used in the email verification message sent to users when their email address is being verified. (AI-inferred) */
   emailSubject?: string | Computed<string>;
-  /** The subject line for the verification email sent to users when they verify their email address or phone number using a link (as opposed to a verification code). (AI-inferred) */
   emailSubjectByLink?: string | Computed<string>;
-  /** The SMS message content sent to users for verification, which can include the {####} placeholder that is replaced with the actual verification code. (AI-inferred) */
   smsMessage?: string | Computed<string>;
 }
 
@@ -417,144 +346,76 @@ const UserPool_VerificationMessageTemplateFields: FieldMap = {
 };
 
 export interface UserPoolConfig {
-  /** Configures the account recovery methods (such as email verification, SMS, or admin-only) that users can use to regain access to their accounts in the Cognito user pool. (AI-inferred) */
   accountRecoverySetting?: UserPool_AccountRecoverySetting | Computed<UserPool_AccountRecoverySetting>;
-  /** Configuration for the admin create user flow, controlling whether only administrators can create users and customizing the invitation message sent to new users. (AI-inferred) */
   adminCreateUserConfig?: UserPool_AdminCreateUserConfig | Computed<UserPool_AdminCreateUserConfig>;
-  /** Specifies the list of user attributes (such as email, phone_number, or preferred_username) that can be used as alternate sign-in aliases for the user pool. (AI-inferred) */
   aliasAttributes?: string[] | Computed<string[]>;
-  /** Specifies the list of user attributes (such as email or phone_number) that Cognito automatically attempts to verify during user sign-up, marking them as verified when the verification process succeeds. (AI-inferred) */
   autoVerifiedAttributes?: string[] | Computed<string[]>;
-  /** Indicates whether deletion protection is enabled for the user pool, with allowed values of ACTIVE or INACTIVE to prevent accidental deletion. (AI-inferred) */
   deletionProtection?: string | Computed<string>;
-  /** Specifies device configuration settings for the user pool, determining whether a new device must pass a challenge and whether devices are remembered only when the user explicitly chooses to keep them signed in. (AI-inferred) */
   deviceConfiguration?: UserPool_DeviceConfiguration | Computed<UserPool_DeviceConfiguration>;
-  /** Specifies the email message body that Amazon Cognito sends to users when they need to authenticate using a one-time passcode (OTP) delivered to their email address, supporting the {####} placeholder for the actual code. (AI-inferred) */
   emailAuthenticationMessage?: string | Computed<string>;
-  /** Specifies the subject line of the email message that Amazon Cognito sends when users use email as an authentication factor (email MFA). (AI-inferred) */
   emailAuthenticationSubject?: string | Computed<string>;
-  /** Configures the email delivery settings for the user pool, specifying the source ARN, reply-to address, and delivery method used for messages such as verification codes and account notifications. (AI-inferred) */
   emailConfiguration?: UserPool_EmailConfiguration | Computed<UserPool_EmailConfiguration>;
-  /** The custom email message that AWS Cognito sends to users to verify their email address, where you can include the verification code placeholder {####}. (AI-inferred) */
   emailVerificationMessage?: string | Computed<string>;
-  /** The subject line of the email that is sent to users when they need to verify their email address. (AI-inferred) */
   emailVerificationSubject?: string | Computed<string>;
-  /** A list of the multi-factor authentication (MFA) methods enabled for the Cognito user pool, where each item is either 'SMS_MFA' or 'SOFTWARE_TOKEN_MFA'. (AI-inferred) */
   enabledMfas?: string[] | Computed<string[]>;
-  /** Specifies the issuer configuration for the user pool, which defines the custom issuer ID and issuer URL that Cognito uses for tokens. (AI-inferred) */
   issuerConfiguration?: UserPool_IssuerConfiguration | Computed<UserPool_IssuerConfiguration>;
-  /** Defines the AWS KMS key configurations used for encrypting custom email and SMS sender messages in the Cognito user pool, specifying the KMS key ID and provider for each custom sender. (AI-inferred) */
   keyConfiguration?: UserPool_KeyConfiguration | Computed<UserPool_KeyConfiguration>;
-  /** Configures AWS Lambda triggers for user pool workflows, allowing you to specify Lambda function ARNs for events such as pre-signup, post-confirmation, and custom message, among others. (AI-inferred) */
   lambdaConfig?: UserPool_LambdaConfig | Computed<UserPool_LambdaConfig>;
-  /** Specifies whether multi-factor authentication (MFA) is enabled for the user pool, with valid values 'OFF', 'ON', or 'OPTIONAL'. (AI-inferred) */
   mfaConfiguration?: string | Computed<string>;
-  /** Configures the password policy for the user pool, specifying rules for password length, required character types, and temporary password validity duration. (AI-inferred) */
   policies?: UserPool_Policies | Computed<UserPool_Policies>;
-  /** Specifies the list of schema attributes (standard and custom) for the user pool, including each attribute's data type, whether it is required or mutable, and any validation constraints. (AI-inferred) */
   schema?: UserPool_Schema[] | Computed<UserPool_Schema[]>;
-  /** The customizable SMS message text that Amazon Cognito sends to users for authentication (such as MFA code delivery), which must include the {####} placeholder for the verification code. (AI-inferred) */
   smsAuthenticationMessage?: string | Computed<string>;
-  /** Configures the Amazon SNS settings used by the user pool to send SMS messages for user verification and authentication, including the SNS caller ARN and external ID required for Cognito to publish SMS messages. (AI-inferred) */
   smsConfiguration?: UserPool_SmsConfiguration | Computed<UserPool_SmsConfiguration>;
-  /** The SMS message template sent to users when they verify their phone number, which can include the verification code placeholder {####}. (AI-inferred) */
   smsVerificationMessage?: string | Computed<string>;
-  /** Defines the user pool's attribute update settings, specifically the list of user attributes that require verification before a user can update them. (AI-inferred) */
   userAttributeUpdateSettings?: UserPool_UserAttributeUpdateSettings | Computed<UserPool_UserAttributeUpdateSettings>;
-  /** Configures the advanced security features for the user pool, specifically the advanced security mode (e.g., ENFORCED, AUDIT, or OFF) for threat protection. (AI-inferred) */
   userPoolAddOns?: UserPool_UserPoolAddOns | Computed<UserPool_UserPoolAddOns>;
-  /** Specifies a unique name for the user pool within the AWS region, which may contain letters, numbers, and underscores. (AI-inferred) */
   userPoolName?: string | Computed<string>;
-  /** The user_pool_tags field specifies a map of key-value tags to attach to the Cognito user pool for metadata, cost allocation, and resource management. (AI-inferred) */
   userPoolTags?: unknown | Computed<unknown>;
-  /** Specifies the feature tier of the Cognito user pool (Lite, Standard, or Enterprise), which determines the available features and pricing for the pool. (AI-inferred) */
   userPoolTier?: string | Computed<string>;
-  /** Defines the list of user attributes (such as email or phone number) that can be used as the username for signing in to the user pool. (AI-inferred) */
   usernameAttributes?: string[] | Computed<string[]>;
-  /** A configuration object that controls whether usernames are case-sensitive (via the CaseSensitive property) for the user pool. (AI-inferred) */
   usernameConfiguration?: UserPool_UsernameConfiguration | Computed<UserPool_UsernameConfiguration>;
-  /** Configures the templates for verification messages (email/SMS) sent to users, such as account verification or password reset, including subject, body, and the default email delivery method. (AI-inferred) */
   verificationMessageTemplate?: UserPool_VerificationMessageTemplate | Computed<UserPool_VerificationMessageTemplate>;
-  /** Configures WebAuthn as a second factor for the user pool, specifying the relying party ID, relying party name, user verification preference, and timeout for passwordless sign-in with security keys. (AI-inferred) */
   webAuthnFactorConfiguration?: string | Computed<string>;
-  /** The Relying Party ID for WebAuthn passkey authentication, which specifies the domain (e.g., 'example.com') that the user pool associates with registered passkeys. (AI-inferred) */
   webAuthnRelyingPartyId?: string | Computed<string>;
-  /** Specifies the user verification requirement for WebAuthn passkeys in the user pool, determining whether a user must complete an additional verification step (such as biometric or PIN) when using a passkey, with allowed values 'required', 'preferred', or 'discouraged'. (AI-inferred) */
   webAuthnUserVerification?: string | Computed<string>;
 }
 
 export interface UserPoolAttrs {
-  /** Configures the account recovery methods (such as email verification, SMS, or admin-only) that users can use to regain access to their accounts in the Cognito user pool. (AI-inferred) */
   accountRecoverySetting: UserPool_AccountRecoverySetting;
-  /** Configuration for the admin create user flow, controlling whether only administrators can create users and customizing the invitation message sent to new users. (AI-inferred) */
   adminCreateUserConfig: UserPool_AdminCreateUserConfig;
-  /** Specifies the list of user attributes (such as email, phone_number, or preferred_username) that can be used as alternate sign-in aliases for the user pool. (AI-inferred) */
   aliasAttributes: string[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Cognito user pool, typically in the form arn:aws:cognito-idp:region:account-id:userpool/user-pool-id. (AI-inferred) */
   arn: string;
-  /** Specifies the list of user attributes (such as email or phone_number) that Cognito automatically attempts to verify during user sign-up, marking them as verified when the verification process succeeds. (AI-inferred) */
   autoVerifiedAttributes: string[];
-  /** Indicates whether deletion protection is enabled for the user pool, with allowed values of ACTIVE or INACTIVE to prevent accidental deletion. (AI-inferred) */
   deletionProtection: string;
-  /** Specifies device configuration settings for the user pool, determining whether a new device must pass a challenge and whether devices are remembered only when the user explicitly chooses to keep them signed in. (AI-inferred) */
   deviceConfiguration: UserPool_DeviceConfiguration;
-  /** Specifies the email message body that Amazon Cognito sends to users when they need to authenticate using a one-time passcode (OTP) delivered to their email address, supporting the {####} placeholder for the actual code. (AI-inferred) */
   emailAuthenticationMessage: string;
-  /** Specifies the subject line of the email message that Amazon Cognito sends when users use email as an authentication factor (email MFA). (AI-inferred) */
   emailAuthenticationSubject: string;
-  /** Configures the email delivery settings for the user pool, specifying the source ARN, reply-to address, and delivery method used for messages such as verification codes and account notifications. (AI-inferred) */
   emailConfiguration: UserPool_EmailConfiguration;
-  /** The custom email message that AWS Cognito sends to users to verify their email address, where you can include the verification code placeholder {####}. (AI-inferred) */
   emailVerificationMessage: string;
-  /** The subject line of the email that is sent to users when they need to verify their email address. (AI-inferred) */
   emailVerificationSubject: string;
-  /** A list of the multi-factor authentication (MFA) methods enabled for the Cognito user pool, where each item is either 'SMS_MFA' or 'SOFTWARE_TOKEN_MFA'. (AI-inferred) */
   enabledMfas: string[];
-  /** Specifies the issuer configuration for the user pool, which defines the custom issuer ID and issuer URL that Cognito uses for tokens. (AI-inferred) */
   issuerConfiguration: UserPool_IssuerConfiguration;
-  /** Defines the AWS KMS key configurations used for encrypting custom email and SMS sender messages in the Cognito user pool, specifying the KMS key ID and provider for each custom sender. (AI-inferred) */
   keyConfiguration: UserPool_KeyConfiguration;
-  /** Configures AWS Lambda triggers for user pool workflows, allowing you to specify Lambda function ARNs for events such as pre-signup, post-confirmation, and custom message, among others. (AI-inferred) */
   lambdaConfig: UserPool_LambdaConfig;
-  /** Specifies whether multi-factor authentication (MFA) is enabled for the user pool, with valid values 'OFF', 'ON', or 'OPTIONAL'. (AI-inferred) */
   mfaConfiguration: string;
-  /** Configures the password policy for the user pool, specifying rules for password length, required character types, and temporary password validity duration. (AI-inferred) */
   policies: UserPool_Policies;
-  /** ProviderName is a read-only attribute that returns the name of the Amazon Cognito user pool, which identifies the user pool as the provider. (AI-inferred) */
   providerName: string;
-  /** The AWS-created URL for the user pool, typically formatted as https://cognito-idp.<region>.amazonaws.com/<pool_id>, which clients use to make authentication requests to this user pool. (AI-inferred) */
   providerUrl: string;
-  /** Specifies the list of schema attributes (standard and custom) for the user pool, including each attribute's data type, whether it is required or mutable, and any validation constraints. (AI-inferred) */
   schema: UserPool_Schema[];
-  /** The customizable SMS message text that Amazon Cognito sends to users for authentication (such as MFA code delivery), which must include the {####} placeholder for the verification code. (AI-inferred) */
   smsAuthenticationMessage: string;
-  /** Configures the Amazon SNS settings used by the user pool to send SMS messages for user verification and authentication, including the SNS caller ARN and external ID required for Cognito to publish SMS messages. (AI-inferred) */
   smsConfiguration: UserPool_SmsConfiguration;
-  /** The SMS message template sent to users when they verify their phone number, which can include the verification code placeholder {####}. (AI-inferred) */
   smsVerificationMessage: string;
-  /** Defines the user pool's attribute update settings, specifically the list of user attributes that require verification before a user can update them. (AI-inferred) */
   userAttributeUpdateSettings: UserPool_UserAttributeUpdateSettings;
-  /** Configures the advanced security features for the user pool, specifically the advanced security mode (e.g., ENFORCED, AUDIT, or OFF) for threat protection. (AI-inferred) */
   userPoolAddOns: UserPool_UserPoolAddOns;
-  /** The unique identifier assigned by AWS to the user pool. (AI-inferred) */
   userPoolId: string;
-  /** Specifies a unique name for the user pool within the AWS region, which may contain letters, numbers, and underscores. (AI-inferred) */
   userPoolName: string;
-  /** The user_pool_tags field specifies a map of key-value tags to attach to the Cognito user pool for metadata, cost allocation, and resource management. (AI-inferred) */
   userPoolTags: unknown;
-  /** Specifies the feature tier of the Cognito user pool (Lite, Standard, or Enterprise), which determines the available features and pricing for the pool. (AI-inferred) */
   userPoolTier: string;
-  /** Defines the list of user attributes (such as email or phone number) that can be used as the username for signing in to the user pool. (AI-inferred) */
   usernameAttributes: string[];
-  /** A configuration object that controls whether usernames are case-sensitive (via the CaseSensitive property) for the user pool. (AI-inferred) */
   usernameConfiguration: UserPool_UsernameConfiguration;
-  /** Configures the templates for verification messages (email/SMS) sent to users, such as account verification or password reset, including subject, body, and the default email delivery method. (AI-inferred) */
   verificationMessageTemplate: UserPool_VerificationMessageTemplate;
-  /** Configures WebAuthn as a second factor for the user pool, specifying the relying party ID, relying party name, user verification preference, and timeout for passwordless sign-in with security keys. (AI-inferred) */
   webAuthnFactorConfiguration: string;
-  /** The Relying Party ID for WebAuthn passkey authentication, which specifies the domain (e.g., 'example.com') that the user pool associates with registered passkeys. (AI-inferred) */
   webAuthnRelyingPartyId: string;
-  /** Specifies the user verification requirement for WebAuthn passkeys in the user pool, determining whether a user must complete an additional verification step (such as biometric or PIN) when using a passkey, with allowed values 'required', 'preferred', or 'discouraged'. (AI-inferred) */
   webAuthnUserVerification: string;
 }
 

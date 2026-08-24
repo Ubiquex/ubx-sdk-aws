@@ -9,9 +9,7 @@ export interface QuerySuggestionsBlockList_SourceS3Path {
 }
 
 export interface QuerySuggestionsBlockList_Tags {
-  /** The tag key for a tag assigned to the query suggestions block list, used to organize, categorize, and identify the resource within your AWS environment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** tags.value represents the value component of a user-defined tag attached to the Amazon Kendra query suggestions block list, enabling you to assign metadata such as environment, project, or cost center for resource organization and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

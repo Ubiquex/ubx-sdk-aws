@@ -2,23 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TwirelessPartnerAccount_Sidewalk {
-  /** The sidewalk block's app_server_private_key specifies the Sidewalk application server private key that AWS IoT Wireless uses to encrypt and authenticate messages exchanged with your backend application server for the partner account. (AI-inferred) */
   appServerPrivateKey: string | Computed<string>;
 }
 
 export interface TwirelessPartnerAccount_SidewalkResponse {
-  /** The Amazon ID assigned by AWS to the Sidewalk partner account, returned in the sidewalk response. (AI-inferred) */
   amazonId?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Sidewalk partner account, which uniquely identifies the partner account within AWS. (AI-inferred) */
   arn?: string | Computed<string>;
-  /** The fingerprint returned by AWS IoT Wireless in the Sidewalk response after creating a partner account, which you provide to Sidewalk to validate and link the device. (AI-inferred) */
   fingerprint?: string | Computed<string>;
 }
 
 export interface TwirelessPartnerAccount_Tags {
-  /** The key (name) of a tag assigned to the IoT Wireless Partner Account, used to organize and identify the tag for cost allocation and resource management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the AWS IoT Wireless Partner Account, allowing you to manage and categorize the resource with custom metadata. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -44,11 +38,8 @@ export interface TwirelessPartnerAccountConfig {
   partnerAccountId?: string | Computed<string>;
   /** The partner type */
   partnerType?: string | Computed<string>;
-  /** This optional object configures the Sidewalk partner account credentials, including the application server private key used for authenticating with the Sidewalk network. (AI-inferred) */
   sidewalk?: TwirelessPartnerAccount_Sidewalk | Computed<TwirelessPartnerAccount_Sidewalk>;
-  /** The Sidewalk account response information returned by AWS IoT Wireless, including the assigned Amazon client ID and the cryptographic fingerprint used to authenticate the partner account. (AI-inferred) */
   sidewalkResponse?: TwirelessPartnerAccount_SidewalkResponse | Computed<TwirelessPartnerAccount_SidewalkResponse>;
-  /** The sidewalk_update property specifies updated Sidewalk credentials, including the application server private key and device certificates, to associate with the partner account. (AI-inferred) */
   sidewalkUpdate?: TwirelessPartnerAccount_Sidewalk | Computed<TwirelessPartnerAccount_Sidewalk>;
   /** A list of key-value pairs that contain metadata for the destination. */
   tags?: TwirelessPartnerAccount_Tags[] | Computed<TwirelessPartnerAccount_Tags[]>;
@@ -65,11 +56,8 @@ export interface TwirelessPartnerAccountAttrs {
   partnerAccountId: string;
   /** The partner type */
   partnerType: string;
-  /** This optional object configures the Sidewalk partner account credentials, including the application server private key used for authenticating with the Sidewalk network. (AI-inferred) */
   sidewalk: TwirelessPartnerAccount_Sidewalk;
-  /** The Sidewalk account response information returned by AWS IoT Wireless, including the assigned Amazon client ID and the cryptographic fingerprint used to authenticate the partner account. (AI-inferred) */
   sidewalkResponse: TwirelessPartnerAccount_SidewalkResponse;
-  /** The sidewalk_update property specifies updated Sidewalk credentials, including the application server private key and device certificates, to associate with the partner account. (AI-inferred) */
   sidewalkUpdate: TwirelessPartnerAccount_Sidewalk;
   /** A list of key-value pairs that contain metadata for the destination. */
   tags: TwirelessPartnerAccount_Tags[];

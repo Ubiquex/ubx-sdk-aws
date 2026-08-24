@@ -4,7 +4,6 @@ package smsvoice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pool_MandatoryKeywords_Help struct {
-	// The help message displayed to users who send a HELP message for this mandatory keyword. (AI-inferred)
 	Message any
 }
 
@@ -17,14 +16,11 @@ type Pool_MandatoryKeywords struct {
 
 type Pool_OptionalKeywords struct {
 	Action any
-	// For each optional keyword configured on the SMS voice pool, this is the actual word or phrase (e.g., 'HELP' or a custom term) that a user can text to a pool phone number to trigger a predefined response. (AI-inferred)
 	Keyword any
-	// The message text that is sent to the sender when they send an SMS containing the associated optional keyword to a phone number in this pool. (AI-inferred)
 	Message any
 }
 
 type Pool_Tags struct {
-	// The key of a tag assigned to an SMS voice pool, which defines the tag's name within the pool's AWS resource tags for organizational and cost-allocation purposes. (AI-inferred)
 	Key any
 	Value any
 }
@@ -94,7 +90,6 @@ type PoolConfig struct {
 }
 
 type PoolAttrs struct {
-	// The Amazon Resource Name (ARN) assigned to the SMS voice pool when it is created, which uniquely identifies the pool and is used to reference it in IAM policies and other AWS services. (AI-inferred)
 	Arn any
 	// When set to true the pool can't be deleted. By default this is set to false.
 	DeletionProtectionEnabled any
@@ -106,7 +101,6 @@ type PoolAttrs struct {
 	OptionalKeywords any
 	// The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn and it's IsoCountryCode.
 	OriginationIdentities any
-	// The unique identifier assigned by AWS to the created pool. (AI-inferred)
 	PoolId any
 	// By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and Voice automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.
 	SelfManagedOptOutsEnabled any

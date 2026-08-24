@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IdentitySource_IdentitySourceParameters_IamIdentityCenter:
-    # The URL of the approval portal associated with the IAM Identity Center identity source, where users can review and approve or deny access requests. (AI-inferred)
     approval_portal_url: Any = None
-    # The Amazon Resource Name (ARN) of the AWS IAM Identity Center (successor to AWS Single Sign-On) instance that this identity source is associated with. (AI-inferred)
     instance_arn: Any = None
-    # The AWS region where the IAM Identity Center (successor to AWS SSO) instance used as the identity source is deployed. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass

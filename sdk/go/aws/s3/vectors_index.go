@@ -16,7 +16,6 @@ type VectorsIndex_MetadataConfiguration struct {
 }
 
 type VectorsIndex_Tags struct {
-	// Defines the user-supplied key of a tag attached to the S3 Vectors Index resource, which is used to organize and identify the index through metadata and cost-allocation tags. (AI-inferred)
 	Key any
 	Value any
 }

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MicrovmImage_CodeArtifact {
-  /** The Amazon S3 URI of the code artifact that contains the MicroVM image to be registered as a Lambda MicroVM image. (AI-inferred) */
   uri: string | Computed<string>;
 }
 
@@ -16,7 +15,6 @@ export interface MicrovmImage_EnvironmentVariables {
 }
 
 export interface MicrovmImage_Hooks_MicrovmHooks {
-  /** Specifies the command to execute when the microVM resumes from a paused state, enabling custom lifecycle actions. (AI-inferred) */
   resume?: string | Computed<string>;
   resumeTimeoutInSeconds?: number | Computed<number>;
   run?: string | Computed<string>;

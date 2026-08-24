@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TsiteWiseDashboard_Tags:
-    # The tag key that identifies a tag applied to the AWS IoT SiteWise dashboard, used for metadata and resource categorization. (AI-inferred)
     key: Any = None
-    # The value portion of a tag (a key-value pair) attached to the AWS IoT SiteWise dashboard, allowing you to categorize and manage the dashboard resource. (AI-inferred)
     value: Any = None
 
 _TsiteWiseDashboard_TagsFields = {

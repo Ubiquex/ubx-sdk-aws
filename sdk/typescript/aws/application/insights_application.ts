@@ -2,180 +2,120 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics {
-  /** Specifies the name of the Amazon CloudWatch metric to be monitored for generating alarms in the custom component configuration of Application Insights. (AI-inferred) */
   alarmMetricName?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Alarms {
-  /** The name of the CloudWatch alarm that Application Insights monitors for the custom component's configuration details. (AI-inferred) */
   alarmName?: string | Computed<string>;
-  /** Specifies the severity level (e.g., HIGH, MEDIUM, or LOW) assigned to a CloudWatch alarm in the custom component configuration, which determines the alarm's criticality in Application Insights monitoring. (AI-inferred) */
   severity?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporter {
-  /** Specifies the port number that the HA Cluster Prometheus Exporter listens on to expose Prometheus metrics for the custom component's monitoring configuration. (AI-inferred) */
   prometheusPort?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporter {
-  /** Whether to agree to install the SAP HANA database client on the monitored server for the HANA Prometheus exporter configuration. (AI-inferred) */
   agreeToInstallHanadbclient?: boolean | Computed<boolean>;
-  /** The port number (specified as a string) that the SAP HANA Prometheus exporter listens on, used by Application Insights to collect HANA performance metrics from that endpoint. (AI-inferred) */
   hanaport?: string | Computed<string>;
-  /** The name of the AWS Secrets Manager secret that stores the HANA database credentials used by the HANA Prometheus exporter for authentication. (AI-inferred) */
   hanasecretName?: string | Computed<string>;
-  /** The SAP HANA system ID (SID) of the HANA database that the HANA Prometheus exporter monitors, used to identify the HANA instance when collecting metrics for the custom component. (AI-inferred) */
   hanasid?: string | Computed<string>;
-  /** Specifies the network port on which the HANA Prometheus exporter exposes metrics for collection by Application Insights. (AI-inferred) */
   prometheusPort?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporter {
-  /** Specifies the host and port of the JMX endpoint that the Prometheus exporter scrapes to collect metrics. (AI-inferred) */
   hostPort?: string | Computed<string>;
-  /** For a custom component using JMXPrometheusExporter, this URL defines the JMX endpoint the exporter connects to in order to scrape Java application metrics. (AI-inferred) */
   jmxurl?: string | Computed<string>;
-  /** The port on which the JMX Prometheus exporter exposes metrics for the custom component. (AI-inferred) */
   prometheusPort?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs {
-  /** Specifies the character encoding (e.g., UTF-8) that Application Insights uses when reading the log file for the custom component. (AI-inferred) */
   encoding?: string | Computed<string>;
-  /** The name of the CloudWatch Logs log group that Application Insights monitors for the custom component's logs. (AI-inferred) */
   logGroupName?: string | Computed<string>;
-  /** Specifies the file system path to the log file or directory that Application Insights monitors for the custom component, such as a Windows or Linux log path. (AI-inferred) */
   logPath?: string | Computed<string>;
-  /** Indicates the type of log (e.g., SQL_SERVER, IIS, APPLICATION, WINDOWS_EVENT) that Application Insights will monitor for the custom component. (AI-inferred) */
   logType?: string | Computed<string>;
-  /** For each log monitored in the custom component, this pattern set contains the regular expression patterns Application Insights uses to match and extract metrics from log events. (AI-inferred) */
   patternSet?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporter {
-  /** Specifies the SAP NetWeaver instance numbers for which the Prometheus exporter should collect and expose metrics within the custom component configuration. (AI-inferred) */
   instanceNumbers?: string[] | Computed<string[]>;
-  /** The TCP port on which the SAP NetWeaver Prometheus exporter listens to expose metrics for Application Insights to scrape. (AI-inferred) */
   prometheusPort?: string | Computed<string>;
-  /** The SAP system ID (SID) of the SAP NetWeaver system to be monitored by the Prometheus exporter, identifying the specific SAP system in the application's custom component configuration. (AI-inferred) */
   sapsid?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes {
-  /** Specifies the alarm metrics for a process, where each entry defines a CloudWatch metric name (AlarmMetricName) that Application Insights monitors for that process in the custom component configuration. (AI-inferred) */
   alarmMetrics?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[]>;
-  /** The name of the process on the monitored resource that Application Insights uses to configure custom component monitoring and alarms. (AI-inferred) */
   processName?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporter {
-  /** The TCP port on which the SQL Server Prometheus exporter listens to expose metrics for collection by Application Insights. (AI-inferred) */
   prometheusPort?: string | Computed<string>;
-  /** The name of the AWS Secrets Manager secret that stores the SQL Server credentials used by the Prometheus exporter to connect to the database. (AI-inferred) */
   sqlsecretName?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents {
-  /** Specifies the Windows Event Log levels (e.g., CRITICAL, ERROR, WARNING, INFORMATION, VERBOSE) for the given Windows event that Application Insights monitors. (AI-inferred) */
   eventLevels?: string[] | Computed<string[]>;
-  /** The name of the Windows Event Log (such as System, Application, or a custom log) that this component monitoring configuration applies to. (AI-inferred) */
   eventName?: string | Computed<string>;
-  /** The name of the Windows Event Log (such as Application, System, or Security) that AWS Application Insights monitors for the specified Windows event in this custom component's configuration. (AI-inferred) */
   logGroupName?: string | Computed<string>;
-  /** Defines the event patterns that are matched against Windows Event logs for the custom component configuration, controlling which events are monitored. (AI-inferred) */
   patternSet?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails {
-  /** Defines the list of CloudWatch alarm metrics to monitor for the custom component, where each object specifies a CloudWatch alarm by name (AlarmMetricName) to include in the component's configuration. (AI-inferred) */
   alarmMetrics?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[]>;
-  /** A list of CloudWatch alarms to be monitored for the custom component, where each alarm specifies an alarm name and an optional severity level. (AI-inferred) */
   alarms?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Alarms[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Alarms[]>;
-  /** Configuration for the HA cluster Prometheus exporter, specifying exporter-specific settings such as the Prometheus port to enable collection of HA cluster metrics for the custom component. (AI-inferred) */
   haclusterPrometheusExporter?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporter | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HaclusterPrometheusExporter>;
-  /** Contains the settings for the SAP HANA Prometheus exporter, such as the exporter type and the port on which Prometheus metrics are exposed for Application Insights monitoring. (AI-inferred) */
   hanaprometheusExporter?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporter | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_HanaprometheusExporter>;
-  /** Defines the JMX Prometheus exporter endpoint (hostname and port) that CloudWatch Application Insights uses to scrape Java application metrics for the custom component. (AI-inferred) */
   jmxprometheusExporter?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporter | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_JmxprometheusExporter>;
-  /** Specifies the log files to monitor for the custom component, including the log type, file path, and optional log encoding settings. (AI-inferred) */
   logs?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs[]>;
-  /** Specifies the configuration for the SAP NetWeaver Prometheus exporter used in a custom component's monitoring, including the instance number and Prometheus exporter port. (AI-inferred) */
   netWeaverPrometheusExporter?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporter | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_NetWeaverPrometheusExporter>;
-  /** Specifies the list of operating system processes on the instance that Application Insights monitors for this custom component, where each process entry includes a process name and optional associated alarm metrics. (AI-inferred) */
   processes?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes[]>;
-  /** This object configures the Prometheus exporter for monitoring a SQL Server component, specifying the Prometheus port and the AWS Secrets Manager secret that contains the SQL Server credentials. (AI-inferred) */
   sqlserverPrometheusExporter?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporter | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_SqlserverPrometheusExporter>;
-  /** Defines the list of Windows Event Log entries to be monitored as part of the custom component configuration for the Application Insights application. (AI-inferred) */
   windowsEvents?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents[]>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetails {
-  /** Specifies the list of CloudWatch alarm metrics to monitor for the sub-component type defined in this sub-component configuration. (AI-inferred) */
   alarmMetrics?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_AlarmMetrics[]>;
-  /** Specifies the list of log configurations to be monitored for the sub-component type configuration, with each entry defining log group, path, and related monitoring details. (AI-inferred) */
   logs?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Logs[]>;
-  /** A list of process configurations (each containing a process name and its associated alarm metrics) that Application Insights monitors for the custom sub-component type. (AI-inferred) */
   processes?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_Processes[]>;
-  /** Configures the list of Windows Event log entries (e.g., Application, Security, System) that Application Insights monitors for this sub-component, specifying each event name, the event levels to collect, and the destination log group. (AI-inferred) */
   windowsEvents?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails_WindowsEvents[]>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations {
-  /** Specifies the detailed monitoring configuration (e.g., alarm metrics, logs, and Windows events) that is applied to the sub-component type defined by the parent sub_component_type_configurations entry. (AI-inferred) */
   subComponentConfigurationDetails?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetails | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations_SubComponentConfigurationDetails>;
-  /** This field specifies the AWS resource type (e.g., AWS::EC2::Instance) of the sub-component within a custom component, determining which resource type the associated sub-component configuration applies to. (AI-inferred) */
   subComponentType?: string | Computed<string>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration {
-  /** Specifies the detailed monitoring configuration for a custom component, including the metrics, logs, and Windows events that AWS Application Insights will collect and analyze for that component. (AI-inferred) */
   configurationDetails?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_ConfigurationDetails>;
-  /** Configures monitoring for each sub-component type (e.g., SQL Server or IIS) within the custom component, specifying the metrics and log sets to collect for that sub-component type. (AI-inferred) */
   subComponentTypeConfigurations?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations[] | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration_SubComponentTypeConfigurations[]>;
 }
 
 export interface InsightsApplication_ComponentMonitoringSettings {
-  /** The Amazon Resource Name (ARN) of the component to which these monitoring settings apply, used as an alternative to component name to identify a specific component. (AI-inferred) */
   componentArn?: string | Computed<string>;
-  /** Specifies whether the component uses default monitoring settings, default settings with overwrites, or fully custom configuration, with allowed values DEFAULT, DEFAULT_WITH_OVERWRITE, or CUSTOM. (AI-inferred) */
   componentConfigurationMode?: string | Computed<string>;
-  /** Specifies the name of the application component to which these monitoring settings apply. (AI-inferred) */
   componentName?: string | Computed<string>;
-  /** In an Application Insights application's component monitoring settings, the custom_component_configuration field defines the exact monitoring configuration (including sub-component type configurations and monitored metrics/logs) for a component when the component configuration mode is set to CUSTOM. (AI-inferred) */
   customComponentConfiguration?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration>;
-  /** Specifies whether to overwrite the default monitoring configuration for a component, including the monitoring mode (DEFAULT or OVERWRITE) and the custom component configuration used when overwriting. (AI-inferred) */
   defaultOverwriteComponentConfiguration?: InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration | Computed<InsightsApplication_ComponentMonitoringSettings_CustomComponentConfiguration>;
-  /** The tier property specifies the application tier (e.g., DOT_NET_CORE, JAVA_JMX, MYSQL) that defines which monitoring settings apply to the component. (AI-inferred) */
   tier?: string | Computed<string>;
 }
 
 export interface InsightsApplication_CustomComponents {
-  /** The user-defined name for the custom component that groups related resources for monitoring in the Application Insights application. (AI-inferred) */
   componentName?: string | Computed<string>;
-  /** Defines the list of AWS resources, specified by ARN or resource identifier, that are grouped together into this custom component for monitoring by Application Insights. (AI-inferred) */
   resourceList?: string[] | Computed<string[]>;
 }
 
 export interface InsightsApplication_LogPatternSets_LogPatterns {
-  /** The regular expression pattern used to match log lines for this custom log pattern in Application Insights. (AI-inferred) */
   pattern?: string | Computed<string>;
-  /** The name to assign to this log pattern within a log pattern set, used to identify the pattern in the configuration. (AI-inferred) */
   patternName?: string | Computed<string>;
-  /** A numeric value that sets the priority order of this log pattern within its log pattern set, where lower ranks are evaluated first. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
 export interface InsightsApplication_LogPatternSets {
-  /** Defines the list of log patterns within a log pattern set, where each pattern specifies a regular expression (Pattern), a name (PatternName), and a rank for evaluation order. (AI-inferred) */
   logPatterns?: InsightsApplication_LogPatternSets_LogPatterns[] | Computed<InsightsApplication_LogPatternSets_LogPatterns[]>;
-  /** The name of a log pattern set in AWS Application Insights, which groups a collection of log patterns to detect specific issues in application logs. (AI-inferred) */
   patternSetName?: string | Computed<string>;
 }
 
 export interface InsightsApplication_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag associated with the Application Insights application, used to categorize and manage the resource within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

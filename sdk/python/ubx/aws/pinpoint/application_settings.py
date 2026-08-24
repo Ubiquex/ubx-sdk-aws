@@ -8,28 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationSettings_CampaignHook:
-    # The name or ARN of the Lambda function that Amazon Pinpoint invokes as the campaign hook for this application's campaigns and journeys. (AI-inferred)
     lambda_function_name: Any = None
-    # Specifies whether the associated Lambda function is invoked during campaign filtering (FILTER) or during campaign delivery (DELIVERY). (AI-inferred)
     mode: Any = None
     web_url: Any = None
 
 @dataclasses.dataclass
 class ApplicationSettings_Limits:
-    # The maximum number of messages that a campaign or journey can send to users in a 24-hour period. (AI-inferred)
     daily: Any = None
-    # The maximum number of seconds that a campaign can run before it is stopped. (AI-inferred)
     maximum_duration: Any = None
-    # The maximum number of messages that can be sent per second through the Amazon Pinpoint application, as a rate limit for campaigns and journeys. (AI-inferred)
     messages_per_second: Any = None
-    # The default maximum number of messages that a campaign or journey can send to a single user over the entire duration of the campaign or journey, as configured in the application's limits. (AI-inferred)
     total: Any = None
 
 @dataclasses.dataclass
 class ApplicationSettings_QuietTime:
-    # Specifies the time, in 24-hour HH:MM format, when the daily quiet time ends for the application, marking the end of the window during which messages are not sent to users. (AI-inferred)
     end: Any = None
-    # Specifies the start time of the daily quiet period, formatted as HH:MM in 24-hour clock using the application's timezone, during which Amazon Pinpoint suppresses sending messages to endpoints. (AI-inferred)
     start: Any = None
 
 _ApplicationSettings_CampaignHookFields = {
@@ -52,30 +44,19 @@ _ApplicationSettings_QuietTimeFields = {
 
 @dataclasses.dataclass
 class ApplicationSettingsConfig:
-    # Specifies the unique identifier (ID) of the Amazon Pinpoint application to which these settings apply. (AI-inferred)
     application_id: Any = None
-    # The campaign hook specifies the Lambda function and invocation mode that Amazon Pinpoint invokes when a campaign sends messages, enabling custom logic like message personalization or filtering during send time. (AI-inferred)
     campaign_hook: Any = None
-    # Specifies whether CloudWatch metrics are enabled for the Amazon Pinpoint application. (AI-inferred)
     cloud_watch_metrics_enabled: Any = None
-    # Defines quotas for campaign messaging, including the maximum number of messages per day, total messages, per-second send rate, and maximum campaign duration. (AI-inferred)
     limits: Any = None
-    # Defines a daily quiet time window with start and end times (in HH:MM format) during which Amazon Pinpoint does not deliver messages to endpoints in the application. (AI-inferred)
     quiet_time: Any = None
 
 @dataclasses.dataclass
 class ApplicationSettingsAttrs:
-    # Specifies the unique identifier (ID) of the Amazon Pinpoint application to which these settings apply. (AI-inferred)
     application_id: Any = None
-    # The campaign hook specifies the Lambda function and invocation mode that Amazon Pinpoint invokes when a campaign sends messages, enabling custom logic like message personalization or filtering during send time. (AI-inferred)
     campaign_hook: Any = None
-    # Specifies whether CloudWatch metrics are enabled for the Amazon Pinpoint application. (AI-inferred)
     cloud_watch_metrics_enabled: Any = None
-    # This field is the unique identifier of the Amazon Pinpoint application that these settings apply to, equal to the value of the `application_id` argument. (AI-inferred)
     id: Any = None
-    # Defines quotas for campaign messaging, including the maximum number of messages per day, total messages, per-second send rate, and maximum campaign duration. (AI-inferred)
     limits: Any = None
-    # Defines a daily quiet time window with start and end times (in HH:MM format) during which Amazon Pinpoint does not deliver messages to endpoints in the application. (AI-inferred)
     quiet_time: Any = None
 
 ApplicationSettings = ubx.ResourceBinding(

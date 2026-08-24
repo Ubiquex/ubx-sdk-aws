@@ -8,7 +8,6 @@ export interface AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride
 
 export interface AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplit {
   configurationBundle?: AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride | Computed<AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride>;
-  /** Provides a human-readable note about this traffic split entry, used within a weighted override of an action's configuration bundle to document the purpose of routing a portion of traffic to a particular agent configuration in the core gateway rule. (AI-inferred) */
   description?: string | Computed<string>;
   metadata?: unknown | Computed<unknown>;
   name?: string | Computed<string>;
@@ -16,26 +15,21 @@ export interface AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverri
 }
 
 export interface AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride {
-  /** Defines the weighting rules that determine how traffic is distributed among the configuration bundles in the weighted override, with each list entry representing a target bundle and its relative weight. (AI-inferred) */
   trafficSplit?: AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplit[] | Computed<AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride_TrafficSplit[]>;
 }
 
 export interface AgentCoreGatewayRule_Actions_ConfigurationBundle {
   staticOverride?: AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride | Computed<AgentCoreGatewayRule_Actions_ConfigurationBundle_StaticOverride>;
-  /** Specifies the weighted routing override for an action within the core gateway rule's configuration bundle, controlling the proportional share of traffic directed to that action relative to others. (AI-inferred) */
   weightedOverride?: AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride | Computed<AgentCoreGatewayRule_Actions_ConfigurationBundle_WeightedOverride>;
 }
 
 export interface AgentCoreGatewayRule_Actions_RouteToTarget_StaticRoute {
-  /** Specifies the name of the static route's target, which identifies the destination (such as an action group or function) that the Bedrock agent core gateway uses to direct the action. (AI-inferred) */
   targetName?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute_TrafficSplit {
-  /** A description for this individual traffic split entry, allowing you to annotate the purpose or intended target of the portion of traffic routed through this weighted route path. (AI-inferred) */
   description?: string | Computed<string>;
   metadata?: unknown | Computed<unknown>;
-  /** In the weighted route action of a Bedrock core gateway rule, this field provides a human-readable name for each traffic split, distinguishing the multiple targets (such as agents or agent versions) that receive a portion of the request traffic. (AI-inferred) */
   name?: string | Computed<string>;
   targetName?: string | Computed<string>;
   weight?: number | Computed<number>;
@@ -47,7 +41,6 @@ export interface AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute {
 
 export interface AgentCoreGatewayRule_Actions_RouteToTarget {
   staticRoute?: AgentCoreGatewayRule_Actions_RouteToTarget_StaticRoute | Computed<AgentCoreGatewayRule_Actions_RouteToTarget_StaticRoute>;
-  /** Specifies a weighted routing strategy that partitions traffic for this action among multiple target resources by assigning each target a numeric weight, so the proportion of requests sent to each target matches its weight relative to the total. (AI-inferred) */
   weightedRoute?: AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute | Computed<AgentCoreGatewayRule_Actions_RouteToTarget_WeightedRoute>;
 }
 
@@ -57,23 +50,19 @@ export interface AgentCoreGatewayRule_Actions {
 }
 
 export interface AgentCoreGatewayRule_Conditions_MatchPaths {
-  /** In an AWS Bedrock Agent Core Gateway Rule, the `any_of` list within `match_paths` contains path patterns and the condition is satisfied when the incoming request path matches any of the specified patterns. (AI-inferred) */
   anyOf?: string[] | Computed<string[]>;
 }
 
 export interface AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipal {
-  /** The ARN of the IAM principal that the condition matches against, within an 'any_of' list in the match_principals block of the gateway rule. (AI-inferred) */
   arn?: string | Computed<string>;
   operator?: string | Computed<string>;
 }
 
 export interface AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf {
-  /** Within the `any_of` list of a Bedrock Agent Core Gateway rule's `match_principals` condition, this object specifies an IAM principal (e.g., by ARN, account ID, or service) that the calling principal must match for the condition to apply. (AI-inferred) */
   iamPrincipal?: AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipal | Computed<AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf_IamPrincipal>;
 }
 
 export interface AgentCoreGatewayRule_Conditions_MatchPrincipals {
-  /** Specifies a list of principal objects to match, such that the condition is satisfied when the incoming request principal matches any one of the listed principals. (AI-inferred) */
   anyOf?: AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf[] | Computed<AgentCoreGatewayRule_Conditions_MatchPrincipals_AnyOf[]>;
 }
 
@@ -206,22 +195,18 @@ const AgentCoreGatewayRule_ConditionsFields: FieldMap = {
 
 export interface AgentCoreGatewayRuleConfig {
   actions: AgentCoreGatewayRule_Actions[] | Computed<AgentCoreGatewayRule_Actions[]>;
-  /** A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred) */
   conditions?: AgentCoreGatewayRule_Conditions[] | Computed<AgentCoreGatewayRule_Conditions[]>;
   description?: string | Computed<string>;
-  /** The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred) */
   gatewayIdentifier?: string | Computed<string>;
   priority: number | Computed<number>;
 }
 
 export interface AgentCoreGatewayRuleAttrs {
   actions: AgentCoreGatewayRule_Actions[];
-  /** A list of conditions that are evaluated against the incoming request or context to determine whether this core gateway rule should trigger its associated actions. (AI-inferred) */
   conditions: AgentCoreGatewayRule_Conditions[];
   createdAt: string;
   description: string;
   gatewayArn: string;
-  /** The unique identifier of the Bedrock agent core gateway to which this rule is attached, used to apply the rule's routing behavior to that gateway's traffic. (AI-inferred) */
   gatewayIdentifier: string;
   priority: number;
   ruleId: string;

@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class ProtectionGroup_Tags:
     key: Any = None
-    # The value component of a tag attached to the AWS Shield Protection Group, used to store custom metadata that helps identify, organize, and manage the protection group. (AI-inferred)
     value: Any = None
 
 _ProtectionGroup_TagsFields = {

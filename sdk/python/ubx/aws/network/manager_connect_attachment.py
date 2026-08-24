@@ -13,9 +13,7 @@ class ManagerConnectAttachment_Options:
 
 @dataclasses.dataclass
 class ManagerConnectAttachment_ProposedNetworkFunctionGroupChange_Tags:
-    # The key of a tag applied to the proposed network function group change for the AWS Network Manager connect attachment. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair in the list of tags to attach to the network function group when the proposed network function group change, defined on the AWS Network Manager Connect Attachment, is applied. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass

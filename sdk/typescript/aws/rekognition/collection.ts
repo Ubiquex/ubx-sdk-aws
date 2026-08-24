@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Collection_Tags {
-  /** The key of a user-defined tag applied to the Amazon Rekognition collection, used for organizing and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a user-defined tag attached to the Rekognition collection, used to add metadata for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -21,7 +19,6 @@ export interface CollectionConfig {
 }
 
 export interface CollectionAttrs {
-  /** The Amazon Resource Name (ARN) assigned by AWS to uniquely identify this Rekognition collection across the service. (AI-inferred) */
   arn: string;
   /** The name of the collection */
   collectionId: string;

@@ -4,9 +4,7 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectFlowVpcInterface_Tags struct {
-	// The key of a tag attached to the AWS Elemental MediaConnect flow VPC interface, used to organize and identify the resource. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the MediaConnect flow VPC interface, used for resource metadata and categorization. (AI-inferred)
 	Value any
 }
 

@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Aiguardrail_ContentPolicyConfig_FiltersConfig:
-    # Sets the moderation intensity for filtering user-provided input for this content filter, using an allowed value of NONE, LOW, MEDIUM, or HIGH to control how strictly the guardrail blocks or modifies incoming messages. (AI-inferred)
     input_strength: Any = None
-    # Specifies the strength of the content filter applied to the model's output, with allowed values such as NONE, LOW, MEDIUM, or HIGH, determining how aggressively the guardrail blocks or modifies generated content. (AI-inferred)
     output_strength: Any = None
-    # The category of harmful content that this filter targets, with allowed values such as PROFANITY, VIOLENCE, SEXUAL, HATE, INSULTS, and MISCONDUCT. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -22,9 +19,7 @@ class Aiguardrail_ContentPolicyConfig:
 
 @dataclasses.dataclass
 class Aiguardrail_ContextualGroundingPolicyConfig_FiltersConfig:
-    # Sets the confidence threshold (0 to 1) at which the contextual grounding filter considers a response grounded in the source, with higher values increasing strictness and blocking more outputs that lack grounding. (AI-inferred)
     threshold: Any = None
-    # The type of the contextual grounding filter, which determines whether the filter validates that the response is grounded in the source information (GROUNDING) or is relevant to the user's query (RELEVANCE). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -34,20 +29,14 @@ class Aiguardrail_ContextualGroundingPolicyConfig:
 
 @dataclasses.dataclass
 class Aiguardrail_SensitiveInformationPolicyConfig_PiiEntitiesConfig:
-    # The action to take on a detected PII entity, either BLOCK to deny the interaction or ANONYMIZE to replace the entity with a placeholder. (AI-inferred)
     action: Any = None
-    # This field specifies the type of PII entity to detect and protect against, such as EMAIL or PHONE_NUMBER. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Aiguardrail_SensitiveInformationPolicyConfig_RegexesConfig:
-    # Specifies the enforcement action applied to content matching the regex pattern, such as blocking the content or anonymizing the detected sensitive data. (AI-inferred)
     action: Any = None
-    # Provides a descriptive note for a regex configuration in the AI guardrail's sensitive information policy, explaining what kind of sensitive data the regex pattern is intended to detect. (AI-inferred)
     description: Any = None
-    # The name of a regex configuration within the sensitive information policy, uniquely identifying the regular expression pattern used by the Wisdom AI guardrail. (AI-inferred)
     name: Any = None
-    # The regular expression pattern used to define a custom regex-based rule for detecting sensitive information in the AI guardrail's sensitive information policy. (AI-inferred)
     pattern: Any = None
 
 @dataclasses.dataclass
@@ -59,13 +48,9 @@ class Aiguardrail_SensitiveInformationPolicyConfig:
 
 @dataclasses.dataclass
 class Aiguardrail_TopicPolicyConfig_TopicsConfig:
-    # The natural-language definition of the topic, used by the guardrail to match user input and decide whether to allow or deny it according to the topic's type. (AI-inferred)
     definition: Any = None
-    # The examples field specifies a list of representative phrases for a topic, which the guardrail uses to identify and apply the configured topic policy when input matches those phrases. (AI-inferred)
     examples: Any = None
-    # Name of the topic entry in the topic policy configuration, used to identify the specific topic that the AI guardrail will allow or deny in conversations. (AI-inferred)
     name: Any = None
-    # Specifies the type of the topic, with the only supported value being 'DENY', which causes the guardrail to block any conversation that matches the topic's definition. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -75,12 +60,10 @@ class Aiguardrail_TopicPolicyConfig:
 
 @dataclasses.dataclass
 class Aiguardrail_WordPolicyConfig_ManagedWordListsConfig:
-    # Specifies whether this managed word list is the built-in profanity list (PROFANITY) or a custom list (CUSTOM) that you define in the same object. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Aiguardrail_WordPolicyConfig_WordsConfig:
-    # The exact word or phrase that the guardrail's word policy is configured to block from appearing in user input or model output. (AI-inferred)
     text: Any = None
 
 @dataclasses.dataclass
@@ -180,7 +163,6 @@ _Aiguardrail_WordPolicyConfigFields = {
 
 @dataclasses.dataclass
 class AiguardrailConfig:
-    # The identifier of the Amazon Wisdom assistant to which this AI guardrail is associated. (AI-inferred)
     assistant_id: Any = None
     # Messaging for when violations are detected in text
     blocked_input_messaging: Any = None
@@ -192,7 +174,6 @@ class AiguardrailConfig:
     contextual_grounding_policy_config: Any = None
     # Description of the guardrail or its version
     description: Any = None
-    # Sets the friendly name for the AI guardrail, used to identify it in Amazon Q Business console and API operations. (AI-inferred)
     name: Any = None
     # Sensitive information policy config for a guardrail.
     sensitive_information_policy_config: Any = None
@@ -204,13 +185,9 @@ class AiguardrailConfig:
 
 @dataclasses.dataclass
 class AiguardrailAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the AI guardrail. (AI-inferred)
     aiguardrail_arn: Any = None
-    # The unique identifier assigned by AWS Wisdom for this AI guardrail resource. (AI-inferred)
     aiguardrail_id: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Q (Wisdom) assistant to which this AI guardrail is attached, returned by the service. (AI-inferred)
     assistant_arn: Any = None
-    # The identifier of the Amazon Wisdom assistant to which this AI guardrail is associated. (AI-inferred)
     assistant_id: Any = None
     # Messaging for when violations are detected in text
     blocked_input_messaging: Any = None
@@ -222,9 +199,7 @@ class AiguardrailAttrs:
     contextual_grounding_policy_config: Any = None
     # Description of the guardrail or its version
     description: Any = None
-    # This read-only attribute returns the Unix timestamp, in seconds, of the last modification to the Wisdom AI guardrail. (AI-inferred)
     modified_time_seconds: Any = None
-    # Sets the friendly name for the AI guardrail, used to identify it in Amazon Q Business console and API operations. (AI-inferred)
     name: Any = None
     # Sensitive information policy config for a guardrail.
     sensitive_information_policy_config: Any = None

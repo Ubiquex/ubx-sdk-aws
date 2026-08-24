@@ -9,207 +9,141 @@ export interface MakerCluster_AutoScaling {
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_AutoRollbackConfiguration {
-  /** The name of an Amazon CloudWatch alarm that triggers an automatic rollback of the SageMaker cluster instance group's patch deployment when the alarm enters the ALARM state. (AI-inferred) */
   alarmName?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize {
-  /** Specifies whether the maximum number of instances updated per batch during a rolling update is set as a fixed count or as a percentage of the instance group's total instances. (AI-inferred) */
   type?: string | Computed<string>;
-  /** The numeric value of the maximum batch size (used with the accompanying type, e.g., COUNT or PERCENT) that limits how many instances in the SageMaker HyperPod cluster's instance group are updated at a time during a rolling deployment when auto-patch is enabled. (AI-inferred) */
   value?: number | Computed<number>;
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy {
-  /** Specifies the maximum number or percentage of nodes in a SageMaker HyperPod instance group that can be patched at the same time during a rolling deployment, defined as an object with value and unit fields. (AI-inferred) */
   maximumBatchSize?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize>;
-  /** Specifies the maximum number of instances that can be rolled back simultaneously when a rolling update deployment fails for this SageMaker Cluster instance group's auto-patch configuration. (AI-inferred) */
   rollbackMaximumBatchSize?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize>;
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig {
-  /** Specifies the list of CloudWatch alarms that, if triggered during an automatic patch deployment on a SageMaker HyperPod cluster instance group, cause the deployment to automatically roll back. (AI-inferred) */
   autoRollbackConfiguration?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_AutoRollbackConfiguration[] | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_AutoRollbackConfiguration[]>;
   rollingUpdatePolicy?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig_RollingUpdatePolicy>;
-  /** Specifies the wait interval, in seconds, between each batch of instances when SageMaker automatically deploys patches to a HyperPod cluster instance group. (AI-inferred) */
   waitIntervalInSeconds?: number | Computed<number>;
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig_PatchSchedule {
-  /** Specifies the next date (in YYYY-MM-DD format) on which the SageMaker HyperPod cluster instance group will be automatically patched, used when the patch schedule is set to a specific date rather than immediately or on a recurring cron schedule. (AI-inferred) */
   nextPatchDate?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_AutoPatchConfig {
-  /** Defines the deployment strategy for automatic patching of instances in this instance group, including the rolling update policy (e.g., maximum batch size and wait interval) and optional auto-rollback configuration. (AI-inferred) */
   deploymentConfig?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig>;
-  /** Defines the cron expression-based maintenance window during which automatic software patches are applied to the instances in the SageMaker cluster instance group. (AI-inferred) */
   patchSchedule?: MakerCluster_InstanceGroups_AutoPatchConfig_PatchSchedule | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_PatchSchedule>;
-  /** Defines the automatic patching strategy for an instance group in an AWS SageMaker HyperPod cluster, where 'PreserveAll' keeps all nodes available during patching and 'SkipAll' disables automatic patching for the group. (AI-inferred) */
   patchingStrategy?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_CapacityRequirements {
-  /** Specifies the number of On-Demand instances to allocate to this instance group within the SageMaker HyperPod cluster. (AI-inferred) */
   onDemand?: unknown | Computed<unknown>;
-  /** Indicates whether the instance group's capacity requirement uses Amazon EC2 Spot Instances, trading potential cost savings for interruption risk. (AI-inferred) */
   spot?: unknown | Computed<unknown>;
 }
 
 export interface MakerCluster_InstanceGroups_InstanceRequirements {
-  /** Specifies the list of acceptable EC2 instance types (e.g., ml.c5.large, ml.m5.xlarge) for the SageMaker cluster instance group, from which the service selects one when provisioning instances. (AI-inferred) */
   instanceTypes?: string[] | Computed<string[]>;
 }
 
 export interface MakerCluster_InstanceGroups_InstanceStorageConfigs_EbsVolumeConfig {
-  /** Determines whether the configured EBS volume serves as the root volume for the instances in the SageMaker HyperPod cluster instance group. (AI-inferred) */
   rootVolume?: boolean | Computed<boolean>;
-  /** Specifies the AWS KMS key ID or ARN used to encrypt the EBS volumes that back the instance storage for the instance group, enabling customer-managed encryption instead of the AWS default. (AI-inferred) */
   volumeKmsKeyId?: string | Computed<string>;
-  /** Specifies the size in gigabytes of the EBS volume to attach to the instances in this instance group of the SageMaker cluster. (AI-inferred) */
   volumeSizeInGb?: number | Computed<number>;
 }
 
 export interface MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxLustreConfig {
-  /** The DNS name of the FSx for Lustre file system that is used as instance storage for the SageMaker cluster instance group. (AI-inferred) */
   dnsName?: string | Computed<string>;
-  /** The mount name of the FSx for Lustre file system to be attached to the instance group's storage configuration. (AI-inferred) */
   mountName?: string | Computed<string>;
-  /** Specifies the filesystem path where the FSx for Lustre file system is mounted on the SageMaker HyperPod cluster instances. (AI-inferred) */
   mountPath?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxOpenZfsConfig {
-  /** The DNS name of the FSx for OpenZFS file system that SageMaker uses to mount storage to the instances in this instance group of the cluster. (AI-inferred) */
   dnsName?: string | Computed<string>;
-  /** Specifies the mount path for the FSx for OpenZFS file system attached to the SageMaker HyperPod instance group's instance storage configuration. (AI-inferred) */
   mountPath?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_InstanceStorageConfigs {
-  /** Specifies the Amazon EBS volume configuration for instance storage in a SageMaker cluster instance group, including the volume size in gigabytes. (AI-inferred) */
   ebsVolumeConfig?: MakerCluster_InstanceGroups_InstanceStorageConfigs_EbsVolumeConfig | Computed<MakerCluster_InstanceGroups_InstanceStorageConfigs_EbsVolumeConfig>;
-  /** Defines the Amazon FSx for Lustre file system configuration (such as file system ID and mount path) used by the SageMaker HyperPod cluster instances in this instance group. (AI-inferred) */
   fsxLustreConfig?: MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxLustreConfig | Computed<MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxLustreConfig>;
-  /** Configures an Amazon FSx for OpenZFS file system to be attached to the instances in this SageMaker HyperPod instance group, specifying the file system ID and mount path. (AI-inferred) */
   fsxOpenZfsConfig?: MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxOpenZfsConfig | Computed<MakerCluster_InstanceGroups_InstanceStorageConfigs_FsxOpenZfsConfig>;
 }
 
 export interface MakerCluster_InstanceGroups_KubernetesConfig_Taints {
-  /** Specifies the scheduling effect (NoSchedule, PreferNoSchedule, or NoExecute) of a Kubernetes taint applied to the instance group in an Amazon SageMaker HyperPod cluster. (AI-inferred) */
   effect?: string | Computed<string>;
-  /** The key of a Kubernetes taint applied to nodes in this instance group, used to control which pods can be scheduled onto them. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a Kubernetes taint applied to nodes of the SageMaker HyperPod instance group. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_KubernetesConfig {
-  /** Defines key-value labels attached to the Kubernetes nodes in this SageMaker HyperPod cluster instance group. (AI-inferred) */
   labels?: unknown | Computed<unknown>;
-  /** Configures Kubernetes taints for the nodes in this SageMaker cluster instance group, which control pod scheduling by requiring pods to have matching tolerations. (AI-inferred) */
   taints?: MakerCluster_InstanceGroups_KubernetesConfig_Taints[] | Computed<MakerCluster_InstanceGroups_KubernetesConfig_Taints[]>;
 }
 
 export interface MakerCluster_InstanceGroups_LifeCycleConfig {
-  /** The S3 URI of the on-create lifecycle script that SageMaker HyperPod runs when an instance in this cluster instance group is first launched, as part of the instance group's lifecycle configuration. (AI-inferred) */
   onCreate?: string | Computed<string>;
-  /** In an AWS SageMaker HyperPod cluster instance group's lifecycle configuration, the on_init_complete script runs on each node after the node has finished its initialization process, allowing cluster-level post-bootstrap customization via a script specified as an S3 URI. (AI-inferred) */
   onInitComplete?: string | Computed<string>;
-  /** The Amazon S3 URI of the lifecycle configuration script that SageMaker downloads and runs on instances in this cluster's instance group. (AI-inferred) */
   sourceS3Uri?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_NetworkInterface {
-  /** Specifies the network interface type for each instance group in the SageMaker HyperPod cluster, where setting it to 'efa' enables Elastic Fabric Adapter (EFA) for high-speed, low-latency inter-node communication, while other values use standard Ethernet. (AI-inferred) */
   interfaceType?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_OverrideVpcConfig {
-  /** Specifies the security group IDs used by the instance group when its override VPC configuration is applied, replacing the cluster-level VPC security groups for that instance group. (AI-inferred) */
   securityGroupIds?: string[] | Computed<string[]>;
-  /** Specifies the list of subnet IDs that override the default VPC configuration for each instance group in the SageMaker cluster, allowing the instance group to launch in different subnets than the cluster's main VPC settings. (AI-inferred) */
   subnets?: string[] | Computed<string[]>;
 }
 
 export interface MakerCluster_InstanceGroups_ScheduledUpdateConfig {
-  /** Specifies the deployment configuration for the scheduled update of the SageMaker cluster instance group, controlling how instances are rolled out (e.g., via a rolling update policy with batch size and concurrency parameters). (AI-inferred) */
   deploymentConfig?: MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig | Computed<MakerCluster_InstanceGroups_AutoPatchConfig_DeploymentConfig>;
-  /** Specifies the cron expression that defines when updates are automatically applied to this instance group in an AWS SageMaker HyperPod cluster. (AI-inferred) */
   scheduleExpression?: string | Computed<string>;
 }
 
 export interface MakerCluster_InstanceGroups_SlurmConfig {
-  /** The Slurm node type for this instance group ('controller' or 'worker'), which designates the group as either the Slurm controller for the cluster or a compute worker node. (AI-inferred) */
   nodeType?: string | Computed<string>;
-  /** Specifies the list of Slurm partition names that this instance group is assigned to, allowing SageMaker HyperPod to schedule workloads across the defined partitions. (AI-inferred) */
   partitionNames?: string[] | Computed<string[]>;
 }
 
 export interface MakerCluster_InstanceGroups {
-  /** Specifies the automatic patching configuration for this instance group in the SageMaker HyperPod cluster, including the patch strategy (e.g., 'Auto' or 'None') and the list of instance groups that should be patched. (AI-inferred) */
   autoPatchConfig?: MakerCluster_InstanceGroups_AutoPatchConfig | Computed<MakerCluster_InstanceGroups_AutoPatchConfig>;
-  /** Defines the minimum and maximum number of instances for the SageMaker HyperPod instance group, allowing the cluster to automatically scale the instance count between these bounds based on the workload. (AI-inferred) */
   capacityRequirements?: MakerCluster_InstanceGroups_CapacityRequirements | Computed<MakerCluster_InstanceGroups_CapacityRequirements>;
-  /** This field represents the actual number of instances currently running in the given instance group of the SageMaker HyperPod cluster, as reported by AWS. (AI-inferred) */
   currentCount?: number | Computed<number>;
-  /** The IAM role that SageMaker assumes to access AWS services and resources on behalf of the instances within this instance group of the SageMaker HyperPod cluster. (AI-inferred) */
   executionRole?: string | Computed<string>;
-  /** Specifies the Amazon ECR image ID used to launch the instances in this SageMaker HyperPod cluster instance group, enabling a custom container environment for cluster workloads. (AI-inferred) */
   imageId?: string | Computed<string>;
-  /** The number of instances of the specified instance type to provision in the SageMaker HyperPod cluster instance group. (AI-inferred) */
   instanceCount?: number | Computed<number>;
-  /** Specifies the unique name of an instance group within the SageMaker HyperPod cluster, used to identify the group when configuring instance types and counts. (AI-inferred) */
   instanceGroupName?: string | Computed<string>;
-  /** Specifies the minimum and maximum computing requirements (such as vCPUs and memory) that instances in a SageMaker HyperPod instance group must meet, enabling AWS to automatically choose an appropriate instance type for the cluster. (AI-inferred) */
   instanceRequirements?: MakerCluster_InstanceGroups_InstanceRequirements | Computed<MakerCluster_InstanceGroups_InstanceRequirements>;
-  /** Specifies the Elastic Block Store (EBS) volume configuration, such as volume size in GB, attached to each instance within the SageMaker HyperPod cluster instance group for local instance storage. (AI-inferred) */
   instanceStorageConfigs?: MakerCluster_InstanceGroups_InstanceStorageConfigs[] | Computed<MakerCluster_InstanceGroups_InstanceStorageConfigs[]>;
-  /** Sets the SageMaker instance type (example: ml.m5.large) used for this instance group within the SageMaker cluster. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** Defines Kubernetes labels and taints applied to the nodes in this SageMaker HyperPod instance group, controlling workload scheduling and node taint restrictions. (AI-inferred) */
   kubernetesConfig?: MakerCluster_InstanceGroups_KubernetesConfig | Computed<MakerCluster_InstanceGroups_KubernetesConfig>;
-  /** Defines the lifecycle configuration for the instances in this group, including the S3 URI of the script and the container entrypoint that runs on startup. (AI-inferred) */
   lifeCycleConfig?: MakerCluster_InstanceGroups_LifeCycleConfig | Computed<MakerCluster_InstanceGroups_LifeCycleConfig>;
-  /** Specifies the minimum number of instances for an instance group in this SageMaker HyperPod cluster, serving as the lower bound for auto-scaling the group. (AI-inferred) */
   minInstanceCount?: number | Computed<number>;
-  /** Configures the network interface for an instance group in a SageMaker HyperPod cluster, specifying the subnet ID and whether the interface is RDMA (for EFA) or standard ENI. (AI-inferred) */
   networkInterface?: MakerCluster_InstanceGroups_NetworkInterface | Computed<MakerCluster_InstanceGroups_NetworkInterface>;
-  /** Specifies the deep health checks to run on instances in this instance group when the SageMaker HyperPod cluster starts, with allowed values such as InstanceStatus, InstanceConnectivity, and InstanceStorage. (AI-inferred) */
   onStartDeepHealthChecks?: string[] | Computed<string[]>;
-  /** Specifies a VPC configuration that overrides the cluster-level VPC settings for this instance group, including the security group IDs and subnet IDs used by the instances in this group. (AI-inferred) */
   overrideVpcConfig?: MakerCluster_InstanceGroups_OverrideVpcConfig | Computed<MakerCluster_InstanceGroups_OverrideVpcConfig>;
-  /** Specifies the schedule for the rolling update of this instance group, including a cron expression and start time to control when updates are applied. (AI-inferred) */
   scheduledUpdateConfig?: MakerCluster_InstanceGroups_ScheduledUpdateConfig | Computed<MakerCluster_InstanceGroups_ScheduledUpdateConfig>;
-  /** Defines the Slurm workload manager configuration for this instance group, including the Slurm queue name that associates the group's nodes with a specific Slurm partition in an AWS SageMaker HyperPod cluster. (AI-inferred) */
   slurmConfig?: MakerCluster_InstanceGroups_SlurmConfig | Computed<MakerCluster_InstanceGroups_SlurmConfig>;
-  /** Specifies the number of CPU threads per core for instances in the SageMaker HyperPod cluster instance group, enabling or disabling simultaneous multithreading (SMT) via a value of 1 or 2. (AI-inferred) */
   threadsPerCore?: number | Computed<number>;
-  /** The ARN of the SageMaker Training Plan that reserves capacity for the instances in this instance group of the HyperPod cluster. (AI-inferred) */
   trainingPlanArn?: string | Computed<string>;
 }
 
 export interface MakerCluster_Orchestrator_Eks {
-  /** The Amazon Resource Name (ARN) of the Amazon EKS cluster that SageMaker HyperPod uses as the orchestrator for the SageMaker cluster. (AI-inferred) */
   clusterArn?: string | Computed<string>;
 }
 
 export interface MakerCluster_Orchestrator_Slurm {
-  /** Specifies whether SageMaker automatically generates the Slurm configuration files (Auto) or uses pre-existing configuration files you supply (NoAuto) for the Slurm orchestrator on the SageMaker HyperPod cluster. (AI-inferred) */
   slurmConfigStrategy?: string | Computed<string>;
 }
 
 export interface MakerCluster_Orchestrator {
-  /** The Amazon EKS configuration that specifies the EKS cluster to use as the orchestrator for this SageMaker HyperPod cluster. (AI-inferred) */
   eks?: MakerCluster_Orchestrator_Eks | Computed<MakerCluster_Orchestrator_Eks>;
-  /** The `slurm` property, when set inside `orchestrator`, configures the SageMaker HyperPod cluster to use SLURM as its workload orchestration engine, specifying SLURM cluster settings and SLURM node group definitions. (AI-inferred) */
   slurm?: MakerCluster_Orchestrator_Slurm | Computed<MakerCluster_Orchestrator_Slurm>;
 }
 
 export interface MakerCluster_RestrictedInstanceGroups_EnvironmentConfig_FsxLustreConfig {
-  /** Specifies the per-unit storage throughput (in MB/s per TiB) for the FSx for Lustre file system provisioned for the SageMaker cluster's restricted instance groups via this environment configuration. (AI-inferred) */
   perUnitStorageThroughput?: number | Computed<number>;
-  /** Specifies the size in GiB of the FSx Lustre file system configured for the environment of a restricted instance group in the SageMaker cluster. (AI-inferred) */
   sizeInGiB?: number | Computed<number>;
 }
 
@@ -218,25 +152,16 @@ export interface MakerCluster_RestrictedInstanceGroups_EnvironmentConfig {
 }
 
 export interface MakerCluster_RestrictedInstanceGroups {
-  /** The current number of running instances in the SageMaker HyperPod restricted instance group, which is reserved for internal cluster operations rather than user workloads. (AI-inferred) */
   currentCount?: number | Computed<number>;
   environmentConfig?: MakerCluster_RestrictedInstanceGroups_EnvironmentConfig | Computed<MakerCluster_RestrictedInstanceGroups_EnvironmentConfig>;
-  /** The Amazon Resource Name (ARN) of the IAM role that SageMaker assumes to provide permissions for instances in this restricted instance group to access AWS services and resources. (AI-inferred) */
   executionRole?: string | Computed<string>;
-  /** The number of instances to include in this restricted instance group of the SageMaker cluster. (AI-inferred) */
   instanceCount?: number | Computed<number>;
-  /** The name of an instance group designated as restricted in the SageMaker HyperPod cluster, meaning that instances in this group have limited or no internet access for security and compliance purposes. (AI-inferred) */
   instanceGroupName?: string | Computed<string>;
-  /** Defines the list of instance storage configurations (e.g., Amazon EBS volume settings) attached to instances within the restricted instance groups of the SageMaker HyperPod cluster. (AI-inferred) */
   instanceStorageConfigs?: MakerCluster_InstanceGroups_InstanceStorageConfigs[] | Computed<MakerCluster_InstanceGroups_InstanceStorageConfigs[]>;
-  /** Specifies the ML compute instance type (e.g., ml.g5.xlarge) for each instance in this restricted instance group of the SageMaker HyperPod cluster. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** Specifies the list of deep health check types (such as InstanceStress, InstanceConnectivity, and InstanceStorage) that SageMaker runs on nodes in this restricted instance group when they start, to detect hardware issues before workload deployment. (AI-inferred) */
   onStartDeepHealthChecks?: string[] | Computed<string[]>;
   overrideVpcConfig?: MakerCluster_InstanceGroups_OverrideVpcConfig | Computed<MakerCluster_InstanceGroups_OverrideVpcConfig>;
-  /** Specifies the number of threads per CPU core for the instances in this SageMaker HyperPod cluster instance group, allowing control of CPU hyper-threading (e.g., 1 to disable or 2 to enable). (AI-inferred) */
   threadsPerCore?: number | Computed<number>;
-  /** Specifies the Amazon Resource Name (ARN) of the SageMaker training plan that provides reserved capacity for this restricted instance group in the SageMaker HyperPod cluster. (AI-inferred) */
   trainingPlanArn?: string | Computed<string>;
 }
 
@@ -253,9 +178,7 @@ export interface MakerCluster_RestrictedInstanceGroupsConfig {
 }
 
 export interface MakerCluster_Tags {
-  /** The key of a tag attached to the SageMaker HyperPod cluster, used for organizing, identifying, and managing the cluster's resources and costs. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag attached to the AWS SageMaker cluster, used to associate custom metadata with the cluster for organization and cost tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

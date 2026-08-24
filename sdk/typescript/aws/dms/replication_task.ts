@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReplicationTask_Tags {
-  /** Specifies the key of a tag attached to the AWS DMS replication task, used for identifying, organizing, and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,57 +12,34 @@ const ReplicationTask_TagsFields: FieldMap = {
 };
 
 export interface ReplicationTaskConfig {
-  /** Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred) */
   cdcStartPosition?: string | Computed<string>;
-  /** The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred) */
   cdcStartTime?: number | Computed<number>;
-  /** Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred) */
   cdcStopPosition?: string | Computed<string>;
-  /** Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred) */
   migrationType: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred) */
   replicationInstanceArn: string | Computed<string>;
-  /** A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred) */
   replicationTaskIdentifier?: string | Computed<string>;
-  /** A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred) */
   replicationTaskSettings?: string | Computed<string>;
   resourceIdentifier?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred) */
   sourceEndpointArn: string | Computed<string>;
-  /** JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred) */
   tableMappings: string | Computed<string>;
-  /** Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred) */
   tags?: ReplicationTask_Tags[] | Computed<ReplicationTask_Tags[]>;
-  /** The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred) */
   targetEndpointArn: string | Computed<string>;
   taskData?: string | Computed<string>;
 }
 
 export interface ReplicationTaskAttrs {
-  /** Specifies the native source database position (such as a log file number or LSN) from which AWS DMS begins reading change data capture (CDC) changes when starting the replication task. (AI-inferred) */
   cdcStartPosition: string;
-  /** The Unix timestamp in seconds that specifies when Change Data Capture (CDC) should begin for the replication task, defining the starting point for capturing ongoing data changes. (AI-inferred) */
   cdcStartTime: number;
-  /** Specifies the point in time (as a Unix timestamp) or LSN (log sequence number) up to which the change data capture (CDC) portion of the replication task should process changes, after which the task stops. (AI-inferred) */
   cdcStopPosition: string;
-  /** The ARN of the DMS replication task, which uniquely identifies it within AWS. (AI-inferred) */
   id: string;
-  /** Specifies the migration type for the replication task, which can be one of 'full-load', 'cdc', or 'full-load-and-cdc'. (AI-inferred) */
   migrationType: string;
-  /** The Amazon Resource Name (ARN) of the AWS DMS replication instance that will run the replication task. (AI-inferred) */
   replicationInstanceArn: string;
-  /** A user-supplied unique identifier for the DMS replication task within an AWS account, used to reference and manage the task in AWS DMS. (AI-inferred) */
   replicationTaskIdentifier: string;
-  /** A JSON-format string that configures the AWS DMS replication task's operational settings, such as target table preparation mode, full load behavior, and error handling options. (AI-inferred) */
   replicationTaskSettings: string;
   resourceIdentifier: string;
-  /** The Amazon Resource Name (ARN) of the source database endpoint that the DMS replication task reads data from during migration. (AI-inferred) */
   sourceEndpointArn: string;
-  /** JSON string that specifies table mapping rules, including selection and transformation rules, for a DMS replication task. (AI-inferred) */
   tableMappings: string;
-  /** Assigns metadata key-value pairs to the DMS replication task for resource categorization and cost tracking. (AI-inferred) */
   tags: ReplicationTask_Tags[];
-  /** The ARN of the target database endpoint that the replication task connects to for writing migrated data. (AI-inferred) */
   targetEndpointArn: string;
   taskData: string;
 }

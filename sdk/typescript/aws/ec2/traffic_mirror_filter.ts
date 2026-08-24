@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TrafficMirrorFilter_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag entry attached to the EC2 Traffic Mirror Filter, used to store arbitrary metadata for identification or categorization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

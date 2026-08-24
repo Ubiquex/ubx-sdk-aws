@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceGroup_ResourceGroupTags {
-  /** The key of a tag that, along with its value, defines an Amazon Inspector resource group, which is used to select EC2 instances for assessment. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag that, combined with its key, defines an Amazon Inspector resource group used to scope which EC2 instances the Inspector service targets. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,14 +12,11 @@ const ResourceGroup_ResourceGroupTagsFields: FieldMap = {
 };
 
 export interface ResourceGroupConfig {
-  /** Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred) */
   resourceGroupTags: ResourceGroup_ResourceGroupTags[] | Computed<ResourceGroup_ResourceGroupTags[]>;
 }
 
 export interface ResourceGroupAttrs {
-  /** The Amazon Resource Name (ARN) of the Inspector resource group. (AI-inferred) */
   arn: string;
-  /** Defines the tag key-value pairs that identify the EC2 instances to include in this Inspector resource group, used as the basis for an assessment target. (AI-inferred) */
   resourceGroupTags: ResourceGroup_ResourceGroupTags[];
 }
 

@@ -14,7 +14,6 @@ type Integration_IntegrationConfig struct {
 
 type Integration_Tags struct {
 	Key any
-	// The value of the tag assigned to the Glue integration, used with the tag key to attach metadata for cost allocation, access control, and resource identification. (AI-inferred)
 	Value any
 }
 
@@ -32,7 +31,6 @@ var Integration_TagsFields = ubx.FieldMap{
 type IntegrationConfig struct {
 	// An optional set of non-secret key value pairs that contains additional contextual information about the data.
 	AdditionalEncryptionContext any
-	// Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
 	DataFilter any
 	Description any
 	// The configuration settings for the integration.
@@ -54,7 +52,6 @@ type IntegrationAttrs struct {
 	AdditionalEncryptionContext any
 	// The time (UTC) when the integration was created.
 	CreateTime any
-	// Specifies a SQL query string that filters the source data to be included in the Glue integration, such as selecting specific columns or rows from a source table. (AI-inferred)
 	DataFilter any
 	Description any
 	// The Amazon Resource Name (ARN) of the integration.

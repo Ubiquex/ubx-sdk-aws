@@ -2,12 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightKnowledgeBase_AccessControlConfiguration {
-  /** Enables ACL (access control list) enforcement on the QuickSight knowledge base, which controls data access based on ACL rules defined in the access control configuration. (AI-inferred) */
   isAclenabled?: boolean | Computed<boolean>;
 }
 
 export interface SightKnowledgeBase_KnowledgeBaseConfiguration_TemplateConfiguration {
-  /** Specifies the Amazon QuickSight template used to initialize and configure the knowledge base. (AI-inferred) */
   template?: unknown | Computed<unknown>;
 }
 
@@ -16,40 +14,31 @@ export interface SightKnowledgeBase_KnowledgeBaseConfiguration {
 }
 
 export interface SightKnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfiguration {
-  /** Determines whether audio extraction is enabled or disabled for the media extraction configuration, controlling if audio content from media files is processed and indexed for the knowledge base. (AI-inferred) */
   audioExtractionStatus: string | Computed<string>;
 }
 
 export interface SightKnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfiguration {
-  /** Determines whether text from images in source documents is extracted and indexed, with a required value of `ENABLED` or `DISABLED`. (AI-inferred) */
   imageExtractionStatus: string | Computed<string>;
 }
 
 export interface SightKnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfiguration {
-  /** Determines whether video files in the knowledge base are processed to extract text and metadata for Amazon QuickSight Q to use when answering questions, with accepted values `ENABLED` and `DISABLED`. (AI-inferred) */
   videoExtractionStatus: string | Computed<string>;
   videoExtractionType?: string | Computed<string>;
 }
 
 export interface SightKnowledgeBase_MediaExtractionConfiguration {
-  /** Specifies the configuration for extracting audio content from media files ingested into the QuickSight knowledge base, enabling downstream processing such as transcription and indexing. (AI-inferred) */
   audioExtractionConfiguration?: SightKnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfiguration | Computed<SightKnowledgeBase_MediaExtractionConfiguration_AudioExtractionConfiguration>;
-  /** Defines the settings for extracting text and data from images in media files associated with the QuickSight knowledge base, including whether image extraction is enabled. (AI-inferred) */
   imageExtractionConfiguration?: SightKnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfiguration | Computed<SightKnowledgeBase_MediaExtractionConfiguration_ImageExtractionConfiguration>;
-  /** Provides the video-specific extraction settings that control how textual content is derived from video files within the knowledge base. (AI-inferred) */
   videoExtractionConfiguration?: SightKnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfiguration | Computed<SightKnowledgeBase_MediaExtractionConfiguration_VideoExtractionConfiguration>;
 }
 
 export interface SightKnowledgeBase_Permissions {
-  /** The list of QuickSight IAM actions (for example, quicksight:DescribeKnowledgeBase) that the principal in this permissions entry is authorized to perform on the knowledge base. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The IAM principal (user, group, or role) that is granted the specified permissions on the QuickSight knowledge base. (AI-inferred) */
   principal?: string | Computed<string>;
   resource?: string | Computed<string>;
 }
 
 export interface SightKnowledgeBase_Tags {
-  /** The key of a user-defined tag applied to the QuickSight knowledge base, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -113,56 +102,40 @@ const SightKnowledgeBase_TagsFields: FieldMap = {
 };
 
 export interface SightKnowledgeBaseConfig {
-  /** Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred) */
   accessControlConfiguration?: SightKnowledgeBase_AccessControlConfiguration | Computed<SightKnowledgeBase_AccessControlConfiguration>;
   awsAccountId: string | Computed<string>;
   dataSourceArn: string | Computed<string>;
   description?: string | Computed<string>;
-  /** Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred) */
   isEmailNotificationOptedForIngestionFailures?: boolean | Computed<boolean>;
   knowledgeBaseConfiguration: SightKnowledgeBase_KnowledgeBaseConfiguration | Computed<SightKnowledgeBase_KnowledgeBaseConfiguration>;
-  /** The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred) */
   knowledgeBaseId: string | Computed<string>;
   mediaExtractionConfiguration?: SightKnowledgeBase_MediaExtractionConfiguration | Computed<SightKnowledgeBase_MediaExtractionConfiguration>;
-  /** The name of this QuickSight knowledge base. (AI-inferred) */
   name: string | Computed<string>;
-  /** The permissions that control access to the QuickSight knowledge base, consisting of a list of resource permission objects that specify which principals (users, groups, or organizations) can perform certain actions on the resource. (AI-inferred) */
   permissions?: SightKnowledgeBase_Permissions[] | Computed<SightKnowledgeBase_Permissions[]>;
-  /** The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred) */
   primaryOwnerArn?: string | Computed<string>;
   tags?: SightKnowledgeBase_Tags[] | Computed<SightKnowledgeBase_Tags[]>;
 }
 
 export interface SightKnowledgeBaseAttrs {
-  /** Specifies how access to the knowledge base is secured, such as by configuring row-level security through an associated dataset. (AI-inferred) */
   accessControlConfiguration: SightKnowledgeBase_AccessControlConfiguration;
   awsAccountId: string;
-  /** The timestamp (in ISO 8601 format) indicating when the QuickSight knowledge base was created. (AI-inferred) */
   createdAt: string;
   dataSourceArn: string;
   description: string;
   documentCount: number;
-  /** Indicates whether email notifications are enabled for failures that occur during the ingestion of documents into the QuickSight knowledge base. (AI-inferred) */
   isEmailNotificationOptedForIngestionFailures: boolean;
-  /** The Amazon Resource Name (ARN) uniquely identifying the QuickSight knowledge base in AWS. (AI-inferred) */
   knowledgeBaseArn: string;
   knowledgeBaseConfiguration: SightKnowledgeBase_KnowledgeBaseConfiguration;
-  /** The unique identifier (knowledge base ID) that must be specified to create and reference the knowledge base within Amazon QuickSight Q. (AI-inferred) */
   knowledgeBaseId: string;
-  /** The total size of the knowledge base content in bytes, as computed by Amazon QuickSight. (AI-inferred) */
   knowledgeBaseSizeBytes: number;
   mediaExtractionConfiguration: SightKnowledgeBase_MediaExtractionConfiguration;
-  /** The name of this QuickSight knowledge base. (AI-inferred) */
   name: string;
-  /** The permissions that control access to the QuickSight knowledge base, consisting of a list of resource permission objects that specify which principals (users, groups, or organizations) can perform certain actions on the resource. (AI-inferred) */
   permissions: SightKnowledgeBase_Permissions[];
-  /** The Amazon Resource Name (ARN) of the primary owner of the QuickSight knowledge base, typically the IAM user or role with administrative ownership. (AI-inferred) */
   primaryOwnerArn: string;
   primaryOwnerUsername: string;
   status: string;
   tags: SightKnowledgeBase_Tags[];
   type: string;
-  /** The read-only updated_at field holds the timestamp of the last modification to the QuickSight knowledge base. (AI-inferred) */
   updatedAt: string;
 }
 

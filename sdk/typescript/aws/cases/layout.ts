@@ -2,42 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Layout_Content_Basic_MoreInfo_Sections_FieldGroup_Fields {
-  /** The id of a field within a field group in the 'more info' section of a layout's basic content, referencing the unique identifier of the Amazon Connect Cases case field to display at that position. (AI-inferred) */
   id?: string | Computed<string>;
 }
 
 export interface Layout_Content_Basic_MoreInfo_Sections_FieldGroup {
-  /** Specifies the list of case fields to display in this field group within the 'More info' section of the basic layout. (AI-inferred) */
   fields?: Layout_Content_Basic_MoreInfo_Sections_FieldGroup_Fields[] | Computed<Layout_Content_Basic_MoreInfo_Sections_FieldGroup_Fields[]>;
-  /** The display name of the field group, shown as a heading in the case layout section to visually group related case fields. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Layout_Content_Basic_MoreInfo_Sections {
-  /** Defines a field group within a section of the 'More Info' area of the basic case layout, containing the ordered list of field items to be displayed together. (AI-inferred) */
   fieldGroup?: Layout_Content_Basic_MoreInfo_Sections_FieldGroup | Computed<Layout_Content_Basic_MoreInfo_Sections_FieldGroup>;
 }
 
 export interface Layout_Content_Basic_MoreInfo {
-  /** Specifies the list of sections that make up the 'More Info' area of a basic layout in an AWS Cases layout, where each section can contain text or a reference to a case field. (AI-inferred) */
   sections?: Layout_Content_Basic_MoreInfo_Sections[] | Computed<Layout_Content_Basic_MoreInfo_Sections[]>;
 }
 
 export interface Layout_Content_Basic {
-  /** The 'more_info' object configures the 'More Info' section of a basic layout, defining which case fields are displayed in that additional, separate area of the AWS Cases layout. (AI-inferred) */
   moreInfo?: Layout_Content_Basic_MoreInfo | Computed<Layout_Content_Basic_MoreInfo>;
-  /** Specifies the top panel of the basic layout, defining the sections and field items displayed at the top of the case view. (AI-inferred) */
   topPanel?: Layout_Content_Basic_MoreInfo | Computed<Layout_Content_Basic_MoreInfo>;
 }
 
 export interface Layout_Content {
-  /** The basic layout configuration for the case layout, defining how case panel and additional information sections are arranged on the page. (AI-inferred) */
   basic?: Layout_Content_Basic | Computed<Layout_Content_Basic>;
 }
 
 export interface Layout_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the AWS Cases layout, used to store arbitrary metadata for the layout. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

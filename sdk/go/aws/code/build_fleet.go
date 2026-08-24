@@ -4,63 +4,43 @@ package code
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BuildFleet_ComputeConfiguration struct {
-	// Specifies the amount of disk space (in GB) allocated to each compute instance in the code build fleet. (AI-inferred)
 	Disk any
-	// Specifies the EC2 instance type used by the compute fleet's compute configuration, such as m5.large or c5.xlarge, determining the underlying hardware for the build fleet. (AI-inferred)
 	InstanceType any
-	// The machine type of the CodeBuild fleet's compute configuration, which determines the processor architecture or GPU availability (e.g., GENERAL, ARM, GPU). (AI-inferred)
 	MachineType any
-	// Defines the amount of memory allocated to each compute instance in an AWS CodeBuild fleet's compute configuration. (AI-inferred)
 	Memory any
-	// The number of virtual CPUs (vCPUs) to allocate to each compute instance in the CodeBuild fleet. (AI-inferred)
 	VCpu any
 }
 
 type BuildFleet_FleetProxyConfiguration_OrderedProxyRules struct {
-	// The effect of the proxy rule, either ALLOW or DENY, determines whether traffic matching the specified entities and type is allowed or blocked. (AI-inferred)
 	Effect any
-	// The list of domain names or IP addresses that this ordered proxy rule matches for the CodeBuild fleet's proxy configuration. (AI-inferred)
 	Entities any
-	// Indicates whether the entities in this proxy rule are interpreted as URL patterns (e.g., 'URL') or as hostnames (e.g., 'HOST'), which controls how outbound traffic filtering is applied. (AI-inferred)
 	Type any
 }
 
 type BuildFleet_FleetProxyConfiguration struct {
-	// Determines the default action (ALLOW_ALL or DENY_ALL) the proxy takes for traffic that does not match any ordered proxy rules. (AI-inferred)
 	DefaultBehavior any
-	// Defines the ordered list of proxy rules (each specifying an app, domain, or IP type and a value) that control network access for the CodeBuild fleet's build environments, evaluated in the order listed. (AI-inferred)
 	OrderedProxyRules any
 }
 
 type BuildFleet_FleetVpcConfig struct {
-	// The security group IDs that AWS CodeBuild uses to control traffic to and from the network interfaces (ENIs) that the fleet launches in the specified VPC. (AI-inferred)
 	SecurityGroupIds any
-	// Specifies the subnet IDs in the VPC where the CodeBuild fleet's compute instances run. (AI-inferred)
 	Subnets any
-	// The ID of the VPC in which the CodeBuild fleet's compute resources are deployed. (AI-inferred)
 	VpcId any
 }
 
 type BuildFleet_ScalingConfiguration_TargetTrackingScalingConfigs struct {
-	// Specifies the fleet utilization metric type (e.g., FLEET_UTILIZATION_RATE) that the target tracking scaling policy uses to determine when to adjust fleet capacity. (AI-inferred)
 	MetricType any
-	// This field defines the target value for the target tracking scaling policy, which is the metric threshold (e.g., a percentage for CPU utilization) that triggers scaling of the CodeBuild fleet. (AI-inferred)
 	TargetValue any
 }
 
 type BuildFleet_ScalingConfiguration struct {
-	// The maximum number of compute instances that the CodeBuild fleet can scale out to. (AI-inferred)
 	MaxCapacity any
-	// Determines the scaling strategy for the CodeBuild compute fleet, either TARGET_TRACKING_SCALING for dynamic auto-scaling or PAY_PER_REQUEST for on-demand capacity provisioning. (AI-inferred)
 	ScalingType any
-	// Specifies a list of target tracking scaling policies that automatically adjust the CodeBuild fleet's compute capacity to maintain a target value for a metric such as CPU or memory utilization. (AI-inferred)
 	TargetTrackingScalingConfigs any
 }
 
 type BuildFleet_Tags struct {
-	// The key portion of a tag attached to the CodeBuild fleet, used to categorize and filter the resource for management and cost tracking. (AI-inferred)
 	Key any
-	// The value of a tag assigned to the AWS CodeBuild fleet, used to categorize and manage the fleet resource. (AI-inferred)
 	Value any
 }
 
@@ -114,58 +94,33 @@ var BuildFleet_TagsFields = ubx.FieldMap{
 	}
 
 type BuildFleetConfig struct {
-	// The initial number of compute instances allocated to the CodeBuild fleet, serving as the baseline from which the fleet scales toward its maximum capacity. (AI-inferred)
 	BaseCapacity any
-	// Specifies the compute configuration for the CodeBuild fleet, including the disk size and machine type (e.g., General or ARM) used for build environments. (AI-inferred)
 	ComputeConfiguration any
-	// The compute type for the fleet's build instances, such as BUILD_GENERAL1_SMALL or BUILD_GENERAL1_LARGE, which determines the CPU and memory allocated to each build. (AI-inferred)
 	ComputeType any
-	// The type of compute environment (e.g., LINUX_CONTAINER, WINDOWS_CONTAINER, ARM_CONTAINER) that the CodeBuild fleet uses for its build instances. (AI-inferred)
 	EnvironmentType any
-	// Specifies the proxy configuration for a CodeBuild fleet, including the default proxy address and HTTP/HTTPS proxy ports used to route outbound traffic from the fleet's compute instances. (AI-inferred)
 	FleetProxyConfiguration any
-	// The ARN of the IAM service role that the AWS CodeBuild fleet assumes to access necessary AWS resources such as source code repositories and build artifact storage. (AI-inferred)
 	FleetServiceRole any
-	// Specifies the VPC, subnets, and security group IDs that the CodeBuild fleet's compute instances use for network access. (AI-inferred)
 	FleetVpcConfig any
-	// Specifies the container image (e.g., a managed CodeBuild image or a custom Docker image from Amazon ECR) that the fleet uses for its build environments. (AI-inferred)
 	ImageId any
-	// The name of the CodeBuild fleet, which serves as its identifier and is optional; if not provided, CloudFormation generates a unique name. (AI-inferred)
 	Name any
-	// Determines how builds are handled when the fleet's capacity is exhausted, either queuing them (QUEUE) or routing them to on-demand capacity (ON_DEMAND). (AI-inferred)
 	OverflowBehavior any
-	// Configures auto-scaling for the compute fleet by specifying minimum and maximum capacity and an optional target-tracking scaling policy that adjusts fleet size based on demand. (AI-inferred)
 	ScalingConfiguration any
-	// Assigns metadata as key-value pairs (tag key and tag value) to the CodeBuild fleet, enabling cost tracking, access control, and resource categorization. (AI-inferred)
 	Tags any
 }
 
 type BuildFleetAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies the CodeBuild fleet. (AI-inferred)
 	Arn any
-	// The initial number of compute instances allocated to the CodeBuild fleet, serving as the baseline from which the fleet scales toward its maximum capacity. (AI-inferred)
 	BaseCapacity any
-	// Specifies the compute configuration for the CodeBuild fleet, including the disk size and machine type (e.g., General or ARM) used for build environments. (AI-inferred)
 	ComputeConfiguration any
-	// The compute type for the fleet's build instances, such as BUILD_GENERAL1_SMALL or BUILD_GENERAL1_LARGE, which determines the CPU and memory allocated to each build. (AI-inferred)
 	ComputeType any
-	// The type of compute environment (e.g., LINUX_CONTAINER, WINDOWS_CONTAINER, ARM_CONTAINER) that the CodeBuild fleet uses for its build instances. (AI-inferred)
 	EnvironmentType any
-	// Specifies the proxy configuration for a CodeBuild fleet, including the default proxy address and HTTP/HTTPS proxy ports used to route outbound traffic from the fleet's compute instances. (AI-inferred)
 	FleetProxyConfiguration any
-	// The ARN of the IAM service role that the AWS CodeBuild fleet assumes to access necessary AWS resources such as source code repositories and build artifact storage. (AI-inferred)
 	FleetServiceRole any
-	// Specifies the VPC, subnets, and security group IDs that the CodeBuild fleet's compute instances use for network access. (AI-inferred)
 	FleetVpcConfig any
-	// Specifies the container image (e.g., a managed CodeBuild image or a custom Docker image from Amazon ECR) that the fleet uses for its build environments. (AI-inferred)
 	ImageId any
-	// The name of the CodeBuild fleet, which serves as its identifier and is optional; if not provided, CloudFormation generates a unique name. (AI-inferred)
 	Name any
-	// Determines how builds are handled when the fleet's capacity is exhausted, either queuing them (QUEUE) or routing them to on-demand capacity (ON_DEMAND). (AI-inferred)
 	OverflowBehavior any
-	// Configures auto-scaling for the compute fleet by specifying minimum and maximum capacity and an optional target-tracking scaling policy that adjusts fleet size based on demand. (AI-inferred)
 	ScalingConfiguration any
-	// Assigns metadata as key-value pairs (tag key and tag value) to the CodeBuild fleet, enabling cost tracking, access control, and resource categorization. (AI-inferred)
 	Tags any
 }
 

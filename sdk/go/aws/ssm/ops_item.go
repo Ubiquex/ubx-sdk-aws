@@ -4,9 +4,7 @@ package ssm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OpsItem_Tags struct {
-	// Key of a user-defined tag attached to the OpsItem, which can be used to categorize, search, and manage operational work items in AWS Systems Manager OpsCenter. (AI-inferred)
 	Key any
-	// The user-defined value for a tag key on the OpsItem, used to add metadata for identifying, organizing, or filtering the OpsItem in AWS Systems Manager. (AI-inferred)
 	Value any
 }
 

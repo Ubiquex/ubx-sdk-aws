@@ -4,26 +4,17 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClusterSecurityGroupIngressConfig struct {
-	// The IPv4 CIDR range that is allowed inbound access to the Redshift cluster's security group; you must specify either this value or an EC2 security group. (AI-inferred)
 	Cidrip any
-	// The name of the Redshift cluster security group to which the ingress rule is being added. (AI-inferred)
 	ClusterSecurityGroupName any
-	// The name of the EC2 security group to grant access to the Redshift cluster, allowing inbound traffic from instances associated with that EC2 security group. (AI-inferred)
 	Ec2SecurityGroupName any
-	// The AWS account ID of the account that owns the EC2 security group specified in the ingress rule, used to authorize cross-account access to the Redshift cluster. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
 }
 
 type ClusterSecurityGroupIngressAttrs struct {
-	// The IPv4 CIDR range that is allowed inbound access to the Redshift cluster's security group; you must specify either this value or an EC2 security group. (AI-inferred)
 	Cidrip any
-	// The name of the Redshift cluster security group to which the ingress rule is being added. (AI-inferred)
 	ClusterSecurityGroupName any
-	// The name of the EC2 security group to grant access to the Redshift cluster, allowing inbound traffic from instances associated with that EC2 security group. (AI-inferred)
 	Ec2SecurityGroupName any
-	// The AWS account ID of the account that owns the EC2 security group specified in the ingress rule, used to authorize cross-account access to the Redshift cluster. (AI-inferred)
 	Ec2SecurityGroupOwnerId any
-	// This computed attribute is the unique identifier of the Redshift cluster security group ingress rule, used by Terraform to track and reference the rule in its state and dependencies. (AI-inferred)
 	Id any
 }
 

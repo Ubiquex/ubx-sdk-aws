@@ -4,635 +4,399 @@ package kinesis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_BufferingHints struct {
-	// The length of time, in seconds, that Amazon Data Firehose buffers incoming data before delivering it to the Amazon OpenSearch Serverless destination. (AI-inferred)
 	IntervalInSeconds any
-	// Specifies the buffer size in megabytes, ranging from 1 to 100 MB, for incoming data before Amazon Data Firehose delivers it to the OpenSearch Serverless destination. (AI-inferred)
 	SizeInMbs any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_CloudWatchLoggingOptions struct {
-	// Indicates whether CloudWatch Logs logging is enabled for the Amazon OpenSearch Serverless destination of the Kinesis Firehose delivery stream. (AI-inferred)
 	Enabled any
-	// The name of the CloudWatch Logs log group to which Kinesis Data Firehose will deliver its own logs (such as delivery failure logs) for the Amazon OpenSearch Serverless destination. (AI-inferred)
 	LogGroupName any
-	// The name of the CloudWatch Logs log stream used by the Firehose delivery stream to send logs about the Amazon OpenSearch Serverless destination configuration. (AI-inferred)
 	LogStreamName any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_Processors_Parameters struct {
-	// The name of a processor parameter in the Kinesis Data Firehose transformation pipeline, such as 'LambdaArn' or 'NumberOfRetries', which is used with its corresponding parameter value to configure the processor. (AI-inferred)
 	ParameterName any
-	// The value assigned to a specific processor parameter (such as the Lambda function ARN or the retry count) within the processing configuration for an Amazon OpenSearch Serverless destination in a Kinesis Firehose delivery stream. (AI-inferred)
 	ParameterValue any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration_Processors struct {
-	// Specifies the key-value configuration parameters for the processor (e.g., Lambda function ARN, number of retries, buffer size) that control the data transformation logic before Firehose delivers to Amazon OpenSearch Serverless. (AI-inferred)
 	Parameters any
-	// The type of data processor (such as Lambda, RecordDeAggregation, Decompression, or AppendDelimiterToRecord) that Firehose applies to incoming records before delivering them to the Amazon OpenSearch Serverless destination. (AI-inferred)
 	Type any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_ProcessingConfiguration struct {
-	// Whether data processing is enabled for the Amazon OpenSearch Serverless destination's processing configuration. (AI-inferred)
 	Enabled any
-	// Specifies the list of data transformation steps (each a processor, typically invoking a Lambda function) that Firehose applies to incoming records before delivering them to the Amazon OpenSearch Serverless destination. (AI-inferred)
 	Processors any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_RetryOptions struct {
-	// Specifies the number of seconds Kinesis Data Firehose retries delivering data to the OpenSearch Serverless destination after a failure (default is 300). (AI-inferred)
 	DurationInSeconds any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfiguration_KmsencryptionConfig struct {
-	// The ARN of the AWS KMS key used to encrypt the data in the S3 bucket that backs up or stores failed records for the Amazon OpenSearch Serverless destination of the Firehose delivery stream. (AI-inferred)
 	AwskmskeyArn any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration_EncryptionConfiguration struct {
-	// Specifies the KMS encryption configuration, including the ARN of the AWS KMS key, used to encrypt the S3 backup bucket contents for the Amazon OpenSearch Serverless delivery destination. (AI-inferred)
 	KmsencryptionConfig any
-	// Indicates that no server-side encryption is used for the S3 destination data, and when set, must be the literal value 'NoEncryption'. (AI-inferred)
 	NoEncryptionConfig any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_S3Configuration struct {
-	// The ARN of the S3 bucket that Kinesis Data Firehose uses for buffering or backup data before delivering it to the Amazon OpenSearch Serverless destination. (AI-inferred)
 	BucketArn any
-	// Buffering hints for the S3 destination used by the Amazon OpenSearch Serverless destination configuration, controlling the size (SizeInMBs) and interval (IntervalInSeconds) of incoming data before it is written to S3. (AI-inferred)
 	BufferingHints any
-	// Specifies CloudWatch logging options for the S3 backup configuration of an Amazon OpenSearch Serverless destination, including whether logging is enabled and the log group and stream names to which Firehose delivery logs are sent. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the compression format (e.g., UNCOMPRESSED, GZIP, ZIP, SNAPPY) applied to objects written to the S3 backup bucket for the OpenSearch Serverless destination of the Kinesis Firehose delivery stream. (AI-inferred)
 	CompressionFormat any
-	// Defines the optional server-side encryption settings (KMS key or no encryption) applied to the backup S3 bucket used by the Firehose delivery stream when its destination is Amazon OpenSearch Serverless. (AI-inferred)
 	EncryptionConfiguration any
-	// The prefix for error output objects that Kinesis Data Firehose writes to the S3 backup bucket when data delivery to Amazon OpenSearch Serverless fails. (AI-inferred)
 	ErrorOutputPrefix any
-	// The string prefix applied to S3 object keys for the S3 backup configuration of the Amazon OpenSearch Serverless destination, enabling dynamic partitioning by time (e.g., YYYY/MM/DD/HH). (AI-inferred)
 	Prefix any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to write to the S3 bucket used for backup or buffering in the OpenSearch Serverless destination configuration. (AI-inferred)
 	RoleArn any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration_VpcConfiguration struct {
-	// The ARN of the IAM role that grants the Kinesis Data Firehose delivery stream permission to access the VPC resources (such as elastic network interfaces) required to deliver data to an Amazon OpenSearch Serverless endpoint in a VPC. (AI-inferred)
 	RoleArn any
-	// The security group IDs that AWS Kinesis Firehose associates with its elastic network interfaces in your VPC when delivering data to Amazon OpenSearch Serverless, controlling the inbound and outbound traffic allowed to the VPC endpoint. (AI-inferred)
 	SecurityGroupIds any
-	// Specifies the subnet IDs in the customer VPC that the Kinesis Data Firehose delivery stream uses for its VPC configuration to access the Amazon OpenSearch Serverless collection. (AI-inferred)
 	SubnetIds any
 }
 
 type FirehoseDeliveryStream_AmazonOpenSearchServerlessDestinationConfiguration struct {
-	// Specifies the buffering size (in MB) and interval (in seconds) Kinesis Data Firehose uses before delivering data to the Amazon OpenSearch Serverless destination. (AI-inferred)
 	BufferingHints any
-	// Defines CloudWatch logging settings (enabled flag, log group name, and log stream name) for the Firehose delivery stream's Amazon OpenSearch Serverless destination, controlling where delivery logs and errors are recorded. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the URL endpoint of the OpenSearch Serverless collection (e.g., https://collection-name.region.aoss.amazonaws.com) that the delivery stream sends data to. (AI-inferred)
 	CollectionEndpoint any
-	// The name of the OpenSearch Serverless index to which Firehose delivers data. (AI-inferred)
 	IndexName any
-	// Specifies the data processing configuration (such as Lambda transformation) applied to incoming records before they are delivered to the Amazon OpenSearch Serverless collection. (AI-inferred)
 	ProcessingConfiguration any
-	// Specifies the duration of time (in seconds) during which Kinesis Data Firehose retries to deliver data to the Amazon OpenSearch Serverless destination when the initial attempt fails. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Amazon Kinesis Data Firehose assumes to write data to the Amazon OpenSearch Serverless collection. (AI-inferred)
 	RoleArn any
-	// Determines which source records are delivered to the S3 backup bucket for the Amazon OpenSearch Serverless destination: 'FailedDocumentsOnly' backs up only documents that fail to index, while 'AllDocuments' backs up all source records. (AI-inferred)
 	S3BackupMode any
-	// Defines the S3 bucket and related settings that Firehose uses as both a buffering layer and a backup destination for records that could not be delivered to the Amazon OpenSearch Serverless endpoint. (AI-inferred)
 	S3Configuration any
-	// Configures the Virtual Private Cloud (VPC) settings, including subnet IDs and security group IDs, that allow the Firehose delivery stream to privately access the Amazon OpenSearch Serverless collection endpoint. (AI-inferred)
 	VpcConfiguration any
 }
 
 type FirehoseDeliveryStream_AmazonopensearchserviceDestinationConfiguration_DocumentIdOptions struct {
-	// Specifies the default document ID format for records indexed into Amazon OpenSearch Service, either letting Firehose generate a unique document ID (FIREHOSE_DEFAULT) or not assigning a document ID (NO_DOCUMENT_ID). (AI-inferred)
 	DefaultDocumentIdFormat any
 }
 
 type FirehoseDeliveryStream_AmazonopensearchserviceDestinationConfiguration struct {
-	// Specifies the buffering sizing and interval for the Amazon OpenSearch Service destination, controlling how long and how much incoming data is accumulated before being delivered to the OpenSearch cluster. (AI-inferred)
 	BufferingHints any
-	// Configures CloudWatch Logs logging for the Amazon OpenSearch Service destination, including whether logging is enabled and the log group and log stream names where Firehose delivers error logs. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the cluster endpoint of the Amazon OpenSearch Service destination that Kinesis Data Firehose uses to deliver data, which is mutually exclusive with the domain ARN. (AI-inferred)
 	ClusterEndpoint any
-	// Configures the default document ID format for records delivered to Amazon OpenSearch Service, choosing between Firehose's auto-generated unique ID and omitting the document ID entirely. (AI-inferred)
 	DocumentIdOptions any
-	// The ARN of the Amazon OpenSearch Service domain to which this Firehose delivery stream sends data. (AI-inferred)
 	DomainArn any
-	// The name of the Amazon OpenSearch Service index to which Firehose writes incoming data records. (AI-inferred)
 	IndexName any
-	// Specifies how often Amazon Kinesis Data Firehose rotates the OpenSearch index name (e.g., NoRotation, OneHour, OneDay, OneWeek, OneMonth), appending a timestamp to the index name to separate data over time. (AI-inferred)
 	IndexRotationPeriod any
-	// Specifies whether and how incoming records for the Amazon OpenSearch Service destination are transformed, including Lambda-based data processors and their parameters. (AI-inferred)
 	ProcessingConfiguration any
-	// Retry options for the Amazon OpenSearch Service destination, specifying the duration in seconds that Kinesis Data Firehose retries data delivery after an initial failure. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to access the Amazon OpenSearch Service domain and write data to the specified index. (AI-inferred)
 	RoleArn any
-	// Determines which S3 backup mode to use for the OpenSearch Service destination, such as 'FailedDocumentsOnly' or 'AllDocuments'. (AI-inferred)
 	S3BackupMode any
-	// Specifies the S3 bucket configuration (e.g., bucket ARN, prefix, buffering hints, compression) that the Kinesis Firehose stream uses to store records delivered to Amazon OpenSearch Service, required for backup or failed-record handling. (AI-inferred)
 	S3Configuration any
-	// The document type name that Kinesis Data Firehose uses when indexing records into the Amazon OpenSearch Service destination, which is required for Elasticsearch 5.x and earlier but optional (or ignored) for Elasticsearch 6.x and OpenSearch. (AI-inferred)
 	TypeName any
-	// Configures the VPC settings that allow the delivery stream to access an Amazon OpenSearch Service domain inside a VPC. (AI-inferred)
 	VpcConfiguration any
 }
 
 type FirehoseDeliveryStream_DatabaseSourceConfiguration_Columns struct {
-	// Specifies the list of column names from the database source table that are excluded from the data ingested by the Firehose delivery stream. (AI-inferred)
 	Exclude any
-	// Specifies the list of column names from the source database table that Firehose should include when ingesting data, filtering out other columns from the delivered stream. (AI-inferred)
 	Include any
 }
 
 type FirehoseDeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration_SecretsManagerConfiguration struct {
-	// Indicates whether AWS Secrets Manager is used to retrieve the database credentials for the database source. (AI-inferred)
 	Enabled any
-	// The ARN of the IAM role that AWS Kinesis Data Firehose assumes to retrieve the database authentication secret from AWS Secrets Manager. (AI-inferred)
 	RoleArn any
-	// The ARN of the AWS Secrets Manager secret that stores the database credentials used by Firehose to authenticate to the database source. (AI-inferred)
 	SecretArn any
 }
 
 type FirehoseDeliveryStream_DatabaseSourceConfiguration_DatabaseSourceAuthenticationConfiguration struct {
-	// Provides the ARN of the AWS Secrets Manager secret that stores the database credentials used to authenticate to the source database for the Kinesis Firehose delivery stream. (AI-inferred)
 	SecretsManagerConfiguration any
 }
 
 type FirehoseDeliveryStream_DatabaseSourceConfiguration_DatabaseSourceVpcconfiguration struct {
-	// The name of the VPC endpoint service through which the Firehose delivery stream connects to the database source in your VPC. (AI-inferred)
 	VpcEndpointServiceName any
 }
 
 type FirehoseDeliveryStream_DatabaseSourceConfiguration struct {
-	// Lists the specific columns of the database table to be captured by the Firehose delivery stream, allowing you to restrict the data that gets streamed from the database source. (AI-inferred)
 	Columns any
-	// Specifies the authentication details, including the AWS Secrets Manager secret ARN containing the database credentials, used to connect to the database source for this Firehose delivery stream. (AI-inferred)
 	DatabaseSourceAuthenticationConfiguration any
-	// Configures the VPC settings (VPC ID, subnet IDs, security group IDs, and IAM role ARN) that enable the Kinesis Data Firehose delivery stream to access the source database within a virtual private cloud. (AI-inferred)
 	DatabaseSourceVpcconfiguration any
-	// This required field lists the names of the databases from which the Kinesis Firehose delivery stream ingests data when configured with a database source. (AI-inferred)
 	Databases any
 	Digest any
-	// Specifies the connection endpoint (hostname or IP address) of the source database that Kinesis Data Firehose uses to ingest data, typically the DNS endpoint of an RDS or Aurora database instance. (AI-inferred)
 	Endpoint any
-	// The TCP port number on the source database server that this Firehose delivery stream connects to when ingesting data from the database source. (AI-inferred)
 	Port any
-	// The PEM-encoded public certificate used by Kinesis Data Firehose to authenticate the database connection when TLS/SSL is enabled. (AI-inferred)
 	PublicCertificate any
-	// Specifies the name of the table in the source database that Amazon Kinesis Data Firehose uses to store the snapshot watermark, enabling it to track the progress of the initial snapshot and resume from where it left off. (AI-inferred)
 	SnapshotWatermarkTable any
-	// Determines the SSL/TLS mode used when connecting to the source database, controlling whether encryption is required and whether the server certificate is verified. (AI-inferred)
 	Sslmode any
-	// Specifies the list of column names (surrogate keys) in the source database table that Firehose uses to uniquely identify records for change data capture (CDC) operations such as updates and deletes. (AI-inferred)
 	SurrogateKeys any
 	Tables any
-	// The database engine type (e.g., MySQL or PostgreSQL) that identifies the kind of database from which Kinesis Data Firehose pulls the source data. (AI-inferred)
 	Type any
 }
 
 type FirehoseDeliveryStream_DeliveryStreamEncryptionConfigurationInput struct {
-	// The ARN of the AWS KMS key used to encrypt the delivery stream's data when server-side encryption is enabled. (AI-inferred)
 	KeyArn any
-	// Specifies the type of encryption key for the delivery stream, either AWS_OWNED_CMK or CUSTOMER_MANAGED_CMK, where CUSTOMER_MANAGED_CMK requires the KeyArn property. (AI-inferred)
 	KeyType any
 }
 
 type FirehoseDeliveryStream_DirectPutSourceConfiguration struct {
-	// Specifies a throughput hint in megabytes per second that Firehose uses as a capacity planning aid when ingesting data from a direct PUT source, helping to provision the delivery stream with adequate resources. (AI-inferred)
 	ThroughputHintInMbs any
 }
 
 type FirehoseDeliveryStream_ElasticsearchDestinationConfiguration struct {
-	// Specifies the buffering size (in MB) and buffering interval (in seconds) that govern when Amazon Kinesis Data Firehose flushes incoming data to the Amazon Elasticsearch Service destination. (AI-inferred)
 	BufferingHints any
-	// Configures whether the Firehose delivery stream's Elasticsearch destination logs are sent to Amazon CloudWatch Logs, including the CloudWatch log group and log stream name to use. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the full HTTPS endpoint URL of the Elasticsearch cluster (e.g., https://search-my-domain.us-east-1.es.amazonaws.com) to which Kinesis Data Firehose sends records, used instead of the Amazon ES domain ARN when you want to target an external or self-managed cluster. (AI-inferred)
 	ClusterEndpoint any
-	// Configures the document ID generation strategy for Elasticsearch writes in Firehose, allowing you to use a field from the source record (AdditionalDocumentId) as the Elasticsearch document ID rather than the managed/default randomly generated ID. (AI-inferred)
 	DocumentIdOptions any
-	// The ARN of the Amazon Elasticsearch Service domain that the Kinesis Firehose delivery stream sends data to. (AI-inferred)
 	DomainArn any
-	// The name of the Elasticsearch index that the delivery stream writes to, which can include time-format placeholders like %{yyyy-MM-dd} for dynamic index naming. (AI-inferred)
 	IndexName any
-	// Specifies how often Amazon Kinesis Data Firehose rotates the Elasticsearch index name by appending a timestamp, with allowed values NoRotation, OneHour, OneDay, OneWeek, or OneMonth. (AI-inferred)
 	IndexRotationPeriod any
-	// Specifies the processing configuration, including whether it is enabled and the Lambda-based processors, that transform incoming data records before they are delivered to the Elasticsearch destination. (AI-inferred)
 	ProcessingConfiguration any
-	// Specifies the length of time (in seconds) during which Kinesis Data Firehose retries sending data to the Amazon Elasticsearch Service destination after a delivery failure. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to write to the specified Amazon Elasticsearch Service domain. (AI-inferred)
 	RoleArn any
-	// Determines whether only failed documents or all documents are backed up to the S3 bucket for the Elasticsearch destination, controlled by the s3_backup_mode value (either 'FailedDocumentsOnly' or 'AllDocuments'). (AI-inferred)
 	S3BackupMode any
-	// The S3 configuration used to buffer incoming data before delivery to the Elasticsearch destination, specifying the bucket, IAM role, buffering hints, and optional encryption settings. (AI-inferred)
 	S3Configuration any
-	// Specifies the Elasticsearch document type name that Amazon Kinesis Firehose uses when indexing data into the destination Elasticsearch domain. (AI-inferred)
 	TypeName any
-	// Configures VPC settings (subnet IDs, security group IDs, and an IAM role) that allow the Firehose delivery stream to access an Amazon ES domain in a VPC. (AI-inferred)
 	VpcConfiguration any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_HiveJsonSerDe struct {
-	// Specifies a list of timestamp format strings (Java SimpleDateFormat syntax) that the Hive JSON SerDe uses to parse timestamp fields in the incoming JSON data during data format conversion. (AI-inferred)
 	TimestampFormats any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer_OpenXjsonSerDe struct {
-	// When enabled, column names in the JSON input are matched to the table schema without regard to case, allowing lowercase and uppercase variants to be treated equivalently. (AI-inferred)
 	CaseInsensitive any
-	// Specifies a mapping of column names to JSON keys that the OpenXJsonSerDe uses to map fields in the source JSON data to columns in the output format. (AI-inferred)
 	ColumnToJsonKeyMappings any
-	// When set to true, this option instructs the OpenXJSON SerDe to replace dots in JSON key names with underscores during deserialization, so that keys like 'a.b' are converted to 'a_b'. (AI-inferred)
 	ConvertDotsInJsonKeysToUnderscores any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration_Deserializer struct {
-	// Specifies the Hive JSON SerDe to deserialize JSON input records during data format conversion for the Extended S3 destination, allowing configuration of timestamp formats for parsing. (AI-inferred)
 	HiveJsonSerDe any
-	// Configures the OpenXJsonSerDe deserializer for parsing JSON input during data format conversion, optionally mapping column names to JSON keys. (AI-inferred)
 	OpenXjsonSerDe any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_InputFormatConfiguration struct {
-	// Specifies the deserializer configuration that defines how incoming source records are parsed (e.g., via OpenXJsonSerDe or HiveJsonSerDe) before converting them to the target output format such as Parquet or ORC in the data format conversion process. (AI-inferred)
 	Deserializer any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_OrcSerDe struct {
-	// The size of each ORC block in bytes, which controls the compression and read performance of ORC files written by Firehose. (AI-inferred)
 	BlockSizeBytes any
-	// Specifies the list of column names for which ORC will create bloom filters, enabling efficient predicate filtering in downstream queries. (AI-inferred)
 	BloomFilterColumns any
-	// Specifies the desired false positive probability for ORC bloom filters used by the ORC SerDe in the data format conversion, balancing filter accuracy against memory usage when writing to the extended S3 destination. (AI-inferred)
 	BloomFilterFalsePositiveProbability any
-	// Specifies the compression codec (e.g., SNAPPY, GZIP, DEFLATE) for ORC-format output produced by the Firehose delivery stream's data format conversion. (AI-inferred)
 	Compression any
-	// Specifies the fraction of distinct string keys relative to the total number of rows in a column that, when exceeded, causes the ORC SerDe to disable dictionary encoding for that column in the Firehose output. (AI-inferred)
 	DictionaryKeyThreshold any
-	// When enabled, the ORC serializer pads rows to reduce row index overhead, which can improve compression efficiency at the cost of slightly increased storage size. (AI-inferred)
 	EnablePadding any
-	// Defines the version of the ORC SerDe used when the Firehose delivery stream converts and writes data to ORC format in the extended S3 destination. (AI-inferred)
 	FormatVersion any
-	// Specifies the tolerance for block padding as a decimal fraction of total block size when writing ORC files, controlling how much padding the ORC writer is allowed to add to achieve the desired stripe size. (AI-inferred)
 	PaddingTolerance any
-	// Specifies the number of rows between index entries in the ORC-encoded output, with a default value of 10000. (AI-inferred)
 	RowIndexStride any
-	// The size (in bytes) of each stripe in the ORC output files, controlling how much data is grouped into a stripe and affecting compression and read performance. (AI-inferred)
 	StripeSizeBytes any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer_ParquetSerDe struct {
-	// Specifies the size in bytes of each row group (block) in the Parquet output files written by the ParquetSerDe serializer. (AI-inferred)
 	BlockSizeBytes any
-	// Specifies the compression codec (such as UNCOMPRESSED, GZIP, or SNAPPY) that the Parquet serializer applies to data before writing to Amazon S3. (AI-inferred)
 	Compression any
-	// Indicates whether to enable dictionary compression for the Parquet serializer in the output format configuration. (AI-inferred)
 	EnableDictionaryCompression any
-	// Specifies the maximum amount of padding (in bytes) to apply to the size of rows when the Parquet SerDe serializes data during data format conversion for the Kinesis Firehose extended S3 destination. (AI-inferred)
 	MaxPaddingBytes any
-	// Specifies the number of bytes in each page of the Parquet output, which controls the granularity of compression and encoding within the Parquet file produced by the Firehose data format conversion. (AI-inferred)
 	PageSizeBytes any
-	// Sets the version of the Apache Parquet writer used to serialize the output data (valid values are 'V1' and 'V2'), which controls the Parquet formatting and encoding compatibility. (AI-inferred)
 	WriterVersion any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration_Serializer struct {
-	// Configures the ORC (Optimized Row Columnar) serializer for the output format conversion in the extended S3 destination, specifying ORC SerDe parameters such as compression type, block size, and stripe size. (AI-inferred)
 	OrcSerDe any
-	// Specifies the Parquet serialization settings (such as block size, page size, compression, and dictionary encoding) applied to the output data when the Firehose conversion writes records in Parquet format to S3. (AI-inferred)
 	ParquetSerDe any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_OutputFormatConfiguration struct {
-	// Defines the serializer that specifies how converted data is written to S3, allowing either Parquet (ParquetSerDe) or ORC (OrcSerDe) serialization within the output format configuration. (AI-inferred)
 	Serializer any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration_SchemaConfiguration struct {
-	// The AWS account ID of the Glue Data Catalog where the schema's source table is defined; defaults to the current account ID if omitted. (AI-inferred)
 	CatalogId any
-	// Specifies the name of the AWS Glue Data Catalog database that contains the table schema used for the data format conversion in the Firehose delivery stream. (AI-inferred)
 	DatabaseName any
-	// The AWS Region where the schema (e.g., the referenced Glue database or schema) resides, enabling Firehose to locate and apply the appropriate schema during data format conversion. (AI-inferred)
 	Region any
-	// The IAM role ARN that AWS Kinesis Firehose assumes to access the AWS Glue Data Catalog for retrieving schema information needed for data format conversion (e.g., to Parquet or ORC) in the extended S3 destination. (AI-inferred)
 	RoleArn any
-	// Specifies the table name in the AWS Glue Data Catalog that defines the schema used for data format conversion. (AI-inferred)
 	TableName any
-	// Specifies the version of the AWS Glue table schema to use for the data format conversion; when omitted, Amazon Kinesis Data Firehose uses the latest schema version. (AI-inferred)
 	VersionId any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DataFormatConversionConfiguration struct {
-	// Whether to enable data format conversion for the delivery stream's S3 destination, allowing source records to be transformed to formats such as Parquet or ORC before being written to S3. (AI-inferred)
 	Enabled any
-	// Specifies the input format configuration for data format conversion, including the deserializer (OpenXJsonSerDe or HiveJsonSerDe) used to parse records from the source format. (AI-inferred)
 	InputFormatConfiguration any
-	// Specifies the format (serializer) for the output data after schema and format conversion, such as Parquet or ORC, in the data format conversion configuration for the S3 destination. (AI-inferred)
 	OutputFormatConfiguration any
-	// Defines the schema details (including the IAM role, AWS Glue database and table, region, and optional version) that Firehose uses to interpret incoming records for format conversion (e.g., to Parquet or ORC). (AI-inferred)
 	SchemaConfiguration any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration_DynamicPartitioningConfiguration struct {
-	// Whether dynamic partitioning is enabled for the S3 destination, allowing Firehose to partition data in Amazon S3 by keys extracted from incoming records. (AI-inferred)
 	Enabled any
-	// Retry options for the dynamic partitioning process, configuring the maximum duration in seconds that AWS Kinesis Data Firehose retries failed dynamic partitioning operations before the data is discarded or routed to an error bucket. (AI-inferred)
 	RetryOptions any
 }
 
 type FirehoseDeliveryStream_ExtendedS3DestinationConfiguration struct {
-	// The ARN of the S3 bucket where Firehose delivers data records when using the extended S3 destination configuration. (AI-inferred)
 	BucketArn any
-	// Specifies the buffering size (in MB) and buffering interval (in seconds) that Firehose uses to accumulate incoming data before delivering a batch to the S3 destination for this Extended S3 destination configuration. (AI-inferred)
 	BufferingHints any
-	// Configures whether CloudWatch Logs logging is enabled for the S3 destination, and optionally specifies the log group and log stream to which Firehose delivers delivery error logs. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the compression format for data delivered to Amazon S3, such as GZIP, ZIP, SNAPPY, HADOOP_SNAPPY, or UNCOMPRESSED. (AI-inferred)
 	CompressionFormat any
-	// Sets the time zone used for timestamp-based S3 object name prefixes and paths in the extended S3 destination, overriding the default UTC. (AI-inferred)
 	CustomTimeZone any
-	// Configures data format conversion for the extended S3 destination, enabling AWS Kinesis Data Firehose to convert incoming data to formats like Apache Parquet or ORC (via AWS Glue) before delivery to S3. (AI-inferred)
 	DataFormatConversionConfiguration any
-	// Configures dynamic partitioning for the extended S3 destination, allowing Firehose to automatically partition incoming data based on keys extracted from the data itself, with an enabled flag and retry options for partitioning backpressure. (AI-inferred)
 	DynamicPartitioningConfiguration any
-	// Configures how data written to the S3 bucket is encrypted at rest, allowing either no encryption or KMS-managed server-side encryption with a specified AWS KMS key. (AI-inferred)
 	EncryptionConfiguration any
-	// Specifies the S3 object key prefix under which Kinesis Data Firehose writes records that failed processing or delivery, capturing error output for troubleshooting. (AI-inferred)
 	ErrorOutputPrefix any
-	// Specifies the file extension to use for objects delivered to Amazon S3, overriding the default extension for the selected compression format. (AI-inferred)
 	FileExtension any
-	// Specifies the string prefix prepended to the S3 object names that Kinesis Data Firehose writes to the extended S3 destination, commonly used to organize objects by date/time patterns such as 'YYYY/MM/DD/HH/'. (AI-inferred)
 	Prefix any
-	// Configures data transformation, typically via an AWS Lambda function, to process records before they are delivered to the extended S3 destination of the Kinesis Firehose delivery stream. (AI-inferred)
 	ProcessingConfiguration any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to write to the S3 bucket (and invoke any associated Lambda transformation) configured in the extended S3 destination. (AI-inferred)
 	RoleArn any
-	// Defines the S3 bucket and related settings (such as bucket ARN, prefix, buffering, and encryption) that Kinesis Data Firehose uses to back up delivered data for the extended S3 destination when S3 backup is enabled. (AI-inferred)
 	S3BackupConfiguration any
-	// Specifies whether Amazon S3 backups for the destination are enabled (Enabled) or disabled (Disabled). (AI-inferred)
 	S3BackupMode any
 }
 
 type FirehoseDeliveryStream_HttpEndpointDestinationConfiguration_EndpointConfiguration struct {
-	// The access key (username) used for basic authentication to the HTTP endpoint when delivering data to the configured HTTP destination. (AI-inferred)
 	AccessKey any
-	// Specifies the name of the HTTP endpoint to which Firehose delivers data, used as a friendly identifier for the endpoint within the delivery stream. (AI-inferred)
 	Name any
-	// The URL of the HTTP endpoint to which Kinesis Data Firehose delivers data. (AI-inferred)
 	Url any
 }
 
 type FirehoseDeliveryStream_HttpEndpointDestinationConfiguration_RequestConfiguration_CommonAttributes struct {
-	// The name of a key in a key-value pair that is added to every HTTP endpoint request made by the delivery stream. (AI-inferred)
 	AttributeName any
-	// The value of the common attribute that is added to each HTTP request sent to the specified HTTP endpoint destination. (AI-inferred)
 	AttributeValue any
 }
 
 type FirehoseDeliveryStream_HttpEndpointDestinationConfiguration_RequestConfiguration struct {
-	// Specifies key-value pairs that are included in every HTTP request Firehose sends to the destination endpoint. (AI-inferred)
 	CommonAttributes any
-	// Specifies the content encoding (NONE or GZIP) that Kinesis Data Firehose applies to the data in HTTP requests sent to the destination endpoint. (AI-inferred)
 	ContentEncoding any
 }
 
 type FirehoseDeliveryStream_HttpEndpointDestinationConfiguration struct {
-	// Configures the buffering size (in MB) and buffering interval (in seconds) for incoming data before it is delivered to the HTTP endpoint destination. (AI-inferred)
 	BufferingHints any
-	// Specifies the CloudWatch Logs logging options for the HTTP endpoint destination, including whether logging is enabled and the log group and log stream to which logs are delivered. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Configures the HTTP endpoint target for Kinesis Data Firehose delivery, including the endpoint URL, name, and optional access key used for authentication. (AI-inferred)
 	EndpointConfiguration any
-	// Configures whether and how incoming records are processed (e.g., by Lambda) for the HTTP endpoint destination, including an Enabled flag and a list of Processors that define the transformation steps. (AI-inferred)
 	ProcessingConfiguration any
-	// Specifies the request configuration for the HTTP endpoint destination, including common attributes (custom headers) sent with each request and the content encoding (GZIP or NONE). (AI-inferred)
 	RequestConfiguration any
-	// Specifies the retry behavior for failed HTTP endpoint deliveries, including the duration (in seconds) for which Kinesis Data Firehose retries the delivery. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to access the HTTP endpoint and deliver data to it. (AI-inferred)
 	RoleArn any
-	// Specifies whether Firehose backs up all data or only data that failed to deliver to the HTTP endpoint to the S3 bucket configured in the S3 destination. (AI-inferred)
 	S3BackupMode any
-	// S3 configuration for the HTTP endpoint destination, specifying the bucket, prefix, and IAM role used to back up Firehose-delivered records. (AI-inferred)
 	S3Configuration any
-	// Specifies the AWS Secrets Manager configuration used to retrieve the HTTP endpoint's authentication credentials. (AI-inferred)
 	SecretsManagerConfiguration any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration_CatalogConfiguration struct {
-	// The ARN of the AWS Glue catalog that the Firehose delivery stream uses to access and manage Iceberg tables. (AI-inferred)
 	CatalogArn any
-	// The Amazon S3 URI (e.g., s3://bucket/prefix) that defines the warehouse location for the Apache Iceberg table, specifying where the table's data and metadata are stored. (AI-inferred)
 	WarehouseLocation any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpec_Identity struct {
-	// Specifies the name of the incoming data column whose value is used directly (as an identity transform) for the corresponding Iceberg partition field, so each unique value in that column creates its own partition in the destination table. (AI-inferred)
 	SourceName any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList_PartitionSpec struct {
-	// Specifies which columns from the source data are used as partition keys in the Iceberg destination table using identity transforms, so each partition corresponds to the exact value of the listed column. (AI-inferred)
 	Identity any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration_DestinationTableConfigurationList struct {
-	// The name of the AWS Glue Data Catalog database that contains the Iceberg table to which Firehose delivers records. (AI-inferred)
 	DestinationDatabaseName any
-	// The name of the Apache Iceberg table in the destination data catalog (such as AWS Glue) to which Firehose writes the incoming data records. (AI-inferred)
 	DestinationTableName any
-	// Specifies the partitioning scheme for the destination Iceberg table, including the list of partition fields and their transforms used to organize incoming records into partitions. (AI-inferred)
 	PartitionSpec any
-	// Specifies the S3 object key prefix under which records that fail to be written to the Iceberg destination table are stored in the error output bucket for this table configuration. (AI-inferred)
 	S3ErrorOutputPrefix any
-	// Specifies the list of column names that serve as the unique key for the destination table, used to determine whether each incoming record is treated as an insert or an update when writing to the Iceberg table. (AI-inferred)
 	UniqueKeys any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration_SchemaEvolutionConfiguration struct {
-	// Whether Firehose automatically evolves the Iceberg table schema to accommodate new fields in incoming records. (AI-inferred)
 	Enabled any
 }
 
 type FirehoseDeliveryStream_IcebergDestinationConfiguration struct {
-	// Determines whether the Firehose stream writes data to the Iceberg table as append-only inserts (true) or allows operations based on table primary keys such as updates and deletes (false). (AI-inferred)
 	AppendOnly any
-	// Defines the buffering size (in MB) and interval (in seconds) that Firehose waits before delivering accumulated data to the Iceberg destination, controlling the frequency and size of write batches. (AI-inferred)
 	BufferingHints any
-	// Specifies the AWS Glue Data Catalog configuration for the Iceberg destination, including the catalog ARN and warehouse location used to locate and write to the target Iceberg tables. (AI-inferred)
 	CatalogConfiguration any
-	// CloudWatch Logs logging options for the Iceberg destination, controlling whether delivery stream logs are sent to CloudWatch and specifying the log group and log stream names. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the list of Apache Iceberg destination table configurations (each with a database name and table name) that the delivery stream writes to, enabling routing to multiple Iceberg tables. (AI-inferred)
 	DestinationTableConfigurationList any
-	// Specifies the data processing configuration, including any Lambda-based processors, that transforms incoming records before they are written to the Iceberg destination. (AI-inferred)
 	ProcessingConfiguration any
-	// Defines the maximum duration (in seconds) that Kinesis Data Firehose will retry sending records to the Iceberg destination if the initial delivery attempt fails. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Firehose assumes to write to the Iceberg table, granting permissions for the Glue catalog and underlying S3 data. (AI-inferred)
 	RoleArn any
-	// Sets whether Amazon S3 receives backup copies of only failed events or all events when delivering to the Iceberg destination. (AI-inferred)
 	S3BackupMode any
-	// Specifies the S3 staging configuration, including bucket ARN, prefix, buffering hints, compression, encryption, and CloudWatch logging options, that Kinesis Data Firehose uses to temporarily store data before delivering it to the Iceberg destination. (AI-inferred)
 	S3Configuration any
-	// Specifies whether Firehose automatically updates the Iceberg table schema as new fields arrive, including the catalog type used for schema tracking. (AI-inferred)
 	SchemaEvolutionConfiguration any
-	// Specifies the configuration for automatically creating an Iceberg table in the Glue Data Catalog when delivering data via this Firehose stream, including the table schema and partitioning. (AI-inferred)
 	TableCreationConfiguration any
 }
 
 type FirehoseDeliveryStream_KinesisStreamSourceConfiguration struct {
-	// The ARN of the Kinesis data stream that serves as the source for the Firehose delivery stream, from which records are read and delivered. (AI-inferred)
 	KinesisStreamArn any
-	// The ARN of the IAM role that grants Amazon Kinesis Data Firehose permission to read records from the source Kinesis stream. (AI-inferred)
 	RoleArn any
 }
 
 type FirehoseDeliveryStream_MsksourceConfiguration_AuthenticationConfiguration struct {
-	// The connectivity setting determines whether the Delivery Stream connects to the MSK cluster over the public internet or through a VPC (private connectivity), with valid values PUBLIC and PRIVATE. (AI-inferred)
 	Connectivity any
-	// The ARN of the IAM role that Amazon Data Firehose assumes to access the Amazon MSK cluster. (AI-inferred)
 	RoleArn any
 }
 
 type FirehoseDeliveryStream_MsksourceConfiguration struct {
-	// The authentication configuration for the MSK source, specifying the connectivity type (public or private) and the IAM role ARN that Firehose assumes to access the cluster. (AI-inferred)
 	AuthenticationConfiguration any
-	// The Amazon Resource Name (ARN) of the MSK cluster that the delivery stream reads data from. (AI-inferred)
 	MskclusterArn any
-	// Specifies the ISO 8601 timestamp from which the Firehose delivery stream begins consuming records from the MSK topic, allowing replay of historical data from that point onward. (AI-inferred)
 	ReadFromTimestamp any
-	// The name of the Apache Kafka topic on the MSK cluster that this Firehose delivery stream reads from as its source. (AI-inferred)
 	TopicName any
 }
 
 type FirehoseDeliveryStream_RedshiftDestinationConfiguration_CopyCommand struct {
-	// Specifies the options string (e.g., 'CSV', 'GZIP') that is appended to the Redshift COPY command to control the format and behavior of data loading from the Firehose S3 source. (AI-inferred)
 	CopyOptions any
-	// Comma-separated list of column names in the target Redshift table that the COPY command should load data into, controlling which columns receive the incoming Firehose records. (AI-inferred)
 	DataTableColumns any
-	// The name of the target Redshift table (which must already exist) into which the Firehose delivery stream loads data via the COPY command. (AI-inferred)
 	DataTableName any
 }
 
 type FirehoseDeliveryStream_RedshiftDestinationConfiguration struct {
-	// Configures CloudWatch Logs for the Redshift destination of the delivery stream, specifying whether logging is enabled and the log group and log stream where delivery stream logs are written. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// The JDBC connection URL for the Amazon Redshift cluster that Firehose uses to connect when delivering data. (AI-inferred)
 	ClusterJdbcurl any
-	// Defines the Amazon Redshift COPY command settings (target table name, column list, and copy options) that Kinesis Data Firehose uses to load staged S3 data into the Redshift destination table. (AI-inferred)
 	CopyCommand any
-	// The password for the Redshift user account that Firehose uses to authenticate and execute the COPY command when loading data into the Redshift cluster. (AI-inferred)
 	Password any
-	// Specifies the processing configuration for the Redshift destination, enabling data transformation (such as via Lambda) to run on incoming records before they are loaded. (AI-inferred)
 	ProcessingConfiguration any
-	// Configures the retry behavior for the Redshift destination, defining the duration in seconds during which Kinesis Data Firehose retries a failed delivery before giving up. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to access the Redshift cluster and perform the load operation. (AI-inferred)
 	RoleArn any
-	// The S3 destination configuration used to back up data delivered to the Redshift destination when S3 backup mode is enabled. (AI-inferred)
 	S3BackupConfiguration any
-	// Specifies whether backups of all data delivered to Amazon Redshift are also sent to Amazon S3; valid values are 'Disabled' (default) and 'Enabled'. (AI-inferred)
 	S3BackupMode any
-	// Defines the S3 bucket and prefix (with optional buffering, compression, and encryption settings) where Firehose temporarily stores incoming data before loading it into the Redshift destination. (AI-inferred)
 	S3Configuration any
-	// Configures the AWS Secrets Manager integration for the Redshift destination, allowing Firehose to retrieve the Redshift database credentials from a Secrets Manager secret instead of supplying them inline. (AI-inferred)
 	SecretsManagerConfiguration any
-	// The username of the Amazon Redshift database user that Kinesis Data Firehose authenticates with to load data into the Redshift cluster, requiring privileges for the COPY, INSERT, and CREATE TEMP TABLE operations. (AI-inferred)
 	Username any
 }
 
 type FirehoseDeliveryStream_SnowflakeDestinationConfiguration_SnowflakeRoleConfiguration struct {
-	// Indicates whether the IAM role configuration is enabled for the Snowflake destination, allowing Firehose to assume the specified role when delivering data. (AI-inferred)
 	Enabled any
-	// Specifies the Snowflake role that Kinesis Data Firehose uses for the Snowflake session when delivering data to the configured Snowflake destination. (AI-inferred)
 	SnowflakeRole any
 }
 
 type FirehoseDeliveryStream_SnowflakeDestinationConfiguration_SnowflakeVpcConfiguration struct {
-	// The ID of the VPC endpoint (VPCE) that Firehose uses to connect to Snowflake via AWS PrivateLink. (AI-inferred)
 	PrivateLinkVpceId any
 }
 
 type FirehoseDeliveryStream_SnowflakeDestinationConfiguration struct {
-	// The URL of the Snowflake account (e.g., https://account-name.snowflakecomputing.com) to which the Firehose delivery stream writes data. (AI-inferred)
 	AccountUrl any
-	// Buffering hints configure the in-flight data buffering size (in MB) and buffering interval (in seconds) before the Kinesis Data Firehose delivers the accumulated data to Snowflake, allowing you to trade off between lower latency and lower delivery frequency. (AI-inferred)
 	BufferingHints any
-	// CloudWatch logging options for the Snowflake destination, including whether logging is enabled and the CloudWatch log group and stream names to send Firehose delivery errors to. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// Specifies the name of the column in the Snowflake table where the Firehose-delivered data (the actual content payload) is stored, separate from any metadata columns. (AI-inferred)
 	ContentColumnName any
-	// Specifies how Firehose loads data into Snowflake: 'JSON_MAPPING' (default) maps JSON fields to individual columns, whereas 'VARIANT_CONTENT' stores each entire record as a single VARIANT column. (AI-inferred)
 	DataLoadingOption any
-	// The name of the Snowflake database to which the delivery stream writes data. (AI-inferred)
 	Database any
-	// The passphrase that protects the encrypted private key used for Snowflake authentication, required only when the private key is encrypted. (AI-inferred)
 	KeyPassphrase any
-	// Specifies the name of the metadata column that Firehose creates in the Snowflake destination table to store metadata about each delivered record. (AI-inferred)
 	MetaDataColumnName any
-	// The private key used for Snowflake key-pair authentication, required when AuthenticationMode is set to KeyPair. (AI-inferred)
 	PrivateKey any
-	// Configures data transformation (such as an AWS Lambda function) to process records before they are delivered to the Snowflake destination. (AI-inferred)
 	ProcessingConfiguration any
-	// Specifies the retry behavior for delivery to Snowflake, including the maximum retry duration in seconds when a delivery attempt fails. (AI-inferred)
 	RetryOptions any
-	// The ARN of the IAM role that Kinesis Data Firehose assumes to access Snowflake, granting the necessary permissions for the Snowflake destination. (AI-inferred)
 	RoleArn any
-	// Controls whether Firehose backs up the original source records to the Amazon S3 bucket specified in the Snowflake destination's S3Configuration, with valid values 'Enabled' and 'Disabled'. (AI-inferred)
 	S3BackupMode any
-	// Configures the S3 bucket where Kinesis Data Firehose buffers or backs up data before delivering it to the Snowflake destination, including bucket name, prefix, buffering hints, compression, and encryption settings. (AI-inferred)
 	S3Configuration any
-	// The name of the Snowflake database schema where Firehose writes the ingested data. (AI-inferred)
 	Schema any
-	// Configuration for retrieving Snowflake credentials from AWS Secrets Manager instead of specifying them directly in the destination configuration. (AI-inferred)
 	SecretsManagerConfiguration any
-	// Contains settings to enable and specify a Snowflake role that the Firehose delivery stream uses when writing data to the Snowflake destination. (AI-inferred)
 	SnowflakeRoleConfiguration any
-	// Defines the VPC configuration for the Snowflake destination, specifying the PrivateLink VPC endpoint ID that Firehose uses to connect to Snowflake over a private network. (AI-inferred)
 	SnowflakeVpcConfiguration any
-	// The name of the Snowflake table that the Kinesis Data Firehose delivery stream writes records to. (AI-inferred)
 	Table any
-	// The Snowflake user name used to authenticate the delivery stream when writing data to the configured Snowflake database and schema. (AI-inferred)
 	User any
 }
 
 type FirehoseDeliveryStream_SplunkDestinationConfiguration struct {
-	// Settings that control when data is buffered and sent to Splunk, such as the buffer size in MB and the buffer interval in seconds, to optimize delivery batching. (AI-inferred)
 	BufferingHints any
-	// CloudWatch logging options for the Splunk destination, specifying whether logging is enabled and the log group and log stream names where Firehose delivery logs are published. (AI-inferred)
 	CloudWatchLoggingOptions any
-	// The number of seconds Kinesis Data Firehose waits for an acknowledgment from Splunk after sending data before treating the delivery as failed and retrying. (AI-inferred)
 	HecacknowledgmentTimeoutInSeconds any
-	// The URL of the Splunk HTTP Event Collector (HEC) endpoint that Amazon Kinesis Data Firehose uses to deliver data to your Splunk cluster. (AI-inferred)
 	Hecendpoint any
-	// Specifies whether the Splunk HEC endpoint type is for event data or raw data, accepting the values 'Event' or 'Raw'. (AI-inferred)
 	HecendpointType any
-	// The HTTP Event Collector (HEC) token that authenticates the Kinesis Data Firehose delivery stream to the configured Splunk HEC endpoint. (AI-inferred)
 	Hectoken any
-	// Configure data transformation for the Splunk destination by specifying whether processing is enabled and the list of processors (such as a Lambda function) that act on incoming records before they are delivered to Splunk. (AI-inferred)
 	ProcessingConfiguration any
-	// Configures the retry behavior for the Splunk destination, specifically the length of time (in seconds) during which Firehose retries data delivery to the Splunk HTTP Event Collector after a failed attempt. (AI-inferred)
 	RetryOptions any
-	// Determines whether all data or only events that failed to deliver to Splunk are backed up to the configured S3 bucket, accepting values 'FailedEventsOnly' or 'AllEvents'. (AI-inferred)
 	S3BackupMode any
-	// This object specifies the S3 backup location where Kinesis Data Firehose buffers and stores data before delivering it to the Splunk destination, including the bucket name, prefix, and optional encryption settings. (AI-inferred)
 	S3Configuration any
-	// Configuration for referencing an AWS Secrets Manager secret that supplies the Splunk HEC token or other credentials used by the Firehose delivery stream to authenticate with Splunk. (AI-inferred)
 	SecretsManagerConfiguration any
 }
 
 type FirehoseDeliveryStream_Tags struct {
-	// The key of a user-defined tag assigned to the Kinesis Data Firehose delivery stream, used for organizing and identifying the resource. (AI-inferred)
 	Key any
 	Value any
 }
@@ -1400,80 +1164,45 @@ var FirehoseDeliveryStream_TagsFields = ubx.FieldMap{
 	}
 
 type FirehoseDeliveryStreamConfig struct {
-	// Specifies the configuration for delivering data from the Firehose stream to an Amazon OpenSearch Serverless collection, including the collection endpoint, index name, buffering hints, and authentication details. (AI-inferred)
 	AmazonOpenSearchServerlessDestinationConfiguration any
-	// Specifies the destination configuration for delivering data to Amazon OpenSearch Service, including cluster endpoint, domain ARN, index name, S3 backup configuration, and buffering hints. (AI-inferred)
 	AmazonopensearchserviceDestinationConfiguration any
-	// Configures the database source from which the delivery stream pulls data, including the database type, connection endpoint, port, database name, table name, credentials, and optional VPC networking settings. (AI-inferred)
 	DatabaseSourceConfiguration any
-	// Configures server-side encryption for the Kinesis Data Firehose delivery stream by specifying the AWS KMS key ARN and the key type (AWS-owned or customer-managed). (AI-inferred)
 	DeliveryStreamEncryptionConfigurationInput any
-	// A name for the Kinesis Data Firehose delivery stream; if omitted, CloudFormation generates a unique physical ID to use as the stream name. (AI-inferred)
 	DeliveryStreamName any
-	// Specifies the type of delivery stream, either 'DirectPut' (default) or 'KinesisStreamAsSource', which determines whether the stream can be written to directly or reads from a Kinesis data stream as its source. (AI-inferred)
 	DeliveryStreamType any
 	DirectPutSourceConfiguration any
-	// Defines the delivery stream's target as Amazon Elasticsearch Service (now OpenSearch), specifying the domain/endpoint, index and type, buffering and retry behavior, and optional S3 backup for failed records. (AI-inferred)
 	ElasticsearchDestinationConfiguration any
-	// This configuration defines an Amazon S3 destination for the Kinesis Data Firehose delivery stream, with extended options such as data transformation via AWS Lambda, buffering hints, compression, encryption, dynamic partitioning, and CloudWatch error logging. (AI-inferred)
 	ExtendedS3DestinationConfiguration any
-	// Configuration for the Kinesis Data Firehose delivery stream to deliver incoming data records to an HTTP/HTTPS endpoint, specifying endpoint settings, request details, buffering, retries, and optional S3 backup. (AI-inferred)
 	HttpEndpointDestinationConfiguration any
-	// Specifies how Kinesis Data Firehose writes records to an Apache Iceberg table, including the Glue catalog configuration, database and table names, and buffering options. (AI-inferred)
 	IcebergDestinationConfiguration any
-	// Specifies the configuration for using a Kinesis data stream as the source of the delivery stream, including the Kinesis stream ARN and the IAM role that Firehose assumes to read from it. (AI-inferred)
 	KinesisStreamSourceConfiguration any
-	// Defines the Amazon MSK source parameters for the delivery stream, including the Kafka topic name, MSK cluster endpoint, and authentication configuration used to ingest streaming data from an Amazon Managed Streaming for Apache Kafka cluster. (AI-inferred)
 	MsksourceConfiguration any
-	// Specifies the destination settings for delivering Firehose stream data to an Amazon Redshift cluster, including the JDBC connection URL, copy command, S3 staging configuration, and IAM role. (AI-inferred)
 	RedshiftDestinationConfiguration any
-	// Configures an Amazon S3 bucket as the delivery destination for a Kinesis Data Firehose delivery stream, specifying the bucket ARN, IAM role, and optional prefix/buffering settings. (AI-inferred)
 	S3DestinationConfiguration any
-	// This field specifies the configuration for delivering Kinesis Data Firehose stream data to a Snowflake destination, including the Snowflake account URL, database, schema, table, and authentication credentials. (AI-inferred)
 	SnowflakeDestinationConfiguration any
-	// Defines the destination configuration for sending data to Splunk, including the Splunk endpoint, access credentials, buffering and retry settings, and optional S3 backup for failed records. (AI-inferred)
 	SplunkDestinationConfiguration any
-	// Assigns a list of key-value tags to the Kinesis Data Firehose delivery stream, enabling resource categorization for cost allocation and access management. (AI-inferred)
 	Tags any
 }
 
 type FirehoseDeliveryStreamAttrs struct {
-	// Specifies the configuration for delivering data from the Firehose stream to an Amazon OpenSearch Serverless collection, including the collection endpoint, index name, buffering hints, and authentication details. (AI-inferred)
 	AmazonOpenSearchServerlessDestinationConfiguration any
-	// Specifies the destination configuration for delivering data to Amazon OpenSearch Service, including cluster endpoint, domain ARN, index name, S3 backup configuration, and buffering hints. (AI-inferred)
 	AmazonopensearchserviceDestinationConfiguration any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Kinesis Data Firehose delivery stream, such as arn:aws:firehose:region:account:deliverystream/name. (AI-inferred)
 	Arn any
-	// Configures the database source from which the delivery stream pulls data, including the database type, connection endpoint, port, database name, table name, credentials, and optional VPC networking settings. (AI-inferred)
 	DatabaseSourceConfiguration any
-	// Configures server-side encryption for the Kinesis Data Firehose delivery stream by specifying the AWS KMS key ARN and the key type (AWS-owned or customer-managed). (AI-inferred)
 	DeliveryStreamEncryptionConfigurationInput any
-	// A name for the Kinesis Data Firehose delivery stream; if omitted, CloudFormation generates a unique physical ID to use as the stream name. (AI-inferred)
 	DeliveryStreamName any
-	// Specifies the type of delivery stream, either 'DirectPut' (default) or 'KinesisStreamAsSource', which determines whether the stream can be written to directly or reads from a Kinesis data stream as its source. (AI-inferred)
 	DeliveryStreamType any
 	DirectPutSourceConfiguration any
-	// Defines the delivery stream's target as Amazon Elasticsearch Service (now OpenSearch), specifying the domain/endpoint, index and type, buffering and retry behavior, and optional S3 backup for failed records. (AI-inferred)
 	ElasticsearchDestinationConfiguration any
-	// This configuration defines an Amazon S3 destination for the Kinesis Data Firehose delivery stream, with extended options such as data transformation via AWS Lambda, buffering hints, compression, encryption, dynamic partitioning, and CloudWatch error logging. (AI-inferred)
 	ExtendedS3DestinationConfiguration any
-	// Configuration for the Kinesis Data Firehose delivery stream to deliver incoming data records to an HTTP/HTTPS endpoint, specifying endpoint settings, request details, buffering, retries, and optional S3 backup. (AI-inferred)
 	HttpEndpointDestinationConfiguration any
-	// Specifies how Kinesis Data Firehose writes records to an Apache Iceberg table, including the Glue catalog configuration, database and table names, and buffering options. (AI-inferred)
 	IcebergDestinationConfiguration any
-	// Specifies the configuration for using a Kinesis data stream as the source of the delivery stream, including the Kinesis stream ARN and the IAM role that Firehose assumes to read from it. (AI-inferred)
 	KinesisStreamSourceConfiguration any
-	// Defines the Amazon MSK source parameters for the delivery stream, including the Kafka topic name, MSK cluster endpoint, and authentication configuration used to ingest streaming data from an Amazon Managed Streaming for Apache Kafka cluster. (AI-inferred)
 	MsksourceConfiguration any
-	// Specifies the destination settings for delivering Firehose stream data to an Amazon Redshift cluster, including the JDBC connection URL, copy command, S3 staging configuration, and IAM role. (AI-inferred)
 	RedshiftDestinationConfiguration any
-	// Configures an Amazon S3 bucket as the delivery destination for a Kinesis Data Firehose delivery stream, specifying the bucket ARN, IAM role, and optional prefix/buffering settings. (AI-inferred)
 	S3DestinationConfiguration any
-	// This field specifies the configuration for delivering Kinesis Data Firehose stream data to a Snowflake destination, including the Snowflake account URL, database, schema, table, and authentication credentials. (AI-inferred)
 	SnowflakeDestinationConfiguration any
-	// Defines the destination configuration for sending data to Splunk, including the Splunk endpoint, access credentials, buffering and retry settings, and optional S3 backup for failed records. (AI-inferred)
 	SplunkDestinationConfiguration any
-	// Assigns a list of key-value tags to the Kinesis Data Firehose delivery stream, enabling resource categorization for cost allocation and access management. (AI-inferred)
 	Tags any
 }
 

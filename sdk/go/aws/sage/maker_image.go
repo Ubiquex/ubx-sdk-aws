@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerImage_Tags struct {
-	// The key portion of a tag assigned to the SageMaker Image resource, enabling you to label the image with custom metadata for cost allocation and operational management. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair attached to the SageMaker image, used to organize and identify the resource for cost allocation and access control. (AI-inferred)
 	Value any
 }
 

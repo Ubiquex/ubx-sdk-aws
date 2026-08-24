@@ -7,11 +7,8 @@ export interface SpacesWebBrowserSettings_Tags {
 }
 
 export interface SpacesWebBrowserSettings_WebContentFilteringPolicy {
-  /** Specifies a list of allowed URL patterns that users are permitted to access when the web content filtering policy is enabled, with all other URLs being blocked. (AI-inferred) */
   allowedUrls?: string[] | Computed<string[]>;
-  /** The list of web content category identifiers to block, which prevents users from accessing websites that belong to the specified categories in this WorkSpaces Web browser settings. (AI-inferred) */
   blockedCategories?: string[] | Computed<string[]>;
-  /** The list of URLs that are blocked by the web content filtering policy, preventing end users from accessing those sites in the WorkSpaces Web browser. (AI-inferred) */
   blockedUrls?: string[] | Computed<string[]>;
 }
 
@@ -27,30 +24,20 @@ const SpacesWebBrowserSettings_WebContentFilteringPolicyFields: FieldMap = {
 };
 
 export interface SpacesWebBrowserSettingsConfig {
-  /** Adds key-value pairs to the AWS KMS encryption context used to encrypt the browser settings resource, enabling additional contextual information for auditing and access control. (AI-inferred) */
   additionalEncryptionContext?: unknown | Computed<unknown>;
-  /** The JSON-formatted string that defines the browser policy, which controls the browser features and behaviors available to WorkSpaces Web users. (AI-inferred) */
   browserPolicy?: string | Computed<string>;
-  /** The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred) */
   customerManagedKey?: string | Computed<string>;
   tags?: SpacesWebBrowserSettings_Tags[] | Computed<SpacesWebBrowserSettings_Tags[]>;
-  /** Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred) */
   webContentFilteringPolicy?: SpacesWebBrowserSettings_WebContentFilteringPolicy | Computed<SpacesWebBrowserSettings_WebContentFilteringPolicy>;
 }
 
 export interface SpacesWebBrowserSettingsAttrs {
-  /** Adds key-value pairs to the AWS KMS encryption context used to encrypt the browser settings resource, enabling additional contextual information for auditing and access control. (AI-inferred) */
   additionalEncryptionContext: unknown;
-  /** The list of Amazon Resource Names (ARNs) of the WorkSpaces Web portals that are linked to these browser settings, automatically assigned by the service when a portal is associated. (AI-inferred) */
   associatedPortalArns: string[];
-  /** The JSON-formatted string that defines the browser policy, which controls the browser features and behaviors available to WorkSpaces Web users. (AI-inferred) */
   browserPolicy: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the browser settings resource. (AI-inferred) */
   browserSettingsArn: string;
-  /** The ARN of a customer-managed KMS key used to encrypt the browser settings, with AWS-managed encryption applied when this optional field is left empty. (AI-inferred) */
   customerManagedKey: string;
   tags: SpacesWebBrowserSettings_Tags[];
-  /** Specifies the web content filtering policy for WorkSpaces Web browser settings, defining rules that allow or block web content by category (such as adult content, social media, or advertising) in browser sessions. (AI-inferred) */
   webContentFilteringPolicy: SpacesWebBrowserSettings_WebContentFilteringPolicy;
 }
 

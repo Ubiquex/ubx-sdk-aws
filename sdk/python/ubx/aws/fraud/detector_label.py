@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DetectorLabel_Tags:
-    # The key of a tag attached to an AWS Fraud Detector label, used for resource organization, filtering, and cost allocation. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to an AWS Fraud Detector label, used to store arbitrary metadata for identifying and organizing the label resource. (AI-inferred)
     value: Any = None
 
 _DetectorLabel_TagsFields = {

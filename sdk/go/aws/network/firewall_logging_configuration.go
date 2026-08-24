@@ -4,16 +4,12 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallLoggingConfiguration_LoggingConfiguration_LogDestinationConfigs struct {
-	// Specifies the actual destination details as key-value pairs, such as the S3 bucket name, CloudWatch Logs log group, or Kinesis Data Firehose delivery stream, that correspond to the chosen LogDestinationType in the Network Firewall logging configuration. (AI-inferred)
 	LogDestination any
-	// Defines the kind of service that receives the firewall logs, such as Amazon S3, CloudWatch Logs, or Kinesis Data Firehose. (AI-inferred)
 	LogDestinationType any
-	// The type of Network Firewall log to send to this destination, either ALERT for firewall alert logs or FLOW for firewall flow logs. (AI-inferred)
 	LogType any
 }
 
 type FirewallLoggingConfiguration_LoggingConfiguration struct {
-	// Specifies the destinations and log types (alert or flow) to which Network Firewall sends its logs, such as Amazon CloudWatch Logs, Amazon S3, or Amazon Kinesis Data Firehose. (AI-inferred)
 	LogDestinationConfigs any
 }
 
@@ -35,9 +31,7 @@ type FirewallLoggingConfigurationConfig struct {
 	EnableMonitoringDashboard any
 	// A resource ARN.
 	FirewallArn any
-	// The name of the Network Firewall firewall resource that this logging configuration applies to, used as an alternative to the firewall ARN. (AI-inferred)
 	FirewallName any
-	// Specifies the logging destinations and configuration for the network firewall, including the list of log destination configs that define where firewall logs are sent (e.g., to CloudWatch Logs, S3, or Kinesis Data Firehose). (AI-inferred)
 	LoggingConfiguration any
 }
 
@@ -45,9 +39,7 @@ type FirewallLoggingConfigurationAttrs struct {
 	EnableMonitoringDashboard any
 	// A resource ARN.
 	FirewallArn any
-	// The name of the Network Firewall firewall resource that this logging configuration applies to, used as an alternative to the firewall ARN. (AI-inferred)
 	FirewallName any
-	// Specifies the logging destinations and configuration for the network firewall, including the list of log destination configs that define where firewall logs are sent (e.g., to CloudWatch Logs, S3, or Kinesis Data Firehose). (AI-inferred)
 	LoggingConfiguration any
 }
 

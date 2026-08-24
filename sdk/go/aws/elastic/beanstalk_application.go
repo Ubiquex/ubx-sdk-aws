@@ -22,16 +22,13 @@ type BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCoun
 }
 
 type BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig struct {
-	// This object defines the rule that automatically deletes application versions older than a specified number of days, optionally deleting their source bundles from S3, for the Elastic Beanstalk application version lifecycle configuration. (AI-inferred)
 	MaxAgeRule any
-	// Specifies the max-count-based lifecycle rule for Elastic Beanstalk application versions, including whether the rule is enabled, the maximum number of versions to keep (MaxCount), and whether to delete the source bundle from S3. (AI-inferred)
 	MaxCountRule any
 }
 
 type BeanstalkApplication_ResourceLifecycleConfig struct {
 	// The ARN of an IAM service role that Elastic Beanstalk has permission to assume. The ServiceRole property is required the first time that you provide a ResourceLifecycleConfig for the application. After you provide it once, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again. You can, however, specify it in subsequent updates to change the Service Role to another value.
 	ServiceRole any
-	// Defines the lifecycle policy for application versions, including optional max count and max age rules that control how many versions are retained and how old they may become before deletion. (AI-inferred)
 	VersionLifecycleConfig any
 }
 
@@ -74,7 +71,6 @@ type BeanstalkApplicationConfig struct {
 	ApplicationName any
 	// Your description of the application.
 	Description any
-	// Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
 	ResourceLifecycleConfig any
 }
 
@@ -83,7 +79,6 @@ type BeanstalkApplicationAttrs struct {
 	ApplicationName any
 	// Your description of the application.
 	Description any
-	// Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
 	ResourceLifecycleConfig any
 }
 

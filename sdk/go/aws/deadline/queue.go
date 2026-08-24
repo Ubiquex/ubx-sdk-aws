@@ -4,42 +4,31 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Queue_JobAttachmentSettings struct {
-	// Specifies the S3 key prefix (within the job attachment S3 bucket) that serves as the root location for storing all job attachments for this queue. (AI-inferred)
 	RootPrefix any
-	// The name of the S3 bucket that AWS Deadline Cloud uses to store job attachments for this queue. (AI-inferred)
 	S3BucketName any
 }
 
 type Queue_JobRunAsUser_Posix struct {
-	// The POSIX group name or ID used to run jobs in the queue. (AI-inferred)
 	Group any
-	// The POSIX user name that jobs in this AWS Deadline queue will run as. (AI-inferred)
 	User any
 }
 
 type Queue_JobRunAsUser_Windows struct {
-	// The ARN of the AWS Secrets Manager secret containing the password for the Windows user that jobs will run as on this queue. (AI-inferred)
 	PasswordArn any
-	// The Windows user account name that jobs submitted to this AWS Deadline queue will run as on Windows worker nodes. (AI-inferred)
 	User any
 }
 
 type Queue_JobRunAsUser struct {
-	// Configures the POSIX user and group under which jobs in this Deadline queue run. (AI-inferred)
 	Posix any
-	// Specifies whether jobs run as the AWS-managed user or the queue-configured user, with valid values 'AWS_MANAGED_USER' and 'QUEUE_CONFIGURED_USER'. (AI-inferred)
 	RunAs any
-	// Specifies the Windows user account settings, including the user name and the ARN of the password stored in AWS Secrets Manager, that Deadline Cloud uses to run jobs on Windows worker nodes in this queue. (AI-inferred)
 	Windows any
 }
 
 type Queue_SchedulingConfiguration_PriorityBalanced struct {
-	// Specifies the number of rendering tasks to buffer in the queue scheduler for workers, helping to minimize idle time and improve rendering throughput. (AI-inferred)
 	RenderingTaskBuffer any
 }
 
 type Queue_SchedulingConfiguration_WeightedBalanced_MaxPriorityOverride struct {
-	// When set to true, ensures that the highest-priority job in the queue is always scheduled first, even under weighted balanced scheduling. (AI-inferred)
 	AlwaysScheduleFirst any
 }
 
@@ -48,34 +37,23 @@ type Queue_SchedulingConfiguration_WeightedBalanced_MinPriorityOverride struct {
 }
 
 type Queue_SchedulingConfiguration_WeightedBalanced struct {
-	// Defines the relative weight given to the error rate metric when the weighted balanced scheduling type scores and orders jobs in the queue's scheduling policy. (AI-inferred)
 	ErrorWeight any
-	// Specifies the maximum priority value a job can be assigned in the queue's weighted balanced scheduling, overriding any higher priority requested by the job to cap job precedence. (AI-inferred)
 	MaxPriorityOverride any
 	MinPriorityOverride any
-	// Specifies the relative priority weight that the weighted balanced scheduling configuration uses to determine how jobs in this queue are allocated workers compared to other queues. (AI-inferred)
 	PriorityWeight any
-	// For weighted balanced scheduling, the rendering task buffer sets the number of rendering tasks prefetched for each worker to reduce idle time and latency. (AI-inferred)
 	RenderingTaskBuffer any
-	// Sets the relative scheduling weight for rendering tasks within a weighted-balanced queue scheduling configuration, influencing the proportion of rendering tasks the service assigns. (AI-inferred)
 	RenderingTaskWeight any
-	// The submission_time_weight field sets the relative weight applied to a job's submission time when the queue uses weighted balanced scheduling, so a higher value makes older submissions more strongly prioritized. (AI-inferred)
 	SubmissionTimeWeight any
 }
 
 type Queue_SchedulingConfiguration struct {
-	// Specifies the priority-balanced scheduling settings for the queue, which allocate worker capacity based on job priority while preventing starvation of lower-priority jobs. (AI-inferred)
 	PriorityBalanced any
-	// Determines whether the queue schedules jobs using priority-based ordering (true) or first-in, first-out (FIFO) ordering (false). (AI-inferred)
 	PriorityFifo any
-	// Specifies the weighted-balanced scheduling mode for the queue, which distributes jobs to workers proportionally based on assigned weights to maintain balanced resource utilization. (AI-inferred)
 	WeightedBalanced any
 }
 
 type Queue_Tags struct {
-	// The key portion of a tag assigned to the AWS Deadline queue, used to categorize, identify, and manage the queue resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag key attached to the AWS Deadline queue resource. (AI-inferred)
 	Value any
 }
 
@@ -158,23 +136,14 @@ var Queue_TagsFields = ubx.FieldMap{
 	}
 
 type QueueConfig struct {
-	// Specifies the list of storage profile IDs that are allowed to be used by this Deadline Cloud queue for job attachments. (AI-inferred)
 	AllowedStorageProfileIds any
-	// Specifies the action Deadline takes when the queue's budget limit is exceeded, with valid values NONE and STOP_SCHEDULING_AND_CANCEL_JOBS. (AI-inferred)
 	DefaultBudgetAction any
-	// A human-readable description of the queue, used to provide context about the queue's purpose or contents in AWS Deadline Cloud. (AI-inferred)
 	Description any
-	// The user-friendly display name of the Deadline Cloud queue, used to identify it in the AWS console and API. (AI-inferred)
 	DisplayName any
-	// The unique identifier of the AWS Deadline Cloud farm to which this queue belongs and is associated. (AI-inferred)
 	FarmId any
-	// Configures the S3 bucket and root prefix where job attachments for the queue are stored. (AI-inferred)
 	JobAttachmentSettings any
-	// Specifies the operating system user (and group for POSIX, or Windows user) that jobs submitted to this Deadline queue will run as, along with the run-as mode (USER or WORKER) that determines whether jobs use the queue-defined user or the worker's user. (AI-inferred)
 	JobRunAsUser any
-	// Specifies the names of file system locations that must be available and mounted for jobs in this Deadline Cloud queue to run. (AI-inferred)
 	RequiredFileSystemLocationNames any
-	// The ARN of the IAM role that the queue assumes to access AWS resources such as S3 buckets. (AI-inferred)
 	RoleArn any
 	SchedulingConfiguration any
 	// An array of key-value pairs to apply to this resource.
@@ -182,27 +151,16 @@ type QueueConfig struct {
 }
 
 type QueueAttrs struct {
-	// Specifies the list of storage profile IDs that are allowed to be used by this Deadline Cloud queue for job attachments. (AI-inferred)
 	AllowedStorageProfileIds any
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS Deadline queue, used for IAM policies and API operations. (AI-inferred)
 	Arn any
-	// Specifies the action Deadline takes when the queue's budget limit is exceeded, with valid values NONE and STOP_SCHEDULING_AND_CANCEL_JOBS. (AI-inferred)
 	DefaultBudgetAction any
-	// A human-readable description of the queue, used to provide context about the queue's purpose or contents in AWS Deadline Cloud. (AI-inferred)
 	Description any
-	// The user-friendly display name of the Deadline Cloud queue, used to identify it in the AWS console and API. (AI-inferred)
 	DisplayName any
-	// The unique identifier of the AWS Deadline Cloud farm to which this queue belongs and is associated. (AI-inferred)
 	FarmId any
-	// Configures the S3 bucket and root prefix where job attachments for the queue are stored. (AI-inferred)
 	JobAttachmentSettings any
-	// Specifies the operating system user (and group for POSIX, or Windows user) that jobs submitted to this Deadline queue will run as, along with the run-as mode (USER or WORKER) that determines whether jobs use the queue-defined user or the worker's user. (AI-inferred)
 	JobRunAsUser any
-	// The unique identifier assigned by AWS Deadline Cloud to the queue when it is created, used to reference the queue in other operations and resources. (AI-inferred)
 	QueueId any
-	// Specifies the names of file system locations that must be available and mounted for jobs in this Deadline Cloud queue to run. (AI-inferred)
 	RequiredFileSystemLocationNames any
-	// The ARN of the IAM role that the queue assumes to access AWS resources such as S3 buckets. (AI-inferred)
 	RoleArn any
 	SchedulingConfiguration any
 	// An array of key-value pairs to apply to this resource.

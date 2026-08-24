@@ -3,14 +3,11 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PricingCalculatorBillScenario_BillInterval {
   end?: string | Computed<string>;
-  /** The start of the billing interval for the bill scenario, defining the beginning of the period over which AWS costs are estimated. (AI-inferred) */
   start?: string | Computed<string>;
 }
 
 export interface PricingCalculatorBillScenario_Tags {
-  /** A user-defined key for a tag attached to the AWS BCM Pricing Calculator bill scenario, used to categorize and track the bill scenario for cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag on the AWS BCM Pricing Calculator bill scenario, used for categorizing and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -24,7 +21,6 @@ export interface PricingCalculatorBillScenarioConfig {
   costCategoryGroupSharingPreferenceArn?: string | Computed<string>;
   /** The timestamp when the bill scenario expires */
   expiresAt?: string | Computed<string>;
-  /** Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred) */
   groupSharingPreference?: string | Computed<string>;
   /** The name of the bill scenario */
   name?: string | Computed<string>;
@@ -35,7 +31,6 @@ export interface PricingCalculatorBillScenarioConfig {
 export interface PricingCalculatorBillScenarioAttrs {
   /** The Amazon Resource Name (ARN) of the bill scenario. */
   arn: string;
-  /** The computed time interval (with start and end timestamps) that delineates the billing period the bill scenario analyzes, automatically populated by the AWS BCM Pricing Calculator service. (AI-inferred) */
   billInterval: PricingCalculatorBillScenario_BillInterval;
   /** The ARN of the cost category group sharing preference */
   costCategoryGroupSharingPreferenceArn: string;
@@ -45,13 +40,11 @@ export interface PricingCalculatorBillScenarioAttrs {
   expiresAt: string;
   /** The failure message if the bill scenario failed */
   failureMessage: string;
-  /** Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred) */
   groupSharingPreference: string;
   /** The unique identifier of the bill scenario */
   id: string;
   /** The name of the bill scenario */
   name: string;
-  /** The current lifecycle state of the bill scenario, such as whether it is active, being created, or failed, as determined by the AWS BCM Pricing Calculator service. (AI-inferred) */
   status: string;
   /** An array of key-value pairs to apply to this resource */
   tags: PricingCalculatorBillScenario_Tags[];

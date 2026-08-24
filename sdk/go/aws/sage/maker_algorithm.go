@@ -4,134 +4,86 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerAlgorithm_InferenceSpecification_Containers_ModelInput struct {
-	// Specifies the data input configuration for the model container, provided as a JSON string that defines the expected input format, shape, and other parameters for inference. (AI-inferred)
 	DataInputConfig any
 }
 
 type MakerAlgorithm_InferenceSpecification_Containers struct {
-	// Specifies a custom hostname for the container, which other containers in the same SageMaker inference pipeline can use to route requests to it. (AI-inferred)
 	ContainerHostname any
-	// Sets key-value environment variables that are passed to the inference container when it is deployed. (AI-inferred)
 	Environment any
-	// The name of the machine learning framework (such as TensorFlow or PyTorch) that the inference container image is built with. (AI-inferred)
 	Framework any
-	// Specifies the version of the machine learning framework (e.g., TensorFlow, PyTorch, MXNet) that the container image is built with, which SageMaker uses to select compatible instance types and inference behavior, and is required when the Framework property is set. (AI-inferred)
 	FrameworkVersion any
-	// The Amazon ECR registry path (URI) of the Docker container image used as the algorithm's inference container. (AI-inferred)
 	Image any
-	// Specifies the SHA256 digest of the container image referenced in this inference container definition, enabling you to pin the exact image version for reproducible deployments. (AI-inferred)
 	ImageDigest any
-	// A boolean flag that marks this inference container as the checkpoint container for multi-container SageMaker inference, enabling state to be saved and passed between chained containers. (AI-inferred)
 	IsCheckpoint any
-	// Specifies the model input configuration for the container, which includes the data input config string that defines the expected input tensor shape and data format for inference. (AI-inferred)
 	ModelInput any
-	// Specifies the default model name to use when the container serves inference in a multi-model configuration, enabling proper routing of inference requests to the intended model. (AI-inferred)
 	NearestModelName any
 }
 
 type MakerAlgorithm_InferenceSpecification struct {
-	// Defines the list of Docker container specifications, each including image and configuration, that SageMaker uses for inference when deploying the algorithm. (AI-inferred)
 	Containers any
-	// The list of MIME content types the algorithm supports for inference input requests (e.g., 'text/csv', 'application/json'). (AI-inferred)
 	SupportedContentTypes any
-	// Specifies the list of Amazon EC2 instance types that are supported for real-time inference with this algorithm. (AI-inferred)
 	SupportedRealtimeInferenceInstanceTypes any
-	// Specifies the list of MIME types that the algorithm's inference container can return as the response payload, constraining the output formats customers may request when deploying the model. (AI-inferred)
 	SupportedResponseMimetypes any
-	// Specifies the list of SageMaker instance types that can be used with this algorithm for batch transform jobs. (AI-inferred)
 	SupportedTransformInstanceTypes any
 }
 
 type MakerAlgorithm_Tags struct {
-	// The key of a user-defined tag attached to the SageMaker Algorithm resource, used for resource categorization, filtering, and access control. (AI-inferred)
 	Key any
-	// The value of a tag associated with the SageMaker algorithm, allowing you to attach custom metadata like cost center or environment to the resource for management and identification. (AI-inferred)
 	Value any
 }
 
 type MakerAlgorithm_TrainingSpecification_MetricDefinitions struct {
-	// Specifies the name of the metric that the training algorithm emits, used for monitoring and evaluation during training. (AI-inferred)
 	Name any
-	// The regular expression pattern that SageMaker uses to extract the metric value from the training job's CloudWatch logs. (AI-inferred)
 	Regex any
 }
 
 type MakerAlgorithm_TrainingSpecification_SupportedHyperParameters_Range_CategoricalParameterRangeSpecification struct {
-	// Specifies the list of allowed string values for a categorical hyperparameter in the SageMaker algorithm's training specification, defining the set of choices the hyperparameter can take. (AI-inferred)
 	Values any
 }
 
 type MakerAlgorithm_TrainingSpecification_SupportedHyperParameters_Range_ContinuousParameterRangeSpecification struct {
-	// Specifies the maximum value allowed for a continuous hyperparameter in the SageMaker algorithm's training specification. (AI-inferred)
 	MaxValue any
-	// The minimum value of the continuous range allowed for the hyperparameter, used to define the lower bound for tuning. (AI-inferred)
 	MinValue any
 }
 
 type MakerAlgorithm_TrainingSpecification_SupportedHyperParameters_Range struct {
-	// Specifies the list of allowed categorical values (as strings) for a hyperparameter when its parameter range type is categorical in a SageMaker algorithm's training specification. (AI-inferred)
 	CategoricalParameterRangeSpecification any
-	// In the SageMaker algorithm's training specification, this object defines the allowed minimum and maximum values of the continuous hyperparameter range, using the MaxValue and MinValue properties. (AI-inferred)
 	ContinuousParameterRangeSpecification any
-	// Specifies the minimum and maximum values for an integer hyperparameter supported by the training algorithm. (AI-inferred)
 	IntegerParameterRangeSpecification any
 }
 
 type MakerAlgorithm_TrainingSpecification_SupportedHyperParameters struct {
-	// Default value for this hyperparameter, used by training jobs when the user does not explicitly provide a value. (AI-inferred)
 	DefaultValue any
-	// The description of a supported hyperparameter that can be tuned in the SageMaker training job, explaining its purpose, allowed values, or effect on model training. (AI-inferred)
 	Description any
-	// Indicates whether a hyperparameter is required for training jobs that use this SageMaker algorithm. (AI-inferred)
 	IsRequired any
-	// Indicates whether this hyperparameter can be tuned by SageMaker hyperparameter tuning jobs, allowing its value to be optimized during training. (AI-inferred)
 	IsTunable any
-	// The name of the hyperparameter, such as 'batch_size' or 'learning_rate', that the algorithm accepts in its training configuration. (AI-inferred)
 	Name any
-	// Specifies the allowed values for this hyperparameter, either as a minimum and maximum for integer/continuous types or as a list of categories for categorical types. (AI-inferred)
 	Range any
-	// The data type of the hyperparameter, which can be one of Integer, Continuous, Categorical, or FreeText. (AI-inferred)
 	Type any
 }
 
 type MakerAlgorithm_TrainingSpecification_SupportedTuningJobObjectiveMetrics struct {
-	// The name of the training metric that SageMaker hyperparameter tuning jobs can optimize for this algorithm, as specified in the algorithm's training specification. (AI-inferred)
 	MetricName any
-	// Specifies whether the tuning job objective metric should be maximized or minimized (valid values are 'Maximize' or 'Minimize') during hyperparameter tuning. (AI-inferred)
 	Type any
 }
 
 type MakerAlgorithm_TrainingSpecification_TrainingChannels struct {
-	// Specifies a human-readable description of a training data channel, clarifying the data's format or purpose for SageMaker. (AI-inferred)
 	Description any
-	// Specifies whether the corresponding training channel must be supplied by the user when using this algorithm to create a training job. (AI-inferred)
 	IsRequired any
-	// Specifies the name of the training channel (e.g., 'train', 'validation') that the algorithm expects in the input data configuration of a training job. (AI-inferred)
 	Name any
-	// Specifies the compression types (such as 'None' or 'Gzip') that this training channel supports, so SageMaker can accept input data compressed in one of these formats when launching a training job with the algorithm. (AI-inferred)
 	SupportedCompressionTypes any
-	// Specifies the list of MIME content types (e.g., 'text/csv', 'application/x-recordio') that the training channel accepts for the algorithm's input data. (AI-inferred)
 	SupportedContentTypes any
-	// Specifies the list of supported data input modes (such as File or Pipe) for this training channel in the algorithm's training specification. (AI-inferred)
 	SupportedInputModes any
 }
 
 type MakerAlgorithm_TrainingSpecification struct {
-	// Defines a list of metric definitions, each with a name and a regex pattern, that extract training metrics from the algorithm's training job logs for monitoring and hyperparameter tuning. (AI-inferred)
 	MetricDefinitions any
-	// Specifies the hyperparameters that the algorithm supports for training, including their names, types, allowed ranges, and whether each is required or tunable. (AI-inferred)
 	SupportedHyperParameters any
-	// Specifies the list of Amazon EC2 instance types on which the algorithm can run training jobs, used by SageMaker to validate and schedule training jobs for this algorithm. (AI-inferred)
 	SupportedTrainingInstanceTypes any
-	// Defines the list of metrics that can be used as the objective metric for hyperparameter tuning jobs when training with this algorithm, where each entry specifies a metric name and the regular expression pattern used to extract its value from training output logs. (AI-inferred)
 	SupportedTuningJobObjectiveMetrics any
-	// Indicates whether the algorithm supports distributed training, allowing SageMaker training jobs to use multiple compute instances when enabled. (AI-inferred)
 	SupportsDistributedTraining any
-	// Defines the list of input channels for training, where each channel specifies its name, whether it is required, supported content types, and supported input modes such as File or Pipe. (AI-inferred)
 	TrainingChannels any
-	// The URI of the Docker container image used for training the algorithm. (AI-inferred)
 	TrainingImage any
-	// The SHA256 digest of the Docker container image used for training, which uniquely identifies the image version in Amazon ECR. (AI-inferred)
 	TrainingImageDigest any
 }
 
@@ -266,11 +218,9 @@ type MakerAlgorithmConfig struct {
 	AlgorithmName any
 	// Whether to certify the algorithm so that it can be listed in AWS Marketplace.
 	CertifyForMarketplace any
-	// Defines the inference code and container configuration for the algorithm, including the inference image URI and supported input/output content types. (AI-inferred)
 	InferenceSpecification any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Defines the training configuration for the algorithm, including the training image, input/output channels, hyperparameter ranges, metric definitions, and other settings SageMaker uses to run training jobs. (AI-inferred)
 	TrainingSpecification any
 }
 
@@ -285,11 +235,9 @@ type MakerAlgorithmAttrs struct {
 	CertifyForMarketplace any
 	// A timestamp specifying when the algorithm was created.
 	CreationTime any
-	// Defines the inference code and container configuration for the algorithm, including the inference image URI and supported input/output content types. (AI-inferred)
 	InferenceSpecification any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
-	// Defines the training configuration for the algorithm, including the training image, input/output channels, hyperparameter ranges, metric definitions, and other settings SageMaker uses to run training jobs. (AI-inferred)
 	TrainingSpecification any
 }
 

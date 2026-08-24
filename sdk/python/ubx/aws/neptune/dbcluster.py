@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dbcluster_AssociatedRoles:
-    # The name of the Neptune feature (for example, `FullTextSearch`) that the associated IAM role enables for the DB cluster. (AI-inferred)
     feature_name: Any = None
-    # The ARN of an IAM role to associate with the Neptune DB cluster, granting the cluster permissions to access other AWS services such as S3 for data loading or SageMaker for machine learning. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
@@ -22,9 +20,7 @@ class Dbcluster_ServerlessScalingConfiguration:
 
 @dataclasses.dataclass
 class Dbcluster_Tags:
-    # The tag key for a tag assigned to the Neptune DB cluster, enabling custom categorization and cost tracking. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag applied to the Neptune DB cluster, used for resource identification and organization. (AI-inferred)
     value: Any = None
 
 _Dbcluster_AssociatedRolesFields = {

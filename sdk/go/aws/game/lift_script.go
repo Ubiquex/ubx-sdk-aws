@@ -15,9 +15,7 @@ type LiftScript_StorageLocation struct {
 }
 
 type LiftScript_Tags struct {
-	// The key of a tag attached to the GameLift script, used to identify and categorize the resource. (AI-inferred)
 	Key any
-	// The string value paired with a tag key on the GameLift script, used to label and categorize the resource for cost allocation and identity-based policies. (AI-inferred)
 	Value any
 }
 
@@ -38,7 +36,6 @@ type LiftScriptConfig struct {
 	Name any
 	// The Node.js version used for execution of the Realtime script.
 	NodeJsVersion any
-	// The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred)
 	StorageLocation any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -59,7 +56,6 @@ type LiftScriptAttrs struct {
 	NodeJsVersion any
 	// The file size of the uploaded Realtime script, expressed in bytes. When files are uploaded from an S3 location, this value remains at "0".
 	SizeOnDisk any
-	// The Amazon S3 bucket and key that store the zipped script file, along with the IAM role that allows GameLift to access that location. (AI-inferred)
 	StorageLocation any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

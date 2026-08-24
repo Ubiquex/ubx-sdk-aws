@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MicrovmImage_CodeArtifact:
-    # The Amazon S3 URI of the code artifact that contains the MicroVM image to be registered as a Lambda MicroVM image. (AI-inferred)
     uri: Any = None
 
 @dataclasses.dataclass
@@ -22,7 +21,6 @@ class MicrovmImage_EnvironmentVariables:
 
 @dataclasses.dataclass
 class MicrovmImage_Hooks_MicrovmHooks:
-    # Specifies the command to execute when the microVM resumes from a paused state, enabling custom lifecycle actions. (AI-inferred)
     resume: Any = None
     resume_timeout_in_seconds: Any = None
     run: Any = None

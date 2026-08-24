@@ -4,7 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface AgentCoreRuntimeEndpointConfig {
   /** The ID of the parent Agent Runtime */
   agentRuntimeId: string | Computed<string>;
-  /** The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred) */
   agentRuntimeVersion?: string | Computed<string>;
   description?: string | Computed<string>;
   name: string | Computed<string>;
@@ -13,12 +12,10 @@ export interface AgentCoreRuntimeEndpointConfig {
 }
 
 export interface AgentCoreRuntimeEndpointAttrs {
-  /** The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred) */
   agentRuntimeArn: string;
   agentRuntimeEndpointArn: string;
   /** The ID of the parent Agent Runtime */
   agentRuntimeId: string;
-  /** The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred) */
   agentRuntimeVersion: string;
   createdAt: string;
   description: string;

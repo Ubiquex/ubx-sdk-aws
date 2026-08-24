@@ -15,9 +15,7 @@ type EventBus_LogConfig struct {
 }
 
 type EventBus_Tags struct {
-	// The key (name) of a tag attached to the Amazon EventBridge event bus. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to an Amazon EventBridge event bus, used for metadata, cost allocation, and resource access control. (AI-inferred)
 	Value any
 }
 

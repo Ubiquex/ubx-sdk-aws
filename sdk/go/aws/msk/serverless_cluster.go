@@ -4,24 +4,19 @@ package msk
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerlessCluster_ClientAuthentication_Sasl_Iam struct {
-	// Enables IAM-based access control for SASL authentication on the MSK Serverless cluster. (AI-inferred)
 	Enabled any
 }
 
 type ServerlessCluster_ClientAuthentication_Sasl struct {
-	// Enables IAM access control for SASL authentication, allowing clients to authenticate to the cluster using AWS Identity and Access Management (IAM) credentials. (AI-inferred)
 	Iam any
 }
 
 type ServerlessCluster_ClientAuthentication struct {
-	// Defines the SASL authentication configuration for the MSK Serverless cluster, which must include the Iam property to enable IAM-based client authentication, as serverless clusters support only IAM as the SASL mechanism. (AI-inferred)
 	Sasl any
 }
 
 type ServerlessCluster_VpcConfigs struct {
-	// A list of security group IDs to associate with the MSK Serverless cluster's elastic network interfaces in the VPC. (AI-inferred)
 	SecurityGroups any
-	// The list of subnet IDs in the customer VPC where the MSK Serverless cluster's network interfaces and broker endpoints are provisioned. (AI-inferred)
 	SubnetIds any
 }
 
@@ -51,26 +46,19 @@ var ServerlessCluster_VpcConfigsFields = ubx.FieldMap{
 	}
 
 type ServerlessClusterConfig struct {
-	// Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
 	ClientAuthentication any
-	// The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
 	ClusterName any
 	// A key-value pair to associate with a resource.
 	Tags any
-	// Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
 	VpcConfigs any
 }
 
 type ServerlessClusterAttrs struct {
-	// The Amazon Resource Name (ARN) of the serverless cluster. (AI-inferred)
 	Arn any
-	// Configures client authentication for the MSK Serverless cluster, specifically enabling or disabling AWS IAM access control via the nested Sasl.Iam property. (AI-inferred)
 	ClientAuthentication any
-	// The name to assign to the serverless Apache Kafka cluster. (AI-inferred)
 	ClusterName any
 	// A key-value pair to associate with a resource.
 	Tags any
-	// Specifies the VPC subnets and security groups that define the network configuration for the serverless cluster, allowing client applications to connect to the Kafka endpoints. (AI-inferred)
 	VpcConfigs any
 }
 

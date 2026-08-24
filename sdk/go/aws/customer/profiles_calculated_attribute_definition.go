@@ -4,7 +4,6 @@ package customer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProfilesCalculatedAttributeDefinition_AttributeDetails_Attributes struct {
-	// Specifies the name of a source attribute in the Customer Profiles profile that is used as an input for the calculated attribute expression. (AI-inferred)
 	Name any
 }
 
@@ -59,7 +58,6 @@ type ProfilesCalculatedAttributeDefinition_Readiness struct {
 }
 
 type ProfilesCalculatedAttributeDefinition_Tags struct {
-	// The key of a user-defined tag assigned to the calculated attribute definition, enabling categorization and access control for the resource. (AI-inferred)
 	Key any
 	Value any
 }

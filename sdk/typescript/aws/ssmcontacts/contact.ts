@@ -2,38 +2,28 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Contact_Plan_Targets_ChannelTargetInfo {
-  /** Specifies the Amazon Resource Name (ARN) of the contact channel (such as an email, SMS, or voice channel) that is contacted when this plan target is triggered during an incident. (AI-inferred) */
   channelId?: string | Computed<string>;
-  /** The number of minutes to wait before retrying the contact channel if the previous attempt to reach it fails. (AI-inferred) */
   retryIntervalInMinutes?: number | Computed<number>;
 }
 
 export interface Contact_Plan_Targets_ContactTargetInfo {
-  /** The Amazon Resource Name (ARN) of the contact that Incident Manager engages when the engagement plan reaches this target. (AI-inferred) */
   contactId?: string | Computed<string>;
-  /** Determines whether this contact is an essential target in the engagement plan, meaning that if this contact does not acknowledge an engagement, the engagement is considered failed. (AI-inferred) */
   isEssential?: boolean | Computed<boolean>;
 }
 
 export interface Contact_Plan_Targets {
-  /** Identifies the contact channel that Incident Manager engages for a given plan target, along with the optional retry interval before escalation within that stage of the contact's engagement plan. (AI-inferred) */
   channelTargetInfo?: Contact_Plan_Targets_ChannelTargetInfo | Computed<Contact_Plan_Targets_ChannelTargetInfo>;
-  /** Specifies the target contact for an engagement plan stage, including the contact's ARN and whether it is an essential target that must acknowledge an incident before escalation proceeds. (AI-inferred) */
   contactTargetInfo?: Contact_Plan_Targets_ContactTargetInfo | Computed<Contact_Plan_Targets_ContactTargetInfo>;
 }
 
 export interface Contact_Plan {
-  /** The number of minutes to wait for the contact to acknowledge an alert before moving to the next stage of the contact's engagement plan. (AI-inferred) */
   durationInMinutes?: number | Computed<number>;
-  /** The list of Amazon Resource Names (ARNs) of the rotations to include in the contact's plan, defining the rotation schedules used for on-call coverage. (AI-inferred) */
   rotationIds?: string[] | Computed<string[]>;
-  /** Specifies the list of targets to engage during a stage of the contact's plan, where each target can be a contact channel (e.g., email, SMS, voice) or another contact, defined using ChannelTargetInfo or ContactTargetInfo. (AI-inferred) */
   targets?: Contact_Plan_Targets[] | Computed<Contact_Plan_Targets[]>;
 }
 
 export interface Contact_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the SSM Contacts contact, used for categorizing and managing the contact resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -82,7 +72,6 @@ export interface ContactConfig {
   displayName: string | Computed<string>;
   /** The stages that an escalation plan or engagement plan engages contacts and contact methods in. */
   plan?: Contact_Plan[] | Computed<Contact_Plan[]>;
-  /** Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred) */
   tags?: Contact_Tags[] | Computed<Contact_Tags[]>;
   /** Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“. */
   type: string | Computed<string>;
@@ -97,7 +86,6 @@ export interface ContactAttrs {
   displayName: string;
   /** The stages that an escalation plan or engagement plan engages contacts and contact methods in. */
   plan: Contact_Plan[];
-  /** Specifies a list of key-value tag objects to associate with the contact for resource identification and cost tracking. (AI-inferred) */
   tags: Contact_Tags[];
   /** Contact type, which specify type of contact. Currently supported values: “PERSONAL”, “SHARED”, “OTHER“. */
   type: string;

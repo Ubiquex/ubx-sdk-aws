@@ -8,19 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceAccessControlAttributeConfiguration_AccessControlAttributes_Value:
-    # For a given access control attribute in this AWS SSO (IAM Identity Center) instance's ABAC configuration, the `source` field lists the identity provider attribute names (e.g., 'email') that are mapped to the attribute key and supply the values used for attribute-based access control. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class InstanceAccessControlAttributeConfiguration_AccessControlAttributes:
-    # Specifies the name of the user attribute (such as email or department) that this access control attribute entry defines for use in attribute-based access control (ABAC) in IAM Identity Center. (AI-inferred)
     key: Any = None
-    # Represents the list of values for an access control attribute key, which AWS IAM Identity Center uses to enable attribute-based access control (ABAC) for the instance. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfiguration:
-    # Defines the list of user attribute key-value pairs (such as email or department) that AWS SSO uses for attribute-based access control (ABAC) in the instance. (AI-inferred)
     access_control_attributes: Any = None
 
 _InstanceAccessControlAttributeConfiguration_AccessControlAttributes_ValueFields = {
@@ -46,7 +42,6 @@ _InstanceAccessControlAttributeConfiguration_InstanceAccessControlAttributeConfi
 
 @dataclasses.dataclass
 class InstanceAccessControlAttributeConfigurationConfig:
-    # The list of access control attributes that define the user attributes (such as email or department) used in attribute-based access control (ABAC) rules for the AWS SSO (IAM Identity Center) instance. (AI-inferred)
     access_control_attributes: Any = None
     # The InstanceAccessControlAttributeConfiguration property has been deprecated but is still supported for backwards compatibility purposes. We recomend that you use AccessControlAttributes property instead.
     instance_access_control_attribute_configuration: Any = None
@@ -55,7 +50,6 @@ class InstanceAccessControlAttributeConfigurationConfig:
 
 @dataclasses.dataclass
 class InstanceAccessControlAttributeConfigurationAttrs:
-    # The list of access control attributes that define the user attributes (such as email or department) used in attribute-based access control (ABAC) rules for the AWS SSO (IAM Identity Center) instance. (AI-inferred)
     access_control_attributes: Any = None
     # The InstanceAccessControlAttributeConfiguration property has been deprecated but is still supported for backwards compatibility purposes. We recomend that you use AccessControlAttributes property instead.
     instance_access_control_attribute_configuration: Any = None

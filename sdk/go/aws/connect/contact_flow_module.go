@@ -9,9 +9,7 @@ type ContactFlowModule_ExternalInvocationConfiguration struct {
 }
 
 type ContactFlowModule_Tags struct {
-	// The key of a tag assigned to an Amazon Connect contact flow module for resource metadata and management. (AI-inferred)
 	Key any
-	// The value of a tag applied to the Amazon Connect contact flow module, used for organizing, managing, and identifying the resource within AWS. (AI-inferred)
 	Value any
 }
 

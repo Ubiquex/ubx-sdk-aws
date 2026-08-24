@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExchangeDataSet_Tags {
-  /** The key (name) of a tag attached to the AWS Data Exchange data set, used to organize, identify, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

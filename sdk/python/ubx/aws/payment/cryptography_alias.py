@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CryptographyAliasConfig:
-    # Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred)
     alias_name: Any = None
-    # The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred)
     key_arn: Any = None
 
 @dataclasses.dataclass
 class CryptographyAliasAttrs:
-    # Specifies the friendly name for the AWS Payment Cryptography key alias, which must begin with 'alias/' and is used to reference a key in cryptographic operations. (AI-inferred)
     alias_name: Any = None
-    # The ARN of the AWS Payment Cryptography key that this alias is associated with, allowing the alias to serve as a friendly reference to the key for cryptographic operations. (AI-inferred)
     key_arn: Any = None
 
 CryptographyAlias = ubx.ResourceBinding(

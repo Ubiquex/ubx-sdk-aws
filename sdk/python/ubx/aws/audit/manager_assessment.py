@@ -24,39 +24,25 @@ class ManagerAssessment_AwsAccount:
 
 @dataclasses.dataclass
 class ManagerAssessment_Delegations:
-    # The unique identifier of the AWS Audit Manager assessment that this delegation is associated with, linking the delegation record to its parent assessment. (AI-inferred)
     assessment_id: Any = None
-    # The name of the AWS Audit Manager assessment that this delegation belongs to. (AI-inferred)
     assessment_name: Any = None
-    # Specifies an optional comment that the delegating administrator can include when delegating the assessment to another administrator, providing context or instructions for the delegation. (AI-inferred)
     comment: Any = None
-    # The unique identifier of the control set that is delegated to a reviewer within the assessment. (AI-inferred)
     control_set_id: Any = None
-    # The IAM user or role that created this delegation of the assessment. (AI-inferred)
     created_by: Any = None
-    # The creation time of the delegation, represented as a Unix epoch timestamp in seconds. (AI-inferred)
     creation_time: Any = None
-    # The unique identifier of the delegation, as assigned by AWS Audit Manager, which allows the assessment to be administered by a different AWS account. (AI-inferred)
     id: Any = None
-    # The epoch timestamp indicating when the delegation entry within the assessment was last updated, reflecting changes to the delegation's details or status. (AI-inferred)
     last_updated: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that the assessment is delegated to. (AI-inferred)
     role_arn: Any = None
-    # The type of IAM role (ADMIN or OWNER) assigned to the delegated role for the assessment, controlling the level of permissions granted. (AI-inferred)
     role_type: Any = None
-    # The current workflow state of a delegation, indicating whether the delegated control set assessment is in progress, under review, or complete. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class ManagerAssessment_Roles:
-    # The Amazon Resource Name (ARN) of the IAM role that is associated with the assessment, used to define the roles that have access to the assessment in AWS Audit Manager. (AI-inferred)
     role_arn: Any = None
-    # Specifies whether the role is a `PROCESS_OWNER`, who owns the overall assessment process, or a `RESOURCE_OWNER`, who owns a specific resource within the assessment. (AI-inferred)
     role_type: Any = None
 
 @dataclasses.dataclass
 class ManagerAssessment_Scope_AwsServices:
-    # The name of an AWS service (e.g., 'S3', 'IAM') that is included in the assessment's scope of audited services. (AI-inferred)
     service_name: Any = None
 
 @dataclasses.dataclass
@@ -69,7 +55,6 @@ class ManagerAssessment_Scope:
 @dataclasses.dataclass
 class ManagerAssessment_Tags:
     key: Any = None
-    # The value portion of a tag attached to the AWS Audit Manager assessment, used to label or categorize the assessment for organizational purposes. (AI-inferred)
     value: Any = None
 
 _ManagerAssessment_AssessmentReportsDestinationFields = {
@@ -151,7 +136,6 @@ class ManagerAssessmentConfig:
 class ManagerAssessmentAttrs:
     # The Amazon Resource Name (ARN) of the assessment.
     arn: Any = None
-    # The unique identifier assigned by AWS Audit Manager to the assessment. (AI-inferred)
     assessment_id: Any = None
     # The destination in which evidence reports are stored for the specified assessment.
     assessment_reports_destination: Any = None

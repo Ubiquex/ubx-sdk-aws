@@ -2,235 +2,156 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions {
-  /** The tag key that must be present on a content item for it to match this and-condition in the Wisdom AI agent's knowledge base association content tag filter. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the tag value that must match in the AND condition of the content tag filter used to associate knowledge base content for the answer recommendation AI agent configuration. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditions {
-  /** The list of tag conditions that must all match (AND logic) within a given OR branch of the content tag filter, used to determine which knowledge base content is associated with the AI agent. (AI-inferred) */
   andConditions?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions[]>;
-  /** Defines a tag condition used to filter knowledge base content for the AI agent's answer recommendation, requiring a content tag that matches a specified key and value. (AI-inferred) */
   tagCondition?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter {
-  /** A list of tag conditions that must all be satisfied (logical AND) for a knowledge-base content chunk to be eligible for retrieval by the AI agent. (AI-inferred) */
   andConditions?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions[]>;
-  /** Defines a list of tag-based conditions that are combined with OR logic, where a knowledge base content item is included in the AI agent's context if it satisfies any one of the specified tag key-value pairs. (AI-inferred) */
   orConditions?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditions[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_OrConditions[]>;
-  /** Specifies a single tag condition (containing a key and optionally a value) that filters knowledge base content by a specific tag for the AI agent's answer recommendation association. (AI-inferred) */
   tagCondition?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter_AndConditions>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData {
-  /** Specifies a tag filter (with a tag key and tag value, compared using an equals operator) that restricts the knowledge base content used by the AI agent for answer recommendations to only those items matching the given tag. (AI-inferred) */
   contentTagFilter?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData_ContentTagFilter>;
-  /** Specifies the maximum number of knowledge base search results to retrieve when the AI agent generates an answer recommendation. (AI-inferred) */
   maxResults?: number | Computed<number>;
-  /** Overrides the default knowledge base search type (e.g., semantic or hybrid) used by the associated knowledge base when generating answer recommendations from the AI agent. (AI-inferred) */
   overrideKnowledgeBaseSearchType?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData {
-  /** Specifies the configuration data for a knowledge base association in an answer recommendation AI agent, including content tag filters, a maximum result limit, and an optional override of the knowledge base search type. (AI-inferred) */
   knowledgeBaseAssociationConfigurationData?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData_KnowledgeBaseAssociationConfigurationData>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations {
   associationConfigurationData?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations_AssociationConfigurationData>;
-  /** The unique identifier of the associated resource (such as a knowledge base) that the AI agent links to for generating answer recommendations in this configuration. (AI-inferred) */
   associationId?: string | Computed<string>;
-  /** The type of the associated resource (for example, a knowledge base) that the AI agent can use to generate answer recommendations. (AI-inferred) */
   associationType?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_AnswerRecommendationAiagentConfiguration {
-  /** The unique identifier of the Amazon Bedrock guardrail applied during answer generation to filter or moderate the agent's output. (AI-inferred) */
   answerGenerationAiguardrailId?: string | Computed<string>;
-  /** The identifier of the Amazon Q in Connect AI Prompt resource used to generate answers for the AI agent's answer recommendation configuration. (AI-inferred) */
   answerGenerationAipromptId?: string | Computed<string>;
-  /** Defines the list of association configurations, each specifying an association type (such as a user segment or knowledge base) and its configuration data, to scope the answer recommendation AI agent's behavior. (AI-inferred) */
   associationConfigurations?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[]>;
-  /** Specifies the unique identifier of the AI prompt used to generate intent labels for the answer recommendation configuration of the Wisdom AI agent. (AI-inferred) */
   intentLabelingGenerationAipromptId?: string | Computed<string>;
-  /** Specifies the language and regional locale (such as en-US) that the answer recommendation AI agent uses to generate and deliver responses. (AI-inferred) */
   locale?: string | Computed<string>;
-  /** Specifies the identifier of the AI prompt used to reformulate or clarify user queries before the system generates answer recommendations. (AI-inferred) */
   queryReformulationAipromptId?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_CaseSummarizationAiagentConfiguration {
-  /** The unique identifier of the Amazon Bedrock guardrail used to enforce content and safety policies for the case summarization AI agent. (AI-inferred) */
   caseSummarizationAiguardrailId?: string | Computed<string>;
-  /** The ID of the Wisdom AI Prompt that the case summarization AI agent uses to generate case summaries. (AI-inferred) */
   caseSummarizationAipromptId?: string | Computed<string>;
-  /** Specifies the locale (such as en-US) that the case summarization AI agent uses when generating case summaries, controlling the language and regional format of the output. (AI-inferred) */
   locale?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_EmailGenerativeAnswerAiagentConfiguration {
-  /** This field specifies the list of associations (each containing an association type and resource identifier) that the email generative answer AI agent uses to source contextual knowledge, such as linked knowledge bases, when composing responses. (AI-inferred) */
   associationConfigurations?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[]>;
-  /** The identifier of the AI prompt that the email generative answer configuration of this Wisdom AI agent uses to generate email reply content. (AI-inferred) */
   emailGenerativeAnswerAipromptId?: string | Computed<string>;
-  /** Specifies the ID of the AI prompt used to reformulate customer email queries before passing them to the underlying generative model for answering. (AI-inferred) */
   emailQueryReformulationAipromptId?: string | Computed<string>;
-  /** The locale (e.g., 'en-US') that specifies the language and regional conventions used by the email generative answer AI agent when producing responses. (AI-inferred) */
   locale?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_EmailOverviewAiagentConfiguration {
-  /** Specifies the unique identifier of the Amazon Q in Connect AI prompt used to generate email overviews in the email overview AI agent configuration. (AI-inferred) */
   emailOverviewAipromptId?: string | Computed<string>;
-  /** Specifies the locale (e.g., en-US) that the email overview AI agent uses to determine the language and regional format for its generated summaries. (AI-inferred) */
   locale?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_EmailResponseAiagentConfiguration {
-  /** Specifies the association configurations that link the email response AI agent to knowledge bases, which the agent uses to retrieve information when composing email responses. (AI-inferred) */
   associationConfigurations?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[]>;
-  /** The ID of the AI prompt used to reformulate a customer's email query into a search query for retrieving relevant knowledge in the Amazon Q Business (Wisdom) email response configuration. (AI-inferred) */
   emailQueryReformulationAipromptId?: string | Computed<string>;
-  /** The unique identifier of the AI prompt that defines the email response behavior for the Wisdom AI agent. (AI-inferred) */
   emailResponseAipromptId?: string | Computed<string>;
-  /** The locale (e.g., en-US) that determines the language and regional formatting used by the AI agent when composing email responses. (AI-inferred) */
   locale?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_ManualSearchAiagentConfiguration {
-  /** Specifies the identifier of the AI guardrail that constrains or filters the generated answers in the manual search AI agent configuration. (AI-inferred) */
   answerGenerationAiguardrailId?: string | Computed<string>;
-  /** Specifies the unique identifier of the Amazon Wisdom AI prompt used for generating answers within this manual search AI agent configuration. (AI-inferred) */
   answerGenerationAipromptId?: string | Computed<string>;
-  /** Defines the list of associations (such as knowledge bases) that the manual search AI agent uses to retrieve information from those sources. (AI-inferred) */
   associationConfigurations?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[]>;
-  /** Specifies the locale (e.g., en-US) for the manual search AI agent, determining the language used to interpret user queries and generate responses. (AI-inferred) */
   locale?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_NoteTakingAiagentConfiguration {
-  /** Specifies the locale (such as en-US) that the note-taking AI agent uses to generate and format its notes. (AI-inferred) */
   locale?: string | Computed<string>;
-  /** The ID of the guardrail attached to the note-taking AI agent configuration, used to enforce safety and content filtering. (AI-inferred) */
   noteTakingAiguardrailId?: string | Computed<string>;
-  /** The unique identifier of the AI prompt that defines the note-taking behavior for the AI agent configuration. (AI-inferred) */
   noteTakingAipromptId?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_Instruction {
-  /** Provides example user queries or interactions used as few-shot demonstrations to guide the AI agent's tool invocation behavior. (AI-inferred) */
   examples?: string[] | Computed<string[]>;
-  /** The instruction text that directs how the AI agent should use a specific tool in the orchestrated configuration. (AI-inferred) */
   instruction?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfiguration {
-  /** Overrides the default variable name used for a tool's output within the output filter's output configuration, enabling the agent to reference the result via a custom variable name. (AI-inferred) */
   outputVariableNameOverride?: string | Computed<string>;
   sessionDataNamespace?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters {
-  /** Specifies a JSONPath expression that filters or extracts a subset of a tool's output returned during agent orchestration, so the AI agent uses only the relevant data. (AI-inferred) */
   jsonPath?: string | Computed<string>;
-  /** Configures how the AWS Wisdom AI agent's output filter selects, formats, or transforms results returned by a tool in the orchestration configuration before they are used by the agent. (AI-inferred) */
   outputConfiguration?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfiguration | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters_OutputConfiguration>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_Constant {
-  /** The data type of the constant value used to override a tool configuration's input, determining how the literal is interpreted (e.g., string, number, boolean, or null). (AI-inferred) */
   type?: string | Computed<string>;
-  /** In the AWS Wisdom AIAgent resource's orchestration tool configuration, this field sets the literal string value used for a tool input override when the override is defined as a constant. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value {
-  /** The constant property sets a fixed literal value that is passed as the input override for the associated tool parameter, allowing the AI agent to call the tool with a predetermined value rather than a variable from the session or context. (AI-inferred) */
   constant?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_Constant | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value_Constant>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues {
-  /** The JSONPath expression used to select the specific input property of the tool that will be overridden by the configured replacement value. (AI-inferred) */
   jsonPath?: string | Computed<string>;
-  /** The value to substitute for a tool's input parameter when the orchestration AI agent configuration overrides that parameter's default value. (AI-inferred) */
   value?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues_Value>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfiguration {
-  /** Determines whether the AI agent must obtain explicit user confirmation before invoking the associated tool in this orchestration configuration. (AI-inferred) */
   isUserConfirmationRequired?: boolean | Computed<boolean>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations {
-  /** In the orchestration AI agent configuration, this field is a dynamic map of key-value annotations attached to each tool configuration, supplying supplementary metadata or guidance for the Wisdom AI agent to reference when using the tool. (AI-inferred) */
   annotations?: unknown | Computed<unknown>;
-  /** The human-readable description of a tool that the Wisdom orchestration AI agent can use, which helps the agent understand the tool's purpose and decide when to invoke it. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The JSON Schema that defines the structure and validation of the arguments the AI agent should generate when invoking the corresponding tool in the orchestration configuration. (AI-inferred) */
   inputSchema?: unknown | Computed<unknown>;
-  /** The instruction object that tells the orchestration AI agent the intended usage of a particular tool, including any behavioral guidance or constraints. (AI-inferred) */
   instruction?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_Instruction | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_Instruction>;
-  /** Defines a list of output filters applied to a tool's response within the orchestration AI agent configuration, controlling which portions of the tool output are retained for the agent's use. (AI-inferred) */
   outputFilters?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters[] | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OutputFilters[]>;
-  /** The output schema for a tool in the orchestration configuration, defining the expected JSON structure of tool results so the AI agent can interpret and process them correctly. (AI-inferred) */
   outputSchema?: unknown | Computed<unknown>;
-  /** Defines a list of input parameter overrides that the orchestration AI agent uses when invoking a configured tool, allowing fixed values to replace or augment the agent-generated tool arguments. (AI-inferred) */
   overrideInputValues?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues[] | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_OverrideInputValues[]>;
-  /** The title of a tool configuration within the orchestration AI agent configuration, providing a human-readable name for the tool in the Wisdom AI agent. (AI-inferred) */
   title?: string | Computed<string>;
-  /** The ID of a tool configured for the AI agent's orchestration, corresponding to an existing AWS Wisdom tool resource that the agent can call during a conversation. (AI-inferred) */
   toolId?: string | Computed<string>;
-  /** The name of the tool that the orchestration AI agent invokes during execution, referencing a specific tool configured within the Amazon Q Business (Wisdom) AI agent. (AI-inferred) */
   toolName?: string | Computed<string>;
   toolType?: string | Computed<string>;
-  /** Configuration object that specifies whether the orchestration AI agent requires user confirmation or additional input when invoking tools, controlling how the agent handles human interaction during tool execution. (AI-inferred) */
   userInteractionConfiguration?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfiguration | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations_UserInteractionConfiguration>;
 }
 
 export interface Aiagent_Configuration_OrchestrationAiagentConfiguration {
-  /** The Amazon Resource Name (ARN) of the Amazon Connect instance that this orchestration AI agent configuration is associated with, used to identify the Connect instance the agent operates within. (AI-inferred) */
   connectInstanceArn?: string | Computed<string>;
-  /** The locale for the orchestration AI agent configuration, specifying the language and region (such as 'en-US') used for agent interactions. (AI-inferred) */
   locale?: string | Computed<string>;
-  /** The ID of the AI guardrail that defines topic policies and restrictions applied to the orchestrated actions of the Amazon Q Wisdom AI agent. (AI-inferred) */
   orchestrationAiguardrailId?: string | Computed<string>;
-  /** The ID of the Amazon Wisdom AI prompt used to define the orchestration behavior for the AI agent's orchestration configuration. (AI-inferred) */
   orchestrationAipromptId?: string | Computed<string>;
-  /** Defines the list of tool configurations for the orchestration AI agent, specifying which external tools (such as Salesforce or custom tools) the agent can invoke and their type-specific settings (like Salesforce search mode or the tool's identifier). (AI-inferred) */
   toolConfigurations?: Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations[] | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration_ToolConfigurations[]>;
 }
 
 export interface Aiagent_Configuration_SelfServiceAiagentConfiguration {
-  /** Specifies a list of associations that link the self-service AI agent to external resources such as knowledge bases, where each configuration includes an association type and the ARN of the associated resource. (AI-inferred) */
   associationConfigurations?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[] | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration_AssociationConfigurations[]>;
-  /** The identifier of the guardrail that the self-service AI agent uses to enforce content safety and filtering on its responses, as specified in the Wisdom AIAgent configuration. (AI-inferred) */
   selfServiceAiguardrailId?: string | Computed<string>;
-  /** Specifies the ID or ARN of the Amazon Q in Connect (AWS Wisdom) AI prompt used by the self-service AI agent configuration to generate customer-facing answers, controlling the model's response behavior and style. (AI-inferred) */
   selfServiceAnswerGenerationAipromptId?: string | Computed<string>;
-  /** The unique identifier of the Amazon Wisdom AI prompt used to pre-process user input in the self-service AI agent configuration before the agent generates a response. (AI-inferred) */
   selfServicePreProcessingAipromptId?: string | Computed<string>;
 }
 
 export interface Aiagent_Configuration {
-  /** This object configures the AI agent's answer recommendation behavior, specifying model and prompt settings for generating suggested responses to customer queries. (AI-inferred) */
   answerRecommendationAiagentConfiguration?: Aiagent_Configuration_AnswerRecommendationAiagentConfiguration | Computed<Aiagent_Configuration_AnswerRecommendationAiagentConfiguration>;
-  /** This object provides the AWS Wisdom AI agent configuration for case summarization, controlling settings like whether the agent is enabled and whether it includes conversation transcripts in its summaries. (AI-inferred) */
   caseSummarizationAiagentConfiguration?: Aiagent_Configuration_CaseSummarizationAiagentConfiguration | Computed<Aiagent_Configuration_CaseSummarizationAiagentConfiguration>;
-  /** Contains the configuration parameters for the email generative answer AI agent, defining how the agent generates answers for email interactions. (AI-inferred) */
   emailGenerativeAnswerAiagentConfiguration?: Aiagent_Configuration_EmailGenerativeAnswerAiagentConfiguration | Computed<Aiagent_Configuration_EmailGenerativeAnswerAiagentConfiguration>;
-  /** Defines the topic and the maximum number of email threads to consider when the AI agent generates an overview of an email conversation, used for the EMAIL_OVERVIEW agent type. (AI-inferred) */
   emailOverviewAiagentConfiguration?: Aiagent_Configuration_EmailOverviewAiagentConfiguration | Computed<Aiagent_Configuration_EmailOverviewAiagentConfiguration>;
-  /** This object controls how the Wisdom AI agent composes email responses, including the prompt template that guides the content and style of the generated email reply. (AI-inferred) */
   emailResponseAiagentConfiguration?: Aiagent_Configuration_EmailResponseAiagentConfiguration | Computed<Aiagent_Configuration_EmailResponseAiagentConfiguration>;
-  /** This object defines the manual search AI agent's configuration, including the answer generation settings that specify the model type and prompt template used for generating responses. (AI-inferred) */
   manualSearchAiagentConfiguration?: Aiagent_Configuration_ManualSearchAiagentConfiguration | Computed<Aiagent_Configuration_ManualSearchAiagentConfiguration>;
-  /** Configuration for the note-taking AI agent, which controls how the agent automatically generates conversation-based notes (such as a note-to-self) for Wisdom users. (AI-inferred) */
   noteTakingAiagentConfiguration?: Aiagent_Configuration_NoteTakingAiagentConfiguration | Computed<Aiagent_Configuration_NoteTakingAiagentConfiguration>;
-  /** This block specifies the configuration for an orchestration-type Wisdom agent, including the orchestration prompt and the identifier of the agent used to orchestrate other AI agents. (AI-inferred) */
   orchestrationAiagentConfiguration?: Aiagent_Configuration_OrchestrationAiagentConfiguration | Computed<Aiagent_Configuration_OrchestrationAiagentConfiguration>;
-  /** This configuration specifies the self-service AI agent's behavior in Amazon Q in Connect, including its association configurations and self-service guardrail settings that control automated responses to customer queries. (AI-inferred) */
   selfServiceAiagentConfiguration?: Aiagent_Configuration_SelfServiceAiagentConfiguration | Computed<Aiagent_Configuration_SelfServiceAiagentConfiguration>;
 }
 
@@ -509,40 +430,24 @@ const Aiagent_ConfigurationFields: FieldMap = {
 };
 
 export interface AiagentConfig {
-  /** The assistant_id specifies the unique identifier of the Amazon Connect Wisdom assistant with which this AI agent is associated. (AI-inferred) */
   assistantId: string | Computed<string>;
-  /** The configuration object defines the AI agent's operational behavior and settings, with its structure varying by the agent's type (e.g., self-service, answer generation, automated, or manual) within Amazon Q in Connect (Wisdom). (AI-inferred) */
   configuration: Aiagent_Configuration | Computed<Aiagent_Configuration>;
-  /** The description of the Wisdom AI agent, an optional free-form text field used to explain the agent's intended purpose or behavior. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies a human-readable name for the Wisdom AI agent, which is displayed in the Amazon Q Connect console and used to reference the agent in CloudFormation outputs and API calls. (AI-inferred) */
   name?: string | Computed<string>;
-  /** A map of key-value pairs to assign to the Wisdom AIAgent resource, enabling tag-based resource management, access control, and cost allocation. (AI-inferred) */
   tags?: unknown | Computed<unknown>;
-  /** The 'type' field is a required discriminator that selects whether the AI agent is of kind 'AGENT' — capable of using tools and performing multi-step tasks — or 'KNOWLEDGE_BASE' — which answers solely from a configured knowledge base. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface AiagentAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Wisdom AI agent. (AI-inferred) */
   aiagentArn: string;
-  /** The unique identifier assigned by AWS to this AI agent resource in Amazon Wisdom. (AI-inferred) */
   aiagentId: string;
-  /** The Amazon Resource Name (ARN) of the Wisdom assistant associated with this AI agent, automatically assigned by the service. (AI-inferred) */
   assistantArn: string;
-  /** The assistant_id specifies the unique identifier of the Amazon Connect Wisdom assistant with which this AI agent is associated. (AI-inferred) */
   assistantId: string;
-  /** The configuration object defines the AI agent's operational behavior and settings, with its structure varying by the agent's type (e.g., self-service, answer generation, automated, or manual) within Amazon Q in Connect (Wisdom). (AI-inferred) */
   configuration: Aiagent_Configuration;
-  /** The description of the Wisdom AI agent, an optional free-form text field used to explain the agent's intended purpose or behavior. (AI-inferred) */
   description: string;
-  /** The Unix epoch time (in seconds) at which the Wisdom AI agent was last modified, as reported by the AWS Wisdom service. (AI-inferred) */
   modifiedTimeSeconds: number;
-  /** Specifies a human-readable name for the Wisdom AI agent, which is displayed in the Amazon Q Connect console and used to reference the agent in CloudFormation outputs and API calls. (AI-inferred) */
   name: string;
-  /** A map of key-value pairs to assign to the Wisdom AIAgent resource, enabling tag-based resource management, access control, and cost allocation. (AI-inferred) */
   tags: unknown;
-  /** The 'type' field is a required discriminator that selects whether the AI agent is of kind 'AGENT' — capable of using tools and performing multi-step tasks — or 'KNOWLEDGE_BASE' — which answers solely from a configured knowledge base. (AI-inferred) */
   type: string;
 }
 

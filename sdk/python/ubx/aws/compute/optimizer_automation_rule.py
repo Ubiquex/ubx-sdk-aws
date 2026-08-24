@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OptimizerAutomationRule_Criteria_EbsVolumeSizeInGib:
-    # Defines the comparison operator (e.g., GREATER_THAN, LESS_THAN) used to evaluate the EBS volume size in GiB against the target value in this automation rule's criteria. (AI-inferred)
     comparison: Any = None
-    # The list of EBS volume size values (in GiB) that the automation rule's criteria matches against when selecting eligible EBS volumes for the rule. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -20,29 +18,19 @@ class OptimizerAutomationRule_Criteria_EbsVolumeType:
 
 @dataclasses.dataclass
 class OptimizerAutomationRule_Criteria_ResourceTag:
-    # Specifies the comparison operator applied to the resource tag's key/value pair in the automation rule's criteria (e.g., equal, starts with, contains) to determine whether the rule matches a given resource. (AI-inferred)
     comparison: Any = None
-    # The key of a resource tag that the automation rule's criteria uses to match target resources for automated actions. (AI-inferred)
     key: Any = None
-    # The list of tag values that the resource_tag criterion uses to match resources, where a resource is considered a match if the value of the specified tag key equals any of these values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class OptimizerAutomationRule_Criteria:
-    # Defines a list of EBS volume size (in GiB) conditions used to filter which EBS volume recommendations are targeted by the Compute Optimizer automation rule. (AI-inferred)
     ebs_volume_size_in_gib: Any = None
-    # A list of objects that specify the EBS volume types used to match against EBS volume recommendations in the automation rule's criteria. (AI-inferred)
     ebs_volume_type: Any = None
-    # The estimated_monthly_savings criterion defines a lower and upper bound, in US dollars, for the estimated monthly cost savings of a recommendation, so only recommendations whose projected savings fall within this range match the automation rule. (AI-inferred)
     estimated_monthly_savings: Any = None
-    # Specifies the look-back period in days that AWS Compute Optimizer uses to evaluate historical resource utilization when determining whether a recommendation matches the automation rule's criteria. (AI-inferred)
     look_back_period_in_days: Any = None
     region: Any = None
-    # Within the criteria block, resource_arn is a list of objects that specify the Amazon Resource Names (ARNs) of the AWS resources the Compute Optimizer automation rule matches to determine which resources the rule applies to. (AI-inferred)
     resource_arn: Any = None
-    # A list of tag key-value pairs used as selection criteria, so that the Compute Optimizer automation rule only matches resources carrying the specified tag(s). (AI-inferred)
     resource_tag: Any = None
-    # Specifies the list of filter values (e.g., 'true' or 'false') for the restart-needed condition, matching Compute Optimizer recommendations that require or do not require an instance restart. (AI-inferred)
     restart_needed: Any = None
 
 @dataclasses.dataclass
@@ -143,7 +131,6 @@ _OptimizerAutomationRule_TagsFields = {
 
 @dataclasses.dataclass
 class OptimizerAutomationRuleConfig:
-    # Defines the filter conditions that match recommendations for the automation rule, including criteria such as resource type, finding status, and savings opportunity threshold. (AI-inferred)
     criteria: Any = None
     # The description of the automation rule.
     description: Any = None
@@ -156,7 +143,6 @@ class OptimizerAutomationRuleConfig:
     recommended_action_types: Any = None
     # The type of automation rule.
     rule_type: Any = None
-    # Defines the schedule for when the Compute Optimizer automation rule runs, including the frequency and timing at which the rule's recommended actions are applied to the targeted resources. (AI-inferred)
     schedule: Any = None
     # The status of the automation rule.
     status: Any = None
@@ -169,7 +155,6 @@ class OptimizerAutomationRuleAttrs:
     account_id: Any = None
     # The timestamp when the automation rule was created.
     created_timestamp: Any = None
-    # Defines the filter conditions that match recommendations for the automation rule, including criteria such as resource type, finding status, and savings opportunity threshold. (AI-inferred)
     criteria: Any = None
     # The description of the automation rule.
     description: Any = None
@@ -190,7 +175,6 @@ class OptimizerAutomationRuleAttrs:
     rule_revision: Any = None
     # The type of automation rule.
     rule_type: Any = None
-    # Defines the schedule for when the Compute Optimizer automation rule runs, including the frequency and timing at which the rule's recommended actions are applied to the targeted resources. (AI-inferred)
     schedule: Any = None
     # The status of the automation rule.
     status: Any = None

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CostCategory_Tags {
-  /** The key portion of a tag applied to the AWS Cost Category. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value portion of a user-defined tag (key-value pair) applied to the AWS Cost Category, used to categorize and track cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -16,9 +14,7 @@ const CostCategory_TagsFields: FieldMap = {
 export interface CostCategoryConfig {
   /** The default value for the cost category */
   defaultValue?: string | Computed<string>;
-  /** The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred) */
   ruleVersion: string | Computed<string>;
   /** JSON array format of Expression in Billing and Cost Management API */
   rules: string | Computed<string>;
@@ -35,9 +31,7 @@ export interface CostCategoryAttrs {
   defaultValue: string;
   /** ISO 8601 date time with offset format */
   effectiveStart: string;
-  /** The name of the cost category, which must be unique within your AWS account and is used to identify the cost category in the AWS Cost Management console and APIs. (AI-inferred) */
   name: string;
-  /** Specifies the version of the cost category rule syntax, which must be set to 'CostCategoryExpression.v1' for the rule expressions. (AI-inferred) */
   ruleVersion: string;
   /** JSON array format of Expression in Billing and Cost Management API */
   rules: string;

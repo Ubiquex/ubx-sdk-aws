@@ -4,9 +4,7 @@ package organizations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationalUnit_Tags struct {
-	// The user-defined key (name) of a tag attached to the organizational unit, used to identify and categorize the unit for resource management. (AI-inferred)
 	Key any
-	// The value for a tag key attached to the organizational unit, used to assign metadata for management and tracking purposes. (AI-inferred)
 	Value any
 }
 

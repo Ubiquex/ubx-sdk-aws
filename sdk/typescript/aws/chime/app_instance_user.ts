@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AppInstanceUser_ExpirationSettings {
-  /** Specifies whether the expiration date for the AppInstanceUser is calculated from the user's creation timestamp (CREATED_TIMESTAMP) or their last activity timestamp (LAST_ACTIVE_TIMESTAMP). (AI-inferred) */
   expirationCriterion: string | Computed<string>;
-  /** The number of days after which the Amazon Chime AppInstanceUser account automatically expires and is deleted. (AI-inferred) */
   expirationDays: number | Computed<number>;
 }
 
 export interface AppInstanceUser_Tags {
-  /** The key of a key-value tag attached to the Amazon Chime AppInstanceUser, used to label and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to an Amazon Chime AppInstanceUser, used to add user-defined metadata to the identity for management and tracking. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -26,34 +22,21 @@ const AppInstanceUser_TagsFields: FieldMap = {
 };
 
 export interface AppInstanceUserConfig {
-  /** The ARN of the Amazon Chime AppInstance in which this user is created, uniquely identifying the parent app instance for the user. (AI-inferred) */
   appInstanceArn: string | Computed<string>;
-  /** The client-supplied unique identifier for the user within the specified Amazon Chime AppInstance, which is required at creation and is used to form the user's ARN. (AI-inferred) */
   appInstanceUserId: string | Computed<string>;
-  /** Configures automatic deletion of the AppInstanceUser after a specified number of days from its creation timestamp, using an expiration criterion and day count. (AI-inferred) */
   expirationSettings?: AppInstanceUser_ExpirationSettings | Computed<AppInstanceUser_ExpirationSettings>;
-  /** An optional user-defined metadata string (up to 1000 characters) attached to the AppInstanceUser for app-specific information. (AI-inferred) */
   metadata?: string | Computed<string>;
-  /** Sets the display name for the AppInstanceUser, which is used to identify the user within the Amazon Chime app instance. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies a list of tags to associate with the App Instance User, used for organizing and managing the user in AWS Chime. (AI-inferred) */
   tags?: AppInstanceUser_Tags[] | Computed<AppInstanceUser_Tags[]>;
 }
 
 export interface AppInstanceUserAttrs {
-  /** The ARN of the Amazon Chime AppInstance in which this user is created, uniquely identifying the parent app instance for the user. (AI-inferred) */
   appInstanceArn: string;
-  /** The Amazon Resource Name (ARN) of the AppInstanceUser, assigned by AWS when the user is created. (AI-inferred) */
   appInstanceUserArn: string;
-  /** The client-supplied unique identifier for the user within the specified Amazon Chime AppInstance, which is required at creation and is used to form the user's ARN. (AI-inferred) */
   appInstanceUserId: string;
-  /** Configures automatic deletion of the AppInstanceUser after a specified number of days from its creation timestamp, using an expiration criterion and day count. (AI-inferred) */
   expirationSettings: AppInstanceUser_ExpirationSettings;
-  /** An optional user-defined metadata string (up to 1000 characters) attached to the AppInstanceUser for app-specific information. (AI-inferred) */
   metadata: string;
-  /** Sets the display name for the AppInstanceUser, which is used to identify the user within the Amazon Chime app instance. (AI-inferred) */
   name: string;
-  /** Specifies a list of tags to associate with the App Instance User, used for organizing and managing the user in AWS Chime. (AI-inferred) */
   tags: AppInstanceUser_Tags[];
 }
 

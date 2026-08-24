@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoggerDefinition_InitialVersion_Loggers:
-    # Specifies the component type the logger applies to (e.g., GreengrassSystem or Lambda) in an AWS Greengrass logger definition version. (AI-inferred)
     component: Any = None
-    # A unique identifier for this logger within the Greengrass logger definition version, used to reference the logger when configuring logging for a Greengrass group. (AI-inferred)
     id: Any = None
-    # Specifies the log severity threshold for the logger, with allowed values such as DEBUG, INFO, WARN, ERROR, and FATAL, determining which messages are recorded. (AI-inferred)
     level: Any = None
-    # Specifies the maximum amount of log data (in kilobytes) that the logger can store for the associated Greengrass component. (AI-inferred)
     space: Any = None
-    # Specifies whether this logger applies to Greengrass system components or user-defined Lambda/component loggers, with allowed values 'GreengrassSystem' and 'Component'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class LoggerDefinition_InitialVersion:
-    # Specifies the list of logger configuration objects for the initial version of the AWS Greengrass logger definition, each defining the component to log (e.g., GreengrassSystem or Lambda), the log output type (e.g., FileSystem or AWSCloudWatch), log level, and (for file-based logging) the disk space limit. (AI-inferred)
     loggers: Any = None
 
 _LoggerDefinition_InitialVersion_LoggersFields = {
@@ -42,22 +36,16 @@ _LoggerDefinition_InitialVersionFields = {
 
 @dataclasses.dataclass
 class LoggerDefinitionConfig:
-    # Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred)
     initial_version: Any = None
-    # The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
     name: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class LoggerDefinitionAttrs:
-    # The Amazon Resource Name (ARN) of the Greengrass logger definition, which uniquely identifies this resource in AWS and can be used to reference it in IAM policies and other AWS services. (AI-inferred)
     arn: Any = None
     id: Any = None
-    # Specifies the initial version of the logger definition, which consists of a set of loggers that define how Greengrass components write logs to CloudWatch or the local file system. (AI-inferred)
     initial_version: Any = None
-    # The Amazon Resource Name (ARN) of the most recent version of the logger definition, automatically assigned by AWS. (AI-inferred)
     latest_version_arn: Any = None
-    # The name that identifies this Greengrass logger definition in the AWS IoT Greengrass console and API. (AI-inferred)
     name: Any = None
     tags: Any = None
 

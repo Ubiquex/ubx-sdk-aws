@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppInstanceUser_ExpirationSettings:
-    # Specifies whether the expiration date for the AppInstanceUser is calculated from the user's creation timestamp (CREATED_TIMESTAMP) or their last activity timestamp (LAST_ACTIVE_TIMESTAMP). (AI-inferred)
     expiration_criterion: Any = None
-    # The number of days after which the Amazon Chime AppInstanceUser account automatically expires and is deleted. (AI-inferred)
     expiration_days: Any = None
 
 @dataclasses.dataclass
 class AppInstanceUser_Tags:
-    # The key of a key-value tag attached to the Amazon Chime AppInstanceUser, used to label and categorize the resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to an Amazon Chime AppInstanceUser, used to add user-defined metadata to the identity for management and tracking. (AI-inferred)
     value: Any = None
 
 _AppInstanceUser_ExpirationSettingsFields = {
@@ -32,34 +28,21 @@ _AppInstanceUser_TagsFields = {
 
 @dataclasses.dataclass
 class AppInstanceUserConfig:
-    # The ARN of the Amazon Chime AppInstance in which this user is created, uniquely identifying the parent app instance for the user. (AI-inferred)
     app_instance_arn: Any = None
-    # The client-supplied unique identifier for the user within the specified Amazon Chime AppInstance, which is required at creation and is used to form the user's ARN. (AI-inferred)
     app_instance_user_id: Any = None
-    # Configures automatic deletion of the AppInstanceUser after a specified number of days from its creation timestamp, using an expiration criterion and day count. (AI-inferred)
     expiration_settings: Any = None
-    # An optional user-defined metadata string (up to 1000 characters) attached to the AppInstanceUser for app-specific information. (AI-inferred)
     metadata: Any = None
-    # Sets the display name for the AppInstanceUser, which is used to identify the user within the Amazon Chime app instance. (AI-inferred)
     name: Any = None
-    # Specifies a list of tags to associate with the App Instance User, used for organizing and managing the user in AWS Chime. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class AppInstanceUserAttrs:
-    # The ARN of the Amazon Chime AppInstance in which this user is created, uniquely identifying the parent app instance for the user. (AI-inferred)
     app_instance_arn: Any = None
-    # The Amazon Resource Name (ARN) of the AppInstanceUser, assigned by AWS when the user is created. (AI-inferred)
     app_instance_user_arn: Any = None
-    # The client-supplied unique identifier for the user within the specified Amazon Chime AppInstance, which is required at creation and is used to form the user's ARN. (AI-inferred)
     app_instance_user_id: Any = None
-    # Configures automatic deletion of the AppInstanceUser after a specified number of days from its creation timestamp, using an expiration criterion and day count. (AI-inferred)
     expiration_settings: Any = None
-    # An optional user-defined metadata string (up to 1000 characters) attached to the AppInstanceUser for app-specific information. (AI-inferred)
     metadata: Any = None
-    # Sets the display name for the AppInstanceUser, which is used to identify the user within the Amazon Chime app instance. (AI-inferred)
     name: Any = None
-    # Specifies a list of tags to associate with the App Instance User, used for organizing and managing the user in AWS Chime. (AI-inferred)
     tags: Any = None
 
 AppInstanceUser = ubx.ResourceBinding(

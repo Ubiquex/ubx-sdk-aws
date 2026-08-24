@@ -13,20 +13,14 @@ type DataMigration_DataMigrationSettings struct {
 }
 
 type DataMigration_SourceDataSettings struct {
-	// Specifies the position in the source database's transaction log (such as binary log) from which AWS DMS starts reading changes when using change data capture (CDC) for the data migration. (AI-inferred)
 	CdcstartPosition any
-	// The timestamp (in the source database's timezone) from which change data capture (CDC) begins for ongoing replication in the data migration. (AI-inferred)
 	CdcstartTime any
-	// Specifies the UTC timestamp at which Change Data Capture (CDC) stops collecting incremental changes from the source database for this data migration. (AI-inferred)
 	CdcstopTime any
-	// Specifies the name of the PostgreSQL replication slot that DMS uses to capture change data for ongoing replication (change data capture) from the source database. (AI-inferred)
 	SlotName any
 }
 
 type DataMigration_Tags struct {
-	// The key of a tag attached to the AWS DMS data migration resource, used for categorizing, cost tracking, and access control. (AI-inferred)
 	Key any
-	// Specifies the value of a tag attached to the DMS data migration resource, used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 
@@ -53,7 +47,6 @@ type DataMigrationConfig struct {
 	DataMigrationIdentifier any
 	// The property describes a name to identify the data migration.
 	DataMigrationName any
-	// Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred)
 	DataMigrationSettings any
 	// The property describes the type of migration.
 	DataMigrationType any
@@ -76,7 +69,6 @@ type DataMigrationAttrs struct {
 	DataMigrationIdentifier any
 	// The property describes a name to identify the data migration.
 	DataMigrationName any
-	// Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred)
 	DataMigrationSettings any
 	// The property describes the type of migration.
 	DataMigrationType any

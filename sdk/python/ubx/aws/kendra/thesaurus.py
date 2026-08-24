@@ -15,9 +15,7 @@ class Thesaurus_SourceS3Path:
 
 @dataclasses.dataclass
 class Thesaurus_Tags:
-    # The key of a tag attached to an AWS Kendra thesaurus, used to organize and identify the resource for management and billing. (AI-inferred)
     key: Any = None
-    # The value component of a tag entry associated with the AWS Kendra thesaurus, used for organizing and identifying the resource. (AI-inferred)
     value: Any = None
 
 _Thesaurus_SourceS3PathFields = {

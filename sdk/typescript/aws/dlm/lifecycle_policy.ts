@@ -2,223 +2,144 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LifecyclePolicy_CrossRegionCopyTargets {
-  /** The destination AWS region to which the policy copies snapshots or AMIs as part of its cross-region copy action. (AI-inferred) */
   targetRegion?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_Exclusions_ExcludeTags {
-  /** The tag key that, when present on a resource, excludes that resource from the DLM lifecycle policy's actions. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The tag value that, when paired with the corresponding tag key in an exclusion filter, causes matching resources to be excluded from the lifecycle policy's actions. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_Exclusions {
-  /** When true, the lifecycle policy excludes boot volumes from its snapshot schedules, preventing snapshots from being created for EC2 instance boot volumes. (AI-inferred) */
   excludeBootVolumes?: boolean | Computed<boolean>;
-  /** The list of key-value tag pairs that, when matched on a resource, cause that resource to be excluded from the lifecycle policy. (AI-inferred) */
   excludeTags?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
-  /** Specifies the EBS volume types (for example, gp2 or io1) that should be excluded from the lifecycle policy's snapshot or AMI creation actions. (AI-inferred) */
   excludeVolumeTypes?: unknown[] | Computed<unknown[]>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfiguration {
-  /** The ARN of the AWS KMS customer master key (CMK) used to encrypt snapshots copied to the destination region, defaulting to the region's default EBS encryption key if not specified. (AI-inferred) */
   cmkArn?: string | Computed<string>;
-  /** Whether the cross-Region snapshot copies are encrypted, which when true uses the specified KMS key or an AWS managed key. (AI-inferred) */
   encrypted?: boolean | Computed<boolean>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule {
-  /** Specifies the retention period value for cross-region copied snapshots or AMIs, which combined with interval_unit determines how long they are kept in the destination region. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** Specifies the unit of time (DAYS, WEEKS, MONTHS, or YEARS) for the retention interval of the cross-region copy action in the lifecycle policy. (AI-inferred) */
   intervalUnit?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy {
-  /** Specifies the encryption settings for snapshot copies created by the cross-region copy action, including whether the copied snapshots are encrypted and the ARN of the AWS KMS customer master key (CMK) to use for encryption. (AI-inferred) */
   encryptionConfiguration?: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfiguration | Computed<LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_EncryptionConfiguration>;
-  /** Specifies the retention rule for snapshots copied to the target region, defining either a retention interval (value and unit such as days, weeks, months, or years) or a maximum count of snapshots to retain. (AI-inferred) */
   retainRule?: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule | Computed<LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule>;
-  /** The AWS Region to which the resource is copied by this cross-region copy action in the DLM lifecycle policy. (AI-inferred) */
   target?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Actions {
-  /** Specifies the cross-Region copy action parameters that define how snapshots or AMIs are copied from the source Region to one or more target Regions as part of the lifecycle policy's action. (AI-inferred) */
   crossRegionCopy?: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy[] | Computed<LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy[]>;
-  /** Identifies the type of action to be performed by the DLM lifecycle policy, such as 'cross-region-copy', which determines the operation executed on the target resources. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_EventSource_Parameters {
-  /** A regular expression used to match the description of snapshots to trigger this event-based DLM lifecycle policy. (AI-inferred) */
   descriptionRegex?: string | Computed<string>;
-  /** Specifies the type of event that triggers this event-based lifecycle policy, with `shareSnapshot` being the only supported value, meaning the policy runs when a snapshot is shared with your account. (AI-inferred) */
   eventType: string | Computed<string>;
-  /** Specifies the AWS account IDs of the snapshot owners that can trigger the lifecycle policy when an event occurs (e.g., shared snapshot event) for an event-driven DLM policy. (AI-inferred) */
   snapshotOwner: string[] | Computed<string[]>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_EventSource {
-  /** The parameters object of an event source in a DLM lifecycle policy, used when the event source type is MANAGED_CWE, contains a description that identifies the CloudWatch Events rule that triggers the event-based policy. (AI-inferred) */
   parameters?: LifecyclePolicy_PolicyDetails_EventSource_Parameters | Computed<LifecyclePolicy_PolicyDetails_EventSource_Parameters>;
-  /** Specifies the type of event source for an event-based DLM lifecycle policy, where the only valid value is MANAGED_CWL to use Amazon CloudWatch Events. (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Parameters {
-  /** Indicates whether the boot volume of the instance is excluded from the EBS snapshots created by this lifecycle policy when the policy targets instances. (AI-inferred) */
   excludeBootVolume?: boolean | Computed<boolean>;
-  /** A list of tag filters (key-value pairs) that identifies data volumes to exclude from the lifecycle policy's snapshot or AMI creation actions. (AI-inferred) */
   excludeDataVolumeTags?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
-  /** Indicates whether to skip rebooting the instance when creating snapshots, so a value of true prevents the typical reboot that occurs during snapshot creation. (AI-inferred) */
   noReboot?: boolean | Computed<boolean>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier {
-  /** The number of snapshots to retain in the archive storage tier. (AI-inferred) */
   count?: number | Computed<number>;
-  /** Specifies the numeric value for how long snapshots are retained in the archive tier before deletion, paired with the interval_unit property to define the unit of time (e.g., days, weeks). (AI-inferred) */
   interval?: number | Computed<number>;
-  /** Specifies the unit of time (e.g., DAYS, WEEKS, MONTHS, YEARS) for the retention period of snapshots in the archive tier, used with the retention_archive_tier.interval value. (AI-inferred) */
   intervalUnit?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule {
-  /** Specifies the retention period for snapshots stored in the archive tier, either as a count of snapshots or as an interval with a unit (e.g., days), after which they expire. (AI-inferred) */
   retentionArchiveTier?: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier | Computed<LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule {
-  /** Specifies the retention duration for archived snapshots created by the containing archive rule, defining how long they are kept before being expired. (AI-inferred) */
   retainRule?: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule | Computed<LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_CreateRule_Scripts {
-  /** Determines whether the DLM lifecycle policy should proceed with the snapshot creation operation even if this script fails to execute successfully. (AI-inferred) */
   executeOperationOnScriptFailure?: boolean | Computed<boolean>;
-  /** Specifies the ARN of the AWS Lambda function or the name of an AWS Systems Manager document that acts as the execution handler for the script configured in this DLM lifecycle policy schedule, enabling custom pre-snapshot or post-snapshot actions. (AI-inferred) */
   executionHandler?: string | Computed<string>;
-  /** Specifies the AWS service that executes the script (for example, AWS Systems Manager) when the create rule triggers snapshot creation in a DLM lifecycle policy. (AI-inferred) */
   executionHandlerService?: string | Computed<string>;
-  /** Sets the maximum time in seconds that AWS Data Lifecycle Manager waits for the script (a Systems Manager automation document) to finish executing before declaring the pre/post snapshot action a failure, applied per script in the create rule of the lifecycle policy schedule. (AI-inferred) */
   executionTimeout?: number | Computed<number>;
-  /** Specifies the maximum number of times AWS DLM will retry a script (defined in the schedule's create rule) after it fails before marking the script execution as failed. (AI-inferred) */
   maximumRetryCount?: number | Computed<number>;
-  /** Specifies the stage(s) during the EBS snapshot creation process at which the script should run, with allowed values 'pre' and 'post'. (AI-inferred) */
   stages?: string[] | Computed<string[]>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_CreateRule {
-  /** The cron expression that specifies when this create rule triggers snapshot or AMI creation in the DLM lifecycle policy. (AI-inferred) */
   cronExpression?: string | Computed<string>;
-  /** Specifies how often the lifecycle policy creates snapshots; for example, a value of 12 with an interval_unit of 'hours' creates snapshots every 12 hours, and it must be paired with the interval_unit property to define the schedule frequency. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** For the create rule of a schedule, this field sets the time unit (HOURS or DAYS) that the interval value uses to control how often AWS Data Lifecycle Manager creates snapshots or AMIs. (AI-inferred) */
   intervalUnit?: string | Computed<string>;
-  /** Specifies whether the lifecycle policy creates snapshots of resources in the AWS Cloud (CLOUD) or on AWS Outposts (OUTPOST). (AI-inferred) */
   location?: string | Computed<string>;
   scripts?: LifecyclePolicy_PolicyDetails_Schedules_CreateRule_Scripts[] | Computed<LifecyclePolicy_PolicyDetails_Schedules_CreateRule_Scripts[]>;
-  /** Specifies the times in UTC (formatted as HH:00) at which the lifecycle policy creates snapshots according to this schedule. (AI-inferred) */
   times?: string[] | Computed<string[]>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRules {
-  /** The ARN of the AWS KMS customer master key (CMK) used to encrypt the EBS snapshots or AMIs copied to the target region under this cross-region copy rule in the DLM lifecycle policy. (AI-inferred) */
   cmkArn?: string | Computed<string>;
-  /** Indicates whether to copy all user-defined tags from the source EBS snapshot (or AMI) to the cross-region copied snapshot (or AMI). (AI-inferred) */
   copyTags?: boolean | Computed<boolean>;
-  /** Specifies the interval and interval unit after which the cross-region copied AMIs are deprecated in the target Region. (AI-inferred) */
   deprecateRule?: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule | Computed<LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule>;
-  /** Specifies whether snapshots copied to the target region by this cross-region copy rule are encrypted. (AI-inferred) */
   encrypted?: boolean | Computed<boolean>;
-  /** Defines the retention behavior for snapshots copied to the destination region, specifying either a time-based interval (with unit such as days, weeks, months, or years) or a maximum count of snapshots to retain. (AI-inferred) */
   retainRule?: LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule | Computed<LifecyclePolicy_PolicyDetails_Actions_CrossRegionCopy_RetainRule>;
-  /** The destination AWS Region to which the snapshot or AMI is copied, specified as a Region name (e.g., us-east-1) in the cross-Region copy rule. (AI-inferred) */
   target?: string | Computed<string>;
-  /** The destination AWS Region to which snapshots or AMIs are copied by this cross-Region copy rule. (AI-inferred) */
   targetRegion?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRule {
-  /** Specifies the list of Availability Zones in which to enable fast snapshot restore for snapshots created by this schedule. (AI-inferred) */
   availabilityZoneIds?: string[] | Computed<string[]>;
-  /** Specifies the Availability Zones in which fast snapshot restore is enabled for snapshots created by this schedule. (AI-inferred) */
   availabilityZones?: string[] | Computed<string[]>;
-  /** The number of snapshots to enable Fast Snapshot Restore on for this schedule's fast restore rule in the DLM lifecycle policy. (AI-inferred) */
   count?: number | Computed<number>;
-  /** Specifies the interval number, paired with the interval unit, that determines how frequently the lifecycle policy enables fast snapshot restore for snapshots taken under this schedule, used as an alternative to the count parameter. (AI-inferred) */
   interval?: number | Computed<number>;
-  /** The unit of time (DAYS or WEEKS) for the interval during which snapshots created by this schedule will have fast snapshot restore enabled. (AI-inferred) */
   intervalUnit?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules_ShareRules {
-  /** Specifies the AWS account IDs to which snapshots created by this schedule are shared, as defined in the share rules of the lifecycle policy. (AI-inferred) */
   targetAccounts?: string[] | Computed<string[]>;
-  /** Specifies the numeric interval, paired with the associated unit, after which DLM automatically unshares snapshots or AMIs that were shared with the target accounts in this share rule. (AI-inferred) */
   unshareInterval?: number | Computed<number>;
-  /** The unit of time (DAYS or WEEKS) used with the unshare interval to determine how frequently snapshots are unshared from other accounts in the lifecycle policy's share rule. (AI-inferred) */
   unshareIntervalUnit?: string | Computed<string>;
 }
 
 export interface LifecyclePolicy_PolicyDetails_Schedules {
-  /** Defines the archive rule for this schedule, specifying how long snapshots are retained in the Amazon EBS Archive tier (e.g., the number of days to keep them archived) before deletion. (AI-inferred) */
   archiveRule?: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule | Computed<LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule>;
-  /** Copies all user-defined tags from the source snapshot to the snapshots created by this schedule. (AI-inferred) */
   copyTags?: boolean | Computed<boolean>;
-  /** Defines when the schedule triggers resource creation (e.g., EBS snapshots or AMIs), typically via a recurring interval or a cron expression. (AI-inferred) */
   createRule?: LifecyclePolicy_PolicyDetails_Schedules_CreateRule | Computed<LifecyclePolicy_PolicyDetails_Schedules_CreateRule>;
-  /** Configures the rules for copying snapshots to other AWS Regions as part of this schedule, including destination region, encryption, and retention settings. (AI-inferred) */
   crossRegionCopyRules?: LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRules[] | Computed<LifecyclePolicy_PolicyDetails_Schedules_CrossRegionCopyRules[]>;
-  /** Defines when AMIs created by this schedule are automatically deprecated, either by specifying a maximum retained count or a time-based interval (e.g., days) after which the AMI is deprecated. (AI-inferred) */
   deprecateRule?: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier | Computed<LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier>;
-  /** Configures the fast snapshot restore rule for this schedule, specifying the Availability Zones in which to enable fast snapshot restore and the number of snapshots (or time interval) for which fast restore is retained, allowing EBS snapshots to be restored quickly in those zones. (AI-inferred) */
   fastRestoreRule?: LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRule | Computed<LifecyclePolicy_PolicyDetails_Schedules_FastRestoreRule>;
-  /** The name of the DLM lifecycle policy schedule, which must be unique among all schedules in the policy and is used to reference the schedule in associated tags and rules. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the retention rule for snapshots or AMIs created by this schedule, controlling whether to keep a maximum count or retain for a specific interval (in days or years) before deletion. (AI-inferred) */
   retainRule?: LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier | Computed<LifecyclePolicy_PolicyDetails_Schedules_ArchiveRule_RetainRule_RetentionArchiveTier>;
-  /** Specifies the rules for sharing snapshots created by this schedule with other AWS accounts, including target account IDs and the interval for unsharing them. (AI-inferred) */
   shareRules?: LifecyclePolicy_PolicyDetails_Schedules_ShareRules[] | Computed<LifecyclePolicy_PolicyDetails_Schedules_ShareRules[]>;
-  /** Specifies the tags to apply to the snapshots or AMIs created by this schedule, allowing you to organize and identify the resources created by the lifecycle policy. (AI-inferred) */
   tagsToAdd?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
-  /** Specifies a list of tags with variable placeholders that are applied to the snapshots or AMIs created when the schedule triggers, where tag values can use DLM-supported variables such as $(instance-id), $(timestamp), or $(uuid) and are replaced with actual resource information at execution time. (AI-inferred) */
   variableTags?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
 }
 
 export interface LifecyclePolicy_PolicyDetails {
-  /** Specifies the list of actions, each containing a name and cross-Region copy settings, that an event-based DLM lifecycle policy executes when its configured event is triggered. (AI-inferred) */
   actions?: LifecyclePolicy_PolicyDetails_Actions[] | Computed<LifecyclePolicy_PolicyDetails_Actions[]>;
-  /** Indicates whether to copy all user-defined tags from the source snapshot to the target snapshots created by the lifecycle policy. (AI-inferred) */
   copyTags?: boolean | Computed<boolean>;
-  /** The create_interval determines how often the Data Lifecycle Manager policy creates snapshots or AMIs, specified in hours for EBS snapshot policies (1–24) and in days for EBS-backed AMI policies (1–7). (AI-inferred) */
   createInterval?: number | Computed<number>;
-  /** Defines the list of destination Regions to which snapshots or AMIs are copied, along with per-target encryption and retention settings. (AI-inferred) */
   crossRegionCopyTargets?: LifecyclePolicy_CrossRegionCopyTargets[] | Computed<LifecyclePolicy_CrossRegionCopyTargets[]>;
-  /** Defines the event source that triggers an event-based lifecycle policy, such as a CloudWatch Events rule, including its type (e.g., MANAGED_CWS_EVENT) and parameters like event type and snapshot owner. (AI-inferred) */
   eventSource?: LifecyclePolicy_PolicyDetails_EventSource | Computed<LifecyclePolicy_PolicyDetails_EventSource>;
-  /** Defines the exclusions for the lifecycle policy, which identify specific resources or resource types (such as volumes with certain tags or specific volume types) that should not be affected by the policy. (AI-inferred) */
   exclusions?: LifecyclePolicy_Exclusions | Computed<LifecyclePolicy_Exclusions>;
   extendDeletion?: boolean | Computed<boolean>;
-  /** Specifies optional parameters, such as ExcludeBootVolume or NoReboot, that modify the behavior of the lifecycle policy's snapshot creation operations. (AI-inferred) */
   parameters?: LifecyclePolicy_PolicyDetails_Parameters | Computed<LifecyclePolicy_PolicyDetails_Parameters>;
-  /** Specifies the policy language format, either SIMPLIFIED or STANDARD, which determines how resource types and actions are expressed in the policy. (AI-inferred) */
   policyLanguage?: string | Computed<string>;
-  /** Specifies the type of lifecycle policy, which can be EBS_SNAPSHOT_MANAGEMENT to manage EBS snapshots, IMAGE_MANAGEMENT to manage EBS-backed AMIs, or EVENT_BASED to trigger on Amazon CloudWatch events. (AI-inferred) */
   policyType?: string | Computed<string>;
-  /** Specifies the target resource locations for the lifecycle policy, allowing values like 'CLOUD' for resources in the AWS cloud and 'OUTPOST' for resources on an AWS Outpost. (AI-inferred) */
   resourceLocations?: string[] | Computed<string[]>;
-  /** Specifies the type of AWS resource (either 'VOLUME' or 'INSTANCE') that a DLM lifecycle policy targets, determining whether the policy creates EBS snapshots or AMIs. (AI-inferred) */
   resourceType?: string | Computed<string>;
-  /** The types of resources (such as VOLUME or INSTANCE) that this lifecycle policy will manage and snapshot. (AI-inferred) */
   resourceTypes?: string[] | Computed<string[]>;
   retainInterval?: number | Computed<number>;
-  /** Defines the schedule(s) that specify when to create Amazon EBS snapshots (or AMIs) and how long to retain them under this lifecycle policy. (AI-inferred) */
   schedules?: LifecyclePolicy_PolicyDetails_Schedules[] | Computed<LifecyclePolicy_PolicyDetails_Schedules[]>;
-  /** Tags that identify the resources the lifecycle policy will manage; the policy applies to resources that have all these tags. (AI-inferred) */
   targetTags?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
 }
 
@@ -473,56 +394,34 @@ const LifecyclePolicy_PolicyDetailsFields: FieldMap = {
 };
 
 export interface LifecyclePolicyConfig {
-  /** Indicates whether to copy tags from the source EBS volume to the snapshots created by this lifecycle policy. (AI-inferred) */
   copyTags?: boolean | Computed<boolean>;
-  /** The interval (in hours or days) between automatic EBS snapshot creations for a schedule in the DLM lifecycle policy, controlled by the associated interval unit. (AI-inferred) */
   createInterval?: number | Computed<number>;
-  /** Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred) */
   crossRegionCopyTargets?: LifecyclePolicy_CrossRegionCopyTargets[] | Computed<LifecyclePolicy_CrossRegionCopyTargets[]>;
   defaultPolicy?: string | Computed<string>;
-  /** A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the tags and resource types that exclude matching resources from the lifecycle policy, preventing automatic snapshots or AMI creation for those resources. (AI-inferred) */
   exclusions?: LifecyclePolicy_Exclusions | Computed<LifecyclePolicy_Exclusions>;
-  /** The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred) */
   executionRoleArn?: string | Computed<string>;
   extendDeletion?: boolean | Computed<boolean>;
-  /** This object defines the core configuration of the DLM lifecycle policy, specifying the resource type (e.g., EBS snapshots or AMIs), target resource tags, state, and the schedules with their associated actions, such as creating, retaining, and deleting snapshots or AMIs. (AI-inferred) */
   policyDetails?: LifecyclePolicy_PolicyDetails | Computed<LifecyclePolicy_PolicyDetails>;
-  /** The numeric interval for retaining snapshots in a DLM lifecycle policy schedule, working with `retain_interval_unit` to define the duration (e.g., number of days, weeks, months, or years). (AI-inferred) */
   retainInterval?: number | Computed<number>;
-  /** Specifies whether the lifecycle policy is set to ENABLED or DISABLED, controlling whether the policy is active and can create snapshots. (AI-inferred) */
   state?: string | Computed<string>;
-  /** This field defines the user-defined tags to attach to the lifecycle policy, which can be used to organize, identify, and manage the policy through cost allocation and resource tagging. (AI-inferred) */
   tags?: LifecyclePolicy_Exclusions_ExcludeTags[] | Computed<LifecyclePolicy_Exclusions_ExcludeTags[]>;
 }
 
 export interface LifecyclePolicyAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this DLM lifecycle policy. (AI-inferred) */
   arn: string;
-  /** Indicates whether to copy tags from the source EBS volume to the snapshots created by this lifecycle policy. (AI-inferred) */
   copyTags: boolean;
-  /** The interval (in hours or days) between automatic EBS snapshot creations for a schedule in the DLM lifecycle policy, controlled by the associated interval unit. (AI-inferred) */
   createInterval: number;
-  /** Defines the destination regions and their encryption configurations (including optional KMS key ARN) to which snapshots or AMIs created by this DLM lifecycle policy are copied. (AI-inferred) */
   crossRegionCopyTargets: LifecyclePolicy_CrossRegionCopyTargets[];
   defaultPolicy: string;
-  /** A user-provided descriptive text that identifies the purpose and details of the DLM lifecycle policy, helping to distinguish it from other policies in the AWS account. (AI-inferred) */
   description: string;
-  /** Specifies the tags and resource types that exclude matching resources from the lifecycle policy, preventing automatic snapshots or AMI creation for those resources. (AI-inferred) */
   exclusions: LifecyclePolicy_Exclusions;
-  /** The Amazon Resource Name (ARN) of the IAM role that AWS Data Lifecycle Manager assumes to create snapshots and manage the lifecycle of the target resources. (AI-inferred) */
   executionRoleArn: string;
   extendDeletion: boolean;
-  /** The unique identifier assigned by AWS to the DLM lifecycle policy. (AI-inferred) */
   id: string;
-  /** This object defines the core configuration of the DLM lifecycle policy, specifying the resource type (e.g., EBS snapshots or AMIs), target resource tags, state, and the schedules with their associated actions, such as creating, retaining, and deleting snapshots or AMIs. (AI-inferred) */
   policyDetails: LifecyclePolicy_PolicyDetails;
-  /** The numeric interval for retaining snapshots in a DLM lifecycle policy schedule, working with `retain_interval_unit` to define the duration (e.g., number of days, weeks, months, or years). (AI-inferred) */
   retainInterval: number;
-  /** Specifies whether the lifecycle policy is set to ENABLED or DISABLED, controlling whether the policy is active and can create snapshots. (AI-inferred) */
   state: string;
-  /** This field defines the user-defined tags to attach to the lifecycle policy, which can be used to organize, identify, and manage the policy through cost allocation and resource tagging. (AI-inferred) */
   tags: LifecyclePolicy_Exclusions_ExcludeTags[];
 }
 

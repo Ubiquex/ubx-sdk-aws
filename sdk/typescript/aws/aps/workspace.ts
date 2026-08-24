@@ -11,7 +11,6 @@ export interface Workspace_QueryLoggingConfiguration_Destinations_Filters {
 }
 
 export interface Workspace_QueryLoggingConfiguration_Destinations {
-  /** Specifies the CloudWatch Logs log group that receives query logs from the Amazon Managed Prometheus workspace. (AI-inferred) */
   cloudWatchLogs?: Workspace_LoggingConfiguration | Computed<Workspace_LoggingConfiguration>;
   filters?: Workspace_QueryLoggingConfiguration_Destinations_Filters | Computed<Workspace_QueryLoggingConfiguration_Destinations_Filters>;
 }
@@ -23,26 +22,20 @@ export interface Workspace_QueryLoggingConfiguration {
 
 export interface Workspace_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key applied to an Amazon Managed Service for Prometheus workspace, used to categorize and manage the workspace for purposes such as environment, team, or cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSet {
-  /** The name of a label set in the workspace configuration's limits_per_label_sets section, used to identify a group of labels for applying per-label-set series limits in Amazon Managed Prometheus. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The maximum number of active time series allowed for the label set defined in this Amazon Managed Prometheus workspace configuration limit, enforced per label set. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Workspace_WorkspaceConfiguration_LimitsPerLabelSets_Limits {
-  /** The maximum number of unique time series (combinations of metric name and label values) that a per-label-set limit allows to be active in the workspace, beyond which incoming samples for that label set are rejected and the limit is enforced. (AI-inferred) */
   maxSeries?: number | Computed<number>;
 }
 
 export interface Workspace_WorkspaceConfiguration_LimitsPerLabelSets {
-  /** Defines the list of label names (e.g., ["job", "team"]) that group time series into sets, and the workspace configuration applies the associated maximum active series limit per unique set of label values. (AI-inferred) */
   labelSet?: Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSet[] | Computed<Workspace_WorkspaceConfiguration_LimitsPerLabelSets_LabelSet[]>;
-  /** Specifies the query limits (for example, maximum number of samples and maximum query time) applied to a particular label set within the Amazon Managed Service for Prometheus workspace configuration. (AI-inferred) */
   limits?: Workspace_WorkspaceConfiguration_LimitsPerLabelSets_Limits | Computed<Workspace_WorkspaceConfiguration_LimitsPerLabelSets_Limits>;
 }
 

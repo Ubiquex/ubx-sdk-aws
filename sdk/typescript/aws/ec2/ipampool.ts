@@ -2,25 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ipampool_AllocationResourceTags {
-  /** The key of a tag that is automatically applied to resources allocated from this IPAM pool, as part of the allocation_resource_tags map. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag that will be applied to resources that receive CIDR allocations from this IPAM pool. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Ipampool_ProvisionedCidrs {
-  /** The CIDR block (in CIDR notation) that is provisioned to the IPAM pool, defining a specific address range added to the pool's managed address space. (AI-inferred) */
   cidr?: string | Computed<string>;
 }
 
 export interface Ipampool_SourceResource {
-  /** The resource ID of the source resource (such as a VPC) that provides CIDRs to be allocated to the IPAM pool. (AI-inferred) */
   resourceId: string | Computed<string>;
-  /** The AWS account ID of the source resource (such as a VPC or another IPAM pool) that this IPAM pool uses as the origin for its CIDR provisioning, required when defining a source resource for the pool. (AI-inferred) */
   resourceOwner: string | Computed<string>;
-  /** Specifies the AWS region in which the source resource (such as a VPC or subnet) that provides the CIDR block for this IPAM pool resides. (AI-inferred) */
   resourceRegion: string | Computed<string>;
-  /** The type of the source resource being admitted into the IPAM pool, such as 'vpc' or 'subnet', which is paired with the source resource ID to identify the originating VPC or subnet. (AI-inferred) */
   resourceType: string | Computed<string>;
 }
 
@@ -55,7 +48,6 @@ export interface IpampoolConfig {
   autoImport?: boolean | Computed<boolean>;
   /** Limits which service in Amazon Web Services that the pool can be used in. */
   awsService?: string | Computed<string>;
-  /** Sets a user-defined descriptive text for the EC2 IPAM pool, used to identify the pool's purpose and displayed in IPAM management views and API responses. (AI-inferred) */
   description?: string | Computed<string>;
   /** The Id of the scope this pool is a part of. */
   ipamScopeId: string | Computed<string>;
@@ -92,7 +84,6 @@ export interface IpampoolAttrs {
   autoImport: boolean;
   /** Limits which service in Amazon Web Services that the pool can be used in. */
   awsService: string;
-  /** Sets a user-defined descriptive text for the EC2 IPAM pool, used to identify the pool's purpose and displayed in IPAM management views and API responses. (AI-inferred) */
   description: string;
   /** The Amazon Resource Name (ARN) of the IPAM this pool is a part of. */
   ipamArn: string;

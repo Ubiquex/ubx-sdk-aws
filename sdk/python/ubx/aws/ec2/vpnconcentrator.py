@@ -29,13 +29,11 @@ class VpnconcentratorConfig:
 class VpnconcentratorAttrs:
     # Any tags assigned to the VPN concentrator.
     tags: Any = None
-    # The unique identifier of the transit gateway attachment that is automatically provisioned when the VPN connection is associated with a transit gateway. (AI-inferred)
     transit_gateway_attachment_id: Any = None
     # The ID of the transit gateway associated with the VPN concentrator.
     transit_gateway_id: Any = None
     # The type of VPN concentrator.
     type: Any = None
-    # The unique identifier automatically assigned by AWS to the VPN concentrator when it is created, used for referencing the resource. (AI-inferred)
     vpn_concentrator_id: Any = None
 
 Vpnconcentrator = ubx.ResourceBinding(

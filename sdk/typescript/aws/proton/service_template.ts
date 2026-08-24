@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceTemplate_Tags {
-  /** The key of a tag attached to the AWS Proton service template, used to identify and categorize the template for operational and cost management purposes. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -19,9 +18,7 @@ export interface ServiceTemplateConfig {
   displayName?: string | Computed<string>;
   /** <p>A customer provided encryption key that's used to encrypt data.</p> */
   encryptionKey?: string | Computed<string>;
-  /** The unique name of the Proton service template. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred) */
   pipelineProvisioning?: string | Computed<string>;
   /** <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p> */
   tags?: ServiceTemplate_Tags[] | Computed<ServiceTemplate_Tags[]>;
@@ -36,9 +33,7 @@ export interface ServiceTemplateAttrs {
   displayName: string;
   /** <p>A customer provided encryption key that's used to encrypt data.</p> */
   encryptionKey: string;
-  /** The unique name of the Proton service template. (AI-inferred) */
   name: string;
-  /** Determines whether the service instance pipeline is provisioned by AWS Proton or by the customer, with valid values CUSTOMER and PROTON. (AI-inferred) */
   pipelineProvisioning: string;
   /** <p>An optional list of metadata items that you can associate with the Proton service template. A tag is a key-value pair.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p> */
   tags: ServiceTemplate_Tags[];

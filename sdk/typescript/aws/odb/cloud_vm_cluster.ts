@@ -17,9 +17,7 @@ export interface CloudVmCluster_DbNodes_Tags {
 
 export interface CloudVmCluster_DbNodes {
   backupIpId?: string | Computed<string>;
-  /** The Oracle Cloud Identifier (OCID) of the second backup virtual network interface card (VNIC) assigned to the database node in the cloud VM cluster. (AI-inferred) */
   backupVnic2Id?: string | Computed<string>;
-  /** Specifies the number of CPU cores allocated to each database node in the cloud VM cluster. (AI-inferred) */
   cpuCoreCount?: number | Computed<number>;
   dbNodeArn?: string | Computed<string>;
   dbNodeId?: string | Computed<string>;
@@ -28,13 +26,10 @@ export interface CloudVmCluster_DbNodes {
   dbSystemId?: string | Computed<string>;
   hostIpId?: string | Computed<string>;
   hostname?: string | Computed<string>;
-  /** Specifies the memory size in gigabytes to allocate to each database node in the cloud VM cluster. (AI-inferred) */
   memorySizeInGbs?: number | Computed<number>;
-  /** For each database node in the Cloud VM Cluster, this field contains the node's Oracle Cloud Identifier (OCID), which uniquely identifies the node within Oracle Cloud Infrastructure. (AI-inferred) */
   ocid?: string | Computed<string>;
   status?: string | Computed<string>;
   tags?: CloudVmCluster_DbNodes_Tags[] | Computed<CloudVmCluster_DbNodes_Tags[]>;
-  /** The `vnic2_id` field stores the OCID (unique identifier) of the secondary virtual network interface (VNIC) attached to the database node, providing an additional network connection for that node. (AI-inferred) */
   vnic2Id?: string | Computed<string>;
   vnicId?: string | Computed<string>;
 }

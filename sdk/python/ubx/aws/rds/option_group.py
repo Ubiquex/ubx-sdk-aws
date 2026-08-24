@@ -8,30 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OptionGroup_OptionConfigurations_OptionSettings:
-    # The name of an option setting, which identifies the specific engine parameter to configure within the corresponding option configuration for the RDS option group. (AI-inferred)
     name: Any = None
-    # The value of a key-value option setting that tunes the behavior of the option within the RDS option group, where the setting's name (the 'name' field) determines what this value means (for example, a timeout or a port number). (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class OptionGroup_OptionConfigurations:
-    # Specifies the names of DB security groups that are allowed to use the option in this option configuration. (AI-inferred)
     dbsecurity_group_memberships: Any = None
-    # The name of the option to be enabled in the RDS option group, such as 'MEMCACHED' or 'IAM'. (AI-inferred)
     option_name: Any = None
-    # A list of key-value settings that configure the selected option for the DB engine, with each setting containing a Name and a Value. (AI-inferred)
     option_settings: Any = None
-    # Specifies the version of the option to apply, when multiple versions are available for that option in the RDS option group. (AI-inferred)
     option_version: Any = None
-    # Specifies the port number on which the option (such as Oracle Enterprise Manager) communicates with the database. (AI-inferred)
     port: Any = None
-    # Provides a list of VPC security group IDs that are associated with an individual option configuration, governing network access for the option within the VPC. (AI-inferred)
     vpc_security_group_memberships: Any = None
 
 @dataclasses.dataclass
 class OptionGroup_Tags:
     key: Any = None
-    # The value component of a key-value tag assigned to the option group, used to categorize or identify the resource. (AI-inferred)
     value: Any = None
 
 _OptionGroup_OptionConfigurations_OptionSettingsFields = {

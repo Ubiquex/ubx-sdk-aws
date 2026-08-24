@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TsiteWiseGateway_GatewayCapabilitySummaries struct {
-	// The configuration JSON string for the gateway capability, which defines how the capability is configured (e.g., OPC-UA server endpoint settings) and is validated by the capability's schema. (AI-inferred)
 	CapabilityConfiguration any
-	// The namespace that uniquely identifies this IoT SiteWise gateway capability, for example 'iotsitewise:gateway:opcua'. (AI-inferred)
 	CapabilityNamespace any
 }
 
@@ -30,9 +28,7 @@ type TsiteWiseGateway_GatewayPlatform struct {
 }
 
 type TsiteWiseGateway_Tags struct {
-	// The user-defined key portion of a key-value tag applied to an AWS IoT SiteWise gateway, allowing categorization and filtering of gateway resources. (AI-inferred)
 	Key any
-	// The value portion of a tag key-value pair assigned to the AWS IoT SiteWise Gateway, used for metadata such as cost allocation, access control, and resource organization. (AI-inferred)
 	Value any
 }
 

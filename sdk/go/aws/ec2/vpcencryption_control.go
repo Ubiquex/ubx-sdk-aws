@@ -10,9 +10,7 @@ type VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway struct {
 
 type VpcencryptionControl_ResourceExclusions struct {
 	EgressOnlyInternetGateway any
-	// Specifies whether Elastic File System (EFS) file systems are excluded from the enforcement of encryption controls in the VPC. (AI-inferred)
 	ElasticFileSystem any
-	// An object that, when specified, allows Internet Gateways to be excluded from the scope of the VPC encryption control policy. (AI-inferred)
 	InternetGateway any
 	Lambda any
 	NatGateway any

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DbparameterGroup_Tags:
-    # The key of a tag to attach to the DB parameter group. (AI-inferred)
     key: Any = None
-    # The value part of a tag assigned to the RDS DB parameter group, enabling custom metadata such as environment, owner, or cost center. (AI-inferred)
     value: Any = None
 
 _DbparameterGroup_TagsFields = {
@@ -33,7 +31,6 @@ class DbparameterGroupConfig:
 
 @dataclasses.dataclass
 class DbparameterGroupAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the DB parameter group in AWS, automatically assigned by RDS when the group is created. (AI-inferred)
     dbparameter_group_arn: Any = None
     # The name of the DB parameter group. Constraints: + Must be 1 to 255 letters, numbers, or hyphens. + First character must be a letter + Can't end with a hyphen or contain two consecutive hyphens If you don't specify a value for ``DBParameterGroupName`` property, a name is automatically created for the DB parameter group. This value is stored as a lowercase string.
     dbparameter_group_name: Any = None

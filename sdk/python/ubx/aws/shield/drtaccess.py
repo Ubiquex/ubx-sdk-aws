@@ -15,7 +15,6 @@ class DrtaccessConfig:
 
 @dataclasses.dataclass
 class DrtaccessAttrs:
-    # The AWS account ID of the account that has configured the Shield Response Team (DRT) access, automatically populated with the current account ID. (AI-inferred)
     account_id: Any = None
     # Authorizes the Shield Response Team (SRT) to access the specified Amazon S3 bucket containing log data such as Application Load Balancer access logs, CloudFront logs, or logs from third party sources. You can associate up to 10 Amazon S3 buckets with your subscription.
     log_bucket_list: Any = None

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServerCertificate_Tags {
-  /** The key of a tag attached to the IAM server certificate, used to identify and categorize the certificate. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key attached to the IAM server certificate, used to store custom metadata that helps identify, organize, or manage the certificate within AWS. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,34 +12,22 @@ const ServerCertificate_TagsFields: FieldMap = {
 };
 
 export interface ServerCertificateConfig {
-  /** The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred) */
   certificateBody?: string | Computed<string>;
-  /** Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred) */
   certificateChain?: string | Computed<string>;
-  /** Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred) */
   path?: string | Computed<string>;
-  /** The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred) */
   privateKey?: string | Computed<string>;
-  /** Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
   serverCertificateName?: string | Computed<string>;
-  /** Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred) */
   tags?: ServerCertificate_Tags[] | Computed<ServerCertificate_Tags[]>;
 }
 
 export interface ServerCertificateAttrs {
   /** Amazon Resource Name (ARN) of the server certificate */
   arn: string;
-  /** The PEM-encoded certificate body (the public key certificate) for the IAM server certificate, used to enable TLS/SSL connections for AWS services. (AI-inferred) */
   certificateBody: string;
-  /** Specifies the PEM-encoded certificate chain of intermediate certificates that must be included when the server certificate is presented to clients, establishing trust back to a root CA. (AI-inferred) */
   certificateChain: string;
-  /** Specifies the IAM path under which the server certificate is stored, used to organize and identify the certificate within the AWS account. (AI-inferred) */
   path: string;
-  /** The PEM-encoded private key that pairs with the uploaded server certificate, allowing AWS services such as Elastic Load Balancing to terminate SSL/TLS traffic. (AI-inferred) */
   privateKey: string;
-  /** Specifies the name of the server certificate, which must be unique within the AWS account; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
   serverCertificateName: string;
-  /** Specifies a list of tag key-value pairs to attach to the IAM server certificate for identification, organization, and cost allocation. (AI-inferred) */
   tags: ServerCertificate_Tags[];
 }
 

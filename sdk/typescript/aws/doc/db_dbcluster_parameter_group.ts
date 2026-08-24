@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbDbclusterParameterGroup_Tags {
-  /** The key of a key-value tag attached to the DocumentDB cluster parameter group, used to identify and categorize the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the DocumentDB cluster parameter group, which together with the tag key forms a key-value label used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

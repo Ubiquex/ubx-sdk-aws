@@ -4,35 +4,23 @@ package observability
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdminOrganizationTelemetryRule_RegionStatuses struct {
-	// The AWS region code (e.g., us-east-1) identifying the region whose telemetry rule status is reported in this region_statuses entry. (AI-inferred)
 	Region any
-	// The Amazon Resource Name (ARN) of the telemetry rule created for a specific region, as reported in the region status map of the organization telemetry rule. (AI-inferred)
 	RuleArn any
-	// The current status of the organization telemetry rule in the associated AWS region, indicating whether the rule is active for that region. (AI-inferred)
 	Status any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors_FieldSelectors struct {
-	// Defines the list of strings that the value of the referenced field (e.g., event name, resource type) must end with for the event to match the advanced event selector in a CloudTrail telemetry destination configuration. (AI-inferred)
 	EndsWith any
-	// In the CloudTrail advanced event selectors of the destination configuration for this organization telemetry rule, the 'equals' field on a field selector defines the list of exact string values that the corresponding CloudTrail event attribute (e.g., eventName, readOnly) must match for the event to be delivered. (AI-inferred)
 	Equals any
-	// Specifies the CloudTrail event field name (such as 'eventCategory', 'eventName', or 'resources.type') used by the advanced event selector to filter which events are included for delivery to the configured destination in this organization telemetry rule. (AI-inferred)
 	Field any
-	// Specifies the list of values that the event field must not end with for the advanced event selector to match, filtering CloudTrail events in the destination configuration of the organization telemetry rule. (AI-inferred)
 	NotEndsWith any
-	// In the CloudTrail parameters of the telemetry rule, this list defines the values that the selected event field must not equal for the advanced event selector to match the event for telemetry collection. (AI-inferred)
 	NotEquals any
-	// Specifies a list of string prefixes that, when matched at the beginning of the selected event field's value, cause the event to be excluded from delivery, so only events whose field value does not start with any of these strings are delivered. (AI-inferred)
 	NotStartsWith any
-	// Within a CloudTrail advanced event selector's field selector, this list defines the prefixes that the selected event field's value must start with for the telemetry rule to forward matching events to CloudTrail. (AI-inferred)
 	StartsWith any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailParameters_AdvancedEventSelectors struct {
-	// Specifies the list of field selectors (e.g., eventCategory, eventName, or resource type) used to filter which CloudTrail events are matched by each advanced event selector in the telemetry rule. (AI-inferred)
 	FieldSelectors any
-	// The name of the advanced event selector, an optional user-defined label used to identify the selector within CloudTrail configuration. (AI-inferred)
 	Name any
 }
 
@@ -44,7 +32,6 @@ type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_CloudtrailPara
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_ElbloadBalancerLoggingParameters struct {
 	// A delimiter to delineate log fields
 	FieldDelimiter any
-	// The output format for the load balancer access logs delivered to the configured destination, specifying whether the logs are written as text (gzip compressed) or in Parquet format. (AI-inferred)
 	OutputFormat any
 }
 
@@ -63,26 +50,20 @@ type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_VpcflowLogPara
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_ActionCondition struct {
-	// The action (such as ALLOW, BLOCK, or COUNT) taken by AWS WAF on the matched request, used as the condition for filtering WAF log entries. (AI-inferred)
 	Action any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions_LabelNameCondition struct {
-	// Specifies the exact WAF label name (e.g., a label added by a rule or rule group) that a web request must carry for this label-name condition in the logging filter to match and be included in the telemetry destination. (AI-inferred)
 	LabelName any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters_Conditions struct {
-	// Defines a condition that matches the WAF action (such as ALLOW, BLOCK, or COUNT) of a web request, used to determine whether the logging filter keeps or drops the log entry. (AI-inferred)
 	ActionCondition any
-	// Represents the label name matching condition used to filter WAF logs, with properties for the label name and comparison operator. (AI-inferred)
 	LabelNameCondition any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_LoggingFilter_Filters struct {
-	// Determines whether log records that match the filter's condition are kept (KEEP) or dropped (DROP) from the WAF logging output. (AI-inferred)
 	Behavior any
-	// Specifies the match conditions (such as AWS WAF action, label, or country) applied to each log record to determine whether it is kept or dropped by this logging filter for WAF log delivery. (AI-inferred)
 	Conditions any
 	Requirement any
 }
@@ -95,15 +76,12 @@ type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingPara
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields_SingleHeader struct {
-	// The name of the HTTP header whose value will be redacted from the WAF logging data for this organization telemetry rule's destination configuration. (AI-inferred)
 	Name any
 }
 
 type AdminOrganizationTelemetryRule_Rule_DestinationConfiguration_WafloggingParameters_RedactedFields struct {
-	// This field indicates that the HTTP method (such as GET or POST) is redacted (omitted) from AWS WAF logs in the telemetry rule's WAF logging destination configuration. (AI-inferred)
 	Method any
 	QueryString any
-	// Configures a single HTTP header to redact from AWS WAF logging output, using a field-match type that identifies the header by its name. (AI-inferred)
 	SingleHeader any
 	UriPath any
 }

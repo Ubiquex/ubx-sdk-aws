@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Protection_ApplicationLayerAutomaticResponseConfiguration_Action:
-    # When present, this marker block selects 'block' as the Shield Advanced automatic application-layer response action, causing the detected malicious request to be blocked. (AI-inferred)
     block: Any = None
-    # Sets the automatic application-layer DDoS mitigation action to 'Count', causing AWS Shield Advanced to count matching requests without blocking them so you can observe traffic before enforcing a block. (AI-inferred)
     count: Any = None
 
 @dataclasses.dataclass
@@ -23,7 +21,6 @@ class Protection_ApplicationLayerAutomaticResponseConfiguration:
 @dataclasses.dataclass
 class Protection_Tags:
     key: Any = None
-    # The value component of a tag key-value pair attached to an AWS Shield Advanced protection resource, used to store metadata such as owner, environment, or cost center for resource organization and identity. (AI-inferred)
     value: Any = None
 
 _Protection_ApplicationLayerAutomaticResponseConfiguration_ActionFields = {

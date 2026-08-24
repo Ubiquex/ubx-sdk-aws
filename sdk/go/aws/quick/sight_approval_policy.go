@@ -25,7 +25,6 @@ type SightApprovalPolicyConfig struct {
 	AssetTypes any
 	Description any
 	Name any
-	// The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
 	PolicyId any
 }
 
@@ -41,9 +40,7 @@ type SightApprovalPolicyAttrs struct {
 	CreatedAt any
 	Description any
 	Name any
-	// The Amazon Resource Name (ARN) that uniquely identifies the QuickSight approval policy, used as a reference in IAM policies and API operations. (AI-inferred)
 	PolicyArn any
-	// The unique identifier for a QuickSight approval policy that governs whether asset publishing requires approval before the asset is shared. (AI-inferred)
 	PolicyId any
 	UpdatedAt any
 }

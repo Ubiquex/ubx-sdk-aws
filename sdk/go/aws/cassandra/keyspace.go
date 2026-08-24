@@ -4,9 +4,7 @@ package cassandra
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Keyspace_ReplicationSpecification struct {
-	// A list of AWS regions where the keyspace is replicated for Multi-Region Replication, enabling data availability across those regions. (AI-inferred)
 	RegionList any
-	// Specifies the replication strategy for the keyspace, either SINGLE_REGION for single-region replication or MULTI_REGION for replicating data across multiple AWS regions. (AI-inferred)
 	ReplicationStrategy any
 }
 
@@ -30,9 +28,7 @@ type KeyspaceConfig struct {
 	ClientSideTimestampsEnabled any
 	// Name for Cassandra keyspace
 	KeyspaceName any
-	// Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred)
 	ReplicationSpecification any
-	// Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred)
 	Tags any
 }
 
@@ -41,9 +37,7 @@ type KeyspaceAttrs struct {
 	ClientSideTimestampsEnabled any
 	// Name for Cassandra keyspace
 	KeyspaceName any
-	// Specifies the replication strategy (single or multi-Region) and the list of Regions for a multi-Region Amazon Keyspaces keyspace. (AI-inferred)
 	ReplicationSpecification any
-	// Assigns a list of key-value metadata tags to the Cassandra keyspace, which can be used for categorization and cost tracking. (AI-inferred)
 	Tags any
 }
 

@@ -8,386 +8,236 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SightCustomPermissions_Capabilities:
-    # Controls whether the user is granted the ACCESS_APPS_NATIVE_DATA_STORE capability, which permits access to the native data store used by QuickSight applications like QuickSight Q. (AI-inferred)
     access_apps_native_data_store: Any = None
-    # Specifies a specific QuickSight capability action (such as EXPORT_TO_CSV or CREATE_AND_UPDATE_DATASETS) that the custom permissions set allows. (AI-inferred)
     action: Any = None
-    # Controls whether users in the custom permissions profile can add or run anomaly detection on analyses in Amazon QuickSight, with values typically being ENABLED or DISABLED. (AI-inferred)
     add_or_run_anomaly_detection_for_analyses: Any = None
     amazon_bedrock_arsaction: Any = None
     amazon_bedrock_fsaction: Any = None
     amazon_bedrock_krsaction: Any = None
     amazon_sthree_action: Any = None
-    # Sets the analysis permission level for the QuickSight custom permissions profile, controlling which analysis actions (e.g., read, create, update) users with these permissions can perform. (AI-inferred)
     analysis: Any = None
-    # Specifies whether users granted this custom permission level are allowed to approve requests to share QuickSight flows. (AI-inferred)
     approve_flow_share_requests: Any = None
     apps: Any = None
-    # Controls the Asana action capability, determining whether users with this custom permissions profile can connect to and use Asana as a data source, with allowed values 'ENABLED' or 'DISABLED'. (AI-inferred)
     asana_action: Any = None
     automate: Any = None
     bamboo_hraction: Any = None
-    # Sets the resource status for the box_agent_action capability, controlling whether users with this custom permissions profile can perform Box agent actions in Amazon QuickSight. (AI-inferred)
     box_agent_action: Any = None
-    # Specifies whether users are allowed to build calculated fields using Amazon QuickSight Q, with a value of either 'ENABLED' or 'DISABLED'. (AI-inferred)
     build_calculated_field_with_q: Any = None
     canva_agent_action: Any = None
     chat_agent: Any = None
     comprehend_action: Any = None
     comprehend_medical_action: Any = None
-    # Controls whether the Confluence integration action is enabled or disabled for these custom permissions, by setting the value to 'ENABLED' or 'DISABLED'. (AI-inferred)
     confluence_action: Any = None
-    # Specifies whether the custom permissions include the CREATE_AND_UPDATE_AMAZON_BEDROCK_ARS_ACTION capability, which allows a user to create and update Amazon Bedrock ARS actions in QuickSight. (AI-inferred)
     create_and_update_amazon_bedrock_arsaction: Any = None
-    # Determines whether the custom permission allows users to create and update Amazon Bedrock FS actions in Amazon QuickSight. (AI-inferred)
     create_and_update_amazon_bedrock_fsaction: Any = None
-    # Determines whether QuickSight custom permissions allow or deny the creation and update of Amazon Bedrock KRS actions, with the value set to 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_amazon_bedrock_krsaction: Any = None
-    # Sets the state (ENABLED or DISABLED) for the Amazon QuickSight custom permission that controls whether users can create and update Amazon S3 data sources. (AI-inferred)
     create_and_update_amazon_sthree_action: Any = None
-    # Specifies whether users with this custom permission can create and update QuickSight apps; set to 'DENY' to restrict this capability, or 'ALLOW' to permit it. (AI-inferred)
     create_and_update_apps: Any = None
-    # Specifies whether users with this custom permission can create and update Asana actions in Amazon QuickSight, such as triggering Asana tasks from dashboard insights. (AI-inferred)
     create_and_update_asana_action: Any = None
     create_and_update_bamboo_hraction: Any = None
-    # Controls whether the user can create and update Box agent actions in QuickSight, with an allowed value of 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_box_agent_action: Any = None
     create_and_update_canva_agent_action: Any = None
-    # Specifies whether the user has permission to create and update Amazon Comprehend actions in Amazon QuickSight. (AI-inferred)
     create_and_update_comprehend_action: Any = None
-    # Controls whether the QuickSight custom permission allows or denies the create and update action for Amazon Comprehend Medical, with values typically 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_comprehend_medical_action: Any = None
-    # Determines whether users can create and update Confluence data source connections, typically set to ENABLED or DISABLED. (AI-inferred)
     create_and_update_confluence_action: Any = None
-    # Specifies whether users with these custom permissions can create and update dashboard email reports, with valid values 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_dashboard_email_reports: Any = None
-    # Specifies whether this custom permissions profile permits or denies the 'CREATE_AND_UPDATE_DATA_SOURCES' capability, controlling whether assigned QuickSight users can create and update data sources. (AI-inferred)
     create_and_update_data_sources: Any = None
-    # Determines whether the user can create and update datasets in Amazon QuickSight, with the value set to either 'ENABLED' or 'DISABLED'. (AI-inferred)
     create_and_update_datasets: Any = None
-    # Determines whether users with this custom permission can create and update QuickSight fact sets, accepting 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_fact_set_action: Any = None
-    # This field sets the permission status for the 'create and update generic HTTP action' capability within the QuickSight custom permissions profile, using a string value such as 'ENABLED' or 'DISABLED' to indicate whether users can create and update these HTTP actions. (AI-inferred)
     create_and_update_generic_httpaction: Any = None
-    # Indicates whether the QuickSight custom permissions profile includes the CREATE_AND_UPDATE_GITHUB_ACTION capability, allowing users to create and update GitHub actions. (AI-inferred)
     create_and_update_github_action: Any = None
-    # Indicates whether the custom permissions set includes the CREATE_AND_UPDATE_GOOGLE_CALENDAR_ACTION capability, allowing QuickSight users with these permissions to create and update Google Calendar actions. (AI-inferred)
     create_and_update_google_calendar_action: Any = None
-    # This field defines the permission setting (e.g., ALLOW or DENY) for the QuickSight capability to create and update HubSpot actions within custom permissions. (AI-inferred)
     create_and_update_hubspot_action: Any = None
-    # Determines whether the custom permissions allow users to create and update Hugging Face actions in Amazon QuickSight, using a string value that enables or disables this capability. (AI-inferred)
     create_and_update_hugging_face_action: Any = None
-    # Specifies whether the custom permission allows ('ALLOW') or denies ('DENY') the user's ability to create and update Intercom actions in Amazon QuickSight. (AI-inferred)
     create_and_update_intercom_action: Any = None
-    # Determines whether the custom permissions grant or deny the ability to create and update Jira actions in Amazon QuickSight, typically using the values 'ENABLED' or 'DISABLED'. (AI-inferred)
     create_and_update_jira_action: Any = None
-    # This string, with allowed values 'ALLOW' or 'DENY', controls whether a user with these custom permissions can create and update knowledge bases in Amazon QuickSight. (AI-inferred)
     create_and_update_knowledge_bases: Any = None
     create_and_update_linear_action: Any = None
     create_and_update_mcpaction: Any = None
     create_and_update_monday_action: Any = None
-    # Specifies whether the custom permission allows users to create and update Microsoft Exchange data sources in Amazon QuickSight, typically with a value of 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_msexchange_action: Any = None
-    # This field specifies whether the Create and update Microsoft Teams action capability is enabled or disabled for the custom permissions, allowing or denying users the ability to create and update Microsoft Teams actions in Amazon QuickSight (with allowed values 'ENABLED' or 'DISABLED'). (AI-inferred)
     create_and_update_msteams_action: Any = None
-    # Controls whether the custom permissions include the CREATE_AND_UPDATE_NEW_RELIC_ACTION capability, granting users the ability to create and update New Relic actions in Amazon QuickSight. (AI-inferred)
     create_and_update_new_relic_action: Any = None
-    # Defines the permission action (ALLOW or DENY) for the QuickSight capability that enables creating and updating Notions (AI-powered natural language narratives) in the QuickSight console. (AI-inferred)
     create_and_update_notion_action: Any = None
-    # Controls whether the custom permissions profile allows users to create and update OneDrive actions, with a typical string value of 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_one_drive_action: Any = None
-    # Controls whether the custom permissions profile grants the ability to create and update open API actions in Amazon QuickSight, corresponding to the CREATE_AND_UPDATE_OPEN_APIAction capability. (AI-inferred)
     create_and_update_open_apiaction: Any = None
-    # Controls whether users with this custom permissions profile can create and update PagerDuty actions, which are used to set up PagerDuty notifications for QuickSight alerts. (AI-inferred)
     create_and_update_pager_duty_action: Any = None
-    # This capability key specifies whether users can create and update Salesforce actions in QuickSight, typically set to either 'ENABLED' or 'DISABLED'. (AI-inferred)
     create_and_update_salesforce_action: Any = None
     create_and_update_sand_pglobal_energy_action: Any = None
     create_and_update_sand_pgmiaction: Any = None
     create_and_update_sapbill_of_material_action: Any = None
-    # Specifies whether users can create and update SAP Business Partner actions in Amazon QuickSight, accepting 'ALLOW' or 'DENY' as the permission value within the custom permissions capabilities. (AI-inferred)
     create_and_update_sapbusiness_partner_action: Any = None
     create_and_update_sapmaterial_stock_action: Any = None
-    # Determines whether a user can create and update SAP physical inventory actions in QuickSight, typically set to 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_sapphysical_inventory_action: Any = None
     create_and_update_sapproduct_master_data_action: Any = None
-    # Determines whether this custom permission grants the ability to create and update ServiceNow actions (such as data source connections) in Amazon QuickSight. (AI-inferred)
     create_and_update_service_now_action: Any = None
     create_and_update_share_point_action: Any = None
-    # Controls whether users with this custom permissions profile can create and update Slack actions, which configure how QuickSight reports and dashboards are delivered to Slack channels. (AI-inferred)
     create_and_update_slack_action: Any = None
-    # Determines whether the QuickSight user is allowed to create and update Smartsheet data source datasets, with a value of ALLOW or DENY. (AI-inferred)
     create_and_update_smartsheet_action: Any = None
-    # Determines whether users granted this custom permission can create and update Amazon Textract actions, with the value specified as 'ALLOW' or 'DENY'. (AI-inferred)
     create_and_update_textract_action: Any = None
-    # Specifies whether users with this custom permissions profile are allowed to create and update themes in QuickSight, with accepted values 'ENABLED' or 'DENY'. (AI-inferred)
     create_and_update_themes: Any = None
-    # Specifies whether users assigned to this custom permission can create and update threshold alerts in Amazon QuickSight. (AI-inferred)
     create_and_update_threshold_alerts: Any = None
-    # Controls whether the custom permission set enables the ability to create and update Zendesk actions within Amazon QuickSight, as defined in the capabilities block. (AI-inferred)
     create_and_update_zendesk_action: Any = None
-    # Controls whether users with this custom permissions profile can create and manage chat agents (Amazon QuickSight Q generative AI assistants) in QuickSight. (AI-inferred)
     create_chat_agents: Any = None
-    # Toggles the QuickSight capability that lets a user generate an executive summary for a dashboard using QuickSight Q (natural language queries), with the value indicating whether the capability is enabled or disabled. (AI-inferred)
     create_dashboard_executive_summary_with_q: Any = None
-    # Controls whether the QuickSight principal with this custom permissions set is allowed to create shared folders, where the value must be 'ALLOW' or 'DENY'. (AI-inferred)
     create_shared_folders: Any = None
-    # This field specifies whether the custom permissions profile permits the user to create spaces in Amazon QuickSight, which are used to organize and manage QuickSight assets and users. (AI-inferred)
     create_spaces: Any = None
-    # Determines whether principals with this custom permission are allowed to create SPICE datasets, with a value of 'ALLOW' or 'DENY'. (AI-inferred)
     create_spicedataset: Any = None
-    # Specifies the permission level for dashboards in this QuickSight custom permissions profile, accepting values such as READ_ONLY, READ_WRITE, or DENY to control user access to dashboards. (AI-inferred)
     dashboard: Any = None
-    # Controls whether users with this custom permissions profile can use Amazon QuickSight Q to edit visuals, typically set to ENABLED or DISABLED. (AI-inferred)
     edit_visual_with_q: Any = None
-    # This field indicates whether the custom permissions profile allows (ENABLED) or denies (DISABLED) the ability to export QuickSight data to CSV files. (AI-inferred)
     export_to_csv: Any = None
-    # Enables or disables the ability for users with this custom permissions profile to export data to CSV in QuickSight scheduled reports, using ENABLED or DISABLED. (AI-inferred)
     export_to_csv_in_scheduled_reports: Any = None
-    # Specifies whether users assigned to this custom permissions profile may export dashboard or analysis data to Excel, with the value set to 'ENABLED' or 'DISABLED'. (AI-inferred)
     export_to_excel: Any = None
-    # Specifies whether the export-to-Excel in scheduled reports capability is enabled (ENABLED) or disabled (DISABLED) for users granted these custom permissions in QuickSight. (AI-inferred)
     export_to_excel_in_scheduled_reports: Any = None
-    # Determines whether users assigned these custom permissions can export QuickSight dashboards to PDF, with allowed values 'ENABLED' or 'DENIED'. (AI-inferred)
     export_to_pdf: Any = None
-    # The export_to_pdf_in_scheduled_reports capability specifies whether users with this custom permissions profile can export scheduled reports to PDF, with the string value typically being 'ALLOW' or 'DENY'. (AI-inferred)
     export_to_pdf_in_scheduled_reports: Any = None
     extension: Any = None
     fact_set_action: Any = None
-    # This field specifies whether the user is allowed or denied the Flow capability in Amazon QuickSight, with accepted values 'ALLOW' and 'DENY'. (AI-inferred)
     flow: Any = None
     generic_httpaction: Any = None
     github_action: Any = None
-    # Controls whether QuickSight users can perform Google Calendar actions, such as creating, updating, or deleting calendar events, with allowed values ENABLED, DISABLED, or ALERT. (AI-inferred)
     google_calendar_action: Any = None
     hubspot_action: Any = None
     hugging_face_action: Any = None
-    # This string value toggles whether the QuickSight custom permission grants users the ability to include report content (such as charts or tables) in the emails automatically generated for scheduled reports. (AI-inferred)
     include_content_in_scheduled_reports_email: Any = None
     intercom_action: Any = None
     invoke_apps_aiinference: Any = None
     jira_action: Any = None
-    # Controls whether users with these custom permissions can access and use Amazon Q knowledge bases in QuickSight, typically set to 'ENABLED' or 'DENIED'. (AI-inferred)
     knowledge_base: Any = None
     linear_action: Any = None
-    # Controls whether users with this custom permission can manage shared folders in Amazon QuickSight, with a value of either ALLOW or DENY. (AI-inferred)
     manage_shared_folders: Any = None
     mcpaction: Any = None
     monday_action: Any = None
     msexchange_action: Any = None
-    # Determines whether users with this custom permission are granted or denied the ability to use Microsoft Teams actions in QuickSight, with allowed values `GRANT` and `DENY`. (AI-inferred)
     msteams_action: Any = None
     new_relic_action: Any = None
     notion_action: Any = None
-    # Specifies whether OneDrive actions (e.g., exporting dashboards or reports to OneDrive) are enabled or disabled for the user, with valid values ENABLED or DISABLED. (AI-inferred)
     one_drive_action: Any = None
-    # Specifies whether the principal has permission to use QuickSight's OpenAPI actions, which allow programmatic access to QuickSight's REST API operations. (AI-inferred)
     open_apiaction: Any = None
-    # Controls whether users are allowed to perform PagerDuty actions (such as sending alerts to PagerDuty), with values 'ALLOW' or 'DENY'. (AI-inferred)
     pager_duty_action: Any = None
-    # Determines whether a QuickSight user can perform UI tasks in the Flow feature (a visual data preparation experience), with typical values set to ENABLED or DISABLED. (AI-inferred)
     perform_flow_ui_task: Any = None
-    # This field maps to the 'PRINT_REPORTS' capability in Amazon QuickSight, determining whether users with these custom permissions are allowed to print reports, with values like 'ALLOW' or 'DENY'. (AI-inferred)
     print_reports: Any = None
-    # Specifies whether users with this custom permissions profile can publish QuickSight dashboards without requiring an approval process. (AI-inferred)
     publish_without_approval: Any = None
-    # Specifies whether users assigned this custom permissions profile are allowed to rename shared folders in Amazon QuickSight (e.g., using 'ALLOW' or 'DENY'). (AI-inferred)
     rename_shared_folders: Any = None
     research: Any = None
     salesforce_action: Any = None
     sand_pglobal_energy_action: Any = None
     sand_pgmiaction: Any = None
-    # Capability that allows or denies the SAP Bill of Material action, controlling whether users with these custom permissions can perform bill-of-material operations on SAP data sources (allowed values: ALLOW, DENY). (AI-inferred)
     sapbill_of_material_action: Any = None
-    # Determines whether users with these custom permissions are allowed to perform SAP Business Partner actions in Amazon QuickSight, with the value set to 'ALLOW' or 'DENY'. (AI-inferred)
     sapbusiness_partner_action: Any = None
-    # Controls whether users with these custom permissions are allowed to perform the SAP material stock action in Amazon QuickSight, typically by setting the value to ALLOW or DENY. (AI-inferred)
     sapmaterial_stock_action: Any = None
-    # Controls whether users with these custom permissions can perform the physical inventory action (such as counting or posting inventory) against SAP data sources in Amazon QuickSight, with allowed values `ALLOW` or `DENY`. (AI-inferred)
     sapphysical_inventory_action: Any = None
     sapproduct_master_data_action: Any = None
-    # Determines which ServiceNow actions are permitted (CREATE_UPDATE or READ) for a QuickSight custom permissions profile. (AI-inferred)
     service_now_action: Any = None
-    # Determines whether the custom permissions include the SHARE_AMAZON_BEDROCK_ACTION capability, granting users the ability to share Amazon Bedrock actions (such as AI-generated insights) with other QuickSight users. (AI-inferred)
     share_amazon_bedrock_arsaction: Any = None
     share_amazon_bedrock_fsaction: Any = None
-    # Controls whether users with this custom permission can share Amazon Bedrock KRS actions in QuickSight, with possible values 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_amazon_bedrock_krsaction: Any = None
-    # Determines whether users assigned these custom permissions are allowed to share QuickSight assets directly to Amazon S3, with a value of 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_amazon_sthree_action: Any = None
-    # Specifies whether the custom permission allows sharing analyses, with value ENABLED or DISABLED. (AI-inferred)
     share_analyses: Any = None
-    # Determines whether users with this custom permissions profile are allowed to share QuickSight apps (e.g., Q topics, stories, and other app assets) with other users, with string values ENABLED or DISABLED. (AI-inferred)
     share_apps: Any = None
-    # Sets the state ('ALLOW' or 'DENY') of the SHARE_ASANA_ACTION capability, controlling whether QuickSight users with these custom permissions can share analyses/dashboards to Asana. (AI-inferred)
     share_asana_action: Any = None
     share_bamboo_hraction: Any = None
     share_box_agent_action: Any = None
     share_canva_agent_action: Any = None
-    # Controls whether the user is allowed to share QuickSight assets (such as dashboards) with QuickSight Chat Agents, with values typically 'ENABLED' or 'DENY'. (AI-inferred)
     share_chat_agents: Any = None
     share_comprehend_action: Any = None
     share_comprehend_medical_action: Any = None
-    # Controls whether the capability to share QuickSight dashboards with Confluence is enabled, using the status value ENABLED or DISABLED. (AI-inferred)
     share_confluence_action: Any = None
-    # Determines whether this Amazon QuickSight custom permissions profile allows users to share dashboards with other users. (AI-inferred)
     share_dashboards: Any = None
-    # Controls whether users with this custom permissions profile are allowed to share QuickSight data sources, with the value typically set to 'ENABLED' or 'DENIED'. (AI-inferred)
     share_data_sources: Any = None
-    # Controls whether users with this custom permissions profile can share datasets with other QuickSight users, accepting values 'ENABLED' or 'DENIED'. (AI-inferred)
     share_datasets: Any = None
-    # Determines whether users with these custom permissions can share fact sets, with value 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_fact_set_action: Any = None
-    # Controls whether users with this custom permissions profile are allowed to share QuickSight dashboards or analyses via a generic HTTP action, such as a custom URL or webhook. (AI-inferred)
     share_generic_httpaction: Any = None
     share_github_action: Any = None
-    # Defines whether users assigned this custom permission are allowed to share QuickSight assets to Google Calendar, with the string value typically being 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_google_calendar_action: Any = None
-    # Controls whether sharing QuickSight assets to HubSpot is allowed or denied, with a value of either 'ALLOW' or 'DENY'. (AI-inferred)
     share_hubspot_action: Any = None
-    # Controls whether a user can share Hugging Face actions (such as ML models or integrations) within Amazon QuickSight custom permissions. (AI-inferred)
     share_hugging_face_action: Any = None
-    # Controls whether the custom permission set grants the ability to share QuickSight analyses or dashboards via Intercom, with a value expected to be 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_intercom_action: Any = None
     share_jira_action: Any = None
-    # Controls whether the custom permissions include the SHARE_KNOWLEDGE_BASES capability, which grants users permission to share Amazon QuickSight knowledge bases. (AI-inferred)
     share_knowledge_bases: Any = None
     share_linear_action: Any = None
     share_mcpaction: Any = None
     share_monday_action: Any = None
     share_msexchange_action: Any = None
-    # Controls whether the QuickSight custom permissions allow users to share dashboards and analyses to Microsoft Teams, corresponding to the SHARE_MSTEAMS_ACTION capability. (AI-inferred)
     share_msteams_action: Any = None
     share_new_relic_action: Any = None
-    # Determines whether the custom permissions include the ability to share QuickSight notebooks with other users (i.e., the SHARE_NOTEBOOKS capability). (AI-inferred)
     share_notion_action: Any = None
-    # Specifies whether users with this custom permission can share QuickSight dashboards and analyses via OneDrive, with valid values 'ALLOW' or 'DENY'. (AI-inferred)
     share_one_drive_action: Any = None
     share_open_apiaction: Any = None
-    # Specifies whether users with these custom permissions can share QuickSight dashboards by sending them to PagerDuty, typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_pager_duty_action: Any = None
     share_point_action: Any = None
-    # Determines whether users with these custom permissions can share QuickSight dashboards and analyses to Salesforce, with allowed values 'DENY' and 'ALLOW'. (AI-inferred)
     share_salesforce_action: Any = None
     share_sand_pglobal_energy_action: Any = None
     share_sand_pgmiaction: Any = None
     share_sapbill_of_material_action: Any = None
-    # Controls the custom permission for the share-with-SAP-Business-Partner action, where the string value (e.g., ENABLED or DISABLED) determines whether QuickSight users can share assets with SAP Business Partner accounts. (AI-inferred)
     share_sapbusiness_partner_action: Any = None
     share_sapmaterial_stock_action: Any = None
-    # Controls whether users with these custom permissions may share SAP physical inventory actions, typically set to 'ENABLED' or 'DISABLED' to allow or deny the action. (AI-inferred)
     share_sapphysical_inventory_action: Any = None
-    # This field represents the 'SHARE_SAP_PRODUCT_MASTER_DATA_ACTION' capability in Amazon QuickSight custom permissions, which controls whether users with these permissions can share SAP product master data. (AI-inferred)
     share_sapproduct_master_data_action: Any = None
-    # Controls whether the SHARE_SERVICE_NOW_ACTION custom permission capability is enabled or disabled, allowing a user to share QuickSight dashboards through a ServiceNow action. (AI-inferred)
     share_service_now_action: Any = None
     share_share_point_action: Any = None
-    # Controls whether users with these custom permissions can share QuickSight dashboards to Slack, where the string value indicates the allowed or denied status (e.g., 'ENABLED' or 'DISABLED'). (AI-inferred)
     share_slack_action: Any = None
-    # Sets the ShareSmartsheetAction capability to either 'ENABLED' or 'DISABLED', determining whether users with these custom permissions can share Smartsheet data sources in QuickSight. (AI-inferred)
     share_smartsheet_action: Any = None
     share_spaces: Any = None
-    # Indicates whether sharing of Amazon Textract actions is enabled ('ENABLED') or disabled ('DISABLED') for this custom permissions profile in QuickSight. (AI-inferred)
     share_textract_action: Any = None
-    # Determines whether the user can share dashboards with Zendesk, with the value typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
     share_zendesk_action: Any = None
     slack_action: Any = None
     smartsheet_action: Any = None
-    # Controls whether users with this custom permission can create and manage QuickSight spaces, with allowed values 'ALLOW' or 'DENY'. (AI-inferred)
     space: Any = None
-    # This field enables or disables the 'SUBSCRIBE_DASHBOARD_EMAIL_REPORTS' capability, granting or denying users the ability to subscribe to dashboard email reports. (AI-inferred)
     subscribe_dashboard_email_reports: Any = None
-    # Specifies whether the Amazon Textract action is enabled or disabled for the custom permissions profile, controlling whether users can use Textract to extract text from documents in QuickSight. (AI-inferred)
     textract_action: Any = None
-    # Controls whether the QuickSight Q Topics capability is allowed or denied for the custom permissions, determining users' ability to create and manage topics. (AI-inferred)
     topic: Any = None
-    # Controls whether the QuickSight user is permitted to enable agent web search, allowing Amazon Q to incorporate external web results when generating insights and answers. (AI-inferred)
     use_agent_web_search: Any = None
-    # Determines the permission state for users to invoke Amazon Bedrock actions within QuickSight, typically set to 'ALLOW' or 'DENY'. (AI-inferred)
     use_amazon_bedrock_arsaction: Any = None
     use_amazon_bedrock_fsaction: Any = None
-    # Controls whether users with these QuickSight custom permissions can use the Amazon Bedrock KRS action, with the string value typically set to 'ALLOW' or 'DENY'. (AI-inferred)
     use_amazon_bedrock_krsaction: Any = None
-    # Controls whether the QuickSight custom permissions profile enables the UseAmazonS3Action capability, which allows or denies users access to Amazon S3 actions such as using S3 data sources, typically set to ENABLED or DISABLED. (AI-inferred)
     use_amazon_sthree_action: Any = None
     use_asana_action: Any = None
-    # Controls whether the custom permission set authorizes the use of BambooHR actions in Amazon QuickSight, typically with a value of 'ALLOW' or 'DENY'. (AI-inferred)
     use_bamboo_hraction: Any = None
-    # This field controls whether the QuickSight custom permissions profile allows the use of Amazon Bedrock models for generative BI, corresponding to the 'USE_BEDROCK_MODELS' capability in the capabilities list. (AI-inferred)
     use_bedrock_models: Any = None
-    # Sets the ALLOW or DENY state for the USE_BOX_AGENT_ACTION capability, controlling whether users with this custom permissions profile can use Box agent actions in Amazon QuickSight. (AI-inferred)
     use_box_agent_action: Any = None
-    # Controls whether the custom permission set includes the ability to use the Canva agent action in Amazon QuickSight, enabling users to leverage Canva's design features for creating or editing visuals. (AI-inferred)
     use_canva_agent_action: Any = None
-    # Specifies whether the custom permission set includes the capability to use Amazon Comprehend actions in QuickSight, such as running text analysis or other natural language processing features on data. (AI-inferred)
     use_comprehend_action: Any = None
-    # Sets the status of the QuickSight capability 'USE_COMPREHEND_MEDICAL_ACTION' in a custom permissions profile, controlling whether users are allowed or denied the ability to use Amazon Comprehend Medical actions in QuickSight, with valid values 'ALLOW' and 'DENY'. (AI-inferred)
     use_comprehend_medical_action: Any = None
-    # This string field sets the `USE_CONFLUENCE_ACTION` capability in the QuickSight custom permissions, controlling whether users with these permissions can use Confluence actions. (AI-inferred)
     use_confluence_action: Any = None
-    # Specifies whether users with this custom permissions profile are allowed to use fact sets in QuickSight, corresponding to the `UseFactSetAction` capability. (AI-inferred)
     use_fact_set_action: Any = None
-    # Whether the custom permissions profile allows users to use generic HTTP actions (such as connecting to a custom HTTP endpoint as a data source) in Amazon QuickSight. (AI-inferred)
     use_generic_httpaction: Any = None
     use_github_action: Any = None
     use_google_calendar_action: Any = None
-    # Specifies whether the Use HubSpot action capability is enabled or disabled for the custom permissions profile, controlling if users can perform HubSpot-specific actions in QuickSight. (AI-inferred)
     use_hubspot_action: Any = None
-    # Determines whether users assigned to these custom permissions are allowed to use Hugging Face actions in Amazon QuickSight, such as running Hugging Face machine learning models, by setting the USE_HUGGING_FACE_ACTION capability to ENABLED or DISABLED. (AI-inferred)
     use_hugging_face_action: Any = None
-    # Whether the custom permission set includes the USE_INTERCOM_ACTION capability, which grants users the ability to use the Intercom action in Amazon QuickSight analyses and dashboards. (AI-inferred)
     use_intercom_action: Any = None
-    # Controls whether the user can use the Jira integration action in Amazon QuickSight, with values 'ENABLED' or 'DISABLED'. (AI-inferred)
     use_jira_action: Any = None
     use_linear_action: Any = None
     use_mcpaction: Any = None
     use_monday_action: Any = None
-    # Specifies whether users with these custom permissions can use Microsoft Exchange actions (such as connecting to Microsoft Exchange as a data source) in Amazon QuickSight, typically set to 'ENABLED' or 'DISABLED'. (AI-inferred)
     use_msexchange_action: Any = None
-    # Controls whether the custom permission allows the use of Microsoft Teams actions (e.g., sharing insights or sending dashboard updates to Teams) in Amazon QuickSight, with values typically 'ENABLED' or 'DISABLED'. (AI-inferred)
     use_msteams_action: Any = None
     use_new_relic_action: Any = None
     use_notion_action: Any = None
-    # Controls whether users with these custom permissions can use the OneDrive action (for example, exporting dashboards to OneDrive) by setting this capability to ENABLED or DISABLED. (AI-inferred)
     use_one_drive_action: Any = None
-    # Specifies whether the user or group with these custom permissions is allowed to use QuickSight OpenAPI actions to programmatically perform operations on QuickSight resources such as creating or updating dashboards and data sources. (AI-inferred)
     use_open_apiaction: Any = None
-    # Determines whether users with these custom permissions can use the PagerDuty action in QuickSight, with a value of 'ENABLED' or 'DISABLED'. (AI-inferred)
     use_pager_duty_action: Any = None
-    # Sets the USE_SALESFORCE_ACTION capability to enabled or disabled, controlling whether users can perform Salesforce-related actions in QuickSight. (AI-inferred)
     use_salesforce_action: Any = None
     use_sand_pglobal_energy_action: Any = None
     use_sand_pgmiaction: Any = None
-    # The `use_sapbill_of_material_action` key in the `capabilities` map sets the permission status (e.g., 'ALLOW' or 'DENY') for the QuickSight SAP Bill of Materials (BOM) action when defining custom permissions for a QuickSight principal. (AI-inferred)
     use_sapbill_of_material_action: Any = None
-    # Controls whether the SAP Business Partner action is enabled or disabled for users assigned these QuickSight custom permissions, where the value is typically 'ENABLED' or 'DISABLED'. (AI-inferred)
     use_sapbusiness_partner_action: Any = None
-    # Sets the custom permission capability to either allow or deny the use of the SAP Material Stock action, with allowed values ENABLED or DISABLED. (AI-inferred)
     use_sapmaterial_stock_action: Any = None
-    # Determines whether the SAP Physical Inventory action is allowed or denied for the QuickSight custom permissions capabilities, typically set to 'ALLOW' or 'DENY'. (AI-inferred)
     use_sapphysical_inventory_action: Any = None
-    # Determines whether the custom permission allows or denies use of the SAP product master data action in Amazon QuickSight, typically with values like 'ALLOW' or 'DENY'. (AI-inferred)
     use_sapproduct_master_data_action: Any = None
     use_service_now_action: Any = None
-    # Controls whether users with this custom permissions profile can use the SharePoint action in QuickSight, such as exporting or sharing content to SharePoint. (AI-inferred)
     use_share_point_action: Any = None
-    # Determines whether the `USE_SLACK_ACTION` capability is enabled in the custom permissions, allowing users to use Slack actions to share QuickSight dashboards and reports. (AI-inferred)
     use_slack_action: Any = None
-    # Controls whether users with this custom permissions profile are allowed to use Smartsheet as a data source in Amazon QuickSight. (AI-inferred)
     use_smartsheet_action: Any = None
-    # Indicates whether the custom permissions set includes the QuickSight `USE_TEXT_EXTRACTOR` capability, which grants users the ability to use Amazon Textract actions to extract text from images. (AI-inferred)
     use_textract_action: Any = None
-    # Determines whether the USE_ZENDESK_ACTION capability is restricted (denied) by the QuickSight custom permissions, affecting users' ability to use Zendesk actions in QuickSight. (AI-inferred)
     use_zendesk_action: Any = None
-    # Specifies the state (e.g., ENABLED or DISABLED) of the View account SPICE capacity capability in QuickSight custom permissions, controlling whether users can view the account's SPICE capacity usage. (AI-inferred)
     view_account_spicecapacity: Any = None
     zendesk_action: Any = None
 
 @dataclasses.dataclass
 class SightCustomPermissions_Tags:
-    # The key of a user-defined tag attached to this QuickSight custom permissions resource for identification and organization. (AI-inferred)
     key: Any = None
-    # The value portion of a tag key-value pair assigned to the QuickSight custom permissions resource, used for metadata and resource organization. (AI-inferred)
     value: Any = None
 
 _SightCustomPermissions_CapabilitiesFields = {
@@ -626,26 +476,17 @@ _SightCustomPermissions_TagsFields = {
 
 @dataclasses.dataclass
 class SightCustomPermissionsConfig:
-    # The AWS account ID in which the QuickSight custom permissions profile is created and associated with this resource. (AI-inferred)
     aws_account_id: Any = None
-    # Specifies the capabilities to enable or disable for the QuickSight custom permissions profile, with each key (e.g., CREATE_AND_UPDATE_DASHBOARDS, ADD_OR_RUN_ANALYSIS) mapped to either 'ENABLED' or 'DISABLED'. (AI-inferred)
     capabilities: Any = None
-    # The unique name for the custom permissions profile, used to identify and attach it to QuickSight users or groups within the account. (AI-inferred)
     custom_permissions_name: Any = None
-    # The tags field attaches key-value metadata to the QuickSight custom permissions resource, enabling cost allocation, resource categorization, and IAM-based access control. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SightCustomPermissionsAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this QuickSight custom permissions resource, automatically assigned by AWS when the resource is created. (AI-inferred)
     arn: Any = None
-    # The AWS account ID in which the QuickSight custom permissions profile is created and associated with this resource. (AI-inferred)
     aws_account_id: Any = None
-    # Specifies the capabilities to enable or disable for the QuickSight custom permissions profile, with each key (e.g., CREATE_AND_UPDATE_DASHBOARDS, ADD_OR_RUN_ANALYSIS) mapped to either 'ENABLED' or 'DISABLED'. (AI-inferred)
     capabilities: Any = None
-    # The unique name for the custom permissions profile, used to identify and attach it to QuickSight users or groups within the account. (AI-inferred)
     custom_permissions_name: Any = None
-    # The tags field attaches key-value metadata to the QuickSight custom permissions resource, enabling cost allocation, resource categorization, and IAM-based access control. (AI-inferred)
     tags: Any = None
 
 SightCustomPermissions = ubx.ResourceBinding(

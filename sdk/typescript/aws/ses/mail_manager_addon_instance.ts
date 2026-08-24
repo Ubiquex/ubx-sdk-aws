@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MailManagerAddonInstance_Tags {
-  /** The key of a tag attached to the SES Mail Manager Addon Instance, used for metadata and resource organization. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag attached to the AWS SES Mail Manager add-on instance, used for organization, cost allocation, and access control as an arbitrary string. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,22 +12,15 @@ const MailManagerAddonInstance_TagsFields: FieldMap = {
 };
 
 export interface MailManagerAddonInstanceConfig {
-  /** The ID of the addon subscription that this addon instance is associated with. (AI-inferred) */
   addonSubscriptionId: string | Computed<string>;
-  /** Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred) */
   tags?: MailManagerAddonInstance_Tags[] | Computed<MailManagerAddonInstance_Tags[]>;
 }
 
 export interface MailManagerAddonInstanceAttrs {
-  /** The Amazon Resource Name (ARN) assigned by AWS that uniquely identifies this Mail Manager add-on instance. (AI-inferred) */
   addonInstanceArn: string;
-  /** The unique identifier assigned to this addon instance by AWS SES Mail Manager. (AI-inferred) */
   addonInstanceId: string;
-  /** The name of the add-on (such as Spamhaus) that this addon instance provides, determined by the addon subscription and returned as a read-only attribute. (AI-inferred) */
   addonName: string;
-  /** The ID of the addon subscription that this addon instance is associated with. (AI-inferred) */
   addonSubscriptionId: string;
-  /** Specifies the list of tag objects (key and value) to assign to the SES Mail Manager add-on instance for metadata management and cost allocation. (AI-inferred) */
   tags: MailManagerAddonInstance_Tags[];
 }
 

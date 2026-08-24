@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class LoadBalancingV2TrustStore_Tags:
     key: Any = None
-    # Specifies the value of a tag key-value pair attached to the trust store, enabling you to categorize and filter this trust store for operational and cost management within your Elastic Load Balancing v2 configuration. (AI-inferred)
     value: Any = None
 
 _LoadBalancingV2TrustStore_TagsFields = {

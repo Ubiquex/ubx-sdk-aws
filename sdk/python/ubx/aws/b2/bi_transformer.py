@@ -8,50 +8,37 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BiTransformer_EdiType_X12Details:
-    # Specifies the X12 transaction set identifier (e.g., X12_850) that this transformer is configured to process, defining the specific EDI document type for B2B data interchange. (AI-inferred)
     transaction_set: Any = None
-    # The X12 version of the EDI standard (for example, V5010) that the transformer uses for parsing or generating X12 transactions. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_EdiType:
-    # Specifies the X12 EDI transaction set and version (e.g., 850, 00401) that the transformer is configured to parse or convert for this EDI type. (AI-inferred)
     x12_details: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12_SplitOptions:
-    # Specifies whether the inbound X12 document is split into separate transactions by transaction set or by functional group. (AI-inferred)
     split_by: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_CodeListValidationRule:
-    # Adds the specified X12 codes to the allowed code list that this validation rule enforces during input conversion, permitting those codes to pass code-list validation. (AI-inferred)
     codes_to_add: Any = None
-    # Specifies a list of X12 codes to exclude from the allowed code list during validation, causing those codes to be treated as invalid and trigger a validation error when present in the EDI document. (AI-inferred)
     codes_to_remove: Any = None
-    # Specifies the X12 data element identifier (such as a segment's data element number) to which this code list validation rule applies in the transformer's input conversion X12 validation settings. (AI-inferred)
     element_id: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementLengthValidationRule:
-    # The X12 data element identifier (e.g., the element's numeric position or reference code within the X12 transaction set) for which the element length validation rule is defined. (AI-inferred)
     element_id: Any = None
-    # Defines the maximum number of characters allowed for an X12 data element in the transaction set, so that elements exceeding this length fail the element length validation rule. (AI-inferred)
     max_length: Any = None
-    # Specifies the minimum allowed character length for an X12 data element when the element-length validation rule is applied. (AI-inferred)
     min_length: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementRequirementValidationRule:
-    # Specifies the sequential position of the X12 data element within its segment that the element-requirement validation rule applies to. (AI-inferred)
     element_position: Any = None
-    # Sets the expected element requirement level (e.g., Required, Optional, NotUsed) that the X12 validation rule enforces for the specified element. (AI-inferred)
     requirement: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules:
     code_list_validation_rule: Any = None
-    # This X12 validation rule checks whether incoming EDI data element values conform to the maximum length defined for their element type, and when enabled, causes the transformer to flag or fail validation for non-conforming values during input conversion. (AI-inferred)
     element_length_validation_rule: Any = None
     element_requirement_validation_rule: Any = None
 
@@ -61,41 +48,32 @@ class BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions:
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions_X12:
-    # Defines how the transformer splits an incoming X12 envelope into separate processing units, such as by transaction set, during input conversion. (AI-inferred)
     split_options: Any = None
     validation_options: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_AdvancedOptions:
-    # This nested object holds X12-specific advanced settings for the transformation's input conversion, enabling fine-grained control over how incoming X12 EDI messages are parsed and interpreted. (AI-inferred)
     x12: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion_FormatOptions:
-    # Defines the X12 EDI format options that the transformer uses when parsing an incoming X12 document, including how EDI segments and elements are interpreted during input conversion. (AI-inferred)
     x12: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_InputConversion:
     advanced_options: Any = None
-    # Specifies format-specific options for the input conversion, such as the X12 transaction set and version, used when converting the incoming EDI data. (AI-inferred)
     format_options: Any = None
-    # Defines the EDI standard of the incoming document (such as X12 or EDIFACT) that the transformer will convert from. (AI-inferred)
     from_format: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_Mapping:
-    # The XSLT template content that defines how the transformer converts input documents into the desired output format. (AI-inferred)
     template: Any = None
-    # Defines the template language (e.g., XSLT or JSONata) used by the mapping template to transform input EDI documents into the desired output format. (AI-inferred)
     template_language: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_OutputConversion:
-    # A map of advanced options that customize the output conversion format, allowing you to set format-specific parameters like delimiters and character sets for the transformed EDI document. (AI-inferred)
     advanced_options: Any = None
     format_options: Any = None
-    # The target format to which the input EDI document is converted, such as JSON or XML. (AI-inferred)
     to_format: Any = None
 
 @dataclasses.dataclass
@@ -105,16 +83,12 @@ class BiTransformer_SampleDocuments_Keys:
 
 @dataclasses.dataclass
 class BiTransformer_SampleDocuments:
-    # The name of the S3 bucket that stores the sample input document used to test this transformer. (AI-inferred)
     bucket_name: Any = None
-    # Specifies the list of Amazon S3 object keys within the sample documents bucket that the transformer uses as sample input data for defining its mapping and conversion logic. (AI-inferred)
     keys: Any = None
 
 @dataclasses.dataclass
 class BiTransformer_Tags:
-    # Defines the key portion of a tag attached to the B2B transformer resource for cost allocation and resource organization. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag attached to the AWS B2BI transformer resource. (AI-inferred)
     value: Any = None
 
 _BiTransformer_EdiType_X12DetailsFields = {
@@ -260,60 +234,38 @@ _BiTransformer_TagsFields = {
 
 @dataclasses.dataclass
 class BiTransformerConfig:
-    # Defines the EDI interchange format and version (X12 or EDIFACT) that the transformer uses for parsing or generating EDI documents. (AI-inferred)
     edi_type: Any = None
-    # Specifies the output file format (either JSON or XML) that the transformer generates when converting EDI documents. (AI-inferred)
     file_format: Any = None
-    # Specifies how the source (input) data is interpreted, including the data format (e.g., CSV or X12) and any format-specific options, prior to applying the transformer's mapping. (AI-inferred)
     input_conversion: Any = None
-    # This field defines the mapping template that specifies how input EDI data is transformed into the output format (such as JSON or XML) for the AWS B2BI transformer. (AI-inferred)
     mapping: Any = None
     # This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
     mapping_template: Any = None
-    # Specifies the name of the AWS B2Bi transformer, a required field that provides a human-readable identifier for the resource within the B2Bi service. (AI-inferred)
     name: Any = None
-    # Specifies the target format (e.g., JSON, XML, or TEXT) and any format-specific conversion options for the document output by the AWS B2Bi transformer when transforming between EDI and non-EDI formats. (AI-inferred)
     output_conversion: Any = None
     # This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
     sample_document: Any = None
-    # Specifies the Amazon S3 bucket and object keys that contain sample EDI documents used to generate the transformer's mapping. (AI-inferred)
     sample_documents: Any = None
-    # Specifies whether the transformer is active or inactive, determining whether it can process EDI documents. (AI-inferred)
     status: Any = None
-    # Specifies the tags (key-value pairs) to attach to the B2BI transformer resource for managing, identifying, and controlling access to it. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class BiTransformerAttrs:
-    # The date and time when the transformer was created. (AI-inferred)
     created_at: Any = None
-    # Defines the EDI interchange format and version (X12 or EDIFACT) that the transformer uses for parsing or generating EDI documents. (AI-inferred)
     edi_type: Any = None
-    # Specifies the output file format (either JSON or XML) that the transformer generates when converting EDI documents. (AI-inferred)
     file_format: Any = None
-    # Specifies how the source (input) data is interpreted, including the data format (e.g., CSV or X12) and any format-specific options, prior to applying the transformer's mapping. (AI-inferred)
     input_conversion: Any = None
-    # This field defines the mapping template that specifies how input EDI data is transformed into the output format (such as JSON or XML) for the AWS B2BI transformer. (AI-inferred)
     mapping: Any = None
     # This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
     mapping_template: Any = None
-    # The date and time when the transformer was last modified, returned as a string timestamp. (AI-inferred)
     modified_at: Any = None
-    # Specifies the name of the AWS B2Bi transformer, a required field that provides a human-readable identifier for the resource within the B2Bi service. (AI-inferred)
     name: Any = None
-    # Specifies the target format (e.g., JSON, XML, or TEXT) and any format-specific conversion options for the document output by the AWS B2Bi transformer when transforming between EDI and non-EDI formats. (AI-inferred)
     output_conversion: Any = None
     # This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
     sample_document: Any = None
-    # Specifies the Amazon S3 bucket and object keys that contain sample EDI documents used to generate the transformer's mapping. (AI-inferred)
     sample_documents: Any = None
-    # Specifies whether the transformer is active or inactive, determining whether it can process EDI documents. (AI-inferred)
     status: Any = None
-    # Specifies the tags (key-value pairs) to attach to the B2BI transformer resource for managing, identifying, and controlling access to it. (AI-inferred)
     tags: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS B2BI transformer. (AI-inferred)
     transformer_arn: Any = None
-    # The unique identifier assigned by AWS to this transformer when it was created. (AI-inferred)
     transformer_id: Any = None
 
 BiTransformer = ubx.ResourceBinding(

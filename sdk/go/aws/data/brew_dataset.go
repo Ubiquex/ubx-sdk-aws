@@ -4,41 +4,32 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrewDataset_FormatOptions_Csv struct {
-	// The single character used to separate columns in the CSV file when reading data into the AWS DataBrew dataset. (AI-inferred)
 	Delimiter any
-	// Indicates whether the first row of the CSV file is treated as a header row containing column names. (AI-inferred)
 	HeaderRow any
 }
 
 type BrewDataset_FormatOptions_Excel struct {
-	// Indicates whether the first row of the Excel file is treated as column headers. (AI-inferred)
 	HeaderRow any
-	// Specifies the 0-based indices of the Excel sheets to include from the workbook, letting you select specific sheets when the file contains multiple sheets. (AI-inferred)
 	SheetIndexes any
-	// Specifies the names of the worksheets within an Excel workbook that DataBrew will read when creating the dataset, allowing you to limit the data to only those sheets. (AI-inferred)
 	SheetNames any
 }
 
 type BrewDataset_FormatOptions_Json struct {
-	// Specifies whether JSON objects in the dataset can span multiple lines (true) or must each be contained on a single line (false). (AI-inferred)
 	MultiLine any
 }
 
 type BrewDataset_FormatOptions struct {
 	// Csv options
 	Csv any
-	// Defines format-specific settings for Excel inputs, including the sheets to read and whether the first row is treated as a header. (AI-inferred)
 	Excel any
 	// Json options
 	Json any
 }
 
 type BrewDataset_Input_DataCatalogInputDefinition_TempDirectory struct {
-	// The S3 bucket where DataBrew stores temporary files created while processing the dataset's Data Catalog input definition. (AI-inferred)
 	Bucket any
 	// Bucket owner
 	BucketOwner any
-	// The S3 object key prefix within the temporary directory bucket where AWS Glue DataBrew writes intermediate query results when accessing the referenced Data Catalog table. (AI-inferred)
 	Key any
 }
 
@@ -70,11 +61,8 @@ type BrewDataset_Input_Metadata struct {
 }
 
 type BrewDataset_Input struct {
-	// Defines the AWS Glue Data Catalog database and table that AWS DataBrew uses as the source for this dataset. (AI-inferred)
 	DataCatalogInputDefinition any
-	// Specifies the database connection and query details used to pull data into the dataset, including the connection name, database name, and query string. (AI-inferred)
 	DatabaseInputDefinition any
-	// Specifies metadata about the dataset's input source, including the SourceArn of the source dataset for lineage and versioning. (AI-inferred)
 	Metadata any
 	// Input location
 	S3InputDefinition any
@@ -90,61 +78,43 @@ type BrewDataset_PathOptions_FilesLimit struct {
 }
 
 type BrewDataset_PathOptions_LastModifiedDateCondition_ValuesMap struct {
-	// For an AWS DataBrew dataset's S3 path options, this value holds the string value associated with a key in the last-modified-date condition's values map, such as the start or end date used to filter files by their last modified date. (AI-inferred)
 	Value any
-	// Provides a reference to a value that DataBrew substitutes for a placeholder in the last modified date conditioning expression, allowing the dataset's path file filter to use dynamically referenced values instead of literals. (AI-inferred)
 	ValueReference any
 }
 
 type BrewDataset_PathOptions_LastModifiedDateCondition struct {
 	// Filtering expression for a parameter
 	Expression any
-	// Defines the key-value pairs (e.g., startDate and endDate) that substitute into the last-modified-date condition expression, filtering which S3 files are included in the DataBrew dataset based on their last modified timestamp. (AI-inferred)
 	ValuesMap any
 }
 
 type BrewDataset_PathOptions_Parameters_DatasetParameter_DatetimeOptions struct {
-	// Specifies the custom date/time format (for example, 'yyyy-MM-dd') that defines how the value of a datetime dataset parameter is parsed and interpreted. (AI-inferred)
 	Format any
-	// The locale code (e.g., 'en-US') that specifies the language and region used to interpret the datetime format in the dataset path parameter. (AI-inferred)
 	LocaleCode any
-	// Specifies the timezone offset (e.g., '+05:30' or '-08:00') used to interpret datetime values captured by this dataset parameter. (AI-inferred)
 	TimezoneOffset any
 }
 
 type BrewDataset_PathOptions_Parameters_DatasetParameter struct {
-	// Determines whether AWS DataBrew adds a column to the dataset that contains the actual value of this path parameter, enabling you to use the parameter value as data. (AI-inferred)
 	CreateColumn any
-	// Defines the datetime parsing options (format, locale, and timezone offset) for a path parameter of type DATETIME in an AWS DataBrew dataset. (AI-inferred)
 	DatetimeOptions any
-	// Specifies a regular expression that DataBrew uses to match the value of the path parameter, so that only matching files are included in the dataset. (AI-inferred)
 	Filter any
-	// The name of the dataset parameter that is used as a placeholder in the path expression, which is substituted with the parameter's value when resolving the data source. (AI-inferred)
 	Name any
-	// Specifies the data type of the dataset parameter, which can be String, Number, or Datetime, and determines how the parameter value is interpreted when resolving file paths or dataset filters. (AI-inferred)
 	Type any
 }
 
 type BrewDataset_PathOptions_Parameters struct {
-	// Defines the data type (e.g., String, Integer, Datetime) and associated parsing options, such as datetime formatting, column creation, and filter criteria, for a single parameterized variable in the dataset's S3 path. (AI-inferred)
 	DatasetParameter any
-	// The name of the parameter placeholder in the S3 path of the dataset, used to map to a corresponding dataset parameter definition for dynamic path resolution. (AI-inferred)
 	PathParameterName any
 }
 
 type BrewDataset_PathOptions struct {
-	// Configures a limit on the number of files that DataBrew uses from the dataset's S3 path, optionally specifying the ordering for file selection. (AI-inferred)
 	FilesLimit any
-	// Defines a filter expression and value map that restricts the S3 files ingested into the dataset based on their last modified date. (AI-inferred)
 	LastModifiedDateCondition any
-	// Defines the list of parameters that DataBrew uses to resolve placeholders in the S3 path expression for this dataset, with each parameter specifying its name, type (e.g., STRING or DATETIME), and optional datetime formatting or filter criteria. (AI-inferred)
 	Parameters any
 }
 
 type BrewDataset_Tags struct {
-	// The key of a tag attached to the DataBrew dataset, used to identify the tag in AWS resource tagging. (AI-inferred)
 	Key any
-	// The value of a tag assigned to this AWS DataBrew dataset, used to categorize or manage the resource. (AI-inferred)
 	Value any
 }
 
@@ -323,7 +293,6 @@ type BrewDatasetConfig struct {
 	PathOptions any
 	// Source type of the dataset
 	Source any
-	// Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred)
 	Tags any
 }
 
@@ -340,7 +309,6 @@ type BrewDatasetAttrs struct {
 	PathOptions any
 	// Source type of the dataset
 	Source any
-	// Specifies the tags, each containing a key and value, that are attached to the DataBrew dataset to help identify, organize, and manage the resource. (AI-inferred)
 	Tags any
 }
 

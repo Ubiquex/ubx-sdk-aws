@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InvoiceUnit_ResourceTags {
-  /** The key part of a resource tag attached to the AWS Invoicing invoice unit, used to define custom metadata for organizing, filtering, and managing the invoice unit. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a resource tag (key-value pair) that can be attached to this invoice unit for cost allocation and organizational purposes. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface InvoiceUnit_Rule {
-  /** Specifies the list of linked account IDs (as strings) that are included under this invoice unit's rule when grouping accounts for invoicing. (AI-inferred) */
   linkedAccounts: string[] | Computed<string[]>;
 }
 
@@ -23,36 +20,22 @@ const InvoiceUnit_RuleFields: FieldMap = {
 };
 
 export interface InvoiceUnitConfig {
-  /** The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred) */
   invoiceReceiver: string | Computed<string>;
-  /** Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred) */
   name: string | Computed<string>;
-  /** The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred) */
   resourceTags?: InvoiceUnit_ResourceTags[] | Computed<InvoiceUnit_ResourceTags[]>;
-  /** Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred) */
   rule: InvoiceUnit_Rule | Computed<InvoiceUnit_Rule>;
-  /** When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred) */
   taxInheritanceDisabled?: boolean | Computed<boolean>;
 }
 
 export interface InvoiceUnitAttrs {
-  /** The description field provides an optional, user-defined textual description for the invoice unit, allowing you to record the purpose or context of this billing grouping. (AI-inferred) */
   description: string;
-  /** The AWS account ID of the account that receives the consolidated invoice for this invoice unit. (AI-inferred) */
   invoiceReceiver: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the invoice unit created by this resource. (AI-inferred) */
   invoiceUnitArn: string;
-  /** The numeric timestamp indicating when the invoice unit was most recently modified, computed and read-only by the service. (AI-inferred) */
   lastModified: number;
-  /** Sets the unique name of this invoice unit, a logical group of accounts used to consolidate and customize AWS billing invoices. (AI-inferred) */
   name: string;
-  /** The resource_tags field defines a list of tag objects (each containing a key and value) to associate with the invoice unit, enabling you to categorize and manage the invoice unit resource within AWS Invoicing. (AI-inferred) */
   resourceTags: InvoiceUnit_ResourceTags[];
-  /** Defines which AWS accounts are included in the invoice unit for consolidated invoicing and which account is designated as the invoice receiver. (AI-inferred) */
   rule: InvoiceUnit_Rule;
-  /** When set to true, this disables the invoice unit's inheritance of tax configuration from the payer account, forcing the invoice unit to use its own tax settings. (AI-inferred) */
   taxInheritanceDisabled: boolean;
 }
 

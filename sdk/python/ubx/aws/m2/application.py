@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Application_Definition:
-    # The inline application definition content, specified as a string, that contains the application's definition in a format like JSON or YAML to be used for the M2 application. (AI-inferred)
     content: Any = None
-    # The S3 URI (e.g., s3://bucket/key) that points to the application definition file stored in Amazon S3, used to specify the application definition when it is not provided inline. (AI-inferred)
     s3_location: Any = None
 
 _Application_DefinitionFields = {
@@ -20,40 +18,26 @@ _Application_DefinitionFields = {
 
 @dataclasses.dataclass
 class ApplicationConfig:
-    # Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred)
     definition: Any = None
-    # This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred)
     description: Any = None
-    # The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred)
     engine_type: Any = None
     # The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources.
     kms_key_id: Any = None
-    # Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred)
     role_arn: Any = None
-    # Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class ApplicationAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying the AWS Mainframe Modernization (M2) application, assigned by AWS and used to reference the application in other services, IAM policies, and monitoring tools. (AI-inferred)
     application_arn: Any = None
-    # The unique identifier assigned by AWS to the Mainframe Modernization application when it is created. (AI-inferred)
     application_id: Any = None
-    # Contains the application definition for the AWS M2 mainframe modernization application, supplying the code or configuration either inline or via an S3 location. (AI-inferred)
     definition: Any = None
-    # This optional string supplies a customer-defined description for the AWS Mainframe Modernization application, used to identify the application's purpose. (AI-inferred)
     description: Any = None
-    # The engine type for the application, which determines the runtime environment (either Micro Focus or Blu Age). (AI-inferred)
     engine_type: Any = None
     # The ID or the Amazon Resource Name (ARN) of the customer managed KMS Key used for encrypting application-related resources.
     kms_key_id: Any = None
-    # Specifies the required name for the AWS Mainframe Modernization application, which must be unique across all applications in your AWS account and Region and serves as the human-readable identifier in the M2 console and API. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that the application assumes to access other AWS services and resources needed for its operation. (AI-inferred)
     role_arn: Any = None
-    # Specifies a map of key-value tags to attach to the AWS Mainframe Modernization application for management and categorization. (AI-inferred)
     tags: Any = None
 
 Application = ubx.ResourceBinding(

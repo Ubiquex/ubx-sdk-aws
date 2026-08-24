@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Farm_Tags:
-    # The user-defined key for a tag attached to the AWS Deadline Cloud farm, used to identify and organize the resource. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag applied to the AWS Deadline Farm, allowing you to categorize and manage the farm with custom metadata such as cost allocation or team identification. (AI-inferred)
     value: Any = None
 
 _Farm_TagsFields = {
@@ -21,27 +19,19 @@ _Farm_TagsFields = {
 @dataclasses.dataclass
 class FarmConfig:
     cost_scale_factor: Any = None
-    # A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
     description: Any = None
-    # Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred)
     display_name: Any = None
-    # The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred)
     kms_key_arn: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class FarmAttrs:
-    # The unique Amazon Resource Name (ARN) of the farm, used to reference the farm across AWS services and in IAM policies. (AI-inferred)
     arn: Any = None
     cost_scale_factor: Any = None
-    # A human-readable description of the Deadline Cloud farm, used to identify the farm's purpose or details. (AI-inferred)
     description: Any = None
-    # Specifies the human-readable name for the farm, which is used to identify it in the AWS Deadline Cloud console and API operations. (AI-inferred)
     display_name: Any = None
-    # The unique identifier assigned to the farm by AWS Deadline when the farm is created. (AI-inferred)
     farm_id: Any = None
-    # The ARN of the AWS KMS key used to encrypt data for the AWS Deadline Cloud farm; if not provided, AWS uses an AWS-managed key. (AI-inferred)
     kms_key_arn: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

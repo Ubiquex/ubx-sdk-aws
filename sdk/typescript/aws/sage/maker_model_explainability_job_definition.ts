@@ -101,16 +101,12 @@ export interface MakerModelExplainabilityJobDefinition_ModelExplainabilityJobInp
 }
 
 export interface MakerModelExplainabilityJobDefinition_ModelExplainabilityJobOutputConfig_MonitoringOutputs_S3Output {
-  /** The local path in the container where the model explainability job writes its output files before they are uploaded to the specified S3 URI. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Specifies the upload mode for the monitoring output to Amazon S3: 'Continuous' streams output during the job, while 'EndOfJob' uploads it after the job completes. (AI-inferred) */
   s3UploadMode?: string | Computed<string>;
-  /** The S3 URI of the bucket where the model explainability monitoring job writes its output artifacts, such as analysis results and reports. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerModelExplainabilityJobDefinition_ModelExplainabilityJobOutputConfig_MonitoringOutputs {
-  /** Configures the S3 destination (S3Uri), local processing path (LocalPath), and upload mode (S3UploadMode) that determine where and how the model explainability monitoring job writes its output to Amazon S3. (AI-inferred) */
   s3Output?: MakerModelExplainabilityJobDefinition_ModelExplainabilityJobOutputConfig_MonitoringOutputs_S3Output | Computed<MakerModelExplainabilityJobDefinition_ModelExplainabilityJobOutputConfig_MonitoringOutputs_S3Output>;
 }
 
@@ -143,7 +139,6 @@ export interface MakerModelExplainabilityJobDefinition_StoppingCondition {
 }
 
 export interface MakerModelExplainabilityJobDefinition_Tags {
-  /** The key portion of a key-value tag attached to this SageMaker model explainability job definition, used for resource categorization and access management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

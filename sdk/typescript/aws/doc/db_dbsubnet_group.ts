@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DbDbsubnetGroup_Tags {
-  /** The key of a user-defined tag attached to the Amazon DocumentDB DB subnet group, used for organizing, identifying, and managing the resource (e.g., via cost allocation or access control). (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the DocumentDB DB subnet group, used for metadata and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

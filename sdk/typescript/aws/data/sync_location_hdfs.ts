@@ -21,9 +21,7 @@ export interface SyncLocationHdfs_ManagedSecretConfig {
 }
 
 export interface SyncLocationHdfs_NameNodes {
-  /** The hostname or IP address of the HDFS NameNode to which AWS DataSync connects, part of the name_nodes list for the HDFS location. (AI-inferred) */
   hostname?: string | Computed<string>;
-  /** The port number on which the HDFS NameNode service is listening for connections. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
@@ -36,7 +34,6 @@ export interface SyncLocationHdfs_QopConfiguration {
 
 export interface SyncLocationHdfs_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag that you assign to this AWS DataSync HDFS location, used for metadata and resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

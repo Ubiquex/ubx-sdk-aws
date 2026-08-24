@@ -15,9 +15,7 @@ class BrewProject_Sample:
 
 @dataclasses.dataclass
 class BrewProject_Tags:
-    # The key of an individual tag attached to an AWS Glue DataBrew project, used to organize, identify, and manage the project resource. (AI-inferred)
     key: Any = None
-    # The value portion of a tag attached to the DataBrew project, used to add metadata for cost allocation, access control, and resource categorization in AWS. (AI-inferred)
     value: Any = None
 
 _BrewProject_SampleFields = {
@@ -40,9 +38,7 @@ class BrewProjectConfig:
     recipe_name: Any = None
     # Role arn
     role_arn: Any = None
-    # Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred)
     sample: Any = None
-    # Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -55,9 +51,7 @@ class BrewProjectAttrs:
     recipe_name: Any = None
     # Role arn
     role_arn: Any = None
-    # Defines the sample configuration for the project's dataset, specifying the sample size and sampling type. (AI-inferred)
     sample: Any = None
-    # Assigns metadata key-value pairs to the DataBrew project for cost allocation, access control, and organization. (AI-inferred)
     tags: Any = None
 
 BrewProject = ubx.ResourceBinding(

@@ -8,21 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FirewallFirewall_AvailabilityZoneMappings:
-    # The Availability Zone (e.g., us-east-1a) where the Network Firewall endpoint is deployed, matching the zone of the associated subnet in the mapping. (AI-inferred)
     availability_zone: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewall_SubnetMappings:
-    # Specifies whether the firewall endpoint in the associated subnet uses an IPv4 or IPv6 address, with valid values 'IPV4' or 'IPV6'. (AI-inferred)
     ipaddress_type: Any = None
-    # The ID of the subnet in the VPC where the firewall endpoint is deployed. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewall_Tags:
-    # The key of a tag assigned to the Network Firewall firewall, used to categorize and identify the resource for management and cost allocation. (AI-inferred)
     key: Any = None
-    # The tag value pairs with a corresponding tag key to label the Network Firewall firewall for resource organization, cost allocation, and access control. (AI-inferred)
     value: Any = None
 
 _FirewallFirewall_AvailabilityZoneMappingsFields = {
@@ -41,64 +36,43 @@ _FirewallFirewall_TagsFields = {
 
 @dataclasses.dataclass
 class FirewallFirewallConfig:
-    # Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred)
     availability_zone_change_protection: Any = None
-    # Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred)
     availability_zone_mappings: Any = None
-    # Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred)
     delete_protection: Any = None
-    # A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred)
     description: Any = None
     # The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both.
     enabled_analysis_types: Any = None
-    # A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred)
     firewall_name: Any = None
     # A resource ARN.
     firewall_policy_arn: Any = None
-    # When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred)
     firewall_policy_change_protection: Any = None
-    # Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred)
     subnet_change_protection: Any = None
-    # Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
     subnet_mappings: Any = None
     tags: Any = None
     transit_gateway_id: Any = None
-    # The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
     vpc_id: Any = None
 
 @dataclasses.dataclass
 class FirewallFirewallAttrs:
-    # Controls whether the firewall's assigned Availability Zones can be changed, with true preventing any modifications to the Availability Zones associated with the firewall. (AI-inferred)
     availability_zone_change_protection: Any = None
-    # Specifies the Availability Zones and subnet IDs where the firewall endpoints are created, enabling network traffic filtering in those zones. (AI-inferred)
     availability_zone_mappings: Any = None
-    # Whether the firewall is protected from deletion, so you cannot delete it without first disabling this setting. (AI-inferred)
     delete_protection: Any = None
-    # A description of the firewall, as provided by the user, which helps identify the firewall's purpose or context. (AI-inferred)
     description: Any = None
     # The types of analysis to enable for the firewall. Can be TLS_SNI, HTTP_HOST, or both.
     enabled_analysis_types: Any = None
-    # The list of VPC endpoint IDs created for the firewall in each of its associated subnets, used to route traffic to the firewall. (AI-inferred)
     endpoint_ids: Any = None
     # A resource ARN.
     firewall_arn: Any = None
-    # The unique identifier assigned by AWS to this Network Firewall firewall. (AI-inferred)
     firewall_id: Any = None
-    # A descriptive name for the Network Firewall firewall, used as an identifier for the resource. (AI-inferred)
     firewall_name: Any = None
     # A resource ARN.
     firewall_policy_arn: Any = None
-    # When set to true, prevents the firewall policy associated with this firewall from being changed, allowing updates only after this protection is disabled. (AI-inferred)
     firewall_policy_change_protection: Any = None
-    # Indicates whether the firewall's subnet mappings are protected from changes, requiring the protection to be disabled before you can modify the subnets associated with the firewall. (AI-inferred)
     subnet_change_protection: Any = None
-    # Specifies the subnets within the VPC where the Network Firewall endpoint is attached, enabling the firewall to filter traffic for each associated subnet. (AI-inferred)
     subnet_mappings: Any = None
     tags: Any = None
-    # The unique identifier of the Transit Gateway attachment that connects the firewall to its VPC, populated after the firewall is created. (AI-inferred)
     transit_gateway_attachment_id: Any = None
     transit_gateway_id: Any = None
-    # The unique identifier of the Amazon Virtual Private Cloud (VPC) where the AWS Network Firewall firewall is deployed. (AI-inferred)
     vpc_id: Any = None
 
 FirewallFirewall = ubx.ResourceBinding(

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PackageAsset_EgressEndpoints {
-  /** The identifier of the AWS Elemental MediaPackage packaging configuration that defines how the asset is packaged (e.g., HLS or DASH) for delivery through this egress endpoint. (AI-inferred) */
   packagingConfigurationId?: string | Computed<string>;
-  /** The URL for this egress endpoint, which AWS Elemental MediaPackage generates to provide a streaming or download URL for the asset via the associated packaging configuration. (AI-inferred) */
   url?: string | Computed<string>;
 }
 

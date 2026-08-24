@@ -5,12 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Configuration_RunConfigurations_VpcConfig struct {
 	SecurityGroupIds any
-	// Specifies the list of subnet IDs to use in the VPC configuration for an AWS Omics workflow run configuration. (AI-inferred)
 	SubnetIds any
 }
 
 type Configuration_RunConfigurations struct {
-	// Specifies the VPC settings (subnet IDs and security group IDs) for the compute environment used by Omics runs, enabling workflows to access resources within a Virtual Private Cloud. (AI-inferred)
 	VpcConfig any
 }
 
@@ -32,7 +30,6 @@ type ConfigurationConfig struct {
 	Description any
 	// User-friendly name for the configuration.
 	Name any
-	// The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred)
 	RunConfigurations any
 	// A map of resource tags
 	Tags any
@@ -47,7 +44,6 @@ type ConfigurationAttrs struct {
 	Description any
 	// User-friendly name for the configuration.
 	Name any
-	// The run_configurations object specifies the JSON run configuration settings (such as parameters and output locations) that are used when starting workflow runs for this Omics configuration. (AI-inferred)
 	RunConfigurations any
 	// Current configuration status.
 	Status any

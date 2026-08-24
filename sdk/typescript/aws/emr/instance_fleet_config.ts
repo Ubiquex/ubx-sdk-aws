@@ -2,111 +2,75 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface InstanceFleetConfig_InstanceTypeConfigs_Configurations {
-  /** The classification identifier (e.g., 'spark-defaults', 'hive-site') for the configuration applied to the instance fleet's instance type configurations. (AI-inferred) */
   classification?: string | Computed<string>;
-  /** Specifies a map of key-value pairs that define the settings for an EMR configuration classification (such as core-site or hdfs-site) applied to the instance type in the instance fleet. (AI-inferred) */
   configurationProperties?: unknown | Computed<unknown>;
-  /** Specifies a list of nested EMR configuration objects (with Classification, Properties, and further Configurations) that define the software settings applied to the instance type in the instance fleet. (AI-inferred) */
   configurations?: unknown[] | Computed<unknown[]>;
 }
 
 export interface InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecification {
-  /** The number of I/O operations per second (IOPS) for the EBS volume, required when the volume type is io1 or io2. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** The size, in GiB, of the EBS volume specified for the EBS block device configuration of an instance type in the EMR instance fleet. (AI-inferred) */
   sizeInGb?: number | Computed<number>;
-  /** The throughput in MiB/s for the EBS volume specification, applicable to volume types that support throughput settings (such as gp3). (AI-inferred) */
   throughput?: number | Computed<number>;
-  /** Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, or standard) for the block device attached to each instance in the instance fleet, controlling storage performance and cost. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
 export interface InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs {
-  /** Defines the characteristics of an EBS volume (including volume type, size, and IOPS) attached to instances in an EMR instance fleet as specified by the EbsBlockDeviceConfig. (AI-inferred) */
   volumeSpecification?: InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecification | Computed<InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs_VolumeSpecification>;
-  /** Specifies the number of EBS volumes, matching the given volume specification, to attach to each EC2 instance in the instance fleet. (AI-inferred) */
   volumesPerInstance?: number | Computed<number>;
 }
 
 export interface InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration {
-  /** Specifies the list of EBS block device configurations, each with a volume specification and optional volumes-per-instance count, that are attached to each EC2 instance of this instance type in the EMR instance fleet. (AI-inferred) */
   ebsBlockDeviceConfigs?: InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs[] | Computed<InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration_EbsBlockDeviceConfigs[]>;
-  /** Specifies whether the EC2 instances launched for this instance fleet are EBS-optimized, providing dedicated throughput for Amazon EBS volumes. (AI-inferred) */
   ebsOptimized?: boolean | Computed<boolean>;
 }
 
 export interface InstanceFleetConfig_InstanceTypeConfigs {
-  /** The maximum price in USD that you are willing to pay for a Spot instance of this instance type in the instance fleet; if omitted, the On-Demand price is used. (AI-inferred) */
   bidPrice?: string | Computed<string>;
-  /** Specifies the bid price for a Spot Instance as a percentage of the On-Demand price for the instance type in an EMR instance fleet configuration. (AI-inferred) */
   bidPriceAsPercentageOfOnDemandPrice?: number | Computed<number>;
-  /** For each instance type in the EMR instance fleet, this list of configuration objects defines custom application and software settings (classification and property key–value pairs) that are applied to the nodes of that instance type. (AI-inferred) */
   configurations?: InstanceFleetConfig_InstanceTypeConfigs_Configurations[] | Computed<InstanceFleetConfig_InstanceTypeConfigs_Configurations[]>;
   customAmiId?: string | Computed<string>;
-  /** Configures the Amazon EBS volumes and EBS-optimized setting for instances of the associated instance type within the EMR instance fleet. (AI-inferred) */
   ebsConfiguration?: InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration | Computed<InstanceFleetConfig_InstanceTypeConfigs_EbsConfiguration>;
-  /** The EC2 instance type (e.g., m5.xlarge) for this instance type configuration within the EMR instance fleet, defining the hardware for the instances in the fleet. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** Specifies the priority of this instance type within the fleet; lower values indicate higher priority and cause the type to be used first when provisioning capacity. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** The number of capacity units that each instance of this type contributes to the instance fleet's total target capacity, used to determine how many instances of this type to provision relative to other instance types. (AI-inferred) */
   weightedCapacity?: number | Computed<number>;
 }
 
 export interface InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions {
-  /** Specifies whether the on-demand instances in the instance fleet can launch into any open Capacity Reservation ('open') or should not use any Capacity Reservation ('none'). (AI-inferred) */
   capacityReservationPreference?: string | Computed<string>;
-  /** The ARN of the Capacity Reservation resource group in which to launch On-Demand instances for the EMR instance fleet. (AI-inferred) */
   capacityReservationResourceGroupArn?: string | Computed<string>;
-  /** Specifies whether EMR should use existing EC2 Capacity Reservations first when launching On-Demand instances, where 'use-capacity-reservations-first' uses reservations if available and 'none' avoids using them. (AI-inferred) */
   usageStrategy?: string | Computed<string>;
 }
 
 export interface InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification {
-  /** Specifies the allocation strategy for launching On-Demand instances in the instance fleet, such as 'lowest-price' or 'prioritized', which determines how On-Demand capacity is fulfilled across Availability Zones. (AI-inferred) */
   allocationStrategy: string | Computed<string>;
-  /** Specifies whether and how On-Demand instances in the instance fleet use EC2 Capacity Reservations, including the capacity reservation preference, resource group ARN, and usage strategy (e.g., use-capacity-reservations-first). (AI-inferred) */
   capacityReservationOptions?: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions | Computed<InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions>;
 }
 
 export interface InstanceFleetConfig_LaunchSpecifications_SpotSpecification {
-  /** Determines the Spot Instance allocation strategy (e.g., lowest-price or capacity-optimized) that Amazon EMR uses to select and launch Spot capacity across the fleet's instance types. (AI-inferred) */
   allocationStrategy?: string | Computed<string>;
-  /** Specifies the duration in minutes for which Spot Instances in the EMR instance fleet are reserved, available in 60-minute increments (e.g., 0, 60, 120, 180, 240, 300, or 360). (AI-inferred) */
   blockDurationMinutes?: number | Computed<number>;
-  /** Determines the action to take when the Spot instance provisioning timeout expires: either SWITCH_TO_ON_DEMAND to provision On-Demand Instances instead, or TERMINATE_CLUSTER to terminate the cluster. (AI-inferred) */
   timeoutAction: string | Computed<string>;
-  /** Specifies the spot provisioning timeout duration in minutes, after which the instance fleet stops attempting to provision spot instances if they are not available. (AI-inferred) */
   timeoutDurationMinutes: number | Computed<number>;
 }
 
 export interface InstanceFleetConfig_LaunchSpecifications {
-  /** Defines the allocation strategy and timeout duration for provisioning On-Demand instances within the EMR instance fleet's launch specifications. (AI-inferred) */
   onDemandSpecification?: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification | Computed<InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification>;
-  /** Specifies the Spot Instance provisioning timeout, timeout action, block duration, and allocation strategy for the instance fleet's spot capacity. (AI-inferred) */
   spotSpecification?: InstanceFleetConfig_LaunchSpecifications_SpotSpecification | Computed<InstanceFleetConfig_LaunchSpecifications_SpotSpecification>;
 }
 
 export interface InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecification {
-  /** Specifies the allocation strategy for On-Demand Instances in the resize specification, with allowed values 'lowest-price' or 'prioritized' controlling how instance types and subnets are selected during a fleet resize. (AI-inferred) */
   allocationStrategy?: string | Computed<string>;
-  /** The `capacity_reservation_options` object under the on-demand resize specification controls how the EMR instance fleet leverages EC2 Capacity Reservations during on-demand capacity resizing, allowing you to set the reservation preference and usage strategy. (AI-inferred) */
   capacityReservationOptions?: InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions | Computed<InstanceFleetConfig_LaunchSpecifications_OnDemandSpecification_CapacityReservationOptions>;
-  /** Specifies the maximum number of minutes Amazon EMR waits for a resize operation to complete on the on-demand portion of the instance fleet before timing out and aborting the resize. (AI-inferred) */
   timeoutDurationMinutes?: number | Computed<number>;
 }
 
 export interface InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecification {
-  /** Specifies the Spot Instance allocation strategy (such as capacity-optimized, price-capacity-optimized, or lowest-price) used when resizing the instance fleet's Spot capacity during a resize operation. (AI-inferred) */
   allocationStrategy?: string | Computed<string>;
-  /** Specifies the timeout duration in minutes for the Spot resize action; if the number of Spot instances in the fleet remains below the target after this period, EMR aborts the resize action. (AI-inferred) */
   timeoutDurationMinutes?: number | Computed<number>;
 }
 
 export interface InstanceFleetConfig_ResizeSpecifications {
-  /** The on-demand resize specification for the instance fleet, which defines the timeout duration (in minutes) for resizing the on-demand instance fleet when it is over its target capacity. (AI-inferred) */
   onDemandResizeSpecification?: InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecification | Computed<InstanceFleetConfig_ResizeSpecifications_OnDemandResizeSpecification>;
-  /** Defines the timeout (in minutes) for a resize operation on spot instances in the instance fleet, controlling how long Amazon EMR waits for spot capacity before the resize fails. (AI-inferred) */
   spotResizeSpecification?: InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecification | Computed<InstanceFleetConfig_ResizeSpecifications_SpotResizeSpecification>;
 }
 
@@ -224,42 +188,25 @@ const InstanceFleetConfig_ResizeSpecificationsFields: FieldMap = {
 };
 
 export interface InstanceFleetConfigConfig {
-  /** The ID of the EMR cluster to which this instance fleet configuration is applied. (AI-inferred) */
   clusterId: string | Computed<string>;
-  /** Specifies the role of the instance fleet within the EMR cluster, which must be one of MASTER, CORE, or TASK to define whether the fleet runs the master node, core nodes, or task nodes. (AI-inferred) */
   instanceFleetType: string | Computed<string>;
-  /** Specifies the list of EC2 instance type configurations for the instance fleet, each defining an instance type, its weighted capacity, and optional spot bid price. (AI-inferred) */
   instanceTypeConfigs?: InstanceFleetConfig_InstanceTypeConfigs[] | Computed<InstanceFleetConfig_InstanceTypeConfigs[]>;
-  /** Configures the launch specifications for the instance fleet, including the allocation strategy for On-Demand instances and the allocation strategy, timeout duration, and timeout action for Spot instances. (AI-inferred) */
   launchSpecifications?: InstanceFleetConfig_LaunchSpecifications | Computed<InstanceFleetConfig_LaunchSpecifications>;
-  /** A friendly name for the instance fleet, used to identify it within the EMR cluster. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Configures how an EMR instance fleet resizes its on-demand and spot capacity, including timeout durations and allocation strategies for each. (AI-inferred) */
   resizeSpecifications?: InstanceFleetConfig_ResizeSpecifications | Computed<InstanceFleetConfig_ResizeSpecifications>;
-  /** Specifies the target capacity of On-Demand units for the instance fleet, determining how many On-Demand instances Amazon EMR provisions. (AI-inferred) */
   targetOnDemandCapacity?: number | Computed<number>;
-  /** Specifies the target number of Spot capacity units (instances or vCPUs) to provision for this EMR instance fleet. (AI-inferred) */
   targetSpotCapacity?: number | Computed<number>;
 }
 
 export interface InstanceFleetConfigAttrs {
-  /** The ID of the EMR cluster to which this instance fleet configuration is applied. (AI-inferred) */
   clusterId: string;
-  /** This read-only attribute is the unique identifier (instance fleet ID) assigned to the EMR instance fleet created from this configuration. (AI-inferred) */
   id: string;
-  /** Specifies the role of the instance fleet within the EMR cluster, which must be one of MASTER, CORE, or TASK to define whether the fleet runs the master node, core nodes, or task nodes. (AI-inferred) */
   instanceFleetType: string;
-  /** Specifies the list of EC2 instance type configurations for the instance fleet, each defining an instance type, its weighted capacity, and optional spot bid price. (AI-inferred) */
   instanceTypeConfigs: InstanceFleetConfig_InstanceTypeConfigs[];
-  /** Configures the launch specifications for the instance fleet, including the allocation strategy for On-Demand instances and the allocation strategy, timeout duration, and timeout action for Spot instances. (AI-inferred) */
   launchSpecifications: InstanceFleetConfig_LaunchSpecifications;
-  /** A friendly name for the instance fleet, used to identify it within the EMR cluster. (AI-inferred) */
   name: string;
-  /** Configures how an EMR instance fleet resizes its on-demand and spot capacity, including timeout durations and allocation strategies for each. (AI-inferred) */
   resizeSpecifications: InstanceFleetConfig_ResizeSpecifications;
-  /** Specifies the target capacity of On-Demand units for the instance fleet, determining how many On-Demand instances Amazon EMR provisions. (AI-inferred) */
   targetOnDemandCapacity: number;
-  /** Specifies the target number of Spot capacity units (instances or vCPUs) to provision for this EMR instance fleet. (AI-inferred) */
   targetSpotCapacity: number;
 }
 

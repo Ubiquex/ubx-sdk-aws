@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class StreamApplicationFleetAssociationConfig:
-    # The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred)
     application_arn: Any = None
-    # The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred)
     fleet_name: Any = None
 
 @dataclasses.dataclass
 class StreamApplicationFleetAssociationAttrs:
-    # The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred)
     application_arn: Any = None
-    # The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred)
     fleet_name: Any = None
 
 StreamApplicationFleetAssociation = ubx.ResourceBinding(

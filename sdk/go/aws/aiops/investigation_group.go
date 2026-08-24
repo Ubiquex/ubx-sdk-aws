@@ -4,27 +4,21 @@ package aiops
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvestigationGroup_ChatbotNotificationChannels struct {
-	// The ARNs of the AWS Chatbot configurations that serve as notification channels for the investigation group, enabling alerts to be delivered to configured chat services such as Slack or Microsoft Teams. (AI-inferred)
 	ChatConfigurationArns any
-	// The ARN of the Amazon SNS topic that serves as a chatbot notification channel for the investigation group, receiving event notifications and alerts. (AI-inferred)
 	SnstopicArn any
 }
 
 type InvestigationGroup_CrossAccountConfigurations struct {
-	// The Amazon Resource Name (ARN) of the IAM role in the source account that the investigation group assumes to access data across accounts. (AI-inferred)
 	SourceRoleArn any
 }
 
 type InvestigationGroup_EncryptionConfig struct {
 	EncryptionConfigurationType any
-	// The ID of the AWS KMS key used to encrypt the data associated with the investigation group, as specified in its encryption configuration. (AI-inferred)
 	KmsKeyId any
 }
 
 type InvestigationGroup_Tags struct {
-	// The key of a tag attached to the AWS AIOps investigation group, used for resource identification and organization. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS AIOps investigation group, used to organize and manage the group within AWS. (AI-inferred)
 	Value any
 }
 
@@ -52,7 +46,6 @@ type InvestigationGroupConfig struct {
 	ChatbotNotificationChannels any
 	// An array of cross account configurations.
 	CrossAccountConfigurations any
-	// Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred)
 	EncryptionConfig any
 	// Investigation Group policy
 	InvestigationGroupPolicy any
@@ -64,7 +57,6 @@ type InvestigationGroupConfig struct {
 	RetentionInDays any
 	// The Investigation Role's ARN.
 	RoleArn any
-	// This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred)
 	TagKeyBoundaries any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -81,7 +73,6 @@ type InvestigationGroupAttrs struct {
 	CreatedBy any
 	// An array of cross account configurations.
 	CrossAccountConfigurations any
-	// Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred)
 	EncryptionConfig any
 	// Investigation Group policy
 	InvestigationGroupPolicy any
@@ -97,7 +88,6 @@ type InvestigationGroupAttrs struct {
 	RetentionInDays any
 	// The Investigation Role's ARN.
 	RoleArn any
-	// This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred)
 	TagKeyBoundaries any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

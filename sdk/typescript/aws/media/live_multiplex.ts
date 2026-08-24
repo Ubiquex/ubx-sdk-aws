@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveMultiplex_Destinations {
-  /** Specifies the MediaConnect output destination settings for a multiplex destination, including the ARN of the MediaConnect output. (AI-inferred) */
   multiplexMediaConnectOutputDestinationSettings?: unknown | Computed<unknown>;
 }
 
@@ -18,9 +17,7 @@ export interface LiveMultiplex_MultiplexSettings {
 }
 
 export interface LiveMultiplex_Tags {
-  /** The key of a tag applied to the AWS Elemental MediaLive Multiplex, used to attach metadata for organizing, cost allocation, and access management of this media transmission resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a key-value tag pair applied to the MediaLive multiplex for metadata and resource organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -70,7 +67,6 @@ export interface LiveMultiplexAttrs {
   pipelinesRunningCount: number;
   /** The number of programs in the multiplex. */
   programCount: number;
-  /** The current lifecycle state of the MediaLive multiplex, such as IDLE, STARTING, RUNNING, or STOPPING, as reported by AWS. (AI-inferred) */
   state: string;
   /** A collection of key-value pairs. */
   tags: LiveMultiplex_Tags[];

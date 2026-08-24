@@ -9,7 +9,6 @@ type TransitGatewayConnect_Options struct {
 }
 
 type TransitGatewayConnect_Tags struct {
-	// The key of a user-defined tag assigned to the EC2 Transit Gateway Connect attachment. (AI-inferred)
 	Key any
 	Value any
 }
@@ -24,7 +23,6 @@ var TransitGatewayConnect_TagsFields = ubx.FieldMap{
 	}
 
 type TransitGatewayConnectConfig struct {
-	// Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
 	Options any
 	// The tags for the attachment.
 	Tags any
@@ -35,7 +33,6 @@ type TransitGatewayConnectConfig struct {
 type TransitGatewayConnectAttrs struct {
 	// The creation time.
 	CreationTime any
-	// Specifies the options for the Transit Gateway Connect attachment, including the required tunneling protocol (GRE) used to establish the Connect peer connection. (AI-inferred)
 	Options any
 	// The state of the attachment.
 	State any

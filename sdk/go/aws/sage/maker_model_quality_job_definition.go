@@ -80,7 +80,6 @@ type MakerModelQualityJobDefinition_ModelQualityJobInput_BatchTransformInput str
 	LocalPath any
 	// Index or JSONpath to locate probabilities
 	ProbabilityAttribute any
-	// Number between 0 and 1 that defines the threshold for converting a model's probability scores into binary labels for model quality monitoring on batch transform jobs. (AI-inferred)
 	ProbabilityThresholdAttribute any
 	// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
 	S3DataDistributionType any
@@ -101,7 +100,6 @@ type MakerModelQualityJobDefinition_ModelQualityJobInput_EndpointInput struct {
 	LocalPath any
 	// Index or JSONpath to locate probabilities
 	ProbabilityAttribute any
-	// Sets the probability threshold value used by the SageMaker model quality monitoring job to convert the endpoint's model probability outputs into binary predictions for computing quality metrics. (AI-inferred)
 	ProbabilityThresholdAttribute any
 	// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
 	S3DataDistributionType any
@@ -121,16 +119,12 @@ type MakerModelQualityJobDefinition_ModelQualityJobInput struct {
 }
 
 type MakerModelQualityJobDefinition_ModelQualityJobOutputConfig_MonitoringOutputs_S3Output struct {
-	// The local directory path on the processing instance where the model quality monitoring output is written before being uploaded to the specified S3 location. (AI-inferred)
 	LocalPath any
-	// Specifies how the monitoring output is uploaded to Amazon S3, either continuously ('Continuous') or only after the monitoring job completes ('EndOfJob'). (AI-inferred)
 	S3UploadMode any
-	// The S3 URI that specifies the destination bucket and prefix where the model quality monitoring job's output artifacts (such as reports and statistics) are saved. (AI-inferred)
 	S3Uri any
 }
 
 type MakerModelQualityJobDefinition_ModelQualityJobOutputConfig_MonitoringOutputs struct {
-	// Specifies the S3 output destination for a model quality monitoring job, defining the local path in the container and the S3 URI where results are uploaded. (AI-inferred)
 	S3Output any
 }
 

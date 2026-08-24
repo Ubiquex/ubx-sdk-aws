@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolUser_UserAttributes {
-  /** Specifies the name of a user attribute (e.g., 'email', 'phone_number', or a custom attribute prefixed with 'custom:') for a user in an Amazon Cognito user pool. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The actual value for a user pool user attribute (e.g., an email address or phone number), paired with the attribute's Name in the same UserAttributes entry. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,40 +12,24 @@ const UserPoolUser_UserAttributesFields: FieldMap = {
 };
 
 export interface UserPoolUserConfig {
-  /** A map of custom key-value pairs that are passed to AWS Lambda triggers (such as PreSignUp, PostConfirmation, etc.) when a user is created in the Cognito user pool. (AI-inferred) */
   clientMetadata?: unknown | Computed<unknown>;
-  /** Specifies the delivery channels (email, SMS, or both) through which the newly created Cognito user receives the temporary password and invitation to set their password. (AI-inferred) */
   desiredDeliveryMediums?: string[] | Computed<string[]>;
-  /** If set to true, this property allows the user to be created even when the specified username or an alias (such as email or phone number) already exists in the user pool, suppressing the error that would otherwise occur. (AI-inferred) */
   forceAliasCreation?: boolean | Computed<boolean>;
-  /** When creating a user in the Cognito user pool, this optional value controls the invitation message behavior: 'RESEND' resends the invitation message, while 'SUPPRESS' suppresses it. (AI-inferred) */
   messageAction?: string | Computed<string>;
-  /** Specifies the custom attributes for the user, where each attribute provides a name and value, used to set user information during user creation in the Cognito user pool. (AI-inferred) */
   userAttributes?: UserPoolUser_UserAttributes[] | Computed<UserPoolUser_UserAttributes[]>;
-  /** The ID of the Cognito User Pool in which the user is created. (AI-inferred) */
   userPoolId: string | Computed<string>;
-  /** Specifies the username for the user in the Cognito user pool, which can be an email address, phone number, or custom string used for sign-in. (AI-inferred) */
   username?: string | Computed<string>;
-  /** Validation data (key-value pairs) provided by the caller to validate the user's attributes during user creation, which is passed to pre-sign-up Lambda triggers for custom validation and is not stored as persistent user attributes. (AI-inferred) */
   validationData?: UserPoolUser_UserAttributes[] | Computed<UserPoolUser_UserAttributes[]>;
 }
 
 export interface UserPoolUserAttrs {
-  /** A map of custom key-value pairs that are passed to AWS Lambda triggers (such as PreSignUp, PostConfirmation, etc.) when a user is created in the Cognito user pool. (AI-inferred) */
   clientMetadata: unknown;
-  /** Specifies the delivery channels (email, SMS, or both) through which the newly created Cognito user receives the temporary password and invitation to set their password. (AI-inferred) */
   desiredDeliveryMediums: string[];
-  /** If set to true, this property allows the user to be created even when the specified username or an alias (such as email or phone number) already exists in the user pool, suppressing the error that would otherwise occur. (AI-inferred) */
   forceAliasCreation: boolean;
-  /** When creating a user in the Cognito user pool, this optional value controls the invitation message behavior: 'RESEND' resends the invitation message, while 'SUPPRESS' suppresses it. (AI-inferred) */
   messageAction: string;
-  /** Specifies the custom attributes for the user, where each attribute provides a name and value, used to set user information during user creation in the Cognito user pool. (AI-inferred) */
   userAttributes: UserPoolUser_UserAttributes[];
-  /** The ID of the Cognito User Pool in which the user is created. (AI-inferred) */
   userPoolId: string;
-  /** Specifies the username for the user in the Cognito user pool, which can be an email address, phone number, or custom string used for sign-in. (AI-inferred) */
   username: string;
-  /** Validation data (key-value pairs) provided by the caller to validate the user's attributes during user creation, which is passed to pre-sign-up Lambda triggers for custom validation and is not stored as persistent user attributes. (AI-inferred) */
   validationData: UserPoolUser_UserAttributes[];
 }
 

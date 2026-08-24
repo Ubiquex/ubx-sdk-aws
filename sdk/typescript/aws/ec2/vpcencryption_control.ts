@@ -8,9 +8,7 @@ export interface VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGatew
 
 export interface VpcencryptionControl_ResourceExclusions {
   egressOnlyInternetGateway?: VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway | Computed<VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway>;
-  /** Specifies whether Elastic File System (EFS) file systems are excluded from the enforcement of encryption controls in the VPC. (AI-inferred) */
   elasticFileSystem?: VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway | Computed<VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway>;
-  /** An object that, when specified, allows Internet Gateways to be excluded from the scope of the VPC encryption control policy. (AI-inferred) */
   internetGateway?: VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway | Computed<VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway>;
   lambda?: VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway | Computed<VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway>;
   natGateway?: VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway | Computed<VpcencryptionControl_ResourceExclusions_EgressOnlyInternetGateway>;

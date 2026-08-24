@@ -8,15 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ScepChallengeConfig:
-    # The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred)
     connector_arn: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class ScepChallengeAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies the SCEP challenge within AWS Private CA Connector for SCEP, assigned by AWS when the challenge is created. (AI-inferred)
     challenge_arn: Any = None
-    # The Amazon Resource Name (ARN) of the connector that this SCEP challenge belongs to, required to create the challenge under that connector. (AI-inferred)
     connector_arn: Any = None
     tags: Any = None
 

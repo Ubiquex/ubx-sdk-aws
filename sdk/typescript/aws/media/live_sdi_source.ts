@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveSdiSource_Tags {
-  /** The key of a user-defined tag applied to the SDI source. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

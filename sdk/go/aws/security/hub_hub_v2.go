@@ -11,7 +11,6 @@ type HubHubV2Config struct {
 type HubHubV2Attrs struct {
 	// The Amazon Resource Name of the Security Hub V2 resource.
 	HubV2Arn any
-	// The ISO 8601 timestamp indicating when the Security Hub hub was subscribed (enabled) in the account, returned as a computed string. (AI-inferred)
 	SubscribedAt any
 	// A key-value pair to associate with the Security Hub V2 resource. You can specify a key that is 1 to 128 Unicode characters in length and cannot be prefixed with aws:. You can use any of the following characters: the set of Unicode letters, digits, whitespace, _, ., /, =, +, and -.
 	Tags any

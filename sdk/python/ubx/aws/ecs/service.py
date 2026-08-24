@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Service_CapacityProviderStrategy:
-    # The base value designates the minimum number of tasks to run on the specified capacity provider; only one capacity provider in a strategy can have a base defined. (AI-inferred)
     base: Any = None
-    # Specifies the name of the capacity provider (e.g., FARGATE, FARGATE_SPOT, or a custom capacity provider) to use for placing tasks in the ECS service cluster. (AI-inferred)
     capacity_provider: Any = None
-    # The relative weight of the capacity provider in the strategy, which determines the proportion of tasks that are placed on that provider. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
@@ -52,21 +49,15 @@ class Service_DeploymentConfiguration_DeploymentCircuitBreaker:
 @dataclasses.dataclass
 class Service_DeploymentConfiguration_LifecycleHooks_TimeoutConfiguration:
     action: Any = None
-    # The maximum number of minutes that an Amazon ECS deployment lifecycle hook can remain running before the deployment is considered failed and rolled back, as part of the service's deployment configuration. (AI-inferred)
     timeout_in_minutes: Any = None
 
 @dataclasses.dataclass
 class Service_DeploymentConfiguration_LifecycleHooks:
     hook_details: Any = None
-    # The ARN of the Lambda function or Amazon ECS task that the deployment lifecycle hook invokes during an Amazon ECS service deployment. (AI-inferred)
     hook_target_arn: Any = None
-    # Lists the deployment lifecycle stages (e.g., PENDING or PRIMARY) during which the ECS service lifecycle hook is invoked. (AI-inferred)
     lifecycle_stages: Any = None
-    # The ARN of the IAM role that Amazon ECS assumes to invoke the target of this deployment lifecycle hook during a service deployment. (AI-inferred)
     role_arn: Any = None
-    # Determines whether the lifecycle hook applies to the task level or the service level, with valid values of TASK and SERVICE, controlling the target scope of the hook during an Amazon ECS deployment. (AI-inferred)
     target_type: Any = None
-    # Defines the maximum time ECS will wait for the associated lifecycle hook to complete before considering the hook failed and proceeding with the deployment. (AI-inferred)
     timeout_configuration: Any = None
 
 @dataclasses.dataclass
@@ -119,20 +110,14 @@ class Service_LoadBalancers_AdvancedConfiguration:
 @dataclasses.dataclass
 class Service_LoadBalancers:
     advanced_configuration: Any = None
-    # Specifies the name of the container (as defined in the task definition) that the load balancer routes traffic to, used together with containerPort to register targets in the target group. (AI-inferred)
     container_name: Any = None
-    # The port on the container that the load balancer forwards traffic to, used by the associated target group to route requests to the ECS service's container. (AI-inferred)
     container_port: Any = None
-    # The name of the Classic Load Balancer to associate with the ECS service, used when the load balancer type is classic rather than an Application or Network Load Balancer target group. (AI-inferred)
     load_balancer_name: Any = None
-    # The ARN of the target group to which the ECS service's tasks are registered for the specified load balancer. (AI-inferred)
     target_group_arn: Any = None
 
 @dataclasses.dataclass
 class Service_Monitoring_MetricConfigurations:
-    # Specifies the names of the metrics (such as CPUUtilization or MemoryUtilization) that the Amazon ECS service will emit to CloudWatch as part of its monitoring configuration. (AI-inferred)
     metric_names: Any = None
-    # The number of seconds between aggregation periods for the ECS service's CloudWatch metric, determining the metric's resolution granularity. (AI-inferred)
     resolution_seconds: Any = None
 
 @dataclasses.dataclass
@@ -156,16 +141,12 @@ class Service_NetworkConfiguration:
 
 @dataclasses.dataclass
 class Service_PlacementConstraints:
-    # A cluster query language expression that defines the placement constraint for the service when the constraint type is 'memberOf', using the Amazon ECS placement constraint syntax. (AI-inferred)
     expression: Any = None
-    # Specifies the type of placement constraint, either 'distinctInstance' to place each task on a distinct container instance, or 'memberOf' to apply a cluster query language expression. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Service_PlacementStrategies:
-    # The field to apply the placement strategy against; for spread strategies this is often a custom attribute like attribute:ecs.availability-zone, for binpack it is cpu or memory, and it is not used for random strategies. (AI-inferred)
     field: Any = None
-    # The type of placement strategy to use, such as spread, binpack, or random, for distributing tasks across container instances in the ECS service. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -177,9 +158,7 @@ class Service_ServiceConnectConfiguration_AccessLogConfiguration:
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_LogConfiguration_SecretOptions:
-    # Specifies the name of the secret option, which serves as the key for the log driver configuration and pairs with the valueFrom ARN to retrieve the secret value from AWS Secrets Manager. (AI-inferred)
     name: Any = None
-    # The ARN of the AWS Secrets Manager secret or SSM Parameter Store parameter that supplies the value for the named log configuration option in the ECS Service Connect log configuration. (AI-inferred)
     value_from: Any = None
 
 @dataclasses.dataclass
@@ -197,7 +176,6 @@ class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRule
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRules_Header:
-    # The name of the HTTP header that identifies test traffic for routing through this client alias, enabling Service Connect canary deployments. (AI-inferred)
     name: Any = None
     value: Any = None
 
@@ -207,46 +185,32 @@ class Service_ServiceConnectConfiguration_Services_ClientAliases_TestTrafficRule
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services_ClientAliases:
-    # The custom DNS hostname that clients use to access the service through AWS ECS Service Connect, which overrides the default service discovery name within the namespace. (AI-inferred)
     dns_name: Any = None
-    # The port number that clients use to connect to the service through this Service Connect client alias. (AI-inferred)
     port: Any = None
     test_traffic_rules: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services_Timeout:
-    # Specifies the idle timeout in seconds for a service in the Amazon ECS Service Connect configuration, during which a connection must have activity to remain open, otherwise it is closed. (AI-inferred)
     idle_timeout_seconds: Any = None
-    # Defines the maximum time in seconds that an individual request can stay in flight before the Service Connect proxy times it out, enforcing request-level timeout for the ECS Service Connect service. (AI-inferred)
     per_request_timeout_seconds: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services_Tls_IssuerCertificateAuthority:
-    # The ARN of the AWS Private Certificate Authority (ACM PCA) that issues the TLS certificate for the ECS Service Connect service. (AI-inferred)
     aws_pca_authority_arn: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services_Tls:
-    # Specifies the ARN of the private certificate authority (such as AWS Private CA) that issues the TLS certificates used for the Service Connect service's mutual TLS encryption. (AI-inferred)
     issuer_certificate_authority: Any = None
-    # The ARN of the AWS KMS key used to encrypt the private key of the TLS certificate for this Service Connect service. (AI-inferred)
     kms_key: Any = None
-    # The ARN of the IAM role that Amazon ECS assumes to create the certificate used for the service's Service Connect TLS configuration. (AI-inferred)
     role_arn: Any = None
 
 @dataclasses.dataclass
 class Service_ServiceConnectConfiguration_Services:
-    # The list of client aliases for each Service Connect service, which define alternative names and ports for the service to be discovered within the Cloud Map namespace. (AI-inferred)
     client_aliases: Any = None
-    # The discovery name for this service in Amazon ECS Service Connect, which is used as the DNS hostname for service-to-service communication within the Service Connect namespace. (AI-inferred)
     discovery_name: Any = None
-    # Overrides the port that the Amazon ECS Service Connect service uses to accept inbound traffic, so you can map a different ingress port than the default one determined by the service's port configuration. (AI-inferred)
     ingress_port_override: Any = None
-    # Specifies the name of the port mapping in the task definition that ECS Service Connect uses to route traffic to this service. (AI-inferred)
     port_name: Any = None
-    # Configures the idle and request timeouts (in seconds) for the Service Connect service, with fields for `idleTimeoutSeconds` and `requestTimeoutSeconds`. (AI-inferred)
     timeout: Any = None
-    # Configures TLS for an individual Service Connect service, specifying the certificate authority (via ARN) that issues client certificates and the optional KMS key used to encrypt the CA's private key. (AI-inferred)
     tls: Any = None
 
 @dataclasses.dataclass
@@ -264,70 +228,45 @@ class Service_ServiceConnectConfiguration:
 
 @dataclasses.dataclass
 class Service_ServiceRegistries:
-    # The name of the container (as specified in the task definition) whose port is used for service discovery with the Cloud Map registry. (AI-inferred)
     container_name: Any = None
-    # The port on the container that AWS Cloud Map service discovery uses to route traffic to the ECS service; if omitted, the container's first assigned port is used. (AI-inferred)
     container_port: Any = None
-    # The port number to register with the service registry, overriding the container port from the task definition for service discovery purposes. (AI-inferred)
     port: Any = None
-    # The Amazon Resource Name (ARN) of the AWS Cloud Map service registry that this ECS service uses for service discovery. (AI-inferred)
     registry_arn: Any = None
 
 @dataclasses.dataclass
 class Service_Tags:
-    # The key of a tag attached to the ECS service, used for organizing and identifying the service within AWS. (AI-inferred)
     key: Any = None
-    # Sets the value of a metadata tag on the ECS service, which can be used for cost allocation, resource lifecycle management, and IAM-based access control. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Service_VolumeConfigurations_ManagedEbsvolume_TagSpecifications:
-    # Determines which source of tags (either the ECS task definition or the ECS service) should be propagated to the managed EBS volume, with valid values of TASK_DEFINITION or SERVICE. (AI-inferred)
     propagate_tags: Any = None
-    # The type of Amazon EBS resource (either 'volume' or 'snapshot') to which the tags in this tag specification apply, used when tagging a managed EBS volume attached to an ECS service. (AI-inferred)
     resource_type: Any = None
-    # Specifies the list of tag key-value pairs to be applied to the managed EBS volume when it is provisioned for the ECS service. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Service_VolumeConfigurations_ManagedEbsvolume:
-    # Specifies whether the managed Amazon EBS volume used by the ECS service task should be encrypted. (AI-inferred)
     encrypted: Any = None
-    # The filesystem type (e.g., ext4, xfs) to format the managed EBS volume with, used when the ECS service creates and attaches the volume. (AI-inferred)
     filesystem_type: Any = None
-    # Specifies the provisioned IOPS for the managed Amazon EBS volume attached to the ECS service, controlling the volume's input/output performance. (AI-inferred)
     iops: Any = None
-    # The customer-managed KMS key ARN or ID used to encrypt the managed EBS volume attached to the ECS service's tasks. (AI-inferred)
     kms_key_id: Any = None
-    # The ARN of the IAM role that Amazon ECS assumes to create, attach, and detach the managed EBS volume for the service, falling back to the service-linked role if not provided. (AI-inferred)
     role_arn: Any = None
-    # Specifies the size in GiB of the Amazon EBS volume that is created and attached to the container instances when the ECS service uses a managed EBS volume configuration. (AI-inferred)
     size_in_gi_b: Any = None
-    # Specifies the snapshot ARN or ID from which the Amazon EBS volume is created, allowing the ECS service's managed volume to be initialized with data from an existing snapshot. (AI-inferred)
     snapshot_id: Any = None
-    # Defines the tag specifications for the Amazon EBS volume that this ECS service creates and manages, specifying which tags are applied to the volume resource when it is provisioned. (AI-inferred)
     tag_specifications: Any = None
-    # Sets the throughput in MiB/s for the managed EBS volume when the volume type is gp3, controlling the performance throughput of the volume. (AI-inferred)
     throughput: Any = None
-    # Sets the rate (in GiB per minute) at which the managed EBS volume is initialized, used when restoring from a snapshot to pre-warm blocks and avoid I/O performance degradation before the task accesses them. (AI-inferred)
     volume_initialization_rate: Any = None
-    # Specifies the Amazon EBS volume type (e.g., gp3, io2) for the managed EBS volume attached to tasks in this ECS service. (AI-inferred)
     volume_type: Any = None
 
 @dataclasses.dataclass
 class Service_VolumeConfigurations:
-    # Defines the configuration for an Amazon Elastic Block Store (EBS) volume that is managed by Amazon ECS for use as a service-managed volume in an ECS service, including settings such as size, volume type, file system type, and encryption. (AI-inferred)
     managed_ebsvolume: Any = None
-    # The name of the EBS volume attached at the ECS service level, which must match the volume name referenced by container mount points as sourceVolume in the task definition. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Service_VpcLatticeConfigurations:
-    # Specifies the name of the port mapping in the task definition that VPC Lattice uses to route traffic to the service. (AI-inferred)
     port_name: Any = None
-    # The ARN of the IAM role that Amazon ECS assumes to register and deregister the service with the associated VPC Lattice target group. (AI-inferred)
     role_arn: Any = None
-    # The ARN of the VPC Lattice target group that this ECS service registers with as a target. (AI-inferred)
     target_group_arn: Any = None
 
 _Service_CapacityProviderStrategyFields = {
@@ -734,7 +673,6 @@ class ServiceAttrs:
     load_balancers: Any = None
     # The optional monitoring configuration for a service, which defines the resolution for the service-level ``CPUUtilization`` and ``MemoryUtilization`` Amazon CloudWatch metrics. When not specified, Amazon ECS uses the default resolution of ``60`` seconds.
     monitoring: Any = None
-    # The unique name of the ECS service within its cluster; when omitted, this is auto-generated by ECS, and this attribute holds the final name after creation. (AI-inferred)
     name: Any = None
     # The network configuration for a task or service.
     network_configuration: Any = None
@@ -750,7 +688,6 @@ class ServiceAttrs:
     role: Any = None
     # The scheduling strategy to use for the service. For more information, see [Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html). There are two service scheduler strategies available: + ``REPLICA``-The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. This scheduler strategy is required if the service uses the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types. + ``DAEMON``-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that don't meet the placement constraints. When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. Tasks using the Fargate launch type or the ``CODE_DEPLOY`` or ``EXTERNAL`` deployment controller types don't support the ``DAEMON`` scheduling strategy.
     scheduling_strategy: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the ECS service. (AI-inferred)
     service_arn: Any = None
     # The Service Connect configuration of your Amazon ECS service. The configuration for this service to discover and connect to services, and be discovered by, and connected from, other services within a namespace. Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see [Service Connect](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html) in the *Amazon Elastic Container Service Developer Guide*.
     service_connect_configuration: Any = None

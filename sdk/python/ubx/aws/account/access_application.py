@@ -15,7 +15,6 @@ class AccessApplication_IdentitySource_IdentityCenter:
 
 @dataclasses.dataclass
 class AccessApplication_IdentitySource:
-    # Specifies the AWS IAM Identity Center (successor to AWS SSO) instance to be used as the identity source for the access application, including the required Identity Center ARN. (AI-inferred)
     identity_center: Any = None
 
 @dataclasses.dataclass
@@ -39,7 +38,6 @@ class AccessApplicationAttrs:
     application_arn: Any = None
     # The timestamp when the application was created
     created_at: Any = None
-    # The computed identity source object that describes how the access application determines identities, including the source type and the associated IAM Identity Center instance ARN when applicable. (AI-inferred)
     identity_source: Any = None
     # The status of the application
     status: Any = None

@@ -14,7 +14,6 @@ class GatewayV2RouteResponseConfig:
     model_selection_expression: Any = None
     # The response models for the route response.
     response_models: Any = None
-    # A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred)
     response_parameters: Any = None
     # The route ID.
     route_id: Any = None
@@ -29,11 +28,9 @@ class GatewayV2RouteResponseAttrs:
     model_selection_expression: Any = None
     # The response models for the route response.
     response_models: Any = None
-    # A map of route response parameter names (e.g., header.x-custom-header) to a boolean indicating whether that parameter is required in the route response. (AI-inferred)
     response_parameters: Any = None
     # The route ID.
     route_id: Any = None
-    # The unique identifier that AWS API Gateway assigns to the route response upon creation, returned as a read-only value for referencing the route response in subsequent API operations. (AI-inferred)
     route_response_id: Any = None
     # The route response key.
     route_response_key: Any = None

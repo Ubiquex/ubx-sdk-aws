@@ -6,18 +6,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GatewayUsagePlanKeyConfig struct {
 	// The Id of the UsagePlanKey resource.
 	KeyId any
-	// Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred)
 	KeyType any
 	// The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.
 	UsagePlanId any
 }
 
 type GatewayUsagePlanKeyAttrs struct {
-	// The unique resource identifier in Terraform, formed by joining the usage plan ID and the API key ID with a colon. (AI-inferred)
 	Id any
 	// The Id of the UsagePlanKey resource.
 	KeyId any
-	// Indicates the type of the API key associated with the usage plan, either 'API_KEY' for a standard API Gateway key or 'CUSTOM' for a custom imported key. (AI-inferred)
 	KeyType any
 	// The Id of the UsagePlan resource representing the usage plan containing the UsagePlanKey resource representing a plan customer.
 	UsagePlanId any

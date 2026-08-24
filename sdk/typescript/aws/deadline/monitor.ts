@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Monitor_Tags {
-  /** A key for a tag assigned to the AWS Deadline Cloud monitor, used to categorize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -13,40 +12,28 @@ const Monitor_TagsFields: FieldMap = {
 };
 
 export interface MonitorConfig {
-  /** A human-readable name for the Deadline Cloud monitor, used to identify it in the AWS console and APIs. (AI-inferred) */
   displayName: string | Computed<string>;
-  /** The ARN of the IAM Identity Center instance used to manage user access and single sign-on for the AWS Deadline Cloud monitor. (AI-inferred) */
   identityCenterInstanceArn: string | Computed<string>;
   /** The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor. */
   identityCenterRegion?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the IAM role that the Deadline Cloud monitor uses to access the storage resources (such as the S3 bucket and file system) associated with the Deadline Cloud environment. (AI-inferred) */
   roleArn: string | Computed<string>;
-  /** Specifies the subdomain that forms part of the monitor's unique web address, used to access the Deadline Cloud monitor endpoint. (AI-inferred) */
   subdomain: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Monitor_Tags[] | Computed<Monitor_Tags[]>;
 }
 
 export interface MonitorAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the Deadline Cloud monitor. (AI-inferred) */
   arn: string;
-  /** A human-readable name for the Deadline Cloud monitor, used to identify it in the AWS console and APIs. (AI-inferred) */
   displayName: string;
-  /** The ARN of the AWS IAM Identity Center application that AWS Deadline Cloud creates and associates with this monitor. (AI-inferred) */
   identityCenterApplicationArn: string;
-  /** The ARN of the IAM Identity Center instance used to manage user access and single sign-on for the AWS Deadline Cloud monitor. (AI-inferred) */
   identityCenterInstanceArn: string;
   /** The AWS region where IAM Identity Center is enabled. Required when Identity Center is in a different region than the monitor. */
   identityCenterRegion: string;
-  /** The unique identifier assigned to the monitor. (AI-inferred) */
   monitorId: string;
-  /** The Amazon Resource Name (ARN) of the IAM role that the Deadline Cloud monitor uses to access the storage resources (such as the S3 bucket and file system) associated with the Deadline Cloud environment. (AI-inferred) */
   roleArn: string;
-  /** Specifies the subdomain that forms part of the monitor's unique web address, used to access the Deadline Cloud monitor endpoint. (AI-inferred) */
   subdomain: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: Monitor_Tags[];
-  /** The URL of the AWS Deadline monitor, used to access the monitor's web-based user interface. (AI-inferred) */
   url: string;
 }
 

@@ -4,109 +4,71 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TanalyticsPipeline_PipelineActivities_AddAttributes struct {
-	// Defines the key-value pairs of attributes to add to the message in the AddAttributes pipeline activity, where each key is the attribute name and the value is the attribute value (both strings). (AI-inferred)
 	Attributes any
-	// Specifies the name of the addAttributes pipeline activity, which uniquely identifies this activity within the AWS IoT Analytics pipeline. (AI-inferred)
 	Name any
-	// The name of the next activity in the pipeline to execute after this AddAttributes activity, chaining the processing steps in sequence. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities_Channel struct {
-	// The name of the AWS IoTAnalytics channel from which this pipeline activity reads messages. (AI-inferred)
 	ChannelName any
-	// The name of the channel activity within the IoT Analytics pipeline, which uniquely identifies this activity in the pipeline's activity list. (AI-inferred)
 	Name any
-	// Specifies the name of the next activity in the pipeline to execute after this channel activity, enabling the chaining of processing steps. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities_Datastore struct {
-	// The name of the IoT Analytics datastore to which this pipeline activity writes data. (AI-inferred)
 	DatastoreName any
-	// The name of this datastore activity inside an AWS IoT Analytics pipeline, serving as a unique identifier for the activity within the pipeline's ordered activity list. (AI-inferred)
 	Name any
 }
 
 type TanalyticsPipeline_PipelineActivities_DeviceRegistryEnrich struct {
-	// The name of the message attribute that AWS IoT Analytics populates with the device registry information for the IoT thing specified in the thingName property. (AI-inferred)
 	Attribute any
-	// The name of the device registry enrichment activity, which serves as the unique reference identifier used by the `next` property of other pipeline activities to chain execution. (AI-inferred)
 	Name any
-	// The name of the next activity in the pipeline to execute after this device registry enrich activity. (AI-inferred)
 	Next any
-	// ARN of the IAM role that grants AWS IoT Analytics permission to read from the AWS IoT device registry to enrich messages with device metadata. (AI-inferred)
 	RoleArn any
-	// Specifies the name of the AWS IoT thing whose registry data is retrieved and added to the message by the DeviceRegistryEnrich activity. (AI-inferred)
 	ThingName any
 }
 
 type TanalyticsPipeline_PipelineActivities_Filter struct {
-	// The expression used by the filter activity to select which messages in the pipeline are passed to the next activity, retaining only those that satisfy the condition. (AI-inferred)
 	Filter any
-	// The name that uniquely identifies the filter activity within the IoT Analytics pipeline, used to refer to this activity in the pipeline's data processing flow. (AI-inferred)
 	Name any
-	// Specifies the name of the next pipeline activity to execute after this Filter activity completes. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities_Lambda struct {
-	// The maximum number of messages that the Lambda activity passes to its configured Lambda function in a single invocation (batch size). (AI-inferred)
 	BatchSize any
-	// The name of the AWS Lambda function that this activity invokes to process message data in the AWS IoTAnalytics pipeline. (AI-inferred)
 	LambdaName any
-	// The name of the Lambda activity, which must be unique within the AWS IoT Analytics pipeline. (AI-inferred)
 	Name any
-	// The name of the next activity in the pipeline to execute after this Lambda activity completes. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities_Math struct {
-	// The name of the IoT Analytics message attribute that will store the result of the math expression evaluated by this pipeline activity. (AI-inferred)
 	Attribute any
-	// The mathematical expression to evaluate for the Math activity, written using IoT Analytics expression syntax. (AI-inferred)
 	Math any
-	// The name of the math activity, which identifies it within the IoT Analytics pipeline for reference by other activities. (AI-inferred)
 	Name any
-	// Specifies the name of the next pipeline activity to run after this math activity in the AWS IoT Analytics pipeline. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities_RemoveAttributes struct {
-	// Specifies the list of attribute names to remove from the message payload in the RemoveAttributes pipeline activity. (AI-inferred)
 	Attributes any
-	// The name of the removeAttributes activity within the pipeline, which must be unique across all activities in the pipeline and is used by the IoT Analytics service to identify this activity when processing messages. (AI-inferred)
 	Name any
-	// Specifies the name of the next pipeline activity to execute after the 'removeAttributes' activity removes the listed attributes from the message. (AI-inferred)
 	Next any
 }
 
 type TanalyticsPipeline_PipelineActivities struct {
-	// Defines an AddAttributes activity, which adds the specified attributes to the message payload within an AWS IoT Analytics pipeline. (AI-inferred)
 	AddAttributes any
-	// Defines a channel activity that specifies the AWS IoT Analytics channel from which the pipeline reads messages as its source, including the activity's name, the channel name, and the next activity in the pipeline. (AI-inferred)
 	Channel any
-	// Defines a datastore activity that writes the incoming messages to a specified AWS IoTAnalytics datastore, identified by its datastore name. (AI-inferred)
 	Datastore any
-	// This object configures a DeviceRegistryEnrich pipeline activity that uses the AWS IoT device registry to look up device attributes by the device ID in each message and add them to the message payload. (AI-inferred)
 	DeviceRegistryEnrich any
-	// This object configures a device shadow enrichment activity, which retrieves the latest device shadow state for a specified IoT thing and adds it to the message payload. (AI-inferred)
 	DeviceShadowEnrich any
-	// The filter block defines an IoT Analytics pipeline filter activity, which passes only messages that satisfy the specified filter expression on to the next pipeline activity. (AI-inferred)
 	Filter any
-	// The lambda activity configuration in an AWS IoT Analytics pipeline, specifying the Lambda function name (lambdaName), the batch size for processing messages, and the name of the next activity to execute. (AI-inferred)
 	Lambda any
-	// Specifies the math activity in the pipeline, which performs arithmetic operations on message attributes and assigns the computed value to a specified attribute for further processing. (AI-inferred)
 	Math any
-	// The remove_attributes block configures a RemoveAttributes pipeline activity, which removes the specified attributes from each message processed by the AWS IoT Analytics pipeline. (AI-inferred)
 	RemoveAttributes any
-	// Configuration for a selectAttributes pipeline activity that creates a new message containing only the specified attributes from the original message, discarding all others before passing it to the next activity. (AI-inferred)
 	SelectAttributes any
 }
 
 type TanalyticsPipeline_Tags struct {
 	Key any
-	// The value of a user-defined tag attached to the AWS IoT Analytics pipeline, which is a custom string used to categorize and identify the pipeline for management and cost allocation purposes. (AI-inferred)
 	Value any
 }
 
@@ -220,22 +182,15 @@ var TanalyticsPipeline_TagsFields = ubx.FieldMap{
 	}
 
 type TanalyticsPipelineConfig struct {
-	// Specifies the ordered list of pipeline activities (such as filter, select attributes, math, device registry, and channel or datastore writes) that process messages as they flow through the IoT Analytics pipeline. (AI-inferred)
 	PipelineActivities any
-	// The name of the AWS IoT Analytics pipeline, which serves as the pipeline identifier and must be unique within the AWS account and region. (AI-inferred)
 	PipelineName any
-	// Attaches a list of key-value tags to the IoT Analytics pipeline, which can be used for cost allocation, resource categorization, and access control via IAM policies. (AI-inferred)
 	Tags any
 }
 
 type TanalyticsPipelineAttrs struct {
-	// The unique identifier of the IoT Analytics pipeline, which is set to the pipeline name specified in the configuration. (AI-inferred)
 	Id any
-	// Specifies the ordered list of pipeline activities (such as filter, select attributes, math, device registry, and channel or datastore writes) that process messages as they flow through the IoT Analytics pipeline. (AI-inferred)
 	PipelineActivities any
-	// The name of the AWS IoT Analytics pipeline, which serves as the pipeline identifier and must be unique within the AWS account and region. (AI-inferred)
 	PipelineName any
-	// Attaches a list of key-value tags to the IoT Analytics pipeline, which can be used for cost allocation, resource categorization, and access control via IAM policies. (AI-inferred)
 	Tags any
 }
 

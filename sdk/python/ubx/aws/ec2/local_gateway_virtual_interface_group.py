@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class LocalGatewayVirtualInterfaceGroup_Tags:
     key: Any = None
-    # The value portion of a tag key-value pair attached to the Local Gateway Virtual Interface Group, enabling you to assign custom metadata for identification and management. (AI-inferred)
     value: Any = None
 
 _LocalGatewayVirtualInterfaceGroup_TagsFields = {

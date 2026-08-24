@@ -4,7 +4,6 @@ package placement
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Group_Tags struct {
-	// The key (name) of a user-defined tag applied to the placement group, used to categorize and identify the resource in AWS. (AI-inferred)
 	Key any
 	Value any
 }

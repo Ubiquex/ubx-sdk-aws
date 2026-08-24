@@ -15,13 +15,11 @@ type RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtau
 
 type RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims_AuthorizingClaimMatchValue struct {
 	ClaimMatchOperator any
-	// Specifies the expected value that the custom JWT claim must equal in order for the custom JWT authorizer to authorize a request, as part of the authorizing claim match value configuration. (AI-inferred)
 	ClaimMatchValue any
 }
 
 type RegistryRegistry_DiscoveryConfiguration_AuthorizerConfiguration_CustomJwtauthorizer_CustomClaims struct {
 	AuthorizingClaimMatchValue any
-	// The name of the claim in the incoming JWT token that the custom authorizer extracts to evaluate as a custom claim for access control decisions. (AI-inferred)
 	InboundTokenClaimName any
 	InboundTokenClaimValueType any
 }

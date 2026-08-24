@@ -2,17 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_Alarms {
-  /** The name of the CloudWatch alarm that triggers an automatic rollback of the SageMaker inference component deployment when it enters an alarm state. (AI-inferred) */
   alarmName?: string | Computed<string>;
 }
 
 export interface MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration {
-  /** A list of CloudWatch alarms that, when triggered, cause the inference component deployment to automatically roll back to the previous configuration. (AI-inferred) */
   alarms: MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_Alarms[] | Computed<MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration_Alarms[]>;
 }
 
 export interface MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize {
-  /** Specifies whether the maximum batch size for a rolling update to a SageMaker Inference Component is expressed as an instance count or as a percentage of the endpoint's total capacity, determining how many instances are updated concurrently during the deployment. (AI-inferred) */
   type: string | Computed<string>;
   /** The number of copies for the inference component */
   value: number | Computed<number>;
@@ -21,16 +18,13 @@ export interface MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_Ma
 export interface MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy {
   /** Capacity size configuration for the inference component */
   maximumBatchSize?: MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize | Computed<MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize>;
-  /** Specifies the maximum time in seconds that a rolling update of the SageMaker inference component is allowed to run before the update is considered failed and is rolled back. (AI-inferred) */
   maximumExecutionTimeoutInSeconds?: number | Computed<number>;
   /** Capacity size configuration for the inference component */
   rollbackMaximumBatchSize?: MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize | Computed<MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy_MaximumBatchSize>;
-  /** Specifies the number of seconds to wait after each batch of instances is updated before the next batch is deployed during a rolling update for the SageMaker inference component. (AI-inferred) */
   waitIntervalInSeconds?: number | Computed<number>;
 }
 
 export interface MakerInferenceComponent_DeploymentConfig {
-  /** Specifies the CloudWatch alarms that trigger automatic rollback of the SageMaker inference component deployment when they enter an alarm state. (AI-inferred) */
   autoRollbackConfiguration?: MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration | Computed<MakerInferenceComponent_DeploymentConfig_AutoRollbackConfiguration>;
   /** The rolling update policy for the inference component */
   rollingUpdatePolicy?: MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy | Computed<MakerInferenceComponent_DeploymentConfig_RollingUpdatePolicy>;
@@ -46,18 +40,13 @@ export interface MakerInferenceComponent_RuntimeConfig {
 }
 
 export interface MakerInferenceComponent_Specification_ComputeResourceRequirements {
-  /** Specifies the maximum amount of memory, in megabytes, that the inference component requires for deployment, which SageMaker uses to place the component on an endpoint and ensure sufficient resources are available. (AI-inferred) */
   maxMemoryRequiredInMb?: number | Computed<number>;
-  /** Specifies the minimum amount of memory, in megabytes, that the SageMaker inference component needs for its model and runtime to operate successfully. (AI-inferred) */
   minMemoryRequiredInMb?: number | Computed<number>;
-  /** The number of accelerator devices required for the inference component, used to determine the appropriate instance type for deployment. (AI-inferred) */
   numberOfAcceleratorDevicesRequired?: number | Computed<number>;
-  /** The exact number of CPU cores that must be allocated to the inference component, used when a fixed compute resource allocation is specified rather than a range. (AI-inferred) */
   numberOfCpuCoresRequired?: number | Computed<number>;
 }
 
 export interface MakerInferenceComponent_Specification_Container_DeployedImage {
-  /** The timestamp at which the image URI for the container was resolved to the actual image used for the deployed inference component, as a string. (AI-inferred) */
   resolutionTime?: string | Computed<string>;
   /** The image to use for the container that will be materialized for the inference component */
   resolvedImage?: string | Computed<string>;
@@ -66,9 +55,7 @@ export interface MakerInferenceComponent_Specification_Container_DeployedImage {
 }
 
 export interface MakerInferenceComponent_Specification_Container {
-  /** The Amazon S3 URI where the model artifacts for this inference component container are stored. (AI-inferred) */
   artifactUrl?: string | Computed<string>;
-  /** The `deployed_image` object contains the resolved image URI and the resolution method that SageMaker actually used for the inference component's container after deployment, which may differ from the image originally specified. (AI-inferred) */
   deployedImage?: MakerInferenceComponent_Specification_Container_DeployedImage | Computed<MakerInferenceComponent_Specification_Container_DeployedImage>;
   /** Environment variables to specify on the container */
   environment?: unknown | Computed<unknown>;
@@ -77,29 +64,22 @@ export interface MakerInferenceComponent_Specification_Container {
 }
 
 export interface MakerInferenceComponent_Specification_StartupParameters {
-  /** The timeout in seconds that SageMaker waits for the container's health check to succeed during component startup. (AI-inferred) */
   containerStartupHealthCheckTimeoutInSeconds?: number | Computed<number>;
-  /** The maximum time, in seconds, allowed for downloading the model data during inference component startup before the startup is considered failed. (AI-inferred) */
   modelDataDownloadTimeoutInSeconds?: number | Computed<number>;
 }
 
 export interface MakerInferenceComponent_Specification {
   /** The name of the base inference component */
   baseInferenceComponentName?: string | Computed<string>;
-  /** Defines the compute resources required for the inference component, including the number of accelerator devices, the number of inference copies, and the minimum and maximum memory (in MB) needed to run the component. (AI-inferred) */
   computeResourceRequirements?: MakerInferenceComponent_Specification_ComputeResourceRequirements | Computed<MakerInferenceComponent_Specification_ComputeResourceRequirements>;
-  /** Specifies the container configuration for the SageMaker inference component, including the Docker image, model artifact URL, and environment variables. (AI-inferred) */
   container?: MakerInferenceComponent_Specification_Container | Computed<MakerInferenceComponent_Specification_Container>;
   /** The name of the model to use with the inference component */
   modelName?: string | Computed<string>;
-  /** Specifies startup parameters for the inference component's model container, including the model data download timeout and container startup health check timeout, used to control how the container is launched and validated before it begins serving inference traffic. (AI-inferred) */
   startupParameters?: MakerInferenceComponent_Specification_StartupParameters | Computed<MakerInferenceComponent_Specification_StartupParameters>;
 }
 
 export interface MakerInferenceComponent_Tags {
-  /** The key of a tag assigned to the SageMaker inference component, used to identify, organize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the SageMaker inference component, providing metadata for organizing, managing, and identifying the component. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -169,7 +149,6 @@ export interface MakerInferenceComponentConfig {
 }
 
 export interface MakerInferenceComponentAttrs {
-  /** The date and time when the SageMaker inference component was created. (AI-inferred) */
   creationTime: string;
   /** The deployment config for the inference component */
   deploymentConfig: MakerInferenceComponent_DeploymentConfig;
@@ -183,9 +162,7 @@ export interface MakerInferenceComponentAttrs {
   inferenceComponentArn: string;
   /** The name of the inference component */
   inferenceComponentName: string;
-  /** Indicates the current lifecycle status of the SageMaker inference component, such as Creating, InService, Updating, Deleting, or Failed. (AI-inferred) */
   inferenceComponentStatus: string;
-  /** The date and time when the SageMaker inference component was last modified. (AI-inferred) */
   lastModifiedTime: string;
   /** The runtime config for the inference component */
   runtimeConfig: MakerInferenceComponent_RuntimeConfig;

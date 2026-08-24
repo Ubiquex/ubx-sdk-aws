@@ -4,22 +4,15 @@ package step
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FunctionsStateMachineVersionConfig struct {
-	// An optional description of the state machine version, used to provide a human-readable label for the version. (AI-inferred)
 	Description any
-	// The Amazon Resource Name (ARN) of the state machine for which this version is created. (AI-inferred)
 	StateMachineArn any
-	// Specifies the revision ID of the state machine to create the version from; if omitted, the version is created from the latest revision. (AI-inferred)
 	StateMachineRevisionId any
 }
 
 type FunctionsStateMachineVersionAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this state machine version, including the state machine name and version number. (AI-inferred)
 	Arn any
-	// An optional description of the state machine version, used to provide a human-readable label for the version. (AI-inferred)
 	Description any
-	// The Amazon Resource Name (ARN) of the state machine for which this version is created. (AI-inferred)
 	StateMachineArn any
-	// Specifies the revision ID of the state machine to create the version from; if omitted, the version is created from the latest revision. (AI-inferred)
 	StateMachineRevisionId any
 }
 

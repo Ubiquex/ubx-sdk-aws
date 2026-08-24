@@ -9,11 +9,8 @@ export interface MakerRobotApplication_RobotSoftwareSuite {
 }
 
 export interface MakerRobotApplication_Sources {
-  /** Specifies the processor architecture (X86_64, ARM64, or ARMHF) that the robot application source bundle is built for, as part of the source's S3 location configuration. (AI-inferred) */
   architecture?: string | Computed<string>;
-  /** The name of the S3 bucket that stores the robot application source archive, which AWS RoboMaker uses to deploy the application to robot devices. (AI-inferred) */
   s3Bucket?: string | Computed<string>;
-  /** The S3 object key (path) of the robot application source bundle, which combined with the S3 bucket identifies the uploaded application archive for the RoboMaker robot application. (AI-inferred) */
   s3Key?: string | Computed<string>;
 }
 
@@ -44,7 +41,6 @@ export interface MakerRobotApplicationConfig {
 }
 
 export interface MakerRobotApplicationAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this AWS RoboMaker robot application. (AI-inferred) */
   arn: string;
   /** The revision ID of robot application. */
   currentRevisionId: string;

@@ -18,30 +18,19 @@ _SpacesWebIdentityProvider_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesWebIdentityProviderConfig:
-    # Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred)
     identity_provider_details: Any = None
-    # Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred)
     identity_provider_name: Any = None
-    # Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred)
     identity_provider_type: Any = None
-    # The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred)
     portal_arn: Any = None
-    # A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SpacesWebIdentityProviderAttrs:
-    # The Amazon Resource Name (ARN) of the identity provider, assigned by AWS and used to uniquely identify it. (AI-inferred)
     identity_provider_arn: Any = None
-    # Provides the identity provider-specific configuration details, such as SAML metadata or OIDC client credentials (e.g., clientId, clientSecret, authorizeScopes), required to integrate the provider with WorkSpaces Web. (AI-inferred)
     identity_provider_details: Any = None
-    # Specifies the user-friendly name for the identity provider used to authenticate users to the WorkSpaces Web portal. (AI-inferred)
     identity_provider_name: Any = None
-    # Specifies the type of identity provider (SAML or OIDC) used for this WorkSpaces Web identity provider configuration. (AI-inferred)
     identity_provider_type: Any = None
-    # The ARN of the WorkSpaces Web portal to which this identity provider configuration is attached. (AI-inferred)
     portal_arn: Any = None
-    # A list of key-value tag pairs to attach to the WorkSpaces Web identity provider, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
 
 SpacesWebIdentityProvider = ubx.ResourceBinding(

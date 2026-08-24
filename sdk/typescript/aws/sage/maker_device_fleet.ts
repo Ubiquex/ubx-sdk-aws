@@ -10,7 +10,6 @@ export interface MakerDeviceFleet_OutputConfig {
 
 export interface MakerDeviceFleet_Tags {
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to the SageMaker device fleet, allowing you to assign arbitrary metadata for purposes like cost tracking, access control, or operational organization. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -29,7 +28,6 @@ export interface MakerDeviceFleetConfig {
   description?: string | Computed<string>;
   /** The name of the edge device fleet */
   deviceFleetName: string | Computed<string>;
-  /** Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred) */
   outputConfig: MakerDeviceFleet_OutputConfig | Computed<MakerDeviceFleet_OutputConfig>;
   /** Role associated with the device fleet */
   roleArn: string | Computed<string>;
@@ -42,7 +40,6 @@ export interface MakerDeviceFleetAttrs {
   description: string;
   /** The name of the edge device fleet */
   deviceFleetName: string;
-  /** Specifies the Amazon S3 location (and optional AWS KMS key) where the device fleet's output data, such as device metrics and heartbeats, is stored. (AI-inferred) */
   outputConfig: MakerDeviceFleet_OutputConfig;
   /** Role associated with the device fleet */
   roleArn: string;

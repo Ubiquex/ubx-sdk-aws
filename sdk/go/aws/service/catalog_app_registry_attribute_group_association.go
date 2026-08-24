@@ -13,11 +13,9 @@ type CatalogAppRegistryAttributeGroupAssociationConfig struct {
 type CatalogAppRegistryAttributeGroupAssociationAttrs struct {
 	// The name or the Id of the Application.
 	Application any
-	// The Amazon Resource Name (ARN) of the application associated with the attribute group in this AppRegistry attribute group association. (AI-inferred)
 	ApplicationArn any
 	// The name or the Id of the AttributeGroup.
 	AttributeGroup any
-	// The Amazon Resource Name (ARN) of the attribute group that is associated with the application in AWS Service Catalog AppRegistry. (AI-inferred)
 	AttributeGroupArn any
 }
 

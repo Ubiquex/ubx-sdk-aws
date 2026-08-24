@@ -16,7 +16,6 @@ type Repository_ImageScanningConfiguration struct {
 }
 
 type Repository_ImageTagMutabilityExclusionFilters struct {
-	// This field determines the kind of tag (ANY, TAGGED, or UNTAGGED) to which the image tag mutability exclusion filter applies, allowing certain image tags to bypass the repository's immutable tag setting. (AI-inferred)
 	ImageTagMutabilityExclusionFilterType any
 	ImageTagMutabilityExclusionFilterValue any
 }
@@ -29,9 +28,7 @@ type Repository_LifecyclePolicy struct {
 }
 
 type Repository_Tags struct {
-	// The key of a user-defined tag applied to the ECR repository, used to add metadata that can be referenced by IAM policies (e.g., ecr:ResourceTag) and for cost allocation. (AI-inferred)
 	Key any
-	// The value of a single tag assigned to the ECR repository, used to attach arbitrary metadata for resource identification, organization, and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -81,7 +78,6 @@ type RepositoryConfig struct {
 }
 
 type RepositoryAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this ECR repository, such as arn:aws:ecr:region:account-id:repository/repository-name. (AI-inferred)
 	Arn any
 	// If true, deleting the repository force deletes the contents of the repository. Without a force delete, you can only delete empty repositories.
 	EmptyOnDelete any
@@ -99,7 +95,6 @@ type RepositoryAttrs struct {
 	RepositoryName any
 	// The JSON repository policy text to apply to the repository. For more information, see [Amazon ECR repository policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html) in the *Amazon Elastic Container Registry User Guide*.
 	RepositoryPolicyText any
-	// The URI of the Amazon ECR repository, formatted as `aws_account_id.dkr.ecr.region.amazonaws.com/repository_name`, which is used to pull and push Docker images. (AI-inferred)
 	RepositoryUri any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

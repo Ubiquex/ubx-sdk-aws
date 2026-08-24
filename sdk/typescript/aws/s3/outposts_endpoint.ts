@@ -9,7 +9,6 @@ export interface OutpostsEndpoint_FailedReason {
 }
 
 export interface OutpostsEndpoint_NetworkInterfaces {
-  /** The unique identifier of the Elastic Network Interface (ENI) provisioned for the S3 on Outposts endpoint. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
 }
 
@@ -23,7 +22,6 @@ export interface OutpostsEndpointConfig {
   accessType?: string | Computed<string>;
   /** The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint. */
   customerOwnedIpv4Pool?: string | Computed<string>;
-  /** The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred) */
   failedReason?: OutpostsEndpoint_FailedReason | Computed<OutpostsEndpoint_FailedReason>;
   /** The id of the customer outpost on which the bucket resides. */
   outpostId: string | Computed<string>;
@@ -44,7 +42,6 @@ export interface OutpostsEndpointAttrs {
   creationTime: string;
   /** The ID of the customer-owned IPv4 pool for the Endpoint. IP addresses will be allocated from this pool for the endpoint. */
   customerOwnedIpv4Pool: string;
-  /** The failure reason for the S3 on Outposts endpoint, providing an error code and message if endpoint creation failed. (AI-inferred) */
   failedReason: OutpostsEndpoint_FailedReason;
   /** The ID of the endpoint. */
   id: string;
@@ -54,7 +51,6 @@ export interface OutpostsEndpointAttrs {
   outpostId: string;
   /** The ID of the security group to use with the endpoint. */
   securityGroupId: string;
-  /** The endpoint's current lifecycle status, such as Available, Pending, or Deleting, indicating the operational state of the S3 on Outposts endpoint. (AI-inferred) */
   status: string;
   /** The ID of the subnet in the selected VPC. The subnet must belong to the Outpost. */
   subnetId: string;

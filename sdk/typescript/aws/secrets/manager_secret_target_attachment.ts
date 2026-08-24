@@ -2,22 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagerSecretTargetAttachmentConfig {
-  /** The ARN or name of the AWS Secrets Manager secret to attach to the specified target (such as an RDS or Redshift cluster). (AI-inferred) */
   secretId: string | Computed<string>;
-  /** The ARN of the AWS service resource (such as an Amazon RDS database instance or Amazon Redshift cluster) that the secret is attached to. (AI-inferred) */
   targetId: string | Computed<string>;
-  /** Specifies the AWS service type of the target that the secret is attached to, such as an RDS DB instance or Redshift cluster. (AI-inferred) */
   targetType: string | Computed<string>;
 }
 
 export interface ManagerSecretTargetAttachmentAttrs {
-  /** The ARN of the secret that serves as the unique identifier for this attachment resource. (AI-inferred) */
   id: string;
-  /** The ARN or name of the AWS Secrets Manager secret to attach to the specified target (such as an RDS or Redshift cluster). (AI-inferred) */
   secretId: string;
-  /** The ARN of the AWS service resource (such as an Amazon RDS database instance or Amazon Redshift cluster) that the secret is attached to. (AI-inferred) */
   targetId: string;
-  /** Specifies the AWS service type of the target that the secret is attached to, such as an RDS DB instance or Redshift cluster. (AI-inferred) */
   targetType: string;
 }
 

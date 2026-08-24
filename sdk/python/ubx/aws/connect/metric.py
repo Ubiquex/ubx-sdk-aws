@@ -13,7 +13,6 @@ class Metric_Filters:
 
 @dataclasses.dataclass
 class Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanCondition:
-    # Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the boolean condition in the metric filter. (AI-inferred)
     comparison: Any = None
 
 @dataclasses.dataclass
@@ -23,9 +22,7 @@ class Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberConditi
 
 @dataclasses.dataclass
 class Metric_MetricCalculation_CalculationComponents_MetricFilters_StringCondition:
-    # Specifies the string comparison operator (e.g., EQUALS, CONTAINS) used to evaluate the metric filter's string condition against an attribute value in Amazon Connect. (AI-inferred)
     comparison: Any = None
-    # Defines the list of string values that Amazon Connect evaluates against the string condition's operator to determine which metric records match the filter and are included in the calculation component. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -39,9 +36,7 @@ class Metric_MetricCalculation_CalculationComponents_MetricFilters:
 @dataclasses.dataclass
 class Metric_MetricCalculation_CalculationComponents:
     alias: Any = None
-    # A list of metric filter objects, each specifying a dimension (like QUEUE, AGENT, or CHANNEL) and its accepted values, that determines which data points contribute to the calculated metric component. (AI-inferred)
     metric_filters: Any = None
-    # The identifier of the metric that this calculation component references as an input to the overall metric calculation. (AI-inferred)
     metric_id: Any = None
     metric_name: Any = None
 

@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PlaceIndex_DataSourceConfiguration {
-  /** Sets the intended use of the place index to either SingleUse (geocode without storing results) or Storage (store results for later use), affecting how AWS Location Service handles query data. (AI-inferred) */
   intendedUse?: string | Computed<string>;
 }
 
 export interface PlaceIndex_Tags {
-  /** The key of a tag attached to the Amazon Location Service place index resource, used to identify and organize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value for a tag assigned to the Amazon Location Service place index, used to organize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -23,36 +20,24 @@ const PlaceIndex_TagsFields: FieldMap = {
 };
 
 export interface PlaceIndexConfig {
-  /** The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred) */
   dataSource: string | Computed<string>;
-  /** Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred) */
   dataSourceConfiguration?: PlaceIndex_DataSourceConfiguration | Computed<PlaceIndex_DataSourceConfiguration>;
-  /** An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred) */
   indexName: string | Computed<string>;
-  /** The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred) */
   pricingPlan?: string | Computed<string>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: PlaceIndex_Tags[] | Computed<PlaceIndex_Tags[]>;
 }
 
 export interface PlaceIndexAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred) */
   arn: string;
   /** The datetime value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ss.sssZ) */
   createTime: string;
-  /** The data provider (such as Esri, Here, or Grab) that supplies the location data for the place index and is required when creating the resource. (AI-inferred) */
   dataSource: string;
-  /** Specifies the data storage options for the place index, including the intended use, such as single-use queries versus persistent storage of location data. (AI-inferred) */
   dataSourceConfiguration: PlaceIndex_DataSourceConfiguration;
-  /** An optional user-supplied description of the place index, used to identify or note its purpose. (AI-inferred) */
   description: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies the place index resource. (AI-inferred) */
   indexArn: string;
-  /** The custom name assigned to the place index, which must be unique within an AWS account and region and is used as the resource identifier in its ARN. (AI-inferred) */
   indexName: string;
-  /** The pricing plan (RequestBasedUsage or MobileAssetTracking) for the place index, which determines the billing model for geocoding and reverse geocoding requests. (AI-inferred) */
   pricingPlan: string;
   /** An array of key-value pairs to apply to this resource. */
   tags: PlaceIndex_Tags[];

@@ -8,34 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ArchiveConfig:
-    # The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred)
     archive_name: Any = None
-    # The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred)
     description: Any = None
-    # A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred)
     event_pattern: Any = None
-    # Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred)
     kms_key_identifier: Any = None
-    # The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred)
     retention_days: Any = None
-    # The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred)
     source_arn: Any = None
 
 @dataclasses.dataclass
 class ArchiveAttrs:
-    # The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred)
     archive_name: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies this EventBridge archive in AWS. (AI-inferred)
     arn: Any = None
-    # The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred)
     description: Any = None
-    # A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred)
     event_pattern: Any = None
-    # Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred)
     kms_key_identifier: Any = None
-    # The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred)
     retention_days: Any = None
-    # The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred)
     source_arn: Any = None
 
 Archive = ubx.ResourceBinding(

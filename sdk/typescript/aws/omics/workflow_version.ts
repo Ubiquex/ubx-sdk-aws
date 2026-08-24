@@ -2,41 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WorkflowVersion_ContainerRegistryMap_ImageMappings {
-  /** Specifies the destination container image URI that a source image from the container registry map is overridden with for this workflow version's runtime. (AI-inferred) */
   destinationImage?: string | Computed<string>;
-  /** Defines the original container image reference (e.g., `myorg/myapp:latest`) that appears in the workflow definition and is mapped to a destination image for the container registry. (AI-inferred) */
   sourceImage?: string | Computed<string>;
 }
 
 export interface WorkflowVersion_ContainerRegistryMap_RegistryMappings {
-  /** The AWS account ID associated with the Amazon ECR container registry entry in the container registry map of the workflow version. (AI-inferred) */
   ecrAccountId?: string | Computed<string>;
-  /** Specifies the ECR repository prefix (including AWS account ID and region) that maps to a container registry name, allowing the workflow version to resolve and pull container images from Amazon ECR. (AI-inferred) */
   ecrRepositoryPrefix?: string | Computed<string>;
   upstreamRegistryUrl?: string | Computed<string>;
   upstreamRepositoryPrefix?: string | Computed<string>;
 }
 
 export interface WorkflowVersion_ContainerRegistryMap {
-  /** The image_mappings field defines a list of container image mappings that link container names used in the workflow definition to their corresponding image URIs in the container registry map of the AWS Omics workflow version. (AI-inferred) */
   imageMappings?: WorkflowVersion_ContainerRegistryMap_ImageMappings[] | Computed<WorkflowVersion_ContainerRegistryMap_ImageMappings[]>;
   registryMappings?: WorkflowVersion_ContainerRegistryMap_RegistryMappings[] | Computed<WorkflowVersion_ContainerRegistryMap_RegistryMappings[]>;
 }
 
 export interface WorkflowVersion_DefinitionRepository_SourceReference {
-  /** The type of source repository (either 'GIT' or 'S3') that contains the workflow definition, used with the source reference to specify which version of the definition to use. (AI-inferred) */
   type?: string | Computed<string>;
   value?: string | Computed<string>;
 }
 
 export interface WorkflowVersion_DefinitionRepository {
-  /** The ARN of the AWS CodeStar Connections connection used to access the git repository that contains the workflow definition. (AI-inferred) */
   connectionArn?: string | Computed<string>;
-  /** A list of file patterns (e.g., glob patterns) that should be excluded from consideration when loading workflow definition files from the configured source repository in the definition_repository block. (AI-inferred) */
   excludeFilePatterns?: string[] | Computed<string[]>;
-  /** The full identifier of the repository that contains the workflow definition, used to locate the source file when the definition is fetched from a repository. (AI-inferred) */
   fullRepositoryId?: string | Computed<string>;
-  /** Identifies the specific revision (such as a Git branch, tag, or commit SHA) within the definition repository that this workflow version points to, determining the exact workflow definition source. (AI-inferred) */
   sourceReference?: WorkflowVersion_DefinitionRepository_SourceReference | Computed<WorkflowVersion_DefinitionRepository_SourceReference>;
 }
 
@@ -82,37 +72,23 @@ const WorkflowVersion_DefinitionRepositoryFields: FieldMap = {
 };
 
 export interface WorkflowVersionConfig {
-  /** Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred) */
   accelerators?: string | Computed<string>;
-  /** Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred) */
   containerRegistryMap?: WorkflowVersion_ContainerRegistryMap | Computed<WorkflowVersion_ContainerRegistryMap>;
-  /** For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred) */
   containerRegistryMapUri?: string | Computed<string>;
-  /** Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred) */
   definitionRepository?: WorkflowVersion_DefinitionRepository | Computed<WorkflowVersion_DefinitionRepository>;
-  /** The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred) */
   definitionUri?: string | Computed<string>;
-  /** The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred) */
   engine?: string | Computed<string>;
-  /** Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred) */
   main?: string | Computed<string>;
-  /** Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred) */
   parameterTemplate?: unknown | Computed<unknown>;
   /** Path to the primary workflow parameter template JSON file inside the repository */
   parameterTemplatePath?: string | Computed<string>;
-  /** Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred) */
   storageCapacity?: number | Computed<number>;
-  /** Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred) */
   storageType?: string | Computed<string>;
   /** A map of resource tags */
   tags?: unknown | Computed<unknown>;
-  /** The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred) */
   versionName: string | Computed<string>;
-  /** Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred) */
   workflowBucketOwnerId?: string | Computed<string>;
-  /** The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred) */
   workflowId: string | Computed<string>;
   /** The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow. */
   readmeMarkdown?: string | Computed<string>;
@@ -123,46 +99,28 @@ export interface WorkflowVersionConfig {
 }
 
 export interface WorkflowVersionAttrs {
-  /** Specifies a comma-separated list of accelerator types (such as GPU) that are available to tasks in this workflow version, controlling whether GPU-accelerated compute resources can be used. (AI-inferred) */
   accelerators: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this Omics workflow version. (AI-inferred) */
   arn: string;
-  /** Maps container names to the registry URIs from which the workflow's container images are pulled, enabling customization of image sources (e.g., private or custom registries) for the workflow version. (AI-inferred) */
   containerRegistryMap: WorkflowVersion_ContainerRegistryMap;
-  /** For an AWS Omics workflow version, this optional string is the URI (such as an S3 URI) to a file containing the container registry map that overrides the default container image registry locations for the workflow steps. (AI-inferred) */
   containerRegistryMapUri: string;
-  /** The timestamp (string in ISO 8601 format) when this workflow version was created, as returned by AWS HealthOmics. (AI-inferred) */
   creationTime: string;
-  /** Specifies the repository (e.g., an S3 URI or Git location) from which the workflow definition for this Omics workflow version is retrieved. (AI-inferred) */
   definitionRepository: WorkflowVersion_DefinitionRepository;
-  /** The S3 URI (or other supported location) where the workflow definition file (e.g., a WDL or Nextflow script) is stored, used to specify the execution logic for this workflow version when the definition is not provided inline. (AI-inferred) */
   definitionUri: string;
-  /** The description of the workflow version, used to provide a human-readable summary or note about the specific version of the AWS Omics workflow. (AI-inferred) */
   description: string;
-  /** Specifies the workflow engine used by this version, such as WDL or Nextflow. (AI-inferred) */
   engine: string;
-  /** Specifies the main workflow script file (e.g., a WDL file or Nextflow main.nf) within the workflow source that serves as the entry point for the workflow version. (AI-inferred) */
   main: string;
-  /** Specifies the template of input parameters for the workflow, mapping each parameter name to its configuration (e.g., data type, required flag) as defined by the workflow version. (AI-inferred) */
   parameterTemplate: unknown;
   /** Path to the primary workflow parameter template JSON file inside the repository */
   parameterTemplatePath: string;
-  /** The current lifecycle status of the workflow version (e.g., CREATING, ACTIVE, UPDATING, DELETING, or FAILED), as determined by AWS HealthOmics. (AI-inferred) */
   status: string;
-  /** Specifies the storage capacity in gigabytes for the workflow, controlling the amount of data storage available during workflow runs. (AI-inferred) */
   storageCapacity: number;
-  /** Determines whether the workflow version uses static or dynamic task-storage allocation (STATIC or DYNAMIC, with DYNAMIC as the default) for AWS Omics run tasks. (AI-inferred) */
   storageType: string;
   /** A map of resource tags */
   tags: unknown;
-  /** The workflow engine type (such as WDL or Nextflow) for this Omics workflow version, automatically assigned by the service when the version is created. (AI-inferred) */
   type: string;
   uuid: string;
-  /** The version_name field assigns a user-defined name to this version of the Omics workflow, which must be unique among all versions of the same workflow. (AI-inferred) */
   versionName: string;
-  /** Specifies the AWS account ID that owns the S3 bucket containing the workflow definition files, which is required to grant cross-account access when the bucket is owned by a different account. (AI-inferred) */
   workflowBucketOwnerId: string;
-  /** The unique identifier of the parent Omics workflow to which this workflow version belongs. (AI-inferred) */
   workflowId: string;
   /** The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow. */
   readmeMarkdown: string;

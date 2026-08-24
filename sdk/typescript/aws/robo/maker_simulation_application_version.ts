@@ -2,18 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MakerSimulationApplicationVersionConfig {
-  /** The name or Amazon Resource Name (ARN) of the RoboMaker simulation application for which this version is created. (AI-inferred) */
   application: string | Computed<string>;
   /** The revision ID of robot application. */
   currentRevisionId?: string | Computed<string>;
 }
 
 export interface MakerSimulationApplicationVersionAttrs {
-  /** The name or Amazon Resource Name (ARN) of the RoboMaker simulation application for which this version is created. (AI-inferred) */
   application: string;
-  /** The version number (e.g., '1', '2') assigned to the newly created RoboMaker simulation application version, returned by AWS after creation. (AI-inferred) */
   applicationVersion: string;
-  /** The Amazon Resource Name (ARN) assigned by AWS to the newly created simulation application version, uniquely identifying it within the account and region. (AI-inferred) */
   arn: string;
   /** The revision ID of robot application. */
   currentRevisionId: string;

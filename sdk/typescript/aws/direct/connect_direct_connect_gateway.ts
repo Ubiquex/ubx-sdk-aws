@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectDirectConnectGateway_Tags {
-  /** The key of a tag assigned to the Direct Connect gateway, used to categorize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key attached to the Direct Connect gateway, used for identifying and categorizing the gateway resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

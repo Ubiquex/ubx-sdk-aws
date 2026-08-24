@@ -13,7 +13,6 @@ class ConductorPricingRule_Tags:
 
 @dataclasses.dataclass
 class ConductorPricingRule_Tiering_FreeTier:
-    # Whether the free tier is activated for this pricing rule, enabling the first set of units to be billed at zero when set to true and disabling the free tier allowance when false. (AI-inferred)
     activated: Any = None
 
 @dataclasses.dataclass
@@ -54,7 +53,6 @@ class ConductorPricingRuleConfig:
     scope: Any = None
     # The service which a pricing rule is applied on
     service: Any = None
-    # Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred)
     tags: Any = None
     # The set of tiering configurations for the pricing rule.
     tiering: Any = None
@@ -87,7 +85,6 @@ class ConductorPricingRuleAttrs:
     scope: Any = None
     # The service which a pricing rule is applied on
     service: Any = None
-    # Specifies a list of tags, each with a Key and Value, to associate with the pricing rule for labeling and cost management. (AI-inferred)
     tags: Any = None
     # The set of tiering configurations for the pricing rule.
     tiering: Any = None

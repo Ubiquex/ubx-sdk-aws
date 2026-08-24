@@ -16,12 +16,10 @@ type TablesTableBucket_MetricsConfiguration struct {
 }
 
 type TablesTableBucket_ReplicationConfiguration_Rules_Destinations struct {
-	// The ARN of the destination table bucket to which replication rules send copies of table data. (AI-inferred)
 	DestinationTableBucketArn any
 }
 
 type TablesTableBucket_ReplicationConfiguration_Rules struct {
-	// Specifies the list of destination table buckets that this S3 Tables replication rule uses as targets for replicating the table bucket's data. (AI-inferred)
 	Destinations any
 }
 
@@ -38,9 +36,7 @@ type TablesTableBucket_StorageClassConfiguration struct {
 }
 
 type TablesTableBucket_Tags struct {
-	// The key of a tag attached to the S3 table bucket, used to categorize and identify the resource for management and cost allocation. (AI-inferred)
 	Key any
-	// Specifies the value of a tag key attached to the S3 Tables table bucket, used for resource organization, cost allocation, and tag-based IAM access control. (AI-inferred)
 	Value any
 }
 

@@ -8,15 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EnvironmentEc2_Repositories:
-    # The relative path component within the AWS Cloud9 environment where the source repository will be cloned, serving as the directory name for the repository. (AI-inferred)
     path_component: Any = None
-    # The URL of the source code repository to clone into the Cloud9 environment when the environment is created. (AI-inferred)
     repository_url: Any = None
 
 @dataclasses.dataclass
 class EnvironmentEc2_Tags:
     key: Any = None
-    # Specifies the value for a tag key on the AWS Cloud9 EC2 environment, allowing you to add arbitrary metadata for identifying or organizing the environment. (AI-inferred)
     value: Any = None
 
 _EnvironmentEc2_RepositoriesFields = {
@@ -31,52 +28,30 @@ _EnvironmentEc2_TagsFields = {
 
 @dataclasses.dataclass
 class EnvironmentEc2Config:
-    # The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
     automatic_stop_time_minutes: Any = None
-    # Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
     connection_type: Any = None
-    # An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
     description: Any = None
-    # The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
     image_id: Any = None
-    # Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
     instance_type: Any = None
-    # Specifies the name of the Cloud9 development environment. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
     owner_arn: Any = None
-    # A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
     repositories: Any = None
-    # The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
     subnet_id: Any = None
-    # Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class EnvironmentEc2Attrs:
-    # The Amazon Resource Name (ARN) of the Cloud9 EC2 development environment. (AI-inferred)
     arn: Any = None
-    # The number of minutes of inactivity after which AWS Cloud9 automatically stops the environment's EC2 instance, shutting down the environment when this time is reached. (AI-inferred)
     automatic_stop_time_minutes: Any = None
-    # Specifies whether AWS Cloud9 connects to the environment's Amazon EC2 instance via SSH (CONNECT_SSH, the default) or AWS Systems Manager (CONNECT_SSM). (AI-inferred)
     connection_type: Any = None
-    # An optional description that provides additional non-identifying context about the Cloud9 environment. (AI-inferred)
     description: Any = None
-    # The unique identifier assigned by AWS Cloud9 to the environment, such as 'env-1234567890abcdef0'. (AI-inferred)
     id: Any = None
-    # The image_id specifies the Amazon Machine Image (AMI) ID used to launch the Amazon EC2 instance that hosts the Cloud9 environment. (AI-inferred)
     image_id: Any = None
-    # Specifies the EC2 instance type (e.g., t2.micro, m5.large) that the AWS Cloud9 environment runs on, determining the compute and memory resources available. (AI-inferred)
     instance_type: Any = None
-    # Specifies the name of the Cloud9 development environment. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the environment owner; if not specified, the environment is owned by the user who created it. (AI-inferred)
     owner_arn: Any = None
-    # A list of repositories to clone into the environment, each containing the repository URL and the path component where it should be cloned. (AI-inferred)
     repositories: Any = None
-    # The ID of the subnet in which the Cloud9 environment's EC2 instance is launched, allowing the environment to reside in a specific VPC and network configuration. (AI-inferred)
     subnet_id: Any = None
-    # Specifies a list of tag key-value pairs to associate with the Cloud9 EC2 environment. (AI-inferred)
     tags: Any = None
 
 EnvironmentEc2 = ubx.ResourceBinding(

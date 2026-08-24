@@ -28,9 +28,7 @@ export interface LakeDataTransformationProfile_Source {
 }
 
 export interface LakeDataTransformationProfile_Tags {
-  /** The key of a user-defined tag attached to the AWS HealthLake data transformation profile, used to identify, organize, and manage the profile among AWS resources. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of a key-value tag attached to the AWS HealthLake data transformation profile, used to assign arbitrary string metadata for resource identification, organization, and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

@@ -4,28 +4,18 @@ package cognito
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserPoolGroupConfig struct {
-	// A description of the user pool group. (AI-inferred)
 	Description any
-	// The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred)
 	GroupName any
-	// Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred)
 	Precedence any
-	// The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred)
 	RoleArn any
-	// The ID of the Cognito user pool that this group belongs to. (AI-inferred)
 	UserPoolId any
 }
 
 type UserPoolGroupAttrs struct {
-	// A description of the user pool group. (AI-inferred)
 	Description any
-	// The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred)
 	GroupName any
-	// Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred)
 	Precedence any
-	// The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred)
 	RoleArn any
-	// The ID of the Cognito user pool that this group belongs to. (AI-inferred)
 	UserPoolId any
 }
 

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IngestConfiguration_Tags:
-    # The key of a user-defined tag applied to the IVS ingest configuration, enabling you to categorize and filter the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

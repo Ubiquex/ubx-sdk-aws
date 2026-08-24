@@ -2,54 +2,37 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Instance_BlockDeviceMappings_Ebs {
-  /** Specifies whether the EBS volume should be deleted automatically when the EC2 instance is terminated. (AI-inferred) */
   deleteOnTermination?: boolean | Computed<boolean>;
-  /** Specifies whether the EBS volume created from this block device mapping should be encrypted at rest, applying AWS-managed or customer-managed KMS encryption when enabled. (AI-inferred) */
   encrypted?: boolean | Computed<boolean>;
-  /** The number of I/O operations per second (IOPS) to provision for the EBS volume, used with io1, io2, and gp3 volume types to control performance. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** The KMS key ID used to encrypt the EBS volume specified in the block device mapping for the EC2 instance. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the ID of the EBS snapshot to use as the source for creating the EBS volume attached to the instance via this block device mapping. (AI-inferred) */
   snapshotId?: string | Computed<string>;
-  /** The size of the EBS volume, in GiB, to attach to the EC2 instance via this block device mapping. (AI-inferred) */
   volumeSize?: number | Computed<number>;
-  /** Specifies the Amazon EBS volume type for the block device, such as gp2, gp3, io1, io2, st1, sc1, or standard, which determines the volume's performance and cost characteristics. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
 export interface Instance_BlockDeviceMappings {
-  /** The device name (e.g., /dev/sda1) under which the block device is exposed inside the EC2 instance, identifying the attached EBS volume or instance-store device in the block device mapping. (AI-inferred) */
   deviceName?: string | Computed<string>;
-  /** Configures the Amazon EBS volume to attach at the specified device name for this block device mapping, including settings such as volume size, volume type, IOPS, throughput, encryption, and delete-on-termination behavior. (AI-inferred) */
   ebs?: Instance_BlockDeviceMappings_Ebs | Computed<Instance_BlockDeviceMappings_Ebs>;
-  /** When set to true, suppresses the specified device, ensuring that the device named in the block device mapping is not exposed to the EC2 instance, effectively removing it from the mapping. (AI-inferred) */
   noDevice?: unknown | Computed<unknown>;
-  /** Specifies the virtual device name (e.g., ephemeral0) used to map an instance store volume in the block device mapping. (AI-inferred) */
   virtualName?: string | Computed<string>;
 }
 
 export interface Instance_CpuOptions {
-  /** The number of CPU cores to allocate for the EC2 instance, enabling a custom core count in the instance's CPU options. (AI-inferred) */
   coreCount?: number | Computed<number>;
-  /** Sets the number of threads per CPU core for the EC2 instance; specify 1 to disable Intel Hyper-Threading Technology or 2 to enable it. (AI-inferred) */
   threadsPerCore?: number | Computed<number>;
 }
 
 export interface Instance_CreditSpecification {
-  /** Specifies the CPU credit option for the instance (either 'standard' or 'unlimited'), which controls whether a T2/T3/T3a instance can burst above its baseline CPU performance and how it accrues or spends CPU credits. (AI-inferred) */
   cpucredits?: string | Computed<string>;
 }
 
 export interface Instance_ElasticGpuSpecifications {
-  /** Specifies the type of Elastic GPU to attach to the instance, such as eg1.medium. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Instance_ElasticInferenceAccelerators {
-  /** Specifies the number of Elastic Inference accelerators of the selected type to attach to the EC2 instance. (AI-inferred) */
   count?: number | Computed<number>;
-  /** The type of the Elastic Inference accelerator (e.g., eia2.medium, eia2.large) to attach to the EC2 instance. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -64,7 +47,6 @@ export interface Instance_HibernationOptions {
 }
 
 export interface Instance_Ipv6Addresses {
-  /** Specifies an individual IPv6 address to associate with the EC2 instance's network interface, as one entry in the ipv6_addresses list. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
 }
 
@@ -78,7 +60,6 @@ export interface Instance_LaunchTemplate {
 }
 
 export interface Instance_LicenseSpecifications {
-  /** The Amazon Resource Name (ARN) of the AWS License Manager license configuration to associate with this EC2 instance. (AI-inferred) */
   licenseConfigurationArn?: string | Computed<string>;
 }
 
@@ -96,52 +77,33 @@ export interface Instance_MetadataOptions {
 }
 
 export interface Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification {
-  /** Enables or disables ENA Express (SRD) for UDP traffic on this network interface. (AI-inferred) */
   enaSrdUdpEnabled?: boolean | Computed<boolean>;
 }
 
 export interface Instance_NetworkInterfaces_EnaSrdSpecification {
-  /** Specifies whether to enable Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) for the network interface, which can improve network performance and reduce latency. (AI-inferred) */
   enaSrdEnabled?: boolean | Computed<boolean>;
-  /** Configuration block for the ENA Express UDP specification on the network interface, controlling whether UDP traffic uses ENA Express to reduce latency and increase throughput. (AI-inferred) */
   enaSrdUdpSpecification?: Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification | Computed<Instance_NetworkInterfaces_EnaSrdSpecification_EnaSrdUdpSpecification>;
 }
 
 export interface Instance_NetworkInterfaces_PrivateIpAddresses {
-  /** Specifies whether this private IP address is the primary private IP address for the network interface on the EC2 instance. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
-  /** Defines the private IPv4 address to assign to the network interface at launch, as part of the instance's network interface private IP specification, where the Primary flag determines whether it is the primary IP. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
 }
 
 export interface Instance_NetworkInterfaces {
-  /** Indicates whether to associate a carrier IP address with the network interface, enabling the instance to communicate over a carrier network in AWS Wavelength zones. (AI-inferred) */
   associateCarrierIpAddress?: boolean | Computed<boolean>;
-  /** Indicates whether to automatically assign a public IP address to this network interface during instance launch, applicable only when the network interface is created as part of the instance's network configuration. (AI-inferred) */
   associatePublicIpAddress?: boolean | Computed<boolean>;
-  /** Controls whether the network interface attached to this EC2 instance is automatically deleted when the instance is terminated. (AI-inferred) */
   deleteOnTermination?: boolean | Computed<boolean>;
-  /** Specifies a human-readable description for the elastic network interface (ENI). (AI-inferred) */
   description?: string | Computed<string>;
-  /** The device index for the network interface, starting at 0 for the primary interface; higher values assign additional interfaces in the instance's network attachment order. (AI-inferred) */
   deviceIndex?: string | Computed<string>;
-  /** Configures Elastic Network Adapter (ENA) Scalable Reliable Datagram (SRD) settings for this network interface, which can improve network performance for supported instance types. (AI-inferred) */
   enaSrdSpecification?: Instance_NetworkInterfaces_EnaSrdSpecification | Computed<Instance_NetworkInterfaces_EnaSrdSpecification>;
-  /** The list of security group IDs to attach to the network interface of the EC2 instance. (AI-inferred) */
   groupSet?: string[] | Computed<string[]>;
-  /** The number of IPv6 addresses to assign to the network interface, which EC2 automatically selects from the subnet's IPv6 range. (AI-inferred) */
   ipv6AddressCount?: number | Computed<number>;
-  /** Specifies the list of IPv6 addresses to associate with the EC2 instance's network interface. (AI-inferred) */
   ipv6Addresses?: Instance_Ipv6Addresses[] | Computed<Instance_Ipv6Addresses[]>;
-  /** The ID of an existing Elastic Network Interface (ENI) to attach to the EC2 instance when launched, as specified in the network_interfaces block. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
-  /** The private IP address to assign to the network interface, which becomes the primary private IP address of the instance. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
-  /** Defines a list of private IP address specifications for an EC2 instance's network interface, each specifying a private IPv4 address and whether it is the primary private IP. (AI-inferred) */
   privateIpAddresses?: Instance_NetworkInterfaces_PrivateIpAddresses[] | Computed<Instance_NetworkInterfaces_PrivateIpAddresses[]>;
-  /** Specifies the number of secondary private IP addresses that AWS automatically assigns to this network interface when the instance launches. (AI-inferred) */
   secondaryPrivateIpAddressCount?: number | Computed<number>;
-  /** Specifies the ID of the subnet in which the network interface is launched, determining the subnet placement for the EC2 instance when using custom network interface configuration. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
@@ -155,16 +117,12 @@ export interface Instance_PrivateDnsNameOptions {
 }
 
 export interface Instance_SsmAssociations_AssociationParameters {
-  /** The name of a parameter to pass to the SSM document when the association runs on the instance, such as a command or configuration parameter expected by the document. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The list of values assigned to a specific parameter key within an SSM association parameter set, which are passed to the associated SSM document when the association is applied to the EC2 instance. (AI-inferred) */
   value?: string[] | Computed<string[]>;
 }
 
 export interface Instance_SsmAssociations {
-  /** Specifies the key-value input parameters (each value a list of strings) passed to the SSM document when the association is executed on the instance. (AI-inferred) */
   associationParameters?: Instance_SsmAssociations_AssociationParameters[] | Computed<Instance_SsmAssociations_AssociationParameters[]>;
-  /** The name of the SSM document that the association runs on the EC2 instance. (AI-inferred) */
   documentName?: string | Computed<string>;
 }
 
@@ -176,16 +134,12 @@ export interface Instance_State {
 }
 
 export interface Instance_Tags {
-  /** The key of a tag to assign to the EC2 instance, used to categorize or identify the instance. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag applied to the EC2 instance, forming a key-value pair used for organizing, identifying, and managing the instance. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Instance_Volumes {
-  /** The device name (e.g., /dev/sdf) where the volume is exposed inside the instance. (AI-inferred) */
   device?: string | Computed<string>;
-  /** The ID of the Amazon EBS volume to attach to the EC2 instance at launch, corresponding to the VolumeId property in the AWS::EC2::Instance Volumes list. (AI-inferred) */
   volumeId?: string | Computed<string>;
 }
 
@@ -380,11 +334,9 @@ export interface InstanceConfig {
   kernelId?: string | Computed<string>;
   /** The name of the key pair. */
   keyName?: string | Computed<string>;
-  /** Specifies the launch template and its version to use for configuring the instance at launch, referencing the template by ID or name. (AI-inferred) */
   launchTemplate?: Instance_LaunchTemplate | Computed<Instance_LaunchTemplate>;
   /** The license configurations. */
   licenseSpecifications?: Instance_LicenseSpecifications[] | Computed<Instance_LicenseSpecifications[]>;
-  /** Configures the EC2 instance metadata service (IMDS), including whether the metadata endpoint is enabled, whether IMDSv2 tokens are required, the hop limit, and whether instance metadata tags are allowed. (AI-inferred) */
   metadataOptions?: Instance_MetadataOptions | Computed<Instance_MetadataOptions>;
   /** Specifies whether detailed monitoring is enabled for the instance. */
   monitoring?: boolean | Computed<boolean>;
@@ -392,7 +344,6 @@ export interface InstanceConfig {
   networkInterfaces?: Instance_NetworkInterfaces[] | Computed<Instance_NetworkInterfaces[]>;
   /** The name of an existing placement group that you want to launch the instance into (cluster | partition | spread). */
   placementGroupName?: string | Computed<string>;
-  /** Configures the instance's private DNS hostname behavior, such as the hostname type (resource-name or ip-name) and whether to enable DNS A and AAAA records for the resource name. (AI-inferred) */
   privateDnsNameOptions?: Instance_PrivateDnsNameOptions | Computed<Instance_PrivateDnsNameOptions>;
   /** [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet. */
   privateIpAddress?: string | Computed<string>;
@@ -467,11 +418,9 @@ export interface InstanceAttrs {
   kernelId: string;
   /** The name of the key pair. */
   keyName: string;
-  /** Specifies the launch template and its version to use for configuring the instance at launch, referencing the template by ID or name. (AI-inferred) */
   launchTemplate: Instance_LaunchTemplate;
   /** The license configurations. */
   licenseSpecifications: Instance_LicenseSpecifications[];
-  /** Configures the EC2 instance metadata service (IMDS), including whether the metadata endpoint is enabled, whether IMDSv2 tokens are required, the hop limit, and whether instance metadata tags are allowed. (AI-inferred) */
   metadataOptions: Instance_MetadataOptions;
   /** Specifies whether detailed monitoring is enabled for the instance. */
   monitoring: boolean;
@@ -481,7 +430,6 @@ export interface InstanceAttrs {
   placementGroupName: string;
   /** The private DNS name of the specified instance. For example: ip-10-24-34-0.ec2.internal. */
   privateDnsName: string;
-  /** Configures the instance's private DNS hostname behavior, such as the hostname type (resource-name or ip-name) and whether to enable DNS A and AAAA records for the resource name. (AI-inferred) */
   privateDnsNameOptions: Instance_PrivateDnsNameOptions;
   /** The private IP address of the specified instance. For example: 10.24.34.0. */
   privateIp: string;

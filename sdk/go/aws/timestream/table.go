@@ -34,11 +34,8 @@ type Table_RetentionProperties struct {
 }
 
 type Table_Schema_CompositePartitionKey struct {
-	// Specifies whether this partition key must be present in every record, with allowed values 'REQUIRED' or 'OPTIONAL'. (AI-inferred)
 	EnforcementInRecord any
-	// Specifies the name of the dimension attribute used as the composite partition key for an AWS Timestream table when the partition key type is DIMENSION. (AI-inferred)
 	Name any
-	// Specifies the type of the composite partition key, either DIMENSION for a dimension column or MEASURE for the measure name, controlling how Timestream partitions the table's data. (AI-inferred)
 	Type any
 }
 
@@ -48,9 +45,7 @@ type Table_Schema struct {
 }
 
 type Table_Tags struct {
-	// The key portion of a tag applied to the Timestream table, used to define the tag's name for identifying and organizing the table in AWS. (AI-inferred)
 	Key any
-	// The value component of a tag attached to the Timestream table, allowing you to assign an arbitrary string to help categorize, identify, or manage the resource (e.g., for cost allocation). (AI-inferred)
 	Value any
 }
 
@@ -118,7 +113,6 @@ type TableConfig struct {
 }
 
 type TableAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this Timestream table. (AI-inferred)
 	Arn any
 	// The name for the database which the table to be created belongs to.
 	DatabaseName any

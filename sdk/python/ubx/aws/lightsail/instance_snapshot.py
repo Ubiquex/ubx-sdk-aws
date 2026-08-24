@@ -15,7 +15,6 @@ class InstanceSnapshot_Location:
 
 @dataclasses.dataclass
 class InstanceSnapshot_Tags:
-    # Specifies the key of a tag applied to the AWS Lightsail instance snapshot, used for organizing and identifying the snapshot. (AI-inferred)
     key: Any = None
     value: Any = None
 

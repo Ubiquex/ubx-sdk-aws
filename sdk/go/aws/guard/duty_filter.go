@@ -4,14 +4,11 @@ package guard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DutyFilter_FindingCriteria struct {
-	// Specifies the conditions used to filter findings, where each key is a finding field name (e.g., severity, type) and the value defines the comparison operators (Eq, Lt, Gt, etc.) and values to match. (AI-inferred)
 	Criterion any
 }
 
 type DutyFilter_Tags struct {
-	// The key of a tag attached to the GuardDuty filter, corresponding to the Key attribute of a Tag object in the AWS CloudFormation AWS::GuardDuty::Filter resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag attached to the GuardDuty filter resource, used for organizing, identifying, and managing the filter in AWS. (AI-inferred)
 	Value any
 }
 
@@ -25,36 +22,22 @@ var DutyFilter_TagsFields = ubx.FieldMap{
 	}
 
 type DutyFilterConfig struct {
-	// Specifies the action taken by the GuardDuty filter when a finding matches the filter criteria, either 'NOOP' to leave the finding's state unchanged or 'ARCHIVE' to archive the finding. (AI-inferred)
 	Action any
-	// A user-supplied description of the GuardDuty filter, used to explain the purpose or criteria of the filter. (AI-inferred)
 	Description any
-	// The unique identifier of the GuardDuty detector that this filter is associated with. (AI-inferred)
 	DetectorId any
-	// Defines the criteria used to filter GuardDuty findings, consisting of conditions on fields such as severity, type, or resource. (AI-inferred)
 	FindingCriteria any
-	// The name of the GuardDuty filter, which uniquely identifies the filter within the detector and is required when creating or updating the filter. (AI-inferred)
 	Name any
-	// Rank sets the filter's priority among other GuardDuty filters, where a lower value places it higher in the saved-filters list. (AI-inferred)
 	Rank any
-	// Defines the list of key-value tags to attach to the GuardDuty filter for resource categorization and cost allocation. (AI-inferred)
 	Tags any
 }
 
 type DutyFilterAttrs struct {
-	// Specifies the action taken by the GuardDuty filter when a finding matches the filter criteria, either 'NOOP' to leave the finding's state unchanged or 'ARCHIVE' to archive the finding. (AI-inferred)
 	Action any
-	// A user-supplied description of the GuardDuty filter, used to explain the purpose or criteria of the filter. (AI-inferred)
 	Description any
-	// The unique identifier of the GuardDuty detector that this filter is associated with. (AI-inferred)
 	DetectorId any
-	// Defines the criteria used to filter GuardDuty findings, consisting of conditions on fields such as severity, type, or resource. (AI-inferred)
 	FindingCriteria any
-	// The name of the GuardDuty filter, which uniquely identifies the filter within the detector and is required when creating or updating the filter. (AI-inferred)
 	Name any
-	// Rank sets the filter's priority among other GuardDuty filters, where a lower value places it higher in the saved-filters list. (AI-inferred)
 	Rank any
-	// Defines the list of key-value tags to attach to the GuardDuty filter for resource categorization and cost allocation. (AI-inferred)
 	Tags any
 }
 

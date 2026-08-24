@@ -8,20 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PackageV2ChannelPolicyConfig:
-    # The name of the MediaPackage v2 channel group that contains the channel to which this policy is attached. (AI-inferred)
     channel_group_name: Any = None
-    # The name of the AWS MediaPackage v2 channel that this channel policy applies to. (AI-inferred)
     channel_name: Any = None
-    # The JSON resource policy document that defines the permissions for accessing the MediaPackage v2 channel, typically specifying allowed principals and actions. (AI-inferred)
     policy: Any = None
 
 @dataclasses.dataclass
 class PackageV2ChannelPolicyAttrs:
-    # The name of the MediaPackage v2 channel group that contains the channel to which this policy is attached. (AI-inferred)
     channel_group_name: Any = None
-    # The name of the AWS MediaPackage v2 channel that this channel policy applies to. (AI-inferred)
     channel_name: Any = None
-    # The JSON resource policy document that defines the permissions for accessing the MediaPackage v2 channel, typically specifying allowed principals and actions. (AI-inferred)
     policy: Any = None
 
 PackageV2ChannelPolicy = ubx.ResourceBinding(

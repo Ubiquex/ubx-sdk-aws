@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class GuruReviewerRepositoryAssociation_Tags:
     key: Any = None
-    # Specifies the value of a tag attached to the CodeGuru Reviewer repository association, using an arbitrary string for metadata or categorization. (AI-inferred)
     value: Any = None
 
 _GuruReviewerRepositoryAssociation_TagsFields = {

@@ -2,69 +2,41 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlobalResolverFirewallRuleConfig {
-  /** Specifies the action taken when a DNS query matches the firewall rule's conditions, accepting values ALLOW, BLOCK, or ALERT to permit, block, or log/alert the query respectively. (AI-inferred) */
   action: string | Computed<string>;
-  /** This value specifies the DNS record type (for example, CNAME) that the DNS Firewall rule returns when the block action is set to override, allowing you to point blocked queries to a custom domain. (AI-inferred) */
   blockOverrideDnsType?: string | Computed<string>;
-  /** Specifies the custom domain name that Route 53 Resolver returns in the DNS response for a blocked query when the firewall rule action is BLOCK and the block override configuration (e.g., block_override_dns_type) is applied. (AI-inferred) */
   blockOverrideDomain?: string | Computed<string>;
-  /** BlockOverrideTtl sets the time-to-live (TTL) in seconds for the custom DNS record returned when a DNS Firewall rule blocks a query with the OVERRIDE response action. (AI-inferred) */
   blockOverrideTtl?: number | Computed<number>;
-  /** Specifies the DNS response returned when the firewall rule's action is BLOCK, such as NODATA, NXDOMAIN, or an OVERRIDE response. (AI-inferred) */
   blockResponse?: string | Computed<string>;
-  /** This field is an idempotency token that ensures duplicate Route 53 Resolver firewall rules are not created when the same request is retried. (AI-inferred) */
   clientToken?: string | Computed<string>;
-  /** Specifies the minimum confidence threshold (LOW, MEDIUM, or HIGH) that a threat intelligence domain list match must meet for the Route 53 Resolver DNS Firewall rule to apply, filtering which domains are treated as malicious. (AI-inferred) */
   confidenceThreshold?: string | Computed<string>;
-  /** Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred) */
   description?: string | Computed<string>;
   dnsAdvancedProtection?: string | Computed<string>;
   dnsViewId: string | Computed<string>;
-  /** The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred) */
   firewallDomainListId?: string | Computed<string>;
-  /** The name of the Route 53 Resolver firewall rule, which is a required string that provides a friendly identifier for the rule. (AI-inferred) */
   name: string | Computed<string>;
-  /** The priority value that determines the evaluation order of this rule within its firewall rule group, with lower numbers evaluated first. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** The DNS query type (such as A, AAAA, CNAME, MX, etc.) that this firewall rule matches, allowing the rule to evaluate only queries of that type, while omitting it makes the rule evaluate all supported query types. (AI-inferred) */
   qtype?: string | Computed<string>;
 }
 
 export interface GlobalResolverFirewallRuleAttrs {
-  /** Specifies the action taken when a DNS query matches the firewall rule's conditions, accepting values ALLOW, BLOCK, or ALERT to permit, block, or log/alert the query respectively. (AI-inferred) */
   action: string;
-  /** This value specifies the DNS record type (for example, CNAME) that the DNS Firewall rule returns when the block action is set to override, allowing you to point blocked queries to a custom domain. (AI-inferred) */
   blockOverrideDnsType: string;
-  /** Specifies the custom domain name that Route 53 Resolver returns in the DNS response for a blocked query when the firewall rule action is BLOCK and the block override configuration (e.g., block_override_dns_type) is applied. (AI-inferred) */
   blockOverrideDomain: string;
-  /** BlockOverrideTtl sets the time-to-live (TTL) in seconds for the custom DNS record returned when a DNS Firewall rule blocks a query with the OVERRIDE response action. (AI-inferred) */
   blockOverrideTtl: number;
-  /** Specifies the DNS response returned when the firewall rule's action is BLOCK, such as NODATA, NXDOMAIN, or an OVERRIDE response. (AI-inferred) */
   blockResponse: string;
-  /** This field is an idempotency token that ensures duplicate Route 53 Resolver firewall rules are not created when the same request is retried. (AI-inferred) */
   clientToken: string;
-  /** Specifies the minimum confidence threshold (LOW, MEDIUM, or HIGH) that a threat intelligence domain list match must meet for the Route 53 Resolver DNS Firewall rule to apply, filtering which domains are treated as malicious. (AI-inferred) */
   confidenceThreshold: string;
-  /** The timestamp indicating when the Route53 Resolver firewall rule was created, typically in ISO 8601 format. (AI-inferred) */
   createdAt: string;
-  /** Provides an optional description for the Route 53 Resolver firewall rule, used to annotate the rule with its purpose or notes. (AI-inferred) */
   description: string;
   dnsAdvancedProtection: string;
   dnsViewId: string;
-  /** The unique ID of the firewall domain list that defines the set of domains this resolver firewall rule applies to, associating the rule with that list. (AI-inferred) */
   firewallDomainListId: string;
-  /** The unique identifier that Route 53 Resolver automatically assigns to the firewall rule upon creation, returned as a computed read-only value. (AI-inferred) */
   firewallRuleId: string;
-  /** The name of the Route 53 Resolver firewall rule, which is a required string that provides a friendly identifier for the rule. (AI-inferred) */
   name: string;
-  /** The priority value that determines the evaluation order of this rule within its firewall rule group, with lower numbers evaluated first. (AI-inferred) */
   priority: number;
-  /** The DNS query type (such as A, AAAA, CNAME, MX, etc.) that this firewall rule matches, allowing the rule to evaluate only queries of that type, while omitting it makes the rule evaluate all supported query types. (AI-inferred) */
   qtype: string;
-  /** The DNS query type (e.g., A, AAAA, CNAME, MX, etc.) that this firewall rule evaluates, where an empty value means the rule applies to all query types. (AI-inferred) */
   queryType: string;
   status: string;
-  /** A timestamp that indicates when the firewall rule was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

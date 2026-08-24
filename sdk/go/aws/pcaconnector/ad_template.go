@@ -4,243 +4,154 @@ package pcaconnector
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdTemplate_Definition_TemplateV2_CertificateValidity_RenewalPeriod struct {
-	// The numeric duration for the renewal period of certificates issued under this template, interpreted according to the associated renewal_period type (e.g., DAYS or MONTHS). (AI-inferred)
 	Period any
-	// Specifies the time unit (e.g., DAYS, MONTHS, YEARS) for the renewal period, which determines how far in advance certificates are renewed. (AI-inferred)
 	PeriodType any
 }
 
 type AdTemplate_Definition_TemplateV2_CertificateValidity struct {
-	// Specifies how long before certificate expiration the issued certificates are automatically renewed, expressed as a period type (e.g., DAYS) and a numeric value. (AI-inferred)
 	RenewalPeriod any
-	// Specifies the duration and unit of time that certificates issued using this Private CA Connector for AD template remain valid. (AI-inferred)
 	ValidityPeriod any
 }
 
 type AdTemplate_Definition_TemplateV2_EnrollmentFlags struct {
-	// Enables or disables the reuse of an existing cryptographic key when the NT token keyset storage is full, which is an enrollment flag for the certificate template in AWS Private CA Connector for Active Directory. (AI-inferred)
 	EnableKeyReuseOnNtTokenKeysetStorageFull any
-	// When set to true, this flag includes symmetric algorithms in the certificate enrollment request for this template. (AI-inferred)
 	IncludeSymmetricAlgorithms any
-	// When true, this enrollment flag causes the CA to omit the security extension from certificates issued by the template; when false, the security extension is included. (AI-inferred)
 	NoSecurityExtension any
-	// This boolean flag controls whether the certificate template instructs the CA to automatically remove an invalid certificate from the user's personal certificate store after enrollment. (AI-inferred)
 	RemoveInvalidCertificateFromPersonalStore any
-	// Specifies whether certificate enrollment requires the user to interact with the client, such as entering a PIN or approving the request, in the Active Directory environment. (AI-inferred)
 	UserInteractionRequired any
 }
 
 type AdTemplate_Definition_TemplateV2_Extensions_ApplicationPolicies_Policies struct {
-	// Specifies the object identifier (OID) of an application policy used in the certificate template, such as a numeric OID like 1.3.6.1.5.5.7.3.1 for server authentication. (AI-inferred)
 	PolicyObjectIdentifier any
-	// Sets the application policy type for the certificate, selecting a predefined OID such as ANY_APPLICATION or CLIENT_AUTHENTICATION, or CUSTOM to require a corresponding PolicyObjectIdentifier. (AI-inferred)
 	PolicyType any
 }
 
 type AdTemplate_Definition_TemplateV2_Extensions_ApplicationPolicies struct {
-	// Indicates whether the application policies extension is marked as critical in the Active Directory certificate template. (AI-inferred)
 	Critical any
-	// Specifies the list of application policies (such as Smart Card Logon, Code Signing, or custom OIDs) that are included in the Application Policies extension of the certificate template. (AI-inferred)
 	Policies any
 }
 
 type AdTemplate_Definition_TemplateV2_Extensions_KeyUsage_UsageFlags struct {
-	// Indicates whether the key can be used for data encipherment, permitting the encryption of arbitrary data with the certificate's public key. (AI-inferred)
 	DataEncipherment any
-	// Whether the key usage extension includes the digitalSignature purpose, allowing certificates issued under this template to be used for digital signatures such as authentication or message integrity. (AI-inferred)
 	DigitalSignature any
-	// Specifies whether the certificate key can be used for key agreement, such as in Diffie-Hellman key exchange, as part of the KeyUsage extension in the template. (AI-inferred)
 	KeyAgreement any
-	// Indicates whether the key usage extension permits the certificate's public key to be used for key encipherment, i.e., encrypting symmetric keys or other data for key transport. (AI-inferred)
 	KeyEncipherment any
-	// Indicates whether the certificate's key can be used for non-repudiation, which proves the authenticity and integrity of a message or transaction in the key usage extension of the AD connector template. (AI-inferred)
 	NonRepudiation any
 }
 
 type AdTemplate_Definition_TemplateV2_Extensions_KeyUsage struct {
-	// Specifies whether the key usage extension is marked critical in the certificate template, which determines whether clients must strictly enforce the key usage restrictions. (AI-inferred)
 	Critical any
-	// Specifies the set of key usage purposes (such as digital signature, key encipherment, or data encipherment) that the certificate's public key is authorized for in the key usage extension of a version 2 Active Directory template. (AI-inferred)
 	UsageFlags any
 }
 
 type AdTemplate_Definition_TemplateV2_Extensions struct {
-	// Specifies the application policies (extended key usage) that define the intended uses of certificates issued with this template, such as client authentication or code signing. (AI-inferred)
 	ApplicationPolicies any
-	// Defines the key usage extension in the template, specifying the intended cryptographic purposes of the certificate's public key, such as digital signature, key encipherment, data encipherment, and whether the extension is critical. (AI-inferred)
 	KeyUsage any
 }
 
 type AdTemplate_Definition_TemplateV2_GeneralFlags struct {
-	// When enabled, this flag allows certificates issued from the template to be automatically enrolled by Active Directory clients, enabling auto-enrollment without requiring manual certificate requests. (AI-inferred)
 	AutoEnrollment any
-	// Specifies whether the certificate template is intended for machine (computer) accounts rather than user accounts in the Active Directory environment. (AI-inferred)
 	MachineType any
 }
 
 type AdTemplate_Definition_TemplateV2_PrivateKeyAttributes struct {
-	// Specifies the list of allowed cryptographic service providers (CSPs) that can be used to generate and store the private key for certificates issued from this template. (AI-inferred)
 	CryptoProviders any
-	// Specifies whether the private key generated by the template is intended for key exchange (encryption) or digital signatures. (AI-inferred)
 	KeySpec any
-	// Specifies the minimum length in bits (e.g., 1024, 2048, or 4096) of the private key that certificates requested from this PCA Connector AD template must have. (AI-inferred)
 	MinimalKeyLength any
 }
 
 type AdTemplate_Definition_TemplateV2_PrivateKeyFlags struct {
-	// Specifies the Windows Server client version (WIN_SERVER_2008 or WIN_SERVER_2012) for the private key flags in the v2 template definition, which determines the key algorithm and security settings for certificates issued by the Active Directory connector. (AI-inferred)
 	ClientVersion any
-	// Indicates whether the private key associated with the certificate can be exported, controlling the exportable key flag in the certificate template's private key flags. (AI-inferred)
 	ExportableKey any
-	// Specifies whether the private key must use strong key protection, requiring the user to enter a password each time they access or use the key. (AI-inferred)
 	StrongKeyProtectionRequired any
 }
 
 type AdTemplate_Definition_TemplateV2_SubjectNameFlags struct {
-	// Requires the Common Name (CN) component to be present in the subject name for certificates issued by this connector template when set to true. (AI-inferred)
 	RequireCommonName any
-	// When enabled, this flag requires the certificate's subject name to include the full directory path (distinguished name) of the AD object, causing certificate requests that do not use a subject name with the directory path to be rejected. (AI-inferred)
 	RequireDirectoryPath any
-	// When enabled, requires the certificate's subject common name (CN) to be set to the DNS name of the principal, as part of the subject name flags for the template. (AI-inferred)
 	RequireDnsAsCn any
-	// Specifies whether the subject name for certificates issued from this template must include the email address of the principal. (AI-inferred)
 	RequireEmail any
-	// Specifies whether the subject alternative name (SAN) must include the directory GUID of the object for the template. (AI-inferred)
 	SanRequireDirectoryGuid any
-	// Indicates whether the certificate must include a DNS name in the subject alternative name (SAN) extension. (AI-inferred)
 	SanRequireDns any
-	// When enabled, includes the domain DNS attribute of the Active Directory entity in the certificate's subject alternative name (SAN). (AI-inferred)
 	SanRequireDomainDns any
-	// If true, the certificate template requires an email address to be included in the subject alternative name (SAN) of issued certificates. (AI-inferred)
 	SanRequireEmail any
-	// Specifies whether the template requires that a Service Principal Name (SPN) be present in the certificate's subject alternative name (SAN). (AI-inferred)
 	SanRequireSpn any
-	// Specifies whether the subject alternative name (SAN) of the certificate must include the user principal name (UPN). (AI-inferred)
 	SanRequireUpn any
 }
 
 type AdTemplate_Definition_TemplateV2 struct {
-	// Specifies the validity period of certificates issued using this template, including a numeric period and its unit (days, months, or years). (AI-inferred)
 	CertificateValidity any
-	// Defines enrollment behavior flags for the certificate template, such as requiring user interaction, including symmetric algorithms, and removing invalid certificates from the personal store, which are applied during certificate enrollment. (AI-inferred)
 	EnrollmentFlags any
-	// Defines the certificate extension settings, such as application policies and key usage, that are included on certificates issued with this Active Directory connector template. (AI-inferred)
 	Extensions any
-	// Configures the general flags for the v2 certificate template, such as AutoEnrollment, MachineType, NonexpiringCertificates, and UserType. (AI-inferred)
 	GeneralFlags any
-	// Defines the private key attributes for the certificate template version 2, including the required minimum key length, key specification (e.g., RSA or ECDSA), and the allowed cryptographic service providers. (AI-inferred)
 	PrivateKeyAttributes any
-	// Specifies the private key flags for the v2 template definition, determining whether the certificate private key can be exported and which Windows client versions are supported. (AI-inferred)
 	PrivateKeyFlags any
-	// Controls the subject name flags for the V2 certificate template, determining which fields (such as common name, directory path, DNS, email, and IP) are required or included as subject alternative names in certificates issued by the Active Directory connector. (AI-inferred)
 	SubjectNameFlags any
-	// This field lists the names of existing Active Directory certificate templates that this template supersedes, so that certificates issued from the superseded templates are replaced by certificates from this new template. (AI-inferred)
 	SupersededTemplates any
 }
 
 type AdTemplate_Definition_TemplateV3_PrivateKeyAttributes_KeyUsageProperty_PropertyFlags struct {
-	// When true, the certificate template's private key is allowed to be used for decryption operations, influencing the key usage extension in issued certificates. (AI-inferred)
 	Decrypt any
-	// Determines whether the private key can be used for key agreement (e.g., Diffie-Hellman) in the key usage extension of the Active Directory certificate template. (AI-inferred)
 	KeyAgreement any
-	// Specifies whether the private key can be used for digital signature operations (the Digital Signature bit in the KeyUsage extension of the certificate template). (AI-inferred)
 	Sign any
 }
 
 type AdTemplate_Definition_TemplateV3_PrivateKeyAttributes_KeyUsageProperty struct {
-	// Defines the set of key usage flags (Decrypt, KeyAgreement, KeyEncipherment, and Sign) that determine which cryptographic operations are permitted for the private key in the certificate template. (AI-inferred)
 	PropertyFlags any
-	// Specifies whether the key usage property for the private key allows all key usages (KEY_USAGE_PROPERTY_TYPE_ALL) or a custom set defined via the associated property flags (KEY_USAGE_PROPERTY_TYPE_CUSTOM). (AI-inferred)
 	PropertyType any
 }
 
 type AdTemplate_Definition_TemplateV3_PrivateKeyAttributes struct {
-	// Specifies the private key algorithm (RSA or ECDSA) used for the certificate template in AWS Private CA Connector for Active Directory. (AI-inferred)
 	Algorithm any
-	// Specifies the list of cryptographic service providers (CSPs) and key storage providers (KSPs) allowed for private key generation in this Active Directory certificate template. (AI-inferred)
 	CryptoProviders any
-	// Determines the cryptographic algorithm (RSA or ECC) used for private keys generated for certificates issued under this template. (AI-inferred)
 	KeySpec any
-	// Defines the key usage property for the private key in a version 3 PCA Connector for AD template, specifying the certificate's intended key usages (such as digital signature or key encipherment) through either property flags or a property type. (AI-inferred)
 	KeyUsageProperty any
-	// Specifies the minimum key size in bits (e.g., 2048, 3072, or 4096) that the private key must have for certificates issued from this template. (AI-inferred)
 	MinimalKeyLength any
 }
 
 type AdTemplate_Definition_TemplateV3_PrivateKeyFlags struct {
-	// Specifies the minimum Windows Server client version (e.g., WINDOWS_SERVER_2008, WINDOWS_SERVER_2012) that the private key is compatible with for this v3 template's private key flags. (AI-inferred)
 	ClientVersion any
-	// Indicates whether the private key associated with the certificate issued by this template can be exported. (AI-inferred)
 	ExportableKey any
-	// Specifies whether the private key must support the alternate signature algorithm, which is required for CNG (Cryptography Next Generation) keys in this v3 template. (AI-inferred)
 	RequireAlternateSignatureAlgorithm any
-	// If enabled, the certificate template requires strong key protection for the private key, meaning the user must interact with the key (e.g., enter a password) before it can be used. (AI-inferred)
 	StrongKeyProtectionRequired any
 }
 
 type AdTemplate_Definition_TemplateV3 struct {
-	// Specifies the validity period and renewal period for certificates issued from this template, including the duration and its unit (e.g., days, months, years). (AI-inferred)
 	CertificateValidity any
-	// Defines the enrollment flag settings for this v3 template, controlling behaviors such as inclusion of basic constraints and security extensions on certificates issued to AD principals. (AI-inferred)
 	EnrollmentFlags any
-	// Configures the certificate extensions applied by the template, including application policies and key usage settings. (AI-inferred)
 	Extensions any
-	// Specifies the general flags for the certificate template, including MachineType and UserType booleans that determine whether the template is intended for machine or user certificate enrollment in the Active Directory environment. (AI-inferred)
 	GeneralFlags any
-	// Specifies the hash algorithm (SHA256, SHA384, or SHA512) used to sign certificates issued from this Active Directory connector template. (AI-inferred)
 	HashAlgorithm any
-	// Defines private key attributes such as minimum key length, key specification (RSA or ECC), and cryptographic providers for the certificate template version 3 in AWS Private CA Connector for Active Directory. (AI-inferred)
 	PrivateKeyAttributes any
-	// Controls the private key flags for the v3 certificate template, including the client version that determines the minimum supported Windows client for certificate enrollment. (AI-inferred)
 	PrivateKeyFlags any
-	// Specifies the subject name flags for the template v3, which control whether common name, directory path, DNS as CN, email, and auto-enrollment are included or required in the certificate's subject name. (AI-inferred)
 	SubjectNameFlags any
-	// Specifies the list of existing Active Directory certificate template names that this v3 template supersedes, preventing those older templates from being used for new certificate requests. (AI-inferred)
 	SupersededTemplates any
 }
 
 type AdTemplate_Definition_TemplateV4_PrivateKeyFlags struct {
-	// Specifies the Windows client version that the private key flags apply to, controlling the minimum operating system version that can use the certificate template in the AD forest. (AI-inferred)
 	ClientVersion any
-	// Indicates whether the private key can be exported from the certificate store after issuance, corresponding to the 'Allow export of private key' option in Windows certificate templates. (AI-inferred)
 	ExportableKey any
-	// Indicates whether the private key generated by this template uses an alternate signature algorithm, which is required for compatibility with certain client operating systems. (AI-inferred)
 	RequireAlternateSignatureAlgorithm any
-	// This boolean flag specifies whether renewals must use the same key pair as the original certificate, enforcing key continuity for certificates issued under this template. (AI-inferred)
 	RequireSameKeyRenewal any
-	// Determines whether the private key associated with this AD connector template requires strong key protection, meaning a user must provide a password or other approval before the key can be used. (AI-inferred)
 	StrongKeyProtectionRequired any
-	// Specifies whether to use the legacy cryptographic service provider (CSP) instead of the Cryptography API: Next Generation (CNG) provider for the private key. (AI-inferred)
 	UseLegacyProvider any
 }
 
 type AdTemplate_Definition_TemplateV4 struct {
-	// Specifies the validity period of certificates issued from this template, including the numeric duration and its unit (days, months, or years), as defined in the version 4 template definition. (AI-inferred)
 	CertificateValidity any
-	// Defines the enrollment flags for the v4 certificate template, controlling options such as whether user interaction is required during enrollment, whether auto-enrollment is permitted, and whether the security extension is included in issued certificates. (AI-inferred)
 	EnrollmentFlags any
-	// Defines the certificate extensions (such as key usage and application policies) that will be included in certificates issued by the private CA based on this AD connector template. (AI-inferred)
 	Extensions any
-	// Defines the general flags for the v4 certificate template, including whether auto-enrollment is enabled and whether the template applies to machine or user certificates. (AI-inferred)
 	GeneralFlags any
-	// Specifies the hash algorithm (such as SHA256, SHA384, or SHA512) used for signing certificates issued from this Private CA Connector for Active Directory template. (AI-inferred)
 	HashAlgorithm any
-	// Defines the private key cryptographic configuration for the certificate template, including the key algorithm, key usage spec, minimal key length, and allowed cryptographic service providers used during AD certificate enrollment. (AI-inferred)
 	PrivateKeyAttributes any
-	// Specifies the private key flags for the v4 template, defining the minimum client version and whether private keys are stored in the TPM or in software. (AI-inferred)
 	PrivateKeyFlags any
-	// Specifies which subject name components—such as common name, directory path, DNS as common name, email, SPN, and UPN—are required in the certificate's subject name for this template v4. (AI-inferred)
 	SubjectNameFlags any
-	// Specifies the list of existing certificate template names that this template supersedes, causing the CA connector to associate this new template with those older templates for replacement in Active Directory. (AI-inferred)
 	SupersededTemplates any
 }
 
 type AdTemplate_Definition struct {
-	// Specifies the v2 configuration for the Active Directory connector template, including certificate validity, extensions, key usage, private key attributes, and subject name flags. (AI-inferred)
 	TemplateV2 any
-	// Defines the v3 template definition for the AWS Private CA Connector for Active Directory, including settings for certificate validity, key usage, extensions, and enrollment flags. (AI-inferred)
 	TemplateV3 any
-	// Defines the configuration for an Active Directory certificate template using schema version 4, including settings for certificate validity, enrollment flags, private key attributes, key usage, and extensions. (AI-inferred)
 	TemplateV4 any
 }
 
@@ -525,28 +436,19 @@ var AdTemplate_DefinitionFields = ubx.FieldMap{
 	}
 
 type AdTemplateConfig struct {
-	// The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory connector to which this template belongs. (AI-inferred)
 	ConnectorArn any
-	// The definition object specifies the certificate template's validity, private key attributes, and flags, which are required by the PCA Connector for Active Directory to create and manage the template. (AI-inferred)
 	Definition any
-	// A user-defined name for the certificate template, which must be unique within the connector and identifies the template in AWS Private CA Connector for Active Directory. (AI-inferred)
 	Name any
-	// When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
 	ReenrollAllCertificateHolders any
 	Tags any
 }
 
 type AdTemplateAttrs struct {
-	// The Amazon Resource Name (ARN) of the AWS Private CA Connector for Active Directory connector to which this template belongs. (AI-inferred)
 	ConnectorArn any
-	// The definition object specifies the certificate template's validity, private key attributes, and flags, which are required by the PCA Connector for Active Directory to create and manage the template. (AI-inferred)
 	Definition any
-	// A user-defined name for the certificate template, which must be unique within the connector and identifies the template in AWS Private CA Connector for Active Directory. (AI-inferred)
 	Name any
-	// When set to true, triggers reissuance of certificates to all existing certificate holders when the template is updated or modified. (AI-inferred)
 	ReenrollAllCertificateHolders any
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies the Private CA Connector for Active Directory template managed by this resource. (AI-inferred)
 	TemplateArn any
 }
 

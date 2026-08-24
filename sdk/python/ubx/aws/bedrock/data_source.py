@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DataSource_DataSourceConfiguration_ConfluenceConfiguration_CrawlerConfiguration_FilterConfiguration_PatternObjectFilter_Filters:
-    # List of pattern strings that identify Confluence objects (e.g., pages or files) to exclude from being crawled and ingested into the Amazon Bedrock data source. (AI-inferred)
     exclusion_filters: Any = None
-    # Specifies a list of string patterns that determine which Confluence objects are included during the crawl when using the pattern object filter. (AI-inferred)
     inclusion_filters: Any = None
-    # The type of Confluence object (e.g., 'Space' or 'Page') to which the filter pattern applies in the Bedrock data source crawling configuration. (AI-inferred)
     object_type: Any = None
 
 @dataclasses.dataclass
@@ -161,7 +158,6 @@ class DataSource_DataSourceConfiguration_WebConfiguration_CrawlerConfiguration:
 
 @dataclasses.dataclass
 class DataSource_DataSourceConfiguration_WebConfiguration_SourceConfiguration_UrlConfiguration_SeedUrls:
-    # The URL of a web page to use as a seed (starting point) for the web crawler in the Bedrock data source's web configuration, which the crawler will visit and follow links from to index content. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
@@ -212,7 +208,6 @@ class DataSource_VectorIngestionConfiguration_ChunkingConfiguration_FixedSizeChu
 
 @dataclasses.dataclass
 class DataSource_VectorIngestionConfiguration_ChunkingConfiguration_HierarchicalChunkingConfiguration_LevelConfigurations:
-    # The maximum number of tokens allowed per chunk at the corresponding level within the hierarchical chunking configuration for the Bedrock data source. (AI-inferred)
     max_tokens: Any = None
 
 @dataclasses.dataclass
@@ -273,19 +268,15 @@ class DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_
 
 @dataclasses.dataclass
 class DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunction_TransformationLambdaConfiguration:
-    # The ARN of the AWS Lambda function that performs custom data transformation during ingestion into the Bedrock knowledge base. (AI-inferred)
     lambda_arn: Any = None
 
 @dataclasses.dataclass
 class DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations_TransformationFunction:
-    # Contains the configuration for the AWS Lambda function used as the custom transformation function, including the Lambda function ARN and optionally the S3 bucket where the function code is stored, for transforming documents during ingestion into the Bedrock data source. (AI-inferred)
     transformation_lambda_configuration: Any = None
 
 @dataclasses.dataclass
 class DataSource_VectorIngestionConfiguration_CustomTransformationConfiguration_Transformations:
-    # Determines whether the custom transformation runs after chunking (POST_CHUNKING) or after chunks are written to the index (POST_INDEXING), controlling the point in the ingestion pipeline where the transformation is applied. (AI-inferred)
     step_to_apply: Any = None
-    # Defines the AWS Lambda function (via its ARN and optionally S3 code location) that Bedrock calls to perform the custom transformation on each data source content during ingestion. (AI-inferred)
     transformation_function: Any = None
 
 @dataclasses.dataclass

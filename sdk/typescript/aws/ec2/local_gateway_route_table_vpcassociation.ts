@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LocalGatewayRouteTableVpcassociation_Tags {
-  /** The key of a tag attached to the Local Gateway Route Table VPC Association, serving as the name portion of a user-defined metadata label for the association. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the association between a local gateway route table and a VPC. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -16,7 +14,6 @@ const LocalGatewayRouteTableVpcassociation_TagsFields: FieldMap = {
 export interface LocalGatewayRouteTableVpcassociationConfig {
   /** The ID of the local gateway route table. */
   localGatewayRouteTableId: string | Computed<string>;
-  /** Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred) */
   tags?: LocalGatewayRouteTableVpcassociation_Tags[] | Computed<LocalGatewayRouteTableVpcassociation_Tags[]>;
   /** The ID of the VPC. */
   vpcId: string | Computed<string>;
@@ -31,7 +28,6 @@ export interface LocalGatewayRouteTableVpcassociationAttrs {
   localGatewayRouteTableVpcAssociationId: string;
   /** The state of the association. */
   state: string;
-  /** Tags are user-defined key-value pairs that label and identify the VPC association with the local gateway route table, enabling cost allocation and resource management. (AI-inferred) */
   tags: LocalGatewayRouteTableVpcassociation_Tags[];
   /** The ID of the VPC. */
   vpcId: string;

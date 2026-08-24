@@ -2,44 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TDomainConfiguration_AuthorizerConfig {
-  /** When true, allows a client's specific authorizer to override the domain configuration's default authorizer for authentication. (AI-inferred) */
   allowAuthorizerOverride?: boolean | Computed<boolean>;
-  /** Specifies the name of the default AWS IoT authorizer used to authenticate requests sent to this domain configuration, overriding the account-level default authorizer. (AI-inferred) */
   defaultAuthorizerName?: string | Computed<string>;
 }
 
 export interface TDomainConfiguration_ClientCertificateConfig {
-  /** The ARN of the Lambda function that AWS IoT invokes when a client certificate is presented for authentication, enabling custom certificate validation for this domain configuration. (AI-inferred) */
   clientCertificateCallbackArn?: string | Computed<string>;
 }
 
 export interface TDomainConfiguration_ServerCertificateConfig {
-  /** Enables or disables the Online Certificate Status Protocol (OCSP) check for the server certificate used by the domain configuration. (AI-inferred) */
   enableOcspcheck?: boolean | Computed<boolean>;
-  /** The ARN of an OCSP (Online Certificate Status Protocol) authorized responder used by AWS IoT to perform certificate revocation checks for the domain's server certificate. (AI-inferred) */
   ocspAuthorizedResponderArn?: string | Computed<string>;
-  /** The ARN of the Lambda function that acts as a custom OCSP responder for validating the server certificate in this AWS IoT domain configuration. (AI-inferred) */
   ocspLambdaArn?: string | Computed<string>;
 }
 
 export interface TDomainConfiguration_ServerCertificates {
-  /** The Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) server certificate that AWS IoT uses to secure TLS connections on this custom domain configuration. (AI-inferred) */
   serverCertificateArn?: string | Computed<string>;
-  /** Indicates the current status of a server certificate associated with the AWS IoT domain configuration, such as ACTIVE or INACTIVE, reflecting whether the certificate is actively used for TLS termination. (AI-inferred) */
   serverCertificateStatus?: string | Computed<string>;
-  /** The server certificate status detail, providing a human-readable reason or additional information about the status of the server certificate used by the AWS IoT domain configuration. (AI-inferred) */
   serverCertificateStatusDetail?: string | Computed<string>;
 }
 
 export interface TDomainConfiguration_Tags {
-  /** The tag key used to identify a custom metadata label assigned to this AWS IoT domain configuration, enabling resource categorization and filtering. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key applied to the AWS IoT domain configuration, allowing you to attach arbitrary metadata for cost allocation and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface TDomainConfiguration_TlsConfig {
-  /** Specifies the TLS security policy (e.g., TLS_1_2_2021) for the domain configuration, which controls the allowed TLS versions and cipher suites for secure communication. (AI-inferred) */
   securityPolicy?: string | Computed<string>;
 }
 
@@ -68,66 +56,37 @@ const TDomainConfiguration_TlsConfigFields: FieldMap = {
 };
 
 export interface TDomainConfigurationConfig {
-  /** Specifies the application protocol (SECURE_MQTT or HTTPS) that the domain configuration is used for, determining which protocol traffic it serves. (AI-inferred) */
   applicationProtocol?: string | Computed<string>;
-  /** Specifies the authentication type (e.g., AWS_X509, AWS_SIGV4, CUSTOM_AUTH, or AWS_IOT_CORE) used by the AWS IoT domain configuration for TLS client authentication. (AI-inferred) */
   authenticationType?: string | Computed<string>;
-  /** Configures the AWS IoT authorizer used by this domain configuration, including the authorizer name and whether authorizer override is allowed. (AI-inferred) */
   authorizerConfig?: TDomainConfiguration_AuthorizerConfig | Computed<TDomainConfiguration_AuthorizerConfig>;
-  /** Configures client certificate authentication for the domain by specifying the ARN of the Lambda function that AWS IoT calls to validate client certificates. (AI-inferred) */
   clientCertificateConfig?: TDomainConfiguration_ClientCertificateConfig | Computed<TDomainConfiguration_ClientCertificateConfig>;
-  /** The name of the AWS IoT domain configuration, which uniquely identifies the domain configuration within your AWS account. (AI-inferred) */
   domainConfigurationName?: string | Computed<string>;
-  /** The desired status (ENABLED or DISABLED) for the domain configuration, which determines whether the domain configuration is active for IoT connections. (AI-inferred) */
   domainConfigurationStatus?: string | Computed<string>;
-  /** The domain name (e.g., 'example.com') to associate with this AWS IoT domain configuration, required when setting up a custom domain for AWS IoT and omitted for AWS-managed endpoint configurations. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** Specifies the ARNs of the AWS Certificate Manager (ACM) certificates used as the server certificates for the IoT domain configuration. (AI-inferred) */
   serverCertificateArns?: string[] | Computed<string[]>;
-  /** Configures the server certificate behavior for the IoT domain, specifically enabling Online Certificate Status Protocol (OCSP) stapling checks and optionally specifying a Lambda function ARN for OCSP response handling. (AI-inferred) */
   serverCertificateConfig?: TDomainConfiguration_ServerCertificateConfig | Computed<TDomainConfiguration_ServerCertificateConfig>;
-  /** Specifies the type of AWS IoT service (DATA, CREDENTIAL_PROVIDER, or JOBS) that the domain configuration's endpoint is for, determining which service's traffic the domain applies to. (AI-inferred) */
   serviceType?: string | Computed<string>;
-  /** A list of tag objects (key-value pairs) to associate with the IoT domain configuration, which AWS IoT uses for labeling, cost allocation, and access control. (AI-inferred) */
   tags?: TDomainConfiguration_Tags[] | Computed<TDomainConfiguration_Tags[]>;
-  /** The tls_config object specifies the TLS security policy for the domain configuration, controlling the minimum TLS version and allowed cipher suites for client connections. (AI-inferred) */
   tlsConfig?: TDomainConfiguration_TlsConfig | Computed<TDomainConfiguration_TlsConfig>;
-  /** The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate used to validate ownership of the domain for this AWS IoT domain configuration. (AI-inferred) */
   validationCertificateArn?: string | Computed<string>;
 }
 
 export interface TDomainConfigurationAttrs {
-  /** Specifies the application protocol (SECURE_MQTT or HTTPS) that the domain configuration is used for, determining which protocol traffic it serves. (AI-inferred) */
   applicationProtocol: string;
-  /** The Amazon Resource Name (ARN) of the IoT domain configuration. (AI-inferred) */
   arn: string;
-  /** Specifies the authentication type (e.g., AWS_X509, AWS_SIGV4, CUSTOM_AUTH, or AWS_IOT_CORE) used by the AWS IoT domain configuration for TLS client authentication. (AI-inferred) */
   authenticationType: string;
-  /** Configures the AWS IoT authorizer used by this domain configuration, including the authorizer name and whether authorizer override is allowed. (AI-inferred) */
   authorizerConfig: TDomainConfiguration_AuthorizerConfig;
-  /** Configures client certificate authentication for the domain by specifying the ARN of the Lambda function that AWS IoT calls to validate client certificates. (AI-inferred) */
   clientCertificateConfig: TDomainConfiguration_ClientCertificateConfig;
-  /** The name of the AWS IoT domain configuration, which uniquely identifies the domain configuration within your AWS account. (AI-inferred) */
   domainConfigurationName: string;
-  /** The desired status (ENABLED or DISABLED) for the domain configuration, which determines whether the domain configuration is active for IoT connections. (AI-inferred) */
   domainConfigurationStatus: string;
-  /** The domain name (e.g., 'example.com') to associate with this AWS IoT domain configuration, required when setting up a custom domain for AWS IoT and omitted for AWS-managed endpoint configurations. (AI-inferred) */
   domainName: string;
-  /** The type of the domain configuration, indicating whether the domain is AWS-managed (AWS_MANAGED) or customer-managed (CUSTOMER_MANAGED). (AI-inferred) */
   domainType: string;
-  /** Specifies the ARNs of the AWS Certificate Manager (ACM) certificates used as the server certificates for the IoT domain configuration. (AI-inferred) */
   serverCertificateArns: string[];
-  /** Configures the server certificate behavior for the IoT domain, specifically enabling Online Certificate Status Protocol (OCSP) stapling checks and optionally specifying a Lambda function ARN for OCSP response handling. (AI-inferred) */
   serverCertificateConfig: TDomainConfiguration_ServerCertificateConfig;
-  /** The computed list of server certificates attached to the IoT domain configuration, each containing the certificate ARN and its status. (AI-inferred) */
   serverCertificates: TDomainConfiguration_ServerCertificates[];
-  /** Specifies the type of AWS IoT service (DATA, CREDENTIAL_PROVIDER, or JOBS) that the domain configuration's endpoint is for, determining which service's traffic the domain applies to. (AI-inferred) */
   serviceType: string;
-  /** A list of tag objects (key-value pairs) to associate with the IoT domain configuration, which AWS IoT uses for labeling, cost allocation, and access control. (AI-inferred) */
   tags: TDomainConfiguration_Tags[];
-  /** The tls_config object specifies the TLS security policy for the domain configuration, controlling the minimum TLS version and allowed cipher suites for client connections. (AI-inferred) */
   tlsConfig: TDomainConfiguration_TlsConfig;
-  /** The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate used to validate ownership of the domain for this AWS IoT domain configuration. (AI-inferred) */
   validationCertificateArn: string;
 }
 

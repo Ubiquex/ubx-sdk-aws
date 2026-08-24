@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SightFlow_Permissions:
     actions: Any = None
-    # The Amazon Resource Name (ARN) of the IAM principal (user, group, or role) to which the permissions apply, used to grant or restrict access to the QuickSight resource. (AI-inferred)
     principal: Any = None
 
 @dataclasses.dataclass

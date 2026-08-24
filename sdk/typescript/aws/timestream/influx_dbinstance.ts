@@ -21,9 +21,7 @@ export interface InfluxDbinstance_MaintenanceSchedule {
 }
 
 export interface InfluxDbinstance_Tags {
-  /** The tag key (name) for a metadata tag attached to the Timestream for InfluxDB database instance, used to identify, categorize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag attached to the Timestream for InfluxDB DB instance, used for cost allocation, resource categorization, and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

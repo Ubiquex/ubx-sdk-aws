@@ -4,35 +4,26 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerWorkteam_MemberDefinitions_CognitoMemberDefinition struct {
-	// The client ID of the Amazon Cognito app client used to authenticate members of the SageMaker workteam. (AI-inferred)
 	CognitoClientId any
-	// Specifies the Cognito user group that is allowed to access this SageMaker work team. (AI-inferred)
 	CognitoUserGroup any
-	// The ID of the Amazon Cognito user pool that contains the work team members. (AI-inferred)
 	CognitoUserPool any
 }
 
 type MakerWorkteam_MemberDefinitions_OidcMemberDefinition struct {
-	// Specifies the list of OIDC group names that define the members of the workteam for this OIDC member definition. (AI-inferred)
 	OidcGroups any
 }
 
 type MakerWorkteam_MemberDefinitions struct {
-	// Configures the Amazon Cognito user group that is granted access to this work team by specifying the cognito user pool, client app, and user group for the member definition. (AI-inferred)
 	CognitoMemberDefinition any
-	// Specifies the OIDC identity provider (IdP) ID and a list of group names that define membership in the SageMaker work team. (AI-inferred)
 	OidcMemberDefinition any
 }
 
 type MakerWorkteam_NotificationConfiguration struct {
-	// The ARN of the Amazon SNS topic that SageMaker sends workteam lifecycle notifications to, such as when the workteam is created or updated. (AI-inferred)
 	NotificationTopicArn any
 }
 
 type MakerWorkteam_Tags struct {
-	// The tag key assigned to the SageMaker workteam, used for resource categorization and cost allocation. (AI-inferred)
 	Key any
-	// The value portion of a user-defined tag applied to the SageMaker workteam, used for metadata such as cost allocation or environment identification. (AI-inferred)
 	Value any
 }
 
@@ -69,34 +60,21 @@ var MakerWorkteam_TagsFields = ubx.FieldMap{
 	}
 
 type MakerWorkteamConfig struct {
-	// A description of the SageMaker work team that provides details about the team's purpose or composition. (AI-inferred)
 	Description any
-	// Defines the list of workers for the SageMaker work team, where each member definition specifies either an Amazon Cognito user pool or an OIDC identity provider to grant worker access. (AI-inferred)
 	MemberDefinitions any
-	// Specifies the SNS topic ARN (via its `NotificationTopicArn`) that SageMaker uses to send notifications about workteam-related events, such as labeling job updates. (AI-inferred)
 	NotificationConfiguration any
-	// Specifies one or more tags (key-value pairs) to assign to the SageMaker Workteam resource, enabling cost allocation and management of the workforce. (AI-inferred)
 	Tags any
-	// The name of the SageMaker workforce that this workteam is associated with, determining the pool of workers available to the workteam. (AI-inferred)
 	WorkforceName any
-	// The name of the SageMaker work team, which must be unique within your AWS account and region; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
 	WorkteamName any
 }
 
 type MakerWorkteamAttrs struct {
-	// A description of the SageMaker work team that provides details about the team's purpose or composition. (AI-inferred)
 	Description any
-	// The unique identifier for the SageMaker work team, which is set to the work team's name and is used for state tracking in Terraform. (AI-inferred)
 	Id any
-	// Defines the list of workers for the SageMaker work team, where each member definition specifies either an Amazon Cognito user pool or an OIDC identity provider to grant worker access. (AI-inferred)
 	MemberDefinitions any
-	// Specifies the SNS topic ARN (via its `NotificationTopicArn`) that SageMaker uses to send notifications about workteam-related events, such as labeling job updates. (AI-inferred)
 	NotificationConfiguration any
-	// Specifies one or more tags (key-value pairs) to assign to the SageMaker Workteam resource, enabling cost allocation and management of the workforce. (AI-inferred)
 	Tags any
-	// The name of the SageMaker workforce that this workteam is associated with, determining the pool of workers available to the workteam. (AI-inferred)
 	WorkforceName any
-	// The name of the SageMaker work team, which must be unique within your AWS account and region; if not provided, AWS CloudFormation generates a unique name. (AI-inferred)
 	WorkteamName any
 }
 

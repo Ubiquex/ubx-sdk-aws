@@ -4,9 +4,7 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RunnerVpcConnector_Tags struct {
-	// The key of a user-defined tag that can be attached to the AWS App Runner VPC connector for identification and resource management. (AI-inferred)
 	Key any
-	// The value of a tag key-value pair that can be assigned to the App Runner VPC connector for resource organization, access control, and cost tracking. (AI-inferred)
 	Value any
 }
 

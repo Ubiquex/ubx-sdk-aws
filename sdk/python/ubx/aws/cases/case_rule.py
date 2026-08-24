@@ -8,52 +8,39 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOne:
-    # Specifies the unique identifier of the case field that acts as the first operand in an equal-to condition used to determine whether the hidden rule action applies. (AI-inferred)
     field_id: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Rule_Hidden_Conditions_EqualTo_OperandTwo:
-    # The Boolean value to which the case field is compared in the equal_to condition, determining when the hidden rule action applies. (AI-inferred)
     boolean_value: Any = None
-    # The double_value specifies the numeric floating-point value that operand_two must hold on a case for the equal_to condition to match during evaluation of the rule's hidden conditions. (AI-inferred)
     double_value: Any = None
-    # When set, this field indicates that the second operand of the 'equals' condition is an empty value, causing the rule to trigger when the specified case field is empty. (AI-inferred)
     empty_value: Any = None
-    # For an `equal_to` condition in an AWS Cases case rule's hidden condition set, this field holds the second operand's string literal, which is compared against the first operand (typically a case field) to determine when the rule's action is triggered. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Rule_Hidden_Conditions_EqualTo:
-    # This object is the first operand of an equality condition within the hidden conditions of an Amazon Connect Cases rule, specifying the source value (such as a case field reference or literal) to be compared against the second operand. (AI-inferred)
     operand_one: Any = None
-    # Defines the second operand (typically a literal value or field reference) in an equality condition of an AWS Cases case rule, specifying what the first operand must match for the condition to be true. (AI-inferred)
     operand_two: Any = None
     result: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Rule_Hidden_Conditions:
-    # Defines an equality condition for a hidden case rule, matching when the value of the referenced case field exactly equals the configured value. (AI-inferred)
     equal_to: Any = None
-    # This object specifies a 'not equal to' comparison condition that, when true, contributes to hiding the associated field in an AWS Cases case layout. (AI-inferred)
     not_equal_to: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Rule_Hidden:
-    # Within an Amazon Connect Cases case rule, this list contains the conditions under which the rule will hide the designated case fields from the case view. (AI-inferred)
     conditions: Any = None
-    # Determines whether the field is hidden by default when the hidden rule's condition does not evaluate to true (or when no condition is specified). (AI-inferred)
     default_value: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Rule:
     hidden: Any = None
-    # Defines the required-field criteria for the rule, specifying which case fields must be present or carry a particular value for a case to comply with the rule. (AI-inferred)
     required: Any = None
 
 @dataclasses.dataclass
 class CaseRule_Tags:
     key: Any = None
-    # The value portion of a key-value tag attached to the AWS Cases case rule, used for organizing, filtering, and managing the rule resource. (AI-inferred)
     value: Any = None
 
 _CaseRule_Rule_Hidden_Conditions_EqualTo_OperandOneFields = {

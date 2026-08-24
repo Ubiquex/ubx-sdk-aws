@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DetectorVariable_Tags {
-  /** The tag key for the AWS Fraud Detector variable, used to assign custom metadata for identifying, organizing, and managing the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag assigned to the AWS Fraud Detector variable, used for organizing and identifying the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

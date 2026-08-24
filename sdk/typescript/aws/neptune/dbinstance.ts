@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dbinstance_Tags {
-  /** The key of an arbitrary tag attached to the Neptune DB instance, used to identify the tag for resource organization, cost tracking, and access control. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Value of the tag key assigned to the Neptune DB instance, used to organize and identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

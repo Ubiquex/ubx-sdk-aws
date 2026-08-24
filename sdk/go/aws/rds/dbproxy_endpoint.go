@@ -4,7 +4,6 @@ package rds
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbproxyEndpoint_Tags struct {
-	// The key of a user-defined tag assigned to the RDS DB Proxy endpoint for identification and resource management. (AI-inferred)
 	Key any
 	Value any
 }

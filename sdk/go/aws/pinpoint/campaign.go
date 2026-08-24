@@ -4,266 +4,169 @@ package pinpoint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Campaign_AdditionalTreatments_CustomDeliveryConfiguration struct {
-	// Specifies the destination URI or ARN (such as an Amazon SNS topic ARN, Lambda function ARN, or webhook URL) that receives the campaign messages for this treatment when custom delivery is configured. (AI-inferred)
 	DeliveryUri any
-	// Defines the list of endpoint types (e.g., EMAIL, SMS, PUSH) for which the custom delivery configuration (such as a Lambda function URI) applies for this additional treatment in the campaign. (AI-inferred)
 	EndpointTypes any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_Admmessage struct {
-	// Specifies the action to take when a recipient taps the ADM (Amazon Device Messaging) push notification, with valid values OPEN_APP, DEEP_LINK, or URL. (AI-inferred)
 	Action any
-	// The body of the ADM (Amazon Device Messaging) message to send for this campaign treatment. (AI-inferred)
 	Body any
-	// The URL of the image icon to display alongside the ADM push notification sent by this campaign treatment. (AI-inferred)
 	ImageIconUrl any
-	// Specifies the URL of the small icon image displayed in the ADM (Amazon Device Messaging) push notification for this additional treatment of the campaign. (AI-inferred)
 	ImageSmallIconUrl any
-	// The URL of the image to display in the push notification for the Amazon Device Messaging (ADM) channel, used in the message configuration of this additional treatment. (AI-inferred)
 	ImageUrl any
-	// The JSON-formatted message body sent to the Amazon Device Messaging (ADM) service, used as an alternative to the 'Body' field when a raw JSON payload is needed. (AI-inferred)
 	JsonBody any
-	// The URL of the media content (e.g., an image) to include in the ADM (Amazon Device Messaging) push notification message for this additional treatment of the campaign. (AI-inferred)
 	MediaUrl any
-	// Raw, JSON-formatted payload for the ADM push notification message sent for this campaign treatment, overriding all other message body fields when present. (AI-inferred)
 	RawContent any
-	// Specifies whether the ADM (Amazon Device Messaging) message is a silent push notification, which delivers the payload without showing an alert or playing a sound on the device. (AI-inferred)
 	SilentPush any
-	// Specifies the duration (in seconds) that Amazon Device Messenger (ADM) retains and attempts to deliver the push notification before it expires, for this campaign treatment's ADM message settings. (AI-inferred)
 	TimeToLive any
-	// The title of the ADM (Amazon Device Messaging) push notification message sent as part of this campaign treatment. (AI-inferred)
 	Title any
-	// The URL to open when a recipient interacts with the ADM (Amazon Device Messaging) push notification from this alternate treatment, used for deep-linking into an app. (AI-inferred)
 	Url any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_CustomMessage struct {
-	// The string payload (often JSON-formatted) that is delivered as the content of the custom message for this additional campaign treatment, overriding the default custom message data for the A/B test variant. (AI-inferred)
 	Data any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_EmailMessage struct {
-	// The body content of the email message for this additional treatment, containing the HTML or plain-text message text. (AI-inferred)
 	Body any
-	// Specifies the sender's email address from which the email message for this additional treatment is sent. (AI-inferred)
 	FromAddress any
-	// Specifies the HTML body of the email message sent as part of an additional treatment (variation) in the Amazon Pinpoint campaign. (AI-inferred)
 	HtmlBody any
-	// The subject line of the email message sent for this additional treatment variant in the Amazon Pinpoint campaign. (AI-inferred)
 	Title any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_BodyConfig struct {
-	// Specifies the text alignment for the body text of the in-app message, with valid values including LEFT, RIGHT, CENTER, and TOP. (AI-inferred)
 	Alignment any
-	// Specifies the body text displayed in the in-app message content for a given additional treatment of the Amazon Pinpoint campaign. (AI-inferred)
 	Body any
-	// Specifies the hex color code for the body text of the in-app message in the campaign's additional treatment. (AI-inferred)
 	TextColor any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_HeaderConfig struct {
-	// Determines the horizontal alignment of the header text in the in-app message, such as LEFT, CENTER, or RIGHT. (AI-inferred)
 	Alignment any
-	// The text displayed as the header of the in-app message content for this campaign treatment. (AI-inferred)
 	Header any
-	// In this additional treatment's in-app message header configuration, this field sets the color (as a hex color code) of the header text displayed in the message. (AI-inferred)
 	TextColor any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_Android struct {
-	// Defines the action to take when a user taps the primary button on Android within the in-app message content for this additional treatment, with allowed values such as LINK, DEEP_LINK, or CLOSE. (AI-inferred)
 	ButtonAction any
-	// The URL or deep link that the Android primary button opens when a user taps it in the in-app message. (AI-inferred)
 	Link any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn_DefaultConfig struct {
-	// Specifies the background color of the primary button in the in-app message's default configuration, using a hexadecimal color value (e.g., #FFFFFF). (AI-inferred)
 	BackgroundColor any
-	// Specifies the corner radius (in pixels) of the primary button's border in the default configuration of the in-app message content for this additional treatment of the campaign. (AI-inferred)
 	BorderRadius any
-	// Specifies the behavior when a user taps the primary in-app messaging button, such as closing the message, opening a deep link, or launching a web URL (valid values: CLOSE, DEEP_LINK, LINK). (AI-inferred)
 	ButtonAction any
-	// The URL that the primary button in the in-app message opens when tapped, applied as the default action for that button in the additional treatment's message content. (AI-inferred)
 	Link any
-	// Sets the label (text) shown on the primary button of the in-app message content for the additional treatment of the Pinpoint campaign. (AI-inferred)
 	Text any
-	// The hexadecimal color code (e.g., #FFFFFF) used for the text of the primary button in the default configuration of an in-app message within a Pinpoint campaign's additional treatment. (AI-inferred)
 	TextColor any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content_PrimaryBtn struct {
-	// Specifies the Android-specific style and action for the primary button of an in-app message, including attributes like background color, border radius, text color, and button tap behavior. (AI-inferred)
 	Android any
-	// Sets the default click behavior (action type and link) for the primary button of an in-app message, serving as the fallback configuration when no platform-specific (Android, iOS, Web) override is defined. (AI-inferred)
 	DefaultConfig any
-	// Provides iOS-specific configuration for the primary button, including its on-screen position, size, and the action to take when tapped. (AI-inferred)
 	Ios any
-	// Specifies the configuration for the primary button in an in-app message when rendered on web platforms, including settings such as the button color, link, and action performed when tapped. (AI-inferred)
 	Web any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage_Content struct {
-	// Specifies the background color of the in-app message screen as a hex color code (e.g., '#FFFFFF'). (AI-inferred)
 	BackgroundColor any
-	// The body_config object defines the configuration for the body text of the in-app message, including its alignment, text, and text color. (AI-inferred)
 	BodyConfig any
-	// HeaderConfig defines the header text, text color, and alignment for the in-app message content of a campaign treatment. (AI-inferred)
 	HeaderConfig any
-	// The URL of the image displayed in the in-app message content for the additional treatment's message configuration. (AI-inferred)
 	ImageUrl any
-	// Configures the primary button of an in-app message content block, specifying properties such as button text, color, and the action to take (e.g., a deep link or closing the message). (AI-inferred)
 	PrimaryBtn any
-	// Specifies the secondary (right-most) button of an in-app message, including its text, styling, and action to execute when clicked. (AI-inferred)
 	SecondaryBtn any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_InAppMessage struct {
-	// Specifies the list of content components for the in-app message, including header and body configurations, buttons, image URL, and background color. (AI-inferred)
 	Content any
-	// Provides a JSON object of custom key-value pairs to be associated with the in-app message, allowing you to pass additional configuration data to the message without altering the standard template. (AI-inferred)
 	CustomConfig any
-	// For a given additional treatment of a Pinpoint campaign's in-app message configuration, this string specifies the layout style (e.g., TOP_BANNER, BOTTOM_BANNER, CAROUSEL, MIDDLE_BANNER, FULLSCREEN) that determines how the message content is visually arranged within the in-app message. (AI-inferred)
 	Layout any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration_Smsmessage struct {
-	// The text content of the SMS message sent as part of this additional treatment in the Amazon Pinpoint campaign. (AI-inferred)
 	Body any
-	// The regulatory entity ID (sender ID) required for SMS messages in this campaign treatment when sending to countries that mandate DLT-based compliance, such as India. (AI-inferred)
 	EntityId any
-	// The type of SMS message (e.g., TRANSACTIONAL or PROMOTIONAL) that determines the delivery priority and pricing for the SMS message in the campaign's additional treatment. (AI-inferred)
 	MessageType any
-	// The phone number or short code from which the SMS message is sent, which must be an origination number associated with the Amazon Pinpoint account. (AI-inferred)
 	OriginationNumber any
-	// Specifies the custom sender ID that appears as the originator on recipients' mobile devices for SMS messages sent via this campaign treatment, used for branding or identification. (AI-inferred)
 	SenderId any
-	// The unique ID of the SMS message template used by this additional treatment to compose the SMS message sent by the campaign. (AI-inferred)
 	TemplateId any
 }
 
 type Campaign_AdditionalTreatments_MessageConfiguration struct {
-	// Configures the Amazon Device Messaging (ADM) push notification settings for the treatment, specifying message content like the body, title, action, and media options for ADM-enabled endpoints. (AI-inferred)
 	Admmessage any
-	// Configuration for the Apple Push Notification Service (APNs) message sent to iOS endpoints for this additional treatment in the multivariate campaign. (AI-inferred)
 	Apnsmessage any
-	// Defines the Baidu push notification settings (such as title, body, action, data, sound, and URL) for the message sent to Baidu endpoints by this campaign treatment. (AI-inferred)
 	BaiduMessage any
-	// Configures the custom message for an additional treatment in a Pinpoint campaign, specifying the payload data to be delivered via the custom message. (AI-inferred)
 	CustomMessage any
-	// Configures the default message content (text, subject, and other settings) sent to recipients in this additional treatment of the Amazon Pinpoint campaign. (AI-inferred)
 	DefaultMessage any
-	// Configures the email message for a treatment group, specifying the subject, body, HTML body, and sender address for emails sent by the Amazon Pinpoint campaign. (AI-inferred)
 	EmailMessage any
-	// Configures the GCM (Google Cloud Messaging / Firebase Cloud Messaging) push notification settings, such as the action, message body, and image icon URL, for an additional treatment group within a Pinpoint campaign. (AI-inferred)
 	Gcmmessage any
-	// The configuration for the in-app message delivered by this treatment, including its content, layout (e.g., top banner, carousel, full-screen), and action buttons, as part of the additional treatment's message configuration. (AI-inferred)
 	InAppMessage any
-	// Specifies the content and delivery settings for SMS messages sent by this campaign treatment, including the message body, message type (transactional or promotional), and sender ID. (AI-inferred)
 	Smsmessage any
 }
 
 type Campaign_AdditionalTreatments_Schedule_EventFilter_Dimensions_EventType struct {
-	// Specifies whether to include or exclude events that match the event type when filtering, with valid values 'INCLUSIVE' or 'EXCLUSIVE'. (AI-inferred)
 	DimensionType any
-	// Specifies the list of event type names (e.g., 'click', 'open') that the event_type dimension in the event filter matches, allowing the campaign treatment to be triggered by events of these types. (AI-inferred)
 	Values any
 }
 
 type Campaign_AdditionalTreatments_Schedule_EventFilter_Dimensions struct {
-	// Specifies the event attribute key-value pairs that must match in the event for the event filter to trigger this additional treatment's schedule, where keys are event attribute names and values are the accepted attribute values. (AI-inferred)
 	Attributes any
-	// Specifies the event type dimension for the event filter, using a SetDimension object that defines a set of event types (e.g., _session.start or custom events) and whether the filter is inclusive or exclusive. (AI-inferred)
 	EventType any
-	// Defines a map of metric names to metric dimension criteria (such as comparison operator and threshold value) used to filter event occurrences based on their metrics within the event filter for this campaign treatment. (AI-inferred)
 	Metrics any
 }
 
 type Campaign_AdditionalTreatments_Schedule_EventFilter struct {
-	// The dimensions that define the event filter criteria for a campaign's scheduled event-based trigger, specifying the event type, attributes, and metrics that determine which events activate the campaign. (AI-inferred)
 	Dimensions any
-	// Indicates the type of event to filter for, with valid values of SYSTEM (events generated by the system) or ENDPOINT (events from the endpoint), used by the event filter to determine when the scheduled campaign message is sent. (AI-inferred)
 	FilterType any
 }
 
 type Campaign_AdditionalTreatments_Schedule_QuietTime struct {
-	// The end time of the quiet time window for this treatment's schedule, specified in 24-hour HH:MM format, during which the campaign will not send messages. (AI-inferred)
 	End any
-	// The start time (in HH:MM format) of the quiet time window, during which the campaign does not send messages to users, for this additional treatment group's schedule. (AI-inferred)
 	Start any
 }
 
 type Campaign_AdditionalTreatments_Schedule struct {
-	// The end time (in ISO 8601 format) for the schedule of this additional treatment, after which the treatment stops sending messages for the campaign. (AI-inferred)
 	EndTime any
-	// Specifies the event filter criteria (such as event type and attributes) that determine when the additional treatment's schedule should trigger the campaign message. (AI-inferred)
 	EventFilter any
-	// Specifies how often the additional treatment's message is delivered (e.g., ONCE, HOURLY, DAILY, WEEKLY, MONTHLY) when the campaign schedule repeats. (AI-inferred)
 	Frequency any
-	// Specifies whether the schedule for this treatment is based on the local time zone of the targeted endpoints rather than UTC. (AI-inferred)
 	IsLocalTime any
-	// Configures the quiet time for the schedule of an additional treatment, specifying the daily start and end times during which Amazon Pinpoint suppresses message sending for that treatment. (AI-inferred)
 	QuietTime any
-	// The start time (in ISO 8601 format) at which this additional treatment's schedule begins, determining when the A/B test variant becomes active for the campaign. (AI-inferred)
 	StartTime any
-	// Specifies the time zone for the schedule of this additional treatment, such as 'UTC' or an IANA time zone name (e.g., 'America/New_York'), affecting when the treatment is sent. (AI-inferred)
 	TimeZone any
 }
 
 type Campaign_AdditionalTreatments_TemplateConfiguration_EmailTemplate struct {
-	// The name of the Amazon Pinpoint email template that is used for this additional treatment's email message, allowing each treatment in the campaign to reference a different template. (AI-inferred)
 	Name any
-	// The version number of the AWS Pinpoint email template that this additional treatment uses in the campaign's template configuration. (AI-inferred)
 	Version any
 }
 
 type Campaign_AdditionalTreatments_TemplateConfiguration struct {
-	// Specifies the email message template (by name and version) that Amazon Pinpoint uses to send email messages for this treatment of the campaign. (AI-inferred)
 	EmailTemplate any
-	// Specifies the push notification message template (template name and version) to use for this additional treatment's push messages, overriding the campaign-level push template when set. (AI-inferred)
 	PushTemplate any
-	// The SMS template configuration for this additional treatment, defining the name and version of the SMS message template to use. (AI-inferred)
 	Smstemplate any
-	// Configures the voice message template (by name and version) that Amazon Pinpoint applies to this additional treatment when sending voice messages. (AI-inferred)
 	VoiceTemplate any
 }
 
 type Campaign_AdditionalTreatments struct {
-	// The custom delivery configuration for an additional treatment, specifying the SNS topic or S3 bucket used as the destination for custom endpoints and the types of endpoints treated as custom for that treatment. (AI-inferred)
 	CustomDeliveryConfiguration any
-	// Specifies the message configuration (such as email, SMS, push, or custom message content and delivery settings) for this additional treatment in the Amazon Pinpoint campaign. (AI-inferred)
 	MessageConfiguration any
-	// Specifies the scheduling settings (start/end times, frequency, quiet time, timezone, and whether to use local time) for when this additional treatment (variant) of the campaign sends messages to its assigned audience. (AI-inferred)
 	Schedule any
-	// The percentage of the target audience segment allocated to this additional treatment, enabling audience splitting across multiple campaign treatments for A/B testing. (AI-inferred)
 	SizePercent any
-	// For each additional campaign treatment (A/B variant), this object specifies the message template and version to use for delivering the campaign message. (AI-inferred)
 	TemplateConfiguration any
-	// Specifies the description of an additional treatment (variant) for the campaign, used to identify or explain the treatment's purpose. (AI-inferred)
 	TreatmentDescription any
-	// The name of the additional treatment, used to identify and reference it within the campaign's A/B testing setup. (AI-inferred)
 	TreatmentName any
 }
 
 type Campaign_CampaignHook struct {
-	// The name or ARN of the AWS Lambda function that Amazon Pinpoint invokes when the campaign hook is triggered (for example, to customize or track message sends). (AI-inferred)
 	LambdaFunctionName any
-	// Specifies whether the Lambda function is invoked to filter the destination audience segment (FILTER) or during message delivery (DELIVERY) for the campaign. (AI-inferred)
 	Mode any
-	// The URL of the web hook that Amazon Pinpoint calls as part of the campaign hook execution. (AI-inferred)
 	WebUrl any
 }
 
 type Campaign_Limits struct {
-	// The maximum number of messages that this campaign can send per day, after which message sends are throttled for the day. (AI-inferred)
 	Daily any
-	// Specifies the maximum amount of time (in seconds) that a campaign can send messages before it stops. (AI-inferred)
 	MaximumDuration any
-	// The maximum number of messages that the campaign can send per second, throttling the send rate to control throughput and avoid exceeding limits. (AI-inferred)
 	MessagesPerSecond any
 	Session any
-	// The maximum total number of messages that a campaign can send to a single user over the campaign's lifetime. (AI-inferred)
 	Total any
 }
 
@@ -555,84 +458,46 @@ var Campaign_LimitsFields = ubx.FieldMap{
 	}
 
 type CampaignConfig struct {
-	// Specifies additional A/B test treatment variations for the campaign, each with its own message configuration, schedule, and treatment-specific settings. (AI-inferred)
 	AdditionalTreatments any
-	// The unique identifier for the Amazon Pinpoint project (application) that contains the campaign. (AI-inferred)
 	ApplicationId any
-	// Specifies the Lambda function and its invocation mode (e.g., EVENT or FILTER) that Amazon Pinpoint calls during the campaign's journey to perform custom logic or filtering. (AI-inferred)
 	CampaignHook any
-	// Specifies the custom delivery configuration for the campaign, including the delivery URI and endpoint types used to send messages through a custom channel. (AI-inferred)
 	CustomDeliveryConfiguration any
-	// A human-readable summary of the campaign's purpose or contents, used to identify the campaign in the Amazon Pinpoint console and reports. (AI-inferred)
 	Description any
-	// The percentage of recipients in the campaign who are held out from receiving the message, allowing for A/B testing or control groups to measure campaign effectiveness. (AI-inferred)
 	HoldoutPercent any
-	// Specifies whether the campaign is paused, meaning it stops sending messages until resumed. (AI-inferred)
 	IsPaused any
-	// Configuration limits for the campaign, such as daily send quota, total messages, and maximum send rate (messages per second). (AI-inferred)
 	Limits any
-	// The `message_configuration` field defines the content and delivery settings for each message channel (e.g., email, SMS, push) used by the Amazon Pinpoint campaign, including the message body, subject, and sender information. (AI-inferred)
 	MessageConfiguration any
-	// The name of the Amazon Pinpoint campaign, a required user-defined label that identifies the campaign in the console and API. (AI-inferred)
 	Name any
-	// Sets the priority of the campaign, which determines the order or precedence of message delivery when multiple campaigns target the same segment and are subject to frequency capping. (AI-inferred)
 	Priority any
-	// Determines the campaign's run timing, including the start and end times, frequency (e.g., ONCE, HOURLY, DAILY, WEEKLY, MONTHLY), and an optional quiet-time window during which messages are not sent. (AI-inferred)
 	Schedule any
-	// The unique identifier of the Amazon Pinpoint segment that the campaign targets for sending messages. (AI-inferred)
 	SegmentId any
-	// The version of the segment to use for the campaign, allowing you to target a specific revision of the segment. (AI-inferred)
 	SegmentVersion any
-	// Specifies a map of key-value tags to attach to the Amazon Pinpoint campaign, enabling resource organization, cost tracking, and IAM-based access control. (AI-inferred)
 	Tags any
-	// Defines the message template configuration for the campaign, specifying the name and version of templates to use for each supported channel (email, push, SMS, voice). (AI-inferred)
 	TemplateConfiguration any
-	// Specifies a user-defined description of a treatment (variant) for a multivariate or A/B test campaign in Amazon Pinpoint. (AI-inferred)
 	TreatmentDescription any
-	// The name assigned to a message treatment (variant) in an A/B test for the Amazon Pinpoint campaign, used to identify and manage that treatment. (AI-inferred)
 	TreatmentName any
 }
 
 type CampaignAttrs struct {
-	// Specifies additional A/B test treatment variations for the campaign, each with its own message configuration, schedule, and treatment-specific settings. (AI-inferred)
 	AdditionalTreatments any
-	// The unique identifier for the Amazon Pinpoint project (application) that contains the campaign. (AI-inferred)
 	ApplicationId any
-	// The Amazon Resource Name (ARN) of the campaign, assigned by AWS when the campaign is created. (AI-inferred)
 	Arn any
-	// Specifies the Lambda function and its invocation mode (e.g., EVENT or FILTER) that Amazon Pinpoint calls during the campaign's journey to perform custom logic or filtering. (AI-inferred)
 	CampaignHook any
-	// The unique identifier assigned by AWS to the Pinpoint campaign, used to reference the campaign in other resources. (AI-inferred)
 	CampaignId any
-	// Specifies the custom delivery configuration for the campaign, including the delivery URI and endpoint types used to send messages through a custom channel. (AI-inferred)
 	CustomDeliveryConfiguration any
-	// A human-readable summary of the campaign's purpose or contents, used to identify the campaign in the Amazon Pinpoint console and reports. (AI-inferred)
 	Description any
-	// The percentage of recipients in the campaign who are held out from receiving the message, allowing for A/B testing or control groups to measure campaign effectiveness. (AI-inferred)
 	HoldoutPercent any
-	// Specifies whether the campaign is paused, meaning it stops sending messages until resumed. (AI-inferred)
 	IsPaused any
-	// Configuration limits for the campaign, such as daily send quota, total messages, and maximum send rate (messages per second). (AI-inferred)
 	Limits any
-	// The `message_configuration` field defines the content and delivery settings for each message channel (e.g., email, SMS, push) used by the Amazon Pinpoint campaign, including the message body, subject, and sender information. (AI-inferred)
 	MessageConfiguration any
-	// The name of the Amazon Pinpoint campaign, a required user-defined label that identifies the campaign in the console and API. (AI-inferred)
 	Name any
-	// Sets the priority of the campaign, which determines the order or precedence of message delivery when multiple campaigns target the same segment and are subject to frequency capping. (AI-inferred)
 	Priority any
-	// Determines the campaign's run timing, including the start and end times, frequency (e.g., ONCE, HOURLY, DAILY, WEEKLY, MONTHLY), and an optional quiet-time window during which messages are not sent. (AI-inferred)
 	Schedule any
-	// The unique identifier of the Amazon Pinpoint segment that the campaign targets for sending messages. (AI-inferred)
 	SegmentId any
-	// The version of the segment to use for the campaign, allowing you to target a specific revision of the segment. (AI-inferred)
 	SegmentVersion any
-	// Specifies a map of key-value tags to attach to the Amazon Pinpoint campaign, enabling resource organization, cost tracking, and IAM-based access control. (AI-inferred)
 	Tags any
-	// Defines the message template configuration for the campaign, specifying the name and version of templates to use for each supported channel (email, push, SMS, voice). (AI-inferred)
 	TemplateConfiguration any
-	// Specifies a user-defined description of a treatment (variant) for a multivariate or A/B test campaign in Amazon Pinpoint. (AI-inferred)
 	TreatmentDescription any
-	// The name assigned to a message treatment (variant) in an A/B test for the Amazon Pinpoint campaign, used to identify and manage that treatment. (AI-inferred)
 	TreatmentName any
 }
 

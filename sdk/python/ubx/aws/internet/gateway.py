@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Gateway_Tags:
-    # The key of a user-defined tag entry in the tags map for this AWS internet gateway, used to label the gateway with custom metadata such as environment or owner. (AI-inferred)
     key: Any = None
-    # The value component of a key-value tag attached to the Internet Gateway, used to store metadata for identification, organization, or cost allocation. (AI-inferred)
     value: Any = None
 
 _Gateway_TagsFields = {
@@ -25,7 +23,6 @@ class GatewayConfig:
 
 @dataclasses.dataclass
 class GatewayAttrs:
-    # The unique identifier (e.g., `igw-...`) assigned by AWS to the internet gateway. (AI-inferred)
     internet_gateway_id: Any = None
     # Any tags to assign to the internet gateway.
     tags: Any = None

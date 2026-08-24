@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Workflow_DefinitionS3Location:
-    # The name of the S3 bucket where the workflow definition file (DAG) for this MWAA Serverless workflow is stored. (AI-inferred)
     bucket: Any = None
-    # The S3 object key (key) identifying the workflow definition file within the bucket specified by the parent definition_s3_location, which is required to load the workflow's DAG from S3. (AI-inferred)
     object_key: Any = None
-    # The specific version identifier of the S3 object that contains the workflow definition, used to reference a particular version of the file in the S3 bucket. (AI-inferred)
     version_id: Any = None
 
 @dataclasses.dataclass
 class Workflow_EncryptionConfiguration:
-    # Specifies the customer-managed AWS KMS key ID (or ARN/alias) that Amazon MWAA uses to encrypt the serverless workflow's definition and related data at rest. (AI-inferred)
     kms_key_id: Any = None
     type: Any = None
 
@@ -27,14 +23,11 @@ class Workflow_LoggingConfiguration:
 
 @dataclasses.dataclass
 class Workflow_NetworkConfiguration:
-    # A list of security group IDs that AWS MWAA attaches to the VPC network interfaces of the serverless workflow environment, controlling inbound and outbound traffic. (AI-inferred)
     security_group_ids: Any = None
-    # Provides the private subnet IDs within your VPC that the serverless workflow's underlying AWS resources are placed in, allowing the workflow to run in your own isolated network. (AI-inferred)
     subnet_ids: Any = None
 
 @dataclasses.dataclass
 class Workflow_ScheduleConfiguration:
-    # The cron expression that defines the schedule on which the serverless workflow runs, using standard Unix cron syntax. (AI-inferred)
     cron_expression: Any = None
 
 _Workflow_DefinitionS3LocationFields = {
@@ -61,41 +54,29 @@ _Workflow_NetworkConfigurationFields = {
 class WorkflowConfig:
     definition_s3_location: Any = None
     description: Any = None
-    # Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
     encryption_configuration: Any = None
-    # Configures the logging settings for the AWS MWAA serverless workflow, specifying whether to enable logging and the log level (e.g., INFO, WARNING, ERROR, CRITICAL) for each component such as DAG processing, scheduler, task, web server, and worker logs. (AI-inferred)
     logging_configuration: Any = None
     name: Any = None
-    # Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred)
     network_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that Amazon MWAA (Managed Workflows for Apache Airflow) assumes to access resources in your account, such as S3 buckets and CloudWatch Logs, on behalf of the serverless workflow. (AI-inferred)
     role_arn: Any = None
     # A map of key-value pairs to be applied as tags
     tags: Any = None
-    # Specifies how the workflow is triggered, with allowed values such as SCHEDULE (for cron-based scheduling) or EVENT (for event-driven execution). (AI-inferred)
     trigger_mode: Any = None
 
 @dataclasses.dataclass
 class WorkflowAttrs:
-    # The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred)
     created_at: Any = None
     definition_s3_location: Any = None
     description: Any = None
-    # Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
     encryption_configuration: Any = None
-    # Configures the logging settings for the AWS MWAA serverless workflow, specifying whether to enable logging and the log level (e.g., INFO, WARNING, ERROR, CRITICAL) for each component such as DAG processing, scheduler, task, web server, and worker logs. (AI-inferred)
     logging_configuration: Any = None
-    # The read-only timestamp (in ISO 8601 format) indicating when the MWAA serverless workflow was last modified, as provided by the AWS API. (AI-inferred)
     modified_at: Any = None
     name: Any = None
-    # Defines the VPC network configuration, including the subnet IDs and security group IDs, that the serverless workflow uses to run and access resources within your VPC. (AI-inferred)
     network_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the IAM role that Amazon MWAA (Managed Workflows for Apache Airflow) assumes to access resources in your account, such as S3 buckets and CloudWatch Logs, on behalf of the serverless workflow. (AI-inferred)
     role_arn: Any = None
     schedule_configuration: Any = None
     # A map of key-value pairs to be applied as tags
     tags: Any = None
-    # Specifies how the workflow is triggered, with allowed values such as SCHEDULE (for cron-based scheduling) or EVENT (for event-driven execution). (AI-inferred)
     trigger_mode: Any = None
     workflow_arn: Any = None
     workflow_status: Any = None

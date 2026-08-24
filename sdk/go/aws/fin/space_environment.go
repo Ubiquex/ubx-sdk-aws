@@ -4,9 +4,7 @@ package fin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpaceEnvironment_FederationParameters_AttributeMap struct {
-	// This key is an attribute name within the AttributeMap of FederationParameters, which defines custom SAML attributes to be made available during federated sign-in to the FinSpace environment. (AI-inferred)
 	Key any
-	// Defines the FinSpace user attribute name that the corresponding SAML attribute (key) is mapped to in the federated authentication configuration of the FinSpace environment. (AI-inferred)
 	Value any
 }
 

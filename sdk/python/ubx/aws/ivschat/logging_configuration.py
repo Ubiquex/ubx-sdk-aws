@@ -32,9 +32,7 @@ class LoggingConfiguration_DestinationConfiguration:
 
 @dataclasses.dataclass
 class LoggingConfiguration_Tags:
-    # Specifies the key of a tag to attach to the IVS Chat Logging Configuration, enabling you to organize, identify, and manage the resource for purposes such as cost allocation or access control. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the IVS Chat logging configuration, used to assign arbitrary metadata for resource organization, cost allocation, or access control. (AI-inferred)
     value: Any = None
 
 _LoggingConfiguration_DestinationConfiguration_CloudWatchLogsFields = {

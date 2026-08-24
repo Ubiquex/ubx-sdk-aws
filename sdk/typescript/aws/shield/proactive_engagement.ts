@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProactiveEngagement_EmergencyContactList {
-  /** A free-form note field attached to an emergency contact, used to record additional context such as the contact's role or best time to reach them. (AI-inferred) */
   contactNotes?: string | Computed<string>;
-  /** The email address where AWS Shield Advanced sends proactive engagement notifications and alerts for this emergency contact. (AI-inferred) */
   emailAddress?: string | Computed<string>;
-  /** The phone number of the emergency contact for AWS Shield Advanced proactive engagement notifications. (AI-inferred) */
   phoneNumber?: string | Computed<string>;
 }
 
@@ -24,7 +21,6 @@ export interface ProactiveEngagementConfig {
 }
 
 export interface ProactiveEngagementAttrs {
-  /** The AWS account ID that the Shield Advanced proactive engagement configuration applies to; this is automatically resolved to the current account and is read-only. (AI-inferred) */
   accountId: string;
   /** A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number. */
   emergencyContactList: ProactiveEngagement_EmergencyContactList[];

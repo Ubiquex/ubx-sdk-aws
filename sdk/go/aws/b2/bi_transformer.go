@@ -4,50 +4,37 @@ package b2
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BiTransformer_EdiType_X12Details struct {
-	// Specifies the X12 transaction set identifier (e.g., X12_850) that this transformer is configured to process, defining the specific EDI document type for B2B data interchange. (AI-inferred)
 	TransactionSet any
-	// The X12 version of the EDI standard (for example, V5010) that the transformer uses for parsing or generating X12 transactions. (AI-inferred)
 	Version any
 }
 
 type BiTransformer_EdiType struct {
-	// Specifies the X12 EDI transaction set and version (e.g., 850, 00401) that the transformer is configured to parse or convert for this EDI type. (AI-inferred)
 	X12Details any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12_SplitOptions struct {
-	// Specifies whether the inbound X12 document is split into separate transactions by transaction set or by functional group. (AI-inferred)
 	SplitBy any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_CodeListValidationRule struct {
-	// Adds the specified X12 codes to the allowed code list that this validation rule enforces during input conversion, permitting those codes to pass code-list validation. (AI-inferred)
 	CodesToAdd any
-	// Specifies a list of X12 codes to exclude from the allowed code list during validation, causing those codes to be treated as invalid and trigger a validation error when present in the EDI document. (AI-inferred)
 	CodesToRemove any
-	// Specifies the X12 data element identifier (such as a segment's data element number) to which this code list validation rule applies in the transformer's input conversion X12 validation settings. (AI-inferred)
 	ElementId any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementLengthValidationRule struct {
-	// The X12 data element identifier (e.g., the element's numeric position or reference code within the X12 transaction set) for which the element length validation rule is defined. (AI-inferred)
 	ElementId any
-	// Defines the maximum number of characters allowed for an X12 data element in the transaction set, so that elements exceeding this length fail the element length validation rule. (AI-inferred)
 	MaxLength any
-	// Specifies the minimum allowed character length for an X12 data element when the element-length validation rule is applied. (AI-inferred)
 	MinLength any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules_ElementRequirementValidationRule struct {
-	// Specifies the sequential position of the X12 data element within its segment that the element-requirement validation rule applies to. (AI-inferred)
 	ElementPosition any
-	// Sets the expected element requirement level (e.g., Required, Optional, NotUsed) that the X12 validation rule enforces for the specified element. (AI-inferred)
 	Requirement any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions_ValidationRules struct {
 	CodeListValidationRule any
-	// This X12 validation rule checks whether incoming EDI data element values conform to the maximum length defined for their element type, and when enabled, causes the transformer to flag or fail validation for non-conforming values during input conversion. (AI-inferred)
 	ElementLengthValidationRule any
 	ElementRequirementValidationRule any
 }
@@ -57,41 +44,32 @@ type BiTransformer_InputConversion_AdvancedOptions_X12_ValidationOptions struct 
 }
 
 type BiTransformer_InputConversion_AdvancedOptions_X12 struct {
-	// Defines how the transformer splits an incoming X12 envelope into separate processing units, such as by transaction set, during input conversion. (AI-inferred)
 	SplitOptions any
 	ValidationOptions any
 }
 
 type BiTransformer_InputConversion_AdvancedOptions struct {
-	// This nested object holds X12-specific advanced settings for the transformation's input conversion, enabling fine-grained control over how incoming X12 EDI messages are parsed and interpreted. (AI-inferred)
 	X12 any
 }
 
 type BiTransformer_InputConversion_FormatOptions struct {
-	// Defines the X12 EDI format options that the transformer uses when parsing an incoming X12 document, including how EDI segments and elements are interpreted during input conversion. (AI-inferred)
 	X12 any
 }
 
 type BiTransformer_InputConversion struct {
 	AdvancedOptions any
-	// Specifies format-specific options for the input conversion, such as the X12 transaction set and version, used when converting the incoming EDI data. (AI-inferred)
 	FormatOptions any
-	// Defines the EDI standard of the incoming document (such as X12 or EDIFACT) that the transformer will convert from. (AI-inferred)
 	FromFormat any
 }
 
 type BiTransformer_Mapping struct {
-	// The XSLT template content that defines how the transformer converts input documents into the desired output format. (AI-inferred)
 	Template any
-	// Defines the template language (e.g., XSLT or JSONata) used by the mapping template to transform input EDI documents into the desired output format. (AI-inferred)
 	TemplateLanguage any
 }
 
 type BiTransformer_OutputConversion struct {
-	// A map of advanced options that customize the output conversion format, allowing you to set format-specific parameters like delimiters and character sets for the transformed EDI document. (AI-inferred)
 	AdvancedOptions any
 	FormatOptions any
-	// The target format to which the input EDI document is converted, such as JSON or XML. (AI-inferred)
 	ToFormat any
 }
 
@@ -101,16 +79,12 @@ type BiTransformer_SampleDocuments_Keys struct {
 }
 
 type BiTransformer_SampleDocuments struct {
-	// The name of the S3 bucket that stores the sample input document used to test this transformer. (AI-inferred)
 	BucketName any
-	// Specifies the list of Amazon S3 object keys within the sample documents bucket that the transformer uses as sample input data for defining its mapping and conversion logic. (AI-inferred)
 	Keys any
 }
 
 type BiTransformer_Tags struct {
-	// Defines the key portion of a tag attached to the B2B transformer resource for cost allocation and resource organization. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the AWS B2BI transformer resource. (AI-inferred)
 	Value any
 }
 
@@ -256,60 +230,38 @@ var BiTransformer_TagsFields = ubx.FieldMap{
 	}
 
 type BiTransformerConfig struct {
-	// Defines the EDI interchange format and version (X12 or EDIFACT) that the transformer uses for parsing or generating EDI documents. (AI-inferred)
 	EdiType any
-	// Specifies the output file format (either JSON or XML) that the transformer generates when converting EDI documents. (AI-inferred)
 	FileFormat any
-	// Specifies how the source (input) data is interpreted, including the data format (e.g., CSV or X12) and any format-specific options, prior to applying the transformer's mapping. (AI-inferred)
 	InputConversion any
-	// This field defines the mapping template that specifies how input EDI data is transformed into the output format (such as JSON or XML) for the AWS B2BI transformer. (AI-inferred)
 	Mapping any
 	// This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
 	MappingTemplate any
-	// Specifies the name of the AWS B2Bi transformer, a required field that provides a human-readable identifier for the resource within the B2Bi service. (AI-inferred)
 	Name any
-	// Specifies the target format (e.g., JSON, XML, or TEXT) and any format-specific conversion options for the document output by the AWS B2Bi transformer when transforming between EDI and non-EDI formats. (AI-inferred)
 	OutputConversion any
 	// This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
 	SampleDocument any
-	// Specifies the Amazon S3 bucket and object keys that contain sample EDI documents used to generate the transformer's mapping. (AI-inferred)
 	SampleDocuments any
-	// Specifies whether the transformer is active or inactive, determining whether it can process EDI documents. (AI-inferred)
 	Status any
-	// Specifies the tags (key-value pairs) to attach to the B2BI transformer resource for managing, identifying, and controlling access to it. (AI-inferred)
 	Tags any
 }
 
 type BiTransformerAttrs struct {
-	// The date and time when the transformer was created. (AI-inferred)
 	CreatedAt any
-	// Defines the EDI interchange format and version (X12 or EDIFACT) that the transformer uses for parsing or generating EDI documents. (AI-inferred)
 	EdiType any
-	// Specifies the output file format (either JSON or XML) that the transformer generates when converting EDI documents. (AI-inferred)
 	FileFormat any
-	// Specifies how the source (input) data is interpreted, including the data format (e.g., CSV or X12) and any format-specific options, prior to applying the transformer's mapping. (AI-inferred)
 	InputConversion any
-	// This field defines the mapping template that specifies how input EDI data is transformed into the output format (such as JSON or XML) for the AWS B2BI transformer. (AI-inferred)
 	Mapping any
 	// This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
 	MappingTemplate any
-	// The date and time when the transformer was last modified, returned as a string timestamp. (AI-inferred)
 	ModifiedAt any
-	// Specifies the name of the AWS B2Bi transformer, a required field that provides a human-readable identifier for the resource within the B2Bi service. (AI-inferred)
 	Name any
-	// Specifies the target format (e.g., JSON, XML, or TEXT) and any format-specific conversion options for the document output by the AWS B2Bi transformer when transforming between EDI and non-EDI formats. (AI-inferred)
 	OutputConversion any
 	// This shape is deprecated: This is a legacy trait. Please use input-conversion or output-conversion.
 	SampleDocument any
-	// Specifies the Amazon S3 bucket and object keys that contain sample EDI documents used to generate the transformer's mapping. (AI-inferred)
 	SampleDocuments any
-	// Specifies whether the transformer is active or inactive, determining whether it can process EDI documents. (AI-inferred)
 	Status any
-	// Specifies the tags (key-value pairs) to attach to the B2BI transformer resource for managing, identifying, and controlling access to it. (AI-inferred)
 	Tags any
-	// The Amazon Resource Name (ARN) that uniquely identifies this AWS B2BI transformer. (AI-inferred)
 	TransformerArn any
-	// The unique identifier assigned by AWS to this transformer when it was created. (AI-inferred)
 	TransformerId any
 }
 

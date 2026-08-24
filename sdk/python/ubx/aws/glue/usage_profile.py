@@ -18,7 +18,6 @@ _UsageProfile_TagsFields = {
 
 @dataclasses.dataclass
 class UsageProfileConfig:
-    # The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred)
     configuration: Any = None
     # The description of the UsageProfile.
     description: Any = None
@@ -29,7 +28,6 @@ class UsageProfileConfig:
 
 @dataclasses.dataclass
 class UsageProfileAttrs:
-    # The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred)
     configuration: Any = None
     # Creation time.
     created_on: Any = None

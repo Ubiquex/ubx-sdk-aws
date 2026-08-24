@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Destination_Tags:
-    # The key (name) of a tag to associate with the CloudWatch Logs destination, used to identify and organize the destination resource. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the CloudWatch Logs destination resource. (AI-inferred)
     value: Any = None
 
 _Destination_TagsFields = {
@@ -33,7 +31,6 @@ class DestinationConfig:
 
 @dataclasses.dataclass
 class DestinationAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this CloudWatch Logs destination, returned after creation and used to reference the destination in other AWS resources. (AI-inferred)
     arn: Any = None
     # The name of the destination resource
     destination_name: Any = None

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Queue_AdditionalEmailAddresses:
-    # Specifies the ARN of an additional email address to associate with the Amazon Connect queue, enabling the queue to handle email contacts from multiple addresses. (AI-inferred)
     email_address_arn: Any = None
 
 @dataclasses.dataclass
@@ -27,9 +26,7 @@ class Queue_OutboundEmailConfig:
 
 @dataclasses.dataclass
 class Queue_Tags:
-    # The key of a tag assigned to the Amazon Connect queue, used for metadata and resource filtering. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the Amazon Connect queue. (AI-inferred)
     value: Any = None
 
 _Queue_AdditionalEmailAddressesFields = {

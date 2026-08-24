@@ -7,9 +7,7 @@ export interface SyncLocationS3_S3Config {
 }
 
 export interface SyncLocationS3_Tags {
-  /** The key of a user-defined tag attached to the AWS DataSync S3 location, used to organize and identify the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag attached to this DataSync S3 location, used to identify or categorize the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

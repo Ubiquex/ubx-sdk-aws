@@ -4,14 +4,11 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayAccountConfig struct {
-	// The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
 	CloudWatchRoleArn any
 }
 
 type GatewayAccountAttrs struct {
-	// The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred)
 	CloudWatchRoleArn any
-	// The id is the AWS account ID for which the API Gateway account settings are configured. (AI-inferred)
 	Id any
 }
 

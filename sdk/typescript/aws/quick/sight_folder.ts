@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SightFolder_Permissions {
-  /** Specifies the list of QuickSight actions (e.g., 'quickSight:DescribeFolder', 'quickSight:UpdateFolder') that this permission entry grants to the specified principal on the folder. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** The ARN of the QuickSight user or group to which the folder permissions are granted. (AI-inferred) */
   principal?: string | Computed<string>;
 }
 
@@ -24,46 +22,30 @@ const SightFolder_TagsFields: FieldMap = {
 };
 
 export interface SightFolderConfig {
-  /** The AWS account ID that owns the QuickSight folder; if omitted, the account ID from the AWS credentials is used. (AI-inferred) */
   awsAccountId?: string | Computed<string>;
-  /** Specifies the unique identifier (FolderId) for the QuickSight folder, which AWS uses to reference the folder in API calls and as a component of the folder's ARN. (AI-inferred) */
   folderId?: string | Computed<string>;
-  /** Specifies the type of QuickSight folder, with 'SHARED' being the only supported value, determining that the folder can be shared with other QuickSight users. (AI-inferred) */
   folderType?: string | Computed<string>;
-  /** The display name of the QuickSight folder, which defaults to the folder's ID if not provided. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The ARN of the parent QuickSight folder under which this folder is created, enabling nested folder hierarchies; if omitted, the folder is created at the root level. (AI-inferred) */
   parentFolderArn?: string | Computed<string>;
-  /** Specifies a list of resource permissions for the folder, each granting an IAM principal a set of actions such as quicksight:DescribeFolder or quicksight:UpdateFolder. (AI-inferred) */
   permissions?: SightFolder_Permissions[] | Computed<SightFolder_Permissions[]>;
-  /** Determines the sharing scope of the folder, either across the entire AWS account (ACCOUNT) or only within a specific namespace (NAMESPACE), controlling which users can access it. (AI-inferred) */
   sharingModel?: string | Computed<string>;
-  /** A list of tag key-value pairs to associate with the QuickSight folder, used for managing and organizing resources. (AI-inferred) */
   tags?: SightFolder_Tags[] | Computed<SightFolder_Tags[]>;
 }
 
 export interface SightFolderAttrs {
   /** <p>The Amazon Resource Name (ARN) for the folder.</p> */
   arn: string;
-  /** The AWS account ID that owns the QuickSight folder; if omitted, the account ID from the AWS credentials is used. (AI-inferred) */
   awsAccountId: string;
   /** <p>The time that the folder was created.</p> */
   createdTime: string;
-  /** Specifies the unique identifier (FolderId) for the QuickSight folder, which AWS uses to reference the folder in API calls and as a component of the folder's ARN. (AI-inferred) */
   folderId: string;
-  /** Specifies the type of QuickSight folder, with 'SHARED' being the only supported value, determining that the folder can be shared with other QuickSight users. (AI-inferred) */
   folderType: string;
   /** <p>The time that the folder was last updated.</p> */
   lastUpdatedTime: string;
-  /** The display name of the QuickSight folder, which defaults to the folder's ID if not provided. (AI-inferred) */
   name: string;
-  /** The ARN of the parent QuickSight folder under which this folder is created, enabling nested folder hierarchies; if omitted, the folder is created at the root level. (AI-inferred) */
   parentFolderArn: string;
-  /** Specifies a list of resource permissions for the folder, each granting an IAM principal a set of actions such as quicksight:DescribeFolder or quicksight:UpdateFolder. (AI-inferred) */
   permissions: SightFolder_Permissions[];
-  /** Determines the sharing scope of the folder, either across the entire AWS account (ACCOUNT) or only within a specific namespace (NAMESPACE), controlling which users can access it. (AI-inferred) */
   sharingModel: string;
-  /** A list of tag key-value pairs to associate with the QuickSight folder, used for managing and organizing resources. (AI-inferred) */
   tags: SightFolder_Tags[];
 }
 

@@ -4,34 +4,27 @@ package events
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Endpoint_EventBuses struct {
-	// The Amazon Resource Name (ARN) of the EventBridge event bus that the endpoint associates with for routing events. (AI-inferred)
 	EventBusArn any
 }
 
 type Endpoint_ReplicationConfig struct {
-	// Determines whether EventBridge replicates events from the primary region to secondary regions for this global endpoint, with valid values ENABLED or DISABLED. (AI-inferred)
 	State any
 }
 
 type Endpoint_RoutingConfig_FailoverConfig_Primary struct {
-	// The ARN of the Route 53 health check that determines whether the primary region is healthy, triggering failover to the secondary region for the EventBridge endpoint. (AI-inferred)
 	HealthCheck any
 }
 
 type Endpoint_RoutingConfig_FailoverConfig_Secondary struct {
-	// The ARN of the EventBridge event bus in the secondary Region that receives events when the primary Region fails over. (AI-inferred)
 	Route any
 }
 
 type Endpoint_RoutingConfig_FailoverConfig struct {
-	// The primary region configuration for an Amazon EventBridge global endpoint, defined by the HealthCheck ARN that EventBridge monitors to determine if the primary Region is healthy and when to fail over to the secondary Region. (AI-inferred)
 	Primary any
-	// Defines the secondary failover target for the EventBridge endpoint, containing the ARN of the regional event bus that receives events when the primary is unavailable. (AI-inferred)
 	Secondary any
 }
 
 type Endpoint_RoutingConfig struct {
-	// Defines the primary and secondary AWS Regions used by the EventBridge endpoint for failover routing. (AI-inferred)
 	FailoverConfig any
 }
 
@@ -73,42 +66,25 @@ var Endpoint_RoutingConfigFields = ubx.FieldMap{
 	}
 
 type EndpointConfig struct {
-	// A user-provided description that identifies the purpose of the EventBridge global endpoint, which routes events between event buses across multiple AWS regions for disaster recovery. (AI-inferred)
 	Description any
-	// Specifies the list of EventBridge event buses to which the endpoint sends events, where each entry includes the ARN of the event bus and optionally an IAM role to use for event delivery. (AI-inferred)
 	EventBuses any
-	// The unique name you assign to this EventBridge global endpoint, used to identify it when routing events between event buses across regions. (AI-inferred)
 	Name any
-	// Configures multi-Region replication for this EventBridge endpoint, including whether replication is enabled and the list of AWS Regions to which events are replicated. (AI-inferred)
 	ReplicationConfig any
-	// The ARN of the IAM role that EventBridge assumes to replicate events between the event buses associated with this global endpoint. (AI-inferred)
 	RoleArn any
-	// Defines how the EventBridge endpoint routes events to regional event buses, including the routing criteria that determines the primary and secondary event bus targets and the failover configuration for health check-based rerouting. (AI-inferred)
 	RoutingConfig any
 }
 
 type EndpointAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this EventBridge endpoint in AWS. (AI-inferred)
 	Arn any
-	// A user-provided description that identifies the purpose of the EventBridge global endpoint, which routes events between event buses across multiple AWS regions for disaster recovery. (AI-inferred)
 	Description any
-	// The unique identifier assigned by Amazon EventBridge to the endpoint when it is created. (AI-inferred)
 	EndpointId any
-	// The fully qualified DNS URL assigned to this EventBridge global endpoint, used as the ingestion target for events routed to its configured event buses. (AI-inferred)
 	EndpointUrl any
-	// Specifies the list of EventBridge event buses to which the endpoint sends events, where each entry includes the ARN of the event bus and optionally an IAM role to use for event delivery. (AI-inferred)
 	EventBuses any
-	// The unique name you assign to this EventBridge global endpoint, used to identify it when routing events between event buses across regions. (AI-inferred)
 	Name any
-	// Configures multi-Region replication for this EventBridge endpoint, including whether replication is enabled and the list of AWS Regions to which events are replicated. (AI-inferred)
 	ReplicationConfig any
-	// The ARN of the IAM role that EventBridge assumes to replicate events between the event buses associated with this global endpoint. (AI-inferred)
 	RoleArn any
-	// Defines how the EventBridge endpoint routes events to regional event buses, including the routing criteria that determines the primary and secondary event bus targets and the failover configuration for health check-based rerouting. (AI-inferred)
 	RoutingConfig any
-	// The current lifecycle state of the EventBridge endpoint as reported by the service (e.g., ACTIVE, CREATING, UPDATING, DELETING). (AI-inferred)
 	State any
-	// The reason that describes the current state of the EventBridge endpoint, such as error details if the endpoint is in a FAILED state. (AI-inferred)
 	StateReason any
 }
 

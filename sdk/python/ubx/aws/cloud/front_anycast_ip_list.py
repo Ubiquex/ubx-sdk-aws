@@ -8,13 +8,9 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FrontAnycastIpList_AnycastIpList_IpamCidrConfigResults:
-    # The anycast IP address allocated from the IPAM CIDR configuration for this CloudFront anycast IP list. (AI-inferred)
     anycast_ip: Any = None
-    # The CIDR block (e.g., '10.0.0.0/24') allocated from the IPAM pool for the anycast IP list, as reported in each IPAM CIDR configuration result. (AI-inferred)
     cidr: Any = None
-    # The Amazon Resource Name (ARN) of the IPAM pool associated with a CIDR configuration result for the CloudFront anycast IP list. (AI-inferred)
     ipam_pool_arn: Any = None
-    # The lifecycle status of an individual IPAM CIDR allocation in the CloudFront anycast IP list, such as whether the CIDR is active and ready for use or still pending provisioning. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -28,7 +24,6 @@ class FrontAnycastIpList_AnycastIpList:
     ip_address_type: Any = None
     # The number of IP addresses in the Anycast static IP list.
     ip_count: Any = None
-    # This field is the read-only list of IPAM CIDR configuration results for the CloudFront anycast IP list, reporting the allocated CIDR block and its allocation status for each specified IPAM configuration. (AI-inferred)
     ipam_cidr_config_results: Any = None
     # The last time the Anycast static IP list was modified.
     last_modified_time: Any = None
@@ -39,16 +34,12 @@ class FrontAnycastIpList_AnycastIpList:
 
 @dataclasses.dataclass
 class FrontAnycastIpList_IpamCidrConfigs:
-    # The CIDR block, specified within an IPAM CIDR configuration, that determines the IP address range used for the CloudFront anycast IP list. (AI-inferred)
     cidr: Any = None
-    # The ARN of the IPAM pool that supplies the CIDR block for this anycast IP list configuration in CloudFront. (AI-inferred)
     ipam_pool_arn: Any = None
 
 @dataclasses.dataclass
 class FrontAnycastIpList_Tags_Items:
-    # The key (name) of a tag assigned to the CloudFront Anycast IP list, providing a user-defined label for the tag's value. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the CloudFront anycast IP list, used for identifying, organizing, and managing the resource. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -76,11 +67,9 @@ _FrontAnycastIpList_TagsFields = {
 
 @dataclasses.dataclass
 class FrontAnycastIpListConfig:
-    # Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
     ip_address_type: Any = None
     # The number of IP addresses in the Anycast static IP list.
     ip_count: Any = None
-    # Specifies the IPAM pool CIDR allocations (each including an IPAM pool ID and netmask length) that define the IP address ranges CloudFront will advertise as anycast for this IP list. (AI-inferred)
     ipam_cidr_configs: Any = None
     # The name of the Anycast static IP list.
     name: Any = None
@@ -91,16 +80,12 @@ class FrontAnycastIpListConfig:
 class FrontAnycastIpListAttrs:
     # An Anycast static IP list. For more information, see [Request Anycast static IPs to use for allowlisting](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/request-static-ips.html) in the *Amazon CloudFront Developer Guide*.
     anycast_ip_list: Any = None
-    # The entity tag (ETag) of the Anycast IP list, which is updated every time the list is modified and is used for conditional updates (e.g., If-Match requests). (AI-inferred)
     etag: Any = None
     id: Any = None
-    # Specifies whether the anycast IP list contains IPv4 or IPv6 addresses, determining which type of IPs can be included in the IpList property. (AI-inferred)
     ip_address_type: Any = None
     # The number of IP addresses in the Anycast static IP list.
     ip_count: Any = None
-    # This computed attribute returns a list of objects, each representing the IPAM CIDR configuration result for a CIDR block associated with this anycast IP list, including details such as the CIDR and its allocation status. (AI-inferred)
     ipam_cidr_config_results: Any = None
-    # Specifies the IPAM pool CIDR allocations (each including an IPAM pool ID and netmask length) that define the IP address ranges CloudFront will advertise as anycast for this IP list. (AI-inferred)
     ipam_cidr_configs: Any = None
     # The name of the Anycast static IP list.
     name: Any = None

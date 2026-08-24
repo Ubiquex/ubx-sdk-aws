@@ -4,9 +4,7 @@ package connect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type View_Tags struct {
-	// The key of a single tag assigned to the Amazon Connect view resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS Connect view, used to categorize or identify the view for cost allocation and access management. (AI-inferred)
 	Value any
 }
 

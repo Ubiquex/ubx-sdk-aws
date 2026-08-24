@@ -36,7 +36,6 @@ _SearchServerlessCollectionGroup_TagsFields = {
 
 @dataclasses.dataclass
 class SearchServerlessCollectionGroupConfig:
-    # Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred)
     capacity_limits: Any = None
     # The description of the collection group.
     description: Any = None
@@ -53,7 +52,6 @@ class SearchServerlessCollectionGroupConfig:
 class SearchServerlessCollectionGroupAttrs:
     # The Amazon Resource Name (ARN) of the collection group.
     arn: Any = None
-    # Defines the maximum indexing and search capacity in OpenSearch Compute Units (OCUs) that the collection group is allowed to use, effectively limiting the total capacity available to all collections within the group. (AI-inferred)
     capacity_limits: Any = None
     # The description of the collection group.
     description: Any = None

@@ -2,75 +2,55 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook {
-  /** Specifies the version of the code hook interface that the Lambda function uses, with '1.0' being the supported value for Lex V2 bots. (AI-inferred) */
   codeHookInterfaceVersion?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the Lambda function that is invoked as the code hook for the bot alias locale. (AI-inferred) */
   lambdaArn?: string | Computed<string>;
 }
 
 export interface BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification {
-  /** The `lambda_code_hook` object specifies the Amazon Lex Lambda function and its version that is invoked as the code hook for the bot alias locale, enabling custom logic in the conversation flow. (AI-inferred) */
   lambdaCodeHook?: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook | Computed<BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification_LambdaCodeHook>;
 }
 
 export interface BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting {
-  /** Defines the Lambda code hook specification for a particular locale in the bot alias, including the Lambda ARN and code hook interface version that Lex invokes during conversation. (AI-inferred) */
   codeHookSpecification?: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification | Computed<BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting_CodeHookSpecification>;
-  /** Whether the bot alias is enabled for the specified locale; when false, the alias is disabled and unavailable for that locale. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface BotAlias_BotAliasLocaleSettings {
-  /** This object defines the alias behavior for a single locale, specifying whether the alias is enabled for that locale and optionally the Lambda code hook invoked for user interactions in that locale. (AI-inferred) */
   botAliasLocaleSetting?: BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting | Computed<BotAlias_BotAliasLocaleSettings_BotAliasLocaleSetting>;
-  /** The locale identifier (such as en_US or en_GB) that identifies which set of bot alias locale settings this entry applies to. (AI-inferred) */
   localeId?: string | Computed<string>;
 }
 
 export interface BotAlias_BotAliasTags {
-  /** The tag key to assign to the Amazon Lex bot alias, used to categorize or identify the alias in AWS tagging systems. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag (a key-value pair) assigned to the Amazon Lex bot alias, used to categorize or manage the alias resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket {
-  /** The ARN of the AWS KMS key used to encrypt audio conversation logs delivered to the S3 bucket destination. (AI-inferred) */
   kmsKeyArn?: string | Computed<string>;
-  /** The prefix prepended to the S3 object keys for audio conversation logs, enabling logs to be stored under a specific folder path in the bucket. (AI-inferred) */
   logPrefix?: string | Computed<string>;
-  /** The ARN of the S3 bucket where Amazon Lex delivers audio conversation logs. (AI-inferred) */
   s3BucketArn?: string | Computed<string>;
 }
 
 export interface BotAlias_ConversationLogSettings_AudioLogSettings_Destination {
-  /** The Amazon S3 bucket ARN where audio conversation logs are delivered for this bot alias. (AI-inferred) */
   s3Bucket?: BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket | Computed<BotAlias_ConversationLogSettings_AudioLogSettings_Destination_S3Bucket>;
 }
 
 export interface BotAlias_ConversationLogSettings_AudioLogSettings {
-  /** Specifies the Amazon S3 bucket configuration where audio conversation logs for this Lex bot alias are delivered. (AI-inferred) */
   destination?: BotAlias_ConversationLogSettings_AudioLogSettings_Destination | Computed<BotAlias_ConversationLogSettings_AudioLogSettings_Destination>;
-  /** Indicates whether audio conversation logs are enabled for the bot alias. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatch {
-  /** The ARN of the CloudWatch Logs log group to which text conversation logs are delivered for this Lex bot alias. (AI-inferred) */
   cloudWatchLogGroupArn?: string | Computed<string>;
-  /** The log prefix to prepend to the names of CloudWatch Logs log streams that store text conversation logs for the Lex bot alias. (AI-inferred) */
   logPrefix?: string | Computed<string>;
 }
 
 export interface BotAlias_ConversationLogSettings_TextLogSettings_Destination {
-  /** Specifies the CloudWatch Logs destination for text conversation logs, including the log group ARN and the IAM role that authorizes Lex to write logs to that group. (AI-inferred) */
   cloudWatch?: BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatch | Computed<BotAlias_ConversationLogSettings_TextLogSettings_Destination_CloudWatch>;
 }
 
 export interface BotAlias_ConversationLogSettings_TextLogSettings {
-  /** Specifies the Amazon S3 bucket where text logs are delivered, including the bucket name and ARN. (AI-inferred) */
   destination?: BotAlias_ConversationLogSettings_TextLogSettings_Destination | Computed<BotAlias_ConversationLogSettings_TextLogSettings_Destination>;
-  /** Determines whether text conversation logs are recorded to the specified CloudWatch Logs log group for the Lex bot alias. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
@@ -212,7 +192,6 @@ export interface BotAliasAttrs {
   botAliasLocaleSettings: BotAlias_BotAliasLocaleSettings[];
   /** A unique identifier for a resource. */
   botAliasName: string;
-  /** The current status of the bot alias, such as CREATING, READY, or FAILED, indicating whether the alias is prepared for use. (AI-inferred) */
   botAliasStatus: string;
   /** A list of tags to add to the bot alias. */
   botAliasTags: BotAlias_BotAliasTags[];

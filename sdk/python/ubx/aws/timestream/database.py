@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Database_Tags:
-    # The key of a tag attached to the Timestream database, used to organize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value part of a tag applied to the Timestream database, which holds an arbitrary string for resource categorization and management. (AI-inferred)
     value: Any = None
 
 _Database_TagsFields = {
@@ -29,7 +27,6 @@ class DatabaseConfig:
 
 @dataclasses.dataclass
 class DatabaseAttrs:
-    # The Amazon Resource Name (ARN) of the Timestream database, which uniquely identifies it within AWS. (AI-inferred)
     arn: Any = None
     # The name for the database. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the database name.
     database_name: Any = None

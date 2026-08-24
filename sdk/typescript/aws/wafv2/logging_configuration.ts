@@ -2,28 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionCondition {
-  /** Specifies the WAF action (ALLOW, BLOCK, or COUNT) that must match the action taken by AWS WAF on a request, as part of an action condition in a logging filter. (AI-inferred) */
   action?: string | Computed<string>;
 }
 
 export interface LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameCondition {
-  /** The name of the AWS WAF label that a web request must have for the logging filter condition to match, thereby including or excluding that request's logs. (AI-inferred) */
   labelName?: string | Computed<string>;
 }
 
 export interface LoggingConfiguration_LoggingFilter_Filters_Conditions {
-  /** Specifies the web request action (e.g., ALLOW, BLOCK, COUNT) that must match for the logging filter condition to apply, allowing log filtering based on the action taken by AWS WAF. (AI-inferred) */
   actionCondition?: LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionCondition | Computed<LoggingConfiguration_LoggingFilter_Filters_Conditions_ActionCondition>;
-  /** Defines a condition that matches when a web request carries a label with the exact name specified, allowing the WAFv2 logging filter to include or exclude requests from logging based on that label. (AI-inferred) */
   labelNameCondition?: LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameCondition | Computed<LoggingConfiguration_LoggingFilter_Filters_Conditions_LabelNameCondition>;
 }
 
 export interface LoggingConfiguration_LoggingFilter_Filters {
-  /** Specifies whether to keep or drop logs for matching requests, with valid values `KEEP` or `DROP`. (AI-inferred) */
   behavior?: string | Computed<string>;
-  /** A list of conditions for this logging filter, where each condition pairs a KEEP/DROP action with a label name to match, determining whether matching web requests are included in or excluded from the WAF logs. (AI-inferred) */
   conditions?: LoggingConfiguration_LoggingFilter_Filters_Conditions[] | Computed<LoggingConfiguration_LoggingFilter_Filters_Conditions[]>;
-  /** Determines whether the filter's conditions must all match (MEETS_ALL) or any one must match (MEETS_ANY) for the filter to apply. (AI-inferred) */
   requirement?: string | Computed<string>;
 }
 
@@ -35,18 +28,13 @@ export interface LoggingConfiguration_LoggingFilter {
 }
 
 export interface LoggingConfiguration_RedactedFields_SingleHeader {
-  /** The name of the HTTP header whose values are redacted (masked) from the logs delivered by this WAFv2 logging configuration. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface LoggingConfiguration_RedactedFields {
-  /** Redact the HTTP method (e.g., GET, POST) from the logs for web requests matching the logging configuration. (AI-inferred) */
   method?: unknown | Computed<unknown>;
-  /** This field specifies whether to redact the query string of web requests from the logs produced by the WAFv2 logging configuration. (AI-inferred) */
   queryString?: unknown | Computed<unknown>;
-  /** Specifies the name of a single request header whose value WAF will redact in the logging configuration. (AI-inferred) */
   singleHeader?: LoggingConfiguration_RedactedFields_SingleHeader | Computed<LoggingConfiguration_RedactedFields_SingleHeader>;
-  /** When included as an empty object in a redacted_fields block, this setting causes the URI path of matching web requests to be redacted (omitted) from the WAF logging output. (AI-inferred) */
   uriPath?: unknown | Computed<unknown>;
 }
 

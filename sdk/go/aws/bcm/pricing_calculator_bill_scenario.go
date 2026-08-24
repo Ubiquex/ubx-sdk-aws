@@ -5,14 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PricingCalculatorBillScenario_BillInterval struct {
 	End any
-	// The start of the billing interval for the bill scenario, defining the beginning of the period over which AWS costs are estimated. (AI-inferred)
 	Start any
 }
 
 type PricingCalculatorBillScenario_Tags struct {
-	// A user-defined key for a tag attached to the AWS BCM Pricing Calculator bill scenario, used to categorize and track the bill scenario for cost allocation. (AI-inferred)
 	Key any
-	// The value part of a key-value tag on the AWS BCM Pricing Calculator bill scenario, used for categorizing and managing the resource. (AI-inferred)
 	Value any
 }
 
@@ -26,7 +23,6 @@ type PricingCalculatorBillScenarioConfig struct {
 	CostCategoryGroupSharingPreferenceArn any
 	// The timestamp when the bill scenario expires
 	ExpiresAt any
-	// Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred)
 	GroupSharingPreference any
 	// The name of the bill scenario
 	Name any
@@ -37,7 +33,6 @@ type PricingCalculatorBillScenarioConfig struct {
 type PricingCalculatorBillScenarioAttrs struct {
 	// The Amazon Resource Name (ARN) of the bill scenario.
 	Arn any
-	// The computed time interval (with start and end timestamps) that delineates the billing period the bill scenario analyzes, automatically populated by the AWS BCM Pricing Calculator service. (AI-inferred)
 	BillInterval any
 	// The ARN of the cost category group sharing preference
 	CostCategoryGroupSharingPreferenceArn any
@@ -47,13 +42,11 @@ type PricingCalculatorBillScenarioAttrs struct {
 	ExpiresAt any
 	// The failure message if the bill scenario failed
 	FailureMessage any
-	// Controls whether the bill scenario is shared with all AWS Organizations groups (ALL) or not shared (NONE), restricting visibility to the creator account only. (AI-inferred)
 	GroupSharingPreference any
 	// The unique identifier of the bill scenario
 	Id any
 	// The name of the bill scenario
 	Name any
-	// The current lifecycle state of the bill scenario, such as whether it is active, being created, or failed, as determined by the AWS BCM Pricing Calculator service. (AI-inferred)
 	Status any
 	// An array of key-value pairs to apply to this resource
 	Tags any

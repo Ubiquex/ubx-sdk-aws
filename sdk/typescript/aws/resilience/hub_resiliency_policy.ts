@@ -50,7 +50,6 @@ const HubResiliencyPolicy_PolicyFields: FieldMap = {
 export interface HubResiliencyPolicyConfig {
   /** Data Location Constraint of the Policy. */
   dataLocationConstraint?: string | Computed<string>;
-  /** Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred) */
   policy: HubResiliencyPolicy_Policy | Computed<HubResiliencyPolicy_Policy>;
   /** Description of Resiliency Policy. */
   policyDescription?: string | Computed<string>;
@@ -64,7 +63,6 @@ export interface HubResiliencyPolicyConfig {
 export interface HubResiliencyPolicyAttrs {
   /** Data Location Constraint of the Policy. */
   dataLocationConstraint: string;
-  /** Configures the resiliency policy rules per workload component, specifying the recovery point objective (RPO) and recovery time objective (RTO) in seconds for each named component. (AI-inferred) */
   policy: HubResiliencyPolicy_Policy;
   /** Amazon Resource Name (ARN) of the Resiliency Policy. */
   policyArn: string;

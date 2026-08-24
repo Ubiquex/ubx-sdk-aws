@@ -8,28 +8,18 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitions:
-    # A list of event attribute names (dimension keys) from the RUM event JSON that are used as dimensions for the custom metric defined in this metric definition. (AI-inferred)
     dimension_keys: Any = None
-    # The JSON event pattern that filters which RUM application events are included in this metric definition, used to match event attributes for extracting metric values. (AI-inferred)
     event_pattern: Any = None
-    # The name assigned to this metric definition, which is used as the metric name when the extracted value is sent to the configured CloudWatch destination. (AI-inferred)
     name: Any = None
-    # The CloudWatch namespace where the extracted metric is published, defaulting to 'AWS/RUM' if not specified. (AI-inferred)
     namespace: Any = None
-    # Defines the unit label (e.g., 'Milliseconds' or 'Count') that CloudWatch RUM attaches to the metric generated from this metric definition when it is sent to the destination. (AI-inferred)
     unit_label: Any = None
-    # The value_key property specifies the key in the event data that CloudWatch RUM uses to extract the numerical value for the custom metric defined by this metric definition. (AI-inferred)
     value_key: Any = None
 
 @dataclasses.dataclass
 class AppMonitor_AppMonitorConfiguration_MetricDestinations:
-    # The destination service to which CloudWatch RUM sends the extracted metrics, such as CloudWatch or Evidently. (AI-inferred)
     destination: Any = None
-    # The ARN of the CloudWatch Logs log group or Evidently project that receives the metrics, used when metric destinations are configured for the app monitor. (AI-inferred)
     destination_arn: Any = None
-    # The ARN of an IAM role that grants CloudWatch RUM permission to publish metrics to the destination specified in this metric destination definition. (AI-inferred)
     iam_role_arn: Any = None
-    # Specifies the list of metric definitions for a metric destination, each defining a metric name and the value expression (such as a JSONPath or regex) used to extract the metric value from RUM event data. (AI-inferred)
     metric_definitions: Any = None
 
 @dataclasses.dataclass
@@ -57,7 +47,6 @@ class AppMonitor_AppMonitorConfiguration:
 
 @dataclasses.dataclass
 class AppMonitor_CustomEvents:
-    # Determines whether custom event collection is enabled or disabled for the app monitor, with allowed values 'ENABLED' and 'DISABLED'. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -81,9 +70,7 @@ class AppMonitor_ResourcePolicy:
 
 @dataclasses.dataclass
 class AppMonitor_Tags:
-    # The tag key, which is the name of the tag used to categorize and manage the CloudWatch RUM app monitor resource. (AI-inferred)
     key: Any = None
-    # Specifies the value for a tag key in the map of tags associated with the AWS RUM app monitor resource. (AI-inferred)
     value: Any = None
 
 _AppMonitor_AppMonitorConfiguration_MetricDestinations_MetricDefinitionsFields = {
@@ -166,7 +153,6 @@ class AppMonitorConfig:
     domain_list: Any = None
     # A name for the app monitor
     name: Any = None
-    # Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
     platform: Any = None
     # A structure that defines resource policy attached to your app monitor.
     resource_policy: Any = None
@@ -191,7 +177,6 @@ class AppMonitorAttrs:
     id: Any = None
     # A name for the app monitor
     name: Any = None
-    # Specifies the application platform for the app monitor, such as 'Browser' or 'Mobile', which determines how client-side telemetry is collected. (AI-inferred)
     platform: Any = None
     # A structure that defines resource policy attached to your app monitor.
     resource_policy: Any = None

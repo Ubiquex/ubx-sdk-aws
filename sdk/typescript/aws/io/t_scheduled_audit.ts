@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TScheduledAudit_Tags {
-  /** The key of a tag to attach to the AWS IoT scheduled audit resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a user-defined tag attached to the AWS IoT scheduled audit, used to attach metadata like environment or owner to the audit resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

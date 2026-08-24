@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TLogging_EventConfigurations {
-  /** The AWS IoT event type (such as MqttActivity, Connections, or DeviceShadowOperations) that this logging configuration applies to within the event configurations map. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** The destination ARN (e.g., an Amazon CloudWatch Logs log group or Amazon S3 bucket) to which AWS IoT delivers logs for the corresponding event configuration. (AI-inferred) */
   logDestination?: string | Computed<string>;
-  /** For each event type in the AWS IoT logging event configurations, this property sets the log level (e.g., DEBUG, INFO, ERROR, WARN, or DISABLED) that controls how detailed the IoT logs are for that event type. (AI-inferred) */
   logLevel?: string | Computed<string>;
 }
 

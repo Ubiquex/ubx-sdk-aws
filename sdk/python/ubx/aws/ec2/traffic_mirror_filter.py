@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TrafficMirrorFilter_Tags:
     key: Any = None
-    # The value portion of a tag entry attached to the EC2 Traffic Mirror Filter, used to store arbitrary metadata for identification or categorization. (AI-inferred)
     value: Any = None
 
 _TrafficMirrorFilter_TagsFields = {

@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CacheParameterGroup_Tags struct {
 	Key any
-	// Specifies the value of a user-defined tag attached to the ElastiCache parameter group, enabling metadata-based organization, cost tracking, and IAM access control on the resource. (AI-inferred)
 	Value any
 }
 

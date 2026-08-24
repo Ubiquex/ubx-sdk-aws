@@ -13,9 +13,7 @@ export interface LoadBalancingLoadBalancer_AccessLoggingPolicy {
 }
 
 export interface LoadBalancingLoadBalancer_AppCookieStickinessPolicy {
-  /** The name of the application cookie that the classic load balancer uses to route a user's subsequent requests to the same registered instance for session stickiness. (AI-inferred) */
   cookieName?: string | Computed<string>;
-  /** The name to assign to this application-controlled cookie stickiness policy, which is created for the Classic Load Balancer and can be referenced in a listener's policy list to enable session affinity based on a custom application cookie. (AI-inferred) */
   policyName?: string | Computed<string>;
 }
 
@@ -45,44 +43,29 @@ export interface LoadBalancingLoadBalancer_HealthCheck {
 }
 
 export interface LoadBalancingLoadBalancer_LbcookieStickinessPolicy {
-  /** Specifies the time period in seconds after which the load balancer's sticky cookie expires, where omitting it makes the cookie last only for the duration of the browser session. (AI-inferred) */
   cookieExpirationPeriod?: string | Computed<string>;
-  /** The name assigned to the LBCookieStickinessPolicy for a Classic Load Balancer, used to identify and reference this policy when configuring listener stickiness. (AI-inferred) */
   policyName?: string | Computed<string>;
 }
 
 export interface LoadBalancingLoadBalancer_Listeners {
-  /** The TCP port on the registered EC2 instances to which the Classic Load Balancer forwards traffic, as defined for each listener. (AI-inferred) */
   instancePort?: string | Computed<string>;
-  /** Specifies the protocol (e.g., HTTP, HTTPS, TCP, SSL) that the Classic Load Balancer uses to communicate with backend instances, which defaults to the listener's protocol if not set. (AI-inferred) */
   instanceProtocol?: string | Computed<string>;
-  /** The external port on which the load balancer listens for incoming client traffic, such as 80 for HTTP or 443 for HTTPS. (AI-inferred) */
   loadBalancerPort?: string | Computed<string>;
-  /** Specifies the list of load balancer policy names to apply to this listener, enabling features like SSL negotiation or backend authentication for traffic on the listener's port. (AI-inferred) */
   policyNames?: string[] | Computed<string[]>;
-  /** Specifies the client-facing protocol for a classic load balancer listener (e.g., HTTP, HTTPS, TCP, or SSL), which must match the port and determines how incoming traffic is handled. (AI-inferred) */
   protocol?: string | Computed<string>;
-  /** The ARN of the IAM server certificate (or ACM certificate) used for SSL/TLS termination on this listener, required when the listener protocol is HTTPS or SSL. (AI-inferred) */
   sslcertificateId?: string | Computed<string>;
 }
 
 export interface LoadBalancingLoadBalancer_Policies_Attributes {
-  /** The name of a policy attribute within a classic load balancer policy, paired with its value to define settings such as session stickiness or cookie behavior. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value string for a load balancer policy attribute, paired with its Key, such as a cookie expiration period or stickiness setting. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface LoadBalancingLoadBalancer_Policies {
-  /** Specifies the list of key-value attribute pairs (each with a Key and Value) that define the configuration settings for the associated Elastic Load Balancing policy, such as stickiness expiration periods or other policy-specific parameters. (AI-inferred) */
   attributes?: LoadBalancingLoadBalancer_Policies_Attributes[] | Computed<LoadBalancingLoadBalancer_Policies_Attributes[]>;
-  /** Specifies the list of instance ports to which the classic load balancer policy is applied, commonly used with proxy protocol or other policy types that target specific ports. (AI-inferred) */
   instancePorts?: string[] | Computed<string[]>;
-  /** Specifies the load balancer (front-end) ports to which this classic Elastic Load Balancing policy (e.g., a stickiness or SSL negotiation policy) is applied. (AI-inferred) */
   loadBalancerPorts?: string[] | Computed<string[]>;
-  /** The name of the load balancer policy, which must be unique within the load balancer and is used to reference the policy in listener configurations. (AI-inferred) */
   policyName?: string | Computed<string>;
-  /** The type of the classic load balancer policy, such as SSLNegotiationPolicyType or ProxyProtocolPolicyType, which determines the policy's behavior and the set of attributes it supports. (AI-inferred) */
   policyType?: string | Computed<string>;
 }
 
@@ -94,9 +77,7 @@ export interface LoadBalancingLoadBalancer_SourceSecurityGroup {
 }
 
 export interface LoadBalancingLoadBalancer_Tags {
-  /** The key of a tag assigned to the Classic Load Balancer, used to identify and categorize the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to a Classic Load Balancer, which together with the tag key forms a key-value pair used for organizing and identifying AWS resources. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -235,7 +216,6 @@ export interface LoadBalancingLoadBalancerAttrs {
   scheme: string;
   /** The security groups for the load balancer. Valid only for load balancers in a VPC. */
   securityGroups: string[];
-  /** Computed read-only object holding the group name and owner alias of the automatically created source security group for the classic load balancer, used to authorize inbound traffic to backend instances in security group rules. (AI-inferred) */
   sourceSecurityGroup: LoadBalancingLoadBalancer_SourceSecurityGroup;
   /** The IDs of the subnets for the load balancer. You can specify at most one subnet per Availability Zone. */
   subnets: string[];

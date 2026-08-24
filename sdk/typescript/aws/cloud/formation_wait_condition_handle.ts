@@ -5,7 +5,6 @@ export interface FormationWaitConditionHandleConfig {
 }
 
 export interface FormationWaitConditionHandleAttrs {
-  /** The unique identifier for the wait condition handle, which is a pre-signed URL used by external signals to notify CloudFormation of completion. (AI-inferred) */
   id: string;
 }
 

@@ -2,34 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ArchiveConfig {
-  /** The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred) */
   archiveName?: string | Computed<string>;
-  /** The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred) */
   description?: string | Computed<string>;
-  /** A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred) */
   eventPattern?: unknown | Computed<unknown>;
-  /** Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred) */
   kmsKeyIdentifier?: string | Computed<string>;
-  /** The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred) */
   retentionDays?: number | Computed<number>;
-  /** The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred) */
   sourceArn: string | Computed<string>;
 }
 
 export interface ArchiveAttrs {
-  /** The name of the EventBridge archive, which uniquely identifies the archive within the AWS account and region. (AI-inferred) */
   archiveName: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this EventBridge archive in AWS. (AI-inferred) */
   arn: string;
-  /** The description of the archive, providing an optional human-readable explanation of the archive's purpose or contents. (AI-inferred) */
   description: string;
-  /** A JSON object specifying the event pattern that determines which events are captured in the archive. (AI-inferred) */
   eventPattern: unknown;
-  /** Specifies the AWS KMS key (by ARN or alias) used to encrypt the events stored in this archive; if omitted, EventBridge uses an AWS managed key. (AI-inferred) */
   kmsKeyIdentifier: string;
-  /** The number of days that events are retained in the archive before they are automatically deleted. (AI-inferred) */
   retentionDays: number;
-  /** The ARN of the event source, such as an EventBridge bus, from which the archive collects events. (AI-inferred) */
   sourceArn: string;
 }
 

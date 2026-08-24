@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class AcceleratorAccelerator_Tags:
     key: Any = None
-    # The value of a tag attached to the accelerator, used to categorize and manage the resource as a user-defined string. (AI-inferred)
     value: Any = None
 
 _AcceleratorAccelerator_TagsFields = {
@@ -33,7 +32,6 @@ class AcceleratorAcceleratorConfig:
     ip_addresses: Any = None
     # Name of accelerator.
     name: Any = None
-    # Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
@@ -62,7 +60,6 @@ class AcceleratorAcceleratorAttrs:
     ipv6_addresses: Any = None
     # Name of accelerator.
     name: Any = None
-    # Specifies custom tags (key-value pairs) to attach to the AWS Global Accelerator accelerator for resource categorization and management. (AI-inferred)
     tags: Any = None
 
 AcceleratorAccelerator = ubx.ResourceBinding(

@@ -4,23 +4,17 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ManagerConnectPeer_BgpOptions struct {
-	// The autonomous system number (ASN) of the BGP peer used by the Connect Peer to establish a BGP session. (AI-inferred)
 	PeerAsn any
 }
 
 type ManagerConnectPeer_Configuration_BgpConfigurations struct {
-	// The IPv4 address on the core network (Transit Gateway) side used for BGP peering in this Connect peer BGP configuration. (AI-inferred)
 	CoreNetworkAddress any
-	// The autonomous system number (ASN) of the core network used for the BGP session of the connect peer. (AI-inferred)
 	CoreNetworkAsn any
-	// The IP address of the BGP peer used to establish and identify the BGP session for the Connect Peer's BGP configuration. (AI-inferred)
 	PeerAddress any
-	// The autonomous system number (ASN) of the BGP peer for the Connect peer. (AI-inferred)
 	PeerAsn any
 }
 
 type ManagerConnectPeer_Configuration struct {
-	// The BGP configurations of the connect peer, where each object contains the core network address and peer address that define the BGP peering for the connection. (AI-inferred)
 	BgpConfigurations any
 	// The IP address of a core network.
 	CoreNetworkAddress any
@@ -33,9 +27,7 @@ type ManagerConnectPeer_Configuration struct {
 }
 
 type ManagerConnectPeer_Tags struct {
-	// The key part of a tag applied to the Network Manager Connect Peer, used to assign metadata for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value of a tag key attached to the Network Manager Connect Peer, used for resource metadata and cost tracking. (AI-inferred)
 	Value any
 }
 
@@ -68,7 +60,6 @@ type ManagerConnectPeerConfig struct {
 type ManagerConnectPeerAttrs struct {
 	// Bgp options
 	BgpOptions any
-	// The computed configuration of the Connect Peer, including the inside CIDR blocks, the protocol (GRE or IPSec), and the BGP configuration details such as peer and core network ASNs, IP addresses, and the Core Network edge endpoint address. (AI-inferred)
 	Configuration any
 	// The ID of the attachment to connect.
 	ConnectAttachmentId any

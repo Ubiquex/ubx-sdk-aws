@@ -2,20 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LiveNetwork_IpPools {
-  /** Specifies the CIDR block address range for an IP pool in the MediaLive network, defining the subnet of IP addresses that can be used. (AI-inferred) */
   cidr?: string | Computed<string>;
 }
 
 export interface LiveNetwork_Routes {
-  /** The destination CIDR block (e.g., '10.0.0.0/16') for a static route in the MediaLive network, used to direct matching traffic to the associated gateway. (AI-inferred) */
   cidr?: string | Computed<string>;
-  /** The IPv4 gateway address (next hop) used by the MediaLive network route to reach the destination CIDR for network traffic. (AI-inferred) */
   gateway?: string | Computed<string>;
 }
 
 export interface LiveNetwork_Tags {
   key?: string | Computed<string>;
-  /** The value of a user-defined tag applied to the AWS MediaLive network, allowing you to attach arbitrary metadata such as environment, team, or cost center for resource organization and identification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -47,7 +43,6 @@ export interface LiveNetworkConfig {
 export interface LiveNetworkAttrs {
   /** The ARN of the Network. */
   arn: string;
-  /** The list of unique identifiers for the AWS Elemental MediaLive clusters that are associated with this network. (AI-inferred) */
   associatedClusterIds: string[];
   /** The unique ID of the Network. */
   id: string;
@@ -57,7 +52,6 @@ export interface LiveNetworkAttrs {
   name: string;
   /** The routes for the network */
   routes: LiveNetwork_Routes[];
-  /** The current lifecycle state of the MediaLive network, as reported by the AWS MediaLive API (for example, CREATING, CREATE_COMPLETE, UPDATE_COMPLETE, DELETE_COMPLETE). (AI-inferred) */
   state: string;
   /** A collection of key-value pairs. */
   tags: LiveNetwork_Tags[];

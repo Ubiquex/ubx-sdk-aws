@@ -8,15 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpacesWebIpAccessSettings_IpRules:
-    # Specifies a human-readable description for the IP access rule that identifies its purpose or context. (AI-inferred)
     description: Any = None
-    # The CIDR block (e.g., 192.0.2.0/24) that defines the IP address range this rule allows or denies access from. (AI-inferred)
     ip_range: Any = None
 
 @dataclasses.dataclass
 class SpacesWebIpAccessSettings_Tags:
     key: Any = None
-    # The value portion of a key-value tag attached to the AWS WorkSpaces Web IP Access Settings resource. (AI-inferred)
     value: Any = None
 
 _SpacesWebIpAccessSettings_IpRulesFields = {
@@ -31,35 +28,22 @@ _SpacesWebIpAccessSettings_TagsFields = {
 
 @dataclasses.dataclass
 class SpacesWebIpAccessSettingsConfig:
-    # The additional_encryption_context is a dynamic map of arbitrary key-value pairs that are included as additional encryption context when AWS KMS encrypts the WorkSpaces Web IP access settings using a customer-managed KMS key. (AI-inferred)
     additional_encryption_context: Any = None
-    # The ARN of a customer-managed KMS key used to encrypt the IP access settings; if not specified, an AWS-managed key is used. (AI-inferred)
     customer_managed_key: Any = None
-    # Specifies an optional textual description for the IP access settings, providing a human-readable label to identify the resource in the WorkSpaces Web environment. (AI-inferred)
     description: Any = None
-    # A human-readable display name for the IP access settings that helps identify this set of rules in the WorkSpaces Web portal. (AI-inferred)
     display_name: Any = None
-    # Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
     ip_rules: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class SpacesWebIpAccessSettingsAttrs:
-    # The additional_encryption_context is a dynamic map of arbitrary key-value pairs that are included as additional encryption context when AWS KMS encrypts the WorkSpaces Web IP access settings using a customer-managed KMS key. (AI-inferred)
     additional_encryption_context: Any = None
-    # Returns the list of Amazon Resource Names (ARNs) of the WorkSpaces Web portals currently associated with these IP access settings. (AI-inferred)
     associated_portal_arns: Any = None
-    # The date and time when these WorkSpaces Web IP access settings were created. (AI-inferred)
     creation_date: Any = None
-    # The ARN of a customer-managed KMS key used to encrypt the IP access settings; if not specified, an AWS-managed key is used. (AI-inferred)
     customer_managed_key: Any = None
-    # Specifies an optional textual description for the IP access settings, providing a human-readable label to identify the resource in the WorkSpaces Web environment. (AI-inferred)
     description: Any = None
-    # A human-readable display name for the IP access settings that helps identify this set of rules in the WorkSpaces Web portal. (AI-inferred)
     display_name: Any = None
-    # The Amazon Resource Name (ARN) of the IP access settings resource. (AI-inferred)
     ip_access_settings_arn: Any = None
-    # Specifies the list of IP rules that define allowed or denied client IP address ranges (in CIDR notation) for accessing the WorkSpaces Web portal. (AI-inferred)
     ip_rules: Any = None
     tags: Any = None
 

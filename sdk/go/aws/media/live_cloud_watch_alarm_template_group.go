@@ -15,15 +15,12 @@ type LiveCloudWatchAlarmTemplateGroupConfig struct {
 type LiveCloudWatchAlarmTemplateGroupAttrs struct {
 	// A cloudwatch alarm template group's ARN (Amazon Resource Name)
 	Arn any
-	// The timestamp (ISO 8601) indicating when this CloudWatch alarm template group was created. (AI-inferred)
 	CreatedAt any
 	// A resource's optional description.
 	Description any
 	// A cloudwatch alarm template group's id. AWS provided template groups have ids that start with `aws-`
 	Id any
-	// The computed unique group identifier that AWS MediaLive assigns to the CloudWatch alarm template group, matching the value returned by the CloudFormation Ref intrinsic function for this resource. (AI-inferred)
 	Identifier any
-	// Indicates the most recent modification time of the CloudWatch alarm template group, returned as a string in RFC3339 timestamp format. (AI-inferred)
 	ModifiedAt any
 	// A resource's name. Names must be unique within the scope of a resource type in a specific region.
 	Name any

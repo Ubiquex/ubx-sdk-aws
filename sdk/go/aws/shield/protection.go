@@ -4,9 +4,7 @@ package shield
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Protection_ApplicationLayerAutomaticResponseConfiguration_Action struct {
-	// When present, this marker block selects 'block' as the Shield Advanced automatic application-layer response action, causing the detected malicious request to be blocked. (AI-inferred)
 	Block any
-	// Sets the automatic application-layer DDoS mitigation action to 'Count', causing AWS Shield Advanced to count matching requests without blocking them so you can observe traffic before enforcing a block. (AI-inferred)
 	Count any
 }
 
@@ -19,7 +17,6 @@ type Protection_ApplicationLayerAutomaticResponseConfiguration struct {
 
 type Protection_Tags struct {
 	Key any
-	// The value component of a tag key-value pair attached to an AWS Shield Advanced protection resource, used to store metadata such as owner, environment, or cost center for resource organization and identity. (AI-inferred)
 	Value any
 }
 

@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AiagentVersionConfig {
-  /** The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred) */
   aiagentId: string | Computed<string>;
-  /** The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred) */
   assistantId: string | Computed<string>;
-  /** The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred) */
   modifiedTimeSeconds?: number | Computed<number>;
 }
 
 export interface AiagentVersionAttrs {
-  /** The Amazon Resource Name (ARN) of the Wisdom AI agent that this version belongs to. (AI-inferred) */
   aiagentArn: string;
-  /** The unique identifier of the Wisdom AI agent for which this version is created. (AI-inferred) */
   aiagentId: string;
-  /** The unique identifier assigned to the AI agent version when it is created. (AI-inferred) */
   aiagentVersionId: string;
-  /** The Amazon Resource Name (ARN) of the Wisdom assistant to which this AI agent version belongs, exposed as a computed read-only attribute after the resource is created. (AI-inferred) */
   assistantArn: string;
-  /** The identifier of the Amazon Wisdom assistant to which the AI agent version belongs. (AI-inferred) */
   assistantId: string;
-  /** The Unix epoch time in seconds when the AI agent version was last modified, providing a timestamp to track changes to the version. (AI-inferred) */
   modifiedTimeSeconds: number;
-  /** The version number of the AI agent version, automatically assigned by the service. (AI-inferred) */
   versionNumber: number;
 }
 

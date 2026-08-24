@@ -23,7 +23,6 @@ type GatewayV2VpcLinkAttrs struct {
 	SubnetIds any
 	// The collection of tags. Each tag element is associated with a given resource.
 	Tags any
-	// The service-generated unique identifier (VpcLinkId) assigned to the VPC link when it is created. (AI-inferred)
 	VpcLinkId any
 }
 

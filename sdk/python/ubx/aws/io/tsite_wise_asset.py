@@ -8,34 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TsiteWiseAsset_AssetHierarchies:
-    # The child_asset_id specifies the ID of the child asset that this asset's hierarchy references, linking the two assets in the IoT SiteWise asset hierarchy. (AI-inferred)
     child_asset_id: Any = None
-    # Defines an optional external identifier for this asset hierarchy, allowing it to be referenced or matched with external systems in AWS IoT SiteWise. (AI-inferred)
     external_id: Any = None
     id: Any = None
-    # The logical ID of the asset hierarchy, which must match a hierarchy logical ID defined in the asset model and uniquely identifies the parent–child relationship between the asset and its child asset. (AI-inferred)
     logical_id: Any = None
 
 @dataclasses.dataclass
 class TsiteWiseAsset_AssetProperties:
-    # The alias provides an external, human-readable identifier for the asset property that can be used to map the property to data from an external data source. (AI-inferred)
     alias: Any = None
-    # The external_id of an asset property specifies a unique, customer-supplied identifier for that property, which can be used to map or reference the property across systems. (AI-inferred)
     external_id: Any = None
-    # The unique identifier of the asset property, assigned by AWS IoT SiteWise when the asset is created, used to reference the property in API operations. (AI-inferred)
     id: Any = None
-    # The logical ID of the asset property, which uniquely identifies the property within the asset and must match a property definition's logical ID in the asset model. (AI-inferred)
     logical_id: Any = None
-    # Indicates the current notification state (ENABLED or DISABLED) for the asset property, which controls whether value updates trigger AWS IoT SiteWise notifications. (AI-inferred)
     notification_state: Any = None
-    # The physical unit of measurement (e.g., 'Celsius', 'kPa') for a property of the asset, defining the standard in which the property's value is expressed. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class TsiteWiseAsset_Tags:
-    # The key of a tag assigned to the AWS IoT SiteWise asset, used to identify and categorize the asset. (AI-inferred)
     key: Any = None
-    # The value string of a tag (key-value pair) attached to the AWS IoT SiteWise asset, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _TsiteWiseAsset_TagsFields = {
@@ -64,7 +53,6 @@ class TsiteWiseAssetAttrs:
     asset_description: Any = None
     # The External ID of the asset
     asset_external_id: Any = None
-    # The list of asset hierarchies that define parent-child relationships from this asset to other assets, each including the hierarchy's logical ID and the target child asset's ID. (AI-inferred)
     asset_hierarchies: Any = None
     # The ID of the asset
     asset_id: Any = None
@@ -72,7 +60,6 @@ class TsiteWiseAssetAttrs:
     asset_model_id: Any = None
     # A unique, friendly name for the asset.
     asset_name: Any = None
-    # The computed list of property definitions for the IoT SiteWise asset, each including the logical ID, alias, notification state, and resolved value from the asset model. (AI-inferred)
     asset_properties: Any = None
     # A list of key-value pairs that contain metadata for the asset.
     tags: Any = None

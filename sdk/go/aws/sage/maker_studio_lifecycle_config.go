@@ -4,9 +4,7 @@ package sage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MakerStudioLifecycleConfig_Tags struct {
-	// The key of a tag assigned to the SageMaker Studio Lifecycle Configuration resource, used to organize and identify it within AWS. (AI-inferred)
 	Key any
-	// The value component of a tag assigned to the SageMaker Studio Lifecycle Configuration, used to categorize and manage the resource. (AI-inferred)
 	Value any
 }
 

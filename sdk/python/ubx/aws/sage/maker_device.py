@@ -18,7 +18,6 @@ class MakerDevice_Device:
 @dataclasses.dataclass
 class MakerDevice_Tags:
     key: Any = None
-    # The value component of a tag attached to the SageMaker device, used for arbitrary metadata such as environment or cost center. (AI-inferred)
     value: Any = None
 
 _MakerDevice_DeviceFields = {

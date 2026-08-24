@@ -27,7 +27,6 @@ class GatewayV2VpcLinkAttrs:
     subnet_ids: Any = None
     # The collection of tags. Each tag element is associated with a given resource.
     tags: Any = None
-    # The service-generated unique identifier (VpcLinkId) assigned to the VPC link when it is created. (AI-inferred)
     vpc_link_id: Any = None
 
 GatewayV2VpcLink = ubx.ResourceBinding(

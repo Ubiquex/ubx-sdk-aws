@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ZoneSubscriptionTarget_SubscriptionTargetConfig {
-  /** The JSON-encoded configuration payload for a subscription target form, which contains the target-specific parameters (such as the S3 bucket path, Glue database name, or Redshift cluster) required for delivering subscribed data. (AI-inferred) */
   content?: string | Computed<string>;
-  /** The name of the metadata form that defines the schema and parameters for this AWS DataZone subscription target configuration. (AI-inferred) */
   formName?: string | Computed<string>;
 }
 

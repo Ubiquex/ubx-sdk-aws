@@ -7,7 +7,6 @@ export interface IntegrationResourceProperty_SourceProcessingProperties {
 }
 
 export interface IntegrationResourceProperty_Tags {
-  /** The key of a tag assigned to the AWS Glue integration resource, enabling you to categorize and manage the integration according to your organizational conventions. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

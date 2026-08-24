@@ -9,7 +9,6 @@ type Metric_Filters struct {
 }
 
 type Metric_MetricCalculation_CalculationComponents_MetricFilters_BooleanCondition struct {
-	// Specifies the comparison operator (such as EQUALS or NOT_EQUALS) used to evaluate the boolean condition in the metric filter. (AI-inferred)
 	Comparison any
 }
 
@@ -19,9 +18,7 @@ type Metric_MetricCalculation_CalculationComponents_MetricFilters_NumberConditio
 }
 
 type Metric_MetricCalculation_CalculationComponents_MetricFilters_StringCondition struct {
-	// Specifies the string comparison operator (e.g., EQUALS, CONTAINS) used to evaluate the metric filter's string condition against an attribute value in Amazon Connect. (AI-inferred)
 	Comparison any
-	// Defines the list of string values that Amazon Connect evaluates against the string condition's operator to determine which metric records match the filter and are included in the calculation component. (AI-inferred)
 	Values any
 }
 
@@ -35,9 +32,7 @@ type Metric_MetricCalculation_CalculationComponents_MetricFilters struct {
 
 type Metric_MetricCalculation_CalculationComponents struct {
 	Alias any
-	// A list of metric filter objects, each specifying a dimension (like QUEUE, AGENT, or CHANNEL) and its accepted values, that determines which data points contribute to the calculated metric component. (AI-inferred)
 	MetricFilters any
-	// The identifier of the metric that this calculation component references as an input to the overall metric calculation. (AI-inferred)
 	MetricId any
 	MetricName any
 }

@@ -4,9 +4,7 @@ package memory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DbParameterGroup_Tags struct {
-	// The key (name) of a tag to attach to the MemoryDB parameter group, used for identifying and organizing the resource. (AI-inferred)
 	Key any
-	// The value of a user-defined tag assigned to the MemoryDB parameter group, used to organize, identify, and manage the resource in AWS. (AI-inferred)
 	Value any
 }
 

@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Network_ManagedServices_CrossRegionS3RestoreSourcesAccess {
   ipv4Addresses?: string[] | Computed<string[]>;
-  /** Specifies the AWS region where the S3 bucket serving as a cross-region restore source is located. (AI-inferred) */
   region?: string | Computed<string>;
   status?: string | Computed<string>;
 }
@@ -86,7 +85,6 @@ export interface Network_ManagedServices {
 }
 
 export interface Network_Tags {
-  /** The key of a tag attached to the network resource, used as the tag's unique identifier within the resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }

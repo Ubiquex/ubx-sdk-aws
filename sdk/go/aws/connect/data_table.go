@@ -9,7 +9,6 @@ type DataTable_LockVersion struct {
 }
 
 type DataTable_Tags struct {
-	// The key of a tag to attach to the Amazon Connect data table, used for organizing and identifying the resource within AWS. (AI-inferred)
 	Key any
 	Value any
 }

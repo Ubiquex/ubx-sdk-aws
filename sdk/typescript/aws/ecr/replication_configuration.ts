@@ -2,23 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations {
-  /** The AWS region of the destination registry to which container images are replicated, such as us-east-1. (AI-inferred) */
   region?: string | Computed<string>;
-  /** The AWS account ID of the destination registry where replicated images are stored. (AI-inferred) */
   registryId?: string | Computed<string>;
 }
 
 export interface ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters {
-  /** The repository name prefix pattern (e.g., 'prod/') that determines which ECR repositories are included in the replication rule, matching repositories whose names begin with this filter string. (AI-inferred) */
   filter?: string | Computed<string>;
-  /** Specifies the type of repository filter in an ECR replication rule, where PREFIX_MATCH is the only supported value and indicates that the filter value matches repository names by prefix. (AI-inferred) */
   filterType?: string | Computed<string>;
 }
 
 export interface ReplicationConfiguration_ReplicationConfiguration_Rules {
-  /** Specifies the destination registry details, including the AWS Region and registry ID, to which this replication rule replicates images. (AI-inferred) */
   destinations?: ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations[] | Computed<ReplicationConfiguration_ReplicationConfiguration_Rules_Destinations[]>;
-  /** Defines which repositories in the source registry are replicated by the rule, using filter type (such as PREFIX_MATCH) and a filter value that matches repository names. (AI-inferred) */
   repositoryFilters?: ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters[] | Computed<ReplicationConfiguration_ReplicationConfiguration_Rules_RepositoryFilters[]>;
 }
 
@@ -64,7 +58,6 @@ export interface ReplicationConfigurationConfig {
 }
 
 export interface ReplicationConfigurationAttrs {
-  /** The registry_id is the AWS account ID (or registry ID) of the Amazon ECR private registry that this replication configuration is associated with, automatically assigned by CloudFormation. (AI-inferred) */
   registryId: string;
   /** The replication configuration for a registry. */
   replicationConfiguration: ReplicationConfiguration_ReplicationConfiguration;

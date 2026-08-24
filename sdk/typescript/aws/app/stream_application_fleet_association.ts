@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface StreamApplicationFleetAssociationConfig {
-  /** The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred) */
   applicationArn: string | Computed<string>;
-  /** The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred) */
   fleetName: string | Computed<string>;
 }
 
 export interface StreamApplicationFleetAssociationAttrs {
-  /** The ARN of the AppStream 2.0 application to associate with the fleet. (AI-inferred) */
   applicationArn: string;
-  /** The name of the AppStream 2.0 fleet to which the application is associated. (AI-inferred) */
   fleetName: string;
 }
 

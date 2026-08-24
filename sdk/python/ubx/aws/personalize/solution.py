@@ -15,18 +15,13 @@ class Solution_SolutionConfig_AutoMlconfig:
 
 @dataclasses.dataclass
 class Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_CategoricalHyperParameterRanges:
-    # The name of the categorical hyperparameter whose values are tuned during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred)
     name: Any = None
-    # Specifies the list of allowed categorical values that a categorical hyperparameter (identified by the sibling Name field) can take during hyperparameter optimization (HPO) for the Amazon Personalize solution. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Solution_SolutionConfig_HpoConfig_AlgorithmHyperParameterRanges_ContinuousHyperParameterRanges:
-    # The maximum value for a continuous hyperparameter range used in hyperparameter optimization for the Amazon Personalize solution. (AI-inferred)
     max_value: Any = None
-    # The minimum value of the range for a continuous hyperparameter that Amazon Personalize explores during hyperparameter optimization (HPO) for the solution. (AI-inferred)
     min_value: Any = None
-    # The name of the continuous hyperparameter to tune during hyperparameter optimization (HPO), which matches a hyperparameter defined in the recipe used by the Amazon Personalize solution. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -78,9 +73,7 @@ class Solution_SolutionConfig:
 
 @dataclasses.dataclass
 class Solution_Tags:
-    # The key part of a user-defined tag attached to the Amazon Personalize solution, used for organizing and identifying the resource. (AI-inferred)
     key: Any = None
-    # The value component of a tag key-value pair attached to the Amazon Personalize solution resource. (AI-inferred)
     value: Any = None
 
 _Solution_SolutionConfig_AutoMlconfigFields = {

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MakerImage_Tags:
-    # The key portion of a tag assigned to the SageMaker Image resource, enabling you to label the image with custom metadata for cost allocation and operational management. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the SageMaker image, used to organize and identify the resource for cost allocation and access control. (AI-inferred)
     value: Any = None
 
 _MakerImage_TagsFields = {

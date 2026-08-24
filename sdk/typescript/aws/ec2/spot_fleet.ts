@@ -2,339 +2,211 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings_Ebs {
-  /** Specifies whether the attached EBS volume should be automatically deleted when the Spot Instance launched from this launch specification terminates. (AI-inferred) */
   deleteOnTermination?: boolean | Computed<boolean>;
-  /** Indicates whether the EBS volume created by this block device mapping should be encrypted. (AI-inferred) */
   encrypted?: boolean | Computed<boolean>;
-  /** Specifies the number of provisioned I/O operations per second (IOPS) for the EBS volume, used when the volume type is io1 or io2. (AI-inferred) */
   iops?: number | Computed<number>;
-  /** The ID of the snapshot to use when creating the Amazon EBS volume for the block device mapping in the Spot Fleet launch specification. (AI-inferred) */
   snapshotId?: string | Computed<string>;
-  /** Specifies the size of the EBS volume, in GiB, for the block device attached to each instance launched from this launch specification within the Spot Fleet request. (AI-inferred) */
   volumeSize?: number | Computed<number>;
-  /** Specifies the EBS volume type (e.g., gp2, gp3, io1, io2, sc1, st1, or standard) for the block device attached to the spot fleet instances. (AI-inferred) */
   volumeType?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings {
-  /** The device name (e.g., /dev/sdh) exposed to the operating system for the block device, as defined in the Spot Fleet launch specification's block device mapping to attach an EBS volume or instance store volume. (AI-inferred) */
   deviceName?: string | Computed<string>;
-  /** Specifies the Amazon EBS volume configuration (including volume size, type, snapshot, encryption, and delete-on-termination settings) for the corresponding block device in the Spot Fleet launch specification. (AI-inferred) */
   ebs?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings_Ebs | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings_Ebs>;
-  /** Indicates whether to suppress (omit) the specified device from the block device mapping for the Spot Fleet launch specification, overriding any device that would otherwise be inherited from the AMI's block device mapping. (AI-inferred) */
   noDevice?: string | Computed<string>;
-  /** Specifies the virtual device name (e.g., 'ephemeral0') for an instance store volume in the block device mapping of a Spot Fleet launch specification. (AI-inferred) */
   virtualName?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_IamInstanceProfile {
-  /** The ARN of the IAM instance profile that is associated with the instances launched for this Spot Fleet launch specification, granting them permissions to access AWS services and resources. (AI-inferred) */
   arn?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount {
-  /** The maximum number of accelerators (e.g., GPUs) that an instance must have, used as an upper bound when filtering instance types for the Spot Fleet's launch specifications. (AI-inferred) */
   max?: number | Computed<number>;
-  /** Specifies the minimum number of accelerators (for example, GPUs) that an instance type must have to be considered for the Spot Fleet, as part of the instance requirements in the launch specification. (AI-inferred) */
   min?: number | Computed<number>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu_References {
-  /** Specifies the EC2 instance family name (e.g., c6i) that serves as the CPU performance baseline against which other instance types are compared when the Spot Fleet launch specification's instance requirements include baseline performance factors. (AI-inferred) */
   instanceFamily?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu {
-  /** Defines the list of CPU baseline performance references, each specifying an instance family and a minimum CPU speed (in GHz) that instance types must meet or exceed for the Spot Fleet's instance requirements. (AI-inferred) */
   references?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu_References[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu_References[]>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors {
-  /** Specifies the CPU baseline performance requirements (e.g., baseline vCPU count and supported instance types) that an instance type must meet to be selected by the Spot Fleet's instance requirements. (AI-inferred) */
   cpu?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors_Cpu>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements {
-  /** Specifies the minimum and maximum number of accelerators (for example, GPUs) that an instance must have to match the instance requirements for the Spot Fleet launch specification. (AI-inferred) */
   acceleratorCount?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Restricts eligible Spot Fleet instance types to those whose accelerators (GPUs) are produced by the specified manufacturers, such as amazon-web-services, amd, nvidia, or xilinx. (AI-inferred) */
   acceleratorManufacturers?: string[] | Computed<string[]>;
-  /** Specifies the names of GPU accelerators (e.g., 'a100', 'v100', 't4') that instance types must have, filtering the eligible instance types for the Spot Fleet launch specifications to only those with matching accelerator names. (AI-inferred) */
   acceleratorNames?: string[] | Computed<string[]>;
-  /** Specifies the minimum and maximum total accelerator (for example, GPU) memory, in MiB, that the instance types in the Spot Fleet must satisfy. (AI-inferred) */
   acceleratorTotalMemoryMiB?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Specifies the required types of hardware accelerators (e.g., gpu, fpga, inference) that each instance launched as part of the Spot Fleet must include, if any are configured in the instance requirements. (AI-inferred) */
   acceleratorTypes?: string[] | Computed<string[]>;
-  /** Lists the specific EC2 instance types that are permitted for the Spot Fleet's launch specifications, so EC2 only selects from these types when fulfilling the fleet's capacity. (AI-inferred) */
   allowedInstanceTypes?: string[] | Computed<string[]>;
-  /** Specifies whether the instance type must be a bare metal instance, with valid values of included, excluded, or required. (AI-inferred) */
   bareMetal?: string | Computed<string>;
-  /** Specifies the minimum and maximum baseline EBS bandwidth (in Mbps) that an instance type must satisfy to be considered for the Spot Fleet. (AI-inferred) */
   baselineEbsBandwidthMbps?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Defines the baseline CPU and memory performance factors (e.g., CPU architecture, manufacturer, memory clock speed) used to filter eligible instance types for the Spot Fleet's instance requirements. (AI-inferred) */
   baselinePerformanceFactors?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_BaselinePerformanceFactors>;
-  /** Specifies whether the Spot Fleet's instance requirements include or exclude instance types with burstable performance (such as T2 and T3 instances), with valid values of 'include' or 'exclude'. (AI-inferred) */
   burstablePerformance?: string | Computed<string>;
-  /** The list of CPU manufacturers (such as amazon-web-services, amd, or intel) that the instance types must have in order to be considered for the Spot Fleet. (AI-inferred) */
   cpuManufacturers?: string[] | Computed<string[]>;
-  /** Specifies the list of EC2 instance types that the Spot Fleet will not consider when fulfilling the capacity from the launch specification's instance requirements. (AI-inferred) */
   excludedInstanceTypes?: string[] | Computed<string[]>;
-  /** Specifies the acceptable instance generations (e.g., 'current' or 'previous') that the Spot Fleet can use when selecting instance types for the launch specification, filtering out unsupported generations. (AI-inferred) */
   instanceGenerations?: string[] | Computed<string[]>;
-  /** Defines the local storage (instance store) requirement for instances in the Spot Fleet launch specification, using one of 'included' (instances may have local storage), 'required' (instances must have local storage), or 'excluded' (instances must not have local storage). (AI-inferred) */
   localStorage?: string | Computed<string>;
-  /** The local storage type (hdd or ssd) that instances must support for their instance store volumes. (AI-inferred) */
   localStorageTypes?: string[] | Computed<string[]>;
-  /** Maximum spot price as a percentage of the optimal On-Demand price that you are willing to pay for a Spot Instance, used to filter candidate instance types in the Spot Fleet launch specification. (AI-inferred) */
   maxSpotPriceAsPercentageOfOptimalOnDemandPrice?: number | Computed<number>;
-  /** Defines the minimum and maximum amount of memory (in GiB) per vCPU that an instance type must have to be eligible for the Spot Fleet, specified as an object with Min and Max numeric properties. (AI-inferred) */
   memoryGiBperVcpu?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Defines the minimum and maximum memory (in MiB) an instance must have to be eligible for the Spot Fleet launch specification. (AI-inferred) */
   memoryMiB?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Defines the minimum and maximum network bandwidth (in Gbps) that an instance type must support for the launch specification's instance requirements in a Spot Fleet request. (AI-inferred) */
   networkBandwidthGbps?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Specifies the minimum and maximum number of network interfaces that instance types must support to be considered for the Spot Fleet, used to filter candidate instances by network interface count. (AI-inferred) */
   networkInterfaceCount?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Specifies the maximum on-demand price per hour that you are willing to pay, expressed as a percentage of the lowest-priced on-demand instance type, to filter which instance types are used for the Spot Fleet's launch specifications. (AI-inferred) */
   onDemandMaxPricePercentageOverLowestPrice?: number | Computed<number>;
-  /** When enabled, restricts the Spot Fleet to instance types that support encryption of data in transit, such as those offering ENA Express or similar network encryption features. (AI-inferred) */
   requireEncryptionInTransit?: boolean | Computed<boolean>;
-  /** Determines whether Spot Fleet only launches instances that support hibernation, requiring the instance type to be capable of hibernation. (AI-inferred) */
   requireHibernateSupport?: boolean | Computed<boolean>;
-  /** Specifies the maximum price you are willing to pay for a Spot Instance, expressed as a percentage over the lowest Spot price for the instance types that match the requirements, allowing you to bid above the lowest price to increase your chances of obtaining capacity. (AI-inferred) */
   spotMaxPricePercentageOverLowestPrice?: number | Computed<number>;
-  /** Configures the minimum and maximum total local storage (in GB) required for the instance types, as part of the instance requirements for the Spot Fleet launch specification. (AI-inferred) */
   totalLocalStorageGb?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
-  /** Defines the minimum and maximum number of vCPUs an instance type must offer to be considered eligible for the Spot Fleet, filtering instance types based on their vCPU count. (AI-inferred) */
   vcpuCount?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements_AcceleratorCount>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Monitoring {
-  /** Indicates whether detailed monitoring is enabled for the instances launched by the Spot Fleet. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_Ipv6Addresses {
-  /** Specifies an IPv6 address to assign to the network interface of the Spot Fleet instance. (AI-inferred) */
   ipv6Address?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_PrivateIpAddresses {
-  /** Specifies whether the private IP address is the primary private IP address of the network interface in the Spot Fleet launch specification. (AI-inferred) */
   primary?: boolean | Computed<boolean>;
-  /** Specifies the private IPv4 address to assign to a network interface on a Spot Fleet instance, used when configuring multiple private IP addresses for an interface in a launch specification. (AI-inferred) */
   privateIpAddress?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces {
-  /** When true, automatically assigns a public IPv4 address to the network interface for instances launched from this Spot Fleet launch specification. (AI-inferred) */
   associatePublicIpAddress?: boolean | Computed<boolean>;
-  /** Controls whether the network interface is deleted when the Spot Instance terminates, as part of each network interface definition in the Spot Fleet launch specification. (AI-inferred) */
   deleteOnTermination?: boolean | Computed<boolean>;
-  /** The description of the network interface, providing a human-readable label for the ENI in the EC2 console and APIs. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The device index for the network interface, where 0 denotes the primary network interface (eth0) and higher values attach additional interfaces to the spot instance. (AI-inferred) */
   deviceIndex?: number | Computed<number>;
-  /** Specifies the security group IDs to attach to the network interface when the Spot Fleet launches instances. (AI-inferred) */
   groups?: string[] | Computed<string[]>;
-  /** Specifies the number of IPv6 addresses to assign to the network interface in the launch specification for instances in the Spot Fleet. (AI-inferred) */
   ipv6AddressCount?: number | Computed<number>;
-  /** The list of IPv6 addresses to assign to the network interface of the Spot Fleet instance launched from this launch specification. (AI-inferred) */
   ipv6Addresses?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_Ipv6Addresses[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_Ipv6Addresses[]>;
-  /** The ID of an existing EC2 network interface to attach to instances launched from this launch specification, instead of creating a new one. (AI-inferred) */
   networkInterfaceId?: string | Computed<string>;
-  /** Defines the private IP addresses (with a Primary flag for each) to assign to the network interface in the Spot Fleet launch specification. (AI-inferred) */
   privateIpAddresses?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_PrivateIpAddresses[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces_PrivateIpAddresses[]>;
-  /** Specifies the number of secondary private IP addresses to assign to the network interface in the Spot Fleet launch specification, in addition to the primary private IP address. (AI-inferred) */
   secondaryPrivateIpAddressCount?: number | Computed<number>;
-  /** The ID of the subnet in which to place the network interface for instances launched from this launch specification. (AI-inferred) */
   subnetId?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Placement {
-  /** The Availability Zone in which the Spot Fleet launches instances for this launch specification. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** The stable, provider-specific identifier of the Availability Zone (such as use1-az1) in which the Spot Fleet launches the instances for this launch specification, independent of the zone's name. (AI-inferred) */
   availabilityZoneId?: string | Computed<string>;
-  /** The name of the placement group in which to launch the instances for this Spot Fleet launch specification. (AI-inferred) */
   groupName?: string | Computed<string>;
-  /** Specifies the tenancy model (e.g., default, dedicated, or host) for instances launched from this Spot Fleet launch specification, determining whether they run on shared or single-tenant hardware. (AI-inferred) */
   tenancy?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_SecurityGroups {
-  /** The ID of the security group to associate with each instance launched from this Spot Fleet launch specification, controlling network access to the instances. (AI-inferred) */
   groupId?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags {
-  /** The key of a tag to apply to the resources (e.g., instances or volumes) launched by the Spot Fleet via this launch specification. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value for a tag key applied to a resource type (e.g., instance or volume) created by this Spot Fleet launch specification. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications {
-  /** The AWS resource type (e.g., 'instance' or 'volume') to which the tags in this tag specification apply for the EC2 instances launched by the Spot Fleet. (AI-inferred) */
   resourceType?: string | Computed<string>;
-  /** The key-value pairs that define the tags to apply to the resource type (such as instance or volume) specified in the parent tag specification for the Spot Fleet launch specifications. (AI-inferred) */
   tags?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags[]>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications {
-  /** Specifies the block device mappings, such as EBS volumes and instance store volumes, to be attached to the instances created from this launch specification in the Spot Fleet request. (AI-inferred) */
   blockDeviceMappings?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_BlockDeviceMappings[]>;
-  /** Specifies whether instances launched from this launch specification are EBS-optimized, providing dedicated network and storage throughput to Amazon EBS. (AI-inferred) */
   ebsOptimized?: boolean | Computed<boolean>;
-  /** The IAM instance profile to associate with the instances launched from this launch specification, specified by its Amazon Resource Name (ARN) or name. (AI-inferred) */
   iamInstanceProfile?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_IamInstanceProfile | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_IamInstanceProfile>;
-  /** The ID of the Amazon Machine Image (AMI) used to launch instances for this spot fleet launch specification. (AI-inferred) */
   imageId?: string | Computed<string>;
-  /** Defines the minimum and maximum CPU, memory, and other instance attribute requirements that Spot Fleet uses to select compatible instance types for the launch specification. (AI-inferred) */
   instanceRequirements?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements>;
-  /** The EC2 instance type (e.g., t2.micro, m5.large) that the Spot Fleet uses when launching instances from this launch specification. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** The ID of the kernel to select for instances launched with this launch specification, overriding the default kernel from the AMI. (AI-inferred) */
   kernelId?: string | Computed<string>;
-  /** The name of the EC2 key pair used for SSH access to the instances launched by the Spot Fleet. (AI-inferred) */
   keyName?: string | Computed<string>;
-  /** Configures whether detailed monitoring (1-minute CloudWatch metrics) is enabled for instances launched from this spot fleet launch specification, via an 'Enabled' subfield. (AI-inferred) */
   monitoring?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Monitoring | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Monitoring>;
-  /** Specifies one or more network interfaces to attach to the Spot Fleet instances launched from this launch specification, including settings such as device index, subnet, and public IP assignment. (AI-inferred) */
   networkInterfaces?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_NetworkInterfaces[]>;
-  /** Specifies the placement preferences for instances launched from this launch specification, including the Availability Zone, placement group name, and tenancy that determine where the Spot Fleet places its instances. (AI-inferred) */
   placement?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Placement | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_Placement>;
-  /** The ID of the RAM disk to select for the instance, typically used with instance store-backed AMIs to specify a particular kernel RAM disk image. (AI-inferred) */
   ramdiskId?: string | Computed<string>;
-  /** Specifies the security groups to associate with the instances launched from this launch specification. (AI-inferred) */
   securityGroups?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_SecurityGroups[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_SecurityGroups[]>;
-  /** The maximum Spot price per instance hour for instances launched using this launch specification, which overrides the Spot Fleet's default spot price if specified. (AI-inferred) */
   spotPrice?: string | Computed<string>;
-  /** The ID of the subnet in which the Spot Fleet launches instances for this launch specification. (AI-inferred) */
   subnetId?: string | Computed<string>;
-  /** Defines the tags to apply to the EC2 instances and volumes created from the associated launch specification in the Spot Fleet request. (AI-inferred) */
   tagSpecifications?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications[]>;
-  /** The base64-encoded user data script or configuration that is injected into instances launched from this launch specification, enabling initialization tasks like bootstrapping or cloud-init directives. (AI-inferred) */
   userData?: string | Computed<string>;
-  /** Defines the relative weight (capacity units) for this launch specification when the Spot Fleet calculates its total capacity against the target capacity, letting a mix of instance types of differing sizes contribute to fleet capacity. (AI-inferred) */
   weightedCapacity?: number | Computed<number>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_LaunchTemplateSpecification {
-  /** Specifies the unique ID of the Amazon EC2 launch template that the Spot Fleet uses to launch instances for this launch template configuration. (AI-inferred) */
   launchTemplateId?: string | Computed<string>;
-  /** The name of the EC2 launch template that the Spot Fleet uses to launch instances for this launch template configuration, as specified in the launch template specification. (AI-inferred) */
   launchTemplateName?: string | Computed<string>;
-  /** Specifies the version of the launch template to use when launching instances for the Spot Fleet (for example, a specific version number or '$Latest'). (AI-inferred) */
   version?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_Overrides {
-  /** Overrides the Availability Zone in which Spot Instances are launched for this launch template configuration, allowing the Spot Fleet to distribute instances across specific AZs. (AI-inferred) */
   availabilityZone?: string | Computed<string>;
-  /** Defines the Availability Zone ID (e.g., use1-az1) for the Spot Fleet's launch template override, directing the fleet to launch instances in that specific Availability Zone instead of using the zone name. (AI-inferred) */
   availabilityZoneId?: string | Computed<string>;
-  /** Specifies the instance attribute requirements (e.g., minimum and maximum vCPUs, memory, and storage) that the Spot Fleet uses to filter and select eligible instance types for this launch template override. (AI-inferred) */
   instanceRequirements?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_InstanceRequirements>;
-  /** The EC2 instance type to use for this override, replacing the instance type defined in the associated launch template. (AI-inferred) */
   instanceType?: string | Computed<string>;
-  /** The priority for this launch template override, where lower numeric values indicate higher priority, determining the order in which Amazon EC2 Spot Fleet attempts to provision capacity from the specified instance types. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** Specifies the maximum price you are willing to pay per unit hour for a Spot Instance in this override, which overrides the Spot Fleet request's default price for the associated launch template configuration. (AI-inferred) */
   spotPrice?: string | Computed<string>;
-  /** The subnet ID in which the Spot Fleet launches instances for this launch template override, allowing you to control or diversify the Availability Zone placement of the instances. (AI-inferred) */
   subnetId?: string | Computed<string>;
-  /** Defines the relative weight for the instance type in a launch template override, determining how much capacity this instance contributes toward the Spot Fleet's target capacity. (AI-inferred) */
   weightedCapacity?: number | Computed<number>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs {
-  /** Identifies the EC2 launch template to use for the Spot Fleet's launch configuration, including the launch template ID or name, and optionally the version. (AI-inferred) */
   launchTemplateSpecification?: SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_LaunchTemplateSpecification | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_LaunchTemplateSpecification>;
-  /** Specifies a list of overrides that define instance types and subnets (with optional capacity and priority) to apply to the launch template when the Spot Fleet places instances. (AI-inferred) */
   overrides?: SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_Overrides[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs_Overrides[]>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig_ClassicLoadBalancers {
-  /** The name of the Classic Load Balancer that the Spot Fleet will register instances with. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig {
-  /** Specifies the list of Classic Load Balancers to attach to the Spot Fleet, where each item identifies a Classic Load Balancer by its name. (AI-inferred) */
   classicLoadBalancers: SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig_ClassicLoadBalancers[] | Computed<SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig_ClassicLoadBalancers[]>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_TargetGroupsConfig {
-  /** Specifies the list of target groups (each with an ARN and optional weight) to which the Spot Fleet will register its instances for load balancing. (AI-inferred) */
   targetGroups: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_IamInstanceProfile[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_IamInstanceProfile[]>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig {
-  /** Specifies the Classic Load Balancers to attach to the Spot Fleet, each defined by its name. (AI-inferred) */
   classicLoadBalancersConfig?: SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig | Computed<SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_ClassicLoadBalancersConfig>;
-  /** Defines the list of target groups for the Spot Fleet's load balancer configuration, allowing the fleet to register its instances with those target groups so incoming traffic can be distributed across them. (AI-inferred) */
   targetGroupsConfig?: SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_TargetGroupsConfig | Computed<SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig_TargetGroupsConfig>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies_CapacityRebalance {
-  /** Determines whether EC2 Spot Fleet launches a replacement instance immediately when a Spot Instance in a capacity-rebalanced fleet is at risk of interruption ('launch') or launches a replacement and then waits a specified termination delay before terminating the old instance ('launch-before-terminate'). (AI-inferred) */
   replacementStrategy?: string | Computed<string>;
-  /** The number of seconds that Amazon EC2 Spot Fleet waits after sending a rebalance notification before terminating the Spot Instance, allowing time for graceful shutdown. (AI-inferred) */
   terminationDelay?: number | Computed<number>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies {
-  /** Specifies the capacity rebalance strategy for the Spot Fleet, which configures how the fleet proactively replaces Spot Instances that are at an elevated risk of interruption to maintain target capacity. (AI-inferred) */
   capacityRebalance?: SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies_CapacityRebalance | Computed<SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies_CapacityRebalance>;
 }
 
 export interface SpotFleet_SpotFleetRequestConfigData {
-  /** Determines how Spot Fleet selects and launches Spot Instances to meet the target capacity, such as lowestPrice for the cheapest pools, diversified across many pools, or capacityOptimized for the pools with optimal capacity. (AI-inferred) */
   allocationStrategy?: string | Computed<string>;
-  /** A user-specified context string for the Spot Fleet request, reserved for future use and currently has no effect on the service. (AI-inferred) */
   context?: string | Computed<string>;
-  /** Determines the policy for terminating instances when the Spot Fleet has excess capacity beyond its target, where 'Default' terminates the excess instances and 'NoTermination' leaves them running. (AI-inferred) */
   excessCapacityTerminationPolicy?: string | Computed<string>;
-  /** The ARN of an IAM role that grants Amazon EC2 Spot Fleet permission to launch, manage, and terminate instances on your behalf. (AI-inferred) */
   iamFleetRole: string | Computed<string>;
-  /** Specifies whether interrupted Spot Instances in the fleet are terminated, stopped, or hibernated when capacity is no longer available at the requested price. (AI-inferred) */
   instanceInterruptionBehavior?: string | Computed<string>;
-  /** The number of Spot capacity pools (each defined by instance type and Availability Zone) across which the Spot Fleet distributes its target capacity, allowing the fleet to diversify and reduce the risk of losing all capacity if one pool is interrupted. (AI-inferred) */
   instancePoolsToUseCount?: number | Computed<number>;
-  /** A list of launch specifications that define the EC2 instances to be launched in the Spot Fleet, including instance type, AMI ID, security groups, IAM instance profile, and other instance configuration settings. (AI-inferred) */
   launchSpecifications?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications[]>;
-  /** Specifies one or more launch template configurations that the Spot Fleet uses to launch spot instances, including the launch template to use and any overrides for instance types, Availability Zones, subnet IDs, and weighted capacity. (AI-inferred) */
   launchTemplateConfigs?: SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchTemplateConfigs[]>;
-  /** Defines the Classic Load Balancers and target groups to attach to the Spot Fleet, enabling load balancing of incoming traffic across instances in the fleet. (AI-inferred) */
   loadBalancersConfig?: SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig | Computed<SpotFleet_SpotFleetRequestConfigData_LoadBalancersConfig>;
-  /** Specifies how On-Demand Instances are allocated across Spot Fleet pools, either using the lowest-priced pool ('lowest-price') or following a prioritized list of launch template overrides ('prioritized'). (AI-inferred) */
   onDemandAllocationStrategy?: string | Computed<string>;
-  /** Specifies the maximum total price per hour that you are willing to pay for On-Demand Instances in the Spot Fleet, used to cap the On-Demand portion of the fleet's spending. (AI-inferred) */
   onDemandMaxTotalPrice?: string | Computed<string>;
-  /** The number of On-Demand units (instances or capacity units) that the Spot Fleet request targets for launching On-Demand instances, used to maintain a minimum On-Demand capacity in the fleet. (AI-inferred) */
   onDemandTargetCapacity?: number | Computed<number>;
-  /** Indicates whether Spot Fleet should automatically replace instances that become unhealthy (as determined by the attached load balancer health checks) with new instances. (AI-inferred) */
   replaceUnhealthyInstances?: boolean | Computed<boolean>;
-  /** Specifies the maintenance strategies for the Spot Fleet, including the capacity rebalance strategy that determines how Spot Fleet handles Spot Instances at risk of interruption by automatically replacing them when a replacement strategy is configured. (AI-inferred) */
   spotMaintenanceStrategies?: SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies | Computed<SpotFleet_SpotFleetRequestConfigData_SpotMaintenanceStrategies>;
-  /** Specifies the maximum total price per hour that you are willing to pay for all instances in the Spot Fleet, as a string representing a numeric value. (AI-inferred) */
   spotMaxTotalPrice?: string | Computed<string>;
-  /** The maximum price per unit (hour) that you are willing to pay for a Spot Instance in the fleet; if omitted, Spot Fleet uses the On-Demand price for the instance type as the maximum price. (AI-inferred) */
   spotPrice?: string | Computed<string>;
-  /** Specifies the tags to apply to the Spot Fleet request and to the instances launched by the fleet. (AI-inferred) */
   tagSpecifications?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications[]>;
-  /** The number of units to request for the Spot Fleet, representing the target capacity in either instances or a custom unit (e.g., vCPUs, memory) that you want to maintain. (AI-inferred) */
   targetCapacity: number | Computed<number>;
-  /** Specifies the unit type for the target capacity of the Spot Fleet, either 'vcpu', 'memory-mib', or 'units' (instance counts), allowing the fleet to scale based on vCPUs or memory rather than instance count. (AI-inferred) */
   targetCapacityUnitType?: string | Computed<string>;
-  /** When set to true, the Spot Fleet terminates the instances it launched when the spot fleet request expires; when false, the instances continue to run independently after expiration. (AI-inferred) */
   terminateInstancesWithExpiration?: boolean | Computed<boolean>;
-  /** The type of Spot Fleet request, indicating whether it is a one-time request (request) or a persistent request that maintains a target capacity over time (maintain). (AI-inferred) */
   type?: string | Computed<string>;
-  /** Determines the earliest date/time (in ISO 8601 format) at which the Spot Fleet request becomes active, so the fleet only begins launching instances at or after this timestamp. (AI-inferred) */
   validFrom?: string | Computed<string>;
-  /** Specifies the date and time at which the Spot Fleet request expires, after which no new Spot Instances will be requested to fulfill the target capacity. (AI-inferred) */
   validUntil?: string | Computed<string>;
 }
 
@@ -696,7 +568,6 @@ const SpotFleet_SpotFleetRequestConfigDataFields: FieldMap = {
 };
 
 export interface SpotFleetConfig {
-  /** This object defines the configuration for the Spot Fleet request, including the IAM fleet role, target capacity, launch specifications for instances, and allocation strategy. (AI-inferred) */
   spotFleetRequestConfigData: SpotFleet_SpotFleetRequestConfigData | Computed<SpotFleet_SpotFleetRequestConfigData>;
   /** The tags to specify in SpotFleetRequestConfigData */
   tags?: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags[] | Computed<SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags[]>;
@@ -704,7 +575,6 @@ export interface SpotFleetConfig {
 
 export interface SpotFleetAttrs {
   id: string;
-  /** This object defines the configuration for the Spot Fleet request, including the IAM fleet role, target capacity, launch specifications for instances, and allocation strategy. (AI-inferred) */
   spotFleetRequestConfigData: SpotFleet_SpotFleetRequestConfigData;
   /** The tags to specify in SpotFleetRequestConfigData */
   tags: SpotFleet_SpotFleetRequestConfigData_LaunchSpecifications_TagSpecifications_Tags[];

@@ -23,9 +23,7 @@ type InfluxDbcluster_MaintenanceSchedule struct {
 }
 
 type InfluxDbcluster_Tags struct {
-	// The key of a tag to assign to the Timestream InfluxDB cluster, used to categorize and manage the resource. (AI-inferred)
 	Key any
-	// The value component of a key-value tag assigned to the Timestream for InfluxDB DB cluster, used for metadata management, cost tracking, and access control. (AI-inferred)
 	Value any
 }
 

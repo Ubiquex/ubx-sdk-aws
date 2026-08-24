@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class TransitGatewayPolicyTable_Tags:
     key: Any = None
-    # The value of a user-defined tag key assigned to the transit gateway policy table, used for metadata and resource identification. (AI-inferred)
     value: Any = None
 
 _TransitGatewayPolicyTable_TagsFields = {
@@ -19,7 +18,6 @@ _TransitGatewayPolicyTable_TagsFields = {
 
 @dataclasses.dataclass
 class TransitGatewayPolicyTableConfig:
-    # Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
     # The Id of transit gateway
     transit_gateway_id: Any = None
@@ -30,7 +28,6 @@ class TransitGatewayPolicyTableAttrs:
     creation_time: Any = None
     # State of the transit gateway policy table
     state: Any = None
-    # Specifies a list of tags (key-value pairs) to attach to the EC2 Transit Gateway Policy Table, used for identifying and organizing the resource. (AI-inferred)
     tags: Any = None
     # The Id of transit gateway
     transit_gateway_id: Any = None

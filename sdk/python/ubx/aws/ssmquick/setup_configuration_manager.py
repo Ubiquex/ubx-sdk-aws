@@ -9,52 +9,34 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class SetupConfigurationManager_ConfigurationDefinitions:
     id: Any = None
-    # The ARN of the IAM role that AWS Systems Manager Quick Setup assumes to deploy and manage the configuration in the local AWS account. (AI-inferred)
     local_deployment_administration_role_arn: Any = None
-    # Specifies the name of the IAM role that AWS Systems Manager assumes to execute the configuration locally in the target account for this configuration definition. (AI-inferred)
     local_deployment_execution_role_name: Any = None
-    # Specifies the configuration parameters (key-value pairs) that customize the settings for each configuration definition in the Quick Setup configuration manager, as required by the underlying configuration type. (AI-inferred)
     parameters: Any = None
-    # Specifies the type of configuration definition, which determines which AWS service's configuration is being managed by the Quick Setup Configuration Manager. (AI-inferred)
     type: Any = None
-    # The version of the configuration type's schema to use when applying the quick setup configuration definition. (AI-inferred)
     type_version: Any = None
 
 @dataclasses.dataclass
 class SetupConfigurationManager_StatusSummaries:
-    # The timestamp (as a string) indicating when the status summary for the SSM Quick Setup configuration manager was last updated. (AI-inferred)
     last_updated_at: Any = None
-    # The current status of the configuration manager, indicating whether the configuration setup succeeded, failed, or is still in progress. (AI-inferred)
     status: Any = None
     status_details: Any = None
-    # The status message is a human-readable string that provides detailed information about the current status of the configuration manager, including any errors or issues encountered during its deployment or operation. (AI-inferred)
     status_message: Any = None
-    # Identifies the specific aspect of the configuration manager's operation (for example, Deployment or Execution) that the status summary applies to, so the status value is interpreted in the correct context. (AI-inferred)
     status_type: Any = None
 
 @dataclasses.dataclass
 class SetupConfigurationManagerConfig:
-    # A user-provided free-form description for the SSM Quick Setup configuration manager. (AI-inferred)
     description: Any = None
-    # An optional friendly name for the Systems Manager Quick Setup configuration manager, used to identify and reference the configuration in the AWS Management Console and API operations. (AI-inferred)
     name: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class SetupConfigurationManagerAttrs:
-    # A computed list of configuration definitions that were applied to this SSM Quick Setup Configuration Manager, each specifying the setup operation (such as install or update), the configuration type, and associated parameters. (AI-inferred)
     configuration_definitions: Any = None
-    # The timestamp indicating when the configuration manager was created. (AI-inferred)
     created_at: Any = None
-    # A user-provided free-form description for the SSM Quick Setup configuration manager. (AI-inferred)
     description: Any = None
-    # The timestamp of the most recent modification to the configuration manager. (AI-inferred)
     last_modified_at: Any = None
-    # The Amazon Resource Name (ARN) of the SSM Quick Setup configuration manager, used to uniquely identify and reference the manager resource. (AI-inferred)
     manager_arn: Any = None
-    # An optional friendly name for the Systems Manager Quick Setup configuration manager, used to identify and reference the configuration in the AWS Management Console and API operations. (AI-inferred)
     name: Any = None
-    # Returns a list of status summaries for this configuration manager, where each summary includes a status type (such as Deployment) and the corresponding status (such as Success). (AI-inferred)
     status_summaries: Any = None
     tags: Any = None
 

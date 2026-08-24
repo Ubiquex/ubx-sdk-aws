@@ -2,20 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoomsPrivacyBudgetTemplate_Parameters_BudgetParameters {
-  /** Indicates whether the privacy budget template automatically refreshes the privacy budget on a recurring schedule (e.g., daily or monthly) to renew the querying allowance without manual intervention. (AI-inferred) */
   autoRefresh?: string | Computed<string>;
-  /** The maximum number of privacy budget units allocated to a parameter, determining how much aggregate data can be exposed while preserving differential privacy. (AI-inferred) */
   budget?: number | Computed<number>;
-  /** Defines the kind of privacy budget parameter (currently supported value: DIFFERENTIAL_PRIVACY) that determines how the analysis rule enforces differential privacy limits in the template. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface RoomsPrivacyBudgetTemplate_Parameters {
   budgetParameters?: RoomsPrivacyBudgetTemplate_Parameters_BudgetParameters[] | Computed<RoomsPrivacyBudgetTemplate_Parameters_BudgetParameters[]>;
-  /** Specifies the epsilon value for the differential privacy budget, which limits the amount of privacy loss allowed for queries using this template. (AI-inferred) */
   epsilon?: number | Computed<number>;
   resourceArn?: string | Computed<string>;
-  /** The number of users' worth of noise added to each query in the privacy budget template, controlling the level of differential privacy applied to query results. (AI-inferred) */
   usersNoisePerQuery?: number | Computed<number>;
 }
 
@@ -47,36 +42,23 @@ const RoomsPrivacyBudgetTemplate_TagsFields: FieldMap = {
 };
 
 export interface RoomsPrivacyBudgetTemplateConfig {
-  /** Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   autoRefresh: string | Computed<string>;
-  /** The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred) */
   membershipIdentifier: string | Computed<string>;
-  /** Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred) */
   parameters: RoomsPrivacyBudgetTemplate_Parameters | Computed<RoomsPrivacyBudgetTemplate_Parameters>;
-  /** The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred) */
   privacyBudgetType: string | Computed<string>;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template. */
   tags?: RoomsPrivacyBudgetTemplate_Tags[] | Computed<RoomsPrivacyBudgetTemplate_Tags[]>;
 }
 
 export interface RoomsPrivacyBudgetTemplateAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies the privacy budget template. (AI-inferred) */
   arn: string;
-  /** Indicates whether the privacy budget template automatically refreshes at the end of each allocation period, with valid values 'ENABLED' or 'DISABLED'. (AI-inferred) */
   autoRefresh: string;
-  /** The Amazon Resource Name (ARN) of the collaboration that this privacy budget template is associated with, assigned by AWS when the template is created. (AI-inferred) */
   collaborationArn: string;
-  /** collaboration_identifier is the unique identifier of the AWS Clean Rooms collaboration to which this privacy budget template belongs, automatically assigned by AWS and used as a read-only part of the resource's identity. (AI-inferred) */
   collaborationIdentifier: string;
-  /** The Amazon Resource Name (ARN) of the membership that this privacy budget template belongs to, which is automatically assigned by AWS Clean Rooms. (AI-inferred) */
   membershipArn: string;
-  /** The unique identifier of the AWS Clean Rooms membership that this privacy budget template is associated with. (AI-inferred) */
   membershipIdentifier: string;
-  /** Defines the differential privacy parameters for the privacy budget template, specifically the epsilon value and the maximum number of aggregation queries allowed. (AI-inferred) */
   parameters: RoomsPrivacyBudgetTemplate_Parameters;
-  /** The AWS-assigned unique identifier for this privacy budget template, used to reference the template in Clean Rooms operations. (AI-inferred) */
   privacyBudgetTemplateIdentifier: string;
-  /** The privacy budget type, either 'DIRECT' or 'DIFFERENTIAL_PRIVACY', determines whether the template enforces a direct query budget or a differential-privacy-based budget with noise for members' queries in the collaboration. (AI-inferred) */
   privacyBudgetType: string;
   /** An arbitrary set of tags (key-value pairs) for this cleanrooms privacy budget template. */
   tags: RoomsPrivacyBudgetTemplate_Tags[];

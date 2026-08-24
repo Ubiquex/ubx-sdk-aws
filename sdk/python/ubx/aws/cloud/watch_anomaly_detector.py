@@ -8,83 +8,56 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_Configuration_ExcludedTimeRanges:
-    # Specifies the end time of the excluded time range, in ISO 8601 format, during which the anomaly detector ignores data. (AI-inferred)
     end_time: Any = None
-    # The start time (in ISO 8601 format) of a time range to exclude from anomaly detection model training, marking the beginning of a period when the detector will not use data for learning the normal pattern. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_Configuration:
-    # Specifies the time ranges, defined by start and end times, during which CloudWatch Anomaly Detector will not perform anomaly detection on the associated metric(s). (AI-inferred)
     excluded_time_ranges: Any = None
-    # Sets the IANA time zone (e.g., 'America/New_York') used by the anomaly detector to evaluate and display metric anomalies, overriding the default UTC. (AI-inferred)
     metric_time_zone: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_Dimensions:
-    # The name of a dimension that, along with its value and other dimensions, uniquely identifies the CloudWatch metric for which this anomaly detector is configured. (AI-inferred)
     name: Any = None
-    # The value of the dimension that, combined with the dimension name and metric name, identifies the specific metric for which the CloudWatch anomaly detector is configured. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_MetricCharacteristics:
-    # When true, indicates that the metric is expected to have periodic spikes, causing the anomaly detector to adjust its band to be more tolerant of those recurring spikes rather than treating them as anomalies. (AI-inferred)
     periodic_spikes: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStat_Metric:
-    # Defines the dimensions (name-value pairs) for the target metric in the metric stat, which identify the metric in CloudWatch and scope the anomaly detection calculations. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric used in the metric stat for the metric math anomaly detector, identifying the specific metric to query. (AI-inferred)
     metric_name: Any = None
-    # Specifies the AWS namespace (e.g., AWS/EC2) of the metric referenced by the metric stat within the metric data query for this metric math anomaly detector. (AI-inferred)
     namespace: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries_MetricStat:
-    # Specifies the CloudWatch metric (including namespace, metric name, and dimensions) that the metric_stat for this metric data query uses to evaluate the anomaly detector. (AI-inferred)
     metric: Any = None
-    # The period specifies the length of time (in seconds) over which the metric data is aggregated for the metric stat used in the anomaly detector's metric math expression. (AI-inferred)
     period: Any = None
-    # The statistic to apply to the metric (e.g., Average, Sum, Minimum, Maximum, SampleCount) within the metric data query used by the anomaly detector's metric math expression. (AI-inferred)
     stat: Any = None
-    # Specifies the unit of measure (e.g., Count, Percent, Seconds) for the metric statistic that contributes to the metric math expression used by this anomaly detector. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_MetricMathAnomalyDetector_MetricDataQueries:
-    # Specifies the AWS account ID containing the metric data for this query, enabling cross-account metric math within the anomaly detector's metric math expression. (AI-inferred)
     account_id: Any = None
-    # The math expression (e.g., SUM(SEARCH('Namespace=...', 'Sum', 300))) that defines the metric data query used to calculate the anomaly detection band for the metric math anomaly detector. (AI-inferred)
     expression: Any = None
-    # A short name that uniquely identifies this metric data query within the anomaly detector's metric math expression, used to reference the query in the expression (e.g., 'm1' or 'e1'). (AI-inferred)
     id: Any = None
-    # A human-readable label for the metric or expression in the metric data query, which CloudWatch displays instead of the auto-generated label if provided. (AI-inferred)
     label: Any = None
-    # Specifies the underlying metric and its statistic (e.g., Average, Sum, Minimum, Maximum, or percentile), along with the period and unit, for a metric data query used in the metric math expression of the anomaly detector. (AI-inferred)
     metric_stat: Any = None
-    # The time interval, in seconds, used to aggregate the metric data for the metric math expression that defines this anomaly detector. (AI-inferred)
     period: Any = None
-    # Indicates whether the time series data for this metric data query should be returned in the anomaly detector's metric math evaluation, typically set to false for intermediate helper queries and true only for the final expression whose result is used for anomaly detection. (AI-inferred)
     return_data: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_MetricMathAnomalyDetector:
-    # Specifies the list of metric data queries that define the metric math expression evaluated by this anomaly detector. (AI-inferred)
     metric_data_queries: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetector_SingleMetricAnomalyDetector:
-    # The 12-digit AWS account ID that owns the metric used by the anomaly detector, enabling cross-account anomaly detection. (AI-inferred)
     account_id: Any = None
-    # Specifies the dimensions (name-value pairs) that define the metric for which this anomaly detector is created, used to identify the metric uniquely within the single metric anomaly detector. (AI-inferred)
     dimensions: Any = None
-    # The name of the CloudWatch metric to be monitored by this single metric anomaly detector. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace of the metric to monitor with the anomaly detector, such as AWS/EC2 or a custom namespace. (AI-inferred)
     namespace: Any = None
-    # Specifies the CloudWatch statistic (such as Average, Sum, Minimum, Maximum, or SampleCount) applied to the metric in the single-metric anomaly detector configuration. (AI-inferred)
     stat: Any = None
 
 _WatchAnomalyDetector_Configuration_ExcludedTimeRangesFields = {
@@ -167,41 +140,25 @@ _WatchAnomalyDetector_SingleMetricAnomalyDetectorFields = {
 
 @dataclasses.dataclass
 class WatchAnomalyDetectorConfig:
-    # The configuration settings for the anomaly detector, specifying metric characteristics such as the period and evaluation periods (and optionally periodic spacing) that control how the detection model analyzes the metric. (AI-inferred)
     configuration: Any = None
-    # A list of dimension key-value pairs that scope the anomaly detector to a specific metric, such as an instance ID or environment, and when omitted the detector applies to the metric without any dimensions. (AI-inferred)
     dimensions: Any = None
-    # The metric_characteristics object specifies the period (in seconds) and timezone (e.g., 'UTC') used by the CloudWatch anomaly detector for evaluating the metric data. (AI-inferred)
     metric_characteristics: Any = None
-    # Defines the metric math expression anomaly detector configuration, including the metric data queries and the period (in seconds) that CloudWatch Anomaly Detector uses to establish a baseline for detecting anomalous behavior. (AI-inferred)
     metric_math_anomaly_detector: Any = None
-    # The name of the CloudWatch metric that the anomaly detector monitors, required when defining a single-metric anomaly detector. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace (e.g., AWS/EC2 or a custom namespace) that the anomaly detector applies to, identifying the metric's source. (AI-inferred)
     namespace: Any = None
-    # Specifies the CloudWatch metric (namespace, metric name, dimensions, and stat) used to create an anomaly detection band for a single metric, as opposed to a metric math expression. (AI-inferred)
     single_metric_anomaly_detector: Any = None
-    # The statistic (e.g., Average, Sum, Maximum) of the CloudWatch metric that this anomaly detector applies to, specifying which metric statistic the anomaly detection model analyzes. (AI-inferred)
     stat: Any = None
 
 @dataclasses.dataclass
 class WatchAnomalyDetectorAttrs:
-    # The configuration settings for the anomaly detector, specifying metric characteristics such as the period and evaluation periods (and optionally periodic spacing) that control how the detection model analyzes the metric. (AI-inferred)
     configuration: Any = None
-    # A list of dimension key-value pairs that scope the anomaly detector to a specific metric, such as an instance ID or environment, and when omitted the detector applies to the metric without any dimensions. (AI-inferred)
     dimensions: Any = None
     id: Any = None
-    # The metric_characteristics object specifies the period (in seconds) and timezone (e.g., 'UTC') used by the CloudWatch anomaly detector for evaluating the metric data. (AI-inferred)
     metric_characteristics: Any = None
-    # Defines the metric math expression anomaly detector configuration, including the metric data queries and the period (in seconds) that CloudWatch Anomaly Detector uses to establish a baseline for detecting anomalous behavior. (AI-inferred)
     metric_math_anomaly_detector: Any = None
-    # The name of the CloudWatch metric that the anomaly detector monitors, required when defining a single-metric anomaly detector. (AI-inferred)
     metric_name: Any = None
-    # The CloudWatch namespace (e.g., AWS/EC2 or a custom namespace) that the anomaly detector applies to, identifying the metric's source. (AI-inferred)
     namespace: Any = None
-    # Specifies the CloudWatch metric (namespace, metric name, dimensions, and stat) used to create an anomaly detection band for a single metric, as opposed to a metric math expression. (AI-inferred)
     single_metric_anomaly_detector: Any = None
-    # The statistic (e.g., Average, Sum, Maximum) of the CloudWatch metric that this anomaly detector applies to, specifying which metric statistic the anomaly detection model analyzes. (AI-inferred)
     stat: Any = None
 
 WatchAnomalyDetector = ubx.ResourceBinding(

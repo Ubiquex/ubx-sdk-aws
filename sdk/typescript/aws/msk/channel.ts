@@ -23,22 +23,17 @@ export interface Channel_IcebergDestinationConfiguration_DeadLetterQueueS3 {
 }
 
 export interface Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceList {
-  /** The name of a source field in the Kafka record (key or value) that is used as a partition column in the destination Iceberg table. (AI-inferred) */
   sourceName?: string | Computed<string>;
 }
 
 export interface Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec {
   partitionStrategy?: string | Computed<string>;
-  /** In the MSK channel's Iceberg destination configuration, this list defines the source columns (with their partition transforms) from each incoming Kafka record that determine how data is partitioned in the corresponding destination Iceberg table. (AI-inferred) */
   sourceList?: Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceList[] | Computed<Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec_SourceList[]>;
 }
 
 export interface Channel_IcebergDestinationConfiguration_DestinationTableList {
-  /** The name of the destination database in the target Apache Iceberg catalog where the replicated table is stored, as specified in the Iceberg destination table list. (AI-inferred) */
   destinationDatabaseName?: string | Computed<string>;
-  /** The name of the Apache Iceberg destination table that the channel's delivery stream writes records to. (AI-inferred) */
   destinationTableName?: string | Computed<string>;
-  /** Specifies the partitioning scheme for the destination Iceberg table, defining how records are grouped into table partitions using transforms such as bucket, truncate, or time-based functions. (AI-inferred) */
   partitionSpec?: Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec | Computed<Channel_IcebergDestinationConfiguration_DestinationTableList_PartitionSpec>;
 }
 
@@ -143,7 +138,6 @@ export interface Channel_TopicConfigurationList_RecordConverter {
 }
 
 export interface Channel_TopicConfigurationList_RecordSchema {
-  /** The ARN of the AWS Glue Schema Registry schema used to define the record format for the Kafka topic, enabling serialization and validation of messages. (AI-inferred) */
   gsrArn?: string | Computed<string>;
 }
 

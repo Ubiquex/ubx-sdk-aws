@@ -4,7 +4,6 @@ package ssmgui
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectPreferences_ConnectionRecordingPreferences_RecordingDestinations_S3Buckets struct {
-	// The name of the S3 bucket used as a destination where connection recording sessions are stored. (AI-inferred)
 	BucketName any
 	BucketOwner any
 }

@@ -15,9 +15,7 @@ class HubDelegatedAdminConfig:
 class HubDelegatedAdminAttrs:
     # The AWS-account identifier of the account to designate as the Security Hub CSPM administrator account.
     admin_account_id: Any = None
-    # The AWS account identifier of the delegated Security Hub administrator. (AI-inferred)
     delegated_admin_identifier: Any = None
-    # The current delegation status of the Security Hub delegated administrator account, typically ENABLED or DISABLED. (AI-inferred)
     status: Any = None
 
 HubDelegatedAdmin = ubx.ResourceBinding(

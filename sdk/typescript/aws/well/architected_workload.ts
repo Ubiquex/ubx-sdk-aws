@@ -9,9 +9,7 @@ export interface ArchitectedWorkload_DiscoveryConfig {
 }
 
 export interface ArchitectedWorkload_Tags {
-  /** Defines the key (name) of a tag attached to the Well-Architected workload, used to organize, identify, and control access to the workload resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag key applied to the AWS Well-Architected workload, used for metadata, cost allocation, or resource management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

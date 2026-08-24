@@ -4,9 +4,7 @@ package redshift
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Tags struct {
-	// The key name of a tag assigned to this Redshift event subscription, used for management and identifying the resource. (AI-inferred)
 	Key any
-	// The value of a key-value tag attached to the AWS Redshift event subscription, used for identifying and managing the resource. (AI-inferred)
 	Value any
 }
 

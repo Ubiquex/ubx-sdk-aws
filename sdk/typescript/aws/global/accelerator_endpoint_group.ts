@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AcceleratorEndpointGroup_EndpointConfigurations {
-  /** The ARN of the AWS resource (such as an Application Load Balancer, Network Load Balancer, or EC2 instance) that is attached as an endpoint in this endpoint group. (AI-inferred) */
   attachmentArn?: string | Computed<string>;
-  /** Indicates whether client IP address preservation is enabled for this endpoint, which keeps the original client IP address in the packet headers forwarded by Global Accelerator to the endpoint. (AI-inferred) */
   clientIppreservationEnabled?: boolean | Computed<boolean>;
-  /** The ARN of the endpoint resource (such as an Application Load Balancer, Network Load Balancer, EC2 instance, or Elastic IP address) that Global Accelerator routes traffic to for this endpoint configuration. (AI-inferred) */
   endpointId?: string | Computed<string>;
-  /** The weight assigned to the endpoint, controlling the proportion of traffic routed to it relative to other endpoints in the group (values 0-255, higher means more traffic). (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
 export interface AcceleratorEndpointGroup_PortOverrides {
-  /** The actual port on the endpoint that receives traffic when this port override is applied, replacing the listener port for the mapped endpoint. (AI-inferred) */
   endpointPort?: number | Computed<number>;
-  /** Specifies the original port on the accelerator listener that this port override maps to the endpoint port, redirecting traffic received on that listener port to the endpoint's configured port. (AI-inferred) */
   listenerPort?: number | Computed<number>;
 }
 
@@ -38,7 +32,6 @@ export interface AcceleratorEndpointGroupConfig {
   endpointGroupRegion: string | Computed<string>;
   /** The time in seconds between each health check for an endpoint. Must be a value of 10 or 30 */
   healthCheckIntervalSeconds?: number | Computed<number>;
-  /** The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred) */
   healthCheckPath?: string | Computed<string>;
   /** The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group. */
   healthCheckPort?: number | Computed<number>;
@@ -46,7 +39,6 @@ export interface AcceleratorEndpointGroupConfig {
   healthCheckProtocol?: string | Computed<string>;
   /** The Amazon Resource Name (ARN) of the listener */
   listenerArn: string | Computed<string>;
-  /** A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred) */
   portOverrides?: AcceleratorEndpointGroup_PortOverrides[] | Computed<AcceleratorEndpointGroup_PortOverrides[]>;
   /** The number of consecutive health checks required to set the state of the endpoint to unhealthy. */
   thresholdCount?: number | Computed<number>;
@@ -63,7 +55,6 @@ export interface AcceleratorEndpointGroupAttrs {
   endpointGroupRegion: string;
   /** The time in seconds between each health check for an endpoint. Must be a value of 10 or 30 */
   healthCheckIntervalSeconds: number;
-  /** The URI path that AWS Global Accelerator uses to perform health checks against endpoints in the endpoint group, such as '/health' or '/'. (AI-inferred) */
   healthCheckPath: string;
   /** The port that AWS Global Accelerator uses to check the health of endpoints in this endpoint group. */
   healthCheckPort: number;
@@ -71,7 +62,6 @@ export interface AcceleratorEndpointGroupAttrs {
   healthCheckProtocol: string;
   /** The Amazon Resource Name (ARN) of the listener */
   listenerArn: string;
-  /** A list of port overrides that map a listener port to a different endpoint port for the endpoint group, allowing traffic to be redirected to a custom port on the endpoint. (AI-inferred) */
   portOverrides: AcceleratorEndpointGroup_PortOverrides[];
   /** The number of consecutive health checks required to set the state of the endpoint to unhealthy. */
   thresholdCount: number;

@@ -45,7 +45,6 @@ class AgentCoreOnlineEvaluationConfig_OutputConfig:
 class AgentCoreOnlineEvaluationConfig_Rule_Filters_Value:
     boolean_value: Any = None
     double_value: Any = None
-    # Provides the string to match in a rule filter for the Bedrock Agent Core online evaluation configuration, when the filter's value type is STRING, to determine which interactions are evaluated. (AI-inferred)
     string_value: Any = None
 
 @dataclasses.dataclass
@@ -75,7 +74,6 @@ class AgentCoreOnlineEvaluationConfig_Rule:
 
 @dataclasses.dataclass
 class AgentCoreOnlineEvaluationConfig_Tags:
-    # The key of a tag attached to the Bedrock agent core online evaluation configuration, used to organize and identify the resource by custom metadata such as environment or project. (AI-inferred)
     key: Any = None
     value: Any = None
 

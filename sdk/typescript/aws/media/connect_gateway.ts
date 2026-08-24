@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectGateway_Networks {
-  /** CIDR block of the subnet where the gateway's network interface resides, used to define the network's IP address range. (AI-inferred) */
   cidrBlock?: string | Computed<string>;
-  /** The name of the network interface, used to identify it within the gateway. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

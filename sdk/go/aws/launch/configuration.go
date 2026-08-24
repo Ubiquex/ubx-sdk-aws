@@ -4,30 +4,19 @@ package launch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Configuration_BlockDeviceMappings_Ebs struct {
-	// Controls whether the EBS volume defined in this block device mapping is automatically deleted when the EC2 instance terminates. (AI-inferred)
 	DeleteOnTermination any
-	// Whether the EBS volume in this block device mapping is encrypted, using the default AWS KMS key or the one specified by kms_key_id. (AI-inferred)
 	Encrypted any
-	// The number of I/O operations per second (IOPS) to provision for the EBS volume, which is required when the volume type is `io1` (provisioned IOPS SSD) in the launch configuration's block device mapping. (AI-inferred)
 	Iops any
-	// The ID of the snapshot to use as the source for the EBS volume in this block device mapping. (AI-inferred)
 	SnapshotId any
-	// The throughput (in MiB/s) to provision for the EBS volume, which is applicable only when the volume type is gp3. (AI-inferred)
 	Throughput any
-	// The size of the Amazon EBS volume, in GiB, for the block device mapping in the Auto Scaling launch configuration. (AI-inferred)
 	VolumeSize any
-	// Specifies the Amazon EBS volume type (e.g., gp2, gp3, io1, st1, sc1, standard) for the block device mapped in the launch configuration, affecting performance and cost. (AI-inferred)
 	VolumeType any
 }
 
 type Configuration_BlockDeviceMappings struct {
-	// The device name (e.g., /dev/xvda, /dev/sdb) exposed to the EC2 instance for this block device mapping in the launch configuration. (AI-inferred)
 	DeviceName any
-	// The EBS-specific settings (e.g., volume size, type, IOPS, snapshot, encryption, delete-on-termination) for the volume attached via this block device mapping in the Auto Scaling launch configuration. (AI-inferred)
 	Ebs any
-	// When set to true, suppresses the block device mapping for the specified device name, so the launch configuration does not attach that device to instances launched from it. (AI-inferred)
 	NoDevice any
-	// Specifies the virtual device name (such as ephemeral0 or ephemeral1) for an ephemeral (instance store) block device in the launch configuration's block device mapping. (AI-inferred)
 	VirtualName any
 }
 

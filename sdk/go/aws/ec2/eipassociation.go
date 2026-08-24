@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type EipassociationConfig struct {
 	// The allocation ID. This is required.
 	AllocationId any
-	// The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred)
 	Eip any
 	// The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.
 	InstanceId any
@@ -19,9 +18,7 @@ type EipassociationConfig struct {
 type EipassociationAttrs struct {
 	// The allocation ID. This is required.
 	AllocationId any
-	// The Elastic IP address (IPv4) to associate with the specified instance or network interface; this can be an IP string or a reference to an EIP resource. (AI-inferred)
 	Eip any
-	// The unique identifier of the Elastic IP association, which is the association ID (e.g., eipassoc-...) returned by AWS. (AI-inferred)
 	Id any
 	// The ID of the instance. The instance must have exactly one attached network interface. You can specify either the instance ID or the network interface ID, but not both.
 	InstanceId any

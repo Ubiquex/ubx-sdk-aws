@@ -17,7 +17,6 @@ type PublicRepository_RepositoryCatalogData struct {
 }
 
 type PublicRepository_Tags struct {
-	// The key of a tag attached to the ECR public repository, used to identify, categorize, and organize the repository within your AWS environment. (AI-inferred)
 	Key any
 	Value any
 }
@@ -47,7 +46,6 @@ type PublicRepositoryConfig struct {
 }
 
 type PublicRepositoryAttrs struct {
-	// The Amazon Resource Name (ARN) assigned to the public ECR repository. (AI-inferred)
 	Arn any
 	// The details about the repository that are publicly visible in the Amazon ECR Public Gallery. For more information, see [Amazon ECR Public repository catalog data](https://docs.aws.amazon.com/AmazonECR/latest/public/public-repository-catalog-data.html) in the *Amazon ECR Public User Guide*.
 	RepositoryCatalogData any

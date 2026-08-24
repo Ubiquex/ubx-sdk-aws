@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FargateProfile_Selectors_Labels:
-    # The key of a Kubernetes label pair used in the selector to match pods that will be scheduled on the Fargate profile. (AI-inferred)
     key: Any = None
-    # The value of a Kubernetes label, paired with its key in the selector’s labels map, that a pod must have to be eligible for scheduling on this Fargate profile. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class FargateProfile_Selectors:
-    # Specifies Kubernetes labels (key-value pairs) that the selector uses to match pods in the specified namespace for scheduling on Fargate. (AI-inferred)
     labels: Any = None
-    # The Kubernetes namespace that this selector matches; only pods running in this namespace are eligible to be scheduled onto Fargate. (AI-inferred)
     namespace: Any = None
 
 _FargateProfile_Selectors_LabelsFields = {
@@ -42,16 +38,13 @@ class FargateProfileConfig:
     fargate_profile_name: Any = None
     # The IAM policy arn for pods
     pod_execution_role_arn: Any = None
-    # Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
     selectors: Any = None
-    # Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
     subnets: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
 
 @dataclasses.dataclass
 class FargateProfileAttrs:
-    # The Amazon Resource Name (ARN) of the Fargate profile. (AI-inferred)
     arn: Any = None
     # Name of the Cluster
     cluster_name: Any = None
@@ -59,9 +52,7 @@ class FargateProfileAttrs:
     fargate_profile_name: Any = None
     # The IAM policy arn for pods
     pod_execution_role_arn: Any = None
-    # Specifies the Kubernetes namespaces and label selectors that determine which pods are scheduled to run on Fargate using this profile. (AI-inferred)
     selectors: Any = None
-    # Specifies the list of subnet IDs where Amazon EKS launches Fargate pods for this profile; if omitted, the subnets selected for the EKS cluster are used. (AI-inferred)
     subnets: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

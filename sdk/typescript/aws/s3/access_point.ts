@@ -14,7 +14,6 @@ export interface AccessPoint_PublicAccessBlockConfiguration {
 
 export interface AccessPoint_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair attached to the S3 access point, used for metadata, cost allocation, and tag-based access control through IAM policies. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -48,7 +47,6 @@ export interface AccessPointConfig {
   name?: string | Computed<string>;
   /** The Access Point Policy you want to apply to this access point. */
   policy?: unknown | Computed<unknown>;
-  /** Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred) */
   publicAccessBlockConfiguration?: AccessPoint_PublicAccessBlockConfiguration | Computed<AccessPoint_PublicAccessBlockConfiguration>;
   /** An arbitrary set of tags (key-value pairs) for this S3 Access Point. */
   tags?: AccessPoint_Tags[] | Computed<AccessPoint_Tags[]>;
@@ -71,7 +69,6 @@ export interface AccessPointAttrs {
   networkOrigin: string;
   /** The Access Point Policy you want to apply to this access point. */
   policy: unknown;
-  /** Configuration block that specifies the public access block settings for this S3 access point, controlling whether public ACLs and public bucket policies are blocked and whether the access point can be accessed by public buckets. (AI-inferred) */
   publicAccessBlockConfiguration: AccessPoint_PublicAccessBlockConfiguration;
   /** An arbitrary set of tags (key-value pairs) for this S3 Access Point. */
   tags: AccessPoint_Tags[];

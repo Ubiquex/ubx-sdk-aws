@@ -17,20 +17,14 @@ class DataMigration_DataMigrationSettings:
 
 @dataclasses.dataclass
 class DataMigration_SourceDataSettings:
-    # Specifies the position in the source database's transaction log (such as binary log) from which AWS DMS starts reading changes when using change data capture (CDC) for the data migration. (AI-inferred)
     cdcstart_position: Any = None
-    # The timestamp (in the source database's timezone) from which change data capture (CDC) begins for ongoing replication in the data migration. (AI-inferred)
     cdcstart_time: Any = None
-    # Specifies the UTC timestamp at which Change Data Capture (CDC) stops collecting incremental changes from the source database for this data migration. (AI-inferred)
     cdcstop_time: Any = None
-    # Specifies the name of the PostgreSQL replication slot that DMS uses to capture change data for ongoing replication (change data capture) from the source database. (AI-inferred)
     slot_name: Any = None
 
 @dataclasses.dataclass
 class DataMigration_Tags:
-    # The key of a tag attached to the AWS DMS data migration resource, used for categorizing, cost tracking, and access control. (AI-inferred)
     key: Any = None
-    # Specifies the value of a tag attached to the DMS data migration resource, used to categorize and manage the resource. (AI-inferred)
     value: Any = None
 
 _DataMigration_DataMigrationSettingsFields = {
@@ -57,7 +51,6 @@ class DataMigrationConfig:
     data_migration_identifier: Any = None
     # The property describes a name to identify the data migration.
     data_migration_name: Any = None
-    # Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred)
     data_migration_settings: Any = None
     # The property describes the type of migration.
     data_migration_type: Any = None
@@ -80,7 +73,6 @@ class DataMigrationAttrs:
     data_migration_identifier: Any = None
     # The property describes a name to identify the data migration.
     data_migration_name: Any = None
-    # Specifies the execution settings for the data migration, including the number of parallel jobs to run (NumberOfJobs) and the JSON selection rules that determine which database objects are included in the migration. (AI-inferred)
     data_migration_settings: Any = None
     # The property describes the type of migration.
     data_migration_type: Any = None

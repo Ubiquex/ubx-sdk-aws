@@ -9,7 +9,6 @@ type ConfigRule_Compliance struct {
 }
 
 type ConfigRule_EvaluationModes struct {
-	// Specifies the evaluation mode of the AWS Config rule, which is either 'DETECTIVE' (evaluates resources after changes are made) or 'PROACTIVE' (evaluates resources before deployment to prevent noncompliant resources). (AI-inferred)
 	Mode any
 }
 
@@ -34,11 +33,8 @@ type ConfigRule_Source_CustomPolicyDetails struct {
 }
 
 type ConfigRule_Source_SourceDetails struct {
-	// For a custom AWS Config rule, this field indicates the AWS service that emits the events that trigger the rule, and the only valid value is `aws.config`. (AI-inferred)
 	EventSource any
-	// Specifies how often AWS Config runs the rule's evaluations (e.g., One_Hour, TwentyFour_Hours) when the rule's source details define a periodic trigger. (AI-inferred)
 	MaximumExecutionFrequency any
-	// The type of event that triggers the AWS Config rule's Lambda function, such as ConfigurationItemChangeNotification or ScheduledNotification. (AI-inferred)
 	MessageType any
 }
 
@@ -109,11 +105,9 @@ type ConfigRuleConfig struct {
 }
 
 type ConfigRuleAttrs struct {
-	// The Amazon Resource Name (ARN) of the AWS Config rule, automatically assigned by AWS when the rule is created and used to uniquely identify the rule. (AI-inferred)
 	Arn any
 	// Indicates whether an AWS resource or CC rule is compliant and provides the number of contributors that affect the compliance.
 	Compliance any
-	// The unique identifier assigned by AWS to the Config rule when it is created. (AI-inferred)
 	ConfigRuleId any
 	// A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
 	ConfigRuleName any

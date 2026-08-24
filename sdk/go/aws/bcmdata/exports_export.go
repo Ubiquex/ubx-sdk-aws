@@ -4,65 +4,44 @@ package bcmdata
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExportsExport_Export_DataQuery struct {
-	// The SQL query statement that specifies the cost and usage data to include in the export, such as selecting specific columns from a billing or cost report table. (AI-inferred)
 	QueryStatement any
-	// Defines per-table configuration settings for the data query as a map of table names to property maps, enabling options such as the identity table's 'IncludeLinkedAccounts' flag. (AI-inferred)
 	TableConfigurations any
 }
 
 type ExportsExport_Export_DestinationConfigurations_S3Destination_S3OutputConfigurations struct {
-	// Specifies the compression format (for example, GZIP) applied to the exported data files written to the S3 destination. (AI-inferred)
 	Compression any
-	// Specifies the output file format for the export's S3 destination, which must be either CSV or PARQUET. (AI-inferred)
 	Format any
-	// Specifies whether the export's S3 output uses the original AWS Cost and Usage Report schema (ORIGINAL) or a custom schema (CUSTOM) defined in the export. (AI-inferred)
 	OutputType any
-	// Specifies whether an export job overwrites existing files in the Amazon S3 destination (e.g., 'OVERWRITE') or preserves them and writes new files (e.g., 'NOT_OVERWRITE'). (AI-inferred)
 	Overwrite any
 }
 
 type ExportsExport_Export_DestinationConfigurations_S3Destination struct {
-	// The name of the S3 bucket to which the BCM Data Export's output files are delivered. (AI-inferred)
 	S3Bucket any
-	// Specifies the AWS account ID of the owner of the S3 bucket where the cost and usage data export is delivered. (AI-inferred)
 	S3BucketOwner any
-	// Specifies the output configuration for the S3 destination, controlling the compression, format, and output type of the exported data files. (AI-inferred)
 	S3OutputConfigurations any
-	// The S3 object key prefix prepended to exported files written to the destination bucket, used to organize the export output under a specific folder path. (AI-inferred)
 	S3Prefix any
-	// The AWS region where the destination S3 bucket is located, used to configure where the BCM data export is delivered. (AI-inferred)
 	S3Region any
 }
 
 type ExportsExport_Export_DestinationConfigurations struct {
-	// The S3 destination configuration specifies the Amazon S3 bucket (and optional prefix, region, and KMS key ARN) where the BCM data export output files are delivered. (AI-inferred)
 	S3Destination any
 }
 
 type ExportsExport_Export_RefreshCadence struct {
-	// Determines whether the data export is refreshed synchronously (on demand) or asynchronously (on a recurring schedule), with allowed values SYNCHRONOUS and ASYNCHRONOUS. (AI-inferred)
 	Frequency any
 }
 
 type ExportsExport_Export struct {
-	// Defines the SQL query statement and table configurations that determine which cost and usage data is included in the export. (AI-inferred)
 	DataQuery any
-	// Specifies a user-defined description for the BCM data export, providing a human-readable label for the export's purpose or contents. (AI-inferred)
 	Description any
-	// Defines the Amazon S3 destination for the exported cost and usage data, specifying the bucket, prefix, and output format such as CSV or Parquet. (AI-inferred)
 	DestinationConfigurations any
-	// The Amazon Resource Name (ARN) that uniquely identifies the data export, returned after the export is created. (AI-inferred)
 	ExportArn any
-	// The user-defined unique name for the data export, required when creating an AWS BCM Data Exports export resource. (AI-inferred)
 	Name any
-	// Defines the refresh schedule for the export, using a `frequency` attribute that must be either `SYNCHRONOUS` to refresh data in real time or `ASYNC` to refresh on a preconfigured schedule. (AI-inferred)
 	RefreshCadence any
 }
 
 type ExportsExport_Tags struct {
-	// The tag key (left side of a key-value pair) applied to the BCM data export, which can be used for cost allocation and resource filtering in AWS Cost Management. (AI-inferred)
 	Key any
-	// The value assigned to a tag key on the BCM data export, allowing you to categorize and filter exports by custom metadata. (AI-inferred)
 	Value any
 }
 
@@ -72,16 +51,12 @@ var ExportsExport_TagsFields = ubx.FieldMap{
 	}
 
 type ExportsExportConfig struct {
-	// Defines the customer-managed tags (key-value pairs) to associate with the BCM data export resource, allowing you to categorize, identify, and filter exports for billing and cost management. (AI-inferred)
 	Tags any
 }
 
 type ExportsExportAttrs struct {
-	// The computed export object contains the full definition of the BCM data export, including its name, description, data query (query statement and table configurations), destination configuration (S3 bucket, prefix, region, and output settings), and refresh cadence. (AI-inferred)
 	Export any
-	// The Amazon Resource Name (ARN) that uniquely identifies the created BCM data export. (AI-inferred)
 	ExportArn any
-	// Defines the customer-managed tags (key-value pairs) to associate with the BCM data export resource, allowing you to categorize, identify, and filter exports for billing and cost management. (AI-inferred)
 	Tags any
 }
 

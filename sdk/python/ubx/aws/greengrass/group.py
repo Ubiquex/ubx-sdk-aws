@@ -8,19 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Group_InitialVersion:
-    # Specifies the Amazon Resource Name (ARN) of a connector definition version to associate with the group's initial version, defining which connectors are available in the group. (AI-inferred)
     connector_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the core definition version to associate with the initial Greengrass group version. (AI-inferred)
     core_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of the device definition version to include in the initial group version when the group is created. (AI-inferred)
     device_definition_version_arn: Any = None
-    # The ARN of the function definition version that defines the Lambda functions for the Greengrass group, included in the initial group version configuration. (AI-inferred)
     function_definition_version_arn: Any = None
-    # The Amazon Resource Name (ARN) of a Greengrass logger definition version to associate with the group's initial version, enabling the group to use the specified logging configuration. (AI-inferred)
     logger_definition_version_arn: Any = None
-    # This field specifies the Amazon Resource Name (ARN) of the resource definition version that defines the local resources available to the Greengrass group's initial group version, which is used when the group is first created. (AI-inferred)
     resource_definition_version_arn: Any = None
-    # The ARN of the subscription definition version to associate with the group's initial version. (AI-inferred)
     subscription_definition_version_arn: Any = None
 
 _Group_InitialVersionFields = {
@@ -35,32 +28,20 @@ _Group_InitialVersionFields = {
 
 @dataclasses.dataclass
 class GroupConfig:
-    # Specifies the initial version of the Greengrass group, which includes references to the core, devices, functions, loggers, subscriptions, and resource definitions that define the group's initial configuration. (AI-inferred)
     initial_version: Any = None
-    # The name of the Greengrass group, which is a user-defined identifier for the group in AWS IoT Greengrass. (AI-inferred)
     name: Any = None
-    # The ARN of an IAM role that AWS Greengrass assumes on behalf of the group to access other AWS services (e.g., for Lambda function execution or connector interactions). (AI-inferred)
     role_arn: Any = None
-    # Tags to assign to the Greengrass group, providing key-value metadata for organizing, identifying, and managing the resource in AWS. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class GroupAttrs:
-    # The Amazon Resource Name (ARN) of the Greengrass group, automatically assigned by AWS when the group is created. (AI-inferred)
     arn: Any = None
-    # The AWS-assigned unique identifier for the Greengrass group. (AI-inferred)
     id: Any = None
-    # Specifies the initial version of the Greengrass group, which includes references to the core, devices, functions, loggers, subscriptions, and resource definitions that define the group's initial configuration. (AI-inferred)
     initial_version: Any = None
-    # The Amazon Resource Name (ARN) of the latest version of the Greengrass group. (AI-inferred)
     latest_version_arn: Any = None
-    # The name of the Greengrass group, which is a user-defined identifier for the group in AWS IoT Greengrass. (AI-inferred)
     name: Any = None
-    # The ARN of an IAM role that AWS Greengrass assumes on behalf of the group to access other AWS services (e.g., for Lambda function execution or connector interactions). (AI-inferred)
     role_arn: Any = None
-    # The timestamp (in milliseconds) when the IAM role was attached to the Greengrass group. (AI-inferred)
     role_attached_at: Any = None
-    # Tags to assign to the Greengrass group, providing key-value metadata for organizing, identifying, and managing the resource in AWS. (AI-inferred)
     tags: Any = None
 
 Group = ubx.ResourceBinding(

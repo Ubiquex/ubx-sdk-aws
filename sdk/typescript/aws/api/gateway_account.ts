@@ -2,14 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayAccountConfig {
-  /** The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred) */
   cloudWatchRoleArn?: string | Computed<string>;
 }
 
 export interface GatewayAccountAttrs {
-  /** The ARN of the IAM role that Amazon API Gateway assumes to write logs and metrics to CloudWatch. (AI-inferred) */
   cloudWatchRoleArn: string;
-  /** The id is the AWS account ID for which the API Gateway account settings are configured. (AI-inferred) */
   id: string;
 }
 

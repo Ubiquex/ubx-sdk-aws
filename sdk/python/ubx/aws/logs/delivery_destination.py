@@ -15,9 +15,7 @@ class DeliveryDestination_DeliveryDestinationPolicy:
 
 @dataclasses.dataclass
 class DeliveryDestination_Tags:
-    # This field specifies the key of a tag applied to the CloudWatch Logs delivery destination, allowing you to categorize and filter the resource for cost tracking and access management. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the CloudWatch Logs delivery destination, used for organizing, categorizing, and controlling access to the destination via IAM policies. (AI-inferred)
     value: Any = None
 
 _DeliveryDestination_DeliveryDestinationPolicyFields = {
@@ -32,7 +30,6 @@ _DeliveryDestination_TagsFields = {
 
 @dataclasses.dataclass
 class DeliveryDestinationConfig:
-    # The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred)
     delivery_destination_policy: Any = None
     # Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay.
     delivery_destination_type: Any = None
@@ -49,7 +46,6 @@ class DeliveryDestinationConfig:
 class DeliveryDestinationAttrs:
     # The Amazon Resource Name (ARN) that uniquely identifies a resource.
     arn: Any = None
-    # The IAM resource policy attached to the delivery destination, specifying which AWS accounts or services are granted permission to deliver log events to this destination. (AI-inferred)
     delivery_destination_policy: Any = None
     # Displays whether this delivery destination is CloudWatch Logs, Amazon S3, Kinesis Data Firehose, or XRay.
     delivery_destination_type: Any = None

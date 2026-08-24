@@ -9,16 +9,12 @@ export interface RepositoryCreationTemplate_EncryptionConfiguration {
 }
 
 export interface RepositoryCreationTemplate_ImageTagMutabilityExclusionFilters {
-  /** Specifies the type of filter for image tag mutability exclusions, where 'ALL' matches every tag and 'REGEX' uses a regular expression pattern in the corresponding value field. (AI-inferred) */
   imageTagMutabilityExclusionFilterType?: string | Computed<string>;
-  /** This field specifies the tag pattern (such as a regex or wildcard expression) that identifies image tags excluded from the repository creation template's image tag mutability policy, allowing those tags to be overwritten even in immutable repositories. (AI-inferred) */
   imageTagMutabilityExclusionFilterValue?: string | Computed<string>;
 }
 
 export interface RepositoryCreationTemplate_ResourceTags {
-  /** The key of a tag that this repository creation template automatically applies to newly created Amazon ECR repositories. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag key-value pair in the ResourceTags list of the AWS ECR Repository Creation Template, used to add metadata for identification, categorization, and cost allocation. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -63,7 +59,6 @@ export interface RepositoryCreationTemplateConfig {
 export interface RepositoryCreationTemplateAttrs {
   /** A list of enumerable Strings representing the repository creation scenarios that this template will apply towards. The supported scenarios are PULL_THROUGH_CACHE, REPLICATION, and CREATE_ON_PUSH */
   appliedFor: string[];
-  /** The creation timestamp (in ISO 8601 format) recorded by AWS ECR when this repository creation template was first created, provided as a read-only computed attribute. (AI-inferred) */
   createdAt: string;
   /** The ARN of the role to be assumed by Amazon ECR. Amazon ECR will assume your supplied role when the customRoleArn is specified. When this field isn't specified, Amazon ECR will use the service-linked role for the repository creation template. */
   customRoleArn: string;
@@ -83,7 +78,6 @@ export interface RepositoryCreationTemplateAttrs {
   repositoryPolicy: string;
   /** The metadata to apply to the repository to help you categorize and organize. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters. */
   resourceTags: RepositoryCreationTemplate_ResourceTags[];
-  /** The timestamp indicating when the AWS ECR repository creation template was last updated. (AI-inferred) */
   updatedAt: string;
 }
 

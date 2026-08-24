@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IpamresourceDiscoveryAssociation_Tags {
-  /** The key of a user-defined tag attached to the IPAM resource discovery association, used to organize and identify the resource within AWS. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the value of a tag key attached to the IPAM resource discovery association, used to organize and identify the association for purposes like cost allocation and access management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

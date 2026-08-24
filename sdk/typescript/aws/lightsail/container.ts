@@ -2,29 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Container_ContainerServiceDeployment_Containers_Environment {
-  /** Sets the value for an environment variable key in the container, which is passed to the container at runtime in the Lightsail container service deployment. (AI-inferred) */
   value?: string | Computed<string>;
-  /** The name of an environment variable for the container, paired with its value in the container's environment map. (AI-inferred) */
   variable?: string | Computed<string>;
 }
 
 export interface Container_ContainerServiceDeployment_Containers_Ports {
-  /** The port number that the container listens on, used by the Lightsail container service to expose the container's application to incoming traffic. (AI-inferred) */
   port?: string | Computed<string>;
-  /** The protocol assigned to a container's open port, such as HTTP, HTTPS, TCP, or UDP, defining how traffic reaches the container within an AWS Lightsail container service deployment. (AI-inferred) */
   protocol?: string | Computed<string>;
 }
 
 export interface Container_ContainerServiceDeployment_Containers {
-  /** Specifies the command to run inside the container, overriding the default entrypoint or command from the container image, as an array of strings. (AI-inferred) */
   command?: string[] | Computed<string[]>;
-  /** The unique name of the container within the Lightsail container service deployment, used to identify the container in the deployment configuration and when routing traffic from the service's public endpoint. (AI-inferred) */
   containerName?: string | Computed<string>;
-  /** Defines the environment variables (as key-value pairs) to pass into the container within a Lightsail container service deployment. (AI-inferred) */
   environment?: Container_ContainerServiceDeployment_Containers_Environment[] | Computed<Container_ContainerServiceDeployment_Containers_Environment[]>;
-  /** Specifies the container image (e.g., a Docker Hub image or Amazon ECR repository URI) to use for this container in the Lightsail container service deployment. (AI-inferred) */
   image?: string | Computed<string>;
-  /** Defines the ports on which the container listens, including the port number and the protocol (HTTP, HTTPS, TCP, or UDP) that the container service routes requests to for each exposed port. (AI-inferred) */
   ports?: Container_ContainerServiceDeployment_Containers_Ports[] | Computed<Container_ContainerServiceDeployment_Containers_Ports[]>;
 }
 
@@ -72,15 +63,12 @@ export interface Container_PrivateRegistryAccess {
 }
 
 export interface Container_PublicDomainNames {
-  /** The name of the SSL/TLS certificate associated with the corresponding public domain name in the Lightsail container service configuration. (AI-inferred) */
   certificateName?: string | Computed<string>;
-  /** The list of fully qualified domain names (such as subdomains or alternate names) attached to a main domain entry for the Lightsail container service, used to route custom domain traffic to the service. (AI-inferred) */
   domainNames?: string[] | Computed<string[]>;
 }
 
 export interface Container_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag key attached to the Lightsail container service, used to categorize and manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -170,7 +158,6 @@ export interface ContainerConfig {
 }
 
 export interface ContainerAttrs {
-  /** The Amazon Resource Name (ARN) of the Lightsail container service. (AI-inferred) */
   containerArn: string;
   /** Describes a container deployment configuration of an Amazon Lightsail container service. */
   containerServiceDeployment: Container_ContainerServiceDeployment;

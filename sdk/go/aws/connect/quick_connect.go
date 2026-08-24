@@ -41,7 +41,6 @@ type QuickConnect_QuickConnectConfig struct {
 }
 
 type QuickConnect_Tags struct {
-	// The key of a tag attached to the Amazon Connect quick connect resource, used to categorize and organize the resource. (AI-inferred)
 	Key any
 	Value any
 }

@@ -11,7 +11,6 @@ type Room_MessageReviewHandler struct {
 }
 
 type Room_Tags struct {
-	// The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred)
 	Key any
 	Value any
 }

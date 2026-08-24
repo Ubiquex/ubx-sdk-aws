@@ -4,20 +4,14 @@ package deadline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueueLimitAssociationConfig struct {
-	// The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred)
 	FarmId any
-	// The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred)
 	LimitId any
-	// The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred)
 	QueueId any
 }
 
 type QueueLimitAssociationAttrs struct {
-	// The unique identifier of the farm that contains the queue and limit to be associated. (AI-inferred)
 	FarmId any
-	// The unique identifier of the Deadline Cloud limit to associate with the queue. (AI-inferred)
 	LimitId any
-	// The unique identifier of the Deadline Cloud queue that is associated with the specified limit. (AI-inferred)
 	QueueId any
 }
 

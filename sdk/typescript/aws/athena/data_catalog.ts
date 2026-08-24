@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataCatalog_Tags {
   key?: string | Computed<string>;
-  /** The value string of a user-defined tag attached to the Athena data catalog, used for resource organization and access control. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -25,7 +24,6 @@ export interface DataCatalogConfig {
   parameters?: unknown | Computed<unknown>;
   /** The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously. */
   status?: string | Computed<string>;
-  /** Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred) */
   tags?: DataCatalog_Tags[] | Computed<DataCatalog_Tags[]>;
   /** The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass. */
   type: string | Computed<string>;
@@ -44,7 +42,6 @@ export interface DataCatalogAttrs {
   parameters: unknown;
   /** The status of the creation or deletion of the data catalog. LAMBDA, GLUE, and HIVE data catalog types are created synchronously. Their status is either CREATE_COMPLETE or CREATE_FAILED. The FEDERATED data catalog type is created asynchronously. */
   status: string;
-  /** Specifies the key-value tags to attach to the Athena data catalog for metadata management, cost allocation, and access control. (AI-inferred) */
   tags: DataCatalog_Tags[];
   /** The type of data catalog to create: LAMBDA for a federated catalog, GLUE for AWS Glue Catalog, or HIVE for an external hive metastore. FEDERATED is a federated catalog for which Athena creates the connection and the Lambda function for you based on the parameters that you pass. */
   type: string;

@@ -6,7 +6,6 @@ export interface StudioSessionMappingConfig {
   identityName: string | Computed<string>;
   /** Specifies whether the identity to map to the Studio is a user or a group. */
   identityType: string | Computed<string>;
-  /** The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred) */
   sessionPolicyArn: string | Computed<string>;
   /** The ID of the Amazon EMR Studio to which the user or group will be mapped. */
   studioId: string | Computed<string>;
@@ -17,7 +16,6 @@ export interface StudioSessionMappingAttrs {
   identityName: string;
   /** Specifies whether the identity to map to the Studio is a user or a group. */
   identityType: string;
-  /** The ARN of the IAM policy that defines the permissions for the EMR Studio session assigned to the mapped user or group. (AI-inferred) */
   sessionPolicyArn: string;
   /** The ID of the Amazon EMR Studio to which the user or group will be mapped. */
   studioId: string;

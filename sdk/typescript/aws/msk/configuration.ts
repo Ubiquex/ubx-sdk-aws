@@ -2,37 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Configuration_LatestRevision {
-  /** Creation time of the latest revision of the MSK configuration, returned as an RFC3339 timestamp string. (AI-inferred) */
   creationTime?: string | Computed<string>;
-  /** The description of the latest revision of this Amazon MSK configuration, which is an optional user-defined string. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The revision number of the latest version of the MSK configuration, incremented each time the configuration is updated. (AI-inferred) */
   revision?: number | Computed<number>;
 }
 
 export interface ConfigurationConfig {
-  /** A user-friendly description of the MSK configuration. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred) */
   kafkaVersionsList?: string[] | Computed<string[]>;
-  /** The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred) */
   serverProperties: string | Computed<string>;
 }
 
 export interface ConfigurationAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this MSK configuration. (AI-inferred) */
   arn: string;
-  /** A user-friendly description of the MSK configuration. (AI-inferred) */
   description: string;
-  /** Defines the list of Apache Kafka versions that this MSK configuration supports, restricting its use to clusters running one of the specified versions. (AI-inferred) */
   kafkaVersionsList: string[];
-  /** Provides details about the latest revision of the MSK configuration, including its revision number, creation time, and description. (AI-inferred) */
   latestRevision: Configuration_LatestRevision;
-  /** The name of the MSK configuration, which must be unique within an AWS account and Region. (AI-inferred) */
   name: string;
-  /** Specifies the Apache Kafka server properties for this MSK configuration, supplied as a string of newline-separated `key=value` pairs that define broker settings such as `auto.create.topics.enable`. (AI-inferred) */
   serverProperties: string;
 }
 

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Vpngateway_Tags {
-  /** The key of a tag assigned to the VPN Gateway, used to label and categorize the resource for identification and management. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value portion of a tag applied to the AWS VPN gateway, allowing you to store arbitrary metadata such as a name, environment, or cost-center alongside the tag key. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -29,7 +27,6 @@ export interface VpngatewayAttrs {
   tags: Vpngateway_Tags[];
   /** The type of VPN connection the virtual private gateway supports. */
   type: string;
-  /** The unique identifier assigned by AWS to the VPN gateway upon creation. (AI-inferred) */
   vpngatewayId: string;
 }
 

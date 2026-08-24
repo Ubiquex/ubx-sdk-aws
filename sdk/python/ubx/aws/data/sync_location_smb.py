@@ -32,7 +32,6 @@ class SyncLocationSmb_MountOptions:
 
 @dataclasses.dataclass
 class SyncLocationSmb_Tags:
-    # The key of a tag to assign to the DataSync SMB location, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

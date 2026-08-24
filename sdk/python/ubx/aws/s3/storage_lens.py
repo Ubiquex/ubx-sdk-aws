@@ -29,7 +29,6 @@ class StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel_
 
 @dataclasses.dataclass
 class StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel_PrefixLevel:
-    # Configures the S3 Storage Lens prefix-level storage metrics settings, including whether metrics are enabled and the prefix selection criteria (include/exclude prefixes) for the bucket-level prefix aggregation. (AI-inferred)
     storage_metrics: Any = None
 
 @dataclasses.dataclass
@@ -49,9 +48,7 @@ class StorageLens_StorageLensConfiguration_AccountLevel_BucketLevel:
 
 @dataclasses.dataclass
 class StorageLens_StorageLensConfiguration_AccountLevel_StorageLensGroupLevel_StorageLensGroupSelectionCriteria:
-    # Specifies the list of Storage Lens group names to exclude from the account-level Storage Lens aggregation, so that metrics from those groups are not included in the overall view. (AI-inferred)
     exclude: Any = None
-    # The list of Storage Lens group names or ARNs to include in the account-level metrics aggregation, limiting S3 Storage Lens to collect metrics only for the storage covered by those groups. (AI-inferred)
     include: Any = None
 
 @dataclasses.dataclass
@@ -114,9 +111,7 @@ class StorageLens_StorageLensConfiguration_DataExport:
 
 @dataclasses.dataclass
 class StorageLens_StorageLensConfiguration_Exclude:
-    # The list of S3 bucket ARNs to exclude from the Storage Lens configuration's metrics. (AI-inferred)
     buckets: Any = None
-    # Specifies the AWS Regions to exclude from generating Amazon S3 Storage Lens metrics, meaning buckets in those regions are ignored in the aggregated view. (AI-inferred)
     regions: Any = None
 
 @dataclasses.dataclass
@@ -152,7 +147,6 @@ class StorageLens_StorageLensConfiguration:
 @dataclasses.dataclass
 class StorageLens_Tags:
     key: Any = None
-    # Specifies the value component of a key-value tag assigned to the S3 Storage Lens configuration, which can be used to categorize, filter, and control access to the resource via IAM and AWS Organizations policies. (AI-inferred)
     value: Any = None
 
 _StorageLens_TagsFields = {

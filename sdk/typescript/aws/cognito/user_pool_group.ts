@@ -2,28 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolGroupConfig {
-  /** A description of the user pool group. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred) */
   groupName?: string | Computed<string>;
-  /** Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred) */
   precedence?: number | Computed<number>;
-  /** The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred) */
   roleArn?: string | Computed<string>;
-  /** The ID of the Cognito user pool that this group belongs to. (AI-inferred) */
   userPoolId: string | Computed<string>;
 }
 
 export interface UserPoolGroupAttrs {
-  /** A description of the user pool group. (AI-inferred) */
   description: string;
-  /** The name of the Cognito user pool group, which serves as the group's unique identifier within the user pool and is referenced in IAM policies and app client authentication flows. (AI-inferred) */
   groupName: string;
-  /** Defines the numerical precedence of the group, which determines the IAM role that Cognito applies when a user belongs to multiple groups, with lower numbers having higher priority. (AI-inferred) */
   precedence: number;
-  /** The Amazon Resource Name (ARN) of the IAM role that is associated with the user pool group and applied to its users. (AI-inferred) */
   roleArn: string;
-  /** The ID of the Cognito user pool that this group belongs to. (AI-inferred) */
   userPoolId: string;
 }
 

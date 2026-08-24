@@ -15,7 +15,6 @@ class Room_MessageReviewHandler:
 
 @dataclasses.dataclass
 class Room_Tags:
-    # The key of a tag assigned to the IVS Chat Room, used to organize and identify the resource (e.g., 'Environment' or 'Owner'). (AI-inferred)
     key: Any = None
     value: Any = None
 

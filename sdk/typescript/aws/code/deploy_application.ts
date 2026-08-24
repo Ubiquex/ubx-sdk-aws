@@ -3,7 +3,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DeployApplication_Tags {
   key?: string | Computed<string>;
-  /** The value component of a key-value tag attached to the CodeDeploy application. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

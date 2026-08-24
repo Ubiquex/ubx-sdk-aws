@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerRotationSchedule_ExternalSecretRotationMetadata:
-    # The key of a key-value pair in the external_secret_rotation_metadata map, which is passed as metadata to an external rotation Lambda function to customize the rotation process. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -77,13 +76,11 @@ class ManagerRotationScheduleConfig:
     external_secret_rotation_metadata: Any = None
     # The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret.
     external_secret_rotation_role_arn: Any = None
-    # Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred)
     hosted_rotation_lambda: Any = None
     # Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window.
     rotate_immediately_on_update: Any = None
     # The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function.
     rotation_lambda_arn: Any = None
-    # Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred)
     rotation_rules: Any = None
     # The ARN or name of the secret to rotate.
     secret_id: Any = None
@@ -94,7 +91,6 @@ class ManagerRotationScheduleAttrs:
     external_secret_rotation_metadata: Any = None
     # The ARN of the IAM role that is used by Secrets Manager to rotate a managed external secret.
     external_secret_rotation_role_arn: Any = None
-    # Configuration for a hosted AWS Secrets Manager rotation Lambda function, including the rotation type (e.g., MySQLSingleUser) and optional settings such as VPC configuration and a custom function name, which AWS Secrets Manager provisions and manages automatically to rotate the secret. (AI-inferred)
     hosted_rotation_lambda: Any = None
     # The ARN of the secret.
     id: Any = None
@@ -102,7 +98,6 @@ class ManagerRotationScheduleAttrs:
     rotate_immediately_on_update: Any = None
     # The ARN of an existing Lambda rotation function. To specify a rotation function that is also defined in this template, use the Ref function.
     rotation_lambda_arn: Any = None
-    # Defines the rotation schedule for the secret, including how often it rotates (via automatically_after_days or a cron/rate expression) and optionally the rotation window duration. (AI-inferred)
     rotation_rules: Any = None
     # The ARN or name of the secret to rotate.
     secret_id: Any = None

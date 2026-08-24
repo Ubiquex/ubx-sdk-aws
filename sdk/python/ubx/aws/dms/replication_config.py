@@ -8,30 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReplicationConfig_ComputeConfig:
-    # Specifies the Availability Zone (AZ) in which the AWS DMS replication instance associated with this replication config will be provisioned. (AI-inferred)
     availability_zone: Any = None
-    # Specifies the custom DNS name servers (as a comma-separated list of IP addresses) that the AWS DMS replication instance uses for name resolution. (AI-inferred)
     dns_name_servers: Any = None
-    # The ARN or ID of the AWS KMS key used to encrypt data on the storage attached to the AWS DMS replication instance. (AI-inferred)
     kms_key_id: Any = None
-    # The maximum number of DMS capacity units that the replication can scale to, defining the upper limit of compute capacity for the AWS DMS replication config. (AI-inferred)
     max_capacity_units: Any = None
-    # Sets the minimum number of DMS capacity units to provision for a serverless replication, defining the lower bound for automatic scaling of compute resources. (AI-inferred)
     min_capacity_units: Any = None
-    # Specifies whether to enable Multi-AZ deployment for the AWS DMS replication config's compute environment, providing high availability by provisioning a standby replica in a different Availability Zone. (AI-inferred)
     multi_az: Any = None
-    # Specifies the preferred weekly maintenance window (in UTC, format ddd:hh24:mi-ddd:hh24:mi) during which AWS Database Migration Service can perform maintenance on the replication services associated with this replication config. (AI-inferred)
     preferred_maintenance_window: Any = None
-    # The identifier of the AWS DMS replication subnet group in which the replication instance for this replication config is deployed. (AI-inferred)
     replication_subnet_group_id: Any = None
-    # Specifies the VPC security group IDs to associate with the compute configuration for the AWS DMS replication, controlling network access to the replication environment. (AI-inferred)
     vpc_security_group_ids: Any = None
 
 @dataclasses.dataclass
 class ReplicationConfig_Tags:
-    # The key of a key-value tag that can be attached to the DMS replication configuration for resource management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value portion of a tag assigned to the AWS DMS replication configuration, used for metadata, identification, and cost allocation. (AI-inferred)
     value: Any = None
 
 _ReplicationConfig_ComputeConfigFields = {

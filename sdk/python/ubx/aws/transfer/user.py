@@ -8,27 +8,19 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class User_HomeDirectoryMappings:
-    # For each home directory mapping of an AWS Transfer Family user, this field specifies the logical directory path that the user will see, which is paired with a target path to define the mapping. (AI-inferred)
     entry: Any = None
-    # Specifies the destination absolute or relative path in the Amazon S3 bucket or Amazon EFS file system to which the 'Entry' logical directory is mapped for this AWS Transfer Family user. (AI-inferred)
     target: Any = None
-    # Specifies whether the home directory mapping entry maps to a file ('FILE') or a directory ('DIRECTORY') in AWS Transfer Family. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class User_PosixProfile:
-    # Specifies the POSIX group ID (GID) that maps to the user's group on the file transfer server's backing storage, determining file ownership and access permissions for the associated AWS Transfer Family user. (AI-inferred)
     gid: Any = None
-    # Specifies the secondary group IDs (GIDs) for the user's POSIX profile, granting additional group memberships that affect file and folder access on the AWS Transfer server. (AI-inferred)
     secondary_gids: Any = None
-    # Defines the numeric POSIX user ID (UID) that AWS Transfer Family uses to set file ownership and permission checks for this user on the underlying file system (e.g., Amazon EFS). (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
 class User_Tags:
-    # The key of a user-defined tag applied to an AWS Transfer Family user, used for identifying, organizing, and managing the user resource within AWS. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair applied to the AWS Transfer Family user, used for resource organization and access control. (AI-inferred)
     value: Any = None
 
 _User_HomeDirectoryMappingsFields = {
@@ -50,50 +42,31 @@ _User_TagsFields = {
 
 @dataclasses.dataclass
 class UserConfig:
-    # The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred)
     home_directory: Any = None
-    # Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred)
     home_directory_mappings: Any = None
-    # Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred)
     home_directory_type: Any = None
-    # A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred)
     policy: Any = None
-    # Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred)
     posix_profile: Any = None
-    # The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred)
     role: Any = None
-    # The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred)
     server_id: Any = None
     # This represents the SSH User Public Keys for CloudFormation resource
     ssh_public_keys: Any = None
-    # Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred)
     tags: Any = None
-    # Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred)
     user_name: Any = None
 
 @dataclasses.dataclass
 class UserAttrs:
-    # The Amazon Resource Name (ARN) uniquely identifying the AWS Transfer Family user, assigned by AWS when the user is created. (AI-inferred)
     arn: Any = None
-    # The landing directory (folder) for the user when they log in to the Transfer Family server, specified as an absolute path or a virtual path that can include the {Transfer:UserName} variable. (AI-inferred)
     home_directory: Any = None
-    # Specifies a set of logical directory mappings that translate a user's home directory path to a target S3 or EFS location, allowing different storage paths to be presented as a single virtual path. (AI-inferred)
     home_directory_mappings: Any = None
-    # Determines whether the user's home directory is defined as a logical directory (LOGICAL) or a direct file system path (PATH), with PATH being the default when this property is not specified. (AI-inferred)
     home_directory_type: Any = None
-    # A JSON string specifying an IAM scope-down policy that restricts the permissions of the AWS Transfer Family user, allowing multiple users to share the same IAM role with different access levels. (AI-inferred)
     policy: Any = None
-    # Specifies the POSIX user profile, including the UID, GID, and secondary group IDs, used by the AWS Transfer Family user for file system permissions and ownership when operating over SFTP, FTPS, or FTP. (AI-inferred)
     posix_profile: Any = None
-    # The IAM role that AWS Transfer Family assumes to define the user's permissions for accessing the underlying storage (e.g., Amazon S3) and other resources. (AI-inferred)
     role: Any = None
-    # The unique identifier of the AWS Transfer Family server to which this user is associated. (AI-inferred)
     server_id: Any = None
     # This represents the SSH User Public Keys for CloudFormation resource
     ssh_public_keys: Any = None
-    # Assigns customizable metadata tags to the AWS Transfer Family user, enabling categorization, cost allocation, and access-control scoping across AWS resources. (AI-inferred)
     tags: Any = None
-    # Sets the unique login name for the user in the AWS Transfer Family service, which must be unique within the associated server and is used to identify and authenticate the user during file transfer sessions. (AI-inferred)
     user_name: Any = None
 
 User = ubx.ResourceBinding(

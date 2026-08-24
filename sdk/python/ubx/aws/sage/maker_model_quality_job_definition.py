@@ -84,7 +84,6 @@ class MakerModelQualityJobDefinition_ModelQualityJobInput_BatchTransformInput:
     local_path: Any = None
     # Index or JSONpath to locate probabilities
     probability_attribute: Any = None
-    # Number between 0 and 1 that defines the threshold for converting a model's probability scores into binary labels for model quality monitoring on batch transform jobs. (AI-inferred)
     probability_threshold_attribute: Any = None
     # Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
     s3_data_distribution_type: Any = None
@@ -105,7 +104,6 @@ class MakerModelQualityJobDefinition_ModelQualityJobInput_EndpointInput:
     local_path: Any = None
     # Index or JSONpath to locate probabilities
     probability_attribute: Any = None
-    # Sets the probability threshold value used by the SageMaker model quality monitoring job to convert the endpoint's model probability outputs into binary predictions for computing quality metrics. (AI-inferred)
     probability_threshold_attribute: Any = None
     # Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defauts to FullyReplicated
     s3_data_distribution_type: Any = None
@@ -125,16 +123,12 @@ class MakerModelQualityJobDefinition_ModelQualityJobInput:
 
 @dataclasses.dataclass
 class MakerModelQualityJobDefinition_ModelQualityJobOutputConfig_MonitoringOutputs_S3Output:
-    # The local directory path on the processing instance where the model quality monitoring output is written before being uploaded to the specified S3 location. (AI-inferred)
     local_path: Any = None
-    # Specifies how the monitoring output is uploaded to Amazon S3, either continuously ('Continuous') or only after the monitoring job completes ('EndOfJob'). (AI-inferred)
     s3_upload_mode: Any = None
-    # The S3 URI that specifies the destination bucket and prefix where the model quality monitoring job's output artifacts (such as reports and statistics) are saved. (AI-inferred)
     s3_uri: Any = None
 
 @dataclasses.dataclass
 class MakerModelQualityJobDefinition_ModelQualityJobOutputConfig_MonitoringOutputs:
-    # Specifies the S3 output destination for a model quality monitoring job, defining the local path in the container and the S3 URI where results are uploaded. (AI-inferred)
     s3_output: Any = None
 
 @dataclasses.dataclass

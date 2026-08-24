@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ConfigDeploymentStrategy_Tags:
-    # The key portion of a key-value tag applied to the AWS AppConfig deployment strategy, used to assign custom metadata for resource management and cost allocation. (AI-inferred)
     key: Any = None
-    # The value portion of a user-defined tag attached to the AWS AppConfig deployment strategy, used to label and categorize the resource for cost tracking and operational management. (AI-inferred)
     value: Any = None
 
 _ConfigDeploymentStrategy_TagsFields = {

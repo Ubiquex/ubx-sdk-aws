@@ -4,9 +4,7 @@ package neptune
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Tags struct {
-	// The key of a tag attached to the Neptune event subscription, used to organize, categorize, and identify the subscription for cost allocation and resource management. (AI-inferred)
 	Key any
-	// The value of a tag attached to the Neptune event subscription, used for metadata such as environment, owner, or cost tracking. (AI-inferred)
 	Value any
 }
 

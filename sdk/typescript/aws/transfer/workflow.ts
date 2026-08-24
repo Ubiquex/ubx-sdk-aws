@@ -2,101 +2,68 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation {
-  /** The name of the S3 bucket that serves as the destination for the file copy operation in this exception step of the Transfer Family workflow. (AI-inferred) */
   bucket?: string | Computed<string>;
-  /** Specifies the S3 object key (file path) used as the destination location for the copy step when a workflow executes in its on-exception path. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation {
-  /** Specifies the S3 destination bucket and key prefix for the copy step within an exception handler of an AWS Transfer Family workflow, defining where the file will be copied when an error occurs. (AI-inferred) */
   s3FileLocation?: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation | Computed<Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation>;
 }
 
 export interface Workflow_OnExceptionSteps_CopyStepDetails {
-  /** Defines the target S3 bucket/prefix or EFS path to which the file is copied when this copy step executes as part of the workflow's exception handling. (AI-inferred) */
   destinationFileLocation?: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation | Computed<Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation>;
-  /** The user-defined descriptive name for this copy step in the exception handler branch of the AWS Transfer Family workflow. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether the copy step overwrites an existing destination file (TRUE) or does not overwrite it (FALSE) when executed as part of an on_exception_steps path in an AWS Transfer Family workflow. (AI-inferred) */
   overwriteExisting?: string | Computed<string>;
-  /** Specifies the source file path for a copy step, which can be a literal path or a workflow variable (e.g., ${original.file}) that identifies the file to copy from the source server. (AI-inferred) */
   sourceFileLocation?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_CustomStepDetails {
-  /** The `name` property specifies a descriptive name for a custom step (which invokes an AWS Lambda function) in the on-exception steps of an AWS Transfer Family workflow. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the source file location (relative to the user's home directory) that is used as input to this custom step in an AWS Transfer Family workflow. (AI-inferred) */
   sourceFileLocation?: string | Computed<string>;
-  /** The ARN of the AWS Lambda function invoked by this custom step when it runs as part of the workflow's on-exception branch. (AI-inferred) */
   target?: string | Computed<string>;
-  /** The maximum time in seconds that a custom step in the exception path is allowed to run before the workflow times out. (AI-inferred) */
   timeoutSeconds?: number | Computed<number>;
 }
 
 export interface Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocation {
-  /** The unique identifier of the Amazon EFS file system to which the decrypted file is written as part of the workflow step. (AI-inferred) */
   fileSystemId?: string | Computed<string>;
-  /** The EFS filesystem path (directory) to which the decrypted file is written when this decrypt step runs as part of the workflow's exception handling steps. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation {
-  /** The EFS file system location (file system ID and path) where the decrypted file is written as the destination for the decrypt step. (AI-inferred) */
   efsFileLocation?: Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocation | Computed<Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation_EfsFileLocation>;
-  /** Specifies the Amazon S3 bucket and object key that serve as the destination location for files after the decryption step in an exception handling path of an AWS Transfer Family workflow. (AI-inferred) */
   s3FileLocation?: Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation | Computed<Workflow_OnExceptionSteps_CopyStepDetails_DestinationFileLocation_S3FileLocation>;
 }
 
 export interface Workflow_OnExceptionSteps_DecryptStepDetails {
-  /** For a decrypt step in an AWS Transfer Family workflow exception path, this object defines the destination (either an S3 bucket/prefix or an EFS file system path) where the decrypted file is written. (AI-inferred) */
   destinationFileLocation?: Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation | Computed<Workflow_OnExceptionSteps_DecryptStepDetails_DestinationFileLocation>;
-  /** Sets a descriptive name for the decrypt step when it is included in the workflow's on-exception steps. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies whether to overwrite an existing file with the same name or rename the existing file when the decrypted file is written to the destination. (AI-inferred) */
   overwriteExisting?: string | Computed<string>;
-  /** Specifies the source file location (such as an S3 object key or EFS path) that the decrypt step in the workflow operates on. (AI-inferred) */
   sourceFileLocation?: string | Computed<string>;
-  /** Specifies the decryption type to use, such as PGP, for the file processed in this workflow step. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_DeleteStepDetails {
-  /** The name field in the delete step details assigns a descriptive identifier to the delete step within the workflow's on-exception branch, used to recognize the step in logs and operational monitoring. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The source file location (path) of the file to delete in the delete step, which can be a static path or a workflow variable such as ${original.file}, resolved against the user's home directory on the AWS Transfer Family server. (AI-inferred) */
   sourceFileLocation?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_TagStepDetails_Tags {
-  /** The key of a tag to attach to the file when this tag step runs in the on-exception branch of the Transfer Family workflow. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a user-defined tag to apply to the file when the tag step runs as part of the workflow's exception handler. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Workflow_OnExceptionSteps_TagStepDetails {
-  /** Specifies the tag key (the name of the tag) to assign to the file when this tag step runs as part of the workflow's exception handling. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Specifies the file path or workflow variable that identifies which uploaded file this tag step (on an exception branch) applies tags to, defaulting to the original file if omitted. (AI-inferred) */
   sourceFileLocation?: string | Computed<string>;
-  /** The key-value tags that are applied to a file when a tag step runs as part of the on-exception path (exception handling) of an AWS Transfer Family workflow. (AI-inferred) */
   tags?: Workflow_OnExceptionSteps_TagStepDetails_Tags[] | Computed<Workflow_OnExceptionSteps_TagStepDetails_Tags[]>;
 }
 
 export interface Workflow_OnExceptionSteps {
-  /** Configures the destination Amazon S3 bucket, key prefix, and optional overwrite behavior for copying a file when this step runs as part of the workflow's on-exception path. (AI-inferred) */
   copyStepDetails?: Workflow_OnExceptionSteps_CopyStepDetails | Computed<Workflow_OnExceptionSteps_CopyStepDetails>;
-  /** The custom_step_details object specifies the AWS Lambda function target and an optional name for a custom step within an exception-handling branch of an AWS Transfer Family workflow. (AI-inferred) */
   customStepDetails?: Workflow_OnExceptionSteps_CustomStepDetails | Computed<Workflow_OnExceptionSteps_CustomStepDetails>;
-  /** Specifies the decryption configuration for a copy/decrypt step in the workflow's error-handling branch, including source and destination file locations, the decryption key type (e.g., PGP), and whether to overwrite existing files. (AI-inferred) */
   decryptStepDetails?: Workflow_OnExceptionSteps_DecryptStepDetails | Computed<Workflow_OnExceptionSteps_DecryptStepDetails>;
-  /** Specifies the details of a delete step (such as the source file location and file name) that runs when this workflow's on-exception branch is triggered. (AI-inferred) */
   deleteStepDetails?: Workflow_OnExceptionSteps_DeleteStepDetails | Computed<Workflow_OnExceptionSteps_DeleteStepDetails>;
-  /** Specifies the tag key (Name) and value (Value) for a TAG step in the onExceptionSteps list of an AWS Transfer Family workflow, which are applied to the transferred file when a prior step in the workflow fails. (AI-inferred) */
   tagStepDetails?: Workflow_OnExceptionSteps_TagStepDetails | Computed<Workflow_OnExceptionSteps_TagStepDetails>;
-  /** The type of workflow step to run when an exception occurs, such as COPY, CUSTOM, DELETE, TAG, or TRANSFORM. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

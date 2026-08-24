@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PodIdentityAssociation_Tags:
-    # The tag key used to label the Pod Identity Association, enabling cost allocation, access control, and resource identification. (AI-inferred)
     key: Any = None
-    # The value of a tag key-value pair attached to the EKS Pod Identity Association, used for labeling, organizing, and managing the association with custom metadata. (AI-inferred)
     value: Any = None
 
 _PodIdentityAssociation_TagsFields = {

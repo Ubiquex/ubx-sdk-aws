@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGateway_Tags {
-  /** Defines the key of a tag applied to the transit gateway, allowing you to categorize and manage the resource with custom metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** Specifies the user-defined value portion of a tag attached to the EC2 Transit Gateway, allowing you to categorize or identify the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -14,65 +12,39 @@ const TransitGateway_TagsFields: FieldMap = {
 };
 
 export interface TransitGatewayConfig {
-  /** The private Autonomous System Number (ASN) for the Amazon side of a BGP session, used when the transit gateway is attached to a Direct Connect gateway. (AI-inferred) */
   amazonSideAsn?: number | Computed<number>;
-  /** The ID of the default route table to which new attachments (such as VPCs, VPN connections) are automatically associated when attached to the transit gateway. (AI-inferred) */
   associationDefaultRouteTableId?: string | Computed<string>;
-  /** Indicates whether attachment requests from other accounts that share the transit gateway are automatically accepted (enable) or require manual acceptance (disable). (AI-inferred) */
   autoAcceptSharedAttachments?: string | Computed<string>;
-  /** Controls whether transit gateway attachments are automatically associated with the transit gateway's default route table, accepting 'enable' or 'disable', with a default of 'enable'. (AI-inferred) */
   defaultRouteTableAssociation?: string | Computed<string>;
-  /** The ID of the default route table to which all new attachments propagate routes. (AI-inferred) */
   defaultRouteTablePropagation?: string | Computed<string>;
   description?: string | Computed<string>;
-  /** Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred) */
   dnsSupport?: string | Computed<string>;
   encryptionSupport?: string | Computed<string>;
-  /** Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred) */
   multicastSupport?: string | Computed<string>;
-  /** The propagation_default_route_table_id is the ID of the default route table that is automatically created by the transit gateway and used to propagate routes from attached resources when DefaultRouteTablePropagation is enabled. (AI-inferred) */
   propagationDefaultRouteTableId?: string | Computed<string>;
-  /** Controls whether the transit gateway supports security group referencing, which allows VPC attachments to reference security groups in their route tables; valid values are 'enable' (default) or 'disable'. (AI-inferred) */
   securityGroupReferencingSupport?: string | Computed<string>;
-  /** Attaches the specified tags to the EC2 Transit Gateway, which are key-value pairs used for identification and cost allocation. (AI-inferred) */
   tags?: TransitGateway_Tags[] | Computed<TransitGateway_Tags[]>;
-  /** Specifies the IPv4 CIDR blocks that the transit gateway uses as its internal network range, enabling it to route traffic without conflicting with the CIDRs of attached VPCs and on-premises networks. (AI-inferred) */
   transitGatewayCidrBlocks?: string[] | Computed<string[]>;
-  /** Indicates whether Equal Cost Multipath (ECMP) routing is enabled for VPN connections attached to this transit gateway, accepting values 'enable' or 'disable' (default 'enable'). (AI-inferred) */
   vpnEcmpSupport?: string | Computed<string>;
 }
 
 export interface TransitGatewayAttrs {
-  /** The private Autonomous System Number (ASN) for the Amazon side of a BGP session, used when the transit gateway is attached to a Direct Connect gateway. (AI-inferred) */
   amazonSideAsn: number;
-  /** The ID of the default route table to which new attachments (such as VPCs, VPN connections) are automatically associated when attached to the transit gateway. (AI-inferred) */
   associationDefaultRouteTableId: string;
-  /** Indicates whether attachment requests from other accounts that share the transit gateway are automatically accepted (enable) or require manual acceptance (disable). (AI-inferred) */
   autoAcceptSharedAttachments: string;
-  /** Controls whether transit gateway attachments are automatically associated with the transit gateway's default route table, accepting 'enable' or 'disable', with a default of 'enable'. (AI-inferred) */
   defaultRouteTableAssociation: string;
-  /** The ID of the default route table to which all new attachments propagate routes. (AI-inferred) */
   defaultRouteTablePropagation: string;
   description: string;
-  /** Indicates whether to enable or disable DNS support for the transit gateway, with valid values being 'enable' (default) or 'disable'. (AI-inferred) */
   dnsSupport: string;
   encryptionSupport: string;
   encryptionSupportState: string;
-  /** The unique identifier (ID) of the transit gateway, such as tgw-0a1b2c3d4e5f67890, assigned by AWS when the resource is created. (AI-inferred) */
   id: string;
-  /** Indicates whether multicast support is enabled for the transit gateway, with valid values 'enable' or 'disable' and defaulting to disabled. (AI-inferred) */
   multicastSupport: string;
-  /** The propagation_default_route_table_id is the ID of the default route table that is automatically created by the transit gateway and used to propagate routes from attached resources when DefaultRouteTablePropagation is enabled. (AI-inferred) */
   propagationDefaultRouteTableId: string;
-  /** Controls whether the transit gateway supports security group referencing, which allows VPC attachments to reference security groups in their route tables; valid values are 'enable' (default) or 'disable'. (AI-inferred) */
   securityGroupReferencingSupport: string;
-  /** Attaches the specified tags to the EC2 Transit Gateway, which are key-value pairs used for identification and cost allocation. (AI-inferred) */
   tags: TransitGateway_Tags[];
-  /** The Amazon Resource Name (ARN) that uniquely identifies the EC2 transit gateway in AWS. (AI-inferred) */
   transitGatewayArn: string;
-  /** Specifies the IPv4 CIDR blocks that the transit gateway uses as its internal network range, enabling it to route traffic without conflicting with the CIDRs of attached VPCs and on-premises networks. (AI-inferred) */
   transitGatewayCidrBlocks: string[];
-  /** Indicates whether Equal Cost Multipath (ECMP) routing is enabled for VPN connections attached to this transit gateway, accepting values 'enable' or 'disable' (default 'enable'). (AI-inferred) */
   vpnEcmpSupport: string;
 }
 

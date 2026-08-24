@@ -4,7 +4,6 @@ package game
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiftGameSessionQueue_Destinations struct {
-	// The ARN of a GameLift fleet or alias that this game session queue uses as a destination for game session placement requests. (AI-inferred)
 	DestinationArn any
 }
 
@@ -14,9 +13,7 @@ type LiftGameSessionQueue_FilterConfiguration struct {
 }
 
 type LiftGameSessionQueue_PlayerLatencyPolicies struct {
-	// Sets the maximum acceptable latency in milliseconds for an individual player to a game location; if the player's latency exceeds this threshold, that location is excluded from consideration for the player's game session placement. (AI-inferred)
 	MaximumIndividualPlayerLatencyMilliseconds any
-	// The length of time in seconds that this player latency policy remains in effect for the game session placement. (AI-inferred)
 	PolicyDurationSeconds any
 }
 
@@ -28,9 +25,7 @@ type LiftGameSessionQueue_PriorityConfiguration struct {
 }
 
 type LiftGameSessionQueue_Tags struct {
-	// The key of a tag attached to this GameLift game session queue, used to organize and identify the queue for cost and access management. (AI-inferred)
 	Key any
-	// The value component of a tag key-value pair applied to the GameLift game session queue for resource organization and management. (AI-inferred)
 	Value any
 }
 
@@ -62,7 +57,6 @@ type LiftGameSessionQueueConfig struct {
 	CustomEventData any
 	// A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
 	Destinations any
-	// Filters the locations where the queue can place new game sessions by specifying a list of allowed AWS region codes. (AI-inferred)
 	FilterConfiguration any
 	// A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
 	Name any
@@ -70,7 +64,6 @@ type LiftGameSessionQueueConfig struct {
 	NotificationTarget any
 	// A set of policies that act as a sliding cap on player latency.
 	PlayerLatencyPolicies any
-	// Specifies the priority settings for the GameLift session queue, including the order in which locations are used and the order in which placement criteria like latency and cost are prioritized. (AI-inferred)
 	PriorityConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any
@@ -85,7 +78,6 @@ type LiftGameSessionQueueAttrs struct {
 	CustomEventData any
 	// A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
 	Destinations any
-	// Filters the locations where the queue can place new game sessions by specifying a list of allowed AWS region codes. (AI-inferred)
 	FilterConfiguration any
 	// A descriptive label that is associated with game session queue. Queue names must be unique within each Region.
 	Name any
@@ -93,7 +85,6 @@ type LiftGameSessionQueueAttrs struct {
 	NotificationTarget any
 	// A set of policies that act as a sliding cap on player latency.
 	PlayerLatencyPolicies any
-	// Specifies the priority settings for the GameLift session queue, including the order in which locations are used and the order in which placement criteria like latency and cost are prioritized. (AI-inferred)
 	PriorityConfiguration any
 	// An array of key-value pairs to apply to this resource.
 	Tags any

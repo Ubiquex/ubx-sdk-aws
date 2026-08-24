@@ -14,16 +14,13 @@ class FunctionsStateMachineAlias_DeploymentPreference:
     interval: Any = None
     # The percentage of traffic to shift to the new version in each increment.
     percentage: Any = None
-    # The ARN of the state machine version to be deployed as the target of the alias's traffic-shifting deployment preference, to which traffic is gradually shifted according to the selected deployment strategy. (AI-inferred)
     state_machine_version_arn: Any = None
     # The type of deployment to perform.
     type: Any = None
 
 @dataclasses.dataclass
 class FunctionsStateMachineAlias_RoutingConfiguration:
-    # The ARN of the state machine version to which a portion of execution traffic is routed when using the alias's routing configuration. (AI-inferred)
     state_machine_version_arn: Any = None
-    # The percentage of traffic (a weight between 0 and 100) routed to the corresponding state machine version in the alias's routing configuration, where all weights in the routing configuration sum to 100. (AI-inferred)
     weight: Any = None
 
 _FunctionsStateMachineAlias_DeploymentPreferenceFields = {
@@ -49,7 +46,6 @@ class FunctionsStateMachineAliasConfig:
     name: Any = None
     # The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine.
     routing_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred)
     state_machine_arn: Any = None
 
 @dataclasses.dataclass
@@ -64,7 +60,6 @@ class FunctionsStateMachineAliasAttrs:
     name: Any = None
     # The routing configuration of the alias. One or two versions can be mapped to an alias to split StartExecution requests of the same state machine.
     routing_configuration: Any = None
-    # The Amazon Resource Name (ARN) of the Step Functions state machine that this alias refers to. (AI-inferred)
     state_machine_arn: Any = None
 
 FunctionsStateMachineAlias = ubx.ResourceBinding(

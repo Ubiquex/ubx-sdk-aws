@@ -85,16 +85,12 @@ export interface MakerDataQualityJobDefinition_DataQualityJobInput {
 }
 
 export interface MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3Output {
-  /** The local path on the container instance where the data quality monitoring job writes its output files before they are uploaded to the specified S3 destination. (AI-inferred) */
   localPath?: string | Computed<string>;
-  /** Specifies the S3 upload mode for delivering monitoring outputs, either 'Continuous' to upload data as the monitoring job runs or 'EndOfJob' to upload only after the job completes. (AI-inferred) */
   s3UploadMode?: string | Computed<string>;
-  /** The S3 URI of the bucket where the data quality monitoring job results (e.g., statistics, constraints, and reports) are stored. (AI-inferred) */
   s3Uri?: string | Computed<string>;
 }
 
 export interface MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs {
-  /** Configures the Amazon S3 location (S3 URI, local path, and optional KMS encryption key) where the data quality monitoring job's results are stored. (AI-inferred) */
   s3Output?: MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3Output | Computed<MakerDataQualityJobDefinition_DataQualityJobOutputConfig_MonitoringOutputs_S3Output>;
 }
 
@@ -143,9 +139,7 @@ export interface MakerDataQualityJobDefinition_StoppingCondition {
 }
 
 export interface MakerDataQualityJobDefinition_Tags {
-  /** The key (name) of a tag attached to the SageMaker Data Quality Job Definition, used to identify, categorize, and manage the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the AWS SageMaker Data Quality Job Definition, used for identifying, organizing, and controlling access to the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

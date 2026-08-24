@@ -8,43 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_AbpV10x_SessionKeys:
-    # The Application Session Key (AppSKey) used for encryption and decryption of application-layer payloads in the LoRaWAN ABP v1.0.x activation mode for this wireless device. (AI-inferred)
     app_skey: Any = None
-    # The LoRaWAN network session key (NwkSKey) used to secure communication between the device and network server in ABP v1.0.x activation mode. (AI-inferred)
     nwk_skey: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_AbpV10x:
-    # The 32-bit device address (DevAddr) for LoRaWAN ABP v1.0.x activation, specified as an 8-character hexadecimal string. (AI-inferred)
     dev_addr: Any = None
-    # Defines the ABP v1.0.x session keys (AppSKey and NwkSKey) for the LoRaWAN device, which are used to encrypt and authenticate uplink and downlink communications. (AI-inferred)
     session_keys: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_AbpV11_SessionKeys:
-    # The Application Session Key (AppSKey) used by AWS IoT Wireless to encrypt and decrypt application-layer payloads in the LoRaWAN ABP v1.1 session keys of the wireless device. (AI-inferred)
     app_skey: Any = None
-    # The Forward Network Session Integrity Key (FNwkSIntKey) used to verify and protect the integrity of downlink frames for a LoRaWAN 1.1 device activated via ABP (Activation by Personalization) in AWS IoT Wireless. (AI-inferred)
     fnwk_sint_key: Any = None
-    # The network session encryption key (NwkSEncKey) used to encrypt MAC commands for a LoRaWAN 1.1 device activated by personalization (ABP). (AI-inferred)
     nwk_senc_key: Any = None
-    # The serving network session integrity key (SNwkSIntKey) used for LoRaWAN ABP v1.1 activation, which authenticates and validates downlink frames from the network server. (AI-inferred)
     snwk_sint_key: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_AbpV11:
-    # The LoRaWAN device address (DevAddr) used in ABP v1.1 activation, a 32-bit identifier that uniquely identifies the device on the network. (AI-inferred)
     dev_addr: Any = None
-    # Specifies the required LoRaWAN ABP v1.1 session keys (FNwkSIntKey, SNwkSIntKey, NwkSEncKey, and AppSKey) used to encrypt and authenticate the device's network and application traffic. (AI-inferred)
     session_keys: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_Fports_Applications:
-    # The name of the AWS IoT Wireless destination that defines where uplink data sent on this LoRaWAN FPort (frame port) for this application is routed. (AI-inferred)
     destination_name: Any = None
-    # The LoRaWAN frame port (FPort) number that routes messages to the associated application for this wireless device. (AI-inferred)
     fport: Any = None
-    # The type of the LoRaWAN application (for example, SemtechGeoLocation) associated with the FPort, which tells AWS IoT Wireless how to interpret the uplink messages on that port. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -54,44 +41,29 @@ class TwirelessWirelessDevice_LoRaWan_Fports:
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_OtaaV10x:
-    # The AppEUI (Application EUI), a 64-bit identifier required for LoRaWAN OTAA v1.0.x activation, used to identify the application during the join procedure. (AI-inferred)
     app_eui: Any = None
-    # The AppKey is the 128-bit application key used for authentication and session establishment during OTAA v1.0.x activation of the LoRaWAN wireless device. (AI-inferred)
     app_key: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan_OtaaV11:
-    # The AppKey for OTAA v1.1 activation of the LoRaWAN device, a base64-encoded 128-bit key used to derive the application session key (AppSKey) for encrypting application-layer payloads. (AI-inferred)
     app_key: Any = None
-    # The JoinEUI (formerly AppEUI) of the LoRaWAN device's OTAA v1.1 activation, which identifies the join server or application server the device uses during the join procedure. (AI-inferred)
     join_eui: Any = None
-    # Specifies the LoRaWAN network key (NwkKey) used for OTAA v1.1 activation to secure communication between the wireless device and the network server. (AI-inferred)
     nwk_key: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_LoRaWan:
-    # Defines the Activation by Personalization (ABP) configuration for LoRaWAN 1.0.x devices, including the device address (DevAddr) and the network and application session keys (NwkSKey, AppSKey) used for encrypted downlink/uplink communication. (AI-inferred)
     abp_v10x: Any = None
-    # Configures the LoRaWAN 1.1 Activation by Personalization (ABP) parameters for the wireless device, including the end-device address and session keys. (AI-inferred)
     abp_v11: Any = None
-    # The DevEUI, a 16-character hex string that uniquely identifies the LoRaWAN device on the network. (AI-inferred)
     dev_eui: Any = None
-    # The unique identifier of the LoRaWAN device profile that defines the device's MAC-layer parameters, such as supported device class (A, B, or C) and other connection settings for this wireless device. (AI-inferred)
     device_profile_id: Any = None
-    # The fports object defines the LoRaWAN FPort numbers to use for Firmware Update Over The Air (FUOTA), multicast, and clock synchronization operations on the wireless device. (AI-inferred)
     fports: Any = None
-    # Over-the-air activation (OTAA) configuration for LoRaWAN 1.0.x devices, containing the DevEui, AppEui, and AppKey used to authenticate and join the device to the network. (AI-inferred)
     otaa_v10x: Any = None
-    # Specifies the LoRaWAN Over-the-Air Activation (OTAA) parameters for version 1.1, including the NwkKey, AppKey, JoinEui, and DevEui settings that define how the wireless device authenticates and joins a LoRaWAN network. (AI-inferred)
     otaa_v11: Any = None
-    # The ID of the service profile assigned to the LoRaWAN wireless device, which defines the device's communication parameters and permissions. (AI-inferred)
     service_profile_id: Any = None
 
 @dataclasses.dataclass
 class TwirelessWirelessDevice_Tags:
-    # The key component of a key-value tag applied to the AWS IoT Wireless wireless device, used for identifying and managing the device. (AI-inferred)
     key: Any = None
-    # The value portion of a key-value tag that can be attached to the AWS IoT Wireless device for resource identification, management, and cost allocation. (AI-inferred)
     value: Any = None
 
 _TwirelessWirelessDevice_LoRaWan_AbpV10x_SessionKeysFields = {
@@ -193,7 +165,6 @@ class TwirelessWirelessDeviceConfig:
     destination_name: Any = None
     # The date and time when the most recent uplink was received.
     last_uplink_received_at: Any = None
-    # Specifies the LoRaWAN configuration for the wireless device, including the device profile ID, service profile ID, and over-the-air activation parameters for connecting to AWS IoT Wireless. (AI-inferred)
     lo_ra_wan: Any = None
     # Wireless device name
     name: Any = None
@@ -218,7 +189,6 @@ class TwirelessWirelessDeviceAttrs:
     id: Any = None
     # The date and time when the most recent uplink was received.
     last_uplink_received_at: Any = None
-    # Specifies the LoRaWAN configuration for the wireless device, including the device profile ID, service profile ID, and over-the-air activation parameters for connecting to AWS IoT Wireless. (AI-inferred)
     lo_ra_wan: Any = None
     # Wireless device name
     name: Any = None

@@ -13,7 +13,6 @@ type CacheServerlessCacheSnapshot_ServerlessCacheConfiguration struct {
 }
 
 type CacheServerlessCacheSnapshot_Tags struct {
-	// A user-defined key for a tag attached to this ElastiCache serverless cache snapshot, used for organizing and identifying the resource (e.g., by environment or project). (AI-inferred)
 	Key any
 	Value any
 }
@@ -43,7 +42,6 @@ type CacheServerlessCacheSnapshotAttrs struct {
 	CreateTime any
 	// The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the snapshot. Provide the key ARN: the resource returns the key ARN on read, so supplying a bare key ID or alias for this createOnly property may be reported as drift by CloudFormation.
 	KmsKeyId any
-	// This read-only object describes the configuration of the serverless cache from which the snapshot was taken, capturing settings such as the cache engine and related parameters at snapshot time. (AI-inferred)
 	ServerlessCacheConfiguration any
 	// The name of an existing serverless cache. The snapshot is created from this cache.
 	ServerlessCacheName any

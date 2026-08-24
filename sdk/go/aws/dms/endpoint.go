@@ -521,9 +521,7 @@ type Endpoint_SybaseSettings struct {
 }
 
 type Endpoint_Tags struct {
-	// The key portion of a user-defined tag attached to the DMS endpoint, used for identifying and organizing the resource within AWS. (AI-inferred)
 	Key any
-	// Specifies the value of a user-defined tag attached to the AWS DMS endpoint. (AI-inferred)
 	Value any
 }
 

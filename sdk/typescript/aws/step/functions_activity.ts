@@ -2,18 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FunctionsActivity_EncryptionConfiguration {
-  /** Specifies the maximum duration, in seconds, that AWS Step Functions will reuse a customer-managed data key from AWS KMS before requesting a new one for encrypting activity data. (AI-inferred) */
   kmsDataKeyReusePeriodSeconds?: number | Computed<number>;
-  /** The AWS KMS key ID or ARN used to encrypt the activity's data when encryption is configured for the Step Functions activity. (AI-inferred) */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the type of encryption key used for the activity's data, distinguishing between a customer-managed AWS KMS key (CUSTOMER_MANAGED_KMS_KEY) and an AWS-owned key (AWS_OWNED_KEY). (AI-inferred) */
   type: string | Computed<string>;
 }
 
 export interface FunctionsActivity_Tags {
-  /** The key of a tag attached to the AWS Step Functions activity, used to categorize and manage the activity resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a tag attached to the Step Functions activity. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -30,19 +25,14 @@ const FunctionsActivity_TagsFields: FieldMap = {
 
 export interface FunctionsActivityConfig {
   encryptionConfiguration?: FunctionsActivity_EncryptionConfiguration | Computed<FunctionsActivity_EncryptionConfiguration>;
-  /** The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred) */
   name: string | Computed<string>;
-  /** Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred) */
   tags?: FunctionsActivity_Tags[] | Computed<FunctionsActivity_Tags[]>;
 }
 
 export interface FunctionsActivityAttrs {
-  /** The Amazon Resource Name (ARN) uniquely identifying this AWS Step Functions activity, which is used to reference the activity in state machine definitions. (AI-inferred) */
   arn: string;
   encryptionConfiguration: FunctionsActivity_EncryptionConfiguration;
-  /** The name of the Step Functions activity, which must be unique within the AWS account and region. (AI-inferred) */
   name: string;
-  /** Specifies the key-value pairs used to tag the Step Functions activity, enabling you to categorize and manage the activity's resources within AWS. (AI-inferred) */
   tags: FunctionsActivity_Tags[];
 }
 

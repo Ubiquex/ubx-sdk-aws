@@ -9,7 +9,6 @@ export interface Group_InsightsConfiguration {
 }
 
 export interface Group_Tags {
-  /** Specifies the key of a tag assigned to the AWS X-Ray group, enabling you to categorize and manage the group within your AWS environment. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -29,7 +28,6 @@ export interface GroupConfig {
   filterExpression?: string | Computed<string>;
   /** The case-sensitive name of the new group. Names must be unique. */
   groupName: string | Computed<string>;
-  /** Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred) */
   insightsConfiguration?: Group_InsightsConfiguration | Computed<Group_InsightsConfiguration>;
   /** An array of key-value pairs to apply to this resource. */
   tags?: Group_Tags[] | Computed<Group_Tags[]>;
@@ -42,7 +40,6 @@ export interface GroupAttrs {
   groupArn: string;
   /** The case-sensitive name of the new group. Names must be unique. */
   groupName: string;
-  /** Configures whether X-Ray Insights is enabled for the group, and whether email notifications for insight events are sent. (AI-inferred) */
   insightsConfiguration: Group_InsightsConfiguration;
   /** An array of key-value pairs to apply to this resource. */
   tags: Group_Tags[];

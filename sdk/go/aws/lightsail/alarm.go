@@ -29,7 +29,6 @@ type AlarmConfig struct {
 }
 
 type AlarmAttrs struct {
-	// The Amazon Resource Name (ARN) of the Lightsail alarm, uniquely identifying it in AWS. (AI-inferred)
 	AlarmArn any
 	// The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.
 	AlarmName any

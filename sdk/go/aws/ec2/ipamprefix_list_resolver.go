@@ -12,7 +12,6 @@ type IpamprefixListResolver_Rules_Conditions struct {
 	Cidr any
 	IpamPoolId any
 	Operation any
-	// Limits the rule to prefix list entries that are associated with the given AWS resource ID, such as a VPC or subnet. (AI-inferred)
 	ResourceId any
 	ResourceOwner any
 	ResourceRegion any
@@ -21,12 +20,9 @@ type IpamprefixListResolver_Rules_Conditions struct {
 
 type IpamprefixListResolver_Rules struct {
 	Conditions any
-	// The ID of the IPAM scope that this resolver rule is associated with, used to determine which IPAM-managed prefix list the rule selects during resolution. (AI-inferred)
 	IpamScopeId any
-	// Specifies the type of AWS resource (e.g., VPC, subnet) that a rule matches when resolving resources into the prefix list. (AI-inferred)
 	ResourceType any
 	RuleType any
-	// Specifies the static CIDR block included in a rule entry for the prefix list resolver, defining the IP address range used to match traffic. (AI-inferred)
 	StaticCidr any
 }
 

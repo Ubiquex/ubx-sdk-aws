@@ -8,40 +8,31 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LiveInput_Destinations_NetworkRoutes:
-    # The CIDR block (e.g., '10.0.0.0/24') for a network route associated with the MediaLive input's destination, specifying the IP address range that the route applies to. (AI-inferred)
     cidr: Any = None
     gateway: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Destinations:
-    # For a MediaLive input using a UDP or RTP push type, specifies the network IP address of the destination where the input stream is sent. (AI-inferred)
     network: Any = None
-    # The `network_routes` list within each destination defines static routes (CIDR and gateway) that MediaLive uses to route push input traffic to the specified destination IP addresses, enabling delivery through a VPC or AWS Direct Connect. (AI-inferred)
     network_routes: Any = None
     static_ip_address: Any = None
-    # The stream name of the input destination, which represents the push endpoint (for example, the RTMP stream key or URL) that an upstream encoder uses to send content to this AWS Elemental MediaLive input. (AI-inferred)
     stream_name: Any = None
 
 @dataclasses.dataclass
 class LiveInput_InputDevices:
-    # The unique ID of the AWS Elemental MediaLive input device associated with this input. (AI-inferred)
     id: Any = None
 
 @dataclasses.dataclass
 class LiveInput_MediaConnectFlows:
-    # The ARN of an AWS Elemental MediaConnect flow to attach to this MediaLive input as a source. (AI-inferred)
     flow_arn: Any = None
 
 @dataclasses.dataclass
 class LiveInput_MulticastSettings_Sources:
-    # Specifies the source IP address of the multicast input stream, used by MediaLive to bind to and receive the multicast traffic. (AI-inferred)
     source_ip: Any = None
-    # The URL of the multicast source, typically in the form of udp:// or rtp://, specifying the multicast group IP address and port from which the MediaLive input receives the stream. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class LiveInput_MulticastSettings:
-    # Configures the list of multicast source endpoints (IP addresses and ports) that MediaLive will use to receive the input stream. (AI-inferred)
     sources: Any = None
 
 @dataclasses.dataclass
@@ -51,86 +42,61 @@ class LiveInput_RouterSettings_Destinations:
 @dataclasses.dataclass
 class LiveInput_RouterSettings:
     destinations: Any = None
-    # For an SRT MediaLive input, this field sets the encryption type (AES128 or AES256) used for the incoming stream. (AI-inferred)
     encryption_type: Any = None
     secret_arn: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings_AncillarySdps:
-    # The index of the media stream in the main SDP that this ancillary SDP applies to, allowing multiple ancillary SDPs to target different media streams within the SMPTE-2110 receiver group. (AI-inferred)
     media_index: Any = None
-    # The URL of the ancillary SDP (Session Description Protocol) file that provides additional media streams (such as audio or ancillary data) for the SMPTE 2110 receiver group. (AI-inferred)
     sdp_url: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups_SdpSettings:
-    # Specifies the SDP content for each ancillary data stream (such as captions or timecode) in the SMPTE 2110 receiver group, with each item in the list providing the session description for one ancillary stream. (AI-inferred)
     ancillary_sdps: Any = None
-    # Specifies the list of SDP (Session Description Protocol) URIs for the audio streams in the SMPTE 2110 receiver group. (AI-inferred)
     audio_sdps: Any = None
-    # The Session Description Protocol (SDP) for the video stream in an SMPTE 2110 receiver group, defining the video's codec, resolution, and IP transport parameters. (AI-inferred)
     video_sdp: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Smpte2110ReceiverGroupSettings_Smpte2110ReceiverGroups:
-    # Contains the Session Description Protocol (SDP) settings, including the SDP body that describes the video and audio streams and network parameters, for the associated SMPTE 2110 receiver group in an AWS MediaLive input. (AI-inferred)
     sdp_settings: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Smpte2110ReceiverGroupSettings:
-    # Defines a list of SMPTE 2110 receiver groups, each specifying the multicast IP address and audio channel configuration used to receive the SMPTE 2110 stream for the input. (AI-inferred)
     smpte2110_receiver_groups: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Sources:
-    # Specifies the name of the AWS Systems Manager (SSM) parameter that stores the password used for authenticating to the source server when the input source requires credentials. (AI-inferred)
     password_param: Any = None
-    # Specifies the URL of the media stream to pull into the MediaLive input, such as an RTMP or RTP endpoint from which the input is retrieved. (AI-inferred)
     url: Any = None
-    # The username used for basic authentication when an AWS Elemental MediaLive pull input connects to an upstream source server (such as an RTMP or RTP source) that requires credentials. (AI-inferred)
     username: Any = None
 
 @dataclasses.dataclass
 class LiveInput_SrtSettings_SrtCallerSources_Decryption:
-    # The decryption algorithm for the SRT caller source, which must be either AES-128 or AES-256. (AI-inferred)
     algorithm: Any = None
-    # The ARN of the AWS Secrets Manager secret that stores the passphrase used to decrypt the SRT caller source stream. (AI-inferred)
     passphrase_secret_arn: Any = None
 
 @dataclasses.dataclass
 class LiveInput_SrtSettings_SrtCallerSources:
-    # Specifies the decryption settings, including the encryption algorithm (AES-128 or AES-256) and the associated decryption key, used to decrypt the incoming SRT stream from this caller source. (AI-inferred)
     decryption: Any = None
-    # The minimum latency in milliseconds for the SRT caller source, which acts as the lower bound for the SRT connection's target latency and directly influences the size of the receive buffer. (AI-inferred)
     minimum_latency: Any = None
-    # The hostname or IP address of the SRT listener that this SRT caller source will connect to. (AI-inferred)
     srt_listener_address: Any = None
-    # The TCP port on which the MediaLive input listens for incoming SRT connections from each caller source in the SRT caller sources list. (AI-inferred)
     srt_listener_port: Any = None
-    # The SRT stream ID (stream identifier) for this caller source, which MediaLive uses to identify and receive the SRT stream from that source. (AI-inferred)
     stream_id: Any = None
 
 @dataclasses.dataclass
 class LiveInput_SrtSettings_SrtListenerSettings:
-    # Configures the decryption of the incoming SRT stream for this listener, typically by specifying the ARN of an AWS Secrets Manager secret that contains the decryption key. (AI-inferred)
     decryption: Any = None
-    # Defines the minimum latency in milliseconds for the SRT listener, setting the lower bound of the configured latency window for the input. (AI-inferred)
     minimum_latency: Any = None
-    # Specifies the SRT stream ID used by the listener to identify and associate the incoming SRT stream with the MediaLive input. (AI-inferred)
     stream_id: Any = None
 
 @dataclasses.dataclass
 class LiveInput_SrtSettings:
-    # Specifies a list of SRT caller sources, each defined by a hostname and port, that connect to MediaLive to deliver SRT content for this input. (AI-inferred)
     srt_caller_sources: Any = None
-    # Configures the SRT listener for the input, specifying the allowed source IP address and port that MediaLive accepts incoming SRT connections from. (AI-inferred)
     srt_listener_settings: Any = None
 
 @dataclasses.dataclass
 class LiveInput_Vpc:
-    # The list of security group IDs associated with the VPC that the MediaLive input is attached to, controlling network access to the input. (AI-inferred)
     security_group_ids: Any = None
-    # Specifies the list of subnet IDs in the VPC where the incoming video streams for the MediaLive input will be provisioned, enabling the input's elastic network interfaces to be placed in those subnets. (AI-inferred)
     subnet_ids: Any = None
 
 _LiveInput_Destinations_NetworkRoutesFields = {
@@ -276,74 +242,42 @@ _LiveInput_VpcFields = {
 
 @dataclasses.dataclass
 class LiveInputConfig:
-    # Specifies the destination endpoints (e.g., RTMP URLs or RTP IP/port pairs) for a push input, defining the network locations where AWS MediaLive will listen for the incoming media stream. (AI-inferred)
     destinations: Any = None
-    # Specifies the MediaLive hardware input devices (such as Elemental Live or Link devices) that are attached to this input to deliver video/audio content to a MediaLive channel. (AI-inferred)
     input_devices: Any = None
-    # Specifies whether the input is located on AWS ('ON_AWS') or on-premises ('ON_PREMISES'), determining how AWS Elemental MediaLive accesses the input source. (AI-inferred)
     input_network_location: Any = None
-    # Specifies the input security groups (by ARN) to attach to this MediaLive input, which control the permitted IP addresses and CIDRs that can push content to it. (AI-inferred)
     input_security_groups: Any = None
-    # Specifies the AWS Elemental MediaConnect flows that this MediaLive input is linked to, where each flow is identified by its ARN. (AI-inferred)
     media_connect_flows: Any = None
-    # Configures the source IP address and port for a MediaLive input that receives content over multicast, enabling the input to join a specific multicast group. (AI-inferred)
     multicast_settings: Any = None
-    # The user-defined name you assign to this AWS Elemental MediaLive input, used for identification and management in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
     role_arn: Any = None
     router_settings: Any = None
-    # Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
     sdi_sources: Any = None
-    # Configures the SMPTE 2110 receiver group settings for the MediaLive input, specifying the number of receiver groups to provision for redundant IP-based media transport. (AI-inferred)
     smpte2110_receiver_group_settings: Any = None
-    # Specifies the source URLs (and optional credentials) from which AWS Elemental MediaLive pulls the input stream, typically used for pull-based input types such as RTMP_PULL or RTP_PULL. (AI-inferred)
     sources: Any = None
-    # Configures the SRT (Secure Reliable Transport) input settings for a MediaLive input, including the source IP address and listener port used to receive SRT media streams. (AI-inferred)
     srt_settings: Any = None
-    # Assigns metadata tags (key-value pairs) to the MediaLive input, which can be used for cost allocation, resource grouping, and IAM-based access control. (AI-inferred)
     tags: Any = None
-    # Defines the type of MediaLive input, such as UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, or URL_PULL, which determines the transfer protocol or method used to provide the source content. (AI-inferred)
     type: Any = None
-    # Configures the input to be provisioned inside a Virtual Private Cloud (VPC), including the subnets and security groups that define the input's network placement and access rules. (AI-inferred)
     vpc: Any = None
 
 @dataclasses.dataclass
 class LiveInputAttrs:
-    # The Amazon Resource Name (ARN) that uniquely identifies this AWS Elemental MediaLive input. (AI-inferred)
     arn: Any = None
-    # Specifies the destination endpoints (e.g., RTMP URLs or RTP IP/port pairs) for a push input, defining the network locations where AWS MediaLive will listen for the incoming media stream. (AI-inferred)
     destinations: Any = None
-    # The unique identifier assigned by AWS to the MediaLive input, used for referencing the input in other resources. (AI-inferred)
     id: Any = None
-    # Specifies the MediaLive hardware input devices (such as Elemental Live or Link devices) that are attached to this input to deliver video/audio content to a MediaLive channel. (AI-inferred)
     input_devices: Any = None
-    # Specifies whether the input is located on AWS ('ON_AWS') or on-premises ('ON_PREMISES'), determining how AWS Elemental MediaLive accesses the input source. (AI-inferred)
     input_network_location: Any = None
-    # Specifies the input security groups (by ARN) to attach to this MediaLive input, which control the permitted IP addresses and CIDRs that can push content to it. (AI-inferred)
     input_security_groups: Any = None
-    # Specifies the AWS Elemental MediaConnect flows that this MediaLive input is linked to, where each flow is identified by its ARN. (AI-inferred)
     media_connect_flows: Any = None
-    # Configures the source IP address and port for a MediaLive input that receives content over multicast, enabling the input to join a specific multicast group. (AI-inferred)
     multicast_settings: Any = None
-    # The user-defined name you assign to this AWS Elemental MediaLive input, used for identification and management in the AWS console and API operations. (AI-inferred)
     name: Any = None
-    # The ARN of the IAM role that AWS Elemental MediaLive assumes to access the input source, such as an S3 bucket for media files or an external pull endpoint. (AI-inferred)
     role_arn: Any = None
     router_settings: Any = None
-    # Associates the MediaLive input with the specified SDI sources (physical serial digital interface video inputs) by their identifiers, used when the input type is set to SDI. (AI-inferred)
     sdi_sources: Any = None
-    # Configures the SMPTE 2110 receiver group settings for the MediaLive input, specifying the number of receiver groups to provision for redundant IP-based media transport. (AI-inferred)
     smpte2110_receiver_group_settings: Any = None
-    # Specifies the source URLs (and optional credentials) from which AWS Elemental MediaLive pulls the input stream, typically used for pull-based input types such as RTMP_PULL or RTP_PULL. (AI-inferred)
     sources: Any = None
-    # Configures the SRT (Secure Reliable Transport) input settings for a MediaLive input, including the source IP address and listener port used to receive SRT media streams. (AI-inferred)
     srt_settings: Any = None
-    # Assigns metadata tags (key-value pairs) to the MediaLive input, which can be used for cost allocation, resource grouping, and IAM-based access control. (AI-inferred)
     tags: Any = None
-    # Defines the type of MediaLive input, such as UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, or URL_PULL, which determines the transfer protocol or method used to provide the source content. (AI-inferred)
     type: Any = None
-    # Configures the input to be provisioned inside a Virtual Private Cloud (VPC), including the subnets and security groups that define the input's network placement and access rules. (AI-inferred)
     vpc: Any = None
 
 LiveInput = ubx.ResourceBinding(

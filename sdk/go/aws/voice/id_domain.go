@@ -4,14 +4,11 @@ package voice
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IdDomain_ServerSideEncryptionConfiguration struct {
-	// The ARN or ID of the AWS KMS key used to encrypt the Voice ID domain's data at rest. (AI-inferred)
 	KmsKeyId any
 }
 
 type IdDomain_Tags struct {
-	// The key of a metadata tag attached to the Amazon Voice ID domain, used to categorize and identify the domain for resource management and access control. (AI-inferred)
 	Key any
-	// Value of a user-defined tag attached to the Voice ID domain. (AI-inferred)
 	Value any
 }
 
@@ -25,26 +22,17 @@ var IdDomain_TagsFields = ubx.FieldMap{
 	}
 
 type IdDomainConfig struct {
-	// Specifies a description for the Voice ID domain. (AI-inferred)
 	Description any
-	// Sets the name of the Voice ID domain, which is a required, user-friendly identifier for the domain. (AI-inferred)
 	Name any
-	// Defines the AWS KMS key used to encrypt the domain's data, required when creating a Voice ID domain. (AI-inferred)
 	ServerSideEncryptionConfiguration any
-	// A list of key-value tag objects to assign to the Voice ID domain for resource identification and management. (AI-inferred)
 	Tags any
 }
 
 type IdDomainAttrs struct {
-	// Specifies a description for the Voice ID domain. (AI-inferred)
 	Description any
-	// The unique identifier assigned by AWS to the Voice ID domain, used to reference the domain in other services. (AI-inferred)
 	DomainId any
-	// Sets the name of the Voice ID domain, which is a required, user-friendly identifier for the domain. (AI-inferred)
 	Name any
-	// Defines the AWS KMS key used to encrypt the domain's data, required when creating a Voice ID domain. (AI-inferred)
 	ServerSideEncryptionConfiguration any
-	// A list of key-value tag objects to assign to the Voice ID domain for resource identification and management. (AI-inferred)
 	Tags any
 }
 

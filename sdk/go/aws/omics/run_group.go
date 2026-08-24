@@ -4,36 +4,23 @@ package omics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RunGroupConfig struct {
-	// The maximum number of CPUs that can be used by all runs within this run group. (AI-inferred)
 	MaxCpus any
-	// Specifies the maximum duration in seconds that a run can run in this group, after which the run is automatically terminated. (AI-inferred)
 	MaxDuration any
-	// Sets the maximum number of GPUs that a single workflow run within this run group can use. (AI-inferred)
 	MaxGpus any
-	// The maximum number of concurrently running workflows that this run group is allowed to have. (AI-inferred)
 	MaxRuns any
-	// The user-specified name for the run group, used to identify the run group within the AWS account. (AI-inferred)
 	Name any
 	// A map of resource tags
 	Tags any
 }
 
 type RunGroupAttrs struct {
-	// The Amazon Resource Name (ARN) that uniquely identifies this Omics run group. (AI-inferred)
 	Arn any
-	// The time (in ISO 8601 format) when the run group was created. (AI-inferred)
 	CreationTime any
-	// The unique identifier automatically assigned by AWS Omics to the run group. (AI-inferred)
 	Id any
-	// The maximum number of CPUs that can be used by all runs within this run group. (AI-inferred)
 	MaxCpus any
-	// Specifies the maximum duration in seconds that a run can run in this group, after which the run is automatically terminated. (AI-inferred)
 	MaxDuration any
-	// Sets the maximum number of GPUs that a single workflow run within this run group can use. (AI-inferred)
 	MaxGpus any
-	// The maximum number of concurrently running workflows that this run group is allowed to have. (AI-inferred)
 	MaxRuns any
-	// The user-specified name for the run group, used to identify the run group within the AWS account. (AI-inferred)
 	Name any
 	// A map of resource tags
 	Tags any

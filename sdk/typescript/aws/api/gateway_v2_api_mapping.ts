@@ -15,7 +15,6 @@ export interface GatewayV2ApiMappingConfig {
 export interface GatewayV2ApiMappingAttrs {
   /** The API identifier. */
   apiId: string;
-  /** The unique identifier assigned by AWS to this API mapping, used to reference the mapping in API Gateway v2 operations. (AI-inferred) */
   apiMappingId: string;
   /** The API mapping key. */
   apiMappingKey: string;

@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EventSubscription_Tags {
-  /** The key name of a tag assigned to this Redshift event subscription, used for management and identifying the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a key-value tag attached to the AWS Redshift event subscription, used for identifying and managing the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

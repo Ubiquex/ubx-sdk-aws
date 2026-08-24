@@ -11,9 +11,7 @@ type ManagerLink_Bandwidth struct {
 }
 
 type ManagerLink_Tags struct {
-	// The key of a user-defined tag attached to the Network Manager link, used to organize and identify the resource for management and cost allocation purposes. (AI-inferred)
 	Key any
-	// The value of a user-defined tag attached to the Network Manager link, used for organizing, identifying, or managing cost allocation for the link. (AI-inferred)
 	Value any
 }
 

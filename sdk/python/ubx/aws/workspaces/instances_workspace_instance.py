@@ -8,48 +8,37 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_Ec2ManagedInstance:
-    # The EC2 instance identifier for the underlying compute resource that AWS fully manages for this WorkSpace instance. (AI-inferred)
     instance_id: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_BlockDeviceMappings_Ebs:
-    # Specifies whether the EBS volume for the managed instance's block device mapping is encrypted at rest, enabling AWS EBS encryption for that volume. (AI-inferred)
     encrypted: Any = None
     iops: Any = None
-    # The KMS key ID used to encrypt the EBS volume defined in the block device mapping of the managed instance for this WorkSpace instance. (AI-inferred)
     kms_key_id: Any = None
     throughput: Any = None
-    # The size of the EBS volume (in GiB) for the block device mapping on the managed instance, determining the storage capacity of the device. (AI-inferred)
     volume_size: Any = None
     volume_type: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_BlockDeviceMappings:
     device_name: Any = None
-    # Specifies the Amazon EBS volume configuration (such as volume size, type, IOPS, encryption, snapshot ID, and delete-on-termination behavior) for the block device mapping attached to the managed instance. (AI-inferred)
     ebs: Any = None
-    # When set, this field suppresses the block device mapping, preventing the specified device from being exposed to the managed instance. (AI-inferred)
     no_device: Any = None
     virtual_name: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_CapacityReservationSpecification_CapacityReservationTarget:
-    # Specifies the ID of the EC2 Capacity Reservation that the WorkSpace's managed instance should be launched into, ensuring the instance uses reserved capacity. (AI-inferred)
     capacity_reservation_id: Any = None
-    # The ARN of the resource group whose Capacity Reservation the managed instance will target, enabling the instance to use reserved EC2 capacity from that group. (AI-inferred)
     capacity_reservation_resource_group_arn: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_CapacityReservationSpecification:
-    # Specifies whether the managed EC2 instance should launch into an open Capacity Reservation (value 'open') or ignore open reservations (value 'none'), controlling how existing reserved capacity is used. (AI-inferred)
     capacity_reservation_preference: Any = None
-    # Defines the target capacity reservation (by its ID or resource group ARN) that the WorkSpace's managed instance will use to reserve compute capacity. (AI-inferred)
     capacity_reservation_target: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_CpuOptions:
     core_count: Any = None
-    # Specifies the number of threads per core for the managed instance's CPU options, with a value of 1 disabling Intel Hyper-Threading for the WorkSpace's underlying EC2 instance. (AI-inferred)
     threads_per_core: Any = None
 
 @dataclasses.dataclass
@@ -58,63 +47,47 @@ class InstancesWorkspaceInstance_ManagedInstance_CreditSpecification:
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_EnclaveOptions:
-    # When enabled, this boolean enables AWS Nitro Enclaves for the underlying managed EC2 instance that backs this WorkSpace, allowing the instance to run isolated enclave environments. (AI-inferred)
     enabled: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_HibernationOptions:
-    # Specifies whether hibernation is enabled for the WorkSpace instance, allowing it to be stopped and later resumed with its memory contents preserved. (AI-inferred)
     configured: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_IamInstanceProfile:
-    # The Amazon Resource Name (ARN) of the IAM instance profile attached to the managed instance, granting it the permissions defined by the profile's IAM role. (AI-inferred)
     arn: Any = None
-    # The name of the IAM instance profile to attach to the managed instance, which determines the IAM role and permissions granted to that instance. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_LicenseSpecifications:
-    # Specifies the ARN of an AWS License Manager license configuration to attach to the WorkSpace's managed instance, enabling license tracking and management for the software running on that instance. (AI-inferred)
     license_configuration_arn: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_MaintenanceOptions:
-    # Specifies the auto-recovery behavior for the WorkSpace's maintenance options, accepting 'ENABLED' to allow AWS to automatically restart the instance after a failure or 'DISABLED' to turn off this automatic restart. (AI-inferred)
     auto_recovery: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_MetadataOptions:
-    # Specifies whether the HTTP endpoint for the instance metadata service is enabled or disabled on the managed instance's metadata options. (AI-inferred)
     http_endpoint: Any = None
-    # Controls whether the IPv6 endpoint of the instance metadata service (IMDS) is enabled or disabled for the managed instance, permitting or blocking access to instance metadata over IPv6. (AI-inferred)
     http_protocol_ipv6: Any = None
-    # Specifies the maximum number of network hops allowed for the instance metadata service (IMDS) HTTP PUT responses, controlling the token's reachability to prevent unauthorized access to instance metadata. (AI-inferred)
     http_put_response_hop_limit: Any = None
     http_tokens: Any = None
-    # Specifies whether the managed instance can retrieve the instance's tags through the instance metadata service (allowed values are typically 'enabled' or 'disabled'). (AI-inferred)
     instance_metadata_tags: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_NetworkInterfaces:
     description: Any = None
-    # The zero-based device index of the elastic network interface attached to the WorkSpace's managed instance, where 0 represents the primary network interface. (AI-inferred)
     device_index: Any = None
-    # The list of security group IDs attached to the network interface of the managed WorkSpace instance, controlling inbound and outbound traffic. (AI-inferred)
     groups: Any = None
-    # The ID of the subnet in your VPC where the Workspace's managed network interface is deployed. (AI-inferred)
     subnet_id: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_NetworkPerformanceOptions:
-    # Determines the bandwidth weighting for the managed instance's network performance options, where 'default' uses the instance's baseline network bandwidth and 'vpc-only' restricts network traffic to the VPC and may reduce the available bandwidth. (AI-inferred)
     bandwidth_weighting: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_Placement:
-    # Sets the Availability Zone in which the underlying managed instance of this WorkSpace is launched, allowing the workload to be placed in a specific AWS data center. (AI-inferred)
     availability_zone: Any = None
-    # Specifies the ID of the EC2 placement group into which the WorkSpace's managed instance is launched, enabling low-latency, high-bandwidth network communication with other instances in the same placement group. (AI-inferred)
     group_id: Any = None
     group_name: Any = None
     partition_number: Any = None
@@ -122,66 +95,46 @@ class InstancesWorkspaceInstance_ManagedInstance_Placement:
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_PrivateDnsNameOptions:
-    # Controls whether the WorkSpaces managed EC2 instance's private DNS name gets a resource name DNS AAAA record (IPv6), enabling IPv6 DNS resolution for that resource name. (AI-inferred)
     enable_resource_name_dns_aaaarecord: Any = None
-    # When enabled, this creates a DNS A record in the VPC's private hosted zone for the resource name of the managed instance, allowing its private DNS name to resolve to the instance's IPv4 address via the resource name. (AI-inferred)
     enable_resource_name_dns_arecord: Any = None
-    # Specifies the hostname type (either 'ip-name' or 'resource-name') used for the private DNS name of the managed WorkSpaces instance, determining whether the private DNS record is based on the instance's IP address or its resource name. (AI-inferred)
     hostname_type: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_TagSpecifications_Tags:
-    # The key of a tag to apply to the managed WorkSpace instance within its tag specification. (AI-inferred)
     key: Any = None
     value: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance_TagSpecifications:
-    # Identifies the AWS resource type that the tag specification applies to, such as 'instance' for tagging the managed EC2 instance backing a WorkSpace. (AI-inferred)
     resource_type: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstance_ManagedInstance:
     block_device_mappings: Any = None
-    # Specifies the EC2 Capacity Reservation targeting options for the underlying managed instance of the WorkSpace, such as launching into a specific Capacity Reservation or using the default on-demand preference. (AI-inferred)
     capacity_reservation_specification: Any = None
-    # Specifies the CPU options, such as core count and threads per core, for the underlying managed EC2 instance that runs the WorkSpace. (AI-inferred)
     cpu_options: Any = None
     credit_specification: Any = None
-    # When set to true, this prevents the underlying managed EC2 instance for the WorkSpace from being stopped through the EC2 StopInstances API operation, allowing it to be stopped only by a user shutdown from within the operating system. (AI-inferred)
     disable_api_stop: Any = None
     ebs_optimized: Any = None
-    # When enabled, assigns an IPv6 address to the primary network interface of the managed WorkSpace instance. (AI-inferred)
     enable_primary_ipv6: Any = None
-    # Specifies the Nitro Enclaves options for the underlying managed EC2 instance of this WorkSpace, controlling whether enclaves are enabled on that instance. (AI-inferred)
     enclave_options: Any = None
-    # Configures the hibernation option for the WorkSpace instance, specifically enabling or disabling hibernation of the instance. (AI-inferred)
     hibernation_options: Any = None
     iam_instance_profile: Any = None
-    # The unique identifier of the Amazon WorkSpaces image used to create the WorkSpace instance, determining its operating system and preinstalled software. (AI-inferred)
     image_id: Any = None
-    # The compute type for the managed WorkSpace instance (e.g., STANDARD, PERFORMANCE, POWER, GRAPHICS) that determines the CPU, memory, and GPU capacity allocated to the virtual desktop. (AI-inferred)
     instance_type: Any = None
     ipv6_address_count: Any = None
-    # The name of the EC2 key pair that encrypts the WorkSpace user's password when the WorkSpace is created. (AI-inferred)
     key_name: Any = None
-    # A list of license configuration ARNs that are associated with the managed instance for license tracking and compliance. (AI-inferred)
     license_specifications: Any = None
     maintenance_options: Any = None
-    # Controls the Instance Metadata Service (IMDS) on the managed instance, including whether HTTP requests are allowed, whether IMDSv2 tokens are required, and the maximum hop limit. (AI-inferred)
     metadata_options: Any = None
     monitoring: Any = None
-    # Provides a list of network interfaces attached to the managed EC2 instance, including their IP addresses and network configuration. (AI-inferred)
     network_interfaces: Any = None
-    # Specifies the network performance options for the managed instance, mirroring EC2's NetworkPerformanceOptions object which typically includes a bandwidth-weighted ENA flag to optimize network throughput. (AI-inferred)
     network_performance_options: Any = None
     placement: Any = None
     private_dns_name_options: Any = None
-    # The ID of the subnet in which the WorkSpace's underlying managed EC2 instance is launched. (AI-inferred)
     subnet_id: Any = None
     tag_specifications: Any = None
-    # Defines the user data script executed on the WorkSpace's managed instance during provisioning, enabling automated setup like software installation or registry changes. (AI-inferred)
     user_data: Any = None
 
 _InstancesWorkspaceInstance_ManagedInstance_BlockDeviceMappings_EbsFields = {
@@ -390,17 +343,14 @@ _InstancesWorkspaceInstance_ManagedInstanceFields = {
 @dataclasses.dataclass
 class InstancesWorkspaceInstanceConfig:
     managed_instance: Any = None
-    # Assigns a list of key-value tags to the WorkSpace instance for resource identification, cost tracking, and access management. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class InstancesWorkspaceInstanceAttrs:
-    # Provides the read-only details of the EC2 instance that AWS WorkSpaces automatically manages for this workspace instance. (AI-inferred)
     ec2_managed_instance: Any = None
     managed_instance: Any = None
     # The current state of the workspace instance
     provision_state: Any = None
-    # Assigns a list of key-value tags to the WorkSpace instance for resource identification, cost tracking, and access management. (AI-inferred)
     tags: Any = None
     # Unique identifier for the workspace instance
     workspace_instance_id: Any = None

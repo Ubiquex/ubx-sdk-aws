@@ -13,9 +13,7 @@ type ManagerSite_Location struct {
 }
 
 type ManagerSite_Tags struct {
-	// The tag key is a metadata label that can be applied to an AWS Network Manager Site, allowing you to categorize and filter the site within your global network for management and cost tracking. (AI-inferred)
 	Key any
-	// The value of a user-defined tag applied to the AWS Network Manager site. (AI-inferred)
 	Value any
 }
 

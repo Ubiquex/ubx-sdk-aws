@@ -14,7 +14,6 @@ var UsageProfile_TagsFields = ubx.FieldMap{
 	}
 
 type UsageProfileConfig struct {
-	// The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred)
 	Configuration any
 	// The description of the UsageProfile.
 	Description any
@@ -25,7 +24,6 @@ type UsageProfileConfig struct {
 }
 
 type UsageProfileAttrs struct {
-	// The configuration for the Glue usage profile, defining the profile's data access permissions, usage limits, and other settings as a JSON object. (AI-inferred)
 	Configuration any
 	// Creation time.
 	CreatedOn any

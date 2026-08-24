@@ -9,7 +9,6 @@ export interface LakeSubscriber_SubscriberIdentity {
 }
 
 export interface LakeSubscriber_Tags {
-  /** The key of a tag attached to the Security Lake subscriber, used to define the tag's name for organizing and identifying the subscriber resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -46,15 +45,11 @@ export interface LakeSubscriberAttrs {
   accessTypes: string[];
   /** The ARN for the data lake. */
   dataLakeArn: string;
-  /** The Amazon Resource Name (ARN) of the AWS Resource Access Manager (RAM) resource share that grants the subscriber access to the Security Lake data lake. (AI-inferred) */
   resourceShareArn: string;
-  /** The name of the AWS Resource Access Manager (RAM) resource share automatically created to grant the subscriber access to Security Lake data. (AI-inferred) */
   resourceShareName: string;
-  /** For S3 subscribers, the ARN of the S3 bucket where Security Lake delivers data, computed and returned after the subscriber resource is created. (AI-inferred) */
   s3BucketArn: string;
   /** The supported AWS services from which logs and events are collected. */
   sources: unknown[];
-  /** The Amazon Resource Name (ARN) of the Security Lake subscriber, automatically assigned by AWS when the subscriber is created. (AI-inferred) */
   subscriberArn: string;
   /** The description for your subscriber account in Security Lake. */
   subscriberDescription: string;
@@ -62,7 +57,6 @@ export interface LakeSubscriberAttrs {
   subscriberIdentity: LakeSubscriber_SubscriberIdentity;
   /** The name of your Security Lake subscriber account. */
   subscriberName: string;
-  /** The ARN of the IAM role that the subscriber uses to access the data lake, assigned by Security Lake when the subscriber is created. (AI-inferred) */
   subscriberRoleArn: string;
   /** An array of objects, one for each tag to associate with the subscriber. For each tag, you must specify both a tag key and a tag value. A tag value cannot be null, but it can be an empty string. */
   tags: LakeSubscriber_Tags[];

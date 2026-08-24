@@ -33,7 +33,6 @@ type Instance_Attributes struct {
 }
 
 type Instance_Tags struct {
-	// The key of a user-defined tag applied to the Amazon Connect instance, used to categorize and manage the resource in AWS. (AI-inferred)
 	Key any
 	Value any
 }
@@ -60,7 +59,6 @@ var Instance_TagsFields = ubx.FieldMap{
 	}
 
 type InstanceConfig struct {
-	// Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
 	Attributes any
 	// Existing directoryId user wants to map to the new Connect instance.
 	DirectoryId any
@@ -75,7 +73,6 @@ type InstanceConfig struct {
 type InstanceAttrs struct {
 	// An instanceArn is automatically generated on creation based on instanceId.
 	Arn any
-	// Defines feature configuration flags for the Amazon Connect instance as key-value pairs (e.g., enabling or disabling inbound/outbound calls, contact lens, or auto-resolve best voices). (AI-inferred)
 	Attributes any
 	// Timestamp of instance creation logged as part of instance creation.
 	CreatedTime any

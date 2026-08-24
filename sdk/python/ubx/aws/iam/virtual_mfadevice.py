@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class VirtualMfadevice_Tags:
-    # The tag key for a virtual MFA device in IAM, which identifies a tag applied to the device for organizational or access-control purposes. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the IAM virtual MFA device, used as an arbitrary metadata label for organizing, identifying, or managing the device. (AI-inferred)
     value: Any = None
 
 _VirtualMfadevice_TagsFields = {
@@ -20,26 +18,17 @@ _VirtualMfadevice_TagsFields = {
 
 @dataclasses.dataclass
 class VirtualMfadeviceConfig:
-    # The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred)
     path: Any = None
-    # Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred)
     tags: Any = None
-    # Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred)
     users: Any = None
-    # Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred)
     virtual_mfa_device_name: Any = None
 
 @dataclasses.dataclass
 class VirtualMfadeviceAttrs:
-    # The IAM path under which the virtual MFA device is stored, which controls the device's location in the IAM hierarchy and must follow IAM path syntax (e.g., '/division/') to organize and identify the device. (AI-inferred)
     path: Any = None
-    # The ARN (Amazon Resource Name) of the virtual MFA device, which serves as its unique serial number. (AI-inferred)
     serial_number: Any = None
-    # Adds metadata tags to the virtual MFA device, which can be used to organize and identify the device in IAM. (AI-inferred)
     tags: Any = None
-    # Specifies the list of IAM users that are associated with this virtual MFA device. (AI-inferred)
     users: Any = None
-    # Assigns a name to the virtual MFA device, which is used to identify the device within AWS IAM. (AI-inferred)
     virtual_mfa_device_name: Any = None
 
 VirtualMfadevice = ubx.ResourceBinding(

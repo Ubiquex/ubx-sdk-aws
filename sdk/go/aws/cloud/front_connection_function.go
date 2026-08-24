@@ -4,7 +4,6 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontConnectionFunction_ConnectionFunctionConfig_KeyValueStoreAssociations struct {
-	// The ARN of the CloudFront key value store to associate with the function, granting the function read access to that store's data during invocation at the edge. (AI-inferred)
 	KeyValueStoreArn any
 }
 
@@ -62,12 +61,9 @@ type FrontConnectionFunctionAttrs struct {
 	ConnectionFunctionCode any
 	// Contains configuration information about a CloudFront function.
 	ConnectionFunctionConfig any
-	// The date and time when the CloudFront function was created, as reported by AWS. (AI-inferred)
 	CreatedTime any
-	// Represents the current ETag version identifier of the CloudFront connection function, used for optimistic concurrency control during update/delete operations. (AI-inferred)
 	Etag any
 	Id any
-	// The date and time when the CloudFront function was last modified, returned by the API and updated automatically whenever the function's code or configuration changes. (AI-inferred)
 	LastModifiedTime any
 	// The connection function name.
 	Name any

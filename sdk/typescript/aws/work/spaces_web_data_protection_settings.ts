@@ -2,46 +2,30 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPattern {
-  /** Defines the regular expression used to match keywords that identify the context for applying the custom inline redaction pattern in WorkSpaces Web data protection settings. (AI-inferred) */
   keywordRegex?: string | Computed<string>;
-  /** Provides a human-readable description for a custom inline redaction pattern, documenting the pattern's intended matching behavior. (AI-inferred) */
   patternDescription?: string | Computed<string>;
-  /** The name that identifies this custom inline redaction pattern within the WorkSpaces Web data protection settings. (AI-inferred) */
   patternName?: string | Computed<string>;
-  /** The regular expression that defines the specific text sequence to be matched and redacted inline when found in web content. (AI-inferred) */
   patternRegex?: string | Computed<string>;
 }
 
 export interface SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolder {
-  /** The text string that is inserted in place of the redacted content when a sensitive data pattern matches. (AI-inferred) */
   redactionPlaceHolderText?: string | Computed<string>;
-  /** The `redaction_place_holder_type` field determines whether the matched sensitive text is replaced with a custom placeholder string (`CUSTOM`) or left as the original text (`PRESERVED`) when the inline redaction pattern is applied. (AI-inferred) */
   redactionPlaceHolderType?: string | Computed<string>;
 }
 
 export interface SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns {
-  /** The unique identifier for a built-in redaction pattern (e.g., credit card numbers, US social security numbers) used by this inline redaction rule to detect and redact sensitive information in web content. (AI-inferred) */
   builtInPatternId?: string | Computed<string>;
-  /** The minimum confidence threshold that the inline redaction pattern must meet for a detected sensitive data instance to be considered a match and redacted in WorkSpaces Web data protection settings. (AI-inferred) */
   confidenceLevel?: number | Computed<number>;
-  /** In an AWS WorkSpaces Web data protection inline redaction pattern, the custom_pattern object defines a custom regular expression and the redaction action (e.g., redact or block) used to match and protect sensitive data in web content. (AI-inferred) */
   customPattern?: SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPattern | Computed<SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_CustomPattern>;
-  /** A list of URLs (or URL patterns) on which the inline redaction pattern is enforced, meaning that content matching the pattern will be redacted only when accessed from those URLs. (AI-inferred) */
   enforcedUrls?: string[] | Computed<string[]>;
-  /** Specifies a list of URL patterns that are exempt from the inline redaction rule, so content on those URLs will not be redacted. (AI-inferred) */
   exemptUrls?: string[] | Computed<string[]>;
-  /** Defines the placeholder text and type that replace matched content for each inline redaction pattern. (AI-inferred) */
   redactionPlaceHolder?: SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolder | Computed<SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns_RedactionPlaceHolder>;
 }
 
 export interface SpacesWebDataProtectionSettings_InlineRedactionConfiguration {
-  /** Defines the minimum confidence score (0-100) that detected sensitive data must reach for the inline redaction engine to apply redaction, serving as the default threshold for all rules in the inline redaction configuration. (AI-inferred) */
   globalConfidenceLevel?: number | Computed<number>;
-  /** Specifies a list of URL patterns whose web content always has inline redaction applied, so sensitive data is redacted on those pages even if no other redaction rule matches. (AI-inferred) */
   globalEnforcedUrls?: string[] | Computed<string[]>;
-  /** Specifies a list of URL patterns that are exempt from inline redaction, so content on those URLs is not redacted. (AI-inferred) */
   globalExemptUrls?: string[] | Computed<string[]>;
-  /** Defines the required list of inline redaction patterns, each specifying a regular expression to match sensitive data that should be redacted from web content in this AWS WorkSpaces Web data protection settings resource. (AI-inferred) */
   inlineRedactionPatterns: SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns[] | Computed<SpacesWebDataProtectionSettings_InlineRedactionConfiguration_InlineRedactionPatterns[]>;
 }
 
@@ -96,38 +80,23 @@ const SpacesWebDataProtectionSettings_TagsFields: FieldMap = {
 };
 
 export interface SpacesWebDataProtectionSettingsConfig {
-  /** Provides additional encryption context key-value pairs that are included in the encryption context for AWS KMS keys used to protect data, enabling finer-grained access control and audit logging. (AI-inferred) */
   additionalEncryptionContext?: unknown | Computed<unknown>;
-  /** The ARN of the customer-managed AWS KMS key used to encrypt sensitive data in the WorkSpaces Web data protection settings. (AI-inferred) */
   customerManagedKey?: string | Computed<string>;
-  /** Provides a user-defined textual summary of the WorkSpaces Web data protection settings, enabling administrators to easily identify and manage the configuration in the AWS console and API. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The display name is a user-friendly, optional identifier for the data protection settings, used to distinguish them in the WorkSpaces Web console. (AI-inferred) */
   displayName?: string | Computed<string>;
-  /** Configures automatic inline redaction of sensitive data (e.g., PII, financial numbers) by defining a set of redaction patterns and associated settings applied to web content delivered through WorkSpaces Web. (AI-inferred) */
   inlineRedactionConfiguration?: SpacesWebDataProtectionSettings_InlineRedactionConfiguration | Computed<SpacesWebDataProtectionSettings_InlineRedactionConfiguration>;
-  /** Adds one or more tag objects (Key and Value) to the WorkSpaces Web data protection settings resource. (AI-inferred) */
   tags?: SpacesWebDataProtectionSettings_Tags[] | Computed<SpacesWebDataProtectionSettings_Tags[]>;
 }
 
 export interface SpacesWebDataProtectionSettingsAttrs {
-  /** Provides additional encryption context key-value pairs that are included in the encryption context for AWS KMS keys used to protect data, enabling finer-grained access control and audit logging. (AI-inferred) */
   additionalEncryptionContext: unknown;
-  /** The list of ARNs of the WorkSpaces Web portals that are currently associated with these data protection settings, populated automatically by AWS. (AI-inferred) */
   associatedPortalArns: string[];
-  /** The date and time when the WorkSpaces Web data protection settings were created, returned as a read-only string. (AI-inferred) */
   creationDate: string;
-  /** The ARN of the customer-managed AWS KMS key used to encrypt sensitive data in the WorkSpaces Web data protection settings. (AI-inferred) */
   customerManagedKey: string;
-  /** The Amazon Resource Name (ARN) that uniquely identifies this WorkSpaces Web data protection settings resource, used to reference it in IAM policies and other AWS services. (AI-inferred) */
   dataProtectionSettingsArn: string;
-  /** Provides a user-defined textual summary of the WorkSpaces Web data protection settings, enabling administrators to easily identify and manage the configuration in the AWS console and API. (AI-inferred) */
   description: string;
-  /** The display name is a user-friendly, optional identifier for the data protection settings, used to distinguish them in the WorkSpaces Web console. (AI-inferred) */
   displayName: string;
-  /** Configures automatic inline redaction of sensitive data (e.g., PII, financial numbers) by defining a set of redaction patterns and associated settings applied to web content delivered through WorkSpaces Web. (AI-inferred) */
   inlineRedactionConfiguration: SpacesWebDataProtectionSettings_InlineRedactionConfiguration;
-  /** Adds one or more tag objects (Key and Value) to the WorkSpaces Web data protection settings resource. (AI-inferred) */
   tags: SpacesWebDataProtectionSettings_Tags[];
 }
 

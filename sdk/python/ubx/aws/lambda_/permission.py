@@ -37,7 +37,6 @@ class PermissionAttrs:
     function_name: Any = None
     # The type of authentication that your function URL uses. Set to ``AWS_IAM`` if you want to restrict access to authenticated users only. Set to ``NONE`` if you want to bypass IAM authentication to create a public endpoint. For more information, see [Control access to Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html).
     function_url_auth_type: Any = None
-    # The unique identifier for the Lambda permission, typically a combination of the function name and the statement ID. (AI-inferred)
     id: Any = None
     # Indicates whether the permission applies when the function is invoked through a function URL.
     invoked_via_function_url: Any = None

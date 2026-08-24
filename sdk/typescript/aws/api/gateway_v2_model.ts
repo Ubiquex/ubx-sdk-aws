@@ -21,7 +21,6 @@ export interface GatewayV2ModelAttrs {
   contentType: string;
   /** The description of the model. */
   description: string;
-  /** The unique identifier automatically assigned by Amazon API Gateway to this model when it is created. (AI-inferred) */
   modelId: string;
   /** The name of the model. */
   name: string;

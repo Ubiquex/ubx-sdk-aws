@@ -18,7 +18,6 @@ class MakerContext_Source:
 @dataclasses.dataclass
 class MakerContext_Tags:
     key: Any = None
-    # The value component of a key-value tag attached to the SageMaker Context, which stores the user-defined string that, combined with the tag key, enables categorization, access control, and cost tracking for this ML resource. (AI-inferred)
     value: Any = None
 
 _MakerContext_SourceFields = {

@@ -8,27 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InvestigationGroup_ChatbotNotificationChannels:
-    # The ARNs of the AWS Chatbot configurations that serve as notification channels for the investigation group, enabling alerts to be delivered to configured chat services such as Slack or Microsoft Teams. (AI-inferred)
     chat_configuration_arns: Any = None
-    # The ARN of the Amazon SNS topic that serves as a chatbot notification channel for the investigation group, receiving event notifications and alerts. (AI-inferred)
     snstopic_arn: Any = None
 
 @dataclasses.dataclass
 class InvestigationGroup_CrossAccountConfigurations:
-    # The Amazon Resource Name (ARN) of the IAM role in the source account that the investigation group assumes to access data across accounts. (AI-inferred)
     source_role_arn: Any = None
 
 @dataclasses.dataclass
 class InvestigationGroup_EncryptionConfig:
     encryption_configuration_type: Any = None
-    # The ID of the AWS KMS key used to encrypt the data associated with the investigation group, as specified in its encryption configuration. (AI-inferred)
     kms_key_id: Any = None
 
 @dataclasses.dataclass
 class InvestigationGroup_Tags:
-    # The key of a tag attached to the AWS AIOps investigation group, used for resource identification and organization. (AI-inferred)
     key: Any = None
-    # The value of a tag attached to the AWS AIOps investigation group, used to organize and manage the group within AWS. (AI-inferred)
     value: Any = None
 
 _InvestigationGroup_ChatbotNotificationChannelsFields = {
@@ -56,7 +50,6 @@ class InvestigationGroupConfig:
     chatbot_notification_channels: Any = None
     # An array of cross account configurations.
     cross_account_configurations: Any = None
-    # Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred)
     encryption_config: Any = None
     # Investigation Group policy
     investigation_group_policy: Any = None
@@ -68,7 +61,6 @@ class InvestigationGroupConfig:
     retention_in_days: Any = None
     # The Investigation Role's ARN.
     role_arn: Any = None
-    # This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred)
     tag_key_boundaries: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None
@@ -85,7 +77,6 @@ class InvestigationGroupAttrs:
     created_by: Any = None
     # An array of cross account configurations.
     cross_account_configurations: Any = None
-    # Specifies the AWS KMS key used to encrypt the investigation group's data, enabling customer-managed encryption for the AWS AIOps resource. (AI-inferred)
     encryption_config: Any = None
     # Investigation Group policy
     investigation_group_policy: Any = None
@@ -101,7 +92,6 @@ class InvestigationGroupAttrs:
     retention_in_days: Any = None
     # The Investigation Role's ARN.
     role_arn: Any = None
-    # This list of tag keys defines the boundaries of the investigation group, so that resources sharing the same values for all specified tag keys are grouped together for investigation. (AI-inferred)
     tag_key_boundaries: Any = None
     # An array of key-value pairs to apply to this resource.
     tags: Any = None

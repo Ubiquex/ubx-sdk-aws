@@ -15,9 +15,7 @@ class ArchitectedWorkload_DiscoveryConfig:
 
 @dataclasses.dataclass
 class ArchitectedWorkload_Tags:
-    # Defines the key (name) of a tag attached to the Well-Architected workload, used to organize, identify, and control access to the workload resource. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag key applied to the AWS Well-Architected workload, used for metadata, cost allocation, or resource management. (AI-inferred)
     value: Any = None
 
 _ArchitectedWorkload_DiscoveryConfigFields = {

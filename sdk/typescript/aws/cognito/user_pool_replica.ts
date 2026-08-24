@@ -2,20 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UserPoolReplicaConfig {
-  /** Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred) */
   regionName: string | Computed<string>;
-  /** The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred) */
   userPoolId: string | Computed<string>;
-  /** Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred) */
   userPoolTagsAtCreate?: unknown | Computed<unknown>;
 }
 
 export interface UserPoolReplicaAttrs {
-  /** Specifies the AWS region where the Cognito user pool replica is created, which must be different from the primary pool's region. (AI-inferred) */
   regionName: string;
-  /** The ID of the original user pool in the primary region that this replica is created from, which is required to set up the cross-region replica. (AI-inferred) */
   userPoolId: string;
-  /** Sets the initial tags on the user pool replica at creation, which are key-value pairs that help manage, identify, and categorize the resource. (AI-inferred) */
   userPoolTagsAtCreate: unknown;
 }
 

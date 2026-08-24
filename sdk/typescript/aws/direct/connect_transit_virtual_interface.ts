@@ -2,24 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConnectTransitVirtualInterface_BgpPeers {
-  /** The address family (IPv4 or IPv6) used for the BGP session on the transit virtual interface. (AI-inferred) */
   addressFamily?: string | Computed<string>;
-  /** The IPv4 address on the Amazon side of the BGP peering session for a Direct Connect transit virtual interface, used to establish BGP connectivity with the customer's router. (AI-inferred) */
   amazonAddress?: string | Computed<string>;
-  /** The autonomous system number (ASN) of the BGP peer used to establish the BGP session for the transit virtual interface. (AI-inferred) */
   asn?: string | Computed<string>;
-  /** The MD5 authentication key used for BGP peering on this transit virtual interface, enabling authenticated BGP sessions with the on-premises router. (AI-inferred) */
   authKey?: string | Computed<string>;
-  /** The AWS-assigned unique identifier for the BGP peer configured on the transit virtual interface, used to reference the peer in Direct Connect API operations. (AI-inferred) */
   bgpPeerId?: string | Computed<string>;
-  /** The IP address assigned to the customer's side of the BGP session for this transit virtual interface. (AI-inferred) */
   customerAddress?: string | Computed<string>;
 }
 
 export interface ConnectTransitVirtualInterface_Tags {
-  /** The key of a tag (e.g., 'Name') applied to the Direct Connect Transit Virtual Interface, used to filter, organize, and control access to the resource. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag applied to this AWS Direct Connect transit virtual interface, used for arbitrary metadata such as cost allocation or ownership. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

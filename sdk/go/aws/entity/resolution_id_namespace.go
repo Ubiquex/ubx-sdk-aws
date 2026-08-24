@@ -4,48 +4,34 @@ package entity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResolutionIdNamespace_IdMappingWorkflowProperties_ProviderProperties struct {
-	// Map of provider-specific configuration parameters passed to the entity resolution provider for this ID mapping workflow. (AI-inferred)
 	ProviderConfiguration any
-	// The ARN of the AWS Marketplace provider service used to perform the ID mapping workflow for this ID namespace. (AI-inferred)
 	ProviderServiceArn any
 }
 
 type ResolutionIdNamespace_IdMappingWorkflowProperties_RuleBasedProperties_Rules struct {
-	// The list of record attribute names (columns) that are compared between source records to determine if they match under this rule in the rule-based mapping workflow. (AI-inferred)
 	MatchingKeys any
-	// The name that uniquely identifies this matching rule within the rule-based properties of the ID mapping workflow for the entity resolution ID namespace. (AI-inferred)
 	RuleName any
 }
 
 type ResolutionIdNamespace_IdMappingWorkflowProperties_RuleBasedProperties struct {
-	// Specifies the matching model for rule-based ID mapping, determining whether a record is considered a match when all attributes in the rule match (ALL_MATCH) or when any single attribute matches (ANY_MATCH). (AI-inferred)
 	AttributeMatchingModel any
-	// Specifies the record matching models (e.g., ONE_TO_ONE, ONE_TO_MANY, MANY_TO_MANY) that define the mapping cardinality used by the rule-based matching logic in this ID mapping workflow property. (AI-inferred)
 	RecordMatchingModels any
-	// Specifies the rule definition types (e.g., SOURCE or TARGET) used to categorize the matching rules in the rule-based ID mapping workflow for the ID namespace. (AI-inferred)
 	RuleDefinitionTypes any
-	// Defines the list of source-to-target attribute mapping rules used by the rule-based ID mapping workflow, where each rule specifies a source attribute and the corresponding target attribute in the ID namespace. (AI-inferred)
 	Rules any
 }
 
 type ResolutionIdNamespace_IdMappingWorkflowProperties struct {
-	// Specifies the cardinality of the ID mapping workflow: ONE_TO_ONE for a unique source-to-ID mapping or ONE_TO_MANY for one source record mapping to multiple IDs. (AI-inferred)
 	IdMappingType any
-	// Specifies the provider-specific configuration for an ID mapping workflow, including the provider configuration map and optional intermediate source S3 location. (AI-inferred)
 	ProviderProperties any
-	// Configures the rule-based matching configuration for this ID namespace mapping workflow, including the attribute matching model and the list of matching rules that define how source and target attributes are compared. (AI-inferred)
 	RuleBasedProperties any
 }
 
 type ResolutionIdNamespace_InputSourceConfig struct {
-	// The Amazon Resource Name (ARN) of the input data source (such as an S3 bucket) from which the entity resolution ID namespace reads its records for matching. (AI-inferred)
 	InputSourceArn any
-	// Specifies the name of the schema that describes the structure of the input data, which AWS Entity Resolution uses to interpret the fields for record matching. (AI-inferred)
 	SchemaName any
 }
 
 type ResolutionIdNamespace_Tags struct {
-	// The key of a user-defined tag applied to the AWS Entity Resolution ID namespace, used for metadata organization and cost allocation. (AI-inferred)
 	Key any
 	Value any
 }
@@ -96,40 +82,26 @@ var ResolutionIdNamespace_TagsFields = ubx.FieldMap{
 	}
 
 type ResolutionIdNamespaceConfig struct {
-	// An optional free-form description that helps identify the purpose or contents of the ID namespace. (AI-inferred)
 	Description any
-	// A list of configurations for ID mapping workflows that define how identifiers are mapped within this namespace, where each item specifies a workflow type (e.g., ID_MAPPING) and its provider properties. (AI-inferred)
 	IdMappingWorkflowProperties any
-	// Specifies the name of the ID namespace, which uniquely identifies it within the AWS account and Region. (AI-inferred)
 	IdNamespaceName any
-	// Configures the input sources for the ID namespace, specifying each data source's ARN and schema to be used for entity resolution. (AI-inferred)
 	InputSourceConfig any
-	// The ARN of the IAM role that AWS Entity Resolution assumes to read from the input sources configured for this ID namespace. (AI-inferred)
 	RoleArn any
-	// Assigns key-value metadata tags to this AWS Entity Resolution ID Namespace resource, enabling cost allocation, access control, and organization of the namespace. (AI-inferred)
 	Tags any
-	// Specifies whether the ID namespace is a SOURCE or TARGET type, determining its role in the entity resolution mapping workflow. (AI-inferred)
 	Type any
 }
 
 type ResolutionIdNamespaceAttrs struct {
 	// The date and time when the IdNamespace was created
 	CreatedAt any
-	// An optional free-form description that helps identify the purpose or contents of the ID namespace. (AI-inferred)
 	Description any
-	// A list of configurations for ID mapping workflows that define how identifiers are mapped within this namespace, where each item specifies a workflow type (e.g., ID_MAPPING) and its provider properties. (AI-inferred)
 	IdMappingWorkflowProperties any
 	// The arn associated with the IdNamespace
 	IdNamespaceArn any
-	// Specifies the name of the ID namespace, which uniquely identifies it within the AWS account and Region. (AI-inferred)
 	IdNamespaceName any
-	// Configures the input sources for the ID namespace, specifying each data source's ARN and schema to be used for entity resolution. (AI-inferred)
 	InputSourceConfig any
-	// The ARN of the IAM role that AWS Entity Resolution assumes to read from the input sources configured for this ID namespace. (AI-inferred)
 	RoleArn any
-	// Assigns key-value metadata tags to this AWS Entity Resolution ID Namespace resource, enabling cost allocation, access control, and organization of the namespace. (AI-inferred)
 	Tags any
-	// Specifies whether the ID namespace is a SOURCE or TARGET type, determining its role in the entity resolution mapping workflow. (AI-inferred)
 	Type any
 	// The date and time when the IdNamespace was updated
 	UpdatedAt any

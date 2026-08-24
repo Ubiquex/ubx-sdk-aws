@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Blueprint_Tags {
-  /** A user-defined tag key attached to the AWS Glue Blueprint resource within the tags map, used for organizing and managing the blueprint. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag (key-value pair) attached to the AWS Glue Blueprint, used for organizing, tracking, and allocating costs for the blueprint. (AI-inferred) */
   value?: string | Computed<string>;
 }
 

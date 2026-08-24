@@ -4,64 +4,44 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrailTrail_AdvancedEventSelectors_FieldSelectors struct {
-	// Restricts the advanced event selector to match events where the value of the specified field ends with any of the provided suffix strings. (AI-inferred)
 	EndsWith any
-	// Specifies the exact values that the field must match for a CloudTrail event to be logged, so only events whose field value equals one of the strings in this list are processed by the trail. (AI-inferred)
 	Equals any
-	// Specifies the event field name to filter on within a CloudTrail advanced event selector field selector, such as 'eventCategory', 'eventName', or 'readOnly'. (AI-inferred)
 	Field any
-	// Matches data events where the value of the specified field does not end with any of the strings in this list, used to filter which events are delivered to the trail. (AI-inferred)
 	NotEndsWith any
-	// For CloudTrail advanced event selectors, this list of strings specifies field values that the event attribute must NOT equal for the selector to match (e.g., if Field is 'eventName', events with any event name not in this list are matched). (AI-inferred)
 	NotEquals any
-	// Specifies a list of strings that the value of the selected event field must not start with, so that events are included when the field value does not begin with any of these strings. (AI-inferred)
 	NotStartsWith any
-	// In an AWS CloudTrail advanced event selector's field selector, this list of string values defines prefixes that the event field's value must start with for the selector to match the event. (AI-inferred)
 	StartsWith any
 }
 
 type TrailTrail_AdvancedEventSelectors struct {
-	// In an advanced event selector, this list defines which fields (e.g., eventCategory, resources.type, readOnly) and their matching values (equality or prefix matching) determine the data events that CloudTrail logs. (AI-inferred)
 	FieldSelectors any
-	// Defines a user-friendly name for an advanced event selector, such as 'Log all events', which helps identify the selector when managing trail event filtering settings. (AI-inferred)
 	Name any
 }
 
 type TrailTrail_AggregationConfigurations struct {
-	// Specifies the event category (e.g., Management, Data, Insight, or NetworkActivity) that this aggregation configuration applies to for a CloudTrail trail delivering events to a CloudTrail Lake event data store. (AI-inferred)
 	EventCategory any
 	Templates any
 }
 
 type TrailTrail_EventSelectors_DataResources struct {
-	// Specifies the AWS resource type (e.g., AWS::S3::Object or AWS::Lambda::Function) for which to log data events within the event selector. (AI-inferred)
 	Type any
-	// Contains the list of ARNs (for example, S3 object or prefix ARNs in the form arn:aws:s3:::bucket/prefix, or Lambda function ARNs) that identify the specific data resources selected for the event selector. (AI-inferred)
 	Values any
 }
 
 type TrailTrail_EventSelectors struct {
-	// Specifies the S3 buckets or Lambda functions for which to record data events, where each data resource includes a resource type (e.g., AWS::S3::Object or AWS::Lambda::Function) and a list of ARNs or prefixes. (AI-inferred)
 	DataResources any
-	// For the trail's event selectors, this list specifies the event sources (such as kms.amazonaws.com) whose management events are excluded from being recorded. (AI-inferred)
 	ExcludeManagementEventSources any
-	// Indicates whether the trail includes AWS management events (such as CreateTrail or DeleteTrail) for the account; when false, only data events are logged for the selector. (AI-inferred)
 	IncludeManagementEvents any
-	// Specifies whether the trail records read-only, write-only, or all events (Allowed values: All, ReadOnly, WriteOnly) for the resources matched by this event selector. (AI-inferred)
 	ReadWriteType any
 }
 
 type TrailTrail_InsightSelectors struct {
-	// Sets the list of event categories (either 'api' or 'insight') that control which CloudTrail Insights event types are captured for the trail, allowing you to log API activity insights and/or operational insights. (AI-inferred)
 	EventCategories any
-	// The type of CloudTrail Insights event to log, either ApiCallRateInsight for unusual API call rate or ApiErrorRateInsight for unusual API error rate. (AI-inferred)
 	InsightType any
 }
 
 type TrailTrail_Tags struct {
-	// The key of a tag attached to this CloudTrail trail, used to categorize and identify the trail among resource groups and for cost allocation. (AI-inferred)
 	Key any
-	// The value of an individual tag assigned to the CloudTrail trail, used for metadata, classification, or access control. (AI-inferred)
 	Value any
 }
 
@@ -147,7 +127,6 @@ type TrailTrailConfig struct {
 	// Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.
 	SnsTopicName any
 	Tags any
-	// Specifies the name of the CloudTrail trail; if omitted, CloudFormation generates a unique name, and trail names must start with a letter and may contain only lowercase letters, numbers, periods, underscores, and dashes. (AI-inferred)
 	TrailName any
 }
 
@@ -156,7 +135,6 @@ type TrailTrailAttrs struct {
 	AdvancedEventSelectors any
 	// Specifies the aggregation configuration to aggregate CloudTrail Events. A maximum of 1 aggregation configuration is allowed.
 	AggregationConfigurations any
-	// The Amazon Resource Name (ARN) that uniquely identifies the CloudTrail trail, automatically assigned by AWS when the trail is created. (AI-inferred)
 	Arn any
 	// Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. Not required unless you specify CloudWatchLogsRoleArn.
 	CloudWatchLogsLogGroupArn any
@@ -182,12 +160,10 @@ type TrailTrailAttrs struct {
 	S3BucketName any
 	// Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see Finding Your CloudTrail Log Files. The maximum length is 200 characters.
 	S3KeyPrefix any
-	// The read-only Amazon Resource Name (ARN) of the SNS topic that CloudTrail uses to deliver notifications about log file delivery, populated automatically when the trail is configured with an SNS topic. (AI-inferred)
 	SnsTopicArn any
 	// Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.
 	SnsTopicName any
 	Tags any
-	// Specifies the name of the CloudTrail trail; if omitted, CloudFormation generates a unique name, and trail names must start with a letter and may contain only lowercase letters, numbers, periods, underscores, and dashes. (AI-inferred)
 	TrailName any
 }
 

@@ -8,19 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Retriever_Configuration_KendraIndexConfiguration:
-    # The unique identifier of the Amazon Kendra index to be used as the retriever in the Amazon Q Business retriever configuration. (AI-inferred)
     index_id: Any = None
 
 @dataclasses.dataclass
 class Retriever_Configuration:
-    # Specifies the configuration for using an Amazon Kendra index as the retriever, including the identifier of the Kendra index. (AI-inferred)
     kendra_index_configuration: Any = None
-    # Configures the retriever to use a native Amazon Q Business index, specifying the index ID and optional metadata handling settings. (AI-inferred)
     native_index_configuration: Any = None
 
 @dataclasses.dataclass
 class Retriever_Tags:
-    # The key of a tag to attach to the Amazon Q Business retriever resource. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -48,42 +44,25 @@ _Retriever_TagsFields = {
 
 @dataclasses.dataclass
 class RetrieverConfig:
-    # The unique identifier of the Amazon Q Business application to which this retriever belongs. (AI-inferred)
     application_id: Any = None
-    # Defines the retriever type-specific configuration, which specifies either the Amazon Kendra index configuration (KendraIndexConfiguration) or the native QBusiness index configuration (NativeIndexConfiguration), determining how documents are retrieved. (AI-inferred)
     configuration: Any = None
-    # The human-readable name for the retriever, used to identify it in the AWS Q Business console and API responses. (AI-inferred)
     display_name: Any = None
-    # The ARN of an IAM role that grants Amazon Q Business permissions to access the data source associated with this retriever. (AI-inferred)
     role_arn: Any = None
-    # Defines the AWS tags (key-value pairs) applied to the Amazon Q Business retriever resource, which can be used for cost allocation, access control, and metadata organization. (AI-inferred)
     tags: Any = None
-    # The type of retriever, either NATIVE_INDEX for the Amazon Q Business native index or KENDRA_INDEX for an Amazon Kendra index. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RetrieverAttrs:
-    # The unique identifier of the Amazon Q Business application to which this retriever belongs. (AI-inferred)
     application_id: Any = None
-    # Defines the retriever type-specific configuration, which specifies either the Amazon Kendra index configuration (KendraIndexConfiguration) or the native QBusiness index configuration (NativeIndexConfiguration), determining how documents are retrieved. (AI-inferred)
     configuration: Any = None
-    # Provides the date and time (as an ISO 8601 string) when the QBusiness retriever was created. (AI-inferred)
     created_at: Any = None
-    # The human-readable name for the retriever, used to identify it in the AWS Q Business console and API responses. (AI-inferred)
     display_name: Any = None
-    # The Amazon Resource Name (ARN) uniquely identifying this QBusiness retriever in AWS. (AI-inferred)
     retriever_arn: Any = None
-    # The unique identifier assigned to the Amazon Q Business retriever. (AI-inferred)
     retriever_id: Any = None
-    # The ARN of an IAM role that grants Amazon Q Business permissions to access the data source associated with this retriever. (AI-inferred)
     role_arn: Any = None
-    # The current operational status of the Amazon Q Business retriever, such as ACTIVE or INACTIVE, as assigned by the service. (AI-inferred)
     status: Any = None
-    # Defines the AWS tags (key-value pairs) applied to the Amazon Q Business retriever resource, which can be used for cost allocation, access control, and metadata organization. (AI-inferred)
     tags: Any = None
-    # The type of retriever, either NATIVE_INDEX for the Amazon Q Business native index or KENDRA_INDEX for an Amazon Kendra index. (AI-inferred)
     type: Any = None
-    # The timestamp indicating when this Amazon Q Business retriever was most recently updated. (AI-inferred)
     updated_at: Any = None
 
 Retriever = ubx.ResourceBinding(

@@ -2,26 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClusterSecurityGroupIngressConfig {
-  /** The IPv4 CIDR range that is allowed inbound access to the Redshift cluster's security group; you must specify either this value or an EC2 security group. (AI-inferred) */
   cidrip?: string | Computed<string>;
-  /** The name of the Redshift cluster security group to which the ingress rule is being added. (AI-inferred) */
   clusterSecurityGroupName: string | Computed<string>;
-  /** The name of the EC2 security group to grant access to the Redshift cluster, allowing inbound traffic from instances associated with that EC2 security group. (AI-inferred) */
   ec2SecurityGroupName?: string | Computed<string>;
-  /** The AWS account ID of the account that owns the EC2 security group specified in the ingress rule, used to authorize cross-account access to the Redshift cluster. (AI-inferred) */
   ec2SecurityGroupOwnerId?: string | Computed<string>;
 }
 
 export interface ClusterSecurityGroupIngressAttrs {
-  /** The IPv4 CIDR range that is allowed inbound access to the Redshift cluster's security group; you must specify either this value or an EC2 security group. (AI-inferred) */
   cidrip: string;
-  /** The name of the Redshift cluster security group to which the ingress rule is being added. (AI-inferred) */
   clusterSecurityGroupName: string;
-  /** The name of the EC2 security group to grant access to the Redshift cluster, allowing inbound traffic from instances associated with that EC2 security group. (AI-inferred) */
   ec2SecurityGroupName: string;
-  /** The AWS account ID of the account that owns the EC2 security group specified in the ingress rule, used to authorize cross-account access to the Redshift cluster. (AI-inferred) */
   ec2SecurityGroupOwnerId: string;
-  /** This computed attribute is the unique identifier of the Redshift cluster security group ingress rule, used by Terraform to track and reference the rule in its state and dependencies. (AI-inferred) */
   id: string;
 }
 

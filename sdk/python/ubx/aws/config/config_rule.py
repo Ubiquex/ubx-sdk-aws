@@ -13,7 +13,6 @@ class ConfigRule_Compliance:
 
 @dataclasses.dataclass
 class ConfigRule_EvaluationModes:
-    # Specifies the evaluation mode of the AWS Config rule, which is either 'DETECTIVE' (evaluates resources after changes are made) or 'PROACTIVE' (evaluates resources before deployment to prevent noncompliant resources). (AI-inferred)
     mode: Any = None
 
 @dataclasses.dataclass
@@ -38,11 +37,8 @@ class ConfigRule_Source_CustomPolicyDetails:
 
 @dataclasses.dataclass
 class ConfigRule_Source_SourceDetails:
-    # For a custom AWS Config rule, this field indicates the AWS service that emits the events that trigger the rule, and the only valid value is `aws.config`. (AI-inferred)
     event_source: Any = None
-    # Specifies how often AWS Config runs the rule's evaluations (e.g., One_Hour, TwentyFour_Hours) when the rule's source details define a periodic trigger. (AI-inferred)
     maximum_execution_frequency: Any = None
-    # The type of event that triggers the AWS Config rule's Lambda function, such as ConfigurationItemChangeNotification or ScheduledNotification. (AI-inferred)
     message_type: Any = None
 
 @dataclasses.dataclass
@@ -113,11 +109,9 @@ class ConfigRuleConfig:
 
 @dataclasses.dataclass
 class ConfigRuleAttrs:
-    # The Amazon Resource Name (ARN) of the AWS Config rule, automatically assigned by AWS when the rule is created and used to uniquely identify the rule. (AI-inferred)
     arn: Any = None
     # Indicates whether an AWS resource or CC rule is compliant and provides the number of contributors that affect the compliance.
     compliance: Any = None
-    # The unique identifier assigned by AWS to the Config rule when it is created. (AI-inferred)
     config_rule_id: Any = None
     # A name for the CC rule. If you don't specify a name, CFN generates a unique physical ID and uses that ID for the rule name. For more information, see [Name Type](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html).
     config_rule_name: Any = None

@@ -11,16 +11,12 @@ type PipelineWebhook_AuthenticationConfiguration struct {
 }
 
 type PipelineWebhook_Filters struct {
-	// The JSON path in the event payload that this webhook filter rule uses to determine which events should trigger the pipeline. (AI-inferred)
 	JsonPath any
-	// The exact string value that the extracted payload at the filter's JSON path must match for the webhook to trigger the pipeline. (AI-inferred)
 	MatchEquals any
 }
 
 type PipelineWebhook_Tags struct {
-	// The key of a user-defined tag attached to the AWS CodePipeline webhook, which acts as a custom label to identify, organize, and control access to the webhook resource. (AI-inferred)
 	Key any
-	// The value portion of a tag attached to the CodePipeline webhook, providing user-defined metadata that can be used to organize and filter webhook resources. (AI-inferred)
 	Value any
 }
 

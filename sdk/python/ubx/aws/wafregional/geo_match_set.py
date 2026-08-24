@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GeoMatchSet_GeoMatchConstraints:
-    # Specifies the type of geographic constraint, currently only supporting the value 'Country' for a WAF Regional geo match set. (AI-inferred)
     type: Any = None
-    # The two-letter ISO 3166-1 alpha-2 country code (e.g., 'US' for United States) that the geographic match constraint matches when the constraint's type is 'Country'. (AI-inferred)
     value: Any = None
 
 _GeoMatchSet_GeoMatchConstraintsFields = {
@@ -20,18 +18,13 @@ _GeoMatchSet_GeoMatchConstraintsFields = {
 
 @dataclasses.dataclass
 class GeoMatchSetConfig:
-    # Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
     geo_match_constraints: Any = None
-    # A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class GeoMatchSetAttrs:
-    # Defines the list of geographical constraints (country codes) that this WAF Regional geo match set matches against, with each constraint specifying a country to include in the match set. (AI-inferred)
     geo_match_constraints: Any = None
-    # The unique identifier (ID) of the WAF Regional Geo Match Set, as assigned by AWS when the set is created. (AI-inferred)
     id: Any = None
-    # A friendly name for the geo match set, used as a unique identifier when referencing it in AWS WAF Regional. (AI-inferred)
     name: Any = None
 
 GeoMatchSet = ubx.ResourceBinding(

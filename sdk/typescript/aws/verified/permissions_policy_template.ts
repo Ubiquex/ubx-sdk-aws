@@ -2,24 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PermissionsPolicyTemplateConfig {
-  /** Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred) */
   description?: string | Computed<string>;
   name?: string | Computed<string>;
-  /** The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred) */
   policyStoreId: string | Computed<string>;
-  /** The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred) */
   statement: string | Computed<string>;
 }
 
 export interface PermissionsPolicyTemplateAttrs {
-  /** Specifies an optional text description for the policy template, used to provide context about the template's intended purpose. (AI-inferred) */
   description: string;
   name: string;
-  /** The ID of the policy store in which this policy template is created, associating the template with a specific Cedar policy store. (AI-inferred) */
   policyStoreId: string;
-  /** The unique identifier (UUID) assigned by Amazon Verified Permissions to the policy template, used to reference the template in policies and API operations. (AI-inferred) */
   policyTemplateId: string;
-  /** The Cedar policy statement, written in the Cedar policy language, that defines the authorization rules for this policy template, optionally using placeholders like ?principal and ?resource. (AI-inferred) */
   statement: string;
 }
 

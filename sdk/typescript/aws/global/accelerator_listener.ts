@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AcceleratorListener_PortRanges {
-  /** The first port in the inclusive range of ports (from_port to to_port) that the AWS Global Accelerator listener accepts and forwards traffic on. (AI-inferred) */
   fromPort?: number | Computed<number>;
-  /** The inclusive ending port number of the range for the listener. (AI-inferred) */
   toPort?: number | Computed<number>;
 }
 
@@ -18,7 +16,6 @@ export interface AcceleratorListenerConfig {
   acceleratorArn: string | Computed<string>;
   /** Client affinity lets you direct all requests from a user to the same endpoint. */
   clientAffinity?: string | Computed<string>;
-  /** Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred) */
   portRanges: AcceleratorListener_PortRanges[] | Computed<AcceleratorListener_PortRanges[]>;
   /** The protocol for the listener. */
   protocol: string | Computed<string>;
@@ -31,7 +28,6 @@ export interface AcceleratorListenerAttrs {
   clientAffinity: string;
   /** The Amazon Resource Name (ARN) of the listener. */
   listenerArn: string;
-  /** Defines the list of port ranges (each with a `from` and `to` port) that the listener forwards traffic on. (AI-inferred) */
   portRanges: AcceleratorListener_PortRanges[];
   /** The protocol for the listener. */
   protocol: string;

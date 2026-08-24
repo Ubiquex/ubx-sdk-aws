@@ -17,7 +17,6 @@ type GatewayV2ApiMappingConfig struct {
 type GatewayV2ApiMappingAttrs struct {
 	// The API identifier.
 	ApiId any
-	// The unique identifier assigned by AWS to this API mapping, used to reference the mapping in API Gateway v2 operations. (AI-inferred)
 	ApiMappingId any
 	// The API mapping key.
 	ApiMappingKey any

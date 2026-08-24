@@ -4,32 +4,23 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsIntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy_Columns struct {
-	// The name of the column in the configured table to which the differential privacy policy is applied. (AI-inferred)
 	Name any
 }
 
 type RoomsIntermediateTable_AnalysisRules_Policy_V1_Custom_DifferentialPrivacy struct {
-	// Specifies the columns in the AWS Clean Rooms intermediate table that are protected by the differential privacy policy within this custom analysis rule. (AI-inferred)
 	Columns any
 }
 
 type RoomsIntermediateTable_AnalysisRules_Policy_V1_Custom struct {
-	// This field specifies the ARNs of additional analyses that are allowed to be run on the intermediate table under the custom analysis rule policy. (AI-inferred)
 	AdditionalAnalyses any
-	// Specifies the list of allowed analysis template names (strings) that collaborators may run on the configured table under this custom analysis rule, restricting which analyses are permitted. (AI-inferred)
 	AllowedAnalyses any
-	// This list of strings defines the AWS account IDs that are authorized to act as analysis providers for the custom analysis rule, restricting which accounts can run SQL queries against the intermediate table. (AI-inferred)
 	AllowedAnalysisProviders any
-	// Specifies the list of member account identifiers that are allowed to receive the results of queries run under this custom analysis rule policy. (AI-inferred)
 	AllowedResultReceivers any
-	// Defines the differential privacy settings for the custom analysis rule, specifying the privacy budget and noise injection mechanism applied to prevent re-identification of individual records. (AI-inferred)
 	DifferentialPrivacy any
-	// Specifies the list of column names from the intermediate table that are prohibited from being included in the output of any query executed under this custom analysis rule, preventing sensitive data from being exposed. (AI-inferred)
 	DisallowedOutputColumns any
 }
 
 type RoomsIntermediateTable_AnalysisRules_Policy_V1 struct {
-	// Defines the custom analysis rule variant within the V1 analysis rule policy, specifying which SQL analyses (e.g., SELECT) are allowed and any restrictions on analysis providers or output columns for the table. (AI-inferred)
 	Custom any
 }
 
@@ -43,19 +34,15 @@ type RoomsIntermediateTable_AnalysisRules struct {
 }
 
 type RoomsIntermediateTable_PopulationAnalysisConfiguration_SqlParameters struct {
-	// The Amazon Resource Name (ARN) of the analysis template that the SQL parameters in this block are associated with, used to identify which template's parameters are being configured for the population analysis. (AI-inferred)
 	AnalysisTemplateArn any
-	// The SQL query text that defines the population analysis logic for generating the intermediate table in AWS Clean Rooms. (AI-inferred)
 	QueryString any
 }
 
 type RoomsIntermediateTable_PopulationAnalysisConfiguration struct {
-	// The sql_parameters object provides named values for the placeholders defined in the SQL query of the population analysis configuration, enabling the analysis to be customized with different parameter values at execution time. (AI-inferred)
 	SqlParameters any
 }
 
 type RoomsIntermediateTable_Tags struct {
-	// The key of a user-defined tag attached to the AWS Clean Rooms intermediate table, serving as the identifier for the tag's metadata label. (AI-inferred)
 	Key any
 	Value any
 }
@@ -129,12 +116,9 @@ var RoomsIntermediateTable_TagsFields = ubx.FieldMap{
 	}
 
 type RoomsIntermediateTableConfig struct {
-	// Defines the analysis constraints that govern how members can query the intermediate table, including the allowed analysis methods and their configurations. (AI-inferred)
 	AnalysisRules any
 	Description any
-	// Specifies the AWS KMS key ARN used to encrypt the intermediate table, enabling customer-managed server-side encryption for the table's data. (AI-inferred)
 	KmsKeyArn any
-	// The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
 	MembershipIdentifier any
 	Name any
 	PopulationAnalysisConfiguration any
@@ -142,21 +126,14 @@ type RoomsIntermediateTableConfig struct {
 }
 
 type RoomsIntermediateTableAttrs struct {
-	// Defines the analysis constraints that govern how members can query the intermediate table, including the allowed analysis methods and their configurations. (AI-inferred)
 	AnalysisRules any
 	Arn any
-	// The Amazon Resource Name (ARN) of the AWS Clean Rooms collaboration in which the intermediate table is defined. (AI-inferred)
 	CollaborationArn any
-	// The unique identifier of the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
 	CollaborationIdentifier any
 	Description any
-	// The system-generated unique identifier assigned by AWS Clean Rooms to this intermediate table, used to reference and manage the table resource. (AI-inferred)
 	IntermediateTableIdentifier any
-	// Specifies the AWS KMS key ARN used to encrypt the intermediate table, enabling customer-managed server-side encryption for the table's data. (AI-inferred)
 	KmsKeyArn any
-	// The Amazon Resource Name (ARN) of the AWS Clean Rooms membership that owns or contains the intermediate table, provided as a read-only identifier. (AI-inferred)
 	MembershipArn any
-	// The unique identifier of the membership within the AWS Clean Rooms collaboration that this intermediate table belongs to. (AI-inferred)
 	MembershipIdentifier any
 	Name any
 	PopulationAnalysisConfiguration any

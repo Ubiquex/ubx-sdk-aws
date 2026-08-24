@@ -11,11 +11,9 @@ export interface CatalogAppRegistryAttributeGroupAssociationConfig {
 export interface CatalogAppRegistryAttributeGroupAssociationAttrs {
   /** The name or the Id of the Application. */
   application: string;
-  /** The Amazon Resource Name (ARN) of the application associated with the attribute group in this AppRegistry attribute group association. (AI-inferred) */
   applicationArn: string;
   /** The name or the Id of the AttributeGroup. */
   attributeGroup: string;
-  /** The Amazon Resource Name (ARN) of the attribute group that is associated with the application in AWS Service Catalog AppRegistry. (AI-inferred) */
   attributeGroupArn: string;
 }
 

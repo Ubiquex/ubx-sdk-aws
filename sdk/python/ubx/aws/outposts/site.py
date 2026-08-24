@@ -8,53 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Site_OperatingAddress:
-    # The first line of the street address (e.g., building number and street) for the operating address of the AWS Outpost site, indicating where the Outpost equipment is physically located. (AI-inferred)
     address_line1: Any = None
-    # The second line of the operating address for the Outposts site, used for additional address details such as a suite, unit, or floor number. (AI-inferred)
     address_line2: Any = None
-    # Specifies the third line of the street address for the operating (physical) address of the AWS Outposts site. (AI-inferred)
     address_line3: Any = None
-    # The city portion of the physical operating address where the AWS Outpost site is deployed and operates. (AI-inferred)
     city: Any = None
-    # The name of the contact person associated with the operating address of the Outpost site. (AI-inferred)
     contact_name: Any = None
-    # The phone number of the primary contact person responsible for the Outpost site at this operating address. (AI-inferred)
     contact_phone_number: Any = None
-    # The country code of the operating address for the Outpost site, specified as a two-letter ISO 3166-1 alpha-2 country code. (AI-inferred)
     country_code: Any = None
-    # The district or county portion of the operating address where the Outpost site is physically located. (AI-inferred)
     district_or_county: Any = None
-    # The municipality (city or town) of the operating address for the Outposts site. (AI-inferred)
     municipality: Any = None
-    # The postal code of the operating address for the Outposts site, which AWS uses for shipping equipment and providing on-site service. (AI-inferred)
     postal_code: Any = None
-    # The state, province, or region portion of the physical operating address for the AWS Outposts site, required when specifying the site's location. (AI-inferred)
     state_or_region: Any = None
 
 @dataclasses.dataclass
 class Site_RackPhysicalProperties:
-    # Specifies the type of fiber optic cable used by the Outpost rack, either single-mode or multi-mode. (AI-inferred)
     fiber_optic_cable_type: Any = None
-    # The maximum weight capacity in pounds that the Outpost rack is designed to support, expressed as a string value that defines the physical weight limit for the site's rack. (AI-inferred)
     maximum_supported_weight_lbs: Any = None
-    # Specifies the optical standard used for the fiber-optic network connection on the Outpost rack, determining the type of fiber (e.g., single-mode or multi-mode) and associated speed/transceiver standard. (AI-inferred)
     optical_standard: Any = None
-    # Specifies the type of power connector used for the Outpost rack (e.g., C19 or C21), which influences the physical power infrastructure required at the site. (AI-inferred)
     power_connector: Any = None
-    # Specifies the power draw of the rack in kilovolt-amperes (kVA) when defining the physical properties of the AWS Outposts site rack. (AI-inferred)
     power_draw_kva: Any = None
-    # Indicates whether the power feed for the rack drops from above (overhead) or below (underfloor), which determines how service cabling is routed to the outpost rack. (AI-inferred)
     power_feed_drop: Any = None
-    # The power phase (single-phase or three-phase) of the power connection for the Outpost rack, such as SINGLE_PHASE or THREE_PHASE. (AI-inferred)
     power_phase: Any = None
-    # Specifies the number of uplinks per rack for the Outpost site, using a string enum value such as 'UPLINK_COUNT_4' or 'UPLINK_COUNT_8'. (AI-inferred)
     uplink_count: Any = None
-    # Specifies the uplink speed (in Gbps) for the Outpost rack's network connection, such as '1G', '10G', '40G', or '100G'. (AI-inferred)
     uplink_gbps: Any = None
 
 @dataclasses.dataclass
 class Site_Tags:
-    # The tag key (for example, 'Environment') for a tag attached to this AWS Outposts site. (AI-inferred)
     key: Any = None
     value: Any = None
 
@@ -91,40 +70,24 @@ _Site_TagsFields = {
 
 @dataclasses.dataclass
 class SiteConfig:
-    # The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred)
     description: Any = None
-    # The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred)
     name: Any = None
-    # An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred)
     notes: Any = None
-    # The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred)
     operating_address: Any = None
-    # Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred)
     rack_physical_properties: Any = None
-    # The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred)
     shipping_address: Any = None
-    # A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class SiteAttrs:
-    # The description of the Outposts site, an optional string that provides additional context or identifying information about the site. (AI-inferred)
     description: Any = None
-    # The human-readable name assigned to the Outposts site, used to identify the physical location where the AWS Outpost is installed. (AI-inferred)
     name: Any = None
-    # An optional string that stores additional descriptive notes or information about the Outposts site. (AI-inferred)
     notes: Any = None
-    # The physical address of the Outposts site, specified as an object containing street address, city, state, country, and postal code, used for logistics and installation. (AI-inferred)
     operating_address: Any = None
-    # Defines the physical characteristics of the Outposts rack, including power draw, power feed drop, connector type, phase, voltage, and maximum weight, which AWS uses to plan installation at the site. (AI-inferred)
     rack_physical_properties: Any = None
-    # The shipping address for the Outpost site, where AWS will deliver the Outpost hardware. (AI-inferred)
     shipping_address: Any = None
-    # The Amazon Resource Name (ARN) of the Outposts site. (AI-inferred)
     site_arn: Any = None
-    # The unique identifier assigned by AWS to the Outposts site, used to reference the site in other resources. (AI-inferred)
     site_id: Any = None
-    # A list of tag objects (each with a Key and Value) to assign to the Outposts Site, used for categorizing and managing the site resource. (AI-inferred)
     tags: Any = None
 
 Site = ubx.ResourceBinding(

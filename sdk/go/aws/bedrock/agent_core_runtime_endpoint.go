@@ -6,7 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type AgentCoreRuntimeEndpointConfig struct {
 	// The ID of the parent Agent Runtime
 	AgentRuntimeId any
-	// The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
 	AgentRuntimeVersion any
 	Description any
 	Name any
@@ -15,12 +14,10 @@ type AgentCoreRuntimeEndpointConfig struct {
 }
 
 type AgentCoreRuntimeEndpointAttrs struct {
-	// The Amazon Resource Name (ARN) of the Bedrock agent core runtime endpoint, automatically assigned by AWS to uniquely identify the endpoint for agent invocation. (AI-inferred)
 	AgentRuntimeArn any
 	AgentRuntimeEndpointArn any
 	// The ID of the parent Agent Runtime
 	AgentRuntimeId any
-	// The version of the Bedrock Agent runtime to use for the endpoint, which controls the runtime behavior and feature set available when invoking the agent through this core runtime endpoint. (AI-inferred)
 	AgentRuntimeVersion any
 	CreatedAt any
 	Description any

@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ResolverFirewallDomainList_Tags:
-    # The key of a tag attached to the Route 53 Resolver firewall domain list, used to assign metadata for identifying and organizing the resource in AWS. (AI-inferred)
     key: Any = None
     value: Any = None
 

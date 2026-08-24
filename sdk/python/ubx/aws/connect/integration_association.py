@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IntegrationAssociation_Tags:
-    # The key of a tag attached to the AWS Connect integration association, used to categorize or identify the resource. (AI-inferred)
     key: Any = None
     value: Any = None
 

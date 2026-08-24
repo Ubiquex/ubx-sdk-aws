@@ -8,11 +8,8 @@ type V2CisScanConfigurationConfig struct {
 	ScanName any
 	// Choose a Schedule cadence
 	Schedule any
-	// The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred)
 	SecurityLevel any
-	// The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred)
 	Tags any
-	// Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred)
 	Targets any
 }
 
@@ -23,11 +20,8 @@ type V2CisScanConfigurationAttrs struct {
 	ScanName any
 	// Choose a Schedule cadence
 	Schedule any
-	// The CIS benchmark security level (e.g., LEVEL_1 or LEVEL_2) that this scan configuration is applied against. (AI-inferred)
 	SecurityLevel any
-	// The tags to assign to the CIS scan configuration resource, used for organizing and identifying it in AWS. (AI-inferred)
 	Tags any
-	// Specifies the AWS accounts and resource tags that the CIS scan targets, determining which resources are included in the scan. (AI-inferred)
 	Targets any
 }
 

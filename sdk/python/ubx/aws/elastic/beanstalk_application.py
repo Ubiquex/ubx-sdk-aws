@@ -26,16 +26,13 @@ class BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxCou
 
 @dataclasses.dataclass
 class BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig:
-    # This object defines the rule that automatically deletes application versions older than a specified number of days, optionally deleting their source bundles from S3, for the Elastic Beanstalk application version lifecycle configuration. (AI-inferred)
     max_age_rule: Any = None
-    # Specifies the max-count-based lifecycle rule for Elastic Beanstalk application versions, including whether the rule is enabled, the maximum number of versions to keep (MaxCount), and whether to delete the source bundle from S3. (AI-inferred)
     max_count_rule: Any = None
 
 @dataclasses.dataclass
 class BeanstalkApplication_ResourceLifecycleConfig:
     # The ARN of an IAM service role that Elastic Beanstalk has permission to assume. The ServiceRole property is required the first time that you provide a ResourceLifecycleConfig for the application. After you provide it once, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again. You can, however, specify it in subsequent updates to change the Service Role to another value.
     service_role: Any = None
-    # Defines the lifecycle policy for application versions, including optional max count and max age rules that control how many versions are retained and how old they may become before deletion. (AI-inferred)
     version_lifecycle_config: Any = None
 
 _BeanstalkApplication_ResourceLifecycleConfig_VersionLifecycleConfig_MaxAgeRuleFields = {
@@ -78,7 +75,6 @@ class BeanstalkApplicationConfig:
     application_name: Any = None
     # Your description of the application.
     description: Any = None
-    # Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
     resource_lifecycle_config: Any = None
 
 @dataclasses.dataclass
@@ -87,7 +83,6 @@ class BeanstalkApplicationAttrs:
     application_name: Any = None
     # Your description of the application.
     description: Any = None
-    # Defines how Elastic Beanstalk manages the lifecycle of application versions, including whether to delete expired versions, how long to retain them, and the service role used for cleanup. (AI-inferred)
     resource_lifecycle_config: Any = None
 
 BeanstalkApplication = ubx.ResourceBinding(

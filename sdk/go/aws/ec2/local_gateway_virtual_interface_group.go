@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LocalGatewayVirtualInterfaceGroup_Tags struct {
 	Key any
-	// The value portion of a tag key-value pair attached to the Local Gateway Virtual Interface Group, enabling you to assign custom metadata for identification and management. (AI-inferred)
 	Value any
 }
 

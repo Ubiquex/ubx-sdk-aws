@@ -9,20 +9,14 @@ export interface ObjectLambdaAccessPoint_Alias {
 }
 
 export interface ObjectLambdaAccessPoint_ObjectLambdaConfiguration_TransformationConfigurations {
-  /** Specifies the list of S3 API operations (such as GetObject and HeadObject) for which the transformation configuration applies. (AI-inferred) */
   actions?: string[] | Computed<string[]>;
-  /** Defines the content transformation for an Object Lambda Access Point, specifying the AWS Lambda function (through its ARN) that processes the object for the associated action such as GetObject. (AI-inferred) */
   contentTransformation?: unknown | Computed<unknown>;
 }
 
 export interface ObjectLambdaAccessPoint_ObjectLambdaConfiguration {
-  /** Specifies the list of S3 GET/HEAD object request features (e.g., GetObject-Range, GetObject-PartNumber, HeadObject-Range, HeadObject-PartNumber) that the Object Lambda Access Point is allowed to forward to the Lambda function for processing. (AI-inferred) */
   allowedFeatures?: string[] | Computed<string[]>;
-  /** Whether CloudWatch metrics are enabled for the Object Lambda Access Point, allowing request and processing metrics to be published to CloudWatch. (AI-inferred) */
   cloudWatchMetricsEnabled?: boolean | Computed<boolean>;
-  /** The ARN of the standard S3 access point that this Object Lambda access point uses to access the underlying S3 bucket. (AI-inferred) */
   supportingAccessPoint: string | Computed<string>;
-  /** Specifies the list of transformation configurations for the Object Lambda Access Point, where each entry defines the S3 actions (such as GetObject) to intercept and the AWS Lambda function invocation that transforms the requested object. (AI-inferred) */
   transformationConfigurations: ObjectLambdaAccessPoint_ObjectLambdaConfiguration_TransformationConfigurations[] | Computed<ObjectLambdaAccessPoint_ObjectLambdaConfiguration_TransformationConfigurations[]>;
 }
 
@@ -66,9 +60,7 @@ export interface ObjectLambdaAccessPointConfig {
 }
 
 export interface ObjectLambdaAccessPointAttrs {
-  /** The alias is a read-only, generated unique name for the Object Lambda Access Point, which can be used interchangeably with the access point name when making S3 requests. (AI-inferred) */
   alias: ObjectLambdaAccessPoint_Alias;
-  /** The Amazon Resource Name (ARN) of the S3 Object Lambda access point, uniquely identifying it within AWS. (AI-inferred) */
   arn: string;
   /** The date and time when the Object lambda Access Point was created. */
   creationDate: string;
@@ -76,7 +68,6 @@ export interface ObjectLambdaAccessPointAttrs {
   name: string;
   /** Configuration to be applied to this Object lambda Access Point. It specifies Supporting Access Point, Transformation Configurations. Customers can also set if they like to enable Cloudwatch metrics for accesses to this Object lambda Access Point. Default setting for Cloudwatch metrics is disable. */
   objectLambdaConfiguration: ObjectLambdaAccessPoint_ObjectLambdaConfiguration;
-  /** Contains the read-only policy status of the Object Lambda Access Point, including whether the access point's resource policy is publicly accessible (IsPublic). (AI-inferred) */
   policyStatus: ObjectLambdaAccessPoint_PolicyStatus;
   /** The Public Access Block Configuration is used to block policies that would allow public access to this Object lambda Access Point. All public access to Object lambda Access Points are blocked by default, and any policy that would give public access to them will be also blocked. This behavior cannot be changed for Object lambda Access Points. */
   publicAccessBlockConfiguration: ObjectLambdaAccessPoint_PublicAccessBlockConfiguration;

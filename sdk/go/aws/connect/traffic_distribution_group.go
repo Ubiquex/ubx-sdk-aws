@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TrafficDistributionGroup_Tags struct {
 	Key any
-	// The value of a user-defined tag key applied to the AWS Connect traffic distribution group, used for metadata and resource organization. (AI-inferred)
 	Value any
 }
 

@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MetricAttribution_Metrics:
-    # The type of user event (such as Purchase or Click) that this metric attribution uses to measure how recommendation results influence that activity. (AI-inferred)
     event_type: Any = None
-    # Defines a SQL-like expression that computes the metric from event attributes and event types, for example `SUM(IF(event_type = 'click', 1, 0))`. (AI-inferred)
     expression: Any = None
-    # The user-defined name for this metric within the Amazon Personalize metric attribution, used to identify it in the configuration and in the output reports. (AI-inferred)
     metric_name: Any = None
 
 @dataclasses.dataclass

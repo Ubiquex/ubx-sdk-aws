@@ -8,17 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DiscoveryPrivateDnsNamespace_Properties_DnsProperties_Soa:
-    # Specifies the time-to-live (TTL) in seconds for the SOA (Start of Authority) record of the private DNS namespace, controlling how long DNS resolvers cache the SOA information. (AI-inferred)
     ttl: Any = None
 
 @dataclasses.dataclass
 class DiscoveryPrivateDnsNamespace_Properties_DnsProperties:
-    # Configures the start of authority (SOA) record settings for the private DNS namespace, allowing you to set the time-to-live (TTL) for the SOA record. (AI-inferred)
     soa: Any = None
 
 @dataclasses.dataclass
 class DiscoveryPrivateDnsNamespace_Properties:
-    # Defines the DNS properties for the private namespace, specifically the SOA (Start of Authority) record settings that control the default DNS behavior for the namespace. (AI-inferred)
     dns_properties: Any = None
 
 @dataclasses.dataclass

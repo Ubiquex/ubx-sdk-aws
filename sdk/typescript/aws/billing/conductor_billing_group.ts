@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ConductorBillingGroup_AccountGrouping {
-  /** When enabled, accounts in the organization that are not already associated with another billing group are automatically added to this billing group. (AI-inferred) */
   autoAssociate?: boolean | Computed<boolean>;
-  /** Identifies the AWS accounts that are members of this billing group by their linked account IDs, determining which accounts are billed together under the group's pricing rules. (AI-inferred) */
   linkedAccountIds?: string[] | Computed<string[]>;
   responsibilityTransferArn?: string | Computed<string>;
 }
@@ -15,7 +13,6 @@ export interface ConductorBillingGroup_ComputationPreference {
 }
 
 export interface ConductorBillingGroup_Tags {
-  /** The key of a user-defined tag assigned to an AWS Billing Conductor billing group, used to organize and identify the group for cost tracking and management. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -36,44 +33,32 @@ const ConductorBillingGroup_TagsFields: FieldMap = {
 };
 
 export interface ConductorBillingGroupConfig {
-  /** Specifies the linked accounts (by their account IDs) that are grouped together in this AWS Billing Conductor billing group for consolidated billing and custom pricing. (AI-inferred) */
   accountGrouping: ConductorBillingGroup_AccountGrouping | Computed<ConductorBillingGroup_AccountGrouping>;
-  /** Specifies the cost computation preference for the billing group, referencing the pricing rule ARN that determines how the group's billed amounts are calculated. (AI-inferred) */
   computationPreference: ConductorBillingGroup_ComputationPreference | Computed<ConductorBillingGroup_ComputationPreference>;
-  /** An optional string that supplies a human-readable explanation of the billing group's purpose or contents, limited to 1024 characters. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The user-defined name of the billing group, which must be unique within the AWS account and is used to identify the billing group in the Billing Conductor console and APIs. (AI-inferred) */
   name: string | Computed<string>;
   /** This account will act as a virtual payer account of the billing group */
   primaryAccountId?: string | Computed<string>;
-  /** A list of tag objects that define key-value pairs to attach to the billing group, enabling you to categorize and manage billing groups within AWS Billing Conductor. (AI-inferred) */
   tags?: ConductorBillingGroup_Tags[] | Computed<ConductorBillingGroup_Tags[]>;
 }
 
 export interface ConductorBillingGroupAttrs {
-  /** Specifies the linked accounts (by their account IDs) that are grouped together in this AWS Billing Conductor billing group for consolidated billing and custom pricing. (AI-inferred) */
   accountGrouping: ConductorBillingGroup_AccountGrouping;
   /** Billing Group ARN */
   arn: string;
-  /** Specifies the cost computation preference for the billing group, referencing the pricing rule ARN that determines how the group's billed amounts are calculated. (AI-inferred) */
   computationPreference: ConductorBillingGroup_ComputationPreference;
   /** Creation timestamp in UNIX epoch time format */
   creationTime: number;
-  /** An optional string that supplies a human-readable explanation of the billing group's purpose or contents, limited to 1024 characters. (AI-inferred) */
   description: string;
   /** Latest modified timestamp in UNIX epoch time format */
   lastModifiedTime: number;
-  /** The user-defined name of the billing group, which must be unique within the AWS account and is used to identify the billing group in the Billing Conductor console and APIs. (AI-inferred) */
   name: string;
   /** This account will act as a virtual payer account of the billing group */
   primaryAccountId: string;
   /** Number of accounts in the billing group */
   size: number;
-  /** This read-only field indicates the current lifecycle status of the billing group, such as ACTIVE, in the AWS Billing Conductor service. (AI-inferred) */
   status: string;
-  /** The reason for the current status of the billing group, providing contextual details when the group is not fully active (e.g., why it failed or is in a transient state). (AI-inferred) */
   statusReason: string;
-  /** A list of tag objects that define key-value pairs to attach to the billing group, enabling you to categorize and manage billing groups within AWS Billing Conductor. (AI-inferred) */
   tags: ConductorBillingGroup_Tags[];
 }
 

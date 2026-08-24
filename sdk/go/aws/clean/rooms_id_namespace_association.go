@@ -4,28 +4,21 @@ package clean
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoomsIdNamespaceAssociation_IdMappingConfig struct {
-	// When set to true, allows the ID namespace to be used as a dimension column in AWS Clean Rooms queries and analyses. (AI-inferred)
 	AllowUseAsDimensionColumn any
 }
 
 type RoomsIdNamespaceAssociation_InputReferenceConfig struct {
-	// The Amazon Resource Name (ARN) of the entity reference data that the ID namespace association uses to resolve identities, as specified in the input reference configuration. (AI-inferred)
 	InputReferenceArn any
-	// A Boolean flag that, when true, indicates AWS Clean Rooms automatically manages the resource policies for the referenced input resource (such as an S3 bucket) to allow access for the ID namespace association, and when false, requires the user to manage those policies manually. (AI-inferred)
 	ManageResourcePolicies any
 }
 
 type RoomsIdNamespaceAssociation_InputReferenceProperties struct {
-	// A list of ID mapping workflow types (e.g., UseProvidedSource or UseProvidedTarget) that this Clean Rooms ID namespace association supports, determining which matching workflows can be run with the associated namespace. (AI-inferred)
 	IdMappingWorkflowsSupported any
-	// Specifies whether the associated ID namespace functions as a SOURCE or TARGET in the Clean Rooms collaboration's matching workflow. (AI-inferred)
 	IdNamespaceType any
 }
 
 type RoomsIdNamespaceAssociation_Tags struct {
-	// The key of a user-defined tag attached to the AWS Clean Rooms ID namespace association, used to organize, filter, and manage this resource. (AI-inferred)
 	Key any
-	// The value of a tag attached to the AWS Clean Rooms ID namespace association, used to store arbitrary metadata for resource categorization and management. (AI-inferred)
 	Value any
 }
 
@@ -44,44 +37,26 @@ var RoomsIdNamespaceAssociation_TagsFields = ubx.FieldMap{
 	}
 
 type RoomsIdNamespaceAssociationConfig struct {
-	// An optional free-text field for storing a human-readable note about the AWS Clean Rooms ID namespace association, helping to indicate its business purpose or configuration context. (AI-inferred)
 	Description any
-	// Configures the ID mapping behavior for this ID namespace association, specifying whether the namespace acts as a source or target in AWS Clean Rooms ID mapping. (AI-inferred)
 	IdMappingConfig any
-	// Defines the input reference for the ID namespace association, specifying the ARN of the underlying data source (such as an AWS Glue table) and whether AWS Clean Rooms manages resource policies on that source. (AI-inferred)
 	InputReferenceConfig any
-	// The unique identifier of the AWS Clean Rooms membership that this ID namespace association belongs to. (AI-inferred)
 	MembershipIdentifier any
-	// A required, user-specified name for the ID namespace association, used to identify and manage the association within an AWS Clean Rooms collaboration. (AI-inferred)
 	Name any
-	// Specifies the list of tag key-value pairs to assign to the ID namespace association, enabling cost allocation and resource metadata organization. (AI-inferred)
 	Tags any
 }
 
 type RoomsIdNamespaceAssociationAttrs struct {
-	// The Amazon Resource Name (ARN) uniquely identifying this ID namespace association within AWS Clean Rooms. (AI-inferred)
 	Arn any
-	// The Amazon Resource Name (ARN) of the collaboration that this ID namespace association belongs to. (AI-inferred)
 	CollaborationArn any
-	// The unique identifier of the collaboration to which this ID namespace association belongs. (AI-inferred)
 	CollaborationIdentifier any
-	// An optional free-text field for storing a human-readable note about the AWS Clean Rooms ID namespace association, helping to indicate its business purpose or configuration context. (AI-inferred)
 	Description any
-	// Configures the ID mapping behavior for this ID namespace association, specifying whether the namespace acts as a source or target in AWS Clean Rooms ID mapping. (AI-inferred)
 	IdMappingConfig any
-	// The unique system-generated identifier for this Clean Rooms ID namespace association. (AI-inferred)
 	IdNamespaceAssociationIdentifier any
-	// Defines the input reference for the ID namespace association, specifying the ARN of the underlying data source (such as an AWS Glue table) and whether AWS Clean Rooms manages resource policies on that source. (AI-inferred)
 	InputReferenceConfig any
-	// The read-only InputReferenceProperties object that AWS returns for a Clean Rooms ID namespace association, specifying the ID namespace type (e.g., SOURCE or TARGET) and the member columns used as the input reference for ID matching. (AI-inferred)
 	InputReferenceProperties any
-	// The Amazon Resource Name (ARN) of the membership that contains this ID namespace association. (AI-inferred)
 	MembershipArn any
-	// The unique identifier of the AWS Clean Rooms membership that this ID namespace association belongs to. (AI-inferred)
 	MembershipIdentifier any
-	// A required, user-specified name for the ID namespace association, used to identify and manage the association within an AWS Clean Rooms collaboration. (AI-inferred)
 	Name any
-	// Specifies the list of tag key-value pairs to assign to the ID namespace association, enabling cost allocation and resource metadata organization. (AI-inferred)
 	Tags any
 }
 

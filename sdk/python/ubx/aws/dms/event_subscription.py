@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventSubscription_Tags:
-    # The key of a user-defined tag attached to the AWS DMS event subscription, used to categorize and identify the resource. (AI-inferred)
     key: Any = None
-    # The value of a user-defined tag applied to the AWS DMS event subscription. (AI-inferred)
     value: Any = None
 
 _EventSubscription_TagsFields = {

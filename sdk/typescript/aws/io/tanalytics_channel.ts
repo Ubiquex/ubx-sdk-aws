@@ -2,31 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TanalyticsChannel_ChannelStorage_CustomerManagedS3 {
-  /** The name of the S3 bucket in which the channel's data is stored when using customer-managed S3 storage. (AI-inferred) */
   bucket: string | Computed<string>;
-  /** Specifies the key prefix for objects stored in the customer-managed S3 bucket in the IoT Analytics channel's storage, used to organize or filter the channel data. (AI-inferred) */
   keyPrefix?: string | Computed<string>;
-  /** The ARN of the IAM role that AWS IoT Analytics assumes to access the customer-managed S3 bucket for storing channel data. (AI-inferred) */
   roleArn: string | Computed<string>;
 }
 
 export interface TanalyticsChannel_ChannelStorage {
-  /** Specifies the customer-managed S3 bucket configuration where the IoT Analytics channel stores its data, including the bucket name and optional key prefix. (AI-inferred) */
   customerManagedS3?: TanalyticsChannel_ChannelStorage_CustomerManagedS3 | Computed<TanalyticsChannel_ChannelStorage_CustomerManagedS3>;
-  /** Specifies that AWS IoT Analytics uses a service-managed S3 bucket for channel storage, indicated by the presence of this empty object. (AI-inferred) */
   serviceManagedS3?: unknown | Computed<unknown>;
 }
 
 export interface TanalyticsChannel_RetentionPeriod {
-  /** Specifies the number of days that message data in the channel is retained, after which it is automatically deleted. (AI-inferred) */
   numberOfDays?: number | Computed<number>;
-  /** When set to true, the channel retains its data indefinitely with no automatic expiration, and when false you must supply a finite retention period in days using the `numberOfDays` field of the same `retentionPeriod` object. (AI-inferred) */
   unlimited?: boolean | Computed<boolean>;
 }
 
 export interface TanalyticsChannel_Tags {
   key?: string | Computed<string>;
-  /** The value of a tag associated with an AWS IoT Analytics channel, used to assign metadata for resource tracking and management. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -56,25 +48,17 @@ const TanalyticsChannel_TagsFields: FieldMap = {
 };
 
 export interface TanalyticsChannelConfig {
-  /** The name of the AWS IoT Analytics channel; if omitted, CloudFormation generates a unique name for the channel. (AI-inferred) */
   channelName?: string | Computed<string>;
-  /** Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred) */
   channelStorage?: TanalyticsChannel_ChannelStorage | Computed<TanalyticsChannel_ChannelStorage>;
-  /** Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred) */
   retentionPeriod?: TanalyticsChannel_RetentionPeriod | Computed<TanalyticsChannel_RetentionPeriod>;
-  /** Tags are key-value pairs that you can attach to an AWS IoT Analytics channel to help identify and organize the channel, and they can be used for resource-level access control and cost tracking. (AI-inferred) */
   tags?: TanalyticsChannel_Tags[] | Computed<TanalyticsChannel_Tags[]>;
 }
 
 export interface TanalyticsChannelAttrs {
-  /** The name of the AWS IoT Analytics channel; if omitted, CloudFormation generates a unique name for the channel. (AI-inferred) */
   channelName: string;
-  /** Configures the storage destination for the channel's message data, choosing between an AWS IoT Analytics service-managed S3 bucket or a customer-managed S3 bucket. (AI-inferred) */
   channelStorage: TanalyticsChannel_ChannelStorage;
   id: string;
-  /** Specifies how long message data is kept in the channel, either as a finite number of days or indefinitely. (AI-inferred) */
   retentionPeriod: TanalyticsChannel_RetentionPeriod;
-  /** Tags are key-value pairs that you can attach to an AWS IoT Analytics channel to help identify and organize the channel, and they can be used for resource-level access control and cost tracking. (AI-inferred) */
   tags: TanalyticsChannel_Tags[];
 }
 

@@ -4,49 +4,33 @@ package cloud
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FrontStreamingDistribution_StreamingDistributionConfig_Logging struct {
-	// The Amazon S3 bucket to which CloudFront delivers access logs for the streaming distribution. (AI-inferred)
 	Bucket any
-	// Specifies whether CloudFront writes access logs for the streaming distribution to the S3 bucket named in the logging bucket property. (AI-inferred)
 	Enabled any
-	// This string specifies the prefix that CloudFront adds to the beginning of the access log file names for this streaming distribution when it writes logs to the configured Amazon S3 bucket. (AI-inferred)
 	Prefix any
 }
 
 type FrontStreamingDistribution_StreamingDistributionConfig_S3Origin struct {
-	// The domain name of the S3 bucket that acts as the origin for the CloudFront streaming distribution, typically formatted as `<bucket-name>.s3.amazonaws.com`. (AI-inferred)
 	DomainName any
-	// The CloudFront origin access identity (OAI) to associate with the S3 origin for the streaming distribution, which permits CloudFront to access private S3 content. (AI-inferred)
 	OriginAccessIdentity any
 }
 
 type FrontStreamingDistribution_StreamingDistributionConfig_TrustedSigners struct {
-	// Specifies the AWS account numbers of trusted signers (accounts with CloudFront key pairs) allowed to create signed URLs or signed cookies for this streaming distribution. (AI-inferred)
 	AwsAccountNumbers any
-	// Indicates whether trusted signers are enabled for the streaming distribution, so that when true, the accounts in the AwsAccountNumbers list can create signed URLs, and when false, only the creating AWS account can create signed URLs. (AI-inferred)
 	Enabled any
 }
 
 type FrontStreamingDistribution_StreamingDistributionConfig struct {
-	// List of alternate domain names (CNAMEs) that can be used to access the streaming distribution in addition to the default cloudfront.net domain name. (AI-inferred)
 	Aliases any
-	// The required string comment that describes the CloudFront streaming distribution, which must be provided in the streaming distribution configuration. (AI-inferred)
 	Comment any
-	// Determines whether the CloudFront streaming distribution is enabled to accept and serve viewer requests. (AI-inferred)
 	Enabled any
-	// Configures access logging for the streaming distribution, specifying whether logging is enabled, the S3 bucket where logs are stored, and the log file prefix. (AI-inferred)
 	Logging any
-	// Specifies the price class for the CloudFront streaming distribution, which determines the geographic set of edge locations used and the associated pricing tier (e.g., PriceClass_100, PriceClass_200, or PriceClass_All). (AI-inferred)
 	PriceClass any
-	// Specifies the S3 bucket (domain_name) and CloudFront origin access identity used to authorize access for the streaming distribution's origin. (AI-inferred)
 	S3Origin any
-	// Specifies the AWS account IDs (or 'self' for the owner account) that are permitted to create signed URLs for private content served by this CloudFront streaming distribution, including an Enabled flag indicating whether the trusted signer list is active. (AI-inferred)
 	TrustedSigners any
 }
 
 type FrontStreamingDistribution_Tags struct {
-	// A tag key used to assign a custom metadata label to the CloudFront streaming distribution for organization, cost allocation, or access control purposes. (AI-inferred)
 	Key any
-	// The value portion of a tag applied to the CloudFront streaming distribution, allowing you to associate arbitrary metadata such as environment or cost center with the resource for tracking and management. (AI-inferred)
 	Value any
 }
 
@@ -94,20 +78,14 @@ var FrontStreamingDistribution_TagsFields = ubx.FieldMap{
 	}
 
 type FrontStreamingDistributionConfig struct {
-	// The required configuration object for the CloudFront streaming distribution, specifying the S3 origin, enabled flag, optional aliases, comment, logging settings, and trusted signers for RTMP streaming. (AI-inferred)
 	StreamingDistributionConfig any
-	// Configures the list of tag objects (each with a Key and Value) that are attached to the CloudFront streaming distribution for organization, cost tracking, and access management. (AI-inferred)
 	Tags any
 }
 
 type FrontStreamingDistributionAttrs struct {
-	// The domain name (such as d111111abcdef8.cloudfront.net) that CloudFront assigns to the streaming distribution and that clients use to request content. (AI-inferred)
 	DomainName any
-	// The unique identifier assigned to the CloudFront streaming distribution by AWS, used as the distribution ID. (AI-inferred)
 	Id any
-	// The required configuration object for the CloudFront streaming distribution, specifying the S3 origin, enabled flag, optional aliases, comment, logging settings, and trusted signers for RTMP streaming. (AI-inferred)
 	StreamingDistributionConfig any
-	// Configures the list of tag objects (each with a Key and Value) that are attached to the CloudFront streaming distribution for organization, cost tracking, and access management. (AI-inferred)
 	Tags any
 }
 

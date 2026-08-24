@@ -15,7 +15,6 @@ export interface StaticIpAttrs {
   ipAddress: string;
   /** A Boolean value indicating whether the static IP is attached. */
   isAttached: boolean;
-  /** The Amazon Resource Name (ARN) uniquely identifying the Lightsail static IP within AWS. (AI-inferred) */
   staticIpArn: string;
   /** The name of the static IP address. */
   staticIpName: string;

@@ -4,16 +4,12 @@ package waf
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type XssMatchSet_XssMatchTuples_FieldToMatch struct {
-	// The name of the header or query argument that AWS WAF inspects, used when the field-to-match type is HEADER or SINGLE_QUERY_ARG. (AI-inferred)
 	Data any
-	// Specifies the type of web request component (such as HEADER, METHOD, QUERY_STRING, URI, or BODY) that AWS WAF inspects for cross-site scripting attacks. (AI-inferred)
 	Type any
 }
 
 type XssMatchSet_XssMatchTuples struct {
-	// Specifies the part of a web request to inspect for cross-site scripting attacks, such as the URI, query string, body, or a named header, via the type and optional data subfields. (AI-inferred)
 	FieldToMatch any
-	// Specifies how AWS WAF transforms the text component of the web request before inspection for XSS patterns, such as converting to lowercase, decoding HTML entities, or compressing white spaces. (AI-inferred)
 	TextTransformation any
 }
 
@@ -32,18 +28,13 @@ var XssMatchSet_XssMatchTuplesFields = ubx.FieldMap{
 	}
 
 type XssMatchSetConfig struct {
-	// A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred)
 	Name any
-	// Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred)
 	XssMatchTuples any
 }
 
 type XssMatchSetAttrs struct {
-	// The unique identifier assigned by AWS to the XSS match set, used to reference the set in other WAF resources. (AI-inferred)
 	Id any
-	// A friendly name or description of the XssMatchSet, which is required and cannot be changed after creation. (AI-inferred)
 	Name any
-	// Specifies the parts of the web request to inspect for cross-site scripting attacks and the text transformations to apply, where each tuple consists of a FieldToMatch and a TextTransformation. (AI-inferred)
 	XssMatchTuples any
 }
 

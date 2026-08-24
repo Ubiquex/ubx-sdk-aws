@@ -4,9 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TsiteWiseProject_Tags struct {
-	// Specifies the key of a tag, a user-defined label used to identify, organize, and manage AWS IoT SiteWise projects in AWS. (AI-inferred)
 	Key any
-	// The value part of a tag key-value pair applied to the AWS IoT SiteWise project, used for resource organization, cost allocation, and IAM access control. (AI-inferred)
 	Value any
 }
 

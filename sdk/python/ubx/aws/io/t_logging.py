@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TLogging_EventConfigurations:
-    # The AWS IoT event type (such as MqttActivity, Connections, or DeviceShadowOperations) that this logging configuration applies to within the event configurations map. (AI-inferred)
     event_type: Any = None
-    # The destination ARN (e.g., an Amazon CloudWatch Logs log group or Amazon S3 bucket) to which AWS IoT delivers logs for the corresponding event configuration. (AI-inferred)
     log_destination: Any = None
-    # For each event type in the AWS IoT logging event configurations, this property sets the log level (e.g., DEBUG, INFO, ERROR, WARN, or DISABLED) that controls how detailed the IoT logs are for that event type. (AI-inferred)
     log_level: Any = None
 
 _TLogging_EventConfigurationsFields = {

@@ -21,7 +21,6 @@ class PackagePackagingGroup_EgressAccessLogs:
 @dataclasses.dataclass
 class PackagePackagingGroup_Tags:
     key: Any = None
-    # The value portion of a key-value tag assigned to the MediaPackage packaging group, used for resource metadata, organization, and cost allocation. (AI-inferred)
     value: Any = None
 
 _PackagePackagingGroup_AuthorizationFields = {
@@ -40,9 +39,7 @@ _PackagePackagingGroup_TagsFields = {
 
 @dataclasses.dataclass
 class PackagePackagingGroupConfig:
-    # Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred)
     authorization: Any = None
-    # Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred)
     egress_access_logs: Any = None
     # The ID of the PackagingGroup.
     id: Any = None
@@ -53,11 +50,9 @@ class PackagePackagingGroupConfig:
 class PackagePackagingGroupAttrs:
     # The ARN of the PackagingGroup.
     arn: Any = None
-    # Defines the CDN authorization configuration for the packaging group, specifying the identifier secret and the IAM role that MediaPackage uses to access AWS Secrets Manager for rotating credentials. (AI-inferred)
     authorization: Any = None
     # The fully qualified domain name for Assets in the PackagingGroup.
     domain_name: Any = None
-    # Specifies the CloudWatch Logs log group where egress access logs for this packaging group are sent. (AI-inferred)
     egress_access_logs: Any = None
     # The ID of the PackagingGroup.
     id: Any = None

@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProactiveEngagement_EmergencyContactList:
-    # A free-form note field attached to an emergency contact, used to record additional context such as the contact's role or best time to reach them. (AI-inferred)
     contact_notes: Any = None
-    # The email address where AWS Shield Advanced sends proactive engagement notifications and alerts for this emergency contact. (AI-inferred)
     email_address: Any = None
-    # The phone number of the emergency contact for AWS Shield Advanced proactive engagement notifications. (AI-inferred)
     phone_number: Any = None
 
 _ProactiveEngagement_EmergencyContactListFields = {
@@ -30,7 +27,6 @@ class ProactiveEngagementConfig:
 
 @dataclasses.dataclass
 class ProactiveEngagementAttrs:
-    # The AWS account ID that the Shield Advanced proactive engagement configuration applies to; this is automatically resolved to the current account and is read-only. (AI-inferred)
     account_id: Any = None
     # A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you for escalations to the SRT and to initiate proactive customer support. To enable proactive engagement, the contact list must include at least one phone number.
     emergency_contact_list: Any = None

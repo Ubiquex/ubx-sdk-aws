@@ -10,7 +10,6 @@ import ubx_sdk as ubx
 class IpamallocationConfig:
     # Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR
     cidr: Any = None
-    # A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred)
     description: Any = None
     # Id of the IPAM Pool.
     ipam_pool_id: Any = None
@@ -21,7 +20,6 @@ class IpamallocationConfig:
 class IpamallocationAttrs:
     # Represents an IPAM custom allocation of a single IPv4 or IPv6 CIDR
     cidr: Any = None
-    # A user-defined free-form text description that annotates the IPAM allocation, typically used to record the purpose, owner, or other identifying information for the allocated CIDR block. (AI-inferred)
     description: Any = None
     # Id of the allocation.
     ipam_pool_allocation_id: Any = None

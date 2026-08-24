@@ -8,64 +8,45 @@ type HubV2Service_Assertions struct {
 }
 
 type HubV2Service_AssociatedSystems struct {
-	// The Amazon Resource Name (ARN) of the system associated with this Resilience Hub service. (AI-inferred)
 	SystemArn any
-	// The unique identifiers of the user journeys linked to this associated system, which AWS Resilience Hub uses to align the system with the business processes it supports. (AI-inferred)
 	UserJourneyIds any
 }
 
 type HubV2Service_EffectivePolicyValues_AvailabilitySlo struct {
-	// The name of the availability service-level objective (SLO) policy that is effective for the AWS Resilience Hub service. (AI-inferred)
 	PolicyName any
-	// The effective availability service level objective (SLO) value expressed as a percentage, computed from the applied resiliency policies for the Resilience Hub application. (AI-inferred)
 	Value any
 }
 
 type HubV2Service_EffectivePolicyValues_MultiAzDrApproach struct {
-	// The name of the resiliency policy that governs the multi-AZ disaster recovery approach, determining the recovery point objective and recovery time objective for an application when an Availability Zone disruption occurs. (AI-inferred)
 	PolicyName any
 	Value any
 }
 
 type HubV2Service_EffectivePolicyValues struct {
-	// Specifies the target availability service level objective (SLO) for the application, defining the expected uptime or availability target used within the effective resilience policy values. (AI-inferred)
 	AvailabilitySlo any
 	MultiAzDrApproach any
-	// The effective recovery point objective (RPO) value for the multi-availability-zone (AZ) failure domain, resolved from the resiliency policy applied to this service. (AI-inferred)
 	MultiAzRpo any
-	// The effective Recovery Time Objective (RTO) for a multi-AZ outage, as derived from the resiliency policy applied to the service. (AI-inferred)
 	MultiAzRto any
-	// Specifies the multi-region disaster recovery approach (e.g., active-active or active-passive) that is applied to the application as defined in the effective resilience policy. (AI-inferred)
 	MultiRegionDrApproach any
-	// Specifies the recovery point objective (RPO) that the application must meet in the event of a multi-region disruption, representing the maximum tolerable data loss across AWS Regions. (AI-inferred)
 	MultiRegionRpo any
-	// The effective multi-region Recovery Time Objective (RTO) value, an object that defines the maximum allowable downtime for workloads when failing over to another region, as computed from the service's effective policy evaluation. (AI-inferred)
 	MultiRegionRto any
 }
 
 type HubV2Service_InputSources_ResourceConfiguration_Eks struct {
-	// The ARN of the Amazon EKS cluster that this EKS resource configuration refers to, used to identify the cluster for resilience discovery and assessment. (AI-inferred)
 	ClusterArn any
-	// Specifies the list of Kubernetes namespaces within the EKS cluster that are used to scope the resilience assessment for this input source. (AI-inferred)
 	Namespaces any
 }
 
 type HubV2Service_InputSources_ResourceConfiguration_ResourceTags struct {
-	// The tag key that, together with the tag value, forms a resource tag entry used to identify or filter resources within the resource configuration of an input source for the Resilience Hub service. (AI-inferred)
 	Key any
 	Values any
 }
 
 type HubV2Service_InputSources_ResourceConfiguration struct {
-	// The Amazon Resource Name (ARN) of the CloudFormation stack that defines the resources for this input source's resource configuration in the Resilience Hub service. (AI-inferred)
 	CfnStackArn any
-	// The S3 URL of the design file (e.g., a CloudFormation or Terraform template) that defines the resource configuration for the associated input source in the AWS Resilience Hub service. (AI-inferred)
 	DesignFileS3Url any
-	// Configures an Amazon EKS cluster as an input source for the Resilience Hub service, specifying the cluster to be discovered and included in resilience assessments. (AI-inferred)
 	Eks any
-	// Specifies the list of key-value tag objects to associate with the resource configuration of an input source, enabling you to categorize and identify the underlying AWS resource in AWS Resilience Hub. (AI-inferred)
 	ResourceTags any
-	// Specifies the S3 or Git URL of the Terraform state file that AWS Resilience Hub uses to import the resource configuration and assess the resilience of the application. (AI-inferred)
 	TfStateFileUrl any
 }
 
@@ -74,9 +55,7 @@ type HubV2Service_InputSources struct {
 }
 
 type HubV2Service_PermissionModel_CrossAccountRoleArns struct {
-	// The ARN of an IAM role in another AWS account that AWS Resilience Hub can assume to access and assess resources in that account as part of this permission model. (AI-inferred)
 	CrossAccountRoleArn any
-	// The external ID that AWS Resilience Hub includes when assuming the cross-account IAM role listed in `permission_model.cross_account_role_arns`, so the role trust policy can verify it via the `sts:ExternalId` condition to prevent confused deputy attacks. (AI-inferred)
 	ExternalId any
 }
 
@@ -88,14 +67,11 @@ type HubV2Service_PermissionModel struct {
 }
 
 type HubV2Service_ReportConfiguration_ReportOutput_S3 struct {
-	// The AWS account ID of the owner of the S3 bucket where resilience assessment reports are delivered. (AI-inferred)
 	BucketOwner any
-	// Specifies the S3 bucket path (key prefix) under which the resilience report output files are stored. (AI-inferred)
 	BucketPath any
 }
 
 type HubV2Service_ReportConfiguration_ReportOutput struct {
-	// Configures the S3 destination (bucket name and object prefix) where AWS Resilience Hub writes the generated report for this service. (AI-inferred)
 	S3 any
 }
 
@@ -207,7 +183,6 @@ type HubV2ServiceConfig struct {
 	KmsKeyId any
 	// The name of the service.
 	Name any
-	// Describes the IAM permission model for how AWS Resilience Hub accesses a protected application's resources, including the model type (e.g., role-based or legacy IAM user), the invoker role name, and optional cross-account role ARNs. (AI-inferred)
 	PermissionModel any
 	// The ARN of the resilience policy to associate.
 	PolicyArn any
@@ -238,7 +213,6 @@ type HubV2ServiceAttrs struct {
 	KmsKeyId any
 	// The name of the service.
 	Name any
-	// Describes the IAM permission model for how AWS Resilience Hub accesses a protected application's resources, including the model type (e.g., role-based or legacy IAM user), the invoker role name, and optional cross-account role ARNs. (AI-inferred)
 	PermissionModel any
 	// The ARN of the resilience policy to associate.
 	PolicyArn any

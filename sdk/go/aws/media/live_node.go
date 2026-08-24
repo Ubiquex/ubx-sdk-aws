@@ -4,27 +4,19 @@ package media
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LiveNode_NodeInterfaceMappings struct {
-	// Specifies the logical name (e.g., 'eth0') assigned to a network interface on a MediaLive Anywhere node, used to map that interface to a specific Elastic Network Interface (ENI). (AI-inferred)
 	LogicalInterfaceName any
-	// Specifies whether the node's network interface uses DHCP or static IP addressing for its interface mapping in an AWS Elemental MediaLive cluster. (AI-inferred)
 	NetworkInterfaceMode any
-	// Specifies the name of the physical network interface (such as eth0) on the on-premises MediaLive node that is mapped to a logical interface name for MediaLive Anywhere connectivity. (AI-inferred)
 	PhysicalInterfaceName any
 }
 
 type LiveNode_SdiSourceMappings struct {
-	// The physical SDI input card number on the MediaLive node to which the corresponding SDI source is mapped. (AI-inferred)
 	CardNumber any
-	// The logical channel number within the MediaLive multiplex to which the corresponding SDI source (specified in the same mapping) is assigned, identifying which channel the SDI input feeds. (AI-inferred)
 	ChannelNumber any
-	// The SDI source identifier (e.g., the ARN of an AWS::MediaLive::SdiSource resource) that this mapping associates with a logical source name on the node, enabling MediaLive channels to use that physical SDI input. (AI-inferred)
 	SdiSource any
 }
 
 type LiveNode_Tags struct {
-	// The key of a user-defined tag attached to the AWS Elemental MediaLive node, used for metadata organization and resource categorization. (AI-inferred)
 	Key any
-	// The value assigned to a tag on the AWS MediaLive node, used to attach metadata such as environment or cost center for resource management and cost allocation. (AI-inferred)
 	Value any
 }
 

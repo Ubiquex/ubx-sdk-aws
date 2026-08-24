@@ -8,34 +8,25 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions_ObjectAttributes:
-    # The comparison operator that determines how the referenced object attribute's value is evaluated against the configured values (for example, EQUAL, GREATER_THAN, LESS_THAN, or BETWEEN) in an event trigger condition. (AI-inferred)
     comparison_operator: Any = None
-    # Specifies the name of the profile object attribute (e.g., 'Email' or 'LastName') that the event trigger condition evaluates to determine whether to activate the associated workflow. (AI-inferred)
     field_name: Any = None
-    # The name of the source object type (e.g., Profile or Order) whose field is used as the grouping dimension in the event trigger condition. (AI-inferred)
     source: Any = None
-    # The list of attribute values that the object attribute (specified by the parent object_attributes.source field) must equal for the event trigger condition to be satisfied. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class ProfilesEventTrigger_EventTriggerConditions_EventTriggerDimensions:
-    # Defines the list of customer profile object attributes, along with their comparison operators and values, used as dimensions to evaluate whether the event trigger conditions are met. (AI-inferred)
     object_attributes: Any = None
 
 @dataclasses.dataclass
 class ProfilesEventTrigger_EventTriggerConditions:
-    # Specifies a list of event trigger dimensions, each defining the object type and matching attribute dimensions (type and values) that together form a condition under which the event trigger fires. (AI-inferred)
     event_trigger_dimensions: Any = None
-    # Specifies the logical operator (AND or OR) used to combine the event triggers within this condition group in the AWS Customer Profiles event trigger, determining whether all or any of the triggers must match. (AI-inferred)
     logical_operator: Any = None
 
 @dataclasses.dataclass
 class ProfilesEventTrigger_EventTriggerLimits_Periods:
-    # Defines the maximum number of times the event trigger can be invoked for a single customer profile within the specified time period. (AI-inferred)
     max_invocations_per_profile: Any = None
     unit: Any = None
     unlimited: Any = None
-    # In an Amazon Customer Profiles event trigger limit period, this value specifies the number of time units (such as days or hours) that define the duration during which the trigger's maximum invocations are constrained. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -47,7 +38,6 @@ class ProfilesEventTrigger_EventTriggerLimits:
 
 @dataclasses.dataclass
 class ProfilesEventTrigger_Tags:
-    # The tag key component of a key-value pair assigned to the event trigger, identifying the tag's name within the resource's tag set. (AI-inferred)
     key: Any = None
     value: Any = None
 

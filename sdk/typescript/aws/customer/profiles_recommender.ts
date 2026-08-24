@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ProfilesRecommender_LatestRecommenderUpdate_RecommenderConfig_EventsConfig_EventParametersList {
-  /** Specifies the type of event (such as 'OrderPlaced' or 'ProductViewed') from the customer's profile history that the recommender uses as input for generating recommendations. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** Determines the minimum value that an event's associated metric must have for the event to be considered by the Customer Profiles recommender, filtering out events that fall below this numeric threshold. (AI-inferred) */
   eventValueThreshold?: number | Computed<number>;
 }
 
@@ -32,21 +30,15 @@ export interface ProfilesRecommender_LatestRecommenderUpdate {
 }
 
 export interface ProfilesRecommender_Tags {
-  /** The key of a user-defined tag assigned to the AWS Customer Profiles recommender, used for resource identification and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value part of an optional user-defined tag assigned to the Amazon Connect Customer Profiles recommender configuration, used for labeling and metadata such as environment or cost center. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ProfilesRecommender_TrainingMetrics_Metrics {
-  /** The coverage metric in the recommender's training metrics, indicating the proportion of distinct items from the catalog that appear in at least one recommendation. (AI-inferred) */
   coverage?: number | Computed<number>;
   freshness?: number | Computed<number>;
-  /** The hit rate of the recommender model, representing the percentage of times the model's predicted recommendation matched the actual outcome during training. (AI-inferred) */
   hit?: number | Computed<number>;
-  /** The popularity metric value indicates the model's predictive performance on popularity-based next-best-action recommendations within the recommender's training metrics. (AI-inferred) */
   popularity?: number | Computed<number>;
-  /** The recall metric in the recommender's training metrics indicates the proportion of relevant recommendations that were correctly retrieved out of all relevant items in the training data, providing an evaluation of the recommender model's performance. (AI-inferred) */
   recall?: number | Computed<number>;
   similarity?: number | Computed<number>;
 }
@@ -122,7 +114,6 @@ export interface ProfilesRecommenderAttrs {
   status: string;
   /** The tags used to organize, track, or control access for this resource. */
   tags: ProfilesRecommender_Tags[];
-  /** training_metrics is a computed list of objects, each containing a metric name and numeric value, that summarize the performance of the recommender's machine learning training job in AWS Customer Profiles. (AI-inferred) */
   trainingMetrics: ProfilesRecommender_TrainingMetrics[];
 }
 

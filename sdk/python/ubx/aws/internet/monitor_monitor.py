@@ -8,42 +8,30 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MonitorMonitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfig:
-    # Sets the availability health score threshold (0-100) below which CloudWatch Internet Monitor triggers a local health event for the impacted city or metro location. (AI-inferred)
     health_score_threshold: Any = None
-    # The minimum percentage of client traffic that must be impacted to trigger a local availability health event, expressed as a number between 0 and 100. (AI-inferred)
     min_traffic_impact: Any = None
-    # Specifies whether health events for local availability are enabled or disabled for the monitor, with valid values 'ENABLED' and 'DISABLED'. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class MonitorMonitor_HealthEventsConfig:
-    # Configures the thresholds and enablement for availability-based local health events, determining when Internet Monitor generates a health event for a specific client location based on local availability score and traffic impact. (AI-inferred)
     availability_local_health_events_config: Any = None
-    # Defines the availability score threshold (0-100) for the monitor; when the observed availability score drops below this value, CloudWatch Internet Monitor triggers a health event. (AI-inferred)
     availability_score_threshold: Any = None
-    # Configures local health events triggered by performance degradation, including whether the events are enabled, the performance health score threshold that triggers an event, and the minimum traffic impact required for the event to be raised. (AI-inferred)
     performance_local_health_events_config: Any = None
-    # A value from 0 to 100 that sets the performance score threshold; when a monitored location's performance score falls below this value, AWS Internet Monitor generates a health event. (AI-inferred)
     performance_score_threshold: Any = None
 
 @dataclasses.dataclass
 class MonitorMonitor_InternetMeasurementsLogDelivery_S3Config:
-    # The name of the S3 bucket where internet measurements logs are delivered when internet measurements log delivery to Amazon S3 is enabled for the monitor. (AI-inferred)
     bucket_name: Any = None
-    # The S3 key prefix (folder path) under which the published internet measurements logs are stored, within the specified S3 bucket. (AI-inferred)
     bucket_prefix: Any = None
-    # Indicates whether internet measurements logs are delivered to the configured S3 bucket, with allowed values 'ENABLED' or 'DISABLED' controlling the delivery. (AI-inferred)
     log_delivery_status: Any = None
 
 @dataclasses.dataclass
 class MonitorMonitor_InternetMeasurementsLogDelivery:
-    # Specifies the Amazon S3 destination for internet measurements logs, including the bucket name and an optional object key prefix under which logs are stored. (AI-inferred)
     s3_config: Any = None
 
 @dataclasses.dataclass
 class MonitorMonitor_Tags:
     key: Any = None
-    # The user-defined value for a tag key attached to the AWS Internet Monitor monitor, used for metadata and resource categorization. (AI-inferred)
     value: Any = None
 
 _MonitorMonitor_HealthEventsConfig_AvailabilityLocalHealthEventsConfigFields = {
@@ -88,66 +76,39 @@ _MonitorMonitor_TagsFields = {
 
 @dataclasses.dataclass
 class MonitorMonitorConfig:
-    # Configures the thresholds and conditions that determine when Internet Monitor generates health events based on measured availability and performance degradation. (AI-inferred)
     health_events_config: Any = None
-    # Indicates whether the monitor includes internet health data from linked accounts (member accounts of your AWS Organization). (AI-inferred)
     include_linked_accounts: Any = None
-    # Defines the configuration for publishing internet measurement data to an Amazon S3 bucket or a CloudWatch Logs log group. (AI-inferred)
     internet_measurements_log_delivery: Any = None
-    # The AWS account ID of a linked account in your organization whose internet health events the monitor reports, enabling you to filter monitoring to a specific linked account. (AI-inferred)
     linked_account_id: Any = None
-    # Limits the maximum number of city networks (client locations) that AWS Internet Monitor will monitor for this monitor, overriding the default of 100 to help control monitoring costs. (AI-inferred)
     max_city_networks_to_monitor: Any = None
-    # The name of the Internet Monitor monitor, a required unique identifier for the monitor within your AWS account. (AI-inferred)
     monitor_name: Any = None
-    # A list of ARNs (for example, VPCs, Network Load Balancers, or CloudFront distributions) whose internet traffic the monitor will measure and report on. (AI-inferred)
     resources: Any = None
-    # The list of Amazon Resource Names (ARNs) of the resources (such as VPCs) to add to the Internet Monitor for monitoring traffic. (AI-inferred)
     resources_to_add: Any = None
-    # A list of resource ARNs to remove from the monitor's set of monitored resources when updating the monitor. (AI-inferred)
     resources_to_remove: Any = None
-    # Specifies the desired operational state of the Internet Monitor monitor, either ACTIVE to enable monitoring and metric collection or INACTIVE to disable it. (AI-inferred)
     status: Any = None
-    # Tags to assign to the Internet Monitor monitor, where each tag is a key-value pair used to organize and identify the resource. (AI-inferred)
     tags: Any = None
-    # Configures the percentage of overall internet traffic that AWS Internet Monitor samples and analyzes, allowing you to trade off monitoring coverage for reduced cost. (AI-inferred)
     traffic_percentage_to_monitor: Any = None
 
 @dataclasses.dataclass
 class MonitorMonitorAttrs:
     # The date value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ssZ)
     created_at: Any = None
-    # Configures the thresholds and conditions that determine when Internet Monitor generates health events based on measured availability and performance degradation. (AI-inferred)
     health_events_config: Any = None
-    # Indicates whether the monitor includes internet health data from linked accounts (member accounts of your AWS Organization). (AI-inferred)
     include_linked_accounts: Any = None
-    # Defines the configuration for publishing internet measurement data to an Amazon S3 bucket or a CloudWatch Logs log group. (AI-inferred)
     internet_measurements_log_delivery: Any = None
-    # The AWS account ID of a linked account in your organization whose internet health events the monitor reports, enabling you to filter monitoring to a specific linked account. (AI-inferred)
     linked_account_id: Any = None
-    # Limits the maximum number of city networks (client locations) that AWS Internet Monitor will monitor for this monitor, overriding the default of 100 to help control monitoring costs. (AI-inferred)
     max_city_networks_to_monitor: Any = None
     # The date value in ISO 8601 format. The timezone is always UTC. (YYYY-MM-DDThh:mm:ssZ)
     modified_at: Any = None
-    # The Amazon Resource Name (ARN) of the Internet Monitor monitor. (AI-inferred)
     monitor_arn: Any = None
-    # The name of the Internet Monitor monitor, a required unique identifier for the monitor within your AWS account. (AI-inferred)
     monitor_name: Any = None
-    # Indicates the processing status of the monitor, such as 'OK' when it is functioning normally or 'PROCESSING' when it is being initialized or updated. (AI-inferred)
     processing_status: Any = None
-    # Provides additional diagnostic details about the monitor's processing status, including the reason when the monitor is not in an OK state. (AI-inferred)
     processing_status_info: Any = None
-    # A list of ARNs (for example, VPCs, Network Load Balancers, or CloudFront distributions) whose internet traffic the monitor will measure and report on. (AI-inferred)
     resources: Any = None
-    # The list of Amazon Resource Names (ARNs) of the resources (such as VPCs) to add to the Internet Monitor for monitoring traffic. (AI-inferred)
     resources_to_add: Any = None
-    # A list of resource ARNs to remove from the monitor's set of monitored resources when updating the monitor. (AI-inferred)
     resources_to_remove: Any = None
-    # Specifies the desired operational state of the Internet Monitor monitor, either ACTIVE to enable monitoring and metric collection or INACTIVE to disable it. (AI-inferred)
     status: Any = None
-    # Tags to assign to the Internet Monitor monitor, where each tag is a key-value pair used to organize and identify the resource. (AI-inferred)
     tags: Any = None
-    # Configures the percentage of overall internet traffic that AWS Internet Monitor samples and analyzes, allowing you to trade off monitoring coverage for reduced cost. (AI-inferred)
     traffic_percentage_to_monitor: Any = None
 
 MonitorMonitor = ubx.ResourceBinding(

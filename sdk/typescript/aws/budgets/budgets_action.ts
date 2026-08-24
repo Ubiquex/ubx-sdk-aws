@@ -2,59 +2,41 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BudgetsAction_ActionThreshold {
-  /** Determines whether the threshold value is interpreted as an absolute dollar amount or as a percentage of the budget. (AI-inferred) */
   type: string | Computed<string>;
-  /** The numeric threshold value that triggers the budget action, interpreted according to the sibling threshold type (e.g., as a percentage of the budget limit or as an absolute monetary amount). (AI-inferred) */
   value: number | Computed<number>;
 }
 
 export interface BudgetsAction_Definition_IamActionDefinition {
-  /** Specifies a list of IAM group names to which the budget action's IAM policy will be applied, allowing the action to modify permissions for those groups. (AI-inferred) */
   groups?: string[] | Computed<string[]>;
-  /** The ARN of the IAM policy that the budget action attaches to or detaches from the specified IAM role, user, or group when the action is triggered. (AI-inferred) */
   policyArn: string | Computed<string>;
-  /** The list of IAM roles to which the budget action applies the IAM policy defined in the IamActionDefinition. (AI-inferred) */
   roles?: string[] | Computed<string[]>;
-  /** The list of IAM user ARNs to which the budget action's IAM policy will be applied. (AI-inferred) */
   users?: string[] | Computed<string[]>;
 }
 
 export interface BudgetsAction_Definition_ScpActionDefinition {
-  /** The unique ID of the service control policy (SCP) that this budget action applies to when the budget threshold is exceeded. (AI-inferred) */
   policyId: string | Computed<string>;
-  /** The list of AWS account or organizational unit IDs to which the service control policy is applied by this budget action. (AI-inferred) */
   targetIds: string[] | Computed<string[]>;
 }
 
 export interface BudgetsAction_Definition_SsmActionDefinition {
-  /** Specifies the list of EC2 instance IDs on which the SSM action (such as stopping or terminating instances) is executed when the budget action is triggered. (AI-inferred) */
   instanceIds: string[] | Computed<string[]>;
-  /** The AWS Region where the target EC2 instances for the Systems Manager (SSM) budget action are located. (AI-inferred) */
   region: string | Computed<string>;
-  /** The subtype of the Systems Manager action, specifying whether to stop Amazon EC2 instances or Amazon RDS instances. (AI-inferred) */
   subtype: string | Computed<string>;
 }
 
 export interface BudgetsAction_Definition {
-  /** This object specifies the IAM action definition for a budget action, including the IAM policy ARN and the IAM roles, groups, or users to which the policy is applied. (AI-inferred) */
   iamActionDefinition?: BudgetsAction_Definition_IamActionDefinition | Computed<BudgetsAction_Definition_IamActionDefinition>;
-  /** Configuration for a budget action that applies a service control policy (SCP), specifying the SCP policy ID and target account IDs. (AI-inferred) */
   scpActionDefinition?: BudgetsAction_Definition_ScpActionDefinition | Computed<BudgetsAction_Definition_ScpActionDefinition>;
-  /** The SSM action definition under 'definition' that specifies the target instance IDs, AWS Region, and subtype (such as STOP_EC2_INSTANCES or STOP_RDS_INSTANCES) used to execute the associated Systems Manager automation document as a budget action. (AI-inferred) */
   ssmActionDefinition?: BudgetsAction_Definition_SsmActionDefinition | Computed<BudgetsAction_Definition_SsmActionDefinition>;
 }
 
 export interface BudgetsAction_ResourceTags {
-  /** The key of a resource tag attached to this AWS budget action, used to label and organize the action with custom metadata. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value of a resource tag key-value pair assigned to the AWS Budgets action. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface BudgetsAction_Subscribers {
-  /** The email address or SNS topic ARN that serves as the destination for the budget action notification sent to this subscriber. (AI-inferred) */
   address?: string | Computed<string>;
-  /** Specifies the notification channel for a budget action subscriber, either SNS or EMAIL, which determines how the subscriber receives the alert or action notification. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -110,46 +92,27 @@ const BudgetsAction_SubscribersFields: FieldMap = {
 };
 
 export interface BudgetsActionConfig {
-  /** Defines the threshold (a numeric value and type, either absolute dollar amount or percentage) that triggers the budget action when the actual or forecasted budget usage exceeds it. (AI-inferred) */
   actionThreshold: BudgetsAction_ActionThreshold | Computed<BudgetsAction_ActionThreshold>;
-  /** Specifies the type of budget action to execute when a budget threshold is exceeded, such as APPLY_IAM_POLICY, APPLY_SCP_POLICY, or RUN_SSM_DOCUMENT, which determines whether the action applies an IAM policy, a service control policy, or runs an SSM document. (AI-inferred) */
   actionType: string | Computed<string>;
-  /** Defines whether the budget action executes automatically or requires manual approval after it is triggered (valid values: AUTOMATIC or MANUAL). (AI-inferred) */
   approvalModel?: string | Computed<string>;
-  /** The name of the AWS Budgets budget that this action is associated with. (AI-inferred) */
   budgetName: string | Computed<string>;
-  /** The definition object specifies the budget action's type and its configuration, including the action type (such as APPLY_IAM_POLICY or RESET_IAM_POLICY) and the corresponding details like the IAM policy ARN or target account for the action. (AI-inferred) */
   definition: BudgetsAction_Definition | Computed<BudgetsAction_Definition>;
-  /** The ARN of the IAM role that AWS Budgets assumes to execute the budget action, such as applying a policy or sending a notification. (AI-inferred) */
   executionRoleArn: string | Computed<string>;
-  /** The type of budget notification that triggers the action, either ACTUAL (fired when actual spending exceeds the threshold) or FORECASTED (fired when spending is projected to exceed the threshold). (AI-inferred) */
   notificationType: string | Computed<string>;
-  /** Specifies the list of resource tags to apply to the budget action, enabling you to add metadata for identification, cost allocation, and management of the action resource. (AI-inferred) */
   resourceTags?: BudgetsAction_ResourceTags[] | Computed<BudgetsAction_ResourceTags[]>;
-  /** The list of subscribers to notify when the budget action is triggered, where each subscriber defines the notification method (email address or SNS topic) and the corresponding address. (AI-inferred) */
   subscribers: BudgetsAction_Subscribers[] | Computed<BudgetsAction_Subscribers[]>;
 }
 
 export interface BudgetsActionAttrs {
-  /** The unique identifier assigned by AWS to this budget action, returned as a read-only attribute after creation. (AI-inferred) */
   actionId: string;
-  /** Defines the threshold (a numeric value and type, either absolute dollar amount or percentage) that triggers the budget action when the actual or forecasted budget usage exceeds it. (AI-inferred) */
   actionThreshold: BudgetsAction_ActionThreshold;
-  /** Specifies the type of budget action to execute when a budget threshold is exceeded, such as APPLY_IAM_POLICY, APPLY_SCP_POLICY, or RUN_SSM_DOCUMENT, which determines whether the action applies an IAM policy, a service control policy, or runs an SSM document. (AI-inferred) */
   actionType: string;
-  /** Defines whether the budget action executes automatically or requires manual approval after it is triggered (valid values: AUTOMATIC or MANUAL). (AI-inferred) */
   approvalModel: string;
-  /** The name of the AWS Budgets budget that this action is associated with. (AI-inferred) */
   budgetName: string;
-  /** The definition object specifies the budget action's type and its configuration, including the action type (such as APPLY_IAM_POLICY or RESET_IAM_POLICY) and the corresponding details like the IAM policy ARN or target account for the action. (AI-inferred) */
   definition: BudgetsAction_Definition;
-  /** The ARN of the IAM role that AWS Budgets assumes to execute the budget action, such as applying a policy or sending a notification. (AI-inferred) */
   executionRoleArn: string;
-  /** The type of budget notification that triggers the action, either ACTUAL (fired when actual spending exceeds the threshold) or FORECASTED (fired when spending is projected to exceed the threshold). (AI-inferred) */
   notificationType: string;
-  /** Specifies the list of resource tags to apply to the budget action, enabling you to add metadata for identification, cost allocation, and management of the action resource. (AI-inferred) */
   resourceTags: BudgetsAction_ResourceTags[];
-  /** The list of subscribers to notify when the budget action is triggered, where each subscriber defines the notification method (email address or SNS topic) and the corresponding address. (AI-inferred) */
   subscribers: BudgetsAction_Subscribers[];
 }
 

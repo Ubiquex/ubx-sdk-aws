@@ -8,52 +8,36 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ManagerLicense_ConsumptionConfiguration_BorrowConfiguration:
-    # Determines whether licensees can return a borrowed license before the maximum borrow time expires. (AI-inferred)
     allow_early_check_in: Any = None
-    # The maximum time, in minutes, that a license can be borrowed when the license's consumption configuration uses a borrow configuration. (AI-inferred)
     max_time_to_live_in_minutes: Any = None
 
 @dataclasses.dataclass
 class ManagerLicense_ConsumptionConfiguration_ProvisionalConfiguration:
-    # Specifies the maximum time in minutes that a license can be provisionally consumed before it expires, requiring renewal or a different consumption configuration. (AI-inferred)
     max_time_to_live_in_minutes: Any = None
 
 @dataclasses.dataclass
 class ManagerLicense_ConsumptionConfiguration:
-    # Configures the borrowing parameters for the license, including whether early check-in is allowed and the maximum duration in minutes that the license can be borrowed for offline use. (AI-inferred)
     borrow_configuration: Any = None
-    # Specifies the provisional configuration for the license, which defines the maximum time in minutes that the license remains valid in its provisional state before expiring. (AI-inferred)
     provisional_configuration: Any = None
-    # Specifies how often the license renews automatically, with valid values being 'None', 'Weekly', or 'Monthly'. (AI-inferred)
     renew_type: Any = None
 
 @dataclasses.dataclass
 class ManagerLicense_Entitlements:
-    # Indicates whether the entitlement can be checked in (returned) after use, releasing the license capacity back to the available pool. (AI-inferred)
     allow_check_in: Any = None
-    # The maximum number of units (such as vCPUs, instances, or other license-allowable resources) that can be consumed under this entitlement. (AI-inferred)
     max_count: Any = None
-    # The name of the entitlement, which defines the specific resource or capability (e.g., vCPU, instance type) that the license grants usage rights for. (AI-inferred)
     name: Any = None
-    # Indicates whether this license entitlement allows overage, meaning usage beyond the allowed maximum count is permitted. (AI-inferred)
     overage: Any = None
-    # The unit of measurement for the entitlement (for example, 'Count' or 'None'), indicating how the entitlement value is quantified. (AI-inferred)
     unit: Any = None
-    # For each entitlement in the license, this is the entitlement's value (for example, a quantity or usage amount) expressed as a string. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ManagerLicense_Issuer:
-    # The name of the issuer that grants the license, identifying the entity (such as 'AWS' or a custom vendor) that created the license record. (AI-inferred)
     name: Any = None
-    # The Amazon Resource Name (ARN) of the AWS KMS symmetric customer managed key used by the issuer to sign the license. (AI-inferred)
     sign_key: Any = None
 
 @dataclasses.dataclass
 class ManagerLicense_LicenseMetadata:
-    # Specifies the name (key) of a metadata entry in a license's custom metadata list, used to store key-value information for the license. (AI-inferred)
     name: Any = None
-    # Specifies the value portion of a key-value metadata pair attached to an AWS License Manager license, used to store custom information such as cost center or department alongside the corresponding `key` field. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -124,15 +108,11 @@ _ManagerLicense_ValidityFields = {
 class ManagerLicenseConfig:
     # Beneficiary of the license.
     beneficiary: Any = None
-    # Defines the license consumption model, specifying the renewal type (e.g., none, weekly, monthly) and any optional borrow or provisional configurations that govern how the license is used. (AI-inferred)
     consumption_configuration: Any = None
-    # Defines the list of entitlements granted by the license, each specifying a name, unit, and value (such as a maximum count of a resource like vCPUs or instances). (AI-inferred)
     entitlements: Any = None
     # Home region for the created license.
     home_region: Any = None
-    # Defines the entity that issues the license, including the issuer's name (and optionally a signing key) used to identify and verify the license source. (AI-inferred)
     issuer: Any = None
-    # Specifies a list of key-value pairs (metadata) that AWS License Manager attaches to the license and exposes for tracking and management. (AI-inferred)
     license_metadata: Any = None
     # Name for the created license.
     license_name: Any = None
@@ -140,28 +120,21 @@ class ManagerLicenseConfig:
     product_name: Any = None
     # ProductSKU of the license.
     product_sku: Any = None
-    # Specifies the desired status of the license, such as AVAILABLE to activate it immediately or PENDING_AVAILABLE to keep it inactive until a later time. (AI-inferred)
     status: Any = None
     # A list of tags to attach.
     tags: Any = None
-    # Defines the start and end dates of the license's validity period, during which the license can be used. (AI-inferred)
     validity: Any = None
 
 @dataclasses.dataclass
 class ManagerLicenseAttrs:
     # Beneficiary of the license.
     beneficiary: Any = None
-    # Defines the license consumption model, specifying the renewal type (e.g., none, weekly, monthly) and any optional borrow or provisional configurations that govern how the license is used. (AI-inferred)
     consumption_configuration: Any = None
-    # Defines the list of entitlements granted by the license, each specifying a name, unit, and value (such as a maximum count of a resource like vCPUs or instances). (AI-inferred)
     entitlements: Any = None
     # Home region for the created license.
     home_region: Any = None
-    # Defines the entity that issues the license, including the issuer's name (and optionally a signing key) used to identify and verify the license source. (AI-inferred)
     issuer: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the license. (AI-inferred)
     license_arn: Any = None
-    # Specifies a list of key-value pairs (metadata) that AWS License Manager attaches to the license and exposes for tracking and management. (AI-inferred)
     license_metadata: Any = None
     # Name for the created license.
     license_name: Any = None
@@ -169,11 +142,9 @@ class ManagerLicenseAttrs:
     product_name: Any = None
     # ProductSKU of the license.
     product_sku: Any = None
-    # Specifies the desired status of the license, such as AVAILABLE to activate it immediately or PENDING_AVAILABLE to keep it inactive until a later time. (AI-inferred)
     status: Any = None
     # A list of tags to attach.
     tags: Any = None
-    # Defines the start and end dates of the license's validity period, during which the license can be used. (AI-inferred)
     validity: Any = None
     # The version of the license.
     version: Any = None

@@ -2,15 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TransitGatewayConnectPeer_ConnectPeerConfiguration_BgpConfigurations {
-  /** BGP status of the Connect Peer's BGP session, indicating whether the Border Gateway Protocol session is up or down. (AI-inferred) */
   bgpStatus?: string | Computed<string>;
-  /** The IP address of the BGP peer used for establishing BGP sessions with the Transit Gateway Connect Peer. (AI-inferred) */
   peerAddress?: string | Computed<string>;
-  /** Specifies the autonomous system number (ASN) of the BGP peer for the Connect peer, which is used to configure BGP peering between the transit gateway and the Connect attachment. (AI-inferred) */
   peerAsn?: number | Computed<number>;
-  /** Specifies the IP address on the Transit Gateway side that will be used as the local endpoint for the BGP session with the Connect peer. (AI-inferred) */
   transitGatewayAddress?: string | Computed<string>;
-  /** The autonomous system number (ASN) that the transit gateway uses for the BGP session with the Connect peer. (AI-inferred) */
   transitGatewayAsn?: number | Computed<number>;
 }
 
@@ -45,7 +40,6 @@ export interface TransitGatewayConnectPeerConfig {
 }
 
 export interface TransitGatewayConnectPeerAttrs {
-  /** The computed configuration of the transit gateway Connect peer, including the tunnel protocol, inside CIDR blocks, the transit gateway and peer addresses, and BGP configuration options. (AI-inferred) */
   connectPeerConfiguration: TransitGatewayConnectPeer_ConnectPeerConfiguration;
   /** The creation time. */
   creationTime: string;

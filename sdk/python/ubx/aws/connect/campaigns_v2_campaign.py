@@ -117,11 +117,8 @@ class CampaignsV2Campaign_ChannelSubtypeConfig:
 
 @dataclasses.dataclass
 class CampaignsV2Campaign_CommunicationLimitsOverride_AllChannelsSubtypes_CommunicationLimitList:
-    # The number of time units (such as days, weeks, months, or years) that defines the period over which the maximum number of contacts per recipient is enforced for a given channel subtype in the communication limit list. (AI-inferred)
     frequency: Any = None
-    # Specifies the maximum number of communications that can be sent to a single recipient for the associated channel subtype, overriding the default communication limits for that subtype. (AI-inferred)
     max_count_per_recipient: Any = None
-    # Specifies the time unit (e.g., DAY, WEEK, or MONTH) used to interpret the communication frequency limit for a given channel subtype in the campaign's communication limits override. (AI-inferred)
     unit: Any = None
 
 @dataclasses.dataclass
@@ -138,16 +135,12 @@ class CampaignsV2Campaign_CommunicationLimitsOverride:
 
 @dataclasses.dataclass
 class CampaignsV2Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHours_Value:
-    # Specifies the end time (in 24-hour HH:MM format) of the daily time window during which the campaign is allowed to send email communications to contacts. (AI-inferred)
     end_time: Any = None
-    # The start time (in HH:MM format) for the daily email communication hours on the specified day of the week in the campaign's communication time configuration. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
 class CampaignsV2Campaign_CommunicationTimeConfig_Email_OpenHours_DailyHours:
-    # Specifies the day of the week (e.g., MONDAY, TUESDAY) for which the daily open hours are defined in the email communication time config of the campaign. (AI-inferred)
     key: Any = None
-    # In the email channel's open hours configuration, the daily_hours.value list holds the daily recurring time windows (including day and start/end times) when the campaign is permitted to send emails. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -157,11 +150,8 @@ class CampaignsV2Campaign_CommunicationTimeConfig_Email_OpenHours:
 
 @dataclasses.dataclass
 class CampaignsV2Campaign_CommunicationTimeConfig_Email_RestrictedPeriods_RestrictedPeriodList:
-    # The inclusive end date (in YYYY-MM-DD format) of a restricted period during which email communications are suppressed for the campaign's communication time configuration. (AI-inferred)
     end_date: Any = None
-    # The name of a restricted period during which email communication is disallowed, used to identify the period within the campaign's email communication time configuration. (AI-inferred)
     name: Any = None
-    # The date (YYYY-MM-DD) on which a restricted email period begins, marking the start of a window when outbound email communications are suppressed within the campaign's communication time config. (AI-inferred)
     start_date: Any = None
 
 @dataclasses.dataclass
@@ -228,9 +218,7 @@ class CampaignsV2Campaign_Source:
 
 @dataclasses.dataclass
 class CampaignsV2Campaign_Tags:
-    # The key of a tag assigned to the AWS::ConnectCampaignsV2::Campaign resource, used to categorize and manage the campaign in AWS. (AI-inferred)
     key: Any = None
-    # The value component of a tag attached to an AWS Connect Campaigns v2 campaign, used to store custom metadata such as environment, owner, or cost center for the campaign. (AI-inferred)
     value: Any = None
 
 _CampaignsV2Campaign_ChannelSubtypeConfig_Email_DefaultOutboundConfigFields = {

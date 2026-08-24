@@ -2,86 +2,53 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues_Cookies {
-  /** Specifies which cookies to forward to the origin for this cache behavior: 'all', 'none', or 'whitelist' (the latter requires listing cookie names in 'whitelistedNames'). (AI-inferred) */
   forward?: string | Computed<string>;
-  /** A list of specific cookie names that CloudFront includes in the origin request when forwarding cookies for this cache behavior, used when the cookie forwarding policy is 'whitelist'. (AI-inferred) */
   whitelistedNames?: string[] | Computed<string[]>;
 }
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues {
-  /** Specifies how CloudFront forwards cookies from viewer requests to the origin for this cache behavior, controlling whether all, none, or a specific whitelist of cookies are forwarded. (AI-inferred) */
   cookies?: FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues_Cookies | Computed<FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues_Cookies>;
-  /** Specifies the list of HTTP header names that CloudFront includes in viewer requests forwarded to the origin for this cache behavior, alongside the default headers. (AI-inferred) */
   headers?: string[] | Computed<string[]>;
-  /** Specifies whether CloudFront forwards query string parameters to the origin; set to true to forward them (and optionally cache based on them) or false to not forward them. (AI-inferred) */
   queryString?: boolean | Computed<boolean>;
-  /** The list of query string parameter names (keys) to include in the cache key for this cache behavior, controlling which query strings are used to determine cache hits when QueryString forwarding is enabled. (AI-inferred) */
   queryStringCacheKeys?: string[] | Computed<string[]>;
 }
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors_FunctionAssociations {
-  /** Specifies the CloudFront event type (such as viewer-request or viewer-response) that triggers the associated CloudFront Function for this cache behavior. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** The Amazon Resource Name (ARN) of the CloudFront function that is associated with the cache behavior to perform request and response manipulation. (AI-inferred) */
   functionArn?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors_GrpcConfig {
-  /** Whether gRPC is enabled for this CloudFront cache behavior. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
 }
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociations {
-  /** Specifies the CloudFront event that triggers the Lambda function, such as viewer-request, viewer-response, origin-request, or origin-response. (AI-inferred) */
   eventType?: string | Computed<string>;
-  /** When true, includes the request body in the event passed to the associated Lambda function, allowing the function to inspect or modify the body for viewer-request or origin-request triggers. (AI-inferred) */
   includeBody?: boolean | Computed<boolean>;
-  /** The ARN of the Lambda function (Lambda@Edge) to associate with this cache behavior, which is invoked to process viewer or origin requests/responses for the specified path pattern. (AI-inferred) */
   lambdaFunctionArn?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_CacheBehaviors {
-  /** The HTTP methods (e.g., GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE) that CloudFront processes and forwards to the origin for this cache behavior. (AI-inferred) */
   allowedMethods?: string[] | Computed<string[]>;
-  /** The ID of the cache policy attached to this CloudFront cache behavior, which determines the time-to-live (TTL) settings and which HTTP headers, cookies, or query strings are included in the cache key. (AI-inferred) */
   cachePolicyId?: string | Computed<string>;
-  /** Specifies which HTTP methods (such as GET, HEAD, OPTIONS, PUT, DELETE) CloudFront caches responses for in this cache behavior. (AI-inferred) */
   cachedMethods?: string[] | Computed<string[]>;
-  /** Indicates whether CloudFront automatically compresses files (such as HTML, CSS, or JavaScript) for this cache behavior when serving them to viewers. (AI-inferred) */
   compress?: boolean | Computed<boolean>;
-  /** Specifies the default time-to-live (TTL) in seconds for objects in the CloudFront cache for this cache behavior, controlling how long CloudFront retains an object before checking the origin for an updated version. (AI-inferred) */
   defaultTtl?: number | Computed<number>;
-  /** The ID of the field-level encryption configuration to apply to responses that match this cache behavior, enabling protection of sensitive data fields. (AI-inferred) */
   fieldLevelEncryptionId?: string | Computed<string>;
-  /** Specifies which query strings, cookies, and headers are forwarded to the origin and included in the cache key for requests that match this cache behavior. (AI-inferred) */
   forwardedValues?: FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues | Computed<FrontDistribution_DistributionConfig_CacheBehaviors_ForwardedValues>;
-  /** Associates CloudFront Functions with this cache behavior, specifying the function ARN and the event type (viewer-request or viewer-response) at which the function is invoked. (AI-inferred) */
   functionAssociations?: FrontDistribution_DistributionConfig_CacheBehaviors_FunctionAssociations[] | Computed<FrontDistribution_DistributionConfig_CacheBehaviors_FunctionAssociations[]>;
-  /** Specifies whether gRPC is enabled for this cache behavior. (AI-inferred) */
   grpcConfig?: FrontDistribution_DistributionConfig_CacheBehaviors_GrpcConfig | Computed<FrontDistribution_DistributionConfig_CacheBehaviors_GrpcConfig>;
-  /** Specifies the Lambda@Edge functions to invoke for a cache behavior, along with the CloudFront event type (such as viewer-request or origin-response) that triggers each function. (AI-inferred) */
   lambdaFunctionAssociations?: FrontDistribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociations[] | Computed<FrontDistribution_DistributionConfig_CacheBehaviors_LambdaFunctionAssociations[]>;
-  /** The maximum time (in seconds) that objects are cached in CloudFront edge locations for this cache behavior, after which CloudFront will query the origin again regardless of the origin's Cache-Control headers. (AI-inferred) */
   maxTtl?: number | Computed<number>;
-  /** Defines the minimum time in seconds that CloudFront retains objects in its cache for this cache behavior, ensuring that even if the origin provides a shorter Cache-Control max-age or Expires header, CloudFront still caches the object for at least this duration. (AI-inferred) */
   minTtl?: number | Computed<number>;
-  /** The unique identifier of the origin request policy attached to this cache behavior, which determines which headers, cookies, and query string parameters are forwarded from viewers to the origin. (AI-inferred) */
   originRequestPolicyId?: string | Computed<string>;
-  /** Specifies the URL path pattern (e.g., /images/*) that determines which requests this cache behavior applies to, routing matching requests to the behavior's origin and caching settings. (AI-inferred) */
   pathPattern?: string | Computed<string>;
-  /** Specifies the ARN of the real-time log configuration that determines which requests are logged in real time for this cache behavior. (AI-inferred) */
   realtimeLogConfigArn?: string | Computed<string>;
-  /** Specifies the ID of the response headers policy that CloudFront attaches to HTTP responses for requests that match this cache behavior. (AI-inferred) */
   responseHeadersPolicyId?: string | Computed<string>;
-  /** Indicates whether to enable Smooth Streaming support for this cache behavior, allowing CloudFront to properly serve Microsoft Smooth Streaming media content such as manifests and fragments. (AI-inferred) */
   smoothStreaming?: boolean | Computed<boolean>;
-  /** The ID of the origin (from the distribution's origins) to which requests matching this cache behavior are forwarded. (AI-inferred) */
   targetOriginId?: string | Computed<string>;
-  /** Specifies the list of key group IDs whose public keys can be used to verify signed URLs or signed cookies for this cache behavior. (AI-inferred) */
   trustedKeyGroups?: string[] | Computed<string[]>;
-  /** Specifies the AWS account IDs (or 'self') of trusted signers that are allowed to create signed URLs or signed cookies for this cache behavior, enabling access to private content. (AI-inferred) */
   trustedSigners?: string[] | Computed<string[]>;
-  /** Determines the protocol policy for viewer requests matched by this cache behavior, choosing between allowing HTTP and HTTPS ('allow-all'), enforcing HTTPS only ('https-only'), or redirecting HTTP to HTTPS ('redirect-to-https'). (AI-inferred) */
   viewerProtocolPolicy?: string | Computed<string>;
 }
 
@@ -96,13 +63,9 @@ export interface FrontDistribution_DistributionConfig_ConnectionFunctionAssociat
 }
 
 export interface FrontDistribution_DistributionConfig_CustomErrorResponses {
-  /** The minimum time (in seconds) that CloudFront caches the custom error response for a given error code before requesting the origin again, configured as part of each custom error response entry. (AI-inferred) */
   errorCachingMinTtl?: number | Computed<number>;
-  /** The HTTP status code (e.g., 400, 403, 404, 500) for which CloudFront should return the custom error response defined in this custom_error_responses block. (AI-inferred) */
   errorCode?: number | Computed<number>;
-  /** Sets the HTTP status code that CloudFront returns to the viewer for this custom error response, overriding the origin's status code. (AI-inferred) */
   responseCode?: number | Computed<number>;
-  /** The path to the custom error page that CloudFront returns for the corresponding error code in a custom error response. (AI-inferred) */
   responsePagePath?: string | Computed<string>;
 }
 
@@ -172,35 +135,26 @@ export interface FrontDistribution_DistributionConfig_Logging {
 }
 
 export interface FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodes {
-  /** The list of HTTP status codes from the primary origin that trigger CloudFront to fail over to the secondary origin in the origin group. (AI-inferred) */
   items?: number[] | Computed<number[]>;
-  /** The number of HTTP status codes in the items list that trigger failover for the origin group when a response matches one of these codes. (AI-inferred) */
   quantity?: number | Computed<number>;
 }
 
 export interface FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria {
-  /** Specifies the HTTP status codes (as an object containing a list of integer codes in `items` and a `quantity` count) that, when returned by the primary origin, trigger failover to the secondary origin for a CloudFront origin group. (AI-inferred) */
   statusCodes?: FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodes | Computed<FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria_StatusCodes>;
 }
 
 export interface FrontDistribution_DistributionConfig_OriginGroups_Items_Members_Items {
-  /** The unique identifier of an origin that is a member of this origin group, referencing an origin in the distribution's Origin list to enable failover between origins. (AI-inferred) */
   originId?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_OriginGroups_Items_Members {
-  /** Specifies the list of origin IDs that belong to this origin group, allowing CloudFront to perform failover between them based on the group's failover criteria. (AI-inferred) */
   items?: FrontDistribution_DistributionConfig_OriginGroups_Items_Members_Items[] | Computed<FrontDistribution_DistributionConfig_OriginGroups_Items_Members_Items[]>;
-  /** The number of origins in the origin group; in CloudFront an origin group always consists of exactly two members (primary and secondary), so this quantity must be 2. (AI-inferred) */
   quantity?: number | Computed<number>;
 }
 
 export interface FrontDistribution_DistributionConfig_OriginGroups_Items {
-  /** Specifies the HTTP status codes that, when returned by the primary origin, trigger CloudFront to fail over to the secondary origin for the origin group. (AI-inferred) */
   failoverCriteria?: FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria | Computed<FrontDistribution_DistributionConfig_OriginGroups_Items_FailoverCriteria>;
-  /** A unique identifier for the origin group, used to reference the origin group when associating it with cache behaviors or in the origin groups' failover configuration. (AI-inferred) */
   id?: string | Computed<string>;
-  /** Specifies the set of origins in this origin group, including the number of origins (Quantity) and the list of origin identifiers (Items) that CloudFront can fail over between. (AI-inferred) */
   members?: FrontDistribution_DistributionConfig_OriginGroups_Items_Members | Computed<FrontDistribution_DistributionConfig_OriginGroups_Items_Members>;
   selectionCriteria?: string | Computed<string>;
 }
@@ -213,85 +167,54 @@ export interface FrontDistribution_DistributionConfig_OriginGroups {
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfig {
-  /** The ARN of the client certificate, stored in AWS Certificate Manager, that CloudFront presents to this custom origin when using mutual TLS (mTLS). (AI-inferred) */
   clientCertificateArn?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_CustomOriginConfig {
-  /** Specifies the HTTP port that CloudFront uses to connect to the origin server. (AI-inferred) */
   httpport?: number | Computed<number>;
-  /** The HTTPS port that CloudFront uses to connect to the custom origin, defaulting to 443 if not specified. (AI-inferred) */
   httpsport?: number | Computed<number>;
-  /** Specifies the IP address type (IPv4, IPv6, or IPv4 and IPv6) that CloudFront uses when connecting to the custom origin. (AI-inferred) */
   ipAddressType?: string | Computed<string>;
-  /** Specifies the duration in seconds that CloudFront should keep an idle connection to the custom origin open, with a default of 5 seconds and a valid range of 1–60 seconds. (AI-inferred) */
   originKeepaliveTimeout?: number | Computed<number>;
-  /** Configures mutual TLS (mTLS) for the custom origin by specifying the S3 bucket container and the ARN of the client certificate that CloudFront presents to the origin. (AI-inferred) */
   originMtlsConfig?: FrontDistribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfig | Computed<FrontDistribution_DistributionConfig_Origins_CustomOriginConfig_OriginMtlsConfig>;
-  /** Specifies the protocol policy that CloudFront uses to fetch files from the custom origin, allowing either HTTP only, HTTPS only, or matching the viewer's protocol (values: http-only, https-only, match-viewer). (AI-inferred) */
   originProtocolPolicy?: string | Computed<string>;
-  /** Specifies the read timeout in seconds that CloudFront waits for a reply from a custom origin server before timing out, applicable only to custom (non-S3) origins and typically ranging from 1 to 60 seconds. (AI-inferred) */
   originReadTimeout?: number | Computed<number>;
-  /** Specifies the SSL/TLS protocols that CloudFront may use to establish a secure connection with the custom origin. (AI-inferred) */
   originSslprotocols?: string[] | Computed<string[]>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_OriginCustomHeaders {
-  /** The name of a custom header that CloudFront adds to requests sent to the origin. (AI-inferred) */
   headerName?: string | Computed<string>;
-  /** The value of the custom header that CloudFront adds to requests it sends to the origin. (AI-inferred) */
   headerValue?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_OriginShield {
-  /** Specifies whether Origin Shield is enabled for this origin, adding an additional caching layer that can reduce load on the origin and improve availability. (AI-inferred) */
   enabled?: boolean | Computed<boolean>;
-  /** Specifies the AWS Region where the CloudFront Origin Shield is located, providing an additional caching layer that reduces the load on the origin by aggregating requests from edge locations. (AI-inferred) */
   originShieldRegion?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_S3OriginConfig {
-  /** Specifies the CloudFront origin access identity (OAI) that CloudFront uses to access the S3 bucket, allowing you to restrict direct access to the bucket and only allow access through the distribution. (AI-inferred) */
   originAccessIdentity?: string | Computed<string>;
-  /** The number of seconds CloudFront waits for a response from the S3 origin, including the time to read the response headers, before timing out (allowed range 1-60, default 30). (AI-inferred) */
   originReadTimeout?: number | Computed<number>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins_VpcOriginConfig {
-  /** The amount of time, in seconds, that CloudFront keeps an idle connection to the VPC origin alive before closing it, controlling connection reuse for the VPC origin configuration. (AI-inferred) */
   originKeepaliveTimeout?: number | Computed<number>;
-  /** The amount of time (in seconds) that CloudFront waits for the VPC origin to respond to a request after it has been forwarded, before considering the request failed. (AI-inferred) */
   originReadTimeout?: number | Computed<number>;
-  /** The AWS account ID that owns the VPC endpoint serving as the origin, required when the endpoint is in a different account than the distribution. (AI-inferred) */
   ownerAccountId?: string | Computed<string>;
-  /** The identifier of the CloudFront VPC origin that this origin references, which points to a supported resource (such as an Application Load Balancer) inside a VPC. (AI-inferred) */
   vpcOriginId?: string | Computed<string>;
 }
 
 export interface FrontDistribution_DistributionConfig_Origins {
-  /** Specifies the number of times that CloudFront attempts to connect to the origin before giving up, accepting values from 1 to 3. (AI-inferred) */
   connectionAttempts?: number | Computed<number>;
-  /** For a custom origin, this sets the connection timeout in seconds (1–10, default 3) that CloudFront allows for establishing a TCP connection to the origin server. (AI-inferred) */
   connectionTimeout?: number | Computed<number>;
-  /** Configuration for a custom origin (non-S3) that defines the ports, protocol policy, and SSL settings used when CloudFront communicates with the origin. (AI-inferred) */
   customOriginConfig?: FrontDistribution_DistributionConfig_Origins_CustomOriginConfig | Computed<FrontDistribution_DistributionConfig_Origins_CustomOriginConfig>;
-  /** Specifies the DNS domain name of the origin server (e.g., an S3 bucket website endpoint or custom HTTP server) from which CloudFront fetches content for this origin in the distribution. (AI-inferred) */
   domainName?: string | Computed<string>;
-  /** The unique identifier for this origin within the distribution, used to reference it in cache behaviors and origin groups. (AI-inferred) */
   id?: string | Computed<string>;
-  /** The ID of the origin access control (OAC) that is associated with this origin, which CloudFront uses to securely access the origin (e.g., an S3 bucket). (AI-inferred) */
   originAccessControlId?: string | Computed<string>;
-  /** Specifies custom headers that CloudFront includes in requests it sends to the origin for this origin configuration. (AI-inferred) */
   originCustomHeaders?: FrontDistribution_DistributionConfig_Origins_OriginCustomHeaders[] | Computed<FrontDistribution_DistributionConfig_Origins_OriginCustomHeaders[]>;
-  /** Specifies the directory path that CloudFront automatically appends to the origin's domain name for all requests forwarded to that origin, allowing content to be served from a subdirectory on the origin server. (AI-inferred) */
   originPath?: string | Computed<string>;
-  /** Specifies the Origin Shield settings for this origin, including whether it is enabled and the AWS Region for the Origin Shield, to help reduce the load on your origin by caching and consolidating requests. (AI-inferred) */
   originShield?: FrontDistribution_DistributionConfig_Origins_OriginShield | Computed<FrontDistribution_DistributionConfig_Origins_OriginShield>;
-  /** Specifies the maximum time, in seconds, that CloudFront waits for the origin to respond to a request before timing out (also known as the origin read timeout or response completion timeout). (AI-inferred) */
   responseCompletionTimeout?: number | Computed<number>;
-  /** Configures the S3 bucket origin settings for this origin, including the CloudFront origin access identity that CloudFront uses to access the bucket. (AI-inferred) */
   s3OriginConfig?: FrontDistribution_DistributionConfig_Origins_S3OriginConfig | Computed<FrontDistribution_DistributionConfig_Origins_S3OriginConfig>;
-  /** Configures this origin to use a VPC origin (e.g., an Application Load Balancer or App Runner service) by specifying the VPC origin's ID and optionally the read and keepalive timeout durations. (AI-inferred) */
   vpcOriginConfig?: FrontDistribution_DistributionConfig_Origins_VpcOriginConfig | Computed<FrontDistribution_DistributionConfig_Origins_VpcOriginConfig>;
 }
 
@@ -356,7 +279,6 @@ export interface FrontDistribution_DistributionConfig_ViewerMtlsConfig_TrustStor
 }
 
 export interface FrontDistribution_DistributionConfig_ViewerMtlsConfig {
-  /** Specifies whether viewer mutual TLS (mTLS) is enabled or disabled, where 'enabled' requires viewer requests to present a valid client certificate from the associated trust store and 'disabled' turns off mTLS enforcement. (AI-inferred) */
   mode?: string | Computed<string>;
   /** A trust store configuration. */
   trustStoreConfig?: FrontDistribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfig | Computed<FrontDistribution_DistributionConfig_ViewerMtlsConfig_TrustStoreConfig>;
@@ -419,7 +341,6 @@ export interface FrontDistribution_DistributionConfig {
 }
 
 export interface FrontDistribution_Tags {
-  /** The key of a key-value tag applied to the CloudFront distribution, used for organizing and identifying the AWS resource. (AI-inferred) */
   key?: string | Computed<string>;
   value?: string | Computed<string>;
 }
@@ -862,9 +783,7 @@ export interface FrontDistributionConfig {
 export interface FrontDistributionAttrs {
   /** A distribution configuration. */
   distributionConfig: FrontDistribution_DistributionConfig;
-  /** The CloudFront distribution's automatically assigned domain name (e.g., d111111abcdef8.cloudfront.net) that clients use to access content served by the distribution. (AI-inferred) */
   domainName: string;
-  /** The unique identifier assigned by AWS CloudFront to the distribution, used to reference the distribution in other resources and APIs. (AI-inferred) */
   id: string;
   /** A complex type that contains zero or more ``Tag`` elements. */
   tags: FrontDistribution_Tags[];

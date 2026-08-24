@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdConnector_VpcInformation:
-    # Specifies whether the connector uses only IPv4 addresses or both IPv4 and IPv6 (dual-stack) addresses within the VPC, with allowed values IPV4 and DUALSTACK. (AI-inferred)
     ip_address_type: Any = None
-    # Specifies the IDs of the security groups that AWS Private CA Connector for Active Directory uses to securely communicate with your directory in the VPC. (AI-inferred)
     security_group_ids: Any = None
 
 _AdConnector_VpcInformationFields = {
@@ -20,26 +18,17 @@ _AdConnector_VpcInformationFields = {
 
 @dataclasses.dataclass
 class AdConnectorConfig:
-    # The Amazon Resource Name (ARN) of the AWS Private CA certificate authority that will issue certificates for the Active Directory connector. (AI-inferred)
     certificate_authority_arn: Any = None
-    # The identifier of the AWS Managed Microsoft AD directory that this connector is associated with. (AI-inferred)
     directory_id: Any = None
-    # Tags (key-value pairs) to associate with the PCA Connector for Active Directory resource, used for identifying, organizing, and managing the connector. (AI-inferred)
     tags: Any = None
-    # The VPC information for the connector, specifying the security groups that allow the connector to communicate with the Active Directory in your VPC. (AI-inferred)
     vpc_information: Any = None
 
 @dataclasses.dataclass
 class AdConnectorAttrs:
-    # The Amazon Resource Name (ARN) of the AWS Private CA certificate authority that will issue certificates for the Active Directory connector. (AI-inferred)
     certificate_authority_arn: Any = None
-    # The Amazon Resource Name (ARN) that uniquely identifies the connector created by this resource. (AI-inferred)
     connector_arn: Any = None
-    # The identifier of the AWS Managed Microsoft AD directory that this connector is associated with. (AI-inferred)
     directory_id: Any = None
-    # Tags (key-value pairs) to associate with the PCA Connector for Active Directory resource, used for identifying, organizing, and managing the connector. (AI-inferred)
     tags: Any = None
-    # The VPC information for the connector, specifying the security groups that allow the connector to communicate with the Active Directory in your VPC. (AI-inferred)
     vpc_information: Any = None
 
 AdConnector = ubx.ResourceBinding(

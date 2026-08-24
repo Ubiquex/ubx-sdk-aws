@@ -8,22 +8,15 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IdentityPoolRoleAttachmentConfig:
-    # The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred)
     identity_pool_id: Any = None
-    # Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred)
     role_mappings: Any = None
-    # Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred)
     roles: Any = None
 
 @dataclasses.dataclass
 class IdentityPoolRoleAttachmentAttrs:
-    # The unique identifier of the Amazon Cognito identity pool that this role attachment configuration applies to. (AI-inferred)
     id: Any = None
-    # The unique identifier of the Cognito identity pool to which this role attachment configuration applies. (AI-inferred)
     identity_pool_id: Any = None
-    # Specifies the mapping of identity providers to role-mapping configurations, determining which IAM role a user authenticated through a given provider is assigned based on token claims or rule-based conditions. (AI-inferred)
     role_mappings: Any = None
-    # Specifies a mapping of identity pool role types (such as 'authenticated' or 'unauthenticated') to the IAM role ARNs that define the permissions for users in each category. (AI-inferred)
     roles: Any = None
 
 IdentityPoolRoleAttachment = ubx.ResourceBinding(

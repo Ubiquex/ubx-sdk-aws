@@ -8,31 +8,21 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UserPoolClient_AnalyticsConfiguration:
-    # The ARN of the Amazon Pinpoint project or Amazon Kinesis Data Firehose delivery stream used by the user pool client's analytics configuration to send user activity data. (AI-inferred)
     application_arn: Any = None
-    # The Amazon Pinpoint application ID that receives user pool client analytics data. (AI-inferred)
     application_id: Any = None
-    # Specifies the external ID that Amazon Cognito uses when it assumes the IAM role defined in the analytics configuration to send user activity data to the analytics application. (AI-inferred)
     external_id: Any = None
-    # The ARN of the IAM role that Amazon Cognito assumes to publish analytics events to Amazon Pinpoint for this user pool client. (AI-inferred)
     role_arn: Any = None
-    # Indicates whether user data from the user pool client is shared with the configured Amazon Pinpoint analytics provider. (AI-inferred)
     user_data_shared: Any = None
 
 @dataclasses.dataclass
 class UserPoolClient_RefreshTokenRotation:
-    # Determines whether refresh token rotation is enabled for the user pool client, with valid values being 'ENABLED' or 'DISABLED'. (AI-inferred)
     feature: Any = None
-    # Sets the retry grace period, in seconds, during which an old refresh token remains valid after it has been rotated for a new one, allowing clients that still present the previous token to successfully obtain new tokens before the old token is revoked. (AI-inferred)
     retry_grace_period_seconds: Any = None
 
 @dataclasses.dataclass
 class UserPoolClient_TokenValidityUnits:
-    # Specifies the time unit (e.g., seconds, minutes, hours, or days) used to interpret the numeric value of the access token validity period for the Cognito user pool client. (AI-inferred)
     access_token: Any = None
-    # Specifies the unit of time (e.g., seconds, minutes, hours, days) used for the ID token's validity period in the user pool client. (AI-inferred)
     id_token: Any = None
-    # Specifies the time unit (e.g., seconds, minutes, hours, or days) used for the refresh token's validity period in the user pool client. (AI-inferred)
     refresh_token: Any = None
 
 _UserPoolClient_AnalyticsConfigurationFields = {
@@ -56,104 +46,57 @@ _UserPoolClient_TokenValidityUnitsFields = {
 
 @dataclasses.dataclass
 class UserPoolClientConfig:
-    # The validity duration, in minutes, for access tokens issued by this Cognito user pool client, after which they expire. (AI-inferred)
     access_token_validity: Any = None
-    # The list of allowed OAuth flows (such as code, implicit, or client_credentials) for the user pool client, which determines how tokens can be obtained via the hosted UI or API. (AI-inferred)
     allowed_oauth_flows: Any = None
-    # This boolean enables the OAuth 2.0 authorization flows (such as authorization code, implicit, and client credentials) for this user pool client, allowing it to be used with the hosted UI and OAuth tokens. (AI-inferred)
     allowed_oauth_flows_user_pool_client: Any = None
-    # Defines the list of OAuth 2.0 scopes that the user pool client is allowed to request (e.g., email, phone, openid, profile, or custom scopes), controlling the access scope granted during the authorization code or implicit OAuth flows. (AI-inferred)
     allowed_oauth_scopes: Any = None
-    # Configures the Amazon Pinpoint analytics settings for the user pool client, including the Pinpoint application ID, IAM role ARN, external ID, and whether user data is shared, to enable tracking of user events. (AI-inferred)
     analytics_configuration: Any = None
-    # The number of minutes (1-15) that an authentication session remains valid before expiring, controlling how long a user can complete the interactive sign-in flow without restarting. (AI-inferred)
     auth_session_validity: Any = None
-    # List of allowed callback URLs for the Cognito user pool client's OAuth 2.0 authorization endpoints, which Cognito redirects to after authentication. (AI-inferred)
     callback_urls: Any = None
-    # The name of the user pool client, used to identify the client application in the AWS Management Console and in API responses. (AI-inferred)
     client_name: Any = None
-    # The URI that the user is redirected to after sign-in or sign-out if no redirect_uri parameter is supplied in the authorization request. (AI-inferred)
     default_redirect_uri: Any = None
-    # Indicates whether the user pool client propagates additional user context data (such as device fingerprints) to the user pool for advanced security risk evaluation. (AI-inferred)
     enable_propagate_additional_user_context_data: Any = None
-    # Enable token revocation for the user pool client, allowing Cognito to revoke refresh tokens (e.g., after a password change or user disablement) so they can no longer be used. (AI-inferred)
     enable_token_revocation: Any = None
-    # Lists the authentication flows explicitly enabled for this user pool client (e.g., ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH), overriding the default set of allowed flows for the app client. (AI-inferred)
     explicit_auth_flows: Any = None
-    # Indicates whether the app client will have a generated client secret, used for confidential clients to authenticate to the token endpoint. (AI-inferred)
     generate_secret: Any = None
-    # The number of minutes that an ID token issued by the user pool client remains valid before it expires. (AI-inferred)
     id_token_validity: Any = None
-    # Specifies the list of allowed logout redirect URIs to which Cognito may redirect users after signing out from the user pool client. (AI-inferred)
     logout_urls: Any = None
-    # Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
     prevent_user_existence_errors: Any = None
-    # Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
     read_attributes: Any = None
     refresh_token_rotation: Any = None
-    # The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
     refresh_token_validity: Any = None
-    # A list of identity provider names (e.g., COGNITO, Facebook, Google, LoginWithAmazon, or custom SAML/OIDC providers) that are enabled for this app client, controlling which IdPs can be used for sign-in. (AI-inferred)
     supported_identity_providers: Any = None
-    # Specifies the time units (such as seconds, minutes, hours, or days) for the expiration of access, ID, and refresh tokens issued by the user pool client, enabling separate validity durations for each token type. (AI-inferred)
     token_validity_units: Any = None
-    # The unique ID of the Amazon Cognito user pool to which this app client belongs, used to link the client configuration to its parent pool. (AI-inferred)
     user_pool_id: Any = None
-    # Specifies the list of user pool attributes that the app client is allowed to update (write) for users, controlling which profile fields can be modified through the client. (AI-inferred)
     write_attributes: Any = None
 
 @dataclasses.dataclass
 class UserPoolClientAttrs:
-    # The validity duration, in minutes, for access tokens issued by this Cognito user pool client, after which they expire. (AI-inferred)
     access_token_validity: Any = None
-    # The list of allowed OAuth flows (such as code, implicit, or client_credentials) for the user pool client, which determines how tokens can be obtained via the hosted UI or API. (AI-inferred)
     allowed_oauth_flows: Any = None
-    # This boolean enables the OAuth 2.0 authorization flows (such as authorization code, implicit, and client credentials) for this user pool client, allowing it to be used with the hosted UI and OAuth tokens. (AI-inferred)
     allowed_oauth_flows_user_pool_client: Any = None
-    # Defines the list of OAuth 2.0 scopes that the user pool client is allowed to request (e.g., email, phone, openid, profile, or custom scopes), controlling the access scope granted during the authorization code or implicit OAuth flows. (AI-inferred)
     allowed_oauth_scopes: Any = None
-    # Configures the Amazon Pinpoint analytics settings for the user pool client, including the Pinpoint application ID, IAM role ARN, external ID, and whether user data is shared, to enable tracking of user events. (AI-inferred)
     analytics_configuration: Any = None
-    # The number of minutes (1-15) that an authentication session remains valid before expiring, controlling how long a user can complete the interactive sign-in flow without restarting. (AI-inferred)
     auth_session_validity: Any = None
-    # List of allowed callback URLs for the Cognito user pool client's OAuth 2.0 authorization endpoints, which Cognito redirects to after authentication. (AI-inferred)
     callback_urls: Any = None
-    # The unique identifier (ID) of the user pool client, assigned by Amazon Cognito when the client is created. (AI-inferred)
     client_id: Any = None
-    # The name of the user pool client, used to identify the client application in the AWS Management Console and in API responses. (AI-inferred)
     client_name: Any = None
-    # The client secret that this app client uses to authenticate with the Cognito User Pool service, generated by Cognito and exposed as a read-only attribute after creation. (AI-inferred)
     client_secret: Any = None
-    # The URI that the user is redirected to after sign-in or sign-out if no redirect_uri parameter is supplied in the authorization request. (AI-inferred)
     default_redirect_uri: Any = None
-    # Indicates whether the user pool client propagates additional user context data (such as device fingerprints) to the user pool for advanced security risk evaluation. (AI-inferred)
     enable_propagate_additional_user_context_data: Any = None
-    # Enable token revocation for the user pool client, allowing Cognito to revoke refresh tokens (e.g., after a password change or user disablement) so they can no longer be used. (AI-inferred)
     enable_token_revocation: Any = None
-    # Lists the authentication flows explicitly enabled for this user pool client (e.g., ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH), overriding the default set of allowed flows for the app client. (AI-inferred)
     explicit_auth_flows: Any = None
-    # Indicates whether the app client will have a generated client secret, used for confidential clients to authenticate to the token endpoint. (AI-inferred)
     generate_secret: Any = None
-    # The number of minutes that an ID token issued by the user pool client remains valid before it expires. (AI-inferred)
     id_token_validity: Any = None
-    # Specifies the list of allowed logout redirect URIs to which Cognito may redirect users after signing out from the user pool client. (AI-inferred)
     logout_urls: Any = None
-    # This attribute returns the name of the Cognito user pool application client, as originally specified in the ClientName parameter during client creation. (AI-inferred)
     name: Any = None
-    # Indicates whether the user pool client prevents user enumeration by returning a generic error when a user does not exist, with allowed values 'ENABLED' or 'LEGACY'. (AI-inferred)
     prevent_user_existence_errors: Any = None
-    # Specifies the user pool attributes that the app client can read from the user's profile. (AI-inferred)
     read_attributes: Any = None
     refresh_token_rotation: Any = None
-    # The number of days that a refresh token remains valid before the user must re-authenticate. (AI-inferred)
     refresh_token_validity: Any = None
-    # A list of identity provider names (e.g., COGNITO, Facebook, Google, LoginWithAmazon, or custom SAML/OIDC providers) that are enabled for this app client, controlling which IdPs can be used for sign-in. (AI-inferred)
     supported_identity_providers: Any = None
-    # Specifies the time units (such as seconds, minutes, hours, or days) for the expiration of access, ID, and refresh tokens issued by the user pool client, enabling separate validity durations for each token type. (AI-inferred)
     token_validity_units: Any = None
-    # The unique ID of the Amazon Cognito user pool to which this app client belongs, used to link the client configuration to its parent pool. (AI-inferred)
     user_pool_id: Any = None
-    # Specifies the list of user pool attributes that the app client is allowed to update (write) for users, controlling which profile fields can be modified through the client. (AI-inferred)
     write_attributes: Any = None
 
 UserPoolClient = ubx.ResourceBinding(

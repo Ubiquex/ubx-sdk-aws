@@ -14,27 +14,19 @@ class DataTableAttribute_LockVersion:
 @dataclasses.dataclass
 class DataTableAttribute_Validation_Enum:
     strict: Any = None
-    # The allowed string values for this enum validation, which restricts the attribute to one of the specified values. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class DataTableAttribute_Validation:
     enum: Any = None
-    # Sets the exclusive upper bound for a numeric data table attribute's value, requiring any stored value to be strictly less than this number to pass validation. (AI-inferred)
     exclusive_maximum: Any = None
-    # Defines an exclusive minimum validation constraint on a numeric attribute in an Amazon Connect data table, requiring that the attribute's value must be strictly greater than the specified number. (AI-inferred)
     exclusive_minimum: Any = None
-    # Specifies the maximum number of characters allowed for a string-type attribute value in an AWS Connect data table, used to validate that input does not exceed this length. (AI-inferred)
     max_length: Any = None
     max_values: Any = None
-    # Specifies the maximum numeric value allowed for a data table attribute when the attribute's validation rule is of numeric type. (AI-inferred)
     maximum: Any = None
-    # Specifies the minimum number of characters that a string-type data table attribute value must have to be considered valid in Amazon Connect. (AI-inferred)
     min_length: Any = None
     min_values: Any = None
-    # Specifies the minimum numeric value allowed for this data table attribute, used to validate that input is not less than this threshold when the attribute is of a numeric type. (AI-inferred)
     minimum: Any = None
-    # The numeric value that an attribute value must be a multiple of, used as a validation constraint for number-type attributes in an Amazon Connect data table. (AI-inferred)
     multiple_of: Any = None
 
 _DataTableAttribute_Validation_EnumFields = {
@@ -61,35 +53,26 @@ _DataTableAttribute_ValidationFields = {
 
 @dataclasses.dataclass
 class DataTableAttributeConfig:
-    # The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
     data_table_arn: Any = None
     description: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
     instance_arn: Any = None
     name: Any = None
-    # Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
     primary: Any = None
     validation: Any = None
-    # Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
     value_type: Any = None
 
 @dataclasses.dataclass
 class DataTableAttributeAttrs:
     attribute_id: Any = None
-    # The Amazon Resource Name (ARN) of the data table to which this attribute is attached. (AI-inferred)
     data_table_arn: Any = None
     description: Any = None
-    # The Amazon Resource Name (ARN) of the Amazon Connect instance that contains the data table to which this attribute belongs. (AI-inferred)
     instance_arn: Any = None
-    # The AWS Region where the data table attribute was last updated or modified. (AI-inferred)
     last_modified_region: Any = None
     last_modified_time: Any = None
     lock_version: Any = None
     name: Any = None
-    # Boolean flag indicating whether this attribute serves as the primary key for the Amazon Connect data table, uniquely identifying each row. (AI-inferred)
     primary: Any = None
     validation: Any = None
-    # Specifies the data type of the attribute value (e.g., string, number, boolean) in an Amazon Connect data table, controlling how the value is stored and used in contact flows. (AI-inferred)
     value_type: Any = None
 
 DataTableAttribute = ubx.ResourceBinding(

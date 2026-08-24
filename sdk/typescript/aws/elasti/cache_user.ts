@@ -9,9 +9,7 @@ export interface CacheUser_AuthenticationMode {
 }
 
 export interface CacheUser_Tags {
-  /** The key of a tag attached to the ElastiCache user, used to assign metadata for identification and cost allocation. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value component of a tag key-value pair attached to this ElastiCache user, used to categorize or manage the resource. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
@@ -28,7 +26,6 @@ const CacheUser_TagsFields: FieldMap = {
 export interface CacheUserConfig {
   /** Access permissions string used for this user account. */
   accessString?: string | Computed<string>;
-  /** Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred) */
   authenticationMode?: CacheUser_AuthenticationMode | Computed<CacheUser_AuthenticationMode>;
   /** The target cache engine for the user. */
   engine: string | Computed<string>;
@@ -49,7 +46,6 @@ export interface CacheUserAttrs {
   accessString: string;
   /** The Amazon Resource Name (ARN) of the user account. */
   arn: string;
-  /** Specifies the authentication mode for the ElastiCache user, including the type (password or IAM) and, for password mode, the list of passwords used to authenticate. (AI-inferred) */
   authenticationMode: CacheUser_AuthenticationMode;
   /** The target cache engine for the user. */
   engine: string;

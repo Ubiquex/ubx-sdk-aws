@@ -8,99 +8,67 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions_FindingFieldsUpdate_Note:
-    # The text of the note that will be applied to the finding when this automation rule action updates the finding's note. (AI-inferred)
     text: Any = None
-    # Specifies the AWS principal (IAM user or role) that is recorded as the updater of the note when a Security Hub automation rule updates a finding's note. (AI-inferred)
     updated_by: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions_FindingFieldsUpdate_RelatedFindings:
-    # The unique identifier of a related finding to associate with the finding when the automation rule updates the finding's related findings list. (AI-inferred)
     id: Any = None
-    # The ARN of the AWS Security Hub product (e.g., an AWS service or partner solution) that generated the related finding to be attached when the automation rule updates the finding's related findings list. (AI-inferred)
     product_arn: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions_FindingFieldsUpdate_Severity:
-    # Specifies the new severity label (e.g., INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL) to apply to a finding when this automation rule action updates finding fields. (AI-inferred)
     label: Any = None
-    # Specifies the normalized severity value (0-100) to assign to the finding's severity when the automation rule updates the finding fields. (AI-inferred)
     normalized: Any = None
-    # Defines the numeric severity value (0 to 100) to assign to the finding's product severity field when a Security Hub automation rule updates a finding's severity. (AI-inferred)
     product: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions_FindingFieldsUpdate_Workflow:
-    # Specifies the workflow status to apply to the finding when the automation rule triggers, with allowed values such as NEW, NOTIFIED, SUPPRESSED, and RESOLVED. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions_FindingFieldsUpdate:
-    # Sets the finding confidence score (0–100) to the specified value when the automation rule action is applied. (AI-inferred)
     confidence: Any = None
-    # Sets the criticality value (0–100) assigned to the finding when the automation rule's finding fields update action is applied. (AI-inferred)
     criticality: Any = None
-    # The note to add to findings when the automation rule triggers a finding-fields update, including the note text and the updated-by principal. (AI-inferred)
     note: Any = None
-    # Specifies the new list of related findings (each with product ARN and finding ID) to assign to the finding, overwriting any existing related findings when the automation rule performs the finding-field update. (AI-inferred)
     related_findings: Any = None
-    # The severity object in the finding fields update specifies the new severity label and product severity score to be assigned to matching findings. (AI-inferred)
     severity: Any = None
-    # Specifies the list of finding types to set on the finding when this automation rule action updates the finding fields. (AI-inferred)
     types: Any = None
-    # Specifies the custom key-value pairs to set as the finding's user-defined fields when this automation rule action updates the finding. (AI-inferred)
     user_defined_fields: Any = None
-    # When a finding matches this automation rule, this value sets the finding's verification state to the specified enum value (UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, or BENIGN_POSITIVE). (AI-inferred)
     verification_state: Any = None
-    # Specifies the workflow status (e.g., NEW, NOTIFIED, SUPPRESSED, RESOLVED) to apply to findings when this automation rule action is triggered. (AI-inferred)
     workflow: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Actions:
-    # Defines the updates to apply to a finding's fields (such as severity, workflow status, or other configurable attributes) when this Security Hub automation rule action is executed. (AI-inferred)
     finding_fields_update: Any = None
-    # Defines the type of automation rule action, which determines whether the rule performs a finding update (like changing workflow status or severity) or sends a notification to a chat or custom action. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Criteria_AwsAccountId:
-    # Determines the string matching operator (e.g., EQUALS, PREFIX, SUFFIX, NOT_EQUALS) used to compare the finding's AWS account ID against the value specified in the automation rule criterion. (AI-inferred)
     comparison: Any = None
-    # The exact AWS account ID that a finding's AwsAccountId field must equal for the automation rule to apply. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Criteria_Confidence:
-    # The confidence score (0-100) that a finding's Confidence attribute must equal for the automation rule's condition to match. (AI-inferred)
     eq: Any = None
-    # Matches findings where the confidence score (0-100) is greater than or equal to the specified numeric value. (AI-inferred)
     gte: Any = None
-    # Specifies the upper bound (less than or equal to) for the confidence score of a Security Hub finding that will trigger this automation rule. (AI-inferred)
     lte: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Criteria_CreatedAt_DateRange:
-    # Specifies the time unit (e.g., DAYS or HOURS) used to interpret the value of the relative date range for the CreatedAt criterion, enabling filters such as 'last 7 days' or 'last 24 hours'. (AI-inferred)
     unit: Any = None
-    # The numeric value that, combined with the associated unit (e.g., DAYS), sets the relative date range for matching a finding's createdAt timestamp in the automation rule, such as 7 for the last 7 days. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Criteria_CreatedAt:
-    # Configures the relative date range (e.g., last 7 days) used by the automation rule to match findings based on their 'CreatedAt' timestamp. (AI-inferred)
     date_range: Any = None
-    # The end of the timestamp range for the `created_at` criterion, matching findings created on or before this ISO 8601 date and time. (AI-inferred)
     end: Any = None
-    # The start of the ISO 8601 timestamp range used to match findings whose creation time (createdAt) is at or after this value. (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class HubAutomationRule_Criteria_ResourceDetailsOther:
-    # Specifies the comparison operator (e.g., EQUALS, NOT_EQUALS, PREFIX, CONTAINS) for the 'resource_details_other' criterion in the automation rule, determining how the finding's custom resource detail key is matched against the provided value. (AI-inferred)
     comparison: Any = None
-    # The name of a custom resource detail attribute that the automation rule's criteria checks against the resource's 'Other' details map. (AI-inferred)
     key: Any = None
-    # The value string to match against a custom 'Other' resource detail attribute in Security Hub automation rule criteria. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -468,7 +436,6 @@ class HubAutomationRuleAttrs:
     actions: Any = None
     # The date and time, in UTC and ISO 8601 format.
     created_at: Any = None
-    # The AWS Identity and Access Management principal (IAM user or role) that created the automation rule, returned as a read-only attribute. (AI-inferred)
     created_by: Any = None
     # The criteria that determine which findings a rule applies to.
     criteria: Any = None
@@ -476,7 +443,6 @@ class HubAutomationRuleAttrs:
     description: Any = None
     # Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule is terminal, Security Hub CSPM applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
     is_terminal: Any = None
-    # The Amazon Resource Name (ARN) uniquely assigned to the Security Hub automation rule when it is created. (AI-inferred)
     rule_arn: Any = None
     # The name of the rule.
     rule_name: Any = None

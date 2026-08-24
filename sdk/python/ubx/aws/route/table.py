@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Table_Tags:
     key: Any = None
-    # The value of a user-defined tag key associated with the route table, used to organize and identify the route table within AWS. (AI-inferred)
     value: Any = None
 
 _Table_TagsFields = {
@@ -26,7 +25,6 @@ class TableConfig:
 
 @dataclasses.dataclass
 class TableAttrs:
-    # The unique identifier of the route table, assigned by AWS (e.g., rtb-xxxxxxxx). (AI-inferred)
     route_table_id: Any = None
     # Any tags assigned to the route table.
     tags: Any = None

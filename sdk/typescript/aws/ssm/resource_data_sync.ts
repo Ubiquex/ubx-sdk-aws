@@ -2,33 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ResourceDataSync_S3Destination {
-  /** The name of the S3 bucket where Systems Manager Resource Data Sync stores the synced resource data. (AI-inferred) */
   bucketName: string | Computed<string>;
-  /** Specifies the S3 object key prefix (path) within the destination bucket where the SSM resource data sync stores its synchronized data. (AI-inferred) */
   bucketPrefix?: string | Computed<string>;
-  /** Specifies the AWS Region in which the S3 bucket that receives the synchronized SSM inventory data is located. (AI-inferred) */
   bucketRegion: string | Computed<string>;
-  /** The ARN of the AWS KMS key used to encrypt data in the S3 destination bucket for the resource data sync. (AI-inferred) */
   kmskeyArn?: string | Computed<string>;
-  /** Specifies the format for the System Manager data written to the S3 destination, with valid values of JsonSerDe or Incremental. (AI-inferred) */
   syncFormat: string | Computed<string>;
 }
 
 export interface ResourceDataSync_SyncSource_AwsOrganizationsSource {
-  /** For the AWS Organizations source of an SSM Resource Data Sync, this required string specifies whether the sync applies to all accounts in the organization ('EntireOrganization') or only to accounts within specified organizational units ('OrganizationalUnits'). (AI-inferred) */
   organizationSourceType: string | Computed<string>;
-  /** Limits the data sync to only the specified organizational units (OUs) in the AWS Organization, so resources from accounts within those OUs are included in the sync. (AI-inferred) */
   organizationalUnits?: string[] | Computed<string[]>;
 }
 
 export interface ResourceDataSync_SyncSource {
-  /** The AWS Organizations source configuration for the resource data sync, specifying the organization source type and the organizational units whose resource data will be synchronized. (AI-inferred) */
   awsOrganizationsSource?: ResourceDataSync_SyncSource_AwsOrganizationsSource | Computed<ResourceDataSync_SyncSource_AwsOrganizationsSource>;
-  /** Indicates whether the resource data sync automatically includes new AWS Regions as they become available, allowing it to begin collecting data from those regions without additional configuration. (AI-inferred) */
   includeFutureRegions?: boolean | Computed<boolean>;
-  /** Specifies the list of AWS Regions from which Systems Manager collects data for the resource data sync. (AI-inferred) */
   sourceRegions: string[] | Computed<string[]>;
-  /** Specifies the type of source that the resource data sync aggregates data from, such as S3, a single account across multiple regions, or all accounts in an AWS organization. (AI-inferred) */
   sourceType: string | Computed<string>;
 }
 
@@ -57,44 +46,26 @@ const ResourceDataSync_SyncSourceFields: FieldMap = {
 };
 
 export interface ResourceDataSyncConfig {
-  /** The name of the S3 bucket used as the destination for the resource data sync, where Systems Manager delivers the synced configuration and inventory data. (AI-inferred) */
   bucketName?: string | Computed<string>;
-  /** The prefix (folder path) within the S3 bucket where Systems Manager Inventory data is delivered by this data sync. (AI-inferred) */
   bucketPrefix?: string | Computed<string>;
-  /** The AWS Region where the S3 bucket specified as the destination for the resource data sync is located. (AI-inferred) */
   bucketRegion?: string | Computed<string>;
-  /** The ARN of an AWS KMS key that encrypts the synced data stored in the destination Amazon S3 bucket. (AI-inferred) */
   kmskeyArn?: string | Computed<string>;
-  /** Configuration for the S3 bucket where the resource data sync stores synced operational data, including bucket name, region, optional prefix, KMS key, and sync format. (AI-inferred) */
   s3Destination?: ResourceDataSync_S3Destination | Computed<ResourceDataSync_S3Destination>;
-  /** Specifies the serialization format (either JsonSerDe or DelimitedText) used when writing Systems Manager data to the Amazon S3 destination for the resource data sync. (AI-inferred) */
   syncFormat?: string | Computed<string>;
-  /** The name of the resource data sync configuration, which must be unique within the AWS account and Region and is used to identify the sync. (AI-inferred) */
   syncName: string | Computed<string>;
-  /** The sync_source field defines the configuration for the source of the resource data sync, specifying the source type (e.g., 'AwsOrganizations' or 'SingleAccount'), the source regions, and optionally AWS Organizations details to determine where inventory and configuration data is collected from. (AI-inferred) */
   syncSource?: ResourceDataSync_SyncSource | Computed<ResourceDataSync_SyncSource>;
-  /** Determines the type of AWS Systems Manager Resource Data Sync, either 'SyncFromSource' to aggregate data from multiple AWS accounts and Regions or 'SyncToDestination' to sync data to an S3 bucket, and controls whether the configuration uses a sync source or an S3 destination. (AI-inferred) */
   syncType?: string | Computed<string>;
 }
 
 export interface ResourceDataSyncAttrs {
-  /** The name of the S3 bucket used as the destination for the resource data sync, where Systems Manager delivers the synced configuration and inventory data. (AI-inferred) */
   bucketName: string;
-  /** The prefix (folder path) within the S3 bucket where Systems Manager Inventory data is delivered by this data sync. (AI-inferred) */
   bucketPrefix: string;
-  /** The AWS Region where the S3 bucket specified as the destination for the resource data sync is located. (AI-inferred) */
   bucketRegion: string;
-  /** The ARN of an AWS KMS key that encrypts the synced data stored in the destination Amazon S3 bucket. (AI-inferred) */
   kmskeyArn: string;
-  /** Configuration for the S3 bucket where the resource data sync stores synced operational data, including bucket name, region, optional prefix, KMS key, and sync format. (AI-inferred) */
   s3Destination: ResourceDataSync_S3Destination;
-  /** Specifies the serialization format (either JsonSerDe or DelimitedText) used when writing Systems Manager data to the Amazon S3 destination for the resource data sync. (AI-inferred) */
   syncFormat: string;
-  /** The name of the resource data sync configuration, which must be unique within the AWS account and Region and is used to identify the sync. (AI-inferred) */
   syncName: string;
-  /** The sync_source field defines the configuration for the source of the resource data sync, specifying the source type (e.g., 'AwsOrganizations' or 'SingleAccount'), the source regions, and optionally AWS Organizations details to determine where inventory and configuration data is collected from. (AI-inferred) */
   syncSource: ResourceDataSync_SyncSource;
-  /** Determines the type of AWS Systems Manager Resource Data Sync, either 'SyncFromSource' to aggregate data from multiple AWS accounts and Regions or 'SyncToDestination' to sync data to an S3 bucket, and controls whether the configuration uses a sync source or an S3 destination. (AI-inferred) */
   syncType: string;
 }
 

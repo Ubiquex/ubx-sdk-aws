@@ -4,7 +4,6 @@ package bedrock
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentCorePaymentConnector_CredentialProviderConfigurations_CoinbaseCdp struct {
-	// The ARN of the credential provider (e.g., an AWS Secrets Manager secret or IAM role) that supplies the API credentials used by the Bedrock agent to authenticate with Coinbase CDP for payment operations. (AI-inferred)
 	CredentialProviderArn any
 }
 

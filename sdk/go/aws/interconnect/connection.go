@@ -24,7 +24,6 @@ type Connection_RemoteAccount struct {
 
 type Connection_Tags struct {
 	Key any
-	// The value part of a key-value tag applied to the AWS Direct Connect connection (interconnect) resource, used to store arbitrary metadata for organizing and managing the connection. (AI-inferred)
 	Value any
 }
 

@@ -25,7 +25,6 @@ class ConsumableResourceAttrs:
     consumable_resource_arn: Any = None
     # Name of ConsumableResource.
     consumable_resource_name: Any = None
-    # The Unix timestamp (in seconds) when AWS Batch created the consumable resource. (AI-inferred)
     created_at: Any = None
     # In-use Quantity of ConsumableResource.
     in_use_quantity: Any = None
