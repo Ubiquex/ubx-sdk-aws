@@ -7,11 +7,69 @@ name: hash-watch
 # CloudFormation resource-type registry (schema.cloudformation.<region>.
 # amazonaws.com), a live registry zip with no discrete, pinnable release
 # -- there is no version number to poll. Instead: re-fetch the same zip,
-# hash it, and compare against VERSION's committed spec-sha256. On a hash
-# change: bumps VERSION, re-runs `ubx sdk gen --lang go|ts|py --out .`
-# against it (all three languages, one PR), and opens a PR with the
-# combined diff for review. Never auto-merges, same as every other repo
-# in this org.
+# hash its canonicalized content, and compare against VERSION's committed
+# spec-sha256. On a hash change: bumps VERSION, re-runs
+# `ubx sdk gen --lang go|ts|py --out .` against it (all three languages,
+# one PR), and opens a PR with the combined diff for review. Never
+# auto-merges, same as every other repo in this org.
+#
+# 1.1.0: switched from raw zip-byte hashing to canonicalized-content
+# hashing, so all six repos in this org watch drift the same way. This
+# repo and ubx-sdk-kubernetes were built alongside the original four but
+# never actually converted to this method -- both still hashed raw
+# fetched bytes directly, found only when asked to confirm all six
+# matched. Confirmed live this session that the zip's raw bytes had
+# already drifted from the previously-committed hash (real upstream CFN
+# registry change since that baseline was written), independent of the
+# hashing-method switch.
+#
+# This source is shaped differently from every other repo's own single
+# spec document or flat member group: the fetched artifact is an ARCHIVE
+# containing one real JSON file per CFN resource type (1716 of them,
+# confirmed live). Handled the same way Datadog/Azure/Google concatenate
+# their own multiple real members into one hash: unzip in memory
+# (Python's stdlib zipfile, no disk write), sort the archive's own
+# filenames, canonicalize each entry's JSON content independently (same
+# canonicalize() as every other repo -- sort_keys, compact separators,
+# revision-key strip, datetime-safe), and concatenate in sorted-filename
+# order before the final SHA-256. Confirmed live across two independent
+# fetches of the real registry zip that this reproduces identically.
+#
+# One real, live caveat found the hard way verifying this workflow: this
+# endpoint is S3+CloudFront (confirmed via response headers -- a real
+# ETag, Last-Modified, X-Cache/X-Amz-Cf-Pop), not a live-regenerating
+# multi-backend service the way Google's Discovery Docs are. A real
+# workflow_dispatch run computed a DIFFERENT canonicalized hash from
+# repeated manual fetches taken minutes before and after it, from a
+# different network -- traced to CloudFront edge-cache propagation lag,
+# not backend disagreement: the manual fetches' own edge (Age header)
+# was still serving a cached object from before the object's own
+# Last-Modified timestamp, while the Actions runner's edge had already
+# revalidated to the newer object. Unlike google_ftp's own persistent,
+# never-converging split, this is transient -- it resolves once every
+# edge's TTL expires and revalidates -- but the exact window isn't
+# controlled by this workflow. A run that reports a change here worth
+# double-checking against a second run shortly after before assuming the
+# CFN registry itself changed, same spirit as the google_ftp caveat.
+#
+# Also carries the other two real, found-live fixes already applied to
+# the other four repos this session:
+#
+# 1. UBIQUEX_SOURCE_TOKEN removed. ubiquex and ubx-provider-dynamic are
+#    now public repos -- a plain, unauthenticated clone needs no token.
+#    (Formerly a fine-grained PAT; that secret was never actually set on
+#    this repo, confirmed directly via the API, so this checkout always
+#    failed here regardless of whether a real change was ever found.)
+#
+# 2. --recurse-submodules added to the ubiquex clone. ubiquex's own
+#    sdk/go, sdk/py, sdk/ts are real git submodules (its own Makefile
+#    runs `git submodule update --init --recursive` before every build);
+#    a bare clone leaves them empty and `go build ./cmd/ubx` below fails
+#    ("no required module provides package .../sdk/py"). Applied here
+#    even though this repo's own regen path has never actually run yet
+#    (this repo's compare step has always found the corpus unchanged in
+#    every real test so far) -- the dependency is identical to the other
+#    repos where this was caught live.
 #
 # Ported from ubx-sdk-datadog/ubx-sdk-github's own hash-watch.yml (the
 # real, working reference for this content-hash-based pattern), with the
@@ -39,15 +97,68 @@ jobs:
       - name: Check out ubx-sdk-aws
         uses: actions/checkout@v4
 
-      - name: Fetch the real AWS CloudFormation schema zip and hash it
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch the real AWS CloudFormation schema zip and compute its canonicalized-content spec-sha256
         id: spec
         run: |
           set -euo pipefail
-          url="https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip"
-          curl -sf "$url" -o /tmp/spec.bin
-          hash="$(sha256sum /tmp/spec.bin | awk '{print $1}')"
-          echo "hash=$hash" >> "$GITHUB_OUTPUT"
-          echo "Live schema zip sha256: $hash"
+          python3 - <<'PYEOF'
+          import hashlib, io, json, os, time, urllib.error, urllib.request, zipfile, datetime
+
+          URL = "https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip"
+
+          def fetch(url, retries=5):
+              # Same Retry-After-aware backoff as every other repo's own
+              # fetch() this session, kept here for consistency even
+              # though a single-archive fetch is lower 429 risk than the
+              # multi-member loops that first surfaced this bug.
+              req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
+              for i in range(retries):
+                  try:
+                      with urllib.request.urlopen(req, timeout=60) as resp:
+                          return resp.read()
+                  except urllib.error.HTTPError as e:
+                      if i == retries - 1:
+                          raise
+                      retry_after = e.headers.get("Retry-After") if e.code == 429 else None
+                      time.sleep(float(retry_after) if retry_after else 5 * (2 ** i))
+                  except Exception:
+                      if i == retries - 1:
+                          raise
+                      time.sleep(5 * (2 ** i))
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(doc):
+              # Same revision-key strip as every other repo's own
+              # canonicalize() this session -- a real no-op here (checked
+              # directly: CFN resource-type files carry no top-level
+              # "revision" key), kept only so all six repos run identical
+              # logic.
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          zip_bytes = fetch(URL)
+          zf = zipfile.ZipFile(io.BytesIO(zip_bytes))
+          names = sorted(n for n in zf.namelist() if not n.endswith("/"))
+
+          h = hashlib.sha256()
+          for name in names:
+              doc = json.loads(zf.read(name).decode("utf-8"))
+              h.update(canonicalize(doc))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"hash={h.hexdigest()}\n")
+          print(f"Live canonicalized spec-sha256: {h.hexdigest()} ({len(names)} files)")
+          PYEOF
 
       - name: Compare against this repo's committed hash
         id: compare
@@ -69,13 +180,11 @@ jobs:
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          # Fine-grained PAT, contents:read on BOTH Ubiquex/ubiquex and
-          # Ubiquex/ubx-provider-dynamic.
-          git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
           git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
@@ -89,12 +198,6 @@ jobs:
         uses: denoland/setup-deno@v2.0.5
         with:
           deno-version: "2.x"
-
-      - name: Set up Python
-        if: steps.compare.outputs.newer == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
 
       - name: Build ubx
         if: steps.compare.outputs.newer == 'true'
