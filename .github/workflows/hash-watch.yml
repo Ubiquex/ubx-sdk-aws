@@ -35,6 +35,23 @@ name: hash-watch
 # order before the final SHA-256. Confirmed live across two independent
 # fetches of the real registry zip that this reproduces identically.
 #
+# One real, live caveat found the hard way verifying this workflow: this
+# endpoint is S3+CloudFront (confirmed via response headers -- a real
+# ETag, Last-Modified, X-Cache/X-Amz-Cf-Pop), not a live-regenerating
+# multi-backend service the way Google's Discovery Docs are. A real
+# workflow_dispatch run computed a DIFFERENT canonicalized hash from
+# repeated manual fetches taken minutes before and after it, from a
+# different network -- traced to CloudFront edge-cache propagation lag,
+# not backend disagreement: the manual fetches' own edge (Age header)
+# was still serving a cached object from before the object's own
+# Last-Modified timestamp, while the Actions runner's edge had already
+# revalidated to the newer object. Unlike google_ftp's own persistent,
+# never-converging split, this is transient -- it resolves once every
+# edge's TTL expires and revalidates -- but the exact window isn't
+# controlled by this workflow. A run that reports a change here worth
+# double-checking against a second run shortly after before assuming the
+# CFN registry itself changed, same spirit as the google_ftp caveat.
+#
 # Also carries the other two real, found-live fixes already applied to
 # the other four repos this session:
 #
