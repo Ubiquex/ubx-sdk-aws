@@ -7,13 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Workflow_DefinitionS3Location:
-    # The name of the S3 bucket where the workflow definition file (DAG) for this MWAA Serverless workflow is stored. (AI-inferred)
+class Workflow_Code_S3Location:
     bucket: Any = None
-    # The S3 object key (key) identifying the workflow definition file within the bucket specified by the parent definition_s3_location, which is required to load the workflow's DAG from S3. (AI-inferred)
     object_key: Any = None
-    # The specific version identifier of the S3 object that contains the workflow definition, used to reference a particular version of the file in the S3 bucket. (AI-inferred)
     version_id: Any = None
+
+@dataclasses.dataclass
+class Workflow_Code:
+    s3_location: Any = None
 
 @dataclasses.dataclass
 class Workflow_EncryptionConfiguration:
@@ -37,10 +38,18 @@ class Workflow_ScheduleConfiguration:
     # The cron expression that defines the schedule on which the serverless workflow runs, using standard Unix cron syntax. (AI-inferred)
     cron_expression: Any = None
 
-_Workflow_DefinitionS3LocationFields = {
+_Workflow_Code_S3LocationFields = {
     "bucket": ubx.FieldSpec(wire_name="bucket"),
     "object_key": ubx.FieldSpec(wire_name="object_key"),
     "version_id": ubx.FieldSpec(wire_name="version_id"),
+}
+
+_Workflow_CodeFields = {
+    "s3_location": ubx.FieldSpec(
+        wire_name="s3_location",
+        kind="object",
+        fields=_Workflow_Code_S3LocationFields,
+    ),
 }
 
 _Workflow_EncryptionConfigurationFields = {
@@ -59,6 +68,8 @@ _Workflow_NetworkConfigurationFields = {
 
 @dataclasses.dataclass
 class WorkflowConfig:
+    # The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
+    code: Any = None
     definition_s3_location: Any = None
     description: Any = None
     # Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
@@ -77,6 +88,9 @@ class WorkflowConfig:
 
 @dataclasses.dataclass
 class WorkflowAttrs:
+    # The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
+    code: Any = None
+    code_snapshotted_at: Any = None
     # The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred)
     created_at: Any = None
     definition_s3_location: Any = None
@@ -104,10 +118,15 @@ class WorkflowAttrs:
 Workflow = ubx.ResourceBinding(
     wire_type="aws_mwaaserverless_workflow",
     fields={
+        "code": ubx.FieldSpec(
+            wire_name="code",
+            kind="object",
+            fields=_Workflow_CodeFields,
+        ),
         "definition_s3_location": ubx.FieldSpec(
             wire_name="definition_s3_location",
             kind="object",
-            fields=_Workflow_DefinitionS3LocationFields,
+            fields=_Workflow_Code_S3LocationFields,
         ),
         "description": ubx.FieldSpec(wire_name="description"),
         "encryption_configuration": ubx.FieldSpec(

@@ -7,8 +7,3 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .assessment_target import AssessmentTarget, AssessmentTargetConfig
 from .assessment_template import AssessmentTemplate, AssessmentTemplateConfig
 from .resource_group import ResourceGroup, ResourceGroupConfig
-from .v2_cis_scan_configuration import V2CisScanConfiguration, V2CisScanConfigurationConfig
-from .v2_code_security_integration import V2CodeSecurityIntegration, V2CodeSecurityIntegrationConfig
-from .v2_code_security_scan_configuration import V2CodeSecurityScanConfiguration, V2CodeSecurityScanConfigurationConfig
-from .v2_connector import V2Connector, V2ConnectorConfig
-from .v2_filter import V2Filter, V2FilterConfig

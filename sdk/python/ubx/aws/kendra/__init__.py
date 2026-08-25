@@ -8,5 +8,4 @@ from .data_source import DataSource, DataSourceConfig
 from .faq import Faq, FaqConfig
 from .index import Index, IndexConfig
 from .query_suggestions_block_list import QuerySuggestionsBlockList, QuerySuggestionsBlockListConfig
-from .ranking_execution_plan import RankingExecutionPlan, RankingExecutionPlanConfig
 from .thesaurus import Thesaurus, ThesaurusConfig

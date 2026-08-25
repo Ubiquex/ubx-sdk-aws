@@ -20,5 +20,3 @@ from .resource_definition import ResourceDefinition, ResourceDefinitionConfig
 from .resource_definition_version import ResourceDefinitionVersion, ResourceDefinitionVersionConfig
 from .subscription_definition import SubscriptionDefinition, SubscriptionDefinitionConfig
 from .subscription_definition_version import SubscriptionDefinitionVersion, SubscriptionDefinitionVersionConfig
-from .v2_component_version import V2ComponentVersion, V2ComponentVersionConfig
-from .v2_deployment import V2Deployment, V2DeploymentConfig

@@ -14,10 +14,6 @@ from .application_settings import ApplicationSettings, ApplicationSettingsConfig
 from .baidu_channel import BaiduChannel, BaiduChannelConfig
 from .campaign import Campaign, CampaignConfig
 from .email_channel import EmailChannel, EmailChannelConfig
-from .email_configuration_set import EmailConfigurationSet, EmailConfigurationSetConfig
-from .email_configuration_set_event_destination import EmailConfigurationSetEventDestination, EmailConfigurationSetEventDestinationConfig
-from .email_dedicated_ip_pool import EmailDedicatedIpPool, EmailDedicatedIpPoolConfig
-from .email_identity import EmailIdentity, EmailIdentityConfig
 from .email_template import EmailTemplate, EmailTemplateConfig
 from .event_stream import EventStream, EventStreamConfig
 from .gcmchannel import Gcmchannel, GcmchannelConfig

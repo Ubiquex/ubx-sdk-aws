@@ -8,12 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DomainConfig:
+    # Information about the SimpleDB domain.
     description: Any = None
 
 @dataclasses.dataclass
 class DomainAttrs:
+    # Information about the SimpleDB domain.
     description: Any = None
-    # The unique identifier of the SimpleDB domain, which is set to the domain name used to reference the domain in AWS. (AI-inferred)
+    # The name of the domain to create.
     id: Any = None
 
 Domain = ubx.ResourceBinding(

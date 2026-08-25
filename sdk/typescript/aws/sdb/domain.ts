@@ -2,12 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DomainConfig {
+  /** Information about the SimpleDB domain. */
   description?: string | Computed<string>;
 }
 
 export interface DomainAttrs {
+  /** Information about the SimpleDB domain. */
   description: string;
-  /** The unique identifier of the SimpleDB domain, which is set to the domain name used to reference the domain in AWS. (AI-inferred) */
+  /** The name of the domain to create. */
   id: string;
 }
 

@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .framework import Framework, FrameworkConfig
-from .gateway_hypervisor import GatewayHypervisor, GatewayHypervisorConfig
 from .legal_hold import LegalHold, LegalHoldConfig
 from .logically_air_gapped_backup_vault import LogicallyAirGappedBackupVault, LogicallyAirGappedBackupVaultConfig
 from .plan import Plan, PlanConfig

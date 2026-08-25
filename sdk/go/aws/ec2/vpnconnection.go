@@ -179,7 +179,7 @@ type VpnconnectionConfig struct {
 	LocalIpv6NetworkCidr any
 	// The type of IP address assigned to the outside interface of the customer gateway device. Valid values: ``PrivateIpv4`` | ``PublicIpv4`` | ``Ipv6`` Default: ``PublicIpv4``
 	OutsideIpAddressType any
-	// Describes the storage location for an instance store-backed AMI.
+	// Specifies the storage mode for the pre-shared key (PSK). Valid values are ``Standard`` (stored in the S2Slong service) or ``SecretsManager`` (stored in AWS Secrets Manager).
 	PreSharedKeyStorage any
 	// The IPv4 CIDR on the AWS side of the VPN connection. Default: ``0.0.0.0/0``
 	RemoteIpv4NetworkCidr any
@@ -218,7 +218,7 @@ type VpnconnectionAttrs struct {
 	LocalIpv6NetworkCidr any
 	// The type of IP address assigned to the outside interface of the customer gateway device. Valid values: ``PrivateIpv4`` | ``PublicIpv4`` | ``Ipv6`` Default: ``PublicIpv4``
 	OutsideIpAddressType any
-	// Describes the storage location for an instance store-backed AMI.
+	// Specifies the storage mode for the pre-shared key (PSK). Valid values are ``Standard`` (stored in the S2Slong service) or ``SecretsManager`` (stored in AWS Secrets Manager).
 	PreSharedKeyStorage any
 	// The IPv4 CIDR on the AWS side of the VPN connection. Default: ``0.0.0.0/0``
 	RemoteIpv4NetworkCidr any

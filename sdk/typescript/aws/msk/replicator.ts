@@ -18,6 +18,26 @@ export interface Replicator_KafkaClusters_ClientAuthentication_Mtls {
   secretArn?: string | Computed<string>;
 }
 
+export interface Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentials {
+  tokenRequestSecretArn?: string | Computed<string>;
+}
+
+export interface Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion {
+  audience?: string | Computed<string>;
+  signingAlgorithm?: string | Computed<string>;
+  tokenRequestSecretArn?: string | Computed<string>;
+}
+
+export interface Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer {
+  clientCredentials?: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentials | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentials>;
+  clientCredentialsAssertion?: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion>;
+  iamJwtBearer?: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion>;
+  scope?: string | Computed<string>;
+  tokenEndpointAuthenticationMethod?: string | Computed<string>;
+  tokenEndpointTlsCertificateArn?: string | Computed<string>;
+  tokenEndpointUrl?: string | Computed<string>;
+}
+
 export interface Replicator_KafkaClusters_ClientAuthentication_SaslScram {
   /** Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred) */
   mechanism?: string | Computed<string>;
@@ -27,6 +47,7 @@ export interface Replicator_KafkaClusters_ClientAuthentication_SaslScram {
 
 export interface Replicator_KafkaClusters_ClientAuthentication {
   mtls?: Replicator_KafkaClusters_ClientAuthentication_Mtls | Computed<Replicator_KafkaClusters_ClientAuthentication_Mtls>;
+  saslOauthBearer?: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer>;
   /** Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred) */
   saslScram?: Replicator_KafkaClusters_ClientAuthentication_SaslScram | Computed<Replicator_KafkaClusters_ClientAuthentication_SaslScram>;
 }
@@ -165,6 +186,38 @@ const Replicator_KafkaClusters_ClientAuthentication_MtlsFields: FieldMap = {
   secretArn: "secret_arn",
 };
 
+const Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields: FieldMap = {
+  tokenRequestSecretArn: "token_request_secret_arn",
+};
+
+const Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields: FieldMap = {
+  audience: "audience",
+  signingAlgorithm: "signing_algorithm",
+  tokenRequestSecretArn: "token_request_secret_arn",
+};
+
+const Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields: FieldMap = {
+  clientCredentials: {
+    wireName: "client_credentials",
+    kind: "object",
+    fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields,
+  },
+  clientCredentialsAssertion: {
+    wireName: "client_credentials_assertion",
+    kind: "object",
+    fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+  },
+  iamJwtBearer: {
+    wireName: "iam_jwt_bearer",
+    kind: "object",
+    fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+  },
+  scope: "scope",
+  tokenEndpointAuthenticationMethod: "token_endpoint_authentication_method",
+  tokenEndpointTlsCertificateArn: "token_endpoint_tls_certificate_arn",
+  tokenEndpointUrl: "token_endpoint_url",
+};
+
 const Replicator_KafkaClusters_ClientAuthentication_SaslScramFields: FieldMap = {
   mechanism: "mechanism",
   secretArn: "secret_arn",
@@ -175,6 +228,11 @@ const Replicator_KafkaClusters_ClientAuthenticationFields: FieldMap = {
     wireName: "mtls",
     kind: "object",
     fields: Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
+  },
+  saslOauthBearer: {
+    wireName: "sasl_oauth_bearer",
+    kind: "object",
+    fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields,
   },
   saslScram: {
     wireName: "sasl_scram",

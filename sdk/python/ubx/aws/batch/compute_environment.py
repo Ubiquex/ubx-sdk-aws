@@ -148,6 +148,10 @@ class ComputeEnvironment_ComputeResources:
     update_to_latest_image_version: Any = None
 
 @dataclasses.dataclass
+class ComputeEnvironment_EcsSettings:
+    container_insights: Any = None
+
+@dataclasses.dataclass
 class ComputeEnvironment_EksConfiguration:
     # The Amazon Resource Name (ARN) of the Amazon EKS cluster that this compute environment uses to run Batch jobs. (AI-inferred)
     eks_cluster_arn: Any = None
@@ -160,6 +164,10 @@ class ComputeEnvironment_UpdatePolicy:
     job_execution_timeout_minutes: Any = None
     # If true, AWS Batch terminates running jobs in the compute environment whenever the compute environment is updated. (AI-inferred)
     terminate_jobs_on_update: Any = None
+
+_ComputeEnvironment_EcsSettingsFields = {
+    "container_insights": ubx.FieldSpec(wire_name="container_insights"),
+}
 
 _ComputeEnvironment_EksConfigurationFields = {
     "eks_cluster_arn": ubx.FieldSpec(wire_name="eks_cluster_arn"),
@@ -176,6 +184,7 @@ class ComputeEnvironmentConfig:
     # The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
     compute_environment_name: Any = None
     context: Any = None
+    ecs_settings: Any = None
     # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None
     # Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
@@ -202,6 +211,7 @@ class ComputeEnvironmentAttrs:
     # The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred)
     compute_resources: Any = None
     context: Any = None
+    ecs_settings: Any = None
     # Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
     eks_configuration: Any = None
     # Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
@@ -224,6 +234,11 @@ ComputeEnvironment = ubx.ResourceBinding(
     fields={
         "compute_environment_name": ubx.FieldSpec(wire_name="compute_environment_name"),
         "context": ubx.FieldSpec(wire_name="context"),
+        "ecs_settings": ubx.FieldSpec(
+            wire_name="ecs_settings",
+            kind="object",
+            fields=_ComputeEnvironment_EcsSettingsFields,
+        ),
         "eks_configuration": ubx.FieldSpec(
             wire_name="eks_configuration",
             kind="object",
