@@ -4,12 +4,14 @@ package sdb
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DomainConfig struct {
+	// Information about the SimpleDB domain.
 	Description any
 }
 
 type DomainAttrs struct {
+	// Information about the SimpleDB domain.
 	Description any
-	// The unique identifier of the SimpleDB domain, which is set to the domain name used to reference the domain in AWS. (AI-inferred)
+	// The name of the domain to create.
 	Id any
 }
 

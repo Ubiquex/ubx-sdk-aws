@@ -144,6 +144,10 @@ type ComputeEnvironment_ComputeResources struct {
 	UpdateToLatestImageVersion any
 }
 
+type ComputeEnvironment_EcsSettings struct {
+	ContainerInsights any
+}
+
 type ComputeEnvironment_EksConfiguration struct {
 	// The Amazon Resource Name (ARN) of the Amazon EKS cluster that this compute environment uses to run Batch jobs. (AI-inferred)
 	EksClusterArn any
@@ -157,6 +161,10 @@ type ComputeEnvironment_UpdatePolicy struct {
 	// If true, AWS Batch terminates running jobs in the compute environment whenever the compute environment is updated. (AI-inferred)
 	TerminateJobsOnUpdate any
 }
+
+var ComputeEnvironment_EcsSettingsFields = ubx.FieldMap{
+		"ContainerInsights": ubx.FieldSpec{WireName: "container_insights"},
+	}
 
 var ComputeEnvironment_EksConfigurationFields = ubx.FieldMap{
 		"EksClusterArn": ubx.FieldSpec{WireName: "eks_cluster_arn"},
@@ -172,6 +180,7 @@ type ComputeEnvironmentConfig struct {
 	// The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred)
 	ComputeEnvironmentName any
 	Context any
+	EcsSettings any
 	// Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
 	EksConfiguration any
 	// Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
@@ -198,6 +207,7 @@ type ComputeEnvironmentAttrs struct {
 	// The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred)
 	ComputeResources any
 	Context any
+	EcsSettings any
 	// Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred)
 	EksConfiguration any
 	// Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred)
@@ -221,6 +231,11 @@ var ComputeEnvironment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeEnvironmentName": ubx.FieldSpec{WireName: "compute_environment_name"},
 		"Context": ubx.FieldSpec{WireName: "context"},
+		"EcsSettings": ubx.FieldSpec{
+			WireName: "ecs_settings",
+			Kind: "object",
+			Fields: ComputeEnvironment_EcsSettingsFields,
+		},
 		"EksConfiguration": ubx.FieldSpec{
 			WireName: "eks_configuration",
 			Kind: "object",

@@ -1,3 +1,3 @@
-spec-sha256: 9ae6fcd5d3bc9f420778eb452a339771d6282694ff768f8d4282a2cdfb3260a1
-fetched: 2026-08-23
+spec-sha256: 170064e0c59569b57506afcf636b90e6d5af0f2aea8011f888d631e1b258e1f7
+fetched: 2026-08-25
 source: https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip

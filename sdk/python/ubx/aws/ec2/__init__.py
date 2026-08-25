@@ -4,6 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
+from .customer_gateway import CustomerGateway, CustomerGatewayConfig
 from .capacity_manager_data_export import CapacityManagerDataExport, CapacityManagerDataExportConfig
 from .capacity_reservation import CapacityReservation, CapacityReservationConfig
 from .capacity_reservation_fleet import CapacityReservationFleet, CapacityReservationFleetConfig
@@ -100,3 +101,21 @@ from .vpnconnection import Vpnconnection, VpnconnectionConfig
 from .vpnconnection_route import VpnconnectionRoute, VpnconnectionRouteConfig
 from .vpngateway import Vpngateway, VpngatewayConfig
 from .vpngateway_route_propagation import VpngatewayRoutePropagation, VpngatewayRoutePropagationConfig
+from .egress_only_internet_gateway import EgressOnlyInternetGateway, EgressOnlyInternetGatewayConfig
+from .eip import Eip, EipConfig
+from .flow_log import FlowLog, FlowLogConfig
+from .instance import Instance, InstanceConfig
+from .internet_gateway import InternetGateway, InternetGatewayConfig
+from .key_pair import KeyPair, KeyPairConfig
+from .launch_template import LaunchTemplate, LaunchTemplateConfig
+from .nat_gateway import NatGateway, NatGatewayConfig
+from .network_acl import NetworkAcl, NetworkAclConfig
+from .network_interface import NetworkInterface, NetworkInterfaceConfig
+from .network_interface_attachment import NetworkInterfaceAttachment, NetworkInterfaceAttachmentConfig
+from .network_interface_permission import NetworkInterfacePermission, NetworkInterfacePermissionConfig
+from .placement_group import PlacementGroup, PlacementGroupConfig
+from .route_table import RouteTable, RouteTableConfig
+from .security_group import SecurityGroup, SecurityGroupConfig
+from .subnet import Subnet, SubnetConfig
+from .volume_attachment import VolumeAttachment, VolumeAttachmentConfig
+from .vpc import Vpc, VpcConfig

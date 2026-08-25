@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .instances_volume import InstancesVolume, InstancesVolumeConfig
-from .instances_volume_association import InstancesVolumeAssociation, InstancesVolumeAssociationConfig
-from .instances_workspace_instance import InstancesWorkspaceInstance, InstancesWorkspaceInstanceConfig
+from .connection_alias import ConnectionAlias, ConnectionAliasConfig
+from .workspace import Workspace, WorkspaceConfig
+from .workspace_ip_group import WorkspaceIpGroup, WorkspaceIpGroupConfig
 from .pool import Pool, PoolConfig

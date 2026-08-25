@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .channel_association import ChannelAssociation, ChannelAssociationConfig
-from .contacts_email_contact import ContactsEmailContact, ContactsEmailContactConfig
 from .event_rule import EventRule, EventRuleConfig
 from .managed_notification_account_contact_association import ManagedNotificationAccountContactAssociation, ManagedNotificationAccountContactAssociationConfig
 from .managed_notification_additional_channel_association import ManagedNotificationAdditionalChannelAssociation, ManagedNotificationAdditionalChannelAssociationConfig

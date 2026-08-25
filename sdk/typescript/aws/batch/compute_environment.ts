@@ -142,6 +142,10 @@ export interface ComputeEnvironment_ComputeResources {
   updateToLatestImageVersion?: boolean | Computed<boolean>;
 }
 
+export interface ComputeEnvironment_EcsSettings {
+  containerInsights?: string | Computed<string>;
+}
+
 export interface ComputeEnvironment_EksConfiguration {
   /** The Amazon Resource Name (ARN) of the Amazon EKS cluster that this compute environment uses to run Batch jobs. (AI-inferred) */
   eksClusterArn: string | Computed<string>;
@@ -155,6 +159,10 @@ export interface ComputeEnvironment_UpdatePolicy {
   /** If true, AWS Batch terminates running jobs in the compute environment whenever the compute environment is updated. (AI-inferred) */
   terminateJobsOnUpdate?: boolean | Computed<boolean>;
 }
+
+const ComputeEnvironment_EcsSettingsFields: FieldMap = {
+  containerInsights: "container_insights",
+};
 
 const ComputeEnvironment_EksConfigurationFields: FieldMap = {
   eksClusterArn: "eks_cluster_arn",
@@ -170,6 +178,7 @@ export interface ComputeEnvironmentConfig {
   /** The name for the AWS Batch compute environment, which must be unique within the region and can contain letters, numbers, hyphens, and underscores; if omitted, AWS CloudFormation generates a unique name. (AI-inferred) */
   computeEnvironmentName?: string | Computed<string>;
   context?: string | Computed<string>;
+  ecsSettings?: ComputeEnvironment_EcsSettings | Computed<ComputeEnvironment_EcsSettings>;
   /** Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred) */
   eksConfiguration?: ComputeEnvironment_EksConfiguration | Computed<ComputeEnvironment_EksConfiguration>;
   /** Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred) */
@@ -196,6 +205,7 @@ export interface ComputeEnvironmentAttrs {
   /** The resolved configuration of EC2 compute resources (instance types, min/max vCPUs, subnets, security groups) that AWS Batch uses to run jobs in the managed compute environment. (AI-inferred) */
   computeResources: ComputeEnvironment_ComputeResources;
   context: string;
+  ecsSettings: ComputeEnvironment_EcsSettings;
   /** Specifies the Amazon EKS cluster and optional Kubernetes namespace that the Batch compute environment uses when it is of type EKS. (AI-inferred) */
   eksConfiguration: ComputeEnvironment_EksConfiguration;
   /** Specifies whether the compute environment is replaced with a new one when updating this resource, allowing changes to properties that require replacement to take effect. (AI-inferred) */
@@ -219,6 +229,11 @@ export const ComputeEnvironment: ResourceBinding<ComputeEnvironmentConfig, Compu
   fields: {
     computeEnvironmentName: "compute_environment_name",
     context: "context",
+    ecsSettings: {
+      wireName: "ecs_settings",
+      kind: "object",
+      fields: ComputeEnvironment_EcsSettingsFields,
+    },
     eksConfiguration: {
       wireName: "eks_configuration",
       kind: "object",

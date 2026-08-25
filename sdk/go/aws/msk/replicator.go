@@ -20,6 +20,26 @@ type Replicator_KafkaClusters_ClientAuthentication_Mtls struct {
 	SecretArn any
 }
 
+type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentials struct {
+	TokenRequestSecretArn any
+}
+
+type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertion struct {
+	Audience any
+	SigningAlgorithm any
+	TokenRequestSecretArn any
+}
+
+type Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer struct {
+	ClientCredentials any
+	ClientCredentialsAssertion any
+	IamJwtBearer any
+	Scope any
+	TokenEndpointAuthenticationMethod any
+	TokenEndpointTlsCertificateArn any
+	TokenEndpointUrl any
+}
+
 type Replicator_KafkaClusters_ClientAuthentication_SaslScram struct {
 	// Specifies the SASL/SCRAM authentication mechanism (e.g., SCRAM-SHA-512) used by the replicator to connect to the Kafka cluster. (AI-inferred)
 	Mechanism any
@@ -29,6 +49,7 @@ type Replicator_KafkaClusters_ClientAuthentication_SaslScram struct {
 
 type Replicator_KafkaClusters_ClientAuthentication struct {
 	Mtls any
+	SaslOauthBearer any
 	// Specifies SASL/SCRAM authentication settings for the associated Kafka cluster, including an 'Enabled' flag that determines whether the replicator uses SASL/SCRAM authentication when connecting to the cluster. (AI-inferred)
 	SaslScram any
 }
@@ -167,6 +188,38 @@ var Replicator_KafkaClusters_ClientAuthentication_MtlsFields = ubx.FieldMap{
 		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
 	}
 
+var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields = ubx.FieldMap{
+		"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
+	}
+
+var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields = ubx.FieldMap{
+		"Audience": ubx.FieldSpec{WireName: "audience"},
+		"SigningAlgorithm": ubx.FieldSpec{WireName: "signing_algorithm"},
+		"TokenRequestSecretArn": ubx.FieldSpec{WireName: "token_request_secret_arn"},
+	}
+
+var Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields = ubx.FieldMap{
+		"ClientCredentials": ubx.FieldSpec{
+			WireName: "client_credentials",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsFields,
+		},
+		"ClientCredentialsAssertion": ubx.FieldSpec{
+			WireName: "client_credentials_assertion",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+		},
+		"IamJwtBearer": ubx.FieldSpec{
+			WireName: "iam_jwt_bearer",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearer_ClientCredentialsAssertionFields,
+		},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"TokenEndpointAuthenticationMethod": ubx.FieldSpec{WireName: "token_endpoint_authentication_method"},
+		"TokenEndpointTlsCertificateArn": ubx.FieldSpec{WireName: "token_endpoint_tls_certificate_arn"},
+		"TokenEndpointUrl": ubx.FieldSpec{WireName: "token_endpoint_url"},
+	}
+
 var Replicator_KafkaClusters_ClientAuthentication_SaslScramFields = ubx.FieldMap{
 		"Mechanism": ubx.FieldSpec{WireName: "mechanism"},
 		"SecretArn": ubx.FieldSpec{WireName: "secret_arn"},
@@ -177,6 +230,11 @@ var Replicator_KafkaClusters_ClientAuthenticationFields = ubx.FieldMap{
 			WireName: "mtls",
 			Kind: "object",
 			Fields: Replicator_KafkaClusters_ClientAuthentication_MtlsFields,
+		},
+		"SaslOauthBearer": ubx.FieldSpec{
+			WireName: "sasl_oauth_bearer",
+			Kind: "object",
+			Fields: Replicator_KafkaClusters_ClientAuthentication_SaslOauthBearerFields,
 		},
 		"SaslScram": ubx.FieldSpec{
 			WireName: "sasl_scram",

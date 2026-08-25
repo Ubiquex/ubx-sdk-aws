@@ -14,7 +14,4 @@ from .endpoint_authorization import EndpointAuthorization, EndpointAuthorization
 from .event_subscription import EventSubscription, EventSubscriptionConfig
 from .integration import Integration, IntegrationConfig
 from .scheduled_action import ScheduledAction, ScheduledActionConfig
-from .serverless_namespace import ServerlessNamespace, ServerlessNamespaceConfig
-from .serverless_snapshot import ServerlessSnapshot, ServerlessSnapshotConfig
-from .serverless_workgroup import ServerlessWorkgroup, ServerlessWorkgroupConfig
 from .snapshot_schedule import SnapshotSchedule, SnapshotScheduleConfig

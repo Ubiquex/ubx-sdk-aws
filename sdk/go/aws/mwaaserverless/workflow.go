@@ -3,13 +3,14 @@ package mwaaserverless
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Workflow_DefinitionS3Location struct {
-	// The name of the S3 bucket where the workflow definition file (DAG) for this MWAA Serverless workflow is stored. (AI-inferred)
+type Workflow_Code_S3Location struct {
 	Bucket any
-	// The S3 object key (key) identifying the workflow definition file within the bucket specified by the parent definition_s3_location, which is required to load the workflow's DAG from S3. (AI-inferred)
 	ObjectKey any
-	// The specific version identifier of the S3 object that contains the workflow definition, used to reference a particular version of the file in the S3 bucket. (AI-inferred)
 	VersionId any
+}
+
+type Workflow_Code struct {
+	S3Location any
 }
 
 type Workflow_EncryptionConfiguration struct {
@@ -34,10 +35,18 @@ type Workflow_ScheduleConfiguration struct {
 	CronExpression any
 }
 
-var Workflow_DefinitionS3LocationFields = ubx.FieldMap{
+var Workflow_Code_S3LocationFields = ubx.FieldMap{
 		"Bucket": ubx.FieldSpec{WireName: "bucket"},
 		"ObjectKey": ubx.FieldSpec{WireName: "object_key"},
 		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+	}
+
+var Workflow_CodeFields = ubx.FieldMap{
+		"S3Location": ubx.FieldSpec{
+			WireName: "s3_location",
+			Kind: "object",
+			Fields: Workflow_Code_S3LocationFields,
+		},
 	}
 
 var Workflow_EncryptionConfigurationFields = ubx.FieldMap{
@@ -55,6 +64,8 @@ var Workflow_NetworkConfigurationFields = ubx.FieldMap{
 	}
 
 type WorkflowConfig struct {
+	// The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
+	Code any
 	DefinitionS3Location any
 	Description any
 	// Specifies the AWS KMS key configuration for encrypting the MWAA environment's data, with the key ARN provided in the nested 'KmsKey' property. (AI-inferred)
@@ -73,6 +84,9 @@ type WorkflowConfig struct {
 }
 
 type WorkflowAttrs struct {
+	// The location of code artifacts in Amazon S3 for the workflow. Modeled as a single-member container so it stays extensible to future artifact types (e.g. OCI images).
+	Code any
+	CodeSnapshottedAt any
 	// The timestamp, in ISO 8601 format, that indicates when the serverless workflow was created. (AI-inferred)
 	CreatedAt any
 	DefinitionS3Location any
@@ -101,10 +115,15 @@ type WorkflowAttrs struct {
 var Workflow = ubx.ResourceBinding{
 	WireType: "aws_mwaaserverless_workflow",
 	Fields: ubx.FieldMap{
+		"Code": ubx.FieldSpec{
+			WireName: "code",
+			Kind: "object",
+			Fields: Workflow_CodeFields,
+		},
 		"DefinitionS3Location": ubx.FieldSpec{
 			WireName: "definition_s3_location",
 			Kind: "object",
-			Fields: Workflow_DefinitionS3LocationFields,
+			Fields: Workflow_Code_S3LocationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfiguration": ubx.FieldSpec{

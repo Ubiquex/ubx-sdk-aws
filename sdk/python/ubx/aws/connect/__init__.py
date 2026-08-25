@@ -6,8 +6,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .agent_status import AgentStatus, AgentStatusConfig
 from .approved_origin import ApprovedOrigin, ApprovedOriginConfig
-from .campaigns_campaign import CampaignsCampaign, CampaignsCampaignConfig
-from .campaigns_v2_campaign import CampaignsV2Campaign, CampaignsV2CampaignConfig
 from .contact_flow import ContactFlow, ContactFlowConfig
 from .contact_flow_module import ContactFlowModule, ContactFlowModuleConfig
 from .contact_flow_module_alias import ContactFlowModuleAlias, ContactFlowModuleAliasConfig

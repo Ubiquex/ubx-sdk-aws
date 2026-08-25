@@ -4,16 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .analytics_application import AnalyticsApplication, AnalyticsApplicationConfig
-from .analytics_application_output import AnalyticsApplicationOutput, AnalyticsApplicationOutputConfig
-from .analytics_application_reference_data_source import AnalyticsApplicationReferenceDataSource, AnalyticsApplicationReferenceDataSourceConfig
-from .analytics_v2_application import AnalyticsV2Application, AnalyticsV2ApplicationConfig
-from .analytics_v2_application_cloud_watch_logging_option import AnalyticsV2ApplicationCloudWatchLoggingOption, AnalyticsV2ApplicationCloudWatchLoggingOptionConfig
-from .analytics_v2_application_output import AnalyticsV2ApplicationOutput, AnalyticsV2ApplicationOutputConfig
-from .analytics_v2_application_reference_data_source import AnalyticsV2ApplicationReferenceDataSource, AnalyticsV2ApplicationReferenceDataSourceConfig
-from .firehose_delivery_stream import FirehoseDeliveryStream, FirehoseDeliveryStreamConfig
 from .resource_policy import ResourcePolicy, ResourcePolicyConfig
 from .stream import Stream, StreamConfig
 from .stream_consumer import StreamConsumer, StreamConsumerConfig
-from .video_signaling_channel import VideoSignalingChannel, VideoSignalingChannelConfig
-from .video_stream import VideoStream, VideoStreamConfig

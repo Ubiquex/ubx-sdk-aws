@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .dashboard import Dashboard, DashboardConfig
-from .pricing_calculator_bill_scenario import PricingCalculatorBillScenario, PricingCalculatorBillScenarioConfig
