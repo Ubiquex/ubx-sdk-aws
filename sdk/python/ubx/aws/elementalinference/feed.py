@@ -16,6 +16,15 @@ class Feed_Outputs_OutputConfig_Clipping:
     data_source_configuration: Any = None
 
 @dataclasses.dataclass
+class Feed_Outputs_OutputConfig_Cropping_TemplateGroups:
+    name: Any = None
+    template_uris: Any = None
+
+@dataclasses.dataclass
+class Feed_Outputs_OutputConfig_Cropping:
+    template_groups: Any = None
+
+@dataclasses.dataclass
 class Feed_Outputs_OutputConfig_Subtitling_AspectRatio:
     height: Any = None
     # Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred)
@@ -54,6 +63,19 @@ _Feed_Outputs_OutputConfig_ClippingFields = {
     ),
 }
 
+_Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "template_uris": ubx.FieldSpec(wire_name="template_uris"),
+}
+
+_Feed_Outputs_OutputConfig_CroppingFields = {
+    "template_groups": ubx.FieldSpec(
+        wire_name="template_groups",
+        kind="list",
+        fields=_Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields,
+    ),
+}
+
 _Feed_Outputs_OutputConfig_Subtitling_AspectRatioFields = {
     "height": ubx.FieldSpec(wire_name="height"),
     "width": ubx.FieldSpec(wire_name="width"),
@@ -76,7 +98,11 @@ _Feed_Outputs_OutputConfigFields = {
         kind="object",
         fields=_Feed_Outputs_OutputConfig_ClippingFields,
     ),
-    "cropping": ubx.FieldSpec(wire_name="cropping"),
+    "cropping": ubx.FieldSpec(
+        wire_name="cropping",
+        kind="object",
+        fields=_Feed_Outputs_OutputConfig_CroppingFields,
+    ),
     "subtitling": ubx.FieldSpec(
         wire_name="subtitling",
         kind="object",
@@ -97,12 +123,14 @@ _Feed_OutputsFields = {
 
 @dataclasses.dataclass
 class FeedConfig:
+    access_role_arn: Any = None
     name: Any = None
     outputs: Any = None
     tags: Any = None
 
 @dataclasses.dataclass
 class FeedAttrs:
+    access_role_arn: Any = None
     arn: Any = None
     data_endpoints: Any = None
     id: Any = None
@@ -113,6 +141,7 @@ class FeedAttrs:
 Feed = ubx.ResourceBinding(
     wire_type="aws_elemental_inference_feed",
     fields={
+        "access_role_arn": ubx.FieldSpec(wire_name="access_role_arn"),
         "name": ubx.FieldSpec(wire_name="name"),
         "outputs": ubx.FieldSpec(
             wire_name="outputs",

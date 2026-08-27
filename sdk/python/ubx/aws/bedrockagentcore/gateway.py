@@ -135,6 +135,10 @@ class Gateway_ProtocolType:
     pass
 
 @dataclasses.dataclass
+class Gateway_WafConfiguration:
+    failure_mode: Any = None
+
+@dataclasses.dataclass
 class Gateway_WorkloadIdentityDetails:
     workload_identity_arn: Any = None
 
@@ -300,6 +304,10 @@ _Gateway_ProtocolConfigurationFields = {
 _Gateway_ProtocolTypeFields = {
 }
 
+_Gateway_WafConfigurationFields = {
+    "failure_mode": ubx.FieldSpec(wire_name="failure_mode"),
+}
+
 @dataclasses.dataclass
 class GatewayConfig:
     authorizer_configuration: Any = None
@@ -319,6 +327,7 @@ class GatewayConfig:
     # The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred)
     role_arn: Any = None
     tags: Any = None
+    waf_configuration: Any = None
 
 @dataclasses.dataclass
 class GatewayAttrs:
@@ -346,6 +355,8 @@ class GatewayAttrs:
     status_reasons: Any = None
     tags: Any = None
     updated_at: Any = None
+    waf_configuration: Any = None
+    web_acl_arn: Any = None
     workload_identity_details: Any = None
 
 Gateway = ubx.ResourceBinding(
@@ -383,5 +394,10 @@ Gateway = ubx.ResourceBinding(
         ),
         "role_arn": ubx.FieldSpec(wire_name="role_arn"),
         "tags": ubx.FieldSpec(wire_name="tags"),
+        "waf_configuration": ubx.FieldSpec(
+            wire_name="waf_configuration",
+            kind="object",
+            fields=_Gateway_WafConfigurationFields,
+        ),
     },
 )

@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .invoice_unit import InvoiceUnit, InvoiceUnitConfig
+from .procurement_portal_preference import ProcurementPortalPreference, ProcurementPortalPreferenceConfig

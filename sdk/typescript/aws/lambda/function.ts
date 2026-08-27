@@ -56,11 +56,16 @@ export interface Function_EphemeralStorage {
   size: number | Computed<number>;
 }
 
+export interface Function_FileSystemConfigs_S3FilesConfig {
+  directS3Read?: string | Computed<string>;
+}
+
 export interface Function_FileSystemConfigs {
   /** The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system mounted to the Lambda function. (AI-inferred) */
   arn?: string | Computed<string>;
   /** Specifies the directory path (starting with '/mnt/') in the Lambda function's file system where the Amazon EFS file system is mounted, such as '/mnt/efs-data'. (AI-inferred) */
   localMountPath?: string | Computed<string>;
+  s3FilesConfig?: Function_FileSystemConfigs_S3FilesConfig | Computed<Function_FileSystemConfigs_S3FilesConfig>;
 }
 
 export interface Function_FunctionScalingConfig {
@@ -177,9 +182,18 @@ const Function_EphemeralStorageFields: FieldMap = {
   size: "size",
 };
 
+const Function_FileSystemConfigs_S3FilesConfigFields: FieldMap = {
+  directS3Read: "direct_s3_read",
+};
+
 const Function_FileSystemConfigsFields: FieldMap = {
   arn: "arn",
   localMountPath: "local_mount_path",
+  s3FilesConfig: {
+    wireName: "s3_files_config",
+    kind: "object",
+    fields: Function_FileSystemConfigs_S3FilesConfigFields,
+  },
 };
 
 const Function_FunctionScalingConfigFields: FieldMap = {

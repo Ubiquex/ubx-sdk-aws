@@ -111,6 +111,7 @@ class ApiAttrs:
     disable_execute_api_endpoint: Any = None
     # Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
     disable_schema_validation: Any = None
+    execute_api_arn: Any = None
     # Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
     fail_on_warnings: Any = None
     # The IP address types that can invoke the API. Use ``ipv4`` to allow only IPv4 addresses to invoke your API, or use ``dualstack`` to allow both IPv4 and IPv6 addresses to invoke your API. Don’t use IP address type for an HTTP API based on an OpenAPI specification. Instead, specify the IP address type in the OpenAPI specification.

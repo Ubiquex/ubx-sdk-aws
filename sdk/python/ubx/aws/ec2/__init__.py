@@ -17,6 +17,7 @@ from .dhcpoptions import Dhcpoptions, DhcpoptionsConfig
 from .eipassociation import Eipassociation, EipassociationConfig
 from .enclave_certificate_iam_role_association import EnclaveCertificateIamRoleAssociation, EnclaveCertificateIamRoleAssociationConfig
 from .fleet import Fleet, FleetConfig
+from .fpga_image import FpgaImage, FpgaImageConfig
 from .gateway_route_table_association import GatewayRouteTableAssociation, GatewayRouteTableAssociationConfig
 from .host import Host, HostConfig
 from .instance_connect_endpoint import InstanceConnectEndpoint, InstanceConnectEndpointConfig

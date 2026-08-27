@@ -4,41 +4,41 @@ package sagemaker
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointConfig_AsyncInferenceConfig_ClientConfig struct {
-	// Sets the maximum number of concurrent invocations per instance that the asynchronous inference client can send to the model, controlling request parallelism for the endpoint. (AI-inferred)
+	// The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker will choose an optimal value for you.
 	MaxConcurrentInvocationsPerInstance any
 }
 
 type EndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfig struct {
-	// The ARN of the Amazon SNS topic to which SageMaker sends an error notification when an asynchronous inference request fails. (AI-inferred)
+	// Amazon SNS topic to post a notification to when an inference fails. If no topic is provided, no notification is sent on failure.
 	ErrorTopic any
-	// Specifies a list of invocation outcomes (e.g., 'SUCCESS' or 'FAILURE') for which the inference response payload is included in the SNS notification for an asynchronous SageMaker endpoint. (AI-inferred)
+	// The Amazon SNS topics where you want the inference response to be included.
 	IncludeInferenceResponseIn any
-	// SNS topic ARN to which SageMaker publishes a notification when an asynchronous inference completes successfully. (AI-inferred)
+	// Amazon SNS topic to post a notification to when an inference completes successfully. If no topic is provided, no notification is sent on success.
 	SuccessTopic any
 }
 
 type EndpointConfig_AsyncInferenceConfig_OutputConfig struct {
-	// Specifies the AWS KMS key ID used to encrypt the async inference output data stored in Amazon S3. (AI-inferred)
+	// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.
 	KmsKeyId any
-	// Specifies the Amazon SNS topic ARNs to receive success and error notifications for asynchronous inference, and optionally which inference response types to include in those notifications. (AI-inferred)
+	// Specifies the configuration for notifications of inference results for asynchronous inference.
 	NotificationConfig any
-	// The S3 URI (bucket and prefix) where SageMaker writes the failure response payload for asynchronous inference requests when the model prediction fails. (AI-inferred)
+	// The Amazon S3 location to upload failure inference responses to.
 	S3FailurePath any
-	// The S3 bucket and prefix (path) where the results of asynchronous inference requests are written. (AI-inferred)
+	// The Amazon S3 location to upload inference responses to.
 	S3OutputPath any
 }
 
 type EndpointConfig_AsyncInferenceConfig struct {
-	// Specifies client configuration for asynchronous inference, including the maximum number of concurrent invocations per instance allowed for the endpoint. (AI-inferred)
+	// Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.
 	ClientConfig any
-	// Configures the S3 output location (and optionally an SNS notification topic) for storing the results of asynchronous inference on this endpoint configuration. (AI-inferred)
+	// Specifies the configuration for asynchronous inference invocation outputs.
 	OutputConfig any
 }
 
 type EndpointConfig_DataCaptureConfig_CaptureContentTypeHeader struct {
-	// Specifies the list of CSV content types (e.g., 'text/csv') for which Amazon SageMaker captures request and response payloads as part of the data capture configuration for an endpoint. (AI-inferred)
+	// A list of the CSV content types of the data that the endpoint captures. For the endpoint to capture the data, you must also specify the content type when you invoke the endpoint.
 	CsvContentTypes any
-	// Specifies the list of content types (e.g., 'application/json') that are classified as JSON for the purpose of data capture on the SageMaker endpoint. (AI-inferred)
+	// A list of the JSON content types of the data that the endpoint captures. For the endpoint to capture the data, you must also specify the content type when you invoke the endpoint.
 	JsonContentTypes any
 }
 
@@ -48,91 +48,94 @@ type EndpointConfig_DataCaptureConfig_CaptureOptions struct {
 }
 
 type EndpointConfig_DataCaptureConfig struct {
-	// Specifies the lists of CSV and JSON content types that SageMaker captures for requests and responses in the endpoint's data capture configuration. (AI-inferred)
+	// Specifies the JSON and CSV content types of the data that the endpoint captures.
 	CaptureContentTypeHeader any
-	// Specifies which data flows (Request/Input and/or Response/Output) to capture for the endpoint's data capture configuration. (AI-inferred)
+	// Specifies whether the endpoint captures input data to your model, output data from your model, or both.
 	CaptureOptions any
-	// The S3 URI where Amazon SageMaker stores the captured endpoint data (payloads) for the DataCaptureConfig of this endpoint configuration. (AI-inferred)
+	// The S3 bucket where model monitor stores captured data.
 	DestinationS3Uri any
-	// Indicates whether data capture is enabled for the endpoint, which controls whether SageMaker captures request and response data for monitoring and debugging. (AI-inferred)
+	// Set to True to enable data capture.
 	EnableCapture any
-	// The percentage of incoming requests (0 to 100) to sample for data capture when the endpoint is initially deployed, determining what fraction of traffic is recorded for monitoring or analysis. (AI-inferred)
+	// The percentage of data to capture.
 	InitialSamplingPercentage any
-	// The AWS KMS key ID used to encrypt captured endpoint data at rest in the data capture configuration. (AI-inferred)
+	// The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.
 	KmsKeyId any
 }
 
 type EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfig struct {
-	// Defines a template string that determines how feature values are placed into the inference request body for SageMaker Clarify, matching the endpoint's expected input format (e.g., with placeholders like {features}). (AI-inferred)
+	// A template string used to format a JSON record into an acceptable model container input.
 	ContentTemplate any
-	// Specifies the list of feature names for the model input, enabling SageMaker Clarify to label and interpret features when generating explainability insights for the endpoint configuration. (AI-inferred)
+	// The names of the features. If provided, these are included in the endpoint response payload to help readability of the InvokeEndpoint output.
 	FeatureHeaders any
-	// Specifies the data type (categorical or numerical) for each feature, enabling SageMaker Clarify to apply the appropriate explanation method during inference. (AI-inferred)
+	// A list of data types of the features (optional). Applicable only to NLP explainability. If provided, FeatureTypes must have at least one 'text' string (for example, ['text']). If FeatureTypes is not provided, the explainer infers the feature types based on the baseline data.
 	FeatureTypes any
-	// Specifies the name or JSONPath of the features attribute in the input dataset, used by SageMaker Clarify for explanations. (AI-inferred)
+	// Provides the JMESPath expression to extract the features from a model container input in JSON Lines format.
 	FeaturesAttribute any
-	// The name of the attribute in the SageMaker model's inference response that contains the predicted label, used by SageMaker Clarify to properly parse outputs for bias and explainability analyses. (AI-inferred)
+	// A JMESPath expression used to locate the list of label headers in the model container output.
 	LabelAttribute any
-	// Specifies the names of the label columns in the dataset, used by SageMaker Clarify to identify which model output headers correspond to labels during explanation generation. (AI-inferred)
+	// For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label.
 	LabelHeaders any
-	// The index of the label column in the input data, used by the SageMaker Clarify explainer to identify the true label for multi-class classification models. (AI-inferred)
+	// A zero-based index used to extract a label header or list of label headers from model container output in CSV format.
 	LabelIndex any
-	// Sets the maximum payload size (in MB) that SageMaker Clarify permits for the inference requests it sends to the endpoint when generating explanations. (AI-inferred)
+	// The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to 6 MB.
 	MaxPayloadInMb any
-	// The maximum number of records from the input dataset that SageMaker Clarify's inference configuration uses to generate model explanations for the endpoint. (AI-inferred)
+	// The maximum number of records in a request that the model container can process when querying the model container for the predictions of a synthetic dataset. A record is a unit of input data that inference can be made on, for example, a single line in CSV data.
 	MaxRecordCount any
-	// The attribute name in the model output that contains the probability for the predicted class, used by SageMaker Clarify to compute SHAP explanations. (AI-inferred)
+	// A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.
 	ProbabilityAttribute any
-	// The index of the model output that contains the probability of the positive class, used by SageMaker Clarify to interpret predictions for binary classification. (AI-inferred)
+	// A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.
 	ProbabilityIndex any
 }
 
 type EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfig struct {
-	// The MIME type of the SHAP baseline data (e.g., text/csv or application/json) used by SageMaker Clarify for explainability. (AI-inferred)
+	// The MIME type of the baseline data. Choose from 'text/csv' or 'application/jsonlines'. Defaults to 'text/csv'.
 	MimeType any
-	// Specifies the baseline data (as a JSON string or S3 URI) used by the SHAP algorithm for explainability in SageMaker Clarify. (AI-inferred)
+	// The inline SHAP baseline data in string format. ShapBaseline can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset.
 	ShapBaseline any
-	// The S3 URI of the baseline dataset used as the uniform background data for computing SHAP values in SageMaker Clarify explanations for this endpoint configuration. (AI-inferred)
+	// The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset.
 	ShapBaselineUri any
 }
 
 type EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfig struct {
-	// Specifies the granularity level for text inputs used by SageMaker Clarify SHAP analysis, either 'token' or 'sentence', determining whether the text is divided into individual tokens or entire sentences for generating explanations. (AI-inferred)
+	// The unit of granularity for the analysis of text features. For example, if the unit is 'token', then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.
 	Granularity any
-	// Specifies the language (e.g., 'en' for English) of the text data for SageMaker Clarify SHAP analysis in the text configuration. (AI-inferred)
+	// Specifies the language of the text features in ISO 639-1 or ISO 639-3 code of a supported language.
 	Language any
 }
 
 type EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig struct {
-	// Integer specifying how many samples to use when computing SHAP values for the model predictions, used by SageMaker Clarify to approximate the baseline distribution. (AI-inferred)
+	// The number of samples to be used for analysis by the Kernal SHAP algorithm.
 	NumberOfSamples any
-	// Sets the random seed for the SageMaker Clarify SHAP algorithm to ensure reproducible feature attribution results in the endpoint configuration's explainer config. (AI-inferred)
+	// The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.
 	Seed any
-	// Specifies the baseline (background) dataset and its serialization format that SageMaker Clarify's SHAP algorithm uses to compute feature attribution values for endpoint predictions. (AI-inferred)
+	// The configuration for the SHAP baseline (also called the background or reference dataset) of the Kernal SHAP algorithm.
 	ShapBaselineConfig any
-	// This object configures how SageMaker Clarify's SHAP explainer processes text features, including language and granularity settings for computing feature attribution. (AI-inferred)
+	// A parameter used to configure the SageMaker Clarify explainer to treat text features as text so that explanations are provided for individual units of text. Required only for natural language processing (NLP) explainability.
 	TextConfig any
-	// If true, SageMaker Clarify transforms the model's probability output to log-odds (logit) before computing SHAP values, which is appropriate for binary classification problems. (AI-inferred)
+	// A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.
 	UseLogit any
 }
 
 type EndpointConfig_ExplainerConfig_ClarifyExplainerConfig struct {
-	// Determines whether SageMaker Clarify explanations are enabled for the endpoint, with valid values being 'Enabled' or 'Disabled'. (AI-inferred)
+	// A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default.
 	EnableExplanations any
-	// Specifies the input and output data layout (feature headers, feature attribute, label attribute, etc.) that SageMaker Clarify uses to interpret inference requests and responses when generating explainability explanations. (AI-inferred)
+	// The inference configuration parameter for the model container.
 	InferenceConfig any
-	// Specifies the SHAP (SHapley Additive exPlanations) baseline and sampling parameters for the SageMaker Clarify explainer, which are used to generate feature attribution values for model predictions at the endpoint. (AI-inferred)
+	// The configuration for SHAP analysis using SageMaker Clarify Explainer.
 	ShapConfig any
 }
 
 type EndpointConfig_ExplainerConfig struct {
-	// Specifies the configuration for SageMaker Clarify to generate SHAP-based feature attributions for the endpoint, including the SHAP baseline, number of samples, and text configuration for natural language processing. (AI-inferred)
+	// The configuration parameters for the SageMaker Clarify explainer.
 	ClarifyExplainerConfig any
 }
 
 type EndpointConfig_MetricsConfig struct {
+	// Specifies whether to enable detailed observability for the endpoint. When set to true, the endpoint publishes container-level inference metrics, per-GPU metrics, per-instance host metrics, and inference component placement metrics.
 	EnableDetailedObservability any
+	// Specifies whether to enable enhanced metrics for the endpoint. Enhanced metrics provide utilization and invocation data at instance and container granularity.
 	EnableEnhancedMetrics any
+	// The interval, in seconds, at which the endpoint publishes metrics to Amazon CloudWatch. Valid values are 10, 30, 60, 120, 180, 240, and 300. The default is 60.
 	MetricPublishFrequencyInSeconds any
 }
 
@@ -236,9 +239,9 @@ type EndpointConfig_Tags struct {
 }
 
 type EndpointConfig_VpcConfig struct {
-	// The list of security group IDs that define the VPC security groups applied to the SageMaker endpoint's VPC configuration, governing network access to the model container. (AI-inferred)
+	// The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.
 	SecurityGroupIds any
-	// The subnets field specifies the list of subnet IDs in the VPC where the SageMaker endpoint's network interfaces are placed. (AI-inferred)
+	// The ID of the subnets in the VPC to which you want to connect your training job or model.
 	Subnets any
 }
 
@@ -479,56 +482,58 @@ var EndpointConfig_VpcConfigFields = ubx.FieldMap{
 	}
 
 type EndpointConfigConfig struct {
-	// Specifies the configuration for asynchronous inference on the endpoint, including the S3 output path for results, optional notification settings, and client limits such as maximum concurrent invocations per instance. (AI-inferred)
+	// Specifies configuration for how an endpoint performs asynchronous inference.
 	AsyncInferenceConfig any
-	// Configures capturing of request/response data from the endpoint to an S3 location, including whether capture is enabled, sampling percentage, capture options (input/output), and content type headers for monitoring. (AI-inferred)
+	// Specifies how to capture endpoint data for model monitor. The data capture configuration applies to all production variants hosted at the endpoint.
 	DataCaptureConfig any
-	// If set to true, the endpoint runs in network isolation mode, preventing containers from accessing the internet and restricting traffic to the VPC configured for the endpoint. (AI-inferred)
+	// Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.
 	EnableNetworkIsolation any
-	// The name for the endpoint configuration, which must be unique within an AWS Region in your account. (AI-inferred)
+	// The name of the endpoint configuration.
 	EndpointConfigName any
-	// The ARN of the IAM role that Amazon SageMaker assumes to access model artifacts and other AWS resources needed to serve the endpoint. (AI-inferred)
+	// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf.
 	ExecutionRoleArn any
-	// The explainer configuration for the SageMaker endpoint, specifying the Clarify explainer settings used to generate feature attribution explanations for model predictions. (AI-inferred)
+	// A parameter to activate explainers.
 	ExplainerConfig any
-	// The AWS KMS key ARN used to encrypt data at rest on the ML storage volumes attached to the ML compute instances that host the SageMaker endpoint. (AI-inferred)
+	// The Amazon Resource Name (ARN) of an AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
 	KmsKeyId any
+	// Specifies the metrics that the endpoint publishes to Amazon CloudWatch, the frequency of publication, and whether to enable enhanced or detailed observability metrics.
 	MetricsConfig any
-	// Production variants define the list of model variants to serve at the endpoint, each specifying the model, compute instance type, and traffic weight (initial variant weight) for routing inference requests. (AI-inferred)
+	// A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
 	ProductionVariants any
-	// Defines a list of shadow production variants, each specifying a model to be deployed alongside the primary production variants, which receives a copy of inference requests for testing and monitoring without serving live production traffic. (AI-inferred)
+	// Array of ProductionVariant objects. There is one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on ProductionVariants. If you use this field, you can only specify one variant for ProductionVariants and one variant for ShadowProductionVariants.
 	ShadowProductionVariants any
-	// Defines the list of AWS tag objects (each with a Key and Value) to attach to this SageMaker endpoint configuration, which specifies the model, instance type, and settings for a real-time inference endpoint, enabling cost allocation and resource organization. (AI-inferred)
+	// A list of key-value pairs to apply to this resource.
 	Tags any
-	// Specifies the VPC configuration for the SageMaker endpoint, including the subnets and security groups that the endpoint will use to access network resources. (AI-inferred)
+	// Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.
 	VpcConfig any
 }
 
 type EndpointConfigAttrs struct {
-	// Specifies the configuration for asynchronous inference on the endpoint, including the S3 output path for results, optional notification settings, and client limits such as maximum concurrent invocations per instance. (AI-inferred)
+	// Specifies configuration for how an endpoint performs asynchronous inference.
 	AsyncInferenceConfig any
-	// Configures capturing of request/response data from the endpoint to an S3 location, including whether capture is enabled, sampling percentage, capture options (input/output), and content type headers for monitoring. (AI-inferred)
+	// Specifies how to capture endpoint data for model monitor. The data capture configuration applies to all production variants hosted at the endpoint.
 	DataCaptureConfig any
-	// If set to true, the endpoint runs in network isolation mode, preventing containers from accessing the internet and restricting traffic to the VPC configured for the endpoint. (AI-inferred)
+	// Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.
 	EnableNetworkIsolation any
-	// The name for the endpoint configuration, which must be unique within an AWS Region in your account. (AI-inferred)
+	// The Amazon Resource Name (ARN) of the endpoint configuration.
+	EndpointConfigArn any
+	// The name of the endpoint configuration.
 	EndpointConfigName any
-	// The ARN of the IAM role that Amazon SageMaker assumes to access model artifacts and other AWS resources needed to serve the endpoint. (AI-inferred)
+	// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf.
 	ExecutionRoleArn any
-	// The explainer configuration for the SageMaker endpoint, specifying the Clarify explainer settings used to generate feature attribution explanations for model predictions. (AI-inferred)
+	// A parameter to activate explainers.
 	ExplainerConfig any
-	// The unique name of the SageMaker endpoint configuration, which serves as its primary identifier and is assigned by AWS. (AI-inferred)
-	Id any
-	// The AWS KMS key ARN used to encrypt data at rest on the ML storage volumes attached to the ML compute instances that host the SageMaker endpoint. (AI-inferred)
+	// The Amazon Resource Name (ARN) of an AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
 	KmsKeyId any
+	// Specifies the metrics that the endpoint publishes to Amazon CloudWatch, the frequency of publication, and whether to enable enhanced or detailed observability metrics.
 	MetricsConfig any
-	// Production variants define the list of model variants to serve at the endpoint, each specifying the model, compute instance type, and traffic weight (initial variant weight) for routing inference requests. (AI-inferred)
+	// A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
 	ProductionVariants any
-	// Defines a list of shadow production variants, each specifying a model to be deployed alongside the primary production variants, which receives a copy of inference requests for testing and monitoring without serving live production traffic. (AI-inferred)
+	// Array of ProductionVariant objects. There is one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on ProductionVariants. If you use this field, you can only specify one variant for ProductionVariants and one variant for ShadowProductionVariants.
 	ShadowProductionVariants any
-	// Defines the list of AWS tag objects (each with a Key and Value) to attach to this SageMaker endpoint configuration, which specifies the model, instance type, and settings for a real-time inference endpoint, enabling cost allocation and resource organization. (AI-inferred)
+	// A list of key-value pairs to apply to this resource.
 	Tags any
-	// Specifies the VPC configuration for the SageMaker endpoint, including the subnets and security groups that the endpoint will use to access network resources. (AI-inferred)
+	// Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.
 	VpcConfig any
 }
 

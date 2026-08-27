@@ -10,6 +10,15 @@ export interface Feed_Outputs_OutputConfig_Clipping {
   dataSourceConfiguration?: Feed_Outputs_OutputConfig_Clipping_DataSourceConfiguration | Computed<Feed_Outputs_OutputConfig_Clipping_DataSourceConfiguration>;
 }
 
+export interface Feed_Outputs_OutputConfig_Cropping_TemplateGroups {
+  name?: string | Computed<string>;
+  templateUris?: string[] | Computed<string[]>;
+}
+
+export interface Feed_Outputs_OutputConfig_Cropping {
+  templateGroups?: Feed_Outputs_OutputConfig_Cropping_TemplateGroups[] | Computed<Feed_Outputs_OutputConfig_Cropping_TemplateGroups[]>;
+}
+
 export interface Feed_Outputs_OutputConfig_Subtitling_AspectRatio {
   height?: number | Computed<number>;
   /** Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred) */
@@ -25,7 +34,7 @@ export interface Feed_Outputs_OutputConfig_Subtitling {
 
 export interface Feed_Outputs_OutputConfig {
   clipping?: Feed_Outputs_OutputConfig_Clipping | Computed<Feed_Outputs_OutputConfig_Clipping>;
-  cropping?: unknown | Computed<unknown>;
+  cropping?: Feed_Outputs_OutputConfig_Cropping | Computed<Feed_Outputs_OutputConfig_Cropping>;
   subtitling?: Feed_Outputs_OutputConfig_Subtitling | Computed<Feed_Outputs_OutputConfig_Subtitling>;
 }
 
@@ -46,6 +55,19 @@ const Feed_Outputs_OutputConfig_ClippingFields: FieldMap = {
     wireName: "data_source_configuration",
     kind: "object",
     fields: Feed_Outputs_OutputConfig_Clipping_DataSourceConfigurationFields,
+  },
+};
+
+const Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields: FieldMap = {
+  name: "name",
+  templateUris: "template_uris",
+};
+
+const Feed_Outputs_OutputConfig_CroppingFields: FieldMap = {
+  templateGroups: {
+    wireName: "template_groups",
+    kind: "list",
+    fields: Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields,
   },
 };
 
@@ -71,7 +93,11 @@ const Feed_Outputs_OutputConfigFields: FieldMap = {
     kind: "object",
     fields: Feed_Outputs_OutputConfig_ClippingFields,
   },
-  cropping: "cropping",
+  cropping: {
+    wireName: "cropping",
+    kind: "object",
+    fields: Feed_Outputs_OutputConfig_CroppingFields,
+  },
   subtitling: {
     wireName: "subtitling",
     kind: "object",
@@ -91,12 +117,14 @@ const Feed_OutputsFields: FieldMap = {
 };
 
 export interface FeedConfig {
+  accessRoleArn?: string | Computed<string>;
   name: string | Computed<string>;
   outputs: Feed_Outputs[] | Computed<Feed_Outputs[]>;
   tags?: unknown | Computed<unknown>;
 }
 
 export interface FeedAttrs {
+  accessRoleArn: string;
   arn: string;
   dataEndpoints: string[];
   id: string;
@@ -108,6 +136,7 @@ export interface FeedAttrs {
 export const Feed: ResourceBinding<FeedConfig, FeedAttrs> = {
   wireType: "aws_elemental_inference_feed",
   fields: {
+    accessRoleArn: "access_role_arn",
     name: "name",
     outputs: {
       wireName: "outputs",

@@ -77,7 +77,12 @@ export interface AutoScalingGroup_MetricsCollection {
   metrics?: string[] | Computed<string[]>;
 }
 
+export interface AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegments {
+  targetCapacityTypes?: string[] | Computed<string[]>;
+}
+
 export interface AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution {
+  distributionSegments?: AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegments[] | Computed<AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegments[]>;
   /** The allocation strategy to apply to your On-Demand Instances when they are launched. Possible instance types are determined by the launch template overrides that you specify. The following lists the valid values: + lowest-price Uses price to determine which instance types are the highest priority, launching the lowest priced instance types within an Availability Zone first. This is the default value for Auto Scaling groups that specify InstanceRequirements. + prioritized You set the order of instance types for the launch template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling launches your highest priority instance types first. If all your On-Demand capacity cannot be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling launches the remaining capacity using the second priority instance type, and so on. This is the default value for Auto Scaling groups that don't specify InstanceRequirements and cannot be used for groups that do. */
   onDemandAllocationStrategy?: string | Computed<string>;
   /** The minimum amount of the Auto Scaling group's capacity that must be fulfilled by On-Demand Instances. This base portion is launched first as your group scales. This number has the same unit of measurement as the group's desired capacity. If you change the default unit of measurement (number of instances) by specifying weighted capacity values in your launch template overrides list, or by changing the default desired capacity type setting of the group, you must specify this number using the same unit of measurement. Default: 0 An update to this setting means a gradual replacement of instances to adjust the current On-Demand Instance levels. When replacing instances, Amazon EC2 Auto Scaling launches new instances before terminating the previous ones. */
@@ -278,7 +283,16 @@ const AutoScalingGroup_MetricsCollectionFields: FieldMap = {
   metrics: "metrics",
 };
 
+const AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegmentsFields: FieldMap = {
+  targetCapacityTypes: "target_capacity_types",
+};
+
 const AutoScalingGroup_MixedInstancesPolicy_InstancesDistributionFields: FieldMap = {
+  distributionSegments: {
+    wireName: "distribution_segments",
+    kind: "list",
+    fields: AutoScalingGroup_MixedInstancesPolicy_InstancesDistribution_DistributionSegmentsFields,
+  },
   onDemandAllocationStrategy: "on_demand_allocation_strategy",
   onDemandBaseCapacity: "on_demand_base_capacity",
   onDemandPercentageAboveBaseCapacity: "on_demand_percentage_above_base_capacity",
