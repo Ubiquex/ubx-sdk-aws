@@ -6,3 +6,4 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .group import Group, GroupConfig
 from .group_membership import GroupMembership, GroupMembershipConfig
+from .user import User, UserConfig

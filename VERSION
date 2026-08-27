@@ -1,3 +1,5 @@
-spec-sha256: 170064e0c59569b57506afcf636b90e6d5af0f2aea8011f888d631e1b258e1f7
-fetched: 2026-08-25
-source: https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip
+spec-sha256: 528b3457a3aa329e7e9bf760c9597113df7b6a961c48f6bf541c7d19bb15a61c
+smithy-merged-spec-sha256: fd076c341a9e1bd0eacacdefcd0cb41d2ca87831992f6b4283f8ca8a718f560a
+smithy-members: 429
+fetched: 2026-08-27
+source: cfn=https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip smithy=[dynamic_provider_groups.aws_data_all] in ubiquex (sdk/providers/.ubx/config)

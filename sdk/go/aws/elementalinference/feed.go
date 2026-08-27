@@ -12,6 +12,15 @@ type Feed_Outputs_OutputConfig_Clipping struct {
 	DataSourceConfiguration any
 }
 
+type Feed_Outputs_OutputConfig_Cropping_TemplateGroups struct {
+	Name any
+	TemplateUris any
+}
+
+type Feed_Outputs_OutputConfig_Cropping struct {
+	TemplateGroups any
+}
+
 type Feed_Outputs_OutputConfig_Subtitling_AspectRatio struct {
 	Height any
 	// Sets the width value of the subtitle aspect ratio, which pairs with the height to define the proportional shape of the subtitles in the output (e.g., 16 for a 16:9 aspect ratio). (AI-inferred)
@@ -51,6 +60,19 @@ var Feed_Outputs_OutputConfig_ClippingFields = ubx.FieldMap{
 		},
 	}
 
+var Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields = ubx.FieldMap{
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TemplateUris": ubx.FieldSpec{WireName: "template_uris"},
+	}
+
+var Feed_Outputs_OutputConfig_CroppingFields = ubx.FieldMap{
+		"TemplateGroups": ubx.FieldSpec{
+			WireName: "template_groups",
+			Kind: "list",
+			Fields: Feed_Outputs_OutputConfig_Cropping_TemplateGroupsFields,
+		},
+	}
+
 var Feed_Outputs_OutputConfig_Subtitling_AspectRatioFields = ubx.FieldMap{
 		"Height": ubx.FieldSpec{WireName: "height"},
 		"Width": ubx.FieldSpec{WireName: "width"},
@@ -73,7 +95,11 @@ var Feed_Outputs_OutputConfigFields = ubx.FieldMap{
 			Kind: "object",
 			Fields: Feed_Outputs_OutputConfig_ClippingFields,
 		},
-		"Cropping": ubx.FieldSpec{WireName: "cropping"},
+		"Cropping": ubx.FieldSpec{
+			WireName: "cropping",
+			Kind: "object",
+			Fields: Feed_Outputs_OutputConfig_CroppingFields,
+		},
 		"Subtitling": ubx.FieldSpec{
 			WireName: "subtitling",
 			Kind: "object",
@@ -93,12 +119,14 @@ var Feed_OutputsFields = ubx.FieldMap{
 	}
 
 type FeedConfig struct {
+	AccessRoleArn any
 	Name any
 	Outputs any
 	Tags any
 }
 
 type FeedAttrs struct {
+	AccessRoleArn any
 	Arn any
 	DataEndpoints any
 	Id any
@@ -110,6 +138,7 @@ type FeedAttrs struct {
 var Feed = ubx.ResourceBinding{
 	WireType: "aws_elemental_inference_feed",
 	Fields: ubx.FieldMap{
+		"AccessRoleArn": ubx.FieldSpec{WireName: "access_role_arn"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",

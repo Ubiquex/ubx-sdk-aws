@@ -7,6 +7,7 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .alarm import Alarm, AlarmConfig
 from .bucket import Bucket, BucketConfig
 from .certificate import Certificate, CertificateConfig
+from .contact_method import ContactMethod, ContactMethodConfig
 from .container import Container, ContainerConfig
 from .database import Database, DatabaseConfig
 from .database_snapshot import DatabaseSnapshot, DatabaseSnapshotConfig

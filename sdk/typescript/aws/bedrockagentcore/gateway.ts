@@ -128,6 +128,10 @@ export interface Gateway_ProtocolConfiguration {
 export interface Gateway_ProtocolType {
 }
 
+export interface Gateway_WafConfiguration {
+  failureMode?: string | Computed<string>;
+}
+
 export interface Gateway_WorkloadIdentityDetails {
   workloadIdentityArn: string | Computed<string>;
 }
@@ -294,6 +298,10 @@ const Gateway_ProtocolConfigurationFields: FieldMap = {
 const Gateway_ProtocolTypeFields: FieldMap = {
 };
 
+const Gateway_WafConfigurationFields: FieldMap = {
+  failureMode: "failure_mode",
+};
+
 export interface GatewayConfig {
   authorizerConfiguration?: Gateway_AuthorizerConfiguration | Computed<Gateway_AuthorizerConfiguration>;
   /** Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred) */
@@ -312,6 +320,7 @@ export interface GatewayConfig {
   /** The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred) */
   roleArn: string | Computed<string>;
   tags?: unknown | Computed<unknown>;
+  wafConfiguration?: Gateway_WafConfiguration | Computed<Gateway_WafConfiguration>;
 }
 
 export interface GatewayAttrs {
@@ -339,6 +348,8 @@ export interface GatewayAttrs {
   statusReasons: string[];
   tags: unknown;
   updatedAt: string;
+  wafConfiguration: Gateway_WafConfiguration;
+  webAclArn: string;
   workloadIdentityDetails: Gateway_WorkloadIdentityDetails;
 }
 
@@ -377,5 +388,10 @@ export const Gateway: ResourceBinding<GatewayConfig, GatewayAttrs> = {
     },
     roleArn: "role_arn",
     tags: "tags",
+    wafConfiguration: {
+      wireName: "waf_configuration",
+      kind: "object",
+      fields: Gateway_WafConfigurationFields,
+    },
   },
 };

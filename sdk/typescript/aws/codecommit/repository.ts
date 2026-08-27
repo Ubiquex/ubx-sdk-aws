@@ -2,18 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Repository_Code_S3 {
-  /** The name of the Amazon S3 bucket that contains the source code to be committed to the CodeCommit repository when the repository is created. (AI-inferred) */
+  /** The name of the Amazon S3 bucket that contains the ZIP file with the content that will be committed to the new repository. This can be specified using the name of the bucket in the AWS account. Changes to this property are ignored after initial resource creation. */
   bucket: string | Computed<string>;
-  /** The S3 object key (file path within the bucket) of a ZIP archive containing the initial code that the CodeCommit repository is populated with when the repository is created, as part of the 'code' configuration's 's3' block. (AI-inferred) */
+  /** The key to use for accessing the Amazon S3 bucket. Changes to this property are ignored after initial resource creation. */
   key: string | Computed<string>;
-  /** Specifies the version ID of the S3 object that contains the initial code for the repository, enabling you to use a specific version when the object has multiple versions. (AI-inferred) */
+  /** The object version of the ZIP file, if versioning is enabled for the Amazon S3 bucket. Changes to this property are ignored after initial resource creation. */
   objectVersion?: string | Computed<string>;
 }
 
 export interface Repository_Code {
-  /** The name of the branch in the repository to which the initial code (specified in the Code property) is committed when the repository is created. (AI-inferred) */
+  /** Optional. Specifies a branch name to be used as the default branch when importing code into a repository on initial creation. If this property is not set, the name main will be used for the default branch for the repository. Changes to this property are ignored after initial resource creation. We recommend using this parameter to set the name to main to align with the default behavior of CodeCommit unless another name is needed. */
   branchName?: string | Computed<string>;
-  /** The S3 location (bucket, key, and optional object version) from which AWS CodeCommit imports the code for the repository's initial commit. (AI-inferred) */
+  /** Information about the Amazon S3 bucket that contains a ZIP file of code to be committed to the repository. Changes to this property are ignored after initial resource creation. */
   s3: Repository_Code_S3 | Computed<Repository_Code_S3>;
 }
 
@@ -66,42 +66,42 @@ const Repository_TriggersFields: FieldMap = {
 };
 
 export interface RepositoryConfig {
-  /** Defines the initial code to be committed to the repository, specifying the S3 source (bucket, key, and optional object version), target branch, and commit message. (AI-inferred) */
+  /** Information about code to be committed to a repository after it is created in an AWS CloudFormation stack. Information about code is only used in resource creation. Updates to a stack will not reflect changes made to code properties after initial resource creation. */
   code?: Repository_Code | Computed<Repository_Code>;
-  /** The ID of the AWS KMS key used to encrypt the repository contents; if omitted, an AWS-managed key is used. (AI-inferred) */
+  /** The ID of the AWS Key Management Service encryption key used to encrypt and decrypt the repository. */
   kmsKeyId?: string | Computed<string>;
-  /** Specifies the description of the CodeCommit repository, which is displayed in the AWS Management Console and can be up to 1,000 characters long. (AI-inferred) */
+  /** A comment or description about the new repository. */
   repositoryDescription?: string | Computed<string>;
-  /** Specifies the name of the AWS CodeCommit repository, which must be unique within the AWS account and region, and is used as the repository's identifier for clone URLs and API operations. (AI-inferred) */
+  /** The name of the new repository to be created. */
   repositoryName: string | Computed<string>;
-  /** Defines a list of key-value tag objects to associate with the AWS CodeCommit repository, enabling you to categorize and filter the repository for cost tracking, access management, and resource organization. (AI-inferred) */
+  /** One or more tag key-value pairs to use when tagging this repository. */
   tags?: Repository_Tags[] | Computed<Repository_Tags[]>;
-  /** Defines the list of SNS notification triggers for the repository, where each trigger specifies the SNS topic ARN, the repository events (such as 'all', 'update', 'create', or 'delete') that will fire the trigger, and optionally the branch names that restrict which events are published. (AI-inferred) */
+  /** Information about a trigger for a repository. */
   triggers?: Repository_Triggers[] | Computed<Repository_Triggers[]>;
 }
 
 export interface RepositoryAttrs {
-  /** The Amazon Resource Name (ARN) that uniquely identifies this CodeCommit repository within AWS. (AI-inferred) */
+  /** The Amazon Resource Name (ARN) of the repository. */
   arn: string;
-  /** The HTTP(S) clone URL for the AWS CodeCommit repository, which is used to clone the repository over HTTPS. (AI-inferred) */
+  /** The URL to use for cloning the repository over HTTPS. */
   cloneUrlHttp: string;
-  /** The SSH URL used to clone the CodeCommit repository over SSH. (AI-inferred) */
+  /** The URL to use for cloning the repository over SSH. */
   cloneUrlSsh: string;
-  /** Defines the initial code to be committed to the repository, specifying the S3 source (bucket, key, and optional object version), target branch, and commit message. (AI-inferred) */
+  /** Information about code to be committed to a repository after it is created in an AWS CloudFormation stack. Information about code is only used in resource creation. Updates to a stack will not reflect changes made to code properties after initial resource creation. */
   code: Repository_Code;
-  /** The id is the repository name, which uniquely identifies the CodeCommit repository within AWS and is automatically populated from the repository name argument when the resource is created. (AI-inferred) */
-  id: string;
-  /** The ID of the AWS KMS key used to encrypt the repository contents; if omitted, an AWS-managed key is used. (AI-inferred) */
+  /** The ID of the AWS Key Management Service encryption key used to encrypt and decrypt the repository. */
   kmsKeyId: string;
-  /** The name attribute holds the repository name, which matches the RepositoryName property set at creation and is immutable afterwards. (AI-inferred) */
+  /** The repository's name. */
   name: string;
-  /** Specifies the description of the CodeCommit repository, which is displayed in the AWS Management Console and can be up to 1,000 characters long. (AI-inferred) */
+  /** A comment or description about the new repository. */
   repositoryDescription: string;
-  /** Specifies the name of the AWS CodeCommit repository, which must be unique within the AWS account and region, and is used as the repository's identifier for clone URLs and API operations. (AI-inferred) */
+  /** The ID of the repository. */
+  repositoryId: string;
+  /** The name of the new repository to be created. */
   repositoryName: string;
-  /** Defines a list of key-value tag objects to associate with the AWS CodeCommit repository, enabling you to categorize and filter the repository for cost tracking, access management, and resource organization. (AI-inferred) */
+  /** One or more tag key-value pairs to use when tagging this repository. */
   tags: Repository_Tags[];
-  /** Defines the list of SNS notification triggers for the repository, where each trigger specifies the SNS topic ARN, the repository events (such as 'all', 'update', 'create', or 'delete') that will fire the trigger, and optionally the branch names that restrict which events are published. (AI-inferred) */
+  /** Information about a trigger for a repository. */
   triggers: Repository_Triggers[];
 }
 

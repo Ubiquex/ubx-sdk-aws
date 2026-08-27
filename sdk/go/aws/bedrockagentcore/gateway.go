@@ -130,6 +130,10 @@ type Gateway_ProtocolConfiguration struct {
 type Gateway_ProtocolType struct {
 }
 
+type Gateway_WafConfiguration struct {
+	FailureMode any
+}
+
 type Gateway_WorkloadIdentityDetails struct {
 	WorkloadIdentityArn any
 }
@@ -296,6 +300,10 @@ var Gateway_ProtocolConfigurationFields = ubx.FieldMap{
 var Gateway_ProtocolTypeFields = ubx.FieldMap{
 	}
 
+var Gateway_WafConfigurationFields = ubx.FieldMap{
+		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
+	}
+
 type GatewayConfig struct {
 	AuthorizerConfiguration any
 	// Specifies the type of authorizer that the Bedrock Agent core gateway uses to authenticate and authorize incoming API requests before invoking the underlying agent. (AI-inferred)
@@ -314,6 +322,7 @@ type GatewayConfig struct {
 	// The ARN of the IAM role that the Bedrock Agent Core Gateway assumes to invoke Amazon Bedrock agents and access related AWS services. (AI-inferred)
 	RoleArn any
 	Tags any
+	WafConfiguration any
 }
 
 type GatewayAttrs struct {
@@ -341,6 +350,8 @@ type GatewayAttrs struct {
 	StatusReasons any
 	Tags any
 	UpdatedAt any
+	WafConfiguration any
+	WebAclArn any
 	WorkloadIdentityDetails any
 }
 
@@ -379,5 +390,10 @@ var Gateway = ubx.ResourceBinding{
 		},
 		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"WafConfiguration": ubx.FieldSpec{
+			WireName: "waf_configuration",
+			Kind: "object",
+			Fields: Gateway_WafConfigurationFields,
+		},
 	},
 }

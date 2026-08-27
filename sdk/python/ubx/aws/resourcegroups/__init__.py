@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .group import Group, GroupConfig
-from .tag_sync_task import TagSyncTask, TagSyncTaskConfig

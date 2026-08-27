@@ -483,6 +483,8 @@ export interface RuleAttrs {
   name: string;
   /** The Amazon Resource Name (ARN) of the role that is used for target invocation. */
   roleArn: string;
+  /** The name of the rule, exposed as a read-only attribute for use with Fn::GetAtt. */
+  ruleName: string;
   /** The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see Creating an Amazon EventBridge rule that runs on a schedule. */
   scheduleExpression: string;
   /** The state of the rule. */

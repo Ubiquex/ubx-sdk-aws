@@ -4,46 +4,28 @@ package route53
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecordSet_AliasTarget struct {
-	// The DNS name of the AWS resource (such as an Elastic Load Balancer, CloudFront distribution, or S3 website endpoint) to which this alias record routes traffic. (AI-inferred)
+	// The value that you specify depends on where you want to route queries.
 	Dnsname any
-	// Indicates whether Route 53 evaluates the health of the target resource and uses that health information to determine whether to route traffic to the alias target. (AI-inferred)
+	// When EvaluateTargetHealth is true, an alias resource record set inherits the health of the referenced AWS resource, such as an ELB load balancer or another resource record set in the hosted zone.
 	EvaluateTargetHealth any
 	// The hosted zone ID of the AWS resource (such as an Elastic Load Balancer, CloudFront distribution, or S3 website bucket) that this alias record points to. (AI-inferred)
 	HostedZoneId any
 }
 
 type RecordSet_CidrRoutingConfig struct {
-	// The unique identifier of the CIDR collection whose locations and CIDR blocks are used to determine the applicable routing policy for this record set. (AI-inferred)
+	// The CIDR collection ID.
 	CollectionId any
-	// Specifies the name of the CIDR location within the referenced CIDR collection that this record set should be associated with for CIDR routing. (AI-inferred)
+	// The CIDR collection location name.
 	LocationName any
 }
 
 type RecordSet_GeoLocation struct {
-	// The continent code (e.g., 'NA' for North America) that restricts the DNS record to queries originating from that continent when using geolocation routing. (AI-inferred)
+	// For geolocation resource record sets, a two-letter abbreviation that identifies a continent.
 	ContinentCode any
-	// The ISO 3166-1 alpha-2 country code (e.g., 'US') that specifies the country for which this Route 53 record will respond to DNS queries when geolocation routing is used. (AI-inferred)
+	// For geolocation resource record sets, the two-letter code for a country.
 	CountryCode any
-	// The two-letter code for the US state or other country subdivision (e.g., 'CA' for California) that determines the geographic region from which this record set should be consulted, used when geo location routing policy is enabled with a country_code. (AI-inferred)
+	// For geolocation resource record sets, the two-letter code for a state of the United States.
 	SubdivisionCode any
-}
-
-type RecordSet_GeoProximityLocation_Coordinates struct {
-	// Specifies the latitude coordinate (in decimal degrees) of the geographic point used for geoproximity routing, which determines how AWS Route 53 routes traffic based on the user's proximity to this location. (AI-inferred)
-	Latitude any
-	// The longitude of the geographic coordinate used by Amazon Route 53 to determine the distance for geo-proximity routing for the record set. (AI-inferred)
-	Longitude any
-}
-
-type RecordSet_GeoProximityLocation struct {
-	// Specifies the AWS region (e.g., us-east-1) that defines the geographic location for this geo proximity routing rule, used by Route 53 to route traffic based on user proximity to that region. (AI-inferred)
-	Awsregion any
-	// Specifies a value that biases the size of the geographic region for a geo proximity routing policy, where positive values expand the region and negative values shrink it. (AI-inferred)
-	Bias any
-	// Contains the latitude and longitude values that define the geographic point for geo-proximity routing, used when no AWS region is specified in the geo-proximity location. (AI-inferred)
-	Coordinates any
-	// Specifies the local zone group associated with a group of AWS Local Zones used for geoproximity routing, such as 'us-west-2-lax-1'. (AI-inferred)
-	LocalZoneGroup any
 }
 
 var RecordSet_AliasTargetFields = ubx.FieldMap{
@@ -63,22 +45,6 @@ var RecordSet_GeoLocationFields = ubx.FieldMap{
 		"SubdivisionCode": ubx.FieldSpec{WireName: "subdivision_code"},
 	}
 
-var RecordSet_GeoProximityLocation_CoordinatesFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
-
-var RecordSet_GeoProximityLocationFields = ubx.FieldMap{
-		"Awsregion": ubx.FieldSpec{WireName: "awsregion"},
-		"Bias": ubx.FieldSpec{WireName: "bias"},
-		"Coordinates": ubx.FieldSpec{
-			WireName: "coordinates",
-			Kind: "object",
-			Fields: RecordSet_GeoProximityLocation_CoordinatesFields,
-		},
-		"LocalZoneGroup": ubx.FieldSpec{WireName: "local_zone_group"},
-	}
-
 type RecordSetConfig struct {
 	// Specifies alias record properties, enabling the record set to route traffic to an AWS resource (e.g., Elastic Load Balancer, CloudFront distribution, or S3 bucket) by providing the target's hosted zone ID and DNS name, with an optional evaluate-target-health flag. (AI-inferred)
 	AliasTarget any
@@ -90,8 +56,6 @@ type RecordSetConfig struct {
 	Failover any
 	// Specifies the geographic location (continent, country, or subdivision) that this Route 53 record set serves, enabling geolocation routing so DNS queries from that location are answered with this record. (AI-inferred)
 	GeoLocation any
-	// Specifies the AWS Region or coordinates and bias used by Route 53 for geoproximity routing, which determines the resource that receives traffic based on the geographic origin of the request. (AI-inferred)
-	GeoProximityLocation any
 	// The ID of the Amazon Route 53 health check associated with this record set, which Route 53 uses to monitor the health of the resource and determine whether to include the record in DNS responses for failover or latency-based routing. (AI-inferred)
 	HealthCheckId any
 	// The ID of the hosted zone in which to create the record set, allowing you to specify the zone by its unique identifier instead of its domain name. (AI-inferred)
@@ -127,15 +91,12 @@ type RecordSetAttrs struct {
 	Failover any
 	// Specifies the geographic location (continent, country, or subdivision) that this Route 53 record set serves, enabling geolocation routing so DNS queries from that location are answered with this record. (AI-inferred)
 	GeoLocation any
-	// Specifies the AWS Region or coordinates and bias used by Route 53 for geoproximity routing, which determines the resource that receives traffic based on the geographic origin of the request. (AI-inferred)
-	GeoProximityLocation any
 	// The ID of the Amazon Route 53 health check associated with this record set, which Route 53 uses to monitor the health of the resource and determine whether to include the record in DNS responses for failover or latency-based routing. (AI-inferred)
 	HealthCheckId any
 	// The ID of the hosted zone in which to create the record set, allowing you to specify the zone by its unique identifier instead of its domain name. (AI-inferred)
 	HostedZoneId any
 	// The DNS name of an existing Route 53 hosted zone (such as example.com) in which to create the record set; when provided, it is used as an alternative to the hosted zone ID to identify the zone. (AI-inferred)
 	HostedZoneName any
-	Id any
 	// When enabled, this record set uses multivalue answer routing, allowing Route 53 to return multiple healthy values (e.g., IP addresses) in response to DNS queries. (AI-inferred)
 	MultiValueAnswer any
 	// The DNS record name (fully qualified domain name) such as 'www.example.com', which defines the domain name that the record set answers queries for in Amazon Route 53. (AI-inferred)
@@ -173,11 +134,6 @@ var RecordSet = ubx.ResourceBinding{
 			WireName: "geo_location",
 			Kind: "object",
 			Fields: RecordSet_GeoLocationFields,
-		},
-		"GeoProximityLocation": ubx.FieldSpec{
-			WireName: "geo_proximity_location",
-			Kind: "object",
-			Fields: RecordSet_GeoProximityLocationFields,
 		},
 		"HealthCheckId": ubx.FieldSpec{WireName: "health_check_id"},
 		"HostedZoneId": ubx.FieldSpec{WireName: "hosted_zone_id"},

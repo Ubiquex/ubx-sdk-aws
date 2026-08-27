@@ -58,11 +58,16 @@ type Function_EphemeralStorage struct {
 	Size any
 }
 
+type Function_FileSystemConfigs_S3FilesConfig struct {
+	DirectS3Read any
+}
+
 type Function_FileSystemConfigs struct {
 	// The Amazon Resource Name (ARN) of the Amazon EFS access point that provides access to the file system mounted to the Lambda function. (AI-inferred)
 	Arn any
 	// Specifies the directory path (starting with '/mnt/') in the Lambda function's file system where the Amazon EFS file system is mounted, such as '/mnt/efs-data'. (AI-inferred)
 	LocalMountPath any
+	S3FilesConfig any
 }
 
 type Function_FunctionScalingConfig struct {
@@ -179,9 +184,18 @@ var Function_EphemeralStorageFields = ubx.FieldMap{
 		"Size": ubx.FieldSpec{WireName: "size"},
 	}
 
+var Function_FileSystemConfigs_S3FilesConfigFields = ubx.FieldMap{
+		"DirectS3Read": ubx.FieldSpec{WireName: "direct_s3_read"},
+	}
+
 var Function_FileSystemConfigsFields = ubx.FieldMap{
 		"Arn": ubx.FieldSpec{WireName: "arn"},
 		"LocalMountPath": ubx.FieldSpec{WireName: "local_mount_path"},
+		"S3FilesConfig": ubx.FieldSpec{
+			WireName: "s3_files_config",
+			Kind: "object",
+			Fields: Function_FileSystemConfigs_S3FilesConfigFields,
+		},
 	}
 
 var Function_FunctionScalingConfigFields = ubx.FieldMap{
