@@ -3,15 +3,51 @@ name: hash-watch
 # Replaces version-watch.yml as of v1.0.0's source change: this repo no
 # longer generates from the hashicorp/aws Terraform provider, so polling
 # the Terraform Registry for a hashicorp/aws version bump would watch the
-# wrong thing entirely. The real source since 1.0.0 is AWS's own
-# CloudFormation resource-type registry (schema.cloudformation.<region>.
-# amazonaws.com), a live registry zip with no discrete, pinnable release
-# -- there is no version number to poll. Instead: re-fetch the same zip,
-# hash its canonicalized content, and compare against VERSION's committed
-# spec-sha256. On a hash change: bumps VERSION, re-runs
-# `ubx sdk gen --lang go|ts|py --out .` against it (all three languages,
-# one PR), and opens a PR with the combined diff for review. Never
-# auto-merges, same as every other repo in this org.
+# wrong thing entirely. AWS's real corpus splits across two structurally
+# different sources -- CloudFormation's own resource-type registry (a
+# live zip, no discrete pinnable release) for resources, and ~429
+# individual Smithy service models (each its own flat JSON URl) for data
+# sources, merged today via [dynamic_provider_groups.aws_data_all] in
+# ubiquex (sdk/providers/.ubx/config) -- so this file runs two
+# independent drift checks, one per source, and regenerates on either.
+#
+# UBI-196 follow-up (2026-08-27): this file previously watched ONLY the
+# CFN half (`--only aws`, matched against spec-sha256) and never
+# referenced aws_data_all or the Smithy half at all -- confirmed live,
+# by direct reading, that this repo's data-source content had never been
+# in any automated regeneration cycle since DataSourceBinding landed on
+# the authoring path. Confirmed live (2026-08-27) that this group's own
+# declared member list includes "aws" itself alongside the 429 real
+# aws_data_* Smithy entries -- meaning a single `--only aws_data_all`
+# invocation per language already produces BOTH the CFN resource half
+# (1715 real ResourceBinding files, matching the ~1716-entry CFN
+# registry) AND the full Smithy data-source half (4884 real
+# DataSourceBinding files) together. The regeneration step below was
+# switched from `--only aws` to `--only aws_data_all` on that basis --
+# one invocation now supersedes the old one for generation purposes,
+# real ubiquex's own committed config (including aws's own
+# describe_exclude) is read directly rather than hand-duplicated here,
+# matching azure_all/datadog_all/google_all's own established pattern
+# rather than reinventing it.
+#
+# The CFN half still needs its OWN independent drift check (a
+# merged-spec-sha256 over the 429 flat Smithy URLs would never notice a
+# CFN-only schema change, and vice versa) -- kept as its own hash,
+# unzipping the CFN registry zip in memory and hashing its 1716
+# canonicalized JSON entries in sorted-filename order, same as before.
+# The Smithy half is a new second hash, ported from
+# ubx-sdk-azure/ubx-sdk-datadog's own real, working merged-spec-sha256
+# routine (fetch every real aws_data_all member's own schema_url,
+# canonicalize, concatenate in sorted-member-name order, SHA-256) --
+# excluding "aws" itself from that loop, since its own schema_url points
+# at the CFN zip archive, not a single flat spec document, and is
+# already covered by the CFN hash above.
+#
+# Regeneration runs when EITHER hash changed -- a CFN-only or
+# Smithy-only content change still needs the full regenerate, since
+# `--only aws_data_all` always produces the complete merged tree for
+# both halves together; there is no way to regenerate just one half
+# through this group.
 #
 # 1.1.0: switched from raw zip-byte hashing to canonicalized-content
 # hashing, so all six repos in this org watch drift the same way. This
@@ -66,20 +102,19 @@ name: hash-watch
 #    runs `git submodule update --init --recursive` before every build);
 #    a bare clone leaves them empty and `go build ./cmd/ubx` below fails
 #    ("no required module provides package .../sdk/py"). Applied here
-#    even though this repo's own regen path has never actually run yet
-#    (this repo's compare step has always found the corpus unchanged in
-#    every real test so far) -- the dependency is identical to the other
-#    repos where this was caught live.
+#    even though this repo's own regen path has, until this revision,
+#    never actually run for the Smithy half -- the dependency is
+#    identical to the other repos where this was caught live.
 #
-# Ported from ubx-sdk-datadog/ubx-sdk-github's own hash-watch.yml (the
-# real, working reference for this content-hash-based pattern), with the
-# fetched artifact swapped from an OpenAPI spec to the CFN schema zip and
-# schema_source swapped from "openapi" to "cloudformation". Same
-# ubx-provider-dynamic checkout requirement as every dynamic-provider
-# entry (cli/dynamicprovider.go's UBX_PROVIDER_DYNAMIC_REPO convention).
-# Schema fetch alone needs no AWS credentials -- codegen only ever calls
-# Schema(), never Configure/Create/Read/Update/Delete -- so this workflow
-# deliberately sets no [dynamic_providers.aws.auth] table.
+# Ported from ubx-sdk-datadog/ubx-sdk-azure's own hash-watch.yml (the
+# real, working reference for both the merged-spec-sha256 pattern and
+# the read-the-real-config-rather-than-duplicate-it regeneration
+# pattern), with the CFN-specific half kept from this repo's own prior
+# revision. Same ubx-provider-dynamic checkout requirement as every
+# dynamic-provider entry (cli/dynamicprovider.go's
+# UBX_PROVIDER_DYNAMIC_REPO convention). Schema fetch alone needs no AWS
+# credentials -- codegen only ever calls Schema(), never
+# Configure/Create/Read/Update/Delete.
 
 on:
   schedule:
@@ -90,6 +125,10 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  GROUP: aws_data_all
+  REPO_NAME: aws
+
 jobs:
   check-and-regenerate:
     runs-on: ubuntu-latest
@@ -97,13 +136,23 @@ jobs:
       - name: Check out ubx-sdk-aws
         uses: actions/checkout@v4
 
+      - name: Check out ubiquex (real source of truth for aws_data_all's own member list)
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
+      - name: Set up PyYAML
+        run: pip install --quiet pyyaml
+
       - name: Fetch the real AWS CloudFormation schema zip and compute its canonicalized-content spec-sha256
-        id: spec
+        id: cfn
         run: |
           set -euo pipefail
           python3 - <<'PYEOF'
@@ -112,10 +161,6 @@ jobs:
           URL = "https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip"
 
           def fetch(url, retries=5):
-              # Same Retry-After-aware backoff as every other repo's own
-              # fetch() this session, kept here for consistency even
-              # though a single-archive fetch is lower 429 risk than the
-              # multi-member loops that first surfaced this bug.
               req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
               for i in range(retries):
                   try:
@@ -137,11 +182,6 @@ jobs:
               raise TypeError(f"not JSON serializable: {o!r}")
 
           def canonicalize(doc):
-              # Same revision-key strip as every other repo's own
-              # canonicalize() this session -- a real no-op here (checked
-              # directly: CFN resource-type files carry no top-level
-              # "revision" key), kept only so all six repos run identical
-              # logic.
               if isinstance(doc, dict) and "revision" in doc:
                   doc = {k: v for k, v in doc.items() if k != "revision"}
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
@@ -157,32 +197,105 @@ jobs:
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
               out.write(f"hash={h.hexdigest()}\n")
-          print(f"Live canonicalized spec-sha256: {h.hexdigest()} ({len(names)} files)")
+          print(f"Live CFN canonicalized spec-sha256: {h.hexdigest()} ({len(names)} files)")
           PYEOF
 
-      - name: Compare against this repo's committed hash
+      - name: Fetch every aws_data_all Smithy member's raw spec and compute the merged-spec-sha256
+        id: smithy
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import hashlib, json, os, time, tomllib, urllib.error, urllib.request, yaml, datetime
+
+          GROUP = os.environ["GROUP"]
+
+          cfg = tomllib.load(open("${{ runner.temp }}/ubiquex-src/sdk/providers/.ubx/config", "rb"))
+          group = cfg["dynamic_provider_groups"][GROUP]
+          # "aws" itself is a declared member of aws_data_all (its own
+          # single fetch already covers both the CFN resource half and
+          # the Smithy data-source half together) -- but its schema_url
+          # points at the CFN zip archive, not a single flat spec
+          # document like every other real member here. That half is
+          # already covered by the independent CFN hash above, so it's
+          # excluded from this merged-spec loop rather than double
+          # counted or mis-hashed as if it were a flat document.
+          members = sorted(m for m in group["members"] if m != "aws")
+          urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
+
+          def fetch(url, retries=5):
+              req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
+              for i in range(retries):
+                  try:
+                      with urllib.request.urlopen(req, timeout=30) as resp:
+                          return resp.read()
+                  except urllib.error.HTTPError as e:
+                      if i == retries - 1:
+                          raise
+                      retry_after = e.headers.get("Retry-After") if e.code == 429 else None
+                      time.sleep(float(retry_after) if retry_after else 5 * (2 ** i))
+                  except Exception:
+                      if i == retries - 1:
+                          raise
+                      time.sleep(5 * (2 ** i))
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(raw_bytes):
+              text = raw_bytes.decode("utf-8")
+              try:
+                  doc = json.loads(text)
+              except json.JSONDecodeError:
+                  doc = yaml.safe_load(text)
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          h = hashlib.sha256()
+          for i, m in enumerate(members):
+              if i > 0:
+                  time.sleep(1.0)
+              h.update(canonicalize(fetch(urls[m])))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"hash={h.hexdigest()}\n")
+              out.write(f"members={len(members)}\n")
+          print(f"Live Smithy merged-spec-sha256: {h.hexdigest()} ({len(members)} members)")
+          PYEOF
+
+      - name: Compare against this repo's committed VERSION
         id: compare
         run: |
           set -euo pipefail
-          current="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
-          echo "current=$current" >> "$GITHUB_OUTPUT"
-          echo "This repo was last generated from spec-sha256: $current"
-          if [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
-            echo "newer=false" >> "$GITHUB_OUTPUT"
+          current_cfn="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
+          current_smithy_hash="$(grep '^smithy-merged-spec-sha256:' VERSION | awk '{print $2}')"
+          current_smithy_members="$(grep '^smithy-members:' VERSION | awk '{print $2}')"
+          echo "current_cfn=$current_cfn" >> "$GITHUB_OUTPUT"
+          echo "current_smithy_hash=$current_smithy_hash" >> "$GITHUB_OUTPUT"
+          echo "current_smithy_members=$current_smithy_members" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from spec-sha256: $current_cfn, smithy-merged-spec-sha256: $current_smithy_hash ($current_smithy_members members)"
+          newer=false
+          if [ "$current_cfn" != "${{ steps.cfn.outputs.hash }}" ]; then
+            echo "CFN half changed."
+            newer=true
+          fi
+          if [ "$current_smithy_hash" != "${{ steps.smithy.outputs.hash }}" ] || [ "$current_smithy_members" != "${{ steps.smithy.outputs.members }}" ]; then
+            echo "Smithy half changed."
+            newer=true
+          fi
+          echo "newer=$newer" >> "$GITHUB_OUTPUT"
+          if [ "$newer" = "false" ]; then
             echo "Already current -- nothing to do."
-          else
-            echo "newer=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # --- everything below only runs when the schema content changed ---
+      # --- everything below only runs when either half changed ---
 
-      - name: Check out ubiquex (to build ubx from source)
+      - name: Check out ubx-provider-dynamic (only needed once a real change is found)
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          git clone --depth=1 --recurse-submodules \
-            "https://github.com/Ubiquex/ubiquex.git" \
-            "${{ runner.temp }}/ubiquex-src"
           git clone --depth=1 \
             "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
@@ -206,25 +319,14 @@ jobs:
           go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
           "${{ runner.temp }}/ubx" version
 
-      - name: Regenerate bindings (all three languages)
+      - name: Regenerate bindings (all three languages, through the real group -- covers CFN resources and Smithy data sources together)
         if: steps.compare.outputs.newer == 'true'
         env:
           UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
         run: |
           set -euo pipefail
           gendir="${{ runner.temp }}/ubxgen"
-          mkdir -p "$gendir/.ubx"
-          cat > "$gendir/.ubx/config" <<EOF
-          [dynamic_providers.aws]
-          schema_source = "cloudformation"
-          schema_url = "https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip"
-          base_url = "https://cloudcontrolapi.us-east-1.amazonaws.com"
-          describe_exclude = [
-            "aws_quick_sight_dashboard",
-            "aws_quick_sight_analysis",
-            "aws_quick_sight_template",
-          ]
-          EOF
+          mkdir -p "$gendir"
 
           # Each language's own semver `version` field is owned by
           # publish.yml, not by codegen -- codegen always writes "0.0.0".
@@ -233,21 +335,25 @@ jobs:
           own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
           own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
 
-          mkdir -p "$gendir/out/aws/sdk/go"
-          cp sdk/go/go.mod "$gendir/out/aws/sdk/go/go.mod"
+          mkdir -p "$gendir/out/$REPO_NAME/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
 
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only aws --lang go --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only aws --lang ts --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only aws --lang py --out out )
+          # --only aws_data_all alone (not --only aws separately) --
+          # confirmed live that "aws" is itself a declared member of
+          # this group, so one invocation per language already produces
+          # both the CFN resource half and the full Smithy data-source
+          # half together. Run from within the real, checked-out
+          # ubiquex/sdk/providers config (not a hand-duplicated one) so
+          # aws's own real describe_exclude and every other real setting
+          # is picked up automatically, matching
+          # azure_all/datadog_all/google_all's own established pattern.
+          for lang in go ts py; do
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" )
+          done
 
-          rsync -a --delete \
-            --exclude='go.sum' \
-            "$gendir/out/aws/sdk/go/" sdk/go/
-          rsync -a --delete \
-            --exclude='deno.json' --exclude='deno.lock' \
-            "$gendir/out/aws/sdk/typescript/" sdk/typescript/
-          rsync -a --delete \
-            "$gendir/out/aws/sdk/python/" sdk/python/
+          rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
+          rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
+          rsync -a --delete "$gendir/out/$REPO_NAME/sdk/python/" sdk/python/
 
           python3 -c "
           import json
@@ -266,23 +372,25 @@ jobs:
           "
 
           cat > VERSION <<EOF
-          spec-sha256: ${{ steps.spec.outputs.hash }}
+          spec-sha256: ${{ steps.cfn.outputs.hash }}
+          smithy-merged-spec-sha256: ${{ steps.smithy.outputs.hash }}
+          smithy-members: ${{ steps.smithy.outputs.members }}
           fetched: $(date -u +%Y-%m-%d)
-          source: https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip
+          source: cfn=https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip smithy=[dynamic_provider_groups.aws_data_all] in ubiquex (sdk/providers/.ubx/config)
           EOF
 
       - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          python3 - <<'PYEOF'
+          python3 - <<PYEOF
           import json, os
 
           with open("sdk/typescript/deno.json") as fh:
               cfg = json.load(fh)
 
           exports = {}
-          for dirpath, _, filenames in os.walk("sdk/typescript/aws"):
+          for dirpath, _, filenames in os.walk("sdk/typescript/$REPO_NAME"):
               for f in sorted(filenames):
                   if not f.endswith(".ts"):
                       continue
@@ -368,18 +476,21 @@ jobs:
           set -euo pipefail
           git config user.name "ubx-bot"
           git config user.email "actions@users.noreply.github.com"
-          short="$(echo "${{ steps.spec.outputs.hash }}" | cut -c1-12)"
+          short="$(echo "${{ steps.cfn.outputs.hash }}${{ steps.smithy.outputs.hash }}" | sha256sum | cut -c1-12)"
           branch="sdk-regen/aws-$short"
           git checkout -b "$branch"
           git add -A
-          git commit -m "sdk: regenerate from AWS CFN schema $short"
+          git commit -m "sdk: regenerate from aws_data_all (CFN + Smithy) $short"
           git push origin "$branch" --force
           gh pr create \
-            --title "sdk: regenerate from AWS CFN schema $short" \
-            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on AWS's live CloudFormation resource-type registry -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+            --title "sdk: regenerate from aws_data_all (CFN + Smithy) $short" \
+            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on AWS's CloudFormation registry and/or one or more of aws_data_all's real Smithy members -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR via a single \`--only aws_data_all\` invocation per language, which covers both the CFN resource half and the Smithy data-source half.
 
-          Previous spec-sha256: \`${{ steps.compare.outputs.current }}\`
-          New spec-sha256: \`${{ steps.spec.outputs.hash }}\`
+          Previous spec-sha256: \`${{ steps.compare.outputs.current_cfn }}\`
+          New spec-sha256: \`${{ steps.cfn.outputs.hash }}\`
 
-          New files = new resource type. Modified files = an existing resource's schema changed. This never auto-merges -- review the diff before merging." \
+          Previous smithy-merged-spec-sha256: \`${{ steps.compare.outputs.current_smithy_hash }}\` (${{ steps.compare.outputs.current_smithy_members }} members)
+          New smithy-merged-spec-sha256: \`${{ steps.smithy.outputs.hash }}\` (${{ steps.smithy.outputs.members }} members)
+
+          New files = new resource/data source. Modified files = an existing one's schema changed. Removed files = dropped out of the corpus. This never auto-merges -- review the diff before merging." \
             --base main --head "$branch"
