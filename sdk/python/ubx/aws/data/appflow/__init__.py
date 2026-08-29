@@ -8,6 +8,5 @@ from .connector import Connector, ConnectorConfig
 from .connector_entities import ConnectorEntities, ConnectorEntitiesConfig
 from .connector_entity import ConnectorEntity, ConnectorEntityConfig
 from .connectors import Connectors, ConnectorsConfig
-from .flow_execution_records import FlowExecutionRecords, FlowExecutionRecordsConfig
 from .flows import Flows, FlowsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

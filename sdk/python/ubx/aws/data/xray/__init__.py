@@ -8,7 +8,6 @@ from .encryption_config import EncryptionConfig, EncryptionConfigConfig
 from .groups import Groups, GroupsConfig
 from .indexing_rules import IndexingRules, IndexingRulesConfig
 from .insight import Insight, InsightConfig
-from .insight_events import InsightEvents, InsightEventsConfig
 from .insight_impact_graph import InsightImpactGraph, InsightImpactGraphConfig
 from .insight_summaries import InsightSummaries, InsightSummariesConfig
 from .resource_policies import ResourcePolicies, ResourcePoliciesConfig

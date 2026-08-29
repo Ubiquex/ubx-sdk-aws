@@ -4,16 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .action_executions import ActionExecutions, ActionExecutionsConfig
 from .action_type import ActionType, ActionTypeConfig
 from .action_types import ActionTypes, ActionTypesConfig
-from .deploy_action_execution_targets import DeployActionExecutionTargets, DeployActionExecutionTargetsConfig
 from .job_details import JobDetails, JobDetailsConfig
-from .pipeline_execution import PipelineExecution, PipelineExecutionConfig
-from .pipeline_executions import PipelineExecutions, PipelineExecutionsConfig
 from .pipeline_state import PipelineState, PipelineStateConfig
 from .pipelines import Pipelines, PipelinesConfig
-from .rule_executions import RuleExecutions, RuleExecutionsConfig
 from .rule_types import RuleTypes, RuleTypesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .third_party_job_details import ThirdPartyJobDetails, ThirdPartyJobDetailsConfig

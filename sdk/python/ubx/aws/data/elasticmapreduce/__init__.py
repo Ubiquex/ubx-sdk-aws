@@ -14,8 +14,6 @@ from .instance_fleets import InstanceFleets, InstanceFleetsConfig
 from .instance_groups import InstanceGroups, InstanceGroupsConfig
 from .instances import Instances, InstancesConfig
 from .managed_scaling_policy import ManagedScalingPolicy, ManagedScalingPolicyConfig
-from .notebook_execution import NotebookExecution, NotebookExecutionConfig
-from .notebook_executions import NotebookExecutions, NotebookExecutionsConfig
 from .on_cluster_app_uipresigned_url import OnClusterAppUipresignedUrl, OnClusterAppUipresignedUrlConfig
 from .persistent_app_uipresigned_url import PersistentAppUipresignedUrl, PersistentAppUipresignedUrlConfig
 from .release_label import ReleaseLabel, ReleaseLabelConfig

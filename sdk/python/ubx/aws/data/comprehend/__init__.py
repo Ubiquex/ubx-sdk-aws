@@ -19,7 +19,6 @@ from .entity_recognizers import EntityRecognizers, EntityRecognizersConfig
 from .events_detection_job import EventsDetectionJob, EventsDetectionJobConfig
 from .events_detection_jobs import EventsDetectionJobs, EventsDetectionJobsConfig
 from .flywheel_iteration import FlywheelIteration, FlywheelIterationConfig
-from .flywheel_iteration_history import FlywheelIterationHistory, FlywheelIterationHistoryConfig
 from .flywheels import Flywheels, FlywheelsConfig
 from .key_phrases_detection_job import KeyPhrasesDetectionJob, KeyPhrasesDetectionJobConfig
 from .key_phrases_detection_jobs import KeyPhrasesDetectionJobs, KeyPhrasesDetectionJobsConfig

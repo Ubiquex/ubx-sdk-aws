@@ -21,10 +21,7 @@ from .environments import Environments, EnvironmentsConfig
 from .iam_portal_login_url import IamPortalLoginUrl, IamPortalLoginUrlConfig
 from .job_run import JobRun, JobRunConfig
 from .job_runs import JobRuns, JobRunsConfig
-from .lineage_event import LineageEvent, LineageEventConfig
-from .lineage_events import LineageEvents, LineageEventsConfig
 from .lineage_node import LineageNode, LineageNodeConfig
-from .lineage_node_history import LineageNodeHistory, LineageNodeHistoryConfig
 from .notifications import Notifications, NotificationsConfig
 from .policy_grants import PolicyGrants, PolicyGrantsConfig
 from .project_profiles import ProjectProfiles, ProjectProfilesConfig

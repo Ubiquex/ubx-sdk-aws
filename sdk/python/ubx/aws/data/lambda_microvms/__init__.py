@@ -4,5 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
+from .lambda_microvms_managed_microvm_image_versions import LambdaMicrovmsManagedMicrovmImageVersions, LambdaMicrovmsManagedMicrovmImageVersionsConfig
 from .lambda_microvms_managed_microvm_images import LambdaMicrovmsManagedMicrovmImages, LambdaMicrovmsManagedMicrovmImagesConfig
+from .lambda_microvms_microvm_image_build import LambdaMicrovmsMicrovmImageBuild, LambdaMicrovmsMicrovmImageBuildConfig
+from .lambda_microvms_microvm_image_builds import LambdaMicrovmsMicrovmImageBuilds, LambdaMicrovmsMicrovmImageBuildsConfig
+from .lambda_microvms_microvm_image_version import LambdaMicrovmsMicrovmImageVersion, LambdaMicrovmsMicrovmImageVersionConfig
+from .lambda_microvms_microvm_image_versions import LambdaMicrovmsMicrovmImageVersions, LambdaMicrovmsMicrovmImageVersionsConfig
+from .lambda_microvms_microvm_images import LambdaMicrovmsMicrovmImages, LambdaMicrovmsMicrovmImagesConfig
 from .lambda_microvms_tags import LambdaMicrovmsTags, LambdaMicrovmsTagsConfig

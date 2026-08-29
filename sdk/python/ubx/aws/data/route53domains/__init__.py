@@ -8,7 +8,5 @@ from .contact_reachability_status import ContactReachabilityStatus, ContactReach
 from .domain_detail import DomainDetail, DomainDetailConfig
 from .domain_suggestions import DomainSuggestions, DomainSuggestionsConfig
 from .domains import Domains, DomainsConfig
-from .operation_detail import OperationDetail, OperationDetailConfig
-from .operations import Operations, OperationsConfig
 from .prices import Prices, PricesConfig
 from .tags_for_domain import TagsForDomain, TagsForDomainConfig

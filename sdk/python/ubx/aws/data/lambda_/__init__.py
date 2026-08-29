@@ -5,7 +5,5 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .account_settings import AccountSettings, AccountSettingsConfig
-from .function_event_invoke_config import FunctionEventInvokeConfig, FunctionEventInvokeConfigConfig
-from .function_event_invoke_configs import FunctionEventInvokeConfigs, FunctionEventInvokeConfigsConfig
 from .resource_policy import ResourcePolicy, ResourcePolicyConfig
 from .tags import Tags, TagsConfig

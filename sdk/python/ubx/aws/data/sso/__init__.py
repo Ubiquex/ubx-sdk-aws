@@ -24,7 +24,5 @@ from .permission_set_provisioning_status import PermissionSetProvisioningStatus,
 from .permission_sets import PermissionSets, PermissionSetsConfig
 from .permission_sets_provisioned_to_account import PermissionSetsProvisionedToAccount, PermissionSetsProvisionedToAccountConfig
 from .permissions_boundary_for_permission_set import PermissionsBoundaryForPermissionSet, PermissionsBoundaryForPermissionSetConfig
-from .region import Region, RegionConfig
-from .regions import Regions, RegionsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .trusted_token_issuers import TrustedTokenIssuers, TrustedTokenIssuersConfig

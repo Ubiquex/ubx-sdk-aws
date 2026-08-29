@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .entities import Entities, EntitiesConfig
-from .flow_execution_messages import FlowExecutionMessages, FlowExecutionMessagesConfig
 from .flow_template_revisions import FlowTemplateRevisions, FlowTemplateRevisionsConfig
 from .namespace import Namespace, NamespaceConfig
 from .namespace_deletion_status import NamespaceDeletionStatus, NamespaceDeletionStatusConfig

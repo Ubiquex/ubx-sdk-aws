@@ -5,6 +5,5 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .workspaces_instances_instance_types import WorkspacesInstancesInstanceTypes, WorkspacesInstancesInstanceTypesConfig
-from .workspaces_instances_regions import WorkspacesInstancesRegions, WorkspacesInstancesRegionsConfig
 from .workspaces_instances_tags_for_resource import WorkspacesInstancesTagsForResource, WorkspacesInstancesTagsForResourceConfig
 from .workspaces_instances_workspace_instances import WorkspacesInstancesWorkspaceInstances, WorkspacesInstancesWorkspaceInstancesConfig

@@ -29,4 +29,3 @@ from .member import Member, MemberConfig
 from .members import Members, MembersConfig
 from .organization_configuration import OrganizationConfiguration, OrganizationConfigurationConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
-from .usage_totals import UsageTotals, UsageTotalsConfig

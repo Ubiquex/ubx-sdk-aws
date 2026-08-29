@@ -4,8 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .kinesis_analytics_v2_application_operation import KinesisAnalyticsV2ApplicationOperation, KinesisAnalyticsV2ApplicationOperationConfig
-from .kinesis_analytics_v2_application_operations import KinesisAnalyticsV2ApplicationOperations, KinesisAnalyticsV2ApplicationOperationsConfig
 from .kinesis_analytics_v2_application_snapshots import KinesisAnalyticsV2ApplicationSnapshots, KinesisAnalyticsV2ApplicationSnapshotsConfig
 from .kinesis_analytics_v2_application_version import KinesisAnalyticsV2ApplicationVersion, KinesisAnalyticsV2ApplicationVersionConfig
 from .kinesis_analytics_v2_application_versions import KinesisAnalyticsV2ApplicationVersions, KinesisAnalyticsV2ApplicationVersionsConfig

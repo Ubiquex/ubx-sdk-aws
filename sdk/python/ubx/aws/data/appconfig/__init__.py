@@ -14,7 +14,6 @@ from .deployments import Deployments, DeploymentsConfig
 from .environments import Environments, EnvironmentsConfig
 from .experiment_definitions import ExperimentDefinitions, ExperimentDefinitionsConfig
 from .experiment_run import ExperimentRun, ExperimentRunConfig
-from .experiment_run_events import ExperimentRunEvents, ExperimentRunEventsConfig
 from .experiment_runs import ExperimentRuns, ExperimentRunsConfig
 from .extension_associations import ExtensionAssociations, ExtensionAssociationsConfig
 from .extensions import Extensions, ExtensionsConfig

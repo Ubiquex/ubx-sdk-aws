@@ -9,7 +9,6 @@ from .job_definitions import JobDefinitions, JobDefinitionsConfig
 from .job_queue_snapshot import JobQueueSnapshot, JobQueueSnapshotConfig
 from .jobs import Jobs, JobsConfig
 from .jobs_by_consumable_resource import JobsByConsumableResource, JobsByConsumableResourceConfig
-from .quota_shares import QuotaShares, QuotaSharesConfig
 from .scheduling_policies import SchedulingPolicies, SchedulingPoliciesConfig
 from .service_job import ServiceJob, ServiceJobConfig
 from .service_jobs import ServiceJobs, ServiceJobsConfig

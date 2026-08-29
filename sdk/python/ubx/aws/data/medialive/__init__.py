@@ -8,12 +8,8 @@ from .account_configuration import AccountConfiguration, AccountConfigurationCon
 from .alerts import Alerts, AlertsConfig
 from .channel_placement_groups import ChannelPlacementGroups, ChannelPlacementGroupsConfig
 from .channels import Channels, ChannelsConfig
-from .cloud_watch_alarm_template_groups import CloudWatchAlarmTemplateGroups, CloudWatchAlarmTemplateGroupsConfig
-from .cloud_watch_alarm_templates import CloudWatchAlarmTemplates, CloudWatchAlarmTemplatesConfig
 from .cluster_alerts import ClusterAlerts, ClusterAlertsConfig
 from .clusters import Clusters, ClustersConfig
-from .event_bridge_rule_template_groups import EventBridgeRuleTemplateGroups, EventBridgeRuleTemplateGroupsConfig
-from .event_bridge_rule_templates import EventBridgeRuleTemplates, EventBridgeRuleTemplatesConfig
 from .input_device import InputDevice, InputDeviceConfig
 from .input_device_thumbnail import InputDeviceThumbnail, InputDeviceThumbnailConfig
 from .input_device_transfers import InputDeviceTransfers, InputDeviceTransfersConfig

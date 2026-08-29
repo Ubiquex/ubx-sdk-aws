@@ -4,17 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .association_for_service_quota_template import AssociationForServiceQuotaTemplate, AssociationForServiceQuotaTemplateConfig
 from .auto_management_configuration import AutoManagementConfiguration, AutoManagementConfigurationConfig
-from .awsdefault_service_quota import AwsdefaultServiceQuota, AwsdefaultServiceQuotaConfig
-from .awsdefault_service_quotas import AwsdefaultServiceQuotas, AwsdefaultServiceQuotasConfig
-from .quota_utilization_report import QuotaUtilizationReport, QuotaUtilizationReportConfig
-from .requested_service_quota_change import RequestedServiceQuotaChange, RequestedServiceQuotaChangeConfig
-from .requested_service_quota_change_history import RequestedServiceQuotaChangeHistory, RequestedServiceQuotaChangeHistoryConfig
-from .requested_service_quota_change_history_by_quota import RequestedServiceQuotaChangeHistoryByQuota, RequestedServiceQuotaChangeHistoryByQuotaConfig
-from .service_quota import ServiceQuota, ServiceQuotaConfig
-from .service_quota_increase_request_from_template import ServiceQuotaIncreaseRequestFromTemplate, ServiceQuotaIncreaseRequestFromTemplateConfig
-from .service_quota_increase_requests_in_template import ServiceQuotaIncreaseRequestsInTemplate, ServiceQuotaIncreaseRequestsInTemplateConfig
-from .service_quotas import ServiceQuotas, ServiceQuotasConfig
 from .services import Services, ServicesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

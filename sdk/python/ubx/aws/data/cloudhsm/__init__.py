@@ -4,7 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .available_zones import AvailableZones, AvailableZonesConfig
 from .config import Config, ConfigConfig
 from .hapgs import Hapgs, HapgsConfig
 from .hsms import Hsms, HsmsConfig

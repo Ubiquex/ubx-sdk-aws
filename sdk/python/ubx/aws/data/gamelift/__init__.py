@@ -17,9 +17,6 @@ from .ec2_instance_limits import Ec2InstanceLimits, Ec2InstanceLimitsConfig
 from .fleet_capacity import FleetCapacity, FleetCapacityConfig
 from .fleet_deployment import FleetDeployment, FleetDeploymentConfig
 from .fleet_deployments import FleetDeployments, FleetDeploymentsConfig
-from .fleet_events import FleetEvents, FleetEventsConfig
-from .fleet_location_capacity import FleetLocationCapacity, FleetLocationCapacityConfig
-from .fleet_location_utilization import FleetLocationUtilization, FleetLocationUtilizationConfig
 from .fleet_port_settings import FleetPortSettings, FleetPortSettingsConfig
 from .fleet_utilization import FleetUtilization, FleetUtilizationConfig
 from .fleets import Fleets, FleetsConfig

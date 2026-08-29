@@ -36,7 +36,6 @@ from .recovery_point_restore_metadata import RecoveryPointRestoreMetadata, Recov
 from .recovery_points_by_backup_vault import RecoveryPointsByBackupVault, RecoveryPointsByBackupVaultConfig
 from .recovery_points_by_legal_hold import RecoveryPointsByLegalHold, RecoveryPointsByLegalHoldConfig
 from .recovery_points_by_resource import RecoveryPointsByResource, RecoveryPointsByResourceConfig
-from .region_settings import RegionSettings, RegionSettingsConfig
 from .report_job import ReportJob, ReportJobConfig
 from .report_jobs import ReportJobs, ReportJobsConfig
 from .report_plans import ReportPlans, ReportPlansConfig

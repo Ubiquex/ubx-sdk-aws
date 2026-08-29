@@ -5,13 +5,8 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .access_token import AccessToken, AccessTokenConfig
-from .association_execution_targets import AssociationExecutionTargets, AssociationExecutionTargetsConfig
-from .association_executions import AssociationExecutions, AssociationExecutionsConfig
 from .association_versions import AssociationVersions, AssociationVersionsConfig
 from .associations import Associations, AssociationsConfig
-from .automation_execution import AutomationExecution, AutomationExecutionConfig
-from .automation_executions import AutomationExecutions, AutomationExecutionsConfig
-from .automation_step_executions import AutomationStepExecutions, AutomationStepExecutionsConfig
 from .available_patches import AvailablePatches, AvailablePatchesConfig
 from .calendar_state import CalendarState, CalendarStateConfig
 from .cloud_connectors import CloudConnectors, CloudConnectorsConfig
@@ -24,13 +19,11 @@ from .connection_status import ConnectionStatus, ConnectionStatusConfig
 from .default_patch_baseline import DefaultPatchBaseline, DefaultPatchBaselineConfig
 from .deployable_patch_snapshot_for_instance import DeployablePatchSnapshotForInstance, DeployablePatchSnapshotForInstanceConfig
 from .document import Document, DocumentConfig
-from .document_metadata_history import DocumentMetadataHistory, DocumentMetadataHistoryConfig
 from .document_permission import DocumentPermission, DocumentPermissionConfig
 from .document_versions import DocumentVersions, DocumentVersionsConfig
 from .documents import Documents, DocumentsConfig
 from .effective_instance_associations import EffectiveInstanceAssociations, EffectiveInstanceAssociationsConfig
 from .effective_patches_for_patch_baseline import EffectivePatchesForPatchBaseline, EffectivePatchesForPatchBaselineConfig
-from .execution_preview import ExecutionPreview, ExecutionPreviewConfig
 from .instance_associations_status import InstanceAssociationsStatus, InstanceAssociationsStatusConfig
 from .instance_information import InstanceInformation, InstanceInformationConfig
 from .instance_patch_states import InstancePatchStates, InstancePatchStatesConfig
@@ -41,12 +34,6 @@ from .inventory import Inventory, InventoryConfig
 from .inventory_deletions import InventoryDeletions, InventoryDeletionsConfig
 from .inventory_entries import InventoryEntries, InventoryEntriesConfig
 from .inventory_schema import InventorySchema, InventorySchemaConfig
-from .maintenance_window_execution import MaintenanceWindowExecution, MaintenanceWindowExecutionConfig
-from .maintenance_window_execution_task import MaintenanceWindowExecutionTask, MaintenanceWindowExecutionTaskConfig
-from .maintenance_window_execution_task_invocation import MaintenanceWindowExecutionTaskInvocation, MaintenanceWindowExecutionTaskInvocationConfig
-from .maintenance_window_execution_task_invocations import MaintenanceWindowExecutionTaskInvocations, MaintenanceWindowExecutionTaskInvocationsConfig
-from .maintenance_window_execution_tasks import MaintenanceWindowExecutionTasks, MaintenanceWindowExecutionTasksConfig
-from .maintenance_window_executions import MaintenanceWindowExecutions, MaintenanceWindowExecutionsConfig
 from .maintenance_window_schedule import MaintenanceWindowSchedule, MaintenanceWindowScheduleConfig
 from .maintenance_window_targets import MaintenanceWindowTargets, MaintenanceWindowTargetsConfig
 from .maintenance_window_task import MaintenanceWindowTask, MaintenanceWindowTaskConfig
@@ -55,13 +42,11 @@ from .maintenance_windows import MaintenanceWindows, MaintenanceWindowsConfig
 from .maintenance_windows_for_target import MaintenanceWindowsForTarget, MaintenanceWindowsForTargetConfig
 from .nodes import Nodes, NodesConfig
 from .nodes_summary import NodesSummary, NodesSummaryConfig
-from .ops_item_events import OpsItemEvents, OpsItemEventsConfig
 from .ops_item_related_items import OpsItemRelatedItems, OpsItemRelatedItemsConfig
 from .ops_items import OpsItems, OpsItemsConfig
 from .ops_metadata import OpsMetadata, OpsMetadataConfig
 from .ops_summary import OpsSummary, OpsSummaryConfig
 from .parameter import Parameter, ParameterConfig
-from .parameter_history import ParameterHistory, ParameterHistoryConfig
 from .parameters import Parameters, ParametersConfig
 from .parameters_by_path import ParametersByPath, ParametersByPathConfig
 from .patch_baseline_for_patch_group import PatchBaselineForPatchGroup, PatchBaselineForPatchGroupConfig

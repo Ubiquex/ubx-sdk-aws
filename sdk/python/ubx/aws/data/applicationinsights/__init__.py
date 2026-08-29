@@ -8,7 +8,6 @@ from .applications import Applications, ApplicationsConfig
 from .component_configuration import ComponentConfiguration, ComponentConfigurationConfig
 from .component_configuration_recommendation import ComponentConfigurationRecommendation, ComponentConfigurationRecommendationConfig
 from .components import Components, ComponentsConfig
-from .configuration_history import ConfigurationHistory, ConfigurationHistoryConfig
 from .log_pattern_sets import LogPatternSets, LogPatternSetsConfig
 from .log_patterns import LogPatterns, LogPatternsConfig
 from .observation import Observation, ObservationConfig

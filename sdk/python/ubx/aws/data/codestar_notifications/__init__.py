@@ -4,7 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .codestar_notifications_event_types import CodestarNotificationsEventTypes, CodestarNotificationsEventTypesConfig
 from .codestar_notifications_notification_rules import CodestarNotificationsNotificationRules, CodestarNotificationsNotificationRulesConfig
 from .codestar_notifications_tags_for_resource import CodestarNotificationsTagsForResource, CodestarNotificationsTagsForResourceConfig
 from .codestar_notifications_targets import CodestarNotificationsTargets, CodestarNotificationsTargetsConfig

@@ -5,6 +5,4 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .account_activities import AccountActivities, AccountActivitiesConfig
-from .account_activity import AccountActivity, AccountActivityConfig
 from .account_plan_state import AccountPlanState, AccountPlanStateConfig
-from .free_tier_usage import FreeTierUsage, FreeTierUsageConfig

@@ -11,14 +11,11 @@ from .failure_mode_findings import FailureModeFindings, FailureModeFindingsConfi
 from .policies import Policies, PoliciesConfig
 from .resolved_test_run_target_resources import ResolvedTestRunTargetResources, ResolvedTestRunTargetResourcesConfig
 from .resources import Resources, ResourcesConfig
-from .service_events import ServiceEvents, ServiceEventsConfig
 from .service_topology_edges import ServiceTopologyEdges, ServiceTopologyEdgesConfig
 from .services import Services, ServicesConfig
-from .system_events import SystemEvents, SystemEventsConfig
 from .systems import Systems, SystemsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .test_run import TestRun, TestRunConfig
-from .test_run_events import TestRunEvents, TestRunEventsConfig
 from .test_run_sources import TestRunSources, TestRunSourcesConfig
 from .test_runs import TestRuns, TestRunsConfig
 from .test_sources import TestSources, TestSourcesConfig

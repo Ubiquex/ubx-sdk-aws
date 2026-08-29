@@ -9,8 +9,6 @@ from .instances import Instances, InstancesConfig
 from .instances_health_status import InstancesHealthStatus, InstancesHealthStatusConfig
 from .namespace import Namespace, NamespaceConfig
 from .namespaces import Namespaces, NamespacesConfig
-from .operation import Operation, OperationConfig
-from .operations import Operations, OperationsConfig
 from .service_attributes import ServiceAttributes, ServiceAttributesConfig
 from .services import Services, ServicesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

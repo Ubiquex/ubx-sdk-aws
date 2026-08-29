@@ -9,10 +9,5 @@ from .affected_entities import AffectedEntities, AffectedEntitiesConfig
 from .affected_entities_for_organization import AffectedEntitiesForOrganization, AffectedEntitiesForOrganizationConfig
 from .entity_aggregates import EntityAggregates, EntityAggregatesConfig
 from .entity_aggregates_for_organization import EntityAggregatesForOrganization, EntityAggregatesForOrganizationConfig
-from .event_aggregates import EventAggregates, EventAggregatesConfig
-from .event_details import EventDetails, EventDetailsConfig
-from .event_details_for_organization import EventDetailsForOrganization, EventDetailsForOrganizationConfig
-from .event_types import EventTypes, EventTypesConfig
-from .events import Events, EventsConfig
 from .events_for_organization import EventsForOrganization, EventsForOrganizationConfig
 from .health_service_status_for_organization import HealthServiceStatusForOrganization, HealthServiceStatusForOrganizationConfig

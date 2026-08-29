@@ -4,7 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .key_last_usage import KeyLastUsage, KeyLastUsageConfig
 from .key_policies import KeyPolicies, KeyPoliciesConfig
 from .key_policy import KeyPolicy, KeyPolicyConfig
 from .key_rotation_status import KeyRotationStatus, KeyRotationStatusConfig

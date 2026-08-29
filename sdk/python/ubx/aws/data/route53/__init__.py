@@ -8,17 +8,11 @@ from .account_limit import AccountLimit, AccountLimitConfig
 from .change import Change, ChangeConfig
 from .checker_ip_ranges import CheckerIpRanges, CheckerIpRangesConfig
 from .cidr_blocks import CidrBlocks, CidrBlocksConfig
-from .cidr_locations import CidrLocations, CidrLocationsConfig
 from .dnssec import Dnssec, DnssecConfig
-from .geo_location import GeoLocation, GeoLocationConfig
-from .geo_locations import GeoLocations, GeoLocationsConfig
 from .health_check_count import HealthCheckCount, HealthCheckCountConfig
 from .health_check_last_failure_reason import HealthCheckLastFailureReason, HealthCheckLastFailureReasonConfig
 from .health_check_status import HealthCheckStatus, HealthCheckStatusConfig
 from .health_checks import HealthChecks, HealthChecksConfig
-from .hosted_zone_count import HostedZoneCount, HostedZoneCountConfig
-from .hosted_zone_limit import HostedZoneLimit, HostedZoneLimitConfig
-from .hosted_zones import HostedZones, HostedZonesConfig
 from .hosted_zones_by_name import HostedZonesByName, HostedZonesByNameConfig
 from .hosted_zones_by_vpc import HostedZonesByVpc, HostedZonesByVpcConfig
 from .query_logging_configs import QueryLoggingConfigs, QueryLoggingConfigsConfig
@@ -30,5 +24,4 @@ from .tags_for_resources import TagsForResources, TagsForResourcesConfig
 from .traffic_policies import TrafficPolicies, TrafficPoliciesConfig
 from .traffic_policy_instance_count import TrafficPolicyInstanceCount, TrafficPolicyInstanceCountConfig
 from .traffic_policy_instances import TrafficPolicyInstances, TrafficPolicyInstancesConfig
-from .traffic_policy_instances_by_hosted_zone import TrafficPolicyInstancesByHostedZone, TrafficPolicyInstancesByHostedZoneConfig
 from .traffic_policy_instances_by_policy import TrafficPolicyInstancesByPolicy, TrafficPolicyInstancesByPolicyConfig

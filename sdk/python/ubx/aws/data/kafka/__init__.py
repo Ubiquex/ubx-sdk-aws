@@ -7,10 +7,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .bootstrap_brokers import BootstrapBrokers, BootstrapBrokersConfig
 from .channels import Channels, ChannelsConfig
 from .client_vpc_connections import ClientVpcConnections, ClientVpcConnectionsConfig
-from .cluster_operation import ClusterOperation, ClusterOperationConfig
-from .cluster_operation_v2 import ClusterOperationV2, ClusterOperationV2Config
-from .cluster_operations import ClusterOperations, ClusterOperationsConfig
-from .cluster_operations_v2 import ClusterOperationsV2, ClusterOperationsV2Config
 from .cluster_policy import ClusterPolicy, ClusterPolicyConfig
 from .clusters import Clusters, ClustersConfig
 from .clusters_v2 import ClustersV2, ClustersV2Config

@@ -8,6 +8,5 @@ from .budget_action_histories import BudgetActionHistories, BudgetActionHistorie
 from .budget_actions_for_account import BudgetActionsForAccount, BudgetActionsForAccountConfig
 from .budget_actions_for_budget import BudgetActionsForBudget, BudgetActionsForBudgetConfig
 from .budget_notifications_for_account import BudgetNotificationsForAccount, BudgetNotificationsForAccountConfig
-from .budget_performance_history import BudgetPerformanceHistory, BudgetPerformanceHistoryConfig
 from .budgets import Budgets, BudgetsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

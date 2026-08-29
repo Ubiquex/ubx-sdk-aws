@@ -16,12 +16,10 @@ from .application_status import ApplicationStatus, ApplicationStatusConfig
 from .application_status_check_associations import ApplicationStatusCheckAssociations, ApplicationStatusCheckAssociationsConfig
 from .associated_enclave_certificate_iam_roles import AssociatedEnclaveCertificateIamRoles, AssociatedEnclaveCertificateIamRolesConfig
 from .associated_ipv6_pool_cidrs import AssociatedIpv6PoolCidrs, AssociatedIpv6PoolCidrsConfig
-from .availability_zones import AvailabilityZones, AvailabilityZonesConfig
 from .aws_network_performance_data import AwsNetworkPerformanceData, AwsNetworkPerformanceDataConfig
 from .aws_network_performance_metric_subscriptions import AwsNetworkPerformanceMetricSubscriptions, AwsNetworkPerformanceMetricSubscriptionsConfig
 from .bundle_tasks import BundleTasks, BundleTasksConfig
 from .byoip_cidrs import ByoipCidrs, ByoipCidrsConfig
-from .capacity_block_extension_history import CapacityBlockExtensionHistory, CapacityBlockExtensionHistoryConfig
 from .capacity_block_extension_offerings import CapacityBlockExtensionOfferings, CapacityBlockExtensionOfferingsConfig
 from .capacity_block_offerings import CapacityBlockOfferings, CapacityBlockOfferingsConfig
 from .capacity_block_status import CapacityBlockStatus, CapacityBlockStatusConfig
@@ -52,7 +50,6 @@ from .export_image_tasks import ExportImageTasks, ExportImageTasksConfig
 from .export_tasks import ExportTasks, ExportTasksConfig
 from .fast_launch_images import FastLaunchImages, FastLaunchImagesConfig
 from .fast_snapshot_restores import FastSnapshotRestores, FastSnapshotRestoresConfig
-from .fleet_history import FleetHistory, FleetHistoryConfig
 from .fleet_instances import FleetInstances, FleetInstancesConfig
 from .flow_logs_integration_template import FlowLogsIntegrationTemplate, FlowLogsIntegrationTemplateConfig
 from .fpga_image_attribute import FpgaImageAttribute, FpgaImageAttributeConfig
@@ -68,16 +65,13 @@ from .image_ancestry import ImageAncestry, ImageAncestryConfig
 from .image_attribute import ImageAttribute, ImageAttributeConfig
 from .image_block_public_access_state import ImageBlockPublicAccessState, ImageBlockPublicAccessStateConfig
 from .image_references import ImageReferences, ImageReferencesConfig
-from .image_usage_report_entries import ImageUsageReportEntries, ImageUsageReportEntriesConfig
 from .images_in_recycle_bin import ImagesInRecycleBin, ImagesInRecycleBinConfig
 from .import_image_tasks import ImportImageTasks, ImportImageTasksConfig
 from .import_snapshot_tasks import ImportSnapshotTasks, ImportSnapshotTasksConfig
 from .instance_attribute import InstanceAttribute, InstanceAttributeConfig
 from .instance_credit_specifications import InstanceCreditSpecifications, InstanceCreditSpecificationsConfig
-from .instance_event_notification_attributes import InstanceEventNotificationAttributes, InstanceEventNotificationAttributesConfig
 from .instance_image_metadata import InstanceImageMetadata, InstanceImageMetadataConfig
 from .instance_metadata_defaults import InstanceMetadataDefaults, InstanceMetadataDefaultsConfig
-from .instance_sql_ha_history_states import InstanceSqlHaHistoryStates, InstanceSqlHaHistoryStatesConfig
 from .instance_sql_ha_states import InstanceSqlHaStates, InstanceSqlHaStatesConfig
 from .instance_status import InstanceStatus, InstanceStatusConfig
 from .instance_topology import InstanceTopology, InstanceTopologyConfig
@@ -86,7 +80,6 @@ from .instance_type_offerings import InstanceTypeOfferings, InstanceTypeOffering
 from .instance_types import InstanceTypes, InstanceTypesConfig
 from .instance_types_from_instance_requirements import InstanceTypesFromInstanceRequirements, InstanceTypesFromInstanceRequirementsConfig
 from .instance_uefi_data import InstanceUefiData, InstanceUefiDataConfig
-from .ipam_address_history import IpamAddressHistory, IpamAddressHistoryConfig
 from .ipam_byoasn import IpamByoasn, IpamByoasnConfig
 from .ipam_discovered_accounts import IpamDiscoveredAccounts, IpamDiscoveredAccountsConfig
 from .ipam_discovered_public_addresses import IpamDiscoveredPublicAddresses, IpamDiscoveredPublicAddressesConfig
@@ -125,7 +118,6 @@ from .outpost_lags import OutpostLags, OutpostLagsConfig
 from .password_data import PasswordData, PasswordDataConfig
 from .prefix_lists import PrefixLists, PrefixListsConfig
 from .principal_id_format import PrincipalIdFormat, PrincipalIdFormatConfig
-from .regions import Regions, RegionsConfig
 from .reserved_instances import ReservedInstances, ReservedInstancesConfig
 from .reserved_instances_exchange_quote import ReservedInstancesExchangeQuote, ReservedInstancesExchangeQuoteConfig
 from .reserved_instances_modifications import ReservedInstancesModifications, ReservedInstancesModificationsConfig
@@ -146,11 +138,9 @@ from .snapshot_block_public_access_state import SnapshotBlockPublicAccessState, 
 from .snapshot_tier_status import SnapshotTierStatus, SnapshotTierStatusConfig
 from .snapshots_in_recycle_bin import SnapshotsInRecycleBin, SnapshotsInRecycleBinConfig
 from .spot_fleet_instances import SpotFleetInstances, SpotFleetInstancesConfig
-from .spot_fleet_request_history import SpotFleetRequestHistory, SpotFleetRequestHistoryConfig
 from .spot_fleet_requests import SpotFleetRequests, SpotFleetRequestsConfig
 from .spot_instance_requests import SpotInstanceRequests, SpotInstanceRequestsConfig
 from .spot_placement_scores import SpotPlacementScores, SpotPlacementScoresConfig
-from .spot_price_history import SpotPriceHistory, SpotPriceHistoryConfig
 from .stale_security_groups import StaleSecurityGroups, StaleSecurityGroupsConfig
 from .transit_gateway_attachment_propagations import TransitGatewayAttachmentPropagations, TransitGatewayAttachmentPropagationsConfig
 from .transit_gateway_attachments import TransitGatewayAttachments, TransitGatewayAttachmentsConfig

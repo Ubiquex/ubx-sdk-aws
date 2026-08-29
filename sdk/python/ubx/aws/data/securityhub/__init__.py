@@ -16,7 +16,6 @@ from .connectors_v2 import ConnectorsV2, ConnectorsV2Config
 from .enabled_products_for_import import EnabledProductsForImport, EnabledProductsForImportConfig
 from .enabled_standards import EnabledStandards, EnabledStandardsConfig
 from .finding_aggregators import FindingAggregators, FindingAggregatorsConfig
-from .finding_history import FindingHistory, FindingHistoryConfig
 from .finding_statistics_v2 import FindingStatisticsV2, FindingStatisticsV2Config
 from .findings import Findings, FindingsConfig
 from .findings_trends_v2 import FindingsTrendsV2, FindingsTrendsV2Config

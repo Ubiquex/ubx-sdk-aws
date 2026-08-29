@@ -22,7 +22,6 @@ from .index_policies import IndexPolicies, IndexPoliciesConfig
 from .integration import Integration, IntegrationConfig
 from .integrations import Integrations, IntegrationsConfig
 from .log_anomaly_detectors import LogAnomalyDetectors, LogAnomalyDetectorsConfig
-from .log_events import LogEvents, LogEventsConfig
 from .log_fields import LogFields, LogFieldsConfig
 from .log_group_fields import LogGroupFields, LogGroupFieldsConfig
 from .log_groups import LogGroups, LogGroupsConfig
@@ -36,7 +35,6 @@ from .query_definitions import QueryDefinitions, QueryDefinitionsConfig
 from .query_results import QueryResults, QueryResultsConfig
 from .resource_policies import ResourcePolicies, ResourcePoliciesConfig
 from .scheduled_queries import ScheduledQueries, ScheduledQueriesConfig
-from .scheduled_query_history import ScheduledQueryHistory, ScheduledQueryHistoryConfig
 from .sources_for_s3_table_integration import SourcesForS3TableIntegration, SourcesForS3TableIntegrationConfig
 from .storage_tier_policy import StorageTierPolicy, StorageTierPolicyConfig
 from .subscription_filters import SubscriptionFilters, SubscriptionFiltersConfig

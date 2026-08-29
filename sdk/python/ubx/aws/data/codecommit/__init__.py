@@ -15,13 +15,11 @@ from .comments_for_compared_commit import CommentsForComparedCommit, CommentsFor
 from .comments_for_pull_request import CommentsForPullRequest, CommentsForPullRequestConfig
 from .differences import Differences, DifferencesConfig
 from .file import File, FileConfig
-from .file_commit_history import FileCommitHistory, FileCommitHistoryConfig
 from .folder import Folder, FolderConfig
 from .merge_commit import MergeCommit, MergeCommitConfig
 from .merge_conflicts import MergeConflicts, MergeConflictsConfig
 from .merge_options import MergeOptions, MergeOptionsConfig
 from .pull_request_approval_states import PullRequestApprovalStates, PullRequestApprovalStatesConfig
-from .pull_request_events import PullRequestEvents, PullRequestEventsConfig
 from .pull_request_override_state import PullRequestOverrideState, PullRequestOverrideStateConfig
 from .pull_requests import PullRequests, PullRequestsConfig
 from .repositories import Repositories, RepositoriesConfig

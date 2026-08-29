@@ -18,7 +18,6 @@ from .resource_lftags import ResourceLftags, ResourceLftagsConfig
 from .resources import Resources, ResourcesConfig
 from .table_objects import TableObjects, TableObjectsConfig
 from .table_storage_optimizers import TableStorageOptimizers, TableStorageOptimizersConfig
-from .temporary_data_location_credentials import TemporaryDataLocationCredentials, TemporaryDataLocationCredentialsConfig
 from .temporary_glue_partition_credentials import TemporaryGluePartitionCredentials, TemporaryGluePartitionCredentialsConfig
 from .temporary_glue_table_credentials import TemporaryGlueTableCredentials, TemporaryGlueTableCredentialsConfig
 from .transaction import Transaction, TransactionConfig

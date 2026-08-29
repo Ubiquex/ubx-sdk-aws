@@ -8,41 +8,29 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointConfig_AsyncInferenceConfig_ClientConfig:
-    # The maximum number of concurrent requests sent by the SageMaker client to the model container. If no value is provided, SageMaker will choose an optimal value for you.
     max_concurrent_invocations_per_instance: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_AsyncInferenceConfig_OutputConfig_NotificationConfig:
-    # Amazon SNS topic to post a notification to when an inference fails. If no topic is provided, no notification is sent on failure.
     error_topic: Any = None
-    # The Amazon SNS topics where you want the inference response to be included.
     include_inference_response_in: Any = None
-    # Amazon SNS topic to post a notification to when an inference completes successfully. If no topic is provided, no notification is sent on success.
     success_topic: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_AsyncInferenceConfig_OutputConfig:
-    # The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.
     kms_key_id: Any = None
-    # Specifies the configuration for notifications of inference results for asynchronous inference.
     notification_config: Any = None
-    # The Amazon S3 location to upload failure inference responses to.
     s3_failure_path: Any = None
-    # The Amazon S3 location to upload inference responses to.
     s3_output_path: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_AsyncInferenceConfig:
-    # Configures the behavior of the client used by SageMaker to interact with the model container during asynchronous inference.
     client_config: Any = None
-    # Specifies the configuration for asynchronous inference invocation outputs.
     output_config: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_DataCaptureConfig_CaptureContentTypeHeader:
-    # A list of the CSV content types of the data that the endpoint captures. For the endpoint to capture the data, you must also specify the content type when you invoke the endpoint.
     csv_content_types: Any = None
-    # A list of the JSON content types of the data that the endpoint captures. For the endpoint to capture the data, you must also specify the content type when you invoke the endpoint.
     json_content_types: Any = None
 
 @dataclasses.dataclass
@@ -52,94 +40,60 @@ class EndpointConfig_DataCaptureConfig_CaptureOptions:
 
 @dataclasses.dataclass
 class EndpointConfig_DataCaptureConfig:
-    # Specifies the JSON and CSV content types of the data that the endpoint captures.
     capture_content_type_header: Any = None
-    # Specifies whether the endpoint captures input data to your model, output data from your model, or both.
     capture_options: Any = None
-    # The S3 bucket where model monitor stores captured data.
     destination_s3_uri: Any = None
-    # Set to True to enable data capture.
     enable_capture: Any = None
-    # The percentage of data to capture.
     initial_sampling_percentage: Any = None
-    # The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the captured data at rest using Amazon S3 server-side encryption.
     kms_key_id: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_InferenceConfig:
-    # A template string used to format a JSON record into an acceptable model container input.
     content_template: Any = None
-    # The names of the features. If provided, these are included in the endpoint response payload to help readability of the InvokeEndpoint output.
     feature_headers: Any = None
-    # A list of data types of the features (optional). Applicable only to NLP explainability. If provided, FeatureTypes must have at least one 'text' string (for example, ['text']). If FeatureTypes is not provided, the explainer infers the feature types based on the baseline data.
     feature_types: Any = None
-    # Provides the JMESPath expression to extract the features from a model container input in JSON Lines format.
     features_attribute: Any = None
-    # A JMESPath expression used to locate the list of label headers in the model container output.
     label_attribute: Any = None
-    # For multiclass classification problems, the label headers are the names of the classes. Otherwise, the label header is the name of the predicted label.
     label_headers: Any = None
-    # A zero-based index used to extract a label header or list of label headers from model container output in CSV format.
     label_index: Any = None
-    # The maximum payload size (MB) allowed of a request from the explainer to the model container. Defaults to 6 MB.
     max_payload_in_mb: Any = None
-    # The maximum number of records in a request that the model container can process when querying the model container for the predictions of a synthetic dataset. A record is a unit of input data that inference can be made on, for example, a single line in CSV data.
     max_record_count: Any = None
-    # A JMESPath expression used to extract the probability (or score) from the model container output if the model container is in JSON Lines format.
     probability_attribute: Any = None
-    # A zero-based index used to extract a probability value (score) or list from model container output in CSV format. If this value is not provided, the entire model container output will be treated as a probability value (score) or list.
     probability_index: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_ShapBaselineConfig:
-    # The MIME type of the baseline data. Choose from 'text/csv' or 'application/jsonlines'. Defaults to 'text/csv'.
     mime_type: Any = None
-    # The inline SHAP baseline data in string format. ShapBaseline can have one or multiple records to be used as the baseline dataset. The format of the SHAP baseline file should be the same format as the training dataset.
     shap_baseline: Any = None
-    # The uniform resource identifier (URI) of the S3 bucket where the SHAP baseline file is stored. The format of the SHAP baseline file should be the same format as the format of the training dataset.
     shap_baseline_uri: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig_TextConfig:
-    # The unit of granularity for the analysis of text features. For example, if the unit is 'token', then each token (like a word in English) of the text is treated as a feature. SHAP values are computed for each unit/feature.
     granularity: Any = None
-    # Specifies the language of the text features in ISO 639-1 or ISO 639-3 code of a supported language.
     language: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig_ClarifyExplainerConfig_ShapConfig:
-    # The number of samples to be used for analysis by the Kernal SHAP algorithm.
     number_of_samples: Any = None
-    # The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.
     seed: Any = None
-    # The configuration for the SHAP baseline (also called the background or reference dataset) of the Kernal SHAP algorithm.
     shap_baseline_config: Any = None
-    # A parameter used to configure the SageMaker Clarify explainer to treat text features as text so that explanations are provided for individual units of text. Required only for natural language processing (NLP) explainability.
     text_config: Any = None
-    # A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.
     use_logit: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig_ClarifyExplainerConfig:
-    # A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default.
     enable_explanations: Any = None
-    # The inference configuration parameter for the model container.
     inference_config: Any = None
-    # The configuration for SHAP analysis using SageMaker Clarify Explainer.
     shap_config: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_ExplainerConfig:
-    # The configuration parameters for the SageMaker Clarify explainer.
     clarify_explainer_config: Any = None
 
 @dataclasses.dataclass
 class EndpointConfig_MetricsConfig:
-    # Specifies whether to enable detailed observability for the endpoint. When set to true, the endpoint publishes container-level inference metrics, per-GPU metrics, per-instance host metrics, and inference component placement metrics.
     enable_detailed_observability: Any = None
-    # Specifies whether to enable enhanced metrics for the endpoint. Enhanced metrics provide utilization and invocation data at instance and container granularity.
     enable_enhanced_metrics: Any = None
-    # The interval, in seconds, at which the endpoint publishes metrics to Amazon CloudWatch. Valid values are 10, 30, 60, 120, 180, 240, and 300. The default is 60.
     metric_publish_frequency_in_seconds: Any = None
 
 @dataclasses.dataclass
@@ -243,9 +197,7 @@ class EndpointConfig_Tags:
 
 @dataclasses.dataclass
 class EndpointConfig_VpcConfig:
-    # The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the Subnets field.
     security_group_ids: Any = None
-    # The ID of the subnets in the VPC to which you want to connect your training job or model.
     subnets: Any = None
 
 _EndpointConfig_AsyncInferenceConfig_ClientConfigFields = {
@@ -486,58 +438,34 @@ _EndpointConfig_VpcConfigFields = {
 
 @dataclasses.dataclass
 class EndpointConfigConfig:
-    # Specifies configuration for how an endpoint performs asynchronous inference.
     async_inference_config: Any = None
-    # Specifies how to capture endpoint data for model monitor. The data capture configuration applies to all production variants hosted at the endpoint.
     data_capture_config: Any = None
-    # Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.
     enable_network_isolation: Any = None
-    # The name of the endpoint configuration.
     endpoint_config_name: Any = None
-    # The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf.
     execution_role_arn: Any = None
-    # A parameter to activate explainers.
     explainer_config: Any = None
-    # The Amazon Resource Name (ARN) of an AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
     kms_key_id: Any = None
-    # Specifies the metrics that the endpoint publishes to Amazon CloudWatch, the frequency of publication, and whether to enable enhanced or detailed observability metrics.
     metrics_config: Any = None
-    # A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
     production_variants: Any = None
-    # Array of ProductionVariant objects. There is one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on ProductionVariants. If you use this field, you can only specify one variant for ProductionVariants and one variant for ShadowProductionVariants.
     shadow_production_variants: Any = None
-    # A list of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.
     vpc_config: Any = None
 
 @dataclasses.dataclass
 class EndpointConfigAttrs:
-    # Specifies configuration for how an endpoint performs asynchronous inference.
     async_inference_config: Any = None
-    # Specifies how to capture endpoint data for model monitor. The data capture configuration applies to all production variants hosted at the endpoint.
     data_capture_config: Any = None
-    # Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.
     enable_network_isolation: Any = None
-    # The Amazon Resource Name (ARN) of the endpoint configuration.
-    endpoint_config_arn: Any = None
-    # The name of the endpoint configuration.
     endpoint_config_name: Any = None
-    # The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf.
     execution_role_arn: Any = None
-    # A parameter to activate explainers.
     explainer_config: Any = None
-    # The Amazon Resource Name (ARN) of an AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+    # The unique name of the SageMaker endpoint configuration, which serves as its primary identifier and is assigned by AWS. (AI-inferred)
+    id: Any = None
     kms_key_id: Any = None
-    # Specifies the metrics that the endpoint publishes to Amazon CloudWatch, the frequency of publication, and whether to enable enhanced or detailed observability metrics.
     metrics_config: Any = None
-    # A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
     production_variants: Any = None
-    # Array of ProductionVariant objects. There is one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on ProductionVariants. If you use this field, you can only specify one variant for ProductionVariants and one variant for ShadowProductionVariants.
     shadow_production_variants: Any = None
-    # A list of key-value pairs to apply to this resource.
     tags: Any = None
-    # Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC.
     vpc_config: Any = None
 
 EndpointConfig = ubx.ResourceBinding(

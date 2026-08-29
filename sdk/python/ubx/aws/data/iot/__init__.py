@@ -9,7 +9,6 @@ from .active_violations import ActiveViolations, ActiveViolationsConfig
 from .attached_policies import AttachedPolicies, AttachedPoliciesConfig
 from .audit_finding import AuditFinding, AuditFindingConfig
 from .audit_findings import AuditFindings, AuditFindingsConfig
-from .audit_mitigation_actions_executions import AuditMitigationActionsExecutions, AuditMitigationActionsExecutionsConfig
 from .audit_mitigation_actions_task import AuditMitigationActionsTask, AuditMitigationActionsTaskConfig
 from .audit_mitigation_actions_tasks import AuditMitigationActionsTasks, AuditMitigationActionsTasksConfig
 from .audit_suppressions import AuditSuppressions, AuditSuppressionsConfig
@@ -26,12 +25,9 @@ from .certificate import Certificate, CertificateConfig
 from .certificate_providers import CertificateProviders, CertificateProvidersConfig
 from .certificates import Certificates, CertificatesConfig
 from .certificates_by_ca import CertificatesByCa, CertificatesByCaConfig
-from .command_execution import CommandExecution, CommandExecutionConfig
-from .command_executions import CommandExecutions, CommandExecutionsConfig
 from .commands import Commands, CommandsConfig
 from .custom_metrics import CustomMetrics, CustomMetricsConfig
 from .default_authorizer import DefaultAuthorizer, DefaultAuthorizerConfig
-from .detect_mitigation_actions_executions import DetectMitigationActionsExecutions, DetectMitigationActionsExecutionsConfig
 from .detect_mitigation_actions_task import DetectMitigationActionsTask, DetectMitigationActionsTaskConfig
 from .detect_mitigation_actions_tasks import DetectMitigationActionsTasks, DetectMitigationActionsTasksConfig
 from .dimensions import Dimensions, DimensionsConfig
@@ -39,13 +35,11 @@ from .domain_configurations import DomainConfigurations, DomainConfigurationsCon
 from .effective_policies import EffectivePolicies, EffectivePoliciesConfig
 from .encryption_configuration import EncryptionConfiguration, EncryptionConfigurationConfig
 from .endpoint import Endpoint, EndpointConfig
-from .event_configurations import EventConfigurations, EventConfigurationsConfig
 from .fleet_metrics import FleetMetrics, FleetMetricsConfig
 from .index import Index, IndexConfig
 from .indexing_configuration import IndexingConfiguration, IndexingConfigurationConfig
 from .indices import Indices, IndicesConfig
 from .job_document import JobDocument, JobDocumentConfig
-from .job_execution import JobExecution, JobExecutionConfig
 from .job_executions_for_job import JobExecutionsForJob, JobExecutionsForJobConfig
 from .job_executions_for_thing import JobExecutionsForThing, JobExecutionsForThingConfig
 from .job_templates import JobTemplates, JobTemplatesConfig
@@ -72,7 +66,6 @@ from .provisioning_templates import ProvisioningTemplates, ProvisioningTemplates
 from .registration_code import RegistrationCode, RegistrationCodeConfig
 from .related_resources_for_audit_finding import RelatedResourcesForAuditFinding, RelatedResourcesForAuditFindingConfig
 from .role_aliases import RoleAliases, RoleAliasesConfig
-from .sbom_validation_results import SbomValidationResults, SbomValidationResultsConfig
 from .scheduled_audits import ScheduledAudits, ScheduledAuditsConfig
 from .security_profiles import SecurityProfiles, SecurityProfilesConfig
 from .security_profiles_for_target import SecurityProfilesForTarget, SecurityProfilesForTargetConfig
@@ -97,4 +90,3 @@ from .topic_rule_destinations import TopicRuleDestinations, TopicRuleDestination
 from .topic_rules import TopicRules, TopicRulesConfig
 from .v2_logging_levels import V2LoggingLevels, V2LoggingLevelsConfig
 from .v2_logging_options import V2LoggingOptions, V2LoggingOptionsConfig
-from .violation_events import ViolationEvents, ViolationEventsConfig

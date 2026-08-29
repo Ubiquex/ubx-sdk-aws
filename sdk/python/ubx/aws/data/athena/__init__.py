@@ -5,10 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .application_dpusizes import ApplicationDpusizes, ApplicationDpusizesConfig
-from .calculation_execution import CalculationExecution, CalculationExecutionConfig
-from .calculation_execution_code import CalculationExecutionCode, CalculationExecutionCodeConfig
-from .calculation_execution_status import CalculationExecutionStatus, CalculationExecutionStatusConfig
-from .calculation_executions import CalculationExecutions, CalculationExecutionsConfig
 from .capacity_assignment_configuration import CapacityAssignmentConfiguration, CapacityAssignmentConfigurationConfig
 from .capacity_reservations import CapacityReservations, CapacityReservationsConfig
 from .data_catalogs import DataCatalogs, DataCatalogsConfig
@@ -20,8 +16,6 @@ from .named_queries import NamedQueries, NamedQueriesConfig
 from .notebook_metadata import NotebookMetadata, NotebookMetadataConfig
 from .notebook_sessions import NotebookSessions, NotebookSessionsConfig
 from .prepared_statements import PreparedStatements, PreparedStatementsConfig
-from .query_execution import QueryExecution, QueryExecutionConfig
-from .query_executions import QueryExecutions, QueryExecutionsConfig
 from .query_results import QueryResults, QueryResultsConfig
 from .query_runtime_statistics import QueryRuntimeStatistics, QueryRuntimeStatisticsConfig
 from .resource_dashboard import ResourceDashboard, ResourceDashboardConfig

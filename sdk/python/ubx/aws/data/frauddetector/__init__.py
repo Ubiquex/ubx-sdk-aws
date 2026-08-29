@@ -4,15 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .delete_events_by_event_type_status import DeleteEventsByEventTypeStatus, DeleteEventsByEventTypeStatusConfig
 from .detector import Detector, DetectorConfig
 from .detectors import Detectors, DetectorsConfig
 from .entity_types import EntityTypes, EntityTypesConfig
-from .event import Event, EventConfig
-from .event_prediction import EventPrediction, EventPredictionConfig
-from .event_prediction_metadata import EventPredictionMetadata, EventPredictionMetadataConfig
-from .event_predictions import EventPredictions, EventPredictionsConfig
-from .event_types import EventTypes, EventTypesConfig
 from .external_models import ExternalModels, ExternalModelsConfig
 from .kmsencryption_key import KmsencryptionKey, KmsencryptionKeyConfig
 from .labels import Labels, LabelsConfig

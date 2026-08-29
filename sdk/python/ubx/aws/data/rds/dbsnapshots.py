@@ -40,7 +40,6 @@ class Dbsnapshots_Dbsnapshots:
     encrypted: Any = None
     engine: Any = None
     engine_version: Any = None
-    full_snapshot_size_in_bytes: Any = None
     iamdatabase_authentication_enabled: Any = None
     instance_create_time: Any = None
     iops: Any = None

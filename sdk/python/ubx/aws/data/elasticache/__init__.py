@@ -8,7 +8,6 @@ from .allowed_node_type_modifications import AllowedNodeTypeModifications, Allow
 from .cache_engine_versions import CacheEngineVersions, CacheEngineVersionsConfig
 from .cache_parameters import CacheParameters, CacheParametersConfig
 from .engine_default_parameters import EngineDefaultParameters, EngineDefaultParametersConfig
-from .events import Events, EventsConfig
 from .reserved_cache_nodes import ReservedCacheNodes, ReservedCacheNodesConfig
 from .reserved_cache_nodes_offerings import ReservedCacheNodesOfferings, ReservedCacheNodesOfferingsConfig
 from .service_updates import ServiceUpdates, ServiceUpdatesConfig

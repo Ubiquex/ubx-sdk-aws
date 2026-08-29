@@ -4,7 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .voice_chime_available_voice_connector_regions import VoiceChimeAvailableVoiceConnectorRegions, VoiceChimeAvailableVoiceConnectorRegionsConfig
 from .voice_chime_global_settings import VoiceChimeGlobalSettings, VoiceChimeGlobalSettingsConfig
 from .voice_chime_phone_number import VoiceChimePhoneNumber, VoiceChimePhoneNumberConfig
 from .voice_chime_phone_number_orders import VoiceChimePhoneNumberOrders, VoiceChimePhoneNumberOrdersConfig

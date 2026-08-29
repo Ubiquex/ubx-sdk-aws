@@ -11,7 +11,6 @@ from .metadata_transfer_jobs import MetadataTransferJobs, MetadataTransferJobsCo
 from .pricing_plan import PricingPlan, PricingPlanConfig
 from .properties import Properties, PropertiesConfig
 from .property_value import PropertyValue, PropertyValueConfig
-from .property_value_history import PropertyValueHistory, PropertyValueHistoryConfig
 from .scenes import Scenes, ScenesConfig
 from .sync_jobs import SyncJobs, SyncJobsConfig
 from .sync_resources import SyncResources, SyncResourcesConfig
