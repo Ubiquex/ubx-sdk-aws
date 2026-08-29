@@ -7,10 +7,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .extensible_source_servers import ExtensibleSourceServers, ExtensibleSourceServersConfig
 from .launch_actions import LaunchActions, LaunchActionsConfig
 from .recovery_plan import RecoveryPlan, RecoveryPlanConfig
-from .recovery_plan_execution import RecoveryPlanExecution, RecoveryPlanExecutionConfig
-from .recovery_plan_execution_step import RecoveryPlanExecutionStep, RecoveryPlanExecutionStepConfig
-from .recovery_plan_execution_steps import RecoveryPlanExecutionSteps, RecoveryPlanExecutionStepsConfig
-from .recovery_plan_executions import RecoveryPlanExecutions, RecoveryPlanExecutionsConfig
 from .recovery_plan_steps import RecoveryPlanSteps, RecoveryPlanStepsConfig
 from .recovery_plans import RecoveryPlans, RecoveryPlansConfig
 from .staging_accounts import StagingAccounts, StagingAccountsConfig

@@ -9,7 +9,6 @@ from .artifacts import Artifacts, ArtifactsConfig
 from .device import Device, DeviceConfig
 from .device_instance import DeviceInstance, DeviceInstanceConfig
 from .device_instances import DeviceInstances, DeviceInstancesConfig
-from .device_pool_compatibility import DevicePoolCompatibility, DevicePoolCompatibilityConfig
 from .device_pools import DevicePools, DevicePoolsConfig
 from .devices import Devices, DevicesConfig
 from .instance_profiles import InstanceProfiles, InstanceProfilesConfig

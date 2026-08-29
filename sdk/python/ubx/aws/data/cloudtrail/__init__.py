@@ -6,9 +6,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .channels import Channels, ChannelsConfig
 from .dashboards import Dashboards, DashboardsConfig
-from .event_configuration import EventConfiguration, EventConfigurationConfig
-from .event_data_stores import EventDataStores, EventDataStoresConfig
-from .event_selectors import EventSelectors, EventSelectorsConfig
 from .import_ import Import, ImportConfig
 from .import_failures import ImportFailures, ImportFailuresConfig
 from .imports import Imports, ImportsConfig

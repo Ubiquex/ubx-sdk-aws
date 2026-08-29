@@ -13,8 +13,6 @@ from .domain_layouts import DomainLayouts, DomainLayoutsConfig
 from .domain_object_type import DomainObjectType, DomainObjectTypeConfig
 from .domain_object_types import DomainObjectTypes, DomainObjectTypesConfig
 from .domains import Domains, DomainsConfig
-from .event_streams import EventStreams, EventStreamsConfig
-from .event_triggers import EventTriggers, EventTriggersConfig
 from .identity_resolution_job import IdentityResolutionJob, IdentityResolutionJobConfig
 from .identity_resolution_jobs import IdentityResolutionJobs, IdentityResolutionJobsConfig
 from .integration import Integration, IntegrationConfig
@@ -24,8 +22,6 @@ from .object_type_attribute_statistics import ObjectTypeAttributeStatistics, Obj
 from .object_type_attribute_values import ObjectTypeAttributeValues, ObjectTypeAttributeValuesConfig
 from .object_type_attributes import ObjectTypeAttributes, ObjectTypeAttributesConfig
 from .profile_attribute_values import ProfileAttributeValues, ProfileAttributeValuesConfig
-from .profile_history_record import ProfileHistoryRecord, ProfileHistoryRecordConfig
-from .profile_history_records import ProfileHistoryRecords, ProfileHistoryRecordsConfig
 from .profile_object_type_template import ProfileObjectTypeTemplate, ProfileObjectTypeTemplateConfig
 from .profile_object_type_templates import ProfileObjectTypeTemplates, ProfileObjectTypeTemplatesConfig
 from .profile_object_types import ProfileObjectTypes, ProfileObjectTypesConfig

@@ -10,7 +10,6 @@ from .assessment_runs import AssessmentRuns, AssessmentRunsConfig
 from .assessment_targets import AssessmentTargets, AssessmentTargetsConfig
 from .assessment_templates import AssessmentTemplates, AssessmentTemplatesConfig
 from .cross_account_access_role import CrossAccountAccessRole, CrossAccountAccessRoleConfig
-from .event_subscriptions import EventSubscriptions, EventSubscriptionsConfig
 from .exclusions import Exclusions, ExclusionsConfig
 from .findings import Findings, FindingsConfig
 from .rules_packages import RulesPackages, RulesPackagesConfig

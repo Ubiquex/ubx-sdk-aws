@@ -4,5 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .kendra_ranking_rescore_execution_plans import KendraRankingRescoreExecutionPlans, KendraRankingRescoreExecutionPlansConfig
 from .kendra_ranking_tags_for_resource import KendraRankingTagsForResource, KendraRankingTagsForResourceConfig

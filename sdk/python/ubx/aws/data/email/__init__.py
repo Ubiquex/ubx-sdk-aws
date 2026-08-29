@@ -15,7 +15,6 @@ from .identity_notification_attributes import IdentityNotificationAttributes, Id
 from .identity_policies import IdentityPolicies, IdentityPoliciesConfig
 from .identity_verification_attributes import IdentityVerificationAttributes, IdentityVerificationAttributesConfig
 from .receipt_rule_sets import ReceiptRuleSets, ReceiptRuleSetsConfig
-from .send_quota import SendQuota, SendQuotaConfig
 from .send_statistics import SendStatistics, SendStatisticsConfig
 from .templates import Templates, TemplatesConfig
 from .verified_email_addresses import VerifiedEmailAddresses, VerifiedEmailAddressesConfig

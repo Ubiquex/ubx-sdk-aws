@@ -5,10 +5,7 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .cognito_sync_bulk_publish_details import CognitoSyncBulkPublishDetails, CognitoSyncBulkPublishDetailsConfig
-from .cognito_sync_cognito_events import CognitoSyncCognitoEvents, CognitoSyncCognitoEventsConfig
 from .cognito_sync_dataset import CognitoSyncDataset, CognitoSyncDatasetConfig
 from .cognito_sync_datasets import CognitoSyncDatasets, CognitoSyncDatasetsConfig
 from .cognito_sync_identity_pool_configuration import CognitoSyncIdentityPoolConfiguration, CognitoSyncIdentityPoolConfigurationConfig
-from .cognito_sync_identity_pool_usage import CognitoSyncIdentityPoolUsage, CognitoSyncIdentityPoolUsageConfig
-from .cognito_sync_identity_usage import CognitoSyncIdentityUsage, CognitoSyncIdentityUsageConfig
 from .cognito_sync_records import CognitoSyncRecords, CognitoSyncRecordsConfig

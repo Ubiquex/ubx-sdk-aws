@@ -7,12 +7,10 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .account_configuration import AccountConfiguration, AccountConfigurationConfig
 from .acme_account import AcmeAccount, AcmeAccountConfig
 from .acme_accounts import AcmeAccounts, AcmeAccountsConfig
-from .acme_domain_validations import AcmeDomainValidations, AcmeDomainValidationsConfig
 from .acme_endpoints import AcmeEndpoints, AcmeEndpointsConfig
 from .acme_external_account_binding_credentials import AcmeExternalAccountBindingCredentials, AcmeExternalAccountBindingCredentialsConfig
 from .acme_external_account_bindings import AcmeExternalAccountBindings, AcmeExternalAccountBindingsConfig
 from .certificate import Certificate, CertificateConfig
-from .certificate_domain_validations import CertificateDomainValidations, CertificateDomainValidationsConfig
 from .certificates import Certificates, CertificatesConfig
 from .tags_for_certificate import TagsForCertificate, TagsForCertificateConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

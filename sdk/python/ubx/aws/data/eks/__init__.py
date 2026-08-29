@@ -10,7 +10,6 @@ from .addon_configuration import AddonConfiguration, AddonConfigurationConfig
 from .addon_versions import AddonVersions, AddonVersionsConfig
 from .addons import Addons, AddonsConfig
 from .associated_access_policies import AssociatedAccessPolicies, AssociatedAccessPoliciesConfig
-from .capabilities import Capabilities, CapabilitiesConfig
 from .certificate_authorities import CertificateAuthorities, CertificateAuthoritiesConfig
 from .cluster_versions import ClusterVersions, ClusterVersionsConfig
 from .clusters import Clusters, ClustersConfig

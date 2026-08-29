@@ -7,7 +7,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .account_limits import AccountLimits, AccountLimitsConfig
 from .change_set_hooks import ChangeSetHooks, ChangeSetHooksConfig
 from .change_sets import ChangeSets, ChangeSetsConfig
-from .events import Events, EventsConfig
 from .exports import Exports, ExportsConfig
 from .generated_template import GeneratedTemplate, GeneratedTemplateConfig
 from .generated_templates import GeneratedTemplates, GeneratedTemplatesConfig
@@ -21,7 +20,6 @@ from .resource_scan_related_resources import ResourceScanRelatedResources, Resou
 from .resource_scan_resources import ResourceScanResources, ResourceScanResourcesConfig
 from .resource_scans import ResourceScans, ResourceScansConfig
 from .stack_drift_detection_status import StackDriftDetectionStatus, StackDriftDetectionStatusConfig
-from .stack_events import StackEvents, StackEventsConfig
 from .stack_instance_resource_drifts import StackInstanceResourceDrifts, StackInstanceResourceDriftsConfig
 from .stack_instances import StackInstances, StackInstancesConfig
 from .stack_policy import StackPolicy, StackPolicyConfig
@@ -31,9 +29,6 @@ from .stack_resource import StackResource, StackResourceConfig
 from .stack_resource_drifts import StackResourceDrifts, StackResourceDriftsConfig
 from .stack_resources import StackResources, StackResourcesConfig
 from .stack_set_auto_deployment_targets import StackSetAutoDeploymentTargets, StackSetAutoDeploymentTargetsConfig
-from .stack_set_operation import StackSetOperation, StackSetOperationConfig
-from .stack_set_operation_results import StackSetOperationResults, StackSetOperationResultsConfig
-from .stack_set_operations import StackSetOperations, StackSetOperationsConfig
 from .stack_sets import StackSets, StackSetsConfig
 from .stacks import Stacks, StacksConfig
 from .template import Template, TemplateConfig

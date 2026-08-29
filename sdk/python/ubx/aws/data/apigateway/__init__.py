@@ -31,7 +31,4 @@ from .sdk_type import SdkType, SdkTypeConfig
 from .sdk_types import SdkTypes, SdkTypesConfig
 from .stages import Stages, StagesConfig
 from .tags import Tags, TagsConfig
-from .usage import Usage, UsageConfig
-from .usage_plan_keys import UsagePlanKeys, UsagePlanKeysConfig
-from .usage_plans import UsagePlans, UsagePlansConfig
 from .vpc_links import VpcLinks, VpcLinksConfig

@@ -8,11 +8,6 @@ from .api_destinations import ApiDestinations, ApiDestinationsConfig
 from .archives import Archives, ArchivesConfig
 from .connections import Connections, ConnectionsConfig
 from .endpoints import Endpoints, EndpointsConfig
-from .event_buses import EventBuses, EventBusesConfig
-from .event_source import EventSource, EventSourceConfig
-from .event_sources import EventSources, EventSourcesConfig
-from .partner_event_source_accounts import PartnerEventSourceAccounts, PartnerEventSourceAccountsConfig
-from .partner_event_sources import PartnerEventSources, PartnerEventSourcesConfig
 from .replay import Replay, ReplayConfig
 from .replays import Replays, ReplaysConfig
 from .rule import Rule, RuleConfig

@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .alarm_contributors import AlarmContributors, AlarmContributorsConfig
-from .alarm_history import AlarmHistory, AlarmHistoryConfig
 from .alarm_mute_rule import AlarmMuteRule, AlarmMuteRuleConfig
 from .alarm_mute_rules import AlarmMuteRules, AlarmMuteRulesConfig
 from .alarms import Alarms, AlarmsConfig

@@ -13,7 +13,6 @@ from .dataset_export_jobs import DatasetExportJobs, DatasetExportJobsConfig
 from .dataset_groups import DatasetGroups, DatasetGroupsConfig
 from .dataset_import_jobs import DatasetImportJobs, DatasetImportJobsConfig
 from .datasets import Datasets, DatasetsConfig
-from .event_trackers import EventTrackers, EventTrackersConfig
 from .feature_transformation import FeatureTransformation, FeatureTransformationConfig
 from .filters import Filters, FiltersConfig
 from .metric_attribution_metrics import MetricAttributionMetrics, MetricAttributionMetricsConfig

@@ -9,7 +9,6 @@ from .compositions import Compositions, CompositionsConfig
 from .encoder_configurations import EncoderConfigurations, EncoderConfigurationsConfig
 from .ingest_configurations import IngestConfigurations, IngestConfigurationsConfig
 from .participant import Participant, ParticipantConfig
-from .participant_events import ParticipantEvents, ParticipantEventsConfig
 from .participant_replicas import ParticipantReplicas, ParticipantReplicasConfig
 from .participants import Participants, ParticipantsConfig
 from .public_key import PublicKey, PublicKeyConfig

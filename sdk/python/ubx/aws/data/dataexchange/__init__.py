@@ -8,7 +8,6 @@ from .asset import Asset, AssetConfig
 from .data_grants import DataGrants, DataGrantsConfig
 from .data_set_revisions import DataSetRevisions, DataSetRevisionsConfig
 from .data_sets import DataSets, DataSetsConfig
-from .event_actions import EventActions, EventActionsConfig
 from .jobs import Jobs, JobsConfig
 from .received_data_grant import ReceivedDataGrant, ReceivedDataGrantConfig
 from .received_data_grants import ReceivedDataGrants, ReceivedDataGrantsConfig

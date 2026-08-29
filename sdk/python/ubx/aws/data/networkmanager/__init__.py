@@ -8,7 +8,6 @@ from .attachment_routing_policy_associations import AttachmentRoutingPolicyAssoc
 from .attachments import Attachments, AttachmentsConfig
 from .connect_peer_associations import ConnectPeerAssociations, ConnectPeerAssociationsConfig
 from .connect_peers import ConnectPeers, ConnectPeersConfig
-from .core_network_change_events import CoreNetworkChangeEvents, CoreNetworkChangeEventsConfig
 from .core_network_change_set import CoreNetworkChangeSet, CoreNetworkChangeSetConfig
 from .core_network_policy import CoreNetworkPolicy, CoreNetworkPolicyConfig
 from .core_network_policy_versions import CoreNetworkPolicyVersions, CoreNetworkPolicyVersionsConfig

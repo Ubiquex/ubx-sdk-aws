@@ -11,7 +11,5 @@ from .compatible_images import CompatibleImages, CompatibleImagesConfig
 from .job_manifest import JobManifest, JobManifestConfig
 from .job_unlock_code import JobUnlockCode, JobUnlockCodeConfig
 from .jobs import Jobs, JobsConfig
-from .pickup_locations import PickupLocations, PickupLocationsConfig
 from .service_versions import ServiceVersions, ServiceVersionsConfig
-from .snowball_usage import SnowballUsage, SnowballUsageConfig
 from .software_updates import SoftwareUpdates, SoftwareUpdatesConfig

@@ -4,8 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .data_integration_event import DataIntegrationEvent, DataIntegrationEventConfig
-from .data_integration_events import DataIntegrationEvents, DataIntegrationEventsConfig
-from .data_integration_flow_execution import DataIntegrationFlowExecution, DataIntegrationFlowExecutionConfig
-from .data_integration_flow_executions import DataIntegrationFlowExecutions, DataIntegrationFlowExecutionsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

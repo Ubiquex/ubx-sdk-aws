@@ -16,8 +16,6 @@ from .data_shares_for_consumer import DataSharesForConsumer, DataSharesForConsum
 from .data_shares_for_producer import DataSharesForProducer, DataSharesForProducerConfig
 from .default_cluster_parameters import DefaultClusterParameters, DefaultClusterParametersConfig
 from .endpoint_authorization import EndpointAuthorization, EndpointAuthorizationConfig
-from .event_categories import EventCategories, EventCategoriesConfig
-from .events import Events, EventsConfig
 from .identity_center_auth_token import IdentityCenterAuthToken, IdentityCenterAuthTokenConfig
 from .inbound_integrations import InboundIntegrations, InboundIntegrationsConfig
 from .logging_status import LoggingStatus, LoggingStatusConfig

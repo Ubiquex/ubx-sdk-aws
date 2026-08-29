@@ -7,8 +7,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .data_ingestion_job import DataIngestionJob, DataIngestionJobConfig
 from .data_ingestion_jobs import DataIngestionJobs, DataIngestionJobsConfig
 from .datasets import Datasets, DatasetsConfig
-from .inference_events import InferenceEvents, InferenceEventsConfig
-from .inference_executions import InferenceExecutions, InferenceExecutionsConfig
 from .inference_schedulers import InferenceSchedulers, InferenceSchedulersConfig
 from .label_groups import LabelGroups, LabelGroupsConfig
 from .labels import Labels, LabelsConfig

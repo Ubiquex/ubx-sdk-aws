@@ -31,4 +31,3 @@ from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .threat_entity_sets import ThreatEntitySets, ThreatEntitySetsConfig
 from .threat_intel_sets import ThreatIntelSets, ThreatIntelSetsConfig
 from .trusted_entity_sets import TrustedEntitySets, TrustedEntitySetsConfig
-from .usage_statistics import UsageStatistics, UsageStatisticsConfig

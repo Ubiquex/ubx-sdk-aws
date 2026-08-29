@@ -8,7 +8,6 @@ from .admin_wickr_blocked_guest_users import AdminWickrBlockedGuestUsers, AdminW
 from .admin_wickr_bots import AdminWickrBots, AdminWickrBotsConfig
 from .admin_wickr_bots_count import AdminWickrBotsCount, AdminWickrBotsCountConfig
 from .admin_wickr_devices_for_user import AdminWickrDevicesForUser, AdminWickrDevicesForUserConfig
-from .admin_wickr_guest_user_history_count import AdminWickrGuestUserHistoryCount, AdminWickrGuestUserHistoryCountConfig
 from .admin_wickr_guest_users import AdminWickrGuestUsers, AdminWickrGuestUsersConfig
 from .admin_wickr_network_settings import AdminWickrNetworkSettings, AdminWickrNetworkSettingsConfig
 from .admin_wickr_networks import AdminWickrNetworks, AdminWickrNetworksConfig

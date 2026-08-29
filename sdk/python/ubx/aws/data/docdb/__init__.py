@@ -9,8 +9,6 @@ from .dbcluster_parameters import DbclusterParameters, DbclusterParametersConfig
 from .dbcluster_snapshots import DbclusterSnapshots, DbclusterSnapshotsConfig
 from .dbengine_versions import DbengineVersions, DbengineVersionsConfig
 from .engine_default_cluster_parameters import EngineDefaultClusterParameters, EngineDefaultClusterParametersConfig
-from .event_categories import EventCategories, EventCategoriesConfig
-from .events import Events, EventsConfig
 from .orderable_dbinstance_options import OrderableDbinstanceOptions, OrderableDbinstanceOptionsConfig
 from .pending_maintenance_actions import PendingMaintenanceActions, PendingMaintenanceActionsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

@@ -4,7 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .vpc_lattice_auth_policy import VpcLatticeAuthPolicy, VpcLatticeAuthPolicyConfig
-from .vpc_lattice_resource_policy import VpcLatticeResourcePolicy, VpcLatticeResourcePolicyConfig
 from .vpc_lattice_service_network_vpc_endpoint_associations import VpcLatticeServiceNetworkVpcEndpointAssociations, VpcLatticeServiceNetworkVpcEndpointAssociationsConfig
 from .vpc_lattice_tags_for_resource import VpcLatticeTagsForResource, VpcLatticeTagsForResourceConfig

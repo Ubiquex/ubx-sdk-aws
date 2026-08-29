@@ -5,8 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .accesses import Accesses, AccessesConfig
-from .execution import Execution, ExecutionConfig
-from .executions import Executions, ExecutionsConfig
 from .file_transfer_results import FileTransferResults, FileTransferResultsConfig
 from .host_key import HostKey, HostKeyConfig
 from .host_keys import HostKeys, HostKeysConfig

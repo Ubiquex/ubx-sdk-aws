@@ -5,14 +5,9 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .activities import Activities, ActivitiesConfig
-from .activity_task import ActivityTask, ActivityTaskConfig
-from .execution import Execution, ExecutionConfig
-from .execution_history import ExecutionHistory, ExecutionHistoryConfig
-from .executions import Executions, ExecutionsConfig
 from .map_run import MapRun, MapRunConfig
 from .map_runs import MapRuns, MapRunsConfig
 from .state_machine_aliases import StateMachineAliases, StateMachineAliasesConfig
-from .state_machine_for_execution import StateMachineForExecution, StateMachineForExecutionConfig
 from .state_machine_versions import StateMachineVersions, StateMachineVersionsConfig
 from .state_machines import StateMachines, StateMachinesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

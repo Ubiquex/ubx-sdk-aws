@@ -14,7 +14,6 @@ from .attached_files_configurations import AttachedFilesConfigurations, Attached
 from .authentication_profile import AuthenticationProfile, AuthenticationProfileConfig
 from .authentication_profiles import AuthenticationProfiles, AuthenticationProfilesConfig
 from .bots import Bots, BotsConfig
-from .child_hours_of_operations import ChildHoursOfOperations, ChildHoursOfOperationsConfig
 from .contact_attributes import ContactAttributes, ContactAttributesConfig
 from .contact_evaluation import ContactEvaluation, ContactEvaluationConfig
 from .contact_evaluations import ContactEvaluations, ContactEvaluationsConfig
@@ -30,17 +29,13 @@ from .data_table_primary_values import DataTablePrimaryValues, DataTablePrimaryV
 from .data_table_values import DataTableValues, DataTableValuesConfig
 from .data_tables import DataTables, DataTablesConfig
 from .default_vocabularies import DefaultVocabularies, DefaultVocabulariesConfig
-from .effective_hours_of_operations import EffectiveHoursOfOperations, EffectiveHoursOfOperationsConfig
 from .entity_security_profiles import EntitySecurityProfiles, EntitySecurityProfilesConfig
-from .evaluation_form_validation import EvaluationFormValidation, EvaluationFormValidationConfig
 from .evaluation_form_versions import EvaluationFormVersions, EvaluationFormVersionsConfig
 from .evaluation_forms import EvaluationForms, EvaluationFormsConfig
 from .extraction_definitions import ExtractionDefinitions, ExtractionDefinitionsConfig
 from .federation_token import FederationToken, FederationTokenConfig
 from .flow_association import FlowAssociation, FlowAssociationConfig
 from .flow_associations import FlowAssociations, FlowAssociationsConfig
-from .hours_of_operation_overrides import HoursOfOperationOverrides, HoursOfOperationOverridesConfig
-from .hours_of_operations import HoursOfOperations, HoursOfOperationsConfig
 from .instance_attribute import InstanceAttribute, InstanceAttributeConfig
 from .instance_attributes import InstanceAttributes, InstanceAttributesConfig
 from .instance_storage_config import InstanceStorageConfig, InstanceStorageConfigConfig
@@ -74,9 +69,6 @@ from .security_profile_permissions import SecurityProfilePermissions, SecurityPr
 from .security_profiles import SecurityProfiles, SecurityProfilesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .task_templates import TaskTemplates, TaskTemplatesConfig
-from .test_case_execution_records import TestCaseExecutionRecords, TestCaseExecutionRecordsConfig
-from .test_case_execution_summary import TestCaseExecutionSummary, TestCaseExecutionSummaryConfig
-from .test_case_executions import TestCaseExecutions, TestCaseExecutionsConfig
 from .test_cases import TestCases, TestCasesConfig
 from .traffic_distribution import TrafficDistribution, TrafficDistributionConfig
 from .traffic_distribution_group_users import TrafficDistributionGroupUsers, TrafficDistributionGroupUsersConfig

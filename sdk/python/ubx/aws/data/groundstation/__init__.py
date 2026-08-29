@@ -5,5 +5,4 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .agent_task_response_url import AgentTaskResponseUrl, AgentTaskResponseUrlConfig
-from .minute_usage import MinuteUsage, MinuteUsageConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

@@ -84,7 +84,6 @@ from .triggers import Triggers, TriggersConfig
 from .unfiltered_partition_metadata import UnfilteredPartitionMetadata, UnfilteredPartitionMetadataConfig
 from .unfiltered_partitions_metadata import UnfilteredPartitionsMetadata, UnfilteredPartitionsMetadataConfig
 from .unfiltered_table_metadata import UnfilteredTableMetadata, UnfilteredTableMetadataConfig
-from .usage_profiles import UsageProfiles, UsageProfilesConfig
 from .user_defined_functions import UserDefinedFunctions, UserDefinedFunctionsConfig
 from .workflow_run import WorkflowRun, WorkflowRunConfig
 from .workflow_run_properties import WorkflowRunProperties, WorkflowRunPropertiesConfig

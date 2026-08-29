@@ -21,16 +21,9 @@ from .image_scan_finding_aggregations import ImageScanFindingAggregations, Image
 from .image_scan_findings import ImageScanFindings, ImageScanFindingsConfig
 from .images import Images, ImagesConfig
 from .infrastructure_configurations import InfrastructureConfigurations, InfrastructureConfigurationsConfig
-from .lifecycle_execution import LifecycleExecution, LifecycleExecutionConfig
-from .lifecycle_execution_resources import LifecycleExecutionResources, LifecycleExecutionResourcesConfig
-from .lifecycle_executions import LifecycleExecutions, LifecycleExecutionsConfig
 from .lifecycle_policies import LifecyclePolicies, LifecyclePoliciesConfig
 from .marketplace_resource import MarketplaceResource, MarketplaceResourceConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .waiting_workflow_steps import WaitingWorkflowSteps, WaitingWorkflowStepsConfig
 from .workflow_build_versions import WorkflowBuildVersions, WorkflowBuildVersionsConfig
-from .workflow_execution import WorkflowExecution, WorkflowExecutionConfig
-from .workflow_executions import WorkflowExecutions, WorkflowExecutionsConfig
-from .workflow_step_execution import WorkflowStepExecution, WorkflowStepExecutionConfig
-from .workflow_step_executions import WorkflowStepExecutions, WorkflowStepExecutionsConfig
 from .workflows import Workflows, WorkflowsConfig

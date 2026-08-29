@@ -4,12 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
-from .memory_db_allowed_multi_region_cluster_updates import MemoryDbAllowedMultiRegionClusterUpdates, MemoryDbAllowedMultiRegionClusterUpdatesConfig
 from .memory_db_allowed_node_type_updates import MemoryDbAllowedNodeTypeUpdates, MemoryDbAllowedNodeTypeUpdatesConfig
 from .memory_db_engine_versions import MemoryDbEngineVersions, MemoryDbEngineVersionsConfig
-from .memory_db_events import MemoryDbEvents, MemoryDbEventsConfig
-from .memory_db_multi_region_parameter_groups import MemoryDbMultiRegionParameterGroups, MemoryDbMultiRegionParameterGroupsConfig
-from .memory_db_multi_region_parameters import MemoryDbMultiRegionParameters, MemoryDbMultiRegionParametersConfig
 from .memory_db_parameters import MemoryDbParameters, MemoryDbParametersConfig
 from .memory_db_reserved_nodes import MemoryDbReservedNodes, MemoryDbReservedNodesConfig
 from .memory_db_reserved_nodes_offerings import MemoryDbReservedNodesOfferings, MemoryDbReservedNodesOfferingsConfig

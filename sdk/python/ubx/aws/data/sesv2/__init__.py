@@ -25,7 +25,6 @@ from .email_templates import EmailTemplates, EmailTemplatesConfig
 from .export_jobs import ExportJobs, ExportJobsConfig
 from .import_jobs import ImportJobs, ImportJobsConfig
 from .message_insights import MessageInsights, MessageInsightsConfig
-from .multi_region_endpoints import MultiRegionEndpoints, MultiRegionEndpointsConfig
 from .recommendations import Recommendations, RecommendationsConfig
 from .reputation_entities import ReputationEntities, ReputationEntitiesConfig
 from .reputation_entity import ReputationEntity, ReputationEntityConfig

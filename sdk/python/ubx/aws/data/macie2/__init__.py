@@ -35,5 +35,3 @@ from .sensitive_data_occurrences_availability import SensitiveDataOccurrencesAva
 from .sensitivity_inspection_template import SensitivityInspectionTemplate, SensitivityInspectionTemplateConfig
 from .sensitivity_inspection_templates import SensitivityInspectionTemplates, SensitivityInspectionTemplatesConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
-from .usage_statistics import UsageStatistics, UsageStatisticsConfig
-from .usage_totals import UsageTotals, UsageTotalsConfig

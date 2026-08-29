@@ -11,10 +11,8 @@ from .direct_connect_gateway_attachments import DirectConnectGatewayAttachments,
 from .hosted_connections import HostedConnections, HostedConnectionsConfig
 from .interconnect_loa import InterconnectLoa, InterconnectLoaConfig
 from .loa import Loa, LoaConfig
-from .locations import Locations, LocationsConfig
 from .router_configuration import RouterConfiguration, RouterConfigurationConfig
 from .tags import Tags, TagsConfig
 from .virtual_gateways import VirtualGateways, VirtualGatewaysConfig
 from .virtual_interface_routes import VirtualInterfaceRoutes, VirtualInterfaceRoutesConfig
-from .virtual_interface_test_history import VirtualInterfaceTestHistory, VirtualInterfaceTestHistoryConfig
 from .virtual_interfaces import VirtualInterfaces, VirtualInterfacesConfig

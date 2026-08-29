@@ -13,10 +13,8 @@ from .client_authentication_settings import ClientAuthenticationSettings, Client
 from .directories import Directories, DirectoriesConfig
 from .directory_data_access import DirectoryDataAccess, DirectoryDataAccessConfig
 from .domain_controllers import DomainControllers, DomainControllersConfig
-from .event_topics import EventTopics, EventTopicsConfig
 from .ip_routes import IpRoutes, IpRoutesConfig
 from .ldapssettings import Ldapssettings, LdapssettingsConfig
-from .regions import Regions, RegionsConfig
 from .schema_extensions import SchemaExtensions, SchemaExtensionsConfig
 from .settings import Settings, SettingsConfig
 from .shared_directories import SharedDirectories, SharedDirectoriesConfig

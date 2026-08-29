@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .applications import Applications, ApplicationsConfig
-from .capability import Capability, CapabilityConfig
 from .compatible_versions import CompatibleVersions, CompatibleVersionsConfig
 from .data_source import DataSource, DataSourceConfig
 from .data_source_attachment import DataSourceAttachment, DataSourceAttachmentConfig
@@ -32,13 +31,11 @@ from .instance_type_details import InstanceTypeDetails, InstanceTypeDetailsConfi
 from .instance_type_limits import InstanceTypeLimits, InstanceTypeLimitsConfig
 from .migration import Migration, MigrationConfig
 from .migrations import Migrations, MigrationsConfig
-from .package_version_history import PackageVersionHistory, PackageVersionHistoryConfig
 from .packages_for_domain import PackagesForDomain, PackagesForDomainConfig
 from .reserved_instance_offerings import ReservedInstanceOfferings, ReservedInstanceOfferingsConfig
 from .reserved_instances import ReservedInstances, ReservedInstancesConfig
 from .scheduled_actions import ScheduledActions, ScheduledActionsConfig
 from .tags import Tags, TagsConfig
-from .upgrade_history import UpgradeHistory, UpgradeHistoryConfig
 from .upgrade_status import UpgradeStatus, UpgradeStatusConfig
 from .versions import Versions, VersionsConfig
 from .vpc_endpoint_access import VpcEndpointAccess, VpcEndpointAccessConfig

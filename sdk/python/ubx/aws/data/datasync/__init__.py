@@ -5,8 +5,5 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .agents import Agents, AgentsConfig
-from .locations import Locations, LocationsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
-from .task_execution import TaskExecution, TaskExecutionConfig
-from .task_executions import TaskExecutions, TaskExecutionsConfig
 from .tasks import Tasks, TasksConfig

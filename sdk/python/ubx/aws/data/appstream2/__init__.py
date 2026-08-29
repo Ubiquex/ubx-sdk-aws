@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .app_block_builder_app_block_associations import AppBlockBuilderAppBlockAssociations, AppBlockBuilderAppBlockAssociationsConfig
-from .app_license_usage import AppLicenseUsage, AppLicenseUsageConfig
 from .application_fleet_associations import ApplicationFleetAssociations, ApplicationFleetAssociationsConfig
 from .associated_fleets import AssociatedFleets, AssociatedFleetsConfig
 from .associated_stacks import AssociatedStacks, AssociatedStacksConfig

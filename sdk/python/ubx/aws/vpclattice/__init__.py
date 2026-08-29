@@ -5,10 +5,12 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .access_log_subscription import AccessLogSubscription, AccessLogSubscriptionConfig
+from .auth_policy import AuthPolicy, AuthPolicyConfig
 from .domain_verification import DomainVerification, DomainVerificationConfig
 from .listener import Listener, ListenerConfig
 from .resource_configuration import ResourceConfiguration, ResourceConfigurationConfig
 from .resource_gateway import ResourceGateway, ResourceGatewayConfig
+from .resource_policy import ResourcePolicy, ResourcePolicyConfig
 from .rule import Rule, RuleConfig
 from .service import Service, ServiceConfig
 from .service_network import ServiceNetwork, ServiceNetworkConfig

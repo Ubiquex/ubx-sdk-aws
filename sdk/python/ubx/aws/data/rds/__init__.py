@@ -22,8 +22,6 @@ from .dbsnapshot_tenant_databases import DbsnapshotTenantDatabases, DbsnapshotTe
 from .dbsnapshots import Dbsnapshots, DbsnapshotsConfig
 from .engine_default_cluster_parameters import EngineDefaultClusterParameters, EngineDefaultClusterParametersConfig
 from .engine_default_parameters import EngineDefaultParameters, EngineDefaultParametersConfig
-from .event_categories import EventCategories, EventCategoriesConfig
-from .events import Events, EventsConfig
 from .export_tasks import ExportTasks, ExportTasksConfig
 from .option_group_options import OptionGroupOptions, OptionGroupOptionsConfig
 from .orderable_dbinstance_options import OrderableDbinstanceOptions, OrderableDbinstanceOptionsConfig
@@ -31,6 +29,5 @@ from .pending_maintenance_actions import PendingMaintenanceActions, PendingMaint
 from .reserved_dbinstances import ReservedDbinstances, ReservedDbinstancesConfig
 from .reserved_dbinstances_offerings import ReservedDbinstancesOfferings, ReservedDbinstancesOfferingsConfig
 from .serverless_v2_platform_versions import ServerlessV2PlatformVersions, ServerlessV2PlatformVersionsConfig
-from .source_regions import SourceRegions, SourceRegionsConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig
 from .valid_dbinstance_modifications import ValidDbinstanceModifications, ValidDbinstanceModificationsConfig

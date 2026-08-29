@@ -34,7 +34,6 @@ export interface Dbsnapshots_Dbsnapshots {
   encrypted?: boolean | Computed<boolean>;
   engine?: string | Computed<string>;
   engineVersion?: string | Computed<string>;
-  fullSnapshotSizeInBytes?: number | Computed<number>;
   iamdatabaseAuthenticationEnabled?: boolean | Computed<boolean>;
   instanceCreateTime?: string | Computed<string>;
   iops?: number | Computed<number>;

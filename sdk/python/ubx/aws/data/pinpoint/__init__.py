@@ -21,16 +21,11 @@ from .campaigns import Campaigns, CampaignsConfig
 from .channels import Channels, ChannelsConfig
 from .email_channel import EmailChannel, EmailChannelConfig
 from .endpoint import Endpoint, EndpointConfig
-from .event_stream import EventStream, EventStreamConfig
 from .export_jobs import ExportJobs, ExportJobsConfig
 from .gcm_channel import GcmChannel, GcmChannelConfig
 from .import_jobs import ImportJobs, ImportJobsConfig
 from .in_app_messages import InAppMessages, InAppMessagesConfig
 from .journey_date_range_kpi import JourneyDateRangeKpi, JourneyDateRangeKpiConfig
-from .journey_execution_activity_metrics import JourneyExecutionActivityMetrics, JourneyExecutionActivityMetricsConfig
-from .journey_execution_metrics import JourneyExecutionMetrics, JourneyExecutionMetricsConfig
-from .journey_run_execution_activity_metrics import JourneyRunExecutionActivityMetrics, JourneyRunExecutionActivityMetricsConfig
-from .journey_run_execution_metrics import JourneyRunExecutionMetrics, JourneyRunExecutionMetricsConfig
 from .journey_runs import JourneyRuns, JourneyRunsConfig
 from .journeys import Journeys, JourneysConfig
 from .recommender_configurations import RecommenderConfigurations, RecommenderConfigurationsConfig

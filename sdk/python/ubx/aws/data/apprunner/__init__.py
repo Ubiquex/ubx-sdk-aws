@@ -7,7 +7,6 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 from .auto_scaling_configurations import AutoScalingConfigurations, AutoScalingConfigurationsConfig
 from .custom_domains import CustomDomains, CustomDomainsConfig
 from .observability_configurations import ObservabilityConfigurations, ObservabilityConfigurationsConfig
-from .operations import Operations, OperationsConfig
 from .services import Services, ServicesConfig
 from .services_for_auto_scaling_configuration import ServicesForAutoScalingConfiguration, ServicesForAutoScalingConfigurationConfig
 from .tags_for_resource import TagsForResource, TagsForResourceConfig

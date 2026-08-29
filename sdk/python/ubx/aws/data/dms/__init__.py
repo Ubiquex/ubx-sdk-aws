@@ -12,8 +12,6 @@ from .conversion_configuration import ConversionConfiguration, ConversionConfigu
 from .endpoint_settings import EndpointSettings, EndpointSettingsConfig
 from .endpoint_types import EndpointTypes, EndpointTypesConfig
 from .engine_versions import EngineVersions, EngineVersionsConfig
-from .event_categories import EventCategories, EventCategoriesConfig
-from .events import Events, EventsConfig
 from .extension_pack_associations import ExtensionPackAssociations, ExtensionPackAssociationsConfig
 from .fleet_advisor_databases import FleetAdvisorDatabases, FleetAdvisorDatabasesConfig
 from .fleet_advisor_schema_object_summary import FleetAdvisorSchemaObjectSummary, FleetAdvisorSchemaObjectSummaryConfig

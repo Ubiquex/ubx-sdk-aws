@@ -5,6 +5,5 @@
 SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .default_parameters import DefaultParameters, DefaultParametersConfig
-from .events import Events, EventsConfig
 from .parameters import Parameters, ParametersConfig
 from .tags import Tags, TagsConfig

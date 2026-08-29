@@ -6,6 +6,7 @@ SOURCE_PROVENANCE = {"source": "aws", "version": "dynamic"}
 
 from .firewall import Firewall, FirewallConfig
 from .firewall_policy import FirewallPolicy, FirewallPolicyConfig
+from .logging_configuration import LoggingConfiguration, LoggingConfigurationConfig
 from .rule_group import RuleGroup, RuleGroupConfig
 from .tlsinspection_configuration import TlsinspectionConfiguration, TlsinspectionConfigurationConfig
 from .vpc_endpoint_association import VpcEndpointAssociation, VpcEndpointAssociationConfig
