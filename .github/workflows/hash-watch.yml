@@ -1,120 +1,32 @@
 name: hash-watch
 
-# Replaces version-watch.yml as of v1.0.0's source change: this repo no
-# longer generates from the hashicorp/aws Terraform provider, so polling
-# the Terraform Registry for a hashicorp/aws version bump would watch the
-# wrong thing entirely. AWS's real corpus splits across two structurally
-# different sources -- CloudFormation's own resource-type registry (a
-# live zip, no discrete pinnable release) for resources, and ~429
-# individual Smithy service models (each its own flat JSON URl) for data
-# sources, merged today via [dynamic_provider_groups.aws_data_all] in
-# ubiquex (sdk/providers/.ubx/config) -- so this file runs two
-# independent drift checks, one per source, and regenerates on either.
+# UBI-222: rebuilt on top of manifest.json's own new schema_urls field
+# (ubx-provider-dynamic PR #50) instead of ubiquex's own live
+# [dynamic_provider_groups.aws_data_all] table -- UBI-182 Stage E
+# collapsed that table down to a bare source/version pin months ago,
+# and this file's own Smithy half was never updated to match. It kept
+# reading a table that no longer existed: a real KeyError on the very
+# first line that touched it, confirmed failed on 2026-08-27, a red X
+# nobody saw. The CFN half is untouched -- it was always self-
+# contained (a single, real, live registry zip, no group at all) and
+# never depended on the now-gone table.
 #
-# UBI-196 follow-up (2026-08-27): this file previously watched ONLY the
-# CFN half (`--only aws`, matched against spec-sha256) and never
-# referenced aws_data_all or the Smithy half at all -- confirmed live,
-# by direct reading, that this repo's data-source content had never been
-# in any automated regeneration cycle since DataSourceBinding landed on
-# the authoring path. Confirmed live (2026-08-27) that this group's own
-# declared member list includes "aws" itself alongside the 429 real
-# aws_data_* Smithy entries -- meaning a single `--only aws_data_all`
-# invocation per language already produces BOTH the CFN resource half
-# (1715 real ResourceBinding files, matching the ~1716-entry CFN
-# registry) AND the full Smithy data-source half (4884 real
-# DataSourceBinding files) together. The regeneration step below was
-# switched from `--only aws` to `--only aws_data_all` on that basis --
-# one invocation now supersedes the old one for generation purposes,
-# real ubiquex's own committed config (including aws's own
-# describe_exclude) is read directly rather than hand-duplicated here,
-# matching azure_all/datadog_all/google_all's own established pattern
-# rather than reinventing it.
-#
-# The CFN half still needs its OWN independent drift check (a
-# merged-spec-sha256 over the 429 flat Smithy URLs would never notice a
-# CFN-only schema change, and vice versa) -- kept as its own hash,
-# unzipping the CFN registry zip in memory and hashing its 1716
-# canonicalized JSON entries in sorted-filename order, same as before.
-# The Smithy half is a new second hash, ported from
-# ubx-sdk-azure/ubx-sdk-datadog's own real, working merged-spec-sha256
-# routine (fetch every real aws_data_all member's own schema_url,
-# canonicalize, concatenate in sorted-member-name order, SHA-256) --
-# excluding "aws" itself from that loop, since its own schema_url points
-# at the CFN zip archive, not a single flat spec document, and is
-# already covered by the CFN hash above.
-#
-# Regeneration runs when EITHER hash changed -- a CFN-only or
-# Smithy-only content change still needs the full regenerate, since
-# `--only aws_data_all` always produces the complete merged tree for
-# both halves together; there is no way to regenerate just one half
-# through this group.
-#
-# 1.1.0: switched from raw zip-byte hashing to canonicalized-content
-# hashing, so all six repos in this org watch drift the same way. This
-# repo and ubx-sdk-kubernetes were built alongside the original four but
-# never actually converted to this method -- both still hashed raw
-# fetched bytes directly, found only when asked to confirm all six
-# matched. Confirmed live this session that the zip's raw bytes had
-# already drifted from the previously-committed hash (real upstream CFN
-# registry change since that baseline was written), independent of the
-# hashing-method switch.
-#
-# This source is shaped differently from every other repo's own single
-# spec document or flat member group: the fetched artifact is an ARCHIVE
-# containing one real JSON file per CFN resource type (1716 of them,
-# confirmed live). Handled the same way Datadog/Azure/Google concatenate
-# their own multiple real members into one hash: unzip in memory
-# (Python's stdlib zipfile, no disk write), sort the archive's own
-# filenames, canonicalize each entry's JSON content independently (same
-# canonicalize() as every other repo -- sort_keys, compact separators,
-# revision-key strip, datetime-safe), and concatenate in sorted-filename
-# order before the final SHA-256. Confirmed live across two independent
-# fetches of the real registry zip that this reproduces identically.
-#
-# One real, live caveat found the hard way verifying this workflow: this
-# endpoint is S3+CloudFront (confirmed via response headers -- a real
-# ETag, Last-Modified, X-Cache/X-Amz-Cf-Pop), not a live-regenerating
-# multi-backend service the way Google's Discovery Docs are. A real
-# workflow_dispatch run computed a DIFFERENT canonicalized hash from
-# repeated manual fetches taken minutes before and after it, from a
-# different network -- traced to CloudFront edge-cache propagation lag,
-# not backend disagreement: the manual fetches' own edge (Age header)
-# was still serving a cached object from before the object's own
-# Last-Modified timestamp, while the Actions runner's edge had already
-# revalidated to the newer object. Unlike google_ftp's own persistent,
-# never-converging split, this is transient -- it resolves once every
-# edge's TTL expires and revalidates -- but the exact window isn't
-# controlled by this workflow. A run that reports a change here worth
-# double-checking against a second run shortly after before assuming the
-# CFN registry itself changed, same spirit as the google_ftp caveat.
-#
-# Also carries the other two real, found-live fixes already applied to
-# the other four repos this session:
-#
-# 1. UBIQUEX_SOURCE_TOKEN removed. ubiquex and ubx-provider-dynamic are
-#    now public repos -- a plain, unauthenticated clone needs no token.
-#    (Formerly a fine-grained PAT; that secret was never actually set on
-#    this repo, confirmed directly via the API, so this checkout always
-#    failed here regardless of whether a real change was ever found.)
-#
-# 2. --recurse-submodules added to the ubiquex clone. ubiquex's own
-#    sdk/go, sdk/py, sdk/ts are real git submodules (its own Makefile
-#    runs `git submodule update --init --recursive` before every build);
-#    a bare clone leaves them empty and `go build ./cmd/ubx` below fails
-#    ("no required module provides package .../sdk/py"). Applied here
-#    even though this repo's own regen path has, until this revision,
-#    never actually run for the Smithy half -- the dependency is
-#    identical to the other repos where this was caught live.
-#
-# Ported from ubx-sdk-datadog/ubx-sdk-azure's own hash-watch.yml (the
-# real, working reference for both the merged-spec-sha256 pattern and
-# the read-the-real-config-rather-than-duplicate-it regeneration
-# pattern), with the CFN-specific half kept from this repo's own prior
-# revision. Same ubx-provider-dynamic checkout requirement as every
-# dynamic-provider entry (cli/dynamicprovider.go's
-# UBX_PROVIDER_DYNAMIC_REPO convention). Schema fetch alone needs no AWS
-# credentials -- codegen only ever calls Schema(), never
-# Configure/Create/Read/Update/Delete.
+# Three real states for BOTH halves together, never conflated:
+#   clean -- checked, both the CFN zip and every Smithy member's own
+#     live content match the last cut snapshot.
+#   drift -- checked, either half changed. Opens a tracking issue
+#     naming exactly what changed (never auto-regenerates the Smithy
+#     half's own bundled snapshot -- cutting a new one, publishing it,
+#     and bumping ubiquex's own pin is a real, judgment-requiring act
+#     this workflow does not take unattended, matching this org's own
+#     publish-descriptions.yml precedent for exactly this kind of
+#     cut). The CFN half alone can still regenerate directly below,
+#     same as before -- it was never blocked by this bug.
+#   error -- could NOT check (manifest.json has no schema_urls yet
+#     because this snapshot hasn't been re-cut with a binary new
+#     enough to record it, a live fetch failed, etc.). Opens a
+#     SEPARATE tracking issue, its own label -- an error must never
+#     look like "nothing to report" from outside CI.
 
 on:
   schedule:
@@ -124,10 +36,13 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 env:
-  GROUP: aws_data_all
   REPO_NAME: aws
+  SCHEMA_REPO: ubx-schema-aws
+  ERROR_ISSUE_LABEL: hash-watch-error
+  DRIFT_ISSUE_LABEL: hash-watch-drift
 
 jobs:
   check-and-regenerate:
@@ -135,13 +50,6 @@ jobs:
     steps:
       - name: Check out ubx-sdk-aws
         uses: actions/checkout@v4
-
-      - name: Check out ubiquex (real source of truth for aws_data_all's own member list)
-        run: |
-          set -euo pipefail
-          git clone --depth=1 --recurse-submodules \
-            "https://github.com/Ubiquex/ubiquex.git" \
-            "${{ runner.temp }}/ubiquex-src"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -186,41 +94,39 @@ jobs:
                   doc = {k: v for k, v in doc.items() if k != "revision"}
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
 
-          zip_bytes = fetch(URL)
-          zf = zipfile.ZipFile(io.BytesIO(zip_bytes))
-          names = sorted(n for n in zf.namelist() if not n.endswith("/"))
+          try:
+              zip_bytes = fetch(URL)
+              zf = zipfile.ZipFile(io.BytesIO(zip_bytes))
+              names = sorted(n for n in zf.namelist() if not n.endswith("/"))
 
-          h = hashlib.sha256()
-          for name in names:
-              doc = json.loads(zf.read(name).decode("utf-8"))
-              h.update(canonicalize(doc))
+              h = hashlib.sha256()
+              for name in names:
+                  doc = json.loads(zf.read(name).decode("utf-8"))
+                  h.update(canonicalize(doc))
 
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"hash={h.hexdigest()}\n")
-          print(f"Live CFN canonicalized spec-sha256: {h.hexdigest()} ({len(names)} files)")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write(f"hash={h.hexdigest()}\n")
+                  out.write("ok=true\n")
+              print(f"Live CFN canonicalized spec-sha256: {h.hexdigest()} ({len(names)} files)")
+          except Exception as e:
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write("ok=false\n")
+                  out.write(f"error={e!r}\n")
           PYEOF
 
-      - name: Fetch every aws_data_all Smithy member's raw spec and compute the merged-spec-sha256
+      - name: Fetch manifest.json and every real Smithy member's own live spec, compute the merged-spec-sha256
         id: smithy
         run: |
           set -euo pipefail
           python3 - <<'PYEOF'
-          import hashlib, json, os, time, tomllib, urllib.error, urllib.request, yaml, datetime
+          import hashlib, json, os, time, urllib.error, urllib.request, yaml, datetime
 
-          GROUP = os.environ["GROUP"]
+          SCHEMA_REPO = os.environ["SCHEMA_REPO"]
 
-          cfg = tomllib.load(open("${{ runner.temp }}/ubiquex-src/sdk/providers/.ubx/config", "rb"))
-          group = cfg["dynamic_provider_groups"][GROUP]
-          # "aws" itself is a declared member of aws_data_all (its own
-          # single fetch already covers both the CFN resource half and
-          # the Smithy data-source half together) -- but its schema_url
-          # points at the CFN zip archive, not a single flat spec
-          # document like every other real member here. That half is
-          # already covered by the independent CFN hash above, so it's
-          # excluded from this merged-spec loop rather than double
-          # counted or mis-hashed as if it were a flat document.
-          members = sorted(m for m in group["members"] if m != "aws")
-          urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
+          def write_output(**kv):
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  for k, v in kv.items():
+                      out.write(f"{k}={v}\n")
 
           def fetch(url, retries=5):
               req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
@@ -253,16 +159,35 @@ jobs:
                   doc = {k: v for k, v in doc.items() if k != "revision"}
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
 
-          h = hashlib.sha256()
-          for i, m in enumerate(members):
-              if i > 0:
-                  time.sleep(1.0)
-              h.update(canonicalize(fetch(urls[m])))
+          try:
+              manifest_url = f"https://raw.githubusercontent.com/Ubiquex/{SCHEMA_REPO}/main/manifest.json"
+              manifest = json.loads(fetch(manifest_url))
+              schema_urls = manifest.get("schema_urls") or {}
+              # "aws" itself is the CFN member (its own real fetch is the
+              # independent zip hash above, not a flat spec document) --
+              # excluded here exactly like the old, live-config version
+              # of this file already excluded it.
+              members = sorted(m for m in manifest.get("members", []) if m != "aws")
 
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"hash={h.hexdigest()}\n")
-              out.write(f"members={len(members)}\n")
-          print(f"Live Smithy merged-spec-sha256: {h.hexdigest()} ({len(members)} members)")
+              if not schema_urls:
+                  write_output(
+                      ok="false",
+                      error=f"{SCHEMA_REPO}'s own manifest.json has {len(members)} real Smithy member(s) but no "
+                            f"schema_urls at all -- this provider's own snapshot has not been re-cut with a "
+                            f"ubx-provider-dynamic build new enough to record it yet (UBI-222, PR #50).",
+                  )
+              else:
+                  missing = [m for m in members if m not in schema_urls]
+                  distinct_urls = sorted(set(schema_urls[m] for m in members if m in schema_urls))
+                  h = hashlib.sha256()
+                  for i, url in enumerate(distinct_urls):
+                      if i > 0:
+                          time.sleep(1.0)
+                      h.update(canonicalize(fetch(url)))
+                  write_output(ok="true", hash=h.hexdigest(), members=len(members), missing=len(missing))
+                  print(f"Live Smithy merged-spec-sha256: {h.hexdigest()} ({len(members)} members, {len(missing)} missing a schema_url)")
+          except Exception as e:
+              write_output(ok="false", error=repr(e))
           PYEOF
 
       - name: Compare against this repo's committed VERSION
@@ -272,55 +197,130 @@ jobs:
           current_cfn="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
           current_smithy_hash="$(grep '^smithy-merged-spec-sha256:' VERSION | awk '{print $2}')"
           current_smithy_members="$(grep '^smithy-members:' VERSION | awk '{print $2}')"
+
+          if [ "${{ steps.cfn.outputs.ok }}" != "true" ] || [ "${{ steps.smithy.outputs.ok }}" != "true" ]; then
+            state=error
+            detail="cfn ok=${{ steps.cfn.outputs.ok }} (${{ steps.cfn.outputs.error }}); smithy ok=${{ steps.smithy.outputs.ok }} (${{ steps.smithy.outputs.error }})"
+          elif [ "${{ steps.smithy.outputs.missing }}" != "0" ]; then
+            state=error
+            detail="manifest.json's own schema_urls is missing ${{ steps.smithy.outputs.missing }} of ${{ steps.smithy.outputs.members }} real Smithy member(s) -- partial data is not a safe basis for a real compare."
+          elif [ "${{ steps.cfn.outputs.hash }}" = "$current_cfn" ] && [ "${{ steps.smithy.outputs.hash }}" = "$current_smithy_hash" ] && [ "${{ steps.smithy.outputs.members }}" = "$current_smithy_members" ]; then
+            state=clean
+            detail="cfn spec-sha256 and smithy merged-spec-sha256 both match VERSION."
+          else
+            state=drift
+            detail="cfn: ${{ steps.cfn.outputs.hash }} (was $current_cfn) -- smithy: ${{ steps.smithy.outputs.hash }} / ${{ steps.smithy.outputs.members }} members (was $current_smithy_hash / $current_smithy_members)"
+          fi
+          echo "state=$state" >> "$GITHUB_OUTPUT"
+          echo "detail=$detail" >> "$GITHUB_OUTPUT"
           echo "current_cfn=$current_cfn" >> "$GITHUB_OUTPUT"
-          echo "current_smithy_hash=$current_smithy_hash" >> "$GITHUB_OUTPUT"
-          echo "current_smithy_members=$current_smithy_members" >> "$GITHUB_OUTPUT"
-          echo "This repo was last generated from spec-sha256: $current_cfn, smithy-merged-spec-sha256: $current_smithy_hash ($current_smithy_members members)"
-          newer=false
-          if [ "$current_cfn" != "${{ steps.cfn.outputs.hash }}" ]; then
-            echo "CFN half changed."
-            newer=true
-          fi
-          if [ "$current_smithy_hash" != "${{ steps.smithy.outputs.hash }}" ] || [ "$current_smithy_members" != "${{ steps.smithy.outputs.members }}" ]; then
-            echo "Smithy half changed."
-            newer=true
-          fi
-          echo "newer=$newer" >> "$GITHUB_OUTPUT"
-          if [ "$newer" = "false" ]; then
-            echo "Already current -- nothing to do."
-          fi
 
-      # --- everything below only runs when either half changed ---
-
-      - name: Check out ubx-provider-dynamic (only needed once a real change is found)
-        if: steps.compare.outputs.newer == 'true'
+      - name: Find any existing error/drift tracking issue
+        id: existing
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+          error_number="$(gh issue list --label "$ERROR_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          drift_number="$(gh issue list --label "$DRIFT_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          echo "error_number=$error_number" >> "$GITHUB_OUTPUT"
+          echo "drift_number=$drift_number" >> "$GITHUB_OUTPUT"
+
+      - name: Surface an error state -- never allowed to look like "nothing to report"
+        if: steps.compare.outputs.state == 'error'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**hash-watch could not fully check this repo for drift.**
+
+          ${{ steps.compare.outputs.detail }}
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.error_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.error_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: unable to check for drift" --label "$ERROR_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale error tracking issue once checking works again
+        if: steps.compare.outputs.state != 'error' && steps.existing.outputs.error_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.error_number }}" \
+            --comment "hash-watch checked successfully on this run (state: ${{ steps.compare.outputs.state }}) -- closing."
+
+      # --- everything below only runs when real drift was actually found ---
+
+      - name: Report Smithy-side drift -- opens a tracking issue, never auto-regenerates that half
+        if: steps.compare.outputs.state == 'drift'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**Real schema drift found against the live source.**
+
+          ${{ steps.compare.outputs.detail }}
+
+          The CFN half regenerates automatically below when its own hash moved. The Smithy half does
+          not: cutting a new pinned snapshot, publishing it as a new $SCHEMA_REPO release, and bumping
+          ubiquex's own [dynamic_providers.$REPO_NAME] pin is a real, judgment-requiring act -- not
+          auto-applied here (this org's own publish-descriptions.yml sets the same precedent for this
+          class of cut). See ubx-provider-dynamic's own --generate-snapshot-group.
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.drift_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.drift_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: real drift found against the live source" --label "$DRIFT_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale drift tracking issue once content is clean again
+        if: steps.compare.outputs.state == 'clean' && steps.existing.outputs.drift_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.drift_number }}" \
+            --comment "hash-watch found this repo clean on this run -- closing."
+
+      - name: Check out ubiquex (to build ubx from source, CFN-half regen only)
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
           git clone --depth=1 \
             "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         uses: actions/setup-go@v5
         with:
           go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
 
       - name: Set up Deno
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         uses: denoland/setup-deno@v2.0.5
         with:
           deno-version: "2.x"
 
       - name: Build ubx
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         run: |
           set -euo pipefail
           go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
           "${{ runner.temp }}/ubx" version
 
-      - name: Regenerate bindings (all three languages, through the real group -- covers CFN resources and Smithy data sources together)
-        if: steps.compare.outputs.newer == 'true'
+      - name: Regenerate the CFN half only (all three languages, through the real pin)
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         env:
           UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
         run: |
@@ -328,36 +328,14 @@ jobs:
           gendir="${{ runner.temp }}/ubxgen"
           mkdir -p "$gendir"
 
-          # Each language's own semver `version` field is owned by
-          # publish.yml, not by codegen -- codegen always writes "0.0.0".
-          # Capture the real, currently-committed values before regen
-          # overwrites them, restore after.
           own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
           own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
 
-          mkdir -p "$gendir/out/$REPO_NAME/sdk/go"
-          cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
-
-          # --only aws_data_all alone (not --only aws separately) --
-          # confirmed live that "aws" is itself a declared member of
-          # this group, so one invocation per language already produces
-          # both the CFN resource half and the full Smithy data-source
-          # half together. Run from within the real, checked-out
-          # ubiquex/sdk/providers config (not a hand-duplicated one) so
-          # aws's own real describe_exclude and every other real setting
-          # is picked up automatically, matching
-          # azure_all/datadog_all/google_all's own established pattern.
           for lang in go ts py; do
-            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" --require-clean-provenance )
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$REPO_NAME" --lang "$lang" --out "$gendir/out" --require-clean-provenance )
           done
 
-          # UBI-197: real ubx-provider-dynamic provenance (source, commit,
-          # dirty, unpushed) -- --require-clean-provenance above already
-          # refuses on anything but a clean, pushed commit, so this is
-          # real confirmation, not just a record of an unverified claim.
-          # Committed to this repo's own root, sibling to VERSION.
           cp "$gendir/out/$REPO_NAME/PROVENANCE.json" PROVENANCE.json
-
           rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
           rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
           rsync -a --delete "$gendir/out/$REPO_NAME/sdk/python/" sdk/python/
@@ -383,121 +361,45 @@ jobs:
           smithy-merged-spec-sha256: ${{ steps.smithy.outputs.hash }}
           smithy-members: ${{ steps.smithy.outputs.members }}
           fetched: $(date -u +%Y-%m-%d)
-          source: cfn=https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip smithy=[dynamic_provider_groups.aws_data_all] in ubiquex (sdk/providers/.ubx/config)
+          source: cfn=https://schema.cloudformation.us-east-1.amazonaws.com/CloudformationSchema.zip smithy=$SCHEMA_REPO's own manifest.json (published, UBI-222)
           EOF
 
-      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          python3 - <<PYEOF
-          import json, os
-
-          with open("sdk/typescript/deno.json") as fh:
-              cfg = json.load(fh)
-
-          exports = {}
-          for dirpath, _, filenames in os.walk("sdk/typescript/$REPO_NAME"):
-              for f in sorted(filenames):
-                  if not f.endswith(".ts"):
-                      continue
-                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
-                  exports["./" + rel[:-3]] = "./" + rel
-
-          cfg["exports"] = exports
-
-          with open("sdk/typescript/deno.json", "w") as fh:
-              json.dump(cfg, fh, indent=2)
-              fh.write("\n")
-
-          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
-          PYEOF
-
       - name: Regenerate sdk/go/go.sum
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         run: |
           set -euo pipefail
           cd sdk/go
           go mod tidy
 
       - name: Sanity-check the regenerated Go tree still builds
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         run: |
           set -euo pipefail
           cd sdk/go
           go build ./...
           go vet ./...
 
-      - name: Sanity-check the regenerated TS tree still typechecks
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          cd sdk/typescript
-          find . -name "*.ts" -print0 | xargs -0 deno cache
-          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
-
-      - name: Sanity-check the regenerated Python tree -- real import of every module
-        if: steps.compare.outputs.newer == 'true'
-        env:
-          PYTHONDONTWRITEBYTECODE: "1"
-        run: |
-          set -euo pipefail
-          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
-          pip install $deps
-          python3 - <<'PYEOF'
-          import os, sys, importlib
-
-          repo_root = os.path.join(os.getcwd(), "sdk", "python")
-          sys.path.insert(0, repo_root)
-
-          count = 0
-          errors = []
-          for dirpath, dirnames, filenames in os.walk(repo_root):
-              for f in filenames:
-                  if not f.endswith(".py"):
-                      continue
-                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
-                  mod = rel[:-3].replace(os.sep, ".")
-                  if mod.endswith(".__init__"):
-                      mod = mod[: -len(".__init__")]
-                  try:
-                      importlib.import_module(mod)
-                      count += 1
-                  except Exception as e:
-                      errors.append((mod, str(e)))
-
-          print(f"imported {count} modules OK")
-          if errors:
-              print(f"{len(errors)} ERRORS:")
-              for m, e in errors:
-                  print(f"  {m}: {e}")
-              sys.exit(1)
-          print("ZERO errors")
-          PYEOF
-
-      - name: Open PR
-        if: steps.compare.outputs.newer == 'true'
+      - name: Open PR (CFN-half regeneration only)
+        if: steps.compare.outputs.state == 'drift' && steps.cfn.outputs.hash != steps.compare.outputs.current_cfn
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           git config user.name "ubx-bot"
           git config user.email "actions@users.noreply.github.com"
-          short="$(echo "${{ steps.cfn.outputs.hash }}${{ steps.smithy.outputs.hash }}" | sha256sum | cut -c1-12)"
-          branch="sdk-regen/aws-$short"
+          short="$(echo "${{ steps.cfn.outputs.hash }}" | cut -c1-12)"
+          branch="sdk-regen/aws-cfn-$short"
           git checkout -b "$branch"
           git add -A
-          git commit -m "sdk: regenerate from aws_data_all (CFN + Smithy) $short"
+          git commit -m "sdk: regenerate CFN half from spec-sha256 $short"
           git push origin "$branch" --force
           gh pr create \
-            --title "sdk: regenerate from aws_data_all (CFN + Smithy) $short" \
-            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on AWS's CloudFormation registry and/or one or more of aws_data_all's real Smithy members -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR via a single \`--only aws_data_all\` invocation per language, which covers both the CFN resource half and the Smithy data-source half.
-
-          Previous spec-sha256: \`${{ steps.compare.outputs.current_cfn }}\`
-          New spec-sha256: \`${{ steps.cfn.outputs.hash }}\`
-
-          Previous smithy-merged-spec-sha256: \`${{ steps.compare.outputs.current_smithy_hash }}\` (${{ steps.compare.outputs.current_smithy_members }} members)
-          New smithy-merged-spec-sha256: \`${{ steps.smithy.outputs.hash }}\` (${{ steps.smithy.outputs.members }} members)
-
-          New files = new resource/data source. Modified files = an existing one's schema changed. Removed files = dropped out of the corpus. This never auto-merges -- review the diff before merging." \
+            --title "sdk: regenerate CFN half from spec-sha256 $short" \
+            --body "Automated CFN-half regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on the real, live AWS CloudFormation registry. The Smithy half's own drift, if any, is reported separately -- see this run's own tracking issue, it does not regenerate automatically. This never auto-merges." \
             --base main --head "$branch"
+
+      - name: Fail this run's own status on error, so it never shows green by accident
+        if: steps.compare.outputs.state == 'error'
+        run: |
+          echo "state: error -- ${{ steps.compare.outputs.detail }}"
+          exit 1
