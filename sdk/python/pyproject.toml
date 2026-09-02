@@ -1,6 +1,6 @@
 [project]
 name = "ubx-sdk-aws"
-version = "2.2.0"
+version = "2.2.1"
 description = "Generated Python bindings for aws@dynamic (ubx sdk gen). DO NOT EDIT."
 dependencies = ["ubx_sdk>=0.2.0,<0.3.0"]
 
