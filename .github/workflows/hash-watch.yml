@@ -331,8 +331,21 @@ jobs:
           own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
           own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
 
+          # UBI-240 slice 6: artifacts/aws/ now lives in this repo
+          # (moved out of ubiquex-docs) -- an absolute path, captured
+          # here while $PWD is still this repo's own root, before the
+          # sdk gen invocation below cd's into sdk/providers. Until
+          # ubiquex's own sdk/providers/.ubx/config drops
+          # [dynamic_providers.aws.descriptions] (a separate,
+          # sequenced change -- see that PR), that central config's own
+          # pin still takes priority over this explicit flag
+          # (resolveDescriptionsDir's own real precedence), so this is
+          # a safe, harmless no-op until the pin is actually removed,
+          # not a race.
+          descriptions_dir="$PWD/artifacts/aws"
+
           for lang in go ts py; do
-            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$REPO_NAME" --lang "$lang" --out "$gendir/out" --require-clean-provenance )
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$REPO_NAME" --lang "$lang" --out "$gendir/out" --descriptions-dir "$descriptions_dir" --require-clean-provenance )
           done
 
           cp "$gendir/out/$REPO_NAME/PROVENANCE.json" PROVENANCE.json
