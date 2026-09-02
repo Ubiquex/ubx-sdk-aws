@@ -1,0 +1,5135 @@
+{
+ "overrides": {
+  "aws_access_analyzer_analyzer": {
+   "label": "AWS IAM Access Analyzer"
+  },
+  "aws_access_analyzer_archive_rule": {
+   "label": "AWS IAM Access Analyzer"
+  },
+  "aws_account_access_application": {
+   "label": "Account Access"
+  },
+  "aws_account_access_entitlement": {
+   "label": "Account Access"
+  },
+  "aws_acmpca_certificate": {
+   "label": "AWS Private Certificate Authority"
+  },
+  "aws_acmpca_certificate_authority": {
+   "label": "AWS Private Certificate Authority"
+  },
+  "aws_acmpca_certificate_authority_activation": {
+   "label": "AWS Private Certificate Authority"
+  },
+  "aws_acmpca_permission": {
+   "label": "AWS Private Certificate Authority"
+  },
+  "aws_agent_registry_registry": {
+   "label": "Agent Registry"
+  },
+  "aws_agent_registry_registry_record": {
+   "label": "Agent Registry"
+  },
+  "aws_aiops_investigation_group": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_amazon_mq_broker": {
+   "label": "Amazon MQ"
+  },
+  "aws_amazon_mq_configuration": {
+   "label": "Amazon MQ"
+  },
+  "aws_amazon_mq_configuration_association": {
+   "label": "Amazon MQ"
+  },
+  "aws_amplify_app": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_branch": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_domain": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_uibuilder_component": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_uibuilder_form": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_uibuilder_theme": {
+   "label": "AWS Amplify"
+  },
+  "aws_amplify_webhook": {
+   "label": "AWS Amplify"
+  },
+  "aws_api_gateway_account": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_api_key": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_authorizer": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_base_path_mapping": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_base_path_mapping_v2": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_client_certificate": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_deployment": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_documentation_part": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_documentation_version": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_domain_name": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_domain_name_access_association": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_domain_name_v2": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_gateway_response": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_method": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_model": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_request_validator": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_resource": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_rest_api": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_stage": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_usage_plan": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_usage_plan_key": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_api": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_api_gateway_managed_overrides": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_api_mapping": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_authorizer": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_deployment": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_domain_name": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_integration": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_integration_response": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_model": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_portal_product": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_route_response": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_routing_rule": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_stage": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_v2_vpc_link": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_api_gateway_vpc_link": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_app_config_application": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_configuration_profile": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_deployment": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_deployment_strategy": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_environment": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_experiment_definition": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_extension": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_extension_association": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_config_hosted_configuration_version": {
+   "label": "AWS AppConfig"
+  },
+  "aws_app_flow_connector": {
+   "label": "Amazon AppFlow"
+  },
+  "aws_app_flow_connector_profile": {
+   "label": "Amazon AppFlow"
+  },
+  "aws_app_flow_flow": {
+   "label": "Amazon AppFlow"
+  },
+  "aws_app_integrations_application": {
+   "label": "Amazon Connect App Integrations"
+  },
+  "aws_app_integrations_data_integration": {
+   "label": "Amazon Connect App Integrations"
+  },
+  "aws_app_integrations_event_integration": {
+   "label": "Amazon Connect App Integrations"
+  },
+  "aws_app_mesh_gateway_route": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_mesh_mesh": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_mesh_virtual_gateway": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_mesh_virtual_node": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_mesh_virtual_router": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_mesh_virtual_service": {
+   "label": "AWS App Mesh"
+  },
+  "aws_app_runner_auto_scaling_configuration": {
+   "label": "AWS App Runner"
+  },
+  "aws_app_runner_observability_configuration": {
+   "label": "AWS App Runner"
+  },
+  "aws_app_runner_service": {
+   "label": "AWS App Runner"
+  },
+  "aws_app_runner_vpc_connector": {
+   "label": "AWS App Runner"
+  },
+  "aws_app_runner_vpc_ingress_connection": {
+   "label": "AWS App Runner"
+  },
+  "aws_app_stream_app_block": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_app_block_builder": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_application": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_application_entitlement_association": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_application_fleet_association": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_directory_config": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_entitlement": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_fleet": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_image_builder": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_stack": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_stack_fleet_association": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_stack_user_association": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_stream_user": {
+   "label": "Amazon AppStream 2.0"
+  },
+  "aws_app_sync_api": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_api_cache": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_api_key": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_channel_namespace": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_data_source": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_domain_name": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_domain_name_api_association": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_function_configuration": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_graph_qlapi": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_graph_qlschema": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_resolver": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_source_api_association": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_sync_type": {
+   "label": "AWS AppSync"
+  },
+  "aws_app_test_test_case": {
+   "label": "AWS Mainframe Modernization"
+  },
+  "aws_application_auto_scaling_scalable_target": {
+   "label": "AWS Application Auto Scaling"
+  },
+  "aws_application_auto_scaling_scaling_policy": {
+   "label": "AWS Application Auto Scaling"
+  },
+  "aws_application_insights_application": {
+   "label": "Amazon CloudWatch Application Insights"
+  },
+  "aws_application_signals_discovery": {
+   "label": "Amazon CloudWatch Application Signals"
+  },
+  "aws_application_signals_grouping_configuration": {
+   "label": "Amazon CloudWatch Application Signals"
+  },
+  "aws_application_signals_service_level_objective": {
+   "label": "Amazon CloudWatch Application Signals"
+  },
+  "aws_aps_anomaly_detector": {
+   "label": "Amazon Managed Service for Prometheus"
+  },
+  "aws_aps_resource_policy": {
+   "label": "Amazon Managed Service for Prometheus"
+  },
+  "aws_aps_rule_groups_namespace": {
+   "label": "Amazon Managed Service for Prometheus"
+  },
+  "aws_aps_scraper": {
+   "label": "Amazon Managed Service for Prometheus"
+  },
+  "aws_aps_workspace": {
+   "label": "Amazon Managed Service for Prometheus"
+  },
+  "aws_arcregion_switch_plan": {
+   "label": "AWS Application Recovery Controller"
+  },
+  "aws_arczonal_shift_autoshift_observer_notification_status": {
+   "label": "AWS Application Recovery Controller"
+  },
+  "aws_arczonal_shift_zonal_autoshift_configuration": {
+   "label": "AWS Application Recovery Controller"
+  },
+  "aws_athena_capacity_reservation": {
+   "label": "Amazon Athena"
+  },
+  "aws_athena_data_catalog": {
+   "label": "Amazon Athena"
+  },
+  "aws_athena_named_query": {
+   "label": "Amazon Athena"
+  },
+  "aws_athena_prepared_statement": {
+   "label": "Amazon Athena"
+  },
+  "aws_athena_work_group": {
+   "label": "Amazon Athena"
+  },
+  "aws_audit_manager_assessment": {
+   "label": "AWS Audit Manager"
+  },
+  "aws_audit_manager_assessment_framework": {
+   "label": "AWS Audit Manager"
+  },
+  "aws_auto_scaling_auto_scaling_group": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_auto_scaling_lifecycle_hook": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_auto_scaling_plans_scaling_plan": {
+   "label": "AWS Auto Scaling"
+  },
+  "aws_auto_scaling_scaling_policy": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_auto_scaling_scheduled_action": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_auto_scaling_warm_pool": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_awsexternal_anthropic_workspace": {
+   "label": "AWS External Anthropic"
+  },
+  "aws_b2_bi_capability": {
+   "label": "AWS B2B Data Interchange"
+  },
+  "aws_b2_bi_partnership": {
+   "label": "AWS B2B Data Interchange"
+  },
+  "aws_b2_bi_profile": {
+   "label": "AWS B2B Data Interchange"
+  },
+  "aws_b2_bi_transformer": {
+   "label": "AWS B2B Data Interchange"
+  },
+  "aws_backup_framework": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_gateway_hypervisor": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_legal_hold": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_logically_air_gapped_backup_vault": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_plan": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_report_plan": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_restore_testing_plan": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_restore_testing_selection": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_selection": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_tiering_configuration": {
+   "label": "AWS Backup"
+  },
+  "aws_backup_vault": {
+   "label": "AWS Backup"
+  },
+  "aws_batch_compute_environment": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_consumable_resource": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_job_definition": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_job_queue": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_quota_share": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_scheduling_policy": {
+   "label": "AWS Batch"
+  },
+  "aws_batch_service_environment": {
+   "label": "AWS Batch"
+  },
+  "aws_bcm_dashboard": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_bcm_pricing_calculator_bill_scenario": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_bcmdata_exports_export": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_bedrock_agent": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_agent_alias": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_agent_core_api_key_credential_provider": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_browser_custom": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_browser_profile": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_capacity_provider": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_code_interpreter_custom": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_configuration_bundle": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_dataset": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_evaluator": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_gateway": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_gateway_rate_limit": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_gateway_rule": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_gateway_target": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_harness": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_harness_endpoint": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_memory": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_oauth2_credential_provider": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_online_evaluation_config": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_payment_connector": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_payment_credential_provider": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_payment_manager": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_policy": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_policy_engine": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_resource_policy": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_runtime": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_runtime_endpoint": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_agent_core_workload_identity": {
+   "label": "Amazon Bedrock AgentCore"
+  },
+  "aws_bedrock_application_inference_profile": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_automated_reasoning_policy": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_automated_reasoning_policy_version": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_blueprint": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_data_automation_library": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_data_automation_project": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_data_source": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_enforced_guardrail_configuration": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_flow": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_flow_alias": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_flow_version": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_guardrail": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_guardrail_version": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_intelligent_prompt_router": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_knowledge_base": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_knowledge_base_policy": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_mantle_project": {
+   "label": "Bedrock Mantle"
+  },
+  "aws_bedrock_prompt": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_prompt_version": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_resource_policy": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_bedrock_session": {
+   "label": "Amazon Bedrock"
+  },
+  "aws_billing_conductor_billing_group": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_billing_conductor_custom_line_item": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_billing_conductor_pricing_plan": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_billing_conductor_pricing_rule": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_billing_view": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_braket_spending_limit": {
+   "label": "Amazon Braket"
+  },
+  "aws_budgets_budget": {
+   "label": "AWS Budgets"
+  },
+  "aws_budgets_budgets_action": {
+   "label": "AWS Budgets"
+  },
+  "aws_cases_case": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cases_case_rule": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cases_domain": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cases_field": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cases_layout": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cases_template": {
+   "label": "Amazon Connect Cases"
+  },
+  "aws_cassandra_keyspace": {
+   "label": "Amazon Keyspaces (for Apache Cassandra)"
+  },
+  "aws_cassandra_table": {
+   "label": "Amazon Keyspaces (for Apache Cassandra)"
+  },
+  "aws_cassandra_type": {
+   "label": "Amazon Keyspaces (for Apache Cassandra)"
+  },
+  "aws_ce_anomaly_monitor": {
+   "label": "AWS Cost Explorer"
+  },
+  "aws_ce_anomaly_subscription": {
+   "label": "AWS Cost Explorer"
+  },
+  "aws_ce_cost_category": {
+   "label": "AWS Cost Explorer"
+  },
+  "aws_certificate_manager_account": {
+   "label": "AWS Certificate Manager"
+  },
+  "aws_certificate_manager_acme_domain_validation": {
+   "label": "AWS Certificate Manager"
+  },
+  "aws_certificate_manager_acme_endpoint": {
+   "label": "AWS Certificate Manager"
+  },
+  "aws_certificate_manager_acme_external_account_binding": {
+   "label": "AWS Certificate Manager"
+  },
+  "aws_certificate_manager_certificate": {
+   "label": "AWS Certificate Manager"
+  },
+  "aws_chatbot_custom_action": {
+   "label": "AWS Chatbot"
+  },
+  "aws_chatbot_microsoft_teams_channel_configuration": {
+   "label": "AWS Chatbot"
+  },
+  "aws_chatbot_slack_channel_configuration": {
+   "label": "AWS Chatbot"
+  },
+  "aws_chime_app_instance": {
+   "label": "Amazon Chime"
+  },
+  "aws_chime_app_instance_bot": {
+   "label": "Amazon Chime"
+  },
+  "aws_chime_app_instance_user": {
+   "label": "Amazon Chime"
+  },
+  "aws_chime_channel_flow": {
+   "label": "Amazon Chime"
+  },
+  "aws_clean_rooms_analysis_template": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_collaboration": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_configured_table": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_configured_table_association": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_id_mapping_table": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_id_namespace_association": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_intermediate_table": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_membership": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_ml_configured_model_algorithm": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_ml_configured_model_algorithm_association": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_ml_training_dataset": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_clean_rooms_privacy_budget_template": {
+   "label": "AWS Clean Rooms"
+  },
+  "aws_cloud9_environment_ec2": {
+   "label": "AWS Cloud9"
+  },
+  "aws_cloud_formation_change_set": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_custom_resource": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_generated_template": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_guard_hook": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_hook_default_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_hook_type_config": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_hook_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_lambda_hook": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_macro": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_module_default_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_module_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_public_type_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_publisher": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_resource_default_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_resource_version": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_stack": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_stack_set": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_type_activation": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_wait_condition": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_formation_wait_condition_handle": {
+   "label": "AWS CloudFormation"
+  },
+  "aws_cloud_front_anycast_ip_list": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_cache_policy": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_cloud_front_origin_access_identity": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_connection_function": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_connection_group": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_continuous_deployment_policy": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_distribution": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_distribution_tenant": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_function": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_key_group": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_key_value_store": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_monitoring_subscription": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_origin_access_control": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_origin_request_policy": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_public_key": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_realtime_log_config": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_response_headers_policy": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_streaming_distribution": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_trust_store": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_front_vpc_origin": {
+   "label": "Amazon CloudFront"
+  },
+  "aws_cloud_hsm_cluster": {
+   "label": "AWS CloudHSM"
+  },
+  "aws_cloud_trail_channel": {
+   "label": "AWS CloudTrail"
+  },
+  "aws_cloud_trail_dashboard": {
+   "label": "AWS CloudTrail"
+  },
+  "aws_cloud_trail_event_data_store": {
+   "label": "AWS CloudTrail"
+  },
+  "aws_cloud_trail_resource_policy": {
+   "label": "AWS CloudTrail"
+  },
+  "aws_cloud_trail_trail": {
+   "label": "AWS CloudTrail"
+  },
+  "aws_cloud_watch_alarm": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_alarm_mute_rule": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_anomaly_detector": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_composite_alarm": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_dashboard": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_insight_rule": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_log_alarm": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_metric_stream": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_cloud_watch_otel_enrichment": {
+   "label": "Amazon CloudWatch"
+  },
+  "aws_code_artifact_domain": {
+   "label": "AWS CodeArtifact"
+  },
+  "aws_code_artifact_package_group": {
+   "label": "AWS CodeArtifact"
+  },
+  "aws_code_artifact_repository": {
+   "label": "AWS CodeArtifact"
+  },
+  "aws_code_build_fleet": {
+   "label": "AWS CodeBuild"
+  },
+  "aws_code_build_project": {
+   "label": "AWS CodeBuild"
+  },
+  "aws_code_build_report_group": {
+   "label": "AWS CodeBuild"
+  },
+  "aws_code_build_source_credential": {
+   "label": "AWS CodeBuild"
+  },
+  "aws_code_commit_repository": {
+   "label": "AWS CodeCommit"
+  },
+  "aws_code_connections_connection": {
+   "label": "AWS CodeConnections"
+  },
+  "aws_code_connections_host": {
+   "label": "AWS CodeConnections"
+  },
+  "aws_code_deploy_application": {
+   "label": "AWS CodeDeploy"
+  },
+  "aws_code_deploy_deployment_config": {
+   "label": "AWS CodeDeploy"
+  },
+  "aws_code_deploy_deployment_group": {
+   "label": "AWS CodeDeploy"
+  },
+  "aws_code_guru_profiler_profiling_group": {
+   "label": "Amazon CodeGuru Profiler"
+  },
+  "aws_code_guru_reviewer_repository_association": {
+   "label": "Amazon CodeGuru Reviewer"
+  },
+  "aws_code_pipeline_custom_action_type": {
+   "label": "AWS CodePipeline"
+  },
+  "aws_code_pipeline_pipeline": {
+   "label": "AWS CodePipeline"
+  },
+  "aws_code_pipeline_webhook": {
+   "label": "AWS CodePipeline"
+  },
+  "aws_code_star_connections_connection": {
+   "label": "AWS CodeConnections"
+  },
+  "aws_code_star_connections_repository_link": {
+   "label": "AWS CodeConnections"
+  },
+  "aws_code_star_connections_sync_configuration": {
+   "label": "AWS CodeConnections"
+  },
+  "aws_code_star_git_hub_repository": {
+   "label": "AWS CodeStar"
+  },
+  "aws_code_star_notifications_notification_rule": {
+   "label": "AWS CodeStar Notifications"
+  },
+  "aws_cognito_identity_pool": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_identity_pool_principal_tag": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_identity_pool_role_attachment": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_log_delivery_configuration": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_managed_login_branding": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_terms": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_client": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_domain": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_group": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_identity_provider": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_regional_configuration_attachment": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_replica": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_resource_server": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_risk_configuration_attachment": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_uicustomization_attachment": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_user": {
+   "label": "Amazon Cognito"
+  },
+  "aws_cognito_user_pool_user_to_group_attachment": {
+   "label": "Amazon Cognito"
+  },
+  "aws_comprehend_document_classifier": {
+   "label": "Amazon Comprehend"
+  },
+  "aws_comprehend_flywheel": {
+   "label": "Amazon Comprehend"
+  },
+  "aws_compute_optimizer_automation_rule": {
+   "label": "AWS Compute Optimizer"
+  },
+  "aws_config_aggregation_authorization": {
+   "label": "AWS Config"
+  },
+  "aws_config_config_rule": {
+   "label": "AWS Config"
+  },
+  "aws_config_configuration_aggregator": {
+   "label": "AWS Config"
+  },
+  "aws_config_configuration_recorder": {
+   "label": "AWS Config"
+  },
+  "aws_config_conformance_pack": {
+   "label": "AWS Config"
+  },
+  "aws_config_connector": {
+   "label": "AWS Config"
+  },
+  "aws_config_delivery_channel": {
+   "label": "AWS Config"
+  },
+  "aws_config_organization_config_rule": {
+   "label": "AWS Config"
+  },
+  "aws_config_organization_conformance_pack": {
+   "label": "AWS Config"
+  },
+  "aws_config_remediation_configuration": {
+   "label": "AWS Config"
+  },
+  "aws_config_stored_query": {
+   "label": "AWS Config"
+  },
+  "aws_connect_agent_status": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_approved_origin": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_campaigns_campaign": {
+   "label": "Amazon Connect Outbound Campaigns"
+  },
+  "aws_connect_campaigns_v2_campaign": {
+   "label": "Amazon Connect Outbound Campaigns"
+  },
+  "aws_connect_contact_flow": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_contact_flow_module": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_contact_flow_module_alias": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_contact_flow_module_version": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_contact_flow_version": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_data_lake_association": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_data_table": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_data_table_attribute": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_data_table_record": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_email_address": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_evaluation_form": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_hours_of_operation": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_instance": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_instance_storage_config": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_integration_association": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_metric": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_notification": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_phone_number": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_predefined_attribute": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_prompt": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_queue": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_quick_connect": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_routing_profile": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_rule": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_security_key": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_security_profile": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_task_template": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_test_case": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_traffic_distribution_group": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_user": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_user_hierarchy_group": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_user_hierarchy_structure": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_view": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_view_version": {
+   "label": "Amazon Connect"
+  },
+  "aws_connect_workspace": {
+   "label": "Amazon Connect"
+  },
+  "aws_control_tower_enabled_baseline": {
+   "label": "AWS Control Tower"
+  },
+  "aws_control_tower_enabled_control": {
+   "label": "AWS Control Tower"
+  },
+  "aws_control_tower_landing_zone": {
+   "label": "AWS Control Tower"
+  },
+  "aws_cur_report_definition": {
+   "label": "AWS Cost and Usage Report"
+  },
+  "aws_customer_gateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_customer_profiles_calculated_attribute_definition": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_domain": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_domain_object_type": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_event_stream": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_event_trigger": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_integration": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_object_type": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_recommender": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_customer_profiles_segment_definition": {
+   "label": "Amazon Connect Customer Profiles"
+  },
+  "aws_data_brew_dataset": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_brew_job": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_brew_project": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_brew_recipe": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_brew_ruleset": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_brew_schedule": {
+   "label": "AWS Glue DataBrew"
+  },
+  "aws_data_exchange_data_set": {
+   "label": "AWS Data Exchange"
+  },
+  "aws_data_exchange_event_action": {
+   "label": "AWS Data Exchange"
+  },
+  "aws_data_pipeline_pipeline": {
+   "label": "AWS Data Pipeline"
+  },
+  "aws_data_sync_agent": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_azure_blob": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_efs": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_fsx_lustre": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_fsx_ontap": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_fsx_open_zfs": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_fsx_windows": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_hdfs": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_nfs": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_object_storage": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_s3": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_location_smb": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_sync_task": {
+   "label": "AWS DataSync"
+  },
+  "aws_data_zone_connection": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_data_source": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_domain": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_domain_unit": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_environment": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_environment_actions": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_environment_blueprint_configuration": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_environment_profile": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_form_type": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_group_profile": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_owner": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_policy_grant": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_project": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_project_membership": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_project_profile": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_subscription_target": {
+   "label": "Amazon DataZone"
+  },
+  "aws_data_zone_user_profile": {
+   "label": "Amazon DataZone"
+  },
+  "aws_dax_cluster": {
+   "label": "Amazon DynamoDB Accelerator (DAX)"
+  },
+  "aws_dax_parameter_group": {
+   "label": "Amazon DynamoDB Accelerator (DAX)"
+  },
+  "aws_dax_subnet_group": {
+   "label": "Amazon DynamoDB Accelerator (DAX)"
+  },
+  "aws_deadline_budget": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_farm": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_fleet": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_license_endpoint": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_limit": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_metered_product": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_monitor": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_queue": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_queue_environment": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_queue_fleet_association": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_queue_limit_association": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_storage_profile": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_deadline_worker": {
+   "label": "AWS Deadline Cloud"
+  },
+  "aws_detective_graph": {
+   "label": "Amazon Detective"
+  },
+  "aws_detective_member_invitation": {
+   "label": "Amazon Detective"
+  },
+  "aws_detective_organization_admin": {
+   "label": "Amazon Detective"
+  },
+  "aws_dev_ops_agent_agent_space": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_agent_asset": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_agent_association": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_agent_private_connection": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_agent_service": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_agent_trigger": {
+   "label": "Amazon Q Developer"
+  },
+  "aws_dev_ops_guru_log_anomaly_detection_integration": {
+   "label": "Amazon DevOps Guru"
+  },
+  "aws_dev_ops_guru_notification_channel": {
+   "label": "Amazon DevOps Guru"
+  },
+  "aws_dev_ops_guru_resource_collection": {
+   "label": "Amazon DevOps Guru"
+  },
+  "aws_direct_connect_connection": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_direct_connect_gateway": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_direct_connect_gateway_association": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_lag": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_private_virtual_interface": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_public_virtual_interface": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_direct_connect_transit_virtual_interface": {
+   "label": "AWS Direct Connect"
+  },
+  "aws_directory_service_microsoft_ad": {
+   "label": "AWS Directory Service"
+  },
+  "aws_directory_service_simple_ad": {
+   "label": "AWS Directory Service"
+  },
+  "aws_dlm_lifecycle_policy": {
+   "label": "Amazon Data Lifecycle Manager"
+  },
+  "aws_dms_certificate": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_data_migration": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_data_provider": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_endpoint": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_event_subscription": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_instance_profile": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_migration_project": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_replication_config": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_replication_instance": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_replication_subnet_group": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_dms_replication_task": {
+   "label": "AWS Database Migration Service"
+  },
+  "aws_doc_db_dbcluster": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_db_dbcluster_parameter_group": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_db_dbinstance": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_db_dbsubnet_group": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_db_event_subscription": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_db_global_cluster": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_doc_dbelastic_cluster": {
+   "label": "Amazon DocumentDB"
+  },
+  "aws_drs_source_network": {
+   "label": "AWS Elastic Disaster Recovery"
+  },
+  "aws_dsql_cluster": {
+   "label": "Amazon Aurora DSQL"
+  },
+  "aws_dynamo_db_backup": {
+   "label": "Amazon DynamoDB"
+  },
+  "aws_dynamo_db_global_table": {
+   "label": "Amazon DynamoDB"
+  },
+  "aws_dynamo_db_table": {
+   "label": "Amazon DynamoDB"
+  },
+  "aws_ec2_capacity_manager_data_export": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_capacity_reservation": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_capacity_reservation_fleet": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_carrier_gateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_client_vpn_authorization_rule": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_client_vpn_endpoint": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_client_vpn_route": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_client_vpn_target_network_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_dhcpoptions": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_eipassociation": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_enclave_certificate_iam_role_association": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_fleet": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_gateway_route_table_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_host": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_instance_connect_endpoint": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ip_pool_route_table_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipam": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamallocation": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipampool": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipampool_cidr": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamprefix_list_resolver": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamprefix_list_resolver_target": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamresource_discovery": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamresource_discovery_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_ipamscope": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_route": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_route_table": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_route_table_virtual_interface_group_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_route_table_vpcassociation": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_virtual_interface": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_local_gateway_virtual_interface_group": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_acl_entry": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_insights_access_scope": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_insights_access_scope_analysis": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_insights_analysis": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_insights_path": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_network_performance_metric_subscription": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_prefix_list": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_route_server": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_route_server_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_route_server_endpoint": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_route_server_peer": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_route_server_propagation": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_security_group_egress": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_security_group_ingress": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_security_group_vpc_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_snapshot_block_public_access": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_spot_fleet": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_sql_ha_standby_detected_instance": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_subnet_cidr_block": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_subnet_network_acl_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_subnet_route_table_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_traffic_mirror_filter": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_traffic_mirror_filter_rule": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_traffic_mirror_session": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_traffic_mirror_target": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_transit_gateway": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_attachment": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_connect": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_connect_peer": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_metering_policy": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_metering_policy_entry": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_multicast_domain": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_multicast_domain_association": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_multicast_group_member": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_multicast_group_source": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_peering_attachment": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_policy_table": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_policy_table_association": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_policy_table_entry": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_route": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_route_table": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_route_table_association": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_route_table_propagation": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_transit_gateway_vpc_attachment": {
+   "label": "AWS Transit Gateway"
+  },
+  "aws_ec2_verified_access_endpoint": {
+   "label": "AWS Verified Access"
+  },
+  "aws_ec2_verified_access_group": {
+   "label": "AWS Verified Access"
+  },
+  "aws_ec2_verified_access_instance": {
+   "label": "AWS Verified Access"
+  },
+  "aws_ec2_verified_access_trust_provider": {
+   "label": "AWS Verified Access"
+  },
+  "aws_ec2_volume": {
+   "label": "Amazon EC2"
+  },
+  "aws_ec2_vpcblock_public_access_exclusion": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcblock_public_access_options": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpccidr_block": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcdhcpoptions_association": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcencryption_control": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcendpoint": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcendpoint_connection_notification": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcendpoint_service": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcendpoint_service_permissions": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcgateway_attachment": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpcpeering_connection": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpnconcentrator": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpnconnection": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpnconnection_route": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpngateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_ec2_vpngateway_route_propagation": {
+   "label": "Amazon VPC"
+  },
+  "aws_ecr_public_repository": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_pull_through_cache_rule": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_pull_time_update_exclusion": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_registry_policy": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_registry_scanning_configuration": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_replication_configuration": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_repository": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_repository_creation_template": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecr_signing_configuration": {
+   "label": "Amazon Elastic Container Registry"
+  },
+  "aws_ecs_capacity_provider": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_cluster": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_cluster_capacity_provider_associations": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_daemon": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_daemon_task_definition": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_express_gateway_service": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_primary_task_set": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_service": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_task_definition": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_ecs_task_set": {
+   "label": "Amazon Elastic Container Service"
+  },
+  "aws_efs_access_point": {
+   "label": "Amazon Elastic File System"
+  },
+  "aws_efs_file_system": {
+   "label": "Amazon Elastic File System"
+  },
+  "aws_efs_mount_target": {
+   "label": "Amazon Elastic File System"
+  },
+  "aws_egress_only_internet_gateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_eip": {
+   "label": "Amazon VPC"
+  },
+  "aws_eks_access_entry": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_addon": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_capability": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_certificate_authority": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_cluster": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_fargate_profile": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_identity_provider_config": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_nodegroup": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_eks_pod_identity_association": {
+   "label": "Amazon Elastic Kubernetes Service"
+  },
+  "aws_elasti_cache_cache_cluster": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_global_replication_group": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_parameter_group": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_replication_group": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_security_group_ingress": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_serverless_cache": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_serverless_cache_snapshot": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_subnet_group": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_user": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elasti_cache_user_group": {
+   "label": "Amazon ElastiCache"
+  },
+  "aws_elastic_beanstalk_application": {
+   "label": "AWS Elastic Beanstalk"
+  },
+  "aws_elastic_beanstalk_application_version": {
+   "label": "AWS Elastic Beanstalk"
+  },
+  "aws_elastic_beanstalk_configuration_template": {
+   "label": "AWS Elastic Beanstalk"
+  },
+  "aws_elastic_beanstalk_environment": {
+   "label": "AWS Elastic Beanstalk"
+  },
+  "aws_elastic_load_balancing_load_balancer": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_listener": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_listener_certificate": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_listener_rule": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_load_balancer": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_target_group": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_trust_store": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elastic_load_balancing_v2_trust_store_revocation": {
+   "label": "Elastic Load Balancing"
+  },
+  "aws_elasticsearch_domain": {
+   "label": "Amazon OpenSearch Service"
+  },
+  "aws_elemental_inference_dictionary": {
+   "label": "Elemental Inference"
+  },
+  "aws_elemental_inference_feed": {
+   "label": "Elemental Inference"
+  },
+  "aws_emr_cluster": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_instance_fleet_config": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_instance_group_config": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_security_configuration": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_step": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_studio": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_studio_session_mapping": {
+   "label": "Amazon EMR"
+  },
+  "aws_emr_walworkspace": {
+   "label": "Amazon EMR"
+  },
+  "aws_emrcontainers_endpoint": {
+   "label": "Amazon EMR"
+  },
+  "aws_emrcontainers_security_configuration": {
+   "label": "Amazon EMR"
+  },
+  "aws_emrcontainers_virtual_cluster": {
+   "label": "Amazon EMR"
+  },
+  "aws_emrserverless_application": {
+   "label": "Amazon EMR Serverless"
+  },
+  "aws_entity_resolution_id_mapping_workflow": {
+   "label": "AWS Entity Resolution"
+  },
+  "aws_entity_resolution_id_namespace": {
+   "label": "AWS Entity Resolution"
+  },
+  "aws_entity_resolution_matching_workflow": {
+   "label": "AWS Entity Resolution"
+  },
+  "aws_entity_resolution_policy_statement": {
+   "label": "AWS Entity Resolution"
+  },
+  "aws_entity_resolution_schema_mapping": {
+   "label": "AWS Entity Resolution"
+  },
+  "aws_event_schemas_discoverer": {
+   "label": "Amazon EventBridge Schema Registry"
+  },
+  "aws_event_schemas_registry": {
+   "label": "Amazon EventBridge Schema Registry"
+  },
+  "aws_event_schemas_registry_policy": {
+   "label": "Amazon EventBridge Schema Registry"
+  },
+  "aws_event_schemas_schema": {
+   "label": "Amazon EventBridge Schema Registry"
+  },
+  "aws_events_api_destination": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_archive": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_connection": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_endpoint": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_event_bus": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_event_bus_policy": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_events_rule": {
+   "label": "Amazon EventBridge"
+  },
+  "aws_evidently_experiment": {
+   "label": "Amazon CloudWatch Evidently"
+  },
+  "aws_evidently_feature": {
+   "label": "Amazon CloudWatch Evidently"
+  },
+  "aws_evidently_launch": {
+   "label": "Amazon CloudWatch Evidently"
+  },
+  "aws_evidently_project": {
+   "label": "Amazon CloudWatch Evidently"
+  },
+  "aws_evidently_segment": {
+   "label": "Amazon CloudWatch Evidently"
+  },
+  "aws_evs_environment": {
+   "label": "Amazon Elastic VMware Service"
+  },
+  "aws_fin_space_environment": {
+   "label": "Amazon FinSpace"
+  },
+  "aws_fis_experiment_template": {
+   "label": "AWS Fault Injection Service"
+  },
+  "aws_fis_target_account_configuration": {
+   "label": "AWS Fault Injection Service"
+  },
+  "aws_flow_log": {
+   "label": "Amazon VPC"
+  },
+  "aws_fms_notification_channel": {
+   "label": "AWS Firewall Manager"
+  },
+  "aws_fms_policy": {
+   "label": "AWS Firewall Manager"
+  },
+  "aws_fms_resource_set": {
+   "label": "AWS Firewall Manager"
+  },
+  "aws_forecast_dataset": {
+   "label": "Amazon Forecast"
+  },
+  "aws_forecast_dataset_group": {
+   "label": "Amazon Forecast"
+  },
+  "aws_fraud_detector_detector": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_entity_type": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_event_type": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_label": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_list": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_outcome": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fraud_detector_variable": {
+   "label": "Amazon Fraud Detector"
+  },
+  "aws_fsx_data_repository_association": {
+   "label": "Amazon FSx"
+  },
+  "aws_fsx_file_system": {
+   "label": "Amazon FSx"
+  },
+  "aws_fsx_s3_access_point_attachment": {
+   "label": "Amazon FSx"
+  },
+  "aws_fsx_snapshot": {
+   "label": "Amazon FSx"
+  },
+  "aws_fsx_storage_virtual_machine": {
+   "label": "Amazon FSx"
+  },
+  "aws_fsx_volume": {
+   "label": "Amazon FSx"
+  },
+  "aws_game_lift_alias": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_build": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_container_fleet": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_container_group_definition": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_fleet": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_game_server_group": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_game_session_queue": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_location": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_matchmaking_configuration": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_matchmaking_rule_set": {
+   "label": "Amazon GameLift"
+  },
+  "aws_game_lift_script": {
+   "label": "Amazon GameLift"
+  },
+  "aws_global_accelerator_accelerator": {
+   "label": "AWS Global Accelerator"
+  },
+  "aws_global_accelerator_cross_account_attachment": {
+   "label": "AWS Global Accelerator"
+  },
+  "aws_global_accelerator_endpoint_group": {
+   "label": "AWS Global Accelerator"
+  },
+  "aws_global_accelerator_listener": {
+   "label": "AWS Global Accelerator"
+  },
+  "aws_glue_blueprint": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_catalog": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_classifier": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_connection": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_crawler": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_custom_entity_type": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_data_catalog_encryption_settings": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_data_quality_ruleset": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_database": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_dev_endpoint": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_identity_center_configuration": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_integration": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_integration_resource_property": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_job": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_mltransform": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_partition": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_registry": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_schema": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_schema_version": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_schema_version_metadata": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_security_configuration": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_session": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_table": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_table_optimizer": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_trigger": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_usage_profile": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_user_defined_function": {
+   "label": "AWS Glue"
+  },
+  "aws_glue_workflow": {
+   "label": "AWS Glue"
+  },
+  "aws_grafana_workspace": {
+   "label": "Amazon Managed Grafana"
+  },
+  "aws_greengrass_connector_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_connector_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_core_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_core_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_device_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_device_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_function_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_function_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_group": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_group_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_logger_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_logger_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_resource_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_resource_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_subscription_definition": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_subscription_definition_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_v2_component_version": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_greengrass_v2_deployment": {
+   "label": "AWS IoT Greengrass"
+  },
+  "aws_ground_station_config": {
+   "label": "AWS Ground Station"
+  },
+  "aws_ground_station_dataflow_endpoint_group": {
+   "label": "AWS Ground Station"
+  },
+  "aws_ground_station_dataflow_endpoint_group_v2": {
+   "label": "AWS Ground Station"
+  },
+  "aws_ground_station_mission_profile": {
+   "label": "AWS Ground Station"
+  },
+  "aws_guard_duty_custom_detection_rule_association": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_detector": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_filter": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_ipset": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_malware_protection_plan": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_master": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_member": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_publishing_destination": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_threat_entity_set": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_threat_intel_set": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_guard_duty_trusted_entity_set": {
+   "label": "Amazon GuardDuty"
+  },
+  "aws_health_imaging_datastore": {
+   "label": "AWS HealthImaging"
+  },
+  "aws_health_lake_data_transformation_profile": {
+   "label": "AWS HealthLake"
+  },
+  "aws_health_lake_fhirdatastore": {
+   "label": "AWS HealthLake"
+  },
+  "aws_iam_access_key": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_group": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_group_policy": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_instance_profile": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_managed_policy": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_oidcprovider": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_policy": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_role": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_role_policy": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_samlprovider": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_server_certificate": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_service_linked_role": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_user": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_user_policy": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_user_to_group_addition": {
+   "label": "AWS IAM"
+  },
+  "aws_iam_virtual_mfadevice": {
+   "label": "AWS IAM"
+  },
+  "aws_identity_store_group": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_identity_store_group_membership": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_image_builder_component": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_container_recipe": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_distribution_configuration": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_image": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_image_pipeline": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_image_recipe": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_infrastructure_configuration": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_lifecycle_policy": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_image_builder_workflow": {
+   "label": "EC2 Image Builder"
+  },
+  "aws_inspector_assessment_target": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_assessment_template": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_resource_group": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_v2_cis_scan_configuration": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_v2_code_security_integration": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_v2_code_security_scan_configuration": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_v2_connector": {
+   "label": "Amazon Inspector"
+  },
+  "aws_inspector_v2_filter": {
+   "label": "Amazon Inspector"
+  },
+  "aws_instance": {
+   "label": "Amazon EC2"
+  },
+  "aws_interconnect_connection": {
+   "label": "Interconnect"
+  },
+  "aws_internet_gateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_internet_monitor_monitor": {
+   "label": "Amazon CloudWatch Internet Monitor"
+  },
+  "aws_invoicing_invoice_unit": {
+   "label": "AWS Billing and Cost Management"
+  },
+  "aws_io_t_account_audit_configuration": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_authorizer": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_billing_group": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_cacertificate": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_certificate": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_certificate_provider": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_command": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_custom_metric": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_dimension": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_domain_configuration": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_encryption_configuration": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_fleet_metric": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_job": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_job_template": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_logging": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_mitigation_action": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_policy": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_policy_principal_attachment": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_provisioning_template": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_resource_specific_logging": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_role_alias": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_scheduled_audit": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_security_profile": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_software_package": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_software_package_version": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_stream": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_thing": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_thing_group": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_thing_principal_attachment": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_thing_type": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_topic_rule": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_t_topic_rule_destination": {
+   "label": "AWS IoT Core"
+  },
+  "aws_io_tanalytics_channel": {
+   "label": "AWS IoT Analytics"
+  },
+  "aws_io_tanalytics_dataset": {
+   "label": "AWS IoT Analytics"
+  },
+  "aws_io_tanalytics_datastore": {
+   "label": "AWS IoT Analytics"
+  },
+  "aws_io_tanalytics_pipeline": {
+   "label": "AWS IoT Analytics"
+  },
+  "aws_io_tcore_device_advisor_suite_definition": {
+   "label": "AWS IoT Device Advisor"
+  },
+  "aws_io_tevents_alarm_model": {
+   "label": "AWS IoT Events"
+  },
+  "aws_io_tevents_detector_model": {
+   "label": "AWS IoT Events"
+  },
+  "aws_io_tevents_input": {
+   "label": "AWS IoT Events"
+  },
+  "aws_io_tfleet_wise_campaign": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_decoder_manifest": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_fleet": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_model_manifest": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_signal_catalog": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_state_template": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tfleet_wise_vehicle": {
+   "label": "AWS IoT FleetWise"
+  },
+  "aws_io_tsecure_tunneling_tunnel": {
+   "label": "AWS IoT Secure Tunneling"
+  },
+  "aws_io_tsite_wise_access_policy": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_asset": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_asset_model": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_computation_model": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_dashboard": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_dataset": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_gateway": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_portal": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tsite_wise_project": {
+   "label": "AWS IoT SiteWise"
+  },
+  "aws_io_tthings_graph_flow_template": {
+   "label": "AWS IoT Things Graph"
+  },
+  "aws_io_ttwin_maker_component_type": {
+   "label": "AWS IoT TwinMaker"
+  },
+  "aws_io_ttwin_maker_entity": {
+   "label": "AWS IoT TwinMaker"
+  },
+  "aws_io_ttwin_maker_scene": {
+   "label": "AWS IoT TwinMaker"
+  },
+  "aws_io_ttwin_maker_sync_job": {
+   "label": "AWS IoT TwinMaker"
+  },
+  "aws_io_ttwin_maker_workspace": {
+   "label": "AWS IoT TwinMaker"
+  },
+  "aws_io_twireless_destination": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_device_profile": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_fuota_task": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_multicast_group": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_network_analyzer_configuration": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_partner_account": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_service_profile": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_task_definition": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_wireless_device": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_wireless_device_import_task": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_io_twireless_wireless_gateway": {
+   "label": "AWS IoT Wireless"
+  },
+  "aws_ivs_channel": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_encoder_configuration": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_ingest_configuration": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_playback_key_pair": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_playback_restriction_policy": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_public_key": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_recording_configuration": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_stage": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_storage_configuration": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivs_stream_key": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivschat_logging_configuration": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_ivschat_room": {
+   "label": "Amazon Interactive Video Service (IVS)"
+  },
+  "aws_kafka_connect_connector": {
+   "label": "Amazon Managed Streaming for Apache Kafka Connect"
+  },
+  "aws_kafka_connect_custom_plugin": {
+   "label": "Amazon Managed Streaming for Apache Kafka Connect"
+  },
+  "aws_kafka_connect_worker_configuration": {
+   "label": "Amazon Managed Streaming for Apache Kafka Connect"
+  },
+  "aws_kendra_data_source": {
+   "label": "Amazon Kendra"
+  },
+  "aws_kendra_faq": {
+   "label": "Amazon Kendra"
+  },
+  "aws_kendra_index": {
+   "label": "Amazon Kendra"
+  },
+  "aws_kendra_query_suggestions_block_list": {
+   "label": "Amazon Kendra"
+  },
+  "aws_kendra_ranking_execution_plan": {
+   "label": "Amazon Kendra"
+  },
+  "aws_kendra_thesaurus": {
+   "label": "Amazon Kendra"
+  },
+  "aws_key_pair": {
+   "label": "Amazon EC2"
+  },
+  "aws_kinesis_analytics_application": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_application_output": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_application_reference_data_source": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_v2_application": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_v2_application_cloud_watch_logging_option": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_v2_application_output": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_analytics_v2_application_reference_data_source": {
+   "label": "Amazon Managed Service for Apache Flink"
+  },
+  "aws_kinesis_firehose_delivery_stream": {
+   "label": "Amazon Data Firehose"
+  },
+  "aws_kinesis_resource_policy": {
+   "label": "Amazon Kinesis Data Streams"
+  },
+  "aws_kinesis_stream": {
+   "label": "Amazon Kinesis Data Streams"
+  },
+  "aws_kinesis_stream_consumer": {
+   "label": "Amazon Kinesis Data Streams"
+  },
+  "aws_kinesis_video_signaling_channel": {
+   "label": "Amazon Kinesis Video Streams"
+  },
+  "aws_kinesis_video_stream": {
+   "label": "Amazon Kinesis Video Streams"
+  },
+  "aws_kms_alias": {
+   "label": "AWS Key Management Service"
+  },
+  "aws_kms_key": {
+   "label": "AWS Key Management Service"
+  },
+  "aws_kms_replica_key": {
+   "label": "AWS Key Management Service"
+  },
+  "aws_lake_formation_data_cells_filter": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_data_lake_settings": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_permissions": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_principal_permissions": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_resource": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_tag": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lake_formation_tag_association": {
+   "label": "AWS Lake Formation"
+  },
+  "aws_lambda_alias": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_capacity_provider": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_code_signing_config": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_event_invoke_config": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_event_source_mapping": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_function": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_layer_version": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_layer_version_permission": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_microvm_image": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_network_connector": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_permission": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_resource_policy": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_url": {
+   "label": "AWS Lambda"
+  },
+  "aws_lambda_version": {
+   "label": "AWS Lambda"
+  },
+  "aws_launch_configuration": {
+   "label": "Amazon EC2 Auto Scaling"
+  },
+  "aws_launch_template": {
+   "label": "Amazon EC2"
+  },
+  "aws_launch_wizard_deployment": {
+   "label": "AWS Launch Wizard"
+  },
+  "aws_lex_bot": {
+   "label": "Amazon Lex"
+  },
+  "aws_lex_bot_alias": {
+   "label": "Amazon Lex"
+  },
+  "aws_lex_bot_version": {
+   "label": "Amazon Lex"
+  },
+  "aws_lex_resource_policy": {
+   "label": "Amazon Lex"
+  },
+  "aws_license_manager_grant": {
+   "label": "AWS License Manager"
+  },
+  "aws_license_manager_license": {
+   "label": "AWS License Manager"
+  },
+  "aws_license_manager_license_asset_rule_set": {
+   "label": "AWS License Manager"
+  },
+  "aws_lightsail_alarm": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_bucket": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_certificate": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_container": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_database": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_database_snapshot": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_disk": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_disk_snapshot": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_distribution": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_domain": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_instance": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_instance_snapshot": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_load_balancer": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_load_balancer_tls_certificate": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_lightsail_static_ip": {
+   "label": "Amazon Lightsail"
+  },
+  "aws_location_apikey": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_geofence_collection": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_map": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_place_index": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_route_calculator": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_tracker": {
+   "label": "Amazon Location Service"
+  },
+  "aws_location_tracker_consumer": {
+   "label": "Amazon Location Service"
+  },
+  "aws_logs_account_policy": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_delivery": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_delivery_destination": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_delivery_source": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_destination": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_integration": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_log_anomaly_detector": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_log_group": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_log_stream": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_metric_filter": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_query_definition": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_resource_policy": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_scheduled_query": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_storage_tier_policy": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_subscription_filter": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_logs_transformer": {
+   "label": "Amazon CloudWatch Logs"
+  },
+  "aws_lookout_equipment_inference_scheduler": {
+   "label": "Amazon Lookout for Equipment"
+  },
+  "aws_lookout_vision_project": {
+   "label": "Amazon Lookout for Vision"
+  },
+  "aws_m2_application": {
+   "label": "AWS Mainframe Modernization"
+  },
+  "aws_m2_deployment": {
+   "label": "AWS Mainframe Modernization"
+  },
+  "aws_m2_environment": {
+   "label": "AWS Mainframe Modernization"
+  },
+  "aws_macie_allow_list": {
+   "label": "Amazon Macie"
+  },
+  "aws_macie_custom_data_identifier": {
+   "label": "Amazon Macie"
+  },
+  "aws_macie_findings_filter": {
+   "label": "Amazon Macie"
+  },
+  "aws_macie_session": {
+   "label": "Amazon Macie"
+  },
+  "aws_managed_blockchain_accessor": {
+   "label": "Amazon Managed Blockchain"
+  },
+  "aws_managed_blockchain_member": {
+   "label": "Amazon Managed Blockchain"
+  },
+  "aws_managed_blockchain_node": {
+   "label": "Amazon Managed Blockchain"
+  },
+  "aws_media_connect_bridge": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_bridge_output": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_bridge_source": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_flow": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_flow_entitlement": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_flow_output": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_flow_source": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_flow_vpc_interface": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_gateway": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_router_input": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_router_network_interface": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_connect_router_output": {
+   "label": "AWS Elemental MediaConnect"
+  },
+  "aws_media_convert_job_template": {
+   "label": "AWS Elemental MediaConvert"
+  },
+  "aws_media_convert_preset": {
+   "label": "AWS Elemental MediaConvert"
+  },
+  "aws_media_convert_queue": {
+   "label": "AWS Elemental MediaConvert"
+  },
+  "aws_media_live_channel": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_channel_placement_group": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_cloud_watch_alarm_template": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_cloud_watch_alarm_template_group": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_cluster": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_event_bridge_rule_template": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_event_bridge_rule_template_group": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_input": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_input_security_group": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_multiplex": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_multiplexprogram": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_network": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_node": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_sdi_source": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_live_signal_map": {
+   "label": "AWS Elemental MediaLive"
+  },
+  "aws_media_package_asset": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_channel": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_origin_endpoint": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_packaging_configuration": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_packaging_group": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_v2_channel": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_v2_channel_group": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_v2_channel_policy": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_v2_origin_endpoint": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_package_v2_origin_endpoint_policy": {
+   "label": "AWS Elemental MediaPackage"
+  },
+  "aws_media_store_container": {
+   "label": "AWS Elemental MediaStore"
+  },
+  "aws_media_tailor_channel": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_channel_policy": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_function": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_live_source": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_playback_configuration": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_prefetch_schedule": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_source_location": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_media_tailor_vod_source": {
+   "label": "AWS Elemental MediaTailor"
+  },
+  "aws_memory_db_acl": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_memory_db_cluster": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_memory_db_multi_region_cluster": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_memory_db_parameter_group": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_memory_db_subnet_group": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_memory_db_user": {
+   "label": "Amazon MemoryDB"
+  },
+  "aws_mgn_network_migration_definition": {
+   "label": "AWS Application Migration Service"
+  },
+  "aws_mpa_approval_team": {
+   "label": "AWS Multi-party Approval"
+  },
+  "aws_mpa_identity_source": {
+   "label": "AWS Multi-party Approval"
+  },
+  "aws_msk_batch_scram_secret": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_channel": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_cluster": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_cluster_policy": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_configuration": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_replicator": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_serverless_cluster": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_topic": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_msk_vpc_connection": {
+   "label": "Amazon Managed Streaming for Apache Kafka (MSK)"
+  },
+  "aws_mwaa_environment": {
+   "label": "Amazon Managed Workflows for Apache Airflow (MWAA)"
+  },
+  "aws_mwaaserverless_workflow": {
+   "label": "Amazon Managed Workflows for Apache Airflow (MWAA)"
+  },
+  "aws_nat_gateway": {
+   "label": "Amazon VPC"
+  },
+  "aws_neptune_dbcluster": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_dbcluster_parameter_group": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_dbinstance": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_dbparameter_group": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_dbsubnet_group": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_event_subscription": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_global_cluster": {
+   "label": "Amazon Neptune"
+  },
+  "aws_neptune_graph_graph": {
+   "label": "Amazon Neptune Analytics"
+  },
+  "aws_neptune_graph_graph_snapshot": {
+   "label": "Amazon Neptune Analytics"
+  },
+  "aws_neptune_graph_private_graph_endpoint": {
+   "label": "Amazon Neptune Analytics"
+  },
+  "aws_network_acl": {
+   "label": "Amazon VPC"
+  },
+  "aws_network_firewall_firewall": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_firewall_firewall_policy": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_firewall_logging_configuration": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_firewall_rule_group": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_firewall_tlsinspection_configuration": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_firewall_vpc_endpoint_association": {
+   "label": "AWS Network Firewall"
+  },
+  "aws_network_flow_monitor_monitor": {
+   "label": "Amazon CloudWatch Network Flow Monitor"
+  },
+  "aws_network_interface": {
+   "label": "Amazon VPC"
+  },
+  "aws_network_interface_attachment": {
+   "label": "Amazon VPC"
+  },
+  "aws_network_interface_permission": {
+   "label": "Amazon VPC"
+  },
+  "aws_network_manager_connect_attachment": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_connect_peer": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_core_network": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_core_network_prefix_list_association": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_customer_gateway_association": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_device": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_direct_connect_gateway_attachment": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_global_network": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_link": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_link_association": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_site": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_site_to_site_vpn_attachment": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_transit_gateway_peering": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_transit_gateway_registration": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_transit_gateway_route_table_attachment": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_network_manager_vpc_attachment": {
+   "label": "AWS Cloud WAN"
+  },
+  "aws_notifications_channel_association": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_contacts_email_contact": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_event_rule": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_managed_notification_account_contact_association": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_managed_notification_additional_channel_association": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_notification_configuration": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_notification_hub": {
+   "label": "AWS User Notifications"
+  },
+  "aws_notifications_organizational_unit_association": {
+   "label": "AWS User Notifications"
+  },
+  "aws_nova_act_workflow_definition": {
+   "label": "Amazon Nova Act"
+  },
+  "aws_oam_link": {
+   "label": "Amazon CloudWatch Observability Access Manager"
+  },
+  "aws_oam_sink": {
+   "label": "Amazon CloudWatch Observability Access Manager"
+  },
+  "aws_observability_admin_organization_centralization_rule": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_observability_admin_organization_telemetry_rule": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_observability_admin_s3_table_integration": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_observability_admin_telemetry_enrichment": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_observability_admin_telemetry_pipelines": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_observability_admin_telemetry_rule": {
+   "label": "Amazon CloudWatch Observability Admin"
+  },
+  "aws_odb_cloud_autonomous_vm_cluster": {
+   "label": "Oracle Database@AWS"
+  },
+  "aws_odb_cloud_exadata_infrastructure": {
+   "label": "Oracle Database@AWS"
+  },
+  "aws_odb_cloud_vm_cluster": {
+   "label": "Oracle Database@AWS"
+  },
+  "aws_odb_network": {
+   "label": "Oracle Database@AWS"
+  },
+  "aws_odb_odb_peering_connection": {
+   "label": "Oracle Database@AWS"
+  },
+  "aws_omics_annotation_store": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_configuration": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_reference_store": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_run_cache": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_run_group": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_sequence_store": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_variant_store": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_workflow": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_omics_workflow_version": {
+   "label": "AWS HealthOmics"
+  },
+  "aws_open_search_data_source": {
+   "label": "Amazon OpenSearch Service"
+  },
+  "aws_open_search_serverless_access_policy": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_collection": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_collection_group": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_collection_index": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_index": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_lifecycle_policy": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_security_config": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_serverless_security_policy": {
+   "label": "Amazon OpenSearch Serverless"
+  },
+  "aws_open_search_service_application": {
+   "label": "Amazon OpenSearch Service"
+  },
+  "aws_open_search_service_domain": {
+   "label": "Amazon OpenSearch Service"
+  },
+  "aws_organizations_account": {
+   "label": "AWS Organizations"
+  },
+  "aws_organizations_organization": {
+   "label": "AWS Organizations"
+  },
+  "aws_organizations_organizational_unit": {
+   "label": "AWS Organizations"
+  },
+  "aws_organizations_policy": {
+   "label": "AWS Organizations"
+  },
+  "aws_organizations_resource_policy": {
+   "label": "AWS Organizations"
+  },
+  "aws_osis_pipeline": {
+   "label": "Amazon OpenSearch Ingestion"
+  },
+  "aws_outposts_site": {
+   "label": "AWS Outposts"
+  },
+  "aws_panorama_application_instance": {
+   "label": "AWS Panorama"
+  },
+  "aws_panorama_package": {
+   "label": "AWS Panorama"
+  },
+  "aws_panorama_package_version": {
+   "label": "AWS Panorama"
+  },
+  "aws_payment_cryptography_alias": {
+   "label": "AWS Payment Cryptography"
+  },
+  "aws_payment_cryptography_key": {
+   "label": "AWS Payment Cryptography"
+  },
+  "aws_pcaconnector_ad_connector": {
+   "label": "AWS Private CA Connector for Active Directory"
+  },
+  "aws_pcaconnector_ad_directory_registration": {
+   "label": "AWS Private CA Connector for Active Directory"
+  },
+  "aws_pcaconnector_ad_service_principal_name": {
+   "label": "AWS Private CA Connector for Active Directory"
+  },
+  "aws_pcaconnector_ad_template": {
+   "label": "AWS Private CA Connector for Active Directory"
+  },
+  "aws_pcaconnector_ad_template_group_access_control_entry": {
+   "label": "AWS Private CA Connector for Active Directory"
+  },
+  "aws_pcaconnector_scep_challenge": {
+   "label": "AWS Private CA Connector for SCEP"
+  },
+  "aws_pcaconnector_scep_connector": {
+   "label": "AWS Private CA Connector for SCEP"
+  },
+  "aws_pcs_cluster": {
+   "label": "AWS Parallel Computing Service"
+  },
+  "aws_pcs_compute_node_group": {
+   "label": "AWS Parallel Computing Service"
+  },
+  "aws_pcs_queue": {
+   "label": "AWS Parallel Computing Service"
+  },
+  "aws_personalize_dataset": {
+   "label": "Amazon Personalize"
+  },
+  "aws_personalize_dataset_group": {
+   "label": "Amazon Personalize"
+  },
+  "aws_personalize_event_tracker": {
+   "label": "Amazon Personalize"
+  },
+  "aws_personalize_metric_attribution": {
+   "label": "Amazon Personalize"
+  },
+  "aws_personalize_schema": {
+   "label": "Amazon Personalize"
+  },
+  "aws_personalize_solution": {
+   "label": "Amazon Personalize"
+  },
+  "aws_pinpoint_admchannel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_apnschannel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_apnssandbox_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_apnsvoip_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_apnsvoip_sandbox_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_app": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_application_settings": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_baidu_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_campaign": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_configuration_set": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_configuration_set_event_destination": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_dedicated_ip_pool": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_identity": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_email_template": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_event_stream": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_gcmchannel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_in_app_template": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_push_template": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_segment": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_sms_template": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_smschannel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pinpoint_voice_channel": {
+   "label": "Amazon Pinpoint"
+  },
+  "aws_pipes_pipe": {
+   "label": "Amazon EventBridge Pipes"
+  },
+  "aws_placement_group": {
+   "label": "Amazon EC2"
+  },
+  "aws_proton_environment_account_connection": {
+   "label": "AWS Proton"
+  },
+  "aws_proton_environment_template": {
+   "label": "AWS Proton"
+  },
+  "aws_proton_service_template": {
+   "label": "AWS Proton"
+  },
+  "aws_qbusiness_application": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_data_accessor": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_data_source": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_index": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_permission": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_plugin": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_retriever": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qbusiness_web_experience": {
+   "label": "Amazon Q Business"
+  },
+  "aws_qldb_ledger": {
+   "label": "Amazon Quantum Ledger Database (QLDB)"
+  },
+  "aws_qldb_stream": {
+   "label": "Amazon Quantum Ledger Database (QLDB)"
+  },
+  "aws_quick_sight_action_connector": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_agent": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_analysis": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_approval_policy": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_custom_permissions": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_dashboard": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_data_set": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_data_source": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_dlpsetting": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_flow": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_folder": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_knowledge_base": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_limits_profile": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_oauth_client_application": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_refresh_schedule": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_space": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_template": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_theme": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_topic": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_topic_v2": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_quick_sight_vpcconnection": {
+   "label": "Amazon QuickSight"
+  },
+  "aws_ram_permission": {
+   "label": "AWS Resource Access Manager"
+  },
+  "aws_ram_resource_share": {
+   "label": "AWS Resource Access Manager"
+  },
+  "aws_rbin_rule": {
+   "label": "Amazon EC2 Recycle Bin"
+  },
+  "aws_rds_cluster_snapshot": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_custom_dbengine_version": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbcluster": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbcluster_parameter_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbinstance": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbparameter_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbproxy": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbproxy_endpoint": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbproxy_target_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbsecurity_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbsecurity_group_ingress": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbshard_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbsnapshot": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_dbsubnet_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_event_subscription": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_global_cluster": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_integration": {
+   "label": "Amazon RDS"
+  },
+  "aws_rds_option_group": {
+   "label": "Amazon RDS"
+  },
+  "aws_redshift_cluster": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_cluster_parameter_group": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_cluster_security_group": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_cluster_security_group_ingress": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_cluster_subnet_group": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_endpoint_access": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_endpoint_authorization": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_event_subscription": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_integration": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_scheduled_action": {
+   "label": "Amazon Redshift"
+  },
+  "aws_redshift_serverless_namespace": {
+   "label": "Amazon Redshift Serverless"
+  },
+  "aws_redshift_serverless_snapshot": {
+   "label": "Amazon Redshift Serverless"
+  },
+  "aws_redshift_serverless_workgroup": {
+   "label": "Amazon Redshift Serverless"
+  },
+  "aws_redshift_snapshot_schedule": {
+   "label": "Amazon Redshift"
+  },
+  "aws_refactor_spaces_application": {
+   "label": "AWS Migration Hub Refactor Spaces"
+  },
+  "aws_refactor_spaces_environment": {
+   "label": "AWS Migration Hub Refactor Spaces"
+  },
+  "aws_refactor_spaces_service": {
+   "label": "AWS Migration Hub Refactor Spaces"
+  },
+  "aws_rekognition_collection": {
+   "label": "Amazon Rekognition"
+  },
+  "aws_rekognition_dataset": {
+   "label": "Amazon Rekognition"
+  },
+  "aws_rekognition_project": {
+   "label": "Amazon Rekognition"
+  },
+  "aws_rekognition_stream_processor": {
+   "label": "Amazon Rekognition"
+  },
+  "aws_resilience_hub_app": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_resiliency_policy": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_v2_policy": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_v2_service": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_v2_service_function": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_v2_system": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resilience_hub_v2_user_journey": {
+   "label": "AWS Resilience Hub"
+  },
+  "aws_resource_explorer2_default_view_association": {
+   "label": "AWS Resource Explorer"
+  },
+  "aws_resource_explorer2_index": {
+   "label": "AWS Resource Explorer"
+  },
+  "aws_resource_explorer2_view": {
+   "label": "AWS Resource Explorer"
+  },
+  "aws_resource_groups_group": {
+   "label": "AWS Resource Groups"
+  },
+  "aws_resource_groups_tag_sync_task": {
+   "label": "AWS Resource Groups"
+  },
+  "aws_robo_maker_fleet": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_robo_maker_robot": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_robo_maker_robot_application": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_robo_maker_robot_application_version": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_robo_maker_simulation_application": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_robo_maker_simulation_application_version": {
+   "label": "AWS RoboMaker"
+  },
+  "aws_roles_anywhere_crl": {
+   "label": "AWS IAM Roles Anywhere"
+  },
+  "aws_roles_anywhere_profile": {
+   "label": "AWS IAM Roles Anywhere"
+  },
+  "aws_roles_anywhere_trust_anchor": {
+   "label": "AWS IAM Roles Anywhere"
+  },
+  "aws_route": {
+   "label": "Amazon API Gateway"
+  },
+  "aws_route53_cidr_collection": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_dnssec": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_global_resolver_access_source": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_access_token": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_dns_view": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_firewall_domain_list": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_firewall_rule": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_global_resolver": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_global_resolver_hosted_zone_association": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_health_check": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_hosted_zone": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_key_signing_key": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_profiles_profile": {
+   "label": "Amazon Route 53 Profiles"
+  },
+  "aws_route53_profiles_profile_association": {
+   "label": "Amazon Route 53 Profiles"
+  },
+  "aws_route53_profiles_profile_resource_association": {
+   "label": "Amazon Route 53 Profiles"
+  },
+  "aws_route53_record_set": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_record_set_group": {
+   "label": "Amazon Route 53"
+  },
+  "aws_route53_recovery_control_cluster": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_control_control_panel": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_control_routing_control": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_control_safety_rule": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_readiness_cell": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_readiness_readiness_check": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_readiness_recovery_group": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_recovery_readiness_resource_set": {
+   "label": "Amazon Route 53 Application Recovery Controller"
+  },
+  "aws_route53_resolver_firewall_domain_list": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_firewall_rule_group": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_firewall_rule_group_association": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_outpost_resolver": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_config": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_dnssecconfig": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_endpoint": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_query_logging_config": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_query_logging_config_association": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_rule": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route53_resolver_resolver_rule_association": {
+   "label": "Amazon Route 53 Resolver"
+  },
+  "aws_route_table": {
+   "label": "Amazon VPC"
+  },
+  "aws_rtbfabric_inbound_external_link": {
+   "label": "RTB Fabric"
+  },
+  "aws_rtbfabric_link": {
+   "label": "RTB Fabric"
+  },
+  "aws_rtbfabric_link_routing_rule": {
+   "label": "RTB Fabric"
+  },
+  "aws_rtbfabric_outbound_external_link": {
+   "label": "RTB Fabric"
+  },
+  "aws_rtbfabric_requester_gateway": {
+   "label": "RTB Fabric"
+  },
+  "aws_rtbfabric_responder_gateway": {
+   "label": "RTB Fabric"
+  },
+  "aws_rum_app_monitor": {
+   "label": "Amazon CloudWatch RUM"
+  },
+  "aws_s3_access_grant": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_access_grants_instance": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_access_grants_location": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_access_point": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_bucket": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_bucket_policy": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_express_access_point": {
+   "label": "Amazon S3 Express One Zone"
+  },
+  "aws_s3_express_bucket_policy": {
+   "label": "Amazon S3 Express One Zone"
+  },
+  "aws_s3_express_directory_bucket": {
+   "label": "Amazon S3 Express One Zone"
+  },
+  "aws_s3_files_access_point": {
+   "label": "S3 Files"
+  },
+  "aws_s3_files_file_system": {
+   "label": "S3 Files"
+  },
+  "aws_s3_files_file_system_policy": {
+   "label": "S3 Files"
+  },
+  "aws_s3_files_mount_target": {
+   "label": "S3 Files"
+  },
+  "aws_s3_multi_region_access_point": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_multi_region_access_point_policy": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_object_lambda_access_point": {
+   "label": "Amazon S3 Object Lambda"
+  },
+  "aws_s3_object_lambda_access_point_policy": {
+   "label": "Amazon S3 Object Lambda"
+  },
+  "aws_s3_outposts_access_point": {
+   "label": "Amazon S3 on Outposts"
+  },
+  "aws_s3_outposts_bucket": {
+   "label": "Amazon S3 on Outposts"
+  },
+  "aws_s3_outposts_bucket_policy": {
+   "label": "Amazon S3 on Outposts"
+  },
+  "aws_s3_outposts_endpoint": {
+   "label": "Amazon S3 on Outposts"
+  },
+  "aws_s3_storage_lens": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_storage_lens_group": {
+   "label": "Amazon S3"
+  },
+  "aws_s3_tables_namespace": {
+   "label": "Amazon S3 Tables"
+  },
+  "aws_s3_tables_table": {
+   "label": "Amazon S3 Tables"
+  },
+  "aws_s3_tables_table_bucket": {
+   "label": "Amazon S3 Tables"
+  },
+  "aws_s3_tables_table_bucket_policy": {
+   "label": "Amazon S3 Tables"
+  },
+  "aws_s3_tables_table_policy": {
+   "label": "Amazon S3 Tables"
+  },
+  "aws_s3_vectors_index": {
+   "label": "Amazon S3 Vectors"
+  },
+  "aws_s3_vectors_vector_bucket": {
+   "label": "Amazon S3 Vectors"
+  },
+  "aws_s3_vectors_vector_bucket_policy": {
+   "label": "Amazon S3 Vectors"
+  },
+  "aws_sage_maker_action": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_algorithm": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_app": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_app_image_config": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_artifact": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_cluster": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_code_repository": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_context": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_data_quality_job_definition": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_device": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_device_fleet": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_domain": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_endpoint": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_endpoint_config": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_experiment": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_experiment_trial_component": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_feature_group": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_hub": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_human_task_ui": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_image": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_image_version": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_inference_component": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_inference_experiment": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_mlflow_app": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_mlflow_tracking_server": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_bias_job_definition": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_card": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_explainability_job_definition": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_package": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_package_group": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_model_quality_job_definition": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_monitoring_schedule": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_notebook_instance": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_notebook_instance_lifecycle_config": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_partner_app": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_pipeline": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_processing_job": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_project": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_space": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_studio_lifecycle_config": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_trial_component": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_user_profile": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_workforce": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_sage_maker_workteam": {
+   "label": "Amazon SageMaker"
+  },
+  "aws_scheduler_schedule": {
+   "label": "Amazon EventBridge Scheduler"
+  },
+  "aws_scheduler_schedule_group": {
+   "label": "Amazon EventBridge Scheduler"
+  },
+  "aws_scn_dataset": {
+   "label": "AWS Supply Chain"
+  },
+  "aws_scn_namespace": {
+   "label": "AWS Supply Chain"
+  },
+  "aws_sdb_domain": {
+   "label": "Amazon SimpleDB"
+  },
+  "aws_secrets_manager_resource_policy": {
+   "label": "AWS Secrets Manager"
+  },
+  "aws_secrets_manager_rotation_schedule": {
+   "label": "AWS Secrets Manager"
+  },
+  "aws_secrets_manager_secret": {
+   "label": "AWS Secrets Manager"
+  },
+  "aws_secrets_manager_secret_target_attachment": {
+   "label": "AWS Secrets Manager"
+  },
+  "aws_security_agent_agent_space": {
+   "label": "Security Agent"
+  },
+  "aws_security_agent_application": {
+   "label": "Security Agent"
+  },
+  "aws_security_agent_artifact": {
+   "label": "Security Agent"
+  },
+  "aws_security_agent_pentest": {
+   "label": "Security Agent"
+  },
+  "aws_security_agent_security_requirement_pack": {
+   "label": "Security Agent"
+  },
+  "aws_security_agent_target_domain": {
+   "label": "Security Agent"
+  },
+  "aws_security_group": {
+   "label": "Amazon VPC"
+  },
+  "aws_security_hub_aggregator_v2": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_automation_rule": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_automation_rule_v2": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_configuration_policy": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_connector": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_connector_v2": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_delegated_admin": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_finding_aggregator": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_hub": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_hub_v2": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_insight": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_organization_configuration": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_policy_association": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_product_subscription": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_security_control": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_hub_standard": {
+   "label": "AWS Security Hub"
+  },
+  "aws_security_lake_aws_log_source": {
+   "label": "Amazon Security Lake"
+  },
+  "aws_security_lake_data_lake": {
+   "label": "Amazon Security Lake"
+  },
+  "aws_security_lake_subscriber": {
+   "label": "Amazon Security Lake"
+  },
+  "aws_security_lake_subscriber_notification": {
+   "label": "Amazon Security Lake"
+  },
+  "aws_serverless_repo_application": {
+   "label": "AWS Serverless Application Repository"
+  },
+  "aws_service_catalog_accepted_portfolio_share": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_app_registry_application": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_app_registry_attribute_group": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_app_registry_attribute_group_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_app_registry_resource_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_cloud_formation_product": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_cloud_formation_provisioned_product": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_launch_notification_constraint": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_launch_role_constraint": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_launch_template_constraint": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_portfolio": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_portfolio_principal_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_portfolio_product_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_portfolio_share": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_resource_update_constraint": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_service_action": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_service_action_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_stack_set_constraint": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_tag_option": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_catalog_tag_option_association": {
+   "label": "AWS Service Catalog"
+  },
+  "aws_service_discovery_http_namespace": {
+   "label": "AWS Cloud Map"
+  },
+  "aws_service_discovery_instance": {
+   "label": "AWS Cloud Map"
+  },
+  "aws_service_discovery_private_dns_namespace": {
+   "label": "AWS Cloud Map"
+  },
+  "aws_service_discovery_public_dns_namespace": {
+   "label": "AWS Cloud Map"
+  },
+  "aws_service_discovery_service": {
+   "label": "AWS Cloud Map"
+  },
+  "aws_ses_configuration_set": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_configuration_set_event_destination": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_contact_list": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_custom_verification_email_template": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_dedicated_ip_pool": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_email_identity": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_addon_instance": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_addon_subscription": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_address_list": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_archive": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_ingress_point": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_relay": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_rule_set": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_mail_manager_traffic_policy": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_multi_region_endpoint": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_receipt_filter": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_receipt_rule": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_receipt_rule_set": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_template": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_tenant": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_ses_vdm_attributes": {
+   "label": "Amazon Simple Email Service (SES)"
+  },
+  "aws_shield_drtaccess": {
+   "label": "AWS Shield"
+  },
+  "aws_shield_proactive_engagement": {
+   "label": "AWS Shield"
+  },
+  "aws_shield_protection": {
+   "label": "AWS Shield"
+  },
+  "aws_shield_protection_group": {
+   "label": "AWS Shield"
+  },
+  "aws_signer_profile_permission": {
+   "label": "AWS Signer"
+  },
+  "aws_signer_signing_profile": {
+   "label": "AWS Signer"
+  },
+  "aws_sim_space_weaver_simulation": {
+   "label": "AWS SimSpace Weaver"
+  },
+  "aws_smsvoice_configuration_set": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_opt_out_list": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_phone_number": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_pool": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_protect_configuration": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_registration": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_resource_policy": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_smsvoice_sender_id": {
+   "label": "AWS End User Messaging"
+  },
+  "aws_sns_subscription": {
+   "label": "Amazon Simple Notification Service (SNS)"
+  },
+  "aws_sns_topic": {
+   "label": "Amazon Simple Notification Service (SNS)"
+  },
+  "aws_sns_topic_inline_policy": {
+   "label": "Amazon Simple Notification Service (SNS)"
+  },
+  "aws_sns_topic_policy": {
+   "label": "Amazon Simple Notification Service (SNS)"
+  },
+  "aws_sqs_queue": {
+   "label": "Amazon Simple Queue Service (SQS)"
+  },
+  "aws_sqs_queue_inline_policy": {
+   "label": "Amazon Simple Queue Service (SQS)"
+  },
+  "aws_sqs_queue_policy": {
+   "label": "Amazon Simple Queue Service (SQS)"
+  },
+  "aws_ssm_association": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_cloud_connector": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_document": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_maintenance_window": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_maintenance_window_target": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_maintenance_window_task": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_ops_item": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_parameter": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_patch_baseline": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_resource_data_sync": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_resource_policy": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssm_service_setting": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssmcontacts_contact": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmcontacts_contact_channel": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmcontacts_plan": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmcontacts_rotation": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmgui_connect_preferences": {
+   "label": "AWS Systems Manager"
+  },
+  "aws_ssmincidents_replication_set": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmincidents_response_plan": {
+   "label": "AWS Systems Manager Incident Manager"
+  },
+  "aws_ssmquick_setup_configuration_manager": {
+   "label": "AWS Systems Manager Quick Setup"
+  },
+  "aws_ssmquick_setup_lifecycle_automation": {
+   "label": "AWS Systems Manager Quick Setup"
+  },
+  "aws_sso_application": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_sso_application_assignment": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_sso_assignment": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_sso_instance_access_control_attribute_configuration": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_sso_permission_set": {
+   "label": "AWS IAM Identity Center"
+  },
+  "aws_step_functions_activity": {
+   "label": "AWS Step Functions"
+  },
+  "aws_step_functions_state_machine": {
+   "label": "AWS Step Functions"
+  },
+  "aws_step_functions_state_machine_alias": {
+   "label": "AWS Step Functions"
+  },
+  "aws_step_functions_state_machine_version": {
+   "label": "AWS Step Functions"
+  },
+  "aws_storage_gateway_tape_pool": {
+   "label": "AWS Storage Gateway"
+  },
+  "aws_subnet": {
+   "label": "Amazon VPC"
+  },
+  "aws_support_app_account_alias": {
+   "label": "AWS Support App"
+  },
+  "aws_support_app_slack_channel_configuration": {
+   "label": "AWS Support App"
+  },
+  "aws_support_app_slack_workspace_configuration": {
+   "label": "AWS Support App"
+  },
+  "aws_synthetics_canary": {
+   "label": "Amazon CloudWatch Synthetics"
+  },
+  "aws_synthetics_group": {
+   "label": "Amazon CloudWatch Synthetics"
+  },
+  "aws_systems_manager_sap_application": {
+   "label": "AWS Systems Manager for SAP"
+  },
+  "aws_textract_adapter": {
+   "label": "Amazon Textract"
+  },
+  "aws_timestream_database": {
+   "label": "Amazon Timestream"
+  },
+  "aws_timestream_influx_dbcluster": {
+   "label": "Amazon Timestream"
+  },
+  "aws_timestream_influx_dbinstance": {
+   "label": "Amazon Timestream"
+  },
+  "aws_timestream_scheduled_query": {
+   "label": "Amazon Timestream"
+  },
+  "aws_timestream_table": {
+   "label": "Amazon Timestream"
+  },
+  "aws_transcribe_vocabulary_filter": {
+   "label": "Amazon Transcribe"
+  },
+  "aws_transfer_agreement": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_certificate": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_connector": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_host_key": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_profile": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_server": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_user": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_web_app": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_transfer_workflow": {
+   "label": "AWS Transfer Family"
+  },
+  "aws_translate_parallel_data": {
+   "label": "Amazon Translate"
+  },
+  "aws_uxc_account_customization": {
+   "label": "UXC"
+  },
+  "aws_verified_permissions_identity_source": {
+   "label": "Amazon Verified Permissions"
+  },
+  "aws_verified_permissions_policy": {
+   "label": "Amazon Verified Permissions"
+  },
+  "aws_verified_permissions_policy_store": {
+   "label": "Amazon Verified Permissions"
+  },
+  "aws_verified_permissions_policy_store_alias": {
+   "label": "Amazon Verified Permissions"
+  },
+  "aws_verified_permissions_policy_template": {
+   "label": "Amazon Verified Permissions"
+  },
+  "aws_voice_id_domain": {
+   "label": "Amazon Connect Voice ID"
+  },
+  "aws_volume_attachment": {
+   "label": "Amazon EC2"
+  },
+  "aws_vpc": {
+   "label": "Amazon VPC"
+  },
+  "aws_vpc_endpoint": {
+   "label": "Amazon VPC"
+  },
+  "aws_vpc_lattice_access_log_subscription": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_auth_policy": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_domain_verification": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_listener": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_resource_configuration": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_resource_gateway": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_resource_policy": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_rule": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_service": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_service_network": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_service_network_resource_association": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_service_network_service_association": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_service_network_vpc_association": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_vpc_lattice_target_group": {
+   "label": "Amazon VPC Lattice"
+  },
+  "aws_waf_byte_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_ipset": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_rule": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_size_constraint_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_sql_injection_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_web_acl": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_waf_xss_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_byte_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_geo_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_ipset": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_rate_based_rule": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_regex_pattern_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_rule": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_size_constraint_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_sql_injection_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_web_acl": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_web_aclassociation": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafregional_xss_match_set": {
+   "label": "AWS WAF Classic"
+  },
+  "aws_wafv2_ipset": {
+   "label": "AWS WAF"
+  },
+  "aws_wafv2_logging_configuration": {
+   "label": "AWS WAF"
+  },
+  "aws_wafv2_regex_pattern_set": {
+   "label": "AWS WAF"
+  },
+  "aws_wafv2_rule_group": {
+   "label": "AWS WAF"
+  },
+  "aws_wafv2_web_acl": {
+   "label": "AWS WAF"
+  },
+  "aws_wafv2_web_aclassociation": {
+   "label": "AWS WAF"
+  },
+  "aws_well_architected_lens": {
+   "label": "AWS Well-Architected Tool"
+  },
+  "aws_well_architected_profile": {
+   "label": "AWS Well-Architected Tool"
+  },
+  "aws_well_architected_review_template": {
+   "label": "AWS Well-Architected Tool"
+  },
+  "aws_well_architected_workload": {
+   "label": "AWS Well-Architected Tool"
+  },
+  "aws_wickr_network": {
+   "label": "AWS Wickr"
+  },
+  "aws_wisdom_aiagent": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_aiagent_version": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_aiguardrail": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_aiguardrail_version": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_aiprompt": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_aiprompt_version": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_assistant": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_assistant_association": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_knowledge_base": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_message_template": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_message_template_version": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_wisdom_quick_response": {
+   "label": "Amazon Connect Wisdom"
+  },
+  "aws_work_spaces_connection_alias": {
+   "label": "Amazon WorkSpaces"
+  },
+  "aws_work_spaces_thin_client_environment": {
+   "label": "Amazon WorkSpaces Thin Client"
+  },
+  "aws_work_spaces_web_browser_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_data_protection_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_identity_provider": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_ip_access_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_network_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_portal": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_session_logger": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_trust_store": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_user_access_logging_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_web_user_settings": {
+   "label": "Amazon WorkSpaces Secure Browser"
+  },
+  "aws_work_spaces_workspace": {
+   "label": "Amazon WorkSpaces"
+  },
+  "aws_work_spaces_workspace_ip_group": {
+   "label": "Amazon WorkSpaces"
+  },
+  "aws_workspaces_instances_volume": {
+   "label": "Amazon WorkSpaces Instances"
+  },
+  "aws_workspaces_instances_volume_association": {
+   "label": "Amazon WorkSpaces Instances"
+  },
+  "aws_workspaces_instances_workspace_instance": {
+   "label": "Amazon WorkSpaces Instances"
+  },
+  "aws_workspaces_pool": {
+   "label": "Amazon WorkSpaces"
+  },
+  "aws_xray_group": {
+   "label": "AWS X-Ray"
+  },
+  "aws_xray_resource_policy": {
+   "label": "AWS X-Ray"
+  },
+  "aws_xray_sampling_rule": {
+   "label": "AWS X-Ray"
+  },
+  "aws_xray_transaction_search_config": {
+   "label": "AWS X-Ray"
+  }
+ },
+ "services": {}
+}
